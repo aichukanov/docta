@@ -1,0 +1,658 @@
+[
+	{
+		"slug": "blood-and-blood-derivatives-transfusion",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Внутривенное введение донорской крови или её отдельных компонентов — эритроцитов, плазмы, тромбоцитов",
+				"how": "Перед началом проверяют группу крови и совместимость, компонент вводят капельно через систему с фильтром, персонал всё время следит за самочувствием, давлением и температурой; одна доза обычно занимает от получаса до нескольких часов",
+				"when": "Выраженная анемия, кровопотеря при травме, операции или родах, нарушения свёртывания, болезни крови и костного мозга, лечение, угнетающее кроветворение",
+				"prep": "Определение группы крови и резус-фактора и проба на совместимость; сообщить о прежних переливаниях и реакциях на них, о беременностях и о принимаемых лекарствах, перед процедурой спокойно поесть и сходить в туалет",
+				"abnormal": "Эффект оценивают по самочувствию и повторным анализам крови, поэтому их часто берут после процедуры. Озноб, сыпь, зуд, одышка, боль в пояснице или груди, повышение температуры во время переливания и в первые часы после него — повод сразу сказать персоналу; необходимость и число доз определяет лечащий врач"
+			},
+			"en": {
+				"what": "Intravenous administration of donated blood or its separate components — red cells, plasma, platelets",
+				"how": "Blood group and compatibility are checked first, the component is infused through a filtered line, and the staff monitor wellbeing, blood pressure and temperature throughout; one unit usually takes from half an hour to several hours",
+				"when": "Marked anaemia, blood loss from injury, surgery or childbirth, clotting disorders, diseases of the blood and bone marrow, treatment that suppresses blood cell production",
+				"prep": "Blood group and Rh typing plus a compatibility test; report previous transfusions and reactions to them, pregnancies and current medicines, and eat calmly and use the toilet beforehand",
+				"abnormal": "The effect is judged from how the patient feels and from repeat blood counts, which are often taken afterwards. Chills, rash, itching, shortness of breath, back or chest pain and fever during the transfusion or in the first hours after it should be reported to the staff at once; whether and how many units are needed is decided by the treating doctor"
+			},
+			"sr": {
+				"what": "Davanje darovane krvi ili njenih pojedinačnih komponenti — eritrocita, plazme, trombocita — u venu",
+				"how": "Prije početka provjeravaju se krvna grupa i podudarnost, komponenta se daje kap po kap kroz sistem sa filterom, a osoblje tokom cijele procedure prati stanje pacijenta, pritisak i temperaturu; jedna doza obično traje od pola sata do nekoliko sati",
+				"when": "Izražena anemija, gubitak krvi kod povrede, operacije ili porođaja, poremećaji zgrušavanja, bolesti krvi i koštane srži, liječenje koje potiskuje stvaranje krvnih ćelija",
+				"prep": "Određivanje krvne grupe i Rh faktora i proba podudarnosti; reći za ranije transfuzije i reakcije na njih, za trudnoće i lijekove koje uzimate, prije procedure mirno jesti i otići do toaleta",
+				"abnormal": "Učinak se procjenjuje po stanju pacijenta i ponovljenim analizama krvi, pa se one često rade i poslije. Drhtavica, osip, svrab, otežano disanje, bol u krstima ili grudima i povišena temperatura tokom transfuzije i u prvim satima poslije nje razlog su da se odmah obavijesti osoblje; potrebu i broj doza određuje ljekar"
+			},
+			"de": {
+				"what": "Die Gabe von Spenderblut oder einzelnen Blutbestandteilen — Erythrozyten, Plasma, Thrombozyten — über die Vene",
+				"how": "Vorher werden Blutgruppe und Verträglichkeit geprüft, das Präparat läuft über ein Filtersystem als Infusion, das Personal überwacht währenddessen Befinden, Blutdruck und Temperatur; eine Einheit dauert meist von einer halben bis zu mehreren Stunden",
+				"when": "Ausgeprägte Blutarmut, Blutverlust bei Verletzung, Operation oder Geburt, Gerinnungsstörungen, Erkrankungen von Blut und Knochenmark, Behandlungen, die die Blutbildung unterdrücken",
+				"prep": "Bestimmung von Blutgruppe und Rhesusfaktor sowie Verträglichkeitsprobe; frühere Transfusionen und Reaktionen darauf, Schwangerschaften und eingenommene Medikamente angeben, vorher in Ruhe essen und die Toilette aufsuchen",
+				"abnormal": "Die Wirkung wird am Befinden und an wiederholten Blutbildern beurteilt, die deshalb oft danach kontrolliert werden. Schüttelfrost, Hautausschlag, Juckreiz, Atemnot, Rücken- oder Brustschmerz und Fieber während der Transfusion oder in den ersten Stunden danach sofort dem Personal melden; ob und wie viele Einheiten nötig sind, entscheidet der behandelnde Arzt"
+			},
+			"tr": {
+				"what": "Bağışlanan kanın ya da onun ayrı bileşenlerinin — eritrosit, plazma, trombosit — damar yoluyla verilmesi",
+				"how": "Başlamadan önce kan grubu ve uygunluk kontrol edilir, ürün filtreli sistemle damla damla verilir, işlem boyunca ekip hastanın durumunu, tansiyonunu ve ateşini izler; bir ünite genellikle yarım saatten birkaç saate kadar sürer",
+				"when": "Belirgin kansızlık, yaralanma, ameliyat veya doğumda kan kaybı, pıhtılaşma bozuklukları, kan ve kemik iliği hastalıkları, kan yapımını baskılayan tedaviler",
+				"prep": "Kan grubu ve Rh tayini ile uygunluk testi yapılır; daha önceki transfüzyonlar ve bunlara gelişen tepkiler, gebelikler ve kullanılan ilaçlar bildirilir, işlem öncesi rahatça yemek yenir ve tuvalete gidilir",
+				"abnormal": "Etki hastanın durumu ve tekrarlanan kan tahlilleriyle değerlendirilir, bu nedenle tahliller işlem sonrasında sık tekrarlanır. Transfüzyon sırasında veya ilk saatlerde titreme, döküntü, kaşıntı, nefes darlığı, bel veya göğüs ağrısı ve ateş hemen ekibe bildirilir; kaç ünite gerektiğine tedaviyi yürüten hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "burn-wound-care-primary-delayed-primary-or-secondary",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Хирургическая обработка ожоговой раны: очищение, удаление отслоившегося эпидермиса и нежизнеспособных тканей, закрытие повязкой",
+				"how": "Рану обезболивают и промывают, по решению врача убирают отслоившуюся кожу и пузыри и срезают нежизнеспособные ткани, накладывают неприлипающее покрытие и повязку; первичной обработку называют в первые часы после ожога, отсроченной первичной — ту, которую пришлось отложить, вторичной — повторную на уже изменившейся ране",
+				"when": "Ожоги кипятком, паром, пламенем и горячим маслом, химические и электрические ожоги, солнечные ожоги с пузырями, загрязнённые и инфицированные ожоговые раны, плановые повторные обработки в процессе заживления",
+				"prep": "Подготовки нет; до визита охладить место прохладной водой, не вскрывать пузыри, не наносить масло, зубную пасту и мази, прикрыть чистой тканью, снять кольца и часы с обожжённой конечности и взять данные о прививке от столбняка",
+				"abnormal": "Истинную глубину ожога часто видно только через несколько дней, поэтому обработку повторяют. Усиление боли, распространяющееся покраснение, гнойное отделяемое, запах или температура — повод прийти раньше назначенного дня; необходимость пересадки кожи и сроки заживления определяет хирург"
+			},
+			"en": {
+				"what": "Surgical care of a burn wound: cleaning, removal of detached outer skin and non-viable tissue, and covering with a dressing",
+				"how": "The wound is numbed and irrigated, detached skin, blisters and dead tissue are removed as the doctor decides, then a non-adherent dressing is applied; care given in the first hours is called primary, care that had to be postponed is delayed primary, and repeat care of a wound that has already changed is secondary",
+				"when": "Scalds from water, steam or hot oil, flame, chemical and electrical burns, sunburn with blisters, contaminated and infected burn wounds, planned repeat care during healing",
+				"prep": "No preparation; cool the area with cool water beforehand, do not open blisters, do not apply oil, toothpaste or ointments, cover with a clean cloth, remove rings and a watch from the burned limb and bring tetanus vaccination details",
+				"abnormal": "The true depth of a burn is often visible only after several days, so the care is repeated. Increasing pain, spreading redness, purulent discharge, odour or fever are reasons to come earlier than planned; whether a skin graft is needed and how long healing takes is judged by the surgeon"
+			},
+			"sr": {
+				"what": "Hirurška obrada opekotinske rane: čišćenje, uklanjanje odljuštenog epiderma i neživog tkiva i postavljanje obloge",
+				"how": "Rana se obezboli i ispere, po odluci ljekara uklanjaju se odljuštena koža i mjehuri i odstranjuje neživo tkivo, zatim se stavljaju neljepljiva obloga i zavoj; primarnom se zove obrada u prvim satima poslije opekotine, primarno odloženom ona koja se morala odgoditi, a sekundarnom ponovna obrada rane koja se u međuvremenu promijenila",
+				"when": "Opekotine vrelom vodom, parom, plamenom i vrelim uljem, hemijske i električne opekotine, opekotine od sunca sa mjehurima, prljave i inficirane opekotinske rane, planirane ponovne obrade tokom zarastanja",
+				"prep": "Priprema nije potrebna; do dolaska mjesto rashladiti mlakom vodom, ne probijati mjehure, ne mazati ulje, pastu za zube ni masti, prekriti čistom tkaninom, skinuti prstenje i sat sa opečenog uda i ponijeti podatke o vakcini protiv tetanusa",
+				"abnormal": "Prava dubina opekotine često se vidi tek nakon nekoliko dana, pa se obrada ponavlja. Pojačan bol, crvenilo koje se širi, gnojav iscjedak, neprijatan miris ili povišena temperatura razlog su za raniji dolazak; potrebu za presađivanjem kože i trajanje zarastanja procjenjuje hirurg"
+			},
+			"de": {
+				"what": "Chirurgische Versorgung einer Brandwunde: Reinigung, Abtragen abgelöster Oberhaut und abgestorbenen Gewebes und Abdeckung mit einem Verband",
+				"how": "Die Wunde wird betäubt und gespült, abgelöste Haut und Blasen sowie abgestorbenes Gewebe werden nach ärztlicher Entscheidung entfernt, danach kommen eine nicht haftende Auflage und ein Verband; primär heißt die Versorgung in den ersten Stunden, verzögert primär die aufgeschobene und sekundär die erneute an der bereits veränderten Wunde",
+				"when": "Verbrühungen durch Wasser, Dampf oder heißes Öl, Flammen-, Chemie- und Stromverbrennungen, Sonnenbrand mit Blasen, verschmutzte und infizierte Brandwunden, geplante Folgeversorgungen während der Heilung",
+				"prep": "Keine Vorbereitung; die Stelle vorher mit kühlem Wasser kühlen, Blasen nicht öffnen, kein Öl, keine Zahnpasta und keine Salben auftragen, mit einem sauberen Tuch abdecken, Ringe und Uhr von der betroffenen Gliedmaße abnehmen und den Tetanusimpfschutz nachweisen",
+				"abnormal": "Die wirkliche Tiefe einer Verbrennung zeigt sich oft erst nach einigen Tagen, deshalb wird die Versorgung wiederholt. Zunehmender Schmerz, sich ausbreitende Rötung, eitriges Sekret, Geruch oder Fieber sind Gründe, früher als geplant zu kommen; ob eine Hauttransplantation nötig ist und wie lange die Heilung dauert, beurteilt der Chirurg"
+			},
+			"tr": {
+				"what": "Yanık yarasının cerrahi bakımı: temizleme, ayrılmış üst derinin ve canlılığını yitirmiş dokunun alınması ve örtü ile kapatılması",
+				"how": "Yara uyuşturulup yıkanır, hekimin kararına göre ayrılmış deri ve büller ile ölü doku alınır, ardından yapışmayan örtü ve pansuman uygulanır; ilk saatlerdeki bakıma primer, ertelenmiş olana gecikmiş primer, değişmiş yaraya yapılan tekrar bakıma sekonder denir",
+				"when": "Kaynar su, buhar, alev ve kızgın yağ yanıkları, kimyasal ve elektrik yanıkları, büllü güneş yanıkları, kirli ve enfekte yanık yaraları, iyileşme sürecinde planlanan tekrar bakımlar",
+				"prep": "Hazırlık gerekmez; gelmeden önce bölge ılık suyla soğutulur, büller patlatılmaz, yağ, diş macunu ve merhem sürülmez, temiz bezle örtülür, yanan uzuvdaki yüzük ve saat çıkarılır, tetanoz aşısı bilgisi getirilir",
+				"abnormal": "Yanığın gerçek derinliği çoğu kez birkaç gün sonra belli olur, bu yüzden bakım tekrarlanır. Artan ağrı, yayılan kızarıklık, iltihaplı akıntı, kötü koku veya ateş planlanan günden önce başvuru nedenidir; deri nakli gerekip gerekmediğine ve iyileşme süresine cerrah karar verir"
+			}
+		}
+	},
+	{
+		"slug": "capillaroscopy",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Осмотр под увеличением мелких сосудов кожи у основания ногтя",
+				"how": "На кожу ногтевого валика наносят каплю прозрачного масла и осматривают её видеокапилляроскопом или микроскопом, обычно на нескольких пальцах, изображение сохраняют для сравнения в динамике; безболезненно, около четверти часа",
+				"when": "Синдром Рейно, побеление или посинение пальцев на холоде, подозрение на системные болезни соединительной ткани, наблюдение при склеродермии, дерматомиозите и смешанном заболевании соединительной ткани",
+				"prep": "За несколько дней до осмотра не делать маникюр, не удалять кутикулу и не покрывать ногти лаком, перед исследованием не курить и не мёрзнуть, прийти заранее, чтобы руки согрелись, сказать о травмах пальцев и о принимаемых сосудистых препаратах",
+				"abnormal": "Картина капилляров бывает обычной или изменённой — расширенные, извитые, редкие сосуды и следы мелких кровоизлияний; такие изменения встречаются как при первичном синдроме Рейно, так и при системных болезнях соединительной ткани. Значение находки оценивает ревматолог вместе с жалобами, осмотром и анализами, при необходимости назначая повторный осмотр позже"
+			},
+			"en": {
+				"what": "Examination of the small skin vessels at the base of the nail under magnification",
+				"how": "A drop of clear oil is placed on the nail fold and the capillaries are viewed with a videocapillaroscope or microscope, usually on several fingers, with images stored for later comparison; painless, about fifteen minutes",
+				"when": "Raynaud's phenomenon, fingers turning white or blue in the cold, suspected connective tissue disease, follow-up in scleroderma, dermatomyositis and mixed connective tissue disease",
+				"prep": "Avoid manicure, cuticle removal and nail polish for several days before, do not smoke or get cold before the examination, arrive early so the hands warm up, and mention finger injuries and any vascular medicines",
+				"abnormal": "The capillary pattern may be ordinary or altered — widened, tortuous or sparse vessels and traces of small haemorrhages; such changes occur both in primary Raynaud's phenomenon and in connective tissue diseases. A rheumatologist interprets the finding together with symptoms, examination and blood tests, arranging a repeat study later if needed"
+			},
+			"sr": {
+				"what": "Pregled sitnih krvnih sudova kože uz korijen nokta pod uvećanjem",
+				"how": "Na kožu nokatnog nabora stavlja se kap prozirnog ulja, a ljekar posmatra kapilare videokapilaroskopom ili mikroskopom, obično na više prstiju, i čuva sliku radi poređenja tokom vremena; bezbolno je i traje oko petnaestak minuta",
+				"when": "Rejnoov fenomen, bljedilo ili modrenje prstiju na hladnoći, sumnja na sistemske bolesti vezivnog tkiva, praćenje kod sklerodermije, dermatomiozitisa i mješovite bolesti vezivnog tkiva",
+				"prep": "Nekoliko dana prije pregleda ne raditi manikir, ne uklanjati zanoktice i ne lakirati nokte, prije pregleda ne pušiti i ne izlagati se hladnoći, doći ranije da se ruke ugriju, navesti povrede prstiju i lijekove za krvne sudove",
+				"abnormal": "Slika kapilara može biti uobičajena ili izmijenjena — prošireni, uvijeni i rijetki sudovi i tragovi sitnih krvarenja; takve promjene viđaju se i kod primarnog Rejnoovog fenomena i kod sistemskih bolesti vezivnog tkiva. Značenje nalaza procjenjuje reumatolog zajedno sa tegobama, pregledom i analizama, uz ponovljeni pregled kasnije ako je potreban"
+			},
+			"de": {
+				"what": "Untersuchung der kleinen Hautgefäße am Nagelfalz unter Vergrößerung",
+				"how": "Auf die Haut am Nagelfalz kommt ein Tropfen klares Öl, die Kapillaren werden mit einem Videokapillaroskop oder Mikroskop an mehreren Fingern betrachtet und das Bild für spätere Vergleiche gespeichert; schmerzfrei, etwa eine Viertelstunde",
+				"when": "Raynaud-Phänomen, weiße oder blaue Finger bei Kälte, Verdacht auf Systemerkrankungen des Bindegewebes, Verlaufskontrolle bei Sklerodermie, Dermatomyositis und Mischkollagenose",
+				"prep": "Einige Tage vorher keine Maniküre, keine Nagelhautentfernung und kein Nagellack, vor der Untersuchung nicht rauchen und nicht auskühlen, früher kommen, damit die Hände warm werden, Fingerverletzungen und gefäßwirksame Medikamente angeben",
+				"abnormal": "Das Kapillarbild kann unauffällig oder verändert sein — erweiterte, geschlängelte, spärliche Gefäße und Spuren kleiner Blutungen; solche Veränderungen kommen sowohl beim primären Raynaud-Phänomen als auch bei Bindegewebserkrankungen vor. Die Bedeutung beurteilt der Rheumatologe zusammen mit Beschwerden, Untersuchung und Laborwerten, bei Bedarf mit einer späteren Kontrolle"
+			},
+			"tr": {
+				"what": "Tırnak dibindeki ince deri damarlarının büyütme altında incelenmesi",
+				"how": "Tırnak kıvrımındaki cilde bir damla saydam yağ damlatılır, kılcal damarlar videokapillaroskop veya mikroskopla genellikle birkaç parmakta incelenir ve görüntü sonraki karşılaştırmalar için kaydedilir; ağrısızdır, yaklaşık on beş dakika sürer",
+				"when": "Raynaud fenomeni, soğukta parmakların beyazlaması veya morarması, bağ dokusunun sistemik hastalıklarından şüphe, skleroderma, dermatomiyozit ve mikst bağ dokusu hastalığında izlem",
+				"prep": "Muayeneden birkaç gün önce manikür yapılmaz, tırnak eti alınmaz ve oje sürülmez, öncesinde sigara içilmez ve soğukta kalınmaz, eller ısınsın diye erken gelinir, parmak yaralanmaları ve damar ilaçları bildirilir",
+				"abnormal": "Kılcal damar görünümü olağan ya da değişmiş olabilir — genişlemiş, kıvrımlı, seyrelmiş damarlar ve küçük kanama izleri; bu değişiklikler hem birincil Raynaud fenomeninde hem de bağ dokusunun sistemik hastalıklarında görülür. Bulgunun anlamını romatoloji uzmanı şikâyetler, muayene ve tahlillerle birlikte değerlendirir, gerekirse bir süre sonra kontrol ister"
+			}
+		}
+	},
+	{
+		"slug": "cauterization-electrocauterization-or-cryocauterization-of-benign-skin-lesions-extensive",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Разрушение прижиганием, электрическим током или холодом изменений кожи, занимающих большую площадь",
+				"how": "Обширный участок обезболивают и обрабатывают по частям, переходя из зоны в зону, лечение нередко делят на несколько визитов, в конце накладывают повязку; один сеанс занимает больше времени, чем обработка одиночного элемента",
+				"when": "Распространённые вирусные бородавки, многочисленные шероховатые очаги солнечного повреждения на лице и волосистой части головы, обширные разрастания кожи, не поддавшиеся наружному лечению",
+				"prep": "Подготовки нет; спланировать день без пляжа, бассейна и бани, прийти в одежде, закрывающей обработанные участки от солнца, при большой площади обсудить с врачом обезболивание и сообщить о хронических болезнях кожи",
+				"abnormal": "Большая площадь заживает неравномерно: одни участки закрываются раньше, другие дольше мокнут, возможны временные пятна светлее или темнее окружающей кожи. Расширяющееся покраснение, гной, боль или температура требуют осмотра; врач же решает, нужен ли следующий сеанс и в каком объёме"
+			},
+			"en": {
+				"what": "Destruction by cautery, electric current or cold of skin changes that cover a wide area",
+				"how": "The extensive area is numbed and treated section by section, moving from one zone to the next, the treatment is often divided between several visits and a dressing is applied at the end; one session takes longer than treating a single lesion",
+				"when": "Widespread viral warts, multiple rough sun-damaged patches on the face and scalp, extensive skin overgrowths that have not responded to topical treatment",
+				"prep": "No preparation; plan a day without beach, pool or sauna, wear clothes that shield the treated areas from the sun, discuss pain relief with the doctor when a wide area is involved, and report chronic skin diseases",
+				"abnormal": "A wide area heals unevenly: some parts close earlier while others weep longer, and temporary patches lighter or darker than the surrounding skin are possible. Spreading redness, pus, pain or fever require review; the doctor also decides whether a further session is needed and how wide it should be"
+			},
+			"sr": {
+				"what": "Razaranje kauterizacijom, strujom ili hladnoćom promjena kože koje zahvataju veliku površinu",
+				"how": "Opsežno područje se obezboli i obrađuje dio po dio, prelazeći iz zone u zonu, liječenje se često dijeli na više dolazaka, a na kraju se stavlja obloga; jedan termin traje duže nego obrada pojedinačne promjene",
+				"when": "Raširene virusne bradavice, brojna hrapava sunčeva oštećenja na licu i vlasištu, opsežna razrastanja kože koja ne prolaze na lokalnu terapiju",
+				"prep": "Priprema nije potrebna; isplanirati dan bez plaže, bazena i saune, obući odjeću koja štiti obrađene predjele od sunca, kod velike površine sa ljekarom dogovoriti obezboljavanje i navesti hronične bolesti kože",
+				"abnormal": "Velika površina ne zarasta ravnomjerno: jedni dijelovi se zatvore ranije, drugi duže vlaže, a moguće su privremene mrlje svjetlije ili tamnije od okolne kože. Crvenilo koje se širi, gnoj, bol ili povišena temperatura traže pregled; ljekar odlučuje i da li je potreban sljedeći termin i u kom obimu"
+			},
+			"de": {
+				"what": "Zerstörung großflächiger Hautveränderungen durch Verschorfung, Strom oder Kälte",
+				"how": "Das ausgedehnte Areal wird betäubt und Abschnitt für Abschnitt behandelt, die Behandlung wird oft auf mehrere Termine verteilt und zum Schluss verbunden; eine Sitzung dauert länger als die Behandlung einer einzelnen Läsion",
+				"when": "Ausgebreitete Viruswarzen, zahlreiche raue sonnenbedingte Stellen an Gesicht und Kopfhaut, großflächige Hautwucherungen, die auf äußerliche Behandlung nicht angesprochen haben",
+				"prep": "Keine Vorbereitung; einen Tag ohne Strand, Schwimmbad und Sauna einplanen, Kleidung tragen, die die behandelten Stellen vor Sonne schützt, bei großer Fläche die Schmerzbehandlung mit dem Arzt besprechen und chronische Hauterkrankungen angeben",
+				"abnormal": "Eine große Fläche heilt ungleichmäßig: manche Stellen schließen sich früher, andere nässen länger, vorübergehend hellere oder dunklere Flecken sind möglich. Sich ausbreitende Rötung, Eiter, Schmerzen oder Fieber erfordern eine Kontrolle; ob und in welchem Umfang eine weitere Sitzung nötig ist, entscheidet der Arzt"
+			},
+			"tr": {
+				"what": "Geniş bir alanı kaplayan cilt değişikliklerinin koterle, elektrik akımıyla veya soğukla yok edilmesi",
+				"how": "Geniş alan uyuşturulur ve bölüm bölüm, bir bölgeden diğerine geçilerek işlenir, tedavi çoğu kez birkaç görüşmeye bölünür ve sonunda örtü uygulanır; bir seans tek bir lezyonun işlenmesinden uzun sürer",
+				"when": "Yaygın virüs siğilleri, yüz ve saçlı deride çok sayıda güneşe bağlı pürtüklü alan, dıştan tedaviye yanıt vermeyen geniş deri büyümeleri",
+				"prep": "Hazırlık gerekmez; plaj, havuz ve sauna olmayan bir gün planlanır, işlem gören yerleri güneşten koruyan giysi giyilir, alan genişse ağrı kontrolü hekimle konuşulur, süregelen cilt hastalıkları bildirilir",
+				"abnormal": "Geniş alan eşit hızda iyileşmez: bazı bölümler erken kapanır, bazıları daha uzun sulanır, çevredeki ciltten açık ya da koyu geçici lekeler olabilir. Yayılan kızarıklık, iltihap, ağrı veya ateş kontrol gerektirir; sonraki seansın gerekip gerekmediğine ve kapsamına hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "cauterization-electrocauterization-or-cryocauterization-of-benign-skin-lesions-larger",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Обработка прижиганием, электрическим током или холодом крупного доброкачественного образования кожи",
+				"how": "После местного обезболивания крупный элемент обрабатывают послойно или несколькими циклами замораживания с оттаиванием между ними, захватывая край окружающей кожи; уходит больше времени, чем на мелкий элемент, иногда нужен повторный сеанс",
+				"when": "Крупные бородавки и кератомы, утолщённая ороговевшая кожа подошвы, образования на волосистой части головы и спине, которые травмируются и кровоточат",
+				"prep": "Подготовки не требуется; при образовании на подошве врач может посоветовать размягчать ороговевшую кожу за несколько дней, прийти в свободной обуви и одежде, взять пластырь и предупредить о нарушениях свёртывания",
+				"abnormal": "Крупный участок заживает дольше: сначала мокнет, затем покрывается плотной корочкой, после неё может остаться более светлый или тёмный след, иногда небольшой рубец. Если рана не закрывается, кровоточит или образование появляется снова, нужен осмотр; объём обработки и число сеансов планирует врач"
+			},
+			"en": {
+				"what": "Treatment of a large benign skin lesion by cautery, electric current or cold",
+				"how": "After local anaesthesia the large lesion is worked through layer by layer or with several freeze-thaw cycles, taking in a margin of surrounding skin; it takes longer than a small lesion and a second session is sometimes needed",
+				"when": "Large warts and keratoses, thickened hard skin on the sole, lesions on the scalp and back that get injured and bleed",
+				"prep": "No preparation is required; for a lesion on the sole the doctor may advise softening the hard skin for a few days beforehand, come in loose shoes and clothes, bring a plaster and report any clotting disorder",
+				"abnormal": "A large site heals more slowly: first it weeps, then a firm crust forms, and afterwards a lighter or darker mark and sometimes a small scar may remain. If the wound stays open, bleeds or the lesion comes back, a review is needed; the doctor plans how much is treated and how many sessions are used"
+			},
+			"sr": {
+				"what": "Obrada veće benigne promjene kože kauterizacijom, električnom strujom ili hladnoćom",
+				"how": "Poslije lokalne anestezije veća promjena se obrađuje sloj po sloj ili u više ciklusa smrzavanja i otapanja, uz zahvatanje ruba okolne kože; traje duže nego kod sitne promjene, a ponekad je potreban i drugi termin",
+				"when": "Veće bradavice i keratoze, zadebljala rožnata koža tabana, promjene na vlasištu i leđima koje se povređuju i krvare",
+				"prep": "Priprema nije potrebna; kod promjene na tabanu ljekar može savjetovati omekšavanje zadebljale kože nekoliko dana ranije, doći u široj obući i odjeći, ponijeti flaster i najaviti poremećaje zgrušavanja",
+				"abnormal": "Veća površina zarasta sporije: prvo vlaži, zatim se stvara čvrsta krasta, a poslije nje može ostati svjetliji ili tamniji trag, ponekad i manji ožiljak. Ako rana ostaje otvorena, krvari ili se promjena vrati, potreban je pregled; obim obrade i broj termina planira ljekar"
+			},
+			"de": {
+				"what": "Behandlung einer größeren gutartigen Hautveränderung mit Verschorfung, Strom oder Kälte",
+				"how": "Nach örtlicher Betäubung wird die große Veränderung Schicht für Schicht oder in mehreren Gefrier- und Auftauzyklen bearbeitet, mit einem Rand gesunder Haut; das dauert länger als bei einer kleinen Läsion, manchmal ist ein zweiter Termin nötig",
+				"when": "Große Warzen und Keratosen, verhornte Haut an der Fußsohle, Veränderungen an Kopfhaut und Rücken, die verletzt werden und bluten",
+				"prep": "Keine Vorbereitung nötig; bei einer Veränderung an der Fußsohle kann der Arzt raten, die Hornhaut einige Tage vorher aufzuweichen, in weiten Schuhen und Kleidung kommen, ein Pflaster mitbringen und Gerinnungsstörungen angeben",
+				"abnormal": "Eine große Stelle heilt langsamer: zuerst nässt sie, dann bildet sich eine feste Kruste, danach können ein hellerer oder dunklerer Fleck und manchmal eine kleine Narbe bleiben. Bleibt die Wunde offen, blutet sie oder kehrt die Veränderung zurück, ist eine Kontrolle nötig; Umfang und Zahl der Sitzungen plant der Arzt"
+			},
+			"tr": {
+				"what": "Büyük iyi huylu bir cilt lezyonunun koterle, elektrik akımıyla veya soğukla işlemden geçirilmesi",
+				"how": "Lokal anesteziden sonra büyük lezyon katman katman ya da birkaç dondurma ve çözülme döngüsüyle, çevresinden bir pay alınarak işlenir; küçük lezyona göre daha uzun sürer, bazen ikinci seans gerekir",
+				"when": "Büyük siğiller ve keratozlar, ayak tabanında kalınlaşmış nasırlı deri, saçlı deri ve sırtta zedelenip kanayan lezyonlar",
+				"prep": "Hazırlık gerekmez; taban lezyonlarında hekim birkaç gün önceden nasırlı deriyi yumuşatmayı önerebilir, bol ayakkabı ve giysiyle gelinir, yara bandı getirilir, pıhtılaşma bozuklukları bildirilir",
+				"abnormal": "Geniş bölge daha yavaş iyileşir: önce sulanır, sonra sert bir kabuk oluşur, ardından açık ya da koyu bir iz, bazen küçük bir nedbe kalabilir. Yara kapanmaz, kanar ya da lezyon geri gelirse kontrol gerekir; işlemin genişliğini ve seans sayısını hekim planlar"
+			}
+		}
+	},
+	{
+		"slug": "cauterization-electrocauterization-or-cryocauterization-of-benign-skin-lesions-medium",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Прижигание, электрокаутеризация или криообработка доброкачественного кожного образования среднего размера",
+				"how": "Участок обезболивают местно, образование обрабатывают по всей площади и по краю электрокаутером или аппликатором с жидким азотом, иногда в два прохода; занимает несколько минут, место закрывают повязкой",
+				"when": "Себорейные кератомы, фибромы и вирусные бородавки среднего размера, элементы, которые трутся об одежду, мешают бритью или повторно воспаляются",
+				"prep": "Особой подготовки не нужно; накануне не наносить на участок кремы и кислоты, надеть одежду, которая не трёт обработанное место, сказать врачу о лекарствах и о ранее проведённом лечении этого же образования",
+				"abnormal": "После обработки обычны жжение, отёк и пузырь, затем образуется корочка, которую нельзя сдирать: она отходит сама, а кожа под ней восстанавливается неделями. Нарастающая боль, гнойное отделяемое или температура — повод показаться врачу, как и возврат образования на прежнем месте"
+			},
+			"en": {
+				"what": "Cauterisation, electrocauterisation or freezing of a medium-sized benign skin lesion",
+				"how": "The area is numbed locally and the lesion is treated over its whole surface and border with an electrocautery tip or a liquid nitrogen applicator, sometimes in two passes; it takes a few minutes and the site is covered with a dressing",
+				"when": "Medium seborrhoeic keratoses, fibromas and viral warts, lesions that rub against clothing, get in the way of shaving or become inflamed again and again",
+				"prep": "No special preparation; do not use creams or acid products on the area the day before, wear clothes that will not rub the treated spot, and tell the doctor about medicines and any earlier treatment of the same lesion",
+				"abnormal": "Burning, swelling and a blister are usual afterwards, followed by a crust that must not be picked off: it separates by itself and the skin underneath recovers over weeks. Increasing pain, purulent discharge or fever are reasons to see the doctor, as is a lesion reappearing in the same place"
+			},
+			"sr": {
+				"what": "Kauterizacija, elektrokauterizacija ili smrzavanje benigne promjene kože srednje veličine",
+				"how": "Predio se lokalno obezboli, a promjena se obradi cijelom površinom i po rubu elektrokauterom ili aplikatorom sa tečnim azotom, ponekad u dva prolaza; traje nekoliko minuta, a mjesto se prekrije oblogom",
+				"when": "Seboroične keratoze, fibromi i virusne bradavice srednje veličine, promjene koje se taru o odjeću, smetaju pri brijanju ili se ponavljano upale",
+				"prep": "Posebna priprema nije potrebna; dan ranije na predio ne stavljati kreme i kiseline, obući odjeću koja ne tare obrađeno mjesto i reći ljekaru za lijekove i ranije liječenje iste promjene",
+				"abnormal": "Poslije obrade su uobičajeni peckanje, otok i mjehur, a zatim nastaje krasta koju ne treba skidati: otpada sama, a koža ispod nje se obnavlja sedmicama. Pojačan bol, gnojav iscjedak ili povišena temperatura razlog su za pregled kod ljekara, kao i povratak promjene na istom mjestu"
+			},
+			"de": {
+				"what": "Verschorfung, Elektrokauterisation oder Vereisung einer mittelgroßen gutartigen Hautveränderung",
+				"how": "Die Stelle wird örtlich betäubt und die Veränderung mit der Kauterspitze oder einem Applikator mit flüssigem Stickstoff auf der ganzen Fläche und am Rand behandelt, manchmal in zwei Durchgängen; das dauert wenige Minuten, danach kommt ein Verband darauf",
+				"when": "Mittelgroße seborrhoische Keratosen, Fibrome und Viruswarzen, Veränderungen, die an Kleidung reiben, beim Rasieren stören oder sich immer wieder entzünden",
+				"prep": "Keine besondere Vorbereitung; am Vortag keine Cremes und Säurepräparate auf die Stelle auftragen, Kleidung tragen, die nicht daran reibt, und Medikamente sowie frühere Behandlungen derselben Veränderung angeben",
+				"abnormal": "Brennen, Schwellung und eine Blase sind danach üblich, anschließend bildet sich eine Kruste, die nicht abgekratzt werden darf: sie löst sich von selbst, die Haut darunter erholt sich über Wochen. Zunehmender Schmerz, eitriges Sekret oder Fieber sind Gründe für einen Arztbesuch, ebenso eine an derselben Stelle wiederkehrende Veränderung"
+			},
+			"tr": {
+				"what": "Orta boyutlu iyi huylu bir cilt lezyonunun koterle, elektrokoterle veya dondurularak işlemden geçirilmesi",
+				"how": "Bölge bölgesel olarak uyuşturulur, lezyon tüm yüzeyi ve kenarı boyunca koter ucu ya da sıvı azot aplikatörüyle, bazen iki geçişte işlenir; birkaç dakika sürer ve bölge örtüyle kapatılır",
+				"when": "Orta boy seboreik keratozlar, fibromlar ve virüs siğilleri, giysiye sürten, tıraşta engel olan ya da tekrar tekrar iltihaplanan lezyonlar",
+				"prep": "Özel hazırlık gerekmez; bir gün önce bölgeye krem ve asit içeren ürünler sürülmez, işlem yerine sürtmeyen giysi giyilir, ilaçlar ve aynı lezyona daha önce uygulanan tedaviler hekime söylenir",
+				"abnormal": "İşlemden sonra yanma, şişlik ve bül olağandır, ardından koparılmaması gereken bir kabuk oluşur: kendiliğinden kalkar, altındaki cilt haftalar içinde yenilenir. Artan ağrı, iltihaplı akıntı veya ateş hekime başvurmayı gerektirir; lezyonun aynı yerde yeniden çıkması da öyledir"
+			}
+		}
+	},
+	{
+		"slug": "cauterization-electrocauterization-or-cryocauterization-of-benign-skin-lesions-multiple",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Обработка нескольких доброкачественных образований кожи прижиганием, током или холодом за один визит",
+				"how": "Врач отмечает элементы, обезболивает участки по мере необходимости и обрабатывает их поочерёдно; длительность зависит от числа элементов, при большом количестве часть оставляют на следующий визит",
+				"when": "Множественные папилломы на шее и в складках кожи, рассыпанные бородавки, контагиозный моллюск у детей и взрослых, многочисленные себорейные кератомы",
+				"prep": "Подготовки не нужно; не выдавливать и не срезать элементы заранее, надеть одежду без тугих резинок поверх обрабатываемых мест, сказать врачу, если элементы появляются снова и снова, и о болезнях, ослабляющих иммунитет",
+				"abnormal": "Каждый обработанный элемент проходит один и тот же путь: корочка, затем розовое пятно, и при большом числе элементов заживают они не одновременно. Появление новых элементов рядом обычно для вирусных и возрастных высыпаний и не означает, что процедура сделана плохо; время повторного визита назначает врач"
+			},
+			"en": {
+				"what": "Treatment of several benign skin lesions with cautery, current or cold during one visit",
+				"how": "The doctor marks the lesions, numbs the areas as needed and treats them one after another; the time depends on how many there are, and when there are very many some are left for the next visit",
+				"when": "Multiple skin tags on the neck and in skin folds, scattered warts, molluscum contagiosum in children and adults, numerous seborrhoeic keratoses",
+				"prep": "No preparation; do not squeeze or cut the lesions beforehand, wear clothes without tight elastic over the treated areas, tell the doctor if the lesions keep coming back and about conditions that weaken immunity",
+				"abnormal": "Each treated lesion goes the same way: a crust, then a pink mark, and with many lesions they do not heal at the same pace. New lesions appearing nearby are common with viral and age-related skin changes and do not mean the procedure was done badly; the doctor sets the timing of the next visit"
+			},
+			"sr": {
+				"what": "Obrada više benignih promjena kože kauterizacijom, strujom ili hladnoćom tokom jednog dolaska",
+				"how": "Ljekar obilježi promjene, po potrebi obezboli predjele i obrađuje ih jednu za drugom; trajanje zavisi od broja promjena, a kada ih je mnogo dio se ostavlja za sljedeći dolazak",
+				"when": "Brojni papilomi na vratu i u pregibima kože, rasute bradavice, moluske kod djece i odraslih, mnogobrojne seboroične keratoze",
+				"prep": "Priprema nije potrebna; promjene ne istiskivati i ne rezati unaprijed, obući odjeću bez uskih lastiša preko obrađenih mjesta, reći ljekaru ako se promjene stalno vraćaju i za bolesti koje slabe imunitet",
+				"abnormal": "Svaka obrađena promjena prolazi isti put: krasta, pa ružičasta mrlja, a kada ih je mnogo ne zarastaju sve istim tempom. Pojava novih promjena u blizini uobičajena je kod virusnih i staračkih promjena kože i ne znači da je zahvat loše urađen; vrijeme sljedećeg dolaska određuje ljekar"
+			},
+			"de": {
+				"what": "Behandlung mehrerer gutartiger Hautveränderungen mit Verschorfung, Strom oder Kälte in einem Termin",
+				"how": "Der Arzt markiert die Veränderungen, betäubt die Stellen nach Bedarf und behandelt sie nacheinander; die Dauer richtet sich nach der Anzahl, bei sehr vielen bleibt ein Teil für den nächsten Termin",
+				"when": "Zahlreiche Stielwarzen an Hals und in Hautfalten, verstreute Warzen, Dellwarzen bei Kindern und Erwachsenen, viele seborrhoische Keratosen",
+				"prep": "Keine Vorbereitung; die Veränderungen vorher nicht ausdrücken oder abschneiden, Kleidung ohne enge Gummizüge über den behandelten Stellen tragen, dem Arzt sagen, wenn die Veränderungen immer wiederkommen, und Erkrankungen mit geschwächter Abwehr angeben",
+				"abnormal": "Jede behandelte Stelle durchläuft denselben Weg: Kruste, dann rosafarbener Fleck, bei vielen Stellen heilen sie nicht gleichzeitig. Neue Veränderungen in der Nachbarschaft sind bei viralen und altersbedingten Hautveränderungen üblich und bedeuten nicht, dass der Eingriff schlecht war; den Zeitpunkt des nächsten Termins legt der Arzt fest"
+			},
+			"tr": {
+				"what": "Birden fazla iyi huylu cilt lezyonunun tek görüşmede koterle, elektrik akımıyla veya soğukla işlemden geçirilmesi",
+				"how": "Hekim lezyonları işaretler, gerektiği kadar uyuşturur ve sırayla işler; süre lezyon sayısına bağlıdır, çok sayıda olduğunda bir bölümü sonraki görüşmeye bırakılır",
+				"when": "Boyunda ve kıvrım bölgelerinde çok sayıda deri eti, dağınık siğiller, çocuk ve erişkinlerde molluskum, çok sayıda seboreik keratoz",
+				"prep": "Hazırlık gerekmez; lezyonlar önceden sıkılmaz ve kesilmez, işlem görecek yerlerin üzerine dar lastikli giysi giyilmez, lezyonların sürekli tekrarlaması ve bağışıklığı zayıflatan hastalıklar hekime bildirilir",
+				"abnormal": "İşlem gören her lezyon aynı yolu izler: kabuk, ardından pembe iz; sayı fazlaysa hepsi aynı anda iyileşmez. Yakınında yeni lezyonların çıkması virüse ve yaşa bağlı cilt değişikliklerinde olağandır ve işlemin kötü yapıldığı anlamına gelmez; sonraki görüşmenin zamanını hekim belirler"
+			}
+		}
+	},
+	{
+		"slug": "cauterization-electrocauterization-or-cryocauterization-of-benign-skin-lesions-small",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Разрушение мелкого кожного образования прижиганием, электрическим током или холодом без разреза",
+				"how": "Кожу обрабатывают, при необходимости обезболивают местно, затем элемент прижигают электродом или обрабатывают жидким азотом в несколько коротких циклов; на мелкий элемент уходит пара минут, шов не нужен",
+				"when": "Папилломы, мелкие бородавки, единичные себорейные кератомы, мелкие сосудистые элементы, шероховатые ороговевшие очаги на открытых участках кожи, за которыми наблюдает дерматолог",
+				"prep": "Подготовки нет; сначала дерматолог осматривает образование, в том числе дерматоскопом, заранее не заклеивать и не срезать элемент, сказать о склонности к рубцам, аллергии и приёме разжижающих кровь препаратов",
+				"abnormal": "На месте обработки образуется корочка, которая отходит сама, а под ней остаётся розовое пятно, бледнеющее месяцами. Если элемент вырос снова, долго не заживает или меняет вид, его нужно показать врачу: прижигание не оставляет материала для исследования, поэтому при сомнениях врач выбирает иссечение"
+			},
+			"en": {
+				"what": "Destruction of a small skin lesion by cautery, electric current or cold, without cutting",
+				"how": "The skin is cleaned and numbed locally if needed, then the lesion is burned with an electrode or treated with liquid nitrogen in a few short cycles; a small lesion takes a couple of minutes and no stitches are needed",
+				"when": "Skin tags, small warts, single seborrhoeic keratoses, tiny vascular spots and rough sun-damaged patches on exposed skin that a dermatologist is following",
+				"prep": "No preparation; the dermatologist examines the lesion first, including with a dermatoscope, do not tape or cut the lesion beforehand, and mention a tendency to scarring, allergies and blood-thinning medicines",
+				"abnormal": "A crust forms at the treated spot, separates on its own and leaves a pink mark that fades over months. If the lesion regrows, fails to heal or changes in appearance, it should be shown to a doctor: cautery leaves no specimen for examination, so when there is any doubt the doctor chooses excision instead"
+			},
+			"sr": {
+				"what": "Razaranje sitne promjene na koži kauterizacijom, električnom strujom ili hladnoćom, bez reza",
+				"how": "Koža se očisti i po potrebi lokalno obezboli, a promjena se spali elektrodom ili obradi tečnim azotom u nekoliko kratkih ciklusa; za sitnu promjenu treba par minuta i šav nije potreban",
+				"when": "Papilomi, sitne bradavice, pojedinačne seboroične keratoze, sitne krvne promjene i hrapava rožnata žarišta na koži izloženoj suncu koja prati dermatolog",
+				"prep": "Priprema nije potrebna; dermatolog najprije pregleda promjenu, i dermoskopom, promjenu ne treba unaprijed prelijepiti ni rezati, a treba reći za sklonost ožiljcima, alergije i lijekove za razrjeđivanje krvi",
+				"abnormal": "Na obrađenom mjestu nastaje krasta koja sama otpadne, a ispod nje ostaje ružičasta mrlja koja blijedi mjesecima. Ako se promjena vrati, dugo ne zarasta ili mijenja izgled, treba je pokazati ljekaru: kauterizacija ne ostavlja materijal za pregled, pa kod sumnje ljekar bira eksciziju"
+			},
+			"de": {
+				"what": "Zerstörung einer kleinen Hautveränderung durch Verschorfung, elektrischen Strom oder Kälte, ohne Schnitt",
+				"how": "Die Haut wird gereinigt und bei Bedarf örtlich betäubt, dann wird die Veränderung mit einer Elektrode verschorft oder in wenigen kurzen Zyklen mit flüssigem Stickstoff behandelt; bei einer kleinen Läsion dauert das ein paar Minuten, eine Naht entfällt",
+				"when": "Stielwarzen, kleine Warzen, einzelne seborrhoische Keratosen, kleine Gefäßflecken und raue verhornte Stellen an sonnenbelichteter Haut, die der Hautarzt beobachtet",
+				"prep": "Keine Vorbereitung; der Hautarzt betrachtet die Veränderung zuerst, auch mit dem Dermatoskop, sie vorher nicht abkleben oder abschneiden, und Neigung zu Narben, Allergien sowie Blutverdünner angeben",
+				"abnormal": "An der behandelten Stelle bildet sich eine Kruste, die von selbst abfällt und einen rosafarbenen Fleck hinterlässt, der über Monate verblasst. Wächst die Veränderung nach, heilt sie nicht ab oder ändert sie ihr Aussehen, gehört sie zum Arzt: die Verschorfung hinterlässt kein Material für die Untersuchung, weshalb der Arzt im Zweifel die Exzision wählt"
+			},
+			"tr": {
+				"what": "Küçük bir cilt lezyonunun kesi yapılmadan koterle, elektrik akımıyla veya soğukla yok edilmesi",
+				"how": "Cilt temizlenir, gerekirse bölgesel uyuşturma yapılır, lezyon elektrotla yakılır ya da sıvı azotla birkaç kısa döngüde dondurulur; küçük lezyon birkaç dakika sürer ve dikiş gerekmez",
+				"when": "Deri etleri, küçük siğiller, tek tük seboreik keratozlar, ufak damar lekeleri ve dermatoloğun izlediği güneş gören pürtüklü alanlar",
+				"prep": "Hazırlık gerekmez; dermatolog lezyonu önce dermatoskopla da inceler, lezyon önceden bantlanmaz veya kesilmez, iz bırakma eğilimi, alerjiler ve kan sulandırıcı ilaçlar bildirilir",
+				"abnormal": "İşlem yerinde kabuk oluşur, kendiliğinden kalkar ve altında aylar içinde soluklaşan pembe bir iz kalır. Lezyon yeniden çıkar, uzun süre iyileşmez veya görünümü değişirse hekime gösterilmelidir: koterizasyon inceleme için materyal bırakmaz, bu nedenle kuşku varsa hekim eksizyonu tercih eder"
+			}
+		}
+	},
+	{
+		"slug": "cleansing-enema",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Введение жидкости в прямую кишку для опорожнения нижних отделов кишечника",
+				"how": "Пациент ложится на левый бок с подтянутыми коленями, медсестра вводит смазанный наконечник и медленно вливает тёплую воду или готовый раствор, затем жидкость удерживают несколько минут и опорожняют кишечник; вместе с ожиданием уходит около получаса",
+				"when": "Подготовка к эндоскопии, рентгеновским исследованиям, операции или родам, длительная задержка стула и каловый завал, подготовка к вмешательствам на прямой кишке — по назначению врача",
+				"prep": "Перед процедурой сходить помочиться, надеть свободную одежду и взять сменное бельё, накануне придерживаться назначенной врачом диеты, сказать о геморрое, трещинах, операциях на кишечнике, беременности и о сильной боли в животе",
+				"abnormal": "В течение часа после процедуры возможны позывы, урчание и слабые спазмы, затем они проходят. Сильная боль в животе, кровь в стуле, выраженная слабость, головокружение или отсутствие стула после клизмы — повод сразу сказать медперсоналу; повторять клизму дома без назначения врача не следует"
+			},
+			"en": {
+				"what": "Introduction of fluid into the rectum to empty the lower part of the bowel",
+				"how": "The patient lies on the left side with knees drawn up, a lubricated nozzle is inserted and warm water or a ready-made solution is run in slowly, the fluid is held for a few minutes and the bowel is then emptied; about half an hour including the waiting",
+				"when": "Preparation for endoscopy, X-ray studies, surgery or childbirth, prolonged absence of stool and impacted stool, preparation for procedures on the rectum — as prescribed by a doctor",
+				"prep": "Empty the bladder beforehand, wear loose clothing and bring a change of underwear, follow the diet prescribed for the day before, and mention haemorrhoids, fissures, bowel surgery, pregnancy and severe abdominal pain",
+				"abnormal": "Urge, rumbling and mild cramps are possible during the first hour and then settle. Severe abdominal pain, blood in the stool, marked weakness, dizziness or no bowel movement afterwards should be reported to the staff at once; the enema should not be repeated at home without a doctor's instruction"
+			},
+			"sr": {
+				"what": "Unošenje tečnosti u završno crijevo radi pražnjenja donjih dijelova crijeva",
+				"how": "Pacijent leži na lijevom boku sa privučenim koljenima, sestra uvodi podmazan nastavak i polako ulijeva mlaku vodu ili gotov rastvor, zatim se tečnost zadrži nekoliko minuta i crijevo se isprazni; sa čekanjem traje oko pola sata",
+				"when": "Priprema za endoskopiju, rendgenske preglede, operaciju ili porođaj, dugotrajan zastoj stolice i nakupljena stolica, priprema za zahvate na završnom crijevu — po nalogu ljekara",
+				"prep": "Prije procedure otići do toaleta, obući široku odjeću i ponijeti rezervni veš, dan ranije se držati ishrane koju je ljekar odredio, reći za hemoroide, fisure, operacije crijeva, trudnoću i za jak bol u stomaku",
+				"abnormal": "Tokom sat vremena poslije procedure mogući su nagon, krčanje i blagi grčevi, koji zatim prolaze. Jak bol u stomaku, krv u stolici, izražena slabost, vrtoglavica ili izostanak stolice poslije klizme razlog su da se odmah obavijesti osoblje; klizmu ne treba ponavljati kod kuće bez naloga ljekara"
+			},
+			"de": {
+				"what": "Einbringen von Flüssigkeit in den Enddarm, um die unteren Darmabschnitte zu entleeren",
+				"how": "Der Patient liegt auf der linken Seite mit angezogenen Knien, die Pflegekraft führt ein gleitfähiges Ansatzstück ein und lässt langsam warmes Wasser oder eine fertige Lösung einlaufen, danach wird die Flüssigkeit einige Minuten gehalten und der Darm entleert; mit Wartezeit etwa eine halbe Stunde",
+				"when": "Vorbereitung auf Endoskopie, Röntgenuntersuchungen, Operation oder Geburt, längeres Ausbleiben des Stuhlgangs und Stuhlverhalt, Vorbereitung auf Eingriffe am Enddarm — auf ärztliche Anordnung",
+				"prep": "Vorher die Blase entleeren, weite Kleidung tragen und Wechselwäsche mitbringen, am Vortag die ärztlich verordnete Kost einhalten, Hämorrhoiden, Fissuren, Darmoperationen, eine Schwangerschaft und starke Bauchschmerzen angeben",
+				"abnormal": "In der ersten Stunde danach sind Stuhldrang, Darmgeräusche und leichte Krämpfe möglich und klingen wieder ab. Starke Bauchschmerzen, Blut im Stuhl, ausgeprägte Schwäche, Schwindel oder ein ausbleibender Stuhlgang sollten dem Personal sofort gemeldet werden; zu Hause sollte der Einlauf ohne ärztliche Anordnung nicht wiederholt werden"
+			},
+			"tr": {
+				"what": "Kalın bağırsağın son bölümünü boşaltmak için makattan sıvı verilmesi",
+				"how": "Hasta dizleri karnına çekili şekilde sol yanına yatar, hemşire kayganlaştırılmış ucu yerleştirip ılık suyu veya hazır çözeltiyi yavaşça verir, sıvı birkaç dakika tutulduktan sonra bağırsak boşaltılır; bekleme ile birlikte yaklaşık yarım saat sürer",
+				"when": "Endoskopi, röntgen incelemeleri, ameliyat veya doğum öncesi hazırlık, uzun süren kabızlık ve birikmiş dışkı, makat bölgesindeki işlemlere hazırlık — hekim isteğiyle",
+				"prep": "İşlemden önce tuvalete gidilir, bol giysi giyilir ve yedek iç çamaşırı getirilir, bir gün önce hekimin önerdiği beslenmeye uyulur, hemoroit, fissür, bağırsak ameliyatları, gebelik ve şiddetli karın ağrısı bildirilir",
+				"abnormal": "İşlemden sonraki bir saat içinde sıkışma hissi, bağırsak sesleri ve hafif kramplar olabilir, sonra geçer. Şiddetli karın ağrısı, dışkıda kan, belirgin halsizlik, baş dönmesi veya lavman sonrası hiç dışkılamanın olmaması hemen ekibe bildirilir; lavman hekim önerisi olmadan evde tekrarlanmamalıdır"
+			}
+		}
+	},
+	{
+		"slug": "complicated-wound-examination-and-dressing",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Расширенный осмотр и перевязка раны со сложным течением — с полостями, омертвевшими тканями, дренажом или признаками инфекции",
+				"how": "Повязку снимают, рану и её карманы промывают, убирают налёт и нежизнеспособные ткани, при необходимости берут мазок на посев, промывают или подтягивают дренаж и накладывают многослойное покрытие; занимает заметно больше времени, чем обычная перевязка, при болезненности используют местное обезболивание",
+				"when": "Нагноившиеся и инфицированные раны, раны после вскрытия абсцесса и с оставленным дренажом, расхождение краёв послеоперационной раны, пролежни, трофические язвы и раны при диабете, укушенные и сильно загрязнённые раны",
+				"prep": "Подготовка не нужна; повязку не мочить и не снимать самостоятельно, взять выписку, результаты посевов и список лекарств, при выраженной боли заранее обсудить с врачом обезболивание перед перевязкой",
+				"abnormal": "При благоприятном течении отделяемого становится меньше, дно раны очищается и появляется здоровая грануляционная ткань. Лихорадка, распространяющееся вокруг раны покраснение, резкая боль, обильное или зловонное отделяемое — повод прийти раньше назначенного дня; частоту перевязок, взятие посева и необходимость антибиотика определяет врач"
+			},
+			"en": {
+				"what": "Extended review and dressing of a difficult wound — one with pockets, dead tissue, a drain or signs of infection",
+				"how": "The dressing is removed, the wound and its pockets are irrigated, slough and non-viable tissue are cleared, a swab is taken if needed, a drain is flushed or shortened and a multi-layer dressing is applied; it takes noticeably longer than a routine dressing, with local anaesthesia when painful",
+				"when": "Suppurating and infected wounds, wounds after abscess drainage and with a drain in place, separated surgical wounds, pressure sores, leg ulcers and wounds in diabetes, bites and heavily contaminated wounds",
+				"prep": "No preparation; do not wet the dressing or remove it yourself, bring the discharge letter, swab results and a list of medicines, and agree on pain relief before the change if the wound is very painful",
+				"abnormal": "When healing goes well the discharge lessens, the wound base cleans up and healthy granulation tissue appears. Fever, spreading redness around the wound, severe pain, heavy or foul-smelling discharge are reasons to come earlier than planned; the doctor decides on the frequency of dressings, swabs and any antibiotic"
+			},
+			"sr": {
+				"what": "Prošireni pregled i previjanje rane sa složenim tokom — sa džepovima, mrtvim tkivom, drenom ili znacima infekcije",
+				"how": "Zavoj se skida, rana i njeni džepovi se ispiraju, uklanjaju se naslage i neživo tkivo, po potrebi se uzima bris za kulturu, dren se ispira ili povlači, a zatim se postavlja višeslojna obloga; traje osjetno duže od uobičajenog previjanja, uz lokalno obezboljavanje kada je bolno",
+				"when": "Zagnojene i inficirane rane, rane poslije otvaranja apscesa i one sa ostavljenim drenom, razilaženje ivica hirurške rane, dekubitusi, potkoljenične ulceracije i rane kod dijabetesa, ujedne i jako prljave rane",
+				"prep": "Priprema nije potrebna; zavoj ne kvasiti i ne skidati sami, ponijeti otpusnu listu, nalaze briseva i spisak lijekova, a kod jakog bola unaprijed sa ljekarom dogovoriti obezboljavanje prije previjanja",
+				"abnormal": "Kada rana ide na bolje, iscjedak slabi, dno se čisti i pojavljuje se zdravo granulaciono tkivo. Povišena temperatura, crvenilo koje se širi oko rane, jak bol, obilan ili smrdljiv iscjedak razlog su za raniji dolazak; koliko često se previja, kada se uzima bris i da li treba antibiotik odlučuje ljekar"
+			},
+			"de": {
+				"what": "Erweiterte Kontrolle und Verbandwechsel bei einer schwierig heilenden Wunde — mit Taschen, abgestorbenem Gewebe, Drainage oder Infektzeichen",
+				"how": "Der Verband wird abgenommen, Wunde und Wundtaschen werden gespült, Beläge und abgestorbenes Gewebe entfernt, bei Bedarf ein Abstrich genommen, die Drainage gespült oder gekürzt und eine mehrschichtige Auflage angelegt; das dauert deutlich länger als ein einfacher Verbandwechsel, bei Schmerzen mit örtlicher Betäubung",
+				"when": "Eitrige und infizierte Wunden, Wunden nach Abszessspaltung und mit liegender Drainage, auseinandergewichene Operationswunden, Druckgeschwüre, Unterschenkelgeschwüre und Wunden bei Diabetes, Biss- und stark verschmutzte Wunden",
+				"prep": "Keine Vorbereitung; den Verband nicht nass machen und nicht selbst abnehmen, Entlassungsbrief, Abstrichbefunde und Medikamentenliste mitbringen und bei starken Schmerzen vorab eine Schmerzbehandlung vor dem Wechsel besprechen",
+				"abnormal": "Bei günstigem Verlauf lässt das Sekret nach, der Wundgrund reinigt sich und gesundes Granulationsgewebe entsteht. Fieber, sich ausbreitende Rötung um die Wunde, starke Schmerzen, reichliches oder übelriechendes Sekret sind Gründe, früher als geplant zu kommen; Häufigkeit der Wechsel, Abstriche und ein Antibiotikum legt der Arzt fest"
+			},
+			"tr": {
+				"what": "Zor iyileşen bir yaranın — ceplerin, ölü dokunun, dren ya da enfeksiyon belirtilerinin olduğu — geniş kontrolü ve pansumanı",
+				"how": "Pansuman açılır, yara ve cepleri yıkanır, ölü doku ve örtükler alınır, gerekirse kültür için sürüntü alınır, dren yıkanır ya da geri çekilir ve çok katlı örtü uygulanır; sıradan pansumandan belirgin şekilde uzun sürer, ağrılıysa bölgesel uyuşturma yapılır",
+				"when": "İltihaplanmış ve enfekte yaralar, apse boşaltımı sonrası ve dreni duran yaralar, ameliyat yarasının kenarlarının ayrılması, bası yaraları, bacak ülserleri ve diyabette görülen yaralar, ısırık ve çok kirli yaralar",
+				"prep": "Hazırlık gerekmez; pansuman ıslatılmaz ve kendi başına açılmaz, çıkış epikrizi, kültür sonuçları ve ilaç listesi getirilir, ağrı şiddetliyse pansuman öncesi ağrı kontrolü hekimle önceden konuşulur",
+				"abnormal": "Yara iyi gidiyorsa akıntı azalır, yara tabanı temizlenir ve sağlıklı granülasyon dokusu belirir. Ateş, yara çevresinde yayılan kızarıklık, şiddetli ağrı, bol veya kötü kokulu akıntı planlanan günden önce başvuru nedenidir; pansuman sıklığına, kültür alınmasına ve antibiyotik gerekip gerekmediğine hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "dxa-bone-densitometry",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Измерение минеральной плотности костей рентгеновским методом с двумя уровнями энергии, обычно в поясничном отделе позвоночника и в бедре",
+				"how": "Пациент лежит одетым на столе, сканирующая рука проходит над поясницей и тазобедренным суставом без прикосновения, аппарат рассчитывает плотность кости; исследование безболезненно, занимает около четверти часа, доза облучения очень мала",
+				"when": "Оценка состояния костей при факторах риска остеопороза — менопауза, длительный приём глюкокортикоидов, перелом при небольшой травме, низкий вес, курение, остеопороз у родителей, а также контроль плотности в динамике",
+				"prep": "В день исследования не принимать препараты кальция, прийти в одежде без молний, пуговиц и металлических деталей, снять украшения, предупредить о недавнем исследовании с барием или контрастом и о возможной беременности",
+				"abnormal": "Плотность кости сравнивают с эталонными показателями и с прошлым исследованием того же прибора, поэтому контроль лучше проходить на том же аппарате. Снижение плотности может быть связано с возрастом, гормональными изменениями, нехваткой витамина D, длительным лечением или другими болезнями; результат оценивает врач вместе с анализами и историей переломов"
+			},
+			"en": {
+				"what": "Measurement of bone mineral density with X-rays at two energy levels, usually at the lumbar spine and the hip",
+				"how": "The patient lies dressed on the table while the scanning arm passes over the lower back and hip without touching, and the device calculates bone density; painless, about fifteen minutes, with a very low radiation dose",
+				"when": "Assessment of the bones when risk factors for osteoporosis are present — menopause, long-term corticosteroid treatment, a fracture after minor trauma, low body weight, smoking, osteoporosis in the parents — and follow-up of density over time",
+				"prep": "Do not take calcium supplements on the day of the scan, wear clothing without zips, buttons or metal parts, remove jewellery, and report recent barium or contrast studies and any possibility of pregnancy",
+				"abnormal": "Bone density is compared with reference values and with the previous scan from the same machine, so follow-up is best done on the same device. Reduced density may be linked to age, hormonal changes, vitamin D deficiency, long-term treatment or other conditions; the doctor interprets the result together with blood tests and fracture history"
+			},
+			"sr": {
+				"what": "Mjerenje mineralne gustine kostiju rendgenskom metodom sa dva nivoa energije, najčešće na slabinskom dijelu kičme i na kuku",
+				"how": "Pacijent obučen leži na stolu, pokretni dio aparata prolazi iznad slabina i kuka bez dodira, a uređaj računa gustinu kosti; pregled je bezbolan, traje petnaestak minuta, a doza zračenja je vrlo mala",
+				"when": "Procjena stanja kostiju kod faktora rizika za osteoporozu — menopauza, duža terapija kortikosteroidima, prelom pri maloj povredi, mala tjelesna masa, pušenje, osteoporoza kod roditelja — i praćenje gustine tokom vremena",
+				"prep": "Na dan pregleda ne uzimati preparate kalcijuma, doći u odjeći bez rajsferšlusa, dugmadi i metalnih dijelova, skinuti nakit, najaviti skorašnji pregled sa barijumom ili kontrastom i mogućnost trudnoće",
+				"abnormal": "Gustina kosti poredi se sa referentnim vrijednostima i sa ranijim nalazom istog aparata, pa je kontrolu bolje raditi na istom uređaju. Smanjena gustina može biti povezana sa godinama, hormonskim promjenama, manjkom vitamina D, dugotrajnom terapijom ili drugim bolestima; nalaz tumači ljekar zajedno sa analizama i podacima o prelomima"
+			},
+			"de": {
+				"what": "Messung der Knochendichte mit Röntgenstrahlen zweier Energiestufen, meist an der Lendenwirbelsäule und der Hüfte",
+				"how": "Der Patient liegt bekleidet auf dem Tisch, der Messarm fährt berührungslos über Lende und Hüfte, das Gerät berechnet die Knochendichte; die Untersuchung ist schmerzfrei, dauert etwa eine Viertelstunde und die Strahlendosis ist sehr gering",
+				"when": "Beurteilung der Knochen bei Risikofaktoren für Osteoporose — Wechseljahre, längere Kortisontherapie, Bruch nach geringem Anstoß, niedriges Körpergewicht, Rauchen, Osteoporose bei den Eltern — sowie Verlaufskontrolle der Dichte",
+				"prep": "Am Untersuchungstag keine Kalziumpräparate einnehmen, Kleidung ohne Reißverschlüsse, Knöpfe und Metallteile tragen, Schmuck ablegen, kürzlich erfolgte Untersuchungen mit Barium oder Kontrastmittel sowie eine mögliche Schwangerschaft angeben",
+				"abnormal": "Die Knochendichte wird mit Referenzwerten und mit dem Vorbefund desselben Geräts verglichen, Kontrollen erfolgen daher am besten am gleichen Gerät. Eine verminderte Dichte kann mit dem Alter, hormonellen Veränderungen, Vitamin-D-Mangel, längerer Therapie oder anderen Erkrankungen zusammenhängen; den Befund beurteilt der Arzt zusammen mit Laborwerten und der Bruchvorgeschichte"
+			},
+			"tr": {
+				"what": "Kemik mineral yoğunluğunun iki enerji düzeyli röntgen yöntemiyle, genellikle bel omurları ve kalçada ölçülmesi",
+				"how": "Hasta giysileriyle masada yatar, tarayıcı kol bele ve kalçaya değmeden geçer, cihaz kemik yoğunluğunu hesaplar; inceleme ağrısızdır, on beş dakika kadar sürer ve ışın dozu çok düşüktür",
+				"when": "Osteoporoz risk etkenlerinde kemik durumunun değerlendirilmesi — menopoz, uzun süreli kortizon tedavisi, küçük travmayla kırık, düşük kilo, sigara, ailede osteoporoz — ve yoğunluğun zaman içinde izlenmesi",
+				"prep": "İnceleme günü kalsiyum ilaçları alınmaz, fermuarsız, düğmesiz ve metalsiz giysiyle gelinir, takılar çıkarılır, yakın zamanda baryumlu veya kontrastlı tetkik yapıldıysa ve gebelik olasılığı varsa bildirilir",
+				"abnormal": "Kemik yoğunluğu referans değerlerle ve aynı cihazın önceki ölçümüyle karşılaştırılır, bu yüzden kontroller aynı cihazda yapılmalıdır. Yoğunluğun azalması yaş, hormonal değişiklikler, D vitamini eksikliği, uzun süreli tedaviler veya başka hastalıklarla ilişkili olabilir; sonucu hekim tahliller ve kırık öyküsüyle birlikte değerlendirir"
+			}
+		}
+	},
+	{
+		"slug": "esophagogastroduodenoscopy-with-injection-hemostasis",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Гастроскопия, во время которой источник кровотечения в пищеводе, желудке или двенадцатиперстной кишке обкалывают раствором, чтобы остановить кровь",
+				"how": "Через рот вводят гибкий эндоскоп, находят источник кровотечения, через рабочий канал подводят тонкую иглу и вводят раствор в ткань вокруг него, при необходимости добавляют клипсу или прижигание; чаще всего выполняется срочно, с седацией и наблюдением за дыханием и давлением",
+				"when": "Рвота кровью или чёрный стул, кровотечение из язвы желудка и двенадцатиперстной кишки, из разрывов слизистой пищевода, эрозий или сосудистых образований, повторное кровотечение после ранее выполненной остановки",
+				"prep": "При плановом исследовании не есть шесть-восемь часов и не пить за два-четыре часа; в неотложной ситуации подготовку организует бригада, обязательно сообщить о разжижающих кровь препаратах, болезнях печени и сердца, аллергиях и прошлых наркозах",
+				"abnormal": "После вмешательства пациента наблюдают, назначают режим питания и лекарства, при необходимости эндоскопию повторяют. Повторная рвота с кровью, чёрный стул, слабость, головокружение или боль в животе требуют немедленного обращения; причину кровотечения и дальнейшее лечение определяет врач"
+			},
+			"en": {
+				"what": "A gastroscopy during which the bleeding point in the oesophagus, stomach or duodenum is injected with a solution to stop the bleeding",
+				"how": "A flexible endoscope is passed through the mouth, the bleeding source is located, a fine needle is advanced through the working channel and solution is injected into the surrounding tissue, with clips or cautery added if needed; usually an emergency procedure under sedation with monitoring of breathing and circulation",
+				"when": "Vomiting blood or black stools, bleeding from stomach and duodenal ulcers, from tears in the oesophageal lining, from erosions or vascular lesions, and rebleeding after an earlier treatment",
+				"prep": "For a planned examination do not eat for six to eight hours and do not drink for two to four hours; in an emergency the team arranges the preparation, and blood thinners, liver and heart disease, allergies and previous anaesthesia must be reported",
+				"abnormal": "Afterwards the patient is observed, diet and medicines are prescribed and the endoscopy is repeated if needed. Renewed vomiting of blood, black stools, weakness, dizziness or abdominal pain call for immediate medical help; the cause of the bleeding and further treatment are determined by the doctor"
+			},
+			"sr": {
+				"what": "Gastroskopija tokom koje se mjesto krvarenja u jednjaku, želucu ili dvanaestopalačnom crijevu obode rastvorom da bi se krvarenje zaustavilo",
+				"how": "Kroz usta se uvodi savitljivi endoskop, pronalazi se izvor krvarenja, kroz radni kanal se dovodi tanka igla i rastvor se ubrizgava u tkivo oko njega, po potrebi se dodaju klipsa ili termička koagulacija; najčešće se radi hitno, uz sedaciju i praćenje disanja i pritiska",
+				"when": "Povraćanje krvi ili crna stolica, krvarenje iz čira želuca i dvanaestopalačnog crijeva, iz raspuklina sluznice jednjaka, erozija ili krvnih sudova, ponovno krvarenje poslije ranije zaustavljanja",
+				"prep": "Za planirani pregled ne jesti šest do osam sati i ne piti dva do četiri sata prije; u hitnom slučaju pripremu vodi ekipa, a obavezno se navode lijekovi za razrjeđivanje krvi, bolesti jetre i srca, alergije i ranije anestezije",
+				"abnormal": "Poslije zahvata pacijent se prati, određuju se način ishrane i terapija, a po potrebi se endoskopija ponavlja. Ponovno povraćanje krvi, crna stolica, slabost, vrtoglavica ili bol u stomaku traže hitno javljanje; uzrok krvarenja i dalje liječenje određuje ljekar"
+			},
+			"de": {
+				"what": "Eine Magenspiegelung, bei der die Blutungsquelle in Speiseröhre, Magen oder Zwölffingerdarm mit einer Lösung umspritzt wird, um die Blutung zu stillen",
+				"how": "Ein flexibles Endoskop wird über den Mund eingeführt, die Blutungsquelle aufgesucht, über den Arbeitskanal eine dünne Nadel vorgeschoben und die Lösung in das umgebende Gewebe gespritzt, bei Bedarf ergänzt durch Clips oder Verödung; meist ein Noteingriff unter Sedierung mit Überwachung von Atmung und Kreislauf",
+				"when": "Bluterbrechen oder schwarzer Stuhl, Blutung aus Magen- und Zwölffingerdarmgeschwüren, aus Schleimhauteinrissen der Speiseröhre, aus Erosionen oder Gefäßveränderungen, erneute Blutung nach vorheriger Stillung",
+				"prep": "Bei geplanter Untersuchung sechs bis acht Stunden nichts essen und zwei bis vier Stunden nichts trinken; im Notfall bestimmt das Team die Vorbereitung, Blutverdünner, Leber- und Herzerkrankungen, Allergien und frühere Narkosen müssen angegeben werden",
+				"abnormal": "Nach dem Eingriff wird der Patient überwacht, Kostaufbau und Medikamente werden festgelegt und die Spiegelung bei Bedarf wiederholt. Erneutes Bluterbrechen, schwarzer Stuhl, Schwäche, Schwindel oder Bauchschmerzen erfordern sofortige ärztliche Hilfe; Ursache der Blutung und weitere Behandlung bestimmt der Arzt"
+			},
+			"tr": {
+				"what": "Yemek borusu, mide veya onikiparmak bağırsağındaki kanama odağının çevresine kanamayı durdurmak için solüsyon verilen mide endoskopisi",
+				"how": "Ağızdan esnek endoskop girilir, kanama odağı bulunur, çalışma kanalından ince iğne ilerletilerek çevresindeki dokuya solüsyon enjekte edilir, gerekirse klips veya koterizasyon eklenir; çoğunlukla acil olarak, sedasyon ile solunum ve tansiyon takibi altında yapılır",
+				"when": "Kan kusma veya siyah dışkı, mide ve onikiparmak bağırsağı ülserinden, yemek borusu mukoza yırtıklarından, erozyonlardan veya damar oluşumlarından kanama, önceki durdurma sonrası yeniden kanama",
+				"prep": "Planlı incelemede altı sekiz saat yemek yenmez, iki dört saat sıvı alınmaz; acil durumda hazırlığı ekip yürütür, kan sulandırıcı ilaçlar, karaciğer ve kalp hastalıkları, alerjiler ve geçmiş anesteziler mutlaka bildirilir",
+				"abnormal": "İşlemden sonra hasta izlenir, beslenme düzeni ve ilaçlar belirlenir, gerekirse endoskopi tekrarlanır. Yeniden kan kusma, siyah dışkı, halsizlik, baş dönmesi veya karın ağrısı acil başvuru gerektirir; kanamanın nedenine ve sonraki tedaviye hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "excision-and-direct-suture-of-benign-skin-lesions",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Удаление доброкачественного кожного образования скальпелем с последующим сшиванием краёв раны",
+				"how": "Под местной анестезией образование вырезают веретеновидным разрезом вместе с полоской окружающей кожи, края сближают и ушивают, накладывают повязку; обычно от двадцати до сорока минут, домой в тот же день, удалённую ткань направляют на гистологическое исследование",
+				"when": "Родинки и другие образования, которые растут, травмируются одеждой или бритвой, мешают и повторно воспаляются, случаи, когда нужен именно гистологический ответ, и косметические показания",
+				"prep": "Сказать о разжижающих кровь препаратах, аллергии на местные анестетики, склонности к грубым и келоидным рубцам и о болезнях, замедляющих заживление, не отменяя лечение самостоятельно; на этот день не планировать спорт, бассейн и море",
+				"abnormal": "Шов снимают через срок, который называет хирург: он зависит от участка тела и натяжения кожи, а рубец бледнеет месяцами. Заключение о строении удалённой ткани даёт врач-патолог, дальнейшую тактику — лечащий врач; кровотечение, расхождение краёв, покраснение или отделяемое требуют более раннего осмотра"
+			},
+			"en": {
+				"what": "Removal of a benign skin lesion with a scalpel followed by suturing of the wound edges",
+				"how": "Under local anaesthesia the lesion is cut out in an ellipse together with a rim of surrounding skin, the edges are brought together and stitched and a dressing is applied; usually twenty to forty minutes, home the same day, and the tissue is sent for histological examination",
+				"when": "Moles and other lesions that grow, are caught by clothing or a razor, cause discomfort or become inflamed repeatedly, cases where a histology report is needed, and cosmetic reasons",
+				"prep": "Report blood thinners, allergy to local anaesthetics, a tendency to thick or keloid scars and conditions that slow healing, without stopping any treatment on your own; do not plan sport, swimming pool or sea for that day",
+				"abnormal": "Stitches are removed after the interval named by the surgeon, which depends on the body area and skin tension, and the scar fades over months. The pathologist reports on the structure of the removed tissue and the treating doctor decides on next steps; bleeding, gaping edges, redness or discharge call for an earlier review"
+			},
+			"sr": {
+				"what": "Uklanjanje benigne promjene kože skalpelom uz šivenje ivica rane",
+				"how": "U lokalnoj anesteziji promjena se izrezuje vretenastim rezom zajedno sa pojasom okolne kože, ivice se približe i ušiju, a rana se previje; obično traje dvadesetak do četrdesetak minuta, kući se ide istog dana, a uklonjeno tkivo se šalje na histološki pregled",
+				"when": "Mladeži i druge promjene koje rastu, koje odjeća ili brijanje povređuju, koje smetaju i ponavljano se upale, situacije kada je potreban histološki nalaz i estetski razlozi",
+				"prep": "Navesti lijekove za razrjeđivanje krvi, alergiju na lokalne anestetike, sklonost zadebljalim i keloidnim ožiljcima i bolesti koje usporavaju zarastanje, bez samostalnog prekidanja terapije; za taj dan ne planirati sport, bazen i more",
+				"abnormal": "Konci se skidaju poslije roka koji odredi hirurg jer zavisi od predjela tijela i zategnutosti kože, a ožiljak blijedi mjesecima. Nalaz o građi uklonjenog tkiva daje ljekar patolog, a dalji postupak određuje ljekar koji vodi liječenje; krvarenje, razilaženje ivica, crvenilo ili iscjedak traže raniji pregled"
+			},
+			"de": {
+				"what": "Entfernung einer gutartigen Hautveränderung mit dem Skalpell und anschließende Naht der Wundränder",
+				"how": "In örtlicher Betäubung wird die Veränderung spindelförmig mit einem Saum gesunder Haut herausgeschnitten, die Ränder werden angenähert und vernäht, dann folgt ein Verband; meist zwanzig bis vierzig Minuten, am selben Tag nach Hause, das Gewebe geht zur histologischen Untersuchung",
+				"when": "Muttermale und andere Veränderungen, die wachsen, durch Kleidung oder Rasur verletzt werden, stören oder sich wiederholt entzünden, Fälle, in denen ein histologischer Befund gebraucht wird, und ästhetische Gründe",
+				"prep": "Blutverdünner, Allergien auf örtliche Betäubungsmittel, Neigung zu wulstigen und keloidalen Narben sowie Erkrankungen mit verzögerter Heilung angeben, ohne die Therapie eigenmächtig abzusetzen; für diesen Tag keinen Sport, kein Schwimmbad und kein Meer planen",
+				"abnormal": "Die Fäden werden nach der vom Chirurgen genannten Zeit gezogen, die von Körperregion und Hautspannung abhängt, und die Narbe verblasst über Monate. Den Befund über den Gewebeaufbau erstellt der Pathologe, das weitere Vorgehen legt der behandelnde Arzt fest; Blutung, klaffende Ränder, Rötung oder Sekret erfordern eine frühere Kontrolle"
+			},
+			"tr": {
+				"what": "İyi huylu bir cilt lezyonunun bistüriyle çıkarılması ve yara kenarlarının dikilmesi",
+				"how": "Lokal anestezi altında lezyon, çevresindeki bir şerit sağlam deriyle birlikte mekik şeklinde çıkarılır, kenarlar yaklaştırılıp dikilir ve pansuman yapılır; genellikle yirmi kırk dakika sürer, aynı gün eve dönülür, çıkarılan doku patolojiye gönderilir",
+				"when": "Büyüyen, giysi veya tıraşla zedelenen, rahatsızlık veren ve tekrar tekrar iltihaplanan benler ve diğer lezyonlar, patoloji sonucunun gerektiği durumlar ve estetik nedenler",
+				"prep": "Kan sulandırıcı ilaçlar, lokal anestezik alerjisi, kalın ve keloid iz bırakma eğilimi ve iyileşmeyi yavaşlatan hastalıklar bildirilir, tedavi kendi başına kesilmez; o güne spor, havuz ve deniz planlanmaz",
+				"abnormal": "Dikişler cerrahın belirttiği sürede alınır, bu süre bölgeye ve deri gerginliğine bağlıdır, iz aylar içinde soluklaşır. Çıkarılan dokunun yapısını patoloji hekimi bildirir, sonraki adımı tedaviyi yürüten hekim belirler; kanama, kenarların ayrılması, kızarıklık veya akıntı daha erken kontrol gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "excision-of-small-benign-tumor-scars-fibromas-or-cysts",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Удаление небольших плотных образований кожи и подкожной клетчатки — рубцовых, фиброзных и кистозных",
+				"how": "Участок обезболивают, через короткий разрез уплотнение выделяют и убирают вместе с капсулой или рубцовой тканью, полость ушивают послойно и закрывают повязкой; чаще около получаса, амбулаторно",
+				"when": "Болезненный или цепляющийся рубец, растущая фиброма, повторно воспаляющаяся киста, уплотнение, мешающее движению или трущееся об одежду и обувь, необходимость уточнить строение ткани",
+				"prep": "Достаточно осмотра хирурга, иногда с ультразвуком; сказать о разжижающих кровь препаратах, аллергиях, сахарном диабете и прежних операциях на этом месте, в день процедуры вымыть участок и не наносить крем",
+				"abnormal": "Удалённую ткань обычно отправляют на гистологию, заключение по ней даёт врач-патолог. На месте плотного рубца или кисты может остаться уплотнение, которое со временем размягчается; если образование появляется снова, растёт или рана долго не заживает, нужен осмотр оперировавшего хирурга"
+			},
+			"en": {
+				"what": "Removal of small firm lesions of the skin and subcutaneous tissue — scars, fibromas and cysts",
+				"how": "The area is numbed, the lump is freed through a short incision and taken out together with its capsule or scar tissue, the cavity is closed in layers and dressed; usually about half an hour as an outpatient procedure",
+				"when": "A painful or catching scar, a growing fibroma, a repeatedly inflamed cyst, a lump that restricts movement or rubs against clothes and shoes, and the need to clarify the structure of the tissue",
+				"prep": "An examination by the surgeon and sometimes an ultrasound are enough; report blood thinners, allergies, diabetes and previous operations at the site, wash the area on the day and do not apply cream",
+				"abnormal": "The removed tissue is usually sent for histology and the pathologist issues the report. A firmness may remain where a dense scar or cyst was and softens over time; if the lesion returns, grows or the wound is slow to heal, the operating surgeon should review it"
+			},
+			"sr": {
+				"what": "Uklanjanje manjih čvrstih promjena kože i potkožnog tkiva — ožiljnih, fibroznih i cističnih",
+				"how": "Predio se anestezira, kroz kratak rez se zadebljanje oslobodi i izvadi zajedno sa čahurom ili ožiljnim tkivom, šupljina se ušije u slojevima i previje; najčešće traje oko pola sata, ambulantno",
+				"when": "Bolan ožiljak ili onaj koji zapinje, fibrom koji raste, cista koja se ponavljano upali, zadebljanje koje smeta pri pokretu ili se tare o odjeću i obuću, potreba da se razjasni građa tkiva",
+				"prep": "Dovoljan je pregled hirurga, ponekad i ultrazvuk; navesti lijekove za razrjeđivanje krvi, alergije, šećernu bolest i ranije operacije na tom mjestu, na dan zahvata oprati predio i ne mazati kremu",
+				"abnormal": "Uklonjeno tkivo se najčešće šalje na histologiju, a nalaz daje ljekar patolog. Na mjestu čvrstog ožiljka ili ciste može ostati zadebljanje koje vremenom omekša; ako se promjena ponovo javi, raste ili rana dugo ne zarasta, potreban je pregled hirurga koji je operisao"
+			},
+			"de": {
+				"what": "Entfernung kleiner derber Veränderungen von Haut und Unterhaut — Narben, Fibrome und Zysten",
+				"how": "Die Stelle wird betäubt, die Verhärtung über einen kurzen Schnitt freigelegt und samt Kapsel oder Narbengewebe entfernt, der Hohlraum schichtweise vernäht und verbunden; meist etwa eine halbe Stunde, ambulant",
+				"when": "Schmerzhafte oder hängenbleibende Narbe, wachsendes Fibrom, wiederholt entzündete Zyste, eine Verhärtung, die bei Bewegung stört oder an Kleidung und Schuhen reibt, sowie der Wunsch nach Klärung des Gewebeaufbaus",
+				"prep": "Meist genügt die Untersuchung beim Chirurgen, manchmal ergänzt durch Ultraschall; Blutverdünner, Allergien, Diabetes und frühere Eingriffe an dieser Stelle angeben, am Tag des Eingriffs die Stelle waschen und keine Creme auftragen",
+				"abnormal": "Das entfernte Gewebe geht meist zur Histologie, den Befund erstellt der Pathologe. An der Stelle einer derben Narbe oder Zyste kann eine Verhärtung bleiben, die mit der Zeit weicher wird; kehrt die Veränderung zurück, wächst sie oder heilt die Wunde lange nicht, ist eine Kontrolle beim operierenden Chirurgen nötig"
+			},
+			"tr": {
+				"what": "Deri ve deri altındaki küçük sert oluşumların — skar dokusu, fibrom ve kistlerin — çıkarılması",
+				"how": "Bölge uyuşturulur, kısa bir kesiden sertlik serbestleştirilip kapsülü ya da skar dokusuyla birlikte alınır, boşluk katlar hâlinde dikilir ve pansuman yapılır; çoğunlukla yarım saat kadar sürer, ayaktan yapılır",
+				"when": "Ağrıyan veya takılan skar, büyüyen fibrom, tekrar tekrar iltihaplanan kist, harekette rahatsızlık veren ya da giysi ve ayakkabıya sürten sertlik, doku yapısının aydınlatılması ihtiyacı",
+				"prep": "Cerrah muayenesi, bazen ultrason yeterlidir; kan sulandırıcı ilaçlar, alerjiler, şeker hastalığı ve o bölgedeki önceki ameliyatlar bildirilir, işlem günü bölge yıkanır ve krem sürülmez",
+				"abnormal": "Çıkarılan doku genellikle patolojiye gönderilir, raporu patoloji hekimi verir. Sert skar veya kistin yerinde zamanla yumuşayan bir sertlik kalabilir; oluşum yeniden ortaya çıkar, büyür ya da yara uzun süre kapanmazsa ameliyatı yapan cerrah görmelidir"
+			}
+		}
+	},
+	{
+		"slug": "excisional-biopsy-of-skin-subcutaneous-tissue-or-mucosa",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Взятие материала для исследования путём удаления образования целиком с прямым швом — на коже, в подкожной клетчатке или на слизистой",
+				"how": "Участок обезболивают местно, образование иссекают полностью с небольшим запасом здоровой ткани, края раны ушивают, материал маркируют и отправляют патологу; обычно до получаса, на слизистой рта используют рассасывающийся шовный материал",
+				"when": "Образование неясной природы, изменившаяся или растущая родинка, узелок под кожей, стойкие изменения слизистой рта или губы, очаг, подозрительный при осмотре и дерматоскопии, необходимость точного ответа о строении ткани",
+				"prep": "Специальной подготовки нет; сказать о разжижающих кровь препаратах и аллергиях, не наносить на участок мази и косметику, перед биопсией слизистой рта почистить зубы и не есть непосредственно перед приёмом, взять прежние снимки и заключения",
+				"abnormal": "Исследование описывает строение ткани, в том числе признаки злокачественности, заключение даёт врач-патолог, а лечебную тактику определяет лечащий врач. Иногда по результату нужны дообследование или повторное вмешательство с более широким краем; срок готовности ответа называет клиника"
+			},
+			"en": {
+				"what": "Obtaining material for examination by removing the lesion in one piece with a direct suture — in the skin, subcutaneous tissue or mucosa",
+				"how": "The area is numbed locally, the lesion is excised whole with a narrow rim of healthy tissue, the edges are stitched and the labelled specimen is sent to the pathologist; usually up to half an hour, with absorbable stitches on the oral mucosa",
+				"when": "A lesion of unclear nature, a changing or growing mole, a nodule under the skin, persistent changes of the oral or lip mucosa, a focus that looks suspicious on examination and dermoscopy, and the need for a definite answer about the tissue structure",
+				"prep": "No special preparation; report blood thinners and allergies, do not apply ointments or cosmetics to the area, brush your teeth and do not eat immediately before a biopsy of the oral mucosa, and bring previous reports and images",
+				"abnormal": "The examination describes the structure of the tissue, including signs of malignancy, the pathologist issues the report and the treating doctor decides on management. Sometimes further tests or a repeat procedure with a wider margin are needed; the clinic states when the report will be ready"
+			},
+			"sr": {
+				"what": "Uzimanje materijala za pregled tako što se promjena vadi u cjelini, uz direktan šav — na koži, u potkožnom tkivu ili na sluznici",
+				"how": "Predio se lokalno anestezira, promjena se izrezuje cijela sa uskim pojasom zdravog tkiva, ivice se ušiju, a označen materijal se šalje patologu; obično traje do pola sata, a na sluznici usta koristi se konac koji se sam razgrađuje",
+				"when": "Promjena nejasne prirode, mladež koji se mijenja ili raste, čvorić pod kožom, uporne promjene sluznice usta ili usne, žarište sumnjivo pri pregledu i dermoskopiji, potreba za tačnim odgovorom o građi tkiva",
+				"prep": "Posebna priprema nije potrebna; navesti lijekove za razrjeđivanje krvi i alergije, na predio ne stavljati masti i kozmetiku, prije biopsije sluznice usta oprati zube i ne jesti neposredno prije dolaska, ponijeti ranije nalaze i snimke",
+				"abnormal": "Pregled opisuje građu tkiva, uključujući i znake zloćudnosti, nalaz daje ljekar patolog, a dalje liječenje određuje ljekar koji vodi pacijenta. Ponekad su po nalazu potrebni dopunska obrada ili ponovni zahvat sa širim rubom; rok za nalaz kaže ustanova"
+			},
+			"de": {
+				"what": "Gewinnung von Untersuchungsmaterial durch vollständige Entfernung der Veränderung mit direkter Naht — an Haut, Unterhaut oder Schleimhaut",
+				"how": "Die Stelle wird örtlich betäubt, die Veränderung vollständig mit einem schmalen Saum gesunden Gewebes entfernt, die Ränder vernäht und das beschriftete Material zum Pathologen geschickt; meist bis zu einer halben Stunde, an der Mundschleimhaut wird selbstauflösendes Nahtmaterial verwendet",
+				"when": "Eine Veränderung unklarer Natur, ein sich verändernder oder wachsender Leberfleck, ein Knoten unter der Haut, anhaltende Veränderungen der Mund- oder Lippenschleimhaut, ein bei Untersuchung und Dermatoskopie auffälliger Herd und der Bedarf an einer genauen Aussage über den Gewebeaufbau",
+				"prep": "Keine besondere Vorbereitung; Blutverdünner und Allergien angeben, keine Salben oder Kosmetik auf die Stelle auftragen, vor einer Biopsie der Mundschleimhaut die Zähne putzen und unmittelbar davor nichts essen, frühere Befunde und Aufnahmen mitbringen",
+				"abnormal": "Die Untersuchung beschreibt den Gewebeaufbau einschließlich Zeichen von Bösartigkeit, den Befund erstellt der Pathologe, über die Behandlung entscheidet der behandelnde Arzt. Manchmal sind danach weitere Abklärung oder ein erneuter Eingriff mit größerem Rand nötig; wann der Befund vorliegt, sagt die Einrichtung"
+			},
+			"tr": {
+				"what": "Lezyonun tümüyle çıkarılıp doğrudan dikilmesiyle inceleme materyali alınması — deride, deri altında veya mukozada",
+				"how": "Bölge lokal olarak uyuşturulur, lezyon dar bir sağlam doku şeridiyle birlikte bütün hâlinde çıkarılır, kenarlar dikilir, işaretlenen materyal patolojiye gönderilir; genellikle yarım saate kadar sürer, ağız mukozasında kendiliğinden eriyen dikiş kullanılır",
+				"when": "Niteliği belirsiz lezyon, değişen veya büyüyen ben, deri altındaki nodül, ağız veya dudak mukozasının geçmeyen değişiklikleri, muayenede ve dermoskopide şüpheli görünen odak, doku yapısı hakkında kesin yanıt ihtiyacı",
+				"prep": "Özel hazırlık gerekmez; kan sulandırıcı ilaçlar ve alerjiler bildirilir, bölgeye merhem ve kozmetik sürülmez, ağız mukozası biyopsisinden önce dişler fırçalanır ve hemen öncesinde yemek yenmez, önceki raporlar ve görüntüler getirilir",
+				"abnormal": "İnceleme, kötü huyluluk belirtileri dâhil doku yapısını tanımlar, raporu patoloji hekimi verir, tedaviyi ise hastayı izleyen hekim belirler. Sonuca göre bazen ek inceleme ya da daha geniş sınırla yeniden girişim gerekir; raporun ne zaman hazır olacağını kurum bildirir"
+			}
+		}
+	},
+	{
+		"slug": "external-cardiac-defibrillation",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Подача электрического разряда через грудную клетку, чтобы прервать угрожающее жизни нарушение ритма сердца и дать ему вернуться к упорядоченной работе",
+				"how": "На грудную клетку накладывают клеящиеся электроды или пластины, аппарат оценивает ритм и подаёт короткий разряд длительностью доли секунды; при остановке кровообращения это делает бригада на фоне реанимационных мероприятий, при плановом восстановлении ритма — в клинике под кратковременной седацией и наблюдением",
+				"when": "Фибрилляция желудочков и желудочковая тахикардия без пульса, внезапная потеря сознания без дыхания и пульса, а также отдельные устойчивые нарушения ритма при тяжёлом состоянии пациента — решение принимает врач по ЭКГ",
+				"prep": "В экстренной ситуации подготовки нет, помощь начинают немедленно; при плановом восстановлении ритма врач заранее оценивает ЭКГ и свёртывание крови, назначает время без еды и разбирает принимаемые препараты",
+				"abnormal": "После восстановления ритма пациента наблюдают, записывают ЭКГ, берут анализы и ищут причину эпизода. В первые дни возможны покраснение кожи под электродами и болезненность мышц груди; дальнейшее лечение и вопрос об имплантируемом устройстве решает кардиолог"
+			},
+			"en": {
+				"what": "Delivery of an electric shock through the chest wall to interrupt a life-threatening heart rhythm disturbance and let the heart resume an orderly rhythm",
+				"how": "Adhesive pads or paddles are placed on the chest, the device assesses the rhythm and delivers a shock lasting a fraction of a second; in cardiac arrest this is done by the team alongside resuscitation, while a planned restoration of rhythm is carried out in hospital under brief sedation and monitoring",
+				"when": "Ventricular fibrillation and pulseless ventricular tachycardia, sudden collapse without breathing or pulse, and certain persistent rhythm disturbances in a severely compromised patient — the doctor decides from the ECG",
+				"prep": "In an emergency there is no preparation and help starts immediately; before a planned restoration of rhythm the doctor reviews the ECG and clotting, sets the fasting time and goes through current medicines",
+				"abnormal": "After the rhythm is restored the patient is monitored, an ECG is recorded, blood tests are taken and the cause of the episode is looked for. Redness of the skin under the pads and sore chest muscles are possible in the first days; further treatment and the question of an implantable device are decided by the cardiologist"
+			},
+			"sr": {
+				"what": "Davanje električnog impulsa kroz grudni koš da bi se prekinuo po život opasan poremećaj srčanog ritma i srcu omogućio uredan rad",
+				"how": "Na grudni koš se postavljaju samoljepljive elektrode ili ploče, aparat procjenjuje ritam i isporučuje kratak impuls koji traje djelić sekunde; kod zastoja cirkulacije to radi ekipa uz mjere oživljavanja, a kod planiranog vraćanja ritma radi se u ustanovi uz kratkotrajnu sedaciju i nadzor",
+				"when": "Ventrikularna fibrilacija i ventrikularna tahikardija bez pulsa, iznenadni gubitak svijesti bez disanja i pulsa, kao i pojedini uporni poremećaji ritma kod teškog stanja pacijenta — odluku donosi ljekar na osnovu EKG-a",
+				"prep": "U hitnoj situaciji pripreme nema, pomoć počinje odmah; kod planiranog vraćanja ritma ljekar unaprijed procjenjuje EKG i zgrušavanje krvi, određuje vrijeme bez hrane i razmatra lijekove koje pacijent uzima",
+				"abnormal": "Poslije uspostavljanja ritma pacijent se prati, snima se EKG, rade se analize i traži uzrok događaja. Prvih dana su mogući crvenilo kože ispod elektroda i bolni grudni mišići; dalje liječenje i pitanje ugradivog uređaja odlučuje kardiolog"
+			},
+			"de": {
+				"what": "Abgabe eines Stromstoßes über den Brustkorb, um eine lebensbedrohliche Herzrhythmusstörung zu unterbrechen und dem Herzen einen geordneten Rhythmus zu ermöglichen",
+				"how": "Klebeelektroden oder Paddles werden auf den Brustkorb gesetzt, das Gerät beurteilt den Rhythmus und gibt einen Stromstoß ab, der den Bruchteil einer Sekunde dauert; beim Kreislaufstillstand erfolgt dies durch das Team im Rahmen der Wiederbelebung, bei geplanter Rhythmisierung in der Klinik unter kurzer Sedierung und Überwachung",
+				"when": "Kammerflimmern und pulslose Kammertachykardie, plötzliche Bewusstlosigkeit ohne Atmung und Puls sowie einzelne anhaltende Rhythmusstörungen bei schwer beeinträchtigtem Patienten — die Entscheidung trifft der Arzt anhand des EKG",
+				"prep": "Im Notfall gibt es keine Vorbereitung, die Hilfe beginnt sofort; vor einer geplanten Rhythmisierung beurteilt der Arzt vorab EKG und Gerinnung, legt die Nüchternzeit fest und bespricht die eingenommenen Medikamente",
+				"abnormal": "Nach Wiederherstellung des Rhythmus wird der Patient überwacht, ein EKG geschrieben, Blut untersucht und die Ursache des Ereignisses gesucht. Rötung der Haut unter den Elektroden und Muskelkater im Brustbereich sind in den ersten Tagen möglich; die weitere Behandlung und die Frage eines implantierbaren Geräts entscheidet der Kardiologe"
+			},
+			"tr": {
+				"what": "Yaşamı tehdit eden kalp ritim bozukluğunu sonlandırmak ve kalbin düzenli çalışmasına dönmesini sağlamak için göğüs duvarından elektrik şoku verilmesi",
+				"how": "Göğse yapışkan elektrotlar veya kaşıklar yerleştirilir, cihaz ritmi değerlendirir ve saniyenin çok kısa bir bölümü süren şoku uygular; dolaşım durmasında bunu ekip canlandırma çalışmaları eşliğinde yapar, planlı ritim düzeltmede ise kurumda kısa süreli sedasyon ve izlem altında uygulanır",
+				"when": "Ventriküler fibrilasyon ve nabızsız ventriküler taşikardi, solunum ve nabız olmadan ani bilinç kaybı, ayrıca hastanın durumu ağırken süregelen bazı ritim bozuklukları — kararı hekim EKG'ye bakarak verir",
+				"prep": "Acil durumda hazırlık yoktur, yardım hemen başlar; planlı ritim düzeltmede hekim önceden EKG ve pıhtılaşmayı değerlendirir, aç kalma süresini belirler ve kullanılan ilaçları gözden geçirir",
+				"abnormal": "Ritim döndükten sonra hasta izlenir, EKG çekilir, tahliller yapılır ve olayın nedeni araştırılır. İlk günlerde elektrot altındaki ciltte kızarıklık ve göğüs kaslarında ağrı olabilir; sonraki tedaviye ve takılabilir cihaz gerekip gerekmediğine kardiyoloji uzmanı karar verir"
+			}
+		}
+	}
+]

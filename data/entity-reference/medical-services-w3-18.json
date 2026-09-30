@@ -1,0 +1,658 @@
+[
+	{
+		"slug": "spontaneous-intracerebral-hematoma-evacuation",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Неотложная нейрохирургическая операция по удалению скопления крови, образовавшегося в веществе мозга без травмы",
+				"how": "Под общим наркозом нейрохирург через трепанационное отверстие или небольшой доступ удаляет сгусток, останавливает кровотечение и при необходимости оставляет дренаж; дальше пациент наблюдается в реанимации",
+				"when": "Подтверждённое на КТ внутримозговое кровоизлияние с большим объёмом гематомы, нарастающим сдавлением мозга или ухудшением сознания, решение принимает нейрохирург по состоянию и данным снимков",
+				"prep": "Подготовка экстренная и её проводит бригада; близким важно сообщить о принимаемых препаратах, особенно разжижающих кровь, о давлении и хронических болезнях",
+				"abnormal": "После операции восстановление идёт в реанимации и занимает длительное время, возможны слабость в конечностях, нарушения речи и глотания, объём реабилитации определяет врач. Контрольные снимки и сроки дальнейшего наблюдения назначает нейрохирург"
+			},
+			"en": {
+				"what": "An emergency neurosurgical operation to remove a collection of blood that has formed inside the brain tissue without an injury",
+				"how": "Under general anaesthesia the neurosurgeon reaches the clot through a burr hole or a small opening in the skull, removes it, stops the bleeding and may leave a drain; the patient is then monitored in intensive care",
+				"when": "Intracerebral haemorrhage confirmed on CT with a large clot, increasing pressure on the brain or deteriorating consciousness, the decision is made by the neurosurgeon based on the condition and the scans",
+				"prep": "Preparation is done by the emergency team; relatives should report the medicines taken, especially blood thinners, as well as blood pressure and chronic conditions",
+				"abnormal": "Recovery starts in intensive care and takes a long time, weakness of the limbs, speech and swallowing problems are possible, and the rehabilitation plan is set by the doctor. Follow-up scans and the schedule of further checks are set by the neurosurgeon"
+			},
+			"sr": {
+				"what": "Hitna neurohirurška operacija kojom se uklanja nakupina krvi nastala u moždanom tkivu bez povrede",
+				"how": "U opštoj anesteziji neurohirurg kroz trepanacioni otvor ili mali pristup uklanja ugrušak, zaustavlja krvarenje i po potrebi ostavlja dren; pacijent se poslije prati u jedinici intenzivne njege",
+				"when": "Na skeneru potvrđeno moždano krvarenje sa velikim ugruškom, rastućim pritiskom na mozak ili pogoršanjem svijesti, odluku donosi neurohirurg prema stanju i nalazima",
+				"prep": "Pripremu vodi hitna ekipa; porodici je važno da prijavi lijekove koje pacijent uzima, posebno one za razrjeđivanje krvi, kao i pritisak i hronične bolesti",
+				"abnormal": "Oporavak počinje u intenzivnoj njezi i traje dugo, mogući su slabost ekstremiteta, smetnje govora i gutanja, a obim rehabilitacije određuje ljekar. Kontrolne snimke i dalje praćenje zakazuje neurohirurg"
+			},
+			"de": {
+				"what": "Eine notfallmäßige neurochirurgische Operation zur Entfernung einer Blutansammlung, die ohne Verletzung im Hirngewebe entstanden ist",
+				"how": "In Vollnarkose erreicht der Neurochirurg das Gerinnsel über ein Bohrloch oder eine kleine Schädelöffnung, entfernt es, stillt die Blutung und legt bei Bedarf eine Drainage; danach wird der Patient auf der Intensivstation überwacht",
+				"when": "Im CT bestätigte Hirnblutung mit großem Gerinnsel, zunehmendem Druck auf das Gehirn oder sich verschlechterndem Bewusstsein, die Entscheidung trifft der Neurochirurg anhand von Zustand und Bildern",
+				"prep": "Die Vorbereitung übernimmt das Notfallteam; Angehörige sollten die eingenommenen Medikamente nennen, vor allem Blutverdünner, sowie Blutdruck und chronische Erkrankungen",
+				"abnormal": "Die Erholung beginnt auf der Intensivstation und dauert lange, Schwäche der Gliedmaßen sowie Sprech- und Schluckstörungen sind möglich, den Umfang der Rehabilitation legt der Arzt fest. Kontrollaufnahmen und weitere Termine bestimmt der Neurochirurg"
+			},
+			"tr": {
+				"what": "Beyin dokusu içinde travma olmadan oluşan kan birikintisinin acil olarak çıkarıldığı bir beyin cerrahisi ameliyatı",
+				"how": "Genel anestezi altında beyin cerrahı pıhtıya kafatasındaki bir delikten ya da küçük bir açıklıktan ulaşır, pıhtıyı boşaltır, kanamayı durdurur ve gerekirse dren bırakır; hasta sonrasında yoğun bakımda izlenir",
+				"when": "BT ile doğrulanmış, pıhtı hacmi büyük olan, beyne baskısı artan ya da bilinç düzeyi kötüleşen beyin içi kanama, karar hastanın durumuna ve görüntülere göre beyin cerrahı tarafından verilir",
+				"prep": "Hazırlığı acil ekip yapar; yakınlarının kullanılan ilaçları, özellikle kan sulandırıcıları, tansiyonu ve kronik hastalıkları bildirmesi önemlidir",
+				"abnormal": "İyileşme yoğun bakımda başlar ve uzun sürer, kollarda ve bacaklarda güçsüzlük, konuşma ve yutma güçlüğü görülebilir, rehabilitasyonun kapsamını hekim belirler. Kontrol görüntülemeleri ve sonraki takvimi beyin cerrahı planlar"
+			}
+		}
+	},
+	{
+		"slug": "subcutaneous-anal-fistulotomy-or-fistulectomy",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Вмешательство при поверхностном свищевом ходе, проходящем под кожей у заднего прохода, без захвата глубоких мышц",
+				"how": "Под местной или спинальной анестезией ход прослеживают зондом и рассекают по всей длине или иссекают вместе с окружающей рубцовой тканью, рану оставляют открытой заживать снизу вверх; занимает недолго, обычно в режиме одного дня",
+				"when": "Поверхностный свищ у края заднего прохода, подтекание и зуд после перенесённого гнойника, небольшой ход, подтверждённый осмотром проктолога и УЗИ",
+				"prep": "Обследование перед вмешательством и осмотр хирурга, очищение кишечника по указанию клиники, не есть перед анестезией, заранее сказать о разжижающих кровь препаратах и сахарном диабете",
+				"abnormal": "Открытая рана заживает постепенно, с умеренной болью при стуле и скудным отделяемым, нужны сидячие ванночки и перевязки по назначению. Обильное кровотечение, температура, задержка мочи или ухудшение удержания газов и стула — повод срочно связаться с хирургом"
+			},
+			"en": {
+				"what": "A procedure for a superficial fistula track that runs just under the skin next to the anus, without involving the deeper muscle",
+				"how": "Under local or spinal anaesthesia the track is followed with a probe and either laid open along its whole length or cut out together with the surrounding scar tissue, and the wound is left open to heal from the bottom up; it is short and usually done as day surgery",
+				"when": "A superficial fistula at the anal margin, leakage and itching after a previous abscess, a short track confirmed by a proctologist's examination and ultrasound",
+				"prep": "Tests before the procedure and a surgical review, bowel cleansing as instructed by the clinic, no food before anaesthesia, and telling the team in advance about blood thinners and diabetes",
+				"abnormal": "The open wound closes gradually, with moderate pain on passing stool and scant discharge, and needs sitz baths and dressings as prescribed. Heavy bleeding, fever, inability to pass urine or worsening control of gas and stool are reasons to contact the surgeon at once"
+			},
+			"sr": {
+				"what": "Zahvat kod površnog fistuloznog kanala koji ide neposredno ispod kože uz čmar, bez zahvatanja dubokog mišića",
+				"how": "U lokalnoj ili spinalnoj anesteziji kanal se prati sondom pa rasijeca cijelom dužinom ili vadi zajedno sa okolnim ožiljnim tkivom, a rana se ostavlja otvorena da zaraste od dna; traje kratko, najčešće u dnevnoj hirurgiji",
+				"when": "Površna fistula uz ivicu čmara, curenje i svrab poslije preboljelog gnojnog čvora, kratak kanal potvrđen pregledom proktologa i ultrazvukom",
+				"prep": "Nalazi prije zahvata i pregled hirurga, čišćenje crijeva po uputstvu klinike, ne jesti prije anestezije, unaprijed reći za lijekove koji razrjeđuju krv i za šećernu bolest",
+				"abnormal": "Otvorena rana se zatvara postepeno, uz umjeren bol pri stolici i oskudan iscjedak, uz sjedeće kupke i previjanje po nalogu. Obilno krvarenje, temperatura, nemogućnost mokrenja ili slabija kontrola vjetrova i stolice razlog su da se hirurg pozove odmah"
+			},
+			"de": {
+				"what": "Ein Eingriff bei einem oberflächlichen Fistelgang, der dicht unter der Haut neben dem After verläuft, ohne den tiefen Schließmuskel einzubeziehen",
+				"how": "In örtlicher oder Spinalanästhesie wird der Gang mit einer Sonde verfolgt und auf ganzer Länge gespalten oder samt umgebendem Narbengewebe entfernt, die Wunde bleibt offen und heilt vom Grund her; der Eingriff ist kurz und erfolgt meist ambulant",
+				"when": "Oberflächliche Fistel am Afterrand, Nässen und Juckreiz nach einem durchgemachten Abszess, ein kurzer Gang, der durch die proktologische Untersuchung und Ultraschall bestätigt ist",
+				"prep": "Untersuchungen vor dem Eingriff und ein chirurgisches Gespräch, Darmreinigung nach Anweisung der Klinik, nüchtern zur Anästhesie erscheinen, Blutverdünner und Diabetes vorher melden",
+				"abnormal": "Die offene Wunde schließt sich allmählich, mit mäßigen Schmerzen beim Stuhlgang und geringer Sekretion, Sitzbäder und Verbandwechsel erfolgen nach Verordnung. Starke Blutung, Fieber, Harnverhalt oder eine nachlassende Kontrolle über Winde und Stuhl sind Gründe, sofort den Chirurgen zu verständigen"
+			},
+			"tr": {
+				"what": "Makatın yanında derinin hemen altından ilerleyen, derin kası içine almayan yüzeysel fistül kanalına yönelik bir girişim",
+				"how": "Lokal ya da spinal anestezi altında kanal bir sonda ile izlenir, tüm uzunluğunca açılır veya çevresindeki nedbe dokusuyla birlikte çıkarılır, yara alttan yukarı iyileşsin diye açık bırakılır; kısa sürer ve genellikle günübirlik yapılır",
+				"when": "Makat kenarında yüzeysel fistül, geçirilmiş apse sonrası akıntı ve kaşıntı, proktoloji muayenesi ve ultrasonla doğrulanmış kısa kanal",
+				"prep": "Girişim öncesi tetkikler ve cerrah değerlendirmesi, kliniğin talimatına göre bağırsak temizliği, anesteziden önce aç kalmak, kan sulandırıcı ilaçları ve şeker hastalığını önceden bildirmek",
+				"abnormal": "Açık yara yavaş yavaş kapanır, dışkılama sırasında orta düzeyde ağrı ve az miktarda akıntı olur, oturma banyoları ve pansumanlar hekimin planına göre yapılır. Bol kanama, ateş, idrar yapamama ya da gaz ve dışkı tutmada kötüleşme durumunda cerraha hemen ulaşmak gerekir"
+			}
+		}
+	},
+	{
+		"slug": "superficial-papilloma-excision",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Удаление под местной анестезией небольшого выступающего образования кожи вместе с его основанием",
+				"how": "Кожу обрабатывают и обезболивают, образование срезают у основания или удаляют с узким ободком кожи, мелкую рану закрывают швом или повязкой; занимает несколько минут, домой в тот же день",
+				"when": "Образование цепляется за одежду и украшения, травмируется при бритье, кровоточит, меняет вид или размер, мешает косметически, требуется исследование ткани",
+				"prep": "Специальной подготовки не требуется; сказать о разжижающих кровь препаратах, аллергии на местные анестетики и склонности к грубым рубцам, планировать день без бассейна и сауны",
+				"abnormal": "Удалённую ткань обычно направляют на гистологическое исследование, его результат разбирает врач. Маленькая ранка заживает за считанные дни; если на том же месте появляется новое образование, ранка мокнет, краснеет или болит — нужен осмотр"
+			},
+			"en": {
+				"what": "Removal of a small raised skin growth together with its base under local anaesthesia",
+				"how": "The skin is disinfected and numbed, the growth is shaved off at its base or excised with a narrow rim of skin, and the small wound is closed with a stitch or covered with a dressing; it takes a few minutes and the patient goes home the same day",
+				"when": "The growth catches on clothes and jewellery, is injured during shaving, bleeds, changes in appearance or size, is cosmetically bothersome, or tissue examination is needed",
+				"prep": "No special preparation is needed; mention blood thinners, allergy to local anaesthetics and a tendency to thick scars, and plan a day without swimming pool or sauna",
+				"abnormal": "The removed tissue is usually sent for histology and the result is explained by the doctor. The small wound heals within days; if a new growth appears in the same place or the wound weeps, reddens or hurts, an examination is needed"
+			},
+			"sr": {
+				"what": "Uklanjanje male izdignute promjene na koži zajedno sa njenom osnovom u lokalnoj anesteziji",
+				"how": "Koža se dezinfikuje i anestezira, promjena se skine pri osnovi ili izvadi sa uskim rubom kože, a sitna rana se zatvori šavom ili previje; traje nekoliko minuta i kući se ide istog dana",
+				"when": "Promjena zapinje za odjeću i nakit, povređuje se pri brijanju, krvari, mijenja izgled ili veličinu, estetski smeta, potrebna je histološka provjera",
+				"prep": "Posebna priprema nije potrebna; navesti lijekove za razrjeđivanje krvi, alergiju na lokalne anestetike i sklonost zadebljalim ožiljcima, a taj dan planirati bez bazena i saune",
+				"abnormal": "Uklonjeno tkivo se najčešće šalje na histologiju, a nalaz tumači ljekar. Sitna rana zaraste za nekoliko dana; ako se na istom mjestu pojavi nova promjena ili rana vlaži, crveni i boli, potreban je pregled"
+			},
+			"de": {
+				"what": "Entfernung einer kleinen erhabenen Hautwucherung samt ihrer Basis in örtlicher Betäubung",
+				"how": "Die Haut wird desinfiziert und betäubt, die Wucherung an der Basis abgetragen oder mit einem schmalen Hautsaum ausgeschnitten, die kleine Wunde wird genäht oder verbunden; der Eingriff dauert wenige Minuten, der Heimweg erfolgt am selben Tag",
+				"when": "Die Wucherung bleibt an Kleidung und Schmuck hängen, wird beim Rasieren verletzt, blutet, verändert Aussehen oder Größe, stört kosmetisch, oder eine Gewebeuntersuchung ist erforderlich",
+				"prep": "Eine besondere Vorbereitung ist nicht nötig; Blutverdünner, eine Allergie gegen örtliche Betäubungsmittel und eine Neigung zu wulstigen Narben angeben und den Tag ohne Schwimmbad und Sauna planen",
+				"abnormal": "Das entfernte Gewebe wird in der Regel zur histologischen Untersuchung geschickt, den Befund erklärt der Arzt. Die kleine Wunde heilt innerhalb weniger Tage; entsteht an derselben Stelle eine neue Wucherung oder nässt, rötet und schmerzt die Wunde, ist eine Kontrolle nötig"
+			},
+			"tr": {
+				"what": "Deri yüzeyinde kabarık büyüyen küçük bir oluşumun tabanıyla birlikte lokal anestezi altında çıkarılması",
+				"how": "Cilt temizlenip uyuşturulur, oluşum tabanından traşlanarak ya da dar bir deri şeridiyle birlikte çıkarılır, küçük yara dikişle kapatılır veya pansuman yapılır; birkaç dakika sürer ve aynı gün eve dönülür",
+				"when": "Oluşumun giysiye ve takıya takılması, tıraş sırasında zedelenmesi, kanaması, görünümünün veya boyutunun değişmesi, kozmetik rahatsızlık, doku incelemesi gerekmesi",
+				"prep": "Özel bir hazırlık gerekmez; kan sulandırıcı ilaçlar, lokal anesteziklere alerji ve kalın iz bırakmaya yatkınlık bildirilmeli, o gün havuz ve sauna planlanmamalı",
+				"abnormal": "Çıkarılan doku genellikle patolojiye gönderilir ve sonucu hekim açıklar. Küçük yara birkaç gün içinde iyileşir; aynı yerde yeni bir oluşum çıkarsa ya da yara sulanır, kızarır ve ağrırsa muayene gerekir"
+			}
+		}
+	},
+	{
+		"slug": "suprasellar-or-parasellar-tumor-removal",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Операция по удалению объёмного образования в области турецкого седла — рядом с гипофизом, зрительными нервами и крупными сосудами основания мозга",
+				"how": "Под общим наркозом хирург подходит к образованию эндоскопически через нос и основную пазуху либо через трепанацию черепа и удаляет его под микроскопом; операция длится несколько часов, дальше реанимация и отделение",
+				"when": "Выявленное на МРТ образование этой области с выпадением полей зрения, гормональными нарушениями, упорной головной болью или ростом при наблюдении; показания определяет нейрохирург вместе с эндокринологом и офтальмологом",
+				"prep": "МРТ головного мозга, поля зрения у офтальмолога, гормональные анализы, осмотр анестезиолога, не есть перед операцией, сообщить о разжижающих кровь препаратах и принимаемых гормонах",
+				"abnormal": "Удалённая ткань идёт на гистологическое исследование, заключение даёт врач-патолог, а дальнейшую тактику — наблюдение, заместительную терапию или лучевое лечение — определяет лечащий врач. Ухудшение зрения, сильная головная боль, прозрачные выделения из носа, выраженная жажда и обильное мочеиспускание после операции требуют срочного обращения"
+			},
+			"en": {
+				"what": "An operation to remove a mass in the region of the sella turcica, next to the pituitary gland, the optic nerves and the large vessels at the base of the brain",
+				"how": "Under general anaesthesia the surgeon reaches the mass endoscopically through the nose and the sphenoid sinus or through an opening in the skull and removes it under the microscope; the operation lasts several hours and is followed by intensive care and a ward stay",
+				"when": "A mass in this region seen on MRI with loss of visual field, hormonal disturbances, persistent headache or growth during follow-up; the indication is set by the neurosurgeon together with an endocrinologist and an ophthalmologist",
+				"prep": "Brain MRI, visual field testing by an ophthalmologist, hormone tests, an anaesthesia review, no food before surgery, and reporting blood thinners and any hormone medication",
+				"abnormal": "The removed tissue is sent for histological examination, the report is issued by a pathologist, and the further plan, whether observation, hormone replacement or radiotherapy, is decided by the treating doctor. Worsening vision, severe headache, clear fluid running from the nose, intense thirst and heavy urination after surgery call for prompt medical attention"
+			},
+			"sr": {
+				"what": "Operacija kojom se uklanja tvorba u području turskog sedla, uz hipofizu, očne živce i velike krvne sudove baze mozga",
+				"how": "U opštoj anesteziji hirurg do tvorbe dolazi endoskopski kroz nos i sfenoidni sinus ili kroz otvor na lobanji i uklanja je pod mikroskopom; operacija traje nekoliko sati, a slijede intenzivna njega i odjeljenje",
+				"when": "Tvorba tog područja viđena na magnetnoj rezonanci uz ispade vidnog polja, hormonske poremećaje, uporne glavobolje ili rast tokom praćenja; indikaciju postavlja neurohirurg zajedno sa endokrinologom i oftalmologom",
+				"prep": "Magnetna rezonanca mozga, vidno polje kod oftalmologa, hormonske analize, pregled anesteziologa, ne jesti prije operacije, prijaviti lijekove za razrjeđivanje krvi i hormonsku terapiju",
+				"abnormal": "Uklonjeno tkivo ide na histološki pregled, nalaz daje ljekar patolog, a dalji plan, praćenje, nadoknadu hormona ili zračenje, određuje ljekar koji liječi. Slabljenje vida, jaka glavobolja, bistar iscjedak iz nosa, izražena žeđ i obilno mokrenje poslije operacije traže hitno javljanje"
+			},
+			"de": {
+				"what": "Eine Operation zur Entfernung einer Raumforderung in der Region der Sella turcica, neben der Hirnanhangsdrüse, den Sehnerven und den großen Gefäßen der Schädelbasis",
+				"how": "In Vollnarkose erreicht der Chirurg die Raumforderung endoskopisch über die Nase und die Keilbeinhöhle oder über eine Schädelöffnung und entfernt sie unter dem Mikroskop; die Operation dauert mehrere Stunden, danach folgen Intensivstation und Station",
+				"when": "Eine im MRT gesehene Raumforderung dieser Region mit Gesichtsfeldausfällen, Hormonstörungen, anhaltenden Kopfschmerzen oder Wachstum im Verlauf; die Indikation stellt der Neurochirurg gemeinsam mit Endokrinologe und Augenarzt",
+				"prep": "MRT des Kopfes, Gesichtsfeldprüfung beim Augenarzt, Hormonuntersuchungen, Narkosegespräch, nüchtern zur Operation erscheinen, Blutverdünner und Hormonpräparate melden",
+				"abnormal": "Das entfernte Gewebe geht zur histologischen Untersuchung, den Befund erstellt ein Pathologe, und das weitere Vorgehen, ob Beobachtung, Hormonersatz oder Bestrahlung, legt der behandelnde Arzt fest. Nachlassendes Sehvermögen, starke Kopfschmerzen, klare Flüssigkeit aus der Nase, starker Durst und häufiges Wasserlassen nach der Operation erfordern eine rasche Vorstellung"
+			},
+			"tr": {
+				"what": "Hipofiz bezi, görme sinirleri ve kafa tabanındaki büyük damarların komşuluğunda, sella bölgesinde yer alan bir kitlenin çıkarıldığı ameliyat",
+				"how": "Genel anestezi altında cerrah kitleye burundan ve sfenoid sinüsten endoskopik yolla ya da kafatasında açılan bir pencereden ulaşır ve mikroskop altında çıkarır; ameliyat birkaç saat sürer, ardından yoğun bakım ve servis izlemi gelir",
+				"when": "MR'da görülen bu bölge kitlesine görme alanı kaybı, hormon bozuklukları, inatçı baş ağrısı ya da takipte büyüme eşlik etmesi; kararı beyin cerrahı, endokrinoloji ve göz hekimiyle birlikte verir",
+				"prep": "Beyin MR'ı, göz hekiminde görme alanı testi, hormon tetkikleri, anestezi değerlendirmesi, ameliyattan önce aç kalmak, kan sulandırıcıları ve kullanılan hormon ilaçlarını bildirmek",
+				"abnormal": "Çıkarılan doku patolojik incelemeye gönderilir, raporu patoloji uzmanı verir, izlem, hormon desteği ya da ışın tedavisi gibi sonraki adımları tedaviyi yürüten hekim belirler. Ameliyattan sonra görmede bozulma, şiddetli baş ağrısı, burundan berrak sıvı gelmesi, aşırı susama ve çok idrara çıkma acil başvuru gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "surgery-for-frontobasal-injuries",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Операция при повреждении лобной области и передних отделов основания черепа, когда нарушена граница между полостью носа и полостью черепа",
+				"how": "Под общим наркозом доступ выполняют через разрез в волосистой части головы или эндоскопически через нос, удаляют осколки и нежизнеспособные ткани, закрывают дефект твёрдой мозговой оболочки собственными тканями и восстанавливают контур кости; далее наблюдение в реанимации",
+				"when": "Перелом передних отделов основания черепа с истечением прозрачной жидкости из носа, попаданием воздуха в полость черепа, повторными менингитами, вдавленными отломками лобной кости и травмой лобной пазухи",
+				"prep": "КТ головы и придаточных пазух, анализы и осмотр анестезиолога, не есть перед операцией, сообщить о разжижающих кровь препаратах; при экстренной травме подготовку ведёт бригада",
+				"abnormal": "После операции следят за тем, прекратилось ли истечение жидкости, антибиотики назначает врач; обоняние восстанавливается не всегда. Прозрачные выделения из носа, температура, скованность шеи и нарастающая головная боль — повод немедленно обратиться к врачу"
+			},
+			"en": {
+				"what": "An operation for injuries of the frontal region and the front part of the skull base, where the barrier between the nasal cavity and the inside of the skull is broken",
+				"how": "Under general anaesthesia the approach is made through an incision in the hairy scalp or endoscopically through the nose, bone fragments and damaged tissue are removed, the defect in the dura is sealed with the patient's own tissue and the bone contour is restored; monitoring in intensive care follows",
+				"when": "A fracture of the anterior skull base with clear fluid leaking from the nose, air inside the skull, repeated meningitis, depressed fragments of the frontal bone and injury of the frontal sinus",
+				"prep": "CT of the head and sinuses, blood tests and an anaesthesia review, no food before surgery, reporting blood thinners; in an emergency the preparation is handled by the team",
+				"abnormal": "After the operation the team checks whether the fluid leak has stopped and the doctor decides on antibiotics; the sense of smell does not always return. Clear discharge from the nose, fever, a stiff neck and increasing headache are reasons to seek medical help immediately"
+			},
+			"sr": {
+				"what": "Operacija kod povreda čeone regije i prednjeg dijela baze lobanje, kada je narušena granica između nosne i lobanjske šupljine",
+				"how": "U opštoj anesteziji pristupa se rezom u vlasištu ili endoskopski kroz nos, uklanjaju se koštani ulomci i oštećeno tkivo, defekt tvrde moždane opne zatvara se sopstvenim tkivom i obnavlja se obris kosti; slijedi praćenje u intenzivnoj njezi",
+				"when": "Prelom prednje baze lobanje sa curenjem bistre tečnosti iz nosa, vazduhom u lobanjskoj šupljini, ponovljenim upalama moždanih opni, utisnutim ulomcima čeone kosti i povredom čeonog sinusa",
+				"prep": "Skener glave i sinusa, analize i pregled anesteziologa, ne jesti prije operacije, prijaviti lijekove za razrjeđivanje krvi; kod hitne povrede pripremu vodi ekipa",
+				"abnormal": "Poslije operacije prati se da li je curenje tečnosti prestalo, a o antibioticima odlučuje ljekar; čulo mirisa se ne vrati uvijek. Bistar iscjedak iz nosa, temperatura, ukočen vrat i pojačana glavobolja razlog su da se ljekaru javite odmah"
+			},
+			"de": {
+				"what": "Eine Operation bei Verletzungen der Stirnregion und der vorderen Schädelbasis, bei denen die Grenze zwischen Nasenhöhle und Schädelinnerem aufgehoben ist",
+				"how": "In Vollnarkose erfolgt der Zugang über einen Schnitt in der behaarten Kopfhaut oder endoskopisch über die Nase, Knochensplitter und geschädigtes Gewebe werden entfernt, der Defekt der harten Hirnhaut wird mit körpereigenem Gewebe verschlossen und die Knochenkontur wiederhergestellt; danach folgt die Überwachung auf der Intensivstation",
+				"when": "Bruch der vorderen Schädelbasis mit klarer Flüssigkeit aus der Nase, Luft im Schädelinneren, wiederholten Hirnhautentzündungen, eingedrückten Stirnbeinfragmenten und Verletzung der Stirnhöhle",
+				"prep": "CT von Kopf und Nasennebenhöhlen, Laborwerte und Narkosegespräch, nüchtern zur Operation erscheinen, Blutverdünner melden; im Notfall übernimmt das Team die Vorbereitung",
+				"abnormal": "Nach der Operation wird kontrolliert, ob der Flüssigkeitsaustritt aufgehört hat, über Antibiotika entscheidet der Arzt; der Geruchssinn kehrt nicht immer zurück. Klarer Ausfluss aus der Nase, Fieber, Nackensteifigkeit und zunehmende Kopfschmerzen erfordern sofortige ärztliche Hilfe"
+			},
+			"tr": {
+				"what": "Alın bölgesi ve kafa tabanının ön kesimindeki yaralanmalarda, burun boşluğu ile kafa içi arasındaki sınırın bozulduğu durumlara yönelik ameliyat",
+				"how": "Genel anestezi altında saçlı deriden yapılan bir kesiyle ya da burundan endoskopik yolla girilir, kemik parçaları ve canlılığını yitirmiş doku temizlenir, beyin zarındaki açıklık hastanın kendi dokusuyla kapatılır ve kemik hattı onarılır; ardından yoğun bakımda izlem yapılır",
+				"when": "Burundan berrak sıvı gelmesi, kafa içinde hava bulunması, tekrarlayan menenjit, alın kemiğinde çökme kırığı ve frontal sinüs yaralanmasıyla giden ön kafa tabanı kırığı",
+				"prep": "Baş ve sinüs BT'si, kan tetkikleri ve anestezi değerlendirmesi, ameliyattan önce aç kalmak, kan sulandırıcıları bildirmek; acil yaralanmada hazırlığı ekip yürütür",
+				"abnormal": "Ameliyattan sonra sıvı kaçağının durup durmadığı izlenir, antibiyotik kararını hekim verir; koku duyusu her zaman geri gelmez. Burundan berrak akıntı, ateş, ense sertliği ve artan baş ağrısı durumunda hemen hekime başvurmak gerekir"
+			}
+		}
+	},
+	{
+		"slug": "surgical-treatment-of-extensive-cranio-cerebral-injuries",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Неотложное оперативное лечение тяжёлой травмы головы с внутричерепными кровоизлияниями, очагами ушиба мозга и его отёком",
+				"how": "Под общим наркозом выполняют трепанацию, удаляют кровь и нежизнеспособные ткани, обрабатывают вдавленный перелом, останавливают кровотечение, при выраженном отёке часть кости временно не возвращают на место и ставят датчик внутричерепного давления; далее реанимация, нередко с искусственной вентиляцией",
+				"when": "Тяжёлая черепно-мозговая травма с угнетением сознания, картина сдавления мозга и смещения структур на КТ, открытая травма с вдавленными отломками и ранением оболочек",
+				"prep": "Вмешательство экстренное, подготовку выполняет бригада; близким важно сообщить об обстоятельствах травмы, хронических болезнях и приёме разжижающих кровь препаратов",
+				"abnormal": "Восстановление длительное, начинается в реанимации и продолжается реабилитацией, часть нарушений может сохраняться, а при временно удалённой кости позже обсуждают пластику дефекта черепа. Сроки контрольных снимков и осмотров назначает нейрохирург"
+			},
+			"en": {
+				"what": "Emergency surgical treatment of a severe head injury with bleeding inside the skull, bruised areas of brain tissue and brain swelling",
+				"how": "Under general anaesthesia the skull is opened, blood and non-viable tissue are removed, a depressed fracture is repaired, bleeding is stopped, and if swelling is marked a piece of bone is left out for a time and a pressure sensor may be placed; intensive care follows, often with mechanical ventilation",
+				"when": "Severe head injury with a falling level of consciousness, CT showing compression of the brain and shift of midline structures, open injury with depressed fragments and torn membranes",
+				"prep": "The operation is an emergency and the team handles the preparation; relatives should report how the injury happened, chronic illnesses and any blood thinners",
+				"abnormal": "Recovery is long, begins in intensive care and continues with rehabilitation, some impairments may persist, and if a piece of bone was left out its later repair is discussed separately. Follow-up scans and appointments are scheduled by the neurosurgeon"
+			},
+			"sr": {
+				"what": "Hitno operativno zbrinjavanje teške povrede glave sa krvarenjem unutar lobanje, nagnječenjem moždanog tkiva i otokom mozga",
+				"how": "U opštoj anesteziji otvara se lobanja, uklanjaju se krv i neživo tkivo, zbrinjava se utisnuti prelom i zaustavlja krvarenje, a kod izraženog otoka dio kosti se privremeno ne vraća i može se postaviti senzor pritiska; slijedi intenzivna njega, često uz mašinsko disanje",
+				"when": "Teška kraniocerebralna povreda sa padom svijesti, nalaz pritiska na mozak i pomjeranja srednjih struktura na skeneru, otvorena povreda sa utisnutim ulomcima i ozljedom moždanih opni",
+				"prep": "Zahvat je hitan i pripremu vodi ekipa; porodici je važno da opiše okolnosti povrede, hronične bolesti i uzimanje lijekova za razrjeđivanje krvi",
+				"abnormal": "Oporavak je dug, počinje u intenzivnoj njezi i nastavlja se rehabilitacijom, dio smetnji može ostati, a ako dio kosti nije vraćen, njegova nadoknada se planira kasnije. Kontrolne snimke i preglede zakazuje neurohirurg"
+			},
+			"de": {
+				"what": "Notfallmäßige operative Versorgung einer schweren Kopfverletzung mit Blutungen im Schädelinneren, Prellungsherden des Hirngewebes und Hirnschwellung",
+				"how": "In Vollnarkose wird der Schädel eröffnet, Blut und abgestorbenes Gewebe werden entfernt, eine Impressionsfraktur versorgt und die Blutung gestillt; bei ausgeprägter Schwellung bleibt ein Knochenstück vorübergehend entfernt und es kann eine Drucksonde eingelegt werden; danach folgt die Intensivstation, oft mit Beatmung",
+				"when": "Schweres Schädel-Hirn-Trauma mit sinkender Bewusstseinslage, im CT erkennbare Hirnkompression und Mittellinienverlagerung, offene Verletzung mit eingedrückten Fragmenten und verletzten Hirnhäuten",
+				"prep": "Der Eingriff ist ein Notfall, die Vorbereitung übernimmt das Team; Angehörige sollten den Unfallhergang, chronische Erkrankungen und die Einnahme von Blutverdünnern mitteilen",
+				"abnormal": "Die Erholung ist langwierig, beginnt auf der Intensivstation und wird mit Rehabilitation fortgesetzt, ein Teil der Beeinträchtigungen kann bleiben, und wenn ein Knochenstück entfernt blieb, wird dessen späterer Ersatz gesondert besprochen. Kontrollaufnahmen und Termine legt der Neurochirurg fest"
+			},
+			"tr": {
+				"what": "Kafa içi kanama, beyin dokusunda ezilme odakları ve beyin ödemiyle seyreden ağır kafa travmasının acil cerrahi tedavisi",
+				"how": "Genel anestezi altında kafatası açılır, kan ve canlılığını yitirmiş doku boşaltılır, çökme kırığı onarılır, kanama durdurulur, ödem belirginse kemiğin bir bölümü geçici olarak yerine konmaz ve basınç ölçer yerleştirilebilir; ardından çoğu zaman solunum desteğiyle yoğun bakım izlemi gelir",
+				"when": "Bilinç düzeyi düşen ağır kafa travması, BT'de beyne bası ve orta hat kaymasının görülmesi, çökme parçaları ve zar yırtığıyla giden açık yaralanma",
+				"prep": "Girişim acildir ve hazırlığını ekip yapar; yakınlarının kaza şeklini, kronik hastalıkları ve kan sulandırıcı kullanımını bildirmesi önemlidir",
+				"abnormal": "İyileşme uzundur, yoğun bakımda başlar ve rehabilitasyonla sürer, bazı kayıplar kalıcı olabilir, kemiğin bir bölümü çıkarıldıysa yerine konması ayrıca planlanır. Kontrol görüntülemelerinin ve muayenelerin zamanını beyin cerrahı belirler"
+			}
+		}
+	},
+	{
+		"slug": "total-laparoscopic-abdominal-hysterectomy",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Удаление матки вместе с шейкой через несколько небольших проколов брюшной стенки под контролем камеры",
+				"how": "Под общим наркозом живот наполняют газом, через проколы вводят камеру и инструменты, матку отделяют от связок и сосудов и извлекают через влагалище или по частям, свод влагалища ушивают; операция занимает от полутора до трёх часов, после неё обычно несколько дней в стационаре",
+				"when": "Миома с обильными кровотечениями и давлением на соседние органы, аденомиоз с упорной болью, кровотечения, не поддающиеся другому лечению, опущение матки, предраковые изменения слизистой и шейки; показания ставит гинеколог",
+				"prep": "Обследование перед операцией, мазок и осмотр шейки, УЗИ, консультация анестезиолога, подготовка кишечника и отказ от еды по инструкции, сообщить о разжижающих кровь препаратах, заранее обсудить с врачом судьбу яичников",
+				"abnormal": "После операции месячные прекращаются и беременность становится невозможной, удалённые ткани направляют на гистологическое исследование, а сроки возвращения к нагрузкам и близости называет врач. Температура, обильные выделения с кровью, сильная боль в животе или отёк ноги — повод обратиться немедленно"
+			},
+			"en": {
+				"what": "Removal of the uterus together with the cervix through several small openings in the abdominal wall under camera guidance",
+				"how": "Under general anaesthesia the abdomen is filled with gas, a camera and instruments are passed through the openings, the uterus is freed from its ligaments and vessels and taken out through the vagina or in pieces, and the vaginal vault is closed; the operation takes about one and a half to three hours and is usually followed by a few days in hospital",
+				"when": "Fibroids with heavy bleeding and pressure on neighbouring organs, adenomyosis with persistent pain, bleeding that does not respond to other treatment, prolapse of the uterus, precancerous changes of the lining and the cervix; the indication is set by the gynaecologist",
+				"prep": "Preoperative tests, a cervical smear and examination, ultrasound, an anaesthesia review, bowel preparation and fasting as instructed, reporting blood thinners, and discussing beforehand with the doctor what happens to the ovaries",
+				"abnormal": "After the operation periods stop and pregnancy is no longer possible, the removed tissue is sent for histological examination, and the doctor states when normal activity and intimacy may resume. Fever, heavy bloody discharge, severe abdominal pain or swelling of a leg call for immediate contact"
+			},
+			"sr": {
+				"what": "Uklanjanje materice zajedno sa grlićem kroz nekoliko malih otvora na trbušnom zidu, uz kontrolu kamerom",
+				"how": "U opštoj anesteziji trbuh se ispuni gasom, kroz otvore se uvode kamera i instrumenti, materica se odvoji od veza i krvnih sudova i izvadi kroz rodnicu ili u dijelovima, a svod rodnice se ušije; operacija traje od sat i po do tri sata, a poslije nje se obično ostaje nekoliko dana u bolnici",
+				"when": "Mioma sa obilnim krvarenjem i pritiskom na susjedne organe, adenomioza sa upornim bolom, krvarenja koja ne reaguju na drugo liječenje, spuštanje materice, prekancerozne promjene sluznice i grlića; indikaciju postavlja ginekolog",
+				"prep": "Nalazi prije operacije, bris i pregled grlića, ultrazvuk, pregled anesteziologa, priprema crijeva i gladovanje po uputstvu, prijaviti lijekove za razrjeđivanje krvi i unaprijed sa ljekarom dogovoriti sudbinu jajnika",
+				"abnormal": "Poslije operacije menstruacije prestaju, a trudnoća više nije moguća, uklonjeno tkivo ide na histološki pregled, dok rokove za povratak naporima i intimnim odnosima određuje ljekar. Temperatura, obilan krvav iscjedak, jak bol u trbuhu ili otok noge razlog su da se javite odmah"
+			},
+			"de": {
+				"what": "Entfernung der Gebärmutter samt Gebärmutterhals über mehrere kleine Öffnungen in der Bauchwand unter Kamerasicht",
+				"how": "In Vollnarkose wird der Bauch mit Gas gefüllt, Kamera und Instrumente werden über die Öffnungen eingeführt, die Gebärmutter von Bändern und Gefäßen gelöst und über die Scheide oder in Teilen entfernt, danach wird der Scheidenabschluss vernäht; die Operation dauert etwa eineinhalb bis drei Stunden, anschließend folgen meist einige Tage im Krankenhaus",
+				"when": "Myome mit starken Blutungen und Druck auf Nachbarorgane, Adenomyose mit anhaltenden Schmerzen, Blutungen ohne Ansprechen auf andere Behandlung, Gebärmuttersenkung, Krebsvorstufen der Schleimhaut und des Gebärmutterhalses; die Indikation stellt der Frauenarzt",
+				"prep": "Untersuchungen vor der Operation, Abstrich und Beurteilung des Gebärmutterhalses, Ultraschall, Narkosegespräch, Darmvorbereitung und Nüchternheit nach Anweisung, Blutverdünner melden und vorab besprechen, was mit den Eierstöcken geschieht",
+				"abnormal": "Nach der Operation bleibt die Regelblutung aus und eine Schwangerschaft ist nicht mehr möglich, das entnommene Gewebe geht zur histologischen Untersuchung, und wann Belastung und Geschlechtsverkehr wieder möglich sind, sagt der Arzt. Fieber, starker blutiger Ausfluss, heftige Bauchschmerzen oder eine geschwollene Wade erfordern sofortigen Kontakt"
+			},
+			"tr": {
+				"what": "Rahmin, rahim ağzıyla birlikte karın duvarındaki birkaç küçük delikten kamera eşliğinde çıkarılması",
+				"how": "Genel anestezi altında karın gazla şişirilir, deliklerden kamera ve aletler girilir, rahim bağlarından ve damarlarından ayrılarak vajinal yoldan ya da parçalar hâlinde çıkarılır, vajen güdüğü dikilir; ameliyat yaklaşık bir buçuk ila üç saat sürer, ardından genellikle birkaç gün hastanede kalınır",
+				"when": "Bol kanama ve komşu organlara baskı yapan miyomlar, inatçı ağrıyla giden adenomiyozis, başka tedaviye yanıt vermeyen kanamalar, rahim sarkması, rahim içi zarın ve rahim ağzının kanser öncesi değişiklikleri; kararı kadın hastalıkları uzmanı verir",
+				"prep": "Ameliyat öncesi tetkikler, smear ve rahim ağzı muayenesi, ultrason, anestezi değerlendirmesi, talimata göre bağırsak hazırlığı ve açlık, kan sulandırıcıları bildirmek, yumurtalıkların akıbetini hekimle önceden konuşmak",
+				"abnormal": "Ameliyattan sonra adet görme sona erer ve gebelik mümkün olmaz, çıkarılan doku patolojik incelemeye gönderilir, işe ve cinsel yaşama dönüş zamanını hekim belirtir. Ateş, bol kanlı akıntı, şiddetli karın ağrısı ya da bacakta şişlik durumunda hemen başvurmak gerekir"
+			}
+		}
+	},
+	{
+		"slug": "tracheal-resection",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Операция, при которой суженный или повреждённый участок трахеи удаляют, а оставшиеся концы сшивают между собой",
+				"how": "Под общим наркозом через разрез на шее, а при низком расположении участка — через грудину, поражённый сегмент выделяют и удаляют, концы трахеи сближают и сшивают; операция занимает несколько часов, после неё наблюдение в реанимации и ограничение разгибания шеи",
+				"when": "Рубцовое сужение после длительной интубации или трахеостомы, опухоль стенки трахеи, повреждение после травмы, соустье между трахеей и пищеводом",
+				"prep": "Бронхоскопия и КТ грудной клетки, оценка функции дыхания, консультация анестезиолога, отказ от курения в срок, названный врачом, не есть перед операцией, сообщить о разжижающих кровь препаратах",
+				"abnormal": "В первые недели возможны осиплость, боль в горле и ограничение движений шеи, дыхание обычно становится свободнее постепенно, контрольную бронхоскопию назначает врач. Нарастающая одышка, температура, припухлость шеи с хрустом под кожей или кровь при кашле требуют немедленного обращения"
+			},
+			"en": {
+				"what": "An operation in which a narrowed or damaged segment of the windpipe is removed and the remaining ends are joined together",
+				"how": "Under general anaesthesia the segment is reached through an incision in the neck, or through the breastbone if it lies low, the affected part is freed and removed and the ends of the trachea are brought together and sutured; the operation takes several hours and is followed by intensive care monitoring and a limit on extending the neck",
+				"when": "Scar narrowing after prolonged intubation or a tracheostomy, a tumour of the tracheal wall, damage after an injury, a connection between the trachea and the oesophagus",
+				"prep": "Bronchoscopy and chest CT, assessment of breathing function, an anaesthesia review, stopping smoking for the period stated by the doctor, no food before surgery, and reporting blood thinners",
+				"abnormal": "In the first weeks hoarseness, a sore throat and limited neck movement are common, breathing usually becomes easier step by step, and a check bronchoscopy is arranged by the doctor. Increasing shortness of breath, fever, neck swelling that crackles under the skin or blood when coughing require immediate attention"
+			},
+			"sr": {
+				"what": "Operacija kojom se suženi ili oštećeni dio dušnika uklanja, a preostali krajevi spajaju međusobno",
+				"how": "U opštoj anesteziji do dušnika se dolazi rezom na vratu, a kod niže postavljenog dijela kroz grudnu kost, zahvaćeni segment se oslobodi i izvadi, a krajevi se približe i ušiju; operacija traje nekoliko sati, a slijede praćenje u intenzivnoj njezi i ograničenje zabacivanja glave",
+				"when": "Ožiljno suženje poslije duže intubacije ili traheostome, tumor zida dušnika, oštećenje nakon povrede, spoj između dušnika i jednjaka",
+				"prep": "Bronhoskopija i skener grudnog koša, procjena plućne funkcije, pregled anesteziologa, prestanak pušenja u roku koji odredi ljekar, ne jesti prije operacije, prijaviti lijekove za razrjeđivanje krvi",
+				"abnormal": "Prvih nedjelja su mogući promukao glas, bol u grlu i ograničeno pomjeranje vrata, disanje se obično postepeno olakšava, a kontrolnu bronhoskopiju zakazuje ljekar. Pojačano gušenje, temperatura, oteklina vrata sa krckanjem pod kožom ili krv pri kašlju traže hitno javljanje"
+			},
+			"de": {
+				"what": "Eine Operation, bei der ein verengter oder geschädigter Abschnitt der Luftröhre entfernt und die verbleibenden Enden miteinander vernäht werden",
+				"how": "In Vollnarkose wird der Abschnitt über einen Schnitt am Hals erreicht, bei tiefer Lage über das Brustbein, der betroffene Teil wird gelöst und entfernt und die Enden der Luftröhre werden aneinandergeführt und vernäht; die Operation dauert mehrere Stunden, danach folgen Überwachung auf der Intensivstation und eine Einschränkung der Kopfstreckung",
+				"when": "Narbige Verengung nach längerer Beatmung oder einem Luftröhrenschnitt, Tumor der Luftröhrenwand, Schaden nach einer Verletzung, eine Verbindung zwischen Luftröhre und Speiseröhre",
+				"prep": "Bronchoskopie und CT des Brustkorbs, Prüfung der Lungenfunktion, Narkosegespräch, Rauchstopp für den vom Arzt genannten Zeitraum, nüchtern zur Operation erscheinen, Blutverdünner melden",
+				"abnormal": "In den ersten Wochen sind Heiserkeit, Halsschmerzen und eine eingeschränkte Halsbeweglichkeit häufig, die Atmung wird meist schrittweise freier, eine Kontrollbronchoskopie legt der Arzt fest. Zunehmende Atemnot, Fieber, eine knisternde Schwellung am Hals oder Blut beim Husten erfordern sofortige Vorstellung"
+			},
+			"tr": {
+				"what": "Soluk borusunun daralmış ya da hasarlı bölümünün çıkarılıp kalan uçların birbirine dikildiği ameliyat",
+				"how": "Genel anestezi altında boyundaki bir kesiden, bölüm aşağıda yerleşmişse göğüs kemiğinden girilir, tutulan segment serbestleştirilip çıkarılır, soluk borusunun uçları yaklaştırılarak dikilir; ameliyat birkaç saat sürer, sonrasında yoğun bakım izlemi ve başı geriye atmama kısıtlaması gelir",
+				"when": "Uzun süreli entübasyon ya da trakeostomi sonrası nedbe darlığı, soluk borusu duvarında tümör, yaralanma sonrası hasar, soluk borusu ile yemek borusu arasında bağlantı",
+				"prep": "Bronkoskopi ve göğüs BT'si, solunum fonksiyon değerlendirmesi, anestezi görüşmesi, hekimin belirttiği süre boyunca sigarayı bırakmak, ameliyattan önce aç kalmak, kan sulandırıcıları bildirmek",
+				"abnormal": "İlk haftalarda ses kısıklığı, boğaz ağrısı ve boyun hareketlerinde kısıtlılık sık görülür, nefes alma genellikle giderek rahatlar, kontrol bronkoskopisini hekim planlar. Artan nefes darlığı, ateş, ciltte çıtırtı veren boyun şişliği ya da öksürükle kan gelmesi acil başvuru gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "treatment-of-head-lacerations-and-minor-skull-depression-fractures",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Хирургическая обработка рваной раны волосистой части головы вместе с небольшим вдавленным переломом костей черепа",
+				"how": "Под местным или общим обезболиванием волосы вокруг раны состригают, рану промывают, удаляют загрязнения и нежизнеспособные ткани, вдавленные отломки приподнимают или убирают, проверяют целость оболочек мозга и рану ушивают послойно; чаще занимает до часа",
+				"when": "Раны головы после падения, удара или дорожной травмы, загрязнённые и размозжённые раны волосистой части, выявленный на КТ небольшой вдавленный перелом без крупного кровоизлияния",
+				"prep": "Обычно вмешательство неотложное; взять снимки КТ, если их делали в другом месте, сообщить о прививке от столбняка и разжижающих кровь препаратах, не есть, если планируется общий наркоз",
+				"abnormal": "После обработки за пациентом наблюдают, чтобы не пропустить последствия сотрясения и ушиба мозга, срок снятия швов называет врач. Нарастающая головная боль, повторная рвота, сонливость, судороги, прозрачные выделения из раны или носа и температура требуют немедленного обращения"
+			},
+			"en": {
+				"what": "Surgical treatment of a torn wound of the scalp together with a small depressed fracture of the skull bones",
+				"how": "Under local or general anaesthesia the hair around the wound is clipped, the wound is rinsed, dirt and non-viable tissue are removed, depressed fragments are lifted or taken out, the membranes covering the brain are checked and the wound is closed in layers; it usually takes up to an hour",
+				"when": "Head wounds after a fall, a blow or a road accident, contaminated and crushed scalp wounds, a small depressed fracture seen on CT without a large bleed",
+				"prep": "The procedure is usually urgent; bring CT images if they were taken elsewhere, report tetanus vaccination and blood thinners, and do not eat if general anaesthesia is planned",
+				"abnormal": "After the wound is treated the patient is observed so that the effects of concussion and brain bruising are not missed, and the doctor states when the stitches come out. Increasing headache, repeated vomiting, drowsiness, seizures, clear fluid from the wound or the nose and fever require immediate attention"
+			},
+			"sr": {
+				"what": "Hirurška obrada razderane rane vlasišta zajedno sa manjim utisnutim prelomom kostiju lobanje",
+				"how": "U lokalnoj ili opštoj anesteziji kosa oko rane se skrati, rana se ispere, uklanjaju se nečistoća i neživo tkivo, utisnuti ulomci se podignu ili izvade, provjeri se cjelovitost moždanih opni i rana se ušije u slojevima; najčešće traje do sat vremena",
+				"when": "Rane glave poslije pada, udarca ili saobraćajne nezgode, prljave i zgnječene rane vlasišta, na skeneru viđen manji utisnuti prelom bez većeg krvarenja",
+				"prep": "Zahvat je obično hitan; ponijeti snimke skenera ako su rađeni drugdje, prijaviti vakcinu protiv tetanusa i lijekove za razrjeđivanje krvi, ne jesti ako je planirana opšta anestezija",
+				"abnormal": "Poslije obrade pacijent se prati da se ne previde posljedice potresa i nagnječenja mozga, a rok za skidanje konaca određuje ljekar. Pojačana glavobolja, ponovljeno povraćanje, pospanost, grčevi, bistar iscjedak iz rane ili nosa i temperatura traže hitno javljanje"
+			},
+			"de": {
+				"what": "Chirurgische Versorgung einer Risswunde der Kopfhaut zusammen mit einer kleinen Impressionsfraktur der Schädelknochen",
+				"how": "In örtlicher oder Vollnarkose werden die Haare um die Wunde gekürzt, die Wunde gespült, Schmutz und abgestorbenes Gewebe entfernt, eingedrückte Fragmente angehoben oder entnommen, die Hirnhäute auf Unversehrtheit geprüft und die Wunde schichtweise verschlossen; meist dauert das bis zu einer Stunde",
+				"when": "Kopfwunden nach Sturz, Schlag oder Verkehrsunfall, verschmutzte und gequetschte Wunden der Kopfhaut, eine im CT gesehene kleine Impressionsfraktur ohne große Blutung",
+				"prep": "Der Eingriff erfolgt meist dringlich; CT-Bilder mitbringen, falls sie andernorts angefertigt wurden, Tetanusimpfung und Blutverdünner angeben und bei geplanter Vollnarkose nüchtern bleiben",
+				"abnormal": "Nach der Versorgung wird der Patient beobachtet, damit Folgen von Gehirnerschütterung und Hirnprellung nicht übersehen werden, den Zeitpunkt der Fadenentfernung nennt der Arzt. Zunehmende Kopfschmerzen, wiederholtes Erbrechen, Schläfrigkeit, Krampfanfälle, klare Flüssigkeit aus Wunde oder Nase und Fieber erfordern sofortige Hilfe"
+			},
+			"tr": {
+				"what": "Saçlı deride oluşan yırtık yaranın ve kafatası kemiklerindeki küçük bir çökme kırığının cerrahi olarak onarılması",
+				"how": "Lokal ya da genel anestezi altında yara çevresindeki saçlar kısaltılır, yara yıkanır, kir ve canlılığını yitirmiş doku temizlenir, çökmüş parçalar kaldırılır veya çıkarılır, beyin zarlarının bütünlüğü kontrol edilir ve yara katlar hâlinde dikilir; çoğunlukla bir saate kadar sürer",
+				"when": "Düşme, darbe ya da trafik kazası sonrası baş yaraları, kirli ve ezilmiş saçlı deri yaraları, BT'de görülen ve büyük kanama eşlik etmeyen küçük çökme kırığı",
+				"prep": "Girişim genellikle acildir; başka yerde çekildiyse BT görüntülerini getirmek, tetanoz aşısını ve kan sulandırıcı ilaçları bildirmek, genel anestezi planlanıyorsa aç kalmak gerekir",
+				"abnormal": "Onarımdan sonra beyin sarsıntısı ve ezilmesinin belirtileri gözden kaçmasın diye hasta izlenir, dikişlerin alınma zamanını hekim söyler. Artan baş ağrısı, tekrarlayan kusma, uykuya eğilim, nöbet, yaradan ya da burundan berrak sıvı gelmesi ve ateş acil başvuru gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "treatment-of-larger-lacerations-and-contusions",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Хирургическая обработка обширной раны с рваными и размозжёнными краями, когда простого ушивания недостаточно",
+				"how": "Под местным, реже общим обезболиванием рану обильно промывают, иссекают нежизнеспособные края, останавливают кровотечение, проверяют, не задеты ли сухожилия, сосуды и нервы, затем ушивают послойно, при необходимости оставляя дренаж или часть раны открытой; занимает около получаса-часа",
+				"when": "Обширные раны после падения с высоты, дорожной или производственной травмы, укушенные раны, сильно загрязнённые раны и раны с ушибленными краями",
+				"prep": "Обычно вмешательство неотложное; до визита рану прикрыть чистой салфеткой, не наносить мази, взять данные о прививке от столбняка и список препаратов, не есть, если возможен наркоз",
+				"abnormal": "Такая рана заживает дольше ровного пореза, рубец получается шире, график перевязок и снятия швов определяет хирург. Усиление боли, расползающееся покраснение, гнойное отделяемое, температура, а также онемение или потеря движений ниже раны — повод показаться врачу вне очереди"
+			},
+			"en": {
+				"what": "Surgical treatment of a large wound with torn and crushed edges, where simple stitching is not enough",
+				"how": "Under local, less often general anaesthesia the wound is rinsed thoroughly, non-viable edges are cut away, bleeding is stopped, tendons, vessels and nerves are checked, and the wound is then closed in layers, sometimes with a drain or with part of it left open; it takes roughly half an hour to an hour",
+				"when": "Extensive wounds after a fall from height, a road or work accident, bite wounds, heavily contaminated wounds and wounds with bruised edges",
+				"prep": "The procedure is usually urgent; cover the wound with a clean cloth before coming, do not apply ointments, bring tetanus vaccination details and a list of medicines, and do not eat if anaesthesia may be needed",
+				"abnormal": "Such a wound heals more slowly than a clean cut and the scar is wider, and the surgeon sets the schedule of dressings and stitch removal. Growing pain, spreading redness, pus, fever, and numbness or loss of movement beyond the wound are reasons to be seen without waiting for the next appointment"
+			},
+			"sr": {
+				"what": "Hirurška obrada veće rane sa razderanim i zgnječenim ivicama, kada obično šivenje nije dovoljno",
+				"how": "U lokalnoj, rjeđe opštoj anesteziji rana se obilno ispere, neživi rubovi se odstrane, zaustavi se krvarenje, provjeri se da li su zahvaćene tetive, krvni sudovi i živci, a zatim se rana ušije u slojevima, po potrebi uz dren ili uz dio rane ostavljen otvoren; traje oko pola sata do sat vremena",
+				"when": "Opsežne rane poslije pada sa visine, saobraćajne ili radne nezgode, ujedne rane, jako prljave rane i rane sa nagnječenim ivicama",
+				"prep": "Zahvat je obično hitan; do dolaska ranu prekriti čistom gazom, ne mazati masti, ponijeti podatke o vakcini protiv tetanusa i spisak lijekova, ne jesti ako je moguća anestezija",
+				"abnormal": "Takva rana zarasta sporije od glatke posjekotine, a ožiljak je širi, dok raspored previjanja i skidanja konaca određuje hirurg. Pojačan bol, crvenilo koje se širi, gnojav iscjedak, temperatura, kao i trnjenje ili gubitak pokreta ispod rane razlog su da se ljekaru javite i prije zakazane kontrole"
+			},
+			"de": {
+				"what": "Chirurgische Versorgung einer größeren Wunde mit gerissenen und gequetschten Rändern, bei der einfaches Nähen nicht ausreicht",
+				"how": "In örtlicher, seltener Vollnarkose wird die Wunde gründlich gespült, abgestorbene Ränder werden abgetragen, die Blutung gestillt, Sehnen, Gefäße und Nerven werden überprüft und die Wunde anschließend schichtweise verschlossen, bei Bedarf mit Drainage oder teils offen belassen; das dauert etwa eine halbe bis eine Stunde",
+				"when": "Ausgedehnte Wunden nach Sturz aus der Höhe, Verkehrs- oder Arbeitsunfall, Bisswunden, stark verschmutzte Wunden und Wunden mit gequetschten Rändern",
+				"prep": "Der Eingriff erfolgt meist dringlich; die Wunde vor dem Weg mit einem sauberen Tuch abdecken, keine Salben auftragen, Angaben zur Tetanusimpfung und eine Medikamentenliste mitbringen und nichts essen, falls eine Narkose nötig werden kann",
+				"abnormal": "Eine solche Wunde heilt langsamer als ein glatter Schnitt und die Narbe wird breiter, den Plan für Verbandwechsel und Fadenentfernung legt der Chirurg fest. Zunehmende Schmerzen, sich ausbreitende Rötung, eitriges Sekret, Fieber sowie Taubheit oder Bewegungsverlust unterhalb der Wunde sind Gründe, sich vorzeitig vorzustellen"
+			},
+			"tr": {
+				"what": "Kenarları yırtılmış ve ezilmiş, yalnızca dikmekle kapanmayan geniş bir yaranın cerrahi olarak onarılması",
+				"how": "Lokal, daha seyrek olarak genel anestezi altında yara bolca yıkanır, canlılığını yitirmiş kenarlar çıkarılır, kanama durdurulur, tendon, damar ve sinirlerin sağlamlığı kontrol edilir, ardından yara katlar hâlinde dikilir, gerekirse dren konur ya da bir bölümü açık bırakılır; yaklaşık yarım saat ile bir saat sürer",
+				"when": "Yüksekten düşme, trafik veya iş kazası sonrası geniş yaralar, ısırık yaraları, çok kirli yaralar ve kenarları ezilmiş yaralar",
+				"prep": "Girişim genellikle acildir; gelmeden önce yarayı temiz bir bezle örtmek, merhem sürmemek, tetanoz aşısı bilgisini ve ilaç listesini getirmek, anestezi olasılığı varsa aç kalmak gerekir",
+				"abnormal": "Bu tür bir yara düzgün bir kesiye göre daha yavaş iyileşir ve iz daha geniş kalır, pansuman ile dikiş alma takvimini cerrah belirler. Artan ağrı, yayılan kızarıklık, iltihaplı akıntı, ateş ve yaranın ötesinde uyuşma ya da hareket kaybı, randevuyu beklemeden hekime başvurma nedenidir"
+			}
+		}
+	},
+	{
+		"slug": "treatment-of-smaller-wounds-without-deep-structure-lesion-direct",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Обработка небольшой раны с ровными краями, при которой сухожилия, сосуды и нервы не задеты и края сводят сразу",
+				"how": "Рану обезболивают местно, промывают, при необходимости освежают края и сразу сшивают либо сближают полосками пластыря или клеем, сверху накладывают повязку; занимает 10–20 минут",
+				"when": "Свежие порезы бытовым или рабочим инструментом, мелкие раны о стекло и металл, ссадины с расходящимися краями, когда движения и чувствительность в области раны сохранены",
+				"prep": "Подготовка не нужна; рану прикрыть чистой салфеткой, не заливать в неё спирт и не мазать мази, взять данные о прививке от столбняка и список принимаемых препаратов",
+				"abnormal": "Срок снятия швов зависит от места раны и его называет врач, рубец окончательно бледнеет в течение месяцев. Если рана краснеет, болит сильнее прежнего, начинает подтекать или в области раны исчезают чувствительность и движения — нужен осмотр"
+			},
+			"en": {
+				"what": "Treatment of a small wound with even edges where tendons, vessels and nerves are intact and the edges are brought together straight away",
+				"how": "The wound is numbed locally, rinsed, its edges freshened if needed and then sutured, or held together with adhesive strips or tissue glue, and a dressing is applied; it takes about 10–20 minutes",
+				"when": "Fresh cuts from household or work tools, small wounds from glass and metal, grazes with gaping edges, when movement and sensation around the wound are preserved",
+				"prep": "No preparation is needed; cover the wound with a clean cloth, do not pour alcohol into it or apply ointments, and bring tetanus vaccination details and a list of medicines",
+				"abnormal": "When the stitches come out depends on the site of the wound and is stated by the doctor, and the scar fades over months. If the wound becomes red, hurts more than before, starts to leak, or sensation and movement are lost around it, an examination is needed"
+			},
+			"sr": {
+				"what": "Obrada manje rane sa glatkim ivicama, kod koje tetive, krvni sudovi i živci nisu oštećeni pa se ivice odmah spajaju",
+				"how": "Rana se anestezira lokalno, ispere, po potrebi se osvježe ivice pa se odmah ušije ili se spoji ljepljivim trakama ili tkivnim ljepilom, a preko se stavlja zavoj; traje 10–20 minuta",
+				"when": "Svježe posjekotine kućnim ili radnim alatom, sitne rane od stakla i metala, ogrebotine sa razmaknutim ivicama, kada su pokret i osjet oko rane očuvani",
+				"prep": "Priprema nije potrebna; ranu prekriti čistom gazom, ne polijevati je alkoholom i ne mazati masti, ponijeti podatke o vakcini protiv tetanusa i spisak lijekova",
+				"abnormal": "Rok za skidanje konaca zavisi od mjesta rane i određuje ga ljekar, a ožiljak blijedi tokom mjeseci. Ako rana pocrveni, boli jače nego ranije, počne da curi ili se oko nje izgube osjet i pokret, potreban je pregled"
+			},
+			"de": {
+				"what": "Versorgung einer kleinen Wunde mit glatten Rändern, bei der Sehnen, Gefäße und Nerven unverletzt sind und die Ränder sofort vereinigt werden",
+				"how": "Die Wunde wird örtlich betäubt, gespült, die Ränder bei Bedarf angefrischt und sofort genäht oder mit Klebestreifen beziehungsweise Gewebekleber adaptiert, darüber kommt ein Verband; das dauert etwa 10–20 Minuten",
+				"when": "Frische Schnitte durch Haushalts- oder Arbeitswerkzeug, kleine Wunden durch Glas und Metall, klaffende Schürfwunden, sofern Bewegung und Gefühl um die Wunde erhalten sind",
+				"prep": "Eine Vorbereitung ist nicht nötig; die Wunde mit einem sauberen Tuch abdecken, keinen Alkohol hineingießen und keine Salben auftragen, Angaben zur Tetanusimpfung und eine Medikamentenliste mitbringen",
+				"abnormal": "Wann die Fäden gezogen werden, hängt von der Lokalisation ab und sagt der Arzt, die Narbe verblasst über Monate. Wird die Wunde rot, schmerzt stärker als zuvor, beginnt zu nässen oder gehen Gefühl und Beweglichkeit im Bereich verloren, ist eine Kontrolle nötig"
+			},
+			"tr": {
+				"what": "Tendon, damar ve sinirlerin sağlam olduğu, kenarları düzgün küçük bir yaranın kenarlarının hemen birleştirilerek onarılması",
+				"how": "Yara lokal olarak uyuşturulur, yıkanır, gerekirse kenarları tazelenir ve hemen dikilir ya da yapışkan bantlar veya doku yapıştırıcısıyla birleştirilir, üzerine pansuman yapılır; 10–20 dakika sürer",
+				"when": "Ev ya da iş aletiyle oluşan taze kesikler, cam ve metale bağlı küçük yaralar, kenarları açılmış sıyrıklar; yara çevresinde hareket ve duyunun korunduğu durumlar",
+				"prep": "Hazırlık gerekmez; yarayı temiz bir bezle örtmek, içine alkol dökmemek ve merhem sürmemek, tetanoz aşısı bilgisini ve kullanılan ilaçların listesini getirmek yeterlidir",
+				"abnormal": "Dikişlerin ne zaman alınacağı yaranın yerine göre değişir ve hekim tarafından belirtilir, iz aylar içinde soluklaşır. Yara kızarır, eskisinden çok ağrır, akmaya başlar ya da çevresinde duyu ve hareket kaybolursa muayene gerekir"
+			}
+		}
+	},
+	{
+		"slug": "trigeminal-nerve-branch-sectioning",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Вмешательство на ветви тройничного нерва, отвечающей за чувствительность части лица, с прерыванием проведения болевых импульсов",
+				"how": "Под местным или общим обезболиванием хирург подходит к нужной ветви в месте её выхода из кости через доступ на лице или во рту, выделяет её и пересекает; вмешательство относительно короткое, а выбор между ним и другими методами делает нейрохирург",
+				"when": "Невралгия тройничного нерва с приступами резкой боли в зоне одной ветви, когда лекарственное лечение и другие методы не дали достаточного эффекта или плохо переносятся",
+				"prep": "МРТ головы для исключения других причин боли, осмотр стоматолога, чтобы исключить зубной источник, консультация анестезиолога, не есть перед общим наркозом, сообщить о принимаемых препаратах",
+				"abnormal": "После пересечения ветви в её зоне остаётся стойкое онемение — это ожидаемое следствие вмешательства, а боль со временем может возвращаться; при вовлечении глазной ветви врач отдельно объясняет уход за глазом. Возврат приступов, распространение онемения, покраснение глаза или слабость при жевании — повод к осмотру"
+			},
+			"en": {
+				"what": "A procedure on a branch of the trigeminal nerve, which carries sensation from part of the face, aimed at interrupting the conduction of pain",
+				"how": "Under local or general anaesthesia the surgeon reaches the chosen branch where it leaves the bone, through an approach on the face or inside the mouth, exposes it and cuts it; the procedure is relatively short, and the choice between it and other methods is made by the neurosurgeon",
+				"when": "Trigeminal neuralgia with attacks of sharp pain in the territory of one branch, when medication and other methods have not given enough relief or are poorly tolerated",
+				"prep": "MRI of the head to rule out other causes of the pain, a dental examination to exclude a dental source, an anaesthesia review, no food before general anaesthesia, and reporting the medicines taken",
+				"abnormal": "After the branch is cut, lasting numbness in its territory remains as an expected consequence of the procedure, and the pain may return over time; if the branch supplying the eye is involved the doctor explains eye care separately. Returning attacks, spreading numbness, a red eye or weakness when chewing are reasons for a review"
+			},
+			"sr": {
+				"what": "Zahvat na grani trigeminalnog živca, koja prenosi osjet sa dijela lica, kojim se prekida provođenje bola",
+				"how": "U lokalnoj ili opštoj anesteziji hirurg dolazi do izabrane grane na mjestu izlaska iz kosti, pristupom preko lica ili kroz usnu duplju, oslobodi je i presiječe; zahvat je relativno kratak, a izbor između njega i drugih metoda pravi neurohirurg",
+				"when": "Neuralgija trigeminusa sa napadima oštrog bola u području jedne grane, kada liječenje lijekovima i druge metode nisu dale dovoljan efekat ili se loše podnose",
+				"prep": "Magnetna rezonanca glave radi isključenja drugih uzroka bola, stomatološki pregled radi isključenja zubnog uzroka, pregled anesteziologa, ne jesti prije opšte anestezije, prijaviti lijekove koji se uzimaju",
+				"abnormal": "Poslije presijecanja grane u njenom području ostaje trajna utrnulost, što je očekivana posljedica zahvata, a bol se vremenom može vratiti; ako je zahvaćena grana za oko, ljekar posebno objašnjava njegu oka. Povratak napada, širenje utrnulosti, crvenilo oka ili slabost pri žvakanju razlog su za pregled"
+			},
+			"de": {
+				"what": "Ein Eingriff an einem Ast des Trigeminusnervs, der das Gefühl eines Gesichtsabschnitts überträgt, mit dem Ziel, die Schmerzleitung zu unterbrechen",
+				"how": "In örtlicher oder Vollnarkose erreicht der Chirurg den gewählten Ast an seiner Austrittsstelle aus dem Knochen über einen Zugang im Gesicht oder in der Mundhöhle, stellt ihn dar und durchtrennt ihn; der Eingriff ist vergleichsweise kurz, die Wahl zwischen ihm und anderen Verfahren trifft der Neurochirurg",
+				"when": "Trigeminusneuralgie mit Attacken heftiger Schmerzen im Versorgungsgebiet eines Astes, wenn Medikamente und andere Verfahren nicht ausreichend geholfen haben oder schlecht vertragen werden",
+				"prep": "MRT des Kopfes zum Ausschluss anderer Schmerzursachen, zahnärztliche Untersuchung zum Ausschluss einer dentalen Ursache, Narkosegespräch, vor Vollnarkose nüchtern bleiben und die eingenommenen Medikamente angeben",
+				"abnormal": "Nach der Durchtrennung bleibt im Versorgungsgebiet ein dauerhaftes Taubheitsgefühl, das eine erwartete Folge des Eingriffs ist, und die Schmerzen können mit der Zeit zurückkehren; betrifft der Ast das Auge, erklärt der Arzt die Augenpflege gesondert. Wiederkehrende Attacken, sich ausbreitende Taubheit, ein gerötetes Auge oder Schwäche beim Kauen sind Gründe für eine Kontrolle"
+			},
+			"tr": {
+				"what": "Yüzün bir bölümünün duyusunu taşıyan trigeminal sinir dalına yönelik, ağrı iletimini kesmeyi amaçlayan girişim",
+				"how": "Lokal ya da genel anestezi altında cerrah seçilen dala kemikten çıktığı yerde yüzden ya da ağız içinden yapılan bir girişimle ulaşır, dalı ortaya koyar ve keser; işlem görece kısadır, bu yöntemle diğer yöntemler arasındaki seçimi beyin cerrahı yapar",
+				"when": "Tek bir dalın alanında şiddetli ağrı atakları yapan trigeminal nevralji; ilaç tedavisinin ve diğer yöntemlerin yeterli gelmediği ya da iyi tolere edilmediği durumlar",
+				"prep": "Ağrının başka nedenlerini dışlamak için baş MR'ı, diş kaynağını dışlamak için diş hekimi muayenesi, anestezi değerlendirmesi, genel anesteziden önce aç kalmak, kullanılan ilaçları bildirmek",
+				"abnormal": "Dal kesildikten sonra o bölgede kalıcı uyuşukluk kalır, bu girişimin beklenen bir sonucudur, ağrı ise zamanla geri dönebilir; göze giden dal söz konusuysa hekim göz bakımını ayrıca anlatır. Atakların yeniden başlaması, uyuşukluğun yayılması, gözde kızarıklık ya da çiğnemede güçsüzlük muayene nedenidir"
+			}
+		}
+	},
+	{
+		"slug": "upper-thoracic-sympathectomy",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Вмешательство на симпатическом стволе в верхнем отделе грудной клетки, прерывающее нервные сигналы к потовым железам и сосудам кисти",
+				"how": "Под общим наркозом через несколько небольших проколов между рёбрами вводят камеру, лёгкое на время поджимают, находят симпатический ствол и пересекают или клипируют его на нужном уровне; занимает около часа, чаще с обеих сторон, после операции делают контрольный снимок грудной клетки",
+				"when": "Выраженная потливость ладоней и подмышек, не отвечающая на другие методы лечения, стойкое покраснение лица, сосудистые спазмы и похолодание пальцев; показания определяет сосудистый или торакальный хирург",
+				"prep": "Обследование перед операцией, снимок грудной клетки, консультация анестезиолога, не есть перед наркозом, сообщить о разжижающих кровь препаратах, заранее обсудить с врачом ожидаемый эффект и возможные последствия",
+				"abnormal": "Ладони обычно становятся сухими и тёплыми сразу после операции, но известное возможное следствие — усиление потливости на туловище, иногда опущение века или осиплость; боль в плечах в первые дни обычна. Одышка, температура и боль в груди требуют обращения к врачу"
+			},
+			"en": {
+				"what": "A procedure on the sympathetic chain in the upper chest that interrupts the nerve signals to the sweat glands and vessels of the hand",
+				"how": "Under general anaesthesia a camera is passed through a few small openings between the ribs, the lung is partly collapsed, the sympathetic chain is found and cut or clipped at the chosen level; it takes about an hour, usually on both sides, and a check chest X-ray is taken afterwards",
+				"when": "Marked sweating of the palms and armpits that does not respond to other treatment, persistent facial flushing, vessel spasm and cold fingers; the indication is set by a vascular or thoracic surgeon",
+				"prep": "Preoperative tests, a chest X-ray, an anaesthesia review, no food before the anaesthetic, reporting blood thinners, and discussing the expected effect and possible consequences with the doctor in advance",
+				"abnormal": "The palms usually become dry and warm right after the operation, but a known possible consequence is increased sweating on the trunk, sometimes a drooping eyelid or a hoarse voice; shoulder pain in the first days is common. Shortness of breath, fever and chest pain call for medical attention"
+			},
+			"sr": {
+				"what": "Zahvat na simpatičkom lancu u gornjem dijelu grudnog koša kojim se prekidaju nervni signali prema znojnim žlijezdama i krvnim sudovima šake",
+				"how": "U opštoj anesteziji kroz nekoliko malih otvora među rebrima uvodi se kamera, pluće se privremeno spusti, pronađe se simpatički lanac i presiječe ili klipsa na izabranom nivou; traje oko sat vremena, najčešće sa obje strane, a poslije se snima grudni koš",
+				"when": "Izraženo znojenje dlanova i pazuha koje ne reaguje na druge načine liječenja, uporno crvenilo lica, grčenje krvnih sudova i hladni prsti; indikaciju postavlja vaskularni ili grudni hirurg",
+				"prep": "Nalazi prije operacije, snimak grudnog koša, pregled anesteziologa, ne jesti prije anestezije, prijaviti lijekove za razrjeđivanje krvi i unaprijed sa ljekarom razgovarati o očekivanom efektu i mogućim posljedicama",
+				"abnormal": "Dlanovi obično postanu suvi i topli odmah poslije operacije, ali poznata moguća posljedica je pojačano znojenje po trupu, ponekad i spušten kapak ili promukao glas; bol u ramenima prvih dana je uobičajen. Gušenje, temperatura i bol u grudima traže javljanje ljekaru"
+			},
+			"de": {
+				"what": "Ein Eingriff am Grenzstrang im oberen Brustraum, der die Nervensignale zu den Schweißdrüsen und Gefäßen der Hand unterbricht",
+				"how": "In Vollnarkose wird über einige kleine Öffnungen zwischen den Rippen eine Kamera eingeführt, die Lunge vorübergehend teilweise entlüftet, der Grenzstrang aufgesucht und auf der gewählten Höhe durchtrennt oder geclippt; das dauert etwa eine Stunde, meist beidseits, danach folgt eine Kontrollaufnahme des Brustkorbs",
+				"when": "Ausgeprägtes Schwitzen an Handflächen und Achseln ohne Ansprechen auf andere Behandlungen, anhaltende Gesichtsrötung, Gefäßkrämpfe und kalte Finger; die Indikation stellt der Gefäß- oder Thoraxchirurg",
+				"prep": "Untersuchungen vor der Operation, Röntgen des Brustkorbs, Narkosegespräch, nüchtern zur Narkose erscheinen, Blutverdünner melden und die erwartete Wirkung sowie mögliche Folgen vorab mit dem Arzt besprechen",
+				"abnormal": "Die Handflächen werden meist unmittelbar nach der Operation trocken und warm, eine bekannte mögliche Folge ist jedoch vermehrtes Schwitzen am Rumpf, gelegentlich auch ein hängendes Augenlid oder eine heisere Stimme; Schulterschmerzen in den ersten Tagen sind üblich. Atemnot, Fieber und Brustschmerzen erfordern eine ärztliche Vorstellung"
+			},
+			"tr": {
+				"what": "Göğüs boşluğunun üst kesimindeki sempatik zincire yönelik, ele giden ter bezi ve damar sinyallerini kesen girişim",
+				"how": "Genel anestezi altında kaburgalar arasındaki birkaç küçük delikten kamera girilir, akciğer geçici olarak söndürülür, sempatik zincir bulunarak seçilen düzeyde kesilir ya da klipslenir; yaklaşık bir saat sürer, çoğunlukla iki taraflı yapılır, sonrasında kontrol akciğer grafisi çekilir",
+				"when": "Başka tedavilere yanıt vermeyen belirgin avuç içi ve koltuk altı terlemesi, geçmeyen yüz kızarması, damar spazmı ve parmaklarda soğukluk; kararı damar ya da göğüs cerrahı verir",
+				"prep": "Ameliyat öncesi tetkikler, akciğer grafisi, anestezi değerlendirmesi, anesteziden önce aç kalmak, kan sulandırıcıları bildirmek, beklenen etkiyi ve olası sonuçları hekimle önceden konuşmak",
+				"abnormal": "Avuç içleri genellikle ameliyattan hemen sonra kurur ve ısınır, ancak gövdede terlemenin artması bilinen olası bir sonuçtur, bazen göz kapağında düşme ya da ses kısıklığı görülebilir; ilk günlerde omuz ağrısı olağandır. Nefes darlığı, ateş ve göğüs ağrısı hekime başvurmayı gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "vascular-surgeon-examination",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Приём врача, который занимается артериями и венами: расспрос, осмотр ног, проверка пульсации сосудов и разбор ранее сделанных обследований",
+				"how": "Врач уточняет характер боли и отёков, осматривает кожу и вены, прощупывает пульс на ногах и руках, выслушивает сосуды, при необходимости сравнивает давление на руке и на лодыжке и смотрит принесённые результаты УЗИ сосудов; 20–30 минут",
+				"when": "Варикозные вены, тяжесть и отёки ног, боль в икрах при ходьбе, проходящая в покое, зябкость и онемение стоп, длительно не заживающая язва на голени, состояние после тромбоза, выявленное расширение аорты, диабетическая стопа",
+				"prep": "Специальной подготовки не требуется; прийти в одежде, которая позволяет осмотреть ноги целиком, взять прежние результаты УЗИ сосудов и выписки, список препаратов, в том числе разжижающих кровь, и компрессионный трикотаж, если вы им пользуетесь",
+				"abnormal": "По итогам приёма врач может назначить дуплексное УЗИ сосудов, ангиографию или анализы и выбрать между наблюдением, лечением без операции и вмешательством. Внезапная резкая боль в ноге с побледнением и похолоданием или быстро нарастающий отёк одной ноги — повод к экстренной помощи, а не к плановому приёму"
+			},
+			"en": {
+				"what": "An appointment with the doctor who deals with arteries and veins: questions, examination of the legs, checking of pulses and review of earlier investigations",
+				"how": "The doctor asks about the character of pain and swelling, examines the skin and veins, feels the pulses in the legs and arms, listens over the vessels, compares the pressure in the arm and at the ankle if needed and reviews any vascular ultrasound results brought along; 20–30 minutes",
+				"when": "Varicose veins, heaviness and swelling of the legs, calf pain on walking that stops at rest, cold and numb feet, a long-standing ulcer on the lower leg, the state after a thrombosis, a widened aorta found on a scan, a diabetic foot",
+				"prep": "No special preparation is needed; come in clothing that allows the whole leg to be examined, bring earlier vascular ultrasound results and discharge letters, a list of medicines including blood thinners, and your compression stockings if you use them",
+				"abnormal": "After the appointment the doctor may order a duplex ultrasound of the vessels, angiography or blood tests and choose between observation, treatment without surgery and an operation. Sudden severe leg pain with pallor and coldness, or rapidly increasing swelling of one leg, is a reason for emergency care rather than a scheduled visit"
+			},
+			"sr": {
+				"what": "Pregled ljekara koji se bavi arterijama i venama: razgovor, pregled nogu, provjera pulseva i tumačenje ranije urađenih nalaza",
+				"how": "Ljekar ispituje karakter bola i otoka, pregleda kožu i vene, pipa pulseve na nogama i rukama, osluškuje krvne sudove, po potrebi upoređuje pritisak na ruci i na skočnom zglobu i pregleda donesene nalaze ultrazvuka krvnih sudova; 20–30 minuta",
+				"when": "Proširene vene, težina i otoci nogu, bol u listovima pri hodu koji prestaje u mirovanju, hladna i utrnula stopala, potkoljenična rana koja dugo ne zarasta, stanje poslije tromboze, proširenje aorte nađeno na pregledu, dijabetesno stopalo",
+				"prep": "Posebna priprema nije potrebna; doći u odjeći koja omogućava pregled cijele noge, ponijeti ranije nalaze ultrazvuka krvnih sudova i otpusne liste, spisak lijekova uključujući one za razrjeđivanje krvi, kao i kompresivne čarape ako ih koristite",
+				"abnormal": "Poslije pregleda ljekar može zatražiti dupleks ultrazvuk krvnih sudova, angiografiju ili analize i odlučiti između praćenja, liječenja bez operacije i operativnog zahvata. Iznenadan jak bol u nozi sa bljedilom i hladnoćom ili brzo rastući otok jedne noge razlog su za hitnu pomoć, a ne za zakazani pregled"
+			},
+			"de": {
+				"what": "Ein Termin bei dem Arzt, der sich mit Arterien und Venen befasst: Befragung, Untersuchung der Beine, Prüfung der Pulse und Durchsicht früherer Befunde",
+				"how": "Der Arzt fragt nach Art der Schmerzen und Schwellungen, betrachtet Haut und Venen, tastet die Pulse an Beinen und Armen, hört die Gefäße ab, vergleicht bei Bedarf den Druck am Arm und am Knöchel und sieht mitgebrachte Gefäßultraschallbefunde durch; 20–30 Minuten",
+				"when": "Krampfadern, schwere und geschwollene Beine, Wadenschmerz beim Gehen, der in Ruhe nachlässt, kalte und taube Füße, ein lange nicht heilendes Unterschenkelgeschwür, Zustand nach einer Thrombose, eine im Ultraschall gefundene Erweiterung der Hauptschlagader, diabetischer Fuß",
+				"prep": "Eine besondere Vorbereitung ist nicht nötig; in Kleidung kommen, die das gesamte Bein zugänglich macht, frühere Gefäßultraschallbefunde und Arztbriefe mitbringen, eine Medikamentenliste einschließlich Blutverdünner sowie die Kompressionsstrümpfe, falls Sie welche tragen",
+				"abnormal": "Nach dem Termin kann der Arzt eine Duplexsonographie der Gefäße, eine Angiographie oder Laborwerte veranlassen und zwischen Beobachtung, Behandlung ohne Operation und einem Eingriff entscheiden. Plötzlicher heftiger Beinschmerz mit Blässe und Kälte oder rasch zunehmende Schwellung eines Beins ist ein Fall für die Notfallversorgung und nicht für einen geplanten Termin"
+			},
+			"tr": {
+				"what": "Atardamar ve toplardamarlarla ilgilenen hekimin muayenesi: öykü alma, bacakların incelenmesi, nabızların kontrolü ve önceki tetkiklerin değerlendirilmesi",
+				"how": "Hekim ağrının ve şişliğin niteliğini sorar, cildi ve damarları inceler, bacak ve kollarda nabızları elle kontrol eder, damarları dinler, gerekirse koldaki ve ayak bileğindeki basıncı karşılaştırır ve getirilen damar ultrason sonuçlarını değerlendirir; 20–30 dakika sürer",
+				"when": "Varis, bacaklarda ağırlık ve şişlik, yürürken başlayıp dinlenmekle geçen baldır ağrısı, ayaklarda üşüme ve uyuşma, bacakta uzun süre kapanmayan yara, tromboz sonrası izlem, görüntülemede saptanan aort genişlemesi, diyabetik ayak",
+				"prep": "Özel bir hazırlık gerekmez; bacağın tamamının incelenebileceği giysiyle gelmek, önceki damar ultrason sonuçlarını ve epikrizleri, kan sulandırıcılar dâhil ilaç listesini ve kullanıyorsanız varis çorabınızı getirmek yeterlidir",
+				"abnormal": "Muayene sonunda hekim damar dupleks ultrasonu, anjiyografi ya da kan tetkiki isteyebilir ve izlem, ameliyatsız tedavi veya cerrahi arasında karar verir. Bacakta ani şiddetli ağrı ile solukluk ve soğukluk ya da tek bacakta hızla artan şişlik planlı muayenenin değil acil başvurunun konusudur"
+			}
+		}
+	},
+	{
+		"slug": "vein-surgery-one-leg",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Операция на изменённых подкожных венах одной ноги: ствол вены удаляют или закрывают изнутри, а притоки убирают через проколы",
+				"how": "Под спинальной, общей или местной анестезией через небольшие разрезы в паху или под коленом ствол вены перевязывают и удаляют либо закрывают лазером или радиочастотным электродом, варикозные притоки извлекают через точечные проколы, ногу бинтуют или надевают компрессионный чулок; около часа, часто в режиме одного дня",
+				"when": "Варикозные вены с тяжестью, отёками и ночными судорогами, потемнение и уплотнение кожи голени, зажившая или открытая венозная язва, повторные воспаления подкожной вены, кровотечение из варикозного узла — при подтверждении дуплексным УЗИ",
+				"prep": "Дуплексное УЗИ вен ноги и разметка перед операцией, обследование и осмотр анестезиолога, не есть по инструкции клиники, взять компрессионный чулок нужного размера, сообщить о разжижающих кровь препаратах и гормональных контрацептивах",
+				"abnormal": "В первые недели обычны синяки, тяжи по ходу вены и умеренная болезненность, режим компрессии и ходьбы назначает врач, а со временем рядом или на другой ноге могут появиться новые расширенные вены, поэтому нужны контрольные осмотры. Резкая боль и нарастающий отёк голени, одышка, температура или обильное кровотечение из раны — повод обратиться немедленно"
+			},
+			"en": {
+				"what": "Surgery on the altered superficial veins of one leg: the main trunk is removed or closed from within and the tributaries are taken out through punctures",
+				"how": "Under spinal, general or local anaesthesia the vein trunk is tied off and removed through small incisions in the groin or behind the knee, or closed with a laser or radiofrequency probe, varicose tributaries are pulled out through tiny punctures and the leg is bandaged or fitted with a compression stocking; about an hour, often as day surgery",
+				"when": "Varicose veins with heaviness, swelling and night cramps, darkening and hardening of the skin of the lower leg, a healed or open venous ulcer, repeated inflammation of a superficial vein, bleeding from a varicose node, confirmed by duplex ultrasound",
+				"prep": "Duplex ultrasound of the leg veins and marking before the operation, preoperative tests and an anaesthesia review, fasting as instructed by the clinic, bringing a compression stocking of the right size, and reporting blood thinners and hormonal contraceptives",
+				"abnormal": "Bruising, firm cords along the treated vein and moderate tenderness are usual in the first weeks, the doctor sets the compression and walking regimen, and over the years new dilated veins may appear nearby or in the other leg, so follow-up visits are needed. Sharp pain with increasing calf swelling, shortness of breath, fever or heavy bleeding from the wound call for immediate contact"
+			},
+			"sr": {
+				"what": "Operacija izmijenjenih potkožnih vena jedne noge: glavno stablo se vadi ili zatvara iznutra, a pritoke se uklanjaju kroz ubode",
+				"how": "U spinalnoj, opštoj ili lokalnoj anesteziji stablo vene se kroz male rezove u preponi ili ispod koljena podveže i izvadi ili se zatvori laserom odnosno radiofrekventnom sondom, proširene pritoke se izvlače kroz sitne ubode, a noga se povija ili se navlači kompresivna čarapa; traje oko sat vremena, često u dnevnoj hirurgiji",
+				"when": "Proširene vene sa težinom, otocima i noćnim grčevima, potamnjela i zadebljala koža potkoljenice, zarasla ili otvorena venska rana, ponovljene upale potkožne vene, krvarenje iz varikoznog čvora, uz potvrdu dupleks ultrazvukom",
+				"prep": "Dupleks ultrazvuk vena noge i obilježavanje prije operacije, nalazi i pregled anesteziologa, gladovanje po uputstvu klinike, ponijeti kompresivnu čarapu odgovarajuće veličine, prijaviti lijekove za razrjeđivanje krvi i hormonsku kontracepciju",
+				"abnormal": "Prvih nedjelja su uobičajeni modrice, tvrdi tračci duž vene i umjerena osjetljivost, režim kompresije i hodanja određuje ljekar, a tokom godina se u blizini ili na drugoj nozi mogu pojaviti nove proširene vene, pa su kontrole potrebne. Nagao bol sa rastućim otokom lista, gušenje, temperatura ili obilno krvarenje iz rane razlog su da se javite odmah"
+			},
+			"de": {
+				"what": "Eine Operation an den veränderten oberflächlichen Venen eines Beins: der Hauptstamm wird entfernt oder von innen verschlossen, die Seitenäste werden über Stichinzisionen entfernt",
+				"how": "In Spinal-, Voll- oder örtlicher Betäubung wird der Venenstamm über kleine Schnitte in der Leiste oder in der Kniekehle unterbunden und entfernt oder mit Laser beziehungsweise Radiofrequenzsonde verschlossen, die Seitenäste werden über winzige Einstiche herausgezogen und das Bein gewickelt oder mit einem Kompressionsstrumpf versorgt; etwa eine Stunde, oft ambulant",
+				"when": "Krampfadern mit Schweregefühl, Schwellung und nächtlichen Krämpfen, dunkle und verhärtete Haut am Unterschenkel, ein abgeheiltes oder offenes venöses Geschwür, wiederholte Entzündungen einer oberflächlichen Vene, Blutung aus einem Krampfaderknoten, jeweils mit Duplexsonographie bestätigt",
+				"prep": "Duplexsonographie der Beinvenen und Anzeichnen vor der Operation, Untersuchungen und Narkosegespräch, Nüchternheit nach Anweisung der Klinik, einen Kompressionsstrumpf in passender Größe mitbringen sowie Blutverdünner und hormonelle Verhütungsmittel melden",
+				"abnormal": "In den ersten Wochen sind blaue Flecken, harte Stränge entlang der behandelten Vene und mäßige Druckempfindlichkeit üblich, das Kompressions- und Gehprogramm legt der Arzt fest, und im Lauf der Jahre können in der Nachbarschaft oder am anderen Bein neue erweiterte Venen entstehen, weshalb Kontrollen nötig sind. Heftiger Schmerz mit zunehmender Wadenschwellung, Atemnot, Fieber oder starke Blutung aus der Wunde erfordern sofortigen Kontakt"
+			},
+			"tr": {
+				"what": "Tek bacaktaki bozulmuş yüzeysel toplardamarlara yönelik ameliyat: ana damar çıkarılır ya da içeriden kapatılır, yan dallar küçük deliklerden alınır",
+				"how": "Spinal, genel ya da lokal anestezi altında damar gövdesi kasıktaki veya diz arkasındaki küçük kesilerden bağlanıp çıkarılır ya da lazer veya radyofrekans probuyla kapatılır, varisli yan dallar iğne deliği kadar girişlerden alınır, bacak sarılır veya varis çorabı giydirilir; yaklaşık bir saat sürer, çoğu zaman günübirliktir",
+				"when": "Ağırlık, şişlik ve gece kramplarıyla giden varisler, baldır cildinde koyulaşma ve sertleşme, iyileşmiş ya da açık venöz yara, yüzeysel damarda tekrarlayan iltihap, varis düğümünden kanama; dupleks ultrasonla doğrulanmış olması koşuluyla",
+				"prep": "Bacak damarlarının dupleks ultrasonu ve ameliyat öncesi işaretleme, tetkikler ve anestezi değerlendirmesi, kliniğin talimatına göre açlık, uygun bedende varis çorabı getirmek, kan sulandırıcıları ve hormonal doğum kontrol ilaçlarını bildirmek",
+				"abnormal": "İlk haftalarda morarma, damar boyunca sert şeritler ve orta düzeyde hassasiyet olağandır, kompresyon ve yürüyüş düzenini hekim belirler, yıllar içinde yakın bölgede ya da diğer bacakta yeni genişlemiş damarlar çıkabileceği için kontroller gerekir. Ani ağrıyla birlikte artan baldır şişliği, nefes darlığı, ateş ya da yaradan bol kanama halinde hemen başvurmak gerekir"
+			}
+		}
+	},
+	{
+		"slug": "ventriculoatrial-or-ventriculoperitoneal-shunt",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Установка системы, которая отводит избыток спинномозговой жидкости из желудочков мозга в брюшную полость или в вену рядом с сердцем",
+				"how": "Под общим наркозом через небольшое отверстие в черепе катетер проводят в желудочек мозга и соединяют с клапаном под кожей и с трубкой, проведённой под кожей до брюшной полости или до крупной вены; занимает около часа и дольше, дальше наблюдение в отделении",
+				"when": "Гидроцефалия врождённая или развившаяся после кровоизлияния, менингита либо травмы, затруднённый отток жидкости из-за объёмного образования, у взрослых — нарушения походки, памяти и мочеиспускания при расширенных желудочках",
+				"prep": "КТ или МРТ головы, анализы и осмотр анестезиолога, не есть перед операцией, подготовка кожи головы по инструкции клиники, сообщить о принимаемых препаратах, особенно разжижающих кровь",
+				"abnormal": "Жалобы обычно уменьшаются постепенно, а сама система остаётся надолго и иногда требует повторного вмешательства из-за закупорки, инфекции или избыточного оттока; о наличии шунта нужно предупреждать врачей, в том числе перед МРТ, потому что настройка клапана может сбиться. Головная боль, рвота, температура, покраснение по ходу трубки, сонливость или возврат прежних жалоб требуют срочного обращения к нейрохирургу"
+			},
+			"en": {
+				"what": "Placement of a system that drains excess cerebrospinal fluid from the ventricles of the brain into the abdominal cavity or into a vein near the heart",
+				"how": "Under general anaesthesia a catheter is passed through a small opening in the skull into a ventricle and connected to a valve under the skin and to a tube tunnelled under the skin down to the abdomen or into a large vein; it takes about an hour or longer and is followed by monitoring on the ward",
+				"when": "Hydrocephalus present from birth or developing after a haemorrhage, meningitis or injury, obstructed flow of fluid caused by a mass, and in adults disturbance of gait, memory and bladder control with widened ventricles",
+				"prep": "CT or MRI of the head, blood tests and an anaesthesia review, no food before surgery, preparation of the scalp as instructed by the clinic, and reporting the medicines taken, especially blood thinners",
+				"abnormal": "Complaints usually ease step by step, while the system itself stays in place for a long time and sometimes needs a repeat operation because of blockage, infection or excessive drainage; doctors should always be told that a shunt is in place, including before an MRI, because the valve setting may be disturbed. Headache, vomiting, fever, redness along the tube, drowsiness or the return of earlier complaints require urgent contact with the neurosurgeon"
+			},
+			"sr": {
+				"what": "Ugradnja sistema koji višak moždane tečnosti odvodi iz moždanih komora u trbušnu duplju ili u venu blizu srca",
+				"how": "U opštoj anesteziji kroz mali otvor na lobanji kateter se uvodi u moždanu komoru i povezuje sa ventilom pod kožom i cjevčicom provučenom potkožno do trbuha ili do velike vene; traje oko sat vremena i duže, a slijedi praćenje na odjeljenju",
+				"when": "Hidrocefalus prisutan od rođenja ili nastao poslije krvarenja, upale moždanih opni ili povrede, otežano oticanje tečnosti zbog tvorbe, a kod odraslih smetnje hoda, pamćenja i mokrenja uz proširene komore",
+				"prep": "Skener ili magnetna rezonanca glave, analize i pregled anesteziologa, ne jesti prije operacije, priprema vlasišta po uputstvu klinike, prijaviti lijekove koji se uzimaju, posebno one za razrjeđivanje krvi",
+				"abnormal": "Tegobe se obično smanjuju postepeno, dok sistem ostaje ugrađen dugo i ponekad traži ponovni zahvat zbog začepljenja, infekcije ili prevelikog otjecanja; ljekarima uvijek treba reći da je šant ugrađen, i prije magnetne rezonance, jer se podešenost ventila može poremetiti. Glavobolja, povraćanje, temperatura, crvenilo duž cjevčice, pospanost ili povratak ranijih tegoba traže hitno javljanje neurohirurgu"
+			},
+			"de": {
+				"what": "Einlage eines Systems, das überschüssiges Hirnwasser aus den Hirnkammern in die Bauchhöhle oder in eine Vene nahe dem Herzen ableitet",
+				"how": "In Vollnarkose wird über eine kleine Schädelöffnung ein Katheter in eine Hirnkammer eingeführt und mit einem Ventil unter der Haut sowie mit einem unter der Haut bis zum Bauch oder bis zu einer großen Vene geführten Schlauch verbunden; das dauert etwa eine Stunde und länger, danach folgt die Überwachung auf Station",
+				"when": "Von Geburt an bestehender Wasserkopf oder ein solcher nach Blutung, Hirnhautentzündung oder Verletzung, behinderter Abfluss des Hirnwassers durch eine Raumforderung, bei Erwachsenen Gang-, Gedächtnis- und Blasenstörungen bei erweiterten Hirnkammern",
+				"prep": "CT oder MRT des Kopfes, Laborwerte und Narkosegespräch, nüchtern zur Operation erscheinen, Vorbereitung der Kopfhaut nach Anweisung der Klinik und Angabe der eingenommenen Medikamente, besonders der Blutverdünner",
+				"abnormal": "Die Beschwerden lassen meist allmählich nach, das System bleibt lange liegen und benötigt gelegentlich einen erneuten Eingriff wegen Verstopfung, Infektion oder zu starker Ableitung; Ärzte sollten stets über den liegenden Shunt informiert werden, auch vor einem MRT, da die Ventileinstellung verstellt werden kann. Kopfschmerzen, Erbrechen, Fieber, Rötung entlang des Schlauchs, Schläfrigkeit oder die Rückkehr früherer Beschwerden erfordern die dringende Vorstellung beim Neurochirurgen"
+			},
+			"tr": {
+				"what": "Beyin karıncıklarındaki fazla beyin omurilik sıvısını karın boşluğuna ya da kalbe yakın bir toplardamara aktaran bir sistemin yerleştirilmesi",
+				"how": "Genel anestezi altında kafatasındaki küçük bir delikten karıncığa bir kateter yerleştirilir ve cilt altındaki bir valfe, oradan da cilt altından karına ya da büyük bir toplardamara uzatılan bir hortuma bağlanır; yaklaşık bir saat ve daha uzun sürer, ardından serviste izlem yapılır",
+				"when": "Doğuştan gelen ya da kanama, menenjit veya travma sonrası gelişen hidrosefali, bir kitlenin sıvı akışını engellemesi, erişkinlerde karıncıkların genişlemesiyle birlikte yürüme, bellek ve idrar kontrolü sorunları",
+				"prep": "Baş BT'si ya da MR'ı, kan tetkikleri ve anestezi değerlendirmesi, ameliyattan önce aç kalmak, kliniğin talimatına göre saçlı deri hazırlığı, kullanılan ilaçların, özellikle kan sulandırıcıların bildirilmesi",
+				"abnormal": "Şikâyetler genellikle yavaş yavaş azalır, sistem ise uzun süre yerinde kalır ve tıkanma, enfeksiyon ya da aşırı boşaltma nedeniyle zaman zaman yeniden ameliyat gerektirebilir; MR öncesi dâhil olmak üzere hekimlere şant bulunduğu mutlaka söylenmelidir, çünkü valf ayarı bozulabilir. Baş ağrısı, kusma, ateş, hortum boyunca kızarıklık, uykuya eğilim ya da eski şikâyetlerin geri dönmesi beyin cerrahına acilen başvurmayı gerektirir"
+			}
+		}
+	}
+]

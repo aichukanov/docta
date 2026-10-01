@@ -1,0 +1,822 @@
+[
+	{
+		"slug": "follow-up-professor-examination",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Повторная консультация врача с академическим званием профессора по уже начатому случаю",
+				"how": "Профессор сопоставляет жалобы с прошлым визитом, осматривает пациента, разбирает выполненные обследования и уточняет заключение и план ведения; визит обычно длиннее обычного контрольного и занимает около получаса",
+				"when": "Разбор исследований, назначенных на первой консультации, оценка эффекта подобранной терапии, сложные и неясные случаи, ведение нескольких заболеваний одновременно",
+				"prep": "Принести заключение первой консультации, все новые анализы и снимки, включая диски и описания, и актуальный список препаратов с дозами",
+				"abnormal": "По итогам приёма прежний план может быть подтверждён, изменён или дополнен новыми исследованиями и консультациями. Окончательное решение по лечению принимает врач, который ведёт пациента постоянно"
+			},
+			"en": {
+				"what": "A repeat consultation with a doctor holding the academic title of professor, for a case already under way",
+				"how": "The professor compares the complaints with the previous visit, examines the patient, goes through the completed investigations and refines the conclusion and management plan; the visit is usually longer than a routine follow-up and takes about half an hour",
+				"when": "Reviewing the investigations ordered at the first consultation, assessing the effect of the chosen treatment, complex or unclear cases, several conditions managed at once",
+				"prep": "Bring the report from the first consultation, all new test results and images, including discs and written findings, and an up-to-date list of medicines with their doses",
+				"abnormal": "The visit may confirm the previous plan, change it, or add further investigations and referrals to other specialists. The final treatment decision rests with the doctor who manages the patient day to day"
+			},
+			"sr": {
+				"what": "Ponovna konsultacija ljekara sa akademskim zvanjem profesora za slučaj koji je već u toku",
+				"how": "Profesor upoređuje tegobe sa prethodnom posjetom, pregleda pacijenta, analizira urađena ispitivanja i precizira zaključak i plan vođenja; posjeta je obično duža od uobičajene kontrole i traje oko pola sata",
+				"when": "Tumačenje ispitivanja traženih na prvoj konsultaciji, procjena efekta uvedene terapije, složeni i nejasni slučajevi, vođenje više bolesti istovremeno",
+				"prep": "Donijeti nalaz prve konsultacije, sve nove analize i snimke, uključujući diskove i pisane nalaze, i aktuelan spisak lijekova sa dozama",
+				"abnormal": "Nakon pregleda dosadašnji plan može biti potvrđen, promijenjen ili dopunjen novim ispitivanjima i konsultacijama. Konačnu odluku o liječenju donosi ljekar koji pacijenta vodi stalno"
+			},
+			"de": {
+				"what": "Eine erneute Konsultation bei einer Ärztin oder einem Arzt mit Professorentitel zu einem bereits laufenden Fall",
+				"how": "Der Professor vergleicht die Beschwerden mit dem letzten Besuch, untersucht die Patientin oder den Patienten, bespricht die erfolgten Untersuchungen und präzisiert Beurteilung und weiteres Vorgehen; der Termin dauert meist länger als eine übliche Kontrolle, etwa eine halbe Stunde",
+				"when": "Besprechung der beim ersten Termin veranlassten Untersuchungen, Beurteilung der Wirkung der eingeleiteten Therapie, komplexe oder unklare Fälle, mehrere Erkrankungen gleichzeitig",
+				"prep": "Den Bericht der ersten Konsultation, alle neuen Befunde und Bilder einschließlich CDs und schriftlicher Berichte sowie eine aktuelle Medikamentenliste mit Dosierungen mitbringen",
+				"abnormal": "Nach dem Termin kann der bisherige Plan bestätigt, geändert oder um weitere Untersuchungen und Überweisungen ergänzt werden. Die endgültige Therapieentscheidung trifft die Ärztin oder der Arzt der laufenden Betreuung"
+			},
+			"tr": {
+				"what": "Daha önce başlamış bir durum için profesör unvanlı hekimle yapılan tekrar konsültasyon",
+				"how": "Profesör şikayetleri önceki ziyaretle karşılaştırır, hastayı muayene eder, yapılan tetkikleri değerlendirir ve sonuç ile izlem planını netleştirir; görüşme genellikle olağan kontrolden uzundur ve yarım saat kadar sürer",
+				"when": "İlk konsültasyonda istenen tetkiklerin değerlendirilmesi, başlanan tedavinin etkisinin gözden geçirilmesi, karmaşık veya belirsiz durumlar, birden çok hastalığın birlikte izlenmesi",
+				"prep": "İlk konsültasyon raporunu, o tarihten sonraki tüm tahlil ve görüntüleri, disk ve yazılı raporlar dahil, ve dozlarıyla birlikte güncel ilaç listesini getirin",
+				"abnormal": "Görüşme sonunda mevcut plan doğrulanabilir, değiştirilebilir ya da yeni tetkik ve konsültasyonlarla genişletilebilir. Tedaviye ilişkin son kararı hastayı sürekli izleyen hekim verir"
+			}
+		}
+	},
+	{
+		"slug": "follow-up-specialist-examination",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Повторный приём врача узкой специальности в срок, назначенный на первичной консультации",
+				"how": "Врач уточняет, как изменились жалобы, повторяет профильный осмотр, разбирает результаты назначенных исследований и при необходимости меняет назначения; обычно короче первичного приёма",
+				"when": "Получены результаты анализов или снимков, завершён назначенный курс лечения, нужен контроль хронического заболевания, оценка состояния после процедуры или операции",
+				"prep": "Взять заключение первичного приёма, все выполненные с тех пор исследования и список принимаемых лекарств; отдельная подготовка нужна, только если врач назначил её заранее",
+				"abnormal": "Контроль может показать улучшение, отсутствие изменений или новые находки в исследованиях. Нужно ли менять лечение и когда прийти снова, решает специалист, который ведёт случай"
+			},
+			"en": {
+				"what": "A follow-up visit to a specialist at the interval set during the first consultation",
+				"how": "The doctor checks how the complaints have changed, repeats the examination specific to the specialty, reviews the results of the ordered tests and adjusts the prescriptions if needed; usually shorter than the first visit",
+				"when": "Test or imaging results have arrived, a prescribed course of treatment has been completed, a chronic condition needs monitoring, assessment after a procedure or operation",
+				"prep": "Bring the report from the first visit, every investigation done since then and a list of current medicines; special preparation is needed only if the doctor asked for it in advance",
+				"abnormal": "A follow-up may show improvement, no change, or new findings in the investigations. Whether treatment should change and when to come again is decided by the specialist managing the case"
+			},
+			"sr": {
+				"what": "Kontrolni pregled kod ljekara uže specijalnosti u roku koji je određen na prvom pregledu",
+				"how": "Ljekar provjerava kako su se tegobe promijenile, ponavlja pregled specifičan za svoju oblast, tumači nalaze traženih ispitivanja i po potrebi mijenja terapiju; obično kraće od prvog pregleda",
+				"when": "Stigli su nalazi analiza ili snimanja, završena je propisana terapija, potrebna je kontrola hronične bolesti, procjena stanja poslije procedure ili operacije",
+				"prep": "Ponijeti nalaz prvog pregleda, sva ispitivanja urađena u međuvremenu i spisak lijekova koje uzimate; posebna priprema potrebna je samo ako ju je ljekar unaprijed tražio",
+				"abnormal": "Kontrola može pokazati poboljšanje, nepromijenjeno stanje ili nove nalaze u ispitivanjima. Da li terapiju treba mijenjati i kada doći ponovo odlučuje specijalista koji vodi slučaj"
+			},
+			"de": {
+				"what": "Ein Kontrolltermin bei einer Fachärztin oder einem Facharzt zum beim Erstbesuch festgelegten Zeitpunkt",
+				"how": "Die Ärztin oder der Arzt prüft, wie sich die Beschwerden verändert haben, wiederholt die fachspezifische Untersuchung, bespricht die Ergebnisse der veranlassten Tests und passt die Verordnungen bei Bedarf an; meist kürzer als der Erstbesuch",
+				"when": "Vorliegende Labor- oder Bildbefunde, abgeschlossene Behandlungsserie, Verlaufskontrolle einer chronischen Erkrankung, Beurteilung nach einem Eingriff oder einer Operation",
+				"prep": "Den Bericht des Erstbesuchs, alle seither durchgeführten Untersuchungen und eine Liste der eingenommenen Medikamente mitbringen; eine besondere Vorbereitung ist nur nötig, wenn die Ärztin oder der Arzt sie vorab verlangt hat",
+				"abnormal": "Die Kontrolle kann eine Besserung, einen unveränderten Verlauf oder neue Befunde zeigen. Ob die Behandlung geändert wird und wann der nächste Termin ansteht, entscheidet die betreuende Fachärztin oder der betreuende Facharzt"
+			},
+			"tr": {
+				"what": "İlk muayenede belirlenen süre sonunda uzman hekime yapılan kontrol ziyareti",
+				"how": "Hekim şikayetlerin nasıl değiştiğini sorar, kendi alanına özgü muayeneyi tekrarlar, istenen tetkiklerin sonuçlarını değerlendirir ve gerekirse tedaviyi düzenler; genellikle ilk muayeneden kısadır",
+				"when": "Tahlil veya görüntüleme sonuçlarının çıkması, verilen tedavinin tamamlanması, kronik hastalığın izlenmesi, işlem veya ameliyat sonrası durumun değerlendirilmesi",
+				"prep": "İlk muayene raporunu, o tarihten beri yapılan tüm tetkikleri ve kullandığınız ilaçların listesini getirin; özel hazırlık yalnızca hekim önceden istediyse gerekir",
+				"abnormal": "Kontrolde düzelme, değişiklik olmaması ya da tetkiklerde yeni bulgular görülebilir. Tedavinin değişip değişmeyeceğine ve bir sonraki ziyaretin zamanına, durumu izleyen uzman karar verir"
+			}
+		}
+	},
+	{
+		"slug": "ilioinguinal-or-iliohypogastric-block",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Обезболивание нижней части передней брюшной стенки и паховой области введением местного анестетика рядом с подвздошно-паховым и подвздошно-подчревным нервами",
+				"how": "Пациент лежит на спине, точку рядом с гребнем подвздошной кости находят по анатомическим ориентирам или под контролем ультразвука, кожу обрабатывают и анестетик вводят тонкой иглой; сама инъекция занимает несколько минут, онемение развивается в течение четверти часа",
+				"when": "Операции в паховой области, включая грыжесечение, вмешательства на мошонке, обезболивание после таких операций, стойкая боль в паху, которую оценивает специалист по лечению боли",
+				"prep": "Сказать анестезиологу об аллергии на местные анестетики, нарушениях свёртывания и приёме разжижающих кровь препаратов; если блокада входит в план наркоза, клиника заранее указывает часы, с которых нельзя есть и пить",
+				"abnormal": "После блокады паховая область и кожа соседней части бедра немеют на несколько часов, возможны временная слабость мышц живота и болезненность в точке укола. Нарастающая боль, покраснение, повышение температуры или онемение дольше суток требуют осмотра врача"
+			},
+			"en": {
+				"what": "Numbing of the lower abdominal wall and the groin by injecting a local anaesthetic next to the ilioinguinal and iliohypogastric nerves",
+				"how": "The patient lies on the back, the point near the iliac crest is located by landmarks or under ultrasound guidance, the skin is cleaned and the anaesthetic is given through a fine needle; the injection itself takes a few minutes and numbness develops within about a quarter of an hour",
+				"when": "Operations in the groin, including hernia repair, procedures on the scrotum, pain relief after such surgery, persistent groin pain assessed by a pain specialist",
+				"prep": "Tell the anaesthetist about allergies to local anaesthetics, clotting disorders and blood-thinning medicines; if the block is part of an anaesthetic plan, the clinic states in advance from what time eating and drinking must stop",
+				"abnormal": "After the block the groin and the neighbouring skin of the thigh stay numb for several hours, and temporary weakness of the abdominal muscles and tenderness at the puncture site are possible. Increasing pain, redness, fever or numbness lasting more than a day need a doctor's review"
+			},
+			"sr": {
+				"what": "Obezbolivanje donjeg dijela prednjeg trbušnog zida i preponskog predjela davanjem lokalnog anestetika uz ilioingvinalni i iliohipogastrični nerv",
+				"how": "Pacijent leži na leđima, tačka uz greben karlične kosti nalazi se po anatomskim orijentirima ili pod kontrolom ultrazvuka, koža se dezinfikuje i anestetik se daje tankom iglom; sama injekcija traje nekoliko minuta, a utrnulost nastupa u roku od petnaestak minuta",
+				"when": "Operacije u preponi, uključujući zbrinjavanje kile, zahvati na skrotumu, obezbolivanje poslije takvih operacija, uporan bol u preponi koji procjenjuje specijalista za liječenje bola",
+				"prep": "Reći anesteziologu za alergiju na lokalne anestetike, poremećaje zgrušavanja i lijekove za razrjeđivanje krvi; ako je blokada dio plana anestezije, klinika unaprijed određuje od kada se ne smije jesti ni piti",
+				"abnormal": "Poslije blokade prepona i koža susjednog dijela buta utrnu na nekoliko sati, a mogući su privremena slabost trbušnih mišića i osjetljivost na mjestu uboda. Bol koji jača, crvenilo, povišena temperatura ili utrnulost duža od jednog dana zahtijevaju pregled ljekara"
+			},
+			"de": {
+				"what": "Betäubung der unteren Bauchwand und der Leistenregion durch Injektion eines Lokalanästhetikums neben dem Nervus ilioinguinalis und dem Nervus iliohypogastricus",
+				"how": "Die Patientin oder der Patient liegt auf dem Rücken, die Stelle nahe dem Beckenkamm wird über Landmarken oder per Ultraschall aufgesucht, die Haut wird desinfiziert und das Anästhetikum mit einer feinen Nadel gespritzt; die Injektion dauert wenige Minuten, die Taubheit setzt innerhalb einer Viertelstunde ein",
+				"when": "Operationen in der Leiste einschließlich Leistenbruchversorgung, Eingriffe am Hodensack, Schmerzlinderung nach solchen Operationen, anhaltende Leistenschmerzen in schmerztherapeutischer Beurteilung",
+				"prep": "Allergien gegen Lokalanästhetika, Gerinnungsstörungen und blutverdünnende Medikamente der Anästhesie mitteilen; gehört die Blockade zum Narkoseplan, nennt die Klinik vorab die Nüchternzeiten",
+				"abnormal": "Nach der Blockade bleiben Leiste und angrenzende Oberschenkelhaut einige Stunden taub, eine vorübergehende Schwäche der Bauchmuskeln und Druckempfindlichkeit an der Einstichstelle sind möglich. Zunehmende Schmerzen, Rötung, Fieber oder Taubheit über einen Tag hinaus gehören ärztlich beurteilt"
+			},
+			"tr": {
+				"what": "Alt karın duvarı ve kasık bölgesinin, ilioinguinal ve iliohipogastrik sinirlerin yanına lokal anestezik verilerek uyuşturulması",
+				"how": "Hasta sırtüstü yatar, kalça kemiği çıkıntısının yanındaki nokta anatomik işaretlerle ya da ultrason eşliğinde bulunur, cilt temizlenir ve ince iğneyle anestezik verilir; enjeksiyon birkaç dakika sürer, uyuşma on beş dakika içinde yerleşir",
+				"when": "Fıtık onarımı dahil kasık bölgesi ameliyatları, skrotum girişimleri, bu ameliyatlardan sonra ağrı kontrolü, ağrı uzmanının değerlendirdiği inatçı kasık ağrısı",
+				"prep": "Lokal anesteziklere alerji, pıhtılaşma bozukluğu ve kan sulandırıcı ilaç kullanımını anestezi hekimine bildirin; blokaj anestezi planının parçasıysa aç kalma saatlerini klinik önceden bildirir",
+				"abnormal": "Blokajdan sonra kasık ve komşu uyluk cildi birkaç saat uyuşuk kalır, karın kaslarında geçici güçsüzlük ve iğne yerinde hassasiyet görülebilir. Artan ağrı, kızarıklık, ateş veya bir günden uzun süren uyuşukluk hekim değerlendirmesi gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "intercostal-nerve-block",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Обезболивание участка грудной стенки введением анестетика к межрёберному нерву под нижним краем ребра",
+				"how": "Пациент сидит или лежит на боку, врач определяет нужное ребро, обрабатывает кожу и вводит анестетик под его нижний край, при необходимости на нескольких уровнях; процедура занимает несколько минут и часто выполняется под контролем ультразвука",
+				"when": "Боль при переломах рёбер, боль после операций на грудной клетке, болезненные манипуляции на грудной стенке, стойкая боль по ходу межрёберного нерва, в том числе после опоясывающего лишая",
+				"prep": "Сообщить о болезнях лёгких, нарушениях свёртывания и приёме разжижающих кровь препаратов; отдельная подготовка не нужна, если врач не назначил иначе",
+				"abnormal": "Обезболивание обычно держится несколько часов, в месте укола возможны синяк и болезненность. Внезапная одышка, резкая боль в груди, упорный кашель или головокружение после процедуры — повод немедленно обратиться к врачу"
+			},
+			"en": {
+				"what": "Pain relief for part of the chest wall, achieved by placing an anaesthetic next to the intercostal nerve under the lower edge of a rib",
+				"how": "The patient sits or lies on the side, the doctor identifies the rib, cleans the skin and injects the anaesthetic under its lower edge, at several levels if needed; it takes a few minutes and is often done with ultrasound guidance",
+				"when": "Pain from rib fractures, pain after chest surgery, painful procedures on the chest wall, persistent pain along an intercostal nerve, including after shingles",
+				"prep": "Report lung disease, clotting disorders and blood-thinning medicines; no separate preparation is needed unless the doctor says otherwise",
+				"abnormal": "The numbness usually lasts several hours, and bruising and tenderness at the injection site are common. Sudden shortness of breath, sharp chest pain, persistent coughing or dizziness after the procedure call for immediate medical attention"
+			},
+			"sr": {
+				"what": "Obezbolivanje dijela grudnog zida davanjem anestetika uz interkostalni nerv ispod donje ivice rebra",
+				"how": "Pacijent sjedi ili leži na boku, ljekar odredi rebro, dezinfikuje kožu i da anestetik ispod njegove donje ivice, po potrebi na više nivoa; procedura traje nekoliko minuta i često se radi uz kontrolu ultrazvuka",
+				"when": "Bol kod preloma rebara, bol poslije operacija na grudnom košu, bolne intervencije na grudnom zidu, uporan bol duž interkostalnog nerva, uključujući i stanje poslije herpes zostera",
+				"prep": "Javiti bolesti pluća, poremećaje zgrušavanja i uzimanje lijekova za razrjeđivanje krvi; posebna priprema nije potrebna ako ljekar ne odredi drugačije",
+				"abnormal": "Obezbolivanje obično traje nekoliko sati, a na mjestu uboda mogu se javiti modrica i osjetljivost. Iznenadno otežano disanje, oštar bol u grudima, uporan kašalj ili vrtoglavica poslije procedure razlog su da se odmah javite ljekaru"
+			},
+			"de": {
+				"what": "Schmerzausschaltung eines Abschnitts der Brustwand durch Injektion eines Anästhetikums an den Interkostalnerv unter dem Rippenunterrand",
+				"how": "Die Patientin oder der Patient sitzt oder liegt auf der Seite, die Ärztin bestimmt die Rippe, desinfiziert die Haut und spritzt das Anästhetikum unter deren Unterrand, bei Bedarf in mehreren Höhen; der Eingriff dauert wenige Minuten und erfolgt oft ultraschallgesteuert",
+				"when": "Schmerzen bei Rippenbrüchen, Schmerzen nach Operationen am Brustkorb, schmerzhafte Eingriffe an der Brustwand, anhaltende Schmerzen entlang eines Interkostalnervs, auch nach einer Gürtelrose",
+				"prep": "Lungenerkrankungen, Gerinnungsstörungen und blutverdünnende Medikamente angeben; eine eigene Vorbereitung ist nicht nötig, sofern die Ärztin oder der Arzt nichts anderes anordnet",
+				"abnormal": "Die Betäubung hält meist einige Stunden an, ein Bluterguss und Druckschmerz an der Einstichstelle sind üblich. Plötzliche Atemnot, stechender Brustschmerz, anhaltender Husten oder Schwindel nach dem Eingriff erfordern sofortige ärztliche Hilfe"
+			},
+			"tr": {
+				"what": "Göğüs duvarının bir bölümünün, kaburganın alt kenarı altındaki interkostal sinire anestezik verilerek ağrısızlaştırılması",
+				"how": "Hasta oturur ya da yan yatar, hekim ilgili kaburgayı belirler, cildi temizler ve anesteziği alt kenarın altına, gerekirse birkaç seviyeden verir; işlem birkaç dakika sürer ve sıklıkla ultrason eşliğinde yapılır",
+				"when": "Kaburga kırıklarında ağrı, göğüs ameliyatları sonrası ağrı, göğüs duvarındaki ağrılı girişimler, zona sonrası dahil interkostal sinir boyunca süregelen ağrı",
+				"prep": "Akciğer hastalıklarını, pıhtılaşma bozukluklarını ve kan sulandırıcı ilaç kullanımını bildirin; hekim aksini söylemedikçe ayrı bir hazırlık gerekmez",
+				"abnormal": "Ağrısızlık genellikle birkaç saat sürer, iğne yerinde morluk ve hassasiyet olağandır. İşlemden sonra ani nefes darlığı, keskin göğüs ağrısı, geçmeyen öksürük veya baş dönmesi acil tıbbi değerlendirme gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "laryngeal-mask-placement",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Установка надгортанного воздуховода — мягкой маски, которая располагается над входом в гортань и обеспечивает дыхание во время наркоза",
+				"how": "После засыпания анестезиолог вводит маску через рот и устанавливает её над гортанью, раздувает манжету и присоединяет дыхательный контур; установка занимает меньше минуты, маску удаляют в конце вмешательства при пробуждении",
+				"when": "Общая анестезия при коротких и средних по длительности плановых операциях, когда интубация трахеи не требуется, а также как способ поддержать дыхание в неотложной ситуации",
+				"prep": "Не есть и не пить столько времени, сколько укажет анестезиолог, снять съёмные протезы и украшения, предупредить о шатающихся зубах, изжоге и забросе желудочного содержимого, болезнях шеи и челюсти",
+				"abnormal": "В первые часы после наркоза возможны першение и боль в горле, осиплость, иногда тошнота — обычно это проходит за день-два. Сохраняющаяся осиплость, боль при глотании дольше нескольких дней или затруднённое дыхание — повод связаться с врачом"
+			},
+			"en": {
+				"what": "Placement of a supraglottic airway, a soft mask that sits above the entrance to the larynx and keeps the airway open during anaesthesia",
+				"how": "Once the patient is asleep the anaesthetist inserts the mask through the mouth, seats it above the larynx, inflates the cuff and connects the breathing circuit; placement takes less than a minute and the mask is removed as the patient wakes up",
+				"when": "General anaesthesia for short and medium-length planned operations where tracheal intubation is not required, and as a way to secure breathing in an emergency",
+				"prep": "Stop eating and drinking for as long as the anaesthetist specifies, remove dentures and jewellery, report loose teeth, heartburn and reflux, and any neck or jaw conditions",
+				"abnormal": "A scratchy or sore throat, hoarseness and sometimes nausea are common in the first hours after anaesthesia and usually settle within a day or two. Hoarseness that persists, painful swallowing beyond a few days or difficulty breathing should be reported to a doctor"
+			},
+			"sr": {
+				"what": "Postavljanje supraglotičnog disajnog puta — mekane maske koja naliježe iznad ulaza u grkljan i održava disanje tokom anestezije",
+				"how": "Kada pacijent zaspi, anesteziolog uvodi masku kroz usta i postavlja je iznad grkljana, napuni manžetnu i priključi disajni sistem; postavljanje traje manje od minuta, a maska se vadi na kraju zahvata pri buđenju",
+				"when": "Opšta anestezija za kraće i srednje duge planirane operacije kada intubacija dušnika nije potrebna, kao i način da se disanje obezbijedi u hitnoj situaciji",
+				"prep": "Ne jesti i ne piti onoliko vremena koliko odredi anesteziolog, skinuti pokretne proteze i nakit, javiti klimave zube, žgaravicu i vraćanje želudačnog sadržaja, kao i bolesti vrata i vilice",
+				"abnormal": "Prvih sati poslije anestezije mogući su grebanje i bol u grlu, promuklost, ponekad mučnina, što obično prolazi za dan ili dva. Promuklost koja ostaje, bolno gutanje duže od nekoliko dana ili otežano disanje razlog su da se javite ljekaru"
+			},
+			"de": {
+				"what": "Einlage eines supraglottischen Atemwegs, einer weichen Maske, die über dem Kehlkopfeingang liegt und die Beatmung während der Narkose sichert",
+				"how": "Nach dem Einschlafen führt die Anästhesie die Maske durch den Mund ein, platziert sie über dem Kehlkopf, blockt die Manschette und schließt das Beatmungssystem an; die Einlage dauert weniger als eine Minute, entfernt wird die Maske beim Aufwachen",
+				"when": "Allgemeinanästhesie bei kurzen und mittellangen geplanten Operationen ohne Notwendigkeit einer Intubation sowie zur Sicherung der Atmung in Notfallsituationen",
+				"prep": "Die von der Anästhesie genannten Nüchternzeiten einhalten, herausnehmbaren Zahnersatz und Schmuck ablegen, lockere Zähne, Sodbrennen und Reflux sowie Hals- und Kiefererkrankungen melden",
+				"abnormal": "In den ersten Stunden nach der Narkose sind Halskratzen, Halsschmerzen, Heiserkeit und gelegentlich Übelkeit üblich und klingen meist in ein bis zwei Tagen ab. Anhaltende Heiserkeit, Schluckschmerzen über mehrere Tage oder Atemnot gehören ärztlich abgeklärt"
+			},
+			"tr": {
+				"what": "Gırtlak girişinin üzerine oturan yumuşak bir maske olan supraglottik hava yolunun yerleştirilmesi; anestezi sırasında solunumu güvence altına alır",
+				"how": "Hasta uyuduktan sonra anestezi hekimi maskeyi ağızdan sokar, gırtlağın üzerine yerleştirir, kafı şişirir ve solunum devresine bağlar; yerleştirme bir dakikadan kısa sürer, maske uyanma sırasında çıkarılır",
+				"when": "Trakeal entübasyon gerektirmeyen kısa ve orta süreli planlı ameliyatlarda genel anestezi, ayrıca acil durumda solunumun güvence altına alınması",
+				"prep": "Anestezi hekiminin belirttiği süre boyunca yemeyin ve içmeyin, takma protez ve takıları çıkarın, sallanan dişleri, mide yanmasını ve reflüyü, boyun ve çene hastalıklarını bildirin",
+				"abnormal": "Anesteziden sonraki ilk saatlerde boğazda gıcık ve ağrı, ses kısıklığı, bazen bulantı olağandır ve genellikle bir iki günde geçer. Geçmeyen ses kısıklığı, birkaç günden uzun süren yutma ağrısı veya nefes darlığı hekime bildirilmelidir"
+			}
+		}
+	},
+	{
+		"slug": "oncologist-examination",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Консультация врача-онколога — интерниста, который занимается опухолевыми заболеваниями и их лекарственным лечением",
+				"how": "Врач подробно расспрашивает о жалобах и истории болезни, осматривает пациента и доступные группы лимфатических узлов, изучает выписки, снимки и гистологическое заключение, после чего формулирует план обследования или наблюдения; приём занимает от получаса",
+				"when": "Направление после выявленного образования или гистологического исследования, подбор и контроль лекарственного лечения, наблюдение после завершённого лечения, второе мнение, отягощённая семейная история",
+				"prep": "Собрать всю медицинскую документацию: выписки, протоколы операций, гистологические заключения, диски и описания КТ и МРТ, свежие анализы и список препаратов; к самому осмотру готовиться не нужно",
+				"abnormal": "По итогам приёма врач может назначить дополнительные исследования, определить сроки наблюдения или обсудить варианты лечения. Отдельные находки в анализах и на снимках имеют смысл только в совокупности, и трактует их лечащий врач"
+			},
+			"en": {
+				"what": "A consultation with a medical oncologist, a physician who deals with tumour diseases and their drug treatment",
+				"how": "The doctor takes a detailed history, examines the patient and the accessible groups of lymph nodes, reviews discharge letters, images and the histology report, and then sets out a plan for investigation or follow-up; the visit takes half an hour or more",
+				"when": "Referral after a mass has been found or after a histology report, choosing and monitoring drug treatment, surveillance after completed treatment, a second opinion, a strong family history",
+				"prep": "Collect all medical records: discharge letters, operation reports, histology findings, CT and MRI discs with their written reports, recent test results and a list of medicines; the examination itself needs no preparation",
+				"abnormal": "The visit may lead to further investigations, to a follow-up schedule, or to a discussion of treatment options. Individual findings in tests and images only make sense together, and they are interpreted by the treating doctor"
+			},
+			"sr": {
+				"what": "Konsultacija interniste onkologa, ljekara koji se bavi tumorskim bolestima i njihovim liječenjem lijekovima",
+				"how": "Ljekar detaljno uzima anamnezu, pregleda pacijenta i dostupne grupe limfnih čvorova, pregleda otpusne liste, snimke i patohistološki nalaz, a zatim postavlja plan ispitivanja ili praćenja; pregled traje pola sata i duže",
+				"when": "Upućivanje poslije otkrivene promjene ili patohistološkog nalaza, izbor i kontrola terapije lijekovima, praćenje poslije završenog liječenja, drugo mišljenje, opterećena porodična istorija",
+				"prep": "Pripremiti svu medicinsku dokumentaciju: otpusne liste, operativne protokole, patohistološke nalaze, diskove i nalaze CT i MR snimanja, svježe analize i spisak lijekova; za sam pregled priprema nije potrebna",
+				"abnormal": "Poslije pregleda ljekar može tražiti dodatna ispitivanja, odrediti rokove praćenja ili razgovarati o mogućnostima liječenja. Pojedinačni nalazi u analizama i na snimcima imaju smisao tek u cjelini, a tumači ih ljekar koji vodi liječenje"
+			},
+			"de": {
+				"what": "Eine Konsultation in der internistischen Onkologie, dem Fachgebiet für Tumorerkrankungen und deren medikamentöse Behandlung",
+				"how": "Die Ärztin oder der Arzt erhebt eine ausführliche Anamnese, untersucht die Patientin oder den Patienten und die tastbaren Lymphknotenstationen, sichtet Arztbriefe, Bilder und den histologischen Befund und legt dann das weitere Vorgehen oder die Nachsorge fest; der Termin dauert ab einer halben Stunde",
+				"when": "Überweisung nach einem festgestellten Befund oder einem histologischen Ergebnis, Auswahl und Kontrolle einer medikamentösen Therapie, Nachsorge nach abgeschlossener Behandlung, Zweitmeinung, belastete Familienanamnese",
+				"prep": "Alle Unterlagen zusammenstellen: Arztbriefe, Operationsberichte, histologische Befunde, CT- und MRT-CDs mit schriftlichen Befunden, aktuelle Laborwerte und die Medikamentenliste; die Untersuchung selbst erfordert keine Vorbereitung",
+				"abnormal": "Aus dem Termin können weitere Untersuchungen, ein Nachsorgeintervall oder ein Gespräch über Behandlungsmöglichkeiten folgen. Einzelne Befunde aus Labor und Bildgebung ergeben nur im Zusammenhang Sinn und werden von der behandelnden Ärztin oder dem behandelnden Arzt gedeutet"
+			},
+			"tr": {
+				"what": "Tümör hastalıkları ve bunların ilaçla tedavisiyle ilgilenen dahiliye kökenli onkoloji uzmanıyla yapılan görüşme",
+				"how": "Hekim ayrıntılı öykü alır, hastayı ve elle muayene edilebilen lenf nodu bölgelerini inceler, epikrizleri, görüntüleri ve patoloji raporunu gözden geçirir, ardından tetkik veya izlem planını belirler; görüşme yarım saat ve üzeri sürer",
+				"when": "Saptanan bir kitle ya da patoloji raporu sonrası yönlendirme, ilaç tedavisinin seçimi ve izlenmesi, tedavi bittikten sonraki takip, ikinci görüş, yüklü aile öyküsü",
+				"prep": "Tüm tıbbi belgeleri toplayın: epikrizler, ameliyat raporları, patoloji sonuçları, BT ve MR diskleri ile yazılı raporları, güncel tahliller ve ilaç listesi; muayenenin kendisi için hazırlık gerekmez",
+				"abnormal": "Görüşme sonunda ek tetkik istenebilir, izlem aralığı belirlenebilir ya da tedavi seçenekleri konuşulabilir. Tahlil ve görüntülerdeki tek tek bulgular ancak bütün içinde anlam taşır ve bunları tedaviyi yürüten hekim yorumlar"
+			}
+		}
+	},
+	{
+		"slug": "other-peripheral-nerve-block",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Обезболивание участка тела введением анестетика рядом с периферическим нервом, для которого нет отдельной процедуры в списке, например бедренным, запирательным или нервами предплечья",
+				"how": "Нерв находят по анатомическим ориентирам, под контролем ультразвука или с помощью нейростимулятора, кожу обрабатывают и вводят анестетик рядом со стволом нерва, затем проверяют чувствительность в зоне, за которую этот нерв отвечает",
+				"when": "Операции и манипуляции на конечностях, обезболивание после травмы или вмешательства, вправление переломов и вывихов, лечение стойкой боли по ходу конкретного нерва",
+				"prep": "Сообщить о нарушениях свёртывания, приёме разжижающих кровь препаратов, аллергии на анестетики и перенесённых повреждениях нервов; если блокада планируется вместе с наркозом, клиника заранее указывает, с какого часа нельзя есть и пить",
+				"abnormal": "Онемение и слабость в зоне нерва держатся обычно несколько часов и проходят постепенно; всё это время конечность плохо чувствует боль и температуру, поэтому её легко травмировать. Если чувствительность не вернулась в срок, названный врачом, или появились жжение и сильная боль, нужен осмотр"
+			},
+			"en": {
+				"what": "Numbing of a body region by placing anaesthetic next to a peripheral nerve that has no separate entry of its own, such as the femoral, obturator or forearm nerves",
+				"how": "The nerve is located by landmarks, with ultrasound or with a nerve stimulator, the skin is cleaned and the anaesthetic is placed beside the nerve trunk, after which sensation in the area the nerve supplies is checked",
+				"when": "Operations and procedures on the limbs, pain relief after injury or surgery, reduction of fractures and dislocations, treatment of persistent pain along a particular nerve",
+				"prep": "Report clotting disorders, blood-thinning medicines, allergies to anaesthetics and any previous nerve injury; if the block is planned together with anaesthesia, the clinic states in advance when eating and drinking must stop",
+				"abnormal": "Numbness and weakness in the nerve's territory usually last several hours and wear off gradually; during that time the limb feels pain and temperature poorly and is easily injured. If sensation does not return within the time the doctor gave, or burning and severe pain appear, a review is needed"
+			},
+			"sr": {
+				"what": "Obezbolivanje dijela tijela davanjem anestetika uz periferni živac koji nema svoju zasebnu stavku, na primjer butni, zaporni ili živce podlaktice",
+				"how": "Živac se nalazi po anatomskim orijentirima, ultrazvukom ili neurostimulatorom, koža se dezinfikuje i anestetik se daje uz nervno stablo, a zatim se provjerava osjet u području koje taj živac pokriva",
+				"when": "Operacije i intervencije na ekstremitetima, obezbolivanje poslije povrede ili zahvata, namještanje preloma i iščašenja, liječenje upornog bola duž određenog živca",
+				"prep": "Javiti poremećaje zgrušavanja, uzimanje lijekova za razrjeđivanje krvi, alergiju na anestetike i ranije povrede živaca; ako se blokada planira uz anesteziju, klinika unaprijed određuje od kada se ne smije jesti ni piti",
+				"abnormal": "Utrnulost i slabost u području živca obično traju nekoliko sati i prolaze postepeno; sve to vrijeme ekstremitet slabo osjeća bol i temperaturu, pa se lako povrijedi. Ako se osjet ne vrati u roku koji je ljekar naveo ili se jave pečenje i jak bol, potreban je pregled"
+			},
+			"de": {
+				"what": "Betäubung einer Körperregion durch Injektion eines Anästhetikums neben einem peripheren Nerv ohne eigenen Listeneintrag, etwa dem Oberschenkel-, Hüftloch- oder Unterarmnerv",
+				"how": "Der Nerv wird über Landmarken, Ultraschall oder einen Nervenstimulator aufgesucht, die Haut desinfiziert und das Anästhetikum neben den Nervenstamm gespritzt; anschließend wird die Empfindung im Versorgungsgebiet geprüft",
+				"when": "Operationen und Eingriffe an den Gliedmaßen, Schmerzlinderung nach Verletzung oder Eingriff, Einrichten von Brüchen und Verrenkungen, Behandlung anhaltender Schmerzen entlang eines bestimmten Nervs",
+				"prep": "Gerinnungsstörungen, blutverdünnende Medikamente, Allergien gegen Anästhetika und frühere Nervenverletzungen angeben; ist die Blockade zusammen mit einer Narkose geplant, nennt die Klinik vorab die Nüchternzeiten",
+				"abnormal": "Taubheit und Schwäche im Versorgungsgebiet halten meist einige Stunden an und klingen allmählich ab; so lange nimmt die Gliedmaße Schmerz und Temperatur kaum wahr und ist leicht zu verletzen. Kehrt die Empfindung nicht im genannten Zeitraum zurück oder treten Brennen und starke Schmerzen auf, ist eine Kontrolle nötig"
+			},
+			"tr": {
+				"what": "Listede ayrı bir başlığı bulunmayan bir çevresel sinirin, örneğin femoral, obturator veya ön kol sinirlerinin yanına anestezik verilerek bölgenin uyuşturulması",
+				"how": "Sinir anatomik işaretlerle, ultrasonla ya da sinir uyarıcısıyla bulunur, cilt temizlenir ve anestezik sinir gövdesinin yanına verilir, ardından o sinirin beslediği bölgede duyu kontrol edilir",
+				"when": "Kol ve bacak ameliyatları ve girişimleri, yaralanma veya işlem sonrası ağrı kontrolü, kırık ve çıkıkların yerine konması, belirli bir sinir boyunca süren inatçı ağrının tedavisi",
+				"prep": "Pıhtılaşma bozukluğunu, kan sulandırıcı ilaçları, anesteziklere alerjiyi ve geçirilmiş sinir yaralanmalarını bildirin; blokaj anesteziyle birlikte planlanıyorsa aç kalma saatini klinik önceden bildirir",
+				"abnormal": "Sinirin alanındaki uyuşukluk ve güçsüzlük genellikle birkaç saat sürer ve yavaş yavaş geçer; bu süre boyunca uzuv ağrıyı ve sıcağı iyi algılamaz, kolayca zarar görür. Duyu hekimin söylediği sürede dönmezse ya da yanma ve şiddetli ağrı başlarsa muayene gerekir"
+			}
+		}
+	},
+	{
+		"slug": "patient-observation-per-hour",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Пребывание под наблюдением медицинского персонала в клинике, когда состояние нужно контролировать какое-то время, а госпитализация не требуется",
+				"how": "Пациент остаётся в палате или наблюдательной зоне, персонал повторно измеряет давление, пульс, температуру, частоту дыхания и насыщение крови кислородом, оценивает жалобы и при необходимости продолжает капельницу; продолжительность определяет врач",
+				"when": "После инъекции, инфузии или амбулаторного вмешательства, аллергическая реакция, обморок, травма головы, отравление, боль неясного происхождения, ожидание результатов анализов при остром состоянии",
+				"prep": "Подготовки не требуется; при себе стоит иметь список постоянных лекарств и сведения о хронических болезнях и аллергиях, а при возможном долгом ожидании — сопровождающего",
+				"abnormal": "Наблюдение заканчивается либо выпиской с рекомендациями, либо решением о дополнительном обследовании или госпитализации. Если дома состояние вновь ухудшилось, нужно сразу связаться с клиникой или вызвать неотложную помощь"
+			},
+			"en": {
+				"what": "A stay under the supervision of medical staff when the condition needs watching for a while but admission to hospital is not required",
+				"how": "The patient stays in a room or an observation area while staff repeatedly measure blood pressure, pulse, temperature, breathing rate and blood oxygen, reassess symptoms and continue an infusion if one is running; the duration is set by the doctor",
+				"when": "After an injection, an infusion or a day-case procedure, an allergic reaction, fainting, a head injury, poisoning, pain of unclear origin, waiting for test results in an acute situation",
+				"prep": "No preparation is needed; it helps to carry a list of regular medicines and details of chronic conditions and allergies, and to bring someone along if the wait may be long",
+				"abnormal": "Observation ends either with discharge and instructions, or with a decision to investigate further or to admit the patient. If the condition worsens again at home, contact the clinic or call emergency services straight away"
+			},
+			"sr": {
+				"what": "Boravak pod nadzorom medicinskog osoblja kada stanje treba pratiti neko vrijeme, a bolničko liječenje nije potrebno",
+				"how": "Pacijent ostaje u sobi ili prostoru za nadzor, osoblje ponovo mjeri pritisak, puls, temperaturu, frekvenciju disanja i zasićenost krvi kiseonikom, procjenjuje tegobe i po potrebi nastavlja infuziju; trajanje određuje ljekar",
+				"when": "Poslije injekcije, infuzije ili ambulantnog zahvata, alergijska reakcija, nesvjestica, povreda glave, trovanje, bol nejasnog uzroka, čekanje nalaza kod akutnog stanja",
+				"prep": "Priprema nije potrebna; dobro je imati uza se spisak stalnih lijekova i podatke o hroničnim bolestima i alergijama, a ako se očekuje duže čekanje, doći sa pratnjom",
+				"abnormal": "Nadzor se završava otpustom uz preporuke ili odlukom o dodatnom ispitivanju odnosno prijemu u bolnicu. Ako se kod kuće stanje ponovo pogorša, treba odmah pozvati kliniku ili hitnu pomoć"
+			},
+			"de": {
+				"what": "Aufenthalt unter Überwachung durch medizinisches Personal, wenn der Zustand eine Zeit lang beobachtet werden muss, eine stationäre Aufnahme aber nicht nötig ist",
+				"how": "Die Patientin oder der Patient bleibt in einem Zimmer oder Überwachungsbereich, das Personal misst wiederholt Blutdruck, Puls, Temperatur, Atemfrequenz und Sauerstoffsättigung, beurteilt die Beschwerden erneut und führt bei Bedarf eine Infusion fort; die Dauer legt die Ärztin oder der Arzt fest",
+				"when": "Nach Injektion, Infusion oder ambulantem Eingriff, allergische Reaktion, Ohnmacht, Kopfverletzung, Vergiftung, Schmerzen unklarer Ursache, Warten auf Befunde bei akuter Erkrankung",
+				"prep": "Keine Vorbereitung nötig; hilfreich sind eine Liste der Dauermedikamente sowie Angaben zu chronischen Erkrankungen und Allergien, bei längerer Wartezeit auch eine Begleitperson",
+				"abnormal": "Die Überwachung endet entweder mit der Entlassung samt Empfehlungen oder mit der Entscheidung zu weiterer Abklärung beziehungsweise stationärer Aufnahme. Verschlechtert sich der Zustand zu Hause erneut, sofort die Klinik kontaktieren oder den Rettungsdienst rufen"
+			},
+			"tr": {
+				"what": "Durumun bir süre izlenmesi gerektiği, ancak yatışın gerekmediği durumlarda sağlık personeli gözetiminde kalma",
+				"how": "Hasta bir odada veya gözlem alanında kalır; personel tansiyon, nabız, ateş, solunum sayısı ve kandaki oksijen doygunluğunu tekrar tekrar ölçer, şikayetleri yeniden değerlendirir ve gerekirse serumu sürdürür; süreyi hekim belirler",
+				"when": "Enjeksiyon, serum veya günübirlik girişim sonrası, alerjik reaksiyon, bayılma, kafa travması, zehirlenme, nedeni belirsiz ağrı, akut durumda tahlil sonucunun beklenmesi",
+				"prep": "Hazırlık gerekmez; sürekli kullanılan ilaçların listesini, kronik hastalık ve alerji bilgilerini yanınızda bulundurmak, bekleme uzayabilecekse yanınızda biri olması işe yarar",
+				"abnormal": "Gözlem ya öneriler verilerek taburculukla, ya da ek tetkik veya yatış kararıyla sonlanır. Evde durum yeniden kötüleşirse hemen kliniğe ulaşın veya acil yardım çağırın"
+			}
+		}
+	},
+	{
+		"slug": "preventive-general-practitioner-examination",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Плановый осмотр у врача общей практики для людей без жалоб — оценка факторов риска и раннее выявление отклонений",
+				"how": "Врач собирает сведения о семейных болезнях, питании, курении и физической нагрузке, измеряет рост, вес, окружность талии, давление и пульс, выслушивает сердце и лёгкие, осматривает кожу и щитовидную железу, затем выписывает направления на скрининговые анализы и исследования по возрасту и полу",
+				"when": "Регулярная проверка здоровья, возраст, в котором рекомендован скрининг, семейная история сердечно-сосудистых болезней или диабета, избыточный вес, курение, малоподвижная работа, оформление профилактического наблюдения",
+				"prep": "Идти натощак, если кровь планируется сдавать в тот же день, принести прошлые результаты обследований и список препаратов, накануне не нагружать себя непривычными тренировками и алкоголем",
+				"abnormal": "Профилактический осмотр чаще всего заканчивается рекомендациями по образу жизни и датой следующей проверки. Выявленные отклонения не равны диагнозу: их подтверждают повторными исследованиями, а дальнейший план определяет врач"
+			},
+			"en": {
+				"what": "A scheduled check-up with a general practitioner for people without complaints, aimed at risk factors and the early detection of changes",
+				"how": "The doctor asks about family illnesses, diet, smoking and physical activity, measures height, weight, waist circumference, blood pressure and pulse, listens to the heart and lungs, inspects the skin and thyroid, and then orders screening tests appropriate to age and sex",
+				"when": "A regular health check, an age at which screening is advised, a family history of cardiovascular disease or diabetes, excess weight, smoking, sedentary work, enrolment in preventive follow-up",
+				"prep": "Come fasting if blood is to be drawn the same day, bring earlier results and a list of medicines, and avoid unaccustomed exercise and alcohol the day before",
+				"abnormal": "A preventive check-up most often ends with lifestyle advice and a date for the next review. A finding is not a diagnosis: it is confirmed by repeat testing, and the next steps are decided by the doctor"
+			},
+			"sr": {
+				"what": "Planski pregled kod ljekara opšte prakse za osobe bez tegoba — procjena faktora rizika i rano otkrivanje promjena",
+				"how": "Ljekar pita o bolestima u porodici, ishrani, pušenju i fizičkoj aktivnosti, mjeri visinu, težinu, obim struka, pritisak i puls, sluša srce i pluća, pregleda kožu i štitnu žlijezdu, a zatim daje uputnice za skrining analize i preglede prema uzrastu i polu",
+				"when": "Redovna provjera zdravlja, uzrast u kojem se skrining preporučuje, porodična istorija bolesti srca i krvnih sudova ili dijabetesa, prekomjerna težina, pušenje, sjedilački posao, uključivanje u preventivno praćenje",
+				"prep": "Doći natašte ako se krv vadi istog dana, ponijeti ranije nalaze i spisak lijekova, a dan prije izbjegavati nenaviknute treninge i alkohol",
+				"abnormal": "Preventivni pregled najčešće se završava savjetima o načinu života i datumom sljedeće provjere. Nađeno odstupanje nije dijagnoza: potvrđuje se ponovljenim ispitivanjem, a dalji plan određuje ljekar"
+			},
+			"de": {
+				"what": "Eine geplante Untersuchung in der Allgemeinmedizin für Menschen ohne Beschwerden, gerichtet auf Risikofaktoren und das frühe Erkennen von Veränderungen",
+				"how": "Die Ärztin oder der Arzt fragt nach Erkrankungen in der Familie, Ernährung, Rauchen und Bewegung, misst Größe, Gewicht, Taillenumfang, Blutdruck und Puls, hört Herz und Lunge ab, betrachtet Haut und Schilddrüse und veranlasst dann Vorsorgeuntersuchungen passend zu Alter und Geschlecht",
+				"when": "Regelmäßiger Gesundheitscheck, Alter mit empfohlener Vorsorge, Herz-Kreislauf-Erkrankungen oder Diabetes in der Familie, Übergewicht, Rauchen, sitzende Tätigkeit, Aufnahme in eine Vorsorgebetreuung",
+				"prep": "Nüchtern kommen, wenn am selben Tag Blut abgenommen wird, frühere Befunde und die Medikamentenliste mitbringen und am Vortag ungewohnte Belastung sowie Alkohol meiden",
+				"abnormal": "Eine Vorsorgeuntersuchung endet meist mit Empfehlungen zur Lebensweise und einem Termin für die nächste Kontrolle. Ein auffälliger Wert ist keine Diagnose: er wird durch Wiederholung überprüft, das weitere Vorgehen legt die Ärztin oder der Arzt fest"
+			},
+			"tr": {
+				"what": "Şikayeti olmayan kişiler için aile hekimi tarafından yapılan, risk etmenlerini ve erken değişiklikleri hedefleyen planlı muayene",
+				"how": "Hekim ailedeki hastalıkları, beslenmeyi, sigarayı ve hareket düzeyini sorar; boy, kilo, bel çevresi, tansiyon ve nabzı ölçer, kalp ve akciğerleri dinler, cildi ve tiroidi inceler, ardından yaş ve cinsiyete uygun tarama tetkiklerini ister",
+				"when": "Düzenli sağlık kontrolü, taramanın önerildiği yaş, ailede kalp damar hastalığı veya diyabet öyküsü, fazla kilo, sigara, hareketsiz çalışma, koruyucu izleme kaydı",
+				"prep": "Aynı gün kan verilecekse aç gelin, önceki sonuçları ve ilaç listesini getirin, bir gün önce alışık olmadığınız egzersizden ve alkolden kaçının",
+				"abnormal": "Koruyucu muayene çoğunlukla yaşam tarzı önerileri ve bir sonraki kontrol tarihiyle biter. Saptanan bir sapma tanı değildir: tekrar tetkikle doğrulanır, sonraki adımlara hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "pudendal-block",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Обезболивание промежности и наружных половых органов введением анестетика рядом с половым нервом",
+				"how": "Процедуру выполняют в гинекологическом положении: врач нащупывает костный ориентир через влагалище или со стороны промежности и вводит анестетик с обеих сторон рядом с нервом; занимает несколько минут, обезболивание развивается за четверть часа",
+				"when": "Второй период родов и наложение швов на промежность, небольшие вмешательства в области промежности, заднего прохода и наружных половых органов, стойкая боль по ходу полового нерва",
+				"prep": "Специальной подготовки обычно нет; сообщить об аллергии на анестетики, нарушениях свёртывания и приёме разжижающих кровь препаратов, перед процедурой опорожнить мочевой пузырь",
+				"abnormal": "Онемение промежности держится несколько часов, после чего чувствительность возвращается; возможна временная трудность с мочеиспусканием. Усиливающаяся боль, повышение температуры, выделения с запахом или онемение дольше суток — повод обратиться к врачу"
+			},
+			"en": {
+				"what": "Numbing of the perineum and external genitals by placing an anaesthetic next to the pudendal nerve",
+				"how": "The procedure is done in the gynaecological position: the doctor finds the bony landmark through the vagina or from the perineum and injects the anaesthetic on both sides beside the nerve; it takes a few minutes and the numbness develops within about a quarter of an hour",
+				"when": "The second stage of labour and perineal stitching, small procedures on the perineum, anus and external genitals, persistent pain along the pudendal nerve",
+				"prep": "Usually no special preparation; report allergies to anaesthetics, clotting disorders and blood-thinning medicines, and empty the bladder before the procedure",
+				"abnormal": "The perineum stays numb for several hours before sensation returns, and temporary difficulty passing urine is possible. Increasing pain, fever, discharge with an odour or numbness lasting more than a day should be checked by a doctor"
+			},
+			"sr": {
+				"what": "Obezbolivanje međice i spoljašnjih polnih organa davanjem anestetika uz pudendalni živac",
+				"how": "Zahvat se radi u ginekološkom položaju: ljekar napipa koštani orijentir kroz vaginu ili sa strane međice i da anestetik obostrano uz živac; traje nekoliko minuta, a obezbolivanje nastupa za petnaestak minuta",
+				"when": "Drugo porođajno doba i šivenje međice, manji zahvati na međici, čmaru i spoljašnjim polnim organima, uporan bol duž pudendalnog živca",
+				"prep": "Posebna priprema obično nije potrebna; javiti alergiju na anestetike, poremećaje zgrušavanja i uzimanje lijekova za razrjeđivanje krvi, a prije zahvata isprazniti mokraćnu bešiku",
+				"abnormal": "Utrnulost međice traje nekoliko sati, nakon čega se osjet vraća; moguća je privremena otežana mokraća. Bol koji jača, povišena temperatura, sekret sa neprijatnim mirisom ili utrnulost duža od jednog dana razlog su da se javite ljekaru"
+			},
+			"de": {
+				"what": "Betäubung von Damm und äußeren Geschlechtsorganen durch Injektion eines Anästhetikums neben dem Nervus pudendus",
+				"how": "Der Eingriff erfolgt in gynäkologischer Lagerung: die Ärztin tastet den knöchernen Orientierungspunkt über die Scheide oder vom Damm aus und spritzt das Anästhetikum beidseits neben den Nerv; das dauert wenige Minuten, die Betäubung setzt in etwa einer Viertelstunde ein",
+				"when": "Austreibungsphase der Geburt und Naht am Damm, kleine Eingriffe an Damm, After und äußeren Geschlechtsorganen, anhaltende Schmerzen entlang des Nervus pudendus",
+				"prep": "Meist keine besondere Vorbereitung; Allergien gegen Anästhetika, Gerinnungsstörungen und blutverdünnende Medikamente angeben und vor dem Eingriff die Blase entleeren",
+				"abnormal": "Der Damm bleibt einige Stunden taub, danach kehrt das Gefühl zurück; vorübergehend erschwertes Wasserlassen ist möglich. Zunehmende Schmerzen, Fieber, übel riechender Ausfluss oder Taubheit über einen Tag hinaus gehören ärztlich abgeklärt"
+			},
+			"tr": {
+				"what": "Perine ve dış genital bölgenin, pudendal sinirin yanına anestezik verilerek uyuşturulması",
+				"how": "İşlem jinekolojik pozisyonda yapılır: hekim kemik işaret noktasını vajinadan ya da perineden bulur ve anesteziği sinirin yanına iki taraflı verir; birkaç dakika sürer, uyuşma on beş dakika içinde yerleşir",
+				"when": "Doğumun ikinci evresi ve perine dikişi, perine, makat ve dış genital bölgedeki küçük girişimler, pudendal sinir boyunca süren inatçı ağrı",
+				"prep": "Genellikle özel hazırlık gerekmez; anesteziklere alerjiyi, pıhtılaşma bozukluklarını ve kan sulandırıcı ilaçları bildirin, işlemden önce mesaneyi boşaltın",
+				"abnormal": "Perinedeki uyuşukluk birkaç saat sürer, sonra duyu geri döner; geçici idrar yapma güçlüğü olabilir. Artan ağrı, ateş, kokulu akıntı ya da bir günden uzun süren uyuşukluk hekime gösterilmelidir"
+			}
+		}
+	},
+	{
+		"slug": "sciatic-nerve-block",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Обезболивание задней поверхности ноги, голени и стопы введением анестетика рядом с седалищным нервом",
+				"how": "Пациент лежит на боку или на животе, нерв находят под контролем ультразвука или нейростимулятора на уровне ягодицы либо подколенной ямки, кожу обрабатывают и медленно вводят анестетик; эффект развивается постепенно и обычно сохраняется несколько часов",
+				"when": "Операции на голени, голеностопном суставе и стопе, обработка ран и ожогов стопы, обезболивание после таких вмешательств, стойкая боль по ходу седалищного нерва по решению специалиста",
+				"prep": "Сообщить о сахарном диабете и других болезнях нервов, о нарушениях свёртывания и приёме разжижающих кровь препаратов; если блокада идёт вместе с наркозом, клиника заранее называет часы голодания, а приехать стоит с сопровождающим",
+				"abnormal": "Нога остаётся онемевшей и слабой несколько часов, опираться на неё можно только с разрешения врача, а тепло к бесчувственной коже прикладывать нельзя. Если чувствительность не вернулась в ожидаемый срок или появились жжение и нарастающая боль, нужен осмотр"
+			},
+			"en": {
+				"what": "Numbing of the back of the leg, the lower leg and the foot by placing an anaesthetic next to the sciatic nerve",
+				"how": "The patient lies on the side or face down, the nerve is located with ultrasound or a nerve stimulator at the buttock or the popliteal fossa, the skin is cleaned and the anaesthetic is injected slowly; the effect builds up gradually and usually lasts several hours",
+				"when": "Surgery on the lower leg, ankle and foot, treatment of wounds and burns of the foot, pain relief after such procedures, persistent pain along the sciatic nerve as decided by a specialist",
+				"prep": "Report diabetes and other nerve conditions, clotting disorders and blood-thinning medicines; if the block accompanies anaesthesia the clinic gives the fasting times in advance, and it is best to come with someone",
+				"abnormal": "The leg stays numb and weak for several hours, weight may be put on it only with the doctor's permission, and heat must not be applied to numb skin. If sensation does not return within the expected time or burning and increasing pain appear, a review is needed"
+			},
+			"sr": {
+				"what": "Obezbolivanje zadnje strane noge, potkoljenice i stopala davanjem anestetika uz išijadični živac",
+				"how": "Pacijent leži na boku ili na stomaku, živac se nalazi ultrazvukom ili neurostimulatorom u predjelu sjedalnice ili poplitealne jame, koža se dezinfikuje i anestetik se daje polako; dejstvo se razvija postepeno i obično traje nekoliko sati",
+				"when": "Operacije potkoljenice, skočnog zgloba i stopala, obrada rana i opekotina stopala, obezbolivanje poslije takvih zahvata, uporan bol duž išijadičnog živca po odluci specijaliste",
+				"prep": "Javiti dijabetes i druge bolesti živaca, poremećaje zgrušavanja i uzimanje lijekova za razrjeđivanje krvi; ako blokada ide uz anesteziju, klinika unaprijed daje sate bez hrane, a poželjno je doći sa pratnjom",
+				"abnormal": "Noga ostaje utrnula i slaba nekoliko sati, oslanjanje je dozvoljeno tek uz saglasnost ljekara, a toplota se na neosjetljivu kožu ne smije stavljati. Ako se osjet ne vrati u očekivanom roku ili se jave pečenje i sve jači bol, potreban je pregled"
+			},
+			"de": {
+				"what": "Betäubung der Beinrückseite, des Unterschenkels und des Fußes durch Injektion eines Anästhetikums neben dem Ischiasnerv",
+				"how": "Die Patientin oder der Patient liegt seitlich oder auf dem Bauch, der Nerv wird mit Ultraschall oder Nervenstimulator in Gesäßhöhe oder in der Kniekehle aufgesucht, die Haut desinfiziert und das Anästhetikum langsam injiziert; die Wirkung baut sich allmählich auf und hält meist einige Stunden an",
+				"when": "Operationen an Unterschenkel, Sprunggelenk und Fuß, Versorgung von Wunden und Verbrennungen am Fuß, Schmerzlinderung nach solchen Eingriffen, anhaltende Schmerzen entlang des Ischiasnervs nach fachärztlicher Entscheidung",
+				"prep": "Diabetes und andere Nervenerkrankungen, Gerinnungsstörungen und blutverdünnende Medikamente angeben; begleitet die Blockade eine Narkose, nennt die Klinik vorab die Nüchternzeiten, und eine Begleitperson ist sinnvoll",
+				"abnormal": "Das Bein bleibt mehrere Stunden taub und kraftlos, belastet werden darf es erst nach ärztlicher Freigabe, und Wärme gehört nicht auf gefühllose Haut. Kehrt die Empfindung nicht im erwarteten Zeitraum zurück oder treten Brennen und zunehmende Schmerzen auf, ist eine Kontrolle nötig"
+			},
+			"tr": {
+				"what": "Bacağın arka yüzü, baldır ve ayağın siyatik sinirin yanına anestezik verilerek uyuşturulması",
+				"how": "Hasta yan ya da yüzüstü yatar, sinir kalça düzeyinde veya diz arkası çukurunda ultrason ya da sinir uyarıcısıyla bulunur, cilt temizlenir ve anestezik yavaşça verilir; etki yavaş yerleşir ve genellikle birkaç saat sürer",
+				"when": "Baldır, ayak bileği ve ayak ameliyatları, ayaktaki yara ve yanıkların bakımı, bu girişimlerden sonra ağrı kontrolü, uzmanın kararıyla siyatik sinir boyunca süren inatçı ağrı",
+				"prep": "Diyabeti ve diğer sinir hastalıklarını, pıhtılaşma bozukluklarını ve kan sulandırıcı ilaçları bildirin; blokaj anesteziyle birlikte yapılacaksa aç kalma saatlerini klinik önceden bildirir, yanınızda biriyle gelmeniz uygun olur",
+				"abnormal": "Bacak birkaç saat uyuşuk ve güçsüz kalır, üzerine basmaya ancak hekim izin verince başlanır ve hissizleşmiş cilde sıcak uygulanmaz. Duyu beklenen sürede dönmezse ya da yanma ve artan ağrı ortaya çıkarsa muayene gerekir"
+			}
+		}
+	},
+	{
+		"slug": "sedation-and-anesthesia-for-ambulatory-surgery",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Анестезиологическое обеспечение операции одного дня: обезболивание и контроль состояния, рассчитанные на выписку домой в тот же день",
+				"how": "До вмешательства анестезиолог осматривает пациента и выбирает метод — от внутривенной седации до общей или регионарной анестезии, во время операции следит за дыханием, пульсом, давлением и насыщением крови кислородом, после — за пробуждением в палате наблюдения до момента, когда пациент может идти домой",
+				"when": "Плановые амбулаторные операции в хирургии, гинекологии, урологии, ортопедии, офтальмологии и стоматологии, а также болезненные диагностические вмешательства, после которых пациент не остаётся в стационаре",
+				"prep": "Пройти предоперационный осмотр анестезиолога и назначенные анализы, соблюсти часы голодания, указанные клиникой, заранее согласовать приём постоянных лекарств, прийти с сопровождающим и оставить дома линзы, украшения и косметику",
+				"abnormal": "В день после анестезии обычны сонливость, лёгкое головокружение и ощущение тяжести; вождение, работа с техникой и важные документы в этот день исключены. Признаки, при которых нужно связаться с клиникой, анестезиолог перечисляет при выписке, и их стоит получить в письменном виде"
+			},
+			"en": {
+				"what": "Anaesthetic cover for day surgery: pain control and monitoring planned around going home the same day",
+				"how": "Before the procedure the anaesthetist assesses the patient and chooses the method, from intravenous sedation to general or regional anaesthesia, monitors breathing, pulse, blood pressure and oxygen saturation during surgery, and then watches the recovery in the observation area until the patient is fit to leave",
+				"when": "Planned day-case operations in surgery, gynaecology, urology, orthopaedics, ophthalmology and dentistry, and painful diagnostic procedures after which the patient does not stay in hospital",
+				"prep": "Attend the pre-anaesthetic assessment and the tests ordered, keep to the fasting times given by the clinic, agree in advance how to handle regular medicines, come with an escort and leave contact lenses, jewellery and make-up at home",
+				"abnormal": "Drowsiness, mild dizziness and a feeling of heaviness are usual on the day after anaesthesia; driving, operating machinery and signing important papers are ruled out that day. The anaesthetist lists the warning signs at discharge, and it is worth asking for them in writing"
+			},
+			"sr": {
+				"what": "Anesteziološko obezbjeđenje dnevne hirurgije: obezbolivanje i nadzor planirani tako da pacijent istog dana ide kući",
+				"how": "Prije zahvata anesteziolog pregleda pacijenta i bira metod, od intravenske sedacije do opšte ili regionalne anestezije, tokom operacije prati disanje, puls, pritisak i zasićenost krvi kiseonikom, a poslije buđenje u prostoru za nadzor do trenutka kada pacijent može kući",
+				"when": "Planirane ambulantne operacije u hirurgiji, ginekologiji, urologiji, ortopediji, oftalmologiji i stomatologiji, kao i bolne dijagnostičke intervencije poslije kojih se ne ostaje u bolnici",
+				"prep": "Obaviti preoperativni pregled anesteziologa i tražene analize, poštovati sate bez hrane koje odredi klinika, unaprijed dogovoriti uzimanje stalnih lijekova, doći sa pratnjom i kod kuće ostaviti sočiva, nakit i šminku",
+				"abnormal": "Dan poslije anestezije uobičajeni su pospanost, blaga vrtoglavica i osjećaj težine; vožnja, rad sa mašinama i potpisivanje važnih dokumenata tog dana ne dolaze u obzir. Znakove zbog kojih treba pozvati kliniku anesteziolog navodi pri otpustu, a dobro je dobiti ih napisane"
+			},
+			"de": {
+				"what": "Anästhesiologische Betreuung bei ambulanten Operationen: Schmerzausschaltung und Überwachung, ausgelegt auf die Entlassung am selben Tag",
+				"how": "Vor dem Eingriff untersucht die Anästhesie die Patientin oder den Patienten und wählt das Verfahren, von der intravenösen Sedierung bis zur Allgemein- oder Regionalanästhesie, überwacht während der Operation Atmung, Puls, Blutdruck und Sauerstoffsättigung und anschließend das Aufwachen im Überwachungsbereich bis zur Entlassfähigkeit",
+				"when": "Geplante ambulante Operationen in Chirurgie, Gynäkologie, Urologie, Orthopädie, Augenheilkunde und Zahnmedizin sowie schmerzhafte diagnostische Eingriffe ohne anschließenden stationären Aufenthalt",
+				"prep": "Prämedikationsgespräch und angeordnete Untersuchungen wahrnehmen, die Nüchternzeiten der Klinik einhalten, den Umgang mit Dauermedikamenten vorab klären, mit Begleitperson kommen und Kontaktlinsen, Schmuck und Make-up zu Hause lassen",
+				"abnormal": "Am Tag nach der Anästhesie sind Müdigkeit, leichter Schwindel und Schweregefühl üblich; Autofahren, Maschinenarbeit und wichtige Unterschriften entfallen an diesem Tag. Welche Zeichen einen Anruf in der Klinik erfordern, nennt die Anästhesie bei der Entlassung, am besten schriftlich"
+			},
+			"tr": {
+				"what": "Günübirlik cerrahide anestezi desteği: aynı gün eve dönüşe göre planlanmış ağrı kontrolü ve izlem",
+				"how": "İşlemden önce anestezi hekimi hastayı değerlendirir ve damardan sedasyondan genel ya da bölgesel anesteziye kadar yöntemi seçer, ameliyat boyunca solunumu, nabzı, tansiyonu ve oksijen doygunluğunu izler, sonrasında ise hasta evine gidebilecek duruma gelene dek gözlem alanındaki uyanmayı takip eder",
+				"when": "Cerrahi, kadın hastalıkları, üroloji, ortopedi, göz ve diş hekimliğinde planlı günübirlik ameliyatlar ve sonrasında yatış gerektirmeyen ağrılı tanısal girişimler",
+				"prep": "Ameliyat öncesi anestezi değerlendirmesini ve istenen tahlilleri yaptırın, kliniğin verdiği aç kalma saatlerine uyun, sürekli ilaçların nasıl kullanılacağını önceden konuşun, yanınızda biriyle gelin, lens, takı ve makyajı evde bırakın",
+				"abnormal": "Anestezinin ertesi gününde uyku hali, hafif baş dönmesi ve ağırlık hissi olağandır; o gün araç kullanmak, makineyle çalışmak ve önemli belge imzalamak uygun değildir. Kliniği aramayı gerektiren belirtileri anestezi hekimi taburculukta sıralar, bunları yazılı olarak almakta yarar vardır"
+			}
+		}
+	},
+	{
+		"slug": "single-point-pharmacopuncture",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Введение малого объёма лекарственного препарата в одну акупунктурную или болезненную точку",
+				"how": "Врач находит точку на теле, обрабатывает кожу и тонкой иглой вводит небольшое количество препарата поверхностно или в толщу мышцы; сама инъекция занимает меньше минуты, после неё пациент обычно недолго отдыхает",
+				"when": "Локальная мышечная боль и болезненные уплотнения, боль в шее и пояснице, головная боль напряжения, боль в области сустава — как дополнение к основному лечению по решению врача",
+				"prep": "Не приходить натощак, сообщить об аллергии на лекарства и приёме разжижающих кровь препаратов, в день процедуры не наносить на кожу кремы и мази",
+				"abnormal": "В точке укола несколько часов могут держаться болезненность, покраснение или небольшой синяк, иногда в первые сутки боль ненадолго усиливается. Сыпь, отёк, повышение температуры или нарастающая боль требуют осмотра врача"
+			},
+			"en": {
+				"what": "Injection of a small volume of a medicine into a single acupuncture or tender point",
+				"how": "The doctor locates the point, cleans the skin and injects a small amount of the medicine superficially or into the muscle through a fine needle; the injection takes less than a minute and is usually followed by a short rest",
+				"when": "Local muscle pain and tender knots, neck and lower back pain, tension headache, pain around a joint, used alongside the main treatment at the doctor's discretion",
+				"prep": "Do not come on an empty stomach, report drug allergies and blood-thinning medicines, and do not apply creams or ointments to the skin on the day of the procedure",
+				"abnormal": "Tenderness, redness or a small bruise at the puncture site may last a few hours, and the pain sometimes increases briefly on the first day. A rash, swelling, fever or increasing pain should be examined by a doctor"
+			},
+			"sr": {
+				"what": "Davanje male količine lijeka u jednu akupunkturnu ili bolnu tačku",
+				"how": "Ljekar nađe tačku na tijelu, dezinfikuje kožu i tankom iglom da malu količinu lijeka površno ili u mišić; injekcija traje manje od minuta, a poslije nje pacijent obično kratko miruje",
+				"when": "Lokalni mišićni bol i bolne čvoriće, bol u vratu i krstima, tenziona glavobolja, bol u predjelu zgloba, kao dopuna osnovnoj terapiji po odluci ljekara",
+				"prep": "Ne dolaziti natašte, javiti alergiju na lijekove i uzimanje lijekova za razrjeđivanje krvi, a na dan zahvata ne mazati kožu kremama i mastima",
+				"abnormal": "Na mjestu uboda nekoliko sati mogu ostati osjetljivost, crvenilo ili mala modrica, a ponekad prvog dana bol nakratko pojača. Osip, otok, povišena temperatura ili bol koji jača zahtijevaju pregled ljekara"
+			},
+			"de": {
+				"what": "Injektion einer kleinen Menge eines Medikaments in einen einzelnen Akupunktur- oder Schmerzpunkt",
+				"how": "Die Ärztin oder der Arzt sucht den Punkt auf, desinfiziert die Haut und spritzt mit einer feinen Nadel eine kleine Menge oberflächlich oder in den Muskel; die Injektion dauert weniger als eine Minute, danach folgt meist eine kurze Ruhephase",
+				"when": "Örtlicher Muskelschmerz und druckschmerzhafte Verhärtungen, Nacken- und Kreuzschmerzen, Spannungskopfschmerz, Schmerzen im Gelenkbereich, ergänzend zur Hauptbehandlung nach ärztlicher Entscheidung",
+				"prep": "Nicht nüchtern erscheinen, Medikamentenallergien und blutverdünnende Mittel angeben und am Tag des Eingriffs keine Cremes oder Salben auf die Haut auftragen",
+				"abnormal": "An der Einstichstelle können Druckschmerz, Rötung oder ein kleiner Bluterguss einige Stunden bestehen, und am ersten Tag nimmt der Schmerz manchmal kurz zu. Ausschlag, Schwellung, Fieber oder zunehmende Schmerzen gehören ärztlich untersucht"
+			},
+			"tr": {
+				"what": "Tek bir akupunktur ya da hassas noktaya az miktarda ilaç verilmesi",
+				"how": "Hekim vücuttaki noktayı bulur, cildi temizler ve ince iğneyle az miktarda ilacı yüzeyel olarak ya da kas içine verir; enjeksiyon bir dakikadan kısa sürer, ardından hasta genellikle kısa süre dinlenir",
+				"when": "Bölgesel kas ağrısı ve ağrılı sertlikler, boyun ve bel ağrısı, gerilim tipi baş ağrısı, eklem çevresindeki ağrı; hekimin kararıyla ana tedaviyi tamamlayıcı olarak",
+				"prep": "Aç gelmeyin, ilaç alerjilerinizi ve kan sulandırıcı ilaç kullanımını bildirin, işlem günü cildinize krem ve merhem sürmeyin",
+				"abnormal": "İğne yerinde birkaç saat hassasiyet, kızarıklık ya da küçük morluk kalabilir, ilk gün ağrı kısa süreliğine artabilir. Döküntü, şişlik, ateş ya da giderek artan ağrı hekim muayenesi gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "specialist-examination",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Первичный приём врача узкой специальности по направлению или при самостоятельном обращении",
+				"how": "Врач выясняет жалобы и историю болезни, выполняет осмотр по своему профилю, при необходимости использует приборы своего кабинета, после чего формулирует предварительное заключение и список назначений; первичный приём обычно самый долгий",
+				"when": "Направление от врача общей практики, сохраняющиеся жалобы со стороны одной системы органов, неясный результат анализа или снимка, подготовка к операции, второе мнение",
+				"prep": "Собрать прошлые заключения, анализы и снимки, список постоянных лекарств и записать вопросы к врачу; отдельные специальности требуют своей подготовки, о ней клиника предупреждает при записи",
+				"abnormal": "Приём заканчивается заключением, планом обследования или назначением лечения, а часто и датой контрольного визита. Диагноз обычно ставят не за один приём, а по совокупности осмотра и назначенных исследований"
+			},
+			"en": {
+				"what": "A first visit to a specialist, either on referral or by direct booking",
+				"how": "The doctor takes the history, performs the examination specific to the specialty, uses the equipment of that consulting room if needed, and then gives a preliminary assessment and a list of orders; a first visit is usually the longest",
+				"when": "Referral from a general practitioner, persisting complaints from one organ system, an unclear laboratory or imaging result, preparation for surgery, a second opinion",
+				"prep": "Gather earlier reports, test results and images, a list of regular medicines and a written list of questions; some specialties require their own preparation, which the clinic explains when the appointment is booked",
+				"abnormal": "The visit ends with an assessment, a plan of investigations or a prescribed treatment, and often with a date for a follow-up. A diagnosis is usually not made in one visit but from the examination together with the ordered tests"
+			},
+			"sr": {
+				"what": "Prvi pregled kod ljekara uže specijalnosti, po uputu ili na sopstveni zahtjev",
+				"how": "Ljekar uzima anamnezu, obavlja pregled specifičan za svoju oblast, po potrebi koristi aparate svoje ordinacije, a zatim daje preliminarno mišljenje i spisak uputa; prvi pregled je obično najduži",
+				"when": "Uput ljekara opšte prakse, tegobe jednog organskog sistema koje ne prolaze, nejasan laboratorijski nalaz ili snimak, priprema za operaciju, drugo mišljenje",
+				"prep": "Prikupiti ranije nalaze, analize i snimke, spisak stalnih lijekova i zapisati pitanja za ljekara; pojedine specijalnosti traže svoju pripremu, o kojoj klinika obavještava pri zakazivanju",
+				"abnormal": "Pregled se završava mišljenjem, planom ispitivanja ili uvedenom terapijom, a često i datumom kontrole. Dijagnoza se obično ne postavlja na jednom pregledu, već iz cjeline pregleda i traženih ispitivanja"
+			},
+			"de": {
+				"what": "Ein Ersttermin bei einer Fachärztin oder einem Facharzt, mit Überweisung oder auf eigene Initiative",
+				"how": "Die Ärztin oder der Arzt erhebt die Anamnese, führt die fachspezifische Untersuchung durch, nutzt bei Bedarf die Geräte der Praxis und formuliert anschließend eine vorläufige Beurteilung samt Anordnungen; der Ersttermin dauert in der Regel am längsten",
+				"when": "Überweisung aus der Allgemeinmedizin, anhaltende Beschwerden eines Organsystems, ein unklarer Labor- oder Bildbefund, Vorbereitung auf eine Operation, Zweitmeinung",
+				"prep": "Frühere Berichte, Befunde und Bilder, die Liste der Dauermedikamente und notierte Fragen mitbringen; einzelne Fachgebiete verlangen eine eigene Vorbereitung, auf die die Klinik bei der Terminvergabe hinweist",
+				"abnormal": "Der Termin endet mit einer Beurteilung, einem Untersuchungsplan oder einer Behandlung und häufig mit einem Kontrolltermin. Eine Diagnose entsteht meist nicht in einem Termin, sondern aus Untersuchung und veranlassten Befunden zusammen"
+			},
+			"tr": {
+				"what": "Sevkle ya da doğrudan başvuruyla uzman hekime yapılan ilk muayene",
+				"how": "Hekim öyküyü alır, kendi alanına özgü muayeneyi yapar, gerekirse muayenehanesindeki cihazları kullanır, ardından ön değerlendirmeyi ve istemleri verir; ilk muayene genellikle en uzun olanıdır",
+				"when": "Aile hekiminden sevk, tek bir organ sistemine ait geçmeyen şikayetler, belirsiz bir tahlil ya da görüntüleme sonucu, ameliyat hazırlığı, ikinci görüş",
+				"prep": "Önceki raporları, tahlilleri ve görüntüleri, sürekli kullanılan ilaçların listesini toplayın ve hekime soracaklarınızı yazın; bazı uzmanlık alanları kendi hazırlığını ister, bunu klinik randevu sırasında bildirir",
+				"abnormal": "Muayene bir değerlendirme, tetkik planı ya da başlanan tedaviyle ve çoğu zaman kontrol tarihiyle biter. Tanı genellikle tek muayenede değil, muayene ile istenen tetkiklerin bütününden konur"
+			}
+		}
+	},
+	{
+		"slug": "systematic-examination-package-1",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Базовый комплексный профилактический осмотр: врачебный приём и набор стандартных исследований, собранные в одно посещение",
+				"how": "За одно посещение проводят осмотр врача с измерением роста, веса и давления, берут кровь и мочу и выполняют базовые инструментальные исследования, после чего врач разбирает результаты и даёт общее заключение; точный состав набора определяет клиника",
+				"when": "Регулярная проверка здоровья без жалоб, требования работодателя, оформление справок, возвращение к спорту, желание пройти основные анализы за один визит",
+				"prep": "Приходить натощак, последний приём пищи накануне вечером, утром можно воду; взять удостоверение личности, прошлые результаты и список лекарств, а женщинам планировать визит вне дней менструации, если в набор входит анализ мочи",
+				"abnormal": "Отдельные отклонения в результатах встречаются и у здоровых людей и часто требуют лишь повторной проверки. Какие находки важны и нужны ли дополнительные исследования, решает врач, который разбирает весь набор целиком"
+			},
+			"en": {
+				"what": "A basic health-check package: a doctor's visit and a set of standard tests combined into a single appointment",
+				"how": "In one visit the doctor examines the patient and measures height, weight and blood pressure, blood and urine samples are taken and basic instrumental tests are performed, after which the doctor goes through the results and gives an overall report; the exact content of the package is set by the clinic",
+				"when": "A regular health check without complaints, an employer's requirement, certificates, returning to sport, the wish to have the main tests done in one visit",
+				"prep": "Come fasting, with the last meal the evening before and water allowed in the morning; bring an identity document, earlier results and a list of medicines, and women should avoid scheduling the visit during menstruation if a urine test is included",
+				"abnormal": "Single out-of-range results also occur in healthy people and often only call for a repeat test. Which findings matter and whether further investigation is needed is decided by the doctor who reviews the whole package"
+			},
+			"sr": {
+				"what": "Osnovni sistematski preventivni pregled: ljekarski pregled i set standardnih ispitivanja objedinjeni u jednu posjetu",
+				"how": "U jednoj posjeti obavlja se pregled ljekara sa mjerenjem visine, težine i pritiska, uzimaju se krv i mokraća i rade osnovna aparaturna ispitivanja, nakon čega ljekar tumači nalaze i daje zajednički zaključak; tačan sadržaj seta određuje klinika",
+				"when": "Redovna provjera zdravlja bez tegoba, zahtjev poslodavca, izdavanje uvjerenja, povratak sportu, želja da se osnovne analize urade u jednoj posjeti",
+				"prep": "Doći natašte, posljednji obrok uveče prije, ujutru je dozvoljena voda; ponijeti ličnu ispravu, ranije nalaze i spisak lijekova, a žene neka posjetu planiraju van dana menstruacije ako set uključuje pregled mokraće",
+				"abnormal": "Pojedinačna odstupanja u nalazima javljaju se i kod zdravih osoba i često traže samo ponovljenu provjeru. Koji su nalazi značajni i da li su potrebna dodatna ispitivanja odlučuje ljekar koji sagledava cio set"
+			},
+			"de": {
+				"what": "Ein Basis-Check-up: ärztliche Untersuchung und ein Satz Standarduntersuchungen, gebündelt in einem Termin",
+				"how": "In einem Termin erfolgen die ärztliche Untersuchung mit Messung von Größe, Gewicht und Blutdruck, die Abnahme von Blut und Urin sowie einfache apparative Untersuchungen; anschließend bespricht die Ärztin oder der Arzt die Ergebnisse und erstellt eine Gesamtbeurteilung, der genaue Umfang wird von der Klinik festgelegt",
+				"when": "Regelmäßiger Gesundheitscheck ohne Beschwerden, Anforderung des Arbeitgebers, Atteste, Wiedereinstieg in den Sport, der Wunsch, die wichtigsten Werte in einem Termin zu erhalten",
+				"prep": "Nüchtern kommen, letzte Mahlzeit am Vorabend, morgens ist Wasser erlaubt; Ausweis, frühere Befunde und Medikamentenliste mitbringen, Frauen sollten den Termin außerhalb der Menstruation legen, wenn eine Urinuntersuchung enthalten ist",
+				"abnormal": "Einzelne auffällige Werte kommen auch bei Gesunden vor und erfordern oft nur eine Kontrolle. Welche Befunde bedeutsam sind und ob weitere Abklärung nötig ist, entscheidet die Ärztin oder der Arzt anhand des gesamten Pakets"
+			},
+			"tr": {
+				"what": "Temel check-up paketi: hekim muayenesi ve standart tetkik setinin tek ziyarette toplanması",
+				"how": "Tek ziyarette boy, kilo ve tansiyon ölçümüyle hekim muayenesi yapılır, kan ve idrar örneği alınır ve temel cihazlı tetkikler uygulanır, ardından hekim sonuçları değerlendirip ortak bir rapor verir; setin içeriğini klinik belirler",
+				"when": "Şikayeti olmayanlarda düzenli sağlık kontrolü, işveren talebi, rapor çıkarma, spora dönüş, temel tahlilleri tek ziyarette yaptırma isteği",
+				"prep": "Aç gelin, son öğün bir önceki akşam olsun, sabah su içilebilir; kimlik belgesi, önceki sonuçlar ve ilaç listesiyle gelin, sete idrar tahlili dahilse kadınlar randevuyu adet günleri dışına planlasın",
+				"abnormal": "Tek tük sınır dışı sonuçlar sağlıklı kişilerde de görülür ve çoğu kez yalnızca tekrar tetkik gerektirir. Hangi bulgunun önemli olduğuna ve ek inceleme gerekip gerekmediğine, seti bütün olarak değerlendiren hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "systematic-examination-package-2",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Расширенный комплексный профилактический осмотр: к базовому набору добавлены дополнительные анализы и инструментальные исследования",
+				"how": "Посещение дольше базового: помимо осмотра, крови и мочи обычно выполняют больше аппаратных исследований и консультаций, а результаты врач сводит в общее заключение; какие именно пункты входят, уточняют в клинике при записи",
+				"when": "Профилактика в более зрелом возрасте, хронические болезни под наблюдением, семейная история сердечно-сосудистых заболеваний и диабета, значимая физическая нагрузка на работе или в спорте, желание пройти углублённую проверку сразу",
+				"prep": "Как и для базового набора — натощак, утром только вода; дополнительно уточнить подготовку к отдельным исследованиям, например к ультразвуку брюшной полости или малого таза, и принести прошлые заключения",
+				"abnormal": "Чем шире набор исследований, тем чаще встречаются находки, не имеющие значения для здоровья. Что из найденного требует внимания, а что относится к индивидуальным особенностям, определяет врач по итогам всего пакета"
+			},
+			"en": {
+				"what": "An extended health-check package: the basic set plus additional laboratory and instrumental investigations",
+				"how": "The visit is longer than the basic one: besides the examination, blood and urine, more instrumental tests and consultations are usually included, and the doctor brings the results together into one report; the exact items are confirmed by the clinic when booking",
+				"when": "Prevention at a more mature age, chronic conditions under follow-up, a family history of cardiovascular disease or diabetes, heavy physical demands at work or in sport, the wish for a deeper check in one go",
+				"prep": "As for the basic package, fasting with only water in the morning; in addition, check the preparation for individual tests such as abdominal or pelvic ultrasound, and bring earlier reports",
+				"abnormal": "The wider the set of tests, the more often findings appear that have no bearing on health. Which of them deserve attention and which are individual variants is decided by the doctor on the basis of the whole package"
+			},
+			"sr": {
+				"what": "Prošireni sistematski preventivni pregled: osnovnom setu dodata su dodatna laboratorijska i aparaturna ispitivanja",
+				"how": "Posjeta traje duže nego kod osnovnog seta: pored pregleda, krvi i mokraće obično se radi više aparaturnih ispitivanja i konsultacija, a ljekar nalaze objedinjuje u jedan zaključak; koje stavke tačno ulaze, provjerava se u klinici pri zakazivanju",
+				"when": "Prevencija u zrelijim godinama, hronične bolesti pod praćenjem, porodična istorija bolesti srca i krvnih sudova i dijabetesa, veliko fizičko opterećenje na poslu ili u sportu, želja za dubljom provjerom odjednom",
+				"prep": "Kao i za osnovni set — natašte, ujutru samo voda; dodatno provjeriti pripremu za pojedina ispitivanja, na primjer ultrazvuk trbuha ili male karlice, i ponijeti ranije nalaze",
+				"abnormal": "Što je set ispitivanja širi, to se češće javljaju nalazi bez značaja za zdravlje. Šta od nađenog traži pažnju, a šta spada u individualne osobenosti, procjenjuje ljekar na osnovu cijelog paketa"
+			},
+			"de": {
+				"what": "Ein erweitertes Check-up-Paket: das Basispaket ergänzt um zusätzliche Labor- und Geräteuntersuchungen",
+				"how": "Der Termin dauert länger als beim Basispaket: neben Untersuchung, Blut und Urin kommen meist mehr apparative Untersuchungen und Konsultationen hinzu, und die Ärztin oder der Arzt führt die Befunde in einer Gesamtbeurteilung zusammen; welche Punkte genau enthalten sind, klärt die Klinik bei der Terminvergabe",
+				"when": "Vorsorge im reiferen Alter, chronische Erkrankungen in Betreuung, Herz-Kreislauf-Erkrankungen oder Diabetes in der Familie, hohe körperliche Belastung in Beruf oder Sport, der Wunsch nach einer gründlicheren Übersicht auf einmal",
+				"prep": "Wie beim Basispaket nüchtern, morgens nur Wasser; zusätzlich die Vorbereitung einzelner Untersuchungen erfragen, etwa Ultraschall von Bauch oder Becken, und frühere Befunde mitbringen",
+				"abnormal": "Je breiter das Untersuchungspaket, desto häufiger finden sich Ergebnisse ohne Bedeutung für die Gesundheit. Was davon Aufmerksamkeit verlangt und was eine individuelle Variante ist, beurteilt die Ärztin oder der Arzt anhand des gesamten Pakets"
+			},
+			"tr": {
+				"what": "Genişletilmiş check-up paketi: temel sete ek laboratuvar ve cihazlı tetkiklerin eklenmiş hali",
+				"how": "Ziyaret temel pakete göre daha uzundur: muayene, kan ve idrarın yanında genellikle daha fazla cihazlı tetkik ve konsültasyon yapılır, hekim sonuçları tek bir raporda birleştirir; hangi kalemlerin dahil olduğu randevu sırasında klinikten teyit edilir",
+				"when": "İleri yaşlarda koruyucu kontrol, izlemdeki kronik hastalıklar, ailede kalp damar hastalığı ve diyabet öyküsü, işte ya da sporda ağır fiziksel yük, tek seferde daha kapsamlı kontrol isteği",
+				"prep": "Temel pakette olduğu gibi aç gelin, sabah yalnızca su için; ayrıca karın ya da pelvis ultrasonu gibi tek tek tetkiklerin hazırlığını sorun ve önceki raporları getirin",
+				"abnormal": "Tetkik seti genişledikçe sağlık açısından anlamı olmayan bulgulara daha sık rastlanır. Bunlardan hangisinin dikkat gerektirdiğine, hangisinin kişisel bir özellik olduğuna, paketin bütününe bakan hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "therapeutic-cytapheresis",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Процедура, при которой из крови с помощью аппарата удаляют избыток определённых клеток, а остальную кровь возвращают пациенту",
+				"how": "Кровь берут через иглу или катетер в вене, аппарат разделяет её на фракции, отбирает нужный клеточный слой и возвращает остальное во вторую вену; сеанс занимает несколько часов, всё это время персонал следит за давлением, пульсом и самочувствием",
+				"when": "Болезни крови со значительным избытком лейкоцитов, тромбоцитов или эритроцитов, отдельные состояния по решению гематолога, подготовка к дальнейшему лечению",
+				"prep": "Накануне выспаться, нормально поесть и пить достаточно жидкости, сдать назначенные анализы крови, принести список препаратов; перед сеансом сказать об ознобе, аллергии и реакциях на прежние процедуры",
+				"abnormal": "Во время и после сеанса возможны слабость, покалывание вокруг рта и в пальцах, головокружение и небольшой синяк на месте укола, о чём сразу говорят персоналу. Нужен ли повторный сеанс, определяют по контрольным анализам крови, которые оценивает гематолог"
+			},
+			"en": {
+				"what": "A procedure in which a machine removes an excess of particular blood cells and returns the rest of the blood to the patient",
+				"how": "Blood is drawn through a needle or catheter in a vein, the machine separates it into fractions, collects the cell layer that is being removed and returns the remainder through a second vein; a session takes several hours, with staff monitoring blood pressure, pulse and how the patient feels throughout",
+				"when": "Blood disorders with a marked excess of white cells, platelets or red cells, selected conditions as decided by a haematologist, preparation for further treatment",
+				"prep": "Sleep well the night before, eat normally and drink enough fluid, have the ordered blood tests done and bring a list of medicines; before the session mention chills, allergies and reactions to earlier procedures",
+				"abnormal": "Weakness, tingling around the mouth and in the fingers, dizziness and a small bruise at the puncture site may occur during and after the session and should be reported to staff at once. Whether another session is needed is judged from follow-up blood counts assessed by the haematologist"
+			},
+			"sr": {
+				"what": "Postupak u kojem aparat iz krvi uklanja višak određenih ćelija, a ostatak krvi vraća pacijentu",
+				"how": "Krv se uzima kroz iglu ili kateter u veni, aparat je razdvaja na frakcije, izdvaja ćelijski sloj koji se uklanja i ostatak vraća kroz drugu venu; seansa traje nekoliko sati, a osoblje sve vrijeme prati pritisak, puls i stanje pacijenta",
+				"when": "Bolesti krvi sa izraženim viškom leukocita, trombocita ili eritrocita, pojedina stanja po odluci hematologa, priprema za dalje liječenje",
+				"prep": "Prethodno veče se naspavati, normalno jesti i piti dovoljno tečnosti, uraditi tražene analize krvi i ponijeti spisak lijekova; prije seanse javiti drhtavicu, alergije i reakcije na ranije procedure",
+				"abnormal": "Tokom i poslije seanse mogući su slabost, trnjenje oko usta i u prstima, vrtoglavica i mala modrica na mjestu uboda, što se odmah kaže osoblju. Da li je potrebna nova seansa procjenjuje se po kontrolnim analizama krvi koje tumači hematolog"
+			},
+			"de": {
+				"what": "Ein Verfahren, bei dem ein Gerät einen Überschuss bestimmter Blutzellen entfernt und das übrige Blut zurückgibt",
+				"how": "Blut wird über eine Kanüle oder einen Katheter in einer Vene entnommen, das Gerät trennt es in Fraktionen, fängt die zu entfernende Zellschicht auf und gibt den Rest über eine zweite Vene zurück; eine Sitzung dauert mehrere Stunden, währenddessen überwacht das Personal Blutdruck, Puls und Befinden",
+				"when": "Bluterkrankungen mit deutlichem Überschuss an weißen Zellen, Blutplättchen oder roten Zellen, ausgewählte Situationen nach hämatologischer Entscheidung, Vorbereitung auf eine weitere Behandlung",
+				"prep": "In der Nacht davor ausschlafen, normal essen und ausreichend trinken, die angeordneten Blutuntersuchungen durchführen lassen und die Medikamentenliste mitbringen; vor der Sitzung Frösteln, Allergien und Reaktionen auf frühere Behandlungen melden",
+				"abnormal": "Während und nach der Sitzung sind Schwäche, Kribbeln um den Mund und in den Fingern, Schwindel und ein kleiner Bluterguss an der Punktionsstelle möglich und dem Personal sofort zu melden. Ob eine weitere Sitzung nötig ist, ergibt sich aus Kontrollblutbildern, die die Hämatologie beurteilt"
+			},
+			"tr": {
+				"what": "Bir cihazın kandaki belirli hücrelerin fazlasını uzaklaştırıp kanın geri kalanını hastaya geri verdiği işlem",
+				"how": "Kan damardaki iğne ya da kateterden alınır, cihaz onu bileşenlerine ayırır, uzaklaştırılacak hücre katmanını toplar ve kalanı ikinci bir damardan geri verir; seans birkaç saat sürer, bu süre boyunca personel tansiyonu, nabzı ve hastanın durumunu izler",
+				"when": "Akyuvar, trombosit ya da alyuvar fazlalığının belirgin olduğu kan hastalıkları, hematoloğun kararıyla belirli durumlar, sonraki tedaviye hazırlık",
+				"prep": "Bir gece önce iyi uyuyun, normal beslenin ve yeterli sıvı alın, istenen kan tahlillerini yaptırın ve ilaç listenizi getirin; seanstan önce üşüme, alerji ve önceki işlemlere verdiğiniz tepkileri bildirin",
+				"abnormal": "Seans sırasında ve sonrasında halsizlik, ağız çevresinde ve parmaklarda karıncalanma, baş dönmesi ve iğne yerinde küçük morluk olabilir; bunlar hemen personele söylenir. Yeni bir seansın gerekip gerekmediği, hematoloğun değerlendirdiği kontrol kan tahlillerine göre belirlenir"
+			}
+		}
+	},
+	{
+		"slug": "therapeutic-plasmapheresis",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Процедура, при которой у пациента удаляют часть плазмы крови вместе с растворёнными в ней веществами, возмещая объём замещающим раствором",
+				"how": "Кровь поступает в аппарат, где отделяется плазма, а клетки крови вместе с замещающей жидкостью возвращаются пациенту; один сеанс длится несколько часов, обычно требуется курс из нескольких процедур с интервалами, которые определяет врач",
+				"when": "Отдельные неврологические, почечные, гематологические и аутоиммунные заболевания, когда удаление веществ из плазмы входит в план лечения, а также некоторые отравления — по решению профильного врача",
+				"prep": "Сдать назначенные анализы, включая показатели свёртывания и клеточный состав крови, нормально поесть и выпить воды перед сеансом, сообщить об аллергии и непереносимости белковых препаратов, а о времени приёма постоянных лекарств в день сеанса спросить врача заранее",
+				"abnormal": "Во время сеанса возможны снижение давления, озноб, покалывание в пальцах и вокруг рта, после — временная слабость; обо всех ощущениях персоналу говорят сразу. Результат оценивают по состоянию и повторным анализам, а число сеансов определяет лечащий врач"
+			},
+			"en": {
+				"what": "A procedure in which part of the blood plasma, together with substances dissolved in it, is removed and the volume is replaced with a substitution fluid",
+				"how": "Blood passes through a machine where the plasma is separated, while the blood cells and the replacement fluid are returned to the patient; a session lasts several hours and a course of several sessions is usually needed, at intervals set by the doctor",
+				"when": "Selected neurological, kidney, blood and autoimmune conditions in which removing substances from plasma is part of the treatment plan, and certain poisonings, as decided by the relevant specialist",
+				"prep": "Have the ordered tests done, including clotting values and the blood count, eat normally and drink water before the session, report allergies and intolerance to protein preparations, and ask the doctor in advance about the timing of regular medicines on the day",
+				"abnormal": "A drop in blood pressure, chills and tingling in the fingers and around the mouth may occur during the session, and temporary weakness afterwards; every sensation should be reported to staff immediately. The result is judged from how the patient feels and from repeat tests, and the number of sessions is set by the treating doctor"
+			},
+			"sr": {
+				"what": "Postupak u kojem se pacijentu uklanja dio krvne plazme zajedno sa materijama rastvorenim u njoj, a zapremina nadoknađuje zamjenskim rastvorom",
+				"how": "Krv prolazi kroz aparat u kojem se izdvaja plazma, dok se krvne ćelije sa zamjenskom tečnošću vraćaju pacijentu; jedna seansa traje nekoliko sati, a obično je potrebna serija procedura u razmacima koje određuje ljekar",
+				"when": "Pojedine neurološke, bubrežne, hematološke i autoimune bolesti kod kojih je uklanjanje materija iz plazme dio plana liječenja, kao i neka trovanja, po odluci nadležnog specijaliste",
+				"prep": "Uraditi tražene analize, uključujući parametre zgrušavanja i krvnu sliku, normalno jesti i popiti vodu prije seanse, javiti alergije i nepodnošenje proteinskih preparata, a o vremenu uzimanja stalnih lijekova toga dana pitati ljekara unaprijed",
+				"abnormal": "Tokom seanse mogući su pad pritiska, drhtavica i trnjenje u prstima i oko usta, a poslije privremena slabost; svaki osjećaj se odmah javlja osoblju. Rezultat se procjenjuje po stanju pacijenta i ponovljenim analizama, a broj seansi određuje ljekar koji vodi liječenje"
+			},
+			"de": {
+				"what": "Ein Verfahren, bei dem ein Teil des Blutplasmas samt der darin gelösten Stoffe entfernt und das Volumen durch eine Ersatzlösung ausgeglichen wird",
+				"how": "Das Blut durchläuft ein Gerät, in dem das Plasma abgetrennt wird, während die Blutzellen zusammen mit der Ersatzflüssigkeit zurückgegeben werden; eine Sitzung dauert mehrere Stunden, meist ist eine Serie in ärztlich festgelegten Abständen nötig",
+				"when": "Ausgewählte neurologische, renale, hämatologische und autoimmune Erkrankungen, bei denen das Entfernen von Stoffen aus dem Plasma zum Behandlungsplan gehört, sowie bestimmte Vergiftungen nach fachärztlicher Entscheidung",
+				"prep": "Die angeordneten Untersuchungen einschließlich Gerinnungswerten und Blutbild durchführen lassen, vor der Sitzung normal essen und Wasser trinken, Allergien und Unverträglichkeit von Eiweißpräparaten melden und den Zeitpunkt der Dauermedikamente an diesem Tag vorab ärztlich klären",
+				"abnormal": "Während der Sitzung sind Blutdruckabfall, Frösteln und Kribbeln in Fingern und um den Mund möglich, danach vorübergehende Schwäche; jede Empfindung sofort dem Personal melden. Das Ergebnis wird am Befinden und an Kontrolluntersuchungen beurteilt, die Zahl der Sitzungen legt die behandelnde Ärztin oder der behandelnde Arzt fest"
+			},
+			"tr": {
+				"what": "Kan plazmasının bir bölümünün, içinde çözünmüş maddelerle birlikte uzaklaştırıldığı ve hacmin yerine koyma sıvısıyla tamamlandığı işlem",
+				"how": "Kan, plazmanın ayrıldığı cihazdan geçer; kan hücreleri yerine koyma sıvısıyla birlikte hastaya geri verilir; bir seans birkaç saat sürer ve genellikle hekimin belirlediği aralıklarla birkaç seanslık bir seri gerekir",
+				"when": "Plazmadan madde uzaklaştırmanın tedavi planının parçası olduğu belirli nörolojik, böbrek, kan ve otoimmün hastalıklar ile ilgili uzmanın kararıyla bazı zehirlenmeler",
+				"prep": "İstenen tahlilleri, pıhtılaşma değerleri ve kan sayımı dahil, yaptırın, seanstan önce normal yiyip su için, alerjileri ve protein preparatlarına tahammülsüzlüğü bildirin, o gün sürekli ilaçların saatini hekime önceden sorun",
+				"abnormal": "Seans sırasında tansiyon düşmesi, üşüme, parmaklarda ve ağız çevresinde karıncalanma, sonrasında geçici halsizlik görülebilir; her his hemen personele bildirilir. Sonuç hastanın durumu ve tekrar tahlillerle değerlendirilir, seans sayısını tedaviyi yürüten hekim belirler"
+			}
+		}
+	},
+	{
+		"slug": "vima-volatile-induction-and-maintenance-anesthesia",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Вариант общей анестезии, при котором пациента усыпляют и поддерживают сон ингаляционным препаратом через маску, без укола в вену для засыпания",
+				"how": "Пациент дышит через маску смесью кислорода и анестетика и засыпает за несколько минут, после чего венозный катетер ставят уже спящему, а глубину анестезии поддерживают тем же ингаляционным препаратом до конца вмешательства",
+				"when": "Наркоз у детей, выраженный страх уколов, трудные для пункции вены, короткие операции и диагностические вмешательства, ситуации, когда анестезиолог считает ингаляционное введение в наркоз более подходящим",
+				"prep": "Соблюсти часы голодания, назначенные клиникой, сообщить о болезнях дыхательных путей, недавних простудах и астме, о реакциях на наркоз у пациента и у близких родственников, снять украшения и косметику, прийти с сопровождающим",
+				"abnormal": "После пробуждения несколько часов возможны сонливость, тошнота, озноб и неустойчивость при ходьбе; у детей иногда бывает короткое возбуждение при выходе из наркоза. Длительная рвота, затруднённое дыхание, высокая температура или спутанность дома — повод сразу связаться с клиникой"
+			},
+			"en": {
+				"what": "A form of general anaesthesia in which the patient is sent to sleep and kept asleep with an inhaled agent through a mask, without an intravenous injection to start it",
+				"how": "The patient breathes a mixture of oxygen and anaesthetic through a mask and falls asleep within a few minutes, the intravenous cannula is then placed while asleep, and the depth of anaesthesia is maintained with the same inhaled agent until the end of the procedure",
+				"when": "Anaesthesia in children, marked fear of needles, veins that are hard to cannulate, short operations and diagnostic procedures, and situations where the anaesthetist considers an inhalational start more suitable",
+				"prep": "Keep the fasting times set by the clinic, report airway disease, recent colds and asthma, and any reactions to anaesthesia in the patient or close relatives, remove jewellery and make-up, and come with an escort",
+				"abnormal": "Drowsiness, nausea, shivering and unsteadiness are possible for several hours after waking; children sometimes go through a short period of agitation as the anaesthetic wears off. Prolonged vomiting, difficulty breathing, high fever or confusion at home are reasons to contact the clinic straight away"
+			},
+			"sr": {
+				"what": "Oblik opšte anestezije u kojem se pacijent uspavljuje i održava u snu inhalacionim lijekom preko maske, bez injekcije u venu za uvod",
+				"how": "Pacijent diše mješavinu kiseonika i anestetika kroz masku i zaspi za nekoliko minuta, venska kanila se zatim postavlja već uspavanom pacijentu, a dubina anestezije se održava istim inhalacionim lijekom do kraja zahvata",
+				"when": "Anestezija kod djece, izražen strah od igala, vene koje se teško punktiraju, kratke operacije i dijagnostičke intervencije, situacije u kojima anesteziolog procijeni da je inhalacioni uvod primjereniji",
+				"prep": "Poštovati sate bez hrane koje odredi klinika, javiti bolesti disajnih puteva, skorašnje prehlade i astmu, reakcije na anesteziju kod pacijenta i bliskih srodnika, skinuti nakit i šminku i doći sa pratnjom",
+				"abnormal": "Poslije buđenja nekoliko sati mogući su pospanost, mučnina, drhtavica i nesigurnost pri hodu; kod djece se ponekad javi kratkotrajna uznemirenost pri izlasku iz anestezije. Dugotrajno povraćanje, otežano disanje, visoka temperatura ili zbunjenost kod kuće razlog su da se odmah javite klinici"
+			},
+			"de": {
+				"what": "Eine Form der Allgemeinanästhesie, bei der Einschlafen und Narkosetiefe über ein Inhalationsmittel per Maske erreicht werden, ohne Injektion in die Vene zur Einleitung",
+				"how": "Die Patientin oder der Patient atmet ein Gemisch aus Sauerstoff und Anästhetikum über eine Maske und schläft innerhalb weniger Minuten ein, der venöse Zugang wird danach im Schlaf gelegt, und die Narkosetiefe wird mit demselben Inhalationsmittel bis zum Ende des Eingriffs gehalten",
+				"when": "Narkose bei Kindern, ausgeprägte Angst vor Nadeln, schwer punktierbare Venen, kurze Operationen und diagnostische Eingriffe sowie Situationen, in denen die Anästhesie eine inhalative Einleitung für geeigneter hält",
+				"prep": "Die Nüchternzeiten der Klinik einhalten, Atemwegserkrankungen, kürzliche Erkältungen und Asthma sowie Narkosereaktionen bei sich selbst und bei nahen Verwandten melden, Schmuck und Make-up ablegen und mit Begleitperson kommen",
+				"abnormal": "Nach dem Aufwachen sind für einige Stunden Müdigkeit, Übelkeit, Frieren und Gangunsicherheit möglich; bei Kindern tritt beim Ausleiten gelegentlich eine kurze Unruhephase auf. Anhaltendes Erbrechen, Atemnot, hohes Fieber oder Verwirrtheit zu Hause sind Gründe, sofort die Klinik zu kontaktieren"
+			},
+			"tr": {
+				"what": "Hastanın damardan iğne yapılmadan, maske yoluyla solunan bir ilaçla uyutulduğu ve uykunun aynı ilaçla sürdürüldüğü genel anestezi biçimi",
+				"how": "Hasta maskeden oksijen ve anestezik karışımını solur ve birkaç dakikada uyur, damar yolu uyuduktan sonra açılır, anestezinin derinliği ise işlem bitene dek aynı solunan ilaçla korunur",
+				"when": "Çocuklarda anestezi, belirgin iğne korkusu, damar yolu açılması güç olan durumlar, kısa ameliyatlar ve tanısal girişimler, anestezi hekiminin solunum yoluyla başlamayı daha uygun bulduğu durumlar",
+				"prep": "Kliniğin verdiği aç kalma saatlerine uyun, solunum yolu hastalıklarını, yakın zamanda geçirilen soğuk algınlığını ve astımı, kendinizde ve yakın akrabalarınızda anesteziye bağlı tepkileri bildirin, takı ve makyajı çıkarın, yanınızda biriyle gelin",
+				"abnormal": "Uyandıktan sonra birkaç saat uyku hali, bulantı, üşüme ve yürürken dengesizlik olabilir; çocuklarda anesteziden çıkarken kısa süreli huzursuzluk görülebilir. Evde geçmeyen kusma, nefes darlığı, yüksek ateş ya da bilinç bulanıklığı hemen kliniğe haber vermeyi gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "washed-erythrocyte-preparation",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Подготовка донорских эритроцитов, из которых удалены плазма и её белки, — компонент для переливания пациентам с тяжёлыми реакциями на обычные препараты крови",
+				"how": "В лаборатории дозу эритроцитов несколько раз промывают стерильным физиологическим раствором в закрытой системе и центрифугируют, удаляя остатки плазмы; подготовка занимает несколько часов, а срок хранения готового компонента короткий, поэтому его переливают быстро",
+				"when": "Повторяющиеся аллергические и лихорадочные реакции на переливание, дефицит IgA у получателя, отдельные ситуации в неонатологии и гематологии — компонент назначает лечащий врач",
+				"prep": "Со стороны пациента подготовки нет: компонент готовят в лаборатории по заявке отделения, а перед переливанием определяют группу крови, резус-фактор и пробу на совместимость",
+				"abnormal": "Промывание снижает вероятность реакции на белки плазмы, но не отменяет наблюдения во время переливания. Об ознобе, сыпи, зуде, одышке или боли в пояснице нужно сразу сказать персоналу, а результат оценивают по самочувствию и контрольным анализам крови"
+			},
+			"en": {
+				"what": "Preparation of donor red cells from which plasma and its proteins have been removed, a component for patients with severe reactions to standard blood products",
+				"how": "In the laboratory a unit of red cells is washed several times with sterile saline in a closed system and centrifuged to remove the remaining plasma; preparation takes several hours and the finished component has a short shelf life, so it is transfused promptly",
+				"when": "Repeated allergic and febrile transfusion reactions, IgA deficiency in the recipient, selected situations in neonatology and haematology; the component is prescribed by the treating doctor",
+				"prep": "Nothing is required from the patient: the component is prepared in the laboratory at the ward's request, and before transfusion the blood group, Rh factor and compatibility test are done",
+				"abnormal": "Washing lowers the chance of a reaction to plasma proteins but does not replace monitoring during the transfusion. Chills, rash, itching, shortness of breath or lower back pain must be reported to staff at once, and the result is judged from how the patient feels and from follow-up blood tests"
+			},
+			"sr": {
+				"what": "Priprema davalačkih eritrocita iz kojih su uklonjeni plazma i njeni proteini — komponenta za pacijente sa teškim reakcijama na uobičajene preparate krvi",
+				"how": "U laboratoriji se doza eritrocita više puta ispira sterilnim fiziološkim rastvorom u zatvorenom sistemu i centrifugira kako bi se uklonili ostaci plazme; priprema traje nekoliko sati, a gotova komponenta ima kratak rok, pa se brzo daje pacijentu",
+				"when": "Ponavljane alergijske i febrilne reakcije na transfuziju, nedostatak IgA kod primaoca, pojedine situacije u neonatologiji i hematologiji; komponentu propisuje ljekar koji vodi liječenje",
+				"prep": "Od pacijenta se ne traži priprema: komponenta se priprema u laboratoriji po zahtjevu odjeljenja, a prije transfuzije se određuju krvna grupa, Rh faktor i proba podudarnosti",
+				"abnormal": "Ispiranje smanjuje vjerovatnoću reakcije na proteine plazme, ali ne zamjenjuje nadzor tokom transfuzije. Drhtavicu, osip, svrab, otežano disanje ili bol u krstima treba odmah javiti osoblju, a rezultat se procjenjuje po stanju pacijenta i kontrolnim analizama krvi"
+			},
+			"de": {
+				"what": "Herstellung von Spendererythrozyten, aus denen Plasma und dessen Eiweiße entfernt wurden, ein Präparat für Patientinnen und Patienten mit schweren Reaktionen auf übliche Blutprodukte",
+				"how": "Im Labor wird eine Erythrozytenkonserve im geschlossenen System mehrfach mit steriler Kochsalzlösung gewaschen und zentrifugiert, um Plasmareste zu entfernen; die Aufbereitung dauert mehrere Stunden, und das fertige Präparat ist nur kurz haltbar und wird daher zügig transfundiert",
+				"when": "Wiederholte allergische und fieberhafte Transfusionsreaktionen, IgA-Mangel beim Empfänger, ausgewählte Situationen in Neonatologie und Hämatologie; das Präparat wird ärztlich angeordnet",
+				"prep": "Von Patientenseite ist keine Vorbereitung nötig: das Präparat wird im Labor auf Anforderung der Station hergestellt, vor der Transfusion werden Blutgruppe, Rhesusfaktor und Verträglichkeitsprobe bestimmt",
+				"abnormal": "Das Waschen senkt die Wahrscheinlichkeit einer Reaktion auf Plasmaeiweiße, ersetzt aber die Überwachung während der Transfusion nicht. Schüttelfrost, Ausschlag, Juckreiz, Atemnot oder Kreuzschmerzen sind dem Personal sofort zu melden, das Ergebnis wird am Befinden und an Kontrolluntersuchungen beurteilt"
+			},
+			"tr": {
+				"what": "Plazması ve plazma proteinleri uzaklaştırılmış donör alyuvarlarının hazırlanması; olağan kan ürünlerine ağır tepki veren hastalar için bir bileşen",
+				"how": "Laboratuvarda bir ünite alyuvar kapalı sistemde steril serum fizyolojikle birkaç kez yıkanır ve santrifüj edilerek kalan plazma uzaklaştırılır; hazırlık birkaç saat sürer, hazır bileşenin saklama süresi kısadır ve bu nedenle kısa sürede verilir",
+				"when": "Tekrarlayan alerjik ve ateşli transfüzyon reaksiyonları, alıcıda IgA eksikliği, yenidoğan ve hematolojide belirli durumlar; bileşeni tedaviyi yürüten hekim ister",
+				"prep": "Hastadan bir hazırlık istenmez: bileşen servisin talebi üzerine laboratuvarda hazırlanır, transfüzyondan önce kan grubu, Rh faktörü ve uygunluk testi yapılır",
+				"abnormal": "Yıkama, plazma proteinlerine tepki olasılığını azaltır ama transfüzyon sırasındaki izlemin yerini tutmaz. Üşüme, döküntü, kaşıntı, nefes darlığı ya da bel ağrısı hemen personele bildirilmelidir; sonuç hastanın durumu ve kontrol kan tahlilleriyle değerlendirilir"
+			}
+		}
+	}
+]

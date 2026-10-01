@@ -1,0 +1,740 @@
+[
+	{
+		"slug": "msct-cervical-spine",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Послойное рентгеновское исследование шейных позвонков, суставов и костных каналов на компьютерном томографе по направлению врача",
+				"how": "Пациент лежит на спине, руки вдоль тела, голову держат неподвижно, стол проходит через кольцо аппарата; само сканирование занимает секунды, визит около 10 минут",
+				"when": "Травма шеи, подозрение на перелом позвонка, стойкая боль в шее с отдачей в руку, уточнение изменений, замеченных на рентгене, оценка костей перед операцией, контроль установленных металлоконструкций",
+				"prep": "Подготовка не требуется; снять серьги, цепочки, пирсинг и съёмные зубные протезы, заранее сообщить о возможной беременности",
+				"abnormal": "Снимки могут показать переломы, изменения дисков, сужение каналов или костные разрастания, которые встречаются и у людей без жалоб. Заключение пишет рентгенолог, а дальнейшее ведение определяет невролог, травматолог или нейрохирург"
+			},
+			"en": {
+				"what": "A layered X-ray study of the neck vertebrae, joints and bony canals on a CT scanner, performed on a doctor's referral",
+				"how": "The patient lies on the back with arms along the body and the head held still while the table passes through the scanner ring; the scan itself takes seconds and the visit about 10 minutes",
+				"when": "Neck injury, suspected vertebral fracture, persistent neck pain radiating into the arm, clarification of findings seen on a plain X-ray, bone assessment before surgery, follow-up of implanted metalwork",
+				"prep": "No preparation is needed; remove earrings, chains, piercings and removable dentures, and report a possible pregnancy in advance",
+				"abnormal": "The images may show fractures, disc changes, narrowing of the canals or bony outgrowths that also occur in people without complaints. The report is written by a radiologist and further management is decided by a neurologist, trauma surgeon or neurosurgeon"
+			},
+			"sr": {
+				"what": "Slojeviti rendgenski prikaz vratnih pršljenova, zglobova i koštanih kanala na skeneru, radi se po uputu ljekara",
+				"how": "Pacijent leži na leđima sa rukama uz tijelo i mirno drži glavu dok sto prolazi kroz prsten aparata; samo snimanje traje nekoliko sekundi, a dolazak oko 10 minuta",
+				"when": "Povreda vrata, sumnja na prelom pršljena, uporan bol u vratu koji se širi u ruku, razjašnjenje promjena viđenih na rendgenskom snimku, procjena kostiju prije operacije, kontrola ugrađenog metalnog materijala",
+				"prep": "Priprema nije potrebna; skinuti minđuše, lančiće, pirsing i pokretne zubne proteze i unaprijed prijaviti moguću trudnoću",
+				"abnormal": "Snimci mogu pokazati prelome, promjene diskova, suženje kanala ili koštane izraštaje koji se viđaju i kod ljudi bez tegoba. Nalaz piše radiolog, a dalje vođenje određuje neurolog, traumatolog ili neurohirurg"
+			},
+			"de": {
+				"what": "Eine schichtweise Röntgenuntersuchung der Halswirbel, Gelenke und knöchernen Kanäle im CT auf ärztliche Veranlassung",
+				"how": "Der Patient liegt auf dem Rücken, die Arme am Körper, der Kopf ruht still, während der Tisch durch den Ring des Geräts fährt; die Aufnahme dauert Sekunden, der Besuch etwa 10 Minuten",
+				"when": "Verletzung des Halses, Verdacht auf Wirbelbruch, anhaltender Nackenschmerz mit Ausstrahlung in den Arm, Abklärung von Befunden aus dem Röntgenbild, Beurteilung der Knochen vor einer Operation, Kontrolle von eingebrachtem Metall",
+				"prep": "Keine Vorbereitung nötig; Ohrringe, Ketten, Piercings und herausnehmbaren Zahnersatz ablegen und eine mögliche Schwangerschaft vorab mitteilen",
+				"abnormal": "Die Bilder können Brüche, Bandscheibenveränderungen, Verengungen der Kanäle oder knöcherne Anbauten zeigen, die auch bei Beschwerdefreien vorkommen. Den Befund schreibt ein Radiologe, über das weitere Vorgehen entscheiden Neurologe, Unfallchirurg oder Neurochirurg"
+			},
+			"tr": {
+				"what": "Boyun omurlarının, eklemlerinin ve kemik kanallarının BT cihazında kesitsel görüntülenmesi; hekim istemiyle yapılır",
+				"how": "Hasta sırtüstü yatar, kollar gövdenin yanındadır ve baş hareketsiz tutulur, masa cihazın halkasından geçer; çekim saniyeler, ziyaret yaklaşık 10 dakika sürer",
+				"when": "Boyun travması, omur kırığı şüphesi, kola yayılan inatçı boyun ağrısı, düz grafide görülen bulguların netleştirilmesi, ameliyat öncesi kemik değerlendirmesi, yerleştirilmiş metal implantların kontrolü",
+				"prep": "Hazırlık gerekmez; küpe, zincir, piercing ve takma dişler çıkarılır, olası gebelik önceden bildirilir",
+				"abnormal": "Görüntüler kırıkları, disk değişikliklerini, kanal darlığını veya şikâyeti olmayan kişilerde de görülebilen kemik çıkıntılarını gösterebilir. Raporu radyolog yazar, sonraki adımları nörolog, ortopedist veya beyin cerrahı belirler"
+			}
+		}
+	},
+	{
+		"slug": "msct-head-endocranium-without-contrast",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сканирование полости черепа и головного мозга тонкими срезами без введения контрастного вещества",
+				"how": "Голова лежит в подголовнике, от пациента требуется только не двигаться; сканирование длится считаные секунды, весь визит 10–15 минут и не вызывает ощущений",
+				"when": "Травма головы, внезапная сильная головная боль, острая неврологическая симптоматика и подозрение на кровоизлияние, судороги, контроль после нейрохирургической операции, оценка костей черепа",
+				"prep": "Не нужна, есть и пить можно как обычно; снять заколки, серьги, очки и съёмные протезы, сообщить о возможной беременности",
+				"abnormal": "Исследование может выявить кровоизлияние, отёк, следы перенесённой травмы, объёмное образование или изменения сосудистого происхождения, часть из которых давние и бессимптомные. Заключение даёт рентгенолог, дальнейшие шаги определяет невролог или нейрохирург"
+			},
+			"en": {
+				"what": "Thin-slice scanning of the skull cavity and the brain without any contrast medium",
+				"how": "The head rests in a holder and the only requirement is to stay still; scanning lasts a few seconds, the whole visit 10–15 minutes, and nothing is felt",
+				"when": "Head injury, sudden severe headache, acute neurological symptoms with suspected bleeding, seizures, follow-up after neurosurgery, assessment of the skull bones",
+				"prep": "None, you may eat and drink as usual; remove hairpins, earrings, glasses and removable dentures, and report a possible pregnancy",
+				"abnormal": "The study may reveal bleeding, swelling, traces of an old injury, a space-occupying lesion or vascular changes, some of which are long-standing and cause no symptoms. The radiologist writes the report and a neurologist or neurosurgeon decides the next steps"
+			},
+			"sr": {
+				"what": "Snimanje šupljine lobanje i mozga tankim presjecima, bez davanja kontrasta",
+				"how": "Glava leži u držaču, a od pacijenta se traži samo da se ne pomjera; snimanje traje nekoliko sekundi, cijeli dolazak 10–15 minuta i ne izaziva nikakav osjećaj",
+				"when": "Povreda glave, iznenadna jaka glavobolja, akutni neurološki simptomi uz sumnju na krvarenje, grčevi, kontrola poslije neurohirurške operacije, procjena kostiju lobanje",
+				"prep": "Nije potrebna, jede se i pije uobičajeno; skinuti ukosnice, minđuše, naočare i pokretne proteze i prijaviti moguću trudnoću",
+				"abnormal": "Pregled može otkriti krvarenje, otok, tragove ranije povrede, ekspanzivnu promjenu ili promjene krvožilnog porijekla, od kojih su neke stare i bez tegoba. Nalaz daje radiolog, a dalje korake određuje neurolog ili neurohirurg"
+			},
+			"de": {
+				"what": "Dünnschichtige Aufnahme der Schädelhöhle und des Gehirns ohne Gabe von Kontrastmittel",
+				"how": "Der Kopf liegt in einer Schale, verlangt wird nur Stillhalten; die Aufnahme dauert wenige Sekunden, der gesamte Besuch 10–15 Minuten und ist nicht spürbar",
+				"when": "Kopfverletzung, plötzlicher starker Kopfschmerz, akute neurologische Symptome mit Verdacht auf Blutung, Krampfanfälle, Kontrolle nach neurochirurgischer Operation, Beurteilung der Schädelknochen",
+				"prep": "Keine, Essen und Trinken wie gewohnt; Haarspangen, Ohrringe, Brille und herausnehmbaren Zahnersatz ablegen und eine mögliche Schwangerschaft melden",
+				"abnormal": "Die Untersuchung kann eine Blutung, ein Ödem, Spuren einer früheren Verletzung, eine raumfordernde oder gefäßbedingte Veränderung zeigen, von denen manche alt und beschwerdefrei sind. Den Befund erstellt der Radiologe, das weitere Vorgehen legt ein Neurologe oder Neurochirurg fest"
+			},
+			"tr": {
+				"what": "Kafatası boşluğunun ve beynin kontrast madde verilmeden ince kesitlerle görüntülenmesi",
+				"how": "Baş destekte durur, hastadan yalnızca hareketsiz kalması istenir; çekim birkaç saniye, ziyaretin tamamı 10–15 dakika sürer ve hiçbir şey hissedilmez",
+				"when": "Kafa travması, ani şiddetli baş ağrısı, kanama şüphesiyle birlikte akut nörolojik belirtiler, nöbet, beyin ameliyatı sonrası kontrol, kafatası kemiklerinin değerlendirilmesi",
+				"prep": "Gerekmez, normal şekilde yiyip içilebilir; toka, küpe, gözlük ve takma dişler çıkarılır, olası gebelik bildirilir",
+				"abnormal": "İnceleme kanamayı, ödemi, eski travma izlerini, yer kaplayan bir oluşumu veya damarsal kökenli değişiklikleri gösterebilir; bunların bir kısmı eski ve belirtisizdir. Raporu radyolog yazar, sonraki adımlara nörolog veya beyin cerrahı karar verir"
+			}
+		}
+	},
+	{
+		"slug": "msct-head-and-neck-native",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Нативное, то есть без контраста, сканирование головы вместе с мягкими тканями и костными структурами шеи в одном исследовании",
+				"how": "Пациент лежит неподвижно, зона съёмки идёт от свода черепа до основания шеи, во время сканирования просят не глотать; обычно занимает несколько минут",
+				"when": "Травма лица и шеи, уплотнение или отёк на шее, воспалительные процессы околоушной области и дна полости рта, оценка костей лицевого черепа, уточнение данных УЗИ, подготовка к ЛОР-операции",
+				"prep": "Специальной подготовки нет; снять украшения с шеи и ушей, съёмные протезы и слуховые аппараты, сообщить о возможной беременности",
+				"abnormal": "Снимки могут показать переломы, воспалительные скопления, увеличенные лимфатические узлы или изменения слюнных желёз, а значимость находки зависит от жалоб и осмотра. Описание делает рентгенолог, дальше ведёт ЛОР-врач, челюстно-лицевой хирург или лечащий врач"
+			},
+			"en": {
+				"what": "A native, meaning contrast-free, scan covering the head together with the soft tissues and bony structures of the neck in one examination",
+				"how": "The patient lies still, the scanned area runs from the skull vault to the base of the neck, and swallowing is discouraged during the acquisition; it usually takes a few minutes",
+				"when": "Facial and neck trauma, a lump or swelling in the neck, inflammation of the parotid region and the floor of the mouth, assessment of the facial bones, clarification of ultrasound findings, planning of ENT surgery",
+				"prep": "No special preparation; remove neck and ear jewellery, removable dentures and hearing aids, and report a possible pregnancy",
+				"abnormal": "The images may show fractures, inflammatory collections, enlarged lymph nodes or salivary gland changes, and the importance of a finding depends on symptoms and examination. The radiologist describes the images and an ENT specialist, maxillofacial surgeon or the treating doctor continues the care"
+			},
+			"sr": {
+				"what": "Nativni, dakle bez kontrasta, prikaz glave zajedno sa mekim tkivima i koštanim strukturama vrata u jednom pregledu",
+				"how": "Pacijent mirno leži, područje snimanja ide od svoda lobanje do korijena vrata, a tokom snimanja se traži da se ne guta; obično traje nekoliko minuta",
+				"when": "Povreda lica i vrata, čvor ili otok na vratu, upalni procesi paraušne regije i poda usne duplje, procjena kostiju lica, razjašnjenje ultrazvučnog nalaza, priprema za operaciju uha, grla i nosa",
+				"prep": "Posebna priprema nije potrebna; skinuti nakit sa vrata i ušiju, pokretne proteze i slušne aparate i prijaviti moguću trudnoću",
+				"abnormal": "Snimci mogu pokazati prelome, upalne kolekcije, uvećane limfne čvorove ili promjene pljuvačnih žlijezda, a značaj nalaza zavisi od tegoba i pregleda. Opis piše radiolog, a dalje vodi otorinolaringolog, maksilofacijalni hirurg ili ljekar koji vas prati"
+			},
+			"de": {
+				"what": "Eine native, also kontrastmittelfreie Aufnahme des Kopfes zusammen mit den Weichteilen und knöchernen Strukturen des Halses in einer Untersuchung",
+				"how": "Der Patient liegt still, der Aufnahmebereich reicht vom Schädeldach bis zum Halsansatz, während der Messung soll nicht geschluckt werden; meist dauert es einige Minuten",
+				"when": "Verletzung von Gesicht und Hals, Knoten oder Schwellung am Hals, Entzündungen der Ohrspeicheldrüsenregion und des Mundbodens, Beurteilung der Gesichtsknochen, Abklärung von Ultraschallbefunden, Planung einer HNO-Operation",
+				"prep": "Keine besondere Vorbereitung; Schmuck an Hals und Ohren, herausnehmbaren Zahnersatz und Hörgeräte ablegen und eine mögliche Schwangerschaft melden",
+				"abnormal": "Die Bilder können Brüche, entzündliche Flüssigkeitsansammlungen, vergrößerte Lymphknoten oder Veränderungen der Speicheldrüsen zeigen, und die Bedeutung hängt von Beschwerden und Untersuchung ab. Die Beschreibung erstellt der Radiologe, weiter betreuen HNO-Arzt, Kiefer- und Gesichtschirurg oder der behandelnde Arzt"
+			},
+			"tr": {
+				"what": "Başın, boyundaki yumuşak dokular ve kemik yapılarla birlikte tek bir incelemede kontrastsız olarak görüntülenmesi",
+				"how": "Hasta hareketsiz yatar, çekim alanı kafa tasından boyun köküne kadar uzanır ve çekim sırasında yutkunmaması istenir; genellikle birkaç dakika sürer",
+				"when": "Yüz ve boyun travması, boyunda şişlik veya kitle, kulak altı bölgesi ile ağız tabanı iltihapları, yüz kemiklerinin değerlendirilmesi, ultrason bulgularının netleştirilmesi, KBB ameliyatı planlaması",
+				"prep": "Özel hazırlık gerekmez; boyun ve kulak takıları, takma dişler ve işitme cihazları çıkarılır, olası gebelik bildirilir",
+				"abnormal": "Görüntüler kırıkları, iltihabi sıvı birikimlerini, büyümüş lenf düğümlerini veya tükürük bezi değişikliklerini gösterebilir; bulgunun önemi şikâyetlere ve muayeneye bağlıdır. Raporu radyolog yazar, takibi KBB uzmanı, çene-yüz cerrahı veya tedaviyi yürüten hekim sürdürür"
+			}
+		}
+	},
+	{
+		"slug": "msct-lumbosacral-spine",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Послойное исследование поясничных позвонков, крестца, межпозвонковых дисков и прилежащих суставов",
+				"how": "Пациент лежит на спине, ноги часто укладывают на валик, стол медленно проезжает через кольцо; сканирование длится секунды, визит около 10–15 минут",
+				"when": "Боль в пояснице с отдачей в ногу, подозрение на грыжу диска, когда МРТ недоступна или противопоказана, травма, смещение позвонка, планирование операции и контроль после установки винтов, подозрение на перелом при остеопорозе",
+				"prep": "Не требуется; снять ремень и одежду с металлическими застёжками, взять прежние снимки, сообщить о возможной беременности",
+				"abnormal": "Могут выявляться протрузии и грыжи дисков, сужение позвоночного канала, переломы или изменения мелких суставов, причём похожая картина встречается и у людей без боли. Заключение даёт рентгенолог, лечение определяет невролог, нейрохирург или ортопед"
+			},
+			"en": {
+				"what": "A layered study of the lumbar vertebrae, the sacrum, the intervertebral discs and the adjacent joints",
+				"how": "The patient lies on the back, often with the legs on a cushion, while the table moves slowly through the ring; the scan lasts seconds and the visit about 10–15 minutes",
+				"when": "Low back pain radiating into the leg, suspected disc herniation when MRI is unavailable or contraindicated, injury, vertebral slippage, surgical planning and follow-up after screw fixation, suspected fracture in osteoporosis",
+				"prep": "Not required; remove a belt and clothing with metal fasteners, bring previous images and report a possible pregnancy",
+				"abnormal": "Disc bulges and herniations, narrowing of the spinal canal, fractures or changes in the small joints may be seen, and a similar picture also occurs in people without pain. The radiologist issues the report and a neurologist, neurosurgeon or orthopaedic surgeon decides on treatment"
+			},
+			"sr": {
+				"what": "Slojeviti prikaz slabinskih pršljenova, krsne kosti, međupršljenskih diskova i okolnih zglobova",
+				"how": "Pacijent leži na leđima, noge se često postave na jastuk, a sto polako prolazi kroz prsten; snimanje traje nekoliko sekundi, a dolazak oko 10–15 minuta",
+				"when": "Bol u krstima koji se širi u nogu, sumnja na diskus herniju kada magnetna rezonanca nije dostupna ili je kontraindikovana, povreda, klizanje pršljena, planiranje operacije i kontrola poslije ugradnje zavrtanja, sumnja na prelom kod osteoporoze",
+				"prep": "Nije potrebna; skinuti kaiš i odjeću sa metalnim kopčama, ponijeti ranije snimke i prijaviti moguću trudnoću",
+				"abnormal": "Mogu se vidjeti ispupčenja i hernije diskova, suženje kičmenog kanala, prelomi ili promjene malih zglobova, a slična slika postoji i kod ljudi bez bola. Nalaz daje radiolog, a liječenje određuje neurolog, neurohirurg ili ortoped"
+			},
+			"de": {
+				"what": "Eine schichtweise Darstellung der Lendenwirbel, des Kreuzbeins, der Bandscheiben und der angrenzenden Gelenke",
+				"how": "Der Patient liegt auf dem Rücken, die Beine oft auf einer Rolle, während der Tisch langsam durch den Ring fährt; die Aufnahme dauert Sekunden, der Besuch etwa 10–15 Minuten",
+				"when": "Kreuzschmerz mit Ausstrahlung ins Bein, Verdacht auf Bandscheibenvorfall, wenn ein MRT nicht verfügbar oder nicht möglich ist, Verletzung, Wirbelgleiten, Operationsplanung und Kontrolle nach Schraubenfixierung, Verdacht auf Bruch bei Osteoporose",
+				"prep": "Nicht erforderlich; Gürtel und Kleidung mit Metallverschlüssen ablegen, frühere Aufnahmen mitbringen und eine mögliche Schwangerschaft melden",
+				"abnormal": "Vorwölbungen und Vorfälle der Bandscheiben, Einengung des Wirbelkanals, Brüche oder Veränderungen der kleinen Gelenke können sichtbar werden, ein ähnliches Bild findet sich auch bei Schmerzfreien. Den Befund erstellt der Radiologe, die Behandlung legen Neurologe, Neurochirurg oder Orthopäde fest"
+			},
+			"tr": {
+				"what": "Bel omurlarının, sakrumun, omurlar arası disklerin ve komşu eklemlerin kesitsel incelemesi",
+				"how": "Hasta sırtüstü yatar, bacaklar sıklıkla bir destek üzerine alınır ve masa halkadan yavaşça geçer; çekim saniyeler, ziyaret yaklaşık 10–15 dakika sürer",
+				"when": "Bacağa yayılan bel ağrısı, MR mümkün olmadığında veya sakıncalı olduğunda disk fıtığı şüphesi, travma, omur kayması, ameliyat planlaması ve vida uygulaması sonrası kontrol, osteoporozda kırık şüphesi",
+				"prep": "Gerekmez; kemer ve metal tokalı giysiler çıkarılır, önceki görüntüler getirilir, olası gebelik bildirilir",
+				"abnormal": "Disklerde taşma ve fıtık, omurilik kanalında darlık, kırıklar veya küçük eklem değişiklikleri görülebilir; benzer görüntü ağrısı olmayan kişilerde de bulunur. Raporu radyolog verir, tedaviye nörolog, beyin cerrahı veya ortopedist karar verir"
+			}
+		}
+	},
+	{
+		"slug": "msct-single-region-native",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сканирование одной анатомической области без контрастного вещества; какую именно зону снимать, указывает направивший врач",
+				"how": "Пациент лежит на столе, снимают только назначенную область, при исследовании туловища просят ненадолго задержать дыхание; сканирование занимает секунды, визит обычно 10–15 минут",
+				"when": "Уточнение изменений, замеченных на рентгене или УЗИ, травма одной области, наблюдение за известным изменением в динамике, ситуации, когда контраст не нужен или противопоказан",
+				"prep": "Обычно не требуется, но требования к конкретной области стоит уточнить при записи; снять металл из зоны съёмки и заранее сообщить о возможной беременности",
+				"abnormal": "Набор возможных находок зависит от выбранной области и варьирует от следов травмы до воспаления и объёмных изменений, часть особенностей оказывается вариантом строения. Описание даёт рентгенолог, а решение принимает направивший врач"
+			},
+			"en": {
+				"what": "A scan of a single anatomical region without contrast medium; which region is imaged is specified by the referring doctor",
+				"how": "The patient lies on the table and only the requested region is scanned, with a short breath-hold when the trunk is imaged; the scan takes seconds and the visit usually 10–15 minutes",
+				"when": "Clarification of changes noticed on an X-ray or ultrasound, injury confined to one region, follow-up of a known finding over time, situations where contrast is unnecessary or not advisable",
+				"prep": "Usually none, although requirements for the specific region are worth checking when booking; remove metal from the scanned area and report a possible pregnancy in advance",
+				"abnormal": "The range of possible findings depends on the chosen region and varies from traces of injury to inflammation and space-occupying changes, while some features turn out to be anatomical variants. The radiologist describes the images and the referring doctor makes the decision"
+			},
+			"sr": {
+				"what": "Snimanje jedne anatomske regije bez kontrastnog sredstva; koja se regija snima određuje ljekar koji vas upućuje",
+				"how": "Pacijent leži na stolu i snima se samo tražena regija, a kod trupa se traži kratko zadržavanje daha; snimanje traje nekoliko sekundi, a dolazak obično 10–15 minuta",
+				"when": "Razjašnjenje promjena uočenih na rendgenu ili ultrazvuku, povreda ograničena na jednu regiju, praćenje poznatog nalaza kroz vrijeme, situacije u kojima kontrast nije potreban ili nije preporučljiv",
+				"prep": "Najčešće nije potrebna, ali uslove za konkretnu regiju treba provjeriti pri zakazivanju; skinuti metal sa područja snimanja i unaprijed prijaviti moguću trudnoću",
+				"abnormal": "Spektar mogućih nalaza zavisi od izabrane regije i ide od tragova povrede do upale i ekspanzivnih promjena, a dio osobenosti bude varijanta građe. Opis daje radiolog, a odluku donosi ljekar koji vas je uputio"
+			},
+			"de": {
+				"what": "Die Aufnahme einer einzelnen Körperregion ohne Kontrastmittel; welche Region abgebildet wird, gibt der überweisende Arzt vor",
+				"how": "Der Patient liegt auf dem Tisch und nur die angeforderte Region wird aufgenommen, am Rumpf mit kurzem Atemanhalten; die Aufnahme dauert Sekunden, der Besuch meist 10–15 Minuten",
+				"when": "Abklärung von Veränderungen aus Röntgen oder Ultraschall, Verletzung einer einzelnen Region, Verlaufskontrolle eines bekannten Befundes, Situationen, in denen Kontrastmittel nicht nötig oder nicht ratsam ist",
+				"prep": "Meist keine, die Vorgaben für die konkrete Region sollten jedoch bei der Terminvergabe erfragt werden; Metall aus dem Aufnahmebereich ablegen und eine mögliche Schwangerschaft vorab melden",
+				"abnormal": "Welche Befunde möglich sind, hängt von der gewählten Region ab und reicht von Verletzungsspuren über Entzündungen bis zu raumfordernden Veränderungen, manches erweist sich als Normvariante. Die Beschreibung erstellt der Radiologe, die Entscheidung trifft der überweisende Arzt"
+			},
+			"tr": {
+				"what": "Tek bir anatomik bölgenin kontrast madde verilmeden görüntülenmesi; hangi bölgenin çekileceğini isteyen hekim belirtir",
+				"how": "Hasta masada yatar ve yalnızca istenen bölge çekilir, gövde çekimlerinde kısa süre nefes tutulur; çekim saniyeler, ziyaret genellikle 10–15 dakika sürer",
+				"when": "Grafide veya ultrasonda fark edilen değişikliklerin netleştirilmesi, tek bölgeyle sınırlı travma, bilinen bir bulgunun zaman içinde izlenmesi, kontrastın gerekmediği ya da uygun olmadığı durumlar",
+				"prep": "Çoğunlukla gerekmez, ancak ilgili bölgeye özgü koşullar randevu alırken sorulmalıdır; çekim alanındaki metaller çıkarılır, olası gebelik önceden bildirilir",
+				"abnormal": "Olası bulgular seçilen bölgeye göre değişir ve travma izlerinden iltihaba, yer kaplayan değişikliklere kadar uzanır; bir kısmı yapısal varyasyon çıkar. Görüntüleri radyolog tanımlar, kararı isteyen hekim verir"
+			}
+		}
+	},
+	{
+		"slug": "msct-single-region-with-contrast",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сканирование одной анатомической области с внутривенным контрастом, который лучше разделяет ткани и показывает сосуды",
+				"how": "В вену руки ставят катетер, вводят контраст, часто возникает ощущение тепла и привкус во рту, снимки делают до и после введения; визит обычно занимает 20–30 минут",
+				"when": "Ситуации, когда нативного снимка мало: уточнение характера найденного образования, подозрение на воспаление или гнойное скопление, оценка кровоснабжения тканей, контроль после лечения",
+				"prep": "Не есть несколько часов, если клиника просит, принести результат функции почек, когда его запрашивали, сообщить об аллергии на контраст, астме, болезнях почек и щитовидной железы, возможной беременности; после исследования советуют больше пить",
+				"abnormal": "По тому, как ткань накапливает контраст, отличают рубец от активного процесса и уточняют границы изменения, но само накопление диагнозом не является. Заключение даёт рентгенолог, дальнейшие шаги определяет лечащий врач"
+			},
+			"en": {
+				"what": "A scan of a single anatomical region with intravenous contrast, which separates tissues better and shows the vessels",
+				"how": "A cannula is placed in an arm vein and contrast is injected, often causing warmth and a taste in the mouth, with images taken before and after the injection; the visit usually takes 20–30 minutes",
+				"when": "Situations where a plain scan is not enough: clarifying the nature of a detected lesion, suspected inflammation or a collection of pus, assessment of tissue blood supply, follow-up after treatment",
+				"prep": "Do not eat for several hours if the clinic asks, bring kidney function results if they were requested, report contrast allergy, asthma, kidney or thyroid disease and a possible pregnancy; drinking more fluid afterwards is advised",
+				"abnormal": "The way tissue takes up contrast helps distinguish scarring from an active process and define the borders of a change, but uptake alone is not a diagnosis. The radiologist issues the report and the treating doctor decides the next steps"
+			},
+			"sr": {
+				"what": "Snimanje jedne anatomske regije uz kontrast u venu, koji bolje razdvaja tkiva i prikazuje krvne sudove",
+				"how": "U venu na ruci postavlja se kanila i daje se kontrast, često uz osjećaj toplote i ukus u ustima, a snima se i prije i poslije davanja; dolazak obično traje 20–30 minuta",
+				"when": "Situacije kada nativni snimak nije dovoljan: razjašnjenje prirode uočene promjene, sumnja na upalu ili nakupinu gnoja, procjena prokrvljenosti tkiva, kontrola poslije liječenja",
+				"prep": "Ne jesti nekoliko sati ako klinika tako traži, ponijeti nalaz bubrežne funkcije ako je tražen, prijaviti alergiju na kontrast, astmu, bolesti bubrega i štitaste žlijezde i moguću trudnoću; poslije pregleda se savjetuje više tečnosti",
+				"abnormal": "Način na koji tkivo prima kontrast pomaže da se ožiljak razlikuje od aktivnog procesa i da se odrede granice promjene, ali samo nakupljanje nije dijagnoza. Nalaz daje radiolog, a dalje korake određuje ljekar koji vas vodi"
+			},
+			"de": {
+				"what": "Die Aufnahme einer einzelnen Körperregion mit Kontrastmittel über die Vene, das Gewebe besser trennt und die Gefäße zeigt",
+				"how": "In eine Armvene wird eine Kanüle gelegt und Kontrastmittel gespritzt, oft mit Wärmegefühl und Geschmack im Mund, Aufnahmen entstehen vor und nach der Gabe; der Besuch dauert meist 20–30 Minuten",
+				"when": "Wenn die native Aufnahme nicht ausreicht: Klärung der Art einer gefundenen Veränderung, Verdacht auf Entzündung oder eine Eiteransammlung, Beurteilung der Durchblutung von Gewebe, Kontrolle nach einer Behandlung",
+				"prep": "Einige Stunden nichts essen, wenn die Klinik dies verlangt, Nierenwerte mitbringen, falls angefordert, Kontrastmittelallergie, Asthma, Nieren- oder Schilddrüsenerkrankung und eine mögliche Schwangerschaft melden; danach wird reichliches Trinken empfohlen",
+				"abnormal": "Wie Gewebe Kontrastmittel aufnimmt, hilft, Narben von einem aktiven Prozess zu unterscheiden und Grenzen zu bestimmen, die Aufnahme allein ist jedoch keine Diagnose. Den Befund erstellt der Radiologe, das weitere Vorgehen bestimmt der behandelnde Arzt"
+			},
+			"tr": {
+				"what": "Tek bir anatomik bölgenin, dokuları daha iyi ayıran ve damarları gösteren damar yoluyla kontrast madde ile görüntülenmesi",
+				"how": "Koldaki damara kanül takılıp kontrast verilir, sıklıkla sıcaklık hissi ve ağızda tat olur, çekimler verilmeden önce ve sonra yapılır; ziyaret genellikle 20–30 dakika sürer",
+				"when": "Kontrastsız çekimin yetmediği durumlar: saptanan bir oluşumun niteliğinin netleştirilmesi, iltihap veya irin birikimi şüphesi, dokunun kanlanmasının değerlendirilmesi, tedavi sonrası kontrol",
+				"prep": "Klinik isterse birkaç saat aç kalınır, istenmişse böbrek fonksiyon sonucu getirilir, kontrast alerjisi, astım, böbrek ve tiroit hastalıkları ile olası gebelik bildirilir; sonrasında bol sıvı önerilir",
+				"abnormal": "Dokunun kontrastı tutma biçimi, nedbe ile aktif süreci ayırmaya ve değişikliğin sınırlarını belirlemeye yardımcı olur, ancak tek başına tanı değildir. Raporu radyolog verir, sonraki adımları tedaviyi yürüten hekim belirler"
+			}
+		}
+	},
+	{
+		"slug": "msct-thoracic-spine",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Послойное исследование грудных позвонков, рёберно-позвоночных суставов и прилежащих структур грудной клетки",
+				"how": "Пациент лежит на спине с руками за головой и на несколько секунд задерживает дыхание, чтобы изображение не смазалось; всё исследование занимает около 10 минут",
+				"when": "Травма спины и подозрение на компрессионный перелом позвонка, боль между лопатками, деформации позвоночника, контроль после операции на позвоночнике, уточнение неясных изменений с рентгеновского снимка",
+				"prep": "Не требуется; снять бюстгальтер с косточками, цепочки и одежду с металлическими деталями, сообщить о возможной беременности",
+				"abnormal": "Могут обнаруживаться переломы тел позвонков, изменения дисков и суставов, снижение плотности кости или изменённая форма позвонка, иногда давние и бессимптомные. Описание даёт рентгенолог, а решение о лечении принимает травматолог, нейрохирург или лечащий врач"
+			},
+			"en": {
+				"what": "A layered study of the thoracic vertebrae, the costovertebral joints and the adjacent structures of the chest",
+				"how": "The patient lies on the back with the arms above the head and holds the breath for a few seconds so the image is not blurred; the whole study takes about 10 minutes",
+				"when": "Back injury and suspected compression fracture of a vertebra, pain between the shoulder blades, spinal deformity, follow-up after spinal surgery, clarification of unclear findings on a plain X-ray",
+				"prep": "Not required; remove an underwired bra, chains and clothing with metal parts, and report a possible pregnancy",
+				"abnormal": "Fractures of vertebral bodies, disc and joint changes, reduced bone density or an altered vertebral shape may be found, sometimes long-standing and without symptoms. The radiologist writes the description and a trauma surgeon, neurosurgeon or the treating doctor decides on treatment"
+			},
+			"sr": {
+				"what": "Slojeviti prikaz grudnih pršljenova, rebarno-pršljenskih zglobova i okolnih struktura grudnog koša",
+				"how": "Pacijent leži na leđima sa rukama iznad glave i zadržava dah nekoliko sekundi da snimak ne bude mutan; cio pregled traje oko 10 minuta",
+				"when": "Povreda leđa i sumnja na kompresivni prelom pršljena, bol između lopatica, deformiteti kičme, kontrola poslije operacije kičme, razjašnjenje nejasnih promjena sa rendgenskog snimka",
+				"prep": "Nije potrebna; skinuti grudnjak sa žicom, lančiće i odjeću sa metalnim dijelovima i prijaviti moguću trudnoću",
+				"abnormal": "Mogu se naći prelomi tijela pršljena, promjene diskova i zglobova, smanjena gustina kosti ili izmijenjen oblik pršljena, ponekad stari i bez tegoba. Opis piše radiolog, a odluku o liječenju donosi traumatolog, neurohirurg ili ljekar koji vas vodi"
+			},
+			"de": {
+				"what": "Eine schichtweise Darstellung der Brustwirbel, der Rippen-Wirbel-Gelenke und der angrenzenden Strukturen des Brustkorbs",
+				"how": "Der Patient liegt auf dem Rücken, die Arme über dem Kopf, und hält einige Sekunden die Luft an, damit das Bild nicht verwischt; die gesamte Untersuchung dauert etwa 10 Minuten",
+				"when": "Rückenverletzung und Verdacht auf einen Wirbelkörpereinbruch, Schmerz zwischen den Schulterblättern, Fehlstellungen der Wirbelsäule, Kontrolle nach Wirbelsäulenoperation, Abklärung unklarer Veränderungen im Röntgenbild",
+				"prep": "Nicht erforderlich; Bügel-BH, Ketten und Kleidung mit Metallteilen ablegen und eine mögliche Schwangerschaft melden",
+				"abnormal": "Es können Wirbelkörperbrüche, Bandscheiben- und Gelenkveränderungen, verminderte Knochendichte oder eine veränderte Wirbelform auffallen, teils alt und beschwerdefrei. Die Beschreibung erstellt der Radiologe, über die Behandlung entscheiden Unfallchirurg, Neurochirurg oder der behandelnde Arzt"
+			},
+			"tr": {
+				"what": "Sırt omurlarının, kaburga-omur eklemlerinin ve göğüs kafesindeki komşu yapıların kesitsel incelemesi",
+				"how": "Hasta sırtüstü, kolları başının üzerinde yatar ve görüntü bulanmasın diye birkaç saniye nefesini tutar; inceleme toplamda yaklaşık 10 dakika sürer",
+				"when": "Sırt travması ve omurda çökme kırığı şüphesi, kürek kemikleri arasında ağrı, omurga eğrilikleri, omurga ameliyatı sonrası kontrol, grafideki belirsiz değişikliklerin netleştirilmesi",
+				"prep": "Gerekmez; balenli sutyen, zincir ve metal parçalı giysiler çıkarılır, olası gebelik bildirilir",
+				"abnormal": "Omur gövdesi kırıkları, disk ve eklem değişiklikleri, kemik yoğunluğunda azalma veya omur şeklinde bozulma saptanabilir; bir kısmı eski ve belirtisizdir. Tanımlamayı radyolog yazar, tedavi kararını ortopedist, beyin cerrahı veya tedaviyi yürüten hekim verir"
+			}
+		}
+	},
+	{
+		"slug": "balloon-atrial-septostomy-rashkind-procedure",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Катетерное вмешательство у новорождённого с врождённым пороком сердца, при котором расширяют естественное отверстие в перегородке между предсердиями, чтобы кровь двух кругов лучше смешивалась",
+				"how": "Через пупочную или бедренную вену под контролем УЗИ сердца или рентгена проводят катетер с баллоном в левое предсердие, баллон раздувают и быстро протягивают назад; выполняется в стационаре, вместе с подготовкой занимает примерно час",
+				"when": "Пороки, при которых поступление кислорода зависит от смешивания потоков крови, в первую очередь транспозиция магистральных сосудов; показание ставит детский кардиолог, чаще в первые дни жизни",
+				"prep": "Готовит бригада стационара: ребёнка не кормят перед вмешательством, обеспечивают венозный доступ, выполняют эхокардиографию и анализы, родители подписывают информированное согласие",
+				"abnormal": "Цель вмешательства — улучшить насыщение крови кислородом, после него ребёнок остаётся под наблюдением с контролем эхокардиографии и места прокола. Это мера на время до радикальной операции, план дальнейшего лечения определяют детский кардиолог и кардиохирург"
+			},
+			"en": {
+				"what": "A catheter procedure in a newborn with a congenital heart defect in which the natural opening in the wall between the atria is widened so that the two blood streams mix better",
+				"how": "Through the umbilical or femoral vein, guided by heart ultrasound or X-ray, a balloon catheter is advanced into the left atrium, inflated and pulled back quickly; it is done in hospital and takes about an hour including preparation",
+				"when": "Defects in which oxygen delivery depends on mixing of the blood streams, above all transposition of the great arteries; the indication is set by a paediatric cardiologist, usually in the first days of life",
+				"prep": "The hospital team prepares the child: no feeding before the procedure, venous access is secured, echocardiography and blood tests are done, and the parents sign informed consent",
+				"abnormal": "The aim is to improve oxygen saturation of the blood, and afterwards the child stays under observation with echocardiography and checks of the puncture site. It is a bridging measure before corrective surgery, and the further plan is set by the paediatric cardiologist and cardiac surgeon"
+			},
+			"sr": {
+				"what": "Kateterski zahvat kod novorođenčeta sa urođenom srčanom manom, kojim se proširuje prirodni otvor u pregradi između pretkomora da bi se dvije struje krvi bolje miješale",
+				"how": "Kroz pupčanu ili butnu venu, uz kontrolu ultrazvuka srca ili rendgena, kateter sa balonom se uvodi u lijevu pretkomoru, balon se napuni i brzo povuče nazad; radi se u bolnici i sa pripremom traje oko sat vremena",
+				"when": "Mane kod kojih dopremanje kiseonika zavisi od miješanja krvnih struja, prije svega transpozicija velikih krvnih sudova; indikaciju postavlja dječiji kardiolog, najčešće u prvim danima života",
+				"prep": "Pripremu vodi bolnički tim: dijete se ne hrani prije zahvata, obezbjeđuje se venski put, rade se ehokardiografija i analize, a roditelji potpisuju saglasnost",
+				"abnormal": "Cilj zahvata je bolja zasićenost krvi kiseonikom, a poslije njega dijete ostaje pod nadzorom uz kontrolu ehokardiografije i mjesta uboda. To je mjera koja dobija vrijeme do korektivne operacije, a dalji plan određuju dječiji kardiolog i kardiohirurg"
+			},
+			"de": {
+				"what": "Ein Kathetereingriff beim Neugeborenen mit angeborenem Herzfehler, bei dem die natürliche Öffnung in der Wand zwischen den Vorhöfen erweitert wird, damit sich die beiden Blutströme besser mischen",
+				"how": "Über die Nabel- oder Leistenvene wird unter Herzultraschall- oder Röntgenkontrolle ein Ballonkatheter in den linken Vorhof vorgeschoben, der Ballon gefüllt und rasch zurückgezogen; der Eingriff erfolgt stationär und dauert mit Vorbereitung etwa eine Stunde",
+				"when": "Herzfehler, bei denen die Sauerstoffversorgung von der Mischung der Blutströme abhängt, vor allem die Transposition der großen Arterien; die Indikation stellt ein Kinderkardiologe, meist in den ersten Lebenstagen",
+				"prep": "Die Vorbereitung übernimmt das Klinikteam: das Kind wird vor dem Eingriff nicht gefüttert, ein Venenzugang wird gelegt, Echokardiographie und Laborwerte werden erhoben, die Eltern unterschreiben die Einwilligung",
+				"abnormal": "Ziel ist eine bessere Sauerstoffsättigung des Blutes, danach bleibt das Kind unter Beobachtung mit Echokardiographie und Kontrolle der Punktionsstelle. Es ist eine überbrückende Maßnahme bis zur korrigierenden Operation, den weiteren Plan legen Kinderkardiologe und Herzchirurg fest"
+			},
+			"tr": {
+				"what": "Doğuştan kalp hastalığı olan yenidoğanda, kulakçıklar arasındaki duvarda bulunan doğal açıklığın genişletilerek iki kan akımının daha iyi karışmasını sağlayan kateter işlemi",
+				"how": "Göbek ya da kasık toplardamarından, kalp ultrasonu veya röntgen eşliğinde balonlu kateter sol kulakçığa ilerletilir, balon şişirilip hızla geri çekilir; hastanede yapılır ve hazırlıkla birlikte yaklaşık bir saat sürer",
+				"when": "Oksijen taşınmasının kan akımlarının karışmasına bağlı olduğu kalp hastalıkları, başta büyük arterlerin transpozisyonu; kararı çocuk kardiyoloğu verir, genellikle yaşamın ilk günlerinde",
+				"prep": "Hazırlığı hastane ekibi yapar: işlem öncesi bebek beslenmez, damar yolu açılır, ekokardiyografi ve kan tetkikleri yapılır, aile onam formunu imzalar",
+				"abnormal": "Amaç kanın oksijen doygunluğunu artırmaktır; işlemden sonra bebek ekokardiyografi ve giriş yeri kontrolüyle gözlem altında kalır. Bu, düzeltici ameliyata kadar zaman kazandıran bir önlemdir, sonraki planı çocuk kardiyoloğu ve kalp cerrahı belirler"
+			}
+		}
+	},
+	{
+		"slug": "bile-duct-stricture-dilatation",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Расширение суженного участка жёлчного протока баллоном или бужом, которое выполняют эндоскопически либо через кожу под рентгеновским контролем",
+				"how": "Под обезболиванием к месту сужения подводят инструмент, баллон раздувают на короткое время, при необходимости оставляют стент или дренаж; проводится в стационаре и обычно занимает до часа",
+				"when": "Сужение протока после операции на жёлчных путях или пересадки печени, рубцовые и воспалительные сужения, нарушение оттока жёлчи с желтухой и кожным зудом — по решению хирурга или гастроэнтеролога",
+				"prep": "Натощак, обычно не есть с вечера; заранее сообщить о приёме препаратов, разжижающих кровь, и об аллергии на контраст, сдать анализы крови и свёртывания по требованию клиники, после процедуры остаться под наблюдением",
+				"abnormal": "После успешного расширения отток жёлчи обычно улучшается, но сужение может вернуться и потребовать повторных процедур. Боль, озноб с повышением температуры, желтуха или потемнение мочи после вмешательства — повод срочно связаться с врачом"
+			},
+			"en": {
+				"what": "Widening of a narrowed segment of a bile duct with a balloon or dilator, carried out endoscopically or through the skin under X-ray guidance",
+				"how": "Under anaesthesia an instrument is brought to the narrowing, the balloon is inflated briefly and, if needed, a stent or drain is left in place; it is done in hospital and usually takes up to an hour",
+				"when": "Narrowing after biliary surgery or liver transplantation, scar and inflammatory strictures, impaired bile flow with jaundice and itching, as decided by a surgeon or gastroenterologist",
+				"prep": "Nothing to eat, usually from the evening before; report blood-thinning medication and contrast allergy in advance, provide blood count and clotting tests if the clinic requires them, and stay under observation after the procedure",
+				"abnormal": "After successful dilatation bile flow usually improves, but the narrowing may recur and require repeat procedures. Pain, chills with fever, jaundice or dark urine after the procedure are reasons to contact a doctor without delay"
+			},
+			"sr": {
+				"what": "Širenje suženog dijela žučnog voda balonom ili bužijom, koje se izvodi endoskopski ili kroz kožu pod rendgenskom kontrolom",
+				"how": "Uz anesteziju se instrument dovede do mjesta suženja, balon se nakratko napuni, a po potrebi se ostavi stent ili dren; radi se u bolnici i obično traje do sat vremena",
+				"when": "Suženje poslije operacije na žučnim putevima ili transplantacije jetre, ožiljna i upalna suženja, otežano oticanje žuči sa žuticom i svrabom kože, po odluci hirurga ili gastroenterologa",
+				"prep": "Natašte, najčešće bez hrane od večeri prije; unaprijed prijaviti lijekove za razrjeđivanje krvi i alergiju na kontrast, uraditi analize krvi i koagulacije ako ih klinika traži i poslije zahvata ostati pod nadzorom",
+				"abnormal": "Poslije uspješnog širenja oticanje žuči se obično popravlja, ali se suženje može vratiti i tražiti ponovne zahvate. Bol, drhtavica sa povišenom temperaturom, žutica ili tamna mokraća poslije zahvata razlog su da se odmah javite ljekaru"
+			},
+			"de": {
+				"what": "Die Aufweitung eines verengten Gallengangabschnitts mit Ballon oder Dilatator, endoskopisch oder über die Haut unter Röntgenkontrolle",
+				"how": "Unter Betäubung wird ein Instrument bis zur Engstelle vorgebracht, der Ballon kurz entfaltet und bei Bedarf ein Stent oder eine Drainage belassen; der Eingriff erfolgt stationär und dauert meist bis zu einer Stunde",
+				"when": "Verengung nach Gallenwegsoperation oder Lebertransplantation, narbige und entzündliche Engstellen, gestörter Galleabfluss mit Gelbsucht und Juckreiz, nach Entscheidung von Chirurg oder Gastroenterologe",
+				"prep": "Nüchtern, meist ohne Essen ab dem Vorabend; blutverdünnende Medikamente und eine Kontrastmittelallergie vorab melden, Blutbild und Gerinnung bereitstellen, wenn die Klinik dies verlangt, und nach dem Eingriff unter Beobachtung bleiben",
+				"abnormal": "Nach erfolgreicher Aufweitung bessert sich der Galleabfluss in der Regel, die Engstelle kann jedoch wiederkehren und erneute Eingriffe erfordern. Schmerzen, Schüttelfrost mit Fieber, Gelbsucht oder dunkler Urin nach dem Eingriff sind Gründe, sofort einen Arzt zu kontaktieren"
+			},
+			"tr": {
+				"what": "Safra yolundaki dar bölümün balon ya da buji ile genişletilmesi; endoskopik yolla veya röntgen eşliğinde deri yoluyla yapılır",
+				"how": "Anestezi altında darlığın olduğu yere alet ulaştırılır, balon kısa süre şişirilir, gerekirse stent ya da dren bırakılır; hastanede yapılır ve genellikle bir saate kadar sürer",
+				"when": "Safra yolu ameliyatı veya karaciğer nakli sonrası darlık, nedbeye ve iltihaba bağlı darlıklar, sarılık ve kaşıntıyla seyreden safra akımı bozukluğu; kararı cerrah veya gastroenterolog verir",
+				"prep": "Aç karnına, genellikle bir önceki akşamdan sonra yemek yenmez; kan sulandırıcı ilaçlar ve kontrast alerjisi önceden bildirilir, klinik isterse kan ve pıhtılaşma tetkikleri yapılır, işlem sonrası gözlemde kalınır",
+				"abnormal": "Başarılı genişletmeden sonra safra akımı genellikle düzelir, ancak darlık tekrarlayabilir ve işlemin yinelenmesi gerekebilir. İşlem sonrası ağrı, titremeyle yükselen ateş, sarılık veya koyu idrar varsa gecikmeden hekime başvurulmalıdır"
+			}
+		}
+	},
+	{
+		"slug": "biliary-system-drainage-under-ct-guidance",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Установка тонкой дренажной трубки в жёлчные протоки через кожу под навигацией компьютерного томографа, чтобы обеспечить отток жёлчи",
+				"how": "Место прокола обезболивают, по послойным снимкам проводят иглу, а затем катетер в расширенный проток, жёлчь отводится в наружный мешок; занимает от получаса, выполняется в стационаре",
+				"when": "Блок оттока жёлчи с желтухой при сужении или сдавлении протоков, гнойное воспаление жёлчных путей, подготовка к операции или эндоскопическому вмешательству, когда доступ через эндоскоп невозможен",
+				"prep": "Не есть и не пить по указанию клиники, сдать анализы свёртывания крови, обсудить с врачом приём антикоагулянтов, сообщить об аллергии на контраст; после вмешательства несколько часов покоя и наблюдение",
+				"abnormal": "После дренирования желтуха и кожный зуд обычно постепенно уменьшаются, а за трубкой нужны уход и регулярные перевязки. Повышение температуры, усиление боли, подтекание вокруг дренажа или прекращение оттока — повод немедленно обратиться к врачу"
+			},
+			"en": {
+				"what": "Placement of a thin drainage tube into the bile ducts through the skin, guided by a CT scanner, to restore the outflow of bile",
+				"how": "The puncture site is numbed, a needle and then a catheter are advanced into a dilated duct using cross-sectional images, and bile is led into an external bag; it takes from half an hour and is done in hospital",
+				"when": "Blocked bile outflow with jaundice due to narrowing or compression of the ducts, purulent inflammation of the biliary tract, preparation for surgery or endoscopic treatment when endoscopic access is not possible",
+				"prep": "No food or drink as instructed by the clinic, clotting tests beforehand, discussion of anticoagulant medication with the doctor, report contrast allergy; a few hours of rest and observation follow the procedure",
+				"abnormal": "After drainage jaundice and itching usually subside gradually, while the tube needs care and regular dressing changes. Fever, increasing pain, leakage around the drain or a stop in outflow are reasons to seek medical help immediately"
+			},
+			"sr": {
+				"what": "Postavljanje tanke drenažne cjevčice u žučne vodove kroz kožu, uz navigaciju skenera, da bi se obezbijedilo oticanje žuči",
+				"how": "Mjesto uboda se obezboli, prema slojevitim snimcima se uvode igla pa kateter u prošireni vod, a žuč se odvodi u spoljnu kesu; traje od pola sata i izvodi se u bolnici",
+				"when": "Zastoj oticanja žuči sa žuticom zbog suženja ili pritiska na vodove, gnojna upala žučnih puteva, priprema za operaciju ili endoskopski zahvat kada pristup endoskopom nije moguć",
+				"prep": "Ne jesti i ne piti po uputstvu klinike, uraditi analize koagulacije, sa ljekarom dogovoriti lijekove protiv zgrušavanja i prijaviti alergiju na kontrast; poslije zahvata slijedi nekoliko sati mirovanja i nadzor",
+				"abnormal": "Poslije drenaže se žutica i svrab obično postepeno smanjuju, a cjevčica traži njegu i redovno previjanje. Povišena temperatura, jači bol, curenje oko drena ili prestanak oticanja razlog su da se odmah javite ljekaru"
+			},
+			"de": {
+				"what": "Das Einlegen eines dünnen Drainageschlauchs in die Gallenwege durch die Haut unter CT-Steuerung, um den Abfluss der Galle zu sichern",
+				"how": "Die Einstichstelle wird betäubt, anhand der Schnittbilder werden Nadel und anschließend Katheter in einen erweiterten Gang vorgeschoben, die Galle läuft in einen äußeren Beutel; es dauert ab einer halben Stunde und erfolgt stationär",
+				"when": "Gestauter Galleabfluss mit Gelbsucht bei Verengung oder Druck auf die Gänge, eitrige Entzündung der Gallenwege, Vorbereitung auf eine Operation oder einen endoskopischen Eingriff, wenn der endoskopische Zugang nicht möglich ist",
+				"prep": "Nahrungs- und Trinkkarenz nach Vorgabe der Klinik, Gerinnungswerte, Absprache über blutverdünnende Medikamente, Meldung einer Kontrastmittelallergie; danach einige Stunden Ruhe und Überwachung",
+				"abnormal": "Nach der Drainage gehen Gelbsucht und Juckreiz meist allmählich zurück, der Schlauch braucht Pflege und regelmäßige Verbandwechsel. Fieber, zunehmende Schmerzen, Austritt von Flüssigkeit um die Drainage oder ein Stillstand des Abflusses erfordern sofortige ärztliche Hilfe"
+			},
+			"tr": {
+				"what": "Safra akışını sağlamak amacıyla, BT rehberliğinde deri yoluyla safra yollarına ince bir drenaj kateteri yerleştirilmesi",
+				"how": "Giriş yeri uyuşturulur, kesitsel görüntülere bakılarak önce iğne sonra kateter genişlemiş kanala ilerletilir ve safra dış torbaya alınır; yarım saatten başlar ve hastanede yapılır",
+				"when": "Kanalların daralması veya dışarıdan baskı nedeniyle sarılıkla seyreden safra tıkanıklığı, safra yollarının irinli iltihabı, endoskopik girişimin mümkün olmadığı durumlarda ameliyat ya da girişim öncesi hazırlık",
+				"prep": "Kliniğin talimatına göre aç ve susuz kalınır, pıhtılaşma tetkikleri yapılır, kan sulandırıcı ilaçlar hekimle görüşülür, kontrast alerjisi bildirilir; işlemden sonra birkaç saat istirahat ve gözlem gerekir",
+				"abnormal": "Drenajdan sonra sarılık ve kaşıntı genellikle yavaş yavaş azalır, kateterin bakımı ve düzenli pansumanı gerekir. Ateş, artan ağrı, kateter çevresinden sızıntı veya akışın durması durumunda hemen hekime başvurulmalıdır"
+			}
+		}
+	},
+	{
+		"slug": "catheter-organ-resection-by-feeding-artery-embolization",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Эндоваскулярное вмешательство, при котором через катетер закрывают артерию, питающую орган или его часть, чтобы прекратить кровоснабжение этого участка без открытой операции",
+				"how": "Через прокол артерии, чаще в паху, под рентгеновским контролем катетер подводят к нужному сосуду, вводят контраст, затем эмболизирующий материал — спирали, частицы или клеевую композицию; проходит в рентгеноперационной и обычно занимает один-два часа",
+				"when": "Кровотечение из сосудов органа, травма с повреждением сосуда, сосудистые образования, уменьшение кровопотери перед удалением органа, выключение функции участка органа, когда открытая операция слишком рискованна; решение принимает консилиум",
+				"prep": "Натощак по указанию клиники, анализы крови и свёртывания, согласование приёма антикоагулянтов с врачом, сообщить об аллергии на контраст и болезнях почек; после вмешательства несколько часов лежать и остаться под наблюдением",
+				"abnormal": "В первые дни возможны боль в области органа, повышение температуры и слабость, которые описывают как постэмболизационный синдром и наблюдают в стационаре, а результат оценивают по контрольным снимкам. Дальнейшую тактику определяют интервенционный радиолог и лечащий врач"
+			},
+			"en": {
+				"what": "An endovascular procedure in which the artery feeding an organ or part of it is closed through a catheter, so that blood supply to that area stops without open surgery",
+				"how": "Through a puncture of an artery, usually in the groin, the catheter is guided to the target vessel under X-ray, contrast is injected and then an embolic material such as coils, particles or a glue preparation; it takes place in an angiography suite and usually lasts one to two hours",
+				"when": "Bleeding from the vessels of an organ, injury with vascular damage, vascular lesions, reduction of blood loss before removal of an organ, switching off the function of part of an organ when open surgery is too risky; the decision is made by a team of doctors",
+				"prep": "Fasting as instructed by the clinic, blood count and clotting tests, agreement with the doctor about anticoagulants, reporting of contrast allergy and kidney disease; afterwards several hours lying flat and observation",
+				"abnormal": "In the first days pain over the organ, fever and weakness are possible, described as post-embolisation syndrome and monitored in hospital, while the result is judged on follow-up imaging. The further plan is set by the interventional radiologist together with the treating doctor"
+			},
+			"sr": {
+				"what": "Endovaskularni zahvat kojim se kroz kateter zatvara arterija koja hrani organ ili njegov dio, da bi se dotok krvi u to područje prekinuo bez otvorene operacije",
+				"how": "Kroz ubod arterije, najčešće u preponi, kateter se pod rendgenskom kontrolom dovede do ciljnog krvnog suda, daje se kontrast, a zatim embolizacioni materijal, spirale, čestice ili ljepak; radi se u angio sali i obično traje jedan do dva sata",
+				"when": "Krvarenje iz krvnih sudova organa, povreda sa oštećenjem krvnog suda, krvožilne promjene, smanjenje gubitka krvi prije uklanjanja organa, isključivanje funkcije dijela organa kada je otvorena operacija previše rizična; odluku donosi konzilijum",
+				"prep": "Natašte po uputstvu klinike, analize krvi i koagulacije, dogovor sa ljekarom o lijekovima protiv zgrušavanja, prijava alergije na kontrast i bolesti bubrega; poslije zahvata nekoliko sati ležanja i nadzor",
+				"abnormal": "Prvih dana su mogući bol u predjelu organa, povišena temperatura i slabost, što se opisuje kao postembolizacioni sindrom i prati u bolnici, a ishod se procjenjuje kontrolnim snimcima. Dalju taktiku određuju interventni radiolog i ljekar koji vas vodi"
+			},
+			"de": {
+				"what": "Ein endovaskulärer Eingriff, bei dem die zuführende Arterie eines Organs oder Organanteils über einen Katheter verschlossen wird, sodass die Durchblutung dieses Bereichs ohne offene Operation endet",
+				"how": "Über die Punktion einer Arterie, meist in der Leiste, wird der Katheter unter Röntgenkontrolle zum Zielgefäß geführt, Kontrastmittel und anschließend Embolisationsmaterial wie Spiralen, Partikel oder ein Klebstoffpräparat eingebracht; der Eingriff findet im Angiographieraum statt und dauert meist ein bis zwei Stunden",
+				"when": "Blutung aus Organgefäßen, Verletzung mit Gefäßschaden, Gefäßveränderungen, Verringerung des Blutverlusts vor Organentfernung, Ausschaltung der Funktion eines Organanteils, wenn eine offene Operation zu riskant ist; die Entscheidung trifft ein Ärzteteam",
+				"prep": "Nüchternheit nach Vorgabe der Klinik, Blutbild und Gerinnung, Absprache über blutverdünnende Medikamente, Meldung von Kontrastmittelallergie und Nierenerkrankung; danach einige Stunden flaches Liegen und Überwachung",
+				"abnormal": "In den ersten Tagen sind Schmerzen über dem Organ, Fieber und Schwäche möglich, bezeichnet als Postembolisationssyndrom und stationär überwacht, das Ergebnis wird anhand von Kontrollaufnahmen beurteilt. Das weitere Vorgehen legen interventioneller Radiologe und behandelnder Arzt fest"
+			},
+			"tr": {
+				"what": "Bir organı ya da onun bir bölümünü besleyen atardamarın kateter yoluyla kapatılarak o bölgenin kanlanmasının açık ameliyat olmadan durdurulduğu damar içi girişim",
+				"how": "Genellikle kasıktan atardamara girilerek kateter röntgen eşliğinde hedef damara ilerletilir, kontrast verilir, ardından sarmal, partikül ya da yapıştırıcı gibi tıkayıcı malzeme uygulanır; anjiyografi odasında yapılır ve çoğunlukla bir-iki saat sürer",
+				"when": "Organ damarlarından kanama, damar yaralanmasıyla seyreden travma, damarsal oluşumlar, organ çıkarılmadan önce kan kaybının azaltılması, açık ameliyatın fazla riskli olduğu durumlarda organın bir bölümünün işlevinin durdurulması; karar konsey tarafından verilir",
+				"prep": "Kliniğin talimatına göre aç kalınır, kan ve pıhtılaşma tetkikleri yapılır, kan sulandırıcı ilaçlar hekimle görüşülür, kontrast alerjisi ve böbrek hastalığı bildirilir; işlemden sonra birkaç saat yatmak ve gözlem gerekir",
+				"abnormal": "İlk günlerde organ bölgesinde ağrı, ateş ve halsizlik görülebilir; bu tablo embolizasyon sonrası sendrom olarak tanımlanır ve hastanede izlenir, sonuç kontrol görüntüleriyle değerlendirilir. Sonraki planı girişimsel radyolog ile tedaviyi yürüten hekim belirler"
+			}
+		}
+	},
+	{
+		"slug": "msct-abdomen-and-pelvis-with-contrast",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Послойное исследование органов живота и малого таза в одном сканировании с внутривенным контрастом, охватывающее в том числе кишечник, мочевой пузырь и органы таза",
+				"how": "Контраст вводят в вену, иногда дополнительно просят выпить контрастный раствор для разметки кишечника, снимают на задержке дыхания; визит обычно 20–40 минут",
+				"when": "Боль в животе и тазу неясного происхождения, поиск источника воспаления, оценка органов после травмы, наблюдение за известными изменениями, подготовка к операции, контроль после проведённого лечения",
+				"prep": "Не есть несколько часов, при необходимости заранее выпить контрастный раствор по схеме клиники, принести результат функции почек по запросу, сообщить о беременности, аллергии на контраст, диабете и болезнях почек",
+				"abnormal": "Снимки могут показать воспаление, камни, скопления жидкости, изменения в органах или увеличенные лимфатические узлы, а часть находок оказывается особенностью строения. Заключение даёт рентгенолог, дальнейшее ведение берёт на себя хирург, уролог, гинеколог или гастроэнтеролог"
+			},
+			"en": {
+				"what": "A layered study of the abdominal and pelvic organs in a single scan with intravenous contrast, covering the bowel, the bladder and the pelvic organs as well",
+				"how": "Contrast is injected into a vein, sometimes with an oral contrast drink to outline the bowel, and images are taken during a breath-hold; the visit usually lasts 20–40 minutes",
+				"when": "Abdominal and pelvic pain of unclear origin, search for a source of inflammation, assessment of organs after trauma, follow-up of known findings, preparation for surgery, control after completed treatment",
+				"prep": "Do not eat for several hours, drink the contrast solution in advance according to the clinic's schedule if required, bring kidney function results on request, and report pregnancy, contrast allergy, diabetes and kidney disease",
+				"abnormal": "The images may show inflammation, stones, fluid collections, changes in organs or enlarged lymph nodes, while some findings turn out to be anatomical features. The radiologist issues the report, and a surgeon, urologist, gynaecologist or gastroenterologist takes over further care"
+			},
+			"sr": {
+				"what": "Slojeviti prikaz organa trbuha i male karlice u jednom snimanju uz kontrast u venu, koji obuhvata i crijeva, mokraćnu bešiku i karlične organe",
+				"how": "Kontrast se daje u venu, ponekad se traži i da se popije kontrastni rastvor radi označavanja crijeva, a snima se uz zadržan dah; dolazak obično traje 20–40 minuta",
+				"when": "Bol u trbuhu i karlici nejasnog porijekla, traženje izvora upale, procjena organa poslije povrede, praćenje poznatih promjena, priprema za operaciju, kontrola poslije završenog liječenja",
+				"prep": "Ne jesti nekoliko sati, po potrebi unaprijed popiti kontrastni rastvor po protokolu klinike, ponijeti nalaz bubrežne funkcije ako je tražen i prijaviti trudnoću, alergiju na kontrast, dijabetes i bolesti bubrega",
+				"abnormal": "Snimci mogu pokazati upalu, kamenčiće, nakupine tečnosti, promjene u organima ili uvećane limfne čvorove, a dio nalaza bude osobenost građe. Nalaz daje radiolog, a dalje vođenje preuzima hirurg, urolog, ginekolog ili gastroenterolog"
+			},
+			"de": {
+				"what": "Eine schichtweise Untersuchung der Bauch- und Beckenorgane in einem Durchgang mit Kontrastmittel über die Vene, die auch Darm, Harnblase und Beckenorgane erfasst",
+				"how": "Kontrastmittel wird in eine Vene gespritzt, manchmal zusätzlich eine Trinklösung zur Markierung des Darms gegeben, die Aufnahmen erfolgen im Atemstillstand; der Besuch dauert meist 20–40 Minuten",
+				"when": "Bauch- und Beckenschmerz unklarer Ursache, Suche nach einem Entzündungsherd, Beurteilung der Organe nach einem Unfall, Verlaufskontrolle bekannter Befunde, Vorbereitung auf eine Operation, Kontrolle nach abgeschlossener Behandlung",
+				"prep": "Einige Stunden nichts essen, bei Bedarf die Trinklösung nach Vorgabe der Klinik rechtzeitig einnehmen, Nierenwerte auf Anforderung mitbringen und Schwangerschaft, Kontrastmittelallergie, Diabetes sowie Nierenerkrankungen melden",
+				"abnormal": "Die Bilder können Entzündungen, Steine, Flüssigkeitsansammlungen, Organveränderungen oder vergrößerte Lymphknoten zeigen, manche Befunde erweisen sich als anatomische Besonderheit. Den Befund erstellt der Radiologe, die weitere Betreuung übernehmen Chirurg, Urologe, Gynäkologe oder Gastroenterologe"
+			},
+			"tr": {
+				"what": "Karın ve pelvis organlarının tek çekimde damar yoluyla kontrast verilerek kesitsel incelenmesi; bağırsaklar, mesane ve pelvis organlarını da kapsar",
+				"how": "Damara kontrast verilir, bazen bağırsakların işaretlenmesi için ağızdan kontrast solüsyonu da içirilir ve çekim nefes tutularak yapılır; ziyaret genellikle 20–40 dakika sürer",
+				"when": "Nedeni belirsiz karın ve pelvis ağrısı, iltihap odağının aranması, travma sonrası organların değerlendirilmesi, bilinen bulguların izlenmesi, ameliyat hazırlığı, tedavi sonrası kontrol",
+				"prep": "Birkaç saat aç kalınır, gerekiyorsa kliniğin planına göre kontrast solüsyonu önceden içilir, istenmişse böbrek fonksiyon sonucu getirilir, gebelik, kontrast alerjisi, diyabet ve böbrek hastalığı bildirilir",
+				"abnormal": "Görüntüler iltihabı, taşları, sıvı birikimlerini, organ değişikliklerini veya büyümüş lenf düğümlerini gösterebilir; bazı bulgular yapısal özellik çıkar. Raporu radyolog verir, takibi cerrah, ürolog, kadın hastalıkları uzmanı veya gastroenterolog üstlenir"
+			}
+		}
+	},
+	{
+		"slug": "msct-abdomen-with-contrast",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Исследование печени, поджелудочной железы, селезёнки, почек и сосудов брюшной полости с внутривенным контрастом, снимаемое в нескольких фазах его прохождения",
+				"how": "Сначала делают нативные срезы, затем автоматическим шприцем вводят контраст и повторяют сканирование в артериальную и венозную фазы, пациент на несколько секунд задерживает дыхание; визит 20–30 минут",
+				"when": "Уточнение образований печени, поджелудочной железы и почек, замеченных на УЗИ, подозрение на панкреатит и его осложнения, наблюдение при циррозе, травма живота, контроль после лечения",
+				"prep": "Не есть несколько часов перед исследованием, принести свежий результат креатинина, если его запрашивали, сообщить об аллергии на контраст, болезнях почек и щитовидной железы и о возможной беременности; после исследования больше пить",
+				"abnormal": "Фазы накопления контраста помогают описать структуру и границы изменения и отличить кисту от плотного образования, но вывод делается вместе с анализами и историей болезни. Заключение даёт рентгенолог, тактику определяет гастроэнтеролог или хирург"
+			},
+			"en": {
+				"what": "An examination of the liver, pancreas, spleen, kidneys and abdominal vessels with intravenous contrast, acquired in several phases of its passage",
+				"how": "Plain slices are taken first, then contrast is injected by a power injector and scanning is repeated in the arterial and venous phases while the patient holds the breath for a few seconds; the visit takes 20–30 minutes",
+				"when": "Clarification of liver, pancreatic and kidney lesions seen on ultrasound, suspected pancreatitis and its complications, monitoring in cirrhosis, abdominal trauma, control after treatment",
+				"prep": "Do not eat for several hours before the scan, bring a recent creatinine result if it was requested, report contrast allergy, kidney and thyroid disease and a possible pregnancy, and drink more fluid afterwards",
+				"abnormal": "The contrast phases help describe the structure and borders of a change and tell a cyst from a solid lesion, but the conclusion is drawn together with laboratory results and the medical history. The radiologist reports the images and a gastroenterologist or surgeon decides on management"
+			},
+			"sr": {
+				"what": "Pregled jetre, pankreasa, slezine, bubrega i krvnih sudova trbuha uz kontrast u venu, snimljen u nekoliko faza njegovog prolaska",
+				"how": "Prvo se naprave nativni presjeci, zatim se automatskim injektorom daje kontrast i snimanje se ponavlja u arterijskoj i venskoj fazi, uz zadržavanje daha na nekoliko sekundi; dolazak traje 20–30 minuta",
+				"when": "Razjašnjenje promjena jetre, pankreasa i bubrega viđenih na ultrazvuku, sumnja na pankreatitis i njegove komplikacije, praćenje kod ciroze, povreda trbuha, kontrola poslije liječenja",
+				"prep": "Ne jesti nekoliko sati prije pregleda, ponijeti svjež nalaz kreatinina ako je tražen, prijaviti alergiju na kontrast, bolesti bubrega i štitaste žlijezde i moguću trudnoću, a poslije pregleda piti više tečnosti",
+				"abnormal": "Faze nakupljanja kontrasta pomažu da se opišu građa i granice promjene i da se cista razlikuje od čvrste promjene, ali se zaključak donosi uz laboratorijske nalaze i istoriju bolesti. Nalaz daje radiolog, a taktiku određuje gastroenterolog ili hirurg"
+			},
+			"de": {
+				"what": "Eine Untersuchung von Leber, Bauchspeicheldrüse, Milz, Nieren und Bauchgefäßen mit Kontrastmittel über die Vene, aufgenommen in mehreren Phasen seines Durchlaufs",
+				"how": "Zuerst werden native Schichten aufgenommen, dann Kontrastmittel über einen Injektor gegeben und die Messung in arterieller und venöser Phase wiederholt, der Patient hält dabei einige Sekunden die Luft an; der Besuch dauert 20–30 Minuten",
+				"when": "Abklärung von Leber-, Pankreas- und Nierenbefunden aus dem Ultraschall, Verdacht auf Bauchspeicheldrüsenentzündung und ihre Komplikationen, Verlaufskontrolle bei Leberzirrhose, Bauchverletzung, Kontrolle nach Behandlung",
+				"prep": "Einige Stunden vor der Untersuchung nichts essen, einen aktuellen Kreatininwert mitbringen, falls angefordert, Kontrastmittelallergie, Nieren- und Schilddrüsenerkrankungen sowie eine mögliche Schwangerschaft melden und danach mehr trinken",
+				"abnormal": "Die Kontrastphasen helfen, Struktur und Grenzen einer Veränderung zu beschreiben und eine Zyste von einem soliden Befund zu unterscheiden, der Schluss wird jedoch zusammen mit Laborwerten und Vorgeschichte gezogen. Den Befund erstellt der Radiologe, das Vorgehen legen Gastroenterologe oder Chirurg fest"
+			},
+			"tr": {
+				"what": "Karaciğer, pankreas, dalak, böbrekler ve karın damarlarının damar yoluyla kontrast verilerek, kontrastın geçiş evrelerinde çekilen incelemesi",
+				"how": "Önce kontrastsız kesitler alınır, sonra otomatik enjektörle kontrast verilip arteriyel ve venöz evrelerde çekim yinelenir, hasta birkaç saniye nefesini tutar; ziyaret 20–30 dakika sürer",
+				"when": "Ultrasonda görülen karaciğer, pankreas ve böbrek oluşumlarının netleştirilmesi, pankreas iltihabı ve komplikasyon şüphesi, sirozda izlem, karın travması, tedavi sonrası kontrol",
+				"prep": "Çekimden birkaç saat önce yemek yenmez, istenmişse güncel kreatinin sonucu getirilir, kontrast alerjisi, böbrek ve tiroit hastalıkları ile olası gebelik bildirilir, çekimden sonra bol sıvı alınır",
+				"abnormal": "Kontrast evreleri değişikliğin yapısını ve sınırlarını tanımlamaya, kisti solid oluşumdan ayırmaya yardımcı olur, ancak sonuç laboratuvar sonuçları ve hastalık öyküsüyle birlikte çıkarılır. Raporu radyolog verir, yaklaşımı gastroenterolog veya cerrah belirler"
+			}
+		}
+	},
+	{
+		"slug": "msct-angiography-extremities",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Исследование артерий рук или ног на компьютерном томографе с внутривенным контрастом и построением карты сосудов конечности",
+				"how": "Контраст вводят в вену руки, момент сканирования подбирают под его приход в артерии конечности, пациент лежит неподвижно; съёмка длится несколько минут, визит 20–30 минут",
+				"when": "Боль в ногах при ходьбе, подозрение на сужение или закупорку артерий, долго не заживающие раны на стопе, травма конечности с подозрением на повреждение сосуда, подготовка к шунтированию или стентированию и контроль после них",
+				"prep": "Не есть несколько часов, если клиника просит, принести результат функции почек по запросу, сообщить о возможной беременности, аллергии на контраст и о приёме метформина, снять металл из зоны сканирования",
+				"abnormal": "Снимки могут показать сужения, закупорки, обызвествление стенок сосуда или обходные пути кровотока, а также врождённые варианты строения артерий. Заключение даёт рентгенолог, решение о лечении принимает сосудистый хирург"
+			},
+			"en": {
+				"what": "An examination of the arteries of the arms or legs on a CT scanner with intravenous contrast, producing a map of the limb vessels",
+				"how": "Contrast is injected into an arm vein, the timing of the scan is matched to its arrival in the limb arteries and the patient lies still; the acquisition takes a few minutes and the visit 20–30 minutes",
+				"when": "Leg pain on walking, suspected narrowing or blockage of arteries, slow-healing wounds on the foot, limb injury with suspected vascular damage, planning of bypass or stenting and follow-up afterwards",
+				"prep": "Do not eat for several hours if the clinic asks, bring kidney function results on request, report a possible pregnancy, contrast allergy and metformin use, and remove metal from the scanned area",
+				"abnormal": "The images may show narrowing, blockage, calcification of the vessel wall or collateral pathways of blood flow, as well as congenital variants of arterial anatomy. The radiologist writes the report and a vascular surgeon decides on treatment"
+			},
+			"sr": {
+				"what": "Pregled arterija ruku ili nogu na skeneru uz kontrast u venu, sa prikazom mape krvnih sudova ekstremiteta",
+				"how": "Kontrast se daje u venu na ruci, trenutak snimanja se usklađuje sa njegovim dolaskom u arterije ekstremiteta, a pacijent mirno leži; snimanje traje nekoliko minuta, dolazak 20–30 minuta",
+				"when": "Bol u nogama pri hodu, sumnja na suženje ili začepljenje arterija, rane na stopalu koje dugo ne zarastaju, povreda ekstremiteta uz sumnju na oštećenje krvnog suda, planiranje bajpasa ili stenta i kontrola poslije njih",
+				"prep": "Ne jesti nekoliko sati ako klinika tako traži, ponijeti nalaz bubrežne funkcije ako je tražen, prijaviti moguću trudnoću, alergiju na kontrast i uzimanje metformina i skinuti metal sa područja snimanja",
+				"abnormal": "Snimci mogu pokazati suženja, začepljenja, naslage kalcijuma u zidu krvnog suda ili zaobilazne puteve protoka, kao i urođene varijante građe arterija. Nalaz daje radiolog, a odluku o liječenju donosi vaskularni hirurg"
+			},
+			"de": {
+				"what": "Eine Untersuchung der Arterien von Armen oder Beinen im CT mit Kontrastmittel über die Vene, die eine Karte der Gefäße der Gliedmaße erstellt",
+				"how": "Kontrastmittel wird in eine Armvene gespritzt, der Aufnahmezeitpunkt auf seine Ankunft in den Arterien der Gliedmaße abgestimmt, der Patient liegt still; die Messung dauert einige Minuten, der Besuch 20–30 Minuten",
+				"when": "Beinschmerz beim Gehen, Verdacht auf Verengung oder Verschluss von Arterien, schlecht heilende Wunden am Fuß, Verletzung der Gliedmaße mit Verdacht auf Gefäßschaden, Planung von Bypass oder Stent und Kontrolle danach",
+				"prep": "Einige Stunden nichts essen, wenn die Klinik dies verlangt, Nierenwerte auf Anforderung mitbringen, eine mögliche Schwangerschaft, Kontrastmittelallergie und die Einnahme von Metformin melden und Metall aus dem Aufnahmebereich ablegen",
+				"abnormal": "Die Bilder können Verengungen, Verschlüsse, Verkalkungen der Gefäßwand oder Umgehungskreisläufe zeigen sowie angeborene Varianten des Arterienverlaufs. Den Befund erstellt der Radiologe, über die Behandlung entscheidet der Gefäßchirurg"
+			},
+			"tr": {
+				"what": "Kol veya bacak atardamarlarının BT cihazında damar yoluyla kontrast verilerek görüntülenmesi ve ekstremite damar haritasının çıkarılması",
+				"how": "Koldaki damara kontrast verilir, çekim zamanı kontrastın ekstremite atardamarlarına ulaşmasına göre ayarlanır ve hasta hareketsiz yatar; çekim birkaç dakika, ziyaret 20–30 dakika sürer",
+				"when": "Yürürken bacak ağrısı, atardamarlarda darlık veya tıkanıklık şüphesi, ayakta geç iyileşen yaralar, damar yaralanması şüphesiyle ekstremite travması, baypas ya da stent planlaması ve sonrasındaki kontrol",
+				"prep": "Klinik isterse birkaç saat aç kalınır, istenmişse böbrek fonksiyon sonucu getirilir, olası gebelik, kontrast alerjisi ve metformin kullanımı bildirilir, çekim alanındaki metaller çıkarılır",
+				"abnormal": "Görüntüler darlık, tıkanıklık, damar duvarında kireçlenme veya kan akımının yan yollarını, ayrıca atardamarların doğuştan gelen varyasyonlarını gösterebilir. Raporu radyolog verir, tedavi kararını damar cerrahı verir"
+			}
+		}
+	},
+	{
+		"slug": "msct-calcium-score",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Короткое сканирование сердца без контраста, при котором подсчитывают количество кальциевых отложений в стенках собственных артерий сердца",
+				"how": "На грудь крепят электроды ЭКГ, пациент лежит и задерживает дыхание на несколько секунд, а программа автоматически считает показатель; всё исследование занимает около 10 минут",
+				"when": "Оценка сердечно-сосудистого риска у человека без жалоб, когда решение о профилактике спорное, ранние болезни сердца у близких родственников, повышенный холестерин, курение, диабет — показание ставит кардиолог",
+				"prep": "Специальной подготовки нет и контраст не вводят; в день исследования лучше воздержаться от кофе и энергетиков, снять металл с области груди, сообщить о возможной беременности",
+				"abnormal": "Показатель отражает только количество кальция и бывает нулевым при других типах изменений сосудов, поэтому его рассматривают вместе с возрастом, давлением, липидным профилем и жалобами. Трактует результат кардиолог"
+			},
+			"en": {
+				"what": "A short scan of the heart without contrast in which the amount of calcium deposits in the walls of the heart's own arteries is counted",
+				"how": "ECG electrodes are attached to the chest, the patient lies down and holds the breath for a few seconds while software calculates the score automatically; the whole study takes about 10 minutes",
+				"when": "Assessment of cardiovascular risk in a person without symptoms when the decision on prevention is borderline, early heart disease in close relatives, raised cholesterol, smoking, diabetes, as indicated by a cardiologist",
+				"prep": "No special preparation and no contrast is given; it is better to avoid coffee and energy drinks on the day, remove metal from the chest area and report a possible pregnancy",
+				"abnormal": "The score reflects only the amount of calcium and can be zero with other types of vessel change, so it is considered together with age, blood pressure, the lipid profile and symptoms. The result is interpreted by a cardiologist"
+			},
+			"sr": {
+				"what": "Kratko snimanje srca bez kontrasta, kojim se mjeri količina naslaga kalcijuma u zidovima srčanih arterija",
+				"how": "Na grudi se postavljaju EKG elektrode, pacijent leži i zadržava dah nekoliko sekundi, a program automatski izračunava vrijednost; cio pregled traje oko 10 minuta",
+				"when": "Procjena kardiovaskularnog rizika kod osobe bez tegoba kada je odluka o prevenciji nejasna, rane srčane bolesti u bliskoj porodici, povišen holesterol, pušenje, dijabetes, po indikaciji kardiologa",
+				"prep": "Posebna priprema nije potrebna i kontrast se ne daje; na dan pregleda je bolje izbjeći kafu i energetska pića, skinuti metal sa područja grudi i prijaviti moguću trudnoću",
+				"abnormal": "Vrijednost odražava samo količinu kalcijuma i može biti nula kod drugih vrsta promjena na krvnim sudovima, pa se posmatra zajedno sa godinama, pritiskom, lipidnim nalazom i tegobama. Rezultat tumači kardiolog"
+			},
+			"de": {
+				"what": "Eine kurze Aufnahme des Herzens ohne Kontrastmittel, bei der die Menge der Kalkablagerungen in den Wänden der Herzkranzgefäße bestimmt wird",
+				"how": "EKG-Elektroden werden auf der Brust angebracht, der Patient liegt und hält einige Sekunden die Luft an, während eine Software den Wert automatisch berechnet; die gesamte Untersuchung dauert etwa 10 Minuten",
+				"when": "Abschätzung des Herz-Kreislauf-Risikos bei Beschwerdefreien, wenn die Entscheidung über Vorbeugung unklar ist, frühe Herzerkrankungen bei nahen Verwandten, erhöhtes Cholesterin, Rauchen, Diabetes, nach Indikation des Kardiologen",
+				"prep": "Keine besondere Vorbereitung, Kontrastmittel wird nicht gegeben; am Untersuchungstag besser auf Kaffee und Energydrinks verzichten, Metall im Brustbereich ablegen und eine mögliche Schwangerschaft melden",
+				"abnormal": "Der Wert bildet nur die Kalkmenge ab und kann bei anderen Gefäßveränderungen null sein, daher wird er zusammen mit Alter, Blutdruck, Fettwerten und Beschwerden betrachtet. Die Deutung übernimmt der Kardiologe"
+			},
+			"tr": {
+				"what": "Kalbi besleyen atardamarların duvarlarındaki kalsiyum birikiminin miktarını ölçen, kontrastsız kısa kalp çekimi",
+				"how": "Göğüse EKG elektrotları takılır, hasta yatar ve birkaç saniye nefesini tutar, yazılım değeri otomatik hesaplar; inceleme toplam yaklaşık 10 dakika sürer",
+				"when": "Şikâyeti olmayan kişide korunma kararının net olmadığı durumlarda kalp-damar riskinin değerlendirilmesi, yakın akrabalarda erken kalp hastalığı, yüksek kolesterol, sigara, diyabet; istemi kardiyolog yapar",
+				"prep": "Özel hazırlık gerekmez ve kontrast verilmez; çekim günü kahve ve enerji içeceklerinden kaçınmak iyidir, göğüs bölgesindeki metaller çıkarılır, olası gebelik bildirilir",
+				"abnormal": "Değer yalnızca kalsiyum miktarını yansıtır ve damarlardaki başka tür değişikliklerde sıfır çıkabilir, bu yüzden yaş, tansiyon, kan yağları ve şikâyetlerle birlikte değerlendirilir. Sonucu kardiyolog yorumlar"
+			}
+		}
+	},
+	{
+		"slug": "msct-head-endocranium-with-contrast",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Сканирование головного мозга и структур черепа с внутривенным контрастом, который подчёркивает сосуды и участки с нарушенным гематоэнцефалическим барьером",
+				"how": "Сначала снимают нативную серию, затем вводят контраст в вену руки и повторяют сканирование, возможны тепло и привкус во рту; весь визит обычно 20–30 минут",
+				"when": "Уточнение изменения, найденного на нативном снимке, подозрение на воспалительный процесс или гнойное скопление в полости черепа, оценка оболочек мозга, наблюдение после операции или лучевой терапии, когда МРТ недоступна или противопоказана",
+				"prep": "Не есть несколько часов, если клиника просит, принести результат функции почек по запросу, заранее сообщить об аллергии на контраст, болезнях почек и возможной беременности, снять металлические предметы с головы",
+				"abnormal": "Усиление после контраста помогает отличить активный процесс от давних изменений и уточнить границы очага, но тип изменения определяют не только по снимку. Заключение даёт рентгенолог, дальнейшее ведение берёт невролог или нейрохирург"
+			},
+			"en": {
+				"what": "Scanning of the brain and the structures of the skull with intravenous contrast, which highlights vessels and areas where the blood-brain barrier is disturbed",
+				"how": "A plain series is acquired first, then contrast is injected into an arm vein and the scan is repeated, often with warmth and a taste in the mouth; the whole visit usually takes 20–30 minutes",
+				"when": "Clarification of a change seen on a plain scan, suspected inflammation or a collection of pus inside the skull, assessment of the brain coverings, follow-up after surgery or radiotherapy, when MRI is unavailable or contraindicated",
+				"prep": "Do not eat for several hours if the clinic asks, bring kidney function results on request, report contrast allergy, kidney disease and a possible pregnancy in advance, and remove metal objects from the head",
+				"abnormal": "Enhancement after contrast helps separate an active process from long-standing changes and define the borders of a lesion, but the type of change is not determined by images alone. The radiologist issues the report and a neurologist or neurosurgeon takes over further care"
+			},
+			"sr": {
+				"what": "Snimanje mozga i struktura lobanje uz kontrast u venu, koji ističe krvne sudove i područja sa narušenom moždanom barijerom",
+				"how": "Prvo se snima nativna serija, zatim se kontrast daje u venu na ruci i snimanje se ponavlja, uz mogući osjećaj toplote i ukus u ustima; cio dolazak obično traje 20–30 minuta",
+				"when": "Razjašnjenje promjene viđene na nativnom snimku, sumnja na upalni proces ili nakupinu gnoja u lobanji, procjena moždanih ovojnica, praćenje poslije operacije ili zračne terapije, kada magnetna rezonanca nije dostupna ili je kontraindikovana",
+				"prep": "Ne jesti nekoliko sati ako klinika tako traži, ponijeti nalaz bubrežne funkcije ako je tražen, unaprijed prijaviti alergiju na kontrast, bolesti bubrega i moguću trudnoću i skinuti metalne predmete sa glave",
+				"abnormal": "Pojačanje poslije kontrasta pomaže da se aktivan proces razdvoji od starih promjena i da se odrede granice žarišta, ali se vrsta promjene ne određuje samo sa snimka. Nalaz daje radiolog, a dalje vođenje preuzima neurolog ili neurohirurg"
+			},
+			"de": {
+				"what": "Die Aufnahme des Gehirns und der Schädelstrukturen mit Kontrastmittel über die Vene, das Gefäße und Bereiche mit gestörter Blut-Hirn-Schranke hervorhebt",
+				"how": "Zuerst wird eine native Serie aufgenommen, dann Kontrastmittel in eine Armvene gespritzt und die Messung wiederholt, oft mit Wärmegefühl und Geschmack im Mund; der Besuch dauert meist 20–30 Minuten",
+				"when": "Abklärung einer Veränderung aus der nativen Aufnahme, Verdacht auf Entzündung oder eine Eiteransammlung im Schädelinneren, Beurteilung der Hirnhäute, Verlaufskontrolle nach Operation oder Bestrahlung, wenn ein MRT nicht verfügbar oder nicht möglich ist",
+				"prep": "Einige Stunden nichts essen, wenn die Klinik dies verlangt, Nierenwerte auf Anforderung mitbringen, Kontrastmittelallergie, Nierenerkrankung und eine mögliche Schwangerschaft vorab melden und Metall am Kopf ablegen",
+				"abnormal": "Die Anreicherung nach Kontrastmittel hilft, einen aktiven Prozess von alten Veränderungen zu trennen und Grenzen eines Herdes zu bestimmen, die Art der Veränderung ergibt sich jedoch nicht allein aus dem Bild. Den Befund erstellt der Radiologe, die weitere Betreuung übernehmen Neurologe oder Neurochirurg"
+			},
+			"tr": {
+				"what": "Beynin ve kafatası yapılarının, damarları ve kan-beyin bariyerinin bozulduğu alanları belirginleştiren damar içi kontrast madde ile görüntülenmesi",
+				"how": "Önce kontrastsız seri çekilir, ardından koldaki damardan kontrast verilip çekim yinelenir; sıcaklık hissi ve ağızda tat olabilir, ziyaretin tamamı genellikle 20–30 dakika sürer",
+				"when": "Kontrastsız çekimde görülen değişikliğin netleştirilmesi, kafa içinde iltihap ya da irin birikimi şüphesi, beyin zarlarının değerlendirilmesi, ameliyat veya ışın tedavisi sonrası izlem, MR mümkün olmadığında ya da sakıncalı olduğunda",
+				"prep": "Klinik isterse birkaç saat aç kalınır, istenmişse böbrek fonksiyon sonucu getirilir, kontrast alerjisi, böbrek hastalığı ve olası gebelik önceden bildirilir, baştaki metal eşyalar çıkarılır",
+				"abnormal": "Kontrast sonrası tutulum, aktif süreci eski değişikliklerden ayırmaya ve odağın sınırlarını belirlemeye yardımcı olur, ancak değişikliğin türü yalnızca görüntüyle belirlenmez. Raporu radyolog verir, takibi nörolog veya beyin cerrahı üstlenir"
+			}
+		}
+	},
+	{
+		"slug": "msct-ivu-intravenous-urography",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Исследование почек, мочеточников и мочевого пузыря на компьютерном томографе с внутривенным контрастом, который выводится почками и заполняет мочевые пути",
+				"how": "Сканируют сначала без контраста, затем сразу после введения в вену и повторно через несколько минут, когда контраст дошёл до мочеточников и пузыря; всё занимает примерно 30–45 минут",
+				"when": "Кровь в моче, повторяющиеся инфекции мочевых путей, камни и подозрение на нарушение оттока мочи, аномалии строения мочевой системы, наблюдение после операций на мочевых путях",
+				"prep": "Не есть несколько часов, по просьбе клиники освободить кишечник, принести свежий креатинин, сообщить об аллергии на контраст и болезнях почек; перед поздней серией просят не мочиться, после исследования советуют пить больше воды",
+				"abnormal": "Снимки могут показать камни, расширение чашечек и мочеточника, сужение, образование или особенность строения, в том числе врождённую. Заключение даёт рентгенолог, а лечение определяет уролог"
+			},
+			"en": {
+				"what": "An examination of the kidneys, ureters and bladder on a CT scanner with intravenous contrast that is excreted by the kidneys and fills the urinary tract",
+				"how": "Scanning is done first without contrast, then immediately after the injection and again after a few minutes, when the contrast has reached the ureters and the bladder; it all takes about 30–45 minutes",
+				"when": "Blood in the urine, recurrent urinary tract infections, stones and suspected obstruction of urine flow, anomalies of the urinary system, follow-up after urinary tract surgery",
+				"prep": "Do not eat for several hours, empty the bowel if the clinic asks, bring a recent creatinine result, report contrast allergy and kidney disease; you will be asked not to pass urine before the delayed series, and more water is advised afterwards",
+				"abnormal": "The images may show stones, dilatation of the calyces and ureter, narrowing, a lesion or an anatomical feature, including a congenital one. The radiologist issues the report and a urologist decides on treatment"
+			},
+			"sr": {
+				"what": "Pregled bubrega, mokraćovoda i mokraćne bešike na skeneru uz kontrast u venu koji bubrezi izlučuju i koji ispunjava mokraćne puteve",
+				"how": "Prvo se snima bez kontrasta, zatim odmah poslije davanja u venu i ponovo nakon nekoliko minuta, kada kontrast stigne do mokraćovoda i bešike; sve traje oko 30–45 minuta",
+				"when": "Krv u mokraći, ponavljane infekcije mokraćnih puteva, kamenci i sumnja na otežano oticanje mokraće, anomalije građe mokraćnog sistema, praćenje poslije operacija na mokraćnim putevima",
+				"prep": "Ne jesti nekoliko sati, isprazniti crijeva ako klinika tako traži, ponijeti svjež nalaz kreatinina i prijaviti alergiju na kontrast i bolesti bubrega; prije kasne serije se traži da se ne mokri, a poslije pregleda se savjetuje više vode",
+				"abnormal": "Snimci mogu pokazati kamence, proširenje čašica i mokraćovoda, suženje, promjenu ili osobenost građe, uključujući i urođenu. Nalaz daje radiolog, a liječenje određuje urolog"
+			},
+			"de": {
+				"what": "Eine Untersuchung von Nieren, Harnleitern und Harnblase im CT mit Kontrastmittel über die Vene, das über die Nieren ausgeschieden wird und die Harnwege füllt",
+				"how": "Aufgenommen wird zuerst ohne Kontrastmittel, dann unmittelbar nach der Injektion und erneut nach einigen Minuten, wenn das Mittel Harnleiter und Blase erreicht hat; insgesamt dauert es etwa 30–45 Minuten",
+				"when": "Blut im Urin, wiederkehrende Harnwegsinfekte, Steine und Verdacht auf gestörten Harnabfluss, Fehlbildungen des Harnsystems, Verlaufskontrolle nach Operationen an den Harnwegen",
+				"prep": "Einige Stunden nichts essen, den Darm entleeren, wenn die Klinik dies verlangt, einen aktuellen Kreatininwert mitbringen, Kontrastmittelallergie und Nierenerkrankung melden; vor der Spätserie soll kein Wasser gelassen werden, danach wird reichliches Trinken empfohlen",
+				"abnormal": "Die Bilder können Steine, eine Erweiterung von Kelchen und Harnleiter, eine Enge, eine Veränderung oder eine auch angeborene anatomische Besonderheit zeigen. Den Befund erstellt der Radiologe, die Behandlung legt der Urologe fest"
+			},
+			"tr": {
+				"what": "Böbreklerin, idrar kanallarının ve mesanenin, böbreklerden atılarak idrar yollarını dolduran damar içi kontrast madde ile BT cihazında incelenmesi",
+				"how": "Önce kontrastsız, sonra damardan verilir verilmez ve birkaç dakika sonra kontrast idrar kanallarına ve mesaneye ulaştığında tekrar çekim yapılır; tümü yaklaşık 30–45 dakika sürer",
+				"when": "İdrarda kan, yinelenen idrar yolu enfeksiyonları, taşlar ve idrar akışının engellendiği şüphesi, idrar sisteminin yapısal anomalileri, idrar yolu ameliyatları sonrası izlem",
+				"prep": "Birkaç saat aç kalınır, klinik isterse bağırsak boşaltılır, güncel kreatinin sonucu getirilir, kontrast alerjisi ve böbrek hastalığı bildirilir; geç seriden önce idrara çıkılmaması istenir, çekim sonrası bol su önerilir",
+				"abnormal": "Görüntüler taşları, böbrek havuzcukları ile idrar kanalındaki genişlemeyi, darlığı, bir oluşumu veya doğuştan gelebilen yapısal özellikleri gösterebilir. Raporu radyolog verir, tedaviyi ürolog belirler"
+			}
+		}
+	},
+	{
+		"slug": "msct-paranasal-sinuses-without-contrast",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Тонкосрезовое сканирование околоносовых пазух, носовых ходов и перегородки без введения контраста",
+				"how": "Пациент лежит или сидит неподвижно несколько секунд, изображение потом разворачивают в трёх плоскостях; исследование быстрое, обычно укладывается в 10 минут",
+				"when": "Затяжной или повторяющийся синусит, стойкая заложенность носа и боль в области лба и щёк, подозрение на полипы, травма лицевых костей, планирование эндоскопической операции на пазухах",
+				"prep": "Не требуется; снять серьги, очки и съёмные зубные протезы, сообщить о возможной беременности, взять с собой прежние снимки, если они есть",
+				"abnormal": "Снимки могут показать утолщение слизистой, уровень жидкости в пазухе, искривление перегородки или особенности строения соустий, которые встречаются и у людей без жалоб. Описание даёт рентгенолог, тактику определяет ЛОР-врач"
+			},
+			"en": {
+				"what": "Thin-slice scanning of the paranasal sinuses, the nasal passages and the septum without contrast",
+				"how": "The patient lies or sits still for a few seconds and the images are then reconstructed in three planes; the study is quick and usually fits into 10 minutes",
+				"when": "Prolonged or recurrent sinusitis, persistent nasal blockage with pain over the forehead and cheeks, suspected polyps, injury of the facial bones, planning of endoscopic sinus surgery",
+				"prep": "Not required; remove earrings, glasses and removable dentures, report a possible pregnancy and bring previous images if you have them",
+				"abnormal": "The images may show thickening of the lining, a fluid level in a sinus, a deviated septum or features of the drainage openings that also occur in people without complaints. The radiologist describes the images and an ENT specialist decides on management"
+			},
+			"sr": {
+				"what": "Snimanje paranazalnih šupljina, nosnih hodnika i pregrade tankim presjecima, bez kontrasta",
+				"how": "Pacijent nekoliko sekundi mirno leži ili sjedi, a snimak se zatim prikazuje u tri ravni; pregled je brz i obično stane u 10 minuta",
+				"when": "Dugotrajna ili ponavljana upala sinusa, uporna zapušenost nosa sa bolom u predjelu čela i obraza, sumnja na polipe, povreda kostiju lica, planiranje endoskopske operacije sinusa",
+				"prep": "Nije potrebna; skinuti minđuše, naočare i pokretne zubne proteze, prijaviti moguću trudnoću i ponijeti ranije snimke ako ih imate",
+				"abnormal": "Snimci mogu pokazati zadebljanje sluznice, nivo tečnosti u sinusu, iskrivljenu pregradu ili osobenosti otvora za drenažu koje se viđaju i kod ljudi bez tegoba. Opis daje radiolog, a dalji postupak određuje otorinolaringolog"
+			},
+			"de": {
+				"what": "Dünnschichtige Aufnahme der Nasennebenhöhlen, der Nasengänge und der Nasenscheidewand ohne Kontrastmittel",
+				"how": "Der Patient liegt oder sitzt einige Sekunden still, die Bilder werden anschließend in drei Ebenen dargestellt; die Untersuchung ist kurz und bleibt meist unter 10 Minuten",
+				"when": "Lang anhaltende oder wiederkehrende Nebenhöhlenentzündung, hartnäckig verstopfte Nase mit Schmerz über Stirn und Wangen, Verdacht auf Polypen, Verletzung der Gesichtsknochen, Planung einer endoskopischen Nebenhöhlenoperation",
+				"prep": "Nicht erforderlich; Ohrringe, Brille und herausnehmbaren Zahnersatz ablegen, eine mögliche Schwangerschaft melden und frühere Aufnahmen mitbringen, falls vorhanden",
+				"abnormal": "Die Bilder können eine verdickte Schleimhaut, einen Flüssigkeitsspiegel in einer Höhle, eine verbogene Scheidewand oder Besonderheiten der Abflussöffnungen zeigen, die auch bei Beschwerdefreien vorkommen. Die Beschreibung erstellt der Radiologe, das Vorgehen legt der HNO-Arzt fest"
+			},
+			"tr": {
+				"what": "Burun yanı sinüslerin, burun geçitlerinin ve bölmenin kontrast verilmeden ince kesitlerle görüntülenmesi",
+				"how": "Hasta birkaç saniye hareketsiz yatar ya da oturur, görüntüler sonra üç düzlemde oluşturulur; inceleme hızlıdır ve genellikle 10 dakikayı geçmez",
+				"when": "Uzayan veya yineleyen sinüzit, alın ve yanak bölgesinde ağrıyla birlikte inatçı burun tıkanıklığı, polip şüphesi, yüz kemiği travması, endoskopik sinüs ameliyatı planlaması",
+				"prep": "Gerekmez; küpe, gözlük ve takma dişler çıkarılır, olası gebelik bildirilir, varsa önceki görüntüler getirilir",
+				"abnormal": "Görüntüler mukozada kalınlaşmayı, sinüs içinde sıvı seviyesini, eğri bölmeyi veya şikâyeti olmayan kişilerde de bulunan drenaj ağızlarına ait yapısal özellikleri gösterebilir. Tanımlamayı radyolog yazar, izlenecek yolu KBB uzmanı belirler"
+			}
+		}
+	}
+]

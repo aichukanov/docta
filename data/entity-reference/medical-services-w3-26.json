@@ -1,0 +1,535 @@
+[
+	{
+		"slug": "voiding-cystourethrography",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Рентгеновское исследование мочевого пузыря и мочеиспускательного канала с контрастом, снимки делают при наполнении пузыря и во время мочеиспускания",
+				"how": "Через тонкий катетер мочевой пузырь заполняют контрастным раствором, делают снимки лёжа, затем катетер убирают и снимают серию кадров в момент мочеиспускания; всё вместе около 30 минут",
+				"when": "Повторяющиеся инфекции мочевых путей у детей, подозрение на обратный заброс мочи из пузыря в мочеточники, затруднённое или прерывистое мочеиспускание, расширение почечной лоханки по УЗИ, контроль после операции на мочевых путях",
+				"prep": "Исследование проводят вне обострения инфекции, поэтому заранее сдают анализ мочи и при необходимости посев; нужна ли антибиотикопрофилактика вокруг процедуры, решает врач, а ребёнка приводят с родителем и сменной одеждой",
+				"abnormal": "Снимки могут показать заброс контраста в мочеточники, сужение или клапан уретры, форму пузыря и остаток мочи после мочеиспускания. Описание даёт рентгенолог, а решение о лечении и наблюдении принимает уролог или нефролог"
+			},
+			"en": {
+				"what": "Contrast X-ray study of the bladder and the urethra, with images taken while the bladder fills and while it empties",
+				"how": "The bladder is filled with a contrast solution through a thin catheter, images are taken lying down, the catheter is then removed and a series of pictures is taken during urination; about 30 minutes in all",
+				"when": "Repeated urinary infections in children, suspected backflow of urine from the bladder into the ureters, difficult or interrupted urination, a dilated renal pelvis seen on ultrasound, follow-up after surgery on the urinary tract",
+				"prep": "The study is done outside an active infection, so a urine test and, if needed, a urine culture are arranged beforehand; whether antibiotic cover around the procedure is required is decided by the doctor, and a child comes with a parent and a change of clothes",
+				"abnormal": "The images may show contrast flowing back into the ureters, a narrowing or a valve in the urethra, the shape of the bladder and how much urine is left after voiding. The report is written by a radiologist, while treatment and follow-up are decided by a urologist or a nephrologist"
+			},
+			"sr": {
+				"what": "Rendgensko ispitivanje mokraćne bešike i mokraćne cijevi uz kontrast, sa snimcima tokom punjenja bešike i tokom mokrenja",
+				"how": "Kroz tanak kateter se bešika napuni kontrastnim rastvorom, snima se ležeći, zatim se kateter izvadi i pravi se serija snimaka u trenutku mokrenja; sve ukupno oko 30 minuta",
+				"when": "Ponavljane infekcije mokraćnih puteva kod djece, sumnja na vraćanje mokraće iz bešike u uretere, otežano ili isprekidano mokrenje, proširena bubrežna karlica na ultrazvuku, kontrola poslije operacije na mokraćnim putevima",
+				"prep": "Snimanje se radi van aktivne infekcije, pa se unaprijed uradi pregled urina i po potrebi urinokultura; da li je potrebna antibiotska zaštita oko zahvata procjenjuje ljekar, a dijete dolazi sa roditeljem i rezervnom odjećom",
+				"abnormal": "Snimci mogu pokazati vraćanje kontrasta u uretere, suženje ili zalistak u mokraćnoj cijevi, oblik bešike i količinu mokraće koja ostaje poslije mokrenja. Nalaz piše radiolog, a liječenje i praćenje određuje urolog ili nefrolog"
+			},
+			"de": {
+				"what": "Röntgenuntersuchung von Harnblase und Harnröhre mit Kontrastmittel, mit Aufnahmen während der Füllung der Blase und während des Wasserlassens",
+				"how": "Über einen dünnen Katheter wird die Blase mit Kontrastmittel gefüllt, es wird im Liegen geröntgt, danach wird der Katheter entfernt und während des Wasserlassens eine Bildserie aufgenommen; insgesamt etwa 30 Minuten",
+				"when": "Wiederkehrende Harnwegsinfekte bei Kindern, Verdacht auf Rückfluss von Urin aus der Blase in die Harnleiter, erschwertes oder unterbrochenes Wasserlassen, ein im Ultraschall erweitertes Nierenbecken, Kontrolle nach einer Operation an den Harnwegen",
+				"prep": "Die Untersuchung erfolgt außerhalb eines akuten Infekts, daher werden vorher Urinstatus und bei Bedarf eine Urinkultur veranlasst; über einen Antibiotikaschutz rund um den Eingriff entscheidet der Arzt, Kinder kommen in Begleitung eines Elternteils und mit Wechselkleidung",
+				"abnormal": "Die Aufnahmen können einen Rückfluss des Kontrastmittels in die Harnleiter, eine Enge oder Klappe in der Harnröhre, die Form der Blase und die Restharnmenge zeigen. Den Befund schreibt ein Radiologe, über Behandlung und weitere Kontrollen entscheidet ein Urologe oder Nephrologe"
+			},
+			"tr": {
+				"what": "Mesane ve idrar yolunun kontrast maddeyle yapılan röntgen incelemesi; görüntüler mesane dolarken ve boşalırken alınır",
+				"how": "İnce bir sonda ile mesane kontrast sıvıyla doldurulur, sırtüstü yatarken görüntü alınır, ardından sonda çıkarılır ve işeme sırasında bir dizi görüntü çekilir; tamamı yaklaşık 30 dakika sürer",
+				"when": "Çocuklarda tekrarlayan idrar yolu enfeksiyonları, idrarın mesaneden üreterlere geri kaçtığı şüphesi, zor ya da kesik kesik işeme, ultrasonda genişlemiş böbrek havuzu, idrar yolları ameliyatı sonrası kontrol",
+				"prep": "İnceleme aktif enfeksiyon yokken yapılır, bu yüzden önceden idrar tahlili ve gerekirse idrar kültürü istenir; işlem çevresinde antibiyotik korumasına hekim karar verir, çocuk bir ebeveyniyle ve yedek kıyafetle gelir",
+				"abnormal": "Görüntüler kontrastın üreterlere geri kaçışını, idrar yolundaki darlık ya da kapakçığı, mesanenin şeklini ve işemeden sonra kalan idrar miktarını gösterebilir. Raporu radyolog yazar, tedaviyi ve izlemi üroloji ya da nefroloji uzmanı belirler"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-facial-bones",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Обзорный снимок костей лицевого скелета: скуловых дуг, стенок глазниц, верхней челюсти и области носа",
+				"how": "Снимают сидя или стоя, лицо прижимают к панели в заданном наклоне головы, на задержке дыхания делают один-два кадра; несколько минут",
+				"when": "Удар или падение на лицо, отёк и изменение формы щеки, боль при жевании после травмы, подозрение на перелом скуловой кости или стенки глазницы, оценка перед челюстно-лицевым вмешательством",
+				"prep": "Подготовка не нужна; снять очки, серьги, пирсинг и съёмные зубные протезы, предупредить о возможной беременности",
+				"abnormal": "Снимок может показать линию перелома, смещение отломков, затемнение пазухи из-за крови или воздух в мягких тканях, но тонкие переломы и повреждения мягких тканей видны на нём не всегда. Описывает снимок рентгенолог, а тактику определяет челюстно-лицевой хирург, при неясной картине направляя на КТ"
+			},
+			"en": {
+				"what": "Survey image of the facial skeleton: the cheek arches, the walls of the eye sockets, the upper jaw and the nasal region",
+				"how": "Taken sitting or standing with the face against the panel at a set tilt of the head, one or two exposures with the breath held; a few minutes",
+				"when": "A blow or a fall onto the face, swelling and a changed shape of the cheek, pain on chewing after an injury, suspected fracture of the cheekbone or of an orbital wall, assessment before maxillofacial treatment",
+				"prep": "No preparation is needed; remove glasses, earrings, piercings and removable dentures, and mention a possible pregnancy",
+				"abnormal": "The image may show a fracture line, displaced fragments, a sinus darkened by blood or air in the soft tissues, while fine fractures and soft tissue damage are not always visible on it. A radiologist describes the image and a maxillofacial surgeon decides on treatment, referring for a CT scan when the picture is unclear"
+			},
+			"sr": {
+				"what": "Pregledni snimak kostiju lica: jagodičnih lukova, zidova očnih duplji, gornje vilice i predjela nosa",
+				"how": "Snima se sjedeći ili stojeći, lice naslonjeno na ploču pod zadatim nagibom glave, jedan do dva kadra u zadržanom dahu; nekoliko minuta",
+				"when": "Udarac ili pad na lice, otok i promjena oblika obraza, bol pri žvakanju poslije povrede, sumnja na prelom jagodične kosti ili zida očne duplje, procjena prije maksilofacijalnog zahvata",
+				"prep": "Priprema nije potrebna; skinuti naočare, minđuše, pirsing i pokretne proteze i prijaviti moguću trudnoću",
+				"abnormal": "Snimak može pokazati liniju preloma, pomjerene ulomke, zasjenjen sinus zbog krvi ili vazduh u mekim tkivima, dok se tanki prelomi i povrede mekih tkiva na njemu ne vide uvijek. Snimak opisuje radiolog, a liječenje određuje maksilofacijalni hirurg, koji kod nejasne slike upućuje na skener"
+			},
+			"de": {
+				"what": "Übersichtsaufnahme des Gesichtsschädels: Jochbögen, Wände der Augenhöhlen, Oberkiefer und Nasenregion",
+				"how": "Aufnahme im Sitzen oder Stehen, das Gesicht liegt in einer vorgegebenen Neigung an der Platte, ein bis zwei Bilder in Atemanhalte; wenige Minuten",
+				"when": "Schlag oder Sturz auf das Gesicht, Schwellung und veränderte Form der Wange, Schmerzen beim Kauen nach einer Verletzung, Verdacht auf einen Bruch des Jochbeins oder einer Augenhöhlenwand, Beurteilung vor einem kieferchirurgischen Eingriff",
+				"prep": "Keine Vorbereitung nötig; Brille, Ohrringe, Piercings und herausnehmbaren Zahnersatz ablegen und eine mögliche Schwangerschaft angeben",
+				"abnormal": "Die Aufnahme kann eine Bruchlinie, verschobene Fragmente, eine durch Blut verschattete Nebenhöhle oder Luft im Weichteilgewebe zeigen, feine Brüche und Weichteilverletzungen sind darauf nicht immer zu erkennen. Den Befund schreibt ein Radiologe, über die Behandlung entscheidet ein Mund-Kiefer-Gesichts-Chirurg und veranlasst bei unklarem Bild eine CT"
+			},
+			"tr": {
+				"what": "Yüz iskeletinin genel görüntüsü: elmacık kemerleri, göz çukuru duvarları, üst çene ve burun bölgesi",
+				"how": "Oturarak ya da ayakta, yüz belirli bir açıyla panele dayalı olarak nefes tutularak bir ya da iki poz alınır; birkaç dakika sürer",
+				"when": "Yüze darbe ya da düşme, yanakta şişlik ve şekil değişikliği, travmadan sonra çiğnerken ağrı, elmacık kemiği veya göz çukuru duvarı kırığı şüphesi, çene cerrahisi öncesi değerlendirme",
+				"prep": "Hazırlık gerekmez; gözlük, küpe, piercing ve takıp çıkarılabilen protezler çıkarılır, olası gebelik bildirilir",
+				"abnormal": "Görüntüde kırık hattı, yer değiştirmiş parçalar, kan nedeniyle koyulaşmış sinüs ya da yumuşak dokuda hava görülebilir; ince kırıklar ve yumuşak doku hasarı her zaman seçilemez. Görüntüyü radyolog tanımlar, tedaviyi çene cerrahı belirler ve tablo net değilse tomografi ister"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-facial-bones-with-profiles",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Снимки лицевого скелета, дополненные боковыми проекциями, чтобы увидеть смещение костей не только по ширине, но и в глубину",
+				"how": "Сначала делают прямой кадр с лицом у панели, затем голову поворачивают в профиль на один или оба бока и съёмку повторяют; вместе 5-10 минут",
+				"when": "Травма лица с видимой деформацией, подозрение на перелом скуловой дуги со смещением, западение щеки или изменение прикуса после удара, планирование репозиции отломков, контроль положения костей после операции",
+				"prep": "Специальной подготовки нет; убрать очки, украшения из ушей и носа, съёмные протезы и заколки, сообщить о беременности",
+				"abnormal": "Дополнительные проекции помогают оценить направление и величину смещения отломков и состояние стенок пазух. Снимки описывает рентгенолог, объём лечения определяет челюстно-лицевой хирург, при сложных переломах добавляя КТ"
+			},
+			"en": {
+				"what": "Images of the facial skeleton supplemented with side views, so that displacement of the bones can be judged in depth and not only across",
+				"how": "First a frontal exposure with the face against the panel, then the head is turned to one or both sides and the exposure is repeated; 5 to 10 minutes together",
+				"when": "Facial injury with a visible change of shape, suspected displaced fracture of the cheek arch, a flattened cheek or a changed bite after a blow, planning the setting of the fragments, checking the position of the bones after an operation",
+				"prep": "No special preparation; take off glasses, ear and nose jewellery, removable dentures and hair clips, and report a pregnancy",
+				"abnormal": "The extra views help to judge the direction and the size of the displacement and the state of the sinus walls. The images are described by a radiologist, the extent of treatment is set by a maxillofacial surgeon, who adds a CT scan for complex fractures"
+			},
+			"sr": {
+				"what": "Snimci kostiju lica dopunjeni bočnim projekcijama, da bi se pomjeranje kostiju vidjelo i u dubinu, a ne samo po širini",
+				"how": "Prvo se pravi prednji kadar sa licem uz ploču, zatim se glava okreće u profil na jednu ili obje strane i snimanje se ponavlja; zajedno 5-10 minuta",
+				"when": "Povreda lica sa vidljivom promjenom oblika, sumnja na prelom jagodičnog luka sa pomjeranjem, upali obraz ili promijenjen zagriz poslije udarca, planiranje namještanja ulomaka, provjera položaja kostiju poslije operacije",
+				"prep": "Posebna priprema nije potrebna; skinuti naočare, nakit sa ušiju i nosa, pokretnu protezu i šnale i prijaviti trudnoću",
+				"abnormal": "Dodatne projekcije pomažu da se procijeni smjer i veličina pomjeranja ulomaka i stanje zidova sinusa. Snimke opisuje radiolog, a obim liječenja određuje maksilofacijalni hirurg, koji kod složenih preloma traži i skener"
+			},
+			"de": {
+				"what": "Aufnahmen des Gesichtsschädels ergänzt durch seitliche Projektionen, damit eine Verschiebung der Knochen auch in der Tiefe beurteilt werden kann",
+				"how": "Zuerst eine Aufnahme von vorn mit dem Gesicht an der Platte, danach wird der Kopf auf eine oder beide Seiten gedreht und die Aufnahme wiederholt; zusammen 5 bis 10 Minuten",
+				"when": "Gesichtsverletzung mit sichtbarer Formveränderung, Verdacht auf einen verschobenen Bruch des Jochbogens, eingesunkene Wange oder veränderter Biss nach einem Schlag, Planung der Einrichtung der Fragmente, Kontrolle der Knochenstellung nach einer Operation",
+				"prep": "Keine besondere Vorbereitung; Brille, Ohr- und Nasenschmuck, herausnehmbaren Zahnersatz und Haarspangen ablegen und eine Schwangerschaft angeben",
+				"abnormal": "Die zusätzlichen Projektionen helfen, Richtung und Ausmaß der Verschiebung sowie den Zustand der Nebenhöhlenwände einzuschätzen. Die Bilder beschreibt ein Radiologe, den Umfang der Behandlung legt ein Mund-Kiefer-Gesichts-Chirurg fest und ergänzt bei komplexen Brüchen eine CT"
+			},
+			"tr": {
+				"what": "Yüz iskeleti görüntülerinin yan projeksiyonlarla tamamlanması; böylece kemik kayması yalnızca genişlik olarak değil derinlik olarak da değerlendirilir",
+				"how": "Önce yüz panele dayalı olarak önden poz alınır, ardından baş bir ya da iki yana çevrilerek çekim yinelenir; toplam 5 ila 10 dakika",
+				"when": "Görünür şekil bozukluğuyla seyreden yüz travması, elmacık kemerinde kaymalı kırık şüphesi, darbeden sonra çöken yanak ya da değişen kapanış, parçaların yerine oturtulmasının planlanması, ameliyattan sonra kemik konumunun kontrolü",
+				"prep": "Özel hazırlık yoktur; gözlük, kulak ve burun takıları, takıp çıkarılan protez ve saç tokaları çıkarılır, gebelik bildirilir",
+				"abnormal": "Ek projeksiyonlar kaymanın yönünü ve miktarını, sinüs duvarlarının durumunu değerlendirmeye yardımcı olur. Görüntüleri radyolog tanımlar, tedavinin kapsamını çene cerrahı belirler ve karmaşık kırıklarda tomografi ekler"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-mastoid-shuller",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Боковой снимок сосцевидного отростка височной кости в укладке по Шюллеру, показывающий воздухоносные ячейки за ухом",
+				"how": "Пациент лежит или сидит боком, ухо прижимают к панели, голову укладывают под заданным углом, каждую сторону снимают отдельно для сравнения; несколько минут",
+				"when": "Длительное гноетечение из уха, боль и припухлость за ушной раковиной, хроническое воспаление среднего уха, снижение слуха, подготовка к операции на ухе и контроль после неё",
+				"prep": "Подготовка не требуется; снять серьги, слуховой аппарат, заколки и очки, волосы собрать так, чтобы они не мешали укладке",
+				"abnormal": "Снимок может показать снижение воздушности ячеек, разрушение костных перегородок или особенности строения отростка, которые учитывают перед операцией. Заключение даёт рентгенолог, дальнейшее ведение определяет ЛОР-врач, при необходимости назначая КТ височных костей"
+			},
+			"en": {
+				"what": "Side view of the mastoid process of the temporal bone in the Schüller position, showing the air cells behind the ear",
+				"how": "The patient lies or sits sideways with the ear against the panel and the head set at a fixed angle, each side is taken separately so that the two can be compared; a few minutes",
+				"when": "Long-standing discharge from the ear, pain and swelling behind the auricle, chronic middle ear inflammation, reduced hearing, preparation for ear surgery and follow-up after it",
+				"prep": "No preparation is required; remove earrings, a hearing aid, hair clips and glasses, and tie the hair back so that it does not interfere with positioning",
+				"abnormal": "The image may show less air in the cells, destroyed bony partitions or features of the shape of the process that matter before surgery. The report is written by a radiologist, while further management is decided by an ENT doctor, who may order a CT of the temporal bones"
+			},
+			"sr": {
+				"what": "Bočni snimak mastoidnog nastavka temporalne kosti u projekciji po Schülleru, koji prikazuje vazdušne ćelije iza uha",
+				"how": "Pacijent leži ili sjedi bočno, uho je naslonjeno na ploču, a glava postavljena pod zadatim uglom; svaka strana se snima posebno radi poređenja; nekoliko minuta",
+				"when": "Dugotrajno curenje iz uha, bol i oteklina iza ušne školjke, hronična upala srednjeg uha, slabljenje sluha, priprema za operaciju uha i kontrola poslije nje",
+				"prep": "Priprema nije potrebna; skinuti minđuše, slušni aparat, šnale i naočare, a kosu skupiti da ne smeta postavljanju glave",
+				"abnormal": "Snimak može pokazati smanjenu prozračnost ćelija, razgrađene koštane pregrade ili osobenosti građe nastavka koje su važne prije operacije. Nalaz piše radiolog, a dalje vođenje određuje ORL ljekar, koji po potrebi traži skener temporalnih kostiju"
+			},
+			"de": {
+				"what": "Seitliche Aufnahme des Warzenfortsatzes des Schläfenbeins in der Schüller-Position, die die luftgefüllten Zellen hinter dem Ohr zeigt",
+				"how": "Der Patient liegt oder sitzt seitlich, das Ohr liegt an der Platte und der Kopf wird in einem festen Winkel eingestellt, jede Seite wird einzeln aufgenommen, damit beide verglichen werden können; wenige Minuten",
+				"when": "Lang anhaltender Ausfluss aus dem Ohr, Schmerz und Schwellung hinter der Ohrmuschel, chronische Mittelohrentzündung, nachlassendes Hören, Vorbereitung auf eine Ohroperation und Kontrolle danach",
+				"prep": "Keine Vorbereitung nötig; Ohrringe, Hörgerät, Haarspangen und Brille ablegen und die Haare zusammenbinden, damit sie die Lagerung nicht stören",
+				"abnormal": "Die Aufnahme kann eine geringere Belüftung der Zellen, zerstörte knöcherne Trennwände oder Besonderheiten des Aufbaus zeigen, die vor einer Operation wichtig sind. Den Befund schreibt ein Radiologe, das weitere Vorgehen legt ein HNO-Arzt fest und veranlasst bei Bedarf eine CT der Schläfenbeine"
+			},
+			"tr": {
+				"what": "Temporal kemiğin mastoid çıkıntısının Schüller pozisyonunda alınan yan görüntüsü; kulağın arkasındaki hava hücrelerini gösterir",
+				"how": "Hasta yan yatar ya da oturur, kulak panele dayanır ve baş belirli bir açıya getirilir; iki taraf karşılaştırılabilsin diye her taraf ayrı çekilir; birkaç dakika",
+				"when": "Kulaktan uzun süren akıntı, kulak kepçesinin arkasında ağrı ve şişlik, kronik orta kulak iltihabı, işitmede azalma, kulak ameliyatına hazırlık ve sonrasında kontrol",
+				"prep": "Hazırlık gerekmez; küpe, işitme cihazı, saç tokası ve gözlük çıkarılır, saç başın yerleşimini engellemeyecek şekilde toplanır",
+				"abnormal": "Görüntü hücrelerin havalanmasının azaldığını, kemik bölmelerdeki harabiyeti ya da ameliyat öncesinde önem taşıyan yapısal özellikleri gösterebilir. Raporu radyolog yazar, izlemi KBB hekimi belirler ve gerekirse temporal kemik tomografisi ister"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-maxilla-mandible-tmj",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Снимок верхней и нижней челюсти вместе с височно-нижнечелюстным суставом",
+				"how": "Голову фиксируют в стойке и делают кадры с каждой стороны, для сустава обычно снимают дважды — с закрытым и с открытым ртом, чтобы сравнить положение суставной головки; 10-15 минут",
+				"when": "Травма челюсти, щелчки и хруст при открывании рта, ограниченное открывание, боль перед ухом при жевании, подозрение на перелом или вывих сустава, оценка перед ортодонтическим или хирургическим лечением",
+				"prep": "Подготовка не нужна; вынуть серьги и съёмные протезы, а несъёмные брекеты снимать не надо — достаточно сказать о них рентгенлаборанту",
+				"abnormal": "Снимок отражает форму и положение костей, линии переломов, положение суставной головки и изменения её поверхности, но суставной диск на рентгене не виден. Описание готовит рентгенолог, а лечение подбирает челюстно-лицевой хирург или стоматолог, при жалобах со стороны сустава дополняя обследование МРТ"
+			},
+			"en": {
+				"what": "Image of the upper and the lower jaw together with the temporomandibular joint",
+				"how": "The head is fixed in the stand and exposures are taken on each side; for the joint two images are usually made, with the mouth closed and open, to compare the position of the condyle; 10 to 15 minutes",
+				"when": "Injury of the jaw, clicking and grating on opening the mouth, limited opening, pain in front of the ear on chewing, suspected fracture or dislocation of the joint, assessment before orthodontic or surgical treatment",
+				"prep": "No preparation is needed; take out earrings and removable dentures, while fixed braces do not have to be removed, just tell the radiographer about them",
+				"abnormal": "The image reflects the shape and the position of the bones, fracture lines, the position of the condyle and changes of its surface, while the joint disc is not visible on an X-ray. The description is prepared by a radiologist, and treatment is chosen by a maxillofacial surgeon or a dentist, who adds an MRI when the complaints come from the joint"
+			},
+			"sr": {
+				"what": "Snimak gornje i donje vilice zajedno sa temporomandibularnim zglobom",
+				"how": "Glava se fiksira u aparatu i snima se svaka strana, a za zglob se obično prave dva kadra, sa zatvorenim i sa otvorenim ustima, radi poređenja položaja zglobne glavice; 10-15 minuta",
+				"when": "Povreda vilice, škljocanje i krckanje pri otvaranju usta, ograničeno otvaranje, bol ispred uha pri žvakanju, sumnja na prelom ili iščašenje zgloba, procjena prije ortodontskog ili hirurškog liječenja",
+				"prep": "Priprema nije potrebna; izvaditi minđuše i pokretnu protezu, dok se fiksne bravice ne skidaju, dovoljno je reći radiološkom tehničaru da ih imate",
+				"abnormal": "Snimak pokazuje oblik i položaj kostiju, linije preloma, položaj zglobne glavice i promjene njene površine, dok se zglobni disk na rendgenu ne vidi. Nalaz priprema radiolog, a liječenje bira maksilofacijalni hirurg ili stomatolog, koji kod tegoba u zglobu dodaje magnetnu rezonancu"
+			},
+			"de": {
+				"what": "Aufnahme von Ober- und Unterkiefer zusammen mit dem Kiefergelenk",
+				"how": "Der Kopf wird im Gerät fixiert und jede Seite aufgenommen; für das Gelenk werden meist zwei Bilder gemacht, bei geschlossenem und bei geöffnetem Mund, um die Lage des Gelenkkopfes zu vergleichen; 10 bis 15 Minuten",
+				"when": "Verletzung des Kiefers, Knacken und Reiben beim Öffnen des Mundes, eingeschränkte Mundöffnung, Schmerz vor dem Ohr beim Kauen, Verdacht auf Bruch oder Ausrenkung des Gelenks, Beurteilung vor kieferorthopädischer oder chirurgischer Behandlung",
+				"prep": "Keine Vorbereitung nötig; Ohrringe und herausnehmbaren Zahnersatz entfernen, feste Brackets müssen nicht ab, sagen Sie der Assistenz nur Bescheid",
+				"abnormal": "Die Aufnahme zeigt Form und Stellung der Knochen, Bruchlinien, die Lage des Gelenkkopfes und Veränderungen seiner Oberfläche, der Gelenkdiskus ist im Röntgen nicht sichtbar. Den Befund erstellt ein Radiologe, die Behandlung wählt ein Kieferchirurg oder Zahnarzt und ergänzt bei Gelenkbeschwerden eine MRT"
+			},
+			"tr": {
+				"what": "Üst ve alt çenenin çene eklemiyle birlikte görüntülenmesi",
+				"how": "Baş cihazda sabitlenir ve her iki taraftan poz alınır; eklem için genellikle ağız kapalı ve açıkken iki görüntü çekilerek eklem başının konumu karşılaştırılır; 10 ila 15 dakika",
+				"when": "Çene travması, ağzı açarken takılma ve çıtırtı sesi, ağzın az açılması, çiğnerken kulak önünde ağrı, eklemde kırık ya da çıkık şüphesi, ortodontik veya cerrahi tedavi öncesi değerlendirme",
+				"prep": "Hazırlık gerekmez; küpeler ve takıp çıkarılan protezler alınır, sabit braketlerin sökülmesi gerekmez, teknisyene söylemek yeterlidir",
+				"abnormal": "Görüntü kemiklerin şeklini ve konumunu, kırık hatlarını, eklem başının yerini ve yüzeyindeki değişiklikleri yansıtır; eklem diski röntgende görülmez. Raporu radyolog hazırlar, tedaviyi çene cerrahı ya da diş hekimi seçer ve şikâyetler eklem kaynaklıysa MR ekler"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-maxillary-sinuses",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Снимок пазух верхней челюсти — полостей в кости под глазницами по обе стороны от носа",
+				"how": "Снимают вертикально, с запрокинутой головой и упором подбородка в панель, один кадр на задержке дыхания; ровное положение важно, иначе содержимое пазухи растечётся и останется незамеченным; пара минут",
+				"when": "Заложенность носа и гнойные выделения дольше недели, тяжесть и боль в щеке, боль в верхних зубах неясного происхождения, температура после простуды, контроль после пункции или лечения воспаления пазухи",
+				"prep": "Подготовка не нужна; высморкаться перед снимком, снять очки и серьги, вынуть съёмный протез, о беременности сказать заранее",
+				"abnormal": "Затемнение пазухи, утолщённая слизистая или уровень содержимого могут быть связаны с воспалением, отёком, полипом или последствиями травмы. Снимок описывает рентгенолог, а ЛОР-врач сопоставляет его с осмотром и решает, что делать дальше"
+			},
+			"en": {
+				"what": "Image of the sinuses of the upper jaw, the cavities in the bone under the eye sockets on both sides of the nose",
+				"how": "Taken upright with the head tipped back and the chin against the panel, one exposure with the breath held; the upright position matters, otherwise the content of the sinus spreads out and goes unnoticed; a couple of minutes",
+				"when": "A blocked nose and purulent discharge lasting more than a week, heaviness and pain in the cheek, pain in the upper teeth of unclear origin, fever after a cold, follow-up after a puncture or after treatment of sinus inflammation",
+				"prep": "No preparation is needed; blow the nose before the image, take off glasses and earrings, remove a denture, and mention a pregnancy in advance",
+				"abnormal": "A darkened sinus, a thickened lining or a level of content may be linked with inflammation, swelling, a polyp or the consequences of an injury. The image is described by a radiologist, and an ENT doctor compares it with the examination and decides what comes next"
+			},
+			"sr": {
+				"what": "Snimak sinusa gornje vilice, šupljina u kosti ispod očnih duplji sa obje strane nosa",
+				"how": "Snima se uspravno, sa zabačenom glavom i bradom naslonjenom na ploču, jedan kadar u zadržanom dahu; uspravan položaj je bitan, jer se inače sadržaj sinusa razlije i ostane neprimijećen; par minuta",
+				"when": "Zapušen nos i gnojna sekrecija duže od sedmice, pritisak i bol u obrazu, bol u gornjim zubima nejasnog porijekla, temperatura poslije prehlade, kontrola poslije punkcije ili liječenja upale sinusa",
+				"prep": "Priprema nije potrebna; izduvati nos prije snimanja, skinuti naočare i minđuše, izvaditi pokretnu protezu i unaprijed najaviti trudnoću",
+				"abnormal": "Zasjenjen sinus, zadebljala sluznica ili nivo sadržaja mogu biti povezani sa upalom, otokom, polipom ili posljedicama povrede. Snimak opisuje radiolog, a ORL ljekar ga poredi sa pregledom i odlučuje o daljim koracima"
+			},
+			"de": {
+				"what": "Aufnahme der Kieferhöhlen, der Hohlräume im Knochen unter den Augenhöhlen zu beiden Seiten der Nase",
+				"how": "Aufnahme im Stehen oder Sitzen mit zurückgeneigtem Kopf und dem Kinn an der Platte, ein Bild in Atemanhalte; die aufrechte Haltung ist wichtig, sonst verteilt sich der Inhalt der Höhle und bleibt unbemerkt; wenige Minuten",
+				"when": "Verstopfte Nase und eitriges Sekret länger als eine Woche, Druck und Schmerz in der Wange, Schmerzen in den oberen Zähnen unklarer Herkunft, Fieber nach einer Erkältung, Kontrolle nach einer Punktion oder nach Behandlung einer Nebenhöhlenentzündung",
+				"prep": "Keine Vorbereitung nötig; vor der Aufnahme die Nase putzen, Brille und Ohrringe ablegen, herausnehmbaren Zahnersatz entfernen und eine Schwangerschaft vorher angeben",
+				"abnormal": "Eine verschattete Höhle, eine verdickte Schleimhaut oder ein Flüssigkeitsspiegel können mit einer Entzündung, Schwellung, einem Polypen oder den Folgen einer Verletzung zusammenhängen. Die Aufnahme beschreibt ein Radiologe, ein HNO-Arzt vergleicht sie mit der Untersuchung und entscheidet über das weitere Vorgehen"
+			},
+			"tr": {
+				"what": "Üst çene sinüslerinin, yani burnun iki yanında göz çukurlarının altındaki kemik boşluklarının görüntüsü",
+				"how": "Baş geriye yatık ve çene panele dayalı olarak dik konumda, nefes tutularak tek poz alınır; dik durmak önemlidir, yoksa sinüsteki içerik yayılır ve fark edilmez; birkaç dakika",
+				"when": "Bir haftadan uzun süren burun tıkanıklığı ve iltihaplı akıntı, yanakta baskı ve ağrı, nedeni belirsiz üst diş ağrısı, soğuk algınlığından sonra ateş, sinüs iltihabının ponksiyonu ya da tedavisi sonrası kontrol",
+				"prep": "Hazırlık gerekmez; çekimden önce burun temizlenir, gözlük ve küpeler çıkarılır, takılıp çıkarılan protez alınır, gebelik önceden bildirilir",
+				"abnormal": "Koyulaşmış sinüs, kalınlaşmış mukoza ya da içerik seviyesi iltihapla, ödemle, polip ya da travma sonrasıyla ilişkili olabilir. Görüntüyü radyolog tanımlar, KBB hekimi muayeneyle karşılaştırıp sonraki adımlara karar verir"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-nose-profiles",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Боковые снимки костей носа — тонких костных пластинок в его верхней части",
+				"how": "Голову укладывают строго в профиль, детектор прижимают к щеке и делают мягкий кадр с малой дозой, обычно с обеих сторон; занимает несколько минут",
+				"when": "Удар по носу, отёк и искривление спинки носа, носовое кровотечение после травмы, подозрение на перелом костей носа, оценка перед вправлением",
+				"prep": "Подготовка не требуется; снять очки и пирсинг из носа и ушей, заколки убрать из зоны съёмки",
+				"abnormal": "Снимок может показать линию перелома и смещение отломков, но отёк и повреждение хряща и перегородки на нём не видны, поэтому осмотр ЛОР-врача важнее снимка. Описание даёт рентгенолог, а вправление и его сроки определяет ЛОР-врач или челюстно-лицевой хирург"
+			},
+			"en": {
+				"what": "Side images of the nasal bones, the thin bony plates in the upper part of the nose",
+				"how": "The head is placed strictly in profile, the detector is held against the cheek and a soft low-dose exposure is made, usually from both sides; a few minutes",
+				"when": "A blow to the nose, swelling and a crooked bridge, nosebleed after an injury, suspected fracture of the nasal bones, assessment before the bones are set",
+				"prep": "No preparation is required; remove glasses and nose and ear piercings, and take hair clips out of the field",
+				"abnormal": "The image may show a fracture line and displaced fragments, while swelling and damage to the cartilage and the septum are not visible on it, so the examination by an ENT doctor matters more than the image. The description is given by a radiologist, and the setting of the bones and its timing are decided by an ENT doctor or a maxillofacial surgeon"
+			},
+			"sr": {
+				"what": "Bočni snimci nosnih kostiju, tankih koštanih pločica u gornjem dijelu nosa",
+				"how": "Glava se postavi strogo u profil, detektor se prisloni uz obraz i napravi se meki snimak sa malom dozom, obično sa obje strane; traje nekoliko minuta",
+				"when": "Udarac u nos, otok i iskrivljen hrbat nosa, krvarenje iz nosa poslije povrede, sumnja na prelom nosnih kostiju, procjena prije namještanja",
+				"prep": "Priprema nije potrebna; skinuti naočare i pirsing sa nosa i ušiju, a šnale skloniti iz polja snimanja",
+				"abnormal": "Snimak može pokazati liniju preloma i pomjerene ulomke, dok se otok i oštećenje hrskavice i nosne pregrade na njemu ne vide, pa je pregled ORL ljekara važniji od snimka. Opis daje radiolog, a namještanje kostiju i njegovo vrijeme određuje ORL ljekar ili maksilofacijalni hirurg"
+			},
+			"de": {
+				"what": "Seitliche Aufnahmen der Nasenbeine, der dünnen Knochenplättchen im oberen Teil der Nase",
+				"how": "Der Kopf wird streng im Profil gelagert, der Detektor an die Wange gelegt und eine weiche Aufnahme mit niedriger Dosis gemacht, meist von beiden Seiten; wenige Minuten",
+				"when": "Schlag auf die Nase, Schwellung und schiefer Nasenrücken, Nasenbluten nach einer Verletzung, Verdacht auf einen Bruch der Nasenbeine, Beurteilung vor dem Einrichten",
+				"prep": "Keine Vorbereitung nötig; Brille sowie Nasen- und Ohrpiercings ablegen und Haarspangen aus dem Aufnahmebereich nehmen",
+				"abnormal": "Die Aufnahme kann eine Bruchlinie und verschobene Fragmente zeigen, Schwellung sowie Schäden an Knorpel und Nasenscheidewand sind darauf nicht zu sehen, daher ist die Untersuchung beim HNO-Arzt wichtiger als das Bild. Den Befund gibt ein Radiologe, über das Einrichten und dessen Zeitpunkt entscheidet ein HNO-Arzt oder ein Mund-Kiefer-Gesichts-Chirurg"
+			},
+			"tr": {
+				"what": "Burnun üst bölümündeki ince kemik plakların, yani burun kemiklerinin yandan görüntüleri",
+				"how": "Baş tam profil konuma getirilir, dedektör yanağa dayanır ve düşük dozlu yumuşak bir poz alınır, genellikle iki taraftan; birkaç dakika sürer",
+				"when": "Buruna darbe, şişlik ve burun sırtında eğrilik, travmadan sonra burun kanaması, burun kemiği kırığı şüphesi, kemiklerin yerine oturtulması öncesi değerlendirme",
+				"prep": "Hazırlık gerekmez; gözlük ile burun ve kulak piercingleri çıkarılır, saç tokaları çekim alanından uzaklaştırılır",
+				"abnormal": "Görüntüde kırık hattı ve yer değiştirmiş parçalar görülebilir; şişlik, kıkırdak ve septum hasarı görülmez, bu yüzden KBB muayenesi görüntüden daha belirleyicidir. Tanımı radyolog yazar, kemiklerin ne zaman ve nasıl yerine oturtulacağını KBB hekimi ya da çene cerrahı belirler"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-nose-with-profiles",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Снимок области носа в сочетании с боковыми проекциями, дающий картину и по ширине, и в профиль",
+				"how": "Делают прямой кадр с лицом у панели и дополняют его снимками в профиль, между кадрами голову перекладывают; всё вместе около пяти минут",
+				"when": "Травма средней зоны лица, искривление спинки носа после удара, подозрение на перелом с боковым смещением, затруднённое дыхание одной ноздрёй после травмы, контроль положения костей после вправления",
+				"prep": "Подготовка не нужна; убрать очки и украшения из носа и ушей, по возможности смыть косметику, о беременности сообщить заранее",
+				"abnormal": "Сочетание проекций показывает, в какую сторону ушли отломки и затронуты ли соседние кости. Снимки описывает рентгенолог, а решение о вправлении или операции принимает ЛОР-врач; мягкие ткани и хрящи рентген не показывает"
+			},
+			"en": {
+				"what": "Images of the nose area combined with side views, giving the picture both across and in profile",
+				"how": "A frontal exposure with the face against the panel is made and supplemented with profile images, the head being repositioned in between; about five minutes in all",
+				"when": "Injury to the middle part of the face, a bent bridge of the nose after a blow, suspected fracture with sideways displacement, breathing difficulty through one nostril after an injury, checking the position of the bones after they have been set",
+				"prep": "No preparation is needed; take off glasses and nose and ear jewellery, wash off make-up if possible, and report a pregnancy in advance",
+				"abnormal": "The combination of views shows which way the fragments have moved and whether the neighbouring bones are affected. The images are described by a radiologist, while an ENT doctor decides on setting the bones or on surgery; soft tissues and cartilage are not shown by an X-ray"
+			},
+			"sr": {
+				"what": "Snimci predjela nosa u kombinaciji sa bočnim projekcijama, koji daju sliku i po širini i u profilu",
+				"how": "Napravi se prednji kadar sa licem uz ploču i dopuni snimcima iz profila, uz premještanje glave između kadrova; sve zajedno oko pet minuta",
+				"when": "Povreda srednje trećine lica, iskrivljen hrbat nosa poslije udarca, sumnja na prelom sa bočnim pomjeranjem, otežano disanje kroz jednu nozdrvu poslije povrede, provjera položaja kostiju poslije namještanja",
+				"prep": "Priprema nije potrebna; skinuti naočare i nakit sa nosa i ušiju, po mogućnosti umiti šminku i unaprijed prijaviti trudnoću",
+				"abnormal": "Kombinacija projekcija pokazuje na koju stranu su ulomci pomjereni i da li su zahvaćene susjedne kosti. Snimke opisuje radiolog, a odluku o namještanju ili operaciji donosi ORL ljekar; meka tkiva i hrskavicu rendgen ne prikazuje"
+			},
+			"de": {
+				"what": "Aufnahmen der Nasenregion in Kombination mit seitlichen Projektionen, die das Bild sowohl in der Breite als auch im Profil geben",
+				"how": "Es wird eine Aufnahme von vorn mit dem Gesicht an der Platte gemacht und durch Profilaufnahmen ergänzt, dazwischen wird der Kopf umgelagert; insgesamt etwa fünf Minuten",
+				"when": "Verletzung des mittleren Gesichtsdrittels, schiefer Nasenrücken nach einem Schlag, Verdacht auf einen Bruch mit seitlicher Verschiebung, erschwerte Atmung durch ein Nasenloch nach einer Verletzung, Kontrolle der Knochenstellung nach dem Einrichten",
+				"prep": "Keine Vorbereitung nötig; Brille sowie Nasen- und Ohrschmuck ablegen, nach Möglichkeit Make-up abwaschen und eine Schwangerschaft vorher angeben",
+				"abnormal": "Die Kombination der Projektionen zeigt, in welche Richtung sich die Fragmente verschoben haben und ob benachbarte Knochen betroffen sind. Die Bilder beschreibt ein Radiologe, über Einrichten oder Operation entscheidet ein HNO-Arzt; Weichteile und Knorpel stellt das Röntgen nicht dar"
+			},
+			"tr": {
+				"what": "Burun bölgesinin önden ve yandan projeksiyonlarla birlikte görüntülenmesi; hem genişlik hem profil bilgisi verir",
+				"how": "Yüz panele dayalı önden bir poz alınır ve profil görüntüleriyle tamamlanır, pozlar arasında baş yeniden konumlandırılır; tamamı yaklaşık beş dakika",
+				"when": "Yüzün orta bölümünde travma, darbeden sonra burun sırtında eğrilik, yana kaymayla seyreden kırık şüphesi, travmadan sonra tek burun deliğinden zor nefes alma, kemikler yerine oturtulduktan sonra konumun kontrolü",
+				"prep": "Hazırlık gerekmez; gözlük ile burun ve kulak takıları çıkarılır, mümkünse makyaj temizlenir, gebelik önceden bildirilir",
+				"abnormal": "Projeksiyonların birlikte değerlendirilmesi parçaların hangi yöne kaydığını ve komşu kemiklerin etkilenip etkilenmediğini gösterir. Görüntüleri radyolog tanımlar, yerine oturtma ya da ameliyat kararını KBB hekimi verir; röntgen yumuşak dokuyu ve kıkırdağı göstermez"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-optic-canal-rhese",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Прицельный снимок костного канала зрительного нерва в глубине глазницы, выполненный в косой укладке Резе",
+				"how": "Голову поворачивают под заданным углом так, чтобы нос, скула и подбородок касались панели, и каждую сторону снимают отдельно для сравнения; по несколько минут на кадр",
+				"when": "Травма глазницы и лба, снижение зрения после удара по голове, подозрение на перелом стенки канала, оценка костных изменений вокруг зрительного нерва, дополнение к осмотру офтальмолога",
+				"prep": "Подготовка не нужна; снять очки, серьги и заколки, о возможной беременности сказать до съёмки",
+				"abnormal": "Снимок может показать изменение ширины канала или линию перелома его стенки, но сам нерв на рентгене не виден. Описание даёт рентгенолог, а решение принимает офтальмолог или нейрохирург, чаще всего дополняя обследование КТ, где эта область видна подробнее"
+			},
+			"en": {
+				"what": "Targeted image of the bony canal of the optic nerve deep in the eye socket, taken in the oblique Rhese position",
+				"how": "The head is turned at a set angle so that the nose, the cheekbone and the chin touch the panel, and each side is taken separately for comparison; a few minutes per exposure",
+				"when": "Injury of the eye socket and the forehead, reduced vision after a blow to the head, suspected fracture of the wall of the canal, assessment of bone changes around the optic nerve, as an addition to the ophthalmologist's examination",
+				"prep": "No preparation is needed; take off glasses, earrings and hair clips, and mention a possible pregnancy before the exposure",
+				"abnormal": "The image may show a changed width of the canal or a fracture line in its wall, while the nerve itself is not visible on an X-ray. The description is given by a radiologist, and the decision is taken by an ophthalmologist or a neurosurgeon, most often together with a CT scan, which shows this area in more detail"
+			},
+			"sr": {
+				"what": "Ciljani snimak koštanog kanala vidnog živca u dubini očne duplje, u kosoj projekciji po Rheseu",
+				"how": "Glava se okrene pod zadatim uglom tako da nos, jagodica i brada dodiruju ploču, a svaka strana se snima posebno radi poređenja; po nekoliko minuta za kadar",
+				"when": "Povreda očne duplje i čela, slabljenje vida poslije udarca u glavu, sumnja na prelom zida kanala, procjena koštanih promjena oko vidnog živca, dopuna pregledu oftalmologa",
+				"prep": "Priprema nije potrebna; skinuti naočare, minđuše i šnale, a moguću trudnoću prijaviti prije snimanja",
+				"abnormal": "Snimak može pokazati promijenjenu širinu kanala ili liniju preloma njegovog zida, dok se sam živac na rendgenu ne vidi. Opis daje radiolog, a odluku donosi oftalmolog ili neurohirurg, najčešće uz skener na kojem se ovaj predio vidi detaljnije"
+			},
+			"de": {
+				"what": "Gezielte Aufnahme des knöchernen Kanals des Sehnervs tief in der Augenhöhle, in der schrägen Rhese-Position",
+				"how": "Der Kopf wird in einem vorgegebenen Winkel so gedreht, dass Nase, Jochbein und Kinn die Platte berühren, jede Seite wird zum Vergleich einzeln aufgenommen; wenige Minuten je Bild",
+				"when": "Verletzung der Augenhöhle und der Stirn, nachlassendes Sehen nach einem Schlag auf den Kopf, Verdacht auf einen Bruch der Kanalwand, Beurteilung knöcherner Veränderungen um den Sehnerv, als Ergänzung zur augenärztlichen Untersuchung",
+				"prep": "Keine Vorbereitung nötig; Brille, Ohrringe und Haarspangen ablegen und vor der Aufnahme eine mögliche Schwangerschaft angeben",
+				"abnormal": "Die Aufnahme kann eine veränderte Weite des Kanals oder eine Bruchlinie in seiner Wand zeigen, der Nerv selbst ist im Röntgen nicht sichtbar. Den Befund gibt ein Radiologe, die Entscheidung trifft ein Augenarzt oder Neurochirurg, meist ergänzt durch eine CT, auf der diese Region genauer dargestellt ist"
+			},
+			"tr": {
+				"what": "Göz çukurunun derinindeki görme siniri kemik kanalının, eğik Rhese pozisyonunda alınan hedefli görüntüsü",
+				"how": "Baş; burun, elmacık kemiği ve çene panele değecek şekilde belirli bir açıyla çevrilir, karşılaştırma için her taraf ayrı çekilir; her poz birkaç dakika sürer",
+				"when": "Göz çukuru ve alın travması, kafaya darbeden sonra görmede azalma, kanal duvarında kırık şüphesi, görme siniri çevresindeki kemik değişikliklerinin değerlendirilmesi, göz hekimi muayenesinin tamamlanması",
+				"prep": "Hazırlık gerekmez; gözlük, küpe ve saç tokaları çıkarılır, çekimden önce olası gebelik bildirilir",
+				"abnormal": "Görüntü kanalın genişliğindeki değişikliği ya da duvarındaki kırık hattını gösterebilir; sinirin kendisi röntgende görünmez. Tanımı radyolog yazar, kararı göz hekimi ya da beyin cerrahı verir ve bu bölge daha ayrıntılı göründüğü için çoğunlukla tomografi eklenir"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-orbits",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Снимок костных стенок глазниц, где видны их края, дно и соседние пазухи",
+				"how": "Снимают сидя или стоя в прямой и, по назначению, дополнительной проекции, голову фиксируют, а во время кадра просят не двигать глазами; несколько минут",
+				"when": "Травма глаза и окологлазничной области, подозрение на перелом дна глазницы, двоение или ограничение движений глаза после удара, поиск металлического инородного тела, в том числе перед МРТ",
+				"prep": "Подготовка не требуется; снять очки и серьги, по просьбе персонала удалить косметику с век, сообщить о возможной беременности",
+				"abnormal": "Снимок может показать перелом края или дна глазницы, затемнение соседней пазухи и плотное инородное тело, но мягкие ткани глаза, мышцы и зрительный нерв на нём не отображаются. Заключение даёт рентгенолог, а тактику определяет офтальмолог, при подозрении на повреждение содержимого глазницы направляя на КТ"
+			},
+			"en": {
+				"what": "Image of the bony walls of the eye sockets, showing their rims, the floor and the neighbouring sinuses",
+				"how": "Taken sitting or standing in a frontal and, if ordered, an additional projection, the head is held still and you are asked not to move the eyes during the exposure; a few minutes",
+				"when": "Injury of the eye and the area around it, suspected fracture of the floor of the socket, double vision or limited eye movement after a blow, a search for a metal foreign body, including before an MRI",
+				"prep": "No preparation is required; take off glasses and earrings and, if the staff ask, remove eye make-up; mention a possible pregnancy",
+				"abnormal": "The image may show a fracture of the rim or of the floor of the socket, a darkened neighbouring sinus and a dense foreign body, while the soft tissues of the eye, the muscles and the optic nerve are not shown on it. The report is given by a radiologist, and an ophthalmologist decides on the management, referring for a CT scan when damage inside the socket is suspected"
+			},
+			"sr": {
+				"what": "Snimak koštanih zidova očnih duplji, na kojem se vide njihove ivice, dno i susjedni sinusi",
+				"how": "Snima se sjedeći ili stojeći u prednjoj i po nalogu dodatnoj projekciji, glava se drži mirno, a tokom kadra se traži da ne pomjerate oči; nekoliko minuta",
+				"when": "Povreda oka i predjela oko njega, sumnja na prelom dna očne duplje, duple slike ili ograničeni pokreti oka poslije udarca, traženje metalnog stranog tijela, između ostalog i prije magnetne rezonance",
+				"prep": "Priprema nije potrebna; skinuti naočare i minđuše, a na traženje osoblja ukloniti šminku sa kapaka; prijaviti moguću trudnoću",
+				"abnormal": "Snimak može pokazati prelom ivice ili dna duplje, zasjenjen susjedni sinus i gusto strano tijelo, dok se meka tkiva oka, mišići i vidni živac na njemu ne prikazuju. Nalaz daje radiolog, a dalje vođenje određuje oftalmolog, koji kod sumnje na oštećenje sadržaja duplje upućuje na skener"
+			},
+			"de": {
+				"what": "Aufnahme der knöchernen Wände der Augenhöhlen mit ihren Rändern, dem Boden und den benachbarten Nebenhöhlen",
+				"how": "Aufnahme im Sitzen oder Stehen in einer vorderen und auf Anordnung einer zusätzlichen Projektion, der Kopf wird ruhig gehalten und Sie sollen während der Aufnahme die Augen nicht bewegen; wenige Minuten",
+				"when": "Verletzung des Auges und der Umgebung, Verdacht auf einen Bruch des Augenhöhlenbodens, Doppelbilder oder eingeschränkte Augenbewegung nach einem Schlag, Suche nach einem metallischen Fremdkörper, unter anderem vor einer MRT",
+				"prep": "Keine Vorbereitung nötig; Brille und Ohrringe ablegen und auf Bitte des Personals das Augen-Make-up entfernen; eine mögliche Schwangerschaft angeben",
+				"abnormal": "Die Aufnahme kann einen Bruch des Randes oder des Bodens der Augenhöhle, eine verschattete Nachbarhöhle und einen dichten Fremdkörper zeigen, Weichteile des Auges, Muskeln und Sehnerv stellt sie nicht dar. Den Befund gibt ein Radiologe, über das Vorgehen entscheidet ein Augenarzt und überweist bei Verdacht auf eine Schädigung des Augenhöhleninhalts zur CT"
+			},
+			"tr": {
+				"what": "Göz çukurlarının kemik duvarlarının görüntüsü; kenarlarını, tabanını ve komşu sinüsleri gösterir",
+				"how": "Oturarak ya da ayakta, önden ve istenirse ek bir projeksiyonda çekilir; baş sabit tutulur ve poz sırasında gözlerin oynatılmaması istenir; birkaç dakika",
+				"when": "Göz ve çevresinde travma, göz çukuru tabanında kırık şüphesi, darbeden sonra çift görme ya da göz hareketlerinde kısıtlılık, MR öncesi dahil olmak üzere metal yabancı cisim araştırması",
+				"prep": "Hazırlık gerekmez; gözlük ve küpeler çıkarılır, personel isterse göz makyajı temizlenir, olası gebelik bildirilir",
+				"abnormal": "Görüntü çukurun kenarında ya da tabanında kırığı, komşu sinüste koyulaşmayı ve yoğun bir yabancı cismi gösterebilir; gözün yumuşak dokuları, kaslar ve görme siniri görünmez. Raporu radyolog verir, izlemi göz hekimi belirler ve çukur içi hasar şüphesinde tomografi ister"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-sinuses-with-profiles",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Снимок околоносовых пазух, дополненный боковой проекцией, на которой видны лобная и клиновидная пазухи и носоглотка",
+				"how": "Сначала кадр анфас с упором подбородка и носа в стойку, затем голову поворачивают в профиль и снимают ещё раз, всё сидя или стоя; вместе около пяти минут",
+				"when": "Затяжной насморк с головной болью, подозрение на воспаление лобной или клиновидной пазухи, храп и затруднённое носовое дыхание у ребёнка, оценка аденоидов, состояние пазух перед ЛОР-операцией",
+				"prep": "Специальной подготовки нет; перед съёмкой высморкаться, убрать очки, серьги и пирсинг, вынуть съёмный протез, предупредить о возможной беременности",
+				"abnormal": "Боковая проекция дополняет прямую: она показывает пазухи, которые на прямом кадре перекрываются, и объём носоглоточной миндалины. Снимки описывает рентгенолог, а выводы делает ЛОР-врач, при стойких жалобах направляя на КТ"
+			},
+			"en": {
+				"what": "Image of the paranasal sinuses supplemented with a side view that shows the frontal and the sphenoid sinus and the nasopharynx",
+				"how": "First a frontal exposure with the chin and the nose against the stand, then the head is turned into profile and another exposure is taken, all sitting or standing; about five minutes together",
+				"when": "A prolonged runny nose with headache, suspected inflammation of the frontal or the sphenoid sinus, snoring and difficult nasal breathing in a child, assessment of the adenoids, the state of the sinuses before ENT surgery",
+				"prep": "No special preparation; blow the nose before the images, put away glasses, earrings and piercings, take out a removable denture and mention a possible pregnancy",
+				"abnormal": "The side view complements the frontal one: it shows the sinuses that overlap on the frontal image and the size of the nasopharyngeal tonsil. The images are described by a radiologist, while an ENT doctor draws the conclusions and refers for a CT scan when complaints persist"
+			},
+			"sr": {
+				"what": "Snimak paranazalnih sinusa dopunjen bočnom projekcijom na kojoj se vide frontalni i sfenoidni sinus i nosni dio ždrijela",
+				"how": "Prvo se pravi kadar sprijeda, sa bradom i nosom uz aparat, zatim se glava okrene u profil i snima ponovo, sve sjedeći ili stojeći; zajedno oko pet minuta",
+				"when": "Dugotrajna sekrecija iz nosa sa glavoboljom, sumnja na upalu čeonog ili sfenoidnog sinusa, hrkanje i otežano disanje na nos kod djeteta, procjena trećeg krajnika, stanje sinusa prije ORL operacije",
+				"prep": "Posebna priprema nije potrebna; izduvati nos prije snimanja, skloniti naočare, minđuše i pirsing, izvaditi pokretnu protezu i najaviti moguću trudnoću",
+				"abnormal": "Bočna projekcija dopunjuje prednju: prikazuje sinuse koji se na prednjem kadru preklapaju i veličinu ždrijelnog krajnika. Snimke opisuje radiolog, a zaključak donosi ORL ljekar, koji kod upornih tegoba upućuje na skener"
+			},
+			"de": {
+				"what": "Aufnahme der Nasennebenhöhlen ergänzt durch eine seitliche Projektion, auf der Stirnhöhle, Keilbeinhöhle und Nasenrachen zu sehen sind",
+				"how": "Zuerst eine Aufnahme von vorn mit Kinn und Nase am Gerät, dann wird der Kopf ins Profil gedreht und erneut aufgenommen, alles im Sitzen oder Stehen; zusammen etwa fünf Minuten",
+				"when": "Anhaltender Schnupfen mit Kopfschmerz, Verdacht auf eine Entzündung der Stirn- oder Keilbeinhöhle, Schnarchen und erschwerte Nasenatmung beim Kind, Beurteilung der Rachenmandel, Zustand der Nebenhöhlen vor einer HNO-Operation",
+				"prep": "Keine besondere Vorbereitung; vor den Aufnahmen die Nase putzen, Brille, Ohrringe und Piercings ablegen, herausnehmbaren Zahnersatz entfernen und eine mögliche Schwangerschaft angeben",
+				"abnormal": "Die seitliche Projektion ergänzt die vordere: Sie zeigt die Höhlen, die sich auf dem Bild von vorn überlagern, und die Größe der Rachenmandel. Die Bilder beschreibt ein Radiologe, die Schlüsse zieht ein HNO-Arzt und überweist bei anhaltenden Beschwerden zur CT"
+			},
+			"tr": {
+				"what": "Alın ve sfenoid sinüsler ile geniz bölgesini gösteren yan projeksiyonla tamamlanmış burun yan boşlukları görüntüsü",
+				"how": "Önce çene ve burun cihaza dayalı olarak önden poz alınır, ardından baş profile çevrilip çekim yinelenir, tamamı oturarak ya da ayakta yapılır; birlikte yaklaşık beş dakika",
+				"when": "Baş ağrısının eşlik ettiği uzun süreli burun akıntısı, alın ya da sfenoid sinüs iltihabı şüphesi, çocukta horlama ve burundan zor nefes alma, geniz eti değerlendirmesi, KBB ameliyatı öncesi sinüslerin durumu",
+				"prep": "Özel hazırlık yoktur; çekimden önce burun temizlenir, gözlük, küpe ve piercing çıkarılır, takılıp çıkarılan protez alınır, olası gebelik bildirilir",
+				"abnormal": "Yan projeksiyon önden görüntüyü tamamlar: önden bakışta üst üste binen sinüsleri ve geniz etinin büyüklüğünü gösterir. Görüntüleri radyolog tanımlar, sonucu KBB hekimi yorumlar ve şikâyetler sürerse tomografi ister"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-skull-towne-altchul",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Снимки черепа в дополнительных укладках, которые выводят затылочную область и основание черепа, скрытые на обычной обзорной проекции",
+				"how": "Пациент лежит или сидит, голову наклоняют вперёд или запрокидывают под заданным углом, а луч направляют косо; для каждой укладки делают отдельный кадр, всего 10-15 минут",
+				"when": "Травма головы, подозрение на перелом затылочной кости или основания черепа, головная боль после удара, наблюдение за костными изменениями, дополнение к обзорному снимку черепа",
+				"prep": "Подготовка не нужна; снять серьги, пирсинг, заколки, очки и съёмные протезы, длинные волосы собрать, о беременности сообщить до съёмки",
+				"abnormal": "Снимок может показать линию перелома, расхождение швов или очаговые изменения кости, но кровоизлияния и ушиб мозга рентген не показывает. Описание готовит рентгенолог, а при травме головы решение принимает нейрохирург или травматолог, обычно на основании КТ"
+			},
+			"en": {
+				"what": "Skull images in additional positions that bring out the occipital region and the base of the skull, hidden on a routine survey view",
+				"how": "The patient lies or sits, the head is bent forward or tipped back at a set angle and the beam is aimed obliquely; each position is a separate exposure, 10 to 15 minutes in all",
+				"when": "Head injury, suspected fracture of the occipital bone or of the skull base, headache after a blow, follow-up of bone changes, as an addition to a routine skull image",
+				"prep": "No preparation is needed; take off earrings, piercings, hair clips, glasses and removable dentures, tie long hair back and mention a pregnancy before the exposure",
+				"abnormal": "The image may show a fracture line, separated sutures or focal changes of the bone, while bleeding and bruising of the brain are not shown by an X-ray. The description is prepared by a radiologist, and after a head injury the decision is taken by a neurosurgeon or a trauma surgeon, usually on the basis of a CT scan"
+			},
+			"sr": {
+				"what": "Snimci lobanje u dodatnim položajima koji prikazuju potiljačni predio i bazu lobanje, skrivene na običnom preglednom kadru",
+				"how": "Pacijent leži ili sjedi, glava se savija naprijed ili zabacuje pod zadatim uglom, a zrak se usmjerava koso; za svaki položaj se pravi poseban kadar, ukupno 10-15 minuta",
+				"when": "Povreda glave, sumnja na prelom potiljačne kosti ili baze lobanje, glavobolja poslije udarca, praćenje koštanih promjena, dopuna preglednom snimku lobanje",
+				"prep": "Priprema nije potrebna; skinuti minđuše, pirsing, šnale, naočare i pokretne proteze, dugu kosu skupiti i prijaviti trudnoću prije snimanja",
+				"abnormal": "Snimak može pokazati liniju preloma, razmaknute šavove ili žarišne promjene kosti, dok krvarenje i nagnječenje mozga rendgen ne prikazuje. Opis priprema radiolog, a kod povrede glave odluku donosi neurohirurg ili traumatolog, obično na osnovu skenera"
+			},
+			"de": {
+				"what": "Schädelaufnahmen in zusätzlichen Einstellungen, die die Hinterhauptregion und die Schädelbasis zeigen, die auf der üblichen Übersichtsaufnahme verdeckt sind",
+				"how": "Der Patient liegt oder sitzt, der Kopf wird in einem vorgegebenen Winkel nach vorn geneigt oder zurückgelegt und der Strahl schräg gerichtet; jede Einstellung ist eine eigene Aufnahme, insgesamt 10 bis 15 Minuten",
+				"when": "Kopfverletzung, Verdacht auf einen Bruch des Hinterhauptbeins oder der Schädelbasis, Kopfschmerz nach einem Schlag, Verlaufskontrolle knöcherner Veränderungen, Ergänzung zur Übersichtsaufnahme des Schädels",
+				"prep": "Keine Vorbereitung nötig; Ohrringe, Piercings, Haarspangen, Brille und herausnehmbaren Zahnersatz ablegen, lange Haare zusammenbinden und vor der Aufnahme eine Schwangerschaft angeben",
+				"abnormal": "Die Aufnahme kann eine Bruchlinie, auseinandergewichene Nähte oder umschriebene Knochenveränderungen zeigen, Blutungen und Prellungen des Gehirns stellt das Röntgen nicht dar. Den Befund erstellt ein Radiologe, nach einer Kopfverletzung entscheidet ein Neurochirurg oder Unfallchirurg, meist auf Grundlage einer CT"
+			},
+			"tr": {
+				"what": "Kafatasının, olağan genel görüntüde gizli kalan artkafa bölgesini ve kafa tabanını ortaya çıkaran ek pozisyonlardaki görüntüleri",
+				"how": "Hasta yatar ya da oturur, baş belirli bir açıyla öne eğilir veya geriye yatırılır ve ışın eğik yönlendirilir; her pozisyon ayrı bir pozdur, toplam 10 ila 15 dakika",
+				"when": "Kafa travması, artkafa kemiği ya da kafa tabanı kırığı şüphesi, darbeden sonra baş ağrısı, kemik değişikliklerinin izlenmesi, genel kafatası görüntüsünün tamamlanması",
+				"prep": "Hazırlık gerekmez; küpe, piercing, saç tokası, gözlük ve takıp çıkarılan protezler alınır, uzun saç toplanır, çekimden önce gebelik bildirilir",
+				"abnormal": "Görüntü kırık hattını, ayrılmış kafatası dikişlerini ya da kemikteki sınırlı değişiklikleri gösterebilir; kanamayı ve beyin ezilmesini röntgen göstermez. Tanımı radyolog hazırlar, kafa travmasında kararı beyin cerrahı ya da travma cerrahı genellikle tomografiye dayanarak verir"
+			}
+		}
+	},
+	{
+		"slug": "x-ray-temporal-bones",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Прицельные снимки пирамид височных костей в укладках по Майеру и Стенверсу, где видны структуры вокруг среднего и внутреннего уха",
+				"how": "Голову поворачивают и наклоняют под разными заданными углами, для каждой укладки делают отдельный кадр, обе стороны снимают одинаково, чтобы их можно было сравнить; 10-15 минут",
+				"when": "Снижение слуха и шум в ухе, длительное воспаление среднего уха, подозрение на разрушение кости при хроническом отите, травма височной области, обследование перед операцией на ухе",
+				"prep": "Подготовка не требуется; снять серьги, слуховой аппарат и заколки, убрать волосы от уха, во время съёмки важно не двигать головой",
+				"abnormal": "Снимки могут показать разрушение костных структур, изменение воздушности и очертания внутреннего слухового прохода, но мелкие детали среднего и внутреннего уха рентгеном не различаются. Заключение даёт рентгенолог, а ЛОР-врач сопоставляет его с аудиометрией и при необходимости назначает КТ височных костей"
+			},
+			"en": {
+				"what": "Targeted images of the petrous pyramids of the temporal bones in the Mayer and Stenvers positions, showing the structures around the middle and the inner ear",
+				"how": "The head is turned and tilted at different set angles, a separate exposure is made for each position and both sides are taken the same way so that they can be compared; 10 to 15 minutes",
+				"when": "Reduced hearing and noise in the ear, long-standing middle ear inflammation, suspected destruction of bone in chronic otitis, injury of the temple area, examination before ear surgery",
+				"prep": "No preparation is required; take off earrings, a hearing aid and hair clips, move the hair away from the ear, and keep the head still during the exposure",
+				"abnormal": "The images may show destroyed bony structures, changed air content and the outline of the internal auditory canal, while fine details of the middle and the inner ear cannot be told apart on an X-ray. The report is given by a radiologist, and an ENT doctor compares it with the hearing test and orders a CT of the temporal bones when needed"
+			},
+			"sr": {
+				"what": "Ciljani snimci piramida temporalnih kostiju u projekcijama po Mayeru i Stenversu, na kojima se vide strukture oko srednjeg i unutrašnjeg uha",
+				"how": "Glava se okreće i naginje pod različitim zadatim uglovima, za svaku projekciju se pravi poseban kadar, a obje strane se snimaju isto da bi mogle da se porede; 10-15 minuta",
+				"when": "Slabljenje sluha i šum u uhu, dugotrajna upala srednjeg uha, sumnja na razgradnju kosti kod hroničnog otitisa, povreda slijepoočnog predjela, ispitivanje prije operacije uha",
+				"prep": "Priprema nije potrebna; skinuti minđuše, slušni aparat i šnale, kosu skloniti od uha, a tokom snimanja glavu držati mirno",
+				"abnormal": "Snimci mogu pokazati razgrađene koštane strukture, promijenjenu prozračnost i obris unutrašnjeg slušnog hodnika, dok se sitni detalji srednjeg i unutrašnjeg uha na rendgenu ne razlikuju. Nalaz daje radiolog, a ORL ljekar ga poredi sa audiometrijom i po potrebi traži skener temporalnih kostiju"
+			},
+			"de": {
+				"what": "Gezielte Aufnahmen der Felsenbeinpyramiden in den Positionen nach Mayer und Stenvers, die die Strukturen um Mittel- und Innenohr zeigen",
+				"how": "Der Kopf wird in verschiedenen vorgegebenen Winkeln gedreht und geneigt, für jede Einstellung wird eine eigene Aufnahme gemacht und beide Seiten werden gleich aufgenommen, damit sie vergleichbar sind; 10 bis 15 Minuten",
+				"when": "Nachlassendes Hören und Ohrgeräusche, lang anhaltende Mittelohrentzündung, Verdacht auf Knochenabbau bei chronischer Otitis, Verletzung der Schläfenregion, Untersuchung vor einer Ohroperation",
+				"prep": "Keine Vorbereitung nötig; Ohrringe, Hörgerät und Haarspangen ablegen, die Haare vom Ohr wegnehmen und den Kopf während der Aufnahme ruhig halten",
+				"abnormal": "Die Bilder können zerstörte knöcherne Strukturen, eine veränderte Belüftung und den Umriss des inneren Gehörgangs zeigen, feine Details von Mittel- und Innenohr sind im Röntgen nicht zu unterscheiden. Den Befund gibt ein Radiologe, ein HNO-Arzt vergleicht ihn mit der Hörprüfung und veranlasst bei Bedarf eine CT der Schläfenbeine"
+			},
+			"tr": {
+				"what": "Temporal kemik piramitlerinin Mayer ve Stenvers pozisyonlarında alınan hedefli görüntüleri; orta ve iç kulak çevresindeki yapıları gösterir",
+				"how": "Baş farklı belirli açılarda çevrilip eğilir, her pozisyon için ayrı poz alınır ve karşılaştırılabilsin diye iki taraf aynı şekilde çekilir; 10 ila 15 dakika",
+				"when": "İşitmede azalma ve kulakta uğultu, uzun süren orta kulak iltihabı, kronik otitte kemik harabiyeti şüphesi, şakak bölgesi travması, kulak ameliyatı öncesi inceleme",
+				"prep": "Hazırlık gerekmez; küpe, işitme cihazı ve saç tokaları çıkarılır, saç kulaktan uzaklaştırılır, çekim sırasında baş sabit tutulur",
+				"abnormal": "Görüntüler kemik yapılardaki harabiyeti, havalanmadaki değişikliği ve iç kulak yolunun sınırlarını gösterebilir; orta ve iç kulağın ince ayrıntıları röntgende seçilemez. Raporu radyolog verir, KBB hekimi bunu işitme testiyle karşılaştırır ve gerekirse temporal kemik tomografisi ister"
+			}
+		}
+	}
+]

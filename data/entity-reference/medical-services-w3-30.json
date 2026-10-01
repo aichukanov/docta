@@ -1,0 +1,617 @@
+[
+	{
+		"slug": "gangrene-treatment-two-root",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Лечение зуба с двумя корнями, в котором пульпа погибла, а каналы инфицированы",
+				"how": "Зуб вскрывают с анестезией или без неё, из обоих каналов удаляют распавшиеся ткани, каналы обрабатывают инструментами и промывают антисептиками, часто оставляют лекарство под временной пломбой, а пломбируют каналы в следующее посещение; обычно 2-3 визита",
+				"when": "Потемневший зуб, не реагирующий на холод, боль при накусывании, свищ или отёк десны, изменения у верхушек корней на снимке, подготовка такого зуба под коронку",
+				"prep": "Особой подготовки нет; принести прежние снимки и сказать врачу, были ли отёк, температура и приём антибиотиков",
+				"abnormal": "В первые дни после обработки каналов возможны чувствительность при накусывании и небольшая припухлость. Нарастающая боль, отёк лица или температура — повод прийти раньше срока; заживление у верхушек корней оценивают по контрольному снимку через несколько месяцев"
+			},
+			"en": {
+				"what": "Treatment of a two-rooted tooth whose pulp has died and whose canals have become infected",
+				"how": "The tooth is opened with or without anaesthesia, decomposed tissue is removed from both canals, the canals are shaped and rinsed with antiseptics, a medicated dressing is often left under a temporary filling and the canals are sealed at the next visit; usually 2-3 appointments",
+				"when": "A darkened tooth that no longer reacts to cold, pain on biting, a sinus tract or swelling of the gum, changes around the root tips on an X-ray, preparing such a tooth for a crown",
+				"prep": "No special preparation; bring earlier X-rays and tell the dentist about any swelling, fever or antibiotics taken",
+				"abnormal": "Tenderness on biting and slight swelling are possible in the first days after the canals are cleaned. Growing pain, facial swelling or fever call for an earlier visit; healing around the root tips is checked on a follow-up X-ray months later"
+			},
+			"sr": {
+				"what": "Liječenje zuba sa dva korijena u kojem je pulpa odumrla, a kanali su inficirani",
+				"how": "Zub se otvori sa anestezijom ili bez nje, iz oba kanala se ukloni raspadnuto tkivo, kanali se obrade instrumentima i isperu antisepticima, često se pod privremenu plombu ostavi ljekovito sredstvo, a kanali se pune u sljedećoj posjeti; obično 2-3 dolaska",
+				"when": "Potamnio zub koji ne reaguje na hladno, bol pri zagrizu, fistula ili otok desni, promjene oko vrhova korijena na snimku, priprema takvog zuba za krunicu",
+				"prep": "Posebna priprema nije potrebna; ponijeti ranije snimke i reći stomatologu da li je bilo otoka, temperature i antibiotika",
+				"abnormal": "Prvih dana nakon obrade kanala mogući su osjetljivost pri zagrizu i blaga oteklina. Bol koja jača, otok lica ili temperatura razlog su za raniji dolazak; zarastanje oko vrhova korijena provjerava se kontrolnim snimkom nakon nekoliko mjeseci"
+			},
+			"de": {
+				"what": "Behandlung eines zweiwurzeligen Zahns, dessen Pulpa abgestorben und dessen Kanäle infiziert sind",
+				"how": "Der Zahn wird mit oder ohne Betäubung eröffnet, zerfallenes Gewebe wird aus beiden Kanälen entfernt, die Kanäle werden aufbereitet und mit Antiseptika gespült, oft bleibt eine medikamentöse Einlage unter einer provisorischen Füllung und die Kanäle werden beim nächsten Termin gefüllt; meist 2-3 Sitzungen",
+				"when": "Dunkel verfärbter Zahn ohne Reaktion auf Kälte, Schmerzen beim Zubeißen, Fistel oder Schwellung des Zahnfleischs, Veränderungen an den Wurzelspitzen im Röntgenbild, Vorbereitung eines solchen Zahns für eine Krone",
+				"prep": "Keine besondere Vorbereitung; frühere Aufnahmen mitbringen und über Schwellungen, Fieber und eingenommene Antibiotika berichten",
+				"abnormal": "In den ersten Tagen nach der Kanalaufbereitung sind Druckempfindlichkeit und eine leichte Schwellung möglich. Zunehmende Schmerzen, Schwellung im Gesicht oder Fieber erfordern einen früheren Termin; die Heilung an den Wurzelspitzen wird Monate später mit einer Kontrollaufnahme geprüft"
+			},
+			"tr": {
+				"what": "Pulpası ölmüş ve kanalları enfekte olmuş iki köklü bir dişin tedavisi",
+				"how": "Diş anestezi ile ya da anestezisiz açılır, her iki kanaldan parçalanmış doku çıkarılır, kanallar aletlerle şekillendirilip antiseptiklerle yıkanır, çoğu kez geçici dolgu altına ilaçlı pansuman konur ve kanallar sonraki seansta doldurulur; genellikle 2-3 seans",
+				"when": "Soğuğa tepki vermeyen kararmış diş, ısırırken ağrı, diş etinde fistül veya şişlik, filmde kök uçlarında değişiklikler, böyle bir dişin kron için hazırlanması",
+				"prep": "Özel bir hazırlık gerekmez; önceki filmleri getirin, şişlik, ateş ve kullanılan antibiyotikleri hekime söyleyin",
+				"abnormal": "Kanallar temizlendikten sonraki ilk günlerde ısırmada hassasiyet ve hafif şişlik görülebilir. Artan ağrı, yüzde şişlik veya ateş için randevu beklenmeden başvurulmalıdır; kök uçlarındaki iyileşme aylar sonra kontrol filmiyle değerlendirilir"
+			}
+		}
+	},
+	{
+		"slug": "gingivoplasty",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Хирургическое моделирование формы и рельефа десны вокруг зубов",
+				"how": "Под местной анестезией край десны и межзубные сосочки формируют скальпелем, лазером или бором, поверхность сглаживают, иногда фиксируют защитную повязку; около получаса на участок",
+				"when": "Неровный или несимметричный контур десны, деформация сосочков после воспаления или травмы, подготовка десны перед винирами и коронками, завершающий этап после других операций на десне",
+				"prep": "Перед вмешательством пролечивают воспаление и снимают налёт; предупредить о курении, разжижающих кровь препаратах и хронических болезнях",
+				"abnormal": "Несколько дней десна отёчна и чувствительна, окончательный контур виден спустя месяц-полтора. Нарастающий отёк, выделения или боль, которая не стихает, требуют осмотра стоматолога"
+			},
+			"en": {
+				"what": "Surgical reshaping of the form and surface contour of the gum around the teeth",
+				"how": "Under local anaesthesia the gum margin and the papillae between the teeth are shaped with a scalpel, laser or bur, the surface is smoothed and a protective dressing is sometimes applied; about half an hour per area",
+				"when": "An uneven or asymmetric gum line, papillae deformed after inflammation or injury, preparing the gum before veneers and crowns, a finishing step after other gum surgery",
+				"prep": "Inflammation is treated and plaque removed beforehand; mention smoking, blood-thinning medicines and chronic conditions",
+				"abnormal": "The gum stays swollen and tender for a few days, and the final contour appears after about a month or six weeks. Increasing swelling, discharge or pain that does not settle should be seen by a dentist"
+			},
+			"sr": {
+				"what": "Hirurško oblikovanje forme i reljefa desni oko zuba",
+				"how": "U lokalnoj anesteziji rub desni i papile između zuba oblikuju se skalpelom, laserom ili svrdlom, površina se zagladi, a ponekad se stavi zaštitni zavoj; oko pola sata po regiji",
+				"when": "Neravna ili nesimetrična linija desni, papile deformisane nakon upale ili povrede, priprema desni za ljuspice i krunice, završni korak nakon drugih zahvata na desnima",
+				"prep": "Prije zahvata se liječi upala i uklanjaju naslage; prijaviti pušenje, lijekove za razrjeđivanje krvi i hronične bolesti",
+				"abnormal": "Desni su nekoliko dana otečene i osjetljive, a konačna kontura se vidi nakon mjesec do mjesec i po. Oteklina koja raste, sekret ili bol koja ne popušta traže pregled kod stomatologa"
+			},
+			"de": {
+				"what": "Chirurgisches Formen des Verlaufs und der Oberfläche des Zahnfleischs um die Zähne",
+				"how": "In örtlicher Betäubung werden Zahnfleischrand und Papillen zwischen den Zähnen mit Skalpell, Laser oder Bohrer geformt, die Oberfläche geglättet und gelegentlich ein Schutzverband angelegt; etwa eine halbe Stunde je Bereich",
+				"when": "Ungleichmäßiger oder asymmetrischer Zahnfleischverlauf, nach Entzündung oder Verletzung verformte Papillen, Vorbereitung des Zahnfleischs vor Veneers und Kronen, Abschluss nach anderen Eingriffen am Zahnfleisch",
+				"prep": "Vorher werden Entzündungen behandelt und Beläge entfernt; Rauchen, blutverdünnende Medikamente und chronische Erkrankungen angeben",
+				"abnormal": "Das Zahnfleisch ist einige Tage geschwollen und empfindlich, die endgültige Kontur zeigt sich nach etwa ein bis anderthalb Monaten. Zunehmende Schwellung, Sekret oder anhaltende Schmerzen gehören zum Zahnarzt"
+			},
+			"tr": {
+				"what": "Dişlerin çevresindeki diş etinin biçiminin ve yüzey hattının cerrahi olarak şekillendirilmesi",
+				"how": "Lokal anestezi altında diş eti kenarı ve dişler arasındaki papiller bistüri, lazer veya frezle şekillendirilir, yüzey düzeltilir, bazen koruyucu bir pansuman konur; bölge başına yaklaşık yarım saat",
+				"when": "Düzensiz veya asimetrik diş eti hattı, iltihap ya da yaralanma sonrası bozulmuş papiller, kaplama ve kron öncesi diş etinin hazırlanması, diğer diş eti ameliyatlarından sonraki son aşama",
+				"prep": "Öncesinde iltihap tedavi edilir ve diş taşı temizlenir; sigara kullanımı, kan sulandırıcı ilaçlar ve kronik hastalıklar bildirilmelidir",
+				"abnormal": "Diş eti birkaç gün şiş ve hassas kalır, son hattı bir ile bir buçuk ay içinde belirginleşir. Artan şişlik, akıntı veya geçmeyen ağrı diş hekimi tarafından değerlendirilmelidir"
+			}
+		}
+	},
+	{
+		"slug": "pulpitis-treatment",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Лечение воспаления зубного нерва: воспалённую пульпу удаляют, а каналы очищают и герметично пломбируют",
+				"how": "Под анестезией зуб изолируют, убирают кариес и вскрывают полость, извлекают пульпу, каналы проходят на рабочую длину, промывают и заполняют; от сорока минут до нескольких приёмов в зависимости от числа каналов",
+				"when": "Сильная самопроизвольная или ночная боль, долгая боль от холодного и горячего, глубокий кариес, дошедший до нерва, скол зуба с обнажением пульпы",
+				"prep": "Поесть перед визитом, сообщить об аллергии на анестетики, принимаемых лекарствах и беременности",
+				"abnormal": "После пломбирования каналов зуб несколько дней может ныть при накусывании. Боль, которая усиливается, отёк или температура требуют внепланового осмотра; результат проверяют по контрольному снимку"
+			},
+			"en": {
+				"what": "Treatment of an inflamed dental nerve: the pulp is removed and the canals are cleaned and sealed",
+				"how": "Under anaesthesia the tooth is isolated, decay is removed and the chamber opened, the pulp is taken out, the canals are shaped to working length, rinsed and filled; from about forty minutes to several appointments depending on the number of canals",
+				"when": "Severe spontaneous or night pain, lingering pain from cold and hot, deep decay reaching the nerve, a fracture that exposes the pulp",
+				"prep": "Eat before the appointment, report allergies to anaesthetics, current medicines and pregnancy",
+				"abnormal": "The tooth may ache on biting for a few days after the canals are filled. Pain that increases, swelling or fever require an unscheduled visit; the result is checked on a follow-up X-ray"
+			},
+			"sr": {
+				"what": "Liječenje upale zubnog živca: upaljena pulpa se uklanja, a kanali se čiste i zaptivaju",
+				"how": "U anesteziji se zub izoluje, ukloni karijes i otvori komora, izvadi pulpa, kanali se obrade do radne dužine, isperu i napune; od četrdesetak minuta do nekoliko dolazaka, zavisno od broja kanala",
+				"when": "Jaka spontana ili noćna bol, dugotrajna bol na hladno i toplo, duboki karijes koji je stigao do živca, odlom zuba sa otkrivenom pulpom",
+				"prep": "Jesti prije dolaska, prijaviti alergiju na anestetike, lijekove koje uzimate i trudnoću",
+				"abnormal": "Nakon punjenja kanala zub može nekoliko dana biti osjetljiv pri zagrizu. Bol koja jača, otok ili temperatura traže vanredni pregled; ishod se provjerava kontrolnim snimkom"
+			},
+			"de": {
+				"what": "Behandlung eines entzündeten Zahnnervs: die Pulpa wird entfernt, die Kanäle werden gereinigt und dicht gefüllt",
+				"how": "In Betäubung wird der Zahn isoliert, Karies entfernt und die Kammer eröffnet, die Pulpa entnommen, die Kanäle bis zur Arbeitslänge aufbereitet, gespült und gefüllt; je nach Kanalzahl von etwa vierzig Minuten bis zu mehreren Sitzungen",
+				"when": "Starke spontane oder nächtliche Schmerzen, lang anhaltender Schmerz auf Kalt und Warm, tiefe Karies bis zum Nerv, Zahnfraktur mit freiliegender Pulpa",
+				"prep": "Vor dem Termin essen, Allergien gegen Betäubungsmittel, eingenommene Medikamente und eine Schwangerschaft angeben",
+				"abnormal": "Nach dem Füllen der Kanäle kann der Zahn einige Tage beim Zubeißen schmerzen. Zunehmender Schmerz, Schwellung oder Fieber erfordern einen kurzfristigen Termin; das Ergebnis wird mit einer Kontrollaufnahme überprüft"
+			},
+			"tr": {
+				"what": "İltihaplı diş sinirinin tedavisi: pulpa çıkarılır, kanallar temizlenip sızdırmaz biçimde doldurulur",
+				"how": "Anestezi altında diş izole edilir, çürük temizlenip oda açılır, pulpa çıkarılır, kanallar çalışma boyuna kadar şekillendirilir, yıkanır ve doldurulur; kanal sayısına göre yaklaşık kırk dakikadan birkaç seansa kadar",
+				"when": "Şiddetli kendiliğinden veya gece ağrısı, soğuk ve sıcakla geçmeyen ağrı, sinire ulaşan derin çürük, pulpayı açığa çıkaran kırık",
+				"prep": "Randevudan önce yemek yiyin, anestezik alerjilerinizi, kullandığınız ilaçları ve gebeliği bildirin",
+				"abnormal": "Kanallar doldurulduktan sonra diş birkaç gün ısırırken ağrıyabilir. Artan ağrı, şişlik veya ateş için randevu dışı başvuru gerekir; sonuç kontrol filmiyle değerlendirilir"
+			}
+		}
+	},
+	{
+		"slug": "pulpitis-treatment-single-root-niti",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Лечение воспалённого нерва в зубе с одним каналом гибкими никель-титановыми (NiTi) инструментами",
+				"how": "После анестезии и изоляции пульпу удаляют, единственный канал расширяют NiTi-инструментами, которые повторяют его изгиб, промывают и пломбируют; обычно один приём около часа",
+				"when": "Пульпит резца, клыка или другого однокорневого зуба, травма с обнажением нерва, подготовка такого зуба под штифт и коронку",
+				"prep": "Специальной подготовки нет; поесть заранее и предупредить врача, если раньше плохо действовала анестезия",
+				"abnormal": "Небольшая чувствительность при накусывании в первые дни ожидаема и проходит сама. Пульсирующая боль, отёк или выпавшая временная пломба — повод связаться с клиникой; итог фиксируют контрольным снимком"
+			},
+			"en": {
+				"what": "Treatment of an inflamed nerve in a tooth with one canal using flexible nickel-titanium (NiTi) instruments",
+				"how": "After anaesthesia and isolation the pulp is removed, the single canal is shaped with NiTi instruments that follow its curve, then rinsed and filled; usually one appointment of about an hour",
+				"when": "Pulpitis of an incisor, canine or another single-rooted tooth, injury exposing the nerve, preparing such a tooth for a post and crown",
+				"prep": "No special preparation; eat beforehand and tell the dentist if anaesthesia has worked poorly in the past",
+				"abnormal": "Mild tenderness on biting in the first days is expected and settles on its own. Throbbing pain, swelling or a lost temporary filling are reasons to contact the clinic; the outcome is recorded on a follow-up X-ray"
+			},
+			"sr": {
+				"what": "Liječenje upaljenog živca u zubu sa jednim kanalom savitljivim nikl-titanijumskim (NiTi) instrumentima",
+				"how": "Nakon anestezije i izolacije pulpa se ukloni, jedini kanal se proširi NiTi instrumentima koji prate njegovu krivinu, ispere i napuni; obično jedan dolazak od oko sat vremena",
+				"when": "Pulpitis sjekutića, očnjaka ili drugog jednokorijenog zuba, povreda sa otkrivenim živcem, priprema takvog zuba za kočić i krunicu",
+				"prep": "Posebna priprema nije potrebna; jesti unaprijed i reći stomatologu ako je anestezija ranije slabo djelovala",
+				"abnormal": "Blaga osjetljivost pri zagrizu prvih dana je očekivana i sama prolazi. Pulsirajuća bol, otok ili ispala privremena plomba razlog su da se javite ordinaciji; ishod se bilježi kontrolnim snimkom"
+			},
+			"de": {
+				"what": "Behandlung des entzündeten Nervs in einem Zahn mit nur einem Kanal mithilfe flexibler Nickel-Titan-Instrumente (NiTi)",
+				"how": "Nach Betäubung und Isolierung wird die Pulpa entfernt, der einzige Kanal mit NiTi-Instrumenten, die seiner Krümmung folgen, aufbereitet, gespült und gefüllt; meist eine Sitzung von etwa einer Stunde",
+				"when": "Pulpitis eines Schneidezahns, Eckzahns oder eines anderen einwurzeligen Zahns, Verletzung mit freiliegendem Nerv, Vorbereitung eines solchen Zahns für Stift und Krone",
+				"prep": "Keine besondere Vorbereitung; vorher essen und dem Zahnarzt sagen, wenn die Betäubung früher schlecht gewirkt hat",
+				"abnormal": "Leichte Druckempfindlichkeit in den ersten Tagen ist zu erwarten und vergeht von selbst. Pochende Schmerzen, Schwellung oder eine verlorene provisorische Füllung sind Gründe, die Praxis zu kontaktieren; das Ergebnis wird mit einer Kontrollaufnahme festgehalten"
+			},
+			"tr": {
+				"what": "Tek kanallı bir dişte iltihaplı sinirin esnek nikel-titanyum (NiTi) aletlerle tedavisi",
+				"how": "Anestezi ve izolasyondan sonra pulpa çıkarılır, tek kanal kıvrımını izleyen NiTi aletlerle genişletilir, yıkanır ve doldurulur; genellikle yaklaşık bir saatlik tek seans",
+				"when": "Kesici, köpek dişi veya başka tek köklü bir dişin pulpiti, siniri açığa çıkaran yaralanma, dişin post ve kron için hazırlanması",
+				"prep": "Özel bir hazırlık gerekmez; önceden yemek yiyin ve anestezinin daha önce iyi etki etmediğini hekiminize söyleyin",
+				"abnormal": "İlk günlerde ısırırken hafif hassasiyet beklenir ve kendiliğinden geçer. Zonklayıcı ağrı, şişlik veya geçici dolgunun düşmesi kliniğe başvurmayı gerektirir; sonuç kontrol filmiyle kayda geçer"
+			}
+		}
+	},
+	{
+		"slug": "pulpitis-treatment-three-root-machine",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Лечение воспалённого нерва в моляре с тремя каналами, где каналы раскрывают машинным вращающимся инструментом",
+				"how": "Под анестезией и изоляцией пульпу удаляют из всех трёх каналов, мотор с заданной скоростью формирует каждый канал, длину контролируют апекслокатором и снимком, затем каналы пломбируют; около полутора часов",
+				"when": "Пульпит верхних и нижних моляров, плотно кальцинированные каналы, повторяющаяся ночная боль в жевательном зубе, санация перед протезированием",
+				"prep": "Специальной подготовки нет; запланировать длительный приём и сообщить о лекарствах и хронических болезнях",
+				"abnormal": "Зуб может реагировать на жевание несколько дней, пока стихает воспаление у верхушек корней. Усиление боли, припухлость или неприятный привкус — повод обратиться к стоматологу, не дожидаясь планового визита"
+			},
+			"en": {
+				"what": "Treatment of an inflamed nerve in a molar with three canals, where the canals are opened with a rotating machine instrument",
+				"how": "Under anaesthesia and isolation the pulp is removed from all three canals, the motor shapes each canal at a set speed, the length is checked with an apex locator and an X-ray, and the canals are then filled; about an hour and a half",
+				"when": "Pulpitis of upper and lower molars, densely calcified canals, recurring night pain in a back tooth, clearing infection before prosthetic work",
+				"prep": "No special preparation; plan for a long appointment and report medicines and chronic conditions",
+				"abnormal": "The tooth may react to chewing for several days while the inflammation around the root tips settles. Growing pain, puffiness or a bad taste are reasons to see the dentist without waiting for the scheduled visit"
+			},
+			"sr": {
+				"what": "Liječenje upaljenog živca u kutnjaku sa tri kanala, gdje se kanali otvaraju rotirajućim mašinskim instrumentom",
+				"how": "U anesteziji i uz izolaciju pulpa se ukloni iz sva tri kanala, motor zadatom brzinom oblikuje svaki kanal, dužina se kontroliše apeks lokatorom i snimkom, a zatim se kanali pune; oko sat i po",
+				"when": "Pulpitis gornjih i donjih kutnjaka, gusto kalcifikovani kanali, noćna bol koja se ponavlja u zadnjem zubu, sanacija prije protetike",
+				"prep": "Posebna priprema nije potrebna; planirati duži termin i prijaviti lijekove i hronične bolesti",
+				"abnormal": "Zub može reagovati na žvakanje nekoliko dana, dok se upala oko vrhova korijena smiruje. Jačanje bola, oteklina ili neprijatan ukus razlog su da se javite stomatologu i prije zakazanog termina"
+			},
+			"de": {
+				"what": "Behandlung des entzündeten Nervs in einem Molaren mit drei Kanälen, bei der die Kanäle mit einem rotierenden maschinellen Instrument erschlossen werden",
+				"how": "In Betäubung und unter Isolierung wird die Pulpa aus allen drei Kanälen entfernt, der Motor formt jeden Kanal mit eingestellter Drehzahl, die Länge wird mit Apexlokator und Röntgenbild kontrolliert, danach werden die Kanäle gefüllt; etwa anderthalb Stunden",
+				"when": "Pulpitis oberer und unterer Molaren, stark verkalkte Kanäle, wiederkehrende nächtliche Schmerzen im Backenzahn, Sanierung vor Zahnersatz",
+				"prep": "Keine besondere Vorbereitung; einen langen Termin einplanen und Medikamente sowie chronische Erkrankungen angeben",
+				"abnormal": "Der Zahn kann einige Tage auf Kauen reagieren, während die Entzündung an den Wurzelspitzen abklingt. Zunehmender Schmerz, eine Schwellung oder schlechter Geschmack sind Gründe, den Zahnarzt vor dem geplanten Termin aufzusuchen"
+			},
+			"tr": {
+				"what": "Üç kanallı bir azı dişinde iltihaplı sinirin, kanalların döner makine aletiyle açıldığı tedavisi",
+				"how": "Anestezi ve izolasyon altında pulpa üç kanaldan da çıkarılır, motor belirlenen hızda her kanalı şekillendirir, boy apeks bulucu ve filmle denetlenir, ardından kanallar doldurulur; yaklaşık bir buçuk saat",
+				"when": "Üst ve alt azı dişlerinin pulpiti, yoğun kalsifiye kanallar, arka dişte yinelenen gece ağrısı, protez öncesi enfeksiyonun giderilmesi",
+				"prep": "Özel bir hazırlık gerekmez; uzun bir randevu planlayın, ilaçlarınızı ve kronik hastalıklarınızı bildirin",
+				"abnormal": "Kök uçlarındaki iltihap yatışırken diş birkaç gün çiğnemeye tepki verebilir. Ağrının artması, şişkinlik veya kötü tat, planlanan randevu beklenmeden hekime başvurmayı gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "pulpitis-treatment-three-root-niti",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Лечение пульпита жевательного зуба с тремя каналами никель-титановыми инструментами",
+				"how": "Устья всех каналов находят под увеличением, каждый канал проходят гибкими NiTi-файлами, промывают и пломбируют; из-за числа каналов лечение занимает около полутора часов или два посещения",
+				"when": "Пульпит моляра, изогнутые каналы верхних и нижних жевательных зубов, глубокая полость с воспалением нерва, зуб, который планируют закрыть коронкой",
+				"prep": "Поесть перед долгим приёмом; сказать врачу, если трудно долго держать рот открытым или сильно выражен рвотный рефлекс",
+				"abnormal": "После лечения многоканального зуба чувствительность при жевании держится дольше, иногда до недели. Сохраняющаяся боль и отёк требуют осмотра; чем восстанавливать зуб дальше, стоматолог планирует отдельно"
+			},
+			"en": {
+				"what": "Treatment of pulpitis in a back tooth with three canals using nickel-titanium instruments",
+				"how": "All canal orifices are found under magnification, each canal is shaped with flexible NiTi files, rinsed and filled; because of the number of canals the treatment takes about an hour and a half or two visits",
+				"when": "Pulpitis of a molar, curved canals of upper and lower back teeth, a deep cavity with nerve inflammation, a tooth planned to be covered with a crown",
+				"prep": "Eat before a long appointment; tell the dentist if it is hard to keep the mouth open for a long time or if the gag reflex is strong",
+				"abnormal": "After treating a multi-canal tooth, sensitivity while chewing lasts longer, sometimes up to a week. Persistent pain and swelling need to be examined; how the tooth is rebuilt afterwards is planned separately by the dentist"
+			},
+			"sr": {
+				"what": "Liječenje pulpitisa u zadnjem zubu sa tri kanala nikl-titanijumskim instrumentima",
+				"how": "Ušća svih kanala se pronađu pod uvećanjem, svaki kanal se obradi savitljivim NiTi instrumentima, ispere i napuni; zbog broja kanala liječenje traje oko sat i po ili dvije posjete",
+				"when": "Pulpitis kutnjaka, zakrivljeni kanali gornjih i donjih zadnjih zuba, duboki kavitet sa upalom živca, zub koji se planira pokriti krunicom",
+				"prep": "Jesti prije dužeg zahvata; reći stomatologu ako je teško dugo držati usta otvorena ili ako je refleks povraćanja izražen",
+				"abnormal": "Nakon liječenja zuba sa više kanala osjetljivost pri žvakanju traje duže, ponekad i do sedam dana. Bol koja se održava i otok traže pregled; kako će se zub dalje nadoknaditi stomatolog planira posebno"
+			},
+			"de": {
+				"what": "Behandlung einer Pulpitis an einem Backenzahn mit drei Kanälen mit Nickel-Titan-Instrumenten",
+				"how": "Alle Kanaleingänge werden unter Vergrößerung aufgesucht, jeder Kanal mit flexiblen NiTi-Feilen aufbereitet, gespült und gefüllt; wegen der Kanalzahl dauert die Behandlung etwa anderthalb Stunden oder zwei Sitzungen",
+				"when": "Pulpitis eines Molaren, gekrümmte Kanäle oberer und unterer Backenzähne, tiefe Kavität mit Nervenentzündung, ein Zahn, der später überkront werden soll",
+				"prep": "Vor dem langen Termin essen; dem Zahnarzt sagen, wenn langes Offenhalten des Mundes schwerfällt oder der Würgereiz stark ist",
+				"abnormal": "Nach der Behandlung eines mehrkanaligen Zahns hält die Empfindlichkeit beim Kauen länger an, mitunter bis zu einer Woche. Anhaltende Schmerzen und Schwellung müssen untersucht werden; den weiteren Aufbau des Zahns plant der Zahnarzt gesondert"
+			},
+			"tr": {
+				"what": "Üç kanallı bir arka dişte pulpitisin nikel-titanyum aletlerle tedavisi",
+				"how": "Tüm kanal ağızları büyütme altında bulunur, her kanal esnek NiTi eğelerle şekillendirilir, yıkanır ve doldurulur; kanal sayısı nedeniyle tedavi yaklaşık bir buçuk saat sürer veya iki seansa yayılır",
+				"when": "Azı dişi pulpiti, üst ve alt arka dişlerin kıvrımlı kanalları, sinir iltihabıyla birlikte derin kavite, ileride kronla kapatılması planlanan diş",
+				"prep": "Uzun seanstan önce yemek yiyin; ağzı uzun süre açık tutmakta zorlanıyorsanız veya öğürme refleksiniz belirginse hekiminize söyleyin",
+				"abnormal": "Çok kanallı bir dişin tedavisinden sonra çiğnerken hassasiyet daha uzun, bazen bir haftaya kadar sürer. Geçmeyen ağrı ve şişlik muayene gerektirir; dişin sonrasında nasıl yapılandırılacağını hekim ayrıca planlar"
+			}
+		}
+	},
+	{
+		"slug": "pulpitis-treatment-two-root-machine",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Лечение воспалённого нерва в двухканальном зубе с машинной обработкой каналов вращающимся инструментом",
+				"how": "Пульпу удаляют под анестезией, каналы раскрывают эндодонтическим мотором с контролем рабочей длины, обильно промывают и пломбируют; машинная обработка удерживает приём в пределах часа",
+				"when": "Пульпит премоляров и других зубов с двумя каналами, узкие или искривлённые каналы, которые трудно пройти вручную, подготовка зуба к протезированию",
+				"prep": "Подготовка не нужна; предупредить врача о кардиостимуляторе, беременности и аллергии на анестетики",
+				"abnormal": "Лёгкая болезненность при накусывании в первые дни — обычное следствие работы в каналах. Если боль нарастает, появляется отёк или зуб ощущается выше в прикусе, нужен повторный визит"
+			},
+			"en": {
+				"what": "Treatment of an inflamed nerve in a two-canal tooth in which the canals are shaped with a rotating machine instrument",
+				"how": "The pulp is removed under anaesthesia, the canals are opened with an endodontic motor under working-length control, thoroughly rinsed and filled; machine shaping keeps the appointment within about an hour",
+				"when": "Pulpitis of premolars and other teeth with two canals, narrow or curved canals that are hard to pass by hand, preparing a tooth for prosthetic work",
+				"prep": "No preparation needed; tell the dentist about a pacemaker, pregnancy and anaesthetic allergies",
+				"abnormal": "Slight soreness on biting in the first days is a usual consequence of work inside the canals. If the pain grows, swelling appears or the tooth feels high in the bite, a repeat visit is needed"
+			},
+			"sr": {
+				"what": "Liječenje upaljenog živca u zubu sa dva kanala, gdje se kanali obrađuju rotirajućim mašinskim instrumentom",
+				"how": "Pulpa se ukloni u anesteziji, kanali se otvore endodontskim motorom uz kontrolu radne dužine, obilno isperu i napune; mašinska obrada drži pregled u okviru oko jednog sata",
+				"when": "Pulpitis pretkutnjaka i drugih zuba sa dva kanala, uski ili zakrivljeni kanali koje je teško proći ručno, priprema zuba za protetiku",
+				"prep": "Priprema nije potrebna; obavijestiti stomatologa o pejsmejkeru, trudnoći i alergiji na anestetike",
+				"abnormal": "Blaga bolnost pri zagrizu prvih dana uobičajena je posljedica rada u kanalima. Ako bol raste, pojavi se otok ili zub djeluje previsoko u zagrizu, potreban je ponovni dolazak"
+			},
+			"de": {
+				"what": "Behandlung des entzündeten Nervs in einem Zahn mit zwei Kanälen, bei der die Kanäle mit einem rotierenden maschinellen Instrument aufbereitet werden",
+				"how": "Die Pulpa wird in Betäubung entfernt, die Kanäle mit einem Endodontiemotor unter Längenkontrolle erweitert, gründlich gespült und gefüllt; die maschinelle Aufbereitung hält den Termin bei etwa einer Stunde",
+				"when": "Pulpitis von Prämolaren und anderen Zähnen mit zwei Kanälen, enge oder gekrümmte Kanäle, die von Hand schwer zu erschließen sind, Vorbereitung eines Zahns für Zahnersatz",
+				"prep": "Keine Vorbereitung nötig; Herzschrittmacher, Schwangerschaft und Allergien gegen Betäubungsmittel angeben",
+				"abnormal": "Ein leichter Druckschmerz in den ersten Tagen ist eine übliche Folge der Arbeit in den Kanälen. Nehmen die Schmerzen zu, tritt eine Schwellung auf oder stört der Zahn beim Zubeißen, ist ein erneuter Termin nötig"
+			},
+			"tr": {
+				"what": "İki kanallı bir dişte iltihaplı sinirin, kanalların döner makine aletiyle şekillendirildiği tedavisi",
+				"how": "Pulpa anestezi altında çıkarılır, kanallar çalışma boyu denetimi eşliğinde endodontik motorla genişletilir, bolca yıkanır ve doldurulur; makineyle çalışma seansı yaklaşık bir saatte tutar",
+				"when": "Küçük azıların ve iki kanallı diğer dişlerin pulpiti, elle geçilmesi zor dar veya kıvrımlı kanallar, dişin protez için hazırlanması",
+				"prep": "Hazırlık gerekmez; kalp pili, gebelik ve anestezik alerjisi hekime bildirilmelidir",
+				"abnormal": "İlk günlerde ısırmada hafif ağrı, kanal içinde çalışmanın olağan sonucudur. Ağrı artarsa, şişlik olursa veya diş kapanışta yüksek gelirse yeniden başvurmak gerekir"
+			}
+		}
+	},
+	{
+		"slug": "pulpitis-treatment-two-root-niti",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Лечение пульпита в зубе с двумя каналами с использованием никель-титановых инструментов",
+				"how": "Оба канала находят, проходят гибкими NiTi-файлами в моторе, промывают антисептиком, высушивают и пломбируют в одно или два посещения; приём занимает около часа",
+				"when": "Воспаление нерва в премоляре или другом двухканальном зубе, глубокий кариес, дошедший до пульпы, откол стенки зуба с обнажением нерва",
+				"prep": "Отдельной подготовки нет; принести имеющиеся снимки, сказать о хронических болезнях и принимаемых лекарствах",
+				"abnormal": "Несколько дней возможна ноющая реакция на жевание, особенно если до лечения была сильная боль. Отёк десны или щеки и нарастающая боль — повод прийти раньше; плотность пломбирования обоих каналов оценивают по снимку"
+			},
+			"en": {
+				"what": "Treatment of pulpitis in a tooth with two canals using nickel-titanium instruments",
+				"how": "Both canals are located and shaped with flexible NiTi files in a motor, rinsed with antiseptic, dried and filled in one or two visits; the appointment takes about an hour",
+				"when": "Nerve inflammation in a premolar or another two-canal tooth, deep decay that has reached the pulp, a broken tooth wall exposing the nerve",
+				"prep": "No separate preparation; bring any existing X-rays and mention chronic conditions and medicines",
+				"abnormal": "A dull response to chewing is possible for several days, especially if the pain before treatment was severe. Swelling of the gum or cheek and growing pain are reasons to come earlier; how well both canals are sealed is judged on an X-ray"
+			},
+			"sr": {
+				"what": "Liječenje pulpitisa u zubu sa dva kanala uz upotrebu nikl-titanijumskih instrumenata",
+				"how": "Oba kanala se pronađu i obrade savitljivim NiTi instrumentima u motoru, isperu antiseptikom, osuše i napune u jednoj ili dvije posjete; pregled traje oko sat vremena",
+				"when": "Upala živca u pretkutnjaku ili drugom zubu sa dva kanala, duboki karijes koji je došao do pulpe, odlomljen zid zuba sa otkrivenim živcem",
+				"prep": "Posebna priprema nije potrebna; ponijeti postojeće snimke i reći za hronične bolesti i lijekove koje uzimate",
+				"abnormal": "Nekoliko dana je moguća tupa reakcija na žvakanje, naročito ako je bol prije liječenja bila jaka. Otok desni ili obraza i bol koja jača razlog su za raniji dolazak; zaptivenost oba kanala procjenjuje se na snimku"
+			},
+			"de": {
+				"what": "Behandlung einer Pulpitis in einem Zahn mit zwei Kanälen mit Nickel-Titan-Instrumenten",
+				"how": "Beide Kanäle werden aufgefunden, mit flexiblen NiTi-Feilen im Motor aufbereitet, mit Antiseptikum gespült, getrocknet und in ein bis zwei Sitzungen gefüllt; der Termin dauert etwa eine Stunde",
+				"when": "Nervenentzündung an einem Prämolaren oder einem anderen Zahn mit zwei Kanälen, tiefe Karies bis zur Pulpa, abgebrochene Zahnwand mit freiliegendem Nerv",
+				"prep": "Keine gesonderte Vorbereitung; vorhandene Aufnahmen mitbringen sowie chronische Erkrankungen und Medikamente nennen",
+				"abnormal": "Über mehrere Tage ist ein dumpfes Gefühl beim Kauen möglich, besonders wenn die Schmerzen vor der Behandlung stark waren. Schwellung von Zahnfleisch oder Wange und zunehmende Schmerzen sind Gründe für einen früheren Termin; die Dichtigkeit beider Kanalfüllungen wird im Röntgenbild beurteilt"
+			},
+			"tr": {
+				"what": "İki kanallı bir dişte pulpitisin nikel-titanyum aletler kullanılarak tedavisi",
+				"how": "Her iki kanal bulunur, motordaki esnek NiTi eğelerle şekillendirilir, antiseptikle yıkanır, kurutulur ve bir veya iki seansta doldurulur; seans yaklaşık bir saat sürer",
+				"when": "Küçük azı veya iki kanallı başka bir dişte sinir iltihabı, pulpaya ulaşmış derin çürük, siniri açığa çıkaran kırık diş duvarı",
+				"prep": "Ayrı bir hazırlık gerekmez; varsa filmlerinizi getirin, kronik hastalıklarınızı ve ilaçlarınızı bildirin",
+				"abnormal": "Özellikle tedavi öncesi ağrı şiddetliyse birkaç gün çiğnerken künt bir tepki olabilir. Diş etinde veya yanakta şişlik ve artan ağrı erken başvuru nedenidir; iki kanalın ne kadar sızdırmaz doldurulduğu filmde değerlendirilir"
+			}
+		}
+	},
+	{
+		"slug": "pulpotomy",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Удаление только коронковой части пульпы с сохранением живой пульпы в корневых каналах",
+				"how": "Витальный вариант: под анестезией вскрывают полость, срезают коронковую пульпу, останавливают кровотечение и накрывают культю биосовместимой пастой, сверху ставят пломбу; девитальный: сначала под временной пломбой оставляют девитализирующее средство, а коронковую пульпу убирают в следующее посещение",
+				"when": "Глубокий кариес и пульпит молочного зуба, травма постоянного зуба с несформированным корнем, вскрытие пульпы при препарировании, когда корневую часть ещё можно сохранить",
+				"prep": "Подготовки нет; ребёнка лучше привести неголодным и в то время дня, когда он спокоен",
+				"abnormal": "Обычно зуб успокаивается за несколько дней, дальше его наблюдают на приёмах и по снимкам. Самопроизвольная боль, отёк десны или потемнение зуба означают, что нужно вернуться к стоматологу и обсудить лечение каналов"
+			},
+			"en": {
+				"what": "Removal of only the coronal part of the pulp, leaving the living pulp in the root canals",
+				"how": "In the vital version the chamber is opened under anaesthesia, the coronal pulp is cut away, bleeding is stopped and the stump covered with a biocompatible paste, then a filling is placed; in the devitalising version a devitalising agent is first left under a temporary filling and the coronal pulp is removed at the next visit",
+				"when": "Deep decay and pulpitis in a baby tooth, injury to a permanent tooth with an immature root, pulp exposure during drilling when the root part can still be preserved",
+				"prep": "No preparation; a child is better brought not hungry and at a time of day when they are calm",
+				"abnormal": "The tooth usually settles within a few days and is then watched at check-ups and on X-rays. Spontaneous pain, gum swelling or darkening of the tooth mean a return to the dentist and a discussion of root canal treatment"
+			},
+			"sr": {
+				"what": "Uklanjanje samo krunične pulpe uz očuvanje žive pulpe u korijenskim kanalima",
+				"how": "Kod vitalne varijante u anesteziji se otvori komora, krunična pulpa se odstrani, krvarenje zaustavi i patrljak prekrije biokompatibilnom pastom, a zatim se postavi plomba; kod mortalne se prvo pod privremenu plombu stavi sredstvo za devitalizaciju, pa se krunična pulpa uklanja u sljedećoj posjeti",
+				"when": "Duboki karijes i pulpitis mliječnog zuba, povreda stalnog zuba sa nezavršenim korijenom, otvaranje pulpe pri brušenju kada se korijenski dio još može sačuvati",
+				"prep": "Priprema nije potrebna; dijete je bolje dovesti sito i u doba dana kada je mirno",
+				"abnormal": "Zub se obično smiri za nekoliko dana, a dalje se prati na pregledima i snimcima. Spontana bol, otok desni ili tamnjenje zuba znače da treba ponovo kod stomatologa i razgovarati o liječenju kanala"
+			},
+			"de": {
+				"what": "Entfernung nur des kronenseitigen Pulpaanteils, während die lebende Pulpa in den Wurzelkanälen erhalten bleibt",
+				"how": "Bei der vitalen Variante wird die Kammer in Betäubung eröffnet, die Kronenpulpa abgetragen, die Blutung gestillt und der Stumpf mit einer biokompatiblen Paste abgedeckt, darauf kommt eine Füllung; bei der devitalen Variante wird zunächst ein devitalisierendes Mittel unter eine provisorische Füllung gelegt und die Kronenpulpa beim nächsten Termin entfernt",
+				"when": "Tiefe Karies und Pulpitis an einem Milchzahn, Verletzung eines bleibenden Zahns mit noch nicht abgeschlossenem Wurzelwachstum, Pulpaeröffnung beim Beschleifen, wenn der Wurzelanteil erhalten werden kann",
+				"prep": "Keine Vorbereitung; ein Kind kommt besser nicht hungrig und zu einer Tageszeit, zu der es ruhig ist",
+				"abnormal": "Der Zahn beruhigt sich meist innerhalb weniger Tage und wird danach bei Kontrollen und im Röntgenbild beobachtet. Spontaner Schmerz, Zahnfleischschwellung oder eine Dunkelfärbung des Zahns bedeuten, dass man erneut zum Zahnarzt gehen und eine Wurzelbehandlung besprechen sollte"
+			},
+			"tr": {
+				"what": "Kök kanallarındaki canlı pulpa korunarak yalnızca taç kısmındaki pulpanın çıkarılması",
+				"how": "Vital yöntemde anestezi altında oda açılır, taç pulpası uzaklaştırılır, kanama durdurulur ve güdük biyouyumlu bir patla örtülür, üzerine dolgu yapılır; devital yöntemde önce geçici dolgu altına devitalize edici bir madde konur ve taç pulpası sonraki seansta çıkarılır",
+				"when": "Süt dişinde derin çürük ve pulpitis, kök gelişimi tamamlanmamış daimi dişte travma, kök kısmının korunabildiği durumlarda kesim sırasında pulpanın açılması",
+				"prep": "Hazırlık gerekmez; çocuğu aç getirmemek ve sakin olduğu bir saatte gelmek daha iyidir",
+				"abnormal": "Diş genellikle birkaç gün içinde yatışır, sonrasında kontrollerde ve filmlerde izlenir. Kendiliğinden ağrı, diş etinde şişlik veya dişin kararması hekime yeniden başvurmayı ve kanal tedavisini konuşmayı gerektirir"
+			}
+		}
+	},
+	{
+		"slug": "root-canal-retreatment-multi-root-tooth",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Повторная обработка всех каналов ранее леченного многокорневого зуба",
+				"how": "Снимают коронку или пломбу, при необходимости извлекают штифт, из каждого канала растворителями и инструментами убирают старый материал, ищут непройденные каналы, затем всё промывают и пломбируют заново; обычно два и более посещения",
+				"when": "Боль или воспаление в леченом моляре или премоляре, изменения у верхушек корней на снимке, неплотно или не на всю длину запломбированные каналы, подготовка старого зуба под новую коронку",
+				"prep": "Принести прежние снимки и, если они есть, сведения о прошлом лечении; спланировать длительные приёмы",
+				"abnormal": "После ревизии зуб чаще, чем после первичного лечения, болезненно реагирует на накусывание в течение нескольких дней. Стойкая боль, отёк или свищ означают, что нужен внеплановый осмотр; заживление кости проверяют снимком спустя месяцы"
+			},
+			"en": {
+				"what": "Repeat treatment of all canals in a previously treated multi-rooted tooth",
+				"how": "The crown or filling is removed, a post is taken out if needed, old material is dissolved and removed from each canal, missed canals are searched for, then everything is rinsed and filled again; usually two or more visits",
+				"when": "Pain or inflammation in a treated molar or premolar, changes around the root tips on an X-ray, canals filled loosely or not to full length, preparing an old tooth for a new crown",
+				"prep": "Bring earlier X-rays and any information about the previous treatment; plan for long appointments",
+				"abnormal": "After retreatment the tooth is more often tender on biting for several days than after a first treatment. Persistent pain, swelling or a sinus tract call for an unscheduled examination; bone healing is checked on an X-ray months later"
+			},
+			"sr": {
+				"what": "Ponovna obrada svih kanala u ranije liječenom višekorijenom zubu",
+				"how": "Skine se krunica ili plomba, po potrebi izvadi kočić, iz svakog kanala se rastvaračima i instrumentima ukloni stari materijal, traže se neobrađeni kanali, pa se sve ispere i ponovo napuni; obično dvije ili više posjeta",
+				"when": "Bol ili upala u liječenom kutnjaku ili pretkutnjaku, promjene oko vrhova korijena na snimku, kanali napunjeni nedovoljno zbijeno ili ne do pune dužine, priprema starog zuba za novu krunicu",
+				"prep": "Ponijeti ranije snimke i podatke o prethodnom liječenju ako postoje; planirati duže termine",
+				"abnormal": "Nakon revizije zub češće nego poslije prvog liječenja nekoliko dana bolno reaguje na zagriz. Uporna bol, otok ili fistula traže vanredni pregled; zarastanje kosti provjerava se snimkom nakon nekoliko mjeseci"
+			},
+			"de": {
+				"what": "Erneute Aufbereitung aller Kanäle eines zuvor behandelten mehrwurzeligen Zahns",
+				"how": "Krone oder Füllung werden entfernt, bei Bedarf ein Stift gezogen, altes Material wird mit Lösungsmitteln und Instrumenten aus jedem Kanal entfernt, übersehene Kanäle werden gesucht, danach wird alles gespült und neu gefüllt; meist zwei oder mehr Sitzungen",
+				"when": "Schmerzen oder Entzündung an einem behandelten Molaren oder Prämolaren, Veränderungen an den Wurzelspitzen im Röntgenbild, undicht oder nicht auf voller Länge gefüllte Kanäle, Vorbereitung eines alten Zahns für eine neue Krone",
+				"prep": "Frühere Aufnahmen und vorhandene Angaben zur Vorbehandlung mitbringen; lange Termine einplanen",
+				"abnormal": "Nach einer Revision ist der Zahn häufiger als nach der Erstbehandlung einige Tage druckempfindlich. Anhaltende Schmerzen, Schwellung oder eine Fistel erfordern einen kurzfristigen Termin; die Knochenheilung wird Monate später im Röntgenbild überprüft"
+			},
+			"tr": {
+				"what": "Daha önce tedavi edilmiş çok köklü bir dişin tüm kanallarının yeniden işlenmesi",
+				"how": "Kron veya dolgu çıkarılır, gerekirse post sökülür, her kanaldaki eski materyal çözücüler ve aletlerle uzaklaştırılır, atlanmış kanallar aranır, ardından hepsi yıkanıp yeniden doldurulur; genellikle iki veya daha fazla seans",
+				"when": "Tedavi edilmiş azı veya küçük azıda ağrı ya da iltihap, filmde kök uçlarında değişiklikler, gevşek veya tam boyuna kadar doldurulmamış kanallar, eski dişin yeni kron için hazırlanması",
+				"prep": "Önceki filmleri ve varsa geçmiş tedaviye ilişkin bilgileri getirin; uzun randevular planlayın",
+				"abnormal": "Revizyondan sonra diş, ilk tedaviye kıyasla daha sık olarak birkaç gün ısırırken hassas olur. Süren ağrı, şişlik veya fistül randevu dışı muayene gerektirir; kemik iyileşmesi aylar sonra filmle değerlendirilir"
+			}
+		}
+	},
+	{
+		"slug": "rubber-dam-application",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Изоляция рабочего зуба тонким латексным или силиконовым платком, натянутым на рамку и закреплённым зажимом",
+				"how": "На зуб надевают металлический зажим, платок с отверстием натягивают на рамку и уплотняют край; установка занимает несколько минут и выполняется перед основным вмешательством",
+				"when": "Лечение каналов, композитные пломбы и виниры, отбеливание, работа с агрессивными растворами, обильное слюноотделение и выраженный рвотный рефлекс",
+				"prep": "Подготовки не нужно; сказать врачу об аллергии на латекс — тогда используют безлатексный платок",
+				"abnormal": "Собственного результата у процедуры нет: платок защищает зуб от слюны, а дыхательные пути — от инструментов и растворов. После снятия возможна лёгкая чувствительность десны у зажима, она проходит за день, а если держится дольше, об этом стоит сказать стоматологу"
+			},
+			"en": {
+				"what": "Isolation of the tooth being treated with a thin latex or silicone sheet stretched on a frame and held by a clamp",
+				"how": "A metal clamp is placed on the tooth, the sheet with a punched hole is stretched over a frame and its edge is sealed; it takes a few minutes and is done before the main procedure",
+				"when": "Root canal treatment, composite fillings and veneers, whitening, work with aggressive solutions, heavy salivation and a strong gag reflex",
+				"prep": "No preparation needed; tell the dentist about a latex allergy so that a latex-free sheet is used",
+				"abnormal": "The procedure has no result of its own: the sheet keeps saliva away from the tooth and protects the airway from instruments and solutions. After it is removed, slight gum tenderness at the clamp is possible and passes within a day, but lasting soreness is worth mentioning to the dentist"
+			},
+			"sr": {
+				"what": "Izolacija zuba koji se liječi tankom lateks ili silikonskom folijom razapetom na ramu i pričvršćenom kopčom",
+				"how": "Na zub se postavi metalna kopča, folija sa izbušenim otvorom razapne se preko rama, a rub se zaptije; postavljanje traje nekoliko minuta i radi se prije samog zahvata",
+				"when": "Liječenje kanala, kompozitne plombe i ljuspice, izbjeljivanje, rad sa agresivnim rastvorima, obilno lučenje pljuvačke i izražen refleks povraćanja",
+				"prep": "Priprema nije potrebna; reći stomatologu za alergiju na lateks, pa se koristi folija bez lateksa",
+				"abnormal": "Zahvat nema svoj nalaz: folija štiti zub od pljuvačke, a disajne puteve od instrumenata i rastvora. Nakon skidanja moguća je blaga osjetljivost desni oko kopče koja prolazi za dan, a ako potraje, treba to reći stomatologu"
+			},
+			"de": {
+				"what": "Isolierung des zu behandelnden Zahns mit einem dünnen Latex- oder Silikontuch, das auf einen Rahmen gespannt und mit einer Klammer gehalten wird",
+				"how": "Eine Metallklammer wird auf den Zahn gesetzt, das gelochte Tuch über einen Rahmen gespannt und der Rand abgedichtet; das dauert wenige Minuten und geschieht vor dem eigentlichen Eingriff",
+				"when": "Wurzelkanalbehandlung, Kompositfüllungen und Veneers, Bleaching, Arbeiten mit aggressiven Lösungen, starker Speichelfluss und ausgeprägter Würgereiz",
+				"prep": "Keine Vorbereitung nötig; eine Latexallergie angeben, dann wird ein latexfreies Tuch verwendet",
+				"abnormal": "Der Eingriff hat keinen eigenen Befund: das Tuch hält Speichel vom Zahn fern und schützt die Atemwege vor Instrumenten und Lösungen. Nach dem Abnehmen ist eine leichte Empfindlichkeit des Zahnfleischs an der Klammer möglich, die binnen eines Tages vergeht; hält sie an, sollte man es dem Zahnarzt sagen"
+			},
+			"tr": {
+				"what": "Tedavi edilecek dişin, çerçeveye gerilip klemple tutturulan ince lateks veya silikon bir örtüyle izole edilmesi",
+				"how": "Dişe metal bir klemp takılır, delinmiş örtü çerçeveye gerilir ve kenarı sızdırmaz hale getirilir; birkaç dakika sürer ve asıl işlemden önce yapılır",
+				"when": "Kanal tedavisi, kompozit dolgu ve laminalar, beyazlatma, güçlü solüsyonlarla çalışma, aşırı tükürük ve belirgin öğürme refleksi",
+				"prep": "Hazırlık gerekmez; lateks alerjiniz varsa söyleyin, latekssiz örtü kullanılır",
+				"abnormal": "İşlemin kendine ait bir sonucu yoktur: örtü dişi tükürükten, solunum yolunu ise aletlerden ve solüsyonlardan korur. Çıkarıldıktan sonra klempin oturduğu yerde hafif diş eti hassasiyeti olabilir ve bir gün içinde geçer; sürerse hekime bildirilmelidir"
+			}
+		}
+	},
+	{
+		"slug": "single-segment-cbct-scan",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Прицельная конусно-лучевая томограмма ограниченного участка челюсти вместо съёмки обеих челюстей целиком",
+				"how": "Голову фиксируют, аппарат обходит её за несколько десятков секунд и снимает только выбранный сегмент, что даёт мелкую детализацию при меньшей зоне облучения; визит около десяти минут",
+				"when": "Один проблемный зуб или группа рядом стоящих, планирование импланта в конкретном месте, поиск непройденного канала, перелом корня, положение одного ретинированного зуба",
+				"prep": "Снять серьги, пирсинг, съёмные протезы и очки; сообщить о беременности",
+				"abnormal": "Найденные изменения могут быть связаны с воспалением у корня, трещиной, кистой или нехваткой кости, и описывает их врач. План лечения по снимку определяет стоматолог на очном приёме"
+			},
+			"en": {
+				"what": "A targeted cone beam scan of a limited area of the jaw instead of imaging both jaws in full",
+				"how": "The head is fixed, the machine travels around it for a few dozen seconds and captures only the chosen segment, which gives fine detail over a smaller irradiated area; the visit takes about ten minutes",
+				"when": "One problem tooth or a group of neighbouring teeth, planning an implant at a specific site, searching for a missed canal, a root fracture, the position of a single impacted tooth",
+				"prep": "Remove earrings, piercings, removable dentures and glasses; report pregnancy",
+				"abnormal": "Findings may be related to inflammation at a root, a crack, a cyst or a lack of bone, and they are described by a doctor. The treatment plan based on the scan is set by the dentist at an in-person appointment"
+			},
+			"sr": {
+				"what": "Ciljani CBCT snimak ograničenog dijela vilice umjesto snimanja obje vilice u cjelini",
+				"how": "Glava se fiksira, aparat je obiđe za nekoliko desetina sekundi i snima samo izabrani segment, što daje sitan detalj uz manju ozračenu zonu; posjeta traje oko deset minuta",
+				"when": "Jedan problematičan zub ili grupa susjednih zuba, planiranje implanta na tačnom mjestu, traženje neobrađenog kanala, prelom korijena, položaj jednog impaktiranog zuba",
+				"prep": "Skinuti minđuše, pirsing, pokretne proteze i naočare; prijaviti trudnoću",
+				"abnormal": "Nađene promjene mogu biti povezane sa upalom oko korijena, pukotinom, cistom ili manjkom kosti, a opisuje ih ljekar. Plan liječenja na osnovu snimka određuje stomatolog na pregledu"
+			},
+			"de": {
+				"what": "Eine gezielte digitale Volumentomographie eines begrenzten Kieferabschnitts statt einer Aufnahme beider Kiefer",
+				"how": "Der Kopf wird fixiert, das Gerät umrundet ihn in einigen Dutzend Sekunden und erfasst nur den gewählten Abschnitt, was feine Details bei kleinerem Strahlenfeld liefert; der Besuch dauert etwa zehn Minuten",
+				"when": "Ein einzelner Problemzahn oder eine Gruppe benachbarter Zähne, Implantatplanung an einer bestimmten Stelle, Suche nach einem übersehenen Kanal, Wurzelfraktur, Lage eines einzelnen verlagerten Zahns",
+				"prep": "Ohrringe, Piercings, herausnehmbaren Zahnersatz und Brille ablegen; eine Schwangerschaft angeben",
+				"abnormal": "Befunde können mit einer Entzündung an der Wurzel, einem Riss, einer Zyste oder fehlendem Knochen zusammenhängen und werden von einem Arzt beschrieben. Den Behandlungsplan legt der Zahnarzt bei der persönlichen Untersuchung fest"
+			},
+			"tr": {
+				"what": "Her iki çeneyi birden görüntülemek yerine çenenin sınırlı bir bölgesinin hedefli konik ışınlı tomografisi",
+				"how": "Baş sabitlenir, cihaz birkaç on saniye içinde çevresinde döner ve yalnızca seçilen bölümü çeker; bu, daha küçük bir ışınlama alanında ince ayrıntı sağlar, ziyaret yaklaşık on dakika sürer",
+				"when": "Tek bir sorunlu diş veya yan yana birkaç diş, belirli bir bölgede implant planlaması, atlanmış kanalın aranması, kök kırığı, gömülü tek bir dişin konumu",
+				"prep": "Küpe, piercing, hareketli protez ve gözlüğü çıkarın; gebeliği bildirin",
+				"abnormal": "Bulgular kök çevresindeki iltihap, çatlak, kist veya kemik eksikliğiyle ilişkili olabilir ve bunları bir hekim raporlar. Görüntüye dayalı tedavi planını diş hekimi muayenede belirler"
+			}
+		}
+	},
+	{
+		"slug": "tooth-contouring",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Аккуратное сошлифовывание эмали, чтобы изменить форму, длину или край зуба",
+				"how": "Мелкозернистым бором и полировочными дисками снимают тонкий слой эмали, край сглаживают и полируют; без анестезии, 10-20 минут на зуб",
+				"when": "Неровный или сколотый край резца, слегка выступающий или острый бугор, разная длина соседних зубов, подгонка формы перед винирами и после ортодонтического лечения",
+				"prep": "Подготовки нет; обсудить со стоматологом желаемую форму и проверить, сколько эмали можно снять без вреда",
+				"abnormal": "Иногда в первые дни зуб слегка реагирует на холодное, это проходит. Если чувствительность держится или край снова скалывается, нужно показаться врачу: причина может быть в прикусе"
+			},
+			"en": {
+				"what": "Careful reshaping of enamel to change the form, length or edge of a tooth",
+				"how": "A fine bur and polishing discs remove a thin layer of enamel, then the edge is smoothed and polished; no anaesthesia, 10-20 minutes per tooth",
+				"when": "An uneven or chipped incisal edge, a slightly protruding or sharp cusp, neighbouring teeth of different length, adjusting shape before veneers and after orthodontic treatment",
+				"prep": "No preparation; discuss the desired shape with the dentist and check how much enamel can be removed safely",
+				"abnormal": "The tooth may react slightly to cold for the first days, which passes. If sensitivity persists or the edge chips again, see the dentist: the bite may be the reason"
+			},
+			"sr": {
+				"what": "Pažljivo brušenje gleđi radi promjene oblika, dužine ili ruba zuba",
+				"how": "Finim svrdlom i diskovima za poliranje skida se tanak sloj gleđi, a rub se zagladi i ispolira; bez anestezije, 10-20 minuta po zubu",
+				"when": "Neravan ili okrznut rub sjekutića, blago isturena ili oštra kvržica, susjedni zubi različite dužine, dorada oblika prije ljuspica i poslije ortodontske terapije",
+				"prep": "Priprema nije potrebna; sa stomatologom dogovoriti željeni oblik i provjeriti koliko se gleđi može skinuti bez štete",
+				"abnormal": "Prvih dana zub ponekad blago reaguje na hladno, što prolazi. Ako osjetljivost potraje ili se rub ponovo okrzne, treba na pregled: uzrok može biti u zagrizu"
+			},
+			"de": {
+				"what": "Behutsames Beschleifen des Zahnschmelzes, um Form, Länge oder Kante eines Zahns zu verändern",
+				"how": "Mit feinem Bohrer und Polierscheiben wird eine dünne Schmelzschicht abgetragen, die Kante geglättet und poliert; ohne Betäubung, 10-20 Minuten je Zahn",
+				"when": "Unregelmäßige oder abgesplitterte Schneidekante, leicht vorstehender oder scharfer Höcker, unterschiedlich lange Nachbarzähne, Formanpassung vor Veneers und nach kieferorthopädischer Behandlung",
+				"prep": "Keine Vorbereitung; die gewünschte Form mit dem Zahnarzt besprechen und prüfen, wie viel Schmelz gefahrlos abgetragen werden kann",
+				"abnormal": "In den ersten Tagen reagiert der Zahn manchmal leicht auf Kälte, das vergeht. Hält die Empfindlichkeit an oder bricht die Kante erneut ab, sollte man zum Zahnarzt: die Ursache kann im Biss liegen"
+			},
+			"tr": {
+				"what": "Bir dişin biçimini, boyunu veya kenarını değiştirmek için mineye yapılan dikkatli aşındırma",
+				"how": "İnce frez ve cila diskleriyle ince bir mine tabakası alınır, kenar düzeltilip parlatılır; anestezisiz, diş başına 10-20 dakika",
+				"when": "Kesici kenarda düzensizlik veya kırık, hafif çıkık ya da keskin tüberkül, yan yana dişlerin farklı boyda olması, laminalardan önce ve ortodontik tedaviden sonra biçim düzeltmesi",
+				"prep": "Hazırlık gerekmez; istenen biçimi hekimle konuşun ve ne kadar mine alınabileceğini birlikte değerlendirin",
+				"abnormal": "İlk günlerde diş bazen soğuğa hafif tepki verir, bu geçer. Hassasiyet sürerse veya kenar yeniden kırılırsa hekime görünmek gerekir: nedeni kapanış olabilir"
+			}
+		}
+	},
+	{
+		"slug": "vital-extirpation-of-multi-root-teeth-with-definitive-filling",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Полное удаление живой пульпы из всех каналов многокорневого зуба с постоянным пломбированием каналов",
+				"how": "Под анестезией зуб изолируют, пульпу извлекают из каждого канала, каналы обрабатывают до рабочей длины, промывают, высушивают и в то же лечение заполняют постоянным материалом с гуттаперчей; полтора часа и больше",
+				"when": "Пульпит моляра или премоляра, подготовка зуба с живым нервом под коронку или бюгельный протез, сильное разрушение коронковой части, травма с обнажением пульпы жевательного зуба",
+				"prep": "Поесть заранее, сообщить об аллергии на анестетики и о лекарствах, влияющих на свёртываемость крови",
+				"abnormal": "Несколько дней после постоянного пломбирования каналов зуб может побаливать при жевании. Если боль растёт, появляется отёк или зуб мешает смыканию, нужен осмотр; чем восстановить коронковую часть, решает стоматолог"
+			},
+			"en": {
+				"what": "Complete removal of living pulp from all canals of a multi-rooted tooth with permanent sealing of the canals",
+				"how": "Under anaesthesia the tooth is isolated, the pulp is taken out of every canal, the canals are shaped to working length, rinsed, dried and filled in the same course with a permanent material and gutta-percha; an hour and a half or more",
+				"when": "Pulpitis of a molar or premolar, preparing a tooth with a live nerve for a crown or a partial denture, heavy destruction of the crown, injury exposing the pulp of a back tooth",
+				"prep": "Eat beforehand, report allergies to anaesthetics and medicines that affect blood clotting",
+				"abnormal": "For a few days after the canals are permanently filled the tooth may ache while chewing. If the pain increases, swelling appears or the tooth interferes with closing, an examination is needed; the dentist then decides how to rebuild the crown"
+			},
+			"sr": {
+				"what": "Potpuno uklanjanje žive pulpe iz svih kanala višekorijenog zuba uz trajno punjenje kanala",
+				"how": "U anesteziji se zub izoluje, pulpa se izvadi iz svakog kanala, kanali se obrade do radne dužine, isperu, osuše i u istom liječenju napune trajnim materijalom sa gutaperkom; sat i po i više",
+				"when": "Pulpitis kutnjaka ili pretkutnjaka, priprema zuba sa živim živcem za krunicu ili skeletiranu protezu, veliko razaranje krune zuba, povreda sa otkrivenom pulpom zadnjeg zuba",
+				"prep": "Jesti unaprijed, prijaviti alergiju na anestetike i lijekove koji utiču na zgrušavanje krvi",
+				"abnormal": "Nekoliko dana nakon trajnog punjenja kanala zub može boljeti pri žvakanju. Ako bol raste, javi se otok ili zub smeta pri zagrizu, potreban je pregled; čime će se kruna zuba nadoknaditi odlučuje stomatolog"
+			},
+			"de": {
+				"what": "Vollständige Entfernung der lebenden Pulpa aus allen Kanälen eines mehrwurzeligen Zahns mit definitiver Wurzelfüllung",
+				"how": "In Betäubung wird der Zahn isoliert, die Pulpa aus jedem Kanal entnommen, die Kanäle bis zur Arbeitslänge aufbereitet, gespült, getrocknet und im selben Behandlungsgang mit einem definitiven Material und Guttapercha gefüllt; anderthalb Stunden und mehr",
+				"when": "Pulpitis eines Molaren oder Prämolaren, Vorbereitung eines Zahns mit vitalem Nerv für eine Krone oder eine Teilprothese, weitgehend zerstörte Zahnkrone, Verletzung mit freiliegender Pulpa eines Backenzahns",
+				"prep": "Vorher essen, Allergien gegen Betäubungsmittel und gerinnungswirksame Medikamente angeben",
+				"abnormal": "Einige Tage nach der definitiven Wurzelfüllung kann der Zahn beim Kauen schmerzen. Nehmen die Schmerzen zu, tritt eine Schwellung auf oder stört der Zahn beim Schließen, ist eine Untersuchung nötig; wie die Zahnkrone wieder aufgebaut wird, entscheidet der Zahnarzt"
+			},
+			"tr": {
+				"what": "Çok köklü bir dişin tüm kanallarından canlı pulpanın tümüyle çıkarılması ve kanalların kalıcı olarak doldurulması",
+				"how": "Anestezi altında diş izole edilir, pulpa her kanaldan çıkarılır, kanallar çalışma boyuna kadar şekillendirilir, yıkanır, kurutulur ve aynı tedavide kalıcı materyal ile gütaperka kullanılarak doldurulur; bir buçuk saat ve üzeri",
+				"when": "Azı veya küçük azı dişi pulpiti, canlı sinirli bir dişin kron ya da bölümlü protez için hazırlanması, dişin taç kısmının ileri derecede yıkımı, arka dişte pulpayı açığa çıkaran travma",
+				"prep": "Önceden yemek yiyin, anestezik alerjilerinizi ve kan pıhtılaşmasını etkileyen ilaçları bildirin",
+				"abnormal": "Kanallar kalıcı olarak doldurulduktan sonra diş birkaç gün çiğnerken ağrıyabilir. Ağrı artarsa, şişlik olursa veya diş kapanışı engellerse muayene gerekir; taç kısmının nasıl yeniden yapılacağına hekim karar verir"
+			}
+		}
+	},
+	{
+		"slug": "vital-extirpation-of-single-root-teeth-with-definitive-filling",
+		"entity_type": "medical_service",
+		"translations": {
+			"ru": {
+				"what": "Удаление живой пульпы из единственного канала зуба с постоянным пломбированием этого канала в то же лечение",
+				"how": "После анестезии и изоляции пульпу извлекают целиком, канал проходят до верхушки корня, промывают, высушивают и сразу пломбируют постоянным материалом; как правило, один приём",
+				"when": "Пульпит резца или клыка, депульпирование перед штифтом и коронкой, значительный скол с обнажением пульпы, ортопедические показания при наклонённом зубе",
+				"prep": "Специальной подготовки нет; принести снимок, если он делался, и предупредить о хронических болезнях",
+				"abnormal": "Лёгкая чувствительность при накусывании в первые дни ожидаема. Затянувшаяся боль, отёк или потемнение коронки — повод вернуться к врачу; результат контролируют снимком"
+			},
+			"en": {
+				"what": "Removal of the living pulp from the single canal of a tooth with permanent filling of that canal in the same course of treatment",
+				"how": "After anaesthesia and isolation the pulp is taken out whole, the canal is shaped to the root tip, rinsed, dried and immediately filled with a permanent material; as a rule one appointment",
+				"when": "Pulpitis of an incisor or canine, devitalising a tooth before a post and crown, a large fracture exposing the pulp, prosthetic reasons when a tooth is tilted",
+				"prep": "No special preparation; bring an X-ray if one was taken and report chronic conditions",
+				"abnormal": "Slight tenderness on biting in the first days is expected. Prolonged pain, swelling or darkening of the crown are reasons to return to the dentist; the result is checked on an X-ray"
+			},
+			"sr": {
+				"what": "Uklanjanje žive pulpe iz jedinog kanala zuba uz trajno punjenje tog kanala u istom liječenju",
+				"how": "Nakon anestezije i izolacije pulpa se izvadi u cjelini, kanal se obradi do vrha korijena, ispere, osuši i odmah napuni trajnim materijalom; po pravilu jedan dolazak",
+				"when": "Pulpitis sjekutića ili očnjaka, devitalizacija zuba prije kočića i krunice, veliki odlom sa otkrivenom pulpom, protetski razlozi kod nagnutog zuba",
+				"prep": "Posebna priprema nije potrebna; ponijeti snimak ako je rađen i prijaviti hronične bolesti",
+				"abnormal": "Blaga osjetljivost pri zagrizu prvih dana je očekivana. Bol koja se odužila, otok ili tamnjenje krunice razlog su za povratak stomatologu; ishod se provjerava snimkom"
+			},
+			"de": {
+				"what": "Entfernung der lebenden Pulpa aus dem einzigen Kanal eines Zahns mit definitiver Füllung dieses Kanals im selben Behandlungsgang",
+				"how": "Nach Betäubung und Isolierung wird die Pulpa im Ganzen entnommen, der Kanal bis zur Wurzelspitze aufbereitet, gespült, getrocknet und sofort mit einem definitiven Material gefüllt; in der Regel eine Sitzung",
+				"when": "Pulpitis eines Schneide- oder Eckzahns, Devitalisierung eines Zahns vor Stift und Krone, größerer Abbruch mit freiliegender Pulpa, prothetische Gründe bei gekipptem Zahn",
+				"prep": "Keine besondere Vorbereitung; eine vorhandene Aufnahme mitbringen und chronische Erkrankungen angeben",
+				"abnormal": "Eine leichte Druckempfindlichkeit in den ersten Tagen ist zu erwarten. Länger anhaltender Schmerz, Schwellung oder eine Dunkelfärbung der Krone sind Gründe, erneut zum Zahnarzt zu gehen; das Ergebnis wird im Röntgenbild überprüft"
+			},
+			"tr": {
+				"what": "Dişin tek kanalındaki canlı pulpanın çıkarılması ve bu kanalın aynı tedavide kalıcı olarak doldurulması",
+				"how": "Anestezi ve izolasyondan sonra pulpa bütün olarak alınır, kanal kök ucuna kadar şekillendirilir, yıkanır, kurutulur ve hemen kalıcı materyalle doldurulur; kural olarak tek seans",
+				"when": "Kesici veya köpek dişi pulpiti, post ve kron öncesi dişin devitalize edilmesi, pulpayı açığa çıkaran büyük kırık, eğik diş nedeniyle protetik gerekçeler",
+				"prep": "Özel bir hazırlık gerekmez; çekilmişse filminizi getirin ve kronik hastalıklarınızı bildirin",
+				"abnormal": "İlk günlerde ısırırken hafif hassasiyet beklenir. Uzayan ağrı, şişlik veya taç kısmının kararması hekime yeniden başvurma nedenidir; sonuç filmle değerlendirilir"
+			}
+		}
+	}
+]

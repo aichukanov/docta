@@ -1,330 +1,722 @@
 [
-	{
-		"slug": "ecg-recording-and-interpretation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Снятие электрокардиограммы с последующим письменным заключением врача по полученной кривой",
-				"how": "На грудь, запястья и лодыжки накладывают электроды, аппарат записывает кривую за несколько минут, затем врач анализирует ритм, частоту, проведение и форму зубцов и пишет заключение",
-				"when": "Боль в груди, сердцебиение и перебои, обморок, контроль при гипертонии и при приёме препаратов, влияющих на ритм, обследование перед операцией и для справок",
-				"prep": "Подготовка не нужна; перед записью стоит посидеть спокойно несколько минут, не наносить крем и масло на кожу груди, прийти в одежде, которую легко снять до пояса",
-				"abnormal": "Отклонения на кривой могут быть связаны с нарушением ритма или проведения, перегрузкой отделов сердца, нарушением обмена электролитов, а иногда с положением электродов или волнением. Значение записи определяет кардиолог, сопоставляя её с жалобами и прежними плёнками"
-			},
-			"en": {
-				"what": "Recording of the heart's electrical activity followed by a written report from the doctor who reads the tracing",
-				"how": "Electrodes are placed on the chest, wrists and ankles, the machine records the tracing in a few minutes, then the doctor reviews rhythm, rate, conduction and wave shape and writes the report",
-				"when": "Chest pain, palpitations or skipped beats, fainting, follow-up of high blood pressure and of medicines that affect rhythm, assessment before surgery and for medical certificates",
-				"prep": "No preparation is needed; sit quietly for a few minutes before the recording, do not put cream or oil on the chest, and wear clothes that are easy to remove to the waist",
-				"abnormal": "Changes in the tracing may be related to rhythm or conduction problems, strain on parts of the heart, electrolyte imbalance, and sometimes to electrode position or anxiety. The cardiologist decides what the recording means by comparing it with the symptoms and with earlier tracings"
-			},
-			"sr": {
-				"what": "Snimanje električne aktivnosti srca i pisani nalaz ljekara koji očitava krivulju",
-				"how": "Elektrode se postavljaju na grudni koš, zglobove ruku i gležnjeve, aparat snima krivulju za nekoliko minuta, a zatim ljekar analizira ritam, frekvenciju, provodljivost i oblik zubaca i piše nalaz",
-				"when": "Bol u grudima, lupanje srca i preskakanje, nesvjestica, praćenje povišenog pritiska i terapije koja utiče na ritam, procjena prije operacije i za ljekarska uvjerenja",
-				"prep": "Priprema nije potrebna; prije snimanja sjedite mirno nekoliko minuta, ne stavljajte kremu ni ulje na kožu grudi i obucite odjeću koju je lako skinuti do pojasa",
-				"abnormal": "Promjene na krivulji mogu biti povezane sa poremećajem ritma ili provođenja, opterećenjem dijelova srca, poremećajem elektrolita, a ponekad i sa položajem elektroda ili uzbuđenjem. Značenje snimka procjenjuje kardiolog upoređujući ga sa tegobama i ranijim snimcima"
-			},
-			"de": {
-				"what": "Aufzeichnung der elektrischen Herzaktivität mit anschließender schriftlicher Befundung der Kurve durch den Arzt",
-				"how": "Elektroden werden an Brustkorb, Handgelenken und Knöcheln angebracht, das Gerät zeichnet die Kurve in wenigen Minuten auf, danach beurteilt der Arzt Rhythmus, Frequenz, Erregungsleitung und Zackenform und schreibt den Befund",
-				"when": "Brustschmerz, Herzklopfen und Aussetzer, Ohnmacht, Kontrolle bei Bluthochdruck und bei Medikamenten mit Wirkung auf den Rhythmus, Abklärung vor Operationen und für Atteste",
-				"prep": "Keine Vorbereitung nötig; vor der Aufzeichnung einige Minuten ruhig sitzen, keine Creme oder Öl auf die Brust auftragen und Kleidung tragen, die sich bis zur Taille leicht ablegen lässt",
-				"abnormal": "Veränderungen der Kurve können mit Rhythmus- oder Leitungsstörungen, Belastung von Herzabschnitten, Elektrolytstörungen und manchmal mit der Elektrodenlage oder Aufregung zusammenhängen. Was die Aufzeichnung bedeutet, beurteilt der Kardiologe im Vergleich mit den Beschwerden und früheren Kurven"
-			},
-			"tr": {
-				"what": "Kalbin elektriksel etkinliğinin kaydı ve kaydı okuyan hekimin yazılı yorumu",
-				"how": "Göğse, bileklere ve ayak bileklerine elektrotlar yerleştirilir, cihaz kaydı birkaç dakikada alır, ardından hekim ritmi, hızı, iletimi ve dalga şeklini değerlendirip raporu yazar",
-				"when": "Göğüs ağrısı, çarpıntı ve atlama hissi, bayılma, yüksek tansiyonun ve ritmi etkileyen ilaçların takibi, ameliyat öncesi değerlendirme ve sağlık raporları",
-				"prep": "Hazırlık gerekmez; kayıttan önce birkaç dakika sakin oturun, göğüs cildine krem veya yağ sürmeyin ve bele kadar kolay çıkarılabilen kıyafet giyin",
-				"abnormal": "Kayıttaki değişiklikler ritim veya iletim bozukluğu, kalp bölümlerinin zorlanması, elektrolit dengesizliği, bazen de elektrot konumu veya heyecanla ilişkili olabilir. Kaydın anlamını kardiyolog şikâyetler ve önceki kayıtlarla birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "ergospirometry",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Нагрузочный тест, при котором одновременно измеряют работу сердца и газообмен в лёгких",
-				"how": "Пациент крутит педали велоэргометра или идёт по дорожке в маске, через которую анализируют вдыхаемый и выдыхаемый воздух, одновременно идёт запись ЭКГ, пульса, насыщения крови кислородом и давления; нагрузку наращивают ступенями под контролем врача, визит занимает около часа",
-				"when": "Одышка неясного происхождения, когда надо разделить сердечную и лёгочную причину, оценка переносимости нагрузки при хронических болезнях сердца и лёгких, подготовка к большим операциям и к трансплантации, планирование тренировок в спортивной медицине и в реабилитации",
-				"prep": "Удобная спортивная одежда и обувь, лёгкая еда за пару часов, без кофе и курения перед тестом; приём препаратов обсудить с врачом заранее и ничего не отменять самостоятельно, взять ингалятор, если вы им пользуетесь",
-				"abnormal": "Ограничение работоспособности может быть связано с сердечными, лёгочными, сосудистыми причинами или с общей детренированностью. Кривые газообмена разбирает кардиолог или пульмонолог, направивший на тест, он же определяет дальнейшие шаги"
-			},
-			"en": {
-				"what": "Exercise test that measures the work of the heart and the gas exchange in the lungs at the same time",
-				"how": "The patient pedals a bicycle ergometer or walks on a treadmill wearing a mask that analyses inhaled and exhaled air, while ECG, pulse, blood oxygen and blood pressure are recorded; the load is raised in steps under medical supervision and the visit takes about an hour",
-				"when": "Unexplained breathlessness when a heart cause has to be told apart from a lung cause, assessment of exercise tolerance in chronic heart and lung disease, work-up before major surgery and before transplantation, planning of training in sports medicine and rehabilitation",
-				"prep": "Comfortable sports clothes and shoes, a light meal a couple of hours before, no coffee and no smoking before the test; discuss your medicines with the doctor in advance instead of stopping them yourself, and bring your inhaler if you use one",
-				"abnormal": "Limited performance may be related to cardiac, pulmonary or vascular causes, or simply to being out of training. The gas exchange curves are interpreted by the cardiologist or pulmonologist who ordered the test, who also decides on the next steps"
-			},
-			"sr": {
-				"what": "Test opterećenja na kojem se istovremeno mjere rad srca i razmjena gasova u plućima",
-				"how": "Pacijent vozi bicikl ergometar ili hoda na traci sa maskom preko koje se analizira udahnuti i izdahnuti vazduh, uz istovremeno praćenje EKG-a, pulsa, zasićenja krvi kiseonikom i pritiska; opterećenje se povećava u stepenima uz nadzor ljekara, a posjeta traje oko sat vremena",
-				"when": "Gušenje nejasnog porijekla kada treba razdvojiti srčani i plućni uzrok, procjena podnošenja napora kod hroničnih bolesti srca i pluća, priprema za velike operacije i za transplantaciju, planiranje treninga u sportskoj medicini i u rehabilitaciji",
-				"prep": "Udobna sportska odjeća i obuća, lagan obrok par sati ranije, bez kafe i cigareta prije testa; o terapiji se dogovorite sa ljekarom unaprijed i ništa ne prekidajte sami, a ponesite inhalator ako ga koristite",
-				"abnormal": "Ograničena radna sposobnost može biti povezana sa srčanim, plućnim ili krvnosudovnim uzrocima, ali i sa opštom netreniranošću. Krivulje razmjene gasova tumači kardiolog ili pulmolog koji je test tražio i on određuje dalje korake"
-			},
-			"de": {
-				"what": "Belastungstest, bei dem die Herzarbeit und der Gasaustausch in der Lunge gleichzeitig gemessen werden",
-				"how": "Der Patient tritt auf dem Fahrradergometer oder geht auf dem Laufband mit einer Maske, über die Ein- und Ausatemluft analysiert wird, währenddessen laufen EKG, Puls, Sauerstoffsättigung und Blutdruckmessung; die Belastung wird stufenweise unter ärztlicher Aufsicht gesteigert, der Termin dauert etwa eine Stunde",
-				"when": "Unklare Luftnot, wenn eine kardiale von einer pulmonalen Ursache zu trennen ist, Beurteilung der Belastbarkeit bei chronischen Herz- und Lungenerkrankungen, Abklärung vor großen Operationen und vor Transplantation, Trainingsplanung in Sportmedizin und Rehabilitation",
-				"prep": "Bequeme Sportkleidung und Sportschuhe, eine leichte Mahlzeit einige Stunden vorher, kein Kaffee und kein Rauchen vor dem Test; Medikamente vorher mit dem Arzt besprechen und nicht eigenmächtig absetzen, Inhalator mitbringen, falls vorhanden",
-				"abnormal": "Eine eingeschränkte Leistungsfähigkeit kann kardiale, pulmonale oder gefäßbedingte Ursachen haben oder auch nur Ausdruck fehlenden Trainings sein. Die Kurven des Gasaustauschs beurteilt der überweisende Kardiologe oder Pneumologe und legt das weitere Vorgehen fest"
-			},
-			"tr": {
-				"what": "Kalbin çalışmasını ve akciğerlerdeki gaz alışverişini aynı anda ölçen efor testi",
-				"how": "Hasta maske takarak bisiklet ergometresinde pedal çevirir veya yürüme bandında yürür, maskeden alınan ve verilen hava analiz edilirken EKG, nabız, kandaki oksijen doygunluğu ve tansiyon izlenir; yük hekim gözetiminde kademeli artırılır, işlem yaklaşık bir saat sürer",
-				"when": "Kalp ve akciğer nedeninin ayrılması gereken, nedeni belirsiz nefes darlığı, kronik kalp ve akciğer hastalıklarında efor kapasitesinin değerlendirilmesi, büyük ameliyat ve nakil öncesi hazırlık, spor hekimliğinde ve rehabilitasyonda antrenman planlaması",
-				"prep": "Rahat spor kıyafeti ve ayakkabı, testten birkaç saat önce hafif bir öğün, kahve ve sigara içmemek; ilaçlarınızı kendiniz kesmeyin, önceden hekimle konuşun ve kullanıyorsanız inhalerinizi yanınıza alın",
-				"abnormal": "Düşük efor kapasitesi kalp, akciğer veya damar kaynaklı olabileceği gibi yalnızca kondisyon eksikliğine de bağlı olabilir. Gaz alışverişi eğrilerini testi isteyen kardiyolog veya göğüs hastalıkları uzmanı yorumlar ve sonraki adımları belirler"
-			}
-		}
-	},
-	{
-		"slug": "transesophageal-echocardiography-tee",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "УЗИ сердца, при котором датчик вводят в пищевод, чтобы рассмотреть структуры сердца вблизи, без помехи от рёбер и лёгких",
-				"how": "Горло обезболивают спреем, при необходимости дают лёгкое успокоительное, затем через рот вводят тонкий гибкий зонд с ультразвуковым датчиком и осматривают клапаны, предсердия и перегородку; сама съёмка занимает около двадцати минут, после неё нужно время на наблюдение",
-				"when": "Подозрение на тромб в предсердии перед восстановлением ритма, оценка клапанов и протезов клапанов, поиск источника эмболии после инсульта, подозрение на инфекцию внутренней оболочки сердца, уточнение находок обычного УЗИ сердца, контроль во время операций на сердце",
-				"prep": "Не есть несколько часов до исследования по указанию клиники, снять съёмные зубные протезы, предупредить о заболеваниях пищевода и об аллергии на обезболивающие; при седации нужен сопровождающий, за руль в этот день нельзя",
-				"abnormal": "Находки могут быть связаны с изменениями клапанов, тромбом в полостях, дефектом перегородки или наложениями на клапанах. Першение и дискомфорт в горле в течение суток после исследования обычны; заключение и дальнейшую тактику определяет кардиолог"
-			},
-			"en": {
-				"what": "Ultrasound of the heart in which the probe is passed into the oesophagus, so the structures are seen close up without ribs and lung tissue in the way",
-				"how": "The throat is numbed with a spray and light sedation may be given, then a thin flexible probe with an ultrasound tip is passed through the mouth and the valves, atria and septum are examined; the imaging itself takes about twenty minutes and is followed by a period of observation",
-				"when": "Suspected clot in the atrium before rhythm restoration, assessment of valves and valve prostheses, search for a source of embolism after a stroke, suspected infection of the inner lining of the heart, clarification of findings from a standard heart ultrasound, monitoring during heart surgery",
-				"prep": "Do not eat for several hours before the examination as instructed by the clinic, remove dentures, and report any disease of the oesophagus or allergy to local anaesthetics; with sedation you need someone to accompany you and must not drive that day",
-				"abnormal": "Findings may relate to valve changes, a clot in the chambers, a defect of the septum or deposits on the valves. A sore or scratchy throat for a day afterwards is common; the cardiologist writes the report and decides on the further steps"
-			},
-			"sr": {
-				"what": "Ultrazvuk srca kod kojeg se sonda uvodi u jednjak, pa se strukture vide izbliza, bez smetnji od rebara i pluća",
-				"how": "Grlo se obezboli sprejem, po potrebi se daje blaga sedacija, a zatim se kroz usta uvodi tanka savitljiva sonda sa ultrazvučnom glavom i pregledaju se zalisci, pretkomore i pregrada; samo snimanje traje oko dvadesetak minuta, nakon čega slijedi period posmatranja",
-				"when": "Sumnja na ugrušak u pretkomori prije uspostavljanja ritma, procjena zalistaka i vještačkih zalistaka, traženje izvora embolije poslije moždanog udara, sumnja na infekciju unutrašnje opne srca, razjašnjenje nalaza običnog ultrazvuka srca, nadzor tokom operacija na srcu",
-				"prep": "Ne jesti nekoliko sati prije pregleda prema uputstvu klinike, izvaditi pokretnu zubnu protezu i reći ljekaru za bolesti jednjaka i alergiju na anestetike; uz sedaciju je potrebna pratnja i tog dana se ne vozi",
-				"abnormal": "Nalaz može biti povezan sa promjenama na zaliscima, ugruškom u šupljinama, otvorom u pregradi ili naslagama na zaliscima. Grebanje i nelagoda u grlu dan poslije pregleda su uobičajeni; nalaz i dalje korake određuje kardiolog"
-			},
-			"de": {
-				"what": "Herzultraschall, bei dem die Sonde in die Speiseröhre eingeführt wird, sodass die Strukturen aus der Nähe und ohne störende Rippen und Lunge sichtbar sind",
-				"how": "Der Rachen wird mit Spray betäubt, bei Bedarf wird leicht sediert, dann wird eine dünne biegsame Sonde mit Ultraschallkopf über den Mund eingeführt und Klappen, Vorhöfe und Scheidewand werden beurteilt; die Aufnahme dauert etwa zwanzig Minuten, danach folgt eine Überwachungszeit",
-				"when": "Verdacht auf ein Gerinnsel im Vorhof vor der Rhythmuswiederherstellung, Beurteilung von Klappen und Klappenprothesen, Suche nach einer Emboliequelle nach Schlaganfall, Verdacht auf eine Entzündung der Herzinnenhaut, Klärung von Befunden des normalen Herzultraschalls, Überwachung bei Herzoperationen",
-				"prep": "Nach Vorgabe der Klinik mehrere Stunden nüchtern bleiben, herausnehmbaren Zahnersatz entfernen und Erkrankungen der Speiseröhre sowie Allergien gegen Betäubungsmittel melden; bei Sedierung ist eine Begleitperson nötig und Autofahren an diesem Tag nicht erlaubt",
-				"abnormal": "Befunde können mit Klappenveränderungen, einem Gerinnsel in den Herzhöhlen, einem Defekt der Scheidewand oder Auflagerungen auf den Klappen zusammenhängen. Ein kratzender Hals am Folgetag ist üblich; Befund und weiteres Vorgehen legt der Kardiologe fest"
-			},
-			"tr": {
-				"what": "Probun yemek borusuna ilerletildiği, kalp yapılarının kaburga ve akciğer engeli olmadan yakından görüldüğü kalp ultrasonu",
-				"how": "Boğaz sprey ile uyuşturulur, gerekirse hafif sedasyon verilir, sonra ağızdan ince ve bükülebilen bir prob ilerletilerek kapaklar, kulakçıklar ve bölme incelenir; görüntüleme yaklaşık yirmi dakika sürer, ardından bir süre gözlem yapılır",
-				"when": "Ritim geri döndürülmeden önce kulakçıkta pıhtı şüphesi, kapakların ve yapay kapakların değerlendirilmesi, inme sonrası emboli kaynağı araştırması, kalbin iç zarında enfeksiyon şüphesi, standart kalp ultrasonundaki bulguların netleştirilmesi, kalp ameliyatları sırasında izlem",
-				"prep": "Kliniğin talimatına göre işlemden birkaç saat önce aç kalın, takma dişleri çıkarın, yemek borusu hastalıklarını ve uyuşturucu ilaç alerjilerini bildirin; sedasyon uygulanacaksa yanınızda refakatçi olmalı ve o gün araç kullanılmamalı",
-				"abnormal": "Bulgular kapak değişiklikleri, boşluklarda pıhtı, bölmede açıklık veya kapak üzerinde birikimlerle ilişkili olabilir. Ertesi gün boğazda gıcık ve rahatsızlık hissi sık görülür; raporu ve sonraki adımları kardiyolog belirler"
-			}
-		}
-	},
-	{
-		"slug": "aorta-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ультразвуковой осмотр аорты, прежде всего её брюшного отдела, с измерением диаметра и оценкой стенки",
-				"how": "Пациент лежит на спине, врач ведёт датчиком с гелем по животу, измеряет поперечник сосуда на нескольких уровнях и смотрит стенку и просвет; около двадцати минут, безболезненно",
-				"when": "Скрининг расширения брюшной аорты у курильщиков и у людей старшего возраста с факторами риска, пульсирующее образование в животе, наблюдение за ранее найденным расширением, контроль после вмешательств на аорте, боль в животе или в пояснице неясного происхождения",
-				"prep": "Желательно прийти натощак и накануне ограничить продукты, вызывающие газообразование, — газ в кишечнике закрывает сосуд; требования уточнить при записи",
-				"abnormal": "Расширение просвета, неровность стенки или отложения могут говорить об изменениях стенки аорты разной степени. Частоту наблюдения и необходимость дополнительных исследований определяет сосудистый хирург"
-			},
-			"en": {
-				"what": "Ultrasound look at the aorta, mainly its abdominal part, with measurement of the diameter and assessment of the wall",
-				"how": "The patient lies on the back, the doctor moves the probe with gel over the abdomen, measures the width of the vessel at several levels and looks at the wall and the lumen; about twenty minutes, painless",
-				"when": "Screening for widening of the abdominal aorta in smokers and in older people with risk factors, a pulsating mass in the abdomen, follow-up of a known widening, control after procedures on the aorta, unexplained abdominal or back pain",
-				"prep": "It is better to come fasting and to avoid foods that cause gas the day before, because bowel gas hides the vessel; check the clinic's instructions when booking",
-				"abnormal": "A widened lumen, an irregular wall or deposits may indicate changes of the aortic wall of varying degree. How often the scan is repeated and whether further imaging is needed is decided by the vascular surgeon"
-			},
-			"sr": {
-				"what": "Ultrazvučni pregled aorte, prije svega trbušnog dijela, sa mjerenjem prečnika i procjenom zida",
-				"how": "Pacijent leži na leđima, ljekar vodi sondu sa gelom po trbuhu, mjeri širinu krvnog suda na nekoliko nivoa i gleda zid i lumen; traje dvadesetak minuta i nije bolno",
-				"when": "Probir na proširenje trbušne aorte kod pušača i starijih osoba sa faktorima rizika, pulsirajuća tvorevina u trbuhu, praćenje ranije nađenog proširenja, kontrola poslije zahvata na aorti, bol u trbuhu ili u krstima nejasnog uzroka",
-				"prep": "Poželjno je doći natašte i dan ranije izbjegavati hranu koja stvara gasove, jer gas u crijevima zaklanja krvni sud; pri zakazivanju provjerite uputstvo klinike",
-				"abnormal": "Proširen lumen, neravan zid ili naslage mogu ukazivati na promjene zida aorte različitog stepena. Koliko često se pregled ponavlja i da li su potrebna dodatna snimanja određuje vaskularni hirurg"
-			},
-			"de": {
-				"what": "Ultraschalluntersuchung der Aorta, vor allem des Bauchabschnitts, mit Messung des Durchmessers und Beurteilung der Wand",
-				"how": "Der Patient liegt auf dem Rücken, der Arzt führt den Schallkopf mit Gel über den Bauch, misst die Weite des Gefäßes auf mehreren Höhen und beurteilt Wand und Lumen; etwa zwanzig Minuten, schmerzfrei",
-				"when": "Suche nach einer Erweiterung der Bauchaorta bei Rauchern und älteren Menschen mit Risikofaktoren, pulsierende Resistenz im Bauch, Verlaufskontrolle einer bekannten Erweiterung, Kontrolle nach Eingriffen an der Aorta, unklare Bauch- oder Rückenschmerzen",
-				"prep": "Möglichst nüchtern kommen und am Vortag blähende Speisen meiden, da Darmgas das Gefäß verdeckt; die Vorgaben der Klinik bei der Terminvergabe erfragen",
-				"abnormal": "Ein erweitertes Lumen, eine unregelmäßige Wand oder Ablagerungen können auf Wandveränderungen der Aorta unterschiedlichen Ausmaßes hinweisen. Wie oft kontrolliert wird und ob weitere Bildgebung nötig ist, entscheidet der Gefäßchirurg"
-			},
-			"tr": {
-				"what": "Aortun, özellikle karın bölümünün, çapı ölçülerek ve duvarı değerlendirilerek yapılan ultrason incelemesi",
-				"how": "Hasta sırtüstü yatar, hekim jelle probu karın üzerinde gezdirir, damarın genişliğini birkaç düzeyde ölçer, duvarı ve iç boşluğu değerlendirir; yaklaşık yirmi dakika sürer ve ağrısızdır",
-				"when": "Sigara içenlerde ve risk faktörü olan ileri yaştakilerde karın aortu genişlemesi taraması, karında nabız gibi atan kitle, bilinen genişlemenin takibi, aort girişimleri sonrası kontrol, nedeni belirsiz karın veya bel ağrısı",
-				"prep": "Aç gelmek ve bir gün önce gaz yapan yiyeceklerden kaçınmak daha iyidir, çünkü bağırsak gazı damarı gizler; randevu alırken kliniğin talimatını sorun",
-				"abnormal": "Genişlemiş iç boşluk, düzensiz duvar veya birikimler aort duvarında farklı derecelerde değişikliklere işaret edebilir. Kontrolün hangi sıklıkta tekrarlanacağına ve ek görüntüleme gerekip gerekmediğine damar cerrahı karar verir"
-			}
-		}
-	},
-	{
-		"slug": "cardiac-rehabilitation-bed-day",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "День стационарной кардиологической реабилитации: восстановление под наблюдением после инфаркта, операции на сердце или при хронической сердечной недостаточности",
-				"how": "В течение дня пациент занимается дозированной лечебной физкультурой и дыхательными упражнениями, ему контролируют давление, пульс и самочувствие, при необходимости снимают ЭКГ, дают назначенную терапию и обучают образу жизни; программу ведёт команда из кардиолога, физиотерапевта и медсестёр",
-				"when": "После инфаркта миокарда, стентирования или шунтирования, после операции на клапанах, при стабильной сердечной недостаточности, при сниженной переносимости нагрузок, когда восстановление дома без наблюдения небезопасно",
-				"prep": "Нужны направление и выписка с предыдущего этапа лечения, список принимаемых препаратов, удобная одежда и обувь для занятий; свои препараты покажите лечащему врачу, а не принимайте по собственному графику",
-				"abnormal": "За время программы переносимость нагрузки обычно растёт, а объём занятий меняют по самочувствию и показателям. Боль в груди, сильная одышка, головокружение или перебои во время занятия — повод сразу сообщить персоналу, а план дальнейшего наблюдения определяет кардиолог"
-			},
-			"en": {
-				"what": "A day of inpatient cardiac rehabilitation: supervised recovery after a heart attack, after heart surgery or during chronic heart failure",
-				"how": "During the day the patient does measured exercise and breathing training, has blood pressure, pulse and symptoms checked, has an ECG when needed, receives the prescribed treatment and lifestyle education; the programme is run by a team of cardiologist, physiotherapist and nurses",
-				"when": "After a heart attack, stenting or bypass surgery, after valve surgery, in stable heart failure, with reduced exercise tolerance, when recovering at home without supervision would not be safe",
-				"prep": "A referral and the discharge letter from the previous stage of treatment are needed, together with the list of medicines and comfortable clothes and shoes for exercise; show your own medicines to the doctor instead of taking them on your own schedule",
-				"abnormal": "Exercise tolerance usually improves over the programme and the amount of training is adjusted to how the patient feels and to the measurements. Chest pain, severe breathlessness, dizziness or palpitations during a session should be reported to the staff at once, and the cardiologist sets the plan for further follow-up"
-			},
-			"sr": {
-				"what": "Dan bolničke kardiološke rehabilitacije: oporavak pod nadzorom poslije infarkta, operacije srca ili kod hronične srčane slabosti",
-				"how": "Tokom dana pacijent radi dozirane vježbe i vježbe disanja, kontrolišu mu se pritisak, puls i opšte stanje, po potrebi se snima EKG, dobija propisanu terapiju i savjete o načinu života; program vodi tim kardiologa, fizioterapeuta i medicinskih sestara",
-				"when": "Poslije infarkta srca, ugradnje stenta ili bajpasa, poslije operacije zalistaka, kod stabilne srčane slabosti, kod smanjenog podnošenja napora, kada oporavak kod kuće bez nadzora nije bezbjedan",
-				"prep": "Potrebni su uput i otpusna lista sa prethodnog liječenja, spisak terapije koju uzimate i udobna odjeća i obuća za vježbanje; svoje lijekove pokažite ljekaru umjesto da ih uzimate po svom rasporedu",
-				"abnormal": "Tokom programa se podnošenje napora obično popravlja, a obim vježbi se prilagođava stanju i izmjerenim vrijednostima. Bol u grudima, jako gušenje, vrtoglavica ili preskakanje tokom vježbe odmah se prijavljuju osoblju, a plan daljeg praćenja određuje kardiolog"
-			},
-			"de": {
-				"what": "Ein Tag stationärer kardiologischer Rehabilitation: begleitete Erholung nach Herzinfarkt, nach Herzoperation oder bei chronischer Herzschwäche",
-				"how": "Am Tag absolviert der Patient dosierte Bewegungs- und Atemübungen, Blutdruck, Puls und Befinden werden kontrolliert, bei Bedarf wird ein EKG geschrieben, die verordnete Therapie wird gegeben und Schulung zur Lebensführung angeboten; das Programm führt ein Team aus Kardiologe, Physiotherapeut und Pflegekräften",
-				"when": "Nach Herzinfarkt, Stentimplantation oder Bypassoperation, nach Klappenoperation, bei stabiler Herzschwäche, bei verminderter Belastbarkeit, wenn eine Erholung zu Hause ohne Aufsicht nicht sicher wäre",
-				"prep": "Nötig sind Überweisung und Entlassungsbrief der vorangehenden Behandlung, die Liste der Medikamente sowie bequeme Kleidung und Schuhe für die Übungen; eigene Medikamente dem behandelnden Arzt zeigen, statt sie nach eigenem Plan einzunehmen",
-				"abnormal": "Im Verlauf des Programms nimmt die Belastbarkeit meist zu, der Umfang der Übungen wird dem Befinden und den Messwerten angepasst. Brustschmerz, starke Luftnot, Schwindel oder Herzstolpern während einer Einheit sind sofort dem Personal zu melden; den weiteren Nachsorgeplan legt der Kardiologe fest"
-			},
-			"tr": {
-				"what": "Yatarak uygulanan kardiyak rehabilitasyonun bir günü: kalp krizi, kalp ameliyatı sonrasında veya kronik kalp yetmezliğinde gözetim altında toparlanma",
-				"how": "Gün boyunca hastaya ölçülü egzersiz ve solunum çalışmaları yaptırılır, tansiyon, nabız ve genel durum izlenir, gerektiğinde EKG çekilir, planlanan tedavi verilir ve yaşam biçimi eğitimi yapılır; programı kardiyolog, fizyoterapist ve hemşirelerden oluşan ekip yürütür",
-				"when": "Kalp krizi, stent veya baypas sonrası, kapak ameliyatı sonrası, durumu dengeli kalp yetmezliğinde, efor kapasitesi azaldığında, evde gözetimsiz toparlanmanın güvenli olmadığı durumlarda",
-				"prep": "Sevk belgesi ve önceki tedavinin çıkış özeti, kullandığınız ilaçların listesi, egzersiz için rahat kıyafet ve ayakkabı gerekir; kendi ilaçlarınızı kendi saatinize göre almak yerine hekime gösterin",
-				"abnormal": "Program boyunca efor kapasitesi genellikle artar, egzersiz miktarı kişinin durumuna ve ölçümlere göre ayarlanır. Seans sırasında göğüs ağrısı, belirgin nefes darlığı, baş dönmesi veya çarpıntı hemen personele bildirilmeli, sonraki izlem planını kardiyolog belirler"
-			}
-		}
-	},
-	{
-		"slug": "cardiac-rhythm-cardioversion",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Восстановление правильного сердечного ритма коротким электрическим импульсом, синхронизированным с работой сердца",
-				"how": "Пациенту ставят венозный доступ и вводят препарат для короткого сна, на грудь накладывают электроды, аппарат подаёт синхронизированный импульс, при необходимости повторно с большей энергией; вмешательство занимает несколько минут, после него ритм и давление наблюдают ещё несколько часов",
-				"when": "Фибрилляция и трепетание предсердий, которые сохраняются и плохо переносятся, другие стойкие нарушения ритма, когда лекарствами ритм восстановить не удалось, плановое восстановление ритма после периода приёма препаратов, разжижающих кровь",
-				"prep": "Не есть и не пить перед вмешательством по указанию врача, принести результаты анализов крови и ЭКГ, не прерывать самостоятельно препараты, разжижающие кровь; часто перед этим делают УЗИ сердца через пищевод, нужен сопровождающий, за руль в этот день нельзя",
-				"abnormal": "Ритм может восстановиться сразу, восстановиться частично или через время вернуться к прежнему. Покраснение и лёгкая болезненность кожи под электродами в течение нескольких дней обычны; дальнейшую терапию и наблюдение определяет кардиолог"
-			},
-			"en": {
-				"what": "Restoration of a regular heart rhythm with a short electrical impulse synchronised with the heart's own activity",
-				"how": "An intravenous line is placed and a medicine for short sleep is given, pads are put on the chest and the device delivers a synchronised impulse, repeated at higher energy if needed; the procedure takes a few minutes and is followed by several hours of rhythm and blood pressure monitoring",
-				"when": "Atrial fibrillation and atrial flutter that persist and are poorly tolerated, other persistent rhythm disorders when medicines have not restored the rhythm, planned restoration of rhythm after a period of blood-thinning treatment",
-				"prep": "Do not eat or drink before the procedure as instructed by the doctor, bring blood test results and the ECG, do not stop blood-thinning medicines on your own; an ultrasound of the heart through the oesophagus is often done beforehand, an accompanying person is needed and driving is not allowed that day",
-				"abnormal": "The rhythm may return at once, return only partly, or go back to the previous pattern after some time. Redness and mild soreness of the skin under the pads for a few days are common; further treatment and follow-up are decided by the cardiologist"
-			},
-			"sr": {
-				"what": "Uspostavljanje pravilnog srčanog ritma kratkim električnim impulsom usklađenim sa radom srca",
-				"how": "Postavlja se venski put i daje lijek za kratak san, na grudi se stavljaju elektrode i aparat isporučuje usklađeni impuls, po potrebi ponovo sa većom energijom; sam zahvat traje nekoliko minuta, a poslije njega se ritam i pritisak prate još nekoliko sati",
-				"when": "Atrijalna fibrilacija i undulacija koje traju i teško se podnose, drugi uporni poremećaji ritma kada lijekovima ritam nije uspostavljen, planirano uspostavljanje ritma poslije perioda uzimanja lijekova za razrjeđivanje krvi",
-				"prep": "Ne jesti i ne piti prije zahvata prema uputstvu ljekara, ponijeti nalaze krvi i EKG, ne prekidati samostalno lijekove za razrjeđivanje krvi; često se prije toga radi ultrazvuk srca preko jednjaka, potrebna je pratnja i tog dana se ne vozi",
-				"abnormal": "Ritam se može uspostaviti odmah, samo djelimično ili se poslije nekog vremena vratiti na prethodni. Crvenilo i blaga osjetljivost kože ispod elektroda nekoliko dana su uobičajeni; dalju terapiju i praćenje određuje kardiolog"
-			},
-			"de": {
-				"what": "Wiederherstellung eines regelmäßigen Herzrhythmus durch einen kurzen, mit der Herzaktion synchronisierten Stromimpuls",
-				"how": "Ein venöser Zugang wird gelegt und ein Medikament für einen kurzen Schlaf gegeben, Klebeelektroden kommen auf den Brustkorb und das Gerät gibt den synchronisierten Impuls ab, bei Bedarf erneut mit höherer Energie; der Eingriff dauert wenige Minuten, danach werden Rhythmus und Blutdruck einige Stunden überwacht",
-				"when": "Anhaltendes und schlecht verträgliches Vorhofflimmern oder Vorhofflattern, andere anhaltende Rhythmusstörungen, wenn Medikamente den Rhythmus nicht wiederhergestellt haben, geplante Rhythmuswiederherstellung nach einer Phase der Blutverdünnung",
-				"prep": "Nach ärztlicher Vorgabe nüchtern bleiben, Blutwerte und EKG mitbringen, blutverdünnende Medikamente nicht eigenmächtig absetzen; häufig wird vorher ein Herzultraschall über die Speiseröhre durchgeführt, eine Begleitperson ist nötig und Autofahren an diesem Tag nicht erlaubt",
-				"abnormal": "Der Rhythmus kann sofort, nur teilweise oder vorübergehend zurückkehren und später wieder in den alten übergehen. Rötung und leichte Druckempfindlichkeit der Haut unter den Elektroden über einige Tage sind üblich; die weitere Therapie und Nachsorge legt der Kardiologe fest"
-			},
-			"tr": {
-				"what": "Kalbin kendi atımlarıyla eşzamanlanmış kısa bir elektrik akımıyla düzenli kalp ritminin yeniden sağlanması",
-				"how": "Damar yolu açılır ve kısa süreli uyku sağlayan ilaç verilir, göğse yapışkan elektrotlar yerleştirilir ve cihaz eşzamanlı akımı uygular, gerekirse daha yüksek enerjiyle tekrarlanır; işlem birkaç dakika sürer, ardından ritim ve tansiyon birkaç saat izlenir",
-				"when": "Süregelen ve zor tolere edilen atriyal fibrilasyon ve atriyal flatter, ilaçlarla ritmin düzelmediği diğer kalıcı ritim bozuklukları, kan sulandırıcı tedavi döneminden sonra planlanan ritim düzeltmesi",
-				"prep": "Hekimin talimatına göre işlemden önce aç ve susuz kalın, kan tetkiklerini ve EKG'yi getirin, kan sulandırıcı ilaçları kendiniz bırakmayın; çoğu durumda öncesinde yemek borusundan kalp ultrasonu yapılır, refakatçi gerekir ve o gün araç kullanılmaz",
-				"abnormal": "Ritim hemen düzelebilir, kısmen düzelebilir veya bir süre sonra eski haline dönebilir. Elektrotların altındaki ciltte birkaç gün süren kızarıklık ve hafif hassasiyet olağandır; sonraki tedaviyi ve izlemi kardiyolog belirler"
-			}
-		}
-	},
-	{
-		"slug": "cardiac-telemetry",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Непрерывное наблюдение за ритмом сердца у пациента в стационаре с передачей записи на монитор сестринского поста",
-				"how": "Электроды на груди подключены к небольшому передатчику, который пациент носит на себе и может ходить по отделению, а кривая ЭКГ непрерывно выводится на центральный монитор, за которым следит персонал; наблюдение длится от нескольких часов до нескольких суток",
-				"when": "Боль в груди и подозрение на острое снижение кровоснабжения сердца, зафиксированные или предполагаемые опасные нарушения ритма, обмороки неясной причины, период подбора препаратов, влияющих на ритм, наблюдение после восстановления ритма или после вмешательств на сердце",
-				"prep": "Подготовка не нужна, электроды накладывает персонал; кожу под ними нельзя мочить, передатчик не снимают самостоятельно, о плохом самочувствии надо сразу сказать сестре, чтобы время отметили в записи",
-				"abnormal": "Зафиксированные эпизоды сравнивают с самочувствием пациента в тот же момент; они могут быть связаны с нарушением ритма, проведения или с кровоснабжением сердца. Решение о лечении и о продолжении наблюдения принимает лечащий кардиолог"
-			},
-			"en": {
-				"what": "Continuous monitoring of the heart rhythm of a patient in hospital, with the tracing sent to a monitor at the nurses' station",
-				"how": "Electrodes on the chest are connected to a small transmitter that the patient carries, so walking around the ward is possible, while the ECG curve runs continuously on a central monitor watched by the staff; monitoring lasts from several hours to several days",
-				"when": "Chest pain with suspected acute reduction of blood supply to the heart, documented or suspected dangerous rhythm disorders, fainting of unclear cause, the period of adjusting medicines that affect rhythm, observation after rhythm restoration or after heart procedures",
-				"prep": "No preparation is needed, the staff attach the electrodes; the skin under them must stay dry, the transmitter should not be removed by the patient, and symptoms should be reported at once so that the time is marked on the recording",
-				"abnormal": "Recorded episodes are compared with how the patient felt at that moment and may be related to disturbances of rhythm or conduction or to the blood supply of the heart. The treating cardiologist decides on treatment and on continuing the monitoring"
-			},
-			"sr": {
-				"what": "Neprekidno praćenje srčanog ritma kod pacijenta u bolnici, sa prenosom zapisa na monitor na sestrinskom pultu",
-				"how": "Elektrode na grudima povezane su sa malim predajnikom koji pacijent nosi, pa može hodati po odjeljenju, dok se EKG krivulja neprekidno prikazuje na centralnom monitoru koji osoblje prati; nadzor traje od nekoliko sati do nekoliko dana",
-				"when": "Bol u grudima i sumnja na naglo smanjenu prokrvljenost srca, zabilježeni ili pretpostavljeni opasni poremećaji ritma, nesvjestice nejasnog uzroka, period uvođenja terapije koja utiče na ritam, praćenje poslije uspostavljanja ritma ili poslije zahvata na srcu",
-				"prep": "Priprema nije potrebna, elektrode postavlja osoblje; koža ispod njih mora ostati suva, predajnik se ne skida samostalno, a o tegobama odmah recite sestri da bi se vrijeme upisalo uz zapis",
-				"abnormal": "Zabilježene epizode porede se sa tim kako se pacijent u tom trenutku osjećao i mogu biti povezane sa poremećajem ritma, provođenja ili sa prokrvljenošću srca. Odluku o liječenju i o nastavku nadzora donosi kardiolog koji vodi pacijenta"
-			},
-			"de": {
-				"what": "Fortlaufende Überwachung des Herzrhythmus bei stationären Patienten mit Übertragung der Kurve auf einen Monitor im Stationsstützpunkt",
-				"how": "Elektroden auf dem Brustkorb sind mit einem kleinen Sender verbunden, den der Patient trägt, sodass er sich auf der Station bewegen kann, während die EKG-Kurve ununterbrochen auf einem Zentralmonitor läuft und vom Personal beobachtet wird; die Überwachung dauert Stunden bis Tage",
-				"when": "Brustschmerz mit Verdacht auf akut verminderte Durchblutung des Herzens, dokumentierte oder vermutete gefährliche Rhythmusstörungen, Ohnmacht unklarer Ursache, Einstellungsphase von Medikamenten mit Wirkung auf den Rhythmus, Beobachtung nach Rhythmuswiederherstellung oder nach Eingriffen am Herzen",
-				"prep": "Keine Vorbereitung nötig, die Elektroden bringt das Personal an; die Haut darunter muss trocken bleiben, der Sender wird nicht selbst abgenommen und Beschwerden sollten sofort gemeldet werden, damit der Zeitpunkt in der Aufzeichnung vermerkt wird",
-				"abnormal": "Aufgezeichnete Episoden werden mit dem Befinden zum selben Zeitpunkt verglichen und können mit Rhythmus- oder Leitungsstörungen oder mit der Durchblutung des Herzens zusammenhängen. Über Behandlung und Fortführung der Überwachung entscheidet der behandelnde Kardiologe"
-			},
-			"tr": {
-				"what": "Hastanedeki hastanın kalp ritminin sürekli izlenmesi ve kaydın hemşire bankosundaki monitöre aktarılması",
-				"how": "Göğüsteki elektrotlar hastanın üzerinde taşıdığı küçük bir vericiye bağlanır, böylece hasta serviste dolaşabilir, EKG eğrisi ise personelin izlediği merkezi monitörde kesintisiz akar; izlem birkaç saatten birkaç güne kadar sürer",
-				"when": "Göğüs ağrısı ve kalbin kanlanmasının ani azaldığı şüphesi, saptanmış veya şüphelenilen tehlikeli ritim bozuklukları, nedeni belirsiz bayılmalar, ritmi etkileyen ilaçların ayarlandığı dönem, ritim düzeltildikten veya kalp girişimlerinden sonraki izlem",
-				"prep": "Hazırlık gerekmez, elektrotları personel takar; altındaki cilt kuru kalmalı, verici hasta tarafından çıkarılmamalı ve şikâyetler zaman kayda işlensin diye hemen hemşireye bildirilmelidir",
-				"abnormal": "Kaydedilen ataklar hastanın o andaki durumuyla karşılaştırılır ve ritim, iletim bozukluğu veya kalbin kanlanmasıyla ilişkili olabilir. Tedaviye ve izlemin sürdürülmesine hastayı izleyen kardiyolog karar verir"
-			}
-		}
-	},
-	{
-		"slug": "cardiologist-examination-with-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Приём кардиолога, на котором врач в ту же встречу делает ультразвуковое исследование сердца и объясняет результат",
-				"how": "Врач собирает жалобы, измеряет давление, выслушивает сердце и лёгкие, затем пациент ложится на левый бок и датчиком через грудную клетку оценивают камеры, клапаны, сократимость и кровоток; приём занимает 30-45 минут",
-				"when": "Шум в сердце, одышка и быстрая утомляемость, отёки, повышенное давление, перенесённый инфаркт или операция на сердце, наблюдение при пороке клапана, оценка перед операцией или перед началом физической активности",
-				"prep": "Специальная подготовка не нужна; взять прежние протоколы УЗИ сердца, плёнки ЭКГ и список препаратов с дозами, надеть одежду, которую легко снять до пояса, не наносить крем на кожу груди",
-				"abnormal": "Находки по размерам камер, клапанам и сократимости имеют разный вес и часто требуют сравнения с предыдущим исследованием. Заключение и план дальнейших действий даёт кардиолог на этом же приёме"
-			},
-			"en": {
-				"what": "Cardiology consultation in which the doctor performs the heart ultrasound during the same visit and explains the result",
-				"how": "The doctor takes the history, measures blood pressure, listens to the heart and lungs, then the patient lies on the left side and the chambers, valves, contraction and blood flow are assessed with the probe through the chest wall; the visit takes 30-45 minutes",
-				"when": "A murmur, breathlessness and tiring quickly, swelling, high blood pressure, a previous heart attack or heart surgery, follow-up of a valve condition, assessment before an operation or before starting physical activity",
-				"prep": "No special preparation; bring earlier heart ultrasound reports, ECG tracings and the list of medicines with doses, wear clothes that are easy to remove to the waist and do not apply cream to the chest",
-				"abnormal": "Findings on chamber size, valves and contraction carry different weight and often need comparison with the previous study. The cardiologist gives the conclusion and the plan during the same visit"
-			},
-			"sr": {
-				"what": "Pregled kardiologa na kojem ljekar u istoj posjeti uradi ultrazvuk srca i objasni nalaz",
-				"how": "Ljekar uzima anamnezu, mjeri pritisak, sluša srce i pluća, a zatim pacijent legne na lijevi bok i sondom preko grudnog koša se procjenjuju šupljine, zalisci, kontraktilnost i protok; posjeta traje 30-45 minuta",
-				"when": "Šum na srcu, gušenje i brzo zamaranje, otoci, povišen pritisak, preboljeli infarkt ili operacija srca, praćenje mane na zalisku, procjena prije operacije ili prije početka fizičke aktivnosti",
-				"prep": "Posebna priprema nije potrebna; ponesite ranije nalaze ultrazvuka srca, EKG snimke i spisak lijekova sa dozama, obucite odjeću koju je lako skinuti do pojasa i ne stavljajte kremu na kožu grudi",
-				"abnormal": "Nalazi o veličini šupljina, zaliscima i kontraktilnosti nemaju isti značaj i često se porede sa prethodnim pregledom. Zaključak i plan daje kardiolog na samom pregledu"
-			},
-			"de": {
-				"what": "Kardiologische Konsultation, bei der der Arzt den Herzultraschall im selben Termin durchführt und das Ergebnis erklärt",
-				"how": "Der Arzt erhebt die Anamnese, misst den Blutdruck, hört Herz und Lunge ab, danach liegt der Patient auf der linken Seite und über die Brustwand werden Herzhöhlen, Klappen, Pumpfunktion und Blutfluss beurteilt; der Termin dauert 30-45 Minuten",
-				"when": "Herzgeräusch, Luftnot und rasche Ermüdung, Ödeme, Bluthochdruck, durchgemachter Herzinfarkt oder Herzoperation, Verlaufskontrolle bei einem Klappenfehler, Beurteilung vor einer Operation oder vor Beginn körperlicher Aktivität",
-				"prep": "Keine besondere Vorbereitung; frühere Ultraschallbefunde des Herzens, EKG-Aufzeichnungen und die Medikamentenliste mit Dosierungen mitbringen, Kleidung tragen, die sich bis zur Taille leicht ablegen lässt, und keine Creme auf die Brust auftragen",
-				"abnormal": "Befunde zu Herzhöhlen, Klappen und Pumpfunktion haben unterschiedliches Gewicht und werden oft mit der Voruntersuchung verglichen. Beurteilung und weiteres Vorgehen gibt der Kardiologe im selben Termin"
-			},
-			"tr": {
-				"what": "Hekimin aynı ziyarette kalp ultrasonunu kendisinin yaptığı ve sonucu anlattığı kardiyoloji muayenesi",
-				"how": "Hekim öyküyü alır, tansiyonu ölçer, kalbi ve akciğerleri dinler, ardından hasta sol yanına yatar ve göğüs duvarından probla boşluklar, kapaklar, kasılma ve kan akımı değerlendirilir; muayene 30-45 dakika sürer",
-				"when": "Kalpte üfürüm, nefes darlığı ve çabuk yorulma, ödem, yüksek tansiyon, geçirilmiş kalp krizi veya kalp ameliyatı, kapak hastalığının takibi, ameliyat öncesi veya fiziksel aktiviteye başlamadan önce değerlendirme",
-				"prep": "Özel hazırlık gerekmez; önceki kalp ultrasonu raporlarını, EKG kayıtlarını ve dozlarıyla birlikte ilaç listesini getirin, bele kadar kolay çıkarılabilen kıyafet giyin ve göğüs cildine krem sürmeyin",
-				"abnormal": "Boşluk ölçüleri, kapaklar ve kasılmaya ait bulguların ağırlığı farklıdır ve çoğu kez önceki incelemeyle karşılaştırılır. Sonucu ve izlem planını kardiyolog aynı muayenede verir"
-			}
-		}
-	}
+  {
+    "slug": "ecg-recording-and-interpretation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Снятие электрокардиограммы с последующим письменным заключением врача по полученной кривой",
+        "how": "На грудь, запястья и лодыжки накладывают электроды, аппарат записывает кривую за несколько минут, затем врач анализирует ритм, частоту, проведение и форму зубцов и пишет заключение",
+        "when": "Боль в груди, сердцебиение и перебои, обморок, контроль при гипертонии и при приёме препаратов, влияющих на ритм, обследование перед операцией и для справок",
+        "prep": "Подготовка не нужна; перед записью стоит посидеть спокойно несколько минут, не наносить крем и масло на кожу груди, прийти в одежде, которую легко снять до пояса",
+        "abnormal": "Отклонения на кривой могут быть связаны с нарушением ритма или проведения, перегрузкой отделов сердца, нарушением обмена электролитов, а иногда с положением электродов или волнением. Значение записи определяет кардиолог, сопоставляя её с жалобами и прежними плёнками"
+      },
+      "en": {
+        "what": "Recording of the heart's electrical activity followed by a written report from the doctor who reads the tracing",
+        "how": "Electrodes are placed on the chest, wrists and ankles, the machine records the tracing in a few minutes, then the doctor reviews rhythm, rate, conduction and wave shape and writes the report",
+        "when": "Chest pain, palpitations or skipped beats, fainting, follow-up of high blood pressure and of medicines that affect rhythm, assessment before surgery and for medical certificates",
+        "prep": "No preparation is needed; sit quietly for a few minutes before the recording, do not put cream or oil on the chest, and wear clothes that are easy to remove to the waist",
+        "abnormal": "Changes in the tracing may be related to rhythm or conduction problems, strain on parts of the heart, electrolyte imbalance, and sometimes to electrode position or anxiety. The cardiologist decides what the recording means by comparing it with the symptoms and with earlier tracings"
+      },
+      "sr": {
+        "what": "Snimanje električne aktivnosti srca i pisani nalaz ljekara koji očitava krivulju",
+        "how": "Elektrode se postavljaju na grudni koš, zglobove ruku i gležnjeve, aparat snima krivulju za nekoliko minuta, a zatim ljekar analizira ritam, frekvenciju, provodljivost i oblik zubaca i piše nalaz",
+        "when": "Bol u grudima, lupanje srca i preskakanje, nesvjestica, praćenje povišenog pritiska i terapije koja utiče na ritam, procjena prije operacije i za ljekarska uvjerenja",
+        "prep": "Priprema nije potrebna; prije snimanja sjedite mirno nekoliko minuta, ne stavljajte kremu ni ulje na kožu grudi i obucite odjeću koju je lako skinuti do pojasa",
+        "abnormal": "Promjene na krivulji mogu biti povezane sa poremećajem ritma ili provođenja, opterećenjem dijelova srca, poremećajem elektrolita, a ponekad i sa položajem elektroda ili uzbuđenjem. Značenje snimka procjenjuje kardiolog upoređujući ga sa tegobama i ranijim snimcima"
+      },
+      "de": {
+        "what": "Aufzeichnung der elektrischen Herzaktivität mit anschließender schriftlicher Befundung der Kurve durch den Arzt",
+        "how": "Elektroden werden an Brustkorb, Handgelenken und Knöcheln angebracht, das Gerät zeichnet die Kurve in wenigen Minuten auf, danach beurteilt der Arzt Rhythmus, Frequenz, Erregungsleitung und Zackenform und schreibt den Befund",
+        "when": "Brustschmerz, Herzklopfen und Aussetzer, Ohnmacht, Kontrolle bei Bluthochdruck und bei Medikamenten mit Wirkung auf den Rhythmus, Abklärung vor Operationen und für Atteste",
+        "prep": "Keine Vorbereitung nötig; vor der Aufzeichnung einige Minuten ruhig sitzen, keine Creme oder Öl auf die Brust auftragen und Kleidung tragen, die sich bis zur Taille leicht ablegen lässt",
+        "abnormal": "Veränderungen der Kurve können mit Rhythmus- oder Leitungsstörungen, Belastung von Herzabschnitten, Elektrolytstörungen und manchmal mit der Elektrodenlage oder Aufregung zusammenhängen. Was die Aufzeichnung bedeutet, beurteilt der Kardiologe im Vergleich mit den Beschwerden und früheren Kurven"
+      },
+      "tr": {
+        "what": "Kalbin elektriksel etkinliğinin kaydı ve kaydı okuyan hekimin yazılı yorumu",
+        "how": "Göğse, bileklere ve ayak bileklerine elektrotlar yerleştirilir, cihaz kaydı birkaç dakikada alır, ardından hekim ritmi, hızı, iletimi ve dalga şeklini değerlendirip raporu yazar",
+        "when": "Göğüs ağrısı, çarpıntı ve atlama hissi, bayılma, yüksek tansiyonun ve ritmi etkileyen ilaçların takibi, ameliyat öncesi değerlendirme ve sağlık raporları",
+        "prep": "Hazırlık gerekmez; kayıttan önce birkaç dakika sakin oturun, göğüs cildine krem veya yağ sürmeyin ve bele kadar kolay çıkarılabilen kıyafet giyin",
+        "abnormal": "Kayıttaki değişiklikler ritim veya iletim bozukluğu, kalp bölümlerinin zorlanması, elektrolit dengesizliği, bazen de elektrot konumu veya heyecanla ilişkili olabilir. Kaydın anlamını kardiyolog şikâyetler ve önceki kayıtlarla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Снимање електричне активности срца и писани налаз љекара који очитава кривуљу",
+        "how": "Електроде се постављају на грудни кош, зглобове руку и глежњеве, апарат снима кривуљу за неколико минута, а затим љекар анализира ритам, фреквенцију, проводљивост и облик зубаца и пише налаз",
+        "when": "Бол у грудима, лупање срца и прескакање, несвјестица, праћење повишеног притиска и терапије која утиче на ритам, процјена прије операције и за љекарска увјерења",
+        "prep": "Припрема није потребна; прије снимања сједите мирно неколико минута, не стављајте крему ни уље на кожу груди и обуците одјећу коју је лако скинути до појаса",
+        "abnormal": "Промјене на кривуљи могу бити повезане са поремећајем ритма или провођења, оптерећењем дијелова срца, поремећајем електролита, а понекад и са положајем електрода или узбуђењем. Значење снимка процјењује кардиолог упоређујући га са тегобама и ранијим снимцима"
+      }
+    }
+  },
+  {
+    "slug": "ergospirometry",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Нагрузочный тест, при котором одновременно измеряют работу сердца и газообмен в лёгких",
+        "how": "Пациент крутит педали велоэргометра или идёт по дорожке в маске, через которую анализируют вдыхаемый и выдыхаемый воздух, одновременно идёт запись ЭКГ, пульса, насыщения крови кислородом и давления; нагрузку наращивают ступенями под контролем врача, визит занимает около часа",
+        "when": "Одышка неясного происхождения, когда надо разделить сердечную и лёгочную причину, оценка переносимости нагрузки при хронических болезнях сердца и лёгких, подготовка к большим операциям и к трансплантации, планирование тренировок в спортивной медицине и в реабилитации",
+        "prep": "Удобная спортивная одежда и обувь, лёгкая еда за пару часов, без кофе и курения перед тестом; приём препаратов обсудить с врачом заранее и ничего не отменять самостоятельно, взять ингалятор, если вы им пользуетесь",
+        "abnormal": "Ограничение работоспособности может быть связано с сердечными, лёгочными, сосудистыми причинами или с общей детренированностью. Кривые газообмена разбирает кардиолог или пульмонолог, направивший на тест, он же определяет дальнейшие шаги"
+      },
+      "en": {
+        "what": "Exercise test that measures the work of the heart and the gas exchange in the lungs at the same time",
+        "how": "The patient pedals a bicycle ergometer or walks on a treadmill wearing a mask that analyses inhaled and exhaled air, while ECG, pulse, blood oxygen and blood pressure are recorded; the load is raised in steps under medical supervision and the visit takes about an hour",
+        "when": "Unexplained breathlessness when a heart cause has to be told apart from a lung cause, assessment of exercise tolerance in chronic heart and lung disease, work-up before major surgery and before transplantation, planning of training in sports medicine and rehabilitation",
+        "prep": "Comfortable sports clothes and shoes, a light meal a couple of hours before, no coffee and no smoking before the test; discuss your medicines with the doctor in advance instead of stopping them yourself, and bring your inhaler if you use one",
+        "abnormal": "Limited performance may be related to cardiac, pulmonary or vascular causes, or simply to being out of training. The gas exchange curves are interpreted by the cardiologist or pulmonologist who ordered the test, who also decides on the next steps"
+      },
+      "sr": {
+        "what": "Test opterećenja na kojem se istovremeno mjere rad srca i razmjena gasova u plućima",
+        "how": "Pacijent vozi bicikl ergometar ili hoda na traci sa maskom preko koje se analizira udahnuti i izdahnuti vazduh, uz istovremeno praćenje EKG-a, pulsa, zasićenja krvi kiseonikom i pritiska; opterećenje se povećava u stepenima uz nadzor ljekara, a posjeta traje oko sat vremena",
+        "when": "Gušenje nejasnog porijekla kada treba razdvojiti srčani i plućni uzrok, procjena podnošenja napora kod hroničnih bolesti srca i pluća, priprema za velike operacije i za transplantaciju, planiranje treninga u sportskoj medicini i u rehabilitaciji",
+        "prep": "Udobna sportska odjeća i obuća, lagan obrok par sati ranije, bez kafe i cigareta prije testa; o terapiji se dogovorite sa ljekarom unaprijed i ništa ne prekidajte sami, a ponesite inhalator ako ga koristite",
+        "abnormal": "Ograničena radna sposobnost može biti povezana sa srčanim, plućnim ili krvnosudovnim uzrocima, ali i sa opštom netreniranošću. Krivulje razmjene gasova tumači kardiolog ili pulmolog koji je test tražio i on određuje dalje korake"
+      },
+      "de": {
+        "what": "Belastungstest, bei dem die Herzarbeit und der Gasaustausch in der Lunge gleichzeitig gemessen werden",
+        "how": "Der Patient tritt auf dem Fahrradergometer oder geht auf dem Laufband mit einer Maske, über die Ein- und Ausatemluft analysiert wird, währenddessen laufen EKG, Puls, Sauerstoffsättigung und Blutdruckmessung; die Belastung wird stufenweise unter ärztlicher Aufsicht gesteigert, der Termin dauert etwa eine Stunde",
+        "when": "Unklare Luftnot, wenn eine kardiale von einer pulmonalen Ursache zu trennen ist, Beurteilung der Belastbarkeit bei chronischen Herz- und Lungenerkrankungen, Abklärung vor großen Operationen und vor Transplantation, Trainingsplanung in Sportmedizin und Rehabilitation",
+        "prep": "Bequeme Sportkleidung und Sportschuhe, eine leichte Mahlzeit einige Stunden vorher, kein Kaffee und kein Rauchen vor dem Test; Medikamente vorher mit dem Arzt besprechen und nicht eigenmächtig absetzen, Inhalator mitbringen, falls vorhanden",
+        "abnormal": "Eine eingeschränkte Leistungsfähigkeit kann kardiale, pulmonale oder gefäßbedingte Ursachen haben oder auch nur Ausdruck fehlenden Trainings sein. Die Kurven des Gasaustauschs beurteilt der überweisende Kardiologe oder Pneumologe und legt das weitere Vorgehen fest"
+      },
+      "tr": {
+        "what": "Kalbin çalışmasını ve akciğerlerdeki gaz alışverişini aynı anda ölçen efor testi",
+        "how": "Hasta maske takarak bisiklet ergometresinde pedal çevirir veya yürüme bandında yürür, maskeden alınan ve verilen hava analiz edilirken EKG, nabız, kandaki oksijen doygunluğu ve tansiyon izlenir; yük hekim gözetiminde kademeli artırılır, işlem yaklaşık bir saat sürer",
+        "when": "Kalp ve akciğer nedeninin ayrılması gereken, nedeni belirsiz nefes darlığı, kronik kalp ve akciğer hastalıklarında efor kapasitesinin değerlendirilmesi, büyük ameliyat ve nakil öncesi hazırlık, spor hekimliğinde ve rehabilitasyonda antrenman planlaması",
+        "prep": "Rahat spor kıyafeti ve ayakkabı, testten birkaç saat önce hafif bir öğün, kahve ve sigara içmemek; ilaçlarınızı kendiniz kesmeyin, önceden hekimle konuşun ve kullanıyorsanız inhalerinizi yanınıza alın",
+        "abnormal": "Düşük efor kapasitesi kalp, akciğer veya damar kaynaklı olabileceği gibi yalnızca kondisyon eksikliğine de bağlı olabilir. Gaz alışverişi eğrilerini testi isteyen kardiyolog veya göğüs hastalıkları uzmanı yorumlar ve sonraki adımları belirler"
+      },
+      "sr_cyrl": {
+        "what": "Тест оптерећења на којем се истовремено мјере рад срца и размјена гасова у плућима",
+        "how": "Пацијент вози бицикл ергометар или хода на траци са маском преко које се анализира удахнути и издахнути ваздух, уз истовремено праћење ЕКГ-а, пулса, засићења крви кисеоником и притиска; оптерећење се повећава у степенима уз надзор љекара, а посјета траје око сат времена",
+        "when": "Гушење нејасног поријекла када треба раздвојити срчани и плућни узрок, процјена подношења напора код хроничних болести срца и плућа, припрема за велике операције и за трансплантацију, планирање тренинга у спортској медицини и у рехабилитацији",
+        "prep": "Удобна спортска одјећа и обућа, лаган оброк пар сати раније, без кафе и цигарета прије теста; о терапији се договорите са љекаром унапријед и ништа не прекидајте сами, а понесите инхалатор ако га користите",
+        "abnormal": "Ограничена радна способност може бити повезана са срчаним, плућним или крвносудовним узроцима, али и са општом нетренираношћу. Кривуље размјене гасова тумачи кардиолог или пулмолог који је тест тражио и он одређује даље кораке"
+      }
+    }
+  },
+  {
+    "slug": "transesophageal-echocardiography-tee",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "УЗИ сердца, при котором датчик вводят в пищевод, чтобы рассмотреть структуры сердца вблизи, без помехи от рёбер и лёгких",
+        "how": "Горло обезболивают спреем, при необходимости дают лёгкое успокоительное, затем через рот вводят тонкий гибкий зонд с ультразвуковым датчиком и осматривают клапаны, предсердия и перегородку; сама съёмка занимает около двадцати минут, после неё нужно время на наблюдение",
+        "when": "Подозрение на тромб в предсердии перед восстановлением ритма, оценка клапанов и протезов клапанов, поиск источника эмболии после инсульта, подозрение на инфекцию внутренней оболочки сердца, уточнение находок обычного УЗИ сердца, контроль во время операций на сердце",
+        "prep": "Не есть несколько часов до исследования по указанию клиники, снять съёмные зубные протезы, предупредить о заболеваниях пищевода и об аллергии на обезболивающие; при седации нужен сопровождающий, за руль в этот день нельзя",
+        "abnormal": "Находки могут быть связаны с изменениями клапанов, тромбом в полостях, дефектом перегородки или наложениями на клапанах. Першение и дискомфорт в горле в течение суток после исследования обычны; заключение и дальнейшую тактику определяет кардиолог"
+      },
+      "en": {
+        "what": "Ultrasound of the heart in which the probe is passed into the oesophagus, so the structures are seen close up without ribs and lung tissue in the way",
+        "how": "The throat is numbed with a spray and light sedation may be given, then a thin flexible probe with an ultrasound tip is passed through the mouth and the valves, atria and septum are examined; the imaging itself takes about twenty minutes and is followed by a period of observation",
+        "when": "Suspected clot in the atrium before rhythm restoration, assessment of valves and valve prostheses, search for a source of embolism after a stroke, suspected infection of the inner lining of the heart, clarification of findings from a standard heart ultrasound, monitoring during heart surgery",
+        "prep": "Do not eat for several hours before the examination as instructed by the clinic, remove dentures, and report any disease of the oesophagus or allergy to local anaesthetics; with sedation you need someone to accompany you and must not drive that day",
+        "abnormal": "Findings may relate to valve changes, a clot in the chambers, a defect of the septum or deposits on the valves. A sore or scratchy throat for a day afterwards is common; the cardiologist writes the report and decides on the further steps"
+      },
+      "sr": {
+        "what": "Ultrazvuk srca kod kojeg se sonda uvodi u jednjak, pa se strukture vide izbliza, bez smetnji od rebara i pluća",
+        "how": "Grlo se obezboli sprejem, po potrebi se daje blaga sedacija, a zatim se kroz usta uvodi tanka savitljiva sonda sa ultrazvučnom glavom i pregledaju se zalisci, pretkomore i pregrada; samo snimanje traje oko dvadesetak minuta, nakon čega slijedi period posmatranja",
+        "when": "Sumnja na ugrušak u pretkomori prije uspostavljanja ritma, procjena zalistaka i vještačkih zalistaka, traženje izvora embolije poslije moždanog udara, sumnja na infekciju unutrašnje opne srca, razjašnjenje nalaza običnog ultrazvuka srca, nadzor tokom operacija na srcu",
+        "prep": "Ne jesti nekoliko sati prije pregleda prema uputstvu klinike, izvaditi pokretnu zubnu protezu i reći ljekaru za bolesti jednjaka i alergiju na anestetike; uz sedaciju je potrebna pratnja i tog dana se ne vozi",
+        "abnormal": "Nalaz može biti povezan sa promjenama na zaliscima, ugruškom u šupljinama, otvorom u pregradi ili naslagama na zaliscima. Grebanje i nelagoda u grlu dan poslije pregleda su uobičajeni; nalaz i dalje korake određuje kardiolog"
+      },
+      "de": {
+        "what": "Herzultraschall, bei dem die Sonde in die Speiseröhre eingeführt wird, sodass die Strukturen aus der Nähe und ohne störende Rippen und Lunge sichtbar sind",
+        "how": "Der Rachen wird mit Spray betäubt, bei Bedarf wird leicht sediert, dann wird eine dünne biegsame Sonde mit Ultraschallkopf über den Mund eingeführt und Klappen, Vorhöfe und Scheidewand werden beurteilt; die Aufnahme dauert etwa zwanzig Minuten, danach folgt eine Überwachungszeit",
+        "when": "Verdacht auf ein Gerinnsel im Vorhof vor der Rhythmuswiederherstellung, Beurteilung von Klappen und Klappenprothesen, Suche nach einer Emboliequelle nach Schlaganfall, Verdacht auf eine Entzündung der Herzinnenhaut, Klärung von Befunden des normalen Herzultraschalls, Überwachung bei Herzoperationen",
+        "prep": "Nach Vorgabe der Klinik mehrere Stunden nüchtern bleiben, herausnehmbaren Zahnersatz entfernen und Erkrankungen der Speiseröhre sowie Allergien gegen Betäubungsmittel melden; bei Sedierung ist eine Begleitperson nötig und Autofahren an diesem Tag nicht erlaubt",
+        "abnormal": "Befunde können mit Klappenveränderungen, einem Gerinnsel in den Herzhöhlen, einem Defekt der Scheidewand oder Auflagerungen auf den Klappen zusammenhängen. Ein kratzender Hals am Folgetag ist üblich; Befund und weiteres Vorgehen legt der Kardiologe fest"
+      },
+      "tr": {
+        "what": "Probun yemek borusuna ilerletildiği, kalp yapılarının kaburga ve akciğer engeli olmadan yakından görüldüğü kalp ultrasonu",
+        "how": "Boğaz sprey ile uyuşturulur, gerekirse hafif sedasyon verilir, sonra ağızdan ince ve bükülebilen bir prob ilerletilerek kapaklar, kulakçıklar ve bölme incelenir; görüntüleme yaklaşık yirmi dakika sürer, ardından bir süre gözlem yapılır",
+        "when": "Ritim geri döndürülmeden önce kulakçıkta pıhtı şüphesi, kapakların ve yapay kapakların değerlendirilmesi, inme sonrası emboli kaynağı araştırması, kalbin iç zarında enfeksiyon şüphesi, standart kalp ultrasonundaki bulguların netleştirilmesi, kalp ameliyatları sırasında izlem",
+        "prep": "Kliniğin talimatına göre işlemden birkaç saat önce aç kalın, takma dişleri çıkarın, yemek borusu hastalıklarını ve uyuşturucu ilaç alerjilerini bildirin; sedasyon uygulanacaksa yanınızda refakatçi olmalı ve o gün araç kullanılmamalı",
+        "abnormal": "Bulgular kapak değişiklikleri, boşluklarda pıhtı, bölmede açıklık veya kapak üzerinde birikimlerle ilişkili olabilir. Ertesi gün boğazda gıcık ve rahatsızlık hissi sık görülür; raporu ve sonraki adımları kardiyolog belirler"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвук срца код којег се сонда уводи у једњак, па се структуре виде изблиза, без сметњи од ребара и плућа",
+        "how": "Грло се обезболи спрејем, по потреби се даје блага седација, а затим се кроз уста уводи танка савитљива сонда са ултразвучном главом и прегледају се залисци, преткоморе и преграда; само снимање траје око двадесетак минута, након чега слиједи период посматрања",
+        "when": "Сумња на угрушак у преткомори прије успостављања ритма, процјена залистака и вјештачких залистака, тражење извора емболије послије можданог удара, сумња на инфекцију унутрашње опне срца, разјашњење налаза обичног ултразвука срца, надзор током операција на срцу",
+        "prep": "Не јести неколико сати прије прегледа према упутству клинике, извадити покретну зубну протезу и рећи љекару за болести једњака и алергију на анестетике; уз седацију је потребна пратња и тог дана се не вози",
+        "abnormal": "Налаз може бити повезан са промјенама на залисцима, угрушком у шупљинама, отвором у прегради или наслагама на залисцима. Гребање и нелагода у грлу дан послије прегледа су уобичајени; налаз и даље кораке одређује кардиолог"
+      }
+    }
+  },
+  {
+    "slug": "aorta-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковой осмотр аорты, прежде всего её брюшного отдела, с измерением диаметра и оценкой стенки",
+        "how": "Пациент лежит на спине, врач ведёт датчиком с гелем по животу, измеряет поперечник сосуда на нескольких уровнях и смотрит стенку и просвет; около двадцати минут, безболезненно",
+        "when": "Скрининг расширения брюшной аорты у курильщиков и у людей старшего возраста с факторами риска, пульсирующее образование в животе, наблюдение за ранее найденным расширением, контроль после вмешательств на аорте, боль в животе или в пояснице неясного происхождения",
+        "prep": "Желательно прийти натощак и накануне ограничить продукты, вызывающие газообразование, — газ в кишечнике закрывает сосуд; требования уточнить при записи",
+        "abnormal": "Расширение просвета, неровность стенки или отложения могут говорить об изменениях стенки аорты разной степени. Частоту наблюдения и необходимость дополнительных исследований определяет сосудистый хирург"
+      },
+      "en": {
+        "what": "Ultrasound look at the aorta, mainly its abdominal part, with measurement of the diameter and assessment of the wall",
+        "how": "The patient lies on the back, the doctor moves the probe with gel over the abdomen, measures the width of the vessel at several levels and looks at the wall and the lumen; about twenty minutes, painless",
+        "when": "Screening for widening of the abdominal aorta in smokers and in older people with risk factors, a pulsating mass in the abdomen, follow-up of a known widening, control after procedures on the aorta, unexplained abdominal or back pain",
+        "prep": "It is better to come fasting and to avoid foods that cause gas the day before, because bowel gas hides the vessel; check the clinic's instructions when booking",
+        "abnormal": "A widened lumen, an irregular wall or deposits may indicate changes of the aortic wall of varying degree. How often the scan is repeated and whether further imaging is needed is decided by the vascular surgeon"
+      },
+      "sr": {
+        "what": "Ultrazvučni pregled aorte, prije svega trbušnog dijela, sa mjerenjem prečnika i procjenom zida",
+        "how": "Pacijent leži na leđima, ljekar vodi sondu sa gelom po trbuhu, mjeri širinu krvnog suda na nekoliko nivoa i gleda zid i lumen; traje dvadesetak minuta i nije bolno",
+        "when": "Probir na proširenje trbušne aorte kod pušača i starijih osoba sa faktorima rizika, pulsirajuća tvorevina u trbuhu, praćenje ranije nađenog proširenja, kontrola poslije zahvata na aorti, bol u trbuhu ili u krstima nejasnog uzroka",
+        "prep": "Poželjno je doći natašte i dan ranije izbjegavati hranu koja stvara gasove, jer gas u crijevima zaklanja krvni sud; pri zakazivanju provjerite uputstvo klinike",
+        "abnormal": "Proširen lumen, neravan zid ili naslage mogu ukazivati na promjene zida aorte različitog stepena. Koliko često se pregled ponavlja i da li su potrebna dodatna snimanja određuje vaskularni hirurg"
+      },
+      "de": {
+        "what": "Ultraschalluntersuchung der Aorta, vor allem des Bauchabschnitts, mit Messung des Durchmessers und Beurteilung der Wand",
+        "how": "Der Patient liegt auf dem Rücken, der Arzt führt den Schallkopf mit Gel über den Bauch, misst die Weite des Gefäßes auf mehreren Höhen und beurteilt Wand und Lumen; etwa zwanzig Minuten, schmerzfrei",
+        "when": "Suche nach einer Erweiterung der Bauchaorta bei Rauchern und älteren Menschen mit Risikofaktoren, pulsierende Resistenz im Bauch, Verlaufskontrolle einer bekannten Erweiterung, Kontrolle nach Eingriffen an der Aorta, unklare Bauch- oder Rückenschmerzen",
+        "prep": "Möglichst nüchtern kommen und am Vortag blähende Speisen meiden, da Darmgas das Gefäß verdeckt; die Vorgaben der Klinik bei der Terminvergabe erfragen",
+        "abnormal": "Ein erweitertes Lumen, eine unregelmäßige Wand oder Ablagerungen können auf Wandveränderungen der Aorta unterschiedlichen Ausmaßes hinweisen. Wie oft kontrolliert wird und ob weitere Bildgebung nötig ist, entscheidet der Gefäßchirurg"
+      },
+      "tr": {
+        "what": "Aortun, özellikle karın bölümünün, çapı ölçülerek ve duvarı değerlendirilerek yapılan ultrason incelemesi",
+        "how": "Hasta sırtüstü yatar, hekim jelle probu karın üzerinde gezdirir, damarın genişliğini birkaç düzeyde ölçer, duvarı ve iç boşluğu değerlendirir; yaklaşık yirmi dakika sürer ve ağrısızdır",
+        "when": "Sigara içenlerde ve risk faktörü olan ileri yaştakilerde karın aortu genişlemesi taraması, karında nabız gibi atan kitle, bilinen genişlemenin takibi, aort girişimleri sonrası kontrol, nedeni belirsiz karın veya bel ağrısı",
+        "prep": "Aç gelmek ve bir gün önce gaz yapan yiyeceklerden kaçınmak daha iyidir, çünkü bağırsak gazı damarı gizler; randevu alırken kliniğin talimatını sorun",
+        "abnormal": "Genişlemiş iç boşluk, düzensiz duvar veya birikimler aort duvarında farklı derecelerde değişikliklere işaret edebilir. Kontrolün hangi sıklıkta tekrarlanacağına ve ek görüntüleme gerekip gerekmediğine damar cerrahı karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучни преглед аорте, прије свега трбушног дијела, са мјерењем пречника и процјеном зида",
+        "how": "Пацијент лежи на леђима, љекар води сонду са гелом по трбуху, мјери ширину крвног суда на неколико нивоа и гледа зид и лумен; траје двадесетак минута и није болно",
+        "when": "Пробир на проширење трбушне аорте код пушача и старијих особа са факторима ризика, пулсирајућа творевина у трбуху, праћење раније нађеног проширења, контрола послије захвата на аорти, бол у трбуху или у крстима нејасног узрока",
+        "prep": "Пожељно је доћи наташте и дан раније избјегавати храну која ствара гасове, јер гас у цријевима заклања крвни суд; при заказивању провјерите упутство клинике",
+        "abnormal": "Проширен лумен, нераван зид или наслаге могу указивати на промјене зида аорте различитог степена. Колико често се преглед понавља и да ли су потребна додатна снимања одређује васкуларни хирург"
+      }
+    }
+  },
+  {
+    "slug": "cardiac-rehabilitation-bed-day",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "День стационарной кардиологической реабилитации: восстановление под наблюдением после инфаркта, операции на сердце или при хронической сердечной недостаточности",
+        "how": "В течение дня пациент занимается дозированной лечебной физкультурой и дыхательными упражнениями, ему контролируют давление, пульс и самочувствие, при необходимости снимают ЭКГ, дают назначенную терапию и обучают образу жизни; программу ведёт команда из кардиолога, физиотерапевта и медсестёр",
+        "when": "После инфаркта миокарда, стентирования или шунтирования, после операции на клапанах, при стабильной сердечной недостаточности, при сниженной переносимости нагрузок, когда восстановление дома без наблюдения небезопасно",
+        "prep": "Нужны направление и выписка с предыдущего этапа лечения, список принимаемых препаратов, удобная одежда и обувь для занятий; свои препараты покажите лечащему врачу, а не принимайте по собственному графику",
+        "abnormal": "За время программы переносимость нагрузки обычно растёт, а объём занятий меняют по самочувствию и показателям. Боль в груди, сильная одышка, головокружение или перебои во время занятия — повод сразу сообщить персоналу, а план дальнейшего наблюдения определяет кардиолог"
+      },
+      "en": {
+        "what": "A day of inpatient cardiac rehabilitation: supervised recovery after a heart attack, after heart surgery or during chronic heart failure",
+        "how": "During the day the patient does measured exercise and breathing training, has blood pressure, pulse and symptoms checked, has an ECG when needed, receives the prescribed treatment and lifestyle education; the programme is run by a team of cardiologist, physiotherapist and nurses",
+        "when": "After a heart attack, stenting or bypass surgery, after valve surgery, in stable heart failure, with reduced exercise tolerance, when recovering at home without supervision would not be safe",
+        "prep": "A referral and the discharge letter from the previous stage of treatment are needed, together with the list of medicines and comfortable clothes and shoes for exercise; show your own medicines to the doctor instead of taking them on your own schedule",
+        "abnormal": "Exercise tolerance usually improves over the programme and the amount of training is adjusted to how the patient feels and to the measurements. Chest pain, severe breathlessness, dizziness or palpitations during a session should be reported to the staff at once, and the cardiologist sets the plan for further follow-up"
+      },
+      "sr": {
+        "what": "Dan bolničke kardiološke rehabilitacije: oporavak pod nadzorom poslije infarkta, operacije srca ili kod hronične srčane slabosti",
+        "how": "Tokom dana pacijent radi dozirane vježbe i vježbe disanja, kontrolišu mu se pritisak, puls i opšte stanje, po potrebi se snima EKG, dobija propisanu terapiju i savjete o načinu života; program vodi tim kardiologa, fizioterapeuta i medicinskih sestara",
+        "when": "Poslije infarkta srca, ugradnje stenta ili bajpasa, poslije operacije zalistaka, kod stabilne srčane slabosti, kod smanjenog podnošenja napora, kada oporavak kod kuće bez nadzora nije bezbjedan",
+        "prep": "Potrebni su uput i otpusna lista sa prethodnog liječenja, spisak terapije koju uzimate i udobna odjeća i obuća za vježbanje; svoje lijekove pokažite ljekaru umjesto da ih uzimate po svom rasporedu",
+        "abnormal": "Tokom programa se podnošenje napora obično popravlja, a obim vježbi se prilagođava stanju i izmjerenim vrijednostima. Bol u grudima, jako gušenje, vrtoglavica ili preskakanje tokom vježbe odmah se prijavljuju osoblju, a plan daljeg praćenja određuje kardiolog"
+      },
+      "de": {
+        "what": "Ein Tag stationärer kardiologischer Rehabilitation: begleitete Erholung nach Herzinfarkt, nach Herzoperation oder bei chronischer Herzschwäche",
+        "how": "Am Tag absolviert der Patient dosierte Bewegungs- und Atemübungen, Blutdruck, Puls und Befinden werden kontrolliert, bei Bedarf wird ein EKG geschrieben, die verordnete Therapie wird gegeben und Schulung zur Lebensführung angeboten; das Programm führt ein Team aus Kardiologe, Physiotherapeut und Pflegekräften",
+        "when": "Nach Herzinfarkt, Stentimplantation oder Bypassoperation, nach Klappenoperation, bei stabiler Herzschwäche, bei verminderter Belastbarkeit, wenn eine Erholung zu Hause ohne Aufsicht nicht sicher wäre",
+        "prep": "Nötig sind Überweisung und Entlassungsbrief der vorangehenden Behandlung, die Liste der Medikamente sowie bequeme Kleidung und Schuhe für die Übungen; eigene Medikamente dem behandelnden Arzt zeigen, statt sie nach eigenem Plan einzunehmen",
+        "abnormal": "Im Verlauf des Programms nimmt die Belastbarkeit meist zu, der Umfang der Übungen wird dem Befinden und den Messwerten angepasst. Brustschmerz, starke Luftnot, Schwindel oder Herzstolpern während einer Einheit sind sofort dem Personal zu melden; den weiteren Nachsorgeplan legt der Kardiologe fest"
+      },
+      "tr": {
+        "what": "Yatarak uygulanan kardiyak rehabilitasyonun bir günü: kalp krizi, kalp ameliyatı sonrasında veya kronik kalp yetmezliğinde gözetim altında toparlanma",
+        "how": "Gün boyunca hastaya ölçülü egzersiz ve solunum çalışmaları yaptırılır, tansiyon, nabız ve genel durum izlenir, gerektiğinde EKG çekilir, planlanan tedavi verilir ve yaşam biçimi eğitimi yapılır; programı kardiyolog, fizyoterapist ve hemşirelerden oluşan ekip yürütür",
+        "when": "Kalp krizi, stent veya baypas sonrası, kapak ameliyatı sonrası, durumu dengeli kalp yetmezliğinde, efor kapasitesi azaldığında, evde gözetimsiz toparlanmanın güvenli olmadığı durumlarda",
+        "prep": "Sevk belgesi ve önceki tedavinin çıkış özeti, kullandığınız ilaçların listesi, egzersiz için rahat kıyafet ve ayakkabı gerekir; kendi ilaçlarınızı kendi saatinize göre almak yerine hekime gösterin",
+        "abnormal": "Program boyunca efor kapasitesi genellikle artar, egzersiz miktarı kişinin durumuna ve ölçümlere göre ayarlanır. Seans sırasında göğüs ağrısı, belirgin nefes darlığı, baş dönmesi veya çarpıntı hemen personele bildirilmeli, sonraki izlem planını kardiyolog belirler"
+      },
+      "sr_cyrl": {
+        "what": "Дан болничке кардиолошке рехабилитације: опоравак под надзором послије инфаркта, операције срца или код хроничне срчане слабости",
+        "how": "Током дана пацијент ради дозиране вјежбе и вјежбе дисања, контролишу му се притисак, пулс и опште стање, по потреби се снима ЕКГ, добија прописану терапију и савјете о начину живота; програм води тим кардиолога, физиотерапеута и медицинских сестара",
+        "when": "Послије инфаркта срца, уградње стента или бајпаса, послије операције залистака, код стабилне срчане слабости, код смањеног подношења напора, када опоравак код куће без надзора није безбједан",
+        "prep": "Потребни су упут и отпусна листа са претходног лијечења, списак терапије коју узимате и удобна одјећа и обућа за вјежбање; своје лијекове покажите љекару умјесто да их узимате по свом распореду",
+        "abnormal": "Током програма се подношење напора обично поправља, а обим вјежби се прилагођава стању и измјереним вриједностима. Бол у грудима, јако гушење, вртоглавица или прескакање током вјежбе одмах се пријављују особљу, а план даљег праћења одређује кардиолог"
+      }
+    }
+  },
+  {
+    "slug": "cardiac-rhythm-cardioversion",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление правильного сердечного ритма коротким электрическим импульсом, синхронизированным с работой сердца",
+        "how": "Пациенту ставят венозный доступ и вводят препарат для короткого сна, на грудь накладывают электроды, аппарат подаёт синхронизированный импульс, при необходимости повторно с большей энергией; вмешательство занимает несколько минут, после него ритм и давление наблюдают ещё несколько часов",
+        "when": "Фибрилляция и трепетание предсердий, которые сохраняются и плохо переносятся, другие стойкие нарушения ритма, когда лекарствами ритм восстановить не удалось, плановое восстановление ритма после периода приёма препаратов, разжижающих кровь",
+        "prep": "Не есть и не пить перед вмешательством по указанию врача, принести результаты анализов крови и ЭКГ, не прерывать самостоятельно препараты, разжижающие кровь; часто перед этим делают УЗИ сердца через пищевод, нужен сопровождающий, за руль в этот день нельзя",
+        "abnormal": "Ритм может восстановиться сразу, восстановиться частично или через время вернуться к прежнему. Покраснение и лёгкая болезненность кожи под электродами в течение нескольких дней обычны; дальнейшую терапию и наблюдение определяет кардиолог"
+      },
+      "en": {
+        "what": "Restoration of a regular heart rhythm with a short electrical impulse synchronised with the heart's own activity",
+        "how": "An intravenous line is placed and a medicine for short sleep is given, pads are put on the chest and the device delivers a synchronised impulse, repeated at higher energy if needed; the procedure takes a few minutes and is followed by several hours of rhythm and blood pressure monitoring",
+        "when": "Atrial fibrillation and atrial flutter that persist and are poorly tolerated, other persistent rhythm disorders when medicines have not restored the rhythm, planned restoration of rhythm after a period of blood-thinning treatment",
+        "prep": "Do not eat or drink before the procedure as instructed by the doctor, bring blood test results and the ECG, do not stop blood-thinning medicines on your own; an ultrasound of the heart through the oesophagus is often done beforehand, an accompanying person is needed and driving is not allowed that day",
+        "abnormal": "The rhythm may return at once, return only partly, or go back to the previous pattern after some time. Redness and mild soreness of the skin under the pads for a few days are common; further treatment and follow-up are decided by the cardiologist"
+      },
+      "sr": {
+        "what": "Uspostavljanje pravilnog srčanog ritma kratkim električnim impulsom usklađenim sa radom srca",
+        "how": "Postavlja se venski put i daje lijek za kratak san, na grudi se stavljaju elektrode i aparat isporučuje usklađeni impuls, po potrebi ponovo sa većom energijom; sam zahvat traje nekoliko minuta, a poslije njega se ritam i pritisak prate još nekoliko sati",
+        "when": "Atrijalna fibrilacija i undulacija koje traju i teško se podnose, drugi uporni poremećaji ritma kada lijekovima ritam nije uspostavljen, planirano uspostavljanje ritma poslije perioda uzimanja lijekova za razrjeđivanje krvi",
+        "prep": "Ne jesti i ne piti prije zahvata prema uputstvu ljekara, ponijeti nalaze krvi i EKG, ne prekidati samostalno lijekove za razrjeđivanje krvi; često se prije toga radi ultrazvuk srca preko jednjaka, potrebna je pratnja i tog dana se ne vozi",
+        "abnormal": "Ritam se može uspostaviti odmah, samo djelimično ili se poslije nekog vremena vratiti na prethodni. Crvenilo i blaga osjetljivost kože ispod elektroda nekoliko dana su uobičajeni; dalju terapiju i praćenje određuje kardiolog"
+      },
+      "de": {
+        "what": "Wiederherstellung eines regelmäßigen Herzrhythmus durch einen kurzen, mit der Herzaktion synchronisierten Stromimpuls",
+        "how": "Ein venöser Zugang wird gelegt und ein Medikament für einen kurzen Schlaf gegeben, Klebeelektroden kommen auf den Brustkorb und das Gerät gibt den synchronisierten Impuls ab, bei Bedarf erneut mit höherer Energie; der Eingriff dauert wenige Minuten, danach werden Rhythmus und Blutdruck einige Stunden überwacht",
+        "when": "Anhaltendes und schlecht verträgliches Vorhofflimmern oder Vorhofflattern, andere anhaltende Rhythmusstörungen, wenn Medikamente den Rhythmus nicht wiederhergestellt haben, geplante Rhythmuswiederherstellung nach einer Phase der Blutverdünnung",
+        "prep": "Nach ärztlicher Vorgabe nüchtern bleiben, Blutwerte und EKG mitbringen, blutverdünnende Medikamente nicht eigenmächtig absetzen; häufig wird vorher ein Herzultraschall über die Speiseröhre durchgeführt, eine Begleitperson ist nötig und Autofahren an diesem Tag nicht erlaubt",
+        "abnormal": "Der Rhythmus kann sofort, nur teilweise oder vorübergehend zurückkehren und später wieder in den alten übergehen. Rötung und leichte Druckempfindlichkeit der Haut unter den Elektroden über einige Tage sind üblich; die weitere Therapie und Nachsorge legt der Kardiologe fest"
+      },
+      "tr": {
+        "what": "Kalbin kendi atımlarıyla eşzamanlanmış kısa bir elektrik akımıyla düzenli kalp ritminin yeniden sağlanması",
+        "how": "Damar yolu açılır ve kısa süreli uyku sağlayan ilaç verilir, göğse yapışkan elektrotlar yerleştirilir ve cihaz eşzamanlı akımı uygular, gerekirse daha yüksek enerjiyle tekrarlanır; işlem birkaç dakika sürer, ardından ritim ve tansiyon birkaç saat izlenir",
+        "when": "Süregelen ve zor tolere edilen atriyal fibrilasyon ve atriyal flatter, ilaçlarla ritmin düzelmediği diğer kalıcı ritim bozuklukları, kan sulandırıcı tedavi döneminden sonra planlanan ritim düzeltmesi",
+        "prep": "Hekimin talimatına göre işlemden önce aç ve susuz kalın, kan tetkiklerini ve EKG'yi getirin, kan sulandırıcı ilaçları kendiniz bırakmayın; çoğu durumda öncesinde yemek borusundan kalp ultrasonu yapılır, refakatçi gerekir ve o gün araç kullanılmaz",
+        "abnormal": "Ritim hemen düzelebilir, kısmen düzelebilir veya bir süre sonra eski haline dönebilir. Elektrotların altındaki ciltte birkaç gün süren kızarıklık ve hafif hassasiyet olağandır; sonraki tedaviyi ve izlemi kardiyolog belirler"
+      },
+      "sr_cyrl": {
+        "what": "Успостављање правилног срчаног ритма кратким електричним импулсом усклађеним са радом срца",
+        "how": "Поставља се венски пут и даје лијек за кратак сан, на груди се стављају електроде и апарат испоручује усклађени импулс, по потреби поново са већом енергијом; сам захват траје неколико минута, а послије њега се ритам и притисак прате још неколико сати",
+        "when": "Атријална фибрилација и ундулација које трају и тешко се подносе, други упорни поремећаји ритма када лијековима ритам није успостављен, планирано успостављање ритма послије периода узимања лијекова за разрјеђивање крви",
+        "prep": "Не јести и не пити прије захвата према упутству љекара, понијети налазе крви и ЕКГ, не прекидати самостално лијекове за разрјеђивање крви; често се прије тога ради ултразвук срца преко једњака, потребна је пратња и тог дана се не вози",
+        "abnormal": "Ритам се може успоставити одмах, само дјелимично или се послије неког времена вратити на претходни. Црвенило и блага осјетљивост коже испод електрода неколико дана су уобичајени; даљу терапију и праћење одређује кардиолог"
+      }
+    }
+  },
+  {
+    "slug": "cardiac-telemetry",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Непрерывное наблюдение за ритмом сердца у пациента в стационаре с передачей записи на монитор сестринского поста",
+        "how": "Электроды на груди подключены к небольшому передатчику, который пациент носит на себе и может ходить по отделению, а кривая ЭКГ непрерывно выводится на центральный монитор, за которым следит персонал; наблюдение длится от нескольких часов до нескольких суток",
+        "when": "Боль в груди и подозрение на острое снижение кровоснабжения сердца, зафиксированные или предполагаемые опасные нарушения ритма, обмороки неясной причины, период подбора препаратов, влияющих на ритм, наблюдение после восстановления ритма или после вмешательств на сердце",
+        "prep": "Подготовка не нужна, электроды накладывает персонал; кожу под ними нельзя мочить, передатчик не снимают самостоятельно, о плохом самочувствии надо сразу сказать сестре, чтобы время отметили в записи",
+        "abnormal": "Зафиксированные эпизоды сравнивают с самочувствием пациента в тот же момент; они могут быть связаны с нарушением ритма, проведения или с кровоснабжением сердца. Решение о лечении и о продолжении наблюдения принимает лечащий кардиолог"
+      },
+      "en": {
+        "what": "Continuous monitoring of the heart rhythm of a patient in hospital, with the tracing sent to a monitor at the nurses' station",
+        "how": "Electrodes on the chest are connected to a small transmitter that the patient carries, so walking around the ward is possible, while the ECG curve runs continuously on a central monitor watched by the staff; monitoring lasts from several hours to several days",
+        "when": "Chest pain with suspected acute reduction of blood supply to the heart, documented or suspected dangerous rhythm disorders, fainting of unclear cause, the period of adjusting medicines that affect rhythm, observation after rhythm restoration or after heart procedures",
+        "prep": "No preparation is needed, the staff attach the electrodes; the skin under them must stay dry, the transmitter should not be removed by the patient, and symptoms should be reported at once so that the time is marked on the recording",
+        "abnormal": "Recorded episodes are compared with how the patient felt at that moment and may be related to disturbances of rhythm or conduction or to the blood supply of the heart. The treating cardiologist decides on treatment and on continuing the monitoring"
+      },
+      "sr": {
+        "what": "Neprekidno praćenje srčanog ritma kod pacijenta u bolnici, sa prenosom zapisa na monitor na sestrinskom pultu",
+        "how": "Elektrode na grudima povezane su sa malim predajnikom koji pacijent nosi, pa može hodati po odjeljenju, dok se EKG krivulja neprekidno prikazuje na centralnom monitoru koji osoblje prati; nadzor traje od nekoliko sati do nekoliko dana",
+        "when": "Bol u grudima i sumnja na naglo smanjenu prokrvljenost srca, zabilježeni ili pretpostavljeni opasni poremećaji ritma, nesvjestice nejasnog uzroka, period uvođenja terapije koja utiče na ritam, praćenje poslije uspostavljanja ritma ili poslije zahvata na srcu",
+        "prep": "Priprema nije potrebna, elektrode postavlja osoblje; koža ispod njih mora ostati suva, predajnik se ne skida samostalno, a o tegobama odmah recite sestri da bi se vrijeme upisalo uz zapis",
+        "abnormal": "Zabilježene epizode porede se sa tim kako se pacijent u tom trenutku osjećao i mogu biti povezane sa poremećajem ritma, provođenja ili sa prokrvljenošću srca. Odluku o liječenju i o nastavku nadzora donosi kardiolog koji vodi pacijenta"
+      },
+      "de": {
+        "what": "Fortlaufende Überwachung des Herzrhythmus bei stationären Patienten mit Übertragung der Kurve auf einen Monitor im Stationsstützpunkt",
+        "how": "Elektroden auf dem Brustkorb sind mit einem kleinen Sender verbunden, den der Patient trägt, sodass er sich auf der Station bewegen kann, während die EKG-Kurve ununterbrochen auf einem Zentralmonitor läuft und vom Personal beobachtet wird; die Überwachung dauert Stunden bis Tage",
+        "when": "Brustschmerz mit Verdacht auf akut verminderte Durchblutung des Herzens, dokumentierte oder vermutete gefährliche Rhythmusstörungen, Ohnmacht unklarer Ursache, Einstellungsphase von Medikamenten mit Wirkung auf den Rhythmus, Beobachtung nach Rhythmuswiederherstellung oder nach Eingriffen am Herzen",
+        "prep": "Keine Vorbereitung nötig, die Elektroden bringt das Personal an; die Haut darunter muss trocken bleiben, der Sender wird nicht selbst abgenommen und Beschwerden sollten sofort gemeldet werden, damit der Zeitpunkt in der Aufzeichnung vermerkt wird",
+        "abnormal": "Aufgezeichnete Episoden werden mit dem Befinden zum selben Zeitpunkt verglichen und können mit Rhythmus- oder Leitungsstörungen oder mit der Durchblutung des Herzens zusammenhängen. Über Behandlung und Fortführung der Überwachung entscheidet der behandelnde Kardiologe"
+      },
+      "tr": {
+        "what": "Hastanedeki hastanın kalp ritminin sürekli izlenmesi ve kaydın hemşire bankosundaki monitöre aktarılması",
+        "how": "Göğüsteki elektrotlar hastanın üzerinde taşıdığı küçük bir vericiye bağlanır, böylece hasta serviste dolaşabilir, EKG eğrisi ise personelin izlediği merkezi monitörde kesintisiz akar; izlem birkaç saatten birkaç güne kadar sürer",
+        "when": "Göğüs ağrısı ve kalbin kanlanmasının ani azaldığı şüphesi, saptanmış veya şüphelenilen tehlikeli ritim bozuklukları, nedeni belirsiz bayılmalar, ritmi etkileyen ilaçların ayarlandığı dönem, ritim düzeltildikten veya kalp girişimlerinden sonraki izlem",
+        "prep": "Hazırlık gerekmez, elektrotları personel takar; altındaki cilt kuru kalmalı, verici hasta tarafından çıkarılmamalı ve şikâyetler zaman kayda işlensin diye hemen hemşireye bildirilmelidir",
+        "abnormal": "Kaydedilen ataklar hastanın o andaki durumuyla karşılaştırılır ve ritim, iletim bozukluğu veya kalbin kanlanmasıyla ilişkili olabilir. Tedaviye ve izlemin sürdürülmesine hastayı izleyen kardiyolog karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Непрекидно праћење срчаног ритма код пацијента у болници, са преносом записа на монитор на сестринском пулту",
+        "how": "Електроде на грудима повезане су са малим предајником који пацијент носи, па може ходати по одјељењу, док се ЕКГ кривуља непрекидно приказује на централном монитору који особље прати; надзор траје од неколико сати до неколико дана",
+        "when": "Бол у грудима и сумња на нагло смањену прокрвљеност срца, забиљежени или претпостављени опасни поремећаји ритма, несвјестице нејасног узрока, период увођења терапије која утиче на ритам, праћење послије успостављања ритма или послије захвата на срцу",
+        "prep": "Припрема није потребна, електроде поставља особље; кожа испод њих мора остати сува, предајник се не скида самостално, а о тегобама одмах реците сестри да би се вријеме уписало уз запис",
+        "abnormal": "Забиљежене епизоде пореде се са тим како се пацијент у том тренутку осјећао и могу бити повезане са поремећајем ритма, провођења или са прокрвљеношћу срца. Одлуку о лијечењу и о наставку надзора доноси кардиолог који води пацијента"
+      }
+    }
+  },
+  {
+    "slug": "cardiologist-examination-with-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приём кардиолога, на котором врач в ту же встречу делает ультразвуковое исследование сердца и объясняет результат",
+        "how": "Врач собирает жалобы, измеряет давление, выслушивает сердце и лёгкие, затем пациент ложится на левый бок и датчиком через грудную клетку оценивают камеры, клапаны, сократимость и кровоток; приём занимает 30-45 минут",
+        "when": "Шум в сердце, одышка и быстрая утомляемость, отёки, повышенное давление, перенесённый инфаркт или операция на сердце, наблюдение при пороке клапана, оценка перед операцией или перед началом физической активности",
+        "prep": "Специальная подготовка не нужна; взять прежние протоколы УЗИ сердца, плёнки ЭКГ и список препаратов с дозами, надеть одежду, которую легко снять до пояса, не наносить крем на кожу груди",
+        "abnormal": "Находки по размерам камер, клапанам и сократимости имеют разный вес и часто требуют сравнения с предыдущим исследованием. Заключение и план дальнейших действий даёт кардиолог на этом же приёме"
+      },
+      "en": {
+        "what": "Cardiology consultation in which the doctor performs the heart ultrasound during the same visit and explains the result",
+        "how": "The doctor takes the history, measures blood pressure, listens to the heart and lungs, then the patient lies on the left side and the chambers, valves, contraction and blood flow are assessed with the probe through the chest wall; the visit takes 30-45 minutes",
+        "when": "A murmur, breathlessness and tiring quickly, swelling, high blood pressure, a previous heart attack or heart surgery, follow-up of a valve condition, assessment before an operation or before starting physical activity",
+        "prep": "No special preparation; bring earlier heart ultrasound reports, ECG tracings and the list of medicines with doses, wear clothes that are easy to remove to the waist and do not apply cream to the chest",
+        "abnormal": "Findings on chamber size, valves and contraction carry different weight and often need comparison with the previous study. The cardiologist gives the conclusion and the plan during the same visit"
+      },
+      "sr": {
+        "what": "Pregled kardiologa na kojem ljekar u istoj posjeti uradi ultrazvuk srca i objasni nalaz",
+        "how": "Ljekar uzima anamnezu, mjeri pritisak, sluša srce i pluća, a zatim pacijent legne na lijevi bok i sondom preko grudnog koša se procjenjuju šupljine, zalisci, kontraktilnost i protok; posjeta traje 30-45 minuta",
+        "when": "Šum na srcu, gušenje i brzo zamaranje, otoci, povišen pritisak, preboljeli infarkt ili operacija srca, praćenje mane na zalisku, procjena prije operacije ili prije početka fizičke aktivnosti",
+        "prep": "Posebna priprema nije potrebna; ponesite ranije nalaze ultrazvuka srca, EKG snimke i spisak lijekova sa dozama, obucite odjeću koju je lako skinuti do pojasa i ne stavljajte kremu na kožu grudi",
+        "abnormal": "Nalazi o veličini šupljina, zaliscima i kontraktilnosti nemaju isti značaj i često se porede sa prethodnim pregledom. Zaključak i plan daje kardiolog na samom pregledu"
+      },
+      "de": {
+        "what": "Kardiologische Konsultation, bei der der Arzt den Herzultraschall im selben Termin durchführt und das Ergebnis erklärt",
+        "how": "Der Arzt erhebt die Anamnese, misst den Blutdruck, hört Herz und Lunge ab, danach liegt der Patient auf der linken Seite und über die Brustwand werden Herzhöhlen, Klappen, Pumpfunktion und Blutfluss beurteilt; der Termin dauert 30-45 Minuten",
+        "when": "Herzgeräusch, Luftnot und rasche Ermüdung, Ödeme, Bluthochdruck, durchgemachter Herzinfarkt oder Herzoperation, Verlaufskontrolle bei einem Klappenfehler, Beurteilung vor einer Operation oder vor Beginn körperlicher Aktivität",
+        "prep": "Keine besondere Vorbereitung; frühere Ultraschallbefunde des Herzens, EKG-Aufzeichnungen und die Medikamentenliste mit Dosierungen mitbringen, Kleidung tragen, die sich bis zur Taille leicht ablegen lässt, und keine Creme auf die Brust auftragen",
+        "abnormal": "Befunde zu Herzhöhlen, Klappen und Pumpfunktion haben unterschiedliches Gewicht und werden oft mit der Voruntersuchung verglichen. Beurteilung und weiteres Vorgehen gibt der Kardiologe im selben Termin"
+      },
+      "tr": {
+        "what": "Hekimin aynı ziyarette kalp ultrasonunu kendisinin yaptığı ve sonucu anlattığı kardiyoloji muayenesi",
+        "how": "Hekim öyküyü alır, tansiyonu ölçer, kalbi ve akciğerleri dinler, ardından hasta sol yanına yatar ve göğüs duvarından probla boşluklar, kapaklar, kasılma ve kan akımı değerlendirilir; muayene 30-45 dakika sürer",
+        "when": "Kalpte üfürüm, nefes darlığı ve çabuk yorulma, ödem, yüksek tansiyon, geçirilmiş kalp krizi veya kalp ameliyatı, kapak hastalığının takibi, ameliyat öncesi veya fiziksel aktiviteye başlamadan önce değerlendirme",
+        "prep": "Özel hazırlık gerekmez; önceki kalp ultrasonu raporlarını, EKG kayıtlarını ve dozlarıyla birlikte ilaç listesini getirin, bele kadar kolay çıkarılabilen kıyafet giyin ve göğüs cildine krem sürmeyin",
+        "abnormal": "Boşluk ölçüleri, kapaklar ve kasılmaya ait bulguların ağırlığı farklıdır ve çoğu kez önceki incelemeyle karşılaştırılır. Sonucu ve izlem planını kardiyolog aynı muayenede verir"
+      },
+      "sr_cyrl": {
+        "what": "Преглед кардиолога на којем љекар у истој посјети уради ултразвук срца и објасни налаз",
+        "how": "Љекар узима анамнезу, мјери притисак, слуша срце и плућа, а затим пацијент легне на лијеви бок и сондом преко грудног коша се процјењују шупљине, залисци, контрактилност и проток; посјета траје 30-45 минута",
+        "when": "Шум на срцу, гушење и брзо замарање, отоци, повишен притисак, пребољели инфаркт или операција срца, праћење мане на залиску, процјена прије операције или прије почетка физичке активности",
+        "prep": "Посебна припрема није потребна; понесите раније налазе ултразвука срца, ЕКГ снимке и списак лијекова са дозама, обуците одјећу коју је лако скинути до појаса и не стављајте крему на кожу груди",
+        "abnormal": "Налази о величини шупљина, залисцима и контрактилности немају исти значај и често се пореде са претходним прегледом. Закључак и план даје кардиолог на самом прегледу"
+      }
+    }
+  },
+  {
+    "slug": "carotid-artery-color-doppler",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковое исследование сонных артерий в цветном режиме с оценкой стенки сосуда и скорости кровотока",
+        "how": "Пациент лежит с повёрнутой в сторону головой, врач ведёт датчиком по боковой поверхности шеи, смотрит толщину стенки и отложения, а цветной режим показывает направление и скорость потока в месте сужения; 15-30 минут, безболезненно",
+        "when": "Оценка сосудов при высоком холестерине, гипертонии, диабете и курении, перенесённое преходящее нарушение мозгового кровообращения или инсульт, шум над сосудом при осмотре, наблюдение за ранее найденной бляшкой, подготовка к операции на сердце или на сосудах",
+        "prep": "Подготовка не нужна; удобно прийти без высокого воротника, шарфа и цепочек, чтобы шея была открыта",
+        "abnormal": "Утолщение стенки, бляшка или ускорение потока могут указывать на сужение сосуда разной степени. Степень изменений и дальнейшую тактику оценивает сосудистый хирург или невролог, часто вместе с другими исследованиями сосудов"
+      },
+      "en": {
+        "what": "Ultrasound of the carotid arteries in colour mode, assessing the vessel wall and the speed of blood flow",
+        "how": "The patient lies with the head turned to the side, the doctor moves the probe along the side of the neck, looks at wall thickness and deposits, while the colour mode shows the direction and the speed of flow at a narrowing; 15-30 minutes, painless",
+        "when": "Vessel assessment with high cholesterol, high blood pressure, diabetes and smoking, a previous transient disturbance of brain circulation or a stroke, a bruit heard over the vessel, follow-up of a known plaque, work-up before heart or vascular surgery",
+        "prep": "No preparation is needed; it helps to come without a high collar, scarf or chains so that the neck is free",
+        "abnormal": "Wall thickening, plaque or accelerated flow may point to narrowing of different degree. The extent of the changes and the next steps are judged by the vascular surgeon or neurologist, often together with other vascular studies"
+      },
+      "sr": {
+        "what": "Ultrazvučni pregled karotidnih arterija u kolor režimu, sa procjenom zida krvnog suda i brzine protoka",
+        "how": "Pacijent leži sa glavom okrenutom u stranu, ljekar vodi sondu uz bočnu stranu vrata, gleda debljinu zida i naslage, dok kolor režim pokazuje smjer i brzinu protoka na mjestu suženja; traje 15-30 minuta i nije bolno",
+        "when": "Procjena krvnih sudova kod povišenog holesterola, pritiska, šećerne bolesti i pušenja, preboljeli prolazni poremećaj moždane cirkulacije ili moždani udar, šum nad krvnim sudom pri pregledu, praćenje ranije nađenog plaka, priprema za operaciju srca ili krvnih sudova",
+        "prep": "Priprema nije potrebna; zgodno je doći bez visoke kragne, šala i lančića, da vrat bude slobodan",
+        "abnormal": "Zadebljanje zida, plak ili ubrzan protok mogu ukazivati na suženje različitog stepena. Stepen promjena i dalje korake procjenjuje vaskularni hirurg ili neurolog, često uz ostale preglede krvnih sudova"
+      },
+      "de": {
+        "what": "Ultraschall der Halsschlagadern im Farbmodus mit Beurteilung der Gefäßwand und der Flussgeschwindigkeit",
+        "how": "Der Patient liegt mit zur Seite gedrehtem Kopf, der Arzt führt den Schallkopf seitlich am Hals entlang, beurteilt Wanddicke und Ablagerungen, während der Farbmodus Richtung und Geschwindigkeit des Flusses an einer Engstelle zeigt; 15-30 Minuten, schmerzfrei",
+        "when": "Gefäßbeurteilung bei hohem Cholesterin, Bluthochdruck, Diabetes und Rauchen, durchgemachte vorübergehende Durchblutungsstörung des Gehirns oder Schlaganfall, Strömungsgeräusch über dem Gefäß, Verlaufskontrolle einer bekannten Plaque, Abklärung vor Herz- oder Gefäßoperationen",
+        "prep": "Keine Vorbereitung nötig; günstig ist, ohne hohen Kragen, Schal und Halsketten zu kommen, damit der Hals frei ist",
+        "abnormal": "Wandverdickung, Plaque oder beschleunigter Fluss können auf eine Engstelle unterschiedlichen Grades hinweisen. Das Ausmaß der Veränderungen und das weitere Vorgehen beurteilt der Gefäßchirurg oder Neurologe, oft zusammen mit weiteren Gefäßuntersuchungen"
+      },
+      "tr": {
+        "what": "Şahdamarlarının renkli modda, damar duvarı ve kan akım hızı değerlendirilerek yapılan ultrason incelemesi",
+        "how": "Hasta başını yana çevirmiş halde yatar, hekim probu boynun yan yüzünde gezdirir, duvar kalınlığına ve birikimlere bakar, renkli mod ise darlık bölgesinde akımın yönünü ve hızını gösterir; 15-30 dakika sürer ve ağrısızdır",
+        "when": "Yüksek kolesterol, yüksek tansiyon, şeker hastalığı ve sigara kullanımında damar değerlendirmesi, geçirilmiş geçici beyin kanlanma bozukluğu veya inme, muayenede damar üzerinde üfürüm duyulması, bilinen plağın takibi, kalp veya damar ameliyatı öncesi hazırlık",
+        "prep": "Hazırlık gerekmez; boynun açık kalması için yüksek yakalı giysi, atkı ve kolye olmadan gelmek işi kolaylaştırır",
+        "abnormal": "Duvar kalınlaşması, plak veya hızlanmış akım farklı derecelerde darlığa işaret edebilir. Değişikliklerin derecesini ve sonraki adımları damar cerrahı veya nörolog, çoğu kez diğer damar incelemeleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучни преглед каротидних артерија у колор режиму, са процјеном зида крвног суда и брзине протока",
+        "how": "Пацијент лежи са главом окренутом у страну, љекар води сонду уз бочну страну врата, гледа дебљину зида и наслаге, док колор режим показује смјер и брзину протока на мјесту сужења; траје 15-30 минута и није болно",
+        "when": "Процјена крвних судова код повишеног холестерола, притиска, шећерне болести и пушења, пребољели пролазни поремећај мождане циркулације или мождани удар, шум над крвним судом при прегледу, праћење раније нађеног плака, припрема за операцију срца или крвних судова",
+        "prep": "Припрема није потребна; згодно је доћи без високе крагне, шала и ланчића, да врат буде слободан",
+        "abnormal": "Задебљање зида, плак или убрзан проток могу указивати на сужење различитог степена. Степен промјена и даље кораке процјењује васкуларни хирург или неуролог, често уз остале прегледе крвних судова"
+      }
+    }
+  },
+  {
+    "slug": "echocardiography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковое исследование сердца в покое: врач смотрит камеры, клапаны и перегородки и измеряет показатели работы сердца",
+        "how": "Исследование делают лёжа, чаще на левом боку, датчик с гелем прикладывают между рёбрами, под грудиной и над ней, в ходе записи просят ненадолго задержать дыхание; занимает 20-30 минут, лучевой нагрузки нет",
+        "when": "Шум в сердце, одышка, отёки, перебои, повышенное давление, перенесённый инфаркт, наблюдение при пороке клапана и при сердечной недостаточности, оценка сердца перед операцией, перед химиотерапией или перед физическими нагрузками",
+        "prep": "Подготовка не нужна; надеть одежду, которую легко снять до пояса, не наносить крем и масло на кожу груди, взять прежние протоколы исследования для сравнения",
+        "abnormal": "Изменения размеров полостей, толщины стенок, работы клапанов или сократимости могут быть связаны с разными состояниями и оцениваются вместе с жалобами и прежними исследованиями. Заключение пишет врач, проводивший исследование, а лечение определяет кардиолог"
+      },
+      "en": {
+        "what": "Ultrasound study of the heart at rest: the chambers, valves and septa are viewed and the measurements of heart function are taken",
+        "how": "The study is done lying down, usually on the left side, the probe with gel is placed between the ribs, below and above the breastbone, and short breath-holds are requested; it takes 20-30 minutes and involves no radiation",
+        "when": "A murmur, breathlessness, swelling, palpitations, high blood pressure, a previous heart attack, follow-up of a valve condition and of heart failure, assessment of the heart before surgery, before chemotherapy or before physical loads",
+        "prep": "No preparation is needed; wear clothes that are easy to remove to the waist, do not apply cream or oil to the chest, and bring earlier reports for comparison",
+        "abnormal": "Changes in chamber size, wall thickness, valve function or contraction may be related to different conditions and are judged together with the symptoms and earlier studies. The report is written by the doctor performing the study, while treatment is decided by the cardiologist"
+      },
+      "sr": {
+        "what": "Ultrazvučni pregled srca u mirovanju: gledaju se šupljine, zalisci i pregrade i mjere pokazatelji rada srca",
+        "how": "Pregled se radi ležeći, najčešće na lijevom boku, sonda sa gelom se postavlja između rebara, ispod i iznad grudne kosti, uz povremeno kratko zadržavanje daha; traje 20-30 minuta i nema zračenja",
+        "when": "Šum na srcu, gušenje, otoci, preskakanje, povišen pritisak, preboljeli infarkt, praćenje mane zaliska i srčane slabosti, procjena srca prije operacije, prije hemioterapije ili prije fizičkih napora",
+        "prep": "Priprema nije potrebna; obucite odjeću koju je lako skinuti do pojasa, ne stavljajte kremu ni ulje na kožu grudi i ponesite ranije nalaze radi poređenja",
+        "abnormal": "Promjene veličine šupljina, debljine zidova, rada zalistaka ili kontraktilnosti mogu biti povezane sa različitim stanjima i procjenjuju se uz tegobe i ranije preglede. Nalaz piše ljekar koji je pregled uradio, a liječenje određuje kardiolog"
+      },
+      "de": {
+        "what": "Ultraschalluntersuchung des Herzens in Ruhe: Herzhöhlen, Klappen und Scheidewände werden dargestellt und Kennwerte der Herzfunktion gemessen",
+        "how": "Die Untersuchung erfolgt im Liegen, meist auf der linken Seite, der Schallkopf mit Gel wird zwischen die Rippen, unter und über das Brustbein aufgesetzt, dabei wird kurzes Luftanhalten verlangt; sie dauert 20-30 Minuten und kommt ohne Strahlung aus",
+        "when": "Herzgeräusch, Luftnot, Ödeme, Herzstolpern, Bluthochdruck, durchgemachter Herzinfarkt, Verlaufskontrolle bei Klappenfehlern und Herzschwäche, Beurteilung des Herzens vor Operationen, vor Chemotherapie oder vor körperlicher Belastung",
+        "prep": "Keine Vorbereitung nötig; Kleidung tragen, die sich bis zur Taille leicht ablegen lässt, keine Creme oder Öl auf die Brust auftragen und frühere Befunde zum Vergleich mitbringen",
+        "abnormal": "Veränderungen von Höhlengröße, Wanddicke, Klappenfunktion oder Pumpfunktion können mit verschiedenen Zuständen zusammenhängen und werden gemeinsam mit den Beschwerden und Voruntersuchungen bewertet. Den Befund schreibt der untersuchende Arzt, über die Behandlung entscheidet der Kardiologe"
+      },
+      "tr": {
+        "what": "Kalbin istirahat halinde ultrasonla incelenmesi: boşluklar, kapaklar ve bölmeler görüntülenir, kalbin çalışmasına ait ölçümler alınır",
+        "how": "İnceleme yatar pozisyonda, çoğunlukla sol yan üzerinde yapılır, jelli prob kaburga aralarına, göğüs kemiğinin altına ve üstüne yerleştirilir, arada kısa süre nefesin tutulması istenir; 20-30 dakika sürer ve ışın içermez",
+        "when": "Kalpte üfürüm, nefes darlığı, ödem, çarpıntı, yüksek tansiyon, geçirilmiş kalp krizi, kapak hastalığının ve kalp yetmezliğinin takibi, ameliyat, kemoterapi veya fiziksel yüklenme öncesi kalbin değerlendirilmesi",
+        "prep": "Hazırlık gerekmez; bele kadar kolay çıkarılabilen kıyafet giyin, göğüs cildine krem veya yağ sürmeyin ve karşılaştırma için önceki raporlarınızı getirin",
+        "abnormal": "Boşluk ölçülerinde, duvar kalınlığında, kapak işlevinde veya kasılmada görülen değişiklikler farklı durumlarla ilişkili olabilir ve şikâyetler ile önceki incelemelerle birlikte değerlendirilir. Raporu inceleme yapan hekim yazar, tedaviyi kardiyolog belirler"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучни преглед срца у мировању: гледају се шупљине, залисци и преграде и мјере показатељи рада срца",
+        "how": "Преглед се ради лежећи, најчешће на лијевом боку, сонда са гелом се поставља између ребара, испод и изнад грудне кости, уз повремено кратко задржавање даха; траје 20-30 минута и нема зрачења",
+        "when": "Шум на срцу, гушење, отоци, прескакање, повишен притисак, пребољели инфаркт, праћење мане залиска и срчане слабости, процјена срца прије операције, прије хемиотерапије или прије физичких напора",
+        "prep": "Припрема није потребна; обуците одјећу коју је лако скинути до појаса, не стављајте крему ни уље на кожу груди и понесите раније налазе ради поређења",
+        "abnormal": "Промјене величине шупљина, дебљине зидова, рада залистака или контрактилности могу бити повезане са различитим стањима и процјењују се уз тегобе и раније прегледе. Налаз пише љекар који је преглед урадио, а лијечење одређује кардиолог"
+      }
+    }
+  },
+  {
+    "slug": "electric-cardioversion",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прекращение опасного или плохо переносимого нарушения ритма разрядом дефибриллятора под коротким наркозом",
+        "how": "Анестезиолог вводит препарат, от которого пациент засыпает на несколько минут, в это время через электроды на груди подают разряд и сразу оценивают ритм на мониторе; пациент просыпается в палате, дыхание и давление контролируют до полного пробуждения",
+        "when": "Нарушение ритма с падением давления, выраженной одышкой или болью в груди, когда ждать действия лекарств небезопасно, а также плановое восстановление ритма у пациентов, которые не переносят процедуру без наркоза",
+        "prep": "В плановой ситуации не есть и не пить перед наркозом по указанию клиники, рассказать анестезиологу о болезнях, аллергии и всех принимаемых препаратах, снять съёмные зубные протезы; в неотложной ситуации вмешательство делают без подготовки",
+        "abnormal": "После пробуждения часто бывают сонливость и ощущение жжения кожи груди под электродами, они проходят за несколько дней. О сохраняющихся перебоях, слабости или боли в груди надо сообщить врачу, а план дальнейшего лечения определяет кардиолог"
+      },
+      "en": {
+        "what": "Stopping a dangerous or poorly tolerated rhythm disorder with a defibrillator discharge under short general anaesthesia",
+        "how": "The anaesthetist gives a medicine that puts the patient to sleep for a few minutes, during which the shock is delivered through pads on the chest and the rhythm is checked at once on the monitor; the patient wakes up in the room while breathing and blood pressure are monitored until fully awake",
+        "when": "A rhythm disorder with falling blood pressure, marked breathlessness or chest pain, when waiting for medicines to work would not be safe, and also planned restoration of rhythm in patients who cannot tolerate the procedure without anaesthesia",
+        "prep": "In a planned setting, nothing to eat or drink before anaesthesia as instructed by the clinic, tell the anaesthetist about illnesses, allergies and all medicines taken, and remove dentures; in an emergency the procedure is done without preparation",
+        "abnormal": "Drowsiness after waking and a burning feeling of the chest skin under the pads are common and pass within a few days. Persisting palpitations, weakness or chest pain should be reported to the doctor, and the further treatment plan is set by the cardiologist"
+      },
+      "sr": {
+        "what": "Prekidanje opasnog ili teško podnošljivog poremećaja ritma impulsom defibrilatora u kratkoj opštoj anesteziji",
+        "how": "Anesteziolog daje lijek od kojeg pacijent zaspi na nekoliko minuta, u tom vremenu se preko elektroda na grudima isporučuje impuls i ritam se odmah provjerava na monitoru; pacijent se budi u sobi, uz kontrolu disanja i pritiska do potpunog buđenja",
+        "when": "Poremećaj ritma sa padom pritiska, izraženim gušenjem ili bolom u grudima, kada čekanje da lijekovi djeluju nije bezbjedno, ali i planirano uspostavljanje ritma kod pacijenata koji zahvat ne podnose bez anestezije",
+        "prep": "U planiranoj situaciji ne jesti i ne piti prije anestezije prema uputstvu klinike, reći anesteziologu za bolesti, alergije i sve lijekove koje uzimate i izvaditi pokretnu zubnu protezu; u hitnoj situaciji zahvat se radi bez pripreme",
+        "abnormal": "Poslije buđenja su česti pospanost i osjećaj pečenja kože grudi ispod elektroda, koji prolaze za nekoliko dana. O preskakanju koje se nastavlja, slabosti ili bolu u grudima treba obavijestiti ljekara, a plan daljeg liječenja određuje kardiolog"
+      },
+      "de": {
+        "what": "Beendigung einer gefährlichen oder schlecht verträglichen Rhythmusstörung durch einen Defibrillator-Impuls in kurzer Vollnarkose",
+        "how": "Der Anästhesist gibt ein Medikament, unter dem der Patient für wenige Minuten schläft, in dieser Zeit wird über Klebeelektroden auf dem Brustkorb der Impuls abgegeben und der Rhythmus sofort am Monitor kontrolliert; das Erwachen erfolgt im Zimmer unter Kontrolle von Atmung und Blutdruck",
+        "when": "Rhythmusstörung mit Blutdruckabfall, ausgeprägter Luftnot oder Brustschmerz, wenn das Abwarten der Medikamentenwirkung nicht sicher ist, sowie geplante Rhythmuswiederherstellung bei Patienten, die den Eingriff ohne Narkose nicht tolerieren",
+        "prep": "Im geplanten Fall nach Vorgabe der Klinik nüchtern bleiben, dem Anästhesisten Erkrankungen, Allergien und alle eingenommenen Medikamente mitteilen und herausnehmbaren Zahnersatz entfernen; im Notfall erfolgt der Eingriff ohne Vorbereitung",
+        "abnormal": "Nach dem Erwachen sind Schläfrigkeit und ein brennendes Gefühl der Brusthaut unter den Elektroden häufig und klingen in wenigen Tagen ab. Anhaltendes Herzstolpern, Schwäche oder Brustschmerz sind dem Arzt zu melden; den weiteren Behandlungsplan legt der Kardiologe fest"
+      },
+      "tr": {
+        "what": "Tehlikeli veya zor tolere edilen bir ritim bozukluğunun kısa genel anestezi altında defibrilatör şokuyla sonlandırılması",
+        "how": "Anestezi uzmanı hastayı birkaç dakika uyutan bir ilaç verir, bu sırada göğüsteki elektrotlardan şok uygulanır ve ritim monitörden hemen kontrol edilir; hasta odasında uyanır, tam uyanana kadar solunumu ve tansiyonu izlenir",
+        "when": "Tansiyon düşmesi, belirgin nefes darlığı veya göğüs ağrısıyla seyreden ritim bozukluğunda ilacın etkisini beklemenin güvenli olmadığı durumlar ve işlemi anestezisiz tolere edemeyen hastalarda planlı ritim düzeltmesi",
+        "prep": "Planlı durumda kliniğin talimatına göre anesteziden önce aç ve susuz kalın, anestezi uzmanına hastalıklarınızı, alerjilerinizi ve kullandığınız tüm ilaçları söyleyin, takma dişleri çıkarın; acil durumda işlem hazırlıksız yapılır",
+        "abnormal": "Uyandıktan sonra uyku hali ve elektrotların altındaki göğüs cildinde yanma hissi sıktır, birkaç gün içinde geçer. Süren çarpıntı, halsizlik veya göğüs ağrısı hekime bildirilmeli, sonraki tedavi planını kardiyolog belirler"
+      },
+      "sr_cyrl": {
+        "what": "Прекидање опасног или тешко подношљивог поремећаја ритма импулсом дефибрилатора у краткој општој анестезији",
+        "how": "Анестезиолог даје лијек од којег пацијент заспи на неколико минута, у том времену се преко електрода на грудима испоручује импулс и ритам се одмах провјерава на монитору; пацијент се буди у соби, уз контролу дисања и притиска до потпуног буђења",
+        "when": "Поремећај ритма са падом притиска, израженим гушењем или болом у грудима, када чекање да лијекови дјелују није безбједно, али и планирано успостављање ритма код пацијената који захват не подносе без анестезије",
+        "prep": "У планираној ситуацији не јести и не пити прије анестезије према упутству клинике, рећи анестезиологу за болести, алергије и све лијекове које узимате и извадити покретну зубну протезу; у хитној ситуацији захват се ради без припреме",
+        "abnormal": "Послије буђења су чести поспаност и осјећај печења коже груди испод електрода, који пролазе за неколико дана. О прескакању које се наставља, слабости или болу у грудима треба обавијестити љекара, а план даљег лијечења одређује кардиолог"
+      }
+    }
+  },
+  {
+    "slug": "ergocycle-stress-test-with-complete-ecg",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Нагрузочная проба на велоэргометре с записью ЭКГ во всех отведениях на протяжении всего теста",
+        "how": "Пациент крутит педали сидя, сопротивление повышают ступенями, всё это время пишут полную ЭКГ и регулярно измеряют давление; тест прекращают при достижении нужной частоты пульса, при усталости или при появлении симптомов, после чего ещё несколько минут записывают восстановление",
+        "when": "Боль в груди или одышка при нагрузке, оценка кровоснабжения сердца, контроль после стентирования или инфаркта, оценка ритма и давления в нагрузке, допуск к спорту и к работе с физическими требованиями",
+        "prep": "Спортивная обувь и свободная одежда, лёгкая еда за пару часов, без кофе и курения в день теста; препараты, влияющие на пульс, менять только по указанию врача, принести прежние плёнки ЭКГ",
+        "abnormal": "Изменения ЭКГ, падение или чрезмерный рост давления и симптомы при нагрузке могут быть связаны с недостаточным кровоснабжением сердца или с нарушением ритма. Результат оценивает кардиолог вместе с остальными данными и решает, нужны ли дальнейшие исследования"
+      },
+      "en": {
+        "what": "Exercise test on a bicycle ergometer with the full set of ECG leads recorded throughout the test",
+        "how": "The patient pedals in a sitting position while the resistance is raised in steps, the complete ECG runs the whole time and blood pressure is measured regularly; the test is stopped at the target heart rate, at exhaustion or when symptoms appear, and recording continues for a few minutes of recovery",
+        "when": "Chest pain or breathlessness on exertion, assessment of the blood supply to the heart, follow-up after stenting or a heart attack, assessment of rhythm and blood pressure under load, clearance for sport and for physically demanding work",
+        "prep": "Sports shoes and loose clothes, a light meal a couple of hours before, no coffee and no smoking on the day; change medicines that affect the pulse only on the doctor's instruction, and bring earlier ECG tracings",
+        "abnormal": "ECG changes, a fall or an excessive rise in blood pressure and symptoms during the load may be related to insufficient blood supply to the heart or to a rhythm disorder. The cardiologist interprets the result together with the rest of the data and decides whether further tests are needed"
+      },
+      "sr": {
+        "what": "Test opterećenja na ergociklu uz snimanje kompletnog EKG zapisa tokom cijelog testa",
+        "how": "Pacijent okreće pedale sjedeći dok se otpor povećava u stepenima, cijelo vrijeme se snima kompletan EKG i redovno mjeri pritisak; test se prekida na ciljnoj frekvenciji srca, pri umoru ili pojavi tegoba, a snimanje se nastavlja još nekoliko minuta oporavka",
+        "when": "Bol u grudima ili gušenje pri naporu, procjena prokrvljenosti srca, kontrola poslije ugradnje stenta ili infarkta, procjena ritma i pritiska u opterećenju, sposobnost za sport i za fizički zahtjevan posao",
+        "prep": "Patike i široka odjeća, lagan obrok par sati ranije, bez kafe i cigareta tog dana; terapiju koja utiče na puls mijenjajte samo po uputstvu ljekara i ponesite ranije EKG snimke",
+        "abnormal": "Promjene na EKG-u, pad ili prevelik skok pritiska i tegobe tokom opterećenja mogu biti povezani sa nedovoljnom prokrvljenošću srca ili sa poremećajem ritma. Rezultat tumači kardiolog uz ostale podatke i odlučuje da li su potrebna dalja ispitivanja"
+      },
+      "de": {
+        "what": "Belastungstest auf dem Fahrradergometer mit Aufzeichnung aller EKG-Ableitungen über den gesamten Test",
+        "how": "Der Patient tritt im Sitzen in die Pedale, während der Widerstand stufenweise steigt, das vollständige EKG läuft durchgehend und der Blutdruck wird regelmäßig gemessen; der Test endet bei der Zielfrequenz, bei Erschöpfung oder bei Beschwerden, danach werden noch einige Minuten der Erholung aufgezeichnet",
+        "when": "Brustschmerz oder Luftnot bei Anstrengung, Beurteilung der Durchblutung des Herzens, Kontrolle nach Stentimplantation oder Herzinfarkt, Beurteilung von Rhythmus und Blutdruck unter Belastung, Tauglichkeit für Sport und körperlich fordernde Arbeit",
+        "prep": "Sportschuhe und weite Kleidung, eine leichte Mahlzeit einige Stunden vorher, an diesem Tag kein Kaffee und kein Rauchen; Medikamente mit Wirkung auf den Puls nur nach ärztlicher Anweisung ändern und frühere EKG-Aufzeichnungen mitbringen",
+        "abnormal": "EKG-Veränderungen, ein Abfall oder übermäßiger Anstieg des Blutdrucks und Beschwerden unter Belastung können mit einer unzureichenden Durchblutung des Herzens oder einer Rhythmusstörung zusammenhängen. Der Kardiologe wertet das Ergebnis zusammen mit den übrigen Daten aus und entscheidet über weitere Untersuchungen"
+      },
+      "tr": {
+        "what": "Test boyunca tüm EKG derivasyonlarının kaydedildiği, bisiklet ergometresiyle yapılan efor testi",
+        "how": "Hasta oturarak pedal çevirir ve direnç kademeli artırılır, bu süre boyunca tam EKG kaydı alınır ve tansiyon düzenli ölçülür; test hedef kalp hızına ulaşınca, yorgunlukta veya şikâyet ortaya çıkınca sonlandırılır, ardından birkaç dakikalık toparlanma dönemi de kaydedilir",
+        "when": "Eforla gelen göğüs ağrısı veya nefes darlığı, kalbin kanlanmasının değerlendirilmesi, stent veya kalp krizi sonrası kontrol, yük altında ritim ve tansiyonun değerlendirilmesi, spora ve bedensel güç isteyen işe uygunluk",
+        "prep": "Spor ayakkabı ve bol kıyafet, testten birkaç saat önce hafif bir öğün, o gün kahve ve sigara yok; nabzı etkileyen ilaçları yalnızca hekimin talimatıyla değiştirin ve önceki EKG kayıtlarınızı getirin",
+        "abnormal": "EKG değişiklikleri, tansiyonun düşmesi veya aşırı yükselmesi ve yük sırasındaki şikâyetler kalbin yetersiz kanlanması veya ritim bozukluğu ile ilişkili olabilir. Sonucu kardiyolog diğer verilerle birlikte yorumlar ve ek inceleme gerekip gerekmediğine karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Тест оптерећења на ергоциклу уз снимање комплетног ЕКГ записа током цијелог теста",
+        "how": "Пацијент окреће педале сједећи док се отпор повећава у степенима, цијело вријеме се снима комплетан ЕКГ и редовно мјери притисак; тест се прекида на циљној фреквенцији срца, при умору или појави тегоба, а снимање се наставља још неколико минута опоравка",
+        "when": "Бол у грудима или гушење при напору, процјена прокрвљености срца, контрола послије уградње стента или инфаркта, процјена ритма и притиска у оптерећењу, способност за спорт и за физички захтјеван посао",
+        "prep": "Патике и широка одјећа, лаган оброк пар сати раније, без кафе и цигарета тог дана; терапију која утиче на пулс мијењајте само по упутству љекара и понесите раније ЕКГ снимке",
+        "abnormal": "Промјене на ЕКГ-у, пад или превелик скок притиска и тегобе током оптерећења могу бити повезани са недовољном прокрвљеношћу срца или са поремећајем ритма. Резултат тумачи кардиолог уз остале податке и одлучује да ли су потребна даља испитивања"
+      }
+    }
+  },
+  {
+    "slug": "ergometry-ecg-stress-test",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Функциональная проба, которая показывает, как сердце, пульс и давление реагируют на дозированную физическую нагрузку, с одновременной записью ЭКГ",
+        "how": "На беговой дорожке или велоэргометре пациент работает по заданной схеме нарастающей нагрузки, врач рядом следит за кривой на мониторе, за давлением и самочувствием и останавливает пробу при достижении цели или при появлении жалоб; вместе с восстановлением занимает около 30-40 минут",
+        "when": "Проверка переносимости нагрузки, жалобы, возникающие только при физической работе, оценка того, насколько хорошо действует подобранная терапия, нарушения ритма, появляющиеся при нагрузке, профессиональные и спортивные осмотры, перед включением в программу тренировок или реабилитации",
+        "prep": "Удобная одежда и обувь, не есть обильно перед тестом, избегать кофе и курения; обо всех препаратах сказать врачу заранее и взять с собой прежние обследования сердца",
+        "abnormal": "Жалобы, изменения кривой или нетипичное поведение давления при нагрузке могут указывать на ограниченный резерв сердца. Что это значит в конкретном случае и нужны ли дальнейшие исследования, решает кардиолог"
+      },
+      "en": {
+        "what": "Functional test showing how the heart, the pulse and the blood pressure respond to a measured physical load, with the ECG recorded at the same time",
+        "how": "On a treadmill or a bicycle ergometer the patient works through a set protocol of rising load while the doctor follows the curve on the monitor, the blood pressure and how the patient feels, and stops the test at the target or when complaints appear; with recovery it takes about 30-40 minutes",
+        "when": "Checking exercise tolerance, complaints that appear only during physical work, assessment of how well the chosen treatment works, rhythm disturbances that appear on exertion, occupational and sports examinations, before starting a training or rehabilitation programme",
+        "prep": "Comfortable clothes and shoes, no heavy meal before the test, avoid coffee and smoking; tell the doctor about all medicines in advance and bring earlier heart examinations with you",
+        "abnormal": "Complaints, changes in the curve or an unusual blood pressure response during the load may point to a limited reserve of the heart. What this means in a particular case and whether further tests are needed is decided by the cardiologist"
+      },
+      "sr": {
+        "what": "Funkcionalni test koji pokazuje kako srce, puls i pritisak reaguju na dozirano fizičko opterećenje, uz istovremeno snimanje EKG-a",
+        "how": "Na traci za trčanje ili bicikl ergometru pacijent radi po zadatom protokolu rastućeg opterećenja, dok ljekar prati krivulju na monitoru, pritisak i opšte stanje i prekida test na cilju ili pri pojavi tegoba; sa oporavkom traje oko 30-40 minuta",
+        "when": "Provjera podnošenja napora, tegobe koje se javljaju samo pri fizičkom radu, procjena koliko dobro djeluje uvedena terapija, poremećaji ritma koji se javljaju u naporu, radni i sportski pregledi, prije uključivanja u program treninga ili rehabilitacije",
+        "prep": "Udobna odjeća i obuća, ne jesti obilan obrok prije testa i izbjegavati kafu i cigarete; o svim lijekovima recite ljekaru unaprijed i ponesite ranije nalaze srca",
+        "abnormal": "Tegobe, promjene krivulje ili neuobičajeno ponašanje pritiska u opterećenju mogu ukazivati na ograničenu rezervu srca. Šta to znači u konkretnom slučaju i da li su potrebna dalja ispitivanja odlučuje kardiolog"
+      },
+      "de": {
+        "what": "Funktionstest, der zeigt, wie Herz, Puls und Blutdruck auf eine dosierte körperliche Belastung reagieren, mit gleichzeitiger EKG-Aufzeichnung",
+        "how": "Auf dem Laufband oder dem Fahrradergometer arbeitet der Patient nach einem festgelegten Stufenschema, während der Arzt Kurve, Blutdruck und Befinden verfolgt und den Test beim Erreichen des Ziels oder bei Beschwerden beendet; mit Erholungsphase dauert er etwa 30-40 Minuten",
+        "when": "Prüfung der Belastbarkeit, Beschwerden, die nur bei körperlicher Arbeit auftreten, Beurteilung der Wirksamkeit der eingestellten Therapie, Rhythmusstörungen unter Belastung, arbeitsmedizinische und sportmedizinische Untersuchungen, vor Beginn eines Trainings- oder Rehabilitationsprogramms",
+        "prep": "Bequeme Kleidung und Schuhe, vor dem Test keine schwere Mahlzeit, kein Kaffee und kein Rauchen; alle Medikamente vorab dem Arzt nennen und frühere Herzbefunde mitbringen",
+        "abnormal": "Beschwerden, Kurvenveränderungen oder ein ungewöhnliches Blutdruckverhalten unter Belastung können auf eine eingeschränkte Reserve des Herzens hinweisen. Was das im Einzelfall bedeutet und ob weitere Untersuchungen nötig sind, entscheidet der Kardiologe"
+      },
+      "tr": {
+        "what": "Kalbin, nabzın ve tansiyonun ölçülü bir fiziksel yüke nasıl yanıt verdiğini eşzamanlı EKG kaydıyla gösteren işlevsel test",
+        "how": "Yürüme bandında veya bisiklet ergometresinde hasta kademeli artan belirli bir protokole göre çalışır, hekim monitördeki eğriyi, tansiyonu ve genel durumu izler ve testi hedefe ulaşıldığında veya şikâyet başlayınca sonlandırır; toparlanma dönemiyle birlikte yaklaşık 30-40 dakika sürer",
+        "when": "Efor kapasitesinin ölçülmesi, yalnızca bedensel çalışma sırasında ortaya çıkan şikâyetler, uygulanan tedavinin ne kadar etkili olduğunun değerlendirilmesi, eforla ortaya çıkan ritim bozuklukları, iş ve spor muayeneleri, antrenman veya rehabilitasyon programına başlamadan önce",
+        "prep": "Rahat kıyafet ve ayakkabı, testten önce ağır yemek yememek, kahve ve sigaradan kaçınmak; kullandığınız tüm ilaçları önceden hekime söyleyin ve önceki kalp tetkiklerinizi yanınızda getirin",
+        "abnormal": "Yük sırasındaki şikâyetler, eğri değişiklikleri veya tansiyonun alışılmadık davranışı kalbin kısıtlı rezervine işaret edebilir. Bunun o kişide ne anlama geldiğine ve ek inceleme gerekip gerekmediğine kardiyolog karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Функционални тест који показује како срце, пулс и притисак реагују на дозирано физичко оптерећење, уз истовремено снимање ЕКГ-а",
+        "how": "На траци за трчање или бицикл ергометру пацијент ради по задатом протоколу растућег оптерећења, док љекар прати кривуљу на монитору, притисак и опште стање и прекида тест на циљу или при појави тегоба; са опоравком траје око 30-40 минута",
+        "when": "Провјера подношења напора, тегобе које се јављају само при физичком раду, процјена колико добро дјелује уведена терапија, поремећаји ритма који се јављају у напору, радни и спортски прегледи, прије укључивања у програм тренинга или рехабилитације",
+        "prep": "Удобна одјећа и обућа, не јести обилан оброк прије теста и избјегавати кафу и цигарете; о свим лијековима реците љекару унапријед и понесите раније налазе срца",
+        "abnormal": "Тегобе, промјене кривуље или неуобичајено понашање притиска у оптерећењу могу указивати на ограничену резерву срца. Шта то значи у конкретном случају и да ли су потребна даља испитивања одлучује кардиолог"
+      }
+    }
+  },
+  {
+    "slug": "holter-blood-pressure-monitoring",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ношение автоматического прибора, который измеряет давление в обычной жизни пациента, в том числе ночью",
+        "how": "На плечо надевают манжету, соединённую с небольшим прибором на поясе, он сам надувает манжету через заданные промежутки днём и ночью; пациент ведёт дневник активности, сна и жалоб, затем прибор возвращают и запись обрабатывают",
+        "when": "Разные показатели дома и в кабинете врача, подбор и проверка лечения повышенного давления, головокружение и слабость при подозрении на падения давления, оценка ночного давления, повышенное давление при беременности по назначению врача",
+        "prep": "Подготовка не нужна; надеть свободную рубашку с рукавом, под который помещается манжета, в день ношения прибор нельзя мочить, а во время измерения руку держать расслабленной и неподвижной",
+        "abnormal": "Средние суточные значения, ночное снижение и колебания оценивают вместе; отклонения могут быть связаны с повышенным давлением или с лечением, которое действует слишком слабо или слишком сильно. Выводы и изменение терапии остаются за кардиологом или семейным врачом"
+      },
+      "en": {
+        "what": "Wearing an automatic device that measures blood pressure during ordinary daily life, including at night",
+        "how": "A cuff is put on the upper arm and connected to a small device on the belt, which inflates the cuff at set intervals day and night; the patient keeps a diary of activity, sleep and symptoms, then returns the device and the recording is processed",
+        "when": "Different readings at home and in the doctor's office, choosing and checking treatment for high blood pressure, dizziness and weakness with suspected drops of pressure, assessment of night-time blood pressure, high blood pressure in pregnancy when the doctor orders it",
+        "prep": "No preparation is needed; wear a loose shirt with a sleeve that fits over the cuff, keep the device dry on the day of wear and hold the arm relaxed and still during each measurement",
+        "abnormal": "The daily averages, the night-time fall and the variability are assessed together; deviations may be related to high blood pressure or to treatment that works too weakly or too strongly. The conclusions and any change of treatment belong to the cardiologist or the family doctor"
+      },
+      "sr": {
+        "what": "Nošenje automatskog uređaja koji mjeri krvni pritisak u svakodnevnom životu, uključujući i noć",
+        "how": "Na nadlakticu se stavlja manžetna povezana sa malim uređajem o pojasu, koji je sam naduvava u zadatim razmacima danju i noću; pacijent vodi dnevnik aktivnosti, sna i tegoba, a zatim vraća uređaj i zapis se obrađuje",
+        "when": "Različite vrijednosti kod kuće i u ordinaciji, uvođenje i provjera terapije za povišen pritisak, vrtoglavica i slabost uz sumnju na padove pritiska, procjena noćnog pritiska, povišen pritisak u trudnoći po nalogu ljekara",
+        "prep": "Priprema nije potrebna; obucite široku košulju sa rukavom preko kojeg staje manžetna, uređaj tog dana ne smije da se pokvasi, a tokom mjerenja ruku držite opušteno i mirno",
+        "abnormal": "Prosječne dnevne vrijednosti, noćni pad i kolebanja procjenjuju se zajedno; odstupanja mogu biti povezana sa povišenim pritiskom ili sa terapijom koja djeluje preslabo ili prejako. Zaključke i izmjenu terapije donosi kardiolog ili izabrani ljekar"
+      },
+      "de": {
+        "what": "Tragen eines automatischen Geräts, das den Blutdruck im normalen Alltag misst, auch nachts",
+        "how": "Eine Manschette am Oberarm ist mit einem kleinen Gerät am Gürtel verbunden, das die Manschette tagsüber und nachts in festgelegten Abständen selbst aufpumpt; der Patient führt ein Tagebuch zu Aktivität, Schlaf und Beschwerden, danach wird das Gerät zurückgegeben und die Aufzeichnung ausgewertet",
+        "when": "Unterschiedliche Werte zu Hause und in der Praxis, Einstellung und Kontrolle der Blutdrucktherapie, Schwindel und Schwäche bei Verdacht auf Blutdruckabfälle, Beurteilung des nächtlichen Blutdrucks, Bluthochdruck in der Schwangerschaft auf ärztliche Anordnung",
+        "prep": "Keine Vorbereitung nötig; ein weites Hemd tragen, unter dessen Ärmel die Manschette passt, das Gerät am Tragetag trocken halten und den Arm während jeder Messung entspannt und ruhig halten",
+        "abnormal": "Tagesmittelwerte, nächtliche Absenkung und Schwankungen werden gemeinsam beurteilt; Abweichungen können mit Bluthochdruck oder mit einer zu schwach oder zu stark wirkenden Therapie zusammenhängen. Schlussfolgerungen und Therapieänderungen trifft der Kardiologe oder der Hausarzt"
+      },
+      "tr": {
+        "what": "Gece dahil günlük yaşam sırasında tansiyonu ölçen otomatik bir cihazın takılması",
+        "how": "Kola bir manşon takılır ve bele yerleştirilen küçük cihaza bağlanır, cihaz gece gündüz belirli aralıklarla manşonu kendisi şişirir; hasta etkinliklerini, uykusunu ve şikâyetlerini günlüğe yazar, sonra cihaz geri verilir ve kayıt değerlendirilir",
+        "when": "Evde ve muayenehanede farklı çıkan değerler, yüksek tansiyon tedavisinin ayarlanması ve kontrolü, tansiyon düşmesi şüphesiyle baş dönmesi ve halsizlik, gece tansiyonunun değerlendirilmesi, hekim istediğinde gebelikte yüksek tansiyon",
+        "prep": "Hazırlık gerekmez; manşonun altına sığacağı bol bir gömlek giyin, cihazı takılı olduğu gün ıslatmayın ve her ölçüm sırasında kolunuzu gevşek ve hareketsiz tutun",
+        "abnormal": "Gün içindeki ortalamalar, gece düşüşü ve dalgalanmalar birlikte değerlendirilir; sapmalar yüksek tansiyonla veya etkisi fazla ya da yetersiz kalan tedaviyle ilişkili olabilir. Sonuçları ve tedavi değişikliğini kardiyolog veya aile hekimi belirler"
+      },
+      "sr_cyrl": {
+        "what": "Ношење аутоматског уређаја који мјери крвни притисак у свакодневном животу, укључујући и ноћ",
+        "how": "На надлактицу се ставља манжетна повезана са малим уређајем о појасу, који је сам надувава у задатим размацима дању и ноћу; пацијент води дневник активности, сна и тегоба, а затим враћа уређај и запис се обрађује",
+        "when": "Различите вриједности код куће и у ординацији, увођење и провјера терапије за повишен притисак, вртоглавица и слабост уз сумњу на падове притиска, процјена ноћног притиска, повишен притисак у трудноћи по налогу љекара",
+        "prep": "Припрема није потребна; обуците широку кошуљу са рукавом преко којег стаје манжетна, уређај тог дана не смије да се покваси, а током мјерења руку држите опуштено и мирно",
+        "abnormal": "Просјечне дневне вриједности, ноћни пад и колебања процјењују се заједно; одступања могу бити повезана са повишеним притиском или са терапијом која дјелује преслабо или прејако. Закључке и измјену терапије доноси кардиолог или изабрани љекар"
+      }
+    }
+  },
+  {
+    "slug": "holter-ecg-monitoring",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Длительная запись ЭКГ портативным регистратором, чтобы поймать события, которых не видно на короткой плёнке",
+        "how": "Персонал наклеивает на грудь электроды и подключает их к регистратору размером с телефон, пациент живёт обычной жизнью и записывает время нагрузок, сна и жалоб; после возврата прибора врач анализирует запись и сопоставляет эпизоды с отметками в дневнике",
+        "when": "Редкие сердцебиения и перебои, обмороки и предобморочные состояния, контроль ритма после его восстановления или на подобранной терапии, проверка работы кардиостимулятора, оценка пауз в ритме и эпизодов, которые пациент замечает ночью",
+        "prep": "Подготовка не нужна; принять душ до установки прибора, потому что мочить электроды нельзя, мужчинам может потребоваться сбрить волосы в местах наклейки электродов, свободная одежда удобнее",
+        "abnormal": "Найденные эпизоды могут быть связаны с нарушением ритма или проведения, а часть изменений встречается и у здоровых людей. Что означает запись и нужно ли лечение, определяет кардиолог вместе с жалобами из дневника"
+      },
+      "en": {
+        "what": "Long recording of the ECG with a portable recorder, to catch events that a short tracing does not show",
+        "how": "The staff stick electrodes on the chest and connect them to a recorder the size of a phone, the patient lives as usual and writes down the times of activity, sleep and symptoms; after the device is returned the doctor analyses the recording and matches episodes with the diary entries",
+        "when": "Rare palpitations and skipped beats, fainting and near-fainting, control of the rhythm after it has been restored or under the chosen treatment, checking the work of a pacemaker, assessment of pauses in the rhythm and of episodes noticed at night",
+        "prep": "No preparation is needed; take a shower before the device is fitted, because the electrodes must not get wet, men may need to shave the places where the electrodes are stuck, and loose clothes are more comfortable",
+        "abnormal": "The episodes found may be related to disturbances of rhythm or conduction, and some of the changes also occur in healthy people. The cardiologist decides what the recording means and whether treatment is needed, using the complaints noted in the diary"
+      },
+      "sr": {
+        "what": "Dugotrajan zapis EKG-a prenosivim uređajem, da bi se uhvatile pojave koje se na kratkom snimku ne vide",
+        "how": "Osoblje lijepi elektrode na grudi i povezuje ih sa uređajem veličine telefona, pacijent živi uobičajeno i upisuje vrijeme napora, sna i tegoba; poslije vraćanja uređaja ljekar analizira zapis i upoređuje epizode sa zabilješkama iz dnevnika",
+        "when": "Rijetko lupanje srca i preskakanje, nesvjestice i stanja pred nesvjesticu, kontrola ritma poslije uspostavljanja ili uz uvedenu terapiju, provjera rada pejsmejkera, procjena pauza u ritmu i epizoda koje pacijent primjećuje noću",
+        "prep": "Priprema nije potrebna; istuširajte se prije postavljanja uređaja jer elektrode ne smiju da se kvase, muškarcima je ponekad potrebno obrijati mjesta na koja se lijepe elektrode, a široka odjeća je udobnija",
+        "abnormal": "Nađene epizode mogu biti povezane sa poremećajem ritma ili provođenja, a dio promjena se javlja i kod zdravih osoba. Šta zapis znači i da li je potrebno liječenje određuje kardiolog, uz tegobe upisane u dnevnik"
+      },
+      "de": {
+        "what": "Langzeitaufzeichnung des EKG mit einem tragbaren Rekorder, um Ereignisse zu erfassen, die eine kurze Aufzeichnung nicht zeigt",
+        "how": "Das Personal klebt Elektroden auf den Brustkorb und verbindet sie mit einem Rekorder in Telefongröße, der Patient lebt wie gewohnt und notiert Zeiten von Belastung, Schlaf und Beschwerden; nach Rückgabe des Geräts wertet der Arzt die Aufzeichnung aus und ordnet die Episoden den Tagebucheinträgen zu",
+        "when": "Seltenes Herzklopfen und Aussetzer, Ohnmacht und Beinahe-Ohnmacht, Rhythmuskontrolle nach Wiederherstellung oder unter eingestellter Therapie, Prüfung der Funktion eines Herzschrittmachers, Beurteilung von Pausen im Rhythmus und von nachts bemerkten Episoden",
+        "prep": "Keine Vorbereitung nötig; vor dem Anlegen duschen, da die Elektroden nicht nass werden dürfen, bei Männern müssen die Klebestellen eventuell rasiert werden, weite Kleidung ist angenehmer",
+        "abnormal": "Die gefundenen Episoden können mit Rhythmus- oder Leitungsstörungen zusammenhängen, ein Teil der Veränderungen kommt auch bei Gesunden vor. Was die Aufzeichnung bedeutet und ob eine Behandlung nötig ist, entscheidet der Kardiologe anhand der im Tagebuch notierten Beschwerden"
+      },
+      "tr": {
+        "what": "Kısa bir kayıtta görünmeyen olayları yakalamak için taşınabilir cihazla yapılan uzun süreli EKG kaydı",
+        "how": "Personel göğse elektrotları yapıştırır ve telefon büyüklüğündeki kayıt cihazına bağlar, hasta her zamanki gibi yaşar ve efor, uyku ve şikâyet zamanlarını not eder; cihaz geri verildikten sonra hekim kaydı çözümler ve atakları günlükteki notlarla eşleştirir",
+        "when": "Seyrek çarpıntı ve atlama hissi, bayılma ve bayılacak gibi olma, ritim düzeltildikten sonra veya uygulanan tedavi altında ritim kontrolü, kalp pilinin çalışmasının denetlenmesi, ritimdeki duraklamaların ve gece fark edilen atakların değerlendirilmesi",
+        "prep": "Hazırlık gerekmez; elektrotlar ıslanmaması gerektiği için cihaz takılmadan önce duş alın, erkeklerde elektrotların yapıştığı bölgelerin tıraş edilmesi gerekebilir, bol kıyafet daha rahattır",
+        "abnormal": "Saptanan ataklar ritim veya iletim bozukluğuyla ilişkili olabilir, bu değişikliklerin bir kısmı sağlıklı kişilerde de görülür. Kaydın ne anlama geldiğine ve tedavi gerekip gerekmediğine kardiyolog, günlükteki şikâyetlerle birlikte karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Дуготрајан запис ЕКГ-а преносивим уређајем, да би се ухватиле појаве које се на кратком снимку не виде",
+        "how": "Особље лијепи електроде на груди и повезује их са уређајем величине телефона, пацијент живи уобичајено и уписује вријеме напора, сна и тегоба; послије враћања уређаја љекар анализира запис и упоређује епизоде са забиљешкама из дневника",
+        "when": "Ријетко лупање срца и прескакање, несвјестице и стања пред несвјестицу, контрола ритма послије успостављања или уз уведену терапију, провјера рада пејсмејкера, процјена пауза у ритму и епизода које пацијент примјећује ноћу",
+        "prep": "Припрема није потребна; истуширајте се прије постављања уређаја јер електроде не смију да се квасе, мушкарцима је понекад потребно обријати мјеста на која се лијепе електроде, а широка одјећа је удобнија",
+        "abnormal": "Нађене епизоде могу бити повезане са поремећајем ритма или провођења, а дио промјена се јавља и код здравих особа. Шта запис значи и да ли је потребно лијечење одређује кардиолог, уз тегобе уписане у дневник"
+      }
+    }
+  }
 ]

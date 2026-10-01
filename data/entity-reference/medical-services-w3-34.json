@@ -1,617 +1,722 @@
 [
-	{
-		"slug": "behavioral-psychotherapy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Форма психотерапии, в которой работают с конкретными действиями, привычками и избеганием, а не только с переживаниями",
-				"how": "Регулярные встречи с психотерапевтом: разбор конкретных ситуаций, постепенная тренировка новых реакций, упражнения между сессиями; одна встреча обычно около часа",
-				"when": "Тревожные расстройства и фобии, панические приступы, навязчивые действия, нарушения сна, расстройства пищевого поведения, поведенческие трудности у детей и подростков, поддержка при зависимостях",
-				"prep": "Подготовка не требуется; полезно принести выписки и заключения прежних специалистов, список принимаемых препаратов и записать ситуации, которые хочется разобрать",
-				"abnormal": "Эффект обычно нарастает постепенно, от встречи к встрече, а в начале работы напряжение при столкновении с избегаемыми ситуациями может временно усиливаться. Число встреч и дальнейший план определяет специалист, а при заметном ухудшении состояния обращаться нужно не дожидаясь очередной сессии"
-			},
-			"en": {
-				"what": "A form of psychotherapy that works with concrete actions, habits and avoidance patterns, not only with feelings",
-				"how": "Regular sessions with a psychotherapist: going through concrete situations, practising new responses step by step, tasks between sessions; one session usually lasts about an hour",
-				"when": "Anxiety disorders and phobias, panic attacks, compulsive actions, sleep problems, eating disorders, behavioural difficulties in children and adolescents, support in addiction",
-				"prep": "No preparation needed; it helps to bring earlier reports and opinions, the list of medicines you take and notes on the situations you want to work on",
-				"abnormal": "The effect usually builds up gradually from session to session, and at the start discomfort may rise for a while when facing avoided situations. The number of sessions and the further plan are set by the specialist, and if the condition clearly worsens you should get in touch before the next session"
-			},
-			"sr": {
-				"what": "Oblik psihoterapije koji radi sa konkretnim postupcima, navikama i izbjegavanjem, a ne samo sa doživljajima",
-				"how": "Redovni susreti sa psihoterapeutom: razrada konkretnih situacija, postepeno uvježbavanje novih reakcija i zadaci između seansi; jedan susret obično traje oko sat vremena",
-				"when": "Anksiozni poremećaji i fobije, napadi panike, prisilne radnje, poremećaji sna, poremećaji ishrane, teškoće u ponašanju kod djece i adolescenata, podrška kod zavisnosti",
-				"prep": "Priprema nije potrebna; korisno je ponijeti ranije nalaze i mišljenja, spisak lijekova koje uzimate i zapisati situacije koje želite da obradite",
-				"abnormal": "Učinak se obično gradi postepeno, od susreta do susreta, a na početku je moguće privremeno pojačanje nelagode pri suočavanju sa situacijama koje se izbjegavaju. Broj susreta i dalji plan određuje stručnjak, a kod naglog pogoršanja stanja javiti se i prije zakazane seanse"
-			},
-			"de": {
-				"what": "Eine Form der Psychotherapie, die mit konkretem Verhalten, Gewohnheiten und Vermeidung arbeitet, nicht nur mit dem Erleben",
-				"how": "Regelmäßige Sitzungen bei einer Psychotherapeutin oder einem Psychotherapeuten: Besprechung konkreter Situationen, schrittweises Einüben neuer Reaktionen und Übungen zwischen den Sitzungen; eine Sitzung dauert meist etwa eine Stunde",
-				"when": "Angststörungen und Phobien, Panikattacken, Zwangshandlungen, Schlafstörungen, Essstörungen, Verhaltensauffälligkeiten bei Kindern und Jugendlichen, Begleitung bei Abhängigkeitserkrankungen",
-				"prep": "Keine Vorbereitung nötig; hilfreich sind frühere Befunde, eine Liste der eingenommenen Medikamente und Notizen zu Situationen, die besprochen werden sollen",
-				"abnormal": "Die Wirkung baut sich meist langsam über mehrere Sitzungen auf, zu Beginn kann die Anspannung beim Aufsuchen vermiedener Situationen vorübergehend zunehmen. Zahl der Sitzungen und weiteres Vorgehen legt die behandelnde Fachperson fest, bei deutlicher Verschlechterung sollte man sich vor dem nächsten Termin melden"
-			},
-			"tr": {
-				"what": "Yalnızca duygularla değil, somut davranışlar, alışkanlıklar ve kaçınma örüntüleriyle çalışan bir psikoterapi biçimi",
-				"how": "Psikoterapistle düzenli görüşmeler: somut durumların ele alınması, yeni tepkilerin adım adım çalışılması ve seanslar arasında ev ödevleri; bir görüşme genellikle bir saat kadar sürer",
-				"when": "Anksiyete bozuklukları ve fobiler, panik atak, takıntılı davranışlar, uyku sorunları, yeme bozuklukları, çocuk ve ergenlerde davranış sorunları, bağımlılıkta destek",
-				"prep": "Hazırlık gerekmez; önceki raporları, kullanılan ilaçların listesini getirmek ve konuşulmak istenen durumları not etmek yararlıdır",
-				"abnormal": "Etki genellikle seanslar boyunca yavaş yavaş birikir, başlangıçta kaçınılan durumlarla karşılaşınca gerginlik geçici olarak artabilir. Görüşme sayısını ve sonraki planı uzman belirler, durum belirgin biçimde kötüleşirse randevu beklenmeden başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "relaxation-technique",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Обучение приёмам снижения мышечного и психического напряжения — дыхательным упражнениям, прогрессивной мышечной релаксации, аутогенной тренировке",
-				"how": "Специалист объясняет приём и ведёт упражнение голосом, пациент выполняет его сидя или лёжа, а затем повторяет самостоятельно дома; занятие обычно от двадцати минут до получаса",
-				"when": "Повышенная тревожность и внутреннее напряжение, трудности с засыпанием, головная боль напряжения, подготовка к стрессовым ситуациям и процедурам, как часть психотерапии и реабилитации",
-				"prep": "Специальной подготовки нет; прийти в удобной одежде, не заниматься сразу после плотной еды, при желании записать упражнение на телефон, чтобы повторять дома",
-				"abnormal": "Обычно после занятия ощущается расслабление и напряжение спадает, но у части людей на первых занятиях тревога ненадолго усиливается или всплывают неприятные воспоминания — об этом стоит сказать специалисту. Если тревога и бессонница не уменьшаются, нужен осмотр врача"
-			},
-			"en": {
-				"what": "Training in techniques that reduce muscular and mental tension — breathing exercises, progressive muscle relaxation, autogenic training",
-				"how": "The specialist explains and guides the exercise, the patient performs it sitting or lying down and then repeats it at home; a session usually lasts twenty to thirty minutes",
-				"when": "Increased anxiety and inner tension, trouble falling asleep, tension headaches, preparation for stressful situations and procedures, as part of psychotherapy and rehabilitation",
-				"prep": "No special preparation; come in comfortable clothes, do not practise right after a heavy meal, and record the exercise on your phone if you want to repeat it at home",
-				"abnormal": "A session usually brings a feeling of calm and less tension, but in some people anxiety briefly increases at first or unpleasant memories come up — tell the specialist about this. If anxiety and insomnia do not ease, a doctor should examine you"
-			},
-			"sr": {
-				"what": "Učenje postupaka za smanjenje mišićne i psihičke napetosti — vježbi disanja, progresivne mišićne relaksacije, autogenog treninga",
-				"how": "Stručnjak objašnjava i vodi vježbu, pacijent je izvodi sjedeći ili ležeći, a zatim je ponavlja sam kod kuće; susret obično traje dvadesetak do tridesetak minuta",
-				"when": "Pojačana anksioznost i unutrašnja napetost, teško uspavljivanje, tenzione glavobolje, priprema za stresne situacije i zahvate, kao dio psihoterapije i rehabilitacije",
-				"prep": "Posebna priprema nije potrebna; doći u udobnoj odjeći, ne vježbati odmah poslije obilnog obroka, a po želji snimiti vježbu telefonom radi ponavljanja kod kuće",
-				"abnormal": "Poslije vježbe se obično javlja osjećaj opuštenosti i pad napetosti, ali kod nekih osoba na prvim susretima nelagoda nakratko poraste ili se jave neprijatna sjećanja — to treba reći stručnjaku. Ako anksioznost i nesanica ne popuštaju, potreban je pregled ljekara"
-			},
-			"de": {
-				"what": "Anleitung zu Techniken, die muskuläre und seelische Anspannung senken — Atemübungen, progressive Muskelentspannung, autogenes Training",
-				"how": "Die Fachperson erklärt und leitet die Übung an, der Patient führt sie im Sitzen oder Liegen aus und wiederholt sie später selbst; eine Sitzung dauert meist zwanzig bis dreißig Minuten",
-				"when": "Erhöhte Anspannung und Angst, Einschlafstörungen, Spannungskopfschmerz, Vorbereitung auf belastende Situationen und Eingriffe, als Teil von Psychotherapie und Rehabilitation",
-				"prep": "Keine besondere Vorbereitung; in bequemer Kleidung kommen, nicht direkt nach einer üppigen Mahlzeit üben, die Übung bei Bedarf fürs Üben zu Hause mit dem Telefon aufnehmen",
-				"abnormal": "Nach der Übung stellt sich meist Entspannung ein, bei manchen Menschen nimmt die Unruhe anfangs kurz zu oder es tauchen unangenehme Erinnerungen auf — das sollte man der Fachperson sagen. Lassen Angst und Schlafstörungen nicht nach, ist eine ärztliche Untersuchung nötig"
-			},
-			"tr": {
-				"what": "Kas ve zihin gerginliğini azaltan yöntemlerin öğretilmesi — nefes egzersizleri, progresif kas gevşetme, otojenik eğitim",
-				"how": "Uzman egzersizi anlatıp yönlendirir, hasta oturarak veya uzanarak uygular, sonra evde kendi başına tekrarlar; seans genellikle yirmi ila otuz dakika sürer",
-				"when": "Artmış kaygı ve iç gerginlik, uykuya dalmada zorluk, gerilim tipi baş ağrısı, stresli durumlara ve girişimlere hazırlık, psikoterapi ve rehabilitasyonun parçası olarak",
-				"prep": "Özel hazırlık gerekmez; rahat kıyafetle gelin, ağır bir yemekten hemen sonra çalışmayın, isterseniz evde tekrarlamak için egzersizi telefonunuza kaydedin",
-				"abnormal": "Seanstan sonra genellikle gevşeme ve gerginlikte azalma olur, bazı kişilerde ilk seanslarda huzursuzluk kısa süre artabilir ya da hoş olmayan anılar belirebilir — bunu uzmana söylemek gerekir. Kaygı ve uykusuzluk gerilemiyorsa hekim değerlendirmesi gerekir"
-			}
-		}
-	},
-	{
-		"slug": "anterior-hematoma-puncture",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление скопившейся под кожей крови иглой или через небольшой прокол после ушиба либо операции",
-				"how": "Кожу обрабатывают антисептиком, под местным обезболиванием вводят иглу в полость скопления и отсасывают жидкую кровь, затем накладывают давящую повязку; процедура занимает несколько минут",
-				"when": "Напряжённая болезненная гематома после травмы или операции, скопление крови, которое не рассасывается само и давит на окружающие ткани, подозрение на нагноение скопления",
-				"prep": "Специальной подготовки нет; сказать врачу о препаратах, разжижающих кровь, и о нарушениях свёртываемости, перед визитом не наносить на кожу мази",
-				"abnormal": "После пункции боль и напряжение обычно уменьшаются, а синяк рассасывается постепенно и меняет цвет. Быстрое повторное нарастание припухлости, усиление боли, покраснение кожи, гнойное отделяемое или температура требуют повторного осмотра врача"
-			},
-			"en": {
-				"what": "Removal of blood that has collected under the skin, through a needle or a small incision, after an injury or an operation",
-				"how": "The skin is cleaned with antiseptic, under local anaesthesia a needle is introduced into the collection and the liquid blood is drawn off, then a pressure dressing is applied; it takes a few minutes",
-				"when": "A tense, painful haematoma after injury or surgery, a collection of blood that does not resolve on its own and presses on surrounding tissue, suspected infection of the collection",
-				"prep": "No special preparation; tell the doctor about blood-thinning medication and clotting disorders, and do not apply ointments to the skin before the visit",
-				"abnormal": "After the puncture pain and tension usually ease and the bruise fades gradually, changing colour. Swelling that rapidly returns, increasing pain, reddening skin, discharge of pus or fever call for another medical review"
-			},
-			"sr": {
-				"what": "Vađenje krvi nakupljene ispod kože iglom ili kroz mali ubod, poslije udarca ili operacije",
-				"how": "Koža se očisti antiseptikom, u lokalnoj anesteziji se igla uvodi u šupljinu nakupine i tečna krv se izvlači, a zatim se stavlja kompresivni zavoj; traje nekoliko minuta",
-				"when": "Napet i bolan hematom poslije povrede ili operacije, nakupina krvi koja se sama ne povlači i pritiska okolno tkivo, sumnja na gnojenje nakupine",
-				"prep": "Posebna priprema nije potrebna; reći ljekaru da li uzimate lijekove koji razrjeđuju krv i da li imate poremećaj zgrušavanja, i ne mazati kožu mastima prije dolaska",
-				"abnormal": "Poslije punkcije bol i napetost obično popuštaju, a modrica se povlači postepeno i mijenja boju. Brzo ponovno povećanje otoka, jači bol, crvenilo kože, gnojav sadržaj ili temperatura traže novi pregled ljekara"
-			},
-			"de": {
-				"what": "Entfernung von Blut, das sich nach einer Verletzung oder Operation unter der Haut angesammelt hat, über eine Nadel oder einen kleinen Schnitt",
-				"how": "Die Haut wird desinfiziert, unter örtlicher Betäubung wird eine Nadel in die Ansammlung eingeführt und das flüssige Blut abgesaugt, anschließend wird ein Druckverband angelegt; der Eingriff dauert wenige Minuten",
-				"when": "Prall gespanntes, schmerzhaftes Hämatom nach Verletzung oder Operation, Blutansammlung, die sich nicht von selbst zurückbildet und auf das Gewebe drückt, Verdacht auf eine Infektion der Ansammlung",
-				"prep": "Keine besondere Vorbereitung; blutverdünnende Medikamente und Gerinnungsstörungen vorher mitteilen und die Haut vor dem Termin nicht einsalben",
-				"abnormal": "Nach der Punktion lassen Schmerz und Spannung meist nach, der Bluterguss bildet sich langsam zurück und verfärbt sich. Rasch wiederkehrende Schwellung, stärkere Schmerzen, Rötung, Eiter oder Fieber erfordern eine erneute ärztliche Kontrolle"
-			},
-			"tr": {
-				"what": "Darbe veya ameliyat sonrası deri altında biriken kanın iğneyle ya da küçük bir kesiyle boşaltılması",
-				"how": "Cilt antiseptikle temizlenir, lokal anestezi altında birikintiye iğne sokulup sıvı kan çekilir, ardından baskılı pansuman uygulanır; işlem birkaç dakika sürer",
-				"when": "Yaralanma veya ameliyat sonrası gergin ve ağrılı hematom, kendiliğinden gerilemeyen ve çevre dokuya baskı yapan kan birikimi, birikintide enfeksiyon şüphesi",
-				"prep": "Özel hazırlık gerekmez; kan sulandırıcı ilaç kullanımını ve pıhtılaşma bozukluğunu hekime bildirin, gelmeden önce cilde merhem sürmeyin",
-				"abnormal": "Ponksiyondan sonra ağrı ve gerginlik genellikle azalır, morluk zamanla rengini değiştirerek geriler. Şişliğin hızla yeniden artması, ağrının şiddetlenmesi, ciltte kızarıklık, akıntı veya ateş yeniden hekim değerlendirmesi gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "child-follow-up-hospital-round",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ежедневный осмотр ребёнка в отделении, когда врач оценивает динамику и корректирует назначения",
-				"how": "Врач обходит палаты, осматривает ребёнка, смотрит температурный лист и новые результаты, слушает лёгкие и сердце, разговаривает с родителями и меняет назначения; обычно по несколько минут у каждого ребёнка",
-				"when": "Каждый день пребывания ребёнка в стационаре, а дополнительно — при ухудшении состояния, лихорадке, отказе от еды или новых жалобах",
-				"prep": "Подготовка не нужна; родителям полезно запомнить, как ребёнок спал, ел и переносил лечение, и записать вопросы к врачу",
-				"abnormal": "Во время обхода врач решает, продолжать ли лечение в прежнем объёме, нужны ли новые обследования и когда возможна выписка. Если состояние меняется между обходами, ждать следующего не нужно — зовите дежурный персонал"
-			},
-			"en": {
-				"what": "A daily check of a child on the ward, when the doctor assesses progress and adjusts the orders",
-				"how": "The doctor goes round the rooms, examines the child, looks at the temperature chart and new test results, listens to the chest, talks with the parents and changes the prescriptions; usually a few minutes per child",
-				"when": "Every day of the child's stay in hospital, and additionally if the condition worsens, fever appears, the child refuses to eat or new complaints come up",
-				"prep": "No preparation needed; parents should note how the child slept, ate and tolerated the treatment, and write down questions for the doctor",
-				"abnormal": "During the round the doctor decides whether to continue the same treatment, whether further tests are needed and when discharge is possible. If the condition changes between rounds, call the staff rather than wait"
-			},
-			"sr": {
-				"what": "Svakodnevni pregled djeteta na odjeljenju, kada ljekar procjenjuje napredak i mijenja terapiju",
-				"how": "Ljekar obilazi sobe, pregleda dijete, gleda temperaturnu listu i nove nalaze, osluškuje pluća i srce, razgovara sa roditeljima i koriguje terapiju; obično po nekoliko minuta kod svakog djeteta",
-				"when": "Svaki dan boravka djeteta u bolnici, a po potrebi i dodatno kod pogoršanja, povišene temperature, odbijanja hrane ili novih tegoba",
-				"prep": "Priprema nije potrebna; roditeljima koristi da zapamte kako je dijete spavalo, jelo i podnosilo terapiju i da pripreme pitanja za ljekara",
-				"abnormal": "U toku vizite ljekar odlučuje da li se terapija nastavlja, da li su potrebna nova ispitivanja i kada je moguć otpust. Ako se stanje promijeni između vizita, ne treba čekati — pozovite dežurno osoblje"
-			},
-			"de": {
-				"what": "Tägliche Kontrolle des Kindes auf Station, bei der die Ärztin oder der Arzt den Verlauf beurteilt und die Anordnungen anpasst",
-				"how": "Die Visite geht durch die Zimmer, das Kind wird untersucht, Fieberkurve und neue Befunde werden durchgesehen, Lunge und Herz abgehört, mit den Eltern gesprochen und die Verordnungen geändert; meist wenige Minuten pro Kind",
-				"when": "An jedem Tag des Krankenhausaufenthalts sowie zusätzlich bei Verschlechterung, Fieber, Nahrungsverweigerung oder neuen Beschwerden",
-				"prep": "Keine Vorbereitung nötig; Eltern sollten sich merken, wie das Kind geschlafen und gegessen und die Behandlung vertragen hat, und Fragen notieren",
-				"abnormal": "Bei der Visite entscheidet die Ärztin oder der Arzt, ob die Behandlung so weitergeht, ob weitere Untersuchungen nötig sind und wann die Entlassung möglich ist. Ändert sich der Zustand zwischen den Visiten, sollte man das Personal rufen und nicht warten"
-			},
-			"tr": {
-				"what": "Çocuğun serviste her gün görülmesi: hekimin gidişatı değerlendirip tedaviyi güncellemesi",
-				"how": "Hekim odaları dolaşır, çocuğu muayene eder, ateş çizelgesine ve yeni sonuçlara bakar, akciğer ve kalbi dinler, aileyle konuşur ve tedaviyi düzenler; genellikle her çocuk için birkaç dakika",
-				"when": "Hastanede kalınan her gün, ayrıca durum kötüleştiğinde, ateş çıktığında, çocuk yemek yemeyi reddettiğinde veya yeni şikâyet olduğunda",
-				"prep": "Hazırlık gerekmez; ailenin çocuğun nasıl uyuduğunu, yediğini ve tedaviyi nasıl tolere ettiğini not etmesi ve hekime soracaklarını yazması yararlıdır",
-				"abnormal": "Vizit sırasında hekim tedavinin aynı şekilde sürüp sürmeyeceğine, yeni tetkik gerekip gerekmediğine ve taburculuğun ne zaman mümkün olduğuna karar verir. Vizitler arasında durum değişirse beklemeden görevliyi çağırın"
-			}
-		}
-	},
-	{
-		"slug": "child-initial-hospital-workup",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Первый осмотр ребёнка после поступления в стационар со сбором анамнеза у родителей и составлением плана лечения",
-				"how": "Педиатр расспрашивает родителей о течении болезни, прививках, прежних заболеваниях и аллергии, осматривает ребёнка целиком, измеряет температуру, вес, дыхание и пульс, назначает анализы и наблюдение; обычно занимает от получаса",
-				"when": "Поступление в отделение по направлению или через приёмный покой, перевод из другой больницы, плановая госпитализация для обследования или операции",
-				"prep": "Подготовка не требуется; взять направление, медицинскую карту и прививочный сертификат ребёнка, результаты прежних обследований, список препаратов и привычные вещи ребёнка",
-				"abnormal": "По итогам осмотра врач формулирует предварительное заключение, назначает обследования и лечение и объясняет родителям план на ближайшие дни. Обо всех изменениях состояния ребёнка нужно сразу сообщать дежурному врачу или медсестре"
-			},
-			"en": {
-				"what": "The first examination of a child after admission to hospital, with a history taken from the parents and a treatment plan drawn up",
-				"how": "The paediatrician asks the parents about the course of the illness, vaccinations, earlier conditions and allergies, examines the child from head to toe, checks temperature, weight, breathing and pulse, and orders tests and monitoring; it usually takes half an hour or more",
-				"when": "Admission to a ward by referral or through the emergency department, transfer from another hospital, planned admission for investigation or surgery",
-				"prep": "No preparation needed; bring the referral, the child's health record and vaccination booklet, earlier test results, a list of medicines and the child's familiar things",
-				"abnormal": "After the examination the doctor gives a preliminary assessment, orders tests and treatment and explains the plan for the coming days to the parents. Any change in the child's condition should be reported to the ward doctor or nurse straight away"
-			},
-			"sr": {
-				"what": "Prvi pregled djeteta po prijemu u bolnicu, sa uzimanjem podataka od roditelja i pravljenjem plana liječenja",
-				"how": "Pedijatar pita roditelje o toku bolesti, vakcinama, ranijim oboljenjima i alergijama, pregleda dijete od glave do pete, mjeri temperaturu, težinu, disanje i puls i određuje analize i praćenje; obično traje pola sata i duže",
-				"when": "Prijem na odjeljenje po uputu ili preko hitne službe, premještaj iz druge bolnice, planirani prijem radi ispitivanja ili operacije",
-				"prep": "Priprema nije potrebna; ponijeti uput, zdravstveni karton i vakcinalnu knjižicu djeteta, ranije nalaze, spisak lijekova i stvari na koje je dijete naviklo",
-				"abnormal": "Poslije pregleda ljekar daje prvo mišljenje, određuje ispitivanja i terapiju i objašnjava roditeljima plan za naredne dane. Svaku promjenu stanja djeteta treba odmah javiti dežurnom ljekaru ili sestri"
-			},
-			"de": {
-				"what": "Die erste Untersuchung eines Kindes nach der Aufnahme ins Krankenhaus, mit Anamnese bei den Eltern und Festlegung des Behandlungsplans",
-				"how": "Die Kinderärztin oder der Kinderarzt fragt die Eltern nach Krankheitsverlauf, Impfungen, früheren Erkrankungen und Allergien, untersucht das Kind von Kopf bis Fuß, misst Temperatur, Gewicht, Atmung und Puls und ordnet Untersuchungen und Überwachung an; das dauert meist eine halbe Stunde oder länger",
-				"when": "Aufnahme auf Station mit Überweisung oder über die Notaufnahme, Verlegung aus einem anderen Krankenhaus, geplante Aufnahme zur Abklärung oder Operation",
-				"prep": "Keine Vorbereitung nötig; Überweisung, Vorsorge- und Impfheft, frühere Befunde, Medikamentenliste und vertraute Sachen des Kindes mitbringen",
-				"abnormal": "Nach der Untersuchung formuliert die Ärztin oder der Arzt eine erste Einschätzung, ordnet Untersuchungen und Behandlung an und erklärt den Eltern den Plan für die nächsten Tage. Jede Veränderung des Zustands sollte sofort der Station gemeldet werden"
-			},
-			"tr": {
-				"what": "Çocuğun hastaneye yatışından sonraki ilk muayenesi: aileden öykü alınması ve tedavi planının oluşturulması",
-				"how": "Çocuk hekimi aileye hastalığın seyrini, aşıları, geçmiş hastalıkları ve alerjileri sorar, çocuğu baştan ayağa muayene eder, ateş, kilo, solunum ve nabzı ölçer, tetkik ve izlem ister; genellikle yarım saat veya daha uzun sürer",
-				"when": "Sevkle ya da acil servis üzerinden servise yatış, başka hastaneden nakil, tetkik veya ameliyat için planlı yatış",
-				"prep": "Hazırlık gerekmez; sevk belgesini, çocuğun sağlık ve aşı karnesini, önceki tetkik sonuçlarını, ilaç listesini ve çocuğun alışık olduğu eşyaları getirin",
-				"abnormal": "Muayene sonrasında hekim ilk değerlendirmesini yapar, tetkik ve tedaviyi başlatır ve aileye önümüzdeki günlerin planını anlatır. Çocuğun durumundaki her değişiklik hemen nöbetçi hekime veya hemşireye bildirilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "chronic-hemodialysis-session",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Регулярное аппаратное очищение крови, когда почки стойко утратили большую часть своей функции",
-				"how": "Кровь из сосудистого доступа — фистулы или катетера — по трубкам идёт через диализатор, где удаляются продукты обмена и избыток жидкости, и возвращается в организм, пациент всё это время лежит или сидит под наблюдением; сеанс длится несколько часов и повторяется по графику",
-				"when": "Конечная стадия хронической болезни почек, стойкое накопление продуктов обмена и жидкости, подготовка к пересадке почки и ожидание её, по назначению нефролога",
-				"prep": "Приходить по графику и взвешиваться до и после сеанса; соблюдать назначенный врачом режим питья и питания, беречь руку с фистулой, взять список препаратов, повязку над катетером держать сухой",
-				"abnormal": "Во время и после сеанса возможны слабость, снижение давления, судороги в ногах или зуд — о них сразу говорят персоналу. Нарастание отёков и одышки между сеансами, кровотечение, покраснение или исчезновение шума над фистулой требуют срочного обращения к врачу"
-			},
-			"en": {
-				"what": "Regular machine cleaning of the blood when the kidneys have permanently lost most of their function",
-				"how": "Blood is led from a vascular access, a fistula or a catheter, through tubing into a dialyser, where waste products and excess fluid are removed, and returned to the body while the patient lies or sits under supervision; a session runs for several hours and is repeated on a schedule",
-				"when": "End-stage chronic kidney disease, persistent build-up of waste products and fluid, preparation for and waiting time before a kidney transplant, as prescribed by a nephrologist",
-				"prep": "Come on schedule and be weighed before and after; follow the fluid and diet regimen set by the doctor, protect the arm with the fistula, bring the list of medicines and keep a catheter dressing dry",
-				"abnormal": "Weakness, a drop in blood pressure, leg cramps or itching may occur during and after a session and should be reported to the staff at once. Growing swelling and breathlessness between sessions, bleeding, redness, or a fistula that no longer buzzes require urgent medical attention"
-			},
-			"sr": {
-				"what": "Redovno mašinsko prečišćavanje krvi kada bubrezi trajno izgube najveći dio funkcije",
-				"how": "Krv se iz krvnog pristupa, fistule ili katetera, cijevima vodi kroz dijalizator, gdje se uklanjaju razgradni produkti i višak tečnosti, pa se vraća u tijelo dok pacijent leži ili sjedi uz nadzor; seansa traje nekoliko sati i ponavlja se po rasporedu",
-				"when": "Završni stadijum hronične bubrežne bolesti, trajno nakupljanje razgradnih produkata i tečnosti, priprema i čekanje na transplantaciju bubrega, po odluci nefrologa",
-				"prep": "Dolaziti po rasporedu i mjeriti težinu prije i poslije seanse; pridržavati se režima unosa tečnosti i ishrane koji je odredio ljekar, čuvati ruku sa fistulom, ponijeti spisak lijekova, a zavoj preko katetera držati suvim",
-				"abnormal": "Tokom i poslije seanse mogu se javiti slabost, pad pritiska, grčevi u nogama ili svrab — to odmah reći osoblju. Porast otoka i nedostatak vazduha između seansi, krvarenje, crvenilo ili izostanak šuma nad fistulom traže hitan pregled ljekara"
-			},
-			"de": {
-				"what": "Regelmäßige maschinelle Blutreinigung, wenn die Nieren ihre Funktion dauerhaft weitgehend verloren haben",
-				"how": "Das Blut wird über einen Gefäßzugang, einen Shunt oder einen Katheter, durch Schläuche in einen Dialysator geleitet, dort von Abbauprodukten und überschüssiger Flüssigkeit befreit und zurückgeführt, während der Patient liegt oder sitzt und überwacht wird; eine Sitzung dauert mehrere Stunden und wird nach Plan wiederholt",
-				"when": "Chronische Nierenerkrankung im Endstadium, anhaltende Ansammlung von Abbauprodukten und Flüssigkeit, Vorbereitung auf und Wartezeit vor einer Nierentransplantation, nach Festlegung der Nephrologie",
-				"prep": "Pünktlich nach Plan kommen, vor und nach der Sitzung wiegen; die ärztlich festgelegte Trink- und Ernährungsvorgabe einhalten, den Arm mit dem Shunt schonen, die Medikamentenliste mitbringen und den Katheterverband trocken halten",
-				"abnormal": "Während und nach der Sitzung können Schwäche, Blutdruckabfall, Wadenkrämpfe oder Juckreiz auftreten — das dem Personal sofort sagen. Zunehmende Ödeme und Luftnot zwischen den Sitzungen, Blutung, Rötung oder ein nicht mehr hörbares Shuntgeräusch erfordern sofort ärztliche Hilfe"
-			},
-			"tr": {
-				"what": "Böbrek işlevi kalıcı olarak büyük ölçüde kaybedildiğinde kanın düzenli olarak makineyle temizlenmesi",
-				"how": "Kan, damar yolundan, fistül ya da kateterden, hortumlarla diyalizöre alınır, atık ürünler ve fazla sıvı uzaklaştırılır ve vücuda geri verilir; hasta bu sırada gözetim altında yatar veya oturur, seans birkaç saat sürer ve programa göre tekrarlanır",
-				"when": "Son evre kronik böbrek hastalığı, atık ürünlerin ve sıvının sürekli birikmesi, böbrek nakline hazırlık ve bekleme dönemi, nefrolog kararıyla",
-				"prep": "Programa uygun gelin, seans öncesi ve sonrası tartılın; hekimin belirlediği sıvı ve beslenme düzenine uyun, fistüllü kolu koruyun, ilaç listenizi getirin, kateter pansumanını kuru tutun",
-				"abnormal": "Seans sırasında ve sonrasında halsizlik, tansiyon düşmesi, bacak krampları veya kaşıntı olabilir, bunları hemen ekibe bildirin. Seanslar arasında ödem ve nefes darlığının artması, kanama, kızarıklık ya da fistül üzerinde titreşimin kaybolması acil hekim değerlendirmesi gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "chronic-patient-nursing-care",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Регулярный сестринский уход за человеком с длительным заболеванием и ограниченной подвижностью",
-				"how": "Медсестра помогает с гигиеной и сменой белья, обрабатывает кожу и места давления, меняет положение в постели, следит за едой, питьём и стулом, при необходимости ухаживает за катетером, стомой или зондом и контролирует приём назначенного лечения",
-				"when": "Лежачие и малоподвижные пациенты, восстановление после инсульта и тяжёлых травм, деменция, тяжёлая сердечная и лёгочная недостаточность, поздние стадии онкологических заболеваний, обучение родственников уходу",
-				"prep": "Подготовка не нужна; приготовить средства гигиены и перевязочный материал, список препаратов и прежние выписки, освободить подход к кровати",
-				"abnormal": "Цель ухода — спокойная кожа без пролежней, ровное дыхание и достаточное питьё и питание. Покраснение или ранка в местах давления, температура, спутанность, отказ от еды и питья, боль или изменение мочи требуют осмотра врача"
-			},
-			"en": {
-				"what": "Regular nursing support for a person with a long-term illness and limited mobility",
-				"how": "The nurse helps with hygiene and changing the linen, cares for the skin and pressure areas, repositions the patient, keeps track of food, fluids and bowel movements, looks after a catheter, stoma or feeding tube when present, and checks that prescribed treatment is taken",
-				"when": "Bedbound and poorly mobile patients, recovery after stroke and severe injury, dementia, advanced heart and lung failure, late-stage cancer, teaching relatives how to provide care",
-				"prep": "No preparation needed; have hygiene supplies and dressings, the list of medicines and earlier discharge letters ready, and clear the access to the bed",
-				"abnormal": "The aim of care is intact skin without pressure sores, calm breathing and enough food and fluid. Redness or a break in the skin over pressure points, fever, confusion, refusal of food and drink, pain or a change in the urine should be shown to a doctor"
-			},
-			"sr": {
-				"what": "Redovna sestrinska njega osobe sa dugotrajnom bolešću i ograničenom pokretljivošću",
-				"how": "Sestra pomaže pri higijeni i promjeni posteljine, njeguje kožu i mjesta pritiska, mijenja položaj u krevetu, prati ishranu, unos tečnosti i stolicu, po potrebi brine o kateteru, stomi ili sondi i kontroliše uzimanje propisane terapije",
-				"when": "Nepokretni i slabo pokretni pacijenti, oporavak poslije moždanog udara i teških povreda, demencija, teška srčana i plućna slabost, uznapredovale maligne bolesti, obuka porodice za njegu",
-				"prep": "Priprema nije potrebna; pripremiti sredstva za higijenu i zavojni materijal, spisak lijekova i ranije otpusne liste i osloboditi prilaz krevetu",
-				"abnormal": "Cilj njege je mirna koža bez dekubitusa, mirno disanje i dovoljan unos hrane i tečnosti. Crvenilo ili ranica na mjestima pritiska, temperatura, zbunjenost, odbijanje hrane i pića, bol ili promjena mokraće traže pregled ljekara"
-			},
-			"de": {
-				"what": "Regelmäßige pflegerische Betreuung eines Menschen mit lang andauernder Erkrankung und eingeschränkter Beweglichkeit",
-				"how": "Die Pflegekraft hilft bei Körperpflege und Wäschewechsel, versorgt Haut und Druckstellen, lagert um, achtet auf Essen, Trinken und Stuhlgang, versorgt bei Bedarf Katheter, Stoma oder Sonde und überwacht die Einnahme der verordneten Behandlung",
-				"when": "Bettlägerige und kaum mobile Patienten, Erholung nach Schlaganfall und schweren Verletzungen, Demenz, schwere Herz- und Lungenschwäche, fortgeschrittene Krebserkrankungen, Anleitung von Angehörigen",
-				"prep": "Keine Vorbereitung nötig; Pflegemittel und Verbandmaterial, Medikamentenliste und frühere Entlassbriefe bereitlegen und den Zugang zum Bett frei machen",
-				"abnormal": "Ziel der Pflege sind intakte Haut ohne Druckgeschwüre, ruhige Atmung und ausreichende Ernährung. Rötung oder offene Stellen an Druckpunkten, Fieber, Verwirrtheit, Verweigerung von Essen und Trinken, Schmerzen oder veränderter Urin gehören ärztlich beurteilt"
-			},
-			"tr": {
-				"what": "Uzun süreli hastalığı ve kısıtlı hareketliliği olan kişiye düzenli hemşirelik bakımı",
-				"how": "Hemşire hijyen ve çarşaf değişiminde yardım eder, cildi ve basınç bölgelerini bakımlar, yatak içinde pozisyon değiştirir, beslenmeyi, sıvı alımını ve bağırsak çalışmasını izler, gerekirse sonda, stoma veya beslenme tüpüyle ilgilenir ve ilaçların alınmasını denetler",
-				"when": "Yatağa bağımlı ve az hareketli hastalar, inme ve ağır yaralanma sonrası iyileşme, demans, ağır kalp ve akciğer yetmezliği, ileri evre kanser, aile bireylerine bakım eğitimi",
-				"prep": "Hazırlık gerekmez; hijyen malzemelerini, pansuman gereçlerini, ilaç listesini ve eski epikrizleri hazırlayın ve yatağın çevresini boşaltın",
-				"abnormal": "Bakımın amacı bası yarası olmayan sağlam cilt, rahat solunum ve yeterli beslenmedir. Basınç bölgelerinde kızarıklık veya açılma, ateş, bilinç bulanıklığı, yemek ve içmeyi reddetme, ağrı ya da idrarda değişiklik hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "consilium-medical-examination",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Совместный осмотр и обсуждение случая несколькими врачами разных специальностей",
-				"how": "Врачи вместе изучают документацию, снимки и результаты анализов, осматривают пациента и согласовывают общее заключение и план, который записывают в медицинскую документацию",
-				"when": "Неясный диагноз, несколько заболеваний одновременно, выбор между операцией и консервативным лечением, планирование сложного вмешательства, онкологическое лечение, документы, требующие коллегиального решения",
-				"prep": "Подготовка не требуется; принести всю имеющуюся документацию — снимки и диски, выписки, результаты анализов и список препаратов",
-				"abnormal": "Консилиум выдаёт согласованное мнение: дополнительные обследования, конкретный метод лечения или дальнейшее наблюдение. Срок следующего визита и ведущего врача определяет консилиум"
-			},
-			"en": {
-				"what": "A joint examination and case discussion by several doctors from different specialties",
-				"how": "The doctors review the records, images and test results together, examine the patient and agree on a common conclusion and plan, which is written into the medical documentation",
-				"when": "An unclear diagnosis, several conditions at once, a choice between surgery and conservative treatment, planning a complex procedure, cancer treatment, documents that require a collective decision",
-				"prep": "No preparation needed; bring all available documentation — images and discs, discharge letters, test results and the list of medicines",
-				"abnormal": "The panel issues an agreed opinion: further tests, a specific treatment or continued observation. The next appointment and the doctor in charge are set by the panel"
-			},
-			"sr": {
-				"what": "Zajednički pregled i razmatranje slučaja od strane više ljekara različitih specijalnosti",
-				"how": "Ljekari zajedno pregledaju dokumentaciju, snimke i nalaze, pregledaju pacijenta i usaglašavaju zajedničko mišljenje i plan, koji se upisuje u medicinsku dokumentaciju",
-				"when": "Nejasna dijagnoza, više bolesti istovremeno, izbor između operacije i konzervativnog liječenja, planiranje složenog zahvata, onkološko liječenje, dokumentacija koja traži zajedničku odluku",
-				"prep": "Priprema nije potrebna; ponijeti svu dostupnu dokumentaciju — snimke i diskove, otpusne liste, nalaze i spisak lijekova",
-				"abnormal": "Konzilijum daje usaglašeno mišljenje: dodatna ispitivanja, određeni način liječenja ili dalje praćenje. Rok sljedeće kontrole i ljekara koji vodi pacijenta određuje konzilijum"
-			},
-			"de": {
-				"what": "Gemeinsame Untersuchung und Fallbesprechung durch mehrere Ärztinnen und Ärzte verschiedener Fachrichtungen",
-				"how": "Die Beteiligten sehen Unterlagen, Bilder und Befunde zusammen durch, untersuchen den Patienten und einigen sich auf eine gemeinsame Beurteilung und einen Plan, der in die Dokumentation eingetragen wird",
-				"when": "Unklare Diagnose, mehrere Erkrankungen gleichzeitig, Entscheidung zwischen Operation und konservativer Behandlung, Planung eines komplexen Eingriffs, Krebsbehandlung, Unterlagen, die eine gemeinsame Entscheidung verlangen",
-				"prep": "Keine Vorbereitung nötig; alle vorhandenen Unterlagen mitbringen — Bilder und CDs, Entlassbriefe, Befunde und die Medikamentenliste",
-				"abnormal": "Das Gremium gibt eine abgestimmte Empfehlung: weitere Untersuchungen, ein bestimmtes Behandlungsverfahren oder weitere Beobachtung. Den nächsten Termin und die zuständige Ärztin oder den zuständigen Arzt legt das Gremium fest"
-			},
-			"tr": {
-				"what": "Farklı uzmanlık alanlarından birkaç hekimin hastayı birlikte değerlendirip olguyu tartışması",
-				"how": "Hekimler dosyayı, görüntüleri ve tetkik sonuçlarını birlikte inceler, hastayı muayene eder ve ortak bir görüş ile plan üzerinde uzlaşır, karar dosyaya yazılır",
-				"when": "Belirsiz tanı, aynı anda birden çok hastalık, ameliyat ile ilaç tedavisi arasında seçim, karmaşık girişim planlaması, onkolojik tedavi, ortak karar gerektiren belgeler",
-				"prep": "Hazırlık gerekmez; eldeki tüm belgeleri getirin — görüntüler ve diskler, epikrizler, tetkik sonuçları ve ilaç listesi",
-				"abnormal": "Konsey ortak görüşünü bildirir: ek tetkikler, belirli bir tedavi yöntemi veya izlem. Bir sonraki kontrolün zamanını ve hastayı izleyecek hekimi konsey belirler"
-			}
-		}
-	},
-	{
-		"slug": "continuous-renal-replacement-therapy-crrt",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Медленное непрерывное очищение крови в отделении интенсивной терапии, которое идёт круглосуточно вместо коротких сеансов",
-				"how": "Через центральный венозный катетер аппарат непрерывно прогоняет кровь через фильтр, удаляет воду и продукты обмена, возмещает объём растворами и предупреждает свёртывание в контуре; терапия идёт сутки и дольше под постоянным наблюдением",
-				"when": "Острое повреждение почек у нестабильного пациента, перегрузка жидкостью, тяжёлые нарушения электролитов и кислотно-щелочного равновесия, сепсис и другие критические состояния, по решению команды интенсивной терапии",
-				"prep": "Отдельной подготовки со стороны пациента нет — терапию начинают в палате интенсивной терапии; близким стоит передать врачам список постоянных препаратов и сведения об аллергии",
-				"abnormal": "Команда постоянно следит за давлением, выделением мочи, электролитами и работой контура и по ходу меняет настройки. Сколько длится терапия, переходить ли на обычный гемодиализ и когда её прекратить при восстановлении почек, решают врачи"
-			},
-			"en": {
-				"what": "Slow, continuous blood purification in intensive care that runs around the clock instead of in short sessions",
-				"how": "Through a central venous catheter the machine continuously passes blood through a filter, removing water and waste products, replacing volume with solutions and preventing clotting in the circuit; the treatment runs for a day or longer under constant monitoring",
-				"when": "Acute kidney injury in an unstable patient, fluid overload, severe electrolyte and acid-base disturbances, sepsis and other critical conditions, as decided by the intensive care team",
-				"prep": "No separate preparation by the patient — the therapy is started in the intensive care unit; relatives should give the team the list of regular medicines and information about allergies",
-				"abnormal": "The team constantly watches blood pressure, urine output, electrolytes and the circuit and adjusts the settings as treatment goes on. How long it continues, whether it is switched to ordinary haemodialysis and when it can be stopped as the kidneys recover is decided by the doctors"
-			},
-			"sr": {
-				"what": "Sporo i neprekidno prečišćavanje krvi u jedinici intenzivne njege, koje traje danonoćno umjesto u kratkim seansama",
-				"how": "Preko centralnog venskog katetera aparat neprekidno propušta krv kroz filter, uklanja vodu i razgradne produkte, nadoknađuje tečnost rastvorima i sprječava zgrušavanje u sistemu; terapija traje dan i duže uz stalni nadzor",
-				"when": "Akutno oštećenje bubrega kod nestabilnog pacijenta, preopterećenje tečnošću, teški poremećaji elektrolita i acidobaznog statusa, sepsa i druga kritična stanja, po odluci tima intenzivne njege",
-				"prep": "Posebna priprema od strane pacijenta nije potrebna — terapija se započinje u jedinici intenzivne njege; porodica treba da timu preda spisak stalnih lijekova i podatke o alergijama",
-				"abnormal": "Tim stalno prati pritisak, izlučivanje mokraće, elektrolite i rad sistema i usput mijenja podešavanja. Koliko terapija traje, da li se prelazi na uobičajenu hemodijalizu i kada se prekida po oporavku bubrega, odlučuju ljekari"
-			},
-			"de": {
-				"what": "Langsame, kontinuierliche Blutreinigung auf der Intensivstation, die rund um die Uhr läuft statt in kurzen Sitzungen",
-				"how": "Über einen zentralen Venenkatheter führt das Gerät das Blut fortlaufend durch einen Filter, entzieht Wasser und Abbauprodukte, ersetzt Flüssigkeit durch Lösungen und verhindert die Gerinnung im System; die Behandlung läuft einen Tag und länger unter ständiger Überwachung",
-				"when": "Akutes Nierenversagen beim kreislaufinstabilen Patienten, Flüssigkeitsüberladung, schwere Entgleisungen von Elektrolyten und Säure-Basen-Haushalt, Sepsis und andere kritische Zustände, nach Entscheidung des Intensivteams",
-				"prep": "Eine eigene Vorbereitung durch den Patienten entfällt — die Therapie wird auf der Intensivstation begonnen; Angehörige sollten die Liste der Dauermedikamente und Angaben zu Allergien übergeben",
-				"abnormal": "Das Team überwacht laufend Blutdruck, Urinausscheidung, Elektrolyte und das System und passt die Einstellungen an. Wie lange behandelt wird, ob auf eine übliche Hämodialyse gewechselt wird und wann bei Erholung der Nieren beendet werden kann, entscheiden die Ärztinnen und Ärzte"
-			},
-			"tr": {
-				"what": "Yoğun bakımda kısa seanslar yerine gün boyu süren yavaş ve kesintisiz kan temizleme",
-				"how": "Santral venöz kateter üzerinden cihaz kanı sürekli bir filtreden geçirir, su ve atık ürünleri uzaklaştırır, kaybedilen hacmi solüsyonlarla yerine koyar ve devrede pıhtılaşmayı önler; tedavi sürekli izlem altında bir gün ve daha uzun sürer",
-				"when": "Hemodinamisi bozuk hastada akut böbrek hasarı, sıvı yüklenmesi, ağır elektrolit ve asit-baz bozuklukları, sepsis ve diğer kritik durumlar, yoğun bakım ekibinin kararıyla",
-				"prep": "Hastanın kendi yapacağı bir hazırlık yoktur — tedavi yoğun bakımda başlatılır; yakınlarının sürekli kullanılan ilaç listesini ve alerji bilgisini ekibe iletmesi gerekir",
-				"abnormal": "Ekip tansiyonu, idrar çıkışını, elektrolitleri ve devrenin çalışmasını sürekli izler ve ayarları tedavi sırasında değiştirir. Tedavinin ne kadar süreceğine, olağan hemodiyalize geçilip geçilmeyeceğine ve böbrekler düzeldiğinde ne zaman sonlandırılacağına hekimler karar verir"
-			}
-		}
-	},
-	{
-		"slug": "follow-up-hospital-round",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Повторный осмотр лежащего в стационаре пациента лечащим врачом во время обхода с оценкой динамики и коррекцией назначений",
-				"how": "Врач осматривает пациента у постели, спрашивает о жалобах за прошедшие сутки, смотрит показатели наблюдения и свежие результаты, оценивает рану или больное место и меняет лист назначений; обычно несколько минут",
-				"when": "Каждый день пребывания в стационаре, после операций и процедур, при изменении состояния, перед выпиской или переводом",
-				"prep": "Подготовка не нужна; к обходу полезно собрать вопросы, вспомнить, как прошла ночь и как переносится лечение, и держать под рукой прежнюю документацию",
-				"abnormal": "По итогам обхода врач решает, продолжать ли прежнее лечение, назначить дополнительные обследования или готовить выписку. Новая или усилившаяся боль, одышка и температура между обходами — повод позвать персонал сразу"
-			},
-			"en": {
-				"what": "A repeat check of an inpatient by the treating doctor during the ward round, with assessment of progress and adjustment of orders",
-				"how": "The doctor examines the patient at the bedside, asks about the past day, reviews the monitoring values and the newest results, inspects the wound or the painful area and updates the prescription chart; usually a few minutes",
-				"when": "Every day of the hospital stay, after operations and procedures, when the condition changes, before discharge or transfer",
-				"prep": "No preparation needed; it helps to collect questions, recall how the night and the medication went and have earlier records at hand",
-				"abnormal": "After the round the doctor decides whether to continue the current treatment, order additional tests or prepare the discharge. New or worsening pain, breathlessness or fever between rounds is a reason to call the staff immediately"
-			},
-			"sr": {
-				"what": "Ponovni pregled pacijenta od strane nadležnog ljekara u toku vizite, sa procjenom toka i korekcijom terapije",
-				"how": "Ljekar pregleda pacijenta uz krevet, pita za tegobe u protekla 24 sata, gleda vrijednosti nadzora i najnovije nalaze, pogleda ranu ili bolno mjesto i mijenja terapijsku listu; obično traje nekoliko minuta",
-				"when": "Svaki dan boravka u bolnici, poslije operacija i zahvata, kod promjene stanja, prije otpusta ili premještaja",
-				"prep": "Priprema nije potrebna; korisno je pripremiti pitanja, sjetiti se kako je protekla noć i kako se podnosi terapija i imati pri ruci raniju dokumentaciju",
-				"abnormal": "Poslije vizite ljekar odlučuje da li se terapija nastavlja, da li su potrebna dodatna ispitivanja ili se priprema otpust. Nov ili pojačan bol, nedostatak vazduha i temperatura između vizita razlog su da se osoblje pozove odmah"
-			},
-			"de": {
-				"what": "Erneute Beurteilung eines stationären Patienten durch die behandelnde Ärztin oder den behandelnden Arzt bei der Visite, mit Verlaufsbewertung und Anpassung der Anordnungen",
-				"how": "Am Bett wird der Patient untersucht, nach den Beschwerden des letzten Tages gefragt, Überwachungswerte und neue Befunde werden gesichtet, Wunde oder Schmerzregion angesehen und der Anordnungsbogen geändert; meist wenige Minuten",
-				"when": "An jedem Tag des Aufenthalts, nach Operationen und Eingriffen, bei Veränderung des Zustands, vor Entlassung oder Verlegung",
-				"prep": "Keine Vorbereitung nötig; hilfreich ist, Fragen zu sammeln, sich an Nacht und Medikamenteneinnahme zu erinnern und frühere Unterlagen bereitzuhalten",
-				"abnormal": "Nach der Visite entscheidet die Ärztin oder der Arzt, ob die Behandlung so weiterläuft, zusätzliche Untersuchungen nötig sind oder die Entlassung vorbereitet wird. Neue oder stärkere Schmerzen, Luftnot oder Fieber zwischen den Visiten sind ein Grund, sofort das Personal zu rufen"
-			},
-			"tr": {
-				"what": "Yatan hastanın vizit sırasında sorumlu hekimce yeniden değerlendirilmesi, gidişatın gözden geçirilip tedavinin güncellenmesi",
-				"how": "Hekim hastayı yatak başında muayene eder, son bir gündeki şikâyetleri sorar, izlem değerlerine ve yeni sonuçlara bakar, yarayı veya ağrıyan bölgeyi görür ve tedavi çizelgesini değiştirir; genellikle birkaç dakika sürer",
-				"when": "Hastanede kalınan her gün, ameliyat ve girişimlerden sonra, durum değiştiğinde, taburculuk veya nakil öncesinde",
-				"prep": "Hazırlık gerekmez; soruları toplamak, gecenin ve ilaçların nasıl geçtiğini hatırlamak ve önceki belgeleri yanında bulundurmak yararlıdır",
-				"abnormal": "Vizit sonrası hekim tedavinin aynı şekilde süreceğine, ek tetkik gerekip gerekmediğine ya da taburculuğun hazırlanacağına karar verir. Vizitler arasında yeni veya artan ağrı, nefes darlığı ve ateş hemen görevliyi çağırmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "food-costs-for-children-under-1-year",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Питание ребёнка первого года жизни во время пребывания в стационаре, подобранное по возрасту и состоянию",
-				"how": "Отделение поддерживает грудное вскармливание, при необходимости готовит адаптированную смесь или прикорм по возрасту, кормление идёт в ритме малыша; при нарушенном глотании или тяжёлом состоянии питание вводят через зонд по назначению врача",
-				"when": "Любая госпитализация ребёнка до года, слабая прибавка массы, трудности при кормлении, пищевая аллергия и непереносимость, восстановление после кишечной инфекции или операции",
-				"prep": "Отдельной подготовки нет; сказать врачу, чем ребёнок питается дома и как реагирует на продукты и смесь, принести привычную бутылочку и соску",
-				"abnormal": "Персонал следит за тем, сколько ребёнок съедает, за прибавкой веса, стулом и срыгиваниями. Упорный отказ от еды, рвота, понос, заметно более редкие мочеиспускания или потеря веса требуют немедленного осмотра врача"
-			},
-			"en": {
-				"what": "Feeding of a child in the first year of life during a hospital stay, chosen according to age and condition",
-				"how": "The ward supports breastfeeding, prepares infant formula or age-appropriate solid food when needed and feeds the baby at its own rhythm; if swallowing is impaired or the child is seriously ill, feeding is given through a tube as prescribed",
-				"when": "Any hospital stay of a child under one year, poor weight gain, feeding difficulties, food allergy and intolerance, recovery after an intestinal infection or surgery",
-				"prep": "No separate preparation; tell the doctor what the child is fed at home and how it reacts to foods and formula, and bring the familiar bottle and teat",
-				"abnormal": "The staff watch how much the child takes, weight gain, stools and spitting up. Persistent refusal to feed, vomiting, diarrhoea, markedly fewer wet nappies or weight loss need to be seen by a doctor immediately"
-			},
-			"sr": {
-				"what": "Ishrana djeteta u prvoj godini života tokom boravka u bolnici, prilagođena uzrastu i stanju",
-				"how": "Odjeljenje podržava dojenje, po potrebi priprema adaptiranu mliječnu formulu ili dohranu primjerenu uzrastu, a hranjenje ide u ritmu bebe; kod otežanog gutanja ili težeg stanja hrana se daje preko sonde po nalogu ljekara",
-				"when": "Svaki boravak djeteta mlađeg od godinu dana u bolnici, slabo napredovanje u težini, teškoće pri hranjenju, alergija i netolerancija na hranu, oporavak poslije crijevne infekcije ili operacije",
-				"prep": "Posebna priprema nije potrebna; reći ljekaru čime se dijete hrani kod kuće i kako reaguje na namirnice i formulu, te ponijeti flašicu i cuclu na koje je naviklo",
-				"abnormal": "Osoblje prati koliko dijete pojede, napredovanje u težini, stolicu i vraćanje hrane. Uporno odbijanje hrane, povraćanje, proliv, osjetno rjeđe mokrenje ili gubitak težine traže hitan pregled ljekara"
-			},
-			"de": {
-				"what": "Ernährung eines Kindes im ersten Lebensjahr während des Krankenhausaufenthalts, abgestimmt auf Alter und Zustand",
-				"how": "Die Station unterstützt das Stillen, bereitet bei Bedarf Säuglingsnahrung oder altersgerechte Beikost zu und füttert im Rhythmus des Kindes; bei Schluckstörungen oder schwerem Zustand wird nach ärztlicher Anordnung über eine Sonde ernährt",
-				"when": "Jeder Krankenhausaufenthalt eines Kindes unter einem Jahr, zu geringe Gewichtszunahme, Trinkschwierigkeiten, Nahrungsmittelallergie und Unverträglichkeit, Erholung nach Darminfekt oder Operation",
-				"prep": "Keine eigene Vorbereitung; dem Arzt sagen, womit das Kind zu Hause ernährt wird und wie es auf Nahrung und Formula reagiert, gewohnte Flasche und Sauger mitbringen",
-				"abnormal": "Das Personal achtet auf Trinkmengen, Gewichtsentwicklung, Stuhl und Spucken. Anhaltende Nahrungsverweigerung, Erbrechen, Durchfall, deutlich seltenere nasse Windeln oder Gewichtsverlust müssen sofort ärztlich beurteilt werden"
-			},
-			"tr": {
-				"what": "Hastanede yatış süresince yaşamın ilk yılındaki çocuğun yaşına ve durumuna göre beslenmesi",
-				"how": "Servis emzirmeyi destekler, gerektiğinde bebek maması ya da yaşa uygun ek gıda hazırlar ve bebeği kendi ritmine göre besler; yutma güçlüğü veya ağır durumda beslenme hekim talimatıyla sonda ile verilir",
-				"when": "Bir yaşından küçük çocuğun her hastane yatışı, kilo alamama, beslenme güçlükleri, besin alerjisi ve intoleransı, bağırsak enfeksiyonu veya ameliyat sonrası iyileşme",
-				"prep": "Ayrı bir hazırlık gerekmez; çocuğun evde neyle beslendiğini ve besinlere ve mamaya tepkisini hekime söyleyin, alıştığı biberon ve emziği getirin",
-				"abnormal": "Ekip alınan miktarı, kilo alımını, dışkıyı ve çıkarmayı izler. Beslenmeyi sürekli reddetme, kusma, ishal, idrar çıkışının belirgin azalması veya kilo kaybı hemen hekim değerlendirmesi gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "food-costs-for-patients-over-1-year",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Больничное питание пациентов старше года: обычный стол или лечебная диета по назначению врача",
-				"how": "Врач назначает вид стола, кухня готовит блюда по этому назначению и их раздают в палаты несколько раз в день; при затруднённом глотании пищу измельчают, а когда есть самостоятельно нельзя, применяют питание через зонд или вену",
-				"when": "Любое пребывание в стационаре, сахарный диабет, болезни почек, печени и пищеварительного тракта, повышенное давление, период после операции, пищевая аллергия и непереносимость",
-				"prep": "Подготовки нет; при поступлении сообщить об аллергии и непереносимости, о диете, которую вы уже соблюдаете, и об исследовании натощак, назначенном на утро",
-				"abnormal": "Подходящее питание поддерживает вес и силы и помогает удерживать показатели вроде сахара крови при диабете. Потеря аппетита, снижение веса, тошнота после еды, затруднённое глотание или ухудшение показателей — повод пересмотреть диету вместе с врачом"
-			},
-			"en": {
-				"what": "Hospital catering for patients over one year of age: a regular diet or a therapeutic one prescribed by the doctor",
-				"how": "The doctor sets the type of diet, the kitchen prepares meals accordingly and they are served in the rooms several times a day; food is softened when swallowing is difficult, and tube or intravenous feeding is used when eating is not possible",
-				"when": "Any inpatient stay, diabetes, kidney, liver and digestive disease, high blood pressure, the period after surgery, food allergy and intolerance",
-				"prep": "No preparation; on admission report allergies and intolerances, any diet you already follow, and any fasting test scheduled for the next morning",
-				"abnormal": "A suitable diet keeps weight and strength up and helps keep values such as blood sugar in diabetes under control. Loss of appetite, weight loss, nausea after meals, difficulty swallowing or worsening values are a reason to review the diet with the doctor"
-			},
-			"sr": {
-				"what": "Bolnička ishrana pacijenata starijih od godinu dana: uobičajena hrana ili dijeta koju odredi ljekar",
-				"how": "Ljekar određuje vrstu dijete, kuhinja prema tome sprema obroke i oni se dijele po sobama nekoliko puta dnevno; kod otežanog gutanja hrana se usitnjava, a kada pacijent ne može da jede koristi se ishrana preko sonde ili vene",
-				"when": "Svaki boravak u bolnici, šećerna bolest, bolesti bubrega, jetre i probavnog trakta, povišen pritisak, period poslije operacije, alergija i netolerancija na hranu",
-				"prep": "Priprema nije potrebna; pri prijemu reći koje alergije i netolerancije imate, koju dijetu već držite i da li vas ujutro čeka pretraga natašte",
-				"abnormal": "Odgovarajuća ishrana održava težinu i snagu i pomaže da vrijednosti, poput šećera u krvi kod dijabetesa, ostanu pod kontrolom. Gubitak apetita, pad težine, mučnina poslije jela, otežano gutanje ili pogoršanje nalaza razlog su da se dijeta preispita sa ljekarom"
-			},
-			"de": {
-				"what": "Krankenhausverpflegung für Patienten über einem Jahr: normale Kost oder eine ärztlich verordnete Diät",
-				"how": "Die Ärztin oder der Arzt legt die Kostform fest, die Küche bereitet die Mahlzeiten entsprechend zu und sie werden mehrmals täglich auf die Zimmer verteilt; bei Schluckstörungen wird die Kost passiert, bei fehlender Nahrungsaufnahme über Sonde oder Vene ernährt",
-				"when": "Jeder stationäre Aufenthalt, Diabetes, Nieren-, Leber- und Magen-Darm-Erkrankungen, Bluthochdruck, Zeit nach Operationen, Nahrungsmittelallergie und Unverträglichkeit",
-				"prep": "Keine Vorbereitung; bei der Aufnahme Allergien und Unverträglichkeiten, eine bereits eingehaltene Diät und eine für den nächsten Morgen geplante Nüchtern-Untersuchung angeben",
-				"abnormal": "Eine passende Kost hält Gewicht und Kräfte und hilft, Werte wie den Blutzucker bei Diabetes im Griff zu behalten. Appetitverlust, Gewichtsabnahme, Übelkeit nach dem Essen, Schluckbeschwerden oder sich verschlechternde Werte sind ein Grund, die Kost mit der Ärztin oder dem Arzt zu überprüfen"
-			},
-			"tr": {
-				"what": "Bir yaşın üzerindeki hastaların hastane beslenmesi: olağan yemek ya da hekimin belirlediği tedavi diyeti",
-				"how": "Hekim diyet türünü belirler, mutfak yemekleri buna göre hazırlar ve gün içinde birkaç öğün odalara dağıtılır; yutma güçlüğünde yemek ezilir, ağızdan beslenme mümkün değilse sonda veya damar yoluyla beslenme uygulanır",
-				"when": "Her hastane yatışı, şeker hastalığı, böbrek, karaciğer ve sindirim sistemi hastalıkları, yüksek tansiyon, ameliyat sonrası dönem, besin alerjisi ve intoleransı",
-				"prep": "Hazırlık gerekmez; yatışta alerji ve intoleranslarınızı, uyguladığınız diyeti ve ertesi sabaha aç karnına planlanmış bir tetkik olup olmadığını bildirin",
-				"abnormal": "Uygun beslenme kiloyu ve gücü korur ve diyabette kan şekeri gibi değerlerin kontrol altında kalmasına yardımcı olur. İştahsızlık, kilo kaybı, yemek sonrası bulantı, yutma güçlüğü veya değerlerin kötüleşmesi diyetin hekimle yeniden gözden geçirilmesini gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "functional-renal-test",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Набор проб, показывающих, насколько хорошо почки фильтруют кровь, концентрируют мочу и удерживают нужные вещества",
-				"how": "Берут кровь из вены и собирают мочу — разовую порцию или за целые сутки, иногда с пробами на концентрацию и разведение после заданного питьевого режима; по результатам рассчитывают скорость клубочковой фильтрации",
-				"when": "Хроническая болезнь почек и наблюдение за ней, изменения в анализе мочи, отёки, повышенное давление, сахарный диабет, подбор и контроль препаратов, выводящихся почками, подготовка к исследованиям с контрастом",
-				"prep": "Уточнить у врача режим питья и приёма препаратов перед пробой; для суточной мочи взять подготовленную ёмкость, собирать всю мочу и хранить её в прохладном месте",
-				"abnormal": "Отклонения могут быть связаны с хронической болезнью почек, обезвоживанием, действием препаратов или другими заболеваниями, а также с ошибкой при сборе мочи. Результат оценивает врач вместе с другими анализами и осмотром"
-			},
-			"en": {
-				"what": "A set of tests showing how well the kidneys filter the blood, concentrate the urine and retain needed substances",
-				"how": "Blood is taken from a vein and urine is collected — a single sample or a whole day's output, sometimes with concentration and dilution tests after a set drinking regimen; the glomerular filtration rate is calculated from the results",
-				"when": "Chronic kidney disease and its monitoring, abnormal urine findings, swelling, high blood pressure, diabetes, selecting and monitoring medicines cleared by the kidneys, preparation for contrast studies",
-				"prep": "Check with the doctor about drinking and medication before the test; for a whole-day collection take the prepared container, collect all urine and keep it in a cool place",
-				"abnormal": "Deviations may be linked to chronic kidney disease, dehydration, the effect of medicines or other illnesses, and also to an error in collecting the urine. The result is interpreted by the doctor together with other tests and the examination"
-			},
-			"sr": {
-				"what": "Skup proba koje pokazuju koliko dobro bubrezi filtriraju krv, koncentrišu mokraću i zadržavaju potrebne materije",
-				"how": "Vadi se krv iz vene i sakuplja mokraća — jednokratni uzorak ili cjelodnevni, ponekad uz probe koncentracije i razrjeđenja poslije određenog režima unosa tečnosti; iz nalaza se računa jačina glomerularne filtracije",
-				"when": "Hronična bubrežna bolest i njeno praćenje, promjene u nalazu mokraće, otoci, povišen pritisak, šećerna bolest, uvođenje i praćenje lijekova koji se izlučuju preko bubrega, priprema za pretrage sa kontrastom",
-				"prep": "Provjeriti sa ljekarom režim unosa tečnosti i uzimanja lijekova prije probe; za cjelodnevnu mokraću ponijeti pripremljenu posudu, sakupljati svu mokraću i držati je na hladnom",
-				"abnormal": "Odstupanja mogu biti povezana sa hroničnom bolešću bubrega, dehidracijom, dejstvom lijekova ili drugim bolestima, ali i sa greškom pri sakupljanju mokraće. Nalaz tumači ljekar zajedno sa ostalim analizama i pregledom"
-			},
-			"de": {
-				"what": "Eine Reihe von Proben, die zeigen, wie gut die Nieren das Blut filtern, den Harn konzentrieren und benötigte Stoffe zurückhalten",
-				"how": "Es wird Blut aus der Vene abgenommen und Harn gesammelt — eine Einzelprobe oder der Harn eines ganzen Tages, teils mit Konzentrations- und Verdünnungsproben nach vorgegebener Trinkmenge; aus den Werten wird die glomeruläre Filtrationsrate berechnet",
-				"when": "Chronische Nierenerkrankung und deren Verlaufskontrolle, auffälliger Harnbefund, Ödeme, Bluthochdruck, Diabetes, Auswahl und Kontrolle über die Niere ausgeschiedener Medikamente, Vorbereitung auf Kontrastmitteluntersuchungen",
-				"prep": "Trinkmenge und Medikamenteneinnahme vor der Probe mit der Ärztin oder dem Arzt abklären; für den Tagesharn das vorbereitete Gefäß mitnehmen, den gesamten Harn sammeln und kühl aufbewahren",
-				"abnormal": "Abweichungen können mit chronischer Nierenerkrankung, Flüssigkeitsmangel, der Wirkung von Medikamenten oder anderen Erkrankungen zusammenhängen, aber auch mit einem Sammelfehler. Den Befund beurteilt die Ärztin oder der Arzt zusammen mit weiteren Werten und der Untersuchung"
-			},
-			"tr": {
-				"what": "Böbreklerin kanı ne kadar iyi süzdüğünü, idrarı ne kadar yoğunlaştırdığını ve gerekli maddeleri ne kadar tuttuğunu gösteren testler bütünü",
-				"how": "Koldan kan alınır ve idrar toplanır — tek örnek ya da bir günlük idrar, bazen belirlenmiş sıvı alımından sonra yoğunlaştırma ve seyreltme testleriyle; sonuçlardan glomerüler filtrasyon hızı hesaplanır",
-				"when": "Kronik böbrek hastalığı ve izlemi, idrar tahlilinde değişiklik, ödem, yüksek tansiyon, şeker hastalığı, böbrekten atılan ilaçların seçimi ve izlemi, kontrastlı tetkiklere hazırlık",
-				"prep": "Test öncesi sıvı alımını ve ilaç kullanımını hekiminize danışın; bir günlük idrar için hazırlanmış kabı alın, tüm idrarı toplayın ve serin yerde saklayın",
-				"abnormal": "Sapmalar kronik böbrek hastalığı, susuz kalma, ilaçların etkisi veya başka hastalıklarla, ayrıca idrar toplamadaki hatayla ilişkili olabilir. Sonucu hekim diğer tahliller ve muayeneyle birlikte yorumlar"
-			}
-		}
-	},
-	{
-		"slug": "hospital-care-for-involuntarily-hospitalized-patient",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Лечение и наблюдение в психиатрическом отделении пациента, помещённого туда без его согласия по предусмотренной законом процедуре",
-				"how": "Пациента принимают и осматривают, о госпитализации уведомляют суд, который её проверяет, лечение ведут по плану врача, состояние и необходимость дальнейшего пребывания регулярно пересматривают, а право на информацию, обжалование и контакт с близкими у пациента сохраняется",
-				"when": "Состояния, при которых из-за болезни человек не может решить вопрос о лечении и есть опасность для его жизни и здоровья или для безопасности окружающих, а также исполнение назначенной судом меры обязательного лечения",
-				"prep": "Отдельной подготовки нет; близким стоит передать врачу прежние выписки, список препаратов и сведения о прежних госпитализациях, документы и личные вещи оформляют при поступлении",
-				"abnormal": "Врачи регулярно пересматривают состояние, и когда основания для принудительного пребывания отпадают, режим меняют на добровольный или пациента выписывают с планом амбулаторного наблюдения. Вопросы о сроках, правах и обжаловании задают лечащему врачу"
-			},
-			"en": {
-				"what": "Treatment and observation in a psychiatric ward of a patient admitted without consent under the procedure laid down by law",
-				"how": "The patient is admitted and examined, the court is notified of the admission and reviews it, treatment follows the doctor's plan, the condition and the need for further stay are reassessed regularly, and the patient keeps the right to information, to appeal and to contact relatives",
-				"when": "States in which illness prevents a person from deciding about treatment and there is a danger to their life and health or to the safety of others, and carrying out a compulsory treatment order imposed by a court",
-				"prep": "No separate preparation; relatives should hand the doctor earlier discharge letters, the list of medicines and information about previous admissions, documents and personal belongings are registered on admission",
-				"abnormal": "Doctors reassess the condition regularly, and once the grounds for compulsory stay no longer apply the regime becomes voluntary or the patient is discharged with a plan for outpatient follow-up. Questions about duration, rights and appeal should be addressed to the treating doctor"
-			},
-			"sr": {
-				"what": "Liječenje i nadzor na psihijatrijskom odjeljenju pacijenta koji je primljen bez svog pristanka, po zakonom propisanom postupku",
-				"how": "Pacijent se prima i pregleda, o prijemu se obavještava sud koji ga preispituje, liječenje ide po planu ljekara, stanje i potreba daljeg boravka redovno se procjenjuju, a pacijent zadržava pravo na informaciju, žalbu i kontakt sa bliskima",
-				"when": "Stanja u kojima zbog bolesti osoba ne može da odluči o liječenju, a postoji opasnost po njen život i zdravlje ili po bezbjednost drugih, kao i izvršenje sudski izrečene mjere obaveznog liječenja",
-				"prep": "Posebna priprema nije potrebna; porodica treba da ljekaru preda ranije otpusne liste, spisak lijekova i podatke o ranijim hospitalizacijama, a dokumenta i lične stvari se evidentiraju pri prijemu",
-				"abnormal": "Ljekari redovno procjenjuju stanje i, kada razlozi za prisilni boravak prestanu, režim se mijenja u dobrovoljni ili se pacijent otpušta uz plan vanbolničkog praćenja. Pitanja o trajanju, pravima i žalbi postavljaju se nadležnom ljekaru"
-			},
-			"de": {
-				"what": "Behandlung und Überwachung auf einer psychiatrischen Station bei einem Patienten, der nach dem gesetzlich vorgesehenen Verfahren ohne seine Zustimmung aufgenommen wurde",
-				"how": "Der Patient wird aufgenommen und untersucht, das Gericht wird über die Aufnahme informiert und überprüft sie, die Behandlung folgt dem ärztlichen Plan, Zustand und Notwendigkeit des weiteren Aufenthalts werden regelmäßig neu beurteilt, und der Patient behält das Recht auf Information, Beschwerde und Kontakt zu Angehörigen",
-				"when": "Zustände, in denen die Erkrankung eine eigene Entscheidung über die Behandlung unmöglich macht und Gefahr für Leben und Gesundheit oder für die Sicherheit anderer besteht, sowie der Vollzug einer gerichtlich angeordneten Behandlungsmaßnahme",
-				"prep": "Keine eigene Vorbereitung; Angehörige sollten frühere Entlassbriefe, die Medikamentenliste und Angaben zu früheren Aufenthalten übergeben, Dokumente und persönliche Sachen werden bei der Aufnahme erfasst",
-				"abnormal": "Die Ärztinnen und Ärzte beurteilen den Zustand regelmäßig neu; entfallen die Gründe für den Zwangsaufenthalt, wird die Behandlung freiwillig fortgesetzt oder der Patient mit einem Plan für die ambulante Weiterbetreuung entlassen. Fragen zu Dauer, Rechten und Beschwerde beantwortet die behandelnde Ärztin oder der behandelnde Arzt"
-			},
-			"tr": {
-				"what": "Yasada öngörülen usule göre rızası olmadan yatırılan hastanın psikiyatri servisinde tedavisi ve izlenmesi",
-				"how": "Hasta kabul edilip muayene edilir, yatış mahkemeye bildirilir ve mahkemece denetlenir, tedavi hekimin planına göre yürür, durum ve yatışın sürmesinin gerekip gerekmediği düzenli olarak yeniden değerlendirilir; hastanın bilgilenme, itiraz ve yakınlarıyla görüşme hakkı sürer",
-				"when": "Hastalık nedeniyle kişinin tedavi konusunda karar veremediği ve kendi yaşamı ve sağlığı ya da başkalarının güvenliği için tehlike bulunan durumlar ve mahkemece verilen zorunlu tedavi tedbirinin uygulanması",
-				"prep": "Ayrı bir hazırlık gerekmez; yakınlarının önceki epikrizleri, ilaç listesini ve geçmiş yatışlara ilişkin bilgileri hekime vermesi gerekir, belgeler ve kişisel eşyalar yatışta kayda geçer",
-				"abnormal": "Hekimler durumu düzenli olarak yeniden değerlendirir; zorunlu yatışın gerekçeleri ortadan kalkınca yatış gönüllü hale gelir ya da hasta ayaktan izlem planıyla taburcu edilir. Süre, haklar ve itiraz hakkındaki sorular hastayı izleyen hekime sorulur"
-			}
-		}
-	},
-	{
-		"slug": "hospital-discharge-letter",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Медицинский документ, в котором собрано, с чем пациент поступил, что выявили, как лечили и что делать дальше",
-				"how": "При выписке врач составляет документ с диагнозом, ходом госпитализации, результатами обследований и операций, назначенным лечением и рекомендациями, отдаёт его пациенту и объясняет содержание; подписывает лечащий врач",
-				"when": "Завершение стационарного лечения, перевод в другое учреждение или на реабилитацию, продолжение лечения у семейного врача или специалиста, оформление больничного и документов для страховой",
-				"prep": "Подготовка не требуется; при выписке уточнить непонятные пункты, сроки контроля и список препаратов и попросить копии снимков и результатов",
-				"abnormal": "Выписку нужно показать семейному врачу и специалисту на следующем приёме и хранить вместе с результатами. Если после выписки появляются перечисленные в ней тревожные признаки — температура, усиливающаяся боль, кровотечение, одышка — обращаться к врачу, не дожидаясь назначенного контроля"
-			},
-			"en": {
-				"what": "A medical document summarising why the patient was admitted, what was found, how they were treated and what to do next",
-				"how": "At discharge the doctor writes up the diagnosis, the course of the stay, the results of investigations and operations, the prescribed treatment and the recommendations, hands it to the patient and explains it; the treating doctor signs it",
-				"when": "The end of inpatient treatment, transfer to another hospital or to rehabilitation, continuing care with the family doctor or a specialist, sick leave and insurance paperwork",
-				"prep": "No preparation needed; at discharge ask about anything unclear, about follow-up dates and the list of medicines, and request copies of images and results",
-				"abnormal": "Show the discharge letter to your family doctor and to the specialist at the next visit and keep it with the test results. If the warning signs listed in it appear — fever, increasing pain, bleeding, breathlessness — see a doctor without waiting for the scheduled check-up"
-			},
-			"sr": {
-				"what": "Medicinski dokument koji sažima sa čim je pacijent primljen, šta je utvrđeno, kako je liječen i šta dalje",
-				"how": "Ljekar pri otpustu sastavlja dokument sa dijagnozom, tokom boravka, rezultatima ispitivanja i operacija, propisanom terapijom i preporukama, uručuje ga pacijentu i objašnjava sadržaj; dokument potpisuje nadležni ljekar",
-				"when": "Završetak bolničkog liječenja, premještaj u drugu ustanovu ili na rehabilitaciju, nastavak liječenja kod izabranog ljekara ili specijaliste, otvaranje bolovanja i dokumentacija za osiguranje",
-				"prep": "Priprema nije potrebna; pri otpustu provjeriti nejasne stavke, rokove kontrola i spisak lijekova i tražiti kopije snimaka i nalaza",
-				"abnormal": "Otpusno pismo treba pokazati izabranom ljekaru i specijalisti na sljedećem pregledu i čuvati ga uz nalaze. Ako se poslije otpusta jave znaci navedeni u dokumentu — temperatura, pojačan bol, krvarenje, nedostatak vazduha — javiti se ljekaru ne čekajući zakazanu kontrolu"
-			},
-			"de": {
-				"what": "Ein ärztliches Dokument, das zusammenfasst, weshalb der Patient aufgenommen wurde, was festgestellt wurde, wie behandelt wurde und wie es weitergeht",
-				"how": "Bei der Entlassung erstellt die Ärztin oder der Arzt das Dokument mit Diagnose, Verlauf des Aufenthalts, Ergebnissen von Untersuchungen und Operationen, verordneter Behandlung und Empfehlungen, übergibt es und erläutert den Inhalt; unterschrieben wird es von der behandelnden Ärztin oder dem behandelnden Arzt",
-				"when": "Ende der stationären Behandlung, Verlegung in ein anderes Haus oder in die Rehabilitation, Weiterbehandlung bei Hausarzt oder Facharzt, Krankschreibung und Unterlagen für die Versicherung",
-				"prep": "Keine Vorbereitung nötig; bei der Entlassung Unklarheiten, Kontrolltermine und die Medikamentenliste nachfragen und Kopien von Bildern und Befunden erbitten",
-				"abnormal": "Der Entlassbrief gehört beim nächsten Termin dem Hausarzt und der Fachärztin gezeigt und zusammen mit den Befunden aufbewahrt. Treten die darin genannten Warnzeichen auf — Fieber, zunehmende Schmerzen, Blutung, Luftnot — sollte man nicht bis zum geplanten Kontrolltermin warten"
-			},
-			"tr": {
-				"what": "Hastanın neden yattığını, nelerin saptandığını, nasıl tedavi edildiğini ve bundan sonra ne yapılacağını özetleyen tıbbi belge",
-				"how": "Hekim taburculukta tanıyı, yatış sürecini, tetkik ve ameliyat sonuçlarını, verilen tedaviyi ve önerileri yazar, belgeyi hastaya açıklayarak teslim eder; belgeyi hastayı izleyen hekim imzalar",
-				"when": "Hastane tedavisinin bitmesi, başka kuruma veya rehabilitasyona nakil, aile hekimi ya da uzman hekimle tedavinin sürdürülmesi, rapor ve sigorta işlemleri",
-				"prep": "Hazırlık gerekmez; taburculukta anlaşılmayan noktaları, kontrol tarihlerini ve ilaç listesini sorun, görüntü ve sonuçların kopyalarını isteyin",
-				"abnormal": "Epikrizi bir sonraki muayenede aile hekiminize ve uzmana gösterin ve sonuçlarla birlikte saklayın. Belgede yazan uyarı belirtileri — ateş, artan ağrı, kanama, nefes darlığı — ortaya çıkarsa planlanan kontrolü beklemeden hekime başvurun"
-			}
-		}
-	}
+  {
+    "slug": "behavioral-psychotherapy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Форма психотерапии, в которой работают с конкретными действиями, привычками и избеганием, а не только с переживаниями",
+        "how": "Регулярные встречи с психотерапевтом: разбор конкретных ситуаций, постепенная тренировка новых реакций, упражнения между сессиями; одна встреча обычно около часа",
+        "when": "Тревожные расстройства и фобии, панические приступы, навязчивые действия, нарушения сна, расстройства пищевого поведения, поведенческие трудности у детей и подростков, поддержка при зависимостях",
+        "prep": "Подготовка не требуется; полезно принести выписки и заключения прежних специалистов, список принимаемых препаратов и записать ситуации, которые хочется разобрать",
+        "abnormal": "Эффект обычно нарастает постепенно, от встречи к встрече, а в начале работы напряжение при столкновении с избегаемыми ситуациями может временно усиливаться. Число встреч и дальнейший план определяет специалист, а при заметном ухудшении состояния обращаться нужно не дожидаясь очередной сессии"
+      },
+      "en": {
+        "what": "A form of psychotherapy that works with concrete actions, habits and avoidance patterns, not only with feelings",
+        "how": "Regular sessions with a psychotherapist: going through concrete situations, practising new responses step by step, tasks between sessions; one session usually lasts about an hour",
+        "when": "Anxiety disorders and phobias, panic attacks, compulsive actions, sleep problems, eating disorders, behavioural difficulties in children and adolescents, support in addiction",
+        "prep": "No preparation needed; it helps to bring earlier reports and opinions, the list of medicines you take and notes on the situations you want to work on",
+        "abnormal": "The effect usually builds up gradually from session to session, and at the start discomfort may rise for a while when facing avoided situations. The number of sessions and the further plan are set by the specialist, and if the condition clearly worsens you should get in touch before the next session"
+      },
+      "sr": {
+        "what": "Oblik psihoterapije koji radi sa konkretnim postupcima, navikama i izbjegavanjem, a ne samo sa doživljajima",
+        "how": "Redovni susreti sa psihoterapeutom: razrada konkretnih situacija, postepeno uvježbavanje novih reakcija i zadaci između seansi; jedan susret obično traje oko sat vremena",
+        "when": "Anksiozni poremećaji i fobije, napadi panike, prisilne radnje, poremećaji sna, poremećaji ishrane, teškoće u ponašanju kod djece i adolescenata, podrška kod zavisnosti",
+        "prep": "Priprema nije potrebna; korisno je ponijeti ranije nalaze i mišljenja, spisak lijekova koje uzimate i zapisati situacije koje želite da obradite",
+        "abnormal": "Učinak se obično gradi postepeno, od susreta do susreta, a na početku je moguće privremeno pojačanje nelagode pri suočavanju sa situacijama koje se izbjegavaju. Broj susreta i dalji plan određuje stručnjak, a kod naglog pogoršanja stanja javiti se i prije zakazane seanse"
+      },
+      "de": {
+        "what": "Eine Form der Psychotherapie, die mit konkretem Verhalten, Gewohnheiten und Vermeidung arbeitet, nicht nur mit dem Erleben",
+        "how": "Regelmäßige Sitzungen bei einer Psychotherapeutin oder einem Psychotherapeuten: Besprechung konkreter Situationen, schrittweises Einüben neuer Reaktionen und Übungen zwischen den Sitzungen; eine Sitzung dauert meist etwa eine Stunde",
+        "when": "Angststörungen und Phobien, Panikattacken, Zwangshandlungen, Schlafstörungen, Essstörungen, Verhaltensauffälligkeiten bei Kindern und Jugendlichen, Begleitung bei Abhängigkeitserkrankungen",
+        "prep": "Keine Vorbereitung nötig; hilfreich sind frühere Befunde, eine Liste der eingenommenen Medikamente und Notizen zu Situationen, die besprochen werden sollen",
+        "abnormal": "Die Wirkung baut sich meist langsam über mehrere Sitzungen auf, zu Beginn kann die Anspannung beim Aufsuchen vermiedener Situationen vorübergehend zunehmen. Zahl der Sitzungen und weiteres Vorgehen legt die behandelnde Fachperson fest, bei deutlicher Verschlechterung sollte man sich vor dem nächsten Termin melden"
+      },
+      "tr": {
+        "what": "Yalnızca duygularla değil, somut davranışlar, alışkanlıklar ve kaçınma örüntüleriyle çalışan bir psikoterapi biçimi",
+        "how": "Psikoterapistle düzenli görüşmeler: somut durumların ele alınması, yeni tepkilerin adım adım çalışılması ve seanslar arasında ev ödevleri; bir görüşme genellikle bir saat kadar sürer",
+        "when": "Anksiyete bozuklukları ve fobiler, panik atak, takıntılı davranışlar, uyku sorunları, yeme bozuklukları, çocuk ve ergenlerde davranış sorunları, bağımlılıkta destek",
+        "prep": "Hazırlık gerekmez; önceki raporları, kullanılan ilaçların listesini getirmek ve konuşulmak istenen durumları not etmek yararlıdır",
+        "abnormal": "Etki genellikle seanslar boyunca yavaş yavaş birikir, başlangıçta kaçınılan durumlarla karşılaşınca gerginlik geçici olarak artabilir. Görüşme sayısını ve sonraki planı uzman belirler, durum belirgin biçimde kötüleşirse randevu beklenmeden başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Облик психотерапије који ради са конкретним поступцима, навикама и избјегавањем, а не само са доживљајима",
+        "how": "Редовни сусрети са психотерапеутом: разрада конкретних ситуација, постепено увјежбавање нових реакција и задаци између сеанси; један сусрет обично траје око сат времена",
+        "when": "Анксиозни поремећаји и фобије, напади панике, присилне радње, поремећаји сна, поремећаји исхране, тешкоће у понашању код дјеце и адолесцената, подршка код зависности",
+        "prep": "Припрема није потребна; корисно је понијети раније налазе и мишљења, списак лијекова које узимате и записати ситуације које желите да обрадите",
+        "abnormal": "Учинак се обично гради постепено, од сусрета до сусрета, а на почетку је могуће привремено појачање нелагоде при суочавању са ситуацијама које се избјегавају. Број сусрета и даљи план одређује стручњак, а код наглог погоршања стања јавити се и прије заказане сеансе"
+      }
+    }
+  },
+  {
+    "slug": "relaxation-technique",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обучение приёмам снижения мышечного и психического напряжения — дыхательным упражнениям, прогрессивной мышечной релаксации, аутогенной тренировке",
+        "how": "Специалист объясняет приём и ведёт упражнение голосом, пациент выполняет его сидя или лёжа, а затем повторяет самостоятельно дома; занятие обычно от двадцати минут до получаса",
+        "when": "Повышенная тревожность и внутреннее напряжение, трудности с засыпанием, головная боль напряжения, подготовка к стрессовым ситуациям и процедурам, как часть психотерапии и реабилитации",
+        "prep": "Специальной подготовки нет; прийти в удобной одежде, не заниматься сразу после плотной еды, при желании записать упражнение на телефон, чтобы повторять дома",
+        "abnormal": "Обычно после занятия ощущается расслабление и напряжение спадает, но у части людей на первых занятиях тревога ненадолго усиливается или всплывают неприятные воспоминания — об этом стоит сказать специалисту. Если тревога и бессонница не уменьшаются, нужен осмотр врача"
+      },
+      "en": {
+        "what": "Training in techniques that reduce muscular and mental tension — breathing exercises, progressive muscle relaxation, autogenic training",
+        "how": "The specialist explains and guides the exercise, the patient performs it sitting or lying down and then repeats it at home; a session usually lasts twenty to thirty minutes",
+        "when": "Increased anxiety and inner tension, trouble falling asleep, tension headaches, preparation for stressful situations and procedures, as part of psychotherapy and rehabilitation",
+        "prep": "No special preparation; come in comfortable clothes, do not practise right after a heavy meal, and record the exercise on your phone if you want to repeat it at home",
+        "abnormal": "A session usually brings a feeling of calm and less tension, but in some people anxiety briefly increases at first or unpleasant memories come up — tell the specialist about this. If anxiety and insomnia do not ease, a doctor should examine you"
+      },
+      "sr": {
+        "what": "Učenje postupaka za smanjenje mišićne i psihičke napetosti — vježbi disanja, progresivne mišićne relaksacije, autogenog treninga",
+        "how": "Stručnjak objašnjava i vodi vježbu, pacijent je izvodi sjedeći ili ležeći, a zatim je ponavlja sam kod kuće; susret obično traje dvadesetak do tridesetak minuta",
+        "when": "Pojačana anksioznost i unutrašnja napetost, teško uspavljivanje, tenzione glavobolje, priprema za stresne situacije i zahvate, kao dio psihoterapije i rehabilitacije",
+        "prep": "Posebna priprema nije potrebna; doći u udobnoj odjeći, ne vježbati odmah poslije obilnog obroka, a po želji snimiti vježbu telefonom radi ponavljanja kod kuće",
+        "abnormal": "Poslije vježbe se obično javlja osjećaj opuštenosti i pad napetosti, ali kod nekih osoba na prvim susretima nelagoda nakratko poraste ili se jave neprijatna sjećanja — to treba reći stručnjaku. Ako anksioznost i nesanica ne popuštaju, potreban je pregled ljekara"
+      },
+      "de": {
+        "what": "Anleitung zu Techniken, die muskuläre und seelische Anspannung senken — Atemübungen, progressive Muskelentspannung, autogenes Training",
+        "how": "Die Fachperson erklärt und leitet die Übung an, der Patient führt sie im Sitzen oder Liegen aus und wiederholt sie später selbst; eine Sitzung dauert meist zwanzig bis dreißig Minuten",
+        "when": "Erhöhte Anspannung und Angst, Einschlafstörungen, Spannungskopfschmerz, Vorbereitung auf belastende Situationen und Eingriffe, als Teil von Psychotherapie und Rehabilitation",
+        "prep": "Keine besondere Vorbereitung; in bequemer Kleidung kommen, nicht direkt nach einer üppigen Mahlzeit üben, die Übung bei Bedarf fürs Üben zu Hause mit dem Telefon aufnehmen",
+        "abnormal": "Nach der Übung stellt sich meist Entspannung ein, bei manchen Menschen nimmt die Unruhe anfangs kurz zu oder es tauchen unangenehme Erinnerungen auf — das sollte man der Fachperson sagen. Lassen Angst und Schlafstörungen nicht nach, ist eine ärztliche Untersuchung nötig"
+      },
+      "tr": {
+        "what": "Kas ve zihin gerginliğini azaltan yöntemlerin öğretilmesi — nefes egzersizleri, progresif kas gevşetme, otojenik eğitim",
+        "how": "Uzman egzersizi anlatıp yönlendirir, hasta oturarak veya uzanarak uygular, sonra evde kendi başına tekrarlar; seans genellikle yirmi ila otuz dakika sürer",
+        "when": "Artmış kaygı ve iç gerginlik, uykuya dalmada zorluk, gerilim tipi baş ağrısı, stresli durumlara ve girişimlere hazırlık, psikoterapi ve rehabilitasyonun parçası olarak",
+        "prep": "Özel hazırlık gerekmez; rahat kıyafetle gelin, ağır bir yemekten hemen sonra çalışmayın, isterseniz evde tekrarlamak için egzersizi telefonunuza kaydedin",
+        "abnormal": "Seanstan sonra genellikle gevşeme ve gerginlikte azalma olur, bazı kişilerde ilk seanslarda huzursuzluk kısa süre artabilir ya da hoş olmayan anılar belirebilir — bunu uzmana söylemek gerekir. Kaygı ve uykusuzluk gerilemiyorsa hekim değerlendirmesi gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Учење поступака за смањење мишићне и психичке напетости — вјежби дисања, прогресивне мишићне релаксације, аутогеног тренинга",
+        "how": "Стручњак објашњава и води вјежбу, пацијент је изводи сједећи или лежећи, а затим је понавља сам код куће; сусрет обично траје двадесетак до тридесетак минута",
+        "when": "Појачана анксиозност и унутрашња напетост, тешко успављивање, тензионе главобоље, припрема за стресне ситуације и захвате, као дио психотерапије и рехабилитације",
+        "prep": "Посебна припрема није потребна; доћи у удобној одјећи, не вјежбати одмах послије обилног оброка, а по жељи снимити вјежбу телефоном ради понављања код куће",
+        "abnormal": "Послије вјежбе се обично јавља осјећај опуштености и пад напетости, али код неких особа на првим сусретима нелагода накратко порасте или се јаве непријатна сјећања — то треба рећи стручњаку. Ако анксиозност и несаница не попуштају, потребан је преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "anterior-hematoma-puncture",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление скопившейся под кожей крови иглой или через небольшой прокол после ушиба либо операции",
+        "how": "Кожу обрабатывают антисептиком, под местным обезболиванием вводят иглу в полость скопления и отсасывают жидкую кровь, затем накладывают давящую повязку; процедура занимает несколько минут",
+        "when": "Напряжённая болезненная гематома после травмы или операции, скопление крови, которое не рассасывается само и давит на окружающие ткани, подозрение на нагноение скопления",
+        "prep": "Специальной подготовки нет; сказать врачу о препаратах, разжижающих кровь, и о нарушениях свёртываемости, перед визитом не наносить на кожу мази",
+        "abnormal": "После пункции боль и напряжение обычно уменьшаются, а синяк рассасывается постепенно и меняет цвет. Быстрое повторное нарастание припухлости, усиление боли, покраснение кожи, гнойное отделяемое или температура требуют повторного осмотра врача"
+      },
+      "en": {
+        "what": "Removal of blood that has collected under the skin, through a needle or a small incision, after an injury or an operation",
+        "how": "The skin is cleaned with antiseptic, under local anaesthesia a needle is introduced into the collection and the liquid blood is drawn off, then a pressure dressing is applied; it takes a few minutes",
+        "when": "A tense, painful haematoma after injury or surgery, a collection of blood that does not resolve on its own and presses on surrounding tissue, suspected infection of the collection",
+        "prep": "No special preparation; tell the doctor about blood-thinning medication and clotting disorders, and do not apply ointments to the skin before the visit",
+        "abnormal": "After the puncture pain and tension usually ease and the bruise fades gradually, changing colour. Swelling that rapidly returns, increasing pain, reddening skin, discharge of pus or fever call for another medical review"
+      },
+      "sr": {
+        "what": "Vađenje krvi nakupljene ispod kože iglom ili kroz mali ubod, poslije udarca ili operacije",
+        "how": "Koža se očisti antiseptikom, u lokalnoj anesteziji se igla uvodi u šupljinu nakupine i tečna krv se izvlači, a zatim se stavlja kompresivni zavoj; traje nekoliko minuta",
+        "when": "Napet i bolan hematom poslije povrede ili operacije, nakupina krvi koja se sama ne povlači i pritiska okolno tkivo, sumnja na gnojenje nakupine",
+        "prep": "Posebna priprema nije potrebna; reći ljekaru da li uzimate lijekove koji razrjeđuju krv i da li imate poremećaj zgrušavanja, i ne mazati kožu mastima prije dolaska",
+        "abnormal": "Poslije punkcije bol i napetost obično popuštaju, a modrica se povlači postepeno i mijenja boju. Brzo ponovno povećanje otoka, jači bol, crvenilo kože, gnojav sadržaj ili temperatura traže novi pregled ljekara"
+      },
+      "de": {
+        "what": "Entfernung von Blut, das sich nach einer Verletzung oder Operation unter der Haut angesammelt hat, über eine Nadel oder einen kleinen Schnitt",
+        "how": "Die Haut wird desinfiziert, unter örtlicher Betäubung wird eine Nadel in die Ansammlung eingeführt und das flüssige Blut abgesaugt, anschließend wird ein Druckverband angelegt; der Eingriff dauert wenige Minuten",
+        "when": "Prall gespanntes, schmerzhaftes Hämatom nach Verletzung oder Operation, Blutansammlung, die sich nicht von selbst zurückbildet und auf das Gewebe drückt, Verdacht auf eine Infektion der Ansammlung",
+        "prep": "Keine besondere Vorbereitung; blutverdünnende Medikamente und Gerinnungsstörungen vorher mitteilen und die Haut vor dem Termin nicht einsalben",
+        "abnormal": "Nach der Punktion lassen Schmerz und Spannung meist nach, der Bluterguss bildet sich langsam zurück und verfärbt sich. Rasch wiederkehrende Schwellung, stärkere Schmerzen, Rötung, Eiter oder Fieber erfordern eine erneute ärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Darbe veya ameliyat sonrası deri altında biriken kanın iğneyle ya da küçük bir kesiyle boşaltılması",
+        "how": "Cilt antiseptikle temizlenir, lokal anestezi altında birikintiye iğne sokulup sıvı kan çekilir, ardından baskılı pansuman uygulanır; işlem birkaç dakika sürer",
+        "when": "Yaralanma veya ameliyat sonrası gergin ve ağrılı hematom, kendiliğinden gerilemeyen ve çevre dokuya baskı yapan kan birikimi, birikintide enfeksiyon şüphesi",
+        "prep": "Özel hazırlık gerekmez; kan sulandırıcı ilaç kullanımını ve pıhtılaşma bozukluğunu hekime bildirin, gelmeden önce cilde merhem sürmeyin",
+        "abnormal": "Ponksiyondan sonra ağrı ve gerginlik genellikle azalır, morluk zamanla rengini değiştirerek geriler. Şişliğin hızla yeniden artması, ağrının şiddetlenmesi, ciltte kızarıklık, akıntı veya ateş yeniden hekim değerlendirmesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Вађење крви накупљене испод коже иглом или кроз мали убод, послије ударца или операције",
+        "how": "Кожа се очисти антисептиком, у локалној анестезији се игла уводи у шупљину накупине и течна крв се извлачи, а затим се ставља компресивни завој; траје неколико минута",
+        "when": "Напет и болан хематом послије повреде или операције, накупина крви која се сама не повлачи и притиска околно ткиво, сумња на гнојење накупине",
+        "prep": "Посебна припрема није потребна; рећи љекару да ли узимате лијекове који разрјеђују крв и да ли имате поремећај згрушавања, и не мазати кожу мастима прије доласка",
+        "abnormal": "Послије пункције бол и напетост обично попуштају, а модрица се повлачи постепено и мијења боју. Брзо поновно повећање отока, јачи бол, црвенило коже, гнојав садржај или температура траже нови преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "child-follow-up-hospital-round",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ежедневный осмотр ребёнка в отделении, когда врач оценивает динамику и корректирует назначения",
+        "how": "Врач обходит палаты, осматривает ребёнка, смотрит температурный лист и новые результаты, слушает лёгкие и сердце, разговаривает с родителями и меняет назначения; обычно по несколько минут у каждого ребёнка",
+        "when": "Каждый день пребывания ребёнка в стационаре, а дополнительно — при ухудшении состояния, лихорадке, отказе от еды или новых жалобах",
+        "prep": "Подготовка не нужна; родителям полезно запомнить, как ребёнок спал, ел и переносил лечение, и записать вопросы к врачу",
+        "abnormal": "Во время обхода врач решает, продолжать ли лечение в прежнем объёме, нужны ли новые обследования и когда возможна выписка. Если состояние меняется между обходами, ждать следующего не нужно — зовите дежурный персонал"
+      },
+      "en": {
+        "what": "A daily check of a child on the ward, when the doctor assesses progress and adjusts the orders",
+        "how": "The doctor goes round the rooms, examines the child, looks at the temperature chart and new test results, listens to the chest, talks with the parents and changes the prescriptions; usually a few minutes per child",
+        "when": "Every day of the child's stay in hospital, and additionally if the condition worsens, fever appears, the child refuses to eat or new complaints come up",
+        "prep": "No preparation needed; parents should note how the child slept, ate and tolerated the treatment, and write down questions for the doctor",
+        "abnormal": "During the round the doctor decides whether to continue the same treatment, whether further tests are needed and when discharge is possible. If the condition changes between rounds, call the staff rather than wait"
+      },
+      "sr": {
+        "what": "Svakodnevni pregled djeteta na odjeljenju, kada ljekar procjenjuje napredak i mijenja terapiju",
+        "how": "Ljekar obilazi sobe, pregleda dijete, gleda temperaturnu listu i nove nalaze, osluškuje pluća i srce, razgovara sa roditeljima i koriguje terapiju; obično po nekoliko minuta kod svakog djeteta",
+        "when": "Svaki dan boravka djeteta u bolnici, a po potrebi i dodatno kod pogoršanja, povišene temperature, odbijanja hrane ili novih tegoba",
+        "prep": "Priprema nije potrebna; roditeljima koristi da zapamte kako je dijete spavalo, jelo i podnosilo terapiju i da pripreme pitanja za ljekara",
+        "abnormal": "U toku vizite ljekar odlučuje da li se terapija nastavlja, da li su potrebna nova ispitivanja i kada je moguć otpust. Ako se stanje promijeni između vizita, ne treba čekati — pozovite dežurno osoblje"
+      },
+      "de": {
+        "what": "Tägliche Kontrolle des Kindes auf Station, bei der die Ärztin oder der Arzt den Verlauf beurteilt und die Anordnungen anpasst",
+        "how": "Die Visite geht durch die Zimmer, das Kind wird untersucht, Fieberkurve und neue Befunde werden durchgesehen, Lunge und Herz abgehört, mit den Eltern gesprochen und die Verordnungen geändert; meist wenige Minuten pro Kind",
+        "when": "An jedem Tag des Krankenhausaufenthalts sowie zusätzlich bei Verschlechterung, Fieber, Nahrungsverweigerung oder neuen Beschwerden",
+        "prep": "Keine Vorbereitung nötig; Eltern sollten sich merken, wie das Kind geschlafen und gegessen und die Behandlung vertragen hat, und Fragen notieren",
+        "abnormal": "Bei der Visite entscheidet die Ärztin oder der Arzt, ob die Behandlung so weitergeht, ob weitere Untersuchungen nötig sind und wann die Entlassung möglich ist. Ändert sich der Zustand zwischen den Visiten, sollte man das Personal rufen und nicht warten"
+      },
+      "tr": {
+        "what": "Çocuğun serviste her gün görülmesi: hekimin gidişatı değerlendirip tedaviyi güncellemesi",
+        "how": "Hekim odaları dolaşır, çocuğu muayene eder, ateş çizelgesine ve yeni sonuçlara bakar, akciğer ve kalbi dinler, aileyle konuşur ve tedaviyi düzenler; genellikle her çocuk için birkaç dakika",
+        "when": "Hastanede kalınan her gün, ayrıca durum kötüleştiğinde, ateş çıktığında, çocuk yemek yemeyi reddettiğinde veya yeni şikâyet olduğunda",
+        "prep": "Hazırlık gerekmez; ailenin çocuğun nasıl uyuduğunu, yediğini ve tedaviyi nasıl tolere ettiğini not etmesi ve hekime soracaklarını yazması yararlıdır",
+        "abnormal": "Vizit sırasında hekim tedavinin aynı şekilde sürüp sürmeyeceğine, yeni tetkik gerekip gerekmediğine ve taburculuğun ne zaman mümkün olduğuna karar verir. Vizitler arasında durum değişirse beklemeden görevliyi çağırın"
+      },
+      "sr_cyrl": {
+        "what": "Свакодневни преглед дјетета на одјељењу, када љекар процјењује напредак и мијења терапију",
+        "how": "Љекар обилази собе, прегледа дијете, гледа температурну листу и нове налазе, ослушкује плућа и срце, разговара са родитељима и коригује терапију; обично по неколико минута код сваког дјетета",
+        "when": "Сваки дан боравка дјетета у болници, а по потреби и додатно код погоршања, повишене температуре, одбијања хране или нових тегоба",
+        "prep": "Припрема није потребна; родитељима користи да запамте како је дијете спавало, јело и подносило терапију и да припреме питања за љекара",
+        "abnormal": "У току визите љекар одлучује да ли се терапија наставља, да ли су потребна нова испитивања и када је могућ отпуст. Ако се стање промијени између визита, не треба чекати — позовите дежурно особље"
+      }
+    }
+  },
+  {
+    "slug": "child-initial-hospital-workup",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первый осмотр ребёнка после поступления в стационар со сбором анамнеза у родителей и составлением плана лечения",
+        "how": "Педиатр расспрашивает родителей о течении болезни, прививках, прежних заболеваниях и аллергии, осматривает ребёнка целиком, измеряет температуру, вес, дыхание и пульс, назначает анализы и наблюдение; обычно занимает от получаса",
+        "when": "Поступление в отделение по направлению или через приёмный покой, перевод из другой больницы, плановая госпитализация для обследования или операции",
+        "prep": "Подготовка не требуется; взять направление, медицинскую карту и прививочный сертификат ребёнка, результаты прежних обследований, список препаратов и привычные вещи ребёнка",
+        "abnormal": "По итогам осмотра врач формулирует предварительное заключение, назначает обследования и лечение и объясняет родителям план на ближайшие дни. Обо всех изменениях состояния ребёнка нужно сразу сообщать дежурному врачу или медсестре"
+      },
+      "en": {
+        "what": "The first examination of a child after admission to hospital, with a history taken from the parents and a treatment plan drawn up",
+        "how": "The paediatrician asks the parents about the course of the illness, vaccinations, earlier conditions and allergies, examines the child from head to toe, checks temperature, weight, breathing and pulse, and orders tests and monitoring; it usually takes half an hour or more",
+        "when": "Admission to a ward by referral or through the emergency department, transfer from another hospital, planned admission for investigation or surgery",
+        "prep": "No preparation needed; bring the referral, the child's health record and vaccination booklet, earlier test results, a list of medicines and the child's familiar things",
+        "abnormal": "After the examination the doctor gives a preliminary assessment, orders tests and treatment and explains the plan for the coming days to the parents. Any change in the child's condition should be reported to the ward doctor or nurse straight away"
+      },
+      "sr": {
+        "what": "Prvi pregled djeteta po prijemu u bolnicu, sa uzimanjem podataka od roditelja i pravljenjem plana liječenja",
+        "how": "Pedijatar pita roditelje o toku bolesti, vakcinama, ranijim oboljenjima i alergijama, pregleda dijete od glave do pete, mjeri temperaturu, težinu, disanje i puls i određuje analize i praćenje; obično traje pola sata i duže",
+        "when": "Prijem na odjeljenje po uputu ili preko hitne službe, premještaj iz druge bolnice, planirani prijem radi ispitivanja ili operacije",
+        "prep": "Priprema nije potrebna; ponijeti uput, zdravstveni karton i vakcinalnu knjižicu djeteta, ranije nalaze, spisak lijekova i stvari na koje je dijete naviklo",
+        "abnormal": "Poslije pregleda ljekar daje prvo mišljenje, određuje ispitivanja i terapiju i objašnjava roditeljima plan za naredne dane. Svaku promjenu stanja djeteta treba odmah javiti dežurnom ljekaru ili sestri"
+      },
+      "de": {
+        "what": "Die erste Untersuchung eines Kindes nach der Aufnahme ins Krankenhaus, mit Anamnese bei den Eltern und Festlegung des Behandlungsplans",
+        "how": "Die Kinderärztin oder der Kinderarzt fragt die Eltern nach Krankheitsverlauf, Impfungen, früheren Erkrankungen und Allergien, untersucht das Kind von Kopf bis Fuß, misst Temperatur, Gewicht, Atmung und Puls und ordnet Untersuchungen und Überwachung an; das dauert meist eine halbe Stunde oder länger",
+        "when": "Aufnahme auf Station mit Überweisung oder über die Notaufnahme, Verlegung aus einem anderen Krankenhaus, geplante Aufnahme zur Abklärung oder Operation",
+        "prep": "Keine Vorbereitung nötig; Überweisung, Vorsorge- und Impfheft, frühere Befunde, Medikamentenliste und vertraute Sachen des Kindes mitbringen",
+        "abnormal": "Nach der Untersuchung formuliert die Ärztin oder der Arzt eine erste Einschätzung, ordnet Untersuchungen und Behandlung an und erklärt den Eltern den Plan für die nächsten Tage. Jede Veränderung des Zustands sollte sofort der Station gemeldet werden"
+      },
+      "tr": {
+        "what": "Çocuğun hastaneye yatışından sonraki ilk muayenesi: aileden öykü alınması ve tedavi planının oluşturulması",
+        "how": "Çocuk hekimi aileye hastalığın seyrini, aşıları, geçmiş hastalıkları ve alerjileri sorar, çocuğu baştan ayağa muayene eder, ateş, kilo, solunum ve nabzı ölçer, tetkik ve izlem ister; genellikle yarım saat veya daha uzun sürer",
+        "when": "Sevkle ya da acil servis üzerinden servise yatış, başka hastaneden nakil, tetkik veya ameliyat için planlı yatış",
+        "prep": "Hazırlık gerekmez; sevk belgesini, çocuğun sağlık ve aşı karnesini, önceki tetkik sonuçlarını, ilaç listesini ve çocuğun alışık olduğu eşyaları getirin",
+        "abnormal": "Muayene sonrasında hekim ilk değerlendirmesini yapar, tetkik ve tedaviyi başlatır ve aileye önümüzdeki günlerin planını anlatır. Çocuğun durumundaki her değişiklik hemen nöbetçi hekime veya hemşireye bildirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Први преглед дјетета по пријему у болницу, са узимањем података од родитеља и прављењем плана лијечења",
+        "how": "Педијатар пита родитеље о току болести, вакцинама, ранијим обољењима и алергијама, прегледа дијете од главе до пете, мјери температуру, тежину, дисање и пулс и одређује анализе и праћење; обично траје пола сата и дуже",
+        "when": "Пријем на одјељење по упуту или преко хитне службе, премјештај из друге болнице, планирани пријем ради испитивања или операције",
+        "prep": "Припрема није потребна; понијети упут, здравствени картон и вакциналну књижицу дјетета, раније налазе, списак лијекова и ствари на које је дијете навикло",
+        "abnormal": "Послије прегледа љекар даје прво мишљење, одређује испитивања и терапију и објашњава родитељима план за наредне дане. Сваку промјену стања дјетета треба одмах јавити дежурном љекару или сестри"
+      }
+    }
+  },
+  {
+    "slug": "chronic-hemodialysis-session",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Регулярное аппаратное очищение крови, когда почки стойко утратили большую часть своей функции",
+        "how": "Кровь из сосудистого доступа — фистулы или катетера — по трубкам идёт через диализатор, где удаляются продукты обмена и избыток жидкости, и возвращается в организм, пациент всё это время лежит или сидит под наблюдением; сеанс длится несколько часов и повторяется по графику",
+        "when": "Конечная стадия хронической болезни почек, стойкое накопление продуктов обмена и жидкости, подготовка к пересадке почки и ожидание её, по назначению нефролога",
+        "prep": "Приходить по графику и взвешиваться до и после сеанса; соблюдать назначенный врачом режим питья и питания, беречь руку с фистулой, взять список препаратов, повязку над катетером держать сухой",
+        "abnormal": "Во время и после сеанса возможны слабость, снижение давления, судороги в ногах или зуд — о них сразу говорят персоналу. Нарастание отёков и одышки между сеансами, кровотечение, покраснение или исчезновение шума над фистулой требуют срочного обращения к врачу"
+      },
+      "en": {
+        "what": "Regular machine cleaning of the blood when the kidneys have permanently lost most of their function",
+        "how": "Blood is led from a vascular access, a fistula or a catheter, through tubing into a dialyser, where waste products and excess fluid are removed, and returned to the body while the patient lies or sits under supervision; a session runs for several hours and is repeated on a schedule",
+        "when": "End-stage chronic kidney disease, persistent build-up of waste products and fluid, preparation for and waiting time before a kidney transplant, as prescribed by a nephrologist",
+        "prep": "Come on schedule and be weighed before and after; follow the fluid and diet regimen set by the doctor, protect the arm with the fistula, bring the list of medicines and keep a catheter dressing dry",
+        "abnormal": "Weakness, a drop in blood pressure, leg cramps or itching may occur during and after a session and should be reported to the staff at once. Growing swelling and breathlessness between sessions, bleeding, redness, or a fistula that no longer buzzes require urgent medical attention"
+      },
+      "sr": {
+        "what": "Redovno mašinsko prečišćavanje krvi kada bubrezi trajno izgube najveći dio funkcije",
+        "how": "Krv se iz krvnog pristupa, fistule ili katetera, cijevima vodi kroz dijalizator, gdje se uklanjaju razgradni produkti i višak tečnosti, pa se vraća u tijelo dok pacijent leži ili sjedi uz nadzor; seansa traje nekoliko sati i ponavlja se po rasporedu",
+        "when": "Završni stadijum hronične bubrežne bolesti, trajno nakupljanje razgradnih produkata i tečnosti, priprema i čekanje na transplantaciju bubrega, po odluci nefrologa",
+        "prep": "Dolaziti po rasporedu i mjeriti težinu prije i poslije seanse; pridržavati se režima unosa tečnosti i ishrane koji je odredio ljekar, čuvati ruku sa fistulom, ponijeti spisak lijekova, a zavoj preko katetera držati suvim",
+        "abnormal": "Tokom i poslije seanse mogu se javiti slabost, pad pritiska, grčevi u nogama ili svrab — to odmah reći osoblju. Porast otoka i nedostatak vazduha između seansi, krvarenje, crvenilo ili izostanak šuma nad fistulom traže hitan pregled ljekara"
+      },
+      "de": {
+        "what": "Regelmäßige maschinelle Blutreinigung, wenn die Nieren ihre Funktion dauerhaft weitgehend verloren haben",
+        "how": "Das Blut wird über einen Gefäßzugang, einen Shunt oder einen Katheter, durch Schläuche in einen Dialysator geleitet, dort von Abbauprodukten und überschüssiger Flüssigkeit befreit und zurückgeführt, während der Patient liegt oder sitzt und überwacht wird; eine Sitzung dauert mehrere Stunden und wird nach Plan wiederholt",
+        "when": "Chronische Nierenerkrankung im Endstadium, anhaltende Ansammlung von Abbauprodukten und Flüssigkeit, Vorbereitung auf und Wartezeit vor einer Nierentransplantation, nach Festlegung der Nephrologie",
+        "prep": "Pünktlich nach Plan kommen, vor und nach der Sitzung wiegen; die ärztlich festgelegte Trink- und Ernährungsvorgabe einhalten, den Arm mit dem Shunt schonen, die Medikamentenliste mitbringen und den Katheterverband trocken halten",
+        "abnormal": "Während und nach der Sitzung können Schwäche, Blutdruckabfall, Wadenkrämpfe oder Juckreiz auftreten — das dem Personal sofort sagen. Zunehmende Ödeme und Luftnot zwischen den Sitzungen, Blutung, Rötung oder ein nicht mehr hörbares Shuntgeräusch erfordern sofort ärztliche Hilfe"
+      },
+      "tr": {
+        "what": "Böbrek işlevi kalıcı olarak büyük ölçüde kaybedildiğinde kanın düzenli olarak makineyle temizlenmesi",
+        "how": "Kan, damar yolundan, fistül ya da kateterden, hortumlarla diyalizöre alınır, atık ürünler ve fazla sıvı uzaklaştırılır ve vücuda geri verilir; hasta bu sırada gözetim altında yatar veya oturur, seans birkaç saat sürer ve programa göre tekrarlanır",
+        "when": "Son evre kronik böbrek hastalığı, atık ürünlerin ve sıvının sürekli birikmesi, böbrek nakline hazırlık ve bekleme dönemi, nefrolog kararıyla",
+        "prep": "Programa uygun gelin, seans öncesi ve sonrası tartılın; hekimin belirlediği sıvı ve beslenme düzenine uyun, fistüllü kolu koruyun, ilaç listenizi getirin, kateter pansumanını kuru tutun",
+        "abnormal": "Seans sırasında ve sonrasında halsizlik, tansiyon düşmesi, bacak krampları veya kaşıntı olabilir, bunları hemen ekibe bildirin. Seanslar arasında ödem ve nefes darlığının artması, kanama, kızarıklık ya da fistül üzerinde titreşimin kaybolması acil hekim değerlendirmesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Редовно машинско пречишћавање крви када бубрези трајно изгубе највећи дио функције",
+        "how": "Крв се из крвног приступа, фистуле или катетера, цијевима води кроз дијализатор, гдје се уклањају разградни продукти и вишак течности, па се враћа у тијело док пацијент лежи или сједи уз надзор; сеанса траје неколико сати и понавља се по распореду",
+        "when": "Завршни стадијум хроничне бубрежне болести, трајно накупљање разградних продуката и течности, припрема и чекање на трансплантацију бубрега, по одлуци нефролога",
+        "prep": "Долазити по распореду и мјерити тежину прије и послије сеансе; придржавати се режима уноса течности и исхране који је одредио љекар, чувати руку са фистулом, понијети списак лијекова, а завој преко катетера држати сувим",
+        "abnormal": "Током и послије сеансе могу се јавити слабост, пад притиска, грчеви у ногама или свраб — то одмах рећи особљу. Пораст отока и недостатак ваздуха између сеанси, крварење, црвенило или изостанак шума над фистулом траже хитан преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "chronic-patient-nursing-care",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Регулярный сестринский уход за человеком с длительным заболеванием и ограниченной подвижностью",
+        "how": "Медсестра помогает с гигиеной и сменой белья, обрабатывает кожу и места давления, меняет положение в постели, следит за едой, питьём и стулом, при необходимости ухаживает за катетером, стомой или зондом и контролирует приём назначенного лечения",
+        "when": "Лежачие и малоподвижные пациенты, восстановление после инсульта и тяжёлых травм, деменция, тяжёлая сердечная и лёгочная недостаточность, поздние стадии онкологических заболеваний, обучение родственников уходу",
+        "prep": "Подготовка не нужна; приготовить средства гигиены и перевязочный материал, список препаратов и прежние выписки, освободить подход к кровати",
+        "abnormal": "Цель ухода — спокойная кожа без пролежней, ровное дыхание и достаточное питьё и питание. Покраснение или ранка в местах давления, температура, спутанность, отказ от еды и питья, боль или изменение мочи требуют осмотра врача"
+      },
+      "en": {
+        "what": "Regular nursing support for a person with a long-term illness and limited mobility",
+        "how": "The nurse helps with hygiene and changing the linen, cares for the skin and pressure areas, repositions the patient, keeps track of food, fluids and bowel movements, looks after a catheter, stoma or feeding tube when present, and checks that prescribed treatment is taken",
+        "when": "Bedbound and poorly mobile patients, recovery after stroke and severe injury, dementia, advanced heart and lung failure, late-stage cancer, teaching relatives how to provide care",
+        "prep": "No preparation needed; have hygiene supplies and dressings, the list of medicines and earlier discharge letters ready, and clear the access to the bed",
+        "abnormal": "The aim of care is intact skin without pressure sores, calm breathing and enough food and fluid. Redness or a break in the skin over pressure points, fever, confusion, refusal of food and drink, pain or a change in the urine should be shown to a doctor"
+      },
+      "sr": {
+        "what": "Redovna sestrinska njega osobe sa dugotrajnom bolešću i ograničenom pokretljivošću",
+        "how": "Sestra pomaže pri higijeni i promjeni posteljine, njeguje kožu i mjesta pritiska, mijenja položaj u krevetu, prati ishranu, unos tečnosti i stolicu, po potrebi brine o kateteru, stomi ili sondi i kontroliše uzimanje propisane terapije",
+        "when": "Nepokretni i slabo pokretni pacijenti, oporavak poslije moždanog udara i teških povreda, demencija, teška srčana i plućna slabost, uznapredovale maligne bolesti, obuka porodice za njegu",
+        "prep": "Priprema nije potrebna; pripremiti sredstva za higijenu i zavojni materijal, spisak lijekova i ranije otpusne liste i osloboditi prilaz krevetu",
+        "abnormal": "Cilj njege je mirna koža bez dekubitusa, mirno disanje i dovoljan unos hrane i tečnosti. Crvenilo ili ranica na mjestima pritiska, temperatura, zbunjenost, odbijanje hrane i pića, bol ili promjena mokraće traže pregled ljekara"
+      },
+      "de": {
+        "what": "Regelmäßige pflegerische Betreuung eines Menschen mit lang andauernder Erkrankung und eingeschränkter Beweglichkeit",
+        "how": "Die Pflegekraft hilft bei Körperpflege und Wäschewechsel, versorgt Haut und Druckstellen, lagert um, achtet auf Essen, Trinken und Stuhlgang, versorgt bei Bedarf Katheter, Stoma oder Sonde und überwacht die Einnahme der verordneten Behandlung",
+        "when": "Bettlägerige und kaum mobile Patienten, Erholung nach Schlaganfall und schweren Verletzungen, Demenz, schwere Herz- und Lungenschwäche, fortgeschrittene Krebserkrankungen, Anleitung von Angehörigen",
+        "prep": "Keine Vorbereitung nötig; Pflegemittel und Verbandmaterial, Medikamentenliste und frühere Entlassbriefe bereitlegen und den Zugang zum Bett frei machen",
+        "abnormal": "Ziel der Pflege sind intakte Haut ohne Druckgeschwüre, ruhige Atmung und ausreichende Ernährung. Rötung oder offene Stellen an Druckpunkten, Fieber, Verwirrtheit, Verweigerung von Essen und Trinken, Schmerzen oder veränderter Urin gehören ärztlich beurteilt"
+      },
+      "tr": {
+        "what": "Uzun süreli hastalığı ve kısıtlı hareketliliği olan kişiye düzenli hemşirelik bakımı",
+        "how": "Hemşire hijyen ve çarşaf değişiminde yardım eder, cildi ve basınç bölgelerini bakımlar, yatak içinde pozisyon değiştirir, beslenmeyi, sıvı alımını ve bağırsak çalışmasını izler, gerekirse sonda, stoma veya beslenme tüpüyle ilgilenir ve ilaçların alınmasını denetler",
+        "when": "Yatağa bağımlı ve az hareketli hastalar, inme ve ağır yaralanma sonrası iyileşme, demans, ağır kalp ve akciğer yetmezliği, ileri evre kanser, aile bireylerine bakım eğitimi",
+        "prep": "Hazırlık gerekmez; hijyen malzemelerini, pansuman gereçlerini, ilaç listesini ve eski epikrizleri hazırlayın ve yatağın çevresini boşaltın",
+        "abnormal": "Bakımın amacı bası yarası olmayan sağlam cilt, rahat solunum ve yeterli beslenmedir. Basınç bölgelerinde kızarıklık veya açılma, ateş, bilinç bulanıklığı, yemek ve içmeyi reddetme, ağrı ya da idrarda değişiklik hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Редовна сестринска њега особе са дуготрајном болешћу и ограниченом покретљивошћу",
+        "how": "Сестра помаже при хигијени и промјени постељине, његује кожу и мјеста притиска, мијења положај у кревету, прати исхрану, унос течности и столицу, по потреби брине о катетеру, стоми или сонди и контролише узимање прописане терапије",
+        "when": "Непокретни и слабо покретни пацијенти, опоравак послије можданог удара и тешких повреда, деменција, тешка срчана и плућна слабост, узнапредовале малигне болести, обука породице за његу",
+        "prep": "Припрема није потребна; припремити средства за хигијену и завојни материјал, списак лијекова и раније отпусне листе и ослободити прилаз кревету",
+        "abnormal": "Циљ његе је мирна кожа без декубитуса, мирно дисање и довољан унос хране и течности. Црвенило или раница на мјестима притиска, температура, збуњеност, одбијање хране и пића, бол или промјена мокраће траже преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "consilium-medical-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Совместный осмотр и обсуждение случая несколькими врачами разных специальностей",
+        "how": "Врачи вместе изучают документацию, снимки и результаты анализов, осматривают пациента и согласовывают общее заключение и план, который записывают в медицинскую документацию",
+        "when": "Неясный диагноз, несколько заболеваний одновременно, выбор между операцией и консервативным лечением, планирование сложного вмешательства, онкологическое лечение, документы, требующие коллегиального решения",
+        "prep": "Подготовка не требуется; принести всю имеющуюся документацию — снимки и диски, выписки, результаты анализов и список препаратов",
+        "abnormal": "Консилиум выдаёт согласованное мнение: дополнительные обследования, конкретный метод лечения или дальнейшее наблюдение. Срок следующего визита и ведущего врача определяет консилиум"
+      },
+      "en": {
+        "what": "A joint examination and case discussion by several doctors from different specialties",
+        "how": "The doctors review the records, images and test results together, examine the patient and agree on a common conclusion and plan, which is written into the medical documentation",
+        "when": "An unclear diagnosis, several conditions at once, a choice between surgery and conservative treatment, planning a complex procedure, cancer treatment, documents that require a collective decision",
+        "prep": "No preparation needed; bring all available documentation — images and discs, discharge letters, test results and the list of medicines",
+        "abnormal": "The panel issues an agreed opinion: further tests, a specific treatment or continued observation. The next appointment and the doctor in charge are set by the panel"
+      },
+      "sr": {
+        "what": "Zajednički pregled i razmatranje slučaja od strane više ljekara različitih specijalnosti",
+        "how": "Ljekari zajedno pregledaju dokumentaciju, snimke i nalaze, pregledaju pacijenta i usaglašavaju zajedničko mišljenje i plan, koji se upisuje u medicinsku dokumentaciju",
+        "when": "Nejasna dijagnoza, više bolesti istovremeno, izbor između operacije i konzervativnog liječenja, planiranje složenog zahvata, onkološko liječenje, dokumentacija koja traži zajedničku odluku",
+        "prep": "Priprema nije potrebna; ponijeti svu dostupnu dokumentaciju — snimke i diskove, otpusne liste, nalaze i spisak lijekova",
+        "abnormal": "Konzilijum daje usaglašeno mišljenje: dodatna ispitivanja, određeni način liječenja ili dalje praćenje. Rok sljedeće kontrole i ljekara koji vodi pacijenta određuje konzilijum"
+      },
+      "de": {
+        "what": "Gemeinsame Untersuchung und Fallbesprechung durch mehrere Ärztinnen und Ärzte verschiedener Fachrichtungen",
+        "how": "Die Beteiligten sehen Unterlagen, Bilder und Befunde zusammen durch, untersuchen den Patienten und einigen sich auf eine gemeinsame Beurteilung und einen Plan, der in die Dokumentation eingetragen wird",
+        "when": "Unklare Diagnose, mehrere Erkrankungen gleichzeitig, Entscheidung zwischen Operation und konservativer Behandlung, Planung eines komplexen Eingriffs, Krebsbehandlung, Unterlagen, die eine gemeinsame Entscheidung verlangen",
+        "prep": "Keine Vorbereitung nötig; alle vorhandenen Unterlagen mitbringen — Bilder und CDs, Entlassbriefe, Befunde und die Medikamentenliste",
+        "abnormal": "Das Gremium gibt eine abgestimmte Empfehlung: weitere Untersuchungen, ein bestimmtes Behandlungsverfahren oder weitere Beobachtung. Den nächsten Termin und die zuständige Ärztin oder den zuständigen Arzt legt das Gremium fest"
+      },
+      "tr": {
+        "what": "Farklı uzmanlık alanlarından birkaç hekimin hastayı birlikte değerlendirip olguyu tartışması",
+        "how": "Hekimler dosyayı, görüntüleri ve tetkik sonuçlarını birlikte inceler, hastayı muayene eder ve ortak bir görüş ile plan üzerinde uzlaşır, karar dosyaya yazılır",
+        "when": "Belirsiz tanı, aynı anda birden çok hastalık, ameliyat ile ilaç tedavisi arasında seçim, karmaşık girişim planlaması, onkolojik tedavi, ortak karar gerektiren belgeler",
+        "prep": "Hazırlık gerekmez; eldeki tüm belgeleri getirin — görüntüler ve diskler, epikrizler, tetkik sonuçları ve ilaç listesi",
+        "abnormal": "Konsey ortak görüşünü bildirir: ek tetkikler, belirli bir tedavi yöntemi veya izlem. Bir sonraki kontrolün zamanını ve hastayı izleyecek hekimi konsey belirler"
+      },
+      "sr_cyrl": {
+        "what": "Заједнички преглед и разматрање случаја од стране више љекара различитих специјалности",
+        "how": "Љекари заједно прегледају документацију, снимке и налазе, прегледају пацијента и усаглашавају заједничко мишљење и план, који се уписује у медицинску документацију",
+        "when": "Нејасна дијагноза, више болести истовремено, избор између операције и конзервативног лијечења, планирање сложеног захвата, онколошко лијечење, документација која тражи заједничку одлуку",
+        "prep": "Припрема није потребна; понијети сву доступну документацију — снимке и дискове, отпусне листе, налазе и списак лијекова",
+        "abnormal": "Конзилијум даје усаглашено мишљење: додатна испитивања, одређени начин лијечења или даље праћење. Рок сљедеће контроле и љекара који води пацијента одређује конзилијум"
+      }
+    }
+  },
+  {
+    "slug": "continuous-renal-replacement-therapy-crrt",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Медленное непрерывное очищение крови в отделении интенсивной терапии, которое идёт круглосуточно вместо коротких сеансов",
+        "how": "Через центральный венозный катетер аппарат непрерывно прогоняет кровь через фильтр, удаляет воду и продукты обмена, возмещает объём растворами и предупреждает свёртывание в контуре; терапия идёт сутки и дольше под постоянным наблюдением",
+        "when": "Острое повреждение почек у нестабильного пациента, перегрузка жидкостью, тяжёлые нарушения электролитов и кислотно-щелочного равновесия, сепсис и другие критические состояния, по решению команды интенсивной терапии",
+        "prep": "Отдельной подготовки со стороны пациента нет — терапию начинают в палате интенсивной терапии; близким стоит передать врачам список постоянных препаратов и сведения об аллергии",
+        "abnormal": "Команда постоянно следит за давлением, выделением мочи, электролитами и работой контура и по ходу меняет настройки. Сколько длится терапия, переходить ли на обычный гемодиализ и когда её прекратить при восстановлении почек, решают врачи"
+      },
+      "en": {
+        "what": "Slow, continuous blood purification in intensive care that runs around the clock instead of in short sessions",
+        "how": "Through a central venous catheter the machine continuously passes blood through a filter, removing water and waste products, replacing volume with solutions and preventing clotting in the circuit; the treatment runs for a day or longer under constant monitoring",
+        "when": "Acute kidney injury in an unstable patient, fluid overload, severe electrolyte and acid-base disturbances, sepsis and other critical conditions, as decided by the intensive care team",
+        "prep": "No separate preparation by the patient — the therapy is started in the intensive care unit; relatives should give the team the list of regular medicines and information about allergies",
+        "abnormal": "The team constantly watches blood pressure, urine output, electrolytes and the circuit and adjusts the settings as treatment goes on. How long it continues, whether it is switched to ordinary haemodialysis and when it can be stopped as the kidneys recover is decided by the doctors"
+      },
+      "sr": {
+        "what": "Sporo i neprekidno prečišćavanje krvi u jedinici intenzivne njege, koje traje danonoćno umjesto u kratkim seansama",
+        "how": "Preko centralnog venskog katetera aparat neprekidno propušta krv kroz filter, uklanja vodu i razgradne produkte, nadoknađuje tečnost rastvorima i sprječava zgrušavanje u sistemu; terapija traje dan i duže uz stalni nadzor",
+        "when": "Akutno oštećenje bubrega kod nestabilnog pacijenta, preopterećenje tečnošću, teški poremećaji elektrolita i acidobaznog statusa, sepsa i druga kritična stanja, po odluci tima intenzivne njege",
+        "prep": "Posebna priprema od strane pacijenta nije potrebna — terapija se započinje u jedinici intenzivne njege; porodica treba da timu preda spisak stalnih lijekova i podatke o alergijama",
+        "abnormal": "Tim stalno prati pritisak, izlučivanje mokraće, elektrolite i rad sistema i usput mijenja podešavanja. Koliko terapija traje, da li se prelazi na uobičajenu hemodijalizu i kada se prekida po oporavku bubrega, odlučuju ljekari"
+      },
+      "de": {
+        "what": "Langsame, kontinuierliche Blutreinigung auf der Intensivstation, die rund um die Uhr läuft statt in kurzen Sitzungen",
+        "how": "Über einen zentralen Venenkatheter führt das Gerät das Blut fortlaufend durch einen Filter, entzieht Wasser und Abbauprodukte, ersetzt Flüssigkeit durch Lösungen und verhindert die Gerinnung im System; die Behandlung läuft einen Tag und länger unter ständiger Überwachung",
+        "when": "Akutes Nierenversagen beim kreislaufinstabilen Patienten, Flüssigkeitsüberladung, schwere Entgleisungen von Elektrolyten und Säure-Basen-Haushalt, Sepsis und andere kritische Zustände, nach Entscheidung des Intensivteams",
+        "prep": "Eine eigene Vorbereitung durch den Patienten entfällt — die Therapie wird auf der Intensivstation begonnen; Angehörige sollten die Liste der Dauermedikamente und Angaben zu Allergien übergeben",
+        "abnormal": "Das Team überwacht laufend Blutdruck, Urinausscheidung, Elektrolyte und das System und passt die Einstellungen an. Wie lange behandelt wird, ob auf eine übliche Hämodialyse gewechselt wird und wann bei Erholung der Nieren beendet werden kann, entscheiden die Ärztinnen und Ärzte"
+      },
+      "tr": {
+        "what": "Yoğun bakımda kısa seanslar yerine gün boyu süren yavaş ve kesintisiz kan temizleme",
+        "how": "Santral venöz kateter üzerinden cihaz kanı sürekli bir filtreden geçirir, su ve atık ürünleri uzaklaştırır, kaybedilen hacmi solüsyonlarla yerine koyar ve devrede pıhtılaşmayı önler; tedavi sürekli izlem altında bir gün ve daha uzun sürer",
+        "when": "Hemodinamisi bozuk hastada akut böbrek hasarı, sıvı yüklenmesi, ağır elektrolit ve asit-baz bozuklukları, sepsis ve diğer kritik durumlar, yoğun bakım ekibinin kararıyla",
+        "prep": "Hastanın kendi yapacağı bir hazırlık yoktur — tedavi yoğun bakımda başlatılır; yakınlarının sürekli kullanılan ilaç listesini ve alerji bilgisini ekibe iletmesi gerekir",
+        "abnormal": "Ekip tansiyonu, idrar çıkışını, elektrolitleri ve devrenin çalışmasını sürekli izler ve ayarları tedavi sırasında değiştirir. Tedavinin ne kadar süreceğine, olağan hemodiyalize geçilip geçilmeyeceğine ve böbrekler düzeldiğinde ne zaman sonlandırılacağına hekimler karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Споро и непрекидно пречишћавање крви у јединици интензивне његе, које траје даноноћно умјесто у кратким сеансама",
+        "how": "Преко централног венског катетера апарат непрекидно пропушта крв кроз филтер, уклања воду и разградне продукте, надокнађује течност растворима и спрјечава згрушавање у систему; терапија траје дан и дуже уз стални надзор",
+        "when": "Акутно оштећење бубрега код нестабилног пацијента, преоптерећење течношћу, тешки поремећаји електролита и ацидобазног статуса, сепса и друга критична стања, по одлуци тима интензивне његе",
+        "prep": "Посебна припрема од стране пацијента није потребна — терапија се започиње у јединици интензивне његе; породица треба да тиму преда списак сталних лијекова и податке о алергијама",
+        "abnormal": "Тим стално прати притисак, излучивање мокраће, електролите и рад система и успут мијења подешавања. Колико терапија траје, да ли се прелази на уобичајену хемодијализу и када се прекида по опоравку бубрега, одлучују љекари"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-hospital-round",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный осмотр лежащего в стационаре пациента лечащим врачом во время обхода с оценкой динамики и коррекцией назначений",
+        "how": "Врач осматривает пациента у постели, спрашивает о жалобах за прошедшие сутки, смотрит показатели наблюдения и свежие результаты, оценивает рану или больное место и меняет лист назначений; обычно несколько минут",
+        "when": "Каждый день пребывания в стационаре, после операций и процедур, при изменении состояния, перед выпиской или переводом",
+        "prep": "Подготовка не нужна; к обходу полезно собрать вопросы, вспомнить, как прошла ночь и как переносится лечение, и держать под рукой прежнюю документацию",
+        "abnormal": "По итогам обхода врач решает, продолжать ли прежнее лечение, назначить дополнительные обследования или готовить выписку. Новая или усилившаяся боль, одышка и температура между обходами — повод позвать персонал сразу"
+      },
+      "en": {
+        "what": "A repeat check of an inpatient by the treating doctor during the ward round, with assessment of progress and adjustment of orders",
+        "how": "The doctor examines the patient at the bedside, asks about the past day, reviews the monitoring values and the newest results, inspects the wound or the painful area and updates the prescription chart; usually a few minutes",
+        "when": "Every day of the hospital stay, after operations and procedures, when the condition changes, before discharge or transfer",
+        "prep": "No preparation needed; it helps to collect questions, recall how the night and the medication went and have earlier records at hand",
+        "abnormal": "After the round the doctor decides whether to continue the current treatment, order additional tests or prepare the discharge. New or worsening pain, breathlessness or fever between rounds is a reason to call the staff immediately"
+      },
+      "sr": {
+        "what": "Ponovni pregled pacijenta od strane nadležnog ljekara u toku vizite, sa procjenom toka i korekcijom terapije",
+        "how": "Ljekar pregleda pacijenta uz krevet, pita za tegobe u protekla 24 sata, gleda vrijednosti nadzora i najnovije nalaze, pogleda ranu ili bolno mjesto i mijenja terapijsku listu; obično traje nekoliko minuta",
+        "when": "Svaki dan boravka u bolnici, poslije operacija i zahvata, kod promjene stanja, prije otpusta ili premještaja",
+        "prep": "Priprema nije potrebna; korisno je pripremiti pitanja, sjetiti se kako je protekla noć i kako se podnosi terapija i imati pri ruci raniju dokumentaciju",
+        "abnormal": "Poslije vizite ljekar odlučuje da li se terapija nastavlja, da li su potrebna dodatna ispitivanja ili se priprema otpust. Nov ili pojačan bol, nedostatak vazduha i temperatura između vizita razlog su da se osoblje pozove odmah"
+      },
+      "de": {
+        "what": "Erneute Beurteilung eines stationären Patienten durch die behandelnde Ärztin oder den behandelnden Arzt bei der Visite, mit Verlaufsbewertung und Anpassung der Anordnungen",
+        "how": "Am Bett wird der Patient untersucht, nach den Beschwerden des letzten Tages gefragt, Überwachungswerte und neue Befunde werden gesichtet, Wunde oder Schmerzregion angesehen und der Anordnungsbogen geändert; meist wenige Minuten",
+        "when": "An jedem Tag des Aufenthalts, nach Operationen und Eingriffen, bei Veränderung des Zustands, vor Entlassung oder Verlegung",
+        "prep": "Keine Vorbereitung nötig; hilfreich ist, Fragen zu sammeln, sich an Nacht und Medikamenteneinnahme zu erinnern und frühere Unterlagen bereitzuhalten",
+        "abnormal": "Nach der Visite entscheidet die Ärztin oder der Arzt, ob die Behandlung so weiterläuft, zusätzliche Untersuchungen nötig sind oder die Entlassung vorbereitet wird. Neue oder stärkere Schmerzen, Luftnot oder Fieber zwischen den Visiten sind ein Grund, sofort das Personal zu rufen"
+      },
+      "tr": {
+        "what": "Yatan hastanın vizit sırasında sorumlu hekimce yeniden değerlendirilmesi, gidişatın gözden geçirilip tedavinin güncellenmesi",
+        "how": "Hekim hastayı yatak başında muayene eder, son bir gündeki şikâyetleri sorar, izlem değerlerine ve yeni sonuçlara bakar, yarayı veya ağrıyan bölgeyi görür ve tedavi çizelgesini değiştirir; genellikle birkaç dakika sürer",
+        "when": "Hastanede kalınan her gün, ameliyat ve girişimlerden sonra, durum değiştiğinde, taburculuk veya nakil öncesinde",
+        "prep": "Hazırlık gerekmez; soruları toplamak, gecenin ve ilaçların nasıl geçtiğini hatırlamak ve önceki belgeleri yanında bulundurmak yararlıdır",
+        "abnormal": "Vizit sonrası hekim tedavinin aynı şekilde süreceğine, ek tetkik gerekip gerekmediğine ya da taburculuğun hazırlanacağına karar verir. Vizitler arasında yeni veya artan ağrı, nefes darlığı ve ateş hemen görevliyi çağırmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Поновни преглед пацијента од стране надлежног љекара у току визите, са процјеном тока и корекцијом терапије",
+        "how": "Љекар прегледа пацијента уз кревет, пита за тегобе у протекла 24 сата, гледа вриједности надзора и најновије налазе, погледа рану или болно мјесто и мијења терапијску листу; обично траје неколико минута",
+        "when": "Сваки дан боравка у болници, послије операција и захвата, код промјене стања, прије отпуста или премјештаја",
+        "prep": "Припрема није потребна; корисно је припремити питања, сјетити се како је протекла ноћ и како се подноси терапија и имати при руци ранију документацију",
+        "abnormal": "Послије визите љекар одлучује да ли се терапија наставља, да ли су потребна додатна испитивања или се припрема отпуст. Нов или појачан бол, недостатак ваздуха и температура између визита разлог су да се особље позове одмах"
+      }
+    }
+  },
+  {
+    "slug": "food-costs-for-children-under-1-year",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Питание ребёнка первого года жизни во время пребывания в стационаре, подобранное по возрасту и состоянию",
+        "how": "Отделение поддерживает грудное вскармливание, при необходимости готовит адаптированную смесь или прикорм по возрасту, кормление идёт в ритме малыша; при нарушенном глотании или тяжёлом состоянии питание вводят через зонд по назначению врача",
+        "when": "Любая госпитализация ребёнка до года, слабая прибавка массы, трудности при кормлении, пищевая аллергия и непереносимость, восстановление после кишечной инфекции или операции",
+        "prep": "Отдельной подготовки нет; сказать врачу, чем ребёнок питается дома и как реагирует на продукты и смесь, принести привычную бутылочку и соску",
+        "abnormal": "Персонал следит за тем, сколько ребёнок съедает, за прибавкой веса, стулом и срыгиваниями. Упорный отказ от еды, рвота, понос, заметно более редкие мочеиспускания или потеря веса требуют немедленного осмотра врача"
+      },
+      "en": {
+        "what": "Feeding of a child in the first year of life during a hospital stay, chosen according to age and condition",
+        "how": "The ward supports breastfeeding, prepares infant formula or age-appropriate solid food when needed and feeds the baby at its own rhythm; if swallowing is impaired or the child is seriously ill, feeding is given through a tube as prescribed",
+        "when": "Any hospital stay of a child under one year, poor weight gain, feeding difficulties, food allergy and intolerance, recovery after an intestinal infection or surgery",
+        "prep": "No separate preparation; tell the doctor what the child is fed at home and how it reacts to foods and formula, and bring the familiar bottle and teat",
+        "abnormal": "The staff watch how much the child takes, weight gain, stools and spitting up. Persistent refusal to feed, vomiting, diarrhoea, markedly fewer wet nappies or weight loss need to be seen by a doctor immediately"
+      },
+      "sr": {
+        "what": "Ishrana djeteta u prvoj godini života tokom boravka u bolnici, prilagođena uzrastu i stanju",
+        "how": "Odjeljenje podržava dojenje, po potrebi priprema adaptiranu mliječnu formulu ili dohranu primjerenu uzrastu, a hranjenje ide u ritmu bebe; kod otežanog gutanja ili težeg stanja hrana se daje preko sonde po nalogu ljekara",
+        "when": "Svaki boravak djeteta mlađeg od godinu dana u bolnici, slabo napredovanje u težini, teškoće pri hranjenju, alergija i netolerancija na hranu, oporavak poslije crijevne infekcije ili operacije",
+        "prep": "Posebna priprema nije potrebna; reći ljekaru čime se dijete hrani kod kuće i kako reaguje na namirnice i formulu, te ponijeti flašicu i cuclu na koje je naviklo",
+        "abnormal": "Osoblje prati koliko dijete pojede, napredovanje u težini, stolicu i vraćanje hrane. Uporno odbijanje hrane, povraćanje, proliv, osjetno rjeđe mokrenje ili gubitak težine traže hitan pregled ljekara"
+      },
+      "de": {
+        "what": "Ernährung eines Kindes im ersten Lebensjahr während des Krankenhausaufenthalts, abgestimmt auf Alter und Zustand",
+        "how": "Die Station unterstützt das Stillen, bereitet bei Bedarf Säuglingsnahrung oder altersgerechte Beikost zu und füttert im Rhythmus des Kindes; bei Schluckstörungen oder schwerem Zustand wird nach ärztlicher Anordnung über eine Sonde ernährt",
+        "when": "Jeder Krankenhausaufenthalt eines Kindes unter einem Jahr, zu geringe Gewichtszunahme, Trinkschwierigkeiten, Nahrungsmittelallergie und Unverträglichkeit, Erholung nach Darminfekt oder Operation",
+        "prep": "Keine eigene Vorbereitung; dem Arzt sagen, womit das Kind zu Hause ernährt wird und wie es auf Nahrung und Formula reagiert, gewohnte Flasche und Sauger mitbringen",
+        "abnormal": "Das Personal achtet auf Trinkmengen, Gewichtsentwicklung, Stuhl und Spucken. Anhaltende Nahrungsverweigerung, Erbrechen, Durchfall, deutlich seltenere nasse Windeln oder Gewichtsverlust müssen sofort ärztlich beurteilt werden"
+      },
+      "tr": {
+        "what": "Hastanede yatış süresince yaşamın ilk yılındaki çocuğun yaşına ve durumuna göre beslenmesi",
+        "how": "Servis emzirmeyi destekler, gerektiğinde bebek maması ya da yaşa uygun ek gıda hazırlar ve bebeği kendi ritmine göre besler; yutma güçlüğü veya ağır durumda beslenme hekim talimatıyla sonda ile verilir",
+        "when": "Bir yaşından küçük çocuğun her hastane yatışı, kilo alamama, beslenme güçlükleri, besin alerjisi ve intoleransı, bağırsak enfeksiyonu veya ameliyat sonrası iyileşme",
+        "prep": "Ayrı bir hazırlık gerekmez; çocuğun evde neyle beslendiğini ve besinlere ve mamaya tepkisini hekime söyleyin, alıştığı biberon ve emziği getirin",
+        "abnormal": "Ekip alınan miktarı, kilo alımını, dışkıyı ve çıkarmayı izler. Beslenmeyi sürekli reddetme, kusma, ishal, idrar çıkışının belirgin azalması veya kilo kaybı hemen hekim değerlendirmesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Исхрана дјетета у првој години живота током боравка у болници, прилагођена узрасту и стању",
+        "how": "Одјељење подржава дојење, по потреби припрема адаптирану млијечну формулу или дохрану примјерену узрасту, а храњење иде у ритму бебе; код отежаног гутања или тежег стања храна се даје преко сонде по налогу љекара",
+        "when": "Сваки боравак дјетета млађег од годину дана у болници, слабо напредовање у тежини, тешкоће при храњењу, алергија и нетолеранција на храну, опоравак послије цријевне инфекције или операције",
+        "prep": "Посебна припрема није потребна; рећи љекару чиме се дијете храни код куће и како реагује на намирнице и формулу, те понијети флашицу и цуцлу на које је навикло",
+        "abnormal": "Особље прати колико дијете поједе, напредовање у тежини, столицу и враћање хране. Упорно одбијање хране, повраћање, пролив, осјетно рјеђе мокрење или губитак тежине траже хитан преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "food-costs-for-patients-over-1-year",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Больничное питание пациентов старше года: обычный стол или лечебная диета по назначению врача",
+        "how": "Врач назначает вид стола, кухня готовит блюда по этому назначению и их раздают в палаты несколько раз в день; при затруднённом глотании пищу измельчают, а когда есть самостоятельно нельзя, применяют питание через зонд или вену",
+        "when": "Любое пребывание в стационаре, сахарный диабет, болезни почек, печени и пищеварительного тракта, повышенное давление, период после операции, пищевая аллергия и непереносимость",
+        "prep": "Подготовки нет; при поступлении сообщить об аллергии и непереносимости, о диете, которую вы уже соблюдаете, и об исследовании натощак, назначенном на утро",
+        "abnormal": "Подходящее питание поддерживает вес и силы и помогает удерживать показатели вроде сахара крови при диабете. Потеря аппетита, снижение веса, тошнота после еды, затруднённое глотание или ухудшение показателей — повод пересмотреть диету вместе с врачом"
+      },
+      "en": {
+        "what": "Hospital catering for patients over one year of age: a regular diet or a therapeutic one prescribed by the doctor",
+        "how": "The doctor sets the type of diet, the kitchen prepares meals accordingly and they are served in the rooms several times a day; food is softened when swallowing is difficult, and tube or intravenous feeding is used when eating is not possible",
+        "when": "Any inpatient stay, diabetes, kidney, liver and digestive disease, high blood pressure, the period after surgery, food allergy and intolerance",
+        "prep": "No preparation; on admission report allergies and intolerances, any diet you already follow, and any fasting test scheduled for the next morning",
+        "abnormal": "A suitable diet keeps weight and strength up and helps keep values such as blood sugar in diabetes under control. Loss of appetite, weight loss, nausea after meals, difficulty swallowing or worsening values are a reason to review the diet with the doctor"
+      },
+      "sr": {
+        "what": "Bolnička ishrana pacijenata starijih od godinu dana: uobičajena hrana ili dijeta koju odredi ljekar",
+        "how": "Ljekar određuje vrstu dijete, kuhinja prema tome sprema obroke i oni se dijele po sobama nekoliko puta dnevno; kod otežanog gutanja hrana se usitnjava, a kada pacijent ne može da jede koristi se ishrana preko sonde ili vene",
+        "when": "Svaki boravak u bolnici, šećerna bolest, bolesti bubrega, jetre i probavnog trakta, povišen pritisak, period poslije operacije, alergija i netolerancija na hranu",
+        "prep": "Priprema nije potrebna; pri prijemu reći koje alergije i netolerancije imate, koju dijetu već držite i da li vas ujutro čeka pretraga natašte",
+        "abnormal": "Odgovarajuća ishrana održava težinu i snagu i pomaže da vrijednosti, poput šećera u krvi kod dijabetesa, ostanu pod kontrolom. Gubitak apetita, pad težine, mučnina poslije jela, otežano gutanje ili pogoršanje nalaza razlog su da se dijeta preispita sa ljekarom"
+      },
+      "de": {
+        "what": "Krankenhausverpflegung für Patienten über einem Jahr: normale Kost oder eine ärztlich verordnete Diät",
+        "how": "Die Ärztin oder der Arzt legt die Kostform fest, die Küche bereitet die Mahlzeiten entsprechend zu und sie werden mehrmals täglich auf die Zimmer verteilt; bei Schluckstörungen wird die Kost passiert, bei fehlender Nahrungsaufnahme über Sonde oder Vene ernährt",
+        "when": "Jeder stationäre Aufenthalt, Diabetes, Nieren-, Leber- und Magen-Darm-Erkrankungen, Bluthochdruck, Zeit nach Operationen, Nahrungsmittelallergie und Unverträglichkeit",
+        "prep": "Keine Vorbereitung; bei der Aufnahme Allergien und Unverträglichkeiten, eine bereits eingehaltene Diät und eine für den nächsten Morgen geplante Nüchtern-Untersuchung angeben",
+        "abnormal": "Eine passende Kost hält Gewicht und Kräfte und hilft, Werte wie den Blutzucker bei Diabetes im Griff zu behalten. Appetitverlust, Gewichtsabnahme, Übelkeit nach dem Essen, Schluckbeschwerden oder sich verschlechternde Werte sind ein Grund, die Kost mit der Ärztin oder dem Arzt zu überprüfen"
+      },
+      "tr": {
+        "what": "Bir yaşın üzerindeki hastaların hastane beslenmesi: olağan yemek ya da hekimin belirlediği tedavi diyeti",
+        "how": "Hekim diyet türünü belirler, mutfak yemekleri buna göre hazırlar ve gün içinde birkaç öğün odalara dağıtılır; yutma güçlüğünde yemek ezilir, ağızdan beslenme mümkün değilse sonda veya damar yoluyla beslenme uygulanır",
+        "when": "Her hastane yatışı, şeker hastalığı, böbrek, karaciğer ve sindirim sistemi hastalıkları, yüksek tansiyon, ameliyat sonrası dönem, besin alerjisi ve intoleransı",
+        "prep": "Hazırlık gerekmez; yatışta alerji ve intoleranslarınızı, uyguladığınız diyeti ve ertesi sabaha aç karnına planlanmış bir tetkik olup olmadığını bildirin",
+        "abnormal": "Uygun beslenme kiloyu ve gücü korur ve diyabette kan şekeri gibi değerlerin kontrol altında kalmasına yardımcı olur. İştahsızlık, kilo kaybı, yemek sonrası bulantı, yutma güçlüğü veya değerlerin kötüleşmesi diyetin hekimle yeniden gözden geçirilmesini gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Болничка исхрана пацијената старијих од годину дана: уобичајена храна или дијета коју одреди љекар",
+        "how": "Љекар одређује врсту дијете, кухиња према томе спрема оброке и они се дијеле по собама неколико пута дневно; код отежаног гутања храна се уситњава, а када пацијент не може да једе користи се исхрана преко сонде или вене",
+        "when": "Сваки боравак у болници, шећерна болест, болести бубрега, јетре и пробавног тракта, повишен притисак, период послије операције, алергија и нетолеранција на храну",
+        "prep": "Припрема није потребна; при пријему рећи које алергије и нетолеранције имате, коју дијету већ држите и да ли вас ујутро чека претрага наташте",
+        "abnormal": "Одговарајућа исхрана одржава тежину и снагу и помаже да вриједности, попут шећера у крви код дијабетеса, остану под контролом. Губитак апетита, пад тежине, мучнина послије јела, отежано гутање или погоршање налаза разлог су да се дијета преиспита са љекаром"
+      }
+    }
+  },
+  {
+    "slug": "functional-renal-test",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Набор проб, показывающих, насколько хорошо почки фильтруют кровь, концентрируют мочу и удерживают нужные вещества",
+        "how": "Берут кровь из вены и собирают мочу — разовую порцию или за целые сутки, иногда с пробами на концентрацию и разведение после заданного питьевого режима; по результатам рассчитывают скорость клубочковой фильтрации",
+        "when": "Хроническая болезнь почек и наблюдение за ней, изменения в анализе мочи, отёки, повышенное давление, сахарный диабет, подбор и контроль препаратов, выводящихся почками, подготовка к исследованиям с контрастом",
+        "prep": "Уточнить у врача режим питья и приёма препаратов перед пробой; для суточной мочи взять подготовленную ёмкость, собирать всю мочу и хранить её в прохладном месте",
+        "abnormal": "Отклонения могут быть связаны с хронической болезнью почек, обезвоживанием, действием препаратов или другими заболеваниями, а также с ошибкой при сборе мочи. Результат оценивает врач вместе с другими анализами и осмотром"
+      },
+      "en": {
+        "what": "A set of tests showing how well the kidneys filter the blood, concentrate the urine and retain needed substances",
+        "how": "Blood is taken from a vein and urine is collected — a single sample or a whole day's output, sometimes with concentration and dilution tests after a set drinking regimen; the glomerular filtration rate is calculated from the results",
+        "when": "Chronic kidney disease and its monitoring, abnormal urine findings, swelling, high blood pressure, diabetes, selecting and monitoring medicines cleared by the kidneys, preparation for contrast studies",
+        "prep": "Check with the doctor about drinking and medication before the test; for a whole-day collection take the prepared container, collect all urine and keep it in a cool place",
+        "abnormal": "Deviations may be linked to chronic kidney disease, dehydration, the effect of medicines or other illnesses, and also to an error in collecting the urine. The result is interpreted by the doctor together with other tests and the examination"
+      },
+      "sr": {
+        "what": "Skup proba koje pokazuju koliko dobro bubrezi filtriraju krv, koncentrišu mokraću i zadržavaju potrebne materije",
+        "how": "Vadi se krv iz vene i sakuplja mokraća — jednokratni uzorak ili cjelodnevni, ponekad uz probe koncentracije i razrjeđenja poslije određenog režima unosa tečnosti; iz nalaza se računa jačina glomerularne filtracije",
+        "when": "Hronična bubrežna bolest i njeno praćenje, promjene u nalazu mokraće, otoci, povišen pritisak, šećerna bolest, uvođenje i praćenje lijekova koji se izlučuju preko bubrega, priprema za pretrage sa kontrastom",
+        "prep": "Provjeriti sa ljekarom režim unosa tečnosti i uzimanja lijekova prije probe; za cjelodnevnu mokraću ponijeti pripremljenu posudu, sakupljati svu mokraću i držati je na hladnom",
+        "abnormal": "Odstupanja mogu biti povezana sa hroničnom bolešću bubrega, dehidracijom, dejstvom lijekova ili drugim bolestima, ali i sa greškom pri sakupljanju mokraće. Nalaz tumači ljekar zajedno sa ostalim analizama i pregledom"
+      },
+      "de": {
+        "what": "Eine Reihe von Proben, die zeigen, wie gut die Nieren das Blut filtern, den Harn konzentrieren und benötigte Stoffe zurückhalten",
+        "how": "Es wird Blut aus der Vene abgenommen und Harn gesammelt — eine Einzelprobe oder der Harn eines ganzen Tages, teils mit Konzentrations- und Verdünnungsproben nach vorgegebener Trinkmenge; aus den Werten wird die glomeruläre Filtrationsrate berechnet",
+        "when": "Chronische Nierenerkrankung und deren Verlaufskontrolle, auffälliger Harnbefund, Ödeme, Bluthochdruck, Diabetes, Auswahl und Kontrolle über die Niere ausgeschiedener Medikamente, Vorbereitung auf Kontrastmitteluntersuchungen",
+        "prep": "Trinkmenge und Medikamenteneinnahme vor der Probe mit der Ärztin oder dem Arzt abklären; für den Tagesharn das vorbereitete Gefäß mitnehmen, den gesamten Harn sammeln und kühl aufbewahren",
+        "abnormal": "Abweichungen können mit chronischer Nierenerkrankung, Flüssigkeitsmangel, der Wirkung von Medikamenten oder anderen Erkrankungen zusammenhängen, aber auch mit einem Sammelfehler. Den Befund beurteilt die Ärztin oder der Arzt zusammen mit weiteren Werten und der Untersuchung"
+      },
+      "tr": {
+        "what": "Böbreklerin kanı ne kadar iyi süzdüğünü, idrarı ne kadar yoğunlaştırdığını ve gerekli maddeleri ne kadar tuttuğunu gösteren testler bütünü",
+        "how": "Koldan kan alınır ve idrar toplanır — tek örnek ya da bir günlük idrar, bazen belirlenmiş sıvı alımından sonra yoğunlaştırma ve seyreltme testleriyle; sonuçlardan glomerüler filtrasyon hızı hesaplanır",
+        "when": "Kronik böbrek hastalığı ve izlemi, idrar tahlilinde değişiklik, ödem, yüksek tansiyon, şeker hastalığı, böbrekten atılan ilaçların seçimi ve izlemi, kontrastlı tetkiklere hazırlık",
+        "prep": "Test öncesi sıvı alımını ve ilaç kullanımını hekiminize danışın; bir günlük idrar için hazırlanmış kabı alın, tüm idrarı toplayın ve serin yerde saklayın",
+        "abnormal": "Sapmalar kronik böbrek hastalığı, susuz kalma, ilaçların etkisi veya başka hastalıklarla, ayrıca idrar toplamadaki hatayla ilişkili olabilir. Sonucu hekim diğer tahliller ve muayeneyle birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Скуп проба које показују колико добро бубрези филтрирају крв, концентришу мокраћу и задржавају потребне материје",
+        "how": "Вади се крв из вене и сакупља мокраћа — једнократни узорак или цјелодневни, понекад уз пробе концентрације и разрјеђења послије одређеног режима уноса течности; из налаза се рачуна јачина гломеруларне филтрације",
+        "when": "Хронична бубрежна болест и њено праћење, промјене у налазу мокраће, отоци, повишен притисак, шећерна болест, увођење и праћење лијекова који се излучују преко бубрега, припрема за претраге са контрастом",
+        "prep": "Провјерити са љекаром режим уноса течности и узимања лијекова прије пробе; за цјелодневну мокраћу понијети припремљену посуду, сакупљати сву мокраћу и држати је на хладном",
+        "abnormal": "Одступања могу бити повезана са хроничном болешћу бубрега, дехидрацијом, дејством лијекова или другим болестима, али и са грешком при сакупљању мокраће. Налаз тумачи љекар заједно са осталим анализама и прегледом"
+      }
+    }
+  },
+  {
+    "slug": "hospital-care-for-involuntarily-hospitalized-patient",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лечение и наблюдение в психиатрическом отделении пациента, помещённого туда без его согласия по предусмотренной законом процедуре",
+        "how": "Пациента принимают и осматривают, о госпитализации уведомляют суд, который её проверяет, лечение ведут по плану врача, состояние и необходимость дальнейшего пребывания регулярно пересматривают, а право на информацию, обжалование и контакт с близкими у пациента сохраняется",
+        "when": "Состояния, при которых из-за болезни человек не может решить вопрос о лечении и есть опасность для его жизни и здоровья или для безопасности окружающих, а также исполнение назначенной судом меры обязательного лечения",
+        "prep": "Отдельной подготовки нет; близким стоит передать врачу прежние выписки, список препаратов и сведения о прежних госпитализациях, документы и личные вещи оформляют при поступлении",
+        "abnormal": "Врачи регулярно пересматривают состояние, и когда основания для принудительного пребывания отпадают, режим меняют на добровольный или пациента выписывают с планом амбулаторного наблюдения. Вопросы о сроках, правах и обжаловании задают лечащему врачу"
+      },
+      "en": {
+        "what": "Treatment and observation in a psychiatric ward of a patient admitted without consent under the procedure laid down by law",
+        "how": "The patient is admitted and examined, the court is notified of the admission and reviews it, treatment follows the doctor's plan, the condition and the need for further stay are reassessed regularly, and the patient keeps the right to information, to appeal and to contact relatives",
+        "when": "States in which illness prevents a person from deciding about treatment and there is a danger to their life and health or to the safety of others, and carrying out a compulsory treatment order imposed by a court",
+        "prep": "No separate preparation; relatives should hand the doctor earlier discharge letters, the list of medicines and information about previous admissions, documents and personal belongings are registered on admission",
+        "abnormal": "Doctors reassess the condition regularly, and once the grounds for compulsory stay no longer apply the regime becomes voluntary or the patient is discharged with a plan for outpatient follow-up. Questions about duration, rights and appeal should be addressed to the treating doctor"
+      },
+      "sr": {
+        "what": "Liječenje i nadzor na psihijatrijskom odjeljenju pacijenta koji je primljen bez svog pristanka, po zakonom propisanom postupku",
+        "how": "Pacijent se prima i pregleda, o prijemu se obavještava sud koji ga preispituje, liječenje ide po planu ljekara, stanje i potreba daljeg boravka redovno se procjenjuju, a pacijent zadržava pravo na informaciju, žalbu i kontakt sa bliskima",
+        "when": "Stanja u kojima zbog bolesti osoba ne može da odluči o liječenju, a postoji opasnost po njen život i zdravlje ili po bezbjednost drugih, kao i izvršenje sudski izrečene mjere obaveznog liječenja",
+        "prep": "Posebna priprema nije potrebna; porodica treba da ljekaru preda ranije otpusne liste, spisak lijekova i podatke o ranijim hospitalizacijama, a dokumenta i lične stvari se evidentiraju pri prijemu",
+        "abnormal": "Ljekari redovno procjenjuju stanje i, kada razlozi za prisilni boravak prestanu, režim se mijenja u dobrovoljni ili se pacijent otpušta uz plan vanbolničkog praćenja. Pitanja o trajanju, pravima i žalbi postavljaju se nadležnom ljekaru"
+      },
+      "de": {
+        "what": "Behandlung und Überwachung auf einer psychiatrischen Station bei einem Patienten, der nach dem gesetzlich vorgesehenen Verfahren ohne seine Zustimmung aufgenommen wurde",
+        "how": "Der Patient wird aufgenommen und untersucht, das Gericht wird über die Aufnahme informiert und überprüft sie, die Behandlung folgt dem ärztlichen Plan, Zustand und Notwendigkeit des weiteren Aufenthalts werden regelmäßig neu beurteilt, und der Patient behält das Recht auf Information, Beschwerde und Kontakt zu Angehörigen",
+        "when": "Zustände, in denen die Erkrankung eine eigene Entscheidung über die Behandlung unmöglich macht und Gefahr für Leben und Gesundheit oder für die Sicherheit anderer besteht, sowie der Vollzug einer gerichtlich angeordneten Behandlungsmaßnahme",
+        "prep": "Keine eigene Vorbereitung; Angehörige sollten frühere Entlassbriefe, die Medikamentenliste und Angaben zu früheren Aufenthalten übergeben, Dokumente und persönliche Sachen werden bei der Aufnahme erfasst",
+        "abnormal": "Die Ärztinnen und Ärzte beurteilen den Zustand regelmäßig neu; entfallen die Gründe für den Zwangsaufenthalt, wird die Behandlung freiwillig fortgesetzt oder der Patient mit einem Plan für die ambulante Weiterbetreuung entlassen. Fragen zu Dauer, Rechten und Beschwerde beantwortet die behandelnde Ärztin oder der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Yasada öngörülen usule göre rızası olmadan yatırılan hastanın psikiyatri servisinde tedavisi ve izlenmesi",
+        "how": "Hasta kabul edilip muayene edilir, yatış mahkemeye bildirilir ve mahkemece denetlenir, tedavi hekimin planına göre yürür, durum ve yatışın sürmesinin gerekip gerekmediği düzenli olarak yeniden değerlendirilir; hastanın bilgilenme, itiraz ve yakınlarıyla görüşme hakkı sürer",
+        "when": "Hastalık nedeniyle kişinin tedavi konusunda karar veremediği ve kendi yaşamı ve sağlığı ya da başkalarının güvenliği için tehlike bulunan durumlar ve mahkemece verilen zorunlu tedavi tedbirinin uygulanması",
+        "prep": "Ayrı bir hazırlık gerekmez; yakınlarının önceki epikrizleri, ilaç listesini ve geçmiş yatışlara ilişkin bilgileri hekime vermesi gerekir, belgeler ve kişisel eşyalar yatışta kayda geçer",
+        "abnormal": "Hekimler durumu düzenli olarak yeniden değerlendirir; zorunlu yatışın gerekçeleri ortadan kalkınca yatış gönüllü hale gelir ya da hasta ayaktan izlem planıyla taburcu edilir. Süre, haklar ve itiraz hakkındaki sorular hastayı izleyen hekime sorulur"
+      },
+      "sr_cyrl": {
+        "what": "Лијечење и надзор на психијатријском одјељењу пацијента који је примљен без свог пристанка, по законом прописаном поступку",
+        "how": "Пацијент се прима и прегледа, о пријему се обавјештава суд који га преиспитује, лијечење иде по плану љекара, стање и потреба даљег боравка редовно се процјењују, а пацијент задржава право на информацију, жалбу и контакт са блискима",
+        "when": "Стања у којима због болести особа не може да одлучи о лијечењу, а постоји опасност по њен живот и здравље или по безбједност других, као и извршење судски изречене мјере обавезног лијечења",
+        "prep": "Посебна припрема није потребна; породица треба да љекару преда раније отпусне листе, списак лијекова и податке о ранијим хоспитализацијама, а документа и личне ствари се евидентирају при пријему",
+        "abnormal": "Љекари редовно процјењују стање и, када разлози за присилни боравак престану, режим се мијења у добровољни или се пацијент отпушта уз план ванболничког праћења. Питања о трајању, правима и жалби постављају се надлежном љекару"
+      }
+    }
+  },
+  {
+    "slug": "hospital-discharge-letter",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Медицинский документ, в котором собрано, с чем пациент поступил, что выявили, как лечили и что делать дальше",
+        "how": "При выписке врач составляет документ с диагнозом, ходом госпитализации, результатами обследований и операций, назначенным лечением и рекомендациями, отдаёт его пациенту и объясняет содержание; подписывает лечащий врач",
+        "when": "Завершение стационарного лечения, перевод в другое учреждение или на реабилитацию, продолжение лечения у семейного врача или специалиста, оформление больничного и документов для страховой",
+        "prep": "Подготовка не требуется; при выписке уточнить непонятные пункты, сроки контроля и список препаратов и попросить копии снимков и результатов",
+        "abnormal": "Выписку нужно показать семейному врачу и специалисту на следующем приёме и хранить вместе с результатами. Если после выписки появляются перечисленные в ней тревожные признаки — температура, усиливающаяся боль, кровотечение, одышка — обращаться к врачу, не дожидаясь назначенного контроля"
+      },
+      "en": {
+        "what": "A medical document summarising why the patient was admitted, what was found, how they were treated and what to do next",
+        "how": "At discharge the doctor writes up the diagnosis, the course of the stay, the results of investigations and operations, the prescribed treatment and the recommendations, hands it to the patient and explains it; the treating doctor signs it",
+        "when": "The end of inpatient treatment, transfer to another hospital or to rehabilitation, continuing care with the family doctor or a specialist, sick leave and insurance paperwork",
+        "prep": "No preparation needed; at discharge ask about anything unclear, about follow-up dates and the list of medicines, and request copies of images and results",
+        "abnormal": "Show the discharge letter to your family doctor and to the specialist at the next visit and keep it with the test results. If the warning signs listed in it appear — fever, increasing pain, bleeding, breathlessness — see a doctor without waiting for the scheduled check-up"
+      },
+      "sr": {
+        "what": "Medicinski dokument koji sažima sa čim je pacijent primljen, šta je utvrđeno, kako je liječen i šta dalje",
+        "how": "Ljekar pri otpustu sastavlja dokument sa dijagnozom, tokom boravka, rezultatima ispitivanja i operacija, propisanom terapijom i preporukama, uručuje ga pacijentu i objašnjava sadržaj; dokument potpisuje nadležni ljekar",
+        "when": "Završetak bolničkog liječenja, premještaj u drugu ustanovu ili na rehabilitaciju, nastavak liječenja kod izabranog ljekara ili specijaliste, otvaranje bolovanja i dokumentacija za osiguranje",
+        "prep": "Priprema nije potrebna; pri otpustu provjeriti nejasne stavke, rokove kontrola i spisak lijekova i tražiti kopije snimaka i nalaza",
+        "abnormal": "Otpusno pismo treba pokazati izabranom ljekaru i specijalisti na sljedećem pregledu i čuvati ga uz nalaze. Ako se poslije otpusta jave znaci navedeni u dokumentu — temperatura, pojačan bol, krvarenje, nedostatak vazduha — javiti se ljekaru ne čekajući zakazanu kontrolu"
+      },
+      "de": {
+        "what": "Ein ärztliches Dokument, das zusammenfasst, weshalb der Patient aufgenommen wurde, was festgestellt wurde, wie behandelt wurde und wie es weitergeht",
+        "how": "Bei der Entlassung erstellt die Ärztin oder der Arzt das Dokument mit Diagnose, Verlauf des Aufenthalts, Ergebnissen von Untersuchungen und Operationen, verordneter Behandlung und Empfehlungen, übergibt es und erläutert den Inhalt; unterschrieben wird es von der behandelnden Ärztin oder dem behandelnden Arzt",
+        "when": "Ende der stationären Behandlung, Verlegung in ein anderes Haus oder in die Rehabilitation, Weiterbehandlung bei Hausarzt oder Facharzt, Krankschreibung und Unterlagen für die Versicherung",
+        "prep": "Keine Vorbereitung nötig; bei der Entlassung Unklarheiten, Kontrolltermine und die Medikamentenliste nachfragen und Kopien von Bildern und Befunden erbitten",
+        "abnormal": "Der Entlassbrief gehört beim nächsten Termin dem Hausarzt und der Fachärztin gezeigt und zusammen mit den Befunden aufbewahrt. Treten die darin genannten Warnzeichen auf — Fieber, zunehmende Schmerzen, Blutung, Luftnot — sollte man nicht bis zum geplanten Kontrolltermin warten"
+      },
+      "tr": {
+        "what": "Hastanın neden yattığını, nelerin saptandığını, nasıl tedavi edildiğini ve bundan sonra ne yapılacağını özetleyen tıbbi belge",
+        "how": "Hekim taburculukta tanıyı, yatış sürecini, tetkik ve ameliyat sonuçlarını, verilen tedaviyi ve önerileri yazar, belgeyi hastaya açıklayarak teslim eder; belgeyi hastayı izleyen hekim imzalar",
+        "when": "Hastane tedavisinin bitmesi, başka kuruma veya rehabilitasyona nakil, aile hekimi ya da uzman hekimle tedavinin sürdürülmesi, rapor ve sigorta işlemleri",
+        "prep": "Hazırlık gerekmez; taburculukta anlaşılmayan noktaları, kontrol tarihlerini ve ilaç listesini sorun, görüntü ve sonuçların kopyalarını isteyin",
+        "abnormal": "Epikrizi bir sonraki muayenede aile hekiminize ve uzmana gösterin ve sonuçlarla birlikte saklayın. Belgede yazan uyarı belirtileri — ateş, artan ağrı, kanama, nefes darlığı — ortaya çıkarsa planlanan kontrolü beklemeden hekime başvurun"
+      },
+      "sr_cyrl": {
+        "what": "Медицински документ који сажима са чим је пацијент примљен, шта је утврђено, како је лијечен и шта даље",
+        "how": "Љекар при отпусту саставља документ са дијагнозом, током боравка, резултатима испитивања и операција, прописаном терапијом и препорукама, уручује га пацијенту и објашњава садржај; документ потписује надлежни љекар",
+        "when": "Завршетак болничког лијечења, премјештај у другу установу или на рехабилитацију, наставак лијечења код изабраног љекара или специјалисте, отварање боловања и документација за осигурање",
+        "prep": "Припрема није потребна; при отпусту провјерити нејасне ставке, рокове контрола и списак лијекова и тражити копије снимака и налаза",
+        "abnormal": "Отпусно писмо треба показати изабраном љекару и специјалисти на сљедећем прегледу и чувати га уз налазе. Ако се послије отпуста јаве знаци наведени у документу — температура, појачан бол, крварење, недостатак ваздуха — јавити се љекару не чекајући заказану контролу"
+      }
+    }
+  }
 ]

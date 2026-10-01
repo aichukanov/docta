@@ -1,576 +1,674 @@
 [
-	{
-		"slug": "amnioscopy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Осмотр нижнего полюса плодного пузыря и цвета околоплодных вод через канал шейки матки",
-				"how": "Врач вводит через шейку матки тонкий конусовидный эндоскоп с подсветкой и оценивает оболочки и воды, осмотр занимает несколько минут и проводится без разреза",
-				"when": "Переношенная беременность, наблюдение за состоянием плода в конце срока, подозрение на подтекание вод, оценка перед решением о дальнейшей тактике",
-				"prep": "Проводится, когда шейка проходима для инструмента, перед осмотром опорожняют мочевой пузырь, отдельной подготовки дома не требуется",
-				"abnormal": "Изменение цвета или количества вод может быть связано с состоянием плода и течением беременности, но само по себе диагнозом не является. Результат оценивает акушер-гинеколог вместе с другими данными наблюдения, а при схватках, подтекании вод или кровянистых выделениях после осмотра нужно связаться с врачом"
-			},
-			"en": {
-				"what": "An examination of the lower part of the membranes and the colour of the amniotic fluid through the cervical canal",
-				"how": "A thin lit endoscope is passed through the cervix and the membranes and the fluid are assessed, it takes a few minutes and needs no incision",
-				"when": "Pregnancy past the due date, watching the baby towards the end of pregnancy, suspected leaking of fluid, assessment before deciding how to proceed",
-				"prep": "It is done when the cervix is passable for the instrument, the bladder is emptied beforehand, no preparation at home is needed",
-				"abnormal": "A change in the colour or amount of the fluid may relate to the condition of the baby and the course of the pregnancy, but is not a diagnosis in itself. The finding is interpreted by the obstetrician together with the rest of the monitoring data, and contractions, leaking fluid or bleeding after the examination should be reported to a doctor"
-			},
-			"sr": {
-				"what": "Pregled donjeg dijela vodenjaka i boje plodove vode kroz kanal grlića materice",
-				"how": "Ljekar kroz grlić materice uvodi tanak endoskop sa svjetlom i ocjenjuje ovojnice i plodovu vodu, pregled traje nekoliko minuta i radi se bez reza",
-				"when": "Prenesena trudnoća, praćenje stanja ploda pri kraju trudnoće, sumnja na curenje plodove vode, procjena prije odluke o daljem postupku",
-				"prep": "Radi se kada je grlić prohodan za instrument, prije pregleda se isprazni mokraćna bešika, posebna priprema kod kuće nije potrebna",
-				"abnormal": "Promjena boje ili količine plodove vode može biti povezana sa stanjem ploda i tokom trudnoće, ali sama po sebi nije dijagnoza. Nalaz tumači ginekolog akušer zajedno sa ostalim podacima praćenja, a ako se poslije pregleda jave kontrakcije, curenje vode ili krvarenje, treba se javiti ljekaru"
-			},
-			"de": {
-				"what": "Beurteilung des unteren Teils der Fruchtblase und der Farbe des Fruchtwassers durch den Gebärmutterhalskanal",
-				"how": "Ein dünnes, beleuchtetes Endoskop wird durch den Gebärmutterhals eingeführt, Eihäute und Fruchtwasser werden beurteilt, die Untersuchung dauert wenige Minuten und kommt ohne Schnitt aus",
-				"when": "Übertragene Schwangerschaft, Überwachung des Kindes gegen Ende der Schwangerschaft, Verdacht auf Fruchtwasserabgang, Beurteilung vor der Entscheidung über das weitere Vorgehen",
-				"prep": "Wird durchgeführt, wenn der Muttermund für das Instrument durchgängig ist, vorher wird die Blase entleert, eine besondere Vorbereitung zu Hause ist nicht nötig",
-				"abnormal": "Eine veränderte Farbe oder Menge des Fruchtwassers kann mit dem Zustand des Kindes und dem Verlauf der Schwangerschaft zusammenhängen, ist für sich genommen aber keine Diagnose. Den Befund ordnet die Frauenärztin oder der Frauenarzt zusammen mit den übrigen Überwachungsdaten ein, und Wehen, Flüssigkeitsabgang oder Blutungen nach der Untersuchung gehören ärztlich gemeldet"
-			},
-			"tr": {
-				"what": "Amniyon zarlarının alt bölümünün ve amniyon sıvısının renginin rahim ağzı kanalından değerlendirilmesi",
-				"how": "Rahim ağzından ışıklı ince bir endoskop ilerletilir ve zarlar ile sıvı değerlendirilir, işlem birkaç dakika sürer ve kesi gerektirmez",
-				"when": "Miadı geçmiş gebelik, gebeliğin sonuna doğru bebeğin durumunun izlenmesi, su gelmesi şüphesi, izlenecek yola karar verilmeden önce değerlendirme",
-				"prep": "Rahim ağzı alete uygun olduğunda yapılır, işlem öncesi mesane boşaltılır, evde özel bir hazırlık gerekmez",
-				"abnormal": "Sıvının renginde veya miktarındaki değişiklik bebeğin durumu ve gebeliğin seyriyle ilişkili olabilir, tek başına tanı değildir. Sonucu kadın doğum uzmanı diğer izlem verileriyle birlikte yorumlar, işlemden sonra kasılma, su gelmesi veya kanama olursa hekime başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "cervical-or-uterine-polypectomy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление полипа, разрастания слизистой, с шейки матки или из полости матки с отправкой материала на гистологическое исследование",
-				"how": "Врач захватывает ножку полипа инструментом и удаляет её, полип в полости матки убирают под контролем гистероскопа, вмешательство занимает от нескольких минут до получаса с местным или кратковременным общим обезболиванием",
-				"when": "Полип, найденный при осмотре или на УЗИ, кровянистые выделения между менструациями или после контакта, выделения после менопаузы, подготовка к планированию беременности",
-				"prep": "Плановое вмешательство назначают в первой половине цикла после мазков и анализов, при общем обезболивании не есть и не пить по указанию врача и прийти с сопровождающим",
-				"abnormal": "Несколько дней возможны скудные выделения и тянущие ощущения внизу живота, гистологическое заключение по удалённой ткани даёт врач-патолог. Обильное кровотечение, повышение температуры или сильная боль требуют осмотра, дальнейшее наблюдение определяет гинеколог"
-			},
-			"en": {
-				"what": "Removal of a polyp, an overgrowth of the lining, from the cervix or the uterine cavity, with the tissue sent for histology",
-				"how": "The base of the polyp is grasped with an instrument and taken off, a polyp inside the cavity is removed under hysteroscopic view, it takes from a few minutes to about half an hour under local or short general anaesthesia",
-				"when": "A polyp found at examination or on ultrasound, bleeding between periods or after intercourse, bleeding after menopause, preparation before planning a pregnancy",
-				"prep": "Planned treatment is scheduled in the first half of the cycle after swabs and blood tests, with general anaesthesia follow the fasting instructions and bring someone to accompany you",
-				"abnormal": "Light discharge and a pulling feeling in the lower abdomen can last a few days, and the histology report on the removed tissue is issued by a pathologist. Heavy bleeding, fever or severe pain call for medical review, and further follow-up is set by the gynaecologist"
-			},
-			"sr": {
-				"what": "Uklanjanje polipa, izraštaja sluznice, sa grlića materice ili iz šupljine materice, uz slanje materijala na histološki pregled",
-				"how": "Ljekar instrumentom zahvati peteljku polipa i ukloni ga, a polip u šupljini materice se uklanja pod kontrolom histeroskopa, zahvat traje od nekoliko minuta do pola sata uz lokalnu ili kratku opštu anesteziju",
-				"when": "Polip viđen pri pregledu ili na ultrazvuku, krvarenje između ciklusa ili poslije odnosa, krvarenje poslije menopauze, priprema za planiranje trudnoće",
-				"prep": "Planirani zahvat se zakazuje u prvoj polovini ciklusa, poslije briseva i analiza, a uz opštu anesteziju ne jesti i ne piti po uputstvu ljekara i doći sa pratnjom",
-				"abnormal": "Nekoliko dana su mogući oskudan iscjedak i zatezanje u donjem dijelu stomaka, a histološki nalaz uklonjenog tkiva daje ljekar patolog. Obilno krvarenje, povišena temperatura ili jak bol su razlog za pregled, a dalje praćenje određuje ginekolog"
-			},
-			"de": {
-				"what": "Entfernung eines Polypen, einer Wucherung der Schleimhaut, vom Gebärmutterhals oder aus der Gebärmutterhöhle mit histologischer Untersuchung des Gewebes",
-				"how": "Der Stiel des Polypen wird mit einem Instrument gefasst und abgetragen, ein Polyp in der Gebärmutterhöhle wird unter Sicht per Hysteroskop entfernt, der Eingriff dauert wenige Minuten bis etwa eine halbe Stunde in örtlicher oder kurzer Vollnarkose",
-				"when": "Bei Untersuchung oder Ultraschall gefundener Polyp, Blutungen zwischen den Perioden oder nach dem Geschlechtsverkehr, Blutungen nach den Wechseljahren, Vorbereitung auf eine geplante Schwangerschaft",
-				"prep": "Der geplante Eingriff wird nach Abstrichen und Blutuntersuchungen in die erste Zyklushälfte gelegt, bei Vollnarkose nüchtern bleiben wie angewiesen und in Begleitung kommen",
-				"abnormal": "Einige Tage sind leichter Ausfluss und ein Ziehen im Unterbauch möglich, den histologischen Befund des entnommenen Gewebes erstellt eine Pathologin oder ein Pathologe. Starke Blutung, Fieber oder heftige Schmerzen erfordern eine ärztliche Vorstellung, die weitere Kontrolle legt die Frauenärztin oder der Frauenarzt fest"
-			},
-			"tr": {
-				"what": "Rahim ağzından veya rahim boşluğundan mukoza büyümesi olan polibin çıkarılması ve dokunun histolojik incelemeye gönderilmesi",
-				"how": "Polibin sapı bir aletle tutularak çıkarılır, rahim boşluğundaki polip histeroskop görüşü altında alınır, işlem birkaç dakika ile yarım saat arasında sürer ve lokal ya da kısa genel anestezi ile yapılır",
-				"when": "Muayenede veya ultrasonda görülen polip, adet arası ya da ilişki sonrası kanama, menopoz sonrası kanama, gebelik planlaması öncesi hazırlık",
-				"prep": "Planlı işlem, smear ve kan tetkiklerinden sonra siklusun ilk yarısına verilir, genel anestezi uygulanacaksa açlık talimatına uymak ve refakatçi ile gelmek gerekir",
-				"abnormal": "Birkaç gün hafif akıntı ve karın alt bölgesinde çekilme hissi olabilir, çıkarılan dokunun histoloji raporunu patoloji uzmanı verir. Yoğun kanama, ateş veya şiddetli ağrı muayene gerektirir, sonraki takibi kadın hastalıkları uzmanı belirler"
-			}
-		}
-	},
-	{
-		"slug": "follow-up-gynecological-examination",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Повторный приём гинеколога для оценки динамики после лечения, процедуры или полученных результатов",
-				"how": "Врач уточняет жалобы и изменения с прошлого визита, при необходимости проводит осмотр в зеркалах и бимануальное исследование и сверяет результаты, приём занимает около четверти часа",
-				"when": "Завершение курса лечения, контроль после процедуры или операции, разбор результатов мазков и УЗИ, наблюдение при длительно существующем состоянии",
-				"prep": "Взять результаты предыдущих исследований и выписки, визит планировать вне дней менструации, если врач не назначил иначе",
-				"abnormal": "По итогам приёма врач решает, продолжать наблюдение, изменить лечение или назначить дополнительные исследования. Если между визитами появились боль, необычные выделения или кровотечение, обратиться к врачу, не дожидаясь назначенной даты"
-			},
-			"en": {
-				"what": "A repeat appointment with the gynaecologist to see how things have changed after treatment, a procedure or test results",
-				"how": "The doctor asks what has changed since the last visit, examines with a speculum and bimanually if needed and goes through the results, the visit takes about a quarter of an hour",
-				"when": "End of a course of treatment, check after a procedure or operation, discussion of swab and ultrasound results, follow-up of a long-standing condition",
-				"prep": "Bring earlier results and discharge letters and plan the visit outside the days of your period unless the doctor advised otherwise",
-				"abnormal": "After the visit the doctor decides whether to keep watching, change treatment or order more tests. If pain, unusual discharge or bleeding appeared between visits, see a doctor without waiting for the booked date"
-			},
-			"sr": {
-				"what": "Ponovni pregled kod ginekologa radi procjene stanja poslije liječenja, zahvata ili dobijenih nalaza",
-				"how": "Ljekar provjerava tegobe i promjene od prošle posjete, po potrebi radi pregled u spekulumima i bimanuelni pregled i upoređuje nalaze, pregled traje oko petnaestak minuta",
-				"when": "Završetak terapije, kontrola poslije zahvata ili operacije, tumačenje nalaza briseva i ultrazvuka, praćenje dugotrajnog stanja",
-				"prep": "Ponijeti ranije nalaze i otpusna pisma, a posjetu planirati van dana menstruacije, ako ljekar nije odredio drugačije",
-				"abnormal": "Na osnovu pregleda ljekar odlučuje da li nastaviti praćenje, promijeniti terapiju ili uraditi dodatne pretrage. Ako se između posjeta jave bol, neuobičajen iscjedak ili krvarenje, treba se javiti i prije zakazanog termina"
-			},
-			"de": {
-				"what": "Erneuter Termin bei der Frauenärztin oder dem Frauenarzt, um den Verlauf nach Behandlung, Eingriff oder Befunden zu beurteilen",
-				"how": "Es wird besprochen, was sich seit dem letzten Termin geändert hat, bei Bedarf folgen Spekulum- und Tastuntersuchung sowie der Abgleich der Befunde, der Termin dauert etwa eine Viertelstunde",
-				"when": "Abschluss einer Behandlung, Kontrolle nach Eingriff oder Operation, Besprechung von Abstrich- und Ultraschallbefunden, Begleitung eines länger bestehenden Befundes",
-				"prep": "Frühere Befunde und Arztbriefe mitbringen und den Termin möglichst außerhalb der Regelblutung legen, sofern nicht anders besprochen",
-				"abnormal": "Nach dem Termin wird entschieden, ob weiter beobachtet, die Behandlung geändert oder zusätzlich untersucht wird. Treten zwischen den Terminen Schmerzen, ungewohnter Ausfluss oder Blutungen auf, sollte man nicht bis zum vereinbarten Datum warten"
-			},
-			"tr": {
-				"what": "Tedavi, işlem veya çıkan sonuçların ardından durumu değerlendirmek için kadın hastalıkları uzmanına tekrar başvuru",
-				"how": "Hekim son muayeneden bu yana olan değişiklikleri sorar, gerekirse spekulum ve iki elle muayene yapar ve sonuçları karşılaştırır, görüşme yaklaşık on beş dakika sürer",
-				"when": "Tedavinin bitişi, işlem veya ameliyat sonrası kontrol, smear ve ultrason sonuçlarının değerlendirilmesi, süregelen bir durumun izlenmesi",
-				"prep": "Önceki sonuçları ve epikrizleri getirmek, hekim aksini söylemediyse randevuyu adet günleri dışına almak yeterlidir",
-				"abnormal": "Muayene sonunda hekim izlemi sürdürmeye, tedaviyi değiştirmeye veya ek tetkik istemeye karar verir. İki görüşme arasında ağrı, olağandışı akıntı veya kanama olursa randevu gününü beklemeden hekime başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "pregnancy-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ультразвуковой осмотр матки и плода во время беременности",
-				"how": "Датчик ведут по животу через гель, на ранних сроках используют вагинальный датчик, исследование безболезненно и занимает около четверти часа",
-				"when": "Плановые сроки наблюдения беременности, уточнение срока и числа плодов, оценка роста плода, положения плаценты и количества вод, жалобы на боль или выделения",
-				"prep": "На ранних сроках при осмотре через живот может потребоваться наполненный мочевой пузырь, на поздних сроках подготовка не нужна, требования клиники уточнить заранее",
-				"abnormal": "Находки описывают размеры, положение и развитие плода и могут отражать особенности течения беременности. Заключение УЗИ не является диагнозом, его трактует акушер-гинеколог вместе с осмотром и анализами"
-			},
-			"en": {
-				"what": "An ultrasound look at the uterus and the baby during pregnancy",
-				"how": "A probe is moved over the abdomen through gel, in early pregnancy a vaginal probe is used, the scan is painless and takes about a quarter of an hour",
-				"when": "Scheduled points of antenatal care, confirming the dates and the number of babies, checking growth, the position of the placenta and the amount of fluid, complaints of pain or discharge",
-				"prep": "Early scans through the abdomen may need a full bladder, later in pregnancy no preparation is needed, check what the clinic expects beforehand",
-				"abnormal": "The report describes size, position and development and may reflect features of how the pregnancy is going. An ultrasound report is not a diagnosis, it is interpreted by the obstetrician together with the examination and tests"
-			},
-			"sr": {
-				"what": "Ultrazvučni pregled materice i ploda tokom trudnoće",
-				"how": "Sonda se pomjera preko stomaka uz gel, a u ranoj trudnoći koristi se vaginalna sonda, pregled je bezbolan i traje oko petnaestak minuta",
-				"when": "Redovni termini praćenja trudnoće, određivanje starosti trudnoće i broja plodova, procjena rasta ploda, položaja posteljice i količine plodove vode, tegobe sa bolom ili iscjetkom",
-				"prep": "U ranoj trudnoći pri pregledu preko stomaka može biti potrebna puna mokraćna bešika, kasnije priprema nije potrebna, uslove provjeriti u ustanovi unaprijed",
-				"abnormal": "Nalaz opisuje mjere, položaj i razvoj ploda i može odražavati osobenosti toka trudnoće. Ultrazvučni nalaz nije dijagnoza, tumači ga ginekolog akušer uz pregled i analize"
-			},
-			"de": {
-				"what": "Ultraschallbeurteilung von Gebärmutter und Kind in der Schwangerschaft",
-				"how": "Der Schallkopf wird mit Gel über den Bauch geführt, in der Frühschwangerschaft wird vaginal geschallt, die Untersuchung ist schmerzfrei und dauert etwa eine Viertelstunde",
-				"when": "Vorgesehene Termine der Schwangerschaftsvorsorge, Bestimmung von Schwangerschaftswoche und Kinderzahl, Beurteilung von Wachstum, Mutterkuchenlage und Fruchtwassermenge, Beschwerden wie Schmerzen oder Ausfluss",
-				"prep": "Frühe Untersuchungen über die Bauchdecke können eine gefüllte Blase erfordern, später ist keine Vorbereitung nötig, die Vorgaben der Praxis vorher erfragen",
-				"abnormal": "Der Befund beschreibt Maße, Lage und Entwicklung und kann Besonderheiten des Schwangerschaftsverlaufs widerspiegeln. Ein Ultraschallbefund ist keine Diagnose, er wird von der Frauenärztin oder dem Frauenarzt zusammen mit Untersuchung und Laborwerten eingeordnet"
-			},
-			"tr": {
-				"what": "Gebelik sırasında rahmin ve bebeğin ultrason ile değerlendirilmesi",
-				"how": "Jel sürülerek prob karın üzerinde gezdirilir, erken gebelikte vajinal prob kullanılır, işlem ağrısızdır ve yaklaşık on beş dakika sürer",
-				"when": "Gebelik takibinin planlı dönemleri, gebelik haftasının ve bebek sayısının belirlenmesi, büyümenin, plasenta yerleşiminin ve sıvı miktarının değerlendirilmesi, ağrı veya akıntı şikâyeti",
-				"prep": "Erken dönemde karından yapılan incelemede mesanenin dolu olması gerekebilir, ileri haftalarda hazırlık gerekmez, kurumun isteğini önceden öğrenmek gerekir",
-				"abnormal": "Rapor ölçüleri, duruşu ve gelişimi anlatır ve gebeliğin seyrine ait özellikleri yansıtabilir. Ultrason raporu tanı değildir, muayene ve tetkiklerle birlikte kadın doğum uzmanı yorumlar"
-			}
-		}
-	},
-	{
-		"slug": "vulvar-and-vaginal-condyloma-abrasion",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление кондилом, мелких разрастаний кожи и слизистой, в области вульвы и влагалища путём снятия их с поверхности",
-				"how": "После обезболивания врач удаляет образования инструментом и обрабатывает поверхность, при множественных элементах работу делят на несколько сеансов, один сеанс обычно занимает до получаса",
-				"when": "Видимые кондиломы вульвы или влагалища, зуд и дискомфорт в этой области, подготовка к родам, направление после осмотра или кольпоскопии",
-				"prep": "Процедуру планируют вне менструации, перед ней берут мазки, при обезболивании с седацией соблюдать указания о голодании и взять свободное бельё",
-				"abnormal": "Несколько дней сохраняются корочки, жжение и скудные выделения, заживление занимает недели. Образования могут появиться снова, поэтому нужны контрольные осмотры, а кровотечение, нарастающая боль или температура требуют обращения к врачу"
-			},
-			"en": {
-				"what": "Removal of condylomas, small growths of the skin and mucosa, from the vulva and vagina by taking them off the surface",
-				"how": "After local anaesthesia the growths are removed with an instrument and the surface is treated, with many lesions the work is split into several sessions, one session usually takes up to half an hour",
-				"when": "Visible growths on the vulva or in the vagina, itching and discomfort in that area, preparation before birth, referral after an examination or colposcopy",
-				"prep": "The procedure is planned outside the period and swabs are taken beforehand, if sedation is used follow the fasting instructions and bring loose underwear",
-				"abnormal": "Crusts, burning and light discharge last a few days and healing takes weeks. Growths can come back, so follow-up visits are needed, and bleeding, increasing pain or fever should be shown to a doctor"
-			},
-			"sr": {
-				"what": "Uklanjanje kondiloma, sitnih izraštaja kože i sluznice, sa vulve i iz vagine skidanjem sa površine",
-				"how": "Poslije lokalne anestezije ljekar instrumentom skida promjene i obrađuje površinu, a kod brojnih promjena posao se dijeli na nekoliko seansi, jedna seansa obično traje do pola sata",
-				"when": "Vidljivi kondilomi na vulvi ili u vagini, svrab i nelagoda u tom području, priprema prije porođaja, uput poslije pregleda ili kolposkopije",
-				"prep": "Zahvat se planira van menstruacije, prije njega se uzimaju brisevi, a ako se radi uz sedaciju poštovati uputstvo o neuzimanju hrane i ponijeti široko donje rublje",
-				"abnormal": "Nekoliko dana ostaju kraste, pečenje i oskudan iscjedak, a zarastanje traje sedmicama. Promjene se mogu vratiti, pa su potrebne kontrole, a krvarenje, pojačan bol ili temperatura traže pregled kod ljekara"
-			},
-			"de": {
-				"what": "Entfernung von Kondylomen, kleinen Wucherungen von Haut und Schleimhaut, an Vulva und Scheide durch Abtragen von der Oberfläche",
-				"how": "Nach örtlicher Betäubung werden die Veränderungen mit einem Instrument abgetragen und die Fläche versorgt, bei vielen Herden wird in mehreren Sitzungen gearbeitet, eine Sitzung dauert meist bis zu einer halben Stunde",
-				"when": "Sichtbare Wucherungen an Vulva oder in der Scheide, Juckreiz und Beschwerden in diesem Bereich, Vorbereitung vor der Geburt, Überweisung nach Untersuchung oder Kolposkopie",
-				"prep": "Der Eingriff wird außerhalb der Regelblutung geplant und vorher werden Abstriche entnommen, bei Sedierung die Nüchternheitsvorgaben einhalten und weite Unterwäsche mitbringen",
-				"abnormal": "Krusten, Brennen und leichter Ausfluss halten einige Tage an, die Abheilung dauert Wochen. Die Veränderungen können wiederkommen, daher sind Kontrolltermine nötig, und Blutung, zunehmende Schmerzen oder Fieber gehören ärztlich beurteilt"
-			},
-			"tr": {
-				"what": "Vulva ve vajendeki deri ve mukoza büyümeleri olan kondilomların yüzeyden kaldırılarak çıkarılması",
-				"how": "Lokal anesteziden sonra lezyonlar bir aletle alınır ve yüzey bakımı yapılır, çok sayıda lezyonda işlem birkaç seansa bölünür, bir seans genelde yarım saate kadar sürer",
-				"when": "Vulvada veya vajende görülen büyümeler, bu bölgede kaşıntı ve rahatsızlık, doğum öncesi hazırlık, muayene ya da kolposkopi sonrası yönlendirme",
-				"prep": "İşlem adet dönemi dışına planlanır ve öncesinde smear alınır, sedasyon uygulanacaksa açlık talimatına uymak ve bol iç çamaşırı getirmek gerekir",
-				"abnormal": "Birkaç gün kabuklanma, yanma ve hafif akıntı olur, iyileşme haftalar sürer. Lezyonlar tekrarlayabildiği için kontrol muayeneleri gerekir, kanama, artan ağrı veya ateş hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "breast-ultrasound-examination",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ультразвуковой осмотр ткани молочных желёз и ближайших лимфоузлов",
-				"how": "Пациентка лежит с заведёнными за голову руками, врач ведёт датчик по железе через гель, осмотр безболезненный и занимает около четверти часа",
-				"when": "Прощупываемое уплотнение, боль или выделения из соска, наблюдение за ранее описанным образованием, обследование у молодых женщин и во время беременности и кормления, уточнение находок маммографии",
-				"prep": "Не требуется, удобно планировать осмотр в первой половине цикла и не наносить крем на кожу груди перед исследованием",
-				"abnormal": "Описанные изменения могут быть связаны с кистами, доброкачественными узлами, воспалением или строением ткани, категорию находки и дальнейшие шаги, включая биопсию при необходимости, определяет врач"
-			},
-			"en": {
-				"what": "An ultrasound look at breast tissue and the nearby lymph nodes",
-				"how": "The patient lies with the arms behind the head while the probe is moved over the breast through gel, the scan is painless and takes about a quarter of an hour",
-				"when": "A lump that can be felt, pain or discharge from the nipple, follow-up of a previously described finding, assessment in younger women and during pregnancy and breastfeeding, clarification of a mammography finding",
-				"prep": "Not required, it is convenient to book in the first half of the cycle and not to put cream on the skin of the chest beforehand",
-				"abnormal": "The described changes may relate to cysts, benign nodules, inflammation or the structure of the tissue, and the category of the finding and the next steps, including a biopsy if needed, are set by the doctor"
-			},
-			"sr": {
-				"what": "Ultrazvučni pregled tkiva dojke i okolnih limfnih čvorova",
-				"how": "Pacijentkinja leži sa rukama iza glave dok ljekar sondom uz gel prelazi preko dojke, pregled je bezbolan i traje oko petnaestak minuta",
-				"when": "Čvorić koji se napipa, bol ili iscjedak iz bradavice, praćenje ranije opisane promjene, procjena kod mlađih žena i u trudnoći i dojenju, razjašnjenje nalaza mamografije",
-				"prep": "Nije potrebna, zgodno je zakazati u prvoj polovini ciklusa i prije pregleda ne nanositi kremu na kožu grudi",
-				"abnormal": "Opisane promjene mogu biti povezane sa cistama, dobroćudnim čvorićima, upalom ili građom tkiva, a kategoriju nalaza i dalje korake, uključujući biopsiju ako je potrebna, određuje ljekar"
-			},
-			"de": {
-				"what": "Ultraschallbeurteilung des Brustgewebes und der benachbarten Lymphknoten",
-				"how": "Die Patientin liegt mit den Armen hinter dem Kopf, während der Schallkopf mit Gel über die Brust geführt wird, die Untersuchung ist schmerzfrei und dauert etwa eine Viertelstunde",
-				"when": "Tastbarer Knoten, Schmerzen oder Absonderung aus der Brustwarze, Verlaufskontrolle eines zuvor beschriebenen Befundes, Beurteilung bei jüngeren Frauen sowie in Schwangerschaft und Stillzeit, Abklärung eines Mammographiebefundes",
-				"prep": "Nicht erforderlich, günstig ist die erste Zyklushälfte, und vor der Untersuchung sollte keine Creme auf die Haut der Brust aufgetragen werden",
-				"abnormal": "Beschriebene Veränderungen können mit Zysten, gutartigen Knoten, einer Entzündung oder dem Gewebeaufbau zusammenhängen, die Einordnung des Befundes und das weitere Vorgehen, bei Bedarf mit Gewebeprobe, legt die Ärztin oder der Arzt fest"
-			},
-			"tr": {
-				"what": "Meme dokusunun ve yakın lenf düğümlerinin ultrason ile incelenmesi",
-				"how": "Hasta kollarını başının arkasına alarak yatar, hekim jel ile probu meme üzerinde gezdirir, işlem ağrısızdır ve yaklaşık on beş dakika sürer",
-				"when": "Elle hissedilen kitle, meme başında ağrı veya akıntı, daha önce tanımlanmış bir bulgunun izlenmesi, genç kadınlarda ve gebelik ile emzirme döneminde değerlendirme, mamografi bulgusunun açıklığa kavuşturulması",
-				"prep": "Gerekmez, randevuyu siklusun ilk yarısına almak uygundur ve inceleme öncesi göğüs derisine krem sürülmemelidir",
-				"abnormal": "Tanımlanan değişiklikler kist, iyi huylu nodül, iltihap ya da doku yapısıyla ilişkili olabilir, bulgunun kategorisini ve gerekirse biyopsi dahil sonraki adımları hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "cervical-drug-application",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Местное нанесение лекарственного средства на шейку матки на приёме у гинеколога",
-				"how": "Врач вводит зеркала, осушает шейку тампоном и наносит препарат аппликатором или тампоном, процедура занимает несколько минут",
-				"when": "Воспалительные изменения шейки матки, обработка после диагностических вмешательств, назначенный врачом курс местной терапии",
-				"prep": "Приходить вне дней менструации, накануне не использовать вагинальные средства и спринцевание, если врач не указал иначе",
-				"abnormal": "Скудные выделения и лёгкое жжение в течение нескольких дней после нанесения ожидаемы. Сколько раз повторять процедуру, определяет врач, а усиление боли, кровотечение или температура требуют осмотра"
-			},
-			"en": {
-				"what": "Applying a medicine locally to the cervix during a gynaecological appointment",
-				"how": "A speculum is inserted, the cervix is dried with a swab and the preparation is applied with an applicator or a tampon, it takes a few minutes",
-				"when": "Inflammatory changes of the cervix, treatment after diagnostic procedures, a course of local therapy prescribed by the doctor",
-				"prep": "Come outside the days of your period and avoid vaginal products and douching the day before unless the doctor said otherwise",
-				"abnormal": "Light discharge and mild burning for a few days after the application are expected. How many times the procedure is repeated is decided by the doctor, and increasing pain, bleeding or fever call for a review"
-			},
-			"sr": {
-				"what": "Lokalna primjena lijeka na grlić materice tokom ginekološkog pregleda",
-				"how": "Ljekar postavi spekulume, osuši grlić tupferom i nanese preparat aplikatorom ili tamponom, postupak traje nekoliko minuta",
-				"when": "Upalne promjene grlića materice, obrada poslije dijagnostičkih zahvata, kura lokalne terapije koju je odredio ljekar",
-				"prep": "Doći van dana menstruacije, a dan ranije ne koristiti vaginalne preparate i ispiranje, osim ako ljekar nije rekao drugačije",
-				"abnormal": "Oskudan iscjedak i blago pečenje nekoliko dana poslije nanošenja su očekivani. Koliko puta se postupak ponavlja određuje ljekar, a pojačan bol, krvarenje ili temperatura traže pregled"
-			},
-			"de": {
-				"what": "Örtliches Auftragen eines Medikaments auf den Gebärmutterhals während der frauenärztlichen Untersuchung",
-				"how": "Ein Spekulum wird eingesetzt, der Muttermund mit einem Tupfer getrocknet und das Präparat mit Applikator oder Tupfer aufgebracht, das dauert wenige Minuten",
-				"when": "Entzündliche Veränderungen am Gebärmutterhals, Behandlung nach diagnostischen Eingriffen, eine ärztlich verordnete örtliche Behandlungsserie",
-				"prep": "Außerhalb der Regelblutung kommen und am Vortag keine Vaginalpräparate und keine Spülungen verwenden, sofern nicht anders besprochen",
-				"abnormal": "Leichter Ausfluss und ein mildes Brennen für einige Tage sind zu erwarten. Wie oft die Anwendung wiederholt wird, legt die Ärztin oder der Arzt fest, und zunehmende Schmerzen, Blutung oder Fieber gehören untersucht"
-			},
-			"tr": {
-				"what": "Jinekolojik muayene sırasında rahim ağzına ilacın yerel olarak uygulanması",
-				"how": "Spekulum yerleştirilir, rahim ağzı tamponla kurulanır ve preparat aplikatör ya da tamponla sürülür, işlem birkaç dakika sürer",
-				"when": "Rahim ağzındaki iltihabi değişiklikler, tanısal işlemler sonrası bakım, hekimin belirlediği yerel tedavi kürü",
-				"prep": "Adet günleri dışında gelmek ve hekim aksini söylemediyse bir gün önce vajinal preparat ve duş kullanmamak gerekir",
-				"abnormal": "Uygulamadan sonra birkaç gün hafif akıntı ve hafif yanma beklenen durumdur. İşlemin kaç kez tekrarlanacağına hekim karar verir, artan ağrı, kanama veya ateş muayene gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "delivery-room-usage-per-birth",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Пребывание роженицы в родильном зале, помещении, оснащённом для ведения родов и наблюдения за матерью и ребёнком",
-				"how": "В зале есть родильная кровать, слежение за сердцебиением плода и схватками и место для осмотра новорождённого, рядом акушерка и врач, женщина остаётся здесь в активной фазе родов и первые часы после них",
-				"when": "Роды через естественные родовые пути в срок, роды после вызывания родовой деятельности, наблюдение в первом периоде при поступлении со схватками или после излития вод",
-				"prep": "Собрать сумку с документами и обменной картой, уточнить правила клиники о присутствии сопровождающего и заранее обсудить с врачом вопросы обезболивания",
-				"abnormal": "После родов мать и ребёнка наблюдают несколько часов, затем переводят в послеродовое отделение. Сильная боль, обильное кровотечение, температура или головокружение в первые дни требуют немедленного обращения к персоналу или врачу"
-			},
-			"en": {
-				"what": "Staying in the delivery room, the space equipped for giving birth and for watching over mother and baby",
-				"how": "The room has a birthing bed, monitoring of the baby's heartbeat and contractions and a place to check the newborn, a midwife and a doctor are nearby, and the woman stays here through active labour and the first hours after the birth",
-				"when": "Vaginal birth at term, birth after labour is started medically, observation in the first stage when arriving with contractions or after the waters break",
-				"prep": "Pack documents and the pregnancy record, check the hospital's rules on having a companion present and discuss pain relief with the doctor in advance",
-				"abnormal": "After the birth mother and baby are watched for several hours and then moved to the postnatal ward. Severe pain, heavy bleeding, fever or dizziness in the first days should be reported to staff or to a doctor at once"
-			},
-			"sr": {
-				"what": "Boravak porodilje u porođajnoj sali, prostoriji opremljenoj za vođenje porođaja i nadzor majke i bebe",
-				"how": "U sali su porođajni krevet, nadzor otkucaja srca ploda i kontrakcija i mjesto za pregled novorođenčeta, babica i ljekar su uz porodilju, koja tu ostaje tokom aktivne faze porođaja i prvih sati poslije njega",
-				"when": "Porođaj prirodnim putem u terminu, porođaj poslije izazivanja porođajne aktivnosti, nadzor u prvom porođajnom dobu pri dolasku sa kontrakcijama ili poslije pucanja vodenjaka",
-				"prep": "Spremiti torbu sa dokumentima i trudničkom knjižicom, provjeriti pravila ustanove o prisustvu pratioca i unaprijed sa ljekarom razgovarati o ublažavanju bolova",
-				"abnormal": "Poslije porođaja majka i beba se nadziru nekoliko sati, a zatim prelaze na odjeljenje. Jak bol, obilno krvarenje, temperatura ili vrtoglavica u prvim danima odmah se prijavljuju osoblju ili ljekaru"
-			},
-			"de": {
-				"what": "Aufenthalt der Gebärenden im Kreißsaal, dem für die Geburt und die Überwachung von Mutter und Kind ausgestatteten Raum",
-				"how": "Im Raum stehen ein Gebärbett, die Überwachung von kindlichen Herztönen und Wehen sowie ein Platz für die Erstuntersuchung des Neugeborenen, Hebamme und Ärztin oder Arzt sind dabei, die Frau bleibt während der aktiven Geburtsphase und in den ersten Stunden danach hier",
-				"when": "Spontangeburt am Termin, Geburt nach eingeleiteten Wehen, Überwachung in der Eröffnungsphase bei Aufnahme mit Wehen oder nach Blasensprung",
-				"prep": "Tasche mit Unterlagen und Mutterpass packen, die Regeln der Klinik zur Begleitperson klären und die Schmerzlinderung vorab mit der Ärztin oder dem Arzt besprechen",
-				"abnormal": "Nach der Geburt werden Mutter und Kind einige Stunden überwacht und dann auf die Wochenstation verlegt. Starke Schmerzen, starke Blutung, Fieber oder Schwindel in den ersten Tagen sollten dem Personal oder einer Ärztin oder einem Arzt sofort gemeldet werden"
-			},
-			"tr": {
-				"what": "Doğumun yürütülmesi ile anne ve bebeğin izlenmesi için donatılmış doğum salonunda kalış",
-				"how": "Salonda doğum yatağı, bebeğin kalp atışı ile kasılmaları izleyen düzenek ve yenidoğanın ilk muayenesi için bir alan bulunur, ebe ve hekim yanındadır, kadın doğumun etkin evresinde ve sonrasındaki ilk saatlerde burada kalır",
-				"when": "Zamanında normal doğum, doğumun tıbbi olarak başlatılmasının ardından doğum, kasılmalarla ya da suyun gelmesiyle başvuruda açılma evresinin izlenmesi",
-				"prep": "Belgeler ve gebelik takip kartı ile çanta hazırlamak, kurumun refakatçi kurallarını öğrenmek ve ağrı giderme seçeneklerini önceden hekimle konuşmak gerekir",
-				"abnormal": "Doğumdan sonra anne ve bebek birkaç saat izlenir, ardından doğum sonrası servise alınır. İlk günlerde şiddetli ağrı, yoğun kanama, ateş veya baş dönmesi hemen görevlilere ya da hekime bildirilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "embryo-transfer",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Перенос эмбриона, полученного в лаборатории, в полость матки, завершающий этап цикла экстракорпорального оплодотворения",
-				"how": "Через шейку матки под контролем УЗИ вводят тонкий мягкий катетер и выпускают эмбрион в полость матки, процедура занимает несколько минут и обычно не требует обезболивания",
-				"when": "Цикл экстракорпорального оплодотворения после оплодотворения и культивирования эмбрионов, перенос размороженного эмбриона в подготовленном цикле",
-				"prep": "Приходить в назначенное время, может потребоваться умеренно наполненный мочевой пузырь, назначенную поддержку принимать строго так, как определил врач",
-				"abnormal": "После переноса часты лёгкие тянущие ощущения и скудные выделения, результат проверяют анализом крови в назначенный врачом день. Сильная боль, быстро увеличивающийся живот, одышка или обильное кровотечение требуют немедленного обращения к врачу"
-			},
-			"en": {
-				"what": "Placing an embryo grown in the laboratory into the uterine cavity, the final step of an in vitro fertilisation cycle",
-				"how": "A thin soft catheter is passed through the cervix under ultrasound guidance and the embryo is released into the cavity, it takes a few minutes and usually needs no anaesthesia",
-				"when": "An in vitro fertilisation cycle after fertilisation and embryo culture, transfer of a thawed embryo in a prepared cycle",
-				"prep": "Come at the appointed time, a moderately full bladder may be requested, and take the prescribed support exactly as the doctor set it",
-				"abnormal": "Mild pulling sensations and light discharge after the transfer are common, and the outcome is checked by a blood test on the day the doctor sets. Severe pain, a quickly swelling abdomen, shortness of breath or heavy bleeding need urgent medical attention"
-			},
-			"sr": {
-				"what": "Unošenje embriona dobijenog u laboratoriji u šupljinu materice, završni korak ciklusa vantjelesne oplodnje",
-				"how": "Kroz grlić materice se pod kontrolom ultrazvuka uvodi tanak mekani kateter i embrion se oslobađa u šupljinu, postupak traje nekoliko minuta i obično ne traži anesteziju",
-				"when": "Ciklus vantjelesne oplodnje poslije oplodnje i kultivacije embriona, prenos odmrznutog embriona u pripremljenom ciklusu",
-				"prep": "Doći u zakazano vrijeme, može biti zatražena umjereno puna mokraćna bešika, a propisanu potporu uzimati tačno onako kako je ljekar odredio",
-				"abnormal": "Poslije prenosa su česti blago zatezanje i oskudan iscjedak, a ishod se provjerava analizom krvi onog dana koji odredi ljekar. Jak bol, brzo rastući stomak, otežano disanje ili obilno krvarenje traže hitno javljanje ljekaru"
-			},
-			"de": {
-				"what": "Einbringen eines im Labor herangereiften Embryos in die Gebärmutterhöhle, der letzte Schritt eines Zyklus der künstlichen Befruchtung",
-				"how": "Unter Ultraschallsicht wird ein dünner weicher Katheter durch den Gebärmutterhals geführt und der Embryo in die Höhle abgegeben, das dauert wenige Minuten und kommt meist ohne Betäubung aus",
-				"when": "Zyklus der künstlichen Befruchtung nach Befruchtung und Kultivierung der Embryonen, Transfer eines aufgetauten Embryos im vorbereiteten Zyklus",
-				"prep": "Pünktlich zum Termin erscheinen, eine mäßig gefüllte Blase kann gewünscht sein, und die verordnete Unterstützung genau nach ärztlicher Vorgabe einnehmen",
-				"abnormal": "Leichtes Ziehen und geringer Ausfluss nach dem Transfer sind häufig, das Ergebnis wird an dem von der Ärztin oder dem Arzt festgelegten Tag im Blut geprüft. Starke Schmerzen, ein rasch zunehmender Bauchumfang, Atemnot oder starke Blutung erfordern sofortige ärztliche Hilfe"
-			},
-			"tr": {
-				"what": "Laboratuvarda geliştirilen embriyonun rahim boşluğuna yerleştirilmesi, tüp bebek döngüsünün son adımı",
-				"how": "Ultrason eşliğinde rahim ağzından ince ve yumuşak bir kateter ilerletilir ve embriyo boşluğa bırakılır, işlem birkaç dakika sürer ve genellikle anestezi gerektirmez",
-				"when": "Döllenme ve embriyo kültürünün ardından tüp bebek döngüsü, hazırlanmış döngüde çözdürülmüş embriyonun transferi",
-				"prep": "Randevu saatinde gelmek, mesanenin ölçülü dolu olması istenebilir, verilen destek tedavisini hekimin belirlediği şekilde sürdürmek gerekir",
-				"abnormal": "Transferden sonra hafif çekilme hissi ve az miktarda akıntı sık görülür, sonuç hekimin belirlediği gün kan tetkiki ile değerlendirilir. Şiddetli ağrı, hızla büyüyen karın, nefes darlığı veya yoğun kanama acil hekim başvurusu gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "first-specialist-curative-gynecological-examination",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Первый приём у гинеколога по поводу жалоб или по направлению, с осмотром и составлением плана обследования",
-				"how": "Врач собирает анамнез и сведения о цикле, проводит осмотр в зеркалах и бимануальное исследование, при необходимости берёт мазки и делает УЗИ, приём занимает около двадцати минут",
-				"when": "Боль внизу живота, необычные выделения, нарушения цикла, вопросы контрацепции и планирования беременности, направление от другого врача",
-				"prep": "Визит планировать вне дней менструации, накануне не пользоваться вагинальными средствами и спринцеванием, взять выписки и результаты прежних анализов",
-				"abnormal": "По итогам приёма врач формулирует предварительное заключение и назначает анализы, УЗИ или лечение. Жалобы и находки трактует только врач, а при их усилении до повторного визита нужно прийти раньше"
-			},
-			"en": {
-				"what": "A first appointment with a gynaecologist for a complaint or on referral, with an examination and a plan for further tests",
-				"how": "The doctor takes the history and cycle details, examines with a speculum and bimanually, takes swabs if needed and may do an ultrasound, the appointment takes about twenty minutes",
-				"when": "Pain in the lower abdomen, unusual discharge, cycle problems, questions about contraception and planning a pregnancy, referral from another doctor",
-				"prep": "Plan the visit outside the days of your period, avoid vaginal products and douching the day before, and bring letters and earlier results",
-				"abnormal": "At the end the doctor gives a preliminary assessment and orders tests, ultrasound or treatment. Complaints and findings are interpreted only by the doctor, and if they get worse before the next visit, come earlier"
-			},
-			"sr": {
-				"what": "Prvi pregled kod ginekologa zbog tegoba ili po uputu, sa pregledom i planom daljih pretraga",
-				"how": "Ljekar uzima anamnezu i podatke o ciklusu, radi pregled u spekulumima i bimanuelni pregled, po potrebi uzima briseve i uradi ultrazvuk, pregled traje oko dvadesetak minuta",
-				"when": "Bol u donjem dijelu stomaka, neuobičajen iscjedak, poremećaji ciklusa, pitanja kontracepcije i planiranja trudnoće, uput drugog ljekara",
-				"prep": "Posjetu planirati van dana menstruacije, dan ranije ne koristiti vaginalne preparate i ispiranje i ponijeti ranije nalaze i otpusna pisma",
-				"abnormal": "Na kraju pregleda ljekar daje prvo mišljenje i određuje analize, ultrazvuk ili terapiju. Tegobe i nalaze tumači samo ljekar, a ako se pojačaju prije sljedeće posjete, treba doći ranije"
-			},
-			"de": {
-				"what": "Erster Termin bei der Frauenärztin oder dem Frauenarzt wegen Beschwerden oder auf Überweisung, mit Untersuchung und Plan für die weitere Abklärung",
-				"how": "Vorgeschichte und Zyklusangaben werden erhoben, es folgen Spekulum- und Tastuntersuchung, bei Bedarf Abstriche und Ultraschall, der Termin dauert etwa zwanzig Minuten",
-				"when": "Schmerzen im Unterbauch, ungewohnter Ausfluss, Zyklusstörungen, Fragen zu Verhütung und Kinderwunsch, Überweisung durch eine andere Ärztin oder einen anderen Arzt",
-				"prep": "Den Termin außerhalb der Regelblutung legen, am Vortag auf Vaginalpräparate und Spülungen verzichten und frühere Befunde und Arztbriefe mitbringen",
-				"abnormal": "Am Ende wird eine erste Einschätzung gegeben und es werden Laborwerte, Ultraschall oder eine Behandlung veranlasst. Beschwerden und Befunde ordnet nur die Ärztin oder der Arzt ein, und verstärken sie sich vor dem nächsten Termin, sollte man früher kommen"
-			},
-			"tr": {
-				"what": "Şikâyet nedeniyle ya da sevk ile kadın hastalıkları uzmanına ilk başvuru, muayene ve ileri tetkik planı ile birlikte",
-				"how": "Hekim öykü ve adet düzeni bilgilerini alır, spekulum ve iki elle muayene yapar, gerekirse smear alır ve ultrason uygular, görüşme yaklaşık yirmi dakika sürer",
-				"when": "Karın alt bölgesinde ağrı, olağandışı akıntı, adet düzensizliği, korunma ve gebelik planlaması soruları, başka bir hekimin sevki",
-				"prep": "Randevuyu adet günleri dışına almak, bir gün önce vajinal preparat ve duş kullanmamak, önceki sonuç ve epikrizleri getirmek gerekir",
-				"abnormal": "Muayene sonunda hekim ilk değerlendirmesini yapar ve tetkik, ultrason ya da tedavi planlar. Şikâyet ve bulguları yalnızca hekim yorumlar, sonraki randevudan önce artarlarsa daha erken başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "follicle-aspiration",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Забор содержимого фолликулов яичника с яйцеклетками для процедуры экстракорпорального оплодотворения",
-				"how": "Под контролем вагинального УЗИ врач тонкой иглой через стенку влагалища поочерёдно опорожняет фолликулы, манипуляция идёт под коротким обезболиванием и занимает порядка пятнадцати-двадцати минут",
-				"when": "Завершение стимуляции яичников в цикле экстракорпорального оплодотворения, получение яйцеклеток для оплодотворения или замораживания, пункция в естественном цикле",
-				"prep": "Выполняется в точно назначенный врачом час после препарата, завершающего созревание яйцеклеток, соблюдать указания клиники о голодании, прийти без косметики и с сопровождающим",
-				"abnormal": "В первые сутки обычны тянущие ощущения внизу живота и скудные выделения, число полученных клеток сообщает эмбриолог. Нарастающая боль, вздутие с быстрой прибавкой веса, одышка, температура или обильное кровотечение требуют срочного обращения к врачу"
-			},
-			"en": {
-				"what": "Collecting the fluid of ovarian follicles with the egg cells for in vitro fertilisation",
-				"how": "Under vaginal ultrasound guidance a thin needle passes through the vaginal wall and empties the follicles one by one, it is done under short anaesthesia and takes roughly fifteen to twenty minutes",
-				"when": "The end of ovarian stimulation in an in vitro fertilisation cycle, collecting eggs for fertilisation or for freezing, puncture in a natural cycle",
-				"prep": "It is done at the exact hour set by the doctor after the medicine that completes egg maturation, follow the clinic's fasting instructions and come without make-up and with someone to accompany you",
-				"abnormal": "Pulling sensations in the lower abdomen and light discharge are usual on the first day, and the number of eggs collected is reported by the embryologist. Increasing pain, bloating with rapid weight gain, shortness of breath, fever or heavy bleeding need urgent medical attention"
-			},
-			"sr": {
-				"what": "Uzimanje sadržaja folikula jajnika sa jajnim ćelijama za postupak vantjelesne oplodnje",
-				"how": "Pod kontrolom vaginalnog ultrazvuka ljekar tankom iglom kroz zid vagine redom prazni folikule, zahvat se radi uz kratku anesteziju i traje petnaestak do dvadesetak minuta",
-				"when": "Završetak stimulacije jajnika u ciklusu vantjelesne oplodnje, dobijanje jajnih ćelija za oplodnju ili zamrzavanje, punkcija u prirodnom ciklusu",
-				"prep": "Radi se u tačno zakazani sat poslije lijeka koji završava sazrijevanje jajnih ćelija, poštovati uputstvo ustanove o neuzimanju hrane i doći bez šminke i sa pratnjom",
-				"abnormal": "Prvog dana su uobičajeni zatezanje u donjem dijelu stomaka i oskudan iscjedak, a broj dobijenih ćelija saopštava embriolog. Pojačan bol, nadutost sa brzim dobijanjem na težini, otežano disanje, temperatura ili obilno krvarenje traže hitno javljanje ljekaru"
-			},
-			"de": {
-				"what": "Gewinnung des Inhalts der Eibläschen mit den Eizellen für die künstliche Befruchtung",
-				"how": "Unter vaginaler Ultraschallsicht wird mit einer dünnen Nadel durch die Scheidenwand ein Eibläschen nach dem anderen entleert, der Eingriff erfolgt in kurzer Narkose und dauert etwa fünfzehn bis zwanzig Minuten",
-				"when": "Abschluss der Eierstockstimulation im Zyklus der künstlichen Befruchtung, Gewinnung von Eizellen zur Befruchtung oder zum Einfrieren, Punktion im natürlichen Zyklus",
-				"prep": "Der Termin liegt zur exakt vorgegebenen Stunde nach dem Medikament, das die Eizellreifung abschließt, die Nüchternheitsvorgaben der Klinik einhalten und ohne Make-up und in Begleitung kommen",
-				"abnormal": "Am ersten Tag sind ein Ziehen im Unterbauch und leichter Ausfluss üblich, die Zahl der gewonnenen Eizellen teilt das Labor mit. Zunehmende Schmerzen, ein geblähter Bauch mit rascher Gewichtszunahme, Atemnot, Fieber oder starke Blutung erfordern sofortige ärztliche Hilfe"
-			},
-			"tr": {
-				"what": "Tüp bebek işlemi için yumurtalık foliküllerinin içeriğinin yumurta hücreleriyle birlikte alınması",
-				"how": "Vajinal ultrason eşliğinde ince bir iğne vajen duvarından geçirilerek foliküller sırayla boşaltılır, işlem kısa anestezi ile yapılır ve yaklaşık on beş ile yirmi dakika sürer",
-				"when": "Tüp bebek döngüsünde yumurtalık uyarımının tamamlanması, döllenme ya da dondurma için yumurta toplanması, doğal döngüde ponksiyon",
-				"prep": "Yumurta olgunlaşmasını tamamlayan ilaçtan sonra hekimin verdiği tam saatte yapılır, kurumun açlık talimatına uymak, makyajsız ve refakatçi ile gelmek gerekir",
-				"abnormal": "İlk gün karın alt bölgesinde çekilme hissi ve hafif akıntı olağandır, toplanan hücre sayısını embriyolog bildirir. Artan ağrı, hızlı kilo alımıyla giden şişkinlik, nefes darlığı, ateş veya yoğun kanama acil hekim başvurusu gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "pap-test-lab-analysis",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Лабораторное исследование клеток шейки матки, взятых мазком на цитологию",
-				"how": "Материал из цервикального канала и с поверхности шейки наносят на стекло или помещают в жидкую среду, в лаборатории его окрашивают и врач-цитолог изучает клетки под микроскопом",
-				"when": "Плановый скрининг состояния шейки матки по графику, который задаёт врач, наблюдение после ранее изменённого мазка, контроль после лечения шейки матки",
-				"prep": "Материал берут вне менструации, за двое суток до забора воздерживаются от половых контактов, вагинальных средств и спринцевания",
-				"abnormal": "Заключение описывает качество материала и характер клеток, изменения могут быть связаны с воспалением, гормональным фоном или перестройкой эпителия. Повторить ли мазок, сделать кольпоскопию или другое исследование, решает гинеколог"
-			},
-			"en": {
-				"what": "Laboratory examination of cervical cells taken as a cytology smear",
-				"how": "Material from the cervical canal and the surface of the cervix is spread on a slide or put into a liquid medium, then stained in the laboratory and studied under the microscope by a cytologist",
-				"when": "Routine screening of the cervix on the schedule set by the doctor, follow-up after a previously changed smear, check after treatment of the cervix",
-				"prep": "The sample is taken outside the period, and for two days before it intercourse, vaginal products and douching are avoided",
-				"abnormal": "The report describes the quality of the sample and the character of the cells, and changes may relate to inflammation, hormonal status or remodelling of the epithelium. Whether to repeat the smear, do a colposcopy or another test is decided by the gynaecologist"
-			},
-			"sr": {
-				"what": "Laboratorijski pregled ćelija grlića materice uzetih citološkim brisom",
-				"how": "Materijal iz kanala i sa površine grlića nanosi se na pločicu ili stavlja u tečnu podlogu, u laboratoriji se boji i citolog ga pregleda pod mikroskopom",
-				"when": "Redovni skrining stanja grlića materice po rasporedu koji odredi ljekar, praćenje poslije ranije izmijenjenog brisa, kontrola poslije liječenja grlića",
-				"prep": "Uzorak se uzima van menstruacije, a dva dana prije uzimanja izbjegavaju se odnosi, vaginalni preparati i ispiranje",
-				"abnormal": "Nalaz opisuje kvalitet uzorka i izgled ćelija, a promjene mogu biti povezane sa upalom, hormonskim stanjem ili preobražajem epitela. Da li ponoviti bris, uraditi kolposkopiju ili drugu pretragu, odlučuje ginekolog"
-			},
-			"de": {
-				"what": "Laboruntersuchung der Zellen des Gebärmutterhalses, die als zytologischer Abstrich entnommen wurden",
-				"how": "Material aus dem Kanal und von der Oberfläche des Muttermunds wird auf einen Objektträger aufgetragen oder in ein flüssiges Medium gegeben, im Labor gefärbt und von einer Zytologin oder einem Zytologen unter dem Mikroskop beurteilt",
-				"when": "Regelmäßige Vorsorge des Gebärmutterhalses nach dem ärztlich festgelegten Zeitplan, Verlaufskontrolle nach einem zuvor veränderten Abstrich, Kontrolle nach Behandlung am Muttermund",
-				"prep": "Die Probe wird außerhalb der Regelblutung entnommen, zwei Tage davor wird auf Geschlechtsverkehr, Vaginalpräparate und Spülungen verzichtet",
-				"abnormal": "Der Befund beschreibt die Qualität der Probe und das Aussehen der Zellen, Veränderungen können mit einer Entzündung, der Hormonlage oder dem Umbau des Epithels zusammenhängen. Ob der Abstrich wiederholt, eine Kolposkopie oder eine andere Untersuchung gemacht wird, entscheidet die Frauenärztin oder der Frauenarzt"
-			},
-			"tr": {
-				"what": "Sitolojik yayma ile alınan rahim ağzı hücrelerinin laboratuvarda incelenmesi",
-				"how": "Kanaldan ve rahim ağzı yüzeyinden alınan materyal lama yayılır ya da sıvı ortama konur, laboratuvarda boyanır ve sitoloji uzmanı mikroskopta değerlendirir",
-				"when": "Hekimin belirlediği programa göre rahim ağzı taraması, daha önce değişiklik saptanan yaymadan sonra izlem, rahim ağzı tedavisi sonrası kontrol",
-				"prep": "Örnek adet dönemi dışında alınır, alınmadan iki gün önce cinsel ilişki, vajinal preparat ve duştan kaçınılır",
-				"abnormal": "Rapor örneğin kalitesini ve hücrelerin görünümünü anlatır, değişiklikler iltihap, hormonal durum ya da epitelin yenilenmesiyle ilişkili olabilir. Yaymanın tekrarı, kolposkopi veya başka bir tetkik gerekip gerekmediğine kadın hastalıkları uzmanı karar verir"
-			}
-		}
-	},
-	{
-		"slug": "pregnancy-preventive-examination-by-calendar",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Плановый визит беременной в сроки, предусмотренные графиком наблюдения",
-				"how": "Измеряют давление, вес и окружность живота, определяют высоту дна матки, слушают сердцебиение плода, осматривают ноги на отёки и выдают направления на положенные по сроку анализы, визит занимает около двадцати минут",
-				"when": "Наблюдение беременности от постановки на учёт до родов в предусмотренные графиком сроки, независимо от наличия жалоб",
-				"prep": "Взять обменную карту и результаты последних анализов, перед визитом может понадобиться сдать мочу, на осмотр удобна одежда, которую легко расстегнуть",
-				"abnormal": "Записанные показатели сравнивают с предыдущими визитами, и отклонения могут отражать изменение течения беременности. Между визитами при боли, кровянистых выделениях, подтекании вод, выраженных отёках или ослаблении шевелений обращаться к врачу сразу"
-			},
-			"en": {
-				"what": "A scheduled antenatal visit at the points set by the care calendar",
-				"how": "Blood pressure, weight and abdominal measurements are taken, the height of the uterus is measured, the baby's heartbeat is listened to, the legs are checked for swelling and the tests due at that stage are ordered, the visit takes about twenty minutes",
-				"when": "Antenatal care from registration to birth at the intervals set by the schedule, whether or not there are complaints",
-				"prep": "Bring the pregnancy record and recent results, a urine sample may be needed before the visit, and clothes that are easy to open are convenient",
-				"abnormal": "The recorded values are compared with earlier visits, and shifts may reflect a change in how the pregnancy is going. Between visits, pain, bleeding, leaking fluid, marked swelling or reduced movements should be shown to a doctor straight away"
-			},
-			"sr": {
-				"what": "Redovna posjeta trudnice u terminima predviđenim kalendarom praćenja",
-				"how": "Mjere se krvni pritisak, težina i obim stomaka, određuje se visina materice, sluša srce ploda, pregledaju noge zbog otoka i daju uputi za analize koje pripadaju toj sedmici, posjeta traje oko dvadesetak minuta",
-				"when": "Praćenje trudnoće od prijave do porođaja u predviđenim razmacima, bez obzira na to da li ima tegoba",
-				"prep": "Ponijeti trudničku knjižicu i posljednje nalaze, prije posjete može biti potrebno dati urin, a na pregled je zgodna odjeća koja se lako otkopčava",
-				"abnormal": "Zapisane vrijednosti se porede sa ranijim posjetama, a odstupanja mogu odražavati promjenu toka trudnoće. Između posjeta bol, krvarenje, curenje plodove vode, izražen otok ili slabiji pokreti ploda traže odmah javljanje ljekaru"
-			},
-			"de": {
-				"what": "Regulärer Vorsorgetermin in der Schwangerschaft zu den im Betreuungskalender vorgesehenen Zeitpunkten",
-				"how": "Blutdruck, Gewicht und Bauchumfang werden erfasst, der Stand der Gebärmutter bestimmt, die kindlichen Herztöne abgehört, die Beine auf Schwellungen angesehen und die für diesen Zeitpunkt vorgesehenen Untersuchungen veranlasst, der Termin dauert etwa zwanzig Minuten",
-				"when": "Schwangerschaftsbetreuung von der Anmeldung bis zur Geburt in den vorgesehenen Abständen, unabhängig von Beschwerden",
-				"prep": "Mutterpass und aktuelle Befunde mitbringen, vor dem Termin kann eine Urinprobe nötig sein, bequem ist Kleidung, die sich leicht öffnen lässt",
-				"abnormal": "Die notierten Werte werden mit früheren Terminen verglichen, Abweichungen können eine Änderung des Schwangerschaftsverlaufs widerspiegeln. Treten zwischen den Terminen Schmerzen, Blutungen, Flüssigkeitsabgang, deutliche Schwellungen oder weniger Kindsbewegungen auf, sollte man sich sofort ärztlich vorstellen"
-			},
-			"tr": {
-				"what": "Takip takviminde öngörülen zamanlarda yapılan düzenli gebelik muayenesi",
-				"how": "Tansiyon, kilo ve karın ölçüsü alınır, rahim yüksekliği belirlenir, bebeğin kalp sesi dinlenir, bacaklar ödem açısından görülür ve o döneme ait tetkikler istenir, görüşme yaklaşık yirmi dakika sürer",
-				"when": "Gebeliğin kaydından doğuma kadar belirlenen aralıklarla izlem, şikâyet olsun ya da olmasın",
-				"prep": "Gebelik takip kartını ve son sonuçları getirmek, muayene öncesi idrar örneği istenebileceğini bilmek ve kolay açılan bir kıyafet seçmek yeterlidir",
-				"abnormal": "Kaydedilen değerler önceki görüşmelerle karşılaştırılır, sapmalar gebeliğin seyrindeki bir değişikliği yansıtabilir. Görüşmeler arasında ağrı, kanama, su gelmesi, belirgin şişlik ya da hareketlerde azalma olursa hemen hekime başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "pregnancy-specialist-examination",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Приём акушера-гинеколога по поводу беременности вне планового графика, для разбора конкретного вопроса",
-				"how": "Врач уточняет жалобы и срок, оценивает ситуацию по осмотру и имеющимся результатам и при необходимости направляет на УЗИ, анализы или к смежному специалисту, приём занимает около получаса",
-				"when": "Жалобы во время беременности, уточнение результатов обследования, ведение сопутствующих заболеваний, вопросы по планированию родов, направление от другого врача",
-				"prep": "Взять обменную карту, протоколы УЗИ и результаты анализов, список принимаемых препаратов и вопросы к врачу",
-				"abnormal": "По итогам приёма врач определяет тактику наблюдения и при необходимости меняет план обследования. Усиление жалоб, кровянистые выделения, подтекание вод или изменение шевелений плода требуют обращения к врачу, не дожидаясь следующего визита"
-			},
-			"en": {
-				"what": "An appointment with an obstetrician-gynaecologist about the pregnancy outside the routine schedule, to work through a specific question",
-				"how": "The doctor clarifies the complaints and the stage of pregnancy, assesses the situation from the examination and existing results and refers for ultrasound, tests or another specialist if needed, the appointment takes about half an hour",
-				"when": "Complaints during pregnancy, clarification of test results, management of other medical conditions, questions about planning the birth, referral from another doctor",
-				"prep": "Bring the pregnancy record, ultrasound reports and test results, a list of the medicines you take and the questions you want to ask",
-				"abnormal": "After the appointment the doctor sets the follow-up approach and changes the plan of investigation if needed. Worsening complaints, bleeding, leaking fluid or a change in the baby's movements are reasons to see a doctor without waiting for the next visit"
-			},
-			"sr": {
-				"what": "Pregled kod ginekologa akušera zbog trudnoće van redovnog rasporeda, radi razrješenja konkretnog pitanja",
-				"how": "Ljekar precizira tegobe i starost trudnoće, procjenjuje stanje na osnovu pregleda i postojećih nalaza i po potrebi upućuje na ultrazvuk, analize ili drugog specijalistu, pregled traje oko pola sata",
-				"when": "Tegobe u trudnoći, razjašnjenje nalaza, vođenje pridruženih bolesti, pitanja o planiranju porođaja, uput drugog ljekara",
-				"prep": "Ponijeti trudničku knjižicu, nalaze ultrazvuka i analiza, spisak lijekova koji se uzimaju i pitanja za ljekara",
-				"abnormal": "Poslije pregleda ljekar određuje način daljeg praćenja i po potrebi mijenja plan pretraga. Pojačanje tegoba, krvarenje, curenje plodove vode ili promjena pokreta ploda razlog su za javljanje ljekaru i prije sljedeće posjete"
-			},
-			"de": {
-				"what": "Fachärztlicher Termin in der Schwangerschaft außerhalb des regulären Plans, um eine konkrete Fragestellung zu klären",
-				"how": "Beschwerden und Schwangerschaftswoche werden präzisiert, die Lage anhand von Untersuchung und vorliegenden Befunden beurteilt und bei Bedarf Ultraschall, Labor oder eine weitere Fachrichtung veranlasst, der Termin dauert etwa eine halbe Stunde",
-				"when": "Beschwerden in der Schwangerschaft, Klärung von Befunden, Begleitung weiterer Erkrankungen, Fragen zur Geburtsplanung, Überweisung durch eine andere Ärztin oder einen anderen Arzt",
-				"prep": "Mutterpass, Ultraschallbefunde und Laborergebnisse mitbringen, dazu eine Liste der eingenommenen Medikamente und der eigenen Fragen",
-				"abnormal": "Nach dem Termin wird das weitere Vorgehen festgelegt und der Untersuchungsplan bei Bedarf geändert. Zunehmende Beschwerden, Blutungen, Flüssigkeitsabgang oder veränderte Kindsbewegungen sind Gründe, nicht bis zum nächsten Termin zu warten"
-			},
-			"tr": {
-				"what": "Belirli bir sorunun ele alınması için gebelikte düzenli takvim dışında kadın doğum uzmanına başvuru",
-				"how": "Hekim şikâyetleri ve gebelik haftasını netleştirir, muayene ve eldeki sonuçlara göre durumu değerlendirir, gerekirse ultrason, tetkik ya da başka bir uzmana yönlendirir, görüşme yaklaşık yarım saat sürer",
-				"when": "Gebelikte ortaya çıkan şikâyetler, sonuçların açıklığa kavuşturulması, eşlik eden hastalıkların izlenmesi, doğum planına ilişkin sorular, başka bir hekimin sevki",
-				"prep": "Gebelik takip kartını, ultrason raporlarını ve tetkik sonuçlarını, kullanılan ilaçların listesini ve hekime sorulacak soruları getirmek gerekir",
-				"abnormal": "Görüşmeden sonra hekim izlem şeklini belirler ve gerekirse tetkik planını değiştirir. Şikâyetlerin artması, kanama, su gelmesi veya bebeğin hareketlerindeki değişiklik, sonraki randevuyu beklemeden hekime başvurma nedenidir"
-			}
-		}
-	}
+  {
+    "slug": "amnioscopy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр нижнего полюса плодного пузыря и цвета околоплодных вод через канал шейки матки",
+        "how": "Врач вводит через шейку матки тонкий конусовидный эндоскоп с подсветкой и оценивает оболочки и воды, осмотр занимает несколько минут и проводится без разреза",
+        "when": "Переношенная беременность, наблюдение за состоянием плода в конце срока, подозрение на подтекание вод, оценка перед решением о дальнейшей тактике",
+        "prep": "Проводится, когда шейка проходима для инструмента, перед осмотром опорожняют мочевой пузырь, отдельной подготовки дома не требуется",
+        "abnormal": "Изменение цвета или количества вод может быть связано с состоянием плода и течением беременности, но само по себе диагнозом не является. Результат оценивает акушер-гинеколог вместе с другими данными наблюдения, а при схватках, подтекании вод или кровянистых выделениях после осмотра нужно связаться с врачом"
+      },
+      "en": {
+        "what": "An examination of the lower part of the membranes and the colour of the amniotic fluid through the cervical canal",
+        "how": "A thin lit endoscope is passed through the cervix and the membranes and the fluid are assessed, it takes a few minutes and needs no incision",
+        "when": "Pregnancy past the due date, watching the baby towards the end of pregnancy, suspected leaking of fluid, assessment before deciding how to proceed",
+        "prep": "It is done when the cervix is passable for the instrument, the bladder is emptied beforehand, no preparation at home is needed",
+        "abnormal": "A change in the colour or amount of the fluid may relate to the condition of the baby and the course of the pregnancy, but is not a diagnosis in itself. The finding is interpreted by the obstetrician together with the rest of the monitoring data, and contractions, leaking fluid or bleeding after the examination should be reported to a doctor"
+      },
+      "sr": {
+        "what": "Pregled donjeg dijela vodenjaka i boje plodove vode kroz kanal grlića materice",
+        "how": "Ljekar kroz grlić materice uvodi tanak endoskop sa svjetlom i ocjenjuje ovojnice i plodovu vodu, pregled traje nekoliko minuta i radi se bez reza",
+        "when": "Prenesena trudnoća, praćenje stanja ploda pri kraju trudnoće, sumnja na curenje plodove vode, procjena prije odluke o daljem postupku",
+        "prep": "Radi se kada je grlić prohodan za instrument, prije pregleda se isprazni mokraćna bešika, posebna priprema kod kuće nije potrebna",
+        "abnormal": "Promjena boje ili količine plodove vode može biti povezana sa stanjem ploda i tokom trudnoće, ali sama po sebi nije dijagnoza. Nalaz tumači ginekolog akušer zajedno sa ostalim podacima praćenja, a ako se poslije pregleda jave kontrakcije, curenje vode ili krvarenje, treba se javiti ljekaru"
+      },
+      "de": {
+        "what": "Beurteilung des unteren Teils der Fruchtblase und der Farbe des Fruchtwassers durch den Gebärmutterhalskanal",
+        "how": "Ein dünnes, beleuchtetes Endoskop wird durch den Gebärmutterhals eingeführt, Eihäute und Fruchtwasser werden beurteilt, die Untersuchung dauert wenige Minuten und kommt ohne Schnitt aus",
+        "when": "Übertragene Schwangerschaft, Überwachung des Kindes gegen Ende der Schwangerschaft, Verdacht auf Fruchtwasserabgang, Beurteilung vor der Entscheidung über das weitere Vorgehen",
+        "prep": "Wird durchgeführt, wenn der Muttermund für das Instrument durchgängig ist, vorher wird die Blase entleert, eine besondere Vorbereitung zu Hause ist nicht nötig",
+        "abnormal": "Eine veränderte Farbe oder Menge des Fruchtwassers kann mit dem Zustand des Kindes und dem Verlauf der Schwangerschaft zusammenhängen, ist für sich genommen aber keine Diagnose. Den Befund ordnet die Frauenärztin oder der Frauenarzt zusammen mit den übrigen Überwachungsdaten ein, und Wehen, Flüssigkeitsabgang oder Blutungen nach der Untersuchung gehören ärztlich gemeldet"
+      },
+      "tr": {
+        "what": "Amniyon zarlarının alt bölümünün ve amniyon sıvısının renginin rahim ağzı kanalından değerlendirilmesi",
+        "how": "Rahim ağzından ışıklı ince bir endoskop ilerletilir ve zarlar ile sıvı değerlendirilir, işlem birkaç dakika sürer ve kesi gerektirmez",
+        "when": "Miadı geçmiş gebelik, gebeliğin sonuna doğru bebeğin durumunun izlenmesi, su gelmesi şüphesi, izlenecek yola karar verilmeden önce değerlendirme",
+        "prep": "Rahim ağzı alete uygun olduğunda yapılır, işlem öncesi mesane boşaltılır, evde özel bir hazırlık gerekmez",
+        "abnormal": "Sıvının renginde veya miktarındaki değişiklik bebeğin durumu ve gebeliğin seyriyle ilişkili olabilir, tek başına tanı değildir. Sonucu kadın doğum uzmanı diğer izlem verileriyle birlikte yorumlar, işlemden sonra kasılma, su gelmesi veya kanama olursa hekime başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Преглед доњег дијела водењака и боје плодове воде кроз канал грлића материце",
+        "how": "Љекар кроз грлић материце уводи танак ендоскоп са свјетлом и оцјењује овојнице и плодову воду, преглед траје неколико минута и ради се без реза",
+        "when": "Пренесена трудноћа, праћење стања плода при крају трудноће, сумња на цурење плодове воде, процјена прије одлуке о даљем поступку",
+        "prep": "Ради се када је грлић проходан за инструмент, прије прегледа се испразни мокраћна бешика, посебна припрема код куће није потребна",
+        "abnormal": "Промјена боје или количине плодове воде може бити повезана са стањем плода и током трудноће, али сама по себи није дијагноза. Налаз тумачи гинеколог акушер заједно са осталим подацима праћења, а ако се послије прегледа јаве контракције, цурење воде или крварење, треба се јавити љекару"
+      }
+    }
+  },
+  {
+    "slug": "cervical-or-uterine-polypectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление полипа, разрастания слизистой, с шейки матки или из полости матки с отправкой материала на гистологическое исследование",
+        "how": "Врач захватывает ножку полипа инструментом и удаляет её, полип в полости матки убирают под контролем гистероскопа, вмешательство занимает от нескольких минут до получаса с местным или кратковременным общим обезболиванием",
+        "when": "Полип, найденный при осмотре или на УЗИ, кровянистые выделения между менструациями или после контакта, выделения после менопаузы, подготовка к планированию беременности",
+        "prep": "Плановое вмешательство назначают в первой половине цикла после мазков и анализов, при общем обезболивании не есть и не пить по указанию врача и прийти с сопровождающим",
+        "abnormal": "Несколько дней возможны скудные выделения и тянущие ощущения внизу живота, гистологическое заключение по удалённой ткани даёт врач-патолог. Обильное кровотечение, повышение температуры или сильная боль требуют осмотра, дальнейшее наблюдение определяет гинеколог"
+      },
+      "en": {
+        "what": "Removal of a polyp, an overgrowth of the lining, from the cervix or the uterine cavity, with the tissue sent for histology",
+        "how": "The base of the polyp is grasped with an instrument and taken off, a polyp inside the cavity is removed under hysteroscopic view, it takes from a few minutes to about half an hour under local or short general anaesthesia",
+        "when": "A polyp found at examination or on ultrasound, bleeding between periods or after intercourse, bleeding after menopause, preparation before planning a pregnancy",
+        "prep": "Planned treatment is scheduled in the first half of the cycle after swabs and blood tests, with general anaesthesia follow the fasting instructions and bring someone to accompany you",
+        "abnormal": "Light discharge and a pulling feeling in the lower abdomen can last a few days, and the histology report on the removed tissue is issued by a pathologist. Heavy bleeding, fever or severe pain call for medical review, and further follow-up is set by the gynaecologist"
+      },
+      "sr": {
+        "what": "Uklanjanje polipa, izraštaja sluznice, sa grlića materice ili iz šupljine materice, uz slanje materijala na histološki pregled",
+        "how": "Ljekar instrumentom zahvati peteljku polipa i ukloni ga, a polip u šupljini materice se uklanja pod kontrolom histeroskopa, zahvat traje od nekoliko minuta do pola sata uz lokalnu ili kratku opštu anesteziju",
+        "when": "Polip viđen pri pregledu ili na ultrazvuku, krvarenje između ciklusa ili poslije odnosa, krvarenje poslije menopauze, priprema za planiranje trudnoće",
+        "prep": "Planirani zahvat se zakazuje u prvoj polovini ciklusa, poslije briseva i analiza, a uz opštu anesteziju ne jesti i ne piti po uputstvu ljekara i doći sa pratnjom",
+        "abnormal": "Nekoliko dana su mogući oskudan iscjedak i zatezanje u donjem dijelu stomaka, a histološki nalaz uklonjenog tkiva daje ljekar patolog. Obilno krvarenje, povišena temperatura ili jak bol su razlog za pregled, a dalje praćenje određuje ginekolog"
+      },
+      "de": {
+        "what": "Entfernung eines Polypen, einer Wucherung der Schleimhaut, vom Gebärmutterhals oder aus der Gebärmutterhöhle mit histologischer Untersuchung des Gewebes",
+        "how": "Der Stiel des Polypen wird mit einem Instrument gefasst und abgetragen, ein Polyp in der Gebärmutterhöhle wird unter Sicht per Hysteroskop entfernt, der Eingriff dauert wenige Minuten bis etwa eine halbe Stunde in örtlicher oder kurzer Vollnarkose",
+        "when": "Bei Untersuchung oder Ultraschall gefundener Polyp, Blutungen zwischen den Perioden oder nach dem Geschlechtsverkehr, Blutungen nach den Wechseljahren, Vorbereitung auf eine geplante Schwangerschaft",
+        "prep": "Der geplante Eingriff wird nach Abstrichen und Blutuntersuchungen in die erste Zyklushälfte gelegt, bei Vollnarkose nüchtern bleiben wie angewiesen und in Begleitung kommen",
+        "abnormal": "Einige Tage sind leichter Ausfluss und ein Ziehen im Unterbauch möglich, den histologischen Befund des entnommenen Gewebes erstellt eine Pathologin oder ein Pathologe. Starke Blutung, Fieber oder heftige Schmerzen erfordern eine ärztliche Vorstellung, die weitere Kontrolle legt die Frauenärztin oder der Frauenarzt fest"
+      },
+      "tr": {
+        "what": "Rahim ağzından veya rahim boşluğundan mukoza büyümesi olan polibin çıkarılması ve dokunun histolojik incelemeye gönderilmesi",
+        "how": "Polibin sapı bir aletle tutularak çıkarılır, rahim boşluğundaki polip histeroskop görüşü altında alınır, işlem birkaç dakika ile yarım saat arasında sürer ve lokal ya da kısa genel anestezi ile yapılır",
+        "when": "Muayenede veya ultrasonda görülen polip, adet arası ya da ilişki sonrası kanama, menopoz sonrası kanama, gebelik planlaması öncesi hazırlık",
+        "prep": "Planlı işlem, smear ve kan tetkiklerinden sonra siklusun ilk yarısına verilir, genel anestezi uygulanacaksa açlık talimatına uymak ve refakatçi ile gelmek gerekir",
+        "abnormal": "Birkaç gün hafif akıntı ve karın alt bölgesinde çekilme hissi olabilir, çıkarılan dokunun histoloji raporunu patoloji uzmanı verir. Yoğun kanama, ateş veya şiddetli ağrı muayene gerektirir, sonraki takibi kadın hastalıkları uzmanı belirler"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање полипа, израштаја слузнице, са грлића материце или из шупљине материце, уз слање материјала на хистолошки преглед",
+        "how": "Љекар инструментом захвати петељку полипа и уклони га, а полип у шупљини материце се уклања под контролом хистероскопа, захват траје од неколико минута до пола сата уз локалну или кратку општу анестезију",
+        "when": "Полип виђен при прегледу или на ултразвуку, крварење између циклуса или послије односа, крварење послије менопаузе, припрема за планирање трудноће",
+        "prep": "Планирани захват се заказује у првој половини циклуса, послије брисева и анализа, а уз општу анестезију не јести и не пити по упутству љекара и доћи са пратњом",
+        "abnormal": "Неколико дана су могући оскудан исцједак и затезање у доњем дијелу стомака, а хистолошки налаз уклоњеног ткива даје љекар патолог. Обилно крварење, повишена температура или јак бол су разлог за преглед, а даље праћење одређује гинеколог"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-gynecological-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный приём гинеколога для оценки динамики после лечения, процедуры или полученных результатов",
+        "how": "Врач уточняет жалобы и изменения с прошлого визита, при необходимости проводит осмотр в зеркалах и бимануальное исследование и сверяет результаты, приём занимает около четверти часа",
+        "when": "Завершение курса лечения, контроль после процедуры или операции, разбор результатов мазков и УЗИ, наблюдение при длительно существующем состоянии",
+        "prep": "Взять результаты предыдущих исследований и выписки, визит планировать вне дней менструации, если врач не назначил иначе",
+        "abnormal": "По итогам приёма врач решает, продолжать наблюдение, изменить лечение или назначить дополнительные исследования. Если между визитами появились боль, необычные выделения или кровотечение, обратиться к врачу, не дожидаясь назначенной даты"
+      },
+      "en": {
+        "what": "A repeat appointment with the gynaecologist to see how things have changed after treatment, a procedure or test results",
+        "how": "The doctor asks what has changed since the last visit, examines with a speculum and bimanually if needed and goes through the results, the visit takes about a quarter of an hour",
+        "when": "End of a course of treatment, check after a procedure or operation, discussion of swab and ultrasound results, follow-up of a long-standing condition",
+        "prep": "Bring earlier results and discharge letters and plan the visit outside the days of your period unless the doctor advised otherwise",
+        "abnormal": "After the visit the doctor decides whether to keep watching, change treatment or order more tests. If pain, unusual discharge or bleeding appeared between visits, see a doctor without waiting for the booked date"
+      },
+      "sr": {
+        "what": "Ponovni pregled kod ginekologa radi procjene stanja poslije liječenja, zahvata ili dobijenih nalaza",
+        "how": "Ljekar provjerava tegobe i promjene od prošle posjete, po potrebi radi pregled u spekulumima i bimanuelni pregled i upoređuje nalaze, pregled traje oko petnaestak minuta",
+        "when": "Završetak terapije, kontrola poslije zahvata ili operacije, tumačenje nalaza briseva i ultrazvuka, praćenje dugotrajnog stanja",
+        "prep": "Ponijeti ranije nalaze i otpusna pisma, a posjetu planirati van dana menstruacije, ako ljekar nije odredio drugačije",
+        "abnormal": "Na osnovu pregleda ljekar odlučuje da li nastaviti praćenje, promijeniti terapiju ili uraditi dodatne pretrage. Ako se između posjeta jave bol, neuobičajen iscjedak ili krvarenje, treba se javiti i prije zakazanog termina"
+      },
+      "de": {
+        "what": "Erneuter Termin bei der Frauenärztin oder dem Frauenarzt, um den Verlauf nach Behandlung, Eingriff oder Befunden zu beurteilen",
+        "how": "Es wird besprochen, was sich seit dem letzten Termin geändert hat, bei Bedarf folgen Spekulum- und Tastuntersuchung sowie der Abgleich der Befunde, der Termin dauert etwa eine Viertelstunde",
+        "when": "Abschluss einer Behandlung, Kontrolle nach Eingriff oder Operation, Besprechung von Abstrich- und Ultraschallbefunden, Begleitung eines länger bestehenden Befundes",
+        "prep": "Frühere Befunde und Arztbriefe mitbringen und den Termin möglichst außerhalb der Regelblutung legen, sofern nicht anders besprochen",
+        "abnormal": "Nach dem Termin wird entschieden, ob weiter beobachtet, die Behandlung geändert oder zusätzlich untersucht wird. Treten zwischen den Terminen Schmerzen, ungewohnter Ausfluss oder Blutungen auf, sollte man nicht bis zum vereinbarten Datum warten"
+      },
+      "tr": {
+        "what": "Tedavi, işlem veya çıkan sonuçların ardından durumu değerlendirmek için kadın hastalıkları uzmanına tekrar başvuru",
+        "how": "Hekim son muayeneden bu yana olan değişiklikleri sorar, gerekirse spekulum ve iki elle muayene yapar ve sonuçları karşılaştırır, görüşme yaklaşık on beş dakika sürer",
+        "when": "Tedavinin bitişi, işlem veya ameliyat sonrası kontrol, smear ve ultrason sonuçlarının değerlendirilmesi, süregelen bir durumun izlenmesi",
+        "prep": "Önceki sonuçları ve epikrizleri getirmek, hekim aksini söylemediyse randevuyu adet günleri dışına almak yeterlidir",
+        "abnormal": "Muayene sonunda hekim izlemi sürdürmeye, tedaviyi değiştirmeye veya ek tetkik istemeye karar verir. İki görüşme arasında ağrı, olağandışı akıntı veya kanama olursa randevu gününü beklemeden hekime başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Поновни преглед код гинеколога ради процјене стања послије лијечења, захвата или добијених налаза",
+        "how": "Љекар провјерава тегобе и промјене од прошле посјете, по потреби ради преглед у спекулумима и бимануелни преглед и упоређује налазе, преглед траје око петнаестак минута",
+        "when": "Завршетак терапије, контрола послије захвата или операције, тумачење налаза брисева и ултразвука, праћење дуготрајног стања",
+        "prep": "Понијети раније налазе и отпусна писма, а посјету планирати ван дана менструације, ако љекар није одредио другачије",
+        "abnormal": "На основу прегледа љекар одлучује да ли наставити праћење, промијенити терапију или урадити додатне претраге. Ако се између посјета јаве бол, неуобичајен исцједак или крварење, треба се јавити и прије заказаног термина"
+      }
+    }
+  },
+  {
+    "slug": "pregnancy-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковой осмотр матки и плода во время беременности",
+        "how": "Датчик ведут по животу через гель, на ранних сроках используют вагинальный датчик, исследование безболезненно и занимает около четверти часа",
+        "when": "Плановые сроки наблюдения беременности, уточнение срока и числа плодов, оценка роста плода, положения плаценты и количества вод, жалобы на боль или выделения",
+        "prep": "На ранних сроках при осмотре через живот может потребоваться наполненный мочевой пузырь, на поздних сроках подготовка не нужна, требования клиники уточнить заранее",
+        "abnormal": "Находки описывают размеры, положение и развитие плода и могут отражать особенности течения беременности. Заключение УЗИ не является диагнозом, его трактует акушер-гинеколог вместе с осмотром и анализами"
+      },
+      "en": {
+        "what": "An ultrasound look at the uterus and the baby during pregnancy",
+        "how": "A probe is moved over the abdomen through gel, in early pregnancy a vaginal probe is used, the scan is painless and takes about a quarter of an hour",
+        "when": "Scheduled points of antenatal care, confirming the dates and the number of babies, checking growth, the position of the placenta and the amount of fluid, complaints of pain or discharge",
+        "prep": "Early scans through the abdomen may need a full bladder, later in pregnancy no preparation is needed, check what the clinic expects beforehand",
+        "abnormal": "The report describes size, position and development and may reflect features of how the pregnancy is going. An ultrasound report is not a diagnosis, it is interpreted by the obstetrician together with the examination and tests"
+      },
+      "sr": {
+        "what": "Ultrazvučni pregled materice i ploda tokom trudnoće",
+        "how": "Sonda se pomjera preko stomaka uz gel, a u ranoj trudnoći koristi se vaginalna sonda, pregled je bezbolan i traje oko petnaestak minuta",
+        "when": "Redovni termini praćenja trudnoće, određivanje starosti trudnoće i broja plodova, procjena rasta ploda, položaja posteljice i količine plodove vode, tegobe sa bolom ili iscjetkom",
+        "prep": "U ranoj trudnoći pri pregledu preko stomaka može biti potrebna puna mokraćna bešika, kasnije priprema nije potrebna, uslove provjeriti u ustanovi unaprijed",
+        "abnormal": "Nalaz opisuje mjere, položaj i razvoj ploda i može odražavati osobenosti toka trudnoće. Ultrazvučni nalaz nije dijagnoza, tumači ga ginekolog akušer uz pregled i analize"
+      },
+      "de": {
+        "what": "Ultraschallbeurteilung von Gebärmutter und Kind in der Schwangerschaft",
+        "how": "Der Schallkopf wird mit Gel über den Bauch geführt, in der Frühschwangerschaft wird vaginal geschallt, die Untersuchung ist schmerzfrei und dauert etwa eine Viertelstunde",
+        "when": "Vorgesehene Termine der Schwangerschaftsvorsorge, Bestimmung von Schwangerschaftswoche und Kinderzahl, Beurteilung von Wachstum, Mutterkuchenlage und Fruchtwassermenge, Beschwerden wie Schmerzen oder Ausfluss",
+        "prep": "Frühe Untersuchungen über die Bauchdecke können eine gefüllte Blase erfordern, später ist keine Vorbereitung nötig, die Vorgaben der Praxis vorher erfragen",
+        "abnormal": "Der Befund beschreibt Maße, Lage und Entwicklung und kann Besonderheiten des Schwangerschaftsverlaufs widerspiegeln. Ein Ultraschallbefund ist keine Diagnose, er wird von der Frauenärztin oder dem Frauenarzt zusammen mit Untersuchung und Laborwerten eingeordnet"
+      },
+      "tr": {
+        "what": "Gebelik sırasında rahmin ve bebeğin ultrason ile değerlendirilmesi",
+        "how": "Jel sürülerek prob karın üzerinde gezdirilir, erken gebelikte vajinal prob kullanılır, işlem ağrısızdır ve yaklaşık on beş dakika sürer",
+        "when": "Gebelik takibinin planlı dönemleri, gebelik haftasının ve bebek sayısının belirlenmesi, büyümenin, plasenta yerleşiminin ve sıvı miktarının değerlendirilmesi, ağrı veya akıntı şikâyeti",
+        "prep": "Erken dönemde karından yapılan incelemede mesanenin dolu olması gerekebilir, ileri haftalarda hazırlık gerekmez, kurumun isteğini önceden öğrenmek gerekir",
+        "abnormal": "Rapor ölçüleri, duruşu ve gelişimi anlatır ve gebeliğin seyrine ait özellikleri yansıtabilir. Ultrason raporu tanı değildir, muayene ve tetkiklerle birlikte kadın doğum uzmanı yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучни преглед материце и плода током трудноће",
+        "how": "Сонда се помјера преко стомака уз гел, а у раној трудноћи користи се вагинална сонда, преглед је безболан и траје око петнаестак минута",
+        "when": "Редовни термини праћења трудноће, одређивање старости трудноће и броја плодова, процјена раста плода, положаја постељице и количине плодове воде, тегобе са болом или исцјетком",
+        "prep": "У раној трудноћи при прегледу преко стомака може бити потребна пуна мокраћна бешика, касније припрема није потребна, услове провјерити у установи унапријед",
+        "abnormal": "Налаз описује мјере, положај и развој плода и може одражавати особености тока трудноће. Ултразвучни налаз није дијагноза, тумачи га гинеколог акушер уз преглед и анализе"
+      }
+    }
+  },
+  {
+    "slug": "vulvar-and-vaginal-condyloma-abrasion",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление кондилом, мелких разрастаний кожи и слизистой, в области вульвы и влагалища путём снятия их с поверхности",
+        "how": "После обезболивания врач удаляет образования инструментом и обрабатывает поверхность, при множественных элементах работу делят на несколько сеансов, один сеанс обычно занимает до получаса",
+        "when": "Видимые кондиломы вульвы или влагалища, зуд и дискомфорт в этой области, подготовка к родам, направление после осмотра или кольпоскопии",
+        "prep": "Процедуру планируют вне менструации, перед ней берут мазки, при обезболивании с седацией соблюдать указания о голодании и взять свободное бельё",
+        "abnormal": "Несколько дней сохраняются корочки, жжение и скудные выделения, заживление занимает недели. Образования могут появиться снова, поэтому нужны контрольные осмотры, а кровотечение, нарастающая боль или температура требуют обращения к врачу"
+      },
+      "en": {
+        "what": "Removal of condylomas, small growths of the skin and mucosa, from the vulva and vagina by taking them off the surface",
+        "how": "After local anaesthesia the growths are removed with an instrument and the surface is treated, with many lesions the work is split into several sessions, one session usually takes up to half an hour",
+        "when": "Visible growths on the vulva or in the vagina, itching and discomfort in that area, preparation before birth, referral after an examination or colposcopy",
+        "prep": "The procedure is planned outside the period and swabs are taken beforehand, if sedation is used follow the fasting instructions and bring loose underwear",
+        "abnormal": "Crusts, burning and light discharge last a few days and healing takes weeks. Growths can come back, so follow-up visits are needed, and bleeding, increasing pain or fever should be shown to a doctor"
+      },
+      "sr": {
+        "what": "Uklanjanje kondiloma, sitnih izraštaja kože i sluznice, sa vulve i iz vagine skidanjem sa površine",
+        "how": "Poslije lokalne anestezije ljekar instrumentom skida promjene i obrađuje površinu, a kod brojnih promjena posao se dijeli na nekoliko seansi, jedna seansa obično traje do pola sata",
+        "when": "Vidljivi kondilomi na vulvi ili u vagini, svrab i nelagoda u tom području, priprema prije porođaja, uput poslije pregleda ili kolposkopije",
+        "prep": "Zahvat se planira van menstruacije, prije njega se uzimaju brisevi, a ako se radi uz sedaciju poštovati uputstvo o neuzimanju hrane i ponijeti široko donje rublje",
+        "abnormal": "Nekoliko dana ostaju kraste, pečenje i oskudan iscjedak, a zarastanje traje sedmicama. Promjene se mogu vratiti, pa su potrebne kontrole, a krvarenje, pojačan bol ili temperatura traže pregled kod ljekara"
+      },
+      "de": {
+        "what": "Entfernung von Kondylomen, kleinen Wucherungen von Haut und Schleimhaut, an Vulva und Scheide durch Abtragen von der Oberfläche",
+        "how": "Nach örtlicher Betäubung werden die Veränderungen mit einem Instrument abgetragen und die Fläche versorgt, bei vielen Herden wird in mehreren Sitzungen gearbeitet, eine Sitzung dauert meist bis zu einer halben Stunde",
+        "when": "Sichtbare Wucherungen an Vulva oder in der Scheide, Juckreiz und Beschwerden in diesem Bereich, Vorbereitung vor der Geburt, Überweisung nach Untersuchung oder Kolposkopie",
+        "prep": "Der Eingriff wird außerhalb der Regelblutung geplant und vorher werden Abstriche entnommen, bei Sedierung die Nüchternheitsvorgaben einhalten und weite Unterwäsche mitbringen",
+        "abnormal": "Krusten, Brennen und leichter Ausfluss halten einige Tage an, die Abheilung dauert Wochen. Die Veränderungen können wiederkommen, daher sind Kontrolltermine nötig, und Blutung, zunehmende Schmerzen oder Fieber gehören ärztlich beurteilt"
+      },
+      "tr": {
+        "what": "Vulva ve vajendeki deri ve mukoza büyümeleri olan kondilomların yüzeyden kaldırılarak çıkarılması",
+        "how": "Lokal anesteziden sonra lezyonlar bir aletle alınır ve yüzey bakımı yapılır, çok sayıda lezyonda işlem birkaç seansa bölünür, bir seans genelde yarım saate kadar sürer",
+        "when": "Vulvada veya vajende görülen büyümeler, bu bölgede kaşıntı ve rahatsızlık, doğum öncesi hazırlık, muayene ya da kolposkopi sonrası yönlendirme",
+        "prep": "İşlem adet dönemi dışına planlanır ve öncesinde smear alınır, sedasyon uygulanacaksa açlık talimatına uymak ve bol iç çamaşırı getirmek gerekir",
+        "abnormal": "Birkaç gün kabuklanma, yanma ve hafif akıntı olur, iyileşme haftalar sürer. Lezyonlar tekrarlayabildiği için kontrol muayeneleri gerekir, kanama, artan ağrı veya ateş hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање кондилома, ситних израштаја коже и слузнице, са вулве и из вагине скидањем са површине",
+        "how": "Послије локалне анестезије љекар инструментом скида промјене и обрађује површину, а код бројних промјена посао се дијели на неколико сеанси, једна сеанса обично траје до пола сата",
+        "when": "Видљиви кондиломи на вулви или у вагини, свраб и нелагода у том подручју, припрема прије порођаја, упут послије прегледа или колпоскопије",
+        "prep": "Захват се планира ван менструације, прије њега се узимају брисеви, а ако се ради уз седацију поштовати упутство о неузимању хране и понијети широко доње рубље",
+        "abnormal": "Неколико дана остају красте, печење и оскудан исцједак, а зарастање траје седмицама. Промјене се могу вратити, па су потребне контроле, а крварење, појачан бол или температура траже преглед код љекара"
+      }
+    }
+  },
+  {
+    "slug": "breast-ultrasound-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковой осмотр ткани молочных желёз и ближайших лимфоузлов",
+        "how": "Пациентка лежит с заведёнными за голову руками, врач ведёт датчик по железе через гель, осмотр безболезненный и занимает около четверти часа",
+        "when": "Прощупываемое уплотнение, боль или выделения из соска, наблюдение за ранее описанным образованием, обследование у молодых женщин и во время беременности и кормления, уточнение находок маммографии",
+        "prep": "Не требуется, удобно планировать осмотр в первой половине цикла и не наносить крем на кожу груди перед исследованием",
+        "abnormal": "Описанные изменения могут быть связаны с кистами, доброкачественными узлами, воспалением или строением ткани, категорию находки и дальнейшие шаги, включая биопсию при необходимости, определяет врач"
+      },
+      "en": {
+        "what": "An ultrasound look at breast tissue and the nearby lymph nodes",
+        "how": "The patient lies with the arms behind the head while the probe is moved over the breast through gel, the scan is painless and takes about a quarter of an hour",
+        "when": "A lump that can be felt, pain or discharge from the nipple, follow-up of a previously described finding, assessment in younger women and during pregnancy and breastfeeding, clarification of a mammography finding",
+        "prep": "Not required, it is convenient to book in the first half of the cycle and not to put cream on the skin of the chest beforehand",
+        "abnormal": "The described changes may relate to cysts, benign nodules, inflammation or the structure of the tissue, and the category of the finding and the next steps, including a biopsy if needed, are set by the doctor"
+      },
+      "sr": {
+        "what": "Ultrazvučni pregled tkiva dojke i okolnih limfnih čvorova",
+        "how": "Pacijentkinja leži sa rukama iza glave dok ljekar sondom uz gel prelazi preko dojke, pregled je bezbolan i traje oko petnaestak minuta",
+        "when": "Čvorić koji se napipa, bol ili iscjedak iz bradavice, praćenje ranije opisane promjene, procjena kod mlađih žena i u trudnoći i dojenju, razjašnjenje nalaza mamografije",
+        "prep": "Nije potrebna, zgodno je zakazati u prvoj polovini ciklusa i prije pregleda ne nanositi kremu na kožu grudi",
+        "abnormal": "Opisane promjene mogu biti povezane sa cistama, dobroćudnim čvorićima, upalom ili građom tkiva, a kategoriju nalaza i dalje korake, uključujući biopsiju ako je potrebna, određuje ljekar"
+      },
+      "de": {
+        "what": "Ultraschallbeurteilung des Brustgewebes und der benachbarten Lymphknoten",
+        "how": "Die Patientin liegt mit den Armen hinter dem Kopf, während der Schallkopf mit Gel über die Brust geführt wird, die Untersuchung ist schmerzfrei und dauert etwa eine Viertelstunde",
+        "when": "Tastbarer Knoten, Schmerzen oder Absonderung aus der Brustwarze, Verlaufskontrolle eines zuvor beschriebenen Befundes, Beurteilung bei jüngeren Frauen sowie in Schwangerschaft und Stillzeit, Abklärung eines Mammographiebefundes",
+        "prep": "Nicht erforderlich, günstig ist die erste Zyklushälfte, und vor der Untersuchung sollte keine Creme auf die Haut der Brust aufgetragen werden",
+        "abnormal": "Beschriebene Veränderungen können mit Zysten, gutartigen Knoten, einer Entzündung oder dem Gewebeaufbau zusammenhängen, die Einordnung des Befundes und das weitere Vorgehen, bei Bedarf mit Gewebeprobe, legt die Ärztin oder der Arzt fest"
+      },
+      "tr": {
+        "what": "Meme dokusunun ve yakın lenf düğümlerinin ultrason ile incelenmesi",
+        "how": "Hasta kollarını başının arkasına alarak yatar, hekim jel ile probu meme üzerinde gezdirir, işlem ağrısızdır ve yaklaşık on beş dakika sürer",
+        "when": "Elle hissedilen kitle, meme başında ağrı veya akıntı, daha önce tanımlanmış bir bulgunun izlenmesi, genç kadınlarda ve gebelik ile emzirme döneminde değerlendirme, mamografi bulgusunun açıklığa kavuşturulması",
+        "prep": "Gerekmez, randevuyu siklusun ilk yarısına almak uygundur ve inceleme öncesi göğüs derisine krem sürülmemelidir",
+        "abnormal": "Tanımlanan değişiklikler kist, iyi huylu nodül, iltihap ya da doku yapısıyla ilişkili olabilir, bulgunun kategorisini ve gerekirse biyopsi dahil sonraki adımları hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучни преглед ткива дојке и околних лимфних чворова",
+        "how": "Пацијенткиња лежи са рукама иза главе док љекар сондом уз гел прелази преко дојке, преглед је безболан и траје око петнаестак минута",
+        "when": "Чворић који се напипа, бол или исцједак из брадавице, праћење раније описане промјене, процјена код млађих жена и у трудноћи и дојењу, разјашњење налаза мамографије",
+        "prep": "Није потребна, згодно је заказати у првој половини циклуса и прије прегледа не наносити крему на кожу груди",
+        "abnormal": "Описане промјене могу бити повезане са цистама, доброћудним чворићима, упалом или грађом ткива, а категорију налаза и даље кораке, укључујући биопсију ако је потребна, одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "cervical-drug-application",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Местное нанесение лекарственного средства на шейку матки на приёме у гинеколога",
+        "how": "Врач вводит зеркала, осушает шейку тампоном и наносит препарат аппликатором или тампоном, процедура занимает несколько минут",
+        "when": "Воспалительные изменения шейки матки, обработка после диагностических вмешательств, назначенный врачом курс местной терапии",
+        "prep": "Приходить вне дней менструации, накануне не использовать вагинальные средства и спринцевание, если врач не указал иначе",
+        "abnormal": "Скудные выделения и лёгкое жжение в течение нескольких дней после нанесения ожидаемы. Сколько раз повторять процедуру, определяет врач, а усиление боли, кровотечение или температура требуют осмотра"
+      },
+      "en": {
+        "what": "Applying a medicine locally to the cervix during a gynaecological appointment",
+        "how": "A speculum is inserted, the cervix is dried with a swab and the preparation is applied with an applicator or a tampon, it takes a few minutes",
+        "when": "Inflammatory changes of the cervix, treatment after diagnostic procedures, a course of local therapy prescribed by the doctor",
+        "prep": "Come outside the days of your period and avoid vaginal products and douching the day before unless the doctor said otherwise",
+        "abnormal": "Light discharge and mild burning for a few days after the application are expected. How many times the procedure is repeated is decided by the doctor, and increasing pain, bleeding or fever call for a review"
+      },
+      "sr": {
+        "what": "Lokalna primjena lijeka na grlić materice tokom ginekološkog pregleda",
+        "how": "Ljekar postavi spekulume, osuši grlić tupferom i nanese preparat aplikatorom ili tamponom, postupak traje nekoliko minuta",
+        "when": "Upalne promjene grlića materice, obrada poslije dijagnostičkih zahvata, kura lokalne terapije koju je odredio ljekar",
+        "prep": "Doći van dana menstruacije, a dan ranije ne koristiti vaginalne preparate i ispiranje, osim ako ljekar nije rekao drugačije",
+        "abnormal": "Oskudan iscjedak i blago pečenje nekoliko dana poslije nanošenja su očekivani. Koliko puta se postupak ponavlja određuje ljekar, a pojačan bol, krvarenje ili temperatura traže pregled"
+      },
+      "de": {
+        "what": "Örtliches Auftragen eines Medikaments auf den Gebärmutterhals während der frauenärztlichen Untersuchung",
+        "how": "Ein Spekulum wird eingesetzt, der Muttermund mit einem Tupfer getrocknet und das Präparat mit Applikator oder Tupfer aufgebracht, das dauert wenige Minuten",
+        "when": "Entzündliche Veränderungen am Gebärmutterhals, Behandlung nach diagnostischen Eingriffen, eine ärztlich verordnete örtliche Behandlungsserie",
+        "prep": "Außerhalb der Regelblutung kommen und am Vortag keine Vaginalpräparate und keine Spülungen verwenden, sofern nicht anders besprochen",
+        "abnormal": "Leichter Ausfluss und ein mildes Brennen für einige Tage sind zu erwarten. Wie oft die Anwendung wiederholt wird, legt die Ärztin oder der Arzt fest, und zunehmende Schmerzen, Blutung oder Fieber gehören untersucht"
+      },
+      "tr": {
+        "what": "Jinekolojik muayene sırasında rahim ağzına ilacın yerel olarak uygulanması",
+        "how": "Spekulum yerleştirilir, rahim ağzı tamponla kurulanır ve preparat aplikatör ya da tamponla sürülür, işlem birkaç dakika sürer",
+        "when": "Rahim ağzındaki iltihabi değişiklikler, tanısal işlemler sonrası bakım, hekimin belirlediği yerel tedavi kürü",
+        "prep": "Adet günleri dışında gelmek ve hekim aksini söylemediyse bir gün önce vajinal preparat ve duş kullanmamak gerekir",
+        "abnormal": "Uygulamadan sonra birkaç gün hafif akıntı ve hafif yanma beklenen durumdur. İşlemin kaç kez tekrarlanacağına hekim karar verir, artan ağrı, kanama veya ateş muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Локална примјена лијека на грлић материце током гинеколошког прегледа",
+        "how": "Љекар постави спекулуме, осуши грлић тупфером и нанесе препарат апликатором или тампоном, поступак траје неколико минута",
+        "when": "Упалне промјене грлића материце, обрада послије дијагностичких захвата, кура локалне терапије коју је одредио љекар",
+        "prep": "Доћи ван дана менструације, а дан раније не користити вагиналне препарате и испирање, осим ако љекар није рекао другачије",
+        "abnormal": "Оскудан исцједак и благо печење неколико дана послије наношења су очекивани. Колико пута се поступак понавља одређује љекар, а појачан бол, крварење или температура траже преглед"
+      }
+    }
+  },
+  {
+    "slug": "delivery-room-usage-per-birth",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Пребывание роженицы в родильном зале, помещении, оснащённом для ведения родов и наблюдения за матерью и ребёнком",
+        "how": "В зале есть родильная кровать, слежение за сердцебиением плода и схватками и место для осмотра новорождённого, рядом акушерка и врач, женщина остаётся здесь в активной фазе родов и первые часы после них",
+        "when": "Роды через естественные родовые пути в срок, роды после вызывания родовой деятельности, наблюдение в первом периоде при поступлении со схватками или после излития вод",
+        "prep": "Собрать сумку с документами и обменной картой, уточнить правила клиники о присутствии сопровождающего и заранее обсудить с врачом вопросы обезболивания",
+        "abnormal": "После родов мать и ребёнка наблюдают несколько часов, затем переводят в послеродовое отделение. Сильная боль, обильное кровотечение, температура или головокружение в первые дни требуют немедленного обращения к персоналу или врачу"
+      },
+      "en": {
+        "what": "Staying in the delivery room, the space equipped for giving birth and for watching over mother and baby",
+        "how": "The room has a birthing bed, monitoring of the baby's heartbeat and contractions and a place to check the newborn, a midwife and a doctor are nearby, and the woman stays here through active labour and the first hours after the birth",
+        "when": "Vaginal birth at term, birth after labour is started medically, observation in the first stage when arriving with contractions or after the waters break",
+        "prep": "Pack documents and the pregnancy record, check the hospital's rules on having a companion present and discuss pain relief with the doctor in advance",
+        "abnormal": "After the birth mother and baby are watched for several hours and then moved to the postnatal ward. Severe pain, heavy bleeding, fever or dizziness in the first days should be reported to staff or to a doctor at once"
+      },
+      "sr": {
+        "what": "Boravak porodilje u porođajnoj sali, prostoriji opremljenoj za vođenje porođaja i nadzor majke i bebe",
+        "how": "U sali su porođajni krevet, nadzor otkucaja srca ploda i kontrakcija i mjesto za pregled novorođenčeta, babica i ljekar su uz porodilju, koja tu ostaje tokom aktivne faze porođaja i prvih sati poslije njega",
+        "when": "Porođaj prirodnim putem u terminu, porođaj poslije izazivanja porođajne aktivnosti, nadzor u prvom porođajnom dobu pri dolasku sa kontrakcijama ili poslije pucanja vodenjaka",
+        "prep": "Spremiti torbu sa dokumentima i trudničkom knjižicom, provjeriti pravila ustanove o prisustvu pratioca i unaprijed sa ljekarom razgovarati o ublažavanju bolova",
+        "abnormal": "Poslije porođaja majka i beba se nadziru nekoliko sati, a zatim prelaze na odjeljenje. Jak bol, obilno krvarenje, temperatura ili vrtoglavica u prvim danima odmah se prijavljuju osoblju ili ljekaru"
+      },
+      "de": {
+        "what": "Aufenthalt der Gebärenden im Kreißsaal, dem für die Geburt und die Überwachung von Mutter und Kind ausgestatteten Raum",
+        "how": "Im Raum stehen ein Gebärbett, die Überwachung von kindlichen Herztönen und Wehen sowie ein Platz für die Erstuntersuchung des Neugeborenen, Hebamme und Ärztin oder Arzt sind dabei, die Frau bleibt während der aktiven Geburtsphase und in den ersten Stunden danach hier",
+        "when": "Spontangeburt am Termin, Geburt nach eingeleiteten Wehen, Überwachung in der Eröffnungsphase bei Aufnahme mit Wehen oder nach Blasensprung",
+        "prep": "Tasche mit Unterlagen und Mutterpass packen, die Regeln der Klinik zur Begleitperson klären und die Schmerzlinderung vorab mit der Ärztin oder dem Arzt besprechen",
+        "abnormal": "Nach der Geburt werden Mutter und Kind einige Stunden überwacht und dann auf die Wochenstation verlegt. Starke Schmerzen, starke Blutung, Fieber oder Schwindel in den ersten Tagen sollten dem Personal oder einer Ärztin oder einem Arzt sofort gemeldet werden"
+      },
+      "tr": {
+        "what": "Doğumun yürütülmesi ile anne ve bebeğin izlenmesi için donatılmış doğum salonunda kalış",
+        "how": "Salonda doğum yatağı, bebeğin kalp atışı ile kasılmaları izleyen düzenek ve yenidoğanın ilk muayenesi için bir alan bulunur, ebe ve hekim yanındadır, kadın doğumun etkin evresinde ve sonrasındaki ilk saatlerde burada kalır",
+        "when": "Zamanında normal doğum, doğumun tıbbi olarak başlatılmasının ardından doğum, kasılmalarla ya da suyun gelmesiyle başvuruda açılma evresinin izlenmesi",
+        "prep": "Belgeler ve gebelik takip kartı ile çanta hazırlamak, kurumun refakatçi kurallarını öğrenmek ve ağrı giderme seçeneklerini önceden hekimle konuşmak gerekir",
+        "abnormal": "Doğumdan sonra anne ve bebek birkaç saat izlenir, ardından doğum sonrası servise alınır. İlk günlerde şiddetli ağrı, yoğun kanama, ateş veya baş dönmesi hemen görevlilere ya da hekime bildirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Боравак породиље у порођајној сали, просторији опремљеној за вођење порођаја и надзор мајке и бебе",
+        "how": "У сали су порођајни кревет, надзор откуцаја срца плода и контракција и мјесто за преглед новорођенчета, бабица и љекар су уз породиљу, која ту остаје током активне фазе порођаја и првих сати послије њега",
+        "when": "Порођај природним путем у термину, порођај послије изазивања порођајне активности, надзор у првом порођајном добу при доласку са контракцијама или послије пуцања водењака",
+        "prep": "Спремити торбу са документима и трудничком књижицом, провјерити правила установе о присуству пратиоца и унапријед са љекаром разговарати о ублажавању болова",
+        "abnormal": "Послије порођаја мајка и беба се надзиру неколико сати, а затим прелазе на одјељење. Јак бол, обилно крварење, температура или вртоглавица у првим данима одмах се пријављују особљу или љекару"
+      }
+    }
+  },
+  {
+    "slug": "embryo-transfer",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Перенос эмбриона, полученного в лаборатории, в полость матки, завершающий этап цикла экстракорпорального оплодотворения",
+        "how": "Через шейку матки под контролем УЗИ вводят тонкий мягкий катетер и выпускают эмбрион в полость матки, процедура занимает несколько минут и обычно не требует обезболивания",
+        "when": "Цикл экстракорпорального оплодотворения после оплодотворения и культивирования эмбрионов, перенос размороженного эмбриона в подготовленном цикле",
+        "prep": "Приходить в назначенное время, может потребоваться умеренно наполненный мочевой пузырь, назначенную поддержку принимать строго так, как определил врач",
+        "abnormal": "После переноса часты лёгкие тянущие ощущения и скудные выделения, результат проверяют анализом крови в назначенный врачом день. Сильная боль, быстро увеличивающийся живот, одышка или обильное кровотечение требуют немедленного обращения к врачу"
+      },
+      "en": {
+        "what": "Placing an embryo grown in the laboratory into the uterine cavity, the final step of an in vitro fertilisation cycle",
+        "how": "A thin soft catheter is passed through the cervix under ultrasound guidance and the embryo is released into the cavity, it takes a few minutes and usually needs no anaesthesia",
+        "when": "An in vitro fertilisation cycle after fertilisation and embryo culture, transfer of a thawed embryo in a prepared cycle",
+        "prep": "Come at the appointed time, a moderately full bladder may be requested, and take the prescribed support exactly as the doctor set it",
+        "abnormal": "Mild pulling sensations and light discharge after the transfer are common, and the outcome is checked by a blood test on the day the doctor sets. Severe pain, a quickly swelling abdomen, shortness of breath or heavy bleeding need urgent medical attention"
+      },
+      "sr": {
+        "what": "Unošenje embriona dobijenog u laboratoriji u šupljinu materice, završni korak ciklusa vantjelesne oplodnje",
+        "how": "Kroz grlić materice se pod kontrolom ultrazvuka uvodi tanak mekani kateter i embrion se oslobađa u šupljinu, postupak traje nekoliko minuta i obično ne traži anesteziju",
+        "when": "Ciklus vantjelesne oplodnje poslije oplodnje i kultivacije embriona, prenos odmrznutog embriona u pripremljenom ciklusu",
+        "prep": "Doći u zakazano vrijeme, može biti zatražena umjereno puna mokraćna bešika, a propisanu potporu uzimati tačno onako kako je ljekar odredio",
+        "abnormal": "Poslije prenosa su česti blago zatezanje i oskudan iscjedak, a ishod se provjerava analizom krvi onog dana koji odredi ljekar. Jak bol, brzo rastući stomak, otežano disanje ili obilno krvarenje traže hitno javljanje ljekaru"
+      },
+      "de": {
+        "what": "Einbringen eines im Labor herangereiften Embryos in die Gebärmutterhöhle, der letzte Schritt eines Zyklus der künstlichen Befruchtung",
+        "how": "Unter Ultraschallsicht wird ein dünner weicher Katheter durch den Gebärmutterhals geführt und der Embryo in die Höhle abgegeben, das dauert wenige Minuten und kommt meist ohne Betäubung aus",
+        "when": "Zyklus der künstlichen Befruchtung nach Befruchtung und Kultivierung der Embryonen, Transfer eines aufgetauten Embryos im vorbereiteten Zyklus",
+        "prep": "Pünktlich zum Termin erscheinen, eine mäßig gefüllte Blase kann gewünscht sein, und die verordnete Unterstützung genau nach ärztlicher Vorgabe einnehmen",
+        "abnormal": "Leichtes Ziehen und geringer Ausfluss nach dem Transfer sind häufig, das Ergebnis wird an dem von der Ärztin oder dem Arzt festgelegten Tag im Blut geprüft. Starke Schmerzen, ein rasch zunehmender Bauchumfang, Atemnot oder starke Blutung erfordern sofortige ärztliche Hilfe"
+      },
+      "tr": {
+        "what": "Laboratuvarda geliştirilen embriyonun rahim boşluğuna yerleştirilmesi, tüp bebek döngüsünün son adımı",
+        "how": "Ultrason eşliğinde rahim ağzından ince ve yumuşak bir kateter ilerletilir ve embriyo boşluğa bırakılır, işlem birkaç dakika sürer ve genellikle anestezi gerektirmez",
+        "when": "Döllenme ve embriyo kültürünün ardından tüp bebek döngüsü, hazırlanmış döngüde çözdürülmüş embriyonun transferi",
+        "prep": "Randevu saatinde gelmek, mesanenin ölçülü dolu olması istenebilir, verilen destek tedavisini hekimin belirlediği şekilde sürdürmek gerekir",
+        "abnormal": "Transferden sonra hafif çekilme hissi ve az miktarda akıntı sık görülür, sonuç hekimin belirlediği gün kan tetkiki ile değerlendirilir. Şiddetli ağrı, hızla büyüyen karın, nefes darlığı veya yoğun kanama acil hekim başvurusu gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уношење ембриона добијеног у лабораторији у шупљину материце, завршни корак циклуса вантјелесне оплодње",
+        "how": "Кроз грлић материце се под контролом ултразвука уводи танак мекани катетер и ембрион се ослобађа у шупљину, поступак траје неколико минута и обично не тражи анестезију",
+        "when": "Циклус вантјелесне оплодње послије оплодње и култивације ембриона, пренос одмрзнутог ембриона у припремљеном циклусу",
+        "prep": "Доћи у заказано вријеме, може бити затражена умјерено пуна мокраћна бешика, а прописану потпору узимати тачно онако како је љекар одредио",
+        "abnormal": "Послије преноса су чести благо затезање и оскудан исцједак, а исход се провјерава анализом крви оног дана који одреди љекар. Јак бол, брзо растући стомак, отежано дисање или обилно крварење траже хитно јављање љекару"
+      }
+    }
+  },
+  {
+    "slug": "first-specialist-curative-gynecological-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первый приём у гинеколога по поводу жалоб или по направлению, с осмотром и составлением плана обследования",
+        "how": "Врач собирает анамнез и сведения о цикле, проводит осмотр в зеркалах и бимануальное исследование, при необходимости берёт мазки и делает УЗИ, приём занимает около двадцати минут",
+        "when": "Боль внизу живота, необычные выделения, нарушения цикла, вопросы контрацепции и планирования беременности, направление от другого врача",
+        "prep": "Визит планировать вне дней менструации, накануне не пользоваться вагинальными средствами и спринцеванием, взять выписки и результаты прежних анализов",
+        "abnormal": "По итогам приёма врач формулирует предварительное заключение и назначает анализы, УЗИ или лечение. Жалобы и находки трактует только врач, а при их усилении до повторного визита нужно прийти раньше"
+      },
+      "en": {
+        "what": "A first appointment with a gynaecologist for a complaint or on referral, with an examination and a plan for further tests",
+        "how": "The doctor takes the history and cycle details, examines with a speculum and bimanually, takes swabs if needed and may do an ultrasound, the appointment takes about twenty minutes",
+        "when": "Pain in the lower abdomen, unusual discharge, cycle problems, questions about contraception and planning a pregnancy, referral from another doctor",
+        "prep": "Plan the visit outside the days of your period, avoid vaginal products and douching the day before, and bring letters and earlier results",
+        "abnormal": "At the end the doctor gives a preliminary assessment and orders tests, ultrasound or treatment. Complaints and findings are interpreted only by the doctor, and if they get worse before the next visit, come earlier"
+      },
+      "sr": {
+        "what": "Prvi pregled kod ginekologa zbog tegoba ili po uputu, sa pregledom i planom daljih pretraga",
+        "how": "Ljekar uzima anamnezu i podatke o ciklusu, radi pregled u spekulumima i bimanuelni pregled, po potrebi uzima briseve i uradi ultrazvuk, pregled traje oko dvadesetak minuta",
+        "when": "Bol u donjem dijelu stomaka, neuobičajen iscjedak, poremećaji ciklusa, pitanja kontracepcije i planiranja trudnoće, uput drugog ljekara",
+        "prep": "Posjetu planirati van dana menstruacije, dan ranije ne koristiti vaginalne preparate i ispiranje i ponijeti ranije nalaze i otpusna pisma",
+        "abnormal": "Na kraju pregleda ljekar daje prvo mišljenje i određuje analize, ultrazvuk ili terapiju. Tegobe i nalaze tumači samo ljekar, a ako se pojačaju prije sljedeće posjete, treba doći ranije"
+      },
+      "de": {
+        "what": "Erster Termin bei der Frauenärztin oder dem Frauenarzt wegen Beschwerden oder auf Überweisung, mit Untersuchung und Plan für die weitere Abklärung",
+        "how": "Vorgeschichte und Zyklusangaben werden erhoben, es folgen Spekulum- und Tastuntersuchung, bei Bedarf Abstriche und Ultraschall, der Termin dauert etwa zwanzig Minuten",
+        "when": "Schmerzen im Unterbauch, ungewohnter Ausfluss, Zyklusstörungen, Fragen zu Verhütung und Kinderwunsch, Überweisung durch eine andere Ärztin oder einen anderen Arzt",
+        "prep": "Den Termin außerhalb der Regelblutung legen, am Vortag auf Vaginalpräparate und Spülungen verzichten und frühere Befunde und Arztbriefe mitbringen",
+        "abnormal": "Am Ende wird eine erste Einschätzung gegeben und es werden Laborwerte, Ultraschall oder eine Behandlung veranlasst. Beschwerden und Befunde ordnet nur die Ärztin oder der Arzt ein, und verstärken sie sich vor dem nächsten Termin, sollte man früher kommen"
+      },
+      "tr": {
+        "what": "Şikâyet nedeniyle ya da sevk ile kadın hastalıkları uzmanına ilk başvuru, muayene ve ileri tetkik planı ile birlikte",
+        "how": "Hekim öykü ve adet düzeni bilgilerini alır, spekulum ve iki elle muayene yapar, gerekirse smear alır ve ultrason uygular, görüşme yaklaşık yirmi dakika sürer",
+        "when": "Karın alt bölgesinde ağrı, olağandışı akıntı, adet düzensizliği, korunma ve gebelik planlaması soruları, başka bir hekimin sevki",
+        "prep": "Randevuyu adet günleri dışına almak, bir gün önce vajinal preparat ve duş kullanmamak, önceki sonuç ve epikrizleri getirmek gerekir",
+        "abnormal": "Muayene sonunda hekim ilk değerlendirmesini yapar ve tetkik, ultrason ya da tedavi planlar. Şikâyet ve bulguları yalnızca hekim yorumlar, sonraki randevudan önce artarlarsa daha erken başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Први преглед код гинеколога због тегоба или по упуту, са прегледом и планом даљих претрага",
+        "how": "Љекар узима анамнезу и податке о циклусу, ради преглед у спекулумима и бимануелни преглед, по потреби узима брисеве и уради ултразвук, преглед траје око двадесетак минута",
+        "when": "Бол у доњем дијелу стомака, неуобичајен исцједак, поремећаји циклуса, питања контрацепције и планирања трудноће, упут другог љекара",
+        "prep": "Посјету планирати ван дана менструације, дан раније не користити вагиналне препарате и испирање и понијети раније налазе и отпусна писма",
+        "abnormal": "На крају прегледа љекар даје прво мишљење и одређује анализе, ултразвук или терапију. Тегобе и налазе тумачи само љекар, а ако се појачају прије сљедеће посјете, треба доћи раније"
+      }
+    }
+  },
+  {
+    "slug": "follicle-aspiration",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Забор содержимого фолликулов яичника с яйцеклетками для процедуры экстракорпорального оплодотворения",
+        "how": "Под контролем вагинального УЗИ врач тонкой иглой через стенку влагалища поочерёдно опорожняет фолликулы, манипуляция идёт под коротким обезболиванием и занимает порядка пятнадцати-двадцати минут",
+        "when": "Завершение стимуляции яичников в цикле экстракорпорального оплодотворения, получение яйцеклеток для оплодотворения или замораживания, пункция в естественном цикле",
+        "prep": "Выполняется в точно назначенный врачом час после препарата, завершающего созревание яйцеклеток, соблюдать указания клиники о голодании, прийти без косметики и с сопровождающим",
+        "abnormal": "В первые сутки обычны тянущие ощущения внизу живота и скудные выделения, число полученных клеток сообщает эмбриолог. Нарастающая боль, вздутие с быстрой прибавкой веса, одышка, температура или обильное кровотечение требуют срочного обращения к врачу"
+      },
+      "en": {
+        "what": "Collecting the fluid of ovarian follicles with the egg cells for in vitro fertilisation",
+        "how": "Under vaginal ultrasound guidance a thin needle passes through the vaginal wall and empties the follicles one by one, it is done under short anaesthesia and takes roughly fifteen to twenty minutes",
+        "when": "The end of ovarian stimulation in an in vitro fertilisation cycle, collecting eggs for fertilisation or for freezing, puncture in a natural cycle",
+        "prep": "It is done at the exact hour set by the doctor after the medicine that completes egg maturation, follow the clinic's fasting instructions and come without make-up and with someone to accompany you",
+        "abnormal": "Pulling sensations in the lower abdomen and light discharge are usual on the first day, and the number of eggs collected is reported by the embryologist. Increasing pain, bloating with rapid weight gain, shortness of breath, fever or heavy bleeding need urgent medical attention"
+      },
+      "sr": {
+        "what": "Uzimanje sadržaja folikula jajnika sa jajnim ćelijama za postupak vantjelesne oplodnje",
+        "how": "Pod kontrolom vaginalnog ultrazvuka ljekar tankom iglom kroz zid vagine redom prazni folikule, zahvat se radi uz kratku anesteziju i traje petnaestak do dvadesetak minuta",
+        "when": "Završetak stimulacije jajnika u ciklusu vantjelesne oplodnje, dobijanje jajnih ćelija za oplodnju ili zamrzavanje, punkcija u prirodnom ciklusu",
+        "prep": "Radi se u tačno zakazani sat poslije lijeka koji završava sazrijevanje jajnih ćelija, poštovati uputstvo ustanove o neuzimanju hrane i doći bez šminke i sa pratnjom",
+        "abnormal": "Prvog dana su uobičajeni zatezanje u donjem dijelu stomaka i oskudan iscjedak, a broj dobijenih ćelija saopštava embriolog. Pojačan bol, nadutost sa brzim dobijanjem na težini, otežano disanje, temperatura ili obilno krvarenje traže hitno javljanje ljekaru"
+      },
+      "de": {
+        "what": "Gewinnung des Inhalts der Eibläschen mit den Eizellen für die künstliche Befruchtung",
+        "how": "Unter vaginaler Ultraschallsicht wird mit einer dünnen Nadel durch die Scheidenwand ein Eibläschen nach dem anderen entleert, der Eingriff erfolgt in kurzer Narkose und dauert etwa fünfzehn bis zwanzig Minuten",
+        "when": "Abschluss der Eierstockstimulation im Zyklus der künstlichen Befruchtung, Gewinnung von Eizellen zur Befruchtung oder zum Einfrieren, Punktion im natürlichen Zyklus",
+        "prep": "Der Termin liegt zur exakt vorgegebenen Stunde nach dem Medikament, das die Eizellreifung abschließt, die Nüchternheitsvorgaben der Klinik einhalten und ohne Make-up und in Begleitung kommen",
+        "abnormal": "Am ersten Tag sind ein Ziehen im Unterbauch und leichter Ausfluss üblich, die Zahl der gewonnenen Eizellen teilt das Labor mit. Zunehmende Schmerzen, ein geblähter Bauch mit rascher Gewichtszunahme, Atemnot, Fieber oder starke Blutung erfordern sofortige ärztliche Hilfe"
+      },
+      "tr": {
+        "what": "Tüp bebek işlemi için yumurtalık foliküllerinin içeriğinin yumurta hücreleriyle birlikte alınması",
+        "how": "Vajinal ultrason eşliğinde ince bir iğne vajen duvarından geçirilerek foliküller sırayla boşaltılır, işlem kısa anestezi ile yapılır ve yaklaşık on beş ile yirmi dakika sürer",
+        "when": "Tüp bebek döngüsünde yumurtalık uyarımının tamamlanması, döllenme ya da dondurma için yumurta toplanması, doğal döngüde ponksiyon",
+        "prep": "Yumurta olgunlaşmasını tamamlayan ilaçtan sonra hekimin verdiği tam saatte yapılır, kurumun açlık talimatına uymak, makyajsız ve refakatçi ile gelmek gerekir",
+        "abnormal": "İlk gün karın alt bölgesinde çekilme hissi ve hafif akıntı olağandır, toplanan hücre sayısını embriyolog bildirir. Artan ağrı, hızlı kilo alımıyla giden şişkinlik, nefes darlığı, ateş veya yoğun kanama acil hekim başvurusu gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Узимање садржаја фоликула јајника са јајним ћелијама за поступак вантјелесне оплодње",
+        "how": "Под контролом вагиналног ултразвука љекар танком иглом кроз зид вагине редом празни фоликуле, захват се ради уз кратку анестезију и траје петнаестак до двадесетак минута",
+        "when": "Завршетак стимулације јајника у циклусу вантјелесне оплодње, добијање јајних ћелија за оплодњу или замрзавање, пункција у природном циклусу",
+        "prep": "Ради се у тачно заказани сат послије лијека који завршава сазријевање јајних ћелија, поштовати упутство установе о неузимању хране и доћи без шминке и са пратњом",
+        "abnormal": "Првог дана су уобичајени затезање у доњем дијелу стомака и оскудан исцједак, а број добијених ћелија саопштава ембриолог. Појачан бол, надутост са брзим добијањем на тежини, отежано дисање, температура или обилно крварење траже хитно јављање љекару"
+      }
+    }
+  },
+  {
+    "slug": "pap-test-lab-analysis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лабораторное исследование клеток шейки матки, взятых мазком на цитологию",
+        "how": "Материал из цервикального канала и с поверхности шейки наносят на стекло или помещают в жидкую среду, в лаборатории его окрашивают и врач-цитолог изучает клетки под микроскопом",
+        "when": "Плановый скрининг состояния шейки матки по графику, который задаёт врач, наблюдение после ранее изменённого мазка, контроль после лечения шейки матки",
+        "prep": "Материал берут вне менструации, за двое суток до забора воздерживаются от половых контактов, вагинальных средств и спринцевания",
+        "abnormal": "Заключение описывает качество материала и характер клеток, изменения могут быть связаны с воспалением, гормональным фоном или перестройкой эпителия. Повторить ли мазок, сделать кольпоскопию или другое исследование, решает гинеколог"
+      },
+      "en": {
+        "what": "Laboratory examination of cervical cells taken as a cytology smear",
+        "how": "Material from the cervical canal and the surface of the cervix is spread on a slide or put into a liquid medium, then stained in the laboratory and studied under the microscope by a cytologist",
+        "when": "Routine screening of the cervix on the schedule set by the doctor, follow-up after a previously changed smear, check after treatment of the cervix",
+        "prep": "The sample is taken outside the period, and for two days before it intercourse, vaginal products and douching are avoided",
+        "abnormal": "The report describes the quality of the sample and the character of the cells, and changes may relate to inflammation, hormonal status or remodelling of the epithelium. Whether to repeat the smear, do a colposcopy or another test is decided by the gynaecologist"
+      },
+      "sr": {
+        "what": "Laboratorijski pregled ćelija grlića materice uzetih citološkim brisom",
+        "how": "Materijal iz kanala i sa površine grlića nanosi se na pločicu ili stavlja u tečnu podlogu, u laboratoriji se boji i citolog ga pregleda pod mikroskopom",
+        "when": "Redovni skrining stanja grlića materice po rasporedu koji odredi ljekar, praćenje poslije ranije izmijenjenog brisa, kontrola poslije liječenja grlića",
+        "prep": "Uzorak se uzima van menstruacije, a dva dana prije uzimanja izbjegavaju se odnosi, vaginalni preparati i ispiranje",
+        "abnormal": "Nalaz opisuje kvalitet uzorka i izgled ćelija, a promjene mogu biti povezane sa upalom, hormonskim stanjem ili preobražajem epitela. Da li ponoviti bris, uraditi kolposkopiju ili drugu pretragu, odlučuje ginekolog"
+      },
+      "de": {
+        "what": "Laboruntersuchung der Zellen des Gebärmutterhalses, die als zytologischer Abstrich entnommen wurden",
+        "how": "Material aus dem Kanal und von der Oberfläche des Muttermunds wird auf einen Objektträger aufgetragen oder in ein flüssiges Medium gegeben, im Labor gefärbt und von einer Zytologin oder einem Zytologen unter dem Mikroskop beurteilt",
+        "when": "Regelmäßige Vorsorge des Gebärmutterhalses nach dem ärztlich festgelegten Zeitplan, Verlaufskontrolle nach einem zuvor veränderten Abstrich, Kontrolle nach Behandlung am Muttermund",
+        "prep": "Die Probe wird außerhalb der Regelblutung entnommen, zwei Tage davor wird auf Geschlechtsverkehr, Vaginalpräparate und Spülungen verzichtet",
+        "abnormal": "Der Befund beschreibt die Qualität der Probe und das Aussehen der Zellen, Veränderungen können mit einer Entzündung, der Hormonlage oder dem Umbau des Epithels zusammenhängen. Ob der Abstrich wiederholt, eine Kolposkopie oder eine andere Untersuchung gemacht wird, entscheidet die Frauenärztin oder der Frauenarzt"
+      },
+      "tr": {
+        "what": "Sitolojik yayma ile alınan rahim ağzı hücrelerinin laboratuvarda incelenmesi",
+        "how": "Kanaldan ve rahim ağzı yüzeyinden alınan materyal lama yayılır ya da sıvı ortama konur, laboratuvarda boyanır ve sitoloji uzmanı mikroskopta değerlendirir",
+        "when": "Hekimin belirlediği programa göre rahim ağzı taraması, daha önce değişiklik saptanan yaymadan sonra izlem, rahim ağzı tedavisi sonrası kontrol",
+        "prep": "Örnek adet dönemi dışında alınır, alınmadan iki gün önce cinsel ilişki, vajinal preparat ve duştan kaçınılır",
+        "abnormal": "Rapor örneğin kalitesini ve hücrelerin görünümünü anlatır, değişiklikler iltihap, hormonal durum ya da epitelin yenilenmesiyle ilişkili olabilir. Yaymanın tekrarı, kolposkopi veya başka bir tetkik gerekip gerekmediğine kadın hastalıkları uzmanı karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Лабораторијски преглед ћелија грлића материце узетих цитолошким брисом",
+        "how": "Материјал из канала и са површине грлића наноси се на плочицу или ставља у течну подлогу, у лабораторији се боји и цитолог га прегледа под микроскопом",
+        "when": "Редовни скрининг стања грлића материце по распореду који одреди љекар, праћење послије раније измијењеног бриса, контрола послије лијечења грлића",
+        "prep": "Узорак се узима ван менструације, а два дана прије узимања избјегавају се односи, вагинални препарати и испирање",
+        "abnormal": "Налаз описује квалитет узорка и изглед ћелија, а промјене могу бити повезане са упалом, хормонским стањем или преображајем епитела. Да ли поновити брис, урадити колпоскопију или другу претрагу, одлучује гинеколог"
+      }
+    }
+  },
+  {
+    "slug": "pregnancy-preventive-examination-by-calendar",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Плановый визит беременной в сроки, предусмотренные графиком наблюдения",
+        "how": "Измеряют давление, вес и окружность живота, определяют высоту дна матки, слушают сердцебиение плода, осматривают ноги на отёки и выдают направления на положенные по сроку анализы, визит занимает около двадцати минут",
+        "when": "Наблюдение беременности от постановки на учёт до родов в предусмотренные графиком сроки, независимо от наличия жалоб",
+        "prep": "Взять обменную карту и результаты последних анализов, перед визитом может понадобиться сдать мочу, на осмотр удобна одежда, которую легко расстегнуть",
+        "abnormal": "Записанные показатели сравнивают с предыдущими визитами, и отклонения могут отражать изменение течения беременности. Между визитами при боли, кровянистых выделениях, подтекании вод, выраженных отёках или ослаблении шевелений обращаться к врачу сразу"
+      },
+      "en": {
+        "what": "A scheduled antenatal visit at the points set by the care calendar",
+        "how": "Blood pressure, weight and abdominal measurements are taken, the height of the uterus is measured, the baby's heartbeat is listened to, the legs are checked for swelling and the tests due at that stage are ordered, the visit takes about twenty minutes",
+        "when": "Antenatal care from registration to birth at the intervals set by the schedule, whether or not there are complaints",
+        "prep": "Bring the pregnancy record and recent results, a urine sample may be needed before the visit, and clothes that are easy to open are convenient",
+        "abnormal": "The recorded values are compared with earlier visits, and shifts may reflect a change in how the pregnancy is going. Between visits, pain, bleeding, leaking fluid, marked swelling or reduced movements should be shown to a doctor straight away"
+      },
+      "sr": {
+        "what": "Redovna posjeta trudnice u terminima predviđenim kalendarom praćenja",
+        "how": "Mjere se krvni pritisak, težina i obim stomaka, određuje se visina materice, sluša srce ploda, pregledaju noge zbog otoka i daju uputi za analize koje pripadaju toj sedmici, posjeta traje oko dvadesetak minuta",
+        "when": "Praćenje trudnoće od prijave do porođaja u predviđenim razmacima, bez obzira na to da li ima tegoba",
+        "prep": "Ponijeti trudničku knjižicu i posljednje nalaze, prije posjete može biti potrebno dati urin, a na pregled je zgodna odjeća koja se lako otkopčava",
+        "abnormal": "Zapisane vrijednosti se porede sa ranijim posjetama, a odstupanja mogu odražavati promjenu toka trudnoće. Između posjeta bol, krvarenje, curenje plodove vode, izražen otok ili slabiji pokreti ploda traže odmah javljanje ljekaru"
+      },
+      "de": {
+        "what": "Regulärer Vorsorgetermin in der Schwangerschaft zu den im Betreuungskalender vorgesehenen Zeitpunkten",
+        "how": "Blutdruck, Gewicht und Bauchumfang werden erfasst, der Stand der Gebärmutter bestimmt, die kindlichen Herztöne abgehört, die Beine auf Schwellungen angesehen und die für diesen Zeitpunkt vorgesehenen Untersuchungen veranlasst, der Termin dauert etwa zwanzig Minuten",
+        "when": "Schwangerschaftsbetreuung von der Anmeldung bis zur Geburt in den vorgesehenen Abständen, unabhängig von Beschwerden",
+        "prep": "Mutterpass und aktuelle Befunde mitbringen, vor dem Termin kann eine Urinprobe nötig sein, bequem ist Kleidung, die sich leicht öffnen lässt",
+        "abnormal": "Die notierten Werte werden mit früheren Terminen verglichen, Abweichungen können eine Änderung des Schwangerschaftsverlaufs widerspiegeln. Treten zwischen den Terminen Schmerzen, Blutungen, Flüssigkeitsabgang, deutliche Schwellungen oder weniger Kindsbewegungen auf, sollte man sich sofort ärztlich vorstellen"
+      },
+      "tr": {
+        "what": "Takip takviminde öngörülen zamanlarda yapılan düzenli gebelik muayenesi",
+        "how": "Tansiyon, kilo ve karın ölçüsü alınır, rahim yüksekliği belirlenir, bebeğin kalp sesi dinlenir, bacaklar ödem açısından görülür ve o döneme ait tetkikler istenir, görüşme yaklaşık yirmi dakika sürer",
+        "when": "Gebeliğin kaydından doğuma kadar belirlenen aralıklarla izlem, şikâyet olsun ya da olmasın",
+        "prep": "Gebelik takip kartını ve son sonuçları getirmek, muayene öncesi idrar örneği istenebileceğini bilmek ve kolay açılan bir kıyafet seçmek yeterlidir",
+        "abnormal": "Kaydedilen değerler önceki görüşmelerle karşılaştırılır, sapmalar gebeliğin seyrindeki bir değişikliği yansıtabilir. Görüşmeler arasında ağrı, kanama, su gelmesi, belirgin şişlik ya da hareketlerde azalma olursa hemen hekime başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Редовна посјета труднице у терминима предвиђеним календаром праћења",
+        "how": "Мјере се крвни притисак, тежина и обим стомака, одређује се висина материце, слуша срце плода, прегледају ноге због отока и дају упути за анализе које припадају тој седмици, посјета траје око двадесетак минута",
+        "when": "Праћење трудноће од пријаве до порођаја у предвиђеним размацима, без обзира на то да ли има тегоба",
+        "prep": "Понијети трудничку књижицу и посљедње налазе, прије посјете може бити потребно дати урин, а на преглед је згодна одјећа која се лако откопчава",
+        "abnormal": "Записане вриједности се пореде са ранијим посјетама, а одступања могу одражавати промјену тока трудноће. Између посјета бол, крварење, цурење плодове воде, изражен оток или слабији покрети плода траже одмах јављање љекару"
+      }
+    }
+  },
+  {
+    "slug": "pregnancy-specialist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приём акушера-гинеколога по поводу беременности вне планового графика, для разбора конкретного вопроса",
+        "how": "Врач уточняет жалобы и срок, оценивает ситуацию по осмотру и имеющимся результатам и при необходимости направляет на УЗИ, анализы или к смежному специалисту, приём занимает около получаса",
+        "when": "Жалобы во время беременности, уточнение результатов обследования, ведение сопутствующих заболеваний, вопросы по планированию родов, направление от другого врача",
+        "prep": "Взять обменную карту, протоколы УЗИ и результаты анализов, список принимаемых препаратов и вопросы к врачу",
+        "abnormal": "По итогам приёма врач определяет тактику наблюдения и при необходимости меняет план обследования. Усиление жалоб, кровянистые выделения, подтекание вод или изменение шевелений плода требуют обращения к врачу, не дожидаясь следующего визита"
+      },
+      "en": {
+        "what": "An appointment with an obstetrician-gynaecologist about the pregnancy outside the routine schedule, to work through a specific question",
+        "how": "The doctor clarifies the complaints and the stage of pregnancy, assesses the situation from the examination and existing results and refers for ultrasound, tests or another specialist if needed, the appointment takes about half an hour",
+        "when": "Complaints during pregnancy, clarification of test results, management of other medical conditions, questions about planning the birth, referral from another doctor",
+        "prep": "Bring the pregnancy record, ultrasound reports and test results, a list of the medicines you take and the questions you want to ask",
+        "abnormal": "After the appointment the doctor sets the follow-up approach and changes the plan of investigation if needed. Worsening complaints, bleeding, leaking fluid or a change in the baby's movements are reasons to see a doctor without waiting for the next visit"
+      },
+      "sr": {
+        "what": "Pregled kod ginekologa akušera zbog trudnoće van redovnog rasporeda, radi razrješenja konkretnog pitanja",
+        "how": "Ljekar precizira tegobe i starost trudnoće, procjenjuje stanje na osnovu pregleda i postojećih nalaza i po potrebi upućuje na ultrazvuk, analize ili drugog specijalistu, pregled traje oko pola sata",
+        "when": "Tegobe u trudnoći, razjašnjenje nalaza, vođenje pridruženih bolesti, pitanja o planiranju porođaja, uput drugog ljekara",
+        "prep": "Ponijeti trudničku knjižicu, nalaze ultrazvuka i analiza, spisak lijekova koji se uzimaju i pitanja za ljekara",
+        "abnormal": "Poslije pregleda ljekar određuje način daljeg praćenja i po potrebi mijenja plan pretraga. Pojačanje tegoba, krvarenje, curenje plodove vode ili promjena pokreta ploda razlog su za javljanje ljekaru i prije sljedeće posjete"
+      },
+      "de": {
+        "what": "Fachärztlicher Termin in der Schwangerschaft außerhalb des regulären Plans, um eine konkrete Fragestellung zu klären",
+        "how": "Beschwerden und Schwangerschaftswoche werden präzisiert, die Lage anhand von Untersuchung und vorliegenden Befunden beurteilt und bei Bedarf Ultraschall, Labor oder eine weitere Fachrichtung veranlasst, der Termin dauert etwa eine halbe Stunde",
+        "when": "Beschwerden in der Schwangerschaft, Klärung von Befunden, Begleitung weiterer Erkrankungen, Fragen zur Geburtsplanung, Überweisung durch eine andere Ärztin oder einen anderen Arzt",
+        "prep": "Mutterpass, Ultraschallbefunde und Laborergebnisse mitbringen, dazu eine Liste der eingenommenen Medikamente und der eigenen Fragen",
+        "abnormal": "Nach dem Termin wird das weitere Vorgehen festgelegt und der Untersuchungsplan bei Bedarf geändert. Zunehmende Beschwerden, Blutungen, Flüssigkeitsabgang oder veränderte Kindsbewegungen sind Gründe, nicht bis zum nächsten Termin zu warten"
+      },
+      "tr": {
+        "what": "Belirli bir sorunun ele alınması için gebelikte düzenli takvim dışında kadın doğum uzmanına başvuru",
+        "how": "Hekim şikâyetleri ve gebelik haftasını netleştirir, muayene ve eldeki sonuçlara göre durumu değerlendirir, gerekirse ultrason, tetkik ya da başka bir uzmana yönlendirir, görüşme yaklaşık yarım saat sürer",
+        "when": "Gebelikte ortaya çıkan şikâyetler, sonuçların açıklığa kavuşturulması, eşlik eden hastalıkların izlenmesi, doğum planına ilişkin sorular, başka bir hekimin sevki",
+        "prep": "Gebelik takip kartını, ultrason raporlarını ve tetkik sonuçlarını, kullanılan ilaçların listesini ve hekime sorulacak soruları getirmek gerekir",
+        "abnormal": "Görüşmeden sonra hekim izlem şeklini belirler ve gerekirse tetkik planını değiştirir. Şikâyetlerin artması, kanama, su gelmesi veya bebeğin hareketlerindeki değişiklik, sonraki randevuyu beklemeden hekime başvurma nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Преглед код гинеколога акушера због трудноће ван редовног распореда, ради разрјешења конкретног питања",
+        "how": "Љекар прецизира тегобе и старост трудноће, процјењује стање на основу прегледа и постојећих налаза и по потреби упућује на ултразвук, анализе или другог специјалисту, преглед траје око пола сата",
+        "when": "Тегобе у трудноћи, разјашњење налаза, вођење придружених болести, питања о планирању порођаја, упут другог љекара",
+        "prep": "Понијети трудничку књижицу, налазе ултразвука и анализа, списак лијекова који се узимају и питања за љекара",
+        "abnormal": "Послије прегледа љекар одређује начин даљег праћења и по потреби мијења план претрага. Појачање тегоба, крварење, цурење плодове воде или промјена покрета плода разлог су за јављање љекару и прије сљедеће посјете"
+      }
+    }
+  }
 ]

@@ -1,0 +1,434 @@
+[
+  {
+    "slug": "dermatoscopy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр родинок и других образований кожи под увеличением и поляризованным светом, который показывает структуры, невидимые глазом",
+        "how": "Врач прикладывает дерматоскоп к каждому элементу, при необходимости через гель, и рассматривает рисунок пигмента и сосудов; снимки могут сохранять для сравнения на следующем визите, на один элемент уходит около минуты, на осмотр всей кожи — заметно больше",
+        "when": "Родинка изменила цвет, размер или форму, появилось новое пигментное пятно у взрослого, много родинок и случаи опухолей кожи в семье, наблюдение за ранее отмеченными элементами, оценка перед удалением",
+        "prep": "Подготовки нет; смыть с осматриваемых участков косметику и автозагар, снять лак, если смотрят и ногти, накануне не загорать и прийти в одежде, которую легко снять",
+        "abnormal": "Дерматоскопия показывает, какие элементы выглядят спокойно, а какие врач берёт под наблюдение или направляет на удаление с исследованием ткани. Сам прибор диагноз не ставит: заключение делает врач, а окончательную оценку строения ткани — патолог после удаления"
+      },
+      "en": {
+        "what": "Examination of moles and other skin lesions under magnification and polarised light, which reveals structures invisible to the naked eye",
+        "how": "The doctor places the dermatoscope against each lesion, using gel if needed, and studies the pattern of pigment and vessels; images may be stored for comparison at the next visit, a single lesion takes about a minute and a check of the whole skin takes noticeably longer",
+        "when": "A mole that has changed colour, size or shape, a new pigmented spot in an adult, many moles or skin tumours in the family, follow-up of lesions marked earlier, assessment before removal",
+        "prep": "No preparation; wash make-up and self-tanner off the areas to be examined, remove nail polish if the nails are looked at too, avoid sunbathing the day before and wear clothes that are easy to take off",
+        "abnormal": "Dermatoscopy shows which lesions look quiet and which the doctor keeps under observation or sends for removal with tissue examination. The device itself makes no diagnosis: the conclusion is the doctor's, and the final assessment of tissue structure comes from a pathologist after removal"
+      },
+      "sr": {
+        "what": "Pregled mladeža i drugih promjena na koži pod uvećanjem i polarizovanim svjetlom, koje pokazuje strukture nevidljive golim okom",
+        "how": "Ljekar prislanja dermatoskop na svaku promjenu, po potrebi preko gela, i posmatra raspored pigmenta i krvnih sudova; snimci se mogu sačuvati radi poređenja na sljedećem pregledu, za jednu promjenu treba oko minut, a za pregled cijele kože znatno duže",
+        "when": "Mladež koji je promijenio boju, veličinu ili oblik, nova pigmentna promjena kod odrasle osobe, veliki broj mladeža i tumori kože u porodici, praćenje ranije obilježenih promjena, procjena prije uklanjanja",
+        "prep": "Priprema nije potrebna; sa pregledanih predjela skinuti šminku i samopotamnjivač, skinuti lak ako se gledaju i nokti, dan ranije se ne sunčati i obući odjeću koja se lako skida",
+        "abnormal": "Dermatoskopija pokazuje koje promjene izgledaju mirno, a koje ljekar uzima pod nadzor ili upućuje na uklanjanje sa pregledom tkiva. Sam aparat ne postavlja dijagnozu: zaključak daje ljekar, a konačnu ocjenu građe tkiva patolog poslije uklanjanja"
+      },
+      "de": {
+        "what": "Begutachtung von Muttermalen und anderen Hautveränderungen unter Vergrößerung und polarisiertem Licht, das mit bloßem Auge unsichtbare Strukturen zeigt",
+        "how": "Der Arzt setzt das Dermatoskop auf jede Veränderung, bei Bedarf über Gel, und betrachtet das Muster von Pigment und Gefäßen; Aufnahmen können zum Vergleich beim nächsten Termin gespeichert werden, eine Veränderung dauert etwa eine Minute, die Kontrolle der ganzen Haut deutlich länger",
+        "when": "Ein Muttermal, das Farbe, Größe oder Form verändert hat, ein neuer Pigmentfleck im Erwachsenenalter, viele Muttermale und Hauttumoren in der Familie, Verlaufskontrolle markierter Veränderungen, Beurteilung vor einer Entfernung",
+        "prep": "Keine Vorbereitung nötig; Make-up und Selbstbräuner von den zu untersuchenden Stellen entfernen, Nagellack ablegen, wenn auch die Nägel angesehen werden, am Vortag nicht in die Sonne und leicht abzulegende Kleidung tragen",
+        "abnormal": "Die Dermatoskopie zeigt, welche Veränderungen unauffällig wirken und welche der Arzt beobachtet oder zur Entfernung mit Gewebeuntersuchung schickt. Das Gerät selbst stellt keine Diagnose: die Beurteilung trifft der Arzt, die endgültige Aussage zum Gewebeaufbau der Pathologe nach der Entfernung"
+      },
+      "tr": {
+        "what": "Benlerin ve diğer deri lezyonlarının, çıplak gözle görülmeyen yapıları ortaya çıkaran büyütme ve polarize ışık altında incelenmesi",
+        "how": "Hekim dermatoskopu gerekirse jel üzerinden her lezyona dayar, pigment ve damar desenine bakar; görüntüler sonraki muayenede karşılaştırmak için saklanabilir, tek lezyon yaklaşık bir dakika, tüm derinin taranması belirgin biçimde daha uzun sürer",
+        "when": "Rengi, boyutu ya da şekli değişen ben, erişkinde yeni çıkan pigmentli leke, çok sayıda ben ve ailede deri tümörü öyküsü, daha önce işaretlenen lezyonların takibi, çıkarma öncesi değerlendirme",
+        "prep": "Hazırlık gerekmez; bakılacak bölgelerden makyajı ve bronzlaştırıcıyı temizleyin, tırnaklara da bakılacaksa ojeyi çıkarın, bir gün önce güneşlenmeyin ve kolay çıkarılan giysi tercih edin",
+        "abnormal": "Dermatoskopi hangi lezyonların sakin göründüğünü, hangilerinin izleneceğini ya da doku incelemesiyle birlikte çıkarılmaya yönlendirileceğini gösterir. Cihazın kendisi tanı koymaz: değerlendirmeyi hekim, doku yapısının kesin yorumunu ise çıkarma sonrası patolog yapar"
+      },
+      "sr_cyrl": {
+        "what": "Преглед младежа и других промјена на кожи под увећањем и поларизованим свјетлом, које показује структуре невидљиве голим оком",
+        "how": "Љекар прислања дерматоскоп на сваку промјену, по потреби преко гела, и посматра распоред пигмента и крвних судова; снимци се могу сачувати ради поређења на сљедећем прегледу, за једну промјену треба око минут, а за преглед цијеле коже знатно дуже",
+        "when": "Младеж који је промијенио боју, величину или облик, нова пигментна промјена код одрасле особе, велики број младежа и тумори коже у породици, праћење раније обиљежених промјена, процјена прије уклањања",
+        "prep": "Припрема није потребна; са прегледаних предјела скинути шминку и самопотамњивач, скинути лак ако се гледају и нокти, дан раније се не сунчати и обући одјећу која се лако скида",
+        "abnormal": "Дерматоскопија показује које промјене изгледају мирно, а које љекар узима под надзор или упућује на уклањање са прегледом ткива. Сам апарат не поставља дијагнозу: закључак даје љекар, а коначну оцјену грађе ткива патолог послије уклањања"
+      }
+    }
+  },
+  {
+    "slug": "radiowave-skin-lesion-removal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление образования кожи тонким электродом, который рассекает и испаряет ткань высокочастотной радиоволной",
+        "how": "Под местной анестезией врач обрабатывает образование петлёй или игольчатым наконечником, та же волна закрывает кровоточащие сосуды, поэтому шов обычно не нужен; на один элемент уходит несколько минут, а удалённую ткань при необходимости сохраняют для исследования",
+        "when": "Папилломы, фибромы, бородавки, себорейные кератомы, образования на веках и в складках кожи, где важны аккуратные края и минимальный след",
+        "prep": "Сказать о кардиостимуляторе и металлических имплантах, склонности к келоидным рубцам, герпесе в этой зоне, аллергии на анестетики и приёме разжижающих кровь препаратов; примерно за две недели не загорать",
+        "abnormal": "Место закрывается корочкой, её нельзя сдирать, а зону первые недели берегут от солнца, иначе остаётся тёмное пятно. Если вид образования вызывает сомнения, врач направляет удалённую ткань патологу; повторный рост, расползающееся покраснение и отделяемое требуют осмотра"
+      },
+      "en": {
+        "what": "Removal of a skin lesion with a fine electrode that cuts and vaporises tissue with a high-frequency radio wave",
+        "how": "Under local anaesthesia the doctor treats the lesion with a loop or needle tip, the same wave seals bleeding vessels so stitches are usually not needed; one lesion takes a few minutes and the removed tissue can be kept for examination",
+        "when": "Skin tags, fibromas, warts, seborrhoeic keratoses, lesions on the eyelids and in skin folds where neat edges and a minimal mark matter",
+        "prep": "Tell the doctor about a pacemaker or metal implants, a tendency to keloid scars, cold sores in the area, anaesthetic allergy and blood-thinning medicines; avoid sunbathing for about two weeks beforehand",
+        "abnormal": "The spot crusts over, the crust must not be picked off and the area is kept out of the sun for the first weeks, otherwise a dark mark remains. If the appearance of the lesion raises doubts, the doctor sends the removed tissue to a pathologist; regrowth, spreading redness or discharge should be seen by a doctor"
+      },
+      "sr": {
+        "what": "Uklanjanje promjene na koži tankom elektrodom koja tkivo siječe i isparava radiotalasom visoke frekvencije",
+        "how": "U lokalnoj anesteziji ljekar obrađuje promjenu petljom ili iglastim nastavkom, isti talas zatvara krvne sudove pa šav obično nije potreban; za jednu promjenu treba nekoliko minuta, a uklonjeno tkivo se po potrebi sačuva za pregled",
+        "when": "Papilome, fibromi, bradavice, seboroične keratoze, promjene na kapcima i u naborima kože, gdje su uredne ivice i mali trag važni",
+        "prep": "Reći ljekaru za pejsmejker i metalne implante, sklonost keloidnim ožiljcima, herpes na tom mjestu, alergiju na anestetike i lijekove za razrjeđivanje krvi; oko dvije sedmice ranije ne izlagati se suncu",
+        "abnormal": "Mjesto prekriva krasta koja se ne smije skidati, a predio se prvih sedmica čuva od sunca, inače ostaje tamna mrlja. Ako izgled promjene budi sumnju, ljekar uklonjeno tkivo šalje patologu; ponovni rast, širenje crvenila i sekrecija traže pregled"
+      },
+      "de": {
+        "what": "Entfernung einer Hautveränderung mit einer feinen Elektrode, die Gewebe mit einer hochfrequenten Radiowelle schneidet und verdampft",
+        "how": "In örtlicher Betäubung bearbeitet der Arzt die Veränderung mit Schlinge oder Nadelspitze, dieselbe Welle verschließt blutende Gefäße, sodass meist keine Naht nötig ist; eine Veränderung dauert wenige Minuten, das entfernte Gewebe kann für die Untersuchung aufbewahrt werden",
+        "when": "Stielwärzchen, Fibrome, Warzen, Alterswarzen, Veränderungen an den Lidern und in Hautfalten, bei denen saubere Ränder und eine kleine Narbe wichtig sind",
+        "prep": "Herzschrittmacher und Metallimplantate, Neigung zu Keloidnarben, Lippenherpes im Bereich, Allergie auf Betäubungsmittel und blutverdünnende Medikamente angeben; etwa zwei Wochen vorher nicht in die Sonne",
+        "abnormal": "Die Stelle verkrustet, die Kruste darf nicht abgelöst werden und der Bereich bleibt in den ersten Wochen vor Sonne geschützt, sonst bleibt ein dunkler Fleck. Bei unklarem Aussehen schickt der Arzt das entfernte Gewebe an den Pathologen; Nachwachsen, zunehmende Rötung oder Absonderung gehören zum Arzt"
+      },
+      "tr": {
+        "what": "Deri lezyonunun, dokuyu yüksek frekanslı radyo dalgasıyla kesen ve buharlaştıran ince bir elektrotla çıkarılması",
+        "how": "Lokal anestezi altında hekim lezyonu halka ya da iğne uçla işler, aynı dalga kanayan damarları kapattığı için genellikle dikiş gerekmez; tek lezyon birkaç dakika sürer, çıkarılan doku gerekirse inceleme için saklanır",
+        "when": "Et benleri, fibromlar, siğiller, yaşlılık keratozları, düzgün sınır ve küçük iz gerektiren göz kapağı ve deri kıvrımı lezyonları",
+        "prep": "Kalp pili ve metal implantları, keloid yatkınlığını, bölgedeki uçuğu, anestezik alerjisini ve kan sulandırıcı ilaçları hekime bildirin; yaklaşık iki hafta öncesinden güneşlenmeyin",
+        "abnormal": "İşlem yerinde kabuk oluşur, kabuk koparılmamalı ve bölge ilk haftalarda güneşten korunmalıdır, aksi hâlde koyu bir leke kalır. Lezyonun görünümü şüphe uyandırırsa hekim çıkarılan dokuyu patoloğa gönderir; yeniden büyüme, yayılan kızarıklık ve akıntı hekim tarafından görülmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање промјене на кожи танком електродом која ткиво сијече и испарава радиоталасом високе фреквенције",
+        "how": "У локалној анестезији љекар обрађује промјену петљом или игластим наставком, исти талас затвара крвне судове па шав обично није потребан; за једну промјену треба неколико минута, а уклоњено ткиво се по потреби сачува за преглед",
+        "when": "Папиломе, фиброми, брадавице, себороичне кератозе, промјене на капцима и у наборима коже, гдје су уредне ивице и мали траг важни",
+        "prep": "Рећи љекару за пејсмејкер и металне импланте, склоност келоидним ожиљцима, херпес на том мјесту, алергију на анестетике и лијекове за разрјеђивање крви; око двије седмице раније не излагати се сунцу",
+        "abnormal": "Мјесто прекрива краста која се не смије скидати, а предио се првих седмица чува од сунца, иначе остаје тамна мрља. Ако изглед промјене буди сумњу, љекар уклоњено ткиво шаље патологу; поновни раст, ширење црвенила и секреција траже преглед"
+      }
+    }
+  },
+  {
+    "slug": "thermotherapy-cryotherapy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лечебное охлаждение участка тела в рамках физиотерапии: холод уменьшает боль, отёк и мышечный спазм",
+        "how": "На зону через прокладку накладывают холодовой пакет либо обдувают её потоком холодного воздуха; сеанс короткий, порядка нескольких минут, и обычно входит в курс вместе с упражнениями",
+        "when": "Свежая травма и ушиб, отёк и боль после операции на суставе, обострение боли в суставе или сухожилии, спазм мышц, воспаление места прикрепления сухожилия",
+        "prep": "Подготовки нет; кожа должна быть сухой и целой, а заранее нужно сказать о сниженной чувствительности в зоне, нарушениях кровотока, холодовой крапивнице и феномене Рейно",
+        "abnormal": "После сеанса кожа бледнеет и ненадолго немеет, это проходит за минуты. Усиление боли, сыпь, стойкое онемение или белизна кожи — повод прервать процедуру и сказать врачу"
+      },
+      "en": {
+        "what": "Therapeutic cooling of a body area as part of physiotherapy: cold reduces pain, swelling and muscle spasm",
+        "how": "A cold pack is applied to the area through a cloth or the area is blown with a stream of cold air; the session is short, a matter of minutes, and usually forms part of a course together with exercises",
+        "when": "A fresh injury or bruise, swelling and pain after joint surgery, a flare of joint or tendon pain, muscle spasm, inflammation where a tendon attaches",
+        "prep": "No preparation; the skin must be dry and intact, and reduced sensation in the area, circulation problems, cold urticaria and Raynaud's phenomenon should be mentioned beforehand",
+        "abnormal": "After the session the skin turns pale and goes numb for a short while, which passes within minutes. Increasing pain, a rash, lasting numbness or white skin are reasons to stop the treatment and tell the doctor"
+      },
+      "sr": {
+        "what": "Liječenje hlađenjem određenog dijela tijela u okviru fizikalne terapije: hladnoća smanjuje bol, otok i grč mišića",
+        "how": "Na predio se preko tkanine stavlja hladni oblog ili se zona hladi strujom hladnog vazduha; seansa je kratka, traje nekoliko minuta i obično je dio terapije uz vježbe",
+        "when": "Svježa povreda i nagnječenje, otok i bol poslije operacije zgloba, pogoršanje bola u zglobu ili tetivi, grč mišića, upala pripoja tetive",
+        "prep": "Priprema nije potrebna; koža mora biti suva i cijela, a unaprijed treba reći za smanjen osjećaj u tom predjelu, smetnje u krvotoku, hladnu urtikariju i Rejnoov fenomen",
+        "abnormal": "Poslije seanse koža problijedi i nakratko utrne, što prolazi za nekoliko minuta. Pojačan bol, osip, trajna utrnulost ili bjelina kože razlog su da se terapija prekine i obavijesti ljekar"
+      },
+      "de": {
+        "what": "Therapeutische Kühlung eines Körperabschnitts im Rahmen der Physiotherapie: Kälte lindert Schmerz, Schwellung und Muskelverspannung",
+        "how": "Eine Kältepackung wird über ein Tuch aufgelegt oder die Zone mit einem Strom kalter Luft angeblasen; die Sitzung dauert nur wenige Minuten und gehört meist zu einer Behandlungsserie mit Übungen",
+        "when": "Frische Verletzung und Prellung, Schwellung und Schmerz nach einer Gelenkoperation, akuter Schub von Gelenk- oder Sehnenschmerz, Muskelkrampf, Entzündung am Sehnenansatz",
+        "prep": "Keine Vorbereitung; die Haut muss trocken und unverletzt sein, vorher sind verminderte Empfindung im Bereich, Durchblutungsstörungen, Kälteurtikaria und Raynaud-Phänomen anzugeben",
+        "abnormal": "Nach der Sitzung wird die Haut blass und kurz taub, das vergeht in Minuten. Zunehmender Schmerz, Hautausschlag, anhaltende Taubheit oder weiße Haut sind Gründe, die Anwendung abzubrechen und den Arzt zu informieren"
+      },
+      "tr": {
+        "what": "Fizik tedavi kapsamında vücudun bir bölgesinin soğukla tedavisi: soğuk ağrıyı, şişliği ve kas spazmını azaltır",
+        "how": "Bölgeye bez üzerinden soğuk kompres uygulanır ya da soğuk hava akımıyla soğutulur; seans birkaç dakika sürer ve genellikle egzersizlerle birlikte bir tedavi programının parçasıdır",
+        "when": "Yeni yaralanma ve ezik, eklem ameliyatı sonrası şişlik ve ağrı, eklem ya da tendon ağrısının alevlenmesi, kas spazmı, tendon yapışma yerinin iltihabı",
+        "prep": "Hazırlık gerekmez; cilt kuru ve bütün olmalı, bölgedeki his azlığı, dolaşım sorunları, soğuk ürtikeri ve Raynaud olgusu önceden bildirilmelidir",
+        "abnormal": "Seanstan sonra cilt solar ve kısa süre uyuşur, bu birkaç dakikada geçer. Artan ağrı, döküntü, geçmeyen uyuşma ya da ciltte beyazlama tedaviyi durdurup hekime bildirmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Лијечење хлађењем одређеног дијела тијела у оквиру физикалне терапије: хладноћа смањује бол, оток и грч мишића",
+        "how": "На предио се преко тканине ставља хладни облог или се зона хлади струјом хладног ваздуха; сеанса је кратка, траје неколико минута и обично је дио терапије уз вјежбе",
+        "when": "Свјежа повреда и нагњечење, оток и бол послије операције зглоба, погоршање бола у зглобу или тетиви, грч мишића, упала припоја тетиве",
+        "prep": "Припрема није потребна; кожа мора бити сува и цијела, а унапријед треба рећи за смањен осјећај у том предјелу, сметње у крвотоку, хладну уртикарију и Рејноов феномен",
+        "abnormal": "Послије сеансе кожа проблиједи и накратко утрне, што пролази за неколико минута. Појачан бол, осип, трајна утрнулост или бјелина коже разлог су да се терапија прекине и обавијести љекар"
+      }
+    }
+  },
+  {
+    "slug": "biorevitalization",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Курс внутрикожных инъекций несшитой гиалуроновой кислоты, который возвращает коже увлажнённость и плотность, не меняя объём и контуры",
+        "how": "Кожу очищают и обрабатывают антисептиком, при желании наносят анестезирующий крем, затем препарат вводят короткими поверхностными уколами по сетке точек; сеанс занимает 20-30 минут и обычно повторяется курсом с перерывом около двух недель",
+        "when": "Сухая и тусклая кожа лица, шеи, зоны декольте и кистей, мелкие поверхностные морщинки, кожа после долгого пребывания на солнце, подготовка кожи к другим процедурам — пригодность оценивает врач",
+        "prep": "За несколько дней согласовать с врачом приём препаратов, повышающих кровоточивость, и отказаться от алкоголя; сказать о беременности и кормлении, склонности к герпесу, аутоиммунных заболеваниях и ранее введённых препаратах; не планировать процедуру прямо перед важным событием",
+        "abnormal": "В первые дни на местах уколов видны небольшие папулы, покраснение и синячки — это ожидаемая реакция, которая проходит сама. Уплотнения, которые не рассасываются, нарастающий отёк, боль или гнойнички нужно показать врачу, проводившему процедуру"
+      },
+      "en": {
+        "what": "A course of intradermal injections of non-cross-linked hyaluronic acid that restores moisture and firmness to the skin without changing volume or contours",
+        "how": "The skin is cleansed and disinfected, a numbing cream may be applied, and the product is placed with short superficial injections in a grid of points; a session takes 20-30 minutes and is usually repeated as a course with about two weeks between visits",
+        "when": "Dry, dull skin of the face, neck, décolleté and hands, fine surface lines, skin after long sun exposure, preparing the skin for other procedures — the doctor decides what is suitable",
+        "prep": "A few days beforehand agree with the doctor about medicines that increase bleeding and skip alcohol; mention pregnancy and breastfeeding, a tendency to cold sores, autoimmune conditions and products injected earlier; do not book it right before an important event",
+        "abnormal": "For the first days small bumps, redness and bruises at the injection points are an expected reaction that settles on its own. Lumps that do not dissolve, increasing swelling, pain or pustules should be shown to the doctor who performed the procedure"
+      },
+      "sr": {
+        "what": "Serija ubrizgavanja neumrežene hijaluronske kiseline u kožu, koja vraća vlažnost i čvrstinu, bez promjene volumena i kontura",
+        "how": "Koža se očisti i dezinfikuje, po želji se nanese anestetička krema, a preparat se unosi kratkim površinskim ubodima u mrežu tačaka; seansa traje 20-30 minuta i obično se ponavlja u seriji sa razmakom od oko dvije sedmice",
+        "when": "Suva i bezizražajna koža lica, vrata, dekoltea i šaka, sitne površinske bore, koža poslije dugog izlaganja suncu, priprema kože za druge tretmane — procjenu daje ljekar",
+        "prep": "Nekoliko dana ranije sa ljekarom dogovoriti lijekove koji pojačavaju krvarenje i izbjeći alkohol; reći za trudnoću i dojenje, sklonost herpesu, autoimune bolesti i ranije ubrizgane preparate; ne zakazivati tretman neposredno prije važnog događaja",
+        "abnormal": "Prvih dana se na mjestima uboda vide male kvržice, crvenilo i modrice — očekivana reakcija koja prolazi sama. Zadebljanja koja se ne povlače, pojačan otok, bol ili gnojne promjene treba pokazati ljekaru koji je tretman izveo"
+      },
+      "de": {
+        "what": "Eine Serie von Injektionen nicht vernetzter Hyaluronsäure in die Haut, die Feuchtigkeit und Festigkeit zurückgibt, ohne Volumen und Konturen zu verändern",
+        "how": "Die Haut wird gereinigt und desinfiziert, auf Wunsch wird eine Betäubungscreme aufgetragen, das Präparat wird mit kurzen oberflächlichen Einstichen in einem Punktraster eingebracht; eine Sitzung dauert 20-30 Minuten und wird meist als Serie mit etwa zwei Wochen Abstand wiederholt",
+        "when": "Trockene, fahle Haut an Gesicht, Hals, Dekolleté und Händen, feine oberflächliche Fältchen, Haut nach langer Sonnenbelastung, Vorbereitung der Haut auf andere Behandlungen — die Eignung beurteilt der Arzt",
+        "prep": "Einige Tage vorher mit dem Arzt Medikamente besprechen, die die Blutungsneigung erhöhen, und auf Alkohol verzichten; Schwangerschaft und Stillzeit, Neigung zu Lippenherpes, Autoimmunerkrankungen und früher injizierte Präparate nennen; nicht kurz vor einem wichtigen Termin planen",
+        "abnormal": "In den ersten Tagen sind kleine Quaddeln, Rötung und Blutergüsse an den Einstichstellen eine erwartete Reaktion, die von selbst abklingt. Verhärtungen, die bleiben, zunehmende Schwellung, Schmerzen oder Eiterpünktchen gehören zu dem Arzt, der die Behandlung durchgeführt hat"
+      },
+      "tr": {
+        "what": "Hacmi ve hatları değiştirmeden cildin nemini ve sıkılığını geri kazandıran, çapraz bağlı olmayan hyaluronik asidin deri içine uygulandığı seans dizisi",
+        "how": "Cilt temizlenip dezenfekte edilir, istenirse uyuşturucu krem sürülür, ürün kısa ve yüzeysel enjeksiyonlarla nokta ağı hâlinde verilir; seans 20-30 dakika sürer ve genellikle yaklaşık iki hafta arayla kür şeklinde tekrarlanır",
+        "when": "Yüz, boyun, dekolte ve el derisinde kuruluk ve donukluk, ince yüzeysel çizgiler, uzun güneş maruziyeti sonrası cilt, başka işlemler öncesi cilt hazırlığı — uygunluğa hekim karar verir",
+        "prep": "Birkaç gün önce kanamayı artıran ilaçları hekimle görüşün ve alkolden kaçının; gebelik ve emzirme, uçuk yatkınlığı, otoimmün hastalıklar ve daha önce uygulanmış dolgu ürünlerini bildirin; işlemi önemli bir etkinliğin hemen öncesine planlamayın",
+        "abnormal": "İlk günlerde enjeksiyon yerlerinde küçük kabarcıklar, kızarıklık ve morluklar beklenen ve kendiliğinden geçen bir tepkidir. Geçmeyen sertlikler, artan şişlik, ağrı ya da iltihaplı kabarcıklar işlemi yapan hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Серија убризгавања неумрежене хијалуронске киселине у кожу, која враћа влажност и чврстину, без промјене волумена и контура",
+        "how": "Кожа се очисти и дезинфикује, по жељи се нанесе анестетичка крема, а препарат се уноси кратким површинским убодима у мрежу тачака; сеанса траје 20-30 минута и обично се понавља у серији са размаком од око двије седмице",
+        "when": "Сува и безизражајна кожа лица, врата, деколтеа и шака, ситне површинске боре, кожа послије дугог излагања сунцу, припрема коже за друге третмане — процјену даје љекар",
+        "prep": "Неколико дана раније са љекаром договорити лијекове који појачавају крварење и избјећи алкохол; рећи за трудноћу и дојење, склоност херпесу, аутоимуне болести и раније убризгане препарате; не заказивати третман непосредно прије важног догађаја",
+        "abnormal": "Првих дана се на мјестима убода виде мале квржице, црвенило и модрице — очекивана реакција која пролази сама. Задебљања која се не повлаче, појачан оток, бол или гнојне промјене треба показати љекару који је третман извео"
+      }
+    }
+  },
+  {
+    "slug": "botox-treatment",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение препарата ботулинического токсина, который на несколько месяцев ослабляет работу выбранных мышц или потовых желёз",
+        "how": "Врач обсуждает план, просит напрячь мышцы, чтобы увидеть их работу, размечает точки и делает серию уколов тонкой иглой; визит занимает 15-30 минут, действие развивается в течение одной-двух недель и постепенно сходит на нет",
+        "when": "Мимические морщины лба, межбровья и вокруг глаз; по медицинским показаниям также стойкие спазмы мышц лица и шеи, напряжение жевательных мышц, повышенная потливость — показания и зоны определяет врач",
+        "prep": "Сказать о нервно-мышечных заболеваниях, беременности и кормлении, принимаемых антибиотиках и разжижающих кровь препаратах; в этот день не пить алкоголь, а после процедуры несколько часов не наклоняться, не ложиться и не тереть обработанные места",
+        "abnormal": "Точечные синячки, покраснение и лёгкая головная боль в первые сутки обычны. Опущение века или брови, двоение в глазах, непривычная слабость мышц или заметная асимметрия — повод сразу связаться с врачом, который проводил процедуру: такие эффекты временные, но требуют наблюдения"
+      },
+      "en": {
+        "what": "Injection of a botulinum toxin product that weakens selected muscles or sweat glands for several months",
+        "how": "The doctor discusses the plan, asks you to tense the muscles to see how they work, marks the points and gives a series of injections with a fine needle; the visit takes 15-30 minutes, the effect builds up over one to two weeks and then wears off gradually",
+        "when": "Expression lines of the forehead, between the brows and around the eyes; on medical grounds also persistent spasm of facial and neck muscles, tension of the chewing muscles and excessive sweating — the doctor decides on indications and areas",
+        "prep": "Report neuromuscular diseases, pregnancy and breastfeeding, antibiotics and blood-thinning medicines you take; skip alcohol that day, and afterwards avoid bending over, lying down and rubbing the treated areas for several hours",
+        "abnormal": "Pinpoint bruises, redness and a mild headache on the first day are usual. A drooping eyelid or brow, double vision, unusual muscle weakness or visible asymmetry are reasons to contact the doctor who performed the procedure straight away: such effects are temporary but need to be monitored"
+      },
+      "sr": {
+        "what": "Ubrizgavanje preparata botulinskog toksina koji na nekoliko mjeseci oslabi rad izabranih mišića ili znojnih žlijezda",
+        "how": "Ljekar dogovara plan, traži da zategnete mišiće kako bi vidio njihov rad, obilježi tačke i tankom iglom napravi seriju uboda; posjeta traje 15-30 minuta, dejstvo se razvija tokom jedne do dvije sedmice i postepeno slabi",
+        "when": "Mimičke bore čela, između obrva i oko očiju; po medicinskim indikacijama i uporni grčevi mišića lica i vrata, napetost žvačnih mišića, pojačano znojenje — indikacije i zone određuje ljekar",
+        "prep": "Reći za neuromišićne bolesti, trudnoću i dojenje, antibiotike i lijekove za razrjeđivanje krvi; toga dana ne piti alkohol, a poslije tretmana nekoliko sati se ne saginjati, ne lijegati i ne trljati obrađena mjesta",
+        "abnormal": "Tačkaste modrice, crvenilo i blaga glavobolja prvog dana su uobičajeni. Spušten kapak ili obrva, dupla slika, neuobičajena slabost mišića ili vidljiva asimetrija razlog su da se odmah javite ljekaru koji je tretman uradio: takve pojave su prolazne, ali traže praćenje"
+      },
+      "de": {
+        "what": "Injektion eines Botulinumtoxin-Präparats, das ausgewählte Muskeln oder Schweißdrüsen für einige Monate schwächt",
+        "how": "Der Arzt bespricht den Plan, lässt die Muskeln anspannen, um ihre Arbeit zu sehen, markiert die Punkte und setzt eine Reihe feiner Injektionen; der Termin dauert 15-30 Minuten, die Wirkung entwickelt sich über ein bis zwei Wochen und lässt dann allmählich nach",
+        "when": "Mimikfalten an Stirn, Zornesfalte und um die Augen; aus medizinischem Anlass auch anhaltende Krämpfe der Gesichts- und Halsmuskeln, Verspannung der Kaumuskeln und starkes Schwitzen — Indikation und Areale bestimmt der Arzt",
+        "prep": "Neuromuskuläre Erkrankungen, Schwangerschaft und Stillzeit, eingenommene Antibiotika und Blutverdünner angeben; an diesem Tag keinen Alkohol, danach einige Stunden nicht bücken, nicht hinlegen und die behandelten Stellen nicht reiben",
+        "abnormal": "Punktförmige Blutergüsse, Rötung und leichte Kopfschmerzen am ersten Tag sind üblich. Ein hängendes Lid oder eine hängende Braue, Doppelbilder, ungewohnte Muskelschwäche oder sichtbare Asymmetrie sind Grund, sofort den behandelnden Arzt zu verständigen: solche Effekte sind vorübergehend, müssen aber beobachtet werden"
+      },
+      "tr": {
+        "what": "Seçilen kasların ya da ter bezlerinin çalışmasını birkaç ay boyunca azaltan botulinum toksini ürününün uygulanması",
+        "how": "Hekim planı konuşur, kasların çalışmasını görmek için kasmanızı ister, noktaları işaretler ve ince iğneyle bir dizi enjeksiyon yapar; randevu 15-30 dakika sürer, etki bir-iki hafta içinde yerleşir ve sonra yavaşça azalır",
+        "when": "Alın, kaşlar arası ve göz çevresi mimik çizgileri; tıbbi gerekçeyle yüz ve boyun kaslarının inatçı kasılmaları, çiğneme kaslarının gerginliği ve aşırı terleme — endikasyonu ve bölgeleri hekim belirler",
+        "prep": "Nöromüsküler hastalıkları, gebelik ve emzirmeyi, kullandığınız antibiyotik ve kan sulandırıcıları bildirin; o gün alkol almayın, işlemden sonra birkaç saat eğilmeyin, uzanmayın ve uygulanan bölgeleri ovmayın",
+        "abnormal": "İlk gün noktasal morluk, kızarıklık ve hafif baş ağrısı olağandır. Göz kapağı ya da kaş düşmesi, çift görme, alışılmadık kas güçsüzlüğü veya belirgin asimetri işlemi yapan hekime hemen başvurmayı gerektirir: bu etkiler geçicidir ama izlenmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Убризгавање препарата ботулинског токсина који на неколико мјесеци ослаби рад изабраних мишића или знојних жлијезда",
+        "how": "Љекар договара план, тражи да затегнете мишиће како би видио њихов рад, обиљежи тачке и танком иглом направи серију убода; посјета траје 15-30 минута, дејство се развија током једне до двије седмице и постепено слаби",
+        "when": "Мимичке боре чела, између обрва и око очију; по медицинским индикацијама и упорни грчеви мишића лица и врата, напетост жвачних мишића, појачано знојење — индикације и зоне одређује љекар",
+        "prep": "Рећи за неуромишићне болести, трудноћу и дојење, антибиотике и лијекове за разрјеђивање крви; тога дана не пити алкохол, а послије третмана неколико сати се не сагињати, не лијегати и не трљати обрађена мјеста",
+        "abnormal": "Тачкасте модрице, црвенило и блага главобоља првог дана су уобичајени. Спуштен капак или обрва, дупла слика, неуобичајена слабост мишића или видљива асиметрија разлог су да се одмах јавите љекару који је третман урадио: такве појаве су пролазне, али траже праћење"
+      }
+    }
+  },
+  {
+    "slug": "chemical-peeling-face",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контролируемое отшелушивание верхних слоёв кожи лица раствором кислот, после которого кожа обновляется",
+        "how": "Лицо очищают и обезжиривают, состав держат несколько минут, следя за реакцией кожи, затем нейтрализуют и наносят успокаивающее средство и защиту от солнца; сеанс занимает 20-40 минут, глубину и состав подбирает врач",
+        "when": "Неровный тон и пигментные пятна, следы от акне и расширенные поры, тусклая кожа с мелкими морщинками, жирная кожа со склонностью к высыпаниям — после осмотра врача",
+        "prep": "Две недели не загорать, не ходить в солярий и не делать эпиляцию лица; сказать о герпесе, беременности, приёме ретиноидов и средств, повышающих чувствительность к солнцу; дни шелушения спланировать без важных событий и заранее запастись солнцезащитным средством",
+        "abnormal": "Покраснение, ощущение стянутости и шелушение в первые дни ожидаемы, кожу в это время не трут и чешуйки не отрывают. Пузыри, долгое жжение, сильный отёк, гнойнички или тёмные пятна на обработанном месте — повод показаться врачу"
+      },
+      "en": {
+        "what": "Controlled exfoliation of the upper layers of facial skin with an acid solution, after which the skin renews itself",
+        "how": "The face is cleansed and degreased, the solution is left on for a few minutes while the skin reaction is watched, then neutralised, and a soothing product and sun protection are applied; a session takes 20-40 minutes, with depth and formula chosen by the doctor",
+        "when": "Uneven tone and pigment spots, marks left by acne and enlarged pores, dull skin with fine lines, oily skin prone to breakouts — after a doctor's assessment",
+        "prep": "For two weeks avoid sun, solarium and facial hair removal; mention cold sores, pregnancy, retinoid use and medicines that increase sun sensitivity; plan the peeling days without important events and have a sunscreen ready",
+        "abnormal": "Redness, tightness and flaking in the first days are expected, and the skin must not be rubbed or the flakes picked off during that time. Blisters, lasting burning, marked swelling, pustules or dark patches where the solution was applied should be seen by a doctor"
+      },
+      "sr": {
+        "what": "Kontrolisano skidanje gornjih slojeva kože lica rastvorom kiselina, poslije kojeg se koža obnavlja",
+        "how": "Lice se očisti i odmasti, rastvor se drži nekoliko minuta uz praćenje reakcije kože, zatim se neutrališe, pa se nanose umirujući preparat i zaštita od sunca; seansa traje 20-40 minuta, a dubinu i sastav bira ljekar",
+        "when": "Neujednačen ton i pigmentne mrlje, tragovi akni i prošireni pori, bezizražajna koža sa sitnim borama, masna koža sklona bubuljicama — poslije pregleda ljekara",
+        "prep": "Dvije sedmice se ne sunčati, ne ići u solarijum i ne depilirati lice; reći za herpes, trudnoću, uzimanje retinoida i lijekove koji pojačavaju osjetljivost na sunce; dane ljuštenja planirati bez važnih obaveza i unaprijed obezbijediti kremu sa zaštitnim faktorom",
+        "abnormal": "Crvenilo, osjećaj zategnutosti i ljuštenje prvih dana su očekivani, a kožu se tada ne trlja i ljuspice se ne skidaju. Mjehurići, dugo peckanje, jak otok, gnojne promjene ili tamne mrlje na tretiranom mjestu razlog su za pregled kod ljekara"
+      },
+      "de": {
+        "what": "Kontrolliertes Abtragen der oberen Schichten der Gesichtshaut mit einer Säurelösung, nach dem sich die Haut erneuert",
+        "how": "Das Gesicht wird gereinigt und entfettet, die Lösung bleibt einige Minuten unter Beobachtung der Hautreaktion, wird neutralisiert, danach folgen ein beruhigendes Präparat und Sonnenschutz; eine Sitzung dauert 20-40 Minuten, Tiefe und Zusammensetzung wählt der Arzt",
+        "when": "Ungleichmäßiger Teint und Pigmentflecken, Spuren von Akne und erweiterte Poren, fahle Haut mit feinen Fältchen, fettige Haut mit Neigung zu Unreinheiten — nach ärztlicher Beurteilung",
+        "prep": "Zwei Wochen keine Sonne, kein Solarium und keine Haarentfernung im Gesicht; Lippenherpes, Schwangerschaft, Einnahme von Retinoiden und Medikamente, die lichtempfindlich machen, angeben; die Schuppungstage ohne wichtige Termine planen und Sonnenschutz bereithalten",
+        "abnormal": "Rötung, Spannungsgefühl und Schuppung in den ersten Tagen sind zu erwarten, die Haut darf dabei nicht gerieben und die Schüppchen dürfen nicht abgezogen werden. Blasen, anhaltendes Brennen, starke Schwellung, Eiterpünktchen oder dunkle Flecken an der behandelten Stelle gehören zum Arzt"
+      },
+      "tr": {
+        "what": "Yüz derisinin üst katmanlarının asit solüsyonuyla denetimli olarak soyulması ve ardından cildin kendini yenilemesi",
+        "how": "Yüz temizlenip yağdan arındırılır, solüsyon cilt tepkisi izlenerek birkaç dakika bekletilir ve nötralize edilir, sonra yatıştırıcı ürün ve güneş koruyucu sürülür; seans 20-40 dakika sürer, derinliği ve içeriği hekim seçer",
+        "when": "Düzensiz ton ve pigment lekeleri, akne izleri ve geniş gözenekler, ince çizgili donuk cilt, sivilceye eğilimli yağlı cilt — hekim değerlendirmesinden sonra",
+        "prep": "İki hafta boyunca güneşten, solaryumdan ve yüz epilasyonundan kaçının; uçuk, gebelik, retinoid kullanımı ve güneş hassasiyetini artıran ilaçları bildirin; soyulma günlerini önemli etkinlik olmayacak şekilde planlayın ve güneş koruyucu bulundurun",
+        "abnormal": "İlk günlerdeki kızarıklık, gerginlik hissi ve soyulma beklenen durumdur; bu sırada cilt ovulmaz ve pullar koparılmaz. Su toplaması, uzun süren yanma, belirgin şişlik, iltihaplı kabarcıklar ya da işlem bölgesinde koyu lekeler hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Контролисано скидање горњих слојева коже лица раствором киселина, послије којег се кожа обнавља",
+        "how": "Лице се очисти и одмасти, раствор се држи неколико минута уз праћење реакције коже, затим се неутралише, па се наносе умирујући препарат и заштита од сунца; сеанса траје 20-40 минута, а дубину и састав бира љекар",
+        "when": "Неуједначен тон и пигментне мрље, трагови акни и проширени пори, безизражајна кожа са ситним борама, масна кожа склона бубуљицама — послије прегледа љекара",
+        "prep": "Двије седмице се не сунчати, не ићи у соларијум и не депилирати лице; рећи за херпес, трудноћу, узимање ретиноида и лијекове који појачавају осјетљивост на сунце; дане љуштења планирати без важних обавеза и унапријед обезбиједити крему са заштитним фактором",
+        "abnormal": "Црвенило, осјећај затегнутости и љуштење првих дана су очекивани, а кожу се тада не трља и љуспице се не скидају. Мјехурићи, дуго пецкање, јак оток, гнојне промјене или тамне мрље на третираном мјесту разлог су за преглед код љекара"
+      }
+    }
+  },
+  {
+    "slug": "dermatologist-examination-with-dermatoscopy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приём дерматолога, на котором разбор жалоб сразу дополняется осмотром образований кожи под увеличением",
+        "how": "Врач расспрашивает об истории высыпаний и родинок, осматривает кожу, ногти и волосистую часть головы при хорошем освещении, отдельные элементы дополнительно смотрит дерматоскопом и при необходимости фотографирует для сравнения; приём занимает 20-30 минут",
+        "when": "Профилактическая проверка родинок у человека со светлой кожей или большим их числом, изменившееся или новое пятно вместе с другими жалобами на кожу, наблюдение после удаления образований, ежегодный осмотр кожи у людей с долгим солнечным стажем",
+        "prep": "Подготовки нет; прийти без макияжа, автозагара и лака на ногтях, накануне не загорать, принести прежние заключения и фотографии родинок, если они есть, и показать врачу каждое беспокоящее место, включая спину и стопы",
+        "abnormal": "По итогу приёма врач говорит, какие элементы достаточно наблюдать и с какой периодичностью, какие лучше удалить с исследованием ткани, и при необходимости назначает лечение кожи. Между визитами стоит прийти раньше, если элемент быстро растёт, меняет цвет, зудит или кровоточит"
+      },
+      "en": {
+        "what": "A dermatologist's appointment where the discussion of complaints is combined straight away with examination of skin lesions under magnification",
+        "how": "The doctor asks about the history of rashes and moles, examines skin, nails and scalp in good light, looks at individual lesions through a dermatoscope and photographs them for comparison if needed; the appointment takes 20-30 minutes",
+        "when": "A routine mole check for someone with fair skin or many moles, a changed or new spot alongside other skin complaints, follow-up after lesions have been removed, a yearly skin check for people with long sun exposure",
+        "prep": "No preparation; come without make-up, self-tanner and nail polish, avoid sunbathing the day before, bring earlier reports and photographs of moles if you have them, and point out every spot that worries you, including on the back and feet",
+        "abnormal": "At the end the doctor says which lesions it is enough to watch and how often, which are better removed with tissue examination, and prescribes skin treatment if needed. Between visits it is worth coming earlier if a lesion grows quickly, changes colour, itches or bleeds"
+      },
+      "sr": {
+        "what": "Pregled dermatologa na kojem se razgovor o tegobama odmah dopunjuje posmatranjem promjena na koži pod uvećanjem",
+        "how": "Ljekar pita o istoriji osipa i mladeža, pregleda kožu, nokte i kosmati dio glave pri dobrom osvjetljenju, pojedine promjene gleda dermatoskopom i po potrebi ih fotografiše radi poređenja; pregled traje 20-30 minuta",
+        "when": "Preventivna kontrola mladeža kod osobe svijetle kože ili sa velikim brojem mladeža, promijenjena ili nova pjega uz druge tegobe sa kožom, praćenje poslije uklanjanja promjena, godišnja kontrola kože kod ljudi dugo izloženih suncu",
+        "prep": "Priprema nije potrebna; doći bez šminke, samopotamnjivača i laka na noktima, dan ranije se ne sunčati, ponijeti ranije nalaze i fotografije mladeža ako postoje i pokazati ljekaru svako mjesto koje brine, uključujući leđa i stopala",
+        "abnormal": "Na kraju pregleda ljekar kaže koje je promjene dovoljno pratiti i kojim razmakom, koje je bolje ukloniti uz pregled tkiva, i po potrebi propisuje liječenje kože. Između kontrola treba doći ranije ako promjena brzo raste, mijenja boju, svrbi ili krvari"
+      },
+      "de": {
+        "what": "Hautarzttermin, bei dem das Gespräch über die Beschwerden sofort mit der Betrachtung von Hautveränderungen unter Vergrößerung verbunden wird",
+        "how": "Der Arzt fragt nach dem Verlauf von Ausschlägen und Muttermalen, untersucht Haut, Nägel und behaarte Kopfhaut bei gutem Licht, sieht sich einzelne Veränderungen mit dem Dermatoskop an und fotografiert sie bei Bedarf zum Vergleich; der Termin dauert 20-30 Minuten",
+        "when": "Vorsorgliche Muttermalkontrolle bei heller Haut oder vielen Muttermalen, ein verändertes oder neues Mal zusammen mit anderen Hautbeschwerden, Nachsorge nach entfernten Veränderungen, jährliche Hautkontrolle bei langer Sonnenbelastung",
+        "prep": "Keine Vorbereitung; ohne Make-up, Selbstbräuner und Nagellack kommen, am Vortag nicht in die Sonne, frühere Befunde und Fotos von Muttermalen mitbringen und jede beunruhigende Stelle zeigen, auch am Rücken und an den Füßen",
+        "abnormal": "Am Ende sagt der Arzt, welche Veränderungen nur beobachtet werden und in welchem Abstand, welche besser mit Gewebeuntersuchung entfernt werden, und verordnet bei Bedarf eine Behandlung der Haut. Zwischen den Terminen lohnt ein früherer Besuch, wenn eine Veränderung schnell wächst, die Farbe wechselt, juckt oder blutet"
+      },
+      "tr": {
+        "what": "Şikâyetlerin konuşulmasının hemen ardından deri lezyonlarının büyütme altında incelendiği dermatoloji muayenesi",
+        "how": "Hekim döküntü ve ben öyküsünü sorar, cildi, tırnakları ve saçlı deriyi iyi ışıkta inceler, tek tek lezyonlara dermatoskopla bakar ve gerekirse karşılaştırma için fotoğraflar; muayene 20-30 dakika sürer",
+        "when": "Açık tenli ya da çok sayıda beni olan kişide koruyucu ben kontrolü, başka deri şikâyetleriyle birlikte değişen veya yeni çıkan leke, lezyon çıkarıldıktan sonraki takip, uzun süre güneş gören kişilerde yıllık deri kontrolü",
+        "prep": "Hazırlık gerekmez; makyajsız, bronzlaştırıcısız ve ojesiz gelin, bir gün önce güneşlenmeyin, varsa önceki raporları ve ben fotoğraflarını getirin ve sırt ile ayaklar dâhil sizi rahatsız eden her yeri gösterin",
+        "abnormal": "Muayene sonunda hekim hangi lezyonların hangi aralıkla izlenmesinin yeterli olduğunu, hangilerinin doku incelemesiyle çıkarılmasının daha uygun olduğunu söyler ve gerekirse cilt tedavisi düzenler. Kontroller arasında lezyon hızla büyür, renk değiştirir, kaşınır ya da kanarsa daha erken başvurmak gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Преглед дерматолога на којем се разговор о тегобама одмах допуњује посматрањем промјена на кожи под увећањем",
+        "how": "Љекар пита о историји осипа и младежа, прегледа кожу, нокте и космати дио главе при добром освјетљењу, поједине промјене гледа дерматоскопом и по потреби их фотографише ради поређења; преглед траје 20-30 минута",
+        "when": "Превентивна контрола младежа код особе свијетле коже или са великим бројем младежа, промијењена или нова пјега уз друге тегобе са кожом, праћење послије уклањања промјена, годишња контрола коже код људи дуго изложених сунцу",
+        "prep": "Припрема није потребна; доћи без шминке, самопотамњивача и лака на ноктима, дан раније се не сунчати, понијети раније налазе и фотографије младежа ако постоје и показати љекару свако мјесто које брине, укључујући леђа и стопала",
+        "abnormal": "На крају прегледа љекар каже које је промјене довољно пратити и којим размаком, које је боље уклонити уз преглед ткива, и по потреби прописује лијечење коже. Између контрола треба доћи раније ако промјена брзо расте, мијења боју, сврби или крвари"
+      }
+    }
+  },
+  {
+    "slug": "facial-mesotherapy-single-treatment",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Один сеанс микроинъекций в кожу лица коктейлем из витаминов, аминокислот и микроэлементов, подобранным врачом",
+        "how": "Кожу очищают и обрабатывают антисептиком, затем тонкой иглой делают множество поверхностных уколов по всей зоне или вводят состав аппаратом на заданную глубину; сеанс занимает 20-30 минут, а поскольку одна процедура даёт сдержанное изменение, её обычно повторяют курсом",
+        "when": "Тусклая и уставшая кожа лица, сухость и неровный рельеф, поддержание результата после курса, желание попробовать процедуру до решения о полном курсе",
+        "prep": "Накануне не употреблять алкоголь, согласовать с врачом приём препаратов, повышающих кровоточивость, прийти без макияжа; сказать о беременности, кормлении, аллергии на компоненты коктейля и об активных высыпаниях на лице, которые сначала придётся пролечить",
+        "abnormal": "Точечные покраснения, лёгкая отёчность и синячки держатся несколько дней, в это время лицо не трут, не греют и не красят. Нарастающий отёк, боль, гнойнички или сыпь по всему лицу — повод обратиться к врачу, который проводил сеанс"
+      },
+      "en": {
+        "what": "A single session of microinjections into the facial skin with a cocktail of vitamins, amino acids and trace elements chosen by the doctor",
+        "how": "The skin is cleansed and disinfected, then many superficial injections are made with a fine needle across the area, or the solution is delivered by a device to a set depth; the session takes 20-30 minutes and, as one treatment gives a modest change, it is usually repeated as a course",
+        "when": "Dull, tired facial skin, dryness and uneven texture, maintaining the result after a course, trying the procedure before deciding on a full course",
+        "prep": "No alcohol the day before, agree with the doctor about medicines that increase bleeding, come without make-up; mention pregnancy, breastfeeding, allergy to components of the cocktail and active breakouts on the face, which have to be treated first",
+        "abnormal": "Pinpoint redness, slight puffiness and bruises last a few days, during which the face should not be rubbed, heated or made up. Increasing swelling, pain, pustules or a rash over the whole face are reasons to contact the doctor who gave the treatment"
+      },
+      "sr": {
+        "what": "Jedan tretman mikroubrizgavanja u kožu lica koktelom vitamina, aminokiselina i mikroelemenata koji bira ljekar",
+        "how": "Koža se očisti i dezinfikuje, pa se tankom iglom napravi veliki broj površinskih uboda po cijelom predjelu ili se rastvor unosi aparatom na zadatu dubinu; tretman traje 20-30 minuta, a kako jedna seansa daje umjerenu promjenu, obično se ponavlja u seriji",
+        "when": "Bezizražajna i umorna koža lica, suvoća i neujednačen reljef, održavanje rezultata poslije serije tretmana, proba prije odluke o cijeloj seriji",
+        "prep": "Dan ranije ne piti alkohol, sa ljekarom dogovoriti lijekove koji pojačavaju krvarenje, doći bez šminke; reći za trudnoću, dojenje, alergiju na sastojke koktela i aktivne bubuljice na licu, koje je potrebno prvo izliječiti",
+        "abnormal": "Tačkasto crvenilo, blaga oteklina i modrice traju nekoliko dana, a lice se tada ne trlja, ne grije i ne šminka. Pojačan otok, bol, gnojne promjene ili osip po cijelom licu razlog su da se javite ljekaru koji je tretman uradio"
+      },
+      "de": {
+        "what": "Eine einzelne Sitzung mit Mikroinjektionen in die Gesichtshaut mit einem vom Arzt zusammengestellten Cocktail aus Vitaminen, Aminosäuren und Spurenelementen",
+        "how": "Die Haut wird gereinigt und desinfiziert, dann werden mit feiner Nadel viele oberflächliche Einstiche über das ganze Areal gesetzt oder die Lösung wird mit einem Gerät in festgelegter Tiefe eingebracht; die Sitzung dauert 20-30 Minuten und wird meist als Serie wiederholt, da eine Behandlung nur eine zurückhaltende Veränderung bringt",
+        "when": "Fahle, müde Gesichtshaut, Trockenheit und unebenes Hautbild, Erhalt des Ergebnisses nach einer Serie, Ausprobieren der Methode vor der Entscheidung für eine ganze Serie",
+        "prep": "Am Vortag keinen Alkohol, Medikamente mit erhöhter Blutungsneigung mit dem Arzt abstimmen, ungeschminkt kommen; Schwangerschaft, Stillzeit, Allergie auf Bestandteile des Cocktails und akute Unreinheiten im Gesicht nennen, die zuerst behandelt werden müssen",
+        "abnormal": "Punktförmige Rötung, leichte Schwellung und Blutergüsse halten einige Tage an, in dieser Zeit wird das Gesicht nicht gerieben, erwärmt oder geschminkt. Zunehmende Schwellung, Schmerzen, Eiterpünktchen oder ein Ausschlag im ganzen Gesicht gehören zu dem Arzt, der die Sitzung durchgeführt hat"
+      },
+      "tr": {
+        "what": "Hekimin seçtiği vitamin, amino asit ve eser element karışımının yüz derisine uygulandığı tek seanslık mikroenjeksiyon işlemi",
+        "how": "Cilt temizlenip dezenfekte edilir, ardından ince iğneyle bölge boyunca çok sayıda yüzeysel enjeksiyon yapılır ya da karışım belirlenen derinliğe cihazla verilir; seans 20-30 dakika sürer ve tek seansın etkisi ölçülü olduğundan genellikle kür şeklinde tekrarlanır",
+        "when": "Donuk ve yorgun yüz derisi, kuruluk ve düzensiz cilt dokusu, kür sonrası sonucun korunması, tam küre karar vermeden önce işlemi denemek",
+        "prep": "Bir gün önce alkol almayın, kanamayı artıran ilaçları hekimle görüşün, makyajsız gelin; gebelik, emzirme, karışımın içeriğine alerji ve önce tedavi edilmesi gereken aktif yüz sivilcelerini bildirin",
+        "abnormal": "Noktasal kızarıklık, hafif şişlik ve morluklar birkaç gün sürer; bu süre boyunca yüz ovulmaz, ısıtılmaz ve makyaj yapılmaz. Artan şişlik, ağrı, iltihaplı kabarcıklar ya da yüzün tamamına yayılan döküntü işlemi yapan hekime başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Један третман микроубризгавања у кожу лица коктелом витамина, аминокиселина и микроелемената који бира љекар",
+        "how": "Кожа се очисти и дезинфикује, па се танком иглом направи велики број површинских убода по цијелом предјелу или се раствор уноси апаратом на задату дубину; третман траје 20-30 минута, а како једна сеанса даје умјерену промјену, обично се понавља у серији",
+        "when": "Безизражајна и уморна кожа лица, сувоћа и неуједначен рељеф, одржавање резултата послије серије третмана, проба прије одлуке о цијелој серији",
+        "prep": "Дан раније не пити алкохол, са љекаром договорити лијекове који појачавају крварење, доћи без шминке; рећи за трудноћу, дојење, алергију на састојке коктела и активне бубуљице на лицу, које је потребно прво излијечити",
+        "abnormal": "Тачкасто црвенило, блага отеклина и модрице трају неколико дана, а лице се тада не трља, не грије и не шминка. Појачан оток, бол, гнојне промјене или осип по цијелом лицу разлог су да се јавите љекару који је третман урадио"
+      }
+    }
+  },
+  {
+    "slug": "jalupro-super-hydro-treatment",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Процедура с готовым инъекционным препаратом, в составе которого гиалуроновая кислота и аминокислоты, применяемая для увлажнения и поддержки качества кожи",
+        "how": "Врач оценивает зону, обрабатывает кожу антисептиком и вводит препарат внутрикожно иглой или канюлей по намеченным точкам; визит занимает около получаса, а схему и число процедур врач определяет на осмотре",
+        "when": "Сухая и потерявшая упругость кожа лица, шеи, зоны декольте и кистей, кожа после долгого солнца или заметного снижения веса, подготовка кожи к другим процедурам и поддержание их результата",
+        "prep": "За несколько дней отказаться от алкоголя и согласовать с врачом препараты, повышающие кровоточивость; сказать об аллергии, в том числе на компоненты препарата, о беременности и кормлении, склонности к герпесу и ранее введённых препаратах; перед процедурой попросить показать упаковку",
+        "abnormal": "Папулы, покраснение и синячки в местах уколов — ожидаемая реакция первых дней, а результат оценивают недели через две и обычно после нескольких процедур. Сохраняющиеся уплотнения, нарастающий отёк, боль или признаки воспаления нужно показать врачу, который проводил процедуру"
+      },
+      "en": {
+        "what": "A treatment with a ready-made injectable product containing hyaluronic acid and amino acids, used to hydrate the skin and support its quality",
+        "how": "The doctor assesses the area, disinfects the skin and places the product into the dermis with a needle or cannula at marked points; the visit takes about half an hour, and the schedule and number of sessions are decided at the consultation",
+        "when": "Dry skin that has lost elasticity on the face, neck, décolleté and hands, skin after long sun exposure or marked weight loss, preparing the skin for other procedures and maintaining their result",
+        "prep": "Avoid alcohol for a few days and agree with the doctor about medicines that increase bleeding; mention allergies, including to components of the product, pregnancy and breastfeeding, a tendency to cold sores and products injected earlier; ask to see the packaging before the procedure",
+        "abnormal": "Small bumps, redness and bruises at the injection points are an expected reaction in the first days, and the result is judged after about two weeks and usually after several sessions. Lumps that persist, increasing swelling, pain or signs of inflammation should be shown to the doctor who performed the procedure"
+      },
+      "sr": {
+        "what": "Tretman gotovim preparatom za ubrizgavanje koji sadrži hijaluronsku kiselinu i aminokiseline, a koristi se za vlažnost i kvalitet kože",
+        "how": "Ljekar procijeni predio, dezinfikuje kožu i preparat unosi u kožu iglom ili kanilom po obilježenim tačkama; posjeta traje oko pola sata, a raspored i broj tretmana ljekar određuje na pregledu",
+        "when": "Suva koža koja je izgubila elastičnost na licu, vratu, dekolteu i šakama, koža poslije dugog sunca ili osjetnog gubitka težine, priprema kože za druge tretmane i održavanje njihovog rezultata",
+        "prep": "Nekoliko dana ne piti alkohol i sa ljekarom dogovoriti lijekove koji pojačavaju krvarenje; reći za alergije, uključujući i one na sastojke preparata, trudnoću i dojenje, sklonost herpesu i ranije ubrizgane preparate; prije tretmana tražiti da vam pokažu pakovanje",
+        "abnormal": "Kvržice, crvenilo i modrice na mjestima uboda očekivana su reakcija prvih dana, a rezultat se procjenjuje nakon otprilike dvije sedmice i obično poslije više tretmana. Zadebljanja koja ostaju, pojačan otok, bol ili znaci upale treba pokazati ljekaru koji je tretman izveo"
+      },
+      "de": {
+        "what": "Behandlung mit einem fertigen Injektionspräparat aus Hyaluronsäure und Aminosäuren, das der Feuchtigkeit und der Qualität der Haut dient",
+        "how": "Der Arzt beurteilt das Areal, desinfiziert die Haut und bringt das Präparat mit Nadel oder Kanüle an markierten Punkten in die Haut ein; der Termin dauert etwa eine halbe Stunde, Ablauf und Anzahl der Sitzungen legt der Arzt bei der Untersuchung fest",
+        "when": "Trockene, erschlaffte Haut an Gesicht, Hals, Dekolleté und Händen, Haut nach langer Sonnenbelastung oder deutlichem Gewichtsverlust, Vorbereitung der Haut auf andere Behandlungen und Erhalt deren Ergebnisses",
+        "prep": "Einige Tage auf Alkohol verzichten und Medikamente mit erhöhter Blutungsneigung mit dem Arzt abstimmen; Allergien, auch auf Bestandteile des Präparats, Schwangerschaft und Stillzeit, Neigung zu Lippenherpes und früher injizierte Präparate nennen; vor der Behandlung die Verpackung zeigen lassen",
+        "abnormal": "Quaddeln, Rötung und Blutergüsse an den Einstichstellen sind in den ersten Tagen zu erwarten, das Ergebnis wird nach etwa zwei Wochen und meist nach mehreren Sitzungen beurteilt. Bleibende Verhärtungen, zunehmende Schwellung, Schmerzen oder Entzündungszeichen gehören zu dem Arzt, der die Behandlung durchgeführt hat"
+      },
+      "tr": {
+        "what": "Cildin nemi ve kalitesi için kullanılan, hyaluronik asit ile amino asit içeren hazır enjeksiyon ürünüyle yapılan işlem",
+        "how": "Hekim bölgeyi değerlendirir, cildi dezenfekte eder ve ürünü işaretlenen noktalardan iğne ya da kanülle deri içine verir; randevu yaklaşık yarım saat sürer, uygulama düzenini ve seans sayısını hekim muayenede belirler",
+        "when": "Yüz, boyun, dekolte ve ellerde esnekliğini yitirmiş kuru cilt, uzun güneş maruziyeti ya da belirgin kilo kaybı sonrası cilt, başka işlemlere hazırlık ve onların sonucunun korunması",
+        "prep": "Birkaç gün alkol almayın ve kanamayı artıran ilaçları hekimle görüşün; ürün içeriği dâhil alerjilerinizi, gebelik ve emzirmeyi, uçuk yatkınlığını ve daha önce uygulanmış ürünleri bildirin; işlemden önce ambalajın gösterilmesini isteyin",
+        "abnormal": "Enjeksiyon yerlerinde kabarcık, kızarıklık ve morluk ilk günlerde beklenen tepkidir, sonuç ise yaklaşık iki hafta sonra ve genellikle birkaç seansın ardından değerlendirilir. Geçmeyen sertlikler, artan şişlik, ağrı ya da iltihap belirtileri işlemi yapan hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Третман готовим препаратом за убризгавање који садржи хијалуронску киселину и аминокиселине, а користи се за влажност и квалитет коже",
+        "how": "Љекар процијени предио, дезинфикује кожу и препарат уноси у кожу иглом или канилом по обиљеженим тачкама; посјета траје око пола сата, а распоред и број третмана љекар одређује на прегледу",
+        "when": "Сува кожа која је изгубила еластичност на лицу, врату, деколтеу и шакама, кожа послије дугог сунца или осјетног губитка тежине, припрема коже за друге третмане и одржавање њиховог резултата",
+        "prep": "Неколико дана не пити алкохол и са љекаром договорити лијекове који појачавају крварење; рећи за алергије, укључујући и оне на састојке препарата, трудноћу и дојење, склоност херпесу и раније убризгане препарате; прије третмана тражити да вам покажу паковање",
+        "abnormal": "Квржице, црвенило и модрице на мјестима убода очекивана су реакција првих дана, а резултат се процјењује након отприлике двије седмице и обично послије више третмана. Задебљања која остају, појачан оток, бол или знаци упале треба показати љекару који је третман извео"
+      }
+    }
+  }
+]

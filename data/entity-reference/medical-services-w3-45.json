@@ -1,0 +1,914 @@
+[
+  {
+    "slug": "silicone-oil-exchange",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторное вмешательство на оперированном глазу, при котором ранее введённое в полость стекловидного тела силиконовое масло заменяют новой порцией",
+        "how": "Под местной или общей анестезией через микропроколы в склере прежнее масло отсасывают, полость промывают и заполняют свежим силиконом, при необходимости хирург дополнительно обрабатывает сетчатку лазером; занимает около часа, часто в условиях дневного стационара",
+        "when": "Помутнение и дробление силикона на мелкие капли, недостаточное прилегание сетчатки при сохраняющемся риске повторной отслойки, подъём внутриглазного давления или помутнение оптических сред при оставленном масле",
+        "prep": "Осмотр глаза с УЗИ сетчатки, сообщить о разжижающих кровь препаратах и хронических болезнях, при общей анестезии не есть и не пить в указанный врачом срок, прийти с сопровождающим и запланировать соблюдение положения головы после операции",
+        "abnormal": "В первые дни зрение затуманено, глаз покрасневший и чувствительный, это постепенно проходит. Боль, которая нарастает, резкое падение зрения, вспышки или тёмная пелена в поле зрения — повод обратиться к офтальмологу сразу, не дожидаясь контрольного визита"
+      },
+      "en": {
+        "what": "A repeat procedure on an operated eye in which the silicone oil previously placed in the vitreous cavity is replaced with a fresh portion",
+        "how": "Under local or general anaesthesia the old oil is aspirated through micro-ports in the sclera, the cavity is rinsed and filled with new silicone, and the surgeon may add laser treatment to the retina; it takes about an hour, often as day surgery",
+        "when": "The silicone has clouded or broken up into small droplets, the retina is not supported well enough while the risk of re-detachment remains, intraocular pressure rises or the optical media cloud over with the oil in place",
+        "prep": "Eye examination with retinal ultrasound, tell the doctor about blood-thinning medicines and chronic conditions, no food or drink before general anaesthesia for the period the doctor sets, come with someone to accompany you and plan to keep the head position advised afterwards",
+        "abnormal": "For the first days vision is blurred and the eye is red and tender, which gradually settles. Pain that keeps increasing, a sudden drop in vision, flashes or a dark veil in the field of view are reasons to contact the ophthalmologist straight away rather than wait for the scheduled check"
+      },
+      "sr": {
+        "what": "Ponovni zahvat na operisanom oku kod kojeg se silikonsko ulje ranije ubačeno u staklastu šupljinu zamjenjuje novom količinom",
+        "how": "U lokalnoj ili opštoj anesteziji staro ulje se aspirira kroz mikroportove u bjeloočnici, šupljina se ispira i puni svježim silikonom, a hirurg po potrebi dodatno obrađuje mrežnjaču laserom; traje oko sat vremena, često u dnevnoj bolnici",
+        "when": "Zamućenje i razbijanje silikona u sitne kapi, nedovoljno prijanjanje mrežnjače uz i dalje prisutan rizik od ponovnog odvajanja, porast očnog pritiska ili zamućenje optičkih sredina dok je ulje u oku",
+        "prep": "Pregled oka sa ultrazvukom mrežnjače, prijaviti lijekove za razrjeđivanje krvi i hronične bolesti, ne jesti i ne piti prije opšte anestezije u roku koji ljekar odredi, doći sa pratiocem i planirati položaj glave koji se poslije zahvata preporučuje",
+        "abnormal": "Prvih dana vid je zamagljen, oko crveno i osjetljivo, što postepeno prolazi. Bol koja se pojačava, naglo slabljenje vida, bljeskovi ili tamna zavjesa u vidnom polju razlog su da se odmah javite oftalmologu, bez čekanja na zakazanu kontrolu"
+      },
+      "de": {
+        "what": "Erneuter Eingriff am operierten Auge, bei dem das zuvor in den Glaskörperraum eingebrachte Silikonöl durch frisches Öl ersetzt wird",
+        "how": "In örtlicher oder Vollnarkose wird das alte Öl über Mikrozugänge in der Lederhaut abgesaugt, der Raum gespült und mit neuem Silikon gefüllt, bei Bedarf behandelt der Operateur die Netzhaut zusätzlich mit dem Laser; dauert etwa eine Stunde, häufig ambulant",
+        "when": "Das Silikon ist eingetrübt oder in feine Tröpfchen zerfallen, die Netzhaut liegt bei fortbestehendem Ablösungsrisiko nicht ausreichend an, der Augeninnendruck steigt oder die optischen Medien trüben sich unter dem liegenden Öl ein",
+        "prep": "Augenuntersuchung mit Netzhaut-Ultraschall, Blutverdünner und chronische Erkrankungen angeben, vor Vollnarkose im vom Arzt genannten Zeitraum nüchtern bleiben, in Begleitung kommen und die anschließend empfohlene Kopfhaltung einplanen",
+        "abnormal": "In den ersten Tagen ist das Sehen verschwommen, das Auge gerötet und empfindlich, das klingt allmählich ab. Zunehmende Schmerzen, plötzlicher Sehverlust, Lichtblitze oder ein dunkler Schatten im Gesichtsfeld sind Gründe, sofort die Augenärztin oder den Augenarzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Ameliyat edilmiş gözde, daha önce vitreus boşluğuna verilen silikon yağının yenisiyle değiştirildiği tekrar girişimi",
+        "how": "Lokal veya genel anestezi altında sklerada açılan mikro girişlerden eski yağ aspire edilir, boşluk yıkanır ve taze silikonla doldurulur, gerekirse cerrah retinaya lazer uygular; yaklaşık bir saat sürer, çoğunlukla günübirlik yapılır",
+        "when": "Silikonun bulanıklaşması ve küçük damlacıklara ayrışması, yeniden dekolman riski sürerken retinanın yeterince desteklenmemesi, göz içi basıncının yükselmesi veya yağ yerindeyken saydam ortamların bulanması",
+        "prep": "Retina ultrasonu ile göz muayenesi, kan sulandırıcı ilaçların ve kronik hastalıkların bildirilmesi, genel anestezi öncesi hekimin belirttiği süre aç kalmak, yanınızda refakatçi getirmek ve sonrasında önerilen baş pozisyonunu planlamak",
+        "abnormal": "İlk günlerde görme bulanık, göz kırmızı ve hassastır, bu durum giderek geçer. Giderek artan ağrı, ani görme kaybı, ışık çakmaları veya görme alanında koyu perde, kontrol gününü beklemeden göz hekimine başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Поновни захват на оперисаном оку код којег се силиконско уље раније убачено у стакласту шупљину замјењује новом количином",
+        "how": "У локалној или општој анестезији старо уље се аспирира кроз микропортове у бјелоочници, шупљина се испира и пуни свјежим силиконом, а хирург по потреби додатно обрађује мрежњачу ласером; траје око сат времена, често у дневној болници",
+        "when": "Замућење и разбијање силикона у ситне капи, недовољно пријањање мрежњаче уз и даље присутан ризик од поновног одвајања, пораст очног притиска или замућење оптичких средина док је уље у оку",
+        "prep": "Преглед ока са ултразвуком мрежњаче, пријавити лијекове за разрјеђивање крви и хроничне болести, не јести и не пити прије опште анестезије у року који љекар одреди, доћи са пратиоцем и планирати положај главе који се послије захвата препоручује",
+        "abnormal": "Првих дана вид је замагљен, око црвено и осјетљиво, што постепено пролази. Бол која се појачава, нагло слабљење вида, бљескови или тамна завјеса у видном пољу разлог су да се одмах јавите офталмологу, без чекања на заказану контролу"
+      }
+    }
+  },
+  {
+    "slug": "silicone-oil-removal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Завершающая операция после витрэктомии с силиконовой тампонадой: масло выводят из полости глаза, когда сетчатка стабильно прилежит",
+        "how": "Под местной анестезией через микропроколы в склере силикон удаляют аспирацией, полость заполняют физиологическим раствором, а состояние сетчатки проверяют под микроскопом; обычно 20-40 минут, амбулаторно или с коротким пребыванием в стационаре",
+        "when": "Срок, назначенный хирургом после стабилизации сетчатки, эмульгирование масла, повышение внутриглазного давления или изменения роговицы на фоне длительной тампонады",
+        "prep": "Осмотр с оценкой прилегания сетчатки, сведения о принимаемых препаратах, в день операции сопровождающий, за руль садиться нельзя",
+        "abnormal": "После удаления масла зрение продолжает меняться несколько недель, часто требуется новый подбор очков. Внезапное снижение зрения, вспышки, плавающая тень или боль требуют срочного осмотра офтальмолога"
+      },
+      "en": {
+        "what": "The final step after vitrectomy with silicone tamponade: the oil is taken out of the eye once the retina is stably attached",
+        "how": "Under local anaesthesia the silicone is aspirated through micro-ports in the sclera, the cavity is filled with balanced salt solution and the retina is checked under the microscope; usually 20-40 minutes, as day surgery or with a short stay",
+        "when": "At the time set by the surgeon once the retina has stabilised, when the oil has emulsified, when intraocular pressure rises or the cornea changes during long tamponade",
+        "prep": "Examination assessing retinal attachment, a list of current medicines, someone to accompany you on the day and no driving",
+        "abnormal": "After the oil is removed vision usually keeps changing for several weeks and new glasses may be needed. A sudden drop in vision, flashes, a floating shadow or pain call for an urgent ophthalmology review"
+      },
+      "sr": {
+        "what": "Završni zahvat poslije vitrektomije sa silikonskom tamponadom: ulje se uklanja iz oka kada mrežnjača stabilno prijanja",
+        "how": "U lokalnoj anesteziji silikon se izvlači aspiracijom kroz mikroportove u bjeloočnici, šupljina se puni fiziološkim rastvorom, a stanje mrežnjače se provjerava pod mikroskopom; obično 20-40 minuta, ambulantno ili uz kratak boravak u bolnici",
+        "when": "Rok koji hirurg odredi poslije stabilizacije mrežnjače, emulgovanje ulja, porast očnog pritiska ili promjene na rožnjači tokom duge tamponade",
+        "prep": "Pregled sa procjenom prijanjanja mrežnjače, podaci o lijekovima koje uzimate, na dan zahvata pratilac i bez vožnje",
+        "abnormal": "Poslije uklanjanja ulja vid se mijenja tokom nekoliko sedmica i često je potrebna nova korekcija naočarima. Naglo slabljenje vida, bljeskovi, plutajuća sjenka ili bol traže hitan pregled oftalmologa"
+      },
+      "de": {
+        "what": "Abschließender Eingriff nach Vitrektomie mit Silikontamponade: Das Öl wird entfernt, sobald die Netzhaut stabil anliegt",
+        "how": "In örtlicher Betäubung wird das Silikon über Mikrozugänge in der Lederhaut abgesaugt, der Raum mit Spüllösung gefüllt und die Netzhaut unter dem Mikroskop kontrolliert; meist 20-40 Minuten, ambulant oder mit kurzem Aufenthalt",
+        "when": "Zum vom Operateur festgelegten Zeitpunkt nach Stabilisierung der Netzhaut, bei emulgiertem Öl, steigendem Augeninnendruck oder Hornhautveränderungen unter langer Tamponade",
+        "prep": "Untersuchung mit Beurteilung der Netzhautlage, Angaben zu eingenommenen Medikamenten, am Eingriffstag Begleitung und kein Autofahren",
+        "abnormal": "Nach der Ölentfernung verändert sich das Sehen noch über Wochen, oft wird eine neue Brillenkorrektur nötig. Plötzlicher Sehverlust, Lichtblitze, ein wandernder Schatten oder Schmerzen erfordern eine dringende augenärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Silikon tamponadlı vitrektomi sonrası son aşama: retina sağlam biçimde yapışınca yağ gözden çıkarılır",
+        "how": "Lokal anestezi altında silikon skleradaki mikro girişlerden aspire edilir, boşluk serum fizyolojikle doldurulur ve retina mikroskop altında kontrol edilir; genellikle 20-40 dakika, günübirlik ya da kısa yatışla",
+        "when": "Retina stabilleştikten sonra cerrahın belirlediği zaman, yağın emülsifiye olması, göz içi basıncının yükselmesi veya uzun tamponad sırasında korneada değişiklikler",
+        "prep": "Retina yapışıklığını değerlendiren muayene, kullanılan ilaçların bildirilmesi, işlem günü refakatçi ve araç kullanmamak",
+        "abnormal": "Yağ alındıktan sonra görme birkaç hafta boyunca değişir, yeni gözlük gerekebilir. Ani görme kaybı, ışık çakmaları, yüzen gölge veya ağrı acil göz muayenesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Завршни захват послије витректомије са силиконском тампонадом: уље се уклања из ока када мрежњача стабилно пријања",
+        "how": "У локалној анестезији силикон се извлачи аспирацијом кроз микропортове у бјелоочници, шупљина се пуни физиолошким раствором, а стање мрежњаче се провјерава под микроскопом; обично 20-40 минута, амбулантно или уз кратак боравак у болници",
+        "when": "Рок који хирург одреди послије стабилизације мрежњаче, емулговање уља, пораст очног притиска или промјене на рожњачи током дуге тампонаде",
+        "prep": "Преглед са процјеном пријањања мрежњаче, подаци о лијековима које узимате, на дан захвата пратилац и без вожње",
+        "abnormal": "Послије уклањања уља вид се мијења током неколико седмица и често је потребна нова корекција наочарима. Нагло слабљење вида, бљескови, плутајућа сјенка или бол траже хитан преглед офталмолога"
+      }
+    }
+  },
+  {
+    "slug": "tarsorrhaphy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция, при которой края век частично сшивают, чтобы сузить глазную щель и защитить роговицу от высыхания",
+        "how": "Край века обезболивают инъекцией, по краям верхнего и нижнего века снимают узкую полоску ткани и сшивают их на нужном протяжении — временно рассасывающимися швами или на длительный срок; занимает 20-40 минут, амбулаторно",
+        "when": "Неполное смыкание век при параличе лицевого нерва, выраженный лагофтальм, тяжёлая сухость глаза, незаживающая язва или эрозия роговицы, защита роговицы после пересадки и при выраженном выстоянии глаза",
+        "prep": "Сообщить о разжижающих кровь препаратах и аллергии на анестетики, прийти без макияжа, снять контактные линзы и взять назначенные глазные капли и мазь",
+        "abnormal": "Поле зрения с оперированной стороны временно сужается, веки отёчны и чувствительны несколько дней. Срок, на который швы оставляют, и момент их снятия определяет офтальмолог по состоянию роговицы; усиление боли, гнойное отделяемое или прорезывание швов — повод прийти раньше"
+      },
+      "en": {
+        "what": "An operation in which the eyelid margins are partly sewn together to narrow the lid opening and protect the cornea from drying out",
+        "how": "The lid margin is numbed with an injection, a narrow strip of tissue is freshened along the upper and lower lid and the lids are joined over the needed length, either temporarily with absorbable sutures or for a longer period; 20-40 minutes, as an outpatient",
+        "when": "Incomplete lid closure in facial nerve palsy, marked lagophthalmos, severe dry eye, a corneal ulcer or erosion that will not heal, protection of the cornea after a graft and in pronounced protrusion of the eye",
+        "prep": "Mention blood-thinning medicines and anaesthetic allergies, come without make-up, remove contact lenses and bring the prescribed eye drops and ointment",
+        "abnormal": "The field of view on the operated side is temporarily narrowed and the lids are swollen and tender for several days. How long the sutures stay and when they come out is decided by the ophthalmologist from the state of the cornea; increasing pain, purulent discharge or sutures cutting through mean coming in earlier"
+      },
+      "sr": {
+        "what": "Operacija kod koje se ivice kapaka djelimično spajaju šavovima da bi se očni otvor suzio i rožnjača zaštitila od sušenja",
+        "how": "Ivica kapka se obezboli injekcijom, uklanja se uska traka tkiva sa gornjeg i donjeg kapka, a kapci se spajaju na potrebnoj dužini, privremeno resorptivnim koncem ili na duži rok; traje 20-40 minuta, ambulantno",
+        "when": "Nepotpuno zatvaranje kapaka kod oduzetosti ličnog živca, izražen lagoftalmus, teška suvoća oka, rana ili erozija rožnjače koja ne zarasta, zaštita rožnjače poslije presađivanja i kod izraženog izbočenja oka",
+        "prep": "Prijaviti lijekove za razrjeđivanje krvi i alergiju na anestetike, doći bez šminke, skinuti kontaktna sočiva i ponijeti propisane kapi i mast",
+        "abnormal": "Vidno polje sa operisane strane privremeno je suženo, a kapci otečeni i osjetljivi nekoliko dana. Koliko šavovi ostaju i kada se skidaju odlučuje oftalmolog prema stanju rožnjače; jača bol, gnojni iscjedak ili popuštanje šavova razlog su za raniji dolazak"
+      },
+      "de": {
+        "what": "Eingriff, bei dem die Lidränder teilweise vernäht werden, um die Lidspalte zu verengen und die Hornhaut vor dem Austrocknen zu schützen",
+        "how": "Der Lidrand wird mit einer Injektion betäubt, am Ober- und Unterlid wird ein schmaler Gewebestreifen angefrischt und die Lider werden auf der nötigen Länge verbunden, vorübergehend mit resorbierbaren Fäden oder längerfristig; 20-40 Minuten, ambulant",
+        "when": "Unvollständiger Lidschluss bei Fazialisparese, ausgeprägter Lagophthalmus, schwere Augentrockenheit, nicht heilendes Hornhautgeschwür oder eine nicht heilende Erosion, Schutz der Hornhaut nach Transplantation und bei starkem Hervortreten des Auges",
+        "prep": "Blutverdünner und Allergien gegen Betäubungsmittel angeben, ohne Make-up kommen, Kontaktlinsen entfernen und verordnete Tropfen und Salbe mitbringen",
+        "abnormal": "Das Gesichtsfeld der operierten Seite ist vorübergehend eingeengt, die Lider sind einige Tage geschwollen und empfindlich. Wie lange die Fäden bleiben und wann sie entfernt werden, entscheidet die Augenärztin oder der Augenarzt nach dem Hornhautbefund; zunehmende Schmerzen, eitriges Sekret oder durchschneidende Fäden erfordern einen früheren Termin"
+      },
+      "tr": {
+        "what": "Göz kapağı kenarlarının kısmen dikilerek kapak aralığının daraltıldığı ve korneanın kurumaktan korunduğu ameliyat",
+        "how": "Kapak kenarı enjeksiyonla uyuşturulur, üst ve alt kapakta dar bir doku şeridi tazelenir ve kapaklar gereken uzunlukta birleştirilir, geçici olarak eriyen dikişle ya da uzun süreli; 20-40 dakika sürer, ayaktan yapılır",
+        "when": "Yüz felcinde kapakların tam kapanmaması, belirgin lagoftalmus, ağır göz kuruluğu, iyileşmeyen kornea yarası veya erozyonu, nakil sonrası ve gözün belirgin dışa çıkışında korneanın korunması",
+        "prep": "Kan sulandırıcı ilaçları ve anestezik alerjisini bildirmek, makyajsız gelmek, kontakt lensleri çıkarmak ve reçete edilen damla ile pomadı yanında getirmek",
+        "abnormal": "Ameliyat edilen tarafta görme alanı geçici olarak daralır, kapaklar birkaç gün şiş ve hassastır. Dikişlerin ne kadar kalacağına ve ne zaman alınacağına kornea durumuna göre göz hekimi karar verir; artan ağrı, iltihaplı akıntı veya dikişlerin sıyrılması daha erken başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Операција код које се ивице капака дјелимично спајају шавовима да би се очни отвор сузио и рожњача заштитила од сушења",
+        "how": "Ивица капка се обезболи ињекцијом, уклања се уска трака ткива са горњег и доњег капка, а капци се спајају на потребној дужини, привремено ресорптивним концем или на дужи рок; траје 20-40 минута, амбулантно",
+        "when": "Непотпуно затварање капака код одузетости личног живца, изражен лагофталмус, тешка сувоћа ока, рана или ерозија рожњаче која не зараста, заштита рожњаче послије пресађивања и код израженог избочења ока",
+        "prep": "Пријавити лијекове за разрјеђивање крви и алергију на анестетике, доћи без шминке, скинути контактна сочива и понијети прописане капи и маст",
+        "abnormal": "Видно поље са оперисане стране привремено је сужено, а капци отечени и осјетљиви неколико дана. Колико шавови остају и када се скидају одлучује офталмолог према стању рожњаче; јача бол, гнојни исцједак или попуштање шавова разлог су за ранији долазак"
+      }
+    }
+  },
+  {
+    "slug": "capsulectomy-with-lens-mass-aspiration-soft-cataract",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление мягкого, не уплотнённого хрусталика: переднюю капсулу вскрывают, а хрусталиковые массы вымывают без ультразвукового дробления",
+        "how": "Через микроразрезы в передней капсуле формируют круговое отверстие, мягкое вещество хрусталика отсасывают системой ирригации-аспирации, при необходимости удаляют и часть задней капсулы, искусственную линзу имплантируют, если это предусмотрено планом операции; у детей проводится под общим наркозом",
+        "when": "Врождённая и юношеская катаракта, мягкая катаракта у молодых пациентов, помутнение хрусталика после травмы, когда плотного ядра ещё нет",
+        "prep": "Полное обследование глаза с расчётом линзы и, у детей, осмотр под наркозом, анализы и заключение педиатра или терапевта по требованию клиники, воздержание от еды и питья перед общей анестезией в указанный врачом срок",
+        "abnormal": "В первые дни глаз краснеет и слезится, зрение нечёткое, детям дополнительно подбирают коррекцию и назначают тренировку зрения. Боль, светобоязнь, резкое ухудшение зрения или гнойное отделяемое требуют немедленного осмотра офтальмолога"
+      },
+      "en": {
+        "what": "Removal of a soft, not yet hardened lens: the front capsule is opened and the lens material is washed out without ultrasound fragmentation",
+        "how": "Through micro-incisions a round opening is made in the front capsule, the soft lens material is aspirated with an irrigation-aspiration system, part of the back capsule may also be removed and an artificial lens is implanted if the plan provides for it; in children it is done under general anaesthesia",
+        "when": "Congenital and juvenile cataract, soft cataract in young patients, clouding of the lens after injury, when there is no hard nucleus yet",
+        "prep": "Full eye assessment with lens power calculation and, in children, examination under anaesthesia, tests and clearance from a paediatrician or physician as the clinic requires, no food or drink before general anaesthesia for the period the doctor sets",
+        "abnormal": "For the first days the eye is red and watery and vision is blurred; children are additionally fitted with correction and started on vision training. Pain, light sensitivity, a sharp drop in vision or purulent discharge need an immediate ophthalmology review"
+      },
+      "sr": {
+        "what": "Uklanjanje mekog, još neočvrslog sočiva: prednja čaura se otvara, a sočivne mase se ispiraju bez ultrazvučnog razbijanja",
+        "how": "Kroz mikrorezove se u prednjoj čauri pravi kružni otvor, meke sočivne mase se aspiriraju sistemom za ispiranje i usisavanje, po potrebi se uklanja i dio zadnje čaure, a vještačko sočivo se ugrađuje ako je tako planirano; kod djece se radi u opštoj anesteziji",
+        "when": "Urođena i mladalačka katarakta, meka katarakta kod mladih pacijenata, zamućenje sočiva poslije povrede, kada tvrdo jezgro još nije stvoreno",
+        "prep": "Potpun pregled oka sa izračunom jačine sočiva i, kod djece, pregled u anesteziji, analize i mišljenje pedijatra ili interniste po zahtjevu klinike, bez hrane i pića prije opšte anestezije u roku koji ljekar odredi",
+        "abnormal": "Prvih dana oko je crveno i suzi, vid je zamagljen, a djeci se dodatno određuje korekcija i vježbanje vida. Bol, preosjetljivost na svjetlost, naglo slabljenje vida ili gnojni iscjedak traže hitan pregled oftalmologa"
+      },
+      "de": {
+        "what": "Entfernung einer weichen, noch nicht verhärteten Linse: Die vordere Kapsel wird eröffnet und die Linsenmasse ohne Ultraschallzerkleinerung abgesaugt",
+        "how": "Über Mikroschnitte wird eine runde Öffnung in die Vorderkapsel gesetzt, die weiche Linsenmasse mit einem Spül-Saug-System entfernt, bei Bedarf auch ein Teil der Hinterkapsel, und eine Kunstlinse eingesetzt, wenn dies vorgesehen ist; bei Kindern in Vollnarkose",
+        "when": "Angeborene und jugendliche Katarakt, weiche Katarakt bei jungen Patienten, Linsentrübung nach Verletzung, solange kein harter Kern besteht",
+        "prep": "Vollständige Augenuntersuchung mit Linsenberechnung und bei Kindern Untersuchung in Narkose, Laborwerte und Freigabe durch Kinder- oder Hausarzt nach Vorgabe der Klinik, vor Vollnarkose im genannten Zeitraum nüchtern bleiben",
+        "abnormal": "In den ersten Tagen ist das Auge gerötet und tränt, das Sehen ist unscharf; bei Kindern folgen zusätzlich Korrektur und Sehschule. Schmerzen, Lichtscheu, rascher Sehverlust oder eitriges Sekret erfordern eine sofortige augenärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Yumuşak, henüz sertleşmemiş merceğin çıkarılması: ön kapsül açılır ve lens kütleleri ultrasonla parçalanmadan yıkanarak alınır",
+        "how": "Mikro kesilerden ön kapsülde yuvarlak bir açıklık oluşturulur, yumuşak lens kütleleri irigasyon-aspirasyon sistemiyle çekilir, gerekirse arka kapsülün bir bölümü de alınır ve planlanmışsa yapay mercek yerleştirilir; çocuklarda genel anestezi altında yapılır",
+        "when": "Doğumsal ve genç yaş kataraktı, genç hastalarda yumuşak katarakt, henüz sert çekirdek oluşmamışken yaralanma sonrası mercek bulanıklığı",
+        "prep": "Mercek gücü hesabıyla tam göz muayenesi ve çocuklarda anestezi altında değerlendirme, kliniğin istediği tahliller ve çocuk hekimi veya dahiliye onayı, genel anestezi öncesi hekimin belirttiği süre aç kalmak",
+        "abnormal": "İlk günlerde göz kızarır ve sulanır, görme bulanıktır; çocuklara ayrıca gözlük düzeltmesi ve görme eğitimi uygulanır. Ağrı, ışığa aşırı duyarlılık, görmenin hızla azalması veya iltihaplı akıntı hemen göz hekimine başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање меког, још неочврслог сочива: предња чаура се отвара, а сочивне масе се испирају без ултразвучног разбијања",
+        "how": "Кроз микрорезове се у предњој чаури прави кружни отвор, меке сочивне масе се аспирирају системом за испирање и усисавање, по потреби се уклања и дио задње чауре, а вјештачко сочиво се уграђује ако је тако планирано; код дјеце се ради у општој анестезији",
+        "when": "Урођена и младалачка катаракта, мека катаракта код младих пацијената, замућење сочива послије повреде, када тврдо језгро још није створено",
+        "prep": "Потпун преглед ока са израчуном јачине сочива и, код дјеце, преглед у анестезији, анализе и мишљење педијатра или интернисте по захтјеву клинике, без хране и пића прије опште анестезије у року који љекар одреди",
+        "abnormal": "Првих дана око је црвено и сузи, вид је замагљен, а дјеци се додатно одређује корекција и вјежбање вида. Бол, преосјетљивост на свјетлост, нагло слабљење вида или гнојни исцједак траже хитан преглед офталмолога"
+      }
+    }
+  },
+  {
+    "slug": "cataract-extraction-with-anterior-vitrectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление помутневшего хрусталика, дополненное иссечением стекловидного тела, вышедшего в переднюю камеру глаза",
+        "how": "Хрусталик удаляют через микроразрез, затем витреотомом убирают пряди стекловидного тела из передней камеры и из зоны разреза, проверяют форму зрачка и опору для искусственной линзы — её имплантируют в капсульный мешок, в борозду или подшивают, по ситуации; длится дольше обычной операции катаракты",
+        "when": "Разрыв задней капсулы и выпадение стекловидного тела во время удаления катаракты, травматическая катаракта с повреждением капсулы, слабость связок, удерживающих хрусталик",
+        "prep": "Обследование глаза с измерениями и расчётом линзы, сведения о травмах и прежних операциях на глазу, разжижающие кровь препараты обсудить с врачом, в день вмешательства нужен сопровождающий",
+        "abnormal": "Восстановление зрения идёт медленнее, чем после неосложнённой операции, несколько недель возможны отёк роговицы и колебания остроты зрения. Нарастающая боль, вспышки, тёмное пятно или пелена в поле зрения — повод срочно показаться офтальмологу"
+      },
+      "en": {
+        "what": "Removal of a clouded lens combined with cutting away vitreous gel that has come forward into the front chamber of the eye",
+        "how": "The lens is removed through a micro-incision, then a vitrectomy probe clears strands of vitreous from the anterior chamber and the wound, the pupil shape and the support for an artificial lens are checked, and the lens is placed in the capsular bag, in the sulcus or fixed with sutures as the situation allows; it takes longer than routine cataract surgery",
+        "when": "A tear of the back capsule with vitreous loss during cataract removal, traumatic cataract with capsule damage, weakness of the fibres that hold the lens",
+        "prep": "Eye measurements and lens power calculation, information about injuries and previous eye operations, discussion of blood-thinning medicines with the doctor, someone to accompany you on the day",
+        "abnormal": "Vision recovers more slowly than after an uncomplicated operation, and corneal swelling and fluctuating sharpness are possible for several weeks. Increasing pain, flashes, a dark spot or a curtain in the field of view mean seeing the ophthalmologist urgently"
+      },
+      "sr": {
+        "what": "Uklanjanje zamućenog sočiva dopunjeno isijecanjem staklastog tijela koje je dospjelo u prednju očnu komoru",
+        "how": "Sočivo se uklanja kroz mikrorez, zatim se vitreotomom odstranjuju niti staklastog tijela iz prednje komore i iz reza, provjerava se oblik zjenice i oslonac za vještačko sočivo, koje se ugrađuje u čauru, u brazdu ili se prišiva, zavisno od nalaza; traje duže od uobičajene operacije katarakte",
+        "when": "Pucanje zadnje čaure i ispadanje staklastog tijela tokom operacije katarakte, traumatska katarakta sa oštećenjem čaure, slabost vlakana koja drže sočivo",
+        "prep": "Pregled oka sa mjerenjima i izračunom sočiva, podaci o povredama i ranijim operacijama oka, dogovor sa ljekarom o lijekovima za razrjeđivanje krvi, na dan zahvata pratilac",
+        "abnormal": "Vid se vraća sporije nego poslije neusložnjene operacije, nekoliko sedmica mogući su otok rožnjače i promjenljiva oštrina. Bol koja se pojačava, bljeskovi, tamna mrlja ili zavjesa u vidnom polju traže hitan pregled oftalmologa"
+      },
+      "de": {
+        "what": "Entfernung der getrübten Linse, ergänzt um das Abtragen von Glaskörpergewebe, das in die vordere Augenkammer gelangt ist",
+        "how": "Die Linse wird über einen Mikroschnitt entfernt, anschließend trägt ein Vitrektom Glaskörperstränge aus der Vorderkammer und aus dem Schnitt ab, Pupillenform und Halt für die Kunstlinse werden geprüft, und diese wird in den Kapselsack, in den Sulkus oder mit Nähten fixiert eingesetzt; der Eingriff dauert länger als eine übliche Kataraktoperation",
+        "when": "Riss der Hinterkapsel mit Glaskörpervorfall während der Kataraktoperation, traumatische Katarakt mit Kapselschaden, Schwäche des Aufhängeapparats der Linse",
+        "prep": "Augenuntersuchung mit Messungen und Linsenberechnung, Angaben zu Verletzungen und früheren Augenoperationen, Besprechung von Blutverdünnern mit der Ärztin oder dem Arzt, am Eingriffstag Begleitung",
+        "abnormal": "Das Sehen erholt sich langsamer als nach einem unkomplizierten Eingriff, über Wochen sind Hornhautschwellung und schwankende Sehschärfe möglich. Zunehmende Schmerzen, Lichtblitze, ein dunkler Fleck oder ein Schatten im Gesichtsfeld erfordern eine dringende augenärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Bulanıklaşmış merceğin çıkarılmasına, ön kamaraya geçmiş vitreusun temizlenmesinin eklendiği ameliyat",
+        "how": "Mercek mikro kesiden alınır, ardından vitrektom ile ön kamaradaki ve kesi bölgesindeki vitreus lifleri temizlenir, gözbebeği şekli ve yapay mercek için destek değerlendirilir, mercek kapsül kesesine ya da sulkusa yerleştirilir veya dikişle tespit edilir; olağan katarakt ameliyatından uzun sürer",
+        "when": "Katarakt ameliyatı sırasında arka kapsülün yırtılması ve vitreus kaybı, kapsül hasarıyla birlikte travmatik katarakt, merceği tutan liflerin zayıflığı",
+        "prep": "Ölçümler ve mercek gücü hesabıyla göz muayenesi, geçirilmiş yaralanma ve göz ameliyatlarının bildirilmesi, kan sulandırıcı ilaçların hekimle görüşülmesi, işlem günü refakatçi",
+        "abnormal": "Görme, sorunsuz ameliyata göre daha yavaş düzelir; birkaç hafta kornea ödemi ve değişken netlik görülebilir. Artan ağrı, ışık çakmaları, görme alanında koyu leke veya perde acil göz muayenesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање замућеног сочива допуњено исијецањем стакластог тијела које је доспјело у предњу очну комору",
+        "how": "Сочиво се уклања кроз микрорез, затим се витреотомом одстрањују нити стакластог тијела из предње коморе и из реза, провјерава се облик зјенице и ослонац за вјештачко сочиво, које се уграђује у чауру, у бразду или се пришива, зависно од налаза; траје дуже од уобичајене операције катаракте",
+        "when": "Пуцање задње чауре и испадање стакластог тијела током операције катаракте, трауматска катаракта са оштећењем чауре, слабост влакана која држе сочиво",
+        "prep": "Преглед ока са мјерењима и израчуном сочива, подаци о повредама и ранијим операцијама ока, договор са љекаром о лијековима за разрјеђивање крви, на дан захвата пратилац",
+        "abnormal": "Вид се враћа спорије него послије неусложњене операције, неколико седмица могући су оток рожњаче и промјенљива оштрина. Бол која се појачава, бљескови, тамна мрља или завјеса у видном пољу траже хитан преглед офталмолога"
+      }
+    }
+  },
+  {
+    "slug": "conjunctival-tumor-surgery",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция по удалению образования слизистой оболочки глаза с отправкой материала на гистологическое исследование",
+        "how": "Под местной анестезией образование иссекают в пределах видимо неизменённой конъюнктивы, при необходимости дефект закрывают лоскутом слизистой или трансплантатом, края ушивают тонкими швами; занимает 20-40 минут, амбулаторно",
+        "when": "Растущее или меняющее цвет образование конъюнктивы, пигментное пятно, которое увеличивается, узелок, раздражающий глаз и мешающий моргать, необходимость уточнить природу ткани под микроскопом",
+        "prep": "Осмотр на щелевой лампе с фотофиксацией образования, сообщить о разжижающих кровь препаратах, снять контактные линзы, прийти с сопровождающим",
+        "abnormal": "Строение ткани описывает врач-патолог, дальнейшую тактику офтальмолог обсуждает с пациентом. Покраснение и ощущение шва в первые дни ожидаемы; усиление боли, гнойное отделяемое или появление нового образования на том же месте — повод на внеочередной осмотр"
+      },
+      "en": {
+        "what": "Removal of a growth of the eye's mucous membrane, with the tissue sent for histological examination",
+        "how": "Under local anaesthesia the growth is excised within visibly unchanged conjunctiva, the defect may be covered with a mucosal flap or a graft, and the edges are closed with fine sutures; 20-40 minutes, as an outpatient",
+        "when": "A conjunctival growth that is enlarging or changing colour, a pigmented spot that is getting bigger, a nodule that irritates the eye and interferes with blinking, the need to establish the nature of the tissue under the microscope",
+        "prep": "Slit-lamp examination with a photograph of the lesion, information about blood-thinning medicines, contact lenses removed, someone to accompany you",
+        "abnormal": "The structure of the tissue is described by a pathologist, and the ophthalmologist discusses the next steps with the patient. Redness and awareness of the sutures in the first days are expected; increasing pain, purulent discharge or a new growth in the same place are reasons for an extra visit"
+      },
+      "sr": {
+        "what": "Operativno uklanjanje izrasline sluzokože oka uz slanje materijala na patohistološki pregled",
+        "how": "U lokalnoj anesteziji izraslina se isijeca u granicama vidno nepromijenjene vežnjače, po potrebi se nastali defekt pokriva režnjem sluzokože ili presatkom, a ivice se zatvaraju tankim koncima; traje 20-40 minuta, ambulantno",
+        "when": "Izraslina vežnjače koja raste ili mijenja boju, pigmentna mrlja koja se uvećava, čvorić koji nadražuje oko i smeta pri treptanju, potreba da se priroda tkiva utvrdi mikroskopski",
+        "prep": "Pregled na biomikroskopu sa fotografisanjem promjene, prijaviti lijekove za razrjeđivanje krvi, skinuti kontaktna sočiva, doći sa pratiocem",
+        "abnormal": "Građu tkiva opisuje patolog, a dalje korake oftalmolog dogovara sa pacijentom. Crvenilo i osjećaj konca prvih dana su očekivani; jača bol, gnojni iscjedak ili nova izraslina na istom mjestu razlog su za vanredni pregled"
+      },
+      "de": {
+        "what": "Operative Entfernung einer Wucherung der Augenbindehaut mit Einsendung des Gewebes zur feingeweblichen Untersuchung",
+        "how": "In örtlicher Betäubung wird die Wucherung im Bereich sichtbar unveränderter Bindehaut herausgeschnitten, der Defekt bei Bedarf mit einem Schleimhautlappen oder Transplantat gedeckt und die Ränder mit feinen Fäden verschlossen; 20-40 Minuten, ambulant",
+        "when": "Eine wachsende oder sich verfärbende Bindehautveränderung, ein größer werdender Pigmentfleck, ein Knötchen, das das Auge reizt und beim Lidschlag stört, Klärung der Gewebeart unter dem Mikroskop",
+        "prep": "Spaltlampenuntersuchung mit Fotodokumentation, Angaben zu Blutverdünnern, Kontaktlinsen entfernen, in Begleitung kommen",
+        "abnormal": "Den Gewebeaufbau beschreibt die Pathologie, das weitere Vorgehen bespricht die Augenärztin oder der Augenarzt mit der Patientin oder dem Patienten. Rötung und Fadengefühl in den ersten Tagen sind zu erwarten; zunehmende Schmerzen, eitriges Sekret oder eine neue Veränderung an derselben Stelle sind Grund für einen zusätzlichen Termin"
+      },
+      "tr": {
+        "what": "Göz mukozasındaki oluşumun çıkarılması ve dokunun histopatolojik incelemeye gönderilmesi",
+        "how": "Lokal anestezi altında oluşum, görünüşte sağlam konjonktiva sınırları içinde çıkarılır, gerekirse oluşan açıklık mukoza flebi veya greftle kapatılır ve kenarlar ince dikişlerle birleştirilir; 20-40 dakika sürer, ayaktan yapılır",
+        "when": "Büyüyen veya rengi değişen konjonktiva oluşumu, boyutu artan pigment lekesi, gözü rahatsız eden ve göz kırpmayı zorlaştıran nodül, dokunun yapısının mikroskopla belirlenmesi gereği",
+        "prep": "Biyomikroskopla muayene ve lezyonun fotoğraflanması, kan sulandırıcı ilaçların bildirilmesi, kontakt lenslerin çıkarılması, yanınızda refakatçi",
+        "abnormal": "Dokunun yapısını patoloji hekimi tanımlar, sonraki adımları göz hekimi hastayla birlikte belirler. İlk günlerde kızarıklık ve dikiş hissi beklenir; artan ağrı, iltihaplı akıntı veya aynı yerde yeni bir oluşum ek muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Оперативно уклањање израслине слузокоже ока уз слање материјала на патохистолошки преглед",
+        "how": "У локалној анестезији израслина се исијеца у границама видно непромијењене вежњаче, по потреби се настали дефект покрива режњем слузокоже или пресатком, а ивице се затварају танким концима; траје 20-40 минута, амбулантно",
+        "when": "Израслина вежњаче која расте или мијења боју, пигментна мрља која се увећава, чворић који надражује око и смета при трептању, потреба да се природа ткива утврди микроскопски",
+        "prep": "Преглед на биомикроскопу са фотографисањем промјене, пријавити лијекове за разрјеђивање крви, скинути контактна сочива, доћи са пратиоцем",
+        "abnormal": "Грађу ткива описује патолог, а даље кораке офталмолог договара са пацијентом. Црвенило и осјећај конца првих дана су очекивани; јача бол, гнојни исцједак или нова израслина на истом мјесту разлог су за ванредни преглед"
+      }
+    }
+  },
+  {
+    "slug": "episcleral-retinal-detachment-surgery",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция при отслойке сетчатки, которую выполняют снаружи глаза: к склере подшивают силиконовую пломбу, прижимающую стенку глаза к отслоившейся сетчатке",
+        "how": "Конъюнктиву отсепаровывают, находят разрыв сетчатки и обрабатывают его холодом, на склеру подшивают пломбу или циркулярный жгут, при необходимости выпускают скопившуюся под сетчаткой жидкость; занимает от часа, обычно под общей или ретробульбарной анестезией",
+        "when": "Отслойка сетчатки с периферическим разрывом, особенно у молодых пациентов с собственным хрусталиком, когда прозрачное стекловидное тело позволяет обойтись без его удаления",
+        "prep": "Осмотр глазного дна с расширением зрачка и УЗИ глаза, анализы и ЭКГ по требованию клиники, воздержание от еды и питья перед наркозом в назначенный врачом срок, госпитализация и сопровождающий",
+        "abnormal": "Несколько недель возможны отёк, двоение, изменение рефракции и ощущение швов; зрение восстанавливается постепенно и не всегда полностью — это зависит от того, была ли затронута центральная зона сетчатки. Вспышки, резко увеличившееся число плавающих помутнений или новая тень в поле зрения — повод срочно обратиться к офтальмологу"
+      },
+      "en": {
+        "what": "Surgery for retinal detachment carried out from outside the eye: a silicone explant is stitched onto the sclera and presses the wall of the eye against the detached retina",
+        "how": "The conjunctiva is opened, the retinal break is located and treated with cold, a buckle or encircling band is sutured to the sclera, and fluid collected under the retina may be drained; it takes an hour or more, usually under general or retrobulbar anaesthesia",
+        "when": "Retinal detachment with a peripheral break, especially in younger patients with their own lens, when a clear vitreous makes its removal unnecessary",
+        "prep": "Dilated fundus examination and eye ultrasound, laboratory tests and an ECG as the clinic requires, no food or drink before anaesthesia for the period the doctor sets, admission and someone to accompany you",
+        "abnormal": "Swelling, double vision, a change in refraction and awareness of the sutures are possible for several weeks; sight returns gradually and not always fully, depending on whether the central retina was involved. Flashes, a sudden increase in floaters or a new shadow in the field of view call for urgent ophthalmic care"
+      },
+      "sr": {
+        "what": "Operacija odvajanja mrežnjače koja se izvodi sa spoljne strane oka: na bjeloočnicu se prišiva silikonska plomba koja zid oka primiče odvojenoj mrežnjači",
+        "how": "Vežnjača se odvaja, pronalazi se rascjep mrežnjače i obrađuje hladnoćom, na bjeloočnicu se prišiva plomba ili kružna traka, a po potrebi se ispušta tečnost nakupljena ispod mrežnjače; traje sat i duže, obično u opštoj ili retrobulbarnoj anesteziji",
+        "when": "Odvajanje mrežnjače sa rascjepom na periferiji, naročito kod mlađih pacijenata sa sopstvenim sočivom, kada bistro staklasto tijelo omogućava da se izbjegne njegovo uklanjanje",
+        "prep": "Pregled očnog dna sa širenjem zjenice i ultrazvuk oka, analize i EKG po zahtjevu klinike, bez hrane i pića prije anestezije u roku koji ljekar odredi, prijem u bolnicu i pratilac",
+        "abnormal": "Nekoliko sedmica mogući su otok, dvoslike, promjena dioptrije i osjećaj konaca; vid se vraća postepeno i ne uvijek potpuno, zavisno od toga da li je zahvaćen centar mrežnjače. Bljeskovi, naglo uvećan broj plutajućih zamućenja ili nova sjenka u vidnom polju traže hitno javljanje oftalmologu"
+      },
+      "de": {
+        "what": "Netzhautablösungs-Operation von außen: Eine Silikonplombe wird auf die Lederhaut genäht und drückt die Augenwand an die abgelöste Netzhaut",
+        "how": "Die Bindehaut wird eröffnet, das Netzhautloch aufgesucht und mit Kälte behandelt, eine Plombe oder ein umlaufendes Band auf die Lederhaut genäht und bei Bedarf Flüssigkeit unter der Netzhaut abgelassen; dauert eine Stunde und länger, meist in Vollnarkose oder retrobulbärer Betäubung",
+        "when": "Netzhautablösung mit peripherem Loch, vor allem bei jüngeren Patienten mit eigener Linse, wenn ein klarer Glaskörper dessen Entfernung erspart",
+        "prep": "Netzhautuntersuchung in Mydriasis und Augenultraschall, Labor und EKG nach Vorgabe der Klinik, vor der Narkose im genannten Zeitraum nüchtern bleiben, stationäre Aufnahme und Begleitung",
+        "abnormal": "Über Wochen sind Schwellung, Doppelbilder, veränderte Brechkraft und Fadengefühl möglich; das Sehen kehrt allmählich und nicht immer vollständig zurück, je nachdem ob die Netzhautmitte betroffen war. Lichtblitze, plötzlich mehr Schwebeteilchen oder ein neuer Schatten im Gesichtsfeld erfordern sofortige augenärztliche Hilfe"
+      },
+      "tr": {
+        "what": "Retina dekolmanının gözün dışından tedavi edildiği ameliyat: skleraya dikilen silikon çökertme, göz duvarını ayrılmış retinaya yaklaştırır",
+        "how": "Konjonktiva açılır, retinadaki yırtık bulunup soğukla işlem görür, skleraya çökertme veya çepeçevre bant dikilir, gerekirse retina altında biriken sıvı boşaltılır; bir saat ve üzeri sürer, genellikle genel veya retrobulber anestezi altında",
+        "when": "Çevresel yırtıkla seyreden retina dekolmanı, özellikle kendi merceği olan genç hastalarda, vitreus berrak olduğundan çıkarılmasına gerek kalmadığında",
+        "prep": "Göz bebeği genişletilerek göz dibi muayenesi ve göz ultrasonu, kliniğin istediği tahliller ve EKG, anestezi öncesi hekimin belirttiği süre aç kalmak, yatış ve refakatçi",
+        "abnormal": "Birkaç hafta şişlik, çift görme, kırma kusurunda değişiklik ve dikiş hissi olabilir; görme yavaş yavaş döner ve retinanın merkezinin etkilenip etkilenmediğine göre her zaman tam olmaz. Işık çakmaları, uçuşan cisimlerin aniden artması veya görme alanında yeni gölge acil göz hekimi başvurusu gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Операција одвајања мрежњаче која се изводи са спољне стране ока: на бјелоочницу се пришива силиконска пломба која зид ока примиче одвојеној мрежњачи",
+        "how": "Вежњача се одваја, проналази се расцјеп мрежњаче и обрађује хладноћом, на бјелоочницу се пришива пломба или кружна трака, а по потреби се испушта течност накупљена испод мрежњаче; траје сат и дуже, обично у општој или ретробулбарној анестезији",
+        "when": "Одвајање мрежњаче са расцјепом на периферији, нарочито код млађих пацијената са сопственим сочивом, када бистро стакласто тијело омогућава да се избјегне његово уклањање",
+        "prep": "Преглед очног дна са ширењем зјенице и ултразвук ока, анализе и ЕКГ по захтјеву клинике, без хране и пића прије анестезије у року који љекар одреди, пријем у болницу и пратилац",
+        "abnormal": "Неколико седмица могући су оток, двослике, промјена диоптрије и осјећај конаца; вид се враћа постепено и не увијек потпуно, зависно од тога да ли је захваћен центар мрежњаче. Бљескови, нагло увећан број плутајућих замућења или нова сјенка у видном пољу траже хитно јављање офталмологу"
+      }
+    }
+  },
+  {
+    "slug": "eyelid-tumor-excision-with-skin-flap",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление образования века, при котором оставшийся дефект закрывают лоскутом кожи, перемещённым из соседней области",
+        "how": "Образование иссекают в пределах здоровых тканей, затем выкраивают и перемещают кожный лоскут с сохранённым питанием, восстанавливая форму и подвижность века, швы снимают в назначенный срок; занимает от сорока минут до полутора часов под местной анестезией",
+        "when": "Крупное или глубокое образование века, расположение у края века или во внутреннем углу, повторный рост после прежнего удаления, когда простое сведение краёв раны деформировало бы веко",
+        "prep": "Осмотр офтальмолога и фотофиксация, сообщить о разжижающих кровь препаратах, диабете и курении, прийти без макияжа и с сопровождающим",
+        "abnormal": "Отёк и синяк после пластики держатся дольше, чем после обычного иссечения, окончательный вид века формируется месяцами. Удалённый материал исследует патолог, объём дальнейшего наблюдения определяет врач; побеление или потемнение лоскута, расхождение краёв раны и гнойное отделяемое требуют осмотра без ожидания"
+      },
+      "en": {
+        "what": "Removal of an eyelid growth where the remaining defect is closed with a skin flap moved in from the neighbouring area",
+        "how": "The growth is excised within healthy tissue, then a skin flap with its own blood supply is raised and moved to restore the shape and movement of the lid, and the sutures are taken out at the appointed time; forty minutes to an hour and a half under local anaesthesia",
+        "when": "A large or deep eyelid lesion, a lesion at the lid margin or in the inner corner, regrowth after an earlier removal, when simply bringing the wound edges together would distort the lid",
+        "prep": "Ophthalmic examination with a photograph, information about blood-thinning medicines, diabetes and smoking, no make-up, someone to accompany you",
+        "abnormal": "Swelling and bruising last longer than after a simple excision and the final shape of the lid settles over months. The removed tissue is examined by a pathologist and the doctor decides how closely to follow it up; a flap turning pale or dark, wound edges separating and purulent discharge need review without delay"
+      },
+      "sr": {
+        "what": "Uklanjanje promjene na kapku kod kojeg se nastali defekt pokriva kožnim režnjem premještenim iz susjednog područja",
+        "how": "Promjena se isijeca u granicama zdravog tkiva, zatim se oblikuje i premješta kožni režanj sa očuvanom ishranom kojim se vraćaju oblik i pokretljivost kapka, a konci se skidaju u dogovorenom roku; traje od četrdesetak minuta do sat i po, u lokalnoj anesteziji",
+        "when": "Velika ili duboka promjena kapka, položaj uz ivicu kapka ili u unutrašnjem uglu, ponovni rast poslije ranijeg uklanjanja, kada bi prosto spajanje ivica rane iskrivilo kapak",
+        "prep": "Pregled oftalmologa i fotografisanje promjene, prijaviti lijekove za razrjeđivanje krvi, šećernu bolest i pušenje, doći bez šminke i sa pratiocem",
+        "abnormal": "Otok i modrica traju duže nego poslije običnog isijecanja, a konačan izgled kapka se oblikuje mjesecima. Uklonjeno tkivo pregleda patolog, a obim daljeg praćenja određuje ljekar; blijeđenje ili tamnjenje režnja, razilaženje ivica rane i gnojni iscjedak traže pregled bez odlaganja"
+      },
+      "de": {
+        "what": "Entfernung einer Lidveränderung, bei der der verbleibende Defekt mit einem Hautlappen aus der Nachbarschaft gedeckt wird",
+        "how": "Die Veränderung wird im Gesunden entfernt, danach wird ein Hautlappen mit erhaltener Durchblutung gehoben und verlagert, um Form und Beweglichkeit des Lides wiederherzustellen; die Fäden werden zum vereinbarten Termin gezogen; vierzig Minuten bis anderthalb Stunden in örtlicher Betäubung",
+        "when": "Große oder tief reichende Lidveränderung, Lage am Lidrand oder im inneren Augenwinkel, erneutes Wachstum nach früherer Entfernung, wenn ein einfaches Zusammenziehen der Wundränder das Lid verziehen würde",
+        "prep": "Augenärztliche Untersuchung mit Fotodokumentation, Angaben zu Blutverdünnern, Diabetes und Rauchen, ohne Make-up und in Begleitung kommen",
+        "abnormal": "Schwellung und Bluterguss halten länger an als nach einer einfachen Exzision, die endgültige Lidform bildet sich über Monate. Das entnommene Gewebe wird feingeweblich untersucht, den Umfang der Nachsorge legt die Ärztin oder der Arzt fest; ein blasser oder dunkler Lappen, auseinanderweichende Wundränder und eitriges Sekret erfordern eine sofortige Kontrolle"
+      },
+      "tr": {
+        "what": "Göz kapağındaki oluşumun çıkarılması ve geriye kalan açıklığın komşu bölgeden kaydırılan deri flebiyle kapatılması",
+        "how": "Oluşum sağlam doku sınırları içinde çıkarılır, ardından kanlanması korunan bir deri flebi hazırlanıp kaydırılarak kapağın biçimi ve hareketi geri kazandırılır, dikişler belirlenen günde alınır; lokal anestezi altında kırk dakika ile bir buçuk saat arası sürer",
+        "when": "Büyük veya derin kapak lezyonu, kapak kenarında ya da iç köşede yerleşim, önceki çıkarma sonrası yeniden büyüme, yara kenarlarının basitçe birleştirilmesinin kapağı çarpıtacağı durumlar",
+        "prep": "Göz hekimi muayenesi ve lezyonun fotoğraflanması, kan sulandırıcı ilaçların, şeker hastalığının ve sigara kullanımının bildirilmesi, makyajsız gelmek ve refakatçi",
+        "abnormal": "Şişlik ve morluk basit çıkarmaya göre daha uzun sürer, kapağın son görünümü aylar içinde oturur. Çıkarılan doku patoloji hekimince incelenir, takibin kapsamını hekim belirler; flebin solması veya koyulaşması, yara kenarlarının ayrılması ve iltihaplı akıntı gecikmeden muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање промјене на капку код којег се настали дефект покрива кожним режњем премјештеним из сусједног подручја",
+        "how": "Промјена се исијеца у границама здравог ткива, затим се обликује и премјешта кожни режањ са очуваном исхраном којим се враћају облик и покретљивост капка, а конци се скидају у договореном року; траје од четрдесетак минута до сат и по, у локалној анестезији",
+        "when": "Велика или дубока промјена капка, положај уз ивицу капка или у унутрашњем углу, поновни раст послије ранијег уклањања, када би просто спајање ивица ране искривило капак",
+        "prep": "Преглед офталмолога и фотографисање промјене, пријавити лијекове за разрјеђивање крви, шећерну болест и пушење, доћи без шминке и са пратиоцем",
+        "abnormal": "Оток и модрица трају дуже него послије обичног исијецања, а коначан изглед капка се обликује мјесецима. Уклоњено ткиво прегледа патолог, а обим даљег праћења одређује љекар; блијеђење или тамњење режња, разилажење ивица ране и гнојни исцједак траже преглед без одлагања"
+      }
+    }
+  },
+  {
+    "slug": "eyelid-tumor-surgery",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическое лечение новообразования века с иссечением в пределах здоровых тканей и восстановлением формы века",
+        "how": "Под местной анестезией хирург размечает границы, иссекает образование вместе с полоской неизменённой ткани, восстанавливает слои века и накладывает тонкие швы, а удалённый материал направляет на гистологию; продолжительность зависит от размера и расположения",
+        "when": "Узелок или уплотнение века, которое растёт, кровоточит, изъязвляется или сопровождается выпадением ресниц, образование, мешающее смыканию век, необходимость уточнить природу ткани",
+        "prep": "Осмотр века на щелевой лампе, сведения о принимаемых препаратах и аллергии на анестетики, снять линзы и не пользоваться косметикой, планировать несколько дней с повязкой",
+        "abnormal": "Отёк, синяк и слезотечение в первые дни ожидаемы. Строение удалённой ткани описывает патолог, а решение о наблюдении или дополнительном лечении принимает лечащий врач по этому заключению; повышение температуры, гнойное отделяемое и нарастающая боль — повод прийти раньше срока"
+      },
+      "en": {
+        "what": "Surgical treatment of an eyelid growth with excision within healthy tissue and restoration of the lid's shape",
+        "how": "Under local anaesthesia the surgeon marks the margins, removes the lesion together with a rim of unchanged tissue, rebuilds the layers of the lid and places fine sutures, and the specimen goes for histology; the length depends on the size and site",
+        "when": "A nodule or thickening of the lid that grows, bleeds, ulcerates or is accompanied by loss of lashes, a lesion that prevents the lids from closing, the need to clarify the nature of the tissue",
+        "prep": "Slit-lamp examination of the lid, information about current medicines and anaesthetic allergy, lenses out and no cosmetics, plan for a few days with a dressing",
+        "abnormal": "Swelling, bruising and watering in the first days are expected. A pathologist describes the structure of the removed tissue, and the treating doctor decides on observation or further treatment from that report; fever, purulent discharge and increasing pain mean coming in earlier"
+      },
+      "sr": {
+        "what": "Hirurško liječenje izrasline na kapku sa isijecanjem u granicama zdravog tkiva i obnovom oblika kapka",
+        "how": "U lokalnoj anesteziji hirurg obilježava granice, uklanja promjenu sa pojasom nepromijenjenog tkiva, obnavlja slojeve kapka i postavlja tanke konce, a uzorak šalje na patohistologiju; trajanje zavisi od veličine i položaja promjene",
+        "when": "Čvorić ili zadebljanje kapka koje raste, krvari, stvara ranicu ili je praćeno ispadanjem trepavica, promjena koja smeta zatvaranju kapaka, potreba da se razjasni priroda tkiva",
+        "prep": "Pregled kapka na biomikroskopu, podaci o lijekovima i alergiji na anestetike, skinuti sočiva i ne koristiti kozmetiku, planirati nekoliko dana sa zavojem",
+        "abnormal": "Otok, modrica i suzenje prvih dana su očekivani. Građu uklonjenog tkiva opisuje patolog, a odluku o praćenju ili dodatnom liječenju donosi ljekar na osnovu tog nalaza; povišena temperatura, gnojni iscjedak i bol koja jača razlog su za raniji dolazak"
+      },
+      "de": {
+        "what": "Operative Behandlung einer Lidveränderung mit Entfernung im Gesunden und Wiederherstellung der Lidform",
+        "how": "In örtlicher Betäubung markiert die Chirurgin oder der Chirurg die Grenzen, entfernt die Veränderung mit einem Saum unveränderten Gewebes, baut die Lidschichten wieder auf und setzt feine Nähte; das Präparat geht zur Histologie, die Dauer hängt von Größe und Lage ab",
+        "when": "Ein Lidknötchen oder eine Verdickung, die wächst, blutet, aufbricht oder mit Wimpernverlust einhergeht, eine Veränderung, die den Lidschluss behindert, Klärung der Gewebeart",
+        "prep": "Spaltlampenuntersuchung des Lides, Angaben zu Medikamenten und Betäubungsmittelallergie, Linsen heraus und keine Kosmetik, einige Tage mit Verband einplanen",
+        "abnormal": "Schwellung, Bluterguss und Tränen in den ersten Tagen sind zu erwarten. Den Aufbau des entnommenen Gewebes beschreibt die Pathologie, über Kontrolle oder weitere Behandlung entscheidet die behandelnde Ärztin oder der Arzt anhand dieses Befundes; Fieber, eitriges Sekret und zunehmende Schmerzen erfordern einen früheren Termin"
+      },
+      "tr": {
+        "what": "Göz kapağındaki oluşumun sağlam doku sınırları içinde çıkarılması ve kapak biçiminin onarılmasıyla cerrahi tedavisi",
+        "how": "Lokal anestezi altında cerrah sınırları işaretler, lezyonu çevresindeki sağlam doku şeridiyle birlikte çıkarır, kapak katmanlarını onarır ve ince dikişler koyar, örnek patolojiye gönderilir; süre lezyonun boyutuna ve yerine bağlıdır",
+        "when": "Büyüyen, kanayan, yaraya dönüşen veya kirpik dökülmesiyle birlikte olan kapak nodülü ya da kalınlaşması, kapakların kapanmasını engelleyen lezyon, doku yapısının açıklığa kavuşturulması gereği",
+        "prep": "Kapağın biyomikroskopla muayenesi, kullanılan ilaçların ve anestezik alerjisinin bildirilmesi, lenslerin çıkarılması ve kozmetik kullanılmaması, birkaç gün pansumanlı kalmayı planlamak",
+        "abnormal": "İlk günlerde şişlik, morluk ve sulanma beklenir. Çıkarılan dokunun yapısını patoloji hekimi tanımlar, takip ya da ek tedavi kararını bu rapora göre tedavi eden hekim verir; ateş, iltihaplı akıntı ve artan ağrı daha erken başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршко лијечење израслине на капку са исијецањем у границама здравог ткива и обновом облика капка",
+        "how": "У локалној анестезији хирург обиљежава границе, уклања промјену са појасом непромијењеног ткива, обнавља слојеве капка и поставља танке конце, а узорак шаље на патохистологију; трајање зависи од величине и положаја промјене",
+        "when": "Чворић или задебљање капка које расте, крвари, ствара раницу или је праћено испадањем трепавица, промјена која смета затварању капака, потреба да се разјасни природа ткива",
+        "prep": "Преглед капка на биомикроскопу, подаци о лијековима и алергији на анестетике, скинути сочива и не користити козметику, планирати неколико дана са завојем",
+        "abnormal": "Оток, модрица и сузење првих дана су очекивани. Грађу уклоњеног ткива описује патолог, а одлуку о праћењу или додатном лијечењу доноси љекар на основу тог налаза; повишена температура, гнојни исцједак и бол која јача разлог су за ранији долазак"
+      }
+    }
+  },
+  {
+    "slug": "eyelid-tumor-surgical-removal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Амбулаторное удаление небольшого образования на коже века с ушиванием ранки напрямую",
+        "how": "Кожу века обезболивают тонкой иглой, образование срезают или вылущивают, края ранки сводят швами либо оставляют заживать под мазью; вмешательство короткое, в тот же день пациент уходит домой",
+        "when": "Небольшая папиллома, киста, плотный узелок или родинка на веке, которые цепляются за ресницы, натирают при моргании, мешают носить очки или воспринимаются как косметический дефект",
+        "prep": "Прийти без макияжа и без контактных линз, предупредить о разжижающих кровь препаратах и склонности к рубцам, взять солнцезащитные очки",
+        "abnormal": "Несколько дней на месте удаления сохраняются корочка, отёк и небольшая болезненность. Удалённую ткань по решению врача отправляют на исследование, а повторный визит нужен для снятия швов и оценки заживления; быстрое повторное появление узелка на том же месте стоит показать офтальмологу"
+      },
+      "en": {
+        "what": "Outpatient removal of a small growth on the skin of the eyelid with the wound closed directly",
+        "how": "The lid skin is numbed with a fine needle, the lesion is shaved off or enucleated and the wound edges are brought together with sutures or left to heal under ointment; the procedure is short and the patient goes home the same day",
+        "when": "A small papilloma, cyst, firm nodule or mole on the lid that catches on the lashes, rubs when blinking, interferes with glasses or is seen as a cosmetic problem",
+        "prep": "Come without make-up and without contact lenses, mention blood-thinning medicines and a tendency to scarring, bring sunglasses",
+        "abnormal": "A crust, swelling and slight tenderness stay at the site for a few days. The doctor may send the removed tissue for examination, and a follow-up visit is needed to take out the sutures and check healing; a nodule returning quickly at the same spot is worth showing to an ophthalmologist"
+      },
+      "sr": {
+        "what": "Ambulantno uklanjanje male promjene na koži kapka uz neposredno zatvaranje ranice",
+        "how": "Koža kapka se obezboli tankom iglom, promjena se skida ili ljušti, a ivice ranice se spajaju koncem ili se ostavljaju da zarastu pod mašću; zahvat je kratak i pacijent istog dana ide kući",
+        "when": "Mali papilom, cista, čvrst čvorić ili mladež na kapku koji zapinje za trepavice, trlja pri treptanju, smeta okviru naočara ili se doživljava kao estetski nedostatak",
+        "prep": "Doći bez šminke i bez kontaktnih sočiva, najaviti lijekove za razrjeđivanje krvi i sklonost ožiljcima, ponijeti naočare za sunce",
+        "abnormal": "Na mjestu uklanjanja nekoliko dana ostaju krasta, otok i blaga osjetljivost. Uklonjeno tkivo se po odluci ljekara šalje na analizu, a kontrolni dolazak je potreban radi skidanja konaca i procjene zarastanja; brz povratak čvorića na istom mjestu treba pokazati oftalmologu"
+      },
+      "de": {
+        "what": "Ambulante Entfernung einer kleinen Hautveränderung am Augenlid mit direktem Wundverschluss",
+        "how": "Die Lidhaut wird mit einer feinen Nadel betäubt, die Veränderung abgetragen oder ausgeschält und die Wundränder werden genäht oder unter Salbe zur Heilung überlassen; der Eingriff ist kurz, die Patientin oder der Patient geht am selben Tag nach Hause",
+        "when": "Kleines Papillom, Zyste, derbes Knötchen oder Muttermal am Lid, das an den Wimpern hängen bleibt, beim Lidschlag reibt, die Brille stört oder als kosmetisch störend empfunden wird",
+        "prep": "Ohne Make-up und ohne Kontaktlinsen kommen, Blutverdünner und Neigung zu Narben angeben, Sonnenbrille mitbringen",
+        "abnormal": "An der Stelle bleiben für einige Tage Kruste, Schwellung und leichte Berührungsempfindlichkeit. Das entfernte Gewebe wird nach ärztlicher Entscheidung untersucht, ein Kontrolltermin dient dem Fadenziehen und der Beurteilung der Heilung; ein rasch wiederkehrendes Knötchen an derselben Stelle sollte augenärztlich angesehen werden"
+      },
+      "tr": {
+        "what": "Göz kapağı derisindeki küçük oluşumun ayaktan çıkarılması ve yaranın doğrudan kapatılması",
+        "how": "Kapak derisi ince iğneyle uyuşturulur, oluşum traşlanarak ya da çıkarılarak alınır, yara kenarları dikişle birleştirilir veya pomad altında iyileşmeye bırakılır; işlem kısadır, hasta aynı gün evine döner",
+        "when": "Kirpiklere takılan, göz kırparken süren, gözlüğe engel olan ya da estetik sorun olarak görülen küçük papilloma, kist, sert nodül veya ben",
+        "prep": "Makyajsız ve kontakt lenssiz gelmek, kan sulandırıcı ilaçları ve iz bırakmaya yatkınlığı bildirmek, güneş gözlüğü getirmek",
+        "abnormal": "İşlem yerinde birkaç gün kabuk, şişlik ve hafif hassasiyet kalır. Çıkarılan doku hekimin kararına göre incelemeye gönderilir, dikişlerin alınması ve iyileşmenin değerlendirilmesi için kontrol gerekir; aynı yerde hızla yeniden çıkan nodül göz hekimine gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Амбулантно уклањање мале промјене на кожи капка уз непосредно затварање ранице",
+        "how": "Кожа капка се обезболи танком иглом, промјена се скида или љушти, а ивице ранице се спајају концем или се остављају да зарасту под машћу; захват је кратак и пацијент истог дана иде кући",
+        "when": "Мали папилом, циста, чврст чворић или младеж на капку који запиње за трепавице, трља при трептању, смета оквиру наочара или се доживљава као естетски недостатак",
+        "prep": "Доћи без шминке и без контактних сочива, најавити лијекове за разрјеђивање крви и склоност ожиљцима, понијети наочаре за сунце",
+        "abnormal": "На мјесту уклањања неколико дана остају краста, оток и блага осјетљивост. Уклоњено ткиво се по одлуци љекара шаље на анализу, а контролни долазак је потребан ради скидања конаца и процјене зарастања; брз повратак чворића на истом мјесту треба показати офталмологу"
+      }
+    }
+  },
+  {
+    "slug": "glaucoma-filtering-surgery",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция, создающая новый путь оттока внутриглазной жидкости под слизистую оболочку глаза, чтобы снизить внутриглазное давление",
+        "how": "Под местной анестезией отслаивают лоскут конъюнктивы и склеры, формируют маленькое отверстие в стенке глаза, через которое жидкость уходит под конъюнктиву в фильтрационную подушку, лоскут подшивают регулируемыми швами; занимает 40-60 минут, обычно амбулаторно или с короткой госпитализацией",
+        "when": "Внутриглазное давление остаётся высоким несмотря на капли и лазерное лечение, продолжают ухудшаться поле зрения и зрительный нерв, капли плохо переносятся",
+        "prep": "Поле зрения, измерение давления и осмотр зрительного нерва перед вмешательством, согласовать с врачом режим капель и приём разжижающих кровь препаратов, в день операции сопровождающий",
+        "abnormal": "Первые недели давление и зрение колеблются, нужны частые контрольные осмотры, иногда подтягивание или снятие швов. Операция сохраняет уже имеющееся зрение, но не возвращает утраченное поле зрения; боль, резкое падение зрения или гнойное отделяемое — повод обратиться срочно"
+      },
+      "en": {
+        "what": "An operation that creates a new drainage route for the fluid inside the eye under the mucous membrane, in order to lower intraocular pressure",
+        "how": "Under local anaesthesia a flap of conjunctiva and sclera is raised, a small opening is made in the wall of the eye so that fluid passes under the conjunctiva into a filtering bleb, and the flap is closed with adjustable sutures; 40-60 minutes, usually outpatient or with a short stay",
+        "when": "Intraocular pressure stays high despite drops and laser treatment, the visual field and the optic nerve keep deteriorating, drops are not tolerated",
+        "prep": "Visual field, pressure measurement and optic nerve assessment beforehand, agree the drop regimen and blood-thinning medicines with the doctor, someone to accompany you on the day",
+        "abnormal": "In the first weeks pressure and vision fluctuate, frequent checks are needed and sutures are sometimes tightened or removed. The operation preserves the sight that is left but does not restore lost visual field; pain, a sharp drop in vision or purulent discharge need urgent attention"
+      },
+      "sr": {
+        "what": "Operacija kojom se stvara nov put za otjecanje očne vodice ispod sluzokože, da bi se snizio očni pritisak",
+        "how": "U lokalnoj anesteziji odvaja se režanj vežnjače i bjeloočnice, pravi se mali otvor u zidu oka kroz koji vodica odlazi pod vežnjaču u filtracioni jastučić, a režanj se zatvara podesivim koncima; traje 40-60 minuta, obično ambulantno ili uz kratak boravak",
+        "when": "Očni pritisak ostaje visok uprkos kapima i laseru, vidno polje i vidni živac se i dalje pogoršavaju, kapi se ne podnose",
+        "prep": "Vidno polje, mjerenje pritiska i procjena vidnog živca prije zahvata, dogovoriti sa ljekarom režim kapi i lijekove za razrjeđivanje krvi, na dan operacije pratilac",
+        "abnormal": "Prvih sedmica pritisak i vid se kolebaju, potrebne su česte kontrole, a ponekad i zatezanje ili skidanje konaca. Operacija čuva postojeći vid, ali ne vraća izgubljeno vidno polje; bol, naglo slabljenje vida ili gnojni iscjedak traže hitno javljanje"
+      },
+      "de": {
+        "what": "Eingriff, der unter der Bindehaut einen neuen Abflussweg für das Kammerwasser schafft, um den Augeninnendruck zu senken",
+        "how": "In örtlicher Betäubung werden Bindehaut und Lederhaut als Lappen gehoben, eine kleine Öffnung in der Augenwand angelegt, über die Kammerwasser unter die Bindehaut in ein Sickerkissen abfließt, und der Lappen mit verstellbaren Nähten verschlossen; 40-60 Minuten, meist ambulant oder mit kurzem Aufenthalt",
+        "when": "Der Augeninnendruck bleibt trotz Tropfen und Laserbehandlung hoch, Gesichtsfeld und Sehnerv verschlechtern sich weiter, Tropfen werden nicht vertragen",
+        "prep": "Gesichtsfeld, Druckmessung und Sehnervbeurteilung vorab, Tropfenschema und Blutverdünner mit der Ärztin oder dem Arzt abstimmen, am Operationstag Begleitung",
+        "abnormal": "In den ersten Wochen schwanken Druck und Sehen, häufige Kontrollen sind nötig, mitunter werden Nähte nachgezogen oder entfernt. Der Eingriff erhält das vorhandene Sehvermögen, bringt verlorenes Gesichtsfeld aber nicht zurück; Schmerzen, rascher Sehverlust oder eitriges Sekret erfordern sofortige Hilfe"
+      },
+      "tr": {
+        "what": "Göz içi basıncını düşürmek için göz sıvısına mukoza altından yeni bir boşalma yolu oluşturan ameliyat",
+        "how": "Lokal anestezi altında konjonktiva ve skleradan flep kaldırılır, göz duvarında küçük bir açıklık yapılarak sıvının konjonktiva altındaki filtrasyon yastığına geçmesi sağlanır ve flep ayarlanabilir dikişlerle kapatılır; 40-60 dakika sürer, çoğunlukla ayaktan ya da kısa yatışla",
+        "when": "Damla ve lazere rağmen göz içi basıncının yüksek kalması, görme alanı ve görme sinirindeki bozulmanın sürmesi, damlaların tolere edilememesi",
+        "prep": "Öncesinde görme alanı, basınç ölçümü ve görme siniri değerlendirmesi, damla düzeninin ve kan sulandırıcı ilaçların hekimle görüşülmesi, ameliyat günü refakatçi",
+        "abnormal": "İlk haftalarda basınç ve görme dalgalanır, sık kontrol gerekir, kimi zaman dikişler gerdirilir ya da alınır. Ameliyat var olan görmeyi korur, kaybedilen görme alanını geri getirmez; ağrı, görmenin aniden azalması veya iltihaplı akıntı acil başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Операција којом се ствара нов пут за отјецање очне водице испод слузокоже, да би се снизио очни притисак",
+        "how": "У локалној анестезији одваја се режањ вежњаче и бјелоочнице, прави се мали отвор у зиду ока кроз који водица одлази под вежњачу у филтрациони јастучић, а режањ се затвара подесивим концима; траје 40-60 минута, обично амбулантно или уз кратак боравак",
+        "when": "Очни притисак остаје висок упркос капима и ласеру, видно поље и видни живац се и даље погоршавају, капи се не подносе",
+        "prep": "Видно поље, мјерење притиска и процјена видног живца прије захвата, договорити са љекаром режим капи и лијекове за разрјеђивање крви, на дан операције пратилац",
+        "abnormal": "Првих седмица притисак и вид се колебају, потребне су честе контроле, а понекад и затезање или скидање конаца. Операција чува постојећи вид, али не враћа изгубљено видно поље; бол, нагло слабљење вида или гнојни исцједак траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "intracapsular-lens-extraction",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление хрусталика целиком вместе с его капсулой через разрез в стенке глаза",
+        "how": "Выполняют широкий разрез по краю роговицы, хрусталик в капсуле выводят криоэкстрактором или петлёй, разрез ушивают швами; поскольку капсульного мешка не остаётся, искусственную линзу либо размещают в передней камере или подшивают, либо зрение корректируют очками или контактной линзой — выбор делает хирург",
+        "when": "Вывих или подвывих хрусталика, выраженная слабость удерживающих его связок после травмы и при некоторых врождённых состояниях, перезрелая катаракта, когда методики с сохранением капсулы неприменимы",
+        "prep": "Обследование глаза, включая УЗИ и расчёт оптики, сведения о травмах и сопутствующих болезнях, подготовка к анестезии по указаниям клиники, планировать несколько дней ограничений и сопровождающего",
+        "abnormal": "Из-за широкого разреза и швов зрение стабилизируется дольше, чем после микрохирургических методик, нередки астигматизм и необходимость поздней коррекции. Нарастающая боль, резкое снижение зрения, вспышки или тень в поле зрения требуют немедленного осмотра офтальмолога"
+      },
+      "en": {
+        "what": "Removal of the lens as a whole together with its capsule through an incision in the wall of the eye",
+        "how": "A wide incision is made at the edge of the cornea, the lens is lifted out inside its capsule with a cryoprobe or a loop, and the incision is closed with sutures; since no capsular bag is left, an artificial lens is either placed in the front chamber or fixed with sutures, or vision is corrected with glasses or a contact lens, as the surgeon decides",
+        "when": "A dislocated or partly dislocated lens, marked weakness of its supporting fibres after injury or in some inherited conditions, an overripe cataract when capsule-sparing methods cannot be used",
+        "prep": "Eye assessment including ultrasound and optical calculation, information about injuries and other illnesses, preparation for anaesthesia as the clinic instructs, plan several days of restrictions and someone to accompany you",
+        "abnormal": "Because of the wide incision and the sutures vision settles more slowly than after microsurgical techniques, and astigmatism and later correction are common. Increasing pain, a sharp loss of vision, flashes or a shadow in the field of view need an immediate ophthalmic review"
+      },
+      "sr": {
+        "what": "Uklanjanje sočiva u cjelini, zajedno sa njegovom čaurom, kroz rez na zidu oka",
+        "how": "Pravi se širok rez uz ivicu rožnjače, sočivo se sa čaurom izvlači krioekstraktorom ili omčom, a rez se zatvara koncima; pošto čaurna kesa ne ostaje, vještačko sočivo se smješta u prednju komoru ili se prišiva, ili se vid koriguje naočarima odnosno kontaktnim sočivom, kako hirurg odluči",
+        "when": "Iščašeno ili djelimično iščašeno sočivo, izražena slabost vlakana koja ga drže poslije povrede i kod nekih urođenih stanja, prezrela katarakta kada metode sa očuvanjem čaure nisu primjenjive",
+        "prep": "Pregled oka sa ultrazvukom i izračunom optike, podaci o povredama i pratećim bolestima, priprema za anesteziju prema uputstvu klinike, planirati nekoliko dana ograničenja i pratioca",
+        "abnormal": "Zbog širokog reza i konaca vid se ustaljuje sporije nego poslije mikrohirurških tehnika, česti su astigmatizam i potreba za kasnijom korekcijom. Bol koja jača, nagli gubitak vida, bljeskovi ili sjenka u vidnom polju traže hitan pregled oftalmologa"
+      },
+      "de": {
+        "what": "Entfernung der Linse im Ganzen samt ihrer Kapsel über einen Schnitt in der Augenwand",
+        "how": "Am Hornhautrand wird ein breiter Schnitt angelegt, die Linse mit Kapsel mit Kryosonde oder Schlinge herausgeführt und der Schnitt genäht; da kein Kapselsack verbleibt, wird eine Kunstlinse in die Vorderkammer gesetzt oder angenäht, oder das Sehen wird mit Brille beziehungsweise Kontaktlinse korrigiert, je nach Entscheidung des Operateurs",
+        "when": "Verlagerte oder teilweise verlagerte Linse, ausgeprägte Schwäche des Aufhängeapparats nach Verletzung und bei manchen angeborenen Erkrankungen, überreife Katarakt, wenn kapselerhaltende Verfahren nicht möglich sind",
+        "prep": "Augenuntersuchung mit Ultraschall und optischer Berechnung, Angaben zu Verletzungen und Begleiterkrankungen, Narkosevorbereitung nach Vorgabe der Klinik, mehrere Tage Einschränkungen und eine Begleitperson einplanen",
+        "abnormal": "Wegen des breiten Schnitts und der Nähte stabilisiert sich das Sehen langsamer als nach mikrochirurgischen Verfahren, Astigmatismus und eine spätere Korrektur sind häufig. Zunehmende Schmerzen, plötzlicher Sehverlust, Lichtblitze oder ein Schatten im Gesichtsfeld erfordern eine sofortige augenärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Merceğin kapsülüyle birlikte bütün olarak, göz duvarındaki kesiden çıkarılması",
+        "how": "Kornea kenarında geniş bir kesi açılır, mercek kapsülüyle birlikte kriyoprob veya ilmekle dışarı alınır ve kesi dikişlerle kapatılır; kapsül kesesi kalmadığından yapay mercek ön kamaraya yerleştirilir ya da dikişle tespit edilir, veya görme gözlük ya da kontakt lensle düzeltilir, kararı cerrah verir",
+        "when": "Yerinden çıkmış ya da kısmen çıkmış mercek, yaralanma sonrası ve bazı doğumsal durumlarda asıcı liflerin belirgin zayıflığı, kapsül koruyucu yöntemlerin uygulanamadığı aşırı olgun katarakt",
+        "prep": "Ultrason ve optik hesap içeren göz değerlendirmesi, geçirilmiş yaralanmaların ve eşlik eden hastalıkların bildirilmesi, kliniğin yönergesine göre anestezi hazırlığı, birkaç günlük kısıtlama ve refakatçi planlamak",
+        "abnormal": "Geniş kesi ve dikişler nedeniyle görme, mikrocerrahi yöntemlere göre daha geç oturur; astigmatizma ve sonradan düzeltme sık görülür. Artan ağrı, ani görme kaybı, ışık çakmaları veya görme alanında gölge hemen göz hekimine başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање сочива у цјелини, заједно са његовом чауром, кроз рез на зиду ока",
+        "how": "Прави се широк рез уз ивицу рожњаче, сочиво се са чауром извлачи криоекстрактором или омчом, а рез се затвара концима; пошто чаурна кеса не остаје, вјештачко сочиво се смјешта у предњу комору или се пришива, или се вид коригује наочарима односно контактним сочивом, како хирург одлучи",
+        "when": "Ишчашено или дјелимично ишчашено сочиво, изражена слабост влакана која га држе послије повреде и код неких урођених стања, презрела катаракта када методе са очувањем чауре нису примјењиве",
+        "prep": "Преглед ока са ултразвуком и израчуном оптике, подаци о повредама и пратећим болестима, припрема за анестезију према упутству клинике, планирати неколико дана ограничења и пратиоца",
+        "abnormal": "Због широког реза и конаца вид се устаљује спорије него послије микрохируршких техника, чести су астигматизам и потреба за каснијом корекцијом. Бол која јача, нагли губитак вида, бљескови или сјенка у видном пољу траже хитан преглед офталмолога"
+      }
+    }
+  },
+  {
+    "slug": "ptosis-correction-with-frontal-suspension",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция при опущении верхнего века, при которой веко соединяют с лобной мышцей подвеской, и оно поднимается вместе с бровью",
+        "how": "Через небольшие разрезы в веке и над бровью проводят полоску собственной фасции бедра или синтетическую нить, формируют петлю, настраивают высоту края века и фиксируют узлами; у детей делают под общим наркозом, у взрослых чаще под местной анестезией",
+        "when": "Выраженный птоз со слабой работой мышцы, поднимающей веко, врождённое опущение века у ребёнка, закрывающее зрачок, птоз при нервно-мышечных заболеваниях и после травмы, когда укорочение самой мышцы неэффективно",
+        "prep": "Измерение высоты века и силы мышцы, фотофиксация, при заборе фасции — согласование места забора, у детей осмотр педиатра и анализы, воздержание от еды и питья перед наркозом в указанный врачом срок",
+        "abnormal": "Первые недели веко смыкается не полностью, особенно во сне, поэтому назначают увлажняющие капли и мазь; высота века иногда требует повторной настройки. Покраснение, боль в глазу, светобоязнь и помутнение роговицы — повод к осмотру офтальмолога без ожидания планового визита"
+      },
+      "en": {
+        "what": "An operation for a drooping upper lid in which the lid is connected to the forehead muscle by a sling, so that it rises together with the eyebrow",
+        "how": "Through small incisions in the lid and above the brow a strip of the patient's own thigh fascia or a synthetic thread is passed, a loop is formed, the height of the lid margin is set and the knots are tied; in children it is done under general anaesthesia, in adults more often under local anaesthesia",
+        "when": "Marked ptosis with weak action of the muscle that lifts the lid, congenital drooping that covers a child's pupil, ptosis in neuromuscular disease and after injury, when shortening the muscle itself would not work",
+        "prep": "Measurement of lid height and muscle strength, photographs, agreement on the donor site if fascia is taken, in children a paediatric review and tests, no food or drink before anaesthesia for the period the doctor sets",
+        "abnormal": "For the first weeks the lid does not close fully, especially during sleep, so lubricating drops and ointment are prescribed; the lid height may need adjusting later. Redness, eye pain, light sensitivity and clouding of the cornea are reasons to see the ophthalmologist without waiting for the scheduled visit"
+      },
+      "sr": {
+        "what": "Operacija spuštenog gornjeg kapka kod koje se kapak povezuje sa čeonim mišićem suspenzijom, pa se podiže zajedno sa obrvom",
+        "how": "Kroz male rezove na kapku i iznad obrve provlači se traka sopstvene fascije buta ili sintetički konac, oblikuje se omča, podešava visina ivice kapka i učvršćuju čvorovi; kod djece se radi u opštoj, a kod odraslih češće u lokalnoj anesteziji",
+        "when": "Izražena ptoza sa slabom funkcijom mišića podizača kapka, urođeno spuštanje kapka koje djetetu pokriva zjenicu, ptoza kod neuromišićnih bolesti i poslije povrede, kada skraćivanje samog mišića nema efekta",
+        "prep": "Mjerenje visine kapka i snage mišića, fotografisanje, dogovor o mjestu uzimanja fascije, kod djece pregled pedijatra i analize, bez hrane i pića prije anestezije u roku koji ljekar odredi",
+        "abnormal": "Prvih sedmica kapak se ne zatvara potpuno, naročito u snu, pa se propisuju kapi i mast za vlaženje; visina kapka ponekad traži naknadno podešavanje. Crvenilo, bol u oku, preosjetljivost na svjetlost i zamućenje rožnjače razlog su da se javite oftalmologu bez čekanja na zakazanu kontrolu"
+      },
+      "de": {
+        "what": "Operation bei hängendem Oberlid, bei der das Lid über eine Zügelung mit dem Stirnmuskel verbunden wird und sich mit der Augenbraue hebt",
+        "how": "Über kleine Schnitte im Lid und über der Braue wird ein Streifen körpereigener Oberschenkelfaszie oder ein synthetischer Faden eingezogen, eine Schlinge gebildet, die Höhe des Lidrandes eingestellt und verknotet; bei Kindern in Vollnarkose, bei Erwachsenen meist in örtlicher Betäubung",
+        "when": "Ausgeprägte Ptosis mit schwacher Funktion des Lidhebers, angeborenes Herabhängen, das die Pupille des Kindes verdeckt, Ptosis bei neuromuskulären Erkrankungen und nach Verletzung, wenn eine Verkürzung des Muskels nicht ausreicht",
+        "prep": "Messung von Lidhöhe und Muskelkraft, Fotodokumentation, Absprache der Entnahmestelle bei Faszienentnahme, bei Kindern kinderärztliche Abklärung und Labor, vor der Narkose im genannten Zeitraum nüchtern bleiben",
+        "abnormal": "In den ersten Wochen schließt das Lid vor allem im Schlaf nicht vollständig, deshalb werden befeuchtende Tropfen und Salbe verordnet; die Lidhöhe muss gelegentlich nachkorrigiert werden. Rötung, Augenschmerz, Lichtscheu und Hornhauttrübung sind Gründe, ohne Abwarten des Termins die Augenärztin oder den Augenarzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Düşük üst göz kapağının bir askıyla alın kasına bağlandığı ve kaşla birlikte kalkmasının sağlandığı ameliyat",
+        "how": "Kapaktaki ve kaş üzerindeki küçük kesilerden hastanın kendi uyluk fasyasından şerit ya da sentetik iplik geçirilir, ilmek oluşturulur, kapak kenarının yüksekliği ayarlanır ve düğümlenir; çocuklarda genel, erişkinlerde çoğunlukla lokal anestezi altında yapılır",
+        "when": "Kapak kaldırıcı kasın işlevinin zayıf olduğu belirgin pitoz, çocukta gözbebeğini kapatan doğumsal düşüklük, nöromusküler hastalıklarda ve yaralanma sonrası pitoz, kasın kısaltılmasının yeterli olmadığı durumlar",
+        "prep": "Kapak yüksekliği ve kas gücü ölçümü, fotoğraflama, fasya alınacaksa alınacak bölgenin kararlaştırılması, çocuklarda çocuk hekimi değerlendirmesi ve tahliller, anestezi öncesi hekimin belirttiği süre aç kalmak",
+        "abnormal": "İlk haftalarda kapak özellikle uykuda tam kapanmaz, bu nedenle nemlendirici damla ve pomad verilir; kapak yüksekliği sonradan ayar gerektirebilir. Kızarıklık, göz ağrısı, ışığa duyarlılık ve korneada bulanıklık, kontrol gününü beklemeden göz hekimine başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Операција спуштеног горњег капка код које се капак повезује са чеоним мишићем суспензијом, па се подиже заједно са обрвом",
+        "how": "Кроз мале резове на капку и изнад обрве провлачи се трака сопствене фасције бута или синтетички конац, обликује се омча, подешава висина ивице капка и учвршћују чворови; код дјеце се ради у општој, а код одраслих чешће у локалној анестезији",
+        "when": "Изражена птоза са слабом функцијом мишића подизача капка, урођено спуштање капка које дјетету покрива зјеницу, птоза код неуромишићних болести и послије повреде, када скраћивање самог мишића нема ефекта",
+        "prep": "Мјерење висине капка и снаге мишића, фотографисање, договор о мјесту узимања фасције, код дјеце преглед педијатра и анализе, без хране и пића прије анестезије у року који љекар одреди",
+        "abnormal": "Првих седмица капак се не затвара потпуно, нарочито у сну, па се прописују капи и маст за влажење; висина капка понекад тражи накнадно подешавање. Црвенило, бол у оку, преосјетљивост на свјетлост и замућење рожњаче разлог су да се јавите офталмологу без чекања на заказану контролу"
+      }
+    }
+  },
+  {
+    "slug": "scleral-buckle-with-vitrectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Комбинированное вмешательство при сложной отслойке сетчатки: удаление стекловидного тела изнутри глаза сочетают с циркулярной пломбой снаружи",
+        "how": "Через микропроколы удаляют стекловидное тело и рубцовые мембраны, расправляют сетчатку, обрабатывают разрывы лазером и заполняют полость газом или силиконом, а по экватору глаза подшивают силиконовый жгут, поддерживающий периферию сетчатки; операция длительная, обычно с госпитализацией",
+        "when": "Отслойка с множественными или периферическими разрывами, разрастание рубцовой ткани на сетчатке, повторная отслойка после прежней операции, тяжёлая травма глаза",
+        "prep": "Полное обследование глаза и УЗИ, анализы, ЭКГ и заключение терапевта по требованию клиники, воздержание от еды и питья перед наркозом, обсудить с врачом положение головы и запрет на перелёты при газовой тампонаде",
+        "abnormal": "Зрение возвращается постепенно и зависит от того, насколько пострадала центральная зона сетчатки, несколько недель могут быть двоение, изменение рефракции и чувство давления. Усиление боли, падение зрения, вспышки и новая тень в поле зрения — повод обратиться к офтальмологу немедленно"
+      },
+      "en": {
+        "what": "A combined operation for complex retinal detachment: the vitreous is removed from inside the eye while an encircling band supports it from outside",
+        "how": "Through micro-ports the vitreous gel and scar membranes are removed, the retina is flattened, breaks are sealed with laser and the cavity is filled with gas or silicone, while a silicone band is sutured around the equator of the eye to support the peripheral retina; the operation is long and usually involves a hospital stay",
+        "when": "Detachment with multiple or peripheral breaks, scar tissue growing on the retina, repeat detachment after an earlier operation, severe eye injury",
+        "prep": "Full eye assessment and ultrasound, laboratory tests, an ECG and a physician's clearance as the clinic requires, no food or drink before anaesthesia, discuss with the doctor the head positioning and the ban on flying while gas is in the eye",
+        "abnormal": "Sight returns gradually and depends on how far the central retina was affected; double vision, a change in refraction and a feeling of pressure are possible for weeks. Increasing pain, falling vision, flashes and a new shadow in the field of view mean contacting the ophthalmologist immediately"
+      },
+      "sr": {
+        "what": "Kombinovani zahvat kod složenog odvajanja mrežnjače: staklasto tijelo se uklanja iznutra, a kružna traka podupire oko spolja",
+        "how": "Kroz mikroportove se uklanjaju staklasto tijelo i ožiljne membrane, mrežnjača se poravnava, rascjepi se obrađuju laserom, a šupljina puni gasom ili silikonom, dok se oko ekvatora oka prišiva silikonska traka koja podupire periferiju mrežnjače; operacija je duga i obično uz bolničko liječenje",
+        "when": "Odvajanje sa više rascjepa ili rascjepima na periferiji, razrastanje ožiljnog tkiva na mrežnjači, ponovno odvajanje poslije ranije operacije, teška povreda oka",
+        "prep": "Potpun pregled oka i ultrazvuk, analize, EKG i mišljenje interniste po zahtjevu klinike, bez hrane i pića prije anestezije, sa ljekarom dogovoriti položaj glave i zabranu letenja dok je gas u oku",
+        "abnormal": "Vid se vraća postepeno i zavisi od toga koliko je stradao centar mrežnjače, sedmicama su mogući dvoslike, promjena dioptrije i osjećaj pritiska. Bol koja jača, slabljenje vida, bljeskovi i nova sjenka u vidnom polju znače da se odmah javite oftalmologu"
+      },
+      "de": {
+        "what": "Kombinierter Eingriff bei komplizierter Netzhautablösung: Der Glaskörper wird von innen entfernt, ein umlaufendes Band stützt das Auge von außen",
+        "how": "Über Mikrozugänge werden Glaskörper und Narbenmembranen entfernt, die Netzhaut angelegt, Löcher mit Laser gesichert und der Raum mit Gas oder Silikon gefüllt, während ein Silikonband um den Äquator des Auges genäht wird und die Netzhautperipherie stützt; der Eingriff ist lang und erfolgt meist stationär",
+        "when": "Ablösung mit mehreren oder peripheren Löchern, Narbengewebe auf der Netzhaut, erneute Ablösung nach früherer Operation, schwere Augenverletzung",
+        "prep": "Vollständige Augenuntersuchung und Ultraschall, Labor, EKG und internistische Freigabe nach Vorgabe der Klinik, vor der Narkose nüchtern bleiben, Kopfhaltung und Flugverbot bei Gasfüllung mit der Ärztin oder dem Arzt besprechen",
+        "abnormal": "Das Sehen kehrt allmählich zurück und hängt davon ab, wie stark die Netzhautmitte betroffen war; über Wochen sind Doppelbilder, veränderte Brechkraft und Druckgefühl möglich. Zunehmende Schmerzen, nachlassendes Sehen, Lichtblitze und ein neuer Schatten im Gesichtsfeld erfordern sofortigen Kontakt zur Augenärztin oder zum Augenarzt"
+      },
+      "tr": {
+        "what": "Karmaşık retina dekolmanında birleşik girişim: vitreus gözün içinden alınırken çepeçevre bant gözü dışarıdan destekler",
+        "how": "Mikro girişlerden vitreus ve skar zarları temizlenir, retina yatırılır, yırtıklar lazerle kapatılır ve boşluk gaz ya da silikonla doldurulur; aynı seansta gözün ekvatoruna, retina çevresini destekleyen silikon bant dikilir; ameliyat uzundur ve genellikle yatış gerektirir",
+        "when": "Çok sayıda ya da çevresel yırtıkla seyreden dekolman, retinada skar dokusu gelişimi, önceki ameliyat sonrası yineleyen dekolman, ağır göz yaralanması",
+        "prep": "Tam göz değerlendirmesi ve ultrason, tahliller, kliniğin istediği EKG ve dahiliye onayı, anestezi öncesi aç kalmak, baş pozisyonu ve gaz varken uçuş yasağını hekimle görüşmek",
+        "abnormal": "Görme yavaş yavaş döner ve retinanın merkezinin ne kadar etkilendiğine bağlıdır; haftalarca çift görme, kırma kusurunda değişiklik ve basınç hissi olabilir. Artan ağrı, görmenin azalması, ışık çakmaları ve görme alanında yeni gölge hemen göz hekimine başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Комбиновани захват код сложеног одвајања мрежњаче: стакласто тијело се уклања изнутра, а кружна трака подупире око споља",
+        "how": "Кроз микропортове се уклањају стакласто тијело и ожиљне мембране, мрежњача се поравнава, расцјепи се обрађују ласером, а шупљина пуни гасом или силиконом, док се око екватора ока пришива силиконска трака која подупире периферију мрежњаче; операција је дуга и обично уз болничко лијечење",
+        "when": "Одвајање са више расцјепа или расцјепима на периферији, разрастање ожиљног ткива на мрежњачи, поновно одвајање послије раније операције, тешка повреда ока",
+        "prep": "Потпун преглед ока и ултразвук, анализе, ЕКГ и мишљење интернисте по захтјеву клинике, без хране и пића прије анестезије, са љекаром договорити положај главе и забрану летења док је гас у оку",
+        "abnormal": "Вид се враћа постепено и зависи од тога колико је страдао центар мрежњаче, седмицама су могући двослике, промјена диоптрије и осјећај притиска. Бол која јача, слабљење вида, бљескови и нова сјенка у видном пољу значе да се одмах јавите офталмологу"
+      }
+    }
+  },
+  {
+    "slug": "senile-cataract-lens-extraction",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление помутневшего с возрастом хрусталика с имплантацией искусственной линзы на его место",
+        "how": "Под каплями или инъекционной анестезией хрусталик разрушают ультразвуком и удаляют через самогерметизирующийся микроразрез, а при очень плотном ядре хирург выбирает методику с более широким разрезом; затем в капсульный мешок устанавливают складную линзу",
+        "when": "Постепенное затуманивание зрения, ухудшение зрения в сумерках, ослепление встречными фарами, смена очков чаще обычного, когда помутнение хрусталика подтверждено осмотром",
+        "prep": "Биометрия глаза с расчётом линзы, обследование у офтальмолога и терапевта по требованию клиники, согласовать приём препаратов от давления и для разжижения крови, закапывать назначенные капли и прийти с сопровождающим",
+        "abnormal": "В первые дни обычны ощущение инородного тела, лёгкое покраснение и колебания чёткости, очки для чтения подбирают обычно через несколько недель. Боль, которая усиливается, распространяющееся покраснение и внезапная потеря зрения — повод срочно обратиться к офтальмологу"
+      },
+      "en": {
+        "what": "Removal of a lens that has clouded with age, with an artificial lens implanted in its place",
+        "how": "Under drops or injected anaesthesia the lens is broken up with ultrasound and removed through a self-sealing micro-incision, and for a very hard nucleus the surgeon chooses a technique with a wider incision; a foldable lens is then placed in the capsular bag",
+        "when": "Gradual misting of vision, worse sight at dusk, glare from oncoming headlights, glasses needing to be changed more often than usual, once clouding of the lens is confirmed on examination",
+        "prep": "Biometry with lens power calculation, review by the ophthalmologist and by a physician as the clinic requires, agree on blood pressure and blood-thinning medicines, use the prescribed drops and come with someone to accompany you",
+        "abnormal": "In the first days a foreign body sensation, slight redness and fluctuating sharpness are common, and reading glasses are usually prescribed a few weeks later. Pain that keeps increasing, spreading redness and a sudden loss of vision are reasons to contact the ophthalmologist urgently"
+      },
+      "sr": {
+        "what": "Uklanjanje sočiva zamućenog sa godinama uz ugradnju vještačkog sočiva na njegovo mjesto",
+        "how": "U anesteziji kapima ili injekcijom sočivo se razbija ultrazvukom i uklanja kroz samozatvarajući mikrorez, a kod vrlo tvrdog jezgra hirurg bira tehniku sa širim rezom; zatim se u čaurnu kesu postavlja sklopivo sočivo",
+        "when": "Postepeno zamagljenje vida, slabije snalaženje u sumrak, blještanje od farova iz suprotnog smjera, češća promjena dioptrije nego ranije, kada je zamućenje sočiva potvrđeno pregledom",
+        "prep": "Biometrija oka sa izračunom jačine sočiva, pregled oftalmologa i interniste po zahtjevu klinike, uskladiti lijekove za pritisak i razrjeđivanje krvi, ukapavati propisane kapi i doći sa pratiocem",
+        "abnormal": "Prvih dana uobičajeni su osjećaj stranog tijela, blago crvenilo i promjenljiva oštrina, a naočare za čitanje se obično propisuju poslije nekoliko sedmica. Bol koja se pojačava, crvenilo koje se širi i naglo slabljenje vida razlog su za hitno javljanje oftalmologu"
+      },
+      "de": {
+        "what": "Entfernung der im Alter getrübten Augenlinse mit Einsetzen einer Kunstlinse an ihrer Stelle",
+        "how": "In Tropf- oder Injektionsbetäubung wird die Linse mit Ultraschall zerkleinert und über einen selbstdichtenden Mikroschnitt entfernt, bei sehr hartem Kern wählt der Operateur eine Technik mit breiterem Schnitt; anschließend wird eine faltbare Linse in den Kapselsack gesetzt",
+        "when": "Allmähliches Verschwimmen des Sehens, schlechteres Sehen in der Dämmerung, Blendung durch entgegenkommende Scheinwerfer, häufigere Brillenwechsel als sonst, wenn die Linsentrübung in der Untersuchung bestätigt ist",
+        "prep": "Biometrie mit Linsenberechnung, augenärztliche und je nach Klinik hausärztliche Abklärung, Blutdruck- und Blutverdünnungsmedikamente abstimmen, verordnete Tropfen anwenden und in Begleitung kommen",
+        "abnormal": "In den ersten Tagen sind Fremdkörpergefühl, leichte Rötung und schwankende Schärfe üblich, eine Lesebrille wird meist nach einigen Wochen angepasst. Zunehmende Schmerzen, sich ausbreitende Rötung und plötzlicher Sehverlust sind Gründe, dringend die Augenärztin oder den Augenarzt zu kontaktieren"
+      },
+      "tr": {
+        "what": "Yaşla bulanıklaşan göz merceğinin çıkarılması ve yerine yapay mercek yerleştirilmesi",
+        "how": "Damla ya da enjeksiyon anestezisi altında mercek ultrasonla parçalanıp kendiliğinden kapanan mikro kesiden alınır, çok sert çekirdekte cerrah daha geniş kesili bir teknik seçer; ardından kapsül kesesine katlanabilir mercek yerleştirilir",
+        "when": "Görmenin giderek buğulanması, alacakaranlıkta görmenin azalması, karşıdan gelen farların kamaştırması, gözlük numarasının her zamankinden sık değişmesi ve muayenede mercek bulanıklığının doğrulanması",
+        "prep": "Mercek gücü hesabıyla biyometri, göz hekimi ve kliniğin istemesi halinde dahiliye değerlendirmesi, tansiyon ve kan sulandırıcı ilaçların düzenlenmesi, verilen damlaların kullanılması ve refakatçiyle gelmek",
+        "abnormal": "İlk günlerde yabancı cisim hissi, hafif kızarıklık ve değişken netlik olağandır; okuma gözlüğü genellikle birkaç hafta sonra verilir. Giderek artan ağrı, yayılan kızarıklık ve ani görme kaybı acil olarak göz hekimine başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање сочива замућеног са годинама уз уградњу вјештачког сочива на његово мјесто",
+        "how": "У анестезији капима или ињекцијом сочиво се разбија ултразвуком и уклања кроз самозатварајући микрорез, а код врло тврдог језгра хирург бира технику са ширим резом; затим се у чаурну кесу поставља склопиво сочиво",
+        "when": "Постепено замагљење вида, слабије сналажење у сумрак, бљештање од фарова из супротног смјера, чешћа промјена диоптрије него раније, када је замућење сочива потврђено прегледом",
+        "prep": "Биометрија ока са израчуном јачине сочива, преглед офталмолога и интернисте по захтјеву клинике, ускладити лијекове за притисак и разрјеђивање крви, укапавати прописане капи и доћи са пратиоцем",
+        "abnormal": "Првих дана уобичајени су осјећај страног тијела, благо црвенило и промјенљива оштрина, а наочаре за читање се обично прописују послије неколико седмица. Бол која се појачава, црвенило које се шири и нагло слабљење вида разлог су за хитно јављање офталмологу"
+      }
+    }
+  },
+  {
+    "slug": "strabismus-surgery",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция на глазодвигательных мышцах, меняющая их натяжение, чтобы выровнять положение глаз",
+        "how": "Через разрез слизистой подходят к нужной мышце и ослабляют её, пересаживая дальше от роговицы, либо усиливают, укорачивая, и фиксируют швами; у детей проводится под общим наркозом, у взрослых возможна местная анестезия, занимает от получаса до полутора часов в зависимости от числа мышц",
+        "when": "Устойчивое отклонение глаза, не исправленное очками и упражнениями, двоение после паралича мышцы или травмы, вынужденный поворот головы, косметически заметное косоглазие у взрослых",
+        "prep": "Измерение угла отклонения и подвижности глаз во всех направлениях, проверка зрения и, при необходимости, лечение амблиопии до операции, анализы и осмотр перед наркозом, воздержание от еды и питья в указанный врачом срок",
+        "abnormal": "Несколько недель глаз красный, бывают двоение и ощущение швов, окончательный результат оценивают не раньше чем через один-два месяца, иногда требуется дополнительная коррекция. Усиление боли, гнойное отделяемое или резкое снижение зрения — повод обратиться к офтальмологу сразу"
+      },
+      "en": {
+        "what": "Surgery on the muscles that move the eye, changing their tension to bring the eyes into line",
+        "how": "Through an incision in the mucous membrane the chosen muscle is reached and either weakened by reattaching it further from the cornea or strengthened by shortening it, and it is fixed with sutures; children have general anaesthesia, adults may have local, and it takes from half an hour to an hour and a half depending on how many muscles are treated",
+        "when": "A persistent deviation of the eye not corrected by glasses and exercises, double vision after muscle palsy or injury, a forced head turn, a cosmetically obvious squint in adults",
+        "prep": "Measurement of the angle of deviation and eye movements in all directions, vision testing and, if needed, treatment of amblyopia before surgery, tests and a pre-anaesthetic review, no food or drink for the period the doctor sets",
+        "abnormal": "The eye stays red for several weeks, double vision and awareness of the sutures are possible, and the final result is judged no earlier than one to two months later, with further adjustment sometimes needed. Increasing pain, purulent discharge or a sharp drop in vision mean contacting the ophthalmologist at once"
+      },
+      "sr": {
+        "what": "Operacija očnih mišića kojom se mijenja njihova zategnutost da bi se položaj očiju izravnao",
+        "how": "Kroz rez na sluzokoži pristupa se potrebnom mišiću, pa se on slabi premještanjem dalje od rožnjače ili jača skraćivanjem i učvršćuje koncima; kod djece se radi u opštoj, kod odraslih moguće i u lokalnoj anesteziji, traje od pola sata do sat i po, zavisno od broja mišića",
+        "when": "Trajno odstupanje oka koje nije ispravljeno naočarima i vježbama, dvoslike poslije oduzetosti mišića ili povrede, prinudno okretanje glave, estetski uočljiv strabizam kod odraslih",
+        "prep": "Mjerenje ugla odstupanja i pokretljivosti očiju u svim pravcima, provjera vida i, po potrebi, liječenje slabovidosti prije operacije, analize i pregled prije anestezije, bez hrane i pića u roku koji ljekar odredi",
+        "abnormal": "Oko je crveno nekoliko sedmica, mogući su dvoslike i osjećaj konaca, a konačan rezultat se procjenjuje tek poslije mjesec do dva, ponekad uz dodatnu korekciju. Bol koja jača, gnojni iscjedak ili naglo slabljenje vida znače da se odmah javite oftalmologu"
+      },
+      "de": {
+        "what": "Operation an den Augenmuskeln, deren Spannung verändert wird, um die Augenstellung auszugleichen",
+        "how": "Über einen Schnitt in der Bindehaut wird der betreffende Muskel erreicht und entweder durch Rückverlagerung geschwächt oder durch Verkürzung verstärkt und mit Nähten fixiert; Kinder erhalten eine Vollnarkose, Erwachsene auch örtliche Betäubung, die Dauer beträgt je nach Zahl der Muskeln eine halbe bis anderthalb Stunden",
+        "when": "Anhaltende Augenabweichung, die Brille und Übungen nicht korrigieren, Doppelbilder nach Muskellähmung oder Verletzung, Zwangshaltung des Kopfes, kosmetisch auffälliges Schielen bei Erwachsenen",
+        "prep": "Messung des Schielwinkels und der Augenbeweglichkeit in allen Richtungen, Sehprüfung und bei Bedarf Behandlung einer Schwachsichtigkeit vor der Operation, Labor und Narkosevorgespräch, im genannten Zeitraum nüchtern bleiben",
+        "abnormal": "Das Auge bleibt einige Wochen gerötet, Doppelbilder und Fadengefühl sind möglich, das endgültige Ergebnis wird frühestens nach ein bis zwei Monaten beurteilt, manchmal ist eine Nachkorrektur nötig. Zunehmende Schmerzen, eitriges Sekret oder ein rascher Sehverlust bedeuten sofortigen Kontakt zur Augenärztin oder zum Augenarzt"
+      },
+      "tr": {
+        "what": "Gözleri aynı hizaya getirmek için göz kaslarının gerginliğini değiştiren ameliyat",
+        "how": "Mukozadaki kesiden ilgili kasa ulaşılır, kas korneadan uzağa alınarak zayıflatılır ya da kısaltılarak güçlendirilir ve dikişlerle tespit edilir; çocuklarda genel, erişkinlerde lokal anestezi de kullanılabilir, kas sayısına göre yarım saat ile bir buçuk saat sürer",
+        "when": "Gözlük ve egzersizle düzelmeyen kalıcı göz kayması, kas felci ya da yaralanma sonrası çift görme, başın zorunlu çevrilmesi, erişkinde estetik olarak belirgin şaşılık",
+        "prep": "Kayma açısının ve göz hareketlerinin tüm yönlerde ölçümü, görme değerlendirmesi ve gerekirse ameliyat öncesi göz tembelliği tedavisi, tahliller ve anestezi öncesi muayene, hekimin belirttiği süre aç kalmak",
+        "abnormal": "Göz birkaç hafta kırmızı kalır, çift görme ve dikiş hissi olabilir; sonuç ancak bir iki ay sonra değerlendirilir, kimi zaman ek düzeltme gerekir. Artan ağrı, iltihaplı akıntı ya da görmenin hızla azalması hemen göz hekimine başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Операција очних мишића којом се мијења њихова затегнутост да би се положај очију изравнао",
+        "how": "Кроз рез на слузокожи приступа се потребном мишићу, па се он слаби премјештањем даље од рожњаче или јача скраћивањем и учвршћује концима; код дјеце се ради у општој, код одраслих могуће и у локалној анестезији, траје од пола сата до сат и по, зависно од броја мишића",
+        "when": "Трајно одступање ока које није исправљено наочарима и вјежбама, двослике послије одузетости мишића или повреде, принудно окретање главе, естетски уочљив страбизам код одраслих",
+        "prep": "Мјерење угла одступања и покретљивости очију у свим правцима, провјера вида и, по потреби, лијечење слабовидости прије операције, анализе и преглед прије анестезије, без хране и пића у року који љекар одреди",
+        "abnormal": "Око је црвено неколико седмица, могући су двослике и осјећај конаца, а коначан резултат се процјењује тек послије мјесец до два, понекад уз додатну корекцију. Бол која јача, гнојни исцједак или нагло слабљење вида значе да се одмах јавите офталмологу"
+      }
+    }
+  },
+  {
+    "slug": "surgical-treatment-of-xanthelasma-molluscum-or-verruca-bilateral",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление желтоватых холестериновых бляшек, узелков моллюска или бородавок на коже век сразу с обеих сторон",
+        "how": "Кожу век обезболивают инъекцией, образования иссекают, выскабливают или обрабатывают радиоволновым либо лазерным аппаратом, при необходимости края сводят тонкими швами; работа с двух сторон за одно посещение занимает больше времени, чем с одной",
+        "when": "Симметричные ксантелазмы у внутренних углов век, множественные узелки контагиозного моллюска, бородавки, цепляющиеся за ресницы и раздражающие глаз, желание убрать заметные изменения с обеих сторон за один раз",
+        "prep": "Прийти без макияжа и без контактных линз, сообщить о разжижающих кровь препаратах и склонности к рубцеванию, взять солнцезащитные очки и рассчитывать на несколько дней с отёком; при ксантелазмах врач может предложить проверить обмен жиров",
+        "abnormal": "Отёк и корочки появляются на обоих веках одновременно, поэтому первые дни заметнее, чем после одностороннего вмешательства. Ксантелазмы могут появиться снова, а моллюск — перейти с других участков кожи; долгое незаживление, нагноение или новый узелок стоит показать врачу"
+      },
+      "en": {
+        "what": "Removal of yellowish cholesterol plaques, molluscum nodules or warts on the skin of the eyelids on both sides at once",
+        "how": "The lid skin is numbed with an injection, the lesions are excised, curetted or treated with a radiofrequency or laser device, and the edges may be closed with fine sutures; working on both sides in one visit takes longer than on one",
+        "when": "Symmetrical xanthelasmas at the inner corners of the lids, multiple molluscum nodules, warts that catch on the lashes and irritate the eye, a wish to deal with visible changes on both sides in one go",
+        "prep": "Come without make-up and without contact lenses, report blood-thinning medicines and a tendency to scarring, bring sunglasses and expect a few days of swelling; with xanthelasmas the doctor may suggest checking fat metabolism",
+        "abnormal": "Swelling and crusts appear on both lids at the same time, so the first days are more noticeable than after a one-sided procedure. Xanthelasmas can come back and molluscum can spread from other areas of skin; slow healing, suppuration or a new nodule should be shown to the doctor"
+      },
+      "sr": {
+        "what": "Uklanjanje žućkastih holesterolskih naslaga, čvorića moluske ili bradavica na koži kapaka sa obje strane u istom zahvatu",
+        "how": "Koža kapaka se obezboli injekcijom, promjene se isijecaju, izostružu ili obrađuju radiotalasnim odnosno laserskim aparatom, a ivice se po potrebi spajaju tankim koncima; rad sa obje strane u jednom dolasku traje duže nego sa jedne",
+        "when": "Simetrične ksantelazme uz unutrašnje uglove kapaka, više čvorića moluske, bradavice koje zapinju za trepavice i nadražuju oko, želja da se uočljive promjene uklone sa obje strane odjednom",
+        "prep": "Doći bez šminke i bez kontaktnih sočiva, prijaviti lijekove za razrjeđivanje krvi i sklonost ožiljcima, ponijeti naočare za sunce i računati na nekoliko dana otoka; kod ksantelazmi ljekar može predložiti provjeru masnoća u krvi",
+        "abnormal": "Otok i kraste javljaju se na oba kapka istovremeno, pa su prvi dani uočljiviji nego poslije jednostranog zahvata. Ksantelazme se mogu vratiti, a moluska proširiti sa drugih dijelova kože; dugo nezarastanje, gnojenje ili nov čvorić treba pokazati ljekaru"
+      },
+      "de": {
+        "what": "Entfernung gelblicher Cholesterinablagerungen, Dellwarzen oder Warzen an der Lidhaut beidseits in einer Sitzung",
+        "how": "Die Lidhaut wird mit einer Injektion betäubt, die Veränderungen werden herausgeschnitten, ausgeschabt oder mit Radiofrequenz- beziehungsweise Lasergerät behandelt, die Ränder bei Bedarf mit feinen Fäden verschlossen; die Arbeit an beiden Seiten in einem Termin dauert länger als an einer",
+        "when": "Symmetrische Xanthelasmen an den inneren Lidwinkeln, mehrere Dellwarzenknötchen, Warzen, die an den Wimpern hängen bleiben und das Auge reizen, Wunsch, sichtbare Veränderungen beidseits auf einmal zu beseitigen",
+        "prep": "Ohne Make-up und ohne Kontaktlinsen kommen, Blutverdünner und Neigung zu Narben angeben, Sonnenbrille mitbringen und einige Tage Schwellung einplanen; bei Xanthelasmen kann eine Kontrolle des Fettstoffwechsels vorgeschlagen werden",
+        "abnormal": "Schwellung und Krusten treten an beiden Lidern gleichzeitig auf, die ersten Tage fallen daher stärker auf als nach einem einseitigen Eingriff. Xanthelasmen können wiederkommen, Dellwarzen sich von anderen Hautstellen ausbreiten; verzögerte Heilung, Eiterung oder ein neues Knötchen gehören ärztlich angesehen"
+      },
+      "tr": {
+        "what": "Göz kapaklarının derisindeki sarımsı kolesterol plaklarının, molluskum nodüllerinin ya da siğillerin iki taraftan aynı seansta çıkarılması",
+        "how": "Kapak derisi enjeksiyonla uyuşturulur, oluşumlar kesilerek, kazınarak ya da radyofrekans veya lazer cihazıyla alınır, gerekirse kenarlar ince dikişlerle birleştirilir; iki tarafın aynı ziyarette yapılması tek tarafa göre daha uzun sürer",
+        "when": "Kapakların iç köşelerindeki simetrik ksantelazmalar, çok sayıda molluskum nodülü, kirpiklere takılıp gözü rahatsız eden siğiller, görünür değişikliklerin iki taraftan birden giderilmesi isteği",
+        "prep": "Makyajsız ve kontakt lenssiz gelmek, kan sulandırıcı ilaçları ve iz bırakmaya yatkınlığı bildirmek, güneş gözlüğü getirmek ve birkaç günlük şişliği hesaba katmak; ksantelazmada hekim yağ metabolizmasının kontrolünü önerebilir",
+        "abnormal": "Şişlik ve kabuklar iki kapakta aynı anda görülür, bu nedenle ilk günler tek taraflı işleme göre daha belirgindir. Ksantelazmalar yineleyebilir, molluskum derinin başka bölgelerinden yayılabilir; iyileşmenin uzaması, iltihaplanma ya da yeni nodül hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање жућкастих холестеролских наслага, чворића молуске или брадавица на кожи капака са обје стране у истом захвату",
+        "how": "Кожа капака се обезболи ињекцијом, промјене се исијецају, изостружу или обрађују радиоталасним односно ласерским апаратом, а ивице се по потреби спајају танким концима; рад са обје стране у једном доласку траје дуже него са једне",
+        "when": "Симетричне ксантелазме уз унутрашње углове капака, више чворића молуске, брадавице које запињу за трепавице и надражују око, жеља да се уочљиве промјене уклоне са обје стране одједном",
+        "prep": "Доћи без шминке и без контактних сочива, пријавити лијекове за разрјеђивање крви и склоност ожиљцима, понијети наочаре за сунце и рачунати на неколико дана отока; код ксантелазми љекар може предложити провјеру масноћа у крви",
+        "abnormal": "Оток и красте јављају се на оба капка истовремено, па су први дани уочљивији него послије једностраног захвата. Ксантелазме се могу вратити, а молуска проширити са других дијелова коже; дуго незарастање, гнојење или нов чворић треба показати љекару"
+      }
+    }
+  },
+  {
+    "slug": "surgical-treatment-of-xanthelasma-molluscum-or-verruca-unilateral",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление холестериновой бляшки, узелка моллюска или бородавки на коже века с одной стороны",
+        "how": "Участок кожи обезболивают местно, образование срезают, вылущивают или обрабатывают радиоволной либо лазером, ранку закрывают швом или оставляют под мазью; вмешательство короткое, в тот же день пациент возвращается домой",
+        "when": "Единичное образование на верхнем или нижнем веке одного глаза, узелок, который натирается оправой очков или задевается ресницами, желтоватая бляшка у внутреннего угла века",
+        "prep": "Не пользоваться косметикой в день визита, снять контактные линзы, предупредить о приёме разжижающих кровь препаратов и об аллергии на анестетики",
+        "abnormal": "На месте удаления несколько дней держатся отёк и корочка, кожа выравнивается постепенно, иногда остаётся тонкий рубчик. Если образование возвращается, рядом появляются похожие узелки или ранка долго не заживает, нужен повторный осмотр врача"
+      },
+      "en": {
+        "what": "Removal of a cholesterol plaque, a molluscum nodule or a wart on the skin of one eyelid",
+        "how": "The area of skin is numbed locally, the lesion is shaved off, enucleated or treated with radiofrequency or laser, and the wound is closed with a suture or left under ointment; the procedure is short and the patient goes home the same day",
+        "when": "A single lesion on the upper or lower lid of one eye, a nodule rubbed by the frame of glasses or caught by the lashes, a yellowish plaque at the inner corner of the lid",
+        "prep": "No cosmetics on the day of the visit, contact lenses removed, mention blood-thinning medicines and any allergy to anaesthetics",
+        "abnormal": "Swelling and a crust stay at the site for a few days and the skin evens out gradually, sometimes leaving a thin scar. If the lesion comes back, similar nodules appear nearby or the wound is slow to heal, a repeat examination is needed"
+      },
+      "sr": {
+        "what": "Uklanjanje holesterolske naslage, čvorića moluske ili bradavice na koži jednog kapka",
+        "how": "Dio kože se obezboli lokalno, promjena se skida, ljušti ili obrađuje radiotalasima odnosno laserom, a ranica se zatvara koncem ili ostavlja pod mašću; zahvat je kratak i pacijent se istog dana vraća kući",
+        "when": "Pojedinačna promjena na gornjem ili donjem kapku jednog oka, čvorić koji trlja okvir naočara ili zapinje za trepavice, žućkasta naslaga uz unutrašnji ugao kapka",
+        "prep": "Ne koristiti kozmetiku na dan dolaska, skinuti kontaktna sočiva, najaviti lijekove za razrjeđivanje krvi i alergiju na anestetike",
+        "abnormal": "Na mjestu zahvata nekoliko dana ostaju otok i krasta, koža se izravnava postepeno, ponekad uz tanak ožiljak. Ako se promjena vrati, ako se pored nje pojave slični čvorići ili ranica dugo ne zarasta, potreban je ponovni pregled"
+      },
+      "de": {
+        "what": "Entfernung einer Cholesterinablagerung, einer Dellwarze oder einer Warze an der Haut eines Lides",
+        "how": "Das Hautareal wird örtlich betäubt, die Veränderung abgetragen, ausgeschält oder mit Radiofrequenz beziehungsweise Laser behandelt, die Wunde genäht oder unter Salbe belassen; der Eingriff ist kurz, die Heimkehr am selben Tag möglich",
+        "when": "Eine einzelne Veränderung am Ober- oder Unterlid eines Auges, ein Knötchen, das vom Brillengestell gerieben wird oder an den Wimpern hängt, eine gelbliche Ablagerung am inneren Lidwinkel",
+        "prep": "Am Tag des Termins keine Kosmetik, Kontaktlinsen entfernen, Blutverdünner und Allergien gegen Betäubungsmittel angeben",
+        "abnormal": "An der Stelle bleiben einige Tage Schwellung und Kruste, die Haut glättet sich allmählich, mitunter bleibt eine feine Narbe. Kehrt die Veränderung zurück, treten daneben ähnliche Knötchen auf oder heilt die Wunde nur langsam, ist eine erneute Untersuchung nötig"
+      },
+      "tr": {
+        "what": "Tek göz kapağının derisindeki kolesterol plağının, molluskum nodülünün ya da siğilin çıkarılması",
+        "how": "Deri bölgesi lokal olarak uyuşturulur, oluşum traşlanır, çıkarılır ya da radyofrekans veya lazerle işlenir, yara dikişle kapatılır veya pomad altında bırakılır; işlem kısadır, hasta aynı gün evine döner",
+        "when": "Bir gözün üst ya da alt kapağındaki tek lezyon, gözlük çerçevesinin sürttüğü ya da kirpiklere takılan nodül, kapağın iç köşesindeki sarımsı plak",
+        "prep": "İşlem günü kozmetik kullanmamak, kontakt lensleri çıkarmak, kan sulandırıcı ilaçları ve anestezik alerjisini bildirmek",
+        "abnormal": "İşlem yerinde birkaç gün şişlik ve kabuk kalır, deri yavaş yavaş düzleşir, kimi zaman ince bir iz kalabilir. Lezyon yeniden çıkarsa, yanında benzer nodüller belirirse ya da yara geç iyileşirse yeniden muayene gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање холестеролске наслаге, чворића молуске или брадавице на кожи једног капка",
+        "how": "Дио коже се обезболи локално, промјена се скида, љушти или обрађује радиоталасима односно ласером, а раница се затвара концем или оставља под машћу; захват је кратак и пацијент се истог дана враћа кући",
+        "when": "Појединачна промјена на горњем или доњем капку једног ока, чворић који трља оквир наочара или запиње за трепавице, жућкаста наслага уз унутрашњи угао капка",
+        "prep": "Не користити козметику на дан доласка, скинути контактна сочива, најавити лијекове за разрјеђивање крви и алергију на анестетике",
+        "abnormal": "На мјесту захвата неколико дана остају оток и краста, кожа се изравнава постепено, понекад уз танак ожиљак. Ако се промјена врати, ако се поред ње појаве слични чворићи или раница дуго не зараста, потребан је поновни преглед"
+      }
+    }
+  },
+  {
+    "slug": "vitrectomy-category-i",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление стекловидного тела через микропроколы в стенке глаза в наиболее простом по объёму варианте вмешательства",
+        "how": "В склеру устанавливают три тонких порта: через один подаётся раствор, через второй вводится осветитель, через третий работает витреотом, которым убирают стекловидное тело и помутнения, в конце полость заполняют раствором, газом или силиконом; категорию определяет хирург по объёму необходимой работы на сетчатке",
+        "when": "Стойкое помутнение стекловидного тела, кровоизлияние, которое не рассасывается самостоятельно, плёнка на макуле, разрастания на сетчатке при диабете, необходимость взять материал при подозрении на воспаление",
+        "prep": "Осмотр глазного дна и УЗИ глаза, анализы и допуск терапевта по требованию клиники, воздержание от еды и питья перед анестезией в указанный врачом срок, сопровождающий и готовность соблюдать положение головы, если полость заполнят газом",
+        "abnormal": "Зрение проясняется постепенно, в первые недели возможны плавающие точки, отёк роговицы и чувство давления; при газовой тампонаде зрение остаётся мутным, пока газ не рассосётся, и перелёты в это время запрещены. Нарастающая боль, резкое ухудшение зрения, вспышки или тень в поле зрения — повод немедленно показаться офтальмологу"
+      },
+      "en": {
+        "what": "Removal of the vitreous gel through micro-ports in the wall of the eye, in the least extensive version of the operation",
+        "how": "Three thin ports are placed in the sclera: one delivers fluid, one carries the light source and through the third the vitreous cutter removes the gel and the opacities; at the end the cavity is filled with solution, gas or silicone, and the category reflects how much work on the retina the surgeon has to do",
+        "when": "Persistent clouding of the vitreous, a haemorrhage that does not clear on its own, a membrane on the macula, proliferation on the retina in diabetes, the need to take a sample when inflammation is suspected",
+        "prep": "Fundus examination and eye ultrasound, laboratory tests and medical clearance as the clinic requires, no food or drink before anaesthesia for the period the doctor sets, someone to accompany you and readiness to keep a head position if the cavity is filled with gas",
+        "abnormal": "Vision clears gradually, and floaters, corneal swelling and a feeling of pressure are possible in the first weeks; with a gas filling vision stays misty until the gas is absorbed and flying is not allowed during that time. Increasing pain, a sharp drop in vision, flashes or a shadow in the field of view call for an immediate ophthalmic review"
+      },
+      "sr": {
+        "what": "Uklanjanje staklastog tijela kroz mikroportove u zidu oka, u najmanje obimnoj varijanti zahvata",
+        "how": "U bjeloočnicu se postavljaju tri tanka porta: kroz jedan ulazi rastvor, kroz drugi osvjetljenje, a kroz treći radi vitreotom kojim se uklanjaju staklasto tijelo i zamućenja; na kraju se šupljina puni rastvorom, gasom ili silikonom, a kategorija odražava obim rada na mrežnjači koji hirurg mora obaviti",
+        "when": "Trajno zamućenje staklastog tijela, krvarenje koje se ne povlači samo, membrana na žutoj mrlji, razrastanja na mrežnjači kod šećerne bolesti, potreba da se uzme uzorak kada se sumnja na zapaljenje",
+        "prep": "Pregled očnog dna i ultrazvuk oka, analize i saglasnost interniste po zahtjevu klinike, bez hrane i pića prije anestezije u roku koji ljekar odredi, pratilac i spremnost da se održava položaj glave ako se šupljina napuni gasom",
+        "abnormal": "Vid se razbistrava postepeno, prvih sedmica mogući su plutajuće tačke, otok rožnjače i osjećaj pritiska; uz gasnu tamponadu vid ostaje mutan dok se gas ne povuče, a letjeti se u tom periodu ne smije. Bol koja jača, naglo slabljenje vida, bljeskovi ili sjenka u vidnom polju traže hitan pregled oftalmologa"
+      },
+      "de": {
+        "what": "Entfernung des Glaskörpers über Mikrozugänge in der Augenwand im wenigsten aufwendigen Umfang des Eingriffs",
+        "how": "In die Lederhaut werden drei dünne Zugänge gesetzt: einer für die Spüllösung, einer für die Lichtquelle, durch den dritten arbeitet das Vitrektom und entfernt Glaskörper und Trübungen; am Ende wird der Raum mit Lösung, Gas oder Silikon gefüllt, die Kategorie richtet sich nach dem Umfang der notwendigen Arbeit an der Netzhaut",
+        "when": "Anhaltende Glaskörpertrübung, eine Blutung, die sich nicht von selbst auflöst, eine Membran auf der Makula, Gewebewucherungen auf der Netzhaut bei Diabetes, Probenentnahme bei Verdacht auf eine Entzündung",
+        "prep": "Untersuchung des Augenhintergrunds und Augenultraschall, Labor und ärztliche Freigabe nach Vorgabe der Klinik, vor der Narkose im genannten Zeitraum nüchtern bleiben, Begleitung und Bereitschaft, bei Gasfüllung eine Kopfhaltung einzuhalten",
+        "abnormal": "Das Sehen klärt sich allmählich, in den ersten Wochen sind Schwebeteilchen, Hornhautschwellung und Druckgefühl möglich; bei Gasfüllung bleibt das Sehen trüb, bis das Gas resorbiert ist, Fliegen ist in dieser Zeit nicht erlaubt. Zunehmende Schmerzen, rascher Sehverlust, Lichtblitze oder ein Schatten im Gesichtsfeld erfordern eine sofortige augenärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Vitreusun göz duvarındaki mikro girişlerden, girişimin en az kapsamlı biçiminde alınması",
+        "how": "Skleraya üç ince giriş yerleştirilir: birinden sıvı verilir, birinden ışık kaynağı girer, üçüncüsünden vitrektom çalışarak vitreusu ve bulanıklıkları temizler; sonunda boşluk sıvı, gaz ya da silikonla doldurulur, kategori cerrahın retinada yapması gereken işin kapsamını yansıtır",
+        "when": "Vitreusta kalıcı bulanıklık, kendiliğinden çekilmeyen kanama, maküla üzerinde zar, şeker hastalığında retinada doku çoğalması, iltihap kuşkusunda örnek alma gereği",
+        "prep": "Göz dibi muayenesi ve göz ultrasonu, kliniğin istediği tahliller ve hekim onayı, anestezi öncesi hekimin belirttiği süre aç kalmak, refakatçi ve boşluk gazla doldurulursa baş pozisyonunu sürdürmeye hazır olmak",
+        "abnormal": "Görme yavaş yavaş berraklaşır, ilk haftalarda uçuşan cisimler, kornea ödemi ve basınç hissi olabilir; gaz tamponadında gaz çekilene kadar görme bulanık kalır ve bu sürede uçmak yasaktır. Artan ağrı, görmenin hızla azalması, ışık çakmaları ya da görme alanında gölge hemen göz muayenesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање стакластог тијела кроз микропортове у зиду ока, у најмање обимној варијанти захвата",
+        "how": "У бјелоочницу се постављају три танка порта: кроз један улази раствор, кроз други освјетљење, а кроз трећи ради витреотом којим се уклањају стакласто тијело и замућења; на крају се шупљина пуни раствором, гасом или силиконом, а категорија одражава обим рада на мрежњачи који хирург мора обавити",
+        "when": "Трајно замућење стакластог тијела, крварење које се не повлачи само, мембрана на жутој мрљи, разрастања на мрежњачи код шећерне болести, потреба да се узме узорак када се сумња на запаљење",
+        "prep": "Преглед очног дна и ултразвук ока, анализе и сагласност интернисте по захтјеву клинике, без хране и пића прије анестезије у року који љекар одреди, пратилац и спремност да се одржава положај главе ако се шупљина напуни гасом",
+        "abnormal": "Вид се разбистрава постепено, првих седмица могући су плутајуће тачке, оток рожњаче и осјећај притиска; уз гасну тампонаду вид остаје мутан док се гас не повуче, а летјети се у том периоду не смије. Бол која јача, нагло слабљење вида, бљескови или сјенка у видном пољу траже хитан преглед офталмолога"
+      }
+    }
+  }
+]

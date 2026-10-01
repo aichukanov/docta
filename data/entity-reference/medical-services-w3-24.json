@@ -1,658 +1,770 @@
 [
-	{
-		"slug": "double-contrast-barium-enema-fischer-method",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Рентгеновское исследование толстой кишки, при котором тонкий слой бария на стенке сочетают с раздуванием кишки воздухом, чтобы подробно рассмотреть рельеф слизистой",
-				"how": "Через наконечник в прямую кишку вводят небольшое количество густой бариевой взвеси, затем по методике Фишера нагнетают воздух, который расправляет кишку и распределяет контраст по стенке, после чего просят несколько раз повернуться на столе и делают прицельные снимки всех отделов; 30–45 минут",
-				"when": "Поиск мелких образований и полипов на стенке кишки, стойкие изменения стула и кровь в кале, подозрение на воспалительное заболевание кишечника, дивертикулы, наблюдение после удаления полипа, ситуации, когда колоноскопия не может быть выполнена полностью",
-				"prep": "Полное очищение кишечника по схеме клиники, за два-три дня еда без клетчатки, в день исследования натощак; предупредить о недавней биопсии или операции на кишке и о болезнях сердца",
-				"abnormal": "При таком исследовании видны мелкие неровности и выпячивания слизистой, участки утолщённой стенки и места, где кишка не расправляется воздухом. Описание даёт рентгенолог, а нужна ли эндоскопия с забором ткани, решает гастроэнтеролог или хирург"
-			},
-			"en": {
-				"what": "An X-ray study of the large bowel in which a thin barium film on the wall is combined with air distension, so that the mucosal relief can be seen in detail",
-				"how": "A small amount of thick barium suspension is introduced through a tip in the rectum, then air is insufflated using the Fischer technique, which opens the bowel and spreads the contrast along the wall; the patient turns several times on the table while targeted images of every segment are taken; 30–45 minutes",
-				"when": "Search for small wall lesions and polyps, persistent change in bowel habit and blood in the stool, suspected inflammatory bowel disease, diverticula, follow-up after polyp removal, situations where colonoscopy cannot be completed",
-				"prep": "Full bowel cleansing according to the clinic's protocol, two to three days of a low-fibre diet, nothing to eat on the day of the study; report a recent biopsy or bowel surgery and any heart conditions",
-				"abnormal": "The study can show fine irregularities and outpouchings of the mucosa, thickened wall segments and areas where the bowel does not open up with air. The report is written by a radiologist, while a gastroenterologist or surgeon decides whether endoscopy with tissue sampling is needed"
-			},
-			"sr": {
-				"what": "Rendgenski pregled debelog crijeva kod kojeg se tanak sloj barijuma na zidu kombinuje sa naduvavanjem crijeva vazduhom, da bi se reljef sluznice vidio u detalje",
-				"how": "Kroz nastavak u čmaru unosi se manja količina guste barijumske suspenzije, zatim se po Fišerovoj metodi ubacuje vazduh koji širi crijevo i raspoređuje kontrast po zidu, pa se pacijent više puta okreće na stolu uz ciljane snimke svih dijelova; 30–45 minuta",
-				"when": "Traženje sitnih promjena i polipa na zidu crijeva, uporne promjene stolice i krv u stolici, sumnja na zapaljensku bolest crijeva, divertikule, praćenje poslije uklanjanja polipa, situacije kada kolonoskopija ne može da se završi u cjelini",
-				"prep": "Potpuno čišćenje crijeva po šemi klinike, dva do tri dana ishrana bez vlakana, na dan pregleda natašte; najaviti skorašnju biopsiju ili operaciju na crijevu i bolesti srca",
-				"abnormal": "Na ovakvom pregledu vide se sitne neravnine i izbočenja sluznice, zadebljali dijelovi zida i mjesta na kojima se crijevo ne širi vazduhom. Opis daje radiolog, a da li je potrebna endoskopija sa uzimanjem uzorka tkiva odlučuje gastroenterolog ili hirurg"
-			},
-			"de": {
-				"what": "Röntgenuntersuchung des Dickdarms, bei der ein dünner Bariumfilm an der Wand mit einer Luftfüllung kombiniert wird, um das Schleimhautrelief genau darzustellen",
-				"how": "Über ein Darmrohr wird eine kleine Menge dicker Bariumsuspension eingebracht, anschließend nach der Fischer-Technik Luft insuffliert, die den Darm entfaltet und das Kontrastmittel an der Wand verteilt; der Patient dreht sich mehrfach auf dem Tisch, dabei werden Zielaufnahmen aller Abschnitte angefertigt; 30–45 Minuten",
-				"when": "Suche nach kleinen Wandveränderungen und Polypen, anhaltend veränderter Stuhlgang und Blut im Stuhl, Verdacht auf eine chronisch entzündliche Darmerkrankung, Divertikel, Kontrolle nach Polypenabtragung, Situationen, in denen eine Koloskopie nicht vollständig möglich ist",
-				"prep": "Vollständige Darmreinigung nach dem Schema der Klinik, zwei bis drei Tage ballaststoffarme Kost, am Untersuchungstag nüchtern; eine kürzliche Biopsie oder Darmoperation sowie Herzerkrankungen vorher angeben",
-				"abnormal": "Sichtbar werden feine Unregelmäßigkeiten und Aussackungen der Schleimhaut, verdickte Wandabschnitte und Stellen, an denen sich der Darm nicht entfaltet. Den Befund erstellt die Radiologie, über eine Endoskopie mit Gewebeentnahme entscheidet die Gastroenterologie oder Chirurgie"
-			},
-			"tr": {
-				"what": "Kalın bağırsak duvarındaki ince baryum tabakasının hava ile şişirmeye eklendiği, mukoza kabartısını ayrıntılı gösteren röntgen incelemesi",
-				"how": "Makattan yerleştirilen uçla az miktarda koyu baryum verilir, ardından Fischer yöntemiyle hava verilerek bağırsak açılır ve kontrast duvara dağılır, hasta masada birkaç kez döndürülüp tüm bölümlerin hedefli filmleri çekilir; 30–45 dakika",
-				"when": "Duvardaki küçük değişiklik ve poliplerin aranması, inatçı dışkılama değişiklikleri ve dışkıda kan, iltihabi bağırsak hastalığı şüphesi, divertiküller, polip alındıktan sonraki takip, kolonoskopinin tam yapılamadığı durumlar",
-				"prep": "Kliniğin verdiği şemaya göre tam bağırsak temizliği, iki üç gün lifsiz beslenme, inceleme günü aç gelmek; yakın zamanda yapılan biyopsi veya bağırsak ameliyatı ile kalp hastalıkları önceden bildirilmelidir",
-				"abnormal": "İncelemede mukozadaki ince düzensizlikler ve kesecikler, kalınlaşmış duvar bölümleri ve bağırsağın havayla açılmadığı yerler görülebilir. Filmleri radyolog tanımlar, doku örneği alınan endoskopinin gerekip gerekmediğine gastroenterolog veya cerrah karar verir"
-			}
-		}
-	},
-	{
-		"slug": "esophagus-stomach-and-duodenum-fluoroscopy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Рентгеновское исследование верхних отделов пищеварительного тракта в движении: пациент глотает контраст, а врач следит за его прохождением на экране и сохраняет снимки",
-				"how": "Стоя у стойки пациент небольшими глотками пьёт бариевую взвесь, по команде задерживает дыхание и меняет положение тела, иногда исследование дополняют шипучим порошком, который раздувает желудок; 20–40 минут",
-				"when": "Затруднённое глотание и ощущение комка, изжога и подозрение на заброс содержимого желудка в пищевод, боль под ложечкой, повторяющаяся рвота, подозрение на грыжу пищеводного отверстия диафрагмы или сужение, контроль после операции на желудке",
-				"prep": "Натощак, не есть и не пить с вечера, утром не курить и не жевать резинку; снять украшения с шеи и груди, сообщить о возможной беременности",
-				"abnormal": "Исследование показывает ход и скорость прохождения контраста, ширину просвета, подвижность стенок и обратный заброс, тогда как вид слизистой вблизи и ткань для анализа даёт только эндоскопия. Снимки описывает рентгенолог, дальнейшее ведение определяет гастроэнтеролог"
-			},
-			"en": {
-				"what": "An X-ray study of the upper digestive tract in motion: the patient swallows contrast while the doctor follows its passage on the screen and stores images",
-				"how": "Standing at the fluoroscopy unit the patient sips barium suspension, holds the breath on command and changes position; an effervescent powder that distends the stomach is sometimes added; 20–40 minutes",
-				"when": "Difficulty swallowing and a lump sensation, heartburn and suspected reflux of stomach contents into the oesophagus, upper abdominal pain, repeated vomiting, suspected hiatal hernia or narrowing, follow-up after stomach surgery",
-				"prep": "Nothing to eat or drink from the evening before, no smoking or chewing gum in the morning; remove neck and chest jewellery and report a possible pregnancy",
-				"abnormal": "The study shows the route and speed of contrast passage, the width of the lumen, wall movement and reflux, while a close view of the mucosa and tissue for analysis can only be obtained by endoscopy. The images are reported by a radiologist and further management is decided by a gastroenterologist"
-			},
-			"sr": {
-				"what": "Rendgenski pregled gornjih dijelova probavnog trakta u pokretu: pacijent guta kontrast, a ljekar prati njegov prolaz na ekranu i bilježi snimke",
-				"how": "Stojeći uz aparat pacijent malim gutljajima pije barijumsku suspenziju, na znak zadržava dah i mijenja položaj tijela, a ponekad se doda i pjenušavi prašak koji širi želudac; 20–40 minuta",
-				"when": "Otežano gutanje i osjećaj knedle, žgaravica i sumnja na vraćanje želudačnog sadržaja u jednjak, bol pod grudnom kosti, ponavljano povraćanje, sumnja na kilu otvora dijafragme ili suženje, kontrola poslije operacije na želucu",
-				"prep": "Natašte, bez jela i pića od prethodne večeri, ujutru bez cigareta i žvakaće gume; skinuti nakit sa vrata i grudi i prijaviti moguću trudnoću",
-				"abnormal": "Pregled prikazuje put i brzinu prolaska kontrasta, širinu lumena, pokretljivost zidova i vraćanje sadržaja, dok se sluznica izbliza i uzorak tkiva dobijaju samo endoskopijom. Snimke opisuje radiolog, a dalje vođenje određuje gastroenterolog"
-			},
-			"de": {
-				"what": "Röntgenuntersuchung des oberen Verdauungstrakts in Bewegung: der Patient schluckt Kontrastmittel, die Ärztin verfolgt die Passage am Bildschirm und hält Aufnahmen fest",
-				"how": "Der Patient trinkt im Stehen am Durchleuchtungsgerät schluckweise Bariumsuspension, hält auf Kommando die Luft an und wechselt die Position; gelegentlich wird ein Brausepulver gegeben, das den Magen entfaltet; 20–40 Minuten",
-				"when": "Schluckstörung und Kloßgefühl, Sodbrennen und Verdacht auf Rückfluss von Mageninhalt in die Speiseröhre, Oberbauchschmerzen, wiederholtes Erbrechen, Verdacht auf Zwerchfellbruch oder Engstelle, Kontrolle nach Magenoperationen",
-				"prep": "Nüchtern, ab dem Vorabend nichts essen und trinken, morgens nicht rauchen und keinen Kaugummi kauen; Schmuck an Hals und Brust ablegen und eine mögliche Schwangerschaft angeben",
-				"abnormal": "Die Untersuchung zeigt Weg und Geschwindigkeit der Kontrastmittelpassage, die Weite des Lumens, die Wandbeweglichkeit und einen Rückfluss, während die Schleimhaut aus der Nähe und Gewebe für die Analyse nur die Endoskopie liefert. Den Befund erstellt die Radiologie, das weitere Vorgehen legt die Gastroenterologie fest"
-			},
-			"tr": {
-				"what": "Üst sindirim yolunun hareket halinde röntgenle incelenmesi: hasta kontrast yutarken hekim geçişi ekrandan izler ve görüntüleri kaydeder",
-				"how": "Hasta cihazın önünde ayakta küçük yudumlarla baryum içer, komutla nefesini tutar ve pozisyon değiştirir, bazen mideyi şişiren efervesan toz da eklenir; 20–40 dakika",
-				"when": "Yutma güçlüğü ve boğazda düğüm hissi, mide yanması ve mide içeriğinin yemek borusuna kaçtığı şüphesi, üst karın ağrısı, tekrarlayan kusma, diyafram fıtığı veya darlık şüphesi, mide ameliyatı sonrası kontrol",
-				"prep": "Aç karnına, önceki akşamdan sonra yiyecek içecek alınmaz, sabah sigara ve sakız kullanılmaz; boyun ve göğüsteki takılar çıkarılır, olası gebelik bildirilir",
-				"abnormal": "İnceleme kontrastın geçiş yolunu ve hızını, lümen genişliğini, duvar hareketini ve geri kaçışı gösterir, mukozanın yakından görüntüsü ve doku örneği ise yalnızca endoskopiyle alınır. Filmleri radyolog tanımlar, sonraki adımları gastroenterolog belirler"
-			}
-		}
-	},
-	{
-		"slug": "eye-bulb-x-ray-vogt-method",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Снимок переднего отдела глазного яблока по методике Фогта, при которой кости черепа не накладываются на изображение",
-				"how": "В глаз закапывают обезболивающие капли, к самому глазу за веко подводят маленькую плёнку или детектор и делают два снимка, сбоку и сверху, с взглядом в заданную сторону; несколько минут",
-				"when": "Подозрение на металлическое или другое плотное инородное тело в глазу после работы с металлом, травма глаза, исключение металла внутри глаза перед МРТ, контроль после удаления инородного тела",
-				"prep": "Подготовка не нужна; снять очки и контактные линзы, не тереть глаз, сказать об аллергии на обезболивающие капли",
-				"abnormal": "Снимок показывает, есть ли в проекции глаза плотное тело и в какой примерно зоне оно лежит, тогда как неплотные частицы, например стекло или дерево, на нём могут быть не видны. Результат оценивает офтальмолог, при необходимости дополняя его УЗИ глаза или КТ"
-			},
-			"en": {
-				"what": "An image of the anterior part of the eyeball taken with the Vogt technique, in which the skull bones are not projected over the eye",
-				"how": "Anaesthetic drops are instilled, a small film or detector is placed against the eye behind the lid and two views are taken, lateral and axial, with the gaze directed as instructed; a few minutes",
-				"when": "Suspected metallic or other dense foreign body in the eye after metalwork, eye injury, exclusion of metal inside the eye before an MRI scan, check after removal of a foreign body",
-				"prep": "No preparation is needed; remove glasses and contact lenses, do not rub the eye and report any allergy to anaesthetic drops",
-				"abnormal": "The image shows whether a dense body lies in the projection of the eye and roughly in which zone, while low-density particles such as glass or wood may not be visible on it. The result is assessed by an ophthalmologist, who may add an eye ultrasound or a CT scan"
-			},
-			"sr": {
-				"what": "Snimak prednjeg dijela očne jabučice po Vogtovoj metodi, kod koje se kosti lobanje ne preklapaju preko oka",
-				"how": "U oko se ukapaju anestetičke kapi, uz samo oko iza kapka postavlja se mali film ili detektor i prave se dva snimka, bočni i aksijalni, uz pogled u zadatom pravcu; nekoliko minuta",
-				"when": "Sumnja na metalno ili drugo gusto strano tijelo u oku poslije rada sa metalom, povreda oka, isključivanje metala u oku prije magnetne rezonance, kontrola poslije vađenja stranog tijela",
-				"prep": "Priprema nije potrebna; skinuti naočare i kontaktna sočiva, ne trljati oko i reći za alergiju na anestetičke kapi",
-				"abnormal": "Snimak pokazuje da li u projekciji oka postoji gusto tijelo i u kojoj zoni približno leži, dok se čestice male gustine, poput stakla ili drveta, na njemu možda neće vidjeti. Nalaz procjenjuje oftalmolog, po potrebi uz ultrazvuk oka ili skener"
-			},
-			"de": {
-				"what": "Aufnahme des vorderen Augapfelabschnitts nach der Vogt-Technik, bei der sich die Schädelknochen nicht über das Auge projizieren",
-				"how": "Nach Betäubungstropfen wird ein kleiner Film oder Detektor hinter dem Lid direkt an das Auge gelegt und es werden zwei Aufnahmen angefertigt, seitlich und axial, mit vorgegebener Blickrichtung; wenige Minuten",
-				"when": "Verdacht auf einen metallischen oder anderen dichten Fremdkörper im Auge nach Metallarbeiten, Augenverletzung, Ausschluss von Metall im Auge vor einer MRT, Kontrolle nach Entfernung eines Fremdkörpers",
-				"prep": "Keine Vorbereitung nötig; Brille und Kontaktlinsen ablegen, das Auge nicht reiben und eine Allergie gegen Betäubungstropfen angeben",
-				"abnormal": "Die Aufnahme zeigt, ob in der Projektion des Auges ein dichter Körper liegt und etwa in welcher Zone, während Partikel geringer Dichte wie Glas oder Holz darauf unsichtbar bleiben können. Den Befund beurteilt die Augenheilkunde, bei Bedarf ergänzt durch Augenultraschall oder CT"
-			},
-			"tr": {
-				"what": "Kafatası kemiklerinin göz üzerine binmediği Vogt tekniğiyle alınan göz küresinin ön bölümüne ait görüntü",
-				"how": "Göze uyuşturucu damla damlatılır, kapağın arkasından gözün hemen yanına küçük bir film ya da dedektör yerleştirilir ve bakış yönü verilerek yandan ve tepeden iki film çekilir; birkaç dakika",
-				"when": "Metalle çalıştıktan sonra gözde metalik veya başka yoğun yabancı cisim şüphesi, göz yaralanması, MR öncesi gözde metal bulunmadığının gösterilmesi, yabancı cisim çıkarıldıktan sonraki kontrol",
-				"prep": "Hazırlık gerekmez; gözlük ve kontakt lensler çıkarılır, göz ovuşturulmaz, uyuşturucu damlalara alerji bildirilir",
-				"abnormal": "Görüntü, göz izdüşümünde yoğun bir cisim olup olmadığını ve yaklaşık hangi bölgede durduğunu gösterir, cam veya tahta gibi düşük yoğunluklu parçacıklar ise görünmeyebilir. Sonucu göz hekimi değerlendirir, gerekirse göz ultrasonu veya tomografi ekler"
-			}
-		}
-	},
-	{
-		"slug": "fistulography",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Контрастное рентгеновское исследование свищевого хода, узкого канала, который соединяет кожу с полостью или органом",
-				"how": "Наружное отверстие свища обрабатывают, вводят в него тонкий катетер и под небольшим давлением подают контраст, одновременно наблюдая заполнение на экране и делая снимки в двух проекциях; 15–30 минут",
-				"when": "Долго не заживающий свищ после операции или воспаления, выделения из раны, подозрение на связь хода с кишкой, суставом или костью, планирование операции по иссечению хода, контроль после лечения",
-				"prep": "Специальной подготовки обычно нет, при свищах в области таза врач может попросить прийти натощак и очистить кишечник; сообщить об аллергии на контраст и йод, в день исследования не закрывать отверстие мазями",
-				"abnormal": "Исследование показывает длину, направление и ветвление хода, боковые затёки и то, сообщается ли он с полостью или органом. Снимки описывает рентгенолог, а объём операции планирует хирург"
-			},
-			"en": {
-				"what": "A contrast X-ray study of a fistula tract, the narrow channel connecting the skin with a cavity or an organ",
-				"how": "The external opening is cleaned, a thin catheter is inserted and contrast is injected under gentle pressure while the filling is watched on the screen and images are taken in two projections; 15–30 minutes",
-				"when": "A fistula that fails to heal after surgery or inflammation, discharge from a wound, suspected communication with bowel, joint or bone, planning of surgical excision of the tract, follow-up after treatment",
-				"prep": "Usually no special preparation; for fistulas in the pelvic area the doctor may ask for fasting and bowel cleansing; report allergy to contrast and iodine and do not cover the opening with ointment on the day of the study",
-				"abnormal": "The study shows the length, direction and branching of the tract, side pockets and whether it communicates with a cavity or an organ. The images are reported by a radiologist and the extent of surgery is planned by a surgeon"
-			},
-			"sr": {
-				"what": "Kontrastni rendgenski pregled fistuloznog kanala, uskog puta koji spaja kožu sa šupljinom ili organom",
-				"how": "Spoljašnji otvor se očisti, u njega se uvodi tanak kateter i pod blagim pritiskom se daje kontrast, uz praćenje punjenja na ekranu i snimke u dvije projekcije; 15–30 minuta",
-				"when": "Fistula koja dugo ne zarasta poslije operacije ili upale, sekret iz rane, sumnja na vezu kanala sa crijevom, zglobom ili kosti, planiranje operacije uklanjanja kanala, kontrola poslije liječenja",
-				"prep": "Posebna priprema obično nije potrebna, a kod fistula u predjelu karlice ljekar može tražiti dolazak natašte i čišćenje crijeva; prijaviti alergiju na kontrast i jod i na dan pregleda ne stavljati masti preko otvora",
-				"abnormal": "Pregled prikazuje dužinu, pravac i grananje kanala, bočne džepove i to da li kanal komunicira sa šupljinom ili organom. Snimke opisuje radiolog, a obim operacije planira hirurg"
-			},
-			"de": {
-				"what": "Kontrastmitteluntersuchung eines Fistelgangs, also des schmalen Kanals, der die Haut mit einer Höhle oder einem Organ verbindet",
-				"how": "Die äußere Öffnung wird gereinigt, ein dünner Katheter eingeführt und das Kontrastmittel mit leichtem Druck eingebracht, während die Füllung am Bildschirm verfolgt und in zwei Ebenen aufgenommen wird; 15–30 Minuten",
-				"when": "Eine nach Operation oder Entzündung nicht heilende Fistel, Sekretion aus einer Wunde, Verdacht auf Verbindung zu Darm, Gelenk oder Knochen, Planung der operativen Entfernung des Gangs, Kontrolle nach der Behandlung",
-				"prep": "Meist keine besondere Vorbereitung; bei Fisteln im Beckenbereich kann nüchtern zu erscheinen und eine Darmreinigung verlangt werden; Allergien gegen Kontrastmittel und Jod angeben und die Öffnung am Untersuchungstag nicht mit Salbe abdecken",
-				"abnormal": "Die Untersuchung zeigt Länge, Verlauf und Verzweigung des Gangs, seitliche Verhaltungen und eine Verbindung zu Höhlen oder Organen. Den Befund erstellt die Radiologie, das Ausmaß der Operation plant die Chirurgie"
-			},
-			"tr": {
-				"what": "Deriyi bir boşluk ya da organa bağlayan dar kanalın, yani fistül yolunun kontrastlı röntgenle incelenmesi",
-				"how": "Dış ağız temizlenir, ince bir kateter yerleştirilir ve hafif basınçla kontrast verilirken dolum ekrandan izlenir ve iki yönde film çekilir; 15–30 dakika",
-				"when": "Ameliyat veya iltihap sonrası kapanmayan fistül, yaradan akıntı, kanalın bağırsak, eklem ya da kemikle bağlantı şüphesi, kanalın çıkarılacağı ameliyatın planlanması, tedavi sonrası kontrol",
-				"prep": "Genellikle özel hazırlık gerekmez, leğen kemiği bölgesindeki fistüllerde hekim aç gelmeyi ve bağırsak temizliğini isteyebilir; kontrast ve iyot alerjisi bildirilir, inceleme günü ağız merhemle kapatılmaz",
-				"abnormal": "İnceleme kanalın uzunluğunu, yönünü ve dallanmasını, yan ceplerini ve bir boşluk ya da organla bağlantısını gösterir. Filmleri radyolog tanımlar, ameliyatın kapsamını cerrah planlar"
-			}
-		}
-	},
-	{
-		"slug": "foreign-body-fluoroscopy-and-x-ray",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Поиск плотного инородного предмета: сначала область просматривают на экране в движении, затем делают снимки",
-				"how": "Пациента ставят или укладывают так, чтобы нужная область попала в поле аппарата, врач короткими включениями осматривает её в разных поворотах и фиксирует снимки минимум в двух проекциях; обычно 10–20 минут",
-				"when": "Проглоченные монета, батарейка, кость или мелкая деталь, вдыхание небольшого предмета, осколок металла или стекла в мягких тканях, травма с загрязнённой раной, контроль после извлечения предмета",
-				"prep": "Подготовка не нужна; снять одежду с металлическими деталями и украшения с исследуемой области, сообщить о возможной беременности, а при проглоченной батарейке обращаться за помощью срочно",
-				"abnormal": "Исследование показывает, виден ли плотный предмет, где он находится и сместился ли со временем, при этом пластик, дерево и тонкое стекло рентген часто не улавливает, поэтому чистый снимок предмет не исключает. Снимки описывает рентгенолог, дальнейшие действия определяет хирург, ЛОР-врач или эндоскопист"
-			},
-			"en": {
-				"what": "A search for a dense foreign object: the area is first viewed live on the screen, then radiographs are taken",
-				"how": "The patient is positioned so that the area of interest is in the field, the doctor scans it in short bursts from different angles and records images in at least two projections; usually 10–20 minutes",
-				"when": "A swallowed coin, battery, bone or small part, an inhaled small object, a metal or glass splinter in soft tissue, injury with a contaminated wound, check after an object has been removed",
-				"prep": "No preparation is needed; remove clothing with metal parts and jewellery from the area and report a possible pregnancy; a swallowed battery requires urgent medical attention",
-				"abnormal": "The study shows whether a dense object is visible, where it lies and whether it has moved, while plastic, wood and thin glass are often invisible on X-ray, so a clear image does not rule an object out. The images are reported by a radiologist and further steps are decided by a surgeon, an ENT doctor or an endoscopist"
-			},
-			"sr": {
-				"what": "Traženje gustog stranog predmeta: predio se prvo pregleda uživo na ekranu, a zatim se prave snimci",
-				"how": "Pacijent se postavi tako da traženi predio uđe u polje aparata, ljekar ga kratkim uključivanjima pregleda iz različitih uglova i bilježi snimke u najmanje dvije projekcije; obično 10–20 minuta",
-				"when": "Progutan novčić, baterija, kost ili sitan dio, udahnut mali predmet, krhotina metala ili stakla u mekim tkivima, povreda sa zaprljanom ranom, kontrola poslije vađenja predmeta",
-				"prep": "Priprema nije potrebna; skinuti odjeću sa metalnim dijelovima i nakit sa pregledanog predjela, prijaviti moguću trudnoću, a kod progutane baterije pomoć potražiti hitno",
-				"abnormal": "Pregled pokazuje da li se gust predmet vidi, gdje se nalazi i da li se pomjerio, dok plastiku, drvo i tanko staklo rendgen često ne prikazuje, pa uredan snimak ne isključuje strano tijelo. Snimke opisuje radiolog, a dalje korake određuje hirurg, otorinolaringolog ili endoskopista"
-			},
-			"de": {
-				"what": "Suche nach einem dichten Fremdkörper: die Region wird zuerst live am Bildschirm betrachtet, anschließend werden Aufnahmen angefertigt",
-				"how": "Der Patient wird so gelagert, dass die gesuchte Region im Feld liegt, die Ärztin betrachtet sie in kurzen Durchleuchtungsstößen aus verschiedenen Winkeln und hält Aufnahmen in mindestens zwei Ebenen fest; meist 10–20 Minuten",
-				"when": "Verschluckte Münze, Batterie, Knochen oder Kleinteil, eingeatmeter kleiner Gegenstand, Metall- oder Glassplitter im Weichteilgewebe, Verletzung mit verschmutzter Wunde, Kontrolle nach Entfernung eines Gegenstands",
-				"prep": "Keine Vorbereitung nötig; Kleidung mit Metallteilen und Schmuck aus der Region ablegen, eine mögliche Schwangerschaft angeben; bei verschluckter Batterie ist sofortige ärztliche Hilfe nötig",
-				"abnormal": "Die Untersuchung zeigt, ob ein dichter Gegenstand sichtbar ist, wo er liegt und ob er gewandert ist; Kunststoff, Holz und dünnes Glas stellen sich im Röntgen oft nicht dar, eine unauffällige Aufnahme schließt einen Fremdkörper daher nicht aus. Den Befund erstellt die Radiologie, das weitere Vorgehen legen Chirurgie, HNO oder Endoskopie fest"
-			},
-			"tr": {
-				"what": "Yoğun bir yabancı cismin aranması: bölge önce ekrandan canlı izlenir, ardından filmleri çekilir",
-				"how": "Hasta aranan bölge cihazın alanına girecek şekilde yerleştirilir, hekim kısa aralıklarla farklı açılardan bakar ve en az iki yönde film kaydeder; genellikle 10–20 dakika",
-				"when": "Yutulan madeni para, pil, kemik ya da küçük parça, solunan ufak cisim, yumuşak dokuda metal veya cam kıymığı, kirli yarayla gelen yaralanma, cisim çıkarıldıktan sonraki kontrol",
-				"prep": "Hazırlık gerekmez; bölgedeki metal parçalı giysiler ve takılar çıkarılır, olası gebelik bildirilir, pil yutulduğunda ise acil olarak yardım alınmalıdır",
-				"abnormal": "İnceleme yoğun cismin görünüp görünmediğini, nerede durduğunu ve yer değiştirip değiştirmediğini gösterir; plastik, tahta ve ince cam röntgende çoğu kez görünmediğinden temiz bir film yabancı cismi dışlamaz. Filmleri radyolog tanımlar, sonraki adımları cerrah, KBB hekimi ya da endoskopi uzmanı belirler"
-			}
-		}
-	},
-	{
-		"slug": "foreign-body-localization-in-eye-with-fluoroscopy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Уточнение точного положения плотного инородного тела внутри глаза относительно его оболочек перед извлечением",
-				"how": "После обезболивающих капель на глаз ставят маркер или контактную линзу с метками, взгляд фиксируют в заданную точку и под рентгеновским контролем делают снимки в двух проекциях, по которым рассчитывают глубину и сторону залегания; 20–30 минут",
-				"when": "Подтверждённое или подозреваемое внутриглазное инородное тело после травмы, подготовка к операции по его извлечению, повторная оценка, если предмет мог сместиться, невозможность осмотреть глубокие отделы глаза из-за помутнения сред",
-				"prep": "Подготовка не нужна; прийти по направлению офтальмолога, снять контактные линзы, не давить на повреждённый глаз и сказать об аллергии на обезболивающие капли",
-				"abnormal": "По результату определяют, лежит предмет внутри глаза или в его стенке и как далеко он от роговицы, и это задаёт доступ при операции, а частицы низкой плотности таким способом могут не выявляться. Расчёт и решение об операции делает офтальмолог"
-			},
-			"en": {
-				"what": "Determination of the exact position of a dense foreign body inside the eye in relation to its coats, before removal",
-				"how": "After anaesthetic drops a marker or a contact lens with reference points is placed on the eye, the gaze is fixed and images are taken in two projections under fluoroscopic control, from which the depth and the side of the object are calculated; 20–30 minutes",
-				"when": "A confirmed or suspected intraocular foreign body after injury, preparation for surgical removal, repeat assessment if the object may have moved, inability to inspect the back of the eye because the media are cloudy",
-				"prep": "No preparation is needed; come with an ophthalmologist's referral, remove contact lenses, do not press on the injured eye and report any allergy to anaesthetic drops",
-				"abnormal": "The result shows whether the object lies inside the eye or in its wall and how far it is from the cornea, which determines the surgical approach; low-density particles may escape detection this way. The calculation and the decision about surgery are made by an ophthalmologist"
-			},
-			"sr": {
-				"what": "Određivanje tačnog položaja gustog stranog tijela u oku u odnosu na očne ovojnice, prije vađenja",
-				"how": "Poslije anestetičkih kapi na oko se postavlja marker ili kontaktno sočivo sa oznakama, pogled se fiksira, pa se uz rendgensku kontrolu prave snimci u dvije projekcije na osnovu kojih se računa dubina i strana na kojoj tijelo leži; 20–30 minuta",
-				"when": "Potvrđeno ili sumnjivo strano tijelo u oku poslije povrede, priprema za operaciju vađenja, ponovna procjena ako se predmet mogao pomjeriti, nemogućnost pregleda dubljih dijelova oka zbog zamućenja očnih sredina",
-				"prep": "Priprema nije potrebna; doći sa uputom oftalmologa, skinuti kontaktna sočiva, ne pritiskati povrijeđeno oko i reći za alergiju na anestetičke kapi",
-				"abnormal": "Nalaz pokazuje da li predmet leži u oku ili u njegovom zidu i koliko je udaljen od rožnjače, što određuje pristup u operaciji, dok se čestice male gustine ovako možda neće prikazati. Proračun i odluku o operaciji donosi oftalmolog"
-			},
-			"de": {
-				"what": "Bestimmung der genauen Lage eines dichten Fremdkörpers im Auge im Verhältnis zu den Augenhäuten vor der Entfernung",
-				"how": "Nach Betäubungstropfen wird ein Marker oder eine Kontaktlinse mit Messpunkten aufgesetzt, der Blick fixiert und unter Durchleuchtung werden zwei Aufnahmen angefertigt, aus denen Tiefe und Lage des Körpers berechnet werden; 20–30 Minuten",
-				"when": "Bestätigter oder vermuteter Fremdkörper im Auge nach einer Verletzung, Vorbereitung der operativen Entfernung, erneute Beurteilung bei möglicher Verlagerung, fehlender Einblick in die hinteren Augenabschnitte bei getrübten Medien",
-				"prep": "Keine Vorbereitung nötig; mit Überweisung der Augenheilkunde kommen, Kontaktlinsen ablegen, nicht auf das verletzte Auge drücken und eine Allergie gegen Betäubungstropfen angeben",
-				"abnormal": "Das Ergebnis zeigt, ob der Körper im Augeninneren oder in der Wand liegt und wie weit er von der Hornhaut entfernt ist, was den operativen Zugang bestimmt; Partikel geringer Dichte können so unentdeckt bleiben. Die Berechnung und die Entscheidung über die Operation trifft die Augenheilkunde"
-			},
-			"tr": {
-				"what": "Göz içindeki yoğun yabancı cismin, çıkarılmadan önce göz tabakalarına göre tam yerinin belirlenmesi",
-				"how": "Uyuşturucu damladan sonra göze işaretli bir marker ya da kontakt lens yerleştirilir, bakış sabitlenir ve röntgen eşliğinde iki yönde film çekilerek cismin derinliği ve yönü hesaplanır; 20–30 dakika",
-				"when": "Yaralanma sonrası doğrulanmış ya da şüpheli göz içi yabancı cisim, çıkarma ameliyatına hazırlık, cismin yer değiştirmiş olabileceği durumlarda yeniden değerlendirme, göz ortamları bulanık olduğu için arka bölümlerin görülememesi",
-				"prep": "Hazırlık gerekmez; göz hekiminin sevkiyle gelinir, kontakt lensler çıkarılır, yaralı göze bastırılmaz ve uyuşturucu damla alerjisi bildirilir",
-				"abnormal": "Sonuç cismin göz içinde mi yoksa duvarında mı olduğunu ve korneaya uzaklığını gösterir, bu da ameliyat yolunu belirler; düşük yoğunluklu parçacıklar bu yöntemle saptanmayabilir. Hesaplamayı ve ameliyat kararını göz hekimi verir"
-			}
-		}
-	},
-	{
-		"slug": "foreign-body-localization-x-ray-except-eye",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Определение точного места и глубины залегания плотного инородного тела в любой области тела, кроме глаза",
-				"how": "На кожу рядом с предполагаемым местом крепят рентгеноконтрастные метки и делают снимки минимум в двух взаимно перпендикулярных проекциях, по которым рассчитывают глубину и отношение предмета к костям, суставам и крупным сосудам; 15–30 минут",
-				"when": "Осколок металла или стекла в мягких тканях конечности, игла или дробь, инородное тело в грудной или брюшной полости после травмы, подготовка к извлечению, подозрение на смещение предмета после давней травмы",
-				"prep": "Подготовка не нужна; повязку самостоятельно не снимать, прийти с описанием обстоятельств травмы, убрать металлические предметы с исследуемой области, сообщить о возможной беременности",
-				"abnormal": "Исследование показывает, где именно лежит предмет и насколько он близок к важным структурам, при этом дерево, пластик и часть стеклянных осколков рентген не отображает и для них применяют УЗИ или КТ. Снимки описывает рентгенолог, а способ и срок удаления выбирает хирург"
-			},
-			"en": {
-				"what": "Determination of the exact site and depth of a dense foreign body anywhere in the body except the eye",
-				"how": "Radiopaque markers are taped to the skin next to the suspected site and images are taken in at least two perpendicular projections, from which the depth and the relation of the object to bones, joints and large vessels are calculated; 15–30 minutes",
-				"when": "A metal or glass splinter in the soft tissue of a limb, a needle or pellet, a foreign body in the chest or abdomen after injury, preparation for removal, suspected migration of an object after an old injury",
-				"prep": "No preparation is needed; do not remove the dressing yourself, bring an account of how the injury happened, take metal objects off the area and report a possible pregnancy",
-				"abnormal": "The study shows exactly where the object lies and how close it is to important structures; wood, plastic and some glass fragments are not seen on X-ray and ultrasound or CT is used for them. The images are reported by a radiologist and the method and timing of removal are chosen by a surgeon"
-			},
-			"sr": {
-				"what": "Određivanje tačnog mjesta i dubine na kojoj leži gusto strano tijelo u bilo kojem dijelu tijela osim oka",
-				"how": "Na kožu pored pretpostavljenog mjesta lijepe se rendgenski vidljive oznake i prave se snimci u najmanje dvije međusobno okomite projekcije, po kojima se računa dubina i odnos predmeta prema kostima, zglobovima i velikim krvnim sudovima; 15–30 minuta",
-				"when": "Krhotina metala ili stakla u mekim tkivima ekstremiteta, igla ili sačma, strano tijelo u grudnoj ili trbušnoj duplji poslije povrede, priprema za vađenje, sumnja na pomjeranje predmeta poslije starije povrede",
-				"prep": "Priprema nije potrebna; zavoj ne skidati sam, ponijeti opis okolnosti povrede, ukloniti metalne predmete sa pregledanog predjela i prijaviti moguću trudnoću",
-				"abnormal": "Pregled pokazuje gdje tačno predmet leži i koliko je blizu važnim strukturama, dok drvo, plastiku i dio staklenih krhotina rendgen ne prikazuje, pa se za njih koriste ultrazvuk ili skener. Snimke opisuje radiolog, a način i vrijeme vađenja bira hirurg"
-			},
-			"de": {
-				"what": "Bestimmung des genauen Orts und der Tiefe eines dichten Fremdkörpers in jeder Körperregion außer dem Auge",
-				"how": "Röntgendichte Marker werden neben der vermuteten Stelle auf die Haut geklebt und es werden Aufnahmen in mindestens zwei senkrecht zueinander stehenden Ebenen angefertigt, aus denen Tiefe und Lage zu Knochen, Gelenken und großen Gefäßen berechnet werden; 15–30 Minuten",
-				"when": "Metall- oder Glassplitter im Weichteilgewebe einer Extremität, Nadel oder Schrot, Fremdkörper in Brust- oder Bauchraum nach einer Verletzung, Vorbereitung der Entfernung, Verdacht auf Wanderung eines Gegenstands nach einer älteren Verletzung",
-				"prep": "Keine Vorbereitung nötig; den Verband nicht selbst abnehmen, den Unfallhergang schildern, Metallgegenstände aus der Region entfernen und eine mögliche Schwangerschaft angeben",
-				"abnormal": "Die Untersuchung zeigt, wo der Gegenstand genau liegt und wie nahe er wichtigen Strukturen kommt; Holz, Kunststoff und ein Teil der Glassplitter stellen sich im Röntgen nicht dar, dafür werden Ultraschall oder CT genutzt. Den Befund erstellt die Radiologie, Methode und Zeitpunkt der Entfernung wählt die Chirurgie"
-			},
-			"tr": {
-				"what": "Göz dışında vücudun herhangi bir bölgesinde yoğun bir yabancı cismin tam yerinin ve derinliğinin belirlenmesi",
-				"how": "Tahmin edilen yerin yanına deriye röntgende görünen işaretler yapıştırılır ve en az iki dik yönde film çekilerek cismin derinliği ile kemik, eklem ve büyük damarlara göre konumu hesaplanır; 15–30 dakika",
-				"when": "Kol ya da bacağın yumuşak dokusunda metal veya cam kıymığı, iğne ya da saçma, yaralanma sonrası göğüs veya karın boşluğunda yabancı cisim, çıkarma işlemine hazırlık, eski yaralanmadan sonra cismin yer değiştirdiği şüphesi",
-				"prep": "Hazırlık gerekmez; pansuman kendi başına açılmaz, yaralanmanın nasıl olduğu anlatılır, bölgedeki metal eşyalar çıkarılır ve olası gebelik bildirilir",
-				"abnormal": "İnceleme cismin tam olarak nerede durduğunu ve önemli yapılara ne kadar yakın olduğunu gösterir; tahta, plastik ve cam kıymıklarının bir bölümü röntgende görünmediğinden bunlar için ultrason ya da tomografi kullanılır. Filmleri radyolog tanımlar, çıkarma yöntemi ve zamanını cerrah seçer"
-			}
-		}
-	},
-	{
-		"slug": "gastroduodenum-x-ray-through-stoma",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Контрастное исследование желудка и двенадцатиперстной кишки, при котором контраст подают не через рот, а через выведенную на живот стому",
-				"how": "Через установленную трубку шприцем медленно вводят контраст, на экране следят, как он заполняет желудок и уходит в двенадцатиперстную кишку, и делают снимки в нескольких положениях тела; 20–30 минут",
-				"when": "Проверка положения и проходимости гастростомической трубки, подозрение на подтекание содержимого вокруг стомы, оценка опорожнения желудка при зондовом питании, контроль после операции на желудке, подготовка к закрытию стомы",
-				"prep": "Несколько часов до исследования не вводить питание через трубку, по указанию лечащего врача; взять с собой фиксирующие пластыри и шприц для промывания, сообщить о недавней операции",
-				"abnormal": "Исследование показывает, где стоит конец трубки, свободно ли контраст уходит в кишку и не выходит ли он за пределы желудка. Снимки описывает рентгенолог, а решение о замене трубки или операции принимает хирург"
-			},
-			"en": {
-				"what": "A contrast study of the stomach and duodenum in which contrast is given not by mouth but through a stoma brought out onto the abdominal wall",
-				"how": "Contrast is slowly injected with a syringe through the existing tube, its filling of the stomach and passage into the duodenum is followed on the screen and images are taken in several positions; 20–30 minutes",
-				"when": "Checking the position and patency of a gastrostomy tube, suspected leakage of contents around the stoma, assessment of gastric emptying during tube feeding, follow-up after stomach surgery, preparation for closing the stoma",
-				"prep": "No feeding through the tube for several hours before the study, as instructed by the treating doctor; bring fixation dressings and a flushing syringe and report any recent surgery",
-				"abnormal": "The study shows where the tip of the tube sits, whether contrast passes freely into the bowel and whether any of it escapes outside the stomach. The images are reported by a radiologist, while the decision about replacing the tube or operating is made by a surgeon"
-			},
-			"sr": {
-				"what": "Kontrastni pregled želuca i dvanaestopalačnog crijeva kod kojeg se kontrast ne daje na usta, nego kroz stomu izvedenu na trbušnom zidu",
-				"how": "Kroz postavljenu cjevčicu špricem se polako ubacuje kontrast, na ekranu se prati kako puni želudac i prelazi u dvanaestopalačno crijevo, uz snimke u nekoliko položaja tijela; 20–30 minuta",
-				"when": "Provjera položaja i prohodnosti gastrostomske cjevčice, sumnja na curenje sadržaja oko stome, procjena pražnjenja želuca kod hranjenja na sondu, kontrola poslije operacije na želucu, priprema za zatvaranje stome",
-				"prep": "Nekoliko sati prije pregleda ne davati hranu kroz cjevčicu, po uputstvu ljekara koji vodi liječenje; ponijeti flastere za fiksiranje i špric za ispiranje i reći za skorašnju operaciju",
-				"abnormal": "Pregled pokazuje gdje stoji vrh cjevčice, da li kontrast slobodno prelazi u crijevo i da li izlazi izvan želuca. Snimke opisuje radiolog, a odluku o zamjeni cjevčice ili operaciji donosi hirurg"
-			},
-			"de": {
-				"what": "Kontrastmitteluntersuchung von Magen und Zwölffingerdarm, bei der das Kontrastmittel nicht über den Mund, sondern über ein auf die Bauchdecke ausgeleitetes Stoma gegeben wird",
-				"how": "Über die liegende Sonde wird mit einer Spritze langsam Kontrastmittel eingebracht, am Bildschirm wird die Füllung des Magens und der Übertritt in den Zwölffingerdarm verfolgt und es werden Aufnahmen in mehreren Körperlagen gemacht; 20–30 Minuten",
-				"when": "Kontrolle von Lage und Durchgängigkeit der Ernährungssonde, Verdacht auf Austritt von Mageninhalt um das Stoma, Beurteilung der Magenentleerung bei Sondenernährung, Kontrolle nach Magenoperationen, Vorbereitung des Stomaverschlusses",
-				"prep": "Einige Stunden vor der Untersuchung keine Nahrung über die Sonde geben, nach Anweisung der behandelnden Ärztin; Fixierpflaster und eine Spülspritze mitbringen und kürzliche Operationen angeben",
-				"abnormal": "Die Untersuchung zeigt, wo die Sondenspitze liegt, ob Kontrastmittel frei in den Darm übertritt und ob etwas davon aus dem Magen austritt. Den Befund erstellt die Radiologie, über Sondenwechsel oder Operation entscheidet die Chirurgie"
-			},
-			"tr": {
-				"what": "Kontrastın ağızdan değil, karın duvarına ağızlaştırılmış stomadan verildiği mide ve onikiparmak bağırsağı incelemesi",
-				"how": "Takılı tüpten enjektörle yavaşça kontrast verilir, midenin dolması ve onikiparmak bağırsağına geçişi ekrandan izlenir ve birkaç pozisyonda film çekilir; 20–30 dakika",
-				"when": "Beslenme tüpünün yerinin ve açıklığının kontrolü, stoma çevresinden içerik sızdığı şüphesi, tüple beslenmede mide boşalmasının değerlendirilmesi, mide ameliyatı sonrası kontrol, stomanın kapatılmasına hazırlık",
-				"prep": "Tedaviyi yürüten hekimin talimatına göre incelemeden birkaç saat önce tüpten besin verilmez; sabitleme flasterleri ve yıkama enjektörü getirilir, yakın zamanda geçirilen ameliyat bildirilir",
-				"abnormal": "İnceleme tüp ucunun nerede durduğunu, kontrastın bağırsağa rahat geçip geçmediğini ve mide dışına sızıp sızmadığını gösterir. Filmleri radyolog tanımlar, tüpün değiştirilmesi ya da ameliyat kararını cerrah verir"
-			}
-		}
-	},
-	{
-		"slug": "heart-fluoroscopy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Наблюдение за тенью сердца и крупных сосудов в движении на рентгеновском экране",
-				"how": "Пациент стоит за экраном, врач короткими включениями просматривает сердце в прямой и косых проекциях, просит задержать дыхание и повернуться, при необходимости сохраняя отдельные кадры; обычно несколько минут",
-				"when": "Оценка подвижности и положения механического протеза клапана, поиск обызвествлений в клапанах и околосердечной сумке, оценка подвижности диафрагмы, контроль положения электродов кардиостимулятора и катетеров",
-				"prep": "Подготовка не нужна; раздеться до пояса, снять цепочки, сообщить о возможной беременности",
-				"abnormal": "Исследование показывает размеры и пульсацию сердечной тени, подвижность створок протеза и плотные включения, тогда как строение клапанов и кровоток в них видны только при ультразвуке сердца. Результат трактует кардиолог вместе с остальными обследованиями"
-			},
-			"en": {
-				"what": "Observation of the moving shadow of the heart and great vessels on a fluoroscopy screen",
-				"how": "The patient stands behind the screen while the doctor views the heart in short bursts in frontal and oblique projections, asking for breath-holds and turns, and saves individual frames if needed; usually a few minutes",
-				"when": "Assessment of the movement and position of a mechanical valve prosthesis, search for calcifications in the valves and the pericardium, assessment of diaphragm movement, checking the position of pacemaker leads and catheters",
-				"prep": "No preparation is needed; undress to the waist, remove necklaces and report a possible pregnancy",
-				"abnormal": "The study shows the size and pulsation of the cardiac shadow, the motion of prosthetic leaflets and dense deposits, while the structure of the valves and the blood flow through them are only seen on a heart ultrasound. The result is interpreted by a cardiologist together with the other findings"
-			},
-			"sr": {
-				"what": "Praćenje sjenke srca i velikih krvnih sudova u pokretu na rendgenskom ekranu",
-				"how": "Pacijent stoji iza ekrana, a ljekar kratkim uključivanjima gleda srce u prednjoj i kosim projekcijama, traži zadržavanje daha i okretanje i po potrebi bilježi pojedine kadrove; obično nekoliko minuta",
-				"when": "Procjena pokretljivosti i položaja mehaničke vještačke valvule, traženje naslaga kreča na zaliscima i srčanoj maramici, procjena pokretljivosti dijafragme, provjera položaja elektroda pejsmejkera i katetera",
-				"prep": "Priprema nije potrebna; skinuti odjeću do pojasa, ukloniti lančiće i prijaviti moguću trudnoću",
-				"abnormal": "Pregled prikazuje veličinu i pulsiranje srčane sjenke, pokretljivost listića vještačke valvule i guste naslage, dok se građa zalistaka i protok kroz njih vide samo na ultrazvuku srca. Nalaz tumači kardiolog zajedno sa ostalim pretragama"
-			},
-			"de": {
-				"what": "Beobachtung des bewegten Herzschattens und der großen Gefäße am Durchleuchtungsbildschirm",
-				"how": "Der Patient steht hinter dem Schirm, die Ärztin betrachtet das Herz in kurzen Durchleuchtungsstößen in frontaler und schräger Projektion, lässt die Luft anhalten und sich drehen und speichert bei Bedarf einzelne Bilder; meist wenige Minuten",
-				"when": "Beurteilung von Beweglichkeit und Lage einer mechanischen Herzklappenprothese, Suche nach Verkalkungen an Klappen und Herzbeutel, Beurteilung der Zwerchfellbeweglichkeit, Lagekontrolle von Schrittmachersonden und Kathetern",
-				"prep": "Keine Vorbereitung nötig; Oberkörper frei machen, Ketten ablegen und eine mögliche Schwangerschaft angeben",
-				"abnormal": "Die Untersuchung zeigt Größe und Pulsation des Herzschattens, die Bewegung der Prothesenflügel und dichte Ablagerungen, während Klappenaufbau und Blutfluss nur im Herzultraschall sichtbar werden. Das Ergebnis deutet die Kardiologie zusammen mit den übrigen Befunden"
-			},
-			"tr": {
-				"what": "Kalp ve büyük damar gölgesinin floroskopi ekranında hareket halinde izlenmesi",
-				"how": "Hasta ekranın arkasında durur, hekim kısa aralıklarla kalbi ön ve eğik yönlerden izler, nefes tutmasını ve dönmesini ister, gerekirse tek tek kareler kaydeder; genellikle birkaç dakika",
-				"when": "Mekanik kapak protezinin hareketi ve konumunun değerlendirilmesi, kapaklarda ve kalp zarında kireçlenme aranması, diyafram hareketinin değerlendirilmesi, kalp pili elektrotları ve kateterlerin yerinin kontrolü",
-				"prep": "Hazırlık gerekmez; bel üstü soyunulur, kolyeler çıkarılır, olası gebelik bildirilir",
-				"abnormal": "İnceleme kalp gölgesinin boyutunu ve atımını, protez kapakçıklarının hareketini ve yoğun birikimleri gösterir; kapakların yapısı ve içinden geçen kan akımı ise yalnızca kalp ultrasonunda görülür. Sonucu kardiyolog diğer tetkiklerle birlikte yorumlar"
-			}
-		}
-	},
-	{
-		"slug": "hypotonic-duodenography",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Рентгеновское исследование двенадцатиперстной кишки в расслабленном состоянии, когда её на время лишают сократительных движений, чтобы расправить и рассмотреть стенки",
-				"how": "Контраст дают выпить или подают через тонкий зонд, перед этим вводят препарат, временно расслабляющий кишку, часто добавляют воздух и делают снимки в разных положениях; 30–45 минут, зонд может вызывать позывы на рвоту",
-				"when": "Упорная боль в верхней части живота, подозрение на сужение или сдавление кишки извне, оценка подковы кишки при болезнях поджелудочной железы и желчных путей, уточнение изменений, найденных другими методами",
-				"prep": "Натощак, не есть и не пить с вечера; заранее сообщить о глаукоме, затруднённом мочеиспускании и болезнях сердца, из-за которых расслабляющий препарат может не подойти",
-				"abnormal": "Исследование показывает ширину и контуры кишки, развёрнутость её подковы и вдавления от соседних органов, но природу изменений уточняют уже эндоскопией, УЗИ или КТ. Снимки описывает рентгенолог, тактику определяет гастроэнтеролог или хирург"
-			},
-			"en": {
-				"what": "An X-ray study of the duodenum in a relaxed state, in which its contractions are temporarily switched off so that the walls unfold and can be examined",
-				"how": "Contrast is drunk or delivered through a thin tube after a drug that temporarily relaxes the bowel is given, air is often added and images are taken in different positions; 30–45 minutes, the tube may provoke retching",
-				"when": "Persistent upper abdominal pain, suspected narrowing or external compression of the duodenum, assessment of the duodenal loop in diseases of the pancreas and bile ducts, clarification of changes found by other methods",
-				"prep": "Nothing to eat or drink from the evening before; report glaucoma, difficulty passing urine and heart conditions in advance, as the relaxing drug may not be suitable",
-				"abnormal": "The study shows the width and contours of the bowel, how far its loop is unfolded and impressions from neighbouring organs, while the nature of any change is clarified by endoscopy, ultrasound or CT. The images are reported by a radiologist and management is decided by a gastroenterologist or surgeon"
-			},
-			"sr": {
-				"what": "Rendgenski pregled dvanaestopalačnog crijeva u opuštenom stanju, kada mu se privremeno isključe pokreti da bi se zidovi razvili i pregledali",
-				"how": "Kontrast se popije ili daje kroz tanku sondu, a prije toga se primi lijek koji privremeno opušta crijevo, često se dodaje i vazduh, pa se prave snimci u različitim položajima; 30–45 minuta, a sonda može izazvati nagon na povraćanje",
-				"when": "Uporan bol u gornjem dijelu trbuha, sumnja na suženje ili pritisak na crijevo spolja, procjena potkovice crijeva kod bolesti gušterače i žučnih puteva, razjašnjenje promjena nađenih drugim metodama",
-				"prep": "Natašte, bez jela i pića od prethodne večeri; unaprijed reći za glaukom, otežano mokrenje i bolesti srca, zbog kojih lijek za opuštanje možda ne odgovara",
-				"abnormal": "Pregled prikazuje širinu i obrise crijeva, razvijenost njegove potkovice i utiskivanja susjednih organa, dok se priroda promjene razjašnjava endoskopijom, ultrazvukom ili skenerom. Snimke opisuje radiolog, a dalju taktiku određuje gastroenterolog ili hirurg"
-			},
-			"de": {
-				"what": "Röntgenuntersuchung des Zwölffingerdarms im entspannten Zustand, bei der seine Bewegungen vorübergehend ausgeschaltet werden, damit sich die Wände entfalten und beurteilen lassen",
-				"how": "Das Kontrastmittel wird getrunken oder über eine dünne Sonde gegeben, zuvor wird ein Medikament verabreicht, das den Darm vorübergehend ruhigstellt, häufig wird Luft ergänzt und es werden Aufnahmen in verschiedenen Lagen gemacht; 30–45 Minuten, die Sonde kann Würgereiz auslösen",
-				"when": "Anhaltende Oberbauchschmerzen, Verdacht auf Engstelle oder Druck von außen auf den Zwölffingerdarm, Beurteilung der Duodenalschlinge bei Erkrankungen von Bauchspeicheldrüse und Gallenwegen, Abklärung von Veränderungen aus anderen Untersuchungen",
-				"prep": "Nüchtern, ab dem Vorabend nichts essen und trinken; Grüner Star, Blasenentleerungsstörungen und Herzerkrankungen vorher angeben, da das entspannende Medikament dann möglicherweise nicht infrage kommt",
-				"abnormal": "Die Untersuchung zeigt Weite und Konturen des Darms, die Entfaltung der Schlinge und Eindellungen durch Nachbarorgane, die Ursache einer Veränderung klären Endoskopie, Ultraschall oder CT. Den Befund erstellt die Radiologie, das Vorgehen legen Gastroenterologie oder Chirurgie fest"
-			},
-			"tr": {
-				"what": "Duvarların açılıp incelenebilmesi için kasılmaları geçici olarak durdurulan onikiparmak bağırsağının gevşemiş haldeki röntgen incelemesi",
-				"how": "Bağırsağı geçici olarak gevşeten ilaç verildikten sonra kontrast içirilir ya da ince sondayla verilir, çoğu kez hava da eklenir ve farklı pozisyonlarda film çekilir; 30–45 dakika, sonda öğürme hissi yaratabilir",
-				"when": "İnatçı üst karın ağrısı, bağırsakta darlık ya da dışarıdan bası şüphesi, pankreas ve safra yolu hastalıklarında bağırsak kıvrımının değerlendirilmesi, başka yöntemlerle bulunan değişikliklerin netleştirilmesi",
-				"prep": "Aç karnına, önceki akşamdan sonra yiyecek içecek alınmaz; glokom, idrar yapma güçlüğü ve kalp hastalıkları önceden bildirilir, çünkü gevşetici ilaç bu durumlarda uygun olmayabilir",
-				"abnormal": "İnceleme bağırsağın genişliğini ve dış hatlarını, kıvrımının ne kadar açıldığını ve komşu organların yaptığı baskıları gösterir; değişikliğin nedeni ise endoskopi, ultrason veya tomografiyle netleşir. Filmleri radyolog tanımlar, izlenecek yolu gastroenterolog ya da cerrah belirler"
-			}
-		}
-	},
-	{
-		"slug": "hysterosalpingography",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Контрастное рентгеновское исследование полости матки и проходимости маточных труб",
-				"how": "В гинекологическом кресле через канал шейки матки вводят тонкий катетер, медленно подают контраст и делают серию снимков, прослеживая, доходит ли он до концов труб и выходит ли в брюшную полость; 15–30 минут, возможны схваткообразные боли внизу живота",
-				"when": "Обследование при трудностях с зачатием, подозрение на непроходимость труб после воспаления или операции, оценка формы полости матки, подозрение на перегородку или спайки в полости, контроль после операций на трубах",
-				"prep": "Выполняется в первой половине цикла, после окончания менструации и до овуляции, при исключённой беременности и без признаков воспаления половых путей; накануне врач может попросить сдать мазок и опорожнить кишечник, сообщить об аллергии на йод",
-				"abnormal": "Исследование показывает форму полости матки и то, свободно ли контраст проходит по трубам, при этом спазм трубы иногда даёт картину непроходимости там, где её нет. Снимки оценивает гинеколог вместе с остальным обследованием пары"
-			},
-			"en": {
-				"what": "A contrast X-ray study of the uterine cavity and of the patency of the fallopian tubes",
-				"how": "In the gynaecological chair a thin catheter is passed through the cervical canal, contrast is injected slowly and a series of images follows whether it reaches the ends of the tubes and spills into the abdominal cavity; 15–30 minutes, cramping lower abdominal pain is possible",
-				"when": "Work-up for difficulty conceiving, suspected tubal blockage after inflammation or surgery, assessment of the shape of the uterine cavity, suspected septum or adhesions in the cavity, follow-up after tubal surgery",
-				"prep": "Performed in the first half of the cycle, after menstruation has ended and before ovulation, with pregnancy excluded and no signs of genital infection; the doctor may ask for a swab and bowel emptying beforehand, and iodine allergy should be reported",
-				"abnormal": "The study shows the shape of the uterine cavity and whether contrast passes freely along the tubes, while a tubal spasm can mimic a blockage that is not there. The images are assessed by a gynaecologist together with the rest of the couple's work-up"
-			},
-			"sr": {
-				"what": "Kontrastni rendgenski pregled šupljine materice i prohodnosti jajovoda",
-				"how": "U ginekološkoj stolici kroz kanal grlića materice uvodi se tanak kateter, kontrast se polako daje i niz snimaka prati da li stiže do krajeva jajovoda i izlazi u trbušnu duplju; 15–30 minuta, uz moguće grčevite bolove u donjem dijelu trbuha",
-				"when": "Ispitivanje kod teškoća sa začećem, sumnja na neprohodnost jajovoda poslije upale ili operacije, procjena oblika šupljine materice, sumnja na pregradu ili priraslice u šupljini, kontrola poslije operacija na jajovodima",
-				"prep": "Radi se u prvoj polovini ciklusa, poslije prestanka menstruacije i prije ovulacije, uz isključenu trudnoću i bez znakova upale polnih puteva; ljekar može ranije tražiti bris i pražnjenje crijeva, a alergiju na jod treba prijaviti",
-				"abnormal": "Pregled pokazuje oblik šupljine materice i da li kontrast slobodno prolazi kroz jajovode, pri čemu grč jajovoda ponekad oponaša neprohodnost koje nema. Snimke procjenjuje ginekolog zajedno sa ostalim nalazima para"
-			},
-			"de": {
-				"what": "Kontrastmitteluntersuchung der Gebärmutterhöhle und der Durchgängigkeit der Eileiter",
-				"how": "Auf dem gynäkologischen Stuhl wird ein dünner Katheter durch den Gebärmutterhalskanal eingelegt, langsam Kontrastmittel gegeben und in einer Bildserie verfolgt, ob es die Enden der Eileiter erreicht und in die Bauchhöhle übertritt; 15–30 Minuten, krampfartige Unterbauchschmerzen sind möglich",
-				"when": "Abklärung bei unerfülltem Kinderwunsch, Verdacht auf verschlossene Eileiter nach Entzündung oder Operation, Beurteilung der Form der Gebärmutterhöhle, Verdacht auf Septum oder Verwachsungen, Kontrolle nach Eileiteroperationen",
-				"prep": "Wird in der ersten Zyklushälfte durchgeführt, nach dem Ende der Regelblutung und vor dem Eisprung, bei ausgeschlossener Schwangerschaft und ohne Zeichen einer Genitalinfektion; vorab können ein Abstrich und eine Darmentleerung verlangt werden, eine Jodallergie ist anzugeben",
-				"abnormal": "Die Untersuchung zeigt die Form der Gebärmutterhöhle und ob das Kontrastmittel frei durch die Eileiter läuft, wobei ein Eileiterkrampf einen Verschluss vortäuschen kann, der nicht besteht. Die Bilder beurteilt die Gynäkologie zusammen mit den übrigen Befunden des Paares"
-			},
-			"tr": {
-				"what": "Rahim boşluğunun ve tüplerin açıklığının kontrastlı röntgenle incelenmesi",
-				"how": "Jinekolojik masada rahim ağzı kanalından ince bir kateter geçirilir, kontrast yavaşça verilir ve bir dizi filmle tüplerin ucuna ulaşıp karın boşluğuna dökülüp dökülmediği izlenir; 15–30 dakika, alt karında kramp tarzı ağrı olabilir",
-				"when": "Gebe kalmakta güçlük nedeniyle yapılan inceleme, iltihap ya da ameliyat sonrası tüp tıkanıklığı şüphesi, rahim boşluğunun şeklinin değerlendirilmesi, boşlukta perde ya da yapışıklık şüphesi, tüp ameliyatları sonrası kontrol",
-				"prep": "Adet bittikten sonra ve yumurtlamadan önce, döngünün ilk yarısında, gebelik dışlanmış ve genital iltihap bulgusu yokken yapılır; hekim önceden kültür ve bağırsak boşaltımı isteyebilir, iyot alerjisi bildirilmelidir",
-				"abnormal": "İnceleme rahim boşluğunun şeklini ve kontrastın tüplerden serbest geçip geçmediğini gösterir; tüpteki kasılma, aslında olmayan bir tıkanıklık görüntüsü verebilir. Filmleri jinekolog çiftin diğer tetkikleriyle birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "infusion-urography-with-descending-cystography",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Рентгеновское исследование почек, мочеточников и мочевого пузыря, при котором контраст вводят в вену капельно, а завершают снимками заполненного пузыря",
-				"how": "В вену ставят капельницу с разведённым контрастом, затем через заданные промежутки делают серию снимков, прослеживая выделение почками и ход по мочеточникам, а в конце снимают наполнившийся пузырь, в том числе при мочеиспускании; около часа",
-				"when": "Сниженная функция почек, когда обычная урография даёт слабое контрастирование, расширение чашечно-лоханочной системы, повторяющиеся инфекции мочевых путей, подозрение на обратный заброс мочи в мочеточники, оценка мочевых путей перед операцией",
-				"prep": "Натощак и с очищенным кишечником по указанию клиники; принести свежий анализ на функцию почек, заранее сообщить об аллергии на контраст и йод, о сахарном диабете и принимаемых препаратах",
-				"abnormal": "По снимкам судят о том, как почки выделяют контраст, где он задерживается, какой формы и контуров пузырь и остаётся ли в нём моча после опорожнения. Описание даёт рентгенолог, дальнейшее ведение определяет уролог или нефролог"
-			},
-			"en": {
-				"what": "An X-ray study of the kidneys, ureters and bladder in which contrast is given as an intravenous drip and the series ends with images of the filled bladder",
-				"how": "A drip with diluted contrast is set up, then a series of images is taken at set intervals following excretion by the kidneys and passage down the ureters, and at the end the filled bladder is imaged, including during voiding; about an hour",
-				"when": "Reduced kidney function, when standard urography gives weak contrast, a dilated collecting system, repeated urinary tract infections, suspected backflow of urine into the ureters, assessment of the urinary tract before surgery",
-				"prep": "Fasting and with the bowel emptied as instructed by the clinic; bring a recent kidney function test and report allergy to contrast and iodine, diabetes and the medicines you take",
-				"abnormal": "The images show how the kidneys excrete contrast, where it is held up, the shape and contours of the bladder and whether urine remains after voiding. The report is written by a radiologist and further management is decided by a urologist or nephrologist"
-			},
-			"sr": {
-				"what": "Rendgenski pregled bubrega, mokraćovoda i mokraćne bešike kod kojeg se kontrast daje infuzijom u venu, a završava se snimcima napunjene bešike",
-				"how": "Postavi se infuzija sa razrijeđenim kontrastom, zatim se u zadatim razmacima pravi niz snimaka koji prate izlučivanje bubrega i prolaz niz mokraćovode, a na kraju se snima napunjena bešika, između ostalog i tokom mokrenja; oko sat vremena",
-				"when": "Oslabljena funkcija bubrega kada obična urografija daje slabo kontrastiranje, proširen kanalni sistem bubrega, ponavljane infekcije mokraćnih puteva, sumnja na vraćanje mokraće u mokraćovode, procjena mokraćnih puteva prije operacije",
-				"prep": "Natašte i sa ispražnjenim crijevima po uputstvu klinike; ponijeti svježu analizu bubrežne funkcije i unaprijed reći za alergiju na kontrast i jod, za šećernu bolest i za lijekove koje uzimate",
-				"abnormal": "Po snimcima se procjenjuje kako bubrezi izlučuju kontrast, gdje se on zadržava, kakvog su oblika i obrisa bešika i da li u njoj ostaje mokraća poslije pražnjenja. Opis daje radiolog, a dalje vođenje određuje urolog ili nefrolog"
-			},
-			"de": {
-				"what": "Röntgenuntersuchung von Nieren, Harnleitern und Harnblase, bei der das Kontrastmittel als Infusion gegeben wird und die Serie mit Aufnahmen der gefüllten Blase endet",
-				"how": "Es wird eine Infusion mit verdünntem Kontrastmittel angelegt, danach entsteht in festgelegten Abständen eine Bildserie, die Ausscheidung durch die Nieren und Passage durch die Harnleiter verfolgt; am Ende wird die gefüllte Blase aufgenommen, auch während des Wasserlassens; etwa eine Stunde",
-				"when": "Eingeschränkte Nierenfunktion, wenn die übliche Urographie nur schwach kontrastiert, erweitertes Nierenhohlsystem, wiederholte Harnwegsinfekte, Verdacht auf Rückfluss von Urin in die Harnleiter, Beurteilung der Harnwege vor einer Operation",
-				"prep": "Nüchtern und mit entleertem Darm nach Vorgabe der Klinik; einen aktuellen Nierenwert mitbringen und Allergien gegen Kontrastmittel und Jod, Diabetes sowie eingenommene Medikamente angeben",
-				"abnormal": "Die Aufnahmen zeigen, wie die Nieren das Kontrastmittel ausscheiden, wo es sich staut, welche Form und Kontur die Blase hat und ob nach dem Wasserlassen Restharn bleibt. Den Befund erstellt die Radiologie, das weitere Vorgehen legen Urologie oder Nephrologie fest"
-			},
-			"tr": {
-				"what": "Kontrastın damardan serum yoluyla verildiği, serinin dolmuş mesanenin filmleriyle tamamlandığı böbrek, idrar kanalları ve mesane incelemesi",
-				"how": "Damara seyreltilmiş kontrast içeren serum takılır, ardından belirli aralıklarla çekilen filmlerle böbreklerin boşaltımı ve kanallardan geçiş izlenir, sonunda dolmuş mesane, idrar yaparken de olmak üzere görüntülenir; yaklaşık bir saat",
-				"when": "Olağan ürografinin zayıf kontrast verdiği azalmış böbrek işlevi, böbrek toplayıcı sisteminde genişleme, tekrarlayan idrar yolu enfeksiyonları, idrarın kanallara geri kaçtığı şüphesi, ameliyat öncesi idrar yollarının değerlendirilmesi",
-				"prep": "Kliniğin talimatına göre aç karnına ve bağırsaklar boşaltılmış olarak gelinir; güncel böbrek işlev tahlili getirilir, kontrast ve iyot alerjisi, şeker hastalığı ve kullanılan ilaçlar önceden bildirilir",
-				"abnormal": "Filmler böbreklerin kontrastı nasıl attığını, nerede biriktiğini, mesanenin şekil ve dış hatlarını ve boşaltımdan sonra idrar kalıp kalmadığını gösterir. Tanımlamayı radyolog yapar, sonraki adımları üroloji ya da nefroloji uzmanı belirler"
-			}
-		}
-	},
-	{
-		"slug": "intestinal-barium-passage",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Наблюдение за продвижением бариевой взвеси по тонкой кишке с повторными снимками через заданные промежутки времени",
-				"how": "Пациент выпивает контраст, первые снимки делают через короткие промежутки, затем раз в несколько часов, пока взвесь не дойдёт до толстой кишки, между сериями можно ждать в клинике; всё исследование растянуто на несколько часов",
-				"when": "Боль в животе и вздутие неясного происхождения, подозрение на частичное препятствие или сужение тонкой кишки, хроническая диарея и потеря веса, контроль после операции на кишке, оценка скорости прохождения пищи",
-				"prep": "Натощак, последний приём пищи накануне вечером, по указанию клиники за день до исследования еда без клетчатки; на этот день не планировать других дел, так как снимки повторяют в течение нескольких часов",
-				"abnormal": "Исследование показывает ширину петель, скорость продвижения взвеси и места, где она задерживается или проходит с трудом. Снимки описывает рентгенолог, а нужны ли КТ, эндоскопия или операция, решает гастроэнтеролог или хирург"
-			},
-			"en": {
-				"what": "Follow-up of barium suspension as it travels through the small bowel, with repeat images at set intervals",
-				"how": "The patient drinks the contrast, the first images are taken at short intervals and then every few hours until the suspension reaches the large bowel, with waiting time at the clinic in between; the whole study spreads over several hours",
-				"when": "Abdominal pain and bloating of unclear origin, suspected partial obstruction or narrowing of the small bowel, chronic diarrhoea and weight loss, follow-up after bowel surgery, assessment of transit time",
-				"prep": "Fasting, with the last meal the evening before and a low-fibre diet the previous day if the clinic asks for it; plan nothing else for that day, as the images are repeated over several hours",
-				"abnormal": "The study shows the width of the bowel loops, how fast the suspension moves and the places where it is held up or passes with difficulty. The images are reported by a radiologist, while a gastroenterologist or surgeon decides whether CT, endoscopy or surgery is needed"
-			},
-			"sr": {
-				"what": "Praćenje kretanja barijumske suspenzije kroz tanko crijevo, uz ponovljene snimke u zadatim vremenskim razmacima",
-				"how": "Pacijent popije kontrast, prvi snimci se prave u kratkim razmacima, a zatim na nekoliko sati dok suspenzija ne stigne do debelog crijeva, uz čekanje u klinici između serija; cijeli pregled se razvlači na nekoliko sati",
-				"when": "Bol u trbuhu i nadutost nejasnog porijekla, sumnja na djelimičnu prepreku ili suženje tankog crijeva, hronični proliv i gubitak težine, kontrola poslije operacije na crijevu, procjena brzine prolaska hrane",
-				"prep": "Natašte, posljednji obrok prethodne večeri, a po uputstvu klinike dan ranije ishrana bez vlakana; za taj dan ne planirati druge obaveze jer se snimci ponavljaju tokom nekoliko sati",
-				"abnormal": "Pregled pokazuje širinu crijevnih vijuga, brzinu kretanja suspenzije i mjesta na kojima se ona zadržava ili teško prolazi. Snimke opisuje radiolog, a da li su potrebni skener, endoskopija ili operacija odlučuje gastroenterolog ili hirurg"
-			},
-			"de": {
-				"what": "Verfolgung der Bariumsuspension auf ihrem Weg durch den Dünndarm mit wiederholten Aufnahmen in festgelegten Abständen",
-				"how": "Der Patient trinkt das Kontrastmittel, die ersten Aufnahmen folgen in kurzen Abständen, danach alle paar Stunden, bis die Suspension den Dickdarm erreicht; dazwischen wird in der Klinik gewartet, insgesamt zieht sich die Untersuchung über mehrere Stunden",
-				"when": "Bauchschmerzen und Blähungen unklarer Ursache, Verdacht auf teilweise Passagebehinderung oder Engstelle im Dünndarm, chronischer Durchfall und Gewichtsverlust, Kontrolle nach Darmoperationen, Beurteilung der Transitzeit",
-				"prep": "Nüchtern, letzte Mahlzeit am Vorabend, auf Wunsch der Klinik am Vortag ballaststoffarme Kost; für diesen Tag nichts anderes planen, da die Aufnahmen über mehrere Stunden wiederholt werden",
-				"abnormal": "Die Untersuchung zeigt die Weite der Darmschlingen, die Geschwindigkeit der Passage und Stellen, an denen die Suspension stockt oder nur mühsam weiterkommt. Den Befund erstellt die Radiologie, über CT, Endoskopie oder Operation entscheiden Gastroenterologie oder Chirurgie"
-			},
-			"tr": {
-				"what": "Baryum süspansiyonunun ince bağırsaktaki ilerleyişinin, belirli aralıklarla tekrarlanan filmlerle izlenmesi",
-				"how": "Hasta kontrastı içer, ilk filmler kısa aralıklarla, sonrakiler süspansiyon kalın bağırsağa ulaşana kadar birkaç saatte bir çekilir, aralarda klinikte beklenir; inceleme toplamda birkaç saate yayılır",
-				"when": "Nedeni belirsiz karın ağrısı ve şişkinlik, ince bağırsakta kısmi tıkanıklık ya da darlık şüphesi, süregelen ishal ve kilo kaybı, bağırsak ameliyatı sonrası kontrol, besinin geçiş hızının değerlendirilmesi",
-				"prep": "Aç karnına gelinir, son öğün önceki akşamdır, klinik isterse bir gün önce lifsiz beslenilir; filmler birkaç saat boyunca tekrarlandığından o güne başka iş planlanmamalıdır",
-				"abnormal": "İnceleme bağırsak kıvrımlarının genişliğini, süspansiyonun ilerleme hızını ve takıldığı ya da güç geçtiği yerleri gösterir. Filmleri radyolog tanımlar, tomografi, endoskopi ya da ameliyat gerekip gerekmediğine gastroenterolog veya cerrah karar verir"
-			}
-		}
-	},
-	{
-		"slug": "intravenous-cholangiocholecystography",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Рентгеновское исследование желчных протоков и желчного пузыря, при котором контраст вводят в вену, а печень выводит его с желчью; сегодня применяется редко",
-				"how": "Контраст вводят внутривенно медленно, затем через заданные промежутки делают снимки, на которых постепенно проявляются протоки и пузырь, иногда с дополнительными послойными снимками этой зоны; 1–2 часа",
-				"when": "Оценка проходимости желчных протоков, когда УЗИ и магнитно-резонансная холангиография недоступны или не дали ответа, подозрение на оставшийся камень протока, состояние после операции на желчных путях",
-				"prep": "Натощак, по указанию клиники накануне лёгкая еда и очищение кишечника; обязательно заранее сообщить об аллергии на контраст и йод и о болезнях печени и щитовидной железы",
-				"abnormal": "Снимки показывают, заполняются ли протоки и пузырь, насколько они широки и есть ли препятствие оттоку желчи, при этом при выраженной желтухе печень почти не выводит контраст и исследование малоинформативно. Результат трактует хирург или гастроэнтеролог"
-			},
-			"en": {
-				"what": "An X-ray study of the bile ducts and gallbladder in which contrast is given into a vein and excreted by the liver into the bile; it is rarely used today",
-				"how": "Contrast is injected slowly into a vein, then images are taken at set intervals as the ducts and the gallbladder gradually appear, sometimes with additional layered images of the area; 1–2 hours",
-				"when": "Assessment of bile duct patency when ultrasound and MR cholangiography are unavailable or inconclusive, suspected retained duct stone, status after surgery on the bile ducts",
-				"prep": "Fasting, with a light meal and bowel cleansing the day before if the clinic asks; allergy to contrast and iodine and any liver or thyroid disease must be reported in advance",
-				"abnormal": "The images show whether the ducts and gallbladder fill, how wide they are and whether bile outflow is obstructed; with marked jaundice the liver barely excretes the contrast and the study yields little. The result is interpreted by a surgeon or gastroenterologist"
-			},
-			"sr": {
-				"what": "Rendgenski pregled žučnih puteva i žučne kese kod kojeg se kontrast daje u venu, a jetra ga izlučuje u žuč; danas se rijetko radi",
-				"how": "Kontrast se polako daje u venu, a zatim se u zadatim razmacima prave snimci na kojima se postepeno prikazuju kanali i kesa, ponekad uz dodatne slojevite snimke tog predjela; 1–2 sata",
-				"when": "Procjena prohodnosti žučnih puteva kada ultrazvuk i magnetna holangiografija nisu dostupni ili nisu dali odgovor, sumnja na zaostali kamen u kanalu, stanje poslije operacije na žučnim putevima",
-				"prep": "Natašte, a po uputstvu klinike dan ranije laka hrana i čišćenje crijeva; obavezno unaprijed prijaviti alergiju na kontrast i jod i bolesti jetre i štitne žlijezde",
-				"abnormal": "Snimci pokazuju da li se kanali i kesa pune, koliko su široki i da li postoji prepreka oticanju žuči, a kod izražene žutice jetra gotovo da ne izlučuje kontrast pa pregled daje malo podataka. Nalaz tumači hirurg ili gastroenterolog"
-			},
-			"de": {
-				"what": "Röntgenuntersuchung von Gallenwegen und Gallenblase, bei der das Kontrastmittel in eine Vene gegeben und von der Leber in die Galle ausgeschieden wird; sie wird heute nur noch selten durchgeführt",
-				"how": "Das Kontrastmittel wird langsam intravenös gegeben, danach entstehen in festgelegten Abständen Aufnahmen, auf denen sich Gänge und Gallenblase allmählich darstellen, teils ergänzt durch Schichtaufnahmen der Region; 1–2 Stunden",
-				"when": "Beurteilung der Durchgängigkeit der Gallenwege, wenn Ultraschall und MR-Cholangiographie nicht verfügbar sind oder keine Antwort geben, Verdacht auf einen verbliebenen Stein im Gang, Zustand nach Operationen an den Gallenwegen",
-				"prep": "Nüchtern, nach Vorgabe der Klinik am Vortag leichte Kost und Darmreinigung; Allergien gegen Kontrastmittel und Jod sowie Leber- und Schilddrüsenerkrankungen müssen vorher angegeben werden",
-				"abnormal": "Die Aufnahmen zeigen, ob sich Gänge und Gallenblase füllen, wie weit sie sind und ob der Gallenabfluss behindert ist; bei ausgeprägter Gelbsucht scheidet die Leber das Kontrastmittel kaum aus und die Untersuchung bleibt wenig aussagekräftig. Das Ergebnis deutet die Chirurgie oder Gastroenterologie"
-			},
-			"tr": {
-				"what": "Kontrastın damardan verildiği ve karaciğer tarafından safraya atıldığı, bugün ender kullanılan safra yolları ve safra kesesi röntgen incelemesi",
-				"how": "Kontrast damardan yavaşça verilir, ardından belirli aralıklarla çekilen filmlerde kanallar ve kese yavaş yavaş ortaya çıkar, bazen bölgenin kesitsel görüntüleri eklenir; 1–2 saat",
-				"when": "Ultrason ve MR kolanjiyografinin bulunmadığı ya da yanıt vermediği durumlarda safra yollarının açıklığının değerlendirilmesi, kanalda taş kaldığı şüphesi, safra yolu ameliyatı sonrası durum",
-				"prep": "Aç karnına, kliniğin isteğine göre bir gün önce hafif beslenme ve bağırsak temizliği; kontrast ve iyot alerjisi ile karaciğer ve tiroit hastalıkları mutlaka önceden bildirilmelidir",
-				"abnormal": "Filmler kanalların ve kesenin dolup dolmadığını, genişliklerini ve safra akışında engel olup olmadığını gösterir; belirgin sarılıkta karaciğer kontrastı neredeyse atmadığı için inceleme az bilgi verir. Sonucu cerrah ya da gastroenterolog yorumlar"
-			}
-		}
-	},
-	{
-		"slug": "intravenous-cholangiography-through-t-drain",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Контрастное исследование желчных протоков через Т-образный дренаж, оставленный в протоке после операции",
-				"how": "Наружный конец дренажа обрабатывают, медленно вводят контраст шприцем и следят на экране, как заполняются протоки и уходит ли контраст в двенадцатиперстную кишку, делая снимки в нескольких положениях; 15–30 минут",
-				"when": "Контроль перед удалением дренажа после операции на желчных путях, подозрение на оставшийся камень протока, проверка оттока желчи в кишку, затяжное выделение желчи по дренажу",
-				"prep": "Специальной подготовки обычно нет, иногда просят прийти натощак; дренаж не пережимать и не промывать самостоятельно перед исследованием, сообщить об аллергии на контраст и о повышенной температуре",
-				"abnormal": "Исследование показывает ширину протоков, наличие препятствия и то, свободно ли контраст уходит в кишку. Снимки описывает рентгенолог, а решение, удалять ли дренаж или нужно дополнительное вмешательство, принимает хирург"
-			},
-			"en": {
-				"what": "A contrast study of the bile ducts performed through a T-drain left in the duct after surgery",
-				"how": "The outer end of the drain is cleaned, contrast is injected slowly with a syringe and the filling of the ducts and its passage into the duodenum are watched on the screen while images are taken in several positions; 15–30 minutes",
-				"when": "Check before removing the drain after bile duct surgery, suspected retained stone in the duct, assessment of bile outflow into the bowel, prolonged bile discharge through the drain",
-				"prep": "Usually no special preparation, sometimes fasting is requested; do not clamp or flush the drain yourself beforehand and report allergy to contrast and any fever",
-				"abnormal": "The study shows the width of the ducts, any obstruction and whether contrast passes freely into the bowel. The images are reported by a radiologist, while the surgeon decides whether the drain can be removed or further treatment is needed"
-			},
-			"sr": {
-				"what": "Kontrastni pregled žučnih puteva kroz T-dren koji je poslije operacije ostavljen u žučnom kanalu",
-				"how": "Spoljašnji kraj drena se očisti, špricem se polako daje kontrast i na ekranu se prati punjenje kanala i prolaz kontrasta u dvanaestopalačno crijevo, uz snimke u nekoliko položaja; 15–30 minuta",
-				"when": "Provjera prije vađenja drena poslije operacije na žučnim putevima, sumnja na zaostali kamen u kanalu, procjena oticanja žuči u crijevo, dugotrajno curenje žuči kroz dren",
-				"prep": "Posebna priprema obično nije potrebna, ponekad se traži dolazak natašte; dren ne stezati i ne ispirati sam prije pregleda, a prijaviti alergiju na kontrast i povišenu temperaturu",
-				"abnormal": "Pregled pokazuje širinu kanala, postojanje prepreke i da li kontrast slobodno prelazi u crijevo. Snimke opisuje radiolog, a hirurg odlučuje da li se dren vadi ili je potrebna dodatna intervencija"
-			},
-			"de": {
-				"what": "Kontrastmitteluntersuchung der Gallenwege über eine nach der Operation im Gallengang belassene T-Drainage",
-				"how": "Das äußere Ende der Drainage wird gereinigt, Kontrastmittel langsam mit einer Spritze eingebracht und am Bildschirm verfolgt, wie sich die Gänge füllen und ob das Mittel in den Zwölffingerdarm abfließt, dabei werden Aufnahmen in mehreren Lagen gemacht; 15–30 Minuten",
-				"when": "Kontrolle vor dem Ziehen der Drainage nach einer Gallenwegsoperation, Verdacht auf einen verbliebenen Stein im Gang, Prüfung des Galleabflusses in den Darm, anhaltende Galleförderung über die Drainage",
-				"prep": "Meist keine besondere Vorbereitung, manchmal wird Nüchternheit verlangt; die Drainage vorher nicht selbst abklemmen oder spülen und Kontrastmittelallergie sowie Fieber angeben",
-				"abnormal": "Die Untersuchung zeigt die Weite der Gänge, eine mögliche Abflussbehinderung und ob das Kontrastmittel frei in den Darm übertritt. Den Befund erstellt die Radiologie, ob die Drainage gezogen wird oder ein weiterer Eingriff nötig ist, entscheidet die Chirurgie"
-			},
-			"tr": {
-				"what": "Ameliyattan sonra safra kanalında bırakılan T-dren aracılığıyla yapılan safra yolları kontrast incelemesi",
-				"how": "Drenin dış ucu temizlenir, enjektörle yavaşça kontrast verilir ve kanalların dolması ile onikiparmak bağırsağına geçişi ekrandan izlenirken birkaç pozisyonda film çekilir; 15–30 dakika",
-				"when": "Safra yolu ameliyatı sonrası dren çekilmeden önceki kontrol, kanalda taş kaldığı şüphesi, safranın bağırsağa akışının değerlendirilmesi, drenden uzun süren safra gelişi",
-				"prep": "Genellikle özel hazırlık gerekmez, bazen aç gelinmesi istenir; dren işlemden önce kendi başına klemplenmez ve yıkanmaz, kontrast alerjisi ve ateş bildirilir",
-				"abnormal": "İnceleme kanalların genişliğini, engel olup olmadığını ve kontrastın bağırsağa serbest geçip geçmediğini gösterir. Filmleri radyolog tanımlar, drenin çıkarılıp çıkarılmayacağına ya da ek girişim gerekip gerekmediğine cerrah karar verir"
-			}
-		}
-	},
-	{
-		"slug": "intravenous-cystography",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Снимки мочевого пузыря, заполнившегося контрастом, который ввели в вену и вывели почки, без установки катетера в мочеиспускательный канал",
-				"how": "Контраст вводят в вену, затем выжидают, пока он соберётся в пузыре, и делают снимки в прямой и косых проекциях, иногда дополнительно после мочеиспускания; вместе с ожиданием около часа",
-				"when": "Оценка формы и контуров мочевого пузыря, когда введение катетера нежелательно или невозможно, травма мочеиспускательного канала, подозрение на выпячивание стенки или препятствие на выходе из пузыря, оценка остаточной мочи, обследование детей",
-				"prep": "Натощак и с очищенным кишечником по указанию клиники, перед исследованием не опорожнять мочевой пузырь без разрешения персонала; заранее сообщить об аллергии на контраст и йод и о болезнях почек",
-				"abnormal": "Снимки показывают форму и контуры пузыря, выпячивания стенки и то, насколько полно он опорожняется, при этом слабое заполнение может зависеть и от работы почек. Описание даёт рентгенолог, дальнейшее обследование назначает уролог"
-			},
-			"en": {
-				"what": "Images of the bladder filled with contrast that was injected into a vein and excreted by the kidneys, without inserting a catheter into the urethra",
-				"how": "Contrast is injected into a vein, then time is allowed for it to collect in the bladder, after which frontal and oblique images are taken, sometimes with an extra image after voiding; about an hour including the waiting time",
-				"when": "Assessment of the shape and contours of the bladder when catheterisation is undesirable or impossible, injury of the urethra, suspected outpouching of the wall or obstruction at the bladder outlet, assessment of residual urine, examination of children",
-				"prep": "Fasting and with the bowel emptied as instructed by the clinic; do not empty the bladder before the study without the staff's permission, and report allergy to contrast and iodine and any kidney disease in advance",
-				"abnormal": "The images show the shape and contours of the bladder, outpouchings of its wall and how completely it empties, while weak filling may also depend on how the kidneys work. The report is written by a radiologist and further investigation is arranged by a urologist"
-			},
-			"sr": {
-				"what": "Snimci mokraćne bešike napunjene kontrastom koji je dat u venu i izlučen preko bubrega, bez uvođenja katetera u mokraćnu cijev",
-				"how": "Kontrast se da u venu, zatim se čeka da se skupi u bešici, pa se prave snimci u prednjoj i kosim projekcijama, ponekad i dodatni poslije mokrenja; sa čekanjem oko sat vremena",
-				"when": "Procjena oblika i obrisa bešike kada uvođenje katetera nije poželjno ili moguće, povreda mokraćne cijevi, sumnja na izbočenje zida ili prepreku na izlazu iz bešike, procjena zaostale mokraće, pregled djece",
-				"prep": "Natašte i sa ispražnjenim crijevima po uputstvu klinike, a bešiku prije pregleda ne prazniti bez dozvole osoblja; unaprijed prijaviti alergiju na kontrast i jod i bolesti bubrega",
-				"abnormal": "Snimci pokazuju oblik i obrise bešike, izbočenja zida i koliko se potpuno prazni, pri čemu slabo punjenje može zavisiti i od rada bubrega. Opis daje radiolog, a dalje ispitivanje određuje urolog"
-			},
-			"de": {
-				"what": "Aufnahmen der Harnblase, die sich mit Kontrastmittel gefüllt hat, das in eine Vene gegeben und über die Nieren ausgeschieden wurde, ohne Katheter in die Harnröhre einzulegen",
-				"how": "Das Kontrastmittel wird in eine Vene gegeben, danach wird gewartet, bis es sich in der Blase sammelt, und es werden Aufnahmen in frontaler und schräger Projektion angefertigt, gelegentlich zusätzlich nach dem Wasserlassen; mit Wartezeit etwa eine Stunde",
-				"when": "Beurteilung von Form und Kontur der Blase, wenn ein Katheter unerwünscht oder nicht möglich ist, Verletzung der Harnröhre, Verdacht auf Wandaussackung oder Hindernis am Blasenausgang, Beurteilung von Restharn, Untersuchung von Kindern",
-				"prep": "Nüchtern und mit entleertem Darm nach Vorgabe der Klinik; die Blase vor der Untersuchung nicht ohne Erlaubnis des Personals entleeren und Allergien gegen Kontrastmittel und Jod sowie Nierenerkrankungen vorher angeben",
-				"abnormal": "Die Aufnahmen zeigen Form und Kontur der Blase, Aussackungen der Wand und wie vollständig sie sich entleert, wobei eine schwache Füllung auch von der Nierenfunktion abhängen kann. Den Befund erstellt die Radiologie, weitere Untersuchungen veranlasst die Urologie"
-			},
-			"tr": {
-				"what": "İdrar yoluna sonda konmadan, damardan verilip böbreklerle atılan kontrastla dolan mesanenin görüntülenmesi",
-				"how": "Kontrast damardan verilir, mesanede toplanması beklenir, ardından ön ve eğik yönlerde, bazen idrar yaptıktan sonra da film çekilir; bekleme süresiyle birlikte yaklaşık bir saat",
-				"when": "Sonda takmanın uygun ya da mümkün olmadığı durumlarda mesanenin şekil ve dış hatlarının değerlendirilmesi, idrar yolu yaralanması, duvarda kesecik ya da mesane çıkışında engel şüphesi, kalan idrarın değerlendirilmesi, çocukların incelenmesi",
-				"prep": "Kliniğin talimatına göre aç karnına ve bağırsaklar boşaltılmış olarak gelinir, inceleme öncesi mesane personelin izni olmadan boşaltılmaz; kontrast ve iyot alerjisi ile böbrek hastalıkları önceden bildirilir",
-				"abnormal": "Filmler mesanenin şeklini ve dış hatlarını, duvardaki kesecikleri ve ne kadar tam boşaldığını gösterir; zayıf dolum böbreklerin çalışmasına da bağlı olabilir. Tanımlamayı radyolog yapar, sonraki tetkikleri üroloji uzmanı planlar"
-			}
-		}
-	}
+  {
+    "slug": "double-contrast-barium-enema-fischer-method",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Рентгеновское исследование толстой кишки, при котором тонкий слой бария на стенке сочетают с раздуванием кишки воздухом, чтобы подробно рассмотреть рельеф слизистой",
+        "how": "Через наконечник в прямую кишку вводят небольшое количество густой бариевой взвеси, затем по методике Фишера нагнетают воздух, который расправляет кишку и распределяет контраст по стенке, после чего просят несколько раз повернуться на столе и делают прицельные снимки всех отделов; 30–45 минут",
+        "when": "Поиск мелких образований и полипов на стенке кишки, стойкие изменения стула и кровь в кале, подозрение на воспалительное заболевание кишечника, дивертикулы, наблюдение после удаления полипа, ситуации, когда колоноскопия не может быть выполнена полностью",
+        "prep": "Полное очищение кишечника по схеме клиники, за два-три дня еда без клетчатки, в день исследования натощак; предупредить о недавней биопсии или операции на кишке и о болезнях сердца",
+        "abnormal": "При таком исследовании видны мелкие неровности и выпячивания слизистой, участки утолщённой стенки и места, где кишка не расправляется воздухом. Описание даёт рентгенолог, а нужна ли эндоскопия с забором ткани, решает гастроэнтеролог или хирург"
+      },
+      "en": {
+        "what": "An X-ray study of the large bowel in which a thin barium film on the wall is combined with air distension, so that the mucosal relief can be seen in detail",
+        "how": "A small amount of thick barium suspension is introduced through a tip in the rectum, then air is insufflated using the Fischer technique, which opens the bowel and spreads the contrast along the wall; the patient turns several times on the table while targeted images of every segment are taken; 30–45 minutes",
+        "when": "Search for small wall lesions and polyps, persistent change in bowel habit and blood in the stool, suspected inflammatory bowel disease, diverticula, follow-up after polyp removal, situations where colonoscopy cannot be completed",
+        "prep": "Full bowel cleansing according to the clinic's protocol, two to three days of a low-fibre diet, nothing to eat on the day of the study; report a recent biopsy or bowel surgery and any heart conditions",
+        "abnormal": "The study can show fine irregularities and outpouchings of the mucosa, thickened wall segments and areas where the bowel does not open up with air. The report is written by a radiologist, while a gastroenterologist or surgeon decides whether endoscopy with tissue sampling is needed"
+      },
+      "sr": {
+        "what": "Rendgenski pregled debelog crijeva kod kojeg se tanak sloj barijuma na zidu kombinuje sa naduvavanjem crijeva vazduhom, da bi se reljef sluznice vidio u detalje",
+        "how": "Kroz nastavak u čmaru unosi se manja količina guste barijumske suspenzije, zatim se po Fišerovoj metodi ubacuje vazduh koji širi crijevo i raspoređuje kontrast po zidu, pa se pacijent više puta okreće na stolu uz ciljane snimke svih dijelova; 30–45 minuta",
+        "when": "Traženje sitnih promjena i polipa na zidu crijeva, uporne promjene stolice i krv u stolici, sumnja na zapaljensku bolest crijeva, divertikule, praćenje poslije uklanjanja polipa, situacije kada kolonoskopija ne može da se završi u cjelini",
+        "prep": "Potpuno čišćenje crijeva po šemi klinike, dva do tri dana ishrana bez vlakana, na dan pregleda natašte; najaviti skorašnju biopsiju ili operaciju na crijevu i bolesti srca",
+        "abnormal": "Na ovakvom pregledu vide se sitne neravnine i izbočenja sluznice, zadebljali dijelovi zida i mjesta na kojima se crijevo ne širi vazduhom. Opis daje radiolog, a da li je potrebna endoskopija sa uzimanjem uzorka tkiva odlučuje gastroenterolog ili hirurg"
+      },
+      "de": {
+        "what": "Röntgenuntersuchung des Dickdarms, bei der ein dünner Bariumfilm an der Wand mit einer Luftfüllung kombiniert wird, um das Schleimhautrelief genau darzustellen",
+        "how": "Über ein Darmrohr wird eine kleine Menge dicker Bariumsuspension eingebracht, anschließend nach der Fischer-Technik Luft insuffliert, die den Darm entfaltet und das Kontrastmittel an der Wand verteilt; der Patient dreht sich mehrfach auf dem Tisch, dabei werden Zielaufnahmen aller Abschnitte angefertigt; 30–45 Minuten",
+        "when": "Suche nach kleinen Wandveränderungen und Polypen, anhaltend veränderter Stuhlgang und Blut im Stuhl, Verdacht auf eine chronisch entzündliche Darmerkrankung, Divertikel, Kontrolle nach Polypenabtragung, Situationen, in denen eine Koloskopie nicht vollständig möglich ist",
+        "prep": "Vollständige Darmreinigung nach dem Schema der Klinik, zwei bis drei Tage ballaststoffarme Kost, am Untersuchungstag nüchtern; eine kürzliche Biopsie oder Darmoperation sowie Herzerkrankungen vorher angeben",
+        "abnormal": "Sichtbar werden feine Unregelmäßigkeiten und Aussackungen der Schleimhaut, verdickte Wandabschnitte und Stellen, an denen sich der Darm nicht entfaltet. Den Befund erstellt die Radiologie, über eine Endoskopie mit Gewebeentnahme entscheidet die Gastroenterologie oder Chirurgie"
+      },
+      "tr": {
+        "what": "Kalın bağırsak duvarındaki ince baryum tabakasının hava ile şişirmeye eklendiği, mukoza kabartısını ayrıntılı gösteren röntgen incelemesi",
+        "how": "Makattan yerleştirilen uçla az miktarda koyu baryum verilir, ardından Fischer yöntemiyle hava verilerek bağırsak açılır ve kontrast duvara dağılır, hasta masada birkaç kez döndürülüp tüm bölümlerin hedefli filmleri çekilir; 30–45 dakika",
+        "when": "Duvardaki küçük değişiklik ve poliplerin aranması, inatçı dışkılama değişiklikleri ve dışkıda kan, iltihabi bağırsak hastalığı şüphesi, divertiküller, polip alındıktan sonraki takip, kolonoskopinin tam yapılamadığı durumlar",
+        "prep": "Kliniğin verdiği şemaya göre tam bağırsak temizliği, iki üç gün lifsiz beslenme, inceleme günü aç gelmek; yakın zamanda yapılan biyopsi veya bağırsak ameliyatı ile kalp hastalıkları önceden bildirilmelidir",
+        "abnormal": "İncelemede mukozadaki ince düzensizlikler ve kesecikler, kalınlaşmış duvar bölümleri ve bağırsağın havayla açılmadığı yerler görülebilir. Filmleri radyolog tanımlar, doku örneği alınan endoskopinin gerekip gerekmediğine gastroenterolog veya cerrah karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Рендгенски преглед дебелог цријева код којег се танак слој баријума на зиду комбинује са надувавањем цријева ваздухом, да би се рељеф слузнице видио у детаље",
+        "how": "Кроз наставак у чмару уноси се мања количина густе баријумске суспензије, затим се по Фишеровој методи убацује ваздух који шири цријево и распоређује контраст по зиду, па се пацијент више пута окреће на столу уз циљане снимке свих дијелова; 30–45 минута",
+        "when": "Тражење ситних промјена и полипа на зиду цријева, упорне промјене столице и крв у столици, сумња на запаљенску болест цријева, дивертикуле, праћење послије уклањања полипа, ситуације када колоноскопија не може да се заврши у цјелини",
+        "prep": "Потпуно чишћење цријева по шеми клинике, два до три дана исхрана без влакана, на дан прегледа наташте; најавити скорашњу биопсију или операцију на цријеву и болести срца",
+        "abnormal": "На оваквом прегледу виде се ситне неравнине и избочења слузнице, задебљали дијелови зида и мјеста на којима се цријево не шири ваздухом. Опис даје радиолог, а да ли је потребна ендоскопија са узимањем узорка ткива одлучује гастроентеролог или хирург"
+      }
+    }
+  },
+  {
+    "slug": "esophagus-stomach-and-duodenum-fluoroscopy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Рентгеновское исследование верхних отделов пищеварительного тракта в движении: пациент глотает контраст, а врач следит за его прохождением на экране и сохраняет снимки",
+        "how": "Стоя у стойки пациент небольшими глотками пьёт бариевую взвесь, по команде задерживает дыхание и меняет положение тела, иногда исследование дополняют шипучим порошком, который раздувает желудок; 20–40 минут",
+        "when": "Затруднённое глотание и ощущение комка, изжога и подозрение на заброс содержимого желудка в пищевод, боль под ложечкой, повторяющаяся рвота, подозрение на грыжу пищеводного отверстия диафрагмы или сужение, контроль после операции на желудке",
+        "prep": "Натощак, не есть и не пить с вечера, утром не курить и не жевать резинку; снять украшения с шеи и груди, сообщить о возможной беременности",
+        "abnormal": "Исследование показывает ход и скорость прохождения контраста, ширину просвета, подвижность стенок и обратный заброс, тогда как вид слизистой вблизи и ткань для анализа даёт только эндоскопия. Снимки описывает рентгенолог, дальнейшее ведение определяет гастроэнтеролог"
+      },
+      "en": {
+        "what": "An X-ray study of the upper digestive tract in motion: the patient swallows contrast while the doctor follows its passage on the screen and stores images",
+        "how": "Standing at the fluoroscopy unit the patient sips barium suspension, holds the breath on command and changes position; an effervescent powder that distends the stomach is sometimes added; 20–40 minutes",
+        "when": "Difficulty swallowing and a lump sensation, heartburn and suspected reflux of stomach contents into the oesophagus, upper abdominal pain, repeated vomiting, suspected hiatal hernia or narrowing, follow-up after stomach surgery",
+        "prep": "Nothing to eat or drink from the evening before, no smoking or chewing gum in the morning; remove neck and chest jewellery and report a possible pregnancy",
+        "abnormal": "The study shows the route and speed of contrast passage, the width of the lumen, wall movement and reflux, while a close view of the mucosa and tissue for analysis can only be obtained by endoscopy. The images are reported by a radiologist and further management is decided by a gastroenterologist"
+      },
+      "sr": {
+        "what": "Rendgenski pregled gornjih dijelova probavnog trakta u pokretu: pacijent guta kontrast, a ljekar prati njegov prolaz na ekranu i bilježi snimke",
+        "how": "Stojeći uz aparat pacijent malim gutljajima pije barijumsku suspenziju, na znak zadržava dah i mijenja položaj tijela, a ponekad se doda i pjenušavi prašak koji širi želudac; 20–40 minuta",
+        "when": "Otežano gutanje i osjećaj knedle, žgaravica i sumnja na vraćanje želudačnog sadržaja u jednjak, bol pod grudnom kosti, ponavljano povraćanje, sumnja na kilu otvora dijafragme ili suženje, kontrola poslije operacije na želucu",
+        "prep": "Natašte, bez jela i pića od prethodne večeri, ujutru bez cigareta i žvakaće gume; skinuti nakit sa vrata i grudi i prijaviti moguću trudnoću",
+        "abnormal": "Pregled prikazuje put i brzinu prolaska kontrasta, širinu lumena, pokretljivost zidova i vraćanje sadržaja, dok se sluznica izbliza i uzorak tkiva dobijaju samo endoskopijom. Snimke opisuje radiolog, a dalje vođenje određuje gastroenterolog"
+      },
+      "de": {
+        "what": "Röntgenuntersuchung des oberen Verdauungstrakts in Bewegung: der Patient schluckt Kontrastmittel, die Ärztin verfolgt die Passage am Bildschirm und hält Aufnahmen fest",
+        "how": "Der Patient trinkt im Stehen am Durchleuchtungsgerät schluckweise Bariumsuspension, hält auf Kommando die Luft an und wechselt die Position; gelegentlich wird ein Brausepulver gegeben, das den Magen entfaltet; 20–40 Minuten",
+        "when": "Schluckstörung und Kloßgefühl, Sodbrennen und Verdacht auf Rückfluss von Mageninhalt in die Speiseröhre, Oberbauchschmerzen, wiederholtes Erbrechen, Verdacht auf Zwerchfellbruch oder Engstelle, Kontrolle nach Magenoperationen",
+        "prep": "Nüchtern, ab dem Vorabend nichts essen und trinken, morgens nicht rauchen und keinen Kaugummi kauen; Schmuck an Hals und Brust ablegen und eine mögliche Schwangerschaft angeben",
+        "abnormal": "Die Untersuchung zeigt Weg und Geschwindigkeit der Kontrastmittelpassage, die Weite des Lumens, die Wandbeweglichkeit und einen Rückfluss, während die Schleimhaut aus der Nähe und Gewebe für die Analyse nur die Endoskopie liefert. Den Befund erstellt die Radiologie, das weitere Vorgehen legt die Gastroenterologie fest"
+      },
+      "tr": {
+        "what": "Üst sindirim yolunun hareket halinde röntgenle incelenmesi: hasta kontrast yutarken hekim geçişi ekrandan izler ve görüntüleri kaydeder",
+        "how": "Hasta cihazın önünde ayakta küçük yudumlarla baryum içer, komutla nefesini tutar ve pozisyon değiştirir, bazen mideyi şişiren efervesan toz da eklenir; 20–40 dakika",
+        "when": "Yutma güçlüğü ve boğazda düğüm hissi, mide yanması ve mide içeriğinin yemek borusuna kaçtığı şüphesi, üst karın ağrısı, tekrarlayan kusma, diyafram fıtığı veya darlık şüphesi, mide ameliyatı sonrası kontrol",
+        "prep": "Aç karnına, önceki akşamdan sonra yiyecek içecek alınmaz, sabah sigara ve sakız kullanılmaz; boyun ve göğüsteki takılar çıkarılır, olası gebelik bildirilir",
+        "abnormal": "İnceleme kontrastın geçiş yolunu ve hızını, lümen genişliğini, duvar hareketini ve geri kaçışı gösterir, mukozanın yakından görüntüsü ve doku örneği ise yalnızca endoskopiyle alınır. Filmleri radyolog tanımlar, sonraki adımları gastroenterolog belirler"
+      },
+      "sr_cyrl": {
+        "what": "Рендгенски преглед горњих дијелова пробавног тракта у покрету: пацијент гута контраст, а љекар прати његов пролаз на екрану и биљежи снимке",
+        "how": "Стојећи уз апарат пацијент малим гутљајима пије баријумску суспензију, на знак задржава дах и мијења положај тијела, а понекад се дода и пјенушави прашак који шири желудац; 20–40 минута",
+        "when": "Отежано гутање и осјећај кнедле, жгаравица и сумња на враћање желудачног садржаја у једњак, бол под грудном кости, понављано повраћање, сумња на килу отвора дијафрагме или сужење, контрола послије операције на желуцу",
+        "prep": "Наташте, без јела и пића од претходне вечери, ујутру без цигарета и жвакаће гуме; скинути накит са врата и груди и пријавити могућу трудноћу",
+        "abnormal": "Преглед приказује пут и брзину проласка контраста, ширину лумена, покретљивост зидова и враћање садржаја, док се слузница изблиза и узорак ткива добијају само ендоскопијом. Снимке описује радиолог, а даље вођење одређује гастроентеролог"
+      }
+    }
+  },
+  {
+    "slug": "eye-bulb-x-ray-vogt-method",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Снимок переднего отдела глазного яблока по методике Фогта, при которой кости черепа не накладываются на изображение",
+        "how": "В глаз закапывают обезболивающие капли, к самому глазу за веко подводят маленькую плёнку или детектор и делают два снимка, сбоку и сверху, с взглядом в заданную сторону; несколько минут",
+        "when": "Подозрение на металлическое или другое плотное инородное тело в глазу после работы с металлом, травма глаза, исключение металла внутри глаза перед МРТ, контроль после удаления инородного тела",
+        "prep": "Подготовка не нужна; снять очки и контактные линзы, не тереть глаз, сказать об аллергии на обезболивающие капли",
+        "abnormal": "Снимок показывает, есть ли в проекции глаза плотное тело и в какой примерно зоне оно лежит, тогда как неплотные частицы, например стекло или дерево, на нём могут быть не видны. Результат оценивает офтальмолог, при необходимости дополняя его УЗИ глаза или КТ"
+      },
+      "en": {
+        "what": "An image of the anterior part of the eyeball taken with the Vogt technique, in which the skull bones are not projected over the eye",
+        "how": "Anaesthetic drops are instilled, a small film or detector is placed against the eye behind the lid and two views are taken, lateral and axial, with the gaze directed as instructed; a few minutes",
+        "when": "Suspected metallic or other dense foreign body in the eye after metalwork, eye injury, exclusion of metal inside the eye before an MRI scan, check after removal of a foreign body",
+        "prep": "No preparation is needed; remove glasses and contact lenses, do not rub the eye and report any allergy to anaesthetic drops",
+        "abnormal": "The image shows whether a dense body lies in the projection of the eye and roughly in which zone, while low-density particles such as glass or wood may not be visible on it. The result is assessed by an ophthalmologist, who may add an eye ultrasound or a CT scan"
+      },
+      "sr": {
+        "what": "Snimak prednjeg dijela očne jabučice po Vogtovoj metodi, kod koje se kosti lobanje ne preklapaju preko oka",
+        "how": "U oko se ukapaju anestetičke kapi, uz samo oko iza kapka postavlja se mali film ili detektor i prave se dva snimka, bočni i aksijalni, uz pogled u zadatom pravcu; nekoliko minuta",
+        "when": "Sumnja na metalno ili drugo gusto strano tijelo u oku poslije rada sa metalom, povreda oka, isključivanje metala u oku prije magnetne rezonance, kontrola poslije vađenja stranog tijela",
+        "prep": "Priprema nije potrebna; skinuti naočare i kontaktna sočiva, ne trljati oko i reći za alergiju na anestetičke kapi",
+        "abnormal": "Snimak pokazuje da li u projekciji oka postoji gusto tijelo i u kojoj zoni približno leži, dok se čestice male gustine, poput stakla ili drveta, na njemu možda neće vidjeti. Nalaz procjenjuje oftalmolog, po potrebi uz ultrazvuk oka ili skener"
+      },
+      "de": {
+        "what": "Aufnahme des vorderen Augapfelabschnitts nach der Vogt-Technik, bei der sich die Schädelknochen nicht über das Auge projizieren",
+        "how": "Nach Betäubungstropfen wird ein kleiner Film oder Detektor hinter dem Lid direkt an das Auge gelegt und es werden zwei Aufnahmen angefertigt, seitlich und axial, mit vorgegebener Blickrichtung; wenige Minuten",
+        "when": "Verdacht auf einen metallischen oder anderen dichten Fremdkörper im Auge nach Metallarbeiten, Augenverletzung, Ausschluss von Metall im Auge vor einer MRT, Kontrolle nach Entfernung eines Fremdkörpers",
+        "prep": "Keine Vorbereitung nötig; Brille und Kontaktlinsen ablegen, das Auge nicht reiben und eine Allergie gegen Betäubungstropfen angeben",
+        "abnormal": "Die Aufnahme zeigt, ob in der Projektion des Auges ein dichter Körper liegt und etwa in welcher Zone, während Partikel geringer Dichte wie Glas oder Holz darauf unsichtbar bleiben können. Den Befund beurteilt die Augenheilkunde, bei Bedarf ergänzt durch Augenultraschall oder CT"
+      },
+      "tr": {
+        "what": "Kafatası kemiklerinin göz üzerine binmediği Vogt tekniğiyle alınan göz küresinin ön bölümüne ait görüntü",
+        "how": "Göze uyuşturucu damla damlatılır, kapağın arkasından gözün hemen yanına küçük bir film ya da dedektör yerleştirilir ve bakış yönü verilerek yandan ve tepeden iki film çekilir; birkaç dakika",
+        "when": "Metalle çalıştıktan sonra gözde metalik veya başka yoğun yabancı cisim şüphesi, göz yaralanması, MR öncesi gözde metal bulunmadığının gösterilmesi, yabancı cisim çıkarıldıktan sonraki kontrol",
+        "prep": "Hazırlık gerekmez; gözlük ve kontakt lensler çıkarılır, göz ovuşturulmaz, uyuşturucu damlalara alerji bildirilir",
+        "abnormal": "Görüntü, göz izdüşümünde yoğun bir cisim olup olmadığını ve yaklaşık hangi bölgede durduğunu gösterir, cam veya tahta gibi düşük yoğunluklu parçacıklar ise görünmeyebilir. Sonucu göz hekimi değerlendirir, gerekirse göz ultrasonu veya tomografi ekler"
+      },
+      "sr_cyrl": {
+        "what": "Снимак предњег дијела очне јабучице по Вогтовој методи, код које се кости лобање не преклапају преко ока",
+        "how": "У око се укапају анестетичке капи, уз само око иза капка поставља се мали филм или детектор и праве се два снимка, бочни и аксијални, уз поглед у задатом правцу; неколико минута",
+        "when": "Сумња на метално или друго густо страно тијело у оку послије рада са металом, повреда ока, искључивање метала у оку прије магнетне резонанце, контрола послије вађења страног тијела",
+        "prep": "Припрема није потребна; скинути наочаре и контактна сочива, не трљати око и рећи за алергију на анестетичке капи",
+        "abnormal": "Снимак показује да ли у пројекцији ока постоји густо тијело и у којој зони приближно лежи, док се честице мале густине, попут стакла или дрвета, на њему можда неће видјети. Налаз процјењује офталмолог, по потреби уз ултразвук ока или скенер"
+      }
+    }
+  },
+  {
+    "slug": "fistulography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контрастное рентгеновское исследование свищевого хода, узкого канала, который соединяет кожу с полостью или органом",
+        "how": "Наружное отверстие свища обрабатывают, вводят в него тонкий катетер и под небольшим давлением подают контраст, одновременно наблюдая заполнение на экране и делая снимки в двух проекциях; 15–30 минут",
+        "when": "Долго не заживающий свищ после операции или воспаления, выделения из раны, подозрение на связь хода с кишкой, суставом или костью, планирование операции по иссечению хода, контроль после лечения",
+        "prep": "Специальной подготовки обычно нет, при свищах в области таза врач может попросить прийти натощак и очистить кишечник; сообщить об аллергии на контраст и йод, в день исследования не закрывать отверстие мазями",
+        "abnormal": "Исследование показывает длину, направление и ветвление хода, боковые затёки и то, сообщается ли он с полостью или органом. Снимки описывает рентгенолог, а объём операции планирует хирург"
+      },
+      "en": {
+        "what": "A contrast X-ray study of a fistula tract, the narrow channel connecting the skin with a cavity or an organ",
+        "how": "The external opening is cleaned, a thin catheter is inserted and contrast is injected under gentle pressure while the filling is watched on the screen and images are taken in two projections; 15–30 minutes",
+        "when": "A fistula that fails to heal after surgery or inflammation, discharge from a wound, suspected communication with bowel, joint or bone, planning of surgical excision of the tract, follow-up after treatment",
+        "prep": "Usually no special preparation; for fistulas in the pelvic area the doctor may ask for fasting and bowel cleansing; report allergy to contrast and iodine and do not cover the opening with ointment on the day of the study",
+        "abnormal": "The study shows the length, direction and branching of the tract, side pockets and whether it communicates with a cavity or an organ. The images are reported by a radiologist and the extent of surgery is planned by a surgeon"
+      },
+      "sr": {
+        "what": "Kontrastni rendgenski pregled fistuloznog kanala, uskog puta koji spaja kožu sa šupljinom ili organom",
+        "how": "Spoljašnji otvor se očisti, u njega se uvodi tanak kateter i pod blagim pritiskom se daje kontrast, uz praćenje punjenja na ekranu i snimke u dvije projekcije; 15–30 minuta",
+        "when": "Fistula koja dugo ne zarasta poslije operacije ili upale, sekret iz rane, sumnja na vezu kanala sa crijevom, zglobom ili kosti, planiranje operacije uklanjanja kanala, kontrola poslije liječenja",
+        "prep": "Posebna priprema obično nije potrebna, a kod fistula u predjelu karlice ljekar može tražiti dolazak natašte i čišćenje crijeva; prijaviti alergiju na kontrast i jod i na dan pregleda ne stavljati masti preko otvora",
+        "abnormal": "Pregled prikazuje dužinu, pravac i grananje kanala, bočne džepove i to da li kanal komunicira sa šupljinom ili organom. Snimke opisuje radiolog, a obim operacije planira hirurg"
+      },
+      "de": {
+        "what": "Kontrastmitteluntersuchung eines Fistelgangs, also des schmalen Kanals, der die Haut mit einer Höhle oder einem Organ verbindet",
+        "how": "Die äußere Öffnung wird gereinigt, ein dünner Katheter eingeführt und das Kontrastmittel mit leichtem Druck eingebracht, während die Füllung am Bildschirm verfolgt und in zwei Ebenen aufgenommen wird; 15–30 Minuten",
+        "when": "Eine nach Operation oder Entzündung nicht heilende Fistel, Sekretion aus einer Wunde, Verdacht auf Verbindung zu Darm, Gelenk oder Knochen, Planung der operativen Entfernung des Gangs, Kontrolle nach der Behandlung",
+        "prep": "Meist keine besondere Vorbereitung; bei Fisteln im Beckenbereich kann nüchtern zu erscheinen und eine Darmreinigung verlangt werden; Allergien gegen Kontrastmittel und Jod angeben und die Öffnung am Untersuchungstag nicht mit Salbe abdecken",
+        "abnormal": "Die Untersuchung zeigt Länge, Verlauf und Verzweigung des Gangs, seitliche Verhaltungen und eine Verbindung zu Höhlen oder Organen. Den Befund erstellt die Radiologie, das Ausmaß der Operation plant die Chirurgie"
+      },
+      "tr": {
+        "what": "Deriyi bir boşluk ya da organa bağlayan dar kanalın, yani fistül yolunun kontrastlı röntgenle incelenmesi",
+        "how": "Dış ağız temizlenir, ince bir kateter yerleştirilir ve hafif basınçla kontrast verilirken dolum ekrandan izlenir ve iki yönde film çekilir; 15–30 dakika",
+        "when": "Ameliyat veya iltihap sonrası kapanmayan fistül, yaradan akıntı, kanalın bağırsak, eklem ya da kemikle bağlantı şüphesi, kanalın çıkarılacağı ameliyatın planlanması, tedavi sonrası kontrol",
+        "prep": "Genellikle özel hazırlık gerekmez, leğen kemiği bölgesindeki fistüllerde hekim aç gelmeyi ve bağırsak temizliğini isteyebilir; kontrast ve iyot alerjisi bildirilir, inceleme günü ağız merhemle kapatılmaz",
+        "abnormal": "İnceleme kanalın uzunluğunu, yönünü ve dallanmasını, yan ceplerini ve bir boşluk ya da organla bağlantısını gösterir. Filmleri radyolog tanımlar, ameliyatın kapsamını cerrah planlar"
+      },
+      "sr_cyrl": {
+        "what": "Контрастни рендгенски преглед фистулозног канала, уског пута који спаја кожу са шупљином или органом",
+        "how": "Спољашњи отвор се очисти, у њега се уводи танак катетер и под благим притиском се даје контраст, уз праћење пуњења на екрану и снимке у двије пројекције; 15–30 минута",
+        "when": "Фистула која дуго не зараста послије операције или упале, секрет из ране, сумња на везу канала са цријевом, зглобом или кости, планирање операције уклањања канала, контрола послије лијечења",
+        "prep": "Посебна припрема обично није потребна, а код фистула у предјелу карлице љекар може тражити долазак наташте и чишћење цријева; пријавити алергију на контраст и јод и на дан прегледа не стављати масти преко отвора",
+        "abnormal": "Преглед приказује дужину, правац и гранање канала, бочне џепове и то да ли канал комуницира са шупљином или органом. Снимке описује радиолог, а обим операције планира хирург"
+      }
+    }
+  },
+  {
+    "slug": "foreign-body-fluoroscopy-and-x-ray",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Поиск плотного инородного предмета: сначала область просматривают на экране в движении, затем делают снимки",
+        "how": "Пациента ставят или укладывают так, чтобы нужная область попала в поле аппарата, врач короткими включениями осматривает её в разных поворотах и фиксирует снимки минимум в двух проекциях; обычно 10–20 минут",
+        "when": "Проглоченные монета, батарейка, кость или мелкая деталь, вдыхание небольшого предмета, осколок металла или стекла в мягких тканях, травма с загрязнённой раной, контроль после извлечения предмета",
+        "prep": "Подготовка не нужна; снять одежду с металлическими деталями и украшения с исследуемой области, сообщить о возможной беременности, а при проглоченной батарейке обращаться за помощью срочно",
+        "abnormal": "Исследование показывает, виден ли плотный предмет, где он находится и сместился ли со временем, при этом пластик, дерево и тонкое стекло рентген часто не улавливает, поэтому чистый снимок предмет не исключает. Снимки описывает рентгенолог, дальнейшие действия определяет хирург, ЛОР-врач или эндоскопист"
+      },
+      "en": {
+        "what": "A search for a dense foreign object: the area is first viewed live on the screen, then radiographs are taken",
+        "how": "The patient is positioned so that the area of interest is in the field, the doctor scans it in short bursts from different angles and records images in at least two projections; usually 10–20 minutes",
+        "when": "A swallowed coin, battery, bone or small part, an inhaled small object, a metal or glass splinter in soft tissue, injury with a contaminated wound, check after an object has been removed",
+        "prep": "No preparation is needed; remove clothing with metal parts and jewellery from the area and report a possible pregnancy; a swallowed battery requires urgent medical attention",
+        "abnormal": "The study shows whether a dense object is visible, where it lies and whether it has moved, while plastic, wood and thin glass are often invisible on X-ray, so a clear image does not rule an object out. The images are reported by a radiologist and further steps are decided by a surgeon, an ENT doctor or an endoscopist"
+      },
+      "sr": {
+        "what": "Traženje gustog stranog predmeta: predio se prvo pregleda uživo na ekranu, a zatim se prave snimci",
+        "how": "Pacijent se postavi tako da traženi predio uđe u polje aparata, ljekar ga kratkim uključivanjima pregleda iz različitih uglova i bilježi snimke u najmanje dvije projekcije; obično 10–20 minuta",
+        "when": "Progutan novčić, baterija, kost ili sitan dio, udahnut mali predmet, krhotina metala ili stakla u mekim tkivima, povreda sa zaprljanom ranom, kontrola poslije vađenja predmeta",
+        "prep": "Priprema nije potrebna; skinuti odjeću sa metalnim dijelovima i nakit sa pregledanog predjela, prijaviti moguću trudnoću, a kod progutane baterije pomoć potražiti hitno",
+        "abnormal": "Pregled pokazuje da li se gust predmet vidi, gdje se nalazi i da li se pomjerio, dok plastiku, drvo i tanko staklo rendgen često ne prikazuje, pa uredan snimak ne isključuje strano tijelo. Snimke opisuje radiolog, a dalje korake određuje hirurg, otorinolaringolog ili endoskopista"
+      },
+      "de": {
+        "what": "Suche nach einem dichten Fremdkörper: die Region wird zuerst live am Bildschirm betrachtet, anschließend werden Aufnahmen angefertigt",
+        "how": "Der Patient wird so gelagert, dass die gesuchte Region im Feld liegt, die Ärztin betrachtet sie in kurzen Durchleuchtungsstößen aus verschiedenen Winkeln und hält Aufnahmen in mindestens zwei Ebenen fest; meist 10–20 Minuten",
+        "when": "Verschluckte Münze, Batterie, Knochen oder Kleinteil, eingeatmeter kleiner Gegenstand, Metall- oder Glassplitter im Weichteilgewebe, Verletzung mit verschmutzter Wunde, Kontrolle nach Entfernung eines Gegenstands",
+        "prep": "Keine Vorbereitung nötig; Kleidung mit Metallteilen und Schmuck aus der Region ablegen, eine mögliche Schwangerschaft angeben; bei verschluckter Batterie ist sofortige ärztliche Hilfe nötig",
+        "abnormal": "Die Untersuchung zeigt, ob ein dichter Gegenstand sichtbar ist, wo er liegt und ob er gewandert ist; Kunststoff, Holz und dünnes Glas stellen sich im Röntgen oft nicht dar, eine unauffällige Aufnahme schließt einen Fremdkörper daher nicht aus. Den Befund erstellt die Radiologie, das weitere Vorgehen legen Chirurgie, HNO oder Endoskopie fest"
+      },
+      "tr": {
+        "what": "Yoğun bir yabancı cismin aranması: bölge önce ekrandan canlı izlenir, ardından filmleri çekilir",
+        "how": "Hasta aranan bölge cihazın alanına girecek şekilde yerleştirilir, hekim kısa aralıklarla farklı açılardan bakar ve en az iki yönde film kaydeder; genellikle 10–20 dakika",
+        "when": "Yutulan madeni para, pil, kemik ya da küçük parça, solunan ufak cisim, yumuşak dokuda metal veya cam kıymığı, kirli yarayla gelen yaralanma, cisim çıkarıldıktan sonraki kontrol",
+        "prep": "Hazırlık gerekmez; bölgedeki metal parçalı giysiler ve takılar çıkarılır, olası gebelik bildirilir, pil yutulduğunda ise acil olarak yardım alınmalıdır",
+        "abnormal": "İnceleme yoğun cismin görünüp görünmediğini, nerede durduğunu ve yer değiştirip değiştirmediğini gösterir; plastik, tahta ve ince cam röntgende çoğu kez görünmediğinden temiz bir film yabancı cismi dışlamaz. Filmleri radyolog tanımlar, sonraki adımları cerrah, KBB hekimi ya da endoskopi uzmanı belirler"
+      },
+      "sr_cyrl": {
+        "what": "Тражење густог страног предмета: предио се прво прегледа уживо на екрану, а затим се праве снимци",
+        "how": "Пацијент се постави тако да тражени предио уђе у поље апарата, љекар га кратким укључивањима прегледа из различитих углова и биљежи снимке у најмање двије пројекције; обично 10–20 минута",
+        "when": "Прогутан новчић, батерија, кост или ситан дио, удахнут мали предмет, крхотина метала или стакла у меким ткивима, повреда са запрљаном раном, контрола послије вађења предмета",
+        "prep": "Припрема није потребна; скинути одјећу са металним дијеловима и накит са прегледаног предјела, пријавити могућу трудноћу, а код прогутане батерије помоћ потражити хитно",
+        "abnormal": "Преглед показује да ли се густ предмет види, гдје се налази и да ли се помјерио, док пластику, дрво и танко стакло рендген често не приказује, па уредан снимак не искључује страно тијело. Снимке описује радиолог, а даље кораке одређује хирург, оториноларинголог или ендоскописта"
+      }
+    }
+  },
+  {
+    "slug": "foreign-body-localization-in-eye-with-fluoroscopy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Уточнение точного положения плотного инородного тела внутри глаза относительно его оболочек перед извлечением",
+        "how": "После обезболивающих капель на глаз ставят маркер или контактную линзу с метками, взгляд фиксируют в заданную точку и под рентгеновским контролем делают снимки в двух проекциях, по которым рассчитывают глубину и сторону залегания; 20–30 минут",
+        "when": "Подтверждённое или подозреваемое внутриглазное инородное тело после травмы, подготовка к операции по его извлечению, повторная оценка, если предмет мог сместиться, невозможность осмотреть глубокие отделы глаза из-за помутнения сред",
+        "prep": "Подготовка не нужна; прийти по направлению офтальмолога, снять контактные линзы, не давить на повреждённый глаз и сказать об аллергии на обезболивающие капли",
+        "abnormal": "По результату определяют, лежит предмет внутри глаза или в его стенке и как далеко он от роговицы, и это задаёт доступ при операции, а частицы низкой плотности таким способом могут не выявляться. Расчёт и решение об операции делает офтальмолог"
+      },
+      "en": {
+        "what": "Determination of the exact position of a dense foreign body inside the eye in relation to its coats, before removal",
+        "how": "After anaesthetic drops a marker or a contact lens with reference points is placed on the eye, the gaze is fixed and images are taken in two projections under fluoroscopic control, from which the depth and the side of the object are calculated; 20–30 minutes",
+        "when": "A confirmed or suspected intraocular foreign body after injury, preparation for surgical removal, repeat assessment if the object may have moved, inability to inspect the back of the eye because the media are cloudy",
+        "prep": "No preparation is needed; come with an ophthalmologist's referral, remove contact lenses, do not press on the injured eye and report any allergy to anaesthetic drops",
+        "abnormal": "The result shows whether the object lies inside the eye or in its wall and how far it is from the cornea, which determines the surgical approach; low-density particles may escape detection this way. The calculation and the decision about surgery are made by an ophthalmologist"
+      },
+      "sr": {
+        "what": "Određivanje tačnog položaja gustog stranog tijela u oku u odnosu na očne ovojnice, prije vađenja",
+        "how": "Poslije anestetičkih kapi na oko se postavlja marker ili kontaktno sočivo sa oznakama, pogled se fiksira, pa se uz rendgensku kontrolu prave snimci u dvije projekcije na osnovu kojih se računa dubina i strana na kojoj tijelo leži; 20–30 minuta",
+        "when": "Potvrđeno ili sumnjivo strano tijelo u oku poslije povrede, priprema za operaciju vađenja, ponovna procjena ako se predmet mogao pomjeriti, nemogućnost pregleda dubljih dijelova oka zbog zamućenja očnih sredina",
+        "prep": "Priprema nije potrebna; doći sa uputom oftalmologa, skinuti kontaktna sočiva, ne pritiskati povrijeđeno oko i reći za alergiju na anestetičke kapi",
+        "abnormal": "Nalaz pokazuje da li predmet leži u oku ili u njegovom zidu i koliko je udaljen od rožnjače, što određuje pristup u operaciji, dok se čestice male gustine ovako možda neće prikazati. Proračun i odluku o operaciji donosi oftalmolog"
+      },
+      "de": {
+        "what": "Bestimmung der genauen Lage eines dichten Fremdkörpers im Auge im Verhältnis zu den Augenhäuten vor der Entfernung",
+        "how": "Nach Betäubungstropfen wird ein Marker oder eine Kontaktlinse mit Messpunkten aufgesetzt, der Blick fixiert und unter Durchleuchtung werden zwei Aufnahmen angefertigt, aus denen Tiefe und Lage des Körpers berechnet werden; 20–30 Minuten",
+        "when": "Bestätigter oder vermuteter Fremdkörper im Auge nach einer Verletzung, Vorbereitung der operativen Entfernung, erneute Beurteilung bei möglicher Verlagerung, fehlender Einblick in die hinteren Augenabschnitte bei getrübten Medien",
+        "prep": "Keine Vorbereitung nötig; mit Überweisung der Augenheilkunde kommen, Kontaktlinsen ablegen, nicht auf das verletzte Auge drücken und eine Allergie gegen Betäubungstropfen angeben",
+        "abnormal": "Das Ergebnis zeigt, ob der Körper im Augeninneren oder in der Wand liegt und wie weit er von der Hornhaut entfernt ist, was den operativen Zugang bestimmt; Partikel geringer Dichte können so unentdeckt bleiben. Die Berechnung und die Entscheidung über die Operation trifft die Augenheilkunde"
+      },
+      "tr": {
+        "what": "Göz içindeki yoğun yabancı cismin, çıkarılmadan önce göz tabakalarına göre tam yerinin belirlenmesi",
+        "how": "Uyuşturucu damladan sonra göze işaretli bir marker ya da kontakt lens yerleştirilir, bakış sabitlenir ve röntgen eşliğinde iki yönde film çekilerek cismin derinliği ve yönü hesaplanır; 20–30 dakika",
+        "when": "Yaralanma sonrası doğrulanmış ya da şüpheli göz içi yabancı cisim, çıkarma ameliyatına hazırlık, cismin yer değiştirmiş olabileceği durumlarda yeniden değerlendirme, göz ortamları bulanık olduğu için arka bölümlerin görülememesi",
+        "prep": "Hazırlık gerekmez; göz hekiminin sevkiyle gelinir, kontakt lensler çıkarılır, yaralı göze bastırılmaz ve uyuşturucu damla alerjisi bildirilir",
+        "abnormal": "Sonuç cismin göz içinde mi yoksa duvarında mı olduğunu ve korneaya uzaklığını gösterir, bu da ameliyat yolunu belirler; düşük yoğunluklu parçacıklar bu yöntemle saptanmayabilir. Hesaplamayı ve ameliyat kararını göz hekimi verir"
+      },
+      "sr_cyrl": {
+        "what": "Одређивање тачног положаја густог страног тијела у оку у односу на очне овојнице, прије вађења",
+        "how": "Послије анестетичких капи на око се поставља маркер или контактно сочиво са ознакама, поглед се фиксира, па се уз рендгенску контролу праве снимци у двије пројекције на основу којих се рачуна дубина и страна на којој тијело лежи; 20–30 минута",
+        "when": "Потврђено или сумњиво страно тијело у оку послије повреде, припрема за операцију вађења, поновна процјена ако се предмет могао помјерити, немогућност прегледа дубљих дијелова ока због замућења очних средина",
+        "prep": "Припрема није потребна; доћи са упутом офталмолога, скинути контактна сочива, не притискати повријеђено око и рећи за алергију на анестетичке капи",
+        "abnormal": "Налаз показује да ли предмет лежи у оку или у његовом зиду и колико је удаљен од рожњаче, што одређује приступ у операцији, док се честице мале густине овако можда неће приказати. Прорачун и одлуку о операцији доноси офталмолог"
+      }
+    }
+  },
+  {
+    "slug": "foreign-body-localization-x-ray-except-eye",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Определение точного места и глубины залегания плотного инородного тела в любой области тела, кроме глаза",
+        "how": "На кожу рядом с предполагаемым местом крепят рентгеноконтрастные метки и делают снимки минимум в двух взаимно перпендикулярных проекциях, по которым рассчитывают глубину и отношение предмета к костям, суставам и крупным сосудам; 15–30 минут",
+        "when": "Осколок металла или стекла в мягких тканях конечности, игла или дробь, инородное тело в грудной или брюшной полости после травмы, подготовка к извлечению, подозрение на смещение предмета после давней травмы",
+        "prep": "Подготовка не нужна; повязку самостоятельно не снимать, прийти с описанием обстоятельств травмы, убрать металлические предметы с исследуемой области, сообщить о возможной беременности",
+        "abnormal": "Исследование показывает, где именно лежит предмет и насколько он близок к важным структурам, при этом дерево, пластик и часть стеклянных осколков рентген не отображает и для них применяют УЗИ или КТ. Снимки описывает рентгенолог, а способ и срок удаления выбирает хирург"
+      },
+      "en": {
+        "what": "Determination of the exact site and depth of a dense foreign body anywhere in the body except the eye",
+        "how": "Radiopaque markers are taped to the skin next to the suspected site and images are taken in at least two perpendicular projections, from which the depth and the relation of the object to bones, joints and large vessels are calculated; 15–30 minutes",
+        "when": "A metal or glass splinter in the soft tissue of a limb, a needle or pellet, a foreign body in the chest or abdomen after injury, preparation for removal, suspected migration of an object after an old injury",
+        "prep": "No preparation is needed; do not remove the dressing yourself, bring an account of how the injury happened, take metal objects off the area and report a possible pregnancy",
+        "abnormal": "The study shows exactly where the object lies and how close it is to important structures; wood, plastic and some glass fragments are not seen on X-ray and ultrasound or CT is used for them. The images are reported by a radiologist and the method and timing of removal are chosen by a surgeon"
+      },
+      "sr": {
+        "what": "Određivanje tačnog mjesta i dubine na kojoj leži gusto strano tijelo u bilo kojem dijelu tijela osim oka",
+        "how": "Na kožu pored pretpostavljenog mjesta lijepe se rendgenski vidljive oznake i prave se snimci u najmanje dvije međusobno okomite projekcije, po kojima se računa dubina i odnos predmeta prema kostima, zglobovima i velikim krvnim sudovima; 15–30 minuta",
+        "when": "Krhotina metala ili stakla u mekim tkivima ekstremiteta, igla ili sačma, strano tijelo u grudnoj ili trbušnoj duplji poslije povrede, priprema za vađenje, sumnja na pomjeranje predmeta poslije starije povrede",
+        "prep": "Priprema nije potrebna; zavoj ne skidati sam, ponijeti opis okolnosti povrede, ukloniti metalne predmete sa pregledanog predjela i prijaviti moguću trudnoću",
+        "abnormal": "Pregled pokazuje gdje tačno predmet leži i koliko je blizu važnim strukturama, dok drvo, plastiku i dio staklenih krhotina rendgen ne prikazuje, pa se za njih koriste ultrazvuk ili skener. Snimke opisuje radiolog, a način i vrijeme vađenja bira hirurg"
+      },
+      "de": {
+        "what": "Bestimmung des genauen Orts und der Tiefe eines dichten Fremdkörpers in jeder Körperregion außer dem Auge",
+        "how": "Röntgendichte Marker werden neben der vermuteten Stelle auf die Haut geklebt und es werden Aufnahmen in mindestens zwei senkrecht zueinander stehenden Ebenen angefertigt, aus denen Tiefe und Lage zu Knochen, Gelenken und großen Gefäßen berechnet werden; 15–30 Minuten",
+        "when": "Metall- oder Glassplitter im Weichteilgewebe einer Extremität, Nadel oder Schrot, Fremdkörper in Brust- oder Bauchraum nach einer Verletzung, Vorbereitung der Entfernung, Verdacht auf Wanderung eines Gegenstands nach einer älteren Verletzung",
+        "prep": "Keine Vorbereitung nötig; den Verband nicht selbst abnehmen, den Unfallhergang schildern, Metallgegenstände aus der Region entfernen und eine mögliche Schwangerschaft angeben",
+        "abnormal": "Die Untersuchung zeigt, wo der Gegenstand genau liegt und wie nahe er wichtigen Strukturen kommt; Holz, Kunststoff und ein Teil der Glassplitter stellen sich im Röntgen nicht dar, dafür werden Ultraschall oder CT genutzt. Den Befund erstellt die Radiologie, Methode und Zeitpunkt der Entfernung wählt die Chirurgie"
+      },
+      "tr": {
+        "what": "Göz dışında vücudun herhangi bir bölgesinde yoğun bir yabancı cismin tam yerinin ve derinliğinin belirlenmesi",
+        "how": "Tahmin edilen yerin yanına deriye röntgende görünen işaretler yapıştırılır ve en az iki dik yönde film çekilerek cismin derinliği ile kemik, eklem ve büyük damarlara göre konumu hesaplanır; 15–30 dakika",
+        "when": "Kol ya da bacağın yumuşak dokusunda metal veya cam kıymığı, iğne ya da saçma, yaralanma sonrası göğüs veya karın boşluğunda yabancı cisim, çıkarma işlemine hazırlık, eski yaralanmadan sonra cismin yer değiştirdiği şüphesi",
+        "prep": "Hazırlık gerekmez; pansuman kendi başına açılmaz, yaralanmanın nasıl olduğu anlatılır, bölgedeki metal eşyalar çıkarılır ve olası gebelik bildirilir",
+        "abnormal": "İnceleme cismin tam olarak nerede durduğunu ve önemli yapılara ne kadar yakın olduğunu gösterir; tahta, plastik ve cam kıymıklarının bir bölümü röntgende görünmediğinden bunlar için ultrason ya da tomografi kullanılır. Filmleri radyolog tanımlar, çıkarma yöntemi ve zamanını cerrah seçer"
+      },
+      "sr_cyrl": {
+        "what": "Одређивање тачног мјеста и дубине на којој лежи густо страно тијело у било којем дијелу тијела осим ока",
+        "how": "На кожу поред претпостављеног мјеста лијепе се рендгенски видљиве ознаке и праве се снимци у најмање двије међусобно окомите пројекције, по којима се рачуна дубина и однос предмета према костима, зглобовима и великим крвним судовима; 15–30 минута",
+        "when": "Крхотина метала или стакла у меким ткивима екстремитета, игла или сачма, страно тијело у грудној или трбушној дупљи послије повреде, припрема за вађење, сумња на помјерање предмета послије старије повреде",
+        "prep": "Припрема није потребна; завој не скидати сам, понијети опис околности повреде, уклонити металне предмете са прегледаног предјела и пријавити могућу трудноћу",
+        "abnormal": "Преглед показује гдје тачно предмет лежи и колико је близу важним структурама, док дрво, пластику и дио стаклених крхотина рендген не приказује, па се за њих користе ултразвук или скенер. Снимке описује радиолог, а начин и вријеме вађења бира хирург"
+      }
+    }
+  },
+  {
+    "slug": "gastroduodenum-x-ray-through-stoma",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контрастное исследование желудка и двенадцатиперстной кишки, при котором контраст подают не через рот, а через выведенную на живот стому",
+        "how": "Через установленную трубку шприцем медленно вводят контраст, на экране следят, как он заполняет желудок и уходит в двенадцатиперстную кишку, и делают снимки в нескольких положениях тела; 20–30 минут",
+        "when": "Проверка положения и проходимости гастростомической трубки, подозрение на подтекание содержимого вокруг стомы, оценка опорожнения желудка при зондовом питании, контроль после операции на желудке, подготовка к закрытию стомы",
+        "prep": "Несколько часов до исследования не вводить питание через трубку, по указанию лечащего врача; взять с собой фиксирующие пластыри и шприц для промывания, сообщить о недавней операции",
+        "abnormal": "Исследование показывает, где стоит конец трубки, свободно ли контраст уходит в кишку и не выходит ли он за пределы желудка. Снимки описывает рентгенолог, а решение о замене трубки или операции принимает хирург"
+      },
+      "en": {
+        "what": "A contrast study of the stomach and duodenum in which contrast is given not by mouth but through a stoma brought out onto the abdominal wall",
+        "how": "Contrast is slowly injected with a syringe through the existing tube, its filling of the stomach and passage into the duodenum is followed on the screen and images are taken in several positions; 20–30 minutes",
+        "when": "Checking the position and patency of a gastrostomy tube, suspected leakage of contents around the stoma, assessment of gastric emptying during tube feeding, follow-up after stomach surgery, preparation for closing the stoma",
+        "prep": "No feeding through the tube for several hours before the study, as instructed by the treating doctor; bring fixation dressings and a flushing syringe and report any recent surgery",
+        "abnormal": "The study shows where the tip of the tube sits, whether contrast passes freely into the bowel and whether any of it escapes outside the stomach. The images are reported by a radiologist, while the decision about replacing the tube or operating is made by a surgeon"
+      },
+      "sr": {
+        "what": "Kontrastni pregled želuca i dvanaestopalačnog crijeva kod kojeg se kontrast ne daje na usta, nego kroz stomu izvedenu na trbušnom zidu",
+        "how": "Kroz postavljenu cjevčicu špricem se polako ubacuje kontrast, na ekranu se prati kako puni želudac i prelazi u dvanaestopalačno crijevo, uz snimke u nekoliko položaja tijela; 20–30 minuta",
+        "when": "Provjera položaja i prohodnosti gastrostomske cjevčice, sumnja na curenje sadržaja oko stome, procjena pražnjenja želuca kod hranjenja na sondu, kontrola poslije operacije na želucu, priprema za zatvaranje stome",
+        "prep": "Nekoliko sati prije pregleda ne davati hranu kroz cjevčicu, po uputstvu ljekara koji vodi liječenje; ponijeti flastere za fiksiranje i špric za ispiranje i reći za skorašnju operaciju",
+        "abnormal": "Pregled pokazuje gdje stoji vrh cjevčice, da li kontrast slobodno prelazi u crijevo i da li izlazi izvan želuca. Snimke opisuje radiolog, a odluku o zamjeni cjevčice ili operaciji donosi hirurg"
+      },
+      "de": {
+        "what": "Kontrastmitteluntersuchung von Magen und Zwölffingerdarm, bei der das Kontrastmittel nicht über den Mund, sondern über ein auf die Bauchdecke ausgeleitetes Stoma gegeben wird",
+        "how": "Über die liegende Sonde wird mit einer Spritze langsam Kontrastmittel eingebracht, am Bildschirm wird die Füllung des Magens und der Übertritt in den Zwölffingerdarm verfolgt und es werden Aufnahmen in mehreren Körperlagen gemacht; 20–30 Minuten",
+        "when": "Kontrolle von Lage und Durchgängigkeit der Ernährungssonde, Verdacht auf Austritt von Mageninhalt um das Stoma, Beurteilung der Magenentleerung bei Sondenernährung, Kontrolle nach Magenoperationen, Vorbereitung des Stomaverschlusses",
+        "prep": "Einige Stunden vor der Untersuchung keine Nahrung über die Sonde geben, nach Anweisung der behandelnden Ärztin; Fixierpflaster und eine Spülspritze mitbringen und kürzliche Operationen angeben",
+        "abnormal": "Die Untersuchung zeigt, wo die Sondenspitze liegt, ob Kontrastmittel frei in den Darm übertritt und ob etwas davon aus dem Magen austritt. Den Befund erstellt die Radiologie, über Sondenwechsel oder Operation entscheidet die Chirurgie"
+      },
+      "tr": {
+        "what": "Kontrastın ağızdan değil, karın duvarına ağızlaştırılmış stomadan verildiği mide ve onikiparmak bağırsağı incelemesi",
+        "how": "Takılı tüpten enjektörle yavaşça kontrast verilir, midenin dolması ve onikiparmak bağırsağına geçişi ekrandan izlenir ve birkaç pozisyonda film çekilir; 20–30 dakika",
+        "when": "Beslenme tüpünün yerinin ve açıklığının kontrolü, stoma çevresinden içerik sızdığı şüphesi, tüple beslenmede mide boşalmasının değerlendirilmesi, mide ameliyatı sonrası kontrol, stomanın kapatılmasına hazırlık",
+        "prep": "Tedaviyi yürüten hekimin talimatına göre incelemeden birkaç saat önce tüpten besin verilmez; sabitleme flasterleri ve yıkama enjektörü getirilir, yakın zamanda geçirilen ameliyat bildirilir",
+        "abnormal": "İnceleme tüp ucunun nerede durduğunu, kontrastın bağırsağa rahat geçip geçmediğini ve mide dışına sızıp sızmadığını gösterir. Filmleri radyolog tanımlar, tüpün değiştirilmesi ya da ameliyat kararını cerrah verir"
+      },
+      "sr_cyrl": {
+        "what": "Контрастни преглед желуца и дванаестопалачног цријева код којег се контраст не даје на уста, него кроз стому изведену на трбушном зиду",
+        "how": "Кроз постављену цјевчицу шприцем се полако убацује контраст, на екрану се прати како пуни желудац и прелази у дванаестопалачно цријево, уз снимке у неколико положаја тијела; 20–30 минута",
+        "when": "Провјера положаја и проходности гастростомске цјевчице, сумња на цурење садржаја око стоме, процјена пражњења желуца код храњења на сонду, контрола послије операције на желуцу, припрема за затварање стоме",
+        "prep": "Неколико сати прије прегледа не давати храну кроз цјевчицу, по упутству љекара који води лијечење; понијети фластере за фиксирање и шприц за испирање и рећи за скорашњу операцију",
+        "abnormal": "Преглед показује гдје стоји врх цјевчице, да ли контраст слободно прелази у цријево и да ли излази изван желуца. Снимке описује радиолог, а одлуку о замјени цјевчице или операцији доноси хирург"
+      }
+    }
+  },
+  {
+    "slug": "heart-fluoroscopy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Наблюдение за тенью сердца и крупных сосудов в движении на рентгеновском экране",
+        "how": "Пациент стоит за экраном, врач короткими включениями просматривает сердце в прямой и косых проекциях, просит задержать дыхание и повернуться, при необходимости сохраняя отдельные кадры; обычно несколько минут",
+        "when": "Оценка подвижности и положения механического протеза клапана, поиск обызвествлений в клапанах и околосердечной сумке, оценка подвижности диафрагмы, контроль положения электродов кардиостимулятора и катетеров",
+        "prep": "Подготовка не нужна; раздеться до пояса, снять цепочки, сообщить о возможной беременности",
+        "abnormal": "Исследование показывает размеры и пульсацию сердечной тени, подвижность створок протеза и плотные включения, тогда как строение клапанов и кровоток в них видны только при ультразвуке сердца. Результат трактует кардиолог вместе с остальными обследованиями"
+      },
+      "en": {
+        "what": "Observation of the moving shadow of the heart and great vessels on a fluoroscopy screen",
+        "how": "The patient stands behind the screen while the doctor views the heart in short bursts in frontal and oblique projections, asking for breath-holds and turns, and saves individual frames if needed; usually a few minutes",
+        "when": "Assessment of the movement and position of a mechanical valve prosthesis, search for calcifications in the valves and the pericardium, assessment of diaphragm movement, checking the position of pacemaker leads and catheters",
+        "prep": "No preparation is needed; undress to the waist, remove necklaces and report a possible pregnancy",
+        "abnormal": "The study shows the size and pulsation of the cardiac shadow, the motion of prosthetic leaflets and dense deposits, while the structure of the valves and the blood flow through them are only seen on a heart ultrasound. The result is interpreted by a cardiologist together with the other findings"
+      },
+      "sr": {
+        "what": "Praćenje sjenke srca i velikih krvnih sudova u pokretu na rendgenskom ekranu",
+        "how": "Pacijent stoji iza ekrana, a ljekar kratkim uključivanjima gleda srce u prednjoj i kosim projekcijama, traži zadržavanje daha i okretanje i po potrebi bilježi pojedine kadrove; obično nekoliko minuta",
+        "when": "Procjena pokretljivosti i položaja mehaničke vještačke valvule, traženje naslaga kreča na zaliscima i srčanoj maramici, procjena pokretljivosti dijafragme, provjera položaja elektroda pejsmejkera i katetera",
+        "prep": "Priprema nije potrebna; skinuti odjeću do pojasa, ukloniti lančiće i prijaviti moguću trudnoću",
+        "abnormal": "Pregled prikazuje veličinu i pulsiranje srčane sjenke, pokretljivost listića vještačke valvule i guste naslage, dok se građa zalistaka i protok kroz njih vide samo na ultrazvuku srca. Nalaz tumači kardiolog zajedno sa ostalim pretragama"
+      },
+      "de": {
+        "what": "Beobachtung des bewegten Herzschattens und der großen Gefäße am Durchleuchtungsbildschirm",
+        "how": "Der Patient steht hinter dem Schirm, die Ärztin betrachtet das Herz in kurzen Durchleuchtungsstößen in frontaler und schräger Projektion, lässt die Luft anhalten und sich drehen und speichert bei Bedarf einzelne Bilder; meist wenige Minuten",
+        "when": "Beurteilung von Beweglichkeit und Lage einer mechanischen Herzklappenprothese, Suche nach Verkalkungen an Klappen und Herzbeutel, Beurteilung der Zwerchfellbeweglichkeit, Lagekontrolle von Schrittmachersonden und Kathetern",
+        "prep": "Keine Vorbereitung nötig; Oberkörper frei machen, Ketten ablegen und eine mögliche Schwangerschaft angeben",
+        "abnormal": "Die Untersuchung zeigt Größe und Pulsation des Herzschattens, die Bewegung der Prothesenflügel und dichte Ablagerungen, während Klappenaufbau und Blutfluss nur im Herzultraschall sichtbar werden. Das Ergebnis deutet die Kardiologie zusammen mit den übrigen Befunden"
+      },
+      "tr": {
+        "what": "Kalp ve büyük damar gölgesinin floroskopi ekranında hareket halinde izlenmesi",
+        "how": "Hasta ekranın arkasında durur, hekim kısa aralıklarla kalbi ön ve eğik yönlerden izler, nefes tutmasını ve dönmesini ister, gerekirse tek tek kareler kaydeder; genellikle birkaç dakika",
+        "when": "Mekanik kapak protezinin hareketi ve konumunun değerlendirilmesi, kapaklarda ve kalp zarında kireçlenme aranması, diyafram hareketinin değerlendirilmesi, kalp pili elektrotları ve kateterlerin yerinin kontrolü",
+        "prep": "Hazırlık gerekmez; bel üstü soyunulur, kolyeler çıkarılır, olası gebelik bildirilir",
+        "abnormal": "İnceleme kalp gölgesinin boyutunu ve atımını, protez kapakçıklarının hareketini ve yoğun birikimleri gösterir; kapakların yapısı ve içinden geçen kan akımı ise yalnızca kalp ultrasonunda görülür. Sonucu kardiyolog diğer tetkiklerle birlikte yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Праћење сјенке срца и великих крвних судова у покрету на рендгенском екрану",
+        "how": "Пацијент стоји иза екрана, а љекар кратким укључивањима гледа срце у предњој и косим пројекцијама, тражи задржавање даха и окретање и по потреби биљежи поједине кадрове; обично неколико минута",
+        "when": "Процјена покретљивости и положаја механичке вјештачке валвуле, тражење наслага креча на залисцима и срчаној марамици, процјена покретљивости дијафрагме, провјера положаја електрода пејсмејкера и катетера",
+        "prep": "Припрема није потребна; скинути одјећу до појаса, уклонити ланчиће и пријавити могућу трудноћу",
+        "abnormal": "Преглед приказује величину и пулсирање срчане сјенке, покретљивост листића вјештачке валвуле и густе наслаге, док се грађа залистака и проток кроз њих виде само на ултразвуку срца. Налаз тумачи кардиолог заједно са осталим претрагама"
+      }
+    }
+  },
+  {
+    "slug": "hypotonic-duodenography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Рентгеновское исследование двенадцатиперстной кишки в расслабленном состоянии, когда её на время лишают сократительных движений, чтобы расправить и рассмотреть стенки",
+        "how": "Контраст дают выпить или подают через тонкий зонд, перед этим вводят препарат, временно расслабляющий кишку, часто добавляют воздух и делают снимки в разных положениях; 30–45 минут, зонд может вызывать позывы на рвоту",
+        "when": "Упорная боль в верхней части живота, подозрение на сужение или сдавление кишки извне, оценка подковы кишки при болезнях поджелудочной железы и желчных путей, уточнение изменений, найденных другими методами",
+        "prep": "Натощак, не есть и не пить с вечера; заранее сообщить о глаукоме, затруднённом мочеиспускании и болезнях сердца, из-за которых расслабляющий препарат может не подойти",
+        "abnormal": "Исследование показывает ширину и контуры кишки, развёрнутость её подковы и вдавления от соседних органов, но природу изменений уточняют уже эндоскопией, УЗИ или КТ. Снимки описывает рентгенолог, тактику определяет гастроэнтеролог или хирург"
+      },
+      "en": {
+        "what": "An X-ray study of the duodenum in a relaxed state, in which its contractions are temporarily switched off so that the walls unfold and can be examined",
+        "how": "Contrast is drunk or delivered through a thin tube after a drug that temporarily relaxes the bowel is given, air is often added and images are taken in different positions; 30–45 minutes, the tube may provoke retching",
+        "when": "Persistent upper abdominal pain, suspected narrowing or external compression of the duodenum, assessment of the duodenal loop in diseases of the pancreas and bile ducts, clarification of changes found by other methods",
+        "prep": "Nothing to eat or drink from the evening before; report glaucoma, difficulty passing urine and heart conditions in advance, as the relaxing drug may not be suitable",
+        "abnormal": "The study shows the width and contours of the bowel, how far its loop is unfolded and impressions from neighbouring organs, while the nature of any change is clarified by endoscopy, ultrasound or CT. The images are reported by a radiologist and management is decided by a gastroenterologist or surgeon"
+      },
+      "sr": {
+        "what": "Rendgenski pregled dvanaestopalačnog crijeva u opuštenom stanju, kada mu se privremeno isključe pokreti da bi se zidovi razvili i pregledali",
+        "how": "Kontrast se popije ili daje kroz tanku sondu, a prije toga se primi lijek koji privremeno opušta crijevo, često se dodaje i vazduh, pa se prave snimci u različitim položajima; 30–45 minuta, a sonda može izazvati nagon na povraćanje",
+        "when": "Uporan bol u gornjem dijelu trbuha, sumnja na suženje ili pritisak na crijevo spolja, procjena potkovice crijeva kod bolesti gušterače i žučnih puteva, razjašnjenje promjena nađenih drugim metodama",
+        "prep": "Natašte, bez jela i pića od prethodne večeri; unaprijed reći za glaukom, otežano mokrenje i bolesti srca, zbog kojih lijek za opuštanje možda ne odgovara",
+        "abnormal": "Pregled prikazuje širinu i obrise crijeva, razvijenost njegove potkovice i utiskivanja susjednih organa, dok se priroda promjene razjašnjava endoskopijom, ultrazvukom ili skenerom. Snimke opisuje radiolog, a dalju taktiku određuje gastroenterolog ili hirurg"
+      },
+      "de": {
+        "what": "Röntgenuntersuchung des Zwölffingerdarms im entspannten Zustand, bei der seine Bewegungen vorübergehend ausgeschaltet werden, damit sich die Wände entfalten und beurteilen lassen",
+        "how": "Das Kontrastmittel wird getrunken oder über eine dünne Sonde gegeben, zuvor wird ein Medikament verabreicht, das den Darm vorübergehend ruhigstellt, häufig wird Luft ergänzt und es werden Aufnahmen in verschiedenen Lagen gemacht; 30–45 Minuten, die Sonde kann Würgereiz auslösen",
+        "when": "Anhaltende Oberbauchschmerzen, Verdacht auf Engstelle oder Druck von außen auf den Zwölffingerdarm, Beurteilung der Duodenalschlinge bei Erkrankungen von Bauchspeicheldrüse und Gallenwegen, Abklärung von Veränderungen aus anderen Untersuchungen",
+        "prep": "Nüchtern, ab dem Vorabend nichts essen und trinken; Grüner Star, Blasenentleerungsstörungen und Herzerkrankungen vorher angeben, da das entspannende Medikament dann möglicherweise nicht infrage kommt",
+        "abnormal": "Die Untersuchung zeigt Weite und Konturen des Darms, die Entfaltung der Schlinge und Eindellungen durch Nachbarorgane, die Ursache einer Veränderung klären Endoskopie, Ultraschall oder CT. Den Befund erstellt die Radiologie, das Vorgehen legen Gastroenterologie oder Chirurgie fest"
+      },
+      "tr": {
+        "what": "Duvarların açılıp incelenebilmesi için kasılmaları geçici olarak durdurulan onikiparmak bağırsağının gevşemiş haldeki röntgen incelemesi",
+        "how": "Bağırsağı geçici olarak gevşeten ilaç verildikten sonra kontrast içirilir ya da ince sondayla verilir, çoğu kez hava da eklenir ve farklı pozisyonlarda film çekilir; 30–45 dakika, sonda öğürme hissi yaratabilir",
+        "when": "İnatçı üst karın ağrısı, bağırsakta darlık ya da dışarıdan bası şüphesi, pankreas ve safra yolu hastalıklarında bağırsak kıvrımının değerlendirilmesi, başka yöntemlerle bulunan değişikliklerin netleştirilmesi",
+        "prep": "Aç karnına, önceki akşamdan sonra yiyecek içecek alınmaz; glokom, idrar yapma güçlüğü ve kalp hastalıkları önceden bildirilir, çünkü gevşetici ilaç bu durumlarda uygun olmayabilir",
+        "abnormal": "İnceleme bağırsağın genişliğini ve dış hatlarını, kıvrımının ne kadar açıldığını ve komşu organların yaptığı baskıları gösterir; değişikliğin nedeni ise endoskopi, ultrason veya tomografiyle netleşir. Filmleri radyolog tanımlar, izlenecek yolu gastroenterolog ya da cerrah belirler"
+      },
+      "sr_cyrl": {
+        "what": "Рендгенски преглед дванаестопалачног цријева у опуштеном стању, када му се привремено искључе покрети да би се зидови развили и прегледали",
+        "how": "Контраст се попије или даје кроз танку сонду, а прије тога се прими лијек који привремено опушта цријево, често се додаје и ваздух, па се праве снимци у различитим положајима; 30–45 минута, а сонда може изазвати нагон на повраћање",
+        "when": "Упоран бол у горњем дијелу трбуха, сумња на сужење или притисак на цријево споља, процјена потковице цријева код болести гуштераче и жучних путева, разјашњење промјена нађених другим методама",
+        "prep": "Наташте, без јела и пића од претходне вечери; унапријед рећи за глауком, отежано мокрење и болести срца, због којих лијек за опуштање можда не одговара",
+        "abnormal": "Преглед приказује ширину и обрисе цријева, развијеност његове потковице и утискивања сусједних органа, док се природа промјене разјашњава ендоскопијом, ултразвуком или скенером. Снимке описује радиолог, а даљу тактику одређује гастроентеролог или хирург"
+      }
+    }
+  },
+  {
+    "slug": "hysterosalpingography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контрастное рентгеновское исследование полости матки и проходимости маточных труб",
+        "how": "В гинекологическом кресле через канал шейки матки вводят тонкий катетер, медленно подают контраст и делают серию снимков, прослеживая, доходит ли он до концов труб и выходит ли в брюшную полость; 15–30 минут, возможны схваткообразные боли внизу живота",
+        "when": "Обследование при трудностях с зачатием, подозрение на непроходимость труб после воспаления или операции, оценка формы полости матки, подозрение на перегородку или спайки в полости, контроль после операций на трубах",
+        "prep": "Выполняется в первой половине цикла, после окончания менструации и до овуляции, при исключённой беременности и без признаков воспаления половых путей; накануне врач может попросить сдать мазок и опорожнить кишечник, сообщить об аллергии на йод",
+        "abnormal": "Исследование показывает форму полости матки и то, свободно ли контраст проходит по трубам, при этом спазм трубы иногда даёт картину непроходимости там, где её нет. Снимки оценивает гинеколог вместе с остальным обследованием пары"
+      },
+      "en": {
+        "what": "A contrast X-ray study of the uterine cavity and of the patency of the fallopian tubes",
+        "how": "In the gynaecological chair a thin catheter is passed through the cervical canal, contrast is injected slowly and a series of images follows whether it reaches the ends of the tubes and spills into the abdominal cavity; 15–30 minutes, cramping lower abdominal pain is possible",
+        "when": "Work-up for difficulty conceiving, suspected tubal blockage after inflammation or surgery, assessment of the shape of the uterine cavity, suspected septum or adhesions in the cavity, follow-up after tubal surgery",
+        "prep": "Performed in the first half of the cycle, after menstruation has ended and before ovulation, with pregnancy excluded and no signs of genital infection; the doctor may ask for a swab and bowel emptying beforehand, and iodine allergy should be reported",
+        "abnormal": "The study shows the shape of the uterine cavity and whether contrast passes freely along the tubes, while a tubal spasm can mimic a blockage that is not there. The images are assessed by a gynaecologist together with the rest of the couple's work-up"
+      },
+      "sr": {
+        "what": "Kontrastni rendgenski pregled šupljine materice i prohodnosti jajovoda",
+        "how": "U ginekološkoj stolici kroz kanal grlića materice uvodi se tanak kateter, kontrast se polako daje i niz snimaka prati da li stiže do krajeva jajovoda i izlazi u trbušnu duplju; 15–30 minuta, uz moguće grčevite bolove u donjem dijelu trbuha",
+        "when": "Ispitivanje kod teškoća sa začećem, sumnja na neprohodnost jajovoda poslije upale ili operacije, procjena oblika šupljine materice, sumnja na pregradu ili priraslice u šupljini, kontrola poslije operacija na jajovodima",
+        "prep": "Radi se u prvoj polovini ciklusa, poslije prestanka menstruacije i prije ovulacije, uz isključenu trudnoću i bez znakova upale polnih puteva; ljekar može ranije tražiti bris i pražnjenje crijeva, a alergiju na jod treba prijaviti",
+        "abnormal": "Pregled pokazuje oblik šupljine materice i da li kontrast slobodno prolazi kroz jajovode, pri čemu grč jajovoda ponekad oponaša neprohodnost koje nema. Snimke procjenjuje ginekolog zajedno sa ostalim nalazima para"
+      },
+      "de": {
+        "what": "Kontrastmitteluntersuchung der Gebärmutterhöhle und der Durchgängigkeit der Eileiter",
+        "how": "Auf dem gynäkologischen Stuhl wird ein dünner Katheter durch den Gebärmutterhalskanal eingelegt, langsam Kontrastmittel gegeben und in einer Bildserie verfolgt, ob es die Enden der Eileiter erreicht und in die Bauchhöhle übertritt; 15–30 Minuten, krampfartige Unterbauchschmerzen sind möglich",
+        "when": "Abklärung bei unerfülltem Kinderwunsch, Verdacht auf verschlossene Eileiter nach Entzündung oder Operation, Beurteilung der Form der Gebärmutterhöhle, Verdacht auf Septum oder Verwachsungen, Kontrolle nach Eileiteroperationen",
+        "prep": "Wird in der ersten Zyklushälfte durchgeführt, nach dem Ende der Regelblutung und vor dem Eisprung, bei ausgeschlossener Schwangerschaft und ohne Zeichen einer Genitalinfektion; vorab können ein Abstrich und eine Darmentleerung verlangt werden, eine Jodallergie ist anzugeben",
+        "abnormal": "Die Untersuchung zeigt die Form der Gebärmutterhöhle und ob das Kontrastmittel frei durch die Eileiter läuft, wobei ein Eileiterkrampf einen Verschluss vortäuschen kann, der nicht besteht. Die Bilder beurteilt die Gynäkologie zusammen mit den übrigen Befunden des Paares"
+      },
+      "tr": {
+        "what": "Rahim boşluğunun ve tüplerin açıklığının kontrastlı röntgenle incelenmesi",
+        "how": "Jinekolojik masada rahim ağzı kanalından ince bir kateter geçirilir, kontrast yavaşça verilir ve bir dizi filmle tüplerin ucuna ulaşıp karın boşluğuna dökülüp dökülmediği izlenir; 15–30 dakika, alt karında kramp tarzı ağrı olabilir",
+        "when": "Gebe kalmakta güçlük nedeniyle yapılan inceleme, iltihap ya da ameliyat sonrası tüp tıkanıklığı şüphesi, rahim boşluğunun şeklinin değerlendirilmesi, boşlukta perde ya da yapışıklık şüphesi, tüp ameliyatları sonrası kontrol",
+        "prep": "Adet bittikten sonra ve yumurtlamadan önce, döngünün ilk yarısında, gebelik dışlanmış ve genital iltihap bulgusu yokken yapılır; hekim önceden kültür ve bağırsak boşaltımı isteyebilir, iyot alerjisi bildirilmelidir",
+        "abnormal": "İnceleme rahim boşluğunun şeklini ve kontrastın tüplerden serbest geçip geçmediğini gösterir; tüpteki kasılma, aslında olmayan bir tıkanıklık görüntüsü verebilir. Filmleri jinekolog çiftin diğer tetkikleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Контрастни рендгенски преглед шупљине материце и проходности јајовода",
+        "how": "У гинеколошкој столици кроз канал грлића материце уводи се танак катетер, контраст се полако даје и низ снимака прати да ли стиже до крајева јајовода и излази у трбушну дупљу; 15–30 минута, уз могуће грчевите болове у доњем дијелу трбуха",
+        "when": "Испитивање код тешкоћа са зачећем, сумња на непроходност јајовода послије упале или операције, процјена облика шупљине материце, сумња на преграду или прираслице у шупљини, контрола послије операција на јајоводима",
+        "prep": "Ради се у првој половини циклуса, послије престанка менструације и прије овулације, уз искључену трудноћу и без знакова упале полних путева; љекар може раније тражити брис и пражњење цријева, а алергију на јод треба пријавити",
+        "abnormal": "Преглед показује облик шупљине материце и да ли контраст слободно пролази кроз јајоводе, при чему грч јајовода понекад опонаша непроходност које нема. Снимке процјењује гинеколог заједно са осталим налазима пара"
+      }
+    }
+  },
+  {
+    "slug": "infusion-urography-with-descending-cystography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Рентгеновское исследование почек, мочеточников и мочевого пузыря, при котором контраст вводят в вену капельно, а завершают снимками заполненного пузыря",
+        "how": "В вену ставят капельницу с разведённым контрастом, затем через заданные промежутки делают серию снимков, прослеживая выделение почками и ход по мочеточникам, а в конце снимают наполнившийся пузырь, в том числе при мочеиспускании; около часа",
+        "when": "Сниженная функция почек, когда обычная урография даёт слабое контрастирование, расширение чашечно-лоханочной системы, повторяющиеся инфекции мочевых путей, подозрение на обратный заброс мочи в мочеточники, оценка мочевых путей перед операцией",
+        "prep": "Натощак и с очищенным кишечником по указанию клиники; принести свежий анализ на функцию почек, заранее сообщить об аллергии на контраст и йод, о сахарном диабете и принимаемых препаратах",
+        "abnormal": "По снимкам судят о том, как почки выделяют контраст, где он задерживается, какой формы и контуров пузырь и остаётся ли в нём моча после опорожнения. Описание даёт рентгенолог, дальнейшее ведение определяет уролог или нефролог"
+      },
+      "en": {
+        "what": "An X-ray study of the kidneys, ureters and bladder in which contrast is given as an intravenous drip and the series ends with images of the filled bladder",
+        "how": "A drip with diluted contrast is set up, then a series of images is taken at set intervals following excretion by the kidneys and passage down the ureters, and at the end the filled bladder is imaged, including during voiding; about an hour",
+        "when": "Reduced kidney function, when standard urography gives weak contrast, a dilated collecting system, repeated urinary tract infections, suspected backflow of urine into the ureters, assessment of the urinary tract before surgery",
+        "prep": "Fasting and with the bowel emptied as instructed by the clinic; bring a recent kidney function test and report allergy to contrast and iodine, diabetes and the medicines you take",
+        "abnormal": "The images show how the kidneys excrete contrast, where it is held up, the shape and contours of the bladder and whether urine remains after voiding. The report is written by a radiologist and further management is decided by a urologist or nephrologist"
+      },
+      "sr": {
+        "what": "Rendgenski pregled bubrega, mokraćovoda i mokraćne bešike kod kojeg se kontrast daje infuzijom u venu, a završava se snimcima napunjene bešike",
+        "how": "Postavi se infuzija sa razrijeđenim kontrastom, zatim se u zadatim razmacima pravi niz snimaka koji prate izlučivanje bubrega i prolaz niz mokraćovode, a na kraju se snima napunjena bešika, između ostalog i tokom mokrenja; oko sat vremena",
+        "when": "Oslabljena funkcija bubrega kada obična urografija daje slabo kontrastiranje, proširen kanalni sistem bubrega, ponavljane infekcije mokraćnih puteva, sumnja na vraćanje mokraće u mokraćovode, procjena mokraćnih puteva prije operacije",
+        "prep": "Natašte i sa ispražnjenim crijevima po uputstvu klinike; ponijeti svježu analizu bubrežne funkcije i unaprijed reći za alergiju na kontrast i jod, za šećernu bolest i za lijekove koje uzimate",
+        "abnormal": "Po snimcima se procjenjuje kako bubrezi izlučuju kontrast, gdje se on zadržava, kakvog su oblika i obrisa bešika i da li u njoj ostaje mokraća poslije pražnjenja. Opis daje radiolog, a dalje vođenje određuje urolog ili nefrolog"
+      },
+      "de": {
+        "what": "Röntgenuntersuchung von Nieren, Harnleitern und Harnblase, bei der das Kontrastmittel als Infusion gegeben wird und die Serie mit Aufnahmen der gefüllten Blase endet",
+        "how": "Es wird eine Infusion mit verdünntem Kontrastmittel angelegt, danach entsteht in festgelegten Abständen eine Bildserie, die Ausscheidung durch die Nieren und Passage durch die Harnleiter verfolgt; am Ende wird die gefüllte Blase aufgenommen, auch während des Wasserlassens; etwa eine Stunde",
+        "when": "Eingeschränkte Nierenfunktion, wenn die übliche Urographie nur schwach kontrastiert, erweitertes Nierenhohlsystem, wiederholte Harnwegsinfekte, Verdacht auf Rückfluss von Urin in die Harnleiter, Beurteilung der Harnwege vor einer Operation",
+        "prep": "Nüchtern und mit entleertem Darm nach Vorgabe der Klinik; einen aktuellen Nierenwert mitbringen und Allergien gegen Kontrastmittel und Jod, Diabetes sowie eingenommene Medikamente angeben",
+        "abnormal": "Die Aufnahmen zeigen, wie die Nieren das Kontrastmittel ausscheiden, wo es sich staut, welche Form und Kontur die Blase hat und ob nach dem Wasserlassen Restharn bleibt. Den Befund erstellt die Radiologie, das weitere Vorgehen legen Urologie oder Nephrologie fest"
+      },
+      "tr": {
+        "what": "Kontrastın damardan serum yoluyla verildiği, serinin dolmuş mesanenin filmleriyle tamamlandığı böbrek, idrar kanalları ve mesane incelemesi",
+        "how": "Damara seyreltilmiş kontrast içeren serum takılır, ardından belirli aralıklarla çekilen filmlerle böbreklerin boşaltımı ve kanallardan geçiş izlenir, sonunda dolmuş mesane, idrar yaparken de olmak üzere görüntülenir; yaklaşık bir saat",
+        "when": "Olağan ürografinin zayıf kontrast verdiği azalmış böbrek işlevi, böbrek toplayıcı sisteminde genişleme, tekrarlayan idrar yolu enfeksiyonları, idrarın kanallara geri kaçtığı şüphesi, ameliyat öncesi idrar yollarının değerlendirilmesi",
+        "prep": "Kliniğin talimatına göre aç karnına ve bağırsaklar boşaltılmış olarak gelinir; güncel böbrek işlev tahlili getirilir, kontrast ve iyot alerjisi, şeker hastalığı ve kullanılan ilaçlar önceden bildirilir",
+        "abnormal": "Filmler böbreklerin kontrastı nasıl attığını, nerede biriktiğini, mesanenin şekil ve dış hatlarını ve boşaltımdan sonra idrar kalıp kalmadığını gösterir. Tanımlamayı radyolog yapar, sonraki adımları üroloji ya da nefroloji uzmanı belirler"
+      },
+      "sr_cyrl": {
+        "what": "Рендгенски преглед бубрега, мокраћовода и мокраћне бешике код којег се контраст даје инфузијом у вену, а завршава се снимцима напуњене бешике",
+        "how": "Постави се инфузија са разријеђеним контрастом, затим се у задатим размацима прави низ снимака који прате излучивање бубрега и пролаз низ мокраћоводе, а на крају се снима напуњена бешика, између осталог и током мокрења; око сат времена",
+        "when": "Ослабљена функција бубрега када обична урографија даје слабо контрастирање, проширен канални систем бубрега, понављане инфекције мокраћних путева, сумња на враћање мокраће у мокраћоводе, процјена мокраћних путева прије операције",
+        "prep": "Наташте и са испражњеним цријевима по упутству клинике; понијети свјежу анализу бубрежне функције и унапријед рећи за алергију на контраст и јод, за шећерну болест и за лијекове које узимате",
+        "abnormal": "По снимцима се процјењује како бубрези излучују контраст, гдје се он задржава, каквог су облика и обриса бешика и да ли у њој остаје мокраћа послије пражњења. Опис даје радиолог, а даље вођење одређује уролог или нефролог"
+      }
+    }
+  },
+  {
+    "slug": "intestinal-barium-passage",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Наблюдение за продвижением бариевой взвеси по тонкой кишке с повторными снимками через заданные промежутки времени",
+        "how": "Пациент выпивает контраст, первые снимки делают через короткие промежутки, затем раз в несколько часов, пока взвесь не дойдёт до толстой кишки, между сериями можно ждать в клинике; всё исследование растянуто на несколько часов",
+        "when": "Боль в животе и вздутие неясного происхождения, подозрение на частичное препятствие или сужение тонкой кишки, хроническая диарея и потеря веса, контроль после операции на кишке, оценка скорости прохождения пищи",
+        "prep": "Натощак, последний приём пищи накануне вечером, по указанию клиники за день до исследования еда без клетчатки; на этот день не планировать других дел, так как снимки повторяют в течение нескольких часов",
+        "abnormal": "Исследование показывает ширину петель, скорость продвижения взвеси и места, где она задерживается или проходит с трудом. Снимки описывает рентгенолог, а нужны ли КТ, эндоскопия или операция, решает гастроэнтеролог или хирург"
+      },
+      "en": {
+        "what": "Follow-up of barium suspension as it travels through the small bowel, with repeat images at set intervals",
+        "how": "The patient drinks the contrast, the first images are taken at short intervals and then every few hours until the suspension reaches the large bowel, with waiting time at the clinic in between; the whole study spreads over several hours",
+        "when": "Abdominal pain and bloating of unclear origin, suspected partial obstruction or narrowing of the small bowel, chronic diarrhoea and weight loss, follow-up after bowel surgery, assessment of transit time",
+        "prep": "Fasting, with the last meal the evening before and a low-fibre diet the previous day if the clinic asks for it; plan nothing else for that day, as the images are repeated over several hours",
+        "abnormal": "The study shows the width of the bowel loops, how fast the suspension moves and the places where it is held up or passes with difficulty. The images are reported by a radiologist, while a gastroenterologist or surgeon decides whether CT, endoscopy or surgery is needed"
+      },
+      "sr": {
+        "what": "Praćenje kretanja barijumske suspenzije kroz tanko crijevo, uz ponovljene snimke u zadatim vremenskim razmacima",
+        "how": "Pacijent popije kontrast, prvi snimci se prave u kratkim razmacima, a zatim na nekoliko sati dok suspenzija ne stigne do debelog crijeva, uz čekanje u klinici između serija; cijeli pregled se razvlači na nekoliko sati",
+        "when": "Bol u trbuhu i nadutost nejasnog porijekla, sumnja na djelimičnu prepreku ili suženje tankog crijeva, hronični proliv i gubitak težine, kontrola poslije operacije na crijevu, procjena brzine prolaska hrane",
+        "prep": "Natašte, posljednji obrok prethodne večeri, a po uputstvu klinike dan ranije ishrana bez vlakana; za taj dan ne planirati druge obaveze jer se snimci ponavljaju tokom nekoliko sati",
+        "abnormal": "Pregled pokazuje širinu crijevnih vijuga, brzinu kretanja suspenzije i mjesta na kojima se ona zadržava ili teško prolazi. Snimke opisuje radiolog, a da li su potrebni skener, endoskopija ili operacija odlučuje gastroenterolog ili hirurg"
+      },
+      "de": {
+        "what": "Verfolgung der Bariumsuspension auf ihrem Weg durch den Dünndarm mit wiederholten Aufnahmen in festgelegten Abständen",
+        "how": "Der Patient trinkt das Kontrastmittel, die ersten Aufnahmen folgen in kurzen Abständen, danach alle paar Stunden, bis die Suspension den Dickdarm erreicht; dazwischen wird in der Klinik gewartet, insgesamt zieht sich die Untersuchung über mehrere Stunden",
+        "when": "Bauchschmerzen und Blähungen unklarer Ursache, Verdacht auf teilweise Passagebehinderung oder Engstelle im Dünndarm, chronischer Durchfall und Gewichtsverlust, Kontrolle nach Darmoperationen, Beurteilung der Transitzeit",
+        "prep": "Nüchtern, letzte Mahlzeit am Vorabend, auf Wunsch der Klinik am Vortag ballaststoffarme Kost; für diesen Tag nichts anderes planen, da die Aufnahmen über mehrere Stunden wiederholt werden",
+        "abnormal": "Die Untersuchung zeigt die Weite der Darmschlingen, die Geschwindigkeit der Passage und Stellen, an denen die Suspension stockt oder nur mühsam weiterkommt. Den Befund erstellt die Radiologie, über CT, Endoskopie oder Operation entscheiden Gastroenterologie oder Chirurgie"
+      },
+      "tr": {
+        "what": "Baryum süspansiyonunun ince bağırsaktaki ilerleyişinin, belirli aralıklarla tekrarlanan filmlerle izlenmesi",
+        "how": "Hasta kontrastı içer, ilk filmler kısa aralıklarla, sonrakiler süspansiyon kalın bağırsağa ulaşana kadar birkaç saatte bir çekilir, aralarda klinikte beklenir; inceleme toplamda birkaç saate yayılır",
+        "when": "Nedeni belirsiz karın ağrısı ve şişkinlik, ince bağırsakta kısmi tıkanıklık ya da darlık şüphesi, süregelen ishal ve kilo kaybı, bağırsak ameliyatı sonrası kontrol, besinin geçiş hızının değerlendirilmesi",
+        "prep": "Aç karnına gelinir, son öğün önceki akşamdır, klinik isterse bir gün önce lifsiz beslenilir; filmler birkaç saat boyunca tekrarlandığından o güne başka iş planlanmamalıdır",
+        "abnormal": "İnceleme bağırsak kıvrımlarının genişliğini, süspansiyonun ilerleme hızını ve takıldığı ya da güç geçtiği yerleri gösterir. Filmleri radyolog tanımlar, tomografi, endoskopi ya da ameliyat gerekip gerekmediğine gastroenterolog veya cerrah karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Праћење кретања баријумске суспензије кроз танко цријево, уз поновљене снимке у задатим временским размацима",
+        "how": "Пацијент попије контраст, први снимци се праве у кратким размацима, а затим на неколико сати док суспензија не стигне до дебелог цријева, уз чекање у клиници између серија; цијели преглед се развлачи на неколико сати",
+        "when": "Бол у трбуху и надутост нејасног поријекла, сумња на дјелимичну препреку или сужење танког цријева, хронични пролив и губитак тежине, контрола послије операције на цријеву, процјена брзине проласка хране",
+        "prep": "Наташте, посљедњи оброк претходне вечери, а по упутству клинике дан раније исхрана без влакана; за тај дан не планирати друге обавезе јер се снимци понављају током неколико сати",
+        "abnormal": "Преглед показује ширину цријевних вијуга, брзину кретања суспензије и мјеста на којима се она задржава или тешко пролази. Снимке описује радиолог, а да ли су потребни скенер, ендоскопија или операција одлучује гастроентеролог или хирург"
+      }
+    }
+  },
+  {
+    "slug": "intravenous-cholangiocholecystography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Рентгеновское исследование желчных протоков и желчного пузыря, при котором контраст вводят в вену, а печень выводит его с желчью; сегодня применяется редко",
+        "how": "Контраст вводят внутривенно медленно, затем через заданные промежутки делают снимки, на которых постепенно проявляются протоки и пузырь, иногда с дополнительными послойными снимками этой зоны; 1–2 часа",
+        "when": "Оценка проходимости желчных протоков, когда УЗИ и магнитно-резонансная холангиография недоступны или не дали ответа, подозрение на оставшийся камень протока, состояние после операции на желчных путях",
+        "prep": "Натощак, по указанию клиники накануне лёгкая еда и очищение кишечника; обязательно заранее сообщить об аллергии на контраст и йод и о болезнях печени и щитовидной железы",
+        "abnormal": "Снимки показывают, заполняются ли протоки и пузырь, насколько они широки и есть ли препятствие оттоку желчи, при этом при выраженной желтухе печень почти не выводит контраст и исследование малоинформативно. Результат трактует хирург или гастроэнтеролог"
+      },
+      "en": {
+        "what": "An X-ray study of the bile ducts and gallbladder in which contrast is given into a vein and excreted by the liver into the bile; it is rarely used today",
+        "how": "Contrast is injected slowly into a vein, then images are taken at set intervals as the ducts and the gallbladder gradually appear, sometimes with additional layered images of the area; 1–2 hours",
+        "when": "Assessment of bile duct patency when ultrasound and MR cholangiography are unavailable or inconclusive, suspected retained duct stone, status after surgery on the bile ducts",
+        "prep": "Fasting, with a light meal and bowel cleansing the day before if the clinic asks; allergy to contrast and iodine and any liver or thyroid disease must be reported in advance",
+        "abnormal": "The images show whether the ducts and gallbladder fill, how wide they are and whether bile outflow is obstructed; with marked jaundice the liver barely excretes the contrast and the study yields little. The result is interpreted by a surgeon or gastroenterologist"
+      },
+      "sr": {
+        "what": "Rendgenski pregled žučnih puteva i žučne kese kod kojeg se kontrast daje u venu, a jetra ga izlučuje u žuč; danas se rijetko radi",
+        "how": "Kontrast se polako daje u venu, a zatim se u zadatim razmacima prave snimci na kojima se postepeno prikazuju kanali i kesa, ponekad uz dodatne slojevite snimke tog predjela; 1–2 sata",
+        "when": "Procjena prohodnosti žučnih puteva kada ultrazvuk i magnetna holangiografija nisu dostupni ili nisu dali odgovor, sumnja na zaostali kamen u kanalu, stanje poslije operacije na žučnim putevima",
+        "prep": "Natašte, a po uputstvu klinike dan ranije laka hrana i čišćenje crijeva; obavezno unaprijed prijaviti alergiju na kontrast i jod i bolesti jetre i štitne žlijezde",
+        "abnormal": "Snimci pokazuju da li se kanali i kesa pune, koliko su široki i da li postoji prepreka oticanju žuči, a kod izražene žutice jetra gotovo da ne izlučuje kontrast pa pregled daje malo podataka. Nalaz tumači hirurg ili gastroenterolog"
+      },
+      "de": {
+        "what": "Röntgenuntersuchung von Gallenwegen und Gallenblase, bei der das Kontrastmittel in eine Vene gegeben und von der Leber in die Galle ausgeschieden wird; sie wird heute nur noch selten durchgeführt",
+        "how": "Das Kontrastmittel wird langsam intravenös gegeben, danach entstehen in festgelegten Abständen Aufnahmen, auf denen sich Gänge und Gallenblase allmählich darstellen, teils ergänzt durch Schichtaufnahmen der Region; 1–2 Stunden",
+        "when": "Beurteilung der Durchgängigkeit der Gallenwege, wenn Ultraschall und MR-Cholangiographie nicht verfügbar sind oder keine Antwort geben, Verdacht auf einen verbliebenen Stein im Gang, Zustand nach Operationen an den Gallenwegen",
+        "prep": "Nüchtern, nach Vorgabe der Klinik am Vortag leichte Kost und Darmreinigung; Allergien gegen Kontrastmittel und Jod sowie Leber- und Schilddrüsenerkrankungen müssen vorher angegeben werden",
+        "abnormal": "Die Aufnahmen zeigen, ob sich Gänge und Gallenblase füllen, wie weit sie sind und ob der Gallenabfluss behindert ist; bei ausgeprägter Gelbsucht scheidet die Leber das Kontrastmittel kaum aus und die Untersuchung bleibt wenig aussagekräftig. Das Ergebnis deutet die Chirurgie oder Gastroenterologie"
+      },
+      "tr": {
+        "what": "Kontrastın damardan verildiği ve karaciğer tarafından safraya atıldığı, bugün ender kullanılan safra yolları ve safra kesesi röntgen incelemesi",
+        "how": "Kontrast damardan yavaşça verilir, ardından belirli aralıklarla çekilen filmlerde kanallar ve kese yavaş yavaş ortaya çıkar, bazen bölgenin kesitsel görüntüleri eklenir; 1–2 saat",
+        "when": "Ultrason ve MR kolanjiyografinin bulunmadığı ya da yanıt vermediği durumlarda safra yollarının açıklığının değerlendirilmesi, kanalda taş kaldığı şüphesi, safra yolu ameliyatı sonrası durum",
+        "prep": "Aç karnına, kliniğin isteğine göre bir gün önce hafif beslenme ve bağırsak temizliği; kontrast ve iyot alerjisi ile karaciğer ve tiroit hastalıkları mutlaka önceden bildirilmelidir",
+        "abnormal": "Filmler kanalların ve kesenin dolup dolmadığını, genişliklerini ve safra akışında engel olup olmadığını gösterir; belirgin sarılıkta karaciğer kontrastı neredeyse atmadığı için inceleme az bilgi verir. Sonucu cerrah ya da gastroenterolog yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Рендгенски преглед жучних путева и жучне кесе код којег се контраст даје у вену, а јетра га излучује у жуч; данас се ријетко ради",
+        "how": "Контраст се полако даје у вену, а затим се у задатим размацима праве снимци на којима се постепено приказују канали и кеса, понекад уз додатне слојевите снимке тог предјела; 1–2 сата",
+        "when": "Процјена проходности жучних путева када ултразвук и магнетна холангиографија нису доступни или нису дали одговор, сумња на заостали камен у каналу, стање послије операције на жучним путевима",
+        "prep": "Наташте, а по упутству клинике дан раније лака храна и чишћење цријева; обавезно унапријед пријавити алергију на контраст и јод и болести јетре и штитне жлијезде",
+        "abnormal": "Снимци показују да ли се канали и кеса пуне, колико су широки и да ли постоји препрека отицању жучи, а код изражене жутице јетра готово да не излучује контраст па преглед даје мало података. Налаз тумачи хирург или гастроентеролог"
+      }
+    }
+  },
+  {
+    "slug": "intravenous-cholangiography-through-t-drain",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Контрастное исследование желчных протоков через Т-образный дренаж, оставленный в протоке после операции",
+        "how": "Наружный конец дренажа обрабатывают, медленно вводят контраст шприцем и следят на экране, как заполняются протоки и уходит ли контраст в двенадцатиперстную кишку, делая снимки в нескольких положениях; 15–30 минут",
+        "when": "Контроль перед удалением дренажа после операции на желчных путях, подозрение на оставшийся камень протока, проверка оттока желчи в кишку, затяжное выделение желчи по дренажу",
+        "prep": "Специальной подготовки обычно нет, иногда просят прийти натощак; дренаж не пережимать и не промывать самостоятельно перед исследованием, сообщить об аллергии на контраст и о повышенной температуре",
+        "abnormal": "Исследование показывает ширину протоков, наличие препятствия и то, свободно ли контраст уходит в кишку. Снимки описывает рентгенолог, а решение, удалять ли дренаж или нужно дополнительное вмешательство, принимает хирург"
+      },
+      "en": {
+        "what": "A contrast study of the bile ducts performed through a T-drain left in the duct after surgery",
+        "how": "The outer end of the drain is cleaned, contrast is injected slowly with a syringe and the filling of the ducts and its passage into the duodenum are watched on the screen while images are taken in several positions; 15–30 minutes",
+        "when": "Check before removing the drain after bile duct surgery, suspected retained stone in the duct, assessment of bile outflow into the bowel, prolonged bile discharge through the drain",
+        "prep": "Usually no special preparation, sometimes fasting is requested; do not clamp or flush the drain yourself beforehand and report allergy to contrast and any fever",
+        "abnormal": "The study shows the width of the ducts, any obstruction and whether contrast passes freely into the bowel. The images are reported by a radiologist, while the surgeon decides whether the drain can be removed or further treatment is needed"
+      },
+      "sr": {
+        "what": "Kontrastni pregled žučnih puteva kroz T-dren koji je poslije operacije ostavljen u žučnom kanalu",
+        "how": "Spoljašnji kraj drena se očisti, špricem se polako daje kontrast i na ekranu se prati punjenje kanala i prolaz kontrasta u dvanaestopalačno crijevo, uz snimke u nekoliko položaja; 15–30 minuta",
+        "when": "Provjera prije vađenja drena poslije operacije na žučnim putevima, sumnja na zaostali kamen u kanalu, procjena oticanja žuči u crijevo, dugotrajno curenje žuči kroz dren",
+        "prep": "Posebna priprema obično nije potrebna, ponekad se traži dolazak natašte; dren ne stezati i ne ispirati sam prije pregleda, a prijaviti alergiju na kontrast i povišenu temperaturu",
+        "abnormal": "Pregled pokazuje širinu kanala, postojanje prepreke i da li kontrast slobodno prelazi u crijevo. Snimke opisuje radiolog, a hirurg odlučuje da li se dren vadi ili je potrebna dodatna intervencija"
+      },
+      "de": {
+        "what": "Kontrastmitteluntersuchung der Gallenwege über eine nach der Operation im Gallengang belassene T-Drainage",
+        "how": "Das äußere Ende der Drainage wird gereinigt, Kontrastmittel langsam mit einer Spritze eingebracht und am Bildschirm verfolgt, wie sich die Gänge füllen und ob das Mittel in den Zwölffingerdarm abfließt, dabei werden Aufnahmen in mehreren Lagen gemacht; 15–30 Minuten",
+        "when": "Kontrolle vor dem Ziehen der Drainage nach einer Gallenwegsoperation, Verdacht auf einen verbliebenen Stein im Gang, Prüfung des Galleabflusses in den Darm, anhaltende Galleförderung über die Drainage",
+        "prep": "Meist keine besondere Vorbereitung, manchmal wird Nüchternheit verlangt; die Drainage vorher nicht selbst abklemmen oder spülen und Kontrastmittelallergie sowie Fieber angeben",
+        "abnormal": "Die Untersuchung zeigt die Weite der Gänge, eine mögliche Abflussbehinderung und ob das Kontrastmittel frei in den Darm übertritt. Den Befund erstellt die Radiologie, ob die Drainage gezogen wird oder ein weiterer Eingriff nötig ist, entscheidet die Chirurgie"
+      },
+      "tr": {
+        "what": "Ameliyattan sonra safra kanalında bırakılan T-dren aracılığıyla yapılan safra yolları kontrast incelemesi",
+        "how": "Drenin dış ucu temizlenir, enjektörle yavaşça kontrast verilir ve kanalların dolması ile onikiparmak bağırsağına geçişi ekrandan izlenirken birkaç pozisyonda film çekilir; 15–30 dakika",
+        "when": "Safra yolu ameliyatı sonrası dren çekilmeden önceki kontrol, kanalda taş kaldığı şüphesi, safranın bağırsağa akışının değerlendirilmesi, drenden uzun süren safra gelişi",
+        "prep": "Genellikle özel hazırlık gerekmez, bazen aç gelinmesi istenir; dren işlemden önce kendi başına klemplenmez ve yıkanmaz, kontrast alerjisi ve ateş bildirilir",
+        "abnormal": "İnceleme kanalların genişliğini, engel olup olmadığını ve kontrastın bağırsağa serbest geçip geçmediğini gösterir. Filmleri radyolog tanımlar, drenin çıkarılıp çıkarılmayacağına ya da ek girişim gerekip gerekmediğine cerrah karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Контрастни преглед жучних путева кроз Т-дрен који је послије операције остављен у жучном каналу",
+        "how": "Спољашњи крај дрена се очисти, шприцем се полако даје контраст и на екрану се прати пуњење канала и пролаз контраста у дванаестопалачно цријево, уз снимке у неколико положаја; 15–30 минута",
+        "when": "Провјера прије вађења дрена послије операције на жучним путевима, сумња на заостали камен у каналу, процјена отицања жучи у цријево, дуготрајно цурење жучи кроз дрен",
+        "prep": "Посебна припрема обично није потребна, понекад се тражи долазак наташте; дрен не стезати и не испирати сам прије прегледа, а пријавити алергију на контраст и повишену температуру",
+        "abnormal": "Преглед показује ширину канала, постојање препреке и да ли контраст слободно прелази у цријево. Снимке описује радиолог, а хирург одлучује да ли се дрен вади или је потребна додатна интервенција"
+      }
+    }
+  },
+  {
+    "slug": "intravenous-cystography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Снимки мочевого пузыря, заполнившегося контрастом, который ввели в вену и вывели почки, без установки катетера в мочеиспускательный канал",
+        "how": "Контраст вводят в вену, затем выжидают, пока он соберётся в пузыре, и делают снимки в прямой и косых проекциях, иногда дополнительно после мочеиспускания; вместе с ожиданием около часа",
+        "when": "Оценка формы и контуров мочевого пузыря, когда введение катетера нежелательно или невозможно, травма мочеиспускательного канала, подозрение на выпячивание стенки или препятствие на выходе из пузыря, оценка остаточной мочи, обследование детей",
+        "prep": "Натощак и с очищенным кишечником по указанию клиники, перед исследованием не опорожнять мочевой пузырь без разрешения персонала; заранее сообщить об аллергии на контраст и йод и о болезнях почек",
+        "abnormal": "Снимки показывают форму и контуры пузыря, выпячивания стенки и то, насколько полно он опорожняется, при этом слабое заполнение может зависеть и от работы почек. Описание даёт рентгенолог, дальнейшее обследование назначает уролог"
+      },
+      "en": {
+        "what": "Images of the bladder filled with contrast that was injected into a vein and excreted by the kidneys, without inserting a catheter into the urethra",
+        "how": "Contrast is injected into a vein, then time is allowed for it to collect in the bladder, after which frontal and oblique images are taken, sometimes with an extra image after voiding; about an hour including the waiting time",
+        "when": "Assessment of the shape and contours of the bladder when catheterisation is undesirable or impossible, injury of the urethra, suspected outpouching of the wall or obstruction at the bladder outlet, assessment of residual urine, examination of children",
+        "prep": "Fasting and with the bowel emptied as instructed by the clinic; do not empty the bladder before the study without the staff's permission, and report allergy to contrast and iodine and any kidney disease in advance",
+        "abnormal": "The images show the shape and contours of the bladder, outpouchings of its wall and how completely it empties, while weak filling may also depend on how the kidneys work. The report is written by a radiologist and further investigation is arranged by a urologist"
+      },
+      "sr": {
+        "what": "Snimci mokraćne bešike napunjene kontrastom koji je dat u venu i izlučen preko bubrega, bez uvođenja katetera u mokraćnu cijev",
+        "how": "Kontrast se da u venu, zatim se čeka da se skupi u bešici, pa se prave snimci u prednjoj i kosim projekcijama, ponekad i dodatni poslije mokrenja; sa čekanjem oko sat vremena",
+        "when": "Procjena oblika i obrisa bešike kada uvođenje katetera nije poželjno ili moguće, povreda mokraćne cijevi, sumnja na izbočenje zida ili prepreku na izlazu iz bešike, procjena zaostale mokraće, pregled djece",
+        "prep": "Natašte i sa ispražnjenim crijevima po uputstvu klinike, a bešiku prije pregleda ne prazniti bez dozvole osoblja; unaprijed prijaviti alergiju na kontrast i jod i bolesti bubrega",
+        "abnormal": "Snimci pokazuju oblik i obrise bešike, izbočenja zida i koliko se potpuno prazni, pri čemu slabo punjenje može zavisiti i od rada bubrega. Opis daje radiolog, a dalje ispitivanje određuje urolog"
+      },
+      "de": {
+        "what": "Aufnahmen der Harnblase, die sich mit Kontrastmittel gefüllt hat, das in eine Vene gegeben und über die Nieren ausgeschieden wurde, ohne Katheter in die Harnröhre einzulegen",
+        "how": "Das Kontrastmittel wird in eine Vene gegeben, danach wird gewartet, bis es sich in der Blase sammelt, und es werden Aufnahmen in frontaler und schräger Projektion angefertigt, gelegentlich zusätzlich nach dem Wasserlassen; mit Wartezeit etwa eine Stunde",
+        "when": "Beurteilung von Form und Kontur der Blase, wenn ein Katheter unerwünscht oder nicht möglich ist, Verletzung der Harnröhre, Verdacht auf Wandaussackung oder Hindernis am Blasenausgang, Beurteilung von Restharn, Untersuchung von Kindern",
+        "prep": "Nüchtern und mit entleertem Darm nach Vorgabe der Klinik; die Blase vor der Untersuchung nicht ohne Erlaubnis des Personals entleeren und Allergien gegen Kontrastmittel und Jod sowie Nierenerkrankungen vorher angeben",
+        "abnormal": "Die Aufnahmen zeigen Form und Kontur der Blase, Aussackungen der Wand und wie vollständig sie sich entleert, wobei eine schwache Füllung auch von der Nierenfunktion abhängen kann. Den Befund erstellt die Radiologie, weitere Untersuchungen veranlasst die Urologie"
+      },
+      "tr": {
+        "what": "İdrar yoluna sonda konmadan, damardan verilip böbreklerle atılan kontrastla dolan mesanenin görüntülenmesi",
+        "how": "Kontrast damardan verilir, mesanede toplanması beklenir, ardından ön ve eğik yönlerde, bazen idrar yaptıktan sonra da film çekilir; bekleme süresiyle birlikte yaklaşık bir saat",
+        "when": "Sonda takmanın uygun ya da mümkün olmadığı durumlarda mesanenin şekil ve dış hatlarının değerlendirilmesi, idrar yolu yaralanması, duvarda kesecik ya da mesane çıkışında engel şüphesi, kalan idrarın değerlendirilmesi, çocukların incelenmesi",
+        "prep": "Kliniğin talimatına göre aç karnına ve bağırsaklar boşaltılmış olarak gelinir, inceleme öncesi mesane personelin izni olmadan boşaltılmaz; kontrast ve iyot alerjisi ile böbrek hastalıkları önceden bildirilir",
+        "abnormal": "Filmler mesanenin şeklini ve dış hatlarını, duvardaki kesecikleri ve ne kadar tam boşaldığını gösterir; zayıf dolum böbreklerin çalışmasına da bağlı olabilir. Tanımlamayı radyolog yapar, sonraki tetkikleri üroloji uzmanı planlar"
+      },
+      "sr_cyrl": {
+        "what": "Снимци мокраћне бешике напуњене контрастом који је дат у вену и излучен преко бубрега, без увођења катетера у мокраћну цијев",
+        "how": "Контраст се да у вену, затим се чека да се скупи у бешици, па се праве снимци у предњој и косим пројекцијама, понекад и додатни послије мокрења; са чекањем око сат времена",
+        "when": "Процјена облика и обриса бешике када увођење катетера није пожељно или могуће, повреда мокраћне цијеви, сумња на избочење зида или препреку на излазу из бешике, процјена заостале мокраће, преглед дјеце",
+        "prep": "Наташте и са испражњеним цријевима по упутству клинике, а бешику прије прегледа не празнити без дозволе особља; унапријед пријавити алергију на контраст и јод и болести бубрега",
+        "abnormal": "Снимци показују облик и обрисе бешике, избочења зида и колико се потпуно празни, при чему слабо пуњење може зависити и од рада бубрега. Опис даје радиолог, а даље испитивање одређује уролог"
+      }
+    }
+  }
 ]

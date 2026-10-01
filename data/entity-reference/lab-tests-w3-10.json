@@ -1,453 +1,530 @@
 [
-	{
-		"slug": "anti-gad-antibodies",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела к глутаматдекарбоксилазе (GAD) — один из маркеров аутоиммунного процесса в клетках поджелудочной железы, вырабатывающих инсулин",
-				"how": "Забор венозной крови из вены, занимает несколько минут",
-				"when": "Уточнение типа диабета у взрослых, впервые выявленное повышение сахара у молодых и худощавых пациентов, обследование вместе с другими островковыми антителами по назначению эндокринолога",
-				"prep": "Специальной подготовки не требуется, результат не зависит от приёма пищи",
-				"abnormal": "Обнаружение антител может быть связано с аутоиммунным процессом в клетках поджелудочной железы, но встречается и у людей без нарушений обмена сахара, а отрицательный результат аутоиммунную природу не исключает. Тип диабета и дальнейшие шаги определяет эндокринолог вместе с уровнем глюкозы, C-пептидом и клинической картиной"
-			},
-			"en": {
-				"what": "Blood test for antibodies to glutamic acid decarboxylase (GAD), one of the markers of an autoimmune process in the insulin-producing cells of the pancreas",
-				"how": "Blood draw from a vein, takes a few minutes",
-				"when": "Clarifying the type of diabetes in adults, newly found high blood sugar in young or lean patients, testing together with other islet antibodies as ordered by an endocrinologist",
-				"prep": "No special preparation required, the result does not depend on food intake",
-				"abnormal": "Detected antibodies may be related to an autoimmune process in the pancreatic cells, yet they also occur in people without any sugar metabolism problems, and a negative result does not rule out an autoimmune cause. The type of diabetes and the next steps are determined by the endocrinologist together with glucose levels, C-peptide and the clinical picture"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela na glutamat dekarboksilazu (GAD), jedan od markera autoimunog procesa u ćelijama pankreasa koje stvaraju insulin",
-				"how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
-				"when": "Razjašnjavanje tipa dijabetesa kod odraslih, prvi put utvrđen povišen šećer kod mlađih i mršavijih osoba, ispitivanje zajedno sa ostalim antitijelima na Langerhansova ostrvca po uputu endokrinologa",
-				"prep": "Nije potrebna posebna priprema, nalaz ne zavisi od uzimanja hrane",
-				"abnormal": "Nalaz antitijela može biti povezan sa autoimunim procesom u ćelijama pankreasa, ali se sreće i kod osoba bez poremećaja metabolizma šećera, a negativan nalaz autoimunu prirodu ne isključuje. Tip dijabetesa i dalje korake određuje endokrinolog zajedno sa nivoom glukoze, C-peptidom i kliničkom slikom"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper gegen Glutamatdecarboxylase (GAD), einer der Marker für einen Autoimmunprozess an den insulinbildenden Zellen der Bauchspeicheldrüse",
-				"how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
-				"when": "Klärung des Diabetestyps bei Erwachsenen, erstmals erhöhter Blutzucker bei jungen oder schlanken Personen, Untersuchung zusammen mit weiteren Inselzell-Antikörpern auf Veranlassung des Endokrinologen",
-				"prep": "Keine besondere Vorbereitung erforderlich, das Ergebnis hängt nicht von der Nahrungsaufnahme ab",
-				"abnormal": "Nachweisbare Antikörper können mit einem Autoimmunprozess an den Zellen der Bauchspeicheldrüse zusammenhängen, kommen aber auch bei Menschen ohne Störung des Zuckerstoffwechsels vor, und ein negativer Befund schließt eine autoimmune Ursache nicht aus. Den Diabetestyp und das weitere Vorgehen legt der Endokrinologe zusammen mit Glukosewerten, C-Peptid und dem klinischen Bild fest"
-			},
-			"tr": {
-				"what": "Pankreasın insülin üreten hücrelerindeki otoimmün sürecin göstergelerinden biri olan glutamik asit dekarboksilaz (GAD) antikorları için kan testi",
-				"how": "Damardan kan alınması, birkaç dakika sürer",
-				"when": "Erişkinde diyabet tipinin belirlenmesi, genç veya zayıf kişilerde yeni saptanan yüksek kan şekeri, endokrinoloji uzmanının isteğiyle diğer ada hücresi antikorlarıyla birlikte inceleme",
-				"prep": "Özel bir hazırlık gerekmez, sonuç yemek yenmesinden etkilenmez",
-				"abnormal": "Antikorların saptanması pankreas hücrelerindeki otoimmün süreçle ilişkili olabilir, ancak şeker metabolizması sorunu olmayan kişilerde de bulunur; negatif sonuç da otoimmün nedeni dışlamaz. Diyabetin tipini ve izlenecek yolu endokrinoloji uzmanı glukoz düzeyi, C-peptit ve klinik tabloyla birlikte belirler"
-			}
-		}
-	},
-	{
-		"slug": "anticardiolipin-igg",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела класса IgG к кардиолипину — один из тестов панели антифосфолипидных антител",
-				"how": "Забор венозной крови; при положительном результате исследование обычно повторяют спустя некоторое время",
-				"when": "Обследование при тромбозах, повторных потерях беременности, системных аутоиммунных заболеваниях, необъяснимых изменениях коагуляционных тестов",
-				"prep": "Специальной подготовки не требуется; о недавно перенесённых инфекциях и принимаемых лекарствах сообщают врачу",
-				"abnormal": "Обнаружение антител может быть связано с антифосфолипидным синдромом, но временная положительная реакция бывает после инфекций и на фоне некоторых лекарств. Однократный положительный результат не является диагнозом: его подтверждают повторным анализом, а оценивает врач вместе с клинической картиной"
-			},
-			"en": {
-				"what": "Blood test for IgG class antibodies to cardiolipin, one of the tests in the antiphospholipid antibody panel",
-				"how": "Blood draw from a vein; a positive result is usually repeated after some time",
-				"when": "Work-up of thrombosis, repeated pregnancy loss, systemic autoimmune disease, unexplained changes in clotting tests",
-				"prep": "No special preparation required; tell the doctor about recent infections and the medicines you take",
-				"abnormal": "Detected antibodies may be related to antiphospholipid syndrome, but a temporary positive reaction also occurs after infections and with certain medicines. A single positive result is not a diagnosis: it is confirmed by a repeat test and assessed by the doctor together with the clinical picture"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela klase IgG na kardiolipin, jedan od testova panela antifosfolipidnih antitijela",
-				"how": "Uzimanje venske krvi, kod pozitivnog nalaza ispitivanje se obično ponavlja nakon izvjesnog vremena",
-				"when": "Obrada kod tromboza, ponovljenih gubitaka trudnoće, sistemskih autoimunih oboljenja, neobjašnjenih promjena koagulacionih testova",
-				"prep": "Nije potrebna posebna priprema, o nedavno preboljenim infekcijama i lijekovima koje uzimate obavještava se ljekar",
-				"abnormal": "Nalaz antitijela može biti povezan sa antifosfolipidnim sindromom, ali se prolazno pozitivan rezultat javlja i nakon infekcija i uz pojedine lijekove. Jedan pozitivan nalaz nije dijagnoza: potvrđuje se ponovljenom analizom, a procjenjuje ga ljekar zajedno sa kliničkom slikom"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper der Klasse IgG gegen Cardiolipin, einer der Tests des Antiphospholipid-Antikörper-Panels",
-				"how": "Blutentnahme aus einer Vene; ein positiver Befund wird in der Regel nach einiger Zeit wiederholt",
-				"when": "Abklärung von Thrombosen, wiederholten Fehlgeburten, systemischen Autoimmunerkrankungen, unerklärten Veränderungen der Gerinnungstests",
-				"prep": "Keine besondere Vorbereitung erforderlich; kürzlich durchgemachte Infektionen und eingenommene Medikamente sollten dem Arzt mitgeteilt werden",
-				"abnormal": "Nachweisbare Antikörper können mit einem Antiphospholipid-Syndrom zusammenhängen, eine vorübergehende positive Reaktion kommt aber auch nach Infektionen und unter bestimmten Medikamenten vor. Ein einzelner positiver Befund ist keine Diagnose: er wird durch eine Kontrolle bestätigt und vom Arzt zusammen mit dem klinischen Bild beurteilt"
-			},
-			"tr": {
-				"what": "Antifosfolipid antikor panelinin testlerinden biri olan, kardiyolipine karşı IgG sınıfı antikorlar için kan testi",
-				"how": "Damardan kan alınır; pozitif sonuç genellikle bir süre sonra tekrarlanır",
-				"when": "Tromboz, tekrarlayan gebelik kayıpları, sistemik otoimmün hastalıklar, pıhtılaşma testlerinde açıklanamayan değişiklikler",
-				"prep": "Özel bir hazırlık gerekmez; yakın zamanda geçirilen enfeksiyonlar ve kullanılan ilaçlar hekime bildirilir",
-				"abnormal": "Saptanan antikorlar antifosfolipid sendromuyla ilişkili olabilir, ancak enfeksiyonlardan sonra ve bazı ilaçlarla geçici pozitiflik de görülür. Tek bir pozitif sonuç tanı değildir: tekrar testiyle doğrulanır ve hekim klinik tabloyla birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "anticardiolipin-igm",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела класса IgM к кардиолипину — второй класс антител той же панели, который читают вместе с IgG",
-				"how": "Забор венозной крови; нужно ли повторять положительный результат, решает врач",
-				"when": "Обследование при тромбозах и осложнениях беременности, дополнение к результату IgG, наблюдение при уже выявленных антифосфолипидных антителах",
-				"prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
-				"abnormal": "Антитела класса IgM чаще бывают временными: они появляются после инфекций и встречаются у пожилых людей без каких-либо жалоб. Значение результата врач оценивает вместе с IgG, остальными тестами панели и историей болезни"
-			},
-			"en": {
-				"what": "Blood test for IgM class antibodies to cardiolipin, the second antibody class of the same panel, read together with IgG",
-				"how": "Blood draw from a vein; whether a positive result is repeated is decided by the doctor",
-				"when": "Work-up of thrombosis and pregnancy complications, addition to the IgG result, follow-up when antiphospholipid antibodies are already known",
-				"prep": "No special preparation required, blood is usually taken in the morning",
-				"abnormal": "IgM antibodies are more often temporary: they appear after infections and are found in older people without any complaints. The doctor assesses the result together with IgG, the other tests of the panel and the medical history"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela klase IgM na kardiolipin, druga klasa antitijela istog panela koja se čita zajedno sa IgG",
-				"how": "Uzimanje venske krvi, o ponavljanju pozitivnog nalaza odlučuje ljekar",
-				"when": "Obrada kod tromboza i komplikacija u trudnoći, dopuna nalazu IgG, praćenje kod već utvrđenih antifosfolipidnih antitijela",
-				"prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
-				"abnormal": "Antitijela klase IgM su češće prolazna: javljaju se nakon infekcija i nalaze se kod starijih osoba bez ikakvih tegoba. Nalaz procjenjuje ljekar zajedno sa IgG, ostalim testovima panela i istorijom bolesti"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper der Klasse IgM gegen Cardiolipin, die zweite Antikörperklasse desselben Panels, die zusammen mit IgG beurteilt wird",
-				"how": "Blutentnahme aus einer Vene; ob ein positiver Befund wiederholt wird, entscheidet der Arzt",
-				"when": "Abklärung von Thrombosen und Schwangerschaftskomplikationen, Ergänzung zum IgG-Befund, Verlaufskontrolle bei bereits bekannten Antiphospholipid-Antikörpern",
-				"prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
-				"abnormal": "IgM-Antikörper sind häufiger vorübergehend: sie treten nach Infektionen auf und finden sich bei älteren Menschen ohne jegliche Beschwerden. Der Arzt beurteilt den Befund zusammen mit IgG, den übrigen Tests des Panels und der Krankengeschichte"
-			},
-			"tr": {
-				"what": "Kardiyolipine karşı IgM sınıfı antikorlar için kan testi, aynı panelin IgG ile birlikte değerlendirilen ikinci antikor sınıfı",
-				"how": "Damardan kan alınır; pozitif sonucun tekrarlanmasına hekim karar verir",
-				"when": "Tromboz ve gebelik komplikasyonlarının araştırılması, IgG sonucunun tamamlanması, bilinen antifosfolipid antikorlarında izlem",
-				"prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
-				"abnormal": "IgM sınıfı antikorlar daha sık geçicidir: enfeksiyonlardan sonra ortaya çıkar ve şikayeti olmayan yaşlı kişilerde de bulunur. Hekim sonucu IgG, panelin diğer testleri ve hastalık öyküsüyle birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "beta-2-glycoprotein-i-igg",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела класса IgG к бета-2-гликопротеину I — белку, который связывается с фосфолипидами клеточных мембран",
-				"how": "Забор венозной крови из вены, занимает несколько минут",
-				"when": "Обследование при тромбозах и повторных потерях беременности вместе с антикардиолипиновыми антителами и волчаночным антикоагулянтом, уточнение положительных результатов панели",
-				"prep": "Специальной подготовки не требуется, результат не зависит от приёма пищи",
-				"abnormal": "Положительный результат может быть связан с антифосфолипидными антителами, при этом он бывает и преходящим, а само по себе обнаружение антител диагнозом не является. Заключение делает врач по всей панели, повторённой спустя некоторое время, и клинической картине"
-			},
-			"en": {
-				"what": "Blood test for IgG class antibodies to beta-2 glycoprotein I, a protein that binds to the phospholipids of cell membranes",
-				"how": "Blood draw from a vein, takes a few minutes",
-				"when": "Work-up of thrombosis and repeated pregnancy loss together with anticardiolipin antibodies and lupus anticoagulant, clarification of positive panel results",
-				"prep": "No special preparation required, the result does not depend on food intake",
-				"abnormal": "A positive result may be related to antiphospholipid antibodies, it can also be transient, and finding the antibodies is not a diagnosis in itself. The conclusion is drawn by the doctor from the whole panel, repeated after some time, and from the clinical picture"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela klase IgG na beta-2 glikoprotein I, bjelančevinu koja se vezuje za fosfolipide ćelijskih membrana",
-				"how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
-				"when": "Obrada kod tromboza i ponovljenih gubitaka trudnoće zajedno sa antikardiolipinskim antitijelima i lupus antikoagulansom, razjašnjenje pozitivnih nalaza panela",
-				"prep": "Nije potrebna posebna priprema, nalaz ne zavisi od uzimanja hrane",
-				"abnormal": "Pozitivan nalaz može biti povezan sa antifosfolipidnim antitijelima, a može biti i prolazan, pa sam nalaz antitijela nije dijagnoza. Zaključak donosi ljekar na osnovu cijelog panela, ponovljenog nakon izvjesnog vremena, i kliničke slike"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper der Klasse IgG gegen Beta-2-Glykoprotein I, ein Eiweiß, das an Phospholipide der Zellmembranen bindet",
-				"how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
-				"when": "Abklärung von Thrombosen und wiederholten Fehlgeburten zusammen mit Anticardiolipin-Antikörpern und Lupusantikoagulans, Klärung positiver Panelbefunde",
-				"prep": "Keine besondere Vorbereitung erforderlich, das Ergebnis hängt nicht von der Nahrungsaufnahme ab",
-				"abnormal": "Ein positiver Befund kann mit Antiphospholipid-Antikörpern zusammenhängen, er kann auch vorübergehend sein, und der Nachweis allein ist keine Diagnose. Die Einordnung trifft der Arzt anhand des gesamten, nach einiger Zeit wiederholten Panels und des klinischen Bildes"
-			},
-			"tr": {
-				"what": "Hücre zarındaki fosfolipitlere bağlanan bir protein olan beta-2 glikoprotein I'e karşı IgG sınıfı antikorlar için kan testi",
-				"how": "Damardan kan alınması, birkaç dakika sürer",
-				"when": "Tromboz ve tekrarlayan gebelik kayıplarında antikardiyolipin antikorları ve lupus antikoagülanı ile birlikte inceleme, panelde pozitif çıkan sonuçların netleştirilmesi",
-				"prep": "Özel bir hazırlık gerekmez, sonuç yemek yenmesinden etkilenmez",
-				"abnormal": "Pozitif sonuç antifosfolipid antikorlarıyla ilişkili olabilir, geçici de olabilir ve antikorun saptanması tek başına tanı değildir. Değerlendirmeyi hekim, bir süre sonra tekrarlanan panelin tamamı ve klinik tabloyla birlikte yapar"
-			}
-		}
-	},
-	{
-		"slug": "beta-2-glycoprotein-i-igm",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела класса IgM к бета-2-гликопротеину I — IgM-часть того же исследования, которую оценивают вместе с IgG",
-				"how": "Забор венозной крови из вены, занимает несколько минут",
-				"when": "Обследование при тромбозах и осложнениях беременности, дополнение к панели антифосфолипидных антител, наблюдение по назначению врача",
-				"prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
-				"abnormal": "Антитела класса IgM чаще оказываются временными и встречаются при инфекциях и у людей без жалоб, а их отсутствие антифосфолипидный синдром не исключает. Результат имеет значение только в сочетании с остальными тестами панели и оценивается врачом"
-			},
-			"en": {
-				"what": "Blood test for IgM class antibodies to beta-2 glycoprotein I, the IgM part of the same test, read together with IgG",
-				"how": "Blood draw from a vein, takes a few minutes",
-				"when": "Work-up of thrombosis and pregnancy complications, addition to the antiphospholipid antibody panel, follow-up as ordered by the doctor",
-				"prep": "No special preparation required, blood is usually taken in the morning",
-				"abnormal": "IgM antibodies more often turn out to be temporary and occur with infections and in people without complaints, while their absence does not rule out antiphospholipid syndrome. The result matters only together with the other tests of the panel and is assessed by the doctor"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela klase IgM na beta-2 glikoprotein I, IgM dio istog ispitivanja koji se procjenjuje zajedno sa IgG",
-				"how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
-				"when": "Obrada kod tromboza i komplikacija u trudnoći, dopuna panelu antifosfolipidnih antitijela, praćenje po uputu ljekara",
-				"prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
-				"abnormal": "Antitijela klase IgM češće budu prolazna i javljaju se kod infekcija i kod osoba bez tegoba, a njihovo odsustvo ne isključuje antifosfolipidni sindrom. Nalaz ima značaj samo uz ostale testove panela i procjenjuje ga ljekar"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper der Klasse IgM gegen Beta-2-Glykoprotein I, der IgM-Anteil derselben Untersuchung, der zusammen mit IgG beurteilt wird",
-				"how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
-				"when": "Abklärung von Thrombosen und Schwangerschaftskomplikationen, Ergänzung des Antiphospholipid-Panels, Verlaufskontrolle auf ärztliche Veranlassung",
-				"prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
-				"abnormal": "IgM-Antikörper erweisen sich häufiger als vorübergehend und kommen bei Infektionen sowie bei Menschen ohne Beschwerden vor, ihr Fehlen schließt ein Antiphospholipid-Syndrom nicht aus. Der Befund hat nur zusammen mit den übrigen Tests des Panels Aussagekraft und wird vom Arzt beurteilt"
-			},
-			"tr": {
-				"what": "Beta-2 glikoprotein I'e karşı IgM sınıfı antikorlar için kan testi, aynı incelemenin IgG ile birlikte değerlendirilen IgM bölümü",
-				"how": "Damardan kan alınması, birkaç dakika sürer",
-				"when": "Tromboz ve gebelik komplikasyonlarının araştırılması, antifosfolipid antikor paneline ek, hekim isteğiyle izlem",
-				"prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
-				"abnormal": "IgM sınıfı antikorlar daha sık geçici olur, enfeksiyonlarda ve şikayeti olmayan kişilerde görülebilir, bulunmaması da antifosfolipid sendromunu dışlamaz. Sonuç yalnızca panelin diğer testleriyle birlikte anlam taşır ve hekim tarafından değerlendirilir"
-			}
-		}
-	},
-	{
-		"slug": "dsdna-igg-antibodies",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела класса IgG к двуспиральной ДНК (dsDNA) — уточняющий тест при обследовании на системные заболевания соединительной ткани",
-				"how": "Забор венозной крови, в лаборатории измеряют уровень антител, сам забор занимает несколько минут",
-				"when": "Положительный результат теста ANA, боли в суставах в сочетании с кожными высыпаниями и лихорадкой, наблюдение за течением уже установленного системного заболевания по назначению ревматолога",
-				"prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
-				"abnormal": "Обнаружение антител может быть связано с системным аутоиммунным процессом, но слабо положительные результаты встречаются при инфекциях, других аутоиммунных состояниях и на фоне ряда лекарств. Результат и его динамику оценивает ревматолог вместе с осмотром и остальными анализами"
-			},
-			"en": {
-				"what": "Blood test for IgG class antibodies to double-stranded DNA (dsDNA), a clarifying test in the work-up of systemic connective tissue disease",
-				"how": "Blood draw from a vein, the laboratory measures the antibody level, the draw itself takes a few minutes",
-				"when": "Positive ANA test, joint pain combined with skin rashes and fever, monitoring the course of an already established systemic disease as ordered by a rheumatologist",
-				"prep": "No special preparation required, blood is usually taken in the morning",
-				"abnormal": "Detected antibodies may be related to a systemic autoimmune process, but weakly positive results also occur with infections, other autoimmune conditions and under a number of medicines. The result and its changes over time are assessed by the rheumatologist together with the examination and the remaining tests"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela klase IgG na dvolančanu DNK (dsDNA), dopunski test pri ispitivanju sistemskih bolesti vezivnog tkiva",
-				"how": "Uzimanje venske krvi, u laboratoriji se mjeri nivo antitijela, samo uzimanje traje nekoliko minuta",
-				"when": "Pozitivan ANA test, bolovi u zglobovima uz promjene na koži i povišenu temperaturu, praćenje toka već utvrđene sistemske bolesti po uputu reumatologa",
-				"prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
-				"abnormal": "Nalaz antitijela može biti povezan sa sistemskim autoimunim procesom, ali se slabo pozitivni rezultati javljaju i kod infekcija, drugih autoimunih stanja i uz pojedine lijekove. Nalaz i njegovo kretanje procjenjuje reumatolog zajedno sa pregledom i ostalim analizama"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper der Klasse IgG gegen doppelsträngige DNA (dsDNA), ein ergänzender Test bei der Abklärung systemischer Bindegewebserkrankungen",
-				"how": "Blutentnahme aus einer Vene, im Labor wird die Antikörpermenge bestimmt, die Entnahme selbst dauert wenige Minuten",
-				"when": "Positiver ANA-Test, Gelenkschmerzen zusammen mit Hautausschlägen und Fieber, Verlaufskontrolle einer bereits festgestellten systemischen Erkrankung auf Veranlassung des Rheumatologen",
-				"prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
-				"abnormal": "Nachweisbare Antikörper können mit einem systemischen Autoimmunprozess zusammenhängen, schwach positive Befunde kommen jedoch auch bei Infektionen, anderen Autoimmunerkrankungen und unter einigen Medikamenten vor. Befund und Verlauf beurteilt der Rheumatologe zusammen mit der Untersuchung und den übrigen Werten"
-			},
-			"tr": {
-				"what": "Sistemik bağ dokusu hastalıklarının araştırılmasında doğrulayıcı test olarak kullanılan, çift sarmallı DNA'ya (dsDNA) karşı IgG sınıfı antikorlar için kan testi",
-				"how": "Damardan kan alınır, laboratuvarda antikor düzeyi ölçülür, kan alma işlemi birkaç dakika sürer",
-				"when": "Pozitif ANA testi, ciltte döküntü ve ateşle birlikte eklem ağrıları, romatoloji uzmanının isteğiyle tanısı konmuş sistemik hastalığın izlemi",
-				"prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
-				"abnormal": "Saptanan antikorlar sistemik otoimmün süreçle ilişkili olabilir, ancak zayıf pozitif sonuçlar enfeksiyonlarda, başka otoimmün durumlarda ve bazı ilaçların kullanımında da görülür. Sonucu ve zaman içindeki değişimini romatoloji uzmanı muayene ve diğer tetkiklerle birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "ia-2-antibodies",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела к тирозинфосфатазе IA-2 — ещё один маркер аутоиммунного процесса в островковых клетках поджелудочной железы",
-				"how": "Забор венозной крови из вены, занимает несколько минут",
-				"when": "Уточнение типа диабета у детей и подростков с впервые выявленным повышением сахара, обследование в составе панели островковых антител по назначению эндокринолога",
-				"prep": "Специальной подготовки не требуется, результат не зависит от времени суток",
-				"abnormal": "Положительный результат может быть связан с аутоиммунным характером нарушения углеводного обмена, но сам по себе не определяет ни диагноз, ни лечение, а отрицательный аутоиммунный процесс не исключает. Итоговую оценку даёт эндокринолог по совокупности показателей и клинической картины"
-			},
-			"en": {
-				"what": "Blood test for antibodies to tyrosine phosphatase IA-2, another marker of an autoimmune process in the islet cells of the pancreas",
-				"how": "Blood draw from a vein, takes a few minutes",
-				"when": "Clarifying the type of diabetes in children and adolescents with newly found high blood sugar, testing as part of the islet antibody panel ordered by an endocrinologist",
-				"prep": "No special preparation required, the result does not depend on the time of day",
-				"abnormal": "A positive result may be related to an autoimmune cause of a carbohydrate metabolism disorder, but on its own it determines neither the diagnosis nor the treatment, and a negative one does not rule out an autoimmune process. The final assessment is made by the endocrinologist from the whole set of values and the clinical picture"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela na tirozin fosfatazu IA-2, još jedan marker autoimunog procesa u ćelijama Langerhansovih ostrvaca pankreasa",
-				"how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
-				"when": "Razjašnjavanje tipa dijabetesa kod djece i adolescenata sa prvi put utvrđenim povišenim šećerom, ispitivanje u sklopu panela antitijela na Langerhansova ostrvca po uputu endokrinologa",
-				"prep": "Nije potrebna posebna priprema, nalaz ne zavisi od doba dana",
-				"abnormal": "Pozitivan nalaz može biti povezan sa autoimunom prirodom poremećaja metabolizma ugljenih hidrata, ali sam po sebi ne određuje ni dijagnozu ni liječenje, a negativan ne isključuje autoimuni proces. Konačnu procjenu daje endokrinolog na osnovu svih pokazatelja i kliničke slike"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper gegen die Tyrosinphosphatase IA-2, ein weiterer Marker für einen Autoimmunprozess an den Inselzellen der Bauchspeicheldrüse",
-				"how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
-				"when": "Klärung des Diabetestyps bei Kindern und Jugendlichen mit erstmals erhöhtem Blutzucker, Untersuchung im Rahmen des Inselzell-Antikörper-Panels auf Veranlassung des Endokrinologen",
-				"prep": "Keine besondere Vorbereitung erforderlich, das Ergebnis hängt nicht von der Tageszeit ab",
-				"abnormal": "Ein positiver Befund kann mit einer autoimmunen Ursache der Zuckerstoffwechselstörung zusammenhängen, legt für sich genommen aber weder Diagnose noch Behandlung fest, und ein negativer schließt einen Autoimmunprozess nicht aus. Die abschließende Einordnung nimmt der Endokrinologe anhand aller Werte und des klinischen Bildes vor"
-			},
-			"tr": {
-				"what": "Pankreasın ada hücrelerindeki otoimmün sürecin bir başka göstergesi olan tirozin fosfataz IA-2 antikorları için kan testi",
-				"how": "Damardan kan alınması, birkaç dakika sürer",
-				"when": "Yeni saptanan yüksek kan şekeri olan çocuk ve ergenlerde diyabet tipinin belirlenmesi, endokrinoloji uzmanının istediği ada hücresi antikor paneli kapsamında inceleme",
-				"prep": "Özel bir hazırlık gerekmez, sonuç günün saatinden etkilenmez",
-				"abnormal": "Pozitif sonuç karbonhidrat metabolizması bozukluğunun otoimmün kökenli olmasıyla ilişkili olabilir, ancak tek başına ne tanıyı ne de tedaviyi belirler, negatif sonuç da otoimmün süreci dışlamaz. Son değerlendirmeyi endokrinoloji uzmanı tüm göstergeler ve klinik tabloyla birlikte yapar"
-			}
-		}
-	},
-	{
-		"slug": "phospholipid-igg-antibodies",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела класса IgG к группе фосфолипидов — суммарный тест, охватывающий несколько фосфолипидных мишеней сразу",
-				"how": "Забор венозной крови, в лаборатории определяют суммарный уровень антител класса IgG",
-				"when": "Первичное обследование при тромбозах, повторных потерях беременности, подозрении на антифосфолипидный синдром до более специфичных тестов",
-				"prep": "Специальной подготовки не требуется; о недавно перенесённых инфекциях стоит сообщить лаборатории или врачу",
-				"abnormal": "Положительный суммарный результат обычно уточняют отдельными тестами на антитела к кардиолипину и бета-2-гликопротеину I, поскольку он может быть связан и с временной реакцией после инфекции. Выводы делает врач по всей панели, а не по одному показателю"
-			},
-			"en": {
-				"what": "Blood test for IgG class antibodies to a group of phospholipids, a combined test covering several phospholipid targets at once",
-				"how": "Blood draw from a vein, the laboratory measures the combined level of IgG class antibodies",
-				"when": "First-line work-up of thrombosis, repeated pregnancy loss, suspected antiphospholipid syndrome before more specific tests",
-				"prep": "No special preparation required; recent infections are worth mentioning to the laboratory or the doctor",
-				"abnormal": "A positive combined result is usually clarified with separate tests for antibodies to cardiolipin and beta-2 glycoprotein I, because it may also be related to a temporary reaction after an infection. Conclusions are drawn by the doctor from the whole panel, not from a single value"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela klase IgG na grupu fosfolipida, zbirni test koji obuhvata više fosfolipidnih meta odjednom",
-				"how": "Uzimanje venske krvi, u laboratoriji se mjeri zbirni nivo antitijela klase IgG",
-				"when": "Početna obrada kod tromboza, ponovljenih gubitaka trudnoće, sumnje na antifosfolipidni sindrom prije specifičnijih testova",
-				"prep": "Nije potrebna posebna priprema, o nedavno preboljenim infekcijama treba obavijestiti laboratoriju ili ljekara",
-				"abnormal": "Pozitivan zbirni nalaz se obično razjašnjava zasebnim testovima na antitijela na kardiolipin i beta-2 glikoprotein I, jer može biti povezan i sa prolaznom reakcijom nakon infekcije. Zaključke donosi ljekar na osnovu cijelog panela, a ne jednog pokazatelja"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper der Klasse IgG gegen eine Gruppe von Phospholipiden, ein Summentest, der mehrere Phospholipid-Ziele zugleich erfasst",
-				"how": "Blutentnahme aus einer Vene, im Labor wird der Gesamtwert der IgG-Antikörper bestimmt",
-				"when": "Erste Abklärung bei Thrombosen, wiederholten Fehlgeburten, Verdacht auf ein Antiphospholipid-Syndrom vor spezifischeren Tests",
-				"prep": "Keine besondere Vorbereitung erforderlich; kürzlich durchgemachte Infektionen sollten dem Labor oder dem Arzt mitgeteilt werden",
-				"abnormal": "Ein positiver Summenbefund wird üblicherweise mit gesonderten Tests auf Antikörper gegen Cardiolipin und Beta-2-Glykoprotein I geklärt, da er auch mit einer vorübergehenden Reaktion nach einer Infektion zusammenhängen kann. Schlüsse zieht der Arzt aus dem gesamten Panel, nicht aus einem einzelnen Wert"
-			},
-			"tr": {
-				"what": "Birden çok fosfolipit hedefini aynı anda kapsayan, fosfolipit grubuna karşı IgG sınıfı antikorlar için toplu kan testi",
-				"how": "Damardan kan alınır, laboratuvarda IgG sınıfı antikorların toplam düzeyi ölçülür",
-				"when": "Trombozda, tekrarlayan gebelik kayıplarında, antifosfolipid sendromu şüphesinde daha özgül testlerden önce yapılan ilk değerlendirme",
-				"prep": "Özel bir hazırlık gerekmez; yakın zamanda geçirilen enfeksiyonların laboratuvara veya hekime bildirilmesi yararlıdır",
-				"abnormal": "Pozitif toplu sonuç genellikle kardiyolipin ve beta-2 glikoprotein I antikorları için ayrı testlerle netleştirilir, çünkü enfeksiyon sonrası geçici bir yanıtla da ilişkili olabilir. Hekim sonucu tek bir değere göre değil panelin tamamına göre yorumlar"
-			}
-		}
-	},
-	{
-		"slug": "phospholipid-igm-antibodies",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела класса IgM к группе фосфолипидов — IgM-часть суммарного фосфолипидного теста",
-				"how": "Забор венозной крови из вены, занимает несколько минут",
-				"when": "Обследование при тромбозах и осложнениях беременности вместе с IgG, дополнение к панели антифосфолипидных антител по назначению врача",
-				"prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
-				"abnormal": "Антитела класса IgM в суммарном тесте нередко оказываются временными и появляются после инфекций, поэтому результат уточняют отдельными тестами и повторяют. Значение имеет только совокупность показателей, которую оценивает врач"
-			},
-			"en": {
-				"what": "Blood test for IgM class antibodies to a group of phospholipids, the IgM part of the combined phospholipid test",
-				"how": "Blood draw from a vein, takes a few minutes",
-				"when": "Work-up of thrombosis and pregnancy complications together with IgG, addition to the antiphospholipid antibody panel as ordered by the doctor",
-				"prep": "No special preparation required, blood is usually taken in the morning",
-				"abnormal": "IgM antibodies in the combined test are quite often temporary and appear after infections, so the result is clarified with separate tests and repeated. Only the set of values taken together carries meaning, and it is assessed by the doctor"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela klase IgM na grupu fosfolipida, IgM dio zbirnog fosfolipidnog testa",
-				"how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
-				"when": "Obrada kod tromboza i komplikacija u trudnoći zajedno sa IgG, dopuna panelu antifosfolipidnih antitijela po uputu ljekara",
-				"prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
-				"abnormal": "Antitijela klase IgM u zbirnom testu su često prolazna i javljaju se nakon infekcija, pa se nalaz razjašnjava zasebnim testovima i ponavlja. Značaj ima samo skup pokazatelja, koji procjenjuje ljekar"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper der Klasse IgM gegen eine Gruppe von Phospholipiden, der IgM-Anteil des Phospholipid-Summentests",
-				"how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
-				"when": "Abklärung von Thrombosen und Schwangerschaftskomplikationen zusammen mit IgG, Ergänzung des Antiphospholipid-Panels auf ärztliche Veranlassung",
-				"prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
-				"abnormal": "IgM-Antikörper im Summentest sind oft vorübergehend und treten nach Infektionen auf, deshalb wird der Befund mit gesonderten Tests geklärt und wiederholt. Aussagekraft hat nur die Gesamtheit der Werte, die der Arzt beurteilt"
-			},
-			"tr": {
-				"what": "Fosfolipit grubuna karşı IgM sınıfı antikorlar için kan testi, toplu fosfolipit testinin IgM bölümü",
-				"how": "Damardan kan alınması, birkaç dakika sürer",
-				"when": "Tromboz ve gebelik komplikasyonlarında IgG ile birlikte inceleme, hekim isteğiyle antifosfolipid antikor paneline ek",
-				"prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
-				"abnormal": "Toplu testteki IgM sınıfı antikorlar sıklıkla geçicidir ve enfeksiyonlardan sonra ortaya çıkar, bu nedenle sonuç ayrı testlerle netleştirilir ve tekrarlanır. Anlam taşıyan şey göstergelerin bütünüdür ve bunu hekim değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "dsdna-igm-antibodies",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела класса IgM к двуспиральной ДНК (dsDNA) — класс антител, который используют реже, чем IgG",
-				"how": "Забор венозной крови, занимает несколько минут",
-				"when": "Обследование при системных аутоиммунных заболеваниях в дополнение к IgG и тесту ANA, ситуации, когда врачу нужно разделить классы антител",
-				"prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
-				"abnormal": "Антитела класса IgM к dsDNA менее специфичны и встречаются при инфекциях и других состояниях, поэтому отдельно от IgG и ANA их не трактуют. Значение результата определяет врач вместе с клинической картиной"
-			},
-			"en": {
-				"what": "Blood test for IgM class antibodies to double-stranded DNA (dsDNA), an antibody class used less often than IgG",
-				"how": "Blood draw from a vein, takes a few minutes",
-				"when": "Work-up of systemic autoimmune disease in addition to IgG and the ANA test, situations where the doctor needs to separate the antibody classes",
-				"prep": "No special preparation required, blood is usually taken in the morning",
-				"abnormal": "IgM antibodies to dsDNA are less specific and are also found with infections and other conditions, so they are not interpreted apart from IgG and ANA. What the result means is decided by the doctor together with the clinical picture"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela klase IgM na dvolančanu DNK (dsDNA), klasa antitijela koja se koristi rjeđe od IgG",
-				"how": "Uzimanje venske krvi, traje nekoliko minuta",
-				"when": "Ispitivanje sistemskih autoimunih oboljenja kao dopuna IgG i ANA testu, situacije kada ljekar treba da razdvoji klase antitijela",
-				"prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
-				"abnormal": "Antitijela klase IgM na dsDNA su manje specifična i nalaze se i kod infekcija i drugih stanja, pa se ne tumače odvojeno od IgG i ANA. Značaj nalaza utvrđuje ljekar zajedno sa kliničkom slikom"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper der Klasse IgM gegen doppelsträngige DNA (dsDNA), eine Antikörperklasse, die seltener eingesetzt wird als IgG",
-				"how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
-				"when": "Abklärung systemischer Autoimmunerkrankungen ergänzend zu IgG und zum ANA-Test, Situationen, in denen der Arzt die Antikörperklassen trennen muss",
-				"prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
-				"abnormal": "IgM-Antikörper gegen dsDNA sind weniger spezifisch und kommen auch bei Infektionen und anderen Zuständen vor, deshalb werden sie nicht getrennt von IgG und ANA gedeutet. Was der Befund bedeutet, entscheidet der Arzt zusammen mit dem klinischen Bild"
-			},
-			"tr": {
-				"what": "Çift sarmallı DNA'ya (dsDNA) karşı IgM sınıfı antikorlar için kan testi, IgG'ye göre daha seyrek kullanılan antikor sınıfı",
-				"how": "Damardan kan alınması, birkaç dakika sürer",
-				"when": "Sistemik otoimmün hastalıkların araştırılmasında IgG ve ANA testine ek, hekimin antikor sınıflarını ayırması gereken durumlar",
-				"prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
-				"abnormal": "dsDNA'ya karşı IgM sınıfı antikorlar daha az özgüldür ve enfeksiyonlarda, başka durumlarda da bulunur, bu nedenle IgG ve ANA'dan ayrı yorumlanmaz. Sonucun anlamını hekim klinik tabloyla birlikte belirler"
-			}
-		}
-	},
-	{
-		"slug": "znt8-antibodies",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на антитела к транспортёру цинка 8 (ZnT8) — маркер, который добавляют к панели островковых антител",
-				"how": "Забор венозной крови из вены, занимает несколько минут",
-				"when": "Уточнение типа диабета, когда антитела GAD и IA-2 отрицательны, обследование при впервые выявленном повышении сахара у детей и молодых взрослых по назначению эндокринолога",
-				"prep": "Специальной подготовки не требуется, результат не зависит от приёма пищи",
-				"abnormal": "Обнаружение антител может быть связано с аутоиммунным процессом в островковых клетках, но выявляются они не у всех и не заменяют остальные показатели обмена глюкозы. Результат оценивает эндокринолог вместе с другими антителами панели и клинической картиной"
-			},
-			"en": {
-				"what": "Blood test for antibodies to zinc transporter 8 (ZnT8), a marker added to the islet antibody panel",
-				"how": "Blood draw from a vein, takes a few minutes",
-				"when": "Clarifying the type of diabetes when GAD and IA-2 antibodies are negative, work-up of newly found high blood sugar in children and young adults as ordered by an endocrinologist",
-				"prep": "No special preparation required, the result does not depend on food intake",
-				"abnormal": "Detected antibodies may be related to an autoimmune process in the islet cells, but they are not found in everyone and do not replace the other measures of glucose metabolism. The result is assessed by the endocrinologist together with the other antibodies of the panel and the clinical picture"
-			},
-			"sr": {
-				"what": "Analiza krvi na antitijela na transporter cinka 8 (ZnT8), marker koji se dodaje panelu antitijela na Langerhansova ostrvca",
-				"how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
-				"when": "Razjašnjavanje tipa dijabetesa kada su antitijela GAD i IA-2 negativna, obrada prvi put utvrđenog povišenog šećera kod djece i mlađih odraslih po uputu endokrinologa",
-				"prep": "Nije potrebna posebna priprema, nalaz ne zavisi od uzimanja hrane",
-				"abnormal": "Nalaz antitijela može biti povezan sa autoimunim procesom u ćelijama ostrvaca, ali se ne nalazi kod svih i ne zamjenjuje ostale pokazatelje metabolizma glukoze. Nalaz procjenjuje endokrinolog zajedno sa ostalim antitijelima panela i kliničkom slikom"
-			},
-			"de": {
-				"what": "Bluttest auf Antikörper gegen den Zinktransporter 8 (ZnT8), ein Marker, der das Inselzell-Antikörper-Panel ergänzt",
-				"how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
-				"when": "Klärung des Diabetestyps bei negativen GAD- und IA-2-Antikörpern, Abklärung erstmals erhöhter Blutzuckerwerte bei Kindern und jungen Erwachsenen auf Veranlassung des Endokrinologen",
-				"prep": "Keine besondere Vorbereitung erforderlich, das Ergebnis hängt nicht von der Nahrungsaufnahme ab",
-				"abnormal": "Nachweisbare Antikörper können mit einem Autoimmunprozess an den Inselzellen zusammenhängen, sie finden sich jedoch nicht bei allen und ersetzen die übrigen Kennwerte des Zuckerstoffwechsels nicht. Den Befund beurteilt der Endokrinologe zusammen mit den weiteren Antikörpern des Panels und dem klinischen Bild"
-			},
-			"tr": {
-				"what": "Ada hücresi antikor paneline eklenen bir gösterge olan çinko taşıyıcı 8 (ZnT8) antikorları için kan testi",
-				"how": "Damardan kan alınması, birkaç dakika sürer",
-				"when": "GAD ve IA-2 antikorları negatifken diyabet tipinin belirlenmesi, endokrinoloji uzmanının isteğiyle çocuk ve genç erişkinlerde yeni saptanan yüksek kan şekerinin araştırılması",
-				"prep": "Özel bir hazırlık gerekmez, sonuç yemek yenmesinden etkilenmez",
-				"abnormal": "Saptanan antikorlar ada hücrelerindeki otoimmün süreçle ilişkili olabilir, ancak herkeste bulunmaz ve glukoz metabolizmasının diğer göstergelerinin yerini tutmaz. Sonucu endokrinoloji uzmanı panelin diğer antikorları ve klinik tabloyla birlikte değerlendirir"
-			}
-		}
-	}
+  {
+    "slug": "anti-gad-antibodies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела к глутаматдекарбоксилазе (GAD) — один из маркеров аутоиммунного процесса в клетках поджелудочной железы, вырабатывающих инсулин",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Уточнение типа диабета у взрослых, впервые выявленное повышение сахара у молодых и худощавых пациентов, обследование вместе с другими островковыми антителами по назначению эндокринолога",
+        "prep": "Специальной подготовки не требуется, результат не зависит от приёма пищи",
+        "abnormal": "Обнаружение антител может быть связано с аутоиммунным процессом в клетках поджелудочной железы, но встречается и у людей без нарушений обмена сахара, а отрицательный результат аутоиммунную природу не исключает. Тип диабета и дальнейшие шаги определяет эндокринолог вместе с уровнем глюкозы, C-пептидом и клинической картиной"
+      },
+      "en": {
+        "what": "Blood test for antibodies to glutamic acid decarboxylase (GAD), one of the markers of an autoimmune process in the insulin-producing cells of the pancreas",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Clarifying the type of diabetes in adults, newly found high blood sugar in young or lean patients, testing together with other islet antibodies as ordered by an endocrinologist",
+        "prep": "No special preparation required, the result does not depend on food intake",
+        "abnormal": "Detected antibodies may be related to an autoimmune process in the pancreatic cells, yet they also occur in people without any sugar metabolism problems, and a negative result does not rule out an autoimmune cause. The type of diabetes and the next steps are determined by the endocrinologist together with glucose levels, C-peptide and the clinical picture"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela na glutamat dekarboksilazu (GAD), jedan od markera autoimunog procesa u ćelijama pankreasa koje stvaraju insulin",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Razjašnjavanje tipa dijabetesa kod odraslih, prvi put utvrđen povišen šećer kod mlađih i mršavijih osoba, ispitivanje zajedno sa ostalim antitijelima na Langerhansova ostrvca po uputu endokrinologa",
+        "prep": "Nije potrebna posebna priprema, nalaz ne zavisi od uzimanja hrane",
+        "abnormal": "Nalaz antitijela može biti povezan sa autoimunim procesom u ćelijama pankreasa, ali se sreće i kod osoba bez poremećaja metabolizma šećera, a negativan nalaz autoimunu prirodu ne isključuje. Tip dijabetesa i dalje korake određuje endokrinolog zajedno sa nivoom glukoze, C-peptidom i kliničkom slikom"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper gegen Glutamatdecarboxylase (GAD), einer der Marker für einen Autoimmunprozess an den insulinbildenden Zellen der Bauchspeicheldrüse",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Klärung des Diabetestyps bei Erwachsenen, erstmals erhöhter Blutzucker bei jungen oder schlanken Personen, Untersuchung zusammen mit weiteren Inselzell-Antikörpern auf Veranlassung des Endokrinologen",
+        "prep": "Keine besondere Vorbereitung erforderlich, das Ergebnis hängt nicht von der Nahrungsaufnahme ab",
+        "abnormal": "Nachweisbare Antikörper können mit einem Autoimmunprozess an den Zellen der Bauchspeicheldrüse zusammenhängen, kommen aber auch bei Menschen ohne Störung des Zuckerstoffwechsels vor, und ein negativer Befund schließt eine autoimmune Ursache nicht aus. Den Diabetestyp und das weitere Vorgehen legt der Endokrinologe zusammen mit Glukosewerten, C-Peptid und dem klinischen Bild fest"
+      },
+      "tr": {
+        "what": "Pankreasın insülin üreten hücrelerindeki otoimmün sürecin göstergelerinden biri olan glutamik asit dekarboksilaz (GAD) antikorları için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Erişkinde diyabet tipinin belirlenmesi, genç veya zayıf kişilerde yeni saptanan yüksek kan şekeri, endokrinoloji uzmanının isteğiyle diğer ada hücresi antikorlarıyla birlikte inceleme",
+        "prep": "Özel bir hazırlık gerekmez, sonuç yemek yenmesinden etkilenmez",
+        "abnormal": "Antikorların saptanması pankreas hücrelerindeki otoimmün süreçle ilişkili olabilir, ancak şeker metabolizması sorunu olmayan kişilerde de bulunur; negatif sonuç da otoimmün nedeni dışlamaz. Diyabetin tipini ve izlenecek yolu endokrinoloji uzmanı glukoz düzeyi, C-peptit ve klinik tabloyla birlikte belirler"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела на глутамат декарбоксилазу (GAD), један од маркера аутоимуног процеса у ћелијама панкреаса које стварају инсулин",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Разјашњавање типа дијабетеса код одраслих, први пут утврђен повишен шећер код млађих и мршавијих особа, испитивање заједно са осталим антитијелима на Лангерхансова острвца по упуту ендокринолога",
+        "prep": "Није потребна посебна припрема, налаз не зависи од узимања хране",
+        "abnormal": "Налаз антитијела може бити повезан са аутоимуним процесом у ћелијама панкреаса, али се среће и код особа без поремећаја метаболизма шећера, а негативан налаз аутоимуну природу не искључује. Тип дијабетеса и даље кораке одређује ендокринолог заједно са нивоом глукозе, Ц-пептидом и клиничком сликом"
+      }
+    }
+  },
+  {
+    "slug": "anticardiolipin-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к кардиолипину — один из тестов панели антифосфолипидных антител",
+        "how": "Забор венозной крови; при положительном результате исследование обычно повторяют спустя некоторое время",
+        "when": "Обследование при тромбозах, повторных потерях беременности, системных аутоиммунных заболеваниях, необъяснимых изменениях коагуляционных тестов",
+        "prep": "Специальной подготовки не требуется; о недавно перенесённых инфекциях и принимаемых лекарствах сообщают врачу",
+        "abnormal": "Обнаружение антител может быть связано с антифосфолипидным синдромом, но временная положительная реакция бывает после инфекций и на фоне некоторых лекарств. Однократный положительный результат не является диагнозом: его подтверждают повторным анализом, а оценивает врач вместе с клинической картиной"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to cardiolipin, one of the tests in the antiphospholipid antibody panel",
+        "how": "Blood draw from a vein; a positive result is usually repeated after some time",
+        "when": "Work-up of thrombosis, repeated pregnancy loss, systemic autoimmune disease, unexplained changes in clotting tests",
+        "prep": "No special preparation required; tell the doctor about recent infections and the medicines you take",
+        "abnormal": "Detected antibodies may be related to antiphospholipid syndrome, but a temporary positive reaction also occurs after infections and with certain medicines. A single positive result is not a diagnosis: it is confirmed by a repeat test and assessed by the doctor together with the clinical picture"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na kardiolipin, jedan od testova panela antifosfolipidnih antitijela",
+        "how": "Uzimanje venske krvi, kod pozitivnog nalaza ispitivanje se obično ponavlja nakon izvjesnog vremena",
+        "when": "Obrada kod tromboza, ponovljenih gubitaka trudnoće, sistemskih autoimunih oboljenja, neobjašnjenih promjena koagulacionih testova",
+        "prep": "Nije potrebna posebna priprema, o nedavno preboljenim infekcijama i lijekovima koje uzimate obavještava se ljekar",
+        "abnormal": "Nalaz antitijela može biti povezan sa antifosfolipidnim sindromom, ali se prolazno pozitivan rezultat javlja i nakon infekcija i uz pojedine lijekove. Jedan pozitivan nalaz nije dijagnoza: potvrđuje se ponovljenom analizom, a procjenjuje ga ljekar zajedno sa kliničkom slikom"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen Cardiolipin, einer der Tests des Antiphospholipid-Antikörper-Panels",
+        "how": "Blutentnahme aus einer Vene; ein positiver Befund wird in der Regel nach einiger Zeit wiederholt",
+        "when": "Abklärung von Thrombosen, wiederholten Fehlgeburten, systemischen Autoimmunerkrankungen, unerklärten Veränderungen der Gerinnungstests",
+        "prep": "Keine besondere Vorbereitung erforderlich; kürzlich durchgemachte Infektionen und eingenommene Medikamente sollten dem Arzt mitgeteilt werden",
+        "abnormal": "Nachweisbare Antikörper können mit einem Antiphospholipid-Syndrom zusammenhängen, eine vorübergehende positive Reaktion kommt aber auch nach Infektionen und unter bestimmten Medikamenten vor. Ein einzelner positiver Befund ist keine Diagnose: er wird durch eine Kontrolle bestätigt und vom Arzt zusammen mit dem klinischen Bild beurteilt"
+      },
+      "tr": {
+        "what": "Antifosfolipid antikor panelinin testlerinden biri olan, kardiyolipine karşı IgG sınıfı antikorlar için kan testi",
+        "how": "Damardan kan alınır; pozitif sonuç genellikle bir süre sonra tekrarlanır",
+        "when": "Tromboz, tekrarlayan gebelik kayıpları, sistemik otoimmün hastalıklar, pıhtılaşma testlerinde açıklanamayan değişiklikler",
+        "prep": "Özel bir hazırlık gerekmez; yakın zamanda geçirilen enfeksiyonlar ve kullanılan ilaçlar hekime bildirilir",
+        "abnormal": "Saptanan antikorlar antifosfolipid sendromuyla ilişkili olabilir, ancak enfeksiyonlardan sonra ve bazı ilaçlarla geçici pozitiflik de görülür. Tek bir pozitif sonuç tanı değildir: tekrar testiyle doğrulanır ve hekim klinik tabloyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на кардиолипин, један од тестова панела антифосфолипидних антитијела",
+        "how": "Узимање венске крви, код позитивног налаза испитивање се обично понавља након извјесног времена",
+        "when": "Обрада код тромбоза, поновљених губитака трудноће, системских аутоимуних обољења, необјашњених промјена коагулационих тестова",
+        "prep": "Није потребна посебна припрема, о недавно пребољеним инфекцијама и лијековима које узимате обавјештава се љекар",
+        "abnormal": "Налаз антитијела може бити повезан са антифосфолипидним синдромом, али се пролазно позитиван резултат јавља и након инфекција и уз поједине лијекове. Један позитиван налаз није дијагноза: потврђује се поновљеном анализом, а процјењује га љекар заједно са клиничком сликом"
+      }
+    }
+  },
+  {
+    "slug": "anticardiolipin-igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к кардиолипину — второй класс антител той же панели, который читают вместе с IgG",
+        "how": "Забор венозной крови; нужно ли повторять положительный результат, решает врач",
+        "when": "Обследование при тромбозах и осложнениях беременности, дополнение к результату IgG, наблюдение при уже выявленных антифосфолипидных антителах",
+        "prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
+        "abnormal": "Антитела класса IgM чаще бывают временными: они появляются после инфекций и встречаются у пожилых людей без каких-либо жалоб. Значение результата врач оценивает вместе с IgG, остальными тестами панели и историей болезни"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to cardiolipin, the second antibody class of the same panel, read together with IgG",
+        "how": "Blood draw from a vein; whether a positive result is repeated is decided by the doctor",
+        "when": "Work-up of thrombosis and pregnancy complications, addition to the IgG result, follow-up when antiphospholipid antibodies are already known",
+        "prep": "No special preparation required, blood is usually taken in the morning",
+        "abnormal": "IgM antibodies are more often temporary: they appear after infections and are found in older people without any complaints. The doctor assesses the result together with IgG, the other tests of the panel and the medical history"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na kardiolipin, druga klasa antitijela istog panela koja se čita zajedno sa IgG",
+        "how": "Uzimanje venske krvi, o ponavljanju pozitivnog nalaza odlučuje ljekar",
+        "when": "Obrada kod tromboza i komplikacija u trudnoći, dopuna nalazu IgG, praćenje kod već utvrđenih antifosfolipidnih antitijela",
+        "prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
+        "abnormal": "Antitijela klase IgM su češće prolazna: javljaju se nakon infekcija i nalaze se kod starijih osoba bez ikakvih tegoba. Nalaz procjenjuje ljekar zajedno sa IgG, ostalim testovima panela i istorijom bolesti"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen Cardiolipin, die zweite Antikörperklasse desselben Panels, die zusammen mit IgG beurteilt wird",
+        "how": "Blutentnahme aus einer Vene; ob ein positiver Befund wiederholt wird, entscheidet der Arzt",
+        "when": "Abklärung von Thrombosen und Schwangerschaftskomplikationen, Ergänzung zum IgG-Befund, Verlaufskontrolle bei bereits bekannten Antiphospholipid-Antikörpern",
+        "prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
+        "abnormal": "IgM-Antikörper sind häufiger vorübergehend: sie treten nach Infektionen auf und finden sich bei älteren Menschen ohne jegliche Beschwerden. Der Arzt beurteilt den Befund zusammen mit IgG, den übrigen Tests des Panels und der Krankengeschichte"
+      },
+      "tr": {
+        "what": "Kardiyolipine karşı IgM sınıfı antikorlar için kan testi, aynı panelin IgG ile birlikte değerlendirilen ikinci antikor sınıfı",
+        "how": "Damardan kan alınır; pozitif sonucun tekrarlanmasına hekim karar verir",
+        "when": "Tromboz ve gebelik komplikasyonlarının araştırılması, IgG sonucunun tamamlanması, bilinen antifosfolipid antikorlarında izlem",
+        "prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
+        "abnormal": "IgM sınıfı antikorlar daha sık geçicidir: enfeksiyonlardan sonra ortaya çıkar ve şikayeti olmayan yaşlı kişilerde de bulunur. Hekim sonucu IgG, panelin diğer testleri ve hastalık öyküsüyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на кардиолипин, друга класа антитијела истог панела која се чита заједно са IgG",
+        "how": "Узимање венске крви, о понављању позитивног налаза одлучује љекар",
+        "when": "Обрада код тромбоза и компликација у трудноћи, допуна налазу IgG, праћење код већ утврђених антифосфолипидних антитијела",
+        "prep": "Није потребна посебна припрема, крв се обично узима ујутру",
+        "abnormal": "Антитијела класе IgM су чешће пролазна: јављају се након инфекција и налазе се код старијих особа без икаквих тегоба. Налаз процјењује љекар заједно са IgG, осталим тестовима панела и историјом болести"
+      }
+    }
+  },
+  {
+    "slug": "beta-2-glycoprotein-i-igg",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к бета-2-гликопротеину I — белку, который связывается с фосфолипидами клеточных мембран",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Обследование при тромбозах и повторных потерях беременности вместе с антикардиолипиновыми антителами и волчаночным антикоагулянтом, уточнение положительных результатов панели",
+        "prep": "Специальной подготовки не требуется, результат не зависит от приёма пищи",
+        "abnormal": "Положительный результат может быть связан с антифосфолипидными антителами, при этом он бывает и преходящим, а само по себе обнаружение антител диагнозом не является. Заключение делает врач по всей панели, повторённой спустя некоторое время, и клинической картине"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to beta-2 glycoprotein I, a protein that binds to the phospholipids of cell membranes",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Work-up of thrombosis and repeated pregnancy loss together with anticardiolipin antibodies and lupus anticoagulant, clarification of positive panel results",
+        "prep": "No special preparation required, the result does not depend on food intake",
+        "abnormal": "A positive result may be related to antiphospholipid antibodies, it can also be transient, and finding the antibodies is not a diagnosis in itself. The conclusion is drawn by the doctor from the whole panel, repeated after some time, and from the clinical picture"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na beta-2 glikoprotein I, bjelančevinu koja se vezuje za fosfolipide ćelijskih membrana",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Obrada kod tromboza i ponovljenih gubitaka trudnoće zajedno sa antikardiolipinskim antitijelima i lupus antikoagulansom, razjašnjenje pozitivnih nalaza panela",
+        "prep": "Nije potrebna posebna priprema, nalaz ne zavisi od uzimanja hrane",
+        "abnormal": "Pozitivan nalaz može biti povezan sa antifosfolipidnim antitijelima, a može biti i prolazan, pa sam nalaz antitijela nije dijagnoza. Zaključak donosi ljekar na osnovu cijelog panela, ponovljenog nakon izvjesnog vremena, i kliničke slike"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen Beta-2-Glykoprotein I, ein Eiweiß, das an Phospholipide der Zellmembranen bindet",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Abklärung von Thrombosen und wiederholten Fehlgeburten zusammen mit Anticardiolipin-Antikörpern und Lupusantikoagulans, Klärung positiver Panelbefunde",
+        "prep": "Keine besondere Vorbereitung erforderlich, das Ergebnis hängt nicht von der Nahrungsaufnahme ab",
+        "abnormal": "Ein positiver Befund kann mit Antiphospholipid-Antikörpern zusammenhängen, er kann auch vorübergehend sein, und der Nachweis allein ist keine Diagnose. Die Einordnung trifft der Arzt anhand des gesamten, nach einiger Zeit wiederholten Panels und des klinischen Bildes"
+      },
+      "tr": {
+        "what": "Hücre zarındaki fosfolipitlere bağlanan bir protein olan beta-2 glikoprotein I'e karşı IgG sınıfı antikorlar için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Tromboz ve tekrarlayan gebelik kayıplarında antikardiyolipin antikorları ve lupus antikoagülanı ile birlikte inceleme, panelde pozitif çıkan sonuçların netleştirilmesi",
+        "prep": "Özel bir hazırlık gerekmez, sonuç yemek yenmesinden etkilenmez",
+        "abnormal": "Pozitif sonuç antifosfolipid antikorlarıyla ilişkili olabilir, geçici de olabilir ve antikorun saptanması tek başına tanı değildir. Değerlendirmeyi hekim, bir süre sonra tekrarlanan panelin tamamı ve klinik tabloyla birlikte yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на бета-2 гликопротеин И, бјеланчевину која се везује за фосфолипиде ћелијских мембрана",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Обрада код тромбоза и поновљених губитака трудноће заједно са антикардиолипинским антитијелима и лупус антикоагулансом, разјашњење позитивних налаза панела",
+        "prep": "Није потребна посебна припрема, налаз не зависи од узимања хране",
+        "abnormal": "Позитиван налаз може бити повезан са антифосфолипидним антитијелима, а може бити и пролазан, па сам налаз антитијела није дијагноза. Закључак доноси љекар на основу цијелог панела, поновљеног након извјесног времена, и клиничке слике"
+      }
+    }
+  },
+  {
+    "slug": "beta-2-glycoprotein-i-igm",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к бета-2-гликопротеину I — IgM-часть того же исследования, которую оценивают вместе с IgG",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Обследование при тромбозах и осложнениях беременности, дополнение к панели антифосфолипидных антител, наблюдение по назначению врача",
+        "prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
+        "abnormal": "Антитела класса IgM чаще оказываются временными и встречаются при инфекциях и у людей без жалоб, а их отсутствие антифосфолипидный синдром не исключает. Результат имеет значение только в сочетании с остальными тестами панели и оценивается врачом"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to beta-2 glycoprotein I, the IgM part of the same test, read together with IgG",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Work-up of thrombosis and pregnancy complications, addition to the antiphospholipid antibody panel, follow-up as ordered by the doctor",
+        "prep": "No special preparation required, blood is usually taken in the morning",
+        "abnormal": "IgM antibodies more often turn out to be temporary and occur with infections and in people without complaints, while their absence does not rule out antiphospholipid syndrome. The result matters only together with the other tests of the panel and is assessed by the doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na beta-2 glikoprotein I, IgM dio istog ispitivanja koji se procjenjuje zajedno sa IgG",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Obrada kod tromboza i komplikacija u trudnoći, dopuna panelu antifosfolipidnih antitijela, praćenje po uputu ljekara",
+        "prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
+        "abnormal": "Antitijela klase IgM češće budu prolazna i javljaju se kod infekcija i kod osoba bez tegoba, a njihovo odsustvo ne isključuje antifosfolipidni sindrom. Nalaz ima značaj samo uz ostale testove panela i procjenjuje ga ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen Beta-2-Glykoprotein I, der IgM-Anteil derselben Untersuchung, der zusammen mit IgG beurteilt wird",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Abklärung von Thrombosen und Schwangerschaftskomplikationen, Ergänzung des Antiphospholipid-Panels, Verlaufskontrolle auf ärztliche Veranlassung",
+        "prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
+        "abnormal": "IgM-Antikörper erweisen sich häufiger als vorübergehend und kommen bei Infektionen sowie bei Menschen ohne Beschwerden vor, ihr Fehlen schließt ein Antiphospholipid-Syndrom nicht aus. Der Befund hat nur zusammen mit den übrigen Tests des Panels Aussagekraft und wird vom Arzt beurteilt"
+      },
+      "tr": {
+        "what": "Beta-2 glikoprotein I'e karşı IgM sınıfı antikorlar için kan testi, aynı incelemenin IgG ile birlikte değerlendirilen IgM bölümü",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Tromboz ve gebelik komplikasyonlarının araştırılması, antifosfolipid antikor paneline ek, hekim isteğiyle izlem",
+        "prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
+        "abnormal": "IgM sınıfı antikorlar daha sık geçici olur, enfeksiyonlarda ve şikayeti olmayan kişilerde görülebilir, bulunmaması da antifosfolipid sendromunu dışlamaz. Sonuç yalnızca panelin diğer testleriyle birlikte anlam taşır ve hekim tarafından değerlendirilir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на бета-2 гликопротеин И, IgM дио истог испитивања који се процјењује заједно са IgG",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Обрада код тромбоза и компликација у трудноћи, допуна панелу антифосфолипидних антитијела, праћење по упуту љекара",
+        "prep": "Није потребна посебна припрема, крв се обично узима ујутру",
+        "abnormal": "Антитијела класе IgM чешће буду пролазна и јављају се код инфекција и код особа без тегоба, а њихово одсуство не искључује антифосфолипидни синдром. Налаз има значај само уз остале тестове панела и процјењује га љекар"
+      }
+    }
+  },
+  {
+    "slug": "dsdna-igg-antibodies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к двуспиральной ДНК (dsDNA) — уточняющий тест при обследовании на системные заболевания соединительной ткани",
+        "how": "Забор венозной крови, в лаборатории измеряют уровень антител, сам забор занимает несколько минут",
+        "when": "Положительный результат теста ANA, боли в суставах в сочетании с кожными высыпаниями и лихорадкой, наблюдение за течением уже установленного системного заболевания по назначению ревматолога",
+        "prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
+        "abnormal": "Обнаружение антител может быть связано с системным аутоиммунным процессом, но слабо положительные результаты встречаются при инфекциях, других аутоиммунных состояниях и на фоне ряда лекарств. Результат и его динамику оценивает ревматолог вместе с осмотром и остальными анализами"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to double-stranded DNA (dsDNA), a clarifying test in the work-up of systemic connective tissue disease",
+        "how": "Blood draw from a vein, the laboratory measures the antibody level, the draw itself takes a few minutes",
+        "when": "Positive ANA test, joint pain combined with skin rashes and fever, monitoring the course of an already established systemic disease as ordered by a rheumatologist",
+        "prep": "No special preparation required, blood is usually taken in the morning",
+        "abnormal": "Detected antibodies may be related to a systemic autoimmune process, but weakly positive results also occur with infections, other autoimmune conditions and under a number of medicines. The result and its changes over time are assessed by the rheumatologist together with the examination and the remaining tests"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na dvolančanu DNK (dsDNA), dopunski test pri ispitivanju sistemskih bolesti vezivnog tkiva",
+        "how": "Uzimanje venske krvi, u laboratoriji se mjeri nivo antitijela, samo uzimanje traje nekoliko minuta",
+        "when": "Pozitivan ANA test, bolovi u zglobovima uz promjene na koži i povišenu temperaturu, praćenje toka već utvrđene sistemske bolesti po uputu reumatologa",
+        "prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
+        "abnormal": "Nalaz antitijela može biti povezan sa sistemskim autoimunim procesom, ali se slabo pozitivni rezultati javljaju i kod infekcija, drugih autoimunih stanja i uz pojedine lijekove. Nalaz i njegovo kretanje procjenjuje reumatolog zajedno sa pregledom i ostalim analizama"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen doppelsträngige DNA (dsDNA), ein ergänzender Test bei der Abklärung systemischer Bindegewebserkrankungen",
+        "how": "Blutentnahme aus einer Vene, im Labor wird die Antikörpermenge bestimmt, die Entnahme selbst dauert wenige Minuten",
+        "when": "Positiver ANA-Test, Gelenkschmerzen zusammen mit Hautausschlägen und Fieber, Verlaufskontrolle einer bereits festgestellten systemischen Erkrankung auf Veranlassung des Rheumatologen",
+        "prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
+        "abnormal": "Nachweisbare Antikörper können mit einem systemischen Autoimmunprozess zusammenhängen, schwach positive Befunde kommen jedoch auch bei Infektionen, anderen Autoimmunerkrankungen und unter einigen Medikamenten vor. Befund und Verlauf beurteilt der Rheumatologe zusammen mit der Untersuchung und den übrigen Werten"
+      },
+      "tr": {
+        "what": "Sistemik bağ dokusu hastalıklarının araştırılmasında doğrulayıcı test olarak kullanılan, çift sarmallı DNA'ya (dsDNA) karşı IgG sınıfı antikorlar için kan testi",
+        "how": "Damardan kan alınır, laboratuvarda antikor düzeyi ölçülür, kan alma işlemi birkaç dakika sürer",
+        "when": "Pozitif ANA testi, ciltte döküntü ve ateşle birlikte eklem ağrıları, romatoloji uzmanının isteğiyle tanısı konmuş sistemik hastalığın izlemi",
+        "prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
+        "abnormal": "Saptanan antikorlar sistemik otoimmün süreçle ilişkili olabilir, ancak zayıf pozitif sonuçlar enfeksiyonlarda, başka otoimmün durumlarda ve bazı ilaçların kullanımında da görülür. Sonucu ve zaman içindeki değişimini romatoloji uzmanı muayene ve diğer tetkiklerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на дволанчану ДНК (dsDNA), допунски тест при испитивању системских болести везивног ткива",
+        "how": "Узимање венске крви, у лабораторији се мјери ниво антитијела, само узимање траје неколико минута",
+        "when": "Позитиван ANA тест, болови у зглобовима уз промјене на кожи и повишену температуру, праћење тока већ утврђене системске болести по упуту реуматолога",
+        "prep": "Није потребна посебна припрема, крв се обично узима ујутру",
+        "abnormal": "Налаз антитијела може бити повезан са системским аутоимуним процесом, али се слабо позитивни резултати јављају и код инфекција, других аутоимуних стања и уз поједине лијекове. Налаз и његово кретање процјењује реуматолог заједно са прегледом и осталим анализама"
+      }
+    }
+  },
+  {
+    "slug": "ia-2-antibodies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела к тирозинфосфатазе IA-2 — ещё один маркер аутоиммунного процесса в островковых клетках поджелудочной железы",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Уточнение типа диабета у детей и подростков с впервые выявленным повышением сахара, обследование в составе панели островковых антител по назначению эндокринолога",
+        "prep": "Специальной подготовки не требуется, результат не зависит от времени суток",
+        "abnormal": "Положительный результат может быть связан с аутоиммунным характером нарушения углеводного обмена, но сам по себе не определяет ни диагноз, ни лечение, а отрицательный аутоиммунный процесс не исключает. Итоговую оценку даёт эндокринолог по совокупности показателей и клинической картины"
+      },
+      "en": {
+        "what": "Blood test for antibodies to tyrosine phosphatase IA-2, another marker of an autoimmune process in the islet cells of the pancreas",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Clarifying the type of diabetes in children and adolescents with newly found high blood sugar, testing as part of the islet antibody panel ordered by an endocrinologist",
+        "prep": "No special preparation required, the result does not depend on the time of day",
+        "abnormal": "A positive result may be related to an autoimmune cause of a carbohydrate metabolism disorder, but on its own it determines neither the diagnosis nor the treatment, and a negative one does not rule out an autoimmune process. The final assessment is made by the endocrinologist from the whole set of values and the clinical picture"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela na tirozin fosfatazu IA-2, još jedan marker autoimunog procesa u ćelijama Langerhansovih ostrvaca pankreasa",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Razjašnjavanje tipa dijabetesa kod djece i adolescenata sa prvi put utvrđenim povišenim šećerom, ispitivanje u sklopu panela antitijela na Langerhansova ostrvca po uputu endokrinologa",
+        "prep": "Nije potrebna posebna priprema, nalaz ne zavisi od doba dana",
+        "abnormal": "Pozitivan nalaz može biti povezan sa autoimunom prirodom poremećaja metabolizma ugljenih hidrata, ali sam po sebi ne određuje ni dijagnozu ni liječenje, a negativan ne isključuje autoimuni proces. Konačnu procjenu daje endokrinolog na osnovu svih pokazatelja i kliničke slike"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper gegen die Tyrosinphosphatase IA-2, ein weiterer Marker für einen Autoimmunprozess an den Inselzellen der Bauchspeicheldrüse",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Klärung des Diabetestyps bei Kindern und Jugendlichen mit erstmals erhöhtem Blutzucker, Untersuchung im Rahmen des Inselzell-Antikörper-Panels auf Veranlassung des Endokrinologen",
+        "prep": "Keine besondere Vorbereitung erforderlich, das Ergebnis hängt nicht von der Tageszeit ab",
+        "abnormal": "Ein positiver Befund kann mit einer autoimmunen Ursache der Zuckerstoffwechselstörung zusammenhängen, legt für sich genommen aber weder Diagnose noch Behandlung fest, und ein negativer schließt einen Autoimmunprozess nicht aus. Die abschließende Einordnung nimmt der Endokrinologe anhand aller Werte und des klinischen Bildes vor"
+      },
+      "tr": {
+        "what": "Pankreasın ada hücrelerindeki otoimmün sürecin bir başka göstergesi olan tirozin fosfataz IA-2 antikorları için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Yeni saptanan yüksek kan şekeri olan çocuk ve ergenlerde diyabet tipinin belirlenmesi, endokrinoloji uzmanının istediği ada hücresi antikor paneli kapsamında inceleme",
+        "prep": "Özel bir hazırlık gerekmez, sonuç günün saatinden etkilenmez",
+        "abnormal": "Pozitif sonuç karbonhidrat metabolizması bozukluğunun otoimmün kökenli olmasıyla ilişkili olabilir, ancak tek başına ne tanıyı ne de tedaviyi belirler, negatif sonuç da otoimmün süreci dışlamaz. Son değerlendirmeyi endokrinoloji uzmanı tüm göstergeler ve klinik tabloyla birlikte yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела на тирозин фосфатазу IA-2, још један маркер аутоимуног процеса у ћелијама Лангерхансових острваца панкреаса",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Разјашњавање типа дијабетеса код дјеце и адолесцената са први пут утврђеним повишеним шећером, испитивање у склопу панела антитијела на Лангерхансова острвца по упуту ендокринолога",
+        "prep": "Није потребна посебна припрема, налаз не зависи од доба дана",
+        "abnormal": "Позитиван налаз може бити повезан са аутоимуном природом поремећаја метаболизма угљених хидрата, али сам по себи не одређује ни дијагнозу ни лијечење, а негативан не искључује аутоимуни процес. Коначну процјену даје ендокринолог на основу свих показатеља и клиничке слике"
+      }
+    }
+  },
+  {
+    "slug": "phospholipid-igg-antibodies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgG к группе фосфолипидов — суммарный тест, охватывающий несколько фосфолипидных мишеней сразу",
+        "how": "Забор венозной крови, в лаборатории определяют суммарный уровень антител класса IgG",
+        "when": "Первичное обследование при тромбозах, повторных потерях беременности, подозрении на антифосфолипидный синдром до более специфичных тестов",
+        "prep": "Специальной подготовки не требуется; о недавно перенесённых инфекциях стоит сообщить лаборатории или врачу",
+        "abnormal": "Положительный суммарный результат обычно уточняют отдельными тестами на антитела к кардиолипину и бета-2-гликопротеину I, поскольку он может быть связан и с временной реакцией после инфекции. Выводы делает врач по всей панели, а не по одному показателю"
+      },
+      "en": {
+        "what": "Blood test for IgG class antibodies to a group of phospholipids, a combined test covering several phospholipid targets at once",
+        "how": "Blood draw from a vein, the laboratory measures the combined level of IgG class antibodies",
+        "when": "First-line work-up of thrombosis, repeated pregnancy loss, suspected antiphospholipid syndrome before more specific tests",
+        "prep": "No special preparation required; recent infections are worth mentioning to the laboratory or the doctor",
+        "abnormal": "A positive combined result is usually clarified with separate tests for antibodies to cardiolipin and beta-2 glycoprotein I, because it may also be related to a temporary reaction after an infection. Conclusions are drawn by the doctor from the whole panel, not from a single value"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgG na grupu fosfolipida, zbirni test koji obuhvata više fosfolipidnih meta odjednom",
+        "how": "Uzimanje venske krvi, u laboratoriji se mjeri zbirni nivo antitijela klase IgG",
+        "when": "Početna obrada kod tromboza, ponovljenih gubitaka trudnoće, sumnje na antifosfolipidni sindrom prije specifičnijih testova",
+        "prep": "Nije potrebna posebna priprema, o nedavno preboljenim infekcijama treba obavijestiti laboratoriju ili ljekara",
+        "abnormal": "Pozitivan zbirni nalaz se obično razjašnjava zasebnim testovima na antitijela na kardiolipin i beta-2 glikoprotein I, jer može biti povezan i sa prolaznom reakcijom nakon infekcije. Zaključke donosi ljekar na osnovu cijelog panela, a ne jednog pokazatelja"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgG gegen eine Gruppe von Phospholipiden, ein Summentest, der mehrere Phospholipid-Ziele zugleich erfasst",
+        "how": "Blutentnahme aus einer Vene, im Labor wird der Gesamtwert der IgG-Antikörper bestimmt",
+        "when": "Erste Abklärung bei Thrombosen, wiederholten Fehlgeburten, Verdacht auf ein Antiphospholipid-Syndrom vor spezifischeren Tests",
+        "prep": "Keine besondere Vorbereitung erforderlich; kürzlich durchgemachte Infektionen sollten dem Labor oder dem Arzt mitgeteilt werden",
+        "abnormal": "Ein positiver Summenbefund wird üblicherweise mit gesonderten Tests auf Antikörper gegen Cardiolipin und Beta-2-Glykoprotein I geklärt, da er auch mit einer vorübergehenden Reaktion nach einer Infektion zusammenhängen kann. Schlüsse zieht der Arzt aus dem gesamten Panel, nicht aus einem einzelnen Wert"
+      },
+      "tr": {
+        "what": "Birden çok fosfolipit hedefini aynı anda kapsayan, fosfolipit grubuna karşı IgG sınıfı antikorlar için toplu kan testi",
+        "how": "Damardan kan alınır, laboratuvarda IgG sınıfı antikorların toplam düzeyi ölçülür",
+        "when": "Trombozda, tekrarlayan gebelik kayıplarında, antifosfolipid sendromu şüphesinde daha özgül testlerden önce yapılan ilk değerlendirme",
+        "prep": "Özel bir hazırlık gerekmez; yakın zamanda geçirilen enfeksiyonların laboratuvara veya hekime bildirilmesi yararlıdır",
+        "abnormal": "Pozitif toplu sonuç genellikle kardiyolipin ve beta-2 glikoprotein I antikorları için ayrı testlerle netleştirilir, çünkü enfeksiyon sonrası geçici bir yanıtla da ilişkili olabilir. Hekim sonucu tek bir değere göre değil panelin tamamına göre yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgG на групу фосфолипида, збирни тест који обухвата више фосфолипидних мета одједном",
+        "how": "Узимање венске крви, у лабораторији се мјери збирни ниво антитијела класе IgG",
+        "when": "Почетна обрада код тромбоза, поновљених губитака трудноће, сумње на антифосфолипидни синдром прије специфичнијих тестова",
+        "prep": "Није потребна посебна припрема, о недавно пребољеним инфекцијама треба обавијестити лабораторију или љекара",
+        "abnormal": "Позитиван збирни налаз се обично разјашњава засебним тестовима на антитијела на кардиолипин и бета-2 гликопротеин И, јер може бити повезан и са пролазном реакцијом након инфекције. Закључке доноси љекар на основу цијелог панела, а не једног показатеља"
+      }
+    }
+  },
+  {
+    "slug": "phospholipid-igm-antibodies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к группе фосфолипидов — IgM-часть суммарного фосфолипидного теста",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Обследование при тромбозах и осложнениях беременности вместе с IgG, дополнение к панели антифосфолипидных антител по назначению врача",
+        "prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
+        "abnormal": "Антитела класса IgM в суммарном тесте нередко оказываются временными и появляются после инфекций, поэтому результат уточняют отдельными тестами и повторяют. Значение имеет только совокупность показателей, которую оценивает врач"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to a group of phospholipids, the IgM part of the combined phospholipid test",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Work-up of thrombosis and pregnancy complications together with IgG, addition to the antiphospholipid antibody panel as ordered by the doctor",
+        "prep": "No special preparation required, blood is usually taken in the morning",
+        "abnormal": "IgM antibodies in the combined test are quite often temporary and appear after infections, so the result is clarified with separate tests and repeated. Only the set of values taken together carries meaning, and it is assessed by the doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na grupu fosfolipida, IgM dio zbirnog fosfolipidnog testa",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Obrada kod tromboza i komplikacija u trudnoći zajedno sa IgG, dopuna panelu antifosfolipidnih antitijela po uputu ljekara",
+        "prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
+        "abnormal": "Antitijela klase IgM u zbirnom testu su često prolazna i javljaju se nakon infekcija, pa se nalaz razjašnjava zasebnim testovima i ponavlja. Značaj ima samo skup pokazatelja, koji procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen eine Gruppe von Phospholipiden, der IgM-Anteil des Phospholipid-Summentests",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Abklärung von Thrombosen und Schwangerschaftskomplikationen zusammen mit IgG, Ergänzung des Antiphospholipid-Panels auf ärztliche Veranlassung",
+        "prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
+        "abnormal": "IgM-Antikörper im Summentest sind oft vorübergehend und treten nach Infektionen auf, deshalb wird der Befund mit gesonderten Tests geklärt und wiederholt. Aussagekraft hat nur die Gesamtheit der Werte, die der Arzt beurteilt"
+      },
+      "tr": {
+        "what": "Fosfolipit grubuna karşı IgM sınıfı antikorlar için kan testi, toplu fosfolipit testinin IgM bölümü",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Tromboz ve gebelik komplikasyonlarında IgG ile birlikte inceleme, hekim isteğiyle antifosfolipid antikor paneline ek",
+        "prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
+        "abnormal": "Toplu testteki IgM sınıfı antikorlar sıklıkla geçicidir ve enfeksiyonlardan sonra ortaya çıkar, bu nedenle sonuç ayrı testlerle netleştirilir ve tekrarlanır. Anlam taşıyan şey göstergelerin bütünüdür ve bunu hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на групу фосфолипида, IgM дио збирног фосфолипидног теста",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Обрада код тромбоза и компликација у трудноћи заједно са IgG, допуна панелу антифосфолипидних антитијела по упуту љекара",
+        "prep": "Није потребна посебна припрема, крв се обично узима ујутру",
+        "abnormal": "Антитијела класе IgM у збирном тесту су често пролазна и јављају се након инфекција, па се налаз разјашњава засебним тестовима и понавља. Значај има само скуп показатеља, који процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "dsdna-igm-antibodies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела класса IgM к двуспиральной ДНК (dsDNA) — класс антител, который используют реже, чем IgG",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Обследование при системных аутоиммунных заболеваниях в дополнение к IgG и тесту ANA, ситуации, когда врачу нужно разделить классы антител",
+        "prep": "Специальной подготовки не требуется, кровь обычно сдают утром",
+        "abnormal": "Антитела класса IgM к dsDNA менее специфичны и встречаются при инфекциях и других состояниях, поэтому отдельно от IgG и ANA их не трактуют. Значение результата определяет врач вместе с клинической картиной"
+      },
+      "en": {
+        "what": "Blood test for IgM class antibodies to double-stranded DNA (dsDNA), an antibody class used less often than IgG",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Work-up of systemic autoimmune disease in addition to IgG and the ANA test, situations where the doctor needs to separate the antibody classes",
+        "prep": "No special preparation required, blood is usually taken in the morning",
+        "abnormal": "IgM antibodies to dsDNA are less specific and are also found with infections and other conditions, so they are not interpreted apart from IgG and ANA. What the result means is decided by the doctor together with the clinical picture"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela klase IgM na dvolančanu DNK (dsDNA), klasa antitijela koja se koristi rjeđe od IgG",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Ispitivanje sistemskih autoimunih oboljenja kao dopuna IgG i ANA testu, situacije kada ljekar treba da razdvoji klase antitijela",
+        "prep": "Nije potrebna posebna priprema, krv se obično uzima ujutru",
+        "abnormal": "Antitijela klase IgM na dsDNA su manje specifična i nalaze se i kod infekcija i drugih stanja, pa se ne tumače odvojeno od IgG i ANA. Značaj nalaza utvrđuje ljekar zajedno sa kliničkom slikom"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper der Klasse IgM gegen doppelsträngige DNA (dsDNA), eine Antikörperklasse, die seltener eingesetzt wird als IgG",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Abklärung systemischer Autoimmunerkrankungen ergänzend zu IgG und zum ANA-Test, Situationen, in denen der Arzt die Antikörperklassen trennen muss",
+        "prep": "Keine besondere Vorbereitung erforderlich, die Blutentnahme erfolgt meist morgens",
+        "abnormal": "IgM-Antikörper gegen dsDNA sind weniger spezifisch und kommen auch bei Infektionen und anderen Zuständen vor, deshalb werden sie nicht getrennt von IgG und ANA gedeutet. Was der Befund bedeutet, entscheidet der Arzt zusammen mit dem klinischen Bild"
+      },
+      "tr": {
+        "what": "Çift sarmallı DNA'ya (dsDNA) karşı IgM sınıfı antikorlar için kan testi, IgG'ye göre daha seyrek kullanılan antikor sınıfı",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "Sistemik otoimmün hastalıkların araştırılmasında IgG ve ANA testine ek, hekimin antikor sınıflarını ayırması gereken durumlar",
+        "prep": "Özel bir hazırlık gerekmez, kan genellikle sabah alınır",
+        "abnormal": "dsDNA'ya karşı IgM sınıfı antikorlar daha az özgüldür ve enfeksiyonlarda, başka durumlarda da bulunur, bu nedenle IgG ve ANA'dan ayrı yorumlanmaz. Sonucun anlamını hekim klinik tabloyla birlikte belirler"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела класе IgM на дволанчану ДНК (dsDNA), класа антитијела која се користи рјеђе од IgG",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Испитивање системских аутоимуних обољења као допуна IgG и ANA тесту, ситуације када љекар треба да раздвоји класе антитијела",
+        "prep": "Није потребна посебна припрема, крв се обично узима ујутру",
+        "abnormal": "Антитијела класе IgM на dsDNA су мање специфична и налазе се и код инфекција и других стања, па се не тумаче одвојено од IgG и ANA. Значај налаза утврђује љекар заједно са клиничком сликом"
+      }
+    }
+  },
+  {
+    "slug": "znt8-antibodies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на антитела к транспортёру цинка 8 (ZnT8) — маркер, который добавляют к панели островковых антител",
+        "how": "Забор венозной крови из вены, занимает несколько минут",
+        "when": "Уточнение типа диабета, когда антитела GAD и IA-2 отрицательны, обследование при впервые выявленном повышении сахара у детей и молодых взрослых по назначению эндокринолога",
+        "prep": "Специальной подготовки не требуется, результат не зависит от приёма пищи",
+        "abnormal": "Обнаружение антител может быть связано с аутоиммунным процессом в островковых клетках, но выявляются они не у всех и не заменяют остальные показатели обмена глюкозы. Результат оценивает эндокринолог вместе с другими антителами панели и клинической картиной"
+      },
+      "en": {
+        "what": "Blood test for antibodies to zinc transporter 8 (ZnT8), a marker added to the islet antibody panel",
+        "how": "Blood draw from a vein, takes a few minutes",
+        "when": "Clarifying the type of diabetes when GAD and IA-2 antibodies are negative, work-up of newly found high blood sugar in children and young adults as ordered by an endocrinologist",
+        "prep": "No special preparation required, the result does not depend on food intake",
+        "abnormal": "Detected antibodies may be related to an autoimmune process in the islet cells, but they are not found in everyone and do not replace the other measures of glucose metabolism. The result is assessed by the endocrinologist together with the other antibodies of the panel and the clinical picture"
+      },
+      "sr": {
+        "what": "Analiza krvi na antitijela na transporter cinka 8 (ZnT8), marker koji se dodaje panelu antitijela na Langerhansova ostrvca",
+        "how": "Uzimanje venske krvi iz vene, traje nekoliko minuta",
+        "when": "Razjašnjavanje tipa dijabetesa kada su antitijela GAD i IA-2 negativna, obrada prvi put utvrđenog povišenog šećera kod djece i mlađih odraslih po uputu endokrinologa",
+        "prep": "Nije potrebna posebna priprema, nalaz ne zavisi od uzimanja hrane",
+        "abnormal": "Nalaz antitijela može biti povezan sa autoimunim procesom u ćelijama ostrvaca, ali se ne nalazi kod svih i ne zamjenjuje ostale pokazatelje metabolizma glukoze. Nalaz procjenjuje endokrinolog zajedno sa ostalim antitijelima panela i kliničkom slikom"
+      },
+      "de": {
+        "what": "Bluttest auf Antikörper gegen den Zinktransporter 8 (ZnT8), ein Marker, der das Inselzell-Antikörper-Panel ergänzt",
+        "how": "Blutentnahme aus einer Vene, dauert wenige Minuten",
+        "when": "Klärung des Diabetestyps bei negativen GAD- und IA-2-Antikörpern, Abklärung erstmals erhöhter Blutzuckerwerte bei Kindern und jungen Erwachsenen auf Veranlassung des Endokrinologen",
+        "prep": "Keine besondere Vorbereitung erforderlich, das Ergebnis hängt nicht von der Nahrungsaufnahme ab",
+        "abnormal": "Nachweisbare Antikörper können mit einem Autoimmunprozess an den Inselzellen zusammenhängen, sie finden sich jedoch nicht bei allen und ersetzen die übrigen Kennwerte des Zuckerstoffwechsels nicht. Den Befund beurteilt der Endokrinologe zusammen mit den weiteren Antikörpern des Panels und dem klinischen Bild"
+      },
+      "tr": {
+        "what": "Ada hücresi antikor paneline eklenen bir gösterge olan çinko taşıyıcı 8 (ZnT8) antikorları için kan testi",
+        "how": "Damardan kan alınması, birkaç dakika sürer",
+        "when": "GAD ve IA-2 antikorları negatifken diyabet tipinin belirlenmesi, endokrinoloji uzmanının isteğiyle çocuk ve genç erişkinlerde yeni saptanan yüksek kan şekerinin araştırılması",
+        "prep": "Özel bir hazırlık gerekmez, sonuç yemek yenmesinden etkilenmez",
+        "abnormal": "Saptanan antikorlar ada hücrelerindeki otoimmün süreçle ilişkili olabilir, ancak herkeste bulunmaz ve glukoz metabolizmasının diğer göstergelerinin yerini tutmaz. Sonucu endokrinoloji uzmanı panelin diğer antikorları ve klinik tabloyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на антитијела на транспортер цинка 8 (ЗнТ8), маркер који се додаје панелу антитијела на Лангерхансова острвца",
+        "how": "Узимање венске крви из вене, траје неколико минута",
+        "when": "Разјашњавање типа дијабетеса када су антитијела GAD и IA-2 негативна, обрада први пут утврђеног повишеног шећера код дјеце и млађих одраслих по упуту ендокринолога",
+        "prep": "Није потребна посебна припрема, налаз не зависи од узимања хране",
+        "abnormal": "Налаз антитијела може бити повезан са аутоимуним процесом у ћелијама острваца, али се не налази код свих и не замјењује остале показатеље метаболизма глукозе. Налаз процјењује ендокринолог заједно са осталим антитијелима панела и клиничком сликом"
+      }
+    }
+  }
 ]

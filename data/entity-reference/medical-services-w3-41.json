@@ -1,576 +1,674 @@
 [
-	{
-		"slug": "cholecystectomy-with-t-tube-drainage",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Открытое удаление жёлчного пузыря с ревизией общего жёлчного протока, в который на время оставляют Т-образный дренаж",
-				"how": "Под общим наркозом хирург делает разрез в правом подреберье, удаляет пузырь, вскрывает общий жёлчный проток, убирает из него камни и ставит Т-образную трубку, выведенную наружу; вмешательство обычно длится полтора-три часа",
-				"when": "Камни, застрявшие в общем жёлчном протоке, воспаление пузыря с расширением протоков, невозможность или неудача эндоскопического удаления камней, травма или сужение протока",
-				"prep": "Анализы крови, УЗИ и другие снимки протоков, консультация анестезиолога, отказ от еды и питья по указанию врача, согласование приёма разжижающих кровь препаратов",
-				"abnormal": "Дренаж остаётся на несколько недель, по нему оттекает жёлчь, его промывают, а перед удалением делают контрольный снимок протока; сроки определяет хирург. Подтекание вокруг трубки, резкое изменение количества жёлчи, желтушность кожи, озноб или сильная боль — повод обратиться раньше назначенного визита"
-			},
-			"en": {
-				"what": "Open removal of the gallbladder with exploration of the common bile duct, in which a T-shaped drain is left for a time",
-				"how": "Under general anaesthesia the surgeon opens the right upper abdomen, removes the gallbladder, opens the common bile duct, clears stones from it and places a T-shaped tube led out through the skin; the procedure usually takes one and a half to three hours",
-				"when": "Stones stuck in the common bile duct, gallbladder inflammation with widened ducts, cases where endoscopic stone removal is not possible or has failed, injury or narrowing of the duct",
-				"prep": "Blood tests, ultrasound and other imaging of the ducts, a visit to the anaesthetist, no food or drink as the doctor instructs, and agreement with the doctor about blood-thinning medicines",
-				"abnormal": "The drain stays in for several weeks, bile flows out through it, it is flushed and a control image of the duct is taken before removal; the surgeon sets the timing. Leakage around the tube, a sharp change in the amount of bile, yellowing of the skin, chills or severe pain mean contacting the surgeon before the scheduled visit"
-			},
-			"sr": {
-				"what": "Otvoreno uklanjanje žučne kese uz pregled glavnog žučnog voda, u koji se privremeno postavlja T-dren",
-				"how": "U opštoj anesteziji hirurg otvara desni gornji dio trbuha, uklanja žučnu kesu, otvara glavni žučni vod, vadi kamence iz njega i postavlja T-cjevčicu izvedenu kroz kožu; zahvat obično traje sat i po do tri sata",
-				"when": "Kamenci zaglavljeni u glavnom žučnom vodu, upala žučne kese sa proširenim vodovima, situacije kada endoskopsko vađenje kamenaca nije moguće ili nije uspjelo, povreda ili suženje voda",
-				"prep": "Analize krvi, ultrazvuk i drugi snimci vodova, pregled anesteziologa, bez hrane i pića po uputstvu ljekara, dogovor o lijekovima za razrjeđivanje krvi",
-				"abnormal": "Dren ostaje nekoliko sedmica, kroz njega otiče žuč, ispira se, a prije vađenja radi se kontrolni snimak voda; rokove određuje hirurg. Curenje oko cjevčice, nagla promjena količine žuči, žućkasta boja kože, drhtavica ili jak bol razlog su da se javite ranije od zakazanog pregleda"
-			},
-			"de": {
-				"what": "Offene Entfernung der Gallenblase mit Darstellung des Hauptgallengangs, in den vorübergehend eine T-Drainage eingelegt wird",
-				"how": "In Vollnarkose eröffnet der Chirurg den rechten Oberbauch, entfernt die Gallenblase, eröffnet den Hauptgallengang, entfernt Steine daraus und legt einen nach außen geführten T-Schlauch ein; der Eingriff dauert meist eineinhalb bis drei Stunden",
-				"when": "Im Hauptgallengang eingeklemmte Steine, Gallenblasenentzündung mit erweiterten Gängen, Fälle, in denen die endoskopische Steinentfernung nicht möglich war oder nicht gelungen ist, Verletzung oder Verengung des Gangs",
-				"prep": "Blutuntersuchungen, Ultraschall und weitere Darstellung der Gallenwege, Narkosegespräch, Nüchternheit nach ärztlicher Anweisung, Absprache über blutverdünnende Medikamente",
-				"abnormal": "Die Drainage bleibt mehrere Wochen liegen, Galle fließt darüber ab, sie wird gespült und vor dem Ziehen wird eine Kontrollaufnahme des Gangs angefertigt; den Zeitpunkt legt der Chirurg fest. Flüssigkeitsaustritt neben dem Schlauch, eine plötzlich veränderte Gallenmenge, Gelbfärbung der Haut, Schüttelfrost oder starke Schmerzen sind Gründe, sich vor dem geplanten Termin zu melden"
-			},
-			"tr": {
-				"what": "Ana safra kanalının da açılarak kontrol edildiği, içine geçici olarak T şeklinde bir dren yerleştirilen açık safra kesesi ameliyatı",
-				"how": "Genel anestezi altında cerrah sağ üst karın bölgesini açar, safra kesesini çıkarır, ana safra kanalını açarak taşları temizler ve dışarı uzanan T şeklinde bir tüp yerleştirir; işlem genellikle bir buçuk ila üç saat sürer",
-				"when": "Ana safra kanalında sıkışmış taşlar, kanalların genişlemesiyle seyreden safra kesesi iltihabı, endoskopik taş çıkarmanın mümkün olmadığı veya başarısız kaldığı durumlar, kanal yaralanması veya darlığı",
-				"prep": "Kan tahlilleri, ultrason ve safra yollarının diğer görüntülemeleri, anestezi uzmanı değerlendirmesi, hekimin belirttiği süre boyunca aç kalmak, kan sulandırıcı ilaçların hekimle görüşülmesi",
-				"abnormal": "Dren birkaç hafta kalır, safra bu yoldan dışarı akar, yıkanır ve çıkarılmadan önce kanalın kontrol görüntüsü alınır; süreyi cerrah belirler. Tüpün çevresinden sızıntı, safra miktarında ani değişiklik, ciltte sararma, titreme veya şiddetli ağrı planlanan kontrolden önce başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "epigastric-hernia-operation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Пластика грыжи белой линии живота — дефекта по средней линии между пупком и грудиной",
-				"how": "Под местным обезболиванием или наркозом хирург делает небольшой разрез над выпячиванием, вправляет вышедшую жировую ткань или сальник, ушивает дефект мышечного слоя, а крупный укрепляет сеткой; обычно занимает меньше часа",
-				"when": "Болезненное или увеличивающееся выпячивание по средней линии выше пупка, дискомфорт при нагрузке и кашле, повторное появление после прежней пластики",
-				"prep": "Осмотр хирурга и анестезиолога, базовые анализы, отказ от еды и питья по инструкции клиники, сообщить о разжижающих кровь препаратах и хронических болезнях",
-				"abnormal": "Несколько дней ожидаемы тянущая боль, отёк и синяк вокруг шва, а срок ограничения подъёма тяжестей называет хирург. Нарастающая боль, покраснение и выделения из раны, температура или повторное выпячивание требуют осмотра"
-			},
-			"en": {
-				"what": "Repair of a hernia in the midline of the abdomen between the navel and the breastbone",
-				"how": "Under local or general anaesthesia the surgeon makes a small cut over the bulge, returns the fat or omentum that has come through, closes the gap in the muscle layer and reinforces a larger defect with a mesh; it usually takes under an hour",
-				"when": "A painful or growing bulge in the midline above the navel, discomfort on exertion and coughing, a bulge that has come back after an earlier repair",
-				"prep": "Examination by the surgeon and the anaesthetist, basic blood tests, no food or drink as the clinic instructs, and telling the doctor about blood-thinning medicines and chronic conditions",
-				"abnormal": "A pulling pain, swelling and a bruise around the stitches are expected for a few days, and the surgeon sets how long to avoid lifting. Growing pain, redness or discharge from the wound, fever or a bulge that appears again call for a check-up"
-			},
-			"sr": {
-				"what": "Operativno zatvaranje otvora u srednjoj liniji trbuha, između pupka i grudne kosti",
-				"how": "U lokalnoj ili opštoj anesteziji hirurg pravi mali rez iznad izbočenja, vraća masno tkivo ili trbušnu maramicu, ušiva otvor u mišićnom sloju, a veći defekt ojačava mrežicom; obično traje kraće od sat vremena",
-				"when": "Bolno ili sve veće izbočenje u srednjoj liniji iznad pupka, nelagoda pri naporu i kašljanju, ponovna pojava nakon ranije operacije",
-				"prep": "Pregled hirurga i anesteziologa, osnovne analize, bez hrane i pića po uputstvu klinike, obavijestiti ljekara o lijekovima za razrjeđivanje krvi i hroničnim bolestima",
-				"abnormal": "Nekoliko dana se očekuju zatezanje, otok i modrica oko šava, a koliko dugo treba izbjegavati dizanje tereta kaže hirurg. Pojačan bol, crvenilo ili curenje iz rane, povišena temperatura ili ponovno izbočenje traže pregled"
-			},
-			"de": {
-				"what": "Verschluss einer Bruchlücke in der Mittellinie des Bauches zwischen Nabel und Brustbein",
-				"how": "In örtlicher Betäubung oder Vollnarkose setzt der Chirurg einen kleinen Schnitt über der Vorwölbung, verlagert das vorgetretene Fettgewebe oder Netz zurück, verschließt die Lücke in der Muskelschicht und verstärkt größere Defekte mit einem Netz; meist dauert es weniger als eine Stunde",
-				"when": "Eine schmerzhafte oder größer werdende Vorwölbung in der Mittellinie oberhalb des Nabels, Beschwerden bei Belastung und Husten, erneutes Auftreten nach einer früheren Operation",
-				"prep": "Untersuchung durch Chirurg und Anästhesist, Basislabor, Nüchternheit nach Anweisung der Klinik, Hinweis auf blutverdünnende Medikamente und chronische Erkrankungen",
-				"abnormal": "Ziehende Schmerzen, Schwellung und ein Bluterguss um die Naht sind für einige Tage zu erwarten, wie lange auf Heben verzichtet werden soll, legt der Chirurg fest. Zunehmende Schmerzen, Rötung oder Sekret aus der Wunde, Fieber oder eine erneute Vorwölbung erfordern eine Kontrolle"
-			},
-			"tr": {
-				"what": "Göbek ile göğüs kemiği arasındaki orta hatta oluşan fıtığın onarımı",
-				"how": "Lokal veya genel anestezi altında cerrah şişliğin üzerinden küçük bir kesi yapar, dışarı çıkan yağ dokusunu veya omentumu yerine iter, kas tabakasındaki açıklığı diker, büyük açıklıkları yama ile güçlendirir; genellikle bir saatten kısa sürer",
-				"when": "Göbeğin üzerinde orta hatta ağrıyan veya büyüyen şişlik, zorlanma ve öksürükle artan rahatsızlık, önceki onarımdan sonra yeniden ortaya çıkan fıtık",
-				"prep": "Cerrah ve anestezi uzmanı değerlendirmesi, temel tahliller, kliniğin belirttiği süre boyunca aç kalmak, kan sulandırıcı ilaçların ve kronik hastalıkların bildirilmesi",
-				"abnormal": "Birkaç gün dikiş çevresinde çekilme hissi, şişlik ve morluk beklenir; ağırlık kaldırma kısıtlamasının süresini cerrah belirler. Artan ağrı, kızarıklık veya yaradan akıntı, ateş ya da şişliğin yeniden belirmesi kontrol gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "exploratory-laparotomy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Вскрытие брюшной полости для осмотра органов, когда причину состояния не удаётся установить другими методами",
-				"how": "Под общим наркозом хирург рассекает брюшную стенку, последовательно осматривает и ощупывает органы, при необходимости берёт материал на исследование, сразу устраняет найденную проблему и ушивает рану; длительность зависит от находки",
-				"when": "Острая боль в животе неясной причины, проникающие ранения и тупая травма живота, внутреннее кровотечение, подозрение на прободение или непроходимость, уточнение распространённости процесса перед лечением",
-				"prep": "Чаще выполняется срочно: не есть и не пить, сообщить бригаде о лекарствах, аллергиях и перенесённых операциях; анализы, снимки и осмотр анестезиолога делают в стационаре",
-				"abnormal": "Объём вмешательства становится известен только во время операции, и дальнейший план хирург обсуждает после неё; взятый материал оценивает патолог. В первые дни ожидаемы боль по шву, вздутие и постепенное возвращение к питанию, а температура, рвота или выделения из раны — повод сообщить врачу сразу"
-			},
-			"en": {
-				"what": "Opening of the abdominal cavity to inspect the organs when other methods cannot establish the cause of the condition",
-				"how": "Under general anaesthesia the surgeon opens the abdominal wall, examines and feels the organs one by one, takes tissue for analysis if needed, deals with the problem that is found and then closes the wound; the length depends on the finding",
-				"when": "Acute abdominal pain of unclear cause, penetrating wounds and blunt abdominal trauma, internal bleeding, suspected perforation or obstruction, assessing how far a process has spread before treatment",
-				"prep": "Most often done urgently: no food or drink, tell the team about medicines, allergies and previous operations; tests, imaging and the anaesthetist's assessment are done in hospital",
-				"abnormal": "The extent of the operation becomes clear only during it, and the surgeon discusses the further plan afterwards; tissue taken for analysis is assessed by a pathologist. Pain along the wound, bloating and a gradual return to eating are expected in the first days, while fever, vomiting or discharge from the wound should be reported at once"
-			},
-			"sr": {
-				"what": "Otvaranje trbušne duplje radi pregleda organa kada se uzrok tegoba ne može utvrditi drugim metodama",
-				"how": "U opštoj anesteziji hirurg otvara trbušni zid, redom pregleda i opipava organe, po potrebi uzima tkivo za analizu, odmah rješava ono što nađe i zatim zatvara ranu; trajanje zavisi od nalaza",
-				"when": "Jak bol u trbuhu nejasnog uzroka, ubodne i tupe povrede trbuha, unutrašnje krvarenje, sumnja na perforaciju ili zapušenje crijeva, procjena proširenosti bolesti prije liječenja",
-				"prep": "Najčešće se radi hitno: bez hrane i pića, timu treba reći koje lijekove uzimate, na šta ste alergični i koje ste operacije imali; analize, snimci i pregled anesteziologa rade se u bolnici",
-				"abnormal": "Obim zahvata poznat je tek tokom operacije, a dalji plan hirurg objašnjava nakon nje; tkivo uzeto za analizu ocjenjuje patolog. Prvih dana se očekuju bol duž rane, nadutost i postepen povratak na ishranu, a povišena temperatura, povraćanje ili curenje iz rane odmah se prijavljuju ljekaru"
-			},
-			"de": {
-				"what": "Eröffnung der Bauchhöhle zur Begutachtung der Organe, wenn sich die Ursache der Beschwerden anders nicht klären lässt",
-				"how": "In Vollnarkose eröffnet der Chirurg die Bauchdecke, begutachtet und tastet die Organe der Reihe nach ab, entnimmt bei Bedarf Gewebe zur Untersuchung, behebt das Gefundene gleich und verschließt danach die Wunde; die Dauer hängt vom Befund ab",
-				"when": "Starke Bauchschmerzen unklarer Ursache, penetrierende und stumpfe Bauchverletzungen, innere Blutung, Verdacht auf Perforation oder Darmverschluss, Beurteilung der Ausdehnung einer Erkrankung vor der Behandlung",
-				"prep": "Meist ein dringlicher Eingriff: nüchtern bleiben, dem Team Medikamente, Allergien und frühere Operationen mitteilen; Labor, Bildgebung und Narkoseaufklärung erfolgen im Krankenhaus",
-				"abnormal": "Der Umfang des Eingriffs zeigt sich erst während der Operation, das weitere Vorgehen bespricht der Chirurg danach; entnommenes Gewebe beurteilt ein Pathologe. In den ersten Tagen sind Wundschmerz, Blähungen und ein langsamer Kostaufbau zu erwarten, Fieber, Erbrechen oder Sekret aus der Wunde sind sofort zu melden"
-			},
-			"tr": {
-				"what": "Nedeni başka yöntemlerle açıklanamayan durumlarda organları doğrudan görmek için karın boşluğunun açılması",
-				"how": "Genel anestezi altında cerrah karın duvarını açar, organları sırayla inceler ve elle muayene eder, gerekirse inceleme için doku alır, bulduğu sorunu aynı seansta giderir ve yarayı kapatır; süre bulguya göre değişir",
-				"when": "Nedeni belirsiz şiddetli karın ağrısı, delici ve künt karın yaralanmaları, iç kanama, delinme veya bağırsak tıkanıklığı şüphesi, tedaviden önce hastalığın yayılımının değerlendirilmesi",
-				"prep": "Çoğunlukla acil yapılır: hiçbir şey yiyip içmemek, ekibe kullanılan ilaçları, alerjileri ve geçirilmiş ameliyatları bildirmek gerekir; tahlil, görüntüleme ve anestezi değerlendirmesi hastanede yapılır",
-				"abnormal": "Ameliyatın kapsamı ancak sırasında belli olur, sonraki planı cerrah ameliyattan sonra anlatır; incelemeye gönderilen dokuyu patoloji uzmanı değerlendirir. İlk günlerde kesi boyunca ağrı, şişkinlik ve beslenmeye kademeli dönüş beklenir; ateş, kusma veya yaradan akıntı hemen bildirilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "gastro-entero-and-entero-entero-anastomosis",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Создание хирургического соустья между желудком и тонкой кишкой или между петлями тонкой кишки, чтобы содержимое снова могло проходить",
-				"how": "Под общим наркозом хирург сближает участки, вскрывает их просвет и сшивает стенки вручную или сшивающим аппаратом, после чего проверяет герметичность и проходимость соустья; выполняется отдельно или как этап более крупной операции",
-				"when": "Непроходимость из-за сужения, опухоли или рубца, когда поражённый участок нельзя удалить и его обходят, язвенные осложнения с нарушенным опорожнением желудка, восстановление пассажа после прежних операций",
-				"prep": "Обследование и консультация анестезиолога, отказ от еды и питья по указанию врача, иногда подготовка кишечника; при экстренном вмешательстве подготовку проводят в стационаре",
-				"abnormal": "Питание возвращают постепенно, по мере восстановления работы кишечника, темп задаёт хирург; переносимость пищи в первые недели может меняться. Рвота, вздутие без отхождения газов, лихорадка или усиление боли — повод срочно показаться врачу"
-			},
-			"en": {
-				"what": "Creation of a surgical connection between the stomach and the small bowel, or between loops of small bowel, so that contents can pass again",
-				"how": "Under general anaesthesia the surgeon brings the segments together, opens them and joins the walls by hand or with a stapler, then checks that the join is tight and open; it is done on its own or as a step within a larger operation",
-				"when": "Blockage from narrowing, a tumour or scar tissue when the affected part cannot be removed and has to be bypassed, ulcer complications with poor emptying of the stomach, restoring passage after earlier operations",
-				"prep": "Work-up and a visit to the anaesthetist, no food or drink as instructed, sometimes bowel preparation; for an emergency operation the preparation is done in hospital",
-				"abnormal": "Eating is restarted step by step as the bowel starts working again and the surgeon sets the pace; tolerance of food may vary in the first weeks. Vomiting, bloating with no passage of gas, fever or growing pain mean seeing the doctor urgently"
-			},
-			"sr": {
-				"what": "Hirurško spajanje želuca i tankog crijeva ili dvije vijuge tankog crijeva, da bi sadržaj ponovo mogao da prolazi",
-				"how": "U opštoj anesteziji hirurg približava dijelove, otvara ih i spaja zidove ručno ili aparatom, a zatim provjerava da li je spoj zaptiven i prohodan; radi se samostalno ili kao dio veće operacije",
-				"when": "Zapušenje zbog suženja, tumora ili ožiljka kada se zahvaćeni dio ne može ukloniti nego se zaobilazi, komplikacije čira sa otežanim pražnjenjem želuca, uspostavljanje prolaza nakon ranijih operacija",
-				"prep": "Obrada i pregled anesteziologa, bez hrane i pića po uputstvu ljekara, ponekad priprema crijeva; kod hitne operacije priprema se obavlja u bolnici",
-				"abnormal": "Ishrana se uvodi postepeno, kako se crijeva budu oporavljala, a tempo određuje hirurg; podnošenje hrane prvih sedmica može da varira. Povraćanje, nadutost bez prolaza gasova, povišena temperatura ili jači bol traže hitan pregled"
-			},
-			"de": {
-				"what": "Operative Verbindung zwischen Magen und Dünndarm oder zwischen zwei Dünndarmschlingen, damit die Passage wieder möglich ist",
-				"how": "In Vollnarkose führt der Chirurg die Abschnitte zusammen, eröffnet sie und vernäht die Wände von Hand oder mit einem Klammergerät und prüft anschließend Dichtigkeit und Durchgängigkeit der Verbindung; der Eingriff erfolgt allein oder als Teil einer größeren Operation",
-				"when": "Verschluss durch Verengung, Tumor oder Narbe, wenn der betroffene Abschnitt nicht entfernt, sondern umgangen werden muss, Geschwürkomplikationen mit gestörter Magenentleerung, Wiederherstellung der Passage nach früheren Operationen",
-				"prep": "Abklärung und Narkosegespräch, Nüchternheit nach Anweisung, teils Darmvorbereitung; bei einem Noteingriff erfolgt die Vorbereitung im Krankenhaus",
-				"abnormal": "Der Kostaufbau erfolgt schrittweise, sobald der Darm wieder arbeitet, das Tempo gibt der Chirurg vor; die Verträglichkeit von Speisen kann in den ersten Wochen schwanken. Erbrechen, Blähungen ohne Windabgang, Fieber oder zunehmende Schmerzen erfordern eine rasche Vorstellung"
-			},
-			"tr": {
-				"what": "İçeriğin yeniden geçebilmesi için mide ile ince bağırsak arasında ya da iki ince bağırsak kıvrımı arasında cerrahi bağlantı oluşturulması",
-				"how": "Genel anestezi altında cerrah bölümleri yaklaştırır, açar ve duvarları elle veya zımba aletiyle birleştirir, ardından bağlantının sızdırmaz ve açık olduğunu kontrol eder; tek başına ya da daha büyük bir ameliyatın parçası olarak yapılır",
-				"when": "Darlık, kitle veya yapışıklık nedeniyle oluşan tıkanıklıkta etkilenen bölümün çıkarılamayıp baypas edilmesi, mide boşalmasını bozan ülser komplikasyonları, önceki ameliyatlardan sonra geçişin yeniden sağlanması",
-				"prep": "Tetkikler ve anestezi değerlendirmesi, hekimin belirttiği süre boyunca aç kalmak, bazen bağırsak hazırlığı; acil ameliyatta hazırlık hastanede yapılır",
-				"abnormal": "Beslenme, bağırsaklar çalışmaya başladıkça kademeli olarak artırılır ve hızını cerrah belirler; ilk haftalarda yiyeceklere tolerans değişebilir. Kusma, gaz çıkışı olmadan şişkinlik, ateş veya artan ağrı acil muayene gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "hartmann-reconstruction",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Повторная операция, при которой восстанавливают непрерывность кишечника и закрывают выведенную ранее колостому",
-				"how": "Под общим наркозом хирург выделяет из сращений приводящий отдел кишки и культю прямой кишки, соединяет их вручную или аппаратом, закрывает отверстие на брюшной стенке и ушивает рану; вмешательство технически сложное и занимает несколько часов",
-				"when": "Через несколько месяцев после операции Гартмана, когда воспаление стихло, пациент восстановился, а обследование показало, что культя кишки и сфинктер пригодны для соединения",
-				"prep": "Контрольный осмотр и исследование культи кишки, подготовка кишечника по схеме клиники, отказ от еды и питья по указанию врача, уход за кожей вокруг стомы до операции",
-				"abnormal": "Стул налаживается не сразу: частота и позывы могут меняться неделями, и хирург объясняет, чего ожидать именно в вашем случае. Температура, сильная боль, отсутствие стула и газов или выделения из раны требуют немедленного обращения"
-			},
-			"en": {
-				"what": "A second operation that restores the continuity of the bowel and closes a colostomy created earlier",
-				"how": "Under general anaesthesia the surgeon frees the bowel end and the rectal stump from adhesions, joins them by hand or with a stapler, closes the opening in the abdominal wall and sutures the wound; it is technically demanding and takes several hours",
-				"when": "Several months after a Hartmann operation, once inflammation has settled, the patient has recovered and the work-up shows that the rectal stump and the sphincter are suitable for joining",
-				"prep": "A check-up and assessment of the rectal stump, bowel preparation as the clinic directs, no food or drink as instructed, and care of the skin around the stoma before surgery",
-				"abnormal": "Bowel habit does not settle at once: frequency and urgency may change for weeks, and the surgeon explains what to expect in your case. Fever, severe pain, no passage of stool and gas, or discharge from the wound require immediate contact"
-			},
-			"sr": {
-				"what": "Druga operacija kojom se ponovo uspostavlja prolaz kroz crijevo i zatvara ranije izvedena kolostoma",
-				"how": "U opštoj anesteziji hirurg oslobađa dovodni dio crijeva i patrljak završnog crijeva iz priraslica, spaja ih ručno ili aparatom, zatvara otvor na trbušnom zidu i ušiva ranu; zahvat je tehnički zahtjevan i traje nekoliko sati",
-				"when": "Nekoliko mjeseci nakon operacije po Hartmanu, kada se upala smirila, pacijent oporavio, a nalazi pokažu da su patrljak crijeva i sfinkter pogodni za spajanje",
-				"prep": "Kontrolni pregled i ispitivanje patrljka crijeva, priprema crijeva po protokolu klinike, bez hrane i pića po uputstvu, njega kože oko stome do operacije",
-				"abnormal": "Pražnjenje se ne sredi odmah: učestalost i nagon mogu da se mijenjaju sedmicama, a hirurg objašnjava šta da očekujete u vašem slučaju. Povišena temperatura, jak bol, izostanak stolice i gasova ili curenje iz rane traže hitno javljanje"
-			},
-			"de": {
-				"what": "Zweiter Eingriff, der die Darmpassage wiederherstellt und ein zuvor angelegtes Kolostoma verschließt",
-				"how": "In Vollnarkose löst der Chirurg das zuführende Darmende und den Rektumstumpf aus Verwachsungen, verbindet sie von Hand oder mit einem Klammergerät, verschließt die Öffnung in der Bauchdecke und vernäht die Wunde; der Eingriff ist technisch anspruchsvoll und dauert mehrere Stunden",
-				"when": "Einige Monate nach einer Hartmann-Operation, wenn die Entzündung abgeklungen ist, der Patient sich erholt hat und die Untersuchungen zeigen, dass Rektumstumpf und Schließmuskel für eine Verbindung geeignet sind",
-				"prep": "Kontrolluntersuchung und Darstellung des Rektumstumpfes, Darmvorbereitung nach Vorgabe der Klinik, Nüchternheit nach Anweisung, Hautpflege rund um das Stoma bis zur Operation",
-				"abnormal": "Der Stuhlgang normalisiert sich nicht sofort: Häufigkeit und Drang können sich über Wochen verändern, der Chirurg erklärt, was im Einzelfall zu erwarten ist. Fieber, starke Schmerzen, fehlender Stuhl- und Windabgang oder Sekret aus der Wunde erfordern sofortigen Kontakt"
-			},
-			"tr": {
-				"what": "Bağırsak devamlılığını yeniden sağlayan ve daha önce açılmış kolostomiyi kapatan ikinci ameliyat",
-				"how": "Genel anestezi altında cerrah getirici bağırsak ucunu ve rektum güdüğünü yapışıklıklardan ayırır, bunları elle veya zımba aletiyle birleştirir, karın duvarındaki ağzı kapatır ve yarayı diker; teknik olarak zor bir ameliyattır ve birkaç saat sürer",
-				"when": "Hartmann ameliyatından birkaç ay sonra, iltihap yatıştığında, hasta toparlandığında ve tetkikler rektum güdüğü ile büzücü kasın birleştirmeye uygun olduğunu gösterdiğinde",
-				"prep": "Kontrol muayenesi ve rektum güdüğünün değerlendirilmesi, kliniğin protokolüne göre bağırsak hazırlığı, belirtilen süre boyunca aç kalmak, ameliyata kadar stoma çevresindeki cildin bakımı",
-				"abnormal": "Bağırsak düzeni hemen oturmaz: dışkılama sıklığı ve sıkışma hissi haftalarca değişebilir, cerrah sizin durumunuzda ne bekleneceğini anlatır. Ateş, şiddetli ağrı, dışkı ve gaz çıkışının olmaması veya yaradan akıntı derhal başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "hernia-operation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Операция, при которой содержимое грыжи возвращают на место, а ослабленный участок брюшной стенки укрепляют швами или сеткой",
-				"how": "Под местной, спинальной или общей анестезией хирург делает разрез над грыжей, выделяет грыжевой мешок, вправляет содержимое и закрывает дефект, чаще всего сетчатым имплантом; обычно занимает от получаса до полутора часов",
-				"when": "Паховая, бедренная, пупочная или послеоперационная грыжа, которая растёт, болит или мешает в быту; доступ и метод выбирает хирург по расположению и размеру грыжи",
-				"prep": "Предоперационные анализы и консультация анестезиолога, отказ от еды и питья по инструкции, сообщить о разжижающих кровь препаратах, заранее пролечить кашель и запоры по рекомендации врача",
-				"abnormal": "Боль и отёк в области шва в первые дни обычны, а ограничение подъёма тяжестей хирург назначает индивидуально. Быстро растущая припухлость, покраснение, температура или сильная боль — повод на внеплановый осмотр"
-			},
-			"en": {
-				"what": "An operation in which the contents of a hernia are put back and the weak part of the abdominal wall is reinforced with sutures or a mesh",
-				"how": "Under local, spinal or general anaesthesia the surgeon cuts over the hernia, frees the hernia sac, returns its contents and closes the defect, most often with a mesh implant; it usually takes from half an hour to an hour and a half",
-				"when": "An inguinal, femoral, umbilical or incisional hernia that is growing, painful or interferes with daily life; the approach and the method are chosen by the surgeon according to the site and the size",
-				"prep": "Pre-operative tests and a visit to the anaesthetist, no food or drink as instructed, telling the doctor about blood-thinning medicines, and treating cough and constipation beforehand as the doctor advises",
-				"abnormal": "Pain and swelling around the wound are usual in the first days, and the surgeon sets the limit on lifting individually. A quickly growing swelling, redness, fever or severe pain call for an unscheduled check-up"
-			},
-			"sr": {
-				"what": "Operacija kojom se sadržaj kile vraća na mjesto, a oslabljeni dio trbušnog zida ojačava šavovima ili mrežicom",
-				"how": "U lokalnoj, spinalnoj ili opštoj anesteziji hirurg pravi rez iznad kile, izdvaja kilnu kesu, vraća sadržaj i zatvara otvor, najčešće mrežicom; obično traje od pola sata do sat i po",
-				"when": "Preponska, butna, pupčana ili kila na ožiljku koja raste, boli ili smeta u svakodnevnom životu; pristup i metodu bira hirurg prema položaju i veličini kile",
-				"prep": "Preoperativne analize i pregled anesteziologa, bez hrane i pića po uputstvu, obavijestiti ljekara o lijekovima za razrjeđivanje krvi, unaprijed smiriti kašalj i zatvor po savjetu ljekara",
-				"abnormal": "Bol i otok oko rane prvih dana su uobičajeni, a koliko se dugo ne smije dizati teret hirurg određuje za svakog pacijenta. Oteklina koja brzo raste, crvenilo, povišena temperatura ili jak bol razlog su za vanredni pregled"
-			},
-			"de": {
-				"what": "Operation, bei der der Bruchinhalt zurückverlagert und die geschwächte Stelle der Bauchwand mit Nähten oder einem Netz verstärkt wird",
-				"how": "In örtlicher, rückenmarksnaher oder Vollnarkose schneidet der Chirurg über dem Bruch ein, stellt den Bruchsack dar, verlagert den Inhalt zurück und verschließt die Lücke, meist mit einem Netzimplantat; der Eingriff dauert in der Regel eine halbe bis anderthalb Stunden",
-				"when": "Leisten-, Schenkel-, Nabel- oder Narbenbruch, der größer wird, schmerzt oder im Alltag stört; Zugang und Methode wählt der Chirurg nach Lage und Größe",
-				"prep": "Voruntersuchungen und Narkosegespräch, Nüchternheit nach Anweisung, Hinweis auf blutverdünnende Medikamente, Husten und Verstopfung vorab nach ärztlichem Rat behandeln",
-				"abnormal": "Schmerzen und Schwellung im Wundbereich sind in den ersten Tagen üblich, die Belastungsgrenze legt der Chirurg individuell fest. Eine rasch wachsende Schwellung, Rötung, Fieber oder starke Schmerzen sind Gründe für eine kurzfristige Kontrolle"
-			},
-			"tr": {
-				"what": "Fıtık içeriğinin yerine iade edildiği ve karın duvarının zayıf bölgesinin dikişlerle ya da yama ile güçlendirildiği ameliyat",
-				"how": "Lokal, belden ya da genel anestezi altında cerrah fıtığın üzerinden keser, fıtık kesesini ayırır, içeriğini geri iter ve açıklığı çoğunlukla yama ile kapatır; genellikle yarım saat ile bir buçuk saat arasında sürer",
-				"when": "Büyüyen, ağrıyan veya günlük yaşamı kısıtlayan kasık, uyluk, göbek ya da ameliyat izi fıtığı; yaklaşım ve yöntemi fıtığın yerine ve boyutuna göre cerrah seçer",
-				"prep": "Ameliyat öncesi tahliller ve anestezi değerlendirmesi, belirtilen süre boyunca aç kalmak, kan sulandırıcı ilaçları bildirmek, öksürük ve kabızlığı hekim önerisiyle önceden gidermek",
-				"abnormal": "İlk günlerde yara çevresinde ağrı ve şişlik olağandır, ağırlık kaldırma kısıtlamasını cerrah kişiye göre belirler. Hızla büyüyen şişlik, kızarıklık, ateş veya şiddetli ağrı planlanmamış bir kontrolü gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "incarcerated-hernia-operation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Экстренная операция при грыже, содержимое которой зажато в грыжевых воротах и не вправляется",
-				"how": "Под наркозом хирург вскрывает грыжевой мешок, освобождает ущемлённый орган и оценивает его жизнеспособность, при необходимости удаляет нежизнеспособный участок кишки или сальника, затем закрывает дефект; объём зависит от находки",
-				"when": "Внезапная резкая боль в грыже, которая перестала вправляться, рвота, вздутие, отсутствие стула и газов, напряжённое болезненное выпячивание — состояние требует немедленной госпитализации",
-				"prep": "Подготовки дома нет: нужно сразу обратиться в приёмный покой, ничего не есть и не пить, не греть грыжу и не вправлять её самостоятельно, взять список принимаемых лекарств",
-				"abnormal": "Восстановление дольше, чем после плановой пластики, особенно если потребовалось удалить участок кишки, и питание расширяют постепенно по указанию хирурга. Возврат боли, лихорадка, рвота или выделения из раны требуют срочного осмотра"
-			},
-			"en": {
-				"what": "Emergency surgery for a hernia whose contents are trapped in the hernia opening and cannot be reduced",
-				"how": "Under anaesthesia the surgeon opens the hernia sac, frees the trapped organ and judges whether it is still viable, removes a non-viable piece of bowel or omentum if necessary, and then closes the defect; the extent depends on the finding",
-				"when": "Sudden severe pain in a hernia that no longer reduces, vomiting, bloating, no passage of stool and gas, a tense and tender bulge — this needs immediate admission to hospital",
-				"prep": "There is no preparation at home: go to the emergency department at once, do not eat or drink, do not warm the hernia or push it back yourself, and bring a list of your medicines",
-				"abnormal": "Recovery takes longer than after a planned repair, especially if part of the bowel had to be removed, and eating is widened step by step as the surgeon directs. Pain that returns, fever, vomiting or discharge from the wound require an urgent check-up"
-			},
-			"sr": {
-				"what": "Hitna operacija kile čiji je sadržaj zaglavljen u kilnom otvoru i ne može da se vrati",
-				"how": "U anesteziji hirurg otvara kilnu kesu, oslobađa uklješteni organ i procjenjuje da li je tkivo očuvano, po potrebi uklanja nevitalni dio crijeva ili trbušne maramice, a zatim zatvara otvor; obim zavisi od nalaza",
-				"when": "Iznenadan jak bol u kili koja se više ne vraća, povraćanje, nadutost, izostanak stolice i gasova, napeto i bolno izbočenje — stanje traži hitan prijem u bolnicu",
-				"prep": "Kod kuće nema pripreme: treba odmah otići u hitnu službu, ne jesti i ne piti, ne grijati kilu i ne gurati je rukom, ponijeti spisak lijekova koje uzimate",
-				"abnormal": "Oporavak je duži nego nakon planirane operacije, naročito ako je morao da se ukloni dio crijeva, a ishrana se širi postepeno po uputstvu hirurga. Povratak bola, povišena temperatura, povraćanje ili curenje iz rane traže hitan pregled"
-			},
-			"de": {
-				"what": "Notoperation bei einem Bruch, dessen Inhalt in der Bruchpforte eingeklemmt ist und sich nicht zurückverlagern lässt",
-				"how": "In Narkose eröffnet der Chirurg den Bruchsack, befreit das eingeklemmte Organ und beurteilt, ob das Gewebe noch durchblutet ist, entfernt bei Bedarf einen abgestorbenen Darm- oder Netzabschnitt und verschließt danach die Lücke; der Umfang richtet sich nach dem Befund",
-				"when": "Plötzlicher starker Schmerz in einem Bruch, der sich nicht mehr zurückdrängen lässt, Erbrechen, Blähungen, fehlender Stuhl- und Windabgang, eine pralle und druckschmerzhafte Vorwölbung — das erfordert eine sofortige Klinikaufnahme",
-				"prep": "Zu Hause gibt es keine Vorbereitung: sofort in die Notaufnahme, nichts essen und trinken, den Bruch nicht wärmen und nicht selbst zurückdrücken, eine Liste der eingenommenen Medikamente mitbringen",
-				"abnormal": "Die Erholung dauert länger als nach einem geplanten Eingriff, besonders wenn ein Darmabschnitt entfernt werden musste, und der Kostaufbau erfolgt schrittweise nach Vorgabe des Chirurgen. Wiederkehrende Schmerzen, Fieber, Erbrechen oder Sekret aus der Wunde erfordern eine sofortige Kontrolle"
-			},
-			"tr": {
-				"what": "İçeriği fıtık ağzında sıkışmış ve geri itilemeyen fıtıkta yapılan acil ameliyat",
-				"how": "Anestezi altında cerrah fıtık kesesini açar, sıkışan organı serbestleştirir ve dokunun canlı olup olmadığını değerlendirir, gerekirse bağırsağın ya da omentumun canlılığını yitirmiş bölümünü çıkarır, ardından açıklığı kapatır; kapsam bulguya göre değişir",
-				"when": "Artık geri itilemeyen fıtıkta ani şiddetli ağrı, kusma, şişkinlik, dışkı ve gaz çıkışının durması, gergin ve ağrılı şişlik — bu tablo acil hastaneye yatışı gerektirir",
-				"prep": "Evde hazırlık yoktur: hemen acil servise gidilmeli, hiçbir şey yiyip içilmemeli, fıtık ısıtılmamalı ve elle itilmemeli, kullanılan ilaçların listesi götürülmelidir",
-				"abnormal": "İyileşme planlı onarıma göre daha uzundur, özellikle bağırsağın bir bölümü çıkarıldıysa; beslenme cerrahın talimatıyla kademeli olarak genişletilir. Ağrının geri dönmesi, ateş, kusma veya yaradan akıntı acil muayene gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "left-hemicolectomy-with-colo-colo-anastomosis",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление левой половины толстой кишки с последующим соединением оставшихся отделов ободочной кишки между собой",
-				"how": "Под общим наркозом хирург выделяет нисходящую ободочную кишку с брыжейкой и лимфоузлами, удаляет её вместе с поражённым участком и сшивает концы кишки друг с другом вручную или аппаратом; удалённую ткань направляют на гистологическое исследование",
-				"when": "Опухоли и полипы левой половины ободочной кишки, осложнённая дивертикулярная болезнь, повторные кровотечения или сужение этого отдела, омертвение кишки из-за нарушенного кровоснабжения",
-				"prep": "Колоноскопия и снимки для уточнения уровня изменений, анализы и осмотр анестезиолога, подготовка кишечника по схеме клиники, отмена разжижающих кровь препаратов только по согласованию с врачом",
-				"abnormal": "После удаления левой части кишки стул поначалу бывает более частым и жидким и обычно постепенно налаживается; результат гистологического исследования и дальнейший план обсуждает лечащий врач. Температура, сильная боль, отсутствие стула и газов или кровь в стуле — повод обратиться немедленно"
-			},
-			"en": {
-				"what": "Removal of the left half of the large bowel, with the remaining colon segments then joined to each other",
-				"how": "Under general anaesthesia the surgeon frees the descending colon with its mesentery and lymph nodes, removes it together with the affected segment and sews the bowel ends to each other by hand or with a stapler; the removed tissue is sent for histological examination",
-				"when": "Tumours and polyps of the left colon, complicated diverticular disease, repeated bleeding or narrowing of this segment, dead bowel from an interrupted blood supply",
-				"prep": "Colonoscopy and imaging to locate the change, blood tests and a visit to the anaesthetist, bowel preparation as the clinic directs, and stopping blood thinners only in agreement with the doctor",
-				"abnormal": "After the left colon is removed stools are often looser and more frequent at first and usually settle gradually; the histology result and the further plan are discussed by the treating doctor. Fever, severe pain, no passage of stool and gas, or blood in the stool mean contacting the doctor immediately"
-			},
-			"sr": {
-				"what": "Uklanjanje lijeve polovine debelog crijeva uz međusobno spajanje preostalih dijelova debelog crijeva",
-				"how": "U opštoj anesteziji hirurg izdvaja silazno debelo crijevo sa mezenterijumom i limfnim čvorovima, uklanja ga zajedno sa zahvaćenim dijelom i spaja krajeve crijeva ručno ili aparatom; uklonjeno tkivo šalje se na histološki pregled",
-				"when": "Tumori i polipi lijeve polovine debelog crijeva, komplikovana divertikularna bolest, ponavljana krvarenja ili suženje ovog dijela, odumiranje crijeva zbog prekinute prokrvljenosti",
-				"prep": "Kolonoskopija i snimci radi određivanja nivoa promjene, analize i pregled anesteziologa, priprema crijeva po protokolu klinike, obustava lijekova za razrjeđivanje krvi samo u dogovoru sa ljekarom",
-				"abnormal": "Nakon uklanjanja lijevog dijela crijeva stolica je u početku češća i tečnija, pa se obično postepeno sredi; nalaz histologije i dalji plan objašnjava ljekar koji vas vodi. Povišena temperatura, jak bol, izostanak stolice i gasova ili krv u stolici znače da treba odmah javiti se"
-			},
-			"de": {
-				"what": "Entfernung der linken Hälfte des Dickdarms mit anschließender Verbindung der verbliebenen Dickdarmabschnitte miteinander",
-				"how": "In Vollnarkose löst der Chirurg den absteigenden Dickdarm mit Gekröse und Lymphknoten, entfernt ihn samt dem betroffenen Abschnitt und vernäht die Darmenden von Hand oder mit einem Klammergerät miteinander; das entfernte Gewebe geht zur histologischen Untersuchung",
-				"when": "Tumoren und Polypen der linken Dickdarmhälfte, komplizierte Divertikelkrankheit, wiederholte Blutungen oder Verengungen dieses Abschnitts, abgestorbener Darm bei unterbrochener Durchblutung",
-				"prep": "Koloskopie und Bildgebung zur Lokalisation der Veränderung, Labor und Narkosegespräch, Darmvorbereitung nach Vorgabe der Klinik, Absetzen von Blutverdünnern nur in Absprache mit dem Arzt",
-				"abnormal": "Nach Entfernung des linken Dickdarmabschnitts ist der Stuhl anfangs häufiger und weicher und normalisiert sich meist allmählich; den histologischen Befund und das weitere Vorgehen bespricht der behandelnde Arzt. Fieber, starke Schmerzen, fehlender Stuhl- und Windabgang oder Blut im Stuhl erfordern sofortigen Kontakt"
-			},
-			"tr": {
-				"what": "Kalın bağırsağın sol yarısının çıkarılması ve kalan kalın bağırsak uçlarının birbirine birleştirilmesi",
-				"how": "Genel anestezi altında cerrah inen kolonu askı dokusu ve lenf düğümleriyle birlikte serbestleştirir, hastalıklı bölümle beraber çıkarır ve bağırsak uçlarını elle ya da zımba aletiyle birleştirir; çıkarılan doku histopatolojik incelemeye gönderilir",
-				"when": "Sol kolon kitleleri ve polipleri, komplike divertikül hastalığı, bu bölümün tekrarlayan kanamaları veya darlığı, kan akımının kesilmesine bağlı doku ölümü",
-				"prep": "Değişikliğin yerini belirlemek için kolonoskopi ve görüntüleme, tahliller ve anestezi değerlendirmesi, kliniğin protokolüne göre bağırsak hazırlığı, kan sulandırıcıların yalnızca hekimle görüşerek kesilmesi",
-				"abnormal": "Sol kolon çıkarıldıktan sonra dışkı başlangıçta daha sık ve daha yumuşak olur, genellikle zamanla düzelir; patoloji sonucunu ve sonraki planı tedaviyi yürüten hekim anlatır. Ateş, şiddetli ağrı, dışkı ve gaz çıkışının olmaması ya da dışkıda kan hemen başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "miles-rectal-amputation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление прямой кишки вместе с заднепроходным каналом и сфинктером с выведением постоянной колостомы на брюшную стенку",
-				"how": "Операцию выполняют из двух доступов, со стороны живота и со стороны промежности: хирург отделяет прямую кишку с окружающей клетчаткой и лимфоузлами, удаляет её целиком, ушивает промежность и формирует стому; вмешательство длительное, удалённые ткани исследует патолог",
-				"when": "Изменения нижней трети прямой кишки и заднепроходного канала, расположенные слишком близко к сфинктеру, чтобы его сохранить, а также случаи, когда сфинктер уже не выполняет свою функцию",
-				"prep": "Осмотр прямой кишки и снимки для планирования, разметка места будущей стомы и беседа со специалистом по уходу за стомой, подготовка кишечника, анализы и консультация анестезиолога",
-				"abnormal": "Стома остаётся постоянной, и в первые недели пациента учат ухаживать за ней и подбирать калоприёмник; рана промежности заживает медленнее остальных и требует наблюдения. Результат гистологического исследования и дальнейшую тактику определяет лечащий врач, а боль, лихорадка, выделения из раны промежности или проблемы со стомой — повод на внеплановый осмотр"
-			},
-			"en": {
-				"what": "Removal of the rectum together with the anal canal and the sphincter, with a permanent colostomy brought out onto the abdominal wall",
-				"how": "The operation is done through two approaches, from the abdomen and from the perineum: the surgeon frees the rectum with the surrounding fatty tissue and lymph nodes, removes it completely, closes the perineum and forms the stoma; it is a long procedure and the removed tissue is examined by a pathologist",
-				"when": "Changes in the lower third of the rectum and in the anal canal that lie too close to the sphincter for it to be preserved, and cases where the sphincter no longer does its job",
-				"prep": "Examination of the rectum and imaging for planning, marking the site of the future stoma and a talk with a stoma care specialist, bowel preparation, blood tests and a visit to the anaesthetist",
-				"abnormal": "The stoma is permanent, and in the first weeks the patient is taught to care for it and to choose an appliance; the perineal wound heals more slowly than the others and needs follow-up. The histology result and the further plan are determined by the treating doctor, while pain, fever, discharge from the perineal wound or problems with the stoma call for an earlier visit"
-			},
-			"sr": {
-				"what": "Uklanjanje završnog crijeva zajedno sa analnim kanalom i sfinkterom, uz izvođenje trajne kolostome na trbušni zid",
-				"how": "Operacija se izvodi iz dva pristupa, iz trbuha i sa međice: hirurg oslobađa rektum sa okolnim masnim tkivom i limfnim čvorovima, uklanja ga u cjelini, zatvara međicu i formira stomu; zahvat je dugotrajan, a uklonjeno tkivo pregleda patolog",
-				"when": "Promjene donje trećine rektuma i analnog kanala koje su preblizu sfinktera da bi on mogao da se sačuva, kao i slučajevi u kojima sfinkter više ne obavlja svoju funkciju",
-				"prep": "Pregled završnog crijeva i snimci radi planiranja, obilježavanje mjesta buduće stome i razgovor sa sestrom za stomu, priprema crijeva, analize i pregled anesteziologa",
-				"abnormal": "Stoma ostaje trajno, a prvih sedmica pacijent uči da je njeguje i da bira kesicu; rana na međici zarasta sporije od ostalih i traži praćenje. Nalaz histologije i dalju taktiku određuje ljekar koji vas vodi, a bol, povišena temperatura, curenje iz rane na međici ili problemi sa stomom razlog su za raniji pregled"
-			},
-			"de": {
-				"what": "Entfernung des Mastdarms samt Analkanal und Schließmuskel mit Anlage eines dauerhaften Kolostomas an der Bauchdecke",
-				"how": "Der Eingriff erfolgt über zwei Zugänge, vom Bauch und vom Damm aus: der Chirurg löst den Mastdarm mit dem umgebenden Fettgewebe und den Lymphknoten, entfernt ihn vollständig, verschließt den Damm und legt das Stoma an; die Operation dauert lange, das entfernte Gewebe beurteilt ein Pathologe",
-				"when": "Veränderungen im unteren Drittel des Mastdarms und im Analkanal, die zu nah am Schließmuskel liegen, um ihn zu erhalten, sowie Fälle, in denen der Schließmuskel seine Funktion bereits verloren hat",
-				"prep": "Untersuchung des Mastdarms und Bildgebung zur Planung, Markierung der künftigen Stomastelle und Gespräch mit der Stomatherapie, Darmvorbereitung, Labor und Narkosegespräch",
-				"abnormal": "Das Stoma bleibt dauerhaft, in den ersten Wochen lernt der Patient die Pflege und die Auswahl des Beutels; die Dammwunde heilt langsamer als die übrigen und braucht Kontrollen. Den histologischen Befund und das weitere Vorgehen legt der behandelnde Arzt fest, Schmerzen, Fieber, Sekret aus der Dammwunde oder Probleme mit dem Stoma sind Gründe für einen früheren Termin"
-			},
-			"tr": {
-				"what": "Rektumun anal kanal ve büzücü kasla birlikte çıkarılması ve karın duvarına kalıcı kolostomi ağzı açılması",
-				"how": "Ameliyat karın ve makat bölgesi olmak üzere iki yoldan yapılır: cerrah rektumu çevresindeki yağ dokusu ve lenf düğümleriyle ayırır, tümüyle çıkarır, makat bölgesini kapatır ve stomayı oluşturur; uzun süren bir ameliyattır, çıkarılan dokuyu patoloji uzmanı inceler",
-				"when": "Büzücü kasın korunamayacağı kadar ona yakın yerleşen alt üçte bir rektum ve anal kanal değişiklikleri, ayrıca büzücü kasın işlevini yitirdiği durumlar",
-				"prep": "Planlama için rektum muayenesi ve görüntüleme, gelecekteki stoma yerinin işaretlenmesi ve stoma hemşiresiyle görüşme, bağırsak hazırlığı, tahliller ve anestezi değerlendirmesi",
-				"abnormal": "Stoma kalıcıdır, ilk haftalarda hastaya bakımı ve torba seçimi öğretilir; makat bölgesindeki yara diğerlerinden yavaş iyileşir ve izlem gerektirir. Patoloji sonucunu ve sonraki tedaviyi hastayı izleyen hekim belirler; ağrı, ateş, makat yarasından akıntı veya stoma sorunları erken kontrol gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "open-appendectomy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление червеобразного отростка через разрез в правой нижней части живота",
-				"how": "Под общим или спинальным обезболиванием хирург делает косой разрез над отростком, выводит его в рану, перевязывает основание, отсекает отросток и осматривает окружающие ткани, при гнойном процессе оставляет дренаж; обычно занимает около часа",
-				"when": "Острый аппендицит, особенно с прободением или гнойником, спайки и перенесённые операции, из-за которых лапароскопический доступ затруднён, а также переход на открытый доступ по решению хирурга во время операции",
-				"prep": "Вмешательство экстренное: с момента боли не есть и не пить, не принимать обезболивающее, не греть живот, сообщить о лекарствах и аллергиях; анализы и осмотр анестезиолога проводят в стационаре",
-				"abnormal": "В первые дни ожидаемы боль по шву, слабость и постепенное возвращение к питанию, рана требует перевязок, срок снятия швов называет хирург; удалённый отросток направляют на гистологическое исследование. Температура, нарастающая боль, покраснение или выделения из раны, рвота — повод срочно связаться с хирургом"
-			},
-			"en": {
-				"what": "Removal of the appendix through a cut in the lower right part of the abdomen",
-				"how": "Under general or spinal anaesthesia the surgeon makes an oblique cut over the appendix, brings it into the wound, ties off its base, cuts it off and inspects the surrounding tissue, leaving a drain if there is pus; it usually takes about an hour",
-				"when": "Acute appendicitis, especially with perforation or an abscess, adhesions and previous operations that make the laparoscopic approach difficult, and a switch to the open approach decided by the surgeon during the operation",
-				"prep": "The operation is urgent: from the onset of pain do not eat or drink, do not take painkillers, do not warm the abdomen, and report medicines and allergies; tests and the anaesthetist's assessment are done in hospital",
-				"abnormal": "Wound pain, weakness and a gradual return to eating are expected in the first days, the wound needs dressings and the surgeon says when the stitches come out; the removed appendix is sent for histological examination. Fever, growing pain, redness or discharge from the wound and vomiting mean contacting the surgeon urgently"
-			},
-			"sr": {
-				"what": "Uklanjanje crvuljka kroz rez u donjem desnom dijelu trbuha",
-				"how": "U opštoj ili spinalnoj anesteziji hirurg pravi kosi rez iznad crvuljka, izvodi ga u ranu, podvezuje mu bazu, odsijeca ga i pregleda okolno tkivo, a kod gnojnog procesa ostavlja dren; obično traje oko sat vremena",
-				"when": "Akutna upala slijepog crijeva, naročito sa prsnućem ili apscesom, priraslice i ranije operacije zbog kojih je laparoskopski pristup otežan, kao i prelazak na otvoreni pristup po odluci hirurga tokom operacije",
-				"prep": "Zahvat je hitan: od početka bola ne jesti i ne piti, ne uzimati lijekove protiv bolova, ne grijati trbuh, prijaviti lijekove i alergije; analize i pregled anesteziologa rade se u bolnici",
-				"abnormal": "Prvih dana se očekuju bol u rani, slabost i postepen povratak na ishranu, rana traži previjanje, a rok za vađenje konaca kaže hirurg; uklonjeni crvuljak šalje se na histološki pregled. Povišena temperatura, pojačan bol, crvenilo ili curenje iz rane i povraćanje znače da hitno treba pozvati hirurga"
-			},
-			"de": {
-				"what": "Entfernung des Wurmfortsatzes über einen Schnitt im rechten Unterbauch",
-				"how": "In Vollnarkose oder Spinalanästhesie setzt der Chirurg einen schrägen Schnitt über dem Wurmfortsatz, holt ihn in die Wunde, unterbindet die Basis, trennt ihn ab und begutachtet das umliegende Gewebe, bei eitrigem Befund bleibt eine Drainage; meist dauert es etwa eine Stunde",
-				"when": "Akute Blinddarmentzündung, besonders bei Durchbruch oder Abszess, Verwachsungen und frühere Operationen, die den laparoskopischen Zugang erschweren, sowie der Wechsel zum offenen Vorgehen nach Entscheidung des Chirurgen während der Operation",
-				"prep": "Der Eingriff ist dringlich: ab Beginn der Schmerzen nichts essen und trinken, keine Schmerzmittel einnehmen, den Bauch nicht wärmen, Medikamente und Allergien angeben; Labor und Narkoseaufklärung erfolgen im Krankenhaus",
-				"abnormal": "Wundschmerz, Schwäche und ein langsamer Kostaufbau sind in den ersten Tagen zu erwarten, die Wunde braucht Verbandwechsel, den Termin zum Fädenziehen nennt der Chirurg; der entfernte Wurmfortsatz geht zur histologischen Untersuchung. Fieber, zunehmende Schmerzen, Rötung oder Sekret aus der Wunde und Erbrechen erfordern dringenden Kontakt zum Chirurgen"
-			},
-			"tr": {
-				"what": "Apandisin karnın sağ alt bölgesindeki bir kesiden çıkarılması",
-				"how": "Genel veya belden anestezi altında cerrah apandisin üzerinden eğik bir kesi yapar, apandisi yaraya alır, tabanını bağlar, keserek çıkarır ve çevre dokuyu inceler, iltihap yaygınsa dren bırakır; genellikle bir saat kadar sürer",
-				"when": "Akut apandisit, özellikle delinme veya apse ile seyredenler, laparoskopik girişimi zorlaştıran yapışıklıklar ve geçirilmiş ameliyatlar, ayrıca ameliyat sırasında cerrahın kararıyla açık yönteme geçilmesi",
-				"prep": "Ameliyat aciledir: ağrı başladığı andan itibaren yiyip içmemek, ağrı kesici almamak, karnı ısıtmamak, kullanılan ilaçları ve alerjileri bildirmek gerekir; tahliller ve anestezi değerlendirmesi hastanede yapılır",
-				"abnormal": "İlk günlerde yara ağrısı, halsizlik ve beslenmeye kademeli dönüş beklenir, yara pansuman gerektirir, dikişlerin alınma zamanını cerrah söyler; çıkarılan apandis patolojik incelemeye gönderilir. Ateş, artan ağrı, kızarıklık veya yaradan akıntı ve kusma durumunda cerraha acilen başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "pilonidal-sinus-surgical-treatment",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Хирургическое устранение хода и полости в межъягодичной складке, где скапливаются волосы и отделяемое",
-				"how": "Под местной или спинальной анестезией хирург удаляет изменённую ткань вместе с ходами, после чего рану либо закрывают швом, смещённым в сторону от складки, либо оставляют открытой под повязки; метод выбирают по размеру очага и наличию воспаления",
-				"when": "Боль и припухлость над копчиком, повторяющиеся нагноения, постоянное отделяемое из точечных отверстий кожи, сохраняющиеся жалобы после вскрытия гнойника",
-				"prep": "Удалить волосы в области по указанию клиники, не есть и не пить перед анестезией по инструкции, взять свободную одежду, заранее договориться о перевязках и о том, кто довезёт домой",
-				"abnormal": "Сроки заживления зависят от способа закрытия раны: зашитая заживает быстрее, открытая — дольше и под регулярными перевязками, а область вокруг рубца нужно держать свободной от волос по совету врача. Повторное появление боли, уплотнения или отделяемого означает, что хирургу нужно осмотреть это место снова"
-			},
-			"en": {
-				"what": "Surgical removal of the tract and cavity in the cleft between the buttocks where hair and discharge collect",
-				"how": "Under local or spinal anaesthesia the surgeon removes the altered tissue together with the tracts, after which the wound is either closed with the suture line shifted away from the cleft or left open for dressings; the method is chosen according to the size of the area and the presence of inflammation",
-				"when": "Pain and swelling over the tailbone, repeated abscesses, constant discharge from small openings in the skin, complaints that persist after an abscess was drained",
-				"prep": "Remove hair in the area as the clinic instructs, no food or drink before anaesthesia as instructed, bring loose clothing, and arrange dressing changes and a ride home in advance",
-				"abnormal": "Healing time depends on how the wound was closed: a sutured wound heals faster, an open one takes longer and needs regular dressings, and the area around the scar has to be kept free of hair as the doctor advises. Pain, a lump or discharge that come back mean the surgeon should look at the area again"
-			},
-			"sr": {
-				"what": "Hirurško uklanjanje kanala i šupljine u međuglutealnoj brazdi u kojoj se skupljaju dlake i sadržaj",
-				"how": "U lokalnoj ili spinalnoj anesteziji hirurg uklanja izmijenjeno tkivo zajedno sa kanalima, nakon čega se rana ili zatvori šavom pomjerenim izvan brazde ili ostavi otvorena uz previjanje; metod se bira prema veličini promjene i prisustvu upale",
-				"when": "Bol i oteklina iznad trtice, ponavljani gnojni procesi, stalno curenje iz sitnih otvora na koži, tegobe koje se nastavljaju nakon ranijeg otvaranja apscesa",
-				"prep": "Ukloniti dlake u predjelu po uputstvu klinike, bez hrane i pića prije anestezije po uputstvu, ponijeti široku odjeću, unaprijed dogovoriti previjanja i pratnju do kuće",
-				"abnormal": "Trajanje zarastanja zavisi od načina zatvaranja rane: ušivena rana zarasta brže, otvorena duže i uz redovna previjanja, a predio oko ožiljka treba održavati bez dlaka po savjetu ljekara. Ponovna pojava bola, čvorića ili curenja znači da hirurg treba ponovo da pogleda to mjesto"
-			},
-			"de": {
-				"what": "Operative Entfernung des Gangs und der Höhle in der Gesäßfalte, in der sich Haare und Sekret ansammeln",
-				"how": "In örtlicher oder rückenmarksnaher Betäubung entfernt der Chirurg das veränderte Gewebe samt den Gängen, danach wird die Wunde entweder mit einer aus der Falte verlagerten Naht verschlossen oder offen zur Wundbehandlung belassen; die Methode richtet sich nach Ausdehnung und Entzündung",
-				"when": "Schmerz und Schwellung über dem Steißbein, wiederkehrende Abszesse, ständiges Sekret aus kleinen Hautöffnungen, Beschwerden, die nach einer Abszessspaltung bestehen bleiben",
-				"prep": "Haare im Bereich nach Vorgabe der Klinik entfernen, vor der Narkose nüchtern bleiben, weite Kleidung mitbringen, Verbandwechsel und Heimfahrt vorab organisieren",
-				"abnormal": "Die Heilungsdauer hängt vom Wundverschluss ab: eine genähte Wunde heilt schneller, eine offene länger und unter regelmäßigen Verbandwechseln, und der Bereich um die Narbe sollte nach ärztlichem Rat haarfrei gehalten werden. Erneute Schmerzen, ein Knoten oder erneutes Sekret bedeuten, dass der Chirurg die Stelle wieder ansehen sollte"
-			},
-			"tr": {
-				"what": "Kalçalar arasındaki oluk içinde kıl ve akıntının biriktiği kanal ve boşluğun cerrahi olarak çıkarılması",
-				"how": "Lokal veya belden anestezi altında cerrah değişime uğramış dokuyu kanallarla birlikte çıkarır, ardından yara ya dikiş hattı oluğun dışına kaydırılarak kapatılır ya da pansumanla iyileşmesi için açık bırakılır; yöntem bölgenin büyüklüğüne ve iltihabın varlığına göre seçilir",
-				"when": "Kuyruk sokumu üzerinde ağrı ve şişlik, tekrarlayan apseler, ciltteki küçük deliklerden sürekli akıntı, apse boşaltıldıktan sonra devam eden şikayetler",
-				"prep": "Bölgedeki kılları kliniğin tarifine göre temizlemek, anesteziden önce belirtilen süre boyunca aç kalmak, bol kıyafet getirmek, pansumanları ve eve dönüş için refakatçiyi önceden ayarlamak",
-				"abnormal": "İyileşme süresi yaranın nasıl kapatıldığına bağlıdır: dikilen yara daha hızlı, açık bırakılan yara düzenli pansumanla daha uzun sürede kapanır ve iz çevresi hekim önerisine göre kılsız tutulmalıdır. Ağrının, sertliğin veya akıntının yeniden başlaması bölgenin cerrah tarafından yeniden değerlendirilmesini gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "right-hemicolectomy-with-anastomosis",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление правой половины толстой кишки вместе с конечным отделом тонкой и соединение тонкой кишки с оставшейся ободочной",
-				"how": "Под общим наркозом хирург выделяет слепую и восходящую ободочную кишку с питающими сосудами и лимфоузлами, удаляет их единым блоком и накладывает соустье между тонкой и ободочной кишкой; удалённые ткани отправляют патологу",
-				"when": "Изменения слепой кишки, восходящей ободочной кишки и печёночного изгиба, осложнения болезни Крона в этой зоне, нарушенное кровоснабжение правых отделов, кровотечение или непроходимость этого участка",
-				"prep": "Колоноскопия и снимки до операции, анализы и консультация анестезиолога, подготовка кишечника по схеме клиники, обсуждение с врачом принимаемых лекарств",
-				"abnormal": "После удаления правых отделов часть воды и некоторых витаминов всасывается хуже, поэтому стул бывает жиже, а врач может контролировать показатели крови; гистологическое заключение и дальнейший план даёт лечащий врач. Лихорадка, сильная боль, рвота или вздутие без стула требуют немедленного обращения"
-			},
-			"en": {
-				"what": "Removal of the right half of the large bowel together with the end of the small bowel, with the small bowel then joined to the remaining colon",
-				"how": "Under general anaesthesia the surgeon frees the caecum and the ascending colon with their feeding vessels and lymph nodes, removes them as one block and makes a join between the small bowel and the colon; the removed tissue goes to the pathologist",
-				"when": "Changes in the caecum, the ascending colon and the hepatic flexure, complications of Crohn's disease in this area, an interrupted blood supply to the right side, bleeding or obstruction of this segment",
-				"prep": "Colonoscopy and imaging before surgery, blood tests and a visit to the anaesthetist, bowel preparation as the clinic directs, and discussing current medicines with the doctor",
-				"abnormal": "After the right side is removed some water and certain vitamins are absorbed less well, so stools may be looser and the doctor may monitor blood values; the histology report and the further plan come from the treating doctor. Fever, severe pain, vomiting or bloating with no stool require immediate contact"
-			},
-			"sr": {
-				"what": "Uklanjanje desne polovine debelog crijeva zajedno sa završnim dijelom tankog crijeva, uz spajanje tankog crijeva sa preostalim debelim",
-				"how": "U opštoj anesteziji hirurg izdvaja slijepo i uzlazno debelo crijevo sa pripadajućim krvnim sudovima i limfnim čvorovima, uklanja ih u jednom bloku i pravi spoj između tankog i debelog crijeva; uklonjeno tkivo ide patologu",
-				"when": "Promjene slijepog crijeva, uzlaznog kolona i jetrene krivine, komplikacije Kronove bolesti u ovom predjelu, prekinuta prokrvljenost desnih dijelova, krvarenje ili zapušenje ovog segmenta",
-				"prep": "Kolonoskopija i snimci prije operacije, analize i pregled anesteziologa, priprema crijeva po protokolu klinike, razgovor sa ljekarom o lijekovima koje uzimate",
-				"abnormal": "Nakon uklanjanja desnih dijelova voda i pojedini vitamini se slabije upijaju, pa stolica može biti tečnija, a ljekar može da prati nalaze krvi; histološki nalaz i dalji plan daje ljekar koji vas vodi. Povišena temperatura, jak bol, povraćanje ili nadutost bez stolice traže hitno javljanje"
-			},
-			"de": {
-				"what": "Entfernung der rechten Dickdarmhälfte samt dem Ende des Dünndarms mit anschließender Verbindung von Dünndarm und verbliebenem Dickdarm",
-				"how": "In Vollnarkose löst der Chirurg Blinddarm und aufsteigenden Dickdarm mit den versorgenden Gefäßen und Lymphknoten, entfernt sie als Block und legt eine Verbindung zwischen Dünn- und Dickdarm an; das entfernte Gewebe geht an die Pathologie",
-				"when": "Veränderungen von Blinddarm, aufsteigendem Dickdarm und rechter Dickdarmkrümmung, Komplikationen eines Morbus Crohn in diesem Bereich, unterbrochene Durchblutung der rechten Abschnitte, Blutung oder Verschluss dieses Segments",
-				"prep": "Koloskopie und Bildgebung vor der Operation, Labor und Narkosegespräch, Darmvorbereitung nach Vorgabe der Klinik, Besprechung der eingenommenen Medikamente mit dem Arzt",
-				"abnormal": "Nach Entfernung der rechten Abschnitte werden Wasser und einzelne Vitamine schlechter aufgenommen, der Stuhl kann weicher sein und der Arzt kontrolliert gegebenenfalls Blutwerte; den histologischen Befund und das weitere Vorgehen gibt der behandelnde Arzt. Fieber, starke Schmerzen, Erbrechen oder Blähungen ohne Stuhlgang erfordern sofortigen Kontakt"
-			},
-			"tr": {
-				"what": "Kalın bağırsağın sağ yarısının ince bağırsağın son bölümüyle birlikte çıkarılması ve ince bağırsağın kalan kalın bağırsağa birleştirilmesi",
-				"how": "Genel anestezi altında cerrah çekum ve çıkan kolonu besleyici damarlar ve lenf düğümleriyle birlikte serbestleştirir, tek parça hâlinde çıkarır ve ince bağırsak ile kalın bağırsak arasında bağlantı kurar; çıkarılan doku patolojiye gönderilir",
-				"when": "Çekum, çıkan kolon ve karaciğer köşesindeki değişiklikler, bu bölgedeki Crohn hastalığı komplikasyonları, sağ bölümlerin kan akımının kesilmesi, bu segmentte kanama veya tıkanıklık",
-				"prep": "Ameliyat öncesi kolonoskopi ve görüntüleme, tahliller ve anestezi değerlendirmesi, kliniğin protokolüne göre bağırsak hazırlığı, kullanılan ilaçların hekimle görüşülmesi",
-				"abnormal": "Sağ bölümler çıkarıldıktan sonra su ve bazı vitaminler daha az emilir, dışkı daha yumuşak olabilir ve hekim kan değerlerini izleyebilir; patoloji raporunu ve sonraki planı tedaviyi yürüten hekim verir. Ateş, şiddetli ağrı, kusma ya da dışkılama olmadan şişkinlik derhal başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "total-colectomy-with-ileo-rectal-anastomosis",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление всей ободочной кишки с соединением тонкой кишки напрямую с прямой кишкой",
-				"how": "Под общим наркозом хирург последовательно выделяет и удаляет ободочную кишку на всём протяжении, после чего сшивает конец подвздошной кишки с сохранённой прямой; операция объёмная, иногда на время формируют стому, и это решает хирург",
-				"when": "Множественные полипы на всём протяжении ободочной кишки, тяжёлое течение воспалительных заболеваний кишечника при сохранной прямой кишке, замедленный транзит с тяжёлыми запорами, не поддающимися другому лечению",
-				"prep": "Эндоскопический осмотр всей кишки и оценка состояния прямой кишки, анализы и консультация анестезиолога, подготовка кишечника, беседа о возможной временной стоме",
-				"abnormal": "Стул после такой операции становится частым и жидким, со временем обычно урежается, а врач наблюдает за весом, водным балансом и показателями крови; сохранённую прямую кишку периодически осматривают эндоскопически. Признаки потери жидкости, резкая слабость, лихорадка или кровь в стуле — повод обратиться к врачу сразу"
-			},
-			"en": {
-				"what": "Removal of the whole colon with the small bowel joined directly to the rectum",
-				"how": "Under general anaesthesia the surgeon frees and removes the colon along its entire length and then joins the end of the ileum to the preserved rectum; the operation is extensive and a temporary stoma is sometimes formed, which the surgeon decides",
-				"when": "Multiple polyps throughout the colon, severe inflammatory bowel disease with a preserved rectum, slow transit with severe constipation that does not respond to other treatment",
-				"prep": "Endoscopy of the whole bowel and assessment of the rectum, blood tests and a visit to the anaesthetist, bowel preparation, and a talk about a possible temporary stoma",
-				"abnormal": "Stools become frequent and loose after this operation and usually become less frequent with time, while the doctor follows weight, fluid balance and blood values; the preserved rectum is checked endoscopically at intervals. Signs of fluid loss, sudden weakness, fever or blood in the stool mean contacting the doctor at once"
-			},
-			"sr": {
-				"what": "Uklanjanje cijelog debelog crijeva uz spajanje tankog crijeva direktno sa završnim crijevom",
-				"how": "U opštoj anesteziji hirurg postepeno izdvaja i uklanja debelo crijevo cijelom dužinom, a zatim spaja kraj tankog crijeva sa sačuvanim rektumom; operacija je obimna i ponekad se privremeno formira stoma, o čemu odlučuje hirurg",
-				"when": "Brojni polipi duž cijelog debelog crijeva, teški oblici zapaljenskih bolesti crijeva uz očuvan rektum, usporen prolaz sa teškim zatvorom koji ne reaguje na drugo liječenje",
-				"prep": "Endoskopski pregled cijelog crijeva i procjena rektuma, analize i pregled anesteziologa, priprema crijeva, razgovor o mogućoj privremenoj stomi",
-				"abnormal": "Poslije ovakve operacije stolica postaje česta i tečna, a vremenom se obično prorijedi, dok ljekar prati tjelesnu težinu, unos tečnosti i nalaze krvi; sačuvani rektum se povremeno pregleda endoskopski. Znaci gubitka tečnosti, nagla slabost, povišena temperatura ili krv u stolici znače da odmah treba javiti se ljekaru"
-			},
-			"de": {
-				"what": "Entfernung des gesamten Dickdarms mit direkter Verbindung des Dünndarms zum Mastdarm",
-				"how": "In Vollnarkose löst und entfernt der Chirurg den Dickdarm auf ganzer Länge und verbindet danach das Ende des Krummdarms mit dem erhaltenen Mastdarm; der Eingriff ist umfangreich, mitunter wird vorübergehend ein Stoma angelegt, worüber der Chirurg entscheidet",
-				"when": "Zahlreiche Polypen im gesamten Dickdarm, schwere Verläufe chronisch-entzündlicher Darmerkrankungen bei erhaltenem Mastdarm, verlangsamte Passage mit schwerer Verstopfung, die auf andere Behandlung nicht anspricht",
-				"prep": "Endoskopie des gesamten Darms und Beurteilung des Mastdarms, Labor und Narkosegespräch, Darmvorbereitung, Gespräch über ein mögliches vorübergehendes Stoma",
-				"abnormal": "Der Stuhl ist nach diesem Eingriff häufig und dünn und wird mit der Zeit meist seltener, der Arzt kontrolliert Gewicht, Flüssigkeitshaushalt und Blutwerte; der erhaltene Mastdarm wird in Abständen endoskopisch kontrolliert. Zeichen von Flüssigkeitsmangel, plötzliche Schwäche, Fieber oder Blut im Stuhl erfordern sofortigen Kontakt"
-			},
-			"tr": {
-				"what": "Kalın bağırsağın tamamının çıkarılması ve ince bağırsağın doğrudan rektuma birleştirilmesi",
-				"how": "Genel anestezi altında cerrah kalın bağırsağı tüm uzunluğu boyunca serbestleştirip çıkarır, ardından ileumun ucunu korunan rektuma birleştirir; kapsamlı bir ameliyattır, bazen geçici stoma açılır ve buna cerrah karar verir",
-				"when": "Kalın bağırsağın tamamında çok sayıda polip, rektumun korunduğu ağır seyirli iltihabi bağırsak hastalıkları, başka tedaviye yanıt vermeyen yavaş geçişli ağır kabızlık",
-				"prep": "Tüm bağırsağın endoskopik incelenmesi ve rektumun değerlendirilmesi, tahliller ve anestezi değerlendirmesi, bağırsak hazırlığı, olası geçici stoma hakkında bilgilendirme",
-				"abnormal": "Bu ameliyattan sonra dışkılama sık ve sulu olur, zamanla genellikle seyrekleşir; hekim kiloyu, sıvı dengesini ve kan değerlerini izler, korunan rektum belirli aralıklarla endoskopiyle kontrol edilir. Sıvı kaybı belirtileri, ani halsizlik, ateş veya dışkıda kan hemen başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "umbilical-hernia-operation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Пластика дефекта брюшной стенки в области пупочного кольца",
-				"how": "Под местным обезболиванием или наркозом хирург делает небольшой разрез по краю пупка, вправляет содержимое грыжи, ушивает кольцо, а крупный дефект укрепляет сеткой, сохраняя форму пупка; обычно занимает меньше часа",
-				"when": "Выпячивание в области пупка, которое растёт, болит или перестаёт вправляться, грыжа после беременностей или заметного набора веса, у детей — дефект, сохраняющийся до возраста, который определяет хирург",
-				"prep": "Осмотр хирурга и анестезиолога, базовые анализы, отказ от еды и питья по инструкции клиники, сообщить о разжижающих кровь препаратах, по возможности заранее снизить нагрузку на живот",
-				"abnormal": "Отёк и синеватая окраска вокруг пупка в первые дни обычны, окончательная форма пупка проявляется по мере спадения отёка, а срок ограничения нагрузок называет хирург. Резкая боль, покраснение, температура или повторное выпячивание требуют осмотра"
-			},
-			"en": {
-				"what": "Repair of a defect in the abdominal wall at the umbilical ring",
-				"how": "Under local or general anaesthesia the surgeon makes a small cut at the edge of the navel, returns the contents of the hernia, closes the ring and reinforces a larger defect with a mesh while keeping the shape of the navel; it usually takes less than an hour",
-				"when": "A bulge at the navel that is growing, painful or no longer reduces, a hernia after pregnancies or marked weight gain, and in children a defect that persists to an age set by the surgeon",
-				"prep": "Examination by the surgeon and the anaesthetist, basic tests, no food or drink as the clinic instructs, telling the doctor about blood-thinning medicines, and reducing strain on the abdomen beforehand where possible",
-				"abnormal": "Swelling and a bluish colour around the navel are usual in the first days, the final shape of the navel appears as the swelling goes down, and the surgeon says how long to limit exertion. Sharp pain, redness, fever or a bulge that appears again call for a check-up"
-			},
-			"sr": {
-				"what": "Operativno zatvaranje otvora u trbušnom zidu na mjestu pupčanog prstena",
-				"how": "U lokalnoj ili opštoj anesteziji hirurg pravi mali rez uz ivicu pupka, vraća sadržaj kile, ušiva prsten, a veći otvor ojačava mrežicom uz očuvanje izgleda pupka; obično traje kraće od sat vremena",
-				"when": "Izbočenje na pupku koje raste, boli ili se više ne vraća, kila nakon trudnoća ili znatnog dobijanja na težini, a kod djece defekt koji se zadržava do uzrasta koji procjenjuje hirurg",
-				"prep": "Pregled hirurga i anesteziologa, osnovne analize, bez hrane i pića po uputstvu klinike, obavijestiti ljekara o lijekovima za razrjeđivanje krvi, po mogućnosti unaprijed smanjiti naprezanje trbuha",
-				"abnormal": "Otok i plavkasta boja oko pupka prvih dana su uobičajeni, konačan izgled pupka vidi se kada otok splasne, a koliko dugo treba izbjegavati napor kaže hirurg. Oštar bol, crvenilo, povišena temperatura ili ponovno izbočenje traže pregled"
-			},
-			"de": {
-				"what": "Verschluss einer Lücke in der Bauchwand im Bereich des Nabelrings",
-				"how": "In örtlicher Betäubung oder Vollnarkose setzt der Chirurg einen kleinen Schnitt am Nabelrand, verlagert den Bruchinhalt zurück, verschließt den Ring und verstärkt größere Lücken mit einem Netz, wobei die Form des Nabels erhalten bleibt; meist dauert es weniger als eine Stunde",
-				"when": "Eine Vorwölbung am Nabel, die wächst, schmerzt oder sich nicht mehr zurückdrängen lässt, ein Bruch nach Schwangerschaften oder deutlicher Gewichtszunahme, bei Kindern ein Defekt, der bis zu einem vom Chirurgen bestimmten Alter bestehen bleibt",
-				"prep": "Untersuchung durch Chirurg und Anästhesist, Basislabor, Nüchternheit nach Anweisung der Klinik, Hinweis auf blutverdünnende Medikamente, nach Möglichkeit vorab weniger Bauchbelastung",
-				"abnormal": "Schwellung und eine bläuliche Verfärbung um den Nabel sind in den ersten Tagen üblich, die endgültige Form des Nabels zeigt sich beim Abklingen der Schwellung, und wie lange Belastung zu meiden ist, sagt der Chirurg. Stechender Schmerz, Rötung, Fieber oder eine erneute Vorwölbung erfordern eine Kontrolle"
-			},
-			"tr": {
-				"what": "Karın duvarında göbek halkası bölgesindeki açıklığın onarımı",
-				"how": "Lokal veya genel anestezi altında cerrah göbek kenarından küçük bir kesi yapar, fıtık içeriğini geri iter, halkayı diker, büyük açıklıkları göbeğin görünümünü koruyarak yama ile güçlendirir; genellikle bir saatten kısa sürer",
-				"when": "Büyüyen, ağrıyan veya artık geri itilemeyen göbek şişliği, gebeliklerden ya da belirgin kilo artışından sonra gelişen fıtık, çocuklarda cerrahın belirlediği yaşa kadar kapanmayan açıklık",
-				"prep": "Cerrah ve anestezi uzmanı değerlendirmesi, temel tahliller, kliniğin belirttiği süre boyunca aç kalmak, kan sulandırıcı ilaçları bildirmek, mümkünse karın içi basıncı artıran zorlanmaları önceden azaltmak",
-				"abnormal": "İlk günlerde göbek çevresinde şişlik ve morumsu renk olağandır, göbeğin son görünümü şişlik indikçe ortaya çıkar, zorlanmanın ne kadar süre kısıtlanacağını cerrah söyler. Keskin ağrı, kızarıklık, ateş veya şişliğin yeniden belirmesi kontrol gerektirir"
-			}
-		}
-	}
+  {
+    "slug": "cholecystectomy-with-t-tube-drainage",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Открытое удаление жёлчного пузыря с ревизией общего жёлчного протока, в который на время оставляют Т-образный дренаж",
+        "how": "Под общим наркозом хирург делает разрез в правом подреберье, удаляет пузырь, вскрывает общий жёлчный проток, убирает из него камни и ставит Т-образную трубку, выведенную наружу; вмешательство обычно длится полтора-три часа",
+        "when": "Камни, застрявшие в общем жёлчном протоке, воспаление пузыря с расширением протоков, невозможность или неудача эндоскопического удаления камней, травма или сужение протока",
+        "prep": "Анализы крови, УЗИ и другие снимки протоков, консультация анестезиолога, отказ от еды и питья по указанию врача, согласование приёма разжижающих кровь препаратов",
+        "abnormal": "Дренаж остаётся на несколько недель, по нему оттекает жёлчь, его промывают, а перед удалением делают контрольный снимок протока; сроки определяет хирург. Подтекание вокруг трубки, резкое изменение количества жёлчи, желтушность кожи, озноб или сильная боль — повод обратиться раньше назначенного визита"
+      },
+      "en": {
+        "what": "Open removal of the gallbladder with exploration of the common bile duct, in which a T-shaped drain is left for a time",
+        "how": "Under general anaesthesia the surgeon opens the right upper abdomen, removes the gallbladder, opens the common bile duct, clears stones from it and places a T-shaped tube led out through the skin; the procedure usually takes one and a half to three hours",
+        "when": "Stones stuck in the common bile duct, gallbladder inflammation with widened ducts, cases where endoscopic stone removal is not possible or has failed, injury or narrowing of the duct",
+        "prep": "Blood tests, ultrasound and other imaging of the ducts, a visit to the anaesthetist, no food or drink as the doctor instructs, and agreement with the doctor about blood-thinning medicines",
+        "abnormal": "The drain stays in for several weeks, bile flows out through it, it is flushed and a control image of the duct is taken before removal; the surgeon sets the timing. Leakage around the tube, a sharp change in the amount of bile, yellowing of the skin, chills or severe pain mean contacting the surgeon before the scheduled visit"
+      },
+      "sr": {
+        "what": "Otvoreno uklanjanje žučne kese uz pregled glavnog žučnog voda, u koji se privremeno postavlja T-dren",
+        "how": "U opštoj anesteziji hirurg otvara desni gornji dio trbuha, uklanja žučnu kesu, otvara glavni žučni vod, vadi kamence iz njega i postavlja T-cjevčicu izvedenu kroz kožu; zahvat obično traje sat i po do tri sata",
+        "when": "Kamenci zaglavljeni u glavnom žučnom vodu, upala žučne kese sa proširenim vodovima, situacije kada endoskopsko vađenje kamenaca nije moguće ili nije uspjelo, povreda ili suženje voda",
+        "prep": "Analize krvi, ultrazvuk i drugi snimci vodova, pregled anesteziologa, bez hrane i pića po uputstvu ljekara, dogovor o lijekovima za razrjeđivanje krvi",
+        "abnormal": "Dren ostaje nekoliko sedmica, kroz njega otiče žuč, ispira se, a prije vađenja radi se kontrolni snimak voda; rokove određuje hirurg. Curenje oko cjevčice, nagla promjena količine žuči, žućkasta boja kože, drhtavica ili jak bol razlog su da se javite ranije od zakazanog pregleda"
+      },
+      "de": {
+        "what": "Offene Entfernung der Gallenblase mit Darstellung des Hauptgallengangs, in den vorübergehend eine T-Drainage eingelegt wird",
+        "how": "In Vollnarkose eröffnet der Chirurg den rechten Oberbauch, entfernt die Gallenblase, eröffnet den Hauptgallengang, entfernt Steine daraus und legt einen nach außen geführten T-Schlauch ein; der Eingriff dauert meist eineinhalb bis drei Stunden",
+        "when": "Im Hauptgallengang eingeklemmte Steine, Gallenblasenentzündung mit erweiterten Gängen, Fälle, in denen die endoskopische Steinentfernung nicht möglich war oder nicht gelungen ist, Verletzung oder Verengung des Gangs",
+        "prep": "Blutuntersuchungen, Ultraschall und weitere Darstellung der Gallenwege, Narkosegespräch, Nüchternheit nach ärztlicher Anweisung, Absprache über blutverdünnende Medikamente",
+        "abnormal": "Die Drainage bleibt mehrere Wochen liegen, Galle fließt darüber ab, sie wird gespült und vor dem Ziehen wird eine Kontrollaufnahme des Gangs angefertigt; den Zeitpunkt legt der Chirurg fest. Flüssigkeitsaustritt neben dem Schlauch, eine plötzlich veränderte Gallenmenge, Gelbfärbung der Haut, Schüttelfrost oder starke Schmerzen sind Gründe, sich vor dem geplanten Termin zu melden"
+      },
+      "tr": {
+        "what": "Ana safra kanalının da açılarak kontrol edildiği, içine geçici olarak T şeklinde bir dren yerleştirilen açık safra kesesi ameliyatı",
+        "how": "Genel anestezi altında cerrah sağ üst karın bölgesini açar, safra kesesini çıkarır, ana safra kanalını açarak taşları temizler ve dışarı uzanan T şeklinde bir tüp yerleştirir; işlem genellikle bir buçuk ila üç saat sürer",
+        "when": "Ana safra kanalında sıkışmış taşlar, kanalların genişlemesiyle seyreden safra kesesi iltihabı, endoskopik taş çıkarmanın mümkün olmadığı veya başarısız kaldığı durumlar, kanal yaralanması veya darlığı",
+        "prep": "Kan tahlilleri, ultrason ve safra yollarının diğer görüntülemeleri, anestezi uzmanı değerlendirmesi, hekimin belirttiği süre boyunca aç kalmak, kan sulandırıcı ilaçların hekimle görüşülmesi",
+        "abnormal": "Dren birkaç hafta kalır, safra bu yoldan dışarı akar, yıkanır ve çıkarılmadan önce kanalın kontrol görüntüsü alınır; süreyi cerrah belirler. Tüpün çevresinden sızıntı, safra miktarında ani değişiklik, ciltte sararma, titreme veya şiddetli ağrı planlanan kontrolden önce başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Отворено уклањање жучне кесе уз преглед главног жучног вода, у који се привремено поставља Т-дрен",
+        "how": "У општој анестезији хирург отвара десни горњи дио трбуха, уклања жучну кесу, отвара главни жучни вод, вади каменце из њега и поставља Т-цјевчицу изведену кроз кожу; захват обично траје сат и по до три сата",
+        "when": "Каменци заглављени у главном жучном воду, упала жучне кесе са проширеним водовима, ситуације када ендоскопско вађење каменаца није могуће или није успјело, повреда или сужење вода",
+        "prep": "Анализе крви, ултразвук и други снимци водова, преглед анестезиолога, без хране и пића по упутству љекара, договор о лијековима за разрјеђивање крви",
+        "abnormal": "Дрен остаје неколико седмица, кроз њега отиче жуч, испира се, а прије вађења ради се контролни снимак вода; рокове одређује хирург. Цурење око цјевчице, нагла промјена количине жучи, жућкаста боја коже, дрхтавица или јак бол разлог су да се јавите раније од заказаног прегледа"
+      }
+    }
+  },
+  {
+    "slug": "epigastric-hernia-operation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Пластика грыжи белой линии живота — дефекта по средней линии между пупком и грудиной",
+        "how": "Под местным обезболиванием или наркозом хирург делает небольшой разрез над выпячиванием, вправляет вышедшую жировую ткань или сальник, ушивает дефект мышечного слоя, а крупный укрепляет сеткой; обычно занимает меньше часа",
+        "when": "Болезненное или увеличивающееся выпячивание по средней линии выше пупка, дискомфорт при нагрузке и кашле, повторное появление после прежней пластики",
+        "prep": "Осмотр хирурга и анестезиолога, базовые анализы, отказ от еды и питья по инструкции клиники, сообщить о разжижающих кровь препаратах и хронических болезнях",
+        "abnormal": "Несколько дней ожидаемы тянущая боль, отёк и синяк вокруг шва, а срок ограничения подъёма тяжестей называет хирург. Нарастающая боль, покраснение и выделения из раны, температура или повторное выпячивание требуют осмотра"
+      },
+      "en": {
+        "what": "Repair of a hernia in the midline of the abdomen between the navel and the breastbone",
+        "how": "Under local or general anaesthesia the surgeon makes a small cut over the bulge, returns the fat or omentum that has come through, closes the gap in the muscle layer and reinforces a larger defect with a mesh; it usually takes under an hour",
+        "when": "A painful or growing bulge in the midline above the navel, discomfort on exertion and coughing, a bulge that has come back after an earlier repair",
+        "prep": "Examination by the surgeon and the anaesthetist, basic blood tests, no food or drink as the clinic instructs, and telling the doctor about blood-thinning medicines and chronic conditions",
+        "abnormal": "A pulling pain, swelling and a bruise around the stitches are expected for a few days, and the surgeon sets how long to avoid lifting. Growing pain, redness or discharge from the wound, fever or a bulge that appears again call for a check-up"
+      },
+      "sr": {
+        "what": "Operativno zatvaranje otvora u srednjoj liniji trbuha, između pupka i grudne kosti",
+        "how": "U lokalnoj ili opštoj anesteziji hirurg pravi mali rez iznad izbočenja, vraća masno tkivo ili trbušnu maramicu, ušiva otvor u mišićnom sloju, a veći defekt ojačava mrežicom; obično traje kraće od sat vremena",
+        "when": "Bolno ili sve veće izbočenje u srednjoj liniji iznad pupka, nelagoda pri naporu i kašljanju, ponovna pojava nakon ranije operacije",
+        "prep": "Pregled hirurga i anesteziologa, osnovne analize, bez hrane i pića po uputstvu klinike, obavijestiti ljekara o lijekovima za razrjeđivanje krvi i hroničnim bolestima",
+        "abnormal": "Nekoliko dana se očekuju zatezanje, otok i modrica oko šava, a koliko dugo treba izbjegavati dizanje tereta kaže hirurg. Pojačan bol, crvenilo ili curenje iz rane, povišena temperatura ili ponovno izbočenje traže pregled"
+      },
+      "de": {
+        "what": "Verschluss einer Bruchlücke in der Mittellinie des Bauches zwischen Nabel und Brustbein",
+        "how": "In örtlicher Betäubung oder Vollnarkose setzt der Chirurg einen kleinen Schnitt über der Vorwölbung, verlagert das vorgetretene Fettgewebe oder Netz zurück, verschließt die Lücke in der Muskelschicht und verstärkt größere Defekte mit einem Netz; meist dauert es weniger als eine Stunde",
+        "when": "Eine schmerzhafte oder größer werdende Vorwölbung in der Mittellinie oberhalb des Nabels, Beschwerden bei Belastung und Husten, erneutes Auftreten nach einer früheren Operation",
+        "prep": "Untersuchung durch Chirurg und Anästhesist, Basislabor, Nüchternheit nach Anweisung der Klinik, Hinweis auf blutverdünnende Medikamente und chronische Erkrankungen",
+        "abnormal": "Ziehende Schmerzen, Schwellung und ein Bluterguss um die Naht sind für einige Tage zu erwarten, wie lange auf Heben verzichtet werden soll, legt der Chirurg fest. Zunehmende Schmerzen, Rötung oder Sekret aus der Wunde, Fieber oder eine erneute Vorwölbung erfordern eine Kontrolle"
+      },
+      "tr": {
+        "what": "Göbek ile göğüs kemiği arasındaki orta hatta oluşan fıtığın onarımı",
+        "how": "Lokal veya genel anestezi altında cerrah şişliğin üzerinden küçük bir kesi yapar, dışarı çıkan yağ dokusunu veya omentumu yerine iter, kas tabakasındaki açıklığı diker, büyük açıklıkları yama ile güçlendirir; genellikle bir saatten kısa sürer",
+        "when": "Göbeğin üzerinde orta hatta ağrıyan veya büyüyen şişlik, zorlanma ve öksürükle artan rahatsızlık, önceki onarımdan sonra yeniden ortaya çıkan fıtık",
+        "prep": "Cerrah ve anestezi uzmanı değerlendirmesi, temel tahliller, kliniğin belirttiği süre boyunca aç kalmak, kan sulandırıcı ilaçların ve kronik hastalıkların bildirilmesi",
+        "abnormal": "Birkaç gün dikiş çevresinde çekilme hissi, şişlik ve morluk beklenir; ağırlık kaldırma kısıtlamasının süresini cerrah belirler. Artan ağrı, kızarıklık veya yaradan akıntı, ateş ya da şişliğin yeniden belirmesi kontrol gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Оперативно затварање отвора у средњој линији трбуха, између пупка и грудне кости",
+        "how": "У локалној или општој анестезији хирург прави мали рез изнад избочења, враћа масно ткиво или трбушну марамицу, ушива отвор у мишићном слоју, а већи дефект ојачава мрежицом; обично траје краће од сат времена",
+        "when": "Болно или све веће избочење у средњој линији изнад пупка, нелагода при напору и кашљању, поновна појава након раније операције",
+        "prep": "Преглед хирурга и анестезиолога, основне анализе, без хране и пића по упутству клинике, обавијестити љекара о лијековима за разрјеђивање крви и хроничним болестима",
+        "abnormal": "Неколико дана се очекују затезање, оток и модрица око шава, а колико дуго треба избјегавати дизање терета каже хирург. Појачан бол, црвенило или цурење из ране, повишена температура или поновно избочење траже преглед"
+      }
+    }
+  },
+  {
+    "slug": "exploratory-laparotomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Вскрытие брюшной полости для осмотра органов, когда причину состояния не удаётся установить другими методами",
+        "how": "Под общим наркозом хирург рассекает брюшную стенку, последовательно осматривает и ощупывает органы, при необходимости берёт материал на исследование, сразу устраняет найденную проблему и ушивает рану; длительность зависит от находки",
+        "when": "Острая боль в животе неясной причины, проникающие ранения и тупая травма живота, внутреннее кровотечение, подозрение на прободение или непроходимость, уточнение распространённости процесса перед лечением",
+        "prep": "Чаще выполняется срочно: не есть и не пить, сообщить бригаде о лекарствах, аллергиях и перенесённых операциях; анализы, снимки и осмотр анестезиолога делают в стационаре",
+        "abnormal": "Объём вмешательства становится известен только во время операции, и дальнейший план хирург обсуждает после неё; взятый материал оценивает патолог. В первые дни ожидаемы боль по шву, вздутие и постепенное возвращение к питанию, а температура, рвота или выделения из раны — повод сообщить врачу сразу"
+      },
+      "en": {
+        "what": "Opening of the abdominal cavity to inspect the organs when other methods cannot establish the cause of the condition",
+        "how": "Under general anaesthesia the surgeon opens the abdominal wall, examines and feels the organs one by one, takes tissue for analysis if needed, deals with the problem that is found and then closes the wound; the length depends on the finding",
+        "when": "Acute abdominal pain of unclear cause, penetrating wounds and blunt abdominal trauma, internal bleeding, suspected perforation or obstruction, assessing how far a process has spread before treatment",
+        "prep": "Most often done urgently: no food or drink, tell the team about medicines, allergies and previous operations; tests, imaging and the anaesthetist's assessment are done in hospital",
+        "abnormal": "The extent of the operation becomes clear only during it, and the surgeon discusses the further plan afterwards; tissue taken for analysis is assessed by a pathologist. Pain along the wound, bloating and a gradual return to eating are expected in the first days, while fever, vomiting or discharge from the wound should be reported at once"
+      },
+      "sr": {
+        "what": "Otvaranje trbušne duplje radi pregleda organa kada se uzrok tegoba ne može utvrditi drugim metodama",
+        "how": "U opštoj anesteziji hirurg otvara trbušni zid, redom pregleda i opipava organe, po potrebi uzima tkivo za analizu, odmah rješava ono što nađe i zatim zatvara ranu; trajanje zavisi od nalaza",
+        "when": "Jak bol u trbuhu nejasnog uzroka, ubodne i tupe povrede trbuha, unutrašnje krvarenje, sumnja na perforaciju ili zapušenje crijeva, procjena proširenosti bolesti prije liječenja",
+        "prep": "Najčešće se radi hitno: bez hrane i pića, timu treba reći koje lijekove uzimate, na šta ste alergični i koje ste operacije imali; analize, snimci i pregled anesteziologa rade se u bolnici",
+        "abnormal": "Obim zahvata poznat je tek tokom operacije, a dalji plan hirurg objašnjava nakon nje; tkivo uzeto za analizu ocjenjuje patolog. Prvih dana se očekuju bol duž rane, nadutost i postepen povratak na ishranu, a povišena temperatura, povraćanje ili curenje iz rane odmah se prijavljuju ljekaru"
+      },
+      "de": {
+        "what": "Eröffnung der Bauchhöhle zur Begutachtung der Organe, wenn sich die Ursache der Beschwerden anders nicht klären lässt",
+        "how": "In Vollnarkose eröffnet der Chirurg die Bauchdecke, begutachtet und tastet die Organe der Reihe nach ab, entnimmt bei Bedarf Gewebe zur Untersuchung, behebt das Gefundene gleich und verschließt danach die Wunde; die Dauer hängt vom Befund ab",
+        "when": "Starke Bauchschmerzen unklarer Ursache, penetrierende und stumpfe Bauchverletzungen, innere Blutung, Verdacht auf Perforation oder Darmverschluss, Beurteilung der Ausdehnung einer Erkrankung vor der Behandlung",
+        "prep": "Meist ein dringlicher Eingriff: nüchtern bleiben, dem Team Medikamente, Allergien und frühere Operationen mitteilen; Labor, Bildgebung und Narkoseaufklärung erfolgen im Krankenhaus",
+        "abnormal": "Der Umfang des Eingriffs zeigt sich erst während der Operation, das weitere Vorgehen bespricht der Chirurg danach; entnommenes Gewebe beurteilt ein Pathologe. In den ersten Tagen sind Wundschmerz, Blähungen und ein langsamer Kostaufbau zu erwarten, Fieber, Erbrechen oder Sekret aus der Wunde sind sofort zu melden"
+      },
+      "tr": {
+        "what": "Nedeni başka yöntemlerle açıklanamayan durumlarda organları doğrudan görmek için karın boşluğunun açılması",
+        "how": "Genel anestezi altında cerrah karın duvarını açar, organları sırayla inceler ve elle muayene eder, gerekirse inceleme için doku alır, bulduğu sorunu aynı seansta giderir ve yarayı kapatır; süre bulguya göre değişir",
+        "when": "Nedeni belirsiz şiddetli karın ağrısı, delici ve künt karın yaralanmaları, iç kanama, delinme veya bağırsak tıkanıklığı şüphesi, tedaviden önce hastalığın yayılımının değerlendirilmesi",
+        "prep": "Çoğunlukla acil yapılır: hiçbir şey yiyip içmemek, ekibe kullanılan ilaçları, alerjileri ve geçirilmiş ameliyatları bildirmek gerekir; tahlil, görüntüleme ve anestezi değerlendirmesi hastanede yapılır",
+        "abnormal": "Ameliyatın kapsamı ancak sırasında belli olur, sonraki planı cerrah ameliyattan sonra anlatır; incelemeye gönderilen dokuyu patoloji uzmanı değerlendirir. İlk günlerde kesi boyunca ağrı, şişkinlik ve beslenmeye kademeli dönüş beklenir; ateş, kusma veya yaradan akıntı hemen bildirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Отварање трбушне дупље ради прегледа органа када се узрок тегоба не може утврдити другим методама",
+        "how": "У општој анестезији хирург отвара трбушни зид, редом прегледа и опипава органе, по потреби узима ткиво за анализу, одмах рјешава оно што нађе и затим затвара рану; трајање зависи од налаза",
+        "when": "Јак бол у трбуху нејасног узрока, убодне и тупе повреде трбуха, унутрашње крварење, сумња на перфорацију или запушење цријева, процјена проширености болести прије лијечења",
+        "prep": "Најчешће се ради хитно: без хране и пића, тиму треба рећи које лијекове узимате, на шта сте алергични и које сте операције имали; анализе, снимци и преглед анестезиолога раде се у болници",
+        "abnormal": "Обим захвата познат је тек током операције, а даљи план хирург објашњава након ње; ткиво узето за анализу оцјењује патолог. Првих дана се очекују бол дуж ране, надутост и постепен повратак на исхрану, а повишена температура, повраћање или цурење из ране одмах се пријављују љекару"
+      }
+    }
+  },
+  {
+    "slug": "gastro-entero-and-entero-entero-anastomosis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Создание хирургического соустья между желудком и тонкой кишкой или между петлями тонкой кишки, чтобы содержимое снова могло проходить",
+        "how": "Под общим наркозом хирург сближает участки, вскрывает их просвет и сшивает стенки вручную или сшивающим аппаратом, после чего проверяет герметичность и проходимость соустья; выполняется отдельно или как этап более крупной операции",
+        "when": "Непроходимость из-за сужения, опухоли или рубца, когда поражённый участок нельзя удалить и его обходят, язвенные осложнения с нарушенным опорожнением желудка, восстановление пассажа после прежних операций",
+        "prep": "Обследование и консультация анестезиолога, отказ от еды и питья по указанию врача, иногда подготовка кишечника; при экстренном вмешательстве подготовку проводят в стационаре",
+        "abnormal": "Питание возвращают постепенно, по мере восстановления работы кишечника, темп задаёт хирург; переносимость пищи в первые недели может меняться. Рвота, вздутие без отхождения газов, лихорадка или усиление боли — повод срочно показаться врачу"
+      },
+      "en": {
+        "what": "Creation of a surgical connection between the stomach and the small bowel, or between loops of small bowel, so that contents can pass again",
+        "how": "Under general anaesthesia the surgeon brings the segments together, opens them and joins the walls by hand or with a stapler, then checks that the join is tight and open; it is done on its own or as a step within a larger operation",
+        "when": "Blockage from narrowing, a tumour or scar tissue when the affected part cannot be removed and has to be bypassed, ulcer complications with poor emptying of the stomach, restoring passage after earlier operations",
+        "prep": "Work-up and a visit to the anaesthetist, no food or drink as instructed, sometimes bowel preparation; for an emergency operation the preparation is done in hospital",
+        "abnormal": "Eating is restarted step by step as the bowel starts working again and the surgeon sets the pace; tolerance of food may vary in the first weeks. Vomiting, bloating with no passage of gas, fever or growing pain mean seeing the doctor urgently"
+      },
+      "sr": {
+        "what": "Hirurško spajanje želuca i tankog crijeva ili dvije vijuge tankog crijeva, da bi sadržaj ponovo mogao da prolazi",
+        "how": "U opštoj anesteziji hirurg približava dijelove, otvara ih i spaja zidove ručno ili aparatom, a zatim provjerava da li je spoj zaptiven i prohodan; radi se samostalno ili kao dio veće operacije",
+        "when": "Zapušenje zbog suženja, tumora ili ožiljka kada se zahvaćeni dio ne može ukloniti nego se zaobilazi, komplikacije čira sa otežanim pražnjenjem želuca, uspostavljanje prolaza nakon ranijih operacija",
+        "prep": "Obrada i pregled anesteziologa, bez hrane i pića po uputstvu ljekara, ponekad priprema crijeva; kod hitne operacije priprema se obavlja u bolnici",
+        "abnormal": "Ishrana se uvodi postepeno, kako se crijeva budu oporavljala, a tempo određuje hirurg; podnošenje hrane prvih sedmica može da varira. Povraćanje, nadutost bez prolaza gasova, povišena temperatura ili jači bol traže hitan pregled"
+      },
+      "de": {
+        "what": "Operative Verbindung zwischen Magen und Dünndarm oder zwischen zwei Dünndarmschlingen, damit die Passage wieder möglich ist",
+        "how": "In Vollnarkose führt der Chirurg die Abschnitte zusammen, eröffnet sie und vernäht die Wände von Hand oder mit einem Klammergerät und prüft anschließend Dichtigkeit und Durchgängigkeit der Verbindung; der Eingriff erfolgt allein oder als Teil einer größeren Operation",
+        "when": "Verschluss durch Verengung, Tumor oder Narbe, wenn der betroffene Abschnitt nicht entfernt, sondern umgangen werden muss, Geschwürkomplikationen mit gestörter Magenentleerung, Wiederherstellung der Passage nach früheren Operationen",
+        "prep": "Abklärung und Narkosegespräch, Nüchternheit nach Anweisung, teils Darmvorbereitung; bei einem Noteingriff erfolgt die Vorbereitung im Krankenhaus",
+        "abnormal": "Der Kostaufbau erfolgt schrittweise, sobald der Darm wieder arbeitet, das Tempo gibt der Chirurg vor; die Verträglichkeit von Speisen kann in den ersten Wochen schwanken. Erbrechen, Blähungen ohne Windabgang, Fieber oder zunehmende Schmerzen erfordern eine rasche Vorstellung"
+      },
+      "tr": {
+        "what": "İçeriğin yeniden geçebilmesi için mide ile ince bağırsak arasında ya da iki ince bağırsak kıvrımı arasında cerrahi bağlantı oluşturulması",
+        "how": "Genel anestezi altında cerrah bölümleri yaklaştırır, açar ve duvarları elle veya zımba aletiyle birleştirir, ardından bağlantının sızdırmaz ve açık olduğunu kontrol eder; tek başına ya da daha büyük bir ameliyatın parçası olarak yapılır",
+        "when": "Darlık, kitle veya yapışıklık nedeniyle oluşan tıkanıklıkta etkilenen bölümün çıkarılamayıp baypas edilmesi, mide boşalmasını bozan ülser komplikasyonları, önceki ameliyatlardan sonra geçişin yeniden sağlanması",
+        "prep": "Tetkikler ve anestezi değerlendirmesi, hekimin belirttiği süre boyunca aç kalmak, bazen bağırsak hazırlığı; acil ameliyatta hazırlık hastanede yapılır",
+        "abnormal": "Beslenme, bağırsaklar çalışmaya başladıkça kademeli olarak artırılır ve hızını cerrah belirler; ilk haftalarda yiyeceklere tolerans değişebilir. Kusma, gaz çıkışı olmadan şişkinlik, ateş veya artan ağrı acil muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршко спајање желуца и танког цријева или двије вијуге танког цријева, да би садржај поново могао да пролази",
+        "how": "У општој анестезији хирург приближава дијелове, отвара их и спаја зидове ручно или апаратом, а затим провјерава да ли је спој заптивен и проходан; ради се самостално или као дио веће операције",
+        "when": "Запушење због сужења, тумора или ожиљка када се захваћени дио не може уклонити него се заобилази, компликације чира са отежаним пражњењем желуца, успостављање пролаза након ранијих операција",
+        "prep": "Обрада и преглед анестезиолога, без хране и пића по упутству љекара, понекад припрема цријева; код хитне операције припрема се обавља у болници",
+        "abnormal": "Исхрана се уводи постепено, како се цријева буду опорављала, а темпо одређује хирург; подношење хране првих седмица може да варира. Повраћање, надутост без пролаза гасова, повишена температура или јачи бол траже хитан преглед"
+      }
+    }
+  },
+  {
+    "slug": "hartmann-reconstruction",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторная операция, при которой восстанавливают непрерывность кишечника и закрывают выведенную ранее колостому",
+        "how": "Под общим наркозом хирург выделяет из сращений приводящий отдел кишки и культю прямой кишки, соединяет их вручную или аппаратом, закрывает отверстие на брюшной стенке и ушивает рану; вмешательство технически сложное и занимает несколько часов",
+        "when": "Через несколько месяцев после операции Гартмана, когда воспаление стихло, пациент восстановился, а обследование показало, что культя кишки и сфинктер пригодны для соединения",
+        "prep": "Контрольный осмотр и исследование культи кишки, подготовка кишечника по схеме клиники, отказ от еды и питья по указанию врача, уход за кожей вокруг стомы до операции",
+        "abnormal": "Стул налаживается не сразу: частота и позывы могут меняться неделями, и хирург объясняет, чего ожидать именно в вашем случае. Температура, сильная боль, отсутствие стула и газов или выделения из раны требуют немедленного обращения"
+      },
+      "en": {
+        "what": "A second operation that restores the continuity of the bowel and closes a colostomy created earlier",
+        "how": "Under general anaesthesia the surgeon frees the bowel end and the rectal stump from adhesions, joins them by hand or with a stapler, closes the opening in the abdominal wall and sutures the wound; it is technically demanding and takes several hours",
+        "when": "Several months after a Hartmann operation, once inflammation has settled, the patient has recovered and the work-up shows that the rectal stump and the sphincter are suitable for joining",
+        "prep": "A check-up and assessment of the rectal stump, bowel preparation as the clinic directs, no food or drink as instructed, and care of the skin around the stoma before surgery",
+        "abnormal": "Bowel habit does not settle at once: frequency and urgency may change for weeks, and the surgeon explains what to expect in your case. Fever, severe pain, no passage of stool and gas, or discharge from the wound require immediate contact"
+      },
+      "sr": {
+        "what": "Druga operacija kojom se ponovo uspostavlja prolaz kroz crijevo i zatvara ranije izvedena kolostoma",
+        "how": "U opštoj anesteziji hirurg oslobađa dovodni dio crijeva i patrljak završnog crijeva iz priraslica, spaja ih ručno ili aparatom, zatvara otvor na trbušnom zidu i ušiva ranu; zahvat je tehnički zahtjevan i traje nekoliko sati",
+        "when": "Nekoliko mjeseci nakon operacije po Hartmanu, kada se upala smirila, pacijent oporavio, a nalazi pokažu da su patrljak crijeva i sfinkter pogodni za spajanje",
+        "prep": "Kontrolni pregled i ispitivanje patrljka crijeva, priprema crijeva po protokolu klinike, bez hrane i pića po uputstvu, njega kože oko stome do operacije",
+        "abnormal": "Pražnjenje se ne sredi odmah: učestalost i nagon mogu da se mijenjaju sedmicama, a hirurg objašnjava šta da očekujete u vašem slučaju. Povišena temperatura, jak bol, izostanak stolice i gasova ili curenje iz rane traže hitno javljanje"
+      },
+      "de": {
+        "what": "Zweiter Eingriff, der die Darmpassage wiederherstellt und ein zuvor angelegtes Kolostoma verschließt",
+        "how": "In Vollnarkose löst der Chirurg das zuführende Darmende und den Rektumstumpf aus Verwachsungen, verbindet sie von Hand oder mit einem Klammergerät, verschließt die Öffnung in der Bauchdecke und vernäht die Wunde; der Eingriff ist technisch anspruchsvoll und dauert mehrere Stunden",
+        "when": "Einige Monate nach einer Hartmann-Operation, wenn die Entzündung abgeklungen ist, der Patient sich erholt hat und die Untersuchungen zeigen, dass Rektumstumpf und Schließmuskel für eine Verbindung geeignet sind",
+        "prep": "Kontrolluntersuchung und Darstellung des Rektumstumpfes, Darmvorbereitung nach Vorgabe der Klinik, Nüchternheit nach Anweisung, Hautpflege rund um das Stoma bis zur Operation",
+        "abnormal": "Der Stuhlgang normalisiert sich nicht sofort: Häufigkeit und Drang können sich über Wochen verändern, der Chirurg erklärt, was im Einzelfall zu erwarten ist. Fieber, starke Schmerzen, fehlender Stuhl- und Windabgang oder Sekret aus der Wunde erfordern sofortigen Kontakt"
+      },
+      "tr": {
+        "what": "Bağırsak devamlılığını yeniden sağlayan ve daha önce açılmış kolostomiyi kapatan ikinci ameliyat",
+        "how": "Genel anestezi altında cerrah getirici bağırsak ucunu ve rektum güdüğünü yapışıklıklardan ayırır, bunları elle veya zımba aletiyle birleştirir, karın duvarındaki ağzı kapatır ve yarayı diker; teknik olarak zor bir ameliyattır ve birkaç saat sürer",
+        "when": "Hartmann ameliyatından birkaç ay sonra, iltihap yatıştığında, hasta toparlandığında ve tetkikler rektum güdüğü ile büzücü kasın birleştirmeye uygun olduğunu gösterdiğinde",
+        "prep": "Kontrol muayenesi ve rektum güdüğünün değerlendirilmesi, kliniğin protokolüne göre bağırsak hazırlığı, belirtilen süre boyunca aç kalmak, ameliyata kadar stoma çevresindeki cildin bakımı",
+        "abnormal": "Bağırsak düzeni hemen oturmaz: dışkılama sıklığı ve sıkışma hissi haftalarca değişebilir, cerrah sizin durumunuzda ne bekleneceğini anlatır. Ateş, şiddetli ağrı, dışkı ve gaz çıkışının olmaması veya yaradan akıntı derhal başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Друга операција којом се поново успоставља пролаз кроз цријево и затвара раније изведена колостома",
+        "how": "У општој анестезији хирург ослобађа доводни дио цријева и патрљак завршног цријева из прираслица, спаја их ручно или апаратом, затвара отвор на трбушном зиду и ушива рану; захват је технички захтјеван и траје неколико сати",
+        "when": "Неколико мјесеци након операције по Хартману, када се упала смирила, пацијент опоравио, а налази покажу да су патрљак цријева и сфинктер погодни за спајање",
+        "prep": "Контролни преглед и испитивање патрљка цријева, припрема цријева по протоколу клинике, без хране и пића по упутству, њега коже око стоме до операције",
+        "abnormal": "Пражњење се не среди одмах: учесталост и нагон могу да се мијењају седмицама, а хирург објашњава шта да очекујете у вашем случају. Повишена температура, јак бол, изостанак столице и гасова или цурење из ране траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "hernia-operation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция, при которой содержимое грыжи возвращают на место, а ослабленный участок брюшной стенки укрепляют швами или сеткой",
+        "how": "Под местной, спинальной или общей анестезией хирург делает разрез над грыжей, выделяет грыжевой мешок, вправляет содержимое и закрывает дефект, чаще всего сетчатым имплантом; обычно занимает от получаса до полутора часов",
+        "when": "Паховая, бедренная, пупочная или послеоперационная грыжа, которая растёт, болит или мешает в быту; доступ и метод выбирает хирург по расположению и размеру грыжи",
+        "prep": "Предоперационные анализы и консультация анестезиолога, отказ от еды и питья по инструкции, сообщить о разжижающих кровь препаратах, заранее пролечить кашель и запоры по рекомендации врача",
+        "abnormal": "Боль и отёк в области шва в первые дни обычны, а ограничение подъёма тяжестей хирург назначает индивидуально. Быстро растущая припухлость, покраснение, температура или сильная боль — повод на внеплановый осмотр"
+      },
+      "en": {
+        "what": "An operation in which the contents of a hernia are put back and the weak part of the abdominal wall is reinforced with sutures or a mesh",
+        "how": "Under local, spinal or general anaesthesia the surgeon cuts over the hernia, frees the hernia sac, returns its contents and closes the defect, most often with a mesh implant; it usually takes from half an hour to an hour and a half",
+        "when": "An inguinal, femoral, umbilical or incisional hernia that is growing, painful or interferes with daily life; the approach and the method are chosen by the surgeon according to the site and the size",
+        "prep": "Pre-operative tests and a visit to the anaesthetist, no food or drink as instructed, telling the doctor about blood-thinning medicines, and treating cough and constipation beforehand as the doctor advises",
+        "abnormal": "Pain and swelling around the wound are usual in the first days, and the surgeon sets the limit on lifting individually. A quickly growing swelling, redness, fever or severe pain call for an unscheduled check-up"
+      },
+      "sr": {
+        "what": "Operacija kojom se sadržaj kile vraća na mjesto, a oslabljeni dio trbušnog zida ojačava šavovima ili mrežicom",
+        "how": "U lokalnoj, spinalnoj ili opštoj anesteziji hirurg pravi rez iznad kile, izdvaja kilnu kesu, vraća sadržaj i zatvara otvor, najčešće mrežicom; obično traje od pola sata do sat i po",
+        "when": "Preponska, butna, pupčana ili kila na ožiljku koja raste, boli ili smeta u svakodnevnom životu; pristup i metodu bira hirurg prema položaju i veličini kile",
+        "prep": "Preoperativne analize i pregled anesteziologa, bez hrane i pića po uputstvu, obavijestiti ljekara o lijekovima za razrjeđivanje krvi, unaprijed smiriti kašalj i zatvor po savjetu ljekara",
+        "abnormal": "Bol i otok oko rane prvih dana su uobičajeni, a koliko se dugo ne smije dizati teret hirurg određuje za svakog pacijenta. Oteklina koja brzo raste, crvenilo, povišena temperatura ili jak bol razlog su za vanredni pregled"
+      },
+      "de": {
+        "what": "Operation, bei der der Bruchinhalt zurückverlagert und die geschwächte Stelle der Bauchwand mit Nähten oder einem Netz verstärkt wird",
+        "how": "In örtlicher, rückenmarksnaher oder Vollnarkose schneidet der Chirurg über dem Bruch ein, stellt den Bruchsack dar, verlagert den Inhalt zurück und verschließt die Lücke, meist mit einem Netzimplantat; der Eingriff dauert in der Regel eine halbe bis anderthalb Stunden",
+        "when": "Leisten-, Schenkel-, Nabel- oder Narbenbruch, der größer wird, schmerzt oder im Alltag stört; Zugang und Methode wählt der Chirurg nach Lage und Größe",
+        "prep": "Voruntersuchungen und Narkosegespräch, Nüchternheit nach Anweisung, Hinweis auf blutverdünnende Medikamente, Husten und Verstopfung vorab nach ärztlichem Rat behandeln",
+        "abnormal": "Schmerzen und Schwellung im Wundbereich sind in den ersten Tagen üblich, die Belastungsgrenze legt der Chirurg individuell fest. Eine rasch wachsende Schwellung, Rötung, Fieber oder starke Schmerzen sind Gründe für eine kurzfristige Kontrolle"
+      },
+      "tr": {
+        "what": "Fıtık içeriğinin yerine iade edildiği ve karın duvarının zayıf bölgesinin dikişlerle ya da yama ile güçlendirildiği ameliyat",
+        "how": "Lokal, belden ya da genel anestezi altında cerrah fıtığın üzerinden keser, fıtık kesesini ayırır, içeriğini geri iter ve açıklığı çoğunlukla yama ile kapatır; genellikle yarım saat ile bir buçuk saat arasında sürer",
+        "when": "Büyüyen, ağrıyan veya günlük yaşamı kısıtlayan kasık, uyluk, göbek ya da ameliyat izi fıtığı; yaklaşım ve yöntemi fıtığın yerine ve boyutuna göre cerrah seçer",
+        "prep": "Ameliyat öncesi tahliller ve anestezi değerlendirmesi, belirtilen süre boyunca aç kalmak, kan sulandırıcı ilaçları bildirmek, öksürük ve kabızlığı hekim önerisiyle önceden gidermek",
+        "abnormal": "İlk günlerde yara çevresinde ağrı ve şişlik olağandır, ağırlık kaldırma kısıtlamasını cerrah kişiye göre belirler. Hızla büyüyen şişlik, kızarıklık, ateş veya şiddetli ağrı planlanmamış bir kontrolü gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Операција којом се садржај киле враћа на мјесто, а ослабљени дио трбушног зида ојачава шавовима или мрежицом",
+        "how": "У локалној, спиналној или општој анестезији хирург прави рез изнад киле, издваја килну кесу, враћа садржај и затвара отвор, најчешће мрежицом; обично траје од пола сата до сат и по",
+        "when": "Препонска, бутна, пупчана или кила на ожиљку која расте, боли или смета у свакодневном животу; приступ и методу бира хирург према положају и величини киле",
+        "prep": "Преоперативне анализе и преглед анестезиолога, без хране и пића по упутству, обавијестити љекара о лијековима за разрјеђивање крви, унапријед смирити кашаљ и затвор по савјету љекара",
+        "abnormal": "Бол и оток око ране првих дана су уобичајени, а колико се дуго не смије дизати терет хирург одређује за сваког пацијента. Отеклина која брзо расте, црвенило, повишена температура или јак бол разлог су за ванредни преглед"
+      }
+    }
+  },
+  {
+    "slug": "incarcerated-hernia-operation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Экстренная операция при грыже, содержимое которой зажато в грыжевых воротах и не вправляется",
+        "how": "Под наркозом хирург вскрывает грыжевой мешок, освобождает ущемлённый орган и оценивает его жизнеспособность, при необходимости удаляет нежизнеспособный участок кишки или сальника, затем закрывает дефект; объём зависит от находки",
+        "when": "Внезапная резкая боль в грыже, которая перестала вправляться, рвота, вздутие, отсутствие стула и газов, напряжённое болезненное выпячивание — состояние требует немедленной госпитализации",
+        "prep": "Подготовки дома нет: нужно сразу обратиться в приёмный покой, ничего не есть и не пить, не греть грыжу и не вправлять её самостоятельно, взять список принимаемых лекарств",
+        "abnormal": "Восстановление дольше, чем после плановой пластики, особенно если потребовалось удалить участок кишки, и питание расширяют постепенно по указанию хирурга. Возврат боли, лихорадка, рвота или выделения из раны требуют срочного осмотра"
+      },
+      "en": {
+        "what": "Emergency surgery for a hernia whose contents are trapped in the hernia opening and cannot be reduced",
+        "how": "Under anaesthesia the surgeon opens the hernia sac, frees the trapped organ and judges whether it is still viable, removes a non-viable piece of bowel or omentum if necessary, and then closes the defect; the extent depends on the finding",
+        "when": "Sudden severe pain in a hernia that no longer reduces, vomiting, bloating, no passage of stool and gas, a tense and tender bulge — this needs immediate admission to hospital",
+        "prep": "There is no preparation at home: go to the emergency department at once, do not eat or drink, do not warm the hernia or push it back yourself, and bring a list of your medicines",
+        "abnormal": "Recovery takes longer than after a planned repair, especially if part of the bowel had to be removed, and eating is widened step by step as the surgeon directs. Pain that returns, fever, vomiting or discharge from the wound require an urgent check-up"
+      },
+      "sr": {
+        "what": "Hitna operacija kile čiji je sadržaj zaglavljen u kilnom otvoru i ne može da se vrati",
+        "how": "U anesteziji hirurg otvara kilnu kesu, oslobađa uklješteni organ i procjenjuje da li je tkivo očuvano, po potrebi uklanja nevitalni dio crijeva ili trbušne maramice, a zatim zatvara otvor; obim zavisi od nalaza",
+        "when": "Iznenadan jak bol u kili koja se više ne vraća, povraćanje, nadutost, izostanak stolice i gasova, napeto i bolno izbočenje — stanje traži hitan prijem u bolnicu",
+        "prep": "Kod kuće nema pripreme: treba odmah otići u hitnu službu, ne jesti i ne piti, ne grijati kilu i ne gurati je rukom, ponijeti spisak lijekova koje uzimate",
+        "abnormal": "Oporavak je duži nego nakon planirane operacije, naročito ako je morao da se ukloni dio crijeva, a ishrana se širi postepeno po uputstvu hirurga. Povratak bola, povišena temperatura, povraćanje ili curenje iz rane traže hitan pregled"
+      },
+      "de": {
+        "what": "Notoperation bei einem Bruch, dessen Inhalt in der Bruchpforte eingeklemmt ist und sich nicht zurückverlagern lässt",
+        "how": "In Narkose eröffnet der Chirurg den Bruchsack, befreit das eingeklemmte Organ und beurteilt, ob das Gewebe noch durchblutet ist, entfernt bei Bedarf einen abgestorbenen Darm- oder Netzabschnitt und verschließt danach die Lücke; der Umfang richtet sich nach dem Befund",
+        "when": "Plötzlicher starker Schmerz in einem Bruch, der sich nicht mehr zurückdrängen lässt, Erbrechen, Blähungen, fehlender Stuhl- und Windabgang, eine pralle und druckschmerzhafte Vorwölbung — das erfordert eine sofortige Klinikaufnahme",
+        "prep": "Zu Hause gibt es keine Vorbereitung: sofort in die Notaufnahme, nichts essen und trinken, den Bruch nicht wärmen und nicht selbst zurückdrücken, eine Liste der eingenommenen Medikamente mitbringen",
+        "abnormal": "Die Erholung dauert länger als nach einem geplanten Eingriff, besonders wenn ein Darmabschnitt entfernt werden musste, und der Kostaufbau erfolgt schrittweise nach Vorgabe des Chirurgen. Wiederkehrende Schmerzen, Fieber, Erbrechen oder Sekret aus der Wunde erfordern eine sofortige Kontrolle"
+      },
+      "tr": {
+        "what": "İçeriği fıtık ağzında sıkışmış ve geri itilemeyen fıtıkta yapılan acil ameliyat",
+        "how": "Anestezi altında cerrah fıtık kesesini açar, sıkışan organı serbestleştirir ve dokunun canlı olup olmadığını değerlendirir, gerekirse bağırsağın ya da omentumun canlılığını yitirmiş bölümünü çıkarır, ardından açıklığı kapatır; kapsam bulguya göre değişir",
+        "when": "Artık geri itilemeyen fıtıkta ani şiddetli ağrı, kusma, şişkinlik, dışkı ve gaz çıkışının durması, gergin ve ağrılı şişlik — bu tablo acil hastaneye yatışı gerektirir",
+        "prep": "Evde hazırlık yoktur: hemen acil servise gidilmeli, hiçbir şey yiyip içilmemeli, fıtık ısıtılmamalı ve elle itilmemeli, kullanılan ilaçların listesi götürülmelidir",
+        "abnormal": "İyileşme planlı onarıma göre daha uzundur, özellikle bağırsağın bir bölümü çıkarıldıysa; beslenme cerrahın talimatıyla kademeli olarak genişletilir. Ağrının geri dönmesi, ateş, kusma veya yaradan akıntı acil muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Хитна операција киле чији је садржај заглављен у килном отвору и не може да се врати",
+        "how": "У анестезији хирург отвара килну кесу, ослобађа укљештени орган и процјењује да ли је ткиво очувано, по потреби уклања невитални дио цријева или трбушне марамице, а затим затвара отвор; обим зависи од налаза",
+        "when": "Изненадан јак бол у кили која се више не враћа, повраћање, надутост, изостанак столице и гасова, напето и болно избочење — стање тражи хитан пријем у болницу",
+        "prep": "Код куће нема припреме: треба одмах отићи у хитну службу, не јести и не пити, не гријати килу и не гурати је руком, понијети списак лијекова које узимате",
+        "abnormal": "Опоравак је дужи него након планиране операције, нарочито ако је морао да се уклони дио цријева, а исхрана се шири постепено по упутству хирурга. Повратак бола, повишена температура, повраћање или цурење из ране траже хитан преглед"
+      }
+    }
+  },
+  {
+    "slug": "left-hemicolectomy-with-colo-colo-anastomosis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление левой половины толстой кишки с последующим соединением оставшихся отделов ободочной кишки между собой",
+        "how": "Под общим наркозом хирург выделяет нисходящую ободочную кишку с брыжейкой и лимфоузлами, удаляет её вместе с поражённым участком и сшивает концы кишки друг с другом вручную или аппаратом; удалённую ткань направляют на гистологическое исследование",
+        "when": "Опухоли и полипы левой половины ободочной кишки, осложнённая дивертикулярная болезнь, повторные кровотечения или сужение этого отдела, омертвение кишки из-за нарушенного кровоснабжения",
+        "prep": "Колоноскопия и снимки для уточнения уровня изменений, анализы и осмотр анестезиолога, подготовка кишечника по схеме клиники, отмена разжижающих кровь препаратов только по согласованию с врачом",
+        "abnormal": "После удаления левой части кишки стул поначалу бывает более частым и жидким и обычно постепенно налаживается; результат гистологического исследования и дальнейший план обсуждает лечащий врач. Температура, сильная боль, отсутствие стула и газов или кровь в стуле — повод обратиться немедленно"
+      },
+      "en": {
+        "what": "Removal of the left half of the large bowel, with the remaining colon segments then joined to each other",
+        "how": "Under general anaesthesia the surgeon frees the descending colon with its mesentery and lymph nodes, removes it together with the affected segment and sews the bowel ends to each other by hand or with a stapler; the removed tissue is sent for histological examination",
+        "when": "Tumours and polyps of the left colon, complicated diverticular disease, repeated bleeding or narrowing of this segment, dead bowel from an interrupted blood supply",
+        "prep": "Colonoscopy and imaging to locate the change, blood tests and a visit to the anaesthetist, bowel preparation as the clinic directs, and stopping blood thinners only in agreement with the doctor",
+        "abnormal": "After the left colon is removed stools are often looser and more frequent at first and usually settle gradually; the histology result and the further plan are discussed by the treating doctor. Fever, severe pain, no passage of stool and gas, or blood in the stool mean contacting the doctor immediately"
+      },
+      "sr": {
+        "what": "Uklanjanje lijeve polovine debelog crijeva uz međusobno spajanje preostalih dijelova debelog crijeva",
+        "how": "U opštoj anesteziji hirurg izdvaja silazno debelo crijevo sa mezenterijumom i limfnim čvorovima, uklanja ga zajedno sa zahvaćenim dijelom i spaja krajeve crijeva ručno ili aparatom; uklonjeno tkivo šalje se na histološki pregled",
+        "when": "Tumori i polipi lijeve polovine debelog crijeva, komplikovana divertikularna bolest, ponavljana krvarenja ili suženje ovog dijela, odumiranje crijeva zbog prekinute prokrvljenosti",
+        "prep": "Kolonoskopija i snimci radi određivanja nivoa promjene, analize i pregled anesteziologa, priprema crijeva po protokolu klinike, obustava lijekova za razrjeđivanje krvi samo u dogovoru sa ljekarom",
+        "abnormal": "Nakon uklanjanja lijevog dijela crijeva stolica je u početku češća i tečnija, pa se obično postepeno sredi; nalaz histologije i dalji plan objašnjava ljekar koji vas vodi. Povišena temperatura, jak bol, izostanak stolice i gasova ili krv u stolici znače da treba odmah javiti se"
+      },
+      "de": {
+        "what": "Entfernung der linken Hälfte des Dickdarms mit anschließender Verbindung der verbliebenen Dickdarmabschnitte miteinander",
+        "how": "In Vollnarkose löst der Chirurg den absteigenden Dickdarm mit Gekröse und Lymphknoten, entfernt ihn samt dem betroffenen Abschnitt und vernäht die Darmenden von Hand oder mit einem Klammergerät miteinander; das entfernte Gewebe geht zur histologischen Untersuchung",
+        "when": "Tumoren und Polypen der linken Dickdarmhälfte, komplizierte Divertikelkrankheit, wiederholte Blutungen oder Verengungen dieses Abschnitts, abgestorbener Darm bei unterbrochener Durchblutung",
+        "prep": "Koloskopie und Bildgebung zur Lokalisation der Veränderung, Labor und Narkosegespräch, Darmvorbereitung nach Vorgabe der Klinik, Absetzen von Blutverdünnern nur in Absprache mit dem Arzt",
+        "abnormal": "Nach Entfernung des linken Dickdarmabschnitts ist der Stuhl anfangs häufiger und weicher und normalisiert sich meist allmählich; den histologischen Befund und das weitere Vorgehen bespricht der behandelnde Arzt. Fieber, starke Schmerzen, fehlender Stuhl- und Windabgang oder Blut im Stuhl erfordern sofortigen Kontakt"
+      },
+      "tr": {
+        "what": "Kalın bağırsağın sol yarısının çıkarılması ve kalan kalın bağırsak uçlarının birbirine birleştirilmesi",
+        "how": "Genel anestezi altında cerrah inen kolonu askı dokusu ve lenf düğümleriyle birlikte serbestleştirir, hastalıklı bölümle beraber çıkarır ve bağırsak uçlarını elle ya da zımba aletiyle birleştirir; çıkarılan doku histopatolojik incelemeye gönderilir",
+        "when": "Sol kolon kitleleri ve polipleri, komplike divertikül hastalığı, bu bölümün tekrarlayan kanamaları veya darlığı, kan akımının kesilmesine bağlı doku ölümü",
+        "prep": "Değişikliğin yerini belirlemek için kolonoskopi ve görüntüleme, tahliller ve anestezi değerlendirmesi, kliniğin protokolüne göre bağırsak hazırlığı, kan sulandırıcıların yalnızca hekimle görüşerek kesilmesi",
+        "abnormal": "Sol kolon çıkarıldıktan sonra dışkı başlangıçta daha sık ve daha yumuşak olur, genellikle zamanla düzelir; patoloji sonucunu ve sonraki planı tedaviyi yürüten hekim anlatır. Ateş, şiddetli ağrı, dışkı ve gaz çıkışının olmaması ya da dışkıda kan hemen başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање лијеве половине дебелог цријева уз међусобно спајање преосталих дијелова дебелог цријева",
+        "how": "У општој анестезији хирург издваја силазно дебело цријево са мезентеријумом и лимфним чворовима, уклања га заједно са захваћеним дијелом и спаја крајеве цријева ручно или апаратом; уклоњено ткиво шаље се на хистолошки преглед",
+        "when": "Тумори и полипи лијеве половине дебелог цријева, компликована дивертикуларна болест, понављана крварења или сужење овог дијела, одумирање цријева због прекинуте прокрвљености",
+        "prep": "Колоноскопија и снимци ради одређивања нивоа промјене, анализе и преглед анестезиолога, припрема цријева по протоколу клинике, обустава лијекова за разрјеђивање крви само у договору са љекаром",
+        "abnormal": "Након уклањања лијевог дијела цријева столица је у почетку чешћа и течнија, па се обично постепено среди; налаз хистологије и даљи план објашњава љекар који вас води. Повишена температура, јак бол, изостанак столице и гасова или крв у столици значе да треба одмах јавити се"
+      }
+    }
+  },
+  {
+    "slug": "miles-rectal-amputation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление прямой кишки вместе с заднепроходным каналом и сфинктером с выведением постоянной колостомы на брюшную стенку",
+        "how": "Операцию выполняют из двух доступов, со стороны живота и со стороны промежности: хирург отделяет прямую кишку с окружающей клетчаткой и лимфоузлами, удаляет её целиком, ушивает промежность и формирует стому; вмешательство длительное, удалённые ткани исследует патолог",
+        "when": "Изменения нижней трети прямой кишки и заднепроходного канала, расположенные слишком близко к сфинктеру, чтобы его сохранить, а также случаи, когда сфинктер уже не выполняет свою функцию",
+        "prep": "Осмотр прямой кишки и снимки для планирования, разметка места будущей стомы и беседа со специалистом по уходу за стомой, подготовка кишечника, анализы и консультация анестезиолога",
+        "abnormal": "Стома остаётся постоянной, и в первые недели пациента учат ухаживать за ней и подбирать калоприёмник; рана промежности заживает медленнее остальных и требует наблюдения. Результат гистологического исследования и дальнейшую тактику определяет лечащий врач, а боль, лихорадка, выделения из раны промежности или проблемы со стомой — повод на внеплановый осмотр"
+      },
+      "en": {
+        "what": "Removal of the rectum together with the anal canal and the sphincter, with a permanent colostomy brought out onto the abdominal wall",
+        "how": "The operation is done through two approaches, from the abdomen and from the perineum: the surgeon frees the rectum with the surrounding fatty tissue and lymph nodes, removes it completely, closes the perineum and forms the stoma; it is a long procedure and the removed tissue is examined by a pathologist",
+        "when": "Changes in the lower third of the rectum and in the anal canal that lie too close to the sphincter for it to be preserved, and cases where the sphincter no longer does its job",
+        "prep": "Examination of the rectum and imaging for planning, marking the site of the future stoma and a talk with a stoma care specialist, bowel preparation, blood tests and a visit to the anaesthetist",
+        "abnormal": "The stoma is permanent, and in the first weeks the patient is taught to care for it and to choose an appliance; the perineal wound heals more slowly than the others and needs follow-up. The histology result and the further plan are determined by the treating doctor, while pain, fever, discharge from the perineal wound or problems with the stoma call for an earlier visit"
+      },
+      "sr": {
+        "what": "Uklanjanje završnog crijeva zajedno sa analnim kanalom i sfinkterom, uz izvođenje trajne kolostome na trbušni zid",
+        "how": "Operacija se izvodi iz dva pristupa, iz trbuha i sa međice: hirurg oslobađa rektum sa okolnim masnim tkivom i limfnim čvorovima, uklanja ga u cjelini, zatvara međicu i formira stomu; zahvat je dugotrajan, a uklonjeno tkivo pregleda patolog",
+        "when": "Promjene donje trećine rektuma i analnog kanala koje su preblizu sfinktera da bi on mogao da se sačuva, kao i slučajevi u kojima sfinkter više ne obavlja svoju funkciju",
+        "prep": "Pregled završnog crijeva i snimci radi planiranja, obilježavanje mjesta buduće stome i razgovor sa sestrom za stomu, priprema crijeva, analize i pregled anesteziologa",
+        "abnormal": "Stoma ostaje trajno, a prvih sedmica pacijent uči da je njeguje i da bira kesicu; rana na međici zarasta sporije od ostalih i traži praćenje. Nalaz histologije i dalju taktiku određuje ljekar koji vas vodi, a bol, povišena temperatura, curenje iz rane na međici ili problemi sa stomom razlog su za raniji pregled"
+      },
+      "de": {
+        "what": "Entfernung des Mastdarms samt Analkanal und Schließmuskel mit Anlage eines dauerhaften Kolostomas an der Bauchdecke",
+        "how": "Der Eingriff erfolgt über zwei Zugänge, vom Bauch und vom Damm aus: der Chirurg löst den Mastdarm mit dem umgebenden Fettgewebe und den Lymphknoten, entfernt ihn vollständig, verschließt den Damm und legt das Stoma an; die Operation dauert lange, das entfernte Gewebe beurteilt ein Pathologe",
+        "when": "Veränderungen im unteren Drittel des Mastdarms und im Analkanal, die zu nah am Schließmuskel liegen, um ihn zu erhalten, sowie Fälle, in denen der Schließmuskel seine Funktion bereits verloren hat",
+        "prep": "Untersuchung des Mastdarms und Bildgebung zur Planung, Markierung der künftigen Stomastelle und Gespräch mit der Stomatherapie, Darmvorbereitung, Labor und Narkosegespräch",
+        "abnormal": "Das Stoma bleibt dauerhaft, in den ersten Wochen lernt der Patient die Pflege und die Auswahl des Beutels; die Dammwunde heilt langsamer als die übrigen und braucht Kontrollen. Den histologischen Befund und das weitere Vorgehen legt der behandelnde Arzt fest, Schmerzen, Fieber, Sekret aus der Dammwunde oder Probleme mit dem Stoma sind Gründe für einen früheren Termin"
+      },
+      "tr": {
+        "what": "Rektumun anal kanal ve büzücü kasla birlikte çıkarılması ve karın duvarına kalıcı kolostomi ağzı açılması",
+        "how": "Ameliyat karın ve makat bölgesi olmak üzere iki yoldan yapılır: cerrah rektumu çevresindeki yağ dokusu ve lenf düğümleriyle ayırır, tümüyle çıkarır, makat bölgesini kapatır ve stomayı oluşturur; uzun süren bir ameliyattır, çıkarılan dokuyu patoloji uzmanı inceler",
+        "when": "Büzücü kasın korunamayacağı kadar ona yakın yerleşen alt üçte bir rektum ve anal kanal değişiklikleri, ayrıca büzücü kasın işlevini yitirdiği durumlar",
+        "prep": "Planlama için rektum muayenesi ve görüntüleme, gelecekteki stoma yerinin işaretlenmesi ve stoma hemşiresiyle görüşme, bağırsak hazırlığı, tahliller ve anestezi değerlendirmesi",
+        "abnormal": "Stoma kalıcıdır, ilk haftalarda hastaya bakımı ve torba seçimi öğretilir; makat bölgesindeki yara diğerlerinden yavaş iyileşir ve izlem gerektirir. Patoloji sonucunu ve sonraki tedaviyi hastayı izleyen hekim belirler; ağrı, ateş, makat yarasından akıntı veya stoma sorunları erken kontrol gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање завршног цријева заједно са аналним каналом и сфинктером, уз извођење трајне колостоме на трбушни зид",
+        "how": "Операција се изводи из два приступа, из трбуха и са међице: хирург ослобађа ректум са околним масним ткивом и лимфним чворовима, уклања га у цјелини, затвара међицу и формира стому; захват је дуготрајан, а уклоњено ткиво прегледа патолог",
+        "when": "Промјене доње трећине ректума и аналног канала које су преблизу сфинктера да би он могао да се сачува, као и случајеви у којима сфинктер више не обавља своју функцију",
+        "prep": "Преглед завршног цријева и снимци ради планирања, обиљежавање мјеста будуће стоме и разговор са сестром за стому, припрема цријева, анализе и преглед анестезиолога",
+        "abnormal": "Стома остаје трајно, а првих седмица пацијент учи да је његује и да бира кесицу; рана на међици зараста спорије од осталих и тражи праћење. Налаз хистологије и даљу тактику одређује љекар који вас води, а бол, повишена температура, цурење из ране на међици или проблеми са стомом разлог су за ранији преглед"
+      }
+    }
+  },
+  {
+    "slug": "open-appendectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление червеобразного отростка через разрез в правой нижней части живота",
+        "how": "Под общим или спинальным обезболиванием хирург делает косой разрез над отростком, выводит его в рану, перевязывает основание, отсекает отросток и осматривает окружающие ткани, при гнойном процессе оставляет дренаж; обычно занимает около часа",
+        "when": "Острый аппендицит, особенно с прободением или гнойником, спайки и перенесённые операции, из-за которых лапароскопический доступ затруднён, а также переход на открытый доступ по решению хирурга во время операции",
+        "prep": "Вмешательство экстренное: с момента боли не есть и не пить, не принимать обезболивающее, не греть живот, сообщить о лекарствах и аллергиях; анализы и осмотр анестезиолога проводят в стационаре",
+        "abnormal": "В первые дни ожидаемы боль по шву, слабость и постепенное возвращение к питанию, рана требует перевязок, срок снятия швов называет хирург; удалённый отросток направляют на гистологическое исследование. Температура, нарастающая боль, покраснение или выделения из раны, рвота — повод срочно связаться с хирургом"
+      },
+      "en": {
+        "what": "Removal of the appendix through a cut in the lower right part of the abdomen",
+        "how": "Under general or spinal anaesthesia the surgeon makes an oblique cut over the appendix, brings it into the wound, ties off its base, cuts it off and inspects the surrounding tissue, leaving a drain if there is pus; it usually takes about an hour",
+        "when": "Acute appendicitis, especially with perforation or an abscess, adhesions and previous operations that make the laparoscopic approach difficult, and a switch to the open approach decided by the surgeon during the operation",
+        "prep": "The operation is urgent: from the onset of pain do not eat or drink, do not take painkillers, do not warm the abdomen, and report medicines and allergies; tests and the anaesthetist's assessment are done in hospital",
+        "abnormal": "Wound pain, weakness and a gradual return to eating are expected in the first days, the wound needs dressings and the surgeon says when the stitches come out; the removed appendix is sent for histological examination. Fever, growing pain, redness or discharge from the wound and vomiting mean contacting the surgeon urgently"
+      },
+      "sr": {
+        "what": "Uklanjanje crvuljka kroz rez u donjem desnom dijelu trbuha",
+        "how": "U opštoj ili spinalnoj anesteziji hirurg pravi kosi rez iznad crvuljka, izvodi ga u ranu, podvezuje mu bazu, odsijeca ga i pregleda okolno tkivo, a kod gnojnog procesa ostavlja dren; obično traje oko sat vremena",
+        "when": "Akutna upala slijepog crijeva, naročito sa prsnućem ili apscesom, priraslice i ranije operacije zbog kojih je laparoskopski pristup otežan, kao i prelazak na otvoreni pristup po odluci hirurga tokom operacije",
+        "prep": "Zahvat je hitan: od početka bola ne jesti i ne piti, ne uzimati lijekove protiv bolova, ne grijati trbuh, prijaviti lijekove i alergije; analize i pregled anesteziologa rade se u bolnici",
+        "abnormal": "Prvih dana se očekuju bol u rani, slabost i postepen povratak na ishranu, rana traži previjanje, a rok za vađenje konaca kaže hirurg; uklonjeni crvuljak šalje se na histološki pregled. Povišena temperatura, pojačan bol, crvenilo ili curenje iz rane i povraćanje znače da hitno treba pozvati hirurga"
+      },
+      "de": {
+        "what": "Entfernung des Wurmfortsatzes über einen Schnitt im rechten Unterbauch",
+        "how": "In Vollnarkose oder Spinalanästhesie setzt der Chirurg einen schrägen Schnitt über dem Wurmfortsatz, holt ihn in die Wunde, unterbindet die Basis, trennt ihn ab und begutachtet das umliegende Gewebe, bei eitrigem Befund bleibt eine Drainage; meist dauert es etwa eine Stunde",
+        "when": "Akute Blinddarmentzündung, besonders bei Durchbruch oder Abszess, Verwachsungen und frühere Operationen, die den laparoskopischen Zugang erschweren, sowie der Wechsel zum offenen Vorgehen nach Entscheidung des Chirurgen während der Operation",
+        "prep": "Der Eingriff ist dringlich: ab Beginn der Schmerzen nichts essen und trinken, keine Schmerzmittel einnehmen, den Bauch nicht wärmen, Medikamente und Allergien angeben; Labor und Narkoseaufklärung erfolgen im Krankenhaus",
+        "abnormal": "Wundschmerz, Schwäche und ein langsamer Kostaufbau sind in den ersten Tagen zu erwarten, die Wunde braucht Verbandwechsel, den Termin zum Fädenziehen nennt der Chirurg; der entfernte Wurmfortsatz geht zur histologischen Untersuchung. Fieber, zunehmende Schmerzen, Rötung oder Sekret aus der Wunde und Erbrechen erfordern dringenden Kontakt zum Chirurgen"
+      },
+      "tr": {
+        "what": "Apandisin karnın sağ alt bölgesindeki bir kesiden çıkarılması",
+        "how": "Genel veya belden anestezi altında cerrah apandisin üzerinden eğik bir kesi yapar, apandisi yaraya alır, tabanını bağlar, keserek çıkarır ve çevre dokuyu inceler, iltihap yaygınsa dren bırakır; genellikle bir saat kadar sürer",
+        "when": "Akut apandisit, özellikle delinme veya apse ile seyredenler, laparoskopik girişimi zorlaştıran yapışıklıklar ve geçirilmiş ameliyatlar, ayrıca ameliyat sırasında cerrahın kararıyla açık yönteme geçilmesi",
+        "prep": "Ameliyat aciledir: ağrı başladığı andan itibaren yiyip içmemek, ağrı kesici almamak, karnı ısıtmamak, kullanılan ilaçları ve alerjileri bildirmek gerekir; tahliller ve anestezi değerlendirmesi hastanede yapılır",
+        "abnormal": "İlk günlerde yara ağrısı, halsizlik ve beslenmeye kademeli dönüş beklenir, yara pansuman gerektirir, dikişlerin alınma zamanını cerrah söyler; çıkarılan apandis patolojik incelemeye gönderilir. Ateş, artan ağrı, kızarıklık veya yaradan akıntı ve kusma durumunda cerraha acilen başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање црвуљка кроз рез у доњем десном дијелу трбуха",
+        "how": "У општој или спиналној анестезији хирург прави коси рез изнад црвуљка, изводи га у рану, подвезује му базу, одсијеца га и прегледа околно ткиво, а код гнојног процеса оставља дрен; обично траје око сат времена",
+        "when": "Акутна упала слијепог цријева, нарочито са прснућем или апсцесом, прираслице и раније операције због којих је лапароскопски приступ отежан, као и прелазак на отворени приступ по одлуци хирурга током операције",
+        "prep": "Захват је хитан: од почетка бола не јести и не пити, не узимати лијекове против болова, не гријати трбух, пријавити лијекове и алергије; анализе и преглед анестезиолога раде се у болници",
+        "abnormal": "Првих дана се очекују бол у рани, слабост и постепен повратак на исхрану, рана тражи превијање, а рок за вађење конаца каже хирург; уклоњени црвуљак шаље се на хистолошки преглед. Повишена температура, појачан бол, црвенило или цурење из ране и повраћање значе да хитно треба позвати хирурга"
+      }
+    }
+  },
+  {
+    "slug": "pilonidal-sinus-surgical-treatment",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическое устранение хода и полости в межъягодичной складке, где скапливаются волосы и отделяемое",
+        "how": "Под местной или спинальной анестезией хирург удаляет изменённую ткань вместе с ходами, после чего рану либо закрывают швом, смещённым в сторону от складки, либо оставляют открытой под повязки; метод выбирают по размеру очага и наличию воспаления",
+        "when": "Боль и припухлость над копчиком, повторяющиеся нагноения, постоянное отделяемое из точечных отверстий кожи, сохраняющиеся жалобы после вскрытия гнойника",
+        "prep": "Удалить волосы в области по указанию клиники, не есть и не пить перед анестезией по инструкции, взять свободную одежду, заранее договориться о перевязках и о том, кто довезёт домой",
+        "abnormal": "Сроки заживления зависят от способа закрытия раны: зашитая заживает быстрее, открытая — дольше и под регулярными перевязками, а область вокруг рубца нужно держать свободной от волос по совету врача. Повторное появление боли, уплотнения или отделяемого означает, что хирургу нужно осмотреть это место снова"
+      },
+      "en": {
+        "what": "Surgical removal of the tract and cavity in the cleft between the buttocks where hair and discharge collect",
+        "how": "Under local or spinal anaesthesia the surgeon removes the altered tissue together with the tracts, after which the wound is either closed with the suture line shifted away from the cleft or left open for dressings; the method is chosen according to the size of the area and the presence of inflammation",
+        "when": "Pain and swelling over the tailbone, repeated abscesses, constant discharge from small openings in the skin, complaints that persist after an abscess was drained",
+        "prep": "Remove hair in the area as the clinic instructs, no food or drink before anaesthesia as instructed, bring loose clothing, and arrange dressing changes and a ride home in advance",
+        "abnormal": "Healing time depends on how the wound was closed: a sutured wound heals faster, an open one takes longer and needs regular dressings, and the area around the scar has to be kept free of hair as the doctor advises. Pain, a lump or discharge that come back mean the surgeon should look at the area again"
+      },
+      "sr": {
+        "what": "Hirurško uklanjanje kanala i šupljine u međuglutealnoj brazdi u kojoj se skupljaju dlake i sadržaj",
+        "how": "U lokalnoj ili spinalnoj anesteziji hirurg uklanja izmijenjeno tkivo zajedno sa kanalima, nakon čega se rana ili zatvori šavom pomjerenim izvan brazde ili ostavi otvorena uz previjanje; metod se bira prema veličini promjene i prisustvu upale",
+        "when": "Bol i oteklina iznad trtice, ponavljani gnojni procesi, stalno curenje iz sitnih otvora na koži, tegobe koje se nastavljaju nakon ranijeg otvaranja apscesa",
+        "prep": "Ukloniti dlake u predjelu po uputstvu klinike, bez hrane i pića prije anestezije po uputstvu, ponijeti široku odjeću, unaprijed dogovoriti previjanja i pratnju do kuće",
+        "abnormal": "Trajanje zarastanja zavisi od načina zatvaranja rane: ušivena rana zarasta brže, otvorena duže i uz redovna previjanja, a predio oko ožiljka treba održavati bez dlaka po savjetu ljekara. Ponovna pojava bola, čvorića ili curenja znači da hirurg treba ponovo da pogleda to mjesto"
+      },
+      "de": {
+        "what": "Operative Entfernung des Gangs und der Höhle in der Gesäßfalte, in der sich Haare und Sekret ansammeln",
+        "how": "In örtlicher oder rückenmarksnaher Betäubung entfernt der Chirurg das veränderte Gewebe samt den Gängen, danach wird die Wunde entweder mit einer aus der Falte verlagerten Naht verschlossen oder offen zur Wundbehandlung belassen; die Methode richtet sich nach Ausdehnung und Entzündung",
+        "when": "Schmerz und Schwellung über dem Steißbein, wiederkehrende Abszesse, ständiges Sekret aus kleinen Hautöffnungen, Beschwerden, die nach einer Abszessspaltung bestehen bleiben",
+        "prep": "Haare im Bereich nach Vorgabe der Klinik entfernen, vor der Narkose nüchtern bleiben, weite Kleidung mitbringen, Verbandwechsel und Heimfahrt vorab organisieren",
+        "abnormal": "Die Heilungsdauer hängt vom Wundverschluss ab: eine genähte Wunde heilt schneller, eine offene länger und unter regelmäßigen Verbandwechseln, und der Bereich um die Narbe sollte nach ärztlichem Rat haarfrei gehalten werden. Erneute Schmerzen, ein Knoten oder erneutes Sekret bedeuten, dass der Chirurg die Stelle wieder ansehen sollte"
+      },
+      "tr": {
+        "what": "Kalçalar arasındaki oluk içinde kıl ve akıntının biriktiği kanal ve boşluğun cerrahi olarak çıkarılması",
+        "how": "Lokal veya belden anestezi altında cerrah değişime uğramış dokuyu kanallarla birlikte çıkarır, ardından yara ya dikiş hattı oluğun dışına kaydırılarak kapatılır ya da pansumanla iyileşmesi için açık bırakılır; yöntem bölgenin büyüklüğüne ve iltihabın varlığına göre seçilir",
+        "when": "Kuyruk sokumu üzerinde ağrı ve şişlik, tekrarlayan apseler, ciltteki küçük deliklerden sürekli akıntı, apse boşaltıldıktan sonra devam eden şikayetler",
+        "prep": "Bölgedeki kılları kliniğin tarifine göre temizlemek, anesteziden önce belirtilen süre boyunca aç kalmak, bol kıyafet getirmek, pansumanları ve eve dönüş için refakatçiyi önceden ayarlamak",
+        "abnormal": "İyileşme süresi yaranın nasıl kapatıldığına bağlıdır: dikilen yara daha hızlı, açık bırakılan yara düzenli pansumanla daha uzun sürede kapanır ve iz çevresi hekim önerisine göre kılsız tutulmalıdır. Ağrının, sertliğin veya akıntının yeniden başlaması bölgenin cerrah tarafından yeniden değerlendirilmesini gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршко уклањање канала и шупљине у међуглутеалној бразди у којој се скупљају длаке и садржај",
+        "how": "У локалној или спиналној анестезији хирург уклања измијењено ткиво заједно са каналима, након чега се рана или затвори шавом помјереним изван бразде или остави отворена уз превијање; метод се бира према величини промјене и присуству упале",
+        "when": "Бол и отеклина изнад тртице, понављани гнојни процеси, стално цурење из ситних отвора на кожи, тегобе које се настављају након ранијег отварања апсцеса",
+        "prep": "Уклонити длаке у предјелу по упутству клинике, без хране и пића прије анестезије по упутству, понијети широку одјећу, унапријед договорити превијања и пратњу до куће",
+        "abnormal": "Трајање зарастања зависи од начина затварања ране: ушивена рана зараста брже, отворена дуже и уз редовна превијања, а предио око ожиљка треба одржавати без длака по савјету љекара. Поновна појава бола, чворића или цурења значи да хирург треба поново да погледа то мјесто"
+      }
+    }
+  },
+  {
+    "slug": "right-hemicolectomy-with-anastomosis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление правой половины толстой кишки вместе с конечным отделом тонкой и соединение тонкой кишки с оставшейся ободочной",
+        "how": "Под общим наркозом хирург выделяет слепую и восходящую ободочную кишку с питающими сосудами и лимфоузлами, удаляет их единым блоком и накладывает соустье между тонкой и ободочной кишкой; удалённые ткани отправляют патологу",
+        "when": "Изменения слепой кишки, восходящей ободочной кишки и печёночного изгиба, осложнения болезни Крона в этой зоне, нарушенное кровоснабжение правых отделов, кровотечение или непроходимость этого участка",
+        "prep": "Колоноскопия и снимки до операции, анализы и консультация анестезиолога, подготовка кишечника по схеме клиники, обсуждение с врачом принимаемых лекарств",
+        "abnormal": "После удаления правых отделов часть воды и некоторых витаминов всасывается хуже, поэтому стул бывает жиже, а врач может контролировать показатели крови; гистологическое заключение и дальнейший план даёт лечащий врач. Лихорадка, сильная боль, рвота или вздутие без стула требуют немедленного обращения"
+      },
+      "en": {
+        "what": "Removal of the right half of the large bowel together with the end of the small bowel, with the small bowel then joined to the remaining colon",
+        "how": "Under general anaesthesia the surgeon frees the caecum and the ascending colon with their feeding vessels and lymph nodes, removes them as one block and makes a join between the small bowel and the colon; the removed tissue goes to the pathologist",
+        "when": "Changes in the caecum, the ascending colon and the hepatic flexure, complications of Crohn's disease in this area, an interrupted blood supply to the right side, bleeding or obstruction of this segment",
+        "prep": "Colonoscopy and imaging before surgery, blood tests and a visit to the anaesthetist, bowel preparation as the clinic directs, and discussing current medicines with the doctor",
+        "abnormal": "After the right side is removed some water and certain vitamins are absorbed less well, so stools may be looser and the doctor may monitor blood values; the histology report and the further plan come from the treating doctor. Fever, severe pain, vomiting or bloating with no stool require immediate contact"
+      },
+      "sr": {
+        "what": "Uklanjanje desne polovine debelog crijeva zajedno sa završnim dijelom tankog crijeva, uz spajanje tankog crijeva sa preostalim debelim",
+        "how": "U opštoj anesteziji hirurg izdvaja slijepo i uzlazno debelo crijevo sa pripadajućim krvnim sudovima i limfnim čvorovima, uklanja ih u jednom bloku i pravi spoj između tankog i debelog crijeva; uklonjeno tkivo ide patologu",
+        "when": "Promjene slijepog crijeva, uzlaznog kolona i jetrene krivine, komplikacije Kronove bolesti u ovom predjelu, prekinuta prokrvljenost desnih dijelova, krvarenje ili zapušenje ovog segmenta",
+        "prep": "Kolonoskopija i snimci prije operacije, analize i pregled anesteziologa, priprema crijeva po protokolu klinike, razgovor sa ljekarom o lijekovima koje uzimate",
+        "abnormal": "Nakon uklanjanja desnih dijelova voda i pojedini vitamini se slabije upijaju, pa stolica može biti tečnija, a ljekar može da prati nalaze krvi; histološki nalaz i dalji plan daje ljekar koji vas vodi. Povišena temperatura, jak bol, povraćanje ili nadutost bez stolice traže hitno javljanje"
+      },
+      "de": {
+        "what": "Entfernung der rechten Dickdarmhälfte samt dem Ende des Dünndarms mit anschließender Verbindung von Dünndarm und verbliebenem Dickdarm",
+        "how": "In Vollnarkose löst der Chirurg Blinddarm und aufsteigenden Dickdarm mit den versorgenden Gefäßen und Lymphknoten, entfernt sie als Block und legt eine Verbindung zwischen Dünn- und Dickdarm an; das entfernte Gewebe geht an die Pathologie",
+        "when": "Veränderungen von Blinddarm, aufsteigendem Dickdarm und rechter Dickdarmkrümmung, Komplikationen eines Morbus Crohn in diesem Bereich, unterbrochene Durchblutung der rechten Abschnitte, Blutung oder Verschluss dieses Segments",
+        "prep": "Koloskopie und Bildgebung vor der Operation, Labor und Narkosegespräch, Darmvorbereitung nach Vorgabe der Klinik, Besprechung der eingenommenen Medikamente mit dem Arzt",
+        "abnormal": "Nach Entfernung der rechten Abschnitte werden Wasser und einzelne Vitamine schlechter aufgenommen, der Stuhl kann weicher sein und der Arzt kontrolliert gegebenenfalls Blutwerte; den histologischen Befund und das weitere Vorgehen gibt der behandelnde Arzt. Fieber, starke Schmerzen, Erbrechen oder Blähungen ohne Stuhlgang erfordern sofortigen Kontakt"
+      },
+      "tr": {
+        "what": "Kalın bağırsağın sağ yarısının ince bağırsağın son bölümüyle birlikte çıkarılması ve ince bağırsağın kalan kalın bağırsağa birleştirilmesi",
+        "how": "Genel anestezi altında cerrah çekum ve çıkan kolonu besleyici damarlar ve lenf düğümleriyle birlikte serbestleştirir, tek parça hâlinde çıkarır ve ince bağırsak ile kalın bağırsak arasında bağlantı kurar; çıkarılan doku patolojiye gönderilir",
+        "when": "Çekum, çıkan kolon ve karaciğer köşesindeki değişiklikler, bu bölgedeki Crohn hastalığı komplikasyonları, sağ bölümlerin kan akımının kesilmesi, bu segmentte kanama veya tıkanıklık",
+        "prep": "Ameliyat öncesi kolonoskopi ve görüntüleme, tahliller ve anestezi değerlendirmesi, kliniğin protokolüne göre bağırsak hazırlığı, kullanılan ilaçların hekimle görüşülmesi",
+        "abnormal": "Sağ bölümler çıkarıldıktan sonra su ve bazı vitaminler daha az emilir, dışkı daha yumuşak olabilir ve hekim kan değerlerini izleyebilir; patoloji raporunu ve sonraki planı tedaviyi yürüten hekim verir. Ateş, şiddetli ağrı, kusma ya da dışkılama olmadan şişkinlik derhal başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање десне половине дебелог цријева заједно са завршним дијелом танког цријева, уз спајање танког цријева са преосталим дебелим",
+        "how": "У општој анестезији хирург издваја слијепо и узлазно дебело цријево са припадајућим крвним судовима и лимфним чворовима, уклања их у једном блоку и прави спој између танког и дебелог цријева; уклоњено ткиво иде патологу",
+        "when": "Промјене слијепог цријева, узлазног колона и јетрене кривине, компликације Кронове болести у овом предјелу, прекинута прокрвљеност десних дијелова, крварење или запушење овог сегмента",
+        "prep": "Колоноскопија и снимци прије операције, анализе и преглед анестезиолога, припрема цријева по протоколу клинике, разговор са љекаром о лијековима које узимате",
+        "abnormal": "Након уклањања десних дијелова вода и поједини витамини се слабије упијају, па столица може бити течнија, а љекар може да прати налазе крви; хистолошки налаз и даљи план даје љекар који вас води. Повишена температура, јак бол, повраћање или надутост без столице траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "total-colectomy-with-ileo-rectal-anastomosis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление всей ободочной кишки с соединением тонкой кишки напрямую с прямой кишкой",
+        "how": "Под общим наркозом хирург последовательно выделяет и удаляет ободочную кишку на всём протяжении, после чего сшивает конец подвздошной кишки с сохранённой прямой; операция объёмная, иногда на время формируют стому, и это решает хирург",
+        "when": "Множественные полипы на всём протяжении ободочной кишки, тяжёлое течение воспалительных заболеваний кишечника при сохранной прямой кишке, замедленный транзит с тяжёлыми запорами, не поддающимися другому лечению",
+        "prep": "Эндоскопический осмотр всей кишки и оценка состояния прямой кишки, анализы и консультация анестезиолога, подготовка кишечника, беседа о возможной временной стоме",
+        "abnormal": "Стул после такой операции становится частым и жидким, со временем обычно урежается, а врач наблюдает за весом, водным балансом и показателями крови; сохранённую прямую кишку периодически осматривают эндоскопически. Признаки потери жидкости, резкая слабость, лихорадка или кровь в стуле — повод обратиться к врачу сразу"
+      },
+      "en": {
+        "what": "Removal of the whole colon with the small bowel joined directly to the rectum",
+        "how": "Under general anaesthesia the surgeon frees and removes the colon along its entire length and then joins the end of the ileum to the preserved rectum; the operation is extensive and a temporary stoma is sometimes formed, which the surgeon decides",
+        "when": "Multiple polyps throughout the colon, severe inflammatory bowel disease with a preserved rectum, slow transit with severe constipation that does not respond to other treatment",
+        "prep": "Endoscopy of the whole bowel and assessment of the rectum, blood tests and a visit to the anaesthetist, bowel preparation, and a talk about a possible temporary stoma",
+        "abnormal": "Stools become frequent and loose after this operation and usually become less frequent with time, while the doctor follows weight, fluid balance and blood values; the preserved rectum is checked endoscopically at intervals. Signs of fluid loss, sudden weakness, fever or blood in the stool mean contacting the doctor at once"
+      },
+      "sr": {
+        "what": "Uklanjanje cijelog debelog crijeva uz spajanje tankog crijeva direktno sa završnim crijevom",
+        "how": "U opštoj anesteziji hirurg postepeno izdvaja i uklanja debelo crijevo cijelom dužinom, a zatim spaja kraj tankog crijeva sa sačuvanim rektumom; operacija je obimna i ponekad se privremeno formira stoma, o čemu odlučuje hirurg",
+        "when": "Brojni polipi duž cijelog debelog crijeva, teški oblici zapaljenskih bolesti crijeva uz očuvan rektum, usporen prolaz sa teškim zatvorom koji ne reaguje na drugo liječenje",
+        "prep": "Endoskopski pregled cijelog crijeva i procjena rektuma, analize i pregled anesteziologa, priprema crijeva, razgovor o mogućoj privremenoj stomi",
+        "abnormal": "Poslije ovakve operacije stolica postaje česta i tečna, a vremenom se obično prorijedi, dok ljekar prati tjelesnu težinu, unos tečnosti i nalaze krvi; sačuvani rektum se povremeno pregleda endoskopski. Znaci gubitka tečnosti, nagla slabost, povišena temperatura ili krv u stolici znače da odmah treba javiti se ljekaru"
+      },
+      "de": {
+        "what": "Entfernung des gesamten Dickdarms mit direkter Verbindung des Dünndarms zum Mastdarm",
+        "how": "In Vollnarkose löst und entfernt der Chirurg den Dickdarm auf ganzer Länge und verbindet danach das Ende des Krummdarms mit dem erhaltenen Mastdarm; der Eingriff ist umfangreich, mitunter wird vorübergehend ein Stoma angelegt, worüber der Chirurg entscheidet",
+        "when": "Zahlreiche Polypen im gesamten Dickdarm, schwere Verläufe chronisch-entzündlicher Darmerkrankungen bei erhaltenem Mastdarm, verlangsamte Passage mit schwerer Verstopfung, die auf andere Behandlung nicht anspricht",
+        "prep": "Endoskopie des gesamten Darms und Beurteilung des Mastdarms, Labor und Narkosegespräch, Darmvorbereitung, Gespräch über ein mögliches vorübergehendes Stoma",
+        "abnormal": "Der Stuhl ist nach diesem Eingriff häufig und dünn und wird mit der Zeit meist seltener, der Arzt kontrolliert Gewicht, Flüssigkeitshaushalt und Blutwerte; der erhaltene Mastdarm wird in Abständen endoskopisch kontrolliert. Zeichen von Flüssigkeitsmangel, plötzliche Schwäche, Fieber oder Blut im Stuhl erfordern sofortigen Kontakt"
+      },
+      "tr": {
+        "what": "Kalın bağırsağın tamamının çıkarılması ve ince bağırsağın doğrudan rektuma birleştirilmesi",
+        "how": "Genel anestezi altında cerrah kalın bağırsağı tüm uzunluğu boyunca serbestleştirip çıkarır, ardından ileumun ucunu korunan rektuma birleştirir; kapsamlı bir ameliyattır, bazen geçici stoma açılır ve buna cerrah karar verir",
+        "when": "Kalın bağırsağın tamamında çok sayıda polip, rektumun korunduğu ağır seyirli iltihabi bağırsak hastalıkları, başka tedaviye yanıt vermeyen yavaş geçişli ağır kabızlık",
+        "prep": "Tüm bağırsağın endoskopik incelenmesi ve rektumun değerlendirilmesi, tahliller ve anestezi değerlendirmesi, bağırsak hazırlığı, olası geçici stoma hakkında bilgilendirme",
+        "abnormal": "Bu ameliyattan sonra dışkılama sık ve sulu olur, zamanla genellikle seyrekleşir; hekim kiloyu, sıvı dengesini ve kan değerlerini izler, korunan rektum belirli aralıklarla endoskopiyle kontrol edilir. Sıvı kaybı belirtileri, ani halsizlik, ateş veya dışkıda kan hemen başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање цијелог дебелог цријева уз спајање танког цријева директно са завршним цријевом",
+        "how": "У општој анестезији хирург постепено издваја и уклања дебело цријево цијелом дужином, а затим спаја крај танког цријева са сачуваним ректумом; операција је обимна и понекад се привремено формира стома, о чему одлучује хирург",
+        "when": "Бројни полипи дуж цијелог дебелог цријева, тешки облици запаљенских болести цријева уз очуван ректум, успорен пролаз са тешким затвором који не реагује на друго лијечење",
+        "prep": "Ендоскопски преглед цијелог цријева и процјена ректума, анализе и преглед анестезиолога, припрема цријева, разговор о могућој привременој стоми",
+        "abnormal": "Послије овакве операције столица постаје честа и течна, а временом се обично прориједи, док љекар прати тјелесну тежину, унос течности и налазе крви; сачувани ректум се повремено прегледа ендоскопски. Знаци губитка течности, нагла слабост, повишена температура или крв у столици значе да одмах треба јавити се љекару"
+      }
+    }
+  },
+  {
+    "slug": "umbilical-hernia-operation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Пластика дефекта брюшной стенки в области пупочного кольца",
+        "how": "Под местным обезболиванием или наркозом хирург делает небольшой разрез по краю пупка, вправляет содержимое грыжи, ушивает кольцо, а крупный дефект укрепляет сеткой, сохраняя форму пупка; обычно занимает меньше часа",
+        "when": "Выпячивание в области пупка, которое растёт, болит или перестаёт вправляться, грыжа после беременностей или заметного набора веса, у детей — дефект, сохраняющийся до возраста, который определяет хирург",
+        "prep": "Осмотр хирурга и анестезиолога, базовые анализы, отказ от еды и питья по инструкции клиники, сообщить о разжижающих кровь препаратах, по возможности заранее снизить нагрузку на живот",
+        "abnormal": "Отёк и синеватая окраска вокруг пупка в первые дни обычны, окончательная форма пупка проявляется по мере спадения отёка, а срок ограничения нагрузок называет хирург. Резкая боль, покраснение, температура или повторное выпячивание требуют осмотра"
+      },
+      "en": {
+        "what": "Repair of a defect in the abdominal wall at the umbilical ring",
+        "how": "Under local or general anaesthesia the surgeon makes a small cut at the edge of the navel, returns the contents of the hernia, closes the ring and reinforces a larger defect with a mesh while keeping the shape of the navel; it usually takes less than an hour",
+        "when": "A bulge at the navel that is growing, painful or no longer reduces, a hernia after pregnancies or marked weight gain, and in children a defect that persists to an age set by the surgeon",
+        "prep": "Examination by the surgeon and the anaesthetist, basic tests, no food or drink as the clinic instructs, telling the doctor about blood-thinning medicines, and reducing strain on the abdomen beforehand where possible",
+        "abnormal": "Swelling and a bluish colour around the navel are usual in the first days, the final shape of the navel appears as the swelling goes down, and the surgeon says how long to limit exertion. Sharp pain, redness, fever or a bulge that appears again call for a check-up"
+      },
+      "sr": {
+        "what": "Operativno zatvaranje otvora u trbušnom zidu na mjestu pupčanog prstena",
+        "how": "U lokalnoj ili opštoj anesteziji hirurg pravi mali rez uz ivicu pupka, vraća sadržaj kile, ušiva prsten, a veći otvor ojačava mrežicom uz očuvanje izgleda pupka; obično traje kraće od sat vremena",
+        "when": "Izbočenje na pupku koje raste, boli ili se više ne vraća, kila nakon trudnoća ili znatnog dobijanja na težini, a kod djece defekt koji se zadržava do uzrasta koji procjenjuje hirurg",
+        "prep": "Pregled hirurga i anesteziologa, osnovne analize, bez hrane i pića po uputstvu klinike, obavijestiti ljekara o lijekovima za razrjeđivanje krvi, po mogućnosti unaprijed smanjiti naprezanje trbuha",
+        "abnormal": "Otok i plavkasta boja oko pupka prvih dana su uobičajeni, konačan izgled pupka vidi se kada otok splasne, a koliko dugo treba izbjegavati napor kaže hirurg. Oštar bol, crvenilo, povišena temperatura ili ponovno izbočenje traže pregled"
+      },
+      "de": {
+        "what": "Verschluss einer Lücke in der Bauchwand im Bereich des Nabelrings",
+        "how": "In örtlicher Betäubung oder Vollnarkose setzt der Chirurg einen kleinen Schnitt am Nabelrand, verlagert den Bruchinhalt zurück, verschließt den Ring und verstärkt größere Lücken mit einem Netz, wobei die Form des Nabels erhalten bleibt; meist dauert es weniger als eine Stunde",
+        "when": "Eine Vorwölbung am Nabel, die wächst, schmerzt oder sich nicht mehr zurückdrängen lässt, ein Bruch nach Schwangerschaften oder deutlicher Gewichtszunahme, bei Kindern ein Defekt, der bis zu einem vom Chirurgen bestimmten Alter bestehen bleibt",
+        "prep": "Untersuchung durch Chirurg und Anästhesist, Basislabor, Nüchternheit nach Anweisung der Klinik, Hinweis auf blutverdünnende Medikamente, nach Möglichkeit vorab weniger Bauchbelastung",
+        "abnormal": "Schwellung und eine bläuliche Verfärbung um den Nabel sind in den ersten Tagen üblich, die endgültige Form des Nabels zeigt sich beim Abklingen der Schwellung, und wie lange Belastung zu meiden ist, sagt der Chirurg. Stechender Schmerz, Rötung, Fieber oder eine erneute Vorwölbung erfordern eine Kontrolle"
+      },
+      "tr": {
+        "what": "Karın duvarında göbek halkası bölgesindeki açıklığın onarımı",
+        "how": "Lokal veya genel anestezi altında cerrah göbek kenarından küçük bir kesi yapar, fıtık içeriğini geri iter, halkayı diker, büyük açıklıkları göbeğin görünümünü koruyarak yama ile güçlendirir; genellikle bir saatten kısa sürer",
+        "when": "Büyüyen, ağrıyan veya artık geri itilemeyen göbek şişliği, gebeliklerden ya da belirgin kilo artışından sonra gelişen fıtık, çocuklarda cerrahın belirlediği yaşa kadar kapanmayan açıklık",
+        "prep": "Cerrah ve anestezi uzmanı değerlendirmesi, temel tahliller, kliniğin belirttiği süre boyunca aç kalmak, kan sulandırıcı ilaçları bildirmek, mümkünse karın içi basıncı artıran zorlanmaları önceden azaltmak",
+        "abnormal": "İlk günlerde göbek çevresinde şişlik ve morumsu renk olağandır, göbeğin son görünümü şişlik indikçe ortaya çıkar, zorlanmanın ne kadar süre kısıtlanacağını cerrah söyler. Keskin ağrı, kızarıklık, ateş veya şişliğin yeniden belirmesi kontrol gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Оперативно затварање отвора у трбушном зиду на мјесту пупчаног прстена",
+        "how": "У локалној или општој анестезији хирург прави мали рез уз ивицу пупка, враћа садржај киле, ушива прстен, а већи отвор ојачава мрежицом уз очување изгледа пупка; обично траје краће од сат времена",
+        "when": "Избочење на пупку које расте, боли или се више не враћа, кила након трудноћа или знатног добијања на тежини, а код дјеце дефект који се задржава до узраста који процјењује хирург",
+        "prep": "Преглед хирурга и анестезиолога, основне анализе, без хране и пића по упутству клинике, обавијестити љекара о лијековима за разрјеђивање крви, по могућности унапријед смањити напрезање трбуха",
+        "abnormal": "Оток и плавкаста боја око пупка првих дана су уобичајени, коначан изглед пупка види се када оток спласне, а колико дуго треба избјегавати напор каже хирург. Оштар бол, црвенило, повишена температура или поновно избочење траже преглед"
+      }
+    }
+  }
 ]

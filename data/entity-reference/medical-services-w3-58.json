@@ -1,0 +1,818 @@
+[
+  {
+    "slug": "follow-up-neonatologist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный осмотр новорождённого неонатологом: как ребёнок растёт и как идёт адаптация после выписки",
+        "how": "Врач взвешивает и измеряет ребёнка, смотрит кожу и желтушность, пупочную ранку, живот, тазобедренные суставы и рефлексы, расспрашивает о кормлении, стуле и сне, сверяет прибавку с кривой роста; 15-25 минут",
+        "when": "Назначенный при выписке срок контроля, наблюдение за желтухой или медленной прибавкой веса, вопросы по грудному и смешанному вскармливанию, недоношенность, контроль после лечения в детском отделении, проверка выполненных скринингов",
+        "prep": "Взять выписку из роддома, карту прививок и результаты скринингов, покормить ребёнка заранее или взять еду с собой, одеть так, чтобы легко раздеть для осмотра",
+        "abnormal": "Врач говорит, укладываются ли прибавка веса и угасание желтухи в ожидаемые сроки и нужны ли анализы или УЗИ. Вялость, отказ от еды, температура, нарастающая желтушность или мокнущий пупок — повод обратиться, не дожидаясь следующего контроля"
+      },
+      "en": {
+        "what": "A repeat examination of a newborn by a neonatologist: how the baby is growing and adapting after discharge",
+        "how": "The doctor weighs and measures the baby, checks the skin and jaundice, the umbilical area, abdomen, hips and reflexes, asks about feeding, stools and sleep, and plots the weight gain on the growth chart; 15-25 minutes",
+        "when": "The follow-up date set at discharge, monitoring of jaundice or slow weight gain, questions about breastfeeding and mixed feeding, prematurity, review after treatment in a neonatal unit, checking that the screenings were done",
+        "prep": "Bring the maternity discharge letter, the vaccination record and screening results, feed the baby beforehand or bring food along, and dress the baby so it is easy to undress for the examination",
+        "abnormal": "The doctor says whether the weight gain and the fading of jaundice are within the expected time frame and whether tests or an ultrasound are needed. Lethargy, refusal to feed, fever, deepening jaundice or a weeping umbilicus are reasons to seek care without waiting for the next visit"
+      },
+      "sr": {
+        "what": "Ponovni pregled novorođenčeta kod neonatologa: kako beba raste i kako teče prilagođavanje nakon otpusta",
+        "how": "Ljekar mjeri težinu i dužinu bebe, gleda kožu i žuticu, pupak, stomak, kukove i reflekse, pita o hranjenju, stolici i spavanju i upoređuje napredovanje sa krivom rasta; 15-25 minuta",
+        "when": "Termin kontrole određen pri otpustu, praćenje žutice ili sporog napredovanja u težini, pitanja o dojenju i mješovitoj ishrani, prijevremeno rođenje, kontrola nakon liječenja na dječjem odjeljenju, provjera obavljenih skrininga",
+        "prep": "Ponijeti otpusno pismo iz porodilišta, karton vakcinacije i nalaze skrininga, nahraniti bebu prije dolaska ili ponijeti obrok i obući je tako da se lako svuče za pregled",
+        "abnormal": "Ljekar kaže da li su napredovanje u težini i povlačenje žutice u očekivanim okvirima i da li su potrebne analize ili ultrazvuk. Pospanost, odbijanje hrane, povišena temperatura, jača žutica ili vlažan pupak razlog su za raniji dolazak, bez čekanja sljedeće kontrole"
+      },
+      "de": {
+        "what": "Eine Wiederholungsuntersuchung des Neugeborenen beim Neonatologen: wie das Kind wächst und sich nach der Entlassung anpasst",
+        "how": "Der Arzt wiegt und misst das Kind, beurteilt Haut und Gelbsucht, Nabel, Bauch, Hüften und Reflexe, fragt nach Trinken, Stuhl und Schlaf und trägt die Gewichtszunahme in die Wachstumskurve ein; 15-25 Minuten",
+        "when": "Der bei der Entlassung vereinbarte Kontrolltermin, Beobachtung von Gelbsucht oder langsamer Gewichtszunahme, Fragen zum Stillen und zur Zufütterung, Frühgeburtlichkeit, Kontrolle nach Behandlung auf der Kinderstation, Überprüfung der durchgeführten Screenings",
+        "prep": "Entlassungsbrief der Geburtsklinik, Impfausweis und Screening-Befunde mitbringen, das Kind vorher füttern oder Nahrung mitnehmen und so anziehen, dass es sich leicht ausziehen lässt",
+        "abnormal": "Der Arzt sagt, ob Gewichtszunahme und Rückgang der Gelbsucht im erwarteten Rahmen liegen und ob Laborwerte oder eine Ultraschalluntersuchung nötig sind. Teilnahmslosigkeit, Trinkverweigerung, Fieber, zunehmende Gelbfärbung oder ein nässender Nabel sind Gründe, nicht bis zum nächsten Termin zu warten"
+      },
+      "tr": {
+        "what": "Yenidoğanın taburculuk sonrası büyümesini ve uyumunu değerlendirmek için neonatoloji uzmanınca yapılan kontrol muayenesi",
+        "how": "Hekim bebeği tartar ve ölçer, cildi ve sarılığı, göbeği, karnı, kalçaları ve refleksleri değerlendirir, beslenme, dışkılama ve uyku hakkında soru sorar, kilo alımını büyüme eğrisiyle karşılaştırır; 15-25 dakika",
+        "when": "Taburculukta verilen kontrol tarihi, sarılığın veya yavaş kilo alımının izlenmesi, emzirme ve karma beslenme soruları, erken doğum, yenidoğan servisindeki tedavi sonrası kontrol, yapılan taramaların gözden geçirilmesi",
+        "prep": "Doğum kliniğinin çıkış raporunu, aşı kartını ve tarama sonuçlarını getirin, bebeği önceden besleyin veya besinini yanınıza alın ve muayene için kolay soyunacak şekilde giydirin",
+        "abnormal": "Hekim kilo alımının ve sarılığın gerilemesinin beklenen aralıkta olup olmadığını, tetkik ya da ultrason gerekip gerekmediğini söyler. Halsizlik, beslenmeyi reddetme, ateş, sarılığın artması veya göbekte akıntı bir sonraki kontrolü beklemeden başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Поновни преглед новорођенчета код неонатолога: како беба расте и како тече прилагођавање након отпуста",
+        "how": "Љекар мјери тежину и дужину бебе, гледа кожу и жутицу, пупак, стомак, кукове и рефлексе, пита о храњењу, столици и спавању и упоређује напредовање са кривом раста; 15-25 минута",
+        "when": "Термин контроле одређен при отпусту, праћење жутице или спорог напредовања у тежини, питања о дојењу и мјешовитој исхрани, пријевремено рођење, контрола након лијечења на дјечјем одјељењу, провјера обављених скрининга",
+        "prep": "Понијети отпусно писмо из породилишта, картон вакцинације и налазе скрининга, нахранити бебу прије доласка или понијети оброк и обући је тако да се лако свуче за преглед",
+        "abnormal": "Љекар каже да ли су напредовање у тежини и повлачење жутице у очекиваним оквирима и да ли су потребне анализе или ултразвук. Поспаност, одбијање хране, повишена температура, јача жутица или влажан пупак разлог су за ранији долазак, без чекања сљедеће контроле"
+      }
+    }
+  },
+  {
+    "slug": "hydrocele-surgery",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция, при которой удаляют скопление жидкости вокруг яичка и обрабатывают его оболочку, чтобы жидкость не набиралась снова",
+        "how": "Через небольшой разрез на мошонке или в паху вскрывают оболочку, выпускают жидкость, иссекают или выворачивают её листки и ушивают рану; под местной, спинальной или общей анестезией, чаще всего с выпиской в тот же день",
+        "when": "Увеличение одной половины мошонки с ощущением тяжести, подтверждённое осмотром и УЗИ скопление жидкости, которое растёт или мешает, повторное накопление после пункции, у детей — сообщающаяся водянка, не прошедшая сама",
+        "prep": "Как назначит хирург: анализы и консультация анестезиолога заранее, не есть и не пить с указанного часа, обсудить приём разжижающих кровь препаратов, взять плотное бельё для поддержки мошонки и организовать дорогу домой",
+        "abnormal": "Отёк, синяк и умеренная болезненность в первые дни ожидаемы и постепенно уходят; срок возвращения к нагрузкам называет хирург. Нарастающая боль, покраснение, температура, кровотечение или выделения из раны требуют осмотра"
+      },
+      "en": {
+        "what": "An operation that removes the fluid collected around the testicle and treats its membrane so that fluid does not build up again",
+        "how": "Through a small incision in the scrotum or groin the membrane is opened, the fluid is drained, its layers are excised or turned inside out and the wound is closed; under local, spinal or general anaesthesia, usually as a day case",
+        "when": "Enlargement of one side of the scrotum with a feeling of heaviness, a fluid collection confirmed by examination and ultrasound that keeps growing or causes discomfort, refilling after needle drainage, in children a communicating hydrocele that has not resolved on its own",
+        "prep": "As instructed by the surgeon: tests and an anaesthetist review in advance, nothing to eat or drink from the stated hour, blood-thinning medicines discussed, supportive underwear brought along and a ride home arranged",
+        "abnormal": "Swelling, bruising and moderate soreness in the first days are expected and settle gradually; the surgeon states when normal activity can resume. Increasing pain, redness, fever, bleeding or discharge from the wound need to be seen"
+      },
+      "sr": {
+        "what": "Operacija kojom se uklanja nakupljena tečnost oko testisa i obrađuje njegova ovojnica kako se tečnost ne bi ponovo stvarala",
+        "how": "Kroz mali rez na skrotumu ili u preponi otvara se ovojnica, ispušta se tečnost, njeni listovi se isijecaju ili izvrću i rana se ušije; u lokalnoj, spinalnoj ili opštoj anesteziji, najčešće uz otpust istog dana",
+        "when": "Uvećanje jedne strane skrotuma sa osjećajem težine, nalaz tečnosti na pregledu i ultrazvuku koji raste ili smeta, ponovno nakupljanje nakon punkcije, kod djece komunikantna hidrokela koja nije prošla sama",
+        "prep": "Po uputstvu hirurga: analize i pregled anesteziologa unaprijed, bez jela i pića od navedenog sata, dogovor o lijekovima koji razrjeđuju krv, ponijeti čvršći donji veš radi podrške skrotuma i organizovati prevoz kući",
+        "abnormal": "Otok, modrica i umjerena osjetljivost prvih dana su očekivani i postepeno prolaze; rok povratka naporima određuje hirurg. Pojačan bol, crvenilo, povišena temperatura, krvarenje ili curenje iz rane traže pregled"
+      },
+      "de": {
+        "what": "Eine Operation, bei der die Flüssigkeitsansammlung um den Hoden entfernt und seine Hülle so versorgt wird, dass sich keine neue Flüssigkeit bildet",
+        "how": "Über einen kleinen Schnitt am Hodensack oder in der Leiste wird die Hülle eröffnet, die Flüssigkeit abgelassen, ihre Blätter werden entfernt oder umgestülpt und die Wunde verschlossen; in örtlicher, Spinal- oder Vollnarkose, meist ambulant",
+        "when": "Vergrößerung einer Hodensackseite mit Schweregefühl, eine bei Untersuchung und Ultraschall festgestellte Flüssigkeitsansammlung, die wächst oder stört, erneute Füllung nach Punktion, bei Kindern eine offene Hydrozele, die sich nicht von selbst zurückbildet",
+        "prep": "Nach Anweisung des Operateurs: Laborwerte und Narkosegespräch vorab, ab der genannten Uhrzeit nüchtern bleiben, Umgang mit blutverdünnenden Medikamenten klären, feste Unterwäsche zur Unterstützung mitbringen und die Heimfahrt organisieren",
+        "abnormal": "Schwellung, Bluterguss und mäßige Druckempfindlichkeit in den ersten Tagen sind zu erwarten und klingen ab; wann wieder belastet werden darf, sagt der Operateur. Zunehmende Schmerzen, Rötung, Fieber, Blutung oder Wundsekret gehören ärztlich kontrolliert"
+      },
+      "tr": {
+        "what": "Testis çevresinde biriken sıvının boşaltıldığı ve sıvının yeniden toplanmaması için zarının işlendiği ameliyat",
+        "how": "Skrotumdan ya da kasıktan yapılan küçük bir kesiyle zar açılır, sıvı boşaltılır, zar yaprakları çıkarılır veya ters çevrilir ve yara kapatılır; lokal, spinal veya genel anestezi altında, çoğunlukla günübirlik",
+        "when": "Skrotumun bir yarısının büyümesi ve ağırlık hissi, muayene ve ultrasonla saptanan, büyüyen veya rahatsızlık veren sıvı birikimi, iğneyle boşaltma sonrası yeniden dolma, çocuklarda kendiliğinden kapanmayan açık hidrosel",
+        "prep": "Cerrahın talimatına göre: önceden tetkikler ve anestezi değerlendirmesi, belirtilen saatten sonra aç kalmak, kan sulandırıcı ilaçların görüşülmesi, destekleyici iç çamaşırı getirmek ve dönüş yolculuğunu ayarlamak",
+        "abnormal": "İlk günlerde şişlik, morluk ve orta derecede hassasiyet beklenir ve giderek geçer; normal aktiviteye dönüş zamanını cerrah söyler. Artan ağrı, kızarıklık, ateş, kanama veya yaradan akıntı değerlendirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Операција којом се уклања накупљена течност око тестиса и обрађује његова овојница како се течност не би поново стварала",
+        "how": "Кроз мали рез на скротуму или у препони отвара се овојница, испушта се течност, њени листови се исијецају или изврћу и рана се ушије; у локалној, спиналној или општој анестезији, најчешће уз отпуст истог дана",
+        "when": "Увећање једне стране скротума са осјећајем тежине, налаз течности на прегледу и ултразвуку који расте или смета, поновно накупљање након пункције, код дјеце комуникантна хидрокела која није прошла сама",
+        "prep": "По упутству хирурга: анализе и преглед анестезиолога унапријед, без јела и пића од наведеног сата, договор о лијековима који разрјеђују крв, понијети чвршћи доњи веш ради подршке скротума и организовати превоз кући",
+        "abnormal": "Оток, модрица и умјерена осјетљивост првих дана су очекивани и постепено пролазе; рок повратка напорима одређује хирург. Појачан бол, црвенило, повишена температура, крварење или цурење из ране траже преглед"
+      }
+    }
+  },
+  {
+    "slug": "subcapsular-orchiectomy-local-anesthesia",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление гормонопродуцирующей ткани яичка через разрез мошонки с сохранением его оболочки, под местным обезболиванием",
+        "how": "Кожу мошонки обезболивают, делают небольшой разрез, вскрывают плотную оболочку железы и удаляют её внутреннюю ткань, оболочку ушивают, так что мошонка внешне сохраняет форму; около получаса, пациент в сознании",
+        "when": "Ситуации, когда нужно стойко и быстро снизить выработку тестостерона, чаще всего при гормонозависимой опухоли предстательной железы, если хирургический вариант предпочтителен длительным инъекциям; решение принимают уролог и онколог вместе с пациентом",
+        "prep": "По назначению хирурга: анализы крови и показатели свёртывания, сведения обо всех препаратах, особенно разжижающих кровь, гигиена и бритьё операционной зоны, уточнить время последнего приёма пищи и взять поддерживающее бельё",
+        "abnormal": "Отёк и болезненность мошонки в первые дни обычны. Снижение тестостерона со временем даёт приливы, уменьшение полового влечения, изменения настроения и плотности костей — это обсуждают с лечащим врачом заранее и наблюдают после; температура, нарастающая боль или кровотечение из раны требуют срочного осмотра"
+      },
+      "en": {
+        "what": "Removal of the hormone-producing tissue of the testicle through a scrotal incision while its capsule is preserved, under local anaesthesia",
+        "how": "The scrotal skin is numbed, a small incision is made, the dense capsule of the gland is opened and its inner tissue removed, then the capsule is closed, so the scrotum keeps its outward shape; about half an hour, with the patient awake",
+        "when": "Situations where testosterone production has to be lowered quickly and lastingly, most often in hormone-dependent prostate disease, when a surgical option is preferred to long-term injections; the decision is made by the urologist and oncologist together with the patient",
+        "prep": "As prescribed by the surgeon: blood and clotting tests, a full list of medicines, especially blood thinners, hygiene and shaving of the operative area, confirming the last meal time and bringing supportive underwear",
+        "abnormal": "Swelling and tenderness of the scrotum in the first days are usual. Lower testosterone over time brings hot flushes, reduced libido, mood changes and effects on bone density, which the treating doctor discusses beforehand and monitors afterwards; fever, increasing pain or bleeding from the wound need prompt review"
+      },
+      "sr": {
+        "what": "Uklanjanje tkiva testisa koje stvara hormone, kroz rez na skrotumu uz očuvanje njegove ovojnice, u lokalnoj anesteziji",
+        "how": "Koža skrotuma se obezboli, napravi se mali rez, otvori se čvrsta ovojnica žlijezde i ukloni njeno unutrašnje tkivo, a ovojnica se ušije, pa skrotum spolja zadržava oblik; oko pola sata, pacijent je budan",
+        "when": "Situacije u kojima treba trajno i brzo smanjiti stvaranje testosterona, najčešće kod hormonski zavisne bolesti prostate, kada je hirurško rješenje prihvatljivije od dugotrajnih injekcija; odluku donose urolog i onkolog zajedno sa pacijentom",
+        "prep": "Po nalogu hirurga: analize krvi i parametri zgrušavanja, spisak svih lijekova, posebno onih koji razrjeđuju krv, higijena i brijanje operativnog polja, dogovor o vremenu posljednjeg obroka i ponijeti donji veš koji pruža podršku",
+        "abnormal": "Otok i osjetljivost skrotuma prvih dana su uobičajeni. Niži testosteron vremenom donosi talase vrućine, slabiji libido, promjene raspoloženja i uticaj na gustinu kostiju, o čemu ljekar govori unaprijed i što se prati kasnije; povišena temperatura, pojačan bol ili krvarenje iz rane traže hitan pregled"
+      },
+      "de": {
+        "what": "Entfernung des hormonbildenden Hodengewebes über einen Schnitt am Hodensack unter Erhalt der Hodenhülle, in örtlicher Betäubung",
+        "how": "Die Haut des Hodensacks wird betäubt, ein kleiner Schnitt angelegt, die feste Hülle der Drüse eröffnet und das innere Gewebe entfernt, danach wird die Hülle verschlossen, sodass der Hodensack äußerlich seine Form behält; etwa eine halbe Stunde, der Patient ist wach",
+        "when": "Situationen, in denen die Testosteronbildung rasch und dauerhaft gesenkt werden muss, meist bei hormonabhängiger Prostataerkrankung, wenn ein operatives Vorgehen langfristigen Spritzen vorgezogen wird; die Entscheidung treffen Urologe und Onkologe gemeinsam mit dem Patienten",
+        "prep": "Nach Vorgabe des Operateurs: Blut- und Gerinnungswerte, Liste aller Medikamente, besonders Blutverdünner, Hygiene und Rasur des Operationsgebiets, Absprache zur letzten Mahlzeit und stützende Unterwäsche mitbringen",
+        "abnormal": "Schwellung und Druckempfindlichkeit des Hodensacks in den ersten Tagen sind üblich. Das sinkende Testosteron bringt mit der Zeit Hitzewallungen, geringeres sexuelles Verlangen, Stimmungsveränderungen und Einfluss auf die Knochendichte mit sich, was der behandelnde Arzt vorher bespricht und danach kontrolliert; Fieber, zunehmende Schmerzen oder Blutung aus der Wunde erfordern eine rasche Vorstellung"
+      },
+      "tr": {
+        "what": "Testisin hormon üreten dokusunun, zarı korunarak skrotumdan yapılan kesiyle ve lokal anestezi altında çıkarılması",
+        "how": "Skrotum cildi uyuşturulur, küçük bir kesi yapılır, bezin sert zarı açılarak iç dokusu çıkarılır ve zar kapatılır; böylece skrotum dıştan biçimini korur; yaklaşık yarım saat sürer, hasta uyanıktır",
+        "when": "Testosteron üretiminin hızlı ve kalıcı biçimde azaltılması gereken durumlar, çoğunlukla hormona bağımlı prostat hastalığında, cerrahi seçeneğin uzun süreli iğnelere tercih edildiği hallerde; karar üroloji ve onkoloji uzmanlarıyla hasta tarafından birlikte verilir",
+        "prep": "Cerrahın talimatına göre: kan ve pıhtılaşma tetkikleri, kullanılan tüm ilaçların, özellikle kan sulandırıcıların bildirilmesi, ameliyat bölgesinin temizliği ve tıraşı, son yemek saatinin netleştirilmesi ve destekleyici iç çamaşırı getirilmesi",
+        "abnormal": "İlk günlerde skrotumda şişlik ve hassasiyet olağandır. Testosteronun azalması zamanla sıcak basması, cinsel isteğin azalması, duygudurum değişiklikleri ve kemik yoğunluğu üzerinde etki getirir; bunlar önceden hekimle konuşulur ve sonrasında izlenir. Ateş, artan ağrı veya yaradan kanama acil değerlendirme gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање ткива тестиса које ствара хормоне, кроз рез на скротуму уз очување његове овојнице, у локалној анестезији",
+        "how": "Кожа скротума се обезболи, направи се мали рез, отвори се чврста овојница жлијезде и уклони њено унутрашње ткиво, а овојница се ушије, па скротум споља задржава облик; око пола сата, пацијент је будан",
+        "when": "Ситуације у којима треба трајно и брзо смањити стварање тестостерона, најчешће код хормонски зависне болести простате, када је хируршко рјешење прихватљивије од дуготрајних ињекција; одлуку доносе уролог и онколог заједно са пацијентом",
+        "prep": "По налогу хирурга: анализе крви и параметри згрушавања, списак свих лијекова, посебно оних који разрјеђују крв, хигијена и бријање оперативног поља, договор о времену посљедњег оброка и понијети доњи веш који пружа подршку",
+        "abnormal": "Оток и осјетљивост скротума првих дана су уобичајени. Нижи тестостерон временом доноси таласе врућине, слабији либидо, промјене расположења и утицај на густину костију, о чему љекар говори унапријед и што се прати касније; повишена температура, појачан бол или крварење из ране траже хитан преглед"
+      }
+    }
+  },
+  {
+    "slug": "bladder-catheterization",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Проведение тонкого катетера через мочеиспускательный канал в мочевой пузырь, чтобы выпустить мочу, взять стерильную порцию или ввести раствор",
+        "how": "Область обрабатывают антисептиком, в уретру вводят гель с анестетиком, катетер проводят до появления мочи; при разовой катетеризации пузырь опорожняют и катетер сразу убирают, при постоянном — фиксируют баллоном и подключают мочеприёмник; несколько минут",
+        "when": "Задержка мочи, измерение остаточной мочи, стерильный забор мочи на посев, опорожнение пузыря перед исследованием или операцией, промывание пузыря и введение в него лекарства, уход при недержании и обездвиженности",
+        "prep": "Специальной подготовки нет; сообщить о сужениях уретры и операциях на простате, об аллергии на латекс и анестетики; если катетеризацию делают в рамках исследования, врач скажет, приходить с наполненным пузырём или нет",
+        "abnormal": "Позывы и лёгкое жжение после процедуры обычно проходят за несколько часов. Невозможность провести катетер, кровь в моче, озноб и температура, боль внизу живота или в пояснице, отсутствие оттока при установленном катетере — повод связаться с врачом"
+      },
+      "en": {
+        "what": "Passing a thin catheter through the urethra into the bladder to drain urine, obtain a sterile sample or instil a solution",
+        "how": "The area is cleaned with antiseptic, anaesthetic gel is instilled into the urethra and the catheter is advanced until urine appears; with a single catheterisation the bladder is emptied and the catheter removed at once, with an indwelling one the balloon is inflated and a drainage bag attached; a few minutes",
+        "when": "Urinary retention, measuring residual urine, taking a sterile urine sample for culture, emptying the bladder before a test or operation, bladder irrigation and instillation of medication, care in incontinence and immobility",
+        "prep": "No special preparation; report urethral narrowing and prostate operations, allergy to latex and to anaesthetic gels; if the catheterisation is part of an investigation, the doctor says whether to arrive with a full bladder",
+        "abnormal": "Urgency and mild burning after the procedure usually pass within a few hours. Failure to pass the catheter, blood in the urine, chills and fever, pain in the lower abdomen or flank, or no drainage from an indwelling catheter are reasons to contact a doctor"
+      },
+      "sr": {
+        "what": "Uvođenje tanke cjevčice kroz mokraćnu cijev u bešiku radi ispuštanja mokraće, uzimanja sterilnog uzorka ili davanja rastvora",
+        "how": "Predio se očisti antiseptikom, u mokraćnu cijev se stavi anestetički gel i kateter se uvodi dok se ne pojavi mokraća; kod jednokratne kateterizacije bešika se isprazni i kateter se odmah vadi, a kod trajnog se napuni balončić i priključi kesa; traje nekoliko minuta",
+        "when": "Zastoj mokraće, mjerenje rezidualne mokraće, sterilno uzimanje uzorka za urinokulturu, pražnjenje bešike prije pretrage ili operacije, ispiranje bešike i davanje lijeka u nju, njega kod inkontinencije i nepokretnosti",
+        "prep": "Posebna priprema nije potrebna; reći za suženja mokraćne cijevi i operacije prostate, za alergiju na lateks i anestetičke gelove; ako je kateterizacija dio pretrage, ljekar kaže da li dolazite pune bešike",
+        "abnormal": "Nagon i blago peckanje poslije zahvata obično prođu za nekoliko sati. Nemogućnost uvođenja katetera, krv u mokraći, drhtavica i povišena temperatura, bol u donjem dijelu stomaka ili u slabinama, kao i izostanak oticanja kod postavljenog katetera, razlog su za javljanje ljekaru"
+      },
+      "de": {
+        "what": "Einführen eines dünnen Katheters über die Harnröhre in die Blase, um Urin abzuleiten, eine sterile Probe zu gewinnen oder eine Lösung einzubringen",
+        "how": "Der Bereich wird desinfiziert, Gleitgel mit Betäubungsmittel in die Harnröhre gegeben und der Katheter vorgeschoben, bis Urin kommt; bei der Einmalkatheterisierung wird die Blase entleert und der Katheter sofort entfernt, beim Dauerkatheter wird der Ballon gefüllt und ein Beutel angeschlossen; wenige Minuten",
+        "when": "Harnverhalt, Messung des Restharns, sterile Uringewinnung für die Kultur, Entleerung der Blase vor einer Untersuchung oder Operation, Blasenspülung und Einbringen von Medikamenten, Pflege bei Inkontinenz und Bettlägerigkeit",
+        "prep": "Keine besondere Vorbereitung; Verengungen der Harnröhre und Prostataoperationen angeben, ebenso Allergien gegen Latex und Betäubungsgele; gehört die Katheterisierung zu einer Untersuchung, sagt der Arzt, ob die Blase gefüllt sein soll",
+        "abnormal": "Harndrang und leichtes Brennen nach dem Eingriff klingen meist innerhalb weniger Stunden ab. Wenn der Katheter nicht eingeführt werden kann, Blut im Urin, Schüttelfrost und Fieber, Schmerzen im Unterbauch oder in der Flanke oder kein Urinabfluss bei liegendem Katheter auftreten, ist ärztlicher Kontakt nötig"
+      },
+      "tr": {
+        "what": "İdrarı boşaltmak, steril örnek almak veya mesaneye solüsyon vermek amacıyla üretradan mesaneye ince bir kateter ilerletilmesi",
+        "how": "Bölge antiseptikle temizlenir, üretraya anestezikli jel verilir ve idrar gelene kadar kateter ilerletilir; tek seferlik kateterizasyonda mesane boşaltılıp kateter hemen çıkarılır, kalıcı kateterde balon şişirilir ve torba takılır; birkaç dakika sürer",
+        "when": "İdrar yapamama, rezidüel idrarın ölçülmesi, kültür için steril idrar örneği alınması, tetkik veya ameliyat öncesi mesanenin boşaltılması, mesane yıkaması ve mesane içine ilaç verilmesi, idrar kaçırma ve yatağa bağımlılıkta bakım",
+        "prep": "Özel hazırlık gerekmez; üretra darlığını ve prostat ameliyatlarını, lateks ile anestezik jellere alerjiyi bildirin; işlem bir tetkiğin parçasıysa mesanenin dolu olup olmayacağını hekim söyler",
+        "abnormal": "İşlem sonrası sıkışma hissi ve hafif yanma genellikle birkaç saatte geçer. Kateterin ilerletilememesi, idrarda kan, titreme ve ateş, karın alt bölgesinde veya belde ağrı, takılı kateterden idrar gelmemesi hekime başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Увођење танке цјевчице кроз мокраћну цијев у бешику ради испуштања мокраће, узимања стерилног узорка или давања раствора",
+        "how": "Предио се очисти антисептиком, у мокраћну цијев се стави анестетички гел и катетер се уводи док се не појави мокраћа; код једнократне катетеризације бешика се испразни и катетер се одмах вади, а код трајног се напуни балончић и прикључи кеса; траје неколико минута",
+        "when": "Застој мокраће, мјерење резидуалне мокраће, стерилно узимање узорка за уринокултуру, пражњење бешике прије претраге или операције, испирање бешике и давање лијека у њу, њега код инконтиненције и непокретности",
+        "prep": "Посебна припрема није потребна; рећи за сужења мокраћне цијеви и операције простате, за алергију на латекс и анестетичке гелове; ако је катетеризација дио претраге, љекар каже да ли долазите пуне бешике",
+        "abnormal": "Нагон и благо пецкање послије захвата обично прођу за неколико сати. Немогућност увођења катетера, крв у мокраћи, дрхтавица и повишена температура, бол у доњем дијелу стомака или у слабинама, као и изостанак отицања код постављеног катетера, разлог су за јављање љекару"
+      }
+    }
+  },
+  {
+    "slug": "first-urologist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первый приём уролога: разбор жалоб на мочеиспускание и половую сферу и составление плана обследования",
+        "how": "Врач расспрашивает о частоте и струе мочеиспускания, болях, перенесённых инфекциях и операциях, осматривает наружные половые органы, при необходимости проводит пальцевое исследование простаты и УЗИ мочевого пузыря с оценкой остаточной мочи, назначает анализы; 20-30 минут",
+        "when": "Учащённое, болезненное или затруднённое мочеиспускание, ночные подъёмы, кровь в моче, боль в пояснице или внизу живота, камни в прошлом, вопросы по простате в зрелом возрасте, нарушения эрекции, вопросы планирования беременности, профилактический осмотр мужчины",
+        "prep": "Если планируется УЗИ, прийти с умеренно наполненным мочевым пузырём; взять прежние анализы мочи и крови, снимки и список препаратов, при необходимости врач объяснит, как правильно собрать мочу",
+        "abnormal": "По итогам приёма врач говорит, достаточно ли наблюдения или нужны анализы, посев мочи, УЗИ и другие исследования. Заключение чаще формулируют после результатов обследования, а не на первом приёме"
+      },
+      "en": {
+        "what": "A first appointment with a urologist: the urinary and sexual complaints are reviewed and a plan of investigation is drawn up",
+        "how": "The doctor asks about frequency and stream, pain, past infections and operations, examines the external genitalia, where appropriate performs a digital prostate examination and a bladder ultrasound with residual urine, and orders tests; 20-30 minutes",
+        "when": "Frequent, painful or difficult urination, getting up at night, blood in the urine, flank or lower abdominal pain, a history of stones, prostate questions in later life, erection problems, questions about planning a pregnancy, a men's check-up",
+        "prep": "If an ultrasound is planned, arrive with a moderately full bladder; bring previous urine and blood results, imaging and a list of medicines, and the doctor will explain how to collect a urine sample correctly if needed",
+        "abnormal": "After the appointment the doctor says whether observation is enough or tests, urine culture, ultrasound and other investigations are needed. A conclusion is usually formed after the results, not at the first visit"
+      },
+      "sr": {
+        "what": "Prvi pregled kod urologa: razgovor o tegobama sa mokrenjem i polnom sferom i pravljenje plana obrade",
+        "how": "Ljekar pita o učestalosti i mlazu mokrenja, bolovima, ranijim infekcijama i operacijama, pregleda spoljne polne organe, po potrebi uradi digitalni pregled prostate i ultrazvuk bešike sa rezidualnom mokraćom i odredi analize; 20-30 minuta",
+        "when": "Učestalo, bolno ili otežano mokrenje, ustajanje noću, krv u mokraći, bol u slabinama ili donjem dijelu stomaka, raniji kamenci, pitanja o prostati u zrelim godinama, smetnje erekcije, pitanja planiranja trudnoće, preventivni muški pregled",
+        "prep": "Ako je planiran ultrazvuk, doći sa umjereno punom bešikom; ponijeti ranije analize mokraće i krvi, snimke i spisak lijekova, a ljekar će po potrebi objasniti kako se pravilno uzima uzorak mokraće",
+        "abnormal": "Nakon pregleda ljekar kaže da li je dovoljno praćenje ili su potrebne analize, urinokultura, ultrazvuk i druge pretrage. Zaključak se najčešće donosi poslije nalaza, a ne na prvom pregledu"
+      },
+      "de": {
+        "what": "Der erste Termin beim Urologen: Besprechung der Beschwerden beim Wasserlassen und im Sexualbereich und Erstellung eines Untersuchungsplans",
+        "how": "Der Arzt fragt nach Häufigkeit und Strahl beim Wasserlassen, Schmerzen, früheren Infekten und Operationen, untersucht die äußeren Geschlechtsorgane, führt bei Bedarf eine Tastuntersuchung der Prostata und eine Blasensonografie mit Restharnbestimmung durch und veranlasst Laborwerte; 20-30 Minuten",
+        "when": "Häufiges, schmerzhaftes oder erschwertes Wasserlassen, nächtliches Aufstehen, Blut im Urin, Flanken- oder Unterbauchschmerzen, frühere Steine, Prostatafragen im höheren Lebensalter, Erektionsstörungen, Fragen zur Familienplanung, Vorsorge für Männer",
+        "prep": "Ist eine Sonografie geplant, mit mäßig gefüllter Blase kommen; frühere Urin- und Blutwerte, Bildgebung und eine Medikamentenliste mitbringen, zur richtigen Uringewinnung erklärt der Arzt bei Bedarf das Vorgehen",
+        "abnormal": "Nach dem Termin sagt der Arzt, ob Beobachtung ausreicht oder Laborwerte, Urinkultur, Ultraschall und weitere Untersuchungen nötig sind. Eine Beurteilung entsteht meist nach den Befunden, nicht beim ersten Besuch"
+      },
+      "tr": {
+        "what": "Üroloji uzmanıyla ilk görüşme: idrar ve cinsel sağlıkla ilgili şikayetlerin değerlendirilip tetkik planının oluşturulması",
+        "how": "Hekim idrar sıklığını ve akımını, ağrıları, geçirilmiş enfeksiyon ve ameliyatları sorar, dış genital bölgeyi muayene eder, gerekirse parmakla prostat muayenesi ve rezidüel idrarlı mesane ultrasonu yapar, tetkik ister; 20-30 dakika",
+        "when": "Sık, ağrılı veya zor idrar yapma, gece kalkma, idrarda kan, belde ya da karın alt bölgesinde ağrı, geçmişte taş öyküsü, ileri yaşta prostat soruları, sertleşme sorunları, gebelik planlama soruları, erkeklerde kontrol muayenesi",
+        "prep": "Ultrason planlanıyorsa mesane orta derecede dolu gelin; önceki idrar ve kan sonuçlarını, görüntülemeleri ve ilaç listesini getirin, gerekirse idrar örneğinin doğru verilişini hekim anlatır",
+        "abnormal": "Muayene sonunda hekim izlemenin yeterli olup olmadığını ya da tetkik, idrar kültürü, ultrason ve başka incelemelerin gerekip gerekmediğini söyler. Değerlendirme çoğunlukla ilk görüşmede değil, sonuçlar geldikten sonra yapılır"
+      },
+      "sr_cyrl": {
+        "what": "Први преглед код уролога: разговор о тегобама са мокрењем и полном сфером и прављење плана обраде",
+        "how": "Љекар пита о учесталости и млазу мокрења, боловима, ранијим инфекцијама и операцијама, прегледа спољне полне органе, по потреби уради дигитални преглед простате и ултразвук бешике са резидуалном мокраћом и одреди анализе; 20-30 минута",
+        "when": "Учестало, болно или отежано мокрење, устајање ноћу, крв у мокраћи, бол у слабинама или доњем дијелу стомака, ранији каменци, питања о простати у зрелим годинама, сметње ерекције, питања планирања трудноће, превентивни мушки преглед",
+        "prep": "Ако је планиран ултразвук, доћи са умјерено пуном бешиком; понијети раније анализе мокраће и крви, снимке и списак лијекова, а љекар ће по потреби објаснити како се правилно узима узорак мокраће",
+        "abnormal": "Након прегледа љекар каже да ли је довољно праћење или су потребне анализе, уринокултура, ултразвук и друге претраге. Закључак се најчешће доноси послије налаза, а не на првом прегледу"
+      }
+    }
+  },
+  {
+    "slug": "sample-reception-and-sterile-container-distribution",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Выдача стерильной посуды для самостоятельного сбора материала и приём принесённого образца в лаборатории",
+        "how": "В лаборатории выдают стерильный контейнер или пробирку и объясняют, как и в какое время собрать мочу, кал, мокроту или другой материал; принесённый образец маркируют, сверяют с данными пациента и направлением и передают на исследование; несколько минут",
+        "when": "Назначен общий анализ мочи или посев, исследование кала или мокроты, контроль после лечения, случаи, когда материал удобнее и правильнее собрать дома в нужное время суток",
+        "prep": "Собирать материал только в выданный стерильный контейнер, не касаясь его внутренней поверхности, соблюдать названное время сбора и условия хранения до доставки, подписать контейнер и принести направление и документ",
+        "abnormal": "Правильно собранный и вовремя доставленный образец избавляет от повторного визита. Если контейнер открывали, он протёк, долго стоял или материал собран не так, как объяснили, лабораторию придётся просить о повторном сборе, а врач учитывает эти условия при оценке результата"
+      },
+      "en": {
+        "what": "Handing out sterile containers for self-collected samples and receiving the material brought to the laboratory",
+        "how": "The laboratory issues a sterile container or tube and explains how and at what time to collect urine, stool, sputum or other material; the sample brought in is labelled, checked against the patient details and the referral and passed on for analysis; a few minutes",
+        "when": "A urine test or culture has been ordered, stool or sputum analysis, follow-up after treatment, situations where the material is better collected at home at the right time of day",
+        "prep": "Collect the material only into the sterile container provided, without touching its inner surface, keep to the stated collection time and storage conditions until delivery, label the container and bring the referral and an ID document",
+        "abnormal": "A correctly collected sample delivered on time avoids a repeat visit. If the container was opened, leaked, stood for a long time or the material was not collected as explained, a new sample has to be requested, and the doctor takes these conditions into account when assessing the result"
+      },
+      "sr": {
+        "what": "Izdavanje sterilnih posuda za samostalno uzimanje materijala i prijem donesenog uzorka u laboratoriji",
+        "how": "U laboratoriji se izda sterilna posuda ili epruveta i objasni kako i u koje vrijeme sakupiti mokraću, stolicu, ispljuvak ili drugi materijal; doneseni uzorak se označi, uporedi sa podacima pacijenta i uputom i proslijedi na analizu; traje nekoliko minuta",
+        "when": "Određen pregled mokraće ili urinokultura, analiza stolice ili ispljuvka, kontrola poslije liječenja, situacije u kojima je materijal praktičnije i tačnije sakupiti kod kuće u odgovarajuće doba dana",
+        "prep": "Materijal sakupljati samo u dobijenu sterilnu posudu, bez dodirivanja unutrašnje površine, poštovati navedeno vrijeme uzimanja i uslove čuvanja do donošenja, potpisati posudu i ponijeti uput i dokument",
+        "abnormal": "Pravilno uzet i na vrijeme donesen uzorak štedi ponovni dolazak. Ako je posuda otvarana, procurila, dugo stajala ili materijal nije uzet kako je objašnjeno, traži se novi uzorak, a ljekar te okolnosti uzima u obzir pri tumačenju nalaza"
+      },
+      "de": {
+        "what": "Ausgabe steriler Gefäße für selbst gewonnene Proben und Annahme des mitgebrachten Materials im Labor",
+        "how": "Im Labor werden ein steriles Gefäß oder Röhrchen ausgegeben und erklärt, wie und zu welcher Zeit Urin, Stuhl, Auswurf oder anderes Material zu gewinnen ist; die mitgebrachte Probe wird beschriftet, mit den Patientendaten und der Überweisung abgeglichen und zur Untersuchung weitergegeben; wenige Minuten",
+        "when": "Angeordnete Urinuntersuchung oder Urinkultur, Stuhl- oder Sputumuntersuchung, Kontrolle nach einer Behandlung, Situationen, in denen das Material zu Hause zur passenden Tageszeit besser gewonnen wird",
+        "prep": "Das Material nur in das ausgegebene sterile Gefäß geben, die Innenfläche nicht berühren, die genannte Gewinnungszeit und die Lagerbedingungen bis zur Abgabe einhalten, das Gefäß beschriften und Überweisung sowie Ausweis mitbringen",
+        "abnormal": "Eine korrekt gewonnene und rechtzeitig abgegebene Probe erspart einen zweiten Weg. Wurde das Gefäß geöffnet, ist es ausgelaufen, stand es lange oder wurde das Material anders als erklärt gewonnen, muss eine neue Probe angefordert werden, und der Arzt berücksichtigt diese Umstände bei der Beurteilung"
+      },
+      "tr": {
+        "what": "Örneğin evde toplanması için steril kap verilmesi ve getirilen numunenin laboratuvarda kabul edilmesi",
+        "how": "Laboratuvar steril kap ya da tüp verir ve idrarın, dışkının, balgamın veya başka materyalin nasıl ve hangi saatte toplanacağını anlatır; getirilen numune etiketlenir, hasta bilgileri ve istem kağıdıyla karşılaştırılır ve çalışılmak üzere iletilir; birkaç dakika sürer",
+        "when": "İdrar tetkiki veya kültür istenmesi, dışkı ya da balgam incelemesi, tedavi sonrası kontrol, materyalin evde günün uygun saatinde toplanmasının daha doğru olduğu durumlar",
+        "prep": "Materyali yalnızca verilen steril kaba, iç yüzeyine dokunmadan toplayın, belirtilen toplama saatine ve teslime kadarki saklama koşullarına uyun, kabın üzerine adınızı yazın, istem kağıdını ve kimliğinizi getirin",
+        "abnormal": "Doğru toplanan ve zamanında teslim edilen numune ikinci bir gidişi gereksiz kılar. Kap açıldıysa, aktıysa, uzun süre beklediyse ya da materyal anlatıldığı gibi toplanmadıysa yeni numune istenir; hekim sonucu değerlendirirken bu koşulları dikkate alır"
+      },
+      "sr_cyrl": {
+        "what": "Издавање стерилних посуда за самостално узимање материјала и пријем донесеног узорка у лабораторији",
+        "how": "У лабораторији се изда стерилна посуда или епрувета и објасни како и у које вријеме сакупити мокраћу, столицу, испљувак или други материјал; донесени узорак се означи, упореди са подацима пацијента и упутом и прослиједи на анализу; траје неколико минута",
+        "when": "Одређен преглед мокраће или уринокултура, анализа столице или испљувка, контрола послије лијечења, ситуације у којима је материјал практичније и тачније сакупити код куће у одговарајуће доба дана",
+        "prep": "Материјал сакупљати само у добијену стерилну посуду, без додиривања унутрашње површине, поштовати наведено вријеме узимања и услове чувања до доношења, потписати посуду и понијети упут и документ",
+        "abnormal": "Правилно узет и на вријеме донесен узорак штеди поновни долазак. Ако је посуда отварана, процурила, дуго стајала или материјал није узет како је објашњено, тражи се нови узорак, а љекар те околности узима у обзир при тумачењу налаза"
+      }
+    }
+  },
+  {
+    "slug": "capillary-blood-draw",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Взятие небольшого количества крови из прокола подушечки пальца, а у младенцев — из пятки",
+        "how": "Кожу обрабатывают антисептиком, делают короткий прокол одноразовым ланцетом, первую каплю снимают, кровь собирают в микропробирку или наносят на тест-полоску, затем место прижимают; меньше минуты",
+        "when": "Небольшой набор показателей, когда большой объём крови не нужен, экспресс-исследования на приёме, плохо доступные для пункции вены, обследование маленьких детей и пожилых пациентов",
+        "prep": "Зависит от назначенного анализа: часть исследований сдают натощак по указанию врача или лаборатории; руки должны быть чистыми и тёплыми, перед проколом их полезно согреть",
+        "abnormal": "Небольшая болезненность и синячок в месте прокола быстро проходят. Если крови идёт мало и палец приходится сильно сжимать, часть показателей может исказиться, и лаборатория предложит взять кровь из вены; результат трактует лечащий врач"
+      },
+      "en": {
+        "what": "Taking a small amount of blood from a fingertip prick, or from the heel in infants",
+        "how": "The skin is cleaned with antiseptic, a short prick is made with a single-use lancet, the first drop is wiped away, the blood is collected into a micro-tube or applied to a test strip and the site is then pressed; under a minute",
+        "when": "A small set of parameters when a large blood volume is not needed, point-of-care tests during a visit, veins that are difficult to puncture, testing of small children and elderly patients",
+        "prep": "Depends on the test ordered: some analyses are taken fasting as instructed by the doctor or the laboratory; hands should be clean and warm, and it helps to warm them before the prick",
+        "abnormal": "Slight soreness and a small bruise at the puncture site pass quickly. If the blood flows poorly and the finger has to be squeezed hard, some values may be distorted and the laboratory will suggest a venous sample; the result is interpreted by the treating doctor"
+      },
+      "sr": {
+        "what": "Uzimanje male količine krvi iz uboda u jagodicu prsta, a kod beba iz pete",
+        "how": "Koža se očisti antiseptikom, lancetom za jednokratnu upotrebu se napravi kratak ubod, prva kap se obriše, krv se skuplja u mikroepruvetu ili nanosi na test traku, a zatim se mjesto pritisne; traje manje od minuta",
+        "when": "Manji broj parametara kada veća količina krvi nije potrebna, brze pretrage tokom pregleda, teško dostupne vene, obrada male djece i starijih pacijenata",
+        "prep": "Zavisi od određene analize: dio pretraga se radi natašte, po uputstvu ljekara ili laboratorije; ruke treba da budu čiste i tople, pa ih je dobro ugrijati prije uboda",
+        "abnormal": "Blaga osjetljivost i mala modrica na mjestu uboda brzo prolaze. Ako krv teško izlazi i prst se mora jako stiskati, dio vrijednosti može biti netačan, pa laboratorija predlaže uzimanje krvi iz vene; nalaz tumači ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Entnahme einer kleinen Blutmenge aus einem Stich in die Fingerbeere, bei Säuglingen aus der Ferse",
+        "how": "Die Haut wird desinfiziert, mit einer Einmallanzette kurz eingestochen, der erste Tropfen abgewischt, das Blut in ein Mikroröhrchen aufgenommen oder auf einen Teststreifen gegeben, danach wird die Stelle komprimiert; unter einer Minute",
+        "when": "Wenige Parameter, wenn keine große Blutmenge nötig ist, Schnelltests während des Termins, schwer punktierbare Venen, Untersuchung kleiner Kinder und älterer Patienten",
+        "prep": "Richtet sich nach der angeordneten Untersuchung: manche Werte werden nüchtern bestimmt, nach Vorgabe von Arzt oder Labor; die Hände sollen sauber und warm sein, vorheriges Anwärmen hilft",
+        "abnormal": "Leichte Druckempfindlichkeit und ein kleiner Bluterguss an der Einstichstelle vergehen rasch. Fließt das Blut schlecht und muss der Finger stark gedrückt werden, können einzelne Werte verfälscht sein, und das Labor schlägt eine venöse Entnahme vor; die Beurteilung erfolgt durch den behandelnden Arzt"
+      },
+      "tr": {
+        "what": "Parmak ucundan, bebeklerde ise topuktan yapılan delmeyle az miktarda kan alınması",
+        "how": "Cilt antiseptikle temizlenir, tek kullanımlık lansetle kısa bir delme yapılır, ilk damla silinir, kan mikro tüpe alınır veya test şeridine damlatılır, ardından bölgeye baskı uygulanır; bir dakikadan kısa sürer",
+        "when": "Çok kan gerektirmeyen az sayıda parametre, muayene sırasında hızlı testler, damar yolu güç bulunan durumlar, küçük çocuklarda ve yaşlı hastalarda tetkik",
+        "prep": "İstenen tetkike göre değişir: bazı analizler hekimin ya da laboratuvarın talimatıyla açken alınır; eller temiz ve sıcak olmalı, delmeden önce ısıtılması yararlıdır",
+        "abnormal": "Delme yerindeki hafif hassasiyet ve küçük morluk kısa sürede geçer. Kan güç geliyorsa ve parmağı sıkmak gerekiyorsa bazı değerler yanıltıcı olabilir; bu durumda laboratuvar damardan kan alınmasını önerir, sonucu ise tedaviyi yürüten hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Узимање мале количине крви из убода у јагодицу прста, а код беба из пете",
+        "how": "Кожа се очисти антисептиком, ланцетом за једнократну употребу се направи кратак убод, прва кап се обрише, крв се скупља у микроепрувету или наноси на тест траку, а затим се мјесто притисне; траје мање од минута",
+        "when": "Мањи број параметара када већа количина крви није потребна, брзе претраге током прегледа, тешко доступне вене, обрада мале дјеце и старијих пацијената",
+        "prep": "Зависи од одређене анализе: дио претрага се ради наташте, по упутству љекара или лабораторије; руке треба да буду чисте и топле, па их је добро угријати прије убода",
+        "abnormal": "Блага осјетљивост и мала модрица на мјесту убода брзо пролазе. Ако крв тешко излази и прст се мора јако стискати, дио вриједности може бити нетачан, па лабораторија предлаже узимање крви из вене; налаз тумачи љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "prothrombin-time-pt",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Коагулологическое исследование: за какое время плазма крови образует сгусток по одному из путей свёртывания",
+        "how": "Венозную кровь набирают в пробирку с цитратом строго до метки, пробирку аккуратно перемешивают, затем плазму отделяют и исследуют на коагулометре; сам забор занимает пару минут",
+        "when": "Подготовка к операции и инвазивным вмешательствам, подбор и контроль терапии антагонистами витамина K, оценка работы печени, обследование при кровоточивости дёсен и обширных синяках, обследование перед родами",
+        "prep": "Специальной подготовки обычно не требуется; сообщить обо всех препаратах, влияющих на свёртывание, и о времени последнего приёма, а при контроле терапии приходить в час, который назвал врач",
+        "abnormal": "Удлинение или укорочение времени свёртывания может быть связано с приёмом антикоагулянтов, нехваткой витамина K, болезнями печени, редкими нарушениями отдельных факторов свёртывания, а также с техникой забора, например неполной пробиркой. Результат оценивает и решение принимает лечащий врач"
+      },
+      "en": {
+        "what": "A coagulation test showing how long blood plasma takes to form a clot along one of the coagulation pathways",
+        "how": "Venous blood is drawn into a citrate tube exactly to the mark, the tube is gently mixed, then the plasma is separated and measured on a coagulometer; the draw itself takes a couple of minutes",
+        "when": "Preparation for surgery and invasive procedures, starting and monitoring treatment with vitamin K antagonists, assessment of liver function, work-up for bleeding gums and extensive bruising, assessment before childbirth",
+        "prep": "Usually no special preparation; report all medicines that affect clotting and when they were last taken, and for treatment monitoring come at the hour the doctor specified",
+        "abnormal": "A longer or shorter clotting time may be related to anticoagulant treatment, a lack of vitamin K, liver disease, rare disorders of individual clotting factors, or to the sampling technique, for example an underfilled tube. The result is assessed and decisions are made by the treating doctor"
+      },
+      "sr": {
+        "what": "Koagulaciona pretraga: za koliko vremena plazma krvi stvori ugrušak jednim od puteva zgrušavanja",
+        "how": "Venska krv se uzima u epruvetu sa citratom tačno do oznake, epruveta se pažljivo promiješa, zatim se plazma odvaja i mjeri na koagulometru; samo uzimanje traje par minuta",
+        "when": "Priprema za operaciju i invazivne zahvate, uvođenje i kontrola terapije antagonistima vitamina K, procjena rada jetre, obrada kod krvarenja desni i velikih modrica, obrada prije porođaja",
+        "prep": "Posebna priprema obično nije potrebna; prijaviti sve lijekove koji utiču na zgrušavanje i vrijeme posljednje doze, a kod kontrole terapije doći u sat koji je odredio ljekar",
+        "abnormal": "Produženo ili skraćeno vrijeme zgrušavanja može biti povezano sa antikoagulantnom terapijom, manjkom vitamina K, bolestima jetre, rijetkim poremećajima pojedinih faktora zgrušavanja, ali i sa načinom uzimanja uzorka, na primjer nedovoljno napunjenom epruvetom. Nalaz procjenjuje i odluku donosi ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Eine Gerinnungsuntersuchung: wie lange das Blutplasma braucht, um über einen der Gerinnungswege ein Gerinnsel zu bilden",
+        "how": "Venöses Blut wird genau bis zur Markierung in ein Citratröhrchen abgenommen, das Röhrchen vorsichtig geschwenkt, dann das Plasma abgetrennt und am Koagulometer gemessen; die Blutentnahme dauert wenige Minuten",
+        "when": "Vorbereitung auf Operationen und invasive Eingriffe, Einstellung und Kontrolle einer Therapie mit Vitamin-K-Antagonisten, Beurteilung der Leberfunktion, Abklärung bei Zahnfleischbluten und ausgedehnten Blutergüssen, Abklärung vor der Entbindung",
+        "prep": "Meist keine besondere Vorbereitung; alle Medikamente angeben, die die Gerinnung beeinflussen, samt Zeitpunkt der letzten Einnahme, und zur Therapiekontrolle zu der vom Arzt genannten Uhrzeit kommen",
+        "abnormal": "Eine verlängerte oder verkürzte Gerinnungszeit kann mit gerinnungshemmender Therapie, Vitamin-K-Mangel, Lebererkrankungen, seltenen Störungen einzelner Gerinnungsfaktoren oder auch mit der Entnahmetechnik, etwa einem zu wenig gefüllten Röhrchen, zusammenhängen. Die Beurteilung und die weiteren Schritte übernimmt der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Kan plazmasının pıhtılaşma yollarından biri üzerinden pıhtı oluşturma süresini gösteren koagülasyon tetkiki",
+        "how": "Damardan alınan kan sitratlı tüpe tam çizgisine kadar doldurulur, tüp nazikçe karıştırılır, ardından plazma ayrılır ve koagülometrede ölçülür; kan alma işlemi birkaç dakika sürer",
+        "when": "Ameliyat ve girişimsel işlemlere hazırlık, K vitamini antagonistleriyle tedavinin başlanması ve izlenmesi, karaciğer işlevinin değerlendirilmesi, diş eti kanaması ve yaygın morluklarda inceleme, doğum öncesi değerlendirme",
+        "prep": "Genellikle özel hazırlık gerekmez; pıhtılaşmayı etkileyen tüm ilaçları ve son alım saatini bildirin, tedavi takibinde hekimin belirttiği saatte gelin",
+        "abnormal": "Pıhtılaşma süresinin uzaması ya da kısalması pıhtı önleyici tedaviyle, K vitamini eksikliğiyle, karaciğer hastalıklarıyla, tek tek pıhtılaşma faktörlerinin seyrek görülen bozukluklarıyla ve örnek alma tekniğiyle, örneğin eksik doldurulmuş tüple ilişkili olabilir. Sonucu tedaviyi yürüten hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Коагулациона претрага: за колико времена плазма крви створи угрушак једним од путева згрушавања",
+        "how": "Венска крв се узима у епрувету са цитратом тачно до ознаке, епрувета се пажљиво промијеша, затим се плазма одваја и мјери на коагулометру; само узимање траје пар минута",
+        "when": "Припрема за операцију и инвазивне захвате, увођење и контрола терапије антагонистима витамина К, процјена рада јетре, обрада код крварења десни и великих модрица, обрада прије порођаја",
+        "prep": "Посебна припрема обично није потребна; пријавити све лијекове који утичу на згрушавање и вријеме посљедње дозе, а код контроле терапије доћи у сат који је одредио љекар",
+        "abnormal": "Продужено или скраћено вријеме згрушавања може бити повезано са антикоагулантном терапијом, мањком витамина К, болестима јетре, ријетким поремећајима појединих фактора згрушавања, али и са начином узимања узорка, на примјер недовољно напуњеном епруветом. Налаз процјењује и одлуку доноси љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "serum-separation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лабораторный этап, на котором из взятой крови выделяют её прозрачную часть без клеток и сгустка — сыворотку, в которой затем выполняют анализы",
+        "how": "Пробирке дают свернуться, затем центрифугируют, и сыворотка отделяется от сгустка; её переносят в отдельную пробирку для исследования, хранения или отправки в другую лабораторию; обычно около четверти часа после забора",
+        "when": "Биохимические, гормональные, иммунологические и серологические исследования, отправка материала в стороннюю лабораторию, сохранение образца для дополнительных тестов или повторной проверки",
+        "prep": "От пациента подготовки не требуется, всё происходит уже после забора крови; условия самого забора, например натощак или нет, определяются назначенными анализами",
+        "abnormal": "Качество сыворотки влияет на результат: мутная после жирной пищи или порозовевшая из-за разрушения эритроцитов сыворотка делает часть показателей недостоверными, и лаборатория просит пересдать кровь. Готовый результат интерпретирует лечащий врач"
+      },
+      "en": {
+        "what": "A laboratory step in which the clear, cell-free part of the drawn blood is obtained — the serum in which the analyses are then performed",
+        "how": "The tube is allowed to clot, then centrifuged, and the serum separates from the clot; it is transferred into a separate tube for analysis, storage or dispatch to another laboratory; usually about fifteen minutes after the draw",
+        "when": "Biochemical, hormonal, immunological and serological tests, sending material to an external laboratory, keeping a sample for additional tests or re-checking",
+        "prep": "No preparation is required from the patient, this happens after the blood draw; the conditions of the draw itself, such as fasting or not, depend on the tests ordered",
+        "abnormal": "The quality of the serum affects the result: serum that is cloudy after fatty food or pink because red cells have broken down makes some values unreliable and the laboratory asks for a repeat sample. The finished result is interpreted by the treating doctor"
+      },
+      "sr": {
+        "what": "Laboratorijski korak u kojem se iz uzete krvi izdvaja njen bistri dio bez ćelija i ugruška, serum, u kojem se zatim rade analize",
+        "how": "Epruveta se ostavi da se krv zgruša, zatim se centrifugira i serum se odvoji od ugruška; prenosi se u posebnu epruvetu za analizu, čuvanje ili slanje u drugu laboratoriju; obično petnaestak minuta nakon vađenja krvi",
+        "when": "Biohemijske, hormonske, imunološke i serološke pretrage, slanje materijala u spoljnu laboratoriju, čuvanje uzorka za dodatne testove ili ponovnu provjeru",
+        "prep": "Od pacijenta se ne traži priprema, sve se dešava nakon vađenja krvi; uslovi samog vađenja, na primjer natašte ili ne, zavise od određenih analiza",
+        "abnormal": "Kvalitet seruma utiče na nalaz: mutan serum poslije masne hrane ili ružičast zbog raspada crvenih krvnih zrnaca čini dio vrijednosti nepouzdanim, pa laboratorija traži novo vađenje krvi. Gotov nalaz tumači ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Ein Laborschritt, bei dem aus dem entnommenen Blut der klare, zellfreie Anteil gewonnen wird — das Serum, in dem anschließend die Analysen erfolgen",
+        "how": "Das Röhrchen gerinnt zunächst, wird dann zentrifugiert, und das Serum trennt sich vom Gerinnsel; es wird in ein eigenes Röhrchen überführt, zur Analyse, zur Lagerung oder zum Versand an ein anderes Labor; meist etwa eine Viertelstunde nach der Entnahme",
+        "when": "Klinisch-chemische, hormonelle, immunologische und serologische Untersuchungen, Versand von Material an ein externes Labor, Aufbewahrung einer Probe für Zusatztests oder eine Nachkontrolle",
+        "prep": "Vom Patienten ist keine Vorbereitung nötig, der Schritt erfolgt nach der Blutentnahme; die Bedingungen der Entnahme selbst, etwa nüchtern oder nicht, richten sich nach den angeordneten Untersuchungen",
+        "abnormal": "Die Qualität des Serums beeinflusst das Ergebnis: ein nach fettreicher Mahlzeit trübes oder durch zerfallene rote Blutkörperchen rötliches Serum macht einzelne Werte unzuverlässig, und das Labor bittet um eine neue Entnahme. Den fertigen Befund beurteilt der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Alınan kandan hücre ve pıhtı içermeyen berrak kısmın, yani analizlerin çalışılacağı serumun ayrıldığı laboratuvar aşaması",
+        "how": "Tüpteki kanın pıhtılaşması beklenir, ardından santrifüj edilir ve serum pıhtıdan ayrılır; analiz, saklama ya da başka bir laboratuvara gönderim için ayrı bir tüpe aktarılır; genellikle kan alımından yaklaşık on beş dakika sonra",
+        "when": "Biyokimyasal, hormonal, immünolojik ve serolojik tetkikler, materyalin dış laboratuvara gönderilmesi, ek testler veya yeniden kontrol için örneğin saklanması",
+        "prep": "Hastadan hazırlık istenmez, bu aşama kan alındıktan sonra gerçekleşir; kan alımının koşulları, örneğin aç olup olmama, istenen tetkiklere göre belirlenir",
+        "abnormal": "Serumun niteliği sonucu etkiler: yağlı yemek sonrası bulanık ya da alyuvarların parçalanması nedeniyle pembeleşmiş serum bazı değerleri güvenilmez kılar ve laboratuvar kanın yeniden alınmasını ister. Çıkan sonucu tedaviyi yürüten hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Лабораторијски корак у којем се из узете крви издваја њен бистри дио без ћелија и угрушка, серум, у којем се затим раде анализе",
+        "how": "Епрувета се остави да се крв згруша, затим се центрифугира и серум се одвоји од угрушка; преноси се у посебну епрувету за анализу, чување или слање у другу лабораторију; обично петнаестак минута након вађења крви",
+        "when": "Биохемијске, хормонске, имунолошке и серолошке претраге, слање материјала у спољну лабораторију, чување узорка за додатне тестове или поновну провјеру",
+        "prep": "Од пацијента се не тражи припрема, све се дешава након вађења крви; услови самог вађења, на примјер наташте или не, зависе од одређених анализа",
+        "abnormal": "Квалитет серума утиче на налаз: мутан серум послије масне хране или ружичаст због распада црвених крвних зрнаца чини дио вриједности непоузданим, па лабораторија тражи ново вађење крви. Готов налаз тумачи љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "home-visit-city-center",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приезд врача к пациенту домой в пределах ближней центральной зоны города",
+        "how": "После вызова согласуют время и точный адрес, врач приезжает со своим набором для осмотра, при необходимости выполняет на месте базовые процедуры и оставляет заключение с назначениями; длительность зависит от состояния пациента",
+        "when": "Состояние, при котором трудно добраться до клиники: температура и слабость, обострение хронической болезни, пожилые и маломобильные пациенты, восстановление после операции, осмотр ребёнка, продление назначений на дому",
+        "prep": "Приготовить документ и медицинские бумаги — выписки, последние анализы, список постоянных лекарств с дозами, записи температуры и давления; обеспечить доступ в подъезд и квартиру, освободить освещённое место, где пациент может лечь, и увести домашних животных",
+        "abnormal": "Врач на месте решает, достаточно ли лечения дома, нужны ли анализы и повторный визит или требуется госпитализация. При угрожающих жизни признаках — потере сознания, затруднённом дыхании, сильной боли в груди — звонят в экстренную службу, а не ждут визита"
+      },
+      "en": {
+        "what": "A doctor travelling to the patient's home within the inner city zone",
+        "how": "After the call the time and exact address are agreed, the doctor arrives with an examination kit, carries out basic procedures on the spot if needed and leaves a report with the prescriptions; the length depends on the patient's condition",
+        "when": "A condition that makes getting to a clinic difficult: fever and weakness, a flare of a chronic illness, elderly and poorly mobile patients, recovery after surgery, examination of a child, renewing prescriptions at home",
+        "prep": "Have an ID and medical papers ready — discharge letters, recent test results, a list of regular medicines with doses, temperature and blood pressure records; make sure the entrance and the flat are accessible, clear a well-lit place where the patient can lie down and move pets away",
+        "abnormal": "The doctor decides on the spot whether treatment at home is enough, whether tests and a repeat visit are needed or whether hospital admission is required. With life-threatening signs — loss of consciousness, difficulty breathing, severe chest pain — call the emergency service instead of waiting for a visit"
+      },
+      "sr": {
+        "what": "Dolazak ljekara pacijentu kući u okviru užeg gradskog područja",
+        "how": "Nakon poziva dogovaraju se vrijeme i tačna adresa, ljekar dolazi sa svojim priborom za pregled, po potrebi na licu mjesta uradi osnovne zahvate i ostavi nalaz sa terapijom; trajanje zavisi od stanja pacijenta",
+        "when": "Stanje u kojem je teško doći do klinike: povišena temperatura i slabost, pogoršanje hronične bolesti, stariji i slabo pokretni pacijenti, oporavak poslije operacije, pregled djeteta, produženje terapije kod kuće",
+        "prep": "Pripremiti dokument i medicinsku dokumentaciju, otpusna pisma, posljednje nalaze, spisak stalnih lijekova sa dozama, zapise temperature i pritiska; omogućiti ulaz u zgradu i stan, osloboditi osvijetljeno mjesto na kojem pacijent može leći i skloniti kućne ljubimce",
+        "abnormal": "Ljekar na licu mjesta odlučuje da li je liječenje kod kuće dovoljno, da li su potrebne analize i ponovni dolazak ili je potrebna hospitalizacija. Kod znakova opasnih po život, gubitka svijesti, otežanog disanja ili jakog bola u grudima, zove se hitna pomoć, a ne čeka se posjeta"
+      },
+      "de": {
+        "what": "Ein Arzt kommt zum Patienten nach Hause, innerhalb der engeren Innenstadtzone",
+        "how": "Nach dem Anruf werden Zeit und genaue Adresse abgestimmt, der Arzt kommt mit seiner Untersuchungsausrüstung, führt bei Bedarf einfache Maßnahmen vor Ort durch und hinterlässt einen Befund mit Verordnungen; die Dauer hängt vom Zustand ab",
+        "when": "Ein Zustand, der den Weg in die Praxis erschwert: Fieber und Schwäche, Verschlechterung einer chronischen Erkrankung, ältere und wenig mobile Patienten, Erholung nach einer Operation, Untersuchung eines Kindes, Verlängerung von Verordnungen zu Hause",
+        "prep": "Ausweis und Unterlagen bereitlegen — Entlassungsbriefe, aktuelle Befunde, Liste der Dauermedikamente mit Dosierung, Aufzeichnungen zu Temperatur und Blutdruck; Zugang zu Haus und Wohnung sichern, einen gut beleuchteten Platz zum Hinlegen frei machen und Haustiere wegbringen",
+        "abnormal": "Der Arzt entscheidet vor Ort, ob die Behandlung zu Hause ausreicht, ob Laborwerte und ein weiterer Besuch nötig sind oder eine Einweisung ins Krankenhaus erforderlich ist. Bei lebensbedrohlichen Zeichen — Bewusstlosigkeit, Atemnot, starken Brustschmerzen — wird der Notruf gewählt und nicht auf den Hausbesuch gewartet"
+      },
+      "tr": {
+        "what": "Hekimin şehrin dar merkez bölgesi içinde hastanın evine gitmesi",
+        "how": "Çağrıdan sonra saat ve tam adres kararlaştırılır, hekim muayene çantasıyla gelir, gerekirse yerinde temel işlemleri yapar ve tedavi önerilerini içeren bir rapor bırakır; süre hastanın durumuna göre değişir",
+        "when": "Kliniğe gitmenin güç olduğu durumlar: ateş ve halsizlik, kronik hastalığın alevlenmesi, yaşlı ve hareketi kısıtlı hastalar, ameliyat sonrası iyileşme dönemi, çocuğun muayenesi, evde reçete yenilenmesi",
+        "prep": "Kimliği ve tıbbi belgeleri hazırlayın: çıkış raporları, son tetkikler, dozlarıyla birlikte sürekli kullanılan ilaç listesi, ateş ve tansiyon kayıtları; binaya ve daireye girişi sağlayın, hastanın uzanabileceği aydınlık bir yer açın ve evcil hayvanları uzaklaştırın",
+        "abnormal": "Hekim yerinde, evde tedavinin yeterli olup olmadığına, tetkik ve yeni bir ziyaretin gerekip gerekmediğine ya da hastaneye yatış gerekip gerekmediğine karar verir. Bilinç kaybı, solunum güçlüğü, şiddetli göğüs ağrısı gibi yaşamı tehdit eden belirtilerde ziyaret beklenmez, acil servis aranır"
+      },
+      "sr_cyrl": {
+        "what": "Долазак љекара пацијенту кући у оквиру ужег градског подручја",
+        "how": "Након позива договарају се вријеме и тачна адреса, љекар долази са својим прибором за преглед, по потреби на лицу мјеста уради основне захвате и остави налаз са терапијом; трајање зависи од стања пацијента",
+        "when": "Стање у којем је тешко доћи до клинике: повишена температура и слабост, погоршање хроничне болести, старији и слабо покретни пацијенти, опоравак послије операције, преглед дјетета, продужење терапије код куће",
+        "prep": "Припремити документ и медицинску документацију, отпусна писма, посљедње налазе, списак сталних лијекова са дозама, записе температуре и притиска; омогућити улаз у зграду и стан, ослободити освијетљено мјесто на којем пацијент може лећи и склонити кућне љубимце",
+        "abnormal": "Љекар на лицу мјеста одлучује да ли је лијечење код куће довољно, да ли су потребне анализе и поновни долазак или је потребна хоспитализација. Код знакова опасних по живот, губитка свијести, отежаног дисања или јаког бола у грудима, зове се хитна помоћ, а не чека се посјета"
+      }
+    }
+  },
+  {
+    "slug": "home-visit-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Полноценный врачебный осмотр, проведённый в домашней обстановке, без поездки в клинику",
+        "how": "Врач расспрашивает о жалобах, измеряет температуру, давление, пульс и насыщение крови кислородом, выслушивает лёгкие и сердце, осматривает горло, живот и кожу, при наличии портативного оборудования снимает ЭКГ или делает экспресс-тест, затем пишет заключение и назначения",
+        "when": "Высокая температура и слабость, кашель и одышка у взрослых и детей, боль в животе, головокружение, обострение хронического заболевания, наблюдение лежачих пациентов, осмотр после выписки из стационара",
+        "prep": "Освободить место, где пациента можно уложить и раздеть до пояса, приготовить термометр и тонометр, если они есть, собрать выписки и упаковки принимаемых лекарств, записать время и дозу последнего принятого жаропонижающего и свои вопросы",
+        "abnormal": "Дома доступна не вся диагностика: врач может назначить анализы, снимки или УЗИ, которые делают в клинике, и назвать срок повторного осмотра. Если за этот срок улучшения нет или состояние ухудшилось раньше, нужен повторный вызов или обращение в клинику"
+      },
+      "en": {
+        "what": "A full medical examination carried out in the home setting, without travelling to a clinic",
+        "how": "The doctor asks about the complaints, measures temperature, blood pressure, pulse and oxygen saturation, listens to the lungs and heart, examines the throat, abdomen and skin, records an ECG or runs a rapid test if portable equipment is available, and then writes a report with prescriptions",
+        "when": "High fever and weakness, cough and breathlessness in adults and children, abdominal pain, dizziness, a flare of a chronic disease, monitoring of bedbound patients, review after discharge from hospital",
+        "prep": "Clear a place where the patient can lie down and undress to the waist, have a thermometer and blood pressure monitor ready if available, gather discharge letters and the packs of medicines taken, note the time and dose of the last fever medicine and write down your questions",
+        "abnormal": "Not all diagnostics are available at home: the doctor may order tests, imaging or an ultrasound to be done at a clinic and name a date for review. If there is no improvement within that time, or the condition worsens sooner, a repeat visit or a trip to the clinic is needed"
+      },
+      "sr": {
+        "what": "Potpun ljekarski pregled obavljen u kućnim uslovima, bez odlaska u kliniku",
+        "how": "Ljekar pita o tegobama, mjeri temperaturu, pritisak, puls i zasićenost krvi kiseonikom, osluškuje pluća i srce, pregleda grlo, stomak i kožu, uz prenosivu opremu snimi EKG ili uradi brzi test, a zatim napiše nalaz i terapiju",
+        "when": "Visoka temperatura i slabost, kašalj i otežano disanje kod odraslih i djece, bol u stomaku, vrtoglavica, pogoršanje hronične bolesti, praćenje nepokretnih pacijenata, pregled nakon otpusta iz bolnice",
+        "prep": "Osloboditi mjesto na kojem pacijent može leći i razgolititi se do pojasa, pripremiti toplomjer i aparat za pritisak ako postoje, prikupiti otpusna pisma i kutije lijekova koji se uzimaju, zapisati vrijeme i dozu posljednjeg lijeka za temperaturu i svoja pitanja",
+        "abnormal": "Kod kuće nije dostupna sva dijagnostika: ljekar može odrediti analize, snimke ili ultrazvuk koji se rade u klinici i navesti rok za kontrolu. Ako u tom roku nema poboljšanja ili se stanje pogorša ranije, potrebni su novi poziv ili dolazak u kliniku"
+      },
+      "de": {
+        "what": "Eine vollständige ärztliche Untersuchung im häuslichen Umfeld, ohne Fahrt in die Praxis",
+        "how": "Der Arzt fragt nach den Beschwerden, misst Temperatur, Blutdruck, Puls und Sauerstoffsättigung, hört Lunge und Herz ab, untersucht Rachen, Bauch und Haut, schreibt bei vorhandenem tragbarem Gerät ein EKG oder führt einen Schnelltest durch und verfasst anschließend Befund und Verordnungen",
+        "when": "Hohes Fieber und Schwäche, Husten und Atemnot bei Erwachsenen und Kindern, Bauchschmerzen, Schwindel, Verschlechterung einer chronischen Erkrankung, Betreuung bettlägeriger Patienten, Kontrolle nach Klinikentlassung",
+        "prep": "Einen Platz frei machen, an dem der Patient liegen und sich bis zur Hüfte freimachen kann, Fieberthermometer und Blutdruckmessgerät bereitlegen, falls vorhanden, Entlassungsbriefe und die Packungen der eingenommenen Medikamente sammeln, Zeitpunkt und Dosis des zuletzt genommenen Fiebermittels sowie die eigenen Fragen notieren",
+        "abnormal": "Zu Hause ist nicht jede Diagnostik möglich: Der Arzt kann Laborwerte, Röntgen oder Ultraschall in der Klinik veranlassen und einen Kontrolltermin nennen. Bleibt die Besserung bis dahin aus oder verschlechtert sich der Zustand früher, ist ein erneuter Besuch oder der Weg in die Klinik nötig"
+      },
+      "tr": {
+        "what": "Kliniğe gitmeden, ev ortamında yapılan eksiksiz hekim muayenesi",
+        "how": "Hekim şikayetleri sorar, ateş, tansiyon, nabız ve kandaki oksijen doygunluğunu ölçer, akciğerleri ve kalbi dinler, boğazı, karnı ve cildi muayene eder, taşınabilir cihaz varsa EKG çeker ya da hızlı test yapar, ardından rapor ve tedavi önerilerini yazar",
+        "when": "Yüksek ateş ve halsizlik, yetişkinlerde ve çocuklarda öksürük ve nefes darlığı, karın ağrısı, baş dönmesi, kronik hastalığın alevlenmesi, yatağa bağımlı hastaların izlenmesi, hastaneden çıkış sonrası kontrol",
+        "prep": "Hastanın uzanıp belden yukarısını açabileceği bir yer hazırlayın, varsa derece ve tansiyon aletini çıkarın, çıkış raporlarını ve kullanılan ilaç kutularını toplayın, son alınan ateş düşürücünün saatini ve dozunu ve sorularınızı not edin",
+        "abnormal": "Evde her tetkik mümkün değildir: hekim klinikte yapılacak tahlil, film ya da ultrason isteyebilir ve bir kontrol tarihi verir. Bu süre içinde düzelme olmazsa ya da durum daha erken kötüleşirse yeniden çağrı yapmak veya kliniğe başvurmak gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Потпун љекарски преглед обављен у кућним условима, без одласка у клинику",
+        "how": "Љекар пита о тегобама, мјери температуру, притисак, пулс и засићеност крви кисеоником, ослушкује плућа и срце, прегледа грло, стомак и кожу, уз преносиву опрему сними ЕКГ или уради брзи тест, а затим напише налаз и терапију",
+        "when": "Висока температура и слабост, кашаљ и отежано дисање код одраслих и дјеце, бол у стомаку, вртоглавица, погоршање хроничне болести, праћење непокретних пацијената, преглед након отпуста из болнице",
+        "prep": "Ослободити мјесто на којем пацијент може лећи и разголитити се до појаса, припремити топломјер и апарат за притисак ако постоје, прикупити отпусна писма и кутије лијекова који се узимају, записати вријеме и дозу посљедњег лијека за температуру и своја питања",
+        "abnormal": "Код куће није доступна сва дијагностика: љекар може одредити анализе, снимке или ултразвук који се раде у клиници и навести рок за контролу. Ако у том року нема побољшања или се стање погорша раније, потребни су нови позив или долазак у клинику"
+      }
+    }
+  },
+  {
+    "slug": "home-visit-doctor-and-nurse",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Выезд на дом бригады из врача и медицинской сестры, когда кроме осмотра нужны процедуры на месте",
+        "how": "Врач осматривает пациента и определяет тактику, медицинская сестра тут же выполняет назначенное — внутримышечные и внутривенные инъекции, капельницу, забор крови, перевязку, установку катетера и уход за ним; бригада остаётся до окончания процедуры",
+        "when": "Обострение хронической болезни со слабостью и обезвоживанием, курс инъекций и инфузий на дому, уход за послеоперационной раной и стомой, наблюдение лежачих и паллиативных пациентов, забор анализов у тех, кому трудно доехать",
+        "prep": "Освободить стол для стерильного материала и место, где пациент пролежит процедуру, приготовить выписки, список лекарств и назначенные препараты, если их покупали заранее, обеспечить доступ к воде и розетке и заранее сказать об аллергии на лекарства и пластырь",
+        "abnormal": "После инфузии и инъекций бригада обычно некоторое время наблюдает за состоянием; синяк в месте укола бывает и проходит сам. Сыпь, затруднённое дыхание, резкая слабость во время или после процедуры, а также ухудшение, при котором домашнего лечения мало, означают вызов скорой помощи и решение врача о госпитализации"
+      },
+      "en": {
+        "what": "A home visit by a team of a doctor and a nurse, when procedures on site are needed in addition to the examination",
+        "how": "The doctor examines the patient and decides on the approach, and the nurse carries out what is ordered on the spot — intramuscular and intravenous injections, an infusion, blood sampling, dressing changes, catheter placement and care; the team stays until the procedure is finished",
+        "when": "A flare of a chronic illness with weakness and dehydration, a course of injections and infusions at home, care of a surgical wound or stoma, monitoring of bedbound and palliative patients, blood sampling for those who cannot travel",
+        "prep": "Clear a table for sterile supplies and a place where the patient can lie through the procedure, have discharge letters, the medicine list and any medicines bought in advance ready, provide access to water and a power socket, and mention allergies to medicines and adhesive plaster beforehand",
+        "abnormal": "After an infusion or injections the team usually watches the patient for a while; a bruise at the injection site happens and clears on its own. A rash, difficulty breathing or sudden weakness during or after the procedure, as well as a deterioration that home treatment cannot cover, mean calling the emergency service and a decision by the doctor about hospital admission"
+      },
+      "sr": {
+        "what": "Dolazak ekipe ljekara i medicinskog tehničara kući, kada su osim pregleda potrebni i zahvati na licu mjesta",
+        "how": "Ljekar pregleda pacijenta i odredi plan, a medicinski tehničar odmah izvodi ono što je propisano, intramuskularne i intravenske injekcije, infuziju, vađenje krvi, previjanje, postavljanje katetera i njegu; ekipa ostaje do kraja zahvata",
+        "when": "Pogoršanje hronične bolesti sa slabošću i dehidracijom, serija injekcija i infuzija kod kuće, njega operativne rane i stome, praćenje nepokretnih i palijativnih pacijenata, vađenje krvi kod onih kojima je dolazak težak",
+        "prep": "Osloboditi sto za sterilni materijal i mjesto na kojem pacijent može ležati tokom zahvata, pripremiti otpusna pisma, spisak lijekova i unaprijed kupljene lijekove, omogućiti pristup vodi i utičnici i unaprijed reći za alergije na lijekove i flaster",
+        "abnormal": "Poslije infuzije i injekcija ekipa obično neko vrijeme prati stanje; modrica na mjestu uboda se javlja i sama prolazi. Osip, otežano disanje, nagla slabost tokom ili poslije zahvata, kao i pogoršanje koje liječenje kod kuće ne pokriva, znače poziv hitne pomoći i odluku ljekara o hospitalizaciji"
+      },
+      "de": {
+        "what": "Ein Hausbesuch durch ein Team aus Arzt und Pflegekraft, wenn neben der Untersuchung auch Maßnahmen vor Ort nötig sind",
+        "how": "Der Arzt untersucht den Patienten und legt das Vorgehen fest, die Pflegekraft führt das Angeordnete gleich aus — intramuskuläre und intravenöse Injektionen, Infusion, Blutentnahme, Verbandwechsel, Anlage und Pflege eines Katheters; das Team bleibt bis zum Ende der Maßnahme",
+        "when": "Verschlechterung einer chronischen Erkrankung mit Schwäche und Flüssigkeitsmangel, Injektions- und Infusionsserien zu Hause, Versorgung einer Operationswunde oder eines Stomas, Betreuung bettlägeriger und palliativer Patienten, Blutentnahme bei Menschen, die den Weg nicht schaffen",
+        "prep": "Einen Tisch für steriles Material und einen Platz zum Liegen während der Maßnahme frei machen, Entlassungsbriefe, Medikamentenliste und bereits gekaufte Präparate bereitlegen, Zugang zu Wasser und Steckdose ermöglichen und Allergien gegen Medikamente und Pflaster vorab nennen",
+        "abnormal": "Nach Infusion und Injektionen beobachtet das Team den Zustand meist noch eine Weile; ein Bluterguss an der Einstichstelle kommt vor und vergeht von selbst. Hautausschlag, Atemnot oder plötzliche Schwäche während oder nach der Maßnahme sowie eine Verschlechterung, die zu Hause nicht aufzufangen ist, bedeuten Notruf und eine ärztliche Entscheidung über die Einweisung"
+      },
+      "tr": {
+        "what": "Muayenenin yanında yerinde işlem de gerektiğinde hekim ve hemşireden oluşan ekibin eve gelmesi",
+        "how": "Hekim hastayı muayene edip planı belirler, hemşire istenenleri hemen uygular: kas içi ve damar içi enjeksiyonlar, serum, kan alma, pansuman, kateter takılması ve bakımı; ekip işlem bitene kadar kalır",
+        "when": "Halsizlik ve sıvı kaybıyla seyreden kronik hastalık alevlenmesi, evde enjeksiyon ve serum kürü, ameliyat yarası ve stoma bakımı, yatağa bağımlı ve palyatif hastaların izlenmesi, gelmekte zorlananlardan kan alınması",
+        "prep": "Steril malzeme için bir masa ve hastanın işlem boyunca uzanabileceği bir yer hazırlayın, çıkış raporlarını, ilaç listesini ve önceden alınmış ilaçları çıkarın, suya ve prize erişim sağlayın, ilaç ve flaster alerjilerini önceden bildirin",
+        "abnormal": "Serum ve enjeksiyon sonrası ekip genellikle bir süre durumu izler; iğne yerindeki morluk görülebilir ve kendiliğinden geçer. İşlem sırasında veya sonrasında döküntü, nefes darlığı, ani halsizlik ve evde tedaviyle karşılanamayan kötüleşme acil servisin aranmasını ve hastaneye yatış kararının hekimce verilmesini gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Долазак екипе љекара и медицинског техничара кући, када су осим прегледа потребни и захвати на лицу мјеста",
+        "how": "Љекар прегледа пацијента и одреди план, а медицински техничар одмах изводи оно што је прописано, интрамускуларне и интравенске ињекције, инфузију, вађење крви, превијање, постављање катетера и његу; екипа остаје до краја захвата",
+        "when": "Погоршање хроничне болести са слабошћу и дехидрацијом, серија ињекција и инфузија код куће, њега оперативне ране и стоме, праћење непокретних и палијативних пацијената, вађење крви код оних којима је долазак тежак",
+        "prep": "Ослободити сто за стерилни материјал и мјесто на којем пацијент може лежати током захвата, припремити отпусна писма, списак лијекова и унапријед купљене лијекове, омогућити приступ води и утичници и унапријед рећи за алергије на лијекове и фластер",
+        "abnormal": "Послије инфузије и ињекција екипа обично неко вријеме прати стање; модрица на мјесту убода се јавља и сама пролази. Осип, отежано дисање, нагла слабост током или послије захвата, као и погоршање које лијечење код куће не покрива, значе позив хитне помоћи и одлуку љекара о хоспитализацији"
+      }
+    }
+  },
+  {
+    "slug": "prick-test-nutritive-and-inhalation-allergens",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Кожная проба, в которой за один приём проверяют и пищевые, и вдыхаемые аллергены",
+        "how": "На размеченную кожу предплечья или спины наносят капли экстрактов обеих групп вместе с положительным и отрицательным контролем и через каждую каплю делают микропрокол ланцетом, затем появившиеся волдыри сравнивают с контролями примерно через четверть часа; с ожиданием около получаса",
+        "when": "Жалобы, которые не укладываются в одну группу: круглогодичный насморк вместе с сыпью после еды, крапивница и зуд неясной причины, обострения астмы и атопического дерматита, обследование ребёнка перед решениями о питании и условиях дома",
+        "prep": "Заранее прекратить приём антигистаминных и некоторых других препаратов на срок, который называет аллерголог, не наносить кремы и мази на зону проб, прийти с чистой кожей и вне обострения кожной болезни; сроки после тяжёлой реакции определяет врач",
+        "abnormal": "Волдырь на месте пробы означает сенсибилизацию к аллергену, а не готовый диагноз: совпадение реакции с жалобами оценивает аллерголог, а при расхождении добавляет анализы крови или пробу с продуктом под наблюдением"
+      },
+      "en": {
+        "what": "A skin test in which both food and airborne allergens are checked in one session",
+        "how": "Drops of extracts from both groups, together with a positive and a negative control, are placed on the marked skin of the forearm or back and the skin is pricked through each drop with a lancet, then the weals that appear are compared with the controls after about fifteen minutes; around half an hour including the wait",
+        "when": "Complaints that do not fit one group: year-round rhinitis together with a rash after meals, urticaria and itching of unclear cause, flares of asthma and atopic dermatitis, assessment of a child before decisions about diet and the home environment",
+        "prep": "Stop antihistamines and certain other medicines in advance for the period the allergist specifies, do not apply creams or ointments to the test area, come with clean skin and not during a flare of a skin disease; after a severe reaction the timing is set by the doctor",
+        "abnormal": "A weal at the test site means sensitisation to the allergen, not a ready diagnosis: the allergist judges whether the reaction matches the symptoms and, where they differ, adds blood tests or a supervised challenge with the food"
+      },
+      "sr": {
+        "what": "Kožni test u kojem se u jednoj posjeti provjeravaju i nutritivni i inhalacioni alergeni",
+        "how": "Na obilježenu kožu podlaktice ili leđa stavljaju se kapi ekstrakata obje grupe zajedno sa pozitivnom i negativnom kontrolom i kroz svaku kap se lancetom ubode koža, a nastale urtike se nakon petnaestak minuta upoređuju sa kontrolama; sa čekanjem oko pola sata",
+        "when": "Tegobe koje ne pripadaju samo jednoj grupi: cjelogodišnje curenje nosa uz osip poslije jela, koprivnjača i svrab nejasnog uzroka, pogoršanja astme i atopijskog dermatitisa, obrada djeteta prije odluka o ishrani i uslovima u domu",
+        "prep": "Unaprijed prekinuti antihistaminike i pojedine druge lijekove na rok koji odredi alergolog, ne mazati kreme i masti na predio testiranja, doći čiste kože i van pogoršanja kožne bolesti; rokove poslije teške reakcije određuje ljekar",
+        "abnormal": "Urtika na mjestu testa znači preosjetljivost na alergen, a ne gotovu dijagnozu: da li se reakcija poklapa sa tegobama procjenjuje alergolog, a kod neslaganja dodaje analize krvi ili provokaciju namirnicom pod nadzorom"
+      },
+      "de": {
+        "what": "Ein Hauttest, bei dem Nahrungs- und Inhalationsallergene in einem Termin geprüft werden",
+        "how": "Auf die markierte Haut von Unterarm oder Rücken werden Tropfen der Extrakte beider Gruppen zusammen mit einer Positiv- und einer Negativkontrolle aufgebracht und die Haut durch jeden Tropfen mit einer Lanzette angestochen, nach etwa fünfzehn Minuten werden die entstandenen Quaddeln mit den Kontrollen verglichen; mit Wartezeit rund eine halbe Stunde",
+        "when": "Beschwerden, die nicht in eine Gruppe passen: ganzjähriger Schnupfen zusammen mit Hautausschlag nach dem Essen, Nesselsucht und Juckreiz unklarer Ursache, Schübe von Asthma und Neurodermitis, Abklärung bei Kindern vor Entscheidungen zu Ernährung und Wohnumfeld",
+        "prep": "Antihistaminika und bestimmte andere Medikamente vorab für den vom Allergologen genannten Zeitraum absetzen, keine Cremes und Salben auf das Testareal auftragen, mit sauberer Haut und nicht im Schub einer Hauterkrankung kommen; nach einer schweren Reaktion legt der Arzt den Zeitpunkt fest",
+        "abnormal": "Eine Quaddel an der Teststelle bedeutet eine Sensibilisierung gegen das Allergen, keine fertige Diagnose: ob die Reaktion zu den Beschwerden passt, beurteilt der Allergologe und ergänzt bei Abweichungen Blutuntersuchungen oder eine überwachte Provokation mit dem Nahrungsmittel"
+      },
+      "tr": {
+        "what": "Besin ve solunum yoluyla alınan alerjenlerin tek seansta birlikte denendiği deri testi",
+        "how": "Ön kolun ya da sırtın işaretlenmiş derisine her iki gruptan ekstre damlaları pozitif ve negatif kontrolle birlikte damlatılır ve her damlanın içinden lansetle deri delinir, yaklaşık on beş dakika sonra oluşan kabarcıklar kontrollerle karşılaştırılır; bekleme süresiyle birlikte yarım saat kadar",
+        "when": "Tek bir gruba sığmayan şikayetler: yıl boyu süren burun akıntısıyla birlikte yemek sonrası döküntü, nedeni belirsiz kurdeşen ve kaşıntı, astım ve atopik dermatit alevlenmeleri, beslenme ve ev koşullarına ilişkin kararlar öncesinde çocuğun değerlendirilmesi",
+        "prep": "Antihistaminikleri ve bazı diğer ilaçları alerji uzmanının belirttiği süre boyunca önceden bırakın, test bölgesine krem ve merhem sürmeyin, deriniz temiz olarak ve cilt hastalığının alevlenme döneminde olmadan gelin; ağır reaksiyon sonrası zamanlamayı hekim belirler",
+        "abnormal": "Test yerindeki kabarcık alerjene duyarlanmayı gösterir, hazır bir tanı değildir: tepkinin şikayetlerle örtüşüp örtüşmediğini alerji uzmanı değerlendirir, uyuşmazlık varsa kan tetkikleri ya da gözetim altında besinle provokasyon ekler"
+      },
+      "sr_cyrl": {
+        "what": "Кожни тест у којем се у једној посјети провјеравају и нутритивни и инхалациони алергени",
+        "how": "На обиљежену кожу подлактице или леђа стављају се капи екстраката обје групе заједно са позитивном и негативном контролом и кроз сваку кап се ланцетом убоде кожа, а настале уртике се након петнаестак минута упоређују са контролама; са чекањем око пола сата",
+        "when": "Тегобе које не припадају само једној групи: цјелогодишње цурење носа уз осип послије јела, копривњача и свраб нејасног узрока, погоршања астме и атопијског дерматитиса, обрада дјетета прије одлука о исхрани и условима у дому",
+        "prep": "Унапријед прекинути антихистаминике и поједине друге лијекове на рок који одреди алерголог, не мазати креме и масти на предио тестирања, доћи чисте коже и ван погоршања кожне болести; рокове послије тешке реакције одређује љекар",
+        "abnormal": "Уртика на мјесту теста значи преосјетљивост на алерген, а не готову дијагнозу: да ли се реакција поклапа са тегобама процјењује алерголог, а код неслагања додаје анализе крви или провокацију намирницом под надзором"
+      }
+    }
+  },
+  {
+    "slug": "allergist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приём аллерголога, на котором разбирают связь симптомов с возможными аллергенами и составляют план обследования",
+        "how": "Врач подробно расспрашивает, когда и где появляются жалобы, что пациент ел и чем дышал, как состояние меняется по сезонам и в поездках, осматривает кожу, нос и глаза, выслушивает лёгкие, при необходимости сразу назначает кожные пробы, анализы крови или спирометрию; 20-40 минут",
+        "when": "Сезонный и круглогодичный насморк, чихание, зуд в носу и глазах, приступы кашля и свистящего дыхания, крапивница и отёки, реакции на еду, лекарства и укусы насекомых, атопический дерматит, подготовка к иммунотерапии",
+        "prep": "Вести и принести дневник симптомов с датами и обстоятельствами, список всех принимаемых препаратов и прежние анализы; если кожные пробы возможны в тот же день, заранее уточнить, за сколько дней отменять антигистаминные",
+        "abnormal": "По итогам приёма врач говорит, похожа ли картина на аллергическую и какие исследования это подтвердят или исключат. Похожие жалобы дают и неаллергические причины, поэтому вывод делают после результатов"
+      },
+      "en": {
+        "what": "An appointment with an allergist where the link between the symptoms and possible allergens is reviewed and a plan of investigation is drawn up",
+        "how": "The doctor asks in detail when and where the complaints appear, what the patient ate and was exposed to, how the condition changes with the seasons and during travel, examines the skin, nose and eyes, listens to the lungs and, where appropriate, orders skin tests, blood tests or spirometry straight away; 20-40 minutes",
+        "when": "Seasonal and year-round rhinitis, sneezing, itching of the nose and eyes, bouts of cough and wheezing, urticaria and swelling, reactions to food, medicines and insect stings, atopic dermatitis, preparation for immunotherapy",
+        "prep": "Keep and bring a symptom diary with dates and circumstances, a list of all medicines taken and previous results; if skin tests may be done the same day, check in advance how many days before to stop antihistamines",
+        "abnormal": "After the appointment the doctor says whether the picture looks allergic and which investigations will confirm or exclude it. Similar complaints also have non-allergic causes, so the conclusion follows the results"
+      },
+      "sr": {
+        "what": "Pregled kod alergologa na kojem se razmatra veza simptoma sa mogućim alergenima i pravi plan obrade",
+        "how": "Ljekar detaljno pita kada se i gdje tegobe javljaju, šta je pacijent jeo i čemu je bio izložen, kako se stanje mijenja po godišnjim dobima i na putovanjima, pregleda kožu, nos i oči, osluškuje pluća i po potrebi odmah odredi kožne testove, analize krvi ili spirometriju; 20-40 minuta",
+        "when": "Sezonsko i cjelogodišnje curenje nosa, kijanje, svrab u nosu i očima, napadi kašlja i sviranja u grudima, koprivnjača i otoci, reakcije na hranu, lijekove i ubode insekata, atopijski dermatitis, priprema za imunoterapiju",
+        "prep": "Voditi i ponijeti dnevnik tegoba sa datumima i okolnostima, spisak svih lijekova koji se uzimaju i ranije nalaze; ako su kožni testovi mogući istog dana, unaprijed provjeriti koliko dana ranije se prekidaju antihistaminici",
+        "abnormal": "Poslije pregleda ljekar kaže da li slika liči na alergijsku i koje pretrage to potvrđuju ili isključuju. Slične tegobe daju i nealergijski uzroci, pa se zaključak donosi nakon nalaza"
+      },
+      "de": {
+        "what": "Ein Termin beim Allergologen, bei dem der Zusammenhang der Beschwerden mit möglichen Allergenen besprochen und ein Untersuchungsplan erstellt wird",
+        "how": "Der Arzt fragt ausführlich, wann und wo die Beschwerden auftreten, was der Patient gegessen hat und womit er in Kontakt kam, wie sich der Zustand über die Jahreszeiten und auf Reisen verändert, untersucht Haut, Nase und Augen, hört die Lunge ab und veranlasst bei Bedarf gleich Hauttests, Blutuntersuchungen oder eine Spirometrie; 20-40 Minuten",
+        "when": "Saisonaler und ganzjähriger Schnupfen, Niesen, Juckreiz in Nase und Augen, Hustenanfälle und pfeifende Atmung, Nesselsucht und Schwellungen, Reaktionen auf Nahrung, Medikamente und Insektenstiche, Neurodermitis, Vorbereitung auf eine Immuntherapie",
+        "prep": "Ein Beschwerdetagebuch mit Daten und Umständen führen und mitbringen, dazu die Liste aller eingenommenen Medikamente und frühere Befunde; sind Hauttests am selben Tag möglich, vorab klären, wie viele Tage zuvor Antihistaminika abzusetzen sind",
+        "abnormal": "Nach dem Termin sagt der Arzt, ob das Bild allergisch wirkt und welche Untersuchungen das bestätigen oder ausschließen. Ähnliche Beschwerden haben auch nicht-allergische Ursachen, daher folgt die Beurteilung erst den Befunden"
+      },
+      "tr": {
+        "what": "Belirtilerin olası alerjenlerle ilişkisinin ele alındığı ve tetkik planının oluşturulduğu alerji uzmanı muayenesi",
+        "how": "Hekim şikayetlerin ne zaman ve nerede ortaya çıktığını, hastanın ne yediğini ve neye maruz kaldığını, durumun mevsimlere ve seyahatlere göre nasıl değiştiğini ayrıntılı sorar, cildi, burnu ve gözleri muayene eder, akciğerleri dinler, gerekirse aynı gün deri testi, kan tetkiki ya da solunum fonksiyon testi ister; 20-40 dakika",
+        "when": "Mevsimsel ve yıl boyu süren burun akıntısı, hapşırma, burunda ve gözlerde kaşıntı, öksürük ve hırıltı atakları, kurdeşen ve şişlikler, besin, ilaç ve böcek sokmasına tepkiler, atopik dermatit, immünoterapiye hazırlık",
+        "prep": "Tarih ve koşullarıyla birlikte bir belirti günlüğü tutup getirin, kullandığınız tüm ilaçların listesini ve önceki sonuçları yanınıza alın; deri testleri aynı gün yapılabilecekse antihistaminiklerin kaç gün önce bırakılacağını önceden öğrenin",
+        "abnormal": "Muayene sonunda hekim tablonun alerjik görünüp görünmediğini ve bunu hangi tetkiklerin doğrulayacağını ya da dışlayacağını söyler. Benzer şikayetlerin alerji dışı nedenleri de olduğundan sonuç, tetkiklerden sonra ortaya çıkar"
+      },
+      "sr_cyrl": {
+        "what": "Преглед код алерголога на којем се разматра веза симптома са могућим алергенима и прави план обраде",
+        "how": "Љекар детаљно пита када се и гдје тегобе јављају, шта је пацијент јео и чему је био изложен, како се стање мијења по годишњим добима и на путовањима, прегледа кожу, нос и очи, ослушкује плућа и по потреби одмах одреди кожне тестове, анализе крви или спирометрију; 20-40 минута",
+        "when": "Сезонско и цјелогодишње цурење носа, кијање, свраб у носу и очима, напади кашља и свирања у грудима, копривњача и отоци, реакције на храну, лијекове и убоде инсеката, атопијски дерматитис, припрема за имунотерапију",
+        "prep": "Водити и понијети дневник тегоба са датумима и околностима, списак свих лијекова који се узимају и раније налазе; ако су кожни тестови могући истог дана, унапријед провјерити колико дана раније се прекидају антихистаминици",
+        "abnormal": "Послије прегледа љекар каже да ли слика личи на алергијску и које претраге то потврђују или искључују. Сличне тегобе дају и неалергијски узроци, па се закључак доноси након налаза"
+      }
+    }
+  },
+  {
+    "slug": "lactofan-intolerance-tests",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лабораторное исследование по крови под маркой Lactofan, которым проверяют непереносимость отдельных компонентов пищи",
+        "how": "Берут образец крови, дальнейшую работу с ним лаборатория выполняет по методике производителя теста; сам забор занимает несколько минут, результат выдают отдельным заключением",
+        "when": "Вздутие, спазмы, урчание, послабление стула или тошнота, регулярно появляющиеся после определённой еды, стойкие жалобы на молочные продукты у взрослых, уточнение причины, когда пищевая аллергия уже исключена",
+        "prep": "Требования лаборатории уточнить заранее: часть исследований сдают натощак; подозреваемые продукты не исключать из рациона самостоятельно перед тестом без указания врача и сообщить о принимаемых препаратах",
+        "abnormal": "Непереносимость — это не аллергия, и результат теста сам по себе не равен диагнозу: его сопоставляют с пищевым дневником и реакцией на пробное изменение рациона. Что делать дальше, решает врач"
+      },
+      "en": {
+        "what": "A blood-based laboratory test marketed as Lactofan, used to check intolerance of individual food components",
+        "how": "A blood sample is taken and processed by the laboratory according to the test manufacturer's method; the draw itself takes a few minutes and the result is issued as a separate report",
+        "when": "Bloating, cramps, rumbling, loose stools or nausea that regularly follow certain foods, persistent complaints about dairy products in adults, clarifying the cause once food allergy has been excluded",
+        "prep": "Check the laboratory's requirements in advance, as some tests are taken fasting; do not remove the suspected foods from the diet on your own before the test unless the doctor says so, and report the medicines you take",
+        "abnormal": "Intolerance is not an allergy, and the test result on its own does not equal a diagnosis: it is compared with a food diary and with the response to a trial change of diet. The next steps are decided by the doctor"
+      },
+      "sr": {
+        "what": "Laboratorijska pretraga iz krvi pod markom Lactofan kojom se provjerava nepodnošljivost pojedinih sastojaka hrane",
+        "how": "Uzme se uzorak krvi, a laboratorija ga dalje obrađuje po metodi proizvođača testa; samo vađenje traje nekoliko minuta, a rezultat se izdaje kao poseban nalaz",
+        "when": "Nadutost, grčevi, krčanje, rijetka stolica ili mučnina koji se redovno javljaju poslije određene hrane, uporne tegobe sa mliječnim proizvodima kod odraslih, traženje uzroka kada je alergija na hranu već isključena",
+        "prep": "Uslove laboratorije provjeriti unaprijed, jer se dio pretraga radi natašte; sumnjive namirnice ne izbacivati iz ishrane na svoju ruku prije testa bez dogovora sa ljekarom i prijaviti lijekove koji se uzimaju",
+        "abnormal": "Nepodnošljivost nije alergija i nalaz sam po sebi nije dijagnoza: poredi se sa dnevnikom ishrane i sa reakcijom na probnu promjenu jelovnika. O daljim koracima odlučuje ljekar"
+      },
+      "de": {
+        "what": "Eine Laboruntersuchung aus dem Blut unter der Marke Lactofan, mit der die Unverträglichkeit einzelner Nahrungsbestandteile geprüft wird",
+        "how": "Es wird eine Blutprobe entnommen, die das Labor nach dem Verfahren des Testherstellers weiterverarbeitet; die Entnahme dauert wenige Minuten, das Ergebnis wird als eigener Befund ausgegeben",
+        "when": "Blähungen, Krämpfe, Darmgeräusche, weicher Stuhl oder Übelkeit, die regelmäßig nach bestimmten Speisen auftreten, anhaltende Beschwerden nach Milchprodukten bei Erwachsenen, Ursachensuche, wenn eine Nahrungsmittelallergie bereits ausgeschlossen ist",
+        "prep": "Die Vorgaben des Labors vorab klären, da manche Untersuchungen nüchtern erfolgen; die verdächtigen Lebensmittel vor dem Test nicht eigenmächtig weglassen, sondern nur nach ärztlicher Absprache, und die eingenommenen Medikamente angeben",
+        "abnormal": "Unverträglichkeit ist keine Allergie, und der Befund allein ist keine Diagnose: Er wird mit dem Ernährungstagebuch und mit der Reaktion auf eine probeweise Umstellung verglichen. Über das weitere Vorgehen entscheidet der Arzt"
+      },
+      "tr": {
+        "what": "Besinlerin tek tek bileşenlerine karşı intoleransı araştırmak için kullanılan, Lactofan markasıyla sunulan kan temelli laboratuvar testi",
+        "how": "Kan örneği alınır ve laboratuvar örneği test üreticisinin yöntemine göre işler; kan alma birkaç dakika sürer, sonuç ayrı bir rapor olarak verilir",
+        "when": "Belirli yiyeceklerden sonra düzenli olarak ortaya çıkan şişkinlik, kramp, bağırsak sesleri, yumuşak dışkı ya da bulantı, erişkinlerde süt ürünlerine bağlı inatçı şikayetler, besin alerjisi dışlandıktan sonra nedenin araştırılması",
+        "prep": "Laboratuvarın koşullarını önceden öğrenin, bazı tetkikler aç karnına yapılır; şüphelenilen besinleri test öncesi hekime danışmadan kendi başınıza diyetten çıkarmayın ve kullandığınız ilaçları bildirin",
+        "abnormal": "İntolerans alerji değildir ve test sonucu tek başına tanı anlamına gelmez: beslenme günlüğüyle ve deneme amaçlı diyet değişikliğine verilen yanıtla birlikte değerlendirilir. Sonraki adımlara hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Лабораторијска претрага из крви под марком Лацтофан којом се провјерава неподношљивост појединих састојака хране",
+        "how": "Узме се узорак крви, а лабораторија га даље обрађује по методи произвођача теста; само вађење траје неколико минута, а резултат се издаје као посебан налаз",
+        "when": "Надутост, грчеви, крчање, ријетка столица или мучнина који се редовно јављају послије одређене хране, упорне тегобе са млијечним производима код одраслих, тражење узрока када је алергија на храну већ искључена",
+        "prep": "Услове лабораторије провјерити унапријед, јер се дио претрага ради наташте; сумњиве намирнице не избацивати из исхране на своју руку прије теста без договора са љекаром и пријавити лијекове који се узимају",
+        "abnormal": "Неподношљивост није алергија и налаз сам по себи није дијагноза: пореди се са дневником исхране и са реакцијом на пробну промјену јеловника. О даљим корацима одлучује љекар"
+      }
+    }
+  },
+  {
+    "slug": "clear-aligner-therapy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исправление положения зубов серией съёмных прозрачных кап, которые меняют одну за другой в ходе лечения",
+        "how": "После диагностики и цифрового сканирования составляют план перемещений, по нему изготавливают набор кап; пациент носит каждую назначенное число дней, снимая только на еду и чистку зубов, и приходит на контроль каждые несколько недель; весь курс длится месяцы",
+        "when": "Скученность и промежутки между зубами, умеренные нарушения прикуса, возврат зубов в прежнее положение после прошлого ортодонтического лечения, случаи, когда брекеты не подходят по эстетическим или бытовым причинам",
+        "prep": "До начала вылечить кариес и воспаление дёсен и сделать профессиональную чистку; во время лечения носить капы столько часов в сутки, сколько назначил ортодонт, и чистить зубы после еды перед тем, как надеть капу",
+        "abnormal": "Давление и лёгкая болезненность в первые дни после каждой новой капы ожидаемы, речь обычно выравнивается за несколько дней. Если капа не садится на место, треснула или потеряна, а также если график ношения сбился, нужно связаться с ортодонтом, а не пропускать этап"
+      },
+      "en": {
+        "what": "Straightening of the teeth with a series of removable clear aligners changed one after another during the course of treatment",
+        "how": "After the work-up and a digital scan a plan of tooth movement is made and a set of aligners produced from it; each one is worn for the prescribed number of days, removed only for eating and brushing, with a check-up every few weeks; the whole course lasts months",
+        "when": "Crowding and gaps between the teeth, moderate bite problems, teeth drifting back after earlier orthodontic treatment, cases where fixed braces do not suit for aesthetic or practical reasons",
+        "prep": "Before starting, caries and gum inflammation are treated and a professional cleaning is done; during treatment the aligners are worn for as many hours a day as the orthodontist prescribes and the teeth are brushed after meals before the aligner goes back in",
+        "abnormal": "Pressure and mild soreness in the first days after each new aligner are expected, and speech usually settles within a few days. If an aligner does not seat properly, cracks or is lost, or if the wearing schedule has slipped, contact the orthodontist rather than skipping a step"
+      },
+      "sr": {
+        "what": "Ispravljanje položaja zuba serijom pokretnih prozirnih folija koje se tokom liječenja mijenjaju jedna za drugom",
+        "how": "Nakon obrade i digitalnog skeniranja pravi se plan pomjeranja zuba i po njemu izrađuje set folija; svaka se nosi propisani broj dana i skida samo za jelo i pranje zuba, uz kontrolu na svakih nekoliko sedmica; cijeli tok traje mjesecima",
+        "when": "Zbijenost i razmaci među zubima, umjereni poremećaji zagrižaja, vraćanje zuba u raniji položaj poslije ranijeg ortodontskog liječenja, slučajevi u kojima fiksni aparat ne odgovara iz estetskih ili praktičnih razloga",
+        "prep": "Prije početka sanirati karijes i upalu desni i uraditi profesionalno čišćenje; tokom liječenja folije nositi onoliko sati dnevno koliko odredi ortodont i oprati zube poslije jela prije vraćanja folije",
+        "abnormal": "Pritisak i blaga osjetljivost prvih dana poslije svake nove folije su očekivani, a govor se obično ustali za nekoliko dana. Ako folija ne naliježe, napukne ili se izgubi, ili ako raspored nošenja odstupi, treba se javiti ortodontu, a ne preskakati korak"
+      },
+      "de": {
+        "what": "Zahnkorrektur mit einer Serie herausnehmbarer transparenter Schienen, die im Behandlungsverlauf nacheinander gewechselt werden",
+        "how": "Nach Diagnostik und digitalem Scan wird ein Plan der Zahnbewegungen erstellt und danach ein Satz Schienen gefertigt; jede wird die vorgegebene Zahl von Tagen getragen und nur zum Essen und Zähneputzen herausgenommen, alle paar Wochen folgt eine Kontrolle; der gesamte Verlauf dauert Monate",
+        "when": "Engstand und Lücken zwischen den Zähnen, mäßige Bissfehlstellungen, Rückwanderung der Zähne nach einer früheren kieferorthopädischen Behandlung, Fälle, in denen eine feste Spange aus ästhetischen oder praktischen Gründen nicht passt",
+        "prep": "Vor Beginn Karies und Zahnfleischentzündung behandeln und eine professionelle Zahnreinigung durchführen; während der Behandlung die Schienen so viele Stunden täglich tragen, wie der Kieferorthopäde vorgibt, und vor dem Wiedereinsetzen nach dem Essen die Zähne putzen",
+        "abnormal": "Druck und leichte Empfindlichkeit in den ersten Tagen nach jeder neuen Schiene sind zu erwarten, die Aussprache normalisiert sich meist in wenigen Tagen. Sitzt eine Schiene nicht, ist sie gerissen oder verloren, oder ist der Tragerhythmus verrutscht, sollte der Kieferorthopäde kontaktiert werden, statt einen Schritt zu überspringen"
+      },
+      "tr": {
+        "what": "Tedavi boyunca sırayla değiştirilen bir dizi çıkarılabilir şeffaf plakla dişlerin konumunun düzeltilmesi",
+        "how": "Değerlendirme ve dijital tarama sonrası diş hareket planı çıkarılır ve buna göre plak seti üretilir; her plak belirtilen gün sayısı kadar takılır, yalnızca yemek ve diş fırçalama için çıkarılır, birkaç haftada bir kontrol yapılır; tüm süreç aylar sürer",
+        "when": "Diş çapraşıklığı ve aralar, orta derecede kapanış bozuklukları, önceki ortodontik tedaviden sonra dişlerin eski konumuna dönmesi, estetik ya da günlük yaşam nedenleriyle sabit tel takmanın uygun olmadığı durumlar",
+        "prep": "Başlamadan önce çürükler ve diş eti iltihabı tedavi edilir ve profesyonel temizlik yapılır; tedavi sırasında plaklar ortodontistin belirttiği saat kadar takılır, yemekten sonra dişler fırçalanıp plak yeniden yerleştirilir",
+        "abnormal": "Her yeni plağın ilk günlerinde baskı ve hafif hassasiyet beklenir, konuşma genellikle birkaç günde düzelir. Plak yerine tam oturmuyorsa, çatladıysa ya da kaybolduysa, veya takma düzeni aksadıysa adımı atlamak yerine ortodontistle iletişime geçin"
+      },
+      "sr_cyrl": {
+        "what": "Исправљање положаја зуба серијом покретних прозирних фолија које се током лијечења мијењају једна за другом",
+        "how": "Након обраде и дигиталног скенирања прави се план помјерања зуба и по њему израђује сет фолија; свака се носи прописани број дана и скида само за јело и прање зуба, уз контролу на сваких неколико седмица; цијели ток траје мјесецима",
+        "when": "Збијеност и размаци међу зубима, умјерени поремећаји загрижаја, враћање зуба у ранији положај послије ранијег ортодонтског лијечења, случајеви у којима фиксни апарат не одговара из естетских или практичних разлога",
+        "prep": "Прије почетка санирати каријес и упалу десни и урадити професионално чишћење; током лијечења фолије носити онолико сати дневно колико одреди ортодонт и опрати зубе послије јела прије враћања фолије",
+        "abnormal": "Притисак и блага осјетљивост првих дана послије сваке нове фолије су очекивани, а говор се обично устали за неколико дана. Ако фолија не налијеже, напукне или се изгуби, или ако распоред ношења одступи, треба се јавити ортодонту, а не прескакати корак"
+      }
+    }
+  },
+  {
+    "slug": "orthodontic-consultation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первая беседа и осмотр у ортодонта, на которых оценивают прикус и обсуждают возможные варианты лечения",
+        "how": "Врач осматривает зубные ряды, смыкание и состояние дёсен, смотрит профиль и смыкание губ, спрашивает о привычках, дыхании носом и прежнем лечении, по имеющимся снимкам даёт предварительную оценку и объясняет, какие исследования нужны для точного плана; 15-30 минут",
+        "when": "Неровные или выступающие зубы, щели, неправильное смыкание челюстей, вопрос о сроке начала лечения у ребёнка при смене зубов, подготовка к протезированию или имплантации, второе мнение по уже предложенному плану",
+        "prep": "Почистить зубы перед приёмом, принести имеющиеся панорамные и боковые снимки, заключения стоматолога, а если лечение уже было — прежние аппараты и капы",
+        "abnormal": "Консультация даёт направление, а не готовый план: точные сроки, вид аппарата и необходимость удаления зубов определяют после полной диагностики со снимками и моделями. Если ортодонт советует дождаться смены зубов, он назначает срок повторного визита"
+      },
+      "en": {
+        "what": "A first discussion and examination with an orthodontist, where the bite is assessed and the possible treatment options are discussed",
+        "how": "The doctor looks at the dental arches, the way the teeth meet and the state of the gums, assesses the profile and lip closure, asks about habits, nasal breathing and previous treatment, gives a preliminary opinion based on any existing images and explains which studies are needed for an exact plan; 15-30 minutes",
+        "when": "Crooked or protruding teeth, gaps, a jaw that does not close correctly, the question of when to start treatment in a child during the change of teeth, preparation for prosthetics or implants, a second opinion on a plan already proposed",
+        "prep": "Brush your teeth before the appointment and bring any panoramic and lateral images, dentist's reports and, if there was previous treatment, the old appliances and aligners",
+        "abnormal": "A consultation gives a direction rather than a finished plan: the exact timing, the type of appliance and whether teeth need to be removed are decided after full diagnostics with images and models. If the orthodontist advises waiting for the teeth to change, a date for the next visit is set"
+      },
+      "sr": {
+        "what": "Prvi razgovor i pregled kod ortodonta na kojem se procjenjuje zagrižaj i razmatraju mogući načini liječenja",
+        "how": "Ljekar pogleda zubne nizove, zagrižaj i stanje desni, procijeni profil i zatvaranje usana, pita o navikama, disanju na nos i ranijem liječenju, na osnovu postojećih snimaka daje prethodnu procjenu i objašnjava koje su pretrage potrebne za tačan plan; 15-30 minuta",
+        "when": "Krivi ili isturjeni zubi, razmaci, nepravilno zatvaranje vilica, pitanje kada početi liječenje kod djeteta u periodu smjene zuba, priprema za protetiku ili implantate, drugo mišljenje o već predloženom planu",
+        "prep": "Oprati zube prije dolaska, ponijeti postojeće panoramske i profilne snimke, nalaze stomatologa, a ako je liječenja već bilo i ranije aparate i folije",
+        "abnormal": "Konsultacija daje smjer, a ne gotov plan: tačni rokovi, vrsta aparata i potreba za vađenjem zuba određuju se poslije potpune dijagnostike sa snimcima i modelima. Ako ortodont savjetuje da se sačeka smjena zuba, odredi i termin sljedeće kontrole"
+      },
+      "de": {
+        "what": "Ein erstes Gespräch mit Untersuchung beim Kieferorthopäden, bei dem der Biss beurteilt und die möglichen Behandlungswege besprochen werden",
+        "how": "Der Arzt betrachtet die Zahnreihen, den Zusammenbiss und den Zustand des Zahnfleisches, beurteilt Profil und Lippenschluss, fragt nach Gewohnheiten, Nasenatmung und früheren Behandlungen, gibt anhand vorhandener Aufnahmen eine vorläufige Einschätzung und erklärt, welche Untersuchungen für einen genauen Plan nötig sind; 15-30 Minuten",
+        "when": "Schiefe oder vorstehende Zähne, Lücken, ein nicht korrekter Kieferschluss, die Frage nach dem Behandlungsbeginn beim Kind während des Zahnwechsels, Vorbereitung auf Zahnersatz oder Implantate, eine Zweitmeinung zu einem bereits vorgeschlagenen Plan",
+        "prep": "Vor dem Termin die Zähne putzen und vorhandene Panorama- und Fernröntgenaufnahmen, Befunde des Zahnarztes und, falls bereits behandelt wurde, die alten Apparaturen und Schienen mitbringen",
+        "abnormal": "Die Beratung gibt eine Richtung, keinen fertigen Plan: genaue Dauer, Art der Apparatur und die Frage, ob Zähne entfernt werden müssen, ergeben sich nach der vollständigen Diagnostik mit Aufnahmen und Modellen. Rät der Kieferorthopäde, den Zahnwechsel abzuwarten, wird ein Termin für den nächsten Besuch vereinbart"
+      },
+      "tr": {
+        "what": "Kapanışın değerlendirildiği ve olası tedavi seçeneklerinin konuşulduğu ilk ortodonti görüşmesi ve muayenesi",
+        "how": "Hekim diş dizilerini, kapanışı ve diş eti durumunu inceler, profili ve dudak kapanmasını değerlendirir, alışkanlıkları, burundan nefes almayı ve önceki tedavileri sorar, varsa mevcut filmlere göre ön değerlendirme yapar ve kesin plan için hangi tetkiklerin gerektiğini anlatır; 15-30 dakika",
+        "when": "Çarpık ya da öne çıkık dişler, aralıklar, çenelerin düzgün kapanmaması, çocukta diş değişimi döneminde tedaviye ne zaman başlanacağı sorusu, protez ya da implant öncesi hazırlık, önerilmiş bir plan için ikinci görüş",
+        "prep": "Randevudan önce dişlerinizi fırçalayın, varsa panoramik ve profil filmlerinizi, diş hekimi raporlarınızı ve daha önce tedavi gördüyseniz eski apareyleri ve plakları getirin",
+        "abnormal": "Konsültasyon hazır bir plan değil, bir yön verir: kesin süre, apareyin türü ve diş çekimi gerekip gerekmediği filmler ve modellerle yapılan tam değerlendirmeden sonra belirlenir. Ortodontist diş değişiminin beklenmesini önerirse bir sonraki kontrol tarihini verir"
+      },
+      "sr_cyrl": {
+        "what": "Први разговор и преглед код ортодонта на којем се процјењује загрижај и разматрају могући начини лијечења",
+        "how": "Љекар погледа зубне низове, загрижај и стање десни, процијени профил и затварање усана, пита о навикама, дисању на нос и ранијем лијечењу, на основу постојећих снимака даје претходну процјену и објашњава које су претраге потребне за тачан план; 15-30 минута",
+        "when": "Криви или истурјени зуби, размаци, неправилно затварање вилица, питање када почети лијечење код дјетета у периоду смјене зуба, припрема за протетику или имплантате, друго мишљење о већ предложеном плану",
+        "prep": "Опрати зубе прије доласка, понијети постојеће панорамске и профилне снимке, налазе стоматолога, а ако је лијечења већ било и раније апарате и фолије",
+        "abnormal": "Консултација даје смјер, а не готов план: тачни рокови, врста апарата и потреба за вађењем зуба одређују се послије потпуне дијагностике са снимцима и моделима. Ако ортодонт савјетује да се сачека смјена зуба, одреди и термин сљедеће контроле"
+      }
+    }
+  }
+]

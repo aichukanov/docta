@@ -1,0 +1,530 @@
+[
+  {
+    "slug": "mri-breast",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исследование ткани обеих молочных желёз в магнитном поле, обычно с внутривенным контрастом",
+        "how": "Пациентка лежит на животе на специальной катушке с углублениями для груди, руки вытянуты вперёд, серии снимают до и после введения контраста в вену; обычно 30-45 минут",
+        "when": "Неясные находки маммографии или УЗИ, очень плотная ткань железы, оценка распространённости уже выявленного образования, проверка состояния имплантов, наблюдение при отягощённом семейном анамнезе, контроль в ходе лечения",
+        "prep": "Женщинам до менопаузы исследование чаще планируют на определённые дни цикла, дату уточняют в клинике; не есть несколько часов перед контрастом, сообщить о беременности, кормлении, болезнях почек и аллергии, а также о металле в теле, кардиостимуляторе и клаустрофобии; снять украшения и бельё с косточками",
+        "abnormal": "Снимок может показать кисту, фиброзно-кистозные изменения, воспаление, участки необычного накопления контраста или образование, и часть таких участков оказывается доброкачественной. Что делать дальше, прицельное УЗИ, биопсию или просто наблюдение, решает лечащий врач по совокупности исследований"
+      },
+      "en": {
+        "what": "A study of the tissue of both breasts in a magnetic field, usually with intravenous contrast",
+        "how": "The patient lies face down on a dedicated coil with openings for the breasts, arms stretched forward, and images are taken before and after contrast is injected into a vein; usually 30-45 minutes",
+        "when": "Unclear mammography or ultrasound findings, very dense breast tissue, assessment of the extent of a known lesion, checking implants, surveillance when there is a strong family history, monitoring during treatment",
+        "prep": "Before menopause the study is usually scheduled for certain days of the cycle, the date is agreed with the clinic; no food for a few hours before contrast, report pregnancy, breastfeeding, kidney disease and allergies, and also metal in the body, a pacemaker and claustrophobia; remove jewellery and underwire bras",
+        "abnormal": "The images may show a cyst, fibrocystic changes, inflammation, areas of unusual contrast uptake or a lesion, and many such areas turn out to be benign. The treating doctor decides on the next step, targeted ultrasound, a biopsy or simple follow-up, based on all the studies together"
+      },
+      "sr": {
+        "what": "Prikaz tkiva obje dojke u magnetnom polju, najčešće uz kontrast u venu",
+        "how": "Pacijentkinja leži na stomaku na posebnom kalemu sa otvorima za dojke, ruku ispruženih naprijed, a serije se snimaju prije i poslije davanja kontrasta u venu; obično traje 30-45 minuta",
+        "when": "Nejasan nalaz mamografije ili ultrazvuka, veoma gusto tkivo dojke, procjena proširenosti već utvrđene tvorbe, provjera implantata, praćenje kod opterećene porodične istorije, kontrola tokom liječenja",
+        "prep": "Prije menopauze snimanje se obično zakazuje za određene dane ciklusa, datum se dogovara u klinici; nekoliko sati se ne jede prije kontrasta, prijaviti trudnoću, dojenje, bolesti bubrega i alergije, kao i metal u tijelu, pejsmejker i klaustrofobiju; skinuti nakit i grudnjak sa žicom",
+        "abnormal": "Snimak može pokazati cistu, fibrocistične promjene, upalu, područja neuobičajenog nakupljanja kontrasta ili tvorbu, a dio takvih područja bude dobroćudan. Da li slijedi ciljani ultrazvuk, biopsija ili samo praćenje, odlučuje ljekar koji vodi liječenje na osnovu svih nalaza"
+      },
+      "de": {
+        "what": "Darstellung des Gewebes beider Brüste im Magnetfeld, meist mit Kontrastmittel über die Vene",
+        "how": "Die Patientin liegt auf dem Bauch auf einer speziellen Spule mit Aussparungen für die Brüste, die Arme nach vorn gestreckt, Aufnahmen entstehen vor und nach der Kontrastmittelgabe; meist 30-45 Minuten",
+        "when": "Unklare Befunde von Mammographie oder Ultraschall, sehr dichtes Drüsengewebe, Beurteilung der Ausdehnung eines bekannten Befundes, Kontrolle von Implantaten, Vorsorge bei belasteter Familiengeschichte, Verlaufskontrolle unter Behandlung",
+        "prep": "Vor der Menopause wird die Untersuchung meist auf bestimmte Zyklustage gelegt, den Termin stimmt die Klinik ab; vor Kontrastmittel einige Stunden nichts essen, Schwangerschaft, Stillzeit, Nierenerkrankungen und Allergien melden, ebenso Metall im Körper, Herzschrittmacher und Klaustrophobie; Schmuck und Bügel-BHs ablegen",
+        "abnormal": "Die Aufnahmen können eine Zyste, fibrozystische Veränderungen, eine Entzündung, Areale mit ungewöhnlicher Kontrastmittelaufnahme oder einen Befund zeigen, viele davon erweisen sich als gutartig. Ob gezielter Ultraschall, eine Biopsie oder nur eine Kontrolle folgt, entscheidet der behandelnde Arzt anhand aller Untersuchungen"
+      },
+      "tr": {
+        "what": "Her iki meme dokusunun manyetik alanda, çoğunlukla damardan kontrast madde verilerek görüntülenmesi",
+        "how": "Hasta memeler için boşlukları olan özel bir sargının üzerine yüzüstü yatar, kollar öne uzatılır, görüntüler kontrast öncesi ve sonrası alınır; genellikle 30-45 dakika sürer",
+        "when": "Mamografi veya ultrasonda net olmayan bulgu, çok yoğun meme dokusu, bilinen bir lezyonun yaygınlığının değerlendirilmesi, implantların kontrolü, ailede yüklü öykü varlığında izlem, tedavi sırasında takip",
+        "prep": "Menopoz öncesinde çekim genellikle adet döngüsünün belirli günlerine planlanır, tarih klinikle belirlenir; kontrast öncesi birkaç saat aç kalınır, gebelik, emzirme, böbrek hastalığı ve alerjiler ile vücuttaki metal, kalp pili ve klostrofobi bildirilir; takılar ve balenli sutyen çıkarılır",
+        "abnormal": "Görüntüler kist, fibrokistik değişiklik, iltihap, kontrastı alışılmadık biçimde tutan alanlar veya bir lezyon gösterebilir ve bu alanların bir kısmı iyi huylu çıkar. Hedefli ultrason, biyopsi ya da yalnızca izlem gerekip gerekmediğine tedaviyi yürüten hekim tüm incelemelere bakarak karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Приказ ткива обје дојке у магнетном пољу, најчешће уз контраст у вену",
+        "how": "Пацијенткиња лежи на стомаку на посебном калему са отворима за дојке, руку испружених напријед, а серије се снимају прије и послије давања контраста у вену; обично траје 30-45 минута",
+        "when": "Нејасан налаз мамографије или ултразвука, веома густо ткиво дојке, процјена проширености већ утврђене творбе, провјера имплантата, праћење код оптерећене породичне историје, контрола током лијечења",
+        "prep": "Прије менопаузе снимање се обично заказује за одређене дане циклуса, датум се договара у клиници; неколико сати се не једе прије контраста, пријавити трудноћу, дојење, болести бубрега и алергије, као и метал у тијелу, пејсмејкер и клаустрофобију; скинути накит и грудњак са жицом",
+        "abnormal": "Снимак може показати цисту, фиброцистичне промјене, упалу, подручја неуобичајеног накупљања контраста или творбу, а дио таквих подручја буде доброћудан. Да ли слиједи циљани ултразвук, биопсија или само праћење, одлучује љекар који води лијечење на основу свих налаза"
+      }
+    }
+  },
+  {
+    "slug": "mri-cervical-spine",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Послойное исследование шейных позвонков, межпозвонковых дисков, спинного мозга и нервных корешков на уровне шеи",
+        "how": "Пациент лежит на спине, на шею кладут приёмную катушку и просят не глотать и не двигаться во время серий; обычно 15-30 минут, контраст нужен не всегда",
+        "when": "Боль в шее с отдачей в руку, онемение и слабость в кистях, головокружение, последствия травмы шеи, подозрение на грыжу диска или сужение позвоночного канала, контроль после операции",
+        "prep": "Подготовка не нужна; заранее сообщить о металле в теле, кардиостимуляторе и клаустрофобии, снять серьги, цепочки, заколки и одежду с металлом, взять прежние снимки",
+        "abnormal": "Исследование может показать протрузии и грыжи дисков, сужение канала, признаки износа суставов, реже изменения самого спинного мозга; похожие находки встречаются и у людей без жалоб. Совпадают ли они с симптомами, оценивает невролог или нейрохирург"
+      },
+      "en": {
+        "what": "A layer-by-layer study of the neck vertebrae, intervertebral discs, spinal cord and nerve roots at neck level",
+        "how": "The patient lies on their back with a receiving coil placed around the neck and is asked not to swallow or move during the sequences; usually 15-30 minutes, contrast is not always needed",
+        "when": "Neck pain radiating into the arm, numbness and weakness in the hands, dizziness, consequences of a neck injury, suspected disc herniation or narrowing of the spinal canal, follow-up after surgery",
+        "prep": "No preparation is needed; report metal in the body, a pacemaker and claustrophobia in advance, remove earrings, chains, hairpins and clothes with metal, bring previous images",
+        "abnormal": "The study may show disc protrusions and herniations, canal narrowing, signs of joint wear and, less often, changes in the spinal cord itself; similar findings also occur in people without complaints. A neurologist or neurosurgeon judges whether they match the symptoms"
+      },
+      "sr": {
+        "what": "Slojeviti prikaz vratnih pršljenova, međupršljenskih diskusa, kičmene moždine i nervnih korjenova u predjelu vrata",
+        "how": "Pacijent leži na leđima, oko vrata se postavlja prijemni kalem, a tokom serija se traži da ne guta i da se ne pomjera; obično traje 15-30 minuta, kontrast nije uvijek potreban",
+        "when": "Bol u vratu koji se širi u ruku, trnjenje i slabost šaka, vrtoglavica, posljedice povrede vrata, sumnja na diskus herniju ili suženje kičmenog kanala, kontrola nakon operacije",
+        "prep": "Priprema nije potrebna; unaprijed prijaviti metal u tijelu, pejsmejker i klaustrofobiju, skinuti minđuše, lančiće, ukosnice i odjeću sa metalom, ponijeti ranije snimke",
+        "abnormal": "Pregled može pokazati protruzije i hernije diskusa, suženje kanala, znake trošenja zglobova, rjeđe i promjene same kičmene moždine; slični nalazi postoje i kod ljudi bez tegoba. Da li se poklapaju sa simptomima, procjenjuje neurolog ili neurohirurg"
+      },
+      "de": {
+        "what": "Schichtweise Darstellung der Halswirbel, der Bandscheiben, des Rückenmarks und der Nervenwurzeln in Höhe des Halses",
+        "how": "Der Patient liegt auf dem Rücken, um den Hals wird eine Empfangsspule gelegt, während der Sequenzen soll er nicht schlucken und sich nicht bewegen; meist 15-30 Minuten, Kontrastmittel ist nicht immer nötig",
+        "when": "Nackenschmerzen mit Ausstrahlung in den Arm, Taubheit und Schwäche der Hände, Schwindel, Folgen einer Halsverletzung, Verdacht auf Bandscheibenvorfall oder Verengung des Spinalkanals, Kontrolle nach einer Operation",
+        "prep": "Eine Vorbereitung ist nicht nötig; Metall im Körper, Herzschrittmacher und Klaustrophobie vorab melden, Ohrringe, Ketten, Haarspangen und Kleidung mit Metall ablegen, frühere Aufnahmen mitbringen",
+        "abnormal": "Die Untersuchung kann Vorwölbungen und Vorfälle der Bandscheiben, eine Kanalverengung, Verschleißzeichen der Gelenke und seltener Veränderungen des Rückenmarks selbst zeigen; ähnliche Befunde finden sich auch bei Beschwerdefreien. Ob sie zu den Symptomen passen, beurteilt ein Neurologe oder Neurochirurg"
+      },
+      "tr": {
+        "what": "Boyun omurlarının, disklerin, omuriliğin ve boyun düzeyindeki sinir köklerinin kesit kesit görüntülenmesi",
+        "how": "Hasta sırtüstü yatar, boyun çevresine alıcı sargı yerleştirilir, çekim sırasında yutkunmaması ve hareket etmemesi istenir; genellikle 15-30 dakika sürer, kontrast her zaman gerekmez",
+        "when": "Kola yayılan boyun ağrısı, ellerde uyuşma ve güçsüzlük, baş dönmesi, boyun travması sonrası, disk fıtığı veya omurilik kanalının daralması şüphesi, ameliyat sonrası kontrol",
+        "prep": "Hazırlık gerekmez; vücuttaki metali, kalp pilini ve klostrofobiyi önceden bildirin, küpe, zincir, toka ve metal içeren giysileri çıkarın, önceki görüntüleri getirin",
+        "abnormal": "İnceleme disk taşmalarını ve fıtıklarını, kanal darlığını, eklem aşınma bulgularını, daha seyrek olarak omuriliğin kendisindeki değişiklikleri gösterebilir; benzer bulgular yakınması olmayan kişilerde de görülür. Bunların belirtilerle örtüşüp örtüşmediğini nörolog veya beyin cerrahı değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Слојевити приказ вратних пршљенова, међупршљенских дискуса, кичмене мождине и нервних корјенова у предјелу врата",
+        "how": "Пацијент лежи на леђима, око врата се поставља пријемни калем, а током серија се тражи да не гута и да се не помјера; обично траје 15-30 минута, контраст није увијек потребан",
+        "when": "Бол у врату који се шири у руку, трњење и слабост шака, вртоглавица, посљедице повреде врата, сумња на дискус хернију или сужење кичменог канала, контрола након операције",
+        "prep": "Припрема није потребна; унапријед пријавити метал у тијелу, пејсмејкер и клаустрофобију, скинути минђуше, ланчиће, укоснице и одјећу са металом, понијети раније снимке",
+        "abnormal": "Преглед може показати протрузије и херније дискуса, сужење канала, знаке трошења зглобова, рјеђе и промјене саме кичмене мождине; слични налази постоје и код људи без тегоба. Да ли се поклапају са симптомима, процјењује неуролог или неурохирург"
+      }
+    }
+  },
+  {
+    "slug": "mri-cholangiography-mrcp",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Специальная программа МРТ, на которой жёлчные протоки, жёлчный пузырь и проток поджелудочной железы видны без введения контраста внутрь протоков",
+        "how": "Пациент лежит в туннеле томографа и по команде задерживает дыхание, снимают серии, на которых жидкость в протоках выглядит яркой; обычно 20-40 минут, иногда дополняют контрастом в вену",
+        "when": "Подозрение на камень в жёлчных протоках, желтуха, повторяющиеся приступы боли в правом подреберье, расширенные протоки по данным УЗИ, сохраняющиеся жалобы после удаления жёлчного пузыря, хронический панкреатит, уточнение анатомии протоков перед вмешательством",
+        "prep": "Обычно не есть 4-6 часов и не пить незадолго до исследования, чтобы жёлчный пузырь наполнился, а желудок не мешал обзору, точные требования уточнить в клинике; заранее сообщить о металле в теле, кардиостимуляторе и клаустрофобии",
+        "abnormal": "Изображение может показать камень, сужение или расширение протока, изменения поджелудочной железы или вариант строения протоков, который сам по себе не болезнь. Нужно ли эндоскопическое вмешательство или достаточно наблюдения, решает гастроэнтеролог или хирург"
+      },
+      "en": {
+        "what": "A dedicated MRI sequence that shows the bile ducts, gallbladder and pancreatic duct without injecting contrast into the ducts",
+        "how": "The patient lies in the scanner tunnel and holds their breath on command while sequences are taken in which fluid inside the ducts appears bright; usually 20-40 minutes, sometimes supplemented with intravenous contrast",
+        "when": "Suspected stone in the bile ducts, jaundice, repeated attacks of pain in the right upper abdomen, dilated ducts seen on ultrasound, complaints that persist after gallbladder removal, chronic pancreatitis, mapping the duct anatomy before a procedure",
+        "prep": "Usually no food for 4-6 hours and no drinking shortly before the study, so that the gallbladder fills and the stomach does not obscure the view, check the exact requirements with the clinic; report metal in the body, a pacemaker and claustrophobia in advance",
+        "abnormal": "The images may show a stone, a narrowed or widened duct, changes in the pancreas, or an anatomical variant that is not a disease in itself. Whether an endoscopic procedure is needed or follow-up is enough is decided by a gastroenterologist or surgeon"
+      },
+      "sr": {
+        "what": "Poseban program magnetne rezonance na kojem se žučni vodovi, žučna kesa i vod pankreasa vide bez ubrizgavanja kontrasta u same vodove",
+        "how": "Pacijent leži u tunelu aparata i na komandu zadržava dah, snimaju se serije na kojima tečnost u vodovima izgleda svijetlo; obično traje 20-40 minuta, ponekad se dopuni kontrastom u venu",
+        "when": "Sumnja na kamen u žučnim vodovima, žutica, ponovljeni napadi bola pod desnim rebrenim lukom, prošireni vodovi na ultrazvuku, tegobe koje ostaju nakon vađenja žučne kese, hronični pankreatitis, razjašnjenje anatomije vodova prije zahvata",
+        "prep": "Obično se ne jede 4-6 sati i ne pije neposredno prije snimanja, da bi se žučna kesa napunila, a želudac ne zaklanjao prikaz, tačne uslove provjeriti u klinici; unaprijed prijaviti metal u tijelu, pejsmejker i klaustrofobiju",
+        "abnormal": "Prikaz može pokazati kamen, suženje ili proširenje voda, promjene pankreasa ili varijantu građe vodova koja sama po sebi nije bolest. Da li je potreban endoskopski zahvat ili je dovoljno praćenje, odlučuje gastroenterolog ili hirurg"
+      },
+      "de": {
+        "what": "Eine spezielle MRT-Sequenz, die Gallenwege, Gallenblase und Bauchspeicheldrüsengang zeigt, ohne Kontrastmittel in die Gänge zu spritzen",
+        "how": "Der Patient liegt in der Röhre und hält auf Anweisung die Luft an, dabei entstehen Aufnahmen, auf denen die Flüssigkeit in den Gängen hell erscheint; meist 20-40 Minuten, manchmal ergänzt durch Kontrastmittel über die Vene",
+        "when": "Verdacht auf einen Stein in den Gallenwegen, Gelbsucht, wiederholte Schmerzattacken im rechten Oberbauch, erweiterte Gänge im Ultraschall, anhaltende Beschwerden nach Entfernung der Gallenblase, chronische Bauchspeicheldrüsenentzündung, Darstellung der Ganganatomie vor einem Eingriff",
+        "prep": "Meist 4-6 Stunden nichts essen und kurz vorher nichts trinken, damit sich die Gallenblase füllt und der Magen die Sicht nicht stört, die genauen Vorgaben in der Klinik erfragen; Metall im Körper, Herzschrittmacher und Klaustrophobie vorab melden",
+        "abnormal": "Die Bilder können einen Stein, einen verengten oder erweiterten Gang, Veränderungen der Bauchspeicheldrüse oder eine anatomische Variante zeigen, die für sich genommen keine Krankheit ist. Ob ein endoskopischer Eingriff nötig ist oder eine Kontrolle genügt, entscheidet ein Gastroenterologe oder Chirurg"
+      },
+      "tr": {
+        "what": "Safra yollarının, safra kesesinin ve pankreas kanalının, kanallara kontrast madde verilmeden görüntülendiği özel bir MR programı",
+        "how": "Hasta cihazın tünelinde yatar ve söylendiğinde nefesini tutar, kanallardaki sıvının parlak göründüğü seriler alınır; genellikle 20-40 dakika sürer, bazen damardan kontrast ile tamamlanır",
+        "when": "Safra yollarında taş şüphesi, sarılık, sağ üst karında yinelenen ağrı atakları, ultrasonda genişlemiş kanallar, safra kesesi alındıktan sonra süren yakınmalar, kronik pankreatit, girişim öncesi kanal anatomisinin netleştirilmesi",
+        "prep": "Genellikle 4-6 saat aç kalınır ve çekimden kısa süre önce sıvı alınmaz, böylece safra kesesi dolar ve mide görüntüyü engellemez, kesin koşulları klinikten öğrenin; vücuttaki metali, kalp pilini ve klostrofobiyi önceden bildirin",
+        "abnormal": "Görüntüler taşı, daralmış ya da genişlemiş kanalı, pankreastaki değişiklikleri veya kendi başına hastalık olmayan bir anatomik varyantı gösterebilir. Endoskopik girişim mi gerektiğine yoksa izlemin yeterli mi olduğuna gastroenterolog ya da cerrah karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Посебан програм магнетне резонанце на којем се жучни водови, жучна кеса и вод панкреаса виде без убризгавања контраста у саме водове",
+        "how": "Пацијент лежи у тунелу апарата и на команду задржава дах, снимају се серије на којима течност у водовима изгледа свијетло; обично траје 20-40 минута, понекад се допуни контрастом у вену",
+        "when": "Сумња на камен у жучним водовима, жутица, поновљени напади бола под десним ребреним луком, проширени водови на ултразвуку, тегобе које остају након вађења жучне кесе, хронични панкреатитис, разјашњење анатомије водова прије захвата",
+        "prep": "Обично се не једе 4-6 сати и не пије непосредно прије снимања, да би се жучна кеса напунила, а желудац не заклањао приказ, тачне услове провјерити у клиници; унапријед пријавити метал у тијелу, пејсмејкер и клаустрофобију",
+        "abnormal": "Приказ може показати камен, сужење или проширење вода, промјене панкреаса или варијанту грађе водова која сама по себи није болест. Да ли је потребан ендоскопски захват или је довољно праћење, одлучује гастроентеролог или хирург"
+      }
+    }
+  },
+  {
+    "slug": "mri-hip-joints-in-pelvis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исследование обоих тазобедренных суставов: головок бедренных костей, хрящей, суставных губ, а также окружающих мышц и сухожилий",
+        "how": "Пациент лежит на спине, катушку размещают над тазом, оба сустава снимают в одной серии, чтобы сравнить их между собой; обычно 20-40 минут, часть протоколов выполняют с контрастом",
+        "when": "Боль в паху и бедре, хромота, подозрение на нарушение кровоснабжения головки бедренной кости, повреждение суставной губы, ущемление в суставе при движении, стрессовый перелом, не видный на рентгене, воспаление сустава, наблюдение при дисплазии",
+        "prep": "Специальная подготовка не нужна; заранее сообщить о металле в теле, особенно об эндопротезе, пластинах и винтах рядом с зоной съёмки, так как они дают помехи на изображении, а также о кардиостимуляторе и клаустрофобии; взять прежние рентгеновские снимки",
+        "abnormal": "Снимок может показать отёк костного мозга, скопление жидкости в суставе, изменения хряща и суставной губы, воспаление сухожилий или нарушение кровоснабжения кости, причём часть изменений связана с возрастом и нагрузкой. Что это значит для лечения, определяет ортопед"
+      },
+      "en": {
+        "what": "A study of both hip joints: the femoral heads, cartilage, the joint labrum and the surrounding muscles and tendons",
+        "how": "The patient lies on their back with a coil over the pelvis, both joints are imaged in the same series so they can be compared; usually 20-40 minutes, some protocols use contrast",
+        "when": "Groin and thigh pain, limping, suspected disturbed blood supply to the femoral head, labral damage, impingement during movement, a stress fracture not visible on X-ray, joint inflammation, follow-up of hip dysplasia",
+        "prep": "No special preparation is needed; report metal in the body in advance, especially a joint replacement, plates and screws near the area being scanned, because they distort the images, and also a pacemaker and claustrophobia; bring previous X-rays",
+        "abnormal": "The scan may show bone marrow oedema, fluid in the joint, changes in the cartilage and labrum, tendon inflammation or disturbed blood supply to the bone, and some changes relate to age and load. What this means for treatment is decided by an orthopaedic surgeon"
+      },
+      "sr": {
+        "what": "Prikaz oba kuka: glava butnih kostiju, hrskavice, zglobne usne, kao i okolnih mišića i tetiva",
+        "how": "Pacijent leži na leđima, kalem se postavlja iznad karlice, oba zgloba se snimaju u istoj seriji radi poređenja; obično traje 20-40 minuta, dio protokola ide uz kontrast",
+        "when": "Bol u preponi i butini, šepanje, sumnja na poremećaj ishrane glave butne kosti, oštećenje zglobne usne, uklještenje u zglobu pri pokretu, stresni prelom koji se ne vidi na rendgenu, upala zgloba, praćenje displazije kuka",
+        "prep": "Posebna priprema nije potrebna; unaprijed prijaviti metal u tijelu, naročito vještački zglob, pločice i zavrtnje blizu područja snimanja jer prave smetnje na slici, kao i pejsmejker i klaustrofobiju; ponijeti ranije rendgenske snimke",
+        "abnormal": "Snimak može pokazati otok koštane srži, tečnost u zglobu, promjene hrskavice i zglobne usne, upalu tetiva ili poremećaj ishrane kosti, a dio promjena ide uz godine i opterećenje. Šta to znači za liječenje, određuje ortoped"
+      },
+      "de": {
+        "what": "Darstellung beider Hüftgelenke: Hüftköpfe, Knorpel, Gelenklippe sowie umgebende Muskeln und Sehnen",
+        "how": "Der Patient liegt auf dem Rücken, über dem Becken liegt eine Spule, beide Gelenke werden in derselben Serie aufgenommen, damit man sie vergleichen kann; meist 20-40 Minuten, manche Protokolle mit Kontrastmittel",
+        "when": "Leisten- und Oberschenkelschmerzen, Hinken, Verdacht auf gestörte Durchblutung des Hüftkopfes, Schaden an der Gelenklippe, Einklemmen im Gelenk bei Bewegung, ein im Röntgen nicht sichtbarer Ermüdungsbruch, Gelenkentzündung, Verlaufskontrolle bei Hüftdysplasie",
+        "prep": "Eine besondere Vorbereitung ist nicht nötig; Metall im Körper vorab melden, vor allem ein Kunstgelenk, Platten und Schrauben nahe der Untersuchungsregion, da sie die Bilder stören, ebenso Herzschrittmacher und Klaustrophobie; frühere Röntgenbilder mitbringen",
+        "abnormal": "Die Aufnahme kann ein Knochenmarködem, Flüssigkeit im Gelenk, Veränderungen an Knorpel und Gelenklippe, eine Sehnenentzündung oder eine gestörte Knochendurchblutung zeigen, ein Teil der Veränderungen hängt mit Alter und Belastung zusammen. Was das für die Behandlung bedeutet, legt der Orthopäde fest"
+      },
+      "tr": {
+        "what": "Her iki kalça ekleminin, femur başlarının, kıkırdağın, eklem dudağının ve çevredeki kas ve tendonların görüntülenmesi",
+        "how": "Hasta sırtüstü yatar, pelvis üzerine sargı yerleştirilir, karşılaştırma yapılabilsin diye iki eklem aynı seride görüntülenir; genellikle 20-40 dakika sürer, bazı protokollerde kontrast kullanılır",
+        "when": "Kasık ve uyluk ağrısı, topallama, femur başının kanlanmasında bozulma şüphesi, eklem dudağı hasarı, harekette eklem sıkışması, röntgende görünmeyen stres kırığı, eklem iltihabı, kalça displazisinin izlemi",
+        "prep": "Özel hazırlık gerekmez; vücuttaki metali, özellikle çekim bölgesine yakın protez, plak ve vidaları görüntüyü bozdukları için önceden bildirin, kalp pili ve klostrofobiyi de belirtin; önceki röntgen görüntülerini getirin",
+        "abnormal": "Görüntü kemik iliği ödemini, eklemdeki sıvıyı, kıkırdak ve eklem dudağı değişikliklerini, tendon iltihabını ya da kemiğin kanlanmasındaki bozulmayı gösterebilir, değişikliklerin bir kısmı yaş ve yüklenmeyle ilgilidir. Bunun tedavi açısından anlamını ortopedi hekimi belirler"
+      },
+      "sr_cyrl": {
+        "what": "Приказ оба кука: глава бутних костију, хрскавице, зглобне усне, као и околних мишића и тетива",
+        "how": "Пацијент лежи на леђима, калем се поставља изнад карлице, оба зглоба се снимају у истој серији ради поређења; обично траје 20-40 минута, дио протокола иде уз контраст",
+        "when": "Бол у препони и бутини, шепање, сумња на поремећај исхране главе бутне кости, оштећење зглобне усне, укљештење у зглобу при покрету, стресни прелом који се не види на рендгену, упала зглоба, праћење дисплазије кука",
+        "prep": "Посебна припрема није потребна; унапријед пријавити метал у тијелу, нарочито вјештачки зглоб, плочице и завртње близу подручја снимања јер праве сметње на слици, као и пејсмејкер и клаустрофобију; понијети раније рендгенске снимке",
+        "abnormal": "Снимак може показати оток коштане сржи, течност у зглобу, промјене хрскавице и зглобне усне, упалу тетива или поремећај исхране кости, а дио промјена иде уз године и оптерећење. Шта то значи за лијечење, одређује ортопед"
+      }
+    }
+  },
+  {
+    "slug": "mri-lumbosacral-spine",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Послойное исследование поясничных позвонков, крестца, межпозвонковых дисков и нервных корешков в нижней части спины",
+        "how": "Пациент лежит на спине, под колени кладут валик, катушку располагают под поясницей; обычно 15-30 минут, контраст добавляют в основном при обследовании после операции",
+        "when": "Боль в пояснице с отдачей в ногу, онемение и слабость стопы, подозрение на грыжу диска или сужение позвоночного канала, смещение позвонка, травма, подготовка к операции и оценка состояния после неё, длительная боль без улучшения",
+        "prep": "Подготовка не требуется; заранее сообщить о металле в теле, кардиостимуляторе и клаустрофобии, снять ремень, украшения и одежду с металлическими элементами, взять прежние снимки и выписки",
+        "abnormal": "Исследование может показать выпячивание или грыжу диска, сужение канала и отверстий для корешков, изменения суставов и тел позвонков, реже воспаление или образование. Такие находки бывают и у людей без боли, поэтому их сопоставляют с осмотром, и делает это невролог или нейрохирург"
+      },
+      "en": {
+        "what": "A layer-by-layer study of the lumbar vertebrae, sacrum, intervertebral discs and nerve roots in the lower back",
+        "how": "The patient lies on their back with a cushion under the knees and a coil under the lower back; usually 15-30 minutes, contrast is mainly added when the spine is examined after surgery",
+        "when": "Low back pain radiating into the leg, numbness and weakness of the foot, suspected disc herniation or spinal canal narrowing, a slipped vertebra, injury, planning surgery and assessment afterwards, long-lasting pain that does not improve",
+        "prep": "No preparation is required; report metal in the body, a pacemaker and claustrophobia in advance, take off belts, jewellery and clothes with metal parts, bring previous images and reports",
+        "abnormal": "The study may show a bulging or herniated disc, narrowing of the canal and of the openings for the nerve roots, changes in the joints and vertebral bodies and, less often, inflammation or a lesion. Such findings also occur in people without pain, so they are matched against the examination by a neurologist or neurosurgeon"
+      },
+      "sr": {
+        "what": "Slojeviti prikaz slabinskih pršljenova, krsne kosti, međupršljenskih diskusa i nervnih korjenova u donjem dijelu leđa",
+        "how": "Pacijent leži na leđima, pod koljena se stavlja valjak, a kalem ide ispod slabina; obično traje 15-30 minuta, kontrast se dodaje uglavnom pri pregledu nakon operacije",
+        "when": "Bol u krstima koji se širi u nogu, trnjenje i slabost stopala, sumnja na diskus herniju ili suženje kičmenog kanala, pomjeranje pršljena, povreda, priprema za operaciju i procjena stanja poslije nje, dugotrajan bol bez poboljšanja",
+        "prep": "Priprema nije potrebna; unaprijed prijaviti metal u tijelu, pejsmejker i klaustrofobiju, skinuti kaiš, nakit i odjeću sa metalnim dijelovima, ponijeti ranije snimke i nalaze",
+        "abnormal": "Pregled može pokazati izbočenje ili herniju diskusa, suženje kanala i otvora za korjenove, promjene zglobova i tijela pršljenova, rjeđe upalu ili tvorbu. Takvi nalazi postoje i kod ljudi bez bola, pa ih sa pregledom upoređuje neurolog ili neurohirurg"
+      },
+      "de": {
+        "what": "Schichtweise Darstellung der Lendenwirbel, des Kreuzbeins, der Bandscheiben und der Nervenwurzeln im unteren Rücken",
+        "how": "Der Patient liegt auf dem Rücken, unter den Knien liegt eine Rolle, unter der Lende eine Spule; meist 15-30 Minuten, Kontrastmittel vor allem bei der Untersuchung nach einer Operation",
+        "when": "Kreuzschmerzen mit Ausstrahlung ins Bein, Taubheit und Schwäche des Fußes, Verdacht auf Bandscheibenvorfall oder Spinalkanalverengung, Wirbelgleiten, Verletzung, Operationsplanung und Beurteilung danach, lang anhaltender Schmerz ohne Besserung",
+        "prep": "Eine Vorbereitung ist nicht nötig; Metall im Körper, Herzschrittmacher und Klaustrophobie vorab melden, Gürtel, Schmuck und Kleidung mit Metallteilen ablegen, frühere Aufnahmen und Befunde mitbringen",
+        "abnormal": "Die Untersuchung kann eine Vorwölbung oder einen Vorfall der Bandscheibe, eine Verengung des Kanals und der Nervenaustrittslöcher, Veränderungen der Gelenke und Wirbelkörper und seltener eine Entzündung oder einen Herdbefund zeigen. Solche Befunde gibt es auch bei Schmerzfreien, deshalb gleicht ein Neurologe oder Neurochirurg sie mit der Untersuchung ab"
+      },
+      "tr": {
+        "what": "Bel omurlarının, sakrumun, disklerin ve belin alt bölümündeki sinir köklerinin kesit kesit görüntülenmesi",
+        "how": "Hasta sırtüstü yatar, dizlerin altına destek konur, belin altına sargı yerleştirilir; genellikle 15-30 dakika sürer, kontrast daha çok ameliyat sonrası incelemelerde eklenir",
+        "when": "Bacağa yayılan bel ağrısı, ayakta uyuşma ve güçsüzlük, disk fıtığı veya kanal darlığı şüphesi, omur kayması, travma, ameliyat planlaması ve sonrasında durumun değerlendirilmesi, düzelmeyen uzun süreli ağrı",
+        "prep": "Hazırlık gerekmez; vücuttaki metali, kalp pilini ve klostrofobiyi önceden bildirin, kemer, takı ve metal parçalı giysileri çıkarın, önceki görüntü ve raporları getirin",
+        "abnormal": "İnceleme disk taşmasını veya fıtığını, kanal ve sinir kökü deliklerinin daralmasını, eklem ve omur gövdelerindeki değişiklikleri, daha seyrek olarak iltihap ya da bir lezyonu gösterebilir. Bu bulgular ağrısı olmayan kişilerde de görülür, bu yüzden nörolog veya beyin cerrahı muayeneyle karşılaştırır"
+      },
+      "sr_cyrl": {
+        "what": "Слојевити приказ слабинских пршљенова, крсне кости, међупршљенских дискуса и нервних корјенова у доњем дијелу леђа",
+        "how": "Пацијент лежи на леђима, под кољена се ставља ваљак, а калем иде испод слабина; обично траје 15-30 минута, контраст се додаје углавном при прегледу након операције",
+        "when": "Бол у крстима који се шири у ногу, трњење и слабост стопала, сумња на дискус хернију или сужење кичменог канала, помјерање пршљена, повреда, припрема за операцију и процјена стања послије ње, дуготрајан бол без побољшања",
+        "prep": "Припрема није потребна; унапријед пријавити метал у тијелу, пејсмејкер и клаустрофобију, скинути каиш, накит и одјећу са металним дијеловима, понијети раније снимке и налазе",
+        "abnormal": "Преглед може показати избочење или хернију дискуса, сужење канала и отвора за корјенове, промјене зглобова и тијела пршљенова, рјеђе упалу или творбу. Такви налази постоје и код људи без бола, па их са прегледом упоређује неуролог или неурохирург"
+      }
+    }
+  },
+  {
+    "slug": "mri-musculoskeletal-system",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исследование костей, суставов, мышц, сухожилий и связок выбранной области тела в магнитном поле; какую именно зону снимать, указывает направивший врач",
+        "how": "На исследуемую область надевают или кладут катушку, пациент лежит неподвижно, за один приём снимают одну зону; обычно 20-40 минут, при части задач вводят контраст в вену или в сустав",
+        "when": "Боль и ограничение движений в суставе, спортивная травма, подозрение на разрыв связки, мениска или сухожилия, скопление жидкости, воспаление мягких тканей, образование в мышцах или под кожей, уточнение неясного рентгеновского снимка",
+        "prep": "Специальной подготовки нет; сообщить о металле в теле, особенно о пластинах, винтах и протезах в зоне съёмки, а также о кардиостимуляторе и клаустрофобии; принести направление с указанием нужной области и прежние снимки",
+        "abnormal": "Исследование хорошо показывает мягкие ткани: разрывы, отёк, воспаление, изменения хряща и костного мозга, но мелкие детали кости и свежие переломы лучше видны на рентгене или КТ. Что из найденного объясняет жалобы, определяет ортопед или травматолог"
+      },
+      "en": {
+        "what": "A study of the bones, joints, muscles, tendons and ligaments of a selected body region in a magnetic field; the referring doctor specifies which region is scanned",
+        "how": "A coil is placed on or around the region, the patient lies still and one region is scanned per appointment; usually 20-40 minutes, some questions require contrast into a vein or into the joint",
+        "when": "Pain and restricted movement in a joint, a sports injury, suspected tear of a ligament, meniscus or tendon, fluid collection, soft tissue inflammation, a lump in the muscle or under the skin, clarification of an unclear X-ray",
+        "prep": "There is no special preparation; report metal in the body, especially plates, screws and prostheses in the area to be scanned, as well as a pacemaker and claustrophobia; bring the referral stating the region and previous images",
+        "abnormal": "The study shows soft tissue well, that is tears, swelling, inflammation, changes in cartilage and bone marrow, while fine bone detail and fresh fractures are better seen on X-ray or CT. Which of the findings explains the complaints is decided by an orthopaedic or trauma surgeon"
+      },
+      "sr": {
+        "what": "Prikaz kostiju, zglobova, mišića, tetiva i ligamenata izabranog dijela tijela u magnetnom polju; koju oblast treba snimiti, navodi ljekar koji upućuje",
+        "how": "Na područje koje se snima postavlja se kalem, pacijent leži nepomično, a u jednom terminu se snima jedna oblast; obično traje 20-40 minuta, kod dijela pitanja se daje kontrast u venu ili u zglob",
+        "when": "Bol i ograničen pokret u zglobu, sportska povreda, sumnja na kidanje ligamenta, meniskusa ili tetive, nakupljanje tečnosti, upala mekih tkiva, tvorba u mišiću ili pod kožom, razjašnjenje nejasnog rendgenskog snimka",
+        "prep": "Posebne pripreme nema; prijaviti metal u tijelu, naročito pločice, zavrtnje i proteze u području snimanja, kao i pejsmejker i klaustrofobiju; ponijeti uput sa naznačenom oblašću i ranije snimke",
+        "abnormal": "Pregled dobro prikazuje meka tkiva, dakle kidanja, otok, upalu, promjene hrskavice i koštane srži, dok se sitni detalji kosti i svježi prelomi bolje vide na rendgenu ili CT. Šta od nalaza objašnjava tegobe, određuje ortoped ili traumatolog"
+      },
+      "de": {
+        "what": "Darstellung von Knochen, Gelenken, Muskeln, Sehnen und Bändern einer ausgewählten Körperregion im Magnetfeld; welche Region aufgenommen wird, gibt der überweisende Arzt an",
+        "how": "Auf die Region wird eine Spule gelegt, der Patient liegt still, pro Termin wird eine Region aufgenommen; meist 20-40 Minuten, bei manchen Fragestellungen mit Kontrastmittel über die Vene oder in das Gelenk",
+        "when": "Schmerzen und eingeschränkte Beweglichkeit eines Gelenks, Sportverletzung, Verdacht auf Riss von Band, Meniskus oder Sehne, Flüssigkeitsansammlung, Weichteilentzündung, Knoten im Muskel oder unter der Haut, Abklärung eines unklaren Röntgenbildes",
+        "prep": "Eine besondere Vorbereitung gibt es nicht; Metall im Körper melden, besonders Platten, Schrauben und Prothesen in der Aufnahmeregion, ebenso Herzschrittmacher und Klaustrophobie; die Überweisung mit der genannten Region und frühere Aufnahmen mitbringen",
+        "abnormal": "Die Untersuchung zeigt Weichteile gut, also Risse, Schwellung, Entzündung, Veränderungen von Knorpel und Knochenmark, während feine Knochendetails und frische Brüche im Röntgen oder CT besser zu sehen sind. Welcher Befund die Beschwerden erklärt, entscheidet der Orthopäde oder Unfallchirurg"
+      },
+      "tr": {
+        "what": "Seçilen vücut bölgesindeki kemik, eklem, kas, tendon ve bağların manyetik alanda görüntülenmesi; hangi bölgenin çekileceğini sevk eden hekim belirtir",
+        "how": "Çekilecek bölgeye sargı yerleştirilir, hasta hareketsiz yatar ve bir randevuda tek bölge görüntülenir; genellikle 20-40 dakika sürer, bazı durumlarda damardan ya da eklem içine kontrast verilir",
+        "when": "Eklemde ağrı ve hareket kısıtlılığı, spor yaralanması, bağ, menisküs veya tendon yırtığı şüphesi, sıvı birikimi, yumuşak doku iltihabı, kasta veya deri altında kitle, net olmayan röntgenin aydınlatılması",
+        "prep": "Özel hazırlık yoktur; vücuttaki metali, özellikle çekim bölgesindeki plak, vida ve protezleri, ayrıca kalp pilini ve klostrofobiyi bildirin; bölgenin yazılı olduğu sevk belgesini ve önceki görüntüleri getirin",
+        "abnormal": "İnceleme yumuşak dokuları, yırtıkları, ödemi, iltihabı, kıkırdak ve kemik iliği değişikliklerini iyi gösterir; ince kemik ayrıntıları ve yeni kırıklar ise röntgen ya da BT ile daha iyi görülür. Bulgulardan hangisinin yakınmaları açıkladığına ortopedi veya travma hekimi karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Приказ костију, зглобова, мишића, тетива и лигамената изабраног дијела тијела у магнетном пољу; коју област треба снимити, наводи љекар који упућује",
+        "how": "На подручје које се снима поставља се калем, пацијент лежи непомично, а у једном термину се снима једна област; обично траје 20-40 минута, код дијела питања се даје контраст у вену или у зглоб",
+        "when": "Бол и ограничен покрет у зглобу, спортска повреда, сумња на кидање лигамента, менискуса или тетиве, накупљање течности, упала меких ткива, творба у мишићу или под кожом, разјашњење нејасног рендгенског снимка",
+        "prep": "Посебне припреме нема; пријавити метал у тијелу, нарочито плочице, завртње и протезе у подручју снимања, као и пејсмејкер и клаустрофобију; понијети упут са назначеном облашћу и раније снимке",
+        "abnormal": "Преглед добро приказује мека ткива, дакле кидања, оток, упалу, промјене хрскавице и коштане сржи, док се ситни детаљи кости и свјежи преломи боље виде на рендгену или CT. Шта од налаза објашњава тегобе, одређује ортопед или трауматолог"
+      }
+    }
+  },
+  {
+    "slug": "mri-pelvic-organs",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прицельное исследование органов таза: матки, яичников и влагалища у женщин или предстательной железы и семенных пузырьков у мужчин, а также мочевого пузыря и конечного отдела кишечника",
+        "how": "Пациент лежит на спине, катушку кладут на низ живота, иногда вводят препарат, временно уменьшающий движения кишечника, чтобы изображение было чётче; часть протоколов требует контраста в вену; обычно 30-45 минут",
+        "when": "Подозрение на эндометриоз, миомы и особенности строения матки, уточнение образования яичника, найденного на УЗИ, стойкая боль внизу живота, изменения стенки мочевого пузыря или кишки, подготовка к операции, наблюдение после лечения",
+        "prep": "Обычно просят несколько часов не есть, иногда опорожнить кишечник и прийти с умеренно наполненным мочевым пузырём, указания даёт клиника; женщинам исследование могут назначить на определённую фазу цикла; сообщить о внутриматочной спирали, металле в теле, кардиостимуляторе и клаустрофобии",
+        "abnormal": "Исследование может показать очаги эндометриоза, кисты и узлы, спайки, утолщение стенки органа или объёмное образование, а часть изменений просто наблюдают. Природу находки уточняют по совокупности данных, решение принимает гинеколог, уролог или хирург"
+      },
+      "en": {
+        "what": "A focused study of the pelvic organs: the uterus, ovaries and vagina in women or the prostate and seminal vesicles in men, together with the bladder and the final part of the bowel",
+        "how": "The patient lies on their back with a coil over the lower abdomen, sometimes a medication that briefly reduces bowel movement is given so the images are sharper; some protocols need contrast into a vein; usually 30-45 minutes",
+        "when": "Suspected endometriosis, fibroids and variations in the shape of the uterus, clarification of an ovarian lesion seen on ultrasound, persistent lower abdominal pain, changes in the wall of the bladder or bowel, planning an operation, follow-up after treatment",
+        "prep": "You are usually asked not to eat for a few hours, sometimes to empty the bowel and to arrive with a moderately full bladder, the clinic gives the instructions; for women the study may be scheduled for a particular phase of the cycle; report an intrauterine device, metal in the body, a pacemaker and claustrophobia",
+        "abnormal": "The study may show endometriosis deposits, cysts and nodes, adhesions, thickening of an organ wall or a mass, and some changes are simply observed. The nature of a finding is worked out from all the data, and a gynaecologist, urologist or surgeon makes the decision"
+      },
+      "sr": {
+        "what": "Ciljani prikaz organa u karlici: materice, jajnika i vagine kod žena ili prostate i sjemenih kesica kod muškaraca, uz mokraćnu bešiku i završni dio crijeva",
+        "how": "Pacijent leži na leđima, kalem se stavlja na donji dio trbuha, ponekad se daje lijek koji nakratko smanjuje pokrete crijeva da bi slika bila jasnija; dio protokola traži kontrast u venu; obično traje 30-45 minuta",
+        "when": "Sumnja na endometriozu, miome i posebnosti oblika materice, razjašnjenje tvorbe jajnika viđene na ultrazvuku, uporan bol u donjem dijelu trbuha, promjene zida bešike ili crijeva, priprema za operaciju, praćenje nakon liječenja",
+        "prep": "Obično se traži da se nekoliko sati ne jede, ponekad da se isprazni crijevo i dođe sa umjereno punom bešikom, a uputstvo daje klinika; kod žena se snimanje može zakazati za određenu fazu ciklusa; prijaviti spiralu, metal u tijelu, pejsmejker i klaustrofobiju",
+        "abnormal": "Pregled može pokazati žarišta endometrioze, ciste i čvorove, priraslice, zadebljanje zida organa ili tvorbu, a dio promjena se samo prati. Priroda nalaza se razjašnjava iz svih podataka, a odluku donosi ginekolog, urolog ili hirurg"
+      },
+      "de": {
+        "what": "Gezielte Darstellung der Beckenorgane: Gebärmutter, Eierstöcke und Scheide bei Frauen oder Prostata und Samenbläschen bei Männern, dazu Harnblase und Enddarm",
+        "how": "Der Patient liegt auf dem Rücken, über dem Unterbauch liegt eine Spule, teils wird ein Medikament gegeben, das die Darmbewegung kurzzeitig vermindert, damit die Bilder schärfer werden; manche Protokolle brauchen Kontrastmittel über die Vene; meist 30-45 Minuten",
+        "when": "Verdacht auf Endometriose, Myome und Besonderheiten der Gebärmutterform, Abklärung einer im Ultraschall gesehenen Eierstockveränderung, anhaltende Unterbauchschmerzen, Veränderungen der Blasen- oder Darmwand, Operationsplanung, Verlaufskontrolle nach Behandlung",
+        "prep": "Meist soll man einige Stunden nichts essen, teils den Darm entleeren und mit mäßig gefüllter Blase kommen, die Anweisungen gibt die Klinik; bei Frauen kann die Untersuchung auf eine bestimmte Zyklusphase gelegt werden; Spirale, Metall im Körper, Herzschrittmacher und Klaustrophobie melden",
+        "abnormal": "Die Untersuchung kann Endometrioseherde, Zysten und Knoten, Verwachsungen, eine verdickte Organwand oder eine Raumforderung zeigen, ein Teil der Veränderungen wird nur beobachtet. Worum es sich handelt, ergibt sich aus der Gesamtschau, die Entscheidung trifft der Gynäkologe, Urologe oder Chirurg"
+      },
+      "tr": {
+        "what": "Pelvisteki organların hedefli görüntülenmesi: kadınlarda rahim, yumurtalıklar ve vajina, erkeklerde prostat ve seminal veziküller, ayrıca idrar kesesi ve bağırsağın son bölümü",
+        "how": "Hasta sırtüstü yatar, alt karın üzerine sargı yerleştirilir, görüntü daha net olsun diye bazen bağırsak hareketini kısa süre azaltan bir ilaç verilir; bazı protokoller damardan kontrast gerektirir; genellikle 30-45 dakika sürer",
+        "when": "Endometriozis, miyom ve rahim biçimindeki farklılık şüphesi, ultrasonda görülen yumurtalık kitlesinin netleştirilmesi, geçmeyen alt karın ağrısı, idrar kesesi veya bağırsak duvarındaki değişiklikler, ameliyat planlaması, tedavi sonrası izlem",
+        "prep": "Genellikle birkaç saat aç kalmanız, bazen bağırsağı boşaltmanız ve idrar keseniz ılımlı dolu gelmeniz istenir, talimatı klinik verir; kadınlarda çekim adet döngüsünün belirli bir dönemine planlanabilir; rahim içi aracı, vücuttaki metali, kalp pilini ve klostrofobiyi bildirin",
+        "abnormal": "İnceleme endometriozis odaklarını, kist ve nodülleri, yapışıklıkları, organ duvarında kalınlaşmayı ya da bir kitleyi gösterebilir, değişikliklerin bir kısmı yalnızca izlenir. Bulgunun niteliği tüm verilerle netleşir, kararı jinekolog, ürolog ya da cerrah verir"
+      },
+      "sr_cyrl": {
+        "what": "Циљани приказ органа у карлици: материце, јајника и вагине код жена или простате и сјемених кесица код мушкараца, уз мокраћну бешику и завршни дио цријева",
+        "how": "Пацијент лежи на леђима, калем се ставља на доњи дио трбуха, понекад се даје лијек који накратко смањује покрете цријева да би слика била јаснија; дио протокола тражи контраст у вену; обично траје 30-45 минута",
+        "when": "Сумња на ендометриозу, миоме и посебности облика материце, разјашњење творбе јајника виђене на ултразвуку, упоран бол у доњем дијелу трбуха, промјене зида бешике или цријева, припрема за операцију, праћење након лијечења",
+        "prep": "Обично се тражи да се неколико сати не једе, понекад да се испразни цријево и дође са умјерено пуном бешиком, а упутство даје клиника; код жена се снимање може заказати за одређену фазу циклуса; пријавити спиралу, метал у тијелу, пејсмејкер и клаустрофобију",
+        "abnormal": "Преглед може показати жаришта ендометриозе, цисте и чворове, прираслице, задебљање зида органа или творбу, а дио промјена се само прати. Природа налаза се разјашњава из свих података, а одлуку доноси гинеколог, уролог или хирург"
+      }
+    }
+  },
+  {
+    "slug": "mri-pituitary-gland-sella-turcica",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прицельное исследование гипофиза и области турецкого седла тонкими срезами, отдельно от обычной МРТ головы",
+        "how": "Выполняют узкую программу с тонкими срезами на небольшую область основания черепа, почти всегда с контрастом в вену и сериями сразу после введения; обычно 20-30 минут",
+        "when": "Отклонения в гормональных анализах, прекращение менструаций и выделения из груди, бесплодие, нарушение роста у детей и подростков, сильная жажда с обильным мочеиспусканием, выпадение полей зрения, стойкие головные боли, контроль ранее найденного образования гипофиза и состояния после лечения",
+        "prep": "Специальной подготовки нет, перед контрастом не есть несколько часов и сообщить о болезнях почек и аллергии; заранее предупредить о металле в теле, кардиостимуляторе и клаустрофобии; взять прежние снимки и результаты гормональных анализов",
+        "abnormal": "Снимок может показать увеличение железы, мелкое образование, кисту, пустое турецкое седло или изменение ножки гипофиза, причём небольшие находки встречаются и у людей без жалоб. Значение результата определяет эндокринолог вместе с гормональными анализами и осмотром офтальмолога"
+      },
+      "en": {
+        "what": "A targeted study of the pituitary gland and the sella turcica region with thin slices, separate from a routine head MRI",
+        "how": "A narrow protocol with thin slices covers a small area at the skull base, almost always with contrast into a vein and sequences taken right after the injection; usually 20-30 minutes",
+        "when": "Abnormal hormone tests, stopped periods and discharge from the breast, infertility, growth problems in children and teenagers, strong thirst with heavy urination, loss of visual fields, persistent headaches, follow-up of a known pituitary finding and of the state after treatment",
+        "prep": "There is no special preparation, before contrast do not eat for a few hours and report kidney disease and allergies; mention metal in the body, a pacemaker and claustrophobia in advance; bring previous images and hormone results",
+        "abnormal": "The images may show an enlarged gland, a small lesion, a cyst, an empty sella or a change in the pituitary stalk, and small findings also occur in people without complaints. An endocrinologist interprets the result together with the hormone tests and an eye examination"
+      },
+      "sr": {
+        "what": "Ciljani prikaz hipofize i predjela turskog sedla tankim presjecima, odvojeno od uobičajenog snimanja glave",
+        "how": "Radi se uski program sa tankim presjecima preko malog područja baze lobanje, gotovo uvijek uz kontrast u venu i serije odmah poslije davanja; obično traje 20-30 minuta",
+        "when": "Odstupanja u hormonskim nalazima, izostanak menstruacije i iscjedak iz dojke, neplodnost, poremećaj rasta kod djece i adolescenata, jaka žeđ sa obilnim mokrenjem, ispadi u vidnom polju, uporne glavobolje, praćenje ranije utvrđene tvorbe hipofize i stanja nakon liječenja",
+        "prep": "Posebne pripreme nema, prije kontrasta se nekoliko sati ne jede i prijavljuju se bolesti bubrega i alergije; unaprijed najaviti metal u tijelu, pejsmejker i klaustrofobiju; ponijeti ranije snimke i hormonske nalaze",
+        "abnormal": "Snimak može pokazati uvećanu žlijezdu, sitnu tvorbu, cistu, prazno tursko sedlo ili promjenu peteljke hipofize, a male nalaze imaju i ljudi bez tegoba. Značenje rezultata određuje endokrinolog zajedno sa hormonskim nalazima i pregledom oftalmologa"
+      },
+      "de": {
+        "what": "Gezielte Darstellung der Hypophyse und der Region der Sella turcica in dünnen Schichten, getrennt von einer normalen Kopf-MRT",
+        "how": "Ein enges Protokoll mit dünnen Schichten erfasst ein kleines Areal an der Schädelbasis, fast immer mit Kontrastmittel über die Vene und Aufnahmen direkt nach der Gabe; meist 20-30 Minuten",
+        "when": "Auffällige Hormonwerte, ausbleibende Regelblutung und Absonderung aus der Brust, unerfüllter Kinderwunsch, Wachstumsstörungen bei Kindern und Jugendlichen, starker Durst mit großen Urinmengen, Gesichtsfeldausfälle, anhaltende Kopfschmerzen, Kontrolle eines bekannten Hypophysenbefundes und des Zustands nach Behandlung",
+        "prep": "Eine besondere Vorbereitung gibt es nicht, vor Kontrastmittel einige Stunden nichts essen und Nierenerkrankungen sowie Allergien melden; Metall im Körper, Herzschrittmacher und Klaustrophobie vorab ankündigen; frühere Aufnahmen und Hormonbefunde mitbringen",
+        "abnormal": "Die Aufnahmen können eine vergrößerte Drüse, einen kleinen Befund, eine Zyste, eine leere Sella oder eine Veränderung des Hypophysenstiels zeigen, kleine Befunde finden sich auch bei Beschwerdefreien. Die Bedeutung ordnet der Endokrinologe zusammen mit den Hormonwerten und der augenärztlichen Untersuchung ein"
+      },
+      "tr": {
+        "what": "Hipofiz bezinin ve sella tursika bölgesinin ince kesitlerle, olağan baş çekiminden ayrı olarak hedefli görüntülenmesi",
+        "how": "Kafa tabanındaki küçük bir alanı kapsayan ince kesitli dar bir program uygulanır, neredeyse her zaman damardan kontrast verilir ve enjeksiyondan hemen sonra seriler alınır; genellikle 20-30 dakika sürer",
+        "when": "Hormon tetkiklerinde sapmalar, adetlerin kesilmesi ve memeden akıntı, kısırlık, çocuk ve ergenlerde büyüme bozukluğu, bol idrarla birlikte aşırı susama, görme alanı kayıpları, geçmeyen baş ağrısı, bilinen hipofiz bulgusunun ve tedavi sonrası durumun izlemi",
+        "prep": "Özel hazırlık yoktur, kontrast öncesi birkaç saat aç kalınır ve böbrek hastalığı ile alerjiler bildirilir; vücuttaki metal, kalp pili ve klostrofobi önceden haber verilir; önceki görüntüler ve hormon sonuçları getirilir",
+        "abnormal": "Görüntüler büyümüş bezi, küçük bir lezyonu, kisti, boş sellayı ya da hipofiz sapındaki değişikliği gösterebilir; küçük bulgular yakınması olmayan kişilerde de görülür. Sonucun anlamını endokrinoloji hekimi hormon tetkikleri ve göz muayenesiyle birlikte belirler"
+      },
+      "sr_cyrl": {
+        "what": "Циљани приказ хипофизе и предјела турског седла танким пресјецима, одвојено од уобичајеног снимања главе",
+        "how": "Ради се уски програм са танким пресјецима преко малог подручја базе лобање, готово увијек уз контраст у вену и серије одмах послије давања; обично траје 20-30 минута",
+        "when": "Одступања у хормонским налазима, изостанак менструације и исцједак из дојке, неплодност, поремећај раста код дјеце и адолесцената, јака жеђ са обилним мокрењем, испади у видном пољу, упорне главобоље, праћење раније утврђене творбе хипофизе и стања након лијечења",
+        "prep": "Посебне припреме нема, прије контраста се неколико сати не једе и пријављују се болести бубрега и алергије; унапријед најавити метал у тијелу, пејсмејкер и клаустрофобију; понијети раније снимке и хормонске налазе",
+        "abnormal": "Снимак може показати увећану жлијезду, ситну творбу, цисту, празно турско седло или промјену петељке хипофизе, а мале налазе имају и људи без тегоба. Значење резултата одређује ендокринолог заједно са хормонским налазима и прегледом офталмолога"
+      }
+    }
+  },
+  {
+    "slug": "mri-thoracic-spine",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Послойное исследование грудных позвонков, межпозвонковых дисков и спинного мозга на уровне грудной клетки",
+        "how": "Пациент лежит на спине, катушку располагают вдоль спины; дыхание и биение сердца добавляют движение, поэтому серии делают короткими и просят дышать ровно; обычно 15-30 минут",
+        "when": "Боль между лопатками и опоясывающая боль в грудной клетке, онемение и слабость в ногах, неустойчивая походка, подозрение на грыжу грудного диска или сдавление спинного мозга, перелом позвонка при остеопорозе, травма, подозрение на воспалительный процесс, контроль известных изменений",
+        "prep": "Подготовка не нужна; заранее сообщить о металле в теле, кардиостимуляторе и клаустрофобии, снять бюстгальтер с косточками, украшения и одежду с металлом",
+        "abnormal": "Исследование может показать грыжу диска, сужение канала со сдавлением спинного мозга, последствия перелома тела позвонка, изменения костного мозга позвонков или очаги в самом спинном мозге. Насколько находка объясняет симптомы, оценивает невролог или нейрохирург"
+      },
+      "en": {
+        "what": "A layer-by-layer study of the thoracic vertebrae, intervertebral discs and spinal cord at chest level",
+        "how": "The patient lies on their back with a coil along the spine; breathing and the heartbeat add movement, so the sequences are kept short and even breathing is requested; usually 15-30 minutes",
+        "when": "Pain between the shoulder blades and belt-like chest pain, numbness and weakness in the legs, unsteady walking, suspected thoracic disc herniation or pressure on the spinal cord, a vertebral fracture in osteoporosis, injury, suspected inflammatory process, follow-up of known changes",
+        "prep": "No preparation is needed; report metal in the body, a pacemaker and claustrophobia in advance, remove an underwire bra, jewellery and clothes with metal",
+        "abnormal": "The study may show a disc herniation, canal narrowing with pressure on the spinal cord, the consequences of a vertebral fracture, changes in the vertebral bone marrow or lesions in the cord itself. How far the finding explains the symptoms is judged by a neurologist or neurosurgeon"
+      },
+      "sr": {
+        "what": "Slojeviti prikaz grudnih pršljenova, međupršljenskih diskusa i kičmene moždine u visini grudnog koša",
+        "how": "Pacijent leži na leđima, kalem se postavlja uz leđa; disanje i rad srca unose pokret, pa su serije kratke i traži se mirno disanje; obično traje 15-30 minuta",
+        "when": "Bol između lopatica i opasujući bol u grudima, trnjenje i slabost nogu, nesiguran hod, sumnja na herniju grudnog diskusa ili pritisak na kičmenu moždinu, prelom pršljena kod osteoporoze, povreda, sumnja na upalni proces, kontrola poznatih promjena",
+        "prep": "Priprema nije potrebna; unaprijed prijaviti metal u tijelu, pejsmejker i klaustrofobiju, skinuti grudnjak sa žicom, nakit i odjeću sa metalom",
+        "abnormal": "Pregled može pokazati herniju diskusa, suženje kanala sa pritiskom na kičmenu moždinu, posljedice preloma tijela pršljena, promjene koštane srži pršljenova ili žarišta u samoj moždini. Koliko nalaz objašnjava simptome, procjenjuje neurolog ili neurohirurg"
+      },
+      "de": {
+        "what": "Schichtweise Darstellung der Brustwirbel, der Bandscheiben und des Rückenmarks in Höhe des Brustkorbs",
+        "how": "Der Patient liegt auf dem Rücken, die Spule liegt entlang des Rückens; Atmung und Herzschlag bringen Bewegung ins Bild, deshalb sind die Sequenzen kurz und ruhiges Atmen ist gefragt; meist 15-30 Minuten",
+        "when": "Schmerzen zwischen den Schulterblättern und gürtelförmige Brustschmerzen, Taubheit und Schwäche der Beine, unsicherer Gang, Verdacht auf einen Bandscheibenvorfall der Brustwirbelsäule oder Druck auf das Rückenmark, Wirbelbruch bei Osteoporose, Verletzung, Verdacht auf einen entzündlichen Prozess, Kontrolle bekannter Veränderungen",
+        "prep": "Eine Vorbereitung ist nicht nötig; Metall im Körper, Herzschrittmacher und Klaustrophobie vorab melden, Bügel-BH, Schmuck und Kleidung mit Metall ablegen",
+        "abnormal": "Die Untersuchung kann einen Bandscheibenvorfall, eine Kanalverengung mit Druck auf das Rückenmark, die Folgen eines Wirbelbruchs, Veränderungen des Wirbelknochenmarks oder Herde im Rückenmark selbst zeigen. Wie weit der Befund die Symptome erklärt, beurteilt ein Neurologe oder Neurochirurg"
+      },
+      "tr": {
+        "what": "Göğüs hizasındaki sırt omurlarının, disklerin ve omuriliğin kesit kesit görüntülenmesi",
+        "how": "Hasta sırtüstü yatar, sargı sırt boyunca yerleştirilir; solunum ve kalp atışı hareket kattığı için seriler kısa tutulur ve düzenli nefes alması istenir; genellikle 15-30 dakika sürer",
+        "when": "Kürek kemikleri arasında ağrı ve göğüste kuşak biçiminde ağrı, bacaklarda uyuşma ve güçsüzlük, dengesiz yürüyüş, sırt bölgesinde disk fıtığı veya omuriliğe bası şüphesi, osteoporozda omur kırığı, travma, iltihabi süreç şüphesi, bilinen değişikliklerin kontrolü",
+        "prep": "Hazırlık gerekmez; vücuttaki metali, kalp pilini ve klostrofobiyi önceden bildirin, balenli sutyeni, takıları ve metal içeren giysileri çıkarın",
+        "abnormal": "İnceleme disk fıtığını, kanal darlığıyla omuriliğe basıyı, omur gövdesi kırığının sonuçlarını, omur kemik iliğindeki değişiklikleri ya da omuriliğin kendisindeki odakları gösterebilir. Bulgunun belirtileri ne ölçüde açıkladığını nörolog veya beyin cerrahı değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Слојевити приказ грудних пршљенова, међупршљенских дискуса и кичмене мождине у висини грудног коша",
+        "how": "Пацијент лежи на леђима, калем се поставља уз леђа; дисање и рад срца уносе покрет, па су серије кратке и тражи се мирно дисање; обично траје 15-30 минута",
+        "when": "Бол између лопатица и опасујући бол у грудима, трњење и слабост ногу, несигуран ход, сумња на хернију грудног дискуса или притисак на кичмену мождину, прелом пршљена код остеопорозе, повреда, сумња на упални процес, контрола познатих промјена",
+        "prep": "Припрема није потребна; унапријед пријавити метал у тијелу, пејсмејкер и клаустрофобију, скинути грудњак са жицом, накит и одјећу са металом",
+        "abnormal": "Преглед може показати хернију дискуса, сужење канала са притиском на кичмену мождину, посљедице прелома тијела пршљена, промјене коштане сржи пршљенова или жаришта у самој мождини. Колико налаз објашњава симптоме, процјењује неуролог или неурохирург"
+      }
+    }
+  },
+  {
+    "slug": "mri-angiography-brain-and-neck-vessels",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исследование артерий шеи и головного мозга в магнитном поле: сосуды видны за счёт движения крови, во многих протоколах контраст не нужен",
+        "how": "К обычному исследованию головы добавляют сосудистые серии, пациент лежит неподвижно в туннеле; обычно 20-40 минут, часть протоколов выполняют с контрастом в вену",
+        "when": "Перенесённый инсульт или преходящее нарушение мозгового кровообращения, подозрение на сужение или закупорку артерии, пульсирующий шум в ухе, стойкое головокружение, контроль ранее найденной аневризмы или сосудистой мальформации, наблюдение после операции на сосудах",
+        "prep": "Специальной подготовки нет, при контрасте не есть несколько часов и сообщить о болезнях почек и аллергии; заранее предупредить о металле в теле, кардиостимуляторе, сосудистых клипсах и клаустрофобии, снять украшения и заколки",
+        "abnormal": "Исследование может показать сужение или извитость артерии, аневризму, сосудистую мальформацию, а также вариант строения сосудистого круга, который сам по себе не болезнь. Нужны ли уточнение другими методами и консультация сосудистого хирурга или невролога, решает лечащий врач"
+      },
+      "en": {
+        "what": "A study of the neck and brain arteries in a magnetic field: the vessels are seen thanks to the flow of blood, and many protocols need no contrast",
+        "how": "Vascular sequences are added to a standard head study while the patient lies still in the tunnel; usually 20-40 minutes, some protocols are performed with contrast into a vein",
+        "when": "A previous stroke or transient disturbance of brain circulation, suspected narrowing or blockage of an artery, pulsating noise in the ear, persistent dizziness, follow-up of a known aneurysm or vascular malformation, monitoring after vascular surgery",
+        "prep": "There is no special preparation, with contrast do not eat for a few hours and report kidney disease and allergies; mention metal in the body, a pacemaker, vascular clips and claustrophobia in advance, remove jewellery and hairpins",
+        "abnormal": "The study may show a narrowed or tortuous artery, an aneurysm, a vascular malformation, or a variant of the arterial circle that is not a disease in itself. Whether other methods and a consultation with a vascular surgeon or neurologist are needed is decided by the treating doctor"
+      },
+      "sr": {
+        "what": "Prikaz arterija vrata i mozga u magnetnom polju: krvni sudovi se vide zahvaljujući protoku krvi, pa kod mnogih protokola kontrast nije potreban",
+        "how": "Uz uobičajeno snimanje glave dodaju se serije za krvne sudove, pacijent leži nepomično u tunelu; obično traje 20-40 minuta, dio protokola se radi sa kontrastom u venu",
+        "when": "Preboljeli moždani udar ili prolazni poremećaj moždane cirkulacije, sumnja na suženje ili začepljenje arterije, pulsirajući šum u uhu, uporna vrtoglavica, kontrola ranije nađene aneurizme ili vaskularne malformacije, praćenje poslije operacije na krvnim sudovima",
+        "prep": "Posebne pripreme nema, uz kontrast se nekoliko sati ne jede i prijavljuju se bolesti bubrega i alergije; unaprijed najaviti metal u tijelu, pejsmejker, vaskularne klipse i klaustrofobiju, skinuti nakit i ukosnice",
+        "abnormal": "Pregled može pokazati suženje ili vijugavost arterije, aneurizmu, vaskularnu malformaciju, kao i varijantu građe arterijskog kruga koja sama po sebi nije bolest. Da li slijedi provjera drugim metodama i pregled vaskularnog hirurga ili neurologa, odlučuje ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Darstellung der Hals- und Hirnarterien im Magnetfeld: die Gefäße werden durch den Blutfluss sichtbar, viele Protokolle brauchen kein Kontrastmittel",
+        "how": "Zur üblichen Kopfuntersuchung kommen Gefäßsequenzen hinzu, der Patient liegt still in der Röhre; meist 20-40 Minuten, ein Teil der Protokolle wird mit Kontrastmittel über die Vene durchgeführt",
+        "when": "Durchgemachter Schlaganfall oder vorübergehende Durchblutungsstörung des Gehirns, Verdacht auf Verengung oder Verschluss einer Arterie, pulsierendes Ohrgeräusch, anhaltender Schwindel, Kontrolle eines bekannten Aneurysmas oder einer Gefäßmissbildung, Verlauf nach einer Gefäßoperation",
+        "prep": "Eine besondere Vorbereitung gibt es nicht, mit Kontrastmittel einige Stunden nichts essen und Nierenerkrankungen sowie Allergien melden; Metall im Körper, Herzschrittmacher, Gefäßclips und Klaustrophobie vorab ankündigen, Schmuck und Haarspangen ablegen",
+        "abnormal": "Die Untersuchung kann eine verengte oder geschlängelte Arterie, ein Aneurysma, eine Gefäßmissbildung sowie eine Variante des arteriellen Kreislaufs zeigen, die für sich keine Krankheit ist. Ob weitere Verfahren und die Vorstellung bei einem Gefäßchirurgen oder Neurologen nötig sind, entscheidet der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Boyun ve beyin atardamarlarının manyetik alanda görüntülenmesi: damarlar kan akımı sayesinde görünür, birçok protokolde kontrast gerekmez",
+        "how": "Olağan baş çekimine damar serileri eklenir, hasta tünelde hareketsiz yatar; genellikle 20-40 dakika sürer, protokollerin bir kısmı damardan kontrast ile yapılır",
+        "when": "Geçirilmiş inme veya geçici beyin dolaşım bozukluğu, atardamarda daralma ya da tıkanma şüphesi, kulakta zonklayıcı uğultu, geçmeyen baş dönmesi, bilinen anevrizma veya damar malformasyonunun kontrolü, damar ameliyatı sonrası izlem",
+        "prep": "Özel hazırlık yoktur, kontrastlı çekimde birkaç saat aç kalınır, böbrek hastalığı ve alerjiler bildirilir; vücuttaki metal, kalp pili, damar klipsleri ve klostrofobi önceden haber verilir, takı ve tokalar çıkarılır",
+        "abnormal": "İnceleme daralmış ya da kıvrımlı bir atardamarı, anevrizmayı, damar malformasyonunu veya kendi başına hastalık olmayan bir damar halkası varyantını gösterebilir. Başka yöntemlerle doğrulama ve damar cerrahı ya da nörolog görüşü gerekip gerekmediğine tedaviyi yürüten hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Приказ артерија врата и мозга у магнетном пољу: крвни судови се виде захваљујући протоку крви, па код многих протокола контраст није потребан",
+        "how": "Уз уобичајено снимање главе додају се серије за крвне судове, пацијент лежи непомично у тунелу; обично траје 20-40 минута, дио протокола се ради са контрастом у вену",
+        "when": "Пребољели мождани удар или пролазни поремећај мождане циркулације, сумња на сужење или зачепљење артерије, пулсирајући шум у уху, упорна вртоглавица, контрола раније нађене анеуризме или васкуларне малформације, праћење послије операције на крвним судовима",
+        "prep": "Посебне припреме нема, уз контраст се неколико сати не једе и пријављују се болести бубрега и алергије; унапријед најавити метал у тијелу, пејсмејкер, васкуларне клипсе и клаустрофобију, скинути накит и укоснице",
+        "abnormal": "Преглед може показати сужење или вијугавост артерије, анеуризму, васкуларну малформацију, као и варијанту грађе артеријског круга која сама по себи није болест. Да ли слиједи провјера другим методама и преглед васкуларног хирурга или неуролога, одлучује љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "mri-prostate-multiparametric",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исследование предстательной железы сразу по нескольким программам: обычные изображения, диффузионные серии и съёмка после введения контраста в вену",
+        "how": "Пациент лежит на спине, катушку кладут на низ живота, вводят контраст, иногда дают препарат, временно уменьшающий движения кишечника; обычно 30-45 минут",
+        "when": "Изменения уровня PSA, уплотнение при пальцевом исследовании, планирование прицельной биопсии, повторная оценка после ранее отрицательной биопсии, наблюдение при выбранной выжидательной тактике, уточнение распространённости уже установленного заболевания",
+        "prep": "Клиника обычно просит опорожнить кишечник накануне или утром, прийти с умеренно наполненным мочевым пузырём и воздержаться от семяизвержения за несколько дней; после биопсии исследование откладывают на несколько недель, чтобы следы крови не мешали; сообщить о металле в теле, протезе тазобедренного сустава, кардиостимуляторе, клаустрофобии, болезнях почек и аллергии",
+        "abnormal": "Рентгенолог описывает найденные участки и оценивает их по принятой международной шкале, при этом часть изменений оказывается воспалением или возрастной перестройкой железы. Нужна ли биопсия и какой будет тактика, решает уролог вместе с анализами и осмотром"
+      },
+      "en": {
+        "what": "A study of the prostate using several sequences at once: standard images, diffusion series and imaging after contrast into a vein",
+        "how": "The patient lies on their back with a coil over the lower abdomen, contrast is injected and sometimes a medication that briefly reduces bowel movement is given; usually 30-45 minutes",
+        "when": "Changes in the PSA level, a firm area on digital examination, planning a targeted biopsy, reassessment after an earlier negative biopsy, follow-up when a watchful approach has been chosen, clarifying the extent of an already established condition",
+        "prep": "The clinic usually asks you to empty the bowel the evening before or in the morning, to come with a moderately full bladder and to abstain from ejaculation for a few days; after a biopsy the study is postponed for several weeks so that traces of blood do not interfere; report metal in the body, a hip replacement, a pacemaker, claustrophobia, kidney disease and allergies",
+        "abnormal": "The radiologist describes the areas found and scores them on an accepted international scale, and some changes turn out to be inflammation or age-related remodelling of the gland. Whether a biopsy is needed and what the plan will be is decided by the urologist together with the tests and the examination"
+      },
+      "sr": {
+        "what": "Pregled prostate sa više programa odjednom: uobičajeni prikazi, difuzione serije i snimanje poslije davanja kontrasta u venu",
+        "how": "Pacijent leži na leđima, kalem se stavlja na donji dio trbuha, daje se kontrast, a ponekad i lijek koji nakratko smanjuje pokrete crijeva; obično traje 30-45 minuta",
+        "when": "Promjene vrijednosti PSA, čvršće područje pri digitalnom pregledu, planiranje ciljane biopsije, ponovna procjena poslije ranije negativne biopsije, praćenje kada je izabran pristup čekanja, razjašnjenje proširenosti već utvrđenog oboljenja",
+        "prep": "Klinika obično traži da se crijevo isprazni uveče ili ujutru, da se dođe sa umjereno punom bešikom i da se nekoliko dana izbjegava ejakulacija; poslije biopsije se snimanje odlaže nekoliko sedmica da tragovi krvi ne smetaju; prijaviti metal u tijelu, vještački kuk, pejsmejker, klaustrofobiju, bolesti bubrega i alergije",
+        "abnormal": "Radiolog opisuje uočena područja i ocjenjuje ih po prihvaćenoj međunarodnoj skali, a dio promjena bude upala ili starosna preobrazba žlijezde. Da li je potrebna biopsija i kakav će biti plan, odlučuje urolog zajedno sa nalazima i pregledom"
+      },
+      "de": {
+        "what": "Untersuchung der Prostata mit mehreren Sequenzen zugleich: normale Bilder, Diffusionsserien und Aufnahmen nach Kontrastmittel über die Vene",
+        "how": "Der Patient liegt auf dem Rücken, über dem Unterbauch liegt eine Spule, Kontrastmittel wird gegeben, teils auch ein Medikament, das die Darmbewegung kurzzeitig vermindert; meist 30-45 Minuten",
+        "when": "Veränderungen des PSA-Wertes, ein verhärteter Bezirk bei der Tastuntersuchung, Planung einer gezielten Biopsie, erneute Beurteilung nach zuvor negativer Biopsie, Verlaufskontrolle bei abwartendem Vorgehen, Klärung der Ausdehnung einer bereits festgestellten Erkrankung",
+        "prep": "Die Klinik bittet meist, den Darm am Vorabend oder am Morgen zu entleeren, mit mäßig gefüllter Blase zu kommen und einige Tage auf einen Samenerguss zu verzichten; nach einer Biopsie wird die Untersuchung einige Wochen verschoben, damit Blutreste nicht stören; Metall im Körper, ein künstliches Hüftgelenk, Herzschrittmacher, Klaustrophobie, Nierenerkrankungen und Allergien melden",
+        "abnormal": "Der Radiologe beschreibt die gefundenen Areale und bewertet sie nach einer anerkannten internationalen Skala, ein Teil der Veränderungen erweist sich als Entzündung oder altersbedingter Umbau der Drüse. Ob eine Biopsie nötig ist und wie es weitergeht, entscheidet der Urologe zusammen mit Laborwerten und Untersuchung"
+      },
+      "tr": {
+        "what": "Prostatın aynı anda birkaç programla incelenmesi: olağan görüntüler, difüzyon serileri ve damardan kontrast sonrası çekim",
+        "how": "Hasta sırtüstü yatar, alt karın üzerine sargı yerleştirilir, kontrast verilir, bazen bağırsak hareketini kısa süre azaltan bir ilaç da uygulanır; genellikle 30-45 dakika sürer",
+        "when": "PSA değerindeki değişiklikler, parmakla muayenede sert alan, hedefli biyopsinin planlanması, daha önce negatif çıkan biyopsiden sonra yeniden değerlendirme, izlem yaklaşımı seçildiğinde takip, saptanmış bir hastalığın yaygınlığının netleştirilmesi",
+        "prep": "Klinik genellikle bir akşam önce ya da sabah bağırsağın boşaltılmasını, idrar kesesinin ılımlı dolu olmasını ve birkaç gün boşalmadan kaçınılmasını ister; biyopsiden sonra kan izleri görüntüyü bozmasın diye çekim birkaç hafta ertelenir; vücuttaki metal, kalça protezi, kalp pili, klostrofobi, böbrek hastalığı ve alerjiler bildirilir",
+        "abnormal": "Radyolog saptadığı alanları tanımlar ve kabul görmüş uluslararası bir ölçeğe göre puanlar; değişikliklerin bir kısmı iltihap ya da bezin yaşa bağlı yeniden yapılanması çıkar. Biyopsi gerekip gerekmediğine ve izlenecek yola ürolog tetkikler ve muayene ile birlikte karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Преглед простате са више програма одједном: уобичајени прикази, дифузионе серије и снимање послије давања контраста у вену",
+        "how": "Пацијент лежи на леђима, калем се ставља на доњи дио трбуха, даје се контраст, а понекад и лијек који накратко смањује покрете цријева; обично траје 30-45 минута",
+        "when": "Промјене вриједности PSA, чвршће подручје при дигиталном прегледу, планирање циљане биопсије, поновна процјена послије раније негативне биопсије, праћење када је изабран приступ чекања, разјашњење проширености већ утврђеног обољења",
+        "prep": "Клиника обично тражи да се цријево испразни увече или ујутру, да се дође са умјерено пуном бешиком и да се неколико дана избјегава ејакулација; послије биопсије се снимање одлаже неколико седмица да трагови крви не сметају; пријавити метал у тијелу, вјештачки кук, пејсмејкер, клаустрофобију, болести бубрега и алергије",
+        "abnormal": "Радиолог описује уочена подручја и оцјењује их по прихваћеној међународној скали, а дио промјена буде упала или старосна преобразба жлијезде. Да ли је потребна биопсија и какав ће бити план, одлучује уролог заједно са налазима и прегледом"
+      }
+    }
+  }
+]

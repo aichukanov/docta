@@ -1,453 +1,530 @@
 [
-	{
-		"slug": "acid-phosphatase",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на фермент, который содержится в предстательной железе, костной ткани и клетках крови",
-				"how": "Забор венозной крови; пробу быстро доставляют в лабораторию, так как активность фермента снижается при хранении",
-				"when": "Обследование предстательной железы в дополнение к другим анализам, оценка костного обмена при отдельных заболеваниях, наблюдение по назначению уролога или гематолога",
-				"prep": "Сдают утром натощак; за несколько дней до анализа не должно быть ректального исследования, массажа простаты, катетеризации и езды на велосипеде, а о них сообщите врачу",
-				"abnormal": "Изменение активности может быть связано с процессами в предстательной железе, костной ткани, клетках крови или с недавними манипуляциями в области таза. Показатель неспецифичен и сам по себе диагноза не устанавливает, его оценивает врач"
-			},
-			"en": {
-				"what": "Blood test for an enzyme found in the prostate, in bone tissue and in blood cells",
-				"how": "Venous blood draw; the sample is delivered to the laboratory quickly because enzyme activity falls during storage",
-				"when": "Prostate work-up in addition to other tests, assessment of bone metabolism in selected conditions, monitoring as directed by a urologist or haematologist",
-				"prep": "Taken in the morning while fasting; for several days before there should be no rectal examination, prostate massage, catheterisation or cycling, and the doctor should be told about them",
-				"abnormal": "A change in activity may be related to processes in the prostate, bone tissue or blood cells, or to recent procedures in the pelvic area. The test is non-specific and does not establish a diagnosis on its own, it is assessed by a doctor"
-			},
-			"sr": {
-				"what": "Analiza krvi na enzim koji se nalazi u prostati, koštanom tkivu i krvnim ćelijama",
-				"how": "Uzimanje venske krvi; uzorak se brzo dostavlja u laboratoriju jer aktivnost enzima opada tokom stajanja",
-				"when": "Obrada prostate uz ostale analize, procjena koštanog metabolizma kod pojedinih oboljenja, praćenje po uputu urologa ili hematologa",
-				"prep": "Uzima se ujutru natašte; nekoliko dana prije analize ne smije biti rektalnog pregleda, masaže prostate, kateterizacije ni vožnje bicikla, a o njima treba obavijestiti ljekara",
-				"abnormal": "Promjena aktivnosti može biti povezana sa procesima u prostati, koštanom tkivu, krvnim ćelijama ili sa skorašnjim zahvatima u predjelu karlice. Pokazatelj je nespecifičan i sam po sebi ne postavlja dijagnozu, procjenjuje ga ljekar"
-			},
-			"de": {
-				"what": "Bluttest auf ein Enzym, das in der Prostata, im Knochengewebe und in Blutzellen vorkommt",
-				"how": "Venöse Blutentnahme; die Probe wird rasch ins Labor gebracht, da die Enzymaktivität bei Lagerung abnimmt",
-				"when": "Abklärung der Prostata ergänzend zu anderen Untersuchungen, Beurteilung des Knochenstoffwechsels bei einzelnen Erkrankungen, Verlaufskontrolle auf Anordnung des Urologen oder Hämatologen",
-				"prep": "Morgens nüchtern; einige Tage zuvor sollten keine rektale Untersuchung, Prostatamassage, Katheterisierung oder Radfahren stattfinden, und der Arzt sollte darüber informiert werden",
-				"abnormal": "Eine veränderte Aktivität kann mit Vorgängen in der Prostata, im Knochengewebe oder in Blutzellen sowie mit kürzlichen Eingriffen im Beckenbereich zusammenhängen. Der Wert ist unspezifisch und stellt für sich allein keine Diagnose, die Beurteilung erfolgt durch den Arzt"
-			},
-			"tr": {
-				"what": "Prostat, kemik dokusu ve kan hücrelerinde bulunan bir enzimi ölçen kan tetkiki",
-				"how": "Venöz kan alınır; enzim aktivitesi beklemeyle azaldığı için örnek hızlıca laboratuvara ulaştırılır",
-				"when": "Diğer tetkiklerle birlikte prostat incelemesi, bazı hastalıklarda kemik metabolizmasının değerlendirilmesi, üroloji veya hematoloji yönlendirmesiyle izlem",
-				"prep": "Sabah aç karnına alınır; tetkikten birkaç gün önce rektal muayene, prostat masajı, sonda takılması ve bisiklet kullanımı olmamalı, olduysa hekime bildirilmelidir",
-				"abnormal": "Aktivitedeki değişiklik prostat, kemik dokusu veya kan hücrelerindeki süreçlerle ya da leğen bölgesindeki yakın zamanlı işlemlerle ilişkili olabilir. Test özgül değildir ve tek başına tanı koymaz, değerlendirmeyi hekim yapar"
-			}
-		}
-	},
-	{
-		"slug": "ammonia-nh3",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на азотистый продукт обмена белков, который печень обезвреживает, превращая в мочевину",
-				"how": "Забор венозной крови в охлаждённую пробирку, её сразу доставляют в лабораторию: вне организма показатель быстро растёт",
-				"when": "Сонливость, спутанность сознания и изменения поведения при заболеваниях печени, обследование новорождённых и детей при подозрении на наследственные нарушения обмена, контроль на фоне приёма отдельных препаратов",
-				"prep": "Сдают утром натощак; перед забором не курить, спокойно посидеть и не сжимать кулак, о принимаемых препаратах сообщить врачу",
-				"abnormal": "Повышение может быть связано с работой печени, наследственными особенностями обмена, приёмом некоторых лекарств или с нарушением условий забора и хранения пробы. Результат оценивает врач вместе с состоянием пациента и другими анализами"
-			},
-			"en": {
-				"what": "Blood test for a nitrogen product of protein metabolism that the liver neutralises by converting it into urea",
-				"how": "Venous blood is drawn into a chilled tube and taken to the laboratory immediately, because the value rises quickly outside the body",
-				"when": "Drowsiness, confusion and behaviour changes in liver disease, work-up of newborns and children with suspected inherited metabolic disorders, monitoring during treatment with certain medications",
-				"prep": "Taken in the morning while fasting; do not smoke before the draw, sit quietly and do not clench the fist, and tell the doctor about any medications",
-				"abnormal": "An increase may be related to liver function, inherited features of metabolism, certain medications, or to breaches of sampling and handling conditions. The result is assessed by a doctor together with the patient's condition and other tests"
-			},
-			"sr": {
-				"what": "Analiza krvi na azotni proizvod razgradnje bjelančevina koji jetra obezvređuje pretvarajući ga u ureju",
-				"how": "Venska krv se uzima u ohlađenu epruvetu koja se odmah nosi u laboratoriju, jer vrijednost van organizma brzo raste",
-				"when": "Pospanost, konfuzija i promjene ponašanja kod oboljenja jetre, obrada novorođenčadi i djece kod sumnje na nasljedne poremećaje metabolizma, praćenje tokom uzimanja pojedinih lijekova",
-				"prep": "Uzima se ujutru natašte; prije vađenja ne pušiti, mirno sjediti i ne stiskati šaku, a o lijekovima koje uzimate obavijestiti ljekara",
-				"abnormal": "Povišene vrijednosti mogu biti povezane sa radom jetre, nasljednim osobenostima metabolizma, uzimanjem pojedinih lijekova ili sa greškama pri uzimanju i čuvanju uzorka. Nalaz procjenjuje ljekar zajedno sa stanjem pacijenta i ostalim analizama"
-			},
-			"de": {
-				"what": "Bluttest auf ein stickstoffhaltiges Abbauprodukt des Eiweißstoffwechsels, das die Leber durch Umwandlung in Harnstoff entgiftet",
-				"how": "Venöse Blutentnahme in ein gekühltes Röhrchen, das sofort ins Labor gebracht wird, da der Wert außerhalb des Körpers rasch ansteigt",
-				"when": "Schläfrigkeit, Verwirrtheit und Verhaltensänderungen bei Lebererkrankungen, Abklärung bei Neugeborenen und Kindern mit Verdacht auf angeborene Stoffwechselstörungen, Kontrolle unter bestimmten Medikamenten",
-				"prep": "Morgens nüchtern; vor der Entnahme nicht rauchen, ruhig sitzen und die Faust nicht ballen, eingenommene Medikamente dem Arzt mitteilen",
-				"abnormal": "Erhöhte Werte können mit der Leberfunktion, angeborenen Besonderheiten des Stoffwechsels, bestimmten Medikamenten oder mit Fehlern bei Entnahme und Lagerung der Probe zusammenhängen. Die Beurteilung nimmt der Arzt zusammen mit dem Zustand und weiteren Befunden vor"
-			},
-			"tr": {
-				"what": "Karaciğerin üreye dönüştürerek zararsız hale getirdiği, protein metabolizmasının azotlu ürününü ölçen kan tetkiki",
-				"how": "Venöz kan soğutulmuş tüpe alınır ve hemen laboratuvara ulaştırılır, çünkü değer vücut dışında hızla yükselir",
-				"when": "Karaciğer hastalıklarında uykuya eğilim, bilinç bulanıklığı ve davranış değişiklikleri, kalıtsal metabolizma hastalığı şüphesiyle yenidoğan ve çocukların incelenmesi, bazı ilaçlar kullanılırken izlem",
-				"prep": "Sabah aç karnına alınır; kan alınmadan önce sigara içilmemeli, sakin oturulmalı ve yumruk sıkılmamalı, kullanılan ilaçlar hekime bildirilmelidir",
-				"abnormal": "Yükseklik karaciğerin çalışmasıyla, kalıtsal metabolizma özellikleriyle, bazı ilaçlarla ya da örneğin alınma ve saklanma koşullarındaki hatalarla ilişkili olabilir. Sonucu hekim, hastanın durumu ve diğer tetkiklerle birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "beta-2-microglobulin",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ на небольшой белок с поверхности клеток, уровень которого зависит от скорости обновления клеток и от фильтрации в почках",
-				"how": "Забор венозной крови; при оценке работы почечных канальцев тот же белок определяют в порции мочи",
-				"when": "Наблюдение при заболеваниях крови и лимфатической системы, оценка канальцевой функции почек, наблюдение у пациентов на диализе, обследование по назначению гематолога или нефролога",
-				"prep": "Специальной подготовки обычно не требуется, кровь чаще сдают утром; для анализа мочи берут свежую порцию по инструкции лаборатории",
-				"abnormal": "Изменения могут быть связаны со скоростью обновления клеток, воспалением, инфекциями или работой почек. Показатель неспецифичен, его значение врач определяет только вместе с другими исследованиями и клинической картиной"
-			},
-			"en": {
-				"what": "Test for a small protein from the surface of cells, whose level depends on cell turnover and on filtration in the kidneys",
-				"how": "Venous blood draw; when tubular kidney function is assessed, the same protein is measured in a urine sample",
-				"when": "Monitoring in diseases of the blood and lymphatic system, assessment of tubular kidney function, follow-up in patients on dialysis, testing as directed by a haematologist or nephrologist",
-				"prep": "No special preparation is usually needed and blood is most often taken in the morning; for the urine test a fresh sample is collected according to the laboratory's instructions",
-				"abnormal": "Changes may be related to cell turnover, inflammation, infections or kidney function. The marker is non-specific, and a doctor interprets it only together with other investigations and the clinical picture"
-			},
-			"sr": {
-				"what": "Analiza malog proteina sa površine ćelija, čiji nivo zavisi od brzine obnavljanja ćelija i od filtracije u bubrezima",
-				"how": "Uzimanje venske krvi; kada se procjenjuje rad bubrežnih tubula, isti protein se određuje i u uzorku mokraće",
-				"when": "Praćenje kod oboljenja krvi i limfnog sistema, procjena tubularne funkcije bubrega, praćenje pacijenata na dijalizi, obrada po uputu hematologa ili nefrologa",
-				"prep": "Posebna priprema obično nije potrebna, krv se najčešće vadi ujutru; za analizu mokraće uzima se svjež uzorak prema uputstvu laboratorije",
-				"abnormal": "Promjene mogu biti povezane sa brzinom obnavljanja ćelija, upalom, infekcijama ili radom bubrega. Pokazatelj je nespecifičan, pa njegovo značenje ljekar utvrđuje samo uz ostale nalaze i kliničku sliku"
-			},
-			"de": {
-				"what": "Untersuchung eines kleinen Proteins von der Zelloberfläche, dessen Spiegel vom Zellumsatz und von der Filtration in den Nieren abhängt",
-				"how": "Venöse Blutentnahme; zur Beurteilung der Nierentubuli wird dasselbe Protein auch im Urin bestimmt",
-				"when": "Verlaufskontrolle bei Erkrankungen des Blutes und des Lymphsystems, Beurteilung der tubulären Nierenfunktion, Kontrolle bei Dialysepatienten, Abklärung auf Anordnung des Hämatologen oder Nephrologen",
-				"prep": "Eine besondere Vorbereitung ist meist nicht nötig, Blut wird überwiegend morgens entnommen; für die Urinuntersuchung wird eine frische Probe nach Anweisung des Labors gesammelt",
-				"abnormal": "Veränderungen können mit dem Zellumsatz, Entzündungen, Infektionen oder der Nierenfunktion zusammenhängen. Der Wert ist unspezifisch, seine Bedeutung bestimmt der Arzt nur zusammen mit weiteren Befunden und dem klinischen Bild"
-			},
-			"tr": {
-				"what": "Düzeyi hücre yenilenme hızına ve böbreklerdeki filtrasyona bağlı olan, hücre yüzeyindeki küçük bir proteinin ölçümü",
-				"how": "Venöz kan alınır; böbrek tübül işlevi değerlendirilirken aynı protein idrar örneğinde de ölçülür",
-				"when": "Kan ve lenf sistemi hastalıklarında izlem, böbrek tübül işlevinin değerlendirilmesi, diyaliz hastalarının takibi, hematoloji veya nefroloji yönlendirmesiyle inceleme",
-				"prep": "Genellikle özel hazırlık gerekmez, kan çoğunlukla sabah alınır; idrar tetkiki için laboratuvarın talimatına göre taze örnek verilir",
-				"abnormal": "Değişiklikler hücre yenilenme hızı, iltihap, enfeksiyonlar veya böbrek işleviyle ilişkili olabilir. Belirteç özgül değildir, anlamını hekim yalnızca diğer tetkikler ve klinik tabloyla birlikte belirler"
-			}
-		}
-	},
-	{
-		"slug": "cholinesterase",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на фермент, который вырабатывает печень и который участвует в расщеплении ряда веществ и препаратов",
-				"how": "Забор венозной крови, занимает несколько минут",
-				"when": "Оценка синтетической функции печени, подозрение на контакт с фосфорорганическими соединениями, подготовка к наркозу, если у пациента или его родственников пробуждение после наркоза раньше затягивалось",
-				"prep": "Специальной подготовки обычно не требуется, сдают чаще утром; обязательно сообщите врачу о работе с ядохимикатами и о принимаемых препаратах",
-				"abnormal": "Сниженная активность может быть связана с работой печени, контактом с фосфорорганическими веществами, беременностью, приёмом ряда препаратов или наследственным вариантом фермента. Значение результата, особенно перед операцией, оценивает врач"
-			},
-			"en": {
-				"what": "Blood test for an enzyme produced by the liver that takes part in breaking down a number of substances and medications",
-				"how": "Venous blood draw, takes a few minutes",
-				"when": "Assessment of the liver's synthetic function, suspected contact with organophosphate compounds, preparation for anaesthesia when the patient or relatives previously had a prolonged recovery from it",
-				"prep": "No special preparation is usually required and the sample is most often taken in the morning; be sure to tell the doctor about work with pesticides and about any medications",
-				"abnormal": "Reduced activity may be related to liver function, contact with organophosphates, pregnancy, certain medications or an inherited variant of the enzyme. The meaning of the result, especially before surgery, is assessed by a doctor"
-			},
-			"sr": {
-				"what": "Analiza krvi na enzim koji stvara jetra i koji učestvuje u razgradnji niza materija i lijekova",
-				"how": "Uzimanje venske krvi, traje nekoliko minuta",
-				"when": "Procjena sintetske funkcije jetre, sumnja na kontakt sa organofosfornim jedinjenjima, priprema za anesteziju kada su pacijent ili srodnici ranije imali produženo buđenje",
-				"prep": "Posebna priprema obično nije potrebna, uzorak se najčešće uzima ujutru; obavezno obavijestite ljekara o radu sa pesticidima i o lijekovima koje uzimate",
-				"abnormal": "Smanjena aktivnost može biti povezana sa radom jetre, kontaktom sa organofosfornim materijama, trudnoćom, uzimanjem pojedinih lijekova ili nasljednom varijantom enzima. Značenje nalaza, naročito prije operacije, procjenjuje ljekar"
-			},
-			"de": {
-				"what": "Bluttest auf ein von der Leber gebildetes Enzym, das am Abbau verschiedener Substanzen und Medikamente beteiligt ist",
-				"how": "Venöse Blutentnahme, dauert wenige Minuten",
-				"when": "Beurteilung der Syntheseleistung der Leber, Verdacht auf Kontakt mit Organophosphatverbindungen, Vorbereitung auf eine Narkose, wenn beim Patienten oder in der Familie das Aufwachen früher verlängert war",
-				"prep": "Eine besondere Vorbereitung ist meist nicht nötig, die Entnahme erfolgt überwiegend morgens; Arbeit mit Pflanzenschutzmitteln und eingenommene Medikamente unbedingt dem Arzt mitteilen",
-				"abnormal": "Eine verminderte Aktivität kann mit der Leberfunktion, Kontakt mit Organophosphaten, einer Schwangerschaft, bestimmten Medikamenten oder einer erblichen Enzymvariante zusammenhängen. Die Bedeutung des Befundes, besonders vor einer Operation, beurteilt der Arzt"
-			},
-			"tr": {
-				"what": "Karaciğerin ürettiği ve bazı maddelerle ilaçların parçalanmasında görev alan bir enzimi ölçen kan tetkiki",
-				"how": "Venöz kan alınır, birkaç dakika sürer",
-				"when": "Karaciğerin sentez işlevinin değerlendirilmesi, organik fosforlu bileşiklerle temas şüphesi, hastada ya da yakınlarında daha önce anesteziden uyanmanın uzadığı durumlarda ameliyat hazırlığı",
-				"prep": "Genellikle özel hazırlık gerekmez, örnek çoğunlukla sabah alınır; tarım ilaçlarıyla çalışma ve kullanılan ilaçlar mutlaka hekime bildirilmelidir",
-				"abnormal": "Aktivitenin düşük olması karaciğerin çalışmasıyla, organik fosforlu maddelerle temasla, gebelikle, bazı ilaçlarla veya enzimin kalıtsal bir varyantıyla ilişkili olabilir. Sonucun anlamını, özellikle ameliyat öncesinde, hekim değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "lactate",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на продукт обмена глюкозы без участия кислорода, по которому судят о снабжении тканей кислородом",
-				"how": "Забор венозной крови без долгого наложения жгута, пробирку сразу доставляют в лабораторию; в стационаре показатель нередко определяют из артериальной крови вместе с газами",
-				"when": "Тяжёлые острые состояния и наблюдение в стационаре, подозрение на наследственные нарушения обмена, необъяснимая одышка и слабость, оценка переносимости физической нагрузки, контроль на фоне отдельных препаратов",
-				"prep": "Перед забором спокойно посидеть около четверти часа, не сжимать кулак и не напрягать руку; накануне избегать интенсивных нагрузок и алкоголя",
-				"abnormal": "Повышение может быть связано с недостаточным поступлением кислорода в ткани, физической нагрузкой, работой печени и почек, приёмом некоторых препаратов или с условиями забора. Результат оценивает врач вместе с клинической картиной и кислотно-щелочными показателями"
-			},
-			"en": {
-				"what": "Blood test for a product of glucose metabolism without oxygen, used to judge the oxygen supply to tissues",
-				"how": "Venous blood is drawn without a prolonged tourniquet and the tube goes to the laboratory at once; in hospital the value is often measured in arterial blood together with blood gases",
-				"when": "Severe acute conditions and in-hospital monitoring, suspected inherited metabolic disorders, unexplained breathlessness and weakness, assessment of exercise tolerance, monitoring during treatment with certain medications",
-				"prep": "Sit quietly for about a quarter of an hour before the draw, do not clench the fist or tense the arm; avoid intense exercise and alcohol the day before",
-				"abnormal": "An increase may be related to insufficient oxygen delivery to tissues, physical exertion, liver and kidney function, certain medications or the sampling conditions. The result is assessed by a doctor together with the clinical picture and the acid-base values"
-			},
-			"sr": {
-				"what": "Analiza krvi na proizvod razgradnje glukoze bez kiseonika, po kojem se procjenjuje snabdijevanje tkiva kiseonikom",
-				"how": "Venska krv se vadi bez dugog stezanja poveskom, a epruveta odmah ide u laboratoriju; u bolnici se vrijednost često određuje iz arterijske krvi zajedno sa gasnim analizama",
-				"when": "Teška akutna stanja i praćenje u bolnici, sumnja na nasljedne poremećaje metabolizma, neobjašnjiva zaduha i slabost, procjena podnošenja fizičkog napora, praćenje uz pojedine lijekove",
-				"prep": "Prije vađenja mirno sjediti oko četvrt sata, ne stiskati šaku i ne naprezati ruku; dan ranije izbjegavati intenzivan napor i alkohol",
-				"abnormal": "Povišene vrijednosti mogu biti povezane sa nedovoljnim dotokom kiseonika u tkiva, fizičkim naporom, radom jetre i bubrega, pojedinim lijekovima ili uslovima uzimanja uzorka. Nalaz procjenjuje ljekar uz kliničku sliku i acidobazne pokazatelje"
-			},
-			"de": {
-				"what": "Bluttest auf ein Produkt des Glukoseabbaus ohne Sauerstoff, mit dem die Sauerstoffversorgung der Gewebe beurteilt wird",
-				"how": "Venöse Blutentnahme ohne lange Stauung, das Röhrchen geht sofort ins Labor; im Krankenhaus wird der Wert häufig aus arteriellem Blut zusammen mit den Blutgasen bestimmt",
-				"when": "Schwere akute Zustände und Überwachung im Krankenhaus, Verdacht auf angeborene Stoffwechselstörungen, unklare Atemnot und Schwäche, Beurteilung der Belastbarkeit, Kontrolle unter bestimmten Medikamenten",
-				"prep": "Vor der Entnahme etwa eine Viertelstunde ruhig sitzen, die Faust nicht ballen und den Arm nicht anspannen; am Vortag starke Belastung und Alkohol meiden",
-				"abnormal": "Erhöhte Werte können mit einer unzureichenden Sauerstoffversorgung der Gewebe, körperlicher Belastung, der Leber- und Nierenfunktion, bestimmten Medikamenten oder den Entnahmebedingungen zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit dem klinischen Bild und den Säure-Basen-Werten"
-			},
-			"tr": {
-				"what": "Dokulara oksijen gidişini değerlendirmek için bakılan, glukozun oksijensiz yıkım ürününü ölçen kan tetkiki",
-				"how": "Turnike uzun süre bağlanmadan venöz kan alınır ve tüp hemen laboratuvara gönderilir; hastanede değer sıklıkla kan gazlarıyla birlikte atardamar kanından ölçülür",
-				"when": "Ağır akut durumlar ve hastanede izlem, kalıtsal metabolizma hastalığı şüphesi, açıklanamayan nefes darlığı ve halsizlik, efor toleransının değerlendirilmesi, bazı ilaçlar kullanılırken izlem",
-				"prep": "Kan alınmadan önce yaklaşık çeyrek saat sakin oturulmalı, yumruk sıkılmamalı ve kol zorlanmamalıdır; bir gün önce yoğun efor ve alkolden kaçınılmalıdır",
-				"abnormal": "Yükseklik dokulara oksijen gidişinin yetersizliğiyle, fiziksel eforla, karaciğer ve böbrek işleviyle, bazı ilaçlarla ya da örnek alma koşullarıyla ilişkili olabilir. Sonucu hekim klinik tablo ve asit-baz değerleriyle birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "acid-base-status-ph-pco2-po2",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Исследование газов крови и кислотно-щелочного равновесия: показывает, как лёгкие обеспечивают обмен кислорода и углекислого газа и как удерживается баланс кислот и оснований",
-				"how": "Кровь берут из артерии, чаще на запястье, или из капилляра в специальный шприц и сразу измеряют на приборе; забор занимает несколько минут, бывает чувствительнее обычного, после него место прижимают",
-				"when": "Одышка и дыхательная недостаточность, тяжёлые острые состояния, наблюдение при хронических болезнях лёгких, подбор и контроль кислородотерапии, обследование при нарушениях обмена веществ",
-				"prep": "Специальной подготовки нет; перед забором нужно спокойно подышать в привычном режиме и не менять поток кислорода, а о кислородотерапии и препаратах, разжижающих кровь, сообщить персоналу",
-				"abnormal": "Изменения могут быть связаны с работой лёгких, почек, обменом веществ или влиянием лекарств. Показатели трактуются только вместе и в контексте состояния пациента, этим занимается врач"
-			},
-			"en": {
-				"what": "Measurement of blood gases and acid-base balance, showing how the lungs exchange oxygen and carbon dioxide and how the balance of acids and bases is held",
-				"how": "Blood is taken from an artery, usually at the wrist, or from a capillary into a special syringe and measured on the analyser at once; the draw takes a few minutes, can be more uncomfortable than usual, and the site is pressed afterwards",
-				"when": "Breathlessness and respiratory failure, severe acute conditions, monitoring in chronic lung disease, starting and adjusting oxygen therapy, work-up of metabolic disturbances",
-				"prep": "No special preparation; breathe calmly as usual before the draw and do not change the oxygen flow, and tell the staff about oxygen therapy and about blood-thinning medications",
-				"abnormal": "Changes may be related to the function of the lungs or kidneys, to metabolism or to the effect of medications. The values are interpreted only together and in the context of the patient's condition, which is the doctor's task"
-			},
-			"sr": {
-				"what": "Ispitivanje gasova u krvi i acidobazne ravnoteže: pokazuje kako pluća razmjenjuju kiseonik i ugljen-dioksid i kako se održava odnos kiselina i baza",
-				"how": "Krv se vadi iz arterije, najčešće na zglobu ruke, ili iz kapilare u poseban špric i odmah mjeri na aparatu; vađenje traje nekoliko minuta, može biti neprijatnije nego obično, a ubodno mjesto se poslije pritiska",
-				"when": "Zaduha i respiratorna insuficijencija, teška akutna stanja, praćenje kod hroničnih bolesti pluća, uvođenje i kontrola terapije kiseonikom, obrada kod poremećaja metabolizma",
-				"prep": "Posebne pripreme nema; prije vađenja treba mirno disati kao i inače i ne mijenjati protok kiseonika, a osoblju reći za terapiju kiseonikom i za lijekove koji razrjeđuju krv",
-				"abnormal": "Promjene mogu biti povezane sa radom pluća i bubrega, metabolizmom ili djelovanjem lijekova. Vrijednosti se tumače samo zajedno i u kontekstu stanja pacijenta, a to radi ljekar"
-			},
-			"de": {
-				"what": "Untersuchung der Blutgase und des Säure-Basen-Haushalts: Sie zeigt, wie die Lunge Sauerstoff und Kohlendioxid austauscht und wie das Verhältnis von Säuren und Basen gehalten wird",
-				"how": "Blut wird aus einer Arterie, meist am Handgelenk, oder aus einer Kapillare in eine spezielle Spritze entnommen und sofort am Gerät gemessen; die Entnahme dauert wenige Minuten, kann unangenehmer sein als sonst, und die Stelle wird anschließend komprimiert",
-				"when": "Atemnot und respiratorische Insuffizienz, schwere akute Zustände, Verlaufskontrolle bei chronischen Lungenerkrankungen, Einstellung und Kontrolle der Sauerstofftherapie, Abklärung von Stoffwechselstörungen",
-				"prep": "Keine besondere Vorbereitung; vor der Entnahme ruhig wie gewohnt atmen und den Sauerstofffluss nicht verändern, dem Personal Sauerstofftherapie und blutverdünnende Medikamente mitteilen",
-				"abnormal": "Veränderungen können mit der Funktion von Lunge und Nieren, dem Stoffwechsel oder der Wirkung von Medikamenten zusammenhängen. Die Werte werden nur gemeinsam und im Zusammenhang mit dem Zustand beurteilt, das übernimmt der Arzt"
-			},
-			"tr": {
-				"what": "Kan gazları ve asit-baz dengesinin incelenmesi; akciğerlerin oksijen ile karbondioksit değişimini ve asit-baz dengesinin nasıl korunduğunu gösterir",
-				"how": "Kan, çoğunlukla bilekten atardamardan ya da kılcal damardan özel bir enjektöre alınır ve hemen cihazda ölçülür; işlem birkaç dakika sürer, her zamankinden rahatsız edici olabilir, sonrasında iğne yerine bası uygulanır",
-				"when": "Nefes darlığı ve solunum yetmezliği, ağır akut durumlar, kronik akciğer hastalıklarında izlem, oksijen tedavisinin ayarlanması ve kontrolü, metabolik bozuklukların incelenmesi",
-				"prep": "Özel hazırlık yoktur; kan alınmadan önce her zamanki gibi sakin nefes alınmalı ve oksijen akışı değiştirilmemeli, oksijen tedavisi ile kan sulandırıcı ilaçlar personele bildirilmelidir",
-				"abnormal": "Değişiklikler akciğer ve böbrek işleviyle, metabolizmayla ya da ilaçların etkisiyle ilişkili olabilir. Değerler yalnızca birlikte ve hastanın durumu bağlamında yorumlanır, bunu hekim yapar"
-			}
-		}
-	},
-	{
-		"slug": "apolipoprotein-b",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ крови на белок-носитель атерогенных липопротеиновых частиц: отражает количество таких частиц, а не массу холестерина в них",
-				"how": "Забор венозной крови, обычно вместе с липидным профилем",
-				"when": "Уточнение сердечно-сосудистого риска, повышенные триглицериды, расхождение между уровнем ЛПНП и общей картиной, наследственные нарушения липидного обмена в семье, контроль на фоне терапии",
-				"prep": "Подготовка такая же, как для липидного профиля: сдают утром, натощак или без голодания, точный режим уточните у направившего врача; накануне избегать алкоголя и жирной пищи",
-				"abnormal": "Изменения могут быть связаны с особенностями липидного обмена, питанием, наследственностью или проводимым лечением. Сердечно-сосудистый риск врач оценивает вместе с липидным профилем и другими факторами, по одному показателю вывод не делают"
-			},
-			"en": {
-				"what": "Blood test for the carrier protein of atherogenic lipoprotein particles: it reflects the number of such particles rather than the mass of cholesterol they carry",
-				"how": "Venous blood draw, usually together with the lipid profile",
-				"when": "Refining cardiovascular risk, raised triglycerides, a mismatch between the LDL level and the overall picture, inherited lipid disorders in the family, monitoring during treatment",
-				"prep": "Preparation is the same as for the lipid profile: taken in the morning, fasting or non-fasting, with the exact regimen confirmed with the referring doctor; avoid alcohol and fatty food the day before",
-				"abnormal": "Changes may be related to features of lipid metabolism, diet, heredity or ongoing treatment. Cardiovascular risk is assessed by a doctor together with the lipid profile and other factors, and no conclusion is drawn from a single value"
-			},
-			"sr": {
-				"what": "Analiza krvi na protein nosač aterogenih lipoproteinskih čestica: odražava broj tih čestica, a ne masu holesterola u njima",
-				"how": "Uzimanje venske krvi, obično zajedno sa lipidnim statusom",
-				"when": "Preciznija procjena kardiovaskularnog rizika, povišeni trigliceridi, neslaganje između vrijednosti LDL i ukupne slike, nasljedni poremećaji masnoća u porodici, praćenje tokom terapije",
-				"prep": "Priprema je ista kao za lipidni status: uzorak se uzima ujutru, natašte ili bez gladovanja, a tačan režim potvrdite kod ljekara koji je uputio; dan ranije izbjegavati alkohol i masnu hranu",
-				"abnormal": "Promjene mogu biti povezane sa osobenostima metabolizma masti, ishranom, nasljeđem ili terapijom koja se sprovodi. Kardiovaskularni rizik ljekar procjenjuje zajedno sa lipidnim statusom i ostalim faktorima, a po jednom pokazatelju se zaključak ne donosi"
-			},
-			"de": {
-				"what": "Bluttest auf das Trägerprotein atherogener Lipoproteinpartikel: Er zeigt die Anzahl dieser Partikel und nicht die Menge des darin enthaltenen Cholesterins",
-				"how": "Venöse Blutentnahme, üblicherweise zusammen mit dem Lipidprofil",
-				"when": "Genauere Einschätzung des kardiovaskulären Risikos, erhöhte Triglyzeride, Abweichung zwischen LDL-Wert und Gesamtbild, erbliche Fettstoffwechselstörungen in der Familie, Kontrolle unter Therapie",
-				"prep": "Die Vorbereitung entspricht der für das Lipidprofil: Entnahme morgens, nüchtern oder ohne Fasten, das genaue Vorgehen mit dem überweisenden Arzt abklären; am Vortag Alkohol und fettes Essen meiden",
-				"abnormal": "Veränderungen können mit Besonderheiten des Fettstoffwechsels, der Ernährung, der Vererbung oder der laufenden Therapie zusammenhängen. Das kardiovaskuläre Risiko beurteilt der Arzt zusammen mit dem Lipidprofil und weiteren Faktoren, aus einem einzelnen Wert wird kein Schluss gezogen"
-			},
-			"tr": {
-				"what": "Aterojenik lipoprotein partiküllerinin taşıyıcı proteinini ölçen kan tetkiki: içlerindeki kolesterol miktarını değil, bu partiküllerin sayısını yansıtır",
-				"how": "Genellikle lipid profiliyle birlikte venöz kan alınır",
-				"when": "Kalp damar riskinin daha kesin değerlendirilmesi, yüksek trigliserid, LDL değeri ile genel tablonun uyuşmaması, ailede kalıtsal yağ metabolizması bozukluğu, tedavi sırasında izlem",
-				"prep": "Hazırlık lipid profiliyle aynıdır: örnek sabah, açlıkta ya da açlık olmadan alınır, kesin düzeni yönlendiren hekimle netleştirin; bir gün önce alkol ve yağlı yiyeceklerden kaçının",
-				"abnormal": "Değişiklikler yağ metabolizmasının özellikleriyle, beslenmeyle, kalıtımla veya sürdürülen tedaviyle ilişkili olabilir. Kalp damar riskini hekim lipid profili ve diğer etkenlerle birlikte değerlendirir, tek bir değerden sonuç çıkarılmaz"
-			}
-		}
-	},
-	{
-		"slug": "ascitic-fluid-analysis",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Лабораторное исследование жидкости, скопившейся в брюшной полости, с оценкой белка, альбумина, клеточного состава и отдельных ферментов",
-				"how": "Жидкость получает врач при проколе брюшной стенки под местным обезболиванием, чаще под контролем УЗИ; часть материала отправляют в лабораторию, сам прокол занимает несколько минут",
-				"when": "Впервые выявленное скопление жидкости в животе, уточнение причин её накопления, подозрение на инфицирование жидкости, наблюдение при хронических болезнях печени, сердца и почек",
-				"prep": "К лабораторной части подготовки нет, условия прокола объясняет выполняющий его врач: обычно просят опорожнить мочевой пузырь и сообщить о препаратах, разжижающих кровь",
-				"abnormal": "Состав жидкости помогает врачу различить механизмы её накопления: давление в сосудах печени, потери белка, воспаление или инфекцию. Вывод делает лечащий врач, сопоставляя результат с анализами крови и данными обследования"
-			},
-			"en": {
-				"what": "Laboratory examination of fluid collected in the abdominal cavity, with assessment of protein, albumin, cell content and selected enzymes",
-				"how": "The fluid is obtained by the doctor through a puncture of the abdominal wall under local anaesthesia, usually with ultrasound guidance; part of the material is sent to the laboratory and the puncture itself takes a few minutes",
-				"when": "Newly found fluid in the abdomen, clarifying why it accumulates, suspected infection of the fluid, follow-up in chronic diseases of the liver, heart and kidneys",
-				"prep": "There is no preparation for the laboratory part, and the conditions of the puncture are explained by the doctor performing it, who usually asks the patient to empty the bladder and to report blood-thinning medications",
-				"abnormal": "The composition of the fluid helps the doctor tell apart the mechanisms behind its accumulation: pressure in the liver vessels, protein loss, inflammation or infection. The conclusion is drawn by the treating doctor, comparing the result with blood tests and imaging findings"
-			},
-			"sr": {
-				"what": "Laboratorijsko ispitivanje tečnosti nakupljene u trbušnoj duplji, sa procjenom proteina, albumina, ćelijskog sastava i pojedinih enzima",
-				"how": "Tečnost uzima ljekar punkcijom trbušnog zida u lokalnoj anesteziji, najčešće uz ultrazvučnu kontrolu; dio materijala se šalje u laboratoriju, a sama punkcija traje nekoliko minuta",
-				"when": "Prvi put uočena tečnost u trbuhu, razjašnjavanje razloga njenog nakupljanja, sumnja na infekciju tečnosti, praćenje kod hroničnih bolesti jetre, srca i bubrega",
-				"prep": "Za laboratorijski dio pripreme nema, a uslove punkcije objašnjava ljekar koji je izvodi: obično se traži pražnjenje mokraćne bešike i podatak o lijekovima koji razrjeđuju krv",
-				"abnormal": "Sastav tečnosti pomaže ljekaru da razluči mehanizme njenog nakupljanja: pritisak u krvnim sudovima jetre, gubitak proteina, upalu ili infekciju. Zaključak donosi ljekar koji liječi pacijenta, upoređujući nalaz sa analizama krvi i nalazima snimanja"
-			},
-			"de": {
-				"what": "Laboruntersuchung der in der Bauchhöhle angesammelten Flüssigkeit mit Bestimmung von Eiweiß, Albumin, Zellgehalt und einzelnen Enzymen",
-				"how": "Die Flüssigkeit gewinnt der Arzt durch eine Punktion der Bauchwand in örtlicher Betäubung, meist unter Ultraschallkontrolle; ein Teil des Materials geht ins Labor, die Punktion selbst dauert wenige Minuten",
-				"when": "Erstmals festgestellte Flüssigkeit im Bauchraum, Klärung der Ursache ihrer Ansammlung, Verdacht auf eine Infektion der Flüssigkeit, Verlaufskontrolle bei chronischen Erkrankungen von Leber, Herz und Nieren",
-				"prep": "Für den Laborteil gibt es keine Vorbereitung, die Bedingungen der Punktion erklärt der durchführende Arzt: Üblicherweise wird um das Entleeren der Blase und um Angaben zu blutverdünnenden Medikamenten gebeten",
-				"abnormal": "Die Zusammensetzung der Flüssigkeit hilft dem Arzt, die Mechanismen der Ansammlung zu unterscheiden: Druck in den Lebergefäßen, Eiweißverlust, Entzündung oder Infektion. Die Beurteilung nimmt der behandelnde Arzt im Vergleich mit Blutwerten und Bildgebung vor"
-			},
-			"tr": {
-				"what": "Karın boşluğunda biriken sıvının laboratuvarda incelenmesi; protein, albümin, hücre içeriği ve bazı enzimler değerlendirilir",
-				"how": "Sıvıyı hekim, çoğunlukla ultrason eşliğinde ve lokal anesteziyle karın duvarından girerek alır; materyalin bir bölümü laboratuvara gönderilir, işlemin kendisi birkaç dakika sürer",
-				"when": "Karında ilk kez saptanan sıvı, birikme nedeninin araştırılması, sıvının enfekte olduğu şüphesi, karaciğer, kalp ve böbreklerin kronik hastalıklarında izlem",
-				"prep": "Laboratuvar bölümü için hazırlık yoktur, işlemin koşullarını uygulayan hekim anlatır: genellikle mesanenin boşaltılması ve kan sulandırıcı ilaçların bildirilmesi istenir",
-				"abnormal": "Sıvının bileşimi hekime birikme mekanizmalarını ayırt etmede yardımcı olur: karaciğer damarlarındaki basınç, protein kaybı, iltihap veya enfeksiyon. Sonucu, kan tetkikleri ve görüntüleme bulgularıyla karşılaştırarak tedaviyi yürüten hekim değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "csf-biochemical-analysis",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Определение в спинномозговой жидкости биохимических показателей: общего белка, глюкозы, хлоридов и при необходимости других",
-				"how": "Ликвор получает врач при люмбальной пункции под местным обезболиванием, небольшую порцию сразу отправляют в лабораторию; глюкозу обычно сравнивают с одновременно взятой кровью",
-				"when": "Подозрение на воспаление оболочек мозга, неясные неврологические симптомы, судороги и нарушения сознания, наблюдение при заболеваниях нервной системы по назначению невролога",
-				"prep": "Подготовка относится к самой пункции и её объясняет врач: нужны согласие, сведения о препаратах, разжижающих кровь, и отдых лёжа после процедуры; отдельной подготовки к лабораторной части нет",
-				"abnormal": "Изменения могут быть связаны с воспалительными процессами, инфекцией, изменённой проницаемостью барьеров между кровью и ликвором или с обменными причинами. Показатели трактуются только вместе с клеточным составом, анализами крови и состоянием пациента, это делает врач"
-			},
-			"en": {
-				"what": "Measurement of biochemical values in cerebrospinal fluid: total protein, glucose, chlorides and, if needed, others",
-				"how": "The fluid is obtained by the doctor during a lumbar puncture under local anaesthesia and a small portion goes to the laboratory at once; glucose is usually compared with blood taken at the same time",
-				"when": "Suspected inflammation of the membranes of the brain, unclear neurological symptoms, seizures and disturbances of consciousness, follow-up in nervous system diseases as directed by a neurologist",
-				"prep": "Preparation concerns the puncture itself and is explained by the doctor: consent, information about blood-thinning medications and lying down afterwards are required; the laboratory part needs no separate preparation",
-				"abnormal": "Changes may be related to inflammation, infection, altered permeability of the barriers between blood and the fluid, or to metabolic causes. The values are interpreted only together with the cell content, blood tests and the patient's condition, which is done by a doctor"
-			},
-			"sr": {
-				"what": "Određivanje biohemijskih pokazatelja u likvoru: ukupnih proteina, glukoze, hlorida i po potrebi drugih",
-				"how": "Likvor uzima ljekar lumbalnom punkcijom u lokalnoj anesteziji, a mala količina odmah ide u laboratoriju; glukoza se obično poredi sa krvlju uzetom u isto vrijeme",
-				"when": "Sumnja na upalu moždanih ovojnica, nejasni neurološki simptomi, grčevi i poremećaji svijesti, praćenje kod oboljenja nervnog sistema po uputu neurologa",
-				"prep": "Priprema se odnosi na samu punkciju i objašnjava je ljekar: potrebni su saglasnost, podaci o lijekovima koji razrjeđuju krv i ležanje poslije zahvata; za laboratorijski dio posebne pripreme nema",
-				"abnormal": "Promjene mogu biti povezane sa upalnim procesima, infekcijom, promijenjenom propustljivošću barijera između krvi i likvora ili sa metaboličkim uzrocima. Pokazatelji se tumače samo uz ćelijski sastav, analize krvi i stanje pacijenta, a to radi ljekar"
-			},
-			"de": {
-				"what": "Bestimmung biochemischer Werte im Liquor: Gesamteiweiß, Glukose, Chloride und bei Bedarf weitere",
-				"how": "Den Liquor gewinnt der Arzt bei einer Lumbalpunktion in örtlicher Betäubung, eine kleine Menge geht sofort ins Labor; die Glukose wird üblicherweise mit gleichzeitig entnommenem Blut verglichen",
-				"when": "Verdacht auf eine Entzündung der Hirnhäute, unklare neurologische Symptome, Krampfanfälle und Bewusstseinsstörungen, Verlaufskontrolle bei Erkrankungen des Nervensystems auf Anordnung des Neurologen",
-				"prep": "Die Vorbereitung betrifft die Punktion selbst und wird vom Arzt erläutert: Einwilligung, Angaben zu blutverdünnenden Medikamenten und Liegen im Anschluss; für den Laborteil ist keine gesonderte Vorbereitung nötig",
-				"abnormal": "Veränderungen können mit Entzündungen, einer Infektion, einer veränderten Durchlässigkeit der Schranken zwischen Blut und Liquor oder mit Stoffwechselursachen zusammenhängen. Die Werte werden nur zusammen mit dem Zellbild, den Blutwerten und dem Zustand beurteilt, das übernimmt der Arzt"
-			},
-			"tr": {
-				"what": "Beyin omurilik sıvısında biyokimyasal değerlerin ölçülmesi: total protein, glukoz, klorür ve gerekirse diğerleri",
-				"how": "Sıvıyı hekim lokal anesteziyle yapılan lomber ponksiyonla alır, küçük bir bölümü hemen laboratuvara gönderilir; glukoz genellikle aynı anda alınan kanla karşılaştırılır",
-				"when": "Beyin zarlarında iltihap şüphesi, açıklanamayan nörolojik belirtiler, nöbetler ve bilinç bozuklukları, nöroloji yönlendirmesiyle sinir sistemi hastalıklarında izlem",
-				"prep": "Hazırlık ponksiyonun kendisiyle ilgilidir ve hekim tarafından anlatılır: onam, kan sulandırıcı ilaç bilgisi ve işlemden sonra sırtüstü dinlenme gerekir; laboratuvar bölümü için ayrı hazırlık yoktur",
-				"abnormal": "Değişiklikler iltihabi süreçlerle, enfeksiyonla, kan ile sıvı arasındaki engellerin geçirgenliğindeki değişimle ya da metabolik nedenlerle ilişkili olabilir. Değerler yalnızca hücre içeriği, kan tetkikleri ve hastanın durumuyla birlikte yorumlanır, bunu hekim yapar"
-			}
-		}
-	},
-	{
-		"slug": "csf-protein-quantitative",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Точное измерение содержания общего белка в спинномозговой жидкости, показателя проницаемости барьера между кровью и ликвором",
-				"how": "Отдельного забора не требуется: белок определяют в той же порции ликвора, что получена при люмбальной пункции, а примесь крови в пробе искажает результат",
-				"when": "Подозрение на воспалительные и демиелинизирующие заболевания нервной системы, полинейропатии, оценка проницаемости барьера между кровью и ликвором, наблюдение в динамике по назначению невролога",
-				"prep": "Подготовки со стороны пациента нет, материал берут во время пункции; правила самой пункции и отдых после неё объясняет выполняющий её врач",
-				"abnormal": "Повышение может быть связано с воспалением, затруднённой циркуляцией ликвора, изменением проницаемости барьера или с попаданием крови в пробу. Значение результата невролог оценивает вместе с остальными показателями ликвора и клинической картиной"
-			},
-			"en": {
-				"what": "Precise measurement of total protein in cerebrospinal fluid, a value that reflects the permeability of the barrier between blood and the fluid",
-				"how": "No separate sampling is needed: protein is measured in the same portion of fluid obtained at lumbar puncture, and blood contaminating the sample distorts the result",
-				"when": "Suspected inflammatory and demyelinating diseases of the nervous system, polyneuropathies, assessment of the permeability of the blood-fluid barrier, follow-up over time as directed by a neurologist",
-				"prep": "There is no preparation on the patient's part and the material is taken during the puncture; the rules of the puncture itself and the rest afterwards are explained by the doctor performing it",
-				"abnormal": "An increase may be related to inflammation, impaired circulation of the fluid, changed permeability of the barrier, or blood getting into the sample. A neurologist assesses the meaning of the result together with the other cerebrospinal fluid values and the clinical picture"
-			},
-			"sr": {
-				"what": "Precizno mjerenje ukupnih proteina u likvoru, pokazatelja propustljivosti barijere između krvi i likvora",
-				"how": "Posebno uzimanje nije potrebno: proteini se određuju u istoj količini likvora dobijenoj lumbalnom punkcijom, a primjesa krvi u uzorku iskrivljuje nalaz",
-				"when": "Sumnja na upalna i demijelinizaciona oboljenja nervnog sistema, polineuropatije, procjena propustljivosti barijere između krvi i likvora, praćenje u dinamici po uputu neurologa",
-				"prep": "Sa strane pacijenta pripreme nema, materijal se uzima tokom punkcije; pravila same punkcije i odmor poslije nje objašnjava ljekar koji je izvodi",
-				"abnormal": "Povišene vrijednosti mogu biti povezane sa upalom, otežanim protokom likvora, promijenjenom propustljivošću barijere ili sa dospijevanjem krvi u uzorak. Značenje nalaza neurolog procjenjuje uz ostale pokazatelje likvora i kliničku sliku"
-			},
-			"de": {
-				"what": "Genaue Bestimmung des Gesamteiweißes im Liquor, eines Wertes für die Durchlässigkeit der Schranke zwischen Blut und Liquor",
-				"how": "Eine gesonderte Entnahme ist nicht nötig: Das Eiweiß wird in derselben bei der Lumbalpunktion gewonnenen Portion bestimmt, eine Blutbeimengung in der Probe verfälscht das Ergebnis",
-				"when": "Verdacht auf entzündliche und entmarkende Erkrankungen des Nervensystems, Polyneuropathien, Beurteilung der Durchlässigkeit der Blut-Liquor-Schranke, Verlaufskontrolle auf Anordnung des Neurologen",
-				"prep": "Von Seiten des Patienten ist keine Vorbereitung nötig, das Material wird während der Punktion gewonnen; die Regeln der Punktion und die Ruhe danach erklärt der durchführende Arzt",
-				"abnormal": "Erhöhte Werte können mit einer Entzündung, einer gestörten Liquorzirkulation, einer veränderten Durchlässigkeit der Schranke oder mit einer Blutbeimengung in der Probe zusammenhängen. Die Bedeutung des Befundes beurteilt der Neurologe zusammen mit den übrigen Liquorwerten und dem klinischen Bild"
-			},
-			"tr": {
-				"what": "Beyin omurilik sıvısındaki total proteinin kesin ölçümü; kan ile sıvı arasındaki engelin geçirgenliğini yansıtan bir değerdir",
-				"how": "Ayrı bir örnek alınması gerekmez: protein, lomber ponksiyonla elde edilen aynı sıvıda ölçülür, örneğe kan karışması sonucu bozar",
-				"when": "Sinir sisteminin iltihabi ve demiyelinizan hastalıkları şüphesi, polinöropatiler, kan ile sıvı arasındaki engelin geçirgenliğinin değerlendirilmesi, nöroloji yönlendirmesiyle zaman içinde izlem",
-				"prep": "Hasta açısından hazırlık yoktur, materyal ponksiyon sırasında alınır; ponksiyonun kuralları ve sonrasındaki dinlenme, işlemi yapan hekim tarafından anlatılır",
-				"abnormal": "Yükseklik iltihapla, sıvı dolaşımının bozulmasıyla, engelin geçirgenliğindeki değişimle ya da örneğe kan karışmasıyla ilişkili olabilir. Sonucun anlamını nöroloji uzmanı diğer beyin omurilik sıvısı değerleri ve klinik tabloyla birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "pleural-fluid-analysis",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Лабораторное исследование жидкости из полости между лёгким и грудной стенкой с оценкой белка, ферментов и клеточного состава",
-				"how": "Жидкость получает врач при проколе грудной стенки под местным обезболиванием, чаще под контролем УЗИ; часть материала направляют в лабораторию, после процедуры нередко делают контрольный снимок",
-				"when": "Выявленный на снимке или УЗИ выпот вокруг лёгкого, уточнение причин его появления, одышка и боль в груди при скоплении жидкости, наблюдение при болезнях сердца, лёгких и почек",
-				"prep": "Отдельной подготовки к лабораторной части нет; перед проколом важно сообщить о препаратах, разжижающих кровь, а во время процедуры сидеть неподвижно и стараться не кашлять, остальное объясняет выполняющий врач",
-				"abnormal": "По составу жидкости врач различает механизмы её накопления, от повышенного давления в сосудах до воспаления и инфекции. Окончательный вывод делают вместе с обследованием лёгких и сердца, этим занимается лечащий врач"
-			},
-			"en": {
-				"what": "Laboratory examination of fluid from the space between the lung and the chest wall, with assessment of protein, enzymes and cell content",
-				"how": "The fluid is obtained by the doctor through a puncture of the chest wall under local anaesthesia, usually with ultrasound guidance; part of the material goes to the laboratory and a control image is often taken afterwards",
-				"when": "Effusion around the lung seen on an X-ray or ultrasound, clarifying why it appeared, breathlessness and chest pain caused by the fluid, follow-up in diseases of the heart, lungs and kidneys",
-				"prep": "The laboratory part needs no separate preparation; before the puncture it is important to report blood-thinning medications, and during the procedure to sit still and try not to cough, with the rest explained by the doctor performing it",
-				"abnormal": "From the composition of the fluid the doctor distinguishes the mechanisms of its accumulation, from raised pressure in the vessels to inflammation and infection. The final conclusion is reached together with examination of the lungs and heart and is made by the treating doctor"
-			},
-			"sr": {
-				"what": "Laboratorijsko ispitivanje tečnosti iz prostora između pluća i zida grudnog koša, sa procjenom proteina, enzima i ćelijskog sastava",
-				"how": "Tečnost uzima ljekar punkcijom grudnog zida u lokalnoj anesteziji, najčešće uz ultrazvučnu kontrolu; dio materijala ide u laboratoriju, a poslije zahvata se često uradi kontrolni snimak",
-				"when": "Izliv oko pluća viđen na snimku ili ultrazvuku, razjašnjavanje razloga njegovog nastanka, zaduha i bol u grudima zbog nakupljene tečnosti, praćenje kod bolesti srca, pluća i bubrega",
-				"prep": "Za laboratorijski dio posebne pripreme nema; prije punkcije je važno reći za lijekove koji razrjeđuju krv, a tokom zahvata sjediti mirno i truditi se da se ne kašlje, ostalo objašnjava ljekar koji punkciju izvodi",
-				"abnormal": "Po sastavu tečnosti ljekar razlikuje mehanizme njenog nakupljanja, od povišenog pritiska u krvnim sudovima do upale i infekcije. Konačan zaključak donosi ljekar koji liječi pacijenta, zajedno sa pregledom pluća i srca"
-			},
-			"de": {
-				"what": "Laboruntersuchung der Flüssigkeit aus dem Raum zwischen Lunge und Brustwand mit Bestimmung von Eiweiß, Enzymen und Zellgehalt",
-				"how": "Die Flüssigkeit gewinnt der Arzt durch eine Punktion der Brustwand in örtlicher Betäubung, meist unter Ultraschallkontrolle; ein Teil des Materials geht ins Labor, danach wird häufig eine Kontrollaufnahme angefertigt",
-				"when": "Im Röntgenbild oder Ultraschall gesehener Erguss um die Lunge, Klärung seiner Entstehung, Atemnot und Brustschmerz durch die angesammelte Flüssigkeit, Verlaufskontrolle bei Erkrankungen von Herz, Lunge und Nieren",
-				"prep": "Für den Laborteil ist keine gesonderte Vorbereitung nötig; vor der Punktion ist es wichtig, blutverdünnende Medikamente anzugeben und während des Eingriffs still zu sitzen und möglichst nicht zu husten, alles Weitere erklärt der durchführende Arzt",
-				"abnormal": "Anhand der Zusammensetzung unterscheidet der Arzt die Mechanismen der Ansammlung, von erhöhtem Druck in den Gefäßen bis zu Entzündung und Infektion. Die abschließende Beurteilung erfolgt zusammen mit der Untersuchung von Lunge und Herz durch den behandelnden Arzt"
-			},
-			"tr": {
-				"what": "Akciğer ile göğüs duvarı arasındaki boşluktan alınan sıvının laboratuvarda incelenmesi; protein, enzimler ve hücre içeriği değerlendirilir",
-				"how": "Sıvıyı hekim, çoğunlukla ultrason eşliğinde ve lokal anesteziyle göğüs duvarından girerek alır; materyalin bir bölümü laboratuvara gönderilir, işlemden sonra sıklıkla kontrol görüntüsü alınır",
-				"when": "Filmde veya ultrasonda görülen akciğer çevresindeki sıvı, ortaya çıkış nedeninin araştırılması, biriken sıvıya bağlı nefes darlığı ve göğüs ağrısı, kalp, akciğer ve böbrek hastalıklarında izlem",
-				"prep": "Laboratuvar bölümü için ayrı hazırlık yoktur; işlemden önce kan sulandırıcı ilaçların bildirilmesi, işlem sırasında hareketsiz oturulması ve öksürmemeye çalışılması önemlidir, gerisini uygulayan hekim anlatır",
-				"abnormal": "Hekim sıvının bileşiminden, damarlardaki basınç artışından iltihap ve enfeksiyona kadar birikme mekanizmalarını ayırt eder. Nihai değerlendirme akciğer ve kalp incelemeleriyle birlikte, tedaviyi yürüten hekim tarafından yapılır"
-			}
-		}
-	}
+  {
+    "slug": "acid-phosphatase",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на фермент, который содержится в предстательной железе, костной ткани и клетках крови",
+        "how": "Забор венозной крови; пробу быстро доставляют в лабораторию, так как активность фермента снижается при хранении",
+        "when": "Обследование предстательной железы в дополнение к другим анализам, оценка костного обмена при отдельных заболеваниях, наблюдение по назначению уролога или гематолога",
+        "prep": "Сдают утром натощак; за несколько дней до анализа не должно быть ректального исследования, массажа простаты, катетеризации и езды на велосипеде, а о них сообщите врачу",
+        "abnormal": "Изменение активности может быть связано с процессами в предстательной железе, костной ткани, клетках крови или с недавними манипуляциями в области таза. Показатель неспецифичен и сам по себе диагноза не устанавливает, его оценивает врач"
+      },
+      "en": {
+        "what": "Blood test for an enzyme found in the prostate, in bone tissue and in blood cells",
+        "how": "Venous blood draw; the sample is delivered to the laboratory quickly because enzyme activity falls during storage",
+        "when": "Prostate work-up in addition to other tests, assessment of bone metabolism in selected conditions, monitoring as directed by a urologist or haematologist",
+        "prep": "Taken in the morning while fasting; for several days before there should be no rectal examination, prostate massage, catheterisation or cycling, and the doctor should be told about them",
+        "abnormal": "A change in activity may be related to processes in the prostate, bone tissue or blood cells, or to recent procedures in the pelvic area. The test is non-specific and does not establish a diagnosis on its own, it is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na enzim koji se nalazi u prostati, koštanom tkivu i krvnim ćelijama",
+        "how": "Uzimanje venske krvi; uzorak se brzo dostavlja u laboratoriju jer aktivnost enzima opada tokom stajanja",
+        "when": "Obrada prostate uz ostale analize, procjena koštanog metabolizma kod pojedinih oboljenja, praćenje po uputu urologa ili hematologa",
+        "prep": "Uzima se ujutru natašte; nekoliko dana prije analize ne smije biti rektalnog pregleda, masaže prostate, kateterizacije ni vožnje bicikla, a o njima treba obavijestiti ljekara",
+        "abnormal": "Promjena aktivnosti može biti povezana sa procesima u prostati, koštanom tkivu, krvnim ćelijama ili sa skorašnjim zahvatima u predjelu karlice. Pokazatelj je nespecifičan i sam po sebi ne postavlja dijagnozu, procjenjuje ga ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf ein Enzym, das in der Prostata, im Knochengewebe und in Blutzellen vorkommt",
+        "how": "Venöse Blutentnahme; die Probe wird rasch ins Labor gebracht, da die Enzymaktivität bei Lagerung abnimmt",
+        "when": "Abklärung der Prostata ergänzend zu anderen Untersuchungen, Beurteilung des Knochenstoffwechsels bei einzelnen Erkrankungen, Verlaufskontrolle auf Anordnung des Urologen oder Hämatologen",
+        "prep": "Morgens nüchtern; einige Tage zuvor sollten keine rektale Untersuchung, Prostatamassage, Katheterisierung oder Radfahren stattfinden, und der Arzt sollte darüber informiert werden",
+        "abnormal": "Eine veränderte Aktivität kann mit Vorgängen in der Prostata, im Knochengewebe oder in Blutzellen sowie mit kürzlichen Eingriffen im Beckenbereich zusammenhängen. Der Wert ist unspezifisch und stellt für sich allein keine Diagnose, die Beurteilung erfolgt durch den Arzt"
+      },
+      "tr": {
+        "what": "Prostat, kemik dokusu ve kan hücrelerinde bulunan bir enzimi ölçen kan tetkiki",
+        "how": "Venöz kan alınır; enzim aktivitesi beklemeyle azaldığı için örnek hızlıca laboratuvara ulaştırılır",
+        "when": "Diğer tetkiklerle birlikte prostat incelemesi, bazı hastalıklarda kemik metabolizmasının değerlendirilmesi, üroloji veya hematoloji yönlendirmesiyle izlem",
+        "prep": "Sabah aç karnına alınır; tetkikten birkaç gün önce rektal muayene, prostat masajı, sonda takılması ve bisiklet kullanımı olmamalı, olduysa hekime bildirilmelidir",
+        "abnormal": "Aktivitedeki değişiklik prostat, kemik dokusu veya kan hücrelerindeki süreçlerle ya da leğen bölgesindeki yakın zamanlı işlemlerle ilişkili olabilir. Test özgül değildir ve tek başına tanı koymaz, değerlendirmeyi hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на ензим који се налази у простати, коштаном ткиву и крвним ћелијама",
+        "how": "Узимање венске крви; узорак се брзо доставља у лабораторију јер активност ензима опада током стајања",
+        "when": "Обрада простате уз остале анализе, процјена коштаног метаболизма код појединих обољења, праћење по упуту уролога или хематолога",
+        "prep": "Узима се ујутру наташте; неколико дана прије анализе не смије бити ректалног прегледа, масаже простате, катетеризације ни вожње бицикла, а о њима треба обавијестити љекара",
+        "abnormal": "Промјена активности може бити повезана са процесима у простати, коштаном ткиву, крвним ћелијама или са скорашњим захватима у предјелу карлице. Показатељ је неспецифичан и сам по себи не поставља дијагнозу, процјењује га љекар"
+      }
+    }
+  },
+  {
+    "slug": "ammonia-nh3",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на азотистый продукт обмена белков, который печень обезвреживает, превращая в мочевину",
+        "how": "Забор венозной крови в охлаждённую пробирку, её сразу доставляют в лабораторию: вне организма показатель быстро растёт",
+        "when": "Сонливость, спутанность сознания и изменения поведения при заболеваниях печени, обследование новорождённых и детей при подозрении на наследственные нарушения обмена, контроль на фоне приёма отдельных препаратов",
+        "prep": "Сдают утром натощак; перед забором не курить, спокойно посидеть и не сжимать кулак, о принимаемых препаратах сообщить врачу",
+        "abnormal": "Повышение может быть связано с работой печени, наследственными особенностями обмена, приёмом некоторых лекарств или с нарушением условий забора и хранения пробы. Результат оценивает врач вместе с состоянием пациента и другими анализами"
+      },
+      "en": {
+        "what": "Blood test for a nitrogen product of protein metabolism that the liver neutralises by converting it into urea",
+        "how": "Venous blood is drawn into a chilled tube and taken to the laboratory immediately, because the value rises quickly outside the body",
+        "when": "Drowsiness, confusion and behaviour changes in liver disease, work-up of newborns and children with suspected inherited metabolic disorders, monitoring during treatment with certain medications",
+        "prep": "Taken in the morning while fasting; do not smoke before the draw, sit quietly and do not clench the fist, and tell the doctor about any medications",
+        "abnormal": "An increase may be related to liver function, inherited features of metabolism, certain medications, or to breaches of sampling and handling conditions. The result is assessed by a doctor together with the patient's condition and other tests"
+      },
+      "sr": {
+        "what": "Analiza krvi na azotni proizvod razgradnje bjelančevina koji jetra obezvređuje pretvarajući ga u ureju",
+        "how": "Venska krv se uzima u ohlađenu epruvetu koja se odmah nosi u laboratoriju, jer vrijednost van organizma brzo raste",
+        "when": "Pospanost, konfuzija i promjene ponašanja kod oboljenja jetre, obrada novorođenčadi i djece kod sumnje na nasljedne poremećaje metabolizma, praćenje tokom uzimanja pojedinih lijekova",
+        "prep": "Uzima se ujutru natašte; prije vađenja ne pušiti, mirno sjediti i ne stiskati šaku, a o lijekovima koje uzimate obavijestiti ljekara",
+        "abnormal": "Povišene vrijednosti mogu biti povezane sa radom jetre, nasljednim osobenostima metabolizma, uzimanjem pojedinih lijekova ili sa greškama pri uzimanju i čuvanju uzorka. Nalaz procjenjuje ljekar zajedno sa stanjem pacijenta i ostalim analizama"
+      },
+      "de": {
+        "what": "Bluttest auf ein stickstoffhaltiges Abbauprodukt des Eiweißstoffwechsels, das die Leber durch Umwandlung in Harnstoff entgiftet",
+        "how": "Venöse Blutentnahme in ein gekühltes Röhrchen, das sofort ins Labor gebracht wird, da der Wert außerhalb des Körpers rasch ansteigt",
+        "when": "Schläfrigkeit, Verwirrtheit und Verhaltensänderungen bei Lebererkrankungen, Abklärung bei Neugeborenen und Kindern mit Verdacht auf angeborene Stoffwechselstörungen, Kontrolle unter bestimmten Medikamenten",
+        "prep": "Morgens nüchtern; vor der Entnahme nicht rauchen, ruhig sitzen und die Faust nicht ballen, eingenommene Medikamente dem Arzt mitteilen",
+        "abnormal": "Erhöhte Werte können mit der Leberfunktion, angeborenen Besonderheiten des Stoffwechsels, bestimmten Medikamenten oder mit Fehlern bei Entnahme und Lagerung der Probe zusammenhängen. Die Beurteilung nimmt der Arzt zusammen mit dem Zustand und weiteren Befunden vor"
+      },
+      "tr": {
+        "what": "Karaciğerin üreye dönüştürerek zararsız hale getirdiği, protein metabolizmasının azotlu ürününü ölçen kan tetkiki",
+        "how": "Venöz kan soğutulmuş tüpe alınır ve hemen laboratuvara ulaştırılır, çünkü değer vücut dışında hızla yükselir",
+        "when": "Karaciğer hastalıklarında uykuya eğilim, bilinç bulanıklığı ve davranış değişiklikleri, kalıtsal metabolizma hastalığı şüphesiyle yenidoğan ve çocukların incelenmesi, bazı ilaçlar kullanılırken izlem",
+        "prep": "Sabah aç karnına alınır; kan alınmadan önce sigara içilmemeli, sakin oturulmalı ve yumruk sıkılmamalı, kullanılan ilaçlar hekime bildirilmelidir",
+        "abnormal": "Yükseklik karaciğerin çalışmasıyla, kalıtsal metabolizma özellikleriyle, bazı ilaçlarla ya da örneğin alınma ve saklanma koşullarındaki hatalarla ilişkili olabilir. Sonucu hekim, hastanın durumu ve diğer tetkiklerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на азотни производ разградње бјеланчевина који јетра обезвређује претварајући га у уреју",
+        "how": "Венска крв се узима у охлађену епрувету која се одмах носи у лабораторију, јер вриједност ван организма брзо расте",
+        "when": "Поспаност, конфузија и промјене понашања код обољења јетре, обрада новорођенчади и дјеце код сумње на насљедне поремећаје метаболизма, праћење током узимања појединих лијекова",
+        "prep": "Узима се ујутру наташте; прије вађења не пушити, мирно сједити и не стискати шаку, а о лијековима које узимате обавијестити љекара",
+        "abnormal": "Повишене вриједности могу бити повезане са радом јетре, насљедним особеностима метаболизма, узимањем појединих лијекова или са грешкама при узимању и чувању узорка. Налаз процјењује љекар заједно са стањем пацијента и осталим анализама"
+      }
+    }
+  },
+  {
+    "slug": "beta-2-microglobulin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ на небольшой белок с поверхности клеток, уровень которого зависит от скорости обновления клеток и от фильтрации в почках",
+        "how": "Забор венозной крови; при оценке работы почечных канальцев тот же белок определяют в порции мочи",
+        "when": "Наблюдение при заболеваниях крови и лимфатической системы, оценка канальцевой функции почек, наблюдение у пациентов на диализе, обследование по назначению гематолога или нефролога",
+        "prep": "Специальной подготовки обычно не требуется, кровь чаще сдают утром; для анализа мочи берут свежую порцию по инструкции лаборатории",
+        "abnormal": "Изменения могут быть связаны со скоростью обновления клеток, воспалением, инфекциями или работой почек. Показатель неспецифичен, его значение врач определяет только вместе с другими исследованиями и клинической картиной"
+      },
+      "en": {
+        "what": "Test for a small protein from the surface of cells, whose level depends on cell turnover and on filtration in the kidneys",
+        "how": "Venous blood draw; when tubular kidney function is assessed, the same protein is measured in a urine sample",
+        "when": "Monitoring in diseases of the blood and lymphatic system, assessment of tubular kidney function, follow-up in patients on dialysis, testing as directed by a haematologist or nephrologist",
+        "prep": "No special preparation is usually needed and blood is most often taken in the morning; for the urine test a fresh sample is collected according to the laboratory's instructions",
+        "abnormal": "Changes may be related to cell turnover, inflammation, infections or kidney function. The marker is non-specific, and a doctor interprets it only together with other investigations and the clinical picture"
+      },
+      "sr": {
+        "what": "Analiza malog proteina sa površine ćelija, čiji nivo zavisi od brzine obnavljanja ćelija i od filtracije u bubrezima",
+        "how": "Uzimanje venske krvi; kada se procjenjuje rad bubrežnih tubula, isti protein se određuje i u uzorku mokraće",
+        "when": "Praćenje kod oboljenja krvi i limfnog sistema, procjena tubularne funkcije bubrega, praćenje pacijenata na dijalizi, obrada po uputu hematologa ili nefrologa",
+        "prep": "Posebna priprema obično nije potrebna, krv se najčešće vadi ujutru; za analizu mokraće uzima se svjež uzorak prema uputstvu laboratorije",
+        "abnormal": "Promjene mogu biti povezane sa brzinom obnavljanja ćelija, upalom, infekcijama ili radom bubrega. Pokazatelj je nespecifičan, pa njegovo značenje ljekar utvrđuje samo uz ostale nalaze i kliničku sliku"
+      },
+      "de": {
+        "what": "Untersuchung eines kleinen Proteins von der Zelloberfläche, dessen Spiegel vom Zellumsatz und von der Filtration in den Nieren abhängt",
+        "how": "Venöse Blutentnahme; zur Beurteilung der Nierentubuli wird dasselbe Protein auch im Urin bestimmt",
+        "when": "Verlaufskontrolle bei Erkrankungen des Blutes und des Lymphsystems, Beurteilung der tubulären Nierenfunktion, Kontrolle bei Dialysepatienten, Abklärung auf Anordnung des Hämatologen oder Nephrologen",
+        "prep": "Eine besondere Vorbereitung ist meist nicht nötig, Blut wird überwiegend morgens entnommen; für die Urinuntersuchung wird eine frische Probe nach Anweisung des Labors gesammelt",
+        "abnormal": "Veränderungen können mit dem Zellumsatz, Entzündungen, Infektionen oder der Nierenfunktion zusammenhängen. Der Wert ist unspezifisch, seine Bedeutung bestimmt der Arzt nur zusammen mit weiteren Befunden und dem klinischen Bild"
+      },
+      "tr": {
+        "what": "Düzeyi hücre yenilenme hızına ve böbreklerdeki filtrasyona bağlı olan, hücre yüzeyindeki küçük bir proteinin ölçümü",
+        "how": "Venöz kan alınır; böbrek tübül işlevi değerlendirilirken aynı protein idrar örneğinde de ölçülür",
+        "when": "Kan ve lenf sistemi hastalıklarında izlem, böbrek tübül işlevinin değerlendirilmesi, diyaliz hastalarının takibi, hematoloji veya nefroloji yönlendirmesiyle inceleme",
+        "prep": "Genellikle özel hazırlık gerekmez, kan çoğunlukla sabah alınır; idrar tetkiki için laboratuvarın talimatına göre taze örnek verilir",
+        "abnormal": "Değişiklikler hücre yenilenme hızı, iltihap, enfeksiyonlar veya böbrek işleviyle ilişkili olabilir. Belirteç özgül değildir, anlamını hekim yalnızca diğer tetkikler ve klinik tabloyla birlikte belirler"
+      },
+      "sr_cyrl": {
+        "what": "Анализа малог протеина са површине ћелија, чији ниво зависи од брзине обнављања ћелија и од филтрације у бубрезима",
+        "how": "Узимање венске крви; када се процјењује рад бубрежних тубула, исти протеин се одређује и у узорку мокраће",
+        "when": "Праћење код обољења крви и лимфног система, процјена тубуларне функције бубрега, праћење пацијената на дијализи, обрада по упуту хематолога или нефролога",
+        "prep": "Посебна припрема обично није потребна, крв се најчешће вади ујутру; за анализу мокраће узима се свјеж узорак према упутству лабораторије",
+        "abnormal": "Промјене могу бити повезане са брзином обнављања ћелија, упалом, инфекцијама или радом бубрега. Показатељ је неспецифичан, па његово значење љекар утврђује само уз остале налазе и клиничку слику"
+      }
+    }
+  },
+  {
+    "slug": "cholinesterase",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на фермент, который вырабатывает печень и который участвует в расщеплении ряда веществ и препаратов",
+        "how": "Забор венозной крови, занимает несколько минут",
+        "when": "Оценка синтетической функции печени, подозрение на контакт с фосфорорганическими соединениями, подготовка к наркозу, если у пациента или его родственников пробуждение после наркоза раньше затягивалось",
+        "prep": "Специальной подготовки обычно не требуется, сдают чаще утром; обязательно сообщите врачу о работе с ядохимикатами и о принимаемых препаратах",
+        "abnormal": "Сниженная активность может быть связана с работой печени, контактом с фосфорорганическими веществами, беременностью, приёмом ряда препаратов или наследственным вариантом фермента. Значение результата, особенно перед операцией, оценивает врач"
+      },
+      "en": {
+        "what": "Blood test for an enzyme produced by the liver that takes part in breaking down a number of substances and medications",
+        "how": "Venous blood draw, takes a few minutes",
+        "when": "Assessment of the liver's synthetic function, suspected contact with organophosphate compounds, preparation for anaesthesia when the patient or relatives previously had a prolonged recovery from it",
+        "prep": "No special preparation is usually required and the sample is most often taken in the morning; be sure to tell the doctor about work with pesticides and about any medications",
+        "abnormal": "Reduced activity may be related to liver function, contact with organophosphates, pregnancy, certain medications or an inherited variant of the enzyme. The meaning of the result, especially before surgery, is assessed by a doctor"
+      },
+      "sr": {
+        "what": "Analiza krvi na enzim koji stvara jetra i koji učestvuje u razgradnji niza materija i lijekova",
+        "how": "Uzimanje venske krvi, traje nekoliko minuta",
+        "when": "Procjena sintetske funkcije jetre, sumnja na kontakt sa organofosfornim jedinjenjima, priprema za anesteziju kada su pacijent ili srodnici ranije imali produženo buđenje",
+        "prep": "Posebna priprema obično nije potrebna, uzorak se najčešće uzima ujutru; obavezno obavijestite ljekara o radu sa pesticidima i o lijekovima koje uzimate",
+        "abnormal": "Smanjena aktivnost može biti povezana sa radom jetre, kontaktom sa organofosfornim materijama, trudnoćom, uzimanjem pojedinih lijekova ili nasljednom varijantom enzima. Značenje nalaza, naročito prije operacije, procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bluttest auf ein von der Leber gebildetes Enzym, das am Abbau verschiedener Substanzen und Medikamente beteiligt ist",
+        "how": "Venöse Blutentnahme, dauert wenige Minuten",
+        "when": "Beurteilung der Syntheseleistung der Leber, Verdacht auf Kontakt mit Organophosphatverbindungen, Vorbereitung auf eine Narkose, wenn beim Patienten oder in der Familie das Aufwachen früher verlängert war",
+        "prep": "Eine besondere Vorbereitung ist meist nicht nötig, die Entnahme erfolgt überwiegend morgens; Arbeit mit Pflanzenschutzmitteln und eingenommene Medikamente unbedingt dem Arzt mitteilen",
+        "abnormal": "Eine verminderte Aktivität kann mit der Leberfunktion, Kontakt mit Organophosphaten, einer Schwangerschaft, bestimmten Medikamenten oder einer erblichen Enzymvariante zusammenhängen. Die Bedeutung des Befundes, besonders vor einer Operation, beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Karaciğerin ürettiği ve bazı maddelerle ilaçların parçalanmasında görev alan bir enzimi ölçen kan tetkiki",
+        "how": "Venöz kan alınır, birkaç dakika sürer",
+        "when": "Karaciğerin sentez işlevinin değerlendirilmesi, organik fosforlu bileşiklerle temas şüphesi, hastada ya da yakınlarında daha önce anesteziden uyanmanın uzadığı durumlarda ameliyat hazırlığı",
+        "prep": "Genellikle özel hazırlık gerekmez, örnek çoğunlukla sabah alınır; tarım ilaçlarıyla çalışma ve kullanılan ilaçlar mutlaka hekime bildirilmelidir",
+        "abnormal": "Aktivitenin düşük olması karaciğerin çalışmasıyla, organik fosforlu maddelerle temasla, gebelikle, bazı ilaçlarla veya enzimin kalıtsal bir varyantıyla ilişkili olabilir. Sonucun anlamını, özellikle ameliyat öncesinde, hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на ензим који ствара јетра и који учествује у разградњи низа материја и лијекова",
+        "how": "Узимање венске крви, траје неколико минута",
+        "when": "Процјена синтетске функције јетре, сумња на контакт са органофосфорним једињењима, припрема за анестезију када су пацијент или сродници раније имали продужено буђење",
+        "prep": "Посебна припрема обично није потребна, узорак се најчешће узима ујутру; обавезно обавијестите љекара о раду са пестицидима и о лијековима које узимате",
+        "abnormal": "Смањена активност може бити повезана са радом јетре, контактом са органофосфорним материјама, трудноћом, узимањем појединих лијекова или насљедном варијантом ензима. Значење налаза, нарочито прије операције, процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "lactate",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на продукт обмена глюкозы без участия кислорода, по которому судят о снабжении тканей кислородом",
+        "how": "Забор венозной крови без долгого наложения жгута, пробирку сразу доставляют в лабораторию; в стационаре показатель нередко определяют из артериальной крови вместе с газами",
+        "when": "Тяжёлые острые состояния и наблюдение в стационаре, подозрение на наследственные нарушения обмена, необъяснимая одышка и слабость, оценка переносимости физической нагрузки, контроль на фоне отдельных препаратов",
+        "prep": "Перед забором спокойно посидеть около четверти часа, не сжимать кулак и не напрягать руку; накануне избегать интенсивных нагрузок и алкоголя",
+        "abnormal": "Повышение может быть связано с недостаточным поступлением кислорода в ткани, физической нагрузкой, работой печени и почек, приёмом некоторых препаратов или с условиями забора. Результат оценивает врач вместе с клинической картиной и кислотно-щелочными показателями"
+      },
+      "en": {
+        "what": "Blood test for a product of glucose metabolism without oxygen, used to judge the oxygen supply to tissues",
+        "how": "Venous blood is drawn without a prolonged tourniquet and the tube goes to the laboratory at once; in hospital the value is often measured in arterial blood together with blood gases",
+        "when": "Severe acute conditions and in-hospital monitoring, suspected inherited metabolic disorders, unexplained breathlessness and weakness, assessment of exercise tolerance, monitoring during treatment with certain medications",
+        "prep": "Sit quietly for about a quarter of an hour before the draw, do not clench the fist or tense the arm; avoid intense exercise and alcohol the day before",
+        "abnormal": "An increase may be related to insufficient oxygen delivery to tissues, physical exertion, liver and kidney function, certain medications or the sampling conditions. The result is assessed by a doctor together with the clinical picture and the acid-base values"
+      },
+      "sr": {
+        "what": "Analiza krvi na proizvod razgradnje glukoze bez kiseonika, po kojem se procjenjuje snabdijevanje tkiva kiseonikom",
+        "how": "Venska krv se vadi bez dugog stezanja poveskom, a epruveta odmah ide u laboratoriju; u bolnici se vrijednost često određuje iz arterijske krvi zajedno sa gasnim analizama",
+        "when": "Teška akutna stanja i praćenje u bolnici, sumnja na nasljedne poremećaje metabolizma, neobjašnjiva zaduha i slabost, procjena podnošenja fizičkog napora, praćenje uz pojedine lijekove",
+        "prep": "Prije vađenja mirno sjediti oko četvrt sata, ne stiskati šaku i ne naprezati ruku; dan ranije izbjegavati intenzivan napor i alkohol",
+        "abnormal": "Povišene vrijednosti mogu biti povezane sa nedovoljnim dotokom kiseonika u tkiva, fizičkim naporom, radom jetre i bubrega, pojedinim lijekovima ili uslovima uzimanja uzorka. Nalaz procjenjuje ljekar uz kliničku sliku i acidobazne pokazatelje"
+      },
+      "de": {
+        "what": "Bluttest auf ein Produkt des Glukoseabbaus ohne Sauerstoff, mit dem die Sauerstoffversorgung der Gewebe beurteilt wird",
+        "how": "Venöse Blutentnahme ohne lange Stauung, das Röhrchen geht sofort ins Labor; im Krankenhaus wird der Wert häufig aus arteriellem Blut zusammen mit den Blutgasen bestimmt",
+        "when": "Schwere akute Zustände und Überwachung im Krankenhaus, Verdacht auf angeborene Stoffwechselstörungen, unklare Atemnot und Schwäche, Beurteilung der Belastbarkeit, Kontrolle unter bestimmten Medikamenten",
+        "prep": "Vor der Entnahme etwa eine Viertelstunde ruhig sitzen, die Faust nicht ballen und den Arm nicht anspannen; am Vortag starke Belastung und Alkohol meiden",
+        "abnormal": "Erhöhte Werte können mit einer unzureichenden Sauerstoffversorgung der Gewebe, körperlicher Belastung, der Leber- und Nierenfunktion, bestimmten Medikamenten oder den Entnahmebedingungen zusammenhängen. Die Beurteilung erfolgt durch den Arzt zusammen mit dem klinischen Bild und den Säure-Basen-Werten"
+      },
+      "tr": {
+        "what": "Dokulara oksijen gidişini değerlendirmek için bakılan, glukozun oksijensiz yıkım ürününü ölçen kan tetkiki",
+        "how": "Turnike uzun süre bağlanmadan venöz kan alınır ve tüp hemen laboratuvara gönderilir; hastanede değer sıklıkla kan gazlarıyla birlikte atardamar kanından ölçülür",
+        "when": "Ağır akut durumlar ve hastanede izlem, kalıtsal metabolizma hastalığı şüphesi, açıklanamayan nefes darlığı ve halsizlik, efor toleransının değerlendirilmesi, bazı ilaçlar kullanılırken izlem",
+        "prep": "Kan alınmadan önce yaklaşık çeyrek saat sakin oturulmalı, yumruk sıkılmamalı ve kol zorlanmamalıdır; bir gün önce yoğun efor ve alkolden kaçınılmalıdır",
+        "abnormal": "Yükseklik dokulara oksijen gidişinin yetersizliğiyle, fiziksel eforla, karaciğer ve böbrek işleviyle, bazı ilaçlarla ya da örnek alma koşullarıyla ilişkili olabilir. Sonucu hekim klinik tablo ve asit-baz değerleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на производ разградње глукозе без кисеоника, по којем се процјењује снабдијевање ткива кисеоником",
+        "how": "Венска крв се вади без дугог стезања повеском, а епрувета одмах иде у лабораторију; у болници се вриједност често одређује из артеријске крви заједно са гасним анализама",
+        "when": "Тешка акутна стања и праћење у болници, сумња на насљедне поремећаје метаболизма, необјашњива задуха и слабост, процјена подношења физичког напора, праћење уз поједине лијекове",
+        "prep": "Прије вађења мирно сједити око четврт сата, не стискати шаку и не напрезати руку; дан раније избјегавати интензиван напор и алкохол",
+        "abnormal": "Повишене вриједности могу бити повезане са недовољним дотоком кисеоника у ткива, физичким напором, радом јетре и бубрега, појединим лијековима или условима узимања узорка. Налаз процјењује љекар уз клиничку слику и ацидобазне показатеље"
+      }
+    }
+  },
+  {
+    "slug": "acid-base-status-ph-pco2-po2",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование газов крови и кислотно-щелочного равновесия: показывает, как лёгкие обеспечивают обмен кислорода и углекислого газа и как удерживается баланс кислот и оснований",
+        "how": "Кровь берут из артерии, чаще на запястье, или из капилляра в специальный шприц и сразу измеряют на приборе; забор занимает несколько минут, бывает чувствительнее обычного, после него место прижимают",
+        "when": "Одышка и дыхательная недостаточность, тяжёлые острые состояния, наблюдение при хронических болезнях лёгких, подбор и контроль кислородотерапии, обследование при нарушениях обмена веществ",
+        "prep": "Специальной подготовки нет; перед забором нужно спокойно подышать в привычном режиме и не менять поток кислорода, а о кислородотерапии и препаратах, разжижающих кровь, сообщить персоналу",
+        "abnormal": "Изменения могут быть связаны с работой лёгких, почек, обменом веществ или влиянием лекарств. Показатели трактуются только вместе и в контексте состояния пациента, этим занимается врач"
+      },
+      "en": {
+        "what": "Measurement of blood gases and acid-base balance, showing how the lungs exchange oxygen and carbon dioxide and how the balance of acids and bases is held",
+        "how": "Blood is taken from an artery, usually at the wrist, or from a capillary into a special syringe and measured on the analyser at once; the draw takes a few minutes, can be more uncomfortable than usual, and the site is pressed afterwards",
+        "when": "Breathlessness and respiratory failure, severe acute conditions, monitoring in chronic lung disease, starting and adjusting oxygen therapy, work-up of metabolic disturbances",
+        "prep": "No special preparation; breathe calmly as usual before the draw and do not change the oxygen flow, and tell the staff about oxygen therapy and about blood-thinning medications",
+        "abnormal": "Changes may be related to the function of the lungs or kidneys, to metabolism or to the effect of medications. The values are interpreted only together and in the context of the patient's condition, which is the doctor's task"
+      },
+      "sr": {
+        "what": "Ispitivanje gasova u krvi i acidobazne ravnoteže: pokazuje kako pluća razmjenjuju kiseonik i ugljen-dioksid i kako se održava odnos kiselina i baza",
+        "how": "Krv se vadi iz arterije, najčešće na zglobu ruke, ili iz kapilare u poseban špric i odmah mjeri na aparatu; vađenje traje nekoliko minuta, može biti neprijatnije nego obično, a ubodno mjesto se poslije pritiska",
+        "when": "Zaduha i respiratorna insuficijencija, teška akutna stanja, praćenje kod hroničnih bolesti pluća, uvođenje i kontrola terapije kiseonikom, obrada kod poremećaja metabolizma",
+        "prep": "Posebne pripreme nema; prije vađenja treba mirno disati kao i inače i ne mijenjati protok kiseonika, a osoblju reći za terapiju kiseonikom i za lijekove koji razrjeđuju krv",
+        "abnormal": "Promjene mogu biti povezane sa radom pluća i bubrega, metabolizmom ili djelovanjem lijekova. Vrijednosti se tumače samo zajedno i u kontekstu stanja pacijenta, a to radi ljekar"
+      },
+      "de": {
+        "what": "Untersuchung der Blutgase und des Säure-Basen-Haushalts: Sie zeigt, wie die Lunge Sauerstoff und Kohlendioxid austauscht und wie das Verhältnis von Säuren und Basen gehalten wird",
+        "how": "Blut wird aus einer Arterie, meist am Handgelenk, oder aus einer Kapillare in eine spezielle Spritze entnommen und sofort am Gerät gemessen; die Entnahme dauert wenige Minuten, kann unangenehmer sein als sonst, und die Stelle wird anschließend komprimiert",
+        "when": "Atemnot und respiratorische Insuffizienz, schwere akute Zustände, Verlaufskontrolle bei chronischen Lungenerkrankungen, Einstellung und Kontrolle der Sauerstofftherapie, Abklärung von Stoffwechselstörungen",
+        "prep": "Keine besondere Vorbereitung; vor der Entnahme ruhig wie gewohnt atmen und den Sauerstofffluss nicht verändern, dem Personal Sauerstofftherapie und blutverdünnende Medikamente mitteilen",
+        "abnormal": "Veränderungen können mit der Funktion von Lunge und Nieren, dem Stoffwechsel oder der Wirkung von Medikamenten zusammenhängen. Die Werte werden nur gemeinsam und im Zusammenhang mit dem Zustand beurteilt, das übernimmt der Arzt"
+      },
+      "tr": {
+        "what": "Kan gazları ve asit-baz dengesinin incelenmesi; akciğerlerin oksijen ile karbondioksit değişimini ve asit-baz dengesinin nasıl korunduğunu gösterir",
+        "how": "Kan, çoğunlukla bilekten atardamardan ya da kılcal damardan özel bir enjektöre alınır ve hemen cihazda ölçülür; işlem birkaç dakika sürer, her zamankinden rahatsız edici olabilir, sonrasında iğne yerine bası uygulanır",
+        "when": "Nefes darlığı ve solunum yetmezliği, ağır akut durumlar, kronik akciğer hastalıklarında izlem, oksijen tedavisinin ayarlanması ve kontrolü, metabolik bozuklukların incelenmesi",
+        "prep": "Özel hazırlık yoktur; kan alınmadan önce her zamanki gibi sakin nefes alınmalı ve oksijen akışı değiştirilmemeli, oksijen tedavisi ile kan sulandırıcı ilaçlar personele bildirilmelidir",
+        "abnormal": "Değişiklikler akciğer ve böbrek işleviyle, metabolizmayla ya da ilaçların etkisiyle ilişkili olabilir. Değerler yalnızca birlikte ve hastanın durumu bağlamında yorumlanır, bunu hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање гасова у крви и ацидобазне равнотеже: показује како плућа размјењују кисеоник и угљен-диоксид и како се одржава однос киселина и база",
+        "how": "Крв се вади из артерије, најчешће на зглобу руке, или из капиларе у посебан шприц и одмах мјери на апарату; вађење траје неколико минута, може бити непријатније него обично, а убодно мјесто се послије притиска",
+        "when": "Задуха и респираторна инсуфицијенција, тешка акутна стања, праћење код хроничних болести плућа, увођење и контрола терапије кисеоником, обрада код поремећаја метаболизма",
+        "prep": "Посебне припреме нема; прије вађења треба мирно дисати као и иначе и не мијењати проток кисеоника, а особљу рећи за терапију кисеоником и за лијекове који разрјеђују крв",
+        "abnormal": "Промјене могу бити повезане са радом плућа и бубрега, метаболизмом или дјеловањем лијекова. Вриједности се тумаче само заједно и у контексту стања пацијента, а то ради љекар"
+      }
+    }
+  },
+  {
+    "slug": "apolipoprotein-b",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ крови на белок-носитель атерогенных липопротеиновых частиц: отражает количество таких частиц, а не массу холестерина в них",
+        "how": "Забор венозной крови, обычно вместе с липидным профилем",
+        "when": "Уточнение сердечно-сосудистого риска, повышенные триглицериды, расхождение между уровнем ЛПНП и общей картиной, наследственные нарушения липидного обмена в семье, контроль на фоне терапии",
+        "prep": "Подготовка такая же, как для липидного профиля: сдают утром, натощак или без голодания, точный режим уточните у направившего врача; накануне избегать алкоголя и жирной пищи",
+        "abnormal": "Изменения могут быть связаны с особенностями липидного обмена, питанием, наследственностью или проводимым лечением. Сердечно-сосудистый риск врач оценивает вместе с липидным профилем и другими факторами, по одному показателю вывод не делают"
+      },
+      "en": {
+        "what": "Blood test for the carrier protein of atherogenic lipoprotein particles: it reflects the number of such particles rather than the mass of cholesterol they carry",
+        "how": "Venous blood draw, usually together with the lipid profile",
+        "when": "Refining cardiovascular risk, raised triglycerides, a mismatch between the LDL level and the overall picture, inherited lipid disorders in the family, monitoring during treatment",
+        "prep": "Preparation is the same as for the lipid profile: taken in the morning, fasting or non-fasting, with the exact regimen confirmed with the referring doctor; avoid alcohol and fatty food the day before",
+        "abnormal": "Changes may be related to features of lipid metabolism, diet, heredity or ongoing treatment. Cardiovascular risk is assessed by a doctor together with the lipid profile and other factors, and no conclusion is drawn from a single value"
+      },
+      "sr": {
+        "what": "Analiza krvi na protein nosač aterogenih lipoproteinskih čestica: odražava broj tih čestica, a ne masu holesterola u njima",
+        "how": "Uzimanje venske krvi, obično zajedno sa lipidnim statusom",
+        "when": "Preciznija procjena kardiovaskularnog rizika, povišeni trigliceridi, neslaganje između vrijednosti LDL i ukupne slike, nasljedni poremećaji masnoća u porodici, praćenje tokom terapije",
+        "prep": "Priprema je ista kao za lipidni status: uzorak se uzima ujutru, natašte ili bez gladovanja, a tačan režim potvrdite kod ljekara koji je uputio; dan ranije izbjegavati alkohol i masnu hranu",
+        "abnormal": "Promjene mogu biti povezane sa osobenostima metabolizma masti, ishranom, nasljeđem ili terapijom koja se sprovodi. Kardiovaskularni rizik ljekar procjenjuje zajedno sa lipidnim statusom i ostalim faktorima, a po jednom pokazatelju se zaključak ne donosi"
+      },
+      "de": {
+        "what": "Bluttest auf das Trägerprotein atherogener Lipoproteinpartikel: Er zeigt die Anzahl dieser Partikel und nicht die Menge des darin enthaltenen Cholesterins",
+        "how": "Venöse Blutentnahme, üblicherweise zusammen mit dem Lipidprofil",
+        "when": "Genauere Einschätzung des kardiovaskulären Risikos, erhöhte Triglyzeride, Abweichung zwischen LDL-Wert und Gesamtbild, erbliche Fettstoffwechselstörungen in der Familie, Kontrolle unter Therapie",
+        "prep": "Die Vorbereitung entspricht der für das Lipidprofil: Entnahme morgens, nüchtern oder ohne Fasten, das genaue Vorgehen mit dem überweisenden Arzt abklären; am Vortag Alkohol und fettes Essen meiden",
+        "abnormal": "Veränderungen können mit Besonderheiten des Fettstoffwechsels, der Ernährung, der Vererbung oder der laufenden Therapie zusammenhängen. Das kardiovaskuläre Risiko beurteilt der Arzt zusammen mit dem Lipidprofil und weiteren Faktoren, aus einem einzelnen Wert wird kein Schluss gezogen"
+      },
+      "tr": {
+        "what": "Aterojenik lipoprotein partiküllerinin taşıyıcı proteinini ölçen kan tetkiki: içlerindeki kolesterol miktarını değil, bu partiküllerin sayısını yansıtır",
+        "how": "Genellikle lipid profiliyle birlikte venöz kan alınır",
+        "when": "Kalp damar riskinin daha kesin değerlendirilmesi, yüksek trigliserid, LDL değeri ile genel tablonun uyuşmaması, ailede kalıtsal yağ metabolizması bozukluğu, tedavi sırasında izlem",
+        "prep": "Hazırlık lipid profiliyle aynıdır: örnek sabah, açlıkta ya da açlık olmadan alınır, kesin düzeni yönlendiren hekimle netleştirin; bir gün önce alkol ve yağlı yiyeceklerden kaçının",
+        "abnormal": "Değişiklikler yağ metabolizmasının özellikleriyle, beslenmeyle, kalıtımla veya sürdürülen tedaviyle ilişkili olabilir. Kalp damar riskini hekim lipid profili ve diğer etkenlerle birlikte değerlendirir, tek bir değerden sonuç çıkarılmaz"
+      },
+      "sr_cyrl": {
+        "what": "Анализа крви на протеин носач атерогених липопротеинских честица: одражава број тих честица, а не масу холестерола у њима",
+        "how": "Узимање венске крви, обично заједно са липидним статусом",
+        "when": "Прецизнија процјена кардиоваскуларног ризика, повишени триглицериди, неслагање између вриједности ЛДЛ и укупне слике, насљедни поремећаји масноћа у породици, праћење током терапије",
+        "prep": "Припрема је иста као за липидни статус: узорак се узима ујутру, наташте или без гладовања, а тачан режим потврдите код љекара који је упутио; дан раније избјегавати алкохол и масну храну",
+        "abnormal": "Промјене могу бити повезане са особеностима метаболизма масти, исхраном, насљеђем или терапијом која се спроводи. Кардиоваскуларни ризик љекар процјењује заједно са липидним статусом и осталим факторима, а по једном показатељу се закључак не доноси"
+      }
+    }
+  },
+  {
+    "slug": "ascitic-fluid-analysis",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Лабораторное исследование жидкости, скопившейся в брюшной полости, с оценкой белка, альбумина, клеточного состава и отдельных ферментов",
+        "how": "Жидкость получает врач при проколе брюшной стенки под местным обезболиванием, чаще под контролем УЗИ; часть материала отправляют в лабораторию, сам прокол занимает несколько минут",
+        "when": "Впервые выявленное скопление жидкости в животе, уточнение причин её накопления, подозрение на инфицирование жидкости, наблюдение при хронических болезнях печени, сердца и почек",
+        "prep": "К лабораторной части подготовки нет, условия прокола объясняет выполняющий его врач: обычно просят опорожнить мочевой пузырь и сообщить о препаратах, разжижающих кровь",
+        "abnormal": "Состав жидкости помогает врачу различить механизмы её накопления: давление в сосудах печени, потери белка, воспаление или инфекцию. Вывод делает лечащий врач, сопоставляя результат с анализами крови и данными обследования"
+      },
+      "en": {
+        "what": "Laboratory examination of fluid collected in the abdominal cavity, with assessment of protein, albumin, cell content and selected enzymes",
+        "how": "The fluid is obtained by the doctor through a puncture of the abdominal wall under local anaesthesia, usually with ultrasound guidance; part of the material is sent to the laboratory and the puncture itself takes a few minutes",
+        "when": "Newly found fluid in the abdomen, clarifying why it accumulates, suspected infection of the fluid, follow-up in chronic diseases of the liver, heart and kidneys",
+        "prep": "There is no preparation for the laboratory part, and the conditions of the puncture are explained by the doctor performing it, who usually asks the patient to empty the bladder and to report blood-thinning medications",
+        "abnormal": "The composition of the fluid helps the doctor tell apart the mechanisms behind its accumulation: pressure in the liver vessels, protein loss, inflammation or infection. The conclusion is drawn by the treating doctor, comparing the result with blood tests and imaging findings"
+      },
+      "sr": {
+        "what": "Laboratorijsko ispitivanje tečnosti nakupljene u trbušnoj duplji, sa procjenom proteina, albumina, ćelijskog sastava i pojedinih enzima",
+        "how": "Tečnost uzima ljekar punkcijom trbušnog zida u lokalnoj anesteziji, najčešće uz ultrazvučnu kontrolu; dio materijala se šalje u laboratoriju, a sama punkcija traje nekoliko minuta",
+        "when": "Prvi put uočena tečnost u trbuhu, razjašnjavanje razloga njenog nakupljanja, sumnja na infekciju tečnosti, praćenje kod hroničnih bolesti jetre, srca i bubrega",
+        "prep": "Za laboratorijski dio pripreme nema, a uslove punkcije objašnjava ljekar koji je izvodi: obično se traži pražnjenje mokraćne bešike i podatak o lijekovima koji razrjeđuju krv",
+        "abnormal": "Sastav tečnosti pomaže ljekaru da razluči mehanizme njenog nakupljanja: pritisak u krvnim sudovima jetre, gubitak proteina, upalu ili infekciju. Zaključak donosi ljekar koji liječi pacijenta, upoređujući nalaz sa analizama krvi i nalazima snimanja"
+      },
+      "de": {
+        "what": "Laboruntersuchung der in der Bauchhöhle angesammelten Flüssigkeit mit Bestimmung von Eiweiß, Albumin, Zellgehalt und einzelnen Enzymen",
+        "how": "Die Flüssigkeit gewinnt der Arzt durch eine Punktion der Bauchwand in örtlicher Betäubung, meist unter Ultraschallkontrolle; ein Teil des Materials geht ins Labor, die Punktion selbst dauert wenige Minuten",
+        "when": "Erstmals festgestellte Flüssigkeit im Bauchraum, Klärung der Ursache ihrer Ansammlung, Verdacht auf eine Infektion der Flüssigkeit, Verlaufskontrolle bei chronischen Erkrankungen von Leber, Herz und Nieren",
+        "prep": "Für den Laborteil gibt es keine Vorbereitung, die Bedingungen der Punktion erklärt der durchführende Arzt: Üblicherweise wird um das Entleeren der Blase und um Angaben zu blutverdünnenden Medikamenten gebeten",
+        "abnormal": "Die Zusammensetzung der Flüssigkeit hilft dem Arzt, die Mechanismen der Ansammlung zu unterscheiden: Druck in den Lebergefäßen, Eiweißverlust, Entzündung oder Infektion. Die Beurteilung nimmt der behandelnde Arzt im Vergleich mit Blutwerten und Bildgebung vor"
+      },
+      "tr": {
+        "what": "Karın boşluğunda biriken sıvının laboratuvarda incelenmesi; protein, albümin, hücre içeriği ve bazı enzimler değerlendirilir",
+        "how": "Sıvıyı hekim, çoğunlukla ultrason eşliğinde ve lokal anesteziyle karın duvarından girerek alır; materyalin bir bölümü laboratuvara gönderilir, işlemin kendisi birkaç dakika sürer",
+        "when": "Karında ilk kez saptanan sıvı, birikme nedeninin araştırılması, sıvının enfekte olduğu şüphesi, karaciğer, kalp ve böbreklerin kronik hastalıklarında izlem",
+        "prep": "Laboratuvar bölümü için hazırlık yoktur, işlemin koşullarını uygulayan hekim anlatır: genellikle mesanenin boşaltılması ve kan sulandırıcı ilaçların bildirilmesi istenir",
+        "abnormal": "Sıvının bileşimi hekime birikme mekanizmalarını ayırt etmede yardımcı olur: karaciğer damarlarındaki basınç, protein kaybı, iltihap veya enfeksiyon. Sonucu, kan tetkikleri ve görüntüleme bulgularıyla karşılaştırarak tedaviyi yürüten hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Лабораторијско испитивање течности накупљене у трбушној дупљи, са процјеном протеина, албумина, ћелијског састава и појединих ензима",
+        "how": "Течност узима љекар пункцијом трбушног зида у локалној анестезији, најчешће уз ултразвучну контролу; дио материјала се шаље у лабораторију, а сама пункција траје неколико минута",
+        "when": "Први пут уочена течност у трбуху, разјашњавање разлога њеног накупљања, сумња на инфекцију течности, праћење код хроничних болести јетре, срца и бубрега",
+        "prep": "За лабораторијски дио припреме нема, а услове пункције објашњава љекар који је изводи: обично се тражи пражњење мокраћне бешике и податак о лијековима који разрјеђују крв",
+        "abnormal": "Састав течности помаже љекару да разлучи механизме њеног накупљања: притисак у крвним судовима јетре, губитак протеина, упалу или инфекцију. Закључак доноси љекар који лијечи пацијента, упоређујући налаз са анализама крви и налазима снимања"
+      }
+    }
+  },
+  {
+    "slug": "csf-biochemical-analysis",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Определение в спинномозговой жидкости биохимических показателей: общего белка, глюкозы, хлоридов и при необходимости других",
+        "how": "Ликвор получает врач при люмбальной пункции под местным обезболиванием, небольшую порцию сразу отправляют в лабораторию; глюкозу обычно сравнивают с одновременно взятой кровью",
+        "when": "Подозрение на воспаление оболочек мозга, неясные неврологические симптомы, судороги и нарушения сознания, наблюдение при заболеваниях нервной системы по назначению невролога",
+        "prep": "Подготовка относится к самой пункции и её объясняет врач: нужны согласие, сведения о препаратах, разжижающих кровь, и отдых лёжа после процедуры; отдельной подготовки к лабораторной части нет",
+        "abnormal": "Изменения могут быть связаны с воспалительными процессами, инфекцией, изменённой проницаемостью барьеров между кровью и ликвором или с обменными причинами. Показатели трактуются только вместе с клеточным составом, анализами крови и состоянием пациента, это делает врач"
+      },
+      "en": {
+        "what": "Measurement of biochemical values in cerebrospinal fluid: total protein, glucose, chlorides and, if needed, others",
+        "how": "The fluid is obtained by the doctor during a lumbar puncture under local anaesthesia and a small portion goes to the laboratory at once; glucose is usually compared with blood taken at the same time",
+        "when": "Suspected inflammation of the membranes of the brain, unclear neurological symptoms, seizures and disturbances of consciousness, follow-up in nervous system diseases as directed by a neurologist",
+        "prep": "Preparation concerns the puncture itself and is explained by the doctor: consent, information about blood-thinning medications and lying down afterwards are required; the laboratory part needs no separate preparation",
+        "abnormal": "Changes may be related to inflammation, infection, altered permeability of the barriers between blood and the fluid, or to metabolic causes. The values are interpreted only together with the cell content, blood tests and the patient's condition, which is done by a doctor"
+      },
+      "sr": {
+        "what": "Određivanje biohemijskih pokazatelja u likvoru: ukupnih proteina, glukoze, hlorida i po potrebi drugih",
+        "how": "Likvor uzima ljekar lumbalnom punkcijom u lokalnoj anesteziji, a mala količina odmah ide u laboratoriju; glukoza se obično poredi sa krvlju uzetom u isto vrijeme",
+        "when": "Sumnja na upalu moždanih ovojnica, nejasni neurološki simptomi, grčevi i poremećaji svijesti, praćenje kod oboljenja nervnog sistema po uputu neurologa",
+        "prep": "Priprema se odnosi na samu punkciju i objašnjava je ljekar: potrebni su saglasnost, podaci o lijekovima koji razrjeđuju krv i ležanje poslije zahvata; za laboratorijski dio posebne pripreme nema",
+        "abnormal": "Promjene mogu biti povezane sa upalnim procesima, infekcijom, promijenjenom propustljivošću barijera između krvi i likvora ili sa metaboličkim uzrocima. Pokazatelji se tumače samo uz ćelijski sastav, analize krvi i stanje pacijenta, a to radi ljekar"
+      },
+      "de": {
+        "what": "Bestimmung biochemischer Werte im Liquor: Gesamteiweiß, Glukose, Chloride und bei Bedarf weitere",
+        "how": "Den Liquor gewinnt der Arzt bei einer Lumbalpunktion in örtlicher Betäubung, eine kleine Menge geht sofort ins Labor; die Glukose wird üblicherweise mit gleichzeitig entnommenem Blut verglichen",
+        "when": "Verdacht auf eine Entzündung der Hirnhäute, unklare neurologische Symptome, Krampfanfälle und Bewusstseinsstörungen, Verlaufskontrolle bei Erkrankungen des Nervensystems auf Anordnung des Neurologen",
+        "prep": "Die Vorbereitung betrifft die Punktion selbst und wird vom Arzt erläutert: Einwilligung, Angaben zu blutverdünnenden Medikamenten und Liegen im Anschluss; für den Laborteil ist keine gesonderte Vorbereitung nötig",
+        "abnormal": "Veränderungen können mit Entzündungen, einer Infektion, einer veränderten Durchlässigkeit der Schranken zwischen Blut und Liquor oder mit Stoffwechselursachen zusammenhängen. Die Werte werden nur zusammen mit dem Zellbild, den Blutwerten und dem Zustand beurteilt, das übernimmt der Arzt"
+      },
+      "tr": {
+        "what": "Beyin omurilik sıvısında biyokimyasal değerlerin ölçülmesi: total protein, glukoz, klorür ve gerekirse diğerleri",
+        "how": "Sıvıyı hekim lokal anesteziyle yapılan lomber ponksiyonla alır, küçük bir bölümü hemen laboratuvara gönderilir; glukoz genellikle aynı anda alınan kanla karşılaştırılır",
+        "when": "Beyin zarlarında iltihap şüphesi, açıklanamayan nörolojik belirtiler, nöbetler ve bilinç bozuklukları, nöroloji yönlendirmesiyle sinir sistemi hastalıklarında izlem",
+        "prep": "Hazırlık ponksiyonun kendisiyle ilgilidir ve hekim tarafından anlatılır: onam, kan sulandırıcı ilaç bilgisi ve işlemden sonra sırtüstü dinlenme gerekir; laboratuvar bölümü için ayrı hazırlık yoktur",
+        "abnormal": "Değişiklikler iltihabi süreçlerle, enfeksiyonla, kan ile sıvı arasındaki engellerin geçirgenliğindeki değişimle ya da metabolik nedenlerle ilişkili olabilir. Değerler yalnızca hücre içeriği, kan tetkikleri ve hastanın durumuyla birlikte yorumlanır, bunu hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Одређивање биохемијских показатеља у ликвору: укупних протеина, глукозе, хлорида и по потреби других",
+        "how": "Ликвор узима љекар лумбалном пункцијом у локалној анестезији, а мала количина одмах иде у лабораторију; глукоза се обично пореди са крвљу узетом у исто вријеме",
+        "when": "Сумња на упалу можданих овојница, нејасни неуролошки симптоми, грчеви и поремећаји свијести, праћење код обољења нервног система по упуту неуролога",
+        "prep": "Припрема се односи на саму пункцију и објашњава је љекар: потребни су сагласност, подаци о лијековима који разрјеђују крв и лежање послије захвата; за лабораторијски дио посебне припреме нема",
+        "abnormal": "Промјене могу бити повезане са упалним процесима, инфекцијом, промијењеном пропустљивошћу баријера између крви и ликвора или са метаболичким узроцима. Показатељи се тумаче само уз ћелијски састав, анализе крви и стање пацијента, а то ради љекар"
+      }
+    }
+  },
+  {
+    "slug": "csf-protein-quantitative",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Точное измерение содержания общего белка в спинномозговой жидкости, показателя проницаемости барьера между кровью и ликвором",
+        "how": "Отдельного забора не требуется: белок определяют в той же порции ликвора, что получена при люмбальной пункции, а примесь крови в пробе искажает результат",
+        "when": "Подозрение на воспалительные и демиелинизирующие заболевания нервной системы, полинейропатии, оценка проницаемости барьера между кровью и ликвором, наблюдение в динамике по назначению невролога",
+        "prep": "Подготовки со стороны пациента нет, материал берут во время пункции; правила самой пункции и отдых после неё объясняет выполняющий её врач",
+        "abnormal": "Повышение может быть связано с воспалением, затруднённой циркуляцией ликвора, изменением проницаемости барьера или с попаданием крови в пробу. Значение результата невролог оценивает вместе с остальными показателями ликвора и клинической картиной"
+      },
+      "en": {
+        "what": "Precise measurement of total protein in cerebrospinal fluid, a value that reflects the permeability of the barrier between blood and the fluid",
+        "how": "No separate sampling is needed: protein is measured in the same portion of fluid obtained at lumbar puncture, and blood contaminating the sample distorts the result",
+        "when": "Suspected inflammatory and demyelinating diseases of the nervous system, polyneuropathies, assessment of the permeability of the blood-fluid barrier, follow-up over time as directed by a neurologist",
+        "prep": "There is no preparation on the patient's part and the material is taken during the puncture; the rules of the puncture itself and the rest afterwards are explained by the doctor performing it",
+        "abnormal": "An increase may be related to inflammation, impaired circulation of the fluid, changed permeability of the barrier, or blood getting into the sample. A neurologist assesses the meaning of the result together with the other cerebrospinal fluid values and the clinical picture"
+      },
+      "sr": {
+        "what": "Precizno mjerenje ukupnih proteina u likvoru, pokazatelja propustljivosti barijere između krvi i likvora",
+        "how": "Posebno uzimanje nije potrebno: proteini se određuju u istoj količini likvora dobijenoj lumbalnom punkcijom, a primjesa krvi u uzorku iskrivljuje nalaz",
+        "when": "Sumnja na upalna i demijelinizaciona oboljenja nervnog sistema, polineuropatije, procjena propustljivosti barijere između krvi i likvora, praćenje u dinamici po uputu neurologa",
+        "prep": "Sa strane pacijenta pripreme nema, materijal se uzima tokom punkcije; pravila same punkcije i odmor poslije nje objašnjava ljekar koji je izvodi",
+        "abnormal": "Povišene vrijednosti mogu biti povezane sa upalom, otežanim protokom likvora, promijenjenom propustljivošću barijere ili sa dospijevanjem krvi u uzorak. Značenje nalaza neurolog procjenjuje uz ostale pokazatelje likvora i kliničku sliku"
+      },
+      "de": {
+        "what": "Genaue Bestimmung des Gesamteiweißes im Liquor, eines Wertes für die Durchlässigkeit der Schranke zwischen Blut und Liquor",
+        "how": "Eine gesonderte Entnahme ist nicht nötig: Das Eiweiß wird in derselben bei der Lumbalpunktion gewonnenen Portion bestimmt, eine Blutbeimengung in der Probe verfälscht das Ergebnis",
+        "when": "Verdacht auf entzündliche und entmarkende Erkrankungen des Nervensystems, Polyneuropathien, Beurteilung der Durchlässigkeit der Blut-Liquor-Schranke, Verlaufskontrolle auf Anordnung des Neurologen",
+        "prep": "Von Seiten des Patienten ist keine Vorbereitung nötig, das Material wird während der Punktion gewonnen; die Regeln der Punktion und die Ruhe danach erklärt der durchführende Arzt",
+        "abnormal": "Erhöhte Werte können mit einer Entzündung, einer gestörten Liquorzirkulation, einer veränderten Durchlässigkeit der Schranke oder mit einer Blutbeimengung in der Probe zusammenhängen. Die Bedeutung des Befundes beurteilt der Neurologe zusammen mit den übrigen Liquorwerten und dem klinischen Bild"
+      },
+      "tr": {
+        "what": "Beyin omurilik sıvısındaki total proteinin kesin ölçümü; kan ile sıvı arasındaki engelin geçirgenliğini yansıtan bir değerdir",
+        "how": "Ayrı bir örnek alınması gerekmez: protein, lomber ponksiyonla elde edilen aynı sıvıda ölçülür, örneğe kan karışması sonucu bozar",
+        "when": "Sinir sisteminin iltihabi ve demiyelinizan hastalıkları şüphesi, polinöropatiler, kan ile sıvı arasındaki engelin geçirgenliğinin değerlendirilmesi, nöroloji yönlendirmesiyle zaman içinde izlem",
+        "prep": "Hasta açısından hazırlık yoktur, materyal ponksiyon sırasında alınır; ponksiyonun kuralları ve sonrasındaki dinlenme, işlemi yapan hekim tarafından anlatılır",
+        "abnormal": "Yükseklik iltihapla, sıvı dolaşımının bozulmasıyla, engelin geçirgenliğindeki değişimle ya da örneğe kan karışmasıyla ilişkili olabilir. Sonucun anlamını nöroloji uzmanı diğer beyin omurilik sıvısı değerleri ve klinik tabloyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Прецизно мјерење укупних протеина у ликвору, показатеља пропустљивости баријере између крви и ликвора",
+        "how": "Посебно узимање није потребно: протеини се одређују у истој количини ликвора добијеној лумбалном пункцијом, а примјеса крви у узорку искривљује налаз",
+        "when": "Сумња на упална и демијелинизациона обољења нервног система, полинеуропатије, процјена пропустљивости баријере између крви и ликвора, праћење у динамици по упуту неуролога",
+        "prep": "Са стране пацијента припреме нема, материјал се узима током пункције; правила саме пункције и одмор послије ње објашњава љекар који је изводи",
+        "abnormal": "Повишене вриједности могу бити повезане са упалом, отежаним протоком ликвора, промијењеном пропустљивошћу баријере или са доспијевањем крви у узорак. Значење налаза неуролог процјењује уз остале показатеље ликвора и клиничку слику"
+      }
+    }
+  },
+  {
+    "slug": "pleural-fluid-analysis",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Лабораторное исследование жидкости из полости между лёгким и грудной стенкой с оценкой белка, ферментов и клеточного состава",
+        "how": "Жидкость получает врач при проколе грудной стенки под местным обезболиванием, чаще под контролем УЗИ; часть материала направляют в лабораторию, после процедуры нередко делают контрольный снимок",
+        "when": "Выявленный на снимке или УЗИ выпот вокруг лёгкого, уточнение причин его появления, одышка и боль в груди при скоплении жидкости, наблюдение при болезнях сердца, лёгких и почек",
+        "prep": "Отдельной подготовки к лабораторной части нет; перед проколом важно сообщить о препаратах, разжижающих кровь, а во время процедуры сидеть неподвижно и стараться не кашлять, остальное объясняет выполняющий врач",
+        "abnormal": "По составу жидкости врач различает механизмы её накопления, от повышенного давления в сосудах до воспаления и инфекции. Окончательный вывод делают вместе с обследованием лёгких и сердца, этим занимается лечащий врач"
+      },
+      "en": {
+        "what": "Laboratory examination of fluid from the space between the lung and the chest wall, with assessment of protein, enzymes and cell content",
+        "how": "The fluid is obtained by the doctor through a puncture of the chest wall under local anaesthesia, usually with ultrasound guidance; part of the material goes to the laboratory and a control image is often taken afterwards",
+        "when": "Effusion around the lung seen on an X-ray or ultrasound, clarifying why it appeared, breathlessness and chest pain caused by the fluid, follow-up in diseases of the heart, lungs and kidneys",
+        "prep": "The laboratory part needs no separate preparation; before the puncture it is important to report blood-thinning medications, and during the procedure to sit still and try not to cough, with the rest explained by the doctor performing it",
+        "abnormal": "From the composition of the fluid the doctor distinguishes the mechanisms of its accumulation, from raised pressure in the vessels to inflammation and infection. The final conclusion is reached together with examination of the lungs and heart and is made by the treating doctor"
+      },
+      "sr": {
+        "what": "Laboratorijsko ispitivanje tečnosti iz prostora između pluća i zida grudnog koša, sa procjenom proteina, enzima i ćelijskog sastava",
+        "how": "Tečnost uzima ljekar punkcijom grudnog zida u lokalnoj anesteziji, najčešće uz ultrazvučnu kontrolu; dio materijala ide u laboratoriju, a poslije zahvata se često uradi kontrolni snimak",
+        "when": "Izliv oko pluća viđen na snimku ili ultrazvuku, razjašnjavanje razloga njegovog nastanka, zaduha i bol u grudima zbog nakupljene tečnosti, praćenje kod bolesti srca, pluća i bubrega",
+        "prep": "Za laboratorijski dio posebne pripreme nema; prije punkcije je važno reći za lijekove koji razrjeđuju krv, a tokom zahvata sjediti mirno i truditi se da se ne kašlje, ostalo objašnjava ljekar koji punkciju izvodi",
+        "abnormal": "Po sastavu tečnosti ljekar razlikuje mehanizme njenog nakupljanja, od povišenog pritiska u krvnim sudovima do upale i infekcije. Konačan zaključak donosi ljekar koji liječi pacijenta, zajedno sa pregledom pluća i srca"
+      },
+      "de": {
+        "what": "Laboruntersuchung der Flüssigkeit aus dem Raum zwischen Lunge und Brustwand mit Bestimmung von Eiweiß, Enzymen und Zellgehalt",
+        "how": "Die Flüssigkeit gewinnt der Arzt durch eine Punktion der Brustwand in örtlicher Betäubung, meist unter Ultraschallkontrolle; ein Teil des Materials geht ins Labor, danach wird häufig eine Kontrollaufnahme angefertigt",
+        "when": "Im Röntgenbild oder Ultraschall gesehener Erguss um die Lunge, Klärung seiner Entstehung, Atemnot und Brustschmerz durch die angesammelte Flüssigkeit, Verlaufskontrolle bei Erkrankungen von Herz, Lunge und Nieren",
+        "prep": "Für den Laborteil ist keine gesonderte Vorbereitung nötig; vor der Punktion ist es wichtig, blutverdünnende Medikamente anzugeben und während des Eingriffs still zu sitzen und möglichst nicht zu husten, alles Weitere erklärt der durchführende Arzt",
+        "abnormal": "Anhand der Zusammensetzung unterscheidet der Arzt die Mechanismen der Ansammlung, von erhöhtem Druck in den Gefäßen bis zu Entzündung und Infektion. Die abschließende Beurteilung erfolgt zusammen mit der Untersuchung von Lunge und Herz durch den behandelnden Arzt"
+      },
+      "tr": {
+        "what": "Akciğer ile göğüs duvarı arasındaki boşluktan alınan sıvının laboratuvarda incelenmesi; protein, enzimler ve hücre içeriği değerlendirilir",
+        "how": "Sıvıyı hekim, çoğunlukla ultrason eşliğinde ve lokal anesteziyle göğüs duvarından girerek alır; materyalin bir bölümü laboratuvara gönderilir, işlemden sonra sıklıkla kontrol görüntüsü alınır",
+        "when": "Filmde veya ultrasonda görülen akciğer çevresindeki sıvı, ortaya çıkış nedeninin araştırılması, biriken sıvıya bağlı nefes darlığı ve göğüs ağrısı, kalp, akciğer ve böbrek hastalıklarında izlem",
+        "prep": "Laboratuvar bölümü için ayrı hazırlık yoktur; işlemden önce kan sulandırıcı ilaçların bildirilmesi, işlem sırasında hareketsiz oturulması ve öksürmemeye çalışılması önemlidir, gerisini uygulayan hekim anlatır",
+        "abnormal": "Hekim sıvının bileşiminden, damarlardaki basınç artışından iltihap ve enfeksiyona kadar birikme mekanizmalarını ayırt eder. Nihai değerlendirme akciğer ve kalp incelemeleriyle birlikte, tedaviyi yürüten hekim tarafından yapılır"
+      },
+      "sr_cyrl": {
+        "what": "Лабораторијско испитивање течности из простора између плућа и зида грудног коша, са процјеном протеина, ензима и ћелијског састава",
+        "how": "Течност узима љекар пункцијом грудног зида у локалној анестезији, најчешће уз ултразвучну контролу; дио материјала иде у лабораторију, а послије захвата се често уради контролни снимак",
+        "when": "Излив око плућа виђен на снимку или ултразвуку, разјашњавање разлога његовог настанка, задуха и бол у грудима због накупљене течности, праћење код болести срца, плућа и бубрега",
+        "prep": "За лабораторијски дио посебне припреме нема; прије пункције је важно рећи за лијекове који разрјеђују крв, а током захвата сједити мирно и трудити се да се не кашље, остало објашњава љекар који пункцију изводи",
+        "abnormal": "По саставу течности љекар разликује механизме њеног накупљања, од повишеног притиска у крвним судовима до упале и инфекције. Коначан закључак доноси љекар који лијечи пацијента, заједно са прегледом плућа и срца"
+      }
+    }
+  }
 ]

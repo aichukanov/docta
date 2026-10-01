@@ -1,617 +1,722 @@
 [
-	{
-		"slug": "amalgam-filling",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Пломба из серебряной амальгамы — прочного металлического сплава для жевательных зубов",
-				"how": "Кариозные ткани удаляют бором, полость формируют с опорными стенками, замешанную амальгаму уплотняют в полости и выверяют по прикусу; один визит, 20-40 минут, окончательную полировку иногда переносят на следующий приём",
-				"when": "Крупные полости на жевательных зубах, участки, которые трудно изолировать от слюны, выбор пациента, замена старой амальгамовой пломбы",
-				"prep": "Подготовка не требуется; предупредить о беременности и грудном вскармливании, об аллергии на металлы и сказать, какие пломбы уже стоят",
-				"abnormal": "Пока держится анестезия, жевать на этой стороне не стоит, а одну-две недели возможна реакция на холодное. Боль при накусывании, скол края или трещина зуба — повод показаться стоматологу"
-			},
-			"en": {
-				"what": "A filling made of silver amalgam, a durable metal alloy used on back teeth",
-				"how": "Decay is removed with a bur, the cavity is shaped with supporting walls, freshly mixed amalgam is packed into it and adjusted to the bite; one visit, 20-40 minutes, with final polishing sometimes done at the next appointment",
-				"when": "Larger cavities in back teeth, sites that are hard to keep dry, patient preference, replacement of an old amalgam filling",
-				"prep": "No preparation needed; mention pregnancy or breastfeeding, metal allergies and which fillings you already have",
-				"abnormal": "Avoid chewing on that side while the anaesthetic lasts, and expect possible sensitivity to cold for a week or two. Pain on biting, a chipped edge or a crack in the tooth should be shown to the dentist"
-			},
-			"sr": {
-				"what": "Plomba od srebrnog amalgama, čvrste metalne legure za bočne zube",
-				"how": "Karijes se ukloni svrdlom, kavitet se oblikuje sa nosećim zidovima, zamiješani amalgam se zbije u kavitet i uskladi sa zagrižajem; jedna posjeta, 20-40 minuta, završno poliranje se ponekad radi na sljedećem dolasku",
-				"when": "Veći kaviteti na bočnim zubima, mjesta koja je teško izolovati od pljuvačke, želja pacijenta, zamjena stare amalgamske plombe",
-				"prep": "Priprema nije potrebna; prijaviti trudnoću i dojenje, alergiju na metale i reći koje plombe već imate",
-				"abnormal": "Dok traje anestezija ne treba žvakati na toj strani, a sedmicu ili dvije je moguća reakcija na hladno. Bol pri zagrizu, odlom ivice ili pukotina zuba razlog su za pregled kod stomatologa"
-			},
-			"de": {
-				"what": "Füllung aus Silberamalgam, einer widerstandsfähigen Metalllegierung für die Seitenzähne",
-				"how": "Die Karies wird mit dem Bohrer entfernt, die Kavität mit tragenden Wänden geformt, das frisch angemischte Amalgam eingebracht, verdichtet und auf den Biss eingestellt; ein Termin, 20-40 Minuten, die Endpolitur erfolgt mitunter beim nächsten Besuch",
-				"when": "Größere Defekte an Seitenzähnen, Stellen, die sich schlecht trockenlegen lassen, Wunsch des Patienten, Austausch einer alten Amalgamfüllung",
-				"prep": "Keine Vorbereitung nötig; Schwangerschaft und Stillzeit, Metallallergien sowie vorhandene Füllungen angeben",
-				"abnormal": "Solange die Betäubung anhält, nicht auf dieser Seite kauen; eine Empfindlichkeit auf Kälte ist ein bis zwei Wochen möglich. Schmerzen beim Zubeißen, eine abgeplatzte Kante oder ein Riss im Zahn gehören zum Zahnarzt"
-			},
-			"tr": {
-				"what": "Arka dişlerde kullanılan dayanıklı metal alaşımı gümüş amalgamdan yapılan dolgu",
-				"how": "Çürük frezle temizlenir, kavite destekleyici duvarlarla şekillendirilir, taze karıştırılmış amalgam kaviteye sıkıştırılır ve kapanışa göre ayarlanır; tek seans, 20-40 dakika, son cila bazen sonraki randevuda yapılır",
-				"when": "Arka dişlerdeki büyük kaviteler, tükürükten yalıtılması güç bölgeler, hastanın tercihi, eski amalgam dolgunun yenilenmesi",
-				"prep": "Hazırlık gerekmez; gebelik ve emzirme durumunu, metal alerjisini ve ağzınızdaki mevcut dolguları hekime bildirin",
-				"abnormal": "Anestezi geçene kadar o tarafta çiğnememek gerekir, bir iki hafta soğuğa karşı hassasiyet olabilir. Isırırken ağrı, kenarda kırılma veya dişte çatlak hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "cephalometric-x-ray",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Боковой рентгеновский снимок черепа с большого расстояния, по которому измеряют положение челюстей, зубов и профиля лица",
-				"how": "Голову фиксируют в цефалостате по ушным упорам, пациент смыкает зубы и стоит неподвижно несколько секунд, затем врач наносит на снимок опорные точки и считает углы и расстояния; визит около 10 минут",
-				"when": "Планирование ортодонтического лечения, оценка роста челюстей у детей и подростков, подготовка к ортогнатической операции, контроль в ходе лечения и после него",
-				"prep": "Снять серьги, пирсинг, очки, заколки и съёмные протезы; предупредить о беременности",
-				"abnormal": "Расчёты показывают, как челюсти расположены относительно друг друга и основания черепа, и служат основой для выбора аппарата или операции. Трактовку измерений и план даёт ортодонт, сами по себе цифры ничего не решают"
-			},
-			"en": {
-				"what": "A side X-ray of the skull taken from a long distance, used to measure the position of the jaws, teeth and facial profile",
-				"how": "The head is held in a cephalostat by ear rods, the patient closes the teeth and stays still for a few seconds, then the clinician marks reference points on the image and calculates angles and distances; the visit takes about 10 minutes",
-				"when": "Planning orthodontic treatment, assessing jaw growth in children and teenagers, preparation for orthognathic surgery, checks during and after treatment",
-				"prep": "Remove earrings, piercings, glasses, hair clips and removable dentures; report pregnancy",
-				"abnormal": "The measurements show how the jaws sit relative to each other and to the skull base and guide the choice of appliance or surgery. The orthodontist interprets them and sets the plan, the figures decide nothing on their own"
-			},
-			"sr": {
-				"what": "Profilni rendgenski snimak glave sa veće udaljenosti na kojem se mjeri položaj vilica, zuba i profila lica",
-				"how": "Glava se fiksira u kefalostat pomoću ušnih oslonaca, pacijent sklopi zube i miruje nekoliko sekundi, a zatim ljekar na snimku ucrta referentne tačke i izračuna uglove i rastojanja; posjeta traje oko 10 minuta",
-				"when": "Planiranje ortodontske terapije, procjena rasta vilica kod djece i adolescenata, priprema za ortognatsku operaciju, kontrola tokom i poslije liječenja",
-				"prep": "Skinuti minđuše, pirsing, naočare, ukosnice i pokretne proteze; prijaviti trudnoću",
-				"abnormal": "Mjerenja pokazuju kako su vilice postavljene jedna prema drugoj i prema bazi lobanje i osnova su za izbor aparata ili operacije. Tumačenje i plan daje ortodont, sami po sebi brojevi ništa ne odlučuju"
-			},
-			"de": {
-				"what": "Seitliche Röntgenaufnahme des Schädels aus großem Abstand, mit der die Lage von Kiefern, Zähnen und Gesichtsprofil vermessen wird",
-				"how": "Der Kopf wird im Kephalostaten über Ohrstützen fixiert, der Patient schließt die Zähne und hält einige Sekunden still, danach markiert der Behandler Bezugspunkte auf dem Bild und berechnet Winkel und Strecken; der Termin dauert etwa 10 Minuten",
-				"when": "Planung einer kieferorthopädischen Behandlung, Beurteilung des Kieferwachstums bei Kindern und Jugendlichen, Vorbereitung einer kieferchirurgischen Operation, Kontrollen während und nach der Behandlung",
-				"prep": "Ohrringe, Piercings, Brille, Haarspangen und herausnehmbaren Zahnersatz ablegen; eine Schwangerschaft angeben",
-				"abnormal": "Die Messwerte zeigen, wie die Kiefer zueinander und zur Schädelbasis stehen, und bilden die Grundlage für die Wahl von Apparatur oder Operation. Die Deutung und den Plan gibt der Kieferorthopäde vor, für sich allein entscheiden die Zahlen nichts"
-			},
-			"tr": {
-				"what": "Çenelerin, dişlerin ve yüz profilinin konumunu ölçmek için uzak mesafeden çekilen yandan kafa röntgeni",
-				"how": "Baş, kulak desteklerinden sefalostata sabitlenir, hasta dişlerini kapatıp birkaç saniye hareketsiz durur, ardından hekim film üzerinde referans noktalarını işaretleyip açı ve mesafeleri hesaplar; ziyaret yaklaşık 10 dakika sürer",
-				"when": "Ortodontik tedavi planlaması, çocuk ve ergenlerde çene gelişiminin değerlendirilmesi, ortognatik cerrahi hazırlığı, tedavi sırasında ve sonrasında kontrol",
-				"prep": "Küpe, piercing, gözlük, toka ve hareketli protezleri çıkarın; gebelik durumunu bildirin",
-				"abnormal": "Ölçümler çenelerin birbirine ve kafa tabanına göre nasıl konumlandığını gösterir ve aygıt ya da ameliyat seçiminin temelini oluşturur. Yorumu ve planı ortodontist yapar, sayılar tek başlarına bir şey belirlemez"
-			}
-		}
-	},
-	{
-		"slug": "composite-filling",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Восстановление разрушенной части зуба светоотверждаемым материалом под цвет эмали",
-				"how": "Поражённые ткани убирают, полость промывают и протравливают, наносят адгезив, затем композит накладывают слоями и каждый засвечивают лампой, в конце пломбу шлифуют и полируют по прикусу; один визит, 20-50 минут",
-				"when": "Кариес, скол или трещина зуба, замена потемневшей или негерметичной старой пломбы, закрытие клиновидного дефекта у шейки зуба",
-				"prep": "Подготовки нет; при высокой чувствительности или волнении сказать врачу заранее, чтобы обсудить анестезию",
-				"abnormal": "Есть и пить можно сразу, но пока не отойдёт анестезия, легко прикусить щёку. Если пломба мешает смыкать зубы, чувствительность долго не проходит или край скалывается, пломбу корректируют на приёме"
-			},
-			"en": {
-				"what": "Rebuilding the damaged part of a tooth with a light-cured material matched to the shade of the enamel",
-				"how": "Affected tissue is removed, the cavity is rinsed and etched, an adhesive is applied, the composite is built up in layers that are each cured with a lamp, and the filling is finally shaped and polished to the bite; one visit, 20-50 minutes",
-				"when": "Decay, a chipped or cracked tooth, replacement of a darkened or leaking old filling, closing a wedge-shaped defect at the neck of the tooth",
-				"prep": "No preparation; mention marked sensitivity or anxiety in advance so anaesthesia can be discussed",
-				"abnormal": "You can eat and drink straight away, but biting the cheek is easy while the anaesthetic wears off. If the filling interferes with closing the teeth, sensitivity lingers or the edge chips, it is adjusted at an appointment"
-			},
-			"sr": {
-				"what": "Nadoknada oštećenog dijela zuba materijalom koji se stvrdnjava svjetlom i odgovara boji gleđi",
-				"how": "Oboljelo tkivo se ukloni, kavitet se ispere i nagrize kiselinom, nanese se adheziv, kompozit se postavlja u slojevima uz osvjetljavanje lampom, a na kraju se plomba brusi i polira prema zagrižaju; jedna posjeta, 20-50 minuta",
-				"when": "Karijes, odlom ili pukotina zuba, zamjena potamnjele ili propusne stare plombe, zatvaranje klinastog defekta uz vrat zuba",
-				"prep": "Priprema nije potrebna; kod izražene osjetljivosti ili straha to reći ranije kako bi se dogovorila anestezija",
-				"abnormal": "Jesti i piti može se odmah, ali dok anestezija ne prođe lako je ugristi obraz. Ako plomba smeta pri sklapanju zuba, osjetljivost dugo traje ili se ivica okrzne, plomba se koriguje u ordinaciji"
-			},
-			"de": {
-				"what": "Aufbau des beschädigten Zahnanteils mit einem lichthärtenden, zahnfarbenen Material",
-				"how": "Das erkrankte Gewebe wird entfernt, die Kavität gespült und geätzt, ein Haftvermittler aufgetragen, das Komposit in Schichten eingebracht und jeweils mit der Lampe gehärtet, zuletzt wird die Füllung ausgearbeitet und auf den Biss poliert; ein Termin, 20-50 Minuten",
-				"when": "Karies, abgeplatzter oder gerissener Zahn, Austausch einer verfärbten oder undichten alten Füllung, Versorgung eines keilförmigen Defekts am Zahnhals",
-				"prep": "Keine Vorbereitung; starke Empfindlichkeit oder Angst vorab ansprechen, um die Betäubung zu besprechen",
-				"abnormal": "Essen und Trinken sind sofort möglich, solange die Betäubung wirkt, beißt man sich jedoch leicht in die Wange. Stört die Füllung beim Zusammenbeißen, hält die Empfindlichkeit an oder bricht der Rand aus, wird sie in der Praxis nachgearbeitet"
-			},
-			"tr": {
-				"what": "Dişin hasarlı bölümünün, mine rengine uyan ışıkla sertleşen bir malzemeyle yeniden yapılandırılması",
-				"how": "Hastalıklı doku temizlenir, kavite yıkanıp asitle pürüzlendirilir, bağlayıcı sürülür, kompozit katmanlar hâlinde konup her katman lambayla sertleştirilir, sonunda dolgu kapanışa göre şekillendirilip cilalanır; tek seans, 20-50 dakika",
-				"when": "Çürük, kırık veya çatlak diş, kararmış ya da sızdıran eski dolgunun değişimi, diş boynundaki kama şeklinde defektin kapatılması",
-				"prep": "Hazırlık gerekmez; belirgin hassasiyet ya da kaygı varsa anestezinin konuşulabilmesi için önceden söyleyin",
-				"abnormal": "Hemen yiyip içilebilir, ancak anestezi geçene kadar yanağı ısırmak kolaydır. Dolgu kapanışta engel yapıyorsa, hassasiyet sürüyorsa veya kenarı kırılıyorsa randevuda düzeltilir"
-			}
-		}
-	},
-	{
-		"slug": "composite-filling-single-surface-ivoclar-evoceram",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Восстановление одной повреждённой поверхности зуба композитом Ivoclar EvoCeram, подобранным под цвет эмали",
-				"how": "Кариес убирают, полость обрабатывают адгезивом, композит вносят и засвечивают слоями, затем пломбу полируют и выверяют по прикусу; один визит, обычно 20-30 минут",
-				"when": "Небольшая полость на жевательной или на одной из боковых поверхностей зуба, скол на передней поверхности, замена небольшой старой пломбы",
-				"prep": "Подготовки нет; оттенок удобнее подбирать при дневном свете и без яркой помады",
-				"abnormal": "Одноповерхностная пломба нагружается меньше крупных и обычно дольше обходится без правок. Чувствительность, которая держится дольше пары недель, зазор у края или потемнение границы — повод показать зуб стоматологу"
-			},
-			"en": {
-				"what": "Rebuilding one damaged surface of a tooth with shade-matched Ivoclar EvoCeram composite",
-				"how": "Decay is removed, the cavity is treated with an adhesive, the composite is placed and cured in layers, then the filling is polished and adjusted to the bite; one visit, usually 20-30 minutes",
-				"when": "A small cavity on the chewing surface or on one side surface of a tooth, a chip on the front surface, replacement of a small old filling",
-				"prep": "No preparation; the shade is easier to choose in daylight and without bright lipstick",
-				"abnormal": "A single-surface filling carries less load than larger ones and usually needs fewer adjustments. Sensitivity lasting more than a couple of weeks, a gap at the margin or darkening along the border should be shown to the dentist"
-			},
-			"sr": {
-				"what": "Nadoknada jedne oštećene površine zuba kompozitom Ivoclar EvoCeram usklađenim sa bojom gleđi",
-				"how": "Karijes se ukloni, kavitet se obradi adhezivom, kompozit se unosi i osvjetljava u slojevima, a plomba se zatim polira i uskladi sa zagrižajem; jedna posjeta, obično 20-30 minuta",
-				"when": "Manji kavitet na griznoj ili na jednoj bočnoj površini zuba, odlom na prednjoj strani, zamjena manje stare plombe",
-				"prep": "Priprema nije potrebna; nijansa se lakše bira pri dnevnom svjetlu i bez jakog ruža",
-				"abnormal": "Jednopovršinska plomba trpi manje opterećenja od većih i obično duže ostaje bez dorade. Osjetljivost duža od dvije sedmice, procijep uz ivicu ili tamnjenje granice razlog su da zub pokažete stomatologu"
-			},
-			"de": {
-				"what": "Aufbau einer beschädigten Zahnfläche mit farblich angepasstem Komposit Ivoclar EvoCeram",
-				"how": "Die Karies wird entfernt, die Kavität mit Haftvermittler vorbereitet, das Komposit in Schichten eingebracht und gehärtet, anschließend wird die Füllung poliert und auf den Biss eingestellt; ein Termin, meist 20-30 Minuten",
-				"when": "Kleiner Defekt auf der Kaufläche oder auf einer Seitenfläche, Absplitterung an der Vorderfläche, Austausch einer kleinen alten Füllung",
-				"prep": "Keine Vorbereitung; die Farbe lässt sich bei Tageslicht und ohne kräftigen Lippenstift leichter bestimmen",
-				"abnormal": "Eine einflächige Füllung wird weniger belastet als größere und muss seltener nachgearbeitet werden. Hält die Empfindlichkeit über zwei Wochen an, zeigt sich ein Spalt am Rand oder dunkelt die Grenze nach, gehört der Zahn zum Zahnarzt"
-			},
-			"tr": {
-				"what": "Dişin hasarlı tek yüzeyinin, renk uyumlu Ivoclar EvoCeram kompoziti ile yeniden yapılandırılması",
-				"how": "Çürük temizlenir, kavite bağlayıcı ile hazırlanır, kompozit katmanlar hâlinde konup sertleştirilir, ardından dolgu cilalanıp kapanışa göre ayarlanır; tek seans, genellikle 20-30 dakika",
-				"when": "Çiğneme yüzeyinde veya dişin bir yan yüzeyinde küçük kavite, ön yüzeyde kırık, küçük eski dolgunun değişimi",
-				"prep": "Hazırlık gerekmez; renk seçimi gün ışığında ve koyu ruj olmadan daha kolaydır",
-				"abnormal": "Tek yüzeyli dolgu büyüklerine göre daha az yük taşır ve genellikle daha az düzeltme gerektirir. İki haftadan uzun süren hassasiyet, kenarda aralık ya da sınırda kararma hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "composite-filling-three-surfaces-ivoclar-evoceram",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Восстановление трёх поверхностей сильно разрушенного зуба композитом Ivoclar EvoCeram с воссозданием бугров и обоих контактов",
-				"how": "Кариес убирают, при необходимости с двух сторон ставят кольцевую матрицу, композит наращивают слоями, бугры и краевые гребни моделируют отдельно, затем долго выверяют прикус в разных движениях челюсти; один визит, 45-70 минут",
-				"when": "Обширный кариес, захвативший жевательную и обе контактные стенки, отлом стенки зуба, замена большой негерметичной пломбы, когда коронка пока не нужна",
-				"prep": "Подготовки нет; на такой объём работы стоит заложить больше времени и заранее обсудить анестезию",
-				"abnormal": "У зуба с тремя восстановленными поверхностями остаются тонкие стенки, он уязвимее к трещинам, поэтому врач может позже предложить коронку или вкладку. Боль при накусывании, скол бугра или ощущение, что пломба мешает смыкать зубы, нужно показать стоматологу"
-			},
-			"en": {
-				"what": "Rebuilding three surfaces of a badly damaged tooth with Ivoclar EvoCeram composite, recreating the cusps and both contact points",
-				"how": "Decay is removed, a ring matrix is placed on both sides where needed, the composite is built up in layers, cusps and marginal ridges are modelled separately, and the bite is then checked at length in different jaw movements; one visit, 45-70 minutes",
-				"when": "Extensive decay involving the chewing surface and both side walls, a broken tooth wall, replacement of a large leaking filling when a crown is not yet needed",
-				"prep": "No preparation; allow more time for an appointment of this size and discuss anaesthesia beforehand",
-				"abnormal": "A tooth rebuilt on three surfaces is left with thin walls and is more prone to cracks, so a crown or an inlay may be suggested later. Pain on biting, a fractured cusp or a feeling that the filling blocks the bite should be shown to the dentist"
-			},
-			"sr": {
-				"what": "Nadoknada tri površine jako oštećenog zuba kompozitom Ivoclar EvoCeram uz oblikovanje kvržica i oba kontakta",
-				"how": "Karijes se ukloni, po potrebi se sa obje strane postavi prstenasta matrica, kompozit se gradi u slojevima, kvržice i rubni grebeni se modeluju posebno, a zagrižaj se zatim dugo provjerava u različitim pokretima vilice; jedna posjeta, 45-70 minuta",
-				"when": "Opsežan karijes koji je zahvatio griznu i obje aproksimalne strane, odlom zida zuba, zamjena velike propusne plombe kada krunica još nije potrebna",
-				"prep": "Priprema nije potrebna; za ovaj obim rada predvidjeti više vremena i unaprijed dogovoriti anesteziju",
-				"abnormal": "Zubu sa tri nadoknađene površine ostaju tanki zidovi i podložniji je pukotinama, pa stomatolog kasnije može predložiti krunicu ili inlej. Bol pri zagrizu, odlom kvržice ili osjećaj da plomba smeta pri sklapanju zuba treba pokazati stomatologu"
-			},
-			"de": {
-				"what": "Aufbau von drei Flächen eines stark zerstörten Zahns mit Komposit Ivoclar EvoCeram einschließlich Höcker und beider Kontaktpunkte",
-				"how": "Die Karies wird entfernt, bei Bedarf beidseits eine Ringmatrize gesetzt, das Komposit schichtweise aufgebaut, Höcker und Randleisten werden einzeln modelliert, anschließend wird der Biss ausführlich in verschiedenen Kieferbewegungen geprüft; ein Termin, 45-70 Minuten",
-				"when": "Ausgedehnte Karies an Kaufläche und beiden Seitenwänden, abgebrochene Zahnwand, Austausch einer großen undichten Füllung, solange keine Krone nötig ist",
-				"prep": "Keine Vorbereitung; für diesen Umfang mehr Zeit einplanen und die Betäubung vorab besprechen",
-				"abnormal": "Ein dreiflächig aufgebauter Zahn behält dünne Wände und neigt eher zu Rissen, daher kann später eine Krone oder ein Inlay vorgeschlagen werden. Schmerzen beim Zubeißen, ein abgebrochener Höcker oder das Gefühl, die Füllung störe den Biss, gehören zum Zahnarzt"
-			},
-			"tr": {
-				"what": "Ağır hasarlı bir dişin üç yüzeyinin, tüberkülleri ve her iki kontak noktası yeniden oluşturularak Ivoclar EvoCeram kompoziti ile yapılandırılması",
-				"how": "Çürük temizlenir, gerekirse iki yana halka matris konur, kompozit katmanlar hâlinde yükseltilir, tüberküller ve kenar sırtları ayrı ayrı modellenir, ardından kapanış farklı çene hareketlerinde uzun uzun denetlenir; tek seans, 45-70 dakika",
-				"when": "Çiğneme yüzeyi ile her iki yan duvarı tutan yaygın çürük, kırılmış diş duvarı, kron henüz gerekmezken sızdıran büyük dolgunun değişimi",
-				"prep": "Hazırlık gerekmez; bu kapsamdaki iş için randevuya daha fazla süre ayırın ve anesteziyi önceden konuşun",
-				"abnormal": "Üç yüzeyi yapılandırılan dişin duvarları ince kalır ve çatlamaya daha yatkındır, bu nedenle ileride kron ya da inley önerilebilir. Isırırken ağrı, tüberkül kırılması ya da dolgunun kapanışı engellediği hissi hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "composite-filling-two-surfaces-ivoclar-evoceram",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Восстановление двух соседних поверхностей зуба композитом Ivoclar EvoCeram, обычно жевательной и контактной",
-				"how": "После удаления кариеса между зубами ставят матрицу и клин, чтобы вернуть точку контакта, композит вносят слоями с засвечиванием, в конце проверяют нить и прикус; один визит, 30-45 минут",
-				"when": "Кариес на боковой стенке зуба с переходом на жевательную поверхность, застревание пищи между зубами, замена старой пломбы с утраченным контактом",
-				"prep": "Подготовки нет; сказать врачу, если нить в этом промежутке рвётся или застревает",
-				"abnormal": "В первые дни межзубный промежуток может ощущаться плотнее прежнего. Если нить рвётся, пища снова застревает или десна между зубами воспаляется, контактный пункт переделывают"
-			},
-			"en": {
-				"what": "Rebuilding two adjoining surfaces of a tooth with Ivoclar EvoCeram composite, usually the chewing and the contact surface",
-				"how": "Once the decay is removed, a matrix band and wedge are placed between the teeth to restore the contact point, the composite is layered and cured, and floss and the bite are checked at the end; one visit, 30-45 minutes",
-				"when": "Decay on the side wall of a tooth that extends onto the chewing surface, food packing between teeth, replacement of an old filling with a lost contact point",
-				"prep": "No preparation; tell the dentist if floss tears or catches in that gap",
-				"abnormal": "The gap between the teeth may feel tighter than before for the first few days. If floss shreds, food packs in again or the gum between the teeth becomes inflamed, the contact point is reworked"
-			},
-			"sr": {
-				"what": "Nadoknada dvije susjedne površine zuba kompozitom Ivoclar EvoCeram, najčešće grizne i aproksimalne",
-				"how": "Nakon uklanjanja karijesa među zube se postavlja matrica i klin da se vrati kontaktna tačka, kompozit se unosi u slojevima uz osvjetljavanje, a na kraju se provjere konac i zagrižaj; jedna posjeta, 30-45 minuta",
-				"when": "Karijes na bočnom zidu zuba koji prelazi na griznu površinu, zadržavanje hrane između zuba, zamjena stare plombe sa izgubljenim kontaktom",
-				"prep": "Priprema nije potrebna; reći stomatologu ako se konac u tom međuprostoru kida ili zapinje",
-				"abnormal": "Prvih dana međuzubni prostor može djelovati tješnje nego ranije. Ako se konac kida, hrana se opet zadržava ili se desni između zuba upale, kontaktna tačka se prerađuje"
-			},
-			"de": {
-				"what": "Aufbau zweier benachbarter Zahnflächen mit Komposit Ivoclar EvoCeram, meist Kaufläche und Kontaktfläche",
-				"how": "Nach Entfernen der Karies werden Matrize und Keil zwischen die Zähne gesetzt, um den Kontaktpunkt wiederherzustellen, das Komposit wird in Schichten eingebracht und gehärtet, zum Schluss werden Zahnseide und Biss geprüft; ein Termin, 30-45 Minuten",
-				"when": "Karies an der Seitenwand, die auf die Kaufläche übergreift, Speiseansammlung zwischen den Zähnen, Austausch einer alten Füllung mit verlorenem Kontaktpunkt",
-				"prep": "Keine Vorbereitung; dem Zahnarzt sagen, ob Zahnseide in diesem Zwischenraum reißt oder hängen bleibt",
-				"abnormal": "Der Zahnzwischenraum kann sich die ersten Tage enger anfühlen als zuvor. Reißt die Zahnseide, sammeln sich erneut Speisereste oder entzündet sich das Zahnfleisch dazwischen, wird der Kontaktpunkt überarbeitet"
-			},
-			"tr": {
-				"what": "Dişin komşu iki yüzeyinin, çoğunlukla çiğneme ve kontak yüzeyinin Ivoclar EvoCeram kompoziti ile yapılandırılması",
-				"how": "Çürük temizlendikten sonra kontak noktasını geri kazanmak için dişler arasına matris ve kama yerleştirilir, kompozit katmanlar hâlinde konup sertleştirilir, sonunda diş ipi ve kapanış kontrol edilir; tek seans, 30-45 dakika",
-				"when": "Dişin yan duvarından çiğneme yüzeyine uzanan çürük, dişler arasına yemek sıkışması, kontak noktası kaybolmuş eski dolgunun değişimi",
-				"prep": "Hazırlık gerekmez; o aralıkta diş ipi yırtılıyor ya da takılıyorsa hekime söyleyin",
-				"abnormal": "İlk günlerde diş arası eskisinden daha sıkı hissedilebilir. Diş ipi yırtılıyor, yemek yeniden sıkışıyor ya da aradaki diş eti iltihaplanıyorsa kontak noktası yeniden yapılır"
-			}
-		}
-	},
-	{
-		"slug": "crown-removal",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Снятие ранее установленной коронки или мостовидного протеза с опорного зуба",
-				"how": "Коронку либо распиливают бором по стенке и аккуратно раскрывают, либо снимают специальным съёмником с ударным механизмом; с анестезией или без неё, 15-40 минут на единицу",
-				"when": "Кариес или боль под коронкой, необходимость лечить канал опорного зуба, расцементировка и подвижность конструкции, скол керамики, замена изношенной коронки или моста",
-				"prep": "Подготовки нет; взять снимок, если он есть, и уточнить, планируется ли сохранить коронку для повторной фиксации",
-				"abnormal": "Коронку чаще всего распиливают, то есть вернуть её на место удаётся не всегда, и на время лечения ставят временную. Резкая боль после снятия, отёк десны или слетевшая временная коронка — повод вернуться к стоматологу"
-			},
-			"en": {
-				"what": "Taking off a previously fitted crown or bridge from the supporting tooth",
-				"how": "The crown is either cut through the wall with a bur and gently opened, or tapped off with a crown remover that has a sliding hammer; with or without anaesthesia, 15-40 minutes per unit",
-				"when": "Decay or pain under a crown, the need to treat the root canal of the abutment tooth, loose cement and a wobbly restoration, chipped ceramic, replacement of a worn crown or bridge",
-				"prep": "No preparation; bring an X-ray if you have one and ask whether the crown is meant to be kept for re-cementing",
-				"abnormal": "Crowns are usually cut, so they cannot always be put back, and a temporary one is fitted for the treatment period. Sharp pain after removal, a swollen gum or a temporary crown that falls off means going back to the dentist"
-			},
-			"sr": {
-				"what": "Uklanjanje ranije postavljene krunice ili mosta sa nosećeg zuba",
-				"how": "Krunica se ili prereže svrdlom po zidu i pažljivo rastvori, ili skine posebnim skidačem sa udarnim mehanizmom; sa anestezijom ili bez nje, 15-40 minuta po jedinici",
-				"when": "Karijes ili bol ispod krunice, potreba da se liječi kanal nosećeg zuba, otpuštanje cementa i klimanje nadoknade, odlom keramike, zamjena istrošene krunice ili mosta",
-				"prep": "Priprema nije potrebna; ponijeti snimak ako postoji i provjeriti da li se krunica planira sačuvati za ponovno cementiranje",
-				"abnormal": "Krunica se najčešće prereže, pa je nije uvijek moguće vratiti, a za vrijeme liječenja se stavlja privremena. Jaka bol nakon skidanja, otok desni ili privremena krunica koja spada razlog su za povratak stomatologu"
-			},
-			"de": {
-				"what": "Abnehmen einer zuvor eingesetzten Krone oder Brücke vom Pfeilerzahn",
-				"how": "Die Krone wird entweder mit dem Bohrer an der Wand durchtrennt und vorsichtig aufgebogen oder mit einem Kronenentferner mit Schlagmechanik abgelöst; mit oder ohne Betäubung, 15-40 Minuten je Einheit",
-				"when": "Karies oder Schmerzen unter der Krone, notwendige Wurzelbehandlung des Pfeilerzahns, gelöster Zement und wackelnde Versorgung, abgeplatzte Keramik, Austausch einer verschlissenen Krone oder Brücke",
-				"prep": "Keine Vorbereitung; vorhandene Aufnahmen mitbringen und klären, ob die Krone für eine erneute Zementierung erhalten werden soll",
-				"abnormal": "Kronen werden meist aufgetrennt und lassen sich nicht immer wieder einsetzen, für die Behandlungszeit wird ein Provisorium angefertigt. Starke Schmerzen nach dem Abnehmen, geschwollenes Zahnfleisch oder ein abgefallenes Provisorium gehören zurück in die Praxis"
-			},
-			"tr": {
-				"what": "Daha önce takılmış bir kronun ya da köprünün dayanak dişten çıkarılması",
-				"how": "Kron ya frezle duvarından kesilip dikkatle açılır ya da darbeli kron sökücüyle çıkarılır; anestezili ya da anestezisiz, birim başına 15-40 dakika",
-				"when": "Kron altında çürük veya ağrı, dayanak dişin kanal tedavisi gerekliliği, simanın çözülüp restorasyonun oynaması, seramikte kırık, yıpranmış kron ya da köprünün yenilenmesi",
-				"prep": "Hazırlık gerekmez; varsa filmi getirin ve kronun yeniden yapıştırılmak üzere saklanıp saklanmayacağını hekime sorun",
-				"abnormal": "Kron çoğunlukla kesilerek çıkarılır, bu yüzden her zaman geri takılamaz ve tedavi süresince geçici kron yapılır. Çıkarma sonrası şiddetli ağrı, diş etinde şişlik ya da geçici kronun düşmesi hekime dönmeyi gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "dental-caries-treatment",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление поражённых кариесом тканей зуба и закрытие образовавшейся полости пломбировочным материалом",
-				"how": "Врач находит кариес осмотром, зондом и при необходимости по снимку, при глубокой полости делает анестезию, убирает размягчённый дентин бором, вблизи пульпы накладывает защитную прокладку и ставит пломбу; один визит, 20-60 минут в зависимости от глубины",
-				"when": "Тёмное пятно или полость в зубе, застревание пищи, боль от сладкого, холодного или горячего, кариес, найденный на профилактическом осмотре или на снимке",
-				"prep": "Подготовки нет; сказать врачу, как давно болит зуб, была ли ночная боль и какие лекарства вы принимаете",
-				"abnormal": "Чем глубже была полость, тем дольше зуб может реагировать на температуру, обычно это проходит за две-три недели. Самопроизвольная или ночная боль после лечения говорит о том, что вовлечён нерв, и зуб надо показать врачу"
-			},
-			"en": {
-				"what": "Removing tooth tissue affected by decay and closing the resulting cavity with a filling material",
-				"how": "The dentist finds the decay by examination, probe and, if needed, X-ray, numbs a deep cavity, removes the softened dentine with a bur, places a protective lining close to the pulp and puts in a filling; one visit, 20-60 minutes depending on depth",
-				"when": "A dark spot or hole in a tooth, food packing, pain from sweet, cold or hot things, decay found at a check-up or on an X-ray",
-				"prep": "No preparation; tell the dentist how long the tooth has hurt, whether there was night pain and what medicines you take",
-				"abnormal": "The deeper the cavity was, the longer the tooth may react to temperature, usually settling within two to three weeks. Spontaneous or night pain after treatment points to the nerve being involved and the tooth needs to be seen"
-			},
-			"sr": {
-				"what": "Uklanjanje karijesom zahvaćenog zubnog tkiva i zatvaranje nastalog kaviteta materijalom za plombu",
-				"how": "Stomatolog otkriva karijes pregledom, sondom i po potrebi snimkom, kod dubokog kaviteta daje anesteziju, svrdlom ukloni omekšali dentin, blizu pulpe postavi zaštitnu podlogu i uradi plombu; jedna posjeta, 20-60 minuta zavisno od dubine",
-				"when": "Tamna mrlja ili rupa u zubu, zadržavanje hrane, bol na slatko, hladno ili toplo, karijes otkriven na kontrolnom pregledu ili na snimku",
-				"prep": "Priprema nije potrebna; reći stomatologu koliko dugo zub boli, da li je bilo noćne boli i koje lijekove uzimate",
-				"abnormal": "Što je kavitet bio dublji, to zub duže može reagovati na temperaturu, a to obično prođe za dvije do tri sedmice. Spontana ili noćna bol poslije liječenja govori da je zahvaćen živac i zub treba pokazati stomatologu"
-			},
-			"de": {
-				"what": "Entfernen des von Karies befallenen Zahngewebes und Verschluss der entstandenen Kavität mit Füllungsmaterial",
-				"how": "Der Zahnarzt erkennt die Karies durch Untersuchung, Sonde und bei Bedarf Röntgenbild, betäubt bei tiefer Kavität, entfernt das erweichte Dentin mit dem Bohrer, legt pulpanah eine schützende Unterfüllung und setzt die Füllung; ein Termin, je nach Tiefe 20-60 Minuten",
-				"when": "Dunkler Fleck oder Loch im Zahn, Speiseansammlung, Schmerz auf Süßes, Kaltes oder Heißes, bei der Kontrolle oder im Röntgenbild entdeckte Karies",
-				"prep": "Keine Vorbereitung; angeben, wie lange der Zahn schon schmerzt, ob nächtliche Schmerzen auftraten und welche Medikamente eingenommen werden",
-				"abnormal": "Je tiefer die Kavität war, desto länger kann der Zahn auf Temperatur reagieren, meist klingt das in zwei bis drei Wochen ab. Spontane oder nächtliche Schmerzen nach der Behandlung sprechen für eine Beteiligung des Nervs und müssen abgeklärt werden"
-			},
-			"tr": {
-				"what": "Çürükten etkilenmiş diş dokusunun temizlenmesi ve oluşan boşluğun dolgu malzemesiyle kapatılması",
-				"how": "Hekim çürüğü muayene, sond ve gerektiğinde filmle saptar, derin kavitede anestezi yapar, yumuşamış dentini frezle kaldırır, pulpaya yakın bölgede koruyucu alt taban koyar ve dolguyu yapar; tek seans, derinliğe göre 20-60 dakika",
-				"when": "Dişte koyu leke ya da boşluk, yemek sıkışması, tatlı, soğuk veya sıcakta ağrı, kontrol muayenesinde ya da filmde bulunan çürük",
-				"prep": "Hazırlık gerekmez; dişin ne zamandır ağrıdığını, gece ağrısı olup olmadığını ve kullandığınız ilaçları hekime söyleyin",
-				"abnormal": "Kavite ne kadar derinse diş sıcak ve soğuğa o kadar uzun tepki verebilir, bu genellikle iki üç haftada geçer. Tedaviden sonra kendiliğinden ya da gece gelen ağrı sinirin etkilendiğine işaret eder ve diş hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "dental-crown-lengthening",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Хирургическое смещение края десны и при необходимости кости, чтобы над десной открылось больше тканей зуба",
-				"how": "Под местной анестезией откидывают небольшой лоскут десны, убирают излишек десны и часть костного края вокруг зуба, лоскут укладывают обратно и ушивают; 30-60 минут на зуб, швы снимают примерно через неделю",
-				"when": "Зуб обломан или разрушен ниже уровня десны и коронке не за что держаться, слишком короткие видимые коронки зубов, десневая улыбка, подготовка к протезированию",
-				"prep": "Сначала снимают налёт и пролечивают воспаление дёсен; предупредить о разжижающих кровь препаратах, диабете и курении, оно заметно замедляет заживление",
-				"abnormal": "Несколько дней бывают отёк, подтекание крови из-под швов и чувствительность шеек зубов; окончательный уровень десны устанавливается за два-три месяца, и только потом делают постоянную коронку. Нарастающая боль, гнойные выделения или температура — повод прийти раньше срока"
-			},
-			"en": {
-				"what": "Surgically moving the gum margin, and the bone edge where needed, so that more tooth tissue shows above the gum",
-				"how": "Under local anaesthesia a small gum flap is raised, excess gum and part of the bone crest around the tooth are removed, and the flap is repositioned and sutured; 30-60 minutes per tooth, with sutures out after about a week",
-				"when": "A tooth broken or destroyed below the gum line with nothing for a crown to grip, visibly short tooth crowns, a gummy smile, preparation for prosthetic work",
-				"prep": "Plaque is removed and gum inflammation treated first; report blood-thinning medication, diabetes and smoking, which clearly slows healing",
-				"abnormal": "Swelling, slight oozing from under the sutures and sensitive tooth necks are usual for a few days; the gum level settles over two to three months and only then is the final crown made. Growing pain, pus or fever call for an earlier visit"
-			},
-			"sr": {
-				"what": "Hirurško pomjeranje ruba desni i po potrebi kosti kako bi se iznad desni otkrilo više zubnog tkiva",
-				"how": "U lokalnoj anesteziji podigne se mali režanj desni, uklone se višak desni i dio koštanog ruba oko zuba, režanj se vrati i zašije; 30-60 minuta po zubu, konci se skidaju otprilike nakon sedmice",
-				"when": "Zub odlomljen ili razoren ispod nivoa desni za koji krunica nema uporište, prekratke vidljive krune zuba, gingivalni osmijeh, priprema za protetiku",
-				"prep": "Prvo se uklanjaju naslage i liječi upala desni; prijaviti lijekove za razrjeđivanje krvi, dijabetes i pušenje, koje osjetno usporava zarastanje",
-				"abnormal": "Nekoliko dana su mogući otok, blago krvarenje ispod konaca i osjetljivost vratova zuba; konačan nivo desni se ustali za dva do tri mjeseca i tek tada se radi trajna krunica. Bol koja jača, gnojav sekret ili temperatura razlog su za raniji dolazak"
-			},
-			"de": {
-				"what": "Chirurgisches Verlagern des Zahnfleischrands und bei Bedarf des Knochenrands, damit mehr Zahnsubstanz über dem Zahnfleisch sichtbar wird",
-				"how": "In örtlicher Betäubung wird ein kleiner Zahnfleischlappen gebildet, überschüssiges Zahnfleisch und ein Teil des Knochenrands um den Zahn entfernt, der Lappen zurückgelegt und vernäht; 30-60 Minuten je Zahn, Fäden nach etwa einer Woche",
-				"when": "Unterhalb des Zahnfleischrands abgebrochener oder zerstörter Zahn, an dem eine Krone keinen Halt findet, sichtbar zu kurze Zahnkronen, gingivales Lächeln, Vorbereitung von Zahnersatz",
-				"prep": "Zuerst werden Beläge entfernt und Zahnfleischentzündungen behandelt; blutverdünnende Medikamente, Diabetes und Rauchen angeben, Letzteres verzögert die Heilung deutlich",
-				"abnormal": "Schwellung, leichtes Sickern unter den Nähten und empfindliche Zahnhälse sind einige Tage üblich; das endgültige Zahnfleischniveau stellt sich über zwei bis drei Monate ein, erst danach wird die definitive Krone gefertigt. Zunehmende Schmerzen, Eiter oder Fieber erfordern einen früheren Termin"
-			},
-			"tr": {
-				"what": "Diş etinin üstünde daha fazla diş dokusu görünmesi için diş eti kenarının ve gerektiğinde kemik kenarının cerrahi olarak geriye alınması",
-				"how": "Lokal anestezi altında küçük bir diş eti flebi kaldırılır, fazla diş eti ve dişin çevresindeki kemik kenarının bir bölümü alınır, flep yerine konup dikilir; diş başına 30-60 dakika, dikişler yaklaşık bir hafta sonra alınır",
-				"when": "Diş eti seviyesinin altında kırılmış ya da yıkılmış, kronun tutunacağı yeri kalmamış diş, gözle görülür biçimde kısa diş kronları, diş eti gülüşü, protez hazırlığı",
-				"prep": "Önce diş taşı temizlenir ve diş eti iltihabı tedavi edilir; kan sulandırıcı ilaçları, diyabeti ve iyileşmeyi belirgin yavaşlatan sigara kullanımını bildirin",
-				"abnormal": "Birkaç gün şişlik, dikiş altından hafif sızıntı ve diş boyunlarında hassasiyet olağandır; diş eti seviyesi iki üç ayda oturur ve kalıcı kron ancak ondan sonra yapılır. Artan ağrı, iltihaplı akıntı veya ateş için randevu beklenmemelidir"
-			}
-		}
-	},
-	{
-		"slug": "dental-jewelry-application",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Приклеивание небольшого декоративного кристалла или металлической фигурки на наружную поверхность зуба",
-				"how": "Поверхность эмали чистят, протравливают и высушивают, украшение фиксируют светоотверждаемым клеем и засвечивают лампой; без сверления и анестезии, 10-15 минут",
-				"when": "Эстетическое пожелание пациента; украшение ставят на здоровый зуб без кариеса и трещин, обычно на клык или боковой резец",
-				"prep": "Подготовки нет; перед установкой зубы должны быть очищены от налёта, а эмаль без незалеченного кариеса",
-				"abnormal": "Украшение не повреждает эмаль, но вокруг него легче скапливается налёт, поэтому это место надо чистить тщательнее. Если оно отклеилось, край царапает губу или десна рядом воспалилась, нужно показаться стоматологу, а не приклеивать самостоятельно"
-			},
-			"en": {
-				"what": "Bonding a small decorative crystal or metal shape to the outer surface of a tooth",
-				"how": "The enamel is cleaned, etched and dried, the jewel is fixed with a light-cured adhesive and cured with a lamp; no drilling and no anaesthesia, 10-15 minutes",
-				"when": "A purely cosmetic wish; it is placed on a healthy tooth free of decay and cracks, usually a canine or lateral incisor",
-				"prep": "No preparation; the teeth should be free of plaque beforehand and the enamel free of untreated decay",
-				"abnormal": "The jewel does not damage the enamel, but plaque gathers around it more easily, so that spot needs more careful brushing. If it comes off, the edge scratches the lip or the nearby gum becomes inflamed, see the dentist rather than gluing it back yourself"
-			},
-			"sr": {
-				"what": "Lijepljenje malog ukrasnog kristala ili metalne figurice na spoljnu površinu zuba",
-				"how": "Površina gleđi se očisti, nagrize i osuši, ukras se fiksira ljepilom koje se stvrdnjava svjetlom i osvijetli lampom; bez brušenja i anestezije, 10-15 minuta",
-				"when": "Estetska želja pacijenta; ukras se stavlja na zdrav zub bez karijesa i pukotina, najčešće na očnjak ili bočni sjekutić",
-				"prep": "Priprema nije potrebna; prije postavljanja zubi treba da budu očišćeni od naslaga, a gleđ bez neliječenog karijesa",
-				"abnormal": "Ukras ne oštećuje gleđ, ali se oko njega lakše skuplja plak, pa to mjesto treba pažljivije prati. Ako otpadne, ivica grebe usnu ili se desni u blizini upale, treba se javiti stomatologu, a ne lijepiti ga samostalno"
-			},
-			"de": {
-				"what": "Aufkleben eines kleinen Schmucksteins oder einer Metallform auf die Außenfläche eines Zahns",
-				"how": "Der Schmelz wird gereinigt, geätzt und getrocknet, der Schmuck mit lichthärtendem Kleber befestigt und mit der Lampe ausgehärtet; ohne Bohren und ohne Betäubung, 10-15 Minuten",
-				"when": "Rein ästhetischer Wunsch; angebracht wird er auf einem gesunden Zahn ohne Karies und Risse, meist auf Eckzahn oder seitlichem Schneidezahn",
-				"prep": "Keine Vorbereitung; die Zähne sollten vorher frei von Belägen und der Schmelz frei von unbehandelter Karies sein",
-				"abnormal": "Der Schmuck schädigt den Schmelz nicht, doch sammelt sich ringsum leichter Plaque, diese Stelle braucht daher gründlicheres Putzen. Löst er sich, kratzt die Kante an der Lippe oder entzündet sich das Zahnfleisch daneben, gehört das in die Praxis und nicht in Eigenregie geklebt"
-			},
-			"tr": {
-				"what": "Küçük süs taşının ya da metal figürün dişin dış yüzeyine yapıştırılması",
-				"how": "Mine temizlenir, asitle pürüzlendirilip kurutulur, takı ışıkla sertleşen yapıştırıcıyla sabitlenip lambayla sertleştirilir; frezleme ve anestezi olmadan, 10-15 dakika",
-				"when": "Tamamen estetik bir istek; takı çürüksüz ve çatlaksız sağlam bir dişe, çoğunlukla köpek dişi ya da yan kesici dişe uygulanır",
-				"prep": "Hazırlık gerekmez; uygulamadan önce dişler plaktan arınmış, mine ise tedavi edilmemiş çürükten uzak olmalıdır",
-				"abnormal": "Takı mineye zarar vermez ama çevresinde plak daha kolay birikir, bu nedenle o bölge daha özenli fırçalanmalıdır. Düşerse, kenarı dudağı çiziyorsa ya da yakındaki diş eti iltihaplanırsa kendiniz yapıştırmak yerine hekime başvurun"
-			}
-		}
-	},
-	{
-		"slug": "denture-repair",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Восстановление сломанного или треснувшего съёмного протеза, замена отломившегося зуба или удерживающего крючка",
-				"how": "Части протеза составляют по линии перелома и фиксируют, место перелома армируют и заливают акрилом, после полимеризации протез обрабатывают и полируют, при необходимости снимают слепок; обычно несколько часов, иногда до следующего дня",
-				"when": "Базис протеза треснул или сломался пополам, выпал или отломился искусственный зуб, сломался удерживающий крючок, протез повреждён при падении",
-				"prep": "Принести все обломки и не склеивать их бытовым клеем — он портит акрил и делает починку невозможной; пока вы без протеза, лучше не есть твёрдую пищу",
-				"abnormal": "После починки протез проверяют в полости рта и пришлифовывают точки давления. Повторные переломы в том же месте обычно означают, что протез перестал прилегать из-за изменений кости, и тогда врач предлагает перебазировку или новый протез"
-			},
-			"en": {
-				"what": "Repairing a broken or cracked removable denture, replacing a lost tooth or a retaining clasp",
-				"how": "The pieces are matched along the fracture line and held together, the fracture site is reinforced and filled with acrylic, and after curing the denture is trimmed and polished, with an impression taken if needed; usually a few hours, sometimes by the next day",
-				"when": "The denture base has cracked or broken in two, an artificial tooth has come off, a retaining clasp has snapped, the denture was damaged in a fall",
-				"prep": "Bring every fragment and do not glue them with household adhesive, which ruins the acrylic and makes repair impossible; avoid hard food while you are without the denture",
-				"abnormal": "After the repair the denture is checked in the mouth and pressure points are ground down. Repeated fractures in the same place usually mean the denture no longer fits because the bone has changed, and the dentist will then suggest relining or a new denture"
-			},
-			"sr": {
-				"what": "Popravka slomljene ili napukle pokretne proteze, zamjena otpalog zuba ili kukice za držanje",
-				"how": "Dijelovi proteze se spoje po liniji loma i učvrste, mjesto loma se ojača i zalije akrilatom, nakon polimerizacije se proteza obradi i ispolira, po potrebi se uzme otisak; obično nekoliko sati, ponekad do narednog dana",
-				"when": "Baza proteze je napukla ili se prelomila, ispao ili se odlomio vještački zub, slomila se kukica, proteza je oštećena pri padu",
-				"prep": "Donijeti sve dijelove i ne lijepiti ih kućnim ljepilom, ono uništava akrilat i onemogućava popravku; dok ste bez proteze bolje je izbjegavati tvrdu hranu",
-				"abnormal": "Nakon popravke proteza se provjerava u ustima i bruse se mjesta pritiska. Ponovni lomovi na istom mjestu obično znače da proteza više ne naliježe zbog promjena na kosti, pa stomatolog predlaže podlaganje ili novu protezu"
-			},
-			"de": {
-				"what": "Instandsetzung einer gebrochenen oder gerissenen herausnehmbaren Prothese, Ersatz eines abgelösten Zahns oder einer Halteklammer",
-				"how": "Die Teile werden entlang der Bruchlinie zusammengefügt und fixiert, die Bruchstelle verstärkt und mit Kunststoff aufgefüllt, nach dem Aushärten wird die Prothese ausgearbeitet und poliert, bei Bedarf wird ein Abdruck genommen; meist einige Stunden, mitunter bis zum nächsten Tag",
-				"when": "Gerissene oder durchgebrochene Prothesenbasis, abgelöster Kunststoffzahn, gebrochene Halteklammer, Sturzschaden",
-				"prep": "Alle Bruchstücke mitbringen und nicht mit Haushaltskleber verkleben, das zerstört den Kunststoff und verhindert die Reparatur; ohne Prothese besser auf harte Speisen verzichten",
-				"abnormal": "Nach der Reparatur wird die Prothese im Mund kontrolliert und Druckstellen werden eingeschliffen. Wiederholte Brüche an derselben Stelle sprechen dafür, dass die Prothese wegen Knochenveränderungen nicht mehr passt, dann werden Unterfütterung oder Neuanfertigung vorgeschlagen"
-			},
-			"tr": {
-				"what": "Kırılmış ya da çatlamış hareketli protezin onarımı, düşen dişin veya tutucu kroşenin yenilenmesi",
-				"how": "Parçalar kırık hattı boyunca birleştirilip sabitlenir, kırık bölge güçlendirilip akrilikle doldurulur, sertleşmenin ardından protez tesviye edilip cilalanır, gerekirse ölçü alınır; genellikle birkaç saat, bazen ertesi güne kadar",
-				"when": "Protez tabanının çatlaması ya da ikiye ayrılması, yapay dişin düşmesi, tutucu kroşenin kırılması, düşme sonucu hasar",
-				"prep": "Bütün parçaları getirin ve ev tipi yapıştırıcıyla birleştirmeyin, bu akriliği bozar ve onarımı olanaksız kılar; protezsiz kaldığınız sürede sert yiyeceklerden kaçının",
-				"abnormal": "Onarımdan sonra protez ağızda denetlenir ve baskı yapan noktalar aşındırılır. Aynı yerde yinelenen kırıklar genellikle kemikteki değişim nedeniyle protezin artık oturmadığını gösterir, hekim o zaman besleme ya da yeni protez önerir"
-			}
-		}
-	},
-	{
-		"slug": "fissure-sealant-with-fluoride",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Закрытие борозд на жевательной поверхности зуба защитным материалом, который дополнительно отдаёт фтор в эмаль",
-				"how": "Зуб очищают щёточкой и высушивают, при необходимости изолируют коффердамом, в борозды вносят текучий фторвыделяющий материал и засвечивают лампой или дают ему застыть, затем проверяют прикус; 5-10 минут на зуб, без бормашины и анестезии",
-				"when": "Только что прорезавшиеся постоянные моляры у детей и подростков, глубокие и узкие борозды, высокий риск кариеса, слабая минерализация эмали, ношение брекетов",
-				"prep": "Подготовки нет; почистить зубы перед визитом, есть и пить можно сразу после процедуры",
-				"abnormal": "Материал со временем стирается, поэтому покрытие проверяют на плановых осмотрах и обновляют. Если зуб начал реагировать на сладкое или рядом с герметиком появилось тёмное пятно, нужен осмотр: кариес мог начаться на непокрытой поверхности"
-			},
-			"en": {
-				"what": "Sealing the grooves on the chewing surface of a tooth with a protective material that also releases fluoride into the enamel",
-				"how": "The tooth is cleaned with a brush and dried, isolated with a rubber dam if needed, the flowable fluoride-releasing material is placed in the fissures and light-cured or left to set, and the bite is checked; 5-10 minutes per tooth, with no drilling and no anaesthesia",
-				"when": "Newly erupted permanent molars in children and teenagers, deep narrow grooves, high decay risk, poorly mineralised enamel, wearing fixed braces",
-				"prep": "No preparation; brush your teeth before the visit, eating and drinking are allowed straight afterwards",
-				"abnormal": "The material wears down over time, so the seal is checked at routine visits and renewed. If the tooth starts reacting to sweet things or a dark spot appears beside the sealant, have it looked at: decay may have started on an uncovered surface"
-			},
-			"sr": {
-				"what": "Zatvaranje brazdi na griznoj površini zuba zaštitnim materijalom koji uz to otpušta fluor u gleđ",
-				"how": "Zub se očisti četkicom i osuši, po potrebi izoluje koferdamom, u fisure se unese tečni materijal sa fluorom i osvijetli lampom ili ostavi da se stvrdne, a zatim se provjeri zagrižaj; 5-10 minuta po zubu, bez brušenja i anestezije",
-				"when": "Tek izrasli trajni kutnjaci kod djece i adolescenata, duboke i uske brazde, visok rizik od karijesa, slaba mineralizacija gleđi, nošenje fiksnog ortodontskog aparata",
-				"prep": "Priprema nije potrebna; oprati zube prije dolaska, jesti i piti može se odmah poslije",
-				"abnormal": "Materijal se vremenom troši, pa se zaštita provjerava na redovnim kontrolama i obnavlja. Ako zub počne reagovati na slatko ili se pored zalivača pojavi tamna mrlja, potreban je pregled: karijes je mogao krenuti na nepokrivenoj površini"
-			},
-			"de": {
-				"what": "Verschluss der Grübchen auf der Kaufläche mit einem Schutzmaterial, das zusätzlich Fluorid an den Schmelz abgibt",
-				"how": "Der Zahn wird mit einer Bürste gereinigt und getrocknet, bei Bedarf mit Kofferdam isoliert, das fließfähige fluoridhaltige Material in die Fissuren eingebracht und lichtgehärtet oder aushärten gelassen, danach wird der Biss geprüft; 5-10 Minuten je Zahn, ohne Bohrer und Betäubung",
-				"when": "Frisch durchgebrochene bleibende Molaren bei Kindern und Jugendlichen, tiefe schmale Fissuren, hohes Kariesrisiko, schwach mineralisierter Schmelz, feste Zahnspange",
-				"prep": "Keine Vorbereitung; vor dem Termin die Zähne putzen, Essen und Trinken sind unmittelbar danach erlaubt",
-				"abnormal": "Das Material nutzt sich mit der Zeit ab, die Versiegelung wird deshalb bei Kontrollen überprüft und erneuert. Reagiert der Zahn auf Süßes oder zeigt sich neben der Versiegelung ein dunkler Fleck, sollte er angesehen werden: Karies kann an einer unbedeckten Fläche begonnen haben"
-			},
-			"tr": {
-				"what": "Dişin çiğneme yüzeyindeki olukların, mineye flor da salan koruyucu bir malzemeyle kapatılması",
-				"how": "Diş fırçayla temizlenip kurutulur, gerekirse rubber dam ile izole edilir, florlu akışkan malzeme fissürlere konup lambayla sertleştirilir ya da kendiliğinden sertleşmeye bırakılır, sonra kapanış denetlenir; diş başına 5-10 dakika, frezleme ve anestezi olmadan",
-				"when": "Çocuk ve ergenlerde yeni süren daimî azı dişleri, derin ve dar oluklar, yüksek çürük riski, zayıf mineralize mine, sabit ortodontik tedavi",
-				"prep": "Hazırlık gerekmez; randevu öncesi dişlerinizi fırçalayın, işlemden hemen sonra yiyip içebilirsiniz",
-				"abnormal": "Malzeme zamanla aşınır, bu yüzden örtücü rutin kontrollerde denetlenir ve yenilenir. Diş tatlıya tepki vermeye başlarsa ya da örtücünün yanında koyu bir leke belirirse muayene gerekir: çürük kapatılmamış bir yüzeyde başlamış olabilir"
-			}
-		}
-	},
-	{
-		"slug": "follow-up-dental-examination",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Повторный короткий приём, на котором стоматолог проверяет результат уже проведённого лечения и состояние полости рта",
-				"how": "Врач расспрашивает о жалобах после лечения, осматривает пролеченные зубы и дёсны, проверяет пломбы и прикус, при необходимости делает контрольный снимок и сравнивает его с прежним; 10-20 минут",
-				"when": "Через несколько месяцев после лечения каналов, после установки пломб, коронок или протеза, при наблюдении за десной или подвижным зубом, плановый осмотр раз в полгода",
-				"prep": "Подготовки нет; взять прежние снимки и заключения, записать, что беспокоило между визитами",
-				"abnormal": "Контроль чаще всего подтверждает, что лечение идёт как задумано, но может выявить и новый кариес, воспаление или трещину пломбы. Дальнейший план и срок следующего визита назначает стоматолог"
-			},
-			"en": {
-				"what": "A short repeat appointment at which the dentist checks the outcome of treatment already carried out and the state of the mouth",
-				"how": "The dentist asks about complaints since the treatment, examines the treated teeth and gums, checks fillings and the bite, and takes a control X-ray for comparison with the earlier one if needed; 10-20 minutes",
-				"when": "A few months after root canal treatment, after fillings, crowns or a denture, while a gum or a loose tooth is being monitored, routine six-monthly check-up",
-				"prep": "No preparation; bring earlier X-rays and reports and note down anything that bothered you between visits",
-				"abnormal": "A follow-up most often confirms that treatment is going as planned, but it can also reveal new decay, inflammation or a cracked filling. The dentist sets the further plan and the date of the next visit"
-			},
-			"sr": {
-				"what": "Kratak ponovni pregled na kojem stomatolog provjerava ishod već obavljenog liječenja i stanje usne duplje",
-				"how": "Stomatolog pita o tegobama poslije terapije, pregleda liječene zube i desni, provjeri plombe i zagrižaj, po potrebi uradi kontrolni snimak i uporedi ga sa ranijim; 10-20 minuta",
-				"when": "Nekoliko mjeseci nakon liječenja kanala, poslije postavljanja plombi, krunica ili proteze, pri praćenju desni ili klimavog zuba, redovna kontrola na šest mjeseci",
-				"prep": "Priprema nije potrebna; ponijeti ranije snimke i nalaze i zapisati šta je smetalo između posjeta",
-				"abnormal": "Kontrola najčešće potvrdi da liječenje teče kako je planirano, ali može otkriti i novi karijes, upalu ili napuklu plombu. Dalji plan i rok sljedeće posjete određuje stomatolog"
-			},
-			"de": {
-				"what": "Kurzer Wiederholungstermin, bei dem der Zahnarzt das Ergebnis der bereits erfolgten Behandlung und den Mundzustand überprüft",
-				"how": "Der Zahnarzt fragt nach Beschwerden seit der Behandlung, untersucht die behandelten Zähne und das Zahnfleisch, kontrolliert Füllungen und Biss und fertigt bei Bedarf eine Kontrollaufnahme zum Vergleich mit der früheren an; 10-20 Minuten",
-				"when": "Einige Monate nach einer Wurzelbehandlung, nach Füllungen, Kronen oder Prothese, während Zahnfleisch oder ein lockerer Zahn beobachtet werden, halbjährliche Routinekontrolle",
-				"prep": "Keine Vorbereitung; frühere Aufnahmen und Befunde mitbringen und notieren, was zwischen den Terminen gestört hat",
-				"abnormal": "Die Kontrolle bestätigt meist, dass die Behandlung wie geplant verläuft, kann aber auch neue Karies, eine Entzündung oder eine gerissene Füllung aufdecken. Das weitere Vorgehen und den nächsten Termin legt der Zahnarzt fest"
-			},
-			"tr": {
-				"what": "Hekimin daha önce yapılan tedavinin sonucunu ve ağız durumunu denetlediği kısa tekrar randevusu",
-				"how": "Hekim tedaviden bu yana olan yakınmaları sorar, tedavi edilen dişleri ve diş etlerini inceler, dolguları ve kapanışı denetler, gerekirse öncekiyle karşılaştırmak için kontrol filmi çeker; 10-20 dakika",
-				"when": "Kanal tedavisinden birkaç ay sonra, dolgu, kron ya da protez yapımının ardından, diş eti veya sallanan diş izlenirken, altı ayda bir rutin kontrol",
-				"prep": "Hazırlık gerekmez; önceki film ve raporları getirin, randevular arasında sizi rahatsız eden şeyleri not edin",
-				"abnormal": "Kontrol çoğunlukla tedavinin planlandığı gibi ilerlediğini doğrular, ancak yeni çürük, iltihap ya da çatlak dolgu da ortaya çıkarabilir. Sonraki planı ve bir sonraki randevunun zamanını hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "frc-post",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Штифт из композита, армированного стекловолокном, который вклеивают в корневой канал как опору для будущей реставрации",
-				"how": "Канал распломбировывают на нужную длину, штифт подбирают по диаметру, примеряют и укорачивают, затем канал протравливают, вносят адгезив и цемент двойного отверждения и фиксируют штифт; 20-40 минут, сразу после этого обычно наращивают культю",
-				"when": "Зуб с запломбированными каналами, в котором осталось мало стенок, перелом коронковой части при сохранном корне, подготовка культи под коронку на передних зубах, где важна прозрачность",
-				"prep": "Каналы должны быть пролечены и запломбированы заранее, нужен актуальный снимок; в день визита подготовки нет",
-				"abnormal": "Такой штифт по упругости близок к тканям зуба, не просвечивает через светлую керамику и при необходимости высверливается из канала. Боль при накусывании, подвижность реставрации или скол требуют осмотра стоматолога"
-			},
-			"en": {
-				"what": "A post made of fibre-reinforced composite, bonded into the root canal as support for the restoration to come",
-				"how": "The canal is opened to the required depth, a post is selected by diameter, tried in and shortened, then the canal is etched, adhesive and dual-cure cement are applied and the post is seated; 20-40 minutes, usually followed immediately by building up the core",
-				"when": "A tooth with filled canals and few remaining walls, a fractured crown with an intact root, preparing a core for a crown on front teeth where translucency matters",
-				"prep": "The canals must already be treated and filled and a current X-ray is needed; no preparation on the day itself",
-				"abnormal": "Such a post is close to tooth tissue in elasticity, does not shine through light ceramics and can be drilled out of the canal if needed. Pain on biting, a loose restoration or a chip call for a dental check"
-			},
-			"sr": {
-				"what": "Kočić od kompozita ojačanog staklenim vlaknima koji se lijepi u korijenski kanal kao oslonac za buduću nadoknadu",
-				"how": "Kanal se otvori do potrebne dužine, kočić se izabere po promjeru, proba i skrati, kanal se zatim nagrize, unesu se adheziv i cement dvojnog stvrdnjavanja i kočić se fiksira; 20-40 minuta, odmah nakon toga obično slijedi nadogradnja bataljka",
-				"when": "Zub sa napunjenim kanalima u kojem je ostalo malo zidova, prelom kruničnog dijela uz očuvan korijen, priprema bataljka za krunicu na prednjim zubima gdje je važna prozirnost",
-				"prep": "Kanali moraju biti prethodno liječeni i napunjeni, potreban je aktuelan snimak; na dan posjete priprema nije potrebna",
-				"abnormal": "Takav kočić je po elastičnosti blizak zubnom tkivu, ne prosijava kroz svijetlu keramiku, a po potrebi se može izbušiti iz kanala. Bol pri zagrizu, klimanje nadoknade ili odlom traže pregled kod stomatologa"
-			},
-			"de": {
-				"what": "Stift aus faserverstärktem Komposit, der als Stütze für den späteren Aufbau in den Wurzelkanal eingeklebt wird",
-				"how": "Der Kanal wird auf die nötige Tiefe eröffnet, der Stift nach Durchmesser ausgewählt, einprobiert und gekürzt, danach wird der Kanal geätzt, Haftvermittler und dualhärtender Zement eingebracht und der Stift eingesetzt; 20-40 Minuten, unmittelbar danach folgt meist der Stumpfaufbau",
-				"when": "Zahn mit gefüllten Kanälen und wenigen verbliebenen Wänden, Kronenfraktur bei erhaltener Wurzel, Stumpfaufbau für eine Krone an Frontzähnen, bei denen die Transluzenz zählt",
-				"prep": "Die Kanäle müssen vorher behandelt und gefüllt sein, eine aktuelle Aufnahme ist nötig; am Behandlungstag keine Vorbereitung",
-				"abnormal": "Ein solcher Stift liegt in der Elastizität nahe am Zahngewebe, schimmert nicht durch helle Keramik und lässt sich bei Bedarf aus dem Kanal herausbohren. Schmerzen beim Zubeißen, ein lockerer Aufbau oder eine Absplitterung erfordern eine zahnärztliche Kontrolle"
-			},
-			"tr": {
-				"what": "Yapılacak restorasyona destek olmak üzere kök kanalına yapıştırılan, cam elyafla güçlendirilmiş kompozit post",
-				"how": "Kanal gereken derinliğe kadar açılır, post çapına göre seçilir, prova edilip kısaltılır, ardından kanal asitlenir, bağlayıcı ve çift yolla sertleşen siman uygulanarak post yerleştirilir; 20-40 dakika, hemen ardından genellikle kor yapımı gelir",
-				"when": "Kanalları doldurulmuş ve az duvarı kalmış diş, kökü sağlam kalmış kron kırığı, saydamlığın önemli olduğu ön dişlerde kron için kor hazırlığı",
-				"prep": "Kanallar önceden tedavi edilip doldurulmuş olmalı ve güncel film gerekir; işlem günü hazırlık gerekmez",
-				"abnormal": "Bu post esneklik bakımından diş dokusuna yakındır, açık renk seramiğin altından yansımaz ve gerektiğinde kanaldan frezle çıkarılabilir. Isırırken ağrı, restorasyonun oynaması ya da kırık diş hekimi kontrolü gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "glass-ionomer-filling",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Пломба из стеклоиономерного цемента — материала, который химически связывается с тканями зуба и постепенно отдаёт фтор",
-				"how": "Полость очищают и слегка подсушивают, не пересушивая, замешанный цемент вносят одной порцией и уплотняют, излишки убирают, поверхность защищают лаком; схватывание идёт само или под лампой, визит 15-30 минут",
-				"when": "Кариес у шейки и корня зуба, молочные зубы, временное закрытие полости между этапами лечения, прокладка под другую пломбу, участки, которые трудно удержать сухими",
-				"prep": "Подготовки нет; первые сутки лучше не грызть твёрдое этой стороной, пока материал окончательно не затвердеет",
-				"abnormal": "Стеклоиономер уступает композиту по прочности и блеску, поэтому на жевательных зубах его чаще рассматривают как временное или вспомогательное решение. Скол, выпадение пломбы или вернувшаяся чувствительность — повод прийти на осмотр"
-			},
-			"en": {
-				"what": "A filling of glass ionomer cement, a material that bonds chemically to tooth tissue and gradually releases fluoride",
-				"how": "The cavity is cleaned and lightly dried without over-drying, the mixed cement is placed in one portion and condensed, excess is removed and the surface is protected with a varnish; it sets on its own or under a lamp, the visit takes 15-30 minutes",
-				"when": "Decay at the neck and root of the tooth, baby teeth, temporary closure of a cavity between treatment stages, a lining under another filling, sites that are hard to keep dry",
-				"prep": "No preparation; for the first day avoid biting hard food on that side until the material has fully hardened",
-				"abnormal": "Glass ionomer is less strong and less glossy than composite, so on back teeth it is more often a temporary or supporting solution. A chip, a lost filling or returning sensitivity is a reason to be seen"
-			},
-			"sr": {
-				"what": "Plomba od glas-jonomer cementa, materijala koji se hemijski veže za zubno tkivo i postepeno otpušta fluor",
-				"how": "Kavitet se očisti i blago osuši bez presušivanja, zamiješani cement se unese u jednoj porciji i zbije, višak se ukloni, a površina zaštiti lakom; stvrdnjava se sam ili pod lampom, posjeta traje 15-30 minuta",
-				"when": "Karijes uz vrat i korijen zuba, mliječni zubi, privremeno zatvaranje kaviteta između faza liječenja, podloga ispod druge plombe, mjesta koja je teško održati suvim",
-				"prep": "Priprema nije potrebna; prvog dana bolje je ne gristi tvrdo tom stranom dok materijal potpuno ne očvrsne",
-				"abnormal": "Glas-jonomer je po čvrstini i sjaju slabiji od kompozita, pa se na bočnim zubima češće posmatra kao privremeno ili pomoćno rješenje. Odlom, ispadanje plombe ili osjetljivost koja se vratila razlog su za pregled"
-			},
-			"de": {
-				"what": "Füllung aus Glasionomerzement, einem Material, das sich chemisch mit der Zahnsubstanz verbindet und nach und nach Fluorid abgibt",
-				"how": "Die Kavität wird gereinigt und leicht, aber nicht übermäßig getrocknet, der angemischte Zement in einer Portion eingebracht und verdichtet, Überschuss entfernt und die Oberfläche mit Lack geschützt; die Aushärtung erfolgt von selbst oder unter der Lampe, der Termin dauert 15-30 Minuten",
-				"when": "Karies am Zahnhals und an der Wurzel, Milchzähne, vorübergehender Verschluss zwischen Behandlungsschritten, Unterfüllung unter einer anderen Füllung, schlecht trockenzulegende Stellen",
-				"prep": "Keine Vorbereitung; am ersten Tag auf dieser Seite nichts Hartes beißen, bis das Material vollständig ausgehärtet ist",
-				"abnormal": "Glasionomer ist weniger fest und weniger glänzend als Komposit und gilt an Seitenzähnen daher eher als vorübergehende oder unterstützende Lösung. Absplitterung, Verlust der Füllung oder wiederkehrende Empfindlichkeit sind ein Grund für eine Kontrolle"
-			},
-			"tr": {
-				"what": "Diş dokusuna kimyasal olarak bağlanan ve zamanla flor salan cam iyonomer simandan yapılan dolgu",
-				"how": "Kavite temizlenir, aşırıya kaçmadan hafifçe kurutulur, karıştırılan siman tek seferde yerleştirilip sıkıştırılır, fazlası alınır ve yüzey vernikle korunur; kendiliğinden ya da lamba altında sertleşir, randevu 15-30 dakika sürer",
-				"when": "Diş boynu ve kökündeki çürük, süt dişleri, tedavi aşamaları arasında kavitenin geçici kapatılması, başka bir dolgunun altında taban, kuru tutulması zor bölgeler",
-				"prep": "Hazırlık gerekmez; malzeme tam sertleşene kadar ilk gün o tarafta sert gıda ısırmayın",
-				"abnormal": "Cam iyonomer dayanıklılık ve parlaklık açısından kompozitin gerisindedir, bu nedenle arka dişlerde daha çok geçici ya da destekleyici bir çözüm sayılır. Kırılma, dolgunun düşmesi ya da hassasiyetin geri dönmesi muayene gerektirir"
-			}
-		}
-	}
+  {
+    "slug": "amalgam-filling",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Пломба из серебряной амальгамы — прочного металлического сплава для жевательных зубов",
+        "how": "Кариозные ткани удаляют бором, полость формируют с опорными стенками, замешанную амальгаму уплотняют в полости и выверяют по прикусу; один визит, 20-40 минут, окончательную полировку иногда переносят на следующий приём",
+        "when": "Крупные полости на жевательных зубах, участки, которые трудно изолировать от слюны, выбор пациента, замена старой амальгамовой пломбы",
+        "prep": "Подготовка не требуется; предупредить о беременности и грудном вскармливании, об аллергии на металлы и сказать, какие пломбы уже стоят",
+        "abnormal": "Пока держится анестезия, жевать на этой стороне не стоит, а одну-две недели возможна реакция на холодное. Боль при накусывании, скол края или трещина зуба — повод показаться стоматологу"
+      },
+      "en": {
+        "what": "A filling made of silver amalgam, a durable metal alloy used on back teeth",
+        "how": "Decay is removed with a bur, the cavity is shaped with supporting walls, freshly mixed amalgam is packed into it and adjusted to the bite; one visit, 20-40 minutes, with final polishing sometimes done at the next appointment",
+        "when": "Larger cavities in back teeth, sites that are hard to keep dry, patient preference, replacement of an old amalgam filling",
+        "prep": "No preparation needed; mention pregnancy or breastfeeding, metal allergies and which fillings you already have",
+        "abnormal": "Avoid chewing on that side while the anaesthetic lasts, and expect possible sensitivity to cold for a week or two. Pain on biting, a chipped edge or a crack in the tooth should be shown to the dentist"
+      },
+      "sr": {
+        "what": "Plomba od srebrnog amalgama, čvrste metalne legure za bočne zube",
+        "how": "Karijes se ukloni svrdlom, kavitet se oblikuje sa nosećim zidovima, zamiješani amalgam se zbije u kavitet i uskladi sa zagrižajem; jedna posjeta, 20-40 minuta, završno poliranje se ponekad radi na sljedećem dolasku",
+        "when": "Veći kaviteti na bočnim zubima, mjesta koja je teško izolovati od pljuvačke, želja pacijenta, zamjena stare amalgamske plombe",
+        "prep": "Priprema nije potrebna; prijaviti trudnoću i dojenje, alergiju na metale i reći koje plombe već imate",
+        "abnormal": "Dok traje anestezija ne treba žvakati na toj strani, a sedmicu ili dvije je moguća reakcija na hladno. Bol pri zagrizu, odlom ivice ili pukotina zuba razlog su za pregled kod stomatologa"
+      },
+      "de": {
+        "what": "Füllung aus Silberamalgam, einer widerstandsfähigen Metalllegierung für die Seitenzähne",
+        "how": "Die Karies wird mit dem Bohrer entfernt, die Kavität mit tragenden Wänden geformt, das frisch angemischte Amalgam eingebracht, verdichtet und auf den Biss eingestellt; ein Termin, 20-40 Minuten, die Endpolitur erfolgt mitunter beim nächsten Besuch",
+        "when": "Größere Defekte an Seitenzähnen, Stellen, die sich schlecht trockenlegen lassen, Wunsch des Patienten, Austausch einer alten Amalgamfüllung",
+        "prep": "Keine Vorbereitung nötig; Schwangerschaft und Stillzeit, Metallallergien sowie vorhandene Füllungen angeben",
+        "abnormal": "Solange die Betäubung anhält, nicht auf dieser Seite kauen; eine Empfindlichkeit auf Kälte ist ein bis zwei Wochen möglich. Schmerzen beim Zubeißen, eine abgeplatzte Kante oder ein Riss im Zahn gehören zum Zahnarzt"
+      },
+      "tr": {
+        "what": "Arka dişlerde kullanılan dayanıklı metal alaşımı gümüş amalgamdan yapılan dolgu",
+        "how": "Çürük frezle temizlenir, kavite destekleyici duvarlarla şekillendirilir, taze karıştırılmış amalgam kaviteye sıkıştırılır ve kapanışa göre ayarlanır; tek seans, 20-40 dakika, son cila bazen sonraki randevuda yapılır",
+        "when": "Arka dişlerdeki büyük kaviteler, tükürükten yalıtılması güç bölgeler, hastanın tercihi, eski amalgam dolgunun yenilenmesi",
+        "prep": "Hazırlık gerekmez; gebelik ve emzirme durumunu, metal alerjisini ve ağzınızdaki mevcut dolguları hekime bildirin",
+        "abnormal": "Anestezi geçene kadar o tarafta çiğnememek gerekir, bir iki hafta soğuğa karşı hassasiyet olabilir. Isırırken ağrı, kenarda kırılma veya dişte çatlak hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Пломба од сребрног амалгама, чврсте металне легуре за бочне зубе",
+        "how": "Каријес се уклони сврдлом, кавитет се обликује са носећим зидовима, замијешани амалгам се збије у кавитет и усклади са загрижајем; једна посјета, 20-40 минута, завршно полирање се понекад ради на сљедећем доласку",
+        "when": "Већи кавитети на бочним зубима, мјеста која је тешко изоловати од пљувачке, жеља пацијента, замјена старе амалгамске пломбе",
+        "prep": "Припрема није потребна; пријавити трудноћу и дојење, алергију на метале и рећи које пломбе већ имате",
+        "abnormal": "Док траје анестезија не треба жвакати на тој страни, а седмицу или двије је могућа реакција на хладно. Бол при загризу, одлом ивице или пукотина зуба разлог су за преглед код стоматолога"
+      }
+    }
+  },
+  {
+    "slug": "cephalometric-x-ray",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Боковой рентгеновский снимок черепа с большого расстояния, по которому измеряют положение челюстей, зубов и профиля лица",
+        "how": "Голову фиксируют в цефалостате по ушным упорам, пациент смыкает зубы и стоит неподвижно несколько секунд, затем врач наносит на снимок опорные точки и считает углы и расстояния; визит около 10 минут",
+        "when": "Планирование ортодонтического лечения, оценка роста челюстей у детей и подростков, подготовка к ортогнатической операции, контроль в ходе лечения и после него",
+        "prep": "Снять серьги, пирсинг, очки, заколки и съёмные протезы; предупредить о беременности",
+        "abnormal": "Расчёты показывают, как челюсти расположены относительно друг друга и основания черепа, и служат основой для выбора аппарата или операции. Трактовку измерений и план даёт ортодонт, сами по себе цифры ничего не решают"
+      },
+      "en": {
+        "what": "A side X-ray of the skull taken from a long distance, used to measure the position of the jaws, teeth and facial profile",
+        "how": "The head is held in a cephalostat by ear rods, the patient closes the teeth and stays still for a few seconds, then the clinician marks reference points on the image and calculates angles and distances; the visit takes about 10 minutes",
+        "when": "Planning orthodontic treatment, assessing jaw growth in children and teenagers, preparation for orthognathic surgery, checks during and after treatment",
+        "prep": "Remove earrings, piercings, glasses, hair clips and removable dentures; report pregnancy",
+        "abnormal": "The measurements show how the jaws sit relative to each other and to the skull base and guide the choice of appliance or surgery. The orthodontist interprets them and sets the plan, the figures decide nothing on their own"
+      },
+      "sr": {
+        "what": "Profilni rendgenski snimak glave sa veće udaljenosti na kojem se mjeri položaj vilica, zuba i profila lica",
+        "how": "Glava se fiksira u kefalostat pomoću ušnih oslonaca, pacijent sklopi zube i miruje nekoliko sekundi, a zatim ljekar na snimku ucrta referentne tačke i izračuna uglove i rastojanja; posjeta traje oko 10 minuta",
+        "when": "Planiranje ortodontske terapije, procjena rasta vilica kod djece i adolescenata, priprema za ortognatsku operaciju, kontrola tokom i poslije liječenja",
+        "prep": "Skinuti minđuše, pirsing, naočare, ukosnice i pokretne proteze; prijaviti trudnoću",
+        "abnormal": "Mjerenja pokazuju kako su vilice postavljene jedna prema drugoj i prema bazi lobanje i osnova su za izbor aparata ili operacije. Tumačenje i plan daje ortodont, sami po sebi brojevi ništa ne odlučuju"
+      },
+      "de": {
+        "what": "Seitliche Röntgenaufnahme des Schädels aus großem Abstand, mit der die Lage von Kiefern, Zähnen und Gesichtsprofil vermessen wird",
+        "how": "Der Kopf wird im Kephalostaten über Ohrstützen fixiert, der Patient schließt die Zähne und hält einige Sekunden still, danach markiert der Behandler Bezugspunkte auf dem Bild und berechnet Winkel und Strecken; der Termin dauert etwa 10 Minuten",
+        "when": "Planung einer kieferorthopädischen Behandlung, Beurteilung des Kieferwachstums bei Kindern und Jugendlichen, Vorbereitung einer kieferchirurgischen Operation, Kontrollen während und nach der Behandlung",
+        "prep": "Ohrringe, Piercings, Brille, Haarspangen und herausnehmbaren Zahnersatz ablegen; eine Schwangerschaft angeben",
+        "abnormal": "Die Messwerte zeigen, wie die Kiefer zueinander und zur Schädelbasis stehen, und bilden die Grundlage für die Wahl von Apparatur oder Operation. Die Deutung und den Plan gibt der Kieferorthopäde vor, für sich allein entscheiden die Zahlen nichts"
+      },
+      "tr": {
+        "what": "Çenelerin, dişlerin ve yüz profilinin konumunu ölçmek için uzak mesafeden çekilen yandan kafa röntgeni",
+        "how": "Baş, kulak desteklerinden sefalostata sabitlenir, hasta dişlerini kapatıp birkaç saniye hareketsiz durur, ardından hekim film üzerinde referans noktalarını işaretleyip açı ve mesafeleri hesaplar; ziyaret yaklaşık 10 dakika sürer",
+        "when": "Ortodontik tedavi planlaması, çocuk ve ergenlerde çene gelişiminin değerlendirilmesi, ortognatik cerrahi hazırlığı, tedavi sırasında ve sonrasında kontrol",
+        "prep": "Küpe, piercing, gözlük, toka ve hareketli protezleri çıkarın; gebelik durumunu bildirin",
+        "abnormal": "Ölçümler çenelerin birbirine ve kafa tabanına göre nasıl konumlandığını gösterir ve aygıt ya da ameliyat seçiminin temelini oluşturur. Yorumu ve planı ortodontist yapar, sayılar tek başlarına bir şey belirlemez"
+      },
+      "sr_cyrl": {
+        "what": "Профилни рендгенски снимак главе са веће удаљености на којем се мјери положај вилица, зуба и профила лица",
+        "how": "Глава се фиксира у кефалостат помоћу ушних ослонаца, пацијент склопи зубе и мирује неколико секунди, а затим љекар на снимку уцрта референтне тачке и израчуна углове и растојања; посјета траје око 10 минута",
+        "when": "Планирање ортодонтске терапије, процјена раста вилица код дјеце и адолесцената, припрема за ортогнатску операцију, контрола током и послије лијечења",
+        "prep": "Скинути минђуше, пирсинг, наочаре, укоснице и покретне протезе; пријавити трудноћу",
+        "abnormal": "Мјерења показују како су вилице постављене једна према другој и према бази лобање и основа су за избор апарата или операције. Тумачење и план даје ортодонт, сами по себи бројеви ништа не одлучују"
+      }
+    }
+  },
+  {
+    "slug": "composite-filling",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление разрушенной части зуба светоотверждаемым материалом под цвет эмали",
+        "how": "Поражённые ткани убирают, полость промывают и протравливают, наносят адгезив, затем композит накладывают слоями и каждый засвечивают лампой, в конце пломбу шлифуют и полируют по прикусу; один визит, 20-50 минут",
+        "when": "Кариес, скол или трещина зуба, замена потемневшей или негерметичной старой пломбы, закрытие клиновидного дефекта у шейки зуба",
+        "prep": "Подготовки нет; при высокой чувствительности или волнении сказать врачу заранее, чтобы обсудить анестезию",
+        "abnormal": "Есть и пить можно сразу, но пока не отойдёт анестезия, легко прикусить щёку. Если пломба мешает смыкать зубы, чувствительность долго не проходит или край скалывается, пломбу корректируют на приёме"
+      },
+      "en": {
+        "what": "Rebuilding the damaged part of a tooth with a light-cured material matched to the shade of the enamel",
+        "how": "Affected tissue is removed, the cavity is rinsed and etched, an adhesive is applied, the composite is built up in layers that are each cured with a lamp, and the filling is finally shaped and polished to the bite; one visit, 20-50 minutes",
+        "when": "Decay, a chipped or cracked tooth, replacement of a darkened or leaking old filling, closing a wedge-shaped defect at the neck of the tooth",
+        "prep": "No preparation; mention marked sensitivity or anxiety in advance so anaesthesia can be discussed",
+        "abnormal": "You can eat and drink straight away, but biting the cheek is easy while the anaesthetic wears off. If the filling interferes with closing the teeth, sensitivity lingers or the edge chips, it is adjusted at an appointment"
+      },
+      "sr": {
+        "what": "Nadoknada oštećenog dijela zuba materijalom koji se stvrdnjava svjetlom i odgovara boji gleđi",
+        "how": "Oboljelo tkivo se ukloni, kavitet se ispere i nagrize kiselinom, nanese se adheziv, kompozit se postavlja u slojevima uz osvjetljavanje lampom, a na kraju se plomba brusi i polira prema zagrižaju; jedna posjeta, 20-50 minuta",
+        "when": "Karijes, odlom ili pukotina zuba, zamjena potamnjele ili propusne stare plombe, zatvaranje klinastog defekta uz vrat zuba",
+        "prep": "Priprema nije potrebna; kod izražene osjetljivosti ili straha to reći ranije kako bi se dogovorila anestezija",
+        "abnormal": "Jesti i piti može se odmah, ali dok anestezija ne prođe lako je ugristi obraz. Ako plomba smeta pri sklapanju zuba, osjetljivost dugo traje ili se ivica okrzne, plomba se koriguje u ordinaciji"
+      },
+      "de": {
+        "what": "Aufbau des beschädigten Zahnanteils mit einem lichthärtenden, zahnfarbenen Material",
+        "how": "Das erkrankte Gewebe wird entfernt, die Kavität gespült und geätzt, ein Haftvermittler aufgetragen, das Komposit in Schichten eingebracht und jeweils mit der Lampe gehärtet, zuletzt wird die Füllung ausgearbeitet und auf den Biss poliert; ein Termin, 20-50 Minuten",
+        "when": "Karies, abgeplatzter oder gerissener Zahn, Austausch einer verfärbten oder undichten alten Füllung, Versorgung eines keilförmigen Defekts am Zahnhals",
+        "prep": "Keine Vorbereitung; starke Empfindlichkeit oder Angst vorab ansprechen, um die Betäubung zu besprechen",
+        "abnormal": "Essen und Trinken sind sofort möglich, solange die Betäubung wirkt, beißt man sich jedoch leicht in die Wange. Stört die Füllung beim Zusammenbeißen, hält die Empfindlichkeit an oder bricht der Rand aus, wird sie in der Praxis nachgearbeitet"
+      },
+      "tr": {
+        "what": "Dişin hasarlı bölümünün, mine rengine uyan ışıkla sertleşen bir malzemeyle yeniden yapılandırılması",
+        "how": "Hastalıklı doku temizlenir, kavite yıkanıp asitle pürüzlendirilir, bağlayıcı sürülür, kompozit katmanlar hâlinde konup her katman lambayla sertleştirilir, sonunda dolgu kapanışa göre şekillendirilip cilalanır; tek seans, 20-50 dakika",
+        "when": "Çürük, kırık veya çatlak diş, kararmış ya da sızdıran eski dolgunun değişimi, diş boynundaki kama şeklinde defektin kapatılması",
+        "prep": "Hazırlık gerekmez; belirgin hassasiyet ya da kaygı varsa anestezinin konuşulabilmesi için önceden söyleyin",
+        "abnormal": "Hemen yiyip içilebilir, ancak anestezi geçene kadar yanağı ısırmak kolaydır. Dolgu kapanışta engel yapıyorsa, hassasiyet sürüyorsa veya kenarı kırılıyorsa randevuda düzeltilir"
+      },
+      "sr_cyrl": {
+        "what": "Надокнада оштећеног дијела зуба материјалом који се стврдњава свјетлом и одговара боји глеђи",
+        "how": "Обољело ткиво се уклони, кавитет се испере и нагризе киселином, нанесе се адхезив, композит се поставља у слојевима уз освјетљавање лампом, а на крају се пломба бруси и полира према загрижају; једна посјета, 20-50 минута",
+        "when": "Каријес, одлом или пукотина зуба, замјена потамњеле или пропусне старе пломбе, затварање клинастог дефекта уз врат зуба",
+        "prep": "Припрема није потребна; код изражене осјетљивости или страха то рећи раније како би се договорила анестезија",
+        "abnormal": "Јести и пити може се одмах, али док анестезија не прође лако је угристи образ. Ако пломба смета при склапању зуба, осјетљивост дуго траје или се ивица окрзне, пломба се коригује у ординацији"
+      }
+    }
+  },
+  {
+    "slug": "composite-filling-single-surface-ivoclar-evoceram",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление одной повреждённой поверхности зуба композитом Ivoclar EvoCeram, подобранным под цвет эмали",
+        "how": "Кариес убирают, полость обрабатывают адгезивом, композит вносят и засвечивают слоями, затем пломбу полируют и выверяют по прикусу; один визит, обычно 20-30 минут",
+        "when": "Небольшая полость на жевательной или на одной из боковых поверхностей зуба, скол на передней поверхности, замена небольшой старой пломбы",
+        "prep": "Подготовки нет; оттенок удобнее подбирать при дневном свете и без яркой помады",
+        "abnormal": "Одноповерхностная пломба нагружается меньше крупных и обычно дольше обходится без правок. Чувствительность, которая держится дольше пары недель, зазор у края или потемнение границы — повод показать зуб стоматологу"
+      },
+      "en": {
+        "what": "Rebuilding one damaged surface of a tooth with shade-matched Ivoclar EvoCeram composite",
+        "how": "Decay is removed, the cavity is treated with an adhesive, the composite is placed and cured in layers, then the filling is polished and adjusted to the bite; one visit, usually 20-30 minutes",
+        "when": "A small cavity on the chewing surface or on one side surface of a tooth, a chip on the front surface, replacement of a small old filling",
+        "prep": "No preparation; the shade is easier to choose in daylight and without bright lipstick",
+        "abnormal": "A single-surface filling carries less load than larger ones and usually needs fewer adjustments. Sensitivity lasting more than a couple of weeks, a gap at the margin or darkening along the border should be shown to the dentist"
+      },
+      "sr": {
+        "what": "Nadoknada jedne oštećene površine zuba kompozitom Ivoclar EvoCeram usklađenim sa bojom gleđi",
+        "how": "Karijes se ukloni, kavitet se obradi adhezivom, kompozit se unosi i osvjetljava u slojevima, a plomba se zatim polira i uskladi sa zagrižajem; jedna posjeta, obično 20-30 minuta",
+        "when": "Manji kavitet na griznoj ili na jednoj bočnoj površini zuba, odlom na prednjoj strani, zamjena manje stare plombe",
+        "prep": "Priprema nije potrebna; nijansa se lakše bira pri dnevnom svjetlu i bez jakog ruža",
+        "abnormal": "Jednopovršinska plomba trpi manje opterećenja od većih i obično duže ostaje bez dorade. Osjetljivost duža od dvije sedmice, procijep uz ivicu ili tamnjenje granice razlog su da zub pokažete stomatologu"
+      },
+      "de": {
+        "what": "Aufbau einer beschädigten Zahnfläche mit farblich angepasstem Komposit Ivoclar EvoCeram",
+        "how": "Die Karies wird entfernt, die Kavität mit Haftvermittler vorbereitet, das Komposit in Schichten eingebracht und gehärtet, anschließend wird die Füllung poliert und auf den Biss eingestellt; ein Termin, meist 20-30 Minuten",
+        "when": "Kleiner Defekt auf der Kaufläche oder auf einer Seitenfläche, Absplitterung an der Vorderfläche, Austausch einer kleinen alten Füllung",
+        "prep": "Keine Vorbereitung; die Farbe lässt sich bei Tageslicht und ohne kräftigen Lippenstift leichter bestimmen",
+        "abnormal": "Eine einflächige Füllung wird weniger belastet als größere und muss seltener nachgearbeitet werden. Hält die Empfindlichkeit über zwei Wochen an, zeigt sich ein Spalt am Rand oder dunkelt die Grenze nach, gehört der Zahn zum Zahnarzt"
+      },
+      "tr": {
+        "what": "Dişin hasarlı tek yüzeyinin, renk uyumlu Ivoclar EvoCeram kompoziti ile yeniden yapılandırılması",
+        "how": "Çürük temizlenir, kavite bağlayıcı ile hazırlanır, kompozit katmanlar hâlinde konup sertleştirilir, ardından dolgu cilalanıp kapanışa göre ayarlanır; tek seans, genellikle 20-30 dakika",
+        "when": "Çiğneme yüzeyinde veya dişin bir yan yüzeyinde küçük kavite, ön yüzeyde kırık, küçük eski dolgunun değişimi",
+        "prep": "Hazırlık gerekmez; renk seçimi gün ışığında ve koyu ruj olmadan daha kolaydır",
+        "abnormal": "Tek yüzeyli dolgu büyüklerine göre daha az yük taşır ve genellikle daha az düzeltme gerektirir. İki haftadan uzun süren hassasiyet, kenarda aralık ya da sınırda kararma hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Надокнада једне оштећене површине зуба композитом Ivoclar EvoCeram усклађеним са бојом глеђи",
+        "how": "Каријес се уклони, кавитет се обради адхезивом, композит се уноси и освјетљава у слојевима, а пломба се затим полира и усклади са загрижајем; једна посјета, обично 20-30 минута",
+        "when": "Мањи кавитет на гризној или на једној бочној површини зуба, одлом на предњој страни, замјена мање старе пломбе",
+        "prep": "Припрема није потребна; нијанса се лакше бира при дневном свјетлу и без јаког ружа",
+        "abnormal": "Једноповршинска пломба трпи мање оптерећења од већих и обично дуже остаје без дораде. Осјетљивост дужа од двије седмице, процијеп уз ивицу или тамњење границе разлог су да зуб покажете стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "composite-filling-three-surfaces-ivoclar-evoceram",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление трёх поверхностей сильно разрушенного зуба композитом Ivoclar EvoCeram с воссозданием бугров и обоих контактов",
+        "how": "Кариес убирают, при необходимости с двух сторон ставят кольцевую матрицу, композит наращивают слоями, бугры и краевые гребни моделируют отдельно, затем долго выверяют прикус в разных движениях челюсти; один визит, 45-70 минут",
+        "when": "Обширный кариес, захвативший жевательную и обе контактные стенки, отлом стенки зуба, замена большой негерметичной пломбы, когда коронка пока не нужна",
+        "prep": "Подготовки нет; на такой объём работы стоит заложить больше времени и заранее обсудить анестезию",
+        "abnormal": "У зуба с тремя восстановленными поверхностями остаются тонкие стенки, он уязвимее к трещинам, поэтому врач может позже предложить коронку или вкладку. Боль при накусывании, скол бугра или ощущение, что пломба мешает смыкать зубы, нужно показать стоматологу"
+      },
+      "en": {
+        "what": "Rebuilding three surfaces of a badly damaged tooth with Ivoclar EvoCeram composite, recreating the cusps and both contact points",
+        "how": "Decay is removed, a ring matrix is placed on both sides where needed, the composite is built up in layers, cusps and marginal ridges are modelled separately, and the bite is then checked at length in different jaw movements; one visit, 45-70 minutes",
+        "when": "Extensive decay involving the chewing surface and both side walls, a broken tooth wall, replacement of a large leaking filling when a crown is not yet needed",
+        "prep": "No preparation; allow more time for an appointment of this size and discuss anaesthesia beforehand",
+        "abnormal": "A tooth rebuilt on three surfaces is left with thin walls and is more prone to cracks, so a crown or an inlay may be suggested later. Pain on biting, a fractured cusp or a feeling that the filling blocks the bite should be shown to the dentist"
+      },
+      "sr": {
+        "what": "Nadoknada tri površine jako oštećenog zuba kompozitom Ivoclar EvoCeram uz oblikovanje kvržica i oba kontakta",
+        "how": "Karijes se ukloni, po potrebi se sa obje strane postavi prstenasta matrica, kompozit se gradi u slojevima, kvržice i rubni grebeni se modeluju posebno, a zagrižaj se zatim dugo provjerava u različitim pokretima vilice; jedna posjeta, 45-70 minuta",
+        "when": "Opsežan karijes koji je zahvatio griznu i obje aproksimalne strane, odlom zida zuba, zamjena velike propusne plombe kada krunica još nije potrebna",
+        "prep": "Priprema nije potrebna; za ovaj obim rada predvidjeti više vremena i unaprijed dogovoriti anesteziju",
+        "abnormal": "Zubu sa tri nadoknađene površine ostaju tanki zidovi i podložniji je pukotinama, pa stomatolog kasnije može predložiti krunicu ili inlej. Bol pri zagrizu, odlom kvržice ili osjećaj da plomba smeta pri sklapanju zuba treba pokazati stomatologu"
+      },
+      "de": {
+        "what": "Aufbau von drei Flächen eines stark zerstörten Zahns mit Komposit Ivoclar EvoCeram einschließlich Höcker und beider Kontaktpunkte",
+        "how": "Die Karies wird entfernt, bei Bedarf beidseits eine Ringmatrize gesetzt, das Komposit schichtweise aufgebaut, Höcker und Randleisten werden einzeln modelliert, anschließend wird der Biss ausführlich in verschiedenen Kieferbewegungen geprüft; ein Termin, 45-70 Minuten",
+        "when": "Ausgedehnte Karies an Kaufläche und beiden Seitenwänden, abgebrochene Zahnwand, Austausch einer großen undichten Füllung, solange keine Krone nötig ist",
+        "prep": "Keine Vorbereitung; für diesen Umfang mehr Zeit einplanen und die Betäubung vorab besprechen",
+        "abnormal": "Ein dreiflächig aufgebauter Zahn behält dünne Wände und neigt eher zu Rissen, daher kann später eine Krone oder ein Inlay vorgeschlagen werden. Schmerzen beim Zubeißen, ein abgebrochener Höcker oder das Gefühl, die Füllung störe den Biss, gehören zum Zahnarzt"
+      },
+      "tr": {
+        "what": "Ağır hasarlı bir dişin üç yüzeyinin, tüberkülleri ve her iki kontak noktası yeniden oluşturularak Ivoclar EvoCeram kompoziti ile yapılandırılması",
+        "how": "Çürük temizlenir, gerekirse iki yana halka matris konur, kompozit katmanlar hâlinde yükseltilir, tüberküller ve kenar sırtları ayrı ayrı modellenir, ardından kapanış farklı çene hareketlerinde uzun uzun denetlenir; tek seans, 45-70 dakika",
+        "when": "Çiğneme yüzeyi ile her iki yan duvarı tutan yaygın çürük, kırılmış diş duvarı, kron henüz gerekmezken sızdıran büyük dolgunun değişimi",
+        "prep": "Hazırlık gerekmez; bu kapsamdaki iş için randevuya daha fazla süre ayırın ve anesteziyi önceden konuşun",
+        "abnormal": "Üç yüzeyi yapılandırılan dişin duvarları ince kalır ve çatlamaya daha yatkındır, bu nedenle ileride kron ya da inley önerilebilir. Isırırken ağrı, tüberkül kırılması ya da dolgunun kapanışı engellediği hissi hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Надокнада три површине јако оштећеног зуба композитом Ivoclar EvoCeram уз обликовање квржица и оба контакта",
+        "how": "Каријес се уклони, по потреби се са обје стране постави прстенаста матрица, композит се гради у слојевима, квржице и рубни гребени се моделују посебно, а загрижај се затим дуго провјерава у различитим покретима вилице; једна посјета, 45-70 минута",
+        "when": "Опсежан каријес који је захватио гризну и обје апроксималне стране, одлом зида зуба, замјена велике пропусне пломбе када круница још није потребна",
+        "prep": "Припрема није потребна; за овај обим рада предвидјети више времена и унапријед договорити анестезију",
+        "abnormal": "Зубу са три надокнађене површине остају танки зидови и подложнији је пукотинама, па стоматолог касније може предложити круницу или инлеј. Бол при загризу, одлом квржице или осјећај да пломба смета при склапању зуба треба показати стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "composite-filling-two-surfaces-ivoclar-evoceram",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление двух соседних поверхностей зуба композитом Ivoclar EvoCeram, обычно жевательной и контактной",
+        "how": "После удаления кариеса между зубами ставят матрицу и клин, чтобы вернуть точку контакта, композит вносят слоями с засвечиванием, в конце проверяют нить и прикус; один визит, 30-45 минут",
+        "when": "Кариес на боковой стенке зуба с переходом на жевательную поверхность, застревание пищи между зубами, замена старой пломбы с утраченным контактом",
+        "prep": "Подготовки нет; сказать врачу, если нить в этом промежутке рвётся или застревает",
+        "abnormal": "В первые дни межзубный промежуток может ощущаться плотнее прежнего. Если нить рвётся, пища снова застревает или десна между зубами воспаляется, контактный пункт переделывают"
+      },
+      "en": {
+        "what": "Rebuilding two adjoining surfaces of a tooth with Ivoclar EvoCeram composite, usually the chewing and the contact surface",
+        "how": "Once the decay is removed, a matrix band and wedge are placed between the teeth to restore the contact point, the composite is layered and cured, and floss and the bite are checked at the end; one visit, 30-45 minutes",
+        "when": "Decay on the side wall of a tooth that extends onto the chewing surface, food packing between teeth, replacement of an old filling with a lost contact point",
+        "prep": "No preparation; tell the dentist if floss tears or catches in that gap",
+        "abnormal": "The gap between the teeth may feel tighter than before for the first few days. If floss shreds, food packs in again or the gum between the teeth becomes inflamed, the contact point is reworked"
+      },
+      "sr": {
+        "what": "Nadoknada dvije susjedne površine zuba kompozitom Ivoclar EvoCeram, najčešće grizne i aproksimalne",
+        "how": "Nakon uklanjanja karijesa među zube se postavlja matrica i klin da se vrati kontaktna tačka, kompozit se unosi u slojevima uz osvjetljavanje, a na kraju se provjere konac i zagrižaj; jedna posjeta, 30-45 minuta",
+        "when": "Karijes na bočnom zidu zuba koji prelazi na griznu površinu, zadržavanje hrane između zuba, zamjena stare plombe sa izgubljenim kontaktom",
+        "prep": "Priprema nije potrebna; reći stomatologu ako se konac u tom međuprostoru kida ili zapinje",
+        "abnormal": "Prvih dana međuzubni prostor može djelovati tješnje nego ranije. Ako se konac kida, hrana se opet zadržava ili se desni između zuba upale, kontaktna tačka se prerađuje"
+      },
+      "de": {
+        "what": "Aufbau zweier benachbarter Zahnflächen mit Komposit Ivoclar EvoCeram, meist Kaufläche und Kontaktfläche",
+        "how": "Nach Entfernen der Karies werden Matrize und Keil zwischen die Zähne gesetzt, um den Kontaktpunkt wiederherzustellen, das Komposit wird in Schichten eingebracht und gehärtet, zum Schluss werden Zahnseide und Biss geprüft; ein Termin, 30-45 Minuten",
+        "when": "Karies an der Seitenwand, die auf die Kaufläche übergreift, Speiseansammlung zwischen den Zähnen, Austausch einer alten Füllung mit verlorenem Kontaktpunkt",
+        "prep": "Keine Vorbereitung; dem Zahnarzt sagen, ob Zahnseide in diesem Zwischenraum reißt oder hängen bleibt",
+        "abnormal": "Der Zahnzwischenraum kann sich die ersten Tage enger anfühlen als zuvor. Reißt die Zahnseide, sammeln sich erneut Speisereste oder entzündet sich das Zahnfleisch dazwischen, wird der Kontaktpunkt überarbeitet"
+      },
+      "tr": {
+        "what": "Dişin komşu iki yüzeyinin, çoğunlukla çiğneme ve kontak yüzeyinin Ivoclar EvoCeram kompoziti ile yapılandırılması",
+        "how": "Çürük temizlendikten sonra kontak noktasını geri kazanmak için dişler arasına matris ve kama yerleştirilir, kompozit katmanlar hâlinde konup sertleştirilir, sonunda diş ipi ve kapanış kontrol edilir; tek seans, 30-45 dakika",
+        "when": "Dişin yan duvarından çiğneme yüzeyine uzanan çürük, dişler arasına yemek sıkışması, kontak noktası kaybolmuş eski dolgunun değişimi",
+        "prep": "Hazırlık gerekmez; o aralıkta diş ipi yırtılıyor ya da takılıyorsa hekime söyleyin",
+        "abnormal": "İlk günlerde diş arası eskisinden daha sıkı hissedilebilir. Diş ipi yırtılıyor, yemek yeniden sıkışıyor ya da aradaki diş eti iltihaplanıyorsa kontak noktası yeniden yapılır"
+      },
+      "sr_cyrl": {
+        "what": "Надокнада двије сусједне површине зуба композитом Ivoclar EvoCeram, најчешће гризне и апроксималне",
+        "how": "Након уклањања каријеса међу зубе се поставља матрица и клин да се врати контактна тачка, композит се уноси у слојевима уз освјетљавање, а на крају се провјере конац и загрижај; једна посјета, 30-45 минута",
+        "when": "Каријес на бочном зиду зуба који прелази на гризну површину, задржавање хране између зуба, замјена старе пломбе са изгубљеним контактом",
+        "prep": "Припрема није потребна; рећи стоматологу ако се конац у том међупростору кида или запиње",
+        "abnormal": "Првих дана међузубни простор може дјеловати тјешње него раније. Ако се конац кида, храна се опет задржава или се десни између зуба упале, контактна тачка се прерађује"
+      }
+    }
+  },
+  {
+    "slug": "crown-removal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Снятие ранее установленной коронки или мостовидного протеза с опорного зуба",
+        "how": "Коронку либо распиливают бором по стенке и аккуратно раскрывают, либо снимают специальным съёмником с ударным механизмом; с анестезией или без неё, 15-40 минут на единицу",
+        "when": "Кариес или боль под коронкой, необходимость лечить канал опорного зуба, расцементировка и подвижность конструкции, скол керамики, замена изношенной коронки или моста",
+        "prep": "Подготовки нет; взять снимок, если он есть, и уточнить, планируется ли сохранить коронку для повторной фиксации",
+        "abnormal": "Коронку чаще всего распиливают, то есть вернуть её на место удаётся не всегда, и на время лечения ставят временную. Резкая боль после снятия, отёк десны или слетевшая временная коронка — повод вернуться к стоматологу"
+      },
+      "en": {
+        "what": "Taking off a previously fitted crown or bridge from the supporting tooth",
+        "how": "The crown is either cut through the wall with a bur and gently opened, or tapped off with a crown remover that has a sliding hammer; with or without anaesthesia, 15-40 minutes per unit",
+        "when": "Decay or pain under a crown, the need to treat the root canal of the abutment tooth, loose cement and a wobbly restoration, chipped ceramic, replacement of a worn crown or bridge",
+        "prep": "No preparation; bring an X-ray if you have one and ask whether the crown is meant to be kept for re-cementing",
+        "abnormal": "Crowns are usually cut, so they cannot always be put back, and a temporary one is fitted for the treatment period. Sharp pain after removal, a swollen gum or a temporary crown that falls off means going back to the dentist"
+      },
+      "sr": {
+        "what": "Uklanjanje ranije postavljene krunice ili mosta sa nosećeg zuba",
+        "how": "Krunica se ili prereže svrdlom po zidu i pažljivo rastvori, ili skine posebnim skidačem sa udarnim mehanizmom; sa anestezijom ili bez nje, 15-40 minuta po jedinici",
+        "when": "Karijes ili bol ispod krunice, potreba da se liječi kanal nosećeg zuba, otpuštanje cementa i klimanje nadoknade, odlom keramike, zamjena istrošene krunice ili mosta",
+        "prep": "Priprema nije potrebna; ponijeti snimak ako postoji i provjeriti da li se krunica planira sačuvati za ponovno cementiranje",
+        "abnormal": "Krunica se najčešće prereže, pa je nije uvijek moguće vratiti, a za vrijeme liječenja se stavlja privremena. Jaka bol nakon skidanja, otok desni ili privremena krunica koja spada razlog su za povratak stomatologu"
+      },
+      "de": {
+        "what": "Abnehmen einer zuvor eingesetzten Krone oder Brücke vom Pfeilerzahn",
+        "how": "Die Krone wird entweder mit dem Bohrer an der Wand durchtrennt und vorsichtig aufgebogen oder mit einem Kronenentferner mit Schlagmechanik abgelöst; mit oder ohne Betäubung, 15-40 Minuten je Einheit",
+        "when": "Karies oder Schmerzen unter der Krone, notwendige Wurzelbehandlung des Pfeilerzahns, gelöster Zement und wackelnde Versorgung, abgeplatzte Keramik, Austausch einer verschlissenen Krone oder Brücke",
+        "prep": "Keine Vorbereitung; vorhandene Aufnahmen mitbringen und klären, ob die Krone für eine erneute Zementierung erhalten werden soll",
+        "abnormal": "Kronen werden meist aufgetrennt und lassen sich nicht immer wieder einsetzen, für die Behandlungszeit wird ein Provisorium angefertigt. Starke Schmerzen nach dem Abnehmen, geschwollenes Zahnfleisch oder ein abgefallenes Provisorium gehören zurück in die Praxis"
+      },
+      "tr": {
+        "what": "Daha önce takılmış bir kronun ya da köprünün dayanak dişten çıkarılması",
+        "how": "Kron ya frezle duvarından kesilip dikkatle açılır ya da darbeli kron sökücüyle çıkarılır; anestezili ya da anestezisiz, birim başına 15-40 dakika",
+        "when": "Kron altında çürük veya ağrı, dayanak dişin kanal tedavisi gerekliliği, simanın çözülüp restorasyonun oynaması, seramikte kırık, yıpranmış kron ya da köprünün yenilenmesi",
+        "prep": "Hazırlık gerekmez; varsa filmi getirin ve kronun yeniden yapıştırılmak üzere saklanıp saklanmayacağını hekime sorun",
+        "abnormal": "Kron çoğunlukla kesilerek çıkarılır, bu yüzden her zaman geri takılamaz ve tedavi süresince geçici kron yapılır. Çıkarma sonrası şiddetli ağrı, diş etinde şişlik ya da geçici kronun düşmesi hekime dönmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање раније постављене крунице или моста са носећег зуба",
+        "how": "Круница се или пререже сврдлом по зиду и пажљиво раствори, или скине посебним скидачем са ударним механизмом; са анестезијом или без ње, 15-40 минута по јединици",
+        "when": "Каријес или бол испод крунице, потреба да се лијечи канал носећег зуба, отпуштање цемента и климање надокнаде, одлом керамике, замјена истрошене крунице или моста",
+        "prep": "Припрема није потребна; понијети снимак ако постоји и провјерити да ли се круница планира сачувати за поновно цементирање",
+        "abnormal": "Круница се најчешће пререже, па је није увијек могуће вратити, а за вријеме лијечења се ставља привремена. Јака бол након скидања, оток десни или привремена круница која спада разлог су за повратак стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "dental-caries-treatment",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление поражённых кариесом тканей зуба и закрытие образовавшейся полости пломбировочным материалом",
+        "how": "Врач находит кариес осмотром, зондом и при необходимости по снимку, при глубокой полости делает анестезию, убирает размягчённый дентин бором, вблизи пульпы накладывает защитную прокладку и ставит пломбу; один визит, 20-60 минут в зависимости от глубины",
+        "when": "Тёмное пятно или полость в зубе, застревание пищи, боль от сладкого, холодного или горячего, кариес, найденный на профилактическом осмотре или на снимке",
+        "prep": "Подготовки нет; сказать врачу, как давно болит зуб, была ли ночная боль и какие лекарства вы принимаете",
+        "abnormal": "Чем глубже была полость, тем дольше зуб может реагировать на температуру, обычно это проходит за две-три недели. Самопроизвольная или ночная боль после лечения говорит о том, что вовлечён нерв, и зуб надо показать врачу"
+      },
+      "en": {
+        "what": "Removing tooth tissue affected by decay and closing the resulting cavity with a filling material",
+        "how": "The dentist finds the decay by examination, probe and, if needed, X-ray, numbs a deep cavity, removes the softened dentine with a bur, places a protective lining close to the pulp and puts in a filling; one visit, 20-60 minutes depending on depth",
+        "when": "A dark spot or hole in a tooth, food packing, pain from sweet, cold or hot things, decay found at a check-up or on an X-ray",
+        "prep": "No preparation; tell the dentist how long the tooth has hurt, whether there was night pain and what medicines you take",
+        "abnormal": "The deeper the cavity was, the longer the tooth may react to temperature, usually settling within two to three weeks. Spontaneous or night pain after treatment points to the nerve being involved and the tooth needs to be seen"
+      },
+      "sr": {
+        "what": "Uklanjanje karijesom zahvaćenog zubnog tkiva i zatvaranje nastalog kaviteta materijalom za plombu",
+        "how": "Stomatolog otkriva karijes pregledom, sondom i po potrebi snimkom, kod dubokog kaviteta daje anesteziju, svrdlom ukloni omekšali dentin, blizu pulpe postavi zaštitnu podlogu i uradi plombu; jedna posjeta, 20-60 minuta zavisno od dubine",
+        "when": "Tamna mrlja ili rupa u zubu, zadržavanje hrane, bol na slatko, hladno ili toplo, karijes otkriven na kontrolnom pregledu ili na snimku",
+        "prep": "Priprema nije potrebna; reći stomatologu koliko dugo zub boli, da li je bilo noćne boli i koje lijekove uzimate",
+        "abnormal": "Što je kavitet bio dublji, to zub duže može reagovati na temperaturu, a to obično prođe za dvije do tri sedmice. Spontana ili noćna bol poslije liječenja govori da je zahvaćen živac i zub treba pokazati stomatologu"
+      },
+      "de": {
+        "what": "Entfernen des von Karies befallenen Zahngewebes und Verschluss der entstandenen Kavität mit Füllungsmaterial",
+        "how": "Der Zahnarzt erkennt die Karies durch Untersuchung, Sonde und bei Bedarf Röntgenbild, betäubt bei tiefer Kavität, entfernt das erweichte Dentin mit dem Bohrer, legt pulpanah eine schützende Unterfüllung und setzt die Füllung; ein Termin, je nach Tiefe 20-60 Minuten",
+        "when": "Dunkler Fleck oder Loch im Zahn, Speiseansammlung, Schmerz auf Süßes, Kaltes oder Heißes, bei der Kontrolle oder im Röntgenbild entdeckte Karies",
+        "prep": "Keine Vorbereitung; angeben, wie lange der Zahn schon schmerzt, ob nächtliche Schmerzen auftraten und welche Medikamente eingenommen werden",
+        "abnormal": "Je tiefer die Kavität war, desto länger kann der Zahn auf Temperatur reagieren, meist klingt das in zwei bis drei Wochen ab. Spontane oder nächtliche Schmerzen nach der Behandlung sprechen für eine Beteiligung des Nervs und müssen abgeklärt werden"
+      },
+      "tr": {
+        "what": "Çürükten etkilenmiş diş dokusunun temizlenmesi ve oluşan boşluğun dolgu malzemesiyle kapatılması",
+        "how": "Hekim çürüğü muayene, sond ve gerektiğinde filmle saptar, derin kavitede anestezi yapar, yumuşamış dentini frezle kaldırır, pulpaya yakın bölgede koruyucu alt taban koyar ve dolguyu yapar; tek seans, derinliğe göre 20-60 dakika",
+        "when": "Dişte koyu leke ya da boşluk, yemek sıkışması, tatlı, soğuk veya sıcakta ağrı, kontrol muayenesinde ya da filmde bulunan çürük",
+        "prep": "Hazırlık gerekmez; dişin ne zamandır ağrıdığını, gece ağrısı olup olmadığını ve kullandığınız ilaçları hekime söyleyin",
+        "abnormal": "Kavite ne kadar derinse diş sıcak ve soğuğa o kadar uzun tepki verebilir, bu genellikle iki üç haftada geçer. Tedaviden sonra kendiliğinden ya da gece gelen ağrı sinirin etkilendiğine işaret eder ve diş hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање каријесом захваћеног зубног ткива и затварање насталог кавитета материјалом за пломбу",
+        "how": "Стоматолог открива каријес прегледом, сондом и по потреби снимком, код дубоког кавитета даје анестезију, сврдлом уклони омекшали дентин, близу пулпе постави заштитну подлогу и уради пломбу; једна посјета, 20-60 минута зависно од дубине",
+        "when": "Тамна мрља или рупа у зубу, задржавање хране, бол на слатко, хладно или топло, каријес откривен на контролном прегледу или на снимку",
+        "prep": "Припрема није потребна; рећи стоматологу колико дуго зуб боли, да ли је било ноћне боли и које лијекове узимате",
+        "abnormal": "Што је кавитет био дубљи, то зуб дуже може реаговати на температуру, а то обично прође за двије до три седмице. Спонтана или ноћна бол послије лијечења говори да је захваћен живац и зуб треба показати стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "dental-crown-lengthening",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическое смещение края десны и при необходимости кости, чтобы над десной открылось больше тканей зуба",
+        "how": "Под местной анестезией откидывают небольшой лоскут десны, убирают излишек десны и часть костного края вокруг зуба, лоскут укладывают обратно и ушивают; 30-60 минут на зуб, швы снимают примерно через неделю",
+        "when": "Зуб обломан или разрушен ниже уровня десны и коронке не за что держаться, слишком короткие видимые коронки зубов, десневая улыбка, подготовка к протезированию",
+        "prep": "Сначала снимают налёт и пролечивают воспаление дёсен; предупредить о разжижающих кровь препаратах, диабете и курении, оно заметно замедляет заживление",
+        "abnormal": "Несколько дней бывают отёк, подтекание крови из-под швов и чувствительность шеек зубов; окончательный уровень десны устанавливается за два-три месяца, и только потом делают постоянную коронку. Нарастающая боль, гнойные выделения или температура — повод прийти раньше срока"
+      },
+      "en": {
+        "what": "Surgically moving the gum margin, and the bone edge where needed, so that more tooth tissue shows above the gum",
+        "how": "Under local anaesthesia a small gum flap is raised, excess gum and part of the bone crest around the tooth are removed, and the flap is repositioned and sutured; 30-60 minutes per tooth, with sutures out after about a week",
+        "when": "A tooth broken or destroyed below the gum line with nothing for a crown to grip, visibly short tooth crowns, a gummy smile, preparation for prosthetic work",
+        "prep": "Plaque is removed and gum inflammation treated first; report blood-thinning medication, diabetes and smoking, which clearly slows healing",
+        "abnormal": "Swelling, slight oozing from under the sutures and sensitive tooth necks are usual for a few days; the gum level settles over two to three months and only then is the final crown made. Growing pain, pus or fever call for an earlier visit"
+      },
+      "sr": {
+        "what": "Hirurško pomjeranje ruba desni i po potrebi kosti kako bi se iznad desni otkrilo više zubnog tkiva",
+        "how": "U lokalnoj anesteziji podigne se mali režanj desni, uklone se višak desni i dio koštanog ruba oko zuba, režanj se vrati i zašije; 30-60 minuta po zubu, konci se skidaju otprilike nakon sedmice",
+        "when": "Zub odlomljen ili razoren ispod nivoa desni za koji krunica nema uporište, prekratke vidljive krune zuba, gingivalni osmijeh, priprema za protetiku",
+        "prep": "Prvo se uklanjaju naslage i liječi upala desni; prijaviti lijekove za razrjeđivanje krvi, dijabetes i pušenje, koje osjetno usporava zarastanje",
+        "abnormal": "Nekoliko dana su mogući otok, blago krvarenje ispod konaca i osjetljivost vratova zuba; konačan nivo desni se ustali za dva do tri mjeseca i tek tada se radi trajna krunica. Bol koja jača, gnojav sekret ili temperatura razlog su za raniji dolazak"
+      },
+      "de": {
+        "what": "Chirurgisches Verlagern des Zahnfleischrands und bei Bedarf des Knochenrands, damit mehr Zahnsubstanz über dem Zahnfleisch sichtbar wird",
+        "how": "In örtlicher Betäubung wird ein kleiner Zahnfleischlappen gebildet, überschüssiges Zahnfleisch und ein Teil des Knochenrands um den Zahn entfernt, der Lappen zurückgelegt und vernäht; 30-60 Minuten je Zahn, Fäden nach etwa einer Woche",
+        "when": "Unterhalb des Zahnfleischrands abgebrochener oder zerstörter Zahn, an dem eine Krone keinen Halt findet, sichtbar zu kurze Zahnkronen, gingivales Lächeln, Vorbereitung von Zahnersatz",
+        "prep": "Zuerst werden Beläge entfernt und Zahnfleischentzündungen behandelt; blutverdünnende Medikamente, Diabetes und Rauchen angeben, Letzteres verzögert die Heilung deutlich",
+        "abnormal": "Schwellung, leichtes Sickern unter den Nähten und empfindliche Zahnhälse sind einige Tage üblich; das endgültige Zahnfleischniveau stellt sich über zwei bis drei Monate ein, erst danach wird die definitive Krone gefertigt. Zunehmende Schmerzen, Eiter oder Fieber erfordern einen früheren Termin"
+      },
+      "tr": {
+        "what": "Diş etinin üstünde daha fazla diş dokusu görünmesi için diş eti kenarının ve gerektiğinde kemik kenarının cerrahi olarak geriye alınması",
+        "how": "Lokal anestezi altında küçük bir diş eti flebi kaldırılır, fazla diş eti ve dişin çevresindeki kemik kenarının bir bölümü alınır, flep yerine konup dikilir; diş başına 30-60 dakika, dikişler yaklaşık bir hafta sonra alınır",
+        "when": "Diş eti seviyesinin altında kırılmış ya da yıkılmış, kronun tutunacağı yeri kalmamış diş, gözle görülür biçimde kısa diş kronları, diş eti gülüşü, protez hazırlığı",
+        "prep": "Önce diş taşı temizlenir ve diş eti iltihabı tedavi edilir; kan sulandırıcı ilaçları, diyabeti ve iyileşmeyi belirgin yavaşlatan sigara kullanımını bildirin",
+        "abnormal": "Birkaç gün şişlik, dikiş altından hafif sızıntı ve diş boyunlarında hassasiyet olağandır; diş eti seviyesi iki üç ayda oturur ve kalıcı kron ancak ondan sonra yapılır. Artan ağrı, iltihaplı akıntı veya ateş için randevu beklenmemelidir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршко помјерање руба десни и по потреби кости како би се изнад десни открило више зубног ткива",
+        "how": "У локалној анестезији подигне се мали режањ десни, уклоне се вишак десни и дио коштаног руба око зуба, режањ се врати и зашије; 30-60 минута по зубу, конци се скидају отприлике након седмице",
+        "when": "Зуб одломљен или разорен испод нивоа десни за који круница нема упориште, прекратке видљиве круне зуба, гингивални осмијех, припрема за протетику",
+        "prep": "Прво се уклањају наслаге и лијечи упала десни; пријавити лијекове за разрјеђивање крви, дијабетес и пушење, које осјетно успорава зарастање",
+        "abnormal": "Неколико дана су могући оток, благо крварење испод конаца и осјетљивост вратова зуба; коначан ниво десни се устали за два до три мјесеца и тек тада се ради трајна круница. Бол која јача, гнојав секрет или температура разлог су за ранији долазак"
+      }
+    }
+  },
+  {
+    "slug": "dental-jewelry-application",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приклеивание небольшого декоративного кристалла или металлической фигурки на наружную поверхность зуба",
+        "how": "Поверхность эмали чистят, протравливают и высушивают, украшение фиксируют светоотверждаемым клеем и засвечивают лампой; без сверления и анестезии, 10-15 минут",
+        "when": "Эстетическое пожелание пациента; украшение ставят на здоровый зуб без кариеса и трещин, обычно на клык или боковой резец",
+        "prep": "Подготовки нет; перед установкой зубы должны быть очищены от налёта, а эмаль без незалеченного кариеса",
+        "abnormal": "Украшение не повреждает эмаль, но вокруг него легче скапливается налёт, поэтому это место надо чистить тщательнее. Если оно отклеилось, край царапает губу или десна рядом воспалилась, нужно показаться стоматологу, а не приклеивать самостоятельно"
+      },
+      "en": {
+        "what": "Bonding a small decorative crystal or metal shape to the outer surface of a tooth",
+        "how": "The enamel is cleaned, etched and dried, the jewel is fixed with a light-cured adhesive and cured with a lamp; no drilling and no anaesthesia, 10-15 minutes",
+        "when": "A purely cosmetic wish; it is placed on a healthy tooth free of decay and cracks, usually a canine or lateral incisor",
+        "prep": "No preparation; the teeth should be free of plaque beforehand and the enamel free of untreated decay",
+        "abnormal": "The jewel does not damage the enamel, but plaque gathers around it more easily, so that spot needs more careful brushing. If it comes off, the edge scratches the lip or the nearby gum becomes inflamed, see the dentist rather than gluing it back yourself"
+      },
+      "sr": {
+        "what": "Lijepljenje malog ukrasnog kristala ili metalne figurice na spoljnu površinu zuba",
+        "how": "Površina gleđi se očisti, nagrize i osuši, ukras se fiksira ljepilom koje se stvrdnjava svjetlom i osvijetli lampom; bez brušenja i anestezije, 10-15 minuta",
+        "when": "Estetska želja pacijenta; ukras se stavlja na zdrav zub bez karijesa i pukotina, najčešće na očnjak ili bočni sjekutić",
+        "prep": "Priprema nije potrebna; prije postavljanja zubi treba da budu očišćeni od naslaga, a gleđ bez neliječenog karijesa",
+        "abnormal": "Ukras ne oštećuje gleđ, ali se oko njega lakše skuplja plak, pa to mjesto treba pažljivije prati. Ako otpadne, ivica grebe usnu ili se desni u blizini upale, treba se javiti stomatologu, a ne lijepiti ga samostalno"
+      },
+      "de": {
+        "what": "Aufkleben eines kleinen Schmucksteins oder einer Metallform auf die Außenfläche eines Zahns",
+        "how": "Der Schmelz wird gereinigt, geätzt und getrocknet, der Schmuck mit lichthärtendem Kleber befestigt und mit der Lampe ausgehärtet; ohne Bohren und ohne Betäubung, 10-15 Minuten",
+        "when": "Rein ästhetischer Wunsch; angebracht wird er auf einem gesunden Zahn ohne Karies und Risse, meist auf Eckzahn oder seitlichem Schneidezahn",
+        "prep": "Keine Vorbereitung; die Zähne sollten vorher frei von Belägen und der Schmelz frei von unbehandelter Karies sein",
+        "abnormal": "Der Schmuck schädigt den Schmelz nicht, doch sammelt sich ringsum leichter Plaque, diese Stelle braucht daher gründlicheres Putzen. Löst er sich, kratzt die Kante an der Lippe oder entzündet sich das Zahnfleisch daneben, gehört das in die Praxis und nicht in Eigenregie geklebt"
+      },
+      "tr": {
+        "what": "Küçük süs taşının ya da metal figürün dişin dış yüzeyine yapıştırılması",
+        "how": "Mine temizlenir, asitle pürüzlendirilip kurutulur, takı ışıkla sertleşen yapıştırıcıyla sabitlenip lambayla sertleştirilir; frezleme ve anestezi olmadan, 10-15 dakika",
+        "when": "Tamamen estetik bir istek; takı çürüksüz ve çatlaksız sağlam bir dişe, çoğunlukla köpek dişi ya da yan kesici dişe uygulanır",
+        "prep": "Hazırlık gerekmez; uygulamadan önce dişler plaktan arınmış, mine ise tedavi edilmemiş çürükten uzak olmalıdır",
+        "abnormal": "Takı mineye zarar vermez ama çevresinde plak daha kolay birikir, bu nedenle o bölge daha özenli fırçalanmalıdır. Düşerse, kenarı dudağı çiziyorsa ya da yakındaki diş eti iltihaplanırsa kendiniz yapıştırmak yerine hekime başvurun"
+      },
+      "sr_cyrl": {
+        "what": "Лијепљење малог украсног кристала или металне фигурице на спољну површину зуба",
+        "how": "Површина глеђи се очисти, нагризе и осуши, украс се фиксира љепилом које се стврдњава свјетлом и освијетли лампом; без брушења и анестезије, 10-15 минута",
+        "when": "Естетска жеља пацијента; украс се ставља на здрав зуб без каријеса и пукотина, најчешће на очњак или бочни сјекутић",
+        "prep": "Припрема није потребна; прије постављања зуби треба да буду очишћени од наслага, а глеђ без нелијеченог каријеса",
+        "abnormal": "Украс не оштећује глеђ, али се око њега лакше скупља плак, па то мјесто треба пажљивије прати. Ако отпадне, ивица гребе усну или се десни у близини упале, треба се јавити стоматологу, а не лијепити га самостално"
+      }
+    }
+  },
+  {
+    "slug": "denture-repair",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление сломанного или треснувшего съёмного протеза, замена отломившегося зуба или удерживающего крючка",
+        "how": "Части протеза составляют по линии перелома и фиксируют, место перелома армируют и заливают акрилом, после полимеризации протез обрабатывают и полируют, при необходимости снимают слепок; обычно несколько часов, иногда до следующего дня",
+        "when": "Базис протеза треснул или сломался пополам, выпал или отломился искусственный зуб, сломался удерживающий крючок, протез повреждён при падении",
+        "prep": "Принести все обломки и не склеивать их бытовым клеем — он портит акрил и делает починку невозможной; пока вы без протеза, лучше не есть твёрдую пищу",
+        "abnormal": "После починки протез проверяют в полости рта и пришлифовывают точки давления. Повторные переломы в том же месте обычно означают, что протез перестал прилегать из-за изменений кости, и тогда врач предлагает перебазировку или новый протез"
+      },
+      "en": {
+        "what": "Repairing a broken or cracked removable denture, replacing a lost tooth or a retaining clasp",
+        "how": "The pieces are matched along the fracture line and held together, the fracture site is reinforced and filled with acrylic, and after curing the denture is trimmed and polished, with an impression taken if needed; usually a few hours, sometimes by the next day",
+        "when": "The denture base has cracked or broken in two, an artificial tooth has come off, a retaining clasp has snapped, the denture was damaged in a fall",
+        "prep": "Bring every fragment and do not glue them with household adhesive, which ruins the acrylic and makes repair impossible; avoid hard food while you are without the denture",
+        "abnormal": "After the repair the denture is checked in the mouth and pressure points are ground down. Repeated fractures in the same place usually mean the denture no longer fits because the bone has changed, and the dentist will then suggest relining or a new denture"
+      },
+      "sr": {
+        "what": "Popravka slomljene ili napukle pokretne proteze, zamjena otpalog zuba ili kukice za držanje",
+        "how": "Dijelovi proteze se spoje po liniji loma i učvrste, mjesto loma se ojača i zalije akrilatom, nakon polimerizacije se proteza obradi i ispolira, po potrebi se uzme otisak; obično nekoliko sati, ponekad do narednog dana",
+        "when": "Baza proteze je napukla ili se prelomila, ispao ili se odlomio vještački zub, slomila se kukica, proteza je oštećena pri padu",
+        "prep": "Donijeti sve dijelove i ne lijepiti ih kućnim ljepilom, ono uništava akrilat i onemogućava popravku; dok ste bez proteze bolje je izbjegavati tvrdu hranu",
+        "abnormal": "Nakon popravke proteza se provjerava u ustima i bruse se mjesta pritiska. Ponovni lomovi na istom mjestu obično znače da proteza više ne naliježe zbog promjena na kosti, pa stomatolog predlaže podlaganje ili novu protezu"
+      },
+      "de": {
+        "what": "Instandsetzung einer gebrochenen oder gerissenen herausnehmbaren Prothese, Ersatz eines abgelösten Zahns oder einer Halteklammer",
+        "how": "Die Teile werden entlang der Bruchlinie zusammengefügt und fixiert, die Bruchstelle verstärkt und mit Kunststoff aufgefüllt, nach dem Aushärten wird die Prothese ausgearbeitet und poliert, bei Bedarf wird ein Abdruck genommen; meist einige Stunden, mitunter bis zum nächsten Tag",
+        "when": "Gerissene oder durchgebrochene Prothesenbasis, abgelöster Kunststoffzahn, gebrochene Halteklammer, Sturzschaden",
+        "prep": "Alle Bruchstücke mitbringen und nicht mit Haushaltskleber verkleben, das zerstört den Kunststoff und verhindert die Reparatur; ohne Prothese besser auf harte Speisen verzichten",
+        "abnormal": "Nach der Reparatur wird die Prothese im Mund kontrolliert und Druckstellen werden eingeschliffen. Wiederholte Brüche an derselben Stelle sprechen dafür, dass die Prothese wegen Knochenveränderungen nicht mehr passt, dann werden Unterfütterung oder Neuanfertigung vorgeschlagen"
+      },
+      "tr": {
+        "what": "Kırılmış ya da çatlamış hareketli protezin onarımı, düşen dişin veya tutucu kroşenin yenilenmesi",
+        "how": "Parçalar kırık hattı boyunca birleştirilip sabitlenir, kırık bölge güçlendirilip akrilikle doldurulur, sertleşmenin ardından protez tesviye edilip cilalanır, gerekirse ölçü alınır; genellikle birkaç saat, bazen ertesi güne kadar",
+        "when": "Protez tabanının çatlaması ya da ikiye ayrılması, yapay dişin düşmesi, tutucu kroşenin kırılması, düşme sonucu hasar",
+        "prep": "Bütün parçaları getirin ve ev tipi yapıştırıcıyla birleştirmeyin, bu akriliği bozar ve onarımı olanaksız kılar; protezsiz kaldığınız sürede sert yiyeceklerden kaçının",
+        "abnormal": "Onarımdan sonra protez ağızda denetlenir ve baskı yapan noktalar aşındırılır. Aynı yerde yinelenen kırıklar genellikle kemikteki değişim nedeniyle protezin artık oturmadığını gösterir, hekim o zaman besleme ya da yeni protez önerir"
+      },
+      "sr_cyrl": {
+        "what": "Поправка сломљене или напукле покретне протезе, замјена отпалог зуба или кукице за држање",
+        "how": "Дијелови протезе се споје по линији лома и учврсте, мјесто лома се ојача и залије акрилатом, након полимеризације се протеза обради и исполира, по потреби се узме отисак; обично неколико сати, понекад до наредног дана",
+        "when": "База протезе је напукла или се преломила, испао или се одломио вјештачки зуб, сломила се кукица, протеза је оштећена при паду",
+        "prep": "Донијети све дијелове и не лијепити их кућним љепилом, оно уништава акрилат и онемогућава поправку; док сте без протезе боље је избјегавати тврду храну",
+        "abnormal": "Након поправке протеза се провјерава у устима и брусе се мјеста притиска. Поновни ломови на истом мјесту обично значе да протеза више не налијеже због промјена на кости, па стоматолог предлаже подлагање или нову протезу"
+      }
+    }
+  },
+  {
+    "slug": "fissure-sealant-with-fluoride",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Закрытие борозд на жевательной поверхности зуба защитным материалом, который дополнительно отдаёт фтор в эмаль",
+        "how": "Зуб очищают щёточкой и высушивают, при необходимости изолируют коффердамом, в борозды вносят текучий фторвыделяющий материал и засвечивают лампой или дают ему застыть, затем проверяют прикус; 5-10 минут на зуб, без бормашины и анестезии",
+        "when": "Только что прорезавшиеся постоянные моляры у детей и подростков, глубокие и узкие борозды, высокий риск кариеса, слабая минерализация эмали, ношение брекетов",
+        "prep": "Подготовки нет; почистить зубы перед визитом, есть и пить можно сразу после процедуры",
+        "abnormal": "Материал со временем стирается, поэтому покрытие проверяют на плановых осмотрах и обновляют. Если зуб начал реагировать на сладкое или рядом с герметиком появилось тёмное пятно, нужен осмотр: кариес мог начаться на непокрытой поверхности"
+      },
+      "en": {
+        "what": "Sealing the grooves on the chewing surface of a tooth with a protective material that also releases fluoride into the enamel",
+        "how": "The tooth is cleaned with a brush and dried, isolated with a rubber dam if needed, the flowable fluoride-releasing material is placed in the fissures and light-cured or left to set, and the bite is checked; 5-10 minutes per tooth, with no drilling and no anaesthesia",
+        "when": "Newly erupted permanent molars in children and teenagers, deep narrow grooves, high decay risk, poorly mineralised enamel, wearing fixed braces",
+        "prep": "No preparation; brush your teeth before the visit, eating and drinking are allowed straight afterwards",
+        "abnormal": "The material wears down over time, so the seal is checked at routine visits and renewed. If the tooth starts reacting to sweet things or a dark spot appears beside the sealant, have it looked at: decay may have started on an uncovered surface"
+      },
+      "sr": {
+        "what": "Zatvaranje brazdi na griznoj površini zuba zaštitnim materijalom koji uz to otpušta fluor u gleđ",
+        "how": "Zub se očisti četkicom i osuši, po potrebi izoluje koferdamom, u fisure se unese tečni materijal sa fluorom i osvijetli lampom ili ostavi da se stvrdne, a zatim se provjeri zagrižaj; 5-10 minuta po zubu, bez brušenja i anestezije",
+        "when": "Tek izrasli trajni kutnjaci kod djece i adolescenata, duboke i uske brazde, visok rizik od karijesa, slaba mineralizacija gleđi, nošenje fiksnog ortodontskog aparata",
+        "prep": "Priprema nije potrebna; oprati zube prije dolaska, jesti i piti može se odmah poslije",
+        "abnormal": "Materijal se vremenom troši, pa se zaštita provjerava na redovnim kontrolama i obnavlja. Ako zub počne reagovati na slatko ili se pored zalivača pojavi tamna mrlja, potreban je pregled: karijes je mogao krenuti na nepokrivenoj površini"
+      },
+      "de": {
+        "what": "Verschluss der Grübchen auf der Kaufläche mit einem Schutzmaterial, das zusätzlich Fluorid an den Schmelz abgibt",
+        "how": "Der Zahn wird mit einer Bürste gereinigt und getrocknet, bei Bedarf mit Kofferdam isoliert, das fließfähige fluoridhaltige Material in die Fissuren eingebracht und lichtgehärtet oder aushärten gelassen, danach wird der Biss geprüft; 5-10 Minuten je Zahn, ohne Bohrer und Betäubung",
+        "when": "Frisch durchgebrochene bleibende Molaren bei Kindern und Jugendlichen, tiefe schmale Fissuren, hohes Kariesrisiko, schwach mineralisierter Schmelz, feste Zahnspange",
+        "prep": "Keine Vorbereitung; vor dem Termin die Zähne putzen, Essen und Trinken sind unmittelbar danach erlaubt",
+        "abnormal": "Das Material nutzt sich mit der Zeit ab, die Versiegelung wird deshalb bei Kontrollen überprüft und erneuert. Reagiert der Zahn auf Süßes oder zeigt sich neben der Versiegelung ein dunkler Fleck, sollte er angesehen werden: Karies kann an einer unbedeckten Fläche begonnen haben"
+      },
+      "tr": {
+        "what": "Dişin çiğneme yüzeyindeki olukların, mineye flor da salan koruyucu bir malzemeyle kapatılması",
+        "how": "Diş fırçayla temizlenip kurutulur, gerekirse rubber dam ile izole edilir, florlu akışkan malzeme fissürlere konup lambayla sertleştirilir ya da kendiliğinden sertleşmeye bırakılır, sonra kapanış denetlenir; diş başına 5-10 dakika, frezleme ve anestezi olmadan",
+        "when": "Çocuk ve ergenlerde yeni süren daimî azı dişleri, derin ve dar oluklar, yüksek çürük riski, zayıf mineralize mine, sabit ortodontik tedavi",
+        "prep": "Hazırlık gerekmez; randevu öncesi dişlerinizi fırçalayın, işlemden hemen sonra yiyip içebilirsiniz",
+        "abnormal": "Malzeme zamanla aşınır, bu yüzden örtücü rutin kontrollerde denetlenir ve yenilenir. Diş tatlıya tepki vermeye başlarsa ya da örtücünün yanında koyu bir leke belirirse muayene gerekir: çürük kapatılmamış bir yüzeyde başlamış olabilir"
+      },
+      "sr_cyrl": {
+        "what": "Затварање бразди на гризној површини зуба заштитним материјалом који уз то отпушта флуор у глеђ",
+        "how": "Зуб се очисти четкицом и осуши, по потреби изолује кофердамом, у фисуре се унесе течни материјал са флуором и освијетли лампом или остави да се стврдне, а затим се провјери загрижај; 5-10 минута по зубу, без брушења и анестезије",
+        "when": "Тек израсли трајни кутњаци код дјеце и адолесцената, дубоке и уске бразде, висок ризик од каријеса, слаба минерализација глеђи, ношење фиксног ортодонтског апарата",
+        "prep": "Припрема није потребна; опрати зубе прије доласка, јести и пити може се одмах послије",
+        "abnormal": "Материјал се временом троши, па се заштита провјерава на редовним контролама и обнавља. Ако зуб почне реаговати на слатко или се поред заливача појави тамна мрља, потребан је преглед: каријес је могао кренути на непокривеној површини"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-dental-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный короткий приём, на котором стоматолог проверяет результат уже проведённого лечения и состояние полости рта",
+        "how": "Врач расспрашивает о жалобах после лечения, осматривает пролеченные зубы и дёсны, проверяет пломбы и прикус, при необходимости делает контрольный снимок и сравнивает его с прежним; 10-20 минут",
+        "when": "Через несколько месяцев после лечения каналов, после установки пломб, коронок или протеза, при наблюдении за десной или подвижным зубом, плановый осмотр раз в полгода",
+        "prep": "Подготовки нет; взять прежние снимки и заключения, записать, что беспокоило между визитами",
+        "abnormal": "Контроль чаще всего подтверждает, что лечение идёт как задумано, но может выявить и новый кариес, воспаление или трещину пломбы. Дальнейший план и срок следующего визита назначает стоматолог"
+      },
+      "en": {
+        "what": "A short repeat appointment at which the dentist checks the outcome of treatment already carried out and the state of the mouth",
+        "how": "The dentist asks about complaints since the treatment, examines the treated teeth and gums, checks fillings and the bite, and takes a control X-ray for comparison with the earlier one if needed; 10-20 minutes",
+        "when": "A few months after root canal treatment, after fillings, crowns or a denture, while a gum or a loose tooth is being monitored, routine six-monthly check-up",
+        "prep": "No preparation; bring earlier X-rays and reports and note down anything that bothered you between visits",
+        "abnormal": "A follow-up most often confirms that treatment is going as planned, but it can also reveal new decay, inflammation or a cracked filling. The dentist sets the further plan and the date of the next visit"
+      },
+      "sr": {
+        "what": "Kratak ponovni pregled na kojem stomatolog provjerava ishod već obavljenog liječenja i stanje usne duplje",
+        "how": "Stomatolog pita o tegobama poslije terapije, pregleda liječene zube i desni, provjeri plombe i zagrižaj, po potrebi uradi kontrolni snimak i uporedi ga sa ranijim; 10-20 minuta",
+        "when": "Nekoliko mjeseci nakon liječenja kanala, poslije postavljanja plombi, krunica ili proteze, pri praćenju desni ili klimavog zuba, redovna kontrola na šest mjeseci",
+        "prep": "Priprema nije potrebna; ponijeti ranije snimke i nalaze i zapisati šta je smetalo između posjeta",
+        "abnormal": "Kontrola najčešće potvrdi da liječenje teče kako je planirano, ali može otkriti i novi karijes, upalu ili napuklu plombu. Dalji plan i rok sljedeće posjete određuje stomatolog"
+      },
+      "de": {
+        "what": "Kurzer Wiederholungstermin, bei dem der Zahnarzt das Ergebnis der bereits erfolgten Behandlung und den Mundzustand überprüft",
+        "how": "Der Zahnarzt fragt nach Beschwerden seit der Behandlung, untersucht die behandelten Zähne und das Zahnfleisch, kontrolliert Füllungen und Biss und fertigt bei Bedarf eine Kontrollaufnahme zum Vergleich mit der früheren an; 10-20 Minuten",
+        "when": "Einige Monate nach einer Wurzelbehandlung, nach Füllungen, Kronen oder Prothese, während Zahnfleisch oder ein lockerer Zahn beobachtet werden, halbjährliche Routinekontrolle",
+        "prep": "Keine Vorbereitung; frühere Aufnahmen und Befunde mitbringen und notieren, was zwischen den Terminen gestört hat",
+        "abnormal": "Die Kontrolle bestätigt meist, dass die Behandlung wie geplant verläuft, kann aber auch neue Karies, eine Entzündung oder eine gerissene Füllung aufdecken. Das weitere Vorgehen und den nächsten Termin legt der Zahnarzt fest"
+      },
+      "tr": {
+        "what": "Hekimin daha önce yapılan tedavinin sonucunu ve ağız durumunu denetlediği kısa tekrar randevusu",
+        "how": "Hekim tedaviden bu yana olan yakınmaları sorar, tedavi edilen dişleri ve diş etlerini inceler, dolguları ve kapanışı denetler, gerekirse öncekiyle karşılaştırmak için kontrol filmi çeker; 10-20 dakika",
+        "when": "Kanal tedavisinden birkaç ay sonra, dolgu, kron ya da protez yapımının ardından, diş eti veya sallanan diş izlenirken, altı ayda bir rutin kontrol",
+        "prep": "Hazırlık gerekmez; önceki film ve raporları getirin, randevular arasında sizi rahatsız eden şeyleri not edin",
+        "abnormal": "Kontrol çoğunlukla tedavinin planlandığı gibi ilerlediğini doğrular, ancak yeni çürük, iltihap ya da çatlak dolgu da ortaya çıkarabilir. Sonraki planı ve bir sonraki randevunun zamanını hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Кратак поновни преглед на којем стоматолог провјерава исход већ обављеног лијечења и стање усне дупље",
+        "how": "Стоматолог пита о тегобама послије терапије, прегледа лијечене зубе и десни, провјери пломбе и загрижај, по потреби уради контролни снимак и упореди га са ранијим; 10-20 минута",
+        "when": "Неколико мјесеци након лијечења канала, послије постављања пломби, круница или протезе, при праћењу десни или климавог зуба, редовна контрола на шест мјесеци",
+        "prep": "Припрема није потребна; понијети раније снимке и налазе и записати шта је сметало између посјета",
+        "abnormal": "Контрола најчешће потврди да лијечење тече како је планирано, али може открити и нови каријес, упалу или напуклу пломбу. Даљи план и рок сљедеће посјете одређује стоматолог"
+      }
+    }
+  },
+  {
+    "slug": "frc-post",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Штифт из композита, армированного стекловолокном, который вклеивают в корневой канал как опору для будущей реставрации",
+        "how": "Канал распломбировывают на нужную длину, штифт подбирают по диаметру, примеряют и укорачивают, затем канал протравливают, вносят адгезив и цемент двойного отверждения и фиксируют штифт; 20-40 минут, сразу после этого обычно наращивают культю",
+        "when": "Зуб с запломбированными каналами, в котором осталось мало стенок, перелом коронковой части при сохранном корне, подготовка культи под коронку на передних зубах, где важна прозрачность",
+        "prep": "Каналы должны быть пролечены и запломбированы заранее, нужен актуальный снимок; в день визита подготовки нет",
+        "abnormal": "Такой штифт по упругости близок к тканям зуба, не просвечивает через светлую керамику и при необходимости высверливается из канала. Боль при накусывании, подвижность реставрации или скол требуют осмотра стоматолога"
+      },
+      "en": {
+        "what": "A post made of fibre-reinforced composite, bonded into the root canal as support for the restoration to come",
+        "how": "The canal is opened to the required depth, a post is selected by diameter, tried in and shortened, then the canal is etched, adhesive and dual-cure cement are applied and the post is seated; 20-40 minutes, usually followed immediately by building up the core",
+        "when": "A tooth with filled canals and few remaining walls, a fractured crown with an intact root, preparing a core for a crown on front teeth where translucency matters",
+        "prep": "The canals must already be treated and filled and a current X-ray is needed; no preparation on the day itself",
+        "abnormal": "Such a post is close to tooth tissue in elasticity, does not shine through light ceramics and can be drilled out of the canal if needed. Pain on biting, a loose restoration or a chip call for a dental check"
+      },
+      "sr": {
+        "what": "Kočić od kompozita ojačanog staklenim vlaknima koji se lijepi u korijenski kanal kao oslonac za buduću nadoknadu",
+        "how": "Kanal se otvori do potrebne dužine, kočić se izabere po promjeru, proba i skrati, kanal se zatim nagrize, unesu se adheziv i cement dvojnog stvrdnjavanja i kočić se fiksira; 20-40 minuta, odmah nakon toga obično slijedi nadogradnja bataljka",
+        "when": "Zub sa napunjenim kanalima u kojem je ostalo malo zidova, prelom kruničnog dijela uz očuvan korijen, priprema bataljka za krunicu na prednjim zubima gdje je važna prozirnost",
+        "prep": "Kanali moraju biti prethodno liječeni i napunjeni, potreban je aktuelan snimak; na dan posjete priprema nije potrebna",
+        "abnormal": "Takav kočić je po elastičnosti blizak zubnom tkivu, ne prosijava kroz svijetlu keramiku, a po potrebi se može izbušiti iz kanala. Bol pri zagrizu, klimanje nadoknade ili odlom traže pregled kod stomatologa"
+      },
+      "de": {
+        "what": "Stift aus faserverstärktem Komposit, der als Stütze für den späteren Aufbau in den Wurzelkanal eingeklebt wird",
+        "how": "Der Kanal wird auf die nötige Tiefe eröffnet, der Stift nach Durchmesser ausgewählt, einprobiert und gekürzt, danach wird der Kanal geätzt, Haftvermittler und dualhärtender Zement eingebracht und der Stift eingesetzt; 20-40 Minuten, unmittelbar danach folgt meist der Stumpfaufbau",
+        "when": "Zahn mit gefüllten Kanälen und wenigen verbliebenen Wänden, Kronenfraktur bei erhaltener Wurzel, Stumpfaufbau für eine Krone an Frontzähnen, bei denen die Transluzenz zählt",
+        "prep": "Die Kanäle müssen vorher behandelt und gefüllt sein, eine aktuelle Aufnahme ist nötig; am Behandlungstag keine Vorbereitung",
+        "abnormal": "Ein solcher Stift liegt in der Elastizität nahe am Zahngewebe, schimmert nicht durch helle Keramik und lässt sich bei Bedarf aus dem Kanal herausbohren. Schmerzen beim Zubeißen, ein lockerer Aufbau oder eine Absplitterung erfordern eine zahnärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Yapılacak restorasyona destek olmak üzere kök kanalına yapıştırılan, cam elyafla güçlendirilmiş kompozit post",
+        "how": "Kanal gereken derinliğe kadar açılır, post çapına göre seçilir, prova edilip kısaltılır, ardından kanal asitlenir, bağlayıcı ve çift yolla sertleşen siman uygulanarak post yerleştirilir; 20-40 dakika, hemen ardından genellikle kor yapımı gelir",
+        "when": "Kanalları doldurulmuş ve az duvarı kalmış diş, kökü sağlam kalmış kron kırığı, saydamlığın önemli olduğu ön dişlerde kron için kor hazırlığı",
+        "prep": "Kanallar önceden tedavi edilip doldurulmuş olmalı ve güncel film gerekir; işlem günü hazırlık gerekmez",
+        "abnormal": "Bu post esneklik bakımından diş dokusuna yakındır, açık renk seramiğin altından yansımaz ve gerektiğinde kanaldan frezle çıkarılabilir. Isırırken ağrı, restorasyonun oynaması ya da kırık diş hekimi kontrolü gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Кочић од композита ојачаног стакленим влакнима који се лијепи у коријенски канал као ослонац за будућу надокнаду",
+        "how": "Канал се отвори до потребне дужине, кочић се изабере по промјеру, проба и скрати, канал се затим нагризе, унесу се адхезив и цемент двојног стврдњавања и кочић се фиксира; 20-40 минута, одмах након тога обично слиједи надоградња батаљка",
+        "when": "Зуб са напуњеним каналима у којем је остало мало зидова, прелом круничног дијела уз очуван коријен, припрема батаљка за круницу на предњим зубима гдје је важна прозирност",
+        "prep": "Канали морају бити претходно лијечени и напуњени, потребан је актуелан снимак; на дан посјете припрема није потребна",
+        "abnormal": "Такав кочић је по еластичности близак зубном ткиву, не просијава кроз свијетлу керамику, а по потреби се може избушити из канала. Бол при загризу, климање надокнаде или одлом траже преглед код стоматолога"
+      }
+    }
+  },
+  {
+    "slug": "glass-ionomer-filling",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Пломба из стеклоиономерного цемента — материала, который химически связывается с тканями зуба и постепенно отдаёт фтор",
+        "how": "Полость очищают и слегка подсушивают, не пересушивая, замешанный цемент вносят одной порцией и уплотняют, излишки убирают, поверхность защищают лаком; схватывание идёт само или под лампой, визит 15-30 минут",
+        "when": "Кариес у шейки и корня зуба, молочные зубы, временное закрытие полости между этапами лечения, прокладка под другую пломбу, участки, которые трудно удержать сухими",
+        "prep": "Подготовки нет; первые сутки лучше не грызть твёрдое этой стороной, пока материал окончательно не затвердеет",
+        "abnormal": "Стеклоиономер уступает композиту по прочности и блеску, поэтому на жевательных зубах его чаще рассматривают как временное или вспомогательное решение. Скол, выпадение пломбы или вернувшаяся чувствительность — повод прийти на осмотр"
+      },
+      "en": {
+        "what": "A filling of glass ionomer cement, a material that bonds chemically to tooth tissue and gradually releases fluoride",
+        "how": "The cavity is cleaned and lightly dried without over-drying, the mixed cement is placed in one portion and condensed, excess is removed and the surface is protected with a varnish; it sets on its own or under a lamp, the visit takes 15-30 minutes",
+        "when": "Decay at the neck and root of the tooth, baby teeth, temporary closure of a cavity between treatment stages, a lining under another filling, sites that are hard to keep dry",
+        "prep": "No preparation; for the first day avoid biting hard food on that side until the material has fully hardened",
+        "abnormal": "Glass ionomer is less strong and less glossy than composite, so on back teeth it is more often a temporary or supporting solution. A chip, a lost filling or returning sensitivity is a reason to be seen"
+      },
+      "sr": {
+        "what": "Plomba od glas-jonomer cementa, materijala koji se hemijski veže za zubno tkivo i postepeno otpušta fluor",
+        "how": "Kavitet se očisti i blago osuši bez presušivanja, zamiješani cement se unese u jednoj porciji i zbije, višak se ukloni, a površina zaštiti lakom; stvrdnjava se sam ili pod lampom, posjeta traje 15-30 minuta",
+        "when": "Karijes uz vrat i korijen zuba, mliječni zubi, privremeno zatvaranje kaviteta između faza liječenja, podloga ispod druge plombe, mjesta koja je teško održati suvim",
+        "prep": "Priprema nije potrebna; prvog dana bolje je ne gristi tvrdo tom stranom dok materijal potpuno ne očvrsne",
+        "abnormal": "Glas-jonomer je po čvrstini i sjaju slabiji od kompozita, pa se na bočnim zubima češće posmatra kao privremeno ili pomoćno rješenje. Odlom, ispadanje plombe ili osjetljivost koja se vratila razlog su za pregled"
+      },
+      "de": {
+        "what": "Füllung aus Glasionomerzement, einem Material, das sich chemisch mit der Zahnsubstanz verbindet und nach und nach Fluorid abgibt",
+        "how": "Die Kavität wird gereinigt und leicht, aber nicht übermäßig getrocknet, der angemischte Zement in einer Portion eingebracht und verdichtet, Überschuss entfernt und die Oberfläche mit Lack geschützt; die Aushärtung erfolgt von selbst oder unter der Lampe, der Termin dauert 15-30 Minuten",
+        "when": "Karies am Zahnhals und an der Wurzel, Milchzähne, vorübergehender Verschluss zwischen Behandlungsschritten, Unterfüllung unter einer anderen Füllung, schlecht trockenzulegende Stellen",
+        "prep": "Keine Vorbereitung; am ersten Tag auf dieser Seite nichts Hartes beißen, bis das Material vollständig ausgehärtet ist",
+        "abnormal": "Glasionomer ist weniger fest und weniger glänzend als Komposit und gilt an Seitenzähnen daher eher als vorübergehende oder unterstützende Lösung. Absplitterung, Verlust der Füllung oder wiederkehrende Empfindlichkeit sind ein Grund für eine Kontrolle"
+      },
+      "tr": {
+        "what": "Diş dokusuna kimyasal olarak bağlanan ve zamanla flor salan cam iyonomer simandan yapılan dolgu",
+        "how": "Kavite temizlenir, aşırıya kaçmadan hafifçe kurutulur, karıştırılan siman tek seferde yerleştirilip sıkıştırılır, fazlası alınır ve yüzey vernikle korunur; kendiliğinden ya da lamba altında sertleşir, randevu 15-30 dakika sürer",
+        "when": "Diş boynu ve kökündeki çürük, süt dişleri, tedavi aşamaları arasında kavitenin geçici kapatılması, başka bir dolgunun altında taban, kuru tutulması zor bölgeler",
+        "prep": "Hazırlık gerekmez; malzeme tam sertleşene kadar ilk gün o tarafta sert gıda ısırmayın",
+        "abnormal": "Cam iyonomer dayanıklılık ve parlaklık açısından kompozitin gerisindedir, bu nedenle arka dişlerde daha çok geçici ya da destekleyici bir çözüm sayılır. Kırılma, dolgunun düşmesi ya da hassasiyetin geri dönmesi muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Пломба од глас-јономер цемента, материјала који се хемијски веже за зубно ткиво и постепено отпушта флуор",
+        "how": "Кавитет се очисти и благо осуши без пресушивања, замијешани цемент се унесе у једној порцији и збије, вишак се уклони, а површина заштити лаком; стврдњава се сам или под лампом, посјета траје 15-30 минута",
+        "when": "Каријес уз врат и коријен зуба, млијечни зуби, привремено затварање кавитета између фаза лијечења, подлога испод друге пломбе, мјеста која је тешко одржати сувим",
+        "prep": "Припрема није потребна; првог дана боље је не гристи тврдо том страном док материјал потпуно не очврсне",
+        "abnormal": "Глас-јономер је по чврстини и сјају слабији од композита, па се на бочним зубима чешће посматра као привремено или помоћно рјешење. Одлом, испадање пломбе или осјетљивост која се вратила разлог су за преглед"
+      }
+    }
+  }
 ]

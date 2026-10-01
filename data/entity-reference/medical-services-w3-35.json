@@ -1,617 +1,722 @@
 [
-	{
-		"slug": "infant-follow-up-hospital-round",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Повторный врачебный осмотр грудного ребёнка, уже находящегося в отделении, в один из последующих дней лечения",
-				"how": "Врач ежедневно осматривает ребёнка в палате, расспрашивает мать о сне, кормлении и стуле, оценивает дыхание, кожу, живот и вес, смотрит свежие анализы и при необходимости меняет назначения",
-				"when": "Каждый день пребывания ребёнка в отделении после первичного осмотра, при изменении состояния, при поступлении новых результатов, перед решением о выписке",
-				"prep": "Подготовка не нужна; матери полезно записывать время кормлений, температуру и необычные симптомы, чтобы рассказать о них на обходе",
-				"abnormal": "По итогам обхода врач может оставить лечение прежним, изменить его, назначить дополнительные исследования или начать готовить выписку. Вопросы о состоянии ребёнка задавайте лечащему врачу во время обхода"
-			},
-			"en": {
-				"what": "A repeat doctor's assessment of an infant already staying on the ward, on one of the following days of treatment",
-				"how": "The doctor examines the baby in the room every day, asks the mother about sleep, feeding and stools, checks breathing, skin, abdomen and weight, reviews the latest results and adjusts the orders if needed",
-				"when": "Every day of the infant's stay on the ward after the admission assessment, when the condition changes, when new results arrive, before the decision to discharge",
-				"prep": "No preparation; it helps if the mother notes feeding times, temperature and any unusual symptoms to report on the round",
-				"abnormal": "After the round the doctor may keep the treatment unchanged, adjust it, order further tests or start preparing the discharge. Questions about the baby's condition are best asked to the attending doctor during the round"
-			},
-			"sr": {
-				"what": "Ponovni ljekarski pregled odojčeta koje je već na odjeljenju, jednog od narednih dana liječenja",
-				"how": "Ljekar svakog dana pregleda bebu u sobi, pita majku o spavanju, hranjenju i stolici, procjenjuje disanje, kožu, stomak i težinu, gleda nove nalaze i po potrebi mijenja terapiju",
-				"when": "Svaki dan boravka odojčeta na odjeljenju nakon prvog pregleda, kod promjene stanja, po pristizanju novih nalaza, prije odluke o otpustu",
-				"prep": "Priprema nije potrebna; korisno je da majka zapisuje vrijeme podoja, temperaturu i neobične simptome kako bi ih rekla na viziti",
-				"abnormal": "Nakon vizite ljekar može ostaviti istu terapiju, promijeniti je, uputiti na dodatna ispitivanja ili pripremiti otpust. Pitanja o stanju djeteta najbolje je postaviti ljekaru koji vodi liječenje tokom vizite"
-			},
-			"de": {
-				"what": "Eine erneute ärztliche Beurteilung eines bereits stationär aufgenommenen Säuglings an einem der folgenden Behandlungstage",
-				"how": "Der Arzt untersucht das Kind täglich im Zimmer, fragt die Mutter nach Schlaf, Trinken und Stuhl, beurteilt Atmung, Haut, Bauch und Gewicht, sieht die neuen Befunde durch und passt die Anordnungen bei Bedarf an",
-				"when": "Jeder Tag des stationären Aufenthalts nach der Aufnahmeuntersuchung, bei Zustandsänderung, bei neuen Befunden, vor der Entscheidung zur Entlassung",
-				"prep": "Keine Vorbereitung nötig; hilfreich ist, wenn die Mutter Trinkzeiten, Temperatur und auffällige Symptome notiert und bei der Visite berichtet",
-				"abnormal": "Nach der Visite kann der Arzt die Behandlung beibehalten, ändern, weitere Untersuchungen veranlassen oder die Entlassung vorbereiten. Fragen zum Zustand des Kindes klärt man am besten bei der Visite mit dem behandelnden Arzt"
-			},
-			"tr": {
-				"what": "Hastanede yatmakta olan bebeğin tedavinin ilerleyen günlerinde yapılan tekrar doktor değerlendirmesi",
-				"how": "Doktor her gün bebeği odasında muayene eder, anneye uyku, beslenme ve dışkılamayı sorar, solunumu, cildi, karnı ve kiloyu değerlendirir, yeni tahlil sonuçlarını gözden geçirip gerekirse tedaviyi günceller",
-				"when": "İlk değerlendirmeden sonra serviste kalınan her gün, durum değiştiğinde, yeni sonuçlar geldiğinde, taburculuk kararından önce",
-				"prep": "Hazırlık gerekmez; annenin emzirme saatlerini, ateşi ve alışılmadık belirtileri not alıp vizitte aktarması faydalıdır",
-				"abnormal": "Vizit sonrasında doktor tedaviyi aynı bırakabilir, değiştirebilir, ek tetkik isteyebilir ya da taburculuğu hazırlayabilir. Bebeğin durumuyla ilgili sorular vizit sırasında tedaviyi yürüten doktora sorulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "infant-initial-hospital-workup",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Первый подробный осмотр грудного ребёнка при поступлении в больничное отделение",
-				"how": "Врач собирает сведения у родителей (беременность, роды, кормление, прививки, нынешняя болезнь), полностью осматривает ребёнка, измеряет вес, температуру, дыхание и пульс, назначает анализы и записывает план лечения; занимает около получаса",
-				"when": "Госпитализация ребёнка первого года жизни: высокая температура, отказ от еды, рвота и потеря жидкости, затруднённое дыхание, слабая прибавка веса, перевод из другого учреждения",
-				"prep": "Специальной подготовки нет; с собой документы ребёнка, карта прививок, прежние выписки и результаты анализов, список лекарств, которые ребёнок получает",
-				"abnormal": "Осмотр определяет объём обследования и лечения, иногда и необходимость наблюдения в палате интенсивной терапии. Диагноз уточняется по ходу госпитализации лечащим врачом"
-			},
-			"en": {
-				"what": "The first detailed assessment of an infant on admission to a hospital ward",
-				"how": "The doctor takes the history from the parents (pregnancy, birth, feeding, vaccinations, current illness), examines the baby from head to toe, measures weight, temperature, breathing and pulse, orders tests and writes the treatment plan; it takes about half an hour",
-				"when": "Admission of a child in the first year of life: high fever, refusing feeds, vomiting and loss of fluids, laboured breathing, poor weight gain, transfer from another facility",
-				"prep": "No special preparation; bring the child's documents, vaccination record, previous discharge letters and results, and a list of the medicines the baby receives",
-				"abnormal": "The assessment decides how much testing and treatment is needed, and sometimes the need for observation in an intensive care room. The diagnosis is refined during the stay by the attending doctor"
-			},
-			"sr": {
-				"what": "Prvi detaljan pregled odojčeta pri prijemu na bolničko odjeljenje",
-				"how": "Ljekar uzima podatke od roditelja (trudnoća, porođaj, ishrana, vakcine, sadašnja bolest), pregleda bebu od glave do pete, mjeri težinu, temperaturu, disanje i puls, određuje analize i zapisuje plan liječenja; traje oko pola sata",
-				"when": "Prijem djeteta u prvoj godini života: visoka temperatura, odbijanje hrane, povraćanje i gubitak tečnosti, otežano disanje, slab napredak u težini, premještaj iz druge ustanove",
-				"prep": "Posebna priprema ne postoji; ponijeti dokumenta djeteta, karticu vakcinacije, ranija otpusna pisma i nalaze, kao i spisak lijekova koje beba dobija",
-				"abnormal": "Pregled određuje obim ispitivanja i liječenja, ponekad i potrebu za nadzorom u jedinici intenzivne njege. Dijagnoza se razjašnjava tokom boravka, a daje je ljekar koji vodi liječenje"
-			},
-			"de": {
-				"what": "Die erste ausführliche Untersuchung eines Säuglings bei der Aufnahme auf eine Krankenhausstation",
-				"how": "Der Arzt erhebt die Vorgeschichte bei den Eltern (Schwangerschaft, Geburt, Ernährung, Impfungen, aktuelle Erkrankung), untersucht das Kind vollständig, misst Gewicht, Temperatur, Atmung und Puls, ordnet Untersuchungen an und schreibt den Behandlungsplan; dauert etwa eine halbe Stunde",
-				"when": "Aufnahme eines Kindes im ersten Lebensjahr: hohes Fieber, Trinkverweigerung, Erbrechen und Flüssigkeitsmangel, erschwerte Atmung, schlechte Gewichtszunahme, Verlegung aus einer anderen Einrichtung",
-				"prep": "Keine besondere Vorbereitung; Unterlagen des Kindes, Impfausweis, frühere Entlassungsberichte und Befunde sowie eine Liste der verabreichten Medikamente mitbringen",
-				"abnormal": "Die Untersuchung legt fest, welche Diagnostik und Behandlung nötig sind, manchmal auch eine Überwachung auf der Intensivstation. Die Diagnose wird im Verlauf des Aufenthalts vom behandelnden Arzt präzisiert"
-			},
-			"tr": {
-				"what": "Bebeğin hastane servisine yatışında yapılan ilk ayrıntılı değerlendirme",
-				"how": "Doktor aileden öyküyü alır (gebelik, doğum, beslenme, aşılar, mevcut hastalık), bebeği baştan ayağa muayene eder, kilo, ateş, solunum ve nabzı ölçer, tetkikleri ister ve tedavi planını yazar; yaklaşık yarım saat sürer",
-				"when": "Bir yaşından küçük çocuğun yatışı: yüksek ateş, beslenmeyi reddetme, kusma ve sıvı kaybı, zor nefes alma, kilo alamama, başka kurumdan sevk",
-				"prep": "Özel hazırlık yoktur; bebeğin belgeleri, aşı kartı, önceki epikrizler ve tahlil sonuçları ile aldığı ilaçların listesi getirilmelidir",
-				"abnormal": "Değerlendirme hangi tetkik ve tedavinin gerektiğini, bazen yoğun bakımda izlem ihtiyacını belirler. Tanı yatış boyunca tedaviyi yürüten doktor tarafından netleştirilir"
-			}
-		}
-	},
-	{
-		"slug": "initial-hospital-workup",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Приёмный осмотр взрослого пациента при поступлении в больничное отделение",
-				"how": "Врач расспрашивает о жалобах, перенесённых болезнях, операциях, аллергии и постоянных лекарствах, проводит общий осмотр, назначает анализы и исследования и записывает план лечения в историю болезни",
-				"when": "Плановая или экстренная госпитализация, перевод из другого отделения или больницы, поступление перед операцией",
-				"prep": "Взять удостоверение личности и медицинскую страховку, направление, список постоянно принимаемых лекарств, прежние выписки и снимки; при плановом поступлении соблюдать указания о еде и питье",
-				"abnormal": "Приёмный осмотр определяет, какое обследование и лечение понадобятся и сколько примерно может продлиться пребывание. Все вопросы о плане лечения решает лечащий врач отделения"
-			},
-			"en": {
-				"what": "The admission assessment of an adult patient entering a hospital ward",
-				"how": "The doctor asks about complaints, past illnesses, operations, allergies and regular medicines, performs a general examination, orders tests and imaging and records the treatment plan in the chart",
-				"when": "Planned or emergency admission, transfer from another ward or hospital, admission before surgery",
-				"prep": "Bring an ID and health insurance card, the referral, a list of the medicines you take regularly, previous discharge letters and images; for a planned admission follow the instructions about eating and drinking",
-				"abnormal": "The admission assessment defines what examinations and treatment will be needed and roughly how long the stay may last. All questions about the plan are decided by the attending doctor on the ward"
-			},
-			"sr": {
-				"what": "Prijemni pregled odrasle osobe pri dolasku na bolničko odjeljenje",
-				"how": "Ljekar pita o tegobama, ranijim bolestima, operacijama, alergijama i stalnim lijekovima, radi opšti pregled, određuje analize i snimanja i upisuje plan liječenja u istoriju bolesti",
-				"when": "Planski ili hitan prijem, premještaj sa drugog odjeljenja ili iz druge bolnice, prijem prije operacije",
-				"prep": "Ponijeti ličnu kartu i zdravstvenu knjižicu, uput, spisak lijekova koje stalno uzimate, ranija otpusna pisma i snimke; kod planskog prijema pridržavati se uputstva o jelu i piću",
-				"abnormal": "Prijemni pregled određuje koja ispitivanja i liječenje slijede i koliko boravak otprilike može trajati. O planu liječenja odlučuje ljekar odjeljenja koji vodi liječenje"
-			},
-			"de": {
-				"what": "Die Aufnahmeuntersuchung eines erwachsenen Patienten bei Aufnahme auf eine Station",
-				"how": "Der Arzt fragt nach Beschwerden, früheren Erkrankungen, Operationen, Allergien und Dauermedikation, führt eine allgemeine Untersuchung durch, ordnet Labor und Bildgebung an und hält den Behandlungsplan in der Akte fest",
-				"when": "Geplante oder notfallmäßige Aufnahme, Verlegung von einer anderen Station oder aus einem anderen Krankenhaus, Aufnahme vor einer Operation",
-				"prep": "Ausweis und Versichertenkarte, Einweisung, eine Liste der dauerhaft eingenommenen Medikamente, frühere Entlassungsberichte und Bilder mitbringen; bei geplanter Aufnahme die Vorgaben zu Essen und Trinken beachten",
-				"abnormal": "Die Aufnahmeuntersuchung legt fest, welche Diagnostik und Behandlung folgen und wie lange der Aufenthalt etwa dauern kann. Über den Behandlungsplan entscheidet der behandelnde Stationsarzt"
-			},
-			"tr": {
-				"what": "Erişkin hastanın hastane servisine yatışında yapılan kabul değerlendirmesi",
-				"how": "Doktor şikâyetleri, geçirilmiş hastalıkları, ameliyatları, alerjileri ve sürekli kullanılan ilaçları sorar, genel muayene yapar, tahlil ve görüntüleme ister, tedavi planını dosyaya yazar",
-				"when": "Planlı ya da acil yatış, başka servisten veya hastaneden nakil, ameliyat öncesi yatış",
-				"prep": "Kimlik ve sağlık sigortası belgesi, sevk kâğıdı, sürekli kullanılan ilaçların listesi, önceki epikriz ve görüntüler getirilmeli; planlı yatışta yeme içme talimatına uyulmalıdır",
-				"abnormal": "Kabul değerlendirmesi hangi tetkik ve tedavinin gerekeceğini ve yatışın yaklaşık süresini belirler. Tedavi planıyla ilgili tüm kararları servisteki sorumlu doktor verir"
-			}
-		}
-	},
-	{
-		"slug": "initial-hospital-workup-of-involuntarily-hospitalized-patient",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Осмотр при поступлении пациента, оставленного в больнице без его согласия в порядке, предусмотренном законом",
-				"how": "Врач-специалист осматривает пациента, оценивает состояние и способность принимать решения о лечении, изучает документы о направлении и подробно записывает основания и находки в историю болезни; при необходимости привлекаются другие специалисты",
-				"when": "Поступление, когда пациент не может дать согласие или отказывается от помощи, а отсутствие лечения опасно для него или для окружающих; основания и сроки такого удержания определены законом",
-				"prep": "От пациента подготовка не ожидается; родственники могут помочь, передав персоналу документы, прежние выписки и список постоянных лекарств",
-				"abnormal": "Осмотр решает, сохраняется ли основание для лечения в стационаре, и состояние пересматривают повторно в установленные сроки. О правах пациента и порядке обжалования сообщают врач отделения и ответственное лицо больницы"
-			},
-			"en": {
-				"what": "An admission assessment of a patient kept in hospital without their consent under the procedure laid down by law",
-				"how": "A specialist examines the patient, assesses the current state and the ability to decide about treatment, reviews the referral documents and records the grounds and findings in detail in the chart; other specialists are involved when needed",
-				"when": "Admission when a patient cannot give consent or refuses care while going without treatment is dangerous for them or for others; the grounds and time limits of such a stay are set by law",
-				"prep": "No preparation is expected from the patient; relatives can help by handing the staff the documents, previous discharge letters and the list of regular medicines",
-				"abnormal": "The assessment decides whether the grounds for inpatient care remain, and the state is reviewed again within the set intervals. The ward doctor and the responsible hospital officer inform the patient about their rights and about how the decision can be appealed"
-			},
-			"sr": {
-				"what": "Prijemni pregled pacijenta koji je zadržan u bolnici bez svoje saglasnosti, po postupku propisanom zakonom",
-				"how": "Ljekar specijalista pregleda pacijenta, procjenjuje stanje i sposobnost da odlučuje o liječenju, pregleda dokumentaciju o upućivanju i detaljno upisuje razloge i nalaz u istoriju bolesti; po potrebi se uključuju i drugi specijalisti",
-				"when": "Prijem kada pacijent ne može dati saglasnost ili odbija pomoć, a izostanak liječenja je opasan za njega ili za okolinu; osnov i rokovi ovakvog zadržavanja određeni su zakonom",
-				"prep": "Od pacijenta se priprema ne očekuje; porodica može pomoći tako što osoblju preda dokumentaciju, ranija otpusna pisma i spisak stalnih lijekova",
-				"abnormal": "Pregled odlučuje da li i dalje postoji osnov za bolničko liječenje, a stanje se ponovo procjenjuje u propisanim rokovima. O pravima pacijenta i načinu žalbe obavještavaju ljekar odjeljenja i odgovorno lice bolnice"
-			},
-			"de": {
-				"what": "Die Aufnahmeuntersuchung eines Patienten, der ohne seine Zustimmung im gesetzlich vorgesehenen Verfahren im Krankenhaus behalten wird",
-				"how": "Ein Facharzt untersucht den Patienten, beurteilt den Zustand und die Fähigkeit, über die Behandlung zu entscheiden, prüft die Einweisungsunterlagen und dokumentiert Gründe und Befund ausführlich; bei Bedarf werden weitere Fachärzte hinzugezogen",
-				"when": "Aufnahme, wenn ein Patient nicht einwilligen kann oder Hilfe ablehnt und das Ausbleiben der Behandlung ihn oder andere gefährdet; Grundlage und Fristen eines solchen Aufenthalts regelt das Gesetz",
-				"prep": "Vom Patienten wird keine Vorbereitung erwartet; Angehörige können Unterlagen, frühere Entlassungsberichte und die Liste der Dauermedikation an das Personal übergeben",
-				"abnormal": "Die Untersuchung entscheidet, ob die Gründe für die stationäre Behandlung weiter bestehen; der Zustand wird in festgelegten Abständen erneut beurteilt. Über die Rechte des Patienten und den Weg des Widerspruchs informieren der Stationsarzt und die zuständige Stelle des Krankenhauses"
-			},
-			"tr": {
-				"what": "Kanunda öngörülen usule göre rızası alınmadan hastanede tutulan hastanın kabul değerlendirmesi",
-				"how": "Uzman hekim hastayı muayene eder, durumunu ve tedavi hakkında karar verebilme yetisini değerlendirir, sevk belgelerini inceler, gerekçeleri ve bulguları dosyaya ayrıntılı yazar; gerektiğinde başka uzmanlar da sürece katılır",
-				"when": "Hastanın rıza veremediği ya da yardımı reddettiği, tedavisiz kalmanın kendisi veya çevresi için tehlikeli olduğu yatışlar; böyle bir yatışın dayanağı ve süreleri kanunla belirlenir",
-				"prep": "Hastadan hazırlık beklenmez; yakınları belgeleri, önceki epikrizleri ve sürekli kullanılan ilaç listesini personele iletebilir",
-				"abnormal": "Değerlendirme hastanede tedavi gerekçesinin sürüp sürmediğine karar verir, durum belirlenen aralıklarla yeniden gözden geçirilir. Hastanın hakları ve itiraz yolu konusunda servis doktoru ile hastanenin sorumlu birimi bilgi verir"
-			}
-		}
-	},
-	{
-		"slug": "inpatient-abortion-procedure",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Прерывание беременности, которое выполняют в гинекологическом отделении",
-				"how": "После осмотра и УЗИ вмешательство проводят в операционной, обычно под внутривенным обезболиванием; содержимое матки удаляют вакуум-аспирацией или инструментами, затем несколько часов наблюдения",
-				"when": "Прерывание по желанию женщины в сроки, установленные законом, прерывание по медицинским показаниям, а также остановка развития беременности и неполный самопроизвольный выкидыш",
-				"prep": "Заранее сданные по назначению врача анализы и УЗИ, беседа и подписанное согласие, без еды и питья перед обезболиванием по указанию анестезиолога; взять документы, прокладки и сопровождающего для дороги домой",
-				"abnormal": "В первые дни обычны скудные кровянистые выделения и спазмы внизу живота; обильное кровотечение, повышенная температура, усиление боли или неприятный запах выделений — повод сразу обратиться к врачу. Контрольный осмотр и разговор о контрацепции назначает гинеколог"
-			},
-			"en": {
-				"what": "Termination of pregnancy carried out in a gynaecology ward",
-				"how": "After an examination and ultrasound the procedure is done in an operating room, usually under intravenous anaesthesia; the contents of the uterus are removed by vacuum aspiration or with instruments, followed by a few hours of observation",
-				"when": "Termination at the woman's request within the time limits set by law, termination on medical grounds, and also a pregnancy that has stopped developing and an incomplete spontaneous miscarriage",
-				"prep": "The tests and ultrasound ordered beforehand, a consultation and signed consent, no food or drink before anaesthesia as instructed by the anaesthetist; bring documents, sanitary pads and someone to accompany you home",
-				"abnormal": "Light bleeding and cramping in the lower abdomen are usual in the first days; heavy bleeding, fever, increasing pain or foul-smelling discharge are reasons to seek medical help at once. A follow-up visit and a talk about contraception are arranged by the gynaecologist"
-			},
-			"sr": {
-				"what": "Prekid trudnoće koji se izvodi na ginekološkom odjeljenju",
-				"how": "Nakon pregleda i ultrazvuka zahvat se radi u operacionoj sali, obično uz anesteziju u venu; sadržaj materice se uklanja vakuum aspiracijom ili instrumentima, a zatim slijedi nekoliko sati posmatranja",
-				"when": "Prekid na zahtjev žene u rokovima propisanim zakonom, prekid iz medicinskih razloga, kao i zastoj u razvoju trudnoće i nepotpun spontani pobačaj",
-				"prep": "Unaprijed urađene analize i ultrazvuk po nalogu ljekara, razgovor i potpisana saglasnost, bez jela i pića prije anestezije po uputstvu anesteziologa; ponijeti dokumenta, uloške i obezbijediti pratnju za povratak kući",
-				"abnormal": "Prvih dana su uobičajeni oskudno krvarenje i grčevi u donjem dijelu trbuha; obilno krvarenje, povišena temperatura, jačanje bola ili neprijatan miris iscjetka razlog su da se odmah javite ljekaru. Kontrolni pregled i razgovor o kontracepciji zakazuje ginekolog"
-			},
-			"de": {
-				"what": "Ein Schwangerschaftsabbruch, der auf einer gynäkologischen Station durchgeführt wird",
-				"how": "Nach Untersuchung und Ultraschall erfolgt der Eingriff im Operationsraum, meist in intravenöser Narkose; der Inhalt der Gebärmutter wird durch Vakuumaspiration oder mit Instrumenten entfernt, danach folgen einige Stunden Überwachung",
-				"when": "Abbruch auf Wunsch der Frau innerhalb der gesetzlich festgelegten Fristen, Abbruch aus medizinischen Gründen sowie eine nicht fortschreitende Schwangerschaft und eine unvollständige Fehlgeburt",
-				"prep": "Vorab die angeordneten Laborwerte und der Ultraschall, ein Aufklärungsgespräch und die unterschriebene Einwilligung, vor der Narkose nüchtern bleiben nach Vorgabe der Anästhesie; Unterlagen, Binden und eine Begleitung für den Heimweg mitbringen",
-				"abnormal": "In den ersten Tagen sind leichte Blutungen und Krämpfe im Unterbauch üblich; starke Blutung, Fieber, zunehmende Schmerzen oder übelriechender Ausfluss sind Gründe, sofort ärztliche Hilfe zu suchen. Die Kontrolluntersuchung und das Gespräch über Verhütung vereinbart die behandelnde Frauenärztin oder der Frauenarzt"
-			},
-			"tr": {
-				"what": "Kadın hastalıkları servisinde gerçekleştirilen gebelik sonlandırma işlemi",
-				"how": "Muayene ve ultrasondan sonra işlem ameliyathanede, çoğunlukla damardan verilen anestezi altında yapılır; rahim içeriği vakum aspirasyonu ya da aletle boşaltılır, ardından birkaç saat gözlem uygulanır",
-				"when": "Kanunda belirtilen süreler içinde kadının talebiyle sonlandırma, tıbbi nedenlerle sonlandırma, ayrıca gelişimi duran gebelik ve eksik düşük",
-				"prep": "Önceden istenen tahliller ve ultrason, bilgilendirme görüşmesi ve imzalı onam, anestezi öncesi hekimin söylediği süre boyunca aç kalmak; belgeler, ped ve eve dönüş için bir refakatçi gerekir",
-				"abnormal": "İlk günlerde az miktarda kanama ve karın alt bölgesinde kramp olağandır; yoğun kanama, ateş, artan ağrı ya da kötü kokulu akıntı halinde hemen hekime başvurulmalıdır. Kontrol muayenesi ve korunma yöntemleri görüşmesi kadın hastalıkları uzmanı tarafından planlanır"
-			}
-		}
-	},
-	{
-		"slug": "intensive-nursing-care-for-children-1-month-to-7-years",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Усиленный сестринский уход за ребёнком в тяжёлом или нестабильном состоянии, от грудного до дошкольного возраста",
-				"how": "Медсестра постоянно рядом: следит за дыханием, пульсом, температурой и мочеиспусканием, вводит назначенные лекарства и жидкости, кормит или помогает кормить, ухаживает за кожей, катетерами и зондами и ведёт почасовые записи; ребёнок такого возраста ещё не может описать свои ощущения, поэтому наблюдение опирается на измерения и поведение",
-				"when": "Потеря жидкости при частой рвоте, тяжёлая инфекция, затруднённое дыхание, состояние после операции или травмы, обострение тяжёлой хронической болезни",
-				"prep": "Подготовка не требуется; родителям стоит взять привычную бутылочку или чашку, сменную одежду и любимую игрушку и рассказать медсестре о привычках ребёнка в еде и сне",
-				"abnormal": "Объём ухода и его длительность зависят от того, как ребёнок отвечает на лечение, и пересматриваются каждый день. О любом изменении — отказе от питья, вялости, учащённом дыхании — сразу скажите медсестре или врачу"
-			},
-			"en": {
-				"what": "Enhanced nursing care for a child in a severe or unstable condition, from infancy to preschool age",
-				"how": "The nurse stays close by: watches breathing, pulse, temperature and urine output, gives the prescribed medicines and fluids, feeds the child or helps with feeding, cares for the skin, catheters and tubes and keeps hourly records; a child of this age cannot yet describe how they feel, so the watch relies on measurements and behaviour",
-				"when": "Loss of fluids with repeated vomiting, severe infection, breathing difficulty, the period after surgery or injury, a flare of a serious chronic illness",
-				"prep": "No preparation needed; parents should bring the familiar bottle or cup, a change of clothes and a favourite toy, and tell the nurse about the child's eating and sleeping habits",
-				"abnormal": "How much care is needed and for how long depends on the child's response to treatment and is reviewed every day. Tell the nurse or the doctor at once about any change, such as refusing to drink, unusual drowsiness or fast breathing"
-			},
-			"sr": {
-				"what": "Pojačana sestrinska njega djeteta u teškom ili nestabilnom stanju, od odojčadi do predškolskog uzrasta",
-				"how": "Medicinska sestra je stalno uz dijete: prati disanje, puls, temperaturu i mokrenje, daje propisane lijekove i tečnost, hrani ili pomaže pri hranjenju, njeguje kožu, katetere i sonde i vodi bilješke po satu; dijete ovog uzrasta još ne umije da opiše kako se osjeća, pa se nadzor oslanja na mjerenja i ponašanje",
-				"when": "Gubitak tečnosti uz učestalo povraćanje, teška infekcija, otežano disanje, stanje nakon operacije ili povrede, pogoršanje teške hronične bolesti",
-				"prep": "Priprema nije potrebna; roditelji neka ponesu uobičajenu flašicu ili čašu, rezervnu odjeću i omiljenu igračku i neka sestri opišu navike djeteta u jelu i spavanju",
-				"abnormal": "Obim i trajanje njege zavise od toga kako dijete odgovara na liječenje i procjenjuju se svakog dana. O svakoj promjeni, poput odbijanja tečnosti, pospanosti ili ubrzanog disanja, odmah obavijestite sestru ili ljekara"
-			},
-			"de": {
-				"what": "Verstärkte pflegerische Betreuung eines Kindes in schwerem oder instabilem Zustand, vom Säuglings- bis zum Vorschulalter",
-				"how": "Die Pflegekraft bleibt in unmittelbarer Nähe: überwacht Atmung, Puls, Temperatur und Urinausscheidung, verabreicht die angeordneten Medikamente und Flüssigkeiten, füttert oder hilft beim Füttern, versorgt Haut, Katheter und Sonden und dokumentiert stündlich; ein Kind in diesem Alter kann sein Befinden noch nicht schildern, deshalb stützt sich die Überwachung auf Messwerte und Verhalten",
-				"when": "Flüssigkeitsmangel bei wiederholtem Erbrechen, schwere Infektion, Atemprobleme, Zustand nach Operation oder Verletzung, Verschlechterung einer schweren chronischen Erkrankung",
-				"prep": "Keine Vorbereitung nötig; Eltern sollten die gewohnte Flasche oder Tasse, Wechselkleidung und ein Lieblingsspielzeug mitbringen und der Pflegekraft die Ess- und Schlafgewohnheiten des Kindes schildern",
-				"abnormal": "Umfang und Dauer der Betreuung hängen davon ab, wie das Kind auf die Behandlung anspricht, und werden täglich neu beurteilt. Jede Veränderung, etwa Trinkverweigerung, auffällige Schläfrigkeit oder schnelle Atmung, sofort der Pflegekraft oder dem Arzt melden"
-			},
-			"tr": {
-				"what": "Süt çocukluğundan okul öncesi yaşa kadar ağır ya da dengesiz durumdaki çocuğa verilen yoğunlaştırılmış hemşirelik bakımı",
-				"how": "Hemşire sürekli çocuğun yanındadır: solunumu, nabzı, ateşi ve idrar çıkışını izler, istenen ilaç ve sıvıları verir, besler ya da beslenmeye yardım eder, cildi, kateterleri ve sondaları bakımını yapar ve saatlik kayıt tutar; bu yaştaki çocuk ne hissettiğini henüz anlatamadığı için izlem ölçümlere ve davranışa dayanır",
-				"when": "Sık kusmaya eşlik eden sıvı kaybı, ağır enfeksiyon, solunum güçlüğü, ameliyat veya yaralanma sonrası dönem, ağır kronik hastalığın alevlenmesi",
-				"prep": "Hazırlık gerekmez; ailenin alışılmış biberon ya da bardağı, yedek kıyafet ve sevdiği oyuncağı getirmesi, çocuğun yeme ve uyku alışkanlıklarını hemşireye anlatması iyi olur",
-				"abnormal": "Bakımın kapsamı ve süresi çocuğun tedaviye verdiği yanıta bağlıdır ve her gün yeniden değerlendirilir. Sıvı almayı reddetme, aşırı uykuya meyil ya da hızlı nefes alma gibi her değişikliği hemen hemşireye veya doktora bildirin"
-			}
-		}
-	},
-	{
-		"slug": "loading-tests-for-suspected-renal-tubular-acidosis",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Функциональные пробы, проверяющие, как почки поддерживают кислотно-щелочное равновесие крови",
-				"how": "В дневном стационаре пациент принимает назначенное врачом средство, сдвигающее внутреннюю среду в кислую или щелочную сторону, после чего в течение нескольких часов несколько раз берут кровь и порции мочи с измерением pH",
-				"when": "Стойкое закисление крови без явной причины, отставание ребёнка в росте, повторное образование камней в почках, снижение плотности костей, низкий калий крови, уточнение формы ранее заподозренного канальцевого нарушения",
-				"prep": "Строго по инструкции нефролога: обычно приходят натощак, часть лекарств и добавок врач временно отменяет, на пробу нужно отвести несколько часов и не уходить из клиники между заборами",
-				"abnormal": "Результат показывает, насколько канальцы почек подкисляют мочу и удерживают бикарбонат; отклонение может быть связано с врождённой особенностью канальцев, другими болезнями почек или действием лекарств. Пробу трактует нефролог вместе с остальными анализами"
-			},
-			"en": {
-				"what": "Functional tests that check how the kidneys maintain the acid-base balance of the blood",
-				"how": "In a day unit the patient takes the agent prescribed by the doctor that shifts the body towards acid or alkali, after which blood and portions of urine are collected several times over a few hours and the pH is measured in them",
-				"when": "Persistent acidification of the blood without an obvious cause, poor growth in a child, repeated kidney stones, loss of bone density, low blood potassium, clarifying the form of a tubular disorder already suspected",
-				"prep": "Strictly as instructed by the nephrologist: usually fasting, some medicines and supplements are paused by the doctor, set aside several hours and stay in the clinic between the samples",
-				"abnormal": "The result shows how far the kidney tubules acidify the urine and retain bicarbonate; a deviation may be related to an inherited feature of the tubules, other kidney disease or the effect of medicines. The test is interpreted by a nephrologist together with the rest of the results"
-			},
-			"sr": {
-				"what": "Funkcionalni testovi koji provjeravaju kako bubrezi održavaju kiselo-bazni balans krvi",
-				"how": "U dnevnoj bolnici pacijent uzima sredstvo koje je ljekar odredio, a koje pomjera unutrašnju sredinu ka kiselom ili baznom, nakon čega se tokom nekoliko sati više puta uzimaju krv i porcije mokraće uz mjerenje pH",
-				"when": "Uporno zakišeljavanje krvi bez jasnog uzroka, zaostajanje djeteta u rastu, ponovljeno stvaranje kamenaca u bubrezima, gubitak gustine kostiju, nizak kalijum u krvi, razjašnjenje oblika ranije posumnjanog tubulskog poremećaja",
-				"prep": "Strogo po uputstvu nefrologa: obično se dolazi natašte, dio lijekova i dodataka ljekar privremeno obustavlja, za test treba odvojiti nekoliko sati i ne napuštati ustanovu između uzimanja uzoraka",
-				"abnormal": "Nalaz pokazuje koliko tubuli bubrega zakišeljavaju mokraću i zadržavaju bikarbonat; odstupanje može biti povezano sa urođenom osobinom tubula, drugim bolestima bubrega ili dejstvom lijekova. Test tumači nefrolog zajedno sa ostalim nalazima"
-			},
-			"de": {
-				"what": "Funktionstests, die prüfen, wie die Nieren das Säure-Basen-Gleichgewicht des Blutes aufrechterhalten",
-				"how": "In der Tagesklinik nimmt der Patient das vom Arzt angeordnete Mittel ein, das den Stoffwechsel in Richtung sauer oder basisch verschiebt; danach werden über mehrere Stunden mehrfach Blut und Urinportionen gewonnen und darin der pH gemessen",
-				"when": "Anhaltende Übersäuerung des Blutes ohne erkennbare Ursache, Wachstumsverzögerung beim Kind, wiederholte Nierensteine, Abnahme der Knochendichte, niedriges Kalium im Blut, Abklärung der Form einer bereits vermuteten Tubulusstörung",
-				"prep": "Streng nach Anweisung des Nephrologen: meist nüchtern erscheinen, einzelne Medikamente und Nahrungsergänzungen werden ärztlich pausiert, mehrere Stunden einplanen und zwischen den Abnahmen in der Einrichtung bleiben",
-				"abnormal": "Das Ergebnis zeigt, wie gut die Nierentubuli den Urin ansäuern und Bikarbonat zurückhalten; eine Abweichung kann mit einer angeborenen Besonderheit der Tubuli, anderen Nierenerkrankungen oder der Wirkung von Medikamenten zusammenhängen. Die Beurteilung nimmt der Nephrologe zusammen mit den übrigen Befunden vor"
-			},
-			"tr": {
-				"what": "Böbreklerin kanın asit-baz dengesini nasıl koruduğunu inceleyen işlevsel testler",
-				"how": "Günübirlik ünitede hasta, hekimin belirlediği ve vücudu aside ya da baza doğru kaydıran maddeyi alır; ardından birkaç saat boyunca birkaç kez kan ve idrar örnekleri alınarak bunlarda pH ölçülür",
-				"when": "Nedeni belirgin olmayan sürekli asitlenme, çocukta büyüme geriliği, tekrarlayan böbrek taşı, kemik yoğunluğunun azalması, kanda düşük potasyum, daha önce şüphelenilen tübüler bozukluğun tipinin netleştirilmesi",
-				"prep": "Kesinlikle nefrolog talimatına göre: genellikle aç gelinir, bazı ilaç ve takviyeler hekim tarafından geçici olarak bırakılır, teste birkaç saat ayrılmalı ve örnekler arasında kurumdan ayrılmamalıdır",
-				"abnormal": "Sonuç böbrek tübüllerinin idrarı ne ölçüde asitlendirdiğini ve bikarbonatı tuttuğunu gösterir; sapma tübüllerin doğuştan bir özelliğiyle, başka böbrek hastalıklarıyla ya da ilaç etkisiyle ilişkili olabilir. Testi diğer sonuçlarla birlikte nefrolog yorumlar"
-			}
-		}
-	},
-	{
-		"slug": "mri-pelvis",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Магнитно-резонансное исследование малого таза: мочевого пузыря, конечного отдела кишечника, предстательной железы или матки с яичниками, окружающих мышц и лимфатических узлов",
-				"how": "Пациент лежит на спине в туннеле томографа, над тазом размещают приёмную катушку; часть протоколов требует контраста в вену, иногда просят прийти с умеренно наполненным мочевым пузырём; обычно 30-45 минут",
-				"when": "Уточнение находок УЗИ, стойкая боль в тазу, эндометриоз и миомы, оценка свищей и воспалительных изменений конечного отдела кишечника, изменения предстательной железы, травма таза, наблюдение после лечения",
-				"prep": "Обычно просят несколько часов не есть и дают отдельные указания о питье; заранее сообщить о металле в теле, кардиостимуляторе, внутриматочной спирали и клаустрофобии, снять украшения и одежду с металлом, взять прежние снимки и выписки",
-				"abnormal": "Снимок может показать воспаление, кисты, узлы, спайки, свищи или объёмное образование, а часть находок лечения не требует. Заключение рентгенолога вместе с осмотром и анализами оценивает лечащий врач"
-			},
-			"en": {
-				"what": "A magnetic resonance study of the lesser pelvis: the bladder, the final part of the bowel, the prostate or the uterus and ovaries, the surrounding muscles and lymph nodes",
-				"how": "The patient lies on their back inside the scanner tunnel with a coil placed over the pelvis; some protocols require contrast into a vein and sometimes a moderately full bladder is requested; it usually takes 30-45 minutes",
-				"when": "Clarifying ultrasound findings, persistent pelvic pain, endometriosis and fibroids, assessment of fistulas and inflammatory changes of the final part of the bowel, changes in the prostate, pelvic injury, follow-up after treatment",
-				"prep": "You are usually asked not to eat for a few hours and given separate instructions about drinking; report in advance any metal in the body, a pacemaker, an intrauterine device and claustrophobia, remove jewellery and clothes with metal, bring previous images and reports",
-				"abnormal": "The scan may show inflammation, cysts, nodes, adhesions, fistulas or a mass, and some findings need no treatment. The radiologist's report is assessed together with the examination and tests by the attending doctor"
-			},
-			"sr": {
-				"what": "Pregled male karlice magnetnom rezonancom: mokraćne bešike, završnog dijela crijeva, prostate ili materice i jajnika, okolnih mišića i limfnih čvorova",
-				"how": "Pacijent leži na leđima u tunelu aparata, iznad karlice se postavlja prijemni kalem; dio protokola traži kontrast u venu, a ponekad se traži umjereno puna bešika; obično traje 30-45 minuta",
-				"when": "Razjašnjenje nalaza ultrazvuka, uporan bol u karlici, endometrioza i miomi, procjena fistula i upalnih promjena završnog dijela crijeva, promjene na prostati, povreda karlice, praćenje nakon liječenja",
-				"prep": "Obično se traži da se nekoliko sati ne jede, uz posebno uputstvo o pijenju; unaprijed prijaviti metal u tijelu, pejsmejker, spiralu i klaustrofobiju, skinuti nakit i odjeću sa metalom, ponijeti ranije snimke i nalaze",
-				"abnormal": "Snimak može pokazati upalu, ciste, čvorove, priraslice, fistule ili tvorbu, a dio nalaza ne traži liječenje. Zaključak radiologa, uz pregled i analize, procjenjuje ljekar koji vodi liječenje"
-			},
-			"de": {
-				"what": "Eine Magnetresonanzuntersuchung des kleinen Beckens: Harnblase, Enddarm, Prostata oder Gebärmutter und Eierstöcke sowie die umgebenden Muskeln und Lymphknoten",
-				"how": "Der Patient liegt auf dem Rücken in der Röhre, über dem Becken wird eine Empfangsspule platziert; manche Protokolle erfordern Kontrastmittel über die Vene, teils wird eine mäßig gefüllte Blase gewünscht; die Untersuchung dauert meist 30-45 Minuten",
-				"when": "Abklärung von Ultraschallbefunden, anhaltende Beckenschmerzen, Endometriose und Myome, Beurteilung von Fisteln und entzündlichen Veränderungen des Enddarms, Veränderungen der Prostata, Beckenverletzung, Verlaufskontrolle nach Behandlung",
-				"prep": "Meist wird gebeten, einige Stunden nichts zu essen, zum Trinken gibt es eine eigene Anweisung; Metall im Körper, Herzschrittmacher, Spirale und Klaustrophobie vorab melden, Schmuck und Kleidung mit Metall ablegen, frühere Bilder und Befunde mitbringen",
-				"abnormal": "Die Aufnahme kann Entzündungen, Zysten, Knoten, Verwachsungen, Fisteln oder eine Raumforderung zeigen, ein Teil der Befunde bedarf keiner Behandlung. Den Befund des Radiologen ordnet der behandelnde Arzt zusammen mit Untersuchung und Laborwerten ein"
-			},
-			"tr": {
-				"what": "Küçük pelvisin manyetik rezonans incelemesi: idrar kesesi, bağırsağın son bölümü, prostat ya da rahim ve yumurtalıklar, çevre kaslar ve lenf düğümleri",
-				"how": "Hasta sırtüstü cihazın tünelinde yatar, pelvis üzerine alıcı sargı yerleştirilir; bazı protokoller damardan kontrast gerektirir, kimi zaman idrar kesesinin ılımlı dolu olması istenir; genellikle 30-45 dakika sürer",
-				"when": "Ultrason bulgularının netleştirilmesi, geçmeyen pelvik ağrı, endometriozis ve miyomlar, fistüllerin ve bağırsağın son bölümündeki iltihabi değişikliklerin değerlendirilmesi, prostattaki değişiklikler, pelvis yaralanması, tedavi sonrası izlem",
-				"prep": "Genellikle birkaç saat aç kalmanız istenir, su içme konusunda ayrı talimat verilir; vücuttaki metal, kalp pili, rahim içi araç ve kapalı yer korkusu önceden bildirilmeli, takılar ve metal içeren giysiler çıkarılmalı, önceki görüntü ve raporlar getirilmelidir",
-				"abnormal": "Görüntü iltihap, kist, nodül, yapışıklık, fistül ya da kitle gösterebilir, bulguların bir kısmı tedavi gerektirmez. Radyoloğun raporunu muayene ve tahlillerle birlikte tedaviyi yürüten hekim değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "newborn-discharge",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Заключительный осмотр новорождённого и оформление документов перед уходом из роддома или детского отделения",
-				"how": "Неонатолог полностью осматривает ребёнка, взвешивает его, оценивает желтушность кожи, пупок, кормление и прибавку, проверяет, выполнены ли скрининги и прививки, затем объясняет родителям уход дома и передаёт выписное письмо",
-				"when": "Завершение пребывания после родов или после лечения в детском отделении, передача под наблюдение выбранного педиатра",
-				"prep": "Подготовка не требуется; родителям нужны документы, одежда и автокресло для дороги домой, а вопросы полезно записать заранее",
-				"abnormal": "В выписном письме указано, на что обращать внимание дома: желтушность, вялость, отказ от груди, температура, состояние пупка. При их появлении нужно обратиться к педиатру, а первый плановый осмотр назначают в ближайшие дни после выписки"
-			},
-			"en": {
-				"what": "The final check of a newborn and the paperwork before leaving the maternity or paediatric ward",
-				"how": "The neonatologist examines the baby fully, weighs it, looks at the yellow colour of the skin, the navel, feeding and weight gain, checks that the screening tests and vaccinations have been done, then explains home care to the parents and hands over the discharge letter",
-				"when": "The end of the stay after birth or after treatment in a paediatric ward, handover to the care of the chosen paediatrician",
-				"prep": "No preparation needed; parents need documents, clothes and a car seat for the trip home, and it helps to write the questions down in advance",
-				"abnormal": "The discharge letter says what to watch for at home: yellow skin, drowsiness, refusing the breast, fever, the state of the navel. If these appear, contact a paediatrician; the first routine check is scheduled within the days after discharge"
-			},
-			"sr": {
-				"what": "Završni pregled novorođenčeta i papirologija prije odlaska iz porodilišta ili sa dječjeg odjeljenja",
-				"how": "Neonatolog u cjelini pregleda bebu, mjeri težinu, procjenjuje žutu boju kože, pupak, hranjenje i napredovanje, provjerava da li su urađeni skrininzi i vakcine, zatim roditeljima objašnjava njegu kod kuće i predaje otpusno pismo",
-				"when": "Kraj boravka poslije porođaja ili poslije liječenja na dječjem odjeljenju, predaja na praćenje izabranom pedijatru",
-				"prep": "Priprema nije potrebna; roditeljima trebaju dokumenta, odjeća i auto-sjedište za put kući, a korisno je unaprijed zapisati pitanja",
-				"abnormal": "U otpusnom pismu piše na šta treba paziti kod kuće: žutica, pospanost, odbijanje dojke, temperatura, stanje pupka. Ako se to pojavi, javite se pedijatru, a prvi redovni pregled se zakazuje u danima nakon otpusta"
-			},
-			"de": {
-				"what": "Die abschließende Untersuchung des Neugeborenen und die Unterlagen vor dem Verlassen der Geburts- oder Kinderstation",
-				"how": "Der Neonatologe untersucht das Kind vollständig, wiegt es, beurteilt die Gelbfärbung der Haut, den Nabel, das Trinken und die Gewichtszunahme, prüft Screening und Impfungen, erklärt den Eltern die Pflege zu Hause und übergibt den Entlassungsbericht",
-				"when": "Ende des Aufenthalts nach der Geburt oder nach einer Behandlung auf der Kinderstation, Übergabe in die Betreuung durch den gewählten Kinderarzt",
-				"prep": "Keine Vorbereitung nötig; Eltern brauchen Unterlagen, Kleidung und einen Autositz für den Heimweg, Fragen notiert man am besten vorher",
-				"abnormal": "Im Entlassungsbericht steht, worauf zu Hause zu achten ist: Gelbfärbung, auffällige Schläfrigkeit, Trinkverweigerung, Fieber, Zustand des Nabels. Treten diese auf, sollte der Kinderarzt aufgesucht werden; die erste reguläre Kontrolle wird in den Tagen nach der Entlassung vereinbart"
-			},
-			"tr": {
-				"what": "Yenidoğanın doğumhane ya da çocuk servisinden ayrılmadan önceki son muayenesi ve belgelerin hazırlanması",
-				"how": "Yenidoğan uzmanı bebeği baştan ayağa muayene eder, tartar, cildin sarı rengini, göbeği, beslenmeyi ve kilo alımını değerlendirir, tarama testleri ile aşıların yapıldığını kontrol eder, ardından aileye ev bakımını anlatır ve epikrizi teslim eder",
-				"when": "Doğum sonrası ya da çocuk servisindeki tedavi sonrası yatışın sonlanması, izlemin seçilen çocuk doktoruna devri",
-				"prep": "Hazırlık gerekmez; ailenin belgeler, kıyafet ve eve dönüş için oto koltuğu getirmesi, sorularını önceden not etmesi iyi olur",
-				"abnormal": "Epikrizde evde nelere dikkat edileceği yazar: sarılık, aşırı uykululuk, memeyi reddetme, ateş, göbek bölgesinin durumu. Bunlar görülürse çocuk doktoruna başvurulmalı, ilk rutin kontrol ise taburculuğu izleyen günlere planlanır"
-			}
-		}
-	},
-	{
-		"slug": "newborn-initial-hospital-workup",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Первый подробный осмотр новорождённого после рождения или при поступлении в детское отделение",
-				"how": "Неонатолог измеряет вес, длину и окружность головы, осматривает кожу, роднички, глаза, нёбо, сердце, лёгкие, живот, половые органы и тазобедренные суставы, проверяет рефлексы и дыхание и разбирает течение беременности и родов",
-				"when": "Первые часы после рождения, поступление новорождённого в больницу, перевод из родильного зала или из другого учреждения",
-				"prep": "Подготовки нет; важно, чтобы у персонала были сведения о беременности, родах, группе крови матери и её анализах",
-				"abnormal": "Осмотр показывает, нужны ли дополнительные исследования, наблюдение или лечение; многие особенности новорождённого временные и проходят сами. Что означают находки, объясняет неонатолог"
-			},
-			"en": {
-				"what": "The first detailed examination of a newborn after birth or on admission to a paediatric ward",
-				"how": "The neonatologist measures weight, length and head circumference, examines the skin, fontanelles, eyes, palate, heart, lungs, abdomen, genitals and hips, checks reflexes and breathing and goes through the course of the pregnancy and the birth",
-				"when": "The first hours after birth, admission of a newborn to hospital, transfer from the delivery room or from another facility",
-				"prep": "No preparation; it matters that the staff have the information about the pregnancy, the birth, the mother's blood group and her results",
-				"abnormal": "The examination shows whether further tests, observation or treatment are needed; many features of a newborn are temporary and resolve on their own. What the findings mean is explained by the neonatologist"
-			},
-			"sr": {
-				"what": "Prvi detaljan pregled novorođenčeta nakon rođenja ili pri prijemu na dječje odjeljenje",
-				"how": "Neonatolog mjeri težinu, dužinu i obim glave, pregleda kožu, fontanele, oči, nepce, srce, pluća, stomak, genitalije i kukove, provjerava reflekse i disanje i prolazi kroz tok trudnoće i porođaja",
-				"when": "Prvi sati nakon rođenja, prijem novorođenčeta u bolnicu, premještaj iz porođajne sale ili iz druge ustanove",
-				"prep": "Priprema ne postoji; važno je da osoblje ima podatke o trudnoći, porođaju, krvnoj grupi majke i njenim nalazima",
-				"abnormal": "Pregled pokazuje da li su potrebni dodatna ispitivanja, nadzor ili liječenje; mnoge osobine novorođenčeta su prolazne i same se povuku. Šta nalaz znači objašnjava neonatolog"
-			},
-			"de": {
-				"what": "Die erste ausführliche Untersuchung eines Neugeborenen nach der Geburt oder bei Aufnahme auf eine Kinderstation",
-				"how": "Der Neonatologe misst Gewicht, Länge und Kopfumfang, untersucht Haut, Fontanellen, Augen, Gaumen, Herz, Lunge, Bauch, Genitale und Hüften, prüft Reflexe und Atmung und geht den Verlauf von Schwangerschaft und Geburt durch",
-				"when": "Die ersten Stunden nach der Geburt, Aufnahme eines Neugeborenen in die Klinik, Verlegung aus dem Kreißsaal oder aus einer anderen Einrichtung",
-				"prep": "Keine Vorbereitung; wichtig ist, dass dem Personal die Angaben zu Schwangerschaft, Geburt, Blutgruppe der Mutter und ihren Befunden vorliegen",
-				"abnormal": "Die Untersuchung zeigt, ob weitere Diagnostik, Überwachung oder Behandlung nötig sind; viele Besonderheiten eines Neugeborenen sind vorübergehend und bilden sich von selbst zurück. Was die Befunde bedeuten, erklärt der Neonatologe"
-			},
-			"tr": {
-				"what": "Yenidoğanın doğumdan sonra ya da çocuk servisine kabulünde yapılan ilk ayrıntılı muayenesi",
-				"how": "Yenidoğan uzmanı kiloyu, boyu ve baş çevresini ölçer; cildi, bıngıldakları, gözleri, damağı, kalbi, akciğerleri, karnı, genital bölgeyi ve kalçaları muayene eder, refleksleri ve solunumu değerlendirir, gebelik ve doğumun seyrini gözden geçirir",
-				"when": "Doğumdan sonraki ilk saatler, yenidoğanın hastaneye kabulü, doğum salonundan ya da başka kurumdan nakil",
-				"prep": "Hazırlık yoktur; personelin gebelik, doğum, annenin kan grubu ve tahlil sonuçlarına ilişkin bilgilere sahip olması önemlidir",
-				"abnormal": "Muayene ek tetkik, izlem ya da tedavi gerekip gerekmediğini gösterir; yenidoğana özgü pek çok bulgu geçicidir ve kendiliğinden kaybolur. Bulguların anlamını yenidoğan uzmanı açıklar"
-			}
-		}
-	},
-	{
-		"slug": "newborn-standard-nursing-care",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Повседневный сестринский уход за здоровым новорождённым в отделении",
-				"how": "Медсестра купает и переодевает ребёнка, ухаживает за пупком, взвешивает его, измеряет температуру, следит за мочеиспусканием и стулом, помогает матери приложить ребёнка к груди и показывает, как его держать и пеленать",
-				"when": "Пребывание здорового новорождённого вместе с матерью после родов, а также дети, которым не нужны усиленное наблюдение и интенсивный уход",
-				"prep": "Подготовка не требуется; полезно взять пелёнки и одежду по правилам отделения и заранее спросить о совместном пребывании с ребёнком",
-				"abnormal": "Цель ухода в том, чтобы ребёнок хорошо сосал, держал температуру и прибавлял в весе. О желтушности, вялости, частых срыгиваниях или трудностях с кормлением медсестра сообщает врачу, и тогда врач меняет объём наблюдения"
-			},
-			"en": {
-				"what": "Everyday nursing care for a healthy newborn on the ward",
-				"how": "The nurse bathes and changes the baby, cares for the navel, weighs it, measures the temperature, follows urine and stools, helps the mother put the baby to the breast and shows how to hold and swaddle it",
-				"when": "The stay of a healthy newborn with the mother after birth, and babies who do not need closer monitoring or intensive care",
-				"prep": "No preparation needed; it helps to bring nappies and clothes according to the ward's rules and to ask in advance about staying in the same room as the baby",
-				"abnormal": "The aim of this care is that the baby feeds well, keeps its temperature and gains weight. The nurse reports yellow skin, drowsiness, frequent spitting up or feeding difficulties to the doctor, who then changes the level of monitoring"
-			},
-			"sr": {
-				"what": "Svakodnevna sestrinska njega zdravog novorođenčeta na odjeljenju",
-				"how": "Medicinska sestra kupa i presvlači bebu, njeguje pupak, mjeri težinu i temperaturu, prati mokrenje i stolicu, pomaže majci da stavi bebu na dojku i pokazuje kako se beba drži i povija",
-				"when": "Boravak zdravog novorođenčeta uz majku nakon porođaja, kao i bebe kojima nisu potrebni pojačan nadzor i intenzivna njega",
-				"prep": "Priprema nije potrebna; korisno je ponijeti pelene i odjeću po pravilima odjeljenja i unaprijed pitati o zajedničkom boravku sa bebom",
-				"abnormal": "Cilj njege je da beba dobro sisa, održava temperaturu i napreduje u težini. Sestra ljekaru prijavljuje žuticu, pospanost, učestalo vraćanje mlijeka ili teškoće pri hranjenju, a ljekar tada mijenja obim nadzora"
-			},
-			"de": {
-				"what": "Die tägliche pflegerische Versorgung eines gesunden Neugeborenen auf der Station",
-				"how": "Die Pflegekraft badet und wickelt das Kind, versorgt den Nabel, wiegt es, misst die Temperatur, achtet auf Urin und Stuhl, hilft der Mutter beim Anlegen an die Brust und zeigt die Handgriffe",
-				"when": "Aufenthalt eines gesunden Neugeborenen bei der Mutter nach der Geburt sowie Kinder, die keine verstärkte Überwachung und keine Intensivpflege brauchen",
-				"prep": "Keine Vorbereitung nötig; Windeln und Kleidung nach den Regeln der Station mitbringen und vorab nach der gemeinsamen Unterbringung mit dem Kind fragen",
-				"abnormal": "Ziel der Pflege ist, dass das Kind gut trinkt, die Temperatur hält und zunimmt. Gelbfärbung, auffällige Schläfrigkeit, häufiges Spucken oder Trinkprobleme meldet die Pflegekraft dem Arzt, der daraufhin den Umfang der Überwachung ändert"
-			},
-			"tr": {
-				"what": "Serviste sağlıklı yenidoğana verilen günlük hemşirelik bakımı",
-				"how": "Hemşire bebeği yıkar ve giydirir, göbek bakımını yapar, tartar, ateşini ölçer, idrar ve dışkıyı izler, annenin bebeği memeye yerleştirmesine yardım eder ve bebeğin nasıl tutulup kundaklanacağını gösterir",
-				"when": "Doğum sonrası sağlıklı yenidoğanın anneyle birlikte kalması ve yakın izlem ile yoğun bakım gerektirmeyen bebekler",
-				"prep": "Hazırlık gerekmez; servisin kurallarına uygun bez ve kıyafet getirmek ve bebekle aynı odada kalma imkânını önceden sormak faydalıdır",
-				"abnormal": "Bakımın amacı bebeğin iyi emmesi, vücut ısısını koruması ve kilo almasıdır. Hemşire sarılığı, aşırı uykululuğu, sık çıkarmayı ya da beslenme güçlüğünü doktora bildirir, izlem düzeyini doktor değiştirir"
-			}
-		}
-	},
-	{
-		"slug": "non-medical-bed-day-cost-general-and-special-hospitals",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Бытовая сторона суток, проведённых в больничной палате: койка, питание, бельё и круглосуточно присутствующий персонал",
-				"how": "Пациента размещают в палате отделения, он получает еду по назначенной диете и расписанию, чистое бельё и помощь в гигиене, сестринский пост работает днём и ночью, утром проходит врачебный обход, а время посещений устанавливает больница",
-				"when": "Лечение или наблюдение, которое невозможно провести амбулаторно: период после операции, обострение болезни, терапия в вену, обследования, требующие постоянного присмотра",
-				"prep": "Взять документы, предметы гигиены, тапочки и сменную одежду, список постоянных лекарств и прежние выписки; ценные вещи оставить дома",
-				"abnormal": "Сколько продлится пребывание, решает лечащий врач по состоянию, и этот срок может меняться. Об ухудшении, боли или трудностях с едой сразу скажите медсестре, а после выписки держитесь выписного письма"
-			},
-			"en": {
-				"what": "The everyday side of a day spent in a hospital room: the bed, meals, linen and staff present around the clock",
-				"how": "The patient is placed in a room on the ward, receives meals on the prescribed diet and schedule, clean linen and help with hygiene, the nursing station works day and night, the doctors' round takes place in the morning and visiting times are set by the hospital",
-				"when": "Treatment or observation that cannot be done as an outpatient: the period after surgery, a flare of an illness, therapy into a vein, examinations that need constant supervision",
-				"prep": "Bring documents, toiletries, slippers and a change of clothes, a list of your regular medicines and previous discharge letters; leave valuables at home",
-				"abnormal": "How long the stay lasts is decided by the attending doctor according to your condition and that period may change. Tell the nurse at once about worsening, pain or problems with eating, and after discharge follow the discharge letter"
-			},
-			"sr": {
-				"what": "Svakodnevna strana jednog dana provedenog u bolničkoj sobi: krevet, ishrana, posteljina i osoblje prisutno danonoćno",
-				"how": "Pacijent je smješten u sobi na odjeljenju, dobija obroke po propisanoj dijeti i rasporedu, čistu posteljinu i pomoć pri higijeni, sestrinski punkt radi danju i noću, ujutru je ljekarska vizita, a vrijeme posjeta određuje bolnica",
-				"when": "Liječenje ili nadzor koji se ne mogu sprovesti ambulantno: period nakon operacije, pogoršanje bolesti, terapija u venu, ispitivanja koja traže stalni nadzor",
-				"prep": "Ponijeti dokumenta, pribor za higijenu, papuče i rezervnu odjeću, spisak stalnih lijekova i ranija otpusna pisma; vrijedne stvari ostaviti kod kuće",
-				"abnormal": "Koliko će boravak trajati odlučuje ljekar koji vodi liječenje prema stanju, a taj rok se može mijenjati. O pogoršanju, bolu ili teškoćama sa ishranom odmah recite sestri, a nakon otpusta se držite otpusnog pisma"
-			},
-			"de": {
-				"what": "Die alltägliche Seite eines Tages im Krankenzimmer: Bett, Verpflegung, Wäsche und rund um die Uhr anwesendes Personal",
-				"how": "Der Patient liegt in einem Zimmer der Station, erhält Mahlzeiten nach verordneter Kost und festem Zeitplan, frische Wäsche und Hilfe bei der Körperpflege, der Pflegestützpunkt ist Tag und Nacht besetzt, morgens findet die Visite statt, die Besuchszeiten legt das Krankenhaus fest",
-				"when": "Behandlung oder Überwachung, die ambulant nicht möglich ist: Zeit nach einer Operation, Verschlechterung einer Erkrankung, Therapie über die Vene, Untersuchungen unter ständiger Aufsicht",
-				"prep": "Unterlagen, Hygieneartikel, Hausschuhe und Wechselkleidung, eine Liste der Dauermedikation und frühere Entlassungsberichte mitbringen; Wertsachen zu Hause lassen",
-				"abnormal": "Wie lange der Aufenthalt dauert, entscheidet der behandelnde Arzt nach dem Zustand, und dieser Zeitraum kann sich ändern. Verschlechterung, Schmerzen oder Probleme beim Essen sofort der Pflegekraft mitteilen und sich nach der Entlassung an den Entlassungsbericht halten"
-			},
-			"tr": {
-				"what": "Hastane odasında geçirilen bir günün gündelik yanı: yatak, yemek, çamaşır ve gece gündüz bulunan personel",
-				"how": "Hasta serviste bir odaya yerleştirilir, verilen diyet ve saatlere göre yemek, temiz çamaşır ve hijyen desteği alır, hemşire noktası gece gündüz çalışır, sabah doktor viziti yapılır, ziyaret saatlerini hastane belirler",
-				"when": "Ayaktan yapılamayan tedavi veya izlem: ameliyat sonrası dönem, hastalığın alevlenmesi, damardan tedavi, sürekli gözetim gerektiren tetkikler",
-				"prep": "Belgeler, kişisel temizlik malzemeleri, terlik ve yedek kıyafet, sürekli kullanılan ilaçların listesi ve önceki epikrizler getirilmeli; değerli eşyalar evde bırakılmalıdır",
-				"abnormal": "Yatışın ne kadar süreceğine duruma göre tedaviyi yürüten doktor karar verir ve bu süre değişebilir. Kötüleşme, ağrı ya da beslenme güçlüğünü hemen hemşireye söyleyin, taburculuktan sonra epikrizdeki talimatları izleyin"
-			}
-		}
-	},
-	{
-		"slug": "non-medical-bed-day-cost-intensive-coronary-and-neonatal",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Бытовая сторона суток в реанимации, кардиоблоке или отделении новорождённых, где персонал постоянно находится рядом с пациентом",
-				"how": "Пациент лежит в палате с мониторами, кормление и гигиену полностью берёт на себя персонал, посещения ограничены по времени и числу людей, личных вещей в палате минимум; в неонатологии мать может сцеживать молоко и быть рядом с ребёнком по правилам отделения",
-				"when": "Нестабильное состояние, потребность в постоянном наблюдении за дыханием и кровообращением, первые сутки после большой операции, тяжело больной или недоношенный новорождённый",
-				"prep": "Сам пациент не готовится; родственникам стоит заранее уточнить время и правила посещений и передать персоналу список лекарств и контактный телефон",
-				"abnormal": "Перевод в обычную палату происходит, когда состояние становится стабильным, и срок заранее не известен. Сведения о состоянии даёт врач отделения в установленное время"
-			},
-			"en": {
-				"what": "The everyday side of a day in intensive care, a coronary unit or a neonatal unit, where staff stay beside the patient at all times",
-				"how": "The patient lies in a room with monitors, feeding and hygiene are taken over entirely by the staff, visits are limited in time and in the number of people, personal belongings in the room are kept to a minimum; in neonatology the mother can express milk and be with the baby according to the unit's rules",
-				"when": "An unstable condition, the need for constant monitoring of breathing and circulation, the first days after major surgery, a seriously ill or preterm newborn",
-				"prep": "The patient does not prepare; relatives should check the visiting hours and rules in advance and give the staff the list of medicines and a contact phone number",
-				"abnormal": "Transfer to a regular room happens once the condition becomes stable, and the timing is not known in advance. Information about the condition is given by the doctor of the unit at set times"
-			},
-			"sr": {
-				"what": "Svakodnevna strana jednog dana u intenzivnoj njezi, koronarnoj jedinici ili na neonatologiji, gdje je osoblje stalno uz pacijenta",
-				"how": "Pacijent leži u sobi sa monitorima, ishranu i higijenu u potpunosti preuzima osoblje, posjete su ograničene po trajanju i broju ljudi, ličnih stvari u sobi ima najmanje moguće; na neonatologiji majka može izdajati mlijeko i boraviti uz bebu po pravilima jedinice",
-				"when": "Nestabilno stanje, potreba za stalnim praćenjem disanja i krvotoka, prvi dani poslije velike operacije, teško bolesno ili prijevremeno rođeno novorođenče",
-				"prep": "Pacijent se ne priprema; porodica neka unaprijed provjeri vrijeme i pravila posjeta i osoblju preda spisak lijekova i kontakt telefon",
-				"abnormal": "Premještaj u običnu sobu slijedi kada se stanje stabilizuje, a rok se unaprijed ne zna. Informacije o stanju daje ljekar jedinice u određeno vrijeme"
-			},
-			"de": {
-				"what": "Die alltägliche Seite eines Tages auf der Intensivstation, in der Koronareinheit oder auf der Neugeborenenstation, wo das Personal ständig beim Patienten ist",
-				"how": "Der Patient liegt in einem Zimmer mit Monitoren, Ernährung und Körperpflege übernimmt vollständig das Personal, Besuche sind nach Dauer und Personenzahl begrenzt, persönliche Dinge im Zimmer bleiben auf ein Minimum beschränkt; in der Neonatologie kann die Mutter Milch abpumpen und nach den Regeln der Einheit beim Kind sein",
-				"when": "Instabiler Zustand, Bedarf an ständiger Überwachung von Atmung und Kreislauf, die ersten Tage nach einer großen Operation, ein schwer krankes oder zu früh geborenes Neugeborenes",
-				"prep": "Der Patient bereitet sich nicht vor; Angehörige sollten Besuchszeiten und Regeln vorab erfragen und dem Personal die Medikamentenliste und eine Telefonnummer übergeben",
-				"abnormal": "Die Verlegung auf eine normale Station erfolgt, sobald der Zustand stabil ist; der Zeitpunkt lässt sich vorab nicht sagen. Auskunft über den Zustand gibt der zuständige Arzt der Einheit zu festgelegten Zeiten"
-			},
-			"tr": {
-				"what": "Personelin sürekli hastanın yanında bulunduğu yoğun bakım, koroner ünite ya da yenidoğan ünitesinde geçen bir günün gündelik yanı",
-				"how": "Hasta monitörlerin bulunduğu bir odada yatar, beslenme ve hijyeni tamamen personel üstlenir, ziyaretler süre ve kişi sayısı bakımından sınırlıdır, odadaki kişisel eşya en aza indirilir; yenidoğan ünitesinde anne süt sağabilir ve ünitenin kurallarına göre bebeğinin yanında kalabilir",
-				"when": "Dengesiz durum, solunum ve dolaşımın sürekli izlenmesi ihtiyacı, büyük ameliyat sonrası ilk günler, ağır hasta ya da erken doğmuş yenidoğan",
-				"prep": "Hastanın hazırlığı olmaz; yakınları ziyaret saatlerini ve kurallarını önceden öğrenmeli, ilaç listesini ve bir iletişim numarasını personele vermelidir",
-				"abnormal": "Normal odaya nakil durum dengelendiğinde yapılır ve zamanı önceden bilinemez. Hastanın durumu hakkında bilgiyi ünitenin sorumlu hekimi belirlenen saatlerde verir"
-			}
-		}
-	},
-	{
-		"slug": "nursing-care-discharge-letter",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Документ, который медсестра оформляет при выписке: что было сделано по уходу и что нужно продолжать дома",
-				"how": "В конце госпитализации медсестра записывает состояние кожи и ран, подвижность, питание и глотание, работу кишечника и мочевого пузыря, катетеры и стомы, сделанные перевязки и обучение близких, после чего передаёт документ пациенту или патронажной службе",
-				"when": "Выписка после долгого лечения, выписка пациента с раной, стомой, катетером или пролежнями, перевод в другое учреждение или передача патронажной медсестре, выписка лежачего пациента",
-				"prep": "Подготовка не нужна; заранее скажите медсестре, кто будет ухаживать за пациентом дома, и спросите, какие материалы и приспособления понадобятся",
-				"abnormal": "Записи показывают, какой уход предстоит дальше и чему нужно научить домашних. Если рана начинает мокнуть, кожа краснеет или появляются температура и боль, нужно обратиться к врачу или патронажной медсестре"
-			},
-			"en": {
-				"what": "A document the nurse prepares at discharge: what was done in terms of care and what has to be continued at home",
-				"how": "At the end of the stay the nurse records the state of the skin and wounds, mobility, eating and swallowing, bowel and bladder function, catheters and stomas, the dressings performed and the training given to relatives, then hands the document to the patient or to the home-care service",
-				"when": "Discharge after long treatment, discharge of a patient with a wound, a stoma, a catheter or pressure sores, transfer to another facility or handover to a community nurse, discharge of a bedbound patient",
-				"prep": "No preparation needed; tell the nurse in advance who will look after the patient at home and ask which supplies and aids will be needed",
-				"abnormal": "The notes show what care comes next and what the household has to be taught. If a wound starts to leak, the skin turns red or fever and pain appear, contact a doctor or the community nurse"
-			},
-			"sr": {
-				"what": "Dokument koji medicinska sestra piše pri otpustu: šta je urađeno u njezi i šta treba nastaviti kod kuće",
-				"how": "Na kraju boravka sestra upisuje stanje kože i rana, pokretljivost, ishranu i gutanje, rad crijeva i mokraćne bešike, katetere i stome, urađena previjanja i obuku porodice, pa dokument predaje pacijentu ili patronažnoj službi",
-				"when": "Otpust nakon dugog liječenja, otpust pacijenta sa ranom, stomom, kateterom ili dekubitusom, premještaj u drugu ustanovu ili predaja patronažnoj sestri, otpust nepokretnog pacijenta",
-				"prep": "Priprema nije potrebna; unaprijed recite sestri ko će brinuti o pacijentu kod kuće i pitajte koji materijal i pomagala su potrebni",
-				"abnormal": "Zapisi pokazuju kakva njega slijedi i čemu treba obučiti ukućane. Ako rana počne da curi, koža pocrveni ili se jave temperatura i bol, treba se javiti ljekaru ili patronažnoj sestri"
-			},
-			"de": {
-				"what": "Ein Dokument, das die Pflegekraft bei der Entlassung erstellt: was pflegerisch getan wurde und was zu Hause fortgesetzt werden muss",
-				"how": "Am Ende des Aufenthalts hält die Pflegekraft den Zustand von Haut und Wunden, die Beweglichkeit, Ernährung und Schlucken, Darm- und Blasenfunktion, Katheter und Stomata, durchgeführte Verbandwechsel und die Anleitung der Angehörigen fest und übergibt das Dokument dem Patienten oder dem Pflegedienst",
-				"when": "Entlassung nach langer Behandlung, Entlassung mit Wunde, Stoma, Katheter oder Druckgeschwüren, Verlegung in eine andere Einrichtung oder Übergabe an die ambulante Pflege, Entlassung eines bettlägerigen Patienten",
-				"prep": "Keine Vorbereitung nötig; vorab mitteilen, wer zu Hause pflegt, und erfragen, welche Materialien und Hilfsmittel nötig sind",
-				"abnormal": "Die Aufzeichnungen zeigen, welche Pflege als Nächstes nötig ist und was die Angehörigen lernen müssen. Nässt die Wunde, rötet sich die Haut oder treten Fieber und Schmerzen auf, sollte ein Arzt oder der Pflegedienst kontaktiert werden"
-			},
-			"tr": {
-				"what": "Hemşirenin taburculukta hazırladığı belge: bakım kapsamında neler yapıldığı ve evde nelerin sürdürüleceği",
-				"how": "Yatışın sonunda hemşire cilt ve yara durumunu, hareketliliği, beslenme ve yutmayı, bağırsak ve mesane işlevini, kateter ve stomaları, yapılan pansumanları ve yakınlara verilen eğitimi yazar, ardından belgeyi hastaya ya da evde bakım hizmetine teslim eder",
-				"when": "Uzun tedavi sonrası taburculuk, yarası, stoması, kateteri ya da bası yarası olan hastanın taburculuğu, başka kuruma nakil veya evde bakım hemşiresine devir, yatağa bağımlı hastanın taburculuğu",
-				"prep": "Hazırlık gerekmez; evde hastaya kimin bakacağını hemşireye önceden söyleyin ve hangi malzeme ile yardımcı araçların gerekeceğini sorun",
-				"abnormal": "Kayıtlar bundan sonra hangi bakımın gerektiğini ve ev halkına neyin öğretileceğini gösterir. Yara akmaya başlar, cilt kızarır ya da ateş ve ağrı ortaya çıkarsa hekime veya evde bakım hemşiresine başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "on-call-doctor-specialist-examination",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Осмотр врача-специалиста, дежурящего в больнице вне обычных часов приёма: ночью, в выходные и праздники",
-				"how": "Пациентов принимают по срочности: расспрос о жалобах, осмотр, при необходимости срочные анализы, ЭКГ или снимок, после чего врач решает, лечить амбулаторно, оставить под наблюдением или положить в отделение",
-				"when": "Сильная боль, высокая температура, травма, затруднённое дыхание, обострение хронической болезни вне часов работы поликлиники, направление из приёмного покоя",
-				"prep": "Подготовка невозможна и не нужна; по возможности возьмите документы, страховку, список лекарств и прежние выписки, а при сильной боли в животе не ешьте и не пейте до осмотра",
-				"abnormal": "Цель такого осмотра — оценить, насколько состояние срочное, а не поставить окончательный диагноз; рекомендации записывают в документ для вашего врача. Если после возвращения домой жалобы усилятся, нужно обратиться повторно"
-			},
-			"en": {
-				"what": "An examination by the specialist on duty in the hospital outside the usual clinic hours: at night, at weekends and on holidays",
-				"how": "Patients are seen in order of urgency: questions about the complaints, an examination, urgent tests, an ECG or an image if needed, after which the doctor decides whether to treat you as an outpatient, keep you under observation or admit you to a ward",
-				"when": "Severe pain, high fever, injury, difficulty breathing, a flare of a chronic illness outside clinic hours, referral from the admissions department",
-				"prep": "Preparation is not possible and not needed; if you can, bring documents, insurance, a list of medicines and previous discharge letters, and with severe abdominal pain do not eat or drink before the examination",
-				"abnormal": "The purpose of such an examination is to judge how urgent the situation is, not to make a final diagnosis; the recommendations are written down in a document for your own doctor. If the complaints get worse after you return home, come back again"
-			},
-			"sr": {
-				"what": "Pregled ljekara specijaliste koji dežura u bolnici izvan redovnog rada ambulante: noću, vikendom i praznikom",
-				"how": "Pacijenti se primaju po hitnosti: razgovor o tegobama, pregled, po potrebi hitne analize, EKG ili snimak, nakon čega ljekar odlučuje da li liječenje ide ambulantno, uz posmatranje ili uz prijem na odjeljenje",
-				"when": "Jak bol, visoka temperatura, povreda, otežano disanje, pogoršanje hronične bolesti van radnog vremena ambulante, upućivanje iz prijemne službe",
-				"prep": "Priprema nije moguća ni potrebna; ako možete, ponesite dokumenta, zdravstvenu knjižicu, spisak lijekova i ranija otpusna pisma, a kod jakog bola u trbuhu nemojte jesti ni piti prije pregleda",
-				"abnormal": "Cilj ovakvog pregleda je da se procijeni koliko je stanje hitno, a ne da se postavi konačna dijagnoza; preporuke se upisuju u dokument za vašeg ljekara. Ako se tegobe pojačaju po povratku kući, javite se ponovo"
-			},
-			"de": {
-				"what": "Eine Untersuchung durch den diensthabenden Facharzt im Krankenhaus außerhalb der üblichen Sprechzeiten: nachts, am Wochenende und an Feiertagen",
-				"how": "Die Patienten werden nach Dringlichkeit versorgt: Fragen zu den Beschwerden, Untersuchung, bei Bedarf eilige Laborwerte, ein EKG oder eine Aufnahme, danach entscheidet der Arzt über ambulante Behandlung, Überwachung oder Aufnahme auf eine Station",
-				"when": "Starke Schmerzen, hohes Fieber, Verletzung, Atemnot, Verschlechterung einer chronischen Erkrankung außerhalb der Sprechzeiten, Zuweisung aus der Aufnahme",
-				"prep": "Eine Vorbereitung ist weder möglich noch nötig; wenn möglich Unterlagen, Versichertenkarte, Medikamentenliste und frühere Entlassungsberichte mitbringen und bei starken Bauchschmerzen vor der Untersuchung nichts essen und trinken",
-				"abnormal": "Diese Untersuchung soll einschätzen, wie dringlich der Zustand ist, und keine endgültige Diagnose stellen; die Empfehlungen werden in einem Dokument für den eigenen Arzt festgehalten. Verstärken sich die Beschwerden nach der Rückkehr nach Hause, sollte man sich erneut vorstellen"
-			},
-			"tr": {
-				"what": "Olağan poliklinik saatleri dışında, gece, hafta sonu ve tatillerde hastanede nöbet tutan uzman hekimin yaptığı muayene",
-				"how": "Hastalar aciliyet sırasına göre görülür: şikâyetlerin sorgulanması, muayene, gerekirse acil tahliller, EKG ya da görüntüleme; ardından hekim ayaktan tedavi, gözlem altında tutma veya servise yatış arasında karar verir",
-				"when": "Şiddetli ağrı, yüksek ateş, yaralanma, nefes darlığı, poliklinik saatleri dışında kronik hastalığın alevlenmesi, hasta kabul biriminden yönlendirme",
-				"prep": "Hazırlık mümkün değildir ve gerekmez; mümkünse belgeler, sigorta kartı, ilaç listesi ve önceki epikrizler getirilmeli, şiddetli karın ağrısında muayeneden önce yiyip içilmemelidir",
-				"abnormal": "Bu muayenenin amacı durumun ne kadar acil olduğunu değerlendirmektir, kesin tanı koymak değildir; öneriler kendi hekiminiz için bir belgeye yazılır. Eve döndükten sonra şikâyetler artarsa yeniden başvurulmalıdır"
-			}
-		}
-	}
+  {
+    "slug": "infant-follow-up-hospital-round",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный врачебный осмотр грудного ребёнка, уже находящегося в отделении, в один из последующих дней лечения",
+        "how": "Врач ежедневно осматривает ребёнка в палате, расспрашивает мать о сне, кормлении и стуле, оценивает дыхание, кожу, живот и вес, смотрит свежие анализы и при необходимости меняет назначения",
+        "when": "Каждый день пребывания ребёнка в отделении после первичного осмотра, при изменении состояния, при поступлении новых результатов, перед решением о выписке",
+        "prep": "Подготовка не нужна; матери полезно записывать время кормлений, температуру и необычные симптомы, чтобы рассказать о них на обходе",
+        "abnormal": "По итогам обхода врач может оставить лечение прежним, изменить его, назначить дополнительные исследования или начать готовить выписку. Вопросы о состоянии ребёнка задавайте лечащему врачу во время обхода"
+      },
+      "en": {
+        "what": "A repeat doctor's assessment of an infant already staying on the ward, on one of the following days of treatment",
+        "how": "The doctor examines the baby in the room every day, asks the mother about sleep, feeding and stools, checks breathing, skin, abdomen and weight, reviews the latest results and adjusts the orders if needed",
+        "when": "Every day of the infant's stay on the ward after the admission assessment, when the condition changes, when new results arrive, before the decision to discharge",
+        "prep": "No preparation; it helps if the mother notes feeding times, temperature and any unusual symptoms to report on the round",
+        "abnormal": "After the round the doctor may keep the treatment unchanged, adjust it, order further tests or start preparing the discharge. Questions about the baby's condition are best asked to the attending doctor during the round"
+      },
+      "sr": {
+        "what": "Ponovni ljekarski pregled odojčeta koje je već na odjeljenju, jednog od narednih dana liječenja",
+        "how": "Ljekar svakog dana pregleda bebu u sobi, pita majku o spavanju, hranjenju i stolici, procjenjuje disanje, kožu, stomak i težinu, gleda nove nalaze i po potrebi mijenja terapiju",
+        "when": "Svaki dan boravka odojčeta na odjeljenju nakon prvog pregleda, kod promjene stanja, po pristizanju novih nalaza, prije odluke o otpustu",
+        "prep": "Priprema nije potrebna; korisno je da majka zapisuje vrijeme podoja, temperaturu i neobične simptome kako bi ih rekla na viziti",
+        "abnormal": "Nakon vizite ljekar može ostaviti istu terapiju, promijeniti je, uputiti na dodatna ispitivanja ili pripremiti otpust. Pitanja o stanju djeteta najbolje je postaviti ljekaru koji vodi liječenje tokom vizite"
+      },
+      "de": {
+        "what": "Eine erneute ärztliche Beurteilung eines bereits stationär aufgenommenen Säuglings an einem der folgenden Behandlungstage",
+        "how": "Der Arzt untersucht das Kind täglich im Zimmer, fragt die Mutter nach Schlaf, Trinken und Stuhl, beurteilt Atmung, Haut, Bauch und Gewicht, sieht die neuen Befunde durch und passt die Anordnungen bei Bedarf an",
+        "when": "Jeder Tag des stationären Aufenthalts nach der Aufnahmeuntersuchung, bei Zustandsänderung, bei neuen Befunden, vor der Entscheidung zur Entlassung",
+        "prep": "Keine Vorbereitung nötig; hilfreich ist, wenn die Mutter Trinkzeiten, Temperatur und auffällige Symptome notiert und bei der Visite berichtet",
+        "abnormal": "Nach der Visite kann der Arzt die Behandlung beibehalten, ändern, weitere Untersuchungen veranlassen oder die Entlassung vorbereiten. Fragen zum Zustand des Kindes klärt man am besten bei der Visite mit dem behandelnden Arzt"
+      },
+      "tr": {
+        "what": "Hastanede yatmakta olan bebeğin tedavinin ilerleyen günlerinde yapılan tekrar doktor değerlendirmesi",
+        "how": "Doktor her gün bebeği odasında muayene eder, anneye uyku, beslenme ve dışkılamayı sorar, solunumu, cildi, karnı ve kiloyu değerlendirir, yeni tahlil sonuçlarını gözden geçirip gerekirse tedaviyi günceller",
+        "when": "İlk değerlendirmeden sonra serviste kalınan her gün, durum değiştiğinde, yeni sonuçlar geldiğinde, taburculuk kararından önce",
+        "prep": "Hazırlık gerekmez; annenin emzirme saatlerini, ateşi ve alışılmadık belirtileri not alıp vizitte aktarması faydalıdır",
+        "abnormal": "Vizit sonrasında doktor tedaviyi aynı bırakabilir, değiştirebilir, ek tetkik isteyebilir ya da taburculuğu hazırlayabilir. Bebeğin durumuyla ilgili sorular vizit sırasında tedaviyi yürüten doktora sorulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Поновни љекарски преглед одојчета које је већ на одјељењу, једног од наредних дана лијечења",
+        "how": "Љекар сваког дана прегледа бебу у соби, пита мајку о спавању, храњењу и столици, процјењује дисање, кожу, стомак и тежину, гледа нове налазе и по потреби мијења терапију",
+        "when": "Сваки дан боравка одојчета на одјељењу након првог прегледа, код промјене стања, по пристизању нових налаза, прије одлуке о отпусту",
+        "prep": "Припрема није потребна; корисно је да мајка записује вријеме подоја, температуру и необичне симптоме како би их рекла на визити",
+        "abnormal": "Након визите љекар може оставити исту терапију, промијенити је, упутити на додатна испитивања или припремити отпуст. Питања о стању дјетета најбоље је поставити љекару који води лијечење током визите"
+      }
+    }
+  },
+  {
+    "slug": "infant-initial-hospital-workup",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первый подробный осмотр грудного ребёнка при поступлении в больничное отделение",
+        "how": "Врач собирает сведения у родителей (беременность, роды, кормление, прививки, нынешняя болезнь), полностью осматривает ребёнка, измеряет вес, температуру, дыхание и пульс, назначает анализы и записывает план лечения; занимает около получаса",
+        "when": "Госпитализация ребёнка первого года жизни: высокая температура, отказ от еды, рвота и потеря жидкости, затруднённое дыхание, слабая прибавка веса, перевод из другого учреждения",
+        "prep": "Специальной подготовки нет; с собой документы ребёнка, карта прививок, прежние выписки и результаты анализов, список лекарств, которые ребёнок получает",
+        "abnormal": "Осмотр определяет объём обследования и лечения, иногда и необходимость наблюдения в палате интенсивной терапии. Диагноз уточняется по ходу госпитализации лечащим врачом"
+      },
+      "en": {
+        "what": "The first detailed assessment of an infant on admission to a hospital ward",
+        "how": "The doctor takes the history from the parents (pregnancy, birth, feeding, vaccinations, current illness), examines the baby from head to toe, measures weight, temperature, breathing and pulse, orders tests and writes the treatment plan; it takes about half an hour",
+        "when": "Admission of a child in the first year of life: high fever, refusing feeds, vomiting and loss of fluids, laboured breathing, poor weight gain, transfer from another facility",
+        "prep": "No special preparation; bring the child's documents, vaccination record, previous discharge letters and results, and a list of the medicines the baby receives",
+        "abnormal": "The assessment decides how much testing and treatment is needed, and sometimes the need for observation in an intensive care room. The diagnosis is refined during the stay by the attending doctor"
+      },
+      "sr": {
+        "what": "Prvi detaljan pregled odojčeta pri prijemu na bolničko odjeljenje",
+        "how": "Ljekar uzima podatke od roditelja (trudnoća, porođaj, ishrana, vakcine, sadašnja bolest), pregleda bebu od glave do pete, mjeri težinu, temperaturu, disanje i puls, određuje analize i zapisuje plan liječenja; traje oko pola sata",
+        "when": "Prijem djeteta u prvoj godini života: visoka temperatura, odbijanje hrane, povraćanje i gubitak tečnosti, otežano disanje, slab napredak u težini, premještaj iz druge ustanove",
+        "prep": "Posebna priprema ne postoji; ponijeti dokumenta djeteta, karticu vakcinacije, ranija otpusna pisma i nalaze, kao i spisak lijekova koje beba dobija",
+        "abnormal": "Pregled određuje obim ispitivanja i liječenja, ponekad i potrebu za nadzorom u jedinici intenzivne njege. Dijagnoza se razjašnjava tokom boravka, a daje je ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Die erste ausführliche Untersuchung eines Säuglings bei der Aufnahme auf eine Krankenhausstation",
+        "how": "Der Arzt erhebt die Vorgeschichte bei den Eltern (Schwangerschaft, Geburt, Ernährung, Impfungen, aktuelle Erkrankung), untersucht das Kind vollständig, misst Gewicht, Temperatur, Atmung und Puls, ordnet Untersuchungen an und schreibt den Behandlungsplan; dauert etwa eine halbe Stunde",
+        "when": "Aufnahme eines Kindes im ersten Lebensjahr: hohes Fieber, Trinkverweigerung, Erbrechen und Flüssigkeitsmangel, erschwerte Atmung, schlechte Gewichtszunahme, Verlegung aus einer anderen Einrichtung",
+        "prep": "Keine besondere Vorbereitung; Unterlagen des Kindes, Impfausweis, frühere Entlassungsberichte und Befunde sowie eine Liste der verabreichten Medikamente mitbringen",
+        "abnormal": "Die Untersuchung legt fest, welche Diagnostik und Behandlung nötig sind, manchmal auch eine Überwachung auf der Intensivstation. Die Diagnose wird im Verlauf des Aufenthalts vom behandelnden Arzt präzisiert"
+      },
+      "tr": {
+        "what": "Bebeğin hastane servisine yatışında yapılan ilk ayrıntılı değerlendirme",
+        "how": "Doktor aileden öyküyü alır (gebelik, doğum, beslenme, aşılar, mevcut hastalık), bebeği baştan ayağa muayene eder, kilo, ateş, solunum ve nabzı ölçer, tetkikleri ister ve tedavi planını yazar; yaklaşık yarım saat sürer",
+        "when": "Bir yaşından küçük çocuğun yatışı: yüksek ateş, beslenmeyi reddetme, kusma ve sıvı kaybı, zor nefes alma, kilo alamama, başka kurumdan sevk",
+        "prep": "Özel hazırlık yoktur; bebeğin belgeleri, aşı kartı, önceki epikrizler ve tahlil sonuçları ile aldığı ilaçların listesi getirilmelidir",
+        "abnormal": "Değerlendirme hangi tetkik ve tedavinin gerektiğini, bazen yoğun bakımda izlem ihtiyacını belirler. Tanı yatış boyunca tedaviyi yürüten doktor tarafından netleştirilir"
+      },
+      "sr_cyrl": {
+        "what": "Први детаљан преглед одојчета при пријему на болничко одјељење",
+        "how": "Љекар узима податке од родитеља (трудноћа, порођај, исхрана, вакцине, садашња болест), прегледа бебу од главе до пете, мјери тежину, температуру, дисање и пулс, одређује анализе и записује план лијечења; траје око пола сата",
+        "when": "Пријем дјетета у првој години живота: висока температура, одбијање хране, повраћање и губитак течности, отежано дисање, слаб напредак у тежини, премјештај из друге установе",
+        "prep": "Посебна припрема не постоји; понијети документа дјетета, картицу вакцинације, ранија отпусна писма и налазе, као и списак лијекова које беба добија",
+        "abnormal": "Преглед одређује обим испитивања и лијечења, понекад и потребу за надзором у јединици интензивне његе. Дијагноза се разјашњава током боравка, а даје је љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "initial-hospital-workup",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приёмный осмотр взрослого пациента при поступлении в больничное отделение",
+        "how": "Врач расспрашивает о жалобах, перенесённых болезнях, операциях, аллергии и постоянных лекарствах, проводит общий осмотр, назначает анализы и исследования и записывает план лечения в историю болезни",
+        "when": "Плановая или экстренная госпитализация, перевод из другого отделения или больницы, поступление перед операцией",
+        "prep": "Взять удостоверение личности и медицинскую страховку, направление, список постоянно принимаемых лекарств, прежние выписки и снимки; при плановом поступлении соблюдать указания о еде и питье",
+        "abnormal": "Приёмный осмотр определяет, какое обследование и лечение понадобятся и сколько примерно может продлиться пребывание. Все вопросы о плане лечения решает лечащий врач отделения"
+      },
+      "en": {
+        "what": "The admission assessment of an adult patient entering a hospital ward",
+        "how": "The doctor asks about complaints, past illnesses, operations, allergies and regular medicines, performs a general examination, orders tests and imaging and records the treatment plan in the chart",
+        "when": "Planned or emergency admission, transfer from another ward or hospital, admission before surgery",
+        "prep": "Bring an ID and health insurance card, the referral, a list of the medicines you take regularly, previous discharge letters and images; for a planned admission follow the instructions about eating and drinking",
+        "abnormal": "The admission assessment defines what examinations and treatment will be needed and roughly how long the stay may last. All questions about the plan are decided by the attending doctor on the ward"
+      },
+      "sr": {
+        "what": "Prijemni pregled odrasle osobe pri dolasku na bolničko odjeljenje",
+        "how": "Ljekar pita o tegobama, ranijim bolestima, operacijama, alergijama i stalnim lijekovima, radi opšti pregled, određuje analize i snimanja i upisuje plan liječenja u istoriju bolesti",
+        "when": "Planski ili hitan prijem, premještaj sa drugog odjeljenja ili iz druge bolnice, prijem prije operacije",
+        "prep": "Ponijeti ličnu kartu i zdravstvenu knjižicu, uput, spisak lijekova koje stalno uzimate, ranija otpusna pisma i snimke; kod planskog prijema pridržavati se uputstva o jelu i piću",
+        "abnormal": "Prijemni pregled određuje koja ispitivanja i liječenje slijede i koliko boravak otprilike može trajati. O planu liječenja odlučuje ljekar odjeljenja koji vodi liječenje"
+      },
+      "de": {
+        "what": "Die Aufnahmeuntersuchung eines erwachsenen Patienten bei Aufnahme auf eine Station",
+        "how": "Der Arzt fragt nach Beschwerden, früheren Erkrankungen, Operationen, Allergien und Dauermedikation, führt eine allgemeine Untersuchung durch, ordnet Labor und Bildgebung an und hält den Behandlungsplan in der Akte fest",
+        "when": "Geplante oder notfallmäßige Aufnahme, Verlegung von einer anderen Station oder aus einem anderen Krankenhaus, Aufnahme vor einer Operation",
+        "prep": "Ausweis und Versichertenkarte, Einweisung, eine Liste der dauerhaft eingenommenen Medikamente, frühere Entlassungsberichte und Bilder mitbringen; bei geplanter Aufnahme die Vorgaben zu Essen und Trinken beachten",
+        "abnormal": "Die Aufnahmeuntersuchung legt fest, welche Diagnostik und Behandlung folgen und wie lange der Aufenthalt etwa dauern kann. Über den Behandlungsplan entscheidet der behandelnde Stationsarzt"
+      },
+      "tr": {
+        "what": "Erişkin hastanın hastane servisine yatışında yapılan kabul değerlendirmesi",
+        "how": "Doktor şikâyetleri, geçirilmiş hastalıkları, ameliyatları, alerjileri ve sürekli kullanılan ilaçları sorar, genel muayene yapar, tahlil ve görüntüleme ister, tedavi planını dosyaya yazar",
+        "when": "Planlı ya da acil yatış, başka servisten veya hastaneden nakil, ameliyat öncesi yatış",
+        "prep": "Kimlik ve sağlık sigortası belgesi, sevk kâğıdı, sürekli kullanılan ilaçların listesi, önceki epikriz ve görüntüler getirilmeli; planlı yatışta yeme içme talimatına uyulmalıdır",
+        "abnormal": "Kabul değerlendirmesi hangi tetkik ve tedavinin gerekeceğini ve yatışın yaklaşık süresini belirler. Tedavi planıyla ilgili tüm kararları servisteki sorumlu doktor verir"
+      },
+      "sr_cyrl": {
+        "what": "Пријемни преглед одрасле особе при доласку на болничко одјељење",
+        "how": "Љекар пита о тегобама, ранијим болестима, операцијама, алергијама и сталним лијековима, ради општи преглед, одређује анализе и снимања и уписује план лијечења у историју болести",
+        "when": "Плански или хитан пријем, премјештај са другог одјељења или из друге болнице, пријем прије операције",
+        "prep": "Понијети личну карту и здравствену књижицу, упут, списак лијекова које стално узимате, ранија отпусна писма и снимке; код планског пријема придржавати се упутства о јелу и пићу",
+        "abnormal": "Пријемни преглед одређује која испитивања и лијечење слиједе и колико боравак отприлике може трајати. О плану лијечења одлучује љекар одјељења који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "initial-hospital-workup-of-involuntarily-hospitalized-patient",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр при поступлении пациента, оставленного в больнице без его согласия в порядке, предусмотренном законом",
+        "how": "Врач-специалист осматривает пациента, оценивает состояние и способность принимать решения о лечении, изучает документы о направлении и подробно записывает основания и находки в историю болезни; при необходимости привлекаются другие специалисты",
+        "when": "Поступление, когда пациент не может дать согласие или отказывается от помощи, а отсутствие лечения опасно для него или для окружающих; основания и сроки такого удержания определены законом",
+        "prep": "От пациента подготовка не ожидается; родственники могут помочь, передав персоналу документы, прежние выписки и список постоянных лекарств",
+        "abnormal": "Осмотр решает, сохраняется ли основание для лечения в стационаре, и состояние пересматривают повторно в установленные сроки. О правах пациента и порядке обжалования сообщают врач отделения и ответственное лицо больницы"
+      },
+      "en": {
+        "what": "An admission assessment of a patient kept in hospital without their consent under the procedure laid down by law",
+        "how": "A specialist examines the patient, assesses the current state and the ability to decide about treatment, reviews the referral documents and records the grounds and findings in detail in the chart; other specialists are involved when needed",
+        "when": "Admission when a patient cannot give consent or refuses care while going without treatment is dangerous for them or for others; the grounds and time limits of such a stay are set by law",
+        "prep": "No preparation is expected from the patient; relatives can help by handing the staff the documents, previous discharge letters and the list of regular medicines",
+        "abnormal": "The assessment decides whether the grounds for inpatient care remain, and the state is reviewed again within the set intervals. The ward doctor and the responsible hospital officer inform the patient about their rights and about how the decision can be appealed"
+      },
+      "sr": {
+        "what": "Prijemni pregled pacijenta koji je zadržan u bolnici bez svoje saglasnosti, po postupku propisanom zakonom",
+        "how": "Ljekar specijalista pregleda pacijenta, procjenjuje stanje i sposobnost da odlučuje o liječenju, pregleda dokumentaciju o upućivanju i detaljno upisuje razloge i nalaz u istoriju bolesti; po potrebi se uključuju i drugi specijalisti",
+        "when": "Prijem kada pacijent ne može dati saglasnost ili odbija pomoć, a izostanak liječenja je opasan za njega ili za okolinu; osnov i rokovi ovakvog zadržavanja određeni su zakonom",
+        "prep": "Od pacijenta se priprema ne očekuje; porodica može pomoći tako što osoblju preda dokumentaciju, ranija otpusna pisma i spisak stalnih lijekova",
+        "abnormal": "Pregled odlučuje da li i dalje postoji osnov za bolničko liječenje, a stanje se ponovo procjenjuje u propisanim rokovima. O pravima pacijenta i načinu žalbe obavještavaju ljekar odjeljenja i odgovorno lice bolnice"
+      },
+      "de": {
+        "what": "Die Aufnahmeuntersuchung eines Patienten, der ohne seine Zustimmung im gesetzlich vorgesehenen Verfahren im Krankenhaus behalten wird",
+        "how": "Ein Facharzt untersucht den Patienten, beurteilt den Zustand und die Fähigkeit, über die Behandlung zu entscheiden, prüft die Einweisungsunterlagen und dokumentiert Gründe und Befund ausführlich; bei Bedarf werden weitere Fachärzte hinzugezogen",
+        "when": "Aufnahme, wenn ein Patient nicht einwilligen kann oder Hilfe ablehnt und das Ausbleiben der Behandlung ihn oder andere gefährdet; Grundlage und Fristen eines solchen Aufenthalts regelt das Gesetz",
+        "prep": "Vom Patienten wird keine Vorbereitung erwartet; Angehörige können Unterlagen, frühere Entlassungsberichte und die Liste der Dauermedikation an das Personal übergeben",
+        "abnormal": "Die Untersuchung entscheidet, ob die Gründe für die stationäre Behandlung weiter bestehen; der Zustand wird in festgelegten Abständen erneut beurteilt. Über die Rechte des Patienten und den Weg des Widerspruchs informieren der Stationsarzt und die zuständige Stelle des Krankenhauses"
+      },
+      "tr": {
+        "what": "Kanunda öngörülen usule göre rızası alınmadan hastanede tutulan hastanın kabul değerlendirmesi",
+        "how": "Uzman hekim hastayı muayene eder, durumunu ve tedavi hakkında karar verebilme yetisini değerlendirir, sevk belgelerini inceler, gerekçeleri ve bulguları dosyaya ayrıntılı yazar; gerektiğinde başka uzmanlar da sürece katılır",
+        "when": "Hastanın rıza veremediği ya da yardımı reddettiği, tedavisiz kalmanın kendisi veya çevresi için tehlikeli olduğu yatışlar; böyle bir yatışın dayanağı ve süreleri kanunla belirlenir",
+        "prep": "Hastadan hazırlık beklenmez; yakınları belgeleri, önceki epikrizleri ve sürekli kullanılan ilaç listesini personele iletebilir",
+        "abnormal": "Değerlendirme hastanede tedavi gerekçesinin sürüp sürmediğine karar verir, durum belirlenen aralıklarla yeniden gözden geçirilir. Hastanın hakları ve itiraz yolu konusunda servis doktoru ile hastanenin sorumlu birimi bilgi verir"
+      },
+      "sr_cyrl": {
+        "what": "Пријемни преглед пацијента који је задржан у болници без своје сагласности, по поступку прописаном законом",
+        "how": "Љекар специјалиста прегледа пацијента, процјењује стање и способност да одлучује о лијечењу, прегледа документацију о упућивању и детаљно уписује разлоге и налаз у историју болести; по потреби се укључују и други специјалисти",
+        "when": "Пријем када пацијент не може дати сагласност или одбија помоћ, а изостанак лијечења је опасан за њега или за околину; основ и рокови оваквог задржавања одређени су законом",
+        "prep": "Од пацијента се припрема не очекује; породица може помоћи тако што особљу преда документацију, ранија отпусна писма и списак сталних лијекова",
+        "abnormal": "Преглед одлучује да ли и даље постоји основ за болничко лијечење, а стање се поново процјењује у прописаним роковима. О правима пацијента и начину жалбе обавјештавају љекар одјељења и одговорно лице болнице"
+      }
+    }
+  },
+  {
+    "slug": "inpatient-abortion-procedure",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прерывание беременности, которое выполняют в гинекологическом отделении",
+        "how": "После осмотра и УЗИ вмешательство проводят в операционной, обычно под внутривенным обезболиванием; содержимое матки удаляют вакуум-аспирацией или инструментами, затем несколько часов наблюдения",
+        "when": "Прерывание по желанию женщины в сроки, установленные законом, прерывание по медицинским показаниям, а также остановка развития беременности и неполный самопроизвольный выкидыш",
+        "prep": "Заранее сданные по назначению врача анализы и УЗИ, беседа и подписанное согласие, без еды и питья перед обезболиванием по указанию анестезиолога; взять документы, прокладки и сопровождающего для дороги домой",
+        "abnormal": "В первые дни обычны скудные кровянистые выделения и спазмы внизу живота; обильное кровотечение, повышенная температура, усиление боли или неприятный запах выделений — повод сразу обратиться к врачу. Контрольный осмотр и разговор о контрацепции назначает гинеколог"
+      },
+      "en": {
+        "what": "Termination of pregnancy carried out in a gynaecology ward",
+        "how": "After an examination and ultrasound the procedure is done in an operating room, usually under intravenous anaesthesia; the contents of the uterus are removed by vacuum aspiration or with instruments, followed by a few hours of observation",
+        "when": "Termination at the woman's request within the time limits set by law, termination on medical grounds, and also a pregnancy that has stopped developing and an incomplete spontaneous miscarriage",
+        "prep": "The tests and ultrasound ordered beforehand, a consultation and signed consent, no food or drink before anaesthesia as instructed by the anaesthetist; bring documents, sanitary pads and someone to accompany you home",
+        "abnormal": "Light bleeding and cramping in the lower abdomen are usual in the first days; heavy bleeding, fever, increasing pain or foul-smelling discharge are reasons to seek medical help at once. A follow-up visit and a talk about contraception are arranged by the gynaecologist"
+      },
+      "sr": {
+        "what": "Prekid trudnoće koji se izvodi na ginekološkom odjeljenju",
+        "how": "Nakon pregleda i ultrazvuka zahvat se radi u operacionoj sali, obično uz anesteziju u venu; sadržaj materice se uklanja vakuum aspiracijom ili instrumentima, a zatim slijedi nekoliko sati posmatranja",
+        "when": "Prekid na zahtjev žene u rokovima propisanim zakonom, prekid iz medicinskih razloga, kao i zastoj u razvoju trudnoće i nepotpun spontani pobačaj",
+        "prep": "Unaprijed urađene analize i ultrazvuk po nalogu ljekara, razgovor i potpisana saglasnost, bez jela i pića prije anestezije po uputstvu anesteziologa; ponijeti dokumenta, uloške i obezbijediti pratnju za povratak kući",
+        "abnormal": "Prvih dana su uobičajeni oskudno krvarenje i grčevi u donjem dijelu trbuha; obilno krvarenje, povišena temperatura, jačanje bola ili neprijatan miris iscjetka razlog su da se odmah javite ljekaru. Kontrolni pregled i razgovor o kontracepciji zakazuje ginekolog"
+      },
+      "de": {
+        "what": "Ein Schwangerschaftsabbruch, der auf einer gynäkologischen Station durchgeführt wird",
+        "how": "Nach Untersuchung und Ultraschall erfolgt der Eingriff im Operationsraum, meist in intravenöser Narkose; der Inhalt der Gebärmutter wird durch Vakuumaspiration oder mit Instrumenten entfernt, danach folgen einige Stunden Überwachung",
+        "when": "Abbruch auf Wunsch der Frau innerhalb der gesetzlich festgelegten Fristen, Abbruch aus medizinischen Gründen sowie eine nicht fortschreitende Schwangerschaft und eine unvollständige Fehlgeburt",
+        "prep": "Vorab die angeordneten Laborwerte und der Ultraschall, ein Aufklärungsgespräch und die unterschriebene Einwilligung, vor der Narkose nüchtern bleiben nach Vorgabe der Anästhesie; Unterlagen, Binden und eine Begleitung für den Heimweg mitbringen",
+        "abnormal": "In den ersten Tagen sind leichte Blutungen und Krämpfe im Unterbauch üblich; starke Blutung, Fieber, zunehmende Schmerzen oder übelriechender Ausfluss sind Gründe, sofort ärztliche Hilfe zu suchen. Die Kontrolluntersuchung und das Gespräch über Verhütung vereinbart die behandelnde Frauenärztin oder der Frauenarzt"
+      },
+      "tr": {
+        "what": "Kadın hastalıkları servisinde gerçekleştirilen gebelik sonlandırma işlemi",
+        "how": "Muayene ve ultrasondan sonra işlem ameliyathanede, çoğunlukla damardan verilen anestezi altında yapılır; rahim içeriği vakum aspirasyonu ya da aletle boşaltılır, ardından birkaç saat gözlem uygulanır",
+        "when": "Kanunda belirtilen süreler içinde kadının talebiyle sonlandırma, tıbbi nedenlerle sonlandırma, ayrıca gelişimi duran gebelik ve eksik düşük",
+        "prep": "Önceden istenen tahliller ve ultrason, bilgilendirme görüşmesi ve imzalı onam, anestezi öncesi hekimin söylediği süre boyunca aç kalmak; belgeler, ped ve eve dönüş için bir refakatçi gerekir",
+        "abnormal": "İlk günlerde az miktarda kanama ve karın alt bölgesinde kramp olağandır; yoğun kanama, ateş, artan ağrı ya da kötü kokulu akıntı halinde hemen hekime başvurulmalıdır. Kontrol muayenesi ve korunma yöntemleri görüşmesi kadın hastalıkları uzmanı tarafından planlanır"
+      },
+      "sr_cyrl": {
+        "what": "Прекид трудноће који се изводи на гинеколошком одјељењу",
+        "how": "Након прегледа и ултразвука захват се ради у операционој сали, обично уз анестезију у вену; садржај материце се уклања вакуум аспирацијом или инструментима, а затим слиједи неколико сати посматрања",
+        "when": "Прекид на захтјев жене у роковима прописаним законом, прекид из медицинских разлога, као и застој у развоју трудноће и непотпун спонтани побачај",
+        "prep": "Унапријед урађене анализе и ултразвук по налогу љекара, разговор и потписана сагласност, без јела и пића прије анестезије по упутству анестезиолога; понијети документа, улошке и обезбиједити пратњу за повратак кући",
+        "abnormal": "Првих дана су уобичајени оскудно крварење и грчеви у доњем дијелу трбуха; обилно крварење, повишена температура, јачање бола или непријатан мирис исцјетка разлог су да се одмах јавите љекару. Контролни преглед и разговор о контрацепцији заказује гинеколог"
+      }
+    }
+  },
+  {
+    "slug": "intensive-nursing-care-for-children-1-month-to-7-years",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Усиленный сестринский уход за ребёнком в тяжёлом или нестабильном состоянии, от грудного до дошкольного возраста",
+        "how": "Медсестра постоянно рядом: следит за дыханием, пульсом, температурой и мочеиспусканием, вводит назначенные лекарства и жидкости, кормит или помогает кормить, ухаживает за кожей, катетерами и зондами и ведёт почасовые записи; ребёнок такого возраста ещё не может описать свои ощущения, поэтому наблюдение опирается на измерения и поведение",
+        "when": "Потеря жидкости при частой рвоте, тяжёлая инфекция, затруднённое дыхание, состояние после операции или травмы, обострение тяжёлой хронической болезни",
+        "prep": "Подготовка не требуется; родителям стоит взять привычную бутылочку или чашку, сменную одежду и любимую игрушку и рассказать медсестре о привычках ребёнка в еде и сне",
+        "abnormal": "Объём ухода и его длительность зависят от того, как ребёнок отвечает на лечение, и пересматриваются каждый день. О любом изменении — отказе от питья, вялости, учащённом дыхании — сразу скажите медсестре или врачу"
+      },
+      "en": {
+        "what": "Enhanced nursing care for a child in a severe or unstable condition, from infancy to preschool age",
+        "how": "The nurse stays close by: watches breathing, pulse, temperature and urine output, gives the prescribed medicines and fluids, feeds the child or helps with feeding, cares for the skin, catheters and tubes and keeps hourly records; a child of this age cannot yet describe how they feel, so the watch relies on measurements and behaviour",
+        "when": "Loss of fluids with repeated vomiting, severe infection, breathing difficulty, the period after surgery or injury, a flare of a serious chronic illness",
+        "prep": "No preparation needed; parents should bring the familiar bottle or cup, a change of clothes and a favourite toy, and tell the nurse about the child's eating and sleeping habits",
+        "abnormal": "How much care is needed and for how long depends on the child's response to treatment and is reviewed every day. Tell the nurse or the doctor at once about any change, such as refusing to drink, unusual drowsiness or fast breathing"
+      },
+      "sr": {
+        "what": "Pojačana sestrinska njega djeteta u teškom ili nestabilnom stanju, od odojčadi do predškolskog uzrasta",
+        "how": "Medicinska sestra je stalno uz dijete: prati disanje, puls, temperaturu i mokrenje, daje propisane lijekove i tečnost, hrani ili pomaže pri hranjenju, njeguje kožu, katetere i sonde i vodi bilješke po satu; dijete ovog uzrasta još ne umije da opiše kako se osjeća, pa se nadzor oslanja na mjerenja i ponašanje",
+        "when": "Gubitak tečnosti uz učestalo povraćanje, teška infekcija, otežano disanje, stanje nakon operacije ili povrede, pogoršanje teške hronične bolesti",
+        "prep": "Priprema nije potrebna; roditelji neka ponesu uobičajenu flašicu ili čašu, rezervnu odjeću i omiljenu igračku i neka sestri opišu navike djeteta u jelu i spavanju",
+        "abnormal": "Obim i trajanje njege zavise od toga kako dijete odgovara na liječenje i procjenjuju se svakog dana. O svakoj promjeni, poput odbijanja tečnosti, pospanosti ili ubrzanog disanja, odmah obavijestite sestru ili ljekara"
+      },
+      "de": {
+        "what": "Verstärkte pflegerische Betreuung eines Kindes in schwerem oder instabilem Zustand, vom Säuglings- bis zum Vorschulalter",
+        "how": "Die Pflegekraft bleibt in unmittelbarer Nähe: überwacht Atmung, Puls, Temperatur und Urinausscheidung, verabreicht die angeordneten Medikamente und Flüssigkeiten, füttert oder hilft beim Füttern, versorgt Haut, Katheter und Sonden und dokumentiert stündlich; ein Kind in diesem Alter kann sein Befinden noch nicht schildern, deshalb stützt sich die Überwachung auf Messwerte und Verhalten",
+        "when": "Flüssigkeitsmangel bei wiederholtem Erbrechen, schwere Infektion, Atemprobleme, Zustand nach Operation oder Verletzung, Verschlechterung einer schweren chronischen Erkrankung",
+        "prep": "Keine Vorbereitung nötig; Eltern sollten die gewohnte Flasche oder Tasse, Wechselkleidung und ein Lieblingsspielzeug mitbringen und der Pflegekraft die Ess- und Schlafgewohnheiten des Kindes schildern",
+        "abnormal": "Umfang und Dauer der Betreuung hängen davon ab, wie das Kind auf die Behandlung anspricht, und werden täglich neu beurteilt. Jede Veränderung, etwa Trinkverweigerung, auffällige Schläfrigkeit oder schnelle Atmung, sofort der Pflegekraft oder dem Arzt melden"
+      },
+      "tr": {
+        "what": "Süt çocukluğundan okul öncesi yaşa kadar ağır ya da dengesiz durumdaki çocuğa verilen yoğunlaştırılmış hemşirelik bakımı",
+        "how": "Hemşire sürekli çocuğun yanındadır: solunumu, nabzı, ateşi ve idrar çıkışını izler, istenen ilaç ve sıvıları verir, besler ya da beslenmeye yardım eder, cildi, kateterleri ve sondaları bakımını yapar ve saatlik kayıt tutar; bu yaştaki çocuk ne hissettiğini henüz anlatamadığı için izlem ölçümlere ve davranışa dayanır",
+        "when": "Sık kusmaya eşlik eden sıvı kaybı, ağır enfeksiyon, solunum güçlüğü, ameliyat veya yaralanma sonrası dönem, ağır kronik hastalığın alevlenmesi",
+        "prep": "Hazırlık gerekmez; ailenin alışılmış biberon ya da bardağı, yedek kıyafet ve sevdiği oyuncağı getirmesi, çocuğun yeme ve uyku alışkanlıklarını hemşireye anlatması iyi olur",
+        "abnormal": "Bakımın kapsamı ve süresi çocuğun tedaviye verdiği yanıta bağlıdır ve her gün yeniden değerlendirilir. Sıvı almayı reddetme, aşırı uykuya meyil ya da hızlı nefes alma gibi her değişikliği hemen hemşireye veya doktora bildirin"
+      },
+      "sr_cyrl": {
+        "what": "Појачана сестринска њега дјетета у тешком или нестабилном стању, од одојчади до предшколског узраста",
+        "how": "Медицинска сестра је стално уз дијете: прати дисање, пулс, температуру и мокрење, даје прописане лијекове и течност, храни или помаже при храњењу, његује кожу, катетере и сонде и води биљешке по сату; дијете овог узраста још не умије да опише како се осјећа, па се надзор ослања на мјерења и понашање",
+        "when": "Губитак течности уз учестало повраћање, тешка инфекција, отежано дисање, стање након операције или повреде, погоршање тешке хроничне болести",
+        "prep": "Припрема није потребна; родитељи нека понесу уобичајену флашицу или чашу, резервну одјећу и омиљену играчку и нека сестри опишу навике дјетета у јелу и спавању",
+        "abnormal": "Обим и трајање његе зависе од тога како дијете одговара на лијечење и процјењују се сваког дана. О свакој промјени, попут одбијања течности, поспаности или убрзаног дисања, одмах обавијестите сестру или љекара"
+      }
+    }
+  },
+  {
+    "slug": "loading-tests-for-suspected-renal-tubular-acidosis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Функциональные пробы, проверяющие, как почки поддерживают кислотно-щелочное равновесие крови",
+        "how": "В дневном стационаре пациент принимает назначенное врачом средство, сдвигающее внутреннюю среду в кислую или щелочную сторону, после чего в течение нескольких часов несколько раз берут кровь и порции мочи с измерением pH",
+        "when": "Стойкое закисление крови без явной причины, отставание ребёнка в росте, повторное образование камней в почках, снижение плотности костей, низкий калий крови, уточнение формы ранее заподозренного канальцевого нарушения",
+        "prep": "Строго по инструкции нефролога: обычно приходят натощак, часть лекарств и добавок врач временно отменяет, на пробу нужно отвести несколько часов и не уходить из клиники между заборами",
+        "abnormal": "Результат показывает, насколько канальцы почек подкисляют мочу и удерживают бикарбонат; отклонение может быть связано с врождённой особенностью канальцев, другими болезнями почек или действием лекарств. Пробу трактует нефролог вместе с остальными анализами"
+      },
+      "en": {
+        "what": "Functional tests that check how the kidneys maintain the acid-base balance of the blood",
+        "how": "In a day unit the patient takes the agent prescribed by the doctor that shifts the body towards acid or alkali, after which blood and portions of urine are collected several times over a few hours and the pH is measured in them",
+        "when": "Persistent acidification of the blood without an obvious cause, poor growth in a child, repeated kidney stones, loss of bone density, low blood potassium, clarifying the form of a tubular disorder already suspected",
+        "prep": "Strictly as instructed by the nephrologist: usually fasting, some medicines and supplements are paused by the doctor, set aside several hours and stay in the clinic between the samples",
+        "abnormal": "The result shows how far the kidney tubules acidify the urine and retain bicarbonate; a deviation may be related to an inherited feature of the tubules, other kidney disease or the effect of medicines. The test is interpreted by a nephrologist together with the rest of the results"
+      },
+      "sr": {
+        "what": "Funkcionalni testovi koji provjeravaju kako bubrezi održavaju kiselo-bazni balans krvi",
+        "how": "U dnevnoj bolnici pacijent uzima sredstvo koje je ljekar odredio, a koje pomjera unutrašnju sredinu ka kiselom ili baznom, nakon čega se tokom nekoliko sati više puta uzimaju krv i porcije mokraće uz mjerenje pH",
+        "when": "Uporno zakišeljavanje krvi bez jasnog uzroka, zaostajanje djeteta u rastu, ponovljeno stvaranje kamenaca u bubrezima, gubitak gustine kostiju, nizak kalijum u krvi, razjašnjenje oblika ranije posumnjanog tubulskog poremećaja",
+        "prep": "Strogo po uputstvu nefrologa: obično se dolazi natašte, dio lijekova i dodataka ljekar privremeno obustavlja, za test treba odvojiti nekoliko sati i ne napuštati ustanovu između uzimanja uzoraka",
+        "abnormal": "Nalaz pokazuje koliko tubuli bubrega zakišeljavaju mokraću i zadržavaju bikarbonat; odstupanje može biti povezano sa urođenom osobinom tubula, drugim bolestima bubrega ili dejstvom lijekova. Test tumači nefrolog zajedno sa ostalim nalazima"
+      },
+      "de": {
+        "what": "Funktionstests, die prüfen, wie die Nieren das Säure-Basen-Gleichgewicht des Blutes aufrechterhalten",
+        "how": "In der Tagesklinik nimmt der Patient das vom Arzt angeordnete Mittel ein, das den Stoffwechsel in Richtung sauer oder basisch verschiebt; danach werden über mehrere Stunden mehrfach Blut und Urinportionen gewonnen und darin der pH gemessen",
+        "when": "Anhaltende Übersäuerung des Blutes ohne erkennbare Ursache, Wachstumsverzögerung beim Kind, wiederholte Nierensteine, Abnahme der Knochendichte, niedriges Kalium im Blut, Abklärung der Form einer bereits vermuteten Tubulusstörung",
+        "prep": "Streng nach Anweisung des Nephrologen: meist nüchtern erscheinen, einzelne Medikamente und Nahrungsergänzungen werden ärztlich pausiert, mehrere Stunden einplanen und zwischen den Abnahmen in der Einrichtung bleiben",
+        "abnormal": "Das Ergebnis zeigt, wie gut die Nierentubuli den Urin ansäuern und Bikarbonat zurückhalten; eine Abweichung kann mit einer angeborenen Besonderheit der Tubuli, anderen Nierenerkrankungen oder der Wirkung von Medikamenten zusammenhängen. Die Beurteilung nimmt der Nephrologe zusammen mit den übrigen Befunden vor"
+      },
+      "tr": {
+        "what": "Böbreklerin kanın asit-baz dengesini nasıl koruduğunu inceleyen işlevsel testler",
+        "how": "Günübirlik ünitede hasta, hekimin belirlediği ve vücudu aside ya da baza doğru kaydıran maddeyi alır; ardından birkaç saat boyunca birkaç kez kan ve idrar örnekleri alınarak bunlarda pH ölçülür",
+        "when": "Nedeni belirgin olmayan sürekli asitlenme, çocukta büyüme geriliği, tekrarlayan böbrek taşı, kemik yoğunluğunun azalması, kanda düşük potasyum, daha önce şüphelenilen tübüler bozukluğun tipinin netleştirilmesi",
+        "prep": "Kesinlikle nefrolog talimatına göre: genellikle aç gelinir, bazı ilaç ve takviyeler hekim tarafından geçici olarak bırakılır, teste birkaç saat ayrılmalı ve örnekler arasında kurumdan ayrılmamalıdır",
+        "abnormal": "Sonuç böbrek tübüllerinin idrarı ne ölçüde asitlendirdiğini ve bikarbonatı tuttuğunu gösterir; sapma tübüllerin doğuştan bir özelliğiyle, başka böbrek hastalıklarıyla ya da ilaç etkisiyle ilişkili olabilir. Testi diğer sonuçlarla birlikte nefrolog yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Функционални тестови који провјеравају како бубрези одржавају кисело-базни баланс крви",
+        "how": "У дневној болници пацијент узима средство које је љекар одредио, а које помјера унутрашњу средину ка киселом или базном, након чега се током неколико сати више пута узимају крв и порције мокраће уз мјерење пХ",
+        "when": "Упорно закишељавање крви без јасног узрока, заостајање дјетета у расту, поновљено стварање каменаца у бубрезима, губитак густине костију, низак калијум у крви, разјашњење облика раније посумњаног тубулског поремећаја",
+        "prep": "Строго по упутству нефролога: обично се долази наташте, дио лијекова и додатака љекар привремено обуставља, за тест треба одвојити неколико сати и не напуштати установу између узимања узорака",
+        "abnormal": "Налаз показује колико тубули бубрега закишељавају мокраћу и задржавају бикарбонат; одступање може бити повезано са урођеном особином тубула, другим болестима бубрега или дејством лијекова. Тест тумачи нефролог заједно са осталим налазима"
+      }
+    }
+  },
+  {
+    "slug": "mri-pelvis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Магнитно-резонансное исследование малого таза: мочевого пузыря, конечного отдела кишечника, предстательной железы или матки с яичниками, окружающих мышц и лимфатических узлов",
+        "how": "Пациент лежит на спине в туннеле томографа, над тазом размещают приёмную катушку; часть протоколов требует контраста в вену, иногда просят прийти с умеренно наполненным мочевым пузырём; обычно 30-45 минут",
+        "when": "Уточнение находок УЗИ, стойкая боль в тазу, эндометриоз и миомы, оценка свищей и воспалительных изменений конечного отдела кишечника, изменения предстательной железы, травма таза, наблюдение после лечения",
+        "prep": "Обычно просят несколько часов не есть и дают отдельные указания о питье; заранее сообщить о металле в теле, кардиостимуляторе, внутриматочной спирали и клаустрофобии, снять украшения и одежду с металлом, взять прежние снимки и выписки",
+        "abnormal": "Снимок может показать воспаление, кисты, узлы, спайки, свищи или объёмное образование, а часть находок лечения не требует. Заключение рентгенолога вместе с осмотром и анализами оценивает лечащий врач"
+      },
+      "en": {
+        "what": "A magnetic resonance study of the lesser pelvis: the bladder, the final part of the bowel, the prostate or the uterus and ovaries, the surrounding muscles and lymph nodes",
+        "how": "The patient lies on their back inside the scanner tunnel with a coil placed over the pelvis; some protocols require contrast into a vein and sometimes a moderately full bladder is requested; it usually takes 30-45 minutes",
+        "when": "Clarifying ultrasound findings, persistent pelvic pain, endometriosis and fibroids, assessment of fistulas and inflammatory changes of the final part of the bowel, changes in the prostate, pelvic injury, follow-up after treatment",
+        "prep": "You are usually asked not to eat for a few hours and given separate instructions about drinking; report in advance any metal in the body, a pacemaker, an intrauterine device and claustrophobia, remove jewellery and clothes with metal, bring previous images and reports",
+        "abnormal": "The scan may show inflammation, cysts, nodes, adhesions, fistulas or a mass, and some findings need no treatment. The radiologist's report is assessed together with the examination and tests by the attending doctor"
+      },
+      "sr": {
+        "what": "Pregled male karlice magnetnom rezonancom: mokraćne bešike, završnog dijela crijeva, prostate ili materice i jajnika, okolnih mišića i limfnih čvorova",
+        "how": "Pacijent leži na leđima u tunelu aparata, iznad karlice se postavlja prijemni kalem; dio protokola traži kontrast u venu, a ponekad se traži umjereno puna bešika; obično traje 30-45 minuta",
+        "when": "Razjašnjenje nalaza ultrazvuka, uporan bol u karlici, endometrioza i miomi, procjena fistula i upalnih promjena završnog dijela crijeva, promjene na prostati, povreda karlice, praćenje nakon liječenja",
+        "prep": "Obično se traži da se nekoliko sati ne jede, uz posebno uputstvo o pijenju; unaprijed prijaviti metal u tijelu, pejsmejker, spiralu i klaustrofobiju, skinuti nakit i odjeću sa metalom, ponijeti ranije snimke i nalaze",
+        "abnormal": "Snimak može pokazati upalu, ciste, čvorove, priraslice, fistule ili tvorbu, a dio nalaza ne traži liječenje. Zaključak radiologa, uz pregled i analize, procjenjuje ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Eine Magnetresonanzuntersuchung des kleinen Beckens: Harnblase, Enddarm, Prostata oder Gebärmutter und Eierstöcke sowie die umgebenden Muskeln und Lymphknoten",
+        "how": "Der Patient liegt auf dem Rücken in der Röhre, über dem Becken wird eine Empfangsspule platziert; manche Protokolle erfordern Kontrastmittel über die Vene, teils wird eine mäßig gefüllte Blase gewünscht; die Untersuchung dauert meist 30-45 Minuten",
+        "when": "Abklärung von Ultraschallbefunden, anhaltende Beckenschmerzen, Endometriose und Myome, Beurteilung von Fisteln und entzündlichen Veränderungen des Enddarms, Veränderungen der Prostata, Beckenverletzung, Verlaufskontrolle nach Behandlung",
+        "prep": "Meist wird gebeten, einige Stunden nichts zu essen, zum Trinken gibt es eine eigene Anweisung; Metall im Körper, Herzschrittmacher, Spirale und Klaustrophobie vorab melden, Schmuck und Kleidung mit Metall ablegen, frühere Bilder und Befunde mitbringen",
+        "abnormal": "Die Aufnahme kann Entzündungen, Zysten, Knoten, Verwachsungen, Fisteln oder eine Raumforderung zeigen, ein Teil der Befunde bedarf keiner Behandlung. Den Befund des Radiologen ordnet der behandelnde Arzt zusammen mit Untersuchung und Laborwerten ein"
+      },
+      "tr": {
+        "what": "Küçük pelvisin manyetik rezonans incelemesi: idrar kesesi, bağırsağın son bölümü, prostat ya da rahim ve yumurtalıklar, çevre kaslar ve lenf düğümleri",
+        "how": "Hasta sırtüstü cihazın tünelinde yatar, pelvis üzerine alıcı sargı yerleştirilir; bazı protokoller damardan kontrast gerektirir, kimi zaman idrar kesesinin ılımlı dolu olması istenir; genellikle 30-45 dakika sürer",
+        "when": "Ultrason bulgularının netleştirilmesi, geçmeyen pelvik ağrı, endometriozis ve miyomlar, fistüllerin ve bağırsağın son bölümündeki iltihabi değişikliklerin değerlendirilmesi, prostattaki değişiklikler, pelvis yaralanması, tedavi sonrası izlem",
+        "prep": "Genellikle birkaç saat aç kalmanız istenir, su içme konusunda ayrı talimat verilir; vücuttaki metal, kalp pili, rahim içi araç ve kapalı yer korkusu önceden bildirilmeli, takılar ve metal içeren giysiler çıkarılmalı, önceki görüntü ve raporlar getirilmelidir",
+        "abnormal": "Görüntü iltihap, kist, nodül, yapışıklık, fistül ya da kitle gösterebilir, bulguların bir kısmı tedavi gerektirmez. Radyoloğun raporunu muayene ve tahlillerle birlikte tedaviyi yürüten hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Преглед мале карлице магнетном резонанцом: мокраћне бешике, завршног дијела цријева, простате или материце и јајника, околних мишића и лимфних чворова",
+        "how": "Пацијент лежи на леђима у тунелу апарата, изнад карлице се поставља пријемни калем; дио протокола тражи контраст у вену, а понекад се тражи умјерено пуна бешика; обично траје 30-45 минута",
+        "when": "Разјашњење налаза ултразвука, упоран бол у карлици, ендометриоза и миоми, процјена фистула и упалних промјена завршног дијела цријева, промјене на простати, повреда карлице, праћење након лијечења",
+        "prep": "Обично се тражи да се неколико сати не једе, уз посебно упутство о пијењу; унапријед пријавити метал у тијелу, пејсмејкер, спиралу и клаустрофобију, скинути накит и одјећу са металом, понијети раније снимке и налазе",
+        "abnormal": "Снимак може показати упалу, цисте, чворове, прираслице, фистуле или творбу, а дио налаза не тражи лијечење. Закључак радиолога, уз преглед и анализе, процјењује љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "newborn-discharge",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Заключительный осмотр новорождённого и оформление документов перед уходом из роддома или детского отделения",
+        "how": "Неонатолог полностью осматривает ребёнка, взвешивает его, оценивает желтушность кожи, пупок, кормление и прибавку, проверяет, выполнены ли скрининги и прививки, затем объясняет родителям уход дома и передаёт выписное письмо",
+        "when": "Завершение пребывания после родов или после лечения в детском отделении, передача под наблюдение выбранного педиатра",
+        "prep": "Подготовка не требуется; родителям нужны документы, одежда и автокресло для дороги домой, а вопросы полезно записать заранее",
+        "abnormal": "В выписном письме указано, на что обращать внимание дома: желтушность, вялость, отказ от груди, температура, состояние пупка. При их появлении нужно обратиться к педиатру, а первый плановый осмотр назначают в ближайшие дни после выписки"
+      },
+      "en": {
+        "what": "The final check of a newborn and the paperwork before leaving the maternity or paediatric ward",
+        "how": "The neonatologist examines the baby fully, weighs it, looks at the yellow colour of the skin, the navel, feeding and weight gain, checks that the screening tests and vaccinations have been done, then explains home care to the parents and hands over the discharge letter",
+        "when": "The end of the stay after birth or after treatment in a paediatric ward, handover to the care of the chosen paediatrician",
+        "prep": "No preparation needed; parents need documents, clothes and a car seat for the trip home, and it helps to write the questions down in advance",
+        "abnormal": "The discharge letter says what to watch for at home: yellow skin, drowsiness, refusing the breast, fever, the state of the navel. If these appear, contact a paediatrician; the first routine check is scheduled within the days after discharge"
+      },
+      "sr": {
+        "what": "Završni pregled novorođenčeta i papirologija prije odlaska iz porodilišta ili sa dječjeg odjeljenja",
+        "how": "Neonatolog u cjelini pregleda bebu, mjeri težinu, procjenjuje žutu boju kože, pupak, hranjenje i napredovanje, provjerava da li su urađeni skrininzi i vakcine, zatim roditeljima objašnjava njegu kod kuće i predaje otpusno pismo",
+        "when": "Kraj boravka poslije porođaja ili poslije liječenja na dječjem odjeljenju, predaja na praćenje izabranom pedijatru",
+        "prep": "Priprema nije potrebna; roditeljima trebaju dokumenta, odjeća i auto-sjedište za put kući, a korisno je unaprijed zapisati pitanja",
+        "abnormal": "U otpusnom pismu piše na šta treba paziti kod kuće: žutica, pospanost, odbijanje dojke, temperatura, stanje pupka. Ako se to pojavi, javite se pedijatru, a prvi redovni pregled se zakazuje u danima nakon otpusta"
+      },
+      "de": {
+        "what": "Die abschließende Untersuchung des Neugeborenen und die Unterlagen vor dem Verlassen der Geburts- oder Kinderstation",
+        "how": "Der Neonatologe untersucht das Kind vollständig, wiegt es, beurteilt die Gelbfärbung der Haut, den Nabel, das Trinken und die Gewichtszunahme, prüft Screening und Impfungen, erklärt den Eltern die Pflege zu Hause und übergibt den Entlassungsbericht",
+        "when": "Ende des Aufenthalts nach der Geburt oder nach einer Behandlung auf der Kinderstation, Übergabe in die Betreuung durch den gewählten Kinderarzt",
+        "prep": "Keine Vorbereitung nötig; Eltern brauchen Unterlagen, Kleidung und einen Autositz für den Heimweg, Fragen notiert man am besten vorher",
+        "abnormal": "Im Entlassungsbericht steht, worauf zu Hause zu achten ist: Gelbfärbung, auffällige Schläfrigkeit, Trinkverweigerung, Fieber, Zustand des Nabels. Treten diese auf, sollte der Kinderarzt aufgesucht werden; die erste reguläre Kontrolle wird in den Tagen nach der Entlassung vereinbart"
+      },
+      "tr": {
+        "what": "Yenidoğanın doğumhane ya da çocuk servisinden ayrılmadan önceki son muayenesi ve belgelerin hazırlanması",
+        "how": "Yenidoğan uzmanı bebeği baştan ayağa muayene eder, tartar, cildin sarı rengini, göbeği, beslenmeyi ve kilo alımını değerlendirir, tarama testleri ile aşıların yapıldığını kontrol eder, ardından aileye ev bakımını anlatır ve epikrizi teslim eder",
+        "when": "Doğum sonrası ya da çocuk servisindeki tedavi sonrası yatışın sonlanması, izlemin seçilen çocuk doktoruna devri",
+        "prep": "Hazırlık gerekmez; ailenin belgeler, kıyafet ve eve dönüş için oto koltuğu getirmesi, sorularını önceden not etmesi iyi olur",
+        "abnormal": "Epikrizde evde nelere dikkat edileceği yazar: sarılık, aşırı uykululuk, memeyi reddetme, ateş, göbek bölgesinin durumu. Bunlar görülürse çocuk doktoruna başvurulmalı, ilk rutin kontrol ise taburculuğu izleyen günlere planlanır"
+      },
+      "sr_cyrl": {
+        "what": "Завршни преглед новорођенчета и папирологија прије одласка из породилишта или са дјечјег одјељења",
+        "how": "Неонатолог у цјелини прегледа бебу, мјери тежину, процјењује жуту боју коже, пупак, храњење и напредовање, провјерава да ли су урађени скрининзи и вакцине, затим родитељима објашњава његу код куће и предаје отпусно писмо",
+        "when": "Крај боравка послије порођаја или послије лијечења на дјечјем одјељењу, предаја на праћење изабраном педијатру",
+        "prep": "Припрема није потребна; родитељима требају документа, одјећа и ауто-сједиште за пут кући, а корисно је унапријед записати питања",
+        "abnormal": "У отпусном писму пише на шта треба пазити код куће: жутица, поспаност, одбијање дојке, температура, стање пупка. Ако се то појави, јавите се педијатру, а први редовни преглед се заказује у данима након отпуста"
+      }
+    }
+  },
+  {
+    "slug": "newborn-initial-hospital-workup",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первый подробный осмотр новорождённого после рождения или при поступлении в детское отделение",
+        "how": "Неонатолог измеряет вес, длину и окружность головы, осматривает кожу, роднички, глаза, нёбо, сердце, лёгкие, живот, половые органы и тазобедренные суставы, проверяет рефлексы и дыхание и разбирает течение беременности и родов",
+        "when": "Первые часы после рождения, поступление новорождённого в больницу, перевод из родильного зала или из другого учреждения",
+        "prep": "Подготовки нет; важно, чтобы у персонала были сведения о беременности, родах, группе крови матери и её анализах",
+        "abnormal": "Осмотр показывает, нужны ли дополнительные исследования, наблюдение или лечение; многие особенности новорождённого временные и проходят сами. Что означают находки, объясняет неонатолог"
+      },
+      "en": {
+        "what": "The first detailed examination of a newborn after birth or on admission to a paediatric ward",
+        "how": "The neonatologist measures weight, length and head circumference, examines the skin, fontanelles, eyes, palate, heart, lungs, abdomen, genitals and hips, checks reflexes and breathing and goes through the course of the pregnancy and the birth",
+        "when": "The first hours after birth, admission of a newborn to hospital, transfer from the delivery room or from another facility",
+        "prep": "No preparation; it matters that the staff have the information about the pregnancy, the birth, the mother's blood group and her results",
+        "abnormal": "The examination shows whether further tests, observation or treatment are needed; many features of a newborn are temporary and resolve on their own. What the findings mean is explained by the neonatologist"
+      },
+      "sr": {
+        "what": "Prvi detaljan pregled novorođenčeta nakon rođenja ili pri prijemu na dječje odjeljenje",
+        "how": "Neonatolog mjeri težinu, dužinu i obim glave, pregleda kožu, fontanele, oči, nepce, srce, pluća, stomak, genitalije i kukove, provjerava reflekse i disanje i prolazi kroz tok trudnoće i porođaja",
+        "when": "Prvi sati nakon rođenja, prijem novorođenčeta u bolnicu, premještaj iz porođajne sale ili iz druge ustanove",
+        "prep": "Priprema ne postoji; važno je da osoblje ima podatke o trudnoći, porođaju, krvnoj grupi majke i njenim nalazima",
+        "abnormal": "Pregled pokazuje da li su potrebni dodatna ispitivanja, nadzor ili liječenje; mnoge osobine novorođenčeta su prolazne i same se povuku. Šta nalaz znači objašnjava neonatolog"
+      },
+      "de": {
+        "what": "Die erste ausführliche Untersuchung eines Neugeborenen nach der Geburt oder bei Aufnahme auf eine Kinderstation",
+        "how": "Der Neonatologe misst Gewicht, Länge und Kopfumfang, untersucht Haut, Fontanellen, Augen, Gaumen, Herz, Lunge, Bauch, Genitale und Hüften, prüft Reflexe und Atmung und geht den Verlauf von Schwangerschaft und Geburt durch",
+        "when": "Die ersten Stunden nach der Geburt, Aufnahme eines Neugeborenen in die Klinik, Verlegung aus dem Kreißsaal oder aus einer anderen Einrichtung",
+        "prep": "Keine Vorbereitung; wichtig ist, dass dem Personal die Angaben zu Schwangerschaft, Geburt, Blutgruppe der Mutter und ihren Befunden vorliegen",
+        "abnormal": "Die Untersuchung zeigt, ob weitere Diagnostik, Überwachung oder Behandlung nötig sind; viele Besonderheiten eines Neugeborenen sind vorübergehend und bilden sich von selbst zurück. Was die Befunde bedeuten, erklärt der Neonatologe"
+      },
+      "tr": {
+        "what": "Yenidoğanın doğumdan sonra ya da çocuk servisine kabulünde yapılan ilk ayrıntılı muayenesi",
+        "how": "Yenidoğan uzmanı kiloyu, boyu ve baş çevresini ölçer; cildi, bıngıldakları, gözleri, damağı, kalbi, akciğerleri, karnı, genital bölgeyi ve kalçaları muayene eder, refleksleri ve solunumu değerlendirir, gebelik ve doğumun seyrini gözden geçirir",
+        "when": "Doğumdan sonraki ilk saatler, yenidoğanın hastaneye kabulü, doğum salonundan ya da başka kurumdan nakil",
+        "prep": "Hazırlık yoktur; personelin gebelik, doğum, annenin kan grubu ve tahlil sonuçlarına ilişkin bilgilere sahip olması önemlidir",
+        "abnormal": "Muayene ek tetkik, izlem ya da tedavi gerekip gerekmediğini gösterir; yenidoğana özgü pek çok bulgu geçicidir ve kendiliğinden kaybolur. Bulguların anlamını yenidoğan uzmanı açıklar"
+      },
+      "sr_cyrl": {
+        "what": "Први детаљан преглед новорођенчета након рођења или при пријему на дјечје одјељење",
+        "how": "Неонатолог мјери тежину, дужину и обим главе, прегледа кожу, фонтанеле, очи, непце, срце, плућа, стомак, гениталије и кукове, провјерава рефлексе и дисање и пролази кроз ток трудноће и порођаја",
+        "when": "Први сати након рођења, пријем новорођенчета у болницу, премјештај из порођајне сале или из друге установе",
+        "prep": "Припрема не постоји; важно је да особље има податке о трудноћи, порођају, крвној групи мајке и њеним налазима",
+        "abnormal": "Преглед показује да ли су потребни додатна испитивања, надзор или лијечење; многе особине новорођенчета су пролазне и саме се повуку. Шта налаз значи објашњава неонатолог"
+      }
+    }
+  },
+  {
+    "slug": "newborn-standard-nursing-care",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повседневный сестринский уход за здоровым новорождённым в отделении",
+        "how": "Медсестра купает и переодевает ребёнка, ухаживает за пупком, взвешивает его, измеряет температуру, следит за мочеиспусканием и стулом, помогает матери приложить ребёнка к груди и показывает, как его держать и пеленать",
+        "when": "Пребывание здорового новорождённого вместе с матерью после родов, а также дети, которым не нужны усиленное наблюдение и интенсивный уход",
+        "prep": "Подготовка не требуется; полезно взять пелёнки и одежду по правилам отделения и заранее спросить о совместном пребывании с ребёнком",
+        "abnormal": "Цель ухода в том, чтобы ребёнок хорошо сосал, держал температуру и прибавлял в весе. О желтушности, вялости, частых срыгиваниях или трудностях с кормлением медсестра сообщает врачу, и тогда врач меняет объём наблюдения"
+      },
+      "en": {
+        "what": "Everyday nursing care for a healthy newborn on the ward",
+        "how": "The nurse bathes and changes the baby, cares for the navel, weighs it, measures the temperature, follows urine and stools, helps the mother put the baby to the breast and shows how to hold and swaddle it",
+        "when": "The stay of a healthy newborn with the mother after birth, and babies who do not need closer monitoring or intensive care",
+        "prep": "No preparation needed; it helps to bring nappies and clothes according to the ward's rules and to ask in advance about staying in the same room as the baby",
+        "abnormal": "The aim of this care is that the baby feeds well, keeps its temperature and gains weight. The nurse reports yellow skin, drowsiness, frequent spitting up or feeding difficulties to the doctor, who then changes the level of monitoring"
+      },
+      "sr": {
+        "what": "Svakodnevna sestrinska njega zdravog novorođenčeta na odjeljenju",
+        "how": "Medicinska sestra kupa i presvlači bebu, njeguje pupak, mjeri težinu i temperaturu, prati mokrenje i stolicu, pomaže majci da stavi bebu na dojku i pokazuje kako se beba drži i povija",
+        "when": "Boravak zdravog novorođenčeta uz majku nakon porođaja, kao i bebe kojima nisu potrebni pojačan nadzor i intenzivna njega",
+        "prep": "Priprema nije potrebna; korisno je ponijeti pelene i odjeću po pravilima odjeljenja i unaprijed pitati o zajedničkom boravku sa bebom",
+        "abnormal": "Cilj njege je da beba dobro sisa, održava temperaturu i napreduje u težini. Sestra ljekaru prijavljuje žuticu, pospanost, učestalo vraćanje mlijeka ili teškoće pri hranjenju, a ljekar tada mijenja obim nadzora"
+      },
+      "de": {
+        "what": "Die tägliche pflegerische Versorgung eines gesunden Neugeborenen auf der Station",
+        "how": "Die Pflegekraft badet und wickelt das Kind, versorgt den Nabel, wiegt es, misst die Temperatur, achtet auf Urin und Stuhl, hilft der Mutter beim Anlegen an die Brust und zeigt die Handgriffe",
+        "when": "Aufenthalt eines gesunden Neugeborenen bei der Mutter nach der Geburt sowie Kinder, die keine verstärkte Überwachung und keine Intensivpflege brauchen",
+        "prep": "Keine Vorbereitung nötig; Windeln und Kleidung nach den Regeln der Station mitbringen und vorab nach der gemeinsamen Unterbringung mit dem Kind fragen",
+        "abnormal": "Ziel der Pflege ist, dass das Kind gut trinkt, die Temperatur hält und zunimmt. Gelbfärbung, auffällige Schläfrigkeit, häufiges Spucken oder Trinkprobleme meldet die Pflegekraft dem Arzt, der daraufhin den Umfang der Überwachung ändert"
+      },
+      "tr": {
+        "what": "Serviste sağlıklı yenidoğana verilen günlük hemşirelik bakımı",
+        "how": "Hemşire bebeği yıkar ve giydirir, göbek bakımını yapar, tartar, ateşini ölçer, idrar ve dışkıyı izler, annenin bebeği memeye yerleştirmesine yardım eder ve bebeğin nasıl tutulup kundaklanacağını gösterir",
+        "when": "Doğum sonrası sağlıklı yenidoğanın anneyle birlikte kalması ve yakın izlem ile yoğun bakım gerektirmeyen bebekler",
+        "prep": "Hazırlık gerekmez; servisin kurallarına uygun bez ve kıyafet getirmek ve bebekle aynı odada kalma imkânını önceden sormak faydalıdır",
+        "abnormal": "Bakımın amacı bebeğin iyi emmesi, vücut ısısını koruması ve kilo almasıdır. Hemşire sarılığı, aşırı uykululuğu, sık çıkarmayı ya da beslenme güçlüğünü doktora bildirir, izlem düzeyini doktor değiştirir"
+      },
+      "sr_cyrl": {
+        "what": "Свакодневна сестринска њега здравог новорођенчета на одјељењу",
+        "how": "Медицинска сестра купа и пресвлачи бебу, његује пупак, мјери тежину и температуру, прати мокрење и столицу, помаже мајци да стави бебу на дојку и показује како се беба држи и повија",
+        "when": "Боравак здравог новорођенчета уз мајку након порођаја, као и бебе којима нису потребни појачан надзор и интензивна њега",
+        "prep": "Припрема није потребна; корисно је понијети пелене и одјећу по правилима одјељења и унапријед питати о заједничком боравку са бебом",
+        "abnormal": "Циљ његе је да беба добро сиса, одржава температуру и напредује у тежини. Сестра љекару пријављује жутицу, поспаност, учестало враћање млијека или тешкоће при храњењу, а љекар тада мијења обим надзора"
+      }
+    }
+  },
+  {
+    "slug": "non-medical-bed-day-cost-general-and-special-hospitals",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Бытовая сторона суток, проведённых в больничной палате: койка, питание, бельё и круглосуточно присутствующий персонал",
+        "how": "Пациента размещают в палате отделения, он получает еду по назначенной диете и расписанию, чистое бельё и помощь в гигиене, сестринский пост работает днём и ночью, утром проходит врачебный обход, а время посещений устанавливает больница",
+        "when": "Лечение или наблюдение, которое невозможно провести амбулаторно: период после операции, обострение болезни, терапия в вену, обследования, требующие постоянного присмотра",
+        "prep": "Взять документы, предметы гигиены, тапочки и сменную одежду, список постоянных лекарств и прежние выписки; ценные вещи оставить дома",
+        "abnormal": "Сколько продлится пребывание, решает лечащий врач по состоянию, и этот срок может меняться. Об ухудшении, боли или трудностях с едой сразу скажите медсестре, а после выписки держитесь выписного письма"
+      },
+      "en": {
+        "what": "The everyday side of a day spent in a hospital room: the bed, meals, linen and staff present around the clock",
+        "how": "The patient is placed in a room on the ward, receives meals on the prescribed diet and schedule, clean linen and help with hygiene, the nursing station works day and night, the doctors' round takes place in the morning and visiting times are set by the hospital",
+        "when": "Treatment or observation that cannot be done as an outpatient: the period after surgery, a flare of an illness, therapy into a vein, examinations that need constant supervision",
+        "prep": "Bring documents, toiletries, slippers and a change of clothes, a list of your regular medicines and previous discharge letters; leave valuables at home",
+        "abnormal": "How long the stay lasts is decided by the attending doctor according to your condition and that period may change. Tell the nurse at once about worsening, pain or problems with eating, and after discharge follow the discharge letter"
+      },
+      "sr": {
+        "what": "Svakodnevna strana jednog dana provedenog u bolničkoj sobi: krevet, ishrana, posteljina i osoblje prisutno danonoćno",
+        "how": "Pacijent je smješten u sobi na odjeljenju, dobija obroke po propisanoj dijeti i rasporedu, čistu posteljinu i pomoć pri higijeni, sestrinski punkt radi danju i noću, ujutru je ljekarska vizita, a vrijeme posjeta određuje bolnica",
+        "when": "Liječenje ili nadzor koji se ne mogu sprovesti ambulantno: period nakon operacije, pogoršanje bolesti, terapija u venu, ispitivanja koja traže stalni nadzor",
+        "prep": "Ponijeti dokumenta, pribor za higijenu, papuče i rezervnu odjeću, spisak stalnih lijekova i ranija otpusna pisma; vrijedne stvari ostaviti kod kuće",
+        "abnormal": "Koliko će boravak trajati odlučuje ljekar koji vodi liječenje prema stanju, a taj rok se može mijenjati. O pogoršanju, bolu ili teškoćama sa ishranom odmah recite sestri, a nakon otpusta se držite otpusnog pisma"
+      },
+      "de": {
+        "what": "Die alltägliche Seite eines Tages im Krankenzimmer: Bett, Verpflegung, Wäsche und rund um die Uhr anwesendes Personal",
+        "how": "Der Patient liegt in einem Zimmer der Station, erhält Mahlzeiten nach verordneter Kost und festem Zeitplan, frische Wäsche und Hilfe bei der Körperpflege, der Pflegestützpunkt ist Tag und Nacht besetzt, morgens findet die Visite statt, die Besuchszeiten legt das Krankenhaus fest",
+        "when": "Behandlung oder Überwachung, die ambulant nicht möglich ist: Zeit nach einer Operation, Verschlechterung einer Erkrankung, Therapie über die Vene, Untersuchungen unter ständiger Aufsicht",
+        "prep": "Unterlagen, Hygieneartikel, Hausschuhe und Wechselkleidung, eine Liste der Dauermedikation und frühere Entlassungsberichte mitbringen; Wertsachen zu Hause lassen",
+        "abnormal": "Wie lange der Aufenthalt dauert, entscheidet der behandelnde Arzt nach dem Zustand, und dieser Zeitraum kann sich ändern. Verschlechterung, Schmerzen oder Probleme beim Essen sofort der Pflegekraft mitteilen und sich nach der Entlassung an den Entlassungsbericht halten"
+      },
+      "tr": {
+        "what": "Hastane odasında geçirilen bir günün gündelik yanı: yatak, yemek, çamaşır ve gece gündüz bulunan personel",
+        "how": "Hasta serviste bir odaya yerleştirilir, verilen diyet ve saatlere göre yemek, temiz çamaşır ve hijyen desteği alır, hemşire noktası gece gündüz çalışır, sabah doktor viziti yapılır, ziyaret saatlerini hastane belirler",
+        "when": "Ayaktan yapılamayan tedavi veya izlem: ameliyat sonrası dönem, hastalığın alevlenmesi, damardan tedavi, sürekli gözetim gerektiren tetkikler",
+        "prep": "Belgeler, kişisel temizlik malzemeleri, terlik ve yedek kıyafet, sürekli kullanılan ilaçların listesi ve önceki epikrizler getirilmeli; değerli eşyalar evde bırakılmalıdır",
+        "abnormal": "Yatışın ne kadar süreceğine duruma göre tedaviyi yürüten doktor karar verir ve bu süre değişebilir. Kötüleşme, ağrı ya da beslenme güçlüğünü hemen hemşireye söyleyin, taburculuktan sonra epikrizdeki talimatları izleyin"
+      },
+      "sr_cyrl": {
+        "what": "Свакодневна страна једног дана проведеног у болничкој соби: кревет, исхрана, постељина и особље присутно даноноћно",
+        "how": "Пацијент је смјештен у соби на одјељењу, добија оброке по прописаној дијети и распореду, чисту постељину и помоћ при хигијени, сестрински пункт ради дању и ноћу, ујутру је љекарска визита, а вријеме посјета одређује болница",
+        "when": "Лијечење или надзор који се не могу спровести амбулантно: период након операције, погоршање болести, терапија у вену, испитивања која траже стални надзор",
+        "prep": "Понијети документа, прибор за хигијену, папуче и резервну одјећу, списак сталних лијекова и ранија отпусна писма; вриједне ствари оставити код куће",
+        "abnormal": "Колико ће боравак трајати одлучује љекар који води лијечење према стању, а тај рок се може мијењати. О погоршању, болу или тешкоћама са исхраном одмах реците сестри, а након отпуста се држите отпусног писма"
+      }
+    }
+  },
+  {
+    "slug": "non-medical-bed-day-cost-intensive-coronary-and-neonatal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Бытовая сторона суток в реанимации, кардиоблоке или отделении новорождённых, где персонал постоянно находится рядом с пациентом",
+        "how": "Пациент лежит в палате с мониторами, кормление и гигиену полностью берёт на себя персонал, посещения ограничены по времени и числу людей, личных вещей в палате минимум; в неонатологии мать может сцеживать молоко и быть рядом с ребёнком по правилам отделения",
+        "when": "Нестабильное состояние, потребность в постоянном наблюдении за дыханием и кровообращением, первые сутки после большой операции, тяжело больной или недоношенный новорождённый",
+        "prep": "Сам пациент не готовится; родственникам стоит заранее уточнить время и правила посещений и передать персоналу список лекарств и контактный телефон",
+        "abnormal": "Перевод в обычную палату происходит, когда состояние становится стабильным, и срок заранее не известен. Сведения о состоянии даёт врач отделения в установленное время"
+      },
+      "en": {
+        "what": "The everyday side of a day in intensive care, a coronary unit or a neonatal unit, where staff stay beside the patient at all times",
+        "how": "The patient lies in a room with monitors, feeding and hygiene are taken over entirely by the staff, visits are limited in time and in the number of people, personal belongings in the room are kept to a minimum; in neonatology the mother can express milk and be with the baby according to the unit's rules",
+        "when": "An unstable condition, the need for constant monitoring of breathing and circulation, the first days after major surgery, a seriously ill or preterm newborn",
+        "prep": "The patient does not prepare; relatives should check the visiting hours and rules in advance and give the staff the list of medicines and a contact phone number",
+        "abnormal": "Transfer to a regular room happens once the condition becomes stable, and the timing is not known in advance. Information about the condition is given by the doctor of the unit at set times"
+      },
+      "sr": {
+        "what": "Svakodnevna strana jednog dana u intenzivnoj njezi, koronarnoj jedinici ili na neonatologiji, gdje je osoblje stalno uz pacijenta",
+        "how": "Pacijent leži u sobi sa monitorima, ishranu i higijenu u potpunosti preuzima osoblje, posjete su ograničene po trajanju i broju ljudi, ličnih stvari u sobi ima najmanje moguće; na neonatologiji majka može izdajati mlijeko i boraviti uz bebu po pravilima jedinice",
+        "when": "Nestabilno stanje, potreba za stalnim praćenjem disanja i krvotoka, prvi dani poslije velike operacije, teško bolesno ili prijevremeno rođeno novorođenče",
+        "prep": "Pacijent se ne priprema; porodica neka unaprijed provjeri vrijeme i pravila posjeta i osoblju preda spisak lijekova i kontakt telefon",
+        "abnormal": "Premještaj u običnu sobu slijedi kada se stanje stabilizuje, a rok se unaprijed ne zna. Informacije o stanju daje ljekar jedinice u određeno vrijeme"
+      },
+      "de": {
+        "what": "Die alltägliche Seite eines Tages auf der Intensivstation, in der Koronareinheit oder auf der Neugeborenenstation, wo das Personal ständig beim Patienten ist",
+        "how": "Der Patient liegt in einem Zimmer mit Monitoren, Ernährung und Körperpflege übernimmt vollständig das Personal, Besuche sind nach Dauer und Personenzahl begrenzt, persönliche Dinge im Zimmer bleiben auf ein Minimum beschränkt; in der Neonatologie kann die Mutter Milch abpumpen und nach den Regeln der Einheit beim Kind sein",
+        "when": "Instabiler Zustand, Bedarf an ständiger Überwachung von Atmung und Kreislauf, die ersten Tage nach einer großen Operation, ein schwer krankes oder zu früh geborenes Neugeborenes",
+        "prep": "Der Patient bereitet sich nicht vor; Angehörige sollten Besuchszeiten und Regeln vorab erfragen und dem Personal die Medikamentenliste und eine Telefonnummer übergeben",
+        "abnormal": "Die Verlegung auf eine normale Station erfolgt, sobald der Zustand stabil ist; der Zeitpunkt lässt sich vorab nicht sagen. Auskunft über den Zustand gibt der zuständige Arzt der Einheit zu festgelegten Zeiten"
+      },
+      "tr": {
+        "what": "Personelin sürekli hastanın yanında bulunduğu yoğun bakım, koroner ünite ya da yenidoğan ünitesinde geçen bir günün gündelik yanı",
+        "how": "Hasta monitörlerin bulunduğu bir odada yatar, beslenme ve hijyeni tamamen personel üstlenir, ziyaretler süre ve kişi sayısı bakımından sınırlıdır, odadaki kişisel eşya en aza indirilir; yenidoğan ünitesinde anne süt sağabilir ve ünitenin kurallarına göre bebeğinin yanında kalabilir",
+        "when": "Dengesiz durum, solunum ve dolaşımın sürekli izlenmesi ihtiyacı, büyük ameliyat sonrası ilk günler, ağır hasta ya da erken doğmuş yenidoğan",
+        "prep": "Hastanın hazırlığı olmaz; yakınları ziyaret saatlerini ve kurallarını önceden öğrenmeli, ilaç listesini ve bir iletişim numarasını personele vermelidir",
+        "abnormal": "Normal odaya nakil durum dengelendiğinde yapılır ve zamanı önceden bilinemez. Hastanın durumu hakkında bilgiyi ünitenin sorumlu hekimi belirlenen saatlerde verir"
+      },
+      "sr_cyrl": {
+        "what": "Свакодневна страна једног дана у интензивној њези, коронарној јединици или на неонатологији, гдје је особље стално уз пацијента",
+        "how": "Пацијент лежи у соби са мониторима, исхрану и хигијену у потпуности преузима особље, посјете су ограничене по трајању и броју људи, личних ствари у соби има најмање могуће; на неонатологији мајка може издајати млијеко и боравити уз бебу по правилима јединице",
+        "when": "Нестабилно стање, потреба за сталним праћењем дисања и крвотока, први дани послије велике операције, тешко болесно или пријевремено рођено новорођенче",
+        "prep": "Пацијент се не припрема; породица нека унапријед провјери вријеме и правила посјета и особљу преда списак лијекова и контакт телефон",
+        "abnormal": "Премјештај у обичну собу слиједи када се стање стабилизује, а рок се унапријед не зна. Информације о стању даје љекар јединице у одређено вријеме"
+      }
+    }
+  },
+  {
+    "slug": "nursing-care-discharge-letter",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Документ, который медсестра оформляет при выписке: что было сделано по уходу и что нужно продолжать дома",
+        "how": "В конце госпитализации медсестра записывает состояние кожи и ран, подвижность, питание и глотание, работу кишечника и мочевого пузыря, катетеры и стомы, сделанные перевязки и обучение близких, после чего передаёт документ пациенту или патронажной службе",
+        "when": "Выписка после долгого лечения, выписка пациента с раной, стомой, катетером или пролежнями, перевод в другое учреждение или передача патронажной медсестре, выписка лежачего пациента",
+        "prep": "Подготовка не нужна; заранее скажите медсестре, кто будет ухаживать за пациентом дома, и спросите, какие материалы и приспособления понадобятся",
+        "abnormal": "Записи показывают, какой уход предстоит дальше и чему нужно научить домашних. Если рана начинает мокнуть, кожа краснеет или появляются температура и боль, нужно обратиться к врачу или патронажной медсестре"
+      },
+      "en": {
+        "what": "A document the nurse prepares at discharge: what was done in terms of care and what has to be continued at home",
+        "how": "At the end of the stay the nurse records the state of the skin and wounds, mobility, eating and swallowing, bowel and bladder function, catheters and stomas, the dressings performed and the training given to relatives, then hands the document to the patient or to the home-care service",
+        "when": "Discharge after long treatment, discharge of a patient with a wound, a stoma, a catheter or pressure sores, transfer to another facility or handover to a community nurse, discharge of a bedbound patient",
+        "prep": "No preparation needed; tell the nurse in advance who will look after the patient at home and ask which supplies and aids will be needed",
+        "abnormal": "The notes show what care comes next and what the household has to be taught. If a wound starts to leak, the skin turns red or fever and pain appear, contact a doctor or the community nurse"
+      },
+      "sr": {
+        "what": "Dokument koji medicinska sestra piše pri otpustu: šta je urađeno u njezi i šta treba nastaviti kod kuće",
+        "how": "Na kraju boravka sestra upisuje stanje kože i rana, pokretljivost, ishranu i gutanje, rad crijeva i mokraćne bešike, katetere i stome, urađena previjanja i obuku porodice, pa dokument predaje pacijentu ili patronažnoj službi",
+        "when": "Otpust nakon dugog liječenja, otpust pacijenta sa ranom, stomom, kateterom ili dekubitusom, premještaj u drugu ustanovu ili predaja patronažnoj sestri, otpust nepokretnog pacijenta",
+        "prep": "Priprema nije potrebna; unaprijed recite sestri ko će brinuti o pacijentu kod kuće i pitajte koji materijal i pomagala su potrebni",
+        "abnormal": "Zapisi pokazuju kakva njega slijedi i čemu treba obučiti ukućane. Ako rana počne da curi, koža pocrveni ili se jave temperatura i bol, treba se javiti ljekaru ili patronažnoj sestri"
+      },
+      "de": {
+        "what": "Ein Dokument, das die Pflegekraft bei der Entlassung erstellt: was pflegerisch getan wurde und was zu Hause fortgesetzt werden muss",
+        "how": "Am Ende des Aufenthalts hält die Pflegekraft den Zustand von Haut und Wunden, die Beweglichkeit, Ernährung und Schlucken, Darm- und Blasenfunktion, Katheter und Stomata, durchgeführte Verbandwechsel und die Anleitung der Angehörigen fest und übergibt das Dokument dem Patienten oder dem Pflegedienst",
+        "when": "Entlassung nach langer Behandlung, Entlassung mit Wunde, Stoma, Katheter oder Druckgeschwüren, Verlegung in eine andere Einrichtung oder Übergabe an die ambulante Pflege, Entlassung eines bettlägerigen Patienten",
+        "prep": "Keine Vorbereitung nötig; vorab mitteilen, wer zu Hause pflegt, und erfragen, welche Materialien und Hilfsmittel nötig sind",
+        "abnormal": "Die Aufzeichnungen zeigen, welche Pflege als Nächstes nötig ist und was die Angehörigen lernen müssen. Nässt die Wunde, rötet sich die Haut oder treten Fieber und Schmerzen auf, sollte ein Arzt oder der Pflegedienst kontaktiert werden"
+      },
+      "tr": {
+        "what": "Hemşirenin taburculukta hazırladığı belge: bakım kapsamında neler yapıldığı ve evde nelerin sürdürüleceği",
+        "how": "Yatışın sonunda hemşire cilt ve yara durumunu, hareketliliği, beslenme ve yutmayı, bağırsak ve mesane işlevini, kateter ve stomaları, yapılan pansumanları ve yakınlara verilen eğitimi yazar, ardından belgeyi hastaya ya da evde bakım hizmetine teslim eder",
+        "when": "Uzun tedavi sonrası taburculuk, yarası, stoması, kateteri ya da bası yarası olan hastanın taburculuğu, başka kuruma nakil veya evde bakım hemşiresine devir, yatağa bağımlı hastanın taburculuğu",
+        "prep": "Hazırlık gerekmez; evde hastaya kimin bakacağını hemşireye önceden söyleyin ve hangi malzeme ile yardımcı araçların gerekeceğini sorun",
+        "abnormal": "Kayıtlar bundan sonra hangi bakımın gerektiğini ve ev halkına neyin öğretileceğini gösterir. Yara akmaya başlar, cilt kızarır ya da ateş ve ağrı ortaya çıkarsa hekime veya evde bakım hemşiresine başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Документ који медицинска сестра пише при отпусту: шта је урађено у њези и шта треба наставити код куће",
+        "how": "На крају боравка сестра уписује стање коже и рана, покретљивост, исхрану и гутање, рад цријева и мокраћне бешике, катетере и стоме, урађена превијања и обуку породице, па документ предаје пацијенту или патронажној служби",
+        "when": "Отпуст након дугог лијечења, отпуст пацијента са раном, стомом, катетером или декубитусом, премјештај у другу установу или предаја патронажној сестри, отпуст непокретног пацијента",
+        "prep": "Припрема није потребна; унапријед реците сестри ко ће бринути о пацијенту код куће и питајте који материјал и помагала су потребни",
+        "abnormal": "Записи показују каква њега слиједи и чему треба обучити укућане. Ако рана почне да цури, кожа поцрвени или се јаве температура и бол, треба се јавити љекару или патронажној сестри"
+      }
+    }
+  },
+  {
+    "slug": "on-call-doctor-specialist-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр врача-специалиста, дежурящего в больнице вне обычных часов приёма: ночью, в выходные и праздники",
+        "how": "Пациентов принимают по срочности: расспрос о жалобах, осмотр, при необходимости срочные анализы, ЭКГ или снимок, после чего врач решает, лечить амбулаторно, оставить под наблюдением или положить в отделение",
+        "when": "Сильная боль, высокая температура, травма, затруднённое дыхание, обострение хронической болезни вне часов работы поликлиники, направление из приёмного покоя",
+        "prep": "Подготовка невозможна и не нужна; по возможности возьмите документы, страховку, список лекарств и прежние выписки, а при сильной боли в животе не ешьте и не пейте до осмотра",
+        "abnormal": "Цель такого осмотра — оценить, насколько состояние срочное, а не поставить окончательный диагноз; рекомендации записывают в документ для вашего врача. Если после возвращения домой жалобы усилятся, нужно обратиться повторно"
+      },
+      "en": {
+        "what": "An examination by the specialist on duty in the hospital outside the usual clinic hours: at night, at weekends and on holidays",
+        "how": "Patients are seen in order of urgency: questions about the complaints, an examination, urgent tests, an ECG or an image if needed, after which the doctor decides whether to treat you as an outpatient, keep you under observation or admit you to a ward",
+        "when": "Severe pain, high fever, injury, difficulty breathing, a flare of a chronic illness outside clinic hours, referral from the admissions department",
+        "prep": "Preparation is not possible and not needed; if you can, bring documents, insurance, a list of medicines and previous discharge letters, and with severe abdominal pain do not eat or drink before the examination",
+        "abnormal": "The purpose of such an examination is to judge how urgent the situation is, not to make a final diagnosis; the recommendations are written down in a document for your own doctor. If the complaints get worse after you return home, come back again"
+      },
+      "sr": {
+        "what": "Pregled ljekara specijaliste koji dežura u bolnici izvan redovnog rada ambulante: noću, vikendom i praznikom",
+        "how": "Pacijenti se primaju po hitnosti: razgovor o tegobama, pregled, po potrebi hitne analize, EKG ili snimak, nakon čega ljekar odlučuje da li liječenje ide ambulantno, uz posmatranje ili uz prijem na odjeljenje",
+        "when": "Jak bol, visoka temperatura, povreda, otežano disanje, pogoršanje hronične bolesti van radnog vremena ambulante, upućivanje iz prijemne službe",
+        "prep": "Priprema nije moguća ni potrebna; ako možete, ponesite dokumenta, zdravstvenu knjižicu, spisak lijekova i ranija otpusna pisma, a kod jakog bola u trbuhu nemojte jesti ni piti prije pregleda",
+        "abnormal": "Cilj ovakvog pregleda je da se procijeni koliko je stanje hitno, a ne da se postavi konačna dijagnoza; preporuke se upisuju u dokument za vašeg ljekara. Ako se tegobe pojačaju po povratku kući, javite se ponovo"
+      },
+      "de": {
+        "what": "Eine Untersuchung durch den diensthabenden Facharzt im Krankenhaus außerhalb der üblichen Sprechzeiten: nachts, am Wochenende und an Feiertagen",
+        "how": "Die Patienten werden nach Dringlichkeit versorgt: Fragen zu den Beschwerden, Untersuchung, bei Bedarf eilige Laborwerte, ein EKG oder eine Aufnahme, danach entscheidet der Arzt über ambulante Behandlung, Überwachung oder Aufnahme auf eine Station",
+        "when": "Starke Schmerzen, hohes Fieber, Verletzung, Atemnot, Verschlechterung einer chronischen Erkrankung außerhalb der Sprechzeiten, Zuweisung aus der Aufnahme",
+        "prep": "Eine Vorbereitung ist weder möglich noch nötig; wenn möglich Unterlagen, Versichertenkarte, Medikamentenliste und frühere Entlassungsberichte mitbringen und bei starken Bauchschmerzen vor der Untersuchung nichts essen und trinken",
+        "abnormal": "Diese Untersuchung soll einschätzen, wie dringlich der Zustand ist, und keine endgültige Diagnose stellen; die Empfehlungen werden in einem Dokument für den eigenen Arzt festgehalten. Verstärken sich die Beschwerden nach der Rückkehr nach Hause, sollte man sich erneut vorstellen"
+      },
+      "tr": {
+        "what": "Olağan poliklinik saatleri dışında, gece, hafta sonu ve tatillerde hastanede nöbet tutan uzman hekimin yaptığı muayene",
+        "how": "Hastalar aciliyet sırasına göre görülür: şikâyetlerin sorgulanması, muayene, gerekirse acil tahliller, EKG ya da görüntüleme; ardından hekim ayaktan tedavi, gözlem altında tutma veya servise yatış arasında karar verir",
+        "when": "Şiddetli ağrı, yüksek ateş, yaralanma, nefes darlığı, poliklinik saatleri dışında kronik hastalığın alevlenmesi, hasta kabul biriminden yönlendirme",
+        "prep": "Hazırlık mümkün değildir ve gerekmez; mümkünse belgeler, sigorta kartı, ilaç listesi ve önceki epikrizler getirilmeli, şiddetli karın ağrısında muayeneden önce yiyip içilmemelidir",
+        "abnormal": "Bu muayenenin amacı durumun ne kadar acil olduğunu değerlendirmektir, kesin tanı koymak değildir; öneriler kendi hekiminiz için bir belgeye yazılır. Eve döndükten sonra şikâyetler artarsa yeniden başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Преглед љекара специјалисте који дежура у болници изван редовног рада амбуланте: ноћу, викендом и празником",
+        "how": "Пацијенти се примају по хитности: разговор о тегобама, преглед, по потреби хитне анализе, ЕКГ или снимак, након чега љекар одлучује да ли лијечење иде амбулантно, уз посматрање или уз пријем на одјељење",
+        "when": "Јак бол, висока температура, повреда, отежано дисање, погоршање хроничне болести ван радног времена амбуланте, упућивање из пријемне службе",
+        "prep": "Припрема није могућа ни потребна; ако можете, понесите документа, здравствену књижицу, списак лијекова и ранија отпусна писма, а код јаког бола у трбуху немојте јести ни пити прије прегледа",
+        "abnormal": "Циљ оваквог прегледа је да се процијени колико је стање хитно, а не да се постави коначна дијагноза; препоруке се уписују у документ за вашег љекара. Ако се тегобе појачају по повратку кући, јавите се поново"
+      }
+    }
+  }
 ]

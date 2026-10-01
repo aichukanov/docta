@@ -1,699 +1,818 @@
 [
-	{
-		"slug": "histopathology-mediastinum-biopsy",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование ткани из средостения — пространства между лёгкими, где лежат лимфатические узлы, вилочковая железа и крупные сосуды",
-				"how": "Материал получают при медиастиноскопии, торакоскопии или пункции под контролем визуализации, затем фиксируют, заливают в парафин, режут на тонкие срезы, окрашивают и изучают под микроскопом",
-				"when": "Увеличенные лимфоузлы средостения на КТ или рентгене, образование в средостении, уточнение природы гранулёматозного процесса, оценка ткани перед выбором тактики при болезнях грудной клетки",
-				"prep": "Отдельной подготовки к лабораторному этапу нет: материал берут во время эндоскопической или хирургической процедуры, условия которой обсуждает оперирующий врач",
-				"abnormal": "Патолог описывает строение ткани: воспалительные и гранулёматозные изменения, характер лимфоидных клеток, признаки злокачественности. Заключение выдаёт врач-патолог, а дальнейшую тактику определяет лечащий врач"
-			},
-			"en": {
-				"what": "Microscopic examination of tissue from the mediastinum, the space between the lungs that holds lymph nodes, the thymus and major vessels",
-				"how": "The sample is obtained during mediastinoscopy, thoracoscopy or an image-guided puncture, then fixed, embedded in paraffin, cut into thin sections, stained and examined under a microscope",
-				"when": "Enlarged mediastinal lymph nodes on CT or X-ray, a mass in the mediastinum, clarifying the nature of a granulomatous process, assessing tissue before choosing management in chest disease",
-				"prep": "No separate preparation is needed for the laboratory stage: the material is taken during an endoscopic or surgical procedure, the conditions of which are discussed by the operating doctor",
-				"abnormal": "The pathologist describes the tissue structure: inflammatory and granulomatous changes, the character of lymphoid cells, signs of malignancy. The report is issued by the pathologist, and further management is decided by the treating doctor"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled tkiva iz medijastinuma, prostora između pluća u kojem se nalaze limfni čvorovi, timus i veliki krvni sudovi",
-				"how": "Materijal se dobija medijastinoskopijom, torakoskopijom ili punkcijom pod kontrolom snimanja, zatim se fiksira, ukalupljuje u parafin, reže na tanke presjeke, boji i pregleda pod mikroskopom",
-				"when": "Uvećani limfni čvorovi medijastinuma na skeneru ili rendgenu, tvorba u medijastinumu, razjašnjenje prirode granulomatoznog procesa, procjena tkiva prije izbora postupka kod bolesti grudnog koša",
-				"prep": "Za laboratorijski dio nema posebne pripreme: materijal se uzima tokom endoskopskog ili hirurškog zahvata, čije uslove dogovara ljekar koji ga izvodi",
-				"abnormal": "Patolog opisuje građu tkiva, upalne i granulomatozne promjene, prirodu limfoidnih ćelija i znake maligniteta. Nalaz izdaje ljekar patolog, a dalji postupak određuje ljekar koji vodi liječenje"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung von Gewebe aus dem Mediastinum, dem Raum zwischen den Lungen mit Lymphknoten, Thymus und großen Gefäßen",
-				"how": "Das Material wird bei einer Mediastinoskopie, Thorakoskopie oder bildgesteuerten Punktion gewonnen, anschließend fixiert, in Paraffin eingebettet, in dünne Schnitte geschnitten, gefärbt und unter dem Mikroskop beurteilt",
-				"when": "Vergrößerte mediastinale Lymphknoten im CT oder Röntgenbild, Raumforderung im Mediastinum, Abklärung eines granulomatösen Prozesses, Gewebebeurteilung vor der Therapiewahl bei Erkrankungen des Brustkorbs",
-				"prep": "Für den Laborteil ist keine gesonderte Vorbereitung nötig: Das Material wird während eines endoskopischen oder chirurgischen Eingriffs entnommen, dessen Bedingungen der operierende Arzt bespricht",
-				"abnormal": "Der Pathologe beschreibt den Gewebeaufbau, entzündliche und granulomatöse Veränderungen, die Art der lymphatischen Zellen und Hinweise auf Bösartigkeit. Den Befund erstellt der Pathologe, das weitere Vorgehen legt der behandelnde Arzt fest"
-			},
-			"tr": {
-				"what": "Akciğerler arasında yer alan, lenf düğümleri, timus ve büyük damarları barındıran mediasten bölgesinden alınan dokunun mikroskobik incelemesi",
-				"how": "Örnek mediastinoskopi, torakoskopi ya da görüntüleme eşliğinde ponksiyonla alınır, ardından tespit edilir, parafine gömülür, ince kesitler halinde kesilir, boyanır ve mikroskopta incelenir",
-				"when": "BT veya röntgende büyümüş mediasten lenf düğümleri, mediastende kitle, granülomatöz sürecin niteliğinin aydınlatılması, göğüs hastalıklarında tedavi kararı öncesi doku değerlendirmesi",
-				"prep": "Laboratuvar aşaması için ayrı bir hazırlık gerekmez: materyal endoskopik ya da cerrahi işlem sırasında alınır, işlemin koşullarını uygulayan hekim anlatır",
-				"abnormal": "Patolog doku yapısını, iltihabi ve granülomatöz değişiklikleri, lenfoid hücrelerin niteliğini ve kötü huyluluk belirtilerini tanımlar. Raporu patoloji uzmanı verir, sonraki adımları tedaviyi yürüten hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-multiple-biopsy",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование нескольких фрагментов ткани, взятых за одну процедуру из разных участков",
-				"how": "Каждый фрагмент помещают в отдельный маркированный контейнер, проводят через парафин, режут и окрашивают, после чего патолог описывает участки по отдельности",
-				"when": "Эндоскопические биопсии из нескольких отделов органа, оценка распространённости изменений, забор из нескольких подозрительных участков кожи или слизистой, контроль в нескольких точках после лечения",
-				"prep": "Пациент к лабораторному этапу не готовится: фрагменты берут во время эндоскопии или другой процедуры",
-				"abnormal": "В заключении каждый участок описан отдельно, поэтому картина может различаться от точки к точке. Сопоставляет описания с клинической картиной и решает, что делать дальше, лечащий врач"
-			},
-			"en": {
-				"what": "Microscopic examination of several tissue fragments taken from different sites during one procedure",
-				"how": "Each fragment goes into its own labelled container, is processed through paraffin, sectioned and stained, after which the pathologist describes the sites separately",
-				"when": "Endoscopic biopsies from several parts of an organ, assessing how widespread changes are, sampling several suspicious areas of skin or mucosa, follow-up at several points after treatment",
-				"prep": "The patient does not prepare for the laboratory stage: the fragments are taken during endoscopy or another procedure",
-				"abnormal": "The report describes each site separately, so the picture may differ from point to point. The treating doctor matches the descriptions with the clinical picture and decides on the next steps"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled više isječaka tkiva uzetih tokom jednog zahvata sa različitih dijelova",
-				"how": "Svaki isječak ide u zasebnu označenu posudu, obrađuje se kroz parafin, reže i boji, nakon čega patolog opisuje svaki dio posebno",
-				"when": "Endoskopske biopsije iz više dijelova organa, procjena raširenosti promjena, uzorkovanje sa više sumnjivih dijelova kože ili sluznice, kontrola na više tačaka poslije liječenja",
-				"prep": "Pacijent se za laboratorijski dio ne priprema: isječci se uzimaju tokom endoskopije ili drugog zahvata",
-				"abnormal": "U nalazu je svaki dio opisan zasebno, pa se slika može razlikovati od tačke do tačke. Opise sa kliničkom slikom poredi i dalje korake određuje ljekar koji vodi liječenje"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung mehrerer Gewebestücke, die während eines Eingriffs an verschiedenen Stellen entnommen wurden",
-				"how": "Jedes Stück kommt in ein eigenes beschriftetes Gefäß, wird in Paraffin verarbeitet, geschnitten und gefärbt, danach beschreibt der Pathologe die Entnahmestellen getrennt",
-				"when": "Endoskopische Biopsien aus mehreren Abschnitten eines Organs, Beurteilung der Ausdehnung von Veränderungen, Entnahme an mehreren auffälligen Haut- oder Schleimhautstellen, Kontrolle an mehreren Punkten nach einer Behandlung",
-				"prep": "Für den Laborteil ist keine Vorbereitung nötig: Die Gewebestücke werden während einer Endoskopie oder eines anderen Eingriffs entnommen",
-				"abnormal": "Im Befund ist jede Stelle einzeln beschrieben, das Bild kann sich daher von Punkt zu Punkt unterscheiden. Der behandelnde Arzt gleicht die Beschreibungen mit dem klinischen Bild ab und entscheidet über das weitere Vorgehen"
-			},
-			"tr": {
-				"what": "Tek bir işlem sırasında farklı bölgelerden alınan birden çok doku parçasının mikroskobik incelemesi",
-				"how": "Her parça ayrı etiketli kaba konur, parafinden geçirilir, kesilir ve boyanır, ardından patolog bölgeleri ayrı ayrı tanımlar",
-				"when": "Bir organın farklı bölümlerinden endoskopik biyopsiler, değişikliklerin yaygınlığının değerlendirilmesi, deri veya mukozadaki birden çok şüpheli alandan örnekleme, tedavi sonrası birkaç noktadan kontrol",
-				"prep": "Hasta laboratuvar aşaması için hazırlık yapmaz: parçalar endoskopi ya da başka bir işlem sırasında alınır",
-				"abnormal": "Raporda her bölge ayrı tanımlanır, bu nedenle görünüm noktadan noktaya değişebilir. Tanımları klinik tabloyla karşılaştıran ve sonraki adıma karar veren tedaviyi yürüten hekimdir"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-multiple-prostate-biopsies",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование нескольких фрагментов ткани предстательной железы, присланных по одному направлению",
-				"how": "Фрагменты проводят через парафин раздельно, с каждого делают срезы и окрашивают, патолог оценивает материал по каждой пробе и сводит картину по железе в целом",
-				"when": "Оценка распространённости изменений по долям железы, наблюдение за ранее описанными изменениями, повторный забор после неинформативного исследования, планирование урологической тактики",
-				"prep": "Специальной подготовки для лаборатории нет: пробы берут во время урологической процедуры, к которой пациента готовит уролог",
-				"abnormal": "Патолог описывает строение железистой ткани, наличие воспаления, атипии и признаков злокачественности, а также сколько проб затронуто. Значение результата и следующие шаги определяет уролог"
-			},
-			"en": {
-				"what": "Microscopic examination of several prostate tissue fragments submitted under a single referral",
-				"how": "The fragments are processed through paraffin separately, each is sectioned and stained, and the pathologist assesses every sample and then summarises the picture for the gland as a whole",
-				"when": "Assessing how far changes extend across the lobes of the gland, monitoring previously described changes, repeat sampling after an uninformative examination, planning urological management",
-				"prep": "No special laboratory preparation is required: the samples are taken during a urological procedure, for which the urologist prepares the patient",
-				"abnormal": "The pathologist describes the glandular tissue, the presence of inflammation, atypia and signs of malignancy, and how many samples are involved. The meaning of the result and the next steps are decided by the urologist"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled više isječaka tkiva prostate poslatih po jednoj uputnici",
-				"how": "Isječci se kroz parafin obrađuju odvojeno, sa svakog se prave presjeci i boje, a patolog procjenjuje svaki uzorak i sabira sliku za cijelu žlijezdu",
-				"when": "Procjena raširenosti promjena po režnjevima žlijezde, praćenje ranije opisanih promjena, ponovno uzorkovanje poslije neinformativnog pregleda, planiranje urološkog postupka",
-				"prep": "Nema posebne pripreme za laboratoriju: uzorci se uzimaju tokom urološkog zahvata, za koji pacijenta priprema urolog",
-				"abnormal": "Patolog opisuje građu žljezdanog tkiva, prisustvo upale, atipije i znakova maligniteta, kao i koliko je uzoraka zahvaćeno. Značenje nalaza i sljedeće korake određuje urolog"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung mehrerer Gewebestücke der Prostata, die mit einer Überweisung eingesandt wurden",
-				"how": "Die Stücke werden getrennt in Paraffin verarbeitet, jedes wird geschnitten und gefärbt, der Pathologe beurteilt jede Probe und fasst anschließend das Bild für die gesamte Drüse zusammen",
-				"when": "Beurteilung der Ausdehnung von Veränderungen über die Drüsenlappen, Verlaufskontrolle zuvor beschriebener Veränderungen, erneute Entnahme nach einer nicht aussagekräftigen Untersuchung, Planung des urologischen Vorgehens",
-				"prep": "Für das Labor ist keine besondere Vorbereitung nötig: Die Proben werden während eines urologischen Eingriffs entnommen, auf den der Urologe den Patienten vorbereitet",
-				"abnormal": "Der Pathologe beschreibt das Drüsengewebe, Entzündung, Atypien und Hinweise auf Bösartigkeit sowie die Zahl der betroffenen Proben. Was das Ergebnis bedeutet und wie es weitergeht, entscheidet der Urologe"
-			},
-			"tr": {
-				"what": "Tek bir sevkle gönderilen birden çok prostat dokusu parçasının mikroskobik incelemesi",
-				"how": "Parçalar parafinden ayrı ayrı geçirilir, her birinden kesit alınıp boyanır, patolog her örneği değerlendirir ve bezin bütünü için tabloyu birleştirir",
-				"when": "Değişikliklerin bez loblarındaki yaygınlığının değerlendirilmesi, daha önce tanımlanmış değişikliklerin izlemi, bilgi vermeyen incelemeden sonra yeniden örnekleme, ürolojik planlama",
-				"prep": "Laboratuvar için özel hazırlık yoktur: örnekler ürolojik işlem sırasında alınır, hastayı bu işleme ürolog hazırlar",
-				"abnormal": "Patolog bez dokusunun yapısını, iltihap, atipi ve kötü huyluluk belirtilerini ve kaç örneğin etkilendiğini tanımlar. Sonucun anlamını ve sonraki adımları ürolog belirler"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-needle-biopsy-liver-lung-kidney",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование столбика ткани печени, лёгкого или почки, полученного толстой иглой",
-				"how": "Столбик фиксируют, заливают в парафин, режут на тонкие срезы и окрашивают, для печени и почки применяют дополнительные окраски соединительной ткани; саму пункцию делают под контролем УЗИ или КТ",
-				"when": "Диффузные изменения печени неясной причины, стойкие изменения в анализах мочи и снижение функции почек, очаговое или распространённое поражение лёгкого, уточнение природы образования перед выбором лечения",
-				"prep": "Перед пункцией врач назначает показатели свёртывания крови и сам решает вопрос о временной отмене препаратов, влияющих на свёртываемость; лабораторный этап подготовки не требует",
-				"abnormal": "Заключение описывает сохранность структуры органа, характер воспаления, фиброза и клеточных изменений. Сопоставляет его с анализами и снимками и определяет тактику лечащий врач"
-			},
-			"en": {
-				"what": "Microscopic examination of a tissue core from the liver, lung or kidney obtained with a thick needle",
-				"how": "The core is fixed, embedded in paraffin, cut into thin sections and stained, with additional connective tissue stains for liver and kidney; the puncture itself is performed under ultrasound or CT guidance",
-				"when": "Diffuse liver changes of unclear cause, persistent changes in urine tests and declining kidney function, focal or widespread lung involvement, clarifying the nature of a lesion before choosing treatment",
-				"prep": "Before the puncture the doctor orders clotting tests and alone decides whether medicines affecting clotting are paused; the laboratory stage needs no preparation",
-				"abnormal": "The report describes how far the organ structure is preserved and the character of inflammation, fibrosis and cell changes. The treating doctor compares it with tests and imaging and decides on management"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled tkivnog cilindra jetre, pluća ili bubrega dobijenog debelom iglom",
-				"how": "Cilindar se fiksira, ukalupljuje u parafin, reže na tanke presjeke i boji, a za jetru i bubreg koriste se i posebna bojenja vezivnog tkiva; sama punkcija se radi pod kontrolom ultrazvuka ili skenera",
-				"when": "Difuzne promjene jetre nejasnog uzroka, uporne promjene u nalazu urina i pad bubrežne funkcije, žarišna ili raširena promjena na plućima, razjašnjenje prirode tvorbe prije izbora liječenja",
-				"prep": "Prije punkcije ljekar traži parametre koagulacije i isključivo on odlučuje o privremenom prekidu lijekova koji utiču na zgrušavanje; laboratorijski dio ne traži pripremu",
-				"abnormal": "Nalaz opisuje očuvanost građe organa i prirodu upale, fibroze i promjena u ćelijama. Sa analizama i snimcima ga poredi i postupak određuje ljekar koji vodi liječenje"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung eines Gewebezylinders aus Leber, Lunge oder Niere, der mit einer dicken Nadel gewonnen wurde",
-				"how": "Der Zylinder wird fixiert, in Paraffin eingebettet, in dünne Schnitte geschnitten und gefärbt, bei Leber und Niere zusätzlich mit Bindegewebsfärbungen; die Punktion selbst erfolgt unter Ultraschall- oder CT-Kontrolle",
-				"when": "Diffuse Leberveränderungen unklarer Ursache, anhaltende Auffälligkeiten im Urin und nachlassende Nierenfunktion, umschriebene oder ausgedehnte Lungenveränderungen, Abklärung einer Raumforderung vor der Therapiewahl",
-				"prep": "Vor der Punktion veranlasst der Arzt Gerinnungswerte und entscheidet allein über das vorübergehende Pausieren gerinnungswirksamer Medikamente; der Laborteil erfordert keine Vorbereitung",
-				"abnormal": "Der Befund beschreibt, wie weit der Organaufbau erhalten ist, sowie Art der Entzündung, Fibrose und Zellveränderungen. Der behandelnde Arzt gleicht ihn mit Laborwerten und Bildgebung ab und legt das Vorgehen fest"
-			},
-			"tr": {
-				"what": "Kalın iğneyle alınan karaciğer, akciğer veya böbrek doku silindirinin mikroskobik incelemesi",
-				"how": "Silindir tespit edilir, parafine gömülür, ince kesitlere ayrılır ve boyanır, karaciğer ile böbrekte ayrıca bağ dokusu boyaları kullanılır; ponksiyonun kendisi ultrason ya da BT eşliğinde yapılır",
-				"when": "Nedeni belirsiz yaygın karaciğer değişiklikleri, idrar tahlilinde süregelen bozukluk ve böbrek işlevinde azalma, akciğerde odaksal ya da yaygın tutulum, tedavi seçimi öncesi kitlenin niteliğinin aydınlatılması",
-				"prep": "Ponksiyon öncesi hekim pıhtılaşma testlerini ister ve kanı sulandıran ilaçlara ara verilip verilmeyeceğine yalnızca hekim karar verir; laboratuvar aşaması hazırlık gerektirmez",
-				"abnormal": "Rapor organ yapısının ne kadar korunduğunu, iltihabın, fibrozun ve hücre değişikliklerinin niteliğini tanımlar. Bunu tahlil ve görüntülerle karşılaştırıp yolu belirleyen tedaviyi yürüten hekimdir"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-needle-breast-biopsy-without-ihc",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование столбика ткани молочной железы без дополнительного иммуногистохимического окрашивания",
-				"how": "Столбик, взятый толстой иглой под контролем УЗИ или маммографии, проводят через парафин, режут и окрашивают стандартными красителями; иммуногистохимия при необходимости назначается отдельно",
-				"when": "Узловое образование, выявленное при осмотре, УЗИ или маммографии, изменения в зоне рубца после операции, уточнение природы уплотнения перед решением о лечении",
-				"prep": "К лабораторному этапу готовиться не нужно; условия самой пункции обсуждает врач, выполняющий биопсию",
-				"abnormal": "Патолог описывает строение протоков и долек, характер клеток и признаки злокачественности. Если нужны данные о рецепторах, врач отдельно назначает иммуногистохимическое исследование, а тактику определяет лечащий врач"
-			},
-			"en": {
-				"what": "Microscopic examination of a breast tissue core without additional immunohistochemical staining",
-				"how": "The core, taken with a thick needle under ultrasound or mammography guidance, is processed through paraffin, sectioned and stained with routine stains; immunohistochemistry is ordered separately if needed",
-				"when": "A lump found on examination, ultrasound or mammography, changes in a post-operative scar area, clarifying the nature of a firm area before a treatment decision",
-				"prep": "No preparation is needed for the laboratory stage; the conditions of the puncture itself are discussed by the doctor performing the biopsy",
-				"abnormal": "The pathologist describes the structure of ducts and lobules, the character of the cells and signs of malignancy. If receptor data are needed the doctor orders immunohistochemistry separately, and the treating doctor decides on management"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled tkivnog cilindra dojke bez dodatnog imunohistohemijskog bojenja",
-				"how": "Cilindar uzet debelom iglom pod kontrolom ultrazvuka ili mamografije obrađuje se kroz parafin, reže i boji standardnim bojama; imunohistohemija se po potrebi traži posebno",
-				"when": "Čvorić otkriven pregledom, ultrazvukom ili mamografijom, promjene u ožiljku poslije operacije, razjašnjenje prirode zadebljanja prije odluke o liječenju",
-				"prep": "Za laboratorijski dio nije potrebna priprema, a uslove same punkcije objašnjava ljekar koji radi biopsiju",
-				"abnormal": "Patolog opisuje građu kanalića i režnjića, prirodu ćelija i znake maligniteta. Ako su potrebni podaci o receptorima, ljekar posebno traži imunohistohemiju, a postupak određuje ljekar koji vodi liječenje"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung eines Gewebezylinders der Brust ohne zusätzliche immunhistochemische Färbung",
-				"how": "Der mit dicker Nadel unter Ultraschall- oder Mammographiekontrolle entnommene Zylinder wird in Paraffin verarbeitet, geschnitten und mit Routinefärbungen gefärbt; eine Immunhistochemie wird bei Bedarf gesondert angefordert",
-				"when": "Ein bei der Untersuchung, im Ultraschall oder in der Mammographie gefundener Knoten, Veränderungen im Narbenbereich nach einer Operation, Abklärung einer Verhärtung vor der Behandlungsentscheidung",
-				"prep": "Für den Laborteil ist keine Vorbereitung nötig; die Bedingungen der Punktion bespricht der Arzt, der die Biopsie durchführt",
-				"abnormal": "Der Pathologe beschreibt den Aufbau von Gängen und Läppchen, die Beschaffenheit der Zellen und Hinweise auf Bösartigkeit. Werden Rezeptordaten benötigt, ordnet der Arzt die Immunhistochemie gesondert an, das Vorgehen legt der behandelnde Arzt fest"
-			},
-			"tr": {
-				"what": "Ek immünhistokimyasal boyama yapılmadan incelenen meme dokusu silindirinin mikroskobik değerlendirmesi",
-				"how": "Ultrason ya da mamografi eşliğinde kalın iğneyle alınan silindir parafinden geçirilir, kesilir ve standart boyalarla boyanır; gerekirse immünhistokimya ayrıca istenir",
-				"when": "Muayene, ultrason ya da mamografide saptanan kitle, ameliyat sonrası nedbe bölgesindeki değişiklikler, tedavi kararı öncesi sertliğin niteliğinin aydınlatılması",
-				"prep": "Laboratuvar aşaması için hazırlık gerekmez; ponksiyonun koşullarını biyopsiyi yapan hekim anlatır",
-				"abnormal": "Patolog kanal ve lobül yapısını, hücrelerin niteliğini ve kötü huyluluk belirtilerini tanımlar. Reseptör bilgisi gerekiyorsa hekim immünhistokimyayı ayrıca ister, tedavi yolunu ise tedaviyi yürüten hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-needle-prostate-biopsy",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование столбика ткани предстательной железы, взятого толстой иглой",
-				"how": "Столбик, полученный под контролем трансректального УЗИ, проводят через парафин, режут на срезы и окрашивают; патолог описывает железистую ткань по всей длине столбика",
-				"when": "Повышение PSA, изменения при пальцевом ректальном исследовании, подозрительный участок на МРТ предстательной железы",
-				"prep": "Подготовка относится к самой пункции и обсуждается с урологом; для лабораторной части от пациента ничего не требуется",
-				"abnormal": "В заключении описывают строение желёз, признаки воспаления, атипии и злокачественности, а также протяжённость изменений в столбике. Что это означает и нужны ли дополнительные исследования, решает уролог"
-			},
-			"en": {
-				"what": "Microscopic examination of a prostate tissue core taken with a thick needle",
-				"how": "The core, obtained under transrectal ultrasound guidance, is processed through paraffin, sectioned and stained; the pathologist describes the glandular tissue along the whole length of the core",
-				"when": "A rise in PSA, findings on digital rectal examination, a suspicious area on prostate MRI",
-				"prep": "Preparation concerns the puncture itself and is discussed with the urologist; nothing is required from the patient for the laboratory part",
-				"abnormal": "The report describes the structure of the glands, signs of inflammation, atypia and malignancy, and how much of the core is involved. What this means and whether further tests are needed is decided by the urologist"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled tkivnog cilindra prostate uzetog debelom iglom",
-				"how": "Cilindar dobijen pod kontrolom transrektalnog ultrazvuka obrađuje se kroz parafin, reže na presjeke i boji; patolog opisuje žljezdano tkivo cijelom dužinom cilindra",
-				"when": "Porast PSA, nalaz pri digitorektalnom pregledu, sumnjiv dio na magnetnoj rezonanci prostate",
-				"prep": "Priprema se odnosi na samu punkciju i dogovara se sa urologom; za laboratorijski dio od pacijenta se ne traži ništa",
-				"abnormal": "U nalazu se opisuje građa žlijezda, znaci upale, atipije i maligniteta, kao i dužina zahvaćenog dijela cilindra. Šta to znači i da li su potrebna dodatna ispitivanja, odlučuje urolog"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung eines mit dicker Nadel entnommenen Gewebezylinders der Prostata",
-				"how": "Der unter transrektaler Ultraschallkontrolle gewonnene Zylinder wird in Paraffin verarbeitet, geschnitten und gefärbt; der Pathologe beschreibt das Drüsengewebe über die gesamte Länge des Zylinders",
-				"when": "Anstieg des PSA, Auffälligkeiten bei der digital-rektalen Untersuchung, ein verdächtiger Bereich im MRT der Prostata",
-				"prep": "Die Vorbereitung betrifft die Punktion selbst und wird mit dem Urologen besprochen; für den Laborteil ist vom Patienten nichts erforderlich",
-				"abnormal": "Der Befund beschreibt den Aufbau der Drüsen, Zeichen von Entzündung, Atypie und Bösartigkeit sowie die Ausdehnung der Veränderungen im Zylinder. Was das bedeutet und ob weitere Untersuchungen nötig sind, entscheidet der Urologe"
-			},
-			"tr": {
-				"what": "Kalın iğneyle alınan prostat dokusu silindirinin mikroskobik incelemesi",
-				"how": "Transrektal ultrason eşliğinde alınan silindir parafinden geçirilir, kesitlenir ve boyanır; patolog bez dokusunu silindirin tüm uzunluğu boyunca tanımlar",
-				"when": "PSA yükselmesi, parmakla rektal muayenedeki bulgular, prostat MR görüntüsünde şüpheli alan",
-				"prep": "Hazırlık ponksiyonun kendisiyle ilgilidir ve ürologla konuşulur; laboratuvar bölümü için hastadan bir şey istenmez",
-				"abnormal": "Raporda bezlerin yapısı, iltihap, atipi ve kötü huyluluk belirtileri ile silindirdeki tutulumun uzunluğu tanımlanır. Bunun ne anlama geldiğine ve ek inceleme gerekip gerekmediğine ürolog karar verir"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-needle-prostate-biopsy-multiple-samples",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование нескольких столбиков ткани предстательной железы, взятых из разных зон по схеме",
-				"how": "Каждый столбик поступает в отдельном маркированном контейнере, обрабатывается и окрашивается отдельно, а в заключении результат приводится по каждой зоне забора",
-				"when": "Первичная биопсия по расширенной схеме, картирование изменений по зонам железы, повторный забор после ранее неинформативного результата, оценка перед выбором между наблюдением и активным лечением",
-				"prep": "Материал берут во время урологической процедуры, поэтому отдельной подготовки к работе лаборатории нет",
-				"abnormal": "Результат по разным зонам может отличаться: где-то ткань без особенностей, где-то есть воспаление или атипия. Полную картину по железе и дальнейший план собирает уролог"
-			},
-			"en": {
-				"what": "Microscopic examination of several prostate tissue cores taken from different zones according to a sampling scheme",
-				"how": "Each core arrives in its own labelled container, is processed and stained separately, and the report gives the result for every sampling zone",
-				"when": "A first biopsy using an extended scheme, mapping changes across the zones of the gland, repeat sampling after an earlier uninformative result, assessment before choosing between monitoring and active treatment",
-				"prep": "The material is taken during a urological procedure, so no separate preparation is needed for the laboratory work",
-				"abnormal": "The result may differ between zones: in some the tissue is unremarkable, in others there is inflammation or atypia. The urologist puts together the full picture of the gland and the further plan"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled više tkivnih cilindara prostate uzetih iz različitih zona po shemi",
-				"how": "Svaki cilindar stiže u zasebnoj označenoj posudi, obrađuje se i boji odvojeno, a u nalazu se rezultat navodi za svaku zonu uzorkovanja",
-				"when": "Prva biopsija po proširenoj shemi, mapiranje promjena po zonama žlijezde, ponovno uzorkovanje poslije ranijeg neinformativnog rezultata, procjena prije izbora između praćenja i aktivnog liječenja",
-				"prep": "Materijal se uzima tokom urološkog zahvata, pa za rad laboratorije nema posebne pripreme",
-				"abnormal": "Rezultat po zonama može biti različit: negdje je tkivo bez posebnosti, negdje postoji upala ili atipija. Cijelu sliku žlijezde i dalji plan sastavlja urolog"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung mehrerer Gewebezylinder der Prostata, die nach einem Entnahmeschema aus verschiedenen Zonen gewonnen wurden",
-				"how": "Jeder Zylinder kommt in einem eigenen beschrifteten Gefäß an, wird getrennt verarbeitet und gefärbt, und der Befund nennt das Ergebnis für jede Entnahmezone",
-				"when": "Erstbiopsie nach erweitertem Schema, Kartierung der Veränderungen über die Zonen der Drüse, erneute Entnahme nach einem zuvor nicht aussagekräftigen Ergebnis, Beurteilung vor der Wahl zwischen Beobachtung und aktiver Behandlung",
-				"prep": "Das Material wird während eines urologischen Eingriffs entnommen, für die Laborarbeit ist daher keine gesonderte Vorbereitung nötig",
-				"abnormal": "Das Ergebnis kann sich zwischen den Zonen unterscheiden: an einer Stelle ist das Gewebe unauffällig, an anderer finden sich Entzündung oder Atypien. Das Gesamtbild der Drüse und den weiteren Plan stellt der Urologe zusammen"
-			},
-			"tr": {
-				"what": "Belirli bir şemaya göre farklı bölgelerden alınan birden çok prostat doku silindirinin mikroskobik incelemesi",
-				"how": "Her silindir kendi etiketli kabında gelir, ayrı işlenip boyanır ve raporda sonuç her örnekleme bölgesi için ayrı verilir",
-				"when": "Genişletilmiş şemayla ilk biyopsi, değişikliklerin bez bölgelerine göre haritalanması, daha önce bilgi vermeyen sonucun ardından yeniden örnekleme, izlem ile aktif tedavi arasında seçim öncesi değerlendirme",
-				"prep": "Materyal ürolojik işlem sırasında alınır, bu nedenle laboratuvar çalışması için ayrı hazırlık gerekmez",
-				"abnormal": "Sonuç bölgeler arasında değişebilir: bir yerde doku olağan, başka bir yerde iltihap ya da atipi bulunabilir. Bezin bütününe ilişkin tabloyu ve sonraki planı ürolog oluşturur"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-oral-cavity-biopsy",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование фрагмента слизистой оболочки рта — щеки, языка, десны или нёба",
-				"how": "Фрагмент, взятый стоматологом или челюстно-лицевым хирургом под местным обезболиванием, фиксируют, заливают в парафин, режут и окрашивают для изучения под микроскопом",
-				"when": "Белые или красные пятна на слизистой, длительно незаживающая язва, разрастание на десне, изменения под съёмным протезом, хронические воспалительные заболевания слизистой рта",
-				"prep": "Подготовки к лабораторному этапу нет; в день вмешательства стоматолог может попросить не пользоваться антисептическими ополаскивателями",
-				"abnormal": "Заключение показывает, идёт ли речь о воспалении, изменении ороговения слизистой или о процессе, который требует дальнейшего наблюдения. Как это учитывать и что делать дальше, определяет стоматолог или челюстно-лицевой хирург"
-			},
-			"en": {
-				"what": "Microscopic examination of a piece of oral mucosa from the cheek, tongue, gum or palate",
-				"how": "The piece, taken by a dentist or maxillofacial surgeon under local anaesthesia, is fixed, embedded in paraffin, sectioned and stained for microscopic study",
-				"when": "White or red patches on the mucosa, an ulcer that will not heal, an overgrowth on the gum, changes under a removable denture, chronic inflammatory conditions of the oral lining",
-				"prep": "There is no preparation for the laboratory stage; on the day of the procedure the dentist may ask you to avoid antiseptic mouth rinses",
-				"abnormal": "The report shows whether this is inflammation, a change in the keratinisation of the mucosa or a process that needs further monitoring. How to act on it is decided by the dentist or maxillofacial surgeon"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled isječka sluznice usne duplje, obraza, jezika, desni ili nepca",
-				"how": "Isječak koji stomatolog ili maksilofacijalni hirurg uzme u lokalnoj anesteziji fiksira se, ukalupljuje u parafin, reže i boji za pregled pod mikroskopom",
-				"when": "Bijele ili crvene mrlje na sluznici, ranica koja ne zarasta, izraslina na desni, promjene ispod pokretne proteze, hronična upalna oboljenja sluznice usta",
-				"prep": "Za laboratorijski dio nema pripreme; na dan zahvata stomatolog može tražiti da se ne koriste antiseptične vodice za ispiranje usta",
-				"abnormal": "Nalaz pokazuje da li se radi o upali, promjeni orožavanja sluznice ili o procesu koji traži dalje praćenje. Kako to uzeti u obzir i šta dalje, određuje stomatolog ili maksilofacijalni hirurg"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung eines Stücks Mundschleimhaut von Wange, Zunge, Zahnfleisch oder Gaumen",
-				"how": "Das vom Zahnarzt oder Mund-Kiefer-Gesichts-Chirurgen in örtlicher Betäubung entnommene Stück wird fixiert, in Paraffin eingebettet, geschnitten und für die mikroskopische Beurteilung gefärbt",
-				"when": "Weiße oder rote Flecken auf der Schleimhaut, ein nicht heilendes Geschwür, eine Wucherung am Zahnfleisch, Veränderungen unter einer herausnehmbaren Prothese, chronisch entzündliche Erkrankungen der Mundschleimhaut",
-				"prep": "Für den Laborteil gibt es keine Vorbereitung; am Tag des Eingriffs kann der Zahnarzt bitten, auf antiseptische Mundspülungen zu verzichten",
-				"abnormal": "Der Befund zeigt, ob es sich um eine Entzündung, eine veränderte Verhornung der Schleimhaut oder einen Prozess handelt, der weiter beobachtet werden muss. Wie damit umzugehen ist, entscheidet der Zahnarzt oder MKG-Chirurg"
-			},
-			"tr": {
-				"what": "Yanak, dil, diş eti veya damaktan alınan ağız mukozası parçasının mikroskobik incelemesi",
-				"how": "Diş hekimi ya da çene cerrahının lokal anesteziyle aldığı parça tespit edilir, parafine gömülür, kesilir ve mikroskopta incelenmek üzere boyanır",
-				"when": "Mukozada beyaz ya da kırmızı lekeler, iyileşmeyen yara, diş etinde büyüme, hareketli protez altındaki değişiklikler, ağız mukozasının süregelen iltihabi hastalıkları",
-				"prep": "Laboratuvar aşaması için hazırlık yoktur; işlem günü diş hekimi antiseptik gargara kullanılmamasını isteyebilir",
-				"abnormal": "Rapor bunun bir iltihap mı, mukozanın boynuzlaşmasındaki bir değişiklik mi, yoksa izlem gerektiren bir süreç mi olduğunu gösterir. Bunun nasıl değerlendirileceğine diş hekimi ya da çene cerrahı karar verir"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-orchiectomy-testis-examination",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Исследование яичка, удалённого во время операции, с описанием всей ткани и оболочек",
-				"how": "Патолог измеряет и описывает орган, делает срезы через изменённый участок, придаток и семенной канатик, готовит парафиновые блоки и изучает препараты под микроскопом; крупный материал требует нескольких рабочих дней",
-				"when": "Оперативное удаление яичка при образовании, при перекруте с нежизнеспособной тканью, при тяжёлом воспалительном процессе, а также при вмешательствах по поводу неопустившегося яичка",
-				"prep": "Подготовка не требуется: материал поступает в лабораторию прямо из операционной",
-				"abnormal": "Заключение описывает тип ткани, распространение изменений на оболочки и канатик, состояние края резекции. Выдаёт его врач-патолог, а дальнейшее лечение планирует уролог"
-			},
-			"en": {
-				"what": "Examination of a testis removed during surgery, with a description of the whole tissue and its coverings",
-				"how": "The pathologist measures and describes the organ, takes sections through the altered area, the epididymis and the spermatic cord, prepares paraffin blocks and studies the slides; large specimens take several working days",
-				"when": "Surgical removal of a testis because of a mass, torsion with non-viable tissue, a severe inflammatory process, and operations for an undescended testis",
-				"prep": "No preparation is required: the specimen reaches the laboratory straight from the operating theatre",
-				"abnormal": "The report describes the type of tissue, how far changes reach the coverings and the cord, and the state of the resection margin. It is issued by the pathologist, and further treatment is planned by the urologist"
-			},
-			"sr": {
-				"what": "Pregled testisa odstranjenog tokom operacije, sa opisom cjelokupnog tkiva i ovojnica",
-				"how": "Patolog mjeri i opisuje organ, pravi presjeke kroz promijenjeni dio, epididimis i sjemenu vrpcu, priprema parafinske blokove i pregleda preparate pod mikroskopom; veliki materijal traži nekoliko radnih dana",
-				"when": "Hirurško odstranjenje testisa zbog tvorbe, zbog torzije sa nevitalnim tkivom, zbog teškog upalnog procesa, kao i zahvati zbog nespuštenog testisa",
-				"prep": "Priprema nije potrebna: materijal u laboratoriju stiže direktno iz operacione sale",
-				"abnormal": "Nalaz opisuje vrstu tkiva, širenje promjena na ovojnice i vrpcu i stanje resekcione ivice. Izdaje ga ljekar patolog, a dalje liječenje planira urolog"
-			},
-			"de": {
-				"what": "Untersuchung eines operativ entfernten Hodens mit Beschreibung des gesamten Gewebes und seiner Hüllen",
-				"how": "Der Pathologe misst und beschreibt das Organ, entnimmt Schnitte durch den veränderten Bereich, den Nebenhoden und den Samenstrang, fertigt Paraffinblöcke an und beurteilt die Präparate; große Präparate benötigen mehrere Arbeitstage",
-				"when": "Operative Entfernung eines Hodens wegen einer Raumforderung, bei Torsion mit nicht mehr durchblutetem Gewebe, bei schwerer Entzündung sowie bei Eingriffen wegen eines Hodenhochstands",
-				"prep": "Eine Vorbereitung ist nicht erforderlich: Das Präparat gelangt direkt aus dem Operationssaal ins Labor",
-				"abnormal": "Der Befund beschreibt die Gewebeart, die Ausbreitung der Veränderungen auf Hüllen und Samenstrang sowie den Resektionsrand. Erstellt wird er vom Pathologen, die weitere Behandlung plant der Urologe"
-			},
-			"tr": {
-				"what": "Ameliyatla çıkarılan testisin, tüm dokusu ve zarlarıyla birlikte incelenmesi",
-				"how": "Patolog organı ölçüp tanımlar, değişiklik gösteren bölgeden, epididimden ve spermatik korddan kesitler alır, parafin bloklar hazırlar ve preparatları mikroskopta inceler; büyük materyal birkaç iş günü alır",
-				"when": "Kitle nedeniyle testisin cerrahi olarak çıkarılması, dokunun canlılığını yitirdiği torsiyon, ağır iltihabi süreç ve inmemiş testis nedeniyle yapılan girişimler",
-				"prep": "Hazırlık gerekmez: materyal laboratuvara doğrudan ameliyathaneden ulaşır",
-				"abnormal": "Rapor doku tipini, değişikliklerin zarlara ve korda yayılımını ve cerrahi sınırın durumunu tanımlar. Raporu patoloji uzmanı verir, sonraki tedaviyi ürolog planlar"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-other-biopsies",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Обработка и микроскопическое исследование биопсийного материала, который не относится к отдельно описанным видам биопсий",
-				"how": "Материал фиксируют, проводят через парафин, режут на срезы, окрашивают и описывают в общем порядке; объём работы зависит от размера и числа фрагментов",
-				"when": "Забор ткани при вмешательствах, не перечисленных отдельно: небольшие образования мягких тканей, фрагменты слизистых, материал после малых амбулаторных операций",
-				"prep": "От пациента подготовка не нужна: материал получают во время самой процедуры",
-				"abnormal": "Заключение описывает строение присланной ткани и характер изменений в ней. Итог формулирует врач-патолог, а связывает его с клинической ситуацией направивший врач"
-			},
-			"en": {
-				"what": "Processing and microscopic examination of biopsy material that does not fall under the separately listed biopsy types",
-				"how": "The material is fixed, processed through paraffin, sectioned, stained and described in the standard way; the amount of work depends on the size and number of fragments",
-				"when": "Tissue taken during procedures that are not listed separately: small soft tissue lesions, mucosal fragments, material from minor outpatient operations",
-				"prep": "No preparation is needed from the patient: the material is obtained during the procedure itself",
-				"abnormal": "The report describes the structure of the submitted tissue and the character of the changes in it. The conclusion is worded by the pathologist, and the referring doctor links it to the clinical situation"
-			},
-			"sr": {
-				"what": "Obrada i mikroskopski pregled biopsijskog materijala koji ne spada u posebno navedene vrste biopsija",
-				"how": "Materijal se fiksira, obrađuje kroz parafin, reže na presjeke, boji i opisuje po uobičajenom postupku; obim posla zavisi od veličine i broja isječaka",
-				"when": "Uzimanje tkiva pri zahvatima koji nisu posebno navedeni: manje tvorbe mekih tkiva, isječci sluznica, materijal poslije malih ambulantnih operacija",
-				"prep": "Od pacijenta se priprema ne traži: materijal se dobija tokom samog zahvata",
-				"abnormal": "Nalaz opisuje građu poslatog tkiva i prirodu promjena u njemu. Zaključak formuliše ljekar patolog, a sa kliničkom situacijom ga povezuje ljekar koji je uputio pacijenta"
-			},
-			"de": {
-				"what": "Aufarbeitung und mikroskopische Untersuchung von Biopsiematerial, das keiner der gesondert aufgeführten Biopsiearten zuzuordnen ist",
-				"how": "Das Material wird fixiert, in Paraffin verarbeitet, geschnitten, gefärbt und nach dem üblichen Ablauf beschrieben; der Aufwand hängt von Größe und Zahl der Gewebestücke ab",
-				"when": "Gewebeentnahme bei Eingriffen, die nicht gesondert aufgeführt sind: kleine Weichteilveränderungen, Schleimhautstücke, Material aus kleinen ambulanten Operationen",
-				"prep": "Vom Patienten ist keine Vorbereitung nötig: Das Material wird während des Eingriffs selbst gewonnen",
-				"abnormal": "Der Befund beschreibt den Aufbau des eingesandten Gewebes und die Art der Veränderungen darin. Formuliert wird er vom Pathologen, in den klinischen Zusammenhang stellt ihn der überweisende Arzt"
-			},
-			"tr": {
-				"what": "Ayrı olarak listelenen biyopsi türlerine girmeyen biyopsi materyalinin işlenmesi ve mikroskobik incelenmesi",
-				"how": "Materyal tespit edilir, parafinden geçirilir, kesitlenir, boyanır ve olağan düzende tanımlanır; iş yükü parçaların boyutuna ve sayısına bağlıdır",
-				"when": "Ayrıca listelenmemiş girişimlerde alınan dokular: küçük yumuşak doku oluşumları, mukoza parçaları, küçük ayaktan ameliyatlardan gelen materyal",
-				"prep": "Hastadan hazırlık istenmez: materyal işlemin kendisi sırasında elde edilir",
-				"abnormal": "Rapor gönderilen dokunun yapısını ve içindeki değişikliklerin niteliğini tanımlar. Sonucu patoloji uzmanı yazar, klinik durumla ilişkilendiren ise sevk eden hekimdir"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-pleura-biopsy",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование фрагмента плевры — оболочки, выстилающей грудную полость и покрывающей лёгкие",
-				"how": "Фрагмент, взятый при торакоскопии или пункционной биопсии через грудную стенку, фиксируют, заливают в парафин, режут и окрашивают, при необходимости патолог добавляет специальные окраски",
-				"when": "Скопление жидкости в плевральной полости неясной причины, утолщение плевры на КТ, признаки гранулёматозного или профессионального поражения, уточнение природы плевральных наложений",
-				"prep": "Подготовка относится к самой процедуре забора и обсуждается с пульмонологом или торакальным хирургом; лабораторный этап подготовки не требует",
-				"abnormal": "Патолог описывает состояние выстилающих клеток, выраженность фиброза и воспаления, признаки злокачественности. Результат сопоставляет с рентгеновскими данными и анализом плевральной жидкости лечащий врач"
-			},
-			"en": {
-				"what": "Microscopic examination of a piece of pleura, the membrane lining the chest cavity and covering the lungs",
-				"how": "The piece, taken during thoracoscopy or a needle biopsy through the chest wall, is fixed, embedded in paraffin, sectioned and stained, with special stains added by the pathologist if needed",
-				"when": "Fluid in the pleural cavity of unclear cause, pleural thickening on CT, signs of a granulomatous or occupational process, clarifying the nature of pleural deposits",
-				"prep": "Preparation concerns the sampling procedure itself and is discussed with the pulmonologist or thoracic surgeon; the laboratory stage needs no preparation",
-				"abnormal": "The pathologist describes the state of the lining cells, the degree of fibrosis and inflammation, and signs of malignancy. The treating doctor compares the result with imaging and with analysis of the pleural fluid"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled isječka pleure, opne koja oblaže grudnu duplju i pokriva pluća",
-				"how": "Isječak uzet torakoskopijom ili punkcionom biopsijom kroz grudni zid fiksira se, ukalupljuje u parafin, reže i boji, a patolog po potrebi dodaje posebna bojenja",
-				"when": "Nakupljanje tečnosti u pleuralnoj duplji nejasnog uzroka, zadebljanje pleure na skeneru, znaci granulomatoznog ili profesionalnog oštećenja, razjašnjenje prirode pleuralnih naslaga",
-				"prep": "Priprema se odnosi na sam zahvat uzimanja i dogovara se sa pulmologom ili grudnim hirurgom; laboratorijski dio ne traži pripremu",
-				"abnormal": "Patolog opisuje stanje ćelija koje oblažu pleuru, izraženost fibroze i upale i znake maligniteta. Nalaz sa rendgenskim podacima i analizom pleuralne tečnosti poredi ljekar koji vodi liječenje"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung eines Stücks Pleura, der Haut, die den Brustraum auskleidet und die Lunge überzieht",
-				"how": "Das bei einer Thorakoskopie oder einer Nadelbiopsie durch die Brustwand entnommene Stück wird fixiert, in Paraffin eingebettet, geschnitten und gefärbt, bei Bedarf ergänzt der Pathologe Spezialfärbungen",
-				"when": "Flüssigkeitsansammlung im Pleuraraum unklarer Ursache, Pleuraverdickung im CT, Hinweise auf einen granulomatösen oder berufsbedingten Prozess, Abklärung pleuraler Auflagerungen",
-				"prep": "Die Vorbereitung betrifft den Entnahmeeingriff selbst und wird mit dem Pneumologen oder Thoraxchirurgen besprochen; der Laborteil erfordert keine Vorbereitung",
-				"abnormal": "Der Pathologe beschreibt den Zustand der Deckzellen, das Ausmaß von Fibrose und Entzündung sowie Hinweise auf Bösartigkeit. Der behandelnde Arzt gleicht das Ergebnis mit der Bildgebung und der Untersuchung des Pleuraergusses ab"
-			},
-			"tr": {
-				"what": "Göğüs boşluğunu döşeyen ve akciğerleri saran zar olan plevradan alınan parçanın mikroskobik incelemesi",
-				"how": "Torakoskopiyle ya da göğüs duvarından iğne biyopsisiyle alınan parça tespit edilir, parafine gömülür, kesilir ve boyanır, gerekirse patolog özel boyalar ekler",
-				"when": "Nedeni belirsiz plevral sıvı birikimi, BT'de plevra kalınlaşması, granülomatöz ya da mesleki tutulum belirtileri, plevra üzerindeki birikimlerin niteliğinin aydınlatılması",
-				"prep": "Hazırlık örnek alma işleminin kendisiyle ilgilidir ve göğüs hastalıkları uzmanı ya da göğüs cerrahıyla konuşulur; laboratuvar aşaması hazırlık gerektirmez",
-				"abnormal": "Patolog örtü hücrelerinin durumunu, fibroz ve iltihabın derecesini ve kötü huyluluk belirtilerini tanımlar. Sonucu görüntüleme bulguları ve plevral sıvı incelemesiyle karşılaştıran tedaviyi yürüten hekimdir"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-radical-surgery",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Исследование крупного операционного материала, удалённого при радикальной операции, вместе с окружающей клетчаткой и лимфоузлами",
-				"how": "Патолог описывает препарат целиком, вырезает множество кусочков из изменённого участка, краёв резекции и лимфоузлов, готовит десятки блоков и изучает срезы; из-за объёма работа занимает больше времени, чем обычная биопсия",
-				"when": "Радикальные операции, когда нужно описать удалённую ткань, оценить края резекции и состояние лимфатических узлов для определения дальнейшего лечения",
-				"prep": "Подготовки нет: материал передают в лабораторию сразу после операции",
-				"abnormal": "Заключение содержит описание ткани, состояния краёв резекции и лимфатических узлов — это основа для планирования дальнейшего лечения. Формулирует его врач-патолог, а план строит оперировавший врач вместе с профильными специалистами"
-			},
-			"en": {
-				"what": "Examination of a large surgical specimen removed during radical surgery, together with the surrounding fat and lymph nodes",
-				"how": "The pathologist describes the whole specimen, cuts many blocks from the altered area, the resection margins and the lymph nodes, prepares dozens of blocks and studies the sections; because of the volume this takes longer than an ordinary biopsy",
-				"when": "Radical operations where the removed tissue has to be described and the resection margins and lymph nodes assessed in order to plan further treatment",
-				"prep": "There is no preparation: the specimen is sent to the laboratory immediately after the operation",
-				"abnormal": "The report contains a description of the tissue, the resection margins and the lymph nodes, which is the basis for planning further treatment. It is worded by the pathologist, while the plan is built by the operating doctor together with the relevant specialists"
-			},
-			"sr": {
-				"what": "Pregled velikog operacionog materijala odstranjenog radikalnom operacijom, zajedno sa okolnim masnim tkivom i limfnim čvorovima",
-				"how": "Patolog opisuje cijeli preparat, isijeca brojne komadiće iz promijenjenog dijela, resekcionih ivica i limfnih čvorova, priprema desetine blokova i pregleda presjeke; zbog obima posao traje duže nego obična biopsija",
-				"when": "Radikalne operacije kada je potrebno opisati odstranjeno tkivo i procijeniti resekcione ivice i limfne čvorove radi planiranja daljeg liječenja",
-				"prep": "Pripreme nema: materijal se u laboratoriju predaje odmah poslije operacije",
-				"abnormal": "Nalaz sadrži opis tkiva, stanja resekcionih ivica i limfnih čvorova, što je osnova za planiranje daljeg liječenja. Formuliše ga ljekar patolog, a plan pravi ljekar koji je operisao zajedno sa odgovarajućim specijalistima"
-			},
-			"de": {
-				"what": "Untersuchung eines großen Operationspräparats aus einer radikalen Operation samt umgebendem Fettgewebe und Lymphknoten",
-				"how": "Der Pathologe beschreibt das gesamte Präparat, entnimmt zahlreiche Gewebestücke aus dem veränderten Bereich, den Resektionsrändern und den Lymphknoten, fertigt Dutzende Blöcke an und beurteilt die Schnitte; wegen des Umfangs dauert das länger als eine gewöhnliche Biopsie",
-				"when": "Radikale Operationen, bei denen das entfernte Gewebe beschrieben und Resektionsränder sowie Lymphknoten beurteilt werden müssen, um die weitere Behandlung zu planen",
-				"prep": "Es gibt keine Vorbereitung: Das Präparat wird unmittelbar nach der Operation ins Labor gegeben",
-				"abnormal": "Der Befund enthält die Beschreibung des Gewebes, der Resektionsränder und der Lymphknoten und ist die Grundlage für die weitere Behandlungsplanung. Formuliert wird er vom Pathologen, den Plan erstellt der operierende Arzt gemeinsam mit den zuständigen Fachärzten"
-			},
-			"tr": {
-				"what": "Radikal ameliyatla çıkarılan büyük cerrahi materyalin, çevresindeki yağ dokusu ve lenf düğümleriyle birlikte incelenmesi",
-				"how": "Patolog materyalin tamamını tanımlar, değişiklik gösteren bölgeden, cerrahi sınırlardan ve lenf düğümlerinden çok sayıda parça alır, onlarca blok hazırlar ve kesitleri inceler; hacim nedeniyle bu iş sıradan bir biyopsiden uzun sürer",
-				"when": "Çıkarılan dokunun tanımlanması, cerrahi sınırların ve lenf düğümlerinin sonraki tedavi için değerlendirilmesi gereken radikal ameliyatlar",
-				"prep": "Hazırlık yoktur: materyal ameliyattan hemen sonra laboratuvara iletilir",
-				"abnormal": "Rapor dokunun, cerrahi sınırların ve lenf düğümlerinin tanımını içerir ve sonraki tedavinin planlanmasının temelidir. Raporu patoloji uzmanı yazar, planı ise ameliyatı yapan hekim ilgili uzmanlarla birlikte oluşturur"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-removed-breast-examination",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Исследование молочной железы, удалённой во время операции, с оценкой ткани, кожи и краёв удаления",
-				"how": "Патолог ориентирует и измеряет препарат, описывает кожу и сосок, делает срезы через изменённый участок и края, отдельно обрабатывает найденные лимфоузлы; материал большой, поэтому блоков получается много",
-				"when": "Операция по удалению молочной железы, в том числе после ранее выполненной биопсии, а также профилактическое удаление по решению врача",
-				"prep": "Подготовка не требуется: препарат поступает в лабораторию из операционной с маркировкой хирурга",
-				"abnormal": "Заключение описывает размер и строение изменённого участка, его отношение к краям удаления и состояние лимфоузлов. Описание даёт врач-патолог, а дальнейшее ведение определяет оперировавший хирург"
-			},
-			"en": {
-				"what": "Examination of a breast removed during surgery, with assessment of the tissue, the skin and the excision margins",
-				"how": "The pathologist orients and measures the specimen, describes the skin and nipple, takes sections through the altered area and the margins, and processes any lymph nodes separately; the specimen is large, so many blocks are produced",
-				"when": "Surgery to remove the breast, including after an earlier biopsy, and preventive removal decided together with the doctor",
-				"prep": "No preparation is required: the specimen arrives in the laboratory from the operating theatre with the surgeon's markings",
-				"abnormal": "The report describes the size and structure of the altered area, its relation to the excision margins and the state of the lymph nodes. The description comes from the pathologist, while further care is decided by the operating surgeon"
-			},
-			"sr": {
-				"what": "Pregled dojke odstranjene tokom operacije, sa procjenom tkiva, kože i ivica odstranjenja",
-				"how": "Patolog orijentiše i mjeri preparat, opisuje kožu i bradavicu, pravi presjeke kroz promijenjeni dio i ivice, a nađene limfne čvorove obrađuje posebno; materijal je velik pa se dobija veliki broj blokova",
-				"when": "Operacija odstranjenja dojke, uključujući i onu poslije ranije urađene biopsije, kao i preventivno odstranjenje o kojem se odlučuje sa ljekarom",
-				"prep": "Priprema nije potrebna: preparat u laboratoriju stiže iz operacione sale sa oznakama hirurga",
-				"abnormal": "Nalaz opisuje veličinu i građu promijenjenog dijela, njegov odnos prema ivicama odstranjenja i stanje limfnih čvorova. Opis daje ljekar patolog, a dalje vođenje određuje hirurg koji je operisao"
-			},
-			"de": {
-				"what": "Untersuchung einer operativ entfernten Brust mit Beurteilung von Gewebe, Haut und Exzisionsrändern",
-				"how": "Der Pathologe orientiert und misst das Präparat, beschreibt Haut und Brustwarze, entnimmt Schnitte durch den veränderten Bereich und die Ränder und arbeitet gefundene Lymphknoten gesondert auf; das Präparat ist groß, daher entstehen viele Blöcke",
-				"when": "Operative Entfernung der Brust, auch nach einer zuvor durchgeführten Biopsie, sowie eine vorbeugende Entfernung, über die gemeinsam mit dem Arzt entschieden wird",
-				"prep": "Eine Vorbereitung ist nicht erforderlich: Das Präparat kommt aus dem Operationssaal mit den Markierungen des Chirurgen ins Labor",
-				"abnormal": "Der Befund beschreibt Größe und Aufbau des veränderten Bereichs, seinen Bezug zu den Exzisionsrändern und den Zustand der Lymphknoten. Die Beschreibung stammt vom Pathologen, das weitere Vorgehen legt der operierende Chirurg fest"
-			},
-			"tr": {
-				"what": "Ameliyatla çıkarılan memenin, dokusu, derisi ve çıkarım sınırlarıyla birlikte değerlendirilmesi",
-				"how": "Patolog materyali yönlendirip ölçer, deriyi ve meme başını tanımlar, değişiklik gösteren bölgeden ve sınırlardan kesitler alır, bulunan lenf düğümlerini ayrı işler; materyal büyük olduğundan çok sayıda blok çıkar",
-				"when": "Daha önce biyopsi yapılmış olsun ya da olmasın memenin çıkarıldığı ameliyatlar ve hekimle birlikte karar verilen önleyici çıkarım",
-				"prep": "Hazırlık gerekmez: materyal ameliyathaneden cerrahın işaretlemeleriyle laboratuvara ulaşır",
-				"abnormal": "Rapor değişiklik gösteren bölgenin boyutunu ve yapısını, çıkarım sınırlarıyla ilişkisini ve lenf düğümlerinin durumunu tanımlar. Tanımı patoloji uzmanı yapar, sonraki izlemi ameliyatı yapan cerrah belirler"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-report-review",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Повторный просмотр готовых гистологических препаратов и уже выданного заключения, сделанного в другой лаборатории",
-				"how": "Патолог заново изучает присланные стёкла, при необходимости делает новые срезы из парафиновых блоков и сравнивает своё описание с исходным; новый материал у пациента не берут",
-				"when": "Второе мнение перед началом лечения, расхождение результата с клинической картиной, смена клиники или врача, подготовка к консилиуму перед сложной операцией",
-				"prep": "Нужно заранее получить в первой лаборатории стёкла и парафиновые блоки и принести их вместе с копией исходного заключения и медицинской документацией",
-				"abnormal": "Повторное описание может совпасть с первым, уточнить его или разойтись с ним. Сравнивает оба заключения и решает, влияет ли это на лечение, лечащий врач"
-			},
-			"en": {
-				"what": "A second reading of existing histology slides and of a report already issued by another laboratory",
-				"how": "The pathologist re-examines the submitted slides, cuts new sections from the paraffin blocks if needed, and compares their own description with the original; no new material is taken from the patient",
-				"when": "A second opinion before starting treatment, a result that does not fit the clinical picture, a change of clinic or doctor, preparation for a multidisciplinary meeting before complex surgery",
-				"prep": "Obtain the slides and paraffin blocks from the first laboratory in advance and bring them together with a copy of the original report and your medical records",
-				"abnormal": "The second description may agree with the first, refine it or differ from it. The treating doctor compares both reports and decides whether this changes the treatment"
-			},
-			"sr": {
-				"what": "Ponovni pregled već urađenih histoloških preparata i nalaza izdatog u drugoj laboratoriji",
-				"how": "Patolog iznova pregleda dostavljena stakla, po potrebi pravi nove presjeke iz parafinskih blokova i poredi svoj opis sa prvobitnim; novi materijal se od pacijenta ne uzima",
-				"when": "Drugo mišljenje prije početka liječenja, nalaz koji se ne slaže sa kliničkom slikom, promjena klinike ili ljekara, priprema za konzilijum prije složene operacije",
-				"prep": "Potrebno je unaprijed preuzeti stakla i parafinske blokove iz prve laboratorije i donijeti ih sa kopijom prvobitnog nalaza i medicinskom dokumentacijom",
-				"abnormal": "Drugi opis može se poklopiti sa prvim, dopuniti ga ili se od njega razlikovati. Oba nalaza poredi i odlučuje da li to mijenja liječenje ljekar koji vodi liječenje"
-			},
-			"de": {
-				"what": "Zweitbeurteilung bereits angefertigter histologischer Präparate und eines in einem anderen Labor erstellten Befundes",
-				"how": "Der Pathologe sieht die eingereichten Objektträger erneut durch, fertigt bei Bedarf neue Schnitte aus den Paraffinblöcken an und vergleicht die eigene Beschreibung mit der ursprünglichen; neues Material wird dem Patienten nicht entnommen",
-				"when": "Zweitmeinung vor Behandlungsbeginn, ein Ergebnis, das nicht zum klinischen Bild passt, Wechsel von Klinik oder Arzt, Vorbereitung einer Fallkonferenz vor einer aufwendigen Operation",
-				"prep": "Objektträger und Paraffinblöcke im Erstlabor vorab anfordern und zusammen mit einer Kopie des ursprünglichen Befundes und den Arztunterlagen mitbringen",
-				"abnormal": "Die zweite Beschreibung kann mit der ersten übereinstimmen, sie präzisieren oder von ihr abweichen. Der behandelnde Arzt vergleicht beide Befunde und entscheidet, ob sich daraus Änderungen für die Behandlung ergeben"
-			},
-			"tr": {
-				"what": "Başka bir laboratuvarda hazırlanmış histoloji preparatlarının ve verilmiş raporun yeniden değerlendirilmesi",
-				"how": "Patolog gönderilen lamları yeniden inceler, gerekirse parafin bloklardan yeni kesitler alır ve kendi tanımını ilk raporla karşılaştırır; hastadan yeni materyal alınmaz",
-				"when": "Tedaviye başlamadan önce ikinci görüş, klinik tabloyla örtüşmeyen sonuç, klinik ya da hekim değişikliği, zorlu bir ameliyat öncesi konsey hazırlığı",
-				"prep": "İlk laboratuvardan lamlar ve parafin bloklar önceden alınmalı, ilk raporun bir kopyası ve tıbbi belgelerle birlikte getirilmelidir",
-				"abnormal": "İkinci tanım ilkiyle örtüşebilir, onu netleştirebilir ya da ondan ayrılabilir. İki raporu karşılaştırıp bunun tedaviyi değiştirip değiştirmediğine tedaviyi yürüten hekim karar verir"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-single-prostate-biopsy",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микроскопическое исследование отдельного фрагмента ткани предстательной железы, обработанного как самостоятельная проба",
-				"how": "Фрагмент помещают в отдельный блок, делают срезы и окрашивают, а описание относится именно к этому участку железы",
-				"when": "Прицельный забор из одного участка, выявленного при УЗИ или МРТ, доисследование отдельной зоны, повторный забор из ранее описанного участка",
-				"prep": "Пациенту к лабораторному этапу готовиться не нужно, подготовку к самой процедуре объясняет уролог",
-				"abnormal": "Описание касается только присланного фрагмента, поэтому отсутствие изменений в нём не говорит о состоянии всей железы. Оценивает результат в комплексе уролог"
-			},
-			"en": {
-				"what": "Microscopic examination of a single prostate tissue fragment handled as a separate sample",
-				"how": "The fragment goes into its own block, is sectioned and stained, and the description refers precisely to that part of the gland",
-				"when": "Targeted sampling of one area seen on ultrasound or MRI, follow-up study of a single zone, repeat sampling from a previously described area",
-				"prep": "The patient does not prepare for the laboratory stage; preparation for the procedure itself is explained by the urologist",
-				"abnormal": "The description covers only the submitted fragment, so the absence of changes in it says nothing about the whole gland. The urologist assesses the result in context"
-			},
-			"sr": {
-				"what": "Mikroskopski pregled pojedinačnog isječka tkiva prostate obrađenog kao zaseban uzorak",
-				"how": "Isječak se stavlja u zaseban blok, prave se presjeci i boje, a opis se odnosi upravo na taj dio žlijezde",
-				"when": "Ciljano uzorkovanje jednog dijela uočenog ultrazvukom ili magnetnom rezonancom, dodatna obrada pojedine zone, ponovno uzorkovanje iz ranije opisanog dijela",
-				"prep": "Pacijent se za laboratorijski dio ne priprema, a pripremu za sam zahvat objašnjava urolog",
-				"abnormal": "Opis se tiče samo poslatog isječka, pa odsustvo promjena u njemu ne govori o stanju cijele žlijezde. Nalaz u sklopu ostalog procjenjuje urolog"
-			},
-			"de": {
-				"what": "Mikroskopische Untersuchung eines einzelnen Prostatagewebestücks, das als eigenständige Probe aufgearbeitet wird",
-				"how": "Das Gewebestück kommt in einen eigenen Block, wird geschnitten und gefärbt, und die Beschreibung bezieht sich genau auf diesen Abschnitt der Drüse",
-				"when": "Gezielte Entnahme aus einem im Ultraschall oder MRT auffälligen Bereich, ergänzende Abklärung einer einzelnen Zone, erneute Entnahme aus einem zuvor beschriebenen Bereich",
-				"prep": "Für den Laborteil bereitet sich der Patient nicht vor, die Vorbereitung auf den Eingriff selbst erklärt der Urologe",
-				"abnormal": "Die Beschreibung betrifft nur das eingesandte Gewebestück, fehlende Veränderungen darin sagen daher nichts über die gesamte Drüse aus. Der Urologe beurteilt das Ergebnis im Gesamtzusammenhang"
-			},
-			"tr": {
-				"what": "Ayrı bir örnek olarak işlenen tek bir prostat doku parçasının mikroskobik incelemesi",
-				"how": "Parça kendi bloğuna konur, kesitlenir ve boyanır; tanım tam olarak bezin bu bölümüne ilişkindir",
-				"when": "Ultrason ya da MR'da görülen tek bir alandan hedefe yönelik örnekleme, tek bir bölgenin ek olarak incelenmesi, daha önce tanımlanmış alandan yeniden örnekleme",
-				"prep": "Hasta laboratuvar aşaması için hazırlanmaz, işlemin kendisine hazırlığı ürolog anlatır",
-				"abnormal": "Tanım yalnızca gönderilen parçayı kapsar, bu nedenle onda değişiklik bulunmaması bezin tamamı hakkında bilgi vermez. Sonucu bütünlük içinde ürolog değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-skin-tumor-additional-samples-15",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Обработка каждого следующего образца кожного образования, присланного по тому же направлению после первого",
-				"how": "Каждое удалённое образование обрабатывают отдельно: измеряют, вырезают через центр и края, заливают в парафин, режут и окрашивают, чтобы описание относилось к конкретному элементу",
-				"when": "Удаление нескольких родинок, папиллом или иных кожных образований за одно посещение, когда каждый элемент нужно описать отдельно",
-				"prep": "Подготовка к исследованию не нужна: образцы берут во время удаления образований",
-				"abnormal": "По каждому образцу патолог отдельно описывает тип образования, его границы и признаки злокачественности. Результаты по всем элементам вместе оценивает дерматолог или хирург"
-			},
-			"en": {
-				"what": "Processing of each further skin lesion sample submitted under the same referral after the first one",
-				"how": "Every removed lesion is handled separately: measured, cut through the centre and the edges, embedded in paraffin, sectioned and stained, so that the description refers to that particular lesion",
-				"when": "Removal of several moles, papillomas or other skin lesions at one visit, when each element has to be described separately",
-				"prep": "No preparation for the examination is needed: the samples are taken while the lesions are being removed",
-				"abnormal": "For each sample the pathologist separately describes the type of lesion, its borders and signs of malignancy. The dermatologist or surgeon assesses the results for all the lesions together"
-			},
-			"sr": {
-				"what": "Obrada svakog sljedećeg uzorka kožne promjene poslatog po istoj uputnici poslije prvog",
-				"how": "Svaka odstranjena promjena obrađuje se zasebno: mjeri se, isijeca kroz sredinu i ivice, ukalupljuje u parafin, reže i boji, tako da se opis odnosi na tu konkretnu promjenu",
-				"when": "Odstranjenje više mladeža, papiloma ili drugih promjena na koži tokom jedne posjete, kada svaku promjenu treba opisati zasebno",
-				"prep": "Priprema za pregled nije potrebna: uzorci se uzimaju tokom odstranjenja promjena",
-				"abnormal": "Za svaki uzorak patolog posebno opisuje vrstu promjene, njene ivice i znake maligniteta. Nalaze za sve promjene zajedno procjenjuje dermatolog ili hirurg"
-			},
-			"de": {
-				"what": "Aufarbeitung jeder weiteren Hautveränderung, die nach der ersten mit derselben Überweisung eingesandt wird",
-				"how": "Jede entfernte Veränderung wird getrennt bearbeitet: gemessen, durch Zentrum und Ränder geschnitten, in Paraffin eingebettet, geschnitten und gefärbt, damit sich die Beschreibung auf genau diese Veränderung bezieht",
-				"when": "Entfernung mehrerer Muttermale, Papillome oder anderer Hautveränderungen bei einem Termin, wenn jede Veränderung einzeln beschrieben werden muss",
-				"prep": "Eine Vorbereitung auf die Untersuchung ist nicht nötig: Die Proben entstehen beim Entfernen der Veränderungen",
-				"abnormal": "Für jede Probe beschreibt der Pathologe gesondert die Art der Veränderung, ihre Ränder und Hinweise auf Bösartigkeit. Die Ergebnisse aller Veränderungen zusammen beurteilt der Hautarzt oder der Chirurg"
-			},
-			"tr": {
-				"what": "Aynı sevkle birincisinden sonra gönderilen her bir ek deri lezyonu örneğinin işlenmesi",
-				"how": "Çıkarılan her lezyon ayrı ele alınır: ölçülür, merkezinden ve kenarlarından kesilir, parafine gömülür, kesitlenir ve boyanır; böylece tanım o lezyona ilişkin olur",
-				"when": "Tek bir ziyarette birden çok ben, papilloma ya da başka deri lezyonunun çıkarılması ve her birinin ayrı tanımlanmasının gerekmesi",
-				"prep": "İnceleme için hazırlık gerekmez: örnekler lezyonların çıkarılması sırasında alınır",
-				"abnormal": "Patolog her örnek için lezyonun tipini, sınırlarını ve kötü huyluluk belirtilerini ayrı tanımlar. Tüm lezyonlara ilişkin sonuçları birlikte dermatolog ya da cerrah değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "histopathology-standard-diagnostics",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Базовая гистологическая обработка присланной ткани с обычным окрашиванием, без дополнительных методик",
-				"how": "Ткань фиксируют в формалине, обезвоживают, заливают в парафин, режут на тонкие срезы и окрашивают гематоксилином и эозином; специальные окраски и иммуногистохимия назначаются отдельно",
-				"when": "Стандартный объём исследования для большинства биопсий и небольших операционных материалов, когда для описания достаточно рутинного окрашивания",
-				"prep": "Отдельной подготовки нет: работа начинается после поступления материала в лабораторию",
-				"abnormal": "Рутинного окрашивания в большинстве случаев хватает, чтобы описать строение ткани; иногда патолог дополнительно запрашивает специальные методы. Заключение трактует лечащий врач"
-			},
-			"en": {
-				"what": "Basic histological processing of submitted tissue with routine staining and no additional techniques",
-				"how": "The tissue is fixed in formalin, dehydrated, embedded in paraffin, cut into thin sections and stained with haematoxylin and eosin; special stains and immunohistochemistry are ordered separately",
-				"when": "The standard scope of examination for most biopsies and small surgical specimens, when routine staining is enough for the description",
-				"prep": "There is no separate preparation: work begins once the material reaches the laboratory",
-				"abnormal": "In most cases routine staining is enough to describe the tissue structure; sometimes the pathologist additionally requests special methods. The report is interpreted by the treating doctor"
-			},
-			"sr": {
-				"what": "Osnovna histološka obrada poslatog tkiva sa uobičajenim bojenjem, bez dodatnih metoda",
-				"how": "Tkivo se fiksira u formalinu, dehidrira, ukalupljuje u parafin, reže na tanke presjeke i boji hematoksilinom i eozinom; posebna bojenja i imunohistohemija traže se odvojeno",
-				"when": "Standardni obim pregleda za većinu biopsija i manjih operacionih materijala, kada je za opis dovoljno uobičajeno bojenje",
-				"prep": "Posebne pripreme nema: rad počinje kada materijal stigne u laboratoriju",
-				"abnormal": "Uobičajeno bojenje u većini slučajeva je dovoljno da se opiše građa tkiva, a patolog ponekad dodatno traži posebne metode. Nalaz tumači ljekar koji vodi liječenje"
-			},
-			"de": {
-				"what": "Grundlegende histologische Aufarbeitung des eingesandten Gewebes mit Routinefärbung und ohne zusätzliche Verfahren",
-				"how": "Das Gewebe wird in Formalin fixiert, entwässert, in Paraffin eingebettet, in dünne Schnitte geschnitten und mit Hämatoxylin und Eosin gefärbt; Spezialfärbungen und Immunhistochemie werden gesondert angefordert",
-				"when": "Der Standardumfang für die meisten Biopsien und kleinen Operationspräparate, wenn die Routinefärbung für die Beschreibung ausreicht",
-				"prep": "Eine gesonderte Vorbereitung entfällt: Die Arbeit beginnt, sobald das Material im Labor eingeht",
-				"abnormal": "Die Routinefärbung reicht meist aus, um den Gewebeaufbau zu beschreiben; manchmal fordert der Pathologe zusätzlich Spezialverfahren an. Den Befund deutet der behandelnde Arzt"
-			},
-			"tr": {
-				"what": "Gönderilen dokunun ek yöntem kullanılmadan, olağan boyamayla yapılan temel histolojik işlenmesi",
-				"how": "Doku formalinde tespit edilir, suyu alınır, parafine gömülür, ince kesitlere ayrılır ve hematoksilen ile eozinle boyanır; özel boyalar ve immünhistokimya ayrıca istenir",
-				"when": "Tanım için olağan boyamanın yeterli olduğu durumlarda çoğu biyopsi ve küçük cerrahi materyal için standart inceleme kapsamı",
-				"prep": "Ayrı bir hazırlık yoktur: çalışma materyal laboratuvara ulaştığında başlar",
-				"abnormal": "Olağan boyama çoğu durumda doku yapısını tanımlamaya yeter; patolog bazen ek olarak özel yöntemler ister. Raporu tedaviyi yürüten hekim yorumlar"
-			}
-		}
-	}
+  {
+    "slug": "histopathology-mediastinum-biopsy",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование ткани из средостения — пространства между лёгкими, где лежат лимфатические узлы, вилочковая железа и крупные сосуды",
+        "how": "Материал получают при медиастиноскопии, торакоскопии или пункции под контролем визуализации, затем фиксируют, заливают в парафин, режут на тонкие срезы, окрашивают и изучают под микроскопом",
+        "when": "Увеличенные лимфоузлы средостения на КТ или рентгене, образование в средостении, уточнение природы гранулёматозного процесса, оценка ткани перед выбором тактики при болезнях грудной клетки",
+        "prep": "Отдельной подготовки к лабораторному этапу нет: материал берут во время эндоскопической или хирургической процедуры, условия которой обсуждает оперирующий врач",
+        "abnormal": "Патолог описывает строение ткани: воспалительные и гранулёматозные изменения, характер лимфоидных клеток, признаки злокачественности. Заключение выдаёт врач-патолог, а дальнейшую тактику определяет лечащий врач"
+      },
+      "en": {
+        "what": "Microscopic examination of tissue from the mediastinum, the space between the lungs that holds lymph nodes, the thymus and major vessels",
+        "how": "The sample is obtained during mediastinoscopy, thoracoscopy or an image-guided puncture, then fixed, embedded in paraffin, cut into thin sections, stained and examined under a microscope",
+        "when": "Enlarged mediastinal lymph nodes on CT or X-ray, a mass in the mediastinum, clarifying the nature of a granulomatous process, assessing tissue before choosing management in chest disease",
+        "prep": "No separate preparation is needed for the laboratory stage: the material is taken during an endoscopic or surgical procedure, the conditions of which are discussed by the operating doctor",
+        "abnormal": "The pathologist describes the tissue structure: inflammatory and granulomatous changes, the character of lymphoid cells, signs of malignancy. The report is issued by the pathologist, and further management is decided by the treating doctor"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled tkiva iz medijastinuma, prostora između pluća u kojem se nalaze limfni čvorovi, timus i veliki krvni sudovi",
+        "how": "Materijal se dobija medijastinoskopijom, torakoskopijom ili punkcijom pod kontrolom snimanja, zatim se fiksira, ukalupljuje u parafin, reže na tanke presjeke, boji i pregleda pod mikroskopom",
+        "when": "Uvećani limfni čvorovi medijastinuma na skeneru ili rendgenu, tvorba u medijastinumu, razjašnjenje prirode granulomatoznog procesa, procjena tkiva prije izbora postupka kod bolesti grudnog koša",
+        "prep": "Za laboratorijski dio nema posebne pripreme: materijal se uzima tokom endoskopskog ili hirurškog zahvata, čije uslove dogovara ljekar koji ga izvodi",
+        "abnormal": "Patolog opisuje građu tkiva, upalne i granulomatozne promjene, prirodu limfoidnih ćelija i znake maligniteta. Nalaz izdaje ljekar patolog, a dalji postupak određuje ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung von Gewebe aus dem Mediastinum, dem Raum zwischen den Lungen mit Lymphknoten, Thymus und großen Gefäßen",
+        "how": "Das Material wird bei einer Mediastinoskopie, Thorakoskopie oder bildgesteuerten Punktion gewonnen, anschließend fixiert, in Paraffin eingebettet, in dünne Schnitte geschnitten, gefärbt und unter dem Mikroskop beurteilt",
+        "when": "Vergrößerte mediastinale Lymphknoten im CT oder Röntgenbild, Raumforderung im Mediastinum, Abklärung eines granulomatösen Prozesses, Gewebebeurteilung vor der Therapiewahl bei Erkrankungen des Brustkorbs",
+        "prep": "Für den Laborteil ist keine gesonderte Vorbereitung nötig: Das Material wird während eines endoskopischen oder chirurgischen Eingriffs entnommen, dessen Bedingungen der operierende Arzt bespricht",
+        "abnormal": "Der Pathologe beschreibt den Gewebeaufbau, entzündliche und granulomatöse Veränderungen, die Art der lymphatischen Zellen und Hinweise auf Bösartigkeit. Den Befund erstellt der Pathologe, das weitere Vorgehen legt der behandelnde Arzt fest"
+      },
+      "tr": {
+        "what": "Akciğerler arasında yer alan, lenf düğümleri, timus ve büyük damarları barındıran mediasten bölgesinden alınan dokunun mikroskobik incelemesi",
+        "how": "Örnek mediastinoskopi, torakoskopi ya da görüntüleme eşliğinde ponksiyonla alınır, ardından tespit edilir, parafine gömülür, ince kesitler halinde kesilir, boyanır ve mikroskopta incelenir",
+        "when": "BT veya röntgende büyümüş mediasten lenf düğümleri, mediastende kitle, granülomatöz sürecin niteliğinin aydınlatılması, göğüs hastalıklarında tedavi kararı öncesi doku değerlendirmesi",
+        "prep": "Laboratuvar aşaması için ayrı bir hazırlık gerekmez: materyal endoskopik ya da cerrahi işlem sırasında alınır, işlemin koşullarını uygulayan hekim anlatır",
+        "abnormal": "Patolog doku yapısını, iltihabi ve granülomatöz değişiklikleri, lenfoid hücrelerin niteliğini ve kötü huyluluk belirtilerini tanımlar. Raporu patoloji uzmanı verir, sonraki adımları tedaviyi yürüten hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед ткива из медијастинума, простора између плућа у којем се налазе лимфни чворови, тимус и велики крвни судови",
+        "how": "Материјал се добија медијастиноскопијом, торакоскопијом или пункцијом под контролом снимања, затим се фиксира, укалупљује у парафин, реже на танке пресјеке, боји и прегледа под микроскопом",
+        "when": "Увећани лимфни чворови медијастинума на скенеру или рендгену, творба у медијастинуму, разјашњење природе грануломатозног процеса, процјена ткива прије избора поступка код болести грудног коша",
+        "prep": "За лабораторијски дио нема посебне припреме: материјал се узима током ендоскопског или хируршког захвата, чије услове договара љекар који га изводи",
+        "abnormal": "Патолог описује грађу ткива, упалне и грануломатозне промјене, природу лимфоидних ћелија и знаке малигнитета. Налаз издаје љекар патолог, а даљи поступак одређује љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-multiple-biopsy",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование нескольких фрагментов ткани, взятых за одну процедуру из разных участков",
+        "how": "Каждый фрагмент помещают в отдельный маркированный контейнер, проводят через парафин, режут и окрашивают, после чего патолог описывает участки по отдельности",
+        "when": "Эндоскопические биопсии из нескольких отделов органа, оценка распространённости изменений, забор из нескольких подозрительных участков кожи или слизистой, контроль в нескольких точках после лечения",
+        "prep": "Пациент к лабораторному этапу не готовится: фрагменты берут во время эндоскопии или другой процедуры",
+        "abnormal": "В заключении каждый участок описан отдельно, поэтому картина может различаться от точки к точке. Сопоставляет описания с клинической картиной и решает, что делать дальше, лечащий врач"
+      },
+      "en": {
+        "what": "Microscopic examination of several tissue fragments taken from different sites during one procedure",
+        "how": "Each fragment goes into its own labelled container, is processed through paraffin, sectioned and stained, after which the pathologist describes the sites separately",
+        "when": "Endoscopic biopsies from several parts of an organ, assessing how widespread changes are, sampling several suspicious areas of skin or mucosa, follow-up at several points after treatment",
+        "prep": "The patient does not prepare for the laboratory stage: the fragments are taken during endoscopy or another procedure",
+        "abnormal": "The report describes each site separately, so the picture may differ from point to point. The treating doctor matches the descriptions with the clinical picture and decides on the next steps"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled više isječaka tkiva uzetih tokom jednog zahvata sa različitih dijelova",
+        "how": "Svaki isječak ide u zasebnu označenu posudu, obrađuje se kroz parafin, reže i boji, nakon čega patolog opisuje svaki dio posebno",
+        "when": "Endoskopske biopsije iz više dijelova organa, procjena raširenosti promjena, uzorkovanje sa više sumnjivih dijelova kože ili sluznice, kontrola na više tačaka poslije liječenja",
+        "prep": "Pacijent se za laboratorijski dio ne priprema: isječci se uzimaju tokom endoskopije ili drugog zahvata",
+        "abnormal": "U nalazu je svaki dio opisan zasebno, pa se slika može razlikovati od tačke do tačke. Opise sa kliničkom slikom poredi i dalje korake određuje ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung mehrerer Gewebestücke, die während eines Eingriffs an verschiedenen Stellen entnommen wurden",
+        "how": "Jedes Stück kommt in ein eigenes beschriftetes Gefäß, wird in Paraffin verarbeitet, geschnitten und gefärbt, danach beschreibt der Pathologe die Entnahmestellen getrennt",
+        "when": "Endoskopische Biopsien aus mehreren Abschnitten eines Organs, Beurteilung der Ausdehnung von Veränderungen, Entnahme an mehreren auffälligen Haut- oder Schleimhautstellen, Kontrolle an mehreren Punkten nach einer Behandlung",
+        "prep": "Für den Laborteil ist keine Vorbereitung nötig: Die Gewebestücke werden während einer Endoskopie oder eines anderen Eingriffs entnommen",
+        "abnormal": "Im Befund ist jede Stelle einzeln beschrieben, das Bild kann sich daher von Punkt zu Punkt unterscheiden. Der behandelnde Arzt gleicht die Beschreibungen mit dem klinischen Bild ab und entscheidet über das weitere Vorgehen"
+      },
+      "tr": {
+        "what": "Tek bir işlem sırasında farklı bölgelerden alınan birden çok doku parçasının mikroskobik incelemesi",
+        "how": "Her parça ayrı etiketli kaba konur, parafinden geçirilir, kesilir ve boyanır, ardından patolog bölgeleri ayrı ayrı tanımlar",
+        "when": "Bir organın farklı bölümlerinden endoskopik biyopsiler, değişikliklerin yaygınlığının değerlendirilmesi, deri veya mukozadaki birden çok şüpheli alandan örnekleme, tedavi sonrası birkaç noktadan kontrol",
+        "prep": "Hasta laboratuvar aşaması için hazırlık yapmaz: parçalar endoskopi ya da başka bir işlem sırasında alınır",
+        "abnormal": "Raporda her bölge ayrı tanımlanır, bu nedenle görünüm noktadan noktaya değişebilir. Tanımları klinik tabloyla karşılaştıran ve sonraki adıma karar veren tedaviyi yürüten hekimdir"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед више исјечака ткива узетих током једног захвата са различитих дијелова",
+        "how": "Сваки исјечак иде у засебну означену посуду, обрађује се кроз парафин, реже и боји, након чега патолог описује сваки дио посебно",
+        "when": "Ендоскопске биопсије из више дијелова органа, процјена раширености промјена, узорковање са више сумњивих дијелова коже или слузнице, контрола на више тачака послије лијечења",
+        "prep": "Пацијент се за лабораторијски дио не припрема: исјечци се узимају током ендоскопије или другог захвата",
+        "abnormal": "У налазу је сваки дио описан засебно, па се слика може разликовати од тачке до тачке. Описе са клиничком сликом пореди и даље кораке одређује љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-multiple-prostate-biopsies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование нескольких фрагментов ткани предстательной железы, присланных по одному направлению",
+        "how": "Фрагменты проводят через парафин раздельно, с каждого делают срезы и окрашивают, патолог оценивает материал по каждой пробе и сводит картину по железе в целом",
+        "when": "Оценка распространённости изменений по долям железы, наблюдение за ранее описанными изменениями, повторный забор после неинформативного исследования, планирование урологической тактики",
+        "prep": "Специальной подготовки для лаборатории нет: пробы берут во время урологической процедуры, к которой пациента готовит уролог",
+        "abnormal": "Патолог описывает строение железистой ткани, наличие воспаления, атипии и признаков злокачественности, а также сколько проб затронуто. Значение результата и следующие шаги определяет уролог"
+      },
+      "en": {
+        "what": "Microscopic examination of several prostate tissue fragments submitted under a single referral",
+        "how": "The fragments are processed through paraffin separately, each is sectioned and stained, and the pathologist assesses every sample and then summarises the picture for the gland as a whole",
+        "when": "Assessing how far changes extend across the lobes of the gland, monitoring previously described changes, repeat sampling after an uninformative examination, planning urological management",
+        "prep": "No special laboratory preparation is required: the samples are taken during a urological procedure, for which the urologist prepares the patient",
+        "abnormal": "The pathologist describes the glandular tissue, the presence of inflammation, atypia and signs of malignancy, and how many samples are involved. The meaning of the result and the next steps are decided by the urologist"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled više isječaka tkiva prostate poslatih po jednoj uputnici",
+        "how": "Isječci se kroz parafin obrađuju odvojeno, sa svakog se prave presjeci i boje, a patolog procjenjuje svaki uzorak i sabira sliku za cijelu žlijezdu",
+        "when": "Procjena raširenosti promjena po režnjevima žlijezde, praćenje ranije opisanih promjena, ponovno uzorkovanje poslije neinformativnog pregleda, planiranje urološkog postupka",
+        "prep": "Nema posebne pripreme za laboratoriju: uzorci se uzimaju tokom urološkog zahvata, za koji pacijenta priprema urolog",
+        "abnormal": "Patolog opisuje građu žljezdanog tkiva, prisustvo upale, atipije i znakova maligniteta, kao i koliko je uzoraka zahvaćeno. Značenje nalaza i sljedeće korake određuje urolog"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung mehrerer Gewebestücke der Prostata, die mit einer Überweisung eingesandt wurden",
+        "how": "Die Stücke werden getrennt in Paraffin verarbeitet, jedes wird geschnitten und gefärbt, der Pathologe beurteilt jede Probe und fasst anschließend das Bild für die gesamte Drüse zusammen",
+        "when": "Beurteilung der Ausdehnung von Veränderungen über die Drüsenlappen, Verlaufskontrolle zuvor beschriebener Veränderungen, erneute Entnahme nach einer nicht aussagekräftigen Untersuchung, Planung des urologischen Vorgehens",
+        "prep": "Für das Labor ist keine besondere Vorbereitung nötig: Die Proben werden während eines urologischen Eingriffs entnommen, auf den der Urologe den Patienten vorbereitet",
+        "abnormal": "Der Pathologe beschreibt das Drüsengewebe, Entzündung, Atypien und Hinweise auf Bösartigkeit sowie die Zahl der betroffenen Proben. Was das Ergebnis bedeutet und wie es weitergeht, entscheidet der Urologe"
+      },
+      "tr": {
+        "what": "Tek bir sevkle gönderilen birden çok prostat dokusu parçasının mikroskobik incelemesi",
+        "how": "Parçalar parafinden ayrı ayrı geçirilir, her birinden kesit alınıp boyanır, patolog her örneği değerlendirir ve bezin bütünü için tabloyu birleştirir",
+        "when": "Değişikliklerin bez loblarındaki yaygınlığının değerlendirilmesi, daha önce tanımlanmış değişikliklerin izlemi, bilgi vermeyen incelemeden sonra yeniden örnekleme, ürolojik planlama",
+        "prep": "Laboratuvar için özel hazırlık yoktur: örnekler ürolojik işlem sırasında alınır, hastayı bu işleme ürolog hazırlar",
+        "abnormal": "Patolog bez dokusunun yapısını, iltihap, atipi ve kötü huyluluk belirtilerini ve kaç örneğin etkilendiğini tanımlar. Sonucun anlamını ve sonraki adımları ürolog belirler"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед више исјечака ткива простате послатих по једној упутници",
+        "how": "Исјечци се кроз парафин обрађују одвојено, са сваког се праве пресјеци и боје, а патолог процјењује сваки узорак и сабира слику за цијелу жлијезду",
+        "when": "Процјена раширености промјена по режњевима жлијезде, праћење раније описаних промјена, поновно узорковање послије неинформативног прегледа, планирање уролошког поступка",
+        "prep": "Нема посебне припреме за лабораторију: узорци се узимају током уролошког захвата, за који пацијента припрема уролог",
+        "abnormal": "Патолог описује грађу жљезданог ткива, присуство упале, атипије и знакова малигнитета, као и колико је узорака захваћено. Значење налаза и сљедеће кораке одређује уролог"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-needle-biopsy-liver-lung-kidney",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование столбика ткани печени, лёгкого или почки, полученного толстой иглой",
+        "how": "Столбик фиксируют, заливают в парафин, режут на тонкие срезы и окрашивают, для печени и почки применяют дополнительные окраски соединительной ткани; саму пункцию делают под контролем УЗИ или КТ",
+        "when": "Диффузные изменения печени неясной причины, стойкие изменения в анализах мочи и снижение функции почек, очаговое или распространённое поражение лёгкого, уточнение природы образования перед выбором лечения",
+        "prep": "Перед пункцией врач назначает показатели свёртывания крови и сам решает вопрос о временной отмене препаратов, влияющих на свёртываемость; лабораторный этап подготовки не требует",
+        "abnormal": "Заключение описывает сохранность структуры органа, характер воспаления, фиброза и клеточных изменений. Сопоставляет его с анализами и снимками и определяет тактику лечащий врач"
+      },
+      "en": {
+        "what": "Microscopic examination of a tissue core from the liver, lung or kidney obtained with a thick needle",
+        "how": "The core is fixed, embedded in paraffin, cut into thin sections and stained, with additional connective tissue stains for liver and kidney; the puncture itself is performed under ultrasound or CT guidance",
+        "when": "Diffuse liver changes of unclear cause, persistent changes in urine tests and declining kidney function, focal or widespread lung involvement, clarifying the nature of a lesion before choosing treatment",
+        "prep": "Before the puncture the doctor orders clotting tests and alone decides whether medicines affecting clotting are paused; the laboratory stage needs no preparation",
+        "abnormal": "The report describes how far the organ structure is preserved and the character of inflammation, fibrosis and cell changes. The treating doctor compares it with tests and imaging and decides on management"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled tkivnog cilindra jetre, pluća ili bubrega dobijenog debelom iglom",
+        "how": "Cilindar se fiksira, ukalupljuje u parafin, reže na tanke presjeke i boji, a za jetru i bubreg koriste se i posebna bojenja vezivnog tkiva; sama punkcija se radi pod kontrolom ultrazvuka ili skenera",
+        "when": "Difuzne promjene jetre nejasnog uzroka, uporne promjene u nalazu urina i pad bubrežne funkcije, žarišna ili raširena promjena na plućima, razjašnjenje prirode tvorbe prije izbora liječenja",
+        "prep": "Prije punkcije ljekar traži parametre koagulacije i isključivo on odlučuje o privremenom prekidu lijekova koji utiču na zgrušavanje; laboratorijski dio ne traži pripremu",
+        "abnormal": "Nalaz opisuje očuvanost građe organa i prirodu upale, fibroze i promjena u ćelijama. Sa analizama i snimcima ga poredi i postupak određuje ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung eines Gewebezylinders aus Leber, Lunge oder Niere, der mit einer dicken Nadel gewonnen wurde",
+        "how": "Der Zylinder wird fixiert, in Paraffin eingebettet, in dünne Schnitte geschnitten und gefärbt, bei Leber und Niere zusätzlich mit Bindegewebsfärbungen; die Punktion selbst erfolgt unter Ultraschall- oder CT-Kontrolle",
+        "when": "Diffuse Leberveränderungen unklarer Ursache, anhaltende Auffälligkeiten im Urin und nachlassende Nierenfunktion, umschriebene oder ausgedehnte Lungenveränderungen, Abklärung einer Raumforderung vor der Therapiewahl",
+        "prep": "Vor der Punktion veranlasst der Arzt Gerinnungswerte und entscheidet allein über das vorübergehende Pausieren gerinnungswirksamer Medikamente; der Laborteil erfordert keine Vorbereitung",
+        "abnormal": "Der Befund beschreibt, wie weit der Organaufbau erhalten ist, sowie Art der Entzündung, Fibrose und Zellveränderungen. Der behandelnde Arzt gleicht ihn mit Laborwerten und Bildgebung ab und legt das Vorgehen fest"
+      },
+      "tr": {
+        "what": "Kalın iğneyle alınan karaciğer, akciğer veya böbrek doku silindirinin mikroskobik incelemesi",
+        "how": "Silindir tespit edilir, parafine gömülür, ince kesitlere ayrılır ve boyanır, karaciğer ile böbrekte ayrıca bağ dokusu boyaları kullanılır; ponksiyonun kendisi ultrason ya da BT eşliğinde yapılır",
+        "when": "Nedeni belirsiz yaygın karaciğer değişiklikleri, idrar tahlilinde süregelen bozukluk ve böbrek işlevinde azalma, akciğerde odaksal ya da yaygın tutulum, tedavi seçimi öncesi kitlenin niteliğinin aydınlatılması",
+        "prep": "Ponksiyon öncesi hekim pıhtılaşma testlerini ister ve kanı sulandıran ilaçlara ara verilip verilmeyeceğine yalnızca hekim karar verir; laboratuvar aşaması hazırlık gerektirmez",
+        "abnormal": "Rapor organ yapısının ne kadar korunduğunu, iltihabın, fibrozun ve hücre değişikliklerinin niteliğini tanımlar. Bunu tahlil ve görüntülerle karşılaştırıp yolu belirleyen tedaviyi yürüten hekimdir"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед ткивног цилиндра јетре, плућа или бубрега добијеног дебелом иглом",
+        "how": "Цилиндар се фиксира, укалупљује у парафин, реже на танке пресјеке и боји, а за јетру и бубрег користе се и посебна бојења везивног ткива; сама пункција се ради под контролом ултразвука или скенера",
+        "when": "Дифузне промјене јетре нејасног узрока, упорне промјене у налазу урина и пад бубрежне функције, жаришна или раширена промјена на плућима, разјашњење природе творбе прије избора лијечења",
+        "prep": "Прије пункције љекар тражи параметре коагулације и искључиво он одлучује о привременом прекиду лијекова који утичу на згрушавање; лабораторијски дио не тражи припрему",
+        "abnormal": "Налаз описује очуваност грађе органа и природу упале, фиброзе и промјена у ћелијама. Са анализама и снимцима га пореди и поступак одређује љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-needle-breast-biopsy-without-ihc",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование столбика ткани молочной железы без дополнительного иммуногистохимического окрашивания",
+        "how": "Столбик, взятый толстой иглой под контролем УЗИ или маммографии, проводят через парафин, режут и окрашивают стандартными красителями; иммуногистохимия при необходимости назначается отдельно",
+        "when": "Узловое образование, выявленное при осмотре, УЗИ или маммографии, изменения в зоне рубца после операции, уточнение природы уплотнения перед решением о лечении",
+        "prep": "К лабораторному этапу готовиться не нужно; условия самой пункции обсуждает врач, выполняющий биопсию",
+        "abnormal": "Патолог описывает строение протоков и долек, характер клеток и признаки злокачественности. Если нужны данные о рецепторах, врач отдельно назначает иммуногистохимическое исследование, а тактику определяет лечащий врач"
+      },
+      "en": {
+        "what": "Microscopic examination of a breast tissue core without additional immunohistochemical staining",
+        "how": "The core, taken with a thick needle under ultrasound or mammography guidance, is processed through paraffin, sectioned and stained with routine stains; immunohistochemistry is ordered separately if needed",
+        "when": "A lump found on examination, ultrasound or mammography, changes in a post-operative scar area, clarifying the nature of a firm area before a treatment decision",
+        "prep": "No preparation is needed for the laboratory stage; the conditions of the puncture itself are discussed by the doctor performing the biopsy",
+        "abnormal": "The pathologist describes the structure of ducts and lobules, the character of the cells and signs of malignancy. If receptor data are needed the doctor orders immunohistochemistry separately, and the treating doctor decides on management"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled tkivnog cilindra dojke bez dodatnog imunohistohemijskog bojenja",
+        "how": "Cilindar uzet debelom iglom pod kontrolom ultrazvuka ili mamografije obrađuje se kroz parafin, reže i boji standardnim bojama; imunohistohemija se po potrebi traži posebno",
+        "when": "Čvorić otkriven pregledom, ultrazvukom ili mamografijom, promjene u ožiljku poslije operacije, razjašnjenje prirode zadebljanja prije odluke o liječenju",
+        "prep": "Za laboratorijski dio nije potrebna priprema, a uslove same punkcije objašnjava ljekar koji radi biopsiju",
+        "abnormal": "Patolog opisuje građu kanalića i režnjića, prirodu ćelija i znake maligniteta. Ako su potrebni podaci o receptorima, ljekar posebno traži imunohistohemiju, a postupak određuje ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung eines Gewebezylinders der Brust ohne zusätzliche immunhistochemische Färbung",
+        "how": "Der mit dicker Nadel unter Ultraschall- oder Mammographiekontrolle entnommene Zylinder wird in Paraffin verarbeitet, geschnitten und mit Routinefärbungen gefärbt; eine Immunhistochemie wird bei Bedarf gesondert angefordert",
+        "when": "Ein bei der Untersuchung, im Ultraschall oder in der Mammographie gefundener Knoten, Veränderungen im Narbenbereich nach einer Operation, Abklärung einer Verhärtung vor der Behandlungsentscheidung",
+        "prep": "Für den Laborteil ist keine Vorbereitung nötig; die Bedingungen der Punktion bespricht der Arzt, der die Biopsie durchführt",
+        "abnormal": "Der Pathologe beschreibt den Aufbau von Gängen und Läppchen, die Beschaffenheit der Zellen und Hinweise auf Bösartigkeit. Werden Rezeptordaten benötigt, ordnet der Arzt die Immunhistochemie gesondert an, das Vorgehen legt der behandelnde Arzt fest"
+      },
+      "tr": {
+        "what": "Ek immünhistokimyasal boyama yapılmadan incelenen meme dokusu silindirinin mikroskobik değerlendirmesi",
+        "how": "Ultrason ya da mamografi eşliğinde kalın iğneyle alınan silindir parafinden geçirilir, kesilir ve standart boyalarla boyanır; gerekirse immünhistokimya ayrıca istenir",
+        "when": "Muayene, ultrason ya da mamografide saptanan kitle, ameliyat sonrası nedbe bölgesindeki değişiklikler, tedavi kararı öncesi sertliğin niteliğinin aydınlatılması",
+        "prep": "Laboratuvar aşaması için hazırlık gerekmez; ponksiyonun koşullarını biyopsiyi yapan hekim anlatır",
+        "abnormal": "Patolog kanal ve lobül yapısını, hücrelerin niteliğini ve kötü huyluluk belirtilerini tanımlar. Reseptör bilgisi gerekiyorsa hekim immünhistokimyayı ayrıca ister, tedavi yolunu ise tedaviyi yürüten hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед ткивног цилиндра дојке без додатног имунохистохемијског бојења",
+        "how": "Цилиндар узет дебелом иглом под контролом ултразвука или мамографије обрађује се кроз парафин, реже и боји стандардним бојама; имунохистохемија се по потреби тражи посебно",
+        "when": "Чворић откривен прегледом, ултразвуком или мамографијом, промјене у ожиљку послије операције, разјашњење природе задебљања прије одлуке о лијечењу",
+        "prep": "За лабораторијски дио није потребна припрема, а услове саме пункције објашњава љекар који ради биопсију",
+        "abnormal": "Патолог описује грађу каналића и режњића, природу ћелија и знаке малигнитета. Ако су потребни подаци о рецепторима, љекар посебно тражи имунохистохемију, а поступак одређује љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-needle-prostate-biopsy",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование столбика ткани предстательной железы, взятого толстой иглой",
+        "how": "Столбик, полученный под контролем трансректального УЗИ, проводят через парафин, режут на срезы и окрашивают; патолог описывает железистую ткань по всей длине столбика",
+        "when": "Повышение PSA, изменения при пальцевом ректальном исследовании, подозрительный участок на МРТ предстательной железы",
+        "prep": "Подготовка относится к самой пункции и обсуждается с урологом; для лабораторной части от пациента ничего не требуется",
+        "abnormal": "В заключении описывают строение желёз, признаки воспаления, атипии и злокачественности, а также протяжённость изменений в столбике. Что это означает и нужны ли дополнительные исследования, решает уролог"
+      },
+      "en": {
+        "what": "Microscopic examination of a prostate tissue core taken with a thick needle",
+        "how": "The core, obtained under transrectal ultrasound guidance, is processed through paraffin, sectioned and stained; the pathologist describes the glandular tissue along the whole length of the core",
+        "when": "A rise in PSA, findings on digital rectal examination, a suspicious area on prostate MRI",
+        "prep": "Preparation concerns the puncture itself and is discussed with the urologist; nothing is required from the patient for the laboratory part",
+        "abnormal": "The report describes the structure of the glands, signs of inflammation, atypia and malignancy, and how much of the core is involved. What this means and whether further tests are needed is decided by the urologist"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled tkivnog cilindra prostate uzetog debelom iglom",
+        "how": "Cilindar dobijen pod kontrolom transrektalnog ultrazvuka obrađuje se kroz parafin, reže na presjeke i boji; patolog opisuje žljezdano tkivo cijelom dužinom cilindra",
+        "when": "Porast PSA, nalaz pri digitorektalnom pregledu, sumnjiv dio na magnetnoj rezonanci prostate",
+        "prep": "Priprema se odnosi na samu punkciju i dogovara se sa urologom; za laboratorijski dio od pacijenta se ne traži ništa",
+        "abnormal": "U nalazu se opisuje građa žlijezda, znaci upale, atipije i maligniteta, kao i dužina zahvaćenog dijela cilindra. Šta to znači i da li su potrebna dodatna ispitivanja, odlučuje urolog"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung eines mit dicker Nadel entnommenen Gewebezylinders der Prostata",
+        "how": "Der unter transrektaler Ultraschallkontrolle gewonnene Zylinder wird in Paraffin verarbeitet, geschnitten und gefärbt; der Pathologe beschreibt das Drüsengewebe über die gesamte Länge des Zylinders",
+        "when": "Anstieg des PSA, Auffälligkeiten bei der digital-rektalen Untersuchung, ein verdächtiger Bereich im MRT der Prostata",
+        "prep": "Die Vorbereitung betrifft die Punktion selbst und wird mit dem Urologen besprochen; für den Laborteil ist vom Patienten nichts erforderlich",
+        "abnormal": "Der Befund beschreibt den Aufbau der Drüsen, Zeichen von Entzündung, Atypie und Bösartigkeit sowie die Ausdehnung der Veränderungen im Zylinder. Was das bedeutet und ob weitere Untersuchungen nötig sind, entscheidet der Urologe"
+      },
+      "tr": {
+        "what": "Kalın iğneyle alınan prostat dokusu silindirinin mikroskobik incelemesi",
+        "how": "Transrektal ultrason eşliğinde alınan silindir parafinden geçirilir, kesitlenir ve boyanır; patolog bez dokusunu silindirin tüm uzunluğu boyunca tanımlar",
+        "when": "PSA yükselmesi, parmakla rektal muayenedeki bulgular, prostat MR görüntüsünde şüpheli alan",
+        "prep": "Hazırlık ponksiyonun kendisiyle ilgilidir ve ürologla konuşulur; laboratuvar bölümü için hastadan bir şey istenmez",
+        "abnormal": "Raporda bezlerin yapısı, iltihap, atipi ve kötü huyluluk belirtileri ile silindirdeki tutulumun uzunluğu tanımlanır. Bunun ne anlama geldiğine ve ek inceleme gerekip gerekmediğine ürolog karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед ткивног цилиндра простате узетог дебелом иглом",
+        "how": "Цилиндар добијен под контролом трансректалног ултразвука обрађује се кроз парафин, реже на пресјеке и боји; патолог описује жљездано ткиво цијелом дужином цилиндра",
+        "when": "Пораст PSA, налаз при дигиторекталном прегледу, сумњив дио на магнетној резонанци простате",
+        "prep": "Припрема се односи на саму пункцију и договара се са урологом; за лабораторијски дио од пацијента се не тражи ништа",
+        "abnormal": "У налазу се описује грађа жлијезда, знаци упале, атипије и малигнитета, као и дужина захваћеног дијела цилиндра. Шта то значи и да ли су потребна додатна испитивања, одлучује уролог"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-needle-prostate-biopsy-multiple-samples",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование нескольких столбиков ткани предстательной железы, взятых из разных зон по схеме",
+        "how": "Каждый столбик поступает в отдельном маркированном контейнере, обрабатывается и окрашивается отдельно, а в заключении результат приводится по каждой зоне забора",
+        "when": "Первичная биопсия по расширенной схеме, картирование изменений по зонам железы, повторный забор после ранее неинформативного результата, оценка перед выбором между наблюдением и активным лечением",
+        "prep": "Материал берут во время урологической процедуры, поэтому отдельной подготовки к работе лаборатории нет",
+        "abnormal": "Результат по разным зонам может отличаться: где-то ткань без особенностей, где-то есть воспаление или атипия. Полную картину по железе и дальнейший план собирает уролог"
+      },
+      "en": {
+        "what": "Microscopic examination of several prostate tissue cores taken from different zones according to a sampling scheme",
+        "how": "Each core arrives in its own labelled container, is processed and stained separately, and the report gives the result for every sampling zone",
+        "when": "A first biopsy using an extended scheme, mapping changes across the zones of the gland, repeat sampling after an earlier uninformative result, assessment before choosing between monitoring and active treatment",
+        "prep": "The material is taken during a urological procedure, so no separate preparation is needed for the laboratory work",
+        "abnormal": "The result may differ between zones: in some the tissue is unremarkable, in others there is inflammation or atypia. The urologist puts together the full picture of the gland and the further plan"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled više tkivnih cilindara prostate uzetih iz različitih zona po shemi",
+        "how": "Svaki cilindar stiže u zasebnoj označenoj posudi, obrađuje se i boji odvojeno, a u nalazu se rezultat navodi za svaku zonu uzorkovanja",
+        "when": "Prva biopsija po proširenoj shemi, mapiranje promjena po zonama žlijezde, ponovno uzorkovanje poslije ranijeg neinformativnog rezultata, procjena prije izbora između praćenja i aktivnog liječenja",
+        "prep": "Materijal se uzima tokom urološkog zahvata, pa za rad laboratorije nema posebne pripreme",
+        "abnormal": "Rezultat po zonama može biti različit: negdje je tkivo bez posebnosti, negdje postoji upala ili atipija. Cijelu sliku žlijezde i dalji plan sastavlja urolog"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung mehrerer Gewebezylinder der Prostata, die nach einem Entnahmeschema aus verschiedenen Zonen gewonnen wurden",
+        "how": "Jeder Zylinder kommt in einem eigenen beschrifteten Gefäß an, wird getrennt verarbeitet und gefärbt, und der Befund nennt das Ergebnis für jede Entnahmezone",
+        "when": "Erstbiopsie nach erweitertem Schema, Kartierung der Veränderungen über die Zonen der Drüse, erneute Entnahme nach einem zuvor nicht aussagekräftigen Ergebnis, Beurteilung vor der Wahl zwischen Beobachtung und aktiver Behandlung",
+        "prep": "Das Material wird während eines urologischen Eingriffs entnommen, für die Laborarbeit ist daher keine gesonderte Vorbereitung nötig",
+        "abnormal": "Das Ergebnis kann sich zwischen den Zonen unterscheiden: an einer Stelle ist das Gewebe unauffällig, an anderer finden sich Entzündung oder Atypien. Das Gesamtbild der Drüse und den weiteren Plan stellt der Urologe zusammen"
+      },
+      "tr": {
+        "what": "Belirli bir şemaya göre farklı bölgelerden alınan birden çok prostat doku silindirinin mikroskobik incelemesi",
+        "how": "Her silindir kendi etiketli kabında gelir, ayrı işlenip boyanır ve raporda sonuç her örnekleme bölgesi için ayrı verilir",
+        "when": "Genişletilmiş şemayla ilk biyopsi, değişikliklerin bez bölgelerine göre haritalanması, daha önce bilgi vermeyen sonucun ardından yeniden örnekleme, izlem ile aktif tedavi arasında seçim öncesi değerlendirme",
+        "prep": "Materyal ürolojik işlem sırasında alınır, bu nedenle laboratuvar çalışması için ayrı hazırlık gerekmez",
+        "abnormal": "Sonuç bölgeler arasında değişebilir: bir yerde doku olağan, başka bir yerde iltihap ya da atipi bulunabilir. Bezin bütününe ilişkin tabloyu ve sonraki planı ürolog oluşturur"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед више ткивних цилиндара простате узетих из различитих зона по схеми",
+        "how": "Сваки цилиндар стиже у засебној означеној посуди, обрађује се и боји одвојено, а у налазу се резултат наводи за сваку зону узорковања",
+        "when": "Прва биопсија по проширеној схеми, мапирање промјена по зонама жлијезде, поновно узорковање послије ранијег неинформативног резултата, процјена прије избора између праћења и активног лијечења",
+        "prep": "Материјал се узима током уролошког захвата, па за рад лабораторије нема посебне припреме",
+        "abnormal": "Резултат по зонама може бити различит: негдје је ткиво без посебности, негдје постоји упала или атипија. Цијелу слику жлијезде и даљи план саставља уролог"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-oral-cavity-biopsy",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование фрагмента слизистой оболочки рта — щеки, языка, десны или нёба",
+        "how": "Фрагмент, взятый стоматологом или челюстно-лицевым хирургом под местным обезболиванием, фиксируют, заливают в парафин, режут и окрашивают для изучения под микроскопом",
+        "when": "Белые или красные пятна на слизистой, длительно незаживающая язва, разрастание на десне, изменения под съёмным протезом, хронические воспалительные заболевания слизистой рта",
+        "prep": "Подготовки к лабораторному этапу нет; в день вмешательства стоматолог может попросить не пользоваться антисептическими ополаскивателями",
+        "abnormal": "Заключение показывает, идёт ли речь о воспалении, изменении ороговения слизистой или о процессе, который требует дальнейшего наблюдения. Как это учитывать и что делать дальше, определяет стоматолог или челюстно-лицевой хирург"
+      },
+      "en": {
+        "what": "Microscopic examination of a piece of oral mucosa from the cheek, tongue, gum or palate",
+        "how": "The piece, taken by a dentist or maxillofacial surgeon under local anaesthesia, is fixed, embedded in paraffin, sectioned and stained for microscopic study",
+        "when": "White or red patches on the mucosa, an ulcer that will not heal, an overgrowth on the gum, changes under a removable denture, chronic inflammatory conditions of the oral lining",
+        "prep": "There is no preparation for the laboratory stage; on the day of the procedure the dentist may ask you to avoid antiseptic mouth rinses",
+        "abnormal": "The report shows whether this is inflammation, a change in the keratinisation of the mucosa or a process that needs further monitoring. How to act on it is decided by the dentist or maxillofacial surgeon"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled isječka sluznice usne duplje, obraza, jezika, desni ili nepca",
+        "how": "Isječak koji stomatolog ili maksilofacijalni hirurg uzme u lokalnoj anesteziji fiksira se, ukalupljuje u parafin, reže i boji za pregled pod mikroskopom",
+        "when": "Bijele ili crvene mrlje na sluznici, ranica koja ne zarasta, izraslina na desni, promjene ispod pokretne proteze, hronična upalna oboljenja sluznice usta",
+        "prep": "Za laboratorijski dio nema pripreme; na dan zahvata stomatolog može tražiti da se ne koriste antiseptične vodice za ispiranje usta",
+        "abnormal": "Nalaz pokazuje da li se radi o upali, promjeni orožavanja sluznice ili o procesu koji traži dalje praćenje. Kako to uzeti u obzir i šta dalje, određuje stomatolog ili maksilofacijalni hirurg"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung eines Stücks Mundschleimhaut von Wange, Zunge, Zahnfleisch oder Gaumen",
+        "how": "Das vom Zahnarzt oder Mund-Kiefer-Gesichts-Chirurgen in örtlicher Betäubung entnommene Stück wird fixiert, in Paraffin eingebettet, geschnitten und für die mikroskopische Beurteilung gefärbt",
+        "when": "Weiße oder rote Flecken auf der Schleimhaut, ein nicht heilendes Geschwür, eine Wucherung am Zahnfleisch, Veränderungen unter einer herausnehmbaren Prothese, chronisch entzündliche Erkrankungen der Mundschleimhaut",
+        "prep": "Für den Laborteil gibt es keine Vorbereitung; am Tag des Eingriffs kann der Zahnarzt bitten, auf antiseptische Mundspülungen zu verzichten",
+        "abnormal": "Der Befund zeigt, ob es sich um eine Entzündung, eine veränderte Verhornung der Schleimhaut oder einen Prozess handelt, der weiter beobachtet werden muss. Wie damit umzugehen ist, entscheidet der Zahnarzt oder MKG-Chirurg"
+      },
+      "tr": {
+        "what": "Yanak, dil, diş eti veya damaktan alınan ağız mukozası parçasının mikroskobik incelemesi",
+        "how": "Diş hekimi ya da çene cerrahının lokal anesteziyle aldığı parça tespit edilir, parafine gömülür, kesilir ve mikroskopta incelenmek üzere boyanır",
+        "when": "Mukozada beyaz ya da kırmızı lekeler, iyileşmeyen yara, diş etinde büyüme, hareketli protez altındaki değişiklikler, ağız mukozasının süregelen iltihabi hastalıkları",
+        "prep": "Laboratuvar aşaması için hazırlık yoktur; işlem günü diş hekimi antiseptik gargara kullanılmamasını isteyebilir",
+        "abnormal": "Rapor bunun bir iltihap mı, mukozanın boynuzlaşmasındaki bir değişiklik mi, yoksa izlem gerektiren bir süreç mi olduğunu gösterir. Bunun nasıl değerlendirileceğine diş hekimi ya da çene cerrahı karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед исјечка слузнице усне дупље, образа, језика, десни или непца",
+        "how": "Исјечак који стоматолог или максилофацијални хирург узме у локалној анестезији фиксира се, укалупљује у парафин, реже и боји за преглед под микроскопом",
+        "when": "Бијеле или црвене мрље на слузници, раница која не зараста, израслина на десни, промјене испод покретне протезе, хронична упална обољења слузнице уста",
+        "prep": "За лабораторијски дио нема припреме; на дан захвата стоматолог може тражити да се не користе антисептичне водице за испирање уста",
+        "abnormal": "Налаз показује да ли се ради о упали, промјени орожавања слузнице или о процесу који тражи даље праћење. Како то узети у обзир и шта даље, одређује стоматолог или максилофацијални хирург"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-orchiectomy-testis-examination",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование яичка, удалённого во время операции, с описанием всей ткани и оболочек",
+        "how": "Патолог измеряет и описывает орган, делает срезы через изменённый участок, придаток и семенной канатик, готовит парафиновые блоки и изучает препараты под микроскопом; крупный материал требует нескольких рабочих дней",
+        "when": "Оперативное удаление яичка при образовании, при перекруте с нежизнеспособной тканью, при тяжёлом воспалительном процессе, а также при вмешательствах по поводу неопустившегося яичка",
+        "prep": "Подготовка не требуется: материал поступает в лабораторию прямо из операционной",
+        "abnormal": "Заключение описывает тип ткани, распространение изменений на оболочки и канатик, состояние края резекции. Выдаёт его врач-патолог, а дальнейшее лечение планирует уролог"
+      },
+      "en": {
+        "what": "Examination of a testis removed during surgery, with a description of the whole tissue and its coverings",
+        "how": "The pathologist measures and describes the organ, takes sections through the altered area, the epididymis and the spermatic cord, prepares paraffin blocks and studies the slides; large specimens take several working days",
+        "when": "Surgical removal of a testis because of a mass, torsion with non-viable tissue, a severe inflammatory process, and operations for an undescended testis",
+        "prep": "No preparation is required: the specimen reaches the laboratory straight from the operating theatre",
+        "abnormal": "The report describes the type of tissue, how far changes reach the coverings and the cord, and the state of the resection margin. It is issued by the pathologist, and further treatment is planned by the urologist"
+      },
+      "sr": {
+        "what": "Pregled testisa odstranjenog tokom operacije, sa opisom cjelokupnog tkiva i ovojnica",
+        "how": "Patolog mjeri i opisuje organ, pravi presjeke kroz promijenjeni dio, epididimis i sjemenu vrpcu, priprema parafinske blokove i pregleda preparate pod mikroskopom; veliki materijal traži nekoliko radnih dana",
+        "when": "Hirurško odstranjenje testisa zbog tvorbe, zbog torzije sa nevitalnim tkivom, zbog teškog upalnog procesa, kao i zahvati zbog nespuštenog testisa",
+        "prep": "Priprema nije potrebna: materijal u laboratoriju stiže direktno iz operacione sale",
+        "abnormal": "Nalaz opisuje vrstu tkiva, širenje promjena na ovojnice i vrpcu i stanje resekcione ivice. Izdaje ga ljekar patolog, a dalje liječenje planira urolog"
+      },
+      "de": {
+        "what": "Untersuchung eines operativ entfernten Hodens mit Beschreibung des gesamten Gewebes und seiner Hüllen",
+        "how": "Der Pathologe misst und beschreibt das Organ, entnimmt Schnitte durch den veränderten Bereich, den Nebenhoden und den Samenstrang, fertigt Paraffinblöcke an und beurteilt die Präparate; große Präparate benötigen mehrere Arbeitstage",
+        "when": "Operative Entfernung eines Hodens wegen einer Raumforderung, bei Torsion mit nicht mehr durchblutetem Gewebe, bei schwerer Entzündung sowie bei Eingriffen wegen eines Hodenhochstands",
+        "prep": "Eine Vorbereitung ist nicht erforderlich: Das Präparat gelangt direkt aus dem Operationssaal ins Labor",
+        "abnormal": "Der Befund beschreibt die Gewebeart, die Ausbreitung der Veränderungen auf Hüllen und Samenstrang sowie den Resektionsrand. Erstellt wird er vom Pathologen, die weitere Behandlung plant der Urologe"
+      },
+      "tr": {
+        "what": "Ameliyatla çıkarılan testisin, tüm dokusu ve zarlarıyla birlikte incelenmesi",
+        "how": "Patolog organı ölçüp tanımlar, değişiklik gösteren bölgeden, epididimden ve spermatik korddan kesitler alır, parafin bloklar hazırlar ve preparatları mikroskopta inceler; büyük materyal birkaç iş günü alır",
+        "when": "Kitle nedeniyle testisin cerrahi olarak çıkarılması, dokunun canlılığını yitirdiği torsiyon, ağır iltihabi süreç ve inmemiş testis nedeniyle yapılan girişimler",
+        "prep": "Hazırlık gerekmez: materyal laboratuvara doğrudan ameliyathaneden ulaşır",
+        "abnormal": "Rapor doku tipini, değişikliklerin zarlara ve korda yayılımını ve cerrahi sınırın durumunu tanımlar. Raporu patoloji uzmanı verir, sonraki tedaviyi ürolog planlar"
+      },
+      "sr_cyrl": {
+        "what": "Преглед тестиса одстрањеног током операције, са описом цјелокупног ткива и овојница",
+        "how": "Патолог мјери и описује орган, прави пресјеке кроз промијењени дио, епидидимис и сјемену врпцу, припрема парафинске блокове и прегледа препарате под микроскопом; велики материјал тражи неколико радних дана",
+        "when": "Хируршко одстрањење тестиса због творбе, због торзије са невиталним ткивом, због тешког упалног процеса, као и захвати због неспуштеног тестиса",
+        "prep": "Припрема није потребна: материјал у лабораторију стиже директно из операционе сале",
+        "abnormal": "Налаз описује врсту ткива, ширење промјена на овојнице и врпцу и стање ресекционе ивице. Издаје га љекар патолог, а даље лијечење планира уролог"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-other-biopsies",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Обработка и микроскопическое исследование биопсийного материала, который не относится к отдельно описанным видам биопсий",
+        "how": "Материал фиксируют, проводят через парафин, режут на срезы, окрашивают и описывают в общем порядке; объём работы зависит от размера и числа фрагментов",
+        "when": "Забор ткани при вмешательствах, не перечисленных отдельно: небольшие образования мягких тканей, фрагменты слизистых, материал после малых амбулаторных операций",
+        "prep": "От пациента подготовка не нужна: материал получают во время самой процедуры",
+        "abnormal": "Заключение описывает строение присланной ткани и характер изменений в ней. Итог формулирует врач-патолог, а связывает его с клинической ситуацией направивший врач"
+      },
+      "en": {
+        "what": "Processing and microscopic examination of biopsy material that does not fall under the separately listed biopsy types",
+        "how": "The material is fixed, processed through paraffin, sectioned, stained and described in the standard way; the amount of work depends on the size and number of fragments",
+        "when": "Tissue taken during procedures that are not listed separately: small soft tissue lesions, mucosal fragments, material from minor outpatient operations",
+        "prep": "No preparation is needed from the patient: the material is obtained during the procedure itself",
+        "abnormal": "The report describes the structure of the submitted tissue and the character of the changes in it. The conclusion is worded by the pathologist, and the referring doctor links it to the clinical situation"
+      },
+      "sr": {
+        "what": "Obrada i mikroskopski pregled biopsijskog materijala koji ne spada u posebno navedene vrste biopsija",
+        "how": "Materijal se fiksira, obrađuje kroz parafin, reže na presjeke, boji i opisuje po uobičajenom postupku; obim posla zavisi od veličine i broja isječaka",
+        "when": "Uzimanje tkiva pri zahvatima koji nisu posebno navedeni: manje tvorbe mekih tkiva, isječci sluznica, materijal poslije malih ambulantnih operacija",
+        "prep": "Od pacijenta se priprema ne traži: materijal se dobija tokom samog zahvata",
+        "abnormal": "Nalaz opisuje građu poslatog tkiva i prirodu promjena u njemu. Zaključak formuliše ljekar patolog, a sa kliničkom situacijom ga povezuje ljekar koji je uputio pacijenta"
+      },
+      "de": {
+        "what": "Aufarbeitung und mikroskopische Untersuchung von Biopsiematerial, das keiner der gesondert aufgeführten Biopsiearten zuzuordnen ist",
+        "how": "Das Material wird fixiert, in Paraffin verarbeitet, geschnitten, gefärbt und nach dem üblichen Ablauf beschrieben; der Aufwand hängt von Größe und Zahl der Gewebestücke ab",
+        "when": "Gewebeentnahme bei Eingriffen, die nicht gesondert aufgeführt sind: kleine Weichteilveränderungen, Schleimhautstücke, Material aus kleinen ambulanten Operationen",
+        "prep": "Vom Patienten ist keine Vorbereitung nötig: Das Material wird während des Eingriffs selbst gewonnen",
+        "abnormal": "Der Befund beschreibt den Aufbau des eingesandten Gewebes und die Art der Veränderungen darin. Formuliert wird er vom Pathologen, in den klinischen Zusammenhang stellt ihn der überweisende Arzt"
+      },
+      "tr": {
+        "what": "Ayrı olarak listelenen biyopsi türlerine girmeyen biyopsi materyalinin işlenmesi ve mikroskobik incelenmesi",
+        "how": "Materyal tespit edilir, parafinden geçirilir, kesitlenir, boyanır ve olağan düzende tanımlanır; iş yükü parçaların boyutuna ve sayısına bağlıdır",
+        "when": "Ayrıca listelenmemiş girişimlerde alınan dokular: küçük yumuşak doku oluşumları, mukoza parçaları, küçük ayaktan ameliyatlardan gelen materyal",
+        "prep": "Hastadan hazırlık istenmez: materyal işlemin kendisi sırasında elde edilir",
+        "abnormal": "Rapor gönderilen dokunun yapısını ve içindeki değişikliklerin niteliğini tanımlar. Sonucu patoloji uzmanı yazar, klinik durumla ilişkilendiren ise sevk eden hekimdir"
+      },
+      "sr_cyrl": {
+        "what": "Обрада и микроскопски преглед биопсијског материјала који не спада у посебно наведене врсте биопсија",
+        "how": "Материјал се фиксира, обрађује кроз парафин, реже на пресјеке, боји и описује по уобичајеном поступку; обим посла зависи од величине и броја исјечака",
+        "when": "Узимање ткива при захватима који нису посебно наведени: мање творбе меких ткива, исјечци слузница, материјал послије малих амбулантних операција",
+        "prep": "Од пацијента се припрема не тражи: материјал се добија током самог захвата",
+        "abnormal": "Налаз описује грађу послатог ткива и природу промјена у њему. Закључак формулише љекар патолог, а са клиничком ситуацијом га повезује љекар који је упутио пацијента"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-pleura-biopsy",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование фрагмента плевры — оболочки, выстилающей грудную полость и покрывающей лёгкие",
+        "how": "Фрагмент, взятый при торакоскопии или пункционной биопсии через грудную стенку, фиксируют, заливают в парафин, режут и окрашивают, при необходимости патолог добавляет специальные окраски",
+        "when": "Скопление жидкости в плевральной полости неясной причины, утолщение плевры на КТ, признаки гранулёматозного или профессионального поражения, уточнение природы плевральных наложений",
+        "prep": "Подготовка относится к самой процедуре забора и обсуждается с пульмонологом или торакальным хирургом; лабораторный этап подготовки не требует",
+        "abnormal": "Патолог описывает состояние выстилающих клеток, выраженность фиброза и воспаления, признаки злокачественности. Результат сопоставляет с рентгеновскими данными и анализом плевральной жидкости лечащий врач"
+      },
+      "en": {
+        "what": "Microscopic examination of a piece of pleura, the membrane lining the chest cavity and covering the lungs",
+        "how": "The piece, taken during thoracoscopy or a needle biopsy through the chest wall, is fixed, embedded in paraffin, sectioned and stained, with special stains added by the pathologist if needed",
+        "when": "Fluid in the pleural cavity of unclear cause, pleural thickening on CT, signs of a granulomatous or occupational process, clarifying the nature of pleural deposits",
+        "prep": "Preparation concerns the sampling procedure itself and is discussed with the pulmonologist or thoracic surgeon; the laboratory stage needs no preparation",
+        "abnormal": "The pathologist describes the state of the lining cells, the degree of fibrosis and inflammation, and signs of malignancy. The treating doctor compares the result with imaging and with analysis of the pleural fluid"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled isječka pleure, opne koja oblaže grudnu duplju i pokriva pluća",
+        "how": "Isječak uzet torakoskopijom ili punkcionom biopsijom kroz grudni zid fiksira se, ukalupljuje u parafin, reže i boji, a patolog po potrebi dodaje posebna bojenja",
+        "when": "Nakupljanje tečnosti u pleuralnoj duplji nejasnog uzroka, zadebljanje pleure na skeneru, znaci granulomatoznog ili profesionalnog oštećenja, razjašnjenje prirode pleuralnih naslaga",
+        "prep": "Priprema se odnosi na sam zahvat uzimanja i dogovara se sa pulmologom ili grudnim hirurgom; laboratorijski dio ne traži pripremu",
+        "abnormal": "Patolog opisuje stanje ćelija koje oblažu pleuru, izraženost fibroze i upale i znake maligniteta. Nalaz sa rendgenskim podacima i analizom pleuralne tečnosti poredi ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung eines Stücks Pleura, der Haut, die den Brustraum auskleidet und die Lunge überzieht",
+        "how": "Das bei einer Thorakoskopie oder einer Nadelbiopsie durch die Brustwand entnommene Stück wird fixiert, in Paraffin eingebettet, geschnitten und gefärbt, bei Bedarf ergänzt der Pathologe Spezialfärbungen",
+        "when": "Flüssigkeitsansammlung im Pleuraraum unklarer Ursache, Pleuraverdickung im CT, Hinweise auf einen granulomatösen oder berufsbedingten Prozess, Abklärung pleuraler Auflagerungen",
+        "prep": "Die Vorbereitung betrifft den Entnahmeeingriff selbst und wird mit dem Pneumologen oder Thoraxchirurgen besprochen; der Laborteil erfordert keine Vorbereitung",
+        "abnormal": "Der Pathologe beschreibt den Zustand der Deckzellen, das Ausmaß von Fibrose und Entzündung sowie Hinweise auf Bösartigkeit. Der behandelnde Arzt gleicht das Ergebnis mit der Bildgebung und der Untersuchung des Pleuraergusses ab"
+      },
+      "tr": {
+        "what": "Göğüs boşluğunu döşeyen ve akciğerleri saran zar olan plevradan alınan parçanın mikroskobik incelemesi",
+        "how": "Torakoskopiyle ya da göğüs duvarından iğne biyopsisiyle alınan parça tespit edilir, parafine gömülür, kesilir ve boyanır, gerekirse patolog özel boyalar ekler",
+        "when": "Nedeni belirsiz plevral sıvı birikimi, BT'de plevra kalınlaşması, granülomatöz ya da mesleki tutulum belirtileri, plevra üzerindeki birikimlerin niteliğinin aydınlatılması",
+        "prep": "Hazırlık örnek alma işleminin kendisiyle ilgilidir ve göğüs hastalıkları uzmanı ya da göğüs cerrahıyla konuşulur; laboratuvar aşaması hazırlık gerektirmez",
+        "abnormal": "Patolog örtü hücrelerinin durumunu, fibroz ve iltihabın derecesini ve kötü huyluluk belirtilerini tanımlar. Sonucu görüntüleme bulguları ve plevral sıvı incelemesiyle karşılaştıran tedaviyi yürüten hekimdir"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед исјечка плеуре, опне која облаже грудну дупљу и покрива плућа",
+        "how": "Исјечак узет торакоскопијом или пункционом биопсијом кроз грудни зид фиксира се, укалупљује у парафин, реже и боји, а патолог по потреби додаје посебна бојења",
+        "when": "Накупљање течности у плеуралној дупљи нејасног узрока, задебљање плеуре на скенеру, знаци грануломатозног или професионалног оштећења, разјашњење природе плеуралних наслага",
+        "prep": "Припрема се односи на сам захват узимања и договара се са пулмологом или грудним хирургом; лабораторијски дио не тражи припрему",
+        "abnormal": "Патолог описује стање ћелија које облажу плеуру, израженост фиброзе и упале и знаке малигнитета. Налаз са рендгенским подацима и анализом плеуралне течности пореди љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-radical-surgery",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование крупного операционного материала, удалённого при радикальной операции, вместе с окружающей клетчаткой и лимфоузлами",
+        "how": "Патолог описывает препарат целиком, вырезает множество кусочков из изменённого участка, краёв резекции и лимфоузлов, готовит десятки блоков и изучает срезы; из-за объёма работа занимает больше времени, чем обычная биопсия",
+        "when": "Радикальные операции, когда нужно описать удалённую ткань, оценить края резекции и состояние лимфатических узлов для определения дальнейшего лечения",
+        "prep": "Подготовки нет: материал передают в лабораторию сразу после операции",
+        "abnormal": "Заключение содержит описание ткани, состояния краёв резекции и лимфатических узлов — это основа для планирования дальнейшего лечения. Формулирует его врач-патолог, а план строит оперировавший врач вместе с профильными специалистами"
+      },
+      "en": {
+        "what": "Examination of a large surgical specimen removed during radical surgery, together with the surrounding fat and lymph nodes",
+        "how": "The pathologist describes the whole specimen, cuts many blocks from the altered area, the resection margins and the lymph nodes, prepares dozens of blocks and studies the sections; because of the volume this takes longer than an ordinary biopsy",
+        "when": "Radical operations where the removed tissue has to be described and the resection margins and lymph nodes assessed in order to plan further treatment",
+        "prep": "There is no preparation: the specimen is sent to the laboratory immediately after the operation",
+        "abnormal": "The report contains a description of the tissue, the resection margins and the lymph nodes, which is the basis for planning further treatment. It is worded by the pathologist, while the plan is built by the operating doctor together with the relevant specialists"
+      },
+      "sr": {
+        "what": "Pregled velikog operacionog materijala odstranjenog radikalnom operacijom, zajedno sa okolnim masnim tkivom i limfnim čvorovima",
+        "how": "Patolog opisuje cijeli preparat, isijeca brojne komadiće iz promijenjenog dijela, resekcionih ivica i limfnih čvorova, priprema desetine blokova i pregleda presjeke; zbog obima posao traje duže nego obična biopsija",
+        "when": "Radikalne operacije kada je potrebno opisati odstranjeno tkivo i procijeniti resekcione ivice i limfne čvorove radi planiranja daljeg liječenja",
+        "prep": "Pripreme nema: materijal se u laboratoriju predaje odmah poslije operacije",
+        "abnormal": "Nalaz sadrži opis tkiva, stanja resekcionih ivica i limfnih čvorova, što je osnova za planiranje daljeg liječenja. Formuliše ga ljekar patolog, a plan pravi ljekar koji je operisao zajedno sa odgovarajućim specijalistima"
+      },
+      "de": {
+        "what": "Untersuchung eines großen Operationspräparats aus einer radikalen Operation samt umgebendem Fettgewebe und Lymphknoten",
+        "how": "Der Pathologe beschreibt das gesamte Präparat, entnimmt zahlreiche Gewebestücke aus dem veränderten Bereich, den Resektionsrändern und den Lymphknoten, fertigt Dutzende Blöcke an und beurteilt die Schnitte; wegen des Umfangs dauert das länger als eine gewöhnliche Biopsie",
+        "when": "Radikale Operationen, bei denen das entfernte Gewebe beschrieben und Resektionsränder sowie Lymphknoten beurteilt werden müssen, um die weitere Behandlung zu planen",
+        "prep": "Es gibt keine Vorbereitung: Das Präparat wird unmittelbar nach der Operation ins Labor gegeben",
+        "abnormal": "Der Befund enthält die Beschreibung des Gewebes, der Resektionsränder und der Lymphknoten und ist die Grundlage für die weitere Behandlungsplanung. Formuliert wird er vom Pathologen, den Plan erstellt der operierende Arzt gemeinsam mit den zuständigen Fachärzten"
+      },
+      "tr": {
+        "what": "Radikal ameliyatla çıkarılan büyük cerrahi materyalin, çevresindeki yağ dokusu ve lenf düğümleriyle birlikte incelenmesi",
+        "how": "Patolog materyalin tamamını tanımlar, değişiklik gösteren bölgeden, cerrahi sınırlardan ve lenf düğümlerinden çok sayıda parça alır, onlarca blok hazırlar ve kesitleri inceler; hacim nedeniyle bu iş sıradan bir biyopsiden uzun sürer",
+        "when": "Çıkarılan dokunun tanımlanması, cerrahi sınırların ve lenf düğümlerinin sonraki tedavi için değerlendirilmesi gereken radikal ameliyatlar",
+        "prep": "Hazırlık yoktur: materyal ameliyattan hemen sonra laboratuvara iletilir",
+        "abnormal": "Rapor dokunun, cerrahi sınırların ve lenf düğümlerinin tanımını içerir ve sonraki tedavinin planlanmasının temelidir. Raporu patoloji uzmanı yazar, planı ise ameliyatı yapan hekim ilgili uzmanlarla birlikte oluşturur"
+      },
+      "sr_cyrl": {
+        "what": "Преглед великог операционог материјала одстрањеног радикалном операцијом, заједно са околним масним ткивом и лимфним чворовима",
+        "how": "Патолог описује цијели препарат, исијеца бројне комадиће из промијењеног дијела, ресекционих ивица и лимфних чворова, припрема десетине блокова и прегледа пресјеке; због обима посао траје дуже него обична биопсија",
+        "when": "Радикалне операције када је потребно описати одстрањено ткиво и процијенити ресекционе ивице и лимфне чворове ради планирања даљег лијечења",
+        "prep": "Припреме нема: материјал се у лабораторију предаје одмах послије операције",
+        "abnormal": "Налаз садржи опис ткива, стања ресекционих ивица и лимфних чворова, што је основа за планирање даљег лијечења. Формулише га љекар патолог, а план прави љекар који је оперисао заједно са одговарајућим специјалистима"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-removed-breast-examination",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование молочной железы, удалённой во время операции, с оценкой ткани, кожи и краёв удаления",
+        "how": "Патолог ориентирует и измеряет препарат, описывает кожу и сосок, делает срезы через изменённый участок и края, отдельно обрабатывает найденные лимфоузлы; материал большой, поэтому блоков получается много",
+        "when": "Операция по удалению молочной железы, в том числе после ранее выполненной биопсии, а также профилактическое удаление по решению врача",
+        "prep": "Подготовка не требуется: препарат поступает в лабораторию из операционной с маркировкой хирурга",
+        "abnormal": "Заключение описывает размер и строение изменённого участка, его отношение к краям удаления и состояние лимфоузлов. Описание даёт врач-патолог, а дальнейшее ведение определяет оперировавший хирург"
+      },
+      "en": {
+        "what": "Examination of a breast removed during surgery, with assessment of the tissue, the skin and the excision margins",
+        "how": "The pathologist orients and measures the specimen, describes the skin and nipple, takes sections through the altered area and the margins, and processes any lymph nodes separately; the specimen is large, so many blocks are produced",
+        "when": "Surgery to remove the breast, including after an earlier biopsy, and preventive removal decided together with the doctor",
+        "prep": "No preparation is required: the specimen arrives in the laboratory from the operating theatre with the surgeon's markings",
+        "abnormal": "The report describes the size and structure of the altered area, its relation to the excision margins and the state of the lymph nodes. The description comes from the pathologist, while further care is decided by the operating surgeon"
+      },
+      "sr": {
+        "what": "Pregled dojke odstranjene tokom operacije, sa procjenom tkiva, kože i ivica odstranjenja",
+        "how": "Patolog orijentiše i mjeri preparat, opisuje kožu i bradavicu, pravi presjeke kroz promijenjeni dio i ivice, a nađene limfne čvorove obrađuje posebno; materijal je velik pa se dobija veliki broj blokova",
+        "when": "Operacija odstranjenja dojke, uključujući i onu poslije ranije urađene biopsije, kao i preventivno odstranjenje o kojem se odlučuje sa ljekarom",
+        "prep": "Priprema nije potrebna: preparat u laboratoriju stiže iz operacione sale sa oznakama hirurga",
+        "abnormal": "Nalaz opisuje veličinu i građu promijenjenog dijela, njegov odnos prema ivicama odstranjenja i stanje limfnih čvorova. Opis daje ljekar patolog, a dalje vođenje određuje hirurg koji je operisao"
+      },
+      "de": {
+        "what": "Untersuchung einer operativ entfernten Brust mit Beurteilung von Gewebe, Haut und Exzisionsrändern",
+        "how": "Der Pathologe orientiert und misst das Präparat, beschreibt Haut und Brustwarze, entnimmt Schnitte durch den veränderten Bereich und die Ränder und arbeitet gefundene Lymphknoten gesondert auf; das Präparat ist groß, daher entstehen viele Blöcke",
+        "when": "Operative Entfernung der Brust, auch nach einer zuvor durchgeführten Biopsie, sowie eine vorbeugende Entfernung, über die gemeinsam mit dem Arzt entschieden wird",
+        "prep": "Eine Vorbereitung ist nicht erforderlich: Das Präparat kommt aus dem Operationssaal mit den Markierungen des Chirurgen ins Labor",
+        "abnormal": "Der Befund beschreibt Größe und Aufbau des veränderten Bereichs, seinen Bezug zu den Exzisionsrändern und den Zustand der Lymphknoten. Die Beschreibung stammt vom Pathologen, das weitere Vorgehen legt der operierende Chirurg fest"
+      },
+      "tr": {
+        "what": "Ameliyatla çıkarılan memenin, dokusu, derisi ve çıkarım sınırlarıyla birlikte değerlendirilmesi",
+        "how": "Patolog materyali yönlendirip ölçer, deriyi ve meme başını tanımlar, değişiklik gösteren bölgeden ve sınırlardan kesitler alır, bulunan lenf düğümlerini ayrı işler; materyal büyük olduğundan çok sayıda blok çıkar",
+        "when": "Daha önce biyopsi yapılmış olsun ya da olmasın memenin çıkarıldığı ameliyatlar ve hekimle birlikte karar verilen önleyici çıkarım",
+        "prep": "Hazırlık gerekmez: materyal ameliyathaneden cerrahın işaretlemeleriyle laboratuvara ulaşır",
+        "abnormal": "Rapor değişiklik gösteren bölgenin boyutunu ve yapısını, çıkarım sınırlarıyla ilişkisini ve lenf düğümlerinin durumunu tanımlar. Tanımı patoloji uzmanı yapar, sonraki izlemi ameliyatı yapan cerrah belirler"
+      },
+      "sr_cyrl": {
+        "what": "Преглед дојке одстрањене током операције, са процјеном ткива, коже и ивица одстрањења",
+        "how": "Патолог оријентише и мјери препарат, описује кожу и брадавицу, прави пресјеке кроз промијењени дио и ивице, а нађене лимфне чворове обрађује посебно; материјал је велик па се добија велики број блокова",
+        "when": "Операција одстрањења дојке, укључујући и ону послије раније урађене биопсије, као и превентивно одстрањење о којем се одлучује са љекаром",
+        "prep": "Припрема није потребна: препарат у лабораторију стиже из операционе сале са ознакама хирурга",
+        "abnormal": "Налаз описује величину и грађу промијењеног дијела, његов однос према ивицама одстрањења и стање лимфних чворова. Опис даје љекар патолог, а даље вођење одређује хирург који је оперисао"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-report-review",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Повторный просмотр готовых гистологических препаратов и уже выданного заключения, сделанного в другой лаборатории",
+        "how": "Патолог заново изучает присланные стёкла, при необходимости делает новые срезы из парафиновых блоков и сравнивает своё описание с исходным; новый материал у пациента не берут",
+        "when": "Второе мнение перед началом лечения, расхождение результата с клинической картиной, смена клиники или врача, подготовка к консилиуму перед сложной операцией",
+        "prep": "Нужно заранее получить в первой лаборатории стёкла и парафиновые блоки и принести их вместе с копией исходного заключения и медицинской документацией",
+        "abnormal": "Повторное описание может совпасть с первым, уточнить его или разойтись с ним. Сравнивает оба заключения и решает, влияет ли это на лечение, лечащий врач"
+      },
+      "en": {
+        "what": "A second reading of existing histology slides and of a report already issued by another laboratory",
+        "how": "The pathologist re-examines the submitted slides, cuts new sections from the paraffin blocks if needed, and compares their own description with the original; no new material is taken from the patient",
+        "when": "A second opinion before starting treatment, a result that does not fit the clinical picture, a change of clinic or doctor, preparation for a multidisciplinary meeting before complex surgery",
+        "prep": "Obtain the slides and paraffin blocks from the first laboratory in advance and bring them together with a copy of the original report and your medical records",
+        "abnormal": "The second description may agree with the first, refine it or differ from it. The treating doctor compares both reports and decides whether this changes the treatment"
+      },
+      "sr": {
+        "what": "Ponovni pregled već urađenih histoloških preparata i nalaza izdatog u drugoj laboratoriji",
+        "how": "Patolog iznova pregleda dostavljena stakla, po potrebi pravi nove presjeke iz parafinskih blokova i poredi svoj opis sa prvobitnim; novi materijal se od pacijenta ne uzima",
+        "when": "Drugo mišljenje prije početka liječenja, nalaz koji se ne slaže sa kliničkom slikom, promjena klinike ili ljekara, priprema za konzilijum prije složene operacije",
+        "prep": "Potrebno je unaprijed preuzeti stakla i parafinske blokove iz prve laboratorije i donijeti ih sa kopijom prvobitnog nalaza i medicinskom dokumentacijom",
+        "abnormal": "Drugi opis može se poklopiti sa prvim, dopuniti ga ili se od njega razlikovati. Oba nalaza poredi i odlučuje da li to mijenja liječenje ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Zweitbeurteilung bereits angefertigter histologischer Präparate und eines in einem anderen Labor erstellten Befundes",
+        "how": "Der Pathologe sieht die eingereichten Objektträger erneut durch, fertigt bei Bedarf neue Schnitte aus den Paraffinblöcken an und vergleicht die eigene Beschreibung mit der ursprünglichen; neues Material wird dem Patienten nicht entnommen",
+        "when": "Zweitmeinung vor Behandlungsbeginn, ein Ergebnis, das nicht zum klinischen Bild passt, Wechsel von Klinik oder Arzt, Vorbereitung einer Fallkonferenz vor einer aufwendigen Operation",
+        "prep": "Objektträger und Paraffinblöcke im Erstlabor vorab anfordern und zusammen mit einer Kopie des ursprünglichen Befundes und den Arztunterlagen mitbringen",
+        "abnormal": "Die zweite Beschreibung kann mit der ersten übereinstimmen, sie präzisieren oder von ihr abweichen. Der behandelnde Arzt vergleicht beide Befunde und entscheidet, ob sich daraus Änderungen für die Behandlung ergeben"
+      },
+      "tr": {
+        "what": "Başka bir laboratuvarda hazırlanmış histoloji preparatlarının ve verilmiş raporun yeniden değerlendirilmesi",
+        "how": "Patolog gönderilen lamları yeniden inceler, gerekirse parafin bloklardan yeni kesitler alır ve kendi tanımını ilk raporla karşılaştırır; hastadan yeni materyal alınmaz",
+        "when": "Tedaviye başlamadan önce ikinci görüş, klinik tabloyla örtüşmeyen sonuç, klinik ya da hekim değişikliği, zorlu bir ameliyat öncesi konsey hazırlığı",
+        "prep": "İlk laboratuvardan lamlar ve parafin bloklar önceden alınmalı, ilk raporun bir kopyası ve tıbbi belgelerle birlikte getirilmelidir",
+        "abnormal": "İkinci tanım ilkiyle örtüşebilir, onu netleştirebilir ya da ondan ayrılabilir. İki raporu karşılaştırıp bunun tedaviyi değiştirip değiştirmediğine tedaviyi yürüten hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Поновни преглед већ урађених хистолошких препарата и налаза издатог у другој лабораторији",
+        "how": "Патолог изнова прегледа достављена стакла, по потреби прави нове пресјеке из парафинских блокова и пореди свој опис са првобитним; нови материјал се од пацијента не узима",
+        "when": "Друго мишљење прије почетка лијечења, налаз који се не слаже са клиничком сликом, промјена клинике или љекара, припрема за конзилијум прије сложене операције",
+        "prep": "Потребно је унапријед преузети стакла и парафинске блокове из прве лабораторије и донијети их са копијом првобитног налаза и медицинском документацијом",
+        "abnormal": "Други опис може се поклопити са првим, допунити га или се од њега разликовати. Оба налаза пореди и одлучује да ли то мијења лијечење љекар који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-single-prostate-biopsy",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое исследование отдельного фрагмента ткани предстательной железы, обработанного как самостоятельная проба",
+        "how": "Фрагмент помещают в отдельный блок, делают срезы и окрашивают, а описание относится именно к этому участку железы",
+        "when": "Прицельный забор из одного участка, выявленного при УЗИ или МРТ, доисследование отдельной зоны, повторный забор из ранее описанного участка",
+        "prep": "Пациенту к лабораторному этапу готовиться не нужно, подготовку к самой процедуре объясняет уролог",
+        "abnormal": "Описание касается только присланного фрагмента, поэтому отсутствие изменений в нём не говорит о состоянии всей железы. Оценивает результат в комплексе уролог"
+      },
+      "en": {
+        "what": "Microscopic examination of a single prostate tissue fragment handled as a separate sample",
+        "how": "The fragment goes into its own block, is sectioned and stained, and the description refers precisely to that part of the gland",
+        "when": "Targeted sampling of one area seen on ultrasound or MRI, follow-up study of a single zone, repeat sampling from a previously described area",
+        "prep": "The patient does not prepare for the laboratory stage; preparation for the procedure itself is explained by the urologist",
+        "abnormal": "The description covers only the submitted fragment, so the absence of changes in it says nothing about the whole gland. The urologist assesses the result in context"
+      },
+      "sr": {
+        "what": "Mikroskopski pregled pojedinačnog isječka tkiva prostate obrađenog kao zaseban uzorak",
+        "how": "Isječak se stavlja u zaseban blok, prave se presjeci i boje, a opis se odnosi upravo na taj dio žlijezde",
+        "when": "Ciljano uzorkovanje jednog dijela uočenog ultrazvukom ili magnetnom rezonancom, dodatna obrada pojedine zone, ponovno uzorkovanje iz ranije opisanog dijela",
+        "prep": "Pacijent se za laboratorijski dio ne priprema, a pripremu za sam zahvat objašnjava urolog",
+        "abnormal": "Opis se tiče samo poslatog isječka, pa odsustvo promjena u njemu ne govori o stanju cijele žlijezde. Nalaz u sklopu ostalog procjenjuje urolog"
+      },
+      "de": {
+        "what": "Mikroskopische Untersuchung eines einzelnen Prostatagewebestücks, das als eigenständige Probe aufgearbeitet wird",
+        "how": "Das Gewebestück kommt in einen eigenen Block, wird geschnitten und gefärbt, und die Beschreibung bezieht sich genau auf diesen Abschnitt der Drüse",
+        "when": "Gezielte Entnahme aus einem im Ultraschall oder MRT auffälligen Bereich, ergänzende Abklärung einer einzelnen Zone, erneute Entnahme aus einem zuvor beschriebenen Bereich",
+        "prep": "Für den Laborteil bereitet sich der Patient nicht vor, die Vorbereitung auf den Eingriff selbst erklärt der Urologe",
+        "abnormal": "Die Beschreibung betrifft nur das eingesandte Gewebestück, fehlende Veränderungen darin sagen daher nichts über die gesamte Drüse aus. Der Urologe beurteilt das Ergebnis im Gesamtzusammenhang"
+      },
+      "tr": {
+        "what": "Ayrı bir örnek olarak işlenen tek bir prostat doku parçasının mikroskobik incelemesi",
+        "how": "Parça kendi bloğuna konur, kesitlenir ve boyanır; tanım tam olarak bezin bu bölümüne ilişkindir",
+        "when": "Ultrason ya da MR'da görülen tek bir alandan hedefe yönelik örnekleme, tek bir bölgenin ek olarak incelenmesi, daha önce tanımlanmış alandan yeniden örnekleme",
+        "prep": "Hasta laboratuvar aşaması için hazırlanmaz, işlemin kendisine hazırlığı ürolog anlatır",
+        "abnormal": "Tanım yalnızca gönderilen parçayı kapsar, bu nedenle onda değişiklik bulunmaması bezin tamamı hakkında bilgi vermez. Sonucu bütünlük içinde ürolog değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски преглед појединачног исјечка ткива простате обрађеног као засебан узорак",
+        "how": "Исјечак се ставља у засебан блок, праве се пресјеци и боје, а опис се односи управо на тај дио жлијезде",
+        "when": "Циљано узорковање једног дијела уоченог ултразвуком или магнетном резонанцом, додатна обрада поједине зоне, поновно узорковање из раније описаног дијела",
+        "prep": "Пацијент се за лабораторијски дио не припрема, а припрему за сам захват објашњава уролог",
+        "abnormal": "Опис се тиче само послатог исјечка, па одсуство промјена у њему не говори о стању цијеле жлијезде. Налаз у склопу осталог процјењује уролог"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-skin-tumor-additional-samples-15",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Обработка каждого следующего образца кожного образования, присланного по тому же направлению после первого",
+        "how": "Каждое удалённое образование обрабатывают отдельно: измеряют, вырезают через центр и края, заливают в парафин, режут и окрашивают, чтобы описание относилось к конкретному элементу",
+        "when": "Удаление нескольких родинок, папиллом или иных кожных образований за одно посещение, когда каждый элемент нужно описать отдельно",
+        "prep": "Подготовка к исследованию не нужна: образцы берут во время удаления образований",
+        "abnormal": "По каждому образцу патолог отдельно описывает тип образования, его границы и признаки злокачественности. Результаты по всем элементам вместе оценивает дерматолог или хирург"
+      },
+      "en": {
+        "what": "Processing of each further skin lesion sample submitted under the same referral after the first one",
+        "how": "Every removed lesion is handled separately: measured, cut through the centre and the edges, embedded in paraffin, sectioned and stained, so that the description refers to that particular lesion",
+        "when": "Removal of several moles, papillomas or other skin lesions at one visit, when each element has to be described separately",
+        "prep": "No preparation for the examination is needed: the samples are taken while the lesions are being removed",
+        "abnormal": "For each sample the pathologist separately describes the type of lesion, its borders and signs of malignancy. The dermatologist or surgeon assesses the results for all the lesions together"
+      },
+      "sr": {
+        "what": "Obrada svakog sljedećeg uzorka kožne promjene poslatog po istoj uputnici poslije prvog",
+        "how": "Svaka odstranjena promjena obrađuje se zasebno: mjeri se, isijeca kroz sredinu i ivice, ukalupljuje u parafin, reže i boji, tako da se opis odnosi na tu konkretnu promjenu",
+        "when": "Odstranjenje više mladeža, papiloma ili drugih promjena na koži tokom jedne posjete, kada svaku promjenu treba opisati zasebno",
+        "prep": "Priprema za pregled nije potrebna: uzorci se uzimaju tokom odstranjenja promjena",
+        "abnormal": "Za svaki uzorak patolog posebno opisuje vrstu promjene, njene ivice i znake maligniteta. Nalaze za sve promjene zajedno procjenjuje dermatolog ili hirurg"
+      },
+      "de": {
+        "what": "Aufarbeitung jeder weiteren Hautveränderung, die nach der ersten mit derselben Überweisung eingesandt wird",
+        "how": "Jede entfernte Veränderung wird getrennt bearbeitet: gemessen, durch Zentrum und Ränder geschnitten, in Paraffin eingebettet, geschnitten und gefärbt, damit sich die Beschreibung auf genau diese Veränderung bezieht",
+        "when": "Entfernung mehrerer Muttermale, Papillome oder anderer Hautveränderungen bei einem Termin, wenn jede Veränderung einzeln beschrieben werden muss",
+        "prep": "Eine Vorbereitung auf die Untersuchung ist nicht nötig: Die Proben entstehen beim Entfernen der Veränderungen",
+        "abnormal": "Für jede Probe beschreibt der Pathologe gesondert die Art der Veränderung, ihre Ränder und Hinweise auf Bösartigkeit. Die Ergebnisse aller Veränderungen zusammen beurteilt der Hautarzt oder der Chirurg"
+      },
+      "tr": {
+        "what": "Aynı sevkle birincisinden sonra gönderilen her bir ek deri lezyonu örneğinin işlenmesi",
+        "how": "Çıkarılan her lezyon ayrı ele alınır: ölçülür, merkezinden ve kenarlarından kesilir, parafine gömülür, kesitlenir ve boyanır; böylece tanım o lezyona ilişkin olur",
+        "when": "Tek bir ziyarette birden çok ben, papilloma ya da başka deri lezyonunun çıkarılması ve her birinin ayrı tanımlanmasının gerekmesi",
+        "prep": "İnceleme için hazırlık gerekmez: örnekler lezyonların çıkarılması sırasında alınır",
+        "abnormal": "Patolog her örnek için lezyonun tipini, sınırlarını ve kötü huyluluk belirtilerini ayrı tanımlar. Tüm lezyonlara ilişkin sonuçları birlikte dermatolog ya da cerrah değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Обрада сваког сљедећег узорка кожне промјене послатог по истој упутници послије првог",
+        "how": "Свака одстрањена промјена обрађује се засебно: мјери се, исијеца кроз средину и ивице, укалупљује у парафин, реже и боји, тако да се опис односи на ту конкретну промјену",
+        "when": "Одстрањење више младежа, папилома или других промјена на кожи током једне посјете, када сваку промјену треба описати засебно",
+        "prep": "Припрема за преглед није потребна: узорци се узимају током одстрањења промјена",
+        "abnormal": "За сваки узорак патолог посебно описује врсту промјене, њене ивице и знаке малигнитета. Налазе за све промјене заједно процјењује дерматолог или хирург"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-standard-diagnostics",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Базовая гистологическая обработка присланной ткани с обычным окрашиванием, без дополнительных методик",
+        "how": "Ткань фиксируют в формалине, обезвоживают, заливают в парафин, режут на тонкие срезы и окрашивают гематоксилином и эозином; специальные окраски и иммуногистохимия назначаются отдельно",
+        "when": "Стандартный объём исследования для большинства биопсий и небольших операционных материалов, когда для описания достаточно рутинного окрашивания",
+        "prep": "Отдельной подготовки нет: работа начинается после поступления материала в лабораторию",
+        "abnormal": "Рутинного окрашивания в большинстве случаев хватает, чтобы описать строение ткани; иногда патолог дополнительно запрашивает специальные методы. Заключение трактует лечащий врач"
+      },
+      "en": {
+        "what": "Basic histological processing of submitted tissue with routine staining and no additional techniques",
+        "how": "The tissue is fixed in formalin, dehydrated, embedded in paraffin, cut into thin sections and stained with haematoxylin and eosin; special stains and immunohistochemistry are ordered separately",
+        "when": "The standard scope of examination for most biopsies and small surgical specimens, when routine staining is enough for the description",
+        "prep": "There is no separate preparation: work begins once the material reaches the laboratory",
+        "abnormal": "In most cases routine staining is enough to describe the tissue structure; sometimes the pathologist additionally requests special methods. The report is interpreted by the treating doctor"
+      },
+      "sr": {
+        "what": "Osnovna histološka obrada poslatog tkiva sa uobičajenim bojenjem, bez dodatnih metoda",
+        "how": "Tkivo se fiksira u formalinu, dehidrira, ukalupljuje u parafin, reže na tanke presjeke i boji hematoksilinom i eozinom; posebna bojenja i imunohistohemija traže se odvojeno",
+        "when": "Standardni obim pregleda za većinu biopsija i manjih operacionih materijala, kada je za opis dovoljno uobičajeno bojenje",
+        "prep": "Posebne pripreme nema: rad počinje kada materijal stigne u laboratoriju",
+        "abnormal": "Uobičajeno bojenje u većini slučajeva je dovoljno da se opiše građa tkiva, a patolog ponekad dodatno traži posebne metode. Nalaz tumači ljekar koji vodi liječenje"
+      },
+      "de": {
+        "what": "Grundlegende histologische Aufarbeitung des eingesandten Gewebes mit Routinefärbung und ohne zusätzliche Verfahren",
+        "how": "Das Gewebe wird in Formalin fixiert, entwässert, in Paraffin eingebettet, in dünne Schnitte geschnitten und mit Hämatoxylin und Eosin gefärbt; Spezialfärbungen und Immunhistochemie werden gesondert angefordert",
+        "when": "Der Standardumfang für die meisten Biopsien und kleinen Operationspräparate, wenn die Routinefärbung für die Beschreibung ausreicht",
+        "prep": "Eine gesonderte Vorbereitung entfällt: Die Arbeit beginnt, sobald das Material im Labor eingeht",
+        "abnormal": "Die Routinefärbung reicht meist aus, um den Gewebeaufbau zu beschreiben; manchmal fordert der Pathologe zusätzlich Spezialverfahren an. Den Befund deutet der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Gönderilen dokunun ek yöntem kullanılmadan, olağan boyamayla yapılan temel histolojik işlenmesi",
+        "how": "Doku formalinde tespit edilir, suyu alınır, parafine gömülür, ince kesitlere ayrılır ve hematoksilen ile eozinle boyanır; özel boyalar ve immünhistokimya ayrıca istenir",
+        "when": "Tanım için olağan boyamanın yeterli olduğu durumlarda çoğu biyopsi ve küçük cerrahi materyal için standart inceleme kapsamı",
+        "prep": "Ayrı bir hazırlık yoktur: çalışma materyal laboratuvara ulaştığında başlar",
+        "abnormal": "Olağan boyama çoğu durumda doku yapısını tanımlamaya yeter; patolog bazen ek olarak özel yöntemler ister. Raporu tedaviyi yürüten hekim yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Основна хистолошка обрада послатог ткива са уобичајеним бојењем, без додатних метода",
+        "how": "Ткиво се фиксира у формалину, дехидрира, укалупљује у парафин, реже на танке пресјеке и боји хематоксилином и еозином; посебна бојења и имунохистохемија траже се одвојено",
+        "when": "Стандардни обим прегледа за већину биопсија и мањих операционих материјала, када је за опис довољно уобичајено бојење",
+        "prep": "Посебне припреме нема: рад почиње када материјал стигне у лабораторију",
+        "abnormal": "Уобичајено бојење у већини случајева је довољно да се опише грађа ткива, а патолог понекад додатно тражи посебне методе. Налаз тумачи љекар који води лијечење"
+      }
+    }
+  }
 ]

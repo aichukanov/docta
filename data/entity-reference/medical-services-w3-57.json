@@ -1,0 +1,866 @@
+[
+  {
+    "slug": "follow-up-thoracic-surgeon-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный приём хирурга, который занимается грудной клеткой, лёгкими и плеврой, для оценки динамики после операции или ранее найденных изменений",
+        "how": "Врач спрашивает об одышке, боли и кашле, осматривает швы и место стояния дренажа, выслушивает дыхание с обеих сторон, сравнивает принесённый контрольный снимок или КТ с прежними; приём короче первичного, обычно 15–20 минут",
+        "when": "В срок, назначенный после операции на лёгком, плевре или грудной стенке, контроль после дренирования плевральной полости, наблюдение за узлом в лёгком, оценка заживления после травмы рёбер, разбор результатов гистологии",
+        "prep": "Принести выписку, протокол операции, прежние и свежие снимки, лучше на диске, и список принимаемых препаратов; надеть одежду, которая легко открывает грудную клетку",
+        "abnormal": "Врач решает, продолжать наблюдение, изменить сроки контроля или назначить дополнительное обследование. Нарастающая одышка, температура, усиление боли в груди или отделяемое из раны — повод прийти раньше назначенного срока"
+      },
+      "en": {
+        "what": "A repeat appointment with the surgeon who deals with the chest, the lungs and the pleura, to see how things have changed after an operation or after findings noted earlier",
+        "how": "The doctor asks about breathlessness, pain and cough, inspects the scars and the former drain site, listens to breathing on both sides and compares the new control X-ray or CT with the earlier ones; shorter than the first visit, usually 15 to 20 minutes",
+        "when": "At the interval set after surgery on the lung, the pleura or the chest wall, follow-up after chest drainage, monitoring of a lung nodule, healing after a rib injury, discussing histology results",
+        "prep": "Bring the discharge letter, the operation report, old and new images, preferably on a disc, and the list of medicines; wear clothing that opens the chest easily",
+        "abnormal": "The surgeon decides whether to keep watching, to change the follow-up interval or to order further tests. Growing breathlessness, fever, increasing chest pain or discharge from the wound are reasons to come earlier than planned"
+      },
+      "sr": {
+        "what": "Kontrolni pregled hirurga koji se bavi grudnim košem, plućima i plućnom maramicom, radi procjene stanja poslije operacije ili ranije nađenih promjena",
+        "how": "Ljekar pita o zaduhi, bolu i kašlju, pregleda ožiljke i mjesto gdje je stajao dren, sluša disanje sa obje strane i upoređuje novi kontrolni snimak ili CT sa ranijim; kraći je od prvog pregleda, obično 15 do 20 minuta",
+        "when": "U roku određenom poslije operacije pluća, plućne maramice ili grudnog zida, kontrola poslije drenaže grudnog koša, praćenje čvora u plućima, zarastanje poslije povrede rebara, tumačenje patohistološkog nalaza",
+        "prep": "Ponijeti otpusnu listu, operativni protokol, stare i nove snimke, najbolje na disku, i spisak lijekova koje uzimate; obući odjeću koja lako otkriva grudni koš",
+        "abnormal": "Hirurg odlučuje da li nastaviti praćenje, promijeniti rok kontrole ili uraditi dodatne pretrage. Pojačana zaduha, temperatura, jači bol u grudima ili sadržaj koji curi iz rane razlog su da dođete prije zakazanog roka"
+      },
+      "de": {
+        "what": "Ein Wiedervorstellungstermin beim Chirurgen für Brustkorb, Lunge und Rippenfell zur Beurteilung des Verlaufs nach einer Operation oder nach zuvor erhobenen Befunden",
+        "how": "Der Arzt fragt nach Luftnot, Schmerzen und Husten, begutachtet Narben und die frühere Drainagestelle, hört beide Lungen ab und vergleicht die neue Kontrollaufnahme oder CT mit den früheren; kürzer als der Ersttermin, meist 15 bis 20 Minuten",
+        "when": "Zum vereinbarten Zeitpunkt nach einer Operation an Lunge, Rippenfell oder Brustwand, Kontrolle nach Drainage des Brustraums, Beobachtung eines Lungenrundherds, Heilung nach Rippenverletzung, Besprechung des feingeweblichen Befundes",
+        "prep": "Entlassungsbrief, OP-Bericht, alte und neue Aufnahmen möglichst auf CD sowie die Medikamentenliste mitbringen; Kleidung tragen, die den Brustkorb leicht freigibt",
+        "abnormal": "Der Chirurg entscheidet, ob weiter beobachtet, der Kontrollabstand geändert oder zusätzlich untersucht wird. Zunehmende Luftnot, Fieber, stärkere Brustschmerzen oder Sekret aus der Wunde sind Gründe, früher als geplant zu kommen"
+      },
+      "tr": {
+        "what": "Göğüs kafesi, akciğerler ve akciğer zarıyla ilgilenen cerrahın, ameliyat ya da daha önce saptanan bulgular sonrası gidişatı değerlendirdiği kontrol muayenesi",
+        "how": "Hekim nefes darlığını, ağrıyı ve öksürüğü sorar, dikiş yerlerini ve drenin bulunduğu bölgeyi inceler, iki taraflı solunum seslerini dinler, yeni kontrol filmini ya da BT görüntüsünü öncekilerle karşılaştırır; ilk muayeneden kısadır, genelde 15 ila 20 dakika",
+        "when": "Akciğer, akciğer zarı ya da göğüs duvarı ameliyatından sonra verilen sürede, göğüs drenajı sonrası kontrol, akciğerdeki nodülün izlemi, kaburga yaralanması sonrası iyileşme, patoloji sonucunun değerlendirilmesi",
+        "prep": "Taburcu raporunu, ameliyat notunu, eski ve yeni görüntüleri tercihen disk olarak ve kullanılan ilaçların listesini getirmek; göğsü kolay açan kıyafet giymek",
+        "abnormal": "Cerrah izleme devam etmeye, kontrol aralığını değiştirmeye ya da ek tetkik istemeye karar verir. Artan nefes darlığı, ateş, göğüs ağrısının şiddetlenmesi ya da yaradan akıntı, randevudan önce başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед хирурга који се бави грудним кошем, плућима и плућном марамицом, ради процјене стања послије операције или раније нађених промјена",
+        "how": "Љекар пита о задухи, болу и кашљу, прегледа ожиљке и мјесто гдје је стајао дрен, слуша дисање са обје стране и упоређује нови контролни снимак или CT са ранијим; краћи је од првог прегледа, обично 15 до 20 минута",
+        "when": "У року одређеном послије операције плућа, плућне марамице или грудног зида, контрола послије дренаже грудног коша, праћење чвора у плућима, зарастање послије повреде ребара, тумачење патохистолошког налаза",
+        "prep": "Понијети отпусну листу, оперативни протокол, старе и нове снимке, најбоље на диску, и списак лијекова које узимате; обући одјећу која лако открива грудни кош",
+        "abnormal": "Хирург одлучује да ли наставити праћење, промијенити рок контроле или урадити додатне претраге. Појачана задуха, температура, јачи бол у грудима или садржај који цури из ране разлог су да дођете прије заказаног рока"
+      }
+    }
+  },
+  {
+    "slug": "surgical-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приём общего хирурга, на котором оценивают, нужно ли хирургическое лечение беспокоящей проблемы",
+        "how": "Врач расспрашивает о жалобе, осматривает и ощупывает нужную область, проверяет грыжевые ворота, рану или образование под кожей, при необходимости делает перевязку и смотрит принесённые УЗИ и анализы; 15–25 минут",
+        "when": "Грыжа, образование под кожей, гнойник или фурункул, вросший ноготь, долго не заживающая рана, боль в животе, последствия травмы, направление от семейного врача на хирургическую оценку",
+        "prep": "Специальной подготовки нет; надеть одежду, которая открывает нужную область, взять прежние выписки, результаты УЗИ и анализов, список препаратов, включая разжижающие кровь",
+        "abnormal": "По итогам приёма врач выбирает между наблюдением, лечением без операции и вмешательством, может назначить УЗИ, анализы или консультацию узкого специалиста. Резкая боль в животе с температурой и рвотой требует экстренной помощи, а не планового приёма"
+      },
+      "en": {
+        "what": "An appointment with a general surgeon to judge whether the problem needs surgical treatment",
+        "how": "The doctor asks about the complaint, inspects and palpates the area, checks a hernia opening, a wound or a lump under the skin, changes a dressing if needed and reviews any ultrasound and blood tests brought along; 15 to 25 minutes",
+        "when": "A hernia, a lump under the skin, an abscess or a boil, an ingrown nail, a wound that will not heal, abdominal pain, the aftermath of an injury, a referral from the family doctor for a surgical opinion",
+        "prep": "No special preparation; wear clothing that gives access to the area and bring earlier discharge letters, ultrasound and laboratory results and the list of medicines, blood thinners included",
+        "abnormal": "After the visit the surgeon chooses between watching, treatment without an operation and a procedure, and may order ultrasound, blood tests or a referral to a narrower specialist. Sudden abdominal pain with fever and vomiting needs emergency care rather than a scheduled visit"
+      },
+      "sr": {
+        "what": "Pregled opšteg hirurga na kojem se procjenjuje da li tegoba zahtijeva hirurško liječenje",
+        "how": "Ljekar pita o tegobi, pregleda i opipava to područje, provjerava kilni otvor, ranu ili čvorić pod kožom, po potrebi previja i gleda donesene nalaze ultrazvuka i analiza; 15 do 25 minuta",
+        "when": "Kila, čvorić pod kožom, furunkul ili gnojna upala kože, urasli nokat, rana koja dugo ne zarasta, bol u stomaku, posljedice povrede, uput izabranog doktora na hiruršku procjenu",
+        "prep": "Posebne pripreme nema; obući odjeću koja otkriva to područje i ponijeti ranije otpusne liste, nalaze ultrazvuka i analiza i spisak lijekova, uključujući i one za razrjeđivanje krvi",
+        "abnormal": "Poslije pregleda hirurg bira između praćenja, liječenja bez operacije i zahvata, a može tražiti ultrazvuk, analize ili mišljenje uže specijalnosti. Nagao bol u stomaku sa temperaturom i povraćanjem traži hitnu pomoć, a ne zakazani pregled"
+      },
+      "de": {
+        "what": "Ein Termin beim Allgemeinchirurgen, bei dem beurteilt wird, ob das Problem chirurgisch behandelt werden muss",
+        "how": "Der Arzt fragt nach den Beschwerden, betrachtet und tastet die Region ab, prüft eine Bruchpforte, eine Wunde oder einen Knoten unter der Haut, wechselt bei Bedarf den Verband und sieht mitgebrachte Ultraschall- und Laborbefunde durch; 15 bis 25 Minuten",
+        "when": "Bruch, Knoten unter der Haut, Abszess oder Furunkel, eingewachsener Nagel, schlecht heilende Wunde, Bauchschmerzen, Folgen einer Verletzung, Überweisung des Hausarztes zur chirurgischen Beurteilung",
+        "prep": "Keine besondere Vorbereitung; Kleidung tragen, die die Region zugänglich macht, und frühere Arztbriefe, Ultraschall- und Laborbefunde sowie die Medikamentenliste samt Blutverdünnern mitbringen",
+        "abnormal": "Nach dem Termin entscheidet der Chirurg zwischen Beobachten, Behandlung ohne Operation und einem Eingriff und kann Ultraschall, Labor oder eine fachärztliche Mitbeurteilung veranlassen. Plötzliche Bauchschmerzen mit Fieber und Erbrechen gehören in die Notfallversorgung und nicht in einen geplanten Termin"
+      },
+      "tr": {
+        "what": "Şikayetin cerrahi tedavi gerektirip gerektirmediğinin değerlendirildiği genel cerrahi muayenesi",
+        "how": "Hekim şikayeti sorar, bölgeyi inceleyip elle muayene eder, fıtık ağzını, yarayı ya da deri altındaki şişliği kontrol eder, gerekirse pansuman yapar ve getirilen ultrason ile tahlil sonuçlarına bakar; 15 ila 25 dakika",
+        "when": "Fıtık, deri altında şişlik, apse ya da çıban, batık tırnak, uzun süre kapanmayan yara, karın ağrısı, yaralanma sonrası sorunlar, aile hekiminin cerrahi değerlendirme için yönlendirmesi",
+        "prep": "Özel hazırlık gerekmez; ilgili bölgeyi açabilen kıyafet giymek, önceki epikrizleri, ultrason ve tahlil sonuçlarını, kan sulandırıcılar dahil ilaç listesini getirmek",
+        "abnormal": "Muayene sonunda cerrah izlem, ameliyatsız tedavi ya da girişim arasında seçim yapar, ultrason, tahlil ya da yan dal görüşü isteyebilir. Ateş ve kusmayla birlikte ani karın ağrısı planlı muayene değil acil başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Преглед општег хирурга на којем се процјењује да ли тегоба захтијева хируршко лијечење",
+        "how": "Љекар пита о тегоби, прегледа и опипава то подручје, провјерава килни отвор, рану или чворић под кожом, по потреби превија и гледа донесене налазе ултразвука и анализа; 15 до 25 минута",
+        "when": "Кила, чворић под кожом, фурункул или гнојна упала коже, урасли нокат, рана која дуго не зараста, бол у стомаку, посљедице повреде, упут изабраног доктора на хируршку процјену",
+        "prep": "Посебне припреме нема; обући одјећу која открива то подручје и понијети раније отпусне листе, налазе ултразвука и анализа и списак лијекова, укључујући и оне за разрјеђивање крви",
+        "abnormal": "Послије прегледа хирург бира између праћења, лијечења без операције и захвата, а може тражити ултразвук, анализе или мишљење уже специјалности. Нагао бол у стомаку са температуром и повраћањем тражи хитну помоћ, а не заказани преглед"
+      }
+    }
+  },
+  {
+    "slug": "first-surgical-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первый приём у хирурга по поводу новой жалобы, на котором собирают историю и составляют план",
+        "how": "Врач подробно расспрашивает о начале и течении жалобы, перенесённых операциях, аллергии и постоянных препаратах, проводит осмотр и заводит карту, объясняет возможные варианты лечения и выписывает направления на нужные исследования; 20–30 минут",
+        "when": "Впервые появившееся образование, грыжа или уплотнение, направление от семейного врача или другого специалиста, желание узнать, нужна ли операция, подготовка к плановому вмешательству",
+        "prep": "Подготовка не нужна; записать, когда и как началась жалоба, взять направление, прежние выписки и результаты исследований, список постоянных препаратов и сведения об аллергии",
+        "abnormal": "Итог первого приёма — план: наблюдение, лечение без операции или подготовка к вмешательству с перечнем предоперационных обследований. Если жалоба быстро нарастает до назначенного срока, обращаться нужно раньше"
+      },
+      "en": {
+        "what": "A first visit to a surgeon for a new complaint, where the history is taken and a plan is made",
+        "how": "The doctor asks in detail how the complaint started and developed, about previous operations, allergies and regular medicines, examines the patient, opens a record, explains the possible options and issues referrals for the tests needed; 20 to 30 minutes",
+        "when": "A lump, hernia or swelling noticed for the first time, a referral from the family doctor or another specialist, a wish to know whether an operation is needed, preparation for a planned procedure",
+        "prep": "No preparation is needed; note when and how the complaint began and bring the referral, earlier discharge letters and test results, the list of regular medicines and details of any allergy",
+        "abnormal": "The first visit ends with a plan: watching, treatment without an operation, or preparation for a procedure with the list of tests to be done before it. If the complaint grows quickly before the agreed date, care should be sought earlier"
+      },
+      "sr": {
+        "what": "Prvi dolazak kod hirurga zbog nove tegobe, na kojem se uzima istorija bolesti i pravi plan",
+        "how": "Ljekar detaljno pita kako je tegoba počela i kako teče, o ranijim operacijama, alergijama i stalnoj terapiji, pregleda pacijenta, otvara karton, objašnjava moguće opcije i daje uputnice za potrebne pretrage; 20 do 30 minuta",
+        "when": "Prvi put primijećen čvorić, kila ili otok, uput izabranog doktora ili drugog specijaliste, želja da se sazna da li je operacija potrebna, priprema za planirani zahvat",
+        "prep": "Priprema nije potrebna; zapisati kada je i kako tegoba počela i ponijeti uputnicu, ranije otpusne liste i nalaze, spisak stalne terapije i podatke o alergijama",
+        "abnormal": "Prvi pregled se završava planom: praćenje, liječenje bez operacije ili priprema za zahvat sa spiskom pretraga koje mu prethode. Ako tegoba brzo napreduje prije zakazanog roka, treba se javiti ranije"
+      },
+      "de": {
+        "what": "Der erste Besuch beim Chirurgen wegen einer neuen Beschwerde, bei dem die Vorgeschichte erhoben und ein Plan erstellt wird",
+        "how": "Der Arzt fragt ausführlich nach Beginn und Verlauf der Beschwerde, nach früheren Operationen, Allergien und Dauermedikation, untersucht, legt eine Akte an, erklärt die möglichen Wege und stellt Überweisungen für die nötigen Untersuchungen aus; 20 bis 30 Minuten",
+        "when": "Erstmals bemerkter Knoten, Bruch oder Schwellung, Überweisung vom Hausarzt oder einem anderen Facharzt, die Frage, ob eine Operation nötig ist, Vorbereitung auf einen geplanten Eingriff",
+        "prep": "Keine Vorbereitung nötig; notieren, wann und wie die Beschwerde begann, und Überweisung, frühere Arztbriefe und Befunde, die Liste der Dauermedikamente und Angaben zu Allergien mitbringen",
+        "abnormal": "Am Ende des Ersttermins steht ein Plan: Beobachten, Behandlung ohne Operation oder Vorbereitung auf einen Eingriff samt Liste der Voruntersuchungen. Nimmt die Beschwerde vor dem vereinbarten Termin rasch zu, sollte man früher vorstellig werden"
+      },
+      "tr": {
+        "what": "Yeni bir şikayet nedeniyle cerraha ilk başvuru; öykü alınır ve bir plan çıkarılır",
+        "how": "Hekim şikayetin nasıl başlayıp geliştiğini, geçirilmiş ameliyatları, alerjileri ve sürekli kullanılan ilaçları ayrıntılı sorar, muayene eder, dosya açar, olası seçenekleri anlatır ve gereken tetkikler için yönlendirme yazar; 20 ila 30 dakika",
+        "when": "İlk kez fark edilen şişlik, fıtık ya da sertlik, aile hekiminin veya başka bir uzmanın yönlendirmesi, ameliyat gerekip gerekmediğini öğrenme isteği, planlı girişime hazırlık",
+        "prep": "Hazırlık gerekmez; şikayetin ne zaman ve nasıl başladığını not etmek, sevk belgesini, önceki epikriz ve sonuçları, sürekli ilaç listesini ve alerji bilgisini getirmek",
+        "abnormal": "İlk muayene bir planla biter: izlem, ameliyatsız tedavi ya da girişim öncesi tetkik listesiyle birlikte hazırlık. Şikayet verilen tarihten önce hızla artarsa daha erken başvurmak gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Први долазак код хирурга због нове тегобе, на којем се узима историја болести и прави план",
+        "how": "Љекар детаљно пита како је тегоба почела и како тече, о ранијим операцијама, алергијама и сталној терапији, прегледа пацијента, отвара картон, објашњава могуће опције и даје упутнице за потребне претраге; 20 до 30 минута",
+        "when": "Први пут примијећен чворић, кила или оток, упут изабраног доктора или другог специјалисте, жеља да се сазна да ли је операција потребна, припрема за планирани захват",
+        "prep": "Припрема није потребна; записати када је и како тегоба почела и понијети упутницу, раније отпусне листе и налазе, списак сталне терапије и податке о алергијама",
+        "abnormal": "Први преглед се завршава планом: праћење, лијечење без операције или припрема за захват са списком претрага које му претходе. Ако тегоба брзо напредује прије заказаног рока, треба се јавити раније"
+      }
+    }
+  },
+  {
+    "slug": "first-thoracic-surgeon-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первый приём хирурга, который занимается лёгкими, плеврой, средостением и грудной стенкой",
+        "how": "Врач расспрашивает о дыхании, кашле, курении и перенесённых болезнях лёгких, осматривает и выслушивает грудную клетку, разбирает принесённые снимки и КТ и объясняет, какие исследования нужны до решения об операции; 25–40 минут",
+        "when": "Узел или затемнение, найденные на снимке или КТ лёгких, жидкость или воздух в плевральной полости, перенесённый пневмоторакс, образование в средостении или грудной стенке, деформация грудной клетки, последствия травмы рёбер, повышенная потливость ладоней",
+        "prep": "Подготовка не нужна; обязательно взять снимки и КТ на диске, а не только описания, прежние выписки, результаты спирометрии и анализов, список препаратов, включая разжижающие кровь",
+        "abnormal": "По итогам приёма врач может предложить наблюдение со сроком контроля, дополнительное обследование — КТ, бронхоскопию, взятие материала — или обсудить операцию. Нарастающая одышка, резкая боль в груди или кровь при кашле требуют срочного обращения"
+      },
+      "en": {
+        "what": "A first visit to the surgeon who deals with the lungs, the pleura, the mediastinum and the chest wall",
+        "how": "The doctor asks about breathing, cough, smoking and past lung disease, examines and listens to the chest, goes through the images and CT scans brought along and explains which further tests are needed before any decision about an operation; 25 to 40 minutes",
+        "when": "A nodule or shadow found on a chest X-ray or CT, fluid or air in the pleural space, a past pneumothorax, a mass in the mediastinum or the chest wall, chest deformity, consequences of a rib injury, heavy sweating of the palms",
+        "prep": "No preparation is needed; bring the X-rays and CT scans on a disc rather than only the reports, earlier discharge letters, lung function and laboratory results and the list of medicines, blood thinners included",
+        "abnormal": "After the visit the surgeon may suggest watching with a set follow-up interval, further tests such as CT, bronchoscopy or taking a tissue sample, or discuss an operation. Increasing breathlessness, sharp chest pain or coughing blood call for urgent care"
+      },
+      "sr": {
+        "what": "Prvi pregled hirurga koji se bavi plućima, plućnom maramicom, medijastinumom i grudnim zidom",
+        "how": "Ljekar pita o disanju, kašlju, pušenju i ranijim bolestima pluća, pregleda i sluša grudni koš, analizira donesene snimke i CT i objašnjava koje su pretrage potrebne prije odluke o operaciji; 25 do 40 minuta",
+        "when": "Čvor ili sjenka nađena na snimku ili CT-u pluća, tečnost ili vazduh u plućnoj maramici, preboljeni pneumotoraks, tvorba u medijastinumu ili grudnom zidu, deformitet grudnog koša, posljedice povrede rebara, pojačano znojenje dlanova",
+        "prep": "Priprema nije potrebna; obavezno ponijeti snimke i CT na disku, a ne samo opise, ranije otpusne liste, nalaz spirometrije i analiza i spisak lijekova, uključujući i one za razrjeđivanje krvi",
+        "abnormal": "Poslije pregleda hirurg može predložiti praćenje sa određenim rokom kontrole, dodatne pretrage kao što su CT, bronhoskopija ili uzimanje uzorka tkiva, ili razgovor o operaciji. Sve jača zaduha, nagao bol u grudima ili krv u iskašljaju traže hitno javljanje"
+      },
+      "de": {
+        "what": "Der erste Besuch beim Chirurgen, der sich mit Lunge, Rippenfell, Mittelfell und Brustwand befasst",
+        "how": "Der Arzt fragt nach Atmung, Husten, Rauchen und früheren Lungenerkrankungen, untersucht und auskultiert den Brustkorb, sieht mitgebrachte Aufnahmen und CT durch und erklärt, welche weiteren Untersuchungen vor einer Entscheidung über eine Operation nötig sind; 25 bis 40 Minuten",
+        "when": "Rundherd oder Verschattung in Röntgen oder CT der Lunge, Flüssigkeit oder Luft im Rippenfellraum, durchgemachter Pneumothorax, Raumforderung im Mittelfell oder in der Brustwand, Brustkorbfehlbildung, Folgen einer Rippenverletzung, starkes Schwitzen der Handflächen",
+        "prep": "Keine Vorbereitung nötig; Aufnahmen und CT unbedingt auf CD und nicht nur als Befundtext mitbringen, dazu frühere Arztbriefe, Lungenfunktions- und Laborbefunde sowie die Medikamentenliste samt Blutverdünnern",
+        "abnormal": "Nach dem Termin kann der Chirurg Beobachtung mit festem Kontrollabstand, weitere Untersuchungen wie CT, Bronchoskopie oder Gewebeentnahme vorschlagen oder eine Operation besprechen. Zunehmende Luftnot, plötzlicher Brustschmerz oder Bluthusten erfordern sofortige Hilfe"
+      },
+      "tr": {
+        "what": "Akciğerler, akciğer zarı, mediasten ve göğüs duvarıyla ilgilenen cerraha ilk başvuru",
+        "how": "Hekim solunumu, öksürüğü, sigara kullanımını ve geçirilmiş akciğer hastalıklarını sorar, göğsü muayene edip dinler, getirilen filmleri ve BT görüntülerini inceler, ameliyat kararından önce hangi tetkiklerin gerektiğini anlatır; 25 ila 40 dakika",
+        "when": "Akciğer filminde ya da BT'de görülen nodül veya gölge, akciğer zarı boşluğunda sıvı ya da hava, geçirilmiş pnömotoraks, mediasten veya göğüs duvarında kitle, göğüs kafesi şekil bozukluğu, kaburga yaralanmasının sonuçları, avuç içlerinde aşırı terleme",
+        "prep": "Hazırlık gerekmez; film ve BT görüntülerini yalnızca rapor olarak değil disk halinde getirmek, önceki epikrizleri, solunum fonksiyon ve tahlil sonuçlarını, kan sulandırıcılar dahil ilaç listesini yanında bulundurmak",
+        "abnormal": "Muayene sonunda cerrah belirli aralıklarla izlem, BT, bronkoskopi ya da doku örneği alınması gibi ek tetkikler önerebilir veya ameliyatı değerlendirebilir. Artan nefes darlığı, ani göğüs ağrısı ya da öksürükle kan gelmesi acil başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Први преглед хирурга који се бави плућима, плућном марамицом, медијастинумом и грудним зидом",
+        "how": "Љекар пита о дисању, кашљу, пушењу и ранијим болестима плућа, прегледа и слуша грудни кош, анализира донесене снимке и CT и објашњава које су претраге потребне прије одлуке о операцији; 25 до 40 минута",
+        "when": "Чвор или сјенка нађена на снимку или CT-у плућа, течност или ваздух у плућној марамици, пребољени пнеумоторакс, творба у медијастинуму или грудном зиду, деформитет грудног коша, посљедице повреде ребара, појачано знојење дланова",
+        "prep": "Припрема није потребна; обавезно понијети снимке и CT на диску, а не само описе, раније отпусне листе, налаз спирометрије и анализа и списак лијекова, укључујући и оне за разрјеђивање крви",
+        "abnormal": "Послије прегледа хирург може предложити праћење са одређеним роком контроле, додатне претраге као што су CT, бронхоскопија или узимање узорка ткива, или разговор о операцији. Све јача задуха, нагао бол у грудима или крв у искашљају траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "first-vascular-surgeon-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первый приём сосудистого хирурга по поводу новой жалобы на вены или артерии",
+        "how": "Врач выясняет, как давно и при какой нагрузке появляются боль, отёк или онемение, спрашивает о курении, давлении, диабете и сосудистых болезнях в семье, осматривает ноги стоя и лёжа, проверяет пульс на стопах, при необходимости сравнивает давление на руке и на лодыжке; 25–40 минут",
+        "when": "Впервые появившиеся варикозные вены, отёк одной ноги, боль в икрах при ходьбе, онемение и зябкость стоп, незаживающая язва на голени, направление после находки на УЗИ или КТ, расширение аорты, выявленное при другом обследовании",
+        "prep": "Подготовка не нужна; прийти в одежде, которую легко снять до пояса, не наносить кремы на ноги, взять прежние результаты УЗИ и КТ, выписки и список препаратов, в том числе разжижающих кровь",
+        "abnormal": "Первый приём заканчивается планом обследования: чаще всего это дуплексное УЗИ сосудов, иногда анализы или КТ-ангиография, после которых выбирают наблюдение, лечение без операции или вмешательство. Внезапная сильная боль в ноге с побледнением и похолоданием — повод для экстренной помощи"
+      },
+      "en": {
+        "what": "A first appointment with a vascular surgeon for a new complaint about the veins or the arteries",
+        "how": "The doctor asks how long the pain, swelling or numbness has been there and at what level of effort it appears, asks about smoking, blood pressure, diabetes and vascular disease in the family, examines the legs standing and lying down, feels the pulses in the feet and, if needed, compares the pressure at the arm and at the ankle; 25 to 40 minutes",
+        "when": "Varicose veins noticed for the first time, swelling of one leg, calf pain on walking, numb and cold feet, a leg ulcer that will not heal, referral after a finding on ultrasound or CT, a widened aorta found during another examination",
+        "prep": "No preparation is needed; come in clothing that is easy to take off below the waist, do not apply creams to the legs, and bring earlier ultrasound and CT results, discharge letters and the list of medicines, blood thinners included",
+        "abnormal": "The first visit ends with a plan of tests, most often duplex ultrasound of the vessels and sometimes blood tests or CT angiography, after which watching, treatment without surgery or a procedure is chosen. Sudden severe leg pain with a pale and cold limb is a reason for emergency care"
+      },
+      "sr": {
+        "what": "Prvi pregled vaskularnog hirurga zbog nove tegobe sa venama ili arterijama",
+        "how": "Ljekar pita koliko dugo i pri kolikom naporu se javljaju bol, otok ili trnjenje, pita o pušenju, pritisku, šećernoj bolesti i bolestima krvnih sudova u porodici, pregleda noge u stojećem i ležećem položaju, pipa puls na stopalima i po potrebi upoređuje pritisak na ruci i na skočnom zglobu; 25 do 40 minuta",
+        "when": "Prvi put primijećene proširene vene, otok jedne noge, bol u listovima pri hodu, trnjenje i hladnoća stopala, rana na potkoljenici koja ne zarasta, uput poslije nalaza ultrazvuka ili CT-a, proširenje aorte nađeno na drugoj pretrazi",
+        "prep": "Priprema nije potrebna; doći u odjeći koja se lako skida od pojasa naniže, ne mazati noge kremama i ponijeti ranije nalaze ultrazvuka i CT-a, otpusne liste i spisak lijekova, uključujući i one za razrjeđivanje krvi",
+        "abnormal": "Prvi pregled se završava planom pretraga, najčešće dupleks ultrazvukom krvnih sudova, ponekad i analizama ili CT angiografijom, poslije čega se bira praćenje, liječenje bez operacije ili zahvat. Nagao jak bol u nozi uz bljedilo i hladnoću noge razlog je za hitnu pomoć"
+      },
+      "de": {
+        "what": "Der erste Termin beim Gefäßchirurgen wegen neuer Beschwerden an Venen oder Arterien",
+        "how": "Der Arzt fragt, seit wann und bei welcher Belastung Schmerz, Schwellung oder Taubheit auftreten, erfragt Rauchen, Blutdruck, Diabetes und Gefäßerkrankungen in der Familie, untersucht die Beine im Stehen und im Liegen, tastet die Fußpulse und vergleicht bei Bedarf den Druck an Arm und Knöchel; 25 bis 40 Minuten",
+        "when": "Erstmals bemerkte Krampfadern, Schwellung eines Beins, Wadenschmerz beim Gehen, taube und kalte Füße, ein nicht heilendes Unterschenkelgeschwür, Überweisung nach einem Ultraschall- oder CT-Befund, eine bei anderer Gelegenheit entdeckte erweiterte Hauptschlagader",
+        "prep": "Keine Vorbereitung nötig; Kleidung tragen, die unterhalb der Taille leicht abzulegen ist, die Beine nicht eincremen und frühere Ultraschall- und CT-Befunde, Arztbriefe sowie die Medikamentenliste samt Blutverdünnern mitbringen",
+        "abnormal": "Der Ersttermin endet mit einem Untersuchungsplan, meist einer Duplexsonographie der Gefäße, mitunter Laborwerten oder CT-Angiographie; danach wird zwischen Beobachten, Behandlung ohne Operation und einem Eingriff gewählt. Plötzlicher starker Beinschmerz mit blassem, kaltem Bein ist ein Notfall"
+      },
+      "tr": {
+        "what": "Toplardamar ya da atardamarlarla ilgili yeni bir şikayet için damar cerrahına ilk başvuru",
+        "how": "Hekim ağrının, şişliğin ya da uyuşmanın ne zamandır ve hangi efor düzeyinde ortaya çıktığını sorar, sigara, tansiyon, şeker hastalığı ve ailede damar hastalığı öyküsünü öğrenir, bacakları ayakta ve yatarken inceler, ayak nabızlarını kontrol eder, gerekirse koldaki ve ayak bileğindeki basıncı karşılaştırır; 25 ila 40 dakika",
+        "when": "İlk kez fark edilen varisler, tek bacakta şişlik, yürürken baldır ağrısı, ayaklarda uyuşma ve üşüme, kapanmayan bacak yarası, ultrason ya da BT bulgusu sonrası yönlendirme, başka bir tetkikte saptanan aort genişlemesi",
+        "prep": "Hazırlık gerekmez; belden aşağısı kolay çıkarılabilen kıyafetle gelmek, bacaklara krem sürmemek, önceki ultrason ve BT sonuçlarını, epikrizleri ve kan sulandırıcılar dahil ilaç listesini getirmek",
+        "abnormal": "İlk muayene bir tetkik planıyla biter; genellikle damarların dupleks ultrasonu, bazen tahliller ya da BT anjiyografi istenir, ardından izlem, ameliyatsız tedavi veya girişim arasında seçim yapılır. Bacakta ani şiddetli ağrıyla birlikte solukluk ve soğukluk acil başvuru nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Први преглед васкуларног хирурга због нове тегобе са венама или артеријама",
+        "how": "Љекар пита колико дуго и при коликом напору се јављају бол, оток или трњење, пита о пушењу, притиску, шећерној болести и болестима крвних судова у породици, прегледа ноге у стојећем и лежећем положају, пипа пулс на стопалима и по потреби упоређује притисак на руци и на скочном зглобу; 25 до 40 минута",
+        "when": "Први пут примијећене проширене вене, оток једне ноге, бол у листовима при ходу, трњење и хладноћа стопала, рана на поткољеници која не зараста, упут послије налаза ултразвука или CT-а, проширење аорте нађено на другој претрази",
+        "prep": "Припрема није потребна; доћи у одјећи која се лако скида од појаса наниже, не мазати ноге кремама и понијети раније налазе ултразвука и CT-а, отпусне листе и списак лијекова, укључујући и оне за разрјеђивање крви",
+        "abnormal": "Први преглед се завршава планом претрага, најчешће дуплекс ултразвуком крвних судова, понекад и анализама или CT ангиографијом, послије чега се бира праћење, лијечење без операције или захват. Нагао јак бол у нози уз бљедило и хладноћу ноге разлог је за хитну помоћ"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-vascular-surgeon-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный приём сосудистого хирурга для оценки динамики после лечения вен или артерий",
+        "how": "Врач сравнивает жалобы и состояние ног с прошлым визитом, осматривает швы, места проколов и заживающие язвы, проверяет пульсацию и работу шунта или стента, разбирает контрольное дуплексное УЗИ и подбирает степень компрессии; 15–25 минут",
+        "when": "В срок после операции на венах, склеротерапии или вмешательства на артериях, контроль размеров аневризмы, наблюдение за трофической язвой, оценка лечения компрессией, продление и коррекция назначений",
+        "prep": "Принести выписку и протокол вмешательства, свежее дуплексное УЗИ, прежние заключения и компрессионный трикотаж, который вы носите; не наносить кремы на ноги в день приёма",
+        "abnormal": "Врач решает, достаточно ли достигнутого результата, нужно ли изменить сроки контроля или назначить дополнительное обследование. Внезапный отёк, резкая боль, похолодание ноги, кровотечение или нарастающее покраснение вокруг раны — повод обратиться немедленно"
+      },
+      "en": {
+        "what": "A repeat appointment with a vascular surgeon to see how the legs and the vessels have changed after treatment",
+        "how": "The doctor compares the complaints and the state of the legs with the previous visit, inspects scars, puncture sites and healing ulcers, checks the pulses and the working of a bypass or stent, reviews the control duplex ultrasound and adjusts the compression; 15 to 25 minutes",
+        "when": "At the set interval after vein surgery, sclerotherapy or an arterial procedure, checking the size of an aneurysm, follow-up of a leg ulcer, assessment of compression treatment, renewing and adjusting the prescriptions",
+        "prep": "Bring the discharge letter and the procedure report, the recent duplex ultrasound, earlier findings and the compression stockings you use; do not apply creams to the legs on the day of the visit",
+        "abnormal": "The surgeon decides whether the result achieved is enough, whether the follow-up interval should change and whether further tests are needed. Sudden swelling, severe pain, a cold leg, bleeding or spreading redness around the wound call for immediate attention"
+      },
+      "sr": {
+        "what": "Kontrolni pregled vaskularnog hirurga radi procjene stanja poslije liječenja vena ili arterija",
+        "how": "Ljekar upoređuje tegobe i stanje nogu sa prethodnim dolaskom, pregleda ožiljke, mjesta uboda i rane koje zarastaju, provjerava pulseve i rad grafta ili stenta, tumači kontrolni dupleks ultrazvuk i prilagođava kompresiju; 15 do 25 minuta",
+        "when": "U roku poslije operacije vena, skleroterapije ili zahvata na arterijama, praćenje veličine aneurizme, kontrola rane na potkoljenici, procjena liječenja kompresijom, produženje i prilagođavanje terapije",
+        "prep": "Ponijeti otpusnu listu i protokol zahvata, svjež nalaz dupleks ultrazvuka, ranije nalaze i kompresivne čarape koje nosite; na dan pregleda ne mazati noge kremama",
+        "abnormal": "Hirurg procjenjuje da li je postignuti rezultat dovoljan, da li mijenjati rok kontrole i da li su potrebne dodatne pretrage. Iznenadan otok, jak bol, hladna noga, krvarenje ili crvenilo koje se širi oko rane traže hitno javljanje"
+      },
+      "de": {
+        "what": "Ein Wiedervorstellungstermin beim Gefäßchirurgen zur Beurteilung des Verlaufs nach der Behandlung von Venen oder Arterien",
+        "how": "Der Arzt vergleicht Beschwerden und Beinbefund mit dem letzten Termin, begutachtet Narben, Einstichstellen und heilende Geschwüre, prüft die Pulse und die Funktion von Bypass oder Stent, bespricht die Kontroll-Duplexsonographie und passt die Kompression an; 15 bis 25 Minuten",
+        "when": "Zum festgelegten Zeitpunkt nach Venenoperation, Verödung oder arteriellem Eingriff, Kontrolle der Aneurysmagröße, Verlauf eines Unterschenkelgeschwürs, Beurteilung der Kompressionsbehandlung, Verlängerung und Anpassung der Verordnungen",
+        "prep": "Arztbrief und Eingriffsbericht, die aktuelle Duplexsonographie, frühere Befunde und die getragenen Kompressionsstrümpfe mitbringen; am Tag des Termins die Beine nicht eincremen",
+        "abnormal": "Der Chirurg entscheidet, ob das erreichte Ergebnis genügt, ob der Kontrollabstand geändert wird und ob weitere Untersuchungen nötig sind. Plötzliche Schwellung, starke Schmerzen, ein kaltes Bein, Blutung oder sich ausbreitende Rötung um die Wunde erfordern sofortige Vorstellung"
+      },
+      "tr": {
+        "what": "Toplardamar ya da atardamar tedavisi sonrası gidişatın değerlendirildiği damar cerrahı kontrol muayenesi",
+        "how": "Hekim şikayetleri ve bacakların durumunu önceki muayeneyle karşılaştırır, dikiş yerlerini, giriş noktalarını ve iyileşen yaraları inceler, nabızları ve baypas ya da stentin çalışmasını kontrol eder, kontrol dupleks ultrasonunu yorumlar ve varis çorabının basıncını ayarlar; 15 ila 25 dakika",
+        "when": "Varis ameliyatı, skleroterapi ya da atardamar girişiminden sonra verilen sürede, anevrizma boyutunun izlemi, bacak yarasının takibi, kompresyon tedavisinin değerlendirilmesi, tedavinin uzatılması ve düzenlenmesi",
+        "prep": "Epikrizi ve girişim raporunu, yeni dupleks ultrason sonucunu, önceki sonuçları ve kullandığınız varis çorabını getirmek; muayene günü bacaklara krem sürmemek",
+        "abnormal": "Cerrah elde edilen sonucun yeterli olup olmadığına, kontrol aralığının değişip değişmeyeceğine ve ek tetkik gerekip gerekmediğine karar verir. Ani şişlik, şiddetli ağrı, bacağın soğuması, kanama ya da yara çevresinde yayılan kızarıklık hemen başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед васкуларног хирурга ради процјене стања послије лијечења вена или артерија",
+        "how": "Љекар упоређује тегобе и стање ногу са претходним доласком, прегледа ожиљке, мјеста убода и ране које зарастају, провјерава пулсеве и рад графта или стента, тумачи контролни дуплекс ултразвук и прилагођава компресију; 15 до 25 минута",
+        "when": "У року послије операције вена, склеротерапије или захвата на артеријама, праћење величине анеуризме, контрола ране на поткољеници, процјена лијечења компресијом, продужење и прилагођавање терапије",
+        "prep": "Понијети отпусну листу и протокол захвата, свјеж налаз дуплекс ултразвука, раније налазе и компресивне чарапе које носите; на дан прегледа не мазати ноге кремама",
+        "abnormal": "Хирург процјењује да ли је постигнути резултат довољан, да ли мијењати рок контроле и да ли су потребне додатне претраге. Изненадан оток, јак бол, хладна нога, крварење или црвенило које се шири око ране траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "colonoscopy-with-polypectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр толстой кишки эндоскопом, во время которого найденный полип сразу удаляют и отправляют на гистологическое исследование",
+        "how": "Через задний проход вводят гибкий аппарат, под основание полипа при необходимости подводят раствор, полип срезают петлёй или щипцами, место удаления при необходимости закрывают клипсой, а ткань помещают в контейнер; занимает от получаса до часа, обычно под седацией",
+        "when": "Полип, найденный при предыдущей колоноскопии или на КТ-колонографии, скрининг, выявивший изменения, наблюдение при семейной склонности к полипам, кровь в стуле или анемия неясного происхождения",
+        "prep": "Полное очищение кишечника по схеме эндоскописта, за несколько дней еда без семян и кожуры, отказ от еды и питья перед седацией по указанию анестезиолога, заранее согласованный перерыв в приёме разжижающих кровь препаратов и сопровождающий для дороги домой",
+        "abnormal": "Удалённый полип описывает врач-патолог, и от этого описания зависит, когда назначат следующую колоноскопию. Несколько дней возможны вздутие и следы крови в стуле, но обильное кровотечение, сильная боль в животе или температура требуют срочного обращения"
+      },
+      "en": {
+        "what": "An endoscopic examination of the large bowel during which a polyp that is found is removed at once and sent for histology",
+        "how": "A flexible instrument is passed through the anus, fluid is injected under the base of the polyp if needed, the polyp is cut off with a snare or forceps, the site is closed with a clip when required and the tissue is placed in a container; half an hour to an hour, usually under sedation",
+        "when": "A polyp found at an earlier colonoscopy or on CT colonography, screening that showed changes, follow-up when polyps run in the family, blood in the stool or anaemia of unclear origin",
+        "prep": "Full bowel cleansing according to the endoscopist's scheme, food without seeds and skins for a few days, no food or drink before sedation as the anaesthetist instructs, a previously agreed pause in blood thinners and someone to take you home",
+        "abnormal": "The removed polyp is described by a pathologist, and that description decides when the next colonoscopy is scheduled. Bloating and traces of blood in the stool are possible for a few days, but heavy bleeding, severe abdominal pain or fever need urgent care"
+      },
+      "sr": {
+        "what": "Endoskopski pregled debelog crijeva tokom kojeg se nađeni polip odmah uklanja i šalje na patohistološku analizu",
+        "how": "Kroz čmar se uvodi fleksibilni aparat, pod osnovu polipa se po potrebi ubrizga rastvor, polip se odsijeca omčom ili kliještima, mjesto se po potrebi zatvara klipsom, a tkivo stavlja u posudu; traje od pola sata do sat vremena, obično uz sedaciju",
+        "when": "Polip nađen na ranijoj kolonoskopiji ili CT kolonografiji, skrining koji je pokazao promjene, praćenje kada se polipi javljaju u porodici, krv u stolici ili malokrvnost nejasnog uzroka",
+        "prep": "Potpuno čišćenje crijeva po šemi endoskopiste, nekoliko dana hrana bez sjemenki i ljuspica, bez hrane i pića prije sedacije po uputstvu anesteziologa, unaprijed dogovorena pauza u uzimanju lijekova za razrjeđivanje krvi i pratilac za povratak kući",
+        "abnormal": "Uklonjeni polip opisuje ljekar patolog, a od tog opisa zavisi kada se zakazuje sljedeća kolonoskopija. Nekoliko dana su mogući nadutost i tragovi krvi u stolici, ali obilno krvarenje, jak bol u stomaku ili temperatura traže hitno javljanje"
+      },
+      "de": {
+        "what": "Eine Darmspiegelung, bei der ein gefundener Polyp sofort abgetragen und zur feingeweblichen Untersuchung geschickt wird",
+        "how": "Ein flexibles Gerät wird über den After eingeführt, bei Bedarf wird Flüssigkeit unter den Polypenfuß gespritzt, der Polyp mit Schlinge oder Zange abgetragen, die Stelle nötigenfalls mit einem Clip verschlossen und das Gewebe in ein Gefäß gegeben; eine halbe bis eine Stunde, meist in Sedierung",
+        "when": "Ein bei einer früheren Koloskopie oder CT-Kolonographie gefundener Polyp, auffällige Vorsorgeuntersuchung, Nachsorge bei Polypen in der Familie, Blut im Stuhl oder Blutarmut unklarer Ursache",
+        "prep": "Vollständige Darmreinigung nach dem Schema des Endoskopikers, einige Tage Kost ohne Körner und Schalen, vor der Sedierung nüchtern bleiben nach Vorgabe des Anästhesisten, zuvor abgesprochene Pause bei Blutverdünnern und eine Begleitperson für den Heimweg",
+        "abnormal": "Den abgetragenen Polypen beschreibt ein Pathologe, und davon hängt der Termin der nächsten Koloskopie ab. Blähgefühl und Blutspuren im Stuhl sind einige Tage möglich, starke Blutung, heftige Bauchschmerzen oder Fieber erfordern dagegen sofortige Hilfe"
+      },
+      "tr": {
+        "what": "Kalın bağırsağın endoskopla incelenmesi ve bulunan polibin aynı seansta çıkarılarak patolojiye gönderilmesi",
+        "how": "Makattan esnek bir alet ilerletilir, gerekirse polibin tabanına sıvı verilir, polip tel ilmek ya da forsepsle kesilir, gerektiğinde bölge klipsle kapatılır ve doku kaba konur; yarım saatle bir saat arası sürer, genellikle sedasyon altında",
+        "when": "Önceki kolonoskopide ya da BT kolonografide saptanan polip, değişiklik gösteren tarama, ailede polip öyküsü nedeniyle izlem, dışkıda kan ya da nedeni bilinmeyen kansızlık",
+        "prep": "Endoskopistin şemasına göre bağırsağın tam temizlenmesi, birkaç gün çekirdeksiz ve kabuksuz beslenme, sedasyon öncesi anestezi uzmanının dediği süre boyunca aç kalmak, kan sulandırıcılara önceden kararlaştırılan ara ve eve dönüş için refakatçi",
+        "abnormal": "Çıkarılan polibi patoloji uzmanı tanımlar ve bir sonraki kolonoskopinin zamanı bu tanıma göre belirlenir. Birkaç gün şişkinlik ve dışkıda kan izi görülebilir, ancak bol kanama, şiddetli karın ağrısı ya da ateş acil başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Ендоскопски преглед дебелог цријева током којег се нађени полип одмах уклања и шаље на патохистолошку анализу",
+        "how": "Кроз чмар се уводи флексибилни апарат, под основу полипа се по потреби убризга раствор, полип се одсијеца омчом или клијештима, мјесто се по потреби затвара клипсом, а ткиво ставља у посуду; траје од пола сата до сат времена, обично уз седацију",
+        "when": "Полип нађен на ранијој колоноскопији или CT колонографији, скрининг који је показао промјене, праћење када се полипи јављају у породици, крв у столици или малокрвност нејасног узрока",
+        "prep": "Потпуно чишћење цријева по шеми ендоскописте, неколико дана храна без сјеменки и љуспица, без хране и пића прије седације по упутству анестезиолога, унапријед договорена пауза у узимању лијекова за разрјеђивање крви и пратилац за повратак кући",
+        "abnormal": "Уклоњени полип описује љекар патолог, а од тог описа зависи када се заказује сљедећа колоноскопија. Неколико дана су могући надутост и трагови крви у столици, али обилно крварење, јак бол у стомаку или температура траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "gastroenterologist-examination-with-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приём гастроэнтеролога, дополненный ультразвуковым осмотром органов брюшной полости на том же визите",
+        "how": "Врач расспрашивает о жалобах и питании, ощупывает живот, затем на кушетке наносит гель и датчиком смотрит печень, жёлчный пузырь и протоки, поджелудочную железу, селезёнку и почки, сразу объясняя увиденное; визит занимает 30–40 минут",
+        "when": "Боль и тяжесть в правом подреберье, вздутие, изжога и тошнота, изменённые печёночные показатели, наблюдение за камнями в жёлчном пузыре и жировой болезнью печени, контроль ранее найденных изменений",
+        "prep": "Не есть 6–8 часов до визита, накануне отказаться от газированных напитков, бобовых и свежего хлеба, утром не курить и не жевать жвачку, порядок приёма постоянных препаратов уточнить у врача, взять прежние УЗИ и анализы",
+        "abnormal": "Ультразвук показывает размеры, структуру и контуры органов, камни и расширение протоков; изменения могут быть связаны с воспалением, застоем жёлчи, накоплением жира или другими процессами и оцениваются врачом вместе с жалобами и анализами. Газ в кишечнике иногда мешает обзору, тогда исследование повторяют"
+      },
+      "en": {
+        "what": "A gastroenterologist's appointment extended with an ultrasound scan of the abdominal organs at the same visit",
+        "how": "The doctor asks about the complaints and the diet, palpates the abdomen and then, with the patient on the couch, applies gel and scans the liver, gallbladder and bile ducts, pancreas, spleen and kidneys, explaining the findings as they appear; the visit takes 30 to 40 minutes",
+        "when": "Pain and heaviness under the right ribs, bloating, heartburn and nausea, altered liver values, follow-up of gallstones and fatty liver, checking changes found earlier",
+        "prep": "Do not eat for 6 to 8 hours before the visit, avoid fizzy drinks, beans and fresh bread the day before, do not smoke or chew gum in the morning, agree the timing of regular medicines with the doctor and bring earlier scans and blood tests",
+        "abnormal": "Ultrasound shows the size, structure and outline of the organs, stones and widened ducts; changes may be related to inflammation, bile stasis, fat accumulation or other processes and are assessed by the doctor together with the complaints and the laboratory results. Gas in the bowel sometimes limits the view, and then the scan is repeated"
+      },
+      "sr": {
+        "what": "Pregled gastroenterologa dopunjen ultrazvučnim pregledom trbušnih organa u istoj posjeti",
+        "how": "Ljekar pita o tegobama i ishrani, opipava stomak, a zatim na ležaju nanosi gel i sondom pregleda jetru, žučnu kesu i vodove, pankreas, slezinu i bubrege, odmah objašnjavajući šta vidi; posjeta traje 30 do 40 minuta",
+        "when": "Bol i težina pod desnim rebrima, nadutost, žgaravica i mučnina, promijenjeni nalazi jetre, praćenje kamena u žučnoj kesi i masne jetre, kontrola ranije nađenih promjena",
+        "prep": "Ne jesti 6 do 8 sati prije dolaska, dan ranije izbjegavati gazirana pića, mahunarke i svjež hljeb, ujutru ne pušiti i ne žvakati žvaku, raspored stalne terapije dogovoriti sa ljekarom i ponijeti ranije ultrazvuke i analize",
+        "abnormal": "Ultrazvuk pokazuje veličinu, strukturu i obrise organa, kamen i proširene vodove; promjene mogu biti povezane sa upalom, zastojem žuči, nakupljanjem masti ili drugim procesima, a procjenjuje ih ljekar zajedno sa tegobama i analizama. Vazduh u crijevima ponekad ometa pregled, pa se tada ponavlja"
+      },
+      "de": {
+        "what": "Eine gastroenterologische Sprechstunde, die im selben Termin um eine Ultraschalluntersuchung der Bauchorgane ergänzt wird",
+        "how": "Der Arzt fragt nach Beschwerden und Ernährung, tastet den Bauch ab und untersucht dann auf der Liege mit Gel und Schallkopf Leber, Gallenblase und Gallenwege, Bauchspeicheldrüse, Milz und Nieren und erklärt die Befunde sofort; der Termin dauert 30 bis 40 Minuten",
+        "when": "Schmerz und Druckgefühl im rechten Oberbauch, Blähungen, Sodbrennen und Übelkeit, veränderte Leberwerte, Verlaufskontrolle bei Gallensteinen und Fettleber, Kontrolle früher erhobener Befunde",
+        "prep": "6 bis 8 Stunden vor dem Termin nichts essen, am Vortag kohlensäurehaltige Getränke, Hülsenfrüchte und frisches Brot meiden, morgens nicht rauchen und keinen Kaugummi kauen, die Einnahme der Dauermedikamente mit dem Arzt abstimmen und frühere Aufnahmen und Laborwerte mitbringen",
+        "abnormal": "Der Ultraschall zeigt Größe, Struktur und Begrenzung der Organe, Steine und erweiterte Gänge; Veränderungen können mit Entzündung, Gallestau, Fetteinlagerung oder anderen Vorgängen zusammenhängen und werden vom Arzt zusammen mit Beschwerden und Laborwerten beurteilt. Luft im Darm schränkt die Sicht manchmal ein, dann wird die Untersuchung wiederholt"
+      },
+      "tr": {
+        "what": "Aynı randevuda karın organlarının ultrasonla incelenmesiyle tamamlanan gastroenterolog muayenesi",
+        "how": "Hekim şikayetleri ve beslenmeyi sorar, karnı elle muayene eder, ardından sedyede jel sürerek karaciğeri, safra kesesi ve yollarını, pankreası, dalağı ve böbrekleri prob ile inceler ve gördüklerini anında açıklar; randevu 30 ila 40 dakika sürer",
+        "when": "Sağ kaburga altında ağrı ve dolgunluk, şişkinlik, mide yanması ve bulantı, değişmiş karaciğer değerleri, safra taşı ve yağlı karaciğer izlemi, daha önce saptanan bulguların kontrolü",
+        "prep": "Randevudan önce 6 ila 8 saat aç kalmak, bir gün önce gazlı içecek, bakliyat ve taze ekmekten kaçınmak, sabah sigara içmemek ve sakız çiğnememek, sürekli ilaçların saatini hekimle konuşmak, önceki ultrason ve tahlilleri getirmek",
+        "abnormal": "Ultrason organların boyutunu, yapısını ve sınırlarını, taşları ve genişlemiş kanalları gösterir; değişiklikler iltihap, safra durgunluğu, yağlanma ya da başka süreçlerle ilişkili olabilir ve hekim bunları şikayetler ve tahlillerle birlikte değerlendirir. Bağırsaktaki gaz görüntüyü kısıtlayabilir, bu durumda inceleme tekrarlanır"
+      },
+      "sr_cyrl": {
+        "what": "Преглед гастроентеролога допуњен ултразвучним прегледом трбушних органа у истој посјети",
+        "how": "Љекар пита о тегобама и исхрани, опипава стомак, а затим на лежају наноси гел и сондом прегледа јетру, жучну кесу и водове, панкреас, слезину и бубреге, одмах објашњавајући шта види; посјета траје 30 до 40 минута",
+        "when": "Бол и тежина под десним ребрима, надутост, жгаравица и мучнина, промијењени налази јетре, праћење камена у жучној кеси и масне јетре, контрола раније нађених промјена",
+        "prep": "Не јести 6 до 8 сати прије доласка, дан раније избјегавати газирана пића, махунарке и свјеж хљеб, ујутру не пушити и не жвакати жваку, распоред сталне терапије договорити са љекаром и понијети раније ултразвуке и анализе",
+        "abnormal": "Ултразвук показује величину, структуру и обрисе органа, камен и проширене водове; промјене могу бити повезане са упалом, застојем жучи, накупљањем масти или другим процесима, а процјењује их љекар заједно са тегобама и анализама. Ваздух у цријевима понекад омета преглед, па се тада понавља"
+      }
+    }
+  },
+  {
+    "slug": "histopathology-report-single-biopsy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Микроскопическое описание одного фрагмента ткани, взятого за процедуру, с письменным заключением врача-патолога",
+        "how": "Фрагмент из контейнера с фиксатором проводят через спирты и парафин, режут на тонкие срезы, окрашивают и изучают под микроскопом, после чего патолог описывает строение ткани и выдаёт заключение",
+        "when": "Один биоптат, взятый при эндоскопии, пункции или небольшой операции, уточнение природы изменённого участка слизистой или кожи, подтверждение характера воспаления, контроль ранее выявленных изменений",
+        "prep": "От пациента не требуется ничего: материал берут во время самой процедуры, и подготовка относится к ней",
+        "abnormal": "В заключении патолог описывает строение ткани, характер воспаления, доброкачественные изменения и признаки злокачественности, если они есть, а при необходимости запрашивает дополнительные окраски. Что это значит для вас и что делать дальше, объясняет лечащий врач"
+      },
+      "en": {
+        "what": "A microscopic description of a single tissue sample taken during a procedure, with a written report by a pathologist",
+        "how": "The sample is taken from the fixative container, passed through alcohols and paraffin, cut into thin sections, stained and studied under the microscope, after which the pathologist describes the structure of the tissue and issues the report",
+        "when": "A single biopsy taken at endoscopy, by needle or during a small operation, clarifying the nature of a changed area of mucosa or skin, confirming the character of inflammation, follow-up of changes found earlier",
+        "prep": "Nothing is required from the patient: the material is taken during the procedure itself and any preparation belongs to that procedure",
+        "abnormal": "The report describes the structure of the tissue, the character of inflammation, benign changes and signs of malignancy if present, and the pathologist may ask for additional stains. What this means for you and what happens next is explained by the treating doctor"
+      },
+      "sr": {
+        "what": "Mikroskopski opis jednog uzorka tkiva uzetog tokom zahvata, sa pisanim nalazom ljekara patologa",
+        "how": "Uzorak se iz posude sa fiksativom provodi kroz alkohole i parafin, siječe na tanke rezove, boji i posmatra pod mikroskopom, a patolog zatim opisuje građu tkiva i izdaje nalaz",
+        "when": "Jedan bioptat uzet pri endoskopiji, punkciji ili manjoj operaciji, razjašnjenje prirode promijenjenog dijela sluznice ili kože, potvrda karaktera upale, kontrola ranije nađenih promjena",
+        "prep": "Od pacijenta se ne traži ništa: materijal se uzima tokom samog zahvata i priprema se odnosi na njega",
+        "abnormal": "U nalazu patolog opisuje građu tkiva, karakter upale, dobroćudne promjene i znake zloćudnosti ako ih ima, a po potrebi traži dodatna bojenja. Šta to znači za vas i šta slijedi objašnjava ljekar koji vas liječi"
+      },
+      "de": {
+        "what": "Die mikroskopische Beschreibung einer einzelnen bei einem Eingriff entnommenen Gewebeprobe mit schriftlichem Befund eines Pathologen",
+        "how": "Die Probe wird aus dem Fixiergefäß genommen, durch Alkohole und Paraffin geführt, in dünne Schnitte geschnitten, gefärbt und unter dem Mikroskop beurteilt; anschließend beschreibt der Pathologe den Gewebeaufbau und erstellt den Befund",
+        "when": "Eine einzelne Gewebeprobe aus Endoskopie, Punktion oder kleiner Operation, Klärung einer veränderten Stelle an Schleimhaut oder Haut, Bestätigung der Art einer Entzündung, Kontrolle früher erhobener Veränderungen",
+        "prep": "Vom Patienten wird nichts verlangt: Das Material wird während des Eingriffs gewonnen, und die Vorbereitung betrifft diesen Eingriff",
+        "abnormal": "Der Befund beschreibt den Gewebeaufbau, die Art der Entzündung, gutartige Veränderungen und, falls vorhanden, Zeichen von Bösartigkeit; bei Bedarf fordert der Pathologe zusätzliche Färbungen an. Was das für Sie bedeutet und wie es weitergeht, erklärt der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Bir işlem sırasında alınan tek doku örneğinin mikroskopla tanımlanması ve patoloji uzmanının yazılı raporu",
+        "how": "Örnek tespit sıvısındaki kaptan alınır, alkol ve parafinden geçirilir, ince kesitler halinde kesilir, boyanır ve mikroskopta incelenir; ardından patolog dokunun yapısını tanımlayarak raporu verir",
+        "when": "Endoskopi, iğne biyopsisi ya da küçük bir ameliyat sırasında alınan tek örnek, mukoza veya deride değişmiş bir alanın niteliğinin aydınlatılması, iltihabın karakterinin doğrulanması, daha önce saptanan değişikliklerin kontrolü",
+        "prep": "Hastadan bir şey istenmez: materyal işlemin kendisi sırasında alınır ve hazırlık o işleme aittir",
+        "abnormal": "Raporda patolog dokunun yapısını, iltihabın karakterini, iyi huylu değişiklikleri ve varsa kötü huyluluk belirtilerini tanımlar, gerekirse ek boyamalar ister. Bunun sizin için ne anlama geldiğini ve sonraki adımları tedaviyi yürüten hekim açıklar"
+      },
+      "sr_cyrl": {
+        "what": "Микроскопски опис једног узорка ткива узетог током захвата, са писаним налазом љекара патолога",
+        "how": "Узорак се из посуде са фиксативом проводи кроз алкохоле и парафин, сијече на танке резове, боји и посматра под микроскопом, а патолог затим описује грађу ткива и издаје налаз",
+        "when": "Један биоптат узет при ендоскопији, пункцији или мањој операцији, разјашњење природе промијењеног дијела слузнице или коже, потврда карактера упале, контрола раније нађених промјена",
+        "prep": "Од пацијента се не тражи ништа: материјал се узима током самог захвата и припрема се односи на њега",
+        "abnormal": "У налазу патолог описује грађу ткива, карактер упале, доброћудне промјене и знаке злоћудности ако их има, а по потреби тражи додатна бојења. Шта то значи за вас и шта слиједи објашњава љекар који вас лијечи"
+      }
+    }
+  },
+  {
+    "slug": "rectoscopy-with-anesthesia",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр прямой кишки эндоскопом, который проводят в медикаментозном сне, чтобы исследование не вызывало боли",
+        "how": "Анестезиолог вводит препарат в вену, после засыпания врач вводит смазанный тубус через задний проход, осматривает слизистую, при необходимости берёт биопсию или работает со спазмированным сфинктером; сам осмотр 10–20 минут плюс время наблюдения после пробуждения",
+        "when": "Сильная боль при анальной трещине или спазме сфинктера, плохая переносимость осмотра без обезболивания, выраженная тревожность, осмотр у детей, необходимость одновременно выполнить небольшую манипуляцию",
+        "prep": "Очищение нижнего отдела кишечника по инструкции клиники, отказ от еды и питья перед наркозом на срок, указанный анестезиологом, согласование постоянных и разжижающих кровь препаратов, обязательный сопровождающий — за руль в этот день нельзя",
+        "abnormal": "После пробуждения несколько часов возможны сонливость, вздутие и позывы. Найденные изменения могут быть связаны с трещиной, геморроидальными узлами, воспалением или полипом, взятый материал оценивает патолог, а дальнейшие шаги определяет лечащий врач"
+      },
+      "en": {
+        "what": "An endoscopic examination of the rectum carried out under sedation so that it causes no pain",
+        "how": "The anaesthetist gives a drug into a vein and, once the patient is asleep, the doctor passes a lubricated tube through the anus, inspects the lining and if needed takes a biopsy or works on a tight sphincter; the examination itself takes 10 to 20 minutes plus recovery time",
+        "when": "Severe pain from an anal fissure or sphincter spasm, poor tolerance of the examination without anaesthesia, marked anxiety, examination in children, the need to carry out a small procedure at the same time",
+        "prep": "Clearing of the lower bowel as the clinic instructs, nothing to eat or drink before anaesthesia for the time the anaesthetist states, agreement about regular medicines and blood thinners, and a companion, as driving is not allowed that day",
+        "abnormal": "Drowsiness, bloating and an urge to go may stay for a few hours after waking. Changes found may be related to a fissure, haemorrhoids, inflammation or a polyp, any material taken is assessed by a pathologist, and the treating doctor decides on the next steps"
+      },
+      "sr": {
+        "what": "Endoskopski pregled rektuma koji se radi u medikamentoznom snu, da ne bi izazvao bol",
+        "how": "Anesteziolog daje lijek u venu, a kada pacijent zaspi ljekar uvodi podmazan tubus kroz čmar, pregleda sluznicu i po potrebi uzima biopsiju ili radi sa zgrčenim sfinkterom; sam pregled traje 10 do 20 minuta, uz vrijeme oporavka poslije buđenja",
+        "when": "Jak bol zbog analne fisure ili grča sfinktera, loše podnošenje pregleda bez anestezije, izražena anksioznost, pregled kod djece, potreba da se istovremeno uradi i mala intervencija",
+        "prep": "Čišćenje donjeg dijela crijeva po uputstvu klinike, bez hrane i pića prije anestezije onoliko dugo koliko kaže anesteziolog, dogovor o stalnoj terapiji i lijekovima za razrjeđivanje krvi i obavezan pratilac, jer se tog dana ne smije voziti",
+        "abnormal": "Poslije buđenja nekoliko sati mogu ostati pospanost, nadutost i nagon. Nađene promjene mogu biti povezane sa fisurom, hemoroidima, upalom ili polipom, uzeti materijal procjenjuje patolog, a dalje korake određuje ljekar koji vas liječi"
+      },
+      "de": {
+        "what": "Eine endoskopische Untersuchung des Mastdarms, die in Sedierung erfolgt, damit sie keine Schmerzen verursacht",
+        "how": "Der Anästhesist gibt ein Medikament in die Vene, nach dem Einschlafen führt der Arzt ein gleitfähiges Rohr über den After ein, betrachtet die Schleimhaut und entnimmt bei Bedarf eine Gewebeprobe oder behandelt einen verkrampften Schließmuskel; die Untersuchung dauert 10 bis 20 Minuten zuzüglich Aufwachzeit",
+        "when": "Starke Schmerzen bei Analfissur oder Schließmuskelkrampf, schlechte Verträglichkeit der Untersuchung ohne Betäubung, ausgeprägte Angst, Untersuchung bei Kindern, ein gleichzeitig geplanter kleiner Eingriff",
+        "prep": "Reinigung des unteren Darmabschnitts nach Anweisung der Klinik, vor der Narkose so lange nüchtern bleiben, wie der Anästhesist vorgibt, Abstimmung der Dauermedikation und der Blutverdünner sowie eine Begleitperson, da an diesem Tag nicht selbst gefahren werden darf",
+        "abnormal": "Nach dem Aufwachen können Müdigkeit, Blähgefühl und Stuhldrang einige Stunden anhalten. Gefundene Veränderungen können mit einer Fissur, Hämorrhoiden, einer Entzündung oder einem Polypen zusammenhängen, entnommenes Material beurteilt ein Pathologe, und über die nächsten Schritte entscheidet der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Ağrıya yol açmaması için ilaçla uyutularak yapılan rektum endoskopisi",
+        "how": "Anestezi uzmanı damardan ilaç verir, hasta uyuduktan sonra hekim kayganlaştırılmış tüpü makattan ilerletir, mukozayı inceler, gerekirse biyopsi alır ya da kasılı sfinkter üzerinde çalışır; incelemenin kendisi 10 ila 20 dakika sürer, buna uyanma sonrası gözlem eklenir",
+        "when": "Anal fissür ya da sfinkter spazmına bağlı şiddetli ağrı, anestezisiz incelemeye dayanamama, belirgin kaygı, çocuklarda inceleme, aynı seansta küçük bir girişim yapılması gereği",
+        "prep": "Kliniğin talimatına göre alt bağırsağın temizlenmesi, anestezi öncesi anestezi uzmanının belirttiği süre boyunca aç ve susuz kalmak, sürekli ilaçlar ile kan sulandırıcılar konusunda anlaşmak ve refakatçi bulundurmak, çünkü o gün araç kullanılamaz",
+        "abnormal": "Uyandıktan sonra birkaç saat uyku hali, şişkinlik ve dışkılama hissi sürebilir. Saptanan değişiklikler fissür, hemoroit, iltihap ya da poliple ilişkili olabilir, alınan materyali patoloji uzmanı değerlendirir, sonraki adımlara tedaviyi yürüten hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Ендоскопски преглед ректума који се ради у медикаментозном сну, да не би изазвао бол",
+        "how": "Анестезиолог даје лијек у вену, а када пацијент заспи љекар уводи подмазан тубус кроз чмар, прегледа слузницу и по потреби узима биопсију или ради са згрченим сфинктером; сам преглед траје 10 до 20 минута, уз вријеме опоравка послије буђења",
+        "when": "Јак бол због аналне фисуре или грча сфинктера, лоше подношење прегледа без анестезије, изражена анксиозност, преглед код дјеце, потреба да се истовремено уради и мала интервенција",
+        "prep": "Чишћење доњег дијела цријева по упутству клинике, без хране и пића прије анестезије онолико дуго колико каже анестезиолог, договор о сталној терапији и лијековима за разрјеђивање крви и обавезан пратилац, јер се тог дана не смије возити",
+        "abnormal": "Послије буђења неколико сати могу остати поспаност, надутост и нагон. Нађене промјене могу бити повезане са фисуром, хемороидима, упалом или полипом, узети материјал процјењује патолог, а даље кораке одређује љекар који вас лијечи"
+      }
+    }
+  },
+  {
+    "slug": "stomach-polypectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление полипа слизистой желудка через гастроскоп с отправкой материала на гистологическое исследование",
+        "how": "Через рот вводят гастроскоп, полип захватывают петлёй или щипцами, при необходимости под его основание вводят раствор, срезают и извлекают, а место удаления при необходимости обрабатывают или закрывают клипсой; занимает от 20 до 40 минут, обычно под седацией",
+        "when": "Полип желудка, найденный при гастроскопии, несколько полипов при наблюдении, изменённый участок слизистой, который нужно удалить целиком для исследования, контроль после ранее удалённых полипов",
+        "prep": "Не есть с вечера и не пить за несколько часов по указанию врача, заранее обсудить разжижающие кровь препараты и нарушения свёртываемости, при седации прийти с сопровождающим и не садиться за руль",
+        "abnormal": "Удалённую ткань описывает врач-патолог, и от описания зависит, нужна ли повторная гастроскопия и когда. В первые дни возможны лёгкая боль в верхней части живота и тошнота, а рвота кровью, чёрный стул, сильная боль или температура требуют срочного обращения"
+      },
+      "en": {
+        "what": "Removal of a polyp from the stomach lining through a gastroscope, with the tissue sent for histology",
+        "how": "A gastroscope is passed through the mouth, the polyp is caught with a snare or forceps, fluid is injected under its base if needed, it is cut off and retrieved, and the site is treated or closed with a clip when required; 20 to 40 minutes, usually under sedation",
+        "when": "A stomach polyp found at gastroscopy, several polyps seen during follow-up, a changed area of the lining that has to be removed whole for examination, checks after polyps removed earlier",
+        "prep": "No food from the evening before and no drink for the hours the doctor states, blood thinners and clotting problems discussed in advance, and with sedation a companion and no driving",
+        "abnormal": "The removed tissue is described by a pathologist, and that description decides whether and when a repeat gastroscopy is needed. Mild upper abdominal pain and nausea are possible in the first days, while vomiting blood, black stools, severe pain or fever need urgent care"
+      },
+      "sr": {
+        "what": "Uklanjanje polipa sa sluznice želuca kroz gastroskop, uz slanje tkiva na patohistološku analizu",
+        "how": "Gastroskop se uvodi kroz usta, polip se hvata omčom ili kliještima, po potrebi se pod njegovu osnovu ubrizga rastvor, odsijeca se i vadi, a mjesto se po potrebi obradi ili zatvori klipsom; traje 20 do 40 minuta, obično uz sedaciju",
+        "when": "Polip želuca nađen na gastroskopiji, više polipa uočenih tokom praćenja, promijenjen dio sluznice koji treba ukloniti u cjelini radi analize, kontrola poslije ranije uklonjenih polipa",
+        "prep": "Ne jesti od večeri i ne piti nekoliko sati prije, po uputstvu ljekara, unaprijed razgovarati o lijekovima za razrjeđivanje krvi i poremećajima zgrušavanja, a uz sedaciju doći sa pratiocem i ne voziti",
+        "abnormal": "Uklonjeno tkivo opisuje ljekar patolog, a od tog opisa zavisi da li je i kada potrebna ponovna gastroskopija. Prvih dana su mogući blag bol u gornjem dijelu stomaka i mučnina, dok povraćanje krvi, crna stolica, jak bol ili temperatura traže hitno javljanje"
+      },
+      "de": {
+        "what": "Abtragung eines Polypen der Magenschleimhaut über ein Magenspiegelungsgerät mit feingeweblicher Untersuchung des Gewebes",
+        "how": "Das Gerät wird über den Mund eingeführt, der Polyp mit Schlinge oder Zange gefasst, bei Bedarf wird Flüssigkeit unter seine Basis gespritzt, er wird abgetragen und geborgen, die Stelle nötigenfalls versorgt oder mit einem Clip verschlossen; 20 bis 40 Minuten, meist in Sedierung",
+        "when": "Ein bei der Magenspiegelung gefundener Polyp, mehrere Polypen im Verlauf, ein veränderter Schleimhautbezirk, der zur Untersuchung vollständig entfernt werden muss, Kontrolle nach früher abgetragenen Polypen",
+        "prep": "Ab dem Vorabend nichts essen und für die vom Arzt genannte Zeit nichts trinken, Blutverdünner und Gerinnungsstörungen vorher besprechen, bei Sedierung eine Begleitperson mitbringen und nicht selbst fahren",
+        "abnormal": "Das entfernte Gewebe beschreibt ein Pathologe, davon hängt ab, ob und wann eine erneute Magenspiegelung nötig ist. In den ersten Tagen sind leichte Oberbauchschmerzen und Übelkeit möglich, Bluterbrechen, schwarzer Stuhl, starke Schmerzen oder Fieber erfordern dagegen sofortige Hilfe"
+      },
+      "tr": {
+        "what": "Mide mukozasındaki polibin gastroskopla çıkarılması ve dokunun patolojiye gönderilmesi",
+        "how": "Gastroskop ağızdan ilerletilir, polip tel ilmek ya da forsepsle tutulur, gerekirse tabanına sıvı verilir, kesilerek çıkarılır, bölge gerektiğinde işlemden geçirilir ya da klipsle kapatılır; 20 ila 40 dakika sürer, genellikle sedasyon altında",
+        "when": "Gastroskopide saptanan mide polibi, izlem sırasında görülen birden çok polip, inceleme için bütün olarak çıkarılması gereken değişmiş mukoza alanı, daha önce çıkarılan poliplerden sonraki kontrol",
+        "prep": "Önceki akşamdan sonra yememek ve hekimin söylediği süre boyunca bir şey içmemek, kan sulandırıcıları ve pıhtılaşma sorunlarını önceden konuşmak, sedasyon yapılacaksa refakatçiyle gelmek ve araç kullanmamak",
+        "abnormal": "Çıkarılan dokuyu patoloji uzmanı tanımlar, gastroskopinin tekrarlanıp tekrarlanmayacağı ve zamanı bu tanıma göre belirlenir. İlk günlerde üst karında hafif ağrı ve bulantı olabilir, kan kusma, siyah dışkı, şiddetli ağrı ya da ateş acil başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање полипа са слузнице желуца кроз гастроскоп, уз слање ткива на патохистолошку анализу",
+        "how": "Гастроскоп се уводи кроз уста, полип се хвата омчом или клијештима, по потреби се под његову основу убризга раствор, одсијеца се и вади, а мјесто се по потреби обради или затвори клипсом; траје 20 до 40 минута, обично уз седацију",
+        "when": "Полип желуца нађен на гастроскопији, више полипа уочених током праћења, промијењен дио слузнице који треба уклонити у цјелини ради анализе, контрола послије раније уклоњених полипа",
+        "prep": "Не јести од вечери и не пити неколико сати прије, по упутству љекара, унапријед разговарати о лијековима за разрјеђивање крви и поремећајима згрушавања, а уз седацију доћи са пратиоцем и не возити",
+        "abnormal": "Уклоњено ткиво описује љекар патолог, а од тог описа зависи да ли је и када потребна поновна гастроскопија. Првих дана су могући благ бол у горњем дијелу стомака и мучнина, док повраћање крви, црна столица, јак бол или температура траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "aspiration",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление скопившейся слизи и мокроты из дыхательных путей с помощью отсоса",
+        "how": "Через нос, рот или трахеостому вводят мягкий стерильный катетер, соединённый с отсосом, и короткими движениями убирают содержимое, следя за дыханием и насыщением крови кислородом; занимает несколько минут и при необходимости повторяется",
+        "when": "Скопление мокроты, которую пациент не может откашлять, ослабленный кашлевой рефлекс после инсульта или операции, уход за трахеостомой, тяжёлое обострение болезни лёгких, освобождение дыхательных путей перед ингаляцией или кислородом",
+        "prep": "Специальной подготовки нет; процедуру обычно не делают сразу после еды, а перед ней могут помочь назначенные врачом ингаляция и дыхательные упражнения",
+        "abnormal": "После процедуры дыхание обычно становится свободнее, возможны короткий кашель и першение в горле. Количество, цвет и запах полученного содержимого оценивает врач и при необходимости отправляет его на анализ; быстро возвращающееся затруднение дыхания, кровь в содержимом или температура — повод для срочного осмотра"
+      },
+      "en": {
+        "what": "Removal of mucus and sputum that has collected in the airways using suction",
+        "how": "A soft sterile catheter connected to a suction device is passed through the nose, the mouth or a tracheostomy and the contents are cleared with short movements while breathing and blood oxygen are watched; it takes a few minutes and is repeated if needed",
+        "when": "Sputum the patient cannot cough up, a weakened cough reflex after a stroke or an operation, tracheostomy care, a severe flare of lung disease, clearing the airways before inhalation or oxygen",
+        "prep": "No special preparation; the procedure is usually not done right after a meal, and inhalation and breathing exercises ordered by the doctor may help beforehand",
+        "abnormal": "Breathing is usually easier afterwards, and a short cough and a scratchy throat are possible. The amount, colour and smell of the material removed are assessed by the doctor, who may send it for testing; breathing that becomes difficult again quickly, blood in the material or fever call for prompt review"
+      },
+      "sr": {
+        "what": "Uklanjanje nakupljene sluzi i ispljuvka iz disajnih puteva pomoću aspiratora",
+        "how": "Kroz nos, usta ili traheostomu uvodi se mekan sterilan kateter spojen sa aspiratorom i kratkim pokretima se izvlači sadržaj, uz praćenje disanja i zasićenja krvi kiseonikom; traje nekoliko minuta i po potrebi se ponavlja",
+        "when": "Ispljuvak koji pacijent ne može da iskašlje, oslabljen refleks kašlja poslije moždanog udara ili operacije, njega traheostome, teško pogoršanje plućne bolesti, oslobađanje disajnih puteva prije inhalacije ili kiseonika",
+        "prep": "Posebne pripreme nema; postupak se obično ne radi odmah poslije obroka, a prije njega mogu pomoći inhalacija i vježbe disanja koje je odredio ljekar",
+        "abnormal": "Poslije postupka disanje je obično lakše, mogući su kratak kašalj i grebanje u grlu. Količinu, boju i miris izvučenog sadržaja procjenjuje ljekar i po potrebi ga šalje na analizu; brzo ponovno otežano disanje, krv u sadržaju ili temperatura razlog su za hitan pregled"
+      },
+      "de": {
+        "what": "Das Absaugen von Schleim und Sekret, das sich in den Atemwegen angesammelt hat",
+        "how": "Ein weicher steriler Katheter an einem Absauggerät wird über Nase, Mund oder Tracheostoma eingeführt und das Sekret in kurzen Zügen entfernt, während Atmung und Sauerstoffsättigung überwacht werden; es dauert wenige Minuten und wird bei Bedarf wiederholt",
+        "when": "Sekret, das nicht abgehustet werden kann, abgeschwächter Hustenreflex nach Schlaganfall oder Operation, Pflege eines Tracheostomas, schwerer Schub einer Lungenerkrankung, Freimachen der Atemwege vor Inhalation oder Sauerstoffgabe",
+        "prep": "Keine besondere Vorbereitung; der Eingriff wird meist nicht direkt nach dem Essen durchgeführt, vorher können vom Arzt angeordnete Inhalation und Atemübungen helfen",
+        "abnormal": "Danach fällt das Atmen meist leichter, kurzer Husten und Kratzen im Hals sind möglich. Menge, Farbe und Geruch des abgesaugten Sekrets beurteilt der Arzt und schickt es bei Bedarf zur Untersuchung; rasch wiederkehrende Atemnot, Blut im Sekret oder Fieber erfordern eine zeitnahe Vorstellung"
+      },
+      "tr": {
+        "what": "Solunum yollarında biriken balgam ve salgının aspiratörle çekilmesi",
+        "how": "Aspiratöre bağlı yumuşak steril bir kateter burundan, ağızdan ya da trakeostomiden ilerletilir ve kısa hareketlerle içerik boşaltılır; bu sırada solunum ve kandaki oksijen doygunluğu izlenir, işlem birkaç dakika sürer ve gerekirse tekrarlanır",
+        "when": "Hastanın öksürerek çıkaramadığı balgam, inme ya da ameliyat sonrası zayıflamış öksürük refleksi, trakeostomi bakımı, akciğer hastalığının ağır alevlenmesi, inhalasyon ya da oksijen öncesi solunum yollarının açılması",
+        "prep": "Özel hazırlık gerekmez; işlem genellikle yemekten hemen sonra yapılmaz, öncesinde hekimin önerdiği inhalasyon ve solunum egzersizleri yardımcı olabilir",
+        "abnormal": "İşlemden sonra solunum genellikle rahatlar, kısa süreli öksürük ve boğazda gıcık olabilir. Çekilen içeriğin miktarını, rengini ve kokusunu hekim değerlendirir, gerekirse incelemeye gönderir; solunumun kısa sürede yeniden zorlaşması, içerikte kan ya da ateş hızlı değerlendirme gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање накупљене слузи и испљувка из дисајних путева помоћу аспиратора",
+        "how": "Кроз нос, уста или трахеостому уводи се мекан стерилан катетер спојен са аспиратором и кратким покретима се извлачи садржај, уз праћење дисања и засићења крви кисеоником; траје неколико минута и по потреби се понавља",
+        "when": "Испљувак који пацијент не може да искашље, ослабљен рефлекс кашља послије можданог удара или операције, њега трахеостоме, тешко погоршање плућне болести, ослобађање дисајних путева прије инхалације или кисеоника",
+        "prep": "Посебне припреме нема; поступак се обично не ради одмах послије оброка, а прије њега могу помоћи инхалација и вјежбе дисања које је одредио љекар",
+        "abnormal": "Послије поступка дисање је обично лакше, могући су кратак кашаљ и гребање у грлу. Количину, боју и мирис извученог садржаја процјењује љекар и по потреби га шаље на анализу; брзо поновно отежано дисање, крв у садржају или температура разлог су за хитан преглед"
+      }
+    }
+  },
+  {
+    "slug": "body-plethysmography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Исследование в герметичной кабине, которое измеряет общий объём лёгких, в том числе воздух, остающийся после выдоха, и сопротивление дыхательных путей",
+        "how": "Пациент сидит в прозрачной кабине с закрытой дверью и дышит через мундштук с зажимом на носу, сначала спокойно, а в момент короткого перекрытия потока делает частые неглубокие вдохи; прибор считает объёмы по изменению давления, всё занимает 15–25 минут",
+        "when": "Уточнение того, что не показывает обычная спирометрия, оценка вздутия лёгких при эмфиземе и ХОБЛ, подозрение на ограничение расправления лёгких, оценка перед операцией на лёгких, наблюдение за хроническими болезнями органов дыхания",
+        "prep": "За несколько часов не курить и плотно не есть, надеть свободную одежду; приём бронхорасширяющих препаратов согласовать с врачом заранее и ничего не отменять самостоятельно, при боязни замкнутого пространства предупредить персонал",
+        "abnormal": "Изменения объёмов и сопротивления могут быть связаны с сужением дыхательных путей, вздутием лёгких или ограничением их расправления, а также зависят от того, насколько точно выполнены команды. Результат вместе с жалобами и другими исследованиями оценивает пульмонолог"
+      },
+      "en": {
+        "what": "A test in a sealed cabin that measures the total volume of the lungs, including the air left after breathing out, and the resistance of the airways",
+        "how": "The patient sits in a transparent cabin with the door closed and breathes through a mouthpiece with a nose clip, quietly at first and then with quick shallow breaths while the flow is briefly shut off; the device calculates the volumes from the pressure changes, and the whole test takes 15 to 25 minutes",
+        "when": "Questions that ordinary spirometry cannot answer, assessment of over-inflated lungs in emphysema and COPD, suspected restriction of lung expansion, assessment before lung surgery, follow-up of chronic respiratory disease",
+        "prep": "No smoking and no heavy meal for several hours beforehand, loose clothing; the timing of inhaled bronchodilators is agreed with the doctor in advance and nothing is stopped on your own, and the staff should be told about fear of closed spaces",
+        "abnormal": "Changes in the volumes and the resistance may be related to narrowed airways, over-inflated lungs or limited expansion, and they also depend on how precisely the instructions were followed. The result is assessed by a pulmonologist together with the complaints and the other tests"
+      },
+      "sr": {
+        "what": "Pretraga u zatvorenoj kabini kojom se mjere ukupni volumen pluća, uključujući i vazduh koji ostaje poslije izdisaja, i otpor disajnih puteva",
+        "how": "Pacijent sjedi u providnoj kabini sa zatvorenim vratima i diše kroz nastavak za usta uz štipaljku na nosu, najprije mirno, a zatim brzim plitkim udasima dok je protok nakratko zatvoren; aparat računa volumene iz promjene pritiska, a sve traje 15 do 25 minuta",
+        "when": "Razjašnjenje onoga što obična spirometrija ne pokazuje, procjena naduvanosti pluća kod emfizema i HOBP, sumnja na ograničeno širenje pluća, procjena prije operacije pluća, praćenje hroničnih bolesti disajnih organa",
+        "prep": "Nekoliko sati ne pušiti i ne jesti obilno, obući široku odjeću; uzimanje inhalatornih bronhodilatatora unaprijed dogovoriti sa ljekarom i ništa ne prekidati na svoju ruku, a osoblju reći ako imate strah od zatvorenog prostora",
+        "abnormal": "Promjene volumena i otpora mogu biti povezane sa suženjem disajnih puteva, naduvanošću pluća ili ograničenim širenjem pluća, a zavise i od toga koliko su tačno izvedene komande. Nalaz zajedno sa tegobama i ostalim pretragama tumači pulmolog"
+      },
+      "de": {
+        "what": "Eine Untersuchung in einer geschlossenen Kabine, die das gesamte Lungenvolumen einschließlich der nach dem Ausatmen verbleibenden Luft und den Atemwegswiderstand misst",
+        "how": "Der Patient sitzt bei geschlossener Tür in einer durchsichtigen Kabine und atmet mit Nasenklemme über ein Mundstück, zunächst ruhig und dann bei kurz verschlossenem Luftweg mit schnellen flachen Atemzügen; das Gerät errechnet die Volumina aus den Druckänderungen, insgesamt 15 bis 25 Minuten",
+        "when": "Fragen, die eine einfache Spirometrie nicht beantwortet, Beurteilung überblähter Lungen bei Emphysem und COPD, Verdacht auf eingeschränkte Lungenausdehnung, Beurteilung vor Lungenoperationen, Verlaufskontrolle chronischer Atemwegserkrankungen",
+        "prep": "Mehrere Stunden nicht rauchen und keine schwere Mahlzeit, weite Kleidung; die Einnahme inhalativer Bronchodilatatoren vorher mit dem Arzt abstimmen und nichts eigenmächtig absetzen, bei Angst vor engen Räumen das Personal informieren",
+        "abnormal": "Veränderte Volumina und Widerstände können mit verengten Atemwegen, überblähten Lungen oder eingeschränkter Ausdehnung zusammenhängen und hängen auch davon ab, wie genau die Anweisungen befolgt wurden. Den Befund beurteilt der Lungenfacharzt zusammen mit Beschwerden und weiteren Untersuchungen"
+      },
+      "tr": {
+        "what": "Kapalı bir kabinde yapılan, nefes verdikten sonra akciğerde kalan hava dahil toplam akciğer hacmini ve hava yolu direncini ölçen inceleme",
+        "how": "Hasta kapısı kapalı şeffaf kabinde oturur, burnuna mandal takılarak ağızlıktan nefes alır; önce sakin, sonra hava akımı kısa süre kapatılırken hızlı ve yüzeysel soluk alır; cihaz hacimleri basınç değişiminden hesaplar, tüm inceleme 15 ila 25 dakika sürer",
+        "when": "Sıradan spirometrinin yanıtlayamadığı sorular, amfizem ve KOAH'ta akciğerlerin aşırı havalanmasının değerlendirilmesi, akciğerlerin genişlemesinin kısıtlandığı kuşkusu, akciğer ameliyatı öncesi değerlendirme, kronik solunum hastalıklarının izlemi",
+        "prep": "Birkaç saat sigara içmemek ve ağır yemek yememek, bol kıyafet giymek; inhaler bronkodilatatörlerin zamanlamasını önceden hekimle konuşmak ve hiçbir ilacı kendi başına bırakmamak, kapalı alan korkusu varsa görevliyi bilgilendirmek",
+        "abnormal": "Hacim ve direnç değişiklikleri hava yollarının daralması, akciğerlerin aşırı havalanması ya da genişlemenin kısıtlanmasıyla ilişkili olabilir ve komutların ne kadar doğru uygulandığına da bağlıdır. Sonucu şikayetler ve diğer tetkiklerle birlikte göğüs hastalıkları uzmanı değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Претрага у затвореној кабини којом се мјере укупни волумен плућа, укључујући и ваздух који остаје послије издисаја, и отпор дисајних путева",
+        "how": "Пацијент сједи у провидној кабини са затвореним вратима и дише кроз наставак за уста уз штипаљку на носу, најприје мирно, а затим брзим плитким удасима док је проток накратко затворен; апарат рачуна волумене из промјене притиска, а све траје 15 до 25 минута",
+        "when": "Разјашњење онога што обична спирометрија не показује, процјена надуваности плућа код емфизема и ХОБП, сумња на ограничено ширење плућа, процјена прије операције плућа, праћење хроничних болести дисајних органа",
+        "prep": "Неколико сати не пушити и не јести обилно, обући широку одјећу; узимање инхалаторних бронходилататора унапријед договорити са љекаром и ништа не прекидати на своју руку, а особљу рећи ако имате страх од затвореног простора",
+        "abnormal": "Промјене волумена и отпора могу бити повезане са сужењем дисајних путева, надуваношћу плућа или ограниченим ширењем плућа, а зависе и од тога колико су тачно изведене команде. Налаз заједно са тегобама и осталим претрагама тумачи пулмолог"
+      }
+    }
+  },
+  {
+    "slug": "polysomnography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Запись сна за ночь с одновременной регистрацией дыхания, насыщения крови кислородом, работы сердца, мозговой активности и движений",
+        "how": "Вечером на голову, лицо, грудь и ноги наклеивают датчики, на палец надевают пульсоксиметр, у носа и на животе ставят датчики потока и дыхательных движений, после чего пациент спит обычным сном под наблюдением; запись идёт всю ночь, утром датчики снимают, а расшифровка занимает несколько дней",
+        "when": "Громкий храп с остановками дыхания, замеченными окружающими, дневная сонливость и утренние головные боли, частые ночные пробуждения, сон, не дающий отдыха, необычное поведение и движения во сне, оценка перед подбором дыхательной поддержки во сне",
+        "prep": "В день исследования не спать днём, отказаться от кофе и алкоголя, вымыть голову без бальзама и не наносить косметику и кремы, взять домашнюю одежду, свои препараты и список их названий, о снотворных сказать врачу заранее",
+        "abnormal": "Запись показывает число и длительность остановок дыхания, падения насыщения крови кислородом и то, насколько разбита структура сна; изменения могут быть связаны с нарушениями дыхания во сне, движениями ног или другими причинами. Расшифровку и дальнейшую тактику определяет врач"
+      },
+      "en": {
+        "what": "A whole-night recording of sleep with simultaneous registration of breathing, blood oxygen, heart activity, brain activity and movements",
+        "how": "In the evening sensors are attached to the head, face, chest and legs, a pulse oximeter is put on a finger and flow and effort sensors at the nose and the abdomen, and the patient then sleeps normally while being monitored; the recording runs all night, the sensors come off in the morning and the analysis takes several days",
+        "when": "Loud snoring with pauses in breathing noticed by others, daytime sleepiness and morning headaches, frequent waking at night, unrefreshing sleep, unusual behaviour and movements during sleep, assessment before breathing support at night is set up",
+        "prep": "No daytime nap on the day of the study, no coffee or alcohol, wash the hair without conditioner and use no make-up or creams, bring home clothes, your medicines and a list of their names, and tell the doctor in advance about sleeping pills",
+        "abnormal": "The recording shows the number and length of breathing pauses, drops in blood oxygen and how broken up the structure of sleep is; changes may be related to sleep-disordered breathing, leg movements or other causes. The reading and the next steps are decided by the doctor"
+      },
+      "sr": {
+        "what": "Cjelonoćno snimanje spavanja uz istovremeno bilježenje disanja, zasićenja krvi kiseonikom, rada srca, moždane aktivnosti i pokreta",
+        "how": "Uveče se na glavu, lice, grudi i noge postavljaju senzori, na prst pulsni oksimetar, a kod nosa i na stomaku senzori protoka i disajnih pokreta, poslije čega pacijent spava uobičajeno uz nadzor; snimanje traje cijelu noć, ujutru se senzori skidaju, a očitavanje traje nekoliko dana",
+        "when": "Glasno hrkanje sa prekidima disanja koje su primijetili ukućani, dnevna pospanost i jutarnje glavobolje, često noćno buđenje, san poslije kojeg nema odmora, neobično ponašanje i pokreti u snu, procjena prije uvođenja respiratorne podrške tokom spavanja",
+        "prep": "Na dan pretrage ne spavati preko dana, izbjegavati kafu i alkohol, oprati kosu bez regeneratora i ne stavljati šminku i kreme, ponijeti kućnu odjeću, svoje lijekove i spisak njihovih naziva, a o tabletama za spavanje unaprijed reći ljekaru",
+        "abnormal": "Snimak pokazuje broj i trajanje prekida disanja, padove zasićenja krvi kiseonikom i koliko je razbijena struktura spavanja; promjene mogu biti povezane sa poremećajem disanja u snu, pokretima nogu ili drugim uzrocima. Očitavanje i dalje korake određuje ljekar"
+      },
+      "de": {
+        "what": "Eine Aufzeichnung des Schlafs über eine ganze Nacht mit gleichzeitiger Messung von Atmung, Sauerstoffsättigung, Herztätigkeit, Hirnströmen und Bewegungen",
+        "how": "Am Abend werden Sensoren an Kopf, Gesicht, Brust und Beinen angebracht, ein Pulsoxymeter an den Finger sowie Fluss- und Atembewegungssensoren an Nase und Bauch, danach schläft der Patient unter Beobachtung wie gewohnt; die Aufzeichnung läuft die ganze Nacht, morgens werden die Sensoren entfernt, die Auswertung dauert einige Tage",
+        "when": "Lautes Schnarchen mit beobachteten Atempausen, Tagesmüdigkeit und morgendliche Kopfschmerzen, häufiges nächtliches Erwachen, nicht erholsamer Schlaf, ungewöhnliches Verhalten und Bewegungen im Schlaf, Beurteilung vor Einstellung einer nächtlichen Atemunterstützung",
+        "prep": "Am Untersuchungstag nicht tagsüber schlafen, Kaffee und Alkohol meiden, Haare ohne Spülung waschen, kein Make-up und keine Cremes auftragen, Hauskleidung, die eigenen Medikamente und eine Liste ihrer Namen mitbringen und Schlafmittel vorher mit dem Arzt besprechen",
+        "abnormal": "Die Aufzeichnung zeigt Zahl und Dauer der Atempausen, Abfälle der Sauerstoffsättigung und wie stark der Schlaf zerstückelt ist; Veränderungen können mit schlafbezogenen Atemstörungen, Beinbewegungen oder anderen Ursachen zusammenhängen. Die Auswertung und das weitere Vorgehen bestimmt der Arzt"
+      },
+      "tr": {
+        "what": "Uykunun gece boyunca kaydedilmesi; aynı anda solunum, kandaki oksijen doygunluğu, kalp etkinliği, beyin etkinliği ve hareketler de kaydedilir",
+        "how": "Akşam başa, yüze, göğse ve bacaklara sensörler yapıştırılır, parmağa puls oksimetre, burun yanına ve karına hava akımı ile solunum hareketi sensörleri yerleştirilir, ardından hasta gözlem altında normal şekilde uyur; kayıt gece boyu sürer, sabah sensörler çıkarılır, değerlendirme birkaç gün alır",
+        "when": "Yakınların fark ettiği, solunum duraklamalarıyla birlikte giden yüksek sesli horlama, gündüz uyku hali ve sabah baş ağrısı, gece sık uyanma, dinlendirmeyen uyku, uykuda olağan dışı davranış ve hareketler, gece solunum desteği ayarlanmadan önceki değerlendirme",
+        "prep": "İnceleme günü gündüz uyumamak, kahve ve alkolden kaçınmak, saçı krem kullanmadan yıkamak, makyaj ve krem sürmemek, ev kıyafeti, kullanılan ilaçlar ve adlarının listesiyle gelmek, uyku ilaçlarını hekime önceden söylemek",
+        "abnormal": "Kayıt solunum duraklamalarının sayısını ve süresini, oksijen doygunluğundaki düşüşleri ve uyku yapısının ne kadar bölündüğünü gösterir; değişiklikler uykuda solunum bozukluğu, bacak hareketleri ya da başka nedenlerle ilişkili olabilir. Değerlendirmeyi ve sonraki adımları hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Цјелоноћно снимање спавања уз истовремено биљежење дисања, засићења крви кисеоником, рада срца, мождане активности и покрета",
+        "how": "Увече се на главу, лице, груди и ноге постављају сензори, на прст пулсни оксиметар, а код носа и на стомаку сензори протока и дисајних покрета, послије чега пацијент спава уобичајено уз надзор; снимање траје цијелу ноћ, ујутру се сензори скидају, а очитавање траје неколико дана",
+        "when": "Гласно хркање са прекидима дисања које су примијетили укућани, дневна поспаност и јутарње главобоље, често ноћно буђење, сан послије којег нема одмора, необично понашање и покрети у сну, процјена прије увођења респираторне подршке током спавања",
+        "prep": "На дан претраге не спавати преко дана, избјегавати кафу и алкохол, опрати косу без регенератора и не стављати шминку и креме, понијети кућну одјећу, своје лијекове и списак њихових назива, а о таблетама за спавање унапријед рећи љекару",
+        "abnormal": "Снимак показује број и трајање прекида дисања, падове засићења крви кисеоником и колико је разбијена структура спавања; промјене могу бити повезане са поремећајем дисања у сну, покретима ногу или другим узроцима. Очитавање и даље кораке одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "spirometry-recording-and-reading",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Запись дыхательных кривых на спирометре и их последующее описание врачом с письменным заключением",
+        "how": "Сначала медсестра или техник измеряет рост и вес, вводит данные в прибор и учит правильному манёвру: глубокий вдох и резкий полный выдох в мундштук с зажимом на носу, обычно три пригодные попытки; затем врач оценивает качество кривых, сравнивает показатели с расчётными для возраста, роста и пола и пишет заключение",
+        "when": "Жалобы на одышку и длительный кашель, установленная астма или ХОБЛ, профилактический осмотр у курильщиков и на вредном производстве, оценка перед операцией, экспертиза трудоспособности, описание записи, сделанной в другом учреждении",
+        "prep": "Перед записью несколько часов не курить, не пить кофе и не заниматься спортом, плотно не есть, надеть одежду, не стесняющую грудную клетку, снять съёмный протез, если он мешает удерживать мундштук, ингаляторы использовать только по согласованию с врачом",
+        "abnormal": "Заключение описывает, есть ли сужение дыхательных путей, насколько показатели отличаются от расчётных и насколько надёжны попытки: слабый или прерванный выдох делает запись непригодной и её повторяют. Что это значит в вашем случае, объясняет пульмонолог или направивший врач"
+      },
+      "en": {
+        "what": "Recording of the breathing curves on a spirometer and their subsequent reading by a doctor with a written report",
+        "how": "First a nurse or technician measures height and weight, enters them into the device and teaches the manoeuvre: a deep breath in and a sharp full breath out into the mouthpiece with a nose clip, usually three usable attempts; the doctor then judges the quality of the curves, compares the values with those predicted for age, height and sex and writes the report",
+        "when": "Breathlessness and a long-standing cough, known asthma or COPD, check-ups for smokers and for work with harmful exposure, assessment before an operation, fitness-for-work assessment, reading of a recording made at another facility",
+        "prep": "No smoking, coffee or sport for several hours before the recording, no heavy meal, clothing that does not restrict the chest, removal of a denture if it stops you holding the mouthpiece, and inhalers used only as agreed with the doctor",
+        "abnormal": "The report says whether the airways are narrowed, how far the values differ from the predicted ones and how reliable the attempts were: a weak or interrupted breath out makes the recording unusable and it is repeated. What it means in your case is explained by the pulmonologist or the referring doctor"
+      },
+      "sr": {
+        "what": "Snimanje disajnih krivih na spirometru i njihovo naknadno očitavanje uz pisani nalaz ljekara",
+        "how": "Najprije sestra ili tehničar izmjeri visinu i težinu, unese podatke u aparat i pokaže manevar: dubok udah i snažan potpun izdah u nastavak za usta uz štipaljku na nosu, obično tri upotrebljiva pokušaja; zatim ljekar ocjenjuje kvalitet krivih, poredi vrijednosti sa očekivanim za uzrast, visinu i pol i piše nalaz",
+        "when": "Zaduha i dugotrajan kašalj, poznata astma ili HOBP, sistematski pregledi pušača i radnika na štetnim poslovima, procjena prije operacije, ocjena radne sposobnosti, očitavanje snimka urađenog u drugoj ustanovi",
+        "prep": "Nekoliko sati prije snimanja ne pušiti, ne piti kafu i ne vježbati, ne jesti obilno, obući odjeću koja ne steže grudni koš, izvaditi pokretnu protezu ako smeta držanju nastavka, a inhalatore koristiti samo u dogovoru sa ljekarom",
+        "abnormal": "Nalaz govori da li su disajni putevi suženi, koliko se vrijednosti razlikuju od očekivanih i koliko su pokušaji pouzdani: slab ili prekinut izdah čini snimak neupotrebljivim, pa se ponavlja. Šta to znači u vašem slučaju objašnjava pulmolog ili ljekar koji vas je uputio"
+      },
+      "de": {
+        "what": "Die Aufzeichnung der Atemkurven am Spirometer und ihre anschließende Beurteilung durch einen Arzt mit schriftlichem Befund",
+        "how": "Zuerst misst eine Pflegekraft oder eine Assistenz Größe und Gewicht, gibt sie in das Gerät ein und übt das Manöver: tief einatmen und kräftig vollständig in das Mundstück ausatmen, mit Nasenklemme und meist drei verwertbaren Versuchen; danach beurteilt der Arzt die Qualität der Kurven, vergleicht die Werte mit den für Alter, Größe und Geschlecht erwarteten und verfasst den Befund",
+        "when": "Luftnot und lang anhaltender Husten, bekanntes Asthma oder COPD, Vorsorge bei Rauchern und bei Arbeit mit Schadstoffen, Beurteilung vor einer Operation, Begutachtung der Arbeitsfähigkeit, Auswertung einer in einer anderen Einrichtung erstellten Aufzeichnung",
+        "prep": "Mehrere Stunden vor der Aufzeichnung nicht rauchen, keinen Kaffee trinken und keinen Sport treiben, keine schwere Mahlzeit, Kleidung, die den Brustkorb nicht einengt, eine herausnehmbare Prothese entfernen, wenn sie das Halten des Mundstücks stört, Inhalatoren nur nach Absprache anwenden",
+        "abnormal": "Der Befund sagt, ob die Atemwege verengt sind, wie weit die Werte von den erwarteten abweichen und wie verlässlich die Versuche waren: ein schwaches oder abgebrochenes Ausatmen macht die Aufzeichnung unbrauchbar, sie wird dann wiederholt. Was das in Ihrem Fall bedeutet, erklärt der Lungenfacharzt oder der überweisende Arzt"
+      },
+      "tr": {
+        "what": "Solunum eğrilerinin spirometre ile kaydedilmesi ve ardından hekim tarafından yorumlanıp yazılı rapora dönüştürülmesi",
+        "how": "Önce hemşire ya da teknisyen boy ve kiloyu ölçüp cihaza girer ve manevrayı öğretir: derin nefes alıp ağızlığa hızlı ve tam nefes vermek, burunda mandalla, genellikle üç geçerli deneme; ardından hekim eğrilerin kalitesini değerlendirir, değerleri yaş, boy ve cinsiyete göre beklenenlerle karşılaştırır ve raporu yazar",
+        "when": "Nefes darlığı ve uzun süren öksürük, bilinen astım ya da KOAH, sigara içenlerde ve zararlı ortamda çalışanlarda tarama, ameliyat öncesi değerlendirme, iş göremezlik değerlendirmesi, başka bir kurumda yapılan kaydın yorumlanması",
+        "prep": "Kayıttan birkaç saat önce sigara içmemek, kahve içmemek ve spor yapmamak, ağır yemek yememek, göğsü sıkmayan kıyafet giymek, ağızlığı tutmayı zorlaştırıyorsa takma protezi çıkarmak, inhalerleri yalnızca hekimle konuşarak kullanmak",
+        "abnormal": "Rapor hava yollarının daralıp daralmadığını, değerlerin beklenenden ne kadar farklı olduğunu ve denemelerin ne kadar güvenilir olduğunu belirtir: zayıf ya da yarıda kesilen nefes verme kaydı kullanılamaz hale getirir ve işlem tekrarlanır. Bunun sizin durumunuzda ne anlama geldiğini göğüs hastalıkları uzmanı ya da sizi yönlendiren hekim açıklar"
+      },
+      "sr_cyrl": {
+        "what": "Снимање дисајних кривих на спирометру и њихово накнадно очитавање уз писани налаз љекара",
+        "how": "Најприје сестра или техничар измјери висину и тежину, унесе податке у апарат и покаже маневар: дубок удах и снажан потпун издах у наставак за уста уз штипаљку на носу, обично три употребљива покушаја; затим љекар оцјењује квалитет кривих, пореди вриједности са очекиваним за узраст, висину и пол и пише налаз",
+        "when": "Задуха и дуготрајан кашаљ, позната астма или ХОБП, систематски прегледи пушача и радника на штетним пословима, процјена прије операције, оцјена радне способности, очитавање снимка урађеног у другој установи",
+        "prep": "Неколико сати прије снимања не пушити, не пити кафу и не вјежбати, не јести обилно, обући одјећу која не стеже грудни кош, извадити покретну протезу ако смета држању наставка, а инхалаторе користити само у договору са љекаром",
+        "abnormal": "Налаз говори да ли су дисајни путеви сужени, колико се вриједности разликују од очекиваних и колико су покушаји поуздани: слаб или прекинут издах чини снимак неупотребљивим, па се понавља. Шта то значи у вашем случају објашњава пулмолог или љекар који вас је упутио"
+      }
+    }
+  },
+  {
+    "slug": "follow-up-subspecialist-pediatric-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторный приём детского врача узкого профиля — кардиолога, нефролога, эндокринолога, гастроэнтеролога или невролога — для оценки динамики по своему направлению",
+        "how": "Врач сравнивает жалобы и данные осмотра с прошлым визитом, измеряет рост и вес и отмечает их на кривой роста, разбирает назначенные анализы и исследования, проверяет переносимость лечения и при необходимости меняет назначения; 20–30 минут",
+        "when": "В срок, назначенный на предыдущем приёме, разбор результатов обследования, наблюдение за хронической болезнью у ребёнка, оценка после изменения лечения, продление заключений для сада, школы и спорта",
+        "prep": "Принести все результаты, назначенные на прошлом приёме, прежние заключения, дневник симптомов, препараты в упаковках и карту прививок; ребёнка покормить и одеть так, чтобы его было легко раздеть для осмотра",
+        "abnormal": "Врач решает, достаточно ли достигнутого улучшения, нужно ли изменить лечение, повторить обследование или передать наблюдение педиатру по месту жительства. Ухудшение до срока контроля — повод прийти раньше"
+      },
+      "en": {
+        "what": "A repeat visit to a children's doctor with a narrow specialty, such as cardiology, nephrology, endocrinology, gastroenterology or neurology, to follow the course within that field",
+        "how": "The doctor compares the complaints and the examination with the previous visit, measures height and weight and plots them on the growth chart, goes through the tests that were ordered, checks how the treatment is tolerated and changes it if needed; 20 to 30 minutes",
+        "when": "At the interval set at the previous visit, discussion of test results, follow-up of a chronic condition in a child, review after a change of treatment, renewal of certificates for nursery, school and sport",
+        "prep": "Bring all the results ordered last time, earlier reports, a symptom diary, the medicines in their packs and the vaccination record; feed the child and dress them so that they are easy to undress for the examination",
+        "abnormal": "The doctor decides whether the improvement is enough, whether the treatment should change, whether tests should be repeated or whether follow-up can go back to the local paediatrician. Getting worse before the planned date is a reason to come earlier"
+      },
+      "sr": {
+        "what": "Kontrolni pregled dječjeg ljekara uže specijalnosti, kardiologa, nefrologa, endokrinologa, gastroenterologa ili neurologa, radi praćenja stanja u njegovoj oblasti",
+        "how": "Ljekar upoređuje tegobe i nalaz pregleda sa prethodnim dolaskom, mjeri visinu i težinu i unosi ih u krivu rasta, tumači naručene analize i pretrage, provjerava kako se terapija podnosi i po potrebi je mijenja; 20 do 30 minuta",
+        "when": "U roku određenom na prethodnom pregledu, tumačenje nalaza, praćenje hronične bolesti kod djeteta, procjena poslije promjene terapije, produženje potvrda za vrtić, školu i sport",
+        "prep": "Ponijeti sve nalaze tražene na prošlom pregledu, ranija mišljenja, dnevnik tegoba, lijekove u originalnim pakovanjima i karton vakcinacije; dijete nahraniti i obući tako da se lako svuče za pregled",
+        "abnormal": "Ljekar procjenjuje da li je postignuto poboljšanje dovoljno, da li treba mijenjati terapiju, ponoviti pretrage ili praćenje vratiti izabranom pedijatru. Pogoršanje prije roka kontrole razlog je da se dođe ranije"
+      },
+      "de": {
+        "what": "Ein Wiedervorstellungstermin bei einem Kinderarzt mit Schwerpunkt, etwa Kardiologie, Nephrologie, Endokrinologie, Gastroenterologie oder Neurologie, zur Verlaufskontrolle in diesem Gebiet",
+        "how": "Der Arzt vergleicht Beschwerden und Untersuchungsbefund mit dem letzten Termin, misst Größe und Gewicht und trägt sie in die Wachstumskurve ein, bespricht die veranlassten Untersuchungen, prüft die Verträglichkeit der Behandlung und passt sie bei Bedarf an; 20 bis 30 Minuten",
+        "when": "Zum beim letzten Termin vereinbarten Zeitpunkt, Besprechung von Befunden, Verlaufskontrolle einer chronischen Erkrankung des Kindes, Beurteilung nach einer Therapieänderung, Verlängerung von Bescheinigungen für Kita, Schule und Sport",
+        "prep": "Alle beim letzten Mal veranlassten Befunde, frühere Arztbriefe, ein Beschwerdetagebuch, die Medikamente in der Originalpackung und den Impfpass mitbringen; das Kind essen lassen und so anziehen, dass es sich zur Untersuchung leicht ausziehen lässt",
+        "abnormal": "Der Arzt entscheidet, ob die Besserung ausreicht, ob die Behandlung geändert, Untersuchungen wiederholt oder die Betreuung an den Kinderarzt vor Ort zurückgegeben wird. Eine Verschlechterung vor dem geplanten Termin ist ein Grund, früher zu kommen"
+      },
+      "tr": {
+        "what": "Kardiyoloji, nefroloji, endokrinoloji, gastroenteroloji ya da nöroloji gibi bir yan dalda çalışan çocuk hekiminin, kendi alanındaki gidişatı değerlendirdiği kontrol muayenesi",
+        "how": "Hekim şikayetleri ve muayene bulgularını önceki randevuyla karşılaştırır, boy ve kiloyu ölçüp büyüme eğrisine işler, istenen tetkikleri yorumlar, tedavinin nasıl tolere edildiğini kontrol eder ve gerekirse değiştirir; 20 ila 30 dakika",
+        "when": "Önceki muayenede verilen sürede, tetkik sonuçlarının değerlendirilmesi, çocuktaki kronik hastalığın izlemi, tedavi değişikliği sonrası kontrol, kreş, okul ve spor için verilen belgelerin yenilenmesi",
+        "prep": "Geçen sefer istenen tüm sonuçları, önceki raporları, şikayet günlüğünü, ilaçları kutularıyla ve aşı kartını getirmek; çocuğu doyurmak ve muayene için kolay soyunabileceği şekilde giydirmek",
+        "abnormal": "Hekim elde edilen düzelmenin yeterli olup olmadığına, tedavinin değişip değişmeyeceğine, tetkiklerin tekrarlanmasına ya da izlemin bölgedeki çocuk hekimine devredilmesine karar verir. Planlanan tarihten önce kötüleşme daha erken başvurma nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Контролни преглед дјечјег љекара уже специјалности, кардиолога, нефролога, ендокринолога, гастроентеролога или неуролога, ради праћења стања у његовој области",
+        "how": "Љекар упоређује тегобе и налаз прегледа са претходним доласком, мјери висину и тежину и уноси их у криву раста, тумачи наручене анализе и претраге, провјерава како се терапија подноси и по потреби је мијења; 20 до 30 минута",
+        "when": "У року одређеном на претходном прегледу, тумачење налаза, праћење хроничне болести код дјетета, процјена послије промјене терапије, продужење потврда за вртић, школу и спорт",
+        "prep": "Понијети све налазе тражене на прошлом прегледу, ранија мишљења, дневник тегоба, лијекове у оригиналним паковањима и картон вакцинације; дијете нахранити и обући тако да се лако свуче за преглед",
+        "abnormal": "Љекар процјењује да ли је постигнуто побољшање довољно, да ли треба мијењати терапију, поновити претраге или праћење вратити изабраном педијатру. Погоршање прије рока контроле разлог је да се дође раније"
+      }
+    }
+  },
+  {
+    "slug": "pediatric-rehabilitation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Курс восстановительного лечения для ребёнка, который составляет и ведёт врач физической и реабилитационной медицины вместе с физиотерапевтом",
+        "how": "Сначала оценивают движения, силу, мышечный тонус и навыки по возрасту, затем идут занятия: упражнения в игровой форме, работа с положением тела, массаж и мягкие техники, при необходимости аппаратные процедуры; занятие длится 30–45 минут, курс идёт по несколько занятий в неделю, а родителей учат продолжать дома",
+        "when": "Задержка моторного развития у младенца, повышенный или пониженный мышечный тонус, кривошея, последствия родовой травмы, восстановление после переломов и операций, нарушения осанки и походки, болезни нервной системы и мышц у детей",
+        "prep": "Взять направление, заключения специалистов и снимки, одеть ребёнка в удобную одежду и захватить сменную, не приходить сразу после еды, обязательно принести ортезы, стельки и очки, если ребёнок ими пользуется",
+        "abnormal": "Прогресс обычно оценивают в конце курса повторным осмотром, сравнивая объём движений, силу и навыки с исходными. Боль, отказ ребёнка от занятий, появление асимметрии или потеря уже освоенных навыков — повод показаться врачу, не дожидаясь конца курса"
+      },
+      "en": {
+        "what": "A course of rehabilitation treatment for a child, planned and supervised by a doctor of physical and rehabilitation medicine together with a physiotherapist",
+        "how": "Movement, strength, muscle tone and age-appropriate skills are assessed first, then the sessions follow: exercises in the form of play, work on body position, massage and gentle techniques and, if needed, device-based treatments; a session lasts 30 to 45 minutes, the course runs over several sessions a week and the parents are taught how to continue at home",
+        "when": "Delayed motor development in an infant, increased or decreased muscle tone, torticollis, consequences of birth injury, recovery after fractures and operations, posture and gait problems, diseases of the nervous system and the muscles in children",
+        "prep": "Bring the referral, specialists' reports and images, dress the child in comfortable clothes and pack a spare set, do not come straight after a meal, and bring braces, insoles and glasses if the child uses them",
+        "abnormal": "Progress is usually judged at the end of the course by a repeat assessment comparing range of movement, strength and skills with the starting point. Pain, a child refusing the sessions, new asymmetry or the loss of skills already gained are reasons to see the doctor without waiting for the course to end"
+      },
+      "sr": {
+        "what": "Kurs rehabilitacije za dijete koji planira i vodi ljekar fizikalne i rehabilitacione medicine zajedno sa fizioterapeutom",
+        "how": "Najprije se procjenjuju pokreti, snaga, mišićni tonus i vještine primjerene uzrastu, a zatim slijede tretmani: vježbe kroz igru, rad na položaju tijela, masaža i blage tehnike, po potrebi i aparaturne procedure; tretman traje 30 do 45 minuta, kurs ide po nekoliko puta sedmično, a roditelje uče kako da nastave kod kuće",
+        "when": "Zaostajanje u motoričkom razvoju odojčeta, povišen ili snižen mišićni tonus, ukočen vrat, posljedice porođajne povrede, oporavak poslije preloma i operacija, poremećaji držanja i hoda, bolesti nervnog sistema i mišića kod djece",
+        "prep": "Ponijeti uputnicu, nalaze specijalista i snimke, obući dijete u udobnu odjeću i ponijeti rezervnu, ne dolaziti odmah poslije obroka i obavezno ponijeti ortoze, uloške i naočare ako ih dijete koristi",
+        "abnormal": "Napredak se obično procjenjuje na kraju kursa ponovnim pregledom, poređenjem obima pokreta, snage i vještina sa početnim stanjem. Bol, odbijanje tretmana, pojava asimetrije ili gubitak već stečenih vještina razlog su da se javite ljekaru i prije kraja kursa"
+      },
+      "de": {
+        "what": "Eine Rehabilitationsbehandlung für ein Kind, die ein Arzt für physikalische und rehabilitative Medizin gemeinsam mit der Physiotherapie plant und begleitet",
+        "how": "Zuerst werden Beweglichkeit, Kraft, Muskelspannung und altersgemäße Fähigkeiten beurteilt, danach folgen die Einheiten: Übungen in Spielform, Arbeit an der Körperhaltung, Massage und sanfte Techniken, bei Bedarf apparative Anwendungen; eine Einheit dauert 30 bis 45 Minuten, der Kurs läuft über mehrere Einheiten pro Woche, und die Eltern lernen, zu Hause weiterzuarbeiten",
+        "when": "Verzögerte motorische Entwicklung beim Säugling, erhöhte oder verminderte Muskelspannung, Schiefhals, Folgen einer Geburtsverletzung, Erholung nach Brüchen und Operationen, Haltungs- und Gangstörungen, Erkrankungen von Nervensystem und Muskeln bei Kindern",
+        "prep": "Überweisung, Facharztbefunde und Aufnahmen mitbringen, das Kind bequem anziehen und Wechselkleidung einpacken, nicht direkt nach dem Essen kommen und Orthesen, Einlagen und Brille mitnehmen, wenn das Kind sie benutzt",
+        "abnormal": "Der Fortschritt wird meist am Ende des Kurses mit einer erneuten Untersuchung beurteilt, bei der Bewegungsumfang, Kraft und Fähigkeiten mit dem Ausgangsbefund verglichen werden. Schmerzen, Verweigerung der Einheiten, neu auftretende Asymmetrie oder der Verlust bereits erworbener Fähigkeiten sind Gründe, den Arzt vor dem Kursende aufzusuchen"
+      },
+      "tr": {
+        "what": "Fiziksel tıp ve rehabilitasyon hekiminin fizyoterapistle birlikte planlayıp yürüttüğü, çocuğa yönelik rehabilitasyon programı",
+        "how": "Önce hareketler, kas gücü, kas tonusu ve yaşa uygun beceriler değerlendirilir, ardından seanslar başlar: oyunla yapılan egzersizler, vücut pozisyonu çalışması, masaj ve yumuşak teknikler, gerekirse cihazla uygulamalar; seans 30 ila 45 dakika sürer, program haftada birkaç seanstan oluşur ve ailelere evde nasıl devam edecekleri öğretilir",
+        "when": "Bebekte motor gelişim geriliği, kas tonusunun artması ya da azalması, boyun eğriliği, doğum yaralanmasının sonuçları, kırık ve ameliyat sonrası toparlanma, duruş ve yürüyüş bozuklukları, çocuklarda sinir sistemi ve kas hastalıkları",
+        "prep": "Sevk belgesini, uzman raporlarını ve görüntüleri getirmek, çocuğa rahat kıyafet giydirip yedek kıyafet almak, yemekten hemen sonra gelmemek, çocuk kullanıyorsa ortez, tabanlık ve gözlüğü yanında bulundurmak",
+        "abnormal": "İlerleme genellikle program sonunda yapılan yeni bir değerlendirmeyle, hareket açıklığı, güç ve becerilerin başlangıçla karşılaştırılmasıyla ölçülür. Ağrı, çocuğun seansları reddetmesi, yeni ortaya çıkan asimetri ya da kazanılmış becerilerin kaybı, programın bitmesini beklemeden hekime başvurma nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Курс рехабилитације за дијете који планира и води љекар физикалне и рехабилитационе медицине заједно са физиотерапеутом",
+        "how": "Најприје се процјењују покрети, снага, мишићни тонус и вјештине примјерене узрасту, а затим слиједе третмани: вјежбе кроз игру, рад на положају тијела, масажа и благе технике, по потреби и апаратурне процедуре; третман траје 30 до 45 минута, курс иде по неколико пута седмично, а родитеље уче како да наставе код куће",
+        "when": "Заостајање у моторичком развоју одојчета, повишен или снижен мишићни тонус, укочен врат, посљедице порођајне повреде, опоравак послије прелома и операција, поремећаји држања и хода, болести нервног система и мишића код дјеце",
+        "prep": "Понијети упутницу, налазе специјалиста и снимке, обући дијете у удобну одјећу и понијети резервну, не долазити одмах послије оброка и обавезно понијети ортозе, улошке и наочаре ако их дијете користи",
+        "abnormal": "Напредак се обично процјењује на крају курса поновним прегледом, поређењем обима покрета, снаге и вјештина са почетним стањем. Бол, одбијање третмана, појава асиметрије или губитак већ стечених вјештина разлог су да се јавите љекару и прије краја курса"
+      }
+    }
+  },
+  {
+    "slug": "subspecialist-pediatric-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приём детского врача, который после педиатрии прошёл дополнительное обучение по узкому направлению — например, по сердцу, почкам, гормонам или нервной системе ребёнка",
+        "how": "Врач разбирает направление и уже собранные данные, подробно расспрашивает родителей о течении беременности, родах, развитии и болезнях в семье, осматривает ребёнка по своему профилю, при необходимости выполняет профильное исследование на месте и даёт письменное заключение с планом; 30–40 минут",
+        "when": "Направление педиатра, когда вопрос выходит за рамки обычного приёма, шум в сердце, повторяющиеся инфекции мочевых путей, отставание или скачок роста, судороги и задержка развития, стойкие проблемы с пищеварением, редкие и сложные сочетания болезней",
+        "prep": "Взять направление, карту прививок, все прежние анализы и исследования, записи измерений роста и веса, список препаратов; ребёнку объяснить, что будет осмотр, и захватить его любимую игрушку и воду",
+        "abnormal": "По итогам приёма врач может уточнить диагноз, назначить профильные исследования или подобрать лечение с учётом возраста и веса ребёнка. Срок следующего визита определяют на приёме, а между визитами ребёнка наблюдает его педиатр"
+      },
+      "en": {
+        "what": "An appointment with a children's doctor who, after paediatrics, trained further in a narrow field such as the heart, the kidneys, hormones or the nervous system of a child",
+        "how": "The doctor goes through the referral and the data already collected, asks the parents in detail about the pregnancy, the birth, the development and illnesses in the family, examines the child within their field, performs a field-specific test on the spot if needed and issues a written report with a plan; 30 to 40 minutes",
+        "when": "A referral from the paediatrician when the question goes beyond an ordinary visit, a heart murmur, repeated urinary infections, slowed or accelerated growth, seizures and developmental delay, persistent digestive problems, rare and complex combinations of conditions",
+        "prep": "Bring the referral, the vaccination record, all earlier tests and investigations, the records of height and weight, and the list of medicines; tell the child that there will be an examination and take a favourite toy and water along",
+        "abnormal": "After the visit the doctor may refine the diagnosis, order tests within the field or adjust the treatment to the child's age and weight. The date of the next visit is set during the appointment, and between visits the child is followed by their own paediatrician"
+      },
+      "sr": {
+        "what": "Pregled dječjeg ljekara koji je poslije pedijatrije završio dodatnu obuku iz uže oblasti, na primjer za srce, bubrege, hormone ili nervni sistem djeteta",
+        "how": "Ljekar pregleda uputnicu i već prikupljene podatke, detaljno pita roditelje o trudnoći, porođaju, razvoju i bolestima u porodici, pregleda dijete u okviru svoje oblasti, po potrebi odmah uradi i pretragu iz svog profila i daje pisano mišljenje sa planom; 30 do 40 minuta",
+        "when": "Uput pedijatra kada pitanje prevazilazi redovan pregled, šum na srcu, ponovljene infekcije mokraćnih puteva, zaostajanje ili nagli skok u rastu, grčevi i zaostajanje u razvoju, uporne tegobe sa varenjem, rijetke i složene kombinacije bolesti",
+        "prep": "Ponijeti uputnicu, karton vakcinacije, sve ranije analize i pretrage, zapise o visini i težini i spisak lijekova; djetetu objasniti da slijedi pregled i ponijeti omiljenu igračku i vodu",
+        "abnormal": "Poslije pregleda ljekar može precizirati dijagnozu, tražiti pretrage iz svoje oblasti ili prilagoditi terapiju uzrastu i težini djeteta. Rok sljedeće posjete određuje se na pregledu, a između posjeta dijete prati njegov pedijatar"
+      },
+      "de": {
+        "what": "Ein Termin bei einem Kinderarzt, der nach der Pädiatrie eine Zusatzausbildung in einem engen Gebiet absolviert hat, etwa für Herz, Nieren, Hormone oder das Nervensystem des Kindes",
+        "how": "Der Arzt sichtet Überweisung und bereits vorhandene Daten, fragt die Eltern ausführlich nach Schwangerschaft, Geburt, Entwicklung und Erkrankungen in der Familie, untersucht das Kind im eigenen Gebiet, führt bei Bedarf gleich eine fachspezifische Untersuchung durch und erstellt einen schriftlichen Befund mit Plan; 30 bis 40 Minuten",
+        "when": "Überweisung des Kinderarztes, wenn die Frage über einen gewöhnlichen Termin hinausgeht, Herzgeräusch, wiederholte Harnwegsinfekte, verlangsamtes oder beschleunigtes Wachstum, Krampfanfälle und Entwicklungsverzögerung, anhaltende Verdauungsprobleme, seltene und komplexe Krankheitskombinationen",
+        "prep": "Überweisung, Impfpass, alle früheren Befunde und Untersuchungen, die Aufzeichnungen zu Größe und Gewicht sowie die Medikamentenliste mitbringen; dem Kind erklären, dass eine Untersuchung folgt, und Lieblingsspielzeug und Wasser einpacken",
+        "abnormal": "Nach dem Termin kann der Arzt die Diagnose präzisieren, Untersuchungen aus seinem Gebiet veranlassen oder die Behandlung an Alter und Gewicht des Kindes anpassen. Der nächste Termin wird in der Sprechstunde festgelegt, zwischen den Terminen betreut der eigene Kinderarzt das Kind"
+      },
+      "tr": {
+        "what": "Çocuk sağlığı eğitiminden sonra kalp, böbrek, hormonlar ya da sinir sistemi gibi dar bir alanda ek eğitim almış çocuk hekiminin muayenesi",
+        "how": "Hekim sevk belgesini ve toplanmış bilgileri gözden geçirir, aileye gebelik, doğum, gelişim ve ailedeki hastalıkları ayrıntılı sorar, çocuğu kendi alanı açısından muayene eder, gerekirse alanına özgü tetkiki yerinde yapar ve planı içeren yazılı rapor verir; 30 ila 40 dakika",
+        "when": "Sorunun olağan muayeneyi aştığı durumlarda çocuk hekiminin yönlendirmesi, kalpte üfürüm, tekrarlayan idrar yolu enfeksiyonları, büyümede gerilik ya da hızlanma, havale ve gelişim geriliği, geçmeyen sindirim sorunları, seyrek görülen ve karmaşık hastalık birliktelikleri",
+        "prep": "Sevk belgesini, aşı kartını, önceki tüm tahlil ve tetkikleri, boy ve kilo kayıtlarını ve ilaç listesini getirmek; çocuğa muayene olacağını anlatmak, sevdiği oyuncağı ve suyunu yanına almak",
+        "abnormal": "Muayene sonunda hekim tanıyı netleştirebilir, kendi alanına ait tetkikler isteyebilir ya da tedaviyi çocuğun yaşına ve kilosuna göre düzenleyebilir. Bir sonraki randevunun zamanı muayenede belirlenir, aralarda çocuğu kendi hekimi izler"
+      },
+      "sr_cyrl": {
+        "what": "Преглед дјечјег љекара који је послије педијатрије завршио додатну обуку из уже области, на примјер за срце, бубреге, хормоне или нервни систем дјетета",
+        "how": "Љекар прегледа упутницу и већ прикупљене податке, детаљно пита родитеље о трудноћи, порођају, развоју и болестима у породици, прегледа дијете у оквиру своје области, по потреби одмах уради и претрагу из свог профила и даје писано мишљење са планом; 30 до 40 минута",
+        "when": "Упут педијатра када питање превазилази редован преглед, шум на срцу, поновљене инфекције мокраћних путева, заостајање или нагли скок у расту, грчеви и заостајање у развоју, упорне тегобе са варењем, ријетке и сложене комбинације болести",
+        "prep": "Понијети упутницу, картон вакцинације, све раније анализе и претраге, записе о висини и тежини и списак лијекова; дјетету објаснити да слиједи преглед и понијети омиљену играчку и воду",
+        "abnormal": "Послије прегледа љекар може прецизирати дијагнозу, тражити претраге из своје области или прилагодити терапију узрасту и тежини дјетета. Рок сљедеће посјете одређује се на прегледу, а између посјета дијете прати његов педијатар"
+      }
+    }
+  }
+]

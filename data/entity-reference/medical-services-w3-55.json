@@ -1,0 +1,386 @@
+[
+  {
+    "slug": "carpal-tunnel-surgery",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Вмешательство на запястье, после которого срединному нерву становится просторнее в костно-связочном канале",
+        "how": "Под местной анестезией через короткий разрез на ладони или через эндоскопический порт разделяют связку, перекрывающую канал, проверяют, что нерв свободен, и ушивают кожу; приём занимает меньше часа, домой обычно отпускают в тот же день",
+        "when": "Длительное онемение большого, указательного и среднего пальцев, ночные боли в кисти, снижение силы захвата, подтверждённое при электронейромиографии сдавление нерва, отсутствие эффекта от шины и лечения без операции",
+        "prep": "Накануне вымыть руку и не наносить крем, снять кольца и браслет, взять заключение электронейромиографии и направление, заранее обсудить с врачом препараты, влияющие на свёртывание крови, и позаботиться о том, чтобы не садиться за руль после вмешательства",
+        "abnormal": "Чувствительность в пальцах возвращается постепенно, а основание ладони и рубец несколько недель могут быть болезненны при опоре. Если онемение или слабость нарастают, рана краснеет, мокнет или поднялась температура, нужно показаться оперировавшему врачу, не дожидаясь планового осмотра"
+      },
+      "en": {
+        "what": "A wrist procedure that gives the median nerve more room inside the bone and ligament canal",
+        "how": "Under local anaesthesia, through a short palm incision or an endoscopic port, the ligament covering the canal is divided, the nerve is checked to be free and the skin is closed; the visit takes under an hour and patients usually go home the same day",
+        "when": "Long-standing numbness of the thumb, index and middle fingers, night pain in the hand, weaker grip, nerve compression confirmed by nerve conduction testing, no benefit from a splint and non-surgical treatment",
+        "prep": "Wash the hand the day before and use no cream, remove rings and bracelets, bring the nerve conduction report and the referral, discuss blood-thinning medication with the doctor in advance and arrange not to drive yourself afterwards",
+        "abnormal": "Sensation in the fingers returns gradually, while the base of the palm and the scar may stay tender when leaning on the hand for some weeks. If numbness or weakness increases, or the wound becomes red, wet or feverish, see the operating doctor before the scheduled check-up"
+      },
+      "sr": {
+        "what": "Zahvat na ručnom zglobu poslije kojeg srednji živac ima više prostora u koštano-ligamentnom kanalu",
+        "how": "U lokalnoj anesteziji, kroz kratak rez na dlanu ili endoskopski port, presijeca se ligament koji natkriljuje kanal, provjerava se da je živac slobodan i ušiva se koža; posjeta traje manje od sata, a pacijent najčešće istog dana ide kući",
+        "when": "Dugotrajna utrnulost palca, kažiprsta i srednjeg prsta, noćni bolovi u šaci, slabiji stisak, pritisak na živac potvrđen elektroneurografijom, izostanak efekta udlage i liječenja bez operacije",
+        "prep": "Dan ranije oprati ruku i ne stavljati kremu, skinuti prstenje i narukvicu, ponijeti nalaz elektroneurografije i uput, unaprijed sa ljekarom dogovoriti lijekove koji utiču na zgrušavanje krvi i obezbijediti da poslije zahvata ne vozite sami",
+        "abnormal": "Osjećaj u prstima se vraća postepeno, a korijen dlana i ožiljak mogu sedmicama biti osjetljivi pri oslanjanju. Ako se utrnulost ili slabost pojačavaju, rana pocrveni, curi ili se javi povišena temperatura, javite se ljekaru koji je operisao i prije zakazane kontrole"
+      },
+      "de": {
+        "what": "Ein Eingriff am Handgelenk, nach dem der Mittelnerv im knöchern-bandhaften Kanal mehr Platz hat",
+        "how": "In örtlicher Betäubung wird über einen kurzen Schnitt in der Handfläche oder einen endoskopischen Zugang das Band über dem Kanal durchtrennt, der Nerv auf freie Lage geprüft und die Haut verschlossen; der Termin dauert unter einer Stunde, meist geht man am selben Tag nach Hause",
+        "when": "Anhaltendes Taubheitsgefühl in Daumen, Zeige- und Mittelfinger, nächtliche Handschmerzen, schwächerer Griff, in der Nervenleitmessung bestätigte Nervenenge, fehlende Wirkung von Schiene und nicht-operativer Behandlung",
+        "prep": "Am Vortag die Hand waschen und keine Creme auftragen, Ringe und Armband ablegen, Befund der Nervenleitmessung und Überweisung mitbringen, blutverdünnende Medikamente vorab mit der Ärztin oder dem Arzt besprechen und dafür sorgen, danach nicht selbst zu fahren",
+        "abnormal": "Das Gefühl in den Fingern kehrt allmählich zurück, Handballen und Narbe können beim Abstützen noch einige Wochen empfindlich sein. Nehmen Taubheit oder Schwäche zu oder wird die Wunde rot, nässend oder fiebrig, sollte man sich vor der geplanten Kontrolle in der operierenden Praxis vorstellen"
+      },
+      "tr": {
+        "what": "Median sinirin kemik ve bağ ile çevrili kanal içinde daha fazla yer bulmasını sağlayan bir el bileği girişimi",
+        "how": "Lokal anestezi altında avuç içindeki kısa bir kesiden ya da endoskopik girişten kanalın üzerindeki bağ ayrılır, sinirin serbest kaldığı kontrol edilir ve cilt kapatılır; randevu bir saatten kısa sürer, hasta genellikle aynı gün evine döner",
+        "when": "Başparmak, işaret ve orta parmakta uzun süren uyuşma, elde gece ağrısı, kavrama gücünün azalması, sinir ileti çalışmasıyla doğrulanmış sinir sıkışması, atel ve cerrahi dışı tedaviden yarar görülmemesi",
+        "prep": "Bir gün önce eli yıkayın ve krem sürmeyin, yüzük ve bilekliği çıkarın, sinir ileti çalışması raporunu ve sevk belgesini getirin, kan sulandırıcı ilaçları önceden hekimle konuşun ve işlem sonrası kendiniz araç kullanmayacak şekilde plan yapın",
+        "abnormal": "Parmaklardaki his yavaş yavaş geri gelir, avuç tabanı ve iz birkaç hafta boyunca el üzerine yaslanırken hassas kalabilir. Uyuşma veya güçsüzlük artarsa, yara kızarır, akıntı yapar ya da ateş çıkarsa planlı kontrolü beklemeden ameliyatı yapan hekime başvurmak gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Захват на ручном зглобу послије којег средњи живац има више простора у коштано-лигаментном каналу",
+        "how": "У локалној анестезији, кроз кратак рез на длану или ендоскопски порт, пресијеца се лигамент који наткриљује канал, провјерава се да је живац слободан и ушива се кожа; посјета траје мање од сата, а пацијент најчешће истог дана иде кући",
+        "when": "Дуготрајна утрнулост палца, кажипрста и средњег прста, ноћни болови у шаци, слабији стисак, притисак на живац потврђен електронеурографијом, изостанак ефекта удлаге и лијечења без операције",
+        "prep": "Дан раније опрати руку и не стављати крему, скинути прстење и наруквицу, понијети налаз електронеурографије и упут, унапријед са љекаром договорити лијекове који утичу на згрушавање крви и обезбиједити да послије захвата не возите сами",
+        "abnormal": "Осјећај у прстима се враћа постепено, а коријен длана и ожиљак могу седмицама бити осјетљиви при ослањању. Ако се утрнулост или слабост појачавају, рана поцрвени, цури или се јави повишена температура, јавите се љекару који је оперисао и прије заказане контроле"
+      }
+    }
+  },
+  {
+    "slug": "emng-de-and-ge",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Электрофизиологическая оценка периферических нервов и мышц сразу и на руках, и на ногах за один приём",
+        "how": "Накожными электродами по ходу нерва подают короткие импульсы тока, пациент чувствует щелчки и непроизвольное подёргивание мышцы, а при необходимости врач вводит в мышцу тонкий игольчатый электрод и слушает её активность в покое и при напряжении; обследование четырёх конечностей идёт дольше, чем одной зоны, и обычно укладывается примерно в час",
+        "when": "Онемение, жжение и слабость одновременно в кистях и стопах, подозрение на распространённое поражение нервов, в том числе при диабете, оценка того, насколько широко задеты нервы, наблюдение в динамике, неврологические жалобы без чёткой локализации",
+        "prep": "Кожа рук и ног должна быть чистой и сухой, без крема и масла, лучше прийти в одежде, которую легко подвернуть, и с тёплыми конечностями; постоянные препараты отменяют только по решению врача, а о кардиостимуляторе, нарушениях свёртывания и приёме разжижающих кровь средств предупредите заранее",
+        "abnormal": "Изменения могут быть связаны с поражением оболочки или самого волокна нерва, со сдавлением нерва на отдельном участке, с болезнью мышцы или с общим обменным заболеванием, задевающим нервы. Картину целиком и дальнейшие шаги оценивает невролог вместе с жалобами и осмотром"
+      },
+      "en": {
+        "what": "An electrophysiological assessment of the peripheral nerves and muscles of both the arms and the legs in a single session",
+        "how": "Surface electrodes deliver short electrical pulses along the nerve, which feel like clicks with a brief involuntary twitch, and when needed a thin needle electrode is placed in the muscle to listen to its activity at rest and during contraction; covering all four limbs takes longer than a single region, usually around an hour",
+        "when": "Numbness, burning and weakness in the hands and feet at the same time, suspected widespread nerve involvement including in diabetes, assessing how far the nerves are affected, follow-up over time, neurological complaints without a clear location",
+        "prep": "The skin of the arms and legs should be clean and dry, without cream or oil, wear clothing that is easy to roll up and come with warm limbs; regular medication is stopped only if your doctor decides so, and mention a pacemaker, clotting disorders or blood thinners in advance",
+        "abnormal": "Findings may be linked to damage to the nerve sheath or the fibre itself, to compression at one specific point, to a muscle disorder or to a general metabolic condition affecting the nerves. The overall picture and the next steps are judged by a neurologist together with your symptoms and examination"
+      },
+      "sr": {
+        "what": "Elektrofiziološka procjena perifernih živaca i mišića istovremeno na rukama i na nogama u jednoj posjeti",
+        "how": "Površinskim elektrodama duž živca se šalju kratki strujni impulsi koji se osjećaju kao škljocaji uz kratko nehotično trzanje mišića, a po potrebi ljekar u mišić uvodi tanku igličastu elektrodu i sluša njegovu aktivnost u miru i pri naprezanju; pregled sva četiri ekstremiteta traje duže nego jedne regije, obično oko sat vremena",
+        "when": "Utrnulost, pecanje i slabost istovremeno u šakama i stopalima, sumnja na rasprostranjeno oštećenje živaca uključujući i kod dijabetesa, procjena koliko su široko živci zahvaćeni, praćenje tokom vremena, neurološke tegobe bez jasne lokalizacije",
+        "prep": "Koža ruku i nogu treba da bude čista i suva, bez kreme i ulja, obucite odjeću koju je lako zavrnuti i dođite sa toplim ekstremitetima; redovnu terapiju ukida samo ljekar, a o pejsmejkeru, poremećajima zgrušavanja i lijekovima koji razrjeđuju krv obavijestite unaprijed",
+        "abnormal": "Nalaz može biti povezan sa oštećenjem ovojnice ili samog vlakna živca, sa pritiskom na živac na određenom mjestu, sa bolešću mišića ili sa opštom metaboličkom bolešću koja zahvata živce. Cjelokupnu sliku i dalje korake procjenjuje neurolog zajedno sa tegobama i pregledom"
+      },
+      "de": {
+        "what": "Eine elektrophysiologische Beurteilung der peripheren Nerven und Muskeln an Armen und Beinen in einem einzigen Termin",
+        "how": "Über Oberflächenelektroden werden entlang des Nervs kurze Stromimpulse abgegeben, die sich wie ein Klopfen mit kurzem unwillkürlichem Muskelzucken anfühlen, bei Bedarf wird zusätzlich eine dünne Nadelelektrode in den Muskel eingeführt, um seine Aktivität in Ruhe und bei Anspannung abzuhören; die Untersuchung aller vier Gliedmaßen dauert länger als eine Region, meist etwa eine Stunde",
+        "when": "Taubheit, Brennen und Schwäche gleichzeitig in Händen und Füßen, Verdacht auf eine ausgedehnte Nervenschädigung auch bei Diabetes, Einschätzung, wie weit die Nerven betroffen sind, Verlaufskontrolle, neurologische Beschwerden ohne klare Zuordnung",
+        "prep": "Die Haut an Armen und Beinen sollte sauber und trocken sein, ohne Creme und Öl, Kleidung tragen, die sich leicht hochschieben lässt, und mit warmen Gliedmaßen kommen; Dauermedikamente werden nur nach ärztlicher Entscheidung abgesetzt, Herzschrittmacher, Gerinnungsstörungen und Blutverdünner bitte vorab mitteilen",
+        "abnormal": "Veränderungen können mit einer Schädigung der Nervenhülle oder der Faser selbst, mit einer Enge an einer bestimmten Stelle, mit einer Muskelerkrankung oder mit einer Stoffwechselerkrankung zusammenhängen, die die Nerven mitbetrifft. Das Gesamtbild und das weitere Vorgehen beurteilt die Neurologie zusammen mit Beschwerden und Untersuchung"
+      },
+      "tr": {
+        "what": "Hem kolların hem de bacakların çevresel sinir ve kaslarının tek seansta elektrofizyolojik olarak değerlendirilmesi",
+        "how": "Yüzey elektrotlarıyla sinir boyunca kısa elektrik uyarıları verilir, bu uyarılar tıklama ve kasta kısa istemsiz bir seğirme şeklinde hissedilir, gerekirse kasa ince bir iğne elektrot yerleştirilerek kasın dinlenme ve kasılma sırasındaki aktivitesi dinlenir; dört ekstremitenin tamamı tek bir bölgeden daha uzun sürer, genellikle bir saat kadar",
+        "when": "Ellerde ve ayaklarda aynı anda uyuşma, yanma ve güçsüzlük, diyabet dahil yaygın sinir tutulumu şüphesi, sinirlerin ne kadar geniş etkilendiğinin değerlendirilmesi, zaman içinde izlem, yeri net olmayan nörolojik yakınmalar",
+        "prep": "Kol ve bacak derisi temiz ve kuru, kremsiz ve yağsız olmalı, kolayca sıyrılabilen kıyafetle ve uzuvlar üşümemiş halde gelin; sürekli kullanılan ilaçlar yalnızca hekim kararıyla kesilir, kalp pili, pıhtılaşma bozukluğu ve kan sulandırıcı kullanımı önceden bildirilmelidir",
+        "abnormal": "Bulgular sinir kılıfının ya da lifin kendisinin zedelenmesiyle, belirli bir noktadaki sıkışmayla, kas hastalığıyla veya sinirleri de etkileyen genel bir metabolik hastalıkla ilişkili olabilir. Tablonun bütününü ve sonraki adımları yakınmalar ve muayene ile birlikte nöroloji uzmanı değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Електрофизиолошка процјена периферних живаца и мишића истовремено на рукама и на ногама у једној посјети",
+        "how": "Површинским електродама дуж живца се шаљу кратки струјни импулси који се осјећају као шкљоцаји уз кратко нехотично трзање мишића, а по потреби љекар у мишић уводи танку игличасту електроду и слуша његову активност у миру и при напрезању; преглед сва четири екстремитета траје дуже него једне регије, обично око сат времена",
+        "when": "Утрнулост, пецање и слабост истовремено у шакама и стопалима, сумња на распрострањено оштећење живаца укључујући и код дијабетеса, процјена колико су широко живци захваћени, праћење током времена, неуролошке тегобе без јасне локализације",
+        "prep": "Кожа руку и ногу треба да буде чиста и сува, без креме и уља, обуците одјећу коју је лако заврнути и дођите са топлим екстремитетима; редовну терапију укида само љекар, а о пејсмејкеру, поремећајима згрушавања и лијековима који разрјеђују крв обавијестите унапријед",
+        "abnormal": "Налаз може бити повезан са оштећењем овојнице или самог влакна живца, са притиском на живац на одређеном мјесту, са болешћу мишића или са општом метаболичком болешћу која захвата живце. Цјелокупну слику и даље кораке процјењује неуролог заједно са тегобама и прегледом"
+      }
+    }
+  },
+  {
+    "slug": "emng-de-or-ge",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Электрофизиологическая проверка нервов и мышц одной области тела: только рук или только ног, когда жалобы ограничены ими",
+        "how": "Накожными электродами подают слабые импульсы тока по ходу выбранного нерва и измеряют скорость и величину ответа, при необходимости тонкой иглой записывают активность конкретной мышцы; исследуется одна зона, поэтому приём короче, чем при обследовании всех конечностей",
+        "when": "Онемение и боль в кисти, подозрение на сдавление нерва в запястье или у локтя, свисающая стопа, боль и слабость в одной ноге при подозрении на корешковое поражение, контроль восстановления нерва после травмы одной конечности",
+        "prep": "Кожа без крема и масла, конечность лучше согреть, потому что на холоде показатели меняются, одежда должна открывать нужную руку или ногу; препараты самостоятельно не отменяют, о кардиостимуляторе и склонности к кровотечениям сообщите до начала",
+        "abnormal": "Отклонение может быть связано с местным сдавлением нерва, с последствиями травмы или с начальным поражением нервов этой конечности. Какой именно участок страдает и что делать дальше, определяет невролог по совокупности данных"
+      },
+      "en": {
+        "what": "An electrophysiological check of the nerves and muscles of one body region, either the arms or the legs, when symptoms are limited to it",
+        "how": "Surface electrodes send mild electrical pulses along the chosen nerve and the speed and size of the response are measured, and if needed a thin needle records the activity of a specific muscle; only one region is studied, so the visit is shorter than a full four-limb study",
+        "when": "Numbness and pain in the hand, suspected nerve compression at the wrist or elbow, foot drop, pain and weakness in one leg with suspected nerve root involvement, follow-up of nerve recovery after injury to one limb",
+        "prep": "Skin without cream or oil, warm the limb beforehand because cold changes the readings, and wear clothing that frees the arm or leg being tested; do not stop any medication on your own and mention a pacemaker or a tendency to bleed before the start",
+        "abnormal": "A deviation may be linked to local compression of the nerve, to the consequences of an injury or to early nerve involvement in that limb. Which segment is affected and what to do next is determined by a neurologist from the whole picture"
+      },
+      "sr": {
+        "what": "Elektrofiziološka provjera živaca i mišića jedne regije tijela, samo ruku ili samo nogu, kada su tegobe ograničene na nju",
+        "how": "Površinskim elektrodama se duž izabranog živca šalju blagi strujni impulsi i mjeri se brzina i veličina odgovora, a po potrebi se tankom iglom bilježi aktivnost konkretnog mišića; ispituje se jedna regija, pa posjeta traje kraće nego pregled svih ekstremiteta",
+        "when": "Utrnulost i bol u šaci, sumnja na pritisak na živac u ručnom zglobu ili kod lakta, viseće stopalo, bol i slabost u jednoj nozi uz sumnju na zahvaćenost korijena živca, praćenje oporavka živca poslije povrede jednog ekstremiteta",
+        "prep": "Koža bez kreme i ulja, ekstremitet je dobro prethodno zagrijati jer hladnoća mijenja vrijednosti, a odjeća treba da oslobodi ruku ili nogu koja se ispituje; terapiju ne prekidajte sami, a o pejsmejkeru i sklonosti krvarenju obavijestite prije početka",
+        "abnormal": "Odstupanje može biti povezano sa lokalnim pritiskom na živac, sa posljedicama povrede ili sa ranim oštećenjem živaca tog ekstremiteta. Koji je dio zahvaćen i šta dalje, određuje neurolog na osnovu cjelokupne slike"
+      },
+      "de": {
+        "what": "Eine elektrophysiologische Prüfung der Nerven und Muskeln einer Körperregion, entweder der Arme oder der Beine, wenn die Beschwerden darauf begrenzt sind",
+        "how": "Oberflächenelektroden geben leichte Stromimpulse entlang des ausgewählten Nervs ab, Geschwindigkeit und Höhe der Antwort werden gemessen, bei Bedarf zeichnet eine dünne Nadel die Aktivität eines bestimmten Muskels auf; es wird nur eine Region untersucht, der Termin ist daher kürzer als bei allen Gliedmaßen",
+        "when": "Taubheit und Schmerz in der Hand, Verdacht auf Nervenenge am Handgelenk oder Ellenbogen, Fußheberschwäche, Schmerz und Schwäche in einem Bein bei Verdacht auf Nervenwurzelbeteiligung, Verlaufskontrolle der Nervenerholung nach Verletzung einer Gliedmaße",
+        "prep": "Haut ohne Creme und Öl, die Gliedmaße vorher wärmen, da Kälte die Messwerte verändert, und Kleidung tragen, die Arm oder Bein freilegt; Medikamente nicht eigenmächtig absetzen und Herzschrittmacher oder Blutungsneigung vor Beginn mitteilen",
+        "abnormal": "Eine Abweichung kann mit einer örtlichen Nervenenge, mit Folgen einer Verletzung oder mit einer beginnenden Nervenschädigung in dieser Gliedmaße zusammenhängen. Welcher Abschnitt betroffen ist und wie weiter vorgegangen wird, legt die Neurologie anhand des Gesamtbildes fest"
+      },
+      "tr": {
+        "what": "Yakınmalar tek bölgeyle sınırlıyken yalnızca kolların ya da yalnızca bacakların sinir ve kaslarının elektrofizyolojik olarak incelenmesi",
+        "how": "Yüzey elektrotlarıyla seçilen sinir boyunca hafif elektrik uyarıları verilir, yanıtın hızı ve büyüklüğü ölçülür, gerekirse ince bir iğneyle belirli bir kasın aktivitesi kaydedilir; tek bölge incelendiği için randevu tüm ekstremite incelemesinden kısadır",
+        "when": "Elde uyuşma ve ağrı, el bileği ya da dirsekte sinir sıkışması şüphesi, düşük ayak, sinir kökü tutulumu düşünülen tek taraflı bacak ağrısı ve güçsüzlüğü, tek bir uzuvdaki sinir yaralanması sonrası iyileşmenin izlenmesi",
+        "prep": "Deri kremsiz ve yağsız olmalı, soğuk ölçümleri değiştirdiği için uzuv önceden ısıtılmalı, giysi incelenecek kolu ya da bacağı serbest bırakmalı; ilaçlarınızı kendi başınıza kesmeyin, kalp pili ve kanamaya yatkınlık durumunu başlamadan önce bildirin",
+        "abnormal": "Sapma sinirin yerel olarak sıkışmasıyla, bir yaralanmanın sonuçlarıyla veya o uzuvdaki erken sinir tutulumuyla ilişkili olabilir. Hangi bölümün etkilendiğine ve sonraki adıma nöroloji uzmanı tüm veriler ışığında karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Електрофизиолошка провјера живаца и мишића једне регије тијела, само руку или само ногу, када су тегобе ограничене на њу",
+        "how": "Површинским електродама се дуж изабраног живца шаљу благи струјни импулси и мјери се брзина и величина одговора, а по потреби се танком иглом биљежи активност конкретног мишића; испитује се једна регија, па посјета траје краће него преглед свих екстремитета",
+        "when": "Утрнулост и бол у шаци, сумња на притисак на живац у ручном зглобу или код лакта, висеће стопало, бол и слабост у једној нози уз сумњу на захваћеност коријена живца, праћење опоравка живца послије повреде једног екстремитета",
+        "prep": "Кожа без креме и уља, екстремитет је добро претходно загријати јер хладноћа мијења вриједности, а одјећа треба да ослободи руку или ногу која се испитује; терапију не прекидајте сами, а о пејсмејкеру и склоности крварењу обавијестите прије почетка",
+        "abnormal": "Одступање може бити повезано са локалним притиском на живац, са посљедицама повреде или са раним оштећењем живаца тог екстремитета. Који је дио захваћен и шта даље, одређује неуролог на основу цјелокупне слике"
+      }
+    }
+  },
+  {
+    "slug": "mini-mental-state-examination-mmse",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Короткий структурированный опросник для ориентировочной оценки памяти, внимания, речи и ориентации во времени и пространстве",
+        "how": "Врач задаёт простые вопросы и даёт небольшие задания: назвать дату и место, запомнить и повторить слова, посчитать, выполнить инструкцию, написать фразу и перерисовать фигуру; нужны только бумага и карандаш, беседа занимает около десяти минут",
+        "when": "Жалобы на забывчивость и рассеянность, оценка когнитивных функций в пожилом возрасте, наблюдение за динамикой после инсульта или травмы головы, контроль состояния при уже назначенном лечении, расширенный неврологический осмотр",
+        "prep": "Специальной подготовки нет; возьмите очки и слуховой аппарат, если ими пользуетесь, приходите выспавшимся, по возможности проходите тест на родном языке и скажите врачу, если накануне принимали успокоительные или снотворные",
+        "abnormal": "Невысокий результат может быть связан не только со снижением когнитивных функций, но и с усталостью, тревогой, подавленным настроением, плохим слухом или зрением, уровнем образования и языковым барьером. Это ориентировочный скрининг, а не диагноз: результат врач сопоставляет с осмотром и другими обследованиями"
+      },
+      "en": {
+        "what": "A short structured questionnaire giving a rough measure of memory, attention, speech and orientation in time and place",
+        "how": "The doctor asks simple questions and sets small tasks: naming the date and place, recalling and repeating words, counting, following an instruction, writing a sentence and copying a figure; only paper and pencil are needed and the interview takes about ten minutes",
+        "when": "Complaints of forgetfulness and poor concentration, assessment of cognition in older age, follow-up after a stroke or head injury, monitoring during ongoing treatment, an extended neurological examination",
+        "prep": "No special preparation; bring your glasses and hearing aid if you use them, come well rested, take the test in your first language where possible and tell the doctor if you took sedatives or sleeping pills the night before",
+        "abnormal": "A low score may be linked not only to declining cognition but also to tiredness, anxiety, low mood, poor hearing or vision, level of education and language barriers. This is a rough screening tool and not a diagnosis: the doctor compares the result with the examination and further tests"
+      },
+      "sr": {
+        "what": "Kratak strukturisan upitnik za okvirnu procjenu pamćenja, pažnje, govora i orijentacije u vremenu i prostoru",
+        "how": "Ljekar postavlja jednostavna pitanja i daje kratke zadatke: imenovati datum i mjesto, zapamtiti i ponoviti riječi, računati, izvršiti uputstvo, napisati rečenicu i precrtati figuru; potrebni su samo papir i olovka, a razgovor traje oko deset minuta",
+        "when": "Tegobe sa zaboravnošću i rasijanošću, procjena kognitivnih funkcija u starijem dobu, praćenje stanja poslije moždanog udara ili povrede glave, kontrola tokom već uvedene terapije, prošireni neurološki pregled",
+        "prep": "Posebna priprema nije potrebna; ponesite naočare i slušni aparat ako ih koristite, dođite naspavani, test po mogućnosti radite na maternjem jeziku i recite ljekaru ako ste prethodno uzimali sedative ili tablete za spavanje",
+        "abnormal": "Nizak rezultat može biti povezan ne samo sa slabljenjem kognitivnih funkcija nego i sa umorom, anksioznošću, potištenošću, slabijim sluhom ili vidom, nivoom obrazovanja i jezičkom barijerom. Riječ je o okvirnom skriningu, a ne o dijagnozi: rezultat ljekar poredi sa pregledom i dodatnim ispitivanjima"
+      },
+      "de": {
+        "what": "Ein kurzer strukturierter Fragebogen zur orientierenden Einschätzung von Gedächtnis, Aufmerksamkeit, Sprache sowie zeitlicher und örtlicher Orientierung",
+        "how": "Die Ärztin oder der Arzt stellt einfache Fragen und gibt kleine Aufgaben: Datum und Ort nennen, Wörter merken und wiederholen, rechnen, eine Anweisung ausführen, einen Satz schreiben und eine Figur abzeichnen; nötig sind nur Papier und Stift, das Gespräch dauert etwa zehn Minuten",
+        "when": "Klagen über Vergesslichkeit und Unkonzentriertheit, Einschätzung der Denkleistung im höheren Alter, Verlaufsbeobachtung nach Schlaganfall oder Kopfverletzung, Kontrolle bei bereits begonnener Behandlung, erweiterte neurologische Untersuchung",
+        "prep": "Keine besondere Vorbereitung; Brille und Hörgerät mitbringen, falls genutzt, ausgeruht kommen, den Test möglichst in der Muttersprache absolvieren und mitteilen, wenn am Vorabend Beruhigungs- oder Schlafmittel eingenommen wurden",
+        "abnormal": "Ein niedriges Ergebnis kann nicht nur mit nachlassender Denkleistung zusammenhängen, sondern auch mit Müdigkeit, Angst, gedrückter Stimmung, schlechtem Hören oder Sehen, Bildungsstand und Sprachbarriere. Es handelt sich um eine orientierende Testung und nicht um eine Diagnose: das Ergebnis wird mit Untersuchung und weiteren Verfahren zusammengeführt"
+      },
+      "tr": {
+        "what": "Belleği, dikkati, konuşmayı ve zaman ile yer yönelimini kabaca ölçen kısa ve yapılandırılmış bir soru dizisi",
+        "how": "Hekim basit sorular sorar ve küçük görevler verir: tarihi ve yeri söylemek, kelimeleri akılda tutup tekrarlamak, saymak, bir yönergeyi uygulamak, cümle yazmak ve bir şekli kopyalamak; yalnızca kâğıt ve kalem gerekir, görüşme yaklaşık on dakika sürer",
+        "when": "Unutkanlık ve dikkat dağınıklığı yakınması, ileri yaşta bilişsel işlevlerin değerlendirilmesi, inme veya kafa travması sonrası izlem, sürmekte olan tedavi sırasında kontrol, ayrıntılı nörolojik muayene",
+        "prep": "Özel bir hazırlık gerekmez; gözlük ve işitme cihazı kullanıyorsanız getirin, dinlenmiş olarak gelin, testi mümkünse ana dilinizde yapın ve bir önceki akşam sakinleştirici ya da uyku ilacı aldıysanız hekime söyleyin",
+        "abnormal": "Düşük bir sonuç yalnızca bilişsel gerilemeyle değil, yorgunlukla, kaygıyla, çökkün ruh haliyle, işitme ya da görme azlığıyla, eğitim düzeyiyle ve dil engeliyle de ilişkili olabilir. Bu bir tanı değil, kaba bir tarama aracıdır: sonucu hekim muayene ve diğer incelemelerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Кратак структурисан упитник за оквирну процјену памћења, пажње, говора и оријентације у времену и простору",
+        "how": "Љекар поставља једноставна питања и даје кратке задатке: именовати датум и мјесто, запамтити и поновити ријечи, рачунати, извршити упутство, написати реченицу и прецртати фигуру; потребни су само папир и оловка, а разговор траје око десет минута",
+        "when": "Тегобе са заборавношћу и расијаношћу, процјена когнитивних функција у старијем добу, праћење стања послије можданог удара или повреде главе, контрола током већ уведене терапије, проширени неуролошки преглед",
+        "prep": "Посебна припрема није потребна; понесите наочаре и слушни апарат ако их користите, дођите наспавани, тест по могућности радите на матерњем језику и реците љекару ако сте претходно узимали седативе или таблете за спавање",
+        "abnormal": "Низак резултат може бити повезан не само са слабљењем когнитивних функција него и са умором, анксиозношћу, потиштеношћу, слабијим слухом или видом, нивоом образовања и језичком баријером. Ријеч је о оквирном скринингу, а не о дијагнози: резултат љекар пореди са прегледом и додатним испитивањима"
+      }
+    }
+  },
+  {
+    "slug": "neuromuscular-transmission-test",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Проверка того, насколько надёжно сигнал переходит с нерва на мышцу в месте их соединения",
+        "how": "На мышцу накладывают записывающие электроды, нерв стимулируют серией одинаковых импульсов и смотрят, не слабеет ли ответ мышцы от импульса к импульсу, иногда пробу повторяют после короткой нагрузки; стимуляция ощущается как разряды тока с подёргиванием мышцы, всё занимает обычно меньше получаса",
+        "when": "Слабость, которая нарастает к вечеру и после нагрузки, опущение века, двоение, трудности при жевании, глотании и удержании головы, подозрение на нарушение нервно-мышечной передачи, наблюдение при уже известном диагнозе",
+        "prep": "Кожа чистая, без крема; препараты, влияющие на нервно-мышечную передачу, отменяют заранее только по решению лечащего врача, самостоятельно ничего не отменяйте и обязательно назовите все принимаемые средства перед началом",
+        "abnormal": "Ослабление ответа мышцы при повторной стимуляции может быть связано с нарушением передачи сигнала между нервом и мышцей, но похожую картину дают и другие причины, включая приём некоторых препаратов. Результат оценивает невролог вместе с осмотром, анализами и при необходимости другими электрофизиологическими пробами"
+      },
+      "en": {
+        "what": "A check of how reliably the signal passes from the nerve to the muscle at the junction between them",
+        "how": "Recording electrodes are placed over the muscle, the nerve is stimulated with a series of identical pulses and the muscle response is watched for any fading from pulse to pulse, sometimes repeated after a short effort; the stimulation feels like small electric shocks with a twitch and the whole test usually takes under half an hour",
+        "when": "Weakness that builds up towards evening and after exertion, drooping eyelid, double vision, difficulty chewing, swallowing or holding the head up, suspected disturbance of nerve-to-muscle signalling, monitoring of an already known condition",
+        "prep": "Clean skin without cream; medication that affects nerve-to-muscle signalling is paused in advance only if the treating doctor decides so, never on your own, and all medicines you take should be listed before the start",
+        "abnormal": "A fading muscle response on repeated stimulation may be linked to impaired signalling between nerve and muscle, but a similar pattern has other causes, including certain medicines. The result is judged by a neurologist alongside the examination, laboratory tests and, if needed, other electrophysiological studies"
+      },
+      "sr": {
+        "what": "Provjera koliko pouzdano signal prelazi sa živca na mišić na mjestu njihovog spoja",
+        "how": "Na mišić se postavljaju elektrode koje bilježe odgovor, živac se stimuliše nizom istih impulsa i prati se da li odgovor mišića slabi od impulsa do impulsa, ponekad se proba ponavlja poslije kratkog naprezanja; stimulacija se osjeća kao strujni udari uz trzanje mišića, a cio test obično traje manje od pola sata",
+        "when": "Slabost koja se pojačava pred veče i poslije napora, spušten kapak, duple slike, otežano žvakanje, gutanje i držanje glave, sumnja na poremećaj prenosa sa živca na mišić, praćenje već poznatog stanja",
+        "prep": "Koža čista, bez kreme; lijekovi koji utiču na prenos sa živca na mišić pauziraju se unaprijed samo po odluci ljekara, nikako samoinicijativno, a sve što uzimate treba navesti prije početka",
+        "abnormal": "Slabljenje odgovora mišića pri ponovljenoj stimulaciji može biti povezano sa poremećajem prenosa signala između živca i mišića, ali sličnu sliku daju i drugi uzroci, uključujući pojedine lijekove. Nalaz procjenjuje neurolog zajedno sa pregledom, laboratorijom i po potrebi drugim elektrofiziološkim ispitivanjima"
+      },
+      "de": {
+        "what": "Eine Prüfung, wie zuverlässig das Signal an der Verbindungsstelle vom Nerv auf den Muskel übergeht",
+        "how": "Über dem Muskel werden Ableitelektroden angebracht, der Nerv wird mit einer Serie gleicher Impulse gereizt und beobachtet, ob die Muskelantwort von Impuls zu Impuls kleiner wird, teils wird die Messung nach kurzer Anspannung wiederholt; die Reizung fühlt sich wie leichte Stromstöße mit Muskelzucken an, insgesamt dauert es meist weniger als eine halbe Stunde",
+        "when": "Schwäche, die gegen Abend und nach Belastung zunimmt, hängendes Augenlid, Doppelbilder, Schwierigkeiten beim Kauen, Schlucken und Kopfhalten, Verdacht auf eine Störung der Signalübertragung vom Nerv zum Muskel, Verlaufskontrolle bei bekannter Erkrankung",
+        "prep": "Saubere Haut ohne Creme; Medikamente, die die Übertragung vom Nerv zum Muskel beeinflussen, werden nur nach Entscheidung der behandelnden Ärztin oder des Arztes vorher pausiert, niemals eigenmächtig, und alle eingenommenen Präparate sollten vor Beginn genannt werden",
+        "abnormal": "Eine abnehmende Muskelantwort bei wiederholter Reizung kann mit einer gestörten Übertragung zwischen Nerv und Muskel zusammenhängen, ein ähnliches Muster hat jedoch auch andere Ursachen, darunter bestimmte Medikamente. Den Befund beurteilt die Neurologie zusammen mit Untersuchung, Labor und bei Bedarf weiteren elektrophysiologischen Verfahren"
+      },
+      "tr": {
+        "what": "Sinirden kasa geçen sinyalin, ikisinin birleştiği noktada ne kadar güvenilir iletildiğinin incelenmesi",
+        "how": "Kasın üzerine kayıt elektrotları yerleştirilir, sinir birbirinin aynı uyarılardan oluşan bir diziyle uyarılır ve kas yanıtının uyarıdan uyarıya zayıflayıp zayıflamadığına bakılır, bazen kısa bir eforun ardından tekrarlanır; uyarı hafif elektrik çarpması ve kasta seğirme gibi hissedilir, test genellikle yarım saatten kısa sürer",
+        "when": "Akşama doğru ve efordan sonra artan güçsüzlük, göz kapağı düşmesi, çift görme, çiğneme, yutma ve başı dik tutmada zorlanma, sinirden kasa iletim bozukluğu şüphesi, bilinen bir hastalığın izlenmesi",
+        "prep": "Deri temiz ve kremsiz olmalı; sinirden kasa iletimi etkileyen ilaçlar yalnızca tedaviyi yürüten hekimin kararıyla önceden ara verilerek kesilir, kendi başınıza bırakmayın ve kullandığınız tüm ilaçları başlamadan önce bildirin",
+        "abnormal": "Tekrarlayan uyarıda kas yanıtının zayıflaması sinir ile kas arasındaki iletim bozukluğuyla ilişkili olabilir, ancak benzer bir görünüme bazı ilaçlar dahil başka nedenler de yol açar. Sonucu nöroloji uzmanı muayene, laboratuvar ve gerekirse diğer elektrofizyolojik incelemelerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Провјера колико поуздано сигнал прелази са живца на мишић на мјесту њиховог споја",
+        "how": "На мишић се постављају електроде које биљеже одговор, живац се стимулише низом истих импулса и прати се да ли одговор мишића слаби од импулса до импулса, понекад се проба понавља послије кратког напрезања; стимулација се осјећа као струјни удари уз трзање мишића, а цио тест обично траје мање од пола сата",
+        "when": "Слабост која се појачава пред вече и послије напора, спуштен капак, дупле слике, отежано жвакање, гутање и држање главе, сумња на поремећај преноса са живца на мишић, праћење већ познатог стања",
+        "prep": "Кожа чиста, без креме; лијекови који утичу на пренос са живца на мишић паузирају се унапријед само по одлуци љекара, никако самоиницијативно, а све што узимате треба навести прије почетка",
+        "abnormal": "Слабљење одговора мишића при поновљеној стимулацији може бити повезано са поремећајем преноса сигнала између живца и мишића, али сличну слику дају и други узроци, укључујући поједине лијекове. Налаз процјењује неуролог заједно са прегледом, лабораторијом и по потреби другим електрофизиолошким испитивањима"
+      }
+    }
+  },
+  {
+    "slug": "paravertebral-muscle-infiltration",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение лекарственного раствора в мышцы вдоль позвоночника, чтобы снять болезненное напряжение в этой зоне",
+        "how": "Пациент лежит на животе, врач находит болезненные уплотнения, обрабатывает кожу антисептиком и тонкой иглой вводит раствор в несколько точек рядом с остистыми отростками; укол ощущается как давление и короткое жжение, вся процедура занимает несколько минут, после неё дают немного полежать",
+        "when": "Стойкий мышечный спазм и боль в шее, грудном или поясничном отделе, обострение боли в спине, когда покоя и таблеток недостаточно, как часть комплексного лечения вместе с физиотерапией и упражнениями",
+        "prep": "Приходите в одежде, которую легко снять до пояса, и не натощак после долгого перерыва; заранее скажите врачу об аллергии на местные анестетики, о приёме препаратов, разжижающих кровь, о температуре и о воспалении или высыпаниях на коже спины",
+        "abnormal": "В первые часы в местах уколов возможны лёгкая болезненность и ощущение тяжести, облегчение наступает и держится у разных людей по-разному. Если боль резко усилилась, появились онемение или слабость в ногах, поднялась температура или покраснела кожа в месте укола, нужно связаться с врачом, не дожидаясь повторного визита"
+      },
+      "en": {
+        "what": "An injection of medication into the muscles running along the spine to relieve painful tension in that area",
+        "how": "The patient lies face down, the doctor finds the tender tight spots, disinfects the skin and injects the solution with a fine needle at several points beside the spinous processes; it feels like pressure and a short burning sensation, the procedure takes a few minutes and you rest briefly afterwards",
+        "when": "Persistent muscle spasm and pain in the neck, mid-back or lower back, a flare-up of back pain when rest and tablets are not enough, as part of combined treatment together with physiotherapy and exercises",
+        "prep": "Wear clothing that is easy to remove to the waist and do not come after a long gap without eating; tell the doctor in advance about allergy to local anaesthetics, blood-thinning medication, fever and any inflammation or rash on the skin of the back",
+        "abnormal": "In the first hours the injection sites may feel sore and heavy, and relief comes and lasts differently from person to person. If pain increases sharply, numbness or weakness appears in the legs, fever develops or the skin at the injection site turns red, contact the doctor without waiting for the follow-up visit"
+      },
+      "sr": {
+        "what": "Davanje ljekovitog rastvora u mišiće uz kičmu radi smirivanja bolne napetosti u toj zoni",
+        "how": "Pacijent leži na stomaku, ljekar pronalazi bolne zategnute tačke, dezinfikuje kožu i tankom iglom ubrizgava rastvor na nekoliko mjesta pored trnastih nastavaka; osjeća se pritisak i kratko pečenje, zahvat traje nekoliko minuta, a poslije se kratko odmara",
+        "when": "Uporan grč mišića i bol u vratnom, grudnom ili slabinskom dijelu, pogoršanje bola u leđima kada mirovanje i tablete nisu dovoljni, kao dio kombinovanog liječenja uz fizikalnu terapiju i vježbe",
+        "prep": "Dođite u odjeći koju je lako skinuti do pojasa i nemojte doći poslije dugog perioda bez hrane; unaprijed recite ljekaru za alergiju na lokalne anestetike, za lijekove koji razrjeđuju krv, za povišenu temperaturu i za upalu ili osip na koži leđa",
+        "abnormal": "Prvih sati mjesta uboda mogu biti osjetljiva uz osjećaj težine, a olakšanje nastupa i traje različito od osobe do osobe. Ako bol naglo poraste, jave se utrnulost ili slabost u nogama, povisi se temperatura ili koža na mjestu uboda pocrveni, javite se ljekaru i prije zakazane kontrole"
+      },
+      "de": {
+        "what": "Das Einspritzen einer Medikamentenlösung in die Muskeln entlang der Wirbelsäule, um die schmerzhafte Verspannung in diesem Bereich zu lösen",
+        "how": "Die Patientin oder der Patient liegt auf dem Bauch, die schmerzhaften Verhärtungen werden aufgesucht, die Haut desinfiziert und die Lösung mit einer feinen Nadel an mehreren Stellen neben den Dornfortsätzen eingebracht; es fühlt sich nach Druck und kurzem Brennen an, der Eingriff dauert wenige Minuten, danach ruht man kurz nach",
+        "when": "Anhaltender Muskelkrampf und Schmerz im Hals-, Brust- oder Lendenbereich, akuter Rückenschmerzschub, wenn Schonung und Tabletten nicht ausreichen, als Teil einer Gesamtbehandlung mit Physiotherapie und Übungen",
+        "prep": "Kleidung tragen, die sich bis zur Taille leicht ablegen lässt, und nicht nach langer Essenspause kommen; Allergie auf örtliche Betäubungsmittel, blutverdünnende Medikamente, Fieber sowie Entzündungen oder Hautausschlag am Rücken vorher mitteilen",
+        "abnormal": "In den ersten Stunden können die Einstichstellen empfindlich und schwer wirken, Eintritt und Dauer der Erleichterung sind von Mensch zu Mensch verschieden. Nehmen die Schmerzen stark zu, treten Taubheit oder Schwäche in den Beinen auf, kommt Fieber hinzu oder rötet sich die Haut an der Einstichstelle, sollte man sich vor dem geplanten Folgetermin melden"
+      },
+      "tr": {
+        "what": "Omurga boyunca uzanan kaslardaki ağrılı gerginliği gidermek için bu bölgeye ilaç çözeltisi verilmesi",
+        "how": "Hasta yüzüstü yatar, hekim ağrılı sert noktaları bulur, cildi dezenfekte eder ve ince bir iğneyle omurga çıkıntılarının yanındaki birkaç noktaya çözeltiyi verir; basınç ve kısa süreli yanma hissedilir, işlem birkaç dakika sürer, sonrasında kısa süre dinlenilir",
+        "when": "Boyun, sırt ya da bel bölgesinde süren kas spazmı ve ağrı, istirahat ve ilaçların yetmediği bel ağrısı alevlenmesi, fizik tedavi ve egzersizle birlikte yürütülen tedavinin bir parçası olarak",
+        "prep": "Bele kadar kolay çıkarılabilen kıyafetle gelin ve uzun süre aç kaldıktan sonra gelmeyin; lokal anesteziklere alerji, kan sulandırıcı ilaç kullanımı, ateş ve sırt derisinde iltihap ya da döküntü olup olmadığını önceden hekime bildirin",
+        "abnormal": "İlk saatlerde iğne yerlerinde hafif hassasiyet ve ağırlık hissi olabilir, rahatlamanın başlaması ve süresi kişiden kişiye değişir. Ağrı birden artarsa, bacaklarda uyuşma ya da güçsüzlük ortaya çıkarsa, ateş yükselirse veya iğne yerinde kızarıklık olursa kontrol randevusunu beklemeden hekime başvurun"
+      },
+      "sr_cyrl": {
+        "what": "Давање љековитог раствора у мишиће уз кичму ради смиривања болне напетости у тој зони",
+        "how": "Пацијент лежи на стомаку, љекар проналази болне затегнуте тачке, дезинфикује кожу и танком иглом убризгава раствор на неколико мјеста поред трнастих наставака; осјећа се притисак и кратко печење, захват траје неколико минута, а послије се кратко одмара",
+        "when": "Упоран грч мишића и бол у вратном, грудном или слабинском дијелу, погоршање бола у леђима када мировање и таблете нису довољни, као дио комбинованог лијечења уз физикалну терапију и вјежбе",
+        "prep": "Дођите у одјећи коју је лако скинути до појаса и немојте доћи послије дугог периода без хране; унапријед реците љекару за алергију на локалне анестетике, за лијекове који разрјеђују крв, за повишену температуру и за упалу или осип на кожи леђа",
+        "abnormal": "Првих сати мјеста убода могу бити осјетљива уз осјећај тежине, а олакшање наступа и траје различито од особе до особе. Ако бол нагло порасте, јаве се утрнулост или слабост у ногама, повиси се температура или кожа на мјесту убода поцрвени, јавите се љекару и прије заказане контроле"
+      }
+    }
+  },
+  {
+    "slug": "prostigmin-test",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Проба, при которой врач смотрит, меняется ли мышечная слабость после введения препарата, временно улучшающего передачу сигнала с нерва на мышцу",
+        "how": "Сначала фиксируют исходное состояние: ширину глазных щелей, двоение, силу и выносливость мышц при повторных движениях, затем делают инъекцию и через несколько минут повторяют те же пробы; всё проходит в кабинете под наблюдением персонала и занимает около получаса",
+        "when": "Подозрение на нарушение нервно-мышечной передачи при опущении века, двоении, слабости мимических и жевательных мышц, быстрой утомляемости рук и ног к вечеру, уточнение картины вместе с электрофизиологическими исследованиями",
+        "prep": "Что и когда принимать из постоянной терапии перед пробой, решает врач, самостоятельно ничего не меняйте; заранее расскажите о бронхиальной астме, болезнях сердца и нарушениях ритма, аллергиях и беременности, а при выраженной слабости приходите с сопровождающим",
+        "abnormal": "Заметное временное улучшение силы или уменьшение опущения века может быть связано с нарушением передачи сигнала между нервом и мышцей, но сама по себе проба диагноз не ставит, а слабый ответ его не исключает. Выводы делает невролог по совокупности осмотра, анализов и электрофизиологии"
+      },
+      "en": {
+        "what": "A test in which the doctor observes whether muscle weakness changes after a medicine that briefly improves signalling from nerve to muscle",
+        "how": "The starting state is recorded first, the width of the eye openings, double vision, muscle strength and endurance on repeated movements, then the injection is given and the same checks are repeated a few minutes later; it is done in the consulting room under staff supervision and takes about half an hour",
+        "when": "Suspected disturbance of nerve-to-muscle signalling with a drooping eyelid, double vision, weakness of facial and chewing muscles, arms and legs tiring quickly towards evening, clarifying the picture together with electrophysiological studies",
+        "prep": "The doctor decides what of your regular medication to take and when before the test, so change nothing on your own; mention asthma, heart disease and rhythm disorders, allergies and pregnancy in advance, and bring someone with you if the weakness is pronounced",
+        "abnormal": "A clear temporary gain in strength or less eyelid drooping may be linked to impaired signalling between nerve and muscle, but the test alone does not establish a diagnosis and a weak response does not rule one out. The conclusion is drawn by a neurologist from the examination, laboratory tests and electrophysiology together"
+      },
+      "sr": {
+        "what": "Proba u kojoj ljekar posmatra da li se mišićna slabost mijenja poslije davanja lijeka koji privremeno poboljšava prenos signala sa živca na mišić",
+        "how": "Prvo se bilježi polazno stanje, širina očnih otvora, duple slike, snaga i izdržljivost mišića pri ponovljenim pokretima, zatim se daje injekcija i poslije nekoliko minuta ponavljaju se isti testovi; sve se radi u ordinaciji uz nadzor osoblja i traje oko pola sata",
+        "when": "Sumnja na poremećaj prenosa sa živca na mišić kod spuštenog kapka, duplih slika, slabosti mimičnih i žvačnih mišića, brzog zamaranja ruku i nogu pred veče, razjašnjavanje slike uz elektrofiziološka ispitivanja",
+        "prep": "Šta i kada uzeti od redovne terapije prije probe odlučuje ljekar, sami ništa ne mijenjajte; unaprijed recite za astmu, srčane bolesti i poremećaje ritma, alergije i trudnoću, a uz izraženu slabost dođite sa pratnjom",
+        "abnormal": "Jasno privremeno poboljšanje snage ili manje spuštanje kapka može biti povezano sa poremećajem prenosa signala između živca i mišića, ali sama proba ne postavlja dijagnozu, niti je slab odgovor isključuje. Zaključak donosi neurolog na osnovu pregleda, laboratorije i elektrofiziologije zajedno"
+      },
+      "de": {
+        "what": "Eine Probe, bei der beobachtet wird, ob sich die Muskelschwäche nach einem Medikament verändert, das die Signalübertragung vom Nerv auf den Muskel kurzzeitig verbessert",
+        "how": "Zuerst wird der Ausgangszustand festgehalten, die Weite der Lidspalten, Doppelbilder, Kraft und Ausdauer der Muskeln bei wiederholten Bewegungen, danach wird die Injektion gegeben und nach wenigen Minuten werden dieselben Prüfungen wiederholt; alles geschieht in der Praxis unter Aufsicht und dauert etwa eine halbe Stunde",
+        "when": "Verdacht auf eine Störung der Übertragung vom Nerv zum Muskel bei hängendem Lid, Doppelbildern, Schwäche der Gesichts- und Kaumuskulatur, rascher Ermüdung von Armen und Beinen gegen Abend, Klärung des Bildes zusammen mit elektrophysiologischen Untersuchungen",
+        "prep": "Was von der Dauertherapie wann vor der Probe eingenommen wird, entscheidet die Ärztin oder der Arzt, eigenmächtig nichts verändern; Asthma, Herzerkrankungen und Rhythmusstörungen, Allergien und Schwangerschaft vorher mitteilen und bei ausgeprägter Schwäche in Begleitung kommen",
+        "abnormal": "Eine deutliche vorübergehende Kraftzunahme oder ein weniger hängendes Lid kann mit einer gestörten Übertragung zwischen Nerv und Muskel zusammenhängen, die Probe allein stellt jedoch keine Diagnose und eine schwache Reaktion schließt sie nicht aus. Die Schlussfolgerung zieht die Neurologie aus Untersuchung, Labor und Elektrophysiologie zusammen"
+      },
+      "tr": {
+        "what": "Sinirden kasa iletimi geçici olarak iyileştiren bir ilacın ardından kas güçsüzlüğünün değişip değişmediğinin hekim tarafından izlendiği bir inceleme",
+        "how": "Önce başlangıç durumu kaydedilir: göz kapaklarının açıklığı, çift görme, tekrarlayan hareketlerde kas gücü ve dayanıklılık, ardından enjeksiyon yapılır ve birkaç dakika sonra aynı ölçümler yinelenir; işlem muayenehanede personel gözetiminde yapılır ve yaklaşık yarım saat sürer",
+        "when": "Göz kapağı düşmesi, çift görme, mimik ve çiğneme kaslarında güçsüzlük, akşama doğru kol ve bacakların çabuk yorulması ile sinirden kasa iletim bozukluğu şüphesi, elektrofizyolojik incelemelerle birlikte tablonun netleştirilmesi",
+        "prep": "Sürekli kullandığınız ilaçlardan hangisini ne zaman alacağınıza test öncesinde hekim karar verir, kendi başınıza değişiklik yapmayın; astım, kalp hastalığı ve ritim bozukluğu, alerji ve gebelik durumunu önceden bildirin, güçsüzlük belirginse yanınızda refakatçi ile gelin",
+        "abnormal": "Güçte belirgin ve geçici bir artış ya da göz kapağının daha az düşmesi sinir ile kas arasındaki iletim bozukluğuyla ilişkili olabilir, ancak tek başına bu inceleme tanı koymaz, zayıf bir yanıt da tanıyı dışlamaz. Sonucu nöroloji uzmanı muayene, laboratuvar ve elektrofizyoloji verilerini birlikte değerlendirerek çıkarır"
+      },
+      "sr_cyrl": {
+        "what": "Проба у којој љекар посматра да ли се мишићна слабост мијења послије давања лијека који привремено побољшава пренос сигнала са живца на мишић",
+        "how": "Прво се биљежи полазно стање, ширина очних отвора, дупле слике, снага и издржљивост мишића при поновљеним покретима, затим се даје ињекција и послије неколико минута понављају се исти тестови; све се ради у ординацији уз надзор особља и траје око пола сата",
+        "when": "Сумња на поремећај преноса са живца на мишић код спуштеног капка, дуплих слика, слабости мимичних и жвачних мишића, брзог замарања руку и ногу пред вече, разјашњавање слике уз електрофизиолошка испитивања",
+        "prep": "Шта и када узети од редовне терапије прије пробе одлучује љекар, сами ништа не мијењајте; унапријед реците за астму, срчане болести и поремећаје ритма, алергије и трудноћу, а уз изражену слабост дођите са пратњом",
+        "abnormal": "Јасно привремено побољшање снаге или мање спуштање капка може бити повезано са поремећајем преноса сигнала између живца и мишића, али сама проба не поставља дијагнозу, нити је слаб одговор искључује. Закључак доноси неуролог на основу прегледа, лабораторије и електрофизиологије заједно"
+      }
+    }
+  },
+  {
+    "slug": "single-fiber-emg-sfemg",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Самая тонкая электромиографическая методика: регистрирует разряды отдельных мышечных волокон, относящихся к одной двигательной единице",
+        "how": "В мышцу вводят очень тонкий игольчатый электрод и просят слабо и ровно её напрягать, пока врач ловит ответы соседних волокон и оценивает разброс во времени между ними; требуется спокойное сотрудничество и неподвижность, запись идёт дольше обычной ЭМГ и может занять около часа, ощущается покалывание от иглы",
+        "when": "Подозрение на нарушение нервно-мышечной передачи, когда обычная ЭНМГ и стимуляционные пробы не дали ясного ответа, лёгкая или только глазная форма слабости, уточнение картины перед решением о дальнейшей тактике",
+        "prep": "Кожа чистая, без крема; препараты, влияющие на нервно-мышечную передачу, отменяют только по согласованию с врачом, заранее сообщите о приёме разжижающих кровь средств и о нарушениях свёртывания, после исследования в месте вкола возможен небольшой синяк",
+        "abnormal": "Увеличенный разброс во времени между ответами соседних волокон может быть связан с нарушением передачи сигнала между нервом и мышцей, но встречается и при других поражениях нервов и мышц. Результат оценивает невролог вместе с клинической картиной и остальными исследованиями"
+      },
+      "en": {
+        "what": "The most delicate electromyographic technique, recording the discharges of individual muscle fibres belonging to one motor unit",
+        "how": "A very fine needle electrode is inserted into the muscle and you are asked to tense it gently and steadily while the responses of neighbouring fibres are captured and the variation in timing between them is measured; calm cooperation and stillness are needed, the recording takes longer than standard EMG and may last about an hour, with a pricking sensation from the needle",
+        "when": "Suspected disturbance of nerve-to-muscle signalling when standard nerve conduction studies and stimulation tests gave no clear answer, mild or purely ocular weakness, clarifying the picture before decisions on further management",
+        "prep": "Clean skin without cream; medication affecting nerve-to-muscle signalling is paused only in agreement with the doctor, report blood thinners and clotting disorders in advance, and expect a small bruise at the needle site afterwards",
+        "abnormal": "Increased variability in the timing between neighbouring fibre responses may be linked to impaired signalling between nerve and muscle, but it also occurs in other nerve and muscle disorders. The result is assessed by a neurologist together with the clinical picture and the remaining investigations"
+      },
+      "sr": {
+        "what": "Najfinija elektromiografska tehnika koja bilježi pražnjenja pojedinačnih mišićnih vlakana iz iste motorne jedinice",
+        "how": "U mišić se uvodi veoma tanka igličasta elektroda i traži se blago i ravnomjerno naprezanje dok se hvataju odgovori susjednih vlakana i mjeri rasipanje u vremenu između njih; potrebna je mirna saradnja i nepomičnost, snimanje traje duže od uobičajenog EMG-a i može potrajati oko sat vremena, uz osjećaj bockanja od igle",
+        "when": "Sumnja na poremećaj prenosa sa živca na mišić kada uobičajena elektroneurografija i stimulacione probe nisu dale jasan odgovor, blaga ili isključivo očna forma slabosti, razjašnjavanje slike prije odluke o daljem postupanju",
+        "prep": "Koža čista, bez kreme; lijekovi koji utiču na prenos sa živca na mišić pauziraju se isključivo u dogovoru sa ljekarom, unaprijed prijavite lijekove koji razrjeđuju krv i poremećaje zgrušavanja, a poslije ispitivanja na mjestu uboda može ostati mala modrica",
+        "abnormal": "Povećano rasipanje u vremenu između odgovora susjednih vlakana može biti povezano sa poremećajem prenosa signala između živca i mišića, ali se javlja i kod drugih oboljenja živaca i mišića. Nalaz procjenjuje neurolog zajedno sa kliničkom slikom i ostalim ispitivanjima"
+      },
+      "de": {
+        "what": "Die feinste elektromyographische Technik, die die Entladungen einzelner Muskelfasern einer motorischen Einheit aufzeichnet",
+        "how": "Eine sehr dünne Nadelelektrode wird in den Muskel eingeführt, der leicht und gleichmäßig angespannt werden soll, während die Antworten benachbarter Fasern erfasst und die zeitliche Streuung zwischen ihnen beurteilt wird; ruhige Mitarbeit und Stillhalten sind nötig, die Ableitung dauert länger als ein gewöhnliches EMG und kann etwa eine Stunde beanspruchen, spürbar als Piksen der Nadel",
+        "when": "Verdacht auf eine Störung der Übertragung vom Nerv zum Muskel, wenn gewöhnliche Nervenleitmessung und Reizserien keine klare Antwort ergaben, leichte oder rein okuläre Schwäche, Klärung des Bildes vor Entscheidungen über das weitere Vorgehen",
+        "prep": "Saubere Haut ohne Creme; Medikamente, die die Übertragung vom Nerv zum Muskel beeinflussen, werden nur in Absprache mit der Ärztin oder dem Arzt pausiert, Blutverdünner und Gerinnungsstörungen bitte vorher melden, an der Einstichstelle kann danach ein kleiner Bluterguss bleiben",
+        "abnormal": "Eine vergrößerte zeitliche Streuung zwischen den Antworten benachbarter Fasern kann mit einer gestörten Übertragung zwischen Nerv und Muskel zusammenhängen, kommt aber auch bei anderen Nerven- und Muskelerkrankungen vor. Den Befund beurteilt die Neurologie zusammen mit dem klinischen Bild und den übrigen Untersuchungen"
+      },
+      "tr": {
+        "what": "Aynı motor üniteye ait tek tek kas liflerinin deşarjlarını kaydeden, elektromiyografinin en ince tekniği",
+        "how": "Kasa çok ince bir iğne elektrot yerleştirilir ve kası hafifçe, düzenli biçimde kasmanız istenirken komşu liflerin yanıtları yakalanır ve aralarındaki zaman dağılımı ölçülür; sakin iş birliği ve hareketsizlik gerekir, kayıt olağan EMG'den uzun sürer ve yaklaşık bir saati bulabilir, iğneye bağlı batma hissi olur",
+        "when": "Olağan sinir ileti çalışmaları ve uyarı testleri net sonuç vermediğinde sinirden kasa iletim bozukluğu şüphesi, hafif ya da yalnızca göz kaslarını tutan güçsüzlük, sonraki yaklaşıma karar vermeden önce tablonun netleştirilmesi",
+        "prep": "Deri temiz ve kremsiz olmalı; sinirden kasa iletimi etkileyen ilaçlara yalnızca hekimle anlaşarak ara verilir, kan sulandırıcı kullanımını ve pıhtılaşma bozukluklarını önceden bildirin, işlem sonrası iğne yerinde küçük bir morluk kalabilir",
+        "abnormal": "Komşu lif yanıtları arasındaki zaman dağılımının artması sinir ile kas arasındaki iletim bozukluğuyla ilişkili olabilir, ancak başka sinir ve kas hastalıklarında da görülür. Sonucu nöroloji uzmanı klinik tablo ve diğer incelemelerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Најфинија електромиографска техника која биљежи пражњења појединачних мишићних влакана из исте моторне јединице",
+        "how": "У мишић се уводи веома танка игличаста електрода и тражи се благо и равномјерно напрезање док се хватају одговори сусједних влакана и мјери расипање у времену између њих; потребна је мирна сарадња и непомичност, снимање траје дуже од уобичајеног ЕМГ-а и може потрајати око сат времена, уз осјећај боцкања од игле",
+        "when": "Сумња на поремећај преноса са живца на мишић када уобичајена електронеурографија и стимулационе пробе нису дале јасан одговор, блага или искључиво очна форма слабости, разјашњавање слике прије одлуке о даљем поступању",
+        "prep": "Кожа чиста, без креме; лијекови који утичу на пренос са живца на мишић паузирају се искључиво у договору са љекаром, унапријед пријавите лијекове који разрјеђују крв и поремећаје згрушавања, а послије испитивања на мјесту убода може остати мала модрица",
+        "abnormal": "Повећано расипање у времену између одговора сусједних влакана може бити повезано са поремећајем преноса сигнала између живца и мишића, али се јавља и код других обољења живаца и мишића. Налаз процјењује неуролог заједно са клиничком сликом и осталим испитивањима"
+      }
+    }
+  }
+]

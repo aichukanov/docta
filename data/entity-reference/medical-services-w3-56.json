@@ -1,0 +1,386 @@
+[
+  {
+    "slug": "intra-articular-injection",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение назначенного препарата непосредственно в полость сустава",
+        "how": "Врач определяет точку введения на ощупь или под контролем УЗИ, обрабатывает кожу, при необходимости сначала выпускает избыточную жидкость из сустава, затем вводит препарат; сама манипуляция занимает несколько минут, после неё просят посидеть и не нагружать сустав",
+        "when": "Длительная боль и воспаление в суставе, не отвечающие на другое лечение, обострение артроза или артрита, воспаление околосуставных тканей, скопление жидкости в суставе — по назначению ревматолога или ортопеда",
+        "prep": "Специальной подготовки нет; прийти в одежде, которая открывает сустав, сказать о приёме кроверазжижающих, об аллергии, диабете, ранках и воспалении кожи над суставом и о температуре; на этот день не планировать нагрузку и спорт",
+        "abnormal": "В первые сутки-двое возможно усиление боли и небольшой отёк сустава, затем они стихают. Нарастающая боль, краснота и жар над суставом, температура или невозможность пошевелить суставом требуют срочного осмотра врача"
+      },
+      "en": {
+        "what": "Administration of a prescribed medication directly into the cavity of a joint",
+        "how": "The doctor locates the entry point by palpation or under ultrasound guidance, disinfects the skin, drains excess fluid from the joint if needed and then injects the medication; the procedure itself takes a few minutes, after which the patient rests and avoids loading the joint",
+        "when": "Long-standing joint pain and inflammation that has not responded to other treatment, flare-ups of arthrosis or arthritis, inflammation of the tissues around the joint, fluid collecting in the joint — as prescribed by a rheumatologist or orthopaedist",
+        "prep": "No special preparation; wear clothing that exposes the joint, report blood-thinning medication, allergies, diabetes, any skin breaks or inflammation over the joint and any fever; avoid sport and heavy loading that day",
+        "abnormal": "Pain and mild swelling of the joint may increase for a day or two and then settle. Growing pain, redness and warmth over the joint, fever or inability to move the joint call for urgent medical review"
+      },
+      "sr": {
+        "what": "Davanje propisanog lijeka direktno u šupljinu zgloba",
+        "how": "Ljekar određuje tačku uboda palpacijom ili pod kontrolom ultrazvuka, dezinfikuje kožu, po potrebi najprije ispusti višak tečnosti iz zgloba, a zatim ubrizga lijek; sam zahvat traje nekoliko minuta, poslije čega se savjetuje mirovanje i izbjegavanje opterećenja zgloba",
+        "when": "Dugotrajan bol i upala zgloba koji ne reaguju na drugu terapiju, pogoršanje artroze ili artritisa, upala tkiva oko zgloba, nakupljanje tečnosti u zglobu — po nalogu reumatologa ili ortopeda",
+        "prep": "Posebna priprema nije potrebna; doći u odjeći koja otkriva zglob, prijaviti terapiju za razrjeđivanje krvi, alergije, dijabetes, ranice ili upalu kože iznad zgloba i povišenu temperaturu; toga dana ne planirati sport i napor",
+        "abnormal": "Prvih dan-dva bol i blagi otok zgloba mogu biti jači, a zatim se smiruju. Bol koji raste, crvenilo i toplota iznad zgloba, povišena temperatura ili nemogućnost pokreta u zglobu traže hitan pregled ljekara"
+      },
+      "de": {
+        "what": "Verabreichung eines verordneten Medikaments direkt in den Gelenkspalt",
+        "how": "Die Ärztin oder der Arzt bestimmt die Einstichstelle durch Tasten oder unter Ultraschallkontrolle, desinfiziert die Haut, lässt bei Bedarf zuerst überschüssige Gelenkflüssigkeit ab und spritzt dann das Medikament; der Eingriff selbst dauert wenige Minuten, danach soll das Gelenk geschont werden",
+        "when": "Anhaltende Gelenkschmerzen und Entzündungen, die auf andere Behandlungen nicht angesprochen haben, Schübe von Arthrose oder Arthritis, Entzündung der gelenknahen Weichteile, Flüssigkeitsansammlung im Gelenk — auf Anordnung einer Rheumatologin oder eines Orthopäden",
+        "prep": "Keine besondere Vorbereitung; Kleidung tragen, die das Gelenk freilegt, blutverdünnende Medikamente, Allergien, Diabetes, Hautverletzungen oder Entzündungen über dem Gelenk und Fieber angeben; an diesem Tag Sport und Belastung meiden",
+        "abnormal": "In den ersten ein bis zwei Tagen können Schmerz und leichte Schwellung zunehmen und klingen dann ab. Zunehmender Schmerz, Rötung und Überwärmung über dem Gelenk, Fieber oder eine blockierte Beweglichkeit erfordern eine rasche ärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Hekimin yazdığı ilacın doğrudan eklem boşluğuna verilmesi",
+        "how": "Hekim giriş noktasını elle veya ultrason eşliğinde belirler, cildi dezenfekte eder, gerekirse önce eklemdeki fazla sıvıyı boşaltır ve ardından ilacı verir; işlem birkaç dakika sürer, sonrasında eklemi zorlamadan dinlenmek önerilir",
+        "when": "Diğer tedavilere yanıt vermeyen uzun süreli eklem ağrısı ve iltihabı, artroz veya artrit alevlenmesi, eklem çevresi dokuların iltihabı, eklemde sıvı toplanması — romatoloji veya ortopedi hekiminin isteğiyle",
+        "prep": "Özel hazırlık gerekmez; eklemi açıkta bırakan giysi tercih edilir, kan sulandırıcı ilaçlar, alerjiler, diyabet, eklem üzerindeki cilt yaraları veya iltihap ve ateş bildirilir; o gün spor ve ağır yüklenme planlanmaz",
+        "abnormal": "İlk bir iki gün ağrı ve hafif şişlik artabilir, sonra geriler. Artan ağrı, eklem üzerinde kızarıklık ve ısı artışı, ateş veya eklemi hareket ettirememe acil hekim değerlendirmesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Давање прописаног лијека директно у шупљину зглоба",
+        "how": "Љекар одређује тачку убода палпацијом или под контролом ултразвука, дезинфикује кожу, по потреби најприје испусти вишак течности из зглоба, а затим убризга лијек; сам захват траје неколико минута, послије чега се савјетује мировање и избјегавање оптерећења зглоба",
+        "when": "Дуготрајан бол и упала зглоба који не реагују на другу терапију, погоршање артрозе или артритиса, упала ткива око зглоба, накупљање течности у зглобу — по налогу реуматолога или ортопеда",
+        "prep": "Посебна припрема није потребна; доћи у одјећи која открива зглоб, пријавити терапију за разрјеђивање крви, алергије, дијабетес, ранице или упалу коже изнад зглоба и повишену температуру; тога дана не планирати спорт и напор",
+        "abnormal": "Првих дан-два бол и благи оток зглоба могу бити јачи, а затим се смирују. Бол који расте, црвенило и топлота изнад зглоба, повишена температура или немогућност покрета у зглобу траже хитан преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "intramuscular-medication-application",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Разовое введение назначенного препарата в мышцу в процедурном кабинете",
+        "how": "Медсестра выбирает мышцу плеча, бедра или ягодицы, обрабатывает кожу и вводит препарат иглой под прямым углом; укол длится секунды, при первом введении обычно просят подождать в клинике",
+        "when": "Назначенные препараты, которые вводятся только в мышцу, продолжение лечения сразу после приёма врача, ситуации, когда таблетка не подходит из-за рвоты или проблем с желудком",
+        "prep": "Принести назначение врача и сам препарат, если клиника его не выдаёт; перед уколом лучше поесть, сказать об аллергиях и о приёме кроверазжижающих",
+        "abnormal": "Из мышцы препарат всасывается быстрее, чем из таблетки, и место укола день-два может быть чувствительным. Сыпь, отёк лица или затруднённое дыхание сразу после введения требуют немедленной помощи, а твёрдое болезненное уплотнение с температурой — осмотра врача"
+      },
+      "en": {
+        "what": "A single administration of a prescribed medication into a muscle in a treatment room",
+        "how": "The nurse selects a muscle of the upper arm, thigh or buttock, cleans the skin and injects the medication with the needle at a right angle; the injection takes seconds, and for a first dose the patient is usually asked to wait at the clinic",
+        "when": "Prescribed medicines that can only be given into a muscle, continuation of treatment right after a consultation, situations where tablets are unsuitable because of vomiting or stomach problems",
+        "prep": "Bring the prescription and the medicine itself if the clinic does not supply it; it is better to eat beforehand, and to mention allergies and blood-thinning medication",
+        "abnormal": "A medicine given into a muscle is absorbed faster than a tablet, and the site may stay tender for a day or two. A rash, facial swelling or breathing difficulty right after the injection needs immediate help, and a firm painful lump with fever needs a doctor's review"
+      },
+      "sr": {
+        "what": "Jednokratno davanje propisanog lijeka u mišić u ambulanti",
+        "how": "Sestra bira mišić nadlaktice, buta ili sjedalne regije, dezinfikuje kožu i ubrizgava lijek iglom pod pravim uglom; ubod traje nekoliko sekundi, a kod prve doze se obično traži da se sačeka u klinici",
+        "when": "Propisani lijekovi koji se daju samo u mišić, nastavak terapije odmah poslije pregleda, situacije kada tableta nije pogodna zbog povraćanja ili tegoba sa želucem",
+        "prep": "Ponijeti nalog ljekara i sam lijek ako ga klinika ne izdaje; prije uboda je bolje nešto pojesti, prijaviti alergije i terapiju za razrjeđivanje krvi",
+        "abnormal": "Iz mišića se lijek upija brže nego iz tablete, a mjesto uboda može biti osjetljivo dan-dva. Osip, otok lica ili otežano disanje odmah poslije davanja traže hitnu pomoć, a tvrd i bolan čvorić uz povišenu temperaturu pregled ljekara"
+      },
+      "de": {
+        "what": "Einmalige Gabe eines verordneten Medikaments in den Muskel im Behandlungsraum",
+        "how": "Die Pflegekraft wählt einen Muskel an Oberarm, Oberschenkel oder Gesäß, desinfiziert die Haut und spritzt das Medikament im rechten Winkel; die Injektion dauert Sekunden, bei der ersten Gabe wird meist um eine kurze Wartezeit in der Praxis gebeten",
+        "when": "Verordnete Medikamente, die nur in den Muskel gegeben werden können, Fortsetzung der Behandlung direkt nach der Sprechstunde, Situationen, in denen Tabletten wegen Erbrechen oder Magenbeschwerden nicht infrage kommen",
+        "prep": "Verordnung und das Medikament selbst mitbringen, falls die Praxis es nicht ausgibt; vorher möglichst etwas essen, Allergien und blutverdünnende Medikamente angeben",
+        "abnormal": "Aus dem Muskel wird ein Medikament schneller aufgenommen als aus einer Tablette, die Einstichstelle kann ein bis zwei Tage empfindlich bleiben. Hautausschlag, Schwellung im Gesicht oder Atemnot direkt nach der Gabe erfordern sofortige Hilfe, ein harter schmerzhafter Knoten mit Fieber eine ärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "Hekimin yazdığı ilacın müdahale odasında tek seferde kas içine verilmesi",
+        "how": "Hemşire kolun, uyluğun veya kalçanın kasını seçer, cildi temizler ve ilacı dik açıyla verir; iğne birkaç saniye sürer, ilk dozda genellikle klinikte kısa süre beklenmesi istenir",
+        "when": "Yalnızca kas içine verilebilen ilaçlar, muayeneden hemen sonra tedavinin sürdürülmesi, kusma veya mide sorunları nedeniyle tabletin uygun olmadığı durumlar",
+        "prep": "Hekim isteğini ve klinik vermiyorsa ilacın kendisini getirin; işlemden önce bir şeyler yemek iyi olur, alerjiler ve kan sulandırıcı ilaçlar bildirilir",
+        "abnormal": "Kas içine verilen ilaç tablete göre daha hızlı emilir, iğne yeri bir iki gün hassas kalabilir. İşlemden hemen sonra döküntü, yüzde şişlik veya nefes darlığı acil yardım gerektirir; ateşle birlikte sert ve ağrılı şişlik ise hekim değerlendirmesi ister"
+      },
+      "sr_cyrl": {
+        "what": "Једнократно давање прописаног лијека у мишић у амбуланти",
+        "how": "Сестра бира мишић надлактице, бута или сједалне регије, дезинфикује кожу и убризгава лијек иглом под правим углом; убод траје неколико секунди, а код прве дозе се обично тражи да се сачека у клиници",
+        "when": "Прописани лијекови који се дају само у мишић, наставак терапије одмах послије прегледа, ситуације када таблета није погодна због повраћања или тегоба са желуцем",
+        "prep": "Понијети налог љекара и сам лијек ако га клиника не издаје; прије убода је боље нешто појести, пријавити алергије и терапију за разрјеђивање крви",
+        "abnormal": "Из мишића се лијек упија брже него из таблете, а мјесто убода може бити осјетљиво дан-два. Осип, оток лица или отежано дисање одмах послије давања траже хитну помоћ, а тврд и болан чворић уз повишену температуру преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "subconjunctival-injection",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение препарата под тонкую прозрачную оболочку, покрывающую белок глаза",
+        "how": "В глаз закапывают обезболивающие капли, веки удерживают открытыми, и врач тончайшей иглой вводит небольшое количество раствора под конъюнктиву; занимает меньше минуты, после процедуры глаз могут ненадолго закрыть повязкой",
+        "when": "Воспалительные заболевания переднего отрезка глаза, период после операций на глазу, травмы и ожоги глаза, случаи, когда капли не доносят препарат на нужную глубину — по назначению офтальмолога",
+        "prep": "Снять контактные линзы и не надевать их до разрешения врача, не краситься, рассказать о каплях и препаратах, которые уже применяете; за руль сразу после процедуры лучше не садиться, зрение может быть нечётким",
+        "abnormal": "Красное пятно на белке глаза, ощущение песка и слезотечение в первые дни ожидаемы и проходят сами. Усиливающаяся боль, снижение зрения, гнойное отделяемое или отёк век — повод срочно показаться офтальмологу"
+      },
+      "en": {
+        "what": "Injection of a medication under the thin transparent membrane that covers the white of the eye",
+        "how": "Anaesthetic drops are instilled, the eyelids are held open and the doctor injects a small amount of solution under the conjunctiva with a very fine needle; it takes under a minute and the eye may be covered for a short time afterwards",
+        "when": "Inflammatory conditions of the front of the eye, the period after eye surgery, eye injuries and burns, cases where drops do not reach deep enough — as prescribed by an ophthalmologist",
+        "prep": "Remove contact lenses and leave them out until the doctor allows, skip eye make-up, and report the drops and medicines you already use; it is better not to drive straight afterwards as vision may be blurred",
+        "abnormal": "A red patch on the white of the eye, a gritty feeling and watering in the first days are expected and settle on their own. Increasing pain, reduced vision, purulent discharge or swollen eyelids require an urgent ophthalmology review"
+      },
+      "sr": {
+        "what": "Davanje lijeka ispod tanke prozirne opne koja pokriva bjeloočnicu",
+        "how": "U oko se ukapaju kapi za obezbolijevanje, kapci se drže otvorenim, a ljekar vrlo tankom iglom ubrizga malu količinu rastvora ispod vežnjače; traje manje od minuta, a oko se poslije nakratko može pokriti zavojem",
+        "when": "Upalna oboljenja prednjeg dijela oka, period poslije operacija oka, povrede i opekotine oka, slučajevi kada kapi ne dopiru dovoljno duboko — po nalogu oftalmologa",
+        "prep": "Skinuti kontaktna sočiva i ne nositi ih dok ljekar ne dozvoli, ne stavljati šminku oko očiju, navesti kapi i lijekove koje već koristite; odmah poslije zahvata bolje je ne voziti jer vid može biti zamućen",
+        "abnormal": "Crvena mrlja na bjeloočnici, osjećaj pijeska i suzenje prvih dana su očekivani i prolaze sami. Bol koji jača, slabljenje vida, gnojav sekret ili otok kapaka razlog su za hitan pregled oftalmologa"
+      },
+      "de": {
+        "what": "Gabe eines Medikaments unter die dünne durchsichtige Haut, die das Weiße des Auges bedeckt",
+        "how": "Es werden betäubende Augentropfen gegeben, die Lider werden offen gehalten und die Ärztin oder der Arzt spritzt mit einer sehr feinen Nadel eine kleine Menge Lösung unter die Bindehaut; es dauert weniger als eine Minute, danach kann das Auge kurz abgedeckt werden",
+        "when": "Entzündliche Erkrankungen des vorderen Augenabschnitts, die Zeit nach Augenoperationen, Verletzungen und Verätzungen des Auges, Fälle, in denen Tropfen nicht tief genug wirken — auf augenärztliche Anordnung",
+        "prep": "Kontaktlinsen herausnehmen und bis zur ärztlichen Freigabe weglassen, auf Augen-Make-up verzichten, bereits verwendete Tropfen und Medikamente angeben; direkt danach besser nicht selbst fahren, da das Sehen verschwommen sein kann",
+        "abnormal": "Ein roter Fleck auf dem Augapfel, Fremdkörpergefühl und Tränen in den ersten Tagen sind zu erwarten und klingen von selbst ab. Zunehmende Schmerzen, nachlassendes Sehvermögen, eitriges Sekret oder geschwollene Lider erfordern eine rasche augenärztliche Kontrolle"
+      },
+      "tr": {
+        "what": "İlacın, gözün beyaz kısmını örten ince saydam zarın altına verilmesi",
+        "how": "Göze uyuşturucu damla damlatılır, kapaklar açık tutulur ve hekim çok ince bir iğneyle az miktarda solüsyonu konjonktiva altına verir; bir dakikadan kısa sürer, sonrasında göz kısa süre kapatılabilir",
+        "when": "Gözün ön bölümünün iltihabi hastalıkları, göz ameliyatı sonrası dönem, göz yaralanmaları ve yanıkları, damlaların yeterince derine ulaşmadığı durumlar — göz hekiminin isteğiyle",
+        "prep": "Kontakt lensler çıkarılır ve hekim izin verene kadar takılmaz, göz makyajı yapılmaz, kullanılan damla ve ilaçlar bildirilir; görme bulanık olabileceği için işlemden hemen sonra araç kullanılmaması iyi olur",
+        "abnormal": "İlk günlerde gözün beyazında kırmızı bir leke, batma hissi ve sulanma beklenir ve kendiliğinden geçer. Artan ağrı, görmede azalma, iltihaplı akıntı veya göz kapaklarında şişlik acil göz hekimi değerlendirmesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Давање лијека испод танке прозирне опне која покрива бјелоочницу",
+        "how": "У око се укапају капи за обезболијевање, капци се држе отвореним, а љекар врло танком иглом убризга малу количину раствора испод вежњаче; траје мање од минута, а око се послије накратко може покрити завојем",
+        "when": "Упална обољења предњег дијела ока, период послије операција ока, повреде и опекотине ока, случајеви када капи не допиру довољно дубоко — по налогу офталмолога",
+        "prep": "Скинути контактна сочива и не носити их док љекар не дозволи, не стављати шминку око очију, навести капи и лијекове које већ користите; одмах послије захвата боље је не возити јер вид може бити замућен",
+        "abnormal": "Црвена мрља на бјелоочници, осјећај пијеска и сузење првих дана су очекивани и пролазе сами. Бол који јача, слабљење вида, гнојав секрет или оток капака разлог су за хитан преглед офталмолога"
+      }
+    }
+  },
+  {
+    "slug": "subcutaneous-injection",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение назначенного препарата в жировую клетчатку под кожей",
+        "how": "Медсестра собирает кожу в складку на животе, наружной поверхности плеча или бедре и короткой тонкой иглой вводит небольшой объём раствора; из подкожной клетчатки препарат всасывается постепенно, сам укол занимает несколько секунд",
+        "when": "Назначенные препараты, которые вводят только под кожу, длительные курсы, которые пациент потом продолжает дома, профилактика тромбозов после операций и травм по назначению врача",
+        "prep": "Специальной подготовки нет; принести назначение и препарат, если клиника его не выдаёт, сказать о кроверазжижающих и об изменениях кожи в месте укола",
+        "abnormal": "Небольшой синяк, капля крови или лёгкий зуд в месте укола обычны и проходят за несколько дней; при курсе места введения чередуют, иначе появляются уплотнения. Растущее болезненное уплотнение, сыпь по телу или затруднённое дыхание — повод обратиться к врачу, при тяжёлых симптомах немедленно"
+      },
+      "en": {
+        "what": "Administration of a prescribed medication into the fatty tissue under the skin",
+        "how": "The nurse lifts a fold of skin on the abdomen, the outer upper arm or the thigh and injects a small volume with a short fine needle; the medicine is absorbed gradually from the subcutaneous tissue and the injection itself takes a few seconds",
+        "when": "Prescribed medicines given only under the skin, long courses that the patient later continues at home, prevention of clots after surgery or injury as directed by a doctor",
+        "prep": "No special preparation; bring the prescription and the medicine if the clinic does not supply it, and mention blood-thinning treatment and any skin changes at the injection site",
+        "abnormal": "A small bruise, a drop of blood or mild itching at the site is usual and fades within days; during a course the sites are rotated, otherwise lumps build up. A growing painful lump, a rash over the body or breathing difficulty should be seen by a doctor, and severe symptoms need immediate help"
+      },
+      "sr": {
+        "what": "Davanje propisanog lijeka u masno tkivo ispod kože",
+        "how": "Sestra uhvati nabor kože na trbuhu, vanjskoj strani nadlaktice ili butu i kratkom tankom iglom ubrizga malu količinu rastvora; iz potkožnog tkiva se lijek upija postepeno, a sam ubod traje nekoliko sekundi",
+        "when": "Propisani lijekovi koji se daju samo pod kožu, duže terapije koje pacijent kasnije nastavlja kod kuće, sprječavanje ugrušaka poslije operacija i povreda po nalogu ljekara",
+        "prep": "Posebna priprema nije potrebna; ponijeti nalog i lijek ako ga klinika ne izdaje, reći za terapiju koja razrjeđuje krv i za promjene na koži na mjestu uboda",
+        "abnormal": "Mala modrica, kap krvi ili blagi svrab na mjestu uboda uobičajeni su i prođu za nekoliko dana; tokom terapije se mjesta davanja smjenjuju, inače nastaju čvorići. Čvorić koji raste i boli, osip po tijelu ili otežano disanje razlog su za javljanje ljekaru, a kod težih tegoba odmah"
+      },
+      "de": {
+        "what": "Gabe eines verordneten Medikaments in das Fettgewebe unter der Haut",
+        "how": "Die Pflegekraft hebt eine Hautfalte an Bauch, Oberarmaußenseite oder Oberschenkel an und spritzt mit einer kurzen feinen Nadel eine kleine Menge; aus dem Unterhautfettgewebe wird das Medikament langsam aufgenommen, die Injektion selbst dauert wenige Sekunden",
+        "when": "Verordnete Medikamente, die nur unter die Haut gegeben werden, längere Behandlungen, die zu Hause fortgesetzt werden, Vorbeugung von Blutgerinnseln nach Operationen und Verletzungen auf ärztliche Anordnung",
+        "prep": "Keine besondere Vorbereitung; Verordnung und Medikament mitbringen, falls die Praxis es nicht ausgibt, blutverdünnende Behandlung und Hautveränderungen an der Einstichstelle angeben",
+        "abnormal": "Ein kleiner Bluterguss, ein Blutstropfen oder leichtes Jucken an der Einstichstelle sind üblich und vergehen in wenigen Tagen; bei einer Serie werden die Stellen gewechselt, sonst bilden sich Verhärtungen. Ein wachsender schmerzhafter Knoten, ein Ausschlag am Körper oder Atemnot gehören zum Arzt, schwere Beschwerden sofort"
+      },
+      "tr": {
+        "what": "Hekimin yazdığı ilacın cilt altındaki yağ dokusuna verilmesi",
+        "how": "Hemşire karın, kolun dış yüzü veya uyluk bölgesinde cildi kıvrım yapacak şekilde tutar ve kısa ince bir iğneyle az miktarda solüsyon verir; ilaç cilt altı dokudan yavaş emilir, iğnenin kendisi birkaç saniye sürer",
+        "when": "Yalnızca cilt altına verilen ilaçlar, hastanın daha sonra evde sürdürdüğü uzun tedaviler, ameliyat ve yaralanma sonrası hekim önerisiyle pıhtı oluşumunun önlenmesi",
+        "prep": "Özel hazırlık gerekmez; hekim isteğini ve klinik vermiyorsa ilacı getirin, kan sulandırıcı tedaviyi ve iğne yerindeki cilt değişikliklerini bildirin",
+        "abnormal": "İğne yerinde küçük bir morluk, bir damla kan veya hafif kaşıntı olağandır ve birkaç günde geçer; tedavi sürerken bölgeler dönüşümlü kullanılır, aksi halde sertlikler oluşur. Büyüyen ağrılı sertlik, vücutta döküntü veya nefes darlığı hekime başvurmayı, ağır belirtiler ise acil yardımı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Давање прописаног лијека у масно ткиво испод коже",
+        "how": "Сестра ухвати набор коже на трбуху, вањској страни надлактице или буту и кратком танком иглом убризга малу количину раствора; из поткожног ткива се лијек упија постепено, а сам убод траје неколико секунди",
+        "when": "Прописани лијекови који се дају само под кожу, дуже терапије које пацијент касније наставља код куће, спрјечавање угрушака послије операција и повреда по налогу љекара",
+        "prep": "Посебна припрема није потребна; понијети налог и лијек ако га клиника не издаје, рећи за терапију која разрјеђује крв и за промјене на кожи на мјесту убода",
+        "abnormal": "Мала модрица, кап крви или благи свраб на мјесту убода уобичајени су и прођу за неколико дана; током терапије се мјеста давања смјењују, иначе настају чворићи. Чворић који расте и боли, осип по тијелу или отежано дисање разлог су за јављање љекару, а код тежих тегоба одмах"
+      }
+    }
+  },
+  {
+    "slug": "enema-administration-medium",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Промывание нижних отделов кишечника умеренным объёмом жидкости",
+        "how": "Пациент лежит на левом боку, медсестра вводит смазанный наконечник и вливает тёплый раствор; объём подбирают по цели процедуры и по возрасту, подросткам и взрослым нужно больше, чем детям; жидкость удерживают несколько минут, затем опорожняют кишечник",
+        "when": "Стойкий запор, когда слабительные не помогли, подготовка к части исследований и процедур, опорожнение кишечника перед вмешательством или при длительном постельном режиме — по назначению врача",
+        "prep": "Перед процедурой сходить в туалет, взять сменное бельё, сказать о геморрое, трещинах, перенесённых операциях на кишечнике, беременности, сильной боли в животе и о крови в стуле",
+        "abnormal": "Опорожнение обычно наступает в ближайшие минуты, ещё около часа возможны позывы и урчание в животе. Сильная боль, кровь, резкая слабость или полное отсутствие стула после процедуры — повод сразу сказать медперсоналу, а как часто процедуру можно повторять, решает врач"
+      },
+      "en": {
+        "what": "Washing out the lower bowel with a moderate volume of fluid",
+        "how": "The patient lies on the left side, the nurse inserts a lubricated nozzle and runs in a warm solution; the volume is chosen according to the purpose and the age, teenagers and adults needing more than children; the fluid is held for a few minutes and the bowel is then emptied",
+        "when": "Persistent constipation when laxatives have not worked, preparation for some examinations and procedures, emptying the bowel before an intervention or during prolonged bed rest — as prescribed by a doctor",
+        "prep": "Visit the toilet before the procedure, bring a change of underwear, and report haemorrhoids, fissures, previous bowel surgery, pregnancy, severe abdominal pain and blood in the stool",
+        "abnormal": "The bowel usually empties within minutes, and urge and rumbling may continue for about an hour. Severe pain, blood, sudden weakness or no bowel movement at all afterwards should be reported to the staff straight away, and how often the procedure may be repeated is decided by the doctor"
+      },
+      "sr": {
+        "what": "Ispiranje donjih dijelova crijeva umjerenom količinom tečnosti",
+        "how": "Pacijent leži na lijevom boku, sestra uvodi podmazan nastavak i ulijeva mlak rastvor; količina se bira prema cilju zahvata i uzrastu, tinejdžerima i odraslima treba više nego djeci; tečnost se zadrži nekoliko minuta, a zatim se crijevo isprazni",
+        "when": "Uporan zatvor kada laksativi nisu pomogli, priprema za pojedine preglede i zahvate, pražnjenje crijeva prije intervencije ili tokom dužeg ležanja — po nalogu ljekara",
+        "prep": "Prije zahvata otići do toaleta, ponijeti rezervni veš, reći za hemoroide, fisure, ranije operacije crijeva, trudnoću, jak bol u stomaku i krv u stolici",
+        "abnormal": "Pražnjenje obično nastupi za nekoliko minuta, a nagon i krčanje mogu trajati još oko sat vremena. Jak bol, krv, naglo slabljenje ili potpuni izostanak stolice poslije zahvata treba odmah reći osoblju, a koliko često se postupak smije ponavljati odlučuje ljekar"
+      },
+      "de": {
+        "what": "Spülung der unteren Darmabschnitte mit einer mittleren Flüssigkeitsmenge",
+        "how": "Der Patient liegt auf der linken Seite, die Pflegekraft führt ein gleitfähiges Ansatzstück ein und lässt eine warme Lösung einlaufen; die Menge richtet sich nach dem Ziel und dem Alter, Jugendliche und Erwachsene brauchen mehr als Kinder; die Flüssigkeit wird einige Minuten gehalten, dann wird der Darm entleert",
+        "when": "Hartnäckige Verstopfung, wenn Abführmittel nicht geholfen haben, Vorbereitung auf einzelne Untersuchungen und Eingriffe, Entleerung des Darms vor einem Eingriff oder bei längerer Bettlägerigkeit — auf ärztliche Anordnung",
+        "prep": "Vor dem Eingriff die Toilette aufsuchen, Wechselwäsche mitbringen, Hämorrhoiden, Fissuren, frühere Darmoperationen, eine Schwangerschaft, starke Bauchschmerzen und Blut im Stuhl angeben",
+        "abnormal": "Die Entleerung setzt meist innerhalb von Minuten ein, Stuhldrang und Darmgeräusche können noch etwa eine Stunde anhalten. Starke Schmerzen, Blut, plötzliche Schwäche oder ein völlig ausbleibender Stuhlgang sind dem Personal sofort zu melden, und wie oft wiederholt werden darf, entscheidet die Ärztin oder der Arzt"
+      },
+      "tr": {
+        "what": "Kalın bağırsağın alt bölümünün orta hacimde sıvıyla yıkanması",
+        "how": "Hasta sol yanına yatar, hemşire kayganlaştırılmış ucu yerleştirip ılık çözeltiyi verir; hacim işlemin amacına ve yaşa göre seçilir, gençler ve yetişkinler için çocuklara göre daha fazladır; sıvı birkaç dakika tutulduktan sonra bağırsak boşaltılır",
+        "when": "Müshillerin işe yaramadığı inatçı kabızlık, bazı tetkik ve işlemler öncesi hazırlık, girişim öncesinde veya uzun süre yatan hastalarda bağırsağın boşaltılması — hekim isteğiyle",
+        "prep": "İşlemden önce tuvalete gidilir, yedek iç çamaşırı getirilir, hemoroit, fissür, geçirilmiş bağırsak ameliyatları, gebelik, şiddetli karın ağrısı ve dışkıda kan bildirilir",
+        "abnormal": "Boşalma genellikle birkaç dakika içinde olur, sıkışma hissi ve bağırsak sesleri yaklaşık bir saat daha sürebilir. Şiddetli ağrı, kanama, ani halsizlik veya işlem sonrası hiç dışkılamanın olmaması hemen ekibe bildirilir; işlemin ne sıklıkla tekrarlanabileceğine hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Испирање доњих дијелова цријева умјереном количином течности",
+        "how": "Пацијент лежи на лијевом боку, сестра уводи подмазан наставак и улијева млак раствор; количина се бира према циљу захвата и узрасту, тинејџерима и одраслима треба више него дјеци; течност се задржи неколико минута, а затим се цријево испразни",
+        "when": "Упоран затвор када лаксативи нису помогли, припрема за поједине прегледе и захвате, пражњење цријева прије интервенције или током дужег лежања — по налогу љекара",
+        "prep": "Прије захвата отићи до тоалета, понијети резервни веш, рећи за хемороиде, фисуре, раније операције цријева, трудноћу, јак бол у стомаку и крв у столици",
+        "abnormal": "Пражњење обично наступи за неколико минута, а нагон и крчање могу трајати још око сат времена. Јак бол, крв, нагло слабљење или потпуни изостанак столице послије захвата треба одмах рећи особљу, а колико често се поступак смије понављати одлучује љекар"
+      }
+    }
+  },
+  {
+    "slug": "injection-materials-consumption",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Стерильные одноразовые материалы, которыми выполняют инъекцию",
+        "how": "Перед уколом вскрывают новый шприц с иглой, берут стерильную салфетку с антисептиком, перчатки и пластырь или ватный тампон; использованную иглу сразу убирают в контейнер для острых отходов",
+        "when": "Любая инъекция в клинике — под кожу, в мышцу, в вену или в сустав, а также установка венозного катетера",
+        "prep": "Не требуется; заранее сказать медсестре об аллергии на латекс, пластырь или кожные антисептики, чтобы подобрали другой материал",
+        "abnormal": "Шприц и игла используются один раз и повторно не применяются, это защищает от инфекции. Зуд, краснота или сыпь именно под пластырем или в зоне обработки кожи могут быть связаны с реакцией на материал, об этом стоит сказать врачу"
+      },
+      "en": {
+        "what": "The sterile single-use supplies used to give an injection",
+        "how": "Before the injection a new syringe and needle are opened, along with a sterile antiseptic wipe, gloves and a plaster or cotton swab; the used needle goes straight into a sharps container",
+        "when": "Any injection at a clinic — under the skin, into a muscle, into a vein or into a joint — and the placement of an intravenous cannula",
+        "prep": "None needed; tell the nurse in advance about allergy to latex, plasters or skin antiseptics so that other materials can be used",
+        "abnormal": "The syringe and needle are used once and never reused, which protects against infection. Itching, redness or a rash exactly under the plaster or in the cleaned area may be related to a reaction to the material and is worth mentioning to a doctor"
+      },
+      "sr": {
+        "what": "Sterilni materijal za jednokratnu upotrebu kojim se daje injekcija",
+        "how": "Prije uboda otvara se nov špric sa iglom, uzimaju se sterilna kompresa sa antiseptikom, rukavice i flaster ili tupfer; upotrijebljena igla se odmah odlaže u kontejner za oštar otpad",
+        "when": "Svaka injekcija u klinici — pod kožu, u mišić, u venu ili u zglob, kao i postavljanje venske kanile",
+        "prep": "Nije potrebna; unaprijed reći sestri za alergiju na lateks, flaster ili antiseptike za kožu da bi se izabrao drugi materijal",
+        "abnormal": "Špric i igla koriste se samo jednom i ne upotrebljavaju se ponovo, što štiti od infekcije. Svrab, crvenilo ili osip baš ispod flastera ili na mjestu obrade kože mogu biti povezani sa reakcijom na materijal, pa to treba reći ljekaru"
+      },
+      "de": {
+        "what": "Steriles Einwegmaterial, mit dem eine Injektion gegeben wird",
+        "how": "Vor der Injektion werden eine neue Spritze mit Nadel, ein steriles Antiseptiktuch, Handschuhe und ein Pflaster oder Tupfer bereitgelegt; die benutzte Nadel kommt sofort in einen Abwurfbehälter für scharfe Gegenstände",
+        "when": "Jede Injektion in der Praxis — unter die Haut, in den Muskel, in die Vene oder in ein Gelenk — sowie das Legen einer Venenverweilkanüle",
+        "prep": "Nicht erforderlich; eine Allergie gegen Latex, Pflaster oder Hautantiseptika vorher der Pflegekraft mitteilen, damit anderes Material gewählt wird",
+        "abnormal": "Spritze und Nadel werden nur einmal verwendet und nicht wiederaufbereitet, das schützt vor Infektionen. Jucken, Rötung oder Ausschlag genau unter dem Pflaster oder im desinfizierten Bereich können mit einer Reaktion auf das Material zusammenhängen und sollten ärztlich angesprochen werden"
+      },
+      "tr": {
+        "what": "Enjeksiyon yapılırken kullanılan tek kullanımlık steril malzemeler",
+        "how": "İşlemden önce yeni bir enjektör ve iğne açılır, steril antiseptikli bez, eldiven ve flaster veya pamuk hazırlanır; kullanılan iğne doğrudan kesici atık kabına atılır",
+        "when": "Klinikte yapılan her enjeksiyon — cilt altı, kas içi, damar içi veya eklem içi — ve damar yolu açılması",
+        "prep": "Gerekmez; lateks, flaster veya cilt antiseptiklerine alerjiniz varsa farklı malzeme seçilebilmesi için hemşireye önceden söyleyin",
+        "abnormal": "Enjektör ve iğne yalnızca bir kez kullanılır ve tekrar kullanılmaz, bu enfeksiyondan korur. Tam flasterin altında veya temizlenen bölgede kaşıntı, kızarıklık ya da döküntü malzemeye tepkiyle ilişkili olabilir, hekime bildirilmesi uygun olur"
+      },
+      "sr_cyrl": {
+        "what": "Стерилни материјал за једнократну употребу којим се даје ињекција",
+        "how": "Прије убода отвара се нов шприц са иглом, узимају се стерилна компреса са антисептиком, рукавице и фластер или тупфер; употријебљена игла се одмах одлаже у контејнер за оштар отпад",
+        "when": "Свака ињекција у клиници — под кожу, у мишић, у вену или у зглоб, као и постављање венске каниле",
+        "prep": "Није потребна; унапријед рећи сестри за алергију на латекс, фластер или антисептике за кожу да би се изабрао други материјал",
+        "abnormal": "Шприц и игла користе се само једном и не употребљавају се поново, што штити од инфекције. Свраб, црвенило или осип баш испод фластера или на мјесту обраде коже могу бити повезани са реакцијом на материјал, па то треба рећи љекару"
+      }
+    }
+  },
+  {
+    "slug": "intramuscular-therapy-2",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Внутримышечное введение назначенной терапии в рамках курса лечения",
+        "how": "Медсестра готовит раствор и вводит его в мышцу бедра, плеча или ягодицы; если за визит назначено несколько препаратов, их вводят по очереди и в разные места, визит вместе с коротким наблюдением обычно занимает до четверти часа",
+        "when": "Курс уколов, назначенный врачом на несколько дней, продолжение лечения, начатого в стационаре, состояния, при которых приём внутрь неэффективен или невозможен",
+        "prep": "Принести назначение с перечнем препаратов и днями курса и сами препараты, если клиника их не выдаёт; перед уколом поесть, при склонности к обморокам предупредить заранее",
+        "abnormal": "При курсе место введения каждый раз меняют, лёгкая болезненность между уколами ожидаема. Если уплотнение растёт, кожа краснеет, поднимается температура или появляется сыпь, следующую инъекцию делают только после осмотра врача"
+      },
+      "en": {
+        "what": "Intramuscular administration of prescribed treatment as part of a course",
+        "how": "The nurse prepares the solution and injects it into the muscle of the thigh, upper arm or buttock; if more than one medicine is prescribed for the visit they are given one after another at different sites, and the visit with a short period of observation usually takes up to a quarter of an hour",
+        "when": "A course of injections prescribed for several days, continuation of treatment started in hospital, conditions in which oral medication does not work or is not possible",
+        "prep": "Bring the prescription listing the medicines and the days of the course, and the medicines themselves if the clinic does not supply them; eat beforehand and mention in advance if you tend to faint",
+        "abnormal": "During a course the injection site is changed each time, and mild tenderness between injections is expected. If a lump grows, the skin reddens, fever appears or a rash develops, the next injection should wait until a doctor has examined you"
+      },
+      "sr": {
+        "what": "Davanje propisane terapije u mišić u okviru terapijskog ciklusa",
+        "how": "Sestra priprema rastvor i daje ga u mišić buta, nadlaktice ili sjedalne regije; ako je za jednu posjetu propisano više lijekova, daju se jedan za drugim i na različita mjesta, a posjeta sa kratkim nadzorom obično traje do petnaestak minuta",
+        "when": "Serija injekcija koju je ljekar propisao na nekoliko dana, nastavak terapije započete u bolnici, stanja u kojima uzimanje na usta ne djeluje ili nije moguće",
+        "prep": "Ponijeti nalog sa spiskom lijekova i danima terapije, kao i same lijekove ako ih klinika ne izdaje; prije uboda nešto pojesti, a sklonost nesvjestici najaviti unaprijed",
+        "abnormal": "Tokom ciklusa mjesto davanja se svaki put mijenja, a blaga osjetljivost između injekcija je očekivana. Ako čvorić raste, koža crveni, javi se povišena temperatura ili osip, sljedeća injekcija se daje tek poslije pregleda ljekara"
+      },
+      "de": {
+        "what": "Gabe der verordneten Therapie in den Muskel im Rahmen einer Behandlungsserie",
+        "how": "Die Pflegekraft bereitet die Lösung vor und spritzt sie in den Muskel von Oberschenkel, Oberarm oder Gesäß; sind für einen Termin mehrere Medikamente verordnet, werden sie nacheinander an verschiedenen Stellen gegeben, der Termin dauert mit kurzer Nachbeobachtung meist bis zu einer Viertelstunde",
+        "when": "Eine ärztlich verordnete Spritzenserie über mehrere Tage, Fortführung einer im Krankenhaus begonnenen Behandlung, Zustände, in denen die Einnahme über den Mund nicht wirkt oder nicht möglich ist",
+        "prep": "Die Verordnung mit den Medikamenten und den Tagen der Serie sowie die Medikamente selbst mitbringen, falls die Praxis sie nicht ausgibt; vorher etwas essen und eine Neigung zu Ohnmacht vorab angeben",
+        "abnormal": "Während einer Serie wird die Einstichstelle jedes Mal gewechselt, leichte Druckempfindlichkeit zwischen den Spritzen ist zu erwarten. Wächst eine Verhärtung, rötet sich die Haut, kommt Fieber oder ein Ausschlag hinzu, erfolgt die nächste Injektion erst nach ärztlicher Untersuchung"
+      },
+      "tr": {
+        "what": "Tedavi kürü kapsamında yazılan ilaçların kas içine uygulanması",
+        "how": "Hemşire solüsyonu hazırlar ve uyluk, kol veya kalça kasına verir; bir ziyarette birden fazla ilaç yazıldıysa sırayla ve farklı bölgelere uygulanır, kısa gözlemle birlikte ziyaret genellikle çeyrek saate kadar sürer",
+        "when": "Hekimin birkaç gün için yazdığı iğne kürü, hastanede başlanan tedavinin sürdürülmesi, ağızdan alınan ilacın etkisiz veya mümkün olmadığı durumlar",
+        "prep": "İlaçların ve kür günlerinin yazılı olduğu hekim isteğini, klinik vermiyorsa ilaçların kendisini getirin; işlemden önce bir şeyler yiyin, bayılma eğiliminiz varsa önceden söyleyin",
+        "abnormal": "Kür boyunca iğne yeri her seferinde değiştirilir, iğneler arasında hafif hassasiyet beklenir. Sertlik büyüyorsa, cilt kızarıyorsa, ateş veya döküntü ortaya çıkıyorsa bir sonraki iğne ancak hekim muayenesinden sonra yapılır"
+      },
+      "sr_cyrl": {
+        "what": "Давање прописане терапије у мишић у оквиру терапијског циклуса",
+        "how": "Сестра припрема раствор и даје га у мишић бута, надлактице или сједалне регије; ако је за једну посјету прописано више лијекова, дају се један за другим и на различита мјеста, а посјета са кратким надзором обично траје до петнаестак минута",
+        "when": "Серија ињекција коју је љекар прописао на неколико дана, наставак терапије започете у болници, стања у којима узимање на уста не дјелује или није могуће",
+        "prep": "Понијети налог са списком лијекова и данима терапије, као и саме лијекове ако их клиника не издаје; прије убода нешто појести, а склоност несвјестици најавити унапријед",
+        "abnormal": "Током циклуса мјесто давања се сваки пут мијења, а блага осјетљивост између ињекција је очекивана. Ако чворић расте, кожа црвени, јави се повишена температура или осип, сљедећа ињекција се даје тек послије прегледа љекара"
+      }
+    }
+  },
+  {
+    "slug": "venous-blood-draw",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Взятие образца крови из вены для лабораторных исследований",
+        "how": "Медсестра накладывает жгут на плечо, обрабатывает кожу антисептиком и набирает кровь иглой из вены локтевого сгиба или кисти в пробирки; занимает одну-две минуты, затем иглу убирают и просят прижать место вкола",
+        "when": "Назначенные врачом анализы крови, профилактический осмотр, обследование перед операцией, контроль течения хронического заболевания и подобранного лечения",
+        "prep": "Зависит от назначенных анализов: многие сдают утром натощак, воду пить можно; сказать, если раньше были обмороки при заборе крови, и назвать руку, из которой брать не следует",
+        "abnormal": "Само взятие крови результата не даёт, его дают заказанные анализы, а трактует врач. Небольшой синяк проходит за несколько дней, а растущая припухлость, сильная боль, онемение руки или покраснение с температурой — повод показаться врачу"
+      },
+      "en": {
+        "what": "Taking a blood sample from a vein for laboratory testing",
+        "how": "A tourniquet is applied to the upper arm, the skin is cleaned with antiseptic and blood is drawn with a needle from a vein in the elbow crease or on the hand into tubes; it takes one to two minutes, after which the needle is removed and the site is pressed",
+        "when": "Blood tests ordered by a doctor, a routine check-up, work-up before surgery, monitoring of a chronic condition and of the treatment chosen for it",
+        "prep": "Depends on the tests ordered: many are taken in the morning on an empty stomach, water is allowed; say if you have fainted during a blood draw before and name the arm that should not be used",
+        "abnormal": "The draw itself gives no result, the result comes from the tests ordered and is interpreted by a doctor. A small bruise fades within days, while growing swelling, severe pain, numbness of the arm or redness with fever should be seen by a doctor"
+      },
+      "sr": {
+        "what": "Uzimanje uzorka krvi iz vene za laboratorijske analize",
+        "how": "Sestra postavlja podvezu na nadlakticu, dezinfikuje kožu i iglom uzima krv iz vene u pregibu lakta ili na šaci u epruvete; traje minut do dva, a zatim se igla vadi i traži se da se mjesto uboda pritisne",
+        "when": "Analize krvi koje je odredio ljekar, preventivni pregled, obrada prije operacije, praćenje hroničnog oboljenja i uvedene terapije",
+        "prep": "Zavisi od traženih analiza: mnoge se vade ujutru natašte, voda je dozvoljena; reći ako ste ranije gubili svijest pri vađenju krvi i navesti ruku iz koje ne treba vaditi",
+        "abnormal": "Samo vađenje ne daje nalaz, nalaz daju tražene analize, a tumači ih ljekar. Mala modrica prođe za nekoliko dana, dok oteklina koja raste, jak bol, trnjenje ruke ili crvenilo sa povišenom temperaturom traže pregled ljekara"
+      },
+      "de": {
+        "what": "Entnahme einer Blutprobe aus einer Vene für Laboruntersuchungen",
+        "how": "Ein Stauschlauch wird am Oberarm angelegt, die Haut desinfiziert und mit einer Nadel Blut aus einer Vene in der Ellenbeuge oder am Handrücken in Röhrchen entnommen; das dauert ein bis zwei Minuten, danach wird die Nadel entfernt und die Stelle gedrückt",
+        "when": "Ärztlich angeordnete Blutuntersuchungen, Vorsorgeuntersuchung, Abklärung vor einer Operation, Verlaufskontrolle einer chronischen Erkrankung und der eingestellten Therapie",
+        "prep": "Hängt von den angeordneten Untersuchungen ab: viele werden morgens nüchtern abgenommen, Wasser ist erlaubt; frühere Ohnmachten bei Blutentnahmen angeben und den Arm nennen, der nicht verwendet werden soll",
+        "abnormal": "Die Entnahme selbst liefert kein Ergebnis, das Ergebnis stammt aus den angeforderten Untersuchungen und wird ärztlich beurteilt. Ein kleiner Bluterguss vergeht in wenigen Tagen, eine zunehmende Schwellung, starke Schmerzen, ein taubes Gefühl im Arm oder Rötung mit Fieber gehören dagegen ärztlich abgeklärt"
+      },
+      "tr": {
+        "what": "Laboratuvar tetkikleri için toplardamardan kan örneği alınması",
+        "how": "Kola turnike takılır, cilt antiseptikle temizlenir ve dirsek içindeki ya da el üzerindeki damardan iğneyle tüplere kan alınır; bir iki dakika sürer, ardından iğne çıkarılır ve giriş yerine bastırılması istenir",
+        "when": "Hekimin istediği kan tetkikleri, kontrol muayenesi, ameliyat öncesi değerlendirme, kronik hastalığın ve uygulanan tedavinin izlemi",
+        "prep": "İstenen tetkiklere bağlıdır: çoğu sabah aç karnına alınır, su içilebilir; daha önce kan verirken bayıldıysanız söyleyin ve kan alınmaması gereken kolu belirtin",
+        "abnormal": "Kan alma işleminin kendisi sonuç vermez, sonuç istenen tetkiklerden çıkar ve hekim tarafından yorumlanır. Küçük bir morluk birkaç günde geçer; büyüyen şişlik, şiddetli ağrı, kolda uyuşma veya ateşle birlikte kızarıklık hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Узимање узорка крви из вене за лабораторијске анализе",
+        "how": "Сестра поставља подвезу на надлактицу, дезинфикује кожу и иглом узима крв из вене у прегибу лакта или на шаци у епрувете; траје минут до два, а затим се игла вади и тражи се да се мјесто убода притисне",
+        "when": "Анализе крви које је одредио љекар, превентивни преглед, обрада прије операције, праћење хроничног обољења и уведене терапије",
+        "prep": "Зависи од тражених анализа: многе се ваде ујутру наташте, вода је дозвољена; рећи ако сте раније губили свијест при вађењу крви и навести руку из које не треба вадити",
+        "abnormal": "Само вађење не даје налаз, налаз дају тражене анализе, а тумачи их љекар. Мала модрица прође за неколико дана, док отеклина која расте, јак бол, трњење руке или црвенило са повишеном температуром траже преглед љекара"
+      }
+    }
+  }
+]

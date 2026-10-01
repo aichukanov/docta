@@ -1,412 +1,482 @@
 [
-	{
-		"slug": "blood-count-selected-parameters",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Анализ, при котором лаборатория определяет не всю картину крови, а только те показатели из неё, которые назначил врач",
-				"how": "Один забор венозной или капиллярной крови, из пробы выдаются лишь заказанные параметры",
-				"when": "Повторный контроль отдельного показателя, наблюдение в динамике при уже известном состоянии, ситуации, когда полная гемограмма не нужна",
-				"prep": "Специальной подготовки не требуется; направление с перечнем нужных показателей стоит взять с собой",
-				"abnormal": "Изменение любого из выбранных показателей может быть связано с инфекцией, воспалением, анемией или ответом на лечение. Картина здесь неполная, поэтому врач решает, требуется ли полный анализ крови"
-			},
-			"en": {
-				"what": "A blood test in which the laboratory reports only the blood count parameters the doctor has ordered, not the whole panel",
-				"how": "A single venous or capillary blood draw, from which only the requested parameters are reported",
-				"when": "Repeat check of a single parameter, follow-up of a known condition over time, situations where a full blood count is not needed",
-				"prep": "No special preparation required; bring the referral listing the parameters that are needed",
-				"abnormal": "A change in any of the selected parameters may be related to infection, inflammation, anemia or the response to treatment. The picture here is incomplete, so the doctor decides whether a full blood count is needed"
-			},
-			"sr": {
-				"what": "Analiza kod koje laboratorija određuje samo one pokazatelje krvne slike koje je ljekar tražio, a ne cijeli panel",
-				"how": "Jedno vađenje venske ili kapilarne krvi, iz uzorka se izdaju samo naručeni parametri",
-				"when": "Ponovna provjera pojedinačnog pokazatelja, praćenje već poznatog stanja tokom vremena, situacije u kojima kompletna krvna slika nije potrebna",
-				"prep": "Nije potrebna posebna priprema; uputnicu sa spiskom traženih pokazatelja treba ponijeti sa sobom",
-				"abnormal": "Promjena bilo kojeg od izabranih pokazatelja može biti povezana sa infekcijom, upalom, anemijom ili odgovorom na liječenje. Slika je ovdje nepotpuna, pa ljekar odlučuje da li je potrebna kompletna krvna slika"
-			},
-			"de": {
-				"what": "Eine Blutuntersuchung, bei der das Labor nur die vom Arzt angeforderten Blutbildwerte bestimmt und nicht das gesamte Blutbild",
-				"how": "Eine einzelne venöse oder kapillare Blutentnahme, aus der nur die angeforderten Parameter ausgegeben werden",
-				"when": "Wiederholte Kontrolle eines einzelnen Wertes, Verlaufskontrolle bei bereits bekanntem Zustand, Situationen, in denen ein vollständiges Blutbild nicht nötig ist",
-				"prep": "Keine besondere Vorbereitung erforderlich; die Überweisung mit der Liste der benötigten Werte sollte mitgebracht werden",
-				"abnormal": "Eine Veränderung eines der ausgewählten Werte kann mit einer Infektion, Entzündung, Anämie oder dem Ansprechen auf eine Behandlung zusammenhängen. Das Bild ist hier unvollständig, daher entscheidet der Arzt, ob ein vollständiges Blutbild nötig ist"
-			},
-			"tr": {
-				"what": "Laboratuvarın kan sayımının tamamını değil, yalnızca hekimin istediği parametreleri bildirdiği kan tetkiki",
-				"how": "Tek bir venöz veya kapiller kan alımı yapılır, örnekten yalnızca istenen parametreler bildirilir",
-				"when": "Tek bir parametrenin yeniden kontrolü, bilinen bir durumun zaman içinde izlenmesi, tam kan sayımının gerekmediği durumlar",
-				"prep": "Özel bir hazırlık gerektirmez; istenen parametrelerin yazılı olduğu sevk kâğıdını yanınızda getirmek gerekir",
-				"abnormal": "Seçilen parametrelerden herhangi birindeki değişiklik enfeksiyon, iltihap, kansızlık veya tedaviye yanıtla ilişkili olabilir. Tablo burada eksik olduğundan tam kan sayımının gerekip gerekmediğine hekim karar verir"
-			}
-		}
-	},
-	{
-		"slug": "blood-eosinophils",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Подсчёт разновидности белых клеток крови, участвующей в аллергических реакциях и в ответе на паразитов",
-				"how": "Забор венозной или капиллярной крови, долю этих клеток определяет анализатор, при необходимости её подтверждают в окрашенном мазке",
-				"when": "Аллергические жалобы, кожный зуд и сыпь, затяжной кашель и астма, подозрение на паразитарную инвазию, наблюдение при известной аллергии",
-				"prep": "Специальной подготовки не требуется; о приёме противоаллергических и гормональных препаратов нужно сообщить врачу",
-				"abnormal": "Повышение доли этих клеток может быть связано с аллергией, паразитами, кожными и лёгочными заболеваниями или реакцией на лекарство. Значение результата оценивает врач вместе с жалобами и остальной картиной крови"
-			},
-			"en": {
-				"what": "A count of the type of white blood cell involved in allergic reactions and in the response to parasites",
-				"how": "Venous or capillary blood draw; the share of these cells is measured on an analyzer and, if needed, confirmed in a stained smear",
-				"when": "Allergic complaints, itching and rash, lingering cough and asthma, suspected parasitic infestation, follow-up of a known allergy",
-				"prep": "No special preparation required; tell the doctor about any antihistamine or hormonal medication you take",
-				"abnormal": "A higher share of these cells may be related to allergy, parasites, skin and lung conditions, or a reaction to a medicine. The meaning of the result is assessed by a doctor together with the complaints and the rest of the blood picture"
-			},
-			"sr": {
-				"what": "Brojanje vrste bijelih krvnih ćelija koja učestvuje u alergijskim reakcijama i u odgovoru na parazite",
-				"how": "Uzimanje venske ili kapilarne krvi, udio ovih ćelija određuje analizator, a po potrebi se potvrđuje u obojenom razmazu",
-				"when": "Alergijske tegobe, svrab kože i osip, dugotrajan kašalj i astma, sumnja na parazite, praćenje kod poznate alergije",
-				"prep": "Nije potrebna posebna priprema; o uzimanju antialergijskih i hormonskih lijekova treba obavijestiti ljekara",
-				"abnormal": "Povećan udio ovih ćelija može biti povezan sa alergijom, parazitima, oboljenjima kože i pluća ili reakcijom na lijek. Značenje nalaza procjenjuje ljekar uz tegobe i ostatak krvne slike"
-			},
-			"de": {
-				"what": "Auszählung der Art weißer Blutkörperchen, die an allergischen Reaktionen und an der Abwehr von Parasiten beteiligt ist",
-				"how": "Entnahme von venösem oder kapillarem Blut; der Anteil dieser Zellen wird am Analysegerät bestimmt und bei Bedarf im gefärbten Ausstrich bestätigt",
-				"when": "Allergische Beschwerden, Juckreiz und Hautausschlag, anhaltender Husten und Asthma, Verdacht auf Parasitenbefall, Verlaufskontrolle bei bekannter Allergie",
-				"prep": "Keine besondere Vorbereitung erforderlich; die Einnahme von Antiallergika und Hormonpräparaten ist dem Arzt mitzuteilen",
-				"abnormal": "Ein erhöhter Anteil dieser Zellen kann mit einer Allergie, Parasiten, Haut- und Lungenerkrankungen oder einer Reaktion auf ein Medikament zusammenhängen. Die Bedeutung des Ergebnisses beurteilt der Arzt zusammen mit den Beschwerden und dem übrigen Blutbild"
-			},
-			"tr": {
-				"what": "Alerjik tepkilerde ve parazitlere karşı yanıtta rol alan akyuvar türünün sayımı",
-				"how": "Venöz veya kapiller kan alınır; bu hücrelerin oranı cihazda ölçülür, gerekirse boyalı yaymada doğrulanır",
-				"when": "Alerji yakınmaları, ciltte kaşıntı ve döküntü, uzayan öksürük ve astım, parazit kuşkusu, bilinen alerjide izlem",
-				"prep": "Özel bir hazırlık gerektirmez; alerji ilaçları ve hormon ilaçlarının kullanımı hekime bildirilir",
-				"abnormal": "Bu hücrelerin oranının artması alerji, parazitler, cilt ve akciğer hastalıkları ya da bir ilaca tepkiyle ilişkili olabilir. Sonucun anlamını hekim, yakınmalar ve kan tablosunun geri kalanıyla birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "leukocytes",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Определение общего числа белых клеток крови, которые отвечают за защиту организма от инфекций",
-				"how": "Забор венозной или капиллярной крови, общее число клеток подсчитывает гематологический анализатор",
-				"when": "Подозрение на инфекцию или воспаление, длительная температура, контроль во время лечения, обследование перед вмешательствами",
-				"prep": "Специальной подготовки не требуется; забор предпочтителен утром в спокойном состоянии, без физической нагрузки непосредственно перед ним",
-				"abnormal": "Отклонение общего числа может быть связано с бактериальной или вирусной инфекцией, воспалением, стрессом, приёмом лекарств или нарушениями кроветворения. Что стоит за цифрой, определяет врач, при необходимости добавляя подсчёт отдельных видов лейкоцитов"
-			},
-			"en": {
-				"what": "A measurement of the total number of white blood cells, which protect the body against infections",
-				"how": "Venous or capillary blood draw; the total number of cells is counted on a hematology analyzer",
-				"when": "Suspected infection or inflammation, prolonged fever, monitoring during treatment, work-up before procedures",
-				"prep": "No special preparation required; the draw is best done in the morning at rest, without physical exertion right before it",
-				"abnormal": "A deviation in the total number may be related to a bacterial or viral infection, inflammation, stress, medication use, or disorders of blood formation. What lies behind the figure is determined by a doctor, who may add a count of the individual white cell types"
-			},
-			"sr": {
-				"what": "Određivanje ukupnog broja bijelih krvnih ćelija koje štite organizam od infekcija",
-				"how": "Uzimanje venske ili kapilarne krvi, ukupan broj ćelija broji hematološki analizator",
-				"when": "Sumnja na infekciju ili upalu, dugotrajna temperatura, kontrola tokom liječenja, obrada prije zahvata",
-				"prep": "Nije potrebna posebna priprema; vađenje je poželjno ujutru u mirnom stanju, bez fizičkog napora neposredno prije njega",
-				"abnormal": "Odstupanje ukupnog broja može biti povezano sa bakterijskom ili virusnom infekcijom, upalom, stresom, uzimanjem lijekova ili poremećajima stvaranja krvi. Šta stoji iza brojke, određuje ljekar, po potrebi uz brojanje pojedinih vrsta leukocita"
-			},
-			"de": {
-				"what": "Bestimmung der Gesamtzahl der weißen Blutkörperchen, die den Körper vor Infektionen schützen",
-				"how": "Entnahme von venösem oder kapillarem Blut; die Gesamtzahl der Zellen zählt ein Hämatologie-Analysegerät",
-				"when": "Verdacht auf Infektion oder Entzündung, länger anhaltendes Fieber, Kontrolle während der Behandlung, Abklärung vor Eingriffen",
-				"prep": "Keine besondere Vorbereitung erforderlich; die Entnahme erfolgt am besten morgens in Ruhe, ohne körperliche Anstrengung unmittelbar davor",
-				"abnormal": "Eine Abweichung der Gesamtzahl kann mit einer bakteriellen oder viralen Infektion, einer Entzündung, Stress, Medikamenteneinnahme oder Störungen der Blutbildung zusammenhängen. Was hinter dem Wert steckt, bestimmt der Arzt und ergänzt bei Bedarf die Auszählung der einzelnen Zelltypen"
-			},
-			"tr": {
-				"what": "Vücudu enfeksiyonlardan koruyan akyuvarların toplam sayısının ölçülmesi",
-				"how": "Venöz veya kapiller kan alınır; toplam hücre sayısı hematoloji cihazında sayılır",
-				"when": "Enfeksiyon veya iltihap kuşkusu, uzayan ateş, tedavi sırasında kontrol, girişimler öncesi değerlendirme",
-				"prep": "Özel bir hazırlık gerektirmez; kanın sabah, dinlenmiş durumda ve hemen öncesinde ağır fiziksel çaba olmadan alınması tercih edilir",
-				"abnormal": "Toplam sayıdaki sapma bakteriyel veya viral enfeksiyon, iltihap, stres, ilaç kullanımı ya da kan yapımı bozukluklarıyla ilişkili olabilir. Sayının arkasında ne olduğunu hekim belirler, gerekirse akyuvar türlerinin ayrı sayımını ekler"
-			}
-		}
-	},
-	{
-		"slug": "erythrocytes",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Подсчёт красных клеток крови, переносящих кислород от лёгких к тканям",
-				"how": "Забор венозной или капиллярной крови, число клеток в единице объёма определяет анализатор",
-				"when": "Слабость и бледность, подозрение на анемию, наблюдение после кровопотери, контроль при хронических болезнях почек и сердца",
-				"prep": "Специальной подготовки не требуется; перед забором лучше несколько минут посидеть спокойно, положение тела влияет на результат",
-				"abnormal": "Снижение числа красных клеток может быть связано с кровопотерей, нехваткой железа или витаминов, хроническим заболеванием, а повышение — с обезвоживанием или длительной нехваткой кислорода. Выводы делает врач по всей картине крови"
-			},
-			"en": {
-				"what": "A count of the red blood cells that carry oxygen from the lungs to the tissues",
-				"how": "Venous or capillary blood draw; the number of cells per unit of volume is measured on an analyzer",
-				"when": "Weakness and pallor, suspected anemia, follow-up after blood loss, monitoring in chronic kidney and heart disease",
-				"prep": "No special preparation required; sit quietly for a few minutes before the draw, as body position affects the result",
-				"abnormal": "A lower number of red cells may be related to blood loss, a lack of iron or vitamins, or a chronic illness, while a higher one may be related to dehydration or a long-standing lack of oxygen. The conclusions are drawn by a doctor from the whole blood picture"
-			},
-			"sr": {
-				"what": "Brojanje crvenih krvnih ćelija koje prenose kiseonik od pluća do tkiva",
-				"how": "Uzimanje venske ili kapilarne krvi, broj ćelija u jedinici zapremine određuje analizator",
-				"when": "Slabost i bljedilo, sumnja na anemiju, praćenje nakon gubitka krvi, kontrola kod hroničnih bolesti bubrega i srca",
-				"prep": "Nije potrebna posebna priprema; prije vađenja je bolje nekoliko minuta mirno sjediti, jer položaj tijela utiče na nalaz",
-				"abnormal": "Smanjen broj crvenih ćelija može biti povezan sa gubitkom krvi, manjkom gvožđa ili vitamina, hroničnom bolešću, a povećan sa dehidracijom ili dugotrajnim nedostatkom kiseonika. Zaključke donosi ljekar prema cjelokupnoj krvnoj slici"
-			},
-			"de": {
-				"what": "Auszählung der roten Blutkörperchen, die den Sauerstoff von der Lunge zu den Geweben transportieren",
-				"how": "Entnahme von venösem oder kapillarem Blut; die Zellzahl pro Volumeneinheit bestimmt das Analysegerät",
-				"when": "Schwäche und Blässe, Verdacht auf Anämie, Verlaufskontrolle nach Blutverlust, Kontrolle bei chronischen Nieren- und Herzerkrankungen",
-				"prep": "Keine besondere Vorbereitung erforderlich; vor der Entnahme sollte man einige Minuten ruhig sitzen, da die Körperhaltung das Ergebnis beeinflusst",
-				"abnormal": "Eine niedrigere Zellzahl kann mit Blutverlust, einem Mangel an Eisen oder Vitaminen oder einer chronischen Erkrankung zusammenhängen, eine höhere mit Flüssigkeitsmangel oder einem länger bestehenden Sauerstoffmangel. Die Schlüsse zieht der Arzt aus dem gesamten Blutbild"
-			},
-			"tr": {
-				"what": "Akciğerlerden dokulara oksijen taşıyan alyuvarların sayımı",
-				"how": "Venöz veya kapiller kan alınır; birim hacimdeki hücre sayısı cihazla ölçülür",
-				"when": "Halsizlik ve solgunluk, kansızlık kuşkusu, kan kaybı sonrası izlem, kronik böbrek ve kalp hastalıklarında kontrol",
-				"prep": "Özel bir hazırlık gerektirmez; kan alınmadan önce birkaç dakika sakin oturmak iyi olur, vücut duruşu sonucu etkiler",
-				"abnormal": "Alyuvar sayısının azalması kan kaybı, demir veya vitamin eksikliği ya da kronik bir hastalıkla, artması ise sıvı kaybı veya uzun süreli oksijen azlığıyla ilişkili olabilir. Sonucu hekim kan tablosunun tamamına bakarak değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "hematocrit",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Показатель того, какую долю объёма крови занимают эритроциты",
-				"how": "Забор венозной или капиллярной крови; долю рассчитывает анализатор либо её измеряют после центрифугирования пробирки",
-				"when": "Оценка обезвоживания, обследование при анемии, наблюдение после кровопотери, контроль при хронических заболеваниях лёгких и почек",
-				"prep": "Специальной подготовки не требуется; о недавней рвоте, поносе или обильном потоотделении стоит сказать врачу, они смещают показатель",
-				"abnormal": "Снижение может быть связано с анемией или избытком жидкости в организме, повышение — с обезвоживанием, курением, длительным пребыванием в горах. Показатель читают вместе с гемоглобином и числом эритроцитов, интерпретацию проводит врач"
-			},
-			"en": {
-				"what": "A measure of the share of blood volume taken up by red blood cells",
-				"how": "Venous or capillary blood draw; the share is calculated by the analyzer or measured after the tube has been centrifuged",
-				"when": "Assessment of dehydration, work-up of anemia, follow-up after blood loss, monitoring in chronic lung and kidney disease",
-				"prep": "No special preparation required; tell the doctor about recent vomiting, diarrhea or heavy sweating, as these shift the value",
-				"abnormal": "A lower value may be related to anemia or excess body fluid, a higher one to dehydration, smoking, or a long stay at altitude. The value is read together with hemoglobin and the red cell count, and interpreted by a doctor"
-			},
-			"sr": {
-				"what": "Pokazatelj koji dio zapremine krvi zauzimaju eritrociti",
-				"how": "Uzimanje venske ili kapilarne krvi; udio izračunava analizator ili se mjeri nakon centrifugiranja epruvete",
-				"when": "Procjena dehidracije, obrada anemije, praćenje nakon gubitka krvi, kontrola kod hroničnih bolesti pluća i bubrega",
-				"prep": "Nije potrebna posebna priprema; o skorašnjem povraćanju, proljevu ili obilnom znojenju treba reći ljekaru, jer pomjeraju vrijednost",
-				"abnormal": "Snižena vrijednost može biti povezana sa anemijom ili viškom tečnosti u organizmu, a povišena sa dehidracijom, pušenjem ili dužim boravkom na visini. Vrijednost se čita zajedno sa hemoglobinom i brojem eritrocita, a tumači je ljekar"
-			},
-			"de": {
-				"what": "Ein Maß dafür, welchen Anteil am Blutvolumen die roten Blutkörperchen einnehmen",
-				"how": "Entnahme von venösem oder kapillarem Blut; den Anteil berechnet das Analysegerät oder er wird nach dem Zentrifugieren des Röhrchens gemessen",
-				"when": "Einschätzung eines Flüssigkeitsmangels, Abklärung einer Anämie, Verlaufskontrolle nach Blutverlust, Kontrolle bei chronischen Lungen- und Nierenerkrankungen",
-				"prep": "Keine besondere Vorbereitung erforderlich; kürzliches Erbrechen, Durchfall oder starkes Schwitzen sollte dem Arzt mitgeteilt werden, da sie den Wert verschieben",
-				"abnormal": "Ein niedriger Wert kann mit einer Anämie oder einem Flüssigkeitsüberschuss zusammenhängen, ein hoher mit Flüssigkeitsmangel, Rauchen oder einem längeren Aufenthalt in großer Höhe. Der Wert wird zusammen mit dem Hämoglobin und der Erythrozytenzahl gelesen und vom Arzt gedeutet"
-			},
-			"tr": {
-				"what": "Kan hacminin ne kadarlık bölümünü alyuvarların kapladığını gösteren ölçüt",
-				"how": "Venöz veya kapiller kan alınır; oranı cihaz hesaplar ya da tüp santrifüj edildikten sonra ölçülür",
-				"when": "Sıvı kaybının değerlendirilmesi, kansızlığın araştırılması, kan kaybı sonrası izlem, kronik akciğer ve böbrek hastalıklarında kontrol",
-				"prep": "Özel bir hazırlık gerektirmez; yakın zamandaki kusma, ishal veya aşırı terleme hekime söylenmelidir, bunlar değeri kaydırır",
-				"abnormal": "Değerin düşmesi kansızlık veya vücutta fazla sıvıyla, yükselmesi ise sıvı kaybı, sigara ya da yüksek rakımda uzun süre kalmayla ilişkili olabilir. Değer hemoglobin ve alyuvar sayısıyla birlikte okunur, yorumu hekim yapar"
-			}
-		}
-	},
-	{
-		"slug": "hemoglobin",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Измерение концентрации белка эритроцитов, который связывает и переносит кислород",
-				"how": "Забор венозной или капиллярной крови, концентрацию измеряют на анализаторе фотометрически",
-				"when": "Слабость, головокружение, одышка при нагрузке, наблюдение во время беременности, контроль лечения анемии, обследование перед операцией",
-				"prep": "Специальной подготовки не требуется; о приёме препаратов железа и недавнем переливании крови нужно сообщить врачу",
-				"abnormal": "Снижение может быть связано с нехваткой железа, витаминов, кровопотерей или хроническим заболеванием, повышение — с обезвоживанием или состояниями, при которых тканям не хватает кислорода. Причину устанавливает врач"
-			},
-			"en": {
-				"what": "A measurement of the concentration of the red cell protein that binds and carries oxygen",
-				"how": "Venous or capillary blood draw; the concentration is measured photometrically on an analyzer",
-				"when": "Weakness, dizziness, shortness of breath on exertion, monitoring during pregnancy, follow-up of anemia treatment, work-up before surgery",
-				"prep": "No special preparation required; tell the doctor about iron supplements and any recent blood transfusion",
-				"abnormal": "A lower value may be related to a lack of iron or vitamins, blood loss or a chronic illness, a higher one to dehydration or to conditions in which the tissues lack oxygen. The cause is established by a doctor"
-			},
-			"sr": {
-				"what": "Mjerenje koncentracije bjelančevine eritrocita koja veže i prenosi kiseonik",
-				"how": "Uzimanje venske ili kapilarne krvi, koncentracija se mjeri fotometrijski na analizatoru",
-				"when": "Slabost, vrtoglavica, nedostatak vazduha pri naporu, praćenje tokom trudnoće, kontrola liječenja anemije, obrada prije operacije",
-				"prep": "Nije potrebna posebna priprema; o uzimanju preparata gvožđa i skorašnjoj transfuziji treba obavijestiti ljekara",
-				"abnormal": "Snižena vrijednost može biti povezana sa manjkom gvožđa ili vitamina, gubitkom krvi ili hroničnom bolešću, a povišena sa dehidracijom ili stanjima u kojima tkivima nedostaje kiseonika. Uzrok utvrđuje ljekar"
-			},
-			"de": {
-				"what": "Messung der Konzentration des Eiweißes der roten Blutkörperchen, das Sauerstoff bindet und transportiert",
-				"how": "Entnahme von venösem oder kapillarem Blut; die Konzentration wird am Analysegerät photometrisch gemessen",
-				"when": "Schwäche, Schwindel, Atemnot bei Belastung, Kontrolle in der Schwangerschaft, Verlaufskontrolle der Anämiebehandlung, Abklärung vor einer Operation",
-				"prep": "Keine besondere Vorbereitung erforderlich; die Einnahme von Eisenpräparaten und eine kürzliche Bluttransfusion sind dem Arzt mitzuteilen",
-				"abnormal": "Ein niedriger Wert kann mit einem Mangel an Eisen oder Vitaminen, Blutverlust oder einer chronischen Erkrankung zusammenhängen, ein hoher mit Flüssigkeitsmangel oder Zuständen, bei denen den Geweben Sauerstoff fehlt. Die Ursache klärt der Arzt"
-			},
-			"tr": {
-				"what": "Alyuvarların oksijeni bağlayıp taşıyan proteininin yoğunluğunun ölçülmesi",
-				"how": "Venöz veya kapiller kan alınır; yoğunluk cihazda fotometrik olarak ölçülür",
-				"when": "Halsizlik, baş dönmesi, eforla nefes darlığı, gebelikte izlem, kansızlık tedavisinin kontrolü, ameliyat öncesi değerlendirme",
-				"prep": "Özel bir hazırlık gerektirmez; demir preparatı kullanımı ve yakın zamanda yapılan kan nakli hekime bildirilir",
-				"abnormal": "Değerin düşmesi demir veya vitamin eksikliği, kan kaybı ya da kronik bir hastalıkla, yükselmesi sıvı kaybı veya dokuların oksijensiz kaldığı durumlarla ilişkili olabilir. Nedenini hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "mch",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Расчётный показатель среднего количества гемоглобина в одном эритроците",
-				"how": "Отдельный забор не нужен: значение вычисляет анализатор из числа эритроцитов и общего гемоглобина в той же пробе",
-				"when": "Уточнение вида анемии, выбор направления дальнейшего обследования при сниженном гемоглобине, наблюдение в ходе лечения",
-				"prep": "Отдельной подготовки нет, показатель получают из того же забора крови, что и остальную гемограмму",
-				"abnormal": "Отклонения могут быть связаны с нехваткой железа, дефицитом витамина B12 или фолиевой кислоты, наследственными особенностями гемоглобина. Сам по себе показатель диагноза не даёт, врач читает его вместе с MCV и MCHC"
-			},
-			"en": {
-				"what": "A calculated value for the average amount of hemoglobin in a single red blood cell",
-				"how": "No separate draw is needed: the analyzer derives the value from the red cell count and the total hemoglobin in the same sample",
-				"when": "Clarifying the type of anemia, choosing the direction of further work-up when hemoglobin is low, follow-up during treatment",
-				"prep": "No separate preparation; the value comes from the same blood draw as the rest of the blood count",
-				"abnormal": "Deviations may be related to a lack of iron, a deficiency of vitamin B12 or folic acid, or inherited features of hemoglobin. On its own the value is not a diagnosis, and a doctor reads it together with MCV and MCHC"
-			},
-			"sr": {
-				"what": "Izračunata vrijednost prosječne količine hemoglobina u jednom eritrocitu",
-				"how": "Posebno vađenje nije potrebno: analizator izvodi vrijednost iz broja eritrocita i ukupnog hemoglobina u istom uzorku",
-				"when": "Razjašnjenje vrste anemije, izbor smjera dalje obrade kod sniženog hemoglobina, praćenje tokom liječenja",
-				"prep": "Nema posebne pripreme, pokazatelj se dobija iz istog vađenja krvi kao i ostatak krvne slike",
-				"abnormal": "Odstupanja mogu biti povezana sa manjkom gvožđa, nedostatkom vitamina B12 ili folne kiseline, kao i sa nasljednim osobinama hemoglobina. Sam po sebi pokazatelj nije dijagnoza, ljekar ga čita zajedno sa MCV i MCHC"
-			},
-			"de": {
-				"what": "Ein rechnerischer Wert für die durchschnittliche Hämoglobinmenge in einem einzelnen roten Blutkörperchen",
-				"how": "Eine gesonderte Entnahme ist nicht nötig: Das Analysegerät leitet den Wert aus der Erythrozytenzahl und dem Gesamthämoglobin derselben Probe ab",
-				"when": "Klärung der Anämieform, Wahl der weiteren Abklärung bei niedrigem Hämoglobin, Verlaufskontrolle während der Behandlung",
-				"prep": "Keine gesonderte Vorbereitung; der Wert stammt aus derselben Blutentnahme wie das übrige Blutbild",
-				"abnormal": "Abweichungen können mit Eisenmangel, einem Mangel an Vitamin B12 oder Folsäure oder mit erblichen Besonderheiten des Hämoglobins zusammenhängen. Für sich genommen ist der Wert keine Diagnose, der Arzt liest ihn zusammen mit MCV und MCHC"
-			},
-			"tr": {
-				"what": "Tek bir alyuvardaki ortalama hemoglobin miktarını gösteren hesaplanmış değer",
-				"how": "Ayrı kan alımı gerekmez: cihaz değeri aynı örnekteki alyuvar sayısı ve toplam hemoglobinden hesaplar",
-				"when": "Kansızlığın türünün netleştirilmesi, hemoglobin düşükken ileri incelemenin yönünün seçilmesi, tedavi sırasında izlem",
-				"prep": "Ayrı bir hazırlık yoktur; değer, kan sayımının geri kalanıyla aynı kan alımından elde edilir",
-				"abnormal": "Sapmalar demir azlığı, B12 vitamini veya folik asit eksikliği ya da hemoglobinin kalıtsal özellikleriyle ilişkili olabilir. Değer tek başına tanı koymaz, hekim onu MCV ve MCHC ile birlikte okur"
-			}
-		}
-	},
-	{
-		"slug": "mchc",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Расчётный показатель насыщенности эритроцита гемоглобином, то есть его концентрации в объёме клетки",
-				"how": "Значение выводится анализатором из общего гемоглобина и гематокрита той же пробы крови, отдельная процедура не нужна",
-				"when": "Уточнение характера анемии, проверка сомнительных клеточных показателей, наблюдение при заболеваниях, затрагивающих эритроциты",
-				"prep": "Отдельной подготовки нет; важно, чтобы пробирка была заполнена до метки, иначе расчёт получается неточным",
-				"abnormal": "Отклонения могут быть связаны с формами анемии и наследственными особенностями эритроцитов, а также с техническими причинами, например с мутной или жирной пробой. Значимость оценивает врач, при сомнении лаборатория повторяет анализ"
-			},
-			"en": {
-				"what": "A calculated value for how saturated a red blood cell is with hemoglobin, that is, its concentration within the cell volume",
-				"how": "The analyzer derives the value from the total hemoglobin and the hematocrit of the same blood sample, so no separate procedure is needed",
-				"when": "Clarifying the character of anemia, checking questionable cell values, follow-up in conditions affecting red blood cells",
-				"prep": "No separate preparation; the tube must be filled to the mark, otherwise the calculation comes out inaccurate",
-				"abnormal": "Deviations may be related to forms of anemia and inherited features of red blood cells, and also to technical causes such as a turbid or lipid-rich sample. The significance is assessed by a doctor, and the laboratory repeats the test when in doubt"
-			},
-			"sr": {
-				"what": "Izračunata vrijednost zasićenosti eritrocita hemoglobinom, odnosno njegove koncentracije u zapremini ćelije",
-				"how": "Analizator izvodi vrijednost iz ukupnog hemoglobina i hematokrita istog uzorka krvi, pa poseban postupak nije potreban",
-				"when": "Razjašnjenje karaktera anemije, provjera sumnjivih ćelijskih pokazatelja, praćenje kod oboljenja koja zahvataju eritrocite",
-				"prep": "Nema posebne pripreme; važno je da epruveta bude napunjena do oznake, jer izračun inače ispadne netačan",
-				"abnormal": "Odstupanja mogu biti povezana sa oblicima anemije i nasljednim osobinama eritrocita, ali i sa tehničkim uzrocima, na primjer mutnim ili masnim uzorkom. Značaj procjenjuje ljekar, a laboratorija kod sumnje ponavlja analizu"
-			},
-			"de": {
-				"what": "Ein rechnerischer Wert dafür, wie stark ein rotes Blutkörperchen mit Hämoglobin gesättigt ist, also dessen Konzentration im Zellvolumen",
-				"how": "Das Analysegerät leitet den Wert aus dem Gesamthämoglobin und dem Hämatokrit derselben Blutprobe ab, ein gesonderter Vorgang ist nicht nötig",
-				"when": "Klärung der Art einer Anämie, Überprüfung fraglicher Zellwerte, Verlaufskontrolle bei Erkrankungen, die die roten Blutkörperchen betreffen",
-				"prep": "Keine gesonderte Vorbereitung; das Röhrchen muss bis zur Markierung gefüllt sein, sonst fällt die Berechnung ungenau aus",
-				"abnormal": "Abweichungen können mit Formen der Anämie und erblichen Besonderheiten der roten Blutkörperchen zusammenhängen, aber auch mit technischen Ursachen wie einer trüben oder fettreichen Probe. Die Bedeutung beurteilt der Arzt, im Zweifel wiederholt das Labor die Analyse"
-			},
-			"tr": {
-				"what": "Alyuvarın hemoglobinle ne ölçüde dolu olduğunu, yani hücre hacmindeki hemoglobin yoğunluğunu gösteren hesaplanmış değer",
-				"how": "Cihaz değeri aynı kan örneğindeki toplam hemoglobin ve hematokritten çıkarır, bu nedenle ayrı bir işlem gerekmez",
-				"when": "Kansızlığın niteliğinin netleştirilmesi, kuşkulu hücre değerlerinin doğrulanması, alyuvarları etkileyen hastalıklarda izlem",
-				"prep": "Ayrı bir hazırlık yoktur; tüpün işarete kadar dolu olması gerekir, aksi halde hesap yanlış çıkar",
-				"abnormal": "Sapmalar kansızlık biçimleri ve alyuvarların kalıtsal özellikleriyle olduğu kadar, bulanık ya da yağlı örnek gibi teknik nedenlerle de ilişkili olabilir. Önemini hekim değerlendirir, kuşku halinde laboratuvar analizi yineler"
-			}
-		}
-	},
-	{
-		"slug": "mcv",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Расчётный показатель среднего объёма одного эритроцита",
-				"how": "Анализатор измеряет объём проходящих через датчик клеток и выводит среднее значение по пробе",
-				"when": "Разделение анемий по размеру эритроцитов, обследование при нехватке железа, витамина B12 или фолиевой кислоты, наблюдение в ходе лечения",
-				"prep": "Отдельной подготовки нет; пробу желательно доставить в лабораторию быстро, при долгом хранении объём клеток меняется",
-				"abnormal": "Уменьшенный или увеличенный средний объём может быть связан с дефицитом железа, витамина B12 или фолиевой кислоты, заболеваниями печени, употреблением алкоголя, наследственными особенностями эритроцитов. Направление дальнейшего обследования определяет врач"
-			},
-			"en": {
-				"what": "A calculated value for the average volume of a single red blood cell",
-				"how": "The analyzer measures the volume of the cells passing its sensor and reports the average for the sample",
-				"when": "Sorting anemias by red cell size, work-up for a lack of iron, vitamin B12 or folic acid, follow-up during treatment",
-				"prep": "No separate preparation; the sample should reach the laboratory quickly, as cell volume changes during long storage",
-				"abnormal": "A smaller or larger average volume may be related to a deficiency of iron, vitamin B12 or folic acid, to liver disease, alcohol use, or inherited features of the red blood cells. The direction of further work-up is decided by a doctor"
-			},
-			"sr": {
-				"what": "Izračunata vrijednost prosječne zapremine jednog eritrocita",
-				"how": "Analizator mjeri zapreminu ćelija koje prolaze kroz senzor i daje prosjek za uzorak",
-				"when": "Razvrstavanje anemija prema veličini eritrocita, obrada kod manjka gvožđa, vitamina B12 ili folne kiseline, praćenje tokom liječenja",
-				"prep": "Nema posebne pripreme; uzorak je poželjno brzo dostaviti u laboratoriju, jer se pri dugom stajanju zapremina ćelija mijenja",
-				"abnormal": "Manja ili veća prosječna zapremina može biti povezana sa nedostatkom gvožđa, vitamina B12 ili folne kiseline, oboljenjima jetre, uzimanjem alkohola ili nasljednim osobinama eritrocita. Smjer dalje obrade određuje ljekar"
-			},
-			"de": {
-				"what": "Ein rechnerischer Wert für das durchschnittliche Volumen eines einzelnen roten Blutkörperchens",
-				"how": "Das Analysegerät misst das Volumen der am Sensor vorbeiziehenden Zellen und gibt den Mittelwert für die Probe aus",
-				"when": "Einteilung von Anämien nach Zellgröße, Abklärung bei Mangel an Eisen, Vitamin B12 oder Folsäure, Verlaufskontrolle während der Behandlung",
-				"prep": "Keine gesonderte Vorbereitung; die Probe sollte rasch ins Labor gelangen, da sich das Zellvolumen bei langer Lagerung verändert",
-				"abnormal": "Ein kleineres oder größeres mittleres Volumen kann mit einem Mangel an Eisen, Vitamin B12 oder Folsäure, mit Lebererkrankungen, Alkoholkonsum oder erblichen Besonderheiten der roten Blutkörperchen zusammenhängen. Die Richtung der weiteren Abklärung legt der Arzt fest"
-			},
-			"tr": {
-				"what": "Tek bir alyuvarın ortalama hacmini gösteren hesaplanmış değer",
-				"how": "Cihaz, sensörden geçen hücrelerin hacmini ölçer ve örnek için ortalamayı bildirir",
-				"when": "Kansızlıkların alyuvar büyüklüğüne göre ayrılması, demir, B12 vitamini veya folik asit azlığının araştırılması, tedavi sırasında izlem",
-				"prep": "Ayrı bir hazırlık yoktur; örneğin laboratuvara hızla ulaşması istenir, uzun bekleyişte hücre hacmi değişir",
-				"abnormal": "Ortalama hacmin küçülmesi veya büyümesi demir, B12 vitamini ya da folik asit eksikliği, karaciğer hastalıkları, alkol kullanımı veya alyuvarların kalıtsal özellikleriyle ilişkili olabilir. İleri incelemenin yönünü hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "platelet-count-microscopic",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Ручной подсчёт кровяных пластинок в окрашенном мазке под микроскопом",
-				"how": "Из капли крови готовят мазок на стекле, окрашивают его, и лаборант считает пластинки в полях зрения, пересчитывая результат на объём",
-				"when": "Проверка неожиданно низкого или высокого результата автоматического счёта, подозрение на слипание пластинок в пробирке, уточнение перед операцией и при склонности к кровоточивости",
-				"prep": "Специальной подготовки не требуется; мазок готовят из свежей крови, поэтому забор и приготовление стекла делают в лаборатории",
-				"abnormal": "Расхождение с автоматическим счётом чаще объясняется слипанием пластинок или особенностями образца, а подтверждённое отклонение числа может быть связано с инфекцией, приёмом лекарств или заболеваниями костного мозга. Заключение по результату делает врач"
-			},
-			"en": {
-				"what": "A manual count of blood platelets in a stained smear under the microscope",
-				"how": "A drop of blood is spread on a slide and stained, and the technician counts the platelets across fields of view, converting the result to a volume",
-				"when": "Checking an unexpectedly low or high automated count, suspected platelet clumping in the tube, clarification before surgery and in case of a bleeding tendency",
-				"prep": "No special preparation required; the smear is made from fresh blood, so the draw and the slide are prepared at the laboratory",
-				"abnormal": "A discrepancy with the automated count is most often explained by platelet clumping or by features of the sample, while a confirmed deviation in the number may be related to infection, medication use or bone marrow disorders. The conclusion on the result is drawn by a doctor"
-			},
-			"sr": {
-				"what": "Ručno brojanje krvnih pločica u obojenom razmazu pod mikroskopom",
-				"how": "Od kapi krvi se pravi razmaz na stakalcu, boji se, a laborant broji pločice u vidnim poljima i preračunava rezultat na zapreminu",
-				"when": "Provjera neočekivano niskog ili visokog automatskog nalaza, sumnja na slijepljivanje pločica u epruveti, razjašnjenje prije operacije i kod sklonosti krvarenju",
-				"prep": "Nije potrebna posebna priprema; razmaz se pravi od svježe krvi, pa se vađenje i priprema stakalca obavljaju u laboratoriji",
-				"abnormal": "Razlika u odnosu na automatski nalaz najčešće se objašnjava slijepljivanjem pločica ili osobinama uzorka, dok potvrđeno odstupanje broja može biti povezano sa infekcijom, uzimanjem lijekova ili oboljenjima koštane srži. Zaključak o nalazu donosi ljekar"
-			},
-			"de": {
-				"what": "Manuelle Auszählung der Blutplättchen im gefärbten Ausstrich unter dem Mikroskop",
-				"how": "Aus einem Blutstropfen wird ein Ausstrich auf einem Objektträger angefertigt und gefärbt; die Fachkraft zählt die Plättchen in den Gesichtsfeldern und rechnet das Ergebnis auf das Volumen um",
-				"when": "Überprüfung eines unerwartet niedrigen oder hohen automatisch ermittelten Wertes, Verdacht auf Verklumpung der Plättchen im Röhrchen, Klärung vor einer Operation und bei Blutungsneigung",
-				"prep": "Keine besondere Vorbereitung erforderlich; der Ausstrich wird aus frischem Blut angefertigt, daher erfolgen Entnahme und Herstellung des Objektträgers im Labor",
-				"abnormal": "Eine Abweichung vom automatisch ermittelten Wert erklärt sich meist durch Verklumpung der Plättchen oder durch Eigenschaften der Probe, während eine bestätigte Abweichung der Zahl mit einer Infektion, Medikamenteneinnahme oder Knochenmarkerkrankungen zusammenhängen kann. Die Beurteilung des Ergebnisses trifft der Arzt"
-			},
-			"tr": {
-				"what": "Boyalı yaymada kan pulcuklarının mikroskop altında elle sayılması",
-				"how": "Bir damla kandan lam üzerine yayma hazırlanır ve boyanır; laborant pulcukları görüş alanlarında sayar ve sonucu hacme çevirir",
-				"when": "Cihazın beklenmedik düşük veya yüksek sonucunun doğrulanması, tüpte pulcukların kümelendiği kuşkusu, ameliyat öncesi ve kanamaya eğilim durumunda netleştirme",
-				"prep": "Özel bir hazırlık gerektirmez; yayma taze kandan hazırlandığı için kan alımı ve lamın hazırlanması laboratuvarda yapılır",
-				"abnormal": "Cihaz sonucuyla farklılık çoğunlukla pulcukların kümelenmesi veya örneğin özellikleriyle açıklanır; doğrulanmış bir sayı sapması ise enfeksiyon, ilaç kullanımı ya da kemik iliği hastalıklarıyla ilişkili olabilir. Sonuca ilişkin kararı hekim verir"
-			}
-		}
-	}
+  {
+    "slug": "blood-count-selected-parameters",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Анализ, при котором лаборатория определяет не всю картину крови, а только те показатели из неё, которые назначил врач",
+        "how": "Один забор венозной или капиллярной крови, из пробы выдаются лишь заказанные параметры",
+        "when": "Повторный контроль отдельного показателя, наблюдение в динамике при уже известном состоянии, ситуации, когда полная гемограмма не нужна",
+        "prep": "Специальной подготовки не требуется; направление с перечнем нужных показателей стоит взять с собой",
+        "abnormal": "Изменение любого из выбранных показателей может быть связано с инфекцией, воспалением, анемией или ответом на лечение. Картина здесь неполная, поэтому врач решает, требуется ли полный анализ крови"
+      },
+      "en": {
+        "what": "A blood test in which the laboratory reports only the blood count parameters the doctor has ordered, not the whole panel",
+        "how": "A single venous or capillary blood draw, from which only the requested parameters are reported",
+        "when": "Repeat check of a single parameter, follow-up of a known condition over time, situations where a full blood count is not needed",
+        "prep": "No special preparation required; bring the referral listing the parameters that are needed",
+        "abnormal": "A change in any of the selected parameters may be related to infection, inflammation, anemia or the response to treatment. The picture here is incomplete, so the doctor decides whether a full blood count is needed"
+      },
+      "sr": {
+        "what": "Analiza kod koje laboratorija određuje samo one pokazatelje krvne slike koje je ljekar tražio, a ne cijeli panel",
+        "how": "Jedno vađenje venske ili kapilarne krvi, iz uzorka se izdaju samo naručeni parametri",
+        "when": "Ponovna provjera pojedinačnog pokazatelja, praćenje već poznatog stanja tokom vremena, situacije u kojima kompletna krvna slika nije potrebna",
+        "prep": "Nije potrebna posebna priprema; uputnicu sa spiskom traženih pokazatelja treba ponijeti sa sobom",
+        "abnormal": "Promjena bilo kojeg od izabranih pokazatelja može biti povezana sa infekcijom, upalom, anemijom ili odgovorom na liječenje. Slika je ovdje nepotpuna, pa ljekar odlučuje da li je potrebna kompletna krvna slika"
+      },
+      "de": {
+        "what": "Eine Blutuntersuchung, bei der das Labor nur die vom Arzt angeforderten Blutbildwerte bestimmt und nicht das gesamte Blutbild",
+        "how": "Eine einzelne venöse oder kapillare Blutentnahme, aus der nur die angeforderten Parameter ausgegeben werden",
+        "when": "Wiederholte Kontrolle eines einzelnen Wertes, Verlaufskontrolle bei bereits bekanntem Zustand, Situationen, in denen ein vollständiges Blutbild nicht nötig ist",
+        "prep": "Keine besondere Vorbereitung erforderlich; die Überweisung mit der Liste der benötigten Werte sollte mitgebracht werden",
+        "abnormal": "Eine Veränderung eines der ausgewählten Werte kann mit einer Infektion, Entzündung, Anämie oder dem Ansprechen auf eine Behandlung zusammenhängen. Das Bild ist hier unvollständig, daher entscheidet der Arzt, ob ein vollständiges Blutbild nötig ist"
+      },
+      "tr": {
+        "what": "Laboratuvarın kan sayımının tamamını değil, yalnızca hekimin istediği parametreleri bildirdiği kan tetkiki",
+        "how": "Tek bir venöz veya kapiller kan alımı yapılır, örnekten yalnızca istenen parametreler bildirilir",
+        "when": "Tek bir parametrenin yeniden kontrolü, bilinen bir durumun zaman içinde izlenmesi, tam kan sayımının gerekmediği durumlar",
+        "prep": "Özel bir hazırlık gerektirmez; istenen parametrelerin yazılı olduğu sevk kâğıdını yanınızda getirmek gerekir",
+        "abnormal": "Seçilen parametrelerden herhangi birindeki değişiklik enfeksiyon, iltihap, kansızlık veya tedaviye yanıtla ilişkili olabilir. Tablo burada eksik olduğundan tam kan sayımının gerekip gerekmediğine hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Анализа код које лабораторија одређује само оне показатеље крвне слике које је љекар тражио, а не цијели панел",
+        "how": "Једно вађење венске или капиларне крви, из узорка се издају само наручени параметри",
+        "when": "Поновна провјера појединачног показатеља, праћење већ познатог стања током времена, ситуације у којима комплетна крвна слика није потребна",
+        "prep": "Није потребна посебна припрема; упутницу са списком тражених показатеља треба понијети са собом",
+        "abnormal": "Промјена било којег од изабраних показатеља може бити повезана са инфекцијом, упалом, анемијом или одговором на лијечење. Слика је овдје непотпуна, па љекар одлучује да ли је потребна комплетна крвна слика"
+      }
+    }
+  },
+  {
+    "slug": "blood-eosinophils",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Подсчёт разновидности белых клеток крови, участвующей в аллергических реакциях и в ответе на паразитов",
+        "how": "Забор венозной или капиллярной крови, долю этих клеток определяет анализатор, при необходимости её подтверждают в окрашенном мазке",
+        "when": "Аллергические жалобы, кожный зуд и сыпь, затяжной кашель и астма, подозрение на паразитарную инвазию, наблюдение при известной аллергии",
+        "prep": "Специальной подготовки не требуется; о приёме противоаллергических и гормональных препаратов нужно сообщить врачу",
+        "abnormal": "Повышение доли этих клеток может быть связано с аллергией, паразитами, кожными и лёгочными заболеваниями или реакцией на лекарство. Значение результата оценивает врач вместе с жалобами и остальной картиной крови"
+      },
+      "en": {
+        "what": "A count of the type of white blood cell involved in allergic reactions and in the response to parasites",
+        "how": "Venous or capillary blood draw; the share of these cells is measured on an analyzer and, if needed, confirmed in a stained smear",
+        "when": "Allergic complaints, itching and rash, lingering cough and asthma, suspected parasitic infestation, follow-up of a known allergy",
+        "prep": "No special preparation required; tell the doctor about any antihistamine or hormonal medication you take",
+        "abnormal": "A higher share of these cells may be related to allergy, parasites, skin and lung conditions, or a reaction to a medicine. The meaning of the result is assessed by a doctor together with the complaints and the rest of the blood picture"
+      },
+      "sr": {
+        "what": "Brojanje vrste bijelih krvnih ćelija koja učestvuje u alergijskim reakcijama i u odgovoru na parazite",
+        "how": "Uzimanje venske ili kapilarne krvi, udio ovih ćelija određuje analizator, a po potrebi se potvrđuje u obojenom razmazu",
+        "when": "Alergijske tegobe, svrab kože i osip, dugotrajan kašalj i astma, sumnja na parazite, praćenje kod poznate alergije",
+        "prep": "Nije potrebna posebna priprema; o uzimanju antialergijskih i hormonskih lijekova treba obavijestiti ljekara",
+        "abnormal": "Povećan udio ovih ćelija može biti povezan sa alergijom, parazitima, oboljenjima kože i pluća ili reakcijom na lijek. Značenje nalaza procjenjuje ljekar uz tegobe i ostatak krvne slike"
+      },
+      "de": {
+        "what": "Auszählung der Art weißer Blutkörperchen, die an allergischen Reaktionen und an der Abwehr von Parasiten beteiligt ist",
+        "how": "Entnahme von venösem oder kapillarem Blut; der Anteil dieser Zellen wird am Analysegerät bestimmt und bei Bedarf im gefärbten Ausstrich bestätigt",
+        "when": "Allergische Beschwerden, Juckreiz und Hautausschlag, anhaltender Husten und Asthma, Verdacht auf Parasitenbefall, Verlaufskontrolle bei bekannter Allergie",
+        "prep": "Keine besondere Vorbereitung erforderlich; die Einnahme von Antiallergika und Hormonpräparaten ist dem Arzt mitzuteilen",
+        "abnormal": "Ein erhöhter Anteil dieser Zellen kann mit einer Allergie, Parasiten, Haut- und Lungenerkrankungen oder einer Reaktion auf ein Medikament zusammenhängen. Die Bedeutung des Ergebnisses beurteilt der Arzt zusammen mit den Beschwerden und dem übrigen Blutbild"
+      },
+      "tr": {
+        "what": "Alerjik tepkilerde ve parazitlere karşı yanıtta rol alan akyuvar türünün sayımı",
+        "how": "Venöz veya kapiller kan alınır; bu hücrelerin oranı cihazda ölçülür, gerekirse boyalı yaymada doğrulanır",
+        "when": "Alerji yakınmaları, ciltte kaşıntı ve döküntü, uzayan öksürük ve astım, parazit kuşkusu, bilinen alerjide izlem",
+        "prep": "Özel bir hazırlık gerektirmez; alerji ilaçları ve hormon ilaçlarının kullanımı hekime bildirilir",
+        "abnormal": "Bu hücrelerin oranının artması alerji, parazitler, cilt ve akciğer hastalıkları ya da bir ilaca tepkiyle ilişkili olabilir. Sonucun anlamını hekim, yakınmalar ve kan tablosunun geri kalanıyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бројање врсте бијелих крвних ћелија која учествује у алергијским реакцијама и у одговору на паразите",
+        "how": "Узимање венске или капиларне крви, удио ових ћелија одређује анализатор, а по потреби се потврђује у обојеном размазу",
+        "when": "Алергијске тегобе, свраб коже и осип, дуготрајан кашаљ и астма, сумња на паразите, праћење код познате алергије",
+        "prep": "Није потребна посебна припрема; о узимању антиалергијских и хормонских лијекова треба обавијестити љекара",
+        "abnormal": "Повећан удио ових ћелија може бити повезан са алергијом, паразитима, обољењима коже и плућа или реакцијом на лијек. Значење налаза процјењује љекар уз тегобе и остатак крвне слике"
+      }
+    }
+  },
+  {
+    "slug": "leukocytes",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Определение общего числа белых клеток крови, которые отвечают за защиту организма от инфекций",
+        "how": "Забор венозной или капиллярной крови, общее число клеток подсчитывает гематологический анализатор",
+        "when": "Подозрение на инфекцию или воспаление, длительная температура, контроль во время лечения, обследование перед вмешательствами",
+        "prep": "Специальной подготовки не требуется; забор предпочтителен утром в спокойном состоянии, без физической нагрузки непосредственно перед ним",
+        "abnormal": "Отклонение общего числа может быть связано с бактериальной или вирусной инфекцией, воспалением, стрессом, приёмом лекарств или нарушениями кроветворения. Что стоит за цифрой, определяет врач, при необходимости добавляя подсчёт отдельных видов лейкоцитов"
+      },
+      "en": {
+        "what": "A measurement of the total number of white blood cells, which protect the body against infections",
+        "how": "Venous or capillary blood draw; the total number of cells is counted on a hematology analyzer",
+        "when": "Suspected infection or inflammation, prolonged fever, monitoring during treatment, work-up before procedures",
+        "prep": "No special preparation required; the draw is best done in the morning at rest, without physical exertion right before it",
+        "abnormal": "A deviation in the total number may be related to a bacterial or viral infection, inflammation, stress, medication use, or disorders of blood formation. What lies behind the figure is determined by a doctor, who may add a count of the individual white cell types"
+      },
+      "sr": {
+        "what": "Određivanje ukupnog broja bijelih krvnih ćelija koje štite organizam od infekcija",
+        "how": "Uzimanje venske ili kapilarne krvi, ukupan broj ćelija broji hematološki analizator",
+        "when": "Sumnja na infekciju ili upalu, dugotrajna temperatura, kontrola tokom liječenja, obrada prije zahvata",
+        "prep": "Nije potrebna posebna priprema; vađenje je poželjno ujutru u mirnom stanju, bez fizičkog napora neposredno prije njega",
+        "abnormal": "Odstupanje ukupnog broja može biti povezano sa bakterijskom ili virusnom infekcijom, upalom, stresom, uzimanjem lijekova ili poremećajima stvaranja krvi. Šta stoji iza brojke, određuje ljekar, po potrebi uz brojanje pojedinih vrsta leukocita"
+      },
+      "de": {
+        "what": "Bestimmung der Gesamtzahl der weißen Blutkörperchen, die den Körper vor Infektionen schützen",
+        "how": "Entnahme von venösem oder kapillarem Blut; die Gesamtzahl der Zellen zählt ein Hämatologie-Analysegerät",
+        "when": "Verdacht auf Infektion oder Entzündung, länger anhaltendes Fieber, Kontrolle während der Behandlung, Abklärung vor Eingriffen",
+        "prep": "Keine besondere Vorbereitung erforderlich; die Entnahme erfolgt am besten morgens in Ruhe, ohne körperliche Anstrengung unmittelbar davor",
+        "abnormal": "Eine Abweichung der Gesamtzahl kann mit einer bakteriellen oder viralen Infektion, einer Entzündung, Stress, Medikamenteneinnahme oder Störungen der Blutbildung zusammenhängen. Was hinter dem Wert steckt, bestimmt der Arzt und ergänzt bei Bedarf die Auszählung der einzelnen Zelltypen"
+      },
+      "tr": {
+        "what": "Vücudu enfeksiyonlardan koruyan akyuvarların toplam sayısının ölçülmesi",
+        "how": "Venöz veya kapiller kan alınır; toplam hücre sayısı hematoloji cihazında sayılır",
+        "when": "Enfeksiyon veya iltihap kuşkusu, uzayan ateş, tedavi sırasında kontrol, girişimler öncesi değerlendirme",
+        "prep": "Özel bir hazırlık gerektirmez; kanın sabah, dinlenmiş durumda ve hemen öncesinde ağır fiziksel çaba olmadan alınması tercih edilir",
+        "abnormal": "Toplam sayıdaki sapma bakteriyel veya viral enfeksiyon, iltihap, stres, ilaç kullanımı ya da kan yapımı bozukluklarıyla ilişkili olabilir. Sayının arkasında ne olduğunu hekim belirler, gerekirse akyuvar türlerinin ayrı sayımını ekler"
+      },
+      "sr_cyrl": {
+        "what": "Одређивање укупног броја бијелих крвних ћелија које штите организам од инфекција",
+        "how": "Узимање венске или капиларне крви, укупан број ћелија броји хематолошки анализатор",
+        "when": "Сумња на инфекцију или упалу, дуготрајна температура, контрола током лијечења, обрада прије захвата",
+        "prep": "Није потребна посебна припрема; вађење је пожељно ујутру у мирном стању, без физичког напора непосредно прије њега",
+        "abnormal": "Одступање укупног броја може бити повезано са бактеријском или вирусном инфекцијом, упалом, стресом, узимањем лијекова или поремећајима стварања крви. Шта стоји иза бројке, одређује љекар, по потреби уз бројање појединих врста леукоцита"
+      }
+    }
+  },
+  {
+    "slug": "erythrocytes",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Подсчёт красных клеток крови, переносящих кислород от лёгких к тканям",
+        "how": "Забор венозной или капиллярной крови, число клеток в единице объёма определяет анализатор",
+        "when": "Слабость и бледность, подозрение на анемию, наблюдение после кровопотери, контроль при хронических болезнях почек и сердца",
+        "prep": "Специальной подготовки не требуется; перед забором лучше несколько минут посидеть спокойно, положение тела влияет на результат",
+        "abnormal": "Снижение числа красных клеток может быть связано с кровопотерей, нехваткой железа или витаминов, хроническим заболеванием, а повышение — с обезвоживанием или длительной нехваткой кислорода. Выводы делает врач по всей картине крови"
+      },
+      "en": {
+        "what": "A count of the red blood cells that carry oxygen from the lungs to the tissues",
+        "how": "Venous or capillary blood draw; the number of cells per unit of volume is measured on an analyzer",
+        "when": "Weakness and pallor, suspected anemia, follow-up after blood loss, monitoring in chronic kidney and heart disease",
+        "prep": "No special preparation required; sit quietly for a few minutes before the draw, as body position affects the result",
+        "abnormal": "A lower number of red cells may be related to blood loss, a lack of iron or vitamins, or a chronic illness, while a higher one may be related to dehydration or a long-standing lack of oxygen. The conclusions are drawn by a doctor from the whole blood picture"
+      },
+      "sr": {
+        "what": "Brojanje crvenih krvnih ćelija koje prenose kiseonik od pluća do tkiva",
+        "how": "Uzimanje venske ili kapilarne krvi, broj ćelija u jedinici zapremine određuje analizator",
+        "when": "Slabost i bljedilo, sumnja na anemiju, praćenje nakon gubitka krvi, kontrola kod hroničnih bolesti bubrega i srca",
+        "prep": "Nije potrebna posebna priprema; prije vađenja je bolje nekoliko minuta mirno sjediti, jer položaj tijela utiče na nalaz",
+        "abnormal": "Smanjen broj crvenih ćelija može biti povezan sa gubitkom krvi, manjkom gvožđa ili vitamina, hroničnom bolešću, a povećan sa dehidracijom ili dugotrajnim nedostatkom kiseonika. Zaključke donosi ljekar prema cjelokupnoj krvnoj slici"
+      },
+      "de": {
+        "what": "Auszählung der roten Blutkörperchen, die den Sauerstoff von der Lunge zu den Geweben transportieren",
+        "how": "Entnahme von venösem oder kapillarem Blut; die Zellzahl pro Volumeneinheit bestimmt das Analysegerät",
+        "when": "Schwäche und Blässe, Verdacht auf Anämie, Verlaufskontrolle nach Blutverlust, Kontrolle bei chronischen Nieren- und Herzerkrankungen",
+        "prep": "Keine besondere Vorbereitung erforderlich; vor der Entnahme sollte man einige Minuten ruhig sitzen, da die Körperhaltung das Ergebnis beeinflusst",
+        "abnormal": "Eine niedrigere Zellzahl kann mit Blutverlust, einem Mangel an Eisen oder Vitaminen oder einer chronischen Erkrankung zusammenhängen, eine höhere mit Flüssigkeitsmangel oder einem länger bestehenden Sauerstoffmangel. Die Schlüsse zieht der Arzt aus dem gesamten Blutbild"
+      },
+      "tr": {
+        "what": "Akciğerlerden dokulara oksijen taşıyan alyuvarların sayımı",
+        "how": "Venöz veya kapiller kan alınır; birim hacimdeki hücre sayısı cihazla ölçülür",
+        "when": "Halsizlik ve solgunluk, kansızlık kuşkusu, kan kaybı sonrası izlem, kronik böbrek ve kalp hastalıklarında kontrol",
+        "prep": "Özel bir hazırlık gerektirmez; kan alınmadan önce birkaç dakika sakin oturmak iyi olur, vücut duruşu sonucu etkiler",
+        "abnormal": "Alyuvar sayısının azalması kan kaybı, demir veya vitamin eksikliği ya da kronik bir hastalıkla, artması ise sıvı kaybı veya uzun süreli oksijen azlığıyla ilişkili olabilir. Sonucu hekim kan tablosunun tamamına bakarak değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бројање црвених крвних ћелија које преносе кисеоник од плућа до ткива",
+        "how": "Узимање венске или капиларне крви, број ћелија у јединици запремине одређује анализатор",
+        "when": "Слабост и бљедило, сумња на анемију, праћење након губитка крви, контрола код хроничних болести бубрега и срца",
+        "prep": "Није потребна посебна припрема; прије вађења је боље неколико минута мирно сједити, јер положај тијела утиче на налаз",
+        "abnormal": "Смањен број црвених ћелија може бити повезан са губитком крви, мањком гвожђа или витамина, хроничном болешћу, а повећан са дехидрацијом или дуготрајним недостатком кисеоника. Закључке доноси љекар према цјелокупној крвној слици"
+      }
+    }
+  },
+  {
+    "slug": "hematocrit",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Показатель того, какую долю объёма крови занимают эритроциты",
+        "how": "Забор венозной или капиллярной крови; долю рассчитывает анализатор либо её измеряют после центрифугирования пробирки",
+        "when": "Оценка обезвоживания, обследование при анемии, наблюдение после кровопотери, контроль при хронических заболеваниях лёгких и почек",
+        "prep": "Специальной подготовки не требуется; о недавней рвоте, поносе или обильном потоотделении стоит сказать врачу, они смещают показатель",
+        "abnormal": "Снижение может быть связано с анемией или избытком жидкости в организме, повышение — с обезвоживанием, курением, длительным пребыванием в горах. Показатель читают вместе с гемоглобином и числом эритроцитов, интерпретацию проводит врач"
+      },
+      "en": {
+        "what": "A measure of the share of blood volume taken up by red blood cells",
+        "how": "Venous or capillary blood draw; the share is calculated by the analyzer or measured after the tube has been centrifuged",
+        "when": "Assessment of dehydration, work-up of anemia, follow-up after blood loss, monitoring in chronic lung and kidney disease",
+        "prep": "No special preparation required; tell the doctor about recent vomiting, diarrhea or heavy sweating, as these shift the value",
+        "abnormal": "A lower value may be related to anemia or excess body fluid, a higher one to dehydration, smoking, or a long stay at altitude. The value is read together with hemoglobin and the red cell count, and interpreted by a doctor"
+      },
+      "sr": {
+        "what": "Pokazatelj koji dio zapremine krvi zauzimaju eritrociti",
+        "how": "Uzimanje venske ili kapilarne krvi; udio izračunava analizator ili se mjeri nakon centrifugiranja epruvete",
+        "when": "Procjena dehidracije, obrada anemije, praćenje nakon gubitka krvi, kontrola kod hroničnih bolesti pluća i bubrega",
+        "prep": "Nije potrebna posebna priprema; o skorašnjem povraćanju, proljevu ili obilnom znojenju treba reći ljekaru, jer pomjeraju vrijednost",
+        "abnormal": "Snižena vrijednost može biti povezana sa anemijom ili viškom tečnosti u organizmu, a povišena sa dehidracijom, pušenjem ili dužim boravkom na visini. Vrijednost se čita zajedno sa hemoglobinom i brojem eritrocita, a tumači je ljekar"
+      },
+      "de": {
+        "what": "Ein Maß dafür, welchen Anteil am Blutvolumen die roten Blutkörperchen einnehmen",
+        "how": "Entnahme von venösem oder kapillarem Blut; den Anteil berechnet das Analysegerät oder er wird nach dem Zentrifugieren des Röhrchens gemessen",
+        "when": "Einschätzung eines Flüssigkeitsmangels, Abklärung einer Anämie, Verlaufskontrolle nach Blutverlust, Kontrolle bei chronischen Lungen- und Nierenerkrankungen",
+        "prep": "Keine besondere Vorbereitung erforderlich; kürzliches Erbrechen, Durchfall oder starkes Schwitzen sollte dem Arzt mitgeteilt werden, da sie den Wert verschieben",
+        "abnormal": "Ein niedriger Wert kann mit einer Anämie oder einem Flüssigkeitsüberschuss zusammenhängen, ein hoher mit Flüssigkeitsmangel, Rauchen oder einem längeren Aufenthalt in großer Höhe. Der Wert wird zusammen mit dem Hämoglobin und der Erythrozytenzahl gelesen und vom Arzt gedeutet"
+      },
+      "tr": {
+        "what": "Kan hacminin ne kadarlık bölümünü alyuvarların kapladığını gösteren ölçüt",
+        "how": "Venöz veya kapiller kan alınır; oranı cihaz hesaplar ya da tüp santrifüj edildikten sonra ölçülür",
+        "when": "Sıvı kaybının değerlendirilmesi, kansızlığın araştırılması, kan kaybı sonrası izlem, kronik akciğer ve böbrek hastalıklarında kontrol",
+        "prep": "Özel bir hazırlık gerektirmez; yakın zamandaki kusma, ishal veya aşırı terleme hekime söylenmelidir, bunlar değeri kaydırır",
+        "abnormal": "Değerin düşmesi kansızlık veya vücutta fazla sıvıyla, yükselmesi ise sıvı kaybı, sigara ya da yüksek rakımda uzun süre kalmayla ilişkili olabilir. Değer hemoglobin ve alyuvar sayısıyla birlikte okunur, yorumu hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Показатељ који дио запремине крви заузимају еритроцити",
+        "how": "Узимање венске или капиларне крви; удио израчунава анализатор или се мјери након центрифугирања епрувете",
+        "when": "Процјена дехидрације, обрада анемије, праћење након губитка крви, контрола код хроничних болести плућа и бубрега",
+        "prep": "Није потребна посебна припрема; о скорашњем повраћању, прољеву или обилном знојењу треба рећи љекару, јер помјерају вриједност",
+        "abnormal": "Снижена вриједност може бити повезана са анемијом или вишком течности у организму, а повишена са дехидрацијом, пушењем или дужим боравком на висини. Вриједност се чита заједно са хемоглобином и бројем еритроцита, а тумачи је љекар"
+      }
+    }
+  },
+  {
+    "slug": "hemoglobin",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Измерение концентрации белка эритроцитов, который связывает и переносит кислород",
+        "how": "Забор венозной или капиллярной крови, концентрацию измеряют на анализаторе фотометрически",
+        "when": "Слабость, головокружение, одышка при нагрузке, наблюдение во время беременности, контроль лечения анемии, обследование перед операцией",
+        "prep": "Специальной подготовки не требуется; о приёме препаратов железа и недавнем переливании крови нужно сообщить врачу",
+        "abnormal": "Снижение может быть связано с нехваткой железа, витаминов, кровопотерей или хроническим заболеванием, повышение — с обезвоживанием или состояниями, при которых тканям не хватает кислорода. Причину устанавливает врач"
+      },
+      "en": {
+        "what": "A measurement of the concentration of the red cell protein that binds and carries oxygen",
+        "how": "Venous or capillary blood draw; the concentration is measured photometrically on an analyzer",
+        "when": "Weakness, dizziness, shortness of breath on exertion, monitoring during pregnancy, follow-up of anemia treatment, work-up before surgery",
+        "prep": "No special preparation required; tell the doctor about iron supplements and any recent blood transfusion",
+        "abnormal": "A lower value may be related to a lack of iron or vitamins, blood loss or a chronic illness, a higher one to dehydration or to conditions in which the tissues lack oxygen. The cause is established by a doctor"
+      },
+      "sr": {
+        "what": "Mjerenje koncentracije bjelančevine eritrocita koja veže i prenosi kiseonik",
+        "how": "Uzimanje venske ili kapilarne krvi, koncentracija se mjeri fotometrijski na analizatoru",
+        "when": "Slabost, vrtoglavica, nedostatak vazduha pri naporu, praćenje tokom trudnoće, kontrola liječenja anemije, obrada prije operacije",
+        "prep": "Nije potrebna posebna priprema; o uzimanju preparata gvožđa i skorašnjoj transfuziji treba obavijestiti ljekara",
+        "abnormal": "Snižena vrijednost može biti povezana sa manjkom gvožđa ili vitamina, gubitkom krvi ili hroničnom bolešću, a povišena sa dehidracijom ili stanjima u kojima tkivima nedostaje kiseonika. Uzrok utvrđuje ljekar"
+      },
+      "de": {
+        "what": "Messung der Konzentration des Eiweißes der roten Blutkörperchen, das Sauerstoff bindet und transportiert",
+        "how": "Entnahme von venösem oder kapillarem Blut; die Konzentration wird am Analysegerät photometrisch gemessen",
+        "when": "Schwäche, Schwindel, Atemnot bei Belastung, Kontrolle in der Schwangerschaft, Verlaufskontrolle der Anämiebehandlung, Abklärung vor einer Operation",
+        "prep": "Keine besondere Vorbereitung erforderlich; die Einnahme von Eisenpräparaten und eine kürzliche Bluttransfusion sind dem Arzt mitzuteilen",
+        "abnormal": "Ein niedriger Wert kann mit einem Mangel an Eisen oder Vitaminen, Blutverlust oder einer chronischen Erkrankung zusammenhängen, ein hoher mit Flüssigkeitsmangel oder Zuständen, bei denen den Geweben Sauerstoff fehlt. Die Ursache klärt der Arzt"
+      },
+      "tr": {
+        "what": "Alyuvarların oksijeni bağlayıp taşıyan proteininin yoğunluğunun ölçülmesi",
+        "how": "Venöz veya kapiller kan alınır; yoğunluk cihazda fotometrik olarak ölçülür",
+        "when": "Halsizlik, baş dönmesi, eforla nefes darlığı, gebelikte izlem, kansızlık tedavisinin kontrolü, ameliyat öncesi değerlendirme",
+        "prep": "Özel bir hazırlık gerektirmez; demir preparatı kullanımı ve yakın zamanda yapılan kan nakli hekime bildirilir",
+        "abnormal": "Değerin düşmesi demir veya vitamin eksikliği, kan kaybı ya da kronik bir hastalıkla, yükselmesi sıvı kaybı veya dokuların oksijensiz kaldığı durumlarla ilişkili olabilir. Nedenini hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење концентрације бјеланчевине еритроцита која веже и преноси кисеоник",
+        "how": "Узимање венске или капиларне крви, концентрација се мјери фотометријски на анализатору",
+        "when": "Слабост, вртоглавица, недостатак ваздуха при напору, праћење током трудноће, контрола лијечења анемије, обрада прије операције",
+        "prep": "Није потребна посебна припрема; о узимању препарата гвожђа и скорашњој трансфузији треба обавијестити љекара",
+        "abnormal": "Снижена вриједност може бити повезана са мањком гвожђа или витамина, губитком крви или хроничном болешћу, а повишена са дехидрацијом или стањима у којима ткивима недостаје кисеоника. Узрок утврђује љекар"
+      }
+    }
+  },
+  {
+    "slug": "mch",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Расчётный показатель среднего количества гемоглобина в одном эритроците",
+        "how": "Отдельный забор не нужен: значение вычисляет анализатор из числа эритроцитов и общего гемоглобина в той же пробе",
+        "when": "Уточнение вида анемии, выбор направления дальнейшего обследования при сниженном гемоглобине, наблюдение в ходе лечения",
+        "prep": "Отдельной подготовки нет, показатель получают из того же забора крови, что и остальную гемограмму",
+        "abnormal": "Отклонения могут быть связаны с нехваткой железа, дефицитом витамина B12 или фолиевой кислоты, наследственными особенностями гемоглобина. Сам по себе показатель диагноза не даёт, врач читает его вместе с MCV и MCHC"
+      },
+      "en": {
+        "what": "A calculated value for the average amount of hemoglobin in a single red blood cell",
+        "how": "No separate draw is needed: the analyzer derives the value from the red cell count and the total hemoglobin in the same sample",
+        "when": "Clarifying the type of anemia, choosing the direction of further work-up when hemoglobin is low, follow-up during treatment",
+        "prep": "No separate preparation; the value comes from the same blood draw as the rest of the blood count",
+        "abnormal": "Deviations may be related to a lack of iron, a deficiency of vitamin B12 or folic acid, or inherited features of hemoglobin. On its own the value is not a diagnosis, and a doctor reads it together with MCV and MCHC"
+      },
+      "sr": {
+        "what": "Izračunata vrijednost prosječne količine hemoglobina u jednom eritrocitu",
+        "how": "Posebno vađenje nije potrebno: analizator izvodi vrijednost iz broja eritrocita i ukupnog hemoglobina u istom uzorku",
+        "when": "Razjašnjenje vrste anemije, izbor smjera dalje obrade kod sniženog hemoglobina, praćenje tokom liječenja",
+        "prep": "Nema posebne pripreme, pokazatelj se dobija iz istog vađenja krvi kao i ostatak krvne slike",
+        "abnormal": "Odstupanja mogu biti povezana sa manjkom gvožđa, nedostatkom vitamina B12 ili folne kiseline, kao i sa nasljednim osobinama hemoglobina. Sam po sebi pokazatelj nije dijagnoza, ljekar ga čita zajedno sa MCV i MCHC"
+      },
+      "de": {
+        "what": "Ein rechnerischer Wert für die durchschnittliche Hämoglobinmenge in einem einzelnen roten Blutkörperchen",
+        "how": "Eine gesonderte Entnahme ist nicht nötig: Das Analysegerät leitet den Wert aus der Erythrozytenzahl und dem Gesamthämoglobin derselben Probe ab",
+        "when": "Klärung der Anämieform, Wahl der weiteren Abklärung bei niedrigem Hämoglobin, Verlaufskontrolle während der Behandlung",
+        "prep": "Keine gesonderte Vorbereitung; der Wert stammt aus derselben Blutentnahme wie das übrige Blutbild",
+        "abnormal": "Abweichungen können mit Eisenmangel, einem Mangel an Vitamin B12 oder Folsäure oder mit erblichen Besonderheiten des Hämoglobins zusammenhängen. Für sich genommen ist der Wert keine Diagnose, der Arzt liest ihn zusammen mit MCV und MCHC"
+      },
+      "tr": {
+        "what": "Tek bir alyuvardaki ortalama hemoglobin miktarını gösteren hesaplanmış değer",
+        "how": "Ayrı kan alımı gerekmez: cihaz değeri aynı örnekteki alyuvar sayısı ve toplam hemoglobinden hesaplar",
+        "when": "Kansızlığın türünün netleştirilmesi, hemoglobin düşükken ileri incelemenin yönünün seçilmesi, tedavi sırasında izlem",
+        "prep": "Ayrı bir hazırlık yoktur; değer, kan sayımının geri kalanıyla aynı kan alımından elde edilir",
+        "abnormal": "Sapmalar demir azlığı, B12 vitamini veya folik asit eksikliği ya da hemoglobinin kalıtsal özellikleriyle ilişkili olabilir. Değer tek başına tanı koymaz, hekim onu MCV ve MCHC ile birlikte okur"
+      },
+      "sr_cyrl": {
+        "what": "Израчуната вриједност просјечне количине хемоглобина у једном еритроциту",
+        "how": "Посебно вађење није потребно: анализатор изводи вриједност из броја еритроцита и укупног хемоглобина у истом узорку",
+        "when": "Разјашњење врсте анемије, избор смјера даље обраде код сниженог хемоглобина, праћење током лијечења",
+        "prep": "Нема посебне припреме, показатељ се добија из истог вађења крви као и остатак крвне слике",
+        "abnormal": "Одступања могу бити повезана са мањком гвожђа, недостатком витамина Б12 или фолне киселине, као и са насљедним особинама хемоглобина. Сам по себи показатељ није дијагноза, љекар га чита заједно са MCV и MCHC"
+      }
+    }
+  },
+  {
+    "slug": "mchc",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Расчётный показатель насыщенности эритроцита гемоглобином, то есть его концентрации в объёме клетки",
+        "how": "Значение выводится анализатором из общего гемоглобина и гематокрита той же пробы крови, отдельная процедура не нужна",
+        "when": "Уточнение характера анемии, проверка сомнительных клеточных показателей, наблюдение при заболеваниях, затрагивающих эритроциты",
+        "prep": "Отдельной подготовки нет; важно, чтобы пробирка была заполнена до метки, иначе расчёт получается неточным",
+        "abnormal": "Отклонения могут быть связаны с формами анемии и наследственными особенностями эритроцитов, а также с техническими причинами, например с мутной или жирной пробой. Значимость оценивает врач, при сомнении лаборатория повторяет анализ"
+      },
+      "en": {
+        "what": "A calculated value for how saturated a red blood cell is with hemoglobin, that is, its concentration within the cell volume",
+        "how": "The analyzer derives the value from the total hemoglobin and the hematocrit of the same blood sample, so no separate procedure is needed",
+        "when": "Clarifying the character of anemia, checking questionable cell values, follow-up in conditions affecting red blood cells",
+        "prep": "No separate preparation; the tube must be filled to the mark, otherwise the calculation comes out inaccurate",
+        "abnormal": "Deviations may be related to forms of anemia and inherited features of red blood cells, and also to technical causes such as a turbid or lipid-rich sample. The significance is assessed by a doctor, and the laboratory repeats the test when in doubt"
+      },
+      "sr": {
+        "what": "Izračunata vrijednost zasićenosti eritrocita hemoglobinom, odnosno njegove koncentracije u zapremini ćelije",
+        "how": "Analizator izvodi vrijednost iz ukupnog hemoglobina i hematokrita istog uzorka krvi, pa poseban postupak nije potreban",
+        "when": "Razjašnjenje karaktera anemije, provjera sumnjivih ćelijskih pokazatelja, praćenje kod oboljenja koja zahvataju eritrocite",
+        "prep": "Nema posebne pripreme; važno je da epruveta bude napunjena do oznake, jer izračun inače ispadne netačan",
+        "abnormal": "Odstupanja mogu biti povezana sa oblicima anemije i nasljednim osobinama eritrocita, ali i sa tehničkim uzrocima, na primjer mutnim ili masnim uzorkom. Značaj procjenjuje ljekar, a laboratorija kod sumnje ponavlja analizu"
+      },
+      "de": {
+        "what": "Ein rechnerischer Wert dafür, wie stark ein rotes Blutkörperchen mit Hämoglobin gesättigt ist, also dessen Konzentration im Zellvolumen",
+        "how": "Das Analysegerät leitet den Wert aus dem Gesamthämoglobin und dem Hämatokrit derselben Blutprobe ab, ein gesonderter Vorgang ist nicht nötig",
+        "when": "Klärung der Art einer Anämie, Überprüfung fraglicher Zellwerte, Verlaufskontrolle bei Erkrankungen, die die roten Blutkörperchen betreffen",
+        "prep": "Keine gesonderte Vorbereitung; das Röhrchen muss bis zur Markierung gefüllt sein, sonst fällt die Berechnung ungenau aus",
+        "abnormal": "Abweichungen können mit Formen der Anämie und erblichen Besonderheiten der roten Blutkörperchen zusammenhängen, aber auch mit technischen Ursachen wie einer trüben oder fettreichen Probe. Die Bedeutung beurteilt der Arzt, im Zweifel wiederholt das Labor die Analyse"
+      },
+      "tr": {
+        "what": "Alyuvarın hemoglobinle ne ölçüde dolu olduğunu, yani hücre hacmindeki hemoglobin yoğunluğunu gösteren hesaplanmış değer",
+        "how": "Cihaz değeri aynı kan örneğindeki toplam hemoglobin ve hematokritten çıkarır, bu nedenle ayrı bir işlem gerekmez",
+        "when": "Kansızlığın niteliğinin netleştirilmesi, kuşkulu hücre değerlerinin doğrulanması, alyuvarları etkileyen hastalıklarda izlem",
+        "prep": "Ayrı bir hazırlık yoktur; tüpün işarete kadar dolu olması gerekir, aksi halde hesap yanlış çıkar",
+        "abnormal": "Sapmalar kansızlık biçimleri ve alyuvarların kalıtsal özellikleriyle olduğu kadar, bulanık ya da yağlı örnek gibi teknik nedenlerle de ilişkili olabilir. Önemini hekim değerlendirir, kuşku halinde laboratuvar analizi yineler"
+      },
+      "sr_cyrl": {
+        "what": "Израчуната вриједност засићености еритроцита хемоглобином, односно његове концентрације у запремини ћелије",
+        "how": "Анализатор изводи вриједност из укупног хемоглобина и хематокрита истог узорка крви, па посебан поступак није потребан",
+        "when": "Разјашњење карактера анемије, провјера сумњивих ћелијских показатеља, праћење код обољења која захватају еритроците",
+        "prep": "Нема посебне припреме; важно је да епрувета буде напуњена до ознаке, јер израчун иначе испадне нетачан",
+        "abnormal": "Одступања могу бити повезана са облицима анемије и насљедним особинама еритроцита, али и са техничким узроцима, на примјер мутним или масним узорком. Значај процјењује љекар, а лабораторија код сумње понавља анализу"
+      }
+    }
+  },
+  {
+    "slug": "mcv",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Расчётный показатель среднего объёма одного эритроцита",
+        "how": "Анализатор измеряет объём проходящих через датчик клеток и выводит среднее значение по пробе",
+        "when": "Разделение анемий по размеру эритроцитов, обследование при нехватке железа, витамина B12 или фолиевой кислоты, наблюдение в ходе лечения",
+        "prep": "Отдельной подготовки нет; пробу желательно доставить в лабораторию быстро, при долгом хранении объём клеток меняется",
+        "abnormal": "Уменьшенный или увеличенный средний объём может быть связан с дефицитом железа, витамина B12 или фолиевой кислоты, заболеваниями печени, употреблением алкоголя, наследственными особенностями эритроцитов. Направление дальнейшего обследования определяет врач"
+      },
+      "en": {
+        "what": "A calculated value for the average volume of a single red blood cell",
+        "how": "The analyzer measures the volume of the cells passing its sensor and reports the average for the sample",
+        "when": "Sorting anemias by red cell size, work-up for a lack of iron, vitamin B12 or folic acid, follow-up during treatment",
+        "prep": "No separate preparation; the sample should reach the laboratory quickly, as cell volume changes during long storage",
+        "abnormal": "A smaller or larger average volume may be related to a deficiency of iron, vitamin B12 or folic acid, to liver disease, alcohol use, or inherited features of the red blood cells. The direction of further work-up is decided by a doctor"
+      },
+      "sr": {
+        "what": "Izračunata vrijednost prosječne zapremine jednog eritrocita",
+        "how": "Analizator mjeri zapreminu ćelija koje prolaze kroz senzor i daje prosjek za uzorak",
+        "when": "Razvrstavanje anemija prema veličini eritrocita, obrada kod manjka gvožđa, vitamina B12 ili folne kiseline, praćenje tokom liječenja",
+        "prep": "Nema posebne pripreme; uzorak je poželjno brzo dostaviti u laboratoriju, jer se pri dugom stajanju zapremina ćelija mijenja",
+        "abnormal": "Manja ili veća prosječna zapremina može biti povezana sa nedostatkom gvožđa, vitamina B12 ili folne kiseline, oboljenjima jetre, uzimanjem alkohola ili nasljednim osobinama eritrocita. Smjer dalje obrade određuje ljekar"
+      },
+      "de": {
+        "what": "Ein rechnerischer Wert für das durchschnittliche Volumen eines einzelnen roten Blutkörperchens",
+        "how": "Das Analysegerät misst das Volumen der am Sensor vorbeiziehenden Zellen und gibt den Mittelwert für die Probe aus",
+        "when": "Einteilung von Anämien nach Zellgröße, Abklärung bei Mangel an Eisen, Vitamin B12 oder Folsäure, Verlaufskontrolle während der Behandlung",
+        "prep": "Keine gesonderte Vorbereitung; die Probe sollte rasch ins Labor gelangen, da sich das Zellvolumen bei langer Lagerung verändert",
+        "abnormal": "Ein kleineres oder größeres mittleres Volumen kann mit einem Mangel an Eisen, Vitamin B12 oder Folsäure, mit Lebererkrankungen, Alkoholkonsum oder erblichen Besonderheiten der roten Blutkörperchen zusammenhängen. Die Richtung der weiteren Abklärung legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Tek bir alyuvarın ortalama hacmini gösteren hesaplanmış değer",
+        "how": "Cihaz, sensörden geçen hücrelerin hacmini ölçer ve örnek için ortalamayı bildirir",
+        "when": "Kansızlıkların alyuvar büyüklüğüne göre ayrılması, demir, B12 vitamini veya folik asit azlığının araştırılması, tedavi sırasında izlem",
+        "prep": "Ayrı bir hazırlık yoktur; örneğin laboratuvara hızla ulaşması istenir, uzun bekleyişte hücre hacmi değişir",
+        "abnormal": "Ortalama hacmin küçülmesi veya büyümesi demir, B12 vitamini ya da folik asit eksikliği, karaciğer hastalıkları, alkol kullanımı veya alyuvarların kalıtsal özellikleriyle ilişkili olabilir. İleri incelemenin yönünü hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Израчуната вриједност просјечне запремине једног еритроцита",
+        "how": "Анализатор мјери запремину ћелија које пролазе кроз сензор и даје просјек за узорак",
+        "when": "Разврставање анемија према величини еритроцита, обрада код мањка гвожђа, витамина Б12 или фолне киселине, праћење током лијечења",
+        "prep": "Нема посебне припреме; узорак је пожељно брзо доставити у лабораторију, јер се при дугом стајању запремина ћелија мијења",
+        "abnormal": "Мања или већа просјечна запремина може бити повезана са недостатком гвожђа, витамина Б12 или фолне киселине, обољењима јетре, узимањем алкохола или насљедним особинама еритроцита. Смјер даље обраде одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "platelet-count-microscopic",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Ручной подсчёт кровяных пластинок в окрашенном мазке под микроскопом",
+        "how": "Из капли крови готовят мазок на стекле, окрашивают его, и лаборант считает пластинки в полях зрения, пересчитывая результат на объём",
+        "when": "Проверка неожиданно низкого или высокого результата автоматического счёта, подозрение на слипание пластинок в пробирке, уточнение перед операцией и при склонности к кровоточивости",
+        "prep": "Специальной подготовки не требуется; мазок готовят из свежей крови, поэтому забор и приготовление стекла делают в лаборатории",
+        "abnormal": "Расхождение с автоматическим счётом чаще объясняется слипанием пластинок или особенностями образца, а подтверждённое отклонение числа может быть связано с инфекцией, приёмом лекарств или заболеваниями костного мозга. Заключение по результату делает врач"
+      },
+      "en": {
+        "what": "A manual count of blood platelets in a stained smear under the microscope",
+        "how": "A drop of blood is spread on a slide and stained, and the technician counts the platelets across fields of view, converting the result to a volume",
+        "when": "Checking an unexpectedly low or high automated count, suspected platelet clumping in the tube, clarification before surgery and in case of a bleeding tendency",
+        "prep": "No special preparation required; the smear is made from fresh blood, so the draw and the slide are prepared at the laboratory",
+        "abnormal": "A discrepancy with the automated count is most often explained by platelet clumping or by features of the sample, while a confirmed deviation in the number may be related to infection, medication use or bone marrow disorders. The conclusion on the result is drawn by a doctor"
+      },
+      "sr": {
+        "what": "Ručno brojanje krvnih pločica u obojenom razmazu pod mikroskopom",
+        "how": "Od kapi krvi se pravi razmaz na stakalcu, boji se, a laborant broji pločice u vidnim poljima i preračunava rezultat na zapreminu",
+        "when": "Provjera neočekivano niskog ili visokog automatskog nalaza, sumnja na slijepljivanje pločica u epruveti, razjašnjenje prije operacije i kod sklonosti krvarenju",
+        "prep": "Nije potrebna posebna priprema; razmaz se pravi od svježe krvi, pa se vađenje i priprema stakalca obavljaju u laboratoriji",
+        "abnormal": "Razlika u odnosu na automatski nalaz najčešće se objašnjava slijepljivanjem pločica ili osobinama uzorka, dok potvrđeno odstupanje broja može biti povezano sa infekcijom, uzimanjem lijekova ili oboljenjima koštane srži. Zaključak o nalazu donosi ljekar"
+      },
+      "de": {
+        "what": "Manuelle Auszählung der Blutplättchen im gefärbten Ausstrich unter dem Mikroskop",
+        "how": "Aus einem Blutstropfen wird ein Ausstrich auf einem Objektträger angefertigt und gefärbt; die Fachkraft zählt die Plättchen in den Gesichtsfeldern und rechnet das Ergebnis auf das Volumen um",
+        "when": "Überprüfung eines unerwartet niedrigen oder hohen automatisch ermittelten Wertes, Verdacht auf Verklumpung der Plättchen im Röhrchen, Klärung vor einer Operation und bei Blutungsneigung",
+        "prep": "Keine besondere Vorbereitung erforderlich; der Ausstrich wird aus frischem Blut angefertigt, daher erfolgen Entnahme und Herstellung des Objektträgers im Labor",
+        "abnormal": "Eine Abweichung vom automatisch ermittelten Wert erklärt sich meist durch Verklumpung der Plättchen oder durch Eigenschaften der Probe, während eine bestätigte Abweichung der Zahl mit einer Infektion, Medikamenteneinnahme oder Knochenmarkerkrankungen zusammenhängen kann. Die Beurteilung des Ergebnisses trifft der Arzt"
+      },
+      "tr": {
+        "what": "Boyalı yaymada kan pulcuklarının mikroskop altında elle sayılması",
+        "how": "Bir damla kandan lam üzerine yayma hazırlanır ve boyanır; laborant pulcukları görüş alanlarında sayar ve sonucu hacme çevirir",
+        "when": "Cihazın beklenmedik düşük veya yüksek sonucunun doğrulanması, tüpte pulcukların kümelendiği kuşkusu, ameliyat öncesi ve kanamaya eğilim durumunda netleştirme",
+        "prep": "Özel bir hazırlık gerektirmez; yayma taze kandan hazırlandığı için kan alımı ve lamın hazırlanması laboratuvarda yapılır",
+        "abnormal": "Cihaz sonucuyla farklılık çoğunlukla pulcukların kümelenmesi veya örneğin özellikleriyle açıklanır; doğrulanmış bir sayı sapması ise enfeksiyon, ilaç kullanımı ya da kemik iliği hastalıklarıyla ilişkili olabilir. Sonuca ilişkin kararı hekim verir"
+      },
+      "sr_cyrl": {
+        "what": "Ручно бројање крвних плочица у обојеном размазу под микроскопом",
+        "how": "Од капи крви се прави размаз на стакалцу, боји се, а лаборант броји плочице у видним пољима и прерачунава резултат на запремину",
+        "when": "Провјера неочекивано ниског или високог аутоматског налаза, сумња на слијепљивање плочица у епрувети, разјашњење прије операције и код склоности крварењу",
+        "prep": "Није потребна посебна припрема; размаз се прави од свјеже крви, па се вађење и припрема стакалца обављају у лабораторији",
+        "abnormal": "Разлика у односу на аутоматски налаз најчешће се објашњава слијепљивањем плочица или особинама узорка, док потврђено одступање броја може бити повезано са инфекцијом, узимањем лијекова или обољењима коштане сржи. Закључак о налазу доноси љекар"
+      }
+    }
+  }
 ]

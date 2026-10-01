@@ -1,658 +1,770 @@
 [
-	{
-		"slug": "photoplethysmography",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Оптическая регистрация пульсовой волны и кровенаполнения мелких сосудов под кожей",
-				"how": "На палец руки или ноги надевают датчик со светодиодом, прибор записывает кривую кровенаполнения в покое и, при венозной пробе, после нескольких сгибаний стопы; безболезненно, около четверти часа",
-				"when": "Оценка периферического кровотока, тяжесть, отёки и судороги в ногах, подозрение на нарушение венозного оттока, зябкость и побледнение пальцев, наблюдение после лечения сосудов",
-				"prep": "За пару часов до исследования не курить и не пить кофе, прийти заранее и посидеть в тепле, чтобы руки и ноги согрелись, снять лак с ногтя на пальце под датчиком",
-				"abnormal": "Кривая показывает, насколько быстро сосуды наполняются кровью и опорожняются; изменения могут быть связаны с нарушением венозного оттока или притока крови, а также с холодом, курением и волнением. Результат оценивает врач вместе с осмотром и УЗИ сосудов"
-			},
-			"en": {
-				"what": "An optical recording of the pulse wave and of the blood filling of the small vessels under the skin",
-				"how": "A sensor with a light source is placed on a finger or toe and the device records the filling curve at rest and, in the venous test, after several ankle movements; painless, about fifteen minutes",
-				"when": "Assessment of peripheral circulation, heaviness, swelling and cramps in the legs, suspected impaired venous outflow, cold and pale fingers, follow-up after treatment of the vessels",
-				"prep": "Avoid smoking and coffee for a couple of hours before, arrive early and sit in a warm room so that hands and feet warm up, remove nail polish from the finger under the sensor",
-				"abnormal": "The curve shows how quickly the vessels fill with blood and empty again; changes may be related to impaired venous outflow or arterial inflow, and also to cold, smoking and anxiety. The result is assessed by a doctor together with the examination and vascular ultrasound"
-			},
-			"sr": {
-				"what": "Optički zapis pulsnog talasa i punjenja krvlju sitnih krvnih sudova ispod kože",
-				"how": "Na prst ruke ili stopala postavlja se senzor sa svjetlosnim izvorom, a aparat bilježi krivu punjenja u miru i, kod venskog testa, poslije nekoliko pokreta stopalom; bezbolno, oko petnaest minuta",
-				"when": "Procjena perifernog protoka, težina, otok i grčevi u nogama, sumnja na otežan venski odliv, hladni i blijedi prsti, praćenje poslije liječenja krvnih sudova",
-				"prep": "Dva sata prije pregleda ne pušiti i ne piti kafu, doći ranije i sjediti u toploj prostoriji da se šake i stopala zagriju, skinuti lak sa nokta na prstu ispod senzora",
-				"abnormal": "Kriva pokazuje koliko brzo se krvni sudovi pune i prazne; promjene mogu biti povezane sa otežanim venskim odlivom ili dotokom krvi, ali i sa hladnoćom, pušenjem i uzbuđenjem. Nalaz procjenjuje ljekar zajedno sa pregledom i ultrazvukom krvnih sudova"
-			},
-			"de": {
-				"what": "Optische Aufzeichnung der Pulswelle und der Blutfüllung der kleinen Gefäße unter der Haut",
-				"how": "Ein Sensor mit Lichtquelle wird an Finger oder Zeh angelegt, das Gerät zeichnet die Füllungskurve in Ruhe und beim Venentest nach mehreren Fußbewegungen auf; schmerzfrei, etwa eine Viertelstunde",
-				"when": "Beurteilung der peripheren Durchblutung, Schweregefühl, Schwellungen und Krämpfe in den Beinen, Verdacht auf gestörten venösen Abfluss, kalte und blasse Finger, Kontrolle nach Gefäßbehandlung",
-				"prep": "Zwei Stunden vorher nicht rauchen und keinen Kaffee trinken, früher kommen und im warmen Raum sitzen, damit Hände und Füße warm werden, Nagellack am Finger unter dem Sensor entfernen",
-				"abnormal": "Die Kurve zeigt, wie schnell sich die Gefäße mit Blut füllen und wieder entleeren; Veränderungen können mit gestörtem venösem Abfluss oder arteriellem Zufluss zusammenhängen, ebenso mit Kälte, Rauchen und Aufregung. Den Befund beurteilt der Arzt zusammen mit der Untersuchung und dem Gefäßultraschall"
-			},
-			"tr": {
-				"what": "Cilt altındaki küçük damarların kan dolumunun ve nabız dalgasının optik olarak kaydedilmesi",
-				"how": "El veya ayak parmağına ışık kaynaklı bir sensör takılır, cihaz dinlenme sırasında ve venöz testte birkaç ayak hareketinden sonra dolum eğrisini kaydeder; ağrısızdır, yaklaşık on beş dakika sürer",
-				"when": "Çevresel dolaşımın değerlendirilmesi, bacaklarda ağırlık, şişlik ve kramplar, venöz dönüşün bozulduğu şüphesi, soğuk ve solgun parmaklar, damar tedavisi sonrası takip",
-				"prep": "İşlemden birkaç saat önce sigara ve kahve içmemek, erken gelip sıcak bir ortamda oturarak el ve ayakları ısıtmak, sensörün takılacağı parmaktaki ojeyi çıkarmak",
-				"abnormal": "Eğri, damarların ne kadar hızlı dolup boşaldığını gösterir; değişiklikler venöz dönüş veya kan akımı sorunlarıyla, ayrıca soğuk, sigara ve heyecanla ilişkili olabilir. Sonucu hekim, muayene ve damar ultrasonu ile birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "pleural-puncture-with-lavage",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Прокол грудной стенки для удаления жидкости или гноя из плевральной полости с последующим промыванием полости стерильным раствором",
-				"how": "Пациент сидит, наклонившись вперёд, место прокола обезболивают и под контролем УЗИ вводят между рёбрами иглу или тонкий катетер, выпускают содержимое и промывают полость стерильным раствором; около получаса, затем делают контрольный снимок",
-				"when": "Скопление жидкости или гноя в плевральной полости, одышка из-за выпота, необходимость лабораторного исследования полученной жидкости, продолжение лечения гнойного воспаления плевры по назначению врача",
-				"prep": "Не есть за несколько часов, если так просит клиника, сообщить о препаратах, разжижающих кровь, и аллергии на анестетики, принести свежий снимок или УЗИ грудной клетки",
-				"abnormal": "Дыхание обычно облегчается сразу, а полученную жидкость отправляют на анализ, её характер оценивает врач. Усиление боли, нарастающая одышка, кашель с кровью или температура после процедуры требуют немедленного обращения"
-			},
-			"en": {
-				"what": "A puncture of the chest wall to drain fluid or pus from the pleural cavity, followed by rinsing of the cavity with a sterile solution",
-				"how": "The patient sits leaning forward, the puncture site is anaesthetised and a needle or thin catheter is inserted between the ribs under ultrasound guidance, the content is drained and the cavity rinsed with sterile solution; about half an hour, followed by a control X-ray",
-				"when": "Accumulation of fluid or pus in the pleural cavity, breathlessness caused by an effusion, the need to send the fluid for laboratory analysis, continued treatment of purulent pleural inflammation as prescribed by the doctor",
-				"prep": "Do not eat for several hours if the clinic asks so, report blood-thinning medication and allergy to anaesthetics, bring a recent chest X-ray or ultrasound",
-				"abnormal": "Breathing usually becomes easier straight away, and the fluid obtained is sent for analysis, its nature being assessed by the doctor. Increasing pain, worsening breathlessness, coughing up blood or fever after the procedure require immediate medical help"
-			},
-			"sr": {
-				"what": "Ubod kroz grudni zid radi izvlačenja tečnosti ili gnoja iz pleuralne šupljine, uz ispiranje šupljine sterilnim rastvorom",
-				"how": "Pacijent sjedi nagnut naprijed, mjesto uboda se anestezira i pod kontrolom ultrazvuka se između rebara uvodi igla ili tanak kateter, sadržaj se izvlači, a šupljina ispira sterilnim rastvorom; oko pola sata, zatim slijedi kontrolni snimak",
-				"when": "Nakupljanje tečnosti ili gnoja u pleuralnoj šupljini, otežano disanje zbog izliva, potreba za laboratorijskom analizom dobijene tečnosti, nastavak liječenja gnojne upale pleure po odluci ljekara",
-				"prep": "Ne jesti nekoliko sati ako klinika tako traži, prijaviti lijekove za razrjeđivanje krvi i alergiju na anestetike, ponijeti svjež snimak ili ultrazvuk grudnog koša",
-				"abnormal": "Disanje se obično odmah olakša, a dobijena tečnost se šalje na analizu i njen nalaz tumači ljekar. Pojačan bol, sve teže disanje, iskašljavanje krvi ili povišena temperatura poslije zahvata traže hitno javljanje"
-			},
-			"de": {
-				"what": "Punktion der Brustwand, um Flüssigkeit oder Eiter aus dem Pleuraraum abzulassen, mit anschließender Spülung des Raums mit steriler Lösung",
-				"how": "Der Patient sitzt nach vorn gebeugt, die Einstichstelle wird betäubt und unter Ultraschallkontrolle wird zwischen den Rippen eine Nadel oder ein dünner Katheter eingeführt, der Inhalt abgelassen und der Raum mit steriler Lösung gespült; etwa eine halbe Stunde, danach eine Kontrollaufnahme",
-				"when": "Ansammlung von Flüssigkeit oder Eiter im Pleuraraum, Atemnot durch einen Erguss, notwendige Laboruntersuchung der gewonnenen Flüssigkeit, Fortsetzung der Behandlung einer eitrigen Rippenfellentzündung nach ärztlicher Anordnung",
-				"prep": "Nach Vorgabe der Klinik einige Stunden nichts essen, blutverdünnende Medikamente und Allergien gegen Betäubungsmittel angeben, eine aktuelle Röntgen- oder Ultraschallaufnahme des Brustkorbs mitbringen",
-				"abnormal": "Die Atmung wird meist sofort leichter, die gewonnene Flüssigkeit wird ins Labor geschickt und vom Arzt beurteilt. Zunehmende Schmerzen, stärkere Atemnot, Bluthusten oder Fieber nach dem Eingriff erfordern sofortige ärztliche Hilfe"
-			},
-			"tr": {
-				"what": "Plevra boşluğundaki sıvı veya iltihabı boşaltmak için göğüs duvarının delinmesi ve ardından boşluğun steril solüsyonla yıkanması",
-				"how": "Hasta öne eğilerek oturur, giriş yeri uyuşturulur ve ultrason eşliğinde kaburgalar arasından iğne veya ince kateter yerleştirilir, içerik boşaltılır ve boşluk steril solüsyonla yıkanır; yaklaşık yarım saat sürer, sonrasında kontrol filmi çekilir",
-				"when": "Plevra boşluğunda sıvı veya iltihap birikmesi, sıvıya bağlı nefes darlığı, alınan sıvının laboratuvarda incelenmesi gereği, hekim kararıyla plevra iltihabı tedavisinin sürdürülmesi",
-				"prep": "Klinik isterse birkaç saat aç kalmak, kan sulandırıcı ilaçları ve anestezik alerjisini bildirmek, yeni tarihli akciğer filmi veya ultrasonu getirmek",
-				"abnormal": "Nefes alma genellikle hemen rahatlar, alınan sıvı laboratuvara gönderilir ve niteliğini hekim değerlendirir. İşlemden sonra artan ağrı, kötüleşen nefes darlığı, kanlı öksürük veya ateş acil başvuru gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "primary-wound-care-with-sutures",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Первичная хирургическая обработка свежей раны с ушиванием краёв",
-				"how": "Рану промывают, обезболивают местным анестетиком, удаляют загрязнения и нежизнеспособные края, сближают ткани швами и закрывают стерильной повязкой; от четверти часа до сорока минут в зависимости от раны",
-				"when": "Свежие резаные и рваные раны с расходящимися краями, глубокие повреждения кожи после травмы и падения, раны лица и кистей, где важен аккуратный рубец",
-				"prep": "Подготовка не нужна, прийти лучше как можно раньше; рану прикрыть чистой салфеткой, не наносить мази, взять данные о прививке от столбняка и список постоянных препаратов",
-				"abnormal": "Ушитая рана обычно заживает под повязкой, а швы снимают в срок, который называет хирург. Расхождение краёв, нарастающая боль, покраснение вокруг шва или температура — повод показаться раньше назначенного визита"
-			},
-			"en": {
-				"what": "The first surgical treatment of a fresh wound, with the edges closed by sutures",
-				"how": "The wound is rinsed and anaesthetised locally, dirt and non-viable edges are removed, the tissue is brought together with sutures and covered with a sterile dressing; fifteen to forty minutes depending on the wound",
-				"when": "Fresh cut and torn wounds with gaping edges, deep skin injuries after trauma and falls, wounds of the face and hands where a neat scar matters",
-				"prep": "No preparation is needed, it is best to come as soon as possible; cover the wound with a clean pad, do not apply ointments, bring your tetanus vaccination record and a list of regular medication",
-				"abnormal": "A sutured wound usually heals under the dressing, and the sutures are removed at the time the surgeon indicates. Gaping edges, increasing pain, redness around the suture line or fever are a reason to come before the scheduled visit"
-			},
-			"sr": {
-				"what": "Prva hirurška obrada svježe rane sa ušivanjem ivica",
-				"how": "Rana se ispere i anestezira lokalno, uklone se nečistoća i neživotne ivice, tkivo se primakne šavovima i pokrije sterilnim zavojem; od petnaest do četrdeset minuta, zavisno od rane",
-				"when": "Svježe posjekotine i razderotine sa razmaknutim ivicama, duboke povrede kože poslije pada i traume, rane na licu i šakama gdje je važan uredan ožiljak",
-				"prep": "Priprema nije potrebna, najbolje je doći što prije; ranu prekriti čistom gazom, ne mazati masti, ponijeti podatke o vakcini protiv tetanusa i spisak stalnih lijekova",
-				"abnormal": "Ušivena rana obično zarasta pod zavojem, a konci se skidaju u roku koji odredi hirurg. Razmicanje ivica, sve jači bol, crvenilo oko šava ili povišena temperatura razlog su da se dođe i prije zakazanog termina"
-			},
-			"de": {
-				"what": "Erstversorgung einer frischen Wunde mit Naht der Wundränder",
-				"how": "Die Wunde wird gespült und örtlich betäubt, Verschmutzungen und nicht mehr durchblutete Ränder werden entfernt, das Gewebe mit Nähten adaptiert und mit einem sterilen Verband abgedeckt; je nach Wunde fünfzehn bis vierzig Minuten",
-				"when": "Frische Schnitt- und Risswunden mit klaffenden Rändern, tiefe Hautverletzungen nach Unfall und Sturz, Wunden im Gesicht und an den Händen, bei denen eine saubere Narbe wichtig ist",
-				"prep": "Keine Vorbereitung nötig, am besten so früh wie möglich kommen; die Wunde mit einer sauberen Kompresse abdecken, keine Salben auftragen, Tetanus-Impfpass und Liste der Dauermedikamente mitbringen",
-				"abnormal": "Eine genähte Wunde heilt in der Regel unter dem Verband, die Fäden werden zu dem vom Chirurgen genannten Zeitpunkt gezogen. Auseinanderweichende Ränder, zunehmende Schmerzen, Rötung um die Naht oder Fieber sind ein Grund, sich früher als geplant vorzustellen"
-			},
-			"tr": {
-				"what": "Taze bir yaranın ilk cerrahi bakımı ve kenarlarının dikişle kapatılması",
-				"how": "Yara yıkanır, lokal anestezi yapılır, kir ve canlılığını yitirmiş kenarlar çıkarılır, doku dikişlerle yaklaştırılır ve steril pansumanla kapatılır; yaraya göre on beş ila kırk dakika sürer",
-				"when": "Kenarları açılmış taze kesi ve yırtık yaralar, düşme ve travma sonrası derin cilt yaralanmaları, düzgün iz kalması önemli olan yüz ve el yaraları",
-				"prep": "Hazırlık gerekmez, en kısa sürede gelmek en iyisidir; yarayı temiz bir bezle örtmek, merhem sürmemek, tetanoz aşı bilgisini ve sürekli kullanılan ilaçların listesini getirmek",
-				"abnormal": "Dikilen yara genellikle pansuman altında iyileşir, dikişler cerrahın belirttiği sürede alınır. Kenarların açılması, artan ağrı, dikiş çevresinde kızarıklık veya ateş, randevudan önce başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "primary-wound-care-without-sutures",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Первичная обработка свежей раны, края которой не ушивают, а сближают повязкой",
-				"how": "Рану промывают антисептиком, убирают инородные частицы и загрязнения, края при необходимости стягивают полосками пластыря и закрывают стерильным покрытием; обычно 10-20 минут",
-				"when": "Ссадины и поверхностные раны, небольшие порезы с ровными краями, укушенные и сильно загрязнённые раны, которые оставляют открытыми, обращение спустя время после травмы",
-				"prep": "Не требуется; до визита прикрыть рану чистой салфеткой, не заливать спиртом и не наносить мази, сказать о прививке от столбняка и аллергии на пластырь и антисептики",
-				"abnormal": "Такая рана заживает под повязкой дольше ушитой и обычно требует повторных перевязок. Нарастающая боль, отёк, гнойное отделяемое или температура — повод показаться врачу раньше"
-			},
-			"en": {
-				"what": "The first treatment of a fresh wound whose edges are not sutured but brought together with a dressing",
-				"how": "The wound is rinsed with antiseptic, foreign particles and dirt are removed, the edges are pulled together with adhesive strips if needed and covered with a sterile dressing; usually 10-20 minutes",
-				"when": "Grazes and superficial wounds, small cuts with even edges, bite wounds and heavily contaminated wounds that are left open, coming in some time after the injury",
-				"prep": "Not required; cover the wound with a clean pad before the visit, do not pour alcohol on it and do not apply ointments, mention your tetanus vaccination and any allergy to plasters and antiseptics",
-				"abnormal": "Such a wound heals under the dressing more slowly than a sutured one and usually needs repeat dressings. Increasing pain, swelling, purulent discharge or fever are a reason to see the doctor sooner"
-			},
-			"sr": {
-				"what": "Prva obrada svježe rane kod koje se ivice ne šiju, već se primiču zavojem",
-				"how": "Rana se ispira antiseptikom, uklanjaju se strane čestice i nečistoća, ivice se po potrebi stežu trakicama flastera i prekrivaju sterilnom oblogom; obično 10-20 minuta",
-				"when": "Ogrebotine i površne rane, manje posjekotine sa ravnim ivicama, ujedi i jako zaprljane rane koje se ostavljaju otvorene, dolazak neko vrijeme poslije povrede",
-				"prep": "Nije potrebna; ranu prije dolaska prekriti čistom gazom, ne polijevati alkoholom i ne mazati masti, reći za vakcinu protiv tetanusa i alergiju na flaster i antiseptike",
-				"abnormal": "Takva rana zarasta pod zavojem sporije od ušivene i obično traži ponovljena previjanja. Sve jači bol, otok, gnojav iscjedak ili povišena temperatura razlog su da se ljekaru javite ranije"
-			},
-			"de": {
-				"what": "Erstversorgung einer frischen Wunde, deren Ränder nicht genäht, sondern durch den Verband zusammengeführt werden",
-				"how": "Die Wunde wird mit Antiseptikum gespült, Fremdkörper und Schmutz werden entfernt, die Ränder bei Bedarf mit Klebestreifen adaptiert und mit einer sterilen Auflage abgedeckt; meist 10-20 Minuten",
-				"when": "Schürfwunden und oberflächliche Wunden, kleine Schnitte mit glatten Rändern, Biss- und stark verschmutzte Wunden, die offen bleiben, Vorstellung erst einige Zeit nach der Verletzung",
-				"prep": "Nicht erforderlich; die Wunde vor dem Besuch mit einer sauberen Kompresse abdecken, keinen Alkohol daraufgießen und keine Salben auftragen, Tetanusimpfung sowie Allergien gegen Pflaster und Antiseptika angeben",
-				"abnormal": "Eine solche Wunde heilt unter dem Verband langsamer als eine genähte und benötigt meist wiederholte Verbandwechsel. Zunehmende Schmerzen, Schwellung, eitriges Sekret oder Fieber sind ein Grund, früher zum Arzt zu gehen"
-			},
-			"tr": {
-				"what": "Kenarları dikilmeyip pansumanla yaklaştırılan taze bir yaranın ilk bakımı",
-				"how": "Yara antiseptikle yıkanır, yabancı parçacıklar ve kir temizlenir, gerekirse kenarlar bant şeritleriyle yaklaştırılır ve steril örtüyle kapatılır; genellikle 10-20 dakika sürer",
-				"when": "Sıyrıklar ve yüzeysel yaralar, düzgün kenarlı küçük kesikler, açık bırakılan ısırık ve çok kirli yaralar, yaralanmadan bir süre sonra başvurulan durumlar",
-				"prep": "Gerekmez; gelmeden önce yarayı temiz bir bezle örtmek, alkol dökmemek ve merhem sürmemek, tetanoz aşısını ve bant ile antiseptik alerjisini bildirmek",
-				"abnormal": "Bu tür bir yara pansuman altında dikilmiş yaraya göre daha yavaş iyileşir ve genellikle tekrarlayan pansuman gerektirir. Artan ağrı, şişlik, iltihaplı akıntı veya ateş, hekime daha erken başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "pyrotherapy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Лечебный метод, при котором температуру тела или отдельного участка целенаправленно повышают под наблюдением медицинского персонала",
-				"how": "Процедуру проводят в клинике: температуру поднимают постепенно и контролируемо, во время сеанса следят за пульсом, давлением и самочувствием, после сеанса пациент отдыхает; длительность и число сеансов определяет врач",
-				"when": "Назначают редко и индивидуально, когда врач считает нужным усилить кровообращение и общую реакцию организма; показания и противопоказания врач оценивает до начала курса",
-				"prep": "Точные указания даёт клиника; заранее сообщить о болезнях сердца и сосудов, беременности, недавней лихорадке и обо всех принимаемых препаратах",
-				"abnormal": "После сеанса возможны временная слабость, озноб, потливость и повышение температуры, которые обычно проходят за несколько часов. Если самочувствие не восстанавливается, температура держится или появляется одышка, нужно связаться с врачом"
-			},
-			"en": {
-				"what": "A treatment method in which the temperature of the body or of a body region is deliberately raised under medical supervision",
-				"how": "The procedure is carried out in the clinic: the temperature is raised gradually and in a controlled way while pulse, blood pressure and wellbeing are monitored, and the patient rests afterwards; the length and number of sessions are set by the doctor",
-				"when": "Prescribed rarely and individually, when the doctor considers it useful to stimulate circulation and the general response of the body; indications and contraindications are assessed before the course begins",
-				"prep": "The clinic gives the exact instructions; report heart and vascular disease, pregnancy, recent fever and all medication in advance",
-				"abnormal": "Temporary weakness, chills, sweating and a rise in temperature are possible after a session and usually pass within a few hours. If wellbeing does not return, the fever persists or breathlessness appears, contact the doctor"
-			},
-			"sr": {
-				"what": "Metod liječenja kod kojeg se temperatura tijela ili pojedinog dijela tijela namjerno podiže pod nadzorom medicinskog osoblja",
-				"how": "Zahvat se izvodi u klinici: temperatura se podiže postepeno i kontrolisano, tokom seanse prate se puls, pritisak i stanje pacijenta, a poslije se odmara; trajanje i broj seansi određuje ljekar",
-				"when": "Propisuje se rijetko i individualno, kada ljekar procijeni da treba podstaći cirkulaciju i opštu reakciju organizma; indikacije i kontraindikacije procjenjuju se prije početka",
-				"prep": "Tačna uputstva daje klinika; unaprijed prijaviti bolesti srca i krvnih sudova, trudnoću, nedavnu povišenu temperaturu i sve lijekove koje uzimate",
-				"abnormal": "Poslije seanse mogući su prolazna slabost, jeza, znojenje i porast temperature, koji obično prođu za nekoliko sati. Ako se stanje ne popravlja, temperatura se održava ili se javi otežano disanje, treba se javiti ljekaru"
-			},
-			"de": {
-				"what": "Ein Behandlungsverfahren, bei dem die Temperatur des Körpers oder eines Körperabschnitts unter ärztlicher Aufsicht gezielt erhöht wird",
-				"how": "Die Behandlung erfolgt in der Klinik: Die Temperatur wird allmählich und kontrolliert erhöht, währenddessen werden Puls, Blutdruck und Befinden überwacht, danach ruht der Patient; Dauer und Anzahl der Sitzungen legt der Arzt fest",
-				"when": "Wird selten und individuell verordnet, wenn der Arzt es für sinnvoll hält, Durchblutung und die allgemeine Reaktion des Körpers anzuregen; Indikationen und Gegenanzeigen werden vorher geprüft",
-				"prep": "Die genauen Hinweise gibt die Klinik; Herz- und Gefäßerkrankungen, Schwangerschaft, kürzliches Fieber und alle Medikamente vorab angeben",
-				"abnormal": "Nach einer Sitzung sind vorübergehend Schwäche, Schüttelfrost, Schwitzen und ein Temperaturanstieg möglich, die meist innerhalb weniger Stunden abklingen. Bleibt das Befinden schlecht, hält das Fieber an oder tritt Atemnot auf, sollte der Arzt kontaktiert werden"
-			},
-			"tr": {
-				"what": "Vücudun ya da bir vücut bölgesinin sıcaklığının tıbbi gözetim altında bilinçli olarak yükseltildiği bir tedavi yöntemi",
-				"how": "İşlem klinikte yapılır: sıcaklık kademeli ve kontrollü biçimde yükseltilir, seans boyunca nabız, tansiyon ve genel durum izlenir, sonrasında hasta dinlenir; süreyi ve seans sayısını hekim belirler",
-				"when": "Hekim dolaşımı ve vücudun genel tepkisini uyarmayı uygun gördüğünde, seyrek ve kişiye özel olarak uygulanır; endikasyon ve sakıncalar başlamadan önce değerlendirilir",
-				"prep": "Kesin yönergeleri klinik verir; kalp ve damar hastalıkları, gebelik, yakın zamanda geçirilen ateşli durum ve kullanılan tüm ilaçlar önceden bildirilmelidir",
-				"abnormal": "Seanstan sonra geçici halsizlik, titreme, terleme ve ateş yükselmesi görülebilir, bunlar genellikle birkaç saat içinde geçer. Genel durum düzelmez, ateş sürer veya nefes darlığı olursa hekime başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "rectoscopy-with-biopsy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Эндоскопический осмотр прямой кишки, во время которого врач берёт кусочек слизистой для гистологического исследования",
-				"how": "Через задний проход вводят смазанный тубус ректоскопа, осматривают слизистую и щипцами отщипывают один или несколько маленьких фрагментов ткани; взятие материала почти не ощущается, вся процедура — около четверти часа",
-				"when": "Изменение слизистой, полип, язва или стойкое воспаление, найденные при осмотре и требующие уточнения, длительное воспалительное заболевание кишечника, контроль после лечения, повторяющиеся кровотечения из прямой кишки",
-				"prep": "Очистить нижний отдел кишки клизмой или микроклизмой по инструкции клиники, обязательно сказать о препаратах, разжижающих кровь, и о нарушениях свёртываемости",
-				"abnormal": "Заключение по взятому материалу даёт врач-патолог: он описывает строение ткани, а дальнейшую тактику определяет лечащий врач. Немного крови в стуле в первые сутки после биопсии бывает, но обильное кровотечение, сильная боль или температура требуют срочного обращения"
-			},
-			"en": {
-				"what": "An endoscopic examination of the rectum during which the doctor takes a small piece of the lining for histological examination",
-				"how": "A lubricated rectoscope tube is inserted through the anus, the lining is inspected and one or more small tissue fragments are taken with forceps; the sampling is barely felt and the whole procedure takes about fifteen minutes",
-				"when": "A change in the lining, a polyp, an ulcer or persistent inflammation found at examination and needing clarification, long-standing inflammatory bowel disease, follow-up after treatment, repeated bleeding from the rectum",
-				"prep": "Empty the lower bowel with an enema or micro-enema according to the clinic's instructions, and be sure to mention blood-thinning medication and any clotting disorder",
-				"abnormal": "The report on the sample is issued by a pathologist, who describes the structure of the tissue, while further management is decided by the treating doctor. A little blood in the stool on the first day after a biopsy is common, but heavy bleeding, severe pain or fever require urgent care"
-			},
-			"sr": {
-				"what": "Endoskopski pregled rektuma tokom kojeg ljekar uzima isječak sluznice za histološku analizu",
-				"how": "Kroz analni otvor uvodi se podmazan tubus rektoskopa, sluznica se pregleda, a kliještima se odsijeca jedan ili više malih djelića tkiva; uzimanje uzorka se gotovo ne osjeti, a cio pregled traje oko petnaest minuta",
-				"when": "Promjena sluznice, polip, ulceracija ili uporna upala nađeni pri pregledu koje treba razjasniti, dugotrajna upalna bolest crijeva, kontrola poslije liječenja, ponavljana krvarenja iz rektuma",
-				"prep": "Očistiti donji dio crijeva klizmom ili mikroklizmom po uputstvu klinike i obavezno navesti lijekove za razrjeđivanje krvi i poremećaje zgrušavanja",
-				"abnormal": "Nalaz o uzetom materijalu daje ljekar patolog i u njemu opisuje građu tkiva, a dalji postupak određuje ljekar koji liječi. Malo krvi u stolici prvog dana poslije biopsije nije neobično, ali obilno krvarenje, jak bol ili povišena temperatura traže hitan pregled"
-			},
-			"de": {
-				"what": "Eine endoskopische Untersuchung des Enddarms, bei der der Arzt ein Stückchen der Schleimhaut für die histologische Untersuchung entnimmt",
-				"how": "Durch den After wird ein gleitfähig gemachtes Rektoskoprohr eingeführt, die Schleimhaut betrachtet und mit einer Zange werden ein oder mehrere kleine Gewebestücke entnommen; die Entnahme ist kaum zu spüren, das Ganze dauert etwa eine Viertelstunde",
-				"when": "Eine bei der Untersuchung gefundene Schleimhautveränderung, ein Polyp, ein Geschwür oder eine anhaltende Entzündung, die geklärt werden müssen, langjährige chronisch-entzündliche Darmerkrankung, Kontrolle nach der Behandlung, wiederholte Blutungen aus dem Enddarm",
-				"prep": "Den unteren Darmabschnitt nach Anweisung der Klinik mit einem Einlauf oder Miniklistier entleeren und unbedingt blutverdünnende Medikamente sowie Gerinnungsstörungen angeben",
-				"abnormal": "Den Befund zum entnommenen Material erstellt ein Pathologe, der den Gewebeaufbau beschreibt; über das weitere Vorgehen entscheidet der behandelnde Arzt. Etwas Blut im Stuhl am ersten Tag nach einer Biopsie ist üblich, starke Blutung, heftige Schmerzen oder Fieber erfordern jedoch sofortige Hilfe"
-			},
-			"tr": {
-				"what": "Hekimin histolojik inceleme için mukozadan küçük bir parça aldığı endoskopik rektum muayenesi",
-				"how": "Anüsten kayganlaştırılmış rektoskop tüpü ilerletilir, mukoza incelenir ve forsepsle bir ya da birkaç küçük doku parçası alınır; örnek alımı neredeyse hissedilmez, işlemin tamamı yaklaşık on beş dakika sürer",
-				"when": "Muayenede görülen ve netleştirilmesi gereken mukoza değişikliği, polip, ülser veya inatçı iltihap, uzun süreli iltihabi bağırsak hastalığı, tedavi sonrası kontrol, yinelenen makat kanamaları",
-				"prep": "Kliniğin talimatına göre alt bağırsağın lavman veya mini lavmanla boşaltılması, kan sulandırıcı ilaçların ve pıhtılaşma bozukluklarının mutlaka bildirilmesi",
-				"abnormal": "Alınan materyalin raporunu, dokunun yapısını tanımlayan patoloji uzmanı verir; sonraki adımları ise tedaviyi yürüten hekim belirler. Biyopsiden sonra ilk gün dışkıda az miktarda kan görülebilir, ancak bol kanama, şiddetli ağrı veya ateş acil başvuru gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "rheography-of-upper-or-lower-extremities",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Запись кровенаполнения сосудов руки или ноги по изменению электрического сопротивления тканей",
-				"how": "На конечность накладывают электроды, прибор пропускает слабый безопасный ток высокой частоты и записывает кривую кровенаполнения в покое, при необходимости с функциональными пробами; безболезненно, 15-30 минут",
-				"when": "Зябкость и онемение рук и ног, боль в икрах при ходьбе, отёки и тяжесть в конечностях, оценка артериального притока и венозного оттока, наблюдение за состоянием сосудов в динамике",
-				"prep": "За час-два не курить и не пить кофе, перед записью посидеть в покое, кожу в местах наложения электродов оставить чистой и без крема",
-				"abnormal": "Форма и амплитуда кривой могут быть связаны с тонусом сосудов, затруднённым притоком или оттоком крови, а также с холодом и волнением перед исследованием. Реография не заменяет УЗИ сосудов, заключение врач делает по совокупности данных"
-			},
-			"en": {
-				"what": "A recording of the blood filling of the vessels of an arm or leg from changes in the electrical resistance of the tissue",
-				"how": "Electrodes are placed on the limb, the device passes a weak, safe high-frequency current and records the filling curve at rest, with functional tests if needed; painless, 15-30 minutes",
-				"when": "Cold and numb hands and feet, calf pain on walking, swelling and heaviness in the limbs, assessment of arterial inflow and venous outflow, monitoring the state of the vessels over time",
-				"prep": "No smoking or coffee for one to two hours beforehand, sit quietly before the recording, keep the skin where the electrodes go clean and free of cream",
-				"abnormal": "The shape and amplitude of the curve may be related to vessel tone, restricted inflow or outflow of blood, and also to cold and anxiety before the test. Rheography does not replace vascular ultrasound, and the doctor draws the conclusion from all the data"
-			},
-			"sr": {
-				"what": "Zapis punjenja krvnih sudova ruke ili noge na osnovu promjene električnog otpora tkiva",
-				"how": "Na ekstremitet se postavljaju elektrode, aparat propušta slabu i bezbjednu struju visoke frekvencije i bilježi krivu punjenja u miru, po potrebi uz funkcionalne testove; bezbolno, 15-30 minuta",
-				"when": "Hladne i utrnule ruke i noge, bol u listovima pri hodu, otok i težina u ekstremitetima, procjena arterijskog dotoka i venskog odliva, praćenje stanja krvnih sudova tokom vremena",
-				"prep": "Sat ili dva prije ne pušiti i ne piti kafu, prije snimanja sjediti mirno, koža na mjestima elektroda treba da bude čista i bez kreme",
-				"abnormal": "Oblik i amplituda krive mogu biti povezani sa tonusom krvnih sudova, otežanim dotokom ili odlivom krvi, ali i sa hladnoćom i uzbuđenjem prije pregleda. Reografija ne zamjenjuje ultrazvuk krvnih sudova, a zaključak ljekar donosi na osnovu svih podataka"
-			},
-			"de": {
-				"what": "Aufzeichnung der Blutfüllung der Gefäße eines Arms oder Beins anhand der Änderung des elektrischen Widerstands des Gewebes",
-				"how": "An der Extremität werden Elektroden angelegt, das Gerät leitet einen schwachen, ungefährlichen Hochfrequenzstrom durch und zeichnet die Füllungskurve in Ruhe auf, bei Bedarf mit Funktionstests; schmerzfrei, 15-30 Minuten",
-				"when": "Kalte und taube Hände und Füße, Wadenschmerz beim Gehen, Schwellung und Schweregefühl in den Gliedmaßen, Beurteilung von arteriellem Zufluss und venösem Abfluss, Verlaufskontrolle der Gefäße",
-				"prep": "Ein bis zwei Stunden vorher nicht rauchen und keinen Kaffee trinken, vor der Aufzeichnung ruhig sitzen, die Haut an den Elektrodenstellen sauber und ohne Creme halten",
-				"abnormal": "Form und Amplitude der Kurve können mit dem Gefäßtonus, erschwertem Zu- oder Abfluss des Blutes sowie mit Kälte und Aufregung vor der Untersuchung zusammenhängen. Die Rheographie ersetzt den Gefäßultraschall nicht, den Befund zieht der Arzt aus der Gesamtheit der Daten"
-			},
-			"tr": {
-				"what": "Kol veya bacaktaki damarların kan dolumunun, dokunun elektriksel direncindeki değişime göre kaydedilmesi",
-				"how": "Ekstremiteye elektrotlar yerleştirilir, cihaz zayıf ve güvenli yüksek frekanslı akım vererek dinlenme sırasındaki dolum eğrisini, gerekirse fonksiyonel testlerle birlikte kaydeder; ağrısızdır, 15-30 dakika sürer",
-				"when": "Üşüyen ve uyuşan el ve ayaklar, yürürken baldır ağrısı, ekstremitelerde şişlik ve ağırlık, atardamar akımı ile toplardamar dönüşünün değerlendirilmesi, damar durumunun zaman içinde izlenmesi",
-				"prep": "İşlemden bir iki saat önce sigara ve kahve içmemek, kayıttan önce sakin oturmak, elektrotların yerleştirileceği cildi temiz ve kremsiz bırakmak",
-				"abnormal": "Eğrinin biçimi ve genliği damar tonusu, kan akımının veya dönüşünün güçleşmesi ile, ayrıca işlem öncesi soğuk ve heyecanla ilişkili olabilir. Reografi damar ultrasonunun yerini tutmaz, hekim sonucu tüm verilerle birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "secondary-wound-care",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Повторная хирургическая обработка раны, которая нагноилась или не заживает после первой обработки",
-				"how": "Хирург снимает часть швов или раскрывает рану, удаляет гной и нежизнеспособные ткани, промывает полость, при необходимости оставляет дренаж и накладывает повязку; чаще под местной анестезией, 20-40 минут",
-				"when": "Нагноение послеоперационной или травматической раны, расхождение краёв, налёт и омертвевшие ткани в ране, длительно не заживающие и хронические раны",
-				"prep": "Специальная подготовка не нужна; повязку самостоятельно не снимать, принести выписку о предыдущем вмешательстве и сказать о диабете, аллергиях и постоянных препаратах",
-				"abnormal": "После очищения раны боль и отделяемое обычно уменьшаются в течение нескольких дней, а заживление идёт медленнее, чем при сразу ушитой ране. Повышение температуры, расходящееся покраснение и усиление боли — повод вернуться к врачу немедленно"
-			},
-			"en": {
-				"what": "A repeat surgical treatment of a wound that has become infected or is not healing after the first treatment",
-				"how": "The surgeon removes some of the sutures or opens the wound, clears pus and non-viable tissue, rinses the cavity, leaves a drain if needed and applies a dressing; usually under local anaesthesia, 20-40 minutes",
-				"when": "Infection of a surgical or traumatic wound, gaping edges, coating and dead tissue in the wound, long-standing and chronic wounds",
-				"prep": "No special preparation; do not remove the dressing yourself, bring the discharge letter from the previous procedure and mention diabetes, allergies and regular medication",
-				"abnormal": "After the wound is cleaned, pain and discharge usually decrease over a few days, and healing takes longer than for a wound closed straight away. Fever, spreading redness and increasing pain are a reason to return to the doctor immediately"
-			},
-			"sr": {
-				"what": "Ponovna hirurška obrada rane koja se zagnojila ili ne zarasta poslije prve obrade",
-				"how": "Hirurg skida dio konaca ili otvara ranu, uklanja gnoj i neživo tkivo, ispira šupljinu, po potrebi ostavlja dren i stavlja zavoj; najčešće u lokalnoj anesteziji, 20-40 minuta",
-				"when": "Zagnojena hirurška ili traumatska rana, razmicanje ivica, naslage i mrtvo tkivo u rani, rane koje dugo ne zarastaju i hronične rane",
-				"prep": "Posebna priprema nije potrebna; zavoj ne skidati sami, ponijeti otpusnu listu prethodnog zahvata i navesti dijabetes, alergije i stalne lijekove",
-				"abnormal": "Poslije čišćenja rane bol i iscjedak obično slabe tokom nekoliko dana, a zarastanje traje duže nego kod odmah ušivene rane. Povišena temperatura, crvenilo koje se širi i pojačan bol razlog su da se ljekaru vratite odmah"
-			},
-			"de": {
-				"what": "Erneute chirurgische Versorgung einer Wunde, die sich infiziert hat oder nach der Erstversorgung nicht heilt",
-				"how": "Der Chirurg entfernt einen Teil der Fäden oder eröffnet die Wunde, räumt Eiter und abgestorbenes Gewebe aus, spült die Wundhöhle, legt bei Bedarf eine Drainage ein und verbindet; meist in örtlicher Betäubung, 20-40 Minuten",
-				"when": "Infizierte Operations- oder Verletzungswunde, auseinanderweichende Wundränder, Beläge und abgestorbenes Gewebe in der Wunde, schlecht heilende und chronische Wunden",
-				"prep": "Keine besondere Vorbereitung; den Verband nicht selbst abnehmen, den Bericht des vorherigen Eingriffs mitbringen und Diabetes, Allergien und Dauermedikamente angeben",
-				"abnormal": "Nach der Reinigung der Wunde lassen Schmerz und Sekretion meist innerhalb weniger Tage nach, die Heilung dauert jedoch länger als bei einer sofort genähten Wunde. Fieber, sich ausbreitende Rötung und zunehmender Schmerz sind ein Grund, sofort wieder zum Arzt zu gehen"
-			},
-			"tr": {
-				"what": "İltihaplanmış ya da ilk bakımdan sonra iyileşmeyen bir yaranın yeniden cerrahi bakımı",
-				"how": "Cerrah dikişlerin bir kısmını alır ya da yarayı açar, iltihabı ve canlılığını yitirmiş dokuyu temizler, boşluğu yıkar, gerekirse dren bırakır ve pansuman yapar; çoğunlukla lokal anestezi altında, 20-40 dakika",
-				"when": "İltihaplanmış ameliyat veya travma yarası, kenarların açılması, yarada örtü tabakası ve ölü doku, uzun süre iyileşmeyen ve kronik yaralar",
-				"prep": "Özel hazırlık gerekmez; pansumanı kendiniz açmayın, önceki işlemin raporunu getirin, şeker hastalığı, alerjiler ve sürekli kullanılan ilaçları bildirin",
-				"abnormal": "Yara temizlendikten sonra ağrı ve akıntı genellikle birkaç gün içinde azalır, iyileşme ise hemen dikilen yaraya göre daha uzun sürer. Ateş, yayılan kızarıklık ve artan ağrı, hemen hekime dönmeyi gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "skin-tumor-excision-with-reconstruction",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление образования кожи с закрытием получившегося дефекта перемещённым кожным лоскутом или пересаженным участком кожи",
-				"how": "Под местной анестезией образование иссекают вместе с полоской окружающей кожи, дефект закрывают лоскутом соседней кожи или трансплантатом, накладывают швы и повязку; от получаса до полутора часов в зависимости от размера и области",
-				"when": "Образования кожи, которые нельзя закрыть простым швом из-за размера или расположения, участки с натянутой кожей — нос, веко, ухо, кисть, а также изменения, которые врач решил удалить с гистологическим исследованием",
-				"prep": "Сначала осмотр хирурга или дерматолога, при необходимости дерматоскопия; сообщить о препаратах, разжижающих кровь, аллергии на анестетики, диабете и курении, замедляющем заживление, ничего не отменяя самостоятельно",
-				"abnormal": "Удалённую ткань направляют на гистологическое исследование: строение ткани описывает врач-патолог, а дальнейшую тактику определяет оперировавший врач. Отёк и синяк в первые дни обычны, а нарастающая боль, потемнение лоскута, отделяемое или температура требуют осмотра"
-			},
-			"en": {
-				"what": "Removal of a skin lesion with closure of the resulting defect by a shifted skin flap or a skin graft",
-				"how": "Under local anaesthesia the lesion is excised together with a rim of surrounding skin, the defect is covered with a flap of neighbouring skin or with a graft, and sutures and a dressing are applied; from half an hour to an hour and a half depending on size and site",
-				"when": "Skin lesions that cannot be closed with a simple suture because of their size or position, areas where the skin is under tension — nose, eyelid, ear, hand — and lesions the doctor has decided to remove with histological examination",
-				"prep": "First an examination by a surgeon or dermatologist, with dermatoscopy if needed; report blood-thinning medication, allergy to anaesthetics, diabetes and smoking, which slows healing, without stopping anything on your own",
-				"abnormal": "The removed tissue is sent for histological examination: the pathologist describes the structure of the tissue and the operating doctor decides on further management. Swelling and bruising in the first days are usual, while increasing pain, darkening of the flap, discharge or fever call for an examination"
-			},
-			"sr": {
-				"what": "Uklanjanje promjene na koži uz zatvaranje nastalog defekta pomjerenim kožnim režnjem ili presađenim komadom kože",
-				"how": "U lokalnoj anesteziji promjena se isijeca zajedno sa pojasom okolne kože, defekt se prekriva režnjem susjedne kože ili transplantatom, postavljaju se šavovi i zavoj; od pola sata do sat i po, zavisno od veličine i regije",
-				"when": "Promjene na koži koje se zbog veličine ili položaja ne mogu zatvoriti običnim šavom, područja sa zategnutom kožom — nos, kapak, uho, šaka — kao i promjene koje je ljekar odlučio ukloniti uz histološku analizu",
-				"prep": "Najprije pregled hirurga ili dermatologa, po potrebi dermatoskopija; prijaviti lijekove za razrjeđivanje krvi, alergiju na anestetike, dijabetes i pušenje koje usporava zarastanje, bez samostalnog prekidanja terapije",
-				"abnormal": "Uklonjeno tkivo se šalje na histološku analizu: građu tkiva opisuje ljekar patolog, a dalji postupak određuje ljekar koji je operisao. Otok i modrica prvih dana su uobičajeni, dok pojačan bol, tamnjenje režnja, iscjedak ili povišena temperatura traže pregled"
-			},
-			"de": {
-				"what": "Entfernung einer Hautveränderung mit Deckung des entstandenen Defekts durch einen verschobenen Hautlappen oder ein Hauttransplantat",
-				"how": "In örtlicher Betäubung wird die Veränderung mit einem Saum umgebender Haut ausgeschnitten, der Defekt mit einem Lappen benachbarter Haut oder einem Transplantat gedeckt, anschließend genäht und verbunden; je nach Größe und Region eine halbe bis anderthalb Stunden",
-				"when": "Hautveränderungen, die sich wegen Größe oder Lage nicht mit einer einfachen Naht verschließen lassen, Bereiche mit straffer Haut — Nase, Augenlid, Ohr, Hand — sowie Veränderungen, die der Arzt mit histologischer Untersuchung entfernen möchte",
-				"prep": "Zunächst Untersuchung durch Chirurg oder Hautarzt, bei Bedarf Dermatoskopie; blutverdünnende Medikamente, Allergien gegen Betäubungsmittel, Diabetes und Rauchen, das die Heilung verzögert, angeben, ohne etwas eigenmächtig abzusetzen",
-				"abnormal": "Das entfernte Gewebe wird histologisch untersucht: Den Gewebeaufbau beschreibt der Pathologe, über das weitere Vorgehen entscheidet der operierende Arzt. Schwellung und Bluterguss in den ersten Tagen sind üblich, zunehmende Schmerzen, Dunkelfärbung des Lappens, Sekret oder Fieber erfordern eine Kontrolle"
-			},
-			"tr": {
-				"what": "Cilt lezyonunun çıkarılması ve oluşan defektin kaydırılan bir deri flebi ya da deri grefti ile kapatılması",
-				"how": "Lokal anestezi altında lezyon çevresindeki bir miktar sağlam deriyle birlikte çıkarılır, defekt komşu deriden hazırlanan flep veya greftle kapatılır, dikiş atılır ve pansuman yapılır; boyuta ve bölgeye göre yarım saat ile bir buçuk saat arası sürer",
-				"when": "Boyutu veya yeri nedeniyle basit dikişle kapatılamayan cilt lezyonları, derinin gergin olduğu bölgeler — burun, göz kapağı, kulak, el — ve hekimin histolojik inceleme ile çıkarmaya karar verdiği değişiklikler",
-				"prep": "Önce cerrah ya da dermatolog muayenesi, gerekirse dermatoskopi; kan sulandırıcı ilaçlar, anestezik alerjisi, şeker hastalığı ve iyileşmeyi yavaşlatan sigara kullanımı, hiçbir ilaç kendiliğinden kesilmeden bildirilmelidir",
-				"abnormal": "Çıkarılan doku histolojik incelemeye gönderilir: dokunun yapısını patoloji uzmanı tanımlar, sonraki adımları ameliyatı yapan hekim belirler. İlk günlerde şişlik ve morluk olağandır; artan ağrı, flepte kararma, akıntı veya ateş muayene gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "sternal-puncture",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Взятие небольшого количества костного мозга из грудины иглой для лабораторного исследования",
-				"how": "Кожу и надкостницу обезболивают, специальной иглой проходят переднюю стенку грудины и шприцем набирают немного костного мозга; сам забор длится секунды и ощущается как короткое тянущее чувство, вся процедура — около четверти часа",
-				"when": "Необъяснимые изменения в анализе крови, уточнение причины анемии или изменённого числа клеток крови, наблюдение за течением заболеваний кроветворения по назначению гематолога",
-				"prep": "Сообщить о нарушениях свёртываемости и препаратах, разжижающих кровь; после процедуры несколько часов не мочить место прокола, не поднимать тяжести и не заниматься спортом в этот день",
-				"abnormal": "Полученный материал изучают под микроскопом: состав и созревание клеток могут быть связаны с разными состояниями кроветворения, и заключение даёт врач-гематолог. Боль в груди, кровотечение из места прокола или температура после процедуры — повод обратиться сразу"
-			},
-			"en": {
-				"what": "Taking a small amount of bone marrow from the breastbone with a needle for laboratory examination",
-				"how": "The skin and the periosteum are anaesthetised, a special needle passes through the front wall of the sternum and a little marrow is drawn into a syringe; the sampling itself lasts seconds and feels like a brief pulling sensation, the whole procedure takes about fifteen minutes",
-				"when": "Unexplained changes in a blood count, clarifying the cause of anaemia or of a changed number of blood cells, monitoring disorders of blood formation as prescribed by a haematologist",
-				"prep": "Report clotting disorders and blood-thinning medication; after the procedure keep the puncture site dry for several hours, avoid lifting weights and sport that day",
-				"abnormal": "The sample is examined under a microscope: the composition and maturation of the cells may be related to various states of blood formation, and the report is issued by a haematologist. Chest pain, bleeding from the puncture site or fever after the procedure are a reason to seek care immediately"
-			},
-			"sr": {
-				"what": "Uzimanje male količine koštane srži iz grudne kosti iglom radi laboratorijske analize",
-				"how": "Koža i pokosnica se anesteziraju, posebnom iglom se prolazi prednji zid sternuma i špricem izvlači nešto koštane srži; samo uzimanje traje nekoliko sekundi i osjeti se kao kratko vučenje, a cijeli zahvat oko petnaest minuta",
-				"when": "Nerazjašnjene promjene u krvnoj slici, utvrđivanje uzroka anemije ili promijenjenog broja krvnih ćelija, praćenje bolesti krvotvornog sistema po odluci hematologa",
-				"prep": "Prijaviti poremećaje zgrušavanja i lijekove za razrjeđivanje krvi; poslije zahvata nekoliko sati ne kvasiti mjesto uboda, ne dizati teret i taj dan ne vježbati",
-				"abnormal": "Dobijeni materijal se pregleda pod mikroskopom: sastav i sazrijevanje ćelija mogu biti povezani sa različitim stanjima krvotvornog sistema, a nalaz daje ljekar hematolog. Bol u grudima, krvarenje sa mjesta uboda ili povišena temperatura poslije zahvata traže da se odmah javite"
-			},
-			"de": {
-				"what": "Entnahme einer kleinen Menge Knochenmark aus dem Brustbein mit einer Nadel für die Laboruntersuchung",
-				"how": "Haut und Knochenhaut werden betäubt, mit einer speziellen Nadel wird die vordere Brustbeinwand durchstochen und etwas Knochenmark in eine Spritze aufgezogen; die Entnahme selbst dauert Sekunden und fühlt sich wie ein kurzes Ziehen an, der ganze Eingriff etwa eine Viertelstunde",
-				"when": "Unklare Veränderungen im Blutbild, Abklärung der Ursache einer Blutarmut oder einer veränderten Zellzahl, Verlaufskontrolle von Erkrankungen der Blutbildung nach Anordnung des Hämatologen",
-				"prep": "Gerinnungsstörungen und blutverdünnende Medikamente angeben; nach dem Eingriff die Einstichstelle einige Stunden trocken halten, nicht schwer heben und an diesem Tag keinen Sport treiben",
-				"abnormal": "Das gewonnene Material wird unter dem Mikroskop untersucht: Zusammensetzung und Reifung der Zellen können mit verschiedenen Zuständen der Blutbildung zusammenhängen, den Befund erstellt ein Hämatologe. Brustschmerz, Blutung aus der Einstichstelle oder Fieber nach dem Eingriff erfordern sofortige ärztliche Hilfe"
-			},
-			"tr": {
-				"what": "Laboratuvar incelemesi için iğneyle göğüs kemiğinden az miktarda kemik iliği alınması",
-				"how": "Cilt ve kemik zarı uyuşturulur, özel bir iğneyle sternumun ön duvarı geçilir ve enjektörle bir miktar kemik iliği çekilir; örnek alımı saniyeler sürer ve kısa bir çekilme hissi verir, işlemin tamamı yaklaşık on beş dakikadır",
-				"when": "Kan sayımındaki açıklanamayan değişiklikler, kansızlığın veya kan hücre sayısındaki değişimin nedeninin araştırılması, hematoloğun kararıyla kan yapımı hastalıklarının izlenmesi",
-				"prep": "Pıhtılaşma bozuklukları ve kan sulandırıcı ilaçlar bildirilmelidir; işlemden sonra birkaç saat giriş yeri ıslatılmamalı, ağır kaldırılmamalı ve o gün spor yapılmamalıdır",
-				"abnormal": "Alınan materyal mikroskopla incelenir: hücrelerin bileşimi ve olgunlaşması kan yapımına ilişkin farklı durumlarla ilgili olabilir, raporu hematoloji uzmanı verir. İşlemden sonra göğüs ağrısı, giriş yerinden kanama veya ateş hemen başvuru gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "subcutaneous-or-intramuscular-injection",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Введение назначенного препарата под кожу или в мышцу медицинским работником",
-				"how": "Медсестра выбирает место по назначению врача: тонкой иглой под кожу живота, плеча или бедра либо более длинной иглой в мышцу бедра или ягодицы; сам укол длится секунды, после него обычно просят задержаться в клинике на несколько минут",
-				"when": "Курс инъекций по назначению врача, препараты, которые не действуют при приёме внутрь, ситуации, когда пациент не может сделать укол сам, введение препарата, когда приём таблеток невозможен",
-				"prep": "Принести назначение и сам препарат, если клиника его не выдаёт, сказать о прошлых реакциях на лекарства и о препаратах, разжижающих кровь; удобнее прийти в одежде, которая легко открывает место укола",
-				"abnormal": "Лёгкая болезненность, небольшое покраснение или синяк в месте укола обычно проходят за несколько дней. Сыпь, отёк лица, затруднённое дыхание или головокружение сразу после инъекции требуют немедленной помощи, а растущее уплотнение с температурой — осмотра врача"
-			},
-			"en": {
-				"what": "Administration of a prescribed medicine under the skin or into a muscle by a health professional",
-				"how": "The nurse chooses the site as prescribed: a fine needle under the skin of the abdomen, upper arm or thigh, or a longer needle into the thigh or buttock muscle; the injection itself lasts seconds and patients are usually asked to stay in the clinic for a few minutes afterwards",
-				"when": "A course of injections prescribed by a doctor, medicines that do not work when swallowed, situations in which the patient cannot inject themselves, giving a medicine when tablets are not possible",
-				"prep": "Bring the prescription and the medicine itself if the clinic does not supply it, mention previous reactions to medicines and blood-thinning treatment; clothing that gives easy access to the injection site is more convenient",
-				"abnormal": "Mild soreness, slight redness or a bruise at the injection site usually pass within a few days. A rash, facial swelling, difficulty breathing or dizziness right after the injection require immediate help, while a growing lump with fever needs a doctor's examination"
-			},
-			"sr": {
-				"what": "Davanje propisanog lijeka pod kožu ili u mišić od strane zdravstvenog radnika",
-				"how": "Sestra bira mjesto prema nalogu ljekara: tankom iglom pod kožu trbuha, nadlaktice ili buta, ili dužom iglom u mišić buta ili sjedalne regije; sam ubod traje nekoliko sekundi, a poslije se obično traži da se ostane u klinici koji minut",
-				"when": "Serija injekcija po nalogu ljekara, lijekovi koji ne djeluju ako se progutaju, situacije kada pacijent ne može sam sebi dati injekciju, davanje lijeka kada tablete nisu moguće",
-				"prep": "Ponijeti nalog i sam lijek ako ga klinika ne izdaje, navesti ranije reakcije na lijekove i terapiju za razrjeđivanje krvi; zgodnije je doći u odjeći koja lako otkriva mjesto uboda",
-				"abnormal": "Blaga osjetljivost, malo crvenila ili modrica na mjestu uboda obično prođu za nekoliko dana. Osip, otok lica, otežano disanje ili vrtoglavica odmah poslije injekcije traže hitnu pomoć, a čvorić koji raste uz povišenu temperaturu pregled ljekara"
-			},
-			"de": {
-				"what": "Verabreichung eines verordneten Medikaments unter die Haut oder in den Muskel durch medizinisches Personal",
-				"how": "Die Pflegekraft wählt die Stelle nach ärztlicher Anordnung: mit feiner Nadel unter die Haut von Bauch, Oberarm oder Oberschenkel oder mit längerer Nadel in den Oberschenkel- oder Gesäßmuskel; die Injektion selbst dauert Sekunden, danach wird meist gebeten, einige Minuten in der Praxis zu bleiben",
-				"when": "Eine vom Arzt verordnete Injektionsserie, Medikamente, die geschluckt nicht wirken, Situationen, in denen der Patient sich nicht selbst spritzen kann, Gabe eines Medikaments, wenn Tabletten nicht möglich sind",
-				"prep": "Verordnung und gegebenenfalls das Medikament selbst mitbringen, frühere Reaktionen auf Medikamente und blutverdünnende Therapie angeben; Kleidung, die die Einstichstelle leicht freigibt, ist praktischer",
-				"abnormal": "Leichte Empfindlichkeit, etwas Rötung oder ein blauer Fleck an der Einstichstelle vergehen meist innerhalb weniger Tage. Hautausschlag, Schwellung im Gesicht, Atemnot oder Schwindel unmittelbar nach der Injektion erfordern sofortige Hilfe, eine wachsende Verhärtung mit Fieber eine ärztliche Untersuchung"
-			},
-			"tr": {
-				"what": "Reçete edilen ilacın sağlık çalışanı tarafından cilt altına ya da kas içine uygulanması",
-				"how": "Hemşire, hekimin talimatına göre yeri seçer: ince iğneyle karın, üst kol veya uyluk cildinin altına ya da daha uzun iğneyle uyluk veya kalça kasına; enjeksiyon saniyeler sürer, sonrasında genellikle birkaç dakika klinikte beklenmesi istenir",
-				"when": "Hekimin verdiği enjeksiyon kürü, ağızdan alındığında etki etmeyen ilaçlar, hastanın kendine iğne yapamadığı durumlar, tablet kullanımının mümkün olmadığı haller",
-				"prep": "Reçeteyi ve klinik vermiyorsa ilacın kendisini getirmek, ilaçlara karşı geçmiş tepkileri ve kan sulandırıcı tedaviyi bildirmek; enjeksiyon bölgesini kolay açan giysilerle gelmek daha rahattır",
-				"abnormal": "Enjeksiyon yerinde hafif hassasiyet, az kızarıklık veya morluk genellikle birkaç gün içinde geçer. Enjeksiyondan hemen sonra döküntü, yüzde şişme, nefes darlığı veya baş dönmesi acil yardım, büyüyen sertlik ve ateş ise hekim muayenesi gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "superficial-vein-pressure-measurement",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Измерение давления крови в поверхностной вене конечности с помощью иглы, соединённой с датчиком",
-				"how": "В вену на тыле стопы или кисти вводят тонкую иглу с датчиком и записывают давление в покое и после нескольких сгибаний стопы или сжатий кисти, затем следят, как быстро оно возвращается к исходному; около получаса",
-				"when": "Уточнение причины отёков и тяжести в ногах, оценка работы венозных клапанов и мышечной помпы голени, обследование перед вмешательством на венах и наблюдение после него",
-				"prep": "Прийти в свободной одежде и удобной обуви, за пару часов не курить, сообщить о препаратах, разжижающих кровь, и аллергии на местные анестетики",
-				"abnormal": "Насколько давление падает при нагрузке и как быстро восстанавливается, может быть связано с работой венозных клапанов и оттоком крови из конечности. Результат оценивает сосудистый хирург вместе с осмотром и УЗИ вен"
-			},
-			"en": {
-				"what": "Measurement of the blood pressure in a superficial vein of a limb using a needle connected to a sensor",
-				"how": "A fine needle with a sensor is placed in a vein on the back of the foot or hand and the pressure is recorded at rest and after several ankle movements or hand squeezes, then how quickly it returns to baseline is followed; about half an hour",
-				"when": "Clarifying the cause of swelling and heaviness in the legs, assessing the work of the venous valves and of the calf muscle pump, work-up before a vein procedure and follow-up afterwards",
-				"prep": "Come in loose clothing and comfortable shoes, avoid smoking for a couple of hours, report blood-thinning medication and any allergy to local anaesthetics",
-				"abnormal": "How far the pressure falls with exercise and how quickly it recovers may be related to the work of the venous valves and to the outflow of blood from the limb. The result is assessed by a vascular surgeon together with the examination and vein ultrasound"
-			},
-			"sr": {
-				"what": "Mjerenje pritiska krvi u površinskoj veni ekstremiteta pomoću igle povezane sa senzorom",
-				"how": "U venu na nadlanici ili nadstopalu uvodi se tanka igla sa senzorom i bilježi se pritisak u miru i poslije nekoliko pokreta stopalom ili stiskanja šake, a zatim se prati koliko brzo se vraća na početnu vrijednost; oko pola sata",
-				"when": "Razjašnjenje uzroka otoka i težine u nogama, procjena rada venskih zalistaka i mišićne pumpe potkoljenice, obrada prije zahvata na venama i praćenje poslije njega",
-				"prep": "Doći u široj odjeći i udobnoj obući, dva sata prije ne pušiti, prijaviti lijekove za razrjeđivanje krvi i alergiju na lokalne anestetike",
-				"abnormal": "Koliko pritisak pada pri opterećenju i koliko brzo se oporavlja može biti povezano sa radom venskih zalistaka i odlivom krvi iz ekstremiteta. Nalaz procjenjuje vaskularni hirurg zajedno sa pregledom i ultrazvukom vena"
-			},
-			"de": {
-				"what": "Messung des Blutdrucks in einer oberflächlichen Vene der Extremität mit einer an einen Sensor angeschlossenen Nadel",
-				"how": "In eine Vene am Fuß- oder Handrücken wird eine dünne Nadel mit Sensor eingeführt und der Druck in Ruhe sowie nach mehreren Fußbewegungen oder Faustschlüssen aufgezeichnet, danach wird verfolgt, wie schnell er zum Ausgangswert zurückkehrt; etwa eine halbe Stunde",
-				"when": "Klärung der Ursache von Schwellung und Schweregefühl in den Beinen, Beurteilung von Venenklappen und Wadenmuskelpumpe, Abklärung vor einem Veneneingriff und Kontrolle danach",
-				"prep": "In weiter Kleidung und bequemen Schuhen kommen, zwei Stunden vorher nicht rauchen, blutverdünnende Medikamente und Allergien gegen örtliche Betäubungsmittel angeben",
-				"abnormal": "Wie stark der Druck unter Belastung abfällt und wie rasch er sich erholt, kann mit der Funktion der Venenklappen und dem Blutabfluss aus der Extremität zusammenhängen. Den Befund beurteilt der Gefäßchirurg zusammen mit der Untersuchung und dem Venenultraschall"
-			},
-			"tr": {
-				"what": "Sensöre bağlı bir iğne yardımıyla ekstremitedeki yüzeyel bir toplardamarda kan basıncının ölçülmesi",
-				"how": "El veya ayak sırtındaki bir damara sensörlü ince bir iğne yerleştirilir, dinlenme sırasında ve birkaç ayak hareketi ya da el sıkma sonrasında basınç kaydedilir, ardından başlangıç değerine ne kadar hızlı döndüğü izlenir; yaklaşık yarım saat sürer",
-				"when": "Bacaklarda şişlik ve ağırlığın nedeninin araştırılması, toplardamar kapakçıkları ile baldır kas pompasının değerlendirilmesi, damar girişimi öncesi inceleme ve sonrasındaki takip",
-				"prep": "Bol giysi ve rahat ayakkabıyla gelmek, birkaç saat önce sigara içmemek, kan sulandırıcı ilaçları ve lokal anestezik alerjisini bildirmek",
-				"abnormal": "Basıncın yüklenmeyle ne kadar düştüğü ve ne kadar hızlı toparlandığı, toplardamar kapakçıklarının çalışması ve kanın ekstremiteden dönüşüyle ilgili olabilir. Sonucu damar cerrahı, muayene ve toplardamar ultrasonu ile birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "swab-collection-for-laboratory-analysis",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Взятие материала стерильным тампоном с кожи, слизистой или раны и отправка его в лабораторию",
-				"how": "Медработник проводит стерильным тампоном по нужному участку — зев, нос, ухо, глаз, кожа, рана — помещает его в транспортную среду и передаёт в лабораторию; занимает пару минут",
-				"when": "Боль в горле с налётами, гнойное отделяемое из уха, носа или глаза, воспалённая рана, подбор антибиотика по чувствительности возбудителя, контроль после лечения, обследование перед вмешательством",
-				"prep": "Мазок из зева берут натощак или через несколько часов после еды, до чистки зубов и полоскания; перед забором не использовать местные антисептики, капли и мази и обязательно сказать, если приём антибиотика уже начат",
-				"abnormal": "Посев может показать рост бактерий или грибков, а может остаться без роста, при этом часть находок относится к обычной флоре этого участка. Значение результата и необходимость лечения определяет врач"
-			},
-			"en": {
-				"what": "Collection of material with a sterile swab from the skin, a mucous membrane or a wound and its dispatch to the laboratory",
-				"how": "A health worker wipes the area concerned — throat, nose, ear, eye, skin, wound — with a sterile swab, places it in transport medium and sends it to the laboratory; it takes a couple of minutes",
-				"when": "Sore throat with coating, purulent discharge from the ear, nose or eye, an inflamed wound, choosing an antibiotic according to the sensitivity of the organism, control after treatment, work-up before a procedure",
-				"prep": "A throat swab is taken on an empty stomach or several hours after eating, before brushing teeth and rinsing the mouth; do not use local antiseptics, drops or ointments beforehand and always say if an antibiotic has already been started",
-				"abnormal": "The culture may show growth of bacteria or fungi, or no growth at all, and some findings belong to the normal flora of that site. The meaning of the result and the need for treatment are decided by the doctor"
-			},
-			"sr": {
-				"what": "Uzimanje materijala sterilnim štapićem sa kože, sluznice ili rane i slanje u laboratoriju",
-				"how": "Zdravstveni radnik sterilnim štapićem prebriše traženo područje — ždrijelo, nos, uho, oko, koža, rana — stavi ga u transportnu podlogu i šalje u laboratoriju; traje par minuta",
-				"when": "Bol u grlu sa naslagama, gnojav iscjedak iz uha, nosa ili oka, upaljena rana, izbor antibiotika prema osjetljivosti uzročnika, kontrola poslije liječenja, obrada prije zahvata",
-				"prep": "Bris ždrijela se uzima natašte ili nekoliko sati poslije jela, prije pranja zuba i ispiranja usta; prije uzimanja ne koristiti lokalne antiseptike, kapi i masti i obavezno reći ako je antibiotik već započet",
-				"abnormal": "Kultura može pokazati rast bakterija ili gljivica, a može ostati i bez rasta, pri čemu dio nalaza pripada uobičajenoj flori tog mjesta. Značenje nalaza i potrebu za liječenjem određuje ljekar"
-			},
-			"de": {
-				"what": "Entnahme von Material mit einem sterilen Tupfer von Haut, Schleimhaut oder Wunde und Versand ins Labor",
-				"how": "Die Fachkraft streicht mit einem sterilen Tupfer über den betreffenden Bereich — Rachen, Nase, Ohr, Auge, Haut, Wunde —, gibt ihn in ein Transportmedium und schickt ihn ins Labor; dauert wenige Minuten",
-				"when": "Halsschmerzen mit Belägen, eitriges Sekret aus Ohr, Nase oder Auge, entzündete Wunde, Auswahl eines Antibiotikums nach Empfindlichkeit des Erregers, Kontrolle nach der Behandlung, Abklärung vor einem Eingriff",
-				"prep": "Ein Rachenabstrich wird nüchtern oder einige Stunden nach dem Essen entnommen, vor dem Zähneputzen und Mundspülen; vorher keine örtlichen Antiseptika, Tropfen oder Salben anwenden und unbedingt angeben, wenn bereits ein Antibiotikum eingenommen wird",
-				"abnormal": "Die Kultur kann Wachstum von Bakterien oder Pilzen zeigen oder ohne Wachstum bleiben, wobei ein Teil der Befunde zur normalen Flora dieser Stelle gehört. Die Bedeutung des Ergebnisses und die Notwendigkeit einer Behandlung bestimmt der Arzt"
-			},
-			"tr": {
-				"what": "Ciltten, mukozadan ya da yaradan steril çubukla örnek alınması ve laboratuvara gönderilmesi",
-				"how": "Sağlık çalışanı steril çubukla ilgili bölgeyi — boğaz, burun, kulak, göz, cilt, yara — siler, çubuğu taşıma besiyerine koyar ve laboratuvara gönderir; birkaç dakika sürer",
-				"when": "Beyaz plaklarla seyreden boğaz ağrısı, kulak, burun ya da gözden iltihaplı akıntı, iltihaplı yara, etkenin duyarlılığına göre antibiyotik seçimi, tedavi sonrası kontrol, girişim öncesi inceleme",
-				"prep": "Boğaz sürüntüsü aç karnına ya da yemekten birkaç saat sonra, diş fırçalama ve gargara öncesinde alınır; öncesinde lokal antiseptik, damla ve merhem kullanılmamalı, antibiyotiğe başlanmışsa mutlaka belirtilmelidir",
-				"abnormal": "Kültürde bakteri veya mantar üremesi görülebilir ya da üreme olmayabilir; bulguların bir kısmı o bölgenin olağan florasına aittir. Sonucun anlamını ve tedavi gerekip gerekmediğini hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "thermography",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Бесконтактная регистрация распределения температуры кожи инфракрасной камерой",
-				"how": "Пациент освобождает исследуемую область и несколько минут привыкает к температуре кабинета, затем камера снимает тепловую картину, при необходимости повторно после холодовой или нагрузочной пробы; 20-30 минут, без излучения и без прикосновения",
-				"when": "Оценка периферического кровообращения, побеление и зябкость пальцев на холоде, односторонняя боль или отёк конечности, наблюдение за воспалительными изменениями мягких тканей в динамике",
-				"prep": "За несколько часов не курить, не пить кофе и алкоголь, в день исследования не наносить кремы и мази на исследуемую область, перед визитом не принимать горячий душ и не делать физиопроцедуры",
-				"abnormal": "Участки с более высокой или более низкой температурой могут быть связаны с усилением кровотока, воспалением или ослаблением притока крови, а также с условиями в кабинете. Термография сама по себе диагноз не ставит, врач сопоставляет её с осмотром и другими исследованиями"
-			},
-			"en": {
-				"what": "Contact-free recording of the temperature distribution of the skin with an infrared camera",
-				"how": "The patient uncovers the area studied and spends a few minutes adapting to the room temperature, then the camera records the thermal image, if needed again after a cold or exercise test; 20-30 minutes, without radiation and without touch",
-				"when": "Assessment of peripheral circulation, blanching and coldness of the fingers in the cold, one-sided pain or swelling of a limb, following inflammatory changes of the soft tissue over time",
-				"prep": "No smoking, coffee or alcohol for several hours, no creams or ointments on the area on the day of the test, no hot shower or physiotherapy before the visit",
-				"abnormal": "Areas of higher or lower temperature may be related to increased blood flow, inflammation or reduced inflow, and also to the conditions in the room. Thermography does not make a diagnosis on its own; the doctor compares it with the examination and other tests"
-			},
-			"sr": {
-				"what": "Beskontaktno snimanje raspodjele temperature kože infracrvenom kamerom",
-				"how": "Pacijent oslobodi područje koje se ispituje i nekoliko minuta se privikava na temperaturu prostorije, zatim kamera snima toplotnu sliku, po potrebi ponovo poslije hladnog ili opterećujućeg testa; 20-30 minuta, bez zračenja i bez dodira",
-				"when": "Procjena perifernog krvotoka, bljedilo i hladnoća prstiju na hladnoći, jednostrani bol ili otok ekstremiteta, praćenje upalnih promjena mekih tkiva tokom vremena",
-				"prep": "Nekoliko sati prije ne pušiti, ne piti kafu i alkohol, na dan pregleda ne nanositi kreme i masti na ispitivano područje, prije dolaska se ne tuširati vrućom vodom i ne ići na fizikalnu terapiju",
-				"abnormal": "Područja sa višom ili nižom temperaturom mogu biti povezana sa pojačanim protokom, upalom ili slabijim dotokom krvi, ali i sa uslovima u prostoriji. Termografija sama po sebi ne postavlja dijagnozu, već je ljekar upoređuje sa pregledom i drugim nalazima"
-			},
-			"de": {
-				"what": "Berührungsfreie Aufzeichnung der Temperaturverteilung der Haut mit einer Infrarotkamera",
-				"how": "Der Patient macht die untersuchte Region frei und gewöhnt sich einige Minuten an die Raumtemperatur, dann nimmt die Kamera das Wärmebild auf, bei Bedarf erneut nach einem Kälte- oder Belastungstest; 20-30 Minuten, ohne Strahlung und ohne Berührung",
-				"when": "Beurteilung der peripheren Durchblutung, Abblassen und Kältegefühl der Finger bei Kälte, einseitiger Schmerz oder Schwellung einer Extremität, Verlaufskontrolle entzündlicher Weichteilveränderungen",
-				"prep": "Einige Stunden vorher nicht rauchen, keinen Kaffee und Alkohol trinken, am Untersuchungstag keine Cremes und Salben auf die Region auftragen, vor dem Termin nicht heiß duschen und keine Physiotherapie machen",
-				"abnormal": "Bereiche mit höherer oder niedrigerer Temperatur können mit gesteigerter Durchblutung, Entzündung oder vermindertem Zufluss zusammenhängen, ebenso mit den Bedingungen im Raum. Die Thermographie stellt allein keine Diagnose, der Arzt vergleicht sie mit der Untersuchung und weiteren Befunden"
-			},
-			"tr": {
-				"what": "Cilt sıcaklığı dağılımının kızılötesi kamerayla temassız olarak kaydedilmesi",
-				"how": "Hasta incelenecek bölgeyi açar ve birkaç dakika oda sıcaklığına alışır, ardından kamera ısı görüntüsünü alır, gerekirse soğuk ya da yüklenme testinden sonra tekrarlanır; 20-30 dakika, ışın ve temas olmadan",
-				"when": "Çevresel dolaşımın değerlendirilmesi, soğukta parmaklarda solma ve üşüme, tek taraflı ekstremite ağrısı veya şişliği, yumuşak dokudaki iltihabi değişikliklerin zaman içinde izlenmesi",
-				"prep": "Birkaç saat önce sigara, kahve ve alkol almamak, işlem günü incelenecek bölgeye krem ve merhem sürmemek, gelmeden önce sıcak duş almamak ve fizik tedavi yaptırmamak",
-				"abnormal": "Daha sıcak ya da daha soğuk bölgeler artmış kan akımı, iltihap ya da azalmış kan gelişiyle, ayrıca odanın koşullarıyla ilgili olabilir. Termografi tek başına tanı koymaz; hekim bunu muayene ve diğer incelemelerle birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "topical-local-anesthesia",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Обезболивание поверхности кожи или слизистой без укола — гелем, кремом, спреем или каплями",
-				"how": "На нужный участок наносят анестетик и ждут несколько минут, пока он подействует; чувствительность снижается только в поверхностном слое и обычно возвращается в течение часа",
-				"when": "Небольшие манипуляции на коже и слизистых, установка катетера и забор крови у детей, осмотры и вмешательства в полости рта, носа, горла и глаза, уменьшение боли от последующего укола анестетика",
-				"prep": "Специальной подготовки нет; сказать об аллергии на местные анестетики, обезболенный глаз не тереть, а после обезболивания горла не есть и не пить, пока чувствительность не вернётся",
-				"abnormal": "На обработанном участке возможны лёгкое жжение, покраснение или побледнение, которые проходят вместе с действием препарата. Сыпь, отёк, затруднённое дыхание или сохраняющееся онемение — повод сразу обратиться к врачу"
-			},
-			"en": {
-				"what": "Numbing the surface of the skin or of a mucous membrane without an injection, using a gel, cream, spray or drops",
-				"how": "The anaesthetic is applied to the area and left for a few minutes to take effect; sensitivity is reduced only in the surface layer and usually returns within an hour",
-				"when": "Minor procedures on the skin and mucous membranes, placing a cannula and taking blood in children, examinations and procedures in the mouth, nose, throat and eye, reducing the pain of a subsequent anaesthetic injection",
-				"prep": "No special preparation; report any allergy to local anaesthetics, do not rub an anaesthetised eye, and after the throat is numbed do not eat or drink until sensation returns",
-				"abnormal": "Mild burning, redness or blanching of the treated area is possible and passes as the medicine wears off. A rash, swelling, difficulty breathing or numbness that persists are a reason to contact a doctor straight away"
-			},
-			"sr": {
-				"what": "Obezbolivanje površine kože ili sluznice bez injekcije — gelom, kremom, sprejom ili kapima",
-				"how": "Anestetik se nanese na traženo mjesto i sačeka nekoliko minuta da djeluje; osjetljivost se smanjuje samo u površnom sloju i obično se vraća u roku od sat vremena",
-				"when": "Manji zahvati na koži i sluznicama, postavljanje kanile i vađenje krvi kod djece, pregledi i zahvati u ustima, nosu, grlu i oku, smanjenje bola od injekcije anestetika koja slijedi",
-				"prep": "Posebna priprema ne postoji; prijaviti alergiju na lokalne anestetike, anestezirano oko ne trljati, a poslije obezbolivanja grla ne jesti i ne piti dok se osjećaj ne vrati",
-				"abnormal": "Na obrađenom mjestu mogući su blago peckanje, crvenilo ili bljedilo, koji prolaze zajedno sa dejstvom lijeka. Osip, otok, otežano disanje ili utrnulost koja se zadržava razlog su da se odmah javite ljekaru"
-			},
-			"de": {
-				"what": "Betäubung der Oberfläche von Haut oder Schleimhaut ohne Spritze — mit Gel, Creme, Spray oder Tropfen",
-				"how": "Das Betäubungsmittel wird auf die Stelle aufgetragen und wirkt nach einigen Minuten; die Empfindlichkeit ist nur in der oberflächlichen Schicht herabgesetzt und kehrt meist innerhalb einer Stunde zurück",
-				"when": "Kleine Eingriffe an Haut und Schleimhäuten, Legen einer Kanüle und Blutentnahme bei Kindern, Untersuchungen und Eingriffe in Mund, Nase, Rachen und Auge, Linderung des Schmerzes einer anschließenden Betäubungsspritze",
-				"prep": "Keine besondere Vorbereitung; Allergien gegen örtliche Betäubungsmittel angeben, ein betäubtes Auge nicht reiben und nach Betäubung des Rachens nichts essen und trinken, bis das Gefühl zurückkehrt",
-				"abnormal": "An der behandelten Stelle sind leichtes Brennen, Rötung oder Abblassen möglich, die mit der Wirkung des Mittels vergehen. Hautausschlag, Schwellung, Atemnot oder anhaltende Taubheit sind ein Grund, sofort einen Arzt aufzusuchen"
-			},
-			"tr": {
-				"what": "Cilt ya da mukoza yüzeyinin iğnesiz olarak jel, krem, sprey veya damla ile uyuşturulması",
-				"how": "Anestezik ilgili bölgeye sürülür ve etki etmesi için birkaç dakika beklenir; duyarlılık yalnızca yüzey tabakada azalır ve genellikle bir saat içinde geri döner",
-				"when": "Cilt ve mukozadaki küçük işlemler, çocuklarda damar yolu açılması ve kan alınması, ağız, burun, boğaz ve gözdeki muayene ve girişimler, ardından yapılacak anestezi iğnesinin ağrısını azaltmak",
-				"prep": "Özel hazırlık yoktur; lokal anesteziklere alerjiyi bildirmek, uyuşturulan gözü ovuşturmamak, boğaz uyuşturulduktan sonra his geri gelene kadar yiyip içmemek gerekir",
-				"abnormal": "Uygulanan bölgede hafif yanma, kızarıklık veya solukluk görülebilir ve ilacın etkisiyle birlikte geçer. Döküntü, şişlik, nefes darlığı ya da sürüp giden uyuşukluk hemen hekime başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "tube-feeding-per-meal",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Введение питательной смеси через установленный желудочный зонд, когда глотание невозможно или небезопасно",
-				"how": "Медсестра проверяет положение зонда, приподнимает изголовье кровати, медленно вводит подогретую смесь шприцем или капельно и затем промывает зонд водой; одно кормление занимает около получаса, после него пациент ещё какое-то время остаётся с приподнятой головой",
-				"when": "Нарушение глотания после инсульта и травм, тяжёлое состояние с невозможностью есть самостоятельно, препятствие в пищеводе, ситуации, когда питания через рот не хватает и лечащий врач назначает зондовое питание",
-				"prep": "Отдельной подготовки пациенту не нужно; зонд должен быть установлен и его положение проверено заранее, а состав и частоту кормлений определяет врач",
-				"abnormal": "Хорошо перенесённое кормление проходит без рвоты, кашля и вздутия живота. Кашель и затруднённое дыхание во время введения смеси, рвота, боль в животе, отсутствие стула или смещение зонда требуют немедленного обращения к медицинскому работнику"
-			},
-			"en": {
-				"what": "Delivery of a nutritional formula through an inserted gastric tube when swallowing is impossible or unsafe",
-				"how": "The nurse checks the position of the tube, raises the head of the bed, slowly gives the warmed formula by syringe or by drip and then flushes the tube with water; one feed takes about half an hour, after which the patient stays with the head raised for a while",
-				"when": "Swallowing disorder after a stroke or injury, a severe condition in which the patient cannot eat unaided, an obstruction in the oesophagus, situations where intake by mouth is insufficient and the treating doctor prescribes tube feeding",
-				"prep": "No separate preparation is needed from the patient; the tube must already be in place with its position checked, and the composition and frequency of feeds are set by the doctor",
-				"abnormal": "A well-tolerated feed passes without vomiting, coughing or abdominal bloating. Coughing and difficulty breathing while the formula is given, vomiting, abdominal pain, absent bowel movements or a displaced tube require immediate contact with a health professional"
-			},
-			"sr": {
-				"what": "Davanje hranljive smjese kroz postavljenu želudačnu sondu kada gutanje nije moguće ili nije bezbjedno",
-				"how": "Sestra provjeri položaj sonde, podigne uzglavlje kreveta, polako daje zagrijanu smjesu špricem ili kap po kap, a zatim ispere sondu vodom; jedan obrok traje oko pola sata, poslije čega pacijent još neko vrijeme ostaje podignute glave",
-				"when": "Poremećaj gutanja poslije moždanog udara i povreda, teško stanje u kojem pacijent ne može sam da jede, prepreka u jednjaku, stanja kada unos na usta nije dovoljan pa ljekar odredi ishranu preko sonde",
-				"prep": "Pacijentu posebna priprema nije potrebna; sonda mora biti postavljena i njen položaj provjeren ranije, a sastav i učestalost obroka određuje ljekar",
-				"abnormal": "Dobro podnesen obrok prolazi bez povraćanja, kašlja i nadutosti. Kašalj i otežano disanje tokom davanja smjese, povraćanje, bol u trbuhu, izostanak stolice ili pomjeranje sonde traže hitno javljanje zdravstvenom radniku"
-			},
-			"de": {
-				"what": "Gabe einer Nährlösung über eine liegende Magensonde, wenn Schlucken nicht möglich oder nicht sicher ist",
-				"how": "Die Pflegekraft prüft die Lage der Sonde, richtet das Kopfende des Bettes auf, gibt die angewärmte Nahrung langsam mit der Spritze oder als Tropfinfusion und spült die Sonde anschließend mit Wasser; eine Mahlzeit dauert etwa eine halbe Stunde, danach bleibt der Oberkörper noch eine Weile erhöht",
-				"when": "Schluckstörung nach Schlaganfall und Verletzungen, schwerer Zustand mit Unfähigkeit, selbst zu essen, Hindernis in der Speiseröhre, Situationen, in denen die Aufnahme über den Mund nicht ausreicht und der behandelnde Arzt Sondenernährung anordnet",
-				"prep": "Für den Patienten ist keine gesonderte Vorbereitung nötig; die Sonde muss bereits liegen und ihre Lage geprüft sein, Zusammensetzung und Häufigkeit der Mahlzeiten legt der Arzt fest",
-				"abnormal": "Eine gut vertragene Mahlzeit verläuft ohne Erbrechen, Husten und Blähungen. Husten und Atemnot während der Gabe, Erbrechen, Bauchschmerzen, ausbleibender Stuhlgang oder eine verrutschte Sonde erfordern sofortigen Kontakt zum Pflege- oder Ärzteteam"
-			},
-			"tr": {
-				"what": "Yutma mümkün olmadığında ya da güvenli olmadığında, yerleştirilmiş mide sondasından besin karışımının verilmesi",
-				"how": "Hemşire sondanın yerini kontrol eder, yatağın baş kısmını yükseltir, ılıtılmış karışımı enjektörle ya da damla damla yavaşça verir ve ardından sondayı suyla yıkar; bir öğün yaklaşık yarım saat sürer, sonrasında hasta bir süre baş yüksekte kalır",
-				"when": "İnme ve travma sonrası yutma bozukluğu, kendi başına yemek yiyemeyecek kadar ağır durum, yemek borusunda tıkanıklık, ağızdan alımın yetersiz kaldığı ve tedaviyi yürüten hekimin sonda ile beslenmeyi uygun gördüğü durumlar",
-				"prep": "Hasta için ayrı bir hazırlık gerekmez; sonda önceden yerleştirilmiş ve yeri doğrulanmış olmalıdır, karışımın içeriğini ve öğün sıklığını hekim belirler",
-				"abnormal": "İyi tolere edilen bir öğün kusma, öksürük ve karında şişkinlik olmadan geçer. Karışım verilirken öksürük ve nefes darlığı, kusma, karın ağrısı, dışkılamanın olmaması veya sondanın yerinden oynaması hemen sağlık çalışanına başvurmayı gerektirir"
-			}
-		}
-	}
+  {
+    "slug": "photoplethysmography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Оптическая регистрация пульсовой волны и кровенаполнения мелких сосудов под кожей",
+        "how": "На палец руки или ноги надевают датчик со светодиодом, прибор записывает кривую кровенаполнения в покое и, при венозной пробе, после нескольких сгибаний стопы; безболезненно, около четверти часа",
+        "when": "Оценка периферического кровотока, тяжесть, отёки и судороги в ногах, подозрение на нарушение венозного оттока, зябкость и побледнение пальцев, наблюдение после лечения сосудов",
+        "prep": "За пару часов до исследования не курить и не пить кофе, прийти заранее и посидеть в тепле, чтобы руки и ноги согрелись, снять лак с ногтя на пальце под датчиком",
+        "abnormal": "Кривая показывает, насколько быстро сосуды наполняются кровью и опорожняются; изменения могут быть связаны с нарушением венозного оттока или притока крови, а также с холодом, курением и волнением. Результат оценивает врач вместе с осмотром и УЗИ сосудов"
+      },
+      "en": {
+        "what": "An optical recording of the pulse wave and of the blood filling of the small vessels under the skin",
+        "how": "A sensor with a light source is placed on a finger or toe and the device records the filling curve at rest and, in the venous test, after several ankle movements; painless, about fifteen minutes",
+        "when": "Assessment of peripheral circulation, heaviness, swelling and cramps in the legs, suspected impaired venous outflow, cold and pale fingers, follow-up after treatment of the vessels",
+        "prep": "Avoid smoking and coffee for a couple of hours before, arrive early and sit in a warm room so that hands and feet warm up, remove nail polish from the finger under the sensor",
+        "abnormal": "The curve shows how quickly the vessels fill with blood and empty again; changes may be related to impaired venous outflow or arterial inflow, and also to cold, smoking and anxiety. The result is assessed by a doctor together with the examination and vascular ultrasound"
+      },
+      "sr": {
+        "what": "Optički zapis pulsnog talasa i punjenja krvlju sitnih krvnih sudova ispod kože",
+        "how": "Na prst ruke ili stopala postavlja se senzor sa svjetlosnim izvorom, a aparat bilježi krivu punjenja u miru i, kod venskog testa, poslije nekoliko pokreta stopalom; bezbolno, oko petnaest minuta",
+        "when": "Procjena perifernog protoka, težina, otok i grčevi u nogama, sumnja na otežan venski odliv, hladni i blijedi prsti, praćenje poslije liječenja krvnih sudova",
+        "prep": "Dva sata prije pregleda ne pušiti i ne piti kafu, doći ranije i sjediti u toploj prostoriji da se šake i stopala zagriju, skinuti lak sa nokta na prstu ispod senzora",
+        "abnormal": "Kriva pokazuje koliko brzo se krvni sudovi pune i prazne; promjene mogu biti povezane sa otežanim venskim odlivom ili dotokom krvi, ali i sa hladnoćom, pušenjem i uzbuđenjem. Nalaz procjenjuje ljekar zajedno sa pregledom i ultrazvukom krvnih sudova"
+      },
+      "de": {
+        "what": "Optische Aufzeichnung der Pulswelle und der Blutfüllung der kleinen Gefäße unter der Haut",
+        "how": "Ein Sensor mit Lichtquelle wird an Finger oder Zeh angelegt, das Gerät zeichnet die Füllungskurve in Ruhe und beim Venentest nach mehreren Fußbewegungen auf; schmerzfrei, etwa eine Viertelstunde",
+        "when": "Beurteilung der peripheren Durchblutung, Schweregefühl, Schwellungen und Krämpfe in den Beinen, Verdacht auf gestörten venösen Abfluss, kalte und blasse Finger, Kontrolle nach Gefäßbehandlung",
+        "prep": "Zwei Stunden vorher nicht rauchen und keinen Kaffee trinken, früher kommen und im warmen Raum sitzen, damit Hände und Füße warm werden, Nagellack am Finger unter dem Sensor entfernen",
+        "abnormal": "Die Kurve zeigt, wie schnell sich die Gefäße mit Blut füllen und wieder entleeren; Veränderungen können mit gestörtem venösem Abfluss oder arteriellem Zufluss zusammenhängen, ebenso mit Kälte, Rauchen und Aufregung. Den Befund beurteilt der Arzt zusammen mit der Untersuchung und dem Gefäßultraschall"
+      },
+      "tr": {
+        "what": "Cilt altındaki küçük damarların kan dolumunun ve nabız dalgasının optik olarak kaydedilmesi",
+        "how": "El veya ayak parmağına ışık kaynaklı bir sensör takılır, cihaz dinlenme sırasında ve venöz testte birkaç ayak hareketinden sonra dolum eğrisini kaydeder; ağrısızdır, yaklaşık on beş dakika sürer",
+        "when": "Çevresel dolaşımın değerlendirilmesi, bacaklarda ağırlık, şişlik ve kramplar, venöz dönüşün bozulduğu şüphesi, soğuk ve solgun parmaklar, damar tedavisi sonrası takip",
+        "prep": "İşlemden birkaç saat önce sigara ve kahve içmemek, erken gelip sıcak bir ortamda oturarak el ve ayakları ısıtmak, sensörün takılacağı parmaktaki ojeyi çıkarmak",
+        "abnormal": "Eğri, damarların ne kadar hızlı dolup boşaldığını gösterir; değişiklikler venöz dönüş veya kan akımı sorunlarıyla, ayrıca soğuk, sigara ve heyecanla ilişkili olabilir. Sonucu hekim, muayene ve damar ultrasonu ile birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Оптички запис пулсног таласа и пуњења крвљу ситних крвних судова испод коже",
+        "how": "На прст руке или стопала поставља се сензор са свјетлосним извором, а апарат биљежи криву пуњења у миру и, код венског теста, послије неколико покрета стопалом; безболно, око петнаест минута",
+        "when": "Процјена периферног протока, тежина, оток и грчеви у ногама, сумња на отежан венски одлив, хладни и блиједи прсти, праћење послије лијечења крвних судова",
+        "prep": "Два сата прије прегледа не пушити и не пити кафу, доћи раније и сједити у топлој просторији да се шаке и стопала загрију, скинути лак са нокта на прсту испод сензора",
+        "abnormal": "Крива показује колико брзо се крвни судови пуне и празне; промјене могу бити повезане са отежаним венским одливом или дотоком крви, али и са хладноћом, пушењем и узбуђењем. Налаз процјењује љекар заједно са прегледом и ултразвуком крвних судова"
+      }
+    }
+  },
+  {
+    "slug": "pleural-puncture-with-lavage",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прокол грудной стенки для удаления жидкости или гноя из плевральной полости с последующим промыванием полости стерильным раствором",
+        "how": "Пациент сидит, наклонившись вперёд, место прокола обезболивают и под контролем УЗИ вводят между рёбрами иглу или тонкий катетер, выпускают содержимое и промывают полость стерильным раствором; около получаса, затем делают контрольный снимок",
+        "when": "Скопление жидкости или гноя в плевральной полости, одышка из-за выпота, необходимость лабораторного исследования полученной жидкости, продолжение лечения гнойного воспаления плевры по назначению врача",
+        "prep": "Не есть за несколько часов, если так просит клиника, сообщить о препаратах, разжижающих кровь, и аллергии на анестетики, принести свежий снимок или УЗИ грудной клетки",
+        "abnormal": "Дыхание обычно облегчается сразу, а полученную жидкость отправляют на анализ, её характер оценивает врач. Усиление боли, нарастающая одышка, кашель с кровью или температура после процедуры требуют немедленного обращения"
+      },
+      "en": {
+        "what": "A puncture of the chest wall to drain fluid or pus from the pleural cavity, followed by rinsing of the cavity with a sterile solution",
+        "how": "The patient sits leaning forward, the puncture site is anaesthetised and a needle or thin catheter is inserted between the ribs under ultrasound guidance, the content is drained and the cavity rinsed with sterile solution; about half an hour, followed by a control X-ray",
+        "when": "Accumulation of fluid or pus in the pleural cavity, breathlessness caused by an effusion, the need to send the fluid for laboratory analysis, continued treatment of purulent pleural inflammation as prescribed by the doctor",
+        "prep": "Do not eat for several hours if the clinic asks so, report blood-thinning medication and allergy to anaesthetics, bring a recent chest X-ray or ultrasound",
+        "abnormal": "Breathing usually becomes easier straight away, and the fluid obtained is sent for analysis, its nature being assessed by the doctor. Increasing pain, worsening breathlessness, coughing up blood or fever after the procedure require immediate medical help"
+      },
+      "sr": {
+        "what": "Ubod kroz grudni zid radi izvlačenja tečnosti ili gnoja iz pleuralne šupljine, uz ispiranje šupljine sterilnim rastvorom",
+        "how": "Pacijent sjedi nagnut naprijed, mjesto uboda se anestezira i pod kontrolom ultrazvuka se između rebara uvodi igla ili tanak kateter, sadržaj se izvlači, a šupljina ispira sterilnim rastvorom; oko pola sata, zatim slijedi kontrolni snimak",
+        "when": "Nakupljanje tečnosti ili gnoja u pleuralnoj šupljini, otežano disanje zbog izliva, potreba za laboratorijskom analizom dobijene tečnosti, nastavak liječenja gnojne upale pleure po odluci ljekara",
+        "prep": "Ne jesti nekoliko sati ako klinika tako traži, prijaviti lijekove za razrjeđivanje krvi i alergiju na anestetike, ponijeti svjež snimak ili ultrazvuk grudnog koša",
+        "abnormal": "Disanje se obično odmah olakša, a dobijena tečnost se šalje na analizu i njen nalaz tumači ljekar. Pojačan bol, sve teže disanje, iskašljavanje krvi ili povišena temperatura poslije zahvata traže hitno javljanje"
+      },
+      "de": {
+        "what": "Punktion der Brustwand, um Flüssigkeit oder Eiter aus dem Pleuraraum abzulassen, mit anschließender Spülung des Raums mit steriler Lösung",
+        "how": "Der Patient sitzt nach vorn gebeugt, die Einstichstelle wird betäubt und unter Ultraschallkontrolle wird zwischen den Rippen eine Nadel oder ein dünner Katheter eingeführt, der Inhalt abgelassen und der Raum mit steriler Lösung gespült; etwa eine halbe Stunde, danach eine Kontrollaufnahme",
+        "when": "Ansammlung von Flüssigkeit oder Eiter im Pleuraraum, Atemnot durch einen Erguss, notwendige Laboruntersuchung der gewonnenen Flüssigkeit, Fortsetzung der Behandlung einer eitrigen Rippenfellentzündung nach ärztlicher Anordnung",
+        "prep": "Nach Vorgabe der Klinik einige Stunden nichts essen, blutverdünnende Medikamente und Allergien gegen Betäubungsmittel angeben, eine aktuelle Röntgen- oder Ultraschallaufnahme des Brustkorbs mitbringen",
+        "abnormal": "Die Atmung wird meist sofort leichter, die gewonnene Flüssigkeit wird ins Labor geschickt und vom Arzt beurteilt. Zunehmende Schmerzen, stärkere Atemnot, Bluthusten oder Fieber nach dem Eingriff erfordern sofortige ärztliche Hilfe"
+      },
+      "tr": {
+        "what": "Plevra boşluğundaki sıvı veya iltihabı boşaltmak için göğüs duvarının delinmesi ve ardından boşluğun steril solüsyonla yıkanması",
+        "how": "Hasta öne eğilerek oturur, giriş yeri uyuşturulur ve ultrason eşliğinde kaburgalar arasından iğne veya ince kateter yerleştirilir, içerik boşaltılır ve boşluk steril solüsyonla yıkanır; yaklaşık yarım saat sürer, sonrasında kontrol filmi çekilir",
+        "when": "Plevra boşluğunda sıvı veya iltihap birikmesi, sıvıya bağlı nefes darlığı, alınan sıvının laboratuvarda incelenmesi gereği, hekim kararıyla plevra iltihabı tedavisinin sürdürülmesi",
+        "prep": "Klinik isterse birkaç saat aç kalmak, kan sulandırıcı ilaçları ve anestezik alerjisini bildirmek, yeni tarihli akciğer filmi veya ultrasonu getirmek",
+        "abnormal": "Nefes alma genellikle hemen rahatlar, alınan sıvı laboratuvara gönderilir ve niteliğini hekim değerlendirir. İşlemden sonra artan ağrı, kötüleşen nefes darlığı, kanlı öksürük veya ateş acil başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Убод кроз грудни зид ради извлачења течности или гноја из плеуралне шупљине, уз испирање шупљине стерилним раствором",
+        "how": "Пацијент сједи нагнут напријед, мјесто убода се анестезира и под контролом ултразвука се између ребара уводи игла или танак катетер, садржај се извлачи, а шупљина испира стерилним раствором; око пола сата, затим слиједи контролни снимак",
+        "when": "Накупљање течности или гноја у плеуралној шупљини, отежано дисање због излива, потреба за лабораторијском анализом добијене течности, наставак лијечења гнојне упале плеуре по одлуци љекара",
+        "prep": "Не јести неколико сати ако клиника тако тражи, пријавити лијекове за разрјеђивање крви и алергију на анестетике, понијети свјеж снимак или ултразвук грудног коша",
+        "abnormal": "Дисање се обично одмах олакша, а добијена течност се шаље на анализу и њен налаз тумачи љекар. Појачан бол, све теже дисање, искашљавање крви или повишена температура послије захвата траже хитно јављање"
+      }
+    }
+  },
+  {
+    "slug": "primary-wound-care-with-sutures",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первичная хирургическая обработка свежей раны с ушиванием краёв",
+        "how": "Рану промывают, обезболивают местным анестетиком, удаляют загрязнения и нежизнеспособные края, сближают ткани швами и закрывают стерильной повязкой; от четверти часа до сорока минут в зависимости от раны",
+        "when": "Свежие резаные и рваные раны с расходящимися краями, глубокие повреждения кожи после травмы и падения, раны лица и кистей, где важен аккуратный рубец",
+        "prep": "Подготовка не нужна, прийти лучше как можно раньше; рану прикрыть чистой салфеткой, не наносить мази, взять данные о прививке от столбняка и список постоянных препаратов",
+        "abnormal": "Ушитая рана обычно заживает под повязкой, а швы снимают в срок, который называет хирург. Расхождение краёв, нарастающая боль, покраснение вокруг шва или температура — повод показаться раньше назначенного визита"
+      },
+      "en": {
+        "what": "The first surgical treatment of a fresh wound, with the edges closed by sutures",
+        "how": "The wound is rinsed and anaesthetised locally, dirt and non-viable edges are removed, the tissue is brought together with sutures and covered with a sterile dressing; fifteen to forty minutes depending on the wound",
+        "when": "Fresh cut and torn wounds with gaping edges, deep skin injuries after trauma and falls, wounds of the face and hands where a neat scar matters",
+        "prep": "No preparation is needed, it is best to come as soon as possible; cover the wound with a clean pad, do not apply ointments, bring your tetanus vaccination record and a list of regular medication",
+        "abnormal": "A sutured wound usually heals under the dressing, and the sutures are removed at the time the surgeon indicates. Gaping edges, increasing pain, redness around the suture line or fever are a reason to come before the scheduled visit"
+      },
+      "sr": {
+        "what": "Prva hirurška obrada svježe rane sa ušivanjem ivica",
+        "how": "Rana se ispere i anestezira lokalno, uklone se nečistoća i neživotne ivice, tkivo se primakne šavovima i pokrije sterilnim zavojem; od petnaest do četrdeset minuta, zavisno od rane",
+        "when": "Svježe posjekotine i razderotine sa razmaknutim ivicama, duboke povrede kože poslije pada i traume, rane na licu i šakama gdje je važan uredan ožiljak",
+        "prep": "Priprema nije potrebna, najbolje je doći što prije; ranu prekriti čistom gazom, ne mazati masti, ponijeti podatke o vakcini protiv tetanusa i spisak stalnih lijekova",
+        "abnormal": "Ušivena rana obično zarasta pod zavojem, a konci se skidaju u roku koji odredi hirurg. Razmicanje ivica, sve jači bol, crvenilo oko šava ili povišena temperatura razlog su da se dođe i prije zakazanog termina"
+      },
+      "de": {
+        "what": "Erstversorgung einer frischen Wunde mit Naht der Wundränder",
+        "how": "Die Wunde wird gespült und örtlich betäubt, Verschmutzungen und nicht mehr durchblutete Ränder werden entfernt, das Gewebe mit Nähten adaptiert und mit einem sterilen Verband abgedeckt; je nach Wunde fünfzehn bis vierzig Minuten",
+        "when": "Frische Schnitt- und Risswunden mit klaffenden Rändern, tiefe Hautverletzungen nach Unfall und Sturz, Wunden im Gesicht und an den Händen, bei denen eine saubere Narbe wichtig ist",
+        "prep": "Keine Vorbereitung nötig, am besten so früh wie möglich kommen; die Wunde mit einer sauberen Kompresse abdecken, keine Salben auftragen, Tetanus-Impfpass und Liste der Dauermedikamente mitbringen",
+        "abnormal": "Eine genähte Wunde heilt in der Regel unter dem Verband, die Fäden werden zu dem vom Chirurgen genannten Zeitpunkt gezogen. Auseinanderweichende Ränder, zunehmende Schmerzen, Rötung um die Naht oder Fieber sind ein Grund, sich früher als geplant vorzustellen"
+      },
+      "tr": {
+        "what": "Taze bir yaranın ilk cerrahi bakımı ve kenarlarının dikişle kapatılması",
+        "how": "Yara yıkanır, lokal anestezi yapılır, kir ve canlılığını yitirmiş kenarlar çıkarılır, doku dikişlerle yaklaştırılır ve steril pansumanla kapatılır; yaraya göre on beş ila kırk dakika sürer",
+        "when": "Kenarları açılmış taze kesi ve yırtık yaralar, düşme ve travma sonrası derin cilt yaralanmaları, düzgün iz kalması önemli olan yüz ve el yaraları",
+        "prep": "Hazırlık gerekmez, en kısa sürede gelmek en iyisidir; yarayı temiz bir bezle örtmek, merhem sürmemek, tetanoz aşı bilgisini ve sürekli kullanılan ilaçların listesini getirmek",
+        "abnormal": "Dikilen yara genellikle pansuman altında iyileşir, dikişler cerrahın belirttiği sürede alınır. Kenarların açılması, artan ağrı, dikiş çevresinde kızarıklık veya ateş, randevudan önce başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Прва хируршка обрада свјеже ране са ушивањем ивица",
+        "how": "Рана се испере и анестезира локално, уклоне се нечистоћа и неживотне ивице, ткиво се примакне шавовима и покрије стерилним завојем; од петнаест до четрдесет минута, зависно од ране",
+        "when": "Свјеже посјекотине и раздеротине са размакнутим ивицама, дубоке повреде коже послије пада и трауме, ране на лицу и шакама гдје је важан уредан ожиљак",
+        "prep": "Припрема није потребна, најбоље је доћи што прије; рану прекрити чистом газом, не мазати масти, понијети податке о вакцини против тетануса и списак сталних лијекова",
+        "abnormal": "Ушивена рана обично зараста под завојем, а конци се скидају у року који одреди хирург. Размицање ивица, све јачи бол, црвенило око шава или повишена температура разлог су да се дође и прије заказаног термина"
+      }
+    }
+  },
+  {
+    "slug": "primary-wound-care-without-sutures",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Первичная обработка свежей раны, края которой не ушивают, а сближают повязкой",
+        "how": "Рану промывают антисептиком, убирают инородные частицы и загрязнения, края при необходимости стягивают полосками пластыря и закрывают стерильным покрытием; обычно 10-20 минут",
+        "when": "Ссадины и поверхностные раны, небольшие порезы с ровными краями, укушенные и сильно загрязнённые раны, которые оставляют открытыми, обращение спустя время после травмы",
+        "prep": "Не требуется; до визита прикрыть рану чистой салфеткой, не заливать спиртом и не наносить мази, сказать о прививке от столбняка и аллергии на пластырь и антисептики",
+        "abnormal": "Такая рана заживает под повязкой дольше ушитой и обычно требует повторных перевязок. Нарастающая боль, отёк, гнойное отделяемое или температура — повод показаться врачу раньше"
+      },
+      "en": {
+        "what": "The first treatment of a fresh wound whose edges are not sutured but brought together with a dressing",
+        "how": "The wound is rinsed with antiseptic, foreign particles and dirt are removed, the edges are pulled together with adhesive strips if needed and covered with a sterile dressing; usually 10-20 minutes",
+        "when": "Grazes and superficial wounds, small cuts with even edges, bite wounds and heavily contaminated wounds that are left open, coming in some time after the injury",
+        "prep": "Not required; cover the wound with a clean pad before the visit, do not pour alcohol on it and do not apply ointments, mention your tetanus vaccination and any allergy to plasters and antiseptics",
+        "abnormal": "Such a wound heals under the dressing more slowly than a sutured one and usually needs repeat dressings. Increasing pain, swelling, purulent discharge or fever are a reason to see the doctor sooner"
+      },
+      "sr": {
+        "what": "Prva obrada svježe rane kod koje se ivice ne šiju, već se primiču zavojem",
+        "how": "Rana se ispira antiseptikom, uklanjaju se strane čestice i nečistoća, ivice se po potrebi stežu trakicama flastera i prekrivaju sterilnom oblogom; obično 10-20 minuta",
+        "when": "Ogrebotine i površne rane, manje posjekotine sa ravnim ivicama, ujedi i jako zaprljane rane koje se ostavljaju otvorene, dolazak neko vrijeme poslije povrede",
+        "prep": "Nije potrebna; ranu prije dolaska prekriti čistom gazom, ne polijevati alkoholom i ne mazati masti, reći za vakcinu protiv tetanusa i alergiju na flaster i antiseptike",
+        "abnormal": "Takva rana zarasta pod zavojem sporije od ušivene i obično traži ponovljena previjanja. Sve jači bol, otok, gnojav iscjedak ili povišena temperatura razlog su da se ljekaru javite ranije"
+      },
+      "de": {
+        "what": "Erstversorgung einer frischen Wunde, deren Ränder nicht genäht, sondern durch den Verband zusammengeführt werden",
+        "how": "Die Wunde wird mit Antiseptikum gespült, Fremdkörper und Schmutz werden entfernt, die Ränder bei Bedarf mit Klebestreifen adaptiert und mit einer sterilen Auflage abgedeckt; meist 10-20 Minuten",
+        "when": "Schürfwunden und oberflächliche Wunden, kleine Schnitte mit glatten Rändern, Biss- und stark verschmutzte Wunden, die offen bleiben, Vorstellung erst einige Zeit nach der Verletzung",
+        "prep": "Nicht erforderlich; die Wunde vor dem Besuch mit einer sauberen Kompresse abdecken, keinen Alkohol daraufgießen und keine Salben auftragen, Tetanusimpfung sowie Allergien gegen Pflaster und Antiseptika angeben",
+        "abnormal": "Eine solche Wunde heilt unter dem Verband langsamer als eine genähte und benötigt meist wiederholte Verbandwechsel. Zunehmende Schmerzen, Schwellung, eitriges Sekret oder Fieber sind ein Grund, früher zum Arzt zu gehen"
+      },
+      "tr": {
+        "what": "Kenarları dikilmeyip pansumanla yaklaştırılan taze bir yaranın ilk bakımı",
+        "how": "Yara antiseptikle yıkanır, yabancı parçacıklar ve kir temizlenir, gerekirse kenarlar bant şeritleriyle yaklaştırılır ve steril örtüyle kapatılır; genellikle 10-20 dakika sürer",
+        "when": "Sıyrıklar ve yüzeysel yaralar, düzgün kenarlı küçük kesikler, açık bırakılan ısırık ve çok kirli yaralar, yaralanmadan bir süre sonra başvurulan durumlar",
+        "prep": "Gerekmez; gelmeden önce yarayı temiz bir bezle örtmek, alkol dökmemek ve merhem sürmemek, tetanoz aşısını ve bant ile antiseptik alerjisini bildirmek",
+        "abnormal": "Bu tür bir yara pansuman altında dikilmiş yaraya göre daha yavaş iyileşir ve genellikle tekrarlayan pansuman gerektirir. Artan ağrı, şişlik, iltihaplı akıntı veya ateş, hekime daha erken başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Прва обрада свјеже ране код које се ивице не шију, већ се примичу завојем",
+        "how": "Рана се испира антисептиком, уклањају се стране честице и нечистоћа, ивице се по потреби стежу тракицама фластера и прекривају стерилном облогом; обично 10-20 минута",
+        "when": "Огреботине и површне ране, мање посјекотине са равним ивицама, уједи и јако запрљане ране које се остављају отворене, долазак неко вријеме послије повреде",
+        "prep": "Није потребна; рану прије доласка прекрити чистом газом, не полијевати алкохолом и не мазати масти, рећи за вакцину против тетануса и алергију на фластер и антисептике",
+        "abnormal": "Таква рана зараста под завојем спорије од ушивене и обично тражи поновљена превијања. Све јачи бол, оток, гнојав исцједак или повишена температура разлог су да се љекару јавите раније"
+      }
+    }
+  },
+  {
+    "slug": "pyrotherapy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лечебный метод, при котором температуру тела или отдельного участка целенаправленно повышают под наблюдением медицинского персонала",
+        "how": "Процедуру проводят в клинике: температуру поднимают постепенно и контролируемо, во время сеанса следят за пульсом, давлением и самочувствием, после сеанса пациент отдыхает; длительность и число сеансов определяет врач",
+        "when": "Назначают редко и индивидуально, когда врач считает нужным усилить кровообращение и общую реакцию организма; показания и противопоказания врач оценивает до начала курса",
+        "prep": "Точные указания даёт клиника; заранее сообщить о болезнях сердца и сосудов, беременности, недавней лихорадке и обо всех принимаемых препаратах",
+        "abnormal": "После сеанса возможны временная слабость, озноб, потливость и повышение температуры, которые обычно проходят за несколько часов. Если самочувствие не восстанавливается, температура держится или появляется одышка, нужно связаться с врачом"
+      },
+      "en": {
+        "what": "A treatment method in which the temperature of the body or of a body region is deliberately raised under medical supervision",
+        "how": "The procedure is carried out in the clinic: the temperature is raised gradually and in a controlled way while pulse, blood pressure and wellbeing are monitored, and the patient rests afterwards; the length and number of sessions are set by the doctor",
+        "when": "Prescribed rarely and individually, when the doctor considers it useful to stimulate circulation and the general response of the body; indications and contraindications are assessed before the course begins",
+        "prep": "The clinic gives the exact instructions; report heart and vascular disease, pregnancy, recent fever and all medication in advance",
+        "abnormal": "Temporary weakness, chills, sweating and a rise in temperature are possible after a session and usually pass within a few hours. If wellbeing does not return, the fever persists or breathlessness appears, contact the doctor"
+      },
+      "sr": {
+        "what": "Metod liječenja kod kojeg se temperatura tijela ili pojedinog dijela tijela namjerno podiže pod nadzorom medicinskog osoblja",
+        "how": "Zahvat se izvodi u klinici: temperatura se podiže postepeno i kontrolisano, tokom seanse prate se puls, pritisak i stanje pacijenta, a poslije se odmara; trajanje i broj seansi određuje ljekar",
+        "when": "Propisuje se rijetko i individualno, kada ljekar procijeni da treba podstaći cirkulaciju i opštu reakciju organizma; indikacije i kontraindikacije procjenjuju se prije početka",
+        "prep": "Tačna uputstva daje klinika; unaprijed prijaviti bolesti srca i krvnih sudova, trudnoću, nedavnu povišenu temperaturu i sve lijekove koje uzimate",
+        "abnormal": "Poslije seanse mogući su prolazna slabost, jeza, znojenje i porast temperature, koji obično prođu za nekoliko sati. Ako se stanje ne popravlja, temperatura se održava ili se javi otežano disanje, treba se javiti ljekaru"
+      },
+      "de": {
+        "what": "Ein Behandlungsverfahren, bei dem die Temperatur des Körpers oder eines Körperabschnitts unter ärztlicher Aufsicht gezielt erhöht wird",
+        "how": "Die Behandlung erfolgt in der Klinik: Die Temperatur wird allmählich und kontrolliert erhöht, währenddessen werden Puls, Blutdruck und Befinden überwacht, danach ruht der Patient; Dauer und Anzahl der Sitzungen legt der Arzt fest",
+        "when": "Wird selten und individuell verordnet, wenn der Arzt es für sinnvoll hält, Durchblutung und die allgemeine Reaktion des Körpers anzuregen; Indikationen und Gegenanzeigen werden vorher geprüft",
+        "prep": "Die genauen Hinweise gibt die Klinik; Herz- und Gefäßerkrankungen, Schwangerschaft, kürzliches Fieber und alle Medikamente vorab angeben",
+        "abnormal": "Nach einer Sitzung sind vorübergehend Schwäche, Schüttelfrost, Schwitzen und ein Temperaturanstieg möglich, die meist innerhalb weniger Stunden abklingen. Bleibt das Befinden schlecht, hält das Fieber an oder tritt Atemnot auf, sollte der Arzt kontaktiert werden"
+      },
+      "tr": {
+        "what": "Vücudun ya da bir vücut bölgesinin sıcaklığının tıbbi gözetim altında bilinçli olarak yükseltildiği bir tedavi yöntemi",
+        "how": "İşlem klinikte yapılır: sıcaklık kademeli ve kontrollü biçimde yükseltilir, seans boyunca nabız, tansiyon ve genel durum izlenir, sonrasında hasta dinlenir; süreyi ve seans sayısını hekim belirler",
+        "when": "Hekim dolaşımı ve vücudun genel tepkisini uyarmayı uygun gördüğünde, seyrek ve kişiye özel olarak uygulanır; endikasyon ve sakıncalar başlamadan önce değerlendirilir",
+        "prep": "Kesin yönergeleri klinik verir; kalp ve damar hastalıkları, gebelik, yakın zamanda geçirilen ateşli durum ve kullanılan tüm ilaçlar önceden bildirilmelidir",
+        "abnormal": "Seanstan sonra geçici halsizlik, titreme, terleme ve ateş yükselmesi görülebilir, bunlar genellikle birkaç saat içinde geçer. Genel durum düzelmez, ateş sürer veya nefes darlığı olursa hekime başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Метод лијечења код којег се температура тијела или појединог дијела тијела намјерно подиже под надзором медицинског особља",
+        "how": "Захват се изводи у клиници: температура се подиже постепено и контролисано, током сеансе прате се пулс, притисак и стање пацијента, а послије се одмара; трајање и број сеанси одређује љекар",
+        "when": "Прописује се ријетко и индивидуално, када љекар процијени да треба подстаћи циркулацију и општу реакцију организма; индикације и контраиндикације процјењују се прије почетка",
+        "prep": "Тачна упутства даје клиника; унапријед пријавити болести срца и крвних судова, трудноћу, недавну повишену температуру и све лијекове које узимате",
+        "abnormal": "Послије сеансе могући су пролазна слабост, језа, знојење и пораст температуре, који обично прођу за неколико сати. Ако се стање не поправља, температура се одржава или се јави отежано дисање, треба се јавити љекару"
+      }
+    }
+  },
+  {
+    "slug": "rectoscopy-with-biopsy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Эндоскопический осмотр прямой кишки, во время которого врач берёт кусочек слизистой для гистологического исследования",
+        "how": "Через задний проход вводят смазанный тубус ректоскопа, осматривают слизистую и щипцами отщипывают один или несколько маленьких фрагментов ткани; взятие материала почти не ощущается, вся процедура — около четверти часа",
+        "when": "Изменение слизистой, полип, язва или стойкое воспаление, найденные при осмотре и требующие уточнения, длительное воспалительное заболевание кишечника, контроль после лечения, повторяющиеся кровотечения из прямой кишки",
+        "prep": "Очистить нижний отдел кишки клизмой или микроклизмой по инструкции клиники, обязательно сказать о препаратах, разжижающих кровь, и о нарушениях свёртываемости",
+        "abnormal": "Заключение по взятому материалу даёт врач-патолог: он описывает строение ткани, а дальнейшую тактику определяет лечащий врач. Немного крови в стуле в первые сутки после биопсии бывает, но обильное кровотечение, сильная боль или температура требуют срочного обращения"
+      },
+      "en": {
+        "what": "An endoscopic examination of the rectum during which the doctor takes a small piece of the lining for histological examination",
+        "how": "A lubricated rectoscope tube is inserted through the anus, the lining is inspected and one or more small tissue fragments are taken with forceps; the sampling is barely felt and the whole procedure takes about fifteen minutes",
+        "when": "A change in the lining, a polyp, an ulcer or persistent inflammation found at examination and needing clarification, long-standing inflammatory bowel disease, follow-up after treatment, repeated bleeding from the rectum",
+        "prep": "Empty the lower bowel with an enema or micro-enema according to the clinic's instructions, and be sure to mention blood-thinning medication and any clotting disorder",
+        "abnormal": "The report on the sample is issued by a pathologist, who describes the structure of the tissue, while further management is decided by the treating doctor. A little blood in the stool on the first day after a biopsy is common, but heavy bleeding, severe pain or fever require urgent care"
+      },
+      "sr": {
+        "what": "Endoskopski pregled rektuma tokom kojeg ljekar uzima isječak sluznice za histološku analizu",
+        "how": "Kroz analni otvor uvodi se podmazan tubus rektoskopa, sluznica se pregleda, a kliještima se odsijeca jedan ili više malih djelića tkiva; uzimanje uzorka se gotovo ne osjeti, a cio pregled traje oko petnaest minuta",
+        "when": "Promjena sluznice, polip, ulceracija ili uporna upala nađeni pri pregledu koje treba razjasniti, dugotrajna upalna bolest crijeva, kontrola poslije liječenja, ponavljana krvarenja iz rektuma",
+        "prep": "Očistiti donji dio crijeva klizmom ili mikroklizmom po uputstvu klinike i obavezno navesti lijekove za razrjeđivanje krvi i poremećaje zgrušavanja",
+        "abnormal": "Nalaz o uzetom materijalu daje ljekar patolog i u njemu opisuje građu tkiva, a dalji postupak određuje ljekar koji liječi. Malo krvi u stolici prvog dana poslije biopsije nije neobično, ali obilno krvarenje, jak bol ili povišena temperatura traže hitan pregled"
+      },
+      "de": {
+        "what": "Eine endoskopische Untersuchung des Enddarms, bei der der Arzt ein Stückchen der Schleimhaut für die histologische Untersuchung entnimmt",
+        "how": "Durch den After wird ein gleitfähig gemachtes Rektoskoprohr eingeführt, die Schleimhaut betrachtet und mit einer Zange werden ein oder mehrere kleine Gewebestücke entnommen; die Entnahme ist kaum zu spüren, das Ganze dauert etwa eine Viertelstunde",
+        "when": "Eine bei der Untersuchung gefundene Schleimhautveränderung, ein Polyp, ein Geschwür oder eine anhaltende Entzündung, die geklärt werden müssen, langjährige chronisch-entzündliche Darmerkrankung, Kontrolle nach der Behandlung, wiederholte Blutungen aus dem Enddarm",
+        "prep": "Den unteren Darmabschnitt nach Anweisung der Klinik mit einem Einlauf oder Miniklistier entleeren und unbedingt blutverdünnende Medikamente sowie Gerinnungsstörungen angeben",
+        "abnormal": "Den Befund zum entnommenen Material erstellt ein Pathologe, der den Gewebeaufbau beschreibt; über das weitere Vorgehen entscheidet der behandelnde Arzt. Etwas Blut im Stuhl am ersten Tag nach einer Biopsie ist üblich, starke Blutung, heftige Schmerzen oder Fieber erfordern jedoch sofortige Hilfe"
+      },
+      "tr": {
+        "what": "Hekimin histolojik inceleme için mukozadan küçük bir parça aldığı endoskopik rektum muayenesi",
+        "how": "Anüsten kayganlaştırılmış rektoskop tüpü ilerletilir, mukoza incelenir ve forsepsle bir ya da birkaç küçük doku parçası alınır; örnek alımı neredeyse hissedilmez, işlemin tamamı yaklaşık on beş dakika sürer",
+        "when": "Muayenede görülen ve netleştirilmesi gereken mukoza değişikliği, polip, ülser veya inatçı iltihap, uzun süreli iltihabi bağırsak hastalığı, tedavi sonrası kontrol, yinelenen makat kanamaları",
+        "prep": "Kliniğin talimatına göre alt bağırsağın lavman veya mini lavmanla boşaltılması, kan sulandırıcı ilaçların ve pıhtılaşma bozukluklarının mutlaka bildirilmesi",
+        "abnormal": "Alınan materyalin raporunu, dokunun yapısını tanımlayan patoloji uzmanı verir; sonraki adımları ise tedaviyi yürüten hekim belirler. Biyopsiden sonra ilk gün dışkıda az miktarda kan görülebilir, ancak bol kanama, şiddetli ağrı veya ateş acil başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Ендоскопски преглед ректума током којег љекар узима исјечак слузнице за хистолошку анализу",
+        "how": "Кроз анални отвор уводи се подмазан тубус ректоскопа, слузница се прегледа, а клијештима се одсијеца један или више малих дјелића ткива; узимање узорка се готово не осјети, а цио преглед траје око петнаест минута",
+        "when": "Промјена слузнице, полип, улцерација или упорна упала нађени при прегледу које треба разјаснити, дуготрајна упална болест цријева, контрола послије лијечења, понављана крварења из ректума",
+        "prep": "Очистити доњи дио цријева клизмом или микроклизмом по упутству клинике и обавезно навести лијекове за разрјеђивање крви и поремећаје згрушавања",
+        "abnormal": "Налаз о узетом материјалу даје љекар патолог и у њему описује грађу ткива, а даљи поступак одређује љекар који лијечи. Мало крви у столици првог дана послије биопсије није необично, али обилно крварење, јак бол или повишена температура траже хитан преглед"
+      }
+    }
+  },
+  {
+    "slug": "rheography-of-upper-or-lower-extremities",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Запись кровенаполнения сосудов руки или ноги по изменению электрического сопротивления тканей",
+        "how": "На конечность накладывают электроды, прибор пропускает слабый безопасный ток высокой частоты и записывает кривую кровенаполнения в покое, при необходимости с функциональными пробами; безболезненно, 15-30 минут",
+        "when": "Зябкость и онемение рук и ног, боль в икрах при ходьбе, отёки и тяжесть в конечностях, оценка артериального притока и венозного оттока, наблюдение за состоянием сосудов в динамике",
+        "prep": "За час-два не курить и не пить кофе, перед записью посидеть в покое, кожу в местах наложения электродов оставить чистой и без крема",
+        "abnormal": "Форма и амплитуда кривой могут быть связаны с тонусом сосудов, затруднённым притоком или оттоком крови, а также с холодом и волнением перед исследованием. Реография не заменяет УЗИ сосудов, заключение врач делает по совокупности данных"
+      },
+      "en": {
+        "what": "A recording of the blood filling of the vessels of an arm or leg from changes in the electrical resistance of the tissue",
+        "how": "Electrodes are placed on the limb, the device passes a weak, safe high-frequency current and records the filling curve at rest, with functional tests if needed; painless, 15-30 minutes",
+        "when": "Cold and numb hands and feet, calf pain on walking, swelling and heaviness in the limbs, assessment of arterial inflow and venous outflow, monitoring the state of the vessels over time",
+        "prep": "No smoking or coffee for one to two hours beforehand, sit quietly before the recording, keep the skin where the electrodes go clean and free of cream",
+        "abnormal": "The shape and amplitude of the curve may be related to vessel tone, restricted inflow or outflow of blood, and also to cold and anxiety before the test. Rheography does not replace vascular ultrasound, and the doctor draws the conclusion from all the data"
+      },
+      "sr": {
+        "what": "Zapis punjenja krvnih sudova ruke ili noge na osnovu promjene električnog otpora tkiva",
+        "how": "Na ekstremitet se postavljaju elektrode, aparat propušta slabu i bezbjednu struju visoke frekvencije i bilježi krivu punjenja u miru, po potrebi uz funkcionalne testove; bezbolno, 15-30 minuta",
+        "when": "Hladne i utrnule ruke i noge, bol u listovima pri hodu, otok i težina u ekstremitetima, procjena arterijskog dotoka i venskog odliva, praćenje stanja krvnih sudova tokom vremena",
+        "prep": "Sat ili dva prije ne pušiti i ne piti kafu, prije snimanja sjediti mirno, koža na mjestima elektroda treba da bude čista i bez kreme",
+        "abnormal": "Oblik i amplituda krive mogu biti povezani sa tonusom krvnih sudova, otežanim dotokom ili odlivom krvi, ali i sa hladnoćom i uzbuđenjem prije pregleda. Reografija ne zamjenjuje ultrazvuk krvnih sudova, a zaključak ljekar donosi na osnovu svih podataka"
+      },
+      "de": {
+        "what": "Aufzeichnung der Blutfüllung der Gefäße eines Arms oder Beins anhand der Änderung des elektrischen Widerstands des Gewebes",
+        "how": "An der Extremität werden Elektroden angelegt, das Gerät leitet einen schwachen, ungefährlichen Hochfrequenzstrom durch und zeichnet die Füllungskurve in Ruhe auf, bei Bedarf mit Funktionstests; schmerzfrei, 15-30 Minuten",
+        "when": "Kalte und taube Hände und Füße, Wadenschmerz beim Gehen, Schwellung und Schweregefühl in den Gliedmaßen, Beurteilung von arteriellem Zufluss und venösem Abfluss, Verlaufskontrolle der Gefäße",
+        "prep": "Ein bis zwei Stunden vorher nicht rauchen und keinen Kaffee trinken, vor der Aufzeichnung ruhig sitzen, die Haut an den Elektrodenstellen sauber und ohne Creme halten",
+        "abnormal": "Form und Amplitude der Kurve können mit dem Gefäßtonus, erschwertem Zu- oder Abfluss des Blutes sowie mit Kälte und Aufregung vor der Untersuchung zusammenhängen. Die Rheographie ersetzt den Gefäßultraschall nicht, den Befund zieht der Arzt aus der Gesamtheit der Daten"
+      },
+      "tr": {
+        "what": "Kol veya bacaktaki damarların kan dolumunun, dokunun elektriksel direncindeki değişime göre kaydedilmesi",
+        "how": "Ekstremiteye elektrotlar yerleştirilir, cihaz zayıf ve güvenli yüksek frekanslı akım vererek dinlenme sırasındaki dolum eğrisini, gerekirse fonksiyonel testlerle birlikte kaydeder; ağrısızdır, 15-30 dakika sürer",
+        "when": "Üşüyen ve uyuşan el ve ayaklar, yürürken baldır ağrısı, ekstremitelerde şişlik ve ağırlık, atardamar akımı ile toplardamar dönüşünün değerlendirilmesi, damar durumunun zaman içinde izlenmesi",
+        "prep": "İşlemden bir iki saat önce sigara ve kahve içmemek, kayıttan önce sakin oturmak, elektrotların yerleştirileceği cildi temiz ve kremsiz bırakmak",
+        "abnormal": "Eğrinin biçimi ve genliği damar tonusu, kan akımının veya dönüşünün güçleşmesi ile, ayrıca işlem öncesi soğuk ve heyecanla ilişkili olabilir. Reografi damar ultrasonunun yerini tutmaz, hekim sonucu tüm verilerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Запис пуњења крвних судова руке или ноге на основу промјене електричног отпора ткива",
+        "how": "На екстремитет се постављају електроде, апарат пропушта слабу и безбједну струју високе фреквенције и биљежи криву пуњења у миру, по потреби уз функционалне тестове; безболно, 15-30 минута",
+        "when": "Хладне и утрнуле руке и ноге, бол у листовима при ходу, оток и тежина у екстремитетима, процјена артеријског дотока и венског одлива, праћење стања крвних судова током времена",
+        "prep": "Сат или два прије не пушити и не пити кафу, прије снимања сједити мирно, кожа на мјестима електрода треба да буде чиста и без креме",
+        "abnormal": "Облик и амплитуда криве могу бити повезани са тонусом крвних судова, отежаним дотоком или одливом крви, али и са хладноћом и узбуђењем прије прегледа. Реографија не замјењује ултразвук крвних судова, а закључак љекар доноси на основу свих података"
+      }
+    }
+  },
+  {
+    "slug": "secondary-wound-care",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторная хирургическая обработка раны, которая нагноилась или не заживает после первой обработки",
+        "how": "Хирург снимает часть швов или раскрывает рану, удаляет гной и нежизнеспособные ткани, промывает полость, при необходимости оставляет дренаж и накладывает повязку; чаще под местной анестезией, 20-40 минут",
+        "when": "Нагноение послеоперационной или травматической раны, расхождение краёв, налёт и омертвевшие ткани в ране, длительно не заживающие и хронические раны",
+        "prep": "Специальная подготовка не нужна; повязку самостоятельно не снимать, принести выписку о предыдущем вмешательстве и сказать о диабете, аллергиях и постоянных препаратах",
+        "abnormal": "После очищения раны боль и отделяемое обычно уменьшаются в течение нескольких дней, а заживление идёт медленнее, чем при сразу ушитой ране. Повышение температуры, расходящееся покраснение и усиление боли — повод вернуться к врачу немедленно"
+      },
+      "en": {
+        "what": "A repeat surgical treatment of a wound that has become infected or is not healing after the first treatment",
+        "how": "The surgeon removes some of the sutures or opens the wound, clears pus and non-viable tissue, rinses the cavity, leaves a drain if needed and applies a dressing; usually under local anaesthesia, 20-40 minutes",
+        "when": "Infection of a surgical or traumatic wound, gaping edges, coating and dead tissue in the wound, long-standing and chronic wounds",
+        "prep": "No special preparation; do not remove the dressing yourself, bring the discharge letter from the previous procedure and mention diabetes, allergies and regular medication",
+        "abnormal": "After the wound is cleaned, pain and discharge usually decrease over a few days, and healing takes longer than for a wound closed straight away. Fever, spreading redness and increasing pain are a reason to return to the doctor immediately"
+      },
+      "sr": {
+        "what": "Ponovna hirurška obrada rane koja se zagnojila ili ne zarasta poslije prve obrade",
+        "how": "Hirurg skida dio konaca ili otvara ranu, uklanja gnoj i neživo tkivo, ispira šupljinu, po potrebi ostavlja dren i stavlja zavoj; najčešće u lokalnoj anesteziji, 20-40 minuta",
+        "when": "Zagnojena hirurška ili traumatska rana, razmicanje ivica, naslage i mrtvo tkivo u rani, rane koje dugo ne zarastaju i hronične rane",
+        "prep": "Posebna priprema nije potrebna; zavoj ne skidati sami, ponijeti otpusnu listu prethodnog zahvata i navesti dijabetes, alergije i stalne lijekove",
+        "abnormal": "Poslije čišćenja rane bol i iscjedak obično slabe tokom nekoliko dana, a zarastanje traje duže nego kod odmah ušivene rane. Povišena temperatura, crvenilo koje se širi i pojačan bol razlog su da se ljekaru vratite odmah"
+      },
+      "de": {
+        "what": "Erneute chirurgische Versorgung einer Wunde, die sich infiziert hat oder nach der Erstversorgung nicht heilt",
+        "how": "Der Chirurg entfernt einen Teil der Fäden oder eröffnet die Wunde, räumt Eiter und abgestorbenes Gewebe aus, spült die Wundhöhle, legt bei Bedarf eine Drainage ein und verbindet; meist in örtlicher Betäubung, 20-40 Minuten",
+        "when": "Infizierte Operations- oder Verletzungswunde, auseinanderweichende Wundränder, Beläge und abgestorbenes Gewebe in der Wunde, schlecht heilende und chronische Wunden",
+        "prep": "Keine besondere Vorbereitung; den Verband nicht selbst abnehmen, den Bericht des vorherigen Eingriffs mitbringen und Diabetes, Allergien und Dauermedikamente angeben",
+        "abnormal": "Nach der Reinigung der Wunde lassen Schmerz und Sekretion meist innerhalb weniger Tage nach, die Heilung dauert jedoch länger als bei einer sofort genähten Wunde. Fieber, sich ausbreitende Rötung und zunehmender Schmerz sind ein Grund, sofort wieder zum Arzt zu gehen"
+      },
+      "tr": {
+        "what": "İltihaplanmış ya da ilk bakımdan sonra iyileşmeyen bir yaranın yeniden cerrahi bakımı",
+        "how": "Cerrah dikişlerin bir kısmını alır ya da yarayı açar, iltihabı ve canlılığını yitirmiş dokuyu temizler, boşluğu yıkar, gerekirse dren bırakır ve pansuman yapar; çoğunlukla lokal anestezi altında, 20-40 dakika",
+        "when": "İltihaplanmış ameliyat veya travma yarası, kenarların açılması, yarada örtü tabakası ve ölü doku, uzun süre iyileşmeyen ve kronik yaralar",
+        "prep": "Özel hazırlık gerekmez; pansumanı kendiniz açmayın, önceki işlemin raporunu getirin, şeker hastalığı, alerjiler ve sürekli kullanılan ilaçları bildirin",
+        "abnormal": "Yara temizlendikten sonra ağrı ve akıntı genellikle birkaç gün içinde azalır, iyileşme ise hemen dikilen yaraya göre daha uzun sürer. Ateş, yayılan kızarıklık ve artan ağrı, hemen hekime dönmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Поновна хируршка обрада ране која се загнојила или не зараста послије прве обраде",
+        "how": "Хирург скида дио конаца или отвара рану, уклања гној и неживо ткиво, испира шупљину, по потреби оставља дрен и ставља завој; најчешће у локалној анестезији, 20-40 минута",
+        "when": "Загнојена хируршка или трауматска рана, размицање ивица, наслаге и мртво ткиво у рани, ране које дуго не зарастају и хроничне ране",
+        "prep": "Посебна припрема није потребна; завој не скидати сами, понијети отпусну листу претходног захвата и навести дијабетес, алергије и сталне лијекове",
+        "abnormal": "Послије чишћења ране бол и исцједак обично слабе током неколико дана, а зарастање траје дуже него код одмах ушивене ране. Повишена температура, црвенило које се шири и појачан бол разлог су да се љекару вратите одмах"
+      }
+    }
+  },
+  {
+    "slug": "skin-tumor-excision-with-reconstruction",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление образования кожи с закрытием получившегося дефекта перемещённым кожным лоскутом или пересаженным участком кожи",
+        "how": "Под местной анестезией образование иссекают вместе с полоской окружающей кожи, дефект закрывают лоскутом соседней кожи или трансплантатом, накладывают швы и повязку; от получаса до полутора часов в зависимости от размера и области",
+        "when": "Образования кожи, которые нельзя закрыть простым швом из-за размера или расположения, участки с натянутой кожей — нос, веко, ухо, кисть, а также изменения, которые врач решил удалить с гистологическим исследованием",
+        "prep": "Сначала осмотр хирурга или дерматолога, при необходимости дерматоскопия; сообщить о препаратах, разжижающих кровь, аллергии на анестетики, диабете и курении, замедляющем заживление, ничего не отменяя самостоятельно",
+        "abnormal": "Удалённую ткань направляют на гистологическое исследование: строение ткани описывает врач-патолог, а дальнейшую тактику определяет оперировавший врач. Отёк и синяк в первые дни обычны, а нарастающая боль, потемнение лоскута, отделяемое или температура требуют осмотра"
+      },
+      "en": {
+        "what": "Removal of a skin lesion with closure of the resulting defect by a shifted skin flap or a skin graft",
+        "how": "Under local anaesthesia the lesion is excised together with a rim of surrounding skin, the defect is covered with a flap of neighbouring skin or with a graft, and sutures and a dressing are applied; from half an hour to an hour and a half depending on size and site",
+        "when": "Skin lesions that cannot be closed with a simple suture because of their size or position, areas where the skin is under tension — nose, eyelid, ear, hand — and lesions the doctor has decided to remove with histological examination",
+        "prep": "First an examination by a surgeon or dermatologist, with dermatoscopy if needed; report blood-thinning medication, allergy to anaesthetics, diabetes and smoking, which slows healing, without stopping anything on your own",
+        "abnormal": "The removed tissue is sent for histological examination: the pathologist describes the structure of the tissue and the operating doctor decides on further management. Swelling and bruising in the first days are usual, while increasing pain, darkening of the flap, discharge or fever call for an examination"
+      },
+      "sr": {
+        "what": "Uklanjanje promjene na koži uz zatvaranje nastalog defekta pomjerenim kožnim režnjem ili presađenim komadom kože",
+        "how": "U lokalnoj anesteziji promjena se isijeca zajedno sa pojasom okolne kože, defekt se prekriva režnjem susjedne kože ili transplantatom, postavljaju se šavovi i zavoj; od pola sata do sat i po, zavisno od veličine i regije",
+        "when": "Promjene na koži koje se zbog veličine ili položaja ne mogu zatvoriti običnim šavom, područja sa zategnutom kožom — nos, kapak, uho, šaka — kao i promjene koje je ljekar odlučio ukloniti uz histološku analizu",
+        "prep": "Najprije pregled hirurga ili dermatologa, po potrebi dermatoskopija; prijaviti lijekove za razrjeđivanje krvi, alergiju na anestetike, dijabetes i pušenje koje usporava zarastanje, bez samostalnog prekidanja terapije",
+        "abnormal": "Uklonjeno tkivo se šalje na histološku analizu: građu tkiva opisuje ljekar patolog, a dalji postupak određuje ljekar koji je operisao. Otok i modrica prvih dana su uobičajeni, dok pojačan bol, tamnjenje režnja, iscjedak ili povišena temperatura traže pregled"
+      },
+      "de": {
+        "what": "Entfernung einer Hautveränderung mit Deckung des entstandenen Defekts durch einen verschobenen Hautlappen oder ein Hauttransplantat",
+        "how": "In örtlicher Betäubung wird die Veränderung mit einem Saum umgebender Haut ausgeschnitten, der Defekt mit einem Lappen benachbarter Haut oder einem Transplantat gedeckt, anschließend genäht und verbunden; je nach Größe und Region eine halbe bis anderthalb Stunden",
+        "when": "Hautveränderungen, die sich wegen Größe oder Lage nicht mit einer einfachen Naht verschließen lassen, Bereiche mit straffer Haut — Nase, Augenlid, Ohr, Hand — sowie Veränderungen, die der Arzt mit histologischer Untersuchung entfernen möchte",
+        "prep": "Zunächst Untersuchung durch Chirurg oder Hautarzt, bei Bedarf Dermatoskopie; blutverdünnende Medikamente, Allergien gegen Betäubungsmittel, Diabetes und Rauchen, das die Heilung verzögert, angeben, ohne etwas eigenmächtig abzusetzen",
+        "abnormal": "Das entfernte Gewebe wird histologisch untersucht: Den Gewebeaufbau beschreibt der Pathologe, über das weitere Vorgehen entscheidet der operierende Arzt. Schwellung und Bluterguss in den ersten Tagen sind üblich, zunehmende Schmerzen, Dunkelfärbung des Lappens, Sekret oder Fieber erfordern eine Kontrolle"
+      },
+      "tr": {
+        "what": "Cilt lezyonunun çıkarılması ve oluşan defektin kaydırılan bir deri flebi ya da deri grefti ile kapatılması",
+        "how": "Lokal anestezi altında lezyon çevresindeki bir miktar sağlam deriyle birlikte çıkarılır, defekt komşu deriden hazırlanan flep veya greftle kapatılır, dikiş atılır ve pansuman yapılır; boyuta ve bölgeye göre yarım saat ile bir buçuk saat arası sürer",
+        "when": "Boyutu veya yeri nedeniyle basit dikişle kapatılamayan cilt lezyonları, derinin gergin olduğu bölgeler — burun, göz kapağı, kulak, el — ve hekimin histolojik inceleme ile çıkarmaya karar verdiği değişiklikler",
+        "prep": "Önce cerrah ya da dermatolog muayenesi, gerekirse dermatoskopi; kan sulandırıcı ilaçlar, anestezik alerjisi, şeker hastalığı ve iyileşmeyi yavaşlatan sigara kullanımı, hiçbir ilaç kendiliğinden kesilmeden bildirilmelidir",
+        "abnormal": "Çıkarılan doku histolojik incelemeye gönderilir: dokunun yapısını patoloji uzmanı tanımlar, sonraki adımları ameliyatı yapan hekim belirler. İlk günlerde şişlik ve morluk olağandır; artan ağrı, flepte kararma, akıntı veya ateş muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Уклањање промјене на кожи уз затварање насталог дефекта помјереним кожним режњем или пресађеним комадом коже",
+        "how": "У локалној анестезији промјена се исијеца заједно са појасом околне коже, дефект се прекрива режњем сусједне коже или трансплантатом, постављају се шавови и завој; од пола сата до сат и по, зависно од величине и регије",
+        "when": "Промјене на кожи које се због величине или положаја не могу затворити обичним шавом, подручја са затегнутом кожом — нос, капак, ухо, шака — као и промјене које је љекар одлучио уклонити уз хистолошку анализу",
+        "prep": "Најприје преглед хирурга или дерматолога, по потреби дерматоскопија; пријавити лијекове за разрјеђивање крви, алергију на анестетике, дијабетес и пушење које успорава зарастање, без самосталног прекидања терапије",
+        "abnormal": "Уклоњено ткиво се шаље на хистолошку анализу: грађу ткива описује љекар патолог, а даљи поступак одређује љекар који је оперисао. Оток и модрица првих дана су уобичајени, док појачан бол, тамњење режња, исцједак или повишена температура траже преглед"
+      }
+    }
+  },
+  {
+    "slug": "sternal-puncture",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Взятие небольшого количества костного мозга из грудины иглой для лабораторного исследования",
+        "how": "Кожу и надкостницу обезболивают, специальной иглой проходят переднюю стенку грудины и шприцем набирают немного костного мозга; сам забор длится секунды и ощущается как короткое тянущее чувство, вся процедура — около четверти часа",
+        "when": "Необъяснимые изменения в анализе крови, уточнение причины анемии или изменённого числа клеток крови, наблюдение за течением заболеваний кроветворения по назначению гематолога",
+        "prep": "Сообщить о нарушениях свёртываемости и препаратах, разжижающих кровь; после процедуры несколько часов не мочить место прокола, не поднимать тяжести и не заниматься спортом в этот день",
+        "abnormal": "Полученный материал изучают под микроскопом: состав и созревание клеток могут быть связаны с разными состояниями кроветворения, и заключение даёт врач-гематолог. Боль в груди, кровотечение из места прокола или температура после процедуры — повод обратиться сразу"
+      },
+      "en": {
+        "what": "Taking a small amount of bone marrow from the breastbone with a needle for laboratory examination",
+        "how": "The skin and the periosteum are anaesthetised, a special needle passes through the front wall of the sternum and a little marrow is drawn into a syringe; the sampling itself lasts seconds and feels like a brief pulling sensation, the whole procedure takes about fifteen minutes",
+        "when": "Unexplained changes in a blood count, clarifying the cause of anaemia or of a changed number of blood cells, monitoring disorders of blood formation as prescribed by a haematologist",
+        "prep": "Report clotting disorders and blood-thinning medication; after the procedure keep the puncture site dry for several hours, avoid lifting weights and sport that day",
+        "abnormal": "The sample is examined under a microscope: the composition and maturation of the cells may be related to various states of blood formation, and the report is issued by a haematologist. Chest pain, bleeding from the puncture site or fever after the procedure are a reason to seek care immediately"
+      },
+      "sr": {
+        "what": "Uzimanje male količine koštane srži iz grudne kosti iglom radi laboratorijske analize",
+        "how": "Koža i pokosnica se anesteziraju, posebnom iglom se prolazi prednji zid sternuma i špricem izvlači nešto koštane srži; samo uzimanje traje nekoliko sekundi i osjeti se kao kratko vučenje, a cijeli zahvat oko petnaest minuta",
+        "when": "Nerazjašnjene promjene u krvnoj slici, utvrđivanje uzroka anemije ili promijenjenog broja krvnih ćelija, praćenje bolesti krvotvornog sistema po odluci hematologa",
+        "prep": "Prijaviti poremećaje zgrušavanja i lijekove za razrjeđivanje krvi; poslije zahvata nekoliko sati ne kvasiti mjesto uboda, ne dizati teret i taj dan ne vježbati",
+        "abnormal": "Dobijeni materijal se pregleda pod mikroskopom: sastav i sazrijevanje ćelija mogu biti povezani sa različitim stanjima krvotvornog sistema, a nalaz daje ljekar hematolog. Bol u grudima, krvarenje sa mjesta uboda ili povišena temperatura poslije zahvata traže da se odmah javite"
+      },
+      "de": {
+        "what": "Entnahme einer kleinen Menge Knochenmark aus dem Brustbein mit einer Nadel für die Laboruntersuchung",
+        "how": "Haut und Knochenhaut werden betäubt, mit einer speziellen Nadel wird die vordere Brustbeinwand durchstochen und etwas Knochenmark in eine Spritze aufgezogen; die Entnahme selbst dauert Sekunden und fühlt sich wie ein kurzes Ziehen an, der ganze Eingriff etwa eine Viertelstunde",
+        "when": "Unklare Veränderungen im Blutbild, Abklärung der Ursache einer Blutarmut oder einer veränderten Zellzahl, Verlaufskontrolle von Erkrankungen der Blutbildung nach Anordnung des Hämatologen",
+        "prep": "Gerinnungsstörungen und blutverdünnende Medikamente angeben; nach dem Eingriff die Einstichstelle einige Stunden trocken halten, nicht schwer heben und an diesem Tag keinen Sport treiben",
+        "abnormal": "Das gewonnene Material wird unter dem Mikroskop untersucht: Zusammensetzung und Reifung der Zellen können mit verschiedenen Zuständen der Blutbildung zusammenhängen, den Befund erstellt ein Hämatologe. Brustschmerz, Blutung aus der Einstichstelle oder Fieber nach dem Eingriff erfordern sofortige ärztliche Hilfe"
+      },
+      "tr": {
+        "what": "Laboratuvar incelemesi için iğneyle göğüs kemiğinden az miktarda kemik iliği alınması",
+        "how": "Cilt ve kemik zarı uyuşturulur, özel bir iğneyle sternumun ön duvarı geçilir ve enjektörle bir miktar kemik iliği çekilir; örnek alımı saniyeler sürer ve kısa bir çekilme hissi verir, işlemin tamamı yaklaşık on beş dakikadır",
+        "when": "Kan sayımındaki açıklanamayan değişiklikler, kansızlığın veya kan hücre sayısındaki değişimin nedeninin araştırılması, hematoloğun kararıyla kan yapımı hastalıklarının izlenmesi",
+        "prep": "Pıhtılaşma bozuklukları ve kan sulandırıcı ilaçlar bildirilmelidir; işlemden sonra birkaç saat giriş yeri ıslatılmamalı, ağır kaldırılmamalı ve o gün spor yapılmamalıdır",
+        "abnormal": "Alınan materyal mikroskopla incelenir: hücrelerin bileşimi ve olgunlaşması kan yapımına ilişkin farklı durumlarla ilgili olabilir, raporu hematoloji uzmanı verir. İşlemden sonra göğüs ağrısı, giriş yerinden kanama veya ateş hemen başvuru gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Узимање мале количине коштане сржи из грудне кости иглом ради лабораторијске анализе",
+        "how": "Кожа и покосница се анестезирају, посебном иглом се пролази предњи зид стернума и шприцем извлачи нешто коштане сржи; само узимање траје неколико секунди и осјети се као кратко вучење, а цијели захват око петнаест минута",
+        "when": "Неразјашњене промјене у крвној слици, утврђивање узрока анемије или промијењеног броја крвних ћелија, праћење болести крвотворног система по одлуци хематолога",
+        "prep": "Пријавити поремећаје згрушавања и лијекове за разрјеђивање крви; послије захвата неколико сати не квасити мјесто убода, не дизати терет и тај дан не вјежбати",
+        "abnormal": "Добијени материјал се прегледа под микроскопом: састав и сазријевање ћелија могу бити повезани са различитим стањима крвотворног система, а налаз даје љекар хематолог. Бол у грудима, крварење са мјеста убода или повишена температура послије захвата траже да се одмах јавите"
+      }
+    }
+  },
+  {
+    "slug": "subcutaneous-or-intramuscular-injection",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение назначенного препарата под кожу или в мышцу медицинским работником",
+        "how": "Медсестра выбирает место по назначению врача: тонкой иглой под кожу живота, плеча или бедра либо более длинной иглой в мышцу бедра или ягодицы; сам укол длится секунды, после него обычно просят задержаться в клинике на несколько минут",
+        "when": "Курс инъекций по назначению врача, препараты, которые не действуют при приёме внутрь, ситуации, когда пациент не может сделать укол сам, введение препарата, когда приём таблеток невозможен",
+        "prep": "Принести назначение и сам препарат, если клиника его не выдаёт, сказать о прошлых реакциях на лекарства и о препаратах, разжижающих кровь; удобнее прийти в одежде, которая легко открывает место укола",
+        "abnormal": "Лёгкая болезненность, небольшое покраснение или синяк в месте укола обычно проходят за несколько дней. Сыпь, отёк лица, затруднённое дыхание или головокружение сразу после инъекции требуют немедленной помощи, а растущее уплотнение с температурой — осмотра врача"
+      },
+      "en": {
+        "what": "Administration of a prescribed medicine under the skin or into a muscle by a health professional",
+        "how": "The nurse chooses the site as prescribed: a fine needle under the skin of the abdomen, upper arm or thigh, or a longer needle into the thigh or buttock muscle; the injection itself lasts seconds and patients are usually asked to stay in the clinic for a few minutes afterwards",
+        "when": "A course of injections prescribed by a doctor, medicines that do not work when swallowed, situations in which the patient cannot inject themselves, giving a medicine when tablets are not possible",
+        "prep": "Bring the prescription and the medicine itself if the clinic does not supply it, mention previous reactions to medicines and blood-thinning treatment; clothing that gives easy access to the injection site is more convenient",
+        "abnormal": "Mild soreness, slight redness or a bruise at the injection site usually pass within a few days. A rash, facial swelling, difficulty breathing or dizziness right after the injection require immediate help, while a growing lump with fever needs a doctor's examination"
+      },
+      "sr": {
+        "what": "Davanje propisanog lijeka pod kožu ili u mišić od strane zdravstvenog radnika",
+        "how": "Sestra bira mjesto prema nalogu ljekara: tankom iglom pod kožu trbuha, nadlaktice ili buta, ili dužom iglom u mišić buta ili sjedalne regije; sam ubod traje nekoliko sekundi, a poslije se obično traži da se ostane u klinici koji minut",
+        "when": "Serija injekcija po nalogu ljekara, lijekovi koji ne djeluju ako se progutaju, situacije kada pacijent ne može sam sebi dati injekciju, davanje lijeka kada tablete nisu moguće",
+        "prep": "Ponijeti nalog i sam lijek ako ga klinika ne izdaje, navesti ranije reakcije na lijekove i terapiju za razrjeđivanje krvi; zgodnije je doći u odjeći koja lako otkriva mjesto uboda",
+        "abnormal": "Blaga osjetljivost, malo crvenila ili modrica na mjestu uboda obično prođu za nekoliko dana. Osip, otok lica, otežano disanje ili vrtoglavica odmah poslije injekcije traže hitnu pomoć, a čvorić koji raste uz povišenu temperaturu pregled ljekara"
+      },
+      "de": {
+        "what": "Verabreichung eines verordneten Medikaments unter die Haut oder in den Muskel durch medizinisches Personal",
+        "how": "Die Pflegekraft wählt die Stelle nach ärztlicher Anordnung: mit feiner Nadel unter die Haut von Bauch, Oberarm oder Oberschenkel oder mit längerer Nadel in den Oberschenkel- oder Gesäßmuskel; die Injektion selbst dauert Sekunden, danach wird meist gebeten, einige Minuten in der Praxis zu bleiben",
+        "when": "Eine vom Arzt verordnete Injektionsserie, Medikamente, die geschluckt nicht wirken, Situationen, in denen der Patient sich nicht selbst spritzen kann, Gabe eines Medikaments, wenn Tabletten nicht möglich sind",
+        "prep": "Verordnung und gegebenenfalls das Medikament selbst mitbringen, frühere Reaktionen auf Medikamente und blutverdünnende Therapie angeben; Kleidung, die die Einstichstelle leicht freigibt, ist praktischer",
+        "abnormal": "Leichte Empfindlichkeit, etwas Rötung oder ein blauer Fleck an der Einstichstelle vergehen meist innerhalb weniger Tage. Hautausschlag, Schwellung im Gesicht, Atemnot oder Schwindel unmittelbar nach der Injektion erfordern sofortige Hilfe, eine wachsende Verhärtung mit Fieber eine ärztliche Untersuchung"
+      },
+      "tr": {
+        "what": "Reçete edilen ilacın sağlık çalışanı tarafından cilt altına ya da kas içine uygulanması",
+        "how": "Hemşire, hekimin talimatına göre yeri seçer: ince iğneyle karın, üst kol veya uyluk cildinin altına ya da daha uzun iğneyle uyluk veya kalça kasına; enjeksiyon saniyeler sürer, sonrasında genellikle birkaç dakika klinikte beklenmesi istenir",
+        "when": "Hekimin verdiği enjeksiyon kürü, ağızdan alındığında etki etmeyen ilaçlar, hastanın kendine iğne yapamadığı durumlar, tablet kullanımının mümkün olmadığı haller",
+        "prep": "Reçeteyi ve klinik vermiyorsa ilacın kendisini getirmek, ilaçlara karşı geçmiş tepkileri ve kan sulandırıcı tedaviyi bildirmek; enjeksiyon bölgesini kolay açan giysilerle gelmek daha rahattır",
+        "abnormal": "Enjeksiyon yerinde hafif hassasiyet, az kızarıklık veya morluk genellikle birkaç gün içinde geçer. Enjeksiyondan hemen sonra döküntü, yüzde şişme, nefes darlığı veya baş dönmesi acil yardım, büyüyen sertlik ve ateş ise hekim muayenesi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Давање прописаног лијека под кожу или у мишић од стране здравственог радника",
+        "how": "Сестра бира мјесто према налогу љекара: танком иглом под кожу трбуха, надлактице или бута, или дужом иглом у мишић бута или сједалне регије; сам убод траје неколико секунди, а послије се обично тражи да се остане у клиници који минут",
+        "when": "Серија ињекција по налогу љекара, лијекови који не дјелују ако се прогутају, ситуације када пацијент не може сам себи дати ињекцију, давање лијека када таблете нису могуће",
+        "prep": "Понијети налог и сам лијек ако га клиника не издаје, навести раније реакције на лијекове и терапију за разрјеђивање крви; згодније је доћи у одјећи која лако открива мјесто убода",
+        "abnormal": "Блага осјетљивост, мало црвенила или модрица на мјесту убода обично прођу за неколико дана. Осип, оток лица, отежано дисање или вртоглавица одмах послије ињекције траже хитну помоћ, а чворић који расте уз повишену температуру преглед љекара"
+      }
+    }
+  },
+  {
+    "slug": "superficial-vein-pressure-measurement",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Измерение давления крови в поверхностной вене конечности с помощью иглы, соединённой с датчиком",
+        "how": "В вену на тыле стопы или кисти вводят тонкую иглу с датчиком и записывают давление в покое и после нескольких сгибаний стопы или сжатий кисти, затем следят, как быстро оно возвращается к исходному; около получаса",
+        "when": "Уточнение причины отёков и тяжести в ногах, оценка работы венозных клапанов и мышечной помпы голени, обследование перед вмешательством на венах и наблюдение после него",
+        "prep": "Прийти в свободной одежде и удобной обуви, за пару часов не курить, сообщить о препаратах, разжижающих кровь, и аллергии на местные анестетики",
+        "abnormal": "Насколько давление падает при нагрузке и как быстро восстанавливается, может быть связано с работой венозных клапанов и оттоком крови из конечности. Результат оценивает сосудистый хирург вместе с осмотром и УЗИ вен"
+      },
+      "en": {
+        "what": "Measurement of the blood pressure in a superficial vein of a limb using a needle connected to a sensor",
+        "how": "A fine needle with a sensor is placed in a vein on the back of the foot or hand and the pressure is recorded at rest and after several ankle movements or hand squeezes, then how quickly it returns to baseline is followed; about half an hour",
+        "when": "Clarifying the cause of swelling and heaviness in the legs, assessing the work of the venous valves and of the calf muscle pump, work-up before a vein procedure and follow-up afterwards",
+        "prep": "Come in loose clothing and comfortable shoes, avoid smoking for a couple of hours, report blood-thinning medication and any allergy to local anaesthetics",
+        "abnormal": "How far the pressure falls with exercise and how quickly it recovers may be related to the work of the venous valves and to the outflow of blood from the limb. The result is assessed by a vascular surgeon together with the examination and vein ultrasound"
+      },
+      "sr": {
+        "what": "Mjerenje pritiska krvi u površinskoj veni ekstremiteta pomoću igle povezane sa senzorom",
+        "how": "U venu na nadlanici ili nadstopalu uvodi se tanka igla sa senzorom i bilježi se pritisak u miru i poslije nekoliko pokreta stopalom ili stiskanja šake, a zatim se prati koliko brzo se vraća na početnu vrijednost; oko pola sata",
+        "when": "Razjašnjenje uzroka otoka i težine u nogama, procjena rada venskih zalistaka i mišićne pumpe potkoljenice, obrada prije zahvata na venama i praćenje poslije njega",
+        "prep": "Doći u široj odjeći i udobnoj obući, dva sata prije ne pušiti, prijaviti lijekove za razrjeđivanje krvi i alergiju na lokalne anestetike",
+        "abnormal": "Koliko pritisak pada pri opterećenju i koliko brzo se oporavlja može biti povezano sa radom venskih zalistaka i odlivom krvi iz ekstremiteta. Nalaz procjenjuje vaskularni hirurg zajedno sa pregledom i ultrazvukom vena"
+      },
+      "de": {
+        "what": "Messung des Blutdrucks in einer oberflächlichen Vene der Extremität mit einer an einen Sensor angeschlossenen Nadel",
+        "how": "In eine Vene am Fuß- oder Handrücken wird eine dünne Nadel mit Sensor eingeführt und der Druck in Ruhe sowie nach mehreren Fußbewegungen oder Faustschlüssen aufgezeichnet, danach wird verfolgt, wie schnell er zum Ausgangswert zurückkehrt; etwa eine halbe Stunde",
+        "when": "Klärung der Ursache von Schwellung und Schweregefühl in den Beinen, Beurteilung von Venenklappen und Wadenmuskelpumpe, Abklärung vor einem Veneneingriff und Kontrolle danach",
+        "prep": "In weiter Kleidung und bequemen Schuhen kommen, zwei Stunden vorher nicht rauchen, blutverdünnende Medikamente und Allergien gegen örtliche Betäubungsmittel angeben",
+        "abnormal": "Wie stark der Druck unter Belastung abfällt und wie rasch er sich erholt, kann mit der Funktion der Venenklappen und dem Blutabfluss aus der Extremität zusammenhängen. Den Befund beurteilt der Gefäßchirurg zusammen mit der Untersuchung und dem Venenultraschall"
+      },
+      "tr": {
+        "what": "Sensöre bağlı bir iğne yardımıyla ekstremitedeki yüzeyel bir toplardamarda kan basıncının ölçülmesi",
+        "how": "El veya ayak sırtındaki bir damara sensörlü ince bir iğne yerleştirilir, dinlenme sırasında ve birkaç ayak hareketi ya da el sıkma sonrasında basınç kaydedilir, ardından başlangıç değerine ne kadar hızlı döndüğü izlenir; yaklaşık yarım saat sürer",
+        "when": "Bacaklarda şişlik ve ağırlığın nedeninin araştırılması, toplardamar kapakçıkları ile baldır kas pompasının değerlendirilmesi, damar girişimi öncesi inceleme ve sonrasındaki takip",
+        "prep": "Bol giysi ve rahat ayakkabıyla gelmek, birkaç saat önce sigara içmemek, kan sulandırıcı ilaçları ve lokal anestezik alerjisini bildirmek",
+        "abnormal": "Basıncın yüklenmeyle ne kadar düştüğü ve ne kadar hızlı toparlandığı, toplardamar kapakçıklarının çalışması ve kanın ekstremiteden dönüşüyle ilgili olabilir. Sonucu damar cerrahı, muayene ve toplardamar ultrasonu ile birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Мјерење притиска крви у површинској вени екстремитета помоћу игле повезане са сензором",
+        "how": "У вену на надланици или надстопалу уводи се танка игла са сензором и биљежи се притисак у миру и послије неколико покрета стопалом или стискања шаке, а затим се прати колико брзо се враћа на почетну вриједност; око пола сата",
+        "when": "Разјашњење узрока отока и тежине у ногама, процјена рада венских залистака и мишићне пумпе поткољенице, обрада прије захвата на венама и праћење послије њега",
+        "prep": "Доћи у широј одјећи и удобној обући, два сата прије не пушити, пријавити лијекове за разрјеђивање крви и алергију на локалне анестетике",
+        "abnormal": "Колико притисак пада при оптерећењу и колико брзо се опоравља може бити повезано са радом венских залистака и одливом крви из екстремитета. Налаз процјењује васкуларни хирург заједно са прегледом и ултразвуком вена"
+      }
+    }
+  },
+  {
+    "slug": "swab-collection-for-laboratory-analysis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Взятие материала стерильным тампоном с кожи, слизистой или раны и отправка его в лабораторию",
+        "how": "Медработник проводит стерильным тампоном по нужному участку — зев, нос, ухо, глаз, кожа, рана — помещает его в транспортную среду и передаёт в лабораторию; занимает пару минут",
+        "when": "Боль в горле с налётами, гнойное отделяемое из уха, носа или глаза, воспалённая рана, подбор антибиотика по чувствительности возбудителя, контроль после лечения, обследование перед вмешательством",
+        "prep": "Мазок из зева берут натощак или через несколько часов после еды, до чистки зубов и полоскания; перед забором не использовать местные антисептики, капли и мази и обязательно сказать, если приём антибиотика уже начат",
+        "abnormal": "Посев может показать рост бактерий или грибков, а может остаться без роста, при этом часть находок относится к обычной флоре этого участка. Значение результата и необходимость лечения определяет врач"
+      },
+      "en": {
+        "what": "Collection of material with a sterile swab from the skin, a mucous membrane or a wound and its dispatch to the laboratory",
+        "how": "A health worker wipes the area concerned — throat, nose, ear, eye, skin, wound — with a sterile swab, places it in transport medium and sends it to the laboratory; it takes a couple of minutes",
+        "when": "Sore throat with coating, purulent discharge from the ear, nose or eye, an inflamed wound, choosing an antibiotic according to the sensitivity of the organism, control after treatment, work-up before a procedure",
+        "prep": "A throat swab is taken on an empty stomach or several hours after eating, before brushing teeth and rinsing the mouth; do not use local antiseptics, drops or ointments beforehand and always say if an antibiotic has already been started",
+        "abnormal": "The culture may show growth of bacteria or fungi, or no growth at all, and some findings belong to the normal flora of that site. The meaning of the result and the need for treatment are decided by the doctor"
+      },
+      "sr": {
+        "what": "Uzimanje materijala sterilnim štapićem sa kože, sluznice ili rane i slanje u laboratoriju",
+        "how": "Zdravstveni radnik sterilnim štapićem prebriše traženo područje — ždrijelo, nos, uho, oko, koža, rana — stavi ga u transportnu podlogu i šalje u laboratoriju; traje par minuta",
+        "when": "Bol u grlu sa naslagama, gnojav iscjedak iz uha, nosa ili oka, upaljena rana, izbor antibiotika prema osjetljivosti uzročnika, kontrola poslije liječenja, obrada prije zahvata",
+        "prep": "Bris ždrijela se uzima natašte ili nekoliko sati poslije jela, prije pranja zuba i ispiranja usta; prije uzimanja ne koristiti lokalne antiseptike, kapi i masti i obavezno reći ako je antibiotik već započet",
+        "abnormal": "Kultura može pokazati rast bakterija ili gljivica, a može ostati i bez rasta, pri čemu dio nalaza pripada uobičajenoj flori tog mjesta. Značenje nalaza i potrebu za liječenjem određuje ljekar"
+      },
+      "de": {
+        "what": "Entnahme von Material mit einem sterilen Tupfer von Haut, Schleimhaut oder Wunde und Versand ins Labor",
+        "how": "Die Fachkraft streicht mit einem sterilen Tupfer über den betreffenden Bereich — Rachen, Nase, Ohr, Auge, Haut, Wunde —, gibt ihn in ein Transportmedium und schickt ihn ins Labor; dauert wenige Minuten",
+        "when": "Halsschmerzen mit Belägen, eitriges Sekret aus Ohr, Nase oder Auge, entzündete Wunde, Auswahl eines Antibiotikums nach Empfindlichkeit des Erregers, Kontrolle nach der Behandlung, Abklärung vor einem Eingriff",
+        "prep": "Ein Rachenabstrich wird nüchtern oder einige Stunden nach dem Essen entnommen, vor dem Zähneputzen und Mundspülen; vorher keine örtlichen Antiseptika, Tropfen oder Salben anwenden und unbedingt angeben, wenn bereits ein Antibiotikum eingenommen wird",
+        "abnormal": "Die Kultur kann Wachstum von Bakterien oder Pilzen zeigen oder ohne Wachstum bleiben, wobei ein Teil der Befunde zur normalen Flora dieser Stelle gehört. Die Bedeutung des Ergebnisses und die Notwendigkeit einer Behandlung bestimmt der Arzt"
+      },
+      "tr": {
+        "what": "Ciltten, mukozadan ya da yaradan steril çubukla örnek alınması ve laboratuvara gönderilmesi",
+        "how": "Sağlık çalışanı steril çubukla ilgili bölgeyi — boğaz, burun, kulak, göz, cilt, yara — siler, çubuğu taşıma besiyerine koyar ve laboratuvara gönderir; birkaç dakika sürer",
+        "when": "Beyaz plaklarla seyreden boğaz ağrısı, kulak, burun ya da gözden iltihaplı akıntı, iltihaplı yara, etkenin duyarlılığına göre antibiyotik seçimi, tedavi sonrası kontrol, girişim öncesi inceleme",
+        "prep": "Boğaz sürüntüsü aç karnına ya da yemekten birkaç saat sonra, diş fırçalama ve gargara öncesinde alınır; öncesinde lokal antiseptik, damla ve merhem kullanılmamalı, antibiyotiğe başlanmışsa mutlaka belirtilmelidir",
+        "abnormal": "Kültürde bakteri veya mantar üremesi görülebilir ya da üreme olmayabilir; bulguların bir kısmı o bölgenin olağan florasına aittir. Sonucun anlamını ve tedavi gerekip gerekmediğini hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Узимање материјала стерилним штапићем са коже, слузнице или ране и слање у лабораторију",
+        "how": "Здравствени радник стерилним штапићем пребрише тражено подручје — ждријело, нос, ухо, око, кожа, рана — стави га у транспортну подлогу и шаље у лабораторију; траје пар минута",
+        "when": "Бол у грлу са наслагама, гнојав исцједак из уха, носа или ока, упаљена рана, избор антибиотика према осјетљивости узрочника, контрола послије лијечења, обрада прије захвата",
+        "prep": "Брис ждријела се узима наташте или неколико сати послије јела, прије прања зуба и испирања уста; прије узимања не користити локалне антисептике, капи и масти и обавезно рећи ако је антибиотик већ започет",
+        "abnormal": "Култура може показати раст бактерија или гљивица, а може остати и без раста, при чему дио налаза припада уобичајеној флори тог мјеста. Значење налаза и потребу за лијечењем одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "thermography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Бесконтактная регистрация распределения температуры кожи инфракрасной камерой",
+        "how": "Пациент освобождает исследуемую область и несколько минут привыкает к температуре кабинета, затем камера снимает тепловую картину, при необходимости повторно после холодовой или нагрузочной пробы; 20-30 минут, без излучения и без прикосновения",
+        "when": "Оценка периферического кровообращения, побеление и зябкость пальцев на холоде, односторонняя боль или отёк конечности, наблюдение за воспалительными изменениями мягких тканей в динамике",
+        "prep": "За несколько часов не курить, не пить кофе и алкоголь, в день исследования не наносить кремы и мази на исследуемую область, перед визитом не принимать горячий душ и не делать физиопроцедуры",
+        "abnormal": "Участки с более высокой или более низкой температурой могут быть связаны с усилением кровотока, воспалением или ослаблением притока крови, а также с условиями в кабинете. Термография сама по себе диагноз не ставит, врач сопоставляет её с осмотром и другими исследованиями"
+      },
+      "en": {
+        "what": "Contact-free recording of the temperature distribution of the skin with an infrared camera",
+        "how": "The patient uncovers the area studied and spends a few minutes adapting to the room temperature, then the camera records the thermal image, if needed again after a cold or exercise test; 20-30 minutes, without radiation and without touch",
+        "when": "Assessment of peripheral circulation, blanching and coldness of the fingers in the cold, one-sided pain or swelling of a limb, following inflammatory changes of the soft tissue over time",
+        "prep": "No smoking, coffee or alcohol for several hours, no creams or ointments on the area on the day of the test, no hot shower or physiotherapy before the visit",
+        "abnormal": "Areas of higher or lower temperature may be related to increased blood flow, inflammation or reduced inflow, and also to the conditions in the room. Thermography does not make a diagnosis on its own; the doctor compares it with the examination and other tests"
+      },
+      "sr": {
+        "what": "Beskontaktno snimanje raspodjele temperature kože infracrvenom kamerom",
+        "how": "Pacijent oslobodi područje koje se ispituje i nekoliko minuta se privikava na temperaturu prostorije, zatim kamera snima toplotnu sliku, po potrebi ponovo poslije hladnog ili opterećujućeg testa; 20-30 minuta, bez zračenja i bez dodira",
+        "when": "Procjena perifernog krvotoka, bljedilo i hladnoća prstiju na hladnoći, jednostrani bol ili otok ekstremiteta, praćenje upalnih promjena mekih tkiva tokom vremena",
+        "prep": "Nekoliko sati prije ne pušiti, ne piti kafu i alkohol, na dan pregleda ne nanositi kreme i masti na ispitivano područje, prije dolaska se ne tuširati vrućom vodom i ne ići na fizikalnu terapiju",
+        "abnormal": "Područja sa višom ili nižom temperaturom mogu biti povezana sa pojačanim protokom, upalom ili slabijim dotokom krvi, ali i sa uslovima u prostoriji. Termografija sama po sebi ne postavlja dijagnozu, već je ljekar upoređuje sa pregledom i drugim nalazima"
+      },
+      "de": {
+        "what": "Berührungsfreie Aufzeichnung der Temperaturverteilung der Haut mit einer Infrarotkamera",
+        "how": "Der Patient macht die untersuchte Region frei und gewöhnt sich einige Minuten an die Raumtemperatur, dann nimmt die Kamera das Wärmebild auf, bei Bedarf erneut nach einem Kälte- oder Belastungstest; 20-30 Minuten, ohne Strahlung und ohne Berührung",
+        "when": "Beurteilung der peripheren Durchblutung, Abblassen und Kältegefühl der Finger bei Kälte, einseitiger Schmerz oder Schwellung einer Extremität, Verlaufskontrolle entzündlicher Weichteilveränderungen",
+        "prep": "Einige Stunden vorher nicht rauchen, keinen Kaffee und Alkohol trinken, am Untersuchungstag keine Cremes und Salben auf die Region auftragen, vor dem Termin nicht heiß duschen und keine Physiotherapie machen",
+        "abnormal": "Bereiche mit höherer oder niedrigerer Temperatur können mit gesteigerter Durchblutung, Entzündung oder vermindertem Zufluss zusammenhängen, ebenso mit den Bedingungen im Raum. Die Thermographie stellt allein keine Diagnose, der Arzt vergleicht sie mit der Untersuchung und weiteren Befunden"
+      },
+      "tr": {
+        "what": "Cilt sıcaklığı dağılımının kızılötesi kamerayla temassız olarak kaydedilmesi",
+        "how": "Hasta incelenecek bölgeyi açar ve birkaç dakika oda sıcaklığına alışır, ardından kamera ısı görüntüsünü alır, gerekirse soğuk ya da yüklenme testinden sonra tekrarlanır; 20-30 dakika, ışın ve temas olmadan",
+        "when": "Çevresel dolaşımın değerlendirilmesi, soğukta parmaklarda solma ve üşüme, tek taraflı ekstremite ağrısı veya şişliği, yumuşak dokudaki iltihabi değişikliklerin zaman içinde izlenmesi",
+        "prep": "Birkaç saat önce sigara, kahve ve alkol almamak, işlem günü incelenecek bölgeye krem ve merhem sürmemek, gelmeden önce sıcak duş almamak ve fizik tedavi yaptırmamak",
+        "abnormal": "Daha sıcak ya da daha soğuk bölgeler artmış kan akımı, iltihap ya da azalmış kan gelişiyle, ayrıca odanın koşullarıyla ilgili olabilir. Termografi tek başına tanı koymaz; hekim bunu muayene ve diğer incelemelerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Бесконтактно снимање расподјеле температуре коже инфрацрвеном камером",
+        "how": "Пацијент ослободи подручје које се испитује и неколико минута се привикава на температуру просторије, затим камера снима топлотну слику, по потреби поново послије хладног или оптерећујућег теста; 20-30 минута, без зрачења и без додира",
+        "when": "Процјена периферног крвотока, бљедило и хладноћа прстију на хладноћи, једнострани бол или оток екстремитета, праћење упалних промјена меких ткива током времена",
+        "prep": "Неколико сати прије не пушити, не пити кафу и алкохол, на дан прегледа не наносити креме и масти на испитивано подручје, прије доласка се не туширати врућом водом и не ићи на физикалну терапију",
+        "abnormal": "Подручја са вишом или нижом температуром могу бити повезана са појачаним протоком, упалом или слабијим дотоком крви, али и са условима у просторији. Термографија сама по себи не поставља дијагнозу, већ је љекар упоређује са прегледом и другим налазима"
+      }
+    }
+  },
+  {
+    "slug": "topical-local-anesthesia",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обезболивание поверхности кожи или слизистой без укола — гелем, кремом, спреем или каплями",
+        "how": "На нужный участок наносят анестетик и ждут несколько минут, пока он подействует; чувствительность снижается только в поверхностном слое и обычно возвращается в течение часа",
+        "when": "Небольшие манипуляции на коже и слизистых, установка катетера и забор крови у детей, осмотры и вмешательства в полости рта, носа, горла и глаза, уменьшение боли от последующего укола анестетика",
+        "prep": "Специальной подготовки нет; сказать об аллергии на местные анестетики, обезболенный глаз не тереть, а после обезболивания горла не есть и не пить, пока чувствительность не вернётся",
+        "abnormal": "На обработанном участке возможны лёгкое жжение, покраснение или побледнение, которые проходят вместе с действием препарата. Сыпь, отёк, затруднённое дыхание или сохраняющееся онемение — повод сразу обратиться к врачу"
+      },
+      "en": {
+        "what": "Numbing the surface of the skin or of a mucous membrane without an injection, using a gel, cream, spray or drops",
+        "how": "The anaesthetic is applied to the area and left for a few minutes to take effect; sensitivity is reduced only in the surface layer and usually returns within an hour",
+        "when": "Minor procedures on the skin and mucous membranes, placing a cannula and taking blood in children, examinations and procedures in the mouth, nose, throat and eye, reducing the pain of a subsequent anaesthetic injection",
+        "prep": "No special preparation; report any allergy to local anaesthetics, do not rub an anaesthetised eye, and after the throat is numbed do not eat or drink until sensation returns",
+        "abnormal": "Mild burning, redness or blanching of the treated area is possible and passes as the medicine wears off. A rash, swelling, difficulty breathing or numbness that persists are a reason to contact a doctor straight away"
+      },
+      "sr": {
+        "what": "Obezbolivanje površine kože ili sluznice bez injekcije — gelom, kremom, sprejom ili kapima",
+        "how": "Anestetik se nanese na traženo mjesto i sačeka nekoliko minuta da djeluje; osjetljivost se smanjuje samo u površnom sloju i obično se vraća u roku od sat vremena",
+        "when": "Manji zahvati na koži i sluznicama, postavljanje kanile i vađenje krvi kod djece, pregledi i zahvati u ustima, nosu, grlu i oku, smanjenje bola od injekcije anestetika koja slijedi",
+        "prep": "Posebna priprema ne postoji; prijaviti alergiju na lokalne anestetike, anestezirano oko ne trljati, a poslije obezbolivanja grla ne jesti i ne piti dok se osjećaj ne vrati",
+        "abnormal": "Na obrađenom mjestu mogući su blago peckanje, crvenilo ili bljedilo, koji prolaze zajedno sa dejstvom lijeka. Osip, otok, otežano disanje ili utrnulost koja se zadržava razlog su da se odmah javite ljekaru"
+      },
+      "de": {
+        "what": "Betäubung der Oberfläche von Haut oder Schleimhaut ohne Spritze — mit Gel, Creme, Spray oder Tropfen",
+        "how": "Das Betäubungsmittel wird auf die Stelle aufgetragen und wirkt nach einigen Minuten; die Empfindlichkeit ist nur in der oberflächlichen Schicht herabgesetzt und kehrt meist innerhalb einer Stunde zurück",
+        "when": "Kleine Eingriffe an Haut und Schleimhäuten, Legen einer Kanüle und Blutentnahme bei Kindern, Untersuchungen und Eingriffe in Mund, Nase, Rachen und Auge, Linderung des Schmerzes einer anschließenden Betäubungsspritze",
+        "prep": "Keine besondere Vorbereitung; Allergien gegen örtliche Betäubungsmittel angeben, ein betäubtes Auge nicht reiben und nach Betäubung des Rachens nichts essen und trinken, bis das Gefühl zurückkehrt",
+        "abnormal": "An der behandelten Stelle sind leichtes Brennen, Rötung oder Abblassen möglich, die mit der Wirkung des Mittels vergehen. Hautausschlag, Schwellung, Atemnot oder anhaltende Taubheit sind ein Grund, sofort einen Arzt aufzusuchen"
+      },
+      "tr": {
+        "what": "Cilt ya da mukoza yüzeyinin iğnesiz olarak jel, krem, sprey veya damla ile uyuşturulması",
+        "how": "Anestezik ilgili bölgeye sürülür ve etki etmesi için birkaç dakika beklenir; duyarlılık yalnızca yüzey tabakada azalır ve genellikle bir saat içinde geri döner",
+        "when": "Cilt ve mukozadaki küçük işlemler, çocuklarda damar yolu açılması ve kan alınması, ağız, burun, boğaz ve gözdeki muayene ve girişimler, ardından yapılacak anestezi iğnesinin ağrısını azaltmak",
+        "prep": "Özel hazırlık yoktur; lokal anesteziklere alerjiyi bildirmek, uyuşturulan gözü ovuşturmamak, boğaz uyuşturulduktan sonra his geri gelene kadar yiyip içmemek gerekir",
+        "abnormal": "Uygulanan bölgede hafif yanma, kızarıklık veya solukluk görülebilir ve ilacın etkisiyle birlikte geçer. Döküntü, şişlik, nefes darlığı ya da sürüp giden uyuşukluk hemen hekime başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Обезболивање површине коже или слузнице без ињекције — гелом, кремом, спрејом или капима",
+        "how": "Анестетик се нанесе на тражено мјесто и сачека неколико минута да дјелује; осјетљивост се смањује само у површном слоју и обично се враћа у року од сат времена",
+        "when": "Мањи захвати на кожи и слузницама, постављање каниле и вађење крви код дјеце, прегледи и захвати у устима, носу, грлу и оку, смањење бола од ињекције анестетика која слиједи",
+        "prep": "Посебна припрема не постоји; пријавити алергију на локалне анестетике, анестезирано око не трљати, а послије обезболивања грла не јести и не пити док се осјећај не врати",
+        "abnormal": "На обрађеном мјесту могући су благо пецкање, црвенило или бљедило, који пролазе заједно са дејством лијека. Осип, оток, отежано дисање или утрнулост која се задржава разлог су да се одмах јавите љекару"
+      }
+    }
+  },
+  {
+    "slug": "tube-feeding-per-meal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Введение питательной смеси через установленный желудочный зонд, когда глотание невозможно или небезопасно",
+        "how": "Медсестра проверяет положение зонда, приподнимает изголовье кровати, медленно вводит подогретую смесь шприцем или капельно и затем промывает зонд водой; одно кормление занимает около получаса, после него пациент ещё какое-то время остаётся с приподнятой головой",
+        "when": "Нарушение глотания после инсульта и травм, тяжёлое состояние с невозможностью есть самостоятельно, препятствие в пищеводе, ситуации, когда питания через рот не хватает и лечащий врач назначает зондовое питание",
+        "prep": "Отдельной подготовки пациенту не нужно; зонд должен быть установлен и его положение проверено заранее, а состав и частоту кормлений определяет врач",
+        "abnormal": "Хорошо перенесённое кормление проходит без рвоты, кашля и вздутия живота. Кашель и затруднённое дыхание во время введения смеси, рвота, боль в животе, отсутствие стула или смещение зонда требуют немедленного обращения к медицинскому работнику"
+      },
+      "en": {
+        "what": "Delivery of a nutritional formula through an inserted gastric tube when swallowing is impossible or unsafe",
+        "how": "The nurse checks the position of the tube, raises the head of the bed, slowly gives the warmed formula by syringe or by drip and then flushes the tube with water; one feed takes about half an hour, after which the patient stays with the head raised for a while",
+        "when": "Swallowing disorder after a stroke or injury, a severe condition in which the patient cannot eat unaided, an obstruction in the oesophagus, situations where intake by mouth is insufficient and the treating doctor prescribes tube feeding",
+        "prep": "No separate preparation is needed from the patient; the tube must already be in place with its position checked, and the composition and frequency of feeds are set by the doctor",
+        "abnormal": "A well-tolerated feed passes without vomiting, coughing or abdominal bloating. Coughing and difficulty breathing while the formula is given, vomiting, abdominal pain, absent bowel movements or a displaced tube require immediate contact with a health professional"
+      },
+      "sr": {
+        "what": "Davanje hranljive smjese kroz postavljenu želudačnu sondu kada gutanje nije moguće ili nije bezbjedno",
+        "how": "Sestra provjeri položaj sonde, podigne uzglavlje kreveta, polako daje zagrijanu smjesu špricem ili kap po kap, a zatim ispere sondu vodom; jedan obrok traje oko pola sata, poslije čega pacijent još neko vrijeme ostaje podignute glave",
+        "when": "Poremećaj gutanja poslije moždanog udara i povreda, teško stanje u kojem pacijent ne može sam da jede, prepreka u jednjaku, stanja kada unos na usta nije dovoljan pa ljekar odredi ishranu preko sonde",
+        "prep": "Pacijentu posebna priprema nije potrebna; sonda mora biti postavljena i njen položaj provjeren ranije, a sastav i učestalost obroka određuje ljekar",
+        "abnormal": "Dobro podnesen obrok prolazi bez povraćanja, kašlja i nadutosti. Kašalj i otežano disanje tokom davanja smjese, povraćanje, bol u trbuhu, izostanak stolice ili pomjeranje sonde traže hitno javljanje zdravstvenom radniku"
+      },
+      "de": {
+        "what": "Gabe einer Nährlösung über eine liegende Magensonde, wenn Schlucken nicht möglich oder nicht sicher ist",
+        "how": "Die Pflegekraft prüft die Lage der Sonde, richtet das Kopfende des Bettes auf, gibt die angewärmte Nahrung langsam mit der Spritze oder als Tropfinfusion und spült die Sonde anschließend mit Wasser; eine Mahlzeit dauert etwa eine halbe Stunde, danach bleibt der Oberkörper noch eine Weile erhöht",
+        "when": "Schluckstörung nach Schlaganfall und Verletzungen, schwerer Zustand mit Unfähigkeit, selbst zu essen, Hindernis in der Speiseröhre, Situationen, in denen die Aufnahme über den Mund nicht ausreicht und der behandelnde Arzt Sondenernährung anordnet",
+        "prep": "Für den Patienten ist keine gesonderte Vorbereitung nötig; die Sonde muss bereits liegen und ihre Lage geprüft sein, Zusammensetzung und Häufigkeit der Mahlzeiten legt der Arzt fest",
+        "abnormal": "Eine gut vertragene Mahlzeit verläuft ohne Erbrechen, Husten und Blähungen. Husten und Atemnot während der Gabe, Erbrechen, Bauchschmerzen, ausbleibender Stuhlgang oder eine verrutschte Sonde erfordern sofortigen Kontakt zum Pflege- oder Ärzteteam"
+      },
+      "tr": {
+        "what": "Yutma mümkün olmadığında ya da güvenli olmadığında, yerleştirilmiş mide sondasından besin karışımının verilmesi",
+        "how": "Hemşire sondanın yerini kontrol eder, yatağın baş kısmını yükseltir, ılıtılmış karışımı enjektörle ya da damla damla yavaşça verir ve ardından sondayı suyla yıkar; bir öğün yaklaşık yarım saat sürer, sonrasında hasta bir süre baş yüksekte kalır",
+        "when": "İnme ve travma sonrası yutma bozukluğu, kendi başına yemek yiyemeyecek kadar ağır durum, yemek borusunda tıkanıklık, ağızdan alımın yetersiz kaldığı ve tedaviyi yürüten hekimin sonda ile beslenmeyi uygun gördüğü durumlar",
+        "prep": "Hasta için ayrı bir hazırlık gerekmez; sonda önceden yerleştirilmiş ve yeri doğrulanmış olmalıdır, karışımın içeriğini ve öğün sıklığını hekim belirler",
+        "abnormal": "İyi tolere edilen bir öğün kusma, öksürük ve karında şişkinlik olmadan geçer. Karışım verilirken öksürük ve nefes darlığı, kusma, karın ağrısı, dışkılamanın olmaması veya sondanın yerinden oynaması hemen sağlık çalışanına başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Давање хранљиве смјесе кроз постављену желудачну сонду када гутање није могуће или није безбједно",
+        "how": "Сестра провјери положај сонде, подигне узглавље кревета, полако даје загријану смјесу шприцем или кап по кап, а затим испере сонду водом; један оброк траје око пола сата, послије чега пацијент још неко вријеме остаје подигнуте главе",
+        "when": "Поремећај гутања послије можданог удара и повреда, тешко стање у којем пацијент не може сам да једе, препрека у једњаку, стања када унос на уста није довољан па љекар одреди исхрану преко сонде",
+        "prep": "Пацијенту посебна припрема није потребна; сонда мора бити постављена и њен положај провјерен раније, а састав и учесталост оброка одређује љекар",
+        "abnormal": "Добро поднесен оброк пролази без повраћања, кашља и надутости. Кашаљ и отежано дисање током давања смјесе, повраћање, бол у трбуху, изостанак столице или помјерање сонде траже хитно јављање здравственом раднику"
+      }
+    }
+  }
 ]

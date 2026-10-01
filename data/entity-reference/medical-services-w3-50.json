@@ -1,494 +1,578 @@
 [
-	{
-		"slug": "ambulatory-large-dressing",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Наложение большой стерильной повязки в перевязочной поликлиники — на рану или участок кожи, который не закрыть одной салфеткой",
-				"how": "Кожу вокруг обрабатывают антисептиком, рану закрывают несколькими слоями стерильного материала и фиксируют бинтом или сетчатым рукавом по всей окружности конечности либо на большом участке туловища; занимает около четверти часа",
-				"when": "Обширные ссадины и ожоги, раны после операций с длинным разрезом, повреждения на бедре, голени, плече и спине, фиксация покрытия на участке, который легко сдвигается при движении",
-				"prep": "Подготовка не нужна; прийти в свободной одежде, которую легко снять с перевязываемой области, прежнюю повязку не мочить и не снимать самостоятельно, сказать медсестре об аллергии на пластырь и антисептики",
-				"abnormal": "Правильно наложенная повязка держится до следующего визита, не промокает насквозь и не передавливает ткани. Онемение или посинение пальцев, нарастающая боль под повязкой, обильное промокание либо неприятный запах — повод вернуться к врачу, не дожидаясь назначенного дня"
-			},
-			"en": {
-				"what": "Application of a large sterile dressing in an outpatient treatment room, for a wound or skin area that a single compress cannot cover",
-				"how": "The surrounding skin is cleaned with antiseptic, the wound is covered with several layers of sterile material and secured with a bandage or a tubular net around the whole limb or over a wide area of the trunk; it takes about a quarter of an hour",
-				"when": "Extensive abrasions and burns, wounds after surgery with a long incision, injuries on the thigh, lower leg, shoulder and back, holding a dressing in place where movement shifts it easily",
-				"prep": "No preparation is needed; wear loose clothing that is easy to remove from the area, do not wet or take off the previous dressing yourself, tell the nurse about any allergy to adhesive plaster or antiseptics",
-				"abnormal": "A correctly applied dressing stays in place until the next visit, does not soak through and does not press on the tissues. Numbness or bluish fingers, growing pain under the dressing, heavy soaking or an unpleasant smell are reasons to return to the doctor without waiting for the scheduled day"
-			},
-			"sr": {
-				"what": "Postavljanje velike sterilne obloge u ambulantnom previjalištu, na ranu ili dio kože koji se ne može pokriti jednom kompresom",
-				"how": "Koža okolo se očisti antiseptikom, rana se pokrije sa više slojeva sterilnog materijala i učvrsti zavojem ili elastičnom mrežicom oko cijelog uda ili preko šireg dijela trupa; traje oko četvrt sata",
-				"when": "Obimne ogrebotine i opekotine, rane poslije operacija sa dugim rezom, povrede na butini, potkoljenici, ramenu i leđima, držanje obloge na mjestu koje se lako pomjera pri pokretu",
-				"prep": "Priprema nije potrebna; obući široku odjeću koja se lako skida sa tog dijela tijela, prethodnu oblogu ne kvasiti i ne skidati sami, reći sestri za alergiju na flaster i antiseptike",
-				"abnormal": "Dobro postavljena obloga drži se do sljedećeg dolaska, ne natapa se skroz i ne steže tkivo. Utrnulost ili modri prsti, bol koji jača ispod obloge, obilno natapanje ili neprijatan miris razlog su da se ljekaru vratite i prije zakazanog dana"
-			},
-			"de": {
-				"what": "Anlegen eines großen sterilen Verbandes im ambulanten Behandlungsraum, für eine Wunde oder Hautfläche, die eine einzelne Kompresse nicht abdeckt",
-				"how": "Die umgebende Haut wird mit Antiseptikum gereinigt, die Wunde mit mehreren Lagen sterilen Materials bedeckt und mit einer Mullbinde oder einem Schlauchnetzverband rund um die Gliedmaße oder über einen großen Rumpfbereich fixiert; es dauert etwa eine Viertelstunde",
-				"when": "Ausgedehnte Schürfwunden und Verbrennungen, Wunden nach Operationen mit langem Schnitt, Verletzungen an Oberschenkel, Unterschenkel, Schulter und Rücken, Fixierung einer Auflage dort, wo Bewegung sie leicht verschiebt",
-				"prep": "Keine Vorbereitung nötig; weite Kleidung tragen, die sich über dem betroffenen Bereich leicht ausziehen lässt, den alten Verband nicht nass machen und nicht selbst abnehmen, der Pflegekraft Allergien gegen Pflaster oder Antiseptika nennen",
-				"abnormal": "Ein korrekt angelegter Verband hält bis zum nächsten Termin, nässt nicht durch und schnürt das Gewebe nicht ein. Taubheit oder bläuliche Finger, zunehmende Schmerzen unter dem Verband, starkes Durchnässen oder unangenehmer Geruch sind Gründe, den Arzt vor dem geplanten Termin aufzusuchen"
-			},
-			"tr": {
-				"what": "Poliklinik pansuman odasında, tek bir gazlı bezle kapatılamayan yara veya cilt bölgesine büyük steril pansuman uygulanması",
-				"how": "Çevredeki cilt antiseptikle temizlenir, yara birkaç kat steril malzemeyle kapatılır ve kolun ya da bacağın tüm çevresine veya gövdenin geniş bir bölümüne sargı bezi ya da file sargıyla sabitlenir; yaklaşık çeyrek saat sürer",
-				"when": "Geniş sıyrıklar ve yanıklar, uzun kesili ameliyatlardan sonraki yaralar, uyluk, bacak, omuz ve sırttaki yaralanmalar, hareketle kolayca kayan bölgelerde örtünün sabitlenmesi",
-				"prep": "Hazırlık gerekmez; bölgeden kolay çıkarılabilen bol giysiyle gelin, önceki pansumanı ıslatmayın ve kendiniz çıkarmayın, flastere veya antiseptiklere alerjinizi hemşireye söyleyin",
-				"abnormal": "Doğru uygulanan pansuman bir sonraki randevuya kadar yerinde kalır, baştan başa ıslanmaz ve dokuyu sıkmaz. Uyuşma veya parmaklarda morarma, pansuman altında artan ağrı, bol ıslanma ya da kötü koku, belirlenen günü beklemeden hekime dönmeyi gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "ambulatory-small-dressing",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Наложение небольшой стерильной повязки в перевязочной поликлиники — на рану или место вмешательства размером в несколько сантиметров",
-				"how": "Кожу вокруг очищают антисептиком, на рану кладут небольшую стерильную салфетку и закрепляют её пластырем или коротким бинтом; занимает несколько минут",
-				"when": "Небольшие порезы и ссадины, место после удаления родинки или вскрытия мелкого гнойника, закрытие точки прокола, защита заживающего шва на пальце или кисти",
-				"prep": "Не требуется; освободить нужный участок от украшений и самодельных повязок, прийти с чистой кожей вокруг раны, предупредить о чувствительности к пластырю",
-				"abnormal": "Небольшая повязка обычно остаётся сухой и не мешает движениям, а рану под ней осматривают на следующем визите. Если салфетка быстро промокает, края раны краснеют или боль усиливается, нужен внеочередной осмотр врача"
-			},
-			"en": {
-				"what": "Application of a small sterile dressing in an outpatient treatment room, for a wound or procedure site a few centimetres across",
-				"how": "The surrounding skin is cleaned with antiseptic, a small sterile compress is placed on the wound and fixed with adhesive plaster or a short bandage; it takes a few minutes",
-				"when": "Small cuts and abrasions, the site after removal of a mole or drainage of a small abscess, covering a puncture point, protecting a healing stitch on a finger or hand",
-				"prep": "Not required; remove jewellery and improvised dressings from the area, come with clean skin around the wound, mention any sensitivity to adhesive plaster",
-				"abnormal": "A small dressing usually stays dry and does not restrict movement, and the wound under it is inspected at the next visit. If the compress soaks quickly, the wound edges turn red or the pain increases, an earlier medical check is needed"
-			},
-			"sr": {
-				"what": "Postavljanje male sterilne obloge u ambulantnom previjalištu, na ranu ili mjesto zahvata veličine nekoliko centimetara",
-				"how": "Koža okolo se očisti antiseptikom, na ranu se stavlja mala sterilna kompresa i učvrsti flasterom ili kratkim zavojem; traje nekoliko minuta",
-				"when": "Manje posjekotine i ogrebotine, mjesto poslije uklanjanja mladeža ili otvaranja male gnojne upale, pokrivanje mjesta uboda, zaštita šava koji zarasta na prstu ili šaci",
-				"prep": "Nije potrebna; skinuti nakit i samostalno postavljene obloge sa tog mjesta, doći sa čistom kožom oko rane, najaviti osjetljivost na flaster",
-				"abnormal": "Mala obloga obično ostaje suva i ne smeta pokretu, a rana ispod nje se pogleda na sljedećoj kontroli. Ako se kompresa brzo natopi, ivice rane pocrvene ili bol jača, potreban je vanredni pregled kod ljekara"
-			},
-			"de": {
-				"what": "Anlegen eines kleinen sterilen Verbandes im ambulanten Behandlungsraum, für eine Wunde oder Eingriffsstelle von wenigen Zentimetern",
-				"how": "Die umgebende Haut wird mit Antiseptikum gereinigt, eine kleine sterile Kompresse auf die Wunde gelegt und mit Pflaster oder einer kurzen Binde befestigt; es dauert wenige Minuten",
-				"when": "Kleine Schnitte und Schürfwunden, die Stelle nach Entfernung eines Muttermals oder Eröffnung eines kleinen Abszesses, Abdecken einer Einstichstelle, Schutz einer heilenden Naht an Finger oder Hand",
-				"prep": "Nicht erforderlich; Schmuck und selbst angelegte Verbände vom Bereich entfernen, mit sauberer Haut um die Wunde kommen, eine Empfindlichkeit gegen Pflaster ansprechen",
-				"abnormal": "Ein kleiner Verband bleibt meist trocken und behindert die Bewegung nicht, die Wunde darunter wird beim nächsten Termin beurteilt. Durchnässt die Kompresse rasch, röten sich die Wundränder oder nehmen die Schmerzen zu, ist eine vorgezogene ärztliche Kontrolle nötig"
-			},
-			"tr": {
-				"what": "Poliklinik pansuman odasında, birkaç santimetrelik yara veya işlem bölgesine küçük steril pansuman uygulanması",
-				"how": "Çevredeki cilt antiseptikle temizlenir, yaranın üzerine küçük steril gazlı bez konur ve flasterle ya da kısa sargıyla tutturulur; birkaç dakika sürer",
-				"when": "Küçük kesikler ve sıyrıklar, ben alındıktan ya da küçük bir apse boşaltıldıktan sonraki bölge, iğne giriş yerinin kapatılması, parmak veya eldeki iyileşen dikişin korunması",
-				"prep": "Gerekmez; bölgedeki takıları ve kendi sardığınız örtüleri çıkarın, yara çevresi temiz olarak gelin, flastere karşı hassasiyetinizi belirtin",
-				"abnormal": "Küçük pansuman genellikle kuru kalır ve hareketi engellemez, altındaki yara bir sonraki randevuda değerlendirilir. Gazlı bez çabuk ıslanıyorsa, yara kenarları kızarıyorsa ya da ağrı artıyorsa randevu dışı hekim kontrolü gerekir"
-			}
-		}
-	},
-	{
-		"slug": "burn-wound-care",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Медицинская помощь при ожоге кожи: охлаждение и очищение обожжённого участка, оценка его площади и глубины, закрытие подходящей повязкой",
-				"how": "Врач осматривает ожог, промывает его прохладным стерильным раствором, аккуратно убирает прилипшие частицы и остатки отслоившейся кожи, накладывает неприлипающее покрытие и мягкую повязку; при болезненности используют обезболивание, длительность зависит от площади ожога",
-				"when": "Ожоги горячей жидкостью, паром, пламенем и раскалённым предметом, химические и электрические ожоги, солнечные ожоги с пузырями, ожоги кисти, лица и стоп, повторный осмотр уже обработанного ожога",
-				"prep": "Подготовки нет; до визита подержать обожжённое место под прохладной проточной водой, прикрыть чистой тканью, ничего не наносить на кожу и не отрывать прилипшую одежду, снять с обожжённой конечности кольца и браслеты",
-				"abnormal": "Глубину ожога оценивают не сразу, поэтому осмотр нередко повторяют через несколько дней, а даже поверхностный ожог заживает дольше, чем кажется в первый день. Распространяющееся покраснение, гной, усиление боли, температура или ограничение движений требуют повторного обращения; дальнейшую тактику определяет врач"
-			},
-			"en": {
-				"what": "Medical care for a skin burn: cooling and cleaning the burnt area, assessing its extent and depth, and covering it with a suitable dressing",
-				"how": "The doctor examines the burn, rinses it with a cool sterile solution, carefully removes stuck particles and loose skin, then applies a non-adherent layer and a soft dressing; pain relief is used when needed and the duration depends on how large the burn is",
-				"when": "Burns from hot liquid, steam, flame and hot objects, chemical and electrical burns, sunburn with blisters, burns of the hand, face and feet, follow-up review of a burn already treated",
-				"prep": "No preparation; before the visit hold the burnt area under cool running water, cover it with clean cloth, apply nothing to the skin, do not pull off stuck clothing, and remove rings and bracelets from the burnt limb",
-				"abnormal": "The depth of a burn is not clear straight away, so the review is often repeated after a few days, and even a superficial burn heals more slowly than it seems on the first day. Spreading redness, pus, increasing pain, fever or restricted movement call for another visit; further management is decided by the doctor"
-			},
-			"sr": {
-				"what": "Medicinsko zbrinjavanje opekotine kože: hlađenje i čišćenje opečenog mjesta, procjena njegove površine i dubine i pokrivanje odgovarajućom oblogom",
-				"how": "Ljekar pregleda opekotinu, ispere je hladnim sterilnim rastvorom, pažljivo ukloni zalijepljene čestice i ostatke odljuštene kože, pa postavi neljepljivu oblogu i mekani zavoj; kod bola se daje obezboljavanje, a trajanje zavisi od površine opekotine",
-				"when": "Opekotine vrelom tečnošću, parom, plamenom i užarenim predmetom, hemijske i električne opekotine, opekotine od sunca sa mjehurima, opekotine šake, lica i stopala, kontrolni pregled već zbrinute opekotine",
-				"prep": "Priprema ne postoji; prije dolaska opečeno mjesto držati pod hladnom tekućom vodom, prekriti ga čistom tkaninom, ništa ne mazati po koži, ne odvajati zalijepljenu odjeću i skinuti prstenje i narukvice sa opečenog uda",
-				"abnormal": "Dubina opekotine se ne vidi odmah, pa se pregled često ponavlja nakon nekoliko dana, a i površna opekotina zarasta sporije nego što izgleda prvog dana. Crvenilo koje se širi, gnoj, jači bol, povišena temperatura ili ograničen pokret traže ponovni dolazak; dalji postupak određuje ljekar"
-			},
-			"de": {
-				"what": "Medizinische Versorgung einer Hautverbrennung: Kühlen und Reinigen des verbrannten Bereichs, Beurteilung von Ausdehnung und Tiefe und Abdecken mit einer passenden Auflage",
-				"how": "Der Arzt begutachtet die Verbrennung, spült sie mit kühler steriler Lösung, entfernt vorsichtig anhaftende Partikel und gelöste Hautreste und legt eine nicht haftende Auflage mit weichem Verband an; bei Schmerzen wird eine Schmerzlinderung eingesetzt, die Dauer richtet sich nach der Größe der Verbrennung",
-				"when": "Verbrennungen durch heiße Flüssigkeit, Dampf, Flammen und heiße Gegenstände, chemische und elektrische Verbrennungen, Sonnenbrand mit Blasen, Verbrennungen an Hand, Gesicht und Füßen, Kontrolle einer bereits versorgten Verbrennung",
-				"prep": "Keine Vorbereitung; vor dem Termin die verbrannte Stelle unter kühles fließendes Wasser halten, mit sauberem Tuch abdecken, nichts auf die Haut auftragen, festklebende Kleidung nicht abziehen und Ringe und Armbänder von der betroffenen Gliedmaße abnehmen",
-				"abnormal": "Die Tiefe einer Verbrennung zeigt sich nicht sofort, daher wird die Beurteilung oft nach einigen Tagen wiederholt, und selbst eine oberflächliche Verbrennung heilt langsamer als am ersten Tag erwartet. Sich ausbreitende Rötung, Eiter, stärkere Schmerzen, Fieber oder eingeschränkte Beweglichkeit erfordern eine erneute Vorstellung; das weitere Vorgehen legt der Arzt fest"
-			},
-			"tr": {
-				"what": "Cilt yanığında tıbbi bakım: yanık bölgesinin soğutulup temizlenmesi, genişliğinin ve derinliğinin değerlendirilmesi ve uygun örtüyle kapatılması",
-				"how": "Hekim yanığı inceler, serin steril solüsyonla yıkar, yapışmış parçacıkları ve ayrılmış deri kalıntılarını dikkatle temizler, ardından yapışmayan örtü ve yumuşak pansuman uygular; ağrı varsa ağrı kesici kullanılır, süre yanığın genişliğine bağlıdır",
-				"when": "Sıcak sıvı, buhar, alev ve kızgın cisim yanıkları, kimyasal ve elektrik yanıkları, su toplamış güneş yanıkları, el, yüz ve ayak yanıkları, daha önce bakımı yapılmış yanığın kontrolü",
-				"prep": "Hazırlık yoktur; gelmeden önce yanık bölgesini serin akan suyun altında tutun, temiz bir bezle örtün, cilde hiçbir şey sürmeyin, yapışan giysiyi çekmeyin, yanan koldan ya da bacaktan yüzük ve bilezikleri çıkarın",
-				"abnormal": "Yanığın derinliği hemen belli olmaz, bu nedenle değerlendirme çoğu kez birkaç gün sonra tekrarlanır ve yüzeysel bir yanık bile ilk gün sanıldığından yavaş iyileşir. Yayılan kızarıklık, iltihap, artan ağrı, ateş ya da hareket kısıtlılığı yeniden başvurmayı gerektirir; sonraki aşamaya hekim karar verir"
-			}
-		}
-	},
-	{
-		"slug": "large-wound-care",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Хирургическая обработка обширной или глубокой раны с очищением на всю глубину и последующим закрытием",
-				"how": "Рану обезболивают местно, промывают, удаляют загрязнения, сгустки и нежизнеспособные ткани, останавливают кровотечение, при необходимости ушивают послойно или оставляют дренаж, затем накладывают многослойную повязку; обычно занимает от получаса",
-				"when": "Протяжённые и глубокие раны после падений, дорожных и производственных травм, рваные и размозжённые раны, раны с карманами и обильным загрязнением, повреждения на бедре, голени, спине и волосистой части головы",
-				"prep": "Подготовка не нужна, обратиться лучше как можно раньше; рану прикрыть чистой тканью и не промывать бытовыми средствами, сказать о прививке от столбняка, диабете, аллергии на анестетики и приёме препаратов, разжижающих кровь",
-				"abnormal": "Такая рана заживает дольше, под повязкой, и требует нескольких перевязок, а срок снятия швов называет хирург. Лихорадка, растущая боль, отёк, гнойное отделяемое или потеря чувствительности и движений ниже раны — повод вернуться к врачу немедленно"
-			},
-			"en": {
-				"what": "Surgical treatment of an extensive or deep wound, cleaned through its full depth and then closed",
-				"how": "The wound is anaesthetised locally, rinsed and freed of dirt, clots and non-viable tissue, bleeding is stopped, the tissues are closed in layers or a drain is left in place if needed, and a multi-layer dressing is applied; it usually takes half an hour or more",
-				"when": "Long and deep wounds after falls, road and work accidents, lacerated and crushed wounds, wounds with pockets and heavy contamination, injuries on the thigh, lower leg, back and scalp",
-				"prep": "No preparation is needed and it is best to come as early as possible; cover the wound with clean cloth and do not rinse it with household products, mention tetanus vaccination, diabetes, allergy to anaesthetics and any blood-thinning medication",
-				"abnormal": "Such a wound heals more slowly under the dressing and needs several dressing changes, and the surgeon sets the date for suture removal. Fever, growing pain, swelling, purulent discharge or loss of sensation and movement below the wound are reasons to return to the doctor immediately"
-			},
-			"sr": {
-				"what": "Hirurška obrada obimne ili duboke rane sa čišćenjem kroz cijelu dubinu i potonjim zatvaranjem",
-				"how": "Rana se obezboli lokalno, ispere, uklanjaju se prljavština, ugrušci i neživo tkivo, zaustavlja se krvarenje, po potrebi se tkivo ušiva po slojevima ili se ostavlja dren, a zatim se postavlja višeslojna obloga; obično traje pola sata i duže",
-				"when": "Dugačke i duboke rane poslije padova, saobraćajnih i radnih povreda, razderotine i zgnječene rane, rane sa džepovima i jakom prljavštinom, povrede na butini, potkoljenici, leđima i poglavini",
-				"prep": "Priprema nije potrebna, najbolje je javiti se što prije; ranu prekriti čistom tkaninom i ne ispirati je kućnim sredstvima, reći za vakcinu protiv tetanusa, dijabetes, alergiju na anestetike i uzimanje lijekova za razrjeđivanje krvi",
-				"abnormal": "Ovakva rana zarasta duže, pod oblogom, i traži više previjanja, a rok za skidanje konaca određuje hirurg. Povišena temperatura, bol koji raste, otok, gnojav iscjedak ili gubitak osjeta i pokreta ispod rane razlog su da se ljekaru vratite odmah"
-			},
-			"de": {
-				"what": "Chirurgische Versorgung einer ausgedehnten oder tiefen Wunde mit Reinigung über die gesamte Tiefe und anschließendem Verschluss",
-				"how": "Die Wunde wird örtlich betäubt, gespült, von Schmutz, Blutgerinnseln und abgestorbenem Gewebe befreit, Blutungen werden gestillt, das Gewebe bei Bedarf schichtweise genäht oder eine Drainage belassen, danach folgt ein mehrlagiger Verband; meist dauert es ab einer halben Stunde",
-				"when": "Lange und tiefe Wunden nach Stürzen, Verkehrs- und Arbeitsunfällen, Riss- und Quetschwunden, Wunden mit Taschen und starker Verschmutzung, Verletzungen an Oberschenkel, Unterschenkel, Rücken und Kopfhaut",
-				"prep": "Keine Vorbereitung nötig, möglichst früh vorstellig werden; die Wunde mit sauberem Tuch abdecken und nicht mit Haushaltsmitteln spülen, Tetanusimpfung, Diabetes, Allergien gegen Betäubungsmittel und blutverdünnende Medikamente angeben",
-				"abnormal": "Eine solche Wunde heilt unter dem Verband langsamer und erfordert mehrere Verbandwechsel, den Termin zur Fadenentfernung nennt der Chirurg. Fieber, zunehmende Schmerzen, Schwellung, eitriges Sekret oder Gefühls- und Bewegungsverlust unterhalb der Wunde sind Gründe, sofort zum Arzt zurückzukehren"
-			},
-			"tr": {
-				"what": "Geniş ya da derin bir yaranın tüm derinliği boyunca temizlenerek kapatıldığı cerrahi bakım",
-				"how": "Yara lokal olarak uyuşturulur, yıkanır, kir, pıhtı ve canlılığını yitirmiş doku uzaklaştırılır, kanama durdurulur, gerekirse doku katlar hâlinde dikilir ya da dren bırakılır, ardından çok katlı pansuman uygulanır; genellikle yarım saat ve üzeri sürer",
-				"when": "Düşme, trafik ve iş kazalarından sonraki uzun ve derin yaralar, yırtılmış ve ezilmiş yaralar, cepleri olan ve ağır kirlenmiş yaralar, uyluk, bacak, sırt ve saçlı deri yaralanmaları",
-				"prep": "Hazırlık gerekmez, mümkün olduğunca erken başvurmak iyidir; yarayı temiz bir bezle örtün ve ev temizlik ürünleriyle yıkamayın, tetanoz aşınızı, diyabeti, anestezik alerjisini ve kan sulandırıcı ilaç kullanımını bildirin",
-				"abnormal": "Böyle bir yara pansuman altında daha yavaş iyileşir ve birkaç kez pansuman değişimi gerektirir, dikişlerin alınma zamanını cerrah belirler. Ateş, artan ağrı, şişlik, iltihaplı akıntı ya da yaranın altında his ve hareket kaybı derhal hekime dönmeyi gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "medium-wound-care",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Хирургическая обработка раны средних размеров, которая выходит за пределы кожи, но не затрагивает глубокие структуры",
-				"how": "Края обезболивают местным анестетиком, рану промывают и очищают, при необходимости освежают края и накладывают несколько швов, сверху — стерильная повязка; чаще всего укладывается в двадцать-тридцать минут",
-				"when": "Порезы и рваные раны средней длины на предплечье, голени, кисти и голове, раны с неровными краями после бытовых и спортивных травм, повреждения, которые не закрыть одним пластырем",
-				"prep": "Не требуется; рану прикрыть чистой салфеткой, не наносить мази и не заливать спирт, взять данные о прививке от столбняка и список постоянных препаратов",
-				"abnormal": "После обработки умеренная боль и небольшой отёк в первые дни обычны, швы снимают в назначенный врачом срок. Усиление боли, покраснение вокруг раны, промокание повязки или температура означают, что осмотр нужен раньше"
-			},
-			"en": {
-				"what": "Surgical treatment of a medium-sized wound that goes beyond the skin but does not involve deep structures",
-				"how": "The edges are numbed with a local anaesthetic, the wound is rinsed and cleaned, the edges are trimmed if needed and several sutures are placed, followed by a sterile dressing; it usually fits into twenty to thirty minutes",
-				"when": "Cuts and lacerations of moderate length on the forearm, lower leg, hand and head, wounds with uneven edges after household and sports injuries, injuries that a single plaster cannot cover",
-				"prep": "Not required; cover the wound with a clean compress, do not apply ointments or pour alcohol on it, bring your tetanus vaccination details and a list of regular medicines",
-				"abnormal": "Moderate pain and slight swelling in the first days after the procedure are usual, and the sutures are removed on the date set by the doctor. Increasing pain, redness around the wound, a soaked dressing or fever mean an earlier check is needed"
-			},
-			"sr": {
-				"what": "Hirurška obrada rane srednje veličine koja prelazi granice kože, ali ne zahvata duboke strukture",
-				"how": "Ivice se obezbole lokalnim anestetikom, rana se ispere i očisti, po potrebi se ivice osvježe i postavi nekoliko šavova, a preko ide sterilna obloga; najčešće stane u dvadeset do trideset minuta",
-				"when": "Posjekotine i razderotine srednje dužine na podlaktici, potkoljenici, šaci i glavi, rane sa neravnim ivicama poslije kućnih i sportskih povreda, povrede koje se ne mogu pokriti jednim flasterom",
-				"prep": "Nije potrebna; ranu prekriti čistom gazom, ne mazati masti i ne polijevati alkohol, ponijeti podatke o vakcini protiv tetanusa i spisak stalnih lijekova",
-				"abnormal": "Poslije obrade su umjeren bol i blagi otok prvih dana uobičajeni, a konci se skidaju u roku koji odredi ljekar. Jači bol, crvenilo oko rane, natapanje obloge ili povišena temperatura znače da je pregled potreban ranije"
-			},
-			"de": {
-				"what": "Chirurgische Versorgung einer mittelgroßen Wunde, die über die Haut hinausreicht, tiefe Strukturen aber nicht betrifft",
-				"how": "Die Ränder werden örtlich betäubt, die Wunde gespült und gereinigt, die Ränder bei Bedarf angefrischt und mehrere Nähte gesetzt, darüber kommt ein steriler Verband; meist dauert es zwanzig bis dreißig Minuten",
-				"when": "Schnitt- und Risswunden mittlerer Länge an Unterarm, Unterschenkel, Hand und Kopf, Wunden mit unregelmäßigen Rändern nach Haushalts- und Sportverletzungen, Verletzungen, die ein einzelnes Pflaster nicht abdeckt",
-				"prep": "Nicht erforderlich; die Wunde mit sauberer Kompresse abdecken, keine Salben auftragen und keinen Alkohol daraufgießen, Angaben zur Tetanusimpfung und eine Liste der Dauermedikamente mitbringen",
-				"abnormal": "Mäßige Schmerzen und eine leichte Schwellung in den ersten Tagen sind üblich, die Fäden werden zu dem vom Arzt genannten Termin entfernt. Zunehmende Schmerzen, Rötung um die Wunde, ein durchnässter Verband oder Fieber bedeuten, dass eine frühere Kontrolle nötig ist"
-			},
-			"tr": {
-				"what": "Deriyi aşan, ancak derin yapıları tutmayan orta büyüklükteki bir yaranın cerrahi bakımı",
-				"how": "Kenarlar lokal anestezikle uyuşturulur, yara yıkanıp temizlenir, gerekirse kenarlar tazelenir ve birkaç dikiş atılır, üzerine steril pansuman konur; çoğunlukla yirmi ila otuz dakikada tamamlanır",
-				"when": "Ön kol, bacak, el ve baştaki orta uzunlukta kesik ve yırtık yaralar, ev ve spor kazalarından sonra kenarları düzensiz yaralar, tek bir bantla kapatılamayan yaralanmalar",
-				"prep": "Gerekmez; yarayı temiz gazlı bezle örtün, merhem sürmeyin ve üzerine alkol dökmeyin, tetanoz aşı bilgisini ve sürekli kullandığınız ilaçların listesini getirin",
-				"abnormal": "İşlemden sonraki ilk günlerde orta düzeyde ağrı ve hafif şişlik olağandır, dikişler hekimin belirlediği tarihte alınır. Ağrının artması, yara çevresinde kızarıklık, pansumanın ıslanması ya da ateş, kontrolün daha erken yapılması gerektiğini gösterir"
-			}
-		}
-	},
-	{
-		"slug": "operation-large-dressing",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Наложение большой стерильной повязки на операционную рану в условиях операционной",
-				"how": "Рану закрывают несколькими слоями стерильного материала по всей длине разреза, при наличии дренажа покрытие подводят вокруг трубки, повязку фиксируют бинтом или широким пластырем; делают это стерильными инструментами сразу по завершении вмешательства",
-				"when": "Окончание операций с протяжённым разрезом на животе, грудной клетке, спине и крупных суставах, вмешательства с оставленным дренажом, операции на нескольких участках одновременно",
-				"prep": "Отдельная подготовка не нужна — повязку накладывают в ходе уже запланированного вмешательства; заранее сообщают о реакции на пластырь, йод и дезинфицирующие средства",
-				"abnormal": "В первые сутки небольшое пропитывание повязки кровью считают обычным, дальше она должна оставаться сухой до первой перевязки. Быстрое промокание, усиление боли, растущий отёк или температура — повод осмотреть рану раньше"
-			},
-			"en": {
-				"what": "Application of a large sterile dressing to a surgical wound in the operating theatre",
-				"how": "The wound is covered with several layers of sterile material along the whole incision, the layers are shaped around a drain if one is in place, and the dressing is secured with a bandage or wide adhesive tape; it is done with sterile instruments immediately after the procedure ends",
-				"when": "The end of operations with a long incision on the abdomen, chest, back and large joints, procedures that leave a drain in place, operations on several sites at once",
-				"prep": "No separate preparation is needed, since the dressing is part of an already scheduled procedure; reactions to adhesive tape, iodine and disinfectants should be reported in advance",
-				"abnormal": "Slight blood staining of the dressing on the first day is considered usual, after which it should stay dry until the first dressing change. Rapid soaking, increasing pain, growing swelling or fever are reasons to have the wound inspected earlier"
-			},
-			"sr": {
-				"what": "Postavljanje velike sterilne obloge na hiruršku ranu u uslovima operacione sale",
-				"how": "Rana se pokriva sa više slojeva sterilnog materijala cijelom dužinom reza, kod postavljenog drena obloga se oblikuje oko cjevčice, a zatim se učvršćuje zavojem ili širokim flasterom; radi se sterilnim instrumentima odmah po završetku zahvata",
-				"when": "Završetak operacija sa dugim rezom na trbuhu, grudnom košu, leđima i velikim zglobovima, zahvati kod kojih je ostavljen dren, operacije na više mjesta istovremeno",
-				"prep": "Posebna priprema nije potrebna, jer se obloga postavlja tokom već zakazanog zahvata; unaprijed se prijavljuje reakcija na flaster, jod i sredstva za dezinfekciju",
-				"abnormal": "Blago natapanje obloge krvlju prvog dana smatra se uobičajenim, poslije toga ona treba da ostane suva do prvog previjanja. Brzo natapanje, jači bol, otok koji raste ili povišena temperatura razlog su da se rana pogleda ranije"
-			},
-			"de": {
-				"what": "Anlegen eines großen sterilen Verbandes auf eine Operationswunde im Operationssaal",
-				"how": "Die Wunde wird über die gesamte Schnittlänge mit mehreren Lagen sterilen Materials bedeckt, bei liegender Drainage werden die Lagen um den Schlauch geführt, anschließend wird der Verband mit Binde oder breitem Pflaster fixiert; dies geschieht mit sterilen Instrumenten unmittelbar nach Ende des Eingriffs",
-				"when": "Abschluss von Operationen mit langem Schnitt an Bauch, Brustkorb, Rücken und großen Gelenken, Eingriffe mit belassener Drainage, Operationen an mehreren Stellen zugleich",
-				"prep": "Eine eigene Vorbereitung entfällt, da der Verband Teil des bereits geplanten Eingriffs ist; Reaktionen auf Pflaster, Jod und Desinfektionsmittel werden vorab mitgeteilt",
-				"abnormal": "Eine leichte Blutdurchtränkung des Verbandes am ersten Tag gilt als üblich, danach sollte er bis zum ersten Verbandwechsel trocken bleiben. Schnelles Durchnässen, zunehmende Schmerzen, wachsende Schwellung oder Fieber sind Gründe, die Wunde früher zu kontrollieren"
-			},
-			"tr": {
-				"what": "Ameliyathane koşullarında cerrahi yaraya büyük steril pansuman uygulanması",
-				"how": "Yara, kesinin tüm uzunluğu boyunca birkaç kat steril malzemeyle kapatılır, dren varsa örtü boru çevresinde şekillendirilir, pansuman sargı bezi ya da geniş bantla sabitlenir; işlem biter bitmez steril aletlerle yapılır",
-				"when": "Karın, göğüs, sırt ve büyük eklemlerde uzun kesili ameliyatların sonu, dren bırakılan girişimler, aynı anda birden fazla bölgede yapılan ameliyatlar",
-				"prep": "Ayrı hazırlık gerekmez, çünkü pansuman zaten planlanmış girişimin bir parçasıdır; banta, iyoda ve dezenfektanlara karşı tepkiler önceden bildirilir",
-				"abnormal": "İlk gün pansumanın hafif kanla ıslanması olağan sayılır, sonrasında ilk pansuman değişimine kadar kuru kalmalıdır. Hızlı ıslanma, artan ağrı, büyüyen şişlik ya da ateş, yaranın daha erken değerlendirilmesini gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "operation-medium-dressing-i",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Стерильная повязка среднего размера, которой закрывают операционную рану после вмешательства средней величины",
-				"how": "После обработки кожи вокруг разреза рану закрывают стерильными салфетками в несколько слоёв и фиксируют пластырем или бинтом; выполняют в стерильных условиях, занимает несколько минут",
-				"when": "Операции на кисти, стопе, предплечье и голени, удаление образований кожи и подкожной клетчатки, небольшие вмешательства на брюшной стенке, завершение артроскопии",
-				"prep": "Собственной подготовки не требует: повязку накладывают во время вмешательства, к которому пациент уже подготовлен; важно заранее сказать о непереносимости пластыря и антисептиков",
-				"abnormal": "Повязка остаётся на ране до первой перевязки, которую назначает оперировавший врач, небольшое пятно крови в первые часы ожидаемо. Промокание насквозь, нарастающая боль или повышение температуры означают, что рану нужно показать раньше срока"
-			},
-			"en": {
-				"what": "A medium-sized sterile dressing used to cover a surgical wound after a moderate procedure",
-				"how": "The skin around the incision is cleaned, the wound is covered with several layers of sterile compresses and fixed with adhesive tape or a bandage; it is done under sterile conditions and takes a few minutes",
-				"when": "Operations on the hand, foot, forearm and lower leg, removal of skin and subcutaneous lesions, small procedures on the abdominal wall, the end of an arthroscopy",
-				"prep": "It needs no preparation of its own: the dressing is applied during a procedure the patient is already prepared for; intolerance to adhesive tape and antiseptics should be mentioned in advance",
-				"abnormal": "The dressing stays on the wound until the first change scheduled by the operating doctor, and a small blood stain in the first hours is expected. Soaking through, increasing pain or fever mean the wound should be shown earlier than planned"
-			},
-			"sr": {
-				"what": "Sterilna obloga srednje veličine kojom se pokriva hirurška rana poslije zahvata srednjeg obima",
-				"how": "Poslije čišćenja kože oko reza rana se pokriva sterilnim kompresama u više slojeva i učvršćuje flasterom ili zavojem; radi se u sterilnim uslovima i traje nekoliko minuta",
-				"when": "Operacije na šaci, stopalu, podlaktici i potkoljenici, uklanjanje promjena kože i potkožnog tkiva, manji zahvati na trbušnom zidu, završetak artroskopije",
-				"prep": "Ne traži sopstvenu pripremu: obloga se postavlja tokom zahvata za koji je pacijent već pripremljen; važno je unaprijed reći za nepodnošenje flastera i antiseptika",
-				"abnormal": "Obloga ostaje na rani do prvog previjanja koje zakaže ljekar koji je operisao, a mala mrlja krvi u prvim satima se očekuje. Natapanje skroz, bol koji jača ili povišena temperatura znače da ranu treba pokazati prije roka"
-			},
-			"de": {
-				"what": "Ein mittelgroßer steriler Verband, mit dem eine Operationswunde nach einem mittleren Eingriff abgedeckt wird",
-				"how": "Nach Reinigung der Haut um den Schnitt wird die Wunde mit mehreren Lagen steriler Kompressen bedeckt und mit Pflaster oder Binde fixiert; dies erfolgt unter sterilen Bedingungen und dauert wenige Minuten",
-				"when": "Operationen an Hand, Fuß, Unterarm und Unterschenkel, Entfernung von Haut- und Unterhautveränderungen, kleine Eingriffe an der Bauchwand, Abschluss einer Arthroskopie",
-				"prep": "Eine eigene Vorbereitung ist nicht nötig: der Verband wird während eines Eingriffs angelegt, auf den der Patient bereits vorbereitet ist; eine Unverträglichkeit gegenüber Pflaster und Antiseptika sollte vorher genannt werden",
-				"abnormal": "Der Verband bleibt bis zum ersten vom operierenden Arzt angesetzten Wechsel auf der Wunde, ein kleiner Blutfleck in den ersten Stunden ist zu erwarten. Durchnässen, zunehmende Schmerzen oder Fieber bedeuten, dass die Wunde früher gezeigt werden sollte"
-			},
-			"tr": {
-				"what": "Orta ölçekli bir girişimden sonra cerrahi yarayı kapatmak için kullanılan orta boy steril pansuman",
-				"how": "Kesi çevresindeki cilt temizlendikten sonra yara birkaç kat steril gazlı bezle kapatılır ve bant ya da sargı bezi ile tutturulur; steril koşullarda yapılır ve birkaç dakika sürer",
-				"when": "El, ayak, ön kol ve bacak ameliyatları, deri ve deri altı oluşumlarının çıkarılması, karın duvarındaki küçük girişimler, artroskopinin tamamlanması",
-				"prep": "Kendine ait hazırlık istemez: pansuman, hastanın zaten hazırlandığı girişim sırasında uygulanır; banta ve antiseptiklere tahammülsüzlüğü önceden belirtmek önemlidir",
-				"abnormal": "Pansuman, ameliyatı yapan hekimin belirlediği ilk değişime kadar yarada kalır, ilk saatlerde küçük bir kan lekesi beklenir. Baştan başa ıslanma, artan ağrı ya da ateş, yaranın planlanandan önce gösterilmesi gerektiğini belirtir"
-			}
-		}
-	},
-	{
-		"slug": "operation-medium-dressing-ii",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Вариант стерильной повязки среднего размера на операционную рану, который выбирают, когда покрытие должно быть плотнее и надёжнее закреплено",
-				"how": "Рану закрывают стерильными слоями с запасом по краям и фиксируют круговым или эластичным бинтом либо сетчатым рукавом, чтобы повязка не смещалась при движении; накладывают в операционной по завершении вмешательства",
-				"when": "Операции в области суставов, паха, подмышки и других подвижных зон, вмешательства с умеренным раневым отделяемым, раны, которым нужна лёгкая компрессия, операции у пациентов, которым трудно беречь повязку",
-				"prep": "Отдельной подготовки нет — повязку накладывают в рамках запланированной операции; заранее стоит сообщить о заболеваниях кожи, отёках и аллергии на перевязочные материалы",
-				"abnormal": "Повязка должна ощущаться плотно, но не стягивать: пальцы ниже неё остаются тёплыми и подвижными. Онемение, похолодание, пульсирующая боль или быстрое промокание — повод обратиться к врачу сразу, не дожидаясь перевязки"
-			},
-			"en": {
-				"what": "A version of the medium sterile surgical dressing chosen when the cover has to be thicker and held more firmly in place",
-				"how": "The wound is covered with sterile layers that extend beyond its edges and fixed with a circular or elastic bandage or a tubular net so that movement does not shift it; it is applied in the operating theatre once the procedure is finished",
-				"when": "Operations around joints, the groin, the armpit and other mobile areas, procedures with moderate wound discharge, wounds that need light compression, operations in patients who find it hard to keep a dressing intact",
-				"prep": "There is no separate preparation, as the dressing is part of the planned operation; skin conditions, swelling and allergy to dressing materials are worth mentioning beforehand",
-				"abnormal": "The dressing should feel snug but not tight: the fingers or toes below it stay warm and able to move. Numbness, coldness, throbbing pain or rapid soaking are reasons to contact the doctor at once rather than waiting for the dressing change"
-			},
-			"sr": {
-				"what": "Varijanta sterilne obloge srednje veličine na hirurškoj rani, koja se bira kada pokrivanje treba da bude deblje i čvršće učvršćeno",
-				"how": "Rana se pokriva sterilnim slojevima koji prelaze njene ivice i učvršćuje kružnim ili elastičnim zavojem odnosno mrežicom, da se obloga ne pomjera pri pokretu; postavlja se u operacionoj sali po završetku zahvata",
-				"when": "Operacije u predjelu zglobova, prepona, pazuha i drugih pokretnih zona, zahvati sa umjerenim iscjetkom iz rane, rane kojima treba blaga kompresija, operacije kod pacijenata kojima je teško da čuvaju oblogu",
-				"prep": "Posebne pripreme nema, obloga se postavlja u okviru planirane operacije; unaprijed je dobro reći za bolesti kože, otoke i alergiju na materijal za previjanje",
-				"abnormal": "Obloga treba da se osjeća čvrsto, ali ne da steže: prsti ispod nje ostaju topli i pokretni. Utrnulost, hladnoća, bol koji pulsira ili brzo natapanje razlog su da se ljekaru javite odmah, a ne da se čeka previjanje"
-			},
-			"de": {
-				"what": "Eine Variante des mittelgroßen sterilen Operationsverbandes, die gewählt wird, wenn die Auflage dicker und fester fixiert sein muss",
-				"how": "Die Wunde wird mit sterilen Lagen bedeckt, die über ihre Ränder hinausreichen, und mit einer zirkulären oder elastischen Binde beziehungsweise einem Schlauchnetzverband fixiert, damit sie bei Bewegung nicht verrutscht; angelegt wird sie im Operationssaal nach Ende des Eingriffs",
-				"when": "Operationen im Bereich von Gelenken, Leiste, Achselhöhle und anderen beweglichen Zonen, Eingriffe mit mäßiger Wundsekretion, Wunden, die leichte Kompression brauchen, Operationen bei Patienten, denen das Schonen eines Verbandes schwerfällt",
-				"prep": "Eine eigene Vorbereitung entfällt, der Verband gehört zur geplanten Operation; Hauterkrankungen, Schwellungen und Allergien gegen Verbandmaterial sollten vorab genannt werden",
-				"abnormal": "Der Verband soll fest sitzen, aber nicht einschnüren: die Finger oder Zehen darunter bleiben warm und beweglich. Taubheit, Kältegefühl, pochender Schmerz oder rasches Durchnässen sind Gründe, sofort den Arzt zu kontaktieren und nicht den Verbandwechsel abzuwarten"
-			},
-			"tr": {
-				"what": "Örtünün daha kalın ve daha sağlam sabitlenmesi gerektiğinde tercih edilen, cerrahi yaraya uygulanan orta boy steril pansuman çeşidi",
-				"how": "Yara, kenarlarını aşan steril katlarla kapatılır ve hareketle kaymaması için dairesel ya da elastik sargıyla veya file sargıyla tutturulur; girişim bittiğinde ameliyathanede uygulanır",
-				"when": "Eklem, kasık, koltuk altı ve diğer hareketli bölgelerdeki ameliyatlar, orta düzeyde yara akıntısı olan girişimler, hafif baskı gereken yaralar, pansumanı korumakta zorlanan hastaların ameliyatları",
-				"prep": "Ayrı hazırlık yoktur, pansuman planlanan ameliyatın parçasıdır; cilt hastalıklarını, ödemi ve pansuman malzemelerine alerjiyi önceden belirtmekte yarar vardır",
-				"abnormal": "Pansuman sıkıca durmalı ama boğmamalıdır: altındaki parmaklar sıcak ve hareketli kalır. Uyuşma, soğukluk, zonklayıcı ağrı ya da hızlı ıslanma, pansuman değişimini beklemeden hemen hekime başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "operation-small-dressing-ii",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Небольшая стерильная повязка на операционную рану, которой закрывают короткий разрез или место прокола",
-				"how": "Кожу вокруг обрабатывают, на рану накладывают небольшую стерильную салфетку или готовую пластырную наклейку и прижимают по краям; занимает минуту-две в конце вмешательства",
-				"when": "Завершение лапароскопических и эндоскопических вмешательств с короткими разрезами, удаление мелких образований кожи, биопсия, установка и удаление катетера, швы длиной в несколько сантиметров",
-				"prep": "Отдельная подготовка не нужна, повязка — часть самого вмешательства; стоит заранее сказать, если ранее пластырь вызывал раздражение кожи",
-				"abnormal": "Такую наклейку обычно оставляют до контрольного визита, а мыться разрешают по указанию врача. Отклеившаяся или промокшая повязка, краснота вокруг прокола и выделения — повод показать рану медработнику"
-			},
-			"en": {
-				"what": "A small sterile dressing for a surgical wound, used to cover a short incision or a puncture site",
-				"how": "The surrounding skin is cleaned, a small sterile compress or a ready-made adhesive island dressing is placed on the wound and pressed down at the edges; it takes a minute or two at the end of the procedure",
-				"when": "The end of laparoscopic and endoscopic procedures with short incisions, removal of small skin lesions, biopsy, insertion and removal of a catheter, sutures a few centimetres long",
-				"prep": "No separate preparation is needed, the dressing is part of the procedure itself; mention beforehand if adhesive tape has irritated your skin in the past",
-				"abnormal": "Such a dressing is usually left in place until the follow-up visit, and washing is allowed according to the doctor's instructions. A dressing that has come off or soaked through, redness around the puncture and any discharge are reasons to have the wound seen by a health professional"
-			},
-			"sr": {
-				"what": "Mala sterilna obloga na hirurškoj rani, kojom se pokriva kratak rez ili mjesto uboda",
-				"how": "Koža okolo se očisti, na ranu se stavlja mala sterilna kompresa ili gotova samoljepljiva obloga i pritisne po ivicama; traje minut do dva na kraju zahvata",
-				"when": "Završetak laparoskopskih i endoskopskih zahvata sa kratkim rezovima, uklanjanje sitnih promjena kože, biopsija, postavljanje i vađenje katetera, šavovi dugi nekoliko centimetara",
-				"prep": "Posebna priprema nije potrebna, obloga je dio samog zahvata; korisno je unaprijed reći ako je flaster ranije nadraživao kožu",
-				"abnormal": "Takva obloga se obično ostavlja do kontrolnog pregleda, a kupanje se dozvoljava po uputstvu ljekara. Odljepljena ili natopljena obloga, crvenilo oko mjesta uboda i iscjedak razlog su da ranu pogleda zdravstveni radnik"
-			},
-			"de": {
-				"what": "Ein kleiner steriler Verband für eine Operationswunde, der einen kurzen Schnitt oder eine Einstichstelle abdeckt",
-				"how": "Die umgebende Haut wird gereinigt, eine kleine sterile Kompresse oder ein fertiger Inselpflasterverband wird auf die Wunde gelegt und an den Rändern angedrückt; es dauert ein bis zwei Minuten am Ende des Eingriffs",
-				"when": "Abschluss laparoskopischer und endoskopischer Eingriffe mit kurzen Schnitten, Entfernung kleiner Hautveränderungen, Biopsie, Legen und Entfernen eines Katheters, wenige Zentimeter lange Nähte",
-				"prep": "Eine eigene Vorbereitung entfällt, der Verband gehört zum Eingriff selbst; wenn Pflaster früher die Haut gereizt hat, sollte das vorher gesagt werden",
-				"abnormal": "Ein solcher Verband bleibt meist bis zur Kontrolluntersuchung liegen, Waschen ist nach ärztlicher Anweisung erlaubt. Ein abgelöster oder durchnässter Verband, Rötung um die Einstichstelle und Sekret sind Gründe, die Wunde einer Fachkraft zu zeigen"
-			},
-			"tr": {
-				"what": "Kısa bir kesiyi ya da iğne giriş yerini kapatmak için cerrahi yaraya konan küçük steril pansuman",
-				"how": "Çevredeki cilt temizlenir, yaranın üzerine küçük steril gazlı bez ya da hazır yapışkanlı ada pansuman konur ve kenarlarından bastırılır; girişimin sonunda bir iki dakika sürer",
-				"when": "Kısa kesili laparoskopik ve endoskopik girişimlerin tamamlanması, küçük deri oluşumlarının çıkarılması, biyopsi, kateter takılması ve çıkarılması, birkaç santimetre uzunluğundaki dikişler",
-				"prep": "Ayrı hazırlık gerekmez, pansuman girişimin kendi parçasıdır; bant daha önce cildinizi tahriş ettiyse bunu önceden söylemekte yarar vardır",
-				"abnormal": "Bu tür pansuman genellikle kontrol randevusuna kadar yerinde bırakılır, yıkanmaya hekimin talimatına göre izin verilir. Kalkan ya da ıslanan pansuman, iğne yeri çevresinde kızarıklık ve akıntı, yaranın bir sağlık çalışanına gösterilmesini gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "small-wound-care",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Хирургическая обработка небольшой поверхностной раны: очищение и закрытие без вмешательства на глубоких тканях",
-				"how": "Рану промывают антисептиком, убирают мелкие инородные частицы, края при необходимости сводят одним-двумя швами или полоской пластыря и закрывают небольшой стерильной салфеткой; занимает около десяти минут",
-				"when": "Неглубокие порезы, царапины и ссадины, небольшие раны на пальце, кисти и колене, загрязнённая ранка, которую нужно промыть, мелкое повреждение кожи после удара",
-				"prep": "Подготовка не нужна; до визита промыть рану чистой водой и прикрыть салфеткой, ничего другого на неё не наносить, вспомнить дату последней прививки от столбняка",
-				"abnormal": "Маленькая рана обычно заживает в течение одной-двух недель и оставляет едва заметный след. Если края расходятся, появляется отделяемое или боль не уменьшается, рану нужно показать врачу повторно"
-			},
-			"en": {
-				"what": "Surgical treatment of a small superficial wound: cleaning and closure without work on deeper tissues",
-				"how": "The wound is rinsed with antiseptic, small foreign particles are removed, the edges are brought together with one or two stitches or a strip of adhesive tape if needed, and a small sterile compress is applied; it takes about ten minutes",
-				"when": "Shallow cuts, scratches and grazes, small wounds on a finger, hand or knee, a dirty little wound that needs rinsing, minor skin damage after a knock",
-				"prep": "No preparation is needed; before the visit rinse the wound with clean water and cover it with a compress, apply nothing else to it, and recall the date of your last tetanus vaccination",
-				"abnormal": "A small wound usually heals within one to two weeks and leaves barely a mark. If the edges separate, discharge appears or the pain does not ease, the wound should be shown to a doctor again"
-			},
-			"sr": {
-				"what": "Hirurška obrada male površne rane: čišćenje i zatvaranje bez zahvata na dubljim tkivima",
-				"how": "Rana se ispere antiseptikom, uklone se sitne strane čestice, ivice se po potrebi spoje sa jednim ili dva šava ili trakicom flastera i pokriju malom sterilnom kompresom; traje oko deset minuta",
-				"when": "Plitke posjekotine, ogrebotine i oguljotine, male rane na prstu, šaci i koljenu, zaprljana ranica koju treba isprati, sitno oštećenje kože poslije udarca",
-				"prep": "Priprema nije potrebna; prije dolaska ranu isprati čistom vodom i pokriti gazom, ništa drugo na nju ne stavljati i sjetiti se datuma posljednje vakcine protiv tetanusa",
-				"abnormal": "Mala rana obično zaraste za nedjelju do dvije i ostavlja jedva vidljiv trag. Ako se ivice razmaknu, pojavi se iscjedak ili bol ne popušta, ranu treba ponovo pokazati ljekaru"
-			},
-			"de": {
-				"what": "Chirurgische Versorgung einer kleinen oberflächlichen Wunde: Reinigung und Verschluss ohne Eingriff an tieferem Gewebe",
-				"how": "Die Wunde wird mit Antiseptikum gespült, kleine Fremdpartikel werden entfernt, die Ränder bei Bedarf mit ein bis zwei Stichen oder einem Pflasterstreifen zusammengeführt und mit einer kleinen sterilen Kompresse bedeckt; es dauert etwa zehn Minuten",
-				"when": "Flache Schnitte, Kratzer und Schürfwunden, kleine Wunden an Finger, Hand und Knie, eine verschmutzte kleine Wunde, die gespült werden muss, geringfügige Hautverletzung nach einem Stoß",
-				"prep": "Keine Vorbereitung nötig; vor dem Termin die Wunde mit sauberem Wasser spülen und mit einer Kompresse abdecken, nichts anderes darauf auftragen und sich an das Datum der letzten Tetanusimpfung erinnern",
-				"abnormal": "Eine kleine Wunde heilt meist innerhalb von ein bis zwei Wochen und hinterlässt kaum eine Spur. Weichen die Ränder auseinander, tritt Sekret aus oder lässt der Schmerz nicht nach, sollte die Wunde erneut einem Arzt gezeigt werden"
-			},
-			"tr": {
-				"what": "Küçük ve yüzeysel bir yaranın derin dokulara girilmeden temizlenip kapatıldığı cerrahi bakım",
-				"how": "Yara antiseptikle yıkanır, küçük yabancı parçacıklar alınır, gerekirse kenarlar bir iki dikişle ya da bant şeridiyle birleştirilir ve küçük steril gazlı bezle kapatılır; yaklaşık on dakika sürer",
-				"when": "Yüzeysel kesikler, çizikler ve sıyrıklar, parmak, el ve dizdeki küçük yaralar, yıkanması gereken kirli küçük yara, darbe sonrası hafif cilt hasarı",
-				"prep": "Hazırlık gerekmez; gelmeden önce yarayı temiz suyla yıkayıp gazlı bezle örtün, üzerine başka bir şey sürmeyin ve son tetanoz aşınızın tarihini hatırlayın",
-				"abnormal": "Küçük yara genellikle bir iki hafta içinde iyileşir ve neredeyse iz bırakmaz. Kenarlar ayrılıyorsa, akıntı oluyorsa ya da ağrı geçmiyorsa yara yeniden hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "surgical-suture-removal",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление нитей, которыми была ушита операционная рана, с осмотром рубца перед этим",
-				"how": "Врач или медсестра осматривает линию шва, обрабатывает её антисептиком, подрезает каждую нить у самой кожи и вытягивает пинцетом, при длинном разрезе часть швов иногда снимают первыми, а остальные через несколько дней; занимает несколько минут и обычно без анестезии",
-				"when": "В срок, назначенный оперировавшим врачом после хирургического вмешательства; сроки разные для лица, конечностей, живота и спины и зависят от вида шва",
-				"prep": "Подготовка не нужна; принести выписку из стационара или протокол операции, если оперировали в другом учреждении, не мочить рану перед визитом и не заклеивать её толстым слоем пластыря",
-				"abnormal": "После снятия швов рубец ещё несколько недель остаётся плотным и розовым, его созревание продолжается месяцами. Если край раны разошёлся, появились отделяемое, краснота или боль, часть нитей оставляют на месте, а срок повторного осмотра определяет врач"
-			},
-			"en": {
-				"what": "Removal of the threads that closed a surgical wound, after the scar has been inspected",
-				"how": "A doctor or nurse examines the suture line, cleans it with antiseptic, cuts each thread close to the skin and pulls it out with forceps; with a long incision some stitches are sometimes removed first and the rest a few days later; it takes a few minutes and usually needs no anaesthesia",
-				"when": "On the date set by the operating doctor after surgery; the timing differs for the face, limbs, abdomen and back and depends on the type of suture",
-				"prep": "No preparation is needed; bring the hospital discharge letter or operative report if you were operated on elsewhere, do not wet the wound before the visit and do not cover it with a thick layer of tape",
-				"abnormal": "After the stitches come out the scar stays firm and pink for several weeks and continues to mature over months. If a wound edge has separated, or discharge, redness or pain appear, some threads are left in place and the doctor sets the date for a repeat check"
-			},
-			"sr": {
-				"what": "Vađenje konaca kojima je bila ušivena hirurška rana, uz pregled ožiljka prije toga",
-				"how": "Ljekar ili sestra pregleda liniju šava, očisti je antiseptikom, presiječe svaki konac tik uz kožu i izvuče ga pincetom, a kod dugog reza se ponekad prvo skine dio konaca pa ostatak nakon nekoliko dana; traje nekoliko minuta i obično bez anestezije",
-				"when": "U roku koji je odredio ljekar koji je operisao; rokovi su različiti za lice, udove, trbuh i leđa i zavise od vrste šava",
-				"prep": "Priprema nije potrebna; ponijeti otpusnu listu ili operativni nalaz ako je operacija rađena u drugoj ustanovi, ranu ne kvasiti prije dolaska i ne prelijepljivati je debelim slojem flastera",
-				"abnormal": "Poslije vađenja konaca ožiljak još nekoliko sedmica ostaje čvrst i ružičast, a sazrijeva mjesecima. Ako se ivica rane razmakne ili se pojave iscjedak, crvenilo i bol, dio konaca se ostavlja, a rok ponovnog pregleda određuje ljekar"
-			},
-			"de": {
-				"what": "Entfernung der Fäden, mit denen eine Operationswunde verschlossen wurde, nach vorheriger Beurteilung der Narbe",
-				"how": "Arzt oder Pflegekraft begutachtet die Nahtlinie, reinigt sie mit Antiseptikum, schneidet jeden Faden dicht an der Haut durch und zieht ihn mit der Pinzette heraus; bei langem Schnitt wird manchmal zuerst ein Teil der Fäden entfernt und der Rest einige Tage später; es dauert wenige Minuten und kommt meist ohne Betäubung aus",
-				"when": "Zu dem Termin, den der operierende Arzt festgelegt hat; die Fristen unterscheiden sich für Gesicht, Gliedmaßen, Bauch und Rücken und hängen von der Nahtart ab",
-				"prep": "Keine Vorbereitung nötig; Entlassungsbrief oder Operationsbericht mitbringen, wenn die Operation anderswo erfolgte, die Wunde vor dem Termin nicht nass machen und nicht mit einer dicken Pflasterschicht abkleben",
-				"abnormal": "Nach der Fadenentfernung bleibt die Narbe noch einige Wochen fest und rosa und reift über Monate weiter. Hat sich ein Wundrand geöffnet oder treten Sekret, Rötung und Schmerz auf, bleibt ein Teil der Fäden liegen und der Arzt legt den Termin für die erneute Kontrolle fest"
-			},
-			"tr": {
-				"what": "Cerrahi yarayı kapatan ipliklerin, öncesinde nedbe değerlendirilerek alınması",
-				"how": "Hekim ya da hemşire dikiş hattını inceler, antiseptikle temizler, her ipliği cilde yakın keser ve pensle çeker; uzun kesilerde bazen önce bir kısım dikiş, birkaç gün sonra kalanı alınır; birkaç dakika sürer ve genellikle anestezi gerektirmez",
-				"when": "Ameliyatı yapan hekimin belirlediği tarihte; süreler yüz, kol ve bacaklar, karın ve sırt için farklıdır ve dikiş türüne bağlıdır",
-				"prep": "Hazırlık gerekmez; ameliyat başka bir kurumda yapıldıysa taburculuk özetini ya da ameliyat raporunu getirin, randevudan önce yarayı ıslatmayın ve kalın bant tabakasıyla kapatmayın",
-				"abnormal": "Dikişler alındıktan sonra nedbe birkaç hafta daha sert ve pembe kalır, olgunlaşması aylarca sürer. Yara kenarı açıldıysa ya da akıntı, kızarıklık ve ağrı ortaya çıktıysa ipliklerin bir bölümü yerinde bırakılır ve yeni kontrol tarihini hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "wound-suturing-under-local-anesthesia",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Обработка раны с обезболиванием места повреждения и сведением краёв швами",
-				"how": "Вокруг раны вводят местный анестетик, после наступления онемения рану промывают и очищают, края сближают узловыми швами и накладывают стерильную повязку; чувствительность возвращается в течение нескольких часов, вся процедура занимает около получаса",
-				"when": "Раны с расходящимися краями, болезненные повреждения, которые невозможно обработать без обезболивания, раны лица, кисти и волосистой части головы, укушенные и рваные раны, требующие очищения перед ушиванием",
-				"prep": "Подготовка не требуется, но важно сообщить о прошлых реакциях на местную анестезию у стоматолога, об аллергии на лекарства, о приёме препаратов, разжижающих кровь, и о сроке последней прививки от столбняка",
-				"abnormal": "После прекращения действия анестетика умеренная боль и отёк в первые сутки ожидаемы, швы снимают в срок, который называет врач. Нарастающая боль, покраснение, расходящиеся края или выделения из раны — повод прийти на осмотр раньше назначенной даты"
-			},
-			"en": {
-				"what": "Wound treatment in which the injured area is numbed and the edges are brought together with sutures",
-				"how": "A local anaesthetic is injected around the wound, and once the area is numb the wound is rinsed and cleaned, the edges are approximated with interrupted sutures and a sterile dressing is applied; sensation returns over several hours and the whole procedure takes about half an hour",
-				"when": "Wounds with gaping edges, painful injuries that cannot be treated without numbing, wounds of the face, hand and scalp, bite and laceration wounds that need cleaning before closure",
-				"prep": "No preparation is required, but it is important to report past reactions to local anaesthesia at the dentist, drug allergies, any blood-thinning medication and the date of your last tetanus vaccination",
-				"abnormal": "Once the anaesthetic wears off, moderate pain and swelling on the first day are expected, and the sutures are removed on the date the doctor gives. Increasing pain, redness, separating edges or discharge from the wound are reasons to come for a check before the scheduled date"
-			},
-			"sr": {
-				"what": "Obrada rane uz obezboljavanje povrijeđenog mjesta i spajanje ivica šavovima",
-				"how": "Oko rane se daje lokalni anestetik, pa se po nastupu utrnulosti rana ispere i očisti, ivice se približe pojedinačnim šavovima i postavi sterilna obloga; osjet se vraća tokom nekoliko sati, a cijeli zahvat traje oko pola sata",
-				"when": "Rane sa razmaknutim ivicama, bolne povrede koje se ne mogu obraditi bez obezboljavanja, rane lica, šake i poglavine, ujedne i razderane rane koje treba očistiti prije ušivanja",
-				"prep": "Priprema nije potrebna, ali je važno reći za ranije reakcije na lokalnu anesteziju kod stomatologa, za alergiju na lijekove, za uzimanje lijekova za razrjeđivanje krvi i za datum posljednje vakcine protiv tetanusa",
-				"abnormal": "Kada anestetik prestane da djeluje, umjeren bol i otok prvog dana se očekuju, a konci se skidaju u roku koji odredi ljekar. Bol koji jača, crvenilo, ivice koje se razmiču ili iscjedak iz rane razlog su da se na pregled dođe prije zakazanog datuma"
-			},
-			"de": {
-				"what": "Wundversorgung, bei der die verletzte Stelle betäubt und die Ränder mit Nähten zusammengeführt werden",
-				"how": "Um die Wunde wird ein örtliches Betäubungsmittel gespritzt, nach Eintreten der Taubheit wird die Wunde gespült und gereinigt, die Ränder werden mit Einzelknopfnähten angenähert und ein steriler Verband angelegt; das Gefühl kehrt über mehrere Stunden zurück, der ganze Eingriff dauert etwa eine halbe Stunde",
-				"when": "Wunden mit klaffenden Rändern, schmerzhafte Verletzungen, die ohne Betäubung nicht versorgt werden können, Wunden an Gesicht, Hand und Kopfhaut, Biss- und Risswunden, die vor dem Verschluss gereinigt werden müssen",
-				"prep": "Eine Vorbereitung ist nicht nötig, wichtig sind aber Angaben zu früheren Reaktionen auf örtliche Betäubung beim Zahnarzt, zu Arzneimittelallergien, zu blutverdünnenden Medikamenten und zum Datum der letzten Tetanusimpfung",
-				"abnormal": "Wenn die Betäubung nachlässt, sind mäßige Schmerzen und eine Schwellung am ersten Tag zu erwarten, die Fäden werden zu dem vom Arzt genannten Termin entfernt. Zunehmende Schmerzen, Rötung, auseinanderweichende Ränder oder Sekret aus der Wunde sind Gründe, früher als geplant zur Kontrolle zu kommen"
-			},
-			"tr": {
-				"what": "Yaralanan bölgenin uyuşturulup kenarların dikişlerle birleştirildiği yara bakımı",
-				"how": "Yaranın çevresine lokal anestezik verilir, uyuşma oluşunca yara yıkanıp temizlenir, kenarlar tek tek dikişlerle yaklaştırılır ve steril pansuman uygulanır; his birkaç saat içinde geri döner, işlemin tamamı yaklaşık yarım saat sürer",
-				"when": "Kenarları açılmış yaralar, uyuşturulmadan bakımı yapılamayan ağrılı yaralanmalar, yüz, el ve saçlı deri yaraları, kapatılmadan önce temizlenmesi gereken ısırık ve yırtık yaralar",
-				"prep": "Hazırlık gerekmez, ancak diş hekiminde lokal anesteziye karşı geçmişte gelişen tepkileri, ilaç alerjisini, kan sulandırıcı ilaç kullanımını ve son tetanoz aşısının tarihini bildirmek önemlidir",
-				"abnormal": "Anestezinin etkisi geçtiğinde ilk gün orta düzeyde ağrı ve şişlik beklenir, dikişler hekimin söylediği tarihte alınır. Artan ağrı, kızarıklık, ayrılan kenarlar ya da yaradan akıntı, belirlenen tarihten önce kontrole gelmeyi gerektirir"
-			}
-		}
-	}
+  {
+    "slug": "ambulatory-large-dressing",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Наложение большой стерильной повязки в перевязочной поликлиники — на рану или участок кожи, который не закрыть одной салфеткой",
+        "how": "Кожу вокруг обрабатывают антисептиком, рану закрывают несколькими слоями стерильного материала и фиксируют бинтом или сетчатым рукавом по всей окружности конечности либо на большом участке туловища; занимает около четверти часа",
+        "when": "Обширные ссадины и ожоги, раны после операций с длинным разрезом, повреждения на бедре, голени, плече и спине, фиксация покрытия на участке, который легко сдвигается при движении",
+        "prep": "Подготовка не нужна; прийти в свободной одежде, которую легко снять с перевязываемой области, прежнюю повязку не мочить и не снимать самостоятельно, сказать медсестре об аллергии на пластырь и антисептики",
+        "abnormal": "Правильно наложенная повязка держится до следующего визита, не промокает насквозь и не передавливает ткани. Онемение или посинение пальцев, нарастающая боль под повязкой, обильное промокание либо неприятный запах — повод вернуться к врачу, не дожидаясь назначенного дня"
+      },
+      "en": {
+        "what": "Application of a large sterile dressing in an outpatient treatment room, for a wound or skin area that a single compress cannot cover",
+        "how": "The surrounding skin is cleaned with antiseptic, the wound is covered with several layers of sterile material and secured with a bandage or a tubular net around the whole limb or over a wide area of the trunk; it takes about a quarter of an hour",
+        "when": "Extensive abrasions and burns, wounds after surgery with a long incision, injuries on the thigh, lower leg, shoulder and back, holding a dressing in place where movement shifts it easily",
+        "prep": "No preparation is needed; wear loose clothing that is easy to remove from the area, do not wet or take off the previous dressing yourself, tell the nurse about any allergy to adhesive plaster or antiseptics",
+        "abnormal": "A correctly applied dressing stays in place until the next visit, does not soak through and does not press on the tissues. Numbness or bluish fingers, growing pain under the dressing, heavy soaking or an unpleasant smell are reasons to return to the doctor without waiting for the scheduled day"
+      },
+      "sr": {
+        "what": "Postavljanje velike sterilne obloge u ambulantnom previjalištu, na ranu ili dio kože koji se ne može pokriti jednom kompresom",
+        "how": "Koža okolo se očisti antiseptikom, rana se pokrije sa više slojeva sterilnog materijala i učvrsti zavojem ili elastičnom mrežicom oko cijelog uda ili preko šireg dijela trupa; traje oko četvrt sata",
+        "when": "Obimne ogrebotine i opekotine, rane poslije operacija sa dugim rezom, povrede na butini, potkoljenici, ramenu i leđima, držanje obloge na mjestu koje se lako pomjera pri pokretu",
+        "prep": "Priprema nije potrebna; obući široku odjeću koja se lako skida sa tog dijela tijela, prethodnu oblogu ne kvasiti i ne skidati sami, reći sestri za alergiju na flaster i antiseptike",
+        "abnormal": "Dobro postavljena obloga drži se do sljedećeg dolaska, ne natapa se skroz i ne steže tkivo. Utrnulost ili modri prsti, bol koji jača ispod obloge, obilno natapanje ili neprijatan miris razlog su da se ljekaru vratite i prije zakazanog dana"
+      },
+      "de": {
+        "what": "Anlegen eines großen sterilen Verbandes im ambulanten Behandlungsraum, für eine Wunde oder Hautfläche, die eine einzelne Kompresse nicht abdeckt",
+        "how": "Die umgebende Haut wird mit Antiseptikum gereinigt, die Wunde mit mehreren Lagen sterilen Materials bedeckt und mit einer Mullbinde oder einem Schlauchnetzverband rund um die Gliedmaße oder über einen großen Rumpfbereich fixiert; es dauert etwa eine Viertelstunde",
+        "when": "Ausgedehnte Schürfwunden und Verbrennungen, Wunden nach Operationen mit langem Schnitt, Verletzungen an Oberschenkel, Unterschenkel, Schulter und Rücken, Fixierung einer Auflage dort, wo Bewegung sie leicht verschiebt",
+        "prep": "Keine Vorbereitung nötig; weite Kleidung tragen, die sich über dem betroffenen Bereich leicht ausziehen lässt, den alten Verband nicht nass machen und nicht selbst abnehmen, der Pflegekraft Allergien gegen Pflaster oder Antiseptika nennen",
+        "abnormal": "Ein korrekt angelegter Verband hält bis zum nächsten Termin, nässt nicht durch und schnürt das Gewebe nicht ein. Taubheit oder bläuliche Finger, zunehmende Schmerzen unter dem Verband, starkes Durchnässen oder unangenehmer Geruch sind Gründe, den Arzt vor dem geplanten Termin aufzusuchen"
+      },
+      "tr": {
+        "what": "Poliklinik pansuman odasında, tek bir gazlı bezle kapatılamayan yara veya cilt bölgesine büyük steril pansuman uygulanması",
+        "how": "Çevredeki cilt antiseptikle temizlenir, yara birkaç kat steril malzemeyle kapatılır ve kolun ya da bacağın tüm çevresine veya gövdenin geniş bir bölümüne sargı bezi ya da file sargıyla sabitlenir; yaklaşık çeyrek saat sürer",
+        "when": "Geniş sıyrıklar ve yanıklar, uzun kesili ameliyatlardan sonraki yaralar, uyluk, bacak, omuz ve sırttaki yaralanmalar, hareketle kolayca kayan bölgelerde örtünün sabitlenmesi",
+        "prep": "Hazırlık gerekmez; bölgeden kolay çıkarılabilen bol giysiyle gelin, önceki pansumanı ıslatmayın ve kendiniz çıkarmayın, flastere veya antiseptiklere alerjinizi hemşireye söyleyin",
+        "abnormal": "Doğru uygulanan pansuman bir sonraki randevuya kadar yerinde kalır, baştan başa ıslanmaz ve dokuyu sıkmaz. Uyuşma veya parmaklarda morarma, pansuman altında artan ağrı, bol ıslanma ya da kötü koku, belirlenen günü beklemeden hekime dönmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Постављање велике стерилне облоге у амбулантном превијалишту, на рану или дио коже који се не може покрити једном компресом",
+        "how": "Кожа около се очисти антисептиком, рана се покрије са више слојева стерилног материјала и учврсти завојем или еластичном мрежицом око цијелог уда или преко ширег дијела трупа; траје око четврт сата",
+        "when": "Обимне огреботине и опекотине, ране послије операција са дугим резом, повреде на бутини, поткољеници, рамену и леђима, држање облоге на мјесту које се лако помјера при покрету",
+        "prep": "Припрема није потребна; обући широку одјећу која се лако скида са тог дијела тијела, претходну облогу не квасити и не скидати сами, рећи сестри за алергију на фластер и антисептике",
+        "abnormal": "Добро постављена облога држи се до сљедећег доласка, не натапа се скроз и не стеже ткиво. Утрнулост или модри прсти, бол који јача испод облоге, обилно натапање или непријатан мирис разлог су да се љекару вратите и прије заказаног дана"
+      }
+    }
+  },
+  {
+    "slug": "ambulatory-small-dressing",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Наложение небольшой стерильной повязки в перевязочной поликлиники — на рану или место вмешательства размером в несколько сантиметров",
+        "how": "Кожу вокруг очищают антисептиком, на рану кладут небольшую стерильную салфетку и закрепляют её пластырем или коротким бинтом; занимает несколько минут",
+        "when": "Небольшие порезы и ссадины, место после удаления родинки или вскрытия мелкого гнойника, закрытие точки прокола, защита заживающего шва на пальце или кисти",
+        "prep": "Не требуется; освободить нужный участок от украшений и самодельных повязок, прийти с чистой кожей вокруг раны, предупредить о чувствительности к пластырю",
+        "abnormal": "Небольшая повязка обычно остаётся сухой и не мешает движениям, а рану под ней осматривают на следующем визите. Если салфетка быстро промокает, края раны краснеют или боль усиливается, нужен внеочередной осмотр врача"
+      },
+      "en": {
+        "what": "Application of a small sterile dressing in an outpatient treatment room, for a wound or procedure site a few centimetres across",
+        "how": "The surrounding skin is cleaned with antiseptic, a small sterile compress is placed on the wound and fixed with adhesive plaster or a short bandage; it takes a few minutes",
+        "when": "Small cuts and abrasions, the site after removal of a mole or drainage of a small abscess, covering a puncture point, protecting a healing stitch on a finger or hand",
+        "prep": "Not required; remove jewellery and improvised dressings from the area, come with clean skin around the wound, mention any sensitivity to adhesive plaster",
+        "abnormal": "A small dressing usually stays dry and does not restrict movement, and the wound under it is inspected at the next visit. If the compress soaks quickly, the wound edges turn red or the pain increases, an earlier medical check is needed"
+      },
+      "sr": {
+        "what": "Postavljanje male sterilne obloge u ambulantnom previjalištu, na ranu ili mjesto zahvata veličine nekoliko centimetara",
+        "how": "Koža okolo se očisti antiseptikom, na ranu se stavlja mala sterilna kompresa i učvrsti flasterom ili kratkim zavojem; traje nekoliko minuta",
+        "when": "Manje posjekotine i ogrebotine, mjesto poslije uklanjanja mladeža ili otvaranja male gnojne upale, pokrivanje mjesta uboda, zaštita šava koji zarasta na prstu ili šaci",
+        "prep": "Nije potrebna; skinuti nakit i samostalno postavljene obloge sa tog mjesta, doći sa čistom kožom oko rane, najaviti osjetljivost na flaster",
+        "abnormal": "Mala obloga obično ostaje suva i ne smeta pokretu, a rana ispod nje se pogleda na sljedećoj kontroli. Ako se kompresa brzo natopi, ivice rane pocrvene ili bol jača, potreban je vanredni pregled kod ljekara"
+      },
+      "de": {
+        "what": "Anlegen eines kleinen sterilen Verbandes im ambulanten Behandlungsraum, für eine Wunde oder Eingriffsstelle von wenigen Zentimetern",
+        "how": "Die umgebende Haut wird mit Antiseptikum gereinigt, eine kleine sterile Kompresse auf die Wunde gelegt und mit Pflaster oder einer kurzen Binde befestigt; es dauert wenige Minuten",
+        "when": "Kleine Schnitte und Schürfwunden, die Stelle nach Entfernung eines Muttermals oder Eröffnung eines kleinen Abszesses, Abdecken einer Einstichstelle, Schutz einer heilenden Naht an Finger oder Hand",
+        "prep": "Nicht erforderlich; Schmuck und selbst angelegte Verbände vom Bereich entfernen, mit sauberer Haut um die Wunde kommen, eine Empfindlichkeit gegen Pflaster ansprechen",
+        "abnormal": "Ein kleiner Verband bleibt meist trocken und behindert die Bewegung nicht, die Wunde darunter wird beim nächsten Termin beurteilt. Durchnässt die Kompresse rasch, röten sich die Wundränder oder nehmen die Schmerzen zu, ist eine vorgezogene ärztliche Kontrolle nötig"
+      },
+      "tr": {
+        "what": "Poliklinik pansuman odasında, birkaç santimetrelik yara veya işlem bölgesine küçük steril pansuman uygulanması",
+        "how": "Çevredeki cilt antiseptikle temizlenir, yaranın üzerine küçük steril gazlı bez konur ve flasterle ya da kısa sargıyla tutturulur; birkaç dakika sürer",
+        "when": "Küçük kesikler ve sıyrıklar, ben alındıktan ya da küçük bir apse boşaltıldıktan sonraki bölge, iğne giriş yerinin kapatılması, parmak veya eldeki iyileşen dikişin korunması",
+        "prep": "Gerekmez; bölgedeki takıları ve kendi sardığınız örtüleri çıkarın, yara çevresi temiz olarak gelin, flastere karşı hassasiyetinizi belirtin",
+        "abnormal": "Küçük pansuman genellikle kuru kalır ve hareketi engellemez, altındaki yara bir sonraki randevuda değerlendirilir. Gazlı bez çabuk ıslanıyorsa, yara kenarları kızarıyorsa ya da ağrı artıyorsa randevu dışı hekim kontrolü gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Постављање мале стерилне облоге у амбулантном превијалишту, на рану или мјесто захвата величине неколико центиметара",
+        "how": "Кожа около се очисти антисептиком, на рану се ставља мала стерилна компреса и учврсти фластером или кратким завојем; траје неколико минута",
+        "when": "Мање посјекотине и огреботине, мјесто послије уклањања младежа или отварања мале гнојне упале, покривање мјеста убода, заштита шава који зараста на прсту или шаци",
+        "prep": "Није потребна; скинути накит и самостално постављене облоге са тог мјеста, доћи са чистом кожом око ране, најавити осјетљивост на фластер",
+        "abnormal": "Мала облога обично остаје сува и не смета покрету, а рана испод ње се погледа на сљедећој контроли. Ако се компреса брзо натопи, ивице ране поцрвене или бол јача, потребан је ванредни преглед код љекара"
+      }
+    }
+  },
+  {
+    "slug": "burn-wound-care",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Медицинская помощь при ожоге кожи: охлаждение и очищение обожжённого участка, оценка его площади и глубины, закрытие подходящей повязкой",
+        "how": "Врач осматривает ожог, промывает его прохладным стерильным раствором, аккуратно убирает прилипшие частицы и остатки отслоившейся кожи, накладывает неприлипающее покрытие и мягкую повязку; при болезненности используют обезболивание, длительность зависит от площади ожога",
+        "when": "Ожоги горячей жидкостью, паром, пламенем и раскалённым предметом, химические и электрические ожоги, солнечные ожоги с пузырями, ожоги кисти, лица и стоп, повторный осмотр уже обработанного ожога",
+        "prep": "Подготовки нет; до визита подержать обожжённое место под прохладной проточной водой, прикрыть чистой тканью, ничего не наносить на кожу и не отрывать прилипшую одежду, снять с обожжённой конечности кольца и браслеты",
+        "abnormal": "Глубину ожога оценивают не сразу, поэтому осмотр нередко повторяют через несколько дней, а даже поверхностный ожог заживает дольше, чем кажется в первый день. Распространяющееся покраснение, гной, усиление боли, температура или ограничение движений требуют повторного обращения; дальнейшую тактику определяет врач"
+      },
+      "en": {
+        "what": "Medical care for a skin burn: cooling and cleaning the burnt area, assessing its extent and depth, and covering it with a suitable dressing",
+        "how": "The doctor examines the burn, rinses it with a cool sterile solution, carefully removes stuck particles and loose skin, then applies a non-adherent layer and a soft dressing; pain relief is used when needed and the duration depends on how large the burn is",
+        "when": "Burns from hot liquid, steam, flame and hot objects, chemical and electrical burns, sunburn with blisters, burns of the hand, face and feet, follow-up review of a burn already treated",
+        "prep": "No preparation; before the visit hold the burnt area under cool running water, cover it with clean cloth, apply nothing to the skin, do not pull off stuck clothing, and remove rings and bracelets from the burnt limb",
+        "abnormal": "The depth of a burn is not clear straight away, so the review is often repeated after a few days, and even a superficial burn heals more slowly than it seems on the first day. Spreading redness, pus, increasing pain, fever or restricted movement call for another visit; further management is decided by the doctor"
+      },
+      "sr": {
+        "what": "Medicinsko zbrinjavanje opekotine kože: hlađenje i čišćenje opečenog mjesta, procjena njegove površine i dubine i pokrivanje odgovarajućom oblogom",
+        "how": "Ljekar pregleda opekotinu, ispere je hladnim sterilnim rastvorom, pažljivo ukloni zalijepljene čestice i ostatke odljuštene kože, pa postavi neljepljivu oblogu i mekani zavoj; kod bola se daje obezboljavanje, a trajanje zavisi od površine opekotine",
+        "when": "Opekotine vrelom tečnošću, parom, plamenom i užarenim predmetom, hemijske i električne opekotine, opekotine od sunca sa mjehurima, opekotine šake, lica i stopala, kontrolni pregled već zbrinute opekotine",
+        "prep": "Priprema ne postoji; prije dolaska opečeno mjesto držati pod hladnom tekućom vodom, prekriti ga čistom tkaninom, ništa ne mazati po koži, ne odvajati zalijepljenu odjeću i skinuti prstenje i narukvice sa opečenog uda",
+        "abnormal": "Dubina opekotine se ne vidi odmah, pa se pregled često ponavlja nakon nekoliko dana, a i površna opekotina zarasta sporije nego što izgleda prvog dana. Crvenilo koje se širi, gnoj, jači bol, povišena temperatura ili ograničen pokret traže ponovni dolazak; dalji postupak određuje ljekar"
+      },
+      "de": {
+        "what": "Medizinische Versorgung einer Hautverbrennung: Kühlen und Reinigen des verbrannten Bereichs, Beurteilung von Ausdehnung und Tiefe und Abdecken mit einer passenden Auflage",
+        "how": "Der Arzt begutachtet die Verbrennung, spült sie mit kühler steriler Lösung, entfernt vorsichtig anhaftende Partikel und gelöste Hautreste und legt eine nicht haftende Auflage mit weichem Verband an; bei Schmerzen wird eine Schmerzlinderung eingesetzt, die Dauer richtet sich nach der Größe der Verbrennung",
+        "when": "Verbrennungen durch heiße Flüssigkeit, Dampf, Flammen und heiße Gegenstände, chemische und elektrische Verbrennungen, Sonnenbrand mit Blasen, Verbrennungen an Hand, Gesicht und Füßen, Kontrolle einer bereits versorgten Verbrennung",
+        "prep": "Keine Vorbereitung; vor dem Termin die verbrannte Stelle unter kühles fließendes Wasser halten, mit sauberem Tuch abdecken, nichts auf die Haut auftragen, festklebende Kleidung nicht abziehen und Ringe und Armbänder von der betroffenen Gliedmaße abnehmen",
+        "abnormal": "Die Tiefe einer Verbrennung zeigt sich nicht sofort, daher wird die Beurteilung oft nach einigen Tagen wiederholt, und selbst eine oberflächliche Verbrennung heilt langsamer als am ersten Tag erwartet. Sich ausbreitende Rötung, Eiter, stärkere Schmerzen, Fieber oder eingeschränkte Beweglichkeit erfordern eine erneute Vorstellung; das weitere Vorgehen legt der Arzt fest"
+      },
+      "tr": {
+        "what": "Cilt yanığında tıbbi bakım: yanık bölgesinin soğutulup temizlenmesi, genişliğinin ve derinliğinin değerlendirilmesi ve uygun örtüyle kapatılması",
+        "how": "Hekim yanığı inceler, serin steril solüsyonla yıkar, yapışmış parçacıkları ve ayrılmış deri kalıntılarını dikkatle temizler, ardından yapışmayan örtü ve yumuşak pansuman uygular; ağrı varsa ağrı kesici kullanılır, süre yanığın genişliğine bağlıdır",
+        "when": "Sıcak sıvı, buhar, alev ve kızgın cisim yanıkları, kimyasal ve elektrik yanıkları, su toplamış güneş yanıkları, el, yüz ve ayak yanıkları, daha önce bakımı yapılmış yanığın kontrolü",
+        "prep": "Hazırlık yoktur; gelmeden önce yanık bölgesini serin akan suyun altında tutun, temiz bir bezle örtün, cilde hiçbir şey sürmeyin, yapışan giysiyi çekmeyin, yanan koldan ya da bacaktan yüzük ve bilezikleri çıkarın",
+        "abnormal": "Yanığın derinliği hemen belli olmaz, bu nedenle değerlendirme çoğu kez birkaç gün sonra tekrarlanır ve yüzeysel bir yanık bile ilk gün sanıldığından yavaş iyileşir. Yayılan kızarıklık, iltihap, artan ağrı, ateş ya da hareket kısıtlılığı yeniden başvurmayı gerektirir; sonraki aşamaya hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Медицинско збрињавање опекотине коже: хлађење и чишћење опеченог мјеста, процјена његове површине и дубине и покривање одговарајућом облогом",
+        "how": "Љекар прегледа опекотину, испере је хладним стерилним раствором, пажљиво уклони залијепљене честице и остатке одљуштене коже, па постави нељепљиву облогу и мекани завој; код бола се даје обезбољавање, а трајање зависи од површине опекотине",
+        "when": "Опекотине врелом течношћу, паром, пламеном и ужареним предметом, хемијске и електричне опекотине, опекотине од сунца са мјехурима, опекотине шаке, лица и стопала, контролни преглед већ збринуте опекотине",
+        "prep": "Припрема не постоји; прије доласка опечено мјесто држати под хладном текућом водом, прекрити га чистом тканином, ништа не мазати по кожи, не одвајати залијепљену одјећу и скинути прстење и наруквице са опеченог уда",
+        "abnormal": "Дубина опекотине се не види одмах, па се преглед често понавља након неколико дана, а и површна опекотина зараста спорије него што изгледа првог дана. Црвенило које се шири, гној, јачи бол, повишена температура или ограничен покрет траже поновни долазак; даљи поступак одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "large-wound-care",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическая обработка обширной или глубокой раны с очищением на всю глубину и последующим закрытием",
+        "how": "Рану обезболивают местно, промывают, удаляют загрязнения, сгустки и нежизнеспособные ткани, останавливают кровотечение, при необходимости ушивают послойно или оставляют дренаж, затем накладывают многослойную повязку; обычно занимает от получаса",
+        "when": "Протяжённые и глубокие раны после падений, дорожных и производственных травм, рваные и размозжённые раны, раны с карманами и обильным загрязнением, повреждения на бедре, голени, спине и волосистой части головы",
+        "prep": "Подготовка не нужна, обратиться лучше как можно раньше; рану прикрыть чистой тканью и не промывать бытовыми средствами, сказать о прививке от столбняка, диабете, аллергии на анестетики и приёме препаратов, разжижающих кровь",
+        "abnormal": "Такая рана заживает дольше, под повязкой, и требует нескольких перевязок, а срок снятия швов называет хирург. Лихорадка, растущая боль, отёк, гнойное отделяемое или потеря чувствительности и движений ниже раны — повод вернуться к врачу немедленно"
+      },
+      "en": {
+        "what": "Surgical treatment of an extensive or deep wound, cleaned through its full depth and then closed",
+        "how": "The wound is anaesthetised locally, rinsed and freed of dirt, clots and non-viable tissue, bleeding is stopped, the tissues are closed in layers or a drain is left in place if needed, and a multi-layer dressing is applied; it usually takes half an hour or more",
+        "when": "Long and deep wounds after falls, road and work accidents, lacerated and crushed wounds, wounds with pockets and heavy contamination, injuries on the thigh, lower leg, back and scalp",
+        "prep": "No preparation is needed and it is best to come as early as possible; cover the wound with clean cloth and do not rinse it with household products, mention tetanus vaccination, diabetes, allergy to anaesthetics and any blood-thinning medication",
+        "abnormal": "Such a wound heals more slowly under the dressing and needs several dressing changes, and the surgeon sets the date for suture removal. Fever, growing pain, swelling, purulent discharge or loss of sensation and movement below the wound are reasons to return to the doctor immediately"
+      },
+      "sr": {
+        "what": "Hirurška obrada obimne ili duboke rane sa čišćenjem kroz cijelu dubinu i potonjim zatvaranjem",
+        "how": "Rana se obezboli lokalno, ispere, uklanjaju se prljavština, ugrušci i neživo tkivo, zaustavlja se krvarenje, po potrebi se tkivo ušiva po slojevima ili se ostavlja dren, a zatim se postavlja višeslojna obloga; obično traje pola sata i duže",
+        "when": "Dugačke i duboke rane poslije padova, saobraćajnih i radnih povreda, razderotine i zgnječene rane, rane sa džepovima i jakom prljavštinom, povrede na butini, potkoljenici, leđima i poglavini",
+        "prep": "Priprema nije potrebna, najbolje je javiti se što prije; ranu prekriti čistom tkaninom i ne ispirati je kućnim sredstvima, reći za vakcinu protiv tetanusa, dijabetes, alergiju na anestetike i uzimanje lijekova za razrjeđivanje krvi",
+        "abnormal": "Ovakva rana zarasta duže, pod oblogom, i traži više previjanja, a rok za skidanje konaca određuje hirurg. Povišena temperatura, bol koji raste, otok, gnojav iscjedak ili gubitak osjeta i pokreta ispod rane razlog su da se ljekaru vratite odmah"
+      },
+      "de": {
+        "what": "Chirurgische Versorgung einer ausgedehnten oder tiefen Wunde mit Reinigung über die gesamte Tiefe und anschließendem Verschluss",
+        "how": "Die Wunde wird örtlich betäubt, gespült, von Schmutz, Blutgerinnseln und abgestorbenem Gewebe befreit, Blutungen werden gestillt, das Gewebe bei Bedarf schichtweise genäht oder eine Drainage belassen, danach folgt ein mehrlagiger Verband; meist dauert es ab einer halben Stunde",
+        "when": "Lange und tiefe Wunden nach Stürzen, Verkehrs- und Arbeitsunfällen, Riss- und Quetschwunden, Wunden mit Taschen und starker Verschmutzung, Verletzungen an Oberschenkel, Unterschenkel, Rücken und Kopfhaut",
+        "prep": "Keine Vorbereitung nötig, möglichst früh vorstellig werden; die Wunde mit sauberem Tuch abdecken und nicht mit Haushaltsmitteln spülen, Tetanusimpfung, Diabetes, Allergien gegen Betäubungsmittel und blutverdünnende Medikamente angeben",
+        "abnormal": "Eine solche Wunde heilt unter dem Verband langsamer und erfordert mehrere Verbandwechsel, den Termin zur Fadenentfernung nennt der Chirurg. Fieber, zunehmende Schmerzen, Schwellung, eitriges Sekret oder Gefühls- und Bewegungsverlust unterhalb der Wunde sind Gründe, sofort zum Arzt zurückzukehren"
+      },
+      "tr": {
+        "what": "Geniş ya da derin bir yaranın tüm derinliği boyunca temizlenerek kapatıldığı cerrahi bakım",
+        "how": "Yara lokal olarak uyuşturulur, yıkanır, kir, pıhtı ve canlılığını yitirmiş doku uzaklaştırılır, kanama durdurulur, gerekirse doku katlar hâlinde dikilir ya da dren bırakılır, ardından çok katlı pansuman uygulanır; genellikle yarım saat ve üzeri sürer",
+        "when": "Düşme, trafik ve iş kazalarından sonraki uzun ve derin yaralar, yırtılmış ve ezilmiş yaralar, cepleri olan ve ağır kirlenmiş yaralar, uyluk, bacak, sırt ve saçlı deri yaralanmaları",
+        "prep": "Hazırlık gerekmez, mümkün olduğunca erken başvurmak iyidir; yarayı temiz bir bezle örtün ve ev temizlik ürünleriyle yıkamayın, tetanoz aşınızı, diyabeti, anestezik alerjisini ve kan sulandırıcı ilaç kullanımını bildirin",
+        "abnormal": "Böyle bir yara pansuman altında daha yavaş iyileşir ve birkaç kez pansuman değişimi gerektirir, dikişlerin alınma zamanını cerrah belirler. Ateş, artan ağrı, şişlik, iltihaplı akıntı ya da yaranın altında his ve hareket kaybı derhal hekime dönmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршка обрада обимне или дубоке ране са чишћењем кроз цијелу дубину и потоњим затварањем",
+        "how": "Рана се обезболи локално, испере, уклањају се прљавштина, угрушци и неживо ткиво, зауставља се крварење, по потреби се ткиво ушива по слојевима или се оставља дрен, а затим се поставља вишеслојна облога; обично траје пола сата и дуже",
+        "when": "Дугачке и дубоке ране послије падова, саобраћајних и радних повреда, раздеротине и згњечене ране, ране са џеповима и јаком прљавштином, повреде на бутини, поткољеници, леђима и поглавини",
+        "prep": "Припрема није потребна, најбоље је јавити се што прије; рану прекрити чистом тканином и не испирати је кућним средствима, рећи за вакцину против тетануса, дијабетес, алергију на анестетике и узимање лијекова за разрјеђивање крви",
+        "abnormal": "Оваква рана зараста дуже, под облогом, и тражи више превијања, а рок за скидање конаца одређује хирург. Повишена температура, бол који расте, оток, гнојав исцједак или губитак осјета и покрета испод ране разлог су да се љекару вратите одмах"
+      }
+    }
+  },
+  {
+    "slug": "medium-wound-care",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическая обработка раны средних размеров, которая выходит за пределы кожи, но не затрагивает глубокие структуры",
+        "how": "Края обезболивают местным анестетиком, рану промывают и очищают, при необходимости освежают края и накладывают несколько швов, сверху — стерильная повязка; чаще всего укладывается в двадцать-тридцать минут",
+        "when": "Порезы и рваные раны средней длины на предплечье, голени, кисти и голове, раны с неровными краями после бытовых и спортивных травм, повреждения, которые не закрыть одним пластырем",
+        "prep": "Не требуется; рану прикрыть чистой салфеткой, не наносить мази и не заливать спирт, взять данные о прививке от столбняка и список постоянных препаратов",
+        "abnormal": "После обработки умеренная боль и небольшой отёк в первые дни обычны, швы снимают в назначенный врачом срок. Усиление боли, покраснение вокруг раны, промокание повязки или температура означают, что осмотр нужен раньше"
+      },
+      "en": {
+        "what": "Surgical treatment of a medium-sized wound that goes beyond the skin but does not involve deep structures",
+        "how": "The edges are numbed with a local anaesthetic, the wound is rinsed and cleaned, the edges are trimmed if needed and several sutures are placed, followed by a sterile dressing; it usually fits into twenty to thirty minutes",
+        "when": "Cuts and lacerations of moderate length on the forearm, lower leg, hand and head, wounds with uneven edges after household and sports injuries, injuries that a single plaster cannot cover",
+        "prep": "Not required; cover the wound with a clean compress, do not apply ointments or pour alcohol on it, bring your tetanus vaccination details and a list of regular medicines",
+        "abnormal": "Moderate pain and slight swelling in the first days after the procedure are usual, and the sutures are removed on the date set by the doctor. Increasing pain, redness around the wound, a soaked dressing or fever mean an earlier check is needed"
+      },
+      "sr": {
+        "what": "Hirurška obrada rane srednje veličine koja prelazi granice kože, ali ne zahvata duboke strukture",
+        "how": "Ivice se obezbole lokalnim anestetikom, rana se ispere i očisti, po potrebi se ivice osvježe i postavi nekoliko šavova, a preko ide sterilna obloga; najčešće stane u dvadeset do trideset minuta",
+        "when": "Posjekotine i razderotine srednje dužine na podlaktici, potkoljenici, šaci i glavi, rane sa neravnim ivicama poslije kućnih i sportskih povreda, povrede koje se ne mogu pokriti jednim flasterom",
+        "prep": "Nije potrebna; ranu prekriti čistom gazom, ne mazati masti i ne polijevati alkohol, ponijeti podatke o vakcini protiv tetanusa i spisak stalnih lijekova",
+        "abnormal": "Poslije obrade su umjeren bol i blagi otok prvih dana uobičajeni, a konci se skidaju u roku koji odredi ljekar. Jači bol, crvenilo oko rane, natapanje obloge ili povišena temperatura znače da je pregled potreban ranije"
+      },
+      "de": {
+        "what": "Chirurgische Versorgung einer mittelgroßen Wunde, die über die Haut hinausreicht, tiefe Strukturen aber nicht betrifft",
+        "how": "Die Ränder werden örtlich betäubt, die Wunde gespült und gereinigt, die Ränder bei Bedarf angefrischt und mehrere Nähte gesetzt, darüber kommt ein steriler Verband; meist dauert es zwanzig bis dreißig Minuten",
+        "when": "Schnitt- und Risswunden mittlerer Länge an Unterarm, Unterschenkel, Hand und Kopf, Wunden mit unregelmäßigen Rändern nach Haushalts- und Sportverletzungen, Verletzungen, die ein einzelnes Pflaster nicht abdeckt",
+        "prep": "Nicht erforderlich; die Wunde mit sauberer Kompresse abdecken, keine Salben auftragen und keinen Alkohol daraufgießen, Angaben zur Tetanusimpfung und eine Liste der Dauermedikamente mitbringen",
+        "abnormal": "Mäßige Schmerzen und eine leichte Schwellung in den ersten Tagen sind üblich, die Fäden werden zu dem vom Arzt genannten Termin entfernt. Zunehmende Schmerzen, Rötung um die Wunde, ein durchnässter Verband oder Fieber bedeuten, dass eine frühere Kontrolle nötig ist"
+      },
+      "tr": {
+        "what": "Deriyi aşan, ancak derin yapıları tutmayan orta büyüklükteki bir yaranın cerrahi bakımı",
+        "how": "Kenarlar lokal anestezikle uyuşturulur, yara yıkanıp temizlenir, gerekirse kenarlar tazelenir ve birkaç dikiş atılır, üzerine steril pansuman konur; çoğunlukla yirmi ila otuz dakikada tamamlanır",
+        "when": "Ön kol, bacak, el ve baştaki orta uzunlukta kesik ve yırtık yaralar, ev ve spor kazalarından sonra kenarları düzensiz yaralar, tek bir bantla kapatılamayan yaralanmalar",
+        "prep": "Gerekmez; yarayı temiz gazlı bezle örtün, merhem sürmeyin ve üzerine alkol dökmeyin, tetanoz aşı bilgisini ve sürekli kullandığınız ilaçların listesini getirin",
+        "abnormal": "İşlemden sonraki ilk günlerde orta düzeyde ağrı ve hafif şişlik olağandır, dikişler hekimin belirlediği tarihte alınır. Ağrının artması, yara çevresinde kızarıklık, pansumanın ıslanması ya da ateş, kontrolün daha erken yapılması gerektiğini gösterir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршка обрада ране средње величине која прелази границе коже, али не захвата дубоке структуре",
+        "how": "Ивице се обезболе локалним анестетиком, рана се испере и очисти, по потреби се ивице освјеже и постави неколико шавова, а преко иде стерилна облога; најчешће стане у двадесет до тридесет минута",
+        "when": "Посјекотине и раздеротине средње дужине на подлактици, поткољеници, шаци и глави, ране са неравним ивицама послије кућних и спортских повреда, повреде које се не могу покрити једним фластером",
+        "prep": "Није потребна; рану прекрити чистом газом, не мазати масти и не полијевати алкохол, понијети податке о вакцини против тетануса и списак сталних лијекова",
+        "abnormal": "Послије обраде су умјерен бол и благи оток првих дана уобичајени, а конци се скидају у року који одреди љекар. Јачи бол, црвенило око ране, натапање облоге или повишена температура значе да је преглед потребан раније"
+      }
+    }
+  },
+  {
+    "slug": "operation-large-dressing",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Наложение большой стерильной повязки на операционную рану в условиях операционной",
+        "how": "Рану закрывают несколькими слоями стерильного материала по всей длине разреза, при наличии дренажа покрытие подводят вокруг трубки, повязку фиксируют бинтом или широким пластырем; делают это стерильными инструментами сразу по завершении вмешательства",
+        "when": "Окончание операций с протяжённым разрезом на животе, грудной клетке, спине и крупных суставах, вмешательства с оставленным дренажом, операции на нескольких участках одновременно",
+        "prep": "Отдельная подготовка не нужна — повязку накладывают в ходе уже запланированного вмешательства; заранее сообщают о реакции на пластырь, йод и дезинфицирующие средства",
+        "abnormal": "В первые сутки небольшое пропитывание повязки кровью считают обычным, дальше она должна оставаться сухой до первой перевязки. Быстрое промокание, усиление боли, растущий отёк или температура — повод осмотреть рану раньше"
+      },
+      "en": {
+        "what": "Application of a large sterile dressing to a surgical wound in the operating theatre",
+        "how": "The wound is covered with several layers of sterile material along the whole incision, the layers are shaped around a drain if one is in place, and the dressing is secured with a bandage or wide adhesive tape; it is done with sterile instruments immediately after the procedure ends",
+        "when": "The end of operations with a long incision on the abdomen, chest, back and large joints, procedures that leave a drain in place, operations on several sites at once",
+        "prep": "No separate preparation is needed, since the dressing is part of an already scheduled procedure; reactions to adhesive tape, iodine and disinfectants should be reported in advance",
+        "abnormal": "Slight blood staining of the dressing on the first day is considered usual, after which it should stay dry until the first dressing change. Rapid soaking, increasing pain, growing swelling or fever are reasons to have the wound inspected earlier"
+      },
+      "sr": {
+        "what": "Postavljanje velike sterilne obloge na hiruršku ranu u uslovima operacione sale",
+        "how": "Rana se pokriva sa više slojeva sterilnog materijala cijelom dužinom reza, kod postavljenog drena obloga se oblikuje oko cjevčice, a zatim se učvršćuje zavojem ili širokim flasterom; radi se sterilnim instrumentima odmah po završetku zahvata",
+        "when": "Završetak operacija sa dugim rezom na trbuhu, grudnom košu, leđima i velikim zglobovima, zahvati kod kojih je ostavljen dren, operacije na više mjesta istovremeno",
+        "prep": "Posebna priprema nije potrebna, jer se obloga postavlja tokom već zakazanog zahvata; unaprijed se prijavljuje reakcija na flaster, jod i sredstva za dezinfekciju",
+        "abnormal": "Blago natapanje obloge krvlju prvog dana smatra se uobičajenim, poslije toga ona treba da ostane suva do prvog previjanja. Brzo natapanje, jači bol, otok koji raste ili povišena temperatura razlog su da se rana pogleda ranije"
+      },
+      "de": {
+        "what": "Anlegen eines großen sterilen Verbandes auf eine Operationswunde im Operationssaal",
+        "how": "Die Wunde wird über die gesamte Schnittlänge mit mehreren Lagen sterilen Materials bedeckt, bei liegender Drainage werden die Lagen um den Schlauch geführt, anschließend wird der Verband mit Binde oder breitem Pflaster fixiert; dies geschieht mit sterilen Instrumenten unmittelbar nach Ende des Eingriffs",
+        "when": "Abschluss von Operationen mit langem Schnitt an Bauch, Brustkorb, Rücken und großen Gelenken, Eingriffe mit belassener Drainage, Operationen an mehreren Stellen zugleich",
+        "prep": "Eine eigene Vorbereitung entfällt, da der Verband Teil des bereits geplanten Eingriffs ist; Reaktionen auf Pflaster, Jod und Desinfektionsmittel werden vorab mitgeteilt",
+        "abnormal": "Eine leichte Blutdurchtränkung des Verbandes am ersten Tag gilt als üblich, danach sollte er bis zum ersten Verbandwechsel trocken bleiben. Schnelles Durchnässen, zunehmende Schmerzen, wachsende Schwellung oder Fieber sind Gründe, die Wunde früher zu kontrollieren"
+      },
+      "tr": {
+        "what": "Ameliyathane koşullarında cerrahi yaraya büyük steril pansuman uygulanması",
+        "how": "Yara, kesinin tüm uzunluğu boyunca birkaç kat steril malzemeyle kapatılır, dren varsa örtü boru çevresinde şekillendirilir, pansuman sargı bezi ya da geniş bantla sabitlenir; işlem biter bitmez steril aletlerle yapılır",
+        "when": "Karın, göğüs, sırt ve büyük eklemlerde uzun kesili ameliyatların sonu, dren bırakılan girişimler, aynı anda birden fazla bölgede yapılan ameliyatlar",
+        "prep": "Ayrı hazırlık gerekmez, çünkü pansuman zaten planlanmış girişimin bir parçasıdır; banta, iyoda ve dezenfektanlara karşı tepkiler önceden bildirilir",
+        "abnormal": "İlk gün pansumanın hafif kanla ıslanması olağan sayılır, sonrasında ilk pansuman değişimine kadar kuru kalmalıdır. Hızlı ıslanma, artan ağrı, büyüyen şişlik ya da ateş, yaranın daha erken değerlendirilmesini gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Постављање велике стерилне облоге на хируршку рану у условима операционе сале",
+        "how": "Рана се покрива са више слојева стерилног материјала цијелом дужином реза, код постављеног дрена облога се обликује око цјевчице, а затим се учвршћује завојем или широким фластером; ради се стерилним инструментима одмах по завршетку захвата",
+        "when": "Завршетак операција са дугим резом на трбуху, грудном кошу, леђима и великим зглобовима, захвати код којих је остављен дрен, операције на више мјеста истовремено",
+        "prep": "Посебна припрема није потребна, јер се облога поставља током већ заказаног захвата; унапријед се пријављује реакција на фластер, јод и средства за дезинфекцију",
+        "abnormal": "Благо натапање облоге крвљу првог дана сматра се уобичајеним, послије тога она треба да остане сува до првог превијања. Брзо натапање, јачи бол, оток који расте или повишена температура разлог су да се рана погледа раније"
+      }
+    }
+  },
+  {
+    "slug": "operation-medium-dressing-i",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Стерильная повязка среднего размера, которой закрывают операционную рану после вмешательства средней величины",
+        "how": "После обработки кожи вокруг разреза рану закрывают стерильными салфетками в несколько слоёв и фиксируют пластырем или бинтом; выполняют в стерильных условиях, занимает несколько минут",
+        "when": "Операции на кисти, стопе, предплечье и голени, удаление образований кожи и подкожной клетчатки, небольшие вмешательства на брюшной стенке, завершение артроскопии",
+        "prep": "Собственной подготовки не требует: повязку накладывают во время вмешательства, к которому пациент уже подготовлен; важно заранее сказать о непереносимости пластыря и антисептиков",
+        "abnormal": "Повязка остаётся на ране до первой перевязки, которую назначает оперировавший врач, небольшое пятно крови в первые часы ожидаемо. Промокание насквозь, нарастающая боль или повышение температуры означают, что рану нужно показать раньше срока"
+      },
+      "en": {
+        "what": "A medium-sized sterile dressing used to cover a surgical wound after a moderate procedure",
+        "how": "The skin around the incision is cleaned, the wound is covered with several layers of sterile compresses and fixed with adhesive tape or a bandage; it is done under sterile conditions and takes a few minutes",
+        "when": "Operations on the hand, foot, forearm and lower leg, removal of skin and subcutaneous lesions, small procedures on the abdominal wall, the end of an arthroscopy",
+        "prep": "It needs no preparation of its own: the dressing is applied during a procedure the patient is already prepared for; intolerance to adhesive tape and antiseptics should be mentioned in advance",
+        "abnormal": "The dressing stays on the wound until the first change scheduled by the operating doctor, and a small blood stain in the first hours is expected. Soaking through, increasing pain or fever mean the wound should be shown earlier than planned"
+      },
+      "sr": {
+        "what": "Sterilna obloga srednje veličine kojom se pokriva hirurška rana poslije zahvata srednjeg obima",
+        "how": "Poslije čišćenja kože oko reza rana se pokriva sterilnim kompresama u više slojeva i učvršćuje flasterom ili zavojem; radi se u sterilnim uslovima i traje nekoliko minuta",
+        "when": "Operacije na šaci, stopalu, podlaktici i potkoljenici, uklanjanje promjena kože i potkožnog tkiva, manji zahvati na trbušnom zidu, završetak artroskopije",
+        "prep": "Ne traži sopstvenu pripremu: obloga se postavlja tokom zahvata za koji je pacijent već pripremljen; važno je unaprijed reći za nepodnošenje flastera i antiseptika",
+        "abnormal": "Obloga ostaje na rani do prvog previjanja koje zakaže ljekar koji je operisao, a mala mrlja krvi u prvim satima se očekuje. Natapanje skroz, bol koji jača ili povišena temperatura znače da ranu treba pokazati prije roka"
+      },
+      "de": {
+        "what": "Ein mittelgroßer steriler Verband, mit dem eine Operationswunde nach einem mittleren Eingriff abgedeckt wird",
+        "how": "Nach Reinigung der Haut um den Schnitt wird die Wunde mit mehreren Lagen steriler Kompressen bedeckt und mit Pflaster oder Binde fixiert; dies erfolgt unter sterilen Bedingungen und dauert wenige Minuten",
+        "when": "Operationen an Hand, Fuß, Unterarm und Unterschenkel, Entfernung von Haut- und Unterhautveränderungen, kleine Eingriffe an der Bauchwand, Abschluss einer Arthroskopie",
+        "prep": "Eine eigene Vorbereitung ist nicht nötig: der Verband wird während eines Eingriffs angelegt, auf den der Patient bereits vorbereitet ist; eine Unverträglichkeit gegenüber Pflaster und Antiseptika sollte vorher genannt werden",
+        "abnormal": "Der Verband bleibt bis zum ersten vom operierenden Arzt angesetzten Wechsel auf der Wunde, ein kleiner Blutfleck in den ersten Stunden ist zu erwarten. Durchnässen, zunehmende Schmerzen oder Fieber bedeuten, dass die Wunde früher gezeigt werden sollte"
+      },
+      "tr": {
+        "what": "Orta ölçekli bir girişimden sonra cerrahi yarayı kapatmak için kullanılan orta boy steril pansuman",
+        "how": "Kesi çevresindeki cilt temizlendikten sonra yara birkaç kat steril gazlı bezle kapatılır ve bant ya da sargı bezi ile tutturulur; steril koşullarda yapılır ve birkaç dakika sürer",
+        "when": "El, ayak, ön kol ve bacak ameliyatları, deri ve deri altı oluşumlarının çıkarılması, karın duvarındaki küçük girişimler, artroskopinin tamamlanması",
+        "prep": "Kendine ait hazırlık istemez: pansuman, hastanın zaten hazırlandığı girişim sırasında uygulanır; banta ve antiseptiklere tahammülsüzlüğü önceden belirtmek önemlidir",
+        "abnormal": "Pansuman, ameliyatı yapan hekimin belirlediği ilk değişime kadar yarada kalır, ilk saatlerde küçük bir kan lekesi beklenir. Baştan başa ıslanma, artan ağrı ya da ateş, yaranın planlanandan önce gösterilmesi gerektiğini belirtir"
+      },
+      "sr_cyrl": {
+        "what": "Стерилна облога средње величине којом се покрива хируршка рана послије захвата средњег обима",
+        "how": "Послије чишћења коже око реза рана се покрива стерилним компресама у више слојева и учвршћује фластером или завојем; ради се у стерилним условима и траје неколико минута",
+        "when": "Операције на шаци, стопалу, подлактици и поткољеници, уклањање промјена коже и поткожног ткива, мањи захвати на трбушном зиду, завршетак артроскопије",
+        "prep": "Не тражи сопствену припрему: облога се поставља током захвата за који је пацијент већ припремљен; важно је унапријед рећи за неподношење фластера и антисептика",
+        "abnormal": "Облога остаје на рани до првог превијања које закаже љекар који је оперисао, а мала мрља крви у првим сатима се очекује. Натапање скроз, бол који јача или повишена температура значе да рану треба показати прије рока"
+      }
+    }
+  },
+  {
+    "slug": "operation-medium-dressing-ii",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Вариант стерильной повязки среднего размера на операционную рану, который выбирают, когда покрытие должно быть плотнее и надёжнее закреплено",
+        "how": "Рану закрывают стерильными слоями с запасом по краям и фиксируют круговым или эластичным бинтом либо сетчатым рукавом, чтобы повязка не смещалась при движении; накладывают в операционной по завершении вмешательства",
+        "when": "Операции в области суставов, паха, подмышки и других подвижных зон, вмешательства с умеренным раневым отделяемым, раны, которым нужна лёгкая компрессия, операции у пациентов, которым трудно беречь повязку",
+        "prep": "Отдельной подготовки нет — повязку накладывают в рамках запланированной операции; заранее стоит сообщить о заболеваниях кожи, отёках и аллергии на перевязочные материалы",
+        "abnormal": "Повязка должна ощущаться плотно, но не стягивать: пальцы ниже неё остаются тёплыми и подвижными. Онемение, похолодание, пульсирующая боль или быстрое промокание — повод обратиться к врачу сразу, не дожидаясь перевязки"
+      },
+      "en": {
+        "what": "A version of the medium sterile surgical dressing chosen when the cover has to be thicker and held more firmly in place",
+        "how": "The wound is covered with sterile layers that extend beyond its edges and fixed with a circular or elastic bandage or a tubular net so that movement does not shift it; it is applied in the operating theatre once the procedure is finished",
+        "when": "Operations around joints, the groin, the armpit and other mobile areas, procedures with moderate wound discharge, wounds that need light compression, operations in patients who find it hard to keep a dressing intact",
+        "prep": "There is no separate preparation, as the dressing is part of the planned operation; skin conditions, swelling and allergy to dressing materials are worth mentioning beforehand",
+        "abnormal": "The dressing should feel snug but not tight: the fingers or toes below it stay warm and able to move. Numbness, coldness, throbbing pain or rapid soaking are reasons to contact the doctor at once rather than waiting for the dressing change"
+      },
+      "sr": {
+        "what": "Varijanta sterilne obloge srednje veličine na hirurškoj rani, koja se bira kada pokrivanje treba da bude deblje i čvršće učvršćeno",
+        "how": "Rana se pokriva sterilnim slojevima koji prelaze njene ivice i učvršćuje kružnim ili elastičnim zavojem odnosno mrežicom, da se obloga ne pomjera pri pokretu; postavlja se u operacionoj sali po završetku zahvata",
+        "when": "Operacije u predjelu zglobova, prepona, pazuha i drugih pokretnih zona, zahvati sa umjerenim iscjetkom iz rane, rane kojima treba blaga kompresija, operacije kod pacijenata kojima je teško da čuvaju oblogu",
+        "prep": "Posebne pripreme nema, obloga se postavlja u okviru planirane operacije; unaprijed je dobro reći za bolesti kože, otoke i alergiju na materijal za previjanje",
+        "abnormal": "Obloga treba da se osjeća čvrsto, ali ne da steže: prsti ispod nje ostaju topli i pokretni. Utrnulost, hladnoća, bol koji pulsira ili brzo natapanje razlog su da se ljekaru javite odmah, a ne da se čeka previjanje"
+      },
+      "de": {
+        "what": "Eine Variante des mittelgroßen sterilen Operationsverbandes, die gewählt wird, wenn die Auflage dicker und fester fixiert sein muss",
+        "how": "Die Wunde wird mit sterilen Lagen bedeckt, die über ihre Ränder hinausreichen, und mit einer zirkulären oder elastischen Binde beziehungsweise einem Schlauchnetzverband fixiert, damit sie bei Bewegung nicht verrutscht; angelegt wird sie im Operationssaal nach Ende des Eingriffs",
+        "when": "Operationen im Bereich von Gelenken, Leiste, Achselhöhle und anderen beweglichen Zonen, Eingriffe mit mäßiger Wundsekretion, Wunden, die leichte Kompression brauchen, Operationen bei Patienten, denen das Schonen eines Verbandes schwerfällt",
+        "prep": "Eine eigene Vorbereitung entfällt, der Verband gehört zur geplanten Operation; Hauterkrankungen, Schwellungen und Allergien gegen Verbandmaterial sollten vorab genannt werden",
+        "abnormal": "Der Verband soll fest sitzen, aber nicht einschnüren: die Finger oder Zehen darunter bleiben warm und beweglich. Taubheit, Kältegefühl, pochender Schmerz oder rasches Durchnässen sind Gründe, sofort den Arzt zu kontaktieren und nicht den Verbandwechsel abzuwarten"
+      },
+      "tr": {
+        "what": "Örtünün daha kalın ve daha sağlam sabitlenmesi gerektiğinde tercih edilen, cerrahi yaraya uygulanan orta boy steril pansuman çeşidi",
+        "how": "Yara, kenarlarını aşan steril katlarla kapatılır ve hareketle kaymaması için dairesel ya da elastik sargıyla veya file sargıyla tutturulur; girişim bittiğinde ameliyathanede uygulanır",
+        "when": "Eklem, kasık, koltuk altı ve diğer hareketli bölgelerdeki ameliyatlar, orta düzeyde yara akıntısı olan girişimler, hafif baskı gereken yaralar, pansumanı korumakta zorlanan hastaların ameliyatları",
+        "prep": "Ayrı hazırlık yoktur, pansuman planlanan ameliyatın parçasıdır; cilt hastalıklarını, ödemi ve pansuman malzemelerine alerjiyi önceden belirtmekte yarar vardır",
+        "abnormal": "Pansuman sıkıca durmalı ama boğmamalıdır: altındaki parmaklar sıcak ve hareketli kalır. Uyuşma, soğukluk, zonklayıcı ağrı ya da hızlı ıslanma, pansuman değişimini beklemeden hemen hekime başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Варијанта стерилне облоге средње величине на хируршкој рани, која се бира када покривање треба да буде дебље и чвршће учвршћено",
+        "how": "Рана се покрива стерилним слојевима који прелазе њене ивице и учвршћује кружним или еластичним завојем односно мрежицом, да се облога не помјера при покрету; поставља се у операционој сали по завршетку захвата",
+        "when": "Операције у предјелу зглобова, препона, пазуха и других покретних зона, захвати са умјереним исцјетком из ране, ране којима треба блага компресија, операције код пацијената којима је тешко да чувају облогу",
+        "prep": "Посебне припреме нема, облога се поставља у оквиру планиране операције; унапријед је добро рећи за болести коже, отоке и алергију на материјал за превијање",
+        "abnormal": "Облога треба да се осјећа чврсто, али не да стеже: прсти испод ње остају топли и покретни. Утрнулост, хладноћа, бол који пулсира или брзо натапање разлог су да се љекару јавите одмах, а не да се чека превијање"
+      }
+    }
+  },
+  {
+    "slug": "operation-small-dressing-ii",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Небольшая стерильная повязка на операционную рану, которой закрывают короткий разрез или место прокола",
+        "how": "Кожу вокруг обрабатывают, на рану накладывают небольшую стерильную салфетку или готовую пластырную наклейку и прижимают по краям; занимает минуту-две в конце вмешательства",
+        "when": "Завершение лапароскопических и эндоскопических вмешательств с короткими разрезами, удаление мелких образований кожи, биопсия, установка и удаление катетера, швы длиной в несколько сантиметров",
+        "prep": "Отдельная подготовка не нужна, повязка — часть самого вмешательства; стоит заранее сказать, если ранее пластырь вызывал раздражение кожи",
+        "abnormal": "Такую наклейку обычно оставляют до контрольного визита, а мыться разрешают по указанию врача. Отклеившаяся или промокшая повязка, краснота вокруг прокола и выделения — повод показать рану медработнику"
+      },
+      "en": {
+        "what": "A small sterile dressing for a surgical wound, used to cover a short incision or a puncture site",
+        "how": "The surrounding skin is cleaned, a small sterile compress or a ready-made adhesive island dressing is placed on the wound and pressed down at the edges; it takes a minute or two at the end of the procedure",
+        "when": "The end of laparoscopic and endoscopic procedures with short incisions, removal of small skin lesions, biopsy, insertion and removal of a catheter, sutures a few centimetres long",
+        "prep": "No separate preparation is needed, the dressing is part of the procedure itself; mention beforehand if adhesive tape has irritated your skin in the past",
+        "abnormal": "Such a dressing is usually left in place until the follow-up visit, and washing is allowed according to the doctor's instructions. A dressing that has come off or soaked through, redness around the puncture and any discharge are reasons to have the wound seen by a health professional"
+      },
+      "sr": {
+        "what": "Mala sterilna obloga na hirurškoj rani, kojom se pokriva kratak rez ili mjesto uboda",
+        "how": "Koža okolo se očisti, na ranu se stavlja mala sterilna kompresa ili gotova samoljepljiva obloga i pritisne po ivicama; traje minut do dva na kraju zahvata",
+        "when": "Završetak laparoskopskih i endoskopskih zahvata sa kratkim rezovima, uklanjanje sitnih promjena kože, biopsija, postavljanje i vađenje katetera, šavovi dugi nekoliko centimetara",
+        "prep": "Posebna priprema nije potrebna, obloga je dio samog zahvata; korisno je unaprijed reći ako je flaster ranije nadraživao kožu",
+        "abnormal": "Takva obloga se obično ostavlja do kontrolnog pregleda, a kupanje se dozvoljava po uputstvu ljekara. Odljepljena ili natopljena obloga, crvenilo oko mjesta uboda i iscjedak razlog su da ranu pogleda zdravstveni radnik"
+      },
+      "de": {
+        "what": "Ein kleiner steriler Verband für eine Operationswunde, der einen kurzen Schnitt oder eine Einstichstelle abdeckt",
+        "how": "Die umgebende Haut wird gereinigt, eine kleine sterile Kompresse oder ein fertiger Inselpflasterverband wird auf die Wunde gelegt und an den Rändern angedrückt; es dauert ein bis zwei Minuten am Ende des Eingriffs",
+        "when": "Abschluss laparoskopischer und endoskopischer Eingriffe mit kurzen Schnitten, Entfernung kleiner Hautveränderungen, Biopsie, Legen und Entfernen eines Katheters, wenige Zentimeter lange Nähte",
+        "prep": "Eine eigene Vorbereitung entfällt, der Verband gehört zum Eingriff selbst; wenn Pflaster früher die Haut gereizt hat, sollte das vorher gesagt werden",
+        "abnormal": "Ein solcher Verband bleibt meist bis zur Kontrolluntersuchung liegen, Waschen ist nach ärztlicher Anweisung erlaubt. Ein abgelöster oder durchnässter Verband, Rötung um die Einstichstelle und Sekret sind Gründe, die Wunde einer Fachkraft zu zeigen"
+      },
+      "tr": {
+        "what": "Kısa bir kesiyi ya da iğne giriş yerini kapatmak için cerrahi yaraya konan küçük steril pansuman",
+        "how": "Çevredeki cilt temizlenir, yaranın üzerine küçük steril gazlı bez ya da hazır yapışkanlı ada pansuman konur ve kenarlarından bastırılır; girişimin sonunda bir iki dakika sürer",
+        "when": "Kısa kesili laparoskopik ve endoskopik girişimlerin tamamlanması, küçük deri oluşumlarının çıkarılması, biyopsi, kateter takılması ve çıkarılması, birkaç santimetre uzunluğundaki dikişler",
+        "prep": "Ayrı hazırlık gerekmez, pansuman girişimin kendi parçasıdır; bant daha önce cildinizi tahriş ettiyse bunu önceden söylemekte yarar vardır",
+        "abnormal": "Bu tür pansuman genellikle kontrol randevusuna kadar yerinde bırakılır, yıkanmaya hekimin talimatına göre izin verilir. Kalkan ya da ıslanan pansuman, iğne yeri çevresinde kızarıklık ve akıntı, yaranın bir sağlık çalışanına gösterilmesini gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Мала стерилна облога на хируршкој рани, којом се покрива кратак рез или мјесто убода",
+        "how": "Кожа около се очисти, на рану се ставља мала стерилна компреса или готова самољепљива облога и притисне по ивицама; траје минут до два на крају захвата",
+        "when": "Завршетак лапароскопских и ендоскопских захвата са кратким резовима, уклањање ситних промјена коже, биопсија, постављање и вађење катетера, шавови дуги неколико центиметара",
+        "prep": "Посебна припрема није потребна, облога је дио самог захвата; корисно је унапријед рећи ако је фластер раније надраживао кожу",
+        "abnormal": "Таква облога се обично оставља до контролног прегледа, а купање се дозвољава по упутству љекара. Одљепљена или натопљена облога, црвенило око мјеста убода и исцједак разлог су да рану погледа здравствени радник"
+      }
+    }
+  },
+  {
+    "slug": "small-wound-care",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Хирургическая обработка небольшой поверхностной раны: очищение и закрытие без вмешательства на глубоких тканях",
+        "how": "Рану промывают антисептиком, убирают мелкие инородные частицы, края при необходимости сводят одним-двумя швами или полоской пластыря и закрывают небольшой стерильной салфеткой; занимает около десяти минут",
+        "when": "Неглубокие порезы, царапины и ссадины, небольшие раны на пальце, кисти и колене, загрязнённая ранка, которую нужно промыть, мелкое повреждение кожи после удара",
+        "prep": "Подготовка не нужна; до визита промыть рану чистой водой и прикрыть салфеткой, ничего другого на неё не наносить, вспомнить дату последней прививки от столбняка",
+        "abnormal": "Маленькая рана обычно заживает в течение одной-двух недель и оставляет едва заметный след. Если края расходятся, появляется отделяемое или боль не уменьшается, рану нужно показать врачу повторно"
+      },
+      "en": {
+        "what": "Surgical treatment of a small superficial wound: cleaning and closure without work on deeper tissues",
+        "how": "The wound is rinsed with antiseptic, small foreign particles are removed, the edges are brought together with one or two stitches or a strip of adhesive tape if needed, and a small sterile compress is applied; it takes about ten minutes",
+        "when": "Shallow cuts, scratches and grazes, small wounds on a finger, hand or knee, a dirty little wound that needs rinsing, minor skin damage after a knock",
+        "prep": "No preparation is needed; before the visit rinse the wound with clean water and cover it with a compress, apply nothing else to it, and recall the date of your last tetanus vaccination",
+        "abnormal": "A small wound usually heals within one to two weeks and leaves barely a mark. If the edges separate, discharge appears or the pain does not ease, the wound should be shown to a doctor again"
+      },
+      "sr": {
+        "what": "Hirurška obrada male površne rane: čišćenje i zatvaranje bez zahvata na dubljim tkivima",
+        "how": "Rana se ispere antiseptikom, uklone se sitne strane čestice, ivice se po potrebi spoje sa jednim ili dva šava ili trakicom flastera i pokriju malom sterilnom kompresom; traje oko deset minuta",
+        "when": "Plitke posjekotine, ogrebotine i oguljotine, male rane na prstu, šaci i koljenu, zaprljana ranica koju treba isprati, sitno oštećenje kože poslije udarca",
+        "prep": "Priprema nije potrebna; prije dolaska ranu isprati čistom vodom i pokriti gazom, ništa drugo na nju ne stavljati i sjetiti se datuma posljednje vakcine protiv tetanusa",
+        "abnormal": "Mala rana obično zaraste za nedjelju do dvije i ostavlja jedva vidljiv trag. Ako se ivice razmaknu, pojavi se iscjedak ili bol ne popušta, ranu treba ponovo pokazati ljekaru"
+      },
+      "de": {
+        "what": "Chirurgische Versorgung einer kleinen oberflächlichen Wunde: Reinigung und Verschluss ohne Eingriff an tieferem Gewebe",
+        "how": "Die Wunde wird mit Antiseptikum gespült, kleine Fremdpartikel werden entfernt, die Ränder bei Bedarf mit ein bis zwei Stichen oder einem Pflasterstreifen zusammengeführt und mit einer kleinen sterilen Kompresse bedeckt; es dauert etwa zehn Minuten",
+        "when": "Flache Schnitte, Kratzer und Schürfwunden, kleine Wunden an Finger, Hand und Knie, eine verschmutzte kleine Wunde, die gespült werden muss, geringfügige Hautverletzung nach einem Stoß",
+        "prep": "Keine Vorbereitung nötig; vor dem Termin die Wunde mit sauberem Wasser spülen und mit einer Kompresse abdecken, nichts anderes darauf auftragen und sich an das Datum der letzten Tetanusimpfung erinnern",
+        "abnormal": "Eine kleine Wunde heilt meist innerhalb von ein bis zwei Wochen und hinterlässt kaum eine Spur. Weichen die Ränder auseinander, tritt Sekret aus oder lässt der Schmerz nicht nach, sollte die Wunde erneut einem Arzt gezeigt werden"
+      },
+      "tr": {
+        "what": "Küçük ve yüzeysel bir yaranın derin dokulara girilmeden temizlenip kapatıldığı cerrahi bakım",
+        "how": "Yara antiseptikle yıkanır, küçük yabancı parçacıklar alınır, gerekirse kenarlar bir iki dikişle ya da bant şeridiyle birleştirilir ve küçük steril gazlı bezle kapatılır; yaklaşık on dakika sürer",
+        "when": "Yüzeysel kesikler, çizikler ve sıyrıklar, parmak, el ve dizdeki küçük yaralar, yıkanması gereken kirli küçük yara, darbe sonrası hafif cilt hasarı",
+        "prep": "Hazırlık gerekmez; gelmeden önce yarayı temiz suyla yıkayıp gazlı bezle örtün, üzerine başka bir şey sürmeyin ve son tetanoz aşınızın tarihini hatırlayın",
+        "abnormal": "Küçük yara genellikle bir iki hafta içinde iyileşir ve neredeyse iz bırakmaz. Kenarlar ayrılıyorsa, akıntı oluyorsa ya da ağrı geçmiyorsa yara yeniden hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Хируршка обрада мале површне ране: чишћење и затварање без захвата на дубљим ткивима",
+        "how": "Рана се испере антисептиком, уклоне се ситне стране честице, ивице се по потреби споје са једним или два шава или тракицом фластера и покрију малом стерилном компресом; траје око десет минута",
+        "when": "Плитке посјекотине, огреботине и огуљотине, мале ране на прсту, шаци и кољену, запрљана раница коју треба испрати, ситно оштећење коже послије ударца",
+        "prep": "Припрема није потребна; прије доласка рану испрати чистом водом и покрити газом, ништа друго на њу не стављати и сјетити се датума посљедње вакцине против тетануса",
+        "abnormal": "Мала рана обично зарасте за недјељу до двије и оставља једва видљив траг. Ако се ивице размакну, појави се исцједак или бол не попушта, рану треба поново показати љекару"
+      }
+    }
+  },
+  {
+    "slug": "surgical-suture-removal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление нитей, которыми была ушита операционная рана, с осмотром рубца перед этим",
+        "how": "Врач или медсестра осматривает линию шва, обрабатывает её антисептиком, подрезает каждую нить у самой кожи и вытягивает пинцетом, при длинном разрезе часть швов иногда снимают первыми, а остальные через несколько дней; занимает несколько минут и обычно без анестезии",
+        "when": "В срок, назначенный оперировавшим врачом после хирургического вмешательства; сроки разные для лица, конечностей, живота и спины и зависят от вида шва",
+        "prep": "Подготовка не нужна; принести выписку из стационара или протокол операции, если оперировали в другом учреждении, не мочить рану перед визитом и не заклеивать её толстым слоем пластыря",
+        "abnormal": "После снятия швов рубец ещё несколько недель остаётся плотным и розовым, его созревание продолжается месяцами. Если край раны разошёлся, появились отделяемое, краснота или боль, часть нитей оставляют на месте, а срок повторного осмотра определяет врач"
+      },
+      "en": {
+        "what": "Removal of the threads that closed a surgical wound, after the scar has been inspected",
+        "how": "A doctor or nurse examines the suture line, cleans it with antiseptic, cuts each thread close to the skin and pulls it out with forceps; with a long incision some stitches are sometimes removed first and the rest a few days later; it takes a few minutes and usually needs no anaesthesia",
+        "when": "On the date set by the operating doctor after surgery; the timing differs for the face, limbs, abdomen and back and depends on the type of suture",
+        "prep": "No preparation is needed; bring the hospital discharge letter or operative report if you were operated on elsewhere, do not wet the wound before the visit and do not cover it with a thick layer of tape",
+        "abnormal": "After the stitches come out the scar stays firm and pink for several weeks and continues to mature over months. If a wound edge has separated, or discharge, redness or pain appear, some threads are left in place and the doctor sets the date for a repeat check"
+      },
+      "sr": {
+        "what": "Vađenje konaca kojima je bila ušivena hirurška rana, uz pregled ožiljka prije toga",
+        "how": "Ljekar ili sestra pregleda liniju šava, očisti je antiseptikom, presiječe svaki konac tik uz kožu i izvuče ga pincetom, a kod dugog reza se ponekad prvo skine dio konaca pa ostatak nakon nekoliko dana; traje nekoliko minuta i obično bez anestezije",
+        "when": "U roku koji je odredio ljekar koji je operisao; rokovi su različiti za lice, udove, trbuh i leđa i zavise od vrste šava",
+        "prep": "Priprema nije potrebna; ponijeti otpusnu listu ili operativni nalaz ako je operacija rađena u drugoj ustanovi, ranu ne kvasiti prije dolaska i ne prelijepljivati je debelim slojem flastera",
+        "abnormal": "Poslije vađenja konaca ožiljak još nekoliko sedmica ostaje čvrst i ružičast, a sazrijeva mjesecima. Ako se ivica rane razmakne ili se pojave iscjedak, crvenilo i bol, dio konaca se ostavlja, a rok ponovnog pregleda određuje ljekar"
+      },
+      "de": {
+        "what": "Entfernung der Fäden, mit denen eine Operationswunde verschlossen wurde, nach vorheriger Beurteilung der Narbe",
+        "how": "Arzt oder Pflegekraft begutachtet die Nahtlinie, reinigt sie mit Antiseptikum, schneidet jeden Faden dicht an der Haut durch und zieht ihn mit der Pinzette heraus; bei langem Schnitt wird manchmal zuerst ein Teil der Fäden entfernt und der Rest einige Tage später; es dauert wenige Minuten und kommt meist ohne Betäubung aus",
+        "when": "Zu dem Termin, den der operierende Arzt festgelegt hat; die Fristen unterscheiden sich für Gesicht, Gliedmaßen, Bauch und Rücken und hängen von der Nahtart ab",
+        "prep": "Keine Vorbereitung nötig; Entlassungsbrief oder Operationsbericht mitbringen, wenn die Operation anderswo erfolgte, die Wunde vor dem Termin nicht nass machen und nicht mit einer dicken Pflasterschicht abkleben",
+        "abnormal": "Nach der Fadenentfernung bleibt die Narbe noch einige Wochen fest und rosa und reift über Monate weiter. Hat sich ein Wundrand geöffnet oder treten Sekret, Rötung und Schmerz auf, bleibt ein Teil der Fäden liegen und der Arzt legt den Termin für die erneute Kontrolle fest"
+      },
+      "tr": {
+        "what": "Cerrahi yarayı kapatan ipliklerin, öncesinde nedbe değerlendirilerek alınması",
+        "how": "Hekim ya da hemşire dikiş hattını inceler, antiseptikle temizler, her ipliği cilde yakın keser ve pensle çeker; uzun kesilerde bazen önce bir kısım dikiş, birkaç gün sonra kalanı alınır; birkaç dakika sürer ve genellikle anestezi gerektirmez",
+        "when": "Ameliyatı yapan hekimin belirlediği tarihte; süreler yüz, kol ve bacaklar, karın ve sırt için farklıdır ve dikiş türüne bağlıdır",
+        "prep": "Hazırlık gerekmez; ameliyat başka bir kurumda yapıldıysa taburculuk özetini ya da ameliyat raporunu getirin, randevudan önce yarayı ıslatmayın ve kalın bant tabakasıyla kapatmayın",
+        "abnormal": "Dikişler alındıktan sonra nedbe birkaç hafta daha sert ve pembe kalır, olgunlaşması aylarca sürer. Yara kenarı açıldıysa ya da akıntı, kızarıklık ve ağrı ortaya çıktıysa ipliklerin bir bölümü yerinde bırakılır ve yeni kontrol tarihini hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Вађење конаца којима је била ушивена хируршка рана, уз преглед ожиљка прије тога",
+        "how": "Љекар или сестра прегледа линију шава, очисти је антисептиком, пресијече сваки конац тик уз кожу и извуче га пинцетом, а код дугог реза се понекад прво скине дио конаца па остатак након неколико дана; траје неколико минута и обично без анестезије",
+        "when": "У року који је одредио љекар који је оперисао; рокови су различити за лице, удове, трбух и леђа и зависе од врсте шава",
+        "prep": "Припрема није потребна; понијети отпусну листу или оперативни налаз ако је операција рађена у другој установи, рану не квасити прије доласка и не прелијепљивати је дебелим слојем фластера",
+        "abnormal": "Послије вађења конаца ожиљак још неколико седмица остаје чврст и ружичаст, а сазријева мјесецима. Ако се ивица ране размакне или се појаве исцједак, црвенило и бол, дио конаца се оставља, а рок поновног прегледа одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "wound-suturing-under-local-anesthesia",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обработка раны с обезболиванием места повреждения и сведением краёв швами",
+        "how": "Вокруг раны вводят местный анестетик, после наступления онемения рану промывают и очищают, края сближают узловыми швами и накладывают стерильную повязку; чувствительность возвращается в течение нескольких часов, вся процедура занимает около получаса",
+        "when": "Раны с расходящимися краями, болезненные повреждения, которые невозможно обработать без обезболивания, раны лица, кисти и волосистой части головы, укушенные и рваные раны, требующие очищения перед ушиванием",
+        "prep": "Подготовка не требуется, но важно сообщить о прошлых реакциях на местную анестезию у стоматолога, об аллергии на лекарства, о приёме препаратов, разжижающих кровь, и о сроке последней прививки от столбняка",
+        "abnormal": "После прекращения действия анестетика умеренная боль и отёк в первые сутки ожидаемы, швы снимают в срок, который называет врач. Нарастающая боль, покраснение, расходящиеся края или выделения из раны — повод прийти на осмотр раньше назначенной даты"
+      },
+      "en": {
+        "what": "Wound treatment in which the injured area is numbed and the edges are brought together with sutures",
+        "how": "A local anaesthetic is injected around the wound, and once the area is numb the wound is rinsed and cleaned, the edges are approximated with interrupted sutures and a sterile dressing is applied; sensation returns over several hours and the whole procedure takes about half an hour",
+        "when": "Wounds with gaping edges, painful injuries that cannot be treated without numbing, wounds of the face, hand and scalp, bite and laceration wounds that need cleaning before closure",
+        "prep": "No preparation is required, but it is important to report past reactions to local anaesthesia at the dentist, drug allergies, any blood-thinning medication and the date of your last tetanus vaccination",
+        "abnormal": "Once the anaesthetic wears off, moderate pain and swelling on the first day are expected, and the sutures are removed on the date the doctor gives. Increasing pain, redness, separating edges or discharge from the wound are reasons to come for a check before the scheduled date"
+      },
+      "sr": {
+        "what": "Obrada rane uz obezboljavanje povrijeđenog mjesta i spajanje ivica šavovima",
+        "how": "Oko rane se daje lokalni anestetik, pa se po nastupu utrnulosti rana ispere i očisti, ivice se približe pojedinačnim šavovima i postavi sterilna obloga; osjet se vraća tokom nekoliko sati, a cijeli zahvat traje oko pola sata",
+        "when": "Rane sa razmaknutim ivicama, bolne povrede koje se ne mogu obraditi bez obezboljavanja, rane lica, šake i poglavine, ujedne i razderane rane koje treba očistiti prije ušivanja",
+        "prep": "Priprema nije potrebna, ali je važno reći za ranije reakcije na lokalnu anesteziju kod stomatologa, za alergiju na lijekove, za uzimanje lijekova za razrjeđivanje krvi i za datum posljednje vakcine protiv tetanusa",
+        "abnormal": "Kada anestetik prestane da djeluje, umjeren bol i otok prvog dana se očekuju, a konci se skidaju u roku koji odredi ljekar. Bol koji jača, crvenilo, ivice koje se razmiču ili iscjedak iz rane razlog su da se na pregled dođe prije zakazanog datuma"
+      },
+      "de": {
+        "what": "Wundversorgung, bei der die verletzte Stelle betäubt und die Ränder mit Nähten zusammengeführt werden",
+        "how": "Um die Wunde wird ein örtliches Betäubungsmittel gespritzt, nach Eintreten der Taubheit wird die Wunde gespült und gereinigt, die Ränder werden mit Einzelknopfnähten angenähert und ein steriler Verband angelegt; das Gefühl kehrt über mehrere Stunden zurück, der ganze Eingriff dauert etwa eine halbe Stunde",
+        "when": "Wunden mit klaffenden Rändern, schmerzhafte Verletzungen, die ohne Betäubung nicht versorgt werden können, Wunden an Gesicht, Hand und Kopfhaut, Biss- und Risswunden, die vor dem Verschluss gereinigt werden müssen",
+        "prep": "Eine Vorbereitung ist nicht nötig, wichtig sind aber Angaben zu früheren Reaktionen auf örtliche Betäubung beim Zahnarzt, zu Arzneimittelallergien, zu blutverdünnenden Medikamenten und zum Datum der letzten Tetanusimpfung",
+        "abnormal": "Wenn die Betäubung nachlässt, sind mäßige Schmerzen und eine Schwellung am ersten Tag zu erwarten, die Fäden werden zu dem vom Arzt genannten Termin entfernt. Zunehmende Schmerzen, Rötung, auseinanderweichende Ränder oder Sekret aus der Wunde sind Gründe, früher als geplant zur Kontrolle zu kommen"
+      },
+      "tr": {
+        "what": "Yaralanan bölgenin uyuşturulup kenarların dikişlerle birleştirildiği yara bakımı",
+        "how": "Yaranın çevresine lokal anestezik verilir, uyuşma oluşunca yara yıkanıp temizlenir, kenarlar tek tek dikişlerle yaklaştırılır ve steril pansuman uygulanır; his birkaç saat içinde geri döner, işlemin tamamı yaklaşık yarım saat sürer",
+        "when": "Kenarları açılmış yaralar, uyuşturulmadan bakımı yapılamayan ağrılı yaralanmalar, yüz, el ve saçlı deri yaraları, kapatılmadan önce temizlenmesi gereken ısırık ve yırtık yaralar",
+        "prep": "Hazırlık gerekmez, ancak diş hekiminde lokal anesteziye karşı geçmişte gelişen tepkileri, ilaç alerjisini, kan sulandırıcı ilaç kullanımını ve son tetanoz aşısının tarihini bildirmek önemlidir",
+        "abnormal": "Anestezinin etkisi geçtiğinde ilk gün orta düzeyde ağrı ve şişlik beklenir, dikişler hekimin söylediği tarihte alınır. Artan ağrı, kızarıklık, ayrılan kenarlar ya da yaradan akıntı, belirlenen tarihten önce kontrole gelmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Обрада ране уз обезбољавање повријеђеног мјеста и спајање ивица шавовима",
+        "how": "Око ране се даје локални анестетик, па се по наступу утрнулости рана испере и очисти, ивице се приближе појединачним шавовима и постави стерилна облога; осјет се враћа током неколико сати, а цијели захват траје око пола сата",
+        "when": "Ране са размакнутим ивицама, болне повреде које се не могу обрадити без обезбољавања, ране лица, шаке и поглавине, уједне и раздеране ране које треба очистити прије ушивања",
+        "prep": "Припрема није потребна, али је важно рећи за раније реакције на локалну анестезију код стоматолога, за алергију на лијекове, за узимање лијекова за разрјеђивање крви и за датум посљедње вакцине против тетануса",
+        "abnormal": "Када анестетик престане да дјелује, умјерен бол и оток првог дана се очекују, а конци се скидају у року који одреди љекар. Бол који јача, црвенило, ивице које се размичу или исцједак из ране разлог су да се на преглед дође прије заказаног датума"
+      }
+    }
+  }
 ]

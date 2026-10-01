@@ -1,617 +1,722 @@
 [
-	{
-		"slug": "doppler-renal-arteries",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ультразвуковая оценка кровотока в артериях почек и в сосудах внутри самой почки",
-				"how": "Пациент лежит на спине и на боку, врач ведёт датчиком по животу и пояснице, аппарат показывает поток цветом и записывает кривые скорости; 20–30 минут, безболезненно",
-				"when": "Повышенное давление, плохо поддающееся лечению, высокое давление в молодом возрасте, ухудшение функции почек, наблюдение за пересаженной почкой, заметная разница в размерах почек",
-				"prep": "Приходить натощак (не есть 6–8 часов, воду можно), накануне ограничить газообразующую пищу — газ в кишечнике закрывает сосуды от ультразвука",
-				"abnormal": "Изменения скорости и формы потока могут быть связаны с сужением артерии, перегибом сосуда или изменениями внутри почки, а качество картинки зависит от телосложения и газов. Заключение оценивает нефролог, кардиолог или сосудистый хирург вместе с давлением и анализами"
-			},
-			"en": {
-				"what": "Ultrasound assessment of blood flow in the kidney arteries and in the vessels inside the kidney itself",
-				"how": "You lie on your back and then on your side while the doctor moves the probe over the abdomen and the flank; the machine shows the flow in colour and records velocity curves; 20–30 minutes, painless",
-				"when": "High blood pressure that responds poorly to treatment, raised pressure at a young age, declining kidney function, follow-up of a transplanted kidney, a clear difference in size between the kidneys",
-				"prep": "Come fasting (no food for 6–8 hours, water is allowed) and limit gas-forming food the day before, because bowel gas hides the vessels from ultrasound",
-				"abnormal": "Changes in the speed and shape of the flow can be linked to narrowing of the artery, a kinked vessel or changes inside the kidney, and image quality depends on body build and bowel gas. A nephrologist, cardiologist or vascular surgeon reads the report together with your blood pressure and lab results"
-			},
-			"sr": {
-				"what": "Ultrazvučna procjena protoka krvi u bubrežnim arterijama i u sudovima unutar samog bubrega",
-				"how": "Ležite na leđima pa na boku dok ljekar vodi sondu preko stomaka i slabine, a aparat prikazuje protok bojom i bilježi krive brzine; traje 20–30 minuta i bezbolno je",
-				"when": "Povišen pritisak koji slabo reaguje na terapiju, visok pritisak u mlađim godinama, slabljenje bubrežne funkcije, praćenje presađenog bubrega, izrazita razlika u veličini bubrega",
-				"prep": "Doći natašte (ne jesti 6–8 časova, voda je dozvoljena) i dan ranije ograničiti hranu koja stvara gasove, jer gas u crijevima zaklanja sudove od ultrazvuka",
-				"abnormal": "Promjene brzine i oblika protoka mogu biti povezane sa suženjem arterije, savijenim sudom ili promjenama u samom bubregu, a kvalitet slike zavisi od građe tijela i gasova. Nalaz procjenjuje nefrolog, kardiolog ili vaskularni hirurg uz vrijednosti pritiska i laboratorijske nalaze"
-			},
-			"de": {
-				"what": "Ultraschallbeurteilung des Blutflusses in den Nierenarterien und in den Gefäßen innerhalb der Niere selbst",
-				"how": "Sie liegen auf dem Rücken und auf der Seite, während der Arzt die Sonde über Bauch und Flanke führt; das Gerät stellt den Fluss farbig dar und zeichnet Geschwindigkeitskurven auf; 20–30 Minuten, schmerzfrei",
-				"when": "Schwer einstellbarer Bluthochdruck, hoher Blutdruck in jungen Jahren, nachlassende Nierenfunktion, Kontrolle einer transplantierten Niere, deutlicher Größenunterschied zwischen den Nieren",
-				"prep": "Nüchtern kommen (6–8 Stunden nichts essen, Wasser ist erlaubt) und am Vortag blähende Speisen meiden, da Darmgas die Gefäße für den Ultraschall verdeckt",
-				"abnormal": "Veränderte Flussgeschwindigkeiten und Kurvenformen können mit einer Verengung der Arterie, einem abgeknickten Gefäß oder Veränderungen in der Niere zusammenhängen; die Bildqualität hängt von Körperbau und Darmgas ab. Den Befund beurteilt ein Nephrologe, Kardiologe oder Gefäßchirurg zusammen mit Blutdruck und Laborwerten"
-			},
-			"tr": {
-				"what": "Böbrek atardamarlarındaki ve böbreğin kendi içindeki damarlardaki kan akımının ultrasonla değerlendirilmesi",
-				"how": "Sırtüstü ve yan yatarken hekim probu karın ve böğür bölgesinde gezdirir, cihaz akımı renkli gösterir ve hız eğrilerini kaydeder; 20–30 dakika sürer, ağrısızdır",
-				"when": "Tedaviye zor yanıt veren yüksek tansiyon, genç yaşta yüksek tansiyon, böbrek işlevinin bozulması, nakledilmiş böbreğin izlenmesi, böbrekler arasında belirgin boyut farkı",
-				"prep": "Aç gelin (6–8 saat yemek yok, su serbest) ve bir gün önce gaz yapan yiyecekleri sınırlayın, çünkü bağırsak gazı damarları ultrasondan gizler",
-				"abnormal": "Akım hızındaki ve dalga biçimindeki değişiklikler damarın daralmasıyla, kıvrılmasıyla ya da böbrek içindeki değişikliklerle ilişkili olabilir; görüntü kalitesi vücut yapısına ve gaza bağlıdır. Raporu nefroloji, kardiyoloji ya da damar cerrahisi uzmanı tansiyon ve laboratuvar sonuçlarıyla birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "lung-base-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Прицельный ультразвуковой осмотр нижних отделов грудной клетки над диафрагмой — там раньше всего скапливается жидкость",
-				"how": "Пациент сидит или лежит с поднятой рукой, датчик ставят в межреберья по задней и боковой поверхности груди и просят глубоко дышать; 5–10 минут",
-				"when": "Одышка, боль при дыхании, подозрение на выпот в плевральной полости, контроль после воспаления лёгких, уточнение находки, замеченной при УЗИ живота или на рентгене, разметка точки перед пункцией",
-				"prep": "Не требуется; попросят раздеться до пояса и во время осмотра спокойно глубоко дышать",
-				"abnormal": "Находки могут быть связаны со скоплением жидкости, уплотнением лёгочной ткани или утолщением плевры, а глубокие отделы лёгкого за воздухом ультразвуку недоступны. Нужны ли рентген, КТ или пункция, решает пульмонолог или лечащий врач"
-			},
-			"en": {
-				"what": "A targeted ultrasound look at the lower chest just above the diaphragm, where fluid collects first",
-				"how": "You sit or lie with the arm raised while the probe is placed between the ribs on the back and side of the chest and you are asked to breathe deeply; 5–10 minutes",
-				"when": "Shortness of breath, pain on breathing, suspected fluid in the pleural space, follow-up after pneumonia, clarifying a finding noticed on abdominal ultrasound or an X-ray, marking the point before a tap",
-				"prep": "Not required; you will be asked to undress to the waist and to breathe deeply and calmly during the scan",
-				"abnormal": "Findings may be linked to collected fluid, denser lung tissue or thickened pleura, while the deeper parts of the lung stay hidden behind air. A pulmonologist or the referring doctor decides whether an X-ray, CT or a tap is needed"
-			},
-			"sr": {
-				"what": "Ciljani ultrazvučni pregled donjih djelova grudnog koša iznad dijafragme, gdje se tečnost najranije skuplja",
-				"how": "Sjedite ili ležite sa podignutom rukom, sonda se postavlja u međurebarne prostore po zadnjoj i bočnoj strani grudi, uz duboko disanje; traje 5–10 minuta",
-				"when": "Nedostatak vazduha, bol pri disanju, sumnja na izliv u pleuralnom prostoru, kontrola poslije upale pluća, razjašnjenje nalaza uočenog na ultrazvuku stomaka ili na rendgenu, obilježavanje mjesta prije punkcije",
-				"prep": "Nije potrebna; tražiće se da se svučete do pojasa i da tokom pregleda mirno i duboko dišete",
-				"abnormal": "Nalaz može biti povezan sa nakupljenom tečnošću, zgusnutim plućnim tkivom ili zadebljanom pleurom, dok dublji djelovi pluća ostaju skriveni iza vazduha. Da li su potrebni rendgen, skener ili punkcija odlučuje pulmolog ili ljekar koji vas vodi"
-			},
-			"de": {
-				"what": "Gezielte Ultraschalluntersuchung der unteren Brustkorbabschnitte oberhalb des Zwerchfells, wo sich Flüssigkeit zuerst sammelt",
-				"how": "Sie sitzen oder liegen mit erhobenem Arm, die Sonde wird zwischen die Rippen an Rücken und Seite gesetzt und Sie atmen tief; 5–10 Minuten",
-				"when": "Luftnot, Schmerzen beim Atmen, Verdacht auf Erguss im Pleuraspalt, Kontrolle nach einer Lungenentzündung, Abklärung eines Befundes aus dem Bauchultraschall oder Röntgenbild, Markierung der Punktionsstelle",
-				"prep": "Nicht erforderlich; Sie machen den Oberkörper frei und atmen während der Untersuchung ruhig und tief",
-				"abnormal": "Befunde können mit angesammelter Flüssigkeit, verdichtetem Lungengewebe oder verdickter Pleura zusammenhängen, während tiefere Lungenabschnitte hinter Luft verborgen bleiben. Ob Röntgen, CT oder eine Punktion nötig sind, entscheidet der Pneumologe oder der behandelnde Arzt"
-			},
-			"tr": {
-				"what": "Göğüs kafesinin diyafram üzerindeki alt bölümlerine, sıvının en önce biriktiği alana yönelik ultrason incelemesi",
-				"how": "Kol yukarıda otururken ya da yatarken prob sırt ve yan göğüs duvarında kaburga aralarına yerleştirilir, derin nefes almanız istenir; 5–10 dakika",
-				"when": "Nefes darlığı, nefes alırken ağrı, plevra boşluğunda sıvı şüphesi, zatürre sonrası kontrol, karın ultrasonunda ya da röntgende görülen bir bulgunun netleştirilmesi, ponksiyon öncesi noktanın işaretlenmesi",
-				"prep": "Gerekmez; belden yukarısını çıkarmanız ve inceleme sırasında sakin ve derin nefes almanız istenir",
-				"abnormal": "Bulgular biriken sıvı, yoğunlaşmış akciğer dokusu ya da kalınlaşmış plevra ile ilişkili olabilir; akciğerin derin bölümleri hava nedeniyle görüntülenemez. Röntgen, BT ya da ponksiyon gerekip gerekmediğine göğüs hastalıkları uzmanı veya sizi yönlendiren hekim karar verir"
-			}
-		}
-	},
-	{
-		"slug": "abdomen-and-kidney-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Совмещённый осмотр органов живота и обеих почек за одно посещение",
-				"how": "Врач последовательно смотрит печень, желчный пузырь, поджелудочную железу и селезёнку, затем почки из положения на спине и на боку, просит задержать дыхание; 20–30 минут",
-				"when": "Боль в животе и пояснице, изменения в анализах крови и мочи, наблюдение при камнях и кистах, хронические болезни пищеварения и почек, профилактический осмотр, обследование перед плановой операцией",
-				"prep": "Приходить натощак (не есть 6–8 часов, воду пить можно), накануне ограничить газообразующую пищу; приём постоянных лекарств обсудить с врачом",
-				"abnormal": "Находки могут быть связаны с камнями, кистами, изменением структуры или размеров органов, а также с особенностями строения. Сопоставить их с жалобами, анализом мочи и биохимией крови должен направивший врач"
-			},
-			"en": {
-				"what": "A combined look at the abdominal organs and both kidneys in a single visit",
-				"how": "The doctor scans the liver, gallbladder, pancreas and spleen in turn, then the kidneys with you lying on your back and on your side, asking you to hold your breath; 20–30 minutes",
-				"when": "Abdominal and flank pain, changes in blood and urine tests, follow-up of stones and cysts, chronic digestive and kidney conditions, a check-up, work-up before planned surgery",
-				"prep": "Come fasting (no food for 6–8 hours, water is allowed) and limit gas-forming food the day before; discuss regular medication with your doctor",
-				"abnormal": "Findings may be linked to stones, cysts, changes in the structure or size of organs, or simply to anatomical variants. The referring doctor is the one to match them with your symptoms, urine test and blood chemistry"
-			},
-			"sr": {
-				"what": "Objedinjeni pregled organa trbuha i oba bubrega u jednoj posjeti",
-				"how": "Ljekar redom pregleda jetru, žučnu kesu, pankreas i slezinu, zatim bubrege iz položaja na leđima i na boku, uz zadržavanje daha; traje 20–30 minuta",
-				"when": "Bol u stomaku i slabinama, promjene u nalazima krvi i urina, praćenje kamenova i cista, hronične bolesti probave i bubrega, preventivni pregled, obrada prije planirane operacije",
-				"prep": "Doći natašte (ne jesti 6–8 časova, voda je dozvoljena) i dan ranije ograničiti hranu koja stvara gasove; redovnu terapiju dogovoriti sa ljekarom",
-				"abnormal": "Nalaz može biti povezan sa kamenovima, cistama, promjenom građe ili veličine organa, ali i sa anatomskim varijantama. Povezati ga sa tegobama, nalazom urina i biohemijom krvi treba ljekar koji je uputio pacijenta"
-			},
-			"de": {
-				"what": "Kombinierte Untersuchung der Bauchorgane und beider Nieren in einem Termin",
-				"how": "Der Arzt untersucht nacheinander Leber, Gallenblase, Bauchspeicheldrüse und Milz, danach die Nieren in Rücken- und Seitenlage, mit kurzem Luftanhalten; 20–30 Minuten",
-				"when": "Bauch- und Flankenschmerzen, auffällige Blut- und Urinwerte, Verlaufskontrolle von Steinen und Zysten, chronische Verdauungs- und Nierenerkrankungen, Vorsorge, Abklärung vor einer geplanten Operation",
-				"prep": "Nüchtern kommen (6–8 Stunden nichts essen, Wasser erlaubt) und am Vortag blähende Speisen meiden; die Dauermedikation mit dem Arzt besprechen",
-				"abnormal": "Befunde können mit Steinen, Zysten, veränderter Struktur oder Größe der Organe, aber auch mit anatomischen Varianten zusammenhängen. Sie mit Beschwerden, Urinbefund und Blutchemie zusammenzuführen, ist Aufgabe des überweisenden Arztes"
-			},
-			"tr": {
-				"what": "Karın organlarının ve her iki böbreğin tek seferde birlikte incelenmesi",
-				"how": "Hekim sırayla karaciğer, safra kesesi, pankreas ve dalağı, ardından sırtüstü ve yan yatarken böbrekleri inceler, nefesinizi tutmanızı ister; 20–30 dakika",
-				"when": "Karın ve böğür ağrısı, kan ve idrar tahlillerindeki değişiklikler, taş ve kistlerin izlenmesi, kronik sindirim ve böbrek hastalıkları, kontrol amaçlı inceleme, planlı ameliyat öncesi değerlendirme",
-				"prep": "Aç gelin (6–8 saat yemek yok, su serbest) ve bir gün önce gaz yapan yiyecekleri sınırlayın; sürekli kullandığınız ilaçları hekiminizle konuşun",
-				"abnormal": "Bulgular taş, kist, organların yapı ya da boyut değişiklikleriyle, bazen de anatomik varyasyonlarla ilişkili olabilir. Bunları yakınmalarınız, idrar tahlili ve kan biyokimyasıyla birleştirmek sizi yönlendiren hekimin işidir"
-			}
-		}
-	},
-	{
-		"slug": "abdomen-and-urinary-tract-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Осмотр органов живота вместе со всем мочевым трактом — почками, мочеточниками, мочевым пузырём, у мужчин и предстательной железой",
-				"how": "Сначала смотрят верхний этаж живота и почки, в конце — наполненный мочевой пузырь, а после мочеиспускания измеряют остаточный объём; 25–35 минут",
-				"when": "Частое или затруднённое мочеиспускание, кровь в моче, повторяющиеся инфекции мочевых путей, перенесённая почечная колика, наблюдение при камнях и увеличении простаты",
-				"prep": "Первую часть делают натощак (не есть 6–8 часов), а к концу осмотра нужен наполненный мочевой пузырь — выпить воды примерно за час и не мочиться",
-				"abnormal": "Находки могут быть связаны с камнями, расширением чашечно-лоханочной системы, задержкой мочи или изменениями стенки пузыря. Трактовку и объём дальнейшего обследования определяет уролог или нефролог"
-			},
-			"en": {
-				"what": "A scan of the abdominal organs together with the whole urinary tract: kidneys, ureters, bladder and, in men, the prostate",
-				"how": "The upper abdomen and kidneys are scanned first, the full bladder at the end, and the residual volume is measured after you empty it; 25–35 minutes",
-				"when": "Frequent or difficult urination, blood in the urine, repeated urinary infections, a past renal colic, follow-up of stones and of an enlarged prostate",
-				"prep": "The first part is done fasting (no food for 6–8 hours), while the end of the scan needs a full bladder, so drink water about an hour before and do not urinate",
-				"abnormal": "Findings may be linked to stones, a dilated collecting system, retained urine or changes in the bladder wall. A urologist or nephrologist decides what they mean and how far to investigate"
-			},
-			"sr": {
-				"what": "Pregled organa trbuha zajedno sa cijelim mokraćnim sistemom: bubrezima, mokraćovodima, bešikom, a kod muškaraca i prostatom",
-				"how": "Prvo se pregleda gornji dio trbuha i bubrezi, na kraju puna bešika, a poslije mokrenja se mjeri zaostala količina urina; traje 25–35 minuta",
-				"when": "Često ili otežano mokrenje, krv u urinu, ponavljane infekcije mokraćnih puteva, preboljela bubrežna kolika, praćenje kamenova i uvećane prostate",
-				"prep": "Prvi dio se radi natašte (ne jesti 6–8 časova), a za kraj pregleda potrebna je puna bešika, pa popiti vodu oko sat ranije i ne mokriti",
-				"abnormal": "Nalaz može biti povezan sa kamenovima, proširenjem sabirnog sistema bubrega, zaostajanjem urina ili promjenama zida bešike. Tumačenje i obim dalje obrade određuje urolog ili nefrolog"
-			},
-			"de": {
-				"what": "Untersuchung der Bauchorgane zusammen mit dem gesamten Harntrakt: Nieren, Harnleiter, Blase und bei Männern auch Prostata",
-				"how": "Zuerst werden Oberbauch und Nieren untersucht, zum Schluss die gefüllte Blase, und nach dem Wasserlassen wird die Restharnmenge gemessen; 25–35 Minuten",
-				"when": "Häufiges oder erschwertes Wasserlassen, Blut im Urin, wiederkehrende Harnwegsinfekte, eine durchgemachte Nierenkolik, Kontrolle von Steinen und einer vergrößerten Prostata",
-				"prep": "Der erste Teil erfolgt nüchtern (6–8 Stunden nichts essen), für das Ende wird eine volle Blase gebraucht: etwa eine Stunde vorher Wasser trinken und nicht zur Toilette gehen",
-				"abnormal": "Befunde können mit Steinen, einem erweiterten Nierenhohlsystem, Restharn oder Veränderungen der Blasenwand zusammenhängen. Was sie bedeuten und wie weit abgeklärt wird, entscheidet der Urologe oder Nephrologe"
-			},
-			"tr": {
-				"what": "Karın organlarının, böbrekler, üreterler, mesane ve erkeklerde prostatı kapsayan tüm üriner sistemle birlikte incelenmesi",
-				"how": "Önce üst karın ve böbrekler, en sonda dolu mesane incelenir; idrar yaptıktan sonra kalan idrar miktarı ölçülür; 25–35 dakika",
-				"when": "Sık ya da zor idrar yapma, idrarda kan, yinelenen idrar yolu enfeksiyonları, geçirilmiş böbrek koliği, taşların ve büyümüş prostatın izlenmesi",
-				"prep": "İlk bölüm aç karnına yapılır (6–8 saat yemek yok), incelemenin sonu için mesanenin dolu olması gerekir: yaklaşık bir saat önce su için ve idrarınızı tutun",
-				"abnormal": "Bulgular taş, böbrek toplayıcı sisteminde genişleme, idrarın boşalmaması ya da mesane duvarı değişiklikleriyle ilişkili olabilir. Anlamını ve ileri incelemenin kapsamını üroloji ya da nefroloji uzmanı belirler"
-			}
-		}
-	},
-	{
-		"slug": "abdominal-fluid-drainage-under-ultrasound-guidance",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Выведение скопившейся в брюшной полости жидкости через иглу или тонкий катетер, который ставят под контролем ультразвука",
-				"how": "Врач находит на экране безопасную точку, обезболивает кожу, вводит иглу и по ней при необходимости устанавливает катетер, жидкость оттекает в ёмкость; установка занимает 20–40 минут, сам отток может длиться дольше",
-				"when": "Большое скопление жидкости в животе, мешающее дышать и есть, подозрение на инфицированное скопление или абсцесс, скопление после операции или травмы, необходимость взять жидкость на анализ",
-				"prep": "Обсудить с врачом разжижающие кровь препараты и принести свежие анализы свёртывания; непосредственно перед процедурой опорожнить мочевой пузырь",
-				"abnormal": "После процедуры обычно легче дышать и уменьшается вздутие, возможны болезненность в месте прокола и подтекание жидкости. Саму жидкость отправляют на анализ, причину накопления и дальнейшее лечение определяет лечащий врач, а лихорадка, усиление боли или быстрое повторное накопление требуют осмотра"
-			},
-			"en": {
-				"what": "Removal of fluid collected in the abdominal cavity through a needle or a thin catheter placed under ultrasound guidance",
-				"how": "The doctor finds a safe point on the screen, numbs the skin, inserts the needle and if needed passes a catheter over it, and the fluid drains into a container; placement takes 20–40 minutes, the drainage itself may last longer",
-				"when": "A large amount of fluid in the abdomen that makes breathing and eating hard, suspected infected collection or abscess, a collection after surgery or injury, the need to send fluid for analysis",
-				"prep": "Discuss blood-thinning medication with your doctor and bring recent clotting tests; empty your bladder right before the procedure",
-				"abnormal": "Breathing usually becomes easier afterwards and the bloating goes down, while soreness at the puncture site and some leakage are possible. The fluid is sent to the laboratory, the cause of the build-up and further treatment are decided by the treating doctor, and fever, increasing pain or rapid refilling call for a review"
-			},
-			"sr": {
-				"what": "Izvlačenje tečnosti nakupljene u trbušnoj duplji kroz iglu ili tanak kateter postavljen pod kontrolom ultrazvuka",
-				"how": "Ljekar na ekranu nađe bezbjednu tačku, anestezira kožu, uvodi iglu i po potrebi preko nje postavlja kateter, a tečnost otiče u posudu; postavljanje traje 20–40 minuta, samo oticanje može trajati duže",
-				"when": "Velika količina tečnosti u trbuhu koja otežava disanje i ishranu, sumnja na inficiranu kolekciju ili apsces, kolekcija poslije operacije ili povrede, potreba da se tečnost pošalje na analizu",
-				"prep": "Sa ljekarom dogovoriti lijekove za razrjeđivanje krvi i donijeti svježe nalaze koagulacije; neposredno prije zahvata isprazniti bešiku",
-				"abnormal": "Poslije zahvata disanje je obično lakše a nadutost manja, dok su osjetljivost na mjestu uboda i blago curenje mogući. Tečnost ide na analizu, uzrok nakupljanja i dalje liječenje određuje ljekar koji vas vodi, a povišena temperatura, jači bol ili brzo ponovno punjenje traže pregled"
-			},
-			"de": {
-				"what": "Ableitung von Flüssigkeit aus der Bauchhöhle über eine Nadel oder einen dünnen Katheter, der unter Ultraschallsicht gelegt wird",
-				"how": "Der Arzt sucht am Bildschirm eine sichere Stelle, betäubt die Haut, führt die Nadel ein und legt darüber bei Bedarf einen Katheter; die Flüssigkeit läuft in ein Gefäß ab; das Legen dauert 20–40 Minuten, der Ablauf selbst kann länger dauern",
-				"when": "Große Flüssigkeitsmenge im Bauch, die Atmen und Essen erschwert, Verdacht auf eine infizierte Ansammlung oder einen Abszess, Ansammlung nach Operation oder Verletzung, Bedarf an Flüssigkeit für die Analyse",
-				"prep": "Blutverdünnende Medikamente mit dem Arzt besprechen und aktuelle Gerinnungswerte mitbringen; unmittelbar vor dem Eingriff die Blase entleeren",
-				"abnormal": "Danach fällt das Atmen meist leichter und der Bauch spannt weniger, während Druckschmerz an der Einstichstelle und etwas Nachlaufen möglich sind. Die Flüssigkeit wird untersucht, Ursache und weitere Behandlung legt der behandelnde Arzt fest; Fieber, zunehmende Schmerzen oder rasches Nachlaufen erfordern eine Kontrolle"
-			},
-			"tr": {
-				"what": "Karın boşluğunda biriken sıvının, ultrason eşliğinde yerleştirilen iğne ya da ince kateter yoluyla boşaltılması",
-				"how": "Hekim ekranda güvenli bir nokta belirler, cildi uyuşturur, iğneyi girer ve gerekirse üzerinden kateter yerleştirir; sıvı bir kaba akar; yerleştirme 20–40 dakika sürer, boşalma daha uzun sürebilir",
-				"when": "Nefes almayı ve beslenmeyi zorlaştıran yoğun karın sıvısı, enfekte koleksiyon ya da apse şüphesi, ameliyat veya yaralanma sonrası birikim, sıvının tahlile gönderilmesi gereği",
-				"prep": "Kan sulandırıcı ilaçları hekiminizle konuşun ve güncel pıhtılaşma sonuçlarını getirin; işlemden hemen önce mesanenizi boşaltın",
-				"abnormal": "İşlemden sonra genellikle nefes almak kolaylaşır ve şişkinlik azalır; giriş yerinde hassasiyet ve hafif sızıntı olabilir. Sıvı laboratuvara gönderilir, birikme nedenini ve tedaviyi sizi izleyen hekim belirler; ateş, artan ağrı ya da hızla yeniden dolma muayene gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "abdominal-vessels-and-lymph-nodes-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Осмотр крупных сосудов живота — аорты, нижней полой вены и их ветвей — вместе с лимфатическими узлами забрюшинного пространства",
-				"how": "Врач ведёт датчиком по животу, измеряет диаметр сосудов и оценивает поток, затем просматривает области вдоль аорты и подвздошных сосудов; 20–30 минут",
-				"when": "Пульсирующее образование в животе, проверка аорты у курильщиков и людей старшего возраста, боль в животе после еды, длительная лихорадка неясного происхождения, наблюдение за ранее найденными изменениями",
-				"prep": "Приходить натощак (не есть 6–8 часов, воду можно) и накануне ограничить газообразующую пищу — иначе сосуды и узлы плохо видны",
-				"abnormal": "Расширение сосуда, изменение потока или увеличение узлов требуют сопоставления с жалобами и другими исследованиями и сами по себе диагнозом не являются. Дальнейшую тактику определяет сосудистый хирург или направивший врач"
-			},
-			"en": {
-				"what": "A scan of the large abdominal vessels, the aorta, the inferior vena cava and their branches, together with the lymph nodes of the retroperitoneum",
-				"how": "The doctor moves the probe over the abdomen, measures vessel diameters and assesses flow, then looks along the aorta and the iliac vessels; 20–30 minutes",
-				"when": "A pulsating mass in the abdomen, checking the aorta in smokers and older people, abdominal pain after meals, prolonged fever of unclear origin, follow-up of changes found earlier",
-				"prep": "Come fasting (no food for 6–8 hours, water is allowed) and limit gas-forming food the day before, otherwise vessels and nodes are poorly visible",
-				"abnormal": "A widened vessel, altered flow or enlarged nodes have to be matched with symptoms and other tests and are not a diagnosis on their own. A vascular surgeon or the referring doctor decides what follows"
-			},
-			"sr": {
-				"what": "Pregled velikih krvnih sudova trbuha, aorte, donje šuplje vene i njihovih grana, zajedno sa limfnim čvorovima retroperitoneuma",
-				"how": "Ljekar vodi sondu preko stomaka, mjeri prečnik sudova i procjenjuje protok, a zatim pregleda područja duž aorte i ilijačnih sudova; traje 20–30 minuta",
-				"when": "Pulsirajuća masa u trbuhu, provjera aorte kod pušača i starijih osoba, bol u stomaku poslije jela, dugotrajna temperatura nejasnog uzroka, praćenje ranije nađenih promjena",
-				"prep": "Doći natašte (ne jesti 6–8 časova, voda je dozvoljena) i dan ranije ograničiti hranu koja stvara gasove, jer se inače sudovi i čvorovi slabo vide",
-				"abnormal": "Proširenje suda, izmijenjen protok ili uvećani čvorovi moraju se sagledati uz tegobe i druge pretrage i sami po sebi nisu dijagnoza. Dalji postupak određuje vaskularni hirurg ili ljekar koji je uputio pacijenta"
-			},
-			"de": {
-				"what": "Untersuchung der großen Bauchgefäße, der Aorta, der unteren Hohlvene und ihrer Äste, zusammen mit den Lymphknoten des Retroperitoneums",
-				"how": "Der Arzt führt die Sonde über den Bauch, misst die Gefäßdurchmesser und beurteilt den Fluss, danach werden die Regionen entlang der Aorta und der Beckengefäße durchgesehen; 20–30 Minuten",
-				"when": "Pulsierende Resistenz im Bauch, Kontrolle der Aorta bei Rauchern und älteren Menschen, Bauchschmerzen nach dem Essen, anhaltendes Fieber unklarer Ursache, Verlaufskontrolle bekannter Veränderungen",
-				"prep": "Nüchtern kommen (6–8 Stunden nichts essen, Wasser erlaubt) und am Vortag blähende Speisen meiden, sonst sind Gefäße und Lymphknoten schlecht einsehbar",
-				"abnormal": "Ein erweitertes Gefäß, veränderter Fluss oder vergrößerte Knoten müssen mit Beschwerden und weiteren Untersuchungen zusammengesehen werden und sind für sich keine Diagnose. Das weitere Vorgehen legt der Gefäßchirurg oder der überweisende Arzt fest"
-			},
-			"tr": {
-				"what": "Karındaki büyük damarların, aortun, alt ana toplardamarın ve dallarının, retroperitoneal lenf nodlarıyla birlikte incelenmesi",
-				"how": "Hekim probu karında gezdirir, damar çaplarını ölçer ve akımı değerlendirir, ardından aort ve iliyak damarlar boyunca bölgeleri tarar; 20–30 dakika",
-				"when": "Karında atan bir kitle, sigara içenlerde ve ileri yaşta aortun kontrolü, yemek sonrası karın ağrısı, nedeni belirsiz uzun süreli ateş, daha önce saptanmış değişikliklerin izlenmesi",
-				"prep": "Aç gelin (6–8 saat yemek yok, su serbest) ve bir gün önce gaz yapan yiyecekleri sınırlayın, aksi halde damarlar ve nodlar iyi görülmez",
-				"abnormal": "Genişlemiş damar, değişmiş akım ya da büyümüş nodlar yakınmalar ve diğer tetkiklerle birlikte değerlendirilmelidir, tek başına tanı değildir. Sonraki adımları damar cerrahisi uzmanı ya da sizi yönlendiren hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "ankle-brachial-index-by-doppler-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Сравнение давления на лодыжке и на плече с помощью манжеты и ультразвукового датчика — простой способ оценить проходимость артерий ног",
-				"how": "Пациент спокойно лежит, манжету надевают поочерёдно на плечо и на голень, маленьким датчиком слушают поток в артериях и записывают давление с каждой стороны; 20–30 минут",
-				"when": "Боль в икрах при ходьбе, проходящая в покое, холодные или бледные стопы, долго не заживающие раны на стопах, диабет и курение, наблюдение после вмешательств на артериях ног",
-				"prep": "Специальной подготовки нет; за час до измерения не курить и не пить кофе, прийти заранее и спокойно посидеть, одежда должна позволять освободить руку и голень",
-				"abnormal": "Разница давлений между рукой и ногой может быть связана с сужением артерий ног, а при жёсткой стенке сосудов, например при длительном диабете, показатель бывает завышен. Результат оценивает сосудистый хирург вместе с осмотром и жалобами"
-			},
-			"en": {
-				"what": "A comparison of the blood pressure at the ankle and at the arm using a cuff and an ultrasound probe, a simple way to judge how open the leg arteries are",
-				"how": "You lie quietly while a cuff is placed in turn on the upper arm and the lower leg, a small probe listens to the flow in the arteries and the pressure is recorded on each side; 20–30 minutes",
-				"when": "Calf pain on walking that eases at rest, cold or pale feet, foot wounds that heal slowly, diabetes and smoking, follow-up after procedures on the leg arteries",
-				"prep": "No special preparation; avoid smoking and coffee for an hour beforehand, arrive early and rest quietly, and wear clothes that free the arm and the lower leg",
-				"abnormal": "A difference between arm and leg pressure may be linked to narrowing of the leg arteries, while stiff vessel walls, for example after years of diabetes, can push the value up. A vascular surgeon reads the result together with the examination and your symptoms"
-			},
-			"sr": {
-				"what": "Poređenje pritiska na skočnom zglobu i na nadlaktici pomoću manžetne i ultrazvučne sonde, jednostavan način da se procijeni prohodnost arterija nogu",
-				"how": "Pacijent mirno leži, manžetna se naizmjenično stavlja na nadlakticu i potkoljenicu, malom sondom se sluša protok u arterijama i bilježi pritisak sa svake strane; traje 20–30 minuta",
-				"when": "Bol u listovima pri hodu koji prestaje u mirovanju, hladna ili blijeda stopala, rane na stopalima koje sporo zarastaju, dijabetes i pušenje, praćenje poslije zahvata na arterijama nogu",
-				"prep": "Posebne pripreme nema; sat prije mjerenja ne pušiti i ne piti kafu, doći ranije i mirno sjediti, a odjeća treba da omogući oslobađanje ruke i potkoljenice",
-				"abnormal": "Razlika pritiska između ruke i noge može biti povezana sa suženjem arterija nogu, dok kod ukrućenog zida sudova, na primjer kod dugogodišnjeg dijabetesa, vrijednost zna biti lažno visoka. Rezultat procjenjuje vaskularni hirurg uz pregled i tegobe"
-			},
-			"de": {
-				"what": "Vergleich des Blutdrucks am Knöchel und am Oberarm mit Manschette und Ultraschallsonde, eine einfache Art, die Durchgängigkeit der Beinarterien zu beurteilen",
-				"how": "Sie liegen ruhig, die Manschette wird nacheinander an Oberarm und Unterschenkel angelegt, eine kleine Sonde hört den Fluss in den Arterien ab und der Druck wird auf jeder Seite notiert; 20–30 Minuten",
-				"when": "Wadenschmerz beim Gehen, der in Ruhe nachlässt, kalte oder blasse Füße, schlecht heilende Wunden am Fuß, Diabetes und Rauchen, Kontrolle nach Eingriffen an den Beinarterien",
-				"prep": "Keine besondere Vorbereitung; eine Stunde vorher nicht rauchen und keinen Kaffee trinken, früher kommen und ruhig sitzen, Kleidung sollte Arm und Unterschenkel freigeben",
-				"abnormal": "Ein Unterschied zwischen Arm- und Beindruck kann mit einer Verengung der Beinarterien zusammenhängen, während steife Gefäßwände, etwa bei langjährigem Diabetes, den Wert zu hoch erscheinen lassen. Das Ergebnis beurteilt ein Gefäßchirurg zusammen mit Untersuchung und Beschwerden"
-			},
-			"tr": {
-				"what": "Ayak bileği ve koldaki basıncın manşon ve ultrason probu ile karşılaştırılması; bacak atardamarlarının açıklığını değerlendirmenin basit bir yolu",
-				"how": "Sakin yatarken manşon sırayla üst kola ve baldıra takılır, küçük bir probla atardamarlardaki akım dinlenir ve her iki taraftaki basınç kaydedilir; 20–30 dakika",
-				"when": "Yürürken başlayan ve dinlenince geçen baldır ağrısı, soğuk ya da soluk ayaklar, geç iyileşen ayak yaraları, diyabet ve sigara, bacak atardamarlarına yönelik girişimlerden sonra izlem",
-				"prep": "Özel hazırlık yok; ölçümden bir saat önce sigara ve kahve almayın, erken gelip sakince oturun, giysiler kolun ve baldırın açılmasına izin vermeli",
-				"abnormal": "Kol ve bacak basıncı arasındaki fark bacak atardamarlarındaki daralmayla ilişkili olabilir; damar duvarı sertleştiğinde, örneğin uzun süreli diyabette, değer olduğundan yüksek çıkabilir. Sonucu damar cerrahisi uzmanı muayene ve yakınmalarla birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "cyst-puncture-under-ultrasound-guidance",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Опорожнение кисты иглой, которую врач подводит к полости, глядя на экран ультразвука",
-				"how": "Кожу обрабатывают и обезболивают, под контролем изображения иглу проводят в кисту и отсасывают её содержимое, при необходимости полость промывают; 15–30 минут, затем накладывают повязку",
-				"when": "Крупная киста, которая давит на соседние органы или болит, кисты почки, печени, щитовидной или молочной железы, подозрение на нагноение, необходимость получить содержимое для анализа",
-				"prep": "Обсудить с врачом приём разжижающих кровь препаратов и принести анализы свёртывания; взять предыдущие снимки и заключения, надеть одежду, открывающую доступ к нужной области",
-				"abnormal": "Сразу после процедуры давление и боль обычно уменьшаются, но со временем киста может наполниться снова. Содержимое при необходимости отправляют в лабораторию, результат и план наблюдения обсуждает лечащий врач, а лихорадка, нарастающая боль или покраснение — повод показаться раньше срока"
-			},
-			"en": {
-				"what": "Emptying a cyst with a needle that the doctor guides into the cavity while watching the ultrasound screen",
-				"how": "The skin is disinfected and numbed, the needle is guided into the cyst under imaging and its content is aspirated, with the cavity rinsed if needed; 15–30 minutes, then a dressing is applied",
-				"when": "A large cyst that presses on neighbouring organs or hurts, cysts of the kidney, liver, thyroid or breast, suspected infection inside the cyst, the need to obtain content for analysis",
-				"prep": "Discuss blood-thinning medication with your doctor and bring clotting tests; take previous images and reports with you and wear clothing that gives access to the area",
-				"abnormal": "Pressure and pain usually ease right after the procedure, but a cyst can fill up again over time. The content is sent to the laboratory when needed, the result and the follow-up plan are discussed by the treating doctor, and fever, growing pain or redness are a reason to come back sooner"
-			},
-			"sr": {
-				"what": "Pražnjenje ciste iglom koju ljekar uvodi u šupljinu prateći sliku na ekranu ultrazvuka",
-				"how": "Koža se dezinfikuje i lokalno anestezira, igla se pod kontrolom slike uvodi u cistu i sadržaj se aspirira, a po potrebi se šupljina ispira; traje 15–30 minuta, zatim se stavlja zavoj",
-				"when": "Velika cista koja pritiska okolne organe ili boli, ciste bubrega, jetre, štitne žlijezde ili dojke, sumnja na upalu u cisti, potreba da se sadržaj pošalje na analizu",
-				"prep": "Sa ljekarom dogovoriti lijekove za razrjeđivanje krvi i donijeti nalaze koagulacije; ponijeti ranije snimke i nalaze i obući odjeću koja otvara pristup toj oblasti",
-				"abnormal": "Odmah poslije zahvata pritisak i bol obično popuštaju, ali se cista vremenom može ponovo napuniti. Sadržaj se po potrebi šalje u laboratoriju, rezultat i plan praćenja sa vama razmatra ljekar koji vas vodi, a povišena temperatura, bol koja jača ili crvenilo razlog su za raniji pregled"
-			},
-			"de": {
-				"what": "Entleerung einer Zyste mit einer Nadel, die der Arzt unter Sicht am Ultraschallbild in den Hohlraum führt",
-				"how": "Die Haut wird desinfiziert und betäubt, die Nadel unter Bildkontrolle in die Zyste geführt und der Inhalt abgesaugt, bei Bedarf wird der Hohlraum gespült; 15–30 Minuten, danach ein Verband",
-				"when": "Große Zyste, die auf Nachbarorgane drückt oder schmerzt, Zysten von Niere, Leber, Schilddrüse oder Brust, Verdacht auf Entzündung in der Zyste, Bedarf an Inhalt für die Untersuchung",
-				"prep": "Blutverdünnende Medikamente mit dem Arzt besprechen und Gerinnungswerte mitbringen; frühere Bilder und Befunde mitnehmen und Kleidung tragen, die den Zugang zur Region freigibt",
-				"abnormal": "Druckgefühl und Schmerz lassen meist direkt nach dem Eingriff nach, die Zyste kann sich mit der Zeit jedoch wieder füllen. Der Inhalt geht bei Bedarf ins Labor, Ergebnis und Kontrollplan bespricht der behandelnde Arzt; Fieber, zunehmender Schmerz oder Rötung sind ein Grund für eine frühere Vorstellung"
-			},
-			"tr": {
-				"what": "Hekimin ultrason ekranını izleyerek boşluğa yönlendirdiği iğneyle kistin boşaltılması",
-				"how": "Cilt dezenfekte edilip uyuşturulur, iğne görüntü eşliğinde kistin içine ilerletilir ve içerik aspire edilir, gerekirse boşluk yıkanır; 15–30 dakika, ardından pansuman yapılır",
-				"when": "Komşu organlara bası yapan ya da ağrıyan büyük kist, böbrek, karaciğer, tiroit ya da meme kistleri, kist içinde iltihap şüphesi, içeriğin tahlile gönderilmesi gereği",
-				"prep": "Kan sulandırıcı ilaçları hekiminizle konuşun ve pıhtılaşma sonuçlarını getirin; önceki görüntü ve raporları yanınıza alın, bölgeye erişim sağlayan kıyafet giyin",
-				"abnormal": "İşlemden hemen sonra bası hissi ve ağrı genellikle azalır, ancak kist zamanla yeniden dolabilir. İçerik gerektiğinde laboratuvara gönderilir, sonucu ve izlem planını sizi takip eden hekim değerlendirir; ateş, artan ağrı ya da kızarıklık erken başvuru nedenidir"
-			}
-		}
-	},
-	{
-		"slug": "doppler-portal-vein",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Оценка кровотока в воротной вене и сосудах, по которым кровь идёт от кишечника и селезёнки к печени",
-				"how": "Из положения на спине и на боку врач находит вену у ворот печени, измеряет её диаметр, скорость и направление потока и просит задержать дыхание; 20–30 минут",
-				"when": "Хронические болезни печени, увеличение селезёнки, жидкость в животе, расширенные вены пищевода, наблюдение после операций на печени и сосудистых вмешательств, подозрение на тромб в вене",
-				"prep": "Строго натощак, не есть около 8 часов (воду можно): после еды кровоток в воротной вене меняется и измерения получаются неточными",
-				"abnormal": "Замедление потока, его обратное направление или отсутствие сигнала могут быть связаны с повышенным давлением в системе воротной вены или с тромбом. Заключение оценивает гастроэнтеролог или гепатолог вместе с анализами и другими исследованиями"
-			},
-			"en": {
-				"what": "Assessment of blood flow in the portal vein and the vessels that carry blood from the bowel and spleen to the liver",
-				"how": "With you on your back and on your side, the doctor finds the vein at the liver hilum, measures its diameter, the speed and the direction of flow and asks you to hold your breath; 20–30 minutes",
-				"when": "Chronic liver disease, an enlarged spleen, fluid in the abdomen, dilated veins of the oesophagus, follow-up after liver surgery and vascular procedures, suspected clot in the vein",
-				"prep": "Strictly fasting, no food for about 8 hours (water is allowed): after a meal the flow in the portal vein changes and the measurements become unreliable",
-				"abnormal": "Slowed flow, flow in the reverse direction or no signal at all may be linked to raised pressure in the portal system or to a clot. A gastroenterologist or hepatologist reads the report together with lab tests and other imaging"
-			},
-			"sr": {
-				"what": "Procjena protoka krvi u portnoj veni i sudovima kojima krv iz crijeva i slezine dolazi do jetre",
-				"how": "U položaju na leđima i na boku ljekar pronalazi venu na hilusu jetre, mjeri njen prečnik, brzinu i smjer protoka i traži da zadržite dah; traje 20–30 minuta",
-				"when": "Hronične bolesti jetre, uvećana slezina, tečnost u trbuhu, proširene vene jednjaka, praćenje poslije operacija jetre i vaskularnih zahvata, sumnja na ugrušak u veni",
-				"prep": "Strogo natašte, ne jesti oko 8 časova (voda je dozvoljena): poslije obroka protok u portnoj veni se mijenja i mjerenja nisu pouzdana",
-				"abnormal": "Usporen protok, protok u obrnutom smjeru ili izostanak signala mogu biti povezani sa povišenim pritiskom u portnom sistemu ili sa ugruškom. Nalaz procjenjuje gastroenterolog ili hepatolog uz laboratorijske nalaze i druge pretrage"
-			},
-			"de": {
-				"what": "Beurteilung des Blutflusses in der Pfortader und in den Gefäßen, die Blut aus Darm und Milz zur Leber führen",
-				"how": "In Rücken- und Seitenlage sucht der Arzt die Vene an der Leberpforte, misst Durchmesser, Geschwindigkeit und Flussrichtung und bittet um kurzes Luftanhalten; 20–30 Minuten",
-				"when": "Chronische Lebererkrankungen, vergrößerte Milz, Flüssigkeit im Bauch, erweiterte Speiseröhrenvenen, Kontrolle nach Leberoperationen und Gefäßeingriffen, Verdacht auf ein Gerinnsel in der Vene",
-				"prep": "Streng nüchtern, etwa 8 Stunden nichts essen (Wasser erlaubt): nach einer Mahlzeit ändert sich der Fluss in der Pfortader und die Messwerte werden unzuverlässig",
-				"abnormal": "Verlangsamter Fluss, umgekehrte Flussrichtung oder fehlendes Signal können mit erhöhtem Druck im Pfortadersystem oder einem Gerinnsel zusammenhängen. Den Befund beurteilt ein Gastroenterologe oder Hepatologe zusammen mit Laborwerten und weiterer Bildgebung"
-			},
-			"tr": {
-				"what": "Portal vendeki ve bağırsak ile dalaktan karaciğere kan taşıyan damarlardaki akımın değerlendirilmesi",
-				"how": "Sırtüstü ve yan yatarken hekim karaciğer hilusundaki veni bulur, çapını, akım hızını ve yönünü ölçer ve nefesinizi tutmanızı ister; 20–30 dakika",
-				"when": "Kronik karaciğer hastalıkları, büyümüş dalak, karında sıvı, yemek borusunda genişlemiş damarlar, karaciğer ameliyatları ve damar girişimleri sonrası izlem, vende pıhtı şüphesi",
-				"prep": "Kesinlikle aç karnına, yaklaşık 8 saat yemek yok (su serbest): yemekten sonra portal vendeki akım değişir ve ölçümler güvenilir olmaz",
-				"abnormal": "Akımın yavaşlaması, ters yöne dönmesi ya da sinyalin alınamaması portal sistemdeki basınç artışıyla veya bir pıhtıyla ilişkili olabilir. Raporu gastroenteroloji ya da hepatoloji uzmanı laboratuvar ve diğer tetkiklerle birlikte değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "lung-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Осмотр плевры и прилежащих отделов лёгких ультразвуком по зонам грудной клетки",
-				"how": "Датчик последовательно ставят в межреберья спереди, сбоку и сзади, сравнивая обе стороны; 10–20 минут, без облучения, можно повторять часто и проводить прямо у постели",
-				"when": "Одышка и кашель, боль в груди, подозрение на жидкость в плевральной полости или на воспаление лёгких, наблюдение за уже выявленными изменениями, обследование беременных и детей, когда хотят обойтись без рентгена",
-				"prep": "Не требуется; понадобится освободить грудную клетку и спину, украшения и плотную одежду лучше снять",
-				"abnormal": "Выявленные изменения могут сопровождать воспаление, застой жидкости или изменения плевры, при этом воздух закрывает ультразвуку глубокие отделы лёгких и часть картины остаётся за кадром. Нужны ли рентген или КТ, решает лечащий врач"
-			},
-			"en": {
-				"what": "An ultrasound look at the pleura and the adjacent parts of the lungs, zone by zone over the chest",
-				"how": "The probe is placed between the ribs at the front, the side and the back in turn, comparing both sides; 10–20 minutes, no radiation, so it can be repeated often and done at the bedside",
-				"when": "Shortness of breath and cough, chest pain, suspected fluid in the pleural space or pneumonia, follow-up of changes already found, examining pregnant women and children when X-rays are best avoided",
-				"prep": "Not required; the chest and back need to be free, so jewellery and thick clothing are better taken off",
-				"abnormal": "The changes seen may accompany inflammation, congestion or pleural disease, while air blocks ultrasound from the deeper parts of the lungs so that part of the picture stays hidden. The treating doctor decides whether an X-ray or CT is needed"
-			},
-			"sr": {
-				"what": "Ultrazvučni pregled pleure i pripadajućih djelova pluća po zonama grudnog koša",
-				"how": "Sonda se redom postavlja u međurebarne prostore sprijeda, bočno i pozadi, uz poređenje obje strane; traje 10–20 minuta, bez zračenja, pa se može često ponavljati i raditi uz bolesnički krevet",
-				"when": "Nedostatak vazduha i kašalj, bol u grudima, sumnja na tečnost u pleuralnom prostoru ili na upalu pluća, praćenje već otkrivenih promjena, pregled trudnica i djece kada se rendgen izbjegava",
-				"prep": "Nije potrebna; grudni koš i leđa treba da budu slobodni, pa je nakit i debelu odjeću bolje skinuti",
-				"abnormal": "Viđene promjene mogu pratiti upalu, zastoj tečnosti ili bolest pleure, dok vazduh zaklanja dublje djelove pluća pa dio slike ostaje skriven. Da li su potrebni rendgen ili skener odlučuje ljekar koji vas vodi"
-			},
-			"de": {
-				"what": "Ultraschalluntersuchung der Pleura und der angrenzenden Lungenabschnitte, Zone für Zone über dem Brustkorb",
-				"how": "Die Sonde wird nacheinander vorn, seitlich und hinten zwischen die Rippen gesetzt, beide Seiten werden verglichen; 10–20 Minuten, ohne Strahlung, daher oft wiederholbar und auch am Krankenbett möglich",
-				"when": "Luftnot und Husten, Brustschmerz, Verdacht auf Flüssigkeit im Pleuraspalt oder eine Lungenentzündung, Verlaufskontrolle bekannter Veränderungen, Untersuchung von Schwangeren und Kindern, wenn Röntgen vermieden werden soll",
-				"prep": "Nicht erforderlich; Brustkorb und Rücken müssen frei sein, Schmuck und dicke Kleidung besser ablegen",
-				"abnormal": "Die gesehenen Veränderungen können Entzündung, Flüssigkeitsstau oder Pleuraveränderungen begleiten; Luft versperrt dem Ultraschall die tiefen Lungenabschnitte, ein Teil des Bildes bleibt also verborgen. Ob Röntgen oder CT nötig sind, entscheidet der behandelnde Arzt"
-			},
-			"tr": {
-				"what": "Plevranın ve akciğerlerin ona komşu bölümlerinin göğüs duvarında bölge bölge ultrasonla incelenmesi",
-				"how": "Prob sırayla önde, yanda ve arkada kaburga aralarına yerleştirilir ve iki taraf karşılaştırılır; 10–20 dakika, ışın yok, bu nedenle sık tekrarlanabilir ve hasta başında yapılabilir",
-				"when": "Nefes darlığı ve öksürük, göğüs ağrısı, plevra boşluğunda sıvı ya da zatürre şüphesi, saptanmış değişikliklerin izlenmesi, röntgenden kaçınılmak istenen gebe ve çocuk incelemeleri",
-				"prep": "Gerekmez; göğüs ve sırtın açık olması gerekir, takıları ve kalın giysileri çıkarmak iyi olur",
-				"abnormal": "Görülen değişiklikler iltihaba, sıvı birikimine ya da plevra hastalığına eşlik edebilir; hava ultrasonun akciğerin derin bölümlerine ulaşmasını engellediği için görüntünün bir kısmı gizli kalır. Röntgen ya da BT gerekip gerekmediğine sizi izleyen hekim karar verir"
-			}
-		}
-	},
-	{
-		"slug": "neck-ultrasound-salivary-glands",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ультразвуковой осмотр околоушных, подчелюстных и подъязычных слюнных желёз и их протоков",
-				"how": "Пациент лежит с повёрнутой головой, датчиком с гелем осматривают железы с обеих сторон и соседние лимфоузлы; 10–20 минут, безболезненно",
-				"when": "Припухлость и боль в области щеки или под челюстью, особенно усиливающиеся во время еды, сухость во рту, прощупываемое уплотнение, повторяющиеся воспаления желёз, наблюдение известных изменений",
-				"prep": "Не требуется; есть и пить можно как обычно, украшения с шеи лучше снять",
-				"abnormal": "Изменение структуры железы, расширенный проток или камень в нём могут быть связаны с воспалением, застоем слюны или образованием в железе. Заключение оценивает отоларинголог или челюстно-лицевой хирург, при необходимости назначается пункция"
-			},
-			"en": {
-				"what": "An ultrasound look at the parotid, submandibular and sublingual salivary glands and their ducts",
-				"how": "You lie with the head turned while the probe with gel scans the glands on both sides along with the nearby lymph nodes; 10–20 minutes, painless",
-				"when": "Swelling and pain in the cheek or under the jaw, especially when eating, a dry mouth, a palpable lump, repeated inflammation of the glands, follow-up of known changes",
-				"prep": "Not required; you may eat and drink as usual, but it is better to take off neck jewellery",
-				"abnormal": "A changed gland structure, a widened duct or a stone inside it may be linked to inflammation, stagnant saliva or a lesion in the gland. An ENT doctor or maxillofacial surgeon interprets the report and may arrange a needle sampling"
-			},
-			"sr": {
-				"what": "Ultrazvučni pregled parotidnih, podviličnih i podjezičnih pljuvačnih žlijezda i njihovih izvodnih kanala",
-				"how": "Ležite sa okrenutom glavom dok se sondom sa gelom pregledaju žlijezde sa obje strane i okolni limfni čvorovi; traje 10–20 minuta i bezbolno je",
-				"when": "Oteklina i bol u predjelu obraza ili ispod vilice, naročito pri jelu, suva usta, opipljiva kvržica, ponavljane upale žlijezda, praćenje poznatih promjena",
-				"prep": "Nije potrebna; jesti i piti možete uobičajeno, a nakit sa vrata bolje je skinuti",
-				"abnormal": "Promijenjena građa žlijezde, proširen kanal ili kamen u njemu mogu biti povezani sa upalom, zastojem pljuvačke ili promjenom u žlijezdi. Nalaz tumači otorinolaringolog ili maksilofacijalni hirurg i po potrebi traži punkciju"
-			},
-			"de": {
-				"what": "Ultraschalluntersuchung der Ohrspeichel-, Unterkiefer- und Unterzungenspeicheldrüsen und ihrer Ausführungsgänge",
-				"how": "Sie liegen mit gedrehtem Kopf, während die Sonde mit Gel die Drüsen auf beiden Seiten und die benachbarten Lymphknoten darstellt; 10–20 Minuten, schmerzfrei",
-				"when": "Schwellung und Schmerz an Wange oder unter dem Kiefer, besonders beim Essen, Mundtrockenheit, tastbarer Knoten, wiederkehrende Entzündungen der Drüsen, Verlaufskontrolle bekannter Veränderungen",
-				"prep": "Nicht erforderlich; Essen und Trinken wie gewohnt möglich, Halsschmuck besser ablegen",
-				"abnormal": "Eine veränderte Drüsenstruktur, ein erweiterter Gang oder ein Stein darin können mit Entzündung, Speichelstau oder einer Veränderung in der Drüse zusammenhängen. Den Befund beurteilt ein HNO-Arzt oder Kieferchirurg und veranlasst bei Bedarf eine Punktion"
-			},
-			"tr": {
-				"what": "Kulak altı, çene altı ve dil altı tükürük bezlerinin ve kanallarının ultrasonla incelenmesi",
-				"how": "Baş yana çevrilmiş halde yatarken jelli probla bezler iki tarafta ve komşu lenf nodlarıyla birlikte incelenir; 10–20 dakika, ağrısızdır",
-				"when": "Yanakta ya da çene altında, özellikle yemek sırasında artan şişlik ve ağrı, ağız kuruluğu, ele gelen sertlik, yinelenen bez iltihapları, bilinen değişikliklerin izlenmesi",
-				"prep": "Gerekmez; her zamanki gibi yiyip içebilirsiniz, boyundaki takıları çıkarmak iyi olur",
-				"abnormal": "Bez yapısındaki değişiklik, genişlemiş kanal ya da kanaldaki taş iltihap, tükürük birikmesi veya bezdeki bir oluşumla ilişkili olabilir. Raporu kulak burun boğaz ya da çene cerrahisi uzmanı yorumlar, gerekirse iğne ile örnekleme ister"
-			}
-		}
-	},
-	{
-		"slug": "percutaneous-nephrostomy-under-ultrasound-guidance",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Установка тонкой дренажной трубки прямо в почку через кожу поясницы, чтобы отвести мочу, когда обычный путь перекрыт",
-				"how": "Пациент лежит на животе или на боку, кожу обезболивают, под контролем ультразвука иглой входят в расширенную полость почки и по проводнику ставят катетер, который фиксируют к коже и соединяют с мешком; 30–60 минут",
-				"when": "Блок оттока мочи камнем, сужением или сдавлением мочеточника, расширение полостной системы почки с болью или лихорадкой, подготовка к операции на мочевых путях, невозможность поставить стент обычным путём",
-				"prep": "Не есть несколько часов до процедуры, принести свежие анализы крови и свёртывания, заранее обсудить с врачом разжижающие кровь препараты; после установки понадобится сопровождение домой",
-				"abnormal": "В первые часы моча по трубке может идти с примесью крови, и это обычно проходит; дальше важно, чтобы катетер оставался проходимым, а повязка сухой. Прекращение оттока, лихорадка, усиление боли или смещение трубки — повод срочно связаться с урологом"
-			},
-			"en": {
-				"what": "Placing a thin drainage tube directly into the kidney through the skin of the flank to divert urine when the usual route is blocked",
-				"how": "You lie on your front or side, the skin is numbed, under ultrasound guidance a needle enters the dilated collecting system and a catheter is placed over a wire, then fixed to the skin and connected to a bag; 30–60 minutes",
-				"when": "Urine blocked by a stone, a narrowing or outside pressure on the ureter, a dilated collecting system with pain or fever, preparation for surgery on the urinary tract, a stent that cannot be placed the usual way",
-				"prep": "Do not eat for several hours before, bring recent blood and clotting tests and discuss blood-thinning medication with your doctor in advance; arrange for someone to take you home afterwards",
-				"abnormal": "In the first hours the urine in the tube may be blood-tinged, which usually settles; after that the catheter should stay patent and the dressing dry. Drainage that stops, fever, increasing pain or a tube that slips out are reasons to contact the urologist immediately"
-			},
-			"sr": {
-				"what": "Postavljanje tanke drenažne cjevčice direktno u bubreg kroz kožu slabine, da bi se urin odveo kada je uobičajeni put zatvoren",
-				"how": "Ležite na stomaku ili na boku, koža se anestezira, pod kontrolom ultrazvuka iglom se ulazi u prošireni sabirni sistem bubrega i preko žice se postavlja kateter, koji se fiksira za kožu i spaja sa kesom; traje 30–60 minuta",
-				"when": "Zastoj urina zbog kamena, suženja ili pritiska na mokraćovod, prošireni sabirni sistem bubrega sa bolom ili temperaturom, priprema za operaciju mokraćnih puteva, nemogućnost postavljanja stenta uobičajenim putem",
-				"prep": "Ne jesti nekoliko časova prije zahvata, donijeti svježe nalaze krvi i koagulacije i unaprijed sa ljekarom dogovoriti lijekove za razrjeđivanje krvi; za povratak kući treba pratnja",
-				"abnormal": "Prvih časova urin kroz cjevčicu može biti pomiješan sa krvlju, što se obično smiri; dalje je važno da kateter ostane prohodan a zavoj suv. Prestanak oticanja, povišena temperatura, jači bol ili ispadanje cjevčice razlog su da se hitno javite urologu"
-			},
-			"de": {
-				"what": "Einlage eines dünnen Drainageschlauchs direkt in die Niere durch die Haut der Flanke, um Urin abzuleiten, wenn der übliche Weg blockiert ist",
-				"how": "Sie liegen auf dem Bauch oder der Seite, die Haut wird betäubt, unter Ultraschallsicht wird mit einer Nadel das erweiterte Hohlsystem punktiert und über einen Draht ein Katheter gelegt, an der Haut fixiert und mit einem Beutel verbunden; 30–60 Minuten",
-				"when": "Harnstau durch Stein, Verengung oder Druck von außen auf den Harnleiter, erweitertes Nierenhohlsystem mit Schmerz oder Fieber, Vorbereitung auf eine Operation der Harnwege, wenn ein Stent auf üblichem Weg nicht gelegt werden kann",
-				"prep": "Einige Stunden vorher nichts essen, aktuelle Blut- und Gerinnungswerte mitbringen und blutverdünnende Medikamente vorher mit dem Arzt klären; für den Heimweg eine Begleitung organisieren",
-				"abnormal": "In den ersten Stunden kann der Urin im Schlauch blutig gefärbt sein, das legt sich meist; danach kommt es darauf an, dass der Katheter durchgängig und der Verband trocken bleibt. Versiegende Ableitung, Fieber, zunehmende Schmerzen oder ein verrutschter Schlauch sind Gründe, sofort den Urologen zu kontaktieren"
-			},
-			"tr": {
-				"what": "Normal yol tıkandığında idrarı dışarı almak için böbreğe böğür cildinden doğrudan ince bir drenaj kateteri yerleştirilmesi",
-				"how": "Yüzüstü ya da yan yatarsınız, cilt uyuşturulur, ultrason eşliğinde iğneyle genişlemiş toplayıcı sisteme girilir ve tel üzerinden kateter yerleştirilip cilde sabitlenir ve torbaya bağlanır; 30–60 dakika",
-				"when": "Taş, darlık ya da üretere dıştan bası nedeniyle idrarın geçememesi, ağrı veya ateşin eşlik ettiği genişlemiş toplayıcı sistem, idrar yolu ameliyatına hazırlık, stentin normal yoldan yerleştirilememesi",
-				"prep": "İşlemden birkaç saat önce yemek yemeyin, güncel kan ve pıhtılaşma sonuçlarını getirin, kan sulandırıcı ilaçları önceden hekiminizle konuşun; dönüş için yanınızda biri olsun",
-				"abnormal": "İlk saatlerde kateterden gelen idrar kanlı görünebilir, bu genellikle geçer; sonrasında kateterin açık, pansumanın kuru kalması önemlidir. Akışın durması, ateş, artan ağrı ya da kateterin yerinden çıkması hemen üroloğa başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "peripheral-region-ultrasound",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ультразвуковой осмотр мягких тканей и поверхностных структур рук, ног и других доступных областей тела",
-				"how": "Врач ведёт датчиком по интересующему участку, сравнивая его с противоположной стороной, при необходимости просит подвигать конечностью; 10–20 минут",
-				"when": "Прощупываемое уплотнение или припухлость под кожей, последствия ушиба, подозрение на скопление жидкости или гнойник, боль в мышце или сухожилии, наблюдение за ранее найденным образованием",
-				"prep": "Не требуется; важно показать врачу само место жалобы, поэтому лучше надеть одежду, которая легко открывает этот участок",
-				"abnormal": "Находки могут быть связаны с воспалением, скоплением жидкости, гематомой или доброкачественными образованиями мягких тканей. Объём дальнейшего обследования определяет направивший врач — хирург, ортопед или дерматолог"
-			},
-			"en": {
-				"what": "An ultrasound look at the soft tissues and superficial structures of the arms, legs and other accessible parts of the body",
-				"how": "The doctor moves the probe over the area of interest, compares it with the opposite side and may ask you to move the limb; 10–20 minutes",
-				"when": "A palpable lump or swelling under the skin, the aftermath of a blow, suspected fluid collection or abscess, pain in a muscle or tendon, follow-up of a lesion found earlier",
-				"prep": "Not required; it matters that you can show the doctor the exact spot that bothers you, so wear clothing that opens that area easily",
-				"abnormal": "Findings may be linked to inflammation, a fluid collection, a haematoma or benign soft-tissue lesions. How far to investigate is decided by the referring doctor, a surgeon, orthopaedist or dermatologist"
-			},
-			"sr": {
-				"what": "Ultrazvučni pregled mekih tkiva i površinskih struktura ruku, nogu i drugih dostupnih područja tijela",
-				"how": "Ljekar vodi sondu preko područja koje interesuje, poredi ga sa suprotnom stranom i po potrebi traži da pomjerite ekstremitet; traje 10–20 minuta",
-				"when": "Opipljiva kvržica ili oteklina pod kožom, posljedice udarca, sumnja na nakupljanje tečnosti ili gnojnu kolekciju, bol u mišiću ili tetivi, praćenje ranije nađene promjene",
-				"prep": "Nije potrebna; važno je da ljekaru pokažete tačno mjesto tegobe, pa je bolje obući odjeću koja lako otvara to područje",
-				"abnormal": "Nalaz može biti povezan sa upalom, nakupljanjem tečnosti, hematomom ili dobroćudnim promjenama mekih tkiva. Obim dalje obrade određuje ljekar koji je uputio pacijenta: hirurg, ortoped ili dermatolog"
-			},
-			"de": {
-				"what": "Ultraschalluntersuchung der Weichteile und oberflächlichen Strukturen an Armen, Beinen und anderen zugänglichen Körperregionen",
-				"how": "Der Arzt führt die Sonde über die betroffene Stelle, vergleicht sie mit der Gegenseite und bittet bei Bedarf, die Extremität zu bewegen; 10–20 Minuten",
-				"when": "Tastbarer Knoten oder Schwellung unter der Haut, Folgen einer Prellung, Verdacht auf eine Flüssigkeitsansammlung oder einen Abszess, Schmerz in Muskel oder Sehne, Verlaufskontrolle einer früher gefundenen Veränderung",
-				"prep": "Nicht erforderlich; wichtig ist, dem Arzt die genaue Stelle zeigen zu können, daher Kleidung tragen, die diese Region leicht freigibt",
-				"abnormal": "Befunde können mit Entzündung, einer Flüssigkeitsansammlung, einem Bluterguss oder gutartigen Weichteilveränderungen zusammenhängen. Wie weit abgeklärt wird, entscheidet der überweisende Arzt: Chirurg, Orthopäde oder Dermatologe"
-			},
-			"tr": {
-				"what": "Kollardaki, bacaklardaki ve ulaşılabilir diğer vücut bölgelerindeki yumuşak dokuların ve yüzeyel yapıların ultrasonla incelenmesi",
-				"how": "Hekim probu ilgili bölgede gezdirir, karşı tarafla karşılaştırır ve gerekirse uzvunuzu hareket ettirmenizi ister; 10–20 dakika",
-				"when": "Cilt altında ele gelen sertlik ya da şişlik, darbe sonrası durum, sıvı birikimi ya da apse şüphesi, kas veya kiriş ağrısı, daha önce saptanmış bir oluşumun izlenmesi",
-				"prep": "Gerekmez; şikâyetin olduğu noktayı hekime gösterebilmeniz önemlidir, bu nedenle o bölgeyi kolayca açan kıyafet tercih edin",
-				"abnormal": "Bulgular iltihap, sıvı birikimi, hematom ya da iyi huylu yumuşak doku oluşumlarıyla ilişkili olabilir. İleri incelemenin kapsamını sizi yönlendiren hekim belirler: cerrah, ortopedist ya da dermatolog"
-			}
-		}
-	},
-	{
-		"slug": "thoracic-fluid-drainage-under-ultrasound-guidance",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Выведение жидкости из плевральной полости через иглу или тонкий катетер, установленный под контролем ультразвука",
-				"how": "Пациент обычно сидит, наклонившись вперёд на опору, врач размечает точку по ультразвуку, обезболивает кожу и межреберье и выводит жидкость, а при большом объёме оставляет катетер; 30–45 минут",
-				"when": "Одышка из-за скопления жидкости вокруг лёгкого, необходимость выяснить природу выпота, гнойное скопление в плевре, повторное накопление жидкости при болезнях сердца, печени или почек",
-				"prep": "Обсудить с врачом разжижающие кровь препараты и принести анализы свёртывания; во время процедуры важно сидеть неподвижно и предупреждать врача, если хочется кашлять",
-				"abnormal": "Дышать обычно становится легче прямо во время процедуры, возможны кашель и дискомфорт при расправлении лёгкого. Жидкость отправляют на анализ, её результат и причину накопления разбирает пульмонолог, а резкая боль, усиление одышки или лихорадка после процедуры требуют немедленного осмотра"
-			},
-			"en": {
-				"what": "Removal of fluid from the pleural space through a needle or a thin catheter placed under ultrasound guidance",
-				"how": "You usually sit leaning forward on a support, the doctor marks the point with ultrasound, numbs the skin and the space between the ribs and drains the fluid, leaving a catheter in place if the volume is large; 30–45 minutes",
-				"when": "Breathlessness from fluid around the lung, the need to find out the nature of the effusion, pus in the pleural space, fluid that keeps returning in heart, liver or kidney disease",
-				"prep": "Discuss blood-thinning medication with your doctor and bring clotting tests; during the procedure it is important to sit still and to warn the doctor if you feel like coughing",
-				"abnormal": "Breathing usually eases during the procedure itself, while coughing and discomfort as the lung re-expands are common. The fluid is sent for analysis, and a pulmonologist goes through the result and the cause of the build-up; sharp pain, worsening breathlessness or fever afterwards need immediate review"
-			},
-			"sr": {
-				"what": "Izvlačenje tečnosti iz pleuralnog prostora kroz iglu ili tanak kateter postavljen pod kontrolom ultrazvuka",
-				"how": "Pacijent obično sjedi nagnut naprijed na oslonac, ljekar ultrazvukom obilježi tačku, anestezira kožu i međurebarni prostor i izvlači tečnost, a kod velike količine ostavlja kateter; traje 30–45 minuta",
-				"when": "Nedostatak vazduha zbog tečnosti oko pluća, potreba da se razjasni priroda izliva, gnojna kolekcija u pleuri, tečnost koja se ponovo nakuplja kod bolesti srca, jetre ili bubrega",
-				"prep": "Sa ljekarom dogovoriti lijekove za razrjeđivanje krvi i donijeti nalaze koagulacije; tokom zahvata važno je mirno sjediti i javiti ljekaru ako vas nadolazi kašalj",
-				"abnormal": "Disanje obično postaje lakše već tokom zahvata, dok su kašalj i nelagoda pri širenju pluća uobičajeni. Tečnost se šalje na analizu, a rezultat i uzrok nakupljanja razmatra pulmolog; oštar bol, pojačana zaduha ili povišena temperatura poslije zahvata traže hitan pregled"
-			},
-			"de": {
-				"what": "Ableitung von Flüssigkeit aus dem Pleuraspalt über eine Nadel oder einen dünnen Katheter, der unter Ultraschallsicht gelegt wird",
-				"how": "Sie sitzen meist nach vorn auf eine Stütze gelehnt, der Arzt markiert die Stelle mit Ultraschall, betäubt Haut und Zwischenrippenraum und lässt die Flüssigkeit ab, bei großer Menge bleibt ein Katheter liegen; 30–45 Minuten",
-				"when": "Luftnot durch Flüssigkeit um die Lunge, Klärung der Art des Ergusses, Eiteransammlung im Pleuraspalt, immer wiederkehrende Flüssigkeit bei Herz-, Leber- oder Nierenerkrankungen",
-				"prep": "Blutverdünnende Medikamente mit dem Arzt besprechen und Gerinnungswerte mitbringen; während des Eingriffs still sitzen und Bescheid geben, wenn Hustenreiz aufkommt",
-				"abnormal": "Das Atmen wird meist schon während des Eingriffs leichter, Husten und ein Spannungsgefühl beim Entfalten der Lunge sind üblich. Die Flüssigkeit wird untersucht, Ergebnis und Ursache bespricht der Pneumologe; heftiger Schmerz, zunehmende Luftnot oder Fieber danach erfordern eine sofortige Kontrolle"
-			},
-			"tr": {
-				"what": "Plevra boşluğundaki sıvının, ultrason eşliğinde yerleştirilen iğne ya da ince kateterle boşaltılması",
-				"how": "Genellikle bir desteğe yaslanıp öne eğik oturursunuz, hekim ultrasonla noktayı işaretler, cildi ve kaburga arasını uyuşturur ve sıvıyı boşaltır, miktar fazlaysa kateter bırakır; 30–45 dakika",
-				"when": "Akciğer çevresindeki sıvıya bağlı nefes darlığı, sıvının niteliğinin belirlenmesi gereği, plevrada irin birikimi, kalp, karaciğer ya da böbrek hastalıklarında yinelenen sıvı toplanması",
-				"prep": "Kan sulandırıcı ilaçları hekiminizle konuşun ve pıhtılaşma sonuçlarını getirin; işlem sırasında hareketsiz oturmak ve öksürük geldiğinde hekimi uyarmak önemlidir",
-				"abnormal": "Nefes almak genellikle işlem sırasında rahatlar; akciğer yeniden genişlerken öksürük ve rahatsızlık hissi olağandır. Sıvı tahlile gönderilir, sonucu ve birikme nedenini göğüs hastalıkları uzmanı değerlendirir; işlemden sonra keskin ağrı, artan nefes darlığı ya da ateş acil muayene gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "transcranial-doppler-sonography",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ультразвуковая оценка кровотока в артериях основания мозга через тонкие участки черепа, затылочное отверстие и закрытое веко",
-				"how": "Пациент лежит, датчик с гелем прикладывают к виску, затылочной области и глазу, аппарат показывает скорость потока в отдельных артериях; 30–45 минут, иногда с пробами на задержку дыхания",
-				"when": "Головокружение и обмороки, перенесённое нарушение мозгового кровообращения, подозрение на сужение внутричерепных артерий, наблюдение после операций на сосудах шеи, оценка резерва мозгового кровотока",
-				"prep": "Специальной подготовки нет; за несколько часов лучше не курить и не пить кофе, а лак для волос и массивные украшения у висков мешают контакту датчика",
-				"abnormal": "Повышение или снижение скорости потока может быть связано с сужением или спазмом сосуда, а у части людей височное окно для ультразвука непроходимо и исследование получается неполным. Результат оценивает невролог вместе с осмотром и другими методами визуализации"
-			},
-			"en": {
-				"what": "Ultrasound assessment of blood flow in the arteries at the base of the brain, through thin areas of the skull, the opening at the back of the head and the closed eyelid",
-				"how": "You lie down while the probe with gel is held at the temple, the back of the head and the eye, and the machine shows the flow velocity in individual arteries; 30–45 minutes, sometimes with breath-holding manoeuvres",
-				"when": "Dizziness and fainting, a past stroke or transient attack, suspected narrowing of the intracranial arteries, follow-up after surgery on the neck vessels, assessment of the reserve of brain blood flow",
-				"prep": "No special preparation; it is better not to smoke or drink coffee for a few hours, and hairspray or bulky jewellery at the temples get in the way of probe contact",
-				"abnormal": "Higher or lower flow velocity can be linked to narrowing or spasm of a vessel, while in some people the temporal window is impenetrable to ultrasound and the study stays incomplete. A neurologist reads the result together with the examination and other imaging"
-			},
-			"sr": {
-				"what": "Ultrazvučna procjena protoka krvi u arterijama baze mozga, kroz tanke djelove lobanje, potiljačni otvor i zatvoreni kapak",
-				"how": "Pacijent leži, a sonda sa gelom se prislanja uz sljepoočnicu, potiljak i oko, dok aparat prikazuje brzinu protoka u pojedinim arterijama; traje 30–45 minuta, ponekad uz probe sa zadržavanjem daha",
-				"when": "Vrtoglavica i nesvjestice, preboljeli moždani udar ili prolazni ispad, sumnja na suženje intrakranijalnih arterija, praćenje poslije operacija na krvnim sudovima vrata, procjena rezerve moždanog protoka",
-				"prep": "Posebne pripreme nema; nekoliko časova ranije bolje je ne pušiti i ne piti kafu, a lak za kosu i krupan nakit uz sljepoočnice smetaju kontaktu sonde",
-				"abnormal": "Povećana ili smanjena brzina protoka može biti povezana sa suženjem ili spazmom suda, a kod dijela ljudi sljepoočni prozor je neprohodan za ultrazvuk pa pregled ostaje nepotpun. Rezultat procjenjuje neurolog uz pregled i druge metode snimanja"
-			},
-			"de": {
-				"what": "Ultraschallbeurteilung des Blutflusses in den Arterien der Hirnbasis über dünne Schädelstellen, die Öffnung am Hinterkopf und das geschlossene Augenlid",
-				"how": "Sie liegen, die Sonde mit Gel wird an Schläfe, Hinterkopf und Auge angelegt, das Gerät zeigt die Flussgeschwindigkeit in einzelnen Arterien; 30–45 Minuten, gelegentlich mit Atemanhalte-Tests",
-				"when": "Schwindel und Ohnmachten, durchgemachter Schlaganfall oder vorübergehender Ausfall, Verdacht auf Verengung der Hirnarterien, Kontrolle nach Operationen an den Halsgefäßen, Beurteilung der Durchblutungsreserve des Gehirns",
-				"prep": "Keine besondere Vorbereitung; einige Stunden vorher besser nicht rauchen und keinen Kaffee trinken, Haarspray und großer Schmuck an den Schläfen stören den Sondenkontakt",
-				"abnormal": "Erhöhte oder verringerte Flussgeschwindigkeiten können mit einer Verengung oder einem Gefäßspasmus zusammenhängen; bei einem Teil der Menschen ist das Schläfenfenster für Ultraschall nicht durchlässig und die Untersuchung bleibt unvollständig. Das Ergebnis beurteilt ein Neurologe zusammen mit der Untersuchung und weiterer Bildgebung"
-			},
-			"tr": {
-				"what": "Beyin tabanındaki atardamarlardaki kan akımının, kafatasının ince bölgeleri, ense açıklığı ve kapalı göz kapağı üzerinden ultrasonla değerlendirilmesi",
-				"how": "Yatarken jelli prob şakağa, ensenin arkasına ve göze dayanır, cihaz tek tek atardamarlardaki akım hızını gösterir; 30–45 dakika, bazen nefes tutma testleriyle birlikte",
-				"when": "Baş dönmesi ve bayılma, geçirilmiş inme ya da geçici atak, kafa içi atardamarlarda daralma şüphesi, boyun damarı ameliyatlarından sonra izlem, beyin kan akımı rezervinin değerlendirilmesi",
-				"prep": "Özel hazırlık yok; birkaç saat önce sigara ve kahveden uzak durmak iyi olur, saç spreyi ve şakak hizasındaki iri takılar probun temasını zorlaştırır",
-				"abnormal": "Akım hızının artması ya da azalması damarın daralması veya spazmıyla ilişkili olabilir; bazı kişilerde şakak penceresi ultrasonu geçirmez ve inceleme eksik kalır. Sonucu nöroloji uzmanı muayene ve diğer görüntüleme yöntemleriyle birlikte değerlendirir"
-			}
-		}
-	}
+  {
+    "slug": "doppler-renal-arteries",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковая оценка кровотока в артериях почек и в сосудах внутри самой почки",
+        "how": "Пациент лежит на спине и на боку, врач ведёт датчиком по животу и пояснице, аппарат показывает поток цветом и записывает кривые скорости; 20–30 минут, безболезненно",
+        "when": "Повышенное давление, плохо поддающееся лечению, высокое давление в молодом возрасте, ухудшение функции почек, наблюдение за пересаженной почкой, заметная разница в размерах почек",
+        "prep": "Приходить натощак (не есть 6–8 часов, воду можно), накануне ограничить газообразующую пищу — газ в кишечнике закрывает сосуды от ультразвука",
+        "abnormal": "Изменения скорости и формы потока могут быть связаны с сужением артерии, перегибом сосуда или изменениями внутри почки, а качество картинки зависит от телосложения и газов. Заключение оценивает нефролог, кардиолог или сосудистый хирург вместе с давлением и анализами"
+      },
+      "en": {
+        "what": "Ultrasound assessment of blood flow in the kidney arteries and in the vessels inside the kidney itself",
+        "how": "You lie on your back and then on your side while the doctor moves the probe over the abdomen and the flank; the machine shows the flow in colour and records velocity curves; 20–30 minutes, painless",
+        "when": "High blood pressure that responds poorly to treatment, raised pressure at a young age, declining kidney function, follow-up of a transplanted kidney, a clear difference in size between the kidneys",
+        "prep": "Come fasting (no food for 6–8 hours, water is allowed) and limit gas-forming food the day before, because bowel gas hides the vessels from ultrasound",
+        "abnormal": "Changes in the speed and shape of the flow can be linked to narrowing of the artery, a kinked vessel or changes inside the kidney, and image quality depends on body build and bowel gas. A nephrologist, cardiologist or vascular surgeon reads the report together with your blood pressure and lab results"
+      },
+      "sr": {
+        "what": "Ultrazvučna procjena protoka krvi u bubrežnim arterijama i u sudovima unutar samog bubrega",
+        "how": "Ležite na leđima pa na boku dok ljekar vodi sondu preko stomaka i slabine, a aparat prikazuje protok bojom i bilježi krive brzine; traje 20–30 minuta i bezbolno je",
+        "when": "Povišen pritisak koji slabo reaguje na terapiju, visok pritisak u mlađim godinama, slabljenje bubrežne funkcije, praćenje presađenog bubrega, izrazita razlika u veličini bubrega",
+        "prep": "Doći natašte (ne jesti 6–8 časova, voda je dozvoljena) i dan ranije ograničiti hranu koja stvara gasove, jer gas u crijevima zaklanja sudove od ultrazvuka",
+        "abnormal": "Promjene brzine i oblika protoka mogu biti povezane sa suženjem arterije, savijenim sudom ili promjenama u samom bubregu, a kvalitet slike zavisi od građe tijela i gasova. Nalaz procjenjuje nefrolog, kardiolog ili vaskularni hirurg uz vrijednosti pritiska i laboratorijske nalaze"
+      },
+      "de": {
+        "what": "Ultraschallbeurteilung des Blutflusses in den Nierenarterien und in den Gefäßen innerhalb der Niere selbst",
+        "how": "Sie liegen auf dem Rücken und auf der Seite, während der Arzt die Sonde über Bauch und Flanke führt; das Gerät stellt den Fluss farbig dar und zeichnet Geschwindigkeitskurven auf; 20–30 Minuten, schmerzfrei",
+        "when": "Schwer einstellbarer Bluthochdruck, hoher Blutdruck in jungen Jahren, nachlassende Nierenfunktion, Kontrolle einer transplantierten Niere, deutlicher Größenunterschied zwischen den Nieren",
+        "prep": "Nüchtern kommen (6–8 Stunden nichts essen, Wasser ist erlaubt) und am Vortag blähende Speisen meiden, da Darmgas die Gefäße für den Ultraschall verdeckt",
+        "abnormal": "Veränderte Flussgeschwindigkeiten und Kurvenformen können mit einer Verengung der Arterie, einem abgeknickten Gefäß oder Veränderungen in der Niere zusammenhängen; die Bildqualität hängt von Körperbau und Darmgas ab. Den Befund beurteilt ein Nephrologe, Kardiologe oder Gefäßchirurg zusammen mit Blutdruck und Laborwerten"
+      },
+      "tr": {
+        "what": "Böbrek atardamarlarındaki ve böbreğin kendi içindeki damarlardaki kan akımının ultrasonla değerlendirilmesi",
+        "how": "Sırtüstü ve yan yatarken hekim probu karın ve böğür bölgesinde gezdirir, cihaz akımı renkli gösterir ve hız eğrilerini kaydeder; 20–30 dakika sürer, ağrısızdır",
+        "when": "Tedaviye zor yanıt veren yüksek tansiyon, genç yaşta yüksek tansiyon, böbrek işlevinin bozulması, nakledilmiş böbreğin izlenmesi, böbrekler arasında belirgin boyut farkı",
+        "prep": "Aç gelin (6–8 saat yemek yok, su serbest) ve bir gün önce gaz yapan yiyecekleri sınırlayın, çünkü bağırsak gazı damarları ultrasondan gizler",
+        "abnormal": "Akım hızındaki ve dalga biçimindeki değişiklikler damarın daralmasıyla, kıvrılmasıyla ya da böbrek içindeki değişikliklerle ilişkili olabilir; görüntü kalitesi vücut yapısına ve gaza bağlıdır. Raporu nefroloji, kardiyoloji ya da damar cerrahisi uzmanı tansiyon ve laboratuvar sonuçlarıyla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучна процјена протока крви у бубрежним артеријама и у судовима унутар самог бубрега",
+        "how": "Лежите на леђима па на боку док љекар води сонду преко стомака и слабине, а апарат приказује проток бојом и биљежи криве брзине; траје 20–30 минута и безболно је",
+        "when": "Повишен притисак који слабо реагује на терапију, висок притисак у млађим годинама, слабљење бубрежне функције, праћење пресађеног бубрега, изразита разлика у величини бубрега",
+        "prep": "Доћи наташте (не јести 6–8 часова, вода је дозвољена) и дан раније ограничити храну која ствара гасове, јер гас у цријевима заклања судове од ултразвука",
+        "abnormal": "Промјене брзине и облика протока могу бити повезане са сужењем артерије, савијеним судом или промјенама у самом бубрегу, а квалитет слике зависи од грађе тијела и гасова. Налаз процјењује нефролог, кардиолог или васкуларни хирург уз вриједности притиска и лабораторијске налазе"
+      }
+    }
+  },
+  {
+    "slug": "lung-base-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Прицельный ультразвуковой осмотр нижних отделов грудной клетки над диафрагмой — там раньше всего скапливается жидкость",
+        "how": "Пациент сидит или лежит с поднятой рукой, датчик ставят в межреберья по задней и боковой поверхности груди и просят глубоко дышать; 5–10 минут",
+        "when": "Одышка, боль при дыхании, подозрение на выпот в плевральной полости, контроль после воспаления лёгких, уточнение находки, замеченной при УЗИ живота или на рентгене, разметка точки перед пункцией",
+        "prep": "Не требуется; попросят раздеться до пояса и во время осмотра спокойно глубоко дышать",
+        "abnormal": "Находки могут быть связаны со скоплением жидкости, уплотнением лёгочной ткани или утолщением плевры, а глубокие отделы лёгкого за воздухом ультразвуку недоступны. Нужны ли рентген, КТ или пункция, решает пульмонолог или лечащий врач"
+      },
+      "en": {
+        "what": "A targeted ultrasound look at the lower chest just above the diaphragm, where fluid collects first",
+        "how": "You sit or lie with the arm raised while the probe is placed between the ribs on the back and side of the chest and you are asked to breathe deeply; 5–10 minutes",
+        "when": "Shortness of breath, pain on breathing, suspected fluid in the pleural space, follow-up after pneumonia, clarifying a finding noticed on abdominal ultrasound or an X-ray, marking the point before a tap",
+        "prep": "Not required; you will be asked to undress to the waist and to breathe deeply and calmly during the scan",
+        "abnormal": "Findings may be linked to collected fluid, denser lung tissue or thickened pleura, while the deeper parts of the lung stay hidden behind air. A pulmonologist or the referring doctor decides whether an X-ray, CT or a tap is needed"
+      },
+      "sr": {
+        "what": "Ciljani ultrazvučni pregled donjih djelova grudnog koša iznad dijafragme, gdje se tečnost najranije skuplja",
+        "how": "Sjedite ili ležite sa podignutom rukom, sonda se postavlja u međurebarne prostore po zadnjoj i bočnoj strani grudi, uz duboko disanje; traje 5–10 minuta",
+        "when": "Nedostatak vazduha, bol pri disanju, sumnja na izliv u pleuralnom prostoru, kontrola poslije upale pluća, razjašnjenje nalaza uočenog na ultrazvuku stomaka ili na rendgenu, obilježavanje mjesta prije punkcije",
+        "prep": "Nije potrebna; tražiće se da se svučete do pojasa i da tokom pregleda mirno i duboko dišete",
+        "abnormal": "Nalaz može biti povezan sa nakupljenom tečnošću, zgusnutim plućnim tkivom ili zadebljanom pleurom, dok dublji djelovi pluća ostaju skriveni iza vazduha. Da li su potrebni rendgen, skener ili punkcija odlučuje pulmolog ili ljekar koji vas vodi"
+      },
+      "de": {
+        "what": "Gezielte Ultraschalluntersuchung der unteren Brustkorbabschnitte oberhalb des Zwerchfells, wo sich Flüssigkeit zuerst sammelt",
+        "how": "Sie sitzen oder liegen mit erhobenem Arm, die Sonde wird zwischen die Rippen an Rücken und Seite gesetzt und Sie atmen tief; 5–10 Minuten",
+        "when": "Luftnot, Schmerzen beim Atmen, Verdacht auf Erguss im Pleuraspalt, Kontrolle nach einer Lungenentzündung, Abklärung eines Befundes aus dem Bauchultraschall oder Röntgenbild, Markierung der Punktionsstelle",
+        "prep": "Nicht erforderlich; Sie machen den Oberkörper frei und atmen während der Untersuchung ruhig und tief",
+        "abnormal": "Befunde können mit angesammelter Flüssigkeit, verdichtetem Lungengewebe oder verdickter Pleura zusammenhängen, während tiefere Lungenabschnitte hinter Luft verborgen bleiben. Ob Röntgen, CT oder eine Punktion nötig sind, entscheidet der Pneumologe oder der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Göğüs kafesinin diyafram üzerindeki alt bölümlerine, sıvının en önce biriktiği alana yönelik ultrason incelemesi",
+        "how": "Kol yukarıda otururken ya da yatarken prob sırt ve yan göğüs duvarında kaburga aralarına yerleştirilir, derin nefes almanız istenir; 5–10 dakika",
+        "when": "Nefes darlığı, nefes alırken ağrı, plevra boşluğunda sıvı şüphesi, zatürre sonrası kontrol, karın ultrasonunda ya da röntgende görülen bir bulgunun netleştirilmesi, ponksiyon öncesi noktanın işaretlenmesi",
+        "prep": "Gerekmez; belden yukarısını çıkarmanız ve inceleme sırasında sakin ve derin nefes almanız istenir",
+        "abnormal": "Bulgular biriken sıvı, yoğunlaşmış akciğer dokusu ya da kalınlaşmış plevra ile ilişkili olabilir; akciğerin derin bölümleri hava nedeniyle görüntülenemez. Röntgen, BT ya da ponksiyon gerekip gerekmediğine göğüs hastalıkları uzmanı veya sizi yönlendiren hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Циљани ултразвучни преглед доњих дјелова грудног коша изнад дијафрагме, гдје се течност најраније скупља",
+        "how": "Сједите или лежите са подигнутом руком, сонда се поставља у међуребарне просторе по задњој и бочној страни груди, уз дубоко дисање; траје 5–10 минута",
+        "when": "Недостатак ваздуха, бол при дисању, сумња на излив у плеуралном простору, контрола послије упале плућа, разјашњење налаза уоченог на ултразвуку стомака или на рендгену, обиљежавање мјеста прије пункције",
+        "prep": "Није потребна; тражиће се да се свучете до појаса и да током прегледа мирно и дубоко дишете",
+        "abnormal": "Налаз може бити повезан са накупљеном течношћу, згуснутим плућним ткивом или задебљаном плеуром, док дубљи дјелови плућа остају скривени иза ваздуха. Да ли су потребни рендген, скенер или пункција одлучује пулмолог или љекар који вас води"
+      }
+    }
+  },
+  {
+    "slug": "abdomen-and-kidney-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Совмещённый осмотр органов живота и обеих почек за одно посещение",
+        "how": "Врач последовательно смотрит печень, желчный пузырь, поджелудочную железу и селезёнку, затем почки из положения на спине и на боку, просит задержать дыхание; 20–30 минут",
+        "when": "Боль в животе и пояснице, изменения в анализах крови и мочи, наблюдение при камнях и кистах, хронические болезни пищеварения и почек, профилактический осмотр, обследование перед плановой операцией",
+        "prep": "Приходить натощак (не есть 6–8 часов, воду пить можно), накануне ограничить газообразующую пищу; приём постоянных лекарств обсудить с врачом",
+        "abnormal": "Находки могут быть связаны с камнями, кистами, изменением структуры или размеров органов, а также с особенностями строения. Сопоставить их с жалобами, анализом мочи и биохимией крови должен направивший врач"
+      },
+      "en": {
+        "what": "A combined look at the abdominal organs and both kidneys in a single visit",
+        "how": "The doctor scans the liver, gallbladder, pancreas and spleen in turn, then the kidneys with you lying on your back and on your side, asking you to hold your breath; 20–30 minutes",
+        "when": "Abdominal and flank pain, changes in blood and urine tests, follow-up of stones and cysts, chronic digestive and kidney conditions, a check-up, work-up before planned surgery",
+        "prep": "Come fasting (no food for 6–8 hours, water is allowed) and limit gas-forming food the day before; discuss regular medication with your doctor",
+        "abnormal": "Findings may be linked to stones, cysts, changes in the structure or size of organs, or simply to anatomical variants. The referring doctor is the one to match them with your symptoms, urine test and blood chemistry"
+      },
+      "sr": {
+        "what": "Objedinjeni pregled organa trbuha i oba bubrega u jednoj posjeti",
+        "how": "Ljekar redom pregleda jetru, žučnu kesu, pankreas i slezinu, zatim bubrege iz položaja na leđima i na boku, uz zadržavanje daha; traje 20–30 minuta",
+        "when": "Bol u stomaku i slabinama, promjene u nalazima krvi i urina, praćenje kamenova i cista, hronične bolesti probave i bubrega, preventivni pregled, obrada prije planirane operacije",
+        "prep": "Doći natašte (ne jesti 6–8 časova, voda je dozvoljena) i dan ranije ograničiti hranu koja stvara gasove; redovnu terapiju dogovoriti sa ljekarom",
+        "abnormal": "Nalaz može biti povezan sa kamenovima, cistama, promjenom građe ili veličine organa, ali i sa anatomskim varijantama. Povezati ga sa tegobama, nalazom urina i biohemijom krvi treba ljekar koji je uputio pacijenta"
+      },
+      "de": {
+        "what": "Kombinierte Untersuchung der Bauchorgane und beider Nieren in einem Termin",
+        "how": "Der Arzt untersucht nacheinander Leber, Gallenblase, Bauchspeicheldrüse und Milz, danach die Nieren in Rücken- und Seitenlage, mit kurzem Luftanhalten; 20–30 Minuten",
+        "when": "Bauch- und Flankenschmerzen, auffällige Blut- und Urinwerte, Verlaufskontrolle von Steinen und Zysten, chronische Verdauungs- und Nierenerkrankungen, Vorsorge, Abklärung vor einer geplanten Operation",
+        "prep": "Nüchtern kommen (6–8 Stunden nichts essen, Wasser erlaubt) und am Vortag blähende Speisen meiden; die Dauermedikation mit dem Arzt besprechen",
+        "abnormal": "Befunde können mit Steinen, Zysten, veränderter Struktur oder Größe der Organe, aber auch mit anatomischen Varianten zusammenhängen. Sie mit Beschwerden, Urinbefund und Blutchemie zusammenzuführen, ist Aufgabe des überweisenden Arztes"
+      },
+      "tr": {
+        "what": "Karın organlarının ve her iki böbreğin tek seferde birlikte incelenmesi",
+        "how": "Hekim sırayla karaciğer, safra kesesi, pankreas ve dalağı, ardından sırtüstü ve yan yatarken böbrekleri inceler, nefesinizi tutmanızı ister; 20–30 dakika",
+        "when": "Karın ve böğür ağrısı, kan ve idrar tahlillerindeki değişiklikler, taş ve kistlerin izlenmesi, kronik sindirim ve böbrek hastalıkları, kontrol amaçlı inceleme, planlı ameliyat öncesi değerlendirme",
+        "prep": "Aç gelin (6–8 saat yemek yok, su serbest) ve bir gün önce gaz yapan yiyecekleri sınırlayın; sürekli kullandığınız ilaçları hekiminizle konuşun",
+        "abnormal": "Bulgular taş, kist, organların yapı ya da boyut değişiklikleriyle, bazen de anatomik varyasyonlarla ilişkili olabilir. Bunları yakınmalarınız, idrar tahlili ve kan biyokimyasıyla birleştirmek sizi yönlendiren hekimin işidir"
+      },
+      "sr_cyrl": {
+        "what": "Обједињени преглед органа трбуха и оба бубрега у једној посјети",
+        "how": "Љекар редом прегледа јетру, жучну кесу, панкреас и слезину, затим бубреге из положаја на леђима и на боку, уз задржавање даха; траје 20–30 минута",
+        "when": "Бол у стомаку и слабинама, промјене у налазима крви и урина, праћење каменова и циста, хроничне болести пробаве и бубрега, превентивни преглед, обрада прије планиране операције",
+        "prep": "Доћи наташте (не јести 6–8 часова, вода је дозвољена) и дан раније ограничити храну која ствара гасове; редовну терапију договорити са љекаром",
+        "abnormal": "Налаз може бити повезан са каменовима, цистама, промјеном грађе или величине органа, али и са анатомским варијантама. Повезати га са тегобама, налазом урина и биохемијом крви треба љекар који је упутио пацијента"
+      }
+    }
+  },
+  {
+    "slug": "abdomen-and-urinary-tract-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр органов живота вместе со всем мочевым трактом — почками, мочеточниками, мочевым пузырём, у мужчин и предстательной железой",
+        "how": "Сначала смотрят верхний этаж живота и почки, в конце — наполненный мочевой пузырь, а после мочеиспускания измеряют остаточный объём; 25–35 минут",
+        "when": "Частое или затруднённое мочеиспускание, кровь в моче, повторяющиеся инфекции мочевых путей, перенесённая почечная колика, наблюдение при камнях и увеличении простаты",
+        "prep": "Первую часть делают натощак (не есть 6–8 часов), а к концу осмотра нужен наполненный мочевой пузырь — выпить воды примерно за час и не мочиться",
+        "abnormal": "Находки могут быть связаны с камнями, расширением чашечно-лоханочной системы, задержкой мочи или изменениями стенки пузыря. Трактовку и объём дальнейшего обследования определяет уролог или нефролог"
+      },
+      "en": {
+        "what": "A scan of the abdominal organs together with the whole urinary tract: kidneys, ureters, bladder and, in men, the prostate",
+        "how": "The upper abdomen and kidneys are scanned first, the full bladder at the end, and the residual volume is measured after you empty it; 25–35 minutes",
+        "when": "Frequent or difficult urination, blood in the urine, repeated urinary infections, a past renal colic, follow-up of stones and of an enlarged prostate",
+        "prep": "The first part is done fasting (no food for 6–8 hours), while the end of the scan needs a full bladder, so drink water about an hour before and do not urinate",
+        "abnormal": "Findings may be linked to stones, a dilated collecting system, retained urine or changes in the bladder wall. A urologist or nephrologist decides what they mean and how far to investigate"
+      },
+      "sr": {
+        "what": "Pregled organa trbuha zajedno sa cijelim mokraćnim sistemom: bubrezima, mokraćovodima, bešikom, a kod muškaraca i prostatom",
+        "how": "Prvo se pregleda gornji dio trbuha i bubrezi, na kraju puna bešika, a poslije mokrenja se mjeri zaostala količina urina; traje 25–35 minuta",
+        "when": "Često ili otežano mokrenje, krv u urinu, ponavljane infekcije mokraćnih puteva, preboljela bubrežna kolika, praćenje kamenova i uvećane prostate",
+        "prep": "Prvi dio se radi natašte (ne jesti 6–8 časova), a za kraj pregleda potrebna je puna bešika, pa popiti vodu oko sat ranije i ne mokriti",
+        "abnormal": "Nalaz može biti povezan sa kamenovima, proširenjem sabirnog sistema bubrega, zaostajanjem urina ili promjenama zida bešike. Tumačenje i obim dalje obrade određuje urolog ili nefrolog"
+      },
+      "de": {
+        "what": "Untersuchung der Bauchorgane zusammen mit dem gesamten Harntrakt: Nieren, Harnleiter, Blase und bei Männern auch Prostata",
+        "how": "Zuerst werden Oberbauch und Nieren untersucht, zum Schluss die gefüllte Blase, und nach dem Wasserlassen wird die Restharnmenge gemessen; 25–35 Minuten",
+        "when": "Häufiges oder erschwertes Wasserlassen, Blut im Urin, wiederkehrende Harnwegsinfekte, eine durchgemachte Nierenkolik, Kontrolle von Steinen und einer vergrößerten Prostata",
+        "prep": "Der erste Teil erfolgt nüchtern (6–8 Stunden nichts essen), für das Ende wird eine volle Blase gebraucht: etwa eine Stunde vorher Wasser trinken und nicht zur Toilette gehen",
+        "abnormal": "Befunde können mit Steinen, einem erweiterten Nierenhohlsystem, Restharn oder Veränderungen der Blasenwand zusammenhängen. Was sie bedeuten und wie weit abgeklärt wird, entscheidet der Urologe oder Nephrologe"
+      },
+      "tr": {
+        "what": "Karın organlarının, böbrekler, üreterler, mesane ve erkeklerde prostatı kapsayan tüm üriner sistemle birlikte incelenmesi",
+        "how": "Önce üst karın ve böbrekler, en sonda dolu mesane incelenir; idrar yaptıktan sonra kalan idrar miktarı ölçülür; 25–35 dakika",
+        "when": "Sık ya da zor idrar yapma, idrarda kan, yinelenen idrar yolu enfeksiyonları, geçirilmiş böbrek koliği, taşların ve büyümüş prostatın izlenmesi",
+        "prep": "İlk bölüm aç karnına yapılır (6–8 saat yemek yok), incelemenin sonu için mesanenin dolu olması gerekir: yaklaşık bir saat önce su için ve idrarınızı tutun",
+        "abnormal": "Bulgular taş, böbrek toplayıcı sisteminde genişleme, idrarın boşalmaması ya da mesane duvarı değişiklikleriyle ilişkili olabilir. Anlamını ve ileri incelemenin kapsamını üroloji ya da nefroloji uzmanı belirler"
+      },
+      "sr_cyrl": {
+        "what": "Преглед органа трбуха заједно са цијелим мокраћним системом: бубрезима, мокраћоводима, бешиком, а код мушкараца и простатом",
+        "how": "Прво се прегледа горњи дио трбуха и бубрези, на крају пуна бешика, а послије мокрења се мјери заостала количина урина; траје 25–35 минута",
+        "when": "Често или отежано мокрење, крв у урину, понављане инфекције мокраћних путева, пребољела бубрежна колика, праћење каменова и увећане простате",
+        "prep": "Први дио се ради наташте (не јести 6–8 часова), а за крај прегледа потребна је пуна бешика, па попити воду око сат раније и не мокрити",
+        "abnormal": "Налаз може бити повезан са каменовима, проширењем сабирног система бубрега, заостајањем урина или промјенама зида бешике. Тумачење и обим даље обраде одређује уролог или нефролог"
+      }
+    }
+  },
+  {
+    "slug": "abdominal-fluid-drainage-under-ultrasound-guidance",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Выведение скопившейся в брюшной полости жидкости через иглу или тонкий катетер, который ставят под контролем ультразвука",
+        "how": "Врач находит на экране безопасную точку, обезболивает кожу, вводит иглу и по ней при необходимости устанавливает катетер, жидкость оттекает в ёмкость; установка занимает 20–40 минут, сам отток может длиться дольше",
+        "when": "Большое скопление жидкости в животе, мешающее дышать и есть, подозрение на инфицированное скопление или абсцесс, скопление после операции или травмы, необходимость взять жидкость на анализ",
+        "prep": "Обсудить с врачом разжижающие кровь препараты и принести свежие анализы свёртывания; непосредственно перед процедурой опорожнить мочевой пузырь",
+        "abnormal": "После процедуры обычно легче дышать и уменьшается вздутие, возможны болезненность в месте прокола и подтекание жидкости. Саму жидкость отправляют на анализ, причину накопления и дальнейшее лечение определяет лечащий врач, а лихорадка, усиление боли или быстрое повторное накопление требуют осмотра"
+      },
+      "en": {
+        "what": "Removal of fluid collected in the abdominal cavity through a needle or a thin catheter placed under ultrasound guidance",
+        "how": "The doctor finds a safe point on the screen, numbs the skin, inserts the needle and if needed passes a catheter over it, and the fluid drains into a container; placement takes 20–40 minutes, the drainage itself may last longer",
+        "when": "A large amount of fluid in the abdomen that makes breathing and eating hard, suspected infected collection or abscess, a collection after surgery or injury, the need to send fluid for analysis",
+        "prep": "Discuss blood-thinning medication with your doctor and bring recent clotting tests; empty your bladder right before the procedure",
+        "abnormal": "Breathing usually becomes easier afterwards and the bloating goes down, while soreness at the puncture site and some leakage are possible. The fluid is sent to the laboratory, the cause of the build-up and further treatment are decided by the treating doctor, and fever, increasing pain or rapid refilling call for a review"
+      },
+      "sr": {
+        "what": "Izvlačenje tečnosti nakupljene u trbušnoj duplji kroz iglu ili tanak kateter postavljen pod kontrolom ultrazvuka",
+        "how": "Ljekar na ekranu nađe bezbjednu tačku, anestezira kožu, uvodi iglu i po potrebi preko nje postavlja kateter, a tečnost otiče u posudu; postavljanje traje 20–40 minuta, samo oticanje može trajati duže",
+        "when": "Velika količina tečnosti u trbuhu koja otežava disanje i ishranu, sumnja na inficiranu kolekciju ili apsces, kolekcija poslije operacije ili povrede, potreba da se tečnost pošalje na analizu",
+        "prep": "Sa ljekarom dogovoriti lijekove za razrjeđivanje krvi i donijeti svježe nalaze koagulacije; neposredno prije zahvata isprazniti bešiku",
+        "abnormal": "Poslije zahvata disanje je obično lakše a nadutost manja, dok su osjetljivost na mjestu uboda i blago curenje mogući. Tečnost ide na analizu, uzrok nakupljanja i dalje liječenje određuje ljekar koji vas vodi, a povišena temperatura, jači bol ili brzo ponovno punjenje traže pregled"
+      },
+      "de": {
+        "what": "Ableitung von Flüssigkeit aus der Bauchhöhle über eine Nadel oder einen dünnen Katheter, der unter Ultraschallsicht gelegt wird",
+        "how": "Der Arzt sucht am Bildschirm eine sichere Stelle, betäubt die Haut, führt die Nadel ein und legt darüber bei Bedarf einen Katheter; die Flüssigkeit läuft in ein Gefäß ab; das Legen dauert 20–40 Minuten, der Ablauf selbst kann länger dauern",
+        "when": "Große Flüssigkeitsmenge im Bauch, die Atmen und Essen erschwert, Verdacht auf eine infizierte Ansammlung oder einen Abszess, Ansammlung nach Operation oder Verletzung, Bedarf an Flüssigkeit für die Analyse",
+        "prep": "Blutverdünnende Medikamente mit dem Arzt besprechen und aktuelle Gerinnungswerte mitbringen; unmittelbar vor dem Eingriff die Blase entleeren",
+        "abnormal": "Danach fällt das Atmen meist leichter und der Bauch spannt weniger, während Druckschmerz an der Einstichstelle und etwas Nachlaufen möglich sind. Die Flüssigkeit wird untersucht, Ursache und weitere Behandlung legt der behandelnde Arzt fest; Fieber, zunehmende Schmerzen oder rasches Nachlaufen erfordern eine Kontrolle"
+      },
+      "tr": {
+        "what": "Karın boşluğunda biriken sıvının, ultrason eşliğinde yerleştirilen iğne ya da ince kateter yoluyla boşaltılması",
+        "how": "Hekim ekranda güvenli bir nokta belirler, cildi uyuşturur, iğneyi girer ve gerekirse üzerinden kateter yerleştirir; sıvı bir kaba akar; yerleştirme 20–40 dakika sürer, boşalma daha uzun sürebilir",
+        "when": "Nefes almayı ve beslenmeyi zorlaştıran yoğun karın sıvısı, enfekte koleksiyon ya da apse şüphesi, ameliyat veya yaralanma sonrası birikim, sıvının tahlile gönderilmesi gereği",
+        "prep": "Kan sulandırıcı ilaçları hekiminizle konuşun ve güncel pıhtılaşma sonuçlarını getirin; işlemden hemen önce mesanenizi boşaltın",
+        "abnormal": "İşlemden sonra genellikle nefes almak kolaylaşır ve şişkinlik azalır; giriş yerinde hassasiyet ve hafif sızıntı olabilir. Sıvı laboratuvara gönderilir, birikme nedenini ve tedaviyi sizi izleyen hekim belirler; ateş, artan ağrı ya da hızla yeniden dolma muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Извлачење течности накупљене у трбушној дупљи кроз иглу или танак катетер постављен под контролом ултразвука",
+        "how": "Љекар на екрану нађе безбједну тачку, анестезира кожу, уводи иглу и по потреби преко ње поставља катетер, а течност отиче у посуду; постављање траје 20–40 минута, само отицање може трајати дуже",
+        "when": "Велика количина течности у трбуху која отежава дисање и исхрану, сумња на инфицирану колекцију или апсцес, колекција послије операције или повреде, потреба да се течност пошаље на анализу",
+        "prep": "Са љекаром договорити лијекове за разрјеђивање крви и донијети свјеже налазе коагулације; непосредно прије захвата испразнити бешику",
+        "abnormal": "Послије захвата дисање је обично лакше а надутост мања, док су осјетљивост на мјесту убода и благо цурење могући. Течност иде на анализу, узрок накупљања и даље лијечење одређује љекар који вас води, а повишена температура, јачи бол или брзо поновно пуњење траже преглед"
+      }
+    }
+  },
+  {
+    "slug": "abdominal-vessels-and-lymph-nodes-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр крупных сосудов живота — аорты, нижней полой вены и их ветвей — вместе с лимфатическими узлами забрюшинного пространства",
+        "how": "Врач ведёт датчиком по животу, измеряет диаметр сосудов и оценивает поток, затем просматривает области вдоль аорты и подвздошных сосудов; 20–30 минут",
+        "when": "Пульсирующее образование в животе, проверка аорты у курильщиков и людей старшего возраста, боль в животе после еды, длительная лихорадка неясного происхождения, наблюдение за ранее найденными изменениями",
+        "prep": "Приходить натощак (не есть 6–8 часов, воду можно) и накануне ограничить газообразующую пищу — иначе сосуды и узлы плохо видны",
+        "abnormal": "Расширение сосуда, изменение потока или увеличение узлов требуют сопоставления с жалобами и другими исследованиями и сами по себе диагнозом не являются. Дальнейшую тактику определяет сосудистый хирург или направивший врач"
+      },
+      "en": {
+        "what": "A scan of the large abdominal vessels, the aorta, the inferior vena cava and their branches, together with the lymph nodes of the retroperitoneum",
+        "how": "The doctor moves the probe over the abdomen, measures vessel diameters and assesses flow, then looks along the aorta and the iliac vessels; 20–30 minutes",
+        "when": "A pulsating mass in the abdomen, checking the aorta in smokers and older people, abdominal pain after meals, prolonged fever of unclear origin, follow-up of changes found earlier",
+        "prep": "Come fasting (no food for 6–8 hours, water is allowed) and limit gas-forming food the day before, otherwise vessels and nodes are poorly visible",
+        "abnormal": "A widened vessel, altered flow or enlarged nodes have to be matched with symptoms and other tests and are not a diagnosis on their own. A vascular surgeon or the referring doctor decides what follows"
+      },
+      "sr": {
+        "what": "Pregled velikih krvnih sudova trbuha, aorte, donje šuplje vene i njihovih grana, zajedno sa limfnim čvorovima retroperitoneuma",
+        "how": "Ljekar vodi sondu preko stomaka, mjeri prečnik sudova i procjenjuje protok, a zatim pregleda područja duž aorte i ilijačnih sudova; traje 20–30 minuta",
+        "when": "Pulsirajuća masa u trbuhu, provjera aorte kod pušača i starijih osoba, bol u stomaku poslije jela, dugotrajna temperatura nejasnog uzroka, praćenje ranije nađenih promjena",
+        "prep": "Doći natašte (ne jesti 6–8 časova, voda je dozvoljena) i dan ranije ograničiti hranu koja stvara gasove, jer se inače sudovi i čvorovi slabo vide",
+        "abnormal": "Proširenje suda, izmijenjen protok ili uvećani čvorovi moraju se sagledati uz tegobe i druge pretrage i sami po sebi nisu dijagnoza. Dalji postupak određuje vaskularni hirurg ili ljekar koji je uputio pacijenta"
+      },
+      "de": {
+        "what": "Untersuchung der großen Bauchgefäße, der Aorta, der unteren Hohlvene und ihrer Äste, zusammen mit den Lymphknoten des Retroperitoneums",
+        "how": "Der Arzt führt die Sonde über den Bauch, misst die Gefäßdurchmesser und beurteilt den Fluss, danach werden die Regionen entlang der Aorta und der Beckengefäße durchgesehen; 20–30 Minuten",
+        "when": "Pulsierende Resistenz im Bauch, Kontrolle der Aorta bei Rauchern und älteren Menschen, Bauchschmerzen nach dem Essen, anhaltendes Fieber unklarer Ursache, Verlaufskontrolle bekannter Veränderungen",
+        "prep": "Nüchtern kommen (6–8 Stunden nichts essen, Wasser erlaubt) und am Vortag blähende Speisen meiden, sonst sind Gefäße und Lymphknoten schlecht einsehbar",
+        "abnormal": "Ein erweitertes Gefäß, veränderter Fluss oder vergrößerte Knoten müssen mit Beschwerden und weiteren Untersuchungen zusammengesehen werden und sind für sich keine Diagnose. Das weitere Vorgehen legt der Gefäßchirurg oder der überweisende Arzt fest"
+      },
+      "tr": {
+        "what": "Karındaki büyük damarların, aortun, alt ana toplardamarın ve dallarının, retroperitoneal lenf nodlarıyla birlikte incelenmesi",
+        "how": "Hekim probu karında gezdirir, damar çaplarını ölçer ve akımı değerlendirir, ardından aort ve iliyak damarlar boyunca bölgeleri tarar; 20–30 dakika",
+        "when": "Karında atan bir kitle, sigara içenlerde ve ileri yaşta aortun kontrolü, yemek sonrası karın ağrısı, nedeni belirsiz uzun süreli ateş, daha önce saptanmış değişikliklerin izlenmesi",
+        "prep": "Aç gelin (6–8 saat yemek yok, su serbest) ve bir gün önce gaz yapan yiyecekleri sınırlayın, aksi halde damarlar ve nodlar iyi görülmez",
+        "abnormal": "Genişlemiş damar, değişmiş akım ya da büyümüş nodlar yakınmalar ve diğer tetkiklerle birlikte değerlendirilmelidir, tek başına tanı değildir. Sonraki adımları damar cerrahisi uzmanı ya da sizi yönlendiren hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Преглед великих крвних судова трбуха, аорте, доње шупље вене и њихових грана, заједно са лимфним чворовима ретроперитонеума",
+        "how": "Љекар води сонду преко стомака, мјери пречник судова и процјењује проток, а затим прегледа подручја дуж аорте и илијачних судова; траје 20–30 минута",
+        "when": "Пулсирајућа маса у трбуху, провјера аорте код пушача и старијих особа, бол у стомаку послије јела, дуготрајна температура нејасног узрока, праћење раније нађених промјена",
+        "prep": "Доћи наташте (не јести 6–8 часова, вода је дозвољена) и дан раније ограничити храну која ствара гасове, јер се иначе судови и чворови слабо виде",
+        "abnormal": "Проширење суда, измијењен проток или увећани чворови морају се сагледати уз тегобе и друге претраге и сами по себи нису дијагноза. Даљи поступак одређује васкуларни хирург или љекар који је упутио пацијента"
+      }
+    }
+  },
+  {
+    "slug": "ankle-brachial-index-by-doppler-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Сравнение давления на лодыжке и на плече с помощью манжеты и ультразвукового датчика — простой способ оценить проходимость артерий ног",
+        "how": "Пациент спокойно лежит, манжету надевают поочерёдно на плечо и на голень, маленьким датчиком слушают поток в артериях и записывают давление с каждой стороны; 20–30 минут",
+        "when": "Боль в икрах при ходьбе, проходящая в покое, холодные или бледные стопы, долго не заживающие раны на стопах, диабет и курение, наблюдение после вмешательств на артериях ног",
+        "prep": "Специальной подготовки нет; за час до измерения не курить и не пить кофе, прийти заранее и спокойно посидеть, одежда должна позволять освободить руку и голень",
+        "abnormal": "Разница давлений между рукой и ногой может быть связана с сужением артерий ног, а при жёсткой стенке сосудов, например при длительном диабете, показатель бывает завышен. Результат оценивает сосудистый хирург вместе с осмотром и жалобами"
+      },
+      "en": {
+        "what": "A comparison of the blood pressure at the ankle and at the arm using a cuff and an ultrasound probe, a simple way to judge how open the leg arteries are",
+        "how": "You lie quietly while a cuff is placed in turn on the upper arm and the lower leg, a small probe listens to the flow in the arteries and the pressure is recorded on each side; 20–30 minutes",
+        "when": "Calf pain on walking that eases at rest, cold or pale feet, foot wounds that heal slowly, diabetes and smoking, follow-up after procedures on the leg arteries",
+        "prep": "No special preparation; avoid smoking and coffee for an hour beforehand, arrive early and rest quietly, and wear clothes that free the arm and the lower leg",
+        "abnormal": "A difference between arm and leg pressure may be linked to narrowing of the leg arteries, while stiff vessel walls, for example after years of diabetes, can push the value up. A vascular surgeon reads the result together with the examination and your symptoms"
+      },
+      "sr": {
+        "what": "Poređenje pritiska na skočnom zglobu i na nadlaktici pomoću manžetne i ultrazvučne sonde, jednostavan način da se procijeni prohodnost arterija nogu",
+        "how": "Pacijent mirno leži, manžetna se naizmjenično stavlja na nadlakticu i potkoljenicu, malom sondom se sluša protok u arterijama i bilježi pritisak sa svake strane; traje 20–30 minuta",
+        "when": "Bol u listovima pri hodu koji prestaje u mirovanju, hladna ili blijeda stopala, rane na stopalima koje sporo zarastaju, dijabetes i pušenje, praćenje poslije zahvata na arterijama nogu",
+        "prep": "Posebne pripreme nema; sat prije mjerenja ne pušiti i ne piti kafu, doći ranije i mirno sjediti, a odjeća treba da omogući oslobađanje ruke i potkoljenice",
+        "abnormal": "Razlika pritiska između ruke i noge može biti povezana sa suženjem arterija nogu, dok kod ukrućenog zida sudova, na primjer kod dugogodišnjeg dijabetesa, vrijednost zna biti lažno visoka. Rezultat procjenjuje vaskularni hirurg uz pregled i tegobe"
+      },
+      "de": {
+        "what": "Vergleich des Blutdrucks am Knöchel und am Oberarm mit Manschette und Ultraschallsonde, eine einfache Art, die Durchgängigkeit der Beinarterien zu beurteilen",
+        "how": "Sie liegen ruhig, die Manschette wird nacheinander an Oberarm und Unterschenkel angelegt, eine kleine Sonde hört den Fluss in den Arterien ab und der Druck wird auf jeder Seite notiert; 20–30 Minuten",
+        "when": "Wadenschmerz beim Gehen, der in Ruhe nachlässt, kalte oder blasse Füße, schlecht heilende Wunden am Fuß, Diabetes und Rauchen, Kontrolle nach Eingriffen an den Beinarterien",
+        "prep": "Keine besondere Vorbereitung; eine Stunde vorher nicht rauchen und keinen Kaffee trinken, früher kommen und ruhig sitzen, Kleidung sollte Arm und Unterschenkel freigeben",
+        "abnormal": "Ein Unterschied zwischen Arm- und Beindruck kann mit einer Verengung der Beinarterien zusammenhängen, während steife Gefäßwände, etwa bei langjährigem Diabetes, den Wert zu hoch erscheinen lassen. Das Ergebnis beurteilt ein Gefäßchirurg zusammen mit Untersuchung und Beschwerden"
+      },
+      "tr": {
+        "what": "Ayak bileği ve koldaki basıncın manşon ve ultrason probu ile karşılaştırılması; bacak atardamarlarının açıklığını değerlendirmenin basit bir yolu",
+        "how": "Sakin yatarken manşon sırayla üst kola ve baldıra takılır, küçük bir probla atardamarlardaki akım dinlenir ve her iki taraftaki basınç kaydedilir; 20–30 dakika",
+        "when": "Yürürken başlayan ve dinlenince geçen baldır ağrısı, soğuk ya da soluk ayaklar, geç iyileşen ayak yaraları, diyabet ve sigara, bacak atardamarlarına yönelik girişimlerden sonra izlem",
+        "prep": "Özel hazırlık yok; ölçümden bir saat önce sigara ve kahve almayın, erken gelip sakince oturun, giysiler kolun ve baldırın açılmasına izin vermeli",
+        "abnormal": "Kol ve bacak basıncı arasındaki fark bacak atardamarlarındaki daralmayla ilişkili olabilir; damar duvarı sertleştiğinde, örneğin uzun süreli diyabette, değer olduğundan yüksek çıkabilir. Sonucu damar cerrahisi uzmanı muayene ve yakınmalarla birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Поређење притиска на скочном зглобу и на надлактици помоћу манжетне и ултразвучне сонде, једноставан начин да се процијени проходност артерија ногу",
+        "how": "Пацијент мирно лежи, манжетна се наизмјенично ставља на надлактицу и поткољеницу, малом сондом се слуша проток у артеријама и биљежи притисак са сваке стране; траје 20–30 минута",
+        "when": "Бол у листовима при ходу који престаје у мировању, хладна или блиједа стопала, ране на стопалима које споро зарастају, дијабетес и пушење, праћење послије захвата на артеријама ногу",
+        "prep": "Посебне припреме нема; сат прије мјерења не пушити и не пити кафу, доћи раније и мирно сједити, а одјећа треба да омогући ослобађање руке и поткољенице",
+        "abnormal": "Разлика притиска између руке и ноге може бити повезана са сужењем артерија ногу, док код укрућеног зида судова, на примјер код дугогодишњег дијабетеса, вриједност зна бити лажно висока. Резултат процјењује васкуларни хирург уз преглед и тегобе"
+      }
+    }
+  },
+  {
+    "slug": "cyst-puncture-under-ultrasound-guidance",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Опорожнение кисты иглой, которую врач подводит к полости, глядя на экран ультразвука",
+        "how": "Кожу обрабатывают и обезболивают, под контролем изображения иглу проводят в кисту и отсасывают её содержимое, при необходимости полость промывают; 15–30 минут, затем накладывают повязку",
+        "when": "Крупная киста, которая давит на соседние органы или болит, кисты почки, печени, щитовидной или молочной железы, подозрение на нагноение, необходимость получить содержимое для анализа",
+        "prep": "Обсудить с врачом приём разжижающих кровь препаратов и принести анализы свёртывания; взять предыдущие снимки и заключения, надеть одежду, открывающую доступ к нужной области",
+        "abnormal": "Сразу после процедуры давление и боль обычно уменьшаются, но со временем киста может наполниться снова. Содержимое при необходимости отправляют в лабораторию, результат и план наблюдения обсуждает лечащий врач, а лихорадка, нарастающая боль или покраснение — повод показаться раньше срока"
+      },
+      "en": {
+        "what": "Emptying a cyst with a needle that the doctor guides into the cavity while watching the ultrasound screen",
+        "how": "The skin is disinfected and numbed, the needle is guided into the cyst under imaging and its content is aspirated, with the cavity rinsed if needed; 15–30 minutes, then a dressing is applied",
+        "when": "A large cyst that presses on neighbouring organs or hurts, cysts of the kidney, liver, thyroid or breast, suspected infection inside the cyst, the need to obtain content for analysis",
+        "prep": "Discuss blood-thinning medication with your doctor and bring clotting tests; take previous images and reports with you and wear clothing that gives access to the area",
+        "abnormal": "Pressure and pain usually ease right after the procedure, but a cyst can fill up again over time. The content is sent to the laboratory when needed, the result and the follow-up plan are discussed by the treating doctor, and fever, growing pain or redness are a reason to come back sooner"
+      },
+      "sr": {
+        "what": "Pražnjenje ciste iglom koju ljekar uvodi u šupljinu prateći sliku na ekranu ultrazvuka",
+        "how": "Koža se dezinfikuje i lokalno anestezira, igla se pod kontrolom slike uvodi u cistu i sadržaj se aspirira, a po potrebi se šupljina ispira; traje 15–30 minuta, zatim se stavlja zavoj",
+        "when": "Velika cista koja pritiska okolne organe ili boli, ciste bubrega, jetre, štitne žlijezde ili dojke, sumnja na upalu u cisti, potreba da se sadržaj pošalje na analizu",
+        "prep": "Sa ljekarom dogovoriti lijekove za razrjeđivanje krvi i donijeti nalaze koagulacije; ponijeti ranije snimke i nalaze i obući odjeću koja otvara pristup toj oblasti",
+        "abnormal": "Odmah poslije zahvata pritisak i bol obično popuštaju, ali se cista vremenom može ponovo napuniti. Sadržaj se po potrebi šalje u laboratoriju, rezultat i plan praćenja sa vama razmatra ljekar koji vas vodi, a povišena temperatura, bol koja jača ili crvenilo razlog su za raniji pregled"
+      },
+      "de": {
+        "what": "Entleerung einer Zyste mit einer Nadel, die der Arzt unter Sicht am Ultraschallbild in den Hohlraum führt",
+        "how": "Die Haut wird desinfiziert und betäubt, die Nadel unter Bildkontrolle in die Zyste geführt und der Inhalt abgesaugt, bei Bedarf wird der Hohlraum gespült; 15–30 Minuten, danach ein Verband",
+        "when": "Große Zyste, die auf Nachbarorgane drückt oder schmerzt, Zysten von Niere, Leber, Schilddrüse oder Brust, Verdacht auf Entzündung in der Zyste, Bedarf an Inhalt für die Untersuchung",
+        "prep": "Blutverdünnende Medikamente mit dem Arzt besprechen und Gerinnungswerte mitbringen; frühere Bilder und Befunde mitnehmen und Kleidung tragen, die den Zugang zur Region freigibt",
+        "abnormal": "Druckgefühl und Schmerz lassen meist direkt nach dem Eingriff nach, die Zyste kann sich mit der Zeit jedoch wieder füllen. Der Inhalt geht bei Bedarf ins Labor, Ergebnis und Kontrollplan bespricht der behandelnde Arzt; Fieber, zunehmender Schmerz oder Rötung sind ein Grund für eine frühere Vorstellung"
+      },
+      "tr": {
+        "what": "Hekimin ultrason ekranını izleyerek boşluğa yönlendirdiği iğneyle kistin boşaltılması",
+        "how": "Cilt dezenfekte edilip uyuşturulur, iğne görüntü eşliğinde kistin içine ilerletilir ve içerik aspire edilir, gerekirse boşluk yıkanır; 15–30 dakika, ardından pansuman yapılır",
+        "when": "Komşu organlara bası yapan ya da ağrıyan büyük kist, böbrek, karaciğer, tiroit ya da meme kistleri, kist içinde iltihap şüphesi, içeriğin tahlile gönderilmesi gereği",
+        "prep": "Kan sulandırıcı ilaçları hekiminizle konuşun ve pıhtılaşma sonuçlarını getirin; önceki görüntü ve raporları yanınıza alın, bölgeye erişim sağlayan kıyafet giyin",
+        "abnormal": "İşlemden hemen sonra bası hissi ve ağrı genellikle azalır, ancak kist zamanla yeniden dolabilir. İçerik gerektiğinde laboratuvara gönderilir, sonucu ve izlem planını sizi takip eden hekim değerlendirir; ateş, artan ağrı ya da kızarıklık erken başvuru nedenidir"
+      },
+      "sr_cyrl": {
+        "what": "Пражњење цисте иглом коју љекар уводи у шупљину пратећи слику на екрану ултразвука",
+        "how": "Кожа се дезинфикује и локално анестезира, игла се под контролом слике уводи у цисту и садржај се аспирира, а по потреби се шупљина испира; траје 15–30 минута, затим се ставља завој",
+        "when": "Велика циста која притиска околне органе или боли, цисте бубрега, јетре, штитне жлијезде или дојке, сумња на упалу у цисти, потреба да се садржај пошаље на анализу",
+        "prep": "Са љекаром договорити лијекове за разрјеђивање крви и донијети налазе коагулације; понијети раније снимке и налазе и обући одјећу која отвара приступ тој области",
+        "abnormal": "Одмах послије захвата притисак и бол обично попуштају, али се циста временом може поново напунити. Садржај се по потреби шаље у лабораторију, резултат и план праћења са вама разматра љекар који вас води, а повишена температура, бол која јача или црвенило разлог су за ранији преглед"
+      }
+    }
+  },
+  {
+    "slug": "doppler-portal-vein",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Оценка кровотока в воротной вене и сосудах, по которым кровь идёт от кишечника и селезёнки к печени",
+        "how": "Из положения на спине и на боку врач находит вену у ворот печени, измеряет её диаметр, скорость и направление потока и просит задержать дыхание; 20–30 минут",
+        "when": "Хронические болезни печени, увеличение селезёнки, жидкость в животе, расширенные вены пищевода, наблюдение после операций на печени и сосудистых вмешательств, подозрение на тромб в вене",
+        "prep": "Строго натощак, не есть около 8 часов (воду можно): после еды кровоток в воротной вене меняется и измерения получаются неточными",
+        "abnormal": "Замедление потока, его обратное направление или отсутствие сигнала могут быть связаны с повышенным давлением в системе воротной вены или с тромбом. Заключение оценивает гастроэнтеролог или гепатолог вместе с анализами и другими исследованиями"
+      },
+      "en": {
+        "what": "Assessment of blood flow in the portal vein and the vessels that carry blood from the bowel and spleen to the liver",
+        "how": "With you on your back and on your side, the doctor finds the vein at the liver hilum, measures its diameter, the speed and the direction of flow and asks you to hold your breath; 20–30 minutes",
+        "when": "Chronic liver disease, an enlarged spleen, fluid in the abdomen, dilated veins of the oesophagus, follow-up after liver surgery and vascular procedures, suspected clot in the vein",
+        "prep": "Strictly fasting, no food for about 8 hours (water is allowed): after a meal the flow in the portal vein changes and the measurements become unreliable",
+        "abnormal": "Slowed flow, flow in the reverse direction or no signal at all may be linked to raised pressure in the portal system or to a clot. A gastroenterologist or hepatologist reads the report together with lab tests and other imaging"
+      },
+      "sr": {
+        "what": "Procjena protoka krvi u portnoj veni i sudovima kojima krv iz crijeva i slezine dolazi do jetre",
+        "how": "U položaju na leđima i na boku ljekar pronalazi venu na hilusu jetre, mjeri njen prečnik, brzinu i smjer protoka i traži da zadržite dah; traje 20–30 minuta",
+        "when": "Hronične bolesti jetre, uvećana slezina, tečnost u trbuhu, proširene vene jednjaka, praćenje poslije operacija jetre i vaskularnih zahvata, sumnja na ugrušak u veni",
+        "prep": "Strogo natašte, ne jesti oko 8 časova (voda je dozvoljena): poslije obroka protok u portnoj veni se mijenja i mjerenja nisu pouzdana",
+        "abnormal": "Usporen protok, protok u obrnutom smjeru ili izostanak signala mogu biti povezani sa povišenim pritiskom u portnom sistemu ili sa ugruškom. Nalaz procjenjuje gastroenterolog ili hepatolog uz laboratorijske nalaze i druge pretrage"
+      },
+      "de": {
+        "what": "Beurteilung des Blutflusses in der Pfortader und in den Gefäßen, die Blut aus Darm und Milz zur Leber führen",
+        "how": "In Rücken- und Seitenlage sucht der Arzt die Vene an der Leberpforte, misst Durchmesser, Geschwindigkeit und Flussrichtung und bittet um kurzes Luftanhalten; 20–30 Minuten",
+        "when": "Chronische Lebererkrankungen, vergrößerte Milz, Flüssigkeit im Bauch, erweiterte Speiseröhrenvenen, Kontrolle nach Leberoperationen und Gefäßeingriffen, Verdacht auf ein Gerinnsel in der Vene",
+        "prep": "Streng nüchtern, etwa 8 Stunden nichts essen (Wasser erlaubt): nach einer Mahlzeit ändert sich der Fluss in der Pfortader und die Messwerte werden unzuverlässig",
+        "abnormal": "Verlangsamter Fluss, umgekehrte Flussrichtung oder fehlendes Signal können mit erhöhtem Druck im Pfortadersystem oder einem Gerinnsel zusammenhängen. Den Befund beurteilt ein Gastroenterologe oder Hepatologe zusammen mit Laborwerten und weiterer Bildgebung"
+      },
+      "tr": {
+        "what": "Portal vendeki ve bağırsak ile dalaktan karaciğere kan taşıyan damarlardaki akımın değerlendirilmesi",
+        "how": "Sırtüstü ve yan yatarken hekim karaciğer hilusundaki veni bulur, çapını, akım hızını ve yönünü ölçer ve nefesinizi tutmanızı ister; 20–30 dakika",
+        "when": "Kronik karaciğer hastalıkları, büyümüş dalak, karında sıvı, yemek borusunda genişlemiş damarlar, karaciğer ameliyatları ve damar girişimleri sonrası izlem, vende pıhtı şüphesi",
+        "prep": "Kesinlikle aç karnına, yaklaşık 8 saat yemek yok (su serbest): yemekten sonra portal vendeki akım değişir ve ölçümler güvenilir olmaz",
+        "abnormal": "Akımın yavaşlaması, ters yöne dönmesi ya da sinyalin alınamaması portal sistemdeki basınç artışıyla veya bir pıhtıyla ilişkili olabilir. Raporu gastroenteroloji ya da hepatoloji uzmanı laboratuvar ve diğer tetkiklerle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Процјена протока крви у портној вени и судовима којима крв из цријева и слезине долази до јетре",
+        "how": "У положају на леђима и на боку љекар проналази вену на хилусу јетре, мјери њен пречник, брзину и смјер протока и тражи да задржите дах; траје 20–30 минута",
+        "when": "Хроничне болести јетре, увећана слезина, течност у трбуху, проширене вене једњака, праћење послије операција јетре и васкуларних захвата, сумња на угрушак у вени",
+        "prep": "Строго наташте, не јести око 8 часова (вода је дозвољена): послије оброка проток у портној вени се мијења и мјерења нису поуздана",
+        "abnormal": "Успорен проток, проток у обрнутом смјеру или изостанак сигнала могу бити повезани са повишеним притиском у портном систему или са угрушком. Налаз процјењује гастроентеролог или хепатолог уз лабораторијске налазе и друге претраге"
+      }
+    }
+  },
+  {
+    "slug": "lung-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр плевры и прилежащих отделов лёгких ультразвуком по зонам грудной клетки",
+        "how": "Датчик последовательно ставят в межреберья спереди, сбоку и сзади, сравнивая обе стороны; 10–20 минут, без облучения, можно повторять часто и проводить прямо у постели",
+        "when": "Одышка и кашель, боль в груди, подозрение на жидкость в плевральной полости или на воспаление лёгких, наблюдение за уже выявленными изменениями, обследование беременных и детей, когда хотят обойтись без рентгена",
+        "prep": "Не требуется; понадобится освободить грудную клетку и спину, украшения и плотную одежду лучше снять",
+        "abnormal": "Выявленные изменения могут сопровождать воспаление, застой жидкости или изменения плевры, при этом воздух закрывает ультразвуку глубокие отделы лёгких и часть картины остаётся за кадром. Нужны ли рентген или КТ, решает лечащий врач"
+      },
+      "en": {
+        "what": "An ultrasound look at the pleura and the adjacent parts of the lungs, zone by zone over the chest",
+        "how": "The probe is placed between the ribs at the front, the side and the back in turn, comparing both sides; 10–20 minutes, no radiation, so it can be repeated often and done at the bedside",
+        "when": "Shortness of breath and cough, chest pain, suspected fluid in the pleural space or pneumonia, follow-up of changes already found, examining pregnant women and children when X-rays are best avoided",
+        "prep": "Not required; the chest and back need to be free, so jewellery and thick clothing are better taken off",
+        "abnormal": "The changes seen may accompany inflammation, congestion or pleural disease, while air blocks ultrasound from the deeper parts of the lungs so that part of the picture stays hidden. The treating doctor decides whether an X-ray or CT is needed"
+      },
+      "sr": {
+        "what": "Ultrazvučni pregled pleure i pripadajućih djelova pluća po zonama grudnog koša",
+        "how": "Sonda se redom postavlja u međurebarne prostore sprijeda, bočno i pozadi, uz poređenje obje strane; traje 10–20 minuta, bez zračenja, pa se može često ponavljati i raditi uz bolesnički krevet",
+        "when": "Nedostatak vazduha i kašalj, bol u grudima, sumnja na tečnost u pleuralnom prostoru ili na upalu pluća, praćenje već otkrivenih promjena, pregled trudnica i djece kada se rendgen izbjegava",
+        "prep": "Nije potrebna; grudni koš i leđa treba da budu slobodni, pa je nakit i debelu odjeću bolje skinuti",
+        "abnormal": "Viđene promjene mogu pratiti upalu, zastoj tečnosti ili bolest pleure, dok vazduh zaklanja dublje djelove pluća pa dio slike ostaje skriven. Da li su potrebni rendgen ili skener odlučuje ljekar koji vas vodi"
+      },
+      "de": {
+        "what": "Ultraschalluntersuchung der Pleura und der angrenzenden Lungenabschnitte, Zone für Zone über dem Brustkorb",
+        "how": "Die Sonde wird nacheinander vorn, seitlich und hinten zwischen die Rippen gesetzt, beide Seiten werden verglichen; 10–20 Minuten, ohne Strahlung, daher oft wiederholbar und auch am Krankenbett möglich",
+        "when": "Luftnot und Husten, Brustschmerz, Verdacht auf Flüssigkeit im Pleuraspalt oder eine Lungenentzündung, Verlaufskontrolle bekannter Veränderungen, Untersuchung von Schwangeren und Kindern, wenn Röntgen vermieden werden soll",
+        "prep": "Nicht erforderlich; Brustkorb und Rücken müssen frei sein, Schmuck und dicke Kleidung besser ablegen",
+        "abnormal": "Die gesehenen Veränderungen können Entzündung, Flüssigkeitsstau oder Pleuraveränderungen begleiten; Luft versperrt dem Ultraschall die tiefen Lungenabschnitte, ein Teil des Bildes bleibt also verborgen. Ob Röntgen oder CT nötig sind, entscheidet der behandelnde Arzt"
+      },
+      "tr": {
+        "what": "Plevranın ve akciğerlerin ona komşu bölümlerinin göğüs duvarında bölge bölge ultrasonla incelenmesi",
+        "how": "Prob sırayla önde, yanda ve arkada kaburga aralarına yerleştirilir ve iki taraf karşılaştırılır; 10–20 dakika, ışın yok, bu nedenle sık tekrarlanabilir ve hasta başında yapılabilir",
+        "when": "Nefes darlığı ve öksürük, göğüs ağrısı, plevra boşluğunda sıvı ya da zatürre şüphesi, saptanmış değişikliklerin izlenmesi, röntgenden kaçınılmak istenen gebe ve çocuk incelemeleri",
+        "prep": "Gerekmez; göğüs ve sırtın açık olması gerekir, takıları ve kalın giysileri çıkarmak iyi olur",
+        "abnormal": "Görülen değişiklikler iltihaba, sıvı birikimine ya da plevra hastalığına eşlik edebilir; hava ultrasonun akciğerin derin bölümlerine ulaşmasını engellediği için görüntünün bir kısmı gizli kalır. Röntgen ya da BT gerekip gerekmediğine sizi izleyen hekim karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучни преглед плеуре и припадајућих дјелова плућа по зонама грудног коша",
+        "how": "Сонда се редом поставља у међуребарне просторе сприједа, бочно и позади, уз поређење обје стране; траје 10–20 минута, без зрачења, па се може често понављати и радити уз болеснички кревет",
+        "when": "Недостатак ваздуха и кашаљ, бол у грудима, сумња на течност у плеуралном простору или на упалу плућа, праћење већ откривених промјена, преглед трудница и дјеце када се рендген избјегава",
+        "prep": "Није потребна; грудни кош и леђа треба да буду слободни, па је накит и дебелу одјећу боље скинути",
+        "abnormal": "Виђене промјене могу пратити упалу, застој течности или болест плеуре, док ваздух заклања дубље дјелове плућа па дио слике остаје скривен. Да ли су потребни рендген или скенер одлучује љекар који вас води"
+      }
+    }
+  },
+  {
+    "slug": "neck-ultrasound-salivary-glands",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковой осмотр околоушных, подчелюстных и подъязычных слюнных желёз и их протоков",
+        "how": "Пациент лежит с повёрнутой головой, датчиком с гелем осматривают железы с обеих сторон и соседние лимфоузлы; 10–20 минут, безболезненно",
+        "when": "Припухлость и боль в области щеки или под челюстью, особенно усиливающиеся во время еды, сухость во рту, прощупываемое уплотнение, повторяющиеся воспаления желёз, наблюдение известных изменений",
+        "prep": "Не требуется; есть и пить можно как обычно, украшения с шеи лучше снять",
+        "abnormal": "Изменение структуры железы, расширенный проток или камень в нём могут быть связаны с воспалением, застоем слюны или образованием в железе. Заключение оценивает отоларинголог или челюстно-лицевой хирург, при необходимости назначается пункция"
+      },
+      "en": {
+        "what": "An ultrasound look at the parotid, submandibular and sublingual salivary glands and their ducts",
+        "how": "You lie with the head turned while the probe with gel scans the glands on both sides along with the nearby lymph nodes; 10–20 minutes, painless",
+        "when": "Swelling and pain in the cheek or under the jaw, especially when eating, a dry mouth, a palpable lump, repeated inflammation of the glands, follow-up of known changes",
+        "prep": "Not required; you may eat and drink as usual, but it is better to take off neck jewellery",
+        "abnormal": "A changed gland structure, a widened duct or a stone inside it may be linked to inflammation, stagnant saliva or a lesion in the gland. An ENT doctor or maxillofacial surgeon interprets the report and may arrange a needle sampling"
+      },
+      "sr": {
+        "what": "Ultrazvučni pregled parotidnih, podviličnih i podjezičnih pljuvačnih žlijezda i njihovih izvodnih kanala",
+        "how": "Ležite sa okrenutom glavom dok se sondom sa gelom pregledaju žlijezde sa obje strane i okolni limfni čvorovi; traje 10–20 minuta i bezbolno je",
+        "when": "Oteklina i bol u predjelu obraza ili ispod vilice, naročito pri jelu, suva usta, opipljiva kvržica, ponavljane upale žlijezda, praćenje poznatih promjena",
+        "prep": "Nije potrebna; jesti i piti možete uobičajeno, a nakit sa vrata bolje je skinuti",
+        "abnormal": "Promijenjena građa žlijezde, proširen kanal ili kamen u njemu mogu biti povezani sa upalom, zastojem pljuvačke ili promjenom u žlijezdi. Nalaz tumači otorinolaringolog ili maksilofacijalni hirurg i po potrebi traži punkciju"
+      },
+      "de": {
+        "what": "Ultraschalluntersuchung der Ohrspeichel-, Unterkiefer- und Unterzungenspeicheldrüsen und ihrer Ausführungsgänge",
+        "how": "Sie liegen mit gedrehtem Kopf, während die Sonde mit Gel die Drüsen auf beiden Seiten und die benachbarten Lymphknoten darstellt; 10–20 Minuten, schmerzfrei",
+        "when": "Schwellung und Schmerz an Wange oder unter dem Kiefer, besonders beim Essen, Mundtrockenheit, tastbarer Knoten, wiederkehrende Entzündungen der Drüsen, Verlaufskontrolle bekannter Veränderungen",
+        "prep": "Nicht erforderlich; Essen und Trinken wie gewohnt möglich, Halsschmuck besser ablegen",
+        "abnormal": "Eine veränderte Drüsenstruktur, ein erweiterter Gang oder ein Stein darin können mit Entzündung, Speichelstau oder einer Veränderung in der Drüse zusammenhängen. Den Befund beurteilt ein HNO-Arzt oder Kieferchirurg und veranlasst bei Bedarf eine Punktion"
+      },
+      "tr": {
+        "what": "Kulak altı, çene altı ve dil altı tükürük bezlerinin ve kanallarının ultrasonla incelenmesi",
+        "how": "Baş yana çevrilmiş halde yatarken jelli probla bezler iki tarafta ve komşu lenf nodlarıyla birlikte incelenir; 10–20 dakika, ağrısızdır",
+        "when": "Yanakta ya da çene altında, özellikle yemek sırasında artan şişlik ve ağrı, ağız kuruluğu, ele gelen sertlik, yinelenen bez iltihapları, bilinen değişikliklerin izlenmesi",
+        "prep": "Gerekmez; her zamanki gibi yiyip içebilirsiniz, boyundaki takıları çıkarmak iyi olur",
+        "abnormal": "Bez yapısındaki değişiklik, genişlemiş kanal ya da kanaldaki taş iltihap, tükürük birikmesi veya bezdeki bir oluşumla ilişkili olabilir. Raporu kulak burun boğaz ya da çene cerrahisi uzmanı yorumlar, gerekirse iğne ile örnekleme ister"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучни преглед паротидних, подвиличних и подјезичних пљувачних жлијезда и њихових изводних канала",
+        "how": "Лежите са окренутом главом док се сондом са гелом прегледају жлијезде са обје стране и околни лимфни чворови; траје 10–20 минута и безболно је",
+        "when": "Отеклина и бол у предјелу образа или испод вилице, нарочито при јелу, сува уста, опипљива квржица, понављане упале жлијезда, праћење познатих промјена",
+        "prep": "Није потребна; јести и пити можете уобичајено, а накит са врата боље је скинути",
+        "abnormal": "Промијењена грађа жлијезде, проширен канал или камен у њему могу бити повезани са упалом, застојем пљувачке или промјеном у жлијезди. Налаз тумачи оториноларинголог или максилофацијални хирург и по потреби тражи пункцију"
+      }
+    }
+  },
+  {
+    "slug": "percutaneous-nephrostomy-under-ultrasound-guidance",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Установка тонкой дренажной трубки прямо в почку через кожу поясницы, чтобы отвести мочу, когда обычный путь перекрыт",
+        "how": "Пациент лежит на животе или на боку, кожу обезболивают, под контролем ультразвука иглой входят в расширенную полость почки и по проводнику ставят катетер, который фиксируют к коже и соединяют с мешком; 30–60 минут",
+        "when": "Блок оттока мочи камнем, сужением или сдавлением мочеточника, расширение полостной системы почки с болью или лихорадкой, подготовка к операции на мочевых путях, невозможность поставить стент обычным путём",
+        "prep": "Не есть несколько часов до процедуры, принести свежие анализы крови и свёртывания, заранее обсудить с врачом разжижающие кровь препараты; после установки понадобится сопровождение домой",
+        "abnormal": "В первые часы моча по трубке может идти с примесью крови, и это обычно проходит; дальше важно, чтобы катетер оставался проходимым, а повязка сухой. Прекращение оттока, лихорадка, усиление боли или смещение трубки — повод срочно связаться с урологом"
+      },
+      "en": {
+        "what": "Placing a thin drainage tube directly into the kidney through the skin of the flank to divert urine when the usual route is blocked",
+        "how": "You lie on your front or side, the skin is numbed, under ultrasound guidance a needle enters the dilated collecting system and a catheter is placed over a wire, then fixed to the skin and connected to a bag; 30–60 minutes",
+        "when": "Urine blocked by a stone, a narrowing or outside pressure on the ureter, a dilated collecting system with pain or fever, preparation for surgery on the urinary tract, a stent that cannot be placed the usual way",
+        "prep": "Do not eat for several hours before, bring recent blood and clotting tests and discuss blood-thinning medication with your doctor in advance; arrange for someone to take you home afterwards",
+        "abnormal": "In the first hours the urine in the tube may be blood-tinged, which usually settles; after that the catheter should stay patent and the dressing dry. Drainage that stops, fever, increasing pain or a tube that slips out are reasons to contact the urologist immediately"
+      },
+      "sr": {
+        "what": "Postavljanje tanke drenažne cjevčice direktno u bubreg kroz kožu slabine, da bi se urin odveo kada je uobičajeni put zatvoren",
+        "how": "Ležite na stomaku ili na boku, koža se anestezira, pod kontrolom ultrazvuka iglom se ulazi u prošireni sabirni sistem bubrega i preko žice se postavlja kateter, koji se fiksira za kožu i spaja sa kesom; traje 30–60 minuta",
+        "when": "Zastoj urina zbog kamena, suženja ili pritiska na mokraćovod, prošireni sabirni sistem bubrega sa bolom ili temperaturom, priprema za operaciju mokraćnih puteva, nemogućnost postavljanja stenta uobičajenim putem",
+        "prep": "Ne jesti nekoliko časova prije zahvata, donijeti svježe nalaze krvi i koagulacije i unaprijed sa ljekarom dogovoriti lijekove za razrjeđivanje krvi; za povratak kući treba pratnja",
+        "abnormal": "Prvih časova urin kroz cjevčicu može biti pomiješan sa krvlju, što se obično smiri; dalje je važno da kateter ostane prohodan a zavoj suv. Prestanak oticanja, povišena temperatura, jači bol ili ispadanje cjevčice razlog su da se hitno javite urologu"
+      },
+      "de": {
+        "what": "Einlage eines dünnen Drainageschlauchs direkt in die Niere durch die Haut der Flanke, um Urin abzuleiten, wenn der übliche Weg blockiert ist",
+        "how": "Sie liegen auf dem Bauch oder der Seite, die Haut wird betäubt, unter Ultraschallsicht wird mit einer Nadel das erweiterte Hohlsystem punktiert und über einen Draht ein Katheter gelegt, an der Haut fixiert und mit einem Beutel verbunden; 30–60 Minuten",
+        "when": "Harnstau durch Stein, Verengung oder Druck von außen auf den Harnleiter, erweitertes Nierenhohlsystem mit Schmerz oder Fieber, Vorbereitung auf eine Operation der Harnwege, wenn ein Stent auf üblichem Weg nicht gelegt werden kann",
+        "prep": "Einige Stunden vorher nichts essen, aktuelle Blut- und Gerinnungswerte mitbringen und blutverdünnende Medikamente vorher mit dem Arzt klären; für den Heimweg eine Begleitung organisieren",
+        "abnormal": "In den ersten Stunden kann der Urin im Schlauch blutig gefärbt sein, das legt sich meist; danach kommt es darauf an, dass der Katheter durchgängig und der Verband trocken bleibt. Versiegende Ableitung, Fieber, zunehmende Schmerzen oder ein verrutschter Schlauch sind Gründe, sofort den Urologen zu kontaktieren"
+      },
+      "tr": {
+        "what": "Normal yol tıkandığında idrarı dışarı almak için böbreğe böğür cildinden doğrudan ince bir drenaj kateteri yerleştirilmesi",
+        "how": "Yüzüstü ya da yan yatarsınız, cilt uyuşturulur, ultrason eşliğinde iğneyle genişlemiş toplayıcı sisteme girilir ve tel üzerinden kateter yerleştirilip cilde sabitlenir ve torbaya bağlanır; 30–60 dakika",
+        "when": "Taş, darlık ya da üretere dıştan bası nedeniyle idrarın geçememesi, ağrı veya ateşin eşlik ettiği genişlemiş toplayıcı sistem, idrar yolu ameliyatına hazırlık, stentin normal yoldan yerleştirilememesi",
+        "prep": "İşlemden birkaç saat önce yemek yemeyin, güncel kan ve pıhtılaşma sonuçlarını getirin, kan sulandırıcı ilaçları önceden hekiminizle konuşun; dönüş için yanınızda biri olsun",
+        "abnormal": "İlk saatlerde kateterden gelen idrar kanlı görünebilir, bu genellikle geçer; sonrasında kateterin açık, pansumanın kuru kalması önemlidir. Akışın durması, ateş, artan ağrı ya da kateterin yerinden çıkması hemen üroloğa başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Постављање танке дренажне цјевчице директно у бубрег кроз кожу слабине, да би се урин одвео када је уобичајени пут затворен",
+        "how": "Лежите на стомаку или на боку, кожа се анестезира, под контролом ултразвука иглом се улази у проширени сабирни систем бубрега и преко жице се поставља катетер, који се фиксира за кожу и спаја са кесом; траје 30–60 минута",
+        "when": "Застој урина због камена, сужења или притиска на мокраћовод, проширени сабирни систем бубрега са болом или температуром, припрема за операцију мокраћних путева, немогућност постављања стента уобичајеним путем",
+        "prep": "Не јести неколико часова прије захвата, донијети свјеже налазе крви и коагулације и унапријед са љекаром договорити лијекове за разрјеђивање крви; за повратак кући треба пратња",
+        "abnormal": "Првих часова урин кроз цјевчицу може бити помијешан са крвљу, што се обично смири; даље је важно да катетер остане проходан а завој сув. Престанак отицања, повишена температура, јачи бол или испадање цјевчице разлог су да се хитно јавите урологу"
+      }
+    }
+  },
+  {
+    "slug": "peripheral-region-ultrasound",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковой осмотр мягких тканей и поверхностных структур рук, ног и других доступных областей тела",
+        "how": "Врач ведёт датчиком по интересующему участку, сравнивая его с противоположной стороной, при необходимости просит подвигать конечностью; 10–20 минут",
+        "when": "Прощупываемое уплотнение или припухлость под кожей, последствия ушиба, подозрение на скопление жидкости или гнойник, боль в мышце или сухожилии, наблюдение за ранее найденным образованием",
+        "prep": "Не требуется; важно показать врачу само место жалобы, поэтому лучше надеть одежду, которая легко открывает этот участок",
+        "abnormal": "Находки могут быть связаны с воспалением, скоплением жидкости, гематомой или доброкачественными образованиями мягких тканей. Объём дальнейшего обследования определяет направивший врач — хирург, ортопед или дерматолог"
+      },
+      "en": {
+        "what": "An ultrasound look at the soft tissues and superficial structures of the arms, legs and other accessible parts of the body",
+        "how": "The doctor moves the probe over the area of interest, compares it with the opposite side and may ask you to move the limb; 10–20 minutes",
+        "when": "A palpable lump or swelling under the skin, the aftermath of a blow, suspected fluid collection or abscess, pain in a muscle or tendon, follow-up of a lesion found earlier",
+        "prep": "Not required; it matters that you can show the doctor the exact spot that bothers you, so wear clothing that opens that area easily",
+        "abnormal": "Findings may be linked to inflammation, a fluid collection, a haematoma or benign soft-tissue lesions. How far to investigate is decided by the referring doctor, a surgeon, orthopaedist or dermatologist"
+      },
+      "sr": {
+        "what": "Ultrazvučni pregled mekih tkiva i površinskih struktura ruku, nogu i drugih dostupnih područja tijela",
+        "how": "Ljekar vodi sondu preko područja koje interesuje, poredi ga sa suprotnom stranom i po potrebi traži da pomjerite ekstremitet; traje 10–20 minuta",
+        "when": "Opipljiva kvržica ili oteklina pod kožom, posljedice udarca, sumnja na nakupljanje tečnosti ili gnojnu kolekciju, bol u mišiću ili tetivi, praćenje ranije nađene promjene",
+        "prep": "Nije potrebna; važno je da ljekaru pokažete tačno mjesto tegobe, pa je bolje obući odjeću koja lako otvara to područje",
+        "abnormal": "Nalaz može biti povezan sa upalom, nakupljanjem tečnosti, hematomom ili dobroćudnim promjenama mekih tkiva. Obim dalje obrade određuje ljekar koji je uputio pacijenta: hirurg, ortoped ili dermatolog"
+      },
+      "de": {
+        "what": "Ultraschalluntersuchung der Weichteile und oberflächlichen Strukturen an Armen, Beinen und anderen zugänglichen Körperregionen",
+        "how": "Der Arzt führt die Sonde über die betroffene Stelle, vergleicht sie mit der Gegenseite und bittet bei Bedarf, die Extremität zu bewegen; 10–20 Minuten",
+        "when": "Tastbarer Knoten oder Schwellung unter der Haut, Folgen einer Prellung, Verdacht auf eine Flüssigkeitsansammlung oder einen Abszess, Schmerz in Muskel oder Sehne, Verlaufskontrolle einer früher gefundenen Veränderung",
+        "prep": "Nicht erforderlich; wichtig ist, dem Arzt die genaue Stelle zeigen zu können, daher Kleidung tragen, die diese Region leicht freigibt",
+        "abnormal": "Befunde können mit Entzündung, einer Flüssigkeitsansammlung, einem Bluterguss oder gutartigen Weichteilveränderungen zusammenhängen. Wie weit abgeklärt wird, entscheidet der überweisende Arzt: Chirurg, Orthopäde oder Dermatologe"
+      },
+      "tr": {
+        "what": "Kollardaki, bacaklardaki ve ulaşılabilir diğer vücut bölgelerindeki yumuşak dokuların ve yüzeyel yapıların ultrasonla incelenmesi",
+        "how": "Hekim probu ilgili bölgede gezdirir, karşı tarafla karşılaştırır ve gerekirse uzvunuzu hareket ettirmenizi ister; 10–20 dakika",
+        "when": "Cilt altında ele gelen sertlik ya da şişlik, darbe sonrası durum, sıvı birikimi ya da apse şüphesi, kas veya kiriş ağrısı, daha önce saptanmış bir oluşumun izlenmesi",
+        "prep": "Gerekmez; şikâyetin olduğu noktayı hekime gösterebilmeniz önemlidir, bu nedenle o bölgeyi kolayca açan kıyafet tercih edin",
+        "abnormal": "Bulgular iltihap, sıvı birikimi, hematom ya da iyi huylu yumuşak doku oluşumlarıyla ilişkili olabilir. İleri incelemenin kapsamını sizi yönlendiren hekim belirler: cerrah, ortopedist ya da dermatolog"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучни преглед меких ткива и површинских структура руку, ногу и других доступних подручја тијела",
+        "how": "Љекар води сонду преко подручја које интересује, пореди га са супротном страном и по потреби тражи да помјерите екстремитет; траје 10–20 минута",
+        "when": "Опипљива квржица или отеклина под кожом, посљедице ударца, сумња на накупљање течности или гнојну колекцију, бол у мишићу или тетиви, праћење раније нађене промјене",
+        "prep": "Није потребна; важно је да љекару покажете тачно мјесто тегобе, па је боље обући одјећу која лако отвара то подручје",
+        "abnormal": "Налаз може бити повезан са упалом, накупљањем течности, хематомом или доброћудним промјенама меких ткива. Обим даље обраде одређује љекар који је упутио пацијента: хирург, ортопед или дерматолог"
+      }
+    }
+  },
+  {
+    "slug": "thoracic-fluid-drainage-under-ultrasound-guidance",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Выведение жидкости из плевральной полости через иглу или тонкий катетер, установленный под контролем ультразвука",
+        "how": "Пациент обычно сидит, наклонившись вперёд на опору, врач размечает точку по ультразвуку, обезболивает кожу и межреберье и выводит жидкость, а при большом объёме оставляет катетер; 30–45 минут",
+        "when": "Одышка из-за скопления жидкости вокруг лёгкого, необходимость выяснить природу выпота, гнойное скопление в плевре, повторное накопление жидкости при болезнях сердца, печени или почек",
+        "prep": "Обсудить с врачом разжижающие кровь препараты и принести анализы свёртывания; во время процедуры важно сидеть неподвижно и предупреждать врача, если хочется кашлять",
+        "abnormal": "Дышать обычно становится легче прямо во время процедуры, возможны кашель и дискомфорт при расправлении лёгкого. Жидкость отправляют на анализ, её результат и причину накопления разбирает пульмонолог, а резкая боль, усиление одышки или лихорадка после процедуры требуют немедленного осмотра"
+      },
+      "en": {
+        "what": "Removal of fluid from the pleural space through a needle or a thin catheter placed under ultrasound guidance",
+        "how": "You usually sit leaning forward on a support, the doctor marks the point with ultrasound, numbs the skin and the space between the ribs and drains the fluid, leaving a catheter in place if the volume is large; 30–45 minutes",
+        "when": "Breathlessness from fluid around the lung, the need to find out the nature of the effusion, pus in the pleural space, fluid that keeps returning in heart, liver or kidney disease",
+        "prep": "Discuss blood-thinning medication with your doctor and bring clotting tests; during the procedure it is important to sit still and to warn the doctor if you feel like coughing",
+        "abnormal": "Breathing usually eases during the procedure itself, while coughing and discomfort as the lung re-expands are common. The fluid is sent for analysis, and a pulmonologist goes through the result and the cause of the build-up; sharp pain, worsening breathlessness or fever afterwards need immediate review"
+      },
+      "sr": {
+        "what": "Izvlačenje tečnosti iz pleuralnog prostora kroz iglu ili tanak kateter postavljen pod kontrolom ultrazvuka",
+        "how": "Pacijent obično sjedi nagnut naprijed na oslonac, ljekar ultrazvukom obilježi tačku, anestezira kožu i međurebarni prostor i izvlači tečnost, a kod velike količine ostavlja kateter; traje 30–45 minuta",
+        "when": "Nedostatak vazduha zbog tečnosti oko pluća, potreba da se razjasni priroda izliva, gnojna kolekcija u pleuri, tečnost koja se ponovo nakuplja kod bolesti srca, jetre ili bubrega",
+        "prep": "Sa ljekarom dogovoriti lijekove za razrjeđivanje krvi i donijeti nalaze koagulacije; tokom zahvata važno je mirno sjediti i javiti ljekaru ako vas nadolazi kašalj",
+        "abnormal": "Disanje obično postaje lakše već tokom zahvata, dok su kašalj i nelagoda pri širenju pluća uobičajeni. Tečnost se šalje na analizu, a rezultat i uzrok nakupljanja razmatra pulmolog; oštar bol, pojačana zaduha ili povišena temperatura poslije zahvata traže hitan pregled"
+      },
+      "de": {
+        "what": "Ableitung von Flüssigkeit aus dem Pleuraspalt über eine Nadel oder einen dünnen Katheter, der unter Ultraschallsicht gelegt wird",
+        "how": "Sie sitzen meist nach vorn auf eine Stütze gelehnt, der Arzt markiert die Stelle mit Ultraschall, betäubt Haut und Zwischenrippenraum und lässt die Flüssigkeit ab, bei großer Menge bleibt ein Katheter liegen; 30–45 Minuten",
+        "when": "Luftnot durch Flüssigkeit um die Lunge, Klärung der Art des Ergusses, Eiteransammlung im Pleuraspalt, immer wiederkehrende Flüssigkeit bei Herz-, Leber- oder Nierenerkrankungen",
+        "prep": "Blutverdünnende Medikamente mit dem Arzt besprechen und Gerinnungswerte mitbringen; während des Eingriffs still sitzen und Bescheid geben, wenn Hustenreiz aufkommt",
+        "abnormal": "Das Atmen wird meist schon während des Eingriffs leichter, Husten und ein Spannungsgefühl beim Entfalten der Lunge sind üblich. Die Flüssigkeit wird untersucht, Ergebnis und Ursache bespricht der Pneumologe; heftiger Schmerz, zunehmende Luftnot oder Fieber danach erfordern eine sofortige Kontrolle"
+      },
+      "tr": {
+        "what": "Plevra boşluğundaki sıvının, ultrason eşliğinde yerleştirilen iğne ya da ince kateterle boşaltılması",
+        "how": "Genellikle bir desteğe yaslanıp öne eğik oturursunuz, hekim ultrasonla noktayı işaretler, cildi ve kaburga arasını uyuşturur ve sıvıyı boşaltır, miktar fazlaysa kateter bırakır; 30–45 dakika",
+        "when": "Akciğer çevresindeki sıvıya bağlı nefes darlığı, sıvının niteliğinin belirlenmesi gereği, plevrada irin birikimi, kalp, karaciğer ya da böbrek hastalıklarında yinelenen sıvı toplanması",
+        "prep": "Kan sulandırıcı ilaçları hekiminizle konuşun ve pıhtılaşma sonuçlarını getirin; işlem sırasında hareketsiz oturmak ve öksürük geldiğinde hekimi uyarmak önemlidir",
+        "abnormal": "Nefes almak genellikle işlem sırasında rahatlar; akciğer yeniden genişlerken öksürük ve rahatsızlık hissi olağandır. Sıvı tahlile gönderilir, sonucu ve birikme nedenini göğüs hastalıkları uzmanı değerlendirir; işlemden sonra keskin ağrı, artan nefes darlığı ya da ateş acil muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Извлачење течности из плеуралног простора кроз иглу или танак катетер постављен под контролом ултразвука",
+        "how": "Пацијент обично сједи нагнут напријед на ослонац, љекар ултразвуком обиљежи тачку, анестезира кожу и међуребарни простор и извлачи течност, а код велике количине оставља катетер; траје 30–45 минута",
+        "when": "Недостатак ваздуха због течности око плућа, потреба да се разјасни природа излива, гнојна колекција у плеури, течност која се поново накупља код болести срца, јетре или бубрега",
+        "prep": "Са љекаром договорити лијекове за разрјеђивање крви и донијети налазе коагулације; током захвата важно је мирно сједити и јавити љекару ако вас надолази кашаљ",
+        "abnormal": "Дисање обично постаје лакше већ током захвата, док су кашаљ и нелагода при ширењу плућа уобичајени. Течност се шаље на анализу, а резултат и узрок накупљања разматра пулмолог; оштар бол, појачана задуха или повишена температура послије захвата траже хитан преглед"
+      }
+    }
+  },
+  {
+    "slug": "transcranial-doppler-sonography",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковая оценка кровотока в артериях основания мозга через тонкие участки черепа, затылочное отверстие и закрытое веко",
+        "how": "Пациент лежит, датчик с гелем прикладывают к виску, затылочной области и глазу, аппарат показывает скорость потока в отдельных артериях; 30–45 минут, иногда с пробами на задержку дыхания",
+        "when": "Головокружение и обмороки, перенесённое нарушение мозгового кровообращения, подозрение на сужение внутричерепных артерий, наблюдение после операций на сосудах шеи, оценка резерва мозгового кровотока",
+        "prep": "Специальной подготовки нет; за несколько часов лучше не курить и не пить кофе, а лак для волос и массивные украшения у висков мешают контакту датчика",
+        "abnormal": "Повышение или снижение скорости потока может быть связано с сужением или спазмом сосуда, а у части людей височное окно для ультразвука непроходимо и исследование получается неполным. Результат оценивает невролог вместе с осмотром и другими методами визуализации"
+      },
+      "en": {
+        "what": "Ultrasound assessment of blood flow in the arteries at the base of the brain, through thin areas of the skull, the opening at the back of the head and the closed eyelid",
+        "how": "You lie down while the probe with gel is held at the temple, the back of the head and the eye, and the machine shows the flow velocity in individual arteries; 30–45 minutes, sometimes with breath-holding manoeuvres",
+        "when": "Dizziness and fainting, a past stroke or transient attack, suspected narrowing of the intracranial arteries, follow-up after surgery on the neck vessels, assessment of the reserve of brain blood flow",
+        "prep": "No special preparation; it is better not to smoke or drink coffee for a few hours, and hairspray or bulky jewellery at the temples get in the way of probe contact",
+        "abnormal": "Higher or lower flow velocity can be linked to narrowing or spasm of a vessel, while in some people the temporal window is impenetrable to ultrasound and the study stays incomplete. A neurologist reads the result together with the examination and other imaging"
+      },
+      "sr": {
+        "what": "Ultrazvučna procjena protoka krvi u arterijama baze mozga, kroz tanke djelove lobanje, potiljačni otvor i zatvoreni kapak",
+        "how": "Pacijent leži, a sonda sa gelom se prislanja uz sljepoočnicu, potiljak i oko, dok aparat prikazuje brzinu protoka u pojedinim arterijama; traje 30–45 minuta, ponekad uz probe sa zadržavanjem daha",
+        "when": "Vrtoglavica i nesvjestice, preboljeli moždani udar ili prolazni ispad, sumnja na suženje intrakranijalnih arterija, praćenje poslije operacija na krvnim sudovima vrata, procjena rezerve moždanog protoka",
+        "prep": "Posebne pripreme nema; nekoliko časova ranije bolje je ne pušiti i ne piti kafu, a lak za kosu i krupan nakit uz sljepoočnice smetaju kontaktu sonde",
+        "abnormal": "Povećana ili smanjena brzina protoka može biti povezana sa suženjem ili spazmom suda, a kod dijela ljudi sljepoočni prozor je neprohodan za ultrazvuk pa pregled ostaje nepotpun. Rezultat procjenjuje neurolog uz pregled i druge metode snimanja"
+      },
+      "de": {
+        "what": "Ultraschallbeurteilung des Blutflusses in den Arterien der Hirnbasis über dünne Schädelstellen, die Öffnung am Hinterkopf und das geschlossene Augenlid",
+        "how": "Sie liegen, die Sonde mit Gel wird an Schläfe, Hinterkopf und Auge angelegt, das Gerät zeigt die Flussgeschwindigkeit in einzelnen Arterien; 30–45 Minuten, gelegentlich mit Atemanhalte-Tests",
+        "when": "Schwindel und Ohnmachten, durchgemachter Schlaganfall oder vorübergehender Ausfall, Verdacht auf Verengung der Hirnarterien, Kontrolle nach Operationen an den Halsgefäßen, Beurteilung der Durchblutungsreserve des Gehirns",
+        "prep": "Keine besondere Vorbereitung; einige Stunden vorher besser nicht rauchen und keinen Kaffee trinken, Haarspray und großer Schmuck an den Schläfen stören den Sondenkontakt",
+        "abnormal": "Erhöhte oder verringerte Flussgeschwindigkeiten können mit einer Verengung oder einem Gefäßspasmus zusammenhängen; bei einem Teil der Menschen ist das Schläfenfenster für Ultraschall nicht durchlässig und die Untersuchung bleibt unvollständig. Das Ergebnis beurteilt ein Neurologe zusammen mit der Untersuchung und weiterer Bildgebung"
+      },
+      "tr": {
+        "what": "Beyin tabanındaki atardamarlardaki kan akımının, kafatasının ince bölgeleri, ense açıklığı ve kapalı göz kapağı üzerinden ultrasonla değerlendirilmesi",
+        "how": "Yatarken jelli prob şakağa, ensenin arkasına ve göze dayanır, cihaz tek tek atardamarlardaki akım hızını gösterir; 30–45 dakika, bazen nefes tutma testleriyle birlikte",
+        "when": "Baş dönmesi ve bayılma, geçirilmiş inme ya da geçici atak, kafa içi atardamarlarda daralma şüphesi, boyun damarı ameliyatlarından sonra izlem, beyin kan akımı rezervinin değerlendirilmesi",
+        "prep": "Özel hazırlık yok; birkaç saat önce sigara ve kahveden uzak durmak iyi olur, saç spreyi ve şakak hizasındaki iri takılar probun temasını zorlaştırır",
+        "abnormal": "Akım hızının artması ya da azalması damarın daralması veya spazmıyla ilişkili olabilir; bazı kişilerde şakak penceresi ultrasonu geçirmez ve inceleme eksik kalır. Sonucu nöroloji uzmanı muayene ve diğer görüntüleme yöntemleriyle birlikte değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучна процјена протока крви у артеријама базе мозга, кроз танке дјелове лобање, потиљачни отвор и затворени капак",
+        "how": "Пацијент лежи, а сонда са гелом се прислања уз сљепоочницу, потиљак и око, док апарат приказује брзину протока у појединим артеријама; траје 30–45 минута, понекад уз пробе са задржавањем даха",
+        "when": "Вртоглавица и несвјестице, пребољели мождани удар или пролазни испад, сумња на сужење интракранијалних артерија, праћење послије операција на крвним судовима врата, процјена резерве можданог протока",
+        "prep": "Посебне припреме нема; неколико часова раније боље је не пушити и не пити кафу, а лак за косу и крупан накит уз сљепоочнице сметају контакту сонде",
+        "abnormal": "Повећана или смањена брзина протока може бити повезана са сужењем или спазмом суда, а код дијела људи сљепоочни прозор је непроходан за ултразвук па преглед остаје непотпун. Резултат процјењује неуролог уз преглед и друге методе снимања"
+      }
+    }
+  }
 ]

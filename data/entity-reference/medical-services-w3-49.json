@@ -1,494 +1,578 @@
 [
-	{
-		"slug": "composite-filling-on-primary-tooth",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Восстановление разрушенного молочного зуба светоотверждаемым материалом под цвет эмали, рассчитанное на срок до естественной смены зуба",
-				"how": "Поражённые ткани убирают, зуб изолируют и высушивают, наносят адгезив, композит накладывают слоями и засвечивают лампой, в конце пломбу шлифуют и проверяют по прикусу; обычно 15-30 минут, визит короче, чем у взрослых",
-				"when": "Кариес молочного моляра или резца, скол после падения, выпавшая или негерметичная старая пломба, восстановление контакта между зубами, чтобы пища не застревала",
-				"prep": "Подготовки нет; покормить ребёнка за час-полтора и записаться на время, когда он выспался",
-				"abnormal": "Эмаль и дентин молочного зуба тоньше, поэтому пломба служит ограниченный срок и её состояние проверяют на плановых осмотрах. Если пломба выпала, край скалывается или ребёнок жалуется на боль при накусывании, зуб показывают стоматологу"
-			},
-			"en": {
-				"what": "Rebuilding a damaged baby tooth with a light-cured tooth-coloured material that has to last until the tooth is shed",
-				"how": "The affected tissue is removed, the tooth is isolated and dried, an adhesive is applied, the composite is placed in layers and cured with a lamp, then shaped and checked against the bite; usually 15-30 minutes, a shorter visit than for adults",
-				"when": "Decay in a baby molar or front tooth, a chip after a fall, a lost or leaking old filling, rebuilding the contact point so that food stops packing between the teeth",
-				"prep": "No preparation; feed the child an hour or two before and book a time when the child is rested",
-				"abnormal": "Enamel and dentine of a baby tooth are thinner, so the filling has a limited service life and is checked at routine visits. If it falls out, chips at the edge or the child complains of pain on biting, the tooth should be seen by the dentist"
-			},
-			"sr": {
-				"what": "Obnova oštećenog mliječnog zuba kompozitom u boji gleđi, koji treba da izdrži do prirodne smjene zuba",
-				"how": "Zahvaćeno tkivo se ukloni, zub se izoluje i osuši, nanese se adheziv, kompozit se postavlja u slojevima i stvrdnjava lampom, na kraju se ispun ispolira i provjeri zagriz; obično 15-30 minuta, posjeta je kraća nego kod odraslih",
-				"when": "Karijes mliječnog kutnjaka ili sjekutića, odlomljen ugao poslije pada, ispao ili nezaptiven stari ispun, obnova kontakta među zubima da se hrana ne zaglavljuje",
-				"prep": "Priprema nije potrebna; nahraniti dijete sat-dva ranije i zakazati termin kada je odmorno",
-				"abnormal": "Gleđ i dentin mliječnog zuba su tanji, pa ispun traje ograničeno i provjerava se na redovnim pregledima. Ako ispadne, odlomi se na ivici ili dijete osjeća bol pri zagrizu, zub treba pokazati stomatologu"
-			},
-			"de": {
-				"what": "Aufbau eines geschädigten Milchzahns mit lichthärtendem zahnfarbenem Material, das bis zum Zahnwechsel halten soll",
-				"how": "Das betroffene Gewebe wird entfernt, der Zahn trockengelegt, ein Haftvermittler aufgetragen, das Komposit in Schichten eingebracht und mit der Lampe ausgehärtet, zum Schluss geformt und am Biss kontrolliert; meist 15-30 Minuten, kürzer als bei Erwachsenen",
-				"when": "Karies an einem Milchbackenzahn oder Schneidezahn, abgebrochene Ecke nach einem Sturz, verlorene oder undichte alte Füllung, Wiederherstellung des Kontaktpunktes, damit sich keine Speisereste mehr festsetzen",
-				"prep": "Keine Vorbereitung; das Kind ein bis zwei Stunden vorher essen lassen und einen Termin wählen, an dem es ausgeruht ist",
-				"abnormal": "Schmelz und Dentin eines Milchzahns sind dünner, daher hält die Füllung begrenzt und wird bei den Kontrollterminen überprüft. Fällt sie heraus, bricht der Rand ab oder klagt das Kind über Schmerzen beim Zubeißen, gehört der Zahn zum Zahnarzt"
-			},
-			"tr": {
-				"what": "Zarar görmüş süt dişinin, diş düşene kadar dayanması gereken diş renginde ışıkla sertleşen dolguyla onarılması",
-				"how": "Etkilenen doku temizlenir, diş izole edilip kurutulur, bağlayıcı sürülür, kompozit katmanlar hâlinde yerleştirilip ışıkla sertleştirilir, sonunda şekillendirilip kapanış kontrol edilir; genellikle 15-30 dakika, yetişkine göre daha kısa bir seans",
-				"when": "Süt azı veya ön dişte çürük, düşme sonrası kırık köşe, düşmüş ya da kenarından açılmış eski dolgu, dişler arasına yemek kaçmasını önleyen temas noktasının geri kazandırılması",
-				"prep": "Hazırlık gerekmez; çocuğu bir iki saat önce doyurun ve dinlenmiş olduğu bir saate randevu alın",
-				"abnormal": "Süt dişinin minesi ve dentini daha incedir, bu yüzden dolgunun ömrü sınırlıdır ve rutin kontrollerde gözden geçirilir. Dolgu düşerse, kenarı kırılırsa ya da çocuk ısırırken ağrıdan yakınırsa diş hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "pediatric-caries-treatment",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Лечение кариеса у ребёнка с выбором методики по возрасту, глубине поражения и тому, как ребёнок переносит приём",
-				"how": "Врач оценивает полость осмотром, зондом и при необходимости по снимку, при глубоком поражении делает аппликационную и местную анестезию, убирает размягчённые ткани бором или ручными инструментами и закрывает полость пломбой; за визит обычно лечат один-два зуба",
-				"when": "Тёмное пятно или полость в зубе, застревание пищи, реакция на сладкое и холодное, кариес, найденный на профилактическом осмотре, санация перед ортодонтическим аппаратом",
-				"prep": "Подготовки нет; покормить ребёнка заранее, не обещать, что ничего делать не будут, и сказать врачу о страхе после прошлых визитов и о хронических болезнях",
-				"abnormal": "После лечения зуб может недолго реагировать на холодное и сладкое. Самопроизвольная или ночная боль, отёчная десна или пузырёк на десне говорят о том, что вовлечён нерв, и требуют возвращения к стоматологу"
-			},
-			"en": {
-				"what": "Treatment of tooth decay in a child, with the method chosen by age, depth of the cavity and how the child copes with the appointment",
-				"how": "The dentist checks the cavity by eye, probe and, if needed, an X-ray, uses surface and local anaesthesia for deeper lesions, removes the softened tissue with a bur or hand instruments and closes the cavity with a filling; usually one or two teeth per visit",
-				"when": "A dark spot or hole in a tooth, food packing, reaction to sweet or cold, decay found at a check-up, treatment needed before an orthodontic appliance",
-				"prep": "No preparation; feed the child beforehand, avoid promising that nothing will be done, and tell the dentist about fear left from earlier visits and about chronic conditions",
-				"abnormal": "The tooth may react to cold and sweet for a short while after treatment. Spontaneous or night pain, a swollen gum or a small bump on the gum mean the nerve is involved and the child has to come back"
-			},
-			"sr": {
-				"what": "Liječenje karijesa kod djeteta, gdje se metod bira prema uzrastu, dubini šupljine i tome kako dijete podnosi posjetu",
-				"how": "Stomatolog procjenjuje šupljinu pogledom, sondom i po potrebi snimkom, kod dubljih promjena daje površinsku i lokalnu anesteziju, uklanja omekšalo tkivo svrdlom ili ručnim instrumentima i zatvara šupljinu ispunom; obično jedan do dva zuba po posjeti",
-				"when": "Tamna mrlja ili rupa u zubu, zaglavljivanje hrane, reakcija na slatko i hladno, karijes nađen na redovnom pregledu, sanacija prije ortodontskog aparata",
-				"prep": "Priprema nije potrebna; nahraniti dijete prije dolaska, ne obećavati da se ništa neće raditi i reći stomatologu za strah od ranijih posjeta i za hronične bolesti",
-				"abnormal": "Zub poslije liječenja može kratko reagovati na hladno i slatko. Spontani ili noćni bol, otečena desni ili kvržica na desni znače da je zahvaćen živac i da se dijete mora vratiti stomatologu"
-			},
-			"de": {
-				"what": "Behandlung von Karies beim Kind, wobei das Vorgehen nach Alter, Tiefe des Defekts und Belastbarkeit des Kindes gewählt wird",
-				"how": "Der Zahnarzt beurteilt den Defekt mit Spiegel, Sonde und bei Bedarf Röntgenbild, betäubt bei tieferen Läsionen zunächst oberflächlich und dann örtlich, entfernt das erweichte Gewebe mit Bohrer oder Handinstrumenten und verschließt die Kavität mit einer Füllung; meist ein bis zwei Zähne pro Sitzung",
-				"when": "Dunkler Fleck oder Loch im Zahn, Speisereste zwischen den Zähnen, Reaktion auf Süßes und Kaltes, bei der Kontrolle entdeckte Karies, Sanierung vor einer kieferorthopädischen Apparatur",
-				"prep": "Keine Vorbereitung; das Kind vorher essen lassen, nicht versprechen, dass nichts gemacht wird, und Angst aus früheren Terminen sowie chronische Erkrankungen ansprechen",
-				"abnormal": "Der Zahn kann kurze Zeit auf Kaltes und Süßes reagieren. Spontane oder nächtliche Schmerzen, geschwollenes Zahnfleisch oder ein Bläschen am Zahnfleisch sprechen für eine Beteiligung des Nervs und erfordern einen erneuten Termin"
-			},
-			"tr": {
-				"what": "Çocukta diş çürüğünün tedavisi; yöntem yaşa, çürüğün derinliğine ve çocuğun seansı nasıl karşıladığına göre seçilir",
-				"how": "Hekim çürüğü ayna, sond ve gerekirse röntgenle değerlendirir, derin lezyonlarda yüzeysel ve lokal anestezi uygular, yumuşamış dokuyu frez veya el aletiyle temizler ve boşluğu dolguyla kapatır; genellikle seans başına bir iki diş",
-				"when": "Dişte koyu leke veya oyuk, yemek sıkışması, tatlı ve soğuğa duyarlılık, kontrolde fark edilen çürük, ortodontik aparey öncesi gereken tedavi",
-				"prep": "Hazırlık gerekmez; çocuğu önceden doyurun, hiçbir şey yapılmayacağına dair söz vermeyin ve önceki seanslardan kalan korkuyu, kronik hastalıkları hekime söyleyin",
-				"abnormal": "Tedaviden sonra diş kısa süre soğuğa ve tatlıya tepki verebilir. Kendiliğinden veya gece gelen ağrı, şişmiş diş eti ya da diş etinde kabarcık sinirin etkilendiğini gösterir ve yeniden hekime başvurmayı gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "pediatric-dental-adaptation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Знакомство ребёнка со стоматологическим кабинетом без лечения, чтобы следующий приём прошёл спокойно",
-				"how": "Ребёнку показывают кресло, зеркало, пылесос и воду, дают потрогать инструменты, считают зубы, иногда чистят их щёточкой; приём короткий, 10-20 минут, часто нужно несколько встреч",
-				"when": "Первый визит к стоматологу, страх после болезненного опыта, плач и отказ открывать рот, подготовка к плановому лечению или снимку, дети с особенностями развития",
-				"prep": "Прийти выспавшимся и сытым, заранее не пугать уколом и не обещать подарок за терпение; с врачом договориться, кто разговаривает с ребёнком в кресле",
-				"abnormal": "Цель приёма — чтобы ребёнок дал себя осмотреть, лечение на нём обычно не проводят. Если контакт не складывается, врач предлагает повторить встречу или обсуждает другие варианты, вплоть до лечения в седации"
-			},
-			"en": {
-				"what": "A visit for getting the child used to the dental surgery, with no treatment carried out",
-				"how": "The child is shown the chair, mirror, suction and water spray, is allowed to touch the instruments, the teeth are counted and sometimes brushed; a short appointment of 10-20 minutes, often repeated a few times",
-				"when": "First ever dental visit, fear after a painful experience, crying and refusing to open the mouth, preparation for planned treatment or an X-ray, children with developmental conditions",
-				"prep": "Come rested and fed, do not frighten the child with talk of injections beforehand and do not promise a reward for enduring it; agree with the dentist who speaks to the child in the chair",
-				"abnormal": "The aim is that the child allows an examination, treatment is normally not done at this visit. If contact is not established, the dentist suggests repeating the visit or discusses other options, including treatment under sedation"
-			},
-			"sr": {
-				"what": "Upoznavanje djeteta sa stomatološkom ordinacijom, bez liječenja, da bi sljedeća posjeta prošla mirno",
-				"how": "Djetetu se pokažu stolica, ogledalce, sisaljka i vodeni sprej, dozvoli mu se da dodirne instrumente, zubi se prebroje, ponekad i očiste četkicom; kratak termin od 10-20 minuta, često u nekoliko navrata",
-				"when": "Prva posjeta stomatologu, strah poslije bolnog iskustva, plač i odbijanje da otvori usta, priprema za planirano liječenje ili snimak, djeca sa razvojnim teškoćama",
-				"prep": "Doći odmoran i najeden, ne plašiti dijete pričom o injekciji i ne obećavati nagradu za strpljenje; sa stomatologom dogovoriti ko razgovara sa djetetom u stolici",
-				"abnormal": "Cilj je da dijete dozvoli pregled, liječenje se na ovoj posjeti obično ne radi. Ako se kontakt ne uspostavi, stomatolog predlaže ponovni dolazak ili razgovara o drugim opcijama, uključujući liječenje u sedaciji"
-			},
-			"de": {
-				"what": "Termin zum Kennenlernen der Zahnarztpraxis, bei dem noch nicht behandelt wird",
-				"how": "Dem Kind werden Stuhl, Spiegel, Sauger und Wasserspray gezeigt, es darf die Instrumente anfassen, die Zähne werden gezählt und manchmal geputzt; kurzer Termin von 10-20 Minuten, oft mehrfach wiederholt",
-				"when": "Allererster Zahnarztbesuch, Angst nach einer schmerzhaften Erfahrung, Weinen und Verweigern des Mundöffnens, Vorbereitung auf eine geplante Behandlung oder Röntgenaufnahme, Kinder mit Entwicklungsbesonderheiten",
-				"prep": "Ausgeruht und satt kommen, das Kind vorher nicht mit Spritzen ängstigen und keine Belohnung fürs Durchhalten versprechen; mit dem Zahnarzt absprechen, wer im Behandlungszimmer mit dem Kind spricht",
-				"abnormal": "Ziel ist, dass sich das Kind untersuchen lässt, behandelt wird bei diesem Termin in der Regel nicht. Kommt kein Kontakt zustande, schlägt der Zahnarzt einen weiteren Termin vor oder bespricht andere Wege bis hin zur Behandlung in Sedierung"
-			},
-			"tr": {
-				"what": "Çocuğun diş kliniğine alışması için yapılan, tedavi içermeyen tanışma seansı",
-				"how": "Çocuğa koltuk, ayna, aspiratör ve su spreyi gösterilir, aletlere dokunmasına izin verilir, dişleri sayılır, bazen fırçayla temizlenir; 10-20 dakikalık kısa seans, çoğu zaman birkaç kez tekrarlanır",
-				"when": "İlk diş hekimi ziyareti, ağrılı bir deneyimden sonraki korku, ağlama ve ağzını açmayı reddetme, planlanan tedaviye veya röntgene hazırlık, gelişimsel özellikleri olan çocuklar",
-				"prep": "Dinlenmiş ve tok gelin, önceden iğne sözüyle çocuğu korkutmayın ve dayanması karşılığında ödül vaat etmeyin; koltukta çocukla kimin konuşacağını hekimle kararlaştırın",
-				"abnormal": "Amaç çocuğun muayeneye izin vermesidir, bu seansta genellikle tedavi yapılmaz. İletişim kurulamazsa hekim seansı tekrarlamayı önerir ya da sedasyon altında tedavi dahil başka seçenekleri konuşur"
-			}
-		}
-	},
-	{
-		"slug": "pediatric-dentist-consultation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Приём детского стоматолога с осмотром полости рта ребёнка и ответами родителям на вопросы о зубах и уходе",
-				"how": "Врач расспрашивает о жалобах, питании и привычках, осматривает зубы, дёсны, уздечки и смыкание челюстей, при необходимости назначает снимок; 15-30 минут, с ребёнком говорят на понятном ему языке",
-				"when": "Плановый осмотр дважды в год, первые зубы и порядок прорезывания, пятна на эмали, боль, травма зуба, сосание пальца или пустышки, вопрос о сроке визита к ортодонту",
-				"prep": "Подготовки нет; взять прежние снимки и выписки и не записываться на время дневного сна ребёнка",
-				"abnormal": "Измеримого результата здесь нет: врач объясняет, что нашёл, и предлагает профилактику, лечение или наблюдение. Срок следующего визита он называет сам, у детей с высоким риском кариеса он короче"
-			},
-			"en": {
-				"what": "An appointment with a children's dentist: examination of the child's mouth and answers to the parents' questions about teeth and care",
-				"how": "The dentist asks about complaints, diet and habits, examines teeth, gums, frenula and how the jaws meet, and orders an X-ray if needed; 15-30 minutes, with the child spoken to in words they understand",
-				"when": "Routine check twice a year, first teeth and the order of eruption, spots on the enamel, pain, a knocked tooth, thumb or dummy sucking, the question of when to see an orthodontist",
-				"prep": "No preparation; bring previous X-rays and reports and avoid the child's usual nap time",
-				"abnormal": "There is no measurable result here: the dentist explains the findings and suggests prevention, treatment or watchful waiting. The interval to the next visit is set by the dentist and is shorter for children with a high risk of decay"
-			},
-			"sr": {
-				"what": "Pregled kod dječjeg stomatologa sa procjenom stanja usta i odgovorima roditeljima na pitanja o zubima i njezi",
-				"how": "Stomatolog pita o tegobama, ishrani i navikama, pregleda zube, desni, frenulume i način na koji se vilice sklapaju, po potrebi uputi na snimak; 15-30 minuta, uz razgovor sa djetetom njemu razumljivim riječima",
-				"when": "Redovna kontrola dva puta godišnje, prvi zubi i redoslijed nicanja, mrlje na gleđi, bol, povreda zuba, sisanje prsta ili varalice, pitanje kada kod ortodonta",
-				"prep": "Priprema nije potrebna; ponijeti ranije snimke i nalaze i izbjeći termin kada dijete inače spava",
-				"abnormal": "Mjerljivog rezultata ovdje nema: stomatolog objašnjava nalaz i predlaže profilaksu, liječenje ili praćenje. Razmak do sljedeće kontrole određuje on, a kod djece sa visokim rizikom od karijesa je kraći"
-			},
-			"de": {
-				"what": "Termin beim Kinderzahnarzt mit Untersuchung des Kindermundes und Antworten auf die Fragen der Eltern zu Zähnen und Pflege",
-				"how": "Der Zahnarzt fragt nach Beschwerden, Ernährung und Gewohnheiten, untersucht Zähne, Zahnfleisch, Bändchen und den Zusammenbiss und veranlasst bei Bedarf eine Röntgenaufnahme; 15-30 Minuten, mit kindgerechter Ansprache",
-				"when": "Routinekontrolle zweimal im Jahr, erste Zähne und Reihenfolge des Durchbruchs, Flecken am Schmelz, Schmerzen, Zahnunfall, Daumen- oder Schnullerlutschen, Frage nach dem Zeitpunkt für den Kieferorthopäden",
-				"prep": "Keine Vorbereitung; frühere Aufnahmen und Befunde mitbringen und die übliche Schlafenszeit des Kindes meiden",
-				"abnormal": "Ein messbares Ergebnis gibt es hier nicht: Der Zahnarzt erklärt den Befund und schlägt Vorbeugung, Behandlung oder Beobachtung vor. Den Abstand zum nächsten Termin legt er fest, bei hohem Kariesrisiko ist er kürzer"
-			},
-			"tr": {
-				"what": "Çocuk diş hekimi muayenesi: ağız içinin değerlendirilmesi ve ailenin dişler ile bakım hakkındaki sorularının yanıtlanması",
-				"how": "Hekim şikâyetleri, beslenmeyi ve alışkanlıkları sorar, dişleri, diş etlerini, bağları ve çenelerin kapanışını inceler, gerekirse röntgen ister; 15-30 dakika, çocukla anlayacağı bir dille konuşulur",
-				"when": "Yılda iki kez rutin kontrol, ilk dişler ve çıkış sırası, minede lekeler, ağrı, diş travması, parmak veya emzik emme, ortodontiste ne zaman gidileceği sorusu",
-				"prep": "Hazırlık gerekmez; önceki röntgenleri ve raporları getirin, çocuğun uyku saatine denk gelen randevudan kaçının",
-				"abnormal": "Burada ölçülebilir bir sonuç yoktur: hekim bulguyu anlatır ve koruyucu uygulama, tedavi ya da izlem önerir. Bir sonraki kontrolün zamanını hekim belirler, çürük riski yüksek çocuklarda bu aralık daha kısadır"
-			}
-		}
-	},
-	{
-		"slug": "complete-pediatric-dental-cleaning",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Профессиональная чистка всех зубов ребёнка за один визит: снятие налёта, обработка промежутков, полировка и разбор домашней гигиены",
-				"how": "Налёт снимают вращающейся щёточкой с пастой, промежутки проходят нитью или штрипсами, плотные отложения убирают ультразвуковой насадкой, в конце зубы полируют, а ребёнку красителем или зеркалом показывают недочищенные места; 20-40 минут",
-				"when": "Плановая гигиена, видимый налёт и неприятный запах изо рта, кровоточивость десны при чистке, подготовка к лечению кариеса, герметизации фиссур, фторированию или ортодонтическому аппарату",
-				"prep": "Подготовки нет; почистить зубы перед визитом и сказать врачу о чувствительности и о том, какой щёткой и пастой ребёнок пользуется дома",
-				"abnormal": "День-два десна может слегка кровить при чистке. Если налёт возвращается за несколько дней, десна остаётся красной или чистка болезненна, ребёнка нужно показать стоматологу"
-			},
-			"en": {
-				"what": "Professional cleaning of all of a child's teeth in one visit: plaque removal, cleaning between the teeth, polishing and a run-through of home brushing",
-				"how": "Plaque is removed with a rotating brush and paste, the spaces between the teeth with floss or strips, firm deposits with an ultrasonic tip, then the teeth are polished and a dye or a mirror is used to show the child the missed spots; 20-40 minutes",
-				"when": "Scheduled hygiene visit, visible plaque and bad breath, gums bleeding while brushing, preparation for fillings, fissure sealing, fluoride varnish or an orthodontic appliance",
-				"prep": "No preparation; brush before coming and tell the dentist about sensitivity and about the brush and paste used at home",
-				"abnormal": "The gums may bleed slightly while brushing for a day or two. If plaque builds up again within days, the gum stays red or brushing hurts, the child should be examined"
-			},
-			"sr": {
-				"what": "Profesionalno čišćenje svih zuba djeteta u jednoj posjeti: uklanjanje naslaga, čišćenje međuzubnih prostora, poliranje i razgovor o njezi kod kuće",
-				"how": "Naslage se skidaju rotirajućom četkicom i pastom, međuzubni prostori koncem ili trakicama, čvrste naslage ultrazvučnim nastavkom, zubi se zatim ispoliraju, a djetetu se bojom ili ogledalcem pokaže gdje ne dočisti; 20-40 minuta",
-				"when": "Redovna higijena, vidljive naslage i neprijatan zadah, krvarenje desni pri pranju, priprema za ispune, zalivanje fisura, fluoridaciju ili ortodontski aparat",
-				"prep": "Priprema nije potrebna; oprati zube prije dolaska i reći stomatologu za osjetljivost i za četkicu i pastu koje dijete koristi kod kuće",
-				"abnormal": "Desni mogu dan-dva blago krvariti pri pranju. Ako se naslage brzo vrate, desni ostanu crvene ili pranje boli, dijete treba pregledati"
-			},
-			"de": {
-				"what": "Professionelle Reinigung aller Zähne des Kindes in einer Sitzung: Belagentfernung, Reinigung der Zwischenräume, Politur und Besprechung der häuslichen Pflege",
-				"how": "Beläge werden mit rotierendem Bürstchen und Paste entfernt, die Zwischenräume mit Zahnseide oder Streifen gereinigt, feste Beläge mit Ultraschall abgenommen, anschließend wird poliert und dem Kind mit Färbemittel oder Spiegel gezeigt, wo es nicht sauber putzt; 20-40 Minuten",
-				"when": "Geplante Prophylaxe, sichtbare Beläge und Mundgeruch, Zahnfleischbluten beim Putzen, Vorbereitung auf Füllungen, Fissurenversiegelung, Fluoridlack oder eine Zahnspange",
-				"prep": "Keine Vorbereitung; vorher Zähne putzen und dem Zahnarzt Empfindlichkeiten sowie die zu Hause benutzte Bürste und Paste nennen",
-				"abnormal": "Das Zahnfleisch kann ein, zwei Tage beim Putzen leicht bluten. Kehren die Beläge innerhalb weniger Tage zurück, bleibt das Zahnfleisch gerötet oder tut das Putzen weh, sollte das Kind untersucht werden"
-			},
-			"tr": {
-				"what": "Çocuğun tüm dişlerinin tek seansta profesyonel temizliği: plak alınması, ara yüzlerin temizlenmesi, cila ve evdeki fırçalamanın gözden geçirilmesi",
-				"how": "Plak dönen fırça ve patla alınır, ara yüzler diş ipi veya şeritle temizlenir, sert birikintiler ultrasonik uçla kaldırılır, dişler cilalanır ve boya ya da aynayla çocuğa eksik bıraktığı yerler gösterilir; 20-40 dakika",
-				"when": "Planlı hijyen seansı, görünür plak ve ağız kokusu, fırçalarken diş eti kanaması, dolgu, fissür örtücü, florür verniği veya ortodontik aparey öncesi hazırlık",
-				"prep": "Hazırlık gerekmez; gelmeden önce dişleri fırçalayın, hassasiyeti ve evde kullanılan fırça ile macunu hekime söyleyin",
-				"abnormal": "Diş etleri bir iki gün fırçalarken hafif kanayabilir. Plak günler içinde geri geliyorsa, diş eti kırmızı kalıyorsa ya da fırçalamak acıtıyorsa çocuğun muayene edilmesi gerekir"
-			}
-		}
-	},
-	{
-		"slug": "pediatric-dental-diagnostics-with-treatment-plan",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Развёрнутое обследование зубов ребёнка со снимками по показаниям и письменным планом лечения по этапам",
-				"how": "Врач осматривает каждый зуб и слизистую, отмечает кариес и состояние прикуса, при необходимости делает прицельный или панорамный снимок, затем расписывает очерёдность зубов и визитов с учётом возраста ребёнка и того, насколько хорошо он переносит работу; 30-50 минут",
-				"when": "Несколько поражённых зубов сразу, первое обращение после долгого перерыва, планирование лечения в седации или под наркозом, направление от ортодонта, второе мнение по предложенному плану",
-				"prep": "Взять прежние снимки и выписки, перечислить лекарства и аллергии; от ребёнка подготовки не требуется",
-				"abnormal": "Отклоняться тут нечему: итог — список зубов и порядок работы с ними. План по ходу меняется: молочные зубы сменяются, а новые очаги кариеса у детей появляются быстро, поэтому срок контроля назначает врач"
-			},
-			"en": {
-				"what": "A full survey of a child's teeth with X-rays where indicated and a written, staged treatment plan",
-				"how": "The dentist examines every tooth and the soft tissues, records decay and the state of the bite, takes a single or panoramic X-ray if needed, then sets out the order of teeth and appointments taking the child's age and tolerance into account; 30-50 minutes",
-				"when": "Several decayed teeth at once, first visit after a long gap, planning treatment under sedation or general anaesthesia, referral from an orthodontist, second opinion on a proposed plan",
-				"prep": "Bring previous X-rays and medical reports and list medicines and allergies; nothing is required of the child",
-				"abnormal": "There is nothing here that can be out of range, the result is a list of teeth and the order of work. The plan is revised as it goes: baby teeth are shed and new cavities appear quickly in children, so the dentist sets the date of the next review"
-			},
-			"sr": {
-				"what": "Detaljan pregled zuba djeteta sa snimcima po potrebi i pisanim planom liječenja po fazama",
-				"how": "Stomatolog pregleda svaki zub i sluznicu, bilježi karijes i stanje zagriza, po potrebi uradi ciljani ili panoramski snimak, a zatim razradi redoslijed zuba i posjeta uzimajući u obzir uzrast djeteta i koliko dobro podnosi rad; 30-50 minuta",
-				"when": "Više zahvaćenih zuba odjednom, prvi dolazak poslije duže pauze, planiranje rada u sedaciji ili opštoj anesteziji, uput ortodonta, drugo mišljenje o predloženom planu",
-				"prep": "Ponijeti ranije snimke i nalaze i navesti lijekove i alergije; od djeteta se ne traži nikakva priprema",
-				"abnormal": "Ovdje nema vrijednosti koja može odstupati, rezultat je spisak zuba i redoslijed rada. Plan se usput mijenja: mliječni zubi se smjenjuju, a nova karijesna žarišta kod djece nastaju brzo, pa termin kontrole određuje stomatolog"
-			},
-			"de": {
-				"what": "Umfassende Befundaufnahme der Kinderzähne mit Röntgenbildern bei Bedarf und einem schriftlichen, nach Etappen gegliederten Behandlungsplan",
-				"how": "Der Zahnarzt untersucht jeden Zahn und die Schleimhaut, dokumentiert Karies und Bisslage, fertigt bei Bedarf eine Einzel- oder Panoramaaufnahme an und legt anschließend die Reihenfolge der Zähne und Termine unter Berücksichtigung von Alter und Belastbarkeit des Kindes fest; 30-50 Minuten",
-				"when": "Mehrere kariöse Zähne gleichzeitig, erster Termin nach langer Pause, Planung einer Behandlung in Sedierung oder Vollnarkose, Überweisung vom Kieferorthopäden, Zweitmeinung zu einem vorgeschlagenen Plan",
-				"prep": "Frühere Aufnahmen und Befunde mitbringen, Medikamente und Allergien angeben; vom Kind wird nichts verlangt",
-				"abnormal": "Hier kann kein Wert abweichen, das Ergebnis ist eine Liste der Zähne und die Reihenfolge der Arbeiten. Der Plan wird unterwegs angepasst: Milchzähne fallen aus und neue Defekte entstehen bei Kindern schnell, den Kontrolltermin legt der Zahnarzt fest"
-			},
-			"tr": {
-				"what": "Çocuğun dişlerinin ayrıntılı değerlendirilmesi; gerektiğinde röntgen ve aşamalara bölünmüş yazılı tedavi planı",
-				"how": "Hekim her dişi ve ağız içi dokuları inceler, çürükleri ve kapanışı kaydeder, gerekirse periapikal ya da panoramik film alır, ardından çocuğun yaşını ve işlemi ne kadar kaldırdığını hesaba katarak diş ve seans sırasını belirler; 30-50 dakika",
-				"when": "Aynı anda birden çok çürük diş, uzun aradan sonraki ilk başvuru, sedasyon veya genel anestezi altında tedavi planlaması, ortodontist yönlendirmesi, önerilen plan için ikinci görüş",
-				"prep": "Önceki röntgenleri ve raporları getirin, kullanılan ilaçları ve alerjileri bildirin; çocuktan bir hazırlık istenmez",
-				"abnormal": "Burada sapabilecek bir değer yoktur, sonuç dişlerin listesi ve çalışma sırasıdır. Plan yol boyunca güncellenir: süt dişleri düşer ve çocuklarda yeni çürükler hızla oluşur, bu yüzden kontrol zamanını hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "primary-tooth-extraction-non-resorbed-root",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление молочного зуба, корень которого не рассосался, из-за чего зуб плотно держится в кости",
-				"how": "После аппликационной и местной анестезии десну отделяют, зуб расшатывают и извлекают; при крупном или искривлённом корне корни разделяют и достают по частям, иногда накладывают шов; 10-25 минут",
-				"when": "Молочный зуб не выпал в срок и мешает постоянному прорезаться, постоянный зуб вышел вторым рядом, разрушенный или воспалённый зуб с сохранным корнем, удаление по плану ортодонта, задержка смены после лечения каналов",
-				"prep": "Покормить ребёнка за час-полтора, сообщить об аллергии, болезнях крови и сердца, а после визита запланировать спокойный день",
-				"abnormal": "Лунка кровит первые часы, сгусток выполаскивать нельзя, а место удаления беспокоит ребёнка дольше, чем выпавший сам шатающийся зуб. Кровотечение, которое не останавливается, отёк щеки, температура или боль на вторые сутки — повод вернуться к стоматологу"
-			},
-			"en": {
-				"what": "Removal of a baby tooth whose root has not dissolved, so the tooth still sits firmly in the bone",
-				"how": "After surface and local anaesthesia the gum is separated, the tooth is loosened and lifted out; with a large or curved root the roots are divided and taken out in pieces, occasionally a stitch is placed; 10-25 minutes",
-				"when": "A baby tooth that has not come out in time and blocks the permanent one, a permanent tooth erupting in a second row, a broken down or infected tooth with an intact root, extraction planned by the orthodontist, delayed shedding after root canal treatment",
-				"prep": "Feed the child an hour or two before, report allergies, bleeding and heart conditions, and plan a quiet day afterwards",
-				"abnormal": "The socket oozes for the first hours, the clot must not be rinsed out, and the site bothers the child longer than a loose tooth that falls out on its own. Bleeding that does not stop, a swollen cheek, fever or pain on the second day means going back to the dentist"
-			},
-			"sr": {
-				"what": "Vađenje mliječnog zuba čiji se korijen nije resorbovao, pa zub još čvrsto stoji u kosti",
-				"how": "Poslije površinske i lokalne anestezije desni se odvoje, zub se olabavi i izvadi; kod velikog ili iskrivljenog korijena korjenovi se razdvoje i vade dio po dio, ponekad se stavi šav; 10-25 minuta",
-				"when": "Mliječni zub koji nije ispao na vrijeme i smeta stalnom zubu da nikne, stalni zub izrastao u drugom redu, razoren ili upaljen zub sa očuvanim korijenom, vađenje po planu ortodonta, izostanak smjene poslije liječenja kanala",
-				"prep": "Nahraniti dijete sat-dva ranije, prijaviti alergije, bolesti krvi i srca i isplanirati miran dan poslije zahvata",
-				"abnormal": "Rana krvari prvih sati, ugrušak se ne smije ispirati, a mjesto vađenja smeta djetetu duže nego kada klimav zub ispadne sam. Krvarenje koje ne prestaje, oteklina obraza, povišena temperatura ili bol drugog dana razlog su za povratak stomatologu"
-			},
-			"de": {
-				"what": "Entfernung eines Milchzahns, dessen Wurzel sich nicht aufgelöst hat und der deshalb noch fest im Knochen sitzt",
-				"how": "Nach Oberflächen- und örtlicher Betäubung wird das Zahnfleisch gelöst, der Zahn gelockert und entfernt; bei großer oder gekrümmter Wurzel werden die Wurzeln getrennt und einzeln entnommen, gelegentlich wird genäht; 10-25 Minuten",
-				"when": "Milchzahn, der nicht rechtzeitig ausfällt und den bleibenden Zahn blockiert, bleibender Zahn in zweiter Reihe, zerstörter oder entzündeter Zahn mit erhaltener Wurzel, geplante Extraktion durch den Kieferorthopäden, ausbleibender Zahnwechsel nach einer Wurzelbehandlung",
-				"prep": "Das Kind ein bis zwei Stunden vorher essen lassen, Allergien, Blutungsneigung und Herzerkrankungen angeben und danach einen ruhigen Tag einplanen",
-				"abnormal": "Die Wunde sickert in den ersten Stunden, das Blutgerinnsel darf nicht ausgespült werden, und die Stelle stört das Kind länger als ein von selbst ausgefallener Wackelzahn. Blutung, die nicht aufhört, geschwollene Wange, Fieber oder Schmerzen am zweiten Tag gehören erneut zum Zahnarzt"
-			},
-			"tr": {
-				"what": "Kökü erimediği için kemikte hâlâ sıkı duran süt dişinin çekilmesi",
-				"how": "Yüzeysel ve lokal anesteziden sonra diş eti ayrılır, diş gevşetilip çıkarılır; kök büyük veya eğriyse kökler ayrılıp parça parça alınır, bazen dikiş konur; 10-25 dakika",
-				"when": "Zamanında düşmeyip kalıcı dişin çıkmasını engelleyen süt dişi, ikinci sıradan süren kalıcı diş, kökü sağlam kalmış yıkık veya iltihaplı diş, ortodontistin planladığı çekim, kanal tedavisinden sonra gecikmiş diş değişimi",
-				"prep": "Çocuğu bir iki saat önce doyurun, alerjileri, kanama ve kalp hastalıklarını bildirin ve sonrası için sakin bir gün planlayın",
-				"abnormal": "Soket ilk saatlerde sızar, pıhtı çalkalanarak çıkarılmamalıdır ve bölge, kendiliğinden düşen sallanan dişe göre çocuğu daha uzun rahatsız eder. Durmayan kanama, yanakta şişlik, ateş ya da ikinci gün gelen ağrı hekime dönmeyi gerektirir"
-			}
-		}
-	},
-	{
-		"slug": "primary-tooth-pulp-treatment",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Лечение воспалённой пульпы молочного зуба, чтобы зуб дожил до естественной смены",
-				"how": "Под анестезией зуб изолируют, убирают кариес и вскрывают полость, воспалённую пульпу удаляют из коронки, а при необходимости и из каналов, пространство заполняют пастой, которая рассасывается вместе с корнем, зуб закрывают пломбой или детской коронкой; один-два визита",
-				"when": "Глубокий кариес, дошедший до нерва, самопроизвольная и ночная боль, скол молочного зуба с обнажённой пульпой, свищ или припухлость десны у молочного зуба",
-				"prep": "Подготовки нет; покормить ребёнка заранее и рассказать врачу, когда и как болел зуб и как ребёнок переносил прошлое лечение",
-				"abnormal": "Несколько дней зуб может быть чувствителен к накусыванию. Возвращение боли, припухлость десны, потемнение или подвижность зуба означают новый осмотр: иногда зуб сохранить не удаётся и обсуждают удаление с удержателем места"
-			},
-			"en": {
-				"what": "Treatment of an inflamed nerve inside a baby tooth so that the tooth can stay until it is naturally shed",
-				"how": "Under anaesthesia the tooth is isolated, decay is removed and the chamber opened, the inflamed pulp is taken out of the crown and, if needed, out of the canals, the space is filled with a paste that resorbs together with the root, and the tooth is closed with a filling or a child's crown; one or two visits",
-				"when": "Deep decay reaching the nerve, spontaneous and night pain, a chipped baby tooth with exposed pulp, a small bump or swelling on the gum next to a baby tooth",
-				"prep": "No preparation; feed the child beforehand and tell the dentist when and how the tooth hurt and how the child coped with earlier treatment",
-				"abnormal": "The tooth may be tender to biting for a few days. Returning pain, swelling of the gum, darkening or looseness of the tooth mean a new appointment: sometimes the tooth cannot be kept and removal with a space maintainer is discussed"
-			},
-			"sr": {
-				"what": "Liječenje upaljene pulpe mliječnog zuba kako bi zub ostao do prirodne smjene",
-				"how": "U anesteziji se zub izoluje, ukloni se karijes i otvori komorica, upaljena pulpa se izvadi iz krunice i po potrebi iz kanala, prostor se ispuni pastom koja se resorbuje zajedno sa korijenom, a zub se zatvori ispunom ili dječjom krunicom; jedna do dvije posjete",
-				"when": "Duboki karijes koji je stigao do živca, spontani i noćni bol, odlomljen mliječni zub sa otvorenom pulpom, fistula ili oteklina desni uz mliječni zub",
-				"prep": "Priprema nije potrebna; nahraniti dijete prije dolaska i reći stomatologu kada je i kako zub bolio i kako je dijete podnosilo ranije liječenje",
-				"abnormal": "Zub može nekoliko dana biti osjetljiv na zagriz. Povratak bola, oteklina desni, tamnjenje ili klimanje zuba znače novi pregled: ponekad se zub ne može sačuvati i razgovara se o vađenju uz držač prostora"
-			},
-			"de": {
-				"what": "Behandlung der entzündeten Pulpa eines Milchzahns, damit der Zahn bis zum natürlichen Wechsel erhalten bleibt",
-				"how": "Unter Betäubung wird der Zahn isoliert, die Karies entfernt und die Kammer eröffnet, die entzündete Pulpa aus der Krone und bei Bedarf aus den Kanälen entnommen, der Raum mit einer Paste gefüllt, die sich zusammen mit der Wurzel abbaut, und der Zahn mit Füllung oder Kinderkrone verschlossen; ein bis zwei Sitzungen",
-				"when": "Tiefe Karies bis zum Nerv, spontane und nächtliche Schmerzen, abgebrochener Milchzahn mit freiliegender Pulpa, Bläschen oder Schwellung am Zahnfleisch neben einem Milchzahn",
-				"prep": "Keine Vorbereitung; das Kind vorher essen lassen und dem Zahnarzt schildern, wann und wie der Zahn geschmerzt hat und wie das Kind frühere Behandlungen vertragen hat",
-				"abnormal": "Der Zahn kann einige Tage beim Zubeißen empfindlich sein. Wiederkehrende Schmerzen, Schwellung des Zahnfleisches, Dunkelfärbung oder Lockerung bedeuten einen neuen Termin: Manchmal lässt sich der Zahn nicht halten und die Entfernung mit Platzhalter wird besprochen"
-			},
-			"tr": {
-				"what": "Süt dişinin doğal düşme zamanına kadar ağızda kalabilmesi için iltihaplanmış pulpasının tedavisi",
-				"how": "Anestezi altında diş izole edilir, çürük temizlenip oda açılır, iltihaplı pulpa kuron kısmından ve gerekirse kanallardan alınır, boşluk kökle birlikte eriyen bir patla doldurulur, diş dolgu veya çocuk kuronuyla kapatılır; bir ya da iki seans",
-				"when": "Sinire ulaşmış derin çürük, kendiliğinden ve gece gelen ağrı, pulpası açığa çıkmış kırık süt dişi, süt dişinin yanında diş etinde kabarcık veya şişlik",
-				"prep": "Hazırlık gerekmez; çocuğu önceden doyurun ve dişin ne zaman, nasıl ağrıdığını, önceki tedavileri nasıl karşıladığını hekime anlatın",
-				"abnormal": "Diş birkaç gün ısırırken hassas olabilir. Ağrının geri dönmesi, diş etinde şişlik, dişin kararması veya sallanması yeni bir randevu gerektirir: bazen diş korunamaz ve yer tutucuyla birlikte çekim konuşulur"
-			}
-		}
-	},
-	{
-		"slug": "professional-dental-cleaning-deciduous-teeth",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Гигиеническая чистка зубов у ребёнка, у которого все зубы ещё молочные",
-				"how": "Мягкой щёточкой с низкоабразивной пастой налёт снимают со всех поверхностей, промежутки проходят нитью; ультразвук обычно не нужен — отложения в этом возрасте мягкие; короткий визит 15-25 минут, часто вместе с осмотром",
-				"when": "Первый профилактический визит после прорезывания зубов, белый налёт у края десны, кровоточивость десны, ночные кормления и сладкие напитки, этап перед покрытием эмали фторсодержащим лаком",
-				"prep": "Подготовки нет; привести ребёнка выспавшимся и взять его щётку, чтобы врач показал родителю технику чистки именно на ней",
-				"abnormal": "В этом возрасте зубы ребёнку дочищает взрослый, поэтому главный итог визита — показанная родителю техника. Если белый налёт у десны возвращается через несколько дней или на эмали появляются меловидные пятна, ребёнка надо показать врачу: так начинается кариес молочных зубов"
-			},
-			"en": {
-				"what": "Hygiene cleaning for a child whose teeth are all still baby teeth",
-				"how": "Plaque is removed from all surfaces with a soft brush and a low-abrasive paste and the gaps are cleaned with floss; ultrasound is usually unnecessary because deposits at this age are soft; a short visit of 15-25 minutes, often combined with the check-up",
-				"when": "First preventive visit after the teeth have come through, white plaque along the gum line, bleeding gums, night feeding and sweet drinks, the step before a fluoride varnish is applied",
-				"prep": "No preparation; bring the child rested and bring their own brush so that the dentist can show the parent the technique on it",
-				"abnormal": "At this age an adult finishes the brushing for the child, so the main outcome of the visit is the technique shown to the parent. If white plaque returns at the gum line within days or chalky spots appear on the enamel, the child needs to be seen: this is how decay in baby teeth begins"
-			},
-			"sr": {
-				"what": "Higijensko čišćenje zuba kod djeteta kojem su svi zubi još mliječni",
-				"how": "Naslage se mekom četkicom i pastom slabe abrazivnosti skinu sa svih površina, a međuzubni prostori očiste koncem; ultrazvuk obično nije potreban jer su naslage u ovom uzrastu meke; kratka posjeta od 15-25 minuta, često uz redovni pregled",
-				"when": "Prva preventivna posjeta poslije nicanja zuba, bijele naslage uz rub desni, krvarenje desni, noćno hranjenje i slatki napici, korak prije premazivanja gleđi fluoridnim lakom",
-				"prep": "Priprema nije potrebna; dovesti odmorno dijete i ponijeti njegovu četkicu da stomatolog baš na njoj pokaže roditelju tehniku pranja",
-				"abnormal": "U ovom uzrastu zube djetetu dočišćava odrasla osoba, pa je glavni ishod posjete pokazana tehnika. Ako se bijele naslage uz desni vrate za nekoliko dana ili se na gleđi pojave kredaste mrlje, dijete treba pregledati: tako počinje karijes mliječnih zuba"
-			},
-			"de": {
-				"what": "Hygienische Zahnreinigung bei einem Kind, dessen Zähne noch alle Milchzähne sind",
-				"how": "Beläge werden mit weichem Bürstchen und wenig abrasiver Paste von allen Flächen entfernt, die Zwischenräume mit Zahnseide gereinigt; Ultraschall ist meist nicht nötig, da die Ablagerungen in diesem Alter weich sind; kurzer Termin von 15-25 Minuten, oft zusammen mit der Kontrolle",
-				"when": "Erster Prophylaxetermin nach dem Durchbruch der Zähne, weiße Beläge am Zahnfleischrand, Zahnfleischbluten, nächtliches Füttern und süße Getränke, Schritt vor dem Auftragen von Fluoridlack",
-				"prep": "Keine Vorbereitung; das Kind ausgeruht bringen und seine eigene Bürste mitnehmen, damit die Technik den Eltern genau daran gezeigt werden kann",
-				"abnormal": "In diesem Alter putzt ein Erwachsener für das Kind nach, deshalb ist das Wichtigste des Termins die gezeigte Technik. Kehren die weißen Beläge am Zahnfleischrand nach wenigen Tagen zurück oder zeigen sich kreidige Flecken am Schmelz, sollte das Kind untersucht werden: so beginnt Karies an Milchzähnen"
-			},
-			"tr": {
-				"what": "Tüm dişleri hâlâ süt dişi olan çocukta hijyen amaçlı diş temizliği",
-				"how": "Plak yumuşak fırça ve az aşındırıcı patla bütün yüzeylerden alınır, aralar diş ipiyle temizlenir; bu yaşta birikintiler yumuşak olduğu için ultrasona genellikle gerek kalmaz; 15-25 dakikalık kısa seans, çoğu zaman kontrolle birlikte",
-				"when": "Dişler çıktıktan sonraki ilk koruyucu ziyaret, diş eti kenarında beyaz plak, diş eti kanaması, gece beslenmesi ve şekerli içecekler, florür verniği uygulamasından önceki aşama",
-				"prep": "Hazırlık gerekmez; çocuğu dinlenmiş getirin ve hekimin fırçalama tekniğini aileye tam onun üzerinde gösterebilmesi için kendi fırçasını yanınızda bulundurun",
-				"abnormal": "Bu yaşta dişleri çocuk adına bir yetişkin tamamlar, bu yüzden ziyaretin asıl kazanımı aileye gösterilen tekniktir. Diş eti kenarındaki beyaz plak birkaç gün içinde geri geliyorsa ya da minede tebeşirimsi lekeler belirdiyse çocuk muayene edilmelidir: süt dişi çürüğü böyle başlar"
-			}
-		}
-	},
-	{
-		"slug": "professional-dental-cleaning-mixed-dentition",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Чистка зубов у ребёнка, у которого в одном ряду стоят молочные и постоянные зубы",
-				"how": "Налёт снимают щёточкой с пастой, плотные отложения на постоянных зубах — ультразвуковой насадкой, особое внимание уделяют только что прорезавшимся молярам и десне вокруг шатающихся зубов, в конце зубы полируют; 25-40 минут",
-				"when": "Годы смены зубов, налёт на прорезывающейся шестёрке, воспаление десны вокруг шатающегося зуба, ношение пластинки или брекетов, подготовка к герметизации фиссур",
-				"prep": "Подготовки нет; почистить зубы перед визитом и сказать о шатающихся зубах и чувствительности",
-				"abnormal": "Только что прорезавшаяся эмаль ещё дозревает и уязвимее к налёту, поэтому интервал между чистками врач назначает индивидуально. Если десна вокруг прорезывающегося зуба болит и краснеет или на жевательной поверхности появилось тёмное пятно, ребёнка надо показать стоматологу"
-			},
-			"en": {
-				"what": "Cleaning for a child who has baby teeth and permanent teeth standing side by side",
-				"how": "Plaque is taken off with a brush and paste, firm deposits on the permanent teeth with an ultrasonic tip, with particular attention to the newly erupted molars and to the gum around loose teeth, then the teeth are polished; 25-40 minutes",
-				"when": "The years of the tooth change, plaque on an erupting six-year molar, inflamed gum around a wobbly tooth, wearing a plate or braces, preparation for fissure sealing",
-				"prep": "No preparation; brush before the visit and mention loose teeth and any sensitivity",
-				"abnormal": "Freshly erupted enamel is still maturing and is more vulnerable to plaque, so the dentist sets the interval between cleanings individually. If the gum around an erupting tooth is sore and red or a dark spot appears on a chewing surface, the child should be examined"
-			},
-			"sr": {
-				"what": "Čišćenje zuba kod djeteta kojem u istom nizu stoje mliječni i stalni zubi",
-				"how": "Naslage se skidaju četkicom i pastom, čvrste naslage sa stalnih zuba ultrazvučnim nastavkom, uz posebnu pažnju na tek iznikle kutnjake i na desni oko klimavih zuba, a zatim se zubi ispoliraju; 25-40 minuta",
-				"when": "Godine smjene zuba, naslage na šestici koja niče, upala desni oko klimavog zuba, nošenje pločice ili fiksnog aparata, priprema za zalivanje fisura",
-				"prep": "Priprema nije potrebna; oprati zube prije dolaska i reći za klimave zube i osjetljivost",
-				"abnormal": "Tek iznikla gleđ još sazrijeva i osjetljivija je na naslage, pa razmak između čišćenja stomatolog određuje pojedinačno. Ako desni oko zuba koji niče bole i crvene se ili se na griznoj površini pojavi tamna mrlja, dijete treba pregledati"
-			},
-			"de": {
-				"what": "Zahnreinigung bei einem Kind, bei dem Milchzähne und bleibende Zähne nebeneinander stehen",
-				"how": "Beläge werden mit Bürstchen und Paste entfernt, feste Ablagerungen an den bleibenden Zähnen mit Ultraschall, besonderes Augenmerk gilt den frisch durchgebrochenen Molaren und dem Zahnfleisch um wackelnde Zähne, danach wird poliert; 25-40 Minuten",
-				"when": "Zeit des Zahnwechsels, Beläge am durchbrechenden Sechsjahrmolaren, entzündetes Zahnfleisch um einen Wackelzahn, Platte oder feste Spange, Vorbereitung auf eine Fissurenversiegelung",
-				"prep": "Keine Vorbereitung; vorher Zähne putzen und Wackelzähne sowie Empfindlichkeiten ansprechen",
-				"abnormal": "Frisch durchgebrochener Schmelz reift noch nach und ist anfälliger für Beläge, deshalb legt der Zahnarzt den Abstand zwischen den Reinigungen individuell fest. Schmerzt und rötet sich das Zahnfleisch um einen durchbrechenden Zahn oder zeigt sich ein dunkler Fleck auf einer Kaufläche, gehört das Kind untersucht"
-			},
-			"tr": {
-				"what": "Süt dişleriyle kalıcı dişlerin aynı sırada bulunduğu çocukta diş temizliği",
-				"how": "Plak fırça ve patla alınır, kalıcı dişlerdeki sert birikintiler ultrasonik uçla kaldırılır, yeni süren azı dişlerine ve sallanan dişlerin çevresindeki diş etine ayrı özen gösterilir, ardından dişler cilalanır; 25-40 dakika",
-				"when": "Diş değişimi yılları, süren altı yaş dişinde plak, sallanan diş çevresinde diş eti iltihabı, hareketli aparey veya tel takılı olması, fissür örtücü öncesi hazırlık",
-				"prep": "Hazırlık gerekmez; gelmeden önce dişleri fırçalayın, sallanan dişleri ve hassasiyeti belirtin",
-				"abnormal": "Yeni süren mine henüz olgunlaşmaktadır ve plağa karşı daha savunmasızdır, bu yüzden temizlikler arasındaki aralığı hekim kişiye göre belirler. Süren dişin çevresindeki diş eti ağrıyıp kızarıyorsa ya da çiğneme yüzeyinde koyu bir leke belirdiyse çocuk muayene edilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "silver-diamine-fluoride-application",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Обработка кариозного участка молочного зуба раствором с серебром и фтором, который останавливает кариес без сверления",
-				"how": "Зуб очищают и подсушивают, изолируют валиками, раствор кисточкой наносят на поражённый участок и дают подействовать, излишки убирают; 5-10 минут на зуб, без бормашины и укола, обычно курсом с повторами",
-				"when": "Начальный и поверхностный кариес молочных зубов у маленьких детей, невозможность полноценного лечения из-за возраста или поведения, зуб, который скоро меняется, временное решение до планового лечения",
-				"prep": "Подготовки нет; родителю важно заранее обсудить с врачом, что обработанный участок темнеет и остаётся тёмным",
-				"abnormal": "Обработанная ткань чернеет — это ожидаемый след метода, а не ухудшение. Если участок увеличивается, зуб начинает болеть или десна отекает, кариес продолжается и нужно вернуться к стоматологу"
-			},
-			"en": {
-				"what": "Painting a decayed area of a baby tooth with a silver and fluoride solution that arrests the decay without drilling",
-				"how": "The tooth is cleaned and dried, isolated with cotton rolls, the solution is applied to the affected area with a small brush and left to act, then the excess is wiped off; 5-10 minutes per tooth, no drill and no injection, usually repeated as a course",
-				"when": "Early and surface decay on baby teeth in small children, treatment that cannot be completed because of age or behaviour, a tooth that is about to be shed, a holding measure until planned treatment",
-				"prep": "No preparation; the parent should agree with the dentist beforehand that the treated spot turns dark and stays dark",
-				"abnormal": "The treated tissue goes black, which is the expected mark of the method and not a worsening. If the area grows, the tooth starts to hurt or the gum swells, the decay is progressing and the child has to come back"
-			},
-			"sr": {
-				"what": "Premazivanje karijesnog mjesta na mliječnom zubu rastvorom srebra i fluora koji zaustavlja karijes bez bušenja",
-				"how": "Zub se očisti i osuši, izoluje vaticama, rastvor se kistom nanese na zahvaćeno mjesto i ostavi da djeluje, a višak se obriše; 5-10 minuta po zubu, bez svrdla i bez injekcije, obično u više navrata",
-				"when": "Početni i površinski karijes mliječnih zuba kod male djece, nemogućnost potpunog liječenja zbog uzrasta ili ponašanja, zub koji se uskoro smjenjuje, privremeno rješenje do planiranog liječenja",
-				"prep": "Priprema nije potrebna; roditelj unaprijed sa stomatologom treba da dogovori da obrađeno mjesto potamni i ostaje tamno",
-				"abnormal": "Obrađeno tkivo pocrni, to je očekivan trag metode, a ne pogoršanje. Ako se mjesto širi, zub počne da boli ili desni oteknu, karijes napreduje i treba se vratiti stomatologu"
-			},
-			"de": {
-				"what": "Auftragen einer Silber-Fluorid-Lösung auf eine kariöse Stelle am Milchzahn, die die Karies ohne Bohren zum Stillstand bringt",
-				"how": "Der Zahn wird gereinigt und getrocknet, mit Watterollen isoliert, die Lösung mit einem Pinsel auf die betroffene Stelle aufgetragen und einwirken gelassen, der Überschuss wird abgewischt; 5-10 Minuten pro Zahn, ohne Bohrer und ohne Spritze, meist als Serie wiederholt",
-				"when": "Beginnende und oberflächliche Karies an Milchzähnen bei kleinen Kindern, Behandlung, die wegen Alter oder Verhalten nicht vollständig möglich ist, ein Zahn kurz vor dem Wechsel, Überbrückung bis zur geplanten Behandlung",
-				"prep": "Keine Vorbereitung; die Eltern sollten vorher mit dem Zahnarzt besprechen, dass die behandelte Stelle dunkel wird und dunkel bleibt",
-				"abnormal": "Das behandelte Gewebe färbt sich schwarz, das ist die erwartete Spur des Verfahrens und keine Verschlechterung. Wächst die Stelle, beginnt der Zahn zu schmerzen oder schwillt das Zahnfleisch, schreitet die Karies fort und das Kind muss erneut vorgestellt werden"
-			},
-			"tr": {
-				"what": "Süt dişindeki çürük bölgenin, çürüğü frez kullanmadan durduran gümüş ve florür içeren solüsyonla kapatılması",
-				"how": "Diş temizlenip kurutulur, pamuk rulolarla izole edilir, solüsyon küçük bir fırçayla çürük bölgeye sürülüp etki etmesi beklenir, fazlası silinir; diş başına 5-10 dakika, frez ve iğne olmadan, genellikle seanslar hâlinde tekrarlanır",
-				"when": "Küçük çocuklarda süt dişlerinin başlangıç ve yüzeysel çürükleri, yaş ya da davranış nedeniyle tam tedavinin yapılamaması, yakında düşecek diş, planlanan tedaviye kadar geçici çözüm",
-				"prep": "Hazırlık gerekmez; uygulanan bölgenin kararacağını ve koyu kalacağını ailenin hekimle önceden konuşması önemlidir",
-				"abnormal": "İşlem gören doku siyahlaşır; bu yöntemin beklenen izidir, kötüleşme değildir. Bölge büyürse, diş ağrımaya başlarsa ya da diş eti şişerse çürük ilerliyor demektir ve hekime dönmek gerekir"
-			}
-		}
-	},
-	{
-		"slug": "treatment-of-tooth-with-incomplete-root-growth",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Лечение постоянного зуба у ребёнка или подростка, у которого корень ещё не дорос и верхушка остаётся открытой",
-				"how": "Под анестезией зуб изолируют, полость очищают бережно, чтобы сохранить живую ткань у корня, на неё кладут биокерамический материал или формируют им барьер на открытой верхушке, зуб закрывают пломбой; лечение растянуто на несколько визитов и контрольных снимков",
-				"when": "Травма переднего зуба со сколом и обнажённой пульпой, глубокий кариес незрелого моляра, воспаление пульпы или тканей у верхушки корня до окончания его роста",
-				"prep": "Подготовки нет; после травмы прийти как можно скорее, принести отломок зуба, если он сохранился, и прежние снимки",
-				"abnormal": "Зуб наблюдают месяцами: по снимкам врач видит, растёт ли корень и закрывается ли верхушка. Потемнение коронки, боль при накусывании, припухлость или свищ на десне требуют внепланового осмотра"
-			},
-			"en": {
-				"what": "Treatment of a permanent tooth in a child or teenager whose root has not finished growing and whose apex is still open",
-				"how": "Under anaesthesia the tooth is isolated and the cavity cleaned gently so that the living tissue near the root is preserved, a bioceramic material is placed on it or used to form a barrier at the open apex, and the tooth is sealed with a filling; the treatment is spread over several visits and follow-up X-rays",
-				"when": "Injury to a front tooth with a chip and exposed pulp, deep decay in an immature molar, inflammation of the pulp or of the tissues at the root tip before root growth is complete",
-				"prep": "No preparation; after an injury come as soon as possible and bring the broken fragment if it has been kept, together with previous X-rays",
-				"abnormal": "The tooth is followed for months: the X-rays show the dentist whether the root is growing and the apex closing. Darkening of the crown, pain on biting, swelling or a bump on the gum call for an unscheduled appointment"
-			},
-			"sr": {
-				"what": "Liječenje stalnog zuba kod djeteta ili tinejdžera kojem korijen još nije dorastao, pa je vrh korijena otvoren",
-				"how": "U anesteziji se zub izoluje, šupljina se pažljivo očisti da se sačuva živo tkivo uz korijen, na njega se postavi biokeramički materijal ili se njime napravi barijera na otvorenom vrhu, a zub se zatvori ispunom; liječenje je raspoređeno na nekoliko posjeta i kontrolnih snimaka",
-				"when": "Povreda prednjeg zuba sa odlomljenim dijelom i otvorenom pulpom, duboki karijes nezrelog kutnjaka, upala pulpe ili tkiva uz vrh korijena prije završetka rasta korijena",
-				"prep": "Priprema nije potrebna; poslije povrede doći što prije i ponijeti odlomljeni dio zuba ako je sačuvan, zajedno sa ranijim snimcima",
-				"abnormal": "Zub se prati mjesecima: na snimcima stomatolog vidi da li korijen raste i da li se vrh zatvara. Tamnjenje krunice, bol pri zagrizu, oteklina ili fistula na desni traže vanredni pregled"
-			},
-			"de": {
-				"what": "Behandlung eines bleibenden Zahns bei Kind oder Jugendlichem, dessen Wurzel noch nicht fertig gewachsen und dessen Wurzelspitze noch offen ist",
-				"how": "Unter Betäubung wird der Zahn isoliert, die Kavität schonend gereinigt, damit das lebende Gewebe nahe der Wurzel erhalten bleibt, darauf wird ein biokeramisches Material gelegt oder damit eine Barriere an der offenen Wurzelspitze geformt, danach wird der Zahn mit einer Füllung verschlossen; die Behandlung verteilt sich auf mehrere Termine und Kontrollaufnahmen",
-				"when": "Unfall an einem Frontzahn mit Absplitterung und freiliegender Pulpa, tiefe Karies an einem unreifen Molaren, Entzündung der Pulpa oder des Gewebes an der Wurzelspitze vor Abschluss des Wurzelwachstums",
-				"prep": "Keine Vorbereitung; nach einem Unfall möglichst rasch kommen und das abgebrochene Fragment mitbringen, falls es aufbewahrt wurde, ebenso frühere Aufnahmen",
-				"abnormal": "Der Zahn wird über Monate beobachtet: Auf den Aufnahmen sieht der Zahnarzt, ob die Wurzel wächst und sich die Spitze schließt. Dunkelfärbung der Krone, Schmerzen beim Zubeißen, Schwellung oder ein Bläschen am Zahnfleisch erfordern einen zusätzlichen Termin"
-			},
-			"tr": {
-				"what": "Kök gelişimi tamamlanmamış, kök ucu hâlâ açık olan kalıcı dişin çocuk ya da ergende tedavisi",
-				"how": "Anestezi altında diş izole edilir, kök yakınındaki canlı doku korunacak şekilde boşluk dikkatle temizlenir, üzerine biyoseramik malzeme konur ya da bu malzemeyle açık kök ucunda bir bariyer oluşturulur ve diş dolguyla kapatılır; tedavi birkaç seansa ve kontrol röntgenlerine yayılır",
-				"when": "Ön dişte kırık ve pulpanın açığa çıktığı travma, olgunlaşmamış azı dişinde derin çürük, kök gelişimi bitmeden pulpanın veya kök ucu çevresindeki dokuların iltihabı",
-				"prep": "Hazırlık gerekmez; travmadan sonra mümkün olan en kısa sürede gelin, saklandıysa kırılan parçayı ve önceki röntgenleri getirin",
-				"abnormal": "Diş aylarca izlenir: hekim röntgenlerde kökün büyüyüp büyümediğini ve ucun kapanıp kapanmadığını görür. Kuronun kararması, ısırırken ağrı, şişlik ya da diş etinde kabarcık plan dışı muayene gerektirir"
-			}
-		}
-	}
+  {
+    "slug": "composite-filling-on-primary-tooth",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление разрушенного молочного зуба светоотверждаемым материалом под цвет эмали, рассчитанное на срок до естественной смены зуба",
+        "how": "Поражённые ткани убирают, зуб изолируют и высушивают, наносят адгезив, композит накладывают слоями и засвечивают лампой, в конце пломбу шлифуют и проверяют по прикусу; обычно 15-30 минут, визит короче, чем у взрослых",
+        "when": "Кариес молочного моляра или резца, скол после падения, выпавшая или негерметичная старая пломба, восстановление контакта между зубами, чтобы пища не застревала",
+        "prep": "Подготовки нет; покормить ребёнка за час-полтора и записаться на время, когда он выспался",
+        "abnormal": "Эмаль и дентин молочного зуба тоньше, поэтому пломба служит ограниченный срок и её состояние проверяют на плановых осмотрах. Если пломба выпала, край скалывается или ребёнок жалуется на боль при накусывании, зуб показывают стоматологу"
+      },
+      "en": {
+        "what": "Rebuilding a damaged baby tooth with a light-cured tooth-coloured material that has to last until the tooth is shed",
+        "how": "The affected tissue is removed, the tooth is isolated and dried, an adhesive is applied, the composite is placed in layers and cured with a lamp, then shaped and checked against the bite; usually 15-30 minutes, a shorter visit than for adults",
+        "when": "Decay in a baby molar or front tooth, a chip after a fall, a lost or leaking old filling, rebuilding the contact point so that food stops packing between the teeth",
+        "prep": "No preparation; feed the child an hour or two before and book a time when the child is rested",
+        "abnormal": "Enamel and dentine of a baby tooth are thinner, so the filling has a limited service life and is checked at routine visits. If it falls out, chips at the edge or the child complains of pain on biting, the tooth should be seen by the dentist"
+      },
+      "sr": {
+        "what": "Obnova oštećenog mliječnog zuba kompozitom u boji gleđi, koji treba da izdrži do prirodne smjene zuba",
+        "how": "Zahvaćeno tkivo se ukloni, zub se izoluje i osuši, nanese se adheziv, kompozit se postavlja u slojevima i stvrdnjava lampom, na kraju se ispun ispolira i provjeri zagriz; obično 15-30 minuta, posjeta je kraća nego kod odraslih",
+        "when": "Karijes mliječnog kutnjaka ili sjekutića, odlomljen ugao poslije pada, ispao ili nezaptiven stari ispun, obnova kontakta među zubima da se hrana ne zaglavljuje",
+        "prep": "Priprema nije potrebna; nahraniti dijete sat-dva ranije i zakazati termin kada je odmorno",
+        "abnormal": "Gleđ i dentin mliječnog zuba su tanji, pa ispun traje ograničeno i provjerava se na redovnim pregledima. Ako ispadne, odlomi se na ivici ili dijete osjeća bol pri zagrizu, zub treba pokazati stomatologu"
+      },
+      "de": {
+        "what": "Aufbau eines geschädigten Milchzahns mit lichthärtendem zahnfarbenem Material, das bis zum Zahnwechsel halten soll",
+        "how": "Das betroffene Gewebe wird entfernt, der Zahn trockengelegt, ein Haftvermittler aufgetragen, das Komposit in Schichten eingebracht und mit der Lampe ausgehärtet, zum Schluss geformt und am Biss kontrolliert; meist 15-30 Minuten, kürzer als bei Erwachsenen",
+        "when": "Karies an einem Milchbackenzahn oder Schneidezahn, abgebrochene Ecke nach einem Sturz, verlorene oder undichte alte Füllung, Wiederherstellung des Kontaktpunktes, damit sich keine Speisereste mehr festsetzen",
+        "prep": "Keine Vorbereitung; das Kind ein bis zwei Stunden vorher essen lassen und einen Termin wählen, an dem es ausgeruht ist",
+        "abnormal": "Schmelz und Dentin eines Milchzahns sind dünner, daher hält die Füllung begrenzt und wird bei den Kontrollterminen überprüft. Fällt sie heraus, bricht der Rand ab oder klagt das Kind über Schmerzen beim Zubeißen, gehört der Zahn zum Zahnarzt"
+      },
+      "tr": {
+        "what": "Zarar görmüş süt dişinin, diş düşene kadar dayanması gereken diş renginde ışıkla sertleşen dolguyla onarılması",
+        "how": "Etkilenen doku temizlenir, diş izole edilip kurutulur, bağlayıcı sürülür, kompozit katmanlar hâlinde yerleştirilip ışıkla sertleştirilir, sonunda şekillendirilip kapanış kontrol edilir; genellikle 15-30 dakika, yetişkine göre daha kısa bir seans",
+        "when": "Süt azı veya ön dişte çürük, düşme sonrası kırık köşe, düşmüş ya da kenarından açılmış eski dolgu, dişler arasına yemek kaçmasını önleyen temas noktasının geri kazandırılması",
+        "prep": "Hazırlık gerekmez; çocuğu bir iki saat önce doyurun ve dinlenmiş olduğu bir saate randevu alın",
+        "abnormal": "Süt dişinin minesi ve dentini daha incedir, bu yüzden dolgunun ömrü sınırlıdır ve rutin kontrollerde gözden geçirilir. Dolgu düşerse, kenarı kırılırsa ya da çocuk ısırırken ağrıdan yakınırsa diş hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Обнова оштећеног млијечног зуба композитом у боји глеђи, који треба да издржи до природне смјене зуба",
+        "how": "Захваћено ткиво се уклони, зуб се изолује и осуши, нанесе се адхезив, композит се поставља у слојевима и стврдњава лампом, на крају се испун исполира и провјери загриз; обично 15-30 минута, посјета је краћа него код одраслих",
+        "when": "Каријес млијечног кутњака или сјекутића, одломљен угао послије пада, испао или незаптивен стари испун, обнова контакта међу зубима да се храна не заглављује",
+        "prep": "Припрема није потребна; нахранити дијете сат-два раније и заказати термин када је одморно",
+        "abnormal": "Глеђ и дентин млијечног зуба су тањи, па испун траје ограничено и провјерава се на редовним прегледима. Ако испадне, одломи се на ивици или дијете осјећа бол при загризу, зуб треба показати стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "pediatric-caries-treatment",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лечение кариеса у ребёнка с выбором методики по возрасту, глубине поражения и тому, как ребёнок переносит приём",
+        "how": "Врач оценивает полость осмотром, зондом и при необходимости по снимку, при глубоком поражении делает аппликационную и местную анестезию, убирает размягчённые ткани бором или ручными инструментами и закрывает полость пломбой; за визит обычно лечат один-два зуба",
+        "when": "Тёмное пятно или полость в зубе, застревание пищи, реакция на сладкое и холодное, кариес, найденный на профилактическом осмотре, санация перед ортодонтическим аппаратом",
+        "prep": "Подготовки нет; покормить ребёнка заранее, не обещать, что ничего делать не будут, и сказать врачу о страхе после прошлых визитов и о хронических болезнях",
+        "abnormal": "После лечения зуб может недолго реагировать на холодное и сладкое. Самопроизвольная или ночная боль, отёчная десна или пузырёк на десне говорят о том, что вовлечён нерв, и требуют возвращения к стоматологу"
+      },
+      "en": {
+        "what": "Treatment of tooth decay in a child, with the method chosen by age, depth of the cavity and how the child copes with the appointment",
+        "how": "The dentist checks the cavity by eye, probe and, if needed, an X-ray, uses surface and local anaesthesia for deeper lesions, removes the softened tissue with a bur or hand instruments and closes the cavity with a filling; usually one or two teeth per visit",
+        "when": "A dark spot or hole in a tooth, food packing, reaction to sweet or cold, decay found at a check-up, treatment needed before an orthodontic appliance",
+        "prep": "No preparation; feed the child beforehand, avoid promising that nothing will be done, and tell the dentist about fear left from earlier visits and about chronic conditions",
+        "abnormal": "The tooth may react to cold and sweet for a short while after treatment. Spontaneous or night pain, a swollen gum or a small bump on the gum mean the nerve is involved and the child has to come back"
+      },
+      "sr": {
+        "what": "Liječenje karijesa kod djeteta, gdje se metod bira prema uzrastu, dubini šupljine i tome kako dijete podnosi posjetu",
+        "how": "Stomatolog procjenjuje šupljinu pogledom, sondom i po potrebi snimkom, kod dubljih promjena daje površinsku i lokalnu anesteziju, uklanja omekšalo tkivo svrdlom ili ručnim instrumentima i zatvara šupljinu ispunom; obično jedan do dva zuba po posjeti",
+        "when": "Tamna mrlja ili rupa u zubu, zaglavljivanje hrane, reakcija na slatko i hladno, karijes nađen na redovnom pregledu, sanacija prije ortodontskog aparata",
+        "prep": "Priprema nije potrebna; nahraniti dijete prije dolaska, ne obećavati da se ništa neće raditi i reći stomatologu za strah od ranijih posjeta i za hronične bolesti",
+        "abnormal": "Zub poslije liječenja može kratko reagovati na hladno i slatko. Spontani ili noćni bol, otečena desni ili kvržica na desni znače da je zahvaćen živac i da se dijete mora vratiti stomatologu"
+      },
+      "de": {
+        "what": "Behandlung von Karies beim Kind, wobei das Vorgehen nach Alter, Tiefe des Defekts und Belastbarkeit des Kindes gewählt wird",
+        "how": "Der Zahnarzt beurteilt den Defekt mit Spiegel, Sonde und bei Bedarf Röntgenbild, betäubt bei tieferen Läsionen zunächst oberflächlich und dann örtlich, entfernt das erweichte Gewebe mit Bohrer oder Handinstrumenten und verschließt die Kavität mit einer Füllung; meist ein bis zwei Zähne pro Sitzung",
+        "when": "Dunkler Fleck oder Loch im Zahn, Speisereste zwischen den Zähnen, Reaktion auf Süßes und Kaltes, bei der Kontrolle entdeckte Karies, Sanierung vor einer kieferorthopädischen Apparatur",
+        "prep": "Keine Vorbereitung; das Kind vorher essen lassen, nicht versprechen, dass nichts gemacht wird, und Angst aus früheren Terminen sowie chronische Erkrankungen ansprechen",
+        "abnormal": "Der Zahn kann kurze Zeit auf Kaltes und Süßes reagieren. Spontane oder nächtliche Schmerzen, geschwollenes Zahnfleisch oder ein Bläschen am Zahnfleisch sprechen für eine Beteiligung des Nervs und erfordern einen erneuten Termin"
+      },
+      "tr": {
+        "what": "Çocukta diş çürüğünün tedavisi; yöntem yaşa, çürüğün derinliğine ve çocuğun seansı nasıl karşıladığına göre seçilir",
+        "how": "Hekim çürüğü ayna, sond ve gerekirse röntgenle değerlendirir, derin lezyonlarda yüzeysel ve lokal anestezi uygular, yumuşamış dokuyu frez veya el aletiyle temizler ve boşluğu dolguyla kapatır; genellikle seans başına bir iki diş",
+        "when": "Dişte koyu leke veya oyuk, yemek sıkışması, tatlı ve soğuğa duyarlılık, kontrolde fark edilen çürük, ortodontik aparey öncesi gereken tedavi",
+        "prep": "Hazırlık gerekmez; çocuğu önceden doyurun, hiçbir şey yapılmayacağına dair söz vermeyin ve önceki seanslardan kalan korkuyu, kronik hastalıkları hekime söyleyin",
+        "abnormal": "Tedaviden sonra diş kısa süre soğuğa ve tatlıya tepki verebilir. Kendiliğinden veya gece gelen ağrı, şişmiş diş eti ya da diş etinde kabarcık sinirin etkilendiğini gösterir ve yeniden hekime başvurmayı gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Лијечење каријеса код дјетета, гдје се метод бира према узрасту, дубини шупљине и томе како дијете подноси посјету",
+        "how": "Стоматолог процјењује шупљину погледом, сондом и по потреби снимком, код дубљих промјена даје површинску и локалну анестезију, уклања омекшало ткиво сврдлом или ручним инструментима и затвара шупљину испуном; обично један до два зуба по посјети",
+        "when": "Тамна мрља или рупа у зубу, заглављивање хране, реакција на слатко и хладно, каријес нађен на редовном прегледу, санација прије ортодонтског апарата",
+        "prep": "Припрема није потребна; нахранити дијете прије доласка, не обећавати да се ништа неће радити и рећи стоматологу за страх од ранијих посјета и за хроничне болести",
+        "abnormal": "Зуб послије лијечења може кратко реаговати на хладно и слатко. Спонтани или ноћни бол, отечена десни или квржица на десни значе да је захваћен живац и да се дијете мора вратити стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "pediatric-dental-adaptation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Знакомство ребёнка со стоматологическим кабинетом без лечения, чтобы следующий приём прошёл спокойно",
+        "how": "Ребёнку показывают кресло, зеркало, пылесос и воду, дают потрогать инструменты, считают зубы, иногда чистят их щёточкой; приём короткий, 10-20 минут, часто нужно несколько встреч",
+        "when": "Первый визит к стоматологу, страх после болезненного опыта, плач и отказ открывать рот, подготовка к плановому лечению или снимку, дети с особенностями развития",
+        "prep": "Прийти выспавшимся и сытым, заранее не пугать уколом и не обещать подарок за терпение; с врачом договориться, кто разговаривает с ребёнком в кресле",
+        "abnormal": "Цель приёма — чтобы ребёнок дал себя осмотреть, лечение на нём обычно не проводят. Если контакт не складывается, врач предлагает повторить встречу или обсуждает другие варианты, вплоть до лечения в седации"
+      },
+      "en": {
+        "what": "A visit for getting the child used to the dental surgery, with no treatment carried out",
+        "how": "The child is shown the chair, mirror, suction and water spray, is allowed to touch the instruments, the teeth are counted and sometimes brushed; a short appointment of 10-20 minutes, often repeated a few times",
+        "when": "First ever dental visit, fear after a painful experience, crying and refusing to open the mouth, preparation for planned treatment or an X-ray, children with developmental conditions",
+        "prep": "Come rested and fed, do not frighten the child with talk of injections beforehand and do not promise a reward for enduring it; agree with the dentist who speaks to the child in the chair",
+        "abnormal": "The aim is that the child allows an examination, treatment is normally not done at this visit. If contact is not established, the dentist suggests repeating the visit or discusses other options, including treatment under sedation"
+      },
+      "sr": {
+        "what": "Upoznavanje djeteta sa stomatološkom ordinacijom, bez liječenja, da bi sljedeća posjeta prošla mirno",
+        "how": "Djetetu se pokažu stolica, ogledalce, sisaljka i vodeni sprej, dozvoli mu se da dodirne instrumente, zubi se prebroje, ponekad i očiste četkicom; kratak termin od 10-20 minuta, često u nekoliko navrata",
+        "when": "Prva posjeta stomatologu, strah poslije bolnog iskustva, plač i odbijanje da otvori usta, priprema za planirano liječenje ili snimak, djeca sa razvojnim teškoćama",
+        "prep": "Doći odmoran i najeden, ne plašiti dijete pričom o injekciji i ne obećavati nagradu za strpljenje; sa stomatologom dogovoriti ko razgovara sa djetetom u stolici",
+        "abnormal": "Cilj je da dijete dozvoli pregled, liječenje se na ovoj posjeti obično ne radi. Ako se kontakt ne uspostavi, stomatolog predlaže ponovni dolazak ili razgovara o drugim opcijama, uključujući liječenje u sedaciji"
+      },
+      "de": {
+        "what": "Termin zum Kennenlernen der Zahnarztpraxis, bei dem noch nicht behandelt wird",
+        "how": "Dem Kind werden Stuhl, Spiegel, Sauger und Wasserspray gezeigt, es darf die Instrumente anfassen, die Zähne werden gezählt und manchmal geputzt; kurzer Termin von 10-20 Minuten, oft mehrfach wiederholt",
+        "when": "Allererster Zahnarztbesuch, Angst nach einer schmerzhaften Erfahrung, Weinen und Verweigern des Mundöffnens, Vorbereitung auf eine geplante Behandlung oder Röntgenaufnahme, Kinder mit Entwicklungsbesonderheiten",
+        "prep": "Ausgeruht und satt kommen, das Kind vorher nicht mit Spritzen ängstigen und keine Belohnung fürs Durchhalten versprechen; mit dem Zahnarzt absprechen, wer im Behandlungszimmer mit dem Kind spricht",
+        "abnormal": "Ziel ist, dass sich das Kind untersuchen lässt, behandelt wird bei diesem Termin in der Regel nicht. Kommt kein Kontakt zustande, schlägt der Zahnarzt einen weiteren Termin vor oder bespricht andere Wege bis hin zur Behandlung in Sedierung"
+      },
+      "tr": {
+        "what": "Çocuğun diş kliniğine alışması için yapılan, tedavi içermeyen tanışma seansı",
+        "how": "Çocuğa koltuk, ayna, aspiratör ve su spreyi gösterilir, aletlere dokunmasına izin verilir, dişleri sayılır, bazen fırçayla temizlenir; 10-20 dakikalık kısa seans, çoğu zaman birkaç kez tekrarlanır",
+        "when": "İlk diş hekimi ziyareti, ağrılı bir deneyimden sonraki korku, ağlama ve ağzını açmayı reddetme, planlanan tedaviye veya röntgene hazırlık, gelişimsel özellikleri olan çocuklar",
+        "prep": "Dinlenmiş ve tok gelin, önceden iğne sözüyle çocuğu korkutmayın ve dayanması karşılığında ödül vaat etmeyin; koltukta çocukla kimin konuşacağını hekimle kararlaştırın",
+        "abnormal": "Amaç çocuğun muayeneye izin vermesidir, bu seansta genellikle tedavi yapılmaz. İletişim kurulamazsa hekim seansı tekrarlamayı önerir ya da sedasyon altında tedavi dahil başka seçenekleri konuşur"
+      },
+      "sr_cyrl": {
+        "what": "Упознавање дјетета са стоматолошком ординацијом, без лијечења, да би сљедећа посјета прошла мирно",
+        "how": "Дјетету се покажу столица, огледалце, сисаљка и водени спреј, дозволи му се да додирне инструменте, зуби се преброје, понекад и очисте четкицом; кратак термин од 10-20 минута, често у неколико наврата",
+        "when": "Прва посјета стоматологу, страх послије болног искуства, плач и одбијање да отвори уста, припрема за планирано лијечење или снимак, дјеца са развојним тешкоћама",
+        "prep": "Доћи одморан и наједен, не плашити дијете причом о ињекцији и не обећавати награду за стрпљење; са стоматологом договорити ко разговара са дјететом у столици",
+        "abnormal": "Циљ је да дијете дозволи преглед, лијечење се на овој посјети обично не ради. Ако се контакт не успостави, стоматолог предлаже поновни долазак или разговара о другим опцијама, укључујући лијечење у седацији"
+      }
+    }
+  },
+  {
+    "slug": "pediatric-dentist-consultation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Приём детского стоматолога с осмотром полости рта ребёнка и ответами родителям на вопросы о зубах и уходе",
+        "how": "Врач расспрашивает о жалобах, питании и привычках, осматривает зубы, дёсны, уздечки и смыкание челюстей, при необходимости назначает снимок; 15-30 минут, с ребёнком говорят на понятном ему языке",
+        "when": "Плановый осмотр дважды в год, первые зубы и порядок прорезывания, пятна на эмали, боль, травма зуба, сосание пальца или пустышки, вопрос о сроке визита к ортодонту",
+        "prep": "Подготовки нет; взять прежние снимки и выписки и не записываться на время дневного сна ребёнка",
+        "abnormal": "Измеримого результата здесь нет: врач объясняет, что нашёл, и предлагает профилактику, лечение или наблюдение. Срок следующего визита он называет сам, у детей с высоким риском кариеса он короче"
+      },
+      "en": {
+        "what": "An appointment with a children's dentist: examination of the child's mouth and answers to the parents' questions about teeth and care",
+        "how": "The dentist asks about complaints, diet and habits, examines teeth, gums, frenula and how the jaws meet, and orders an X-ray if needed; 15-30 minutes, with the child spoken to in words they understand",
+        "when": "Routine check twice a year, first teeth and the order of eruption, spots on the enamel, pain, a knocked tooth, thumb or dummy sucking, the question of when to see an orthodontist",
+        "prep": "No preparation; bring previous X-rays and reports and avoid the child's usual nap time",
+        "abnormal": "There is no measurable result here: the dentist explains the findings and suggests prevention, treatment or watchful waiting. The interval to the next visit is set by the dentist and is shorter for children with a high risk of decay"
+      },
+      "sr": {
+        "what": "Pregled kod dječjeg stomatologa sa procjenom stanja usta i odgovorima roditeljima na pitanja o zubima i njezi",
+        "how": "Stomatolog pita o tegobama, ishrani i navikama, pregleda zube, desni, frenulume i način na koji se vilice sklapaju, po potrebi uputi na snimak; 15-30 minuta, uz razgovor sa djetetom njemu razumljivim riječima",
+        "when": "Redovna kontrola dva puta godišnje, prvi zubi i redoslijed nicanja, mrlje na gleđi, bol, povreda zuba, sisanje prsta ili varalice, pitanje kada kod ortodonta",
+        "prep": "Priprema nije potrebna; ponijeti ranije snimke i nalaze i izbjeći termin kada dijete inače spava",
+        "abnormal": "Mjerljivog rezultata ovdje nema: stomatolog objašnjava nalaz i predlaže profilaksu, liječenje ili praćenje. Razmak do sljedeće kontrole određuje on, a kod djece sa visokim rizikom od karijesa je kraći"
+      },
+      "de": {
+        "what": "Termin beim Kinderzahnarzt mit Untersuchung des Kindermundes und Antworten auf die Fragen der Eltern zu Zähnen und Pflege",
+        "how": "Der Zahnarzt fragt nach Beschwerden, Ernährung und Gewohnheiten, untersucht Zähne, Zahnfleisch, Bändchen und den Zusammenbiss und veranlasst bei Bedarf eine Röntgenaufnahme; 15-30 Minuten, mit kindgerechter Ansprache",
+        "when": "Routinekontrolle zweimal im Jahr, erste Zähne und Reihenfolge des Durchbruchs, Flecken am Schmelz, Schmerzen, Zahnunfall, Daumen- oder Schnullerlutschen, Frage nach dem Zeitpunkt für den Kieferorthopäden",
+        "prep": "Keine Vorbereitung; frühere Aufnahmen und Befunde mitbringen und die übliche Schlafenszeit des Kindes meiden",
+        "abnormal": "Ein messbares Ergebnis gibt es hier nicht: Der Zahnarzt erklärt den Befund und schlägt Vorbeugung, Behandlung oder Beobachtung vor. Den Abstand zum nächsten Termin legt er fest, bei hohem Kariesrisiko ist er kürzer"
+      },
+      "tr": {
+        "what": "Çocuk diş hekimi muayenesi: ağız içinin değerlendirilmesi ve ailenin dişler ile bakım hakkındaki sorularının yanıtlanması",
+        "how": "Hekim şikâyetleri, beslenmeyi ve alışkanlıkları sorar, dişleri, diş etlerini, bağları ve çenelerin kapanışını inceler, gerekirse röntgen ister; 15-30 dakika, çocukla anlayacağı bir dille konuşulur",
+        "when": "Yılda iki kez rutin kontrol, ilk dişler ve çıkış sırası, minede lekeler, ağrı, diş travması, parmak veya emzik emme, ortodontiste ne zaman gidileceği sorusu",
+        "prep": "Hazırlık gerekmez; önceki röntgenleri ve raporları getirin, çocuğun uyku saatine denk gelen randevudan kaçının",
+        "abnormal": "Burada ölçülebilir bir sonuç yoktur: hekim bulguyu anlatır ve koruyucu uygulama, tedavi ya da izlem önerir. Bir sonraki kontrolün zamanını hekim belirler, çürük riski yüksek çocuklarda bu aralık daha kısadır"
+      },
+      "sr_cyrl": {
+        "what": "Преглед код дјечјег стоматолога са процјеном стања уста и одговорима родитељима на питања о зубима и њези",
+        "how": "Стоматолог пита о тегобама, исхрани и навикама, прегледа зубе, десни, френулуме и начин на који се вилице склапају, по потреби упути на снимак; 15-30 минута, уз разговор са дјететом њему разумљивим ријечима",
+        "when": "Редовна контрола два пута годишње, први зуби и редослијед ницања, мрље на глеђи, бол, повреда зуба, сисање прста или варалице, питање када код ортодонта",
+        "prep": "Припрема није потребна; понијети раније снимке и налазе и избјећи термин када дијете иначе спава",
+        "abnormal": "Мјерљивог резултата овдје нема: стоматолог објашњава налаз и предлаже профилаксу, лијечење или праћење. Размак до сљедеће контроле одређује он, а код дјеце са високим ризиком од каријеса је краћи"
+      }
+    }
+  },
+  {
+    "slug": "complete-pediatric-dental-cleaning",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Профессиональная чистка всех зубов ребёнка за один визит: снятие налёта, обработка промежутков, полировка и разбор домашней гигиены",
+        "how": "Налёт снимают вращающейся щёточкой с пастой, промежутки проходят нитью или штрипсами, плотные отложения убирают ультразвуковой насадкой, в конце зубы полируют, а ребёнку красителем или зеркалом показывают недочищенные места; 20-40 минут",
+        "when": "Плановая гигиена, видимый налёт и неприятный запах изо рта, кровоточивость десны при чистке, подготовка к лечению кариеса, герметизации фиссур, фторированию или ортодонтическому аппарату",
+        "prep": "Подготовки нет; почистить зубы перед визитом и сказать врачу о чувствительности и о том, какой щёткой и пастой ребёнок пользуется дома",
+        "abnormal": "День-два десна может слегка кровить при чистке. Если налёт возвращается за несколько дней, десна остаётся красной или чистка болезненна, ребёнка нужно показать стоматологу"
+      },
+      "en": {
+        "what": "Professional cleaning of all of a child's teeth in one visit: plaque removal, cleaning between the teeth, polishing and a run-through of home brushing",
+        "how": "Plaque is removed with a rotating brush and paste, the spaces between the teeth with floss or strips, firm deposits with an ultrasonic tip, then the teeth are polished and a dye or a mirror is used to show the child the missed spots; 20-40 minutes",
+        "when": "Scheduled hygiene visit, visible plaque and bad breath, gums bleeding while brushing, preparation for fillings, fissure sealing, fluoride varnish or an orthodontic appliance",
+        "prep": "No preparation; brush before coming and tell the dentist about sensitivity and about the brush and paste used at home",
+        "abnormal": "The gums may bleed slightly while brushing for a day or two. If plaque builds up again within days, the gum stays red or brushing hurts, the child should be examined"
+      },
+      "sr": {
+        "what": "Profesionalno čišćenje svih zuba djeteta u jednoj posjeti: uklanjanje naslaga, čišćenje međuzubnih prostora, poliranje i razgovor o njezi kod kuće",
+        "how": "Naslage se skidaju rotirajućom četkicom i pastom, međuzubni prostori koncem ili trakicama, čvrste naslage ultrazvučnim nastavkom, zubi se zatim ispoliraju, a djetetu se bojom ili ogledalcem pokaže gdje ne dočisti; 20-40 minuta",
+        "when": "Redovna higijena, vidljive naslage i neprijatan zadah, krvarenje desni pri pranju, priprema za ispune, zalivanje fisura, fluoridaciju ili ortodontski aparat",
+        "prep": "Priprema nije potrebna; oprati zube prije dolaska i reći stomatologu za osjetljivost i za četkicu i pastu koje dijete koristi kod kuće",
+        "abnormal": "Desni mogu dan-dva blago krvariti pri pranju. Ako se naslage brzo vrate, desni ostanu crvene ili pranje boli, dijete treba pregledati"
+      },
+      "de": {
+        "what": "Professionelle Reinigung aller Zähne des Kindes in einer Sitzung: Belagentfernung, Reinigung der Zwischenräume, Politur und Besprechung der häuslichen Pflege",
+        "how": "Beläge werden mit rotierendem Bürstchen und Paste entfernt, die Zwischenräume mit Zahnseide oder Streifen gereinigt, feste Beläge mit Ultraschall abgenommen, anschließend wird poliert und dem Kind mit Färbemittel oder Spiegel gezeigt, wo es nicht sauber putzt; 20-40 Minuten",
+        "when": "Geplante Prophylaxe, sichtbare Beläge und Mundgeruch, Zahnfleischbluten beim Putzen, Vorbereitung auf Füllungen, Fissurenversiegelung, Fluoridlack oder eine Zahnspange",
+        "prep": "Keine Vorbereitung; vorher Zähne putzen und dem Zahnarzt Empfindlichkeiten sowie die zu Hause benutzte Bürste und Paste nennen",
+        "abnormal": "Das Zahnfleisch kann ein, zwei Tage beim Putzen leicht bluten. Kehren die Beläge innerhalb weniger Tage zurück, bleibt das Zahnfleisch gerötet oder tut das Putzen weh, sollte das Kind untersucht werden"
+      },
+      "tr": {
+        "what": "Çocuğun tüm dişlerinin tek seansta profesyonel temizliği: plak alınması, ara yüzlerin temizlenmesi, cila ve evdeki fırçalamanın gözden geçirilmesi",
+        "how": "Plak dönen fırça ve patla alınır, ara yüzler diş ipi veya şeritle temizlenir, sert birikintiler ultrasonik uçla kaldırılır, dişler cilalanır ve boya ya da aynayla çocuğa eksik bıraktığı yerler gösterilir; 20-40 dakika",
+        "when": "Planlı hijyen seansı, görünür plak ve ağız kokusu, fırçalarken diş eti kanaması, dolgu, fissür örtücü, florür verniği veya ortodontik aparey öncesi hazırlık",
+        "prep": "Hazırlık gerekmez; gelmeden önce dişleri fırçalayın, hassasiyeti ve evde kullanılan fırça ile macunu hekime söyleyin",
+        "abnormal": "Diş etleri bir iki gün fırçalarken hafif kanayabilir. Plak günler içinde geri geliyorsa, diş eti kırmızı kalıyorsa ya da fırçalamak acıtıyorsa çocuğun muayene edilmesi gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Професионално чишћење свих зуба дјетета у једној посјети: уклањање наслага, чишћење међузубних простора, полирање и разговор о њези код куће",
+        "how": "Наслаге се скидају ротирајућом четкицом и пастом, међузубни простори концем или тракицама, чврсте наслаге ултразвучним наставком, зуби се затим исполирају, а дјетету се бојом или огледалцем покаже гдје не дочисти; 20-40 минута",
+        "when": "Редовна хигијена, видљиве наслаге и непријатан задах, крварење десни при прању, припрема за испуне, заливање фисура, флуоридацију или ортодонтски апарат",
+        "prep": "Припрема није потребна; опрати зубе прије доласка и рећи стоматологу за осјетљивост и за четкицу и пасту које дијете користи код куће",
+        "abnormal": "Десни могу дан-два благо крварити при прању. Ако се наслаге брзо врате, десни остану црвене или прање боли, дијете треба прегледати"
+      }
+    }
+  },
+  {
+    "slug": "pediatric-dental-diagnostics-with-treatment-plan",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Развёрнутое обследование зубов ребёнка со снимками по показаниям и письменным планом лечения по этапам",
+        "how": "Врач осматривает каждый зуб и слизистую, отмечает кариес и состояние прикуса, при необходимости делает прицельный или панорамный снимок, затем расписывает очерёдность зубов и визитов с учётом возраста ребёнка и того, насколько хорошо он переносит работу; 30-50 минут",
+        "when": "Несколько поражённых зубов сразу, первое обращение после долгого перерыва, планирование лечения в седации или под наркозом, направление от ортодонта, второе мнение по предложенному плану",
+        "prep": "Взять прежние снимки и выписки, перечислить лекарства и аллергии; от ребёнка подготовки не требуется",
+        "abnormal": "Отклоняться тут нечему: итог — список зубов и порядок работы с ними. План по ходу меняется: молочные зубы сменяются, а новые очаги кариеса у детей появляются быстро, поэтому срок контроля назначает врач"
+      },
+      "en": {
+        "what": "A full survey of a child's teeth with X-rays where indicated and a written, staged treatment plan",
+        "how": "The dentist examines every tooth and the soft tissues, records decay and the state of the bite, takes a single or panoramic X-ray if needed, then sets out the order of teeth and appointments taking the child's age and tolerance into account; 30-50 minutes",
+        "when": "Several decayed teeth at once, first visit after a long gap, planning treatment under sedation or general anaesthesia, referral from an orthodontist, second opinion on a proposed plan",
+        "prep": "Bring previous X-rays and medical reports and list medicines and allergies; nothing is required of the child",
+        "abnormal": "There is nothing here that can be out of range, the result is a list of teeth and the order of work. The plan is revised as it goes: baby teeth are shed and new cavities appear quickly in children, so the dentist sets the date of the next review"
+      },
+      "sr": {
+        "what": "Detaljan pregled zuba djeteta sa snimcima po potrebi i pisanim planom liječenja po fazama",
+        "how": "Stomatolog pregleda svaki zub i sluznicu, bilježi karijes i stanje zagriza, po potrebi uradi ciljani ili panoramski snimak, a zatim razradi redoslijed zuba i posjeta uzimajući u obzir uzrast djeteta i koliko dobro podnosi rad; 30-50 minuta",
+        "when": "Više zahvaćenih zuba odjednom, prvi dolazak poslije duže pauze, planiranje rada u sedaciji ili opštoj anesteziji, uput ortodonta, drugo mišljenje o predloženom planu",
+        "prep": "Ponijeti ranije snimke i nalaze i navesti lijekove i alergije; od djeteta se ne traži nikakva priprema",
+        "abnormal": "Ovdje nema vrijednosti koja može odstupati, rezultat je spisak zuba i redoslijed rada. Plan se usput mijenja: mliječni zubi se smjenjuju, a nova karijesna žarišta kod djece nastaju brzo, pa termin kontrole određuje stomatolog"
+      },
+      "de": {
+        "what": "Umfassende Befundaufnahme der Kinderzähne mit Röntgenbildern bei Bedarf und einem schriftlichen, nach Etappen gegliederten Behandlungsplan",
+        "how": "Der Zahnarzt untersucht jeden Zahn und die Schleimhaut, dokumentiert Karies und Bisslage, fertigt bei Bedarf eine Einzel- oder Panoramaaufnahme an und legt anschließend die Reihenfolge der Zähne und Termine unter Berücksichtigung von Alter und Belastbarkeit des Kindes fest; 30-50 Minuten",
+        "when": "Mehrere kariöse Zähne gleichzeitig, erster Termin nach langer Pause, Planung einer Behandlung in Sedierung oder Vollnarkose, Überweisung vom Kieferorthopäden, Zweitmeinung zu einem vorgeschlagenen Plan",
+        "prep": "Frühere Aufnahmen und Befunde mitbringen, Medikamente und Allergien angeben; vom Kind wird nichts verlangt",
+        "abnormal": "Hier kann kein Wert abweichen, das Ergebnis ist eine Liste der Zähne und die Reihenfolge der Arbeiten. Der Plan wird unterwegs angepasst: Milchzähne fallen aus und neue Defekte entstehen bei Kindern schnell, den Kontrolltermin legt der Zahnarzt fest"
+      },
+      "tr": {
+        "what": "Çocuğun dişlerinin ayrıntılı değerlendirilmesi; gerektiğinde röntgen ve aşamalara bölünmüş yazılı tedavi planı",
+        "how": "Hekim her dişi ve ağız içi dokuları inceler, çürükleri ve kapanışı kaydeder, gerekirse periapikal ya da panoramik film alır, ardından çocuğun yaşını ve işlemi ne kadar kaldırdığını hesaba katarak diş ve seans sırasını belirler; 30-50 dakika",
+        "when": "Aynı anda birden çok çürük diş, uzun aradan sonraki ilk başvuru, sedasyon veya genel anestezi altında tedavi planlaması, ortodontist yönlendirmesi, önerilen plan için ikinci görüş",
+        "prep": "Önceki röntgenleri ve raporları getirin, kullanılan ilaçları ve alerjileri bildirin; çocuktan bir hazırlık istenmez",
+        "abnormal": "Burada sapabilecek bir değer yoktur, sonuç dişlerin listesi ve çalışma sırasıdır. Plan yol boyunca güncellenir: süt dişleri düşer ve çocuklarda yeni çürükler hızla oluşur, bu yüzden kontrol zamanını hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Детаљан преглед зуба дјетета са снимцима по потреби и писаним планом лијечења по фазама",
+        "how": "Стоматолог прегледа сваки зуб и слузницу, биљежи каријес и стање загриза, по потреби уради циљани или панорамски снимак, а затим разради редослијед зуба и посјета узимајући у обзир узраст дјетета и колико добро подноси рад; 30-50 минута",
+        "when": "Више захваћених зуба одједном, први долазак послије дуже паузе, планирање рада у седацији или општој анестезији, упут ортодонта, друго мишљење о предложеном плану",
+        "prep": "Понијети раније снимке и налазе и навести лијекове и алергије; од дјетета се не тражи никаква припрема",
+        "abnormal": "Овдје нема вриједности која може одступати, резултат је списак зуба и редослијед рада. План се успут мијења: млијечни зуби се смјењују, а нова каријесна жаришта код дјеце настају брзо, па термин контроле одређује стоматолог"
+      }
+    }
+  },
+  {
+    "slug": "primary-tooth-extraction-non-resorbed-root",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Удаление молочного зуба, корень которого не рассосался, из-за чего зуб плотно держится в кости",
+        "how": "После аппликационной и местной анестезии десну отделяют, зуб расшатывают и извлекают; при крупном или искривлённом корне корни разделяют и достают по частям, иногда накладывают шов; 10-25 минут",
+        "when": "Молочный зуб не выпал в срок и мешает постоянному прорезаться, постоянный зуб вышел вторым рядом, разрушенный или воспалённый зуб с сохранным корнем, удаление по плану ортодонта, задержка смены после лечения каналов",
+        "prep": "Покормить ребёнка за час-полтора, сообщить об аллергии, болезнях крови и сердца, а после визита запланировать спокойный день",
+        "abnormal": "Лунка кровит первые часы, сгусток выполаскивать нельзя, а место удаления беспокоит ребёнка дольше, чем выпавший сам шатающийся зуб. Кровотечение, которое не останавливается, отёк щеки, температура или боль на вторые сутки — повод вернуться к стоматологу"
+      },
+      "en": {
+        "what": "Removal of a baby tooth whose root has not dissolved, so the tooth still sits firmly in the bone",
+        "how": "After surface and local anaesthesia the gum is separated, the tooth is loosened and lifted out; with a large or curved root the roots are divided and taken out in pieces, occasionally a stitch is placed; 10-25 minutes",
+        "when": "A baby tooth that has not come out in time and blocks the permanent one, a permanent tooth erupting in a second row, a broken down or infected tooth with an intact root, extraction planned by the orthodontist, delayed shedding after root canal treatment",
+        "prep": "Feed the child an hour or two before, report allergies, bleeding and heart conditions, and plan a quiet day afterwards",
+        "abnormal": "The socket oozes for the first hours, the clot must not be rinsed out, and the site bothers the child longer than a loose tooth that falls out on its own. Bleeding that does not stop, a swollen cheek, fever or pain on the second day means going back to the dentist"
+      },
+      "sr": {
+        "what": "Vađenje mliječnog zuba čiji se korijen nije resorbovao, pa zub još čvrsto stoji u kosti",
+        "how": "Poslije površinske i lokalne anestezije desni se odvoje, zub se olabavi i izvadi; kod velikog ili iskrivljenog korijena korjenovi se razdvoje i vade dio po dio, ponekad se stavi šav; 10-25 minuta",
+        "when": "Mliječni zub koji nije ispao na vrijeme i smeta stalnom zubu da nikne, stalni zub izrastao u drugom redu, razoren ili upaljen zub sa očuvanim korijenom, vađenje po planu ortodonta, izostanak smjene poslije liječenja kanala",
+        "prep": "Nahraniti dijete sat-dva ranije, prijaviti alergije, bolesti krvi i srca i isplanirati miran dan poslije zahvata",
+        "abnormal": "Rana krvari prvih sati, ugrušak se ne smije ispirati, a mjesto vađenja smeta djetetu duže nego kada klimav zub ispadne sam. Krvarenje koje ne prestaje, oteklina obraza, povišena temperatura ili bol drugog dana razlog su za povratak stomatologu"
+      },
+      "de": {
+        "what": "Entfernung eines Milchzahns, dessen Wurzel sich nicht aufgelöst hat und der deshalb noch fest im Knochen sitzt",
+        "how": "Nach Oberflächen- und örtlicher Betäubung wird das Zahnfleisch gelöst, der Zahn gelockert und entfernt; bei großer oder gekrümmter Wurzel werden die Wurzeln getrennt und einzeln entnommen, gelegentlich wird genäht; 10-25 Minuten",
+        "when": "Milchzahn, der nicht rechtzeitig ausfällt und den bleibenden Zahn blockiert, bleibender Zahn in zweiter Reihe, zerstörter oder entzündeter Zahn mit erhaltener Wurzel, geplante Extraktion durch den Kieferorthopäden, ausbleibender Zahnwechsel nach einer Wurzelbehandlung",
+        "prep": "Das Kind ein bis zwei Stunden vorher essen lassen, Allergien, Blutungsneigung und Herzerkrankungen angeben und danach einen ruhigen Tag einplanen",
+        "abnormal": "Die Wunde sickert in den ersten Stunden, das Blutgerinnsel darf nicht ausgespült werden, und die Stelle stört das Kind länger als ein von selbst ausgefallener Wackelzahn. Blutung, die nicht aufhört, geschwollene Wange, Fieber oder Schmerzen am zweiten Tag gehören erneut zum Zahnarzt"
+      },
+      "tr": {
+        "what": "Kökü erimediği için kemikte hâlâ sıkı duran süt dişinin çekilmesi",
+        "how": "Yüzeysel ve lokal anesteziden sonra diş eti ayrılır, diş gevşetilip çıkarılır; kök büyük veya eğriyse kökler ayrılıp parça parça alınır, bazen dikiş konur; 10-25 dakika",
+        "when": "Zamanında düşmeyip kalıcı dişin çıkmasını engelleyen süt dişi, ikinci sıradan süren kalıcı diş, kökü sağlam kalmış yıkık veya iltihaplı diş, ortodontistin planladığı çekim, kanal tedavisinden sonra gecikmiş diş değişimi",
+        "prep": "Çocuğu bir iki saat önce doyurun, alerjileri, kanama ve kalp hastalıklarını bildirin ve sonrası için sakin bir gün planlayın",
+        "abnormal": "Soket ilk saatlerde sızar, pıhtı çalkalanarak çıkarılmamalıdır ve bölge, kendiliğinden düşen sallanan dişe göre çocuğu daha uzun rahatsız eder. Durmayan kanama, yanakta şişlik, ateş ya da ikinci gün gelen ağrı hekime dönmeyi gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Вађење млијечног зуба чији се коријен није ресорбовао, па зуб још чврсто стоји у кости",
+        "how": "Послије површинске и локалне анестезије десни се одвоје, зуб се олабави и извади; код великог или искривљеног коријена корјенови се раздвоје и ваде дио по дио, понекад се стави шав; 10-25 минута",
+        "when": "Млијечни зуб који није испао на вријеме и смета сталном зубу да никне, стални зуб израстао у другом реду, разорен или упаљен зуб са очуваним коријеном, вађење по плану ортодонта, изостанак смјене послије лијечења канала",
+        "prep": "Нахранити дијете сат-два раније, пријавити алергије, болести крви и срца и испланирати миран дан послије захвата",
+        "abnormal": "Рана крвари првих сати, угрушак се не смије испирати, а мјесто вађења смета дјетету дуже него када климав зуб испадне сам. Крварење које не престаје, отеклина образа, повишена температура или бол другог дана разлог су за повратак стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "primary-tooth-pulp-treatment",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лечение воспалённой пульпы молочного зуба, чтобы зуб дожил до естественной смены",
+        "how": "Под анестезией зуб изолируют, убирают кариес и вскрывают полость, воспалённую пульпу удаляют из коронки, а при необходимости и из каналов, пространство заполняют пастой, которая рассасывается вместе с корнем, зуб закрывают пломбой или детской коронкой; один-два визита",
+        "when": "Глубокий кариес, дошедший до нерва, самопроизвольная и ночная боль, скол молочного зуба с обнажённой пульпой, свищ или припухлость десны у молочного зуба",
+        "prep": "Подготовки нет; покормить ребёнка заранее и рассказать врачу, когда и как болел зуб и как ребёнок переносил прошлое лечение",
+        "abnormal": "Несколько дней зуб может быть чувствителен к накусыванию. Возвращение боли, припухлость десны, потемнение или подвижность зуба означают новый осмотр: иногда зуб сохранить не удаётся и обсуждают удаление с удержателем места"
+      },
+      "en": {
+        "what": "Treatment of an inflamed nerve inside a baby tooth so that the tooth can stay until it is naturally shed",
+        "how": "Under anaesthesia the tooth is isolated, decay is removed and the chamber opened, the inflamed pulp is taken out of the crown and, if needed, out of the canals, the space is filled with a paste that resorbs together with the root, and the tooth is closed with a filling or a child's crown; one or two visits",
+        "when": "Deep decay reaching the nerve, spontaneous and night pain, a chipped baby tooth with exposed pulp, a small bump or swelling on the gum next to a baby tooth",
+        "prep": "No preparation; feed the child beforehand and tell the dentist when and how the tooth hurt and how the child coped with earlier treatment",
+        "abnormal": "The tooth may be tender to biting for a few days. Returning pain, swelling of the gum, darkening or looseness of the tooth mean a new appointment: sometimes the tooth cannot be kept and removal with a space maintainer is discussed"
+      },
+      "sr": {
+        "what": "Liječenje upaljene pulpe mliječnog zuba kako bi zub ostao do prirodne smjene",
+        "how": "U anesteziji se zub izoluje, ukloni se karijes i otvori komorica, upaljena pulpa se izvadi iz krunice i po potrebi iz kanala, prostor se ispuni pastom koja se resorbuje zajedno sa korijenom, a zub se zatvori ispunom ili dječjom krunicom; jedna do dvije posjete",
+        "when": "Duboki karijes koji je stigao do živca, spontani i noćni bol, odlomljen mliječni zub sa otvorenom pulpom, fistula ili oteklina desni uz mliječni zub",
+        "prep": "Priprema nije potrebna; nahraniti dijete prije dolaska i reći stomatologu kada je i kako zub bolio i kako je dijete podnosilo ranije liječenje",
+        "abnormal": "Zub može nekoliko dana biti osjetljiv na zagriz. Povratak bola, oteklina desni, tamnjenje ili klimanje zuba znače novi pregled: ponekad se zub ne može sačuvati i razgovara se o vađenju uz držač prostora"
+      },
+      "de": {
+        "what": "Behandlung der entzündeten Pulpa eines Milchzahns, damit der Zahn bis zum natürlichen Wechsel erhalten bleibt",
+        "how": "Unter Betäubung wird der Zahn isoliert, die Karies entfernt und die Kammer eröffnet, die entzündete Pulpa aus der Krone und bei Bedarf aus den Kanälen entnommen, der Raum mit einer Paste gefüllt, die sich zusammen mit der Wurzel abbaut, und der Zahn mit Füllung oder Kinderkrone verschlossen; ein bis zwei Sitzungen",
+        "when": "Tiefe Karies bis zum Nerv, spontane und nächtliche Schmerzen, abgebrochener Milchzahn mit freiliegender Pulpa, Bläschen oder Schwellung am Zahnfleisch neben einem Milchzahn",
+        "prep": "Keine Vorbereitung; das Kind vorher essen lassen und dem Zahnarzt schildern, wann und wie der Zahn geschmerzt hat und wie das Kind frühere Behandlungen vertragen hat",
+        "abnormal": "Der Zahn kann einige Tage beim Zubeißen empfindlich sein. Wiederkehrende Schmerzen, Schwellung des Zahnfleisches, Dunkelfärbung oder Lockerung bedeuten einen neuen Termin: Manchmal lässt sich der Zahn nicht halten und die Entfernung mit Platzhalter wird besprochen"
+      },
+      "tr": {
+        "what": "Süt dişinin doğal düşme zamanına kadar ağızda kalabilmesi için iltihaplanmış pulpasının tedavisi",
+        "how": "Anestezi altında diş izole edilir, çürük temizlenip oda açılır, iltihaplı pulpa kuron kısmından ve gerekirse kanallardan alınır, boşluk kökle birlikte eriyen bir patla doldurulur, diş dolgu veya çocuk kuronuyla kapatılır; bir ya da iki seans",
+        "when": "Sinire ulaşmış derin çürük, kendiliğinden ve gece gelen ağrı, pulpası açığa çıkmış kırık süt dişi, süt dişinin yanında diş etinde kabarcık veya şişlik",
+        "prep": "Hazırlık gerekmez; çocuğu önceden doyurun ve dişin ne zaman, nasıl ağrıdığını, önceki tedavileri nasıl karşıladığını hekime anlatın",
+        "abnormal": "Diş birkaç gün ısırırken hassas olabilir. Ağrının geri dönmesi, diş etinde şişlik, dişin kararması veya sallanması yeni bir randevu gerektirir: bazen diş korunamaz ve yer tutucuyla birlikte çekim konuşulur"
+      },
+      "sr_cyrl": {
+        "what": "Лијечење упаљене пулпе млијечног зуба како би зуб остао до природне смјене",
+        "how": "У анестезији се зуб изолује, уклони се каријес и отвори коморица, упаљена пулпа се извади из крунице и по потреби из канала, простор се испуни пастом која се ресорбује заједно са коријеном, а зуб се затвори испуном или дјечјом круницом; једна до двије посјете",
+        "when": "Дубоки каријес који је стигао до живца, спонтани и ноћни бол, одломљен млијечни зуб са отвореном пулпом, фистула или отеклина десни уз млијечни зуб",
+        "prep": "Припрема није потребна; нахранити дијете прије доласка и рећи стоматологу када је и како зуб болио и како је дијете подносило раније лијечење",
+        "abnormal": "Зуб може неколико дана бити осјетљив на загриз. Повратак бола, отеклина десни, тамњење или климање зуба значе нови преглед: понекад се зуб не може сачувати и разговара се о вађењу уз држач простора"
+      }
+    }
+  },
+  {
+    "slug": "professional-dental-cleaning-deciduous-teeth",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Гигиеническая чистка зубов у ребёнка, у которого все зубы ещё молочные",
+        "how": "Мягкой щёточкой с низкоабразивной пастой налёт снимают со всех поверхностей, промежутки проходят нитью; ультразвук обычно не нужен — отложения в этом возрасте мягкие; короткий визит 15-25 минут, часто вместе с осмотром",
+        "when": "Первый профилактический визит после прорезывания зубов, белый налёт у края десны, кровоточивость десны, ночные кормления и сладкие напитки, этап перед покрытием эмали фторсодержащим лаком",
+        "prep": "Подготовки нет; привести ребёнка выспавшимся и взять его щётку, чтобы врач показал родителю технику чистки именно на ней",
+        "abnormal": "В этом возрасте зубы ребёнку дочищает взрослый, поэтому главный итог визита — показанная родителю техника. Если белый налёт у десны возвращается через несколько дней или на эмали появляются меловидные пятна, ребёнка надо показать врачу: так начинается кариес молочных зубов"
+      },
+      "en": {
+        "what": "Hygiene cleaning for a child whose teeth are all still baby teeth",
+        "how": "Plaque is removed from all surfaces with a soft brush and a low-abrasive paste and the gaps are cleaned with floss; ultrasound is usually unnecessary because deposits at this age are soft; a short visit of 15-25 minutes, often combined with the check-up",
+        "when": "First preventive visit after the teeth have come through, white plaque along the gum line, bleeding gums, night feeding and sweet drinks, the step before a fluoride varnish is applied",
+        "prep": "No preparation; bring the child rested and bring their own brush so that the dentist can show the parent the technique on it",
+        "abnormal": "At this age an adult finishes the brushing for the child, so the main outcome of the visit is the technique shown to the parent. If white plaque returns at the gum line within days or chalky spots appear on the enamel, the child needs to be seen: this is how decay in baby teeth begins"
+      },
+      "sr": {
+        "what": "Higijensko čišćenje zuba kod djeteta kojem su svi zubi još mliječni",
+        "how": "Naslage se mekom četkicom i pastom slabe abrazivnosti skinu sa svih površina, a međuzubni prostori očiste koncem; ultrazvuk obično nije potreban jer su naslage u ovom uzrastu meke; kratka posjeta od 15-25 minuta, često uz redovni pregled",
+        "when": "Prva preventivna posjeta poslije nicanja zuba, bijele naslage uz rub desni, krvarenje desni, noćno hranjenje i slatki napici, korak prije premazivanja gleđi fluoridnim lakom",
+        "prep": "Priprema nije potrebna; dovesti odmorno dijete i ponijeti njegovu četkicu da stomatolog baš na njoj pokaže roditelju tehniku pranja",
+        "abnormal": "U ovom uzrastu zube djetetu dočišćava odrasla osoba, pa je glavni ishod posjete pokazana tehnika. Ako se bijele naslage uz desni vrate za nekoliko dana ili se na gleđi pojave kredaste mrlje, dijete treba pregledati: tako počinje karijes mliječnih zuba"
+      },
+      "de": {
+        "what": "Hygienische Zahnreinigung bei einem Kind, dessen Zähne noch alle Milchzähne sind",
+        "how": "Beläge werden mit weichem Bürstchen und wenig abrasiver Paste von allen Flächen entfernt, die Zwischenräume mit Zahnseide gereinigt; Ultraschall ist meist nicht nötig, da die Ablagerungen in diesem Alter weich sind; kurzer Termin von 15-25 Minuten, oft zusammen mit der Kontrolle",
+        "when": "Erster Prophylaxetermin nach dem Durchbruch der Zähne, weiße Beläge am Zahnfleischrand, Zahnfleischbluten, nächtliches Füttern und süße Getränke, Schritt vor dem Auftragen von Fluoridlack",
+        "prep": "Keine Vorbereitung; das Kind ausgeruht bringen und seine eigene Bürste mitnehmen, damit die Technik den Eltern genau daran gezeigt werden kann",
+        "abnormal": "In diesem Alter putzt ein Erwachsener für das Kind nach, deshalb ist das Wichtigste des Termins die gezeigte Technik. Kehren die weißen Beläge am Zahnfleischrand nach wenigen Tagen zurück oder zeigen sich kreidige Flecken am Schmelz, sollte das Kind untersucht werden: so beginnt Karies an Milchzähnen"
+      },
+      "tr": {
+        "what": "Tüm dişleri hâlâ süt dişi olan çocukta hijyen amaçlı diş temizliği",
+        "how": "Plak yumuşak fırça ve az aşındırıcı patla bütün yüzeylerden alınır, aralar diş ipiyle temizlenir; bu yaşta birikintiler yumuşak olduğu için ultrasona genellikle gerek kalmaz; 15-25 dakikalık kısa seans, çoğu zaman kontrolle birlikte",
+        "when": "Dişler çıktıktan sonraki ilk koruyucu ziyaret, diş eti kenarında beyaz plak, diş eti kanaması, gece beslenmesi ve şekerli içecekler, florür verniği uygulamasından önceki aşama",
+        "prep": "Hazırlık gerekmez; çocuğu dinlenmiş getirin ve hekimin fırçalama tekniğini aileye tam onun üzerinde gösterebilmesi için kendi fırçasını yanınızda bulundurun",
+        "abnormal": "Bu yaşta dişleri çocuk adına bir yetişkin tamamlar, bu yüzden ziyaretin asıl kazanımı aileye gösterilen tekniktir. Diş eti kenarındaki beyaz plak birkaç gün içinde geri geliyorsa ya da minede tebeşirimsi lekeler belirdiyse çocuk muayene edilmelidir: süt dişi çürüğü böyle başlar"
+      },
+      "sr_cyrl": {
+        "what": "Хигијенско чишћење зуба код дјетета којем су сви зуби још млијечни",
+        "how": "Наслаге се меком четкицом и пастом слабе абразивности скину са свих површина, а међузубни простори очисте концем; ултразвук обично није потребан јер су наслаге у овом узрасту меке; кратка посјета од 15-25 минута, често уз редовни преглед",
+        "when": "Прва превентивна посјета послије ницања зуба, бијеле наслаге уз руб десни, крварење десни, ноћно храњење и слатки напици, корак прије премазивања глеђи флуоридним лаком",
+        "prep": "Припрема није потребна; довести одморно дијете и понијети његову четкицу да стоматолог баш на њој покаже родитељу технику прања",
+        "abnormal": "У овом узрасту зубе дјетету дочишћава одрасла особа, па је главни исход посјете показана техника. Ако се бијеле наслаге уз десни врате за неколико дана или се на глеђи појаве кредасте мрље, дијете треба прегледати: тако почиње каријес млијечних зуба"
+      }
+    }
+  },
+  {
+    "slug": "professional-dental-cleaning-mixed-dentition",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Чистка зубов у ребёнка, у которого в одном ряду стоят молочные и постоянные зубы",
+        "how": "Налёт снимают щёточкой с пастой, плотные отложения на постоянных зубах — ультразвуковой насадкой, особое внимание уделяют только что прорезавшимся молярам и десне вокруг шатающихся зубов, в конце зубы полируют; 25-40 минут",
+        "when": "Годы смены зубов, налёт на прорезывающейся шестёрке, воспаление десны вокруг шатающегося зуба, ношение пластинки или брекетов, подготовка к герметизации фиссур",
+        "prep": "Подготовки нет; почистить зубы перед визитом и сказать о шатающихся зубах и чувствительности",
+        "abnormal": "Только что прорезавшаяся эмаль ещё дозревает и уязвимее к налёту, поэтому интервал между чистками врач назначает индивидуально. Если десна вокруг прорезывающегося зуба болит и краснеет или на жевательной поверхности появилось тёмное пятно, ребёнка надо показать стоматологу"
+      },
+      "en": {
+        "what": "Cleaning for a child who has baby teeth and permanent teeth standing side by side",
+        "how": "Plaque is taken off with a brush and paste, firm deposits on the permanent teeth with an ultrasonic tip, with particular attention to the newly erupted molars and to the gum around loose teeth, then the teeth are polished; 25-40 minutes",
+        "when": "The years of the tooth change, plaque on an erupting six-year molar, inflamed gum around a wobbly tooth, wearing a plate or braces, preparation for fissure sealing",
+        "prep": "No preparation; brush before the visit and mention loose teeth and any sensitivity",
+        "abnormal": "Freshly erupted enamel is still maturing and is more vulnerable to plaque, so the dentist sets the interval between cleanings individually. If the gum around an erupting tooth is sore and red or a dark spot appears on a chewing surface, the child should be examined"
+      },
+      "sr": {
+        "what": "Čišćenje zuba kod djeteta kojem u istom nizu stoje mliječni i stalni zubi",
+        "how": "Naslage se skidaju četkicom i pastom, čvrste naslage sa stalnih zuba ultrazvučnim nastavkom, uz posebnu pažnju na tek iznikle kutnjake i na desni oko klimavih zuba, a zatim se zubi ispoliraju; 25-40 minuta",
+        "when": "Godine smjene zuba, naslage na šestici koja niče, upala desni oko klimavog zuba, nošenje pločice ili fiksnog aparata, priprema za zalivanje fisura",
+        "prep": "Priprema nije potrebna; oprati zube prije dolaska i reći za klimave zube i osjetljivost",
+        "abnormal": "Tek iznikla gleđ još sazrijeva i osjetljivija je na naslage, pa razmak između čišćenja stomatolog određuje pojedinačno. Ako desni oko zuba koji niče bole i crvene se ili se na griznoj površini pojavi tamna mrlja, dijete treba pregledati"
+      },
+      "de": {
+        "what": "Zahnreinigung bei einem Kind, bei dem Milchzähne und bleibende Zähne nebeneinander stehen",
+        "how": "Beläge werden mit Bürstchen und Paste entfernt, feste Ablagerungen an den bleibenden Zähnen mit Ultraschall, besonderes Augenmerk gilt den frisch durchgebrochenen Molaren und dem Zahnfleisch um wackelnde Zähne, danach wird poliert; 25-40 Minuten",
+        "when": "Zeit des Zahnwechsels, Beläge am durchbrechenden Sechsjahrmolaren, entzündetes Zahnfleisch um einen Wackelzahn, Platte oder feste Spange, Vorbereitung auf eine Fissurenversiegelung",
+        "prep": "Keine Vorbereitung; vorher Zähne putzen und Wackelzähne sowie Empfindlichkeiten ansprechen",
+        "abnormal": "Frisch durchgebrochener Schmelz reift noch nach und ist anfälliger für Beläge, deshalb legt der Zahnarzt den Abstand zwischen den Reinigungen individuell fest. Schmerzt und rötet sich das Zahnfleisch um einen durchbrechenden Zahn oder zeigt sich ein dunkler Fleck auf einer Kaufläche, gehört das Kind untersucht"
+      },
+      "tr": {
+        "what": "Süt dişleriyle kalıcı dişlerin aynı sırada bulunduğu çocukta diş temizliği",
+        "how": "Plak fırça ve patla alınır, kalıcı dişlerdeki sert birikintiler ultrasonik uçla kaldırılır, yeni süren azı dişlerine ve sallanan dişlerin çevresindeki diş etine ayrı özen gösterilir, ardından dişler cilalanır; 25-40 dakika",
+        "when": "Diş değişimi yılları, süren altı yaş dişinde plak, sallanan diş çevresinde diş eti iltihabı, hareketli aparey veya tel takılı olması, fissür örtücü öncesi hazırlık",
+        "prep": "Hazırlık gerekmez; gelmeden önce dişleri fırçalayın, sallanan dişleri ve hassasiyeti belirtin",
+        "abnormal": "Yeni süren mine henüz olgunlaşmaktadır ve plağa karşı daha savunmasızdır, bu yüzden temizlikler arasındaki aralığı hekim kişiye göre belirler. Süren dişin çevresindeki diş eti ağrıyıp kızarıyorsa ya da çiğneme yüzeyinde koyu bir leke belirdiyse çocuk muayene edilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Чишћење зуба код дјетета којем у истом низу стоје млијечни и стални зуби",
+        "how": "Наслаге се скидају четкицом и пастом, чврсте наслаге са сталних зуба ултразвучним наставком, уз посебну пажњу на тек изникле кутњаке и на десни око климавих зуба, а затим се зуби исполирају; 25-40 минута",
+        "when": "Године смјене зуба, наслаге на шестици која ниче, упала десни око климавог зуба, ношење плочице или фиксног апарата, припрема за заливање фисура",
+        "prep": "Припрема није потребна; опрати зубе прије доласка и рећи за климаве зубе и осјетљивост",
+        "abnormal": "Тек изникла глеђ још сазријева и осјетљивија је на наслаге, па размак између чишћења стоматолог одређује појединачно. Ако десни око зуба који ниче боле и црвене се или се на гризној површини појави тамна мрља, дијете треба прегледати"
+      }
+    }
+  },
+  {
+    "slug": "silver-diamine-fluoride-application",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обработка кариозного участка молочного зуба раствором с серебром и фтором, который останавливает кариес без сверления",
+        "how": "Зуб очищают и подсушивают, изолируют валиками, раствор кисточкой наносят на поражённый участок и дают подействовать, излишки убирают; 5-10 минут на зуб, без бормашины и укола, обычно курсом с повторами",
+        "when": "Начальный и поверхностный кариес молочных зубов у маленьких детей, невозможность полноценного лечения из-за возраста или поведения, зуб, который скоро меняется, временное решение до планового лечения",
+        "prep": "Подготовки нет; родителю важно заранее обсудить с врачом, что обработанный участок темнеет и остаётся тёмным",
+        "abnormal": "Обработанная ткань чернеет — это ожидаемый след метода, а не ухудшение. Если участок увеличивается, зуб начинает болеть или десна отекает, кариес продолжается и нужно вернуться к стоматологу"
+      },
+      "en": {
+        "what": "Painting a decayed area of a baby tooth with a silver and fluoride solution that arrests the decay without drilling",
+        "how": "The tooth is cleaned and dried, isolated with cotton rolls, the solution is applied to the affected area with a small brush and left to act, then the excess is wiped off; 5-10 minutes per tooth, no drill and no injection, usually repeated as a course",
+        "when": "Early and surface decay on baby teeth in small children, treatment that cannot be completed because of age or behaviour, a tooth that is about to be shed, a holding measure until planned treatment",
+        "prep": "No preparation; the parent should agree with the dentist beforehand that the treated spot turns dark and stays dark",
+        "abnormal": "The treated tissue goes black, which is the expected mark of the method and not a worsening. If the area grows, the tooth starts to hurt or the gum swells, the decay is progressing and the child has to come back"
+      },
+      "sr": {
+        "what": "Premazivanje karijesnog mjesta na mliječnom zubu rastvorom srebra i fluora koji zaustavlja karijes bez bušenja",
+        "how": "Zub se očisti i osuši, izoluje vaticama, rastvor se kistom nanese na zahvaćeno mjesto i ostavi da djeluje, a višak se obriše; 5-10 minuta po zubu, bez svrdla i bez injekcije, obično u više navrata",
+        "when": "Početni i površinski karijes mliječnih zuba kod male djece, nemogućnost potpunog liječenja zbog uzrasta ili ponašanja, zub koji se uskoro smjenjuje, privremeno rješenje do planiranog liječenja",
+        "prep": "Priprema nije potrebna; roditelj unaprijed sa stomatologom treba da dogovori da obrađeno mjesto potamni i ostaje tamno",
+        "abnormal": "Obrađeno tkivo pocrni, to je očekivan trag metode, a ne pogoršanje. Ako se mjesto širi, zub počne da boli ili desni oteknu, karijes napreduje i treba se vratiti stomatologu"
+      },
+      "de": {
+        "what": "Auftragen einer Silber-Fluorid-Lösung auf eine kariöse Stelle am Milchzahn, die die Karies ohne Bohren zum Stillstand bringt",
+        "how": "Der Zahn wird gereinigt und getrocknet, mit Watterollen isoliert, die Lösung mit einem Pinsel auf die betroffene Stelle aufgetragen und einwirken gelassen, der Überschuss wird abgewischt; 5-10 Minuten pro Zahn, ohne Bohrer und ohne Spritze, meist als Serie wiederholt",
+        "when": "Beginnende und oberflächliche Karies an Milchzähnen bei kleinen Kindern, Behandlung, die wegen Alter oder Verhalten nicht vollständig möglich ist, ein Zahn kurz vor dem Wechsel, Überbrückung bis zur geplanten Behandlung",
+        "prep": "Keine Vorbereitung; die Eltern sollten vorher mit dem Zahnarzt besprechen, dass die behandelte Stelle dunkel wird und dunkel bleibt",
+        "abnormal": "Das behandelte Gewebe färbt sich schwarz, das ist die erwartete Spur des Verfahrens und keine Verschlechterung. Wächst die Stelle, beginnt der Zahn zu schmerzen oder schwillt das Zahnfleisch, schreitet die Karies fort und das Kind muss erneut vorgestellt werden"
+      },
+      "tr": {
+        "what": "Süt dişindeki çürük bölgenin, çürüğü frez kullanmadan durduran gümüş ve florür içeren solüsyonla kapatılması",
+        "how": "Diş temizlenip kurutulur, pamuk rulolarla izole edilir, solüsyon küçük bir fırçayla çürük bölgeye sürülüp etki etmesi beklenir, fazlası silinir; diş başına 5-10 dakika, frez ve iğne olmadan, genellikle seanslar hâlinde tekrarlanır",
+        "when": "Küçük çocuklarda süt dişlerinin başlangıç ve yüzeysel çürükleri, yaş ya da davranış nedeniyle tam tedavinin yapılamaması, yakında düşecek diş, planlanan tedaviye kadar geçici çözüm",
+        "prep": "Hazırlık gerekmez; uygulanan bölgenin kararacağını ve koyu kalacağını ailenin hekimle önceden konuşması önemlidir",
+        "abnormal": "İşlem gören doku siyahlaşır; bu yöntemin beklenen izidir, kötüleşme değildir. Bölge büyürse, diş ağrımaya başlarsa ya da diş eti şişerse çürük ilerliyor demektir ve hekime dönmek gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Премазивање каријесног мјеста на млијечном зубу раствором сребра и флуора који зауставља каријес без бушења",
+        "how": "Зуб се очисти и осуши, изолује ватицама, раствор се кистом нанесе на захваћено мјесто и остави да дјелује, а вишак се обрише; 5-10 минута по зубу, без сврдла и без ињекције, обично у више наврата",
+        "when": "Почетни и површински каријес млијечних зуба код мале дјеце, немогућност потпуног лијечења због узраста или понашања, зуб који се ускоро смјењује, привремено рјешење до планираног лијечења",
+        "prep": "Припрема није потребна; родитељ унапријед са стоматологом треба да договори да обрађено мјесто потамни и остаје тамно",
+        "abnormal": "Обрађено ткиво поцрни, то је очекиван траг методе, а не погоршање. Ако се мјесто шири, зуб почне да боли или десни отекну, каријес напредује и треба се вратити стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "treatment-of-tooth-with-incomplete-root-growth",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лечение постоянного зуба у ребёнка или подростка, у которого корень ещё не дорос и верхушка остаётся открытой",
+        "how": "Под анестезией зуб изолируют, полость очищают бережно, чтобы сохранить живую ткань у корня, на неё кладут биокерамический материал или формируют им барьер на открытой верхушке, зуб закрывают пломбой; лечение растянуто на несколько визитов и контрольных снимков",
+        "when": "Травма переднего зуба со сколом и обнажённой пульпой, глубокий кариес незрелого моляра, воспаление пульпы или тканей у верхушки корня до окончания его роста",
+        "prep": "Подготовки нет; после травмы прийти как можно скорее, принести отломок зуба, если он сохранился, и прежние снимки",
+        "abnormal": "Зуб наблюдают месяцами: по снимкам врач видит, растёт ли корень и закрывается ли верхушка. Потемнение коронки, боль при накусывании, припухлость или свищ на десне требуют внепланового осмотра"
+      },
+      "en": {
+        "what": "Treatment of a permanent tooth in a child or teenager whose root has not finished growing and whose apex is still open",
+        "how": "Under anaesthesia the tooth is isolated and the cavity cleaned gently so that the living tissue near the root is preserved, a bioceramic material is placed on it or used to form a barrier at the open apex, and the tooth is sealed with a filling; the treatment is spread over several visits and follow-up X-rays",
+        "when": "Injury to a front tooth with a chip and exposed pulp, deep decay in an immature molar, inflammation of the pulp or of the tissues at the root tip before root growth is complete",
+        "prep": "No preparation; after an injury come as soon as possible and bring the broken fragment if it has been kept, together with previous X-rays",
+        "abnormal": "The tooth is followed for months: the X-rays show the dentist whether the root is growing and the apex closing. Darkening of the crown, pain on biting, swelling or a bump on the gum call for an unscheduled appointment"
+      },
+      "sr": {
+        "what": "Liječenje stalnog zuba kod djeteta ili tinejdžera kojem korijen još nije dorastao, pa je vrh korijena otvoren",
+        "how": "U anesteziji se zub izoluje, šupljina se pažljivo očisti da se sačuva živo tkivo uz korijen, na njega se postavi biokeramički materijal ili se njime napravi barijera na otvorenom vrhu, a zub se zatvori ispunom; liječenje je raspoređeno na nekoliko posjeta i kontrolnih snimaka",
+        "when": "Povreda prednjeg zuba sa odlomljenim dijelom i otvorenom pulpom, duboki karijes nezrelog kutnjaka, upala pulpe ili tkiva uz vrh korijena prije završetka rasta korijena",
+        "prep": "Priprema nije potrebna; poslije povrede doći što prije i ponijeti odlomljeni dio zuba ako je sačuvan, zajedno sa ranijim snimcima",
+        "abnormal": "Zub se prati mjesecima: na snimcima stomatolog vidi da li korijen raste i da li se vrh zatvara. Tamnjenje krunice, bol pri zagrizu, oteklina ili fistula na desni traže vanredni pregled"
+      },
+      "de": {
+        "what": "Behandlung eines bleibenden Zahns bei Kind oder Jugendlichem, dessen Wurzel noch nicht fertig gewachsen und dessen Wurzelspitze noch offen ist",
+        "how": "Unter Betäubung wird der Zahn isoliert, die Kavität schonend gereinigt, damit das lebende Gewebe nahe der Wurzel erhalten bleibt, darauf wird ein biokeramisches Material gelegt oder damit eine Barriere an der offenen Wurzelspitze geformt, danach wird der Zahn mit einer Füllung verschlossen; die Behandlung verteilt sich auf mehrere Termine und Kontrollaufnahmen",
+        "when": "Unfall an einem Frontzahn mit Absplitterung und freiliegender Pulpa, tiefe Karies an einem unreifen Molaren, Entzündung der Pulpa oder des Gewebes an der Wurzelspitze vor Abschluss des Wurzelwachstums",
+        "prep": "Keine Vorbereitung; nach einem Unfall möglichst rasch kommen und das abgebrochene Fragment mitbringen, falls es aufbewahrt wurde, ebenso frühere Aufnahmen",
+        "abnormal": "Der Zahn wird über Monate beobachtet: Auf den Aufnahmen sieht der Zahnarzt, ob die Wurzel wächst und sich die Spitze schließt. Dunkelfärbung der Krone, Schmerzen beim Zubeißen, Schwellung oder ein Bläschen am Zahnfleisch erfordern einen zusätzlichen Termin"
+      },
+      "tr": {
+        "what": "Kök gelişimi tamamlanmamış, kök ucu hâlâ açık olan kalıcı dişin çocuk ya da ergende tedavisi",
+        "how": "Anestezi altında diş izole edilir, kök yakınındaki canlı doku korunacak şekilde boşluk dikkatle temizlenir, üzerine biyoseramik malzeme konur ya da bu malzemeyle açık kök ucunda bir bariyer oluşturulur ve diş dolguyla kapatılır; tedavi birkaç seansa ve kontrol röntgenlerine yayılır",
+        "when": "Ön dişte kırık ve pulpanın açığa çıktığı travma, olgunlaşmamış azı dişinde derin çürük, kök gelişimi bitmeden pulpanın veya kök ucu çevresindeki dokuların iltihabı",
+        "prep": "Hazırlık gerekmez; travmadan sonra mümkün olan en kısa sürede gelin, saklandıysa kırılan parçayı ve önceki röntgenleri getirin",
+        "abnormal": "Diş aylarca izlenir: hekim röntgenlerde kökün büyüyüp büyümediğini ve ucun kapanıp kapanmadığını görür. Kuronun kararması, ısırırken ağrı, şişlik ya da diş etinde kabarcık plan dışı muayene gerektirir"
+      },
+      "sr_cyrl": {
+        "what": "Лијечење сталног зуба код дјетета или тинејџера којем коријен још није дорастао, па је врх коријена отворен",
+        "how": "У анестезији се зуб изолује, шупљина се пажљиво очисти да се сачува живо ткиво уз коријен, на њега се постави биокерамички материјал или се њиме направи баријера на отвореном врху, а зуб се затвори испуном; лијечење је распоређено на неколико посјета и контролних снимака",
+        "when": "Повреда предњег зуба са одломљеним дијелом и отвореном пулпом, дубоки каријес незрелог кутњака, упала пулпе или ткива уз врх коријена прије завршетка раста коријена",
+        "prep": "Припрема није потребна; послије повреде доћи што прије и понијети одломљени дио зуба ако је сачуван, заједно са ранијим снимцима",
+        "abnormal": "Зуб се прати мјесецима: на снимцима стоматолог види да ли коријен расте и да ли се врх затвара. Тамњење крунице, бол при загризу, отеклина или фистула на десни траже ванредни преглед"
+      }
+    }
+  }
 ]

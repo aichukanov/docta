@@ -1,617 +1,722 @@
 [
-	{
-		"slug": "bracket-replacement",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Повторная фиксация отклеившегося брекета или установка нового вместо сломанного на одном зубе",
-				"how": "Остатки клея снимают с эмали, поверхность подготавливают, брекет приклеивают в прежнюю позицию и возвращают дугу в паз; 10-20 минут в рамках обычного приёма",
-				"when": "Брекет отклеился при еде или чистке, замочек сломан или потерян, зуб переместился настолько, что брекет нужно переставить",
-				"prep": "Подготовки нет; почистить зубы перед визитом и принести отклеившийся брекет, если он сохранился",
-				"abnormal": "День-два после переклейки зуб может реагировать на давление — это ожидаемо. Если брекет отклеивается на одном и том же зубе повторно или дуга травмирует щёку, ортодонт пересматривает конструкцию; долго не приклеенный брекет удлиняет лечение"
-			},
-			"en": {
-				"what": "Re-bonding a loose bracket or fitting a new one in place of a broken bracket on a single tooth",
-				"how": "Old adhesive is cleaned off the enamel, the surface is prepared, the bracket is bonded back in its planned position and the archwire is re-engaged; 10-20 minutes within a routine visit",
-				"when": "A bracket came off while eating or brushing, the bracket is broken or lost, the tooth has moved enough that the bracket needs repositioning",
-				"prep": "No preparation; brush your teeth before the visit and bring the detached bracket if you kept it",
-				"abnormal": "The tooth may feel sensitive to pressure for a day or two after re-bonding, which is expected. Repeated debonding on the same tooth, or a wire rubbing the cheek, is reviewed by the orthodontist; a bracket left off for long makes treatment take more time"
-			},
-			"sr": {
-				"what": "Ponovno lijepljenje otpale bravice ili postavljanje nove umjesto slomljene na jednom zubu",
-				"how": "Ostaci ljepila skinu se sa gleđi, površina se pripremi, bravica se vrati u predviđeni položaj i žica se ponovo uvede u njen kanal; 10-20 minuta u okviru redovne posjete",
-				"when": "Bravica je otpala pri jelu ili pranju zuba, slomljena je ili izgubljena, zub se pomjerio toliko da bravicu treba premjestiti",
-				"prep": "Priprema nije potrebna; oprati zube prije dolaska i ponijeti otpalu bravicu ako je sačuvana",
-				"abnormal": "Dan-dva nakon lijepljenja zub može biti osjetljiv na pritisak, što se očekuje. Ako bravica otpada više puta na istom zubu ili žica grebe obraz, ortodont provjerava konstrukciju; dugo nezalijepljena bravica produžava liječenje"
-			},
-			"de": {
-				"what": "Erneutes Befestigen eines gelösten Brackets oder Ersatz eines gebrochenen Brackets an einem Zahn",
-				"how": "Alter Kleber wird vom Schmelz entfernt, die Oberfläche vorbereitet, das Bracket in der geplanten Position neu geklebt und der Bogen wieder eingesetzt; 10-20 Minuten im Rahmen eines normalen Termins",
-				"when": "Bracket hat sich beim Essen oder Zähneputzen gelöst, ist gebrochen oder verloren, der Zahn hat sich so weit bewegt, dass das Bracket umgesetzt werden muss",
-				"prep": "Keine Vorbereitung; vor dem Termin Zähne putzen und das gelöste Bracket mitbringen, falls vorhanden",
-				"abnormal": "Ein bis zwei Tage Druckempfindlichkeit des Zahns sind zu erwarten. Löst sich dasselbe Bracket wiederholt oder scheuert der Bogen an der Wange, prüft die Kieferorthopädie die Konstruktion; ein lange nicht geklebtes Bracket verlängert die Behandlung"
-			},
-			"tr": {
-				"what": "Düşen braketin yeniden yapıştırılması veya kırılan braketin yerine tek dişe yenisinin takılması",
-				"how": "Mineden eski yapıştırıcı temizlenir, yüzey hazırlanır, braket planlanan konumuna yeniden yapıştırılır ve tel yuvasına geri yerleştirilir; rutin seans içinde 10-20 dakika",
-				"when": "Braketin yemek yerken veya fırçalarken düşmesi, kırılması ya da kaybolması, dişin braketin yerini değiştirecek kadar hareket etmesi",
-				"prep": "Hazırlık gerekmez; gelmeden önce dişleri fırçalamak ve düşen braket saklandıysa getirmek yeterlidir",
-				"abnormal": "Yapıştırmadan sonra dişte bir iki gün basınç hassasiyeti beklenir. Aynı dişte braket tekrar tekrar düşüyorsa veya tel yanağı tahriş ediyorsa ortodontist düzeneği gözden geçirir; uzun süre takılmayan braket tedaviyi uzatır"
-			}
-		}
-	},
-	{
-		"slug": "chin-cap",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Внеротовой ортодонтический аппарат из чашки на подбородок, опоры на голове и эластичных тяг, сдерживающий рост нижней челюсти вперёд у растущего ребёнка",
-				"how": "Чашку подбирают или делают по форме подбородка и соединяют с головной опорой резиновыми тягами; ребёнок носит аппарат дома и во сне по графику ортодонта, силу тяг и посадку проверяют на контрольных визитах",
-				"when": "Выдвинутая вперёд нижняя челюсть и обратное перекрытие передних зубов в период роста, раннее лечение третьего класса, дополнение к внутриротовым аппаратам",
-				"prep": "Нужны ортодонтический осмотр и снимки с оценкой фазы роста; в день визита подготовки нет",
-				"abnormal": "Первые ночи ощущаются давление на подбородок и усталость мышц, обычно это проходит за несколько дней. Боль в височно-нижнечелюстном суставе, потёртости кожи или отказ ребёнка носить аппарат обсуждают с ортодонтом; результат зависит от фазы роста и регулярности ношения и оценивается на плановых контролях"
-			},
-			"en": {
-				"what": "An extraoral orthodontic appliance made of a chin cup, a head support and elastics that restrains forward growth of the lower jaw in a growing child",
-				"how": "The cup is selected or made to the shape of the chin and connected to the head support by elastics; the child wears it at home and during sleep on the schedule set by the orthodontist, with force and fit checked at follow-up visits",
-				"when": "A lower jaw positioned forward with reverse bite of the front teeth during growth, early class III treatment, as an addition to intraoral appliances",
-				"prep": "An orthodontic examination with radiographs and an assessment of the growth stage is needed; no preparation on the day of the visit",
-				"abnormal": "The first nights bring pressure on the chin and muscle fatigue, usually settling within a few days. Pain in the jaw joint, skin irritation or a child refusing to wear the appliance is discussed with the orthodontist; the outcome depends on growth stage and consistent wear and is assessed at scheduled check-ups"
-			},
-			"sr": {
-				"what": "Vanoralni ortodontski aparat od kapice za bradu, oslonca na glavi i elastičnih gumica, koji kod djeteta u rastu zadržava rast donje vilice prema naprijed",
-				"how": "Kapica se bira ili izrađuje prema obliku brade i gumicama spaja sa osloncem na glavi; dijete je nosi kod kuće i tokom spavanja po rasporedu ortodonta, a jačina gumica i naljeganje provjeravaju se na kontrolama",
-				"when": "Donja vilica isturena prema naprijed i obrnuti zagriz prednjih zuba u periodu rasta, rano liječenje treće klase, dopuna unutrašnjim aparatima",
-				"prep": "Potrebni su ortodontski pregled i snimci sa procjenom faze rasta; na dan posjete priprema nije potrebna",
-				"abnormal": "Prvih noći osjećaju se pritisak na bradu i zamor mišića, što obično prođe za nekoliko dana. Bol u viličnom zglobu, nadražaj kože ili odbijanje djeteta da nosi aparat treba reći ortodontu; rezultat zavisi od faze rasta i redovnog nošenja i prati se na planiranim kontrolama"
-			},
-			"de": {
-				"what": "Extraorales kieferorthopädisches Gerät aus Kinnkappe, Kopfabstützung und Gummizügen, das beim wachsenden Kind das Vorwachsen des Unterkiefers bremst",
-				"how": "Die Kappe wird passend zur Kinnform ausgewählt oder angefertigt und über Gummizüge mit der Kopfabstützung verbunden; das Kind trägt sie zu Hause und im Schlaf nach dem Plan der Praxis, Zugkraft und Sitz werden bei Kontrollen geprüft",
-				"when": "Nach vorn stehender Unterkiefer und umgekehrter Frontzahnbiss in der Wachstumsphase, frühe Behandlung einer Klasse III, Ergänzung zu intraoralen Geräten",
-				"prep": "Kieferorthopädische Untersuchung mit Röntgenbildern und Einschätzung der Wachstumsphase; am Tag des Termins keine Vorbereitung",
-				"abnormal": "In den ersten Nächten sind Druck am Kinn und Muskelmüdigkeit üblich und lassen meist nach wenigen Tagen nach. Schmerzen im Kiefergelenk, gereizte Haut oder ein Kind, das das Gerät ablehnt, gehören in die Sprechstunde; das Ergebnis hängt von Wachstumsphase und regelmäßigem Tragen ab und wird bei den Kontrollen beurteilt"
-			},
-			"tr": {
-				"what": "Çeneye oturan kapak, baş desteği ve lastiklerden oluşan, büyüme çağındaki çocukta alt çenenin öne doğru büyümesini sınırlayan ağız dışı ortodontik aygıt",
-				"how": "Kapak çene biçimine göre seçilir ya da hazırlanır ve lastiklerle baş desteğine bağlanır; çocuk aygıtı evde ve uykuda ortodontistin verdiği saat planına göre kullanır, lastik kuvveti ve oturma kontrollerde gözden geçirilir",
-				"when": "Büyüme döneminde öne konumlanmış alt çene ve ön dişlerde ters kapanış, erken sınıf III tedavisi, ağız içi aygıtlara ek kullanım",
-				"prep": "Röntgenlerle ortodontik muayene ve büyüme evresinin değerlendirilmesi gerekir; seans günü hazırlık yoktur",
-				"abnormal": "İlk gecelerde çenede basınç ve kas yorgunluğu olur, genellikle birkaç günde geçer. Çene ekleminde ağrı, ciltte tahriş ya da çocuğun aygıtı kullanmak istememesi ortodontistle konuşulur; sonuç büyüme evresine ve düzenli kullanıma bağlıdır ve planlı kontrollerde değerlendirilir"
-			}
-		}
-	},
-	{
-		"slug": "conservative-treatment-of-periapical-process-and-dental-gangrene",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Лечение зуба с погибшей пульпой и очагом воспаления у верхушки корня через корневые каналы, без операции на кости",
-				"how": "Зуб вскрывают, из каналов удаляют распавшиеся ткани, каналы обрабатывают инструментами и антисептиками, оставляют лечебную пасту под временной пломбой и меняют её, пока очаг не успокоится, затем каналы пломбируют постоянно; обычно несколько посещений в течение нескольких недель",
-				"when": "Зуб без реакции на холод с болью при накусывании, свищ или припухлость десны, затемнение у верхушки корня на снимке, обострение в ранее леченном зубе",
-				"prep": "Специальной подготовки нет; принести прежние снимки и сказать, были ли отёк, температура и приём антибиотиков",
-				"abnormal": "Между визитами зуб обычно успокаивается, а кость у верхушки корня восстанавливается месяцами и проверяется контрольными снимками. Нарастающая боль, отёк лица или температура — повод прийти раньше срока; если очаг не уменьшается, стоматолог обсуждает хирургический этап или удаление"
-			},
-			"en": {
-				"what": "Treatment of a tooth with dead pulp and inflammation at the root tip, carried out through the root canals without bone surgery",
-				"how": "The tooth is opened, decomposed tissue is removed from the canals, the canals are shaped and rinsed with antiseptics, a medicated dressing is left under a temporary filling and renewed until the focus calms down, then the canals are filled permanently; usually several visits over several weeks",
-				"when": "A tooth that does not react to cold but hurts on biting, a gum fistula or swelling, a dark area at the root tip on a radiograph, a flare-up in a previously treated tooth",
-				"prep": "No special preparation; bring earlier radiographs and mention any swelling, fever or antibiotics taken",
-				"abnormal": "Between visits the tooth usually settles, while bone at the root tip heals over months and is checked on follow-up radiographs. Increasing pain, facial swelling or fever is a reason to come earlier; if the focus does not shrink, the dentist discusses a surgical step or extraction"
-			},
-			"sr": {
-				"what": "Liječenje zuba sa odumrlom pulpom i žarištem upale uz vrh korijena, kroz korijenske kanale i bez operacije na kosti",
-				"how": "Zub se otvori, iz kanala se ukloni raspadnuto tkivo, kanali se obrade instrumentima i antisepticima, pod privremenu plombu se stavi ljekoviti uložak koji se mijenja dok se žarište ne smiri, a potom se kanali trajno pune; obično nekoliko posjeta tokom nekoliko sedmica",
-				"when": "Zub koji ne reaguje na hladno a boli pri zagrizu, fistula ili oteklina desni, zasjenjenje uz vrh korijena na snimku, pogoršanje u ranije liječenom zubu",
-				"prep": "Posebna priprema nije potrebna; ponijeti ranije snimke i reći da li je bilo otoka, temperature i uzimanja antibiotika",
-				"abnormal": "Između posjeta zub se obično smiri, a kost uz vrh korijena zarasta mjesecima i prati se kontrolnim snimcima. Bol koja raste, oteklina lica ili temperatura razlog su za raniji dolazak; ako se žarište ne smanjuje, stomatolog razgovara o hirurškom zahvatu ili vađenju"
-			},
-			"de": {
-				"what": "Behandlung eines Zahns mit abgestorbener Pulpa und Entzündungsherd an der Wurzelspitze über die Wurzelkanäle, ohne Eingriff am Knochen",
-				"how": "Der Zahn wird eröffnet, zerfallenes Gewebe aus den Kanälen entfernt, die Kanäle werden aufbereitet und antiseptisch gespült, eine medikamentöse Einlage bleibt unter provisorischem Verschluss und wird gewechselt, bis der Herd ruhig ist, danach werden die Kanäle endgültig gefüllt; meist mehrere Termine über einige Wochen",
-				"when": "Zahn ohne Kältereaktion, der beim Zubeißen schmerzt, Fistel oder Schwellung am Zahnfleisch, Aufhellung an der Wurzelspitze im Röntgenbild, Beschwerden an einem früher behandelten Zahn",
-				"prep": "Keine besondere Vorbereitung; frühere Röntgenbilder mitbringen und Schwellung, Fieber oder eingenommene Antibiotika angeben",
-				"abnormal": "Zwischen den Terminen beruhigt sich der Zahn meist, der Knochen an der Wurzelspitze heilt über Monate und wird mit Kontrollaufnahmen überprüft. Zunehmende Schmerzen, Gesichtsschwellung oder Fieber sind ein Grund, früher zu kommen; verkleinert sich der Herd nicht, bespricht die Praxis einen chirurgischen Schritt oder die Entfernung"
-			},
-			"tr": {
-				"what": "Pulpası ölmüş ve kök ucunda iltihap odağı bulunan dişin, kemiğe cerrahi girişim yapılmadan kök kanalları üzerinden tedavisi",
-				"how": "Diş açılır, kanallardaki parçalanmış doku çıkarılır, kanallar eğelerle şekillendirilip antiseptiklerle yıkanır, geçici dolgu altına ilaçlı pansuman konur ve odak sakinleşene kadar yenilenir, sonra kanallar kalıcı doldurulur; genellikle birkaç hafta içinde birkaç seans",
-				"when": "Soğuğa yanıt vermeyen ama ısırınca ağrıyan diş, diş etinde fistül veya şişlik, filmde kök ucunda koyuluk, daha önce tedavi edilmiş dişte alevlenme",
-				"prep": "Özel hazırlık yoktur; eski filmleri getirmek ve şişlik, ateş ya da antibiyotik kullanımı olduysa bildirmek gerekir",
-				"abnormal": "Seanslar arasında diş genelde rahatlar, kök ucundaki kemik ise aylar içinde iyileşir ve kontrol filmleriyle izlenir. Artan ağrı, yüzde şişlik veya ateş erken gelmeyi gerektirir; odak küçülmezse hekim cerrahi aşamayı ya da çekimi değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "crown-or-bridge-recementation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Повторная фиксация на цемент коронки или мостовидного протеза, которые отклеились, но остались целыми",
-				"how": "С конструкции и опорного зуба убирают старый цемент, проверяют посадку и прилегание края, затем фиксируют свежим цементом и выверяют прикус; обычно один визит, 20-30 минут",
-				"when": "Коронка снялась при еде или чистке, мост стал подвижным, появился привкус или запах из-под конструкции, временную фиксацию меняют на постоянную",
-				"prep": "Принести снятую работу, сохранив её чистой, и не пытаться приклеить её дома бытовым клеем",
-				"abnormal": "Если под коронкой находят кариес, трещину или перелом корня, повторную фиксацию не делают — стоматолог предлагает другое решение. Повторяющееся расцементирование, боль или подвижность опорного зуба нужно показать врачу"
-			},
-			"en": {
-				"what": "Re-cementing a crown or bridge that has come loose but is otherwise intact",
-				"how": "Old cement is cleaned off the restoration and the abutment tooth, fit and margins are checked, then the work is set with fresh cement and the bite is adjusted; usually one visit of 20-30 minutes",
-				"when": "A crown came off while eating or brushing, a bridge feels loose, a taste or odour appears from under the restoration, temporary cementation is replaced by a permanent one",
-				"prep": "Bring the restoration with you, keep it clean and do not try to glue it back at home with household adhesives",
-				"abnormal": "If decay, a crack or a root fracture is found underneath, re-cementing is not done and the dentist offers another solution. Repeated loosening, pain or a mobile abutment tooth should be checked by the dentist"
-			},
-			"sr": {
-				"what": "Ponovno cementiranje krunice ili mosta koji su se odvojili, a ostali neoštećeni",
-				"how": "Sa nadoknade i nosećeg zuba ukloni se stari cement, provjere se naljeganje i rubovi, pa se rad učvrsti svježim cementom i provjeri zagriz; obično jedna posjeta, 20-30 minuta",
-				"when": "Krunica je spala pri jelu ili pranju zuba, most se klima, javio se ukus ili zadah ispod nadoknade, privremeno cementiranje zamjenjuje se trajnim",
-				"prep": "Donijeti skinuti rad, čuvati ga čistim i ne lijepiti ga kod kuće kućnim ljepilima",
-				"abnormal": "Ako se ispod nadoknade nađu karijes, pukotina ili prelom korijena, cementiranje se ne radi, nego stomatolog predlaže drugo rješenje. Ponovljeno odvajanje, bol ili klimanje nosećeg zuba treba pokazati stomatologu"
-			},
-			"de": {
-				"what": "Wiederbefestigung einer gelösten, aber unbeschädigten Krone oder Brücke mit Zement",
-				"how": "Alter Zement wird von Restauration und Pfeilerzahn entfernt, Passung und Ränder werden geprüft, dann wird mit frischem Zement eingesetzt und der Biss kontrolliert; meist ein Termin von 20-30 Minuten",
-				"when": "Krone beim Essen oder Putzen abgegangen, Brücke wackelt, Geschmack oder Geruch unter der Restauration, Wechsel von provisorischer zu definitiver Zementierung",
-				"prep": "Die abgegangene Arbeit sauber mitbringen und zu Hause nicht mit Haushaltsklebern befestigen",
-				"abnormal": "Finden sich darunter Karies, ein Riss oder eine Wurzelfraktur, wird nicht neu zementiert, sondern eine andere Lösung besprochen. Wiederholtes Lösen, Schmerzen oder ein lockerer Pfeilerzahn gehören in die Praxis"
-			},
-			"tr": {
-				"what": "Yerinden çıkmış ama sağlam kalmış kronun veya köprünün yeniden simante edilmesi",
-				"how": "Restorasyon ve dayanak dişteki eski siman temizlenir, oturma ve kenar uyumu kontrol edilir, ardından yeni simanla yerleştirilip kapanış ayarlanır; genelde 20-30 dakikalık tek seans",
-				"when": "Kronun yemek yerken veya fırçalarken çıkması, köprünün oynaması, restorasyonun altından tat ya da koku gelmesi, geçici simantasyonun kalıcıyla değiştirilmesi",
-				"prep": "Çıkan kron veya köprüyü temiz biçimde getirmek gerekir, evde yapıştırıcılarla takmaya çalışmayın",
-				"abnormal": "Altında çürük, çatlak veya kök kırığı bulunursa yeniden simantasyon yapılmaz, hekim başka bir çözüm önerir. Tekrarlayan gevşeme, ağrı veya dayanak dişte oynama hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "custom-dental-guard",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Капа из прочного пластика, изготовленная по слепку или скану конкретных челюстей для защиты зубов от ударов и от сжимания",
-				"how": "Снимают слепок или цифровой скан, в лаборатории по модели формуют капу, затем её припасовывают во рту и выверяют по прикусу; обычно два визита с перерывом на изготовление",
-				"when": "Контактные виды спорта, ночное сжимание и скрежетание зубами, сколы эмали и повышенная стираемость, защита виниров и коронок, напряжение жевательных мышц по утрам",
-				"prep": "До снятия слепка зубы должны быть пролечены, иначе капа перестанет подходить после лечения; в день визита подготовки нет",
-				"abnormal": "Первые ночи капа ощущается громоздкой и усиливает слюноотделение, обычно это проходит. Боль в суставе, подвижность зубов, трещины на капе или изменившийся прикус — повод показаться стоматологу; у ребёнка капу меняют по мере роста челюстей"
-			},
-			"en": {
-				"what": "A guard of durable plastic made from an impression or scan of the individual jaws to protect the teeth from impact and from clenching",
-				"how": "An impression or digital scan is taken, the guard is formed on a model in the laboratory, then fitted in the mouth and adjusted to the bite; usually two visits with the fabrication in between",
-				"when": "Contact sports, night-time clenching and grinding, chipped enamel and increased wear, protection of veneers and crowns, tight chewing muscles in the morning",
-				"prep": "Teeth should be treated before the impression, otherwise the guard will no longer fit after treatment; no preparation on the day of the visit",
-				"abnormal": "The first nights the guard feels bulky and increases salivation, which usually passes. Joint pain, loose teeth, cracks in the guard or a changed bite are reasons to see the dentist; in a child the guard is remade as the jaws grow"
-			},
-			"sr": {
-				"what": "Štitnik od čvrste plastike izrađen po otisku ili skenu konkretnih vilica, koji štiti zube od udaraca i od stiskanja",
-				"how": "Uzme se otisak ili digitalni sken, u laboratoriji se na modelu oblikuje štitnik, pa se proba u ustima i uskladi sa zagrizom; obično dvije posjete uz pauzu za izradu",
-				"when": "Kontaktni sportovi, noćno stiskanje i škrgutanje zubima, odlomi gleđi i pojačano trošenje, zaštita ljuspica i krunica, napetost žvačnih mišića ujutru",
-				"prep": "Zubi treba da budu sanirani prije uzimanja otiska, inače štitnik poslije liječenja više ne naljegne; na dan posjete priprema nije potrebna",
-				"abnormal": "Prvih noći štitnik djeluje glomazno i pojačava lučenje pljuvačke, što obično prođe. Bol u viličnom zglobu, klimanje zuba, pukotine na štitniku ili promijenjen zagriz razlog su za pregled; kod djeteta se štitnik mijenja kako vilice rastu"
-			},
-			"de": {
-				"what": "Schiene aus festem Kunststoff, nach Abformung oder Scan der eigenen Kiefer gefertigt, zum Schutz der Zähne vor Schlägen und vor Pressen",
-				"how": "Abformung oder digitaler Scan, Herstellung der Schiene im Labor über ein Modell, danach Einprobe im Mund und Anpassung an den Biss; meist zwei Termine mit der Fertigung dazwischen",
-				"when": "Kontaktsport, nächtliches Pressen und Knirschen, abgesplitterter Schmelz und erhöhter Abrieb, Schutz von Veneers und Kronen, verspannte Kaumuskeln am Morgen",
-				"prep": "Die Zähne sollten vor der Abformung behandelt sein, sonst passt die Schiene nach der Behandlung nicht mehr; am Tag des Termins keine Vorbereitung",
-				"abnormal": "In den ersten Nächten wirkt die Schiene sperrig und der Speichelfluss nimmt zu, das legt sich meist. Gelenkschmerzen, lockere Zähne, Risse in der Schiene oder ein veränderter Biss gehören in die Praxis; bei Kindern wird die Schiene mit dem Kieferwachstum erneuert"
-			},
-			"tr": {
-				"what": "Kişinin kendi çenelerinden alınan ölçü ya da tarama ile hazırlanan, dişleri darbeden ve sıkmadan koruyan sert plastik plak",
-				"how": "Ölçü veya dijital tarama alınır, laboratuvarda model üzerinde plak şekillendirilir, sonra ağızda prova edilip kapanışa göre ayarlanır; genelde yapım arası ile iki seans",
-				"when": "Temaslı sporlar, gece diş sıkma ve gıcırdatma, minede kırıklar ve artmış aşınma, kaplama ve kronların korunması, sabahları çiğneme kaslarında gerginlik",
-				"prep": "Ölçüden önce dişlerin tedavi edilmiş olması gerekir, aksi halde tedaviden sonra plak uymaz; seans günü hazırlık yoktur",
-				"abnormal": "İlk gecelerde plak hacimli hissedilir ve tükürük artar, bu genellikle geçer. Eklem ağrısı, dişlerde oynama, plakta çatlak ya da kapanışta değişiklik hekime gösterilir; çocuklarda çeneler büyüdükçe plak yenilenir"
-			}
-		}
-	},
-	{
-		"slug": "denture-clasp-addition",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ремонт съёмного протеза: в базис добавляют проволочный крючок, который удерживает протез на опорном зубе",
-				"how": "Снимают слепок с протезом во рту или передают протез в лабораторию, там кламмер выгибают и вваривают в пластмассу, затем протез примеряют и корректируют прилегание; обычно от нескольких часов до пары дней без протеза",
-				"when": "Протез стал хуже держаться, прежний крючок сломался или разогнулся, после удаления соседнего зуба опора изменилась",
-				"prep": "Прийти с протезом и принести отломившийся крючок, если он сохранился",
-				"abnormal": "Первые дни новый крючок ощущается и может слегка натирать, это снимают коррекцией. Если протез по-прежнему срывается при жевании или опорный зуб начинает болеть и шататься, нужен осмотр стоматолога: иногда требуется перебазировка или новый протез"
-			},
-			"en": {
-				"what": "Repair of a removable denture: a wire clasp is added to the base so that the denture holds on an abutment tooth",
-				"how": "An impression is taken with the denture in place or the denture goes to the laboratory, where the clasp is bent and welded into the acrylic, then the denture is tried in and the fit adjusted; usually a few hours to a couple of days without the denture",
-				"when": "The denture holds less well, the previous clasp broke or lost its shape, the support changed after a neighbouring tooth was removed",
-				"prep": "Come with the denture and bring the broken clasp if you kept it",
-				"abnormal": "For the first days the new clasp is noticeable and may rub slightly, which is solved by an adjustment. If the denture still slips while chewing, or the abutment tooth becomes painful or loose, see the dentist: a reline or a new denture may be needed"
-			},
-			"sr": {
-				"what": "Popravka pokretne proteze: u bazu se dodaje žičana kukica koja protezu drži za noseći zub",
-				"how": "Uzme se otisak sa protezom u ustima ili proteza ide u laboratoriju, gdje se kukica savije i uvari u akrilat, pa se proteza proba i naljeganje doradi; obično nekoliko sati do dva dana bez proteze",
-				"when": "Proteza slabije drži, ranija kukica se slomila ili razgnula, poslije vađenja susjednog zuba promijenio se oslonac",
-				"prep": "Doći sa protezom i ponijeti odlomljenu kukicu ako je sačuvana",
-				"abnormal": "Prvih dana nova kukica se osjeća i može blago žuljati, što se rješava doradom. Ako proteza i dalje spada pri žvakanju ili noseći zub zaboli i počne da se klima, potreban je pregled: ponekad treba podlaganje ili nova proteza"
-			},
-			"de": {
-				"what": "Reparatur einer herausnehmbaren Prothese: In die Basis wird eine Drahtklammer eingearbeitet, die die Prothese am Pfeilerzahn hält",
-				"how": "Abformung mit der Prothese im Mund oder Versand ins Labor, dort wird die Klammer gebogen und in den Kunststoff eingearbeitet, danach Einprobe und Anpassung; meist einige Stunden bis zwei Tage ohne Prothese",
-				"when": "Die Prothese hält schlechter, die bisherige Klammer ist gebrochen oder verbogen, nach Entfernung eines Nachbarzahns hat sich der Halt verändert",
-				"prep": "Mit der Prothese kommen und die abgebrochene Klammer mitbringen, falls vorhanden",
-				"abnormal": "Die ersten Tage ist die neue Klammer spürbar und kann leicht drücken, das wird durch Nacharbeit behoben. Rutscht die Prothese beim Kauen weiterhin oder schmerzt und lockert sich der Pfeilerzahn, ist eine Kontrolle nötig: manchmal braucht es eine Unterfütterung oder eine neue Prothese"
-			},
-			"tr": {
-				"what": "Hareketli protezin onarımı: protezi dayanak dişe tutturan tel kanca (kroşe) protez kaidesine eklenir",
-				"how": "Protez ağızdayken ölçü alınır ya da protez laboratuvara gönderilir, kanca bükülüp akrilik içine kaynatılır, sonra protez prova edilip oturması düzeltilir; genelde protezsiz birkaç saat ile iki gün",
-				"when": "Protezin tutuşunun azalması, önceki kancanın kırılması veya açılması, komşu diş çekildikten sonra desteğin değişmesi",
-				"prep": "Protezle gelmek ve kırılan kanca saklandıysa getirmek gerekir",
-				"abnormal": "İlk günlerde yeni kanca hissedilir ve hafif vurabilir, bu düzeltme ile giderilir. Protez çiğnerken hâlâ yerinden oynuyorsa ya da dayanak diş ağrıyıp sallanmaya başlıyorsa hekime başvurulmalıdır: bazen besleme ya da yeni protez gerekir"
-			}
-		}
-	},
-	{
-		"slug": "denture-tooth-addition",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ремонт съёмного протеза: в базис добавляют искусственный зуб на место недавно утраченного собственного",
-				"how": "Снимают слепок с областью дефекта, в лаборатории подбирают зуб по цвету и форме и приваривают его к базису, затем протез примеряют и пришлифовывают по прикусу; чаще всего в тот же или на следующий день",
-				"when": "Удаление зуба у пациента, уже носящего протез, отлом искусственного зуба от базиса, расширение протеза на новый участок",
-				"prep": "Прийти с протезом; после удаления обычно ждут заживления лунки, срок называет врач",
-				"abnormal": "Несколько дней к изменившемуся протезу привыкают заново, возможны натирания, которые убирают коррекцией. Если протез давит, качается или зуб снова откалывается, нужен визит к стоматологу — по мере заживления десны может понадобиться перебазировка"
-			},
-			"en": {
-				"what": "Repair of a removable denture: an artificial tooth is added to the base in place of a recently lost natural one",
-				"how": "An impression including the gap is taken, the laboratory matches a tooth by shade and shape and bonds it to the base, then the denture is tried in and ground to the bite; most often the same or the next day",
-				"when": "A tooth extracted in a patient who already wears a denture, an artificial tooth broken off the base, extending the denture to a new area",
-				"prep": "Come with the denture; after an extraction the socket is usually allowed to heal first, the dentist says how long",
-				"abnormal": "It takes a few days to get used to the changed denture and sore spots may appear, which are removed by adjustment. If the denture presses, rocks or the tooth breaks off again, see the dentist — as the gum heals a reline may be needed"
-			},
-			"sr": {
-				"what": "Popravka pokretne proteze: u bazu se dodaje vještački zub na mjesto nedavno izgubljenog sopstvenog",
-				"how": "Uzme se otisak sa područjem bezubosti, u laboratoriji se zub izabere po boji i obliku i spoji sa bazom, pa se proteza proba i obrusi po zagrizu; najčešće isti ili naredni dan",
-				"when": "Vađenje zuba kod pacijenta koji već nosi protezu, odlomljen vještački zub sa baze, proširenje proteze na novo područje",
-				"prep": "Doći sa protezom; poslije vađenja se obično sačeka zarastanje rane, a rok određuje stomatolog",
-				"abnormal": "Na promijenjenu protezu se nekoliko dana ponovo navikava i mogu se javiti žuljevi, koji se uklanjaju doradom. Ako proteza pritiska, klima se ili se zub ponovo odlomi, treba se javiti stomatologu — kako desni zarastaju može zatrebati podlaganje"
-			},
-			"de": {
-				"what": "Reparatur einer herausnehmbaren Prothese: Ein künstlicher Zahn wird anstelle eines kürzlich verlorenen eigenen Zahns in die Basis eingearbeitet",
-				"how": "Abformung mit der Lücke, im Labor wird ein Zahn nach Farbe und Form ausgewählt und mit der Basis verbunden, danach Einprobe und Einschleifen in den Biss; meist am selben oder am nächsten Tag",
-				"when": "Zahnentfernung bei einem Patienten, der bereits eine Prothese trägt, abgebrochener Kunststoffzahn, Erweiterung der Prothese auf einen neuen Bereich",
-				"prep": "Mit der Prothese kommen; nach einer Entfernung wird meist die Abheilung der Wunde abgewartet, den Zeitpunkt nennt die Praxis",
-				"abnormal": "An die veränderte Prothese gewöhnt man sich einige Tage neu, Druckstellen werden durch Nacharbeit beseitigt. Drückt die Prothese, kippt sie oder bricht der Zahn erneut ab, ist ein Termin nötig — mit der Abheilung des Zahnfleisches kann eine Unterfütterung erforderlich werden"
-			},
-			"tr": {
-				"what": "Hareketli protezin onarımı: yakın zamanda kaybedilen doğal dişin yerine kaideye yapay diş eklenir",
-				"how": "Boşluğu içeren ölçü alınır, laboratuvarda renk ve biçime göre seçilen diş kaideye birleştirilir, sonra protez prova edilip kapanışa göre aşındırılır; çoğunlukla aynı ya da ertesi gün",
-				"when": "Zaten protez kullanan hastada diş çekimi, yapay dişin kaideden kopması, protezin yeni bölgeye genişletilmesi",
-				"prep": "Protezle gelmek gerekir; çekimden sonra genellikle soketin iyileşmesi beklenir, süreyi hekim söyler",
-				"abnormal": "Değişen proteze birkaç günde yeniden alışılır, vuruk noktaları düzeltme ile giderilir. Protez bastırıyor, oynuyor ya da diş yine kopuyorsa hekime gidilmelidir — diş eti iyileştikçe besleme gerekebilir"
-			}
-		}
-	},
-	{
-		"slug": "dolder-bar",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Металлическая балка, соединяющая имплантаты или сохранённые корни, на которой с помощью замков удерживается съёмный протез",
-				"how": "После приживления опор снимают слепок, в лаборатории изготавливают балку, примеряют и прикручивают её, а в протез встраивают матрицы, защёлкивающиеся на балке; несколько визитов с лабораторными этапами",
-				"when": "Полный съёмный протез, который плохо держится, протезирование на небольшом числе имплантатов, сохранённые корни как опора при выраженной убыли кости",
-				"prep": "Нужны снимок или КТ и осмотр врача, опоры должны прижиться; до начала протезирования полость рта санируют",
-				"abnormal": "Первые недели уходят на привыкание и на то, чтобы научиться снимать и надевать протез. Ослабший щелчок фиксации, воспаление десны вокруг балки или боль при нагрузке — повод к осмотру: матрицы со временем изнашиваются и заменяются, а под балкой нужна особенно тщательная гигиена"
-			},
-			"en": {
-				"what": "A metal bar connecting implants or retained roots, on which a removable denture is held by attachments",
-				"how": "Once the supports have healed an impression is taken, the bar is made in the laboratory, tried in and screwed on, while matching clips are built into the denture to snap onto the bar; several visits with laboratory stages",
-				"when": "A complete denture that holds poorly, prosthetics on a small number of implants, retained roots used as support when bone loss is pronounced",
-				"prep": "A radiograph or CT and an examination are needed and the supports must have healed; the mouth is treated before prosthetic work starts",
-				"abnormal": "The first weeks go into getting used to the retention and learning to take the denture in and out. A weakening snap, inflamed gum around the bar or pain under load should be checked: the clips wear out over time and are replaced, and hygiene under the bar needs particular care"
-			},
-			"sr": {
-				"what": "Metalna prečka koja spaja implantate ili sačuvane korijene, a na njoj se ležištima drži pokretna proteza",
-				"how": "Kada nosači zarastu uzme se otisak, prečka se izradi u laboratoriji, proba i pričvrsti, a u protezu se ugrade matrice koje naliježu na prečku; nekoliko posjeta sa laboratorijskim fazama",
-				"when": "Totalna proteza koja slabo drži, protetika na malom broju implantata, sačuvani korijeni kao oslonac kod izraženog gubitka kosti",
-				"prep": "Potrebni su snimak ili CT i pregled, a nosači moraju biti zarasli; usta se saniraju prije početka protetskog rada",
-				"abnormal": "Prve sedmice idu na navikavanje i na učenje kako se proteza skida i stavlja. Oslabljeno zadržavanje, upala desni oko prečke ili bol pri opterećenju razlog su za pregled: matrice se vremenom troše i mijenjaju, a higijena ispod prečke traži posebnu pažnju"
-			},
-			"de": {
-				"what": "Metallsteg, der Implantate oder erhaltene Wurzeln verbindet und über Halteelemente eine herausnehmbare Prothese trägt",
-				"how": "Nach Einheilung der Pfeiler Abformung, Herstellung des Stegs im Labor, Einprobe und Verschraubung, in die Prothese werden Reiter eingearbeitet, die auf dem Steg einrasten; mehrere Termine mit Laborschritten",
-				"when": "Schlecht haltende Totalprothese, Versorgung auf wenigen Implantaten, erhaltene Wurzeln als Pfeiler bei ausgeprägtem Knochenabbau",
-				"prep": "Röntgenbild oder DVT und eine Untersuchung sind nötig, die Pfeiler müssen eingeheilt sein; vor der prothetischen Arbeit wird der Mund saniert",
-				"abnormal": "Die ersten Wochen dienen der Gewöhnung und dem Üben von Ein- und Ausgliedern. Nachlassender Halt, entzündetes Zahnfleisch am Steg oder Schmerzen unter Belastung gehören in die Kontrolle: Die Reiter verschleißen mit der Zeit und werden ersetzt, die Reinigung unter dem Steg braucht besondere Sorgfalt"
-			},
-			"tr": {
-				"what": "İmplantları ya da korunan kökleri birbirine bağlayan, üzerindeki tutucularla hareketli protezi taşıyan metal bar",
-				"how": "Destekler iyileştikten sonra ölçü alınır, bar laboratuvarda hazırlanıp prova edilir ve vidalanır, proteze de barın üzerine oturan tutucular yerleştirilir; laboratuvar aşamalarıyla birkaç seans",
-				"when": "Tutuşu zayıf tam protez, az sayıda implant üzerine protez yapımı, belirgin kemik kaybında destek olarak korunan kökler",
-				"prep": "Film ya da tomografi ve muayene gerekir, desteklerin iyileşmiş olması şarttır; protetik çalışmadan önce ağız sağlığı düzenlenir",
-				"abnormal": "İlk haftalar alışmaya ve protezi takıp çıkarmayı öğrenmeye ayrılır. Tutuculuğun azalması, bar çevresinde diş eti iltihabı ya da çiğnerken ağrı kontrol gerektirir: tutucular zamanla aşınır ve değiştirilir, barın altındaki temizlik özel özen ister"
-			}
-		}
-	},
-	{
-		"slug": "fixed-orthodontic-check-up",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Плановый визит во время лечения брекетами, на котором ортодонт оценивает перемещение зубов и активирует аппарат",
-				"how": "Снимают лигатуры и дугу, очищают брекеты, проверяют положение зубов, прикус и гигиену, ставят следующую дугу, при необходимости добавляют эластичные тяги или пружины; 15-30 минут, обычно раз в месяц-полтора",
-				"when": "Весь период ношения несъёмной аппаратуры, а также внеплановое обращение при отклеившемся брекете или травмирующей дуге",
-				"prep": "Почистить зубы перед приёмом, отметить, что беспокоило с прошлого визита, и принести эластики, если врач их выдавал",
-				"abnormal": "Два-три дня после смены дуги зубы ноют и хуже переносят твёрдую пищу — это ожидаемая реакция. Пропуски контролей растягивают лечение, а не стихающая боль, воспаление дёсен или белые пятна вокруг брекетов обсуждаются с ортодонтом"
-			},
-			"en": {
-				"what": "A scheduled visit during brace treatment at which the orthodontist assesses tooth movement and activates the appliance",
-				"how": "Ligatures and the archwire are removed, the brackets are cleaned, tooth position, bite and hygiene are checked, the next wire is placed and elastics or springs are added if needed; 15-30 minutes, usually every four to six weeks",
-				"when": "Throughout the time fixed appliances are worn, and as an unscheduled visit for a debonded bracket or a wire that is hurting",
-				"prep": "Brush your teeth before the appointment, note what has bothered you since the last visit and bring the elastics if they were given to you",
-				"abnormal": "For two or three days after a wire change the teeth ache and tolerate hard food less well, which is expected. Missed check-ups stretch the treatment out, while pain that does not settle, inflamed gums or white spots around the brackets are discussed with the orthodontist"
-			},
-			"sr": {
-				"what": "Planirana posjeta tokom liječenja fiksnim aparatom, na kojoj ortodont procjenjuje pomjeranje zuba i aktivira aparat",
-				"how": "Skinu se ligature i žica, bravice se očiste, provjere se položaj zuba, zagriz i higijena, postavi se naredna žica, a po potrebi se dodaju gumice ili opruge; 15-30 minuta, obično svakih mjesec do mjesec i po",
-				"when": "Cijeli period nošenja fiksnog aparata, kao i vanredni dolazak zbog otpale bravice ili žice koja povređuje",
-				"prep": "Oprati zube prije dolaska, zapisati šta je smetalo od prošle posjete i ponijeti gumice ako su date",
-				"abnormal": "Dva-tri dana poslije zamjene žice zubi su osjetljivi i teže podnose tvrdu hranu, što se očekuje. Propuštene kontrole produžavaju liječenje, a bol koja ne popušta, upala desni ili bijele mrlje oko bravica razgovaraju se sa ortodontom"
-			},
-			"de": {
-				"what": "Planmäßiger Termin während der Behandlung mit fester Spange, bei dem die Zahnbewegung beurteilt und das Gerät aktiviert wird",
-				"how": "Ligaturen und Bogen werden entfernt, die Brackets gereinigt, Zahnstellung, Biss und Mundhygiene geprüft, der nächste Bogen eingesetzt und bei Bedarf Gummizüge oder Federn ergänzt; 15-30 Minuten, meist alle vier bis sechs Wochen",
-				"when": "Während der gesamten Tragezeit der festen Apparatur sowie als zusätzlicher Termin bei gelöstem Bracket oder scheuerndem Bogen",
-				"prep": "Vor dem Termin Zähne putzen, notieren, was seit dem letzten Mal gestört hat, und ausgegebene Gummizüge mitbringen",
-				"abnormal": "Zwei bis drei Tage nach dem Bogenwechsel ziehen die Zähne und harte Speisen sind unangenehm, das ist zu erwarten. Versäumte Kontrollen verlängern die Behandlung; anhaltende Schmerzen, entzündetes Zahnfleisch oder weiße Flecken um die Brackets werden in der Praxis besprochen"
-			},
-			"tr": {
-				"what": "Sabit ortodontik tedavi sırasında dişlerin hareketinin değerlendirildiği ve aygıtın aktive edildiği planlı kontrol seansı",
-				"how": "Ligatürler ve tel çıkarılır, braketler temizlenir, diş konumu, kapanış ve ağız bakımı gözden geçirilir, sıradaki tel takılır, gerekirse lastik veya yay eklenir; 15-30 dakika, genelde dört-altı haftada bir",
-				"when": "Sabit aygıtın kullanıldığı tüm dönem ve ayrıca düşen braket ya da batan tel için plan dışı başvuru",
-				"prep": "Seanstan önce dişleri fırçalamak, son kontrolden bu yana rahatsız eden şeyleri not etmek ve verildiyse lastikleri getirmek gerekir",
-				"abnormal": "Tel değişiminden sonra iki üç gün dişlerde sızlama olur ve sert yiyecekler zor gelir, bu beklenen bir tepkidir. Kontrollerin aksaması tedaviyi uzatır; geçmeyen ağrı, diş eti iltihabı ya da braket çevresinde beyaz lekeler ortodontistle konuşulur"
-			}
-		}
-	},
-	{
-		"slug": "fixed-prosthetic-impression",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Точный отпечаток обточенных зубов и соседних тканей, по которому в лаборатории изготавливают коронку, мост или винир",
-				"how": "Десну отодвигают нитью, ложку с массой держат во рту несколько минут до застывания или делают цифровой скан, дополнительно фиксируют прикус и подбирают цвет зуба; 15-30 минут",
-				"when": "После препарирования зуба под коронку или мост, при изготовлении виниров и вкладок, повторно, если предыдущий слепок получился неточным",
-				"prep": "Подготовки нет; при выраженном рвотном рефлексе предупредить врача заранее, спокойное носовое дыхание во время процедуры помогает",
-				"abnormal": "После отодвигания десны нитью она может кровить и быть чувствительной день-другой. Если край будущей коронки не пропечатался, слепок переснимают — это не осложнение; боль в зубе под временной коронкой после слепка показывают стоматологу"
-			},
-			"en": {
-				"what": "A precise imprint of the prepared teeth and surrounding tissue, used in the laboratory to make a crown, bridge or veneer",
-				"how": "The gum is retracted with a cord, a tray with impression material is held in the mouth for a few minutes until it sets, or a digital scan is taken, and the bite record and tooth shade are added; 15-30 minutes",
-				"when": "After a tooth has been prepared for a crown or bridge, when making veneers and inlays, and as a repeat if the previous impression was not accurate",
-				"prep": "No preparation; tell the dentist in advance about a strong gag reflex, calm breathing through the nose helps during the procedure",
-				"abnormal": "After cord retraction the gum may bleed and feel sensitive for a day or two. If the margin of the future crown did not register, the impression is simply retaken, which is not a complication; pain in a tooth under a temporary crown after the impression should be shown to the dentist"
-			},
-			"sr": {
-				"what": "Precizan otisak brušenih zuba i okolnog tkiva, po kojem se u laboratoriji izrađuju krunica, most ili ljuspica",
-				"how": "Desni se odmaknu koncem, kašika sa masom drži se u ustima nekoliko minuta do stvrdnjavanja ili se uzme digitalni sken, uz to se zabilježi zagriz i odredi boja zuba; 15-30 minuta",
-				"when": "Poslije brušenja zuba za krunicu ili most, pri izradi ljuspica i inleja, ponovo ako prethodni otisak nije bio precizan",
-				"prep": "Priprema nije potrebna; kod izraženog nagona na povraćanje reći stomatologu unaprijed, mirno disanje na nos pomaže tokom zahvata",
-				"abnormal": "Poslije odmicanja desni koncem one mogu krvariti i biti osjetljive dan-dva. Ako se rub buduće krunice nije otisnuo, otisak se jednostavno ponovi, što nije komplikacija; bol u zubu ispod privremene krunice poslije otiska treba pokazati stomatologu"
-			},
-			"de": {
-				"what": "Genaue Abformung der beschliffenen Zähne und des umliegenden Gewebes, nach der im Labor Krone, Brücke oder Veneer entstehen",
-				"how": "Das Zahnfleisch wird mit einem Faden verdrängt, der Löffel mit Abformmasse bleibt einige Minuten bis zum Aushärten im Mund oder es wird digital gescannt, dazu kommen Bissnahme und Farbbestimmung; 15-30 Minuten",
-				"when": "Nach dem Beschleifen eines Zahns für Krone oder Brücke, bei Veneers und Inlays, als Wiederholung, wenn die vorherige Abformung ungenau war",
-				"prep": "Keine Vorbereitung; einen starken Würgereiz vorher ansprechen, ruhiges Atmen durch die Nase hilft während der Abformung",
-				"abnormal": "Nach der Fadenlegung kann das Zahnfleisch ein bis zwei Tage bluten und empfindlich sein. Ist der Kronenrand nicht abgebildet, wird die Abformung wiederholt, das ist keine Komplikation; Schmerzen unter dem Provisorium nach der Abformung gehören in die Praxis"
-			},
-			"tr": {
-				"what": "Laboratuvarda kron, köprü ya da kaplama yapımında kullanılan, kesilmiş dişlerin ve çevre dokunun hassas ölçüsü",
-				"how": "Diş eti iple uzaklaştırılır, ölçü maddesiyle dolu kaşık sertleşene kadar birkaç dakika ağızda tutulur ya da dijital tarama yapılır, ayrıca kapanış kaydı alınır ve diş rengi belirlenir; 15-30 dakika",
-				"when": "Diş kron ya da köprü için kesildikten sonra, kaplama ve inley yapımında, önceki ölçü yeterince net çıkmadıysa tekrar",
-				"prep": "Hazırlık gerekmez; belirgin öğürme refleksi varsa hekime önceden söylenmeli, işlem sırasında burundan sakin nefes almak kolaylaştırır",
-				"abnormal": "İp uygulandıktan sonra diş eti bir iki gün kanayabilir ve hassas olabilir. Kron kenarı ölçüye çıkmadıysa ölçü yenilenir, bu bir komplikasyon değildir; ölçüden sonra geçici kron altındaki ağrı hekime gösterilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "flap-surgery-periodontal",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Операция на дёснах, при которой десну отслаивают лоскутом, чтобы под визуальным контролем очистить поверхность корней и костные карманы",
-				"how": "Под местной анестезией делают разрез и отслаивают лоскут, убирают грануляции и отложения с корней, при необходимости вносят костнозамещающий материал или мембрану, лоскут возвращают на место и ушивают; около часа на участок",
-				"when": "Пародонтит с глубокими карманами, которые не закрылись после чистки под десной, подвижность зубов и убыль кости вокруг них, гноетечение из кармана",
-				"prep": "Сначала снимают налёт и камень и успокаивают воспаление, нужен снимок; сообщить о разжижающих кровь препаратах, диабете и курении, которые влияют на заживление",
-				"abnormal": "Неделю-две возможны отёк, синяк и чувствительность зубов, а после заживления десна садится и шейки зубов могут оголиться — об этом предупреждают заранее. Швы снимают на контрольном приёме; кровотечение, нарастающая боль или температура требуют связаться с врачом раньше срока"
-			},
-			"en": {
-				"what": "Gum surgery in which the gum is lifted as a flap so that root surfaces and bony pockets can be cleaned under direct vision",
-				"how": "Under local anaesthesia an incision is made and the flap raised, granulation tissue and deposits are removed from the roots, bone substitute or a membrane is placed if needed, then the flap is repositioned and sutured; about an hour per area",
-				"when": "Periodontitis with deep pockets that did not close after cleaning below the gum, loose teeth with bone loss around them, pus discharge from a pocket",
-				"prep": "Plaque and calculus are removed and inflammation settled first, and a radiograph is needed; report blood-thinning medication, diabetes and smoking, which affect healing",
-				"abnormal": "Swelling, bruising and tooth sensitivity are possible for one to two weeks, and after healing the gum recedes so tooth necks may become exposed, which is explained beforehand. Sutures are removed at a follow-up visit; bleeding, increasing pain or fever means contacting the clinic earlier"
-			},
-			"sr": {
-				"what": "Operacija na desnima pri kojoj se desni odvoje u obliku režnja, da bi se pod kontrolom oka očistile površine korijena i koštani džepovi",
-				"how": "U lokalnoj anesteziji napravi se rez i podigne režanj, uklone se granulacije i naslage sa korijena, po potrebi se unese koštani nadomjestak ili membrana, pa se režanj vrati i ušije; oko sat vremena po području",
-				"when": "Parodontitis sa dubokim džepovima koji se nisu zatvorili poslije čišćenja ispod desni, klimanje zuba uz gubitak kosti, curenje gnoja iz džepa",
-				"prep": "Prvo se uklone naslage i smiri upala, potreban je snimak; reći za lijekove koji razrjeđuju krv, dijabetes i pušenje, jer utiču na zarastanje",
-				"abnormal": "Sedmicu-dvije mogući su otok, modrica i osjetljivost zuba, a poslije zarastanja desni se povuku pa vratovi zuba mogu ostati otkriveni, o čemu se pacijent unaprijed obavještava. Konci se skidaju na kontroli; krvarenje, bol koja raste ili temperatura traže raniji kontakt sa stomatologom"
-			},
-			"de": {
-				"what": "Zahnfleischoperation, bei der das Zahnfleisch als Lappen abgehoben wird, um Wurzeloberflächen und Knochentaschen unter Sicht zu reinigen",
-				"how": "In örtlicher Betäubung Schnitt und Abheben des Lappens, Entfernung von Granulationsgewebe und Belägen von den Wurzeln, bei Bedarf Knochenersatzmaterial oder Membran, dann Zurücklegen und Nähen des Lappens; etwa eine Stunde je Bereich",
-				"when": "Parodontitis mit tiefen Taschen, die sich nach der Reinigung unter dem Zahnfleisch nicht geschlossen haben, gelockerte Zähne mit Knochenabbau, Eiteraustritt aus einer Tasche",
-				"prep": "Zuerst werden Beläge entfernt und die Entzündung beruhigt, ein Röntgenbild ist nötig; blutverdünnende Medikamente, Diabetes und Rauchen angeben, da sie die Heilung beeinflussen",
-				"abnormal": "Ein bis zwei Wochen sind Schwellung, Bluterguss und empfindliche Zähne möglich, nach der Heilung zieht sich das Zahnfleisch zurück und Zahnhälse können frei liegen, worüber vorher aufgeklärt wird. Die Fäden werden bei der Kontrolle entfernt; Blutung, zunehmende Schmerzen oder Fieber erfordern einen früheren Kontakt"
-			},
-			"tr": {
-				"what": "Diş etinin flep olarak kaldırılıp kök yüzeylerinin ve kemik ceplerinin doğrudan görerek temizlendiği diş eti ameliyatı",
-				"how": "Lokal anestezi altında kesi yapılıp flep kaldırılır, köklerdeki granülasyon dokusu ve birikintiler temizlenir, gerekirse kemik grefti ya da membran yerleştirilir, flep geri konup dikilir; bölge başına yaklaşık bir saat",
-				"when": "Diş eti altı temizliğinden sonra kapanmayan derin cepli periodontitis, çevresinde kemik kaybı olan sallanan dişler, cepten irin gelmesi",
-				"prep": "Önce diş taşı ve plak temizlenir, iltihap yatıştırılır ve film gerekir; iyileşmeyi etkilediği için kan sulandırıcı ilaçlar, diyabet ve sigara bildirilmelidir",
-				"abnormal": "Bir iki hafta şişlik, morluk ve diş hassasiyeti görülebilir, iyileşmeden sonra diş eti çekilir ve diş boyunları açığa çıkabilir, bu önceden anlatılır. Dikişler kontrol seansında alınır; kanama, artan ağrı ya da ateş durumunda daha erken başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "frc-post-build-up",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Восстановление культи зуба композитом на штифте из стекловолокна в композитной матрице (FRC), который вклеивают в корневой канал",
-				"how": "Часть пломбировочного материала выводят из канала, штифт FRC примеряют и укорачивают, вклеивают адгезивной системой и моделируют вокруг него культю композитом, затем придают ей форму под будущую коронку; один приём",
-				"when": "Зуб с запломбированными каналами и малым остатком стенок при крепком корне, подготовка опоры под коронку или мост",
-				"prep": "Лечение каналов должно быть завершено, нужен контрольный снимок; отдельной подготовки в день визита нет",
-				"abnormal": "FRC по жёсткости ближе к тканям зуба, чем металл, поэтому нагрузку распределяет мягче и не просвечивает через реставрацию. Боль при накусывании, подвижность надстройки или скол стенки — повод к осмотру; такой зуб обычно закрывают коронкой, чтобы снизить риск перелома корня"
-			},
-			"en": {
-				"what": "Build-up of a tooth core in composite over a fibre-reinforced composite (FRC) post cemented into the root canal",
-				"how": "Part of the root filling is removed from the canal, the FRC post is tried in and shortened, bonded with an adhesive system, and the core is modelled around it in composite and shaped for the future crown; one appointment",
-				"when": "A tooth with filled canals and little remaining wall but a sound root, preparing an abutment for a crown or bridge",
-				"prep": "Root canal treatment must be completed and a check radiograph is needed; no separate preparation on the day of the visit",
-				"abnormal": "FRC is closer in stiffness to tooth tissue than metal, so it distributes load more gently and does not shine through the restoration. Pain on biting, a mobile build-up or a chipped wall should be examined; such a tooth is usually covered with a crown to lower the risk of root fracture"
-			},
-			"sr": {
-				"what": "Nadogradnja bataljka zuba kompozitom preko kočića od staklenih vlakana u kompozitnoj matrici (FRC) koji se lijepi u korijenski kanal",
-				"how": "Dio punjenja izvadi se iz kanala, FRC kočić se proba i skrati, zalijepi adhezivnim sistemom, a oko njega se kompozitom modelira bataljak i oblikuje za buduću krunicu; jedna posjeta",
-				"when": "Zub sa napunjenim kanalima i malo preostalih zidova uz čvrst korijen, priprema nosača za krunicu ili most",
-				"prep": "Liječenje kanala mora biti završeno i potreban je kontrolni snimak; posebne pripreme na dan posjete nema",
-				"abnormal": "FRC je po krutosti bliži zubnom tkivu nego metal, pa opterećenje raspoređuje blaže i ne prosijava kroz nadoknadu. Bol pri zagrizu, klimanje nadogradnje ili odlom zida razlog su za pregled; takav zub se obično pokriva krunicom da bi se smanjio rizik od preloma korijena"
-			},
-			"de": {
-				"what": "Stumpfaufbau mit Komposit über einem glasfaserverstärkten Kompositstift (FRC), der im Wurzelkanal verklebt wird",
-				"how": "Ein Teil der Wurzelfüllung wird aus dem Kanal entfernt, der FRC-Stift einprobiert und gekürzt, adhäsiv eingeklebt und der Stumpf ringsum aus Komposit aufgebaut und für die spätere Krone geformt; ein Termin",
-				"when": "Zahn mit gefüllten Kanälen und wenig Restwand bei fester Wurzel, Vorbereitung eines Pfeilers für Krone oder Brücke",
-				"prep": "Die Wurzelbehandlung muss abgeschlossen sein, ein Kontrollröntgenbild ist nötig; am Tag des Termins keine gesonderte Vorbereitung",
-				"abnormal": "FRC liegt in der Steifigkeit näher an der Zahnhartsubstanz als Metall, verteilt die Kaulast sanfter und schimmert nicht durch die Restauration. Schmerzen beim Zubeißen, ein beweglicher Aufbau oder eine abgeplatzte Wand gehören in die Kontrolle; ein solcher Zahn wird meist überkront, um das Risiko einer Wurzelfraktur zu senken"
-			},
-			"tr": {
-				"what": "Kök kanalına yapıştırılan cam elyaf takviyeli kompozit (FRC) post üzerine kompozitle diş kor yapımı",
-				"how": "Kanal dolgusunun bir bölümü çıkarılır, FRC post prova edilip kısaltılır, adeziv sistemle yapıştırılır ve çevresine kompozitle kor şekillendirilerek ileride yapılacak krona hazırlanır; tek seans",
-				"when": "Kanalları doldurulmuş, duvarı az kalmış ama kökü sağlam diş, kron veya köprü için dayanak hazırlanması",
-				"prep": "Kanal tedavisinin tamamlanmış olması ve kontrol filmi gerekir; seans günü ayrı bir hazırlık yoktur",
-				"abnormal": "FRC sertlik bakımından metale göre diş dokusuna daha yakındır, yükü daha yumuşak dağıtır ve restorasyondan yansımaz. Isırınca ağrı, korun oynaması ya da duvarda kırık muayene gerektirir; kök kırığı riskini azaltmak için böyle bir diş genellikle kronla kapatılır"
-			}
-		}
-	},
-	{
-		"slug": "frenulectomy",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Полное иссечение уздечки — тяжа слизистой между губой и десной или под языком — вместе с местом её прикрепления",
-				"how": "Под местной анестезией уздечку иссекают скальпелем или лазером, при необходимости отделяют волокна у кости и ушивают края раны; 15-30 минут",
-				"when": "Натяжение уздечки, оттягивающее десну и обнажающее шейку зуба, широкий промежуток между передними резцами, ограниченная подвижность языка, подготовка ложа под съёмный протез",
-				"prep": "Поесть перед визитом, сообщить о препаратах, влияющих на свёртывание крови, и хронических болезнях; при параллельном ортодонтическом лечении срок операции согласует ортодонт",
-				"abnormal": "Рана заживает одну-две недели, в это время белый налёт на ней, чувство натяжения и дискомфорт при разговоре ожидаемы. Кровотечение, нарастающая боль или температура — повод связаться с врачом; чтобы результат удержался, после операции часто назначают упражнения или ортодонтический этап"
-			},
-			"en": {
-				"what": "Complete excision of a frenulum — the mucosal fold between lip and gum or under the tongue — together with its attachment",
-				"how": "Under local anaesthesia the frenulum is excised with a scalpel or laser, fibres near the bone are released if needed and the wound edges are sutured; 15-30 minutes",
-				"when": "A pulling frenulum that drags the gum down and exposes a tooth neck, a wide gap between the front incisors, restricted tongue movement, preparing the ridge for a removable denture",
-				"prep": "Eat before the visit, report medication affecting blood clotting and chronic conditions; if orthodontic treatment is running in parallel, the orthodontist decides on the timing",
-				"abnormal": "The wound heals over one to two weeks, and a white coating on it, a feeling of tension and discomfort while speaking are expected during that time. Bleeding, increasing pain or fever is a reason to contact the clinic; to keep the result, exercises or an orthodontic step are often prescribed afterwards"
-			},
-			"sr": {
-				"what": "Potpuno uklanjanje frenuluma — nabora sluznice između usne i desni ili ispod jezika — zajedno sa mjestom njegovog pripoja",
-				"how": "U lokalnoj anesteziji frenulum se izreže skalpelom ili laserom, po potrebi se vlakna odvoje uz kost, a rubovi rane ušiju; 15-30 minuta",
-				"when": "Zatezanje frenuluma koje povlači desni i otkriva vrat zuba, širok razmak između prednjih sjekutića, ograničena pokretljivost jezika, priprema grebena za pokretnu protezu",
-				"prep": "Jesti prije dolaska, reći za lijekove koji utiču na zgrušavanje krvi i hronične bolesti; ako teče i ortodontsko liječenje, vrijeme zahvata određuje ortodont",
-				"abnormal": "Rana zarasta jednu do dvije sedmice, a bjelkasta naslaga na njoj, osjećaj zatezanja i nelagoda pri govoru u tom periodu se očekuju. Krvarenje, bol koja raste ili temperatura razlog su za javljanje stomatologu; da bi se rezultat zadržao, poslije zahvata se često preporučuju vježbe ili ortodontska faza"
-			},
-			"de": {
-				"what": "Vollständige Entfernung eines Bändchens — der Schleimhautfalte zwischen Lippe und Zahnfleisch oder unter der Zunge — samt seinem Ansatz",
-				"how": "In örtlicher Betäubung wird das Bändchen mit Skalpell oder Laser entfernt, bei Bedarf werden Fasern am Knochen gelöst und die Wundränder genäht; 15-30 Minuten",
-				"when": "Ziehendes Bändchen, das das Zahnfleisch abzieht und den Zahnhals freilegt, breite Lücke zwischen den Frontzähnen, eingeschränkte Zungenbeweglichkeit, Vorbereitung des Kieferkamms für eine Prothese",
-				"prep": "Vor dem Termin essen, Medikamente mit Einfluss auf die Blutgerinnung und chronische Erkrankungen angeben; läuft parallel eine kieferorthopädische Behandlung, bestimmt diese den Zeitpunkt",
-				"abnormal": "Die Wunde heilt über ein bis zwei Wochen, ein weißlicher Belag darauf, ein Spannungsgefühl und Missempfindungen beim Sprechen sind in dieser Zeit zu erwarten. Blutung, zunehmende Schmerzen oder Fieber sind ein Grund, sich zu melden; damit das Ergebnis hält, werden danach oft Übungen oder ein kieferorthopädischer Schritt angeschlossen"
-			},
-			"tr": {
-				"what": "Dudakla diş eti arasındaki ya da dil altındaki mukoza bağının (frenulum) yapışma yeriyle birlikte tümüyle çıkarılması",
-				"how": "Lokal anestezi altında frenulum bisturi ya da lazerle kesilip çıkarılır, gerekirse kemiğe yakın lifler serbestlenir ve yara kenarları dikilir; 15-30 dakika",
-				"when": "Diş etini aşağı çekip diş boynunu açığa çıkaran gergin bağ, ön kesiciler arasında geniş aralık, dil hareketinin kısıtlı olması, hareketli protez için kret hazırlığı",
-				"prep": "Seanstan önce yemek yemek, kan pıhtılaşmasını etkileyen ilaçları ve süregen hastalıkları bildirmek gerekir; eşzamanlı ortodontik tedavi varsa zamanlamayı ortodontist belirler",
-				"abnormal": "Yara bir iki haftada iyileşir; bu sürede üzerinde beyazımsı tabaka, gerginlik hissi ve konuşurken rahatsızlık beklenir. Kanama, artan ağrı ya da ateş durumunda hekime başvurulmalıdır; sonucun kalıcı olması için sonrasında sıklıkla egzersiz ya da ortodontik aşama önerilir"
-			}
-		}
-	},
-	{
-		"slug": "gangrene-treatment-single-root",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Лечение однокорневого зуба, в котором пульпа погибла, а единственный канал заселён инфекцией",
-				"how": "Полость зуба вскрывают, канал освобождают от распада, обрабатывают инструментами и промывают антисептиками, нередко оставляют лекарство под временной пломбой, а на следующем приёме канал пломбируют и зуб закрывают; обычно один-два визита",
-				"when": "Потемневший передний зуб или премоляр без реакции на холод, ноющая боль при накусывании, свищ на десне, изменения у верхушки корня на снимке",
-				"prep": "Подготовка не нужна; принести прежние снимки и рассказать, были ли отёк и приём антибиотиков",
-				"abnormal": "Несколько дней после обработки канала возможна чувствительность при накусывании. Усиливающаяся боль, отёк или температура — повод прийти раньше; потемневший после лечения зуб часто требует внутреннего отбеливания или реставрации, это обсуждают со стоматологом"
-			},
-			"en": {
-				"what": "Treatment of a single-rooted tooth whose pulp has died and whose only canal has become infected",
-				"how": "The pulp chamber is opened, decomposed tissue is cleared from the canal, the canal is shaped and rinsed with antiseptics, a medication is often left under a temporary filling, and at the next appointment the canal is filled and the tooth closed; usually one or two visits",
-				"when": "A darkened front tooth or premolar with no reaction to cold, aching on biting, a fistula on the gum, changes at the root tip on a radiograph",
-				"prep": "No preparation needed; bring earlier radiographs and mention any swelling or antibiotics taken",
-				"abnormal": "Sensitivity to biting is possible for a few days after the canal is cleaned. Growing pain, swelling or fever is a reason to come earlier; a tooth that stayed dark after treatment often needs internal bleaching or a restoration, which is discussed with the dentist"
-			},
-			"sr": {
-				"what": "Liječenje jednokorijenog zuba kojem je pulpa odumrla, a jedini kanal je zahvaćen infekcijom",
-				"how": "Komora zuba se otvori, kanal se očisti od raspadnutog tkiva, obradi instrumentima i ispere antisepticima, često se ostavi lijek pod privremenom plombom, a na narednoj posjeti kanal se napuni i zub zatvori; obično jedna do dvije posjete",
-				"when": "Potamnio prednji zub ili pretkutnjak bez reakcije na hladno, tupa bol pri zagrizu, fistula na desni, promjene uz vrh korijena na snimku",
-				"prep": "Priprema nije potrebna; ponijeti ranije snimke i reći da li je bilo otoka i uzimanja antibiotika",
-				"abnormal": "Nekoliko dana poslije obrade kanala moguća je osjetljivost pri zagrizu. Bol koja jača, oteklina ili temperatura razlog su za raniji dolazak; zub koji je i poslije liječenja ostao taman često traži unutrašnje izbjeljivanje ili nadoknadu, o čemu se dogovara sa stomatologom"
-			},
-			"de": {
-				"what": "Behandlung eines einwurzeligen Zahns, dessen Pulpa abgestorben und dessen einziger Kanal infiziert ist",
-				"how": "Die Pulpakammer wird eröffnet, der Kanal vom Zerfallsgewebe befreit, aufbereitet und antiseptisch gespült, häufig bleibt eine Einlage unter provisorischem Verschluss, beim nächsten Termin wird der Kanal gefüllt und der Zahn verschlossen; meist ein bis zwei Termine",
-				"when": "Dunkler Frontzahn oder Prämolar ohne Kältereaktion, dumpfer Schmerz beim Zubeißen, Fistel am Zahnfleisch, Veränderungen an der Wurzelspitze im Röntgenbild",
-				"prep": "Keine Vorbereitung nötig; frühere Röntgenbilder mitbringen und Schwellung oder eingenommene Antibiotika angeben",
-				"abnormal": "Einige Tage nach der Aufbereitung ist Empfindlichkeit beim Zubeißen möglich. Zunehmende Schmerzen, Schwellung oder Fieber sind ein Grund, früher zu kommen; ein nach der Behandlung dunkel gebliebener Zahn braucht oft eine interne Aufhellung oder eine Restauration, was in der Praxis besprochen wird"
-			},
-			"tr": {
-				"what": "Pulpası ölmüş ve tek kanalı enfekte olmuş tek köklü dişin tedavisi",
-				"how": "Pulpa odası açılır, kanal parçalanmış dokudan temizlenir, eğelerle şekillendirilip antiseptiklerle yıkanır, sıklıkla geçici dolgu altına ilaç bırakılır, sonraki seansta kanal doldurulup diş kapatılır; genellikle bir iki seans",
-				"when": "Soğuğa yanıt vermeyen koyulaşmış ön diş ya da küçük azı, ısırınca künt ağrı, diş etinde fistül, filmde kök ucunda değişiklik",
-				"prep": "Hazırlık gerekmez; eski filmleri getirmek, şişlik ya da antibiyotik kullanımı olduysa bildirmek yeterlidir",
-				"abnormal": "Kanal temizliğinden sonra birkaç gün ısırırken hassasiyet olabilir. Artan ağrı, şişlik ya da ateş erken başvuru gerektirir; tedaviden sonra koyu kalan diş çoğu kez iç ağartma ya da restorasyon gerektirir, bu hekimle konuşulur"
-			}
-		}
-	},
-	{
-		"slug": "gangrene-treatment-three-root",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Лечение трёхкорневого зуба, обычно верхнего моляра, с погибшей пульпой и инфицированными каналами",
-				"how": "Все каналы находят и проходят на рабочую длину — их нередко оказывается четыре, — очищают от распада, промывают и чаще всего оставляют лекарство на одну-две недели, затем пломбируют и восстанавливают коронковую часть; как правило два-три приёма",
-				"when": "Боль при накусывании на жевательный зуб, свищ или припухлость в проекции корней, разрушенный зуб без реакции на холод, затемнения у верхушек на снимке, подготовка опорного зуба под коронку",
-				"prep": "Особой подготовки нет; запланировать длительные приёмы, принести снимки и сказать о приёме антибиотиков",
-				"abnormal": "Чувствительность при жевании держится несколько дней после каждой обработки, а в изогнутых и узких каналах лечение занимает больше времени. Отёк щеки, температура или нарастающая боль требуют внепланового визита; заживление кости у верхушек проверяют снимком спустя месяцы, а зуб после лечения обычно укрепляют коронкой"
-			},
-			"en": {
-				"what": "Treatment of a three-rooted tooth, usually an upper molar, with dead pulp and infected canals",
-				"how": "All canals are located and worked to length — there are often four of them — cleared of decomposed tissue, rinsed and most often dressed with medication for one to two weeks, then filled and the crown part restored; as a rule two to three appointments",
-				"when": "Pain on biting with a back tooth, a fistula or swelling over the roots, a broken-down tooth with no reaction to cold, dark areas at the root tips on a radiograph, preparing an abutment tooth for a crown",
-				"prep": "No special preparation; plan for long appointments, bring radiographs and mention antibiotics taken",
-				"abnormal": "Sensitivity on chewing lasts a few days after each session, and in curved or narrow canals the treatment takes longer. Cheek swelling, fever or increasing pain calls for an unscheduled visit; bone healing at the root tips is checked on a radiograph months later, and the tooth is usually reinforced with a crown afterwards"
-			},
-			"sr": {
-				"what": "Liječenje trokorijenog zuba, obično gornjeg kutnjaka, sa odumrlom pulpom i inficiranim kanalima",
-				"how": "Svi kanali se pronađu i prođu do radne dužine, a nerijetko ih ima četiri, očiste se od raspadnutog tkiva, isperu i najčešće se u njima ostavi lijek jednu do dvije sedmice, pa se pune i kruna zuba se obnovi; po pravilu dvije do tri posjete",
-				"when": "Bol pri zagrizu na zadnji zub, fistula ili oteklina iznad korijena, razoren zub bez reakcije na hladno, zasjenjenja uz vrhove korijena na snimku, priprema nosećeg zuba za krunicu",
-				"prep": "Posebne pripreme nema; planirati duže posjete, ponijeti snimke i reći za uzimanje antibiotika",
-				"abnormal": "Osjetljivost pri žvakanju traje nekoliko dana poslije svake obrade, a u zakrivljenim i uskim kanalima liječenje traje duže. Oteklina obraza, temperatura ili bol koja jača traže vanredni dolazak; zarastanje kosti uz vrhove korijena provjerava se snimkom nakon nekoliko mjeseci, a zub se poslije liječenja obično ojača krunicom"
-			},
-			"de": {
-				"what": "Behandlung eines dreiwurzeligen Zahns, meist eines oberen Molaren, mit abgestorbener Pulpa und infizierten Kanälen",
-				"how": "Alle Kanäle werden aufgesucht und auf Arbeitslänge aufbereitet — häufig sind es vier —, vom Zerfallsgewebe befreit, gespült und meist ein bis zwei Wochen medikamentös eingelegt, danach gefüllt und der Kronenanteil aufgebaut; in der Regel zwei bis drei Termine",
-				"when": "Schmerz beim Zubeißen auf einen Backenzahn, Fistel oder Schwellung über den Wurzeln, zerstörter Zahn ohne Kältereaktion, Aufhellungen an den Wurzelspitzen im Röntgenbild, Vorbereitung eines Pfeilerzahns für eine Krone",
-				"prep": "Keine besondere Vorbereitung; längere Termine einplanen, Röntgenbilder mitbringen und eingenommene Antibiotika angeben",
-				"abnormal": "Empfindlichkeit beim Kauen hält nach jeder Sitzung einige Tage an, in gekrümmten und engen Kanälen dauert die Behandlung länger. Wangenschwellung, Fieber oder zunehmende Schmerzen erfordern einen zusätzlichen Termin; die Knochenheilung an den Wurzelspitzen wird nach Monaten mit einer Aufnahme kontrolliert, und der Zahn wird danach meist mit einer Krone geschützt"
-			},
-			"tr": {
-				"what": "Pulpası ölmüş ve kanalları enfekte olmuş üç köklü dişin, genellikle üst azı dişinin tedavisi",
-				"how": "Tüm kanallar bulunup çalışma boyuna kadar şekillendirilir, sayıları çoğu kez dörttür, parçalanmış dokudan temizlenir, yıkanır ve çoğunlukla bir iki hafta ilaçlı bırakılır, sonra doldurulup diş kronu onarılır; kural olarak iki üç seans",
-				"when": "Arka dişle ısırınca ağrı, köklerin üzerinde fistül ya da şişlik, soğuğa yanıt vermeyen yıkık diş, filmde kök uçlarında koyuluk, kron için dayanak diş hazırlığı",
-				"prep": "Özel hazırlık yoktur; uzun seanslar planlamak, filmleri getirmek ve antibiyotik kullanımını bildirmek gerekir",
-				"abnormal": "Her seanstan sonra birkaç gün çiğnerken hassasiyet sürer, eğimli ve dar kanallarda tedavi daha uzun sürer. Yanakta şişlik, ateş ya da artan ağrı plan dışı başvuru gerektirir; kök uçlarındaki kemik iyileşmesi aylar sonra filmle kontrol edilir ve diş tedaviden sonra genellikle kronla güçlendirilir"
-			}
-		}
-	}
+  {
+    "slug": "bracket-replacement",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторная фиксация отклеившегося брекета или установка нового вместо сломанного на одном зубе",
+        "how": "Остатки клея снимают с эмали, поверхность подготавливают, брекет приклеивают в прежнюю позицию и возвращают дугу в паз; 10-20 минут в рамках обычного приёма",
+        "when": "Брекет отклеился при еде или чистке, замочек сломан или потерян, зуб переместился настолько, что брекет нужно переставить",
+        "prep": "Подготовки нет; почистить зубы перед визитом и принести отклеившийся брекет, если он сохранился",
+        "abnormal": "День-два после переклейки зуб может реагировать на давление — это ожидаемо. Если брекет отклеивается на одном и том же зубе повторно или дуга травмирует щёку, ортодонт пересматривает конструкцию; долго не приклеенный брекет удлиняет лечение"
+      },
+      "en": {
+        "what": "Re-bonding a loose bracket or fitting a new one in place of a broken bracket on a single tooth",
+        "how": "Old adhesive is cleaned off the enamel, the surface is prepared, the bracket is bonded back in its planned position and the archwire is re-engaged; 10-20 minutes within a routine visit",
+        "when": "A bracket came off while eating or brushing, the bracket is broken or lost, the tooth has moved enough that the bracket needs repositioning",
+        "prep": "No preparation; brush your teeth before the visit and bring the detached bracket if you kept it",
+        "abnormal": "The tooth may feel sensitive to pressure for a day or two after re-bonding, which is expected. Repeated debonding on the same tooth, or a wire rubbing the cheek, is reviewed by the orthodontist; a bracket left off for long makes treatment take more time"
+      },
+      "sr": {
+        "what": "Ponovno lijepljenje otpale bravice ili postavljanje nove umjesto slomljene na jednom zubu",
+        "how": "Ostaci ljepila skinu se sa gleđi, površina se pripremi, bravica se vrati u predviđeni položaj i žica se ponovo uvede u njen kanal; 10-20 minuta u okviru redovne posjete",
+        "when": "Bravica je otpala pri jelu ili pranju zuba, slomljena je ili izgubljena, zub se pomjerio toliko da bravicu treba premjestiti",
+        "prep": "Priprema nije potrebna; oprati zube prije dolaska i ponijeti otpalu bravicu ako je sačuvana",
+        "abnormal": "Dan-dva nakon lijepljenja zub može biti osjetljiv na pritisak, što se očekuje. Ako bravica otpada više puta na istom zubu ili žica grebe obraz, ortodont provjerava konstrukciju; dugo nezalijepljena bravica produžava liječenje"
+      },
+      "de": {
+        "what": "Erneutes Befestigen eines gelösten Brackets oder Ersatz eines gebrochenen Brackets an einem Zahn",
+        "how": "Alter Kleber wird vom Schmelz entfernt, die Oberfläche vorbereitet, das Bracket in der geplanten Position neu geklebt und der Bogen wieder eingesetzt; 10-20 Minuten im Rahmen eines normalen Termins",
+        "when": "Bracket hat sich beim Essen oder Zähneputzen gelöst, ist gebrochen oder verloren, der Zahn hat sich so weit bewegt, dass das Bracket umgesetzt werden muss",
+        "prep": "Keine Vorbereitung; vor dem Termin Zähne putzen und das gelöste Bracket mitbringen, falls vorhanden",
+        "abnormal": "Ein bis zwei Tage Druckempfindlichkeit des Zahns sind zu erwarten. Löst sich dasselbe Bracket wiederholt oder scheuert der Bogen an der Wange, prüft die Kieferorthopädie die Konstruktion; ein lange nicht geklebtes Bracket verlängert die Behandlung"
+      },
+      "tr": {
+        "what": "Düşen braketin yeniden yapıştırılması veya kırılan braketin yerine tek dişe yenisinin takılması",
+        "how": "Mineden eski yapıştırıcı temizlenir, yüzey hazırlanır, braket planlanan konumuna yeniden yapıştırılır ve tel yuvasına geri yerleştirilir; rutin seans içinde 10-20 dakika",
+        "when": "Braketin yemek yerken veya fırçalarken düşmesi, kırılması ya da kaybolması, dişin braketin yerini değiştirecek kadar hareket etmesi",
+        "prep": "Hazırlık gerekmez; gelmeden önce dişleri fırçalamak ve düşen braket saklandıysa getirmek yeterlidir",
+        "abnormal": "Yapıştırmadan sonra dişte bir iki gün basınç hassasiyeti beklenir. Aynı dişte braket tekrar tekrar düşüyorsa veya tel yanağı tahriş ediyorsa ortodontist düzeneği gözden geçirir; uzun süre takılmayan braket tedaviyi uzatır"
+      },
+      "sr_cyrl": {
+        "what": "Поновно лијепљење отпале бравице или постављање нове умјесто сломљене на једном зубу",
+        "how": "Остаци љепила скину се са глеђи, површина се припреми, бравица се врати у предвиђени положај и жица се поново уведе у њен канал; 10-20 минута у оквиру редовне посјете",
+        "when": "Бравица је отпала при јелу или прању зуба, сломљена је или изгубљена, зуб се помјерио толико да бравицу треба премјестити",
+        "prep": "Припрема није потребна; опрати зубе прије доласка и понијети отпалу бравицу ако је сачувана",
+        "abnormal": "Дан-два након лијепљења зуб може бити осјетљив на притисак, што се очекује. Ако бравица отпада више пута на истом зубу или жица гребе образ, ортодонт провјерава конструкцију; дуго незалијепљена бравица продужава лијечење"
+      }
+    }
+  },
+  {
+    "slug": "chin-cap",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Внеротовой ортодонтический аппарат из чашки на подбородок, опоры на голове и эластичных тяг, сдерживающий рост нижней челюсти вперёд у растущего ребёнка",
+        "how": "Чашку подбирают или делают по форме подбородка и соединяют с головной опорой резиновыми тягами; ребёнок носит аппарат дома и во сне по графику ортодонта, силу тяг и посадку проверяют на контрольных визитах",
+        "when": "Выдвинутая вперёд нижняя челюсть и обратное перекрытие передних зубов в период роста, раннее лечение третьего класса, дополнение к внутриротовым аппаратам",
+        "prep": "Нужны ортодонтический осмотр и снимки с оценкой фазы роста; в день визита подготовки нет",
+        "abnormal": "Первые ночи ощущаются давление на подбородок и усталость мышц, обычно это проходит за несколько дней. Боль в височно-нижнечелюстном суставе, потёртости кожи или отказ ребёнка носить аппарат обсуждают с ортодонтом; результат зависит от фазы роста и регулярности ношения и оценивается на плановых контролях"
+      },
+      "en": {
+        "what": "An extraoral orthodontic appliance made of a chin cup, a head support and elastics that restrains forward growth of the lower jaw in a growing child",
+        "how": "The cup is selected or made to the shape of the chin and connected to the head support by elastics; the child wears it at home and during sleep on the schedule set by the orthodontist, with force and fit checked at follow-up visits",
+        "when": "A lower jaw positioned forward with reverse bite of the front teeth during growth, early class III treatment, as an addition to intraoral appliances",
+        "prep": "An orthodontic examination with radiographs and an assessment of the growth stage is needed; no preparation on the day of the visit",
+        "abnormal": "The first nights bring pressure on the chin and muscle fatigue, usually settling within a few days. Pain in the jaw joint, skin irritation or a child refusing to wear the appliance is discussed with the orthodontist; the outcome depends on growth stage and consistent wear and is assessed at scheduled check-ups"
+      },
+      "sr": {
+        "what": "Vanoralni ortodontski aparat od kapice za bradu, oslonca na glavi i elastičnih gumica, koji kod djeteta u rastu zadržava rast donje vilice prema naprijed",
+        "how": "Kapica se bira ili izrađuje prema obliku brade i gumicama spaja sa osloncem na glavi; dijete je nosi kod kuće i tokom spavanja po rasporedu ortodonta, a jačina gumica i naljeganje provjeravaju se na kontrolama",
+        "when": "Donja vilica isturena prema naprijed i obrnuti zagriz prednjih zuba u periodu rasta, rano liječenje treće klase, dopuna unutrašnjim aparatima",
+        "prep": "Potrebni su ortodontski pregled i snimci sa procjenom faze rasta; na dan posjete priprema nije potrebna",
+        "abnormal": "Prvih noći osjećaju se pritisak na bradu i zamor mišića, što obično prođe za nekoliko dana. Bol u viličnom zglobu, nadražaj kože ili odbijanje djeteta da nosi aparat treba reći ortodontu; rezultat zavisi od faze rasta i redovnog nošenja i prati se na planiranim kontrolama"
+      },
+      "de": {
+        "what": "Extraorales kieferorthopädisches Gerät aus Kinnkappe, Kopfabstützung und Gummizügen, das beim wachsenden Kind das Vorwachsen des Unterkiefers bremst",
+        "how": "Die Kappe wird passend zur Kinnform ausgewählt oder angefertigt und über Gummizüge mit der Kopfabstützung verbunden; das Kind trägt sie zu Hause und im Schlaf nach dem Plan der Praxis, Zugkraft und Sitz werden bei Kontrollen geprüft",
+        "when": "Nach vorn stehender Unterkiefer und umgekehrter Frontzahnbiss in der Wachstumsphase, frühe Behandlung einer Klasse III, Ergänzung zu intraoralen Geräten",
+        "prep": "Kieferorthopädische Untersuchung mit Röntgenbildern und Einschätzung der Wachstumsphase; am Tag des Termins keine Vorbereitung",
+        "abnormal": "In den ersten Nächten sind Druck am Kinn und Muskelmüdigkeit üblich und lassen meist nach wenigen Tagen nach. Schmerzen im Kiefergelenk, gereizte Haut oder ein Kind, das das Gerät ablehnt, gehören in die Sprechstunde; das Ergebnis hängt von Wachstumsphase und regelmäßigem Tragen ab und wird bei den Kontrollen beurteilt"
+      },
+      "tr": {
+        "what": "Çeneye oturan kapak, baş desteği ve lastiklerden oluşan, büyüme çağındaki çocukta alt çenenin öne doğru büyümesini sınırlayan ağız dışı ortodontik aygıt",
+        "how": "Kapak çene biçimine göre seçilir ya da hazırlanır ve lastiklerle baş desteğine bağlanır; çocuk aygıtı evde ve uykuda ortodontistin verdiği saat planına göre kullanır, lastik kuvveti ve oturma kontrollerde gözden geçirilir",
+        "when": "Büyüme döneminde öne konumlanmış alt çene ve ön dişlerde ters kapanış, erken sınıf III tedavisi, ağız içi aygıtlara ek kullanım",
+        "prep": "Röntgenlerle ortodontik muayene ve büyüme evresinin değerlendirilmesi gerekir; seans günü hazırlık yoktur",
+        "abnormal": "İlk gecelerde çenede basınç ve kas yorgunluğu olur, genellikle birkaç günde geçer. Çene ekleminde ağrı, ciltte tahriş ya da çocuğun aygıtı kullanmak istememesi ortodontistle konuşulur; sonuç büyüme evresine ve düzenli kullanıma bağlıdır ve planlı kontrollerde değerlendirilir"
+      },
+      "sr_cyrl": {
+        "what": "Ванорални ортодонтски апарат од капице за браду, ослонца на глави и еластичних гумица, који код дјетета у расту задржава раст доње вилице према напријед",
+        "how": "Капица се бира или израђује према облику браде и гумицама спаја са ослонцем на глави; дијете је носи код куће и током спавања по распореду ортодонта, а јачина гумица и наљегање провјеравају се на контролама",
+        "when": "Доња вилица истурена према напријед и обрнути загриз предњих зуба у периоду раста, рано лијечење треће класе, допуна унутрашњим апаратима",
+        "prep": "Потребни су ортодонтски преглед и снимци са процјеном фазе раста; на дан посјете припрема није потребна",
+        "abnormal": "Првих ноћи осјећају се притисак на браду и замор мишића, што обично прође за неколико дана. Бол у виличном зглобу, надражај коже или одбијање дјетета да носи апарат треба рећи ортодонту; резултат зависи од фазе раста и редовног ношења и прати се на планираним контролама"
+      }
+    }
+  },
+  {
+    "slug": "conservative-treatment-of-periapical-process-and-dental-gangrene",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лечение зуба с погибшей пульпой и очагом воспаления у верхушки корня через корневые каналы, без операции на кости",
+        "how": "Зуб вскрывают, из каналов удаляют распавшиеся ткани, каналы обрабатывают инструментами и антисептиками, оставляют лечебную пасту под временной пломбой и меняют её, пока очаг не успокоится, затем каналы пломбируют постоянно; обычно несколько посещений в течение нескольких недель",
+        "when": "Зуб без реакции на холод с болью при накусывании, свищ или припухлость десны, затемнение у верхушки корня на снимке, обострение в ранее леченном зубе",
+        "prep": "Специальной подготовки нет; принести прежние снимки и сказать, были ли отёк, температура и приём антибиотиков",
+        "abnormal": "Между визитами зуб обычно успокаивается, а кость у верхушки корня восстанавливается месяцами и проверяется контрольными снимками. Нарастающая боль, отёк лица или температура — повод прийти раньше срока; если очаг не уменьшается, стоматолог обсуждает хирургический этап или удаление"
+      },
+      "en": {
+        "what": "Treatment of a tooth with dead pulp and inflammation at the root tip, carried out through the root canals without bone surgery",
+        "how": "The tooth is opened, decomposed tissue is removed from the canals, the canals are shaped and rinsed with antiseptics, a medicated dressing is left under a temporary filling and renewed until the focus calms down, then the canals are filled permanently; usually several visits over several weeks",
+        "when": "A tooth that does not react to cold but hurts on biting, a gum fistula or swelling, a dark area at the root tip on a radiograph, a flare-up in a previously treated tooth",
+        "prep": "No special preparation; bring earlier radiographs and mention any swelling, fever or antibiotics taken",
+        "abnormal": "Between visits the tooth usually settles, while bone at the root tip heals over months and is checked on follow-up radiographs. Increasing pain, facial swelling or fever is a reason to come earlier; if the focus does not shrink, the dentist discusses a surgical step or extraction"
+      },
+      "sr": {
+        "what": "Liječenje zuba sa odumrlom pulpom i žarištem upale uz vrh korijena, kroz korijenske kanale i bez operacije na kosti",
+        "how": "Zub se otvori, iz kanala se ukloni raspadnuto tkivo, kanali se obrade instrumentima i antisepticima, pod privremenu plombu se stavi ljekoviti uložak koji se mijenja dok se žarište ne smiri, a potom se kanali trajno pune; obično nekoliko posjeta tokom nekoliko sedmica",
+        "when": "Zub koji ne reaguje na hladno a boli pri zagrizu, fistula ili oteklina desni, zasjenjenje uz vrh korijena na snimku, pogoršanje u ranije liječenom zubu",
+        "prep": "Posebna priprema nije potrebna; ponijeti ranije snimke i reći da li je bilo otoka, temperature i uzimanja antibiotika",
+        "abnormal": "Između posjeta zub se obično smiri, a kost uz vrh korijena zarasta mjesecima i prati se kontrolnim snimcima. Bol koja raste, oteklina lica ili temperatura razlog su za raniji dolazak; ako se žarište ne smanjuje, stomatolog razgovara o hirurškom zahvatu ili vađenju"
+      },
+      "de": {
+        "what": "Behandlung eines Zahns mit abgestorbener Pulpa und Entzündungsherd an der Wurzelspitze über die Wurzelkanäle, ohne Eingriff am Knochen",
+        "how": "Der Zahn wird eröffnet, zerfallenes Gewebe aus den Kanälen entfernt, die Kanäle werden aufbereitet und antiseptisch gespült, eine medikamentöse Einlage bleibt unter provisorischem Verschluss und wird gewechselt, bis der Herd ruhig ist, danach werden die Kanäle endgültig gefüllt; meist mehrere Termine über einige Wochen",
+        "when": "Zahn ohne Kältereaktion, der beim Zubeißen schmerzt, Fistel oder Schwellung am Zahnfleisch, Aufhellung an der Wurzelspitze im Röntgenbild, Beschwerden an einem früher behandelten Zahn",
+        "prep": "Keine besondere Vorbereitung; frühere Röntgenbilder mitbringen und Schwellung, Fieber oder eingenommene Antibiotika angeben",
+        "abnormal": "Zwischen den Terminen beruhigt sich der Zahn meist, der Knochen an der Wurzelspitze heilt über Monate und wird mit Kontrollaufnahmen überprüft. Zunehmende Schmerzen, Gesichtsschwellung oder Fieber sind ein Grund, früher zu kommen; verkleinert sich der Herd nicht, bespricht die Praxis einen chirurgischen Schritt oder die Entfernung"
+      },
+      "tr": {
+        "what": "Pulpası ölmüş ve kök ucunda iltihap odağı bulunan dişin, kemiğe cerrahi girişim yapılmadan kök kanalları üzerinden tedavisi",
+        "how": "Diş açılır, kanallardaki parçalanmış doku çıkarılır, kanallar eğelerle şekillendirilip antiseptiklerle yıkanır, geçici dolgu altına ilaçlı pansuman konur ve odak sakinleşene kadar yenilenir, sonra kanallar kalıcı doldurulur; genellikle birkaç hafta içinde birkaç seans",
+        "when": "Soğuğa yanıt vermeyen ama ısırınca ağrıyan diş, diş etinde fistül veya şişlik, filmde kök ucunda koyuluk, daha önce tedavi edilmiş dişte alevlenme",
+        "prep": "Özel hazırlık yoktur; eski filmleri getirmek ve şişlik, ateş ya da antibiyotik kullanımı olduysa bildirmek gerekir",
+        "abnormal": "Seanslar arasında diş genelde rahatlar, kök ucundaki kemik ise aylar içinde iyileşir ve kontrol filmleriyle izlenir. Artan ağrı, yüzde şişlik veya ateş erken gelmeyi gerektirir; odak küçülmezse hekim cerrahi aşamayı ya da çekimi değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Лијечење зуба са одумрлом пулпом и жариштем упале уз врх коријена, кроз коријенске канале и без операције на кости",
+        "how": "Зуб се отвори, из канала се уклони распаднуто ткиво, канали се обраде инструментима и антисептицима, под привремену пломбу се стави љековити уложак који се мијења док се жариште не смири, а потом се канали трајно пуне; обично неколико посјета током неколико седмица",
+        "when": "Зуб који не реагује на хладно а боли при загризу, фистула или отеклина десни, засјењење уз врх коријена на снимку, погоршање у раније лијеченом зубу",
+        "prep": "Посебна припрема није потребна; понијети раније снимке и рећи да ли је било отока, температуре и узимања антибиотика",
+        "abnormal": "Између посјета зуб се обично смири, а кост уз врх коријена зараста мјесецима и прати се контролним снимцима. Бол која расте, отеклина лица или температура разлог су за ранији долазак; ако се жариште не смањује, стоматолог разговара о хируршком захвату или вађењу"
+      }
+    }
+  },
+  {
+    "slug": "crown-or-bridge-recementation",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Повторная фиксация на цемент коронки или мостовидного протеза, которые отклеились, но остались целыми",
+        "how": "С конструкции и опорного зуба убирают старый цемент, проверяют посадку и прилегание края, затем фиксируют свежим цементом и выверяют прикус; обычно один визит, 20-30 минут",
+        "when": "Коронка снялась при еде или чистке, мост стал подвижным, появился привкус или запах из-под конструкции, временную фиксацию меняют на постоянную",
+        "prep": "Принести снятую работу, сохранив её чистой, и не пытаться приклеить её дома бытовым клеем",
+        "abnormal": "Если под коронкой находят кариес, трещину или перелом корня, повторную фиксацию не делают — стоматолог предлагает другое решение. Повторяющееся расцементирование, боль или подвижность опорного зуба нужно показать врачу"
+      },
+      "en": {
+        "what": "Re-cementing a crown or bridge that has come loose but is otherwise intact",
+        "how": "Old cement is cleaned off the restoration and the abutment tooth, fit and margins are checked, then the work is set with fresh cement and the bite is adjusted; usually one visit of 20-30 minutes",
+        "when": "A crown came off while eating or brushing, a bridge feels loose, a taste or odour appears from under the restoration, temporary cementation is replaced by a permanent one",
+        "prep": "Bring the restoration with you, keep it clean and do not try to glue it back at home with household adhesives",
+        "abnormal": "If decay, a crack or a root fracture is found underneath, re-cementing is not done and the dentist offers another solution. Repeated loosening, pain or a mobile abutment tooth should be checked by the dentist"
+      },
+      "sr": {
+        "what": "Ponovno cementiranje krunice ili mosta koji su se odvojili, a ostali neoštećeni",
+        "how": "Sa nadoknade i nosećeg zuba ukloni se stari cement, provjere se naljeganje i rubovi, pa se rad učvrsti svježim cementom i provjeri zagriz; obično jedna posjeta, 20-30 minuta",
+        "when": "Krunica je spala pri jelu ili pranju zuba, most se klima, javio se ukus ili zadah ispod nadoknade, privremeno cementiranje zamjenjuje se trajnim",
+        "prep": "Donijeti skinuti rad, čuvati ga čistim i ne lijepiti ga kod kuće kućnim ljepilima",
+        "abnormal": "Ako se ispod nadoknade nađu karijes, pukotina ili prelom korijena, cementiranje se ne radi, nego stomatolog predlaže drugo rješenje. Ponovljeno odvajanje, bol ili klimanje nosećeg zuba treba pokazati stomatologu"
+      },
+      "de": {
+        "what": "Wiederbefestigung einer gelösten, aber unbeschädigten Krone oder Brücke mit Zement",
+        "how": "Alter Zement wird von Restauration und Pfeilerzahn entfernt, Passung und Ränder werden geprüft, dann wird mit frischem Zement eingesetzt und der Biss kontrolliert; meist ein Termin von 20-30 Minuten",
+        "when": "Krone beim Essen oder Putzen abgegangen, Brücke wackelt, Geschmack oder Geruch unter der Restauration, Wechsel von provisorischer zu definitiver Zementierung",
+        "prep": "Die abgegangene Arbeit sauber mitbringen und zu Hause nicht mit Haushaltsklebern befestigen",
+        "abnormal": "Finden sich darunter Karies, ein Riss oder eine Wurzelfraktur, wird nicht neu zementiert, sondern eine andere Lösung besprochen. Wiederholtes Lösen, Schmerzen oder ein lockerer Pfeilerzahn gehören in die Praxis"
+      },
+      "tr": {
+        "what": "Yerinden çıkmış ama sağlam kalmış kronun veya köprünün yeniden simante edilmesi",
+        "how": "Restorasyon ve dayanak dişteki eski siman temizlenir, oturma ve kenar uyumu kontrol edilir, ardından yeni simanla yerleştirilip kapanış ayarlanır; genelde 20-30 dakikalık tek seans",
+        "when": "Kronun yemek yerken veya fırçalarken çıkması, köprünün oynaması, restorasyonun altından tat ya da koku gelmesi, geçici simantasyonun kalıcıyla değiştirilmesi",
+        "prep": "Çıkan kron veya köprüyü temiz biçimde getirmek gerekir, evde yapıştırıcılarla takmaya çalışmayın",
+        "abnormal": "Altında çürük, çatlak veya kök kırığı bulunursa yeniden simantasyon yapılmaz, hekim başka bir çözüm önerir. Tekrarlayan gevşeme, ağrı veya dayanak dişte oynama hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Поновно цементирање крунице или моста који су се одвојили, а остали неоштећени",
+        "how": "Са надокнаде и носећег зуба уклони се стари цемент, провјере се наљегање и рубови, па се рад учврсти свјежим цементом и провјери загриз; обично једна посјета, 20-30 минута",
+        "when": "Круница је спала при јелу или прању зуба, мост се клима, јавио се укус или задах испод надокнаде, привремено цементирање замјењује се трајним",
+        "prep": "Донијети скинути рад, чувати га чистим и не лијепити га код куће кућним љепилима",
+        "abnormal": "Ако се испод надокнаде нађу каријес, пукотина или прелом коријена, цементирање се не ради, него стоматолог предлаже друго рјешење. Поновљено одвајање, бол или климање носећег зуба треба показати стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "custom-dental-guard",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Капа из прочного пластика, изготовленная по слепку или скану конкретных челюстей для защиты зубов от ударов и от сжимания",
+        "how": "Снимают слепок или цифровой скан, в лаборатории по модели формуют капу, затем её припасовывают во рту и выверяют по прикусу; обычно два визита с перерывом на изготовление",
+        "when": "Контактные виды спорта, ночное сжимание и скрежетание зубами, сколы эмали и повышенная стираемость, защита виниров и коронок, напряжение жевательных мышц по утрам",
+        "prep": "До снятия слепка зубы должны быть пролечены, иначе капа перестанет подходить после лечения; в день визита подготовки нет",
+        "abnormal": "Первые ночи капа ощущается громоздкой и усиливает слюноотделение, обычно это проходит. Боль в суставе, подвижность зубов, трещины на капе или изменившийся прикус — повод показаться стоматологу; у ребёнка капу меняют по мере роста челюстей"
+      },
+      "en": {
+        "what": "A guard of durable plastic made from an impression or scan of the individual jaws to protect the teeth from impact and from clenching",
+        "how": "An impression or digital scan is taken, the guard is formed on a model in the laboratory, then fitted in the mouth and adjusted to the bite; usually two visits with the fabrication in between",
+        "when": "Contact sports, night-time clenching and grinding, chipped enamel and increased wear, protection of veneers and crowns, tight chewing muscles in the morning",
+        "prep": "Teeth should be treated before the impression, otherwise the guard will no longer fit after treatment; no preparation on the day of the visit",
+        "abnormal": "The first nights the guard feels bulky and increases salivation, which usually passes. Joint pain, loose teeth, cracks in the guard or a changed bite are reasons to see the dentist; in a child the guard is remade as the jaws grow"
+      },
+      "sr": {
+        "what": "Štitnik od čvrste plastike izrađen po otisku ili skenu konkretnih vilica, koji štiti zube od udaraca i od stiskanja",
+        "how": "Uzme se otisak ili digitalni sken, u laboratoriji se na modelu oblikuje štitnik, pa se proba u ustima i uskladi sa zagrizom; obično dvije posjete uz pauzu za izradu",
+        "when": "Kontaktni sportovi, noćno stiskanje i škrgutanje zubima, odlomi gleđi i pojačano trošenje, zaštita ljuspica i krunica, napetost žvačnih mišića ujutru",
+        "prep": "Zubi treba da budu sanirani prije uzimanja otiska, inače štitnik poslije liječenja više ne naljegne; na dan posjete priprema nije potrebna",
+        "abnormal": "Prvih noći štitnik djeluje glomazno i pojačava lučenje pljuvačke, što obično prođe. Bol u viličnom zglobu, klimanje zuba, pukotine na štitniku ili promijenjen zagriz razlog su za pregled; kod djeteta se štitnik mijenja kako vilice rastu"
+      },
+      "de": {
+        "what": "Schiene aus festem Kunststoff, nach Abformung oder Scan der eigenen Kiefer gefertigt, zum Schutz der Zähne vor Schlägen und vor Pressen",
+        "how": "Abformung oder digitaler Scan, Herstellung der Schiene im Labor über ein Modell, danach Einprobe im Mund und Anpassung an den Biss; meist zwei Termine mit der Fertigung dazwischen",
+        "when": "Kontaktsport, nächtliches Pressen und Knirschen, abgesplitterter Schmelz und erhöhter Abrieb, Schutz von Veneers und Kronen, verspannte Kaumuskeln am Morgen",
+        "prep": "Die Zähne sollten vor der Abformung behandelt sein, sonst passt die Schiene nach der Behandlung nicht mehr; am Tag des Termins keine Vorbereitung",
+        "abnormal": "In den ersten Nächten wirkt die Schiene sperrig und der Speichelfluss nimmt zu, das legt sich meist. Gelenkschmerzen, lockere Zähne, Risse in der Schiene oder ein veränderter Biss gehören in die Praxis; bei Kindern wird die Schiene mit dem Kieferwachstum erneuert"
+      },
+      "tr": {
+        "what": "Kişinin kendi çenelerinden alınan ölçü ya da tarama ile hazırlanan, dişleri darbeden ve sıkmadan koruyan sert plastik plak",
+        "how": "Ölçü veya dijital tarama alınır, laboratuvarda model üzerinde plak şekillendirilir, sonra ağızda prova edilip kapanışa göre ayarlanır; genelde yapım arası ile iki seans",
+        "when": "Temaslı sporlar, gece diş sıkma ve gıcırdatma, minede kırıklar ve artmış aşınma, kaplama ve kronların korunması, sabahları çiğneme kaslarında gerginlik",
+        "prep": "Ölçüden önce dişlerin tedavi edilmiş olması gerekir, aksi halde tedaviden sonra plak uymaz; seans günü hazırlık yoktur",
+        "abnormal": "İlk gecelerde plak hacimli hissedilir ve tükürük artar, bu genellikle geçer. Eklem ağrısı, dişlerde oynama, plakta çatlak ya da kapanışta değişiklik hekime gösterilir; çocuklarda çeneler büyüdükçe plak yenilenir"
+      },
+      "sr_cyrl": {
+        "what": "Штитник од чврсте пластике израђен по отиску или скену конкретних вилица, који штити зубе од удараца и од стискања",
+        "how": "Узме се отисак или дигитални скен, у лабораторији се на моделу обликује штитник, па се проба у устима и усклади са загризом; обично двије посјете уз паузу за израду",
+        "when": "Контактни спортови, ноћно стискање и шкргутање зубима, одломи глеђи и појачано трошење, заштита љуспица и круница, напетост жвачних мишића ујутру",
+        "prep": "Зуби треба да буду санирани прије узимања отиска, иначе штитник послије лијечења више не наљегне; на дан посјете припрема није потребна",
+        "abnormal": "Првих ноћи штитник дјелује гломазно и појачава лучење пљувачке, што обично прође. Бол у виличном зглобу, климање зуба, пукотине на штитнику или промијењен загриз разлог су за преглед; код дјетета се штитник мијења како вилице расту"
+      }
+    }
+  },
+  {
+    "slug": "denture-clasp-addition",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ремонт съёмного протеза: в базис добавляют проволочный крючок, который удерживает протез на опорном зубе",
+        "how": "Снимают слепок с протезом во рту или передают протез в лабораторию, там кламмер выгибают и вваривают в пластмассу, затем протез примеряют и корректируют прилегание; обычно от нескольких часов до пары дней без протеза",
+        "when": "Протез стал хуже держаться, прежний крючок сломался или разогнулся, после удаления соседнего зуба опора изменилась",
+        "prep": "Прийти с протезом и принести отломившийся крючок, если он сохранился",
+        "abnormal": "Первые дни новый крючок ощущается и может слегка натирать, это снимают коррекцией. Если протез по-прежнему срывается при жевании или опорный зуб начинает болеть и шататься, нужен осмотр стоматолога: иногда требуется перебазировка или новый протез"
+      },
+      "en": {
+        "what": "Repair of a removable denture: a wire clasp is added to the base so that the denture holds on an abutment tooth",
+        "how": "An impression is taken with the denture in place or the denture goes to the laboratory, where the clasp is bent and welded into the acrylic, then the denture is tried in and the fit adjusted; usually a few hours to a couple of days without the denture",
+        "when": "The denture holds less well, the previous clasp broke or lost its shape, the support changed after a neighbouring tooth was removed",
+        "prep": "Come with the denture and bring the broken clasp if you kept it",
+        "abnormal": "For the first days the new clasp is noticeable and may rub slightly, which is solved by an adjustment. If the denture still slips while chewing, or the abutment tooth becomes painful or loose, see the dentist: a reline or a new denture may be needed"
+      },
+      "sr": {
+        "what": "Popravka pokretne proteze: u bazu se dodaje žičana kukica koja protezu drži za noseći zub",
+        "how": "Uzme se otisak sa protezom u ustima ili proteza ide u laboratoriju, gdje se kukica savije i uvari u akrilat, pa se proteza proba i naljeganje doradi; obično nekoliko sati do dva dana bez proteze",
+        "when": "Proteza slabije drži, ranija kukica se slomila ili razgnula, poslije vađenja susjednog zuba promijenio se oslonac",
+        "prep": "Doći sa protezom i ponijeti odlomljenu kukicu ako je sačuvana",
+        "abnormal": "Prvih dana nova kukica se osjeća i može blago žuljati, što se rješava doradom. Ako proteza i dalje spada pri žvakanju ili noseći zub zaboli i počne da se klima, potreban je pregled: ponekad treba podlaganje ili nova proteza"
+      },
+      "de": {
+        "what": "Reparatur einer herausnehmbaren Prothese: In die Basis wird eine Drahtklammer eingearbeitet, die die Prothese am Pfeilerzahn hält",
+        "how": "Abformung mit der Prothese im Mund oder Versand ins Labor, dort wird die Klammer gebogen und in den Kunststoff eingearbeitet, danach Einprobe und Anpassung; meist einige Stunden bis zwei Tage ohne Prothese",
+        "when": "Die Prothese hält schlechter, die bisherige Klammer ist gebrochen oder verbogen, nach Entfernung eines Nachbarzahns hat sich der Halt verändert",
+        "prep": "Mit der Prothese kommen und die abgebrochene Klammer mitbringen, falls vorhanden",
+        "abnormal": "Die ersten Tage ist die neue Klammer spürbar und kann leicht drücken, das wird durch Nacharbeit behoben. Rutscht die Prothese beim Kauen weiterhin oder schmerzt und lockert sich der Pfeilerzahn, ist eine Kontrolle nötig: manchmal braucht es eine Unterfütterung oder eine neue Prothese"
+      },
+      "tr": {
+        "what": "Hareketli protezin onarımı: protezi dayanak dişe tutturan tel kanca (kroşe) protez kaidesine eklenir",
+        "how": "Protez ağızdayken ölçü alınır ya da protez laboratuvara gönderilir, kanca bükülüp akrilik içine kaynatılır, sonra protez prova edilip oturması düzeltilir; genelde protezsiz birkaç saat ile iki gün",
+        "when": "Protezin tutuşunun azalması, önceki kancanın kırılması veya açılması, komşu diş çekildikten sonra desteğin değişmesi",
+        "prep": "Protezle gelmek ve kırılan kanca saklandıysa getirmek gerekir",
+        "abnormal": "İlk günlerde yeni kanca hissedilir ve hafif vurabilir, bu düzeltme ile giderilir. Protez çiğnerken hâlâ yerinden oynuyorsa ya da dayanak diş ağrıyıp sallanmaya başlıyorsa hekime başvurulmalıdır: bazen besleme ya da yeni protez gerekir"
+      },
+      "sr_cyrl": {
+        "what": "Поправка покретне протезе: у базу се додаје жичана кукица која протезу држи за носећи зуб",
+        "how": "Узме се отисак са протезом у устима или протеза иде у лабораторију, гдје се кукица савије и увари у акрилат, па се протеза проба и наљегање доради; обично неколико сати до два дана без протезе",
+        "when": "Протеза слабије држи, ранија кукица се сломила или разгнула, послије вађења сусједног зуба промијенио се ослонац",
+        "prep": "Доћи са протезом и понијети одломљену кукицу ако је сачувана",
+        "abnormal": "Првих дана нова кукица се осјећа и може благо жуљати, што се рјешава дорадом. Ако протеза и даље спада при жвакању или носећи зуб заболи и почне да се клима, потребан је преглед: понекад треба подлагање или нова протеза"
+      }
+    }
+  },
+  {
+    "slug": "denture-tooth-addition",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ремонт съёмного протеза: в базис добавляют искусственный зуб на место недавно утраченного собственного",
+        "how": "Снимают слепок с областью дефекта, в лаборатории подбирают зуб по цвету и форме и приваривают его к базису, затем протез примеряют и пришлифовывают по прикусу; чаще всего в тот же или на следующий день",
+        "when": "Удаление зуба у пациента, уже носящего протез, отлом искусственного зуба от базиса, расширение протеза на новый участок",
+        "prep": "Прийти с протезом; после удаления обычно ждут заживления лунки, срок называет врач",
+        "abnormal": "Несколько дней к изменившемуся протезу привыкают заново, возможны натирания, которые убирают коррекцией. Если протез давит, качается или зуб снова откалывается, нужен визит к стоматологу — по мере заживления десны может понадобиться перебазировка"
+      },
+      "en": {
+        "what": "Repair of a removable denture: an artificial tooth is added to the base in place of a recently lost natural one",
+        "how": "An impression including the gap is taken, the laboratory matches a tooth by shade and shape and bonds it to the base, then the denture is tried in and ground to the bite; most often the same or the next day",
+        "when": "A tooth extracted in a patient who already wears a denture, an artificial tooth broken off the base, extending the denture to a new area",
+        "prep": "Come with the denture; after an extraction the socket is usually allowed to heal first, the dentist says how long",
+        "abnormal": "It takes a few days to get used to the changed denture and sore spots may appear, which are removed by adjustment. If the denture presses, rocks or the tooth breaks off again, see the dentist — as the gum heals a reline may be needed"
+      },
+      "sr": {
+        "what": "Popravka pokretne proteze: u bazu se dodaje vještački zub na mjesto nedavno izgubljenog sopstvenog",
+        "how": "Uzme se otisak sa područjem bezubosti, u laboratoriji se zub izabere po boji i obliku i spoji sa bazom, pa se proteza proba i obrusi po zagrizu; najčešće isti ili naredni dan",
+        "when": "Vađenje zuba kod pacijenta koji već nosi protezu, odlomljen vještački zub sa baze, proširenje proteze na novo područje",
+        "prep": "Doći sa protezom; poslije vađenja se obično sačeka zarastanje rane, a rok određuje stomatolog",
+        "abnormal": "Na promijenjenu protezu se nekoliko dana ponovo navikava i mogu se javiti žuljevi, koji se uklanjaju doradom. Ako proteza pritiska, klima se ili se zub ponovo odlomi, treba se javiti stomatologu — kako desni zarastaju može zatrebati podlaganje"
+      },
+      "de": {
+        "what": "Reparatur einer herausnehmbaren Prothese: Ein künstlicher Zahn wird anstelle eines kürzlich verlorenen eigenen Zahns in die Basis eingearbeitet",
+        "how": "Abformung mit der Lücke, im Labor wird ein Zahn nach Farbe und Form ausgewählt und mit der Basis verbunden, danach Einprobe und Einschleifen in den Biss; meist am selben oder am nächsten Tag",
+        "when": "Zahnentfernung bei einem Patienten, der bereits eine Prothese trägt, abgebrochener Kunststoffzahn, Erweiterung der Prothese auf einen neuen Bereich",
+        "prep": "Mit der Prothese kommen; nach einer Entfernung wird meist die Abheilung der Wunde abgewartet, den Zeitpunkt nennt die Praxis",
+        "abnormal": "An die veränderte Prothese gewöhnt man sich einige Tage neu, Druckstellen werden durch Nacharbeit beseitigt. Drückt die Prothese, kippt sie oder bricht der Zahn erneut ab, ist ein Termin nötig — mit der Abheilung des Zahnfleisches kann eine Unterfütterung erforderlich werden"
+      },
+      "tr": {
+        "what": "Hareketli protezin onarımı: yakın zamanda kaybedilen doğal dişin yerine kaideye yapay diş eklenir",
+        "how": "Boşluğu içeren ölçü alınır, laboratuvarda renk ve biçime göre seçilen diş kaideye birleştirilir, sonra protez prova edilip kapanışa göre aşındırılır; çoğunlukla aynı ya da ertesi gün",
+        "when": "Zaten protez kullanan hastada diş çekimi, yapay dişin kaideden kopması, protezin yeni bölgeye genişletilmesi",
+        "prep": "Protezle gelmek gerekir; çekimden sonra genellikle soketin iyileşmesi beklenir, süreyi hekim söyler",
+        "abnormal": "Değişen proteze birkaç günde yeniden alışılır, vuruk noktaları düzeltme ile giderilir. Protez bastırıyor, oynuyor ya da diş yine kopuyorsa hekime gidilmelidir — diş eti iyileştikçe besleme gerekebilir"
+      },
+      "sr_cyrl": {
+        "what": "Поправка покретне протезе: у базу се додаје вјештачки зуб на мјесто недавно изгубљеног сопственог",
+        "how": "Узме се отисак са подручјем безубости, у лабораторији се зуб изабере по боји и облику и споји са базом, па се протеза проба и обруси по загризу; најчешће исти или наредни дан",
+        "when": "Вађење зуба код пацијента који већ носи протезу, одломљен вјештачки зуб са базе, проширење протезе на ново подручје",
+        "prep": "Доћи са протезом; послије вађења се обично сачека зарастање ране, а рок одређује стоматолог",
+        "abnormal": "На промијењену протезу се неколико дана поново навикава и могу се јавити жуљеви, који се уклањају дорадом. Ако протеза притиска, клима се или се зуб поново одломи, треба се јавити стоматологу — како десни зарастају може затребати подлагање"
+      }
+    }
+  },
+  {
+    "slug": "dolder-bar",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Металлическая балка, соединяющая имплантаты или сохранённые корни, на которой с помощью замков удерживается съёмный протез",
+        "how": "После приживления опор снимают слепок, в лаборатории изготавливают балку, примеряют и прикручивают её, а в протез встраивают матрицы, защёлкивающиеся на балке; несколько визитов с лабораторными этапами",
+        "when": "Полный съёмный протез, который плохо держится, протезирование на небольшом числе имплантатов, сохранённые корни как опора при выраженной убыли кости",
+        "prep": "Нужны снимок или КТ и осмотр врача, опоры должны прижиться; до начала протезирования полость рта санируют",
+        "abnormal": "Первые недели уходят на привыкание и на то, чтобы научиться снимать и надевать протез. Ослабший щелчок фиксации, воспаление десны вокруг балки или боль при нагрузке — повод к осмотру: матрицы со временем изнашиваются и заменяются, а под балкой нужна особенно тщательная гигиена"
+      },
+      "en": {
+        "what": "A metal bar connecting implants or retained roots, on which a removable denture is held by attachments",
+        "how": "Once the supports have healed an impression is taken, the bar is made in the laboratory, tried in and screwed on, while matching clips are built into the denture to snap onto the bar; several visits with laboratory stages",
+        "when": "A complete denture that holds poorly, prosthetics on a small number of implants, retained roots used as support when bone loss is pronounced",
+        "prep": "A radiograph or CT and an examination are needed and the supports must have healed; the mouth is treated before prosthetic work starts",
+        "abnormal": "The first weeks go into getting used to the retention and learning to take the denture in and out. A weakening snap, inflamed gum around the bar or pain under load should be checked: the clips wear out over time and are replaced, and hygiene under the bar needs particular care"
+      },
+      "sr": {
+        "what": "Metalna prečka koja spaja implantate ili sačuvane korijene, a na njoj se ležištima drži pokretna proteza",
+        "how": "Kada nosači zarastu uzme se otisak, prečka se izradi u laboratoriji, proba i pričvrsti, a u protezu se ugrade matrice koje naliježu na prečku; nekoliko posjeta sa laboratorijskim fazama",
+        "when": "Totalna proteza koja slabo drži, protetika na malom broju implantata, sačuvani korijeni kao oslonac kod izraženog gubitka kosti",
+        "prep": "Potrebni su snimak ili CT i pregled, a nosači moraju biti zarasli; usta se saniraju prije početka protetskog rada",
+        "abnormal": "Prve sedmice idu na navikavanje i na učenje kako se proteza skida i stavlja. Oslabljeno zadržavanje, upala desni oko prečke ili bol pri opterećenju razlog su za pregled: matrice se vremenom troše i mijenjaju, a higijena ispod prečke traži posebnu pažnju"
+      },
+      "de": {
+        "what": "Metallsteg, der Implantate oder erhaltene Wurzeln verbindet und über Halteelemente eine herausnehmbare Prothese trägt",
+        "how": "Nach Einheilung der Pfeiler Abformung, Herstellung des Stegs im Labor, Einprobe und Verschraubung, in die Prothese werden Reiter eingearbeitet, die auf dem Steg einrasten; mehrere Termine mit Laborschritten",
+        "when": "Schlecht haltende Totalprothese, Versorgung auf wenigen Implantaten, erhaltene Wurzeln als Pfeiler bei ausgeprägtem Knochenabbau",
+        "prep": "Röntgenbild oder DVT und eine Untersuchung sind nötig, die Pfeiler müssen eingeheilt sein; vor der prothetischen Arbeit wird der Mund saniert",
+        "abnormal": "Die ersten Wochen dienen der Gewöhnung und dem Üben von Ein- und Ausgliedern. Nachlassender Halt, entzündetes Zahnfleisch am Steg oder Schmerzen unter Belastung gehören in die Kontrolle: Die Reiter verschleißen mit der Zeit und werden ersetzt, die Reinigung unter dem Steg braucht besondere Sorgfalt"
+      },
+      "tr": {
+        "what": "İmplantları ya da korunan kökleri birbirine bağlayan, üzerindeki tutucularla hareketli protezi taşıyan metal bar",
+        "how": "Destekler iyileştikten sonra ölçü alınır, bar laboratuvarda hazırlanıp prova edilir ve vidalanır, proteze de barın üzerine oturan tutucular yerleştirilir; laboratuvar aşamalarıyla birkaç seans",
+        "when": "Tutuşu zayıf tam protez, az sayıda implant üzerine protez yapımı, belirgin kemik kaybında destek olarak korunan kökler",
+        "prep": "Film ya da tomografi ve muayene gerekir, desteklerin iyileşmiş olması şarttır; protetik çalışmadan önce ağız sağlığı düzenlenir",
+        "abnormal": "İlk haftalar alışmaya ve protezi takıp çıkarmayı öğrenmeye ayrılır. Tutuculuğun azalması, bar çevresinde diş eti iltihabı ya da çiğnerken ağrı kontrol gerektirir: tutucular zamanla aşınır ve değiştirilir, barın altındaki temizlik özel özen ister"
+      },
+      "sr_cyrl": {
+        "what": "Метална пречка која спаја имплантате или сачуване коријене, а на њој се лежиштима држи покретна протеза",
+        "how": "Када носачи зарасту узме се отисак, пречка се изради у лабораторији, проба и причврсти, а у протезу се уграде матрице које налијежу на пречку; неколико посјета са лабораторијским фазама",
+        "when": "Тотална протеза која слабо држи, протетика на малом броју имплантата, сачувани коријени као ослонац код израженог губитка кости",
+        "prep": "Потребни су снимак или CT и преглед, а носачи морају бити зарасли; уста се санирају прије почетка протетског рада",
+        "abnormal": "Прве седмице иду на навикавање и на учење како се протеза скида и ставља. Ослабљено задржавање, упала десни око пречке или бол при оптерећењу разлог су за преглед: матрице се временом троше и мијењају, а хигијена испод пречке тражи посебну пажњу"
+      }
+    }
+  },
+  {
+    "slug": "fixed-orthodontic-check-up",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Плановый визит во время лечения брекетами, на котором ортодонт оценивает перемещение зубов и активирует аппарат",
+        "how": "Снимают лигатуры и дугу, очищают брекеты, проверяют положение зубов, прикус и гигиену, ставят следующую дугу, при необходимости добавляют эластичные тяги или пружины; 15-30 минут, обычно раз в месяц-полтора",
+        "when": "Весь период ношения несъёмной аппаратуры, а также внеплановое обращение при отклеившемся брекете или травмирующей дуге",
+        "prep": "Почистить зубы перед приёмом, отметить, что беспокоило с прошлого визита, и принести эластики, если врач их выдавал",
+        "abnormal": "Два-три дня после смены дуги зубы ноют и хуже переносят твёрдую пищу — это ожидаемая реакция. Пропуски контролей растягивают лечение, а не стихающая боль, воспаление дёсен или белые пятна вокруг брекетов обсуждаются с ортодонтом"
+      },
+      "en": {
+        "what": "A scheduled visit during brace treatment at which the orthodontist assesses tooth movement and activates the appliance",
+        "how": "Ligatures and the archwire are removed, the brackets are cleaned, tooth position, bite and hygiene are checked, the next wire is placed and elastics or springs are added if needed; 15-30 minutes, usually every four to six weeks",
+        "when": "Throughout the time fixed appliances are worn, and as an unscheduled visit for a debonded bracket or a wire that is hurting",
+        "prep": "Brush your teeth before the appointment, note what has bothered you since the last visit and bring the elastics if they were given to you",
+        "abnormal": "For two or three days after a wire change the teeth ache and tolerate hard food less well, which is expected. Missed check-ups stretch the treatment out, while pain that does not settle, inflamed gums or white spots around the brackets are discussed with the orthodontist"
+      },
+      "sr": {
+        "what": "Planirana posjeta tokom liječenja fiksnim aparatom, na kojoj ortodont procjenjuje pomjeranje zuba i aktivira aparat",
+        "how": "Skinu se ligature i žica, bravice se očiste, provjere se položaj zuba, zagriz i higijena, postavi se naredna žica, a po potrebi se dodaju gumice ili opruge; 15-30 minuta, obično svakih mjesec do mjesec i po",
+        "when": "Cijeli period nošenja fiksnog aparata, kao i vanredni dolazak zbog otpale bravice ili žice koja povređuje",
+        "prep": "Oprati zube prije dolaska, zapisati šta je smetalo od prošle posjete i ponijeti gumice ako su date",
+        "abnormal": "Dva-tri dana poslije zamjene žice zubi su osjetljivi i teže podnose tvrdu hranu, što se očekuje. Propuštene kontrole produžavaju liječenje, a bol koja ne popušta, upala desni ili bijele mrlje oko bravica razgovaraju se sa ortodontom"
+      },
+      "de": {
+        "what": "Planmäßiger Termin während der Behandlung mit fester Spange, bei dem die Zahnbewegung beurteilt und das Gerät aktiviert wird",
+        "how": "Ligaturen und Bogen werden entfernt, die Brackets gereinigt, Zahnstellung, Biss und Mundhygiene geprüft, der nächste Bogen eingesetzt und bei Bedarf Gummizüge oder Federn ergänzt; 15-30 Minuten, meist alle vier bis sechs Wochen",
+        "when": "Während der gesamten Tragezeit der festen Apparatur sowie als zusätzlicher Termin bei gelöstem Bracket oder scheuerndem Bogen",
+        "prep": "Vor dem Termin Zähne putzen, notieren, was seit dem letzten Mal gestört hat, und ausgegebene Gummizüge mitbringen",
+        "abnormal": "Zwei bis drei Tage nach dem Bogenwechsel ziehen die Zähne und harte Speisen sind unangenehm, das ist zu erwarten. Versäumte Kontrollen verlängern die Behandlung; anhaltende Schmerzen, entzündetes Zahnfleisch oder weiße Flecken um die Brackets werden in der Praxis besprochen"
+      },
+      "tr": {
+        "what": "Sabit ortodontik tedavi sırasında dişlerin hareketinin değerlendirildiği ve aygıtın aktive edildiği planlı kontrol seansı",
+        "how": "Ligatürler ve tel çıkarılır, braketler temizlenir, diş konumu, kapanış ve ağız bakımı gözden geçirilir, sıradaki tel takılır, gerekirse lastik veya yay eklenir; 15-30 dakika, genelde dört-altı haftada bir",
+        "when": "Sabit aygıtın kullanıldığı tüm dönem ve ayrıca düşen braket ya da batan tel için plan dışı başvuru",
+        "prep": "Seanstan önce dişleri fırçalamak, son kontrolden bu yana rahatsız eden şeyleri not etmek ve verildiyse lastikleri getirmek gerekir",
+        "abnormal": "Tel değişiminden sonra iki üç gün dişlerde sızlama olur ve sert yiyecekler zor gelir, bu beklenen bir tepkidir. Kontrollerin aksaması tedaviyi uzatır; geçmeyen ağrı, diş eti iltihabı ya da braket çevresinde beyaz lekeler ortodontistle konuşulur"
+      },
+      "sr_cyrl": {
+        "what": "Планирана посјета током лијечења фиксним апаратом, на којој ортодонт процјењује помјерање зуба и активира апарат",
+        "how": "Скину се лигатуре и жица, бравице се очисте, провјере се положај зуба, загриз и хигијена, постави се наредна жица, а по потреби се додају гумице или опруге; 15-30 минута, обично сваких мјесец до мјесец и по",
+        "when": "Цијели период ношења фиксног апарата, као и ванредни долазак због отпале бравице или жице која повређује",
+        "prep": "Опрати зубе прије доласка, записати шта је сметало од прошле посјете и понијети гумице ако су дате",
+        "abnormal": "Два-три дана послије замјене жице зуби су осјетљиви и теже подносе тврду храну, што се очекује. Пропуштене контроле продужавају лијечење, а бол која не попушта, упала десни или бијеле мрље око бравица разговарају се са ортодонтом"
+      }
+    }
+  },
+  {
+    "slug": "fixed-prosthetic-impression",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Точный отпечаток обточенных зубов и соседних тканей, по которому в лаборатории изготавливают коронку, мост или винир",
+        "how": "Десну отодвигают нитью, ложку с массой держат во рту несколько минут до застывания или делают цифровой скан, дополнительно фиксируют прикус и подбирают цвет зуба; 15-30 минут",
+        "when": "После препарирования зуба под коронку или мост, при изготовлении виниров и вкладок, повторно, если предыдущий слепок получился неточным",
+        "prep": "Подготовки нет; при выраженном рвотном рефлексе предупредить врача заранее, спокойное носовое дыхание во время процедуры помогает",
+        "abnormal": "После отодвигания десны нитью она может кровить и быть чувствительной день-другой. Если край будущей коронки не пропечатался, слепок переснимают — это не осложнение; боль в зубе под временной коронкой после слепка показывают стоматологу"
+      },
+      "en": {
+        "what": "A precise imprint of the prepared teeth and surrounding tissue, used in the laboratory to make a crown, bridge or veneer",
+        "how": "The gum is retracted with a cord, a tray with impression material is held in the mouth for a few minutes until it sets, or a digital scan is taken, and the bite record and tooth shade are added; 15-30 minutes",
+        "when": "After a tooth has been prepared for a crown or bridge, when making veneers and inlays, and as a repeat if the previous impression was not accurate",
+        "prep": "No preparation; tell the dentist in advance about a strong gag reflex, calm breathing through the nose helps during the procedure",
+        "abnormal": "After cord retraction the gum may bleed and feel sensitive for a day or two. If the margin of the future crown did not register, the impression is simply retaken, which is not a complication; pain in a tooth under a temporary crown after the impression should be shown to the dentist"
+      },
+      "sr": {
+        "what": "Precizan otisak brušenih zuba i okolnog tkiva, po kojem se u laboratoriji izrađuju krunica, most ili ljuspica",
+        "how": "Desni se odmaknu koncem, kašika sa masom drži se u ustima nekoliko minuta do stvrdnjavanja ili se uzme digitalni sken, uz to se zabilježi zagriz i odredi boja zuba; 15-30 minuta",
+        "when": "Poslije brušenja zuba za krunicu ili most, pri izradi ljuspica i inleja, ponovo ako prethodni otisak nije bio precizan",
+        "prep": "Priprema nije potrebna; kod izraženog nagona na povraćanje reći stomatologu unaprijed, mirno disanje na nos pomaže tokom zahvata",
+        "abnormal": "Poslije odmicanja desni koncem one mogu krvariti i biti osjetljive dan-dva. Ako se rub buduće krunice nije otisnuo, otisak se jednostavno ponovi, što nije komplikacija; bol u zubu ispod privremene krunice poslije otiska treba pokazati stomatologu"
+      },
+      "de": {
+        "what": "Genaue Abformung der beschliffenen Zähne und des umliegenden Gewebes, nach der im Labor Krone, Brücke oder Veneer entstehen",
+        "how": "Das Zahnfleisch wird mit einem Faden verdrängt, der Löffel mit Abformmasse bleibt einige Minuten bis zum Aushärten im Mund oder es wird digital gescannt, dazu kommen Bissnahme und Farbbestimmung; 15-30 Minuten",
+        "when": "Nach dem Beschleifen eines Zahns für Krone oder Brücke, bei Veneers und Inlays, als Wiederholung, wenn die vorherige Abformung ungenau war",
+        "prep": "Keine Vorbereitung; einen starken Würgereiz vorher ansprechen, ruhiges Atmen durch die Nase hilft während der Abformung",
+        "abnormal": "Nach der Fadenlegung kann das Zahnfleisch ein bis zwei Tage bluten und empfindlich sein. Ist der Kronenrand nicht abgebildet, wird die Abformung wiederholt, das ist keine Komplikation; Schmerzen unter dem Provisorium nach der Abformung gehören in die Praxis"
+      },
+      "tr": {
+        "what": "Laboratuvarda kron, köprü ya da kaplama yapımında kullanılan, kesilmiş dişlerin ve çevre dokunun hassas ölçüsü",
+        "how": "Diş eti iple uzaklaştırılır, ölçü maddesiyle dolu kaşık sertleşene kadar birkaç dakika ağızda tutulur ya da dijital tarama yapılır, ayrıca kapanış kaydı alınır ve diş rengi belirlenir; 15-30 dakika",
+        "when": "Diş kron ya da köprü için kesildikten sonra, kaplama ve inley yapımında, önceki ölçü yeterince net çıkmadıysa tekrar",
+        "prep": "Hazırlık gerekmez; belirgin öğürme refleksi varsa hekime önceden söylenmeli, işlem sırasında burundan sakin nefes almak kolaylaştırır",
+        "abnormal": "İp uygulandıktan sonra diş eti bir iki gün kanayabilir ve hassas olabilir. Kron kenarı ölçüye çıkmadıysa ölçü yenilenir, bu bir komplikasyon değildir; ölçüden sonra geçici kron altındaki ağrı hekime gösterilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Прецизан отисак брушених зуба и околног ткива, по којем се у лабораторији израђују круница, мост или љуспица",
+        "how": "Десни се одмакну концем, кашика са масом држи се у устима неколико минута до стврдњавања или се узме дигитални скен, уз то се забиљежи загриз и одреди боја зуба; 15-30 минута",
+        "when": "Послије брушења зуба за круницу или мост, при изради љуспица и инлеја, поново ако претходни отисак није био прецизан",
+        "prep": "Припрема није потребна; код израженог нагона на повраћање рећи стоматологу унапријед, мирно дисање на нос помаже током захвата",
+        "abnormal": "Послије одмицања десни концем оне могу крварити и бити осјетљиве дан-два. Ако се руб будуће крунице није отиснуо, отисак се једноставно понови, што није компликација; бол у зубу испод привремене крунице послије отиска треба показати стоматологу"
+      }
+    }
+  },
+  {
+    "slug": "flap-surgery-periodontal",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Операция на дёснах, при которой десну отслаивают лоскутом, чтобы под визуальным контролем очистить поверхность корней и костные карманы",
+        "how": "Под местной анестезией делают разрез и отслаивают лоскут, убирают грануляции и отложения с корней, при необходимости вносят костнозамещающий материал или мембрану, лоскут возвращают на место и ушивают; около часа на участок",
+        "when": "Пародонтит с глубокими карманами, которые не закрылись после чистки под десной, подвижность зубов и убыль кости вокруг них, гноетечение из кармана",
+        "prep": "Сначала снимают налёт и камень и успокаивают воспаление, нужен снимок; сообщить о разжижающих кровь препаратах, диабете и курении, которые влияют на заживление",
+        "abnormal": "Неделю-две возможны отёк, синяк и чувствительность зубов, а после заживления десна садится и шейки зубов могут оголиться — об этом предупреждают заранее. Швы снимают на контрольном приёме; кровотечение, нарастающая боль или температура требуют связаться с врачом раньше срока"
+      },
+      "en": {
+        "what": "Gum surgery in which the gum is lifted as a flap so that root surfaces and bony pockets can be cleaned under direct vision",
+        "how": "Under local anaesthesia an incision is made and the flap raised, granulation tissue and deposits are removed from the roots, bone substitute or a membrane is placed if needed, then the flap is repositioned and sutured; about an hour per area",
+        "when": "Periodontitis with deep pockets that did not close after cleaning below the gum, loose teeth with bone loss around them, pus discharge from a pocket",
+        "prep": "Plaque and calculus are removed and inflammation settled first, and a radiograph is needed; report blood-thinning medication, diabetes and smoking, which affect healing",
+        "abnormal": "Swelling, bruising and tooth sensitivity are possible for one to two weeks, and after healing the gum recedes so tooth necks may become exposed, which is explained beforehand. Sutures are removed at a follow-up visit; bleeding, increasing pain or fever means contacting the clinic earlier"
+      },
+      "sr": {
+        "what": "Operacija na desnima pri kojoj se desni odvoje u obliku režnja, da bi se pod kontrolom oka očistile površine korijena i koštani džepovi",
+        "how": "U lokalnoj anesteziji napravi se rez i podigne režanj, uklone se granulacije i naslage sa korijena, po potrebi se unese koštani nadomjestak ili membrana, pa se režanj vrati i ušije; oko sat vremena po području",
+        "when": "Parodontitis sa dubokim džepovima koji se nisu zatvorili poslije čišćenja ispod desni, klimanje zuba uz gubitak kosti, curenje gnoja iz džepa",
+        "prep": "Prvo se uklone naslage i smiri upala, potreban je snimak; reći za lijekove koji razrjeđuju krv, dijabetes i pušenje, jer utiču na zarastanje",
+        "abnormal": "Sedmicu-dvije mogući su otok, modrica i osjetljivost zuba, a poslije zarastanja desni se povuku pa vratovi zuba mogu ostati otkriveni, o čemu se pacijent unaprijed obavještava. Konci se skidaju na kontroli; krvarenje, bol koja raste ili temperatura traže raniji kontakt sa stomatologom"
+      },
+      "de": {
+        "what": "Zahnfleischoperation, bei der das Zahnfleisch als Lappen abgehoben wird, um Wurzeloberflächen und Knochentaschen unter Sicht zu reinigen",
+        "how": "In örtlicher Betäubung Schnitt und Abheben des Lappens, Entfernung von Granulationsgewebe und Belägen von den Wurzeln, bei Bedarf Knochenersatzmaterial oder Membran, dann Zurücklegen und Nähen des Lappens; etwa eine Stunde je Bereich",
+        "when": "Parodontitis mit tiefen Taschen, die sich nach der Reinigung unter dem Zahnfleisch nicht geschlossen haben, gelockerte Zähne mit Knochenabbau, Eiteraustritt aus einer Tasche",
+        "prep": "Zuerst werden Beläge entfernt und die Entzündung beruhigt, ein Röntgenbild ist nötig; blutverdünnende Medikamente, Diabetes und Rauchen angeben, da sie die Heilung beeinflussen",
+        "abnormal": "Ein bis zwei Wochen sind Schwellung, Bluterguss und empfindliche Zähne möglich, nach der Heilung zieht sich das Zahnfleisch zurück und Zahnhälse können frei liegen, worüber vorher aufgeklärt wird. Die Fäden werden bei der Kontrolle entfernt; Blutung, zunehmende Schmerzen oder Fieber erfordern einen früheren Kontakt"
+      },
+      "tr": {
+        "what": "Diş etinin flep olarak kaldırılıp kök yüzeylerinin ve kemik ceplerinin doğrudan görerek temizlendiği diş eti ameliyatı",
+        "how": "Lokal anestezi altında kesi yapılıp flep kaldırılır, köklerdeki granülasyon dokusu ve birikintiler temizlenir, gerekirse kemik grefti ya da membran yerleştirilir, flep geri konup dikilir; bölge başına yaklaşık bir saat",
+        "when": "Diş eti altı temizliğinden sonra kapanmayan derin cepli periodontitis, çevresinde kemik kaybı olan sallanan dişler, cepten irin gelmesi",
+        "prep": "Önce diş taşı ve plak temizlenir, iltihap yatıştırılır ve film gerekir; iyileşmeyi etkilediği için kan sulandırıcı ilaçlar, diyabet ve sigara bildirilmelidir",
+        "abnormal": "Bir iki hafta şişlik, morluk ve diş hassasiyeti görülebilir, iyileşmeden sonra diş eti çekilir ve diş boyunları açığa çıkabilir, bu önceden anlatılır. Dikişler kontrol seansında alınır; kanama, artan ağrı ya da ateş durumunda daha erken başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Операција на деснима при којој се десни одвоје у облику режња, да би се под контролом ока очистиле површине коријена и коштани џепови",
+        "how": "У локалној анестезији направи се рез и подигне режањ, уклоне се гранулације и наслаге са коријена, по потреби се унесе коштани надомјестак или мембрана, па се режањ врати и ушије; око сат времена по подручју",
+        "when": "Пародонтитис са дубоким џеповима који се нису затворили послије чишћења испод десни, климање зуба уз губитак кости, цурење гноја из џепа",
+        "prep": "Прво се уклоне наслаге и смири упала, потребан је снимак; рећи за лијекове који разрјеђују крв, дијабетес и пушење, јер утичу на зарастање",
+        "abnormal": "Седмицу-двије могући су оток, модрица и осјетљивост зуба, а послије зарастања десни се повуку па вратови зуба могу остати откривени, о чему се пацијент унапријед обавјештава. Конци се скидају на контроли; крварење, бол која расте или температура траже ранији контакт са стоматологом"
+      }
+    }
+  },
+  {
+    "slug": "frc-post-build-up",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Восстановление культи зуба композитом на штифте из стекловолокна в композитной матрице (FRC), который вклеивают в корневой канал",
+        "how": "Часть пломбировочного материала выводят из канала, штифт FRC примеряют и укорачивают, вклеивают адгезивной системой и моделируют вокруг него культю композитом, затем придают ей форму под будущую коронку; один приём",
+        "when": "Зуб с запломбированными каналами и малым остатком стенок при крепком корне, подготовка опоры под коронку или мост",
+        "prep": "Лечение каналов должно быть завершено, нужен контрольный снимок; отдельной подготовки в день визита нет",
+        "abnormal": "FRC по жёсткости ближе к тканям зуба, чем металл, поэтому нагрузку распределяет мягче и не просвечивает через реставрацию. Боль при накусывании, подвижность надстройки или скол стенки — повод к осмотру; такой зуб обычно закрывают коронкой, чтобы снизить риск перелома корня"
+      },
+      "en": {
+        "what": "Build-up of a tooth core in composite over a fibre-reinforced composite (FRC) post cemented into the root canal",
+        "how": "Part of the root filling is removed from the canal, the FRC post is tried in and shortened, bonded with an adhesive system, and the core is modelled around it in composite and shaped for the future crown; one appointment",
+        "when": "A tooth with filled canals and little remaining wall but a sound root, preparing an abutment for a crown or bridge",
+        "prep": "Root canal treatment must be completed and a check radiograph is needed; no separate preparation on the day of the visit",
+        "abnormal": "FRC is closer in stiffness to tooth tissue than metal, so it distributes load more gently and does not shine through the restoration. Pain on biting, a mobile build-up or a chipped wall should be examined; such a tooth is usually covered with a crown to lower the risk of root fracture"
+      },
+      "sr": {
+        "what": "Nadogradnja bataljka zuba kompozitom preko kočića od staklenih vlakana u kompozitnoj matrici (FRC) koji se lijepi u korijenski kanal",
+        "how": "Dio punjenja izvadi se iz kanala, FRC kočić se proba i skrati, zalijepi adhezivnim sistemom, a oko njega se kompozitom modelira bataljak i oblikuje za buduću krunicu; jedna posjeta",
+        "when": "Zub sa napunjenim kanalima i malo preostalih zidova uz čvrst korijen, priprema nosača za krunicu ili most",
+        "prep": "Liječenje kanala mora biti završeno i potreban je kontrolni snimak; posebne pripreme na dan posjete nema",
+        "abnormal": "FRC je po krutosti bliži zubnom tkivu nego metal, pa opterećenje raspoređuje blaže i ne prosijava kroz nadoknadu. Bol pri zagrizu, klimanje nadogradnje ili odlom zida razlog su za pregled; takav zub se obično pokriva krunicom da bi se smanjio rizik od preloma korijena"
+      },
+      "de": {
+        "what": "Stumpfaufbau mit Komposit über einem glasfaserverstärkten Kompositstift (FRC), der im Wurzelkanal verklebt wird",
+        "how": "Ein Teil der Wurzelfüllung wird aus dem Kanal entfernt, der FRC-Stift einprobiert und gekürzt, adhäsiv eingeklebt und der Stumpf ringsum aus Komposit aufgebaut und für die spätere Krone geformt; ein Termin",
+        "when": "Zahn mit gefüllten Kanälen und wenig Restwand bei fester Wurzel, Vorbereitung eines Pfeilers für Krone oder Brücke",
+        "prep": "Die Wurzelbehandlung muss abgeschlossen sein, ein Kontrollröntgenbild ist nötig; am Tag des Termins keine gesonderte Vorbereitung",
+        "abnormal": "FRC liegt in der Steifigkeit näher an der Zahnhartsubstanz als Metall, verteilt die Kaulast sanfter und schimmert nicht durch die Restauration. Schmerzen beim Zubeißen, ein beweglicher Aufbau oder eine abgeplatzte Wand gehören in die Kontrolle; ein solcher Zahn wird meist überkront, um das Risiko einer Wurzelfraktur zu senken"
+      },
+      "tr": {
+        "what": "Kök kanalına yapıştırılan cam elyaf takviyeli kompozit (FRC) post üzerine kompozitle diş kor yapımı",
+        "how": "Kanal dolgusunun bir bölümü çıkarılır, FRC post prova edilip kısaltılır, adeziv sistemle yapıştırılır ve çevresine kompozitle kor şekillendirilerek ileride yapılacak krona hazırlanır; tek seans",
+        "when": "Kanalları doldurulmuş, duvarı az kalmış ama kökü sağlam diş, kron veya köprü için dayanak hazırlanması",
+        "prep": "Kanal tedavisinin tamamlanmış olması ve kontrol filmi gerekir; seans günü ayrı bir hazırlık yoktur",
+        "abnormal": "FRC sertlik bakımından metale göre diş dokusuna daha yakındır, yükü daha yumuşak dağıtır ve restorasyondan yansımaz. Isırınca ağrı, korun oynaması ya da duvarda kırık muayene gerektirir; kök kırığı riskini azaltmak için böyle bir diş genellikle kronla kapatılır"
+      },
+      "sr_cyrl": {
+        "what": "Надоградња батаљка зуба композитом преко кочића од стаклених влакана у композитној матрици (FRC) који се лијепи у коријенски канал",
+        "how": "Дио пуњења извади се из канала, FRC кочић се проба и скрати, залијепи адхезивним системом, а око њега се композитом моделира батаљак и обликује за будућу круницу; једна посјета",
+        "when": "Зуб са напуњеним каналима и мало преосталих зидова уз чврст коријен, припрема носача за круницу или мост",
+        "prep": "Лијечење канала мора бити завршено и потребан је контролни снимак; посебне припреме на дан посјете нема",
+        "abnormal": "FRC је по крутости ближи зубном ткиву него метал, па оптерећење распоређује блаже и не просијава кроз надокнаду. Бол при загризу, климање надоградње или одлом зида разлог су за преглед; такав зуб се обично покрива круницом да би се смањио ризик од прелома коријена"
+      }
+    }
+  },
+  {
+    "slug": "frenulectomy",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Полное иссечение уздечки — тяжа слизистой между губой и десной или под языком — вместе с местом её прикрепления",
+        "how": "Под местной анестезией уздечку иссекают скальпелем или лазером, при необходимости отделяют волокна у кости и ушивают края раны; 15-30 минут",
+        "when": "Натяжение уздечки, оттягивающее десну и обнажающее шейку зуба, широкий промежуток между передними резцами, ограниченная подвижность языка, подготовка ложа под съёмный протез",
+        "prep": "Поесть перед визитом, сообщить о препаратах, влияющих на свёртывание крови, и хронических болезнях; при параллельном ортодонтическом лечении срок операции согласует ортодонт",
+        "abnormal": "Рана заживает одну-две недели, в это время белый налёт на ней, чувство натяжения и дискомфорт при разговоре ожидаемы. Кровотечение, нарастающая боль или температура — повод связаться с врачом; чтобы результат удержался, после операции часто назначают упражнения или ортодонтический этап"
+      },
+      "en": {
+        "what": "Complete excision of a frenulum — the mucosal fold between lip and gum or under the tongue — together with its attachment",
+        "how": "Under local anaesthesia the frenulum is excised with a scalpel or laser, fibres near the bone are released if needed and the wound edges are sutured; 15-30 minutes",
+        "when": "A pulling frenulum that drags the gum down and exposes a tooth neck, a wide gap between the front incisors, restricted tongue movement, preparing the ridge for a removable denture",
+        "prep": "Eat before the visit, report medication affecting blood clotting and chronic conditions; if orthodontic treatment is running in parallel, the orthodontist decides on the timing",
+        "abnormal": "The wound heals over one to two weeks, and a white coating on it, a feeling of tension and discomfort while speaking are expected during that time. Bleeding, increasing pain or fever is a reason to contact the clinic; to keep the result, exercises or an orthodontic step are often prescribed afterwards"
+      },
+      "sr": {
+        "what": "Potpuno uklanjanje frenuluma — nabora sluznice između usne i desni ili ispod jezika — zajedno sa mjestom njegovog pripoja",
+        "how": "U lokalnoj anesteziji frenulum se izreže skalpelom ili laserom, po potrebi se vlakna odvoje uz kost, a rubovi rane ušiju; 15-30 minuta",
+        "when": "Zatezanje frenuluma koje povlači desni i otkriva vrat zuba, širok razmak između prednjih sjekutića, ograničena pokretljivost jezika, priprema grebena za pokretnu protezu",
+        "prep": "Jesti prije dolaska, reći za lijekove koji utiču na zgrušavanje krvi i hronične bolesti; ako teče i ortodontsko liječenje, vrijeme zahvata određuje ortodont",
+        "abnormal": "Rana zarasta jednu do dvije sedmice, a bjelkasta naslaga na njoj, osjećaj zatezanja i nelagoda pri govoru u tom periodu se očekuju. Krvarenje, bol koja raste ili temperatura razlog su za javljanje stomatologu; da bi se rezultat zadržao, poslije zahvata se često preporučuju vježbe ili ortodontska faza"
+      },
+      "de": {
+        "what": "Vollständige Entfernung eines Bändchens — der Schleimhautfalte zwischen Lippe und Zahnfleisch oder unter der Zunge — samt seinem Ansatz",
+        "how": "In örtlicher Betäubung wird das Bändchen mit Skalpell oder Laser entfernt, bei Bedarf werden Fasern am Knochen gelöst und die Wundränder genäht; 15-30 Minuten",
+        "when": "Ziehendes Bändchen, das das Zahnfleisch abzieht und den Zahnhals freilegt, breite Lücke zwischen den Frontzähnen, eingeschränkte Zungenbeweglichkeit, Vorbereitung des Kieferkamms für eine Prothese",
+        "prep": "Vor dem Termin essen, Medikamente mit Einfluss auf die Blutgerinnung und chronische Erkrankungen angeben; läuft parallel eine kieferorthopädische Behandlung, bestimmt diese den Zeitpunkt",
+        "abnormal": "Die Wunde heilt über ein bis zwei Wochen, ein weißlicher Belag darauf, ein Spannungsgefühl und Missempfindungen beim Sprechen sind in dieser Zeit zu erwarten. Blutung, zunehmende Schmerzen oder Fieber sind ein Grund, sich zu melden; damit das Ergebnis hält, werden danach oft Übungen oder ein kieferorthopädischer Schritt angeschlossen"
+      },
+      "tr": {
+        "what": "Dudakla diş eti arasındaki ya da dil altındaki mukoza bağının (frenulum) yapışma yeriyle birlikte tümüyle çıkarılması",
+        "how": "Lokal anestezi altında frenulum bisturi ya da lazerle kesilip çıkarılır, gerekirse kemiğe yakın lifler serbestlenir ve yara kenarları dikilir; 15-30 dakika",
+        "when": "Diş etini aşağı çekip diş boynunu açığa çıkaran gergin bağ, ön kesiciler arasında geniş aralık, dil hareketinin kısıtlı olması, hareketli protez için kret hazırlığı",
+        "prep": "Seanstan önce yemek yemek, kan pıhtılaşmasını etkileyen ilaçları ve süregen hastalıkları bildirmek gerekir; eşzamanlı ortodontik tedavi varsa zamanlamayı ortodontist belirler",
+        "abnormal": "Yara bir iki haftada iyileşir; bu sürede üzerinde beyazımsı tabaka, gerginlik hissi ve konuşurken rahatsızlık beklenir. Kanama, artan ağrı ya da ateş durumunda hekime başvurulmalıdır; sonucun kalıcı olması için sonrasında sıklıkla egzersiz ya da ortodontik aşama önerilir"
+      },
+      "sr_cyrl": {
+        "what": "Потпуно уклањање френулума — набора слузнице између усне и десни или испод језика — заједно са мјестом његовог припоја",
+        "how": "У локалној анестезији френулум се изреже скалпелом или ласером, по потреби се влакна одвоје уз кост, а рубови ране ушију; 15-30 минута",
+        "when": "Затезање френулума које повлачи десни и открива врат зуба, широк размак између предњих сјекутића, ограничена покретљивост језика, припрема гребена за покретну протезу",
+        "prep": "Јести прије доласка, рећи за лијекове који утичу на згрушавање крви и хроничне болести; ако тече и ортодонтско лијечење, вријеме захвата одређује ортодонт",
+        "abnormal": "Рана зараста једну до двије седмице, а бјелкаста наслага на њој, осјећај затезања и нелагода при говору у том периоду се очекују. Крварење, бол која расте или температура разлог су за јављање стоматологу; да би се резултат задржао, послије захвата се често препоручују вјежбе или ортодонтска фаза"
+      }
+    }
+  },
+  {
+    "slug": "gangrene-treatment-single-root",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лечение однокорневого зуба, в котором пульпа погибла, а единственный канал заселён инфекцией",
+        "how": "Полость зуба вскрывают, канал освобождают от распада, обрабатывают инструментами и промывают антисептиками, нередко оставляют лекарство под временной пломбой, а на следующем приёме канал пломбируют и зуб закрывают; обычно один-два визита",
+        "when": "Потемневший передний зуб или премоляр без реакции на холод, ноющая боль при накусывании, свищ на десне, изменения у верхушки корня на снимке",
+        "prep": "Подготовка не нужна; принести прежние снимки и рассказать, были ли отёк и приём антибиотиков",
+        "abnormal": "Несколько дней после обработки канала возможна чувствительность при накусывании. Усиливающаяся боль, отёк или температура — повод прийти раньше; потемневший после лечения зуб часто требует внутреннего отбеливания или реставрации, это обсуждают со стоматологом"
+      },
+      "en": {
+        "what": "Treatment of a single-rooted tooth whose pulp has died and whose only canal has become infected",
+        "how": "The pulp chamber is opened, decomposed tissue is cleared from the canal, the canal is shaped and rinsed with antiseptics, a medication is often left under a temporary filling, and at the next appointment the canal is filled and the tooth closed; usually one or two visits",
+        "when": "A darkened front tooth or premolar with no reaction to cold, aching on biting, a fistula on the gum, changes at the root tip on a radiograph",
+        "prep": "No preparation needed; bring earlier radiographs and mention any swelling or antibiotics taken",
+        "abnormal": "Sensitivity to biting is possible for a few days after the canal is cleaned. Growing pain, swelling or fever is a reason to come earlier; a tooth that stayed dark after treatment often needs internal bleaching or a restoration, which is discussed with the dentist"
+      },
+      "sr": {
+        "what": "Liječenje jednokorijenog zuba kojem je pulpa odumrla, a jedini kanal je zahvaćen infekcijom",
+        "how": "Komora zuba se otvori, kanal se očisti od raspadnutog tkiva, obradi instrumentima i ispere antisepticima, često se ostavi lijek pod privremenom plombom, a na narednoj posjeti kanal se napuni i zub zatvori; obično jedna do dvije posjete",
+        "when": "Potamnio prednji zub ili pretkutnjak bez reakcije na hladno, tupa bol pri zagrizu, fistula na desni, promjene uz vrh korijena na snimku",
+        "prep": "Priprema nije potrebna; ponijeti ranije snimke i reći da li je bilo otoka i uzimanja antibiotika",
+        "abnormal": "Nekoliko dana poslije obrade kanala moguća je osjetljivost pri zagrizu. Bol koja jača, oteklina ili temperatura razlog su za raniji dolazak; zub koji je i poslije liječenja ostao taman često traži unutrašnje izbjeljivanje ili nadoknadu, o čemu se dogovara sa stomatologom"
+      },
+      "de": {
+        "what": "Behandlung eines einwurzeligen Zahns, dessen Pulpa abgestorben und dessen einziger Kanal infiziert ist",
+        "how": "Die Pulpakammer wird eröffnet, der Kanal vom Zerfallsgewebe befreit, aufbereitet und antiseptisch gespült, häufig bleibt eine Einlage unter provisorischem Verschluss, beim nächsten Termin wird der Kanal gefüllt und der Zahn verschlossen; meist ein bis zwei Termine",
+        "when": "Dunkler Frontzahn oder Prämolar ohne Kältereaktion, dumpfer Schmerz beim Zubeißen, Fistel am Zahnfleisch, Veränderungen an der Wurzelspitze im Röntgenbild",
+        "prep": "Keine Vorbereitung nötig; frühere Röntgenbilder mitbringen und Schwellung oder eingenommene Antibiotika angeben",
+        "abnormal": "Einige Tage nach der Aufbereitung ist Empfindlichkeit beim Zubeißen möglich. Zunehmende Schmerzen, Schwellung oder Fieber sind ein Grund, früher zu kommen; ein nach der Behandlung dunkel gebliebener Zahn braucht oft eine interne Aufhellung oder eine Restauration, was in der Praxis besprochen wird"
+      },
+      "tr": {
+        "what": "Pulpası ölmüş ve tek kanalı enfekte olmuş tek köklü dişin tedavisi",
+        "how": "Pulpa odası açılır, kanal parçalanmış dokudan temizlenir, eğelerle şekillendirilip antiseptiklerle yıkanır, sıklıkla geçici dolgu altına ilaç bırakılır, sonraki seansta kanal doldurulup diş kapatılır; genellikle bir iki seans",
+        "when": "Soğuğa yanıt vermeyen koyulaşmış ön diş ya da küçük azı, ısırınca künt ağrı, diş etinde fistül, filmde kök ucunda değişiklik",
+        "prep": "Hazırlık gerekmez; eski filmleri getirmek, şişlik ya da antibiyotik kullanımı olduysa bildirmek yeterlidir",
+        "abnormal": "Kanal temizliğinden sonra birkaç gün ısırırken hassasiyet olabilir. Artan ağrı, şişlik ya da ateş erken başvuru gerektirir; tedaviden sonra koyu kalan diş çoğu kez iç ağartma ya da restorasyon gerektirir, bu hekimle konuşulur"
+      },
+      "sr_cyrl": {
+        "what": "Лијечење једнокоријеног зуба којем је пулпа одумрла, а једини канал је захваћен инфекцијом",
+        "how": "Комора зуба се отвори, канал се очисти од распаднутог ткива, обради инструментима и испере антисептицима, често се остави лијек под привременом пломбом, а на наредној посјети канал се напуни и зуб затвори; обично једна до двије посјете",
+        "when": "Потамнио предњи зуб или преткутњак без реакције на хладно, тупа бол при загризу, фистула на десни, промјене уз врх коријена на снимку",
+        "prep": "Припрема није потребна; понијети раније снимке и рећи да ли је било отока и узимања антибиотика",
+        "abnormal": "Неколико дана послије обраде канала могућа је осјетљивост при загризу. Бол која јача, отеклина или температура разлог су за ранији долазак; зуб који је и послије лијечења остао таман често тражи унутрашње избјељивање или надокнаду, о чему се договара са стоматологом"
+      }
+    }
+  },
+  {
+    "slug": "gangrene-treatment-three-root",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Лечение трёхкорневого зуба, обычно верхнего моляра, с погибшей пульпой и инфицированными каналами",
+        "how": "Все каналы находят и проходят на рабочую длину — их нередко оказывается четыре, — очищают от распада, промывают и чаще всего оставляют лекарство на одну-две недели, затем пломбируют и восстанавливают коронковую часть; как правило два-три приёма",
+        "when": "Боль при накусывании на жевательный зуб, свищ или припухлость в проекции корней, разрушенный зуб без реакции на холод, затемнения у верхушек на снимке, подготовка опорного зуба под коронку",
+        "prep": "Особой подготовки нет; запланировать длительные приёмы, принести снимки и сказать о приёме антибиотиков",
+        "abnormal": "Чувствительность при жевании держится несколько дней после каждой обработки, а в изогнутых и узких каналах лечение занимает больше времени. Отёк щеки, температура или нарастающая боль требуют внепланового визита; заживление кости у верхушек проверяют снимком спустя месяцы, а зуб после лечения обычно укрепляют коронкой"
+      },
+      "en": {
+        "what": "Treatment of a three-rooted tooth, usually an upper molar, with dead pulp and infected canals",
+        "how": "All canals are located and worked to length — there are often four of them — cleared of decomposed tissue, rinsed and most often dressed with medication for one to two weeks, then filled and the crown part restored; as a rule two to three appointments",
+        "when": "Pain on biting with a back tooth, a fistula or swelling over the roots, a broken-down tooth with no reaction to cold, dark areas at the root tips on a radiograph, preparing an abutment tooth for a crown",
+        "prep": "No special preparation; plan for long appointments, bring radiographs and mention antibiotics taken",
+        "abnormal": "Sensitivity on chewing lasts a few days after each session, and in curved or narrow canals the treatment takes longer. Cheek swelling, fever or increasing pain calls for an unscheduled visit; bone healing at the root tips is checked on a radiograph months later, and the tooth is usually reinforced with a crown afterwards"
+      },
+      "sr": {
+        "what": "Liječenje trokorijenog zuba, obično gornjeg kutnjaka, sa odumrlom pulpom i inficiranim kanalima",
+        "how": "Svi kanali se pronađu i prođu do radne dužine, a nerijetko ih ima četiri, očiste se od raspadnutog tkiva, isperu i najčešće se u njima ostavi lijek jednu do dvije sedmice, pa se pune i kruna zuba se obnovi; po pravilu dvije do tri posjete",
+        "when": "Bol pri zagrizu na zadnji zub, fistula ili oteklina iznad korijena, razoren zub bez reakcije na hladno, zasjenjenja uz vrhove korijena na snimku, priprema nosećeg zuba za krunicu",
+        "prep": "Posebne pripreme nema; planirati duže posjete, ponijeti snimke i reći za uzimanje antibiotika",
+        "abnormal": "Osjetljivost pri žvakanju traje nekoliko dana poslije svake obrade, a u zakrivljenim i uskim kanalima liječenje traje duže. Oteklina obraza, temperatura ili bol koja jača traže vanredni dolazak; zarastanje kosti uz vrhove korijena provjerava se snimkom nakon nekoliko mjeseci, a zub se poslije liječenja obično ojača krunicom"
+      },
+      "de": {
+        "what": "Behandlung eines dreiwurzeligen Zahns, meist eines oberen Molaren, mit abgestorbener Pulpa und infizierten Kanälen",
+        "how": "Alle Kanäle werden aufgesucht und auf Arbeitslänge aufbereitet — häufig sind es vier —, vom Zerfallsgewebe befreit, gespült und meist ein bis zwei Wochen medikamentös eingelegt, danach gefüllt und der Kronenanteil aufgebaut; in der Regel zwei bis drei Termine",
+        "when": "Schmerz beim Zubeißen auf einen Backenzahn, Fistel oder Schwellung über den Wurzeln, zerstörter Zahn ohne Kältereaktion, Aufhellungen an den Wurzelspitzen im Röntgenbild, Vorbereitung eines Pfeilerzahns für eine Krone",
+        "prep": "Keine besondere Vorbereitung; längere Termine einplanen, Röntgenbilder mitbringen und eingenommene Antibiotika angeben",
+        "abnormal": "Empfindlichkeit beim Kauen hält nach jeder Sitzung einige Tage an, in gekrümmten und engen Kanälen dauert die Behandlung länger. Wangenschwellung, Fieber oder zunehmende Schmerzen erfordern einen zusätzlichen Termin; die Knochenheilung an den Wurzelspitzen wird nach Monaten mit einer Aufnahme kontrolliert, und der Zahn wird danach meist mit einer Krone geschützt"
+      },
+      "tr": {
+        "what": "Pulpası ölmüş ve kanalları enfekte olmuş üç köklü dişin, genellikle üst azı dişinin tedavisi",
+        "how": "Tüm kanallar bulunup çalışma boyuna kadar şekillendirilir, sayıları çoğu kez dörttür, parçalanmış dokudan temizlenir, yıkanır ve çoğunlukla bir iki hafta ilaçlı bırakılır, sonra doldurulup diş kronu onarılır; kural olarak iki üç seans",
+        "when": "Arka dişle ısırınca ağrı, köklerin üzerinde fistül ya da şişlik, soğuğa yanıt vermeyen yıkık diş, filmde kök uçlarında koyuluk, kron için dayanak diş hazırlığı",
+        "prep": "Özel hazırlık yoktur; uzun seanslar planlamak, filmleri getirmek ve antibiyotik kullanımını bildirmek gerekir",
+        "abnormal": "Her seanstan sonra birkaç gün çiğnerken hassasiyet sürer, eğimli ve dar kanallarda tedavi daha uzun sürer. Yanakta şişlik, ateş ya da artan ağrı plan dışı başvuru gerektirir; kök uçlarındaki kemik iyileşmesi aylar sonra filmle kontrol edilir ve diş tedaviden sonra genellikle kronla güçlendirilir"
+      },
+      "sr_cyrl": {
+        "what": "Лијечење трокоријеног зуба, обично горњег кутњака, са одумрлом пулпом и инфицираним каналима",
+        "how": "Сви канали се пронађу и прођу до радне дужине, а неријетко их има четири, очисте се од распаднутог ткива, исперу и најчешће се у њима остави лијек једну до двије седмице, па се пуне и круна зуба се обнови; по правилу двије до три посјете",
+        "when": "Бол при загризу на задњи зуб, фистула или отеклина изнад коријена, разорен зуб без реакције на хладно, засјењења уз врхове коријена на снимку, припрема носећег зуба за круницу",
+        "prep": "Посебне припреме нема; планирати дуже посјете, понијети снимке и рећи за узимање антибиотика",
+        "abnormal": "Осјетљивост при жвакању траје неколико дана послије сваке обраде, а у закривљеним и уским каналима лијечење траје дуже. Отеклина образа, температура или бол која јача траже ванредни долазак; зарастање кости уз врхове коријена провјерава се снимком након неколико мјесеци, а зуб се послије лијечења обично ојача круницом"
+      }
+    }
+  }
 ]

@@ -1,617 +1,722 @@
 [
-	{
-		"slug": "left-eye-swab",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Взятие материала с конъюнктивы левого глаза для микробиологического посева",
-				"how": "Материал берут стерильным тампоном из нижнего конъюнктивального свода левого глаза и помещают в транспортную среду, при воспалении обоих глаз пробы берут раздельно",
-				"when": "Гнойное отделяемое и слипание ресниц слева, воспаление века и слёзного мешка, конъюнктивит, затянувшийся дольше обычного, обследование перед операцией на глазу",
-				"prep": "Утром до умывания и закапывания капель, без косметики на веках; линзы снять заранее, о применяемых каплях сказать врачу",
-				"abnormal": "Выделенные бактерии могут относиться к возбудителю воспаления или к обычной флоре края века, различие делают по количеству роста и картине осмотра. Результат и антибиотикограмму трактует офтальмолог"
-			},
-			"en": {
-				"what": "Collection of material from the conjunctiva of the left eye for microbiological culture",
-				"how": "A sterile swab is taken from the lower conjunctival sac of the left eye and placed in transport medium; if both eyes are inflamed, the samples are taken separately",
-				"when": "Purulent discharge and stuck eyelashes on the left, inflammation of the eyelid and the lacrimal sac, conjunctivitis lasting longer than usual, work-up before eye surgery",
-				"prep": "In the morning before washing and before instilling drops, without make-up on the lids; remove lenses in advance and tell the doctor which drops have been used",
-				"abnormal": "The bacteria isolated may be the cause of the inflammation or ordinary flora of the lid margin, and the amount of growth together with the examination helps tell them apart. The ophthalmologist interprets the result and the antibiogram"
-			},
-			"sr": {
-				"what": "Uzimanje materijala sa konjunktive lijevog oka za mikrobiološku kulturu",
-				"how": "Sterilnim štapićem uzima se bris iz donjeg konjunktivalnog svoda lijevog oka i stavlja u transportnu podlogu, a kod upale oba oka uzorci se uzimaju odvojeno",
-				"when": "Gnojni sekret i slijepljene trepavice lijevo, upala kapka i suzne vreće, konjunktivitis koji traje duže nego obično, obrada prije operacije oka",
-				"prep": "Ujutru prije umivanja i prije ukapavanja kapi, bez šminke na kapcima; sočiva izvaditi ranije, a ljekaru reći koje su kapi korišćene",
-				"abnormal": "Izolovane bakterije mogu biti uzročnik upale ili uobičajena flora ivice kapka, a razlikuju se po količini porasta i po nalazu pregleda. Nalaz i antibiogram tumači oftalmolog"
-			},
-			"de": {
-				"what": "Entnahme von Material von der Bindehaut des linken Auges für eine mikrobiologische Kultur",
-				"how": "Mit einem sterilen Tupfer wird Material aus dem unteren Bindehautsack des linken Auges entnommen und in ein Transportmedium gegeben; bei Entzündung beider Augen werden die Proben getrennt entnommen",
-				"when": "Eitriges Sekret und verklebte Wimpern links, Entzündung des Lids und des Tränensacks, länger als üblich anhaltende Bindehautentzündung, Abklärung vor einer Augenoperation",
-				"prep": "Morgens vor dem Waschen und vor dem Eintropfen, ohne Make-up auf den Lidern; Kontaktlinsen vorher herausnehmen und dem Arzt sagen, welche Tropfen angewendet wurden",
-				"abnormal": "Die nachgewiesenen Bakterien können Erreger der Entzündung oder normale Flora des Lidrands sein, wobei Menge des Wachstums und Untersuchungsbefund bei der Unterscheidung helfen. Befund und Antibiogramm beurteilt der Augenarzt"
-			},
-			"tr": {
-				"what": "Sol gözün konjonktivasından mikrobiyolojik kültür için örnek alınması",
-				"how": "Steril eküvyonla sol gözün alt konjonktiva kesesinden örnek alınır ve taşıma besiyerine konur, iki göz de iltihaplıysa örnekler ayrı ayrı alınır",
-				"when": "Solda iltihaplı akıntı ve kirpiklerin yapışması, göz kapağı ve gözyaşı kesesi iltihabı, olağandan uzun süren konjonktivit, göz ameliyatı öncesi değerlendirme",
-				"prep": "Sabah yüz yıkamadan ve damla damlatmadan önce, kapaklarda makyaj olmadan; lensler önceden çıkarılmalı, kullanılan damlalar hekime söylenmelidir",
-				"abnormal": "Üreyen bakteriler iltihabın etkeni olabileceği gibi kapak kenarının olağan florası da olabilir, ayrımda üreme miktarı ve muayene bulgusu yardımcı olur. Sonucu ve antibiyogramı göz hekimi yorumlar"
-			}
-		}
-	},
-	{
-		"slug": "left-eye-swab-fungi",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Исследование отделяемого конъюнктивы левого глаза на дрожжевые и плесневые грибы",
-				"how": "Стерильным тампоном берут материал из нижнего свода конъюнктивы левого глаза, его смотрят под микроскопом и засевают на среду для грибов, рост оценивают дольше, чем при бактериальном посеве",
-				"when": "Затяжное воспаление левого глаза без ответа на антибактериальные капли, длительное применение капель с гормонами, ношение контактных линз, травма глаза органическим материалом",
-				"prep": "Капли и мази перед забором не применять, веки не умывать, линзы снять; интервал после противогрибковых средств уточняет офтальмолог",
-				"abnormal": "Находка грибов может отражать участие грибковой флоры в воспалении или поверхностное загрязнение пробы. Результат вместе с осмотром оценивает офтальмолог"
-			},
-			"en": {
-				"what": "Examination of discharge from the conjunctiva of the left eye for yeasts and moulds",
-				"how": "A sterile swab collects material from the lower conjunctival sac of the left eye, which is examined under the microscope and plated on fungal medium, with growth followed longer than in a bacterial culture",
-				"when": "Protracted inflammation of the left eye with no response to antibiotic drops, long use of steroid drops, contact lens wear, eye injury by organic material",
-				"prep": "Do not use drops or ointments before sampling, do not wash the lids, remove lenses; the ophthalmologist sets the interval after antifungal products",
-				"abnormal": "A fungal finding may reflect the involvement of fungal flora in the inflammation or superficial contamination of the sample. The ophthalmologist assesses the result together with the examination"
-			},
-			"sr": {
-				"what": "Ispitivanje sekreta konjunktive lijevog oka na kvasnice i plijesni",
-				"how": "Sterilnim štapićem uzima se materijal iz donjeg svoda konjunktive lijevog oka, gleda se pod mikroskopom i zasijava na podlogu za gljivice, a porast se prati duže nego kod bakteriološke kulture",
-				"when": "Dugotrajna upala lijevog oka bez odgovora na antibiotske kapi, duža primjena kapi sa kortikosteroidima, nošenje kontaktnih sočiva, povreda oka organskim materijalom",
-				"prep": "Prije uzimanja ne koristiti kapi i masti, kapke ne umivati, sočiva izvaditi; razmak poslije antimikotika određuje oftalmolog",
-				"abnormal": "Nalaz gljivica može značiti učešće gljivične flore u upali ili površinsko zagađenje uzorka. Rezultat zajedno sa pregledom procjenjuje oftalmolog"
-			},
-			"de": {
-				"what": "Untersuchung des Bindehautsekrets des linken Auges auf Hefen und Schimmelpilze",
-				"how": "Mit einem sterilen Tupfer wird Material aus dem unteren Bindehautsack des linken Auges entnommen, mikroskopiert und auf Pilznährboden ausgestrichen, wobei das Wachstum länger beobachtet wird als bei einer Bakterienkultur",
-				"when": "Langwierige Entzündung des linken Auges ohne Ansprechen auf antibiotische Tropfen, längere Anwendung kortisonhaltiger Tropfen, Tragen von Kontaktlinsen, Augenverletzung durch organisches Material",
-				"prep": "Vor der Entnahme keine Tropfen und Salben anwenden, die Lider nicht waschen, Kontaktlinsen herausnehmen; den Abstand nach Antimykotika legt der Augenarzt fest",
-				"abnormal": "Ein Pilznachweis kann eine Beteiligung von Pilzflora an der Entzündung oder eine oberflächliche Verunreinigung der Probe widerspiegeln. Der Augenarzt beurteilt das Ergebnis zusammen mit dem Untersuchungsbefund"
-			},
-			"tr": {
-				"what": "Sol göz konjonktiva akıntısının maya ve küf mantarları yönünden incelenmesi",
-				"how": "Steril eküvyonla sol gözün alt konjonktiva kesesinden örnek alınır, mikroskopla incelenir ve mantar besiyerine ekilir, üreme bakteri kültürüne göre daha uzun süre izlenir",
-				"when": "Antibiyotikli damlalara yanıt vermeyen uzayan sol göz iltihabı, kortizonlu damlaların uzun süre kullanılması, kontakt lens kullanımı, gözün organik bir cisimle yaralanması",
-				"prep": "Örnek alınmadan önce damla ve merhem kullanılmamalı, kapaklar yıkanmamalı, lensler çıkarılmalıdır; antifungal kullanımından sonraki aralığı göz hekimi belirler",
-				"abnormal": "Mantar saptanması iltihaba mantar florasının katıldığını gösterebileceği gibi örneğin yüzeysel kirlenmesine de bağlı olabilir. Sonucu muayeneyle birlikte göz hekimi değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "perianal-swab-fungi",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Посев материала с кожи вокруг заднего прохода на дрожжевые грибы",
-				"how": "Стерильным тампоном проводят по кожным складкам вокруг ануса, материал засевают на среду для грибов и при росте определяют род возбудителя",
-				"when": "Стойкое покраснение, мокнутие и зуд в перианальных складках, опрелости у детей, жалобы после курса антибиотиков, изменения кожи при диабете и сниженном иммунитете",
-				"prep": "Материал берут до подмывания; накануне не применять противогрибковые кремы, свечи и присыпки",
-				"abnormal": "Дрожжевые грибы в этой зоне встречаются и без воспаления, поэтому находку сопоставляют с видом кожи и жалобами. Нужно ли лечение, решает дерматолог или проктолог"
-			},
-			"en": {
-				"what": "Culture of material from the skin around the anus for yeast fungi",
-				"how": "A sterile swab is passed over the skin folds around the anus, the material is plated on fungal medium and, if growth appears, the genus is identified",
-				"when": "Persistent redness, moist skin and itching in the perianal folds, nappy rash in children, complaints after a course of antibiotics, skin changes in diabetes and reduced immunity",
-				"prep": "The sample is taken before washing; do not use antifungal creams, suppositories or powders the day before",
-				"abnormal": "Yeasts are found in this area without inflammation as well, so the finding is compared with the appearance of the skin and the complaints. Whether treatment is needed is decided by a dermatologist or a proctologist"
-			},
-			"sr": {
-				"what": "Kultura materijala sa kože oko čmara na kvasnice",
-				"how": "Sterilnim štapićem prelazi se preko kožnih nabora oko analnog otvora, materijal se zasijava na podlogu za gljivice, a kod porasta se određuje rod uzročnika",
-				"when": "Uporno crvenilo, vlaženje i svrab u perianalnim naborima, pelenski osip kod djece, tegobe poslije terapije antibioticima, promjene kože kod dijabetesa i snižene imunosti",
-				"prep": "Materijal se uzima prije pranja; dan ranije ne koristiti antimikotske kreme, supozitorije i pudere",
-				"abnormal": "Kvasnice se u ovoj regiji nalaze i bez upale, pa se nalaz poredi sa izgledom kože i tegobama. Da li je liječenje potrebno, odlučuje dermatolog ili proktolog"
-			},
-			"de": {
-				"what": "Kultur von Material der Haut um den After auf Hefepilze",
-				"how": "Mit einem sterilen Tupfer wird über die Hautfalten um den After gestrichen, das Material auf Pilznährboden ausgestrichen und bei Wachstum die Gattung bestimmt",
-				"when": "Anhaltende Rötung, Nässen und Juckreiz in den Perianalfalten, Windeldermatitis bei Kindern, Beschwerden nach einer Antibiotikatherapie, Hautveränderungen bei Diabetes und geschwächter Abwehr",
-				"prep": "Die Probe wird vor dem Waschen entnommen; am Vortag keine Antipilzcremes, Zäpfchen oder Puder anwenden",
-				"abnormal": "Hefepilze kommen in dieser Region auch ohne Entzündung vor, daher wird der Befund mit dem Hautbild und den Beschwerden verglichen. Ob eine Behandlung nötig ist, entscheidet der Hautarzt oder der Proktologe"
-			},
-			"tr": {
-				"what": "Anüs çevresindeki deriden maya mantarları için kültür",
-				"how": "Steril eküvyon anüs çevresindeki deri kıvrımları üzerinde gezdirilir, örnek mantar besiyerine ekilir ve üreme olursa etkenin cinsi belirlenir",
-				"when": "Perianal kıvrımlarda geçmeyen kızarıklık, sulanma ve kaşıntı, çocuklarda pişik, antibiyotik kürü sonrası yakınmalar, diyabette ve bağışıklığı düşük kişilerde deri değişiklikleri",
-				"prep": "Örnek yıkanmadan önce alınır; bir gün önce antifungal krem, fitil ve pudra kullanılmamalıdır",
-				"abnormal": "Maya mantarları bu bölgede iltihap olmadan da bulunur, bu nedenle sonuç derinin görünümü ve yakınmalarla birlikte değerlendirilir. Tedavi gerekip gerekmediğine dermatolog ya da proktolog karar verir"
-			}
-		}
-	},
-	{
-		"slug": "punctate-aerobic",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Посев пунктата на бактерии, растущие в присутствии кислорода",
-				"how": "Полученную при пункции жидкость в стерильных условиях переносят в контейнер или транспортную среду и засевают на среды, которые выдерживают на воздухе; анаэробные бактерии этим посевом не выявляются",
-				"when": "Выпот в суставе, плевральной или брюшной полости, скопление жидкости в мягких тканях, содержимое абсцесса или кисты, оценка после дренирования",
-				"prep": "Подготовки от пациента не требуется, материал получают во время пункции; о начатых антибиотиках нужно сообщить врачу до процедуры",
-				"abnormal": "Рост бактерий может указывать на инфекцию в пунктированной полости, а отсутствие роста её не исключает: часть возбудителей требует бескислородных или специальных сред. Заключение делает лечащий врач"
-			},
-			"en": {
-				"what": "Culture of punctate fluid for bacteria that grow in the presence of oxygen",
-				"how": "Fluid obtained by puncture is transferred under sterile conditions into a container or transport medium and plated on media incubated in air; anaerobic bacteria are not detected by this culture",
-				"when": "Effusion in a joint, in the pleural or abdominal cavity, a fluid collection in soft tissue, the contents of an abscess or a cyst, assessment after drainage",
-				"prep": "No preparation is required from the patient, the material is obtained during the puncture; tell the doctor before the procedure about any antibiotics already started",
-				"abnormal": "Bacterial growth may point to infection in the punctured cavity, while no growth does not rule it out, since some organisms need oxygen-free or special media. The treating doctor draws the conclusion"
-			},
-			"sr": {
-				"what": "Zasijavanje punktata na bakterije koje rastu u prisustvu kiseonika",
-				"how": "Tečnost dobijena punkcijom pod sterilnim uslovima prenosi se u posudu ili transportnu podlogu i zasijava na podloge koje se drže na vazduhu; anaerobne bakterije se ovom kulturom ne otkrivaju",
-				"when": "Izliv u zglobu, plućnoj maramici ili trbušnoj duplji, nakupljanje tečnosti u mekim tkivima, sadržaj apscesa ili ciste, procjena poslije drenaže",
-				"prep": "Priprema pacijenta nije potrebna, materijal se dobija tokom punkcije; o započetim antibioticima treba obavijestiti ljekara prije zahvata",
-				"abnormal": "Porast bakterija može ukazivati na infekciju u punktiranoj šupljini, a izostanak porasta je ne isključuje: dio uzročnika traži bezkiseoničke ili posebne podloge. Zaključak donosi ljekar koji liječi"
-			},
-			"de": {
-				"what": "Kultur von Punktat auf Bakterien, die in Gegenwart von Sauerstoff wachsen",
-				"how": "Die bei der Punktion gewonnene Flüssigkeit wird unter sterilen Bedingungen in ein Gefäß oder Transportmedium überführt und auf Nährböden ausgestrichen, die an der Luft bebrütet werden; anaerobe Bakterien werden damit nicht erfasst",
-				"when": "Erguss in einem Gelenk, im Brust- oder Bauchraum, Flüssigkeitsansammlung im Weichgewebe, Inhalt eines Abszesses oder einer Zyste, Beurteilung nach einer Drainage",
-				"prep": "Vom Patienten ist keine Vorbereitung nötig, das Material wird während der Punktion gewonnen; bereits begonnene Antibiotika sind dem Arzt vor dem Eingriff mitzuteilen",
-				"abnormal": "Bakterienwachstum kann auf eine Infektion in der punktierten Höhle hinweisen, ein steriler Befund schließt sie nicht aus, da ein Teil der Erreger sauerstofffreie oder spezielle Nährböden braucht. Die Bewertung nimmt der behandelnde Arzt vor"
-			},
-			"tr": {
-				"what": "Ponksiyon sıvısının oksijenli ortamda üreyen bakteriler için kültürü",
-				"how": "Ponksiyonla alınan sıvı steril koşullarda kaba ya da taşıma besiyerine aktarılır ve havada inkübe edilen besiyerlerine ekilir; anaerop bakteriler bu kültürle saptanmaz",
-				"when": "Eklemde, akciğer zarında ya da karın boşluğunda sıvı toplanması, yumuşak dokuda sıvı birikimi, apse veya kist içeriği, drenaj sonrası değerlendirme",
-				"prep": "Hastadan hazırlık istenmez, örnek ponksiyon sırasında alınır; başlanmış antibiyotikler işlemden önce hekime bildirilmelidir",
-				"abnormal": "Bakteri üremesi ponksiyon yapılan boşlukta enfeksiyona işaret edebilir, üreme olmaması ise bunu dışlamaz, çünkü bazı etkenler oksijensiz ya da özel besiyeri ister. Değerlendirmeyi tedaviyi yürüten hekim yapar"
-			}
-		}
-	},
-	{
-		"slug": "right-eye-swab-fungi",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Посев материала с конъюнктивы правого глаза на грибковую флору",
-				"how": "Тампоном или петлёй собирают отделяемое и соскоб с конъюнктивы правого глаза, часть материала идёт на микроскопию, часть — на питательную среду для грибов",
-				"when": "Упорное покраснение и раздражение правого глаза, помутнение или язва роговицы после контакта с землёй и растениями, обследование при сниженном иммунитете, контроль после противогрибкового лечения",
-				"prep": "Приходить без косметики и контактных линз, глаз не промывать, капли в день забора не закапывать без указания врача",
-				"abnormal": "Рост грибов может быть связан с грибковым воспалением глаза, а может отражать носительство на коже век. Значение находки по клинической картине определяет офтальмолог"
-			},
-			"en": {
-				"what": "Culture of material from the conjunctiva of the right eye for fungal flora",
-				"how": "Discharge and a scraping from the conjunctiva of the right eye are collected with a swab or a loop, part of the material going for microscopy and part onto a fungal culture medium",
-				"when": "Persistent redness and irritation of the right eye, corneal clouding or ulcer after contact with soil or plants, work-up in reduced immunity, follow-up after antifungal treatment",
-				"prep": "Come without make-up and without contact lenses, do not rinse the eye and do not instil drops on the day of sampling unless the doctor says otherwise",
-				"abnormal": "Fungal growth may be related to fungal inflammation of the eye, or may reflect carriage on the skin of the lids. What the finding means in the clinical context is decided by the ophthalmologist"
-			},
-			"sr": {
-				"what": "Kultura materijala sa konjunktive desnog oka na gljivičnu floru",
-				"how": "Štapićem ili ezom skupljaju se sekret i strugotina sa konjunktive desnog oka, dio materijala ide na mikroskopiju, a dio na hranljivu podlogu za gljivice",
-				"when": "Uporno crvenilo i nadražaj desnog oka, zamućenje ili ulkus rožnjače poslije kontakta sa zemljom i biljkama, ispitivanje kod snižene imunosti, kontrola poslije antimikotične terapije",
-				"prep": "Doći bez šminke i bez kontaktnih sočiva, oko ne ispirati, a na dan uzimanja ne ukapavati kapi bez uputa ljekara",
-				"abnormal": "Porast gljivica može biti povezan sa gljivičnom upalom oka, ali može odražavati i nošenje gljivica na koži kapaka. Značaj nalaza prema kliničkoj slici određuje oftalmolog"
-			},
-			"de": {
-				"what": "Kultur von Material der Bindehaut des rechten Auges auf Pilzflora",
-				"how": "Mit Tupfer oder Öse werden Sekret und abgeschabtes Material von der Bindehaut des rechten Auges gewonnen, ein Teil geht zur Mikroskopie, ein Teil auf einen Pilznährboden",
-				"when": "Anhaltende Rötung und Reizung des rechten Auges, Hornhauttrübung oder Hornhautgeschwür nach Kontakt mit Erde oder Pflanzen, Abklärung bei geschwächter Abwehr, Kontrolle nach antimykotischer Behandlung",
-				"prep": "Ohne Make-up und ohne Kontaktlinsen erscheinen, das Auge nicht spülen und am Tag der Entnahme ohne ärztliche Anweisung keine Tropfen anwenden",
-				"abnormal": "Pilzwachstum kann mit einer Pilzentzündung des Auges zusammenhängen, kann aber auch eine Besiedlung der Lidhaut widerspiegeln. Was der Befund bedeutet, entscheidet der Augenarzt anhand des klinischen Bildes"
-			},
-			"tr": {
-				"what": "Sağ göz konjonktivasından alınan örneğin mantar florası için kültürü",
-				"how": "Eküvyon ya da öze ile sağ göz konjonktivasından akıntı ve kazıntı alınır, örneğin bir bölümü mikroskopiye, bir bölümü mantar besiyerine gider",
-				"when": "Sağ gözde geçmeyen kızarıklık ve batma, toprak ya da bitkiyle temastan sonra korneada bulanıklık veya ülser, bağışıklığı düşük kişilerde değerlendirme, antifungal tedavi sonrası kontrol",
-				"prep": "Makyajsız ve kontakt lenssiz gelinmeli, göz yıkanmamalı, örnek günü hekim aksini söylemedikçe damla damlatılmamalıdır",
-				"abnormal": "Mantar üremesi gözün mantar iltihabıyla ilişkili olabilir, göz kapağı derisindeki taşıyıcılığı da yansıtabilir. Bulgunun anlamını klinik tabloya göre göz hekimi belirler"
-			}
-		}
-	},
-	{
-		"slug": "skin-scraping-fungi",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Микологическое исследование чешуек, соскоблённых с поражённого участка кожи",
-				"how": "Тупым краем скальпеля или стеклом собирают чешуйки с активного края очага, часть помещают в препарат для микроскопии, часть засевают на среду для грибов",
-				"when": "Кольцевидные шелушащиеся очаги, опрелость и трещины между пальцами стоп, изменения кожи ладоней и подошв, очаги, не отвечающие на наружное лечение",
-				"prep": "За несколько дней отменить наружные противогрибковые средства, участок не мыть с мылом в день процедуры и не смазывать кремами; срок отмены уточняет дерматолог",
-				"abnormal": "Обнаружение элементов гриба в препарате или рост культуры может подтверждать грибковую природу изменений, но отрицательный ответ на фоне мазей её не исключает. Вывод делает дерматолог"
-			},
-			"en": {
-				"what": "Mycological examination of scales scraped from an affected area of skin",
-				"how": "Scales are collected with the blunt edge of a scalpel or a glass slide from the active edge of the lesion, part going into a preparation for microscopy and part onto a fungal culture medium",
-				"when": "Ring-shaped scaly patches, maceration and cracks between the toes, changes on the palms and soles, lesions that do not respond to topical treatment",
-				"prep": "Stop topical antifungals several days in advance, do not wash the area with soap on the day of the procedure and do not apply creams; the dermatologist sets the exact interval",
-				"abnormal": "Fungal elements in the preparation or growth in culture may confirm the fungal nature of the changes, while a negative result after the use of ointments does not rule it out. The dermatologist draws the conclusion"
-			},
-			"sr": {
-				"what": "Mikološko ispitivanje ljuspica sastruganih sa promijenjenog dijela kože",
-				"how": "Tupom ivicom skalpela ili staklom sakupljaju se ljuspice sa aktivne ivice žarišta, dio se stavlja u preparat za mikroskopiju, a dio zasijava na podlogu za gljivice",
-				"when": "Prstenasta ljuskava žarišta, vlaženje i pukotine među prstima stopala, promjene kože dlanova i tabana, žarišta koja ne reaguju na lokalnu terapiju",
-				"prep": "Nekoliko dana ranije prekinuti lokalne antimikotike, na dan zahvata to mjesto ne prati sapunom i ne mazati kremama; rok prekida određuje dermatolog",
-				"abnormal": "Nalaz gljivičnih elemenata u preparatu ili porast kulture može potvrditi gljivičnu prirodu promjena, a negativan nalaz uz prethodno mazanje je ne isključuje. Zaključak donosi dermatolog"
-			},
-			"de": {
-				"what": "Mykologische Untersuchung von Schuppen, die von einer veränderten Hautstelle abgeschabt wurden",
-				"how": "Mit der stumpfen Skalpellkante oder einem Objektträger werden Schuppen vom aktiven Rand des Herdes gewonnen, ein Teil kommt in ein Präparat zur Mikroskopie, ein Teil auf einen Pilznährboden",
-				"when": "Ringförmige schuppende Herde, aufgeweichte Haut und Risse zwischen den Zehen, Veränderungen an Handflächen und Fußsohlen, Herde ohne Ansprechen auf äußerliche Behandlung",
-				"prep": "Äußerliche Antimykotika einige Tage vorher absetzen, die Stelle am Tag der Entnahme nicht mit Seife waschen und nicht eincremen; den genauen Abstand legt der Hautarzt fest",
-				"abnormal": "Pilzelemente im Präparat oder Wachstum in der Kultur können die Pilznatur der Veränderungen stützen, ein negativer Befund nach Salbenanwendung schließt sie nicht aus. Die Bewertung nimmt der Hautarzt vor"
-			},
-			"tr": {
-				"what": "Derinin etkilenmiş bölgesinden kazınan pulların mikolojik incelemesi",
-				"how": "Neşterin küt kenarı ya da lam ile lezyonun etkin kenarından pullar toplanır, bir bölümü mikroskopi preparatına, bir bölümü mantar besiyerine konur",
-				"when": "Halka biçiminde pullanan lezyonlar, ayak parmak aralarında yumuşama ve çatlaklar, avuç içi ve ayak tabanı değişiklikleri, yerel tedaviye yanıt vermeyen lezyonlar",
-				"prep": "Yerel antifungaller birkaç gün önce bırakılmalı, işlem günü bölge sabunla yıkanmamalı ve krem sürülmemelidir; süreyi dermatolog belirler",
-				"abnormal": "Preparatta mantar yapılarının görülmesi ya da kültürde üreme değişikliklerin mantar kaynaklı olduğunu destekleyebilir, merhem kullanımından sonra çıkan olumsuz sonuç ise bunu dışlamaz. Yorumu dermatolog yapar"
-			}
-		}
-	},
-	{
-		"slug": "urethral-swab-for-gonorrhea",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Взятие материала из мочеиспускательного канала для выявления Neisseria gonorrhoeae",
-				"how": "Тонкий зонд вводят в наружное отверстие уретры на небольшую глубину, материал используют для микроскопии окрашенного мазка, посева или молекулярного теста",
-				"when": "Выделения из уретры и жжение при мочеиспускании, обследование по направлению уролога или дерматовенеролога, обследование полового партнёра, контроль после лечения",
-				"prep": "Не мочиться несколько часов до взятия, накануне исключить половые контакты; антибиотики до исследования принимать только по согласованию с врачом",
-				"abnormal": "Обнаружение возбудителя означает, что дальнейшие шаги, включая обследование партнёра, нужно обсудить с врачом. Отрицательный результат при сохраняющихся жалобах не исключает других причин воспаления уретры"
-			},
-			"en": {
-				"what": "Collection of material from the urethra to detect Neisseria gonorrhoeae",
-				"how": "A thin probe is inserted a short way into the external opening of the urethra, and the material is used for microscopy of a stained smear, for culture or for a molecular test",
-				"when": "Urethral discharge and burning on urination, examination referred by a urologist or a dermatovenereologist, testing of a sexual partner, follow-up after treatment",
-				"prep": "Do not urinate for a few hours before sampling and avoid sexual contact the day before; take antibiotics before the test only in agreement with the doctor",
-				"abnormal": "Detection of the organism means that the next steps, including testing of the partner, should be discussed with the doctor. A negative result with persisting complaints does not rule out other causes of urethral inflammation"
-			},
-			"sr": {
-				"what": "Uzimanje materijala iz mokraćne cijevi radi dokazivanja Neisseria gonorrhoeae",
-				"how": "Tanka sonda uvodi se plitko u spoljašnji otvor uretre, a materijal se koristi za mikroskopiju obojenog razmaza, za kulturu ili za molekularni test",
-				"when": "Sekret iz uretre i peckanje pri mokrenju, ispitivanje po uputu urologa ili dermatovenerologa, pregled polnog partnera, kontrola poslije liječenja",
-				"prep": "Ne mokriti nekoliko sati prije uzimanja, dan ranije izbjegavati polne odnose; antibiotike prije ispitivanja uzimati samo uz dogovor sa ljekarom",
-				"abnormal": "Nalaz uzročnika znači da dalje korake, uključujući ispitivanje partnera, treba dogovoriti sa ljekarom. Negativan nalaz uz trajne tegobe ne isključuje druge uzroke upale uretre"
-			},
-			"de": {
-				"what": "Materialentnahme aus der Harnröhre zum Nachweis von Neisseria gonorrhoeae",
-				"how": "Eine dünne Sonde wird ein kurzes Stück in die äußere Harnröhrenöffnung eingeführt, das Material dient der Mikroskopie eines gefärbten Ausstrichs, der Kultur oder einem molekularen Test",
-				"when": "Ausfluss aus der Harnröhre und Brennen beim Wasserlassen, Untersuchung auf Überweisung des Urologen oder Dermatovenerologen, Abklärung des Sexualpartners, Kontrolle nach der Behandlung",
-				"prep": "Einige Stunden vor der Entnahme nicht Wasser lassen, am Vortag auf Geschlechtsverkehr verzichten; Antibiotika vor der Untersuchung nur nach Absprache mit dem Arzt einnehmen",
-				"abnormal": "Ein Erregernachweis bedeutet, dass die weiteren Schritte einschließlich der Untersuchung des Partners mit dem Arzt zu besprechen sind. Ein negativer Befund bei fortbestehenden Beschwerden schließt andere Ursachen einer Harnröhrenentzündung nicht aus"
-			},
-			"tr": {
-				"what": "Neisseria gonorrhoeae varlığını saptamak için üretradan örnek alınması",
-				"how": "İnce bir çubuk üretranın dış ağzından kısa bir mesafe içeri sokulur, alınan örnek boyalı yayma mikroskopisi, kültür ya da moleküler test için kullanılır",
-				"when": "Üretradan akıntı ve idrar yaparken yanma, üroloji ya da dermatoveneroloji hekiminin yönlendirmesi, cinsel eşin değerlendirilmesi, tedavi sonrası kontrol",
-				"prep": "Örnek alınmadan birkaç saat önce idrara çıkılmamalı, bir gün önce cinsel ilişkiden kaçınılmalıdır; testten önce antibiyotik yalnızca hekimle görüşülerek kullanılır",
-				"abnormal": "Etkenin saptanması, eşin değerlendirilmesi dahil sonraki adımların hekimle konuşulması gerektiği anlamına gelir. Yakınmalar sürerken olumsuz sonuç çıkması üretra iltihabının başka nedenlerini dışlamaz"
-			}
-		}
-	},
-	{
-		"slug": "vaginal-secretion",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Лабораторная оценка влагалищного отделяемого: состав микрофлоры и клеточные элементы",
-				"how": "Гинеколог берёт отделяемое со стенки влагалища, в лаборатории готовят нативный и окрашенный препараты и рассматривают их под микроскопом, при необходимости материал дополнительно засевают",
-				"when": "Изменение количества, цвета или запаха выделений, зуд и жжение, наблюдение при беременности, жалобы на фоне антибиотиков, контроль после лечения",
-				"prep": "Не сдавать во время менструации, за один-два дня отказаться от вагинальных свечей, кремов и спринцеваний, накануне воздержаться от половых контактов",
-				"abnormal": "Сдвиг состава флоры, большое число лейкоцитов или находка дрожжевых клеток могут быть связаны с воспалением или с нарушением баланса микрофлоры. Нужно ли лечение и требуется ли посев, определяет гинеколог"
-			},
-			"en": {
-				"what": "Laboratory assessment of vaginal discharge: the composition of the flora and the cellular elements",
-				"how": "The gynaecologist takes discharge from the vaginal wall, the laboratory prepares a wet mount and a stained slide and examines them under the microscope, and the material can additionally be cultured",
-				"when": "A change in the amount, colour or smell of discharge, itching and burning, monitoring in pregnancy, complaints while taking antibiotics, follow-up after treatment",
-				"prep": "Not taken during menstruation; avoid vaginal pessaries, creams and douching for one to two days and sexual contact the day before",
-				"abnormal": "A shift in the flora, a high number of leukocytes or the finding of yeast cells may be related to inflammation or to a disturbed balance of the vaginal flora. The gynaecologist decides whether treatment and a culture are needed"
-			},
-			"sr": {
-				"what": "Laboratorijska procjena vaginalnog sekreta: sastav mikroflore i ćelijski elementi",
-				"how": "Ginekolog uzima sekret sa zida vagine, u laboratoriji se prave nativni i obojeni preparat i gledaju pod mikroskopom, a po potrebi se materijal dodatno zasijava",
-				"when": "Promjena količine, boje ili mirisa sekreta, svrab i peckanje, praćenje u trudnoći, tegobe uz uzimanje antibiotika, kontrola poslije liječenja",
-				"prep": "Ne uzima se tokom menstruacije, jedan do dva dana ranije bez vaginaleta, krema i ispiranja, a dan ranije bez polnih odnosa",
-				"abnormal": "Promjena sastava flore, veći broj leukocita ili nalaz kvasničnih ćelija mogu biti povezani sa upalom ili sa poremećajem ravnoteže mikroflore. Da li je potrebno liječenje i da li treba kultura, odlučuje ginekolog"
-			},
-			"de": {
-				"what": "Laborbeurteilung des Vaginalsekrets: Zusammensetzung der Flora und Zellbestandteile",
-				"how": "Die Frauenärztin entnimmt Sekret von der Scheidenwand, im Labor werden ein Nativpräparat und ein gefärbter Ausstrich angefertigt und mikroskopiert, bei Bedarf wird das Material zusätzlich kultiviert",
-				"when": "Veränderte Menge, Farbe oder Geruch des Ausflusses, Juckreiz und Brennen, Kontrolle in der Schwangerschaft, Beschwerden unter Antibiotika, Verlaufskontrolle nach der Behandlung",
-				"prep": "Nicht während der Menstruation; ein bis zwei Tage vorher keine Vaginalzäpfchen, Cremes und Spülungen, am Vortag kein Geschlechtsverkehr",
-				"abnormal": "Eine verschobene Flora, viele Leukozyten oder der Nachweis von Hefezellen können mit einer Entzündung oder einer gestörten Balance der Scheidenflora zusammenhängen. Ob eine Behandlung und eine Kultur nötig sind, entscheidet die Frauenärztin"
-			},
-			"tr": {
-				"what": "Vajinal akıntının laboratuvar değerlendirmesi: flora bileşimi ve hücresel öğeler",
-				"how": "Jinekolog vajen duvarından akıntı alır, laboratuvarda nativ ve boyalı preparat hazırlanıp mikroskopla incelenir, gerekirse örnek ayrıca kültüre ekilir",
-				"when": "Akıntının miktarında, renginde ya da kokusunda değişiklik, kaşıntı ve yanma, gebelikte izlem, antibiyotik kullanırken ortaya çıkan yakınmalar, tedavi sonrası kontrol",
-				"prep": "Adet döneminde alınmaz; bir iki gün önce vajinal fitil, krem ve duş uygulanmamalı, bir gün önce cinsel ilişkiden kaçınılmalıdır",
-				"abnormal": "Flora bileşiminin değişmesi, lökosit sayısının artması ya da maya hücrelerinin görülmesi iltihapla ya da vajen florasının dengesinin bozulmasıyla ilişkili olabilir. Tedavi ve kültür gerekip gerekmediğine jinekolog karar verir"
-			}
-		}
-	},
-	{
-		"slug": "antibiogram",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Определение чувствительности выделенной бактерии к антибактериальным препаратам",
-				"how": "Из выросшей культуры готовят взвесь и наносят её на среду с дисками или в панель с разведениями препаратов, затем оценивают, при какой концентрации рост подавляется",
-				"when": "Выполняется дополнительно к посеву мочи, мазка, раны, мокроты или крови, когда бактерия выросла и врачу нужен обоснованный выбор препарата, а также при возврате жалоб после лечения",
-				"prep": "Отдельной подготовки нет: исследование делают из уже полученного материала, поэтому важны правила забора основного посева",
-				"abnormal": "Отметки о чувствительности и устойчивости относятся к выделенному штамму в лабораторных условиях и не являются назначением. Препарат, дозу и длительность определяет врач с учётом локализации инфекции и переносимости"
-			},
-			"en": {
-				"what": "Testing the susceptibility of an isolated bacterium to antibacterial drugs",
-				"how": "A suspension is made from the grown culture and applied to a medium with antibiotic discs or to a panel with drug dilutions, after which it is read at which concentration growth is suppressed",
-				"when": "Performed in addition to a culture of urine, a swab, a wound, sputum or blood once a bacterium has grown and the doctor needs a founded choice of drug, and when complaints return after treatment",
-				"prep": "No separate preparation: the test is done from material already collected, so what matters is the rules for taking the original culture",
-				"abnormal": "Susceptible and resistant markings refer to the isolated strain under laboratory conditions and are not a prescription. The drug, the dose and the duration are decided by the doctor, taking the site of infection and tolerance into account"
-			},
-			"sr": {
-				"what": "Određivanje osjetljivosti izolovane bakterije na antibakterijske lijekove",
-				"how": "Od izrasle kulture pravi se suspenzija i nanosi na podlogu sa diskovima ili u ploču sa razblaženjima lijekova, a zatim se očitava pri kojoj koncentraciji je rast zaustavljen",
-				"when": "Radi se uz kulturu urina, brisa, rane, ispljuvka ili krvi, kada je bakterija izrasla i ljekaru treba utemeljen izbor lijeka, kao i kod povratka tegoba poslije terapije",
-				"prep": "Posebne pripreme nema: nalaz se radi iz već uzetog materijala, pa su važna pravila uzimanja osnovne kulture",
-				"abnormal": "Oznake osjetljivosti i rezistencije odnose se na izolovani soj u laboratorijskim uslovima i nisu propisana terapija. Lijek, dozu i trajanje određuje ljekar prema mjestu infekcije i podnošljivosti"
-			},
-			"de": {
-				"what": "Prüfung der Empfindlichkeit eines isolierten Bakteriums gegenüber antibakteriellen Wirkstoffen",
-				"how": "Aus der gewachsenen Kultur wird eine Suspension hergestellt und auf einen Nährboden mit Testplättchen oder in eine Platte mit Wirkstoffverdünnungen gegeben, danach wird abgelesen, bei welcher Konzentration das Wachstum gehemmt ist",
-				"when": "Ergänzend zur Kultur von Urin, Abstrich, Wunde, Sputum oder Blut, wenn ein Bakterium gewachsen ist und der Arzt eine begründete Wirkstoffwahl braucht, sowie bei Wiederauftreten der Beschwerden nach der Behandlung",
-				"prep": "Keine eigene Vorbereitung: der Test erfolgt aus bereits gewonnenem Material, entscheidend sind die Regeln für die Entnahme der Ausgangskultur",
-				"abnormal": "Die Angaben empfindlich und resistent beziehen sich auf den isolierten Stamm unter Laborbedingungen und sind keine Verordnung. Wirkstoff, Dosis und Dauer legt der Arzt unter Berücksichtigung von Infektionsort und Verträglichkeit fest"
-			},
-			"tr": {
-				"what": "İzole edilen bakterinin antibakteriyel ilaçlara duyarlılığının belirlenmesi",
-				"how": "Üreyen kültürden süspansiyon hazırlanıp disklerin bulunduğu besiyerine ya da ilaç sulandırmaları içeren panele aktarılır, ardından üremenin hangi yoğunlukta durduğu okunur",
-				"when": "İdrar, sürüntü, yara, balgam ya da kan kültüründe bakteri ürediğinde ve hekimin gerekçeli ilaç seçimine ihtiyacı olduğunda, ayrıca tedavi sonrası yakınmalar yinelediğinde yapılır",
-				"prep": "Ayrı bir hazırlık gerekmez: test önceden alınmış örnekten yapılır, bu nedenle asıl kültürün alınma kuralları önemlidir",
-				"abnormal": "Duyarlı ve dirençli işaretleri laboratuvar koşullarında izole edilen suşa aittir ve bir reçete değildir. İlacı, dozu ve süreyi enfeksiyonun yerini ve hastanın toleransını göz önüne alarak hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "antimycogram",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Определение чувствительности выделенного гриба к противогрибковым препаратам",
-				"how": "Из выросшей культуры гриба готовят стандартную взвесь и вносят в панель или на среду с противогрибковыми препаратами, результат читают позже, чем при бактериальном тесте",
-				"when": "Повторяющиеся грибковые жалобы, отсутствие эффекта от назначенного противогрибкового средства, находка редкого или плесневого гриба, обследование при сниженном иммунитете",
-				"prep": "Подготовки не требуется: тест ставят из уже выделенной культуры, полученной при посеве мазка, соскоба или другого материала",
-				"abnormal": "Результат показывает поведение конкретного изолята в лабораторных условиях и не всегда совпадает с ответом на лечение. Выбор препарата и схему определяет врач"
-			},
-			"en": {
-				"what": "Testing the susceptibility of an isolated fungus to antifungal drugs",
-				"how": "A standard suspension is prepared from the grown fungal culture and placed in a panel or on a medium containing antifungal agents, and the result is read later than in a bacterial test",
-				"when": "Recurring fungal complaints, no effect from the prescribed antifungal, growth of a rare fungus or a mould, work-up in reduced immunity",
-				"prep": "No preparation is needed: the test is set up from a culture already isolated from a swab, a scraping or other material",
-				"abnormal": "The result shows how the particular isolate behaves under laboratory conditions and does not always match the response to treatment. The choice of drug and the regimen are decided by the doctor"
-			},
-			"sr": {
-				"what": "Određivanje osjetljivosti izolovane gljivice na antimikotike",
-				"how": "Od izrasle kulture gljivice pravi se standardna suspenzija i unosi u ploču ili na podlogu sa antimikoticima, a rezultat se očitava kasnije nego kod bakterijskog testa",
-				"when": "Gljivične tegobe koje se ponavljaju, izostanak efekta propisanog antimikotika, nalaz rijetke ili plijesnive gljivice, ispitivanje kod snižene imunosti",
-				"prep": "Priprema nije potrebna: test se radi iz već izolovane kulture dobijene zasijavanjem brisa, strugotine ili drugog materijala",
-				"abnormal": "Nalaz pokazuje ponašanje konkretnog izolata u laboratorijskim uslovima i ne poklapa se uvijek sa odgovorom na terapiju. Izbor lijeka i način primjene određuje ljekar"
-			},
-			"de": {
-				"what": "Prüfung der Empfindlichkeit eines isolierten Pilzes gegenüber Antimykotika",
-				"how": "Aus der gewachsenen Pilzkultur wird eine standardisierte Suspension hergestellt und in eine Platte oder auf einen Nährboden mit Antimykotika gegeben, das Ergebnis wird später abgelesen als beim bakteriellen Test",
-				"when": "Wiederkehrende Pilzbeschwerden, fehlende Wirkung des verordneten Antimykotikums, Nachweis eines seltenen Pilzes oder eines Schimmelpilzes, Abklärung bei geschwächter Abwehr",
-				"prep": "Keine Vorbereitung nötig: der Test wird aus einer bereits isolierten Kultur aus Abstrich, Schuppen oder anderem Material angesetzt",
-				"abnormal": "Das Ergebnis zeigt das Verhalten des einzelnen Isolats unter Laborbedingungen und stimmt nicht immer mit dem Ansprechen auf die Behandlung überein. Wirkstoffwahl und Behandlungsschema legt der Arzt fest"
-			},
-			"tr": {
-				"what": "İzole edilen mantarın antifungal ilaçlara duyarlılığının belirlenmesi",
-				"how": "Üreyen mantar kültüründen standart süspansiyon hazırlanır ve antifungal içeren panele ya da besiyerine konur, sonuç bakteri testine göre daha geç okunur",
-				"when": "Yinelenen mantar yakınmaları, verilen antifungalden yanıt alınamaması, seyrek görülen bir mantarın ya da küfün üremesi, bağışıklığı düşük kişilerde değerlendirme",
-				"prep": "Hazırlık gerekmez: test sürüntü, kazıntı ya da başka bir örnekten daha önce izole edilmiş kültürden kurulur",
-				"abnormal": "Sonuç, izolatın laboratuvar koşullarındaki davranışını gösterir ve tedaviye yanıtla her zaman örtüşmez. İlaç seçimini ve uygulama düzenini hekim belirler"
-			}
-		}
-	},
-	{
-		"slug": "dermatophytes-hair-scraping",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Прямая микроскопия волос на признаки поражения дерматофитами",
-				"how": "Пинцетом берут обломанные волосы и чешуйки с очага на голове или другом волосистом участке, препарат помещают в осветляющий раствор и рассматривают под микроскопом",
-				"when": "Очаги поредения волос с шелушением, обломанные у самой кожи волосы, зуд волосистой части головы у детей, обследование контактных лиц, контроль после лечения",
-				"prep": "Волосы не мыть два-три дня, не использовать лечебные шампуни, мази и красители; интервал после противогрибковых средств уточняет дерматолог",
-				"abnormal": "Нити гриба и споры вокруг волоса или внутри него могут указывать на дерматомикоз волосистой части, а отрицательный препарат его не исключает и часто дополняется посевом. Заключение делает дерматолог"
-			},
-			"en": {
-				"what": "Direct microscopy of hair for signs of dermatophyte involvement",
-				"how": "Broken hairs and scales are taken with tweezers from a patch on the scalp or another hairy area, the preparation is placed in a clearing solution and examined under the microscope",
-				"when": "Patches of thinned hair with scaling, hairs broken off at skin level, an itchy scalp in children, examination of household contacts, follow-up after treatment",
-				"prep": "Do not wash the hair for two to three days and do not use medicated shampoos, ointments or dyes; the dermatologist sets the interval after antifungal products",
-				"abnormal": "Fungal filaments and spores around or inside the hair may point to a dermatophyte infection of the scalp, while a negative preparation does not rule it out and is often supplemented by a culture. The dermatologist draws the conclusion"
-			},
-			"sr": {
-				"what": "Direktna mikroskopija dlake na znake oštećenja dermatofitima",
-				"how": "Pincetom se uzimaju polomljene dlake i ljuspice sa žarišta na glavi ili drugom dlakavom dijelu, preparat se stavlja u rastvor za razbistravanje i gleda pod mikroskopom",
-				"when": "Žarišta prorijeđene dlake sa ljuštenjem, dlake polomljene uz samu kožu, svrab vlasišta kod djece, ispitivanje ukućana, kontrola poslije liječenja",
-				"prep": "Kosu ne prati dva do tri dana, ne koristiti ljekovite šampone, masti i boje; razmak poslije antimikotika određuje dermatolog",
-				"abnormal": "Niti gljivice i spore oko dlake ili u njoj mogu ukazivati na dermatomikozu vlasišta, a negativan preparat je ne isključuje i često se dopunjava kulturom. Zaključak donosi dermatolog"
-			},
-			"de": {
-				"what": "Direkte Mikroskopie von Haaren auf Zeichen eines Dermatophytenbefalls",
-				"how": "Mit einer Pinzette werden abgebrochene Haare und Schuppen aus einem Herd an der Kopfhaut oder einer anderen behaarten Stelle entnommen, das Präparat wird in eine aufhellende Lösung gegeben und mikroskopiert",
-				"when": "Herde mit schütterem Haar und Schuppung, dicht über der Haut abgebrochene Haare, juckende Kopfhaut bei Kindern, Untersuchung von Kontaktpersonen, Kontrolle nach der Behandlung",
-				"prep": "Die Haare zwei bis drei Tage nicht waschen und keine medizinischen Shampoos, Salben oder Färbemittel verwenden; den Abstand nach Antipilzmitteln legt der Hautarzt fest",
-				"abnormal": "Pilzfäden und Sporen um das Haar oder in ihm können auf eine Dermatophytose der Kopfhaut hinweisen, ein negatives Präparat schließt sie nicht aus und wird oft durch eine Kultur ergänzt. Die Bewertung nimmt der Hautarzt vor"
-			},
-			"tr": {
-				"what": "Kılların dermatofit tutulumu belirtileri için doğrudan mikroskopisi",
-				"how": "Saçlı deride ya da başka kıllı bir bölgedeki lezyondan cımbızla kırık kıllar ve pullar alınır, preparat berraklaştırıcı çözeltiye konarak mikroskopla incelenir",
-				"when": "Pullanmayla birlikte seyrelmiş saç alanları, deri hizasında kırılan kıllar, çocuklarda saçlı deri kaşıntısı, ev halkının taranması, tedavi sonrası kontrol",
-				"prep": "Saçlar iki üç gün yıkanmamalı, tedavi edici şampuan, merhem ve boya kullanılmamalıdır; antifungal kullanımından sonraki aralığı dermatolog belirler",
-				"abnormal": "Kılın çevresinde ya da içinde mantar iplikleri ve sporların görülmesi saçlı deri dermatomikozuna işaret edebilir, olumsuz preparat ise bunu dışlamaz ve sıklıkla kültürle tamamlanır. Yorumu dermatolog yapar"
-			}
-		}
-	},
-	{
-		"slug": "fungal-identification",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Определение рода и вида гриба, выросшего в культуре",
-				"how": "Выросшую колонию изучают по внешнему виду и под микроскопом, при необходимости пересевают на специальные среды и используют биохимические или экспресс-тесты",
-				"when": "Выполняется после положительного посева мазка, соскоба, мокроты или другого материала, когда врачу важно знать конкретного возбудителя, а также при повторных и упорных грибковых жалобах",
-				"prep": "Подготовки от пациента не требуется: работа идёт с уже выделенной культурой",
-				"abnormal": "Название вида говорит о том, какой гриб вырос, но не о том, вызывает ли он болезнь: часть видов относится к обычным обитателям кожи и слизистых. Значение находки и необходимость лечения оценивает врач"
-			},
-			"en": {
-				"what": "Determining the genus and species of a fungus grown in culture",
-				"how": "The colony that has grown is assessed by its appearance and under the microscope, subcultured on special media if needed, and tested with biochemical or rapid tests",
-				"when": "Performed after a positive culture of a swab, a scraping, sputum or other material when the doctor needs to know the exact organism, and in recurring or stubborn fungal complaints",
-				"prep": "No preparation is required from the patient: the work is done on a culture that has already been isolated",
-				"abnormal": "The species name says which fungus has grown, not whether it causes disease: some species are ordinary inhabitants of the skin and mucous membranes. The doctor assesses what the finding means and whether treatment is needed"
-			},
-			"sr": {
-				"what": "Određivanje roda i vrste gljivice izrasle u kulturi",
-				"how": "Izrasla kolonija se procjenjuje po izgledu i pod mikroskopom, po potrebi se presijava na posebne podloge i rade biohemijski ili brzi testovi",
-				"when": "Radi se poslije pozitivne kulture brisa, strugotine, ispljuvka ili drugog materijala, kada je ljekaru važno da zna tačnog uzročnika, kao i kod ponavljanih i upornih gljivičnih tegoba",
-				"prep": "Priprema pacijenta nije potrebna: radi se sa već izolovanom kulturom",
-				"abnormal": "Naziv vrste govori koja je gljivica izrasla, ali ne i da li ona izaziva bolest: dio vrsta pripada uobičajenim stanovnicima kože i sluznica. Značaj nalaza i potrebu za liječenjem procjenjuje ljekar"
-			},
-			"de": {
-				"what": "Bestimmung von Gattung und Art eines in der Kultur gewachsenen Pilzes",
-				"how": "Die gewachsene Kolonie wird nach Aussehen und unter dem Mikroskop beurteilt, bei Bedarf auf Spezialnährböden überimpft und mit biochemischen oder Schnelltests untersucht",
-				"when": "Erfolgt nach einer positiven Kultur aus Abstrich, Schuppen, Sputum oder anderem Material, wenn der Arzt den genauen Erreger kennen muss, sowie bei wiederkehrenden und hartnäckigen Pilzbeschwerden",
-				"prep": "Vom Patienten ist keine Vorbereitung nötig: gearbeitet wird mit einer bereits isolierten Kultur",
-				"abnormal": "Der Artname sagt, welcher Pilz gewachsen ist, nicht aber, ob er eine Erkrankung verursacht: ein Teil der Arten gehört zur normalen Besiedlung von Haut und Schleimhäuten. Bedeutung des Befunds und Behandlungsbedarf beurteilt der Arzt"
-			},
-			"tr": {
-				"what": "Kültürde üreyen mantarın cins ve türünün belirlenmesi",
-				"how": "Üreyen koloni görünümüne göre ve mikroskopla değerlendirilir, gerekirse özel besiyerlerine pasajlanır ve biyokimyasal ya da hızlı testlerle incelenir",
-				"when": "Sürüntü, kazıntı, balgam ya da başka bir örneğin kültürü pozitif çıktığında ve hekimin etkeni tam olarak bilmesi gerektiğinde, ayrıca yinelenen ve inatçı mantar yakınmalarında yapılır",
-				"prep": "Hastadan hazırlık istenmez: çalışma daha önce izole edilmiş kültür üzerinde yapılır",
-				"abnormal": "Tür adı hangi mantarın ürediğini söyler, hastalık yapıp yapmadığını değil: türlerin bir bölümü deri ve mukozaların olağan sakinleridir. Bulgunun anlamını ve tedavi gerekliliğini hekim değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "liquid-based-cytology",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Цитологическое исследование клеток шейки матки, при котором материал переносят в жидкую консервирующую среду",
-				"how": "Гинеколог берёт клетки щёточкой, как при обычном мазке, но щёточку опускают во флакон с жидкостью, а тонкий слой клеток лаборатория готовит уже из него",
-				"when": "Плановый цервикальный скрининг, неинформативный результат обычного мазка, необходимость выполнить дополнительные исследования из того же материала, наблюдение после ранее выявленных изменений",
-				"prep": "Вне менструации, за один-два дня без вагинальных препаратов, спринцеваний и половых контактов",
-				"abnormal": "Изменения клеток могут быть связаны с воспалением, гормональным влиянием или с изменениями эпителия, требующими наблюдения, и описываются по стандартной классификации. Срок повторного обследования и необходимость кольпоскопии определяет гинеколог"
-			},
-			"en": {
-				"what": "Cytological examination of cervical cells in which the material is transferred into a liquid preservative",
-				"how": "The gynaecologist collects cells with a brush as in a conventional smear, but the brush is rinsed into a vial of fluid, from which the laboratory prepares a thin layer of cells",
-				"when": "Routine cervical screening, an unusable result of a conventional smear, the need to run additional tests from the same sample, follow-up after previously detected changes",
-				"prep": "Outside menstruation, with no vaginal products, douching or sexual contact for one to two days beforehand",
-				"abnormal": "Cell changes may be related to inflammation, hormonal influence or to epithelial changes that require follow-up, and are reported using a standard classification. The gynaecologist sets the interval for repeat testing and decides whether colposcopy is needed"
-			},
-			"sr": {
-				"what": "Citološki pregled ćelija grlića materice kod kojeg se uzorak prenosi u tečnu konzervišuću podlogu",
-				"how": "Ginekolog uzima ćelije četkicom kao i kod klasičnog brisa, ali se četkica spušta u bočicu sa tečnošću, a laboratorija iz nje pravi tanak sloj ćelija",
-				"when": "Redovan skrining grlića materice, neupotrebljiv nalaz klasičnog brisa, potreba da se iz istog uzorka urade dodatna ispitivanja, praćenje poslije ranije uočenih promjena",
-				"prep": "Van menstruacije, jedan do dva dana bez vaginalnih preparata, ispiranja i polnih odnosa",
-				"abnormal": "Promjene ćelija mogu biti povezane sa upalom, hormonskim uticajem ili sa promjenama epitela koje traže praćenje, a opisuju se standardnom klasifikacijom. Rok ponovnog pregleda i potrebu za kolposkopijom određuje ginekolog"
-			},
-			"de": {
-				"what": "Zytologische Untersuchung von Zellen des Gebärmutterhalses, bei der das Material in eine flüssige Konservierungslösung überführt wird",
-				"how": "Die Frauenärztin entnimmt die Zellen wie beim klassischen Abstrich mit einer Bürste, spült diese aber in ein Fläschchen mit Flüssigkeit, aus dem das Labor eine dünne Zellschicht herstellt",
-				"when": "Regelmäßige Gebärmutterhals-Vorsorge, nicht beurteilbarer klassischer Abstrich, Bedarf an weiteren Untersuchungen aus derselben Probe, Verlaufskontrolle nach früher festgestellten Veränderungen",
-				"prep": "Außerhalb der Menstruation, ein bis zwei Tage ohne Vaginalpräparate, Spülungen und Geschlechtsverkehr",
-				"abnormal": "Zellveränderungen können mit einer Entzündung, hormonellen Einflüssen oder mit Veränderungen des Epithels zusammenhängen, die eine Kontrolle brauchen, und werden nach einer Standardklassifikation beschrieben. Den Abstand bis zur Kontrolle und die Notwendigkeit einer Kolposkopie legt die Frauenärztin fest"
-			},
-			"tr": {
-				"what": "Örneğin sıvı koruyucu ortama aktarıldığı rahim ağzı hücre incelemesi",
-				"how": "Jinekolog hücreleri klasik smearde olduğu gibi fırçayla alır, ancak fırça sıvı dolu bir şişeye batırılır ve laboratuvar bu sıvıdan ince bir hücre tabakası hazırlar",
-				"when": "Düzenli rahim ağzı taraması, klasik smearin değerlendirilemeyen sonucu, aynı örnekten ek testlerin yapılması gereği, daha önce saptanmış değişikliklerin izlemi",
-				"prep": "Adet dönemi dışında, bir iki gün önce vajinal ürün, duş ve cinsel ilişki olmadan",
-				"abnormal": "Hücre değişiklikleri iltihapla, hormonal etkiyle ya da izlem gerektiren epitel değişiklikleriyle ilişkili olabilir ve standart bir sınıflamaya göre bildirilir. Kontrol aralığını ve kolposkopi gerekip gerekmediğini jinekolog belirler"
-			}
-		}
-	},
-	{
-		"slug": "punctate-fungi",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Исследование жидкости, полученной пункцией, на дрожжевые и плесневые грибы",
-				"how": "Материал в стерильном шприце или контейнере доставляют в лабораторию, часть идёт на микроскопию, часть — на среды для грибов, которые выдерживают дольше бактериальных",
-				"when": "Длительная лихорадка без ответа на антибиотики, скопление жидкости у пациента со сниженным иммунитетом или после долгой антибактериальной терапии, выпот в суставе или полости с подозрением на грибковую причину",
-				"prep": "От пациента подготовка не требуется, пункцию проводит врач; принимаемые противогрибковые препараты нужно назвать заранее",
-				"abnormal": "Рост грибов может означать участие грибковой флоры в воспалении, а может отражать загрязнение материала при получении. Вывод вместе с клинической картиной делает лечащий врач"
-			},
-			"en": {
-				"what": "Examination of fluid obtained by puncture for yeasts and moulds",
-				"how": "The material is delivered to the laboratory in a sterile syringe or container, part going for microscopy and part onto fungal media, which are kept longer than bacterial ones",
-				"when": "Prolonged fever with no response to antibiotics, a fluid collection in a patient with reduced immunity or after long antibacterial therapy, effusion in a joint or a cavity with a suspected fungal cause",
-				"prep": "No preparation is needed from the patient, the puncture is performed by a doctor; any antifungal drugs being taken should be named in advance",
-				"abnormal": "Fungal growth may mean that fungal flora takes part in the inflammation, or may reflect contamination of the sample during collection. The treating doctor draws the conclusion together with the clinical picture"
-			},
-			"sr": {
-				"what": "Ispitivanje tečnosti dobijene punkcijom na kvasnice i plijesni",
-				"how": "Materijal u sterilnom špricu ili posudi dostavlja se u laboratoriju, dio ide na mikroskopiju, a dio na podloge za gljivice koje se drže duže nego bakteriološke",
-				"when": "Dugotrajna temperatura bez odgovora na antibiotike, nakupljanje tečnosti kod pacijenta sa oslabljenim imunitetom ili poslije duge antibiotske terapije, izliv u zglobu ili šupljini uz sumnju na gljivični uzrok",
-				"prep": "Od pacijenta se priprema ne traži, punkciju radi ljekar; antimikotike koje uzima treba navesti unaprijed",
-				"abnormal": "Porast gljivica može značiti učešće gljivične flore u upali, ali i zagađenje uzorka pri uzimanju. Zaključak zajedno sa kliničkom slikom donosi ljekar koji liječi"
-			},
-			"de": {
-				"what": "Untersuchung von Punktionsflüssigkeit auf Hefen und Schimmelpilze",
-				"how": "Das Material wird in einer sterilen Spritze oder einem Gefäß ins Labor gebracht, ein Teil geht zur Mikroskopie, ein Teil auf Pilznährböden, die länger bebrütet werden als bakterielle",
-				"when": "Anhaltendes Fieber ohne Ansprechen auf Antibiotika, Flüssigkeitsansammlung bei geschwächter Abwehr oder nach langer antibakterieller Therapie, Erguss in einem Gelenk oder einer Höhle mit Verdacht auf eine Pilzursache",
-				"prep": "Vom Patienten ist keine Vorbereitung nötig, die Punktion führt der Arzt durch; eingenommene Antimykotika sollten vorher genannt werden",
-				"abnormal": "Pilzwachstum kann bedeuten, dass Pilzflora an der Entzündung beteiligt ist, kann aber auch eine Verunreinigung bei der Entnahme widerspiegeln. Die Bewertung nimmt der behandelnde Arzt zusammen mit dem klinischen Bild vor"
-			},
-			"tr": {
-				"what": "Ponksiyonla alınan sıvının maya ve küf mantarları yönünden incelenmesi",
-				"how": "Örnek steril enjektör ya da kap içinde laboratuvara ulaştırılır, bir bölümü mikroskopiye, bir bölümü bakteri besiyerlerinden daha uzun süre tutulan mantar besiyerlerine gider",
-				"when": "Antibiyotiklere yanıt vermeyen uzamış ateş, bağışıklığı düşük hastada ya da uzun antibakteriyel tedavi sonrası sıvı toplanması, mantar kaynaklı olduğundan kuşkulanılan eklem ya da boşluk sıvısı",
-				"prep": "Hastadan hazırlık istenmez, ponksiyonu hekim yapar; kullanılan antifungal ilaçlar önceden bildirilmelidir",
-				"abnormal": "Mantar üremesi iltihaba mantar florasının katıldığı anlamına gelebileceği gibi örnek alınırken bulaşmayı da yansıtabilir. Sonucu klinik tabloyla birlikte tedaviyi yürüten hekim değerlendirir"
-			}
-		}
-	},
-	{
-		"slug": "umbilicus-swab-fungi",
-		"entity_type": "lab_test",
-		"translations": {
-			"ru": {
-				"what": "Посев материала из пупочной складки на дрожжевые и плесневые грибы",
-				"how": "Тонким стерильным тампоном собирают отделяемое и налёт из глубины пупочной ямки, материал засевают на среду для грибов",
-				"when": "Влажность, белёсый налёт и неприятный запах в пупке, зуд и покраснение кожи вокруг, жалобы на фоне лишнего веса, диабета или длительного приёма антибиотиков, состояние после пирсинга",
-				"prep": "Пупок перед забором не мыть с мылом и не обрабатывать антисептиками, кремы и присыпки не наносить",
-				"abnormal": "Рост дрожжевых грибов может быть связан с воспалением складки из-за влажности, а встречается и без воспаления. Что делать с находкой, решает дерматолог"
-			},
-			"en": {
-				"what": "Culture of material from the navel fold for yeasts and moulds",
-				"how": "A thin sterile swab collects discharge and deposit from the depth of the umbilical pit, and the material is plated on fungal medium",
-				"when": "Moisture, a whitish deposit and an unpleasant smell in the navel, itching and redness of the surrounding skin, complaints in excess weight, diabetes or long antibiotic use, the state after piercing",
-				"prep": "Do not wash the navel with soap or treat it with antiseptics before sampling, and do not apply creams or powders",
-				"abnormal": "Growth of yeasts may be related to inflammation of the fold caused by moisture, and also occurs without inflammation. What follows from the finding is decided by the dermatologist"
-			},
-			"sr": {
-				"what": "Kultura materijala iz nabora pupka na kvasnice i plijesni",
-				"how": "Tankim sterilnim štapićem sakuplja se sekret i naslaga iz dubine pupčane jamice, a materijal se zasijava na podlogu za gljivice",
-				"when": "Vlaženje, bjelkasta naslaga i neprijatan miris u pupku, svrab i crvenilo kože oko njega, tegobe uz prekomjernu težinu, dijabetes ili dugo uzimanje antibiotika, stanje poslije pirsinga",
-				"prep": "Pupak prije uzimanja ne prati sapunom i ne tretirati antisepticima, ne nanositi kreme ni pudere",
-				"abnormal": "Porast kvasnica može biti povezan sa upalom nabora zbog vlage, a nalazi se i bez upale. Šta dalje sa nalazom, odlučuje dermatolog"
-			},
-			"de": {
-				"what": "Kultur von Material aus der Nabelfalte auf Hefen und Schimmelpilze",
-				"how": "Mit einem dünnen sterilen Tupfer werden Sekret und Belag aus der Tiefe der Nabelgrube gewonnen und auf Pilznährboden ausgestrichen",
-				"when": "Nässen, weißlicher Belag und unangenehmer Geruch im Nabel, Juckreiz und Rötung der umgebenden Haut, Beschwerden bei Übergewicht, Diabetes oder langer Antibiotikaeinnahme, Zustand nach einem Piercing",
-				"prep": "Den Nabel vor der Entnahme nicht mit Seife waschen und nicht mit Antiseptika behandeln, keine Cremes oder Puder auftragen",
-				"abnormal": "Das Wachstum von Hefepilzen kann mit einer feuchtigkeitsbedingten Entzündung der Falte zusammenhängen und kommt auch ohne Entzündung vor. Was aus dem Befund folgt, entscheidet der Hautarzt"
-			},
-			"tr": {
-				"what": "Göbek kıvrımından alınan örneğin maya ve küf mantarları için kültürü",
-				"how": "İnce steril eküvyonla göbek çukurunun derininden akıntı ve birikinti alınır, örnek mantar besiyerine ekilir",
-				"when": "Göbekte nemlenme, beyazımsı birikinti ve kötü koku, çevresindeki deride kaşıntı ve kızarıklık, fazla kilo, diyabet ya da uzun süreli antibiyotik kullanımıyla birlikte görülen yakınmalar, piercing sonrası durum",
-				"prep": "Örnek alınmadan önce göbek sabunla yıkanmamalı, antiseptikle temizlenmemeli, krem ve pudra sürülmemelidir",
-				"abnormal": "Maya mantarlarının üremesi nemden kaynaklanan kıvrım iltihabıyla ilişkili olabilir, iltihap olmadan da görülür. Bulguyla ne yapılacağına dermatolog karar verir"
-			}
-		}
-	}
+  {
+    "slug": "left-eye-swab",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Взятие материала с конъюнктивы левого глаза для микробиологического посева",
+        "how": "Материал берут стерильным тампоном из нижнего конъюнктивального свода левого глаза и помещают в транспортную среду, при воспалении обоих глаз пробы берут раздельно",
+        "when": "Гнойное отделяемое и слипание ресниц слева, воспаление века и слёзного мешка, конъюнктивит, затянувшийся дольше обычного, обследование перед операцией на глазу",
+        "prep": "Утром до умывания и закапывания капель, без косметики на веках; линзы снять заранее, о применяемых каплях сказать врачу",
+        "abnormal": "Выделенные бактерии могут относиться к возбудителю воспаления или к обычной флоре края века, различие делают по количеству роста и картине осмотра. Результат и антибиотикограмму трактует офтальмолог"
+      },
+      "en": {
+        "what": "Collection of material from the conjunctiva of the left eye for microbiological culture",
+        "how": "A sterile swab is taken from the lower conjunctival sac of the left eye and placed in transport medium; if both eyes are inflamed, the samples are taken separately",
+        "when": "Purulent discharge and stuck eyelashes on the left, inflammation of the eyelid and the lacrimal sac, conjunctivitis lasting longer than usual, work-up before eye surgery",
+        "prep": "In the morning before washing and before instilling drops, without make-up on the lids; remove lenses in advance and tell the doctor which drops have been used",
+        "abnormal": "The bacteria isolated may be the cause of the inflammation or ordinary flora of the lid margin, and the amount of growth together with the examination helps tell them apart. The ophthalmologist interprets the result and the antibiogram"
+      },
+      "sr": {
+        "what": "Uzimanje materijala sa konjunktive lijevog oka za mikrobiološku kulturu",
+        "how": "Sterilnim štapićem uzima se bris iz donjeg konjunktivalnog svoda lijevog oka i stavlja u transportnu podlogu, a kod upale oba oka uzorci se uzimaju odvojeno",
+        "when": "Gnojni sekret i slijepljene trepavice lijevo, upala kapka i suzne vreće, konjunktivitis koji traje duže nego obično, obrada prije operacije oka",
+        "prep": "Ujutru prije umivanja i prije ukapavanja kapi, bez šminke na kapcima; sočiva izvaditi ranije, a ljekaru reći koje su kapi korišćene",
+        "abnormal": "Izolovane bakterije mogu biti uzročnik upale ili uobičajena flora ivice kapka, a razlikuju se po količini porasta i po nalazu pregleda. Nalaz i antibiogram tumači oftalmolog"
+      },
+      "de": {
+        "what": "Entnahme von Material von der Bindehaut des linken Auges für eine mikrobiologische Kultur",
+        "how": "Mit einem sterilen Tupfer wird Material aus dem unteren Bindehautsack des linken Auges entnommen und in ein Transportmedium gegeben; bei Entzündung beider Augen werden die Proben getrennt entnommen",
+        "when": "Eitriges Sekret und verklebte Wimpern links, Entzündung des Lids und des Tränensacks, länger als üblich anhaltende Bindehautentzündung, Abklärung vor einer Augenoperation",
+        "prep": "Morgens vor dem Waschen und vor dem Eintropfen, ohne Make-up auf den Lidern; Kontaktlinsen vorher herausnehmen und dem Arzt sagen, welche Tropfen angewendet wurden",
+        "abnormal": "Die nachgewiesenen Bakterien können Erreger der Entzündung oder normale Flora des Lidrands sein, wobei Menge des Wachstums und Untersuchungsbefund bei der Unterscheidung helfen. Befund und Antibiogramm beurteilt der Augenarzt"
+      },
+      "tr": {
+        "what": "Sol gözün konjonktivasından mikrobiyolojik kültür için örnek alınması",
+        "how": "Steril eküvyonla sol gözün alt konjonktiva kesesinden örnek alınır ve taşıma besiyerine konur, iki göz de iltihaplıysa örnekler ayrı ayrı alınır",
+        "when": "Solda iltihaplı akıntı ve kirpiklerin yapışması, göz kapağı ve gözyaşı kesesi iltihabı, olağandan uzun süren konjonktivit, göz ameliyatı öncesi değerlendirme",
+        "prep": "Sabah yüz yıkamadan ve damla damlatmadan önce, kapaklarda makyaj olmadan; lensler önceden çıkarılmalı, kullanılan damlalar hekime söylenmelidir",
+        "abnormal": "Üreyen bakteriler iltihabın etkeni olabileceği gibi kapak kenarının olağan florası da olabilir, ayrımda üreme miktarı ve muayene bulgusu yardımcı olur. Sonucu ve antibiyogramı göz hekimi yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Узимање материјала са коњунктиве лијевог ока за микробиолошку културу",
+        "how": "Стерилним штапићем узима се брис из доњег коњунктивалног свода лијевог ока и ставља у транспортну подлогу, а код упале оба ока узорци се узимају одвојено",
+        "when": "Гнојни секрет и слијепљене трепавице лијево, упала капка и сузне вреће, коњунктивитис који траје дуже него обично, обрада прије операције ока",
+        "prep": "Ујутру прије умивања и прије укапавања капи, без шминке на капцима; сочива извадити раније, а љекару рећи које су капи коришћене",
+        "abnormal": "Изоловане бактерије могу бити узрочник упале или уобичајена флора ивице капка, а разликују се по количини пораста и по налазу прегледа. Налаз и антибиограм тумачи офталмолог"
+      }
+    }
+  },
+  {
+    "slug": "left-eye-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование отделяемого конъюнктивы левого глаза на дрожжевые и плесневые грибы",
+        "how": "Стерильным тампоном берут материал из нижнего свода конъюнктивы левого глаза, его смотрят под микроскопом и засевают на среду для грибов, рост оценивают дольше, чем при бактериальном посеве",
+        "when": "Затяжное воспаление левого глаза без ответа на антибактериальные капли, длительное применение капель с гормонами, ношение контактных линз, травма глаза органическим материалом",
+        "prep": "Капли и мази перед забором не применять, веки не умывать, линзы снять; интервал после противогрибковых средств уточняет офтальмолог",
+        "abnormal": "Находка грибов может отражать участие грибковой флоры в воспалении или поверхностное загрязнение пробы. Результат вместе с осмотром оценивает офтальмолог"
+      },
+      "en": {
+        "what": "Examination of discharge from the conjunctiva of the left eye for yeasts and moulds",
+        "how": "A sterile swab collects material from the lower conjunctival sac of the left eye, which is examined under the microscope and plated on fungal medium, with growth followed longer than in a bacterial culture",
+        "when": "Protracted inflammation of the left eye with no response to antibiotic drops, long use of steroid drops, contact lens wear, eye injury by organic material",
+        "prep": "Do not use drops or ointments before sampling, do not wash the lids, remove lenses; the ophthalmologist sets the interval after antifungal products",
+        "abnormal": "A fungal finding may reflect the involvement of fungal flora in the inflammation or superficial contamination of the sample. The ophthalmologist assesses the result together with the examination"
+      },
+      "sr": {
+        "what": "Ispitivanje sekreta konjunktive lijevog oka na kvasnice i plijesni",
+        "how": "Sterilnim štapićem uzima se materijal iz donjeg svoda konjunktive lijevog oka, gleda se pod mikroskopom i zasijava na podlogu za gljivice, a porast se prati duže nego kod bakteriološke kulture",
+        "when": "Dugotrajna upala lijevog oka bez odgovora na antibiotske kapi, duža primjena kapi sa kortikosteroidima, nošenje kontaktnih sočiva, povreda oka organskim materijalom",
+        "prep": "Prije uzimanja ne koristiti kapi i masti, kapke ne umivati, sočiva izvaditi; razmak poslije antimikotika određuje oftalmolog",
+        "abnormal": "Nalaz gljivica može značiti učešće gljivične flore u upali ili površinsko zagađenje uzorka. Rezultat zajedno sa pregledom procjenjuje oftalmolog"
+      },
+      "de": {
+        "what": "Untersuchung des Bindehautsekrets des linken Auges auf Hefen und Schimmelpilze",
+        "how": "Mit einem sterilen Tupfer wird Material aus dem unteren Bindehautsack des linken Auges entnommen, mikroskopiert und auf Pilznährboden ausgestrichen, wobei das Wachstum länger beobachtet wird als bei einer Bakterienkultur",
+        "when": "Langwierige Entzündung des linken Auges ohne Ansprechen auf antibiotische Tropfen, längere Anwendung kortisonhaltiger Tropfen, Tragen von Kontaktlinsen, Augenverletzung durch organisches Material",
+        "prep": "Vor der Entnahme keine Tropfen und Salben anwenden, die Lider nicht waschen, Kontaktlinsen herausnehmen; den Abstand nach Antimykotika legt der Augenarzt fest",
+        "abnormal": "Ein Pilznachweis kann eine Beteiligung von Pilzflora an der Entzündung oder eine oberflächliche Verunreinigung der Probe widerspiegeln. Der Augenarzt beurteilt das Ergebnis zusammen mit dem Untersuchungsbefund"
+      },
+      "tr": {
+        "what": "Sol göz konjonktiva akıntısının maya ve küf mantarları yönünden incelenmesi",
+        "how": "Steril eküvyonla sol gözün alt konjonktiva kesesinden örnek alınır, mikroskopla incelenir ve mantar besiyerine ekilir, üreme bakteri kültürüne göre daha uzun süre izlenir",
+        "when": "Antibiyotikli damlalara yanıt vermeyen uzayan sol göz iltihabı, kortizonlu damlaların uzun süre kullanılması, kontakt lens kullanımı, gözün organik bir cisimle yaralanması",
+        "prep": "Örnek alınmadan önce damla ve merhem kullanılmamalı, kapaklar yıkanmamalı, lensler çıkarılmalıdır; antifungal kullanımından sonraki aralığı göz hekimi belirler",
+        "abnormal": "Mantar saptanması iltihaba mantar florasının katıldığını gösterebileceği gibi örneğin yüzeysel kirlenmesine de bağlı olabilir. Sonucu muayeneyle birlikte göz hekimi değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање секрета коњунктиве лијевог ока на кваснице и плијесни",
+        "how": "Стерилним штапићем узима се материјал из доњег свода коњунктиве лијевог ока, гледа се под микроскопом и засијава на подлогу за гљивице, а пораст се прати дуже него код бактериолошке културе",
+        "when": "Дуготрајна упала лијевог ока без одговора на антибиотске капи, дужа примјена капи са кортикостероидима, ношење контактних сочива, повреда ока органским материјалом",
+        "prep": "Прије узимања не користити капи и масти, капке не умивати, сочива извадити; размак послије антимикотика одређује офталмолог",
+        "abnormal": "Налаз гљивица може значити учешће гљивичне флоре у упали или површинско загађење узорка. Резултат заједно са прегледом процјењује офталмолог"
+      }
+    }
+  },
+  {
+    "slug": "perianal-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Посев материала с кожи вокруг заднего прохода на дрожжевые грибы",
+        "how": "Стерильным тампоном проводят по кожным складкам вокруг ануса, материал засевают на среду для грибов и при росте определяют род возбудителя",
+        "when": "Стойкое покраснение, мокнутие и зуд в перианальных складках, опрелости у детей, жалобы после курса антибиотиков, изменения кожи при диабете и сниженном иммунитете",
+        "prep": "Материал берут до подмывания; накануне не применять противогрибковые кремы, свечи и присыпки",
+        "abnormal": "Дрожжевые грибы в этой зоне встречаются и без воспаления, поэтому находку сопоставляют с видом кожи и жалобами. Нужно ли лечение, решает дерматолог или проктолог"
+      },
+      "en": {
+        "what": "Culture of material from the skin around the anus for yeast fungi",
+        "how": "A sterile swab is passed over the skin folds around the anus, the material is plated on fungal medium and, if growth appears, the genus is identified",
+        "when": "Persistent redness, moist skin and itching in the perianal folds, nappy rash in children, complaints after a course of antibiotics, skin changes in diabetes and reduced immunity",
+        "prep": "The sample is taken before washing; do not use antifungal creams, suppositories or powders the day before",
+        "abnormal": "Yeasts are found in this area without inflammation as well, so the finding is compared with the appearance of the skin and the complaints. Whether treatment is needed is decided by a dermatologist or a proctologist"
+      },
+      "sr": {
+        "what": "Kultura materijala sa kože oko čmara na kvasnice",
+        "how": "Sterilnim štapićem prelazi se preko kožnih nabora oko analnog otvora, materijal se zasijava na podlogu za gljivice, a kod porasta se određuje rod uzročnika",
+        "when": "Uporno crvenilo, vlaženje i svrab u perianalnim naborima, pelenski osip kod djece, tegobe poslije terapije antibioticima, promjene kože kod dijabetesa i snižene imunosti",
+        "prep": "Materijal se uzima prije pranja; dan ranije ne koristiti antimikotske kreme, supozitorije i pudere",
+        "abnormal": "Kvasnice se u ovoj regiji nalaze i bez upale, pa se nalaz poredi sa izgledom kože i tegobama. Da li je liječenje potrebno, odlučuje dermatolog ili proktolog"
+      },
+      "de": {
+        "what": "Kultur von Material der Haut um den After auf Hefepilze",
+        "how": "Mit einem sterilen Tupfer wird über die Hautfalten um den After gestrichen, das Material auf Pilznährboden ausgestrichen und bei Wachstum die Gattung bestimmt",
+        "when": "Anhaltende Rötung, Nässen und Juckreiz in den Perianalfalten, Windeldermatitis bei Kindern, Beschwerden nach einer Antibiotikatherapie, Hautveränderungen bei Diabetes und geschwächter Abwehr",
+        "prep": "Die Probe wird vor dem Waschen entnommen; am Vortag keine Antipilzcremes, Zäpfchen oder Puder anwenden",
+        "abnormal": "Hefepilze kommen in dieser Region auch ohne Entzündung vor, daher wird der Befund mit dem Hautbild und den Beschwerden verglichen. Ob eine Behandlung nötig ist, entscheidet der Hautarzt oder der Proktologe"
+      },
+      "tr": {
+        "what": "Anüs çevresindeki deriden maya mantarları için kültür",
+        "how": "Steril eküvyon anüs çevresindeki deri kıvrımları üzerinde gezdirilir, örnek mantar besiyerine ekilir ve üreme olursa etkenin cinsi belirlenir",
+        "when": "Perianal kıvrımlarda geçmeyen kızarıklık, sulanma ve kaşıntı, çocuklarda pişik, antibiyotik kürü sonrası yakınmalar, diyabette ve bağışıklığı düşük kişilerde deri değişiklikleri",
+        "prep": "Örnek yıkanmadan önce alınır; bir gün önce antifungal krem, fitil ve pudra kullanılmamalıdır",
+        "abnormal": "Maya mantarları bu bölgede iltihap olmadan da bulunur, bu nedenle sonuç derinin görünümü ve yakınmalarla birlikte değerlendirilir. Tedavi gerekip gerekmediğine dermatolog ya da proktolog karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Култура материјала са коже око чмара на кваснице",
+        "how": "Стерилним штапићем прелази се преко кожних набора око аналног отвора, материјал се засијава на подлогу за гљивице, а код пораста се одређује род узрочника",
+        "when": "Упорно црвенило, влажење и свраб у перианалним наборима, пеленски осип код дјеце, тегобе послије терапије антибиотицима, промјене коже код дијабетеса и снижене имуности",
+        "prep": "Материјал се узима прије прања; дан раније не користити антимикотске креме, супозиторије и пудере",
+        "abnormal": "Кваснице се у овој регији налазе и без упале, па се налаз пореди са изгледом коже и тегобама. Да ли је лијечење потребно, одлучује дерматолог или проктолог"
+      }
+    }
+  },
+  {
+    "slug": "punctate-aerobic",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Посев пунктата на бактерии, растущие в присутствии кислорода",
+        "how": "Полученную при пункции жидкость в стерильных условиях переносят в контейнер или транспортную среду и засевают на среды, которые выдерживают на воздухе; анаэробные бактерии этим посевом не выявляются",
+        "when": "Выпот в суставе, плевральной или брюшной полости, скопление жидкости в мягких тканях, содержимое абсцесса или кисты, оценка после дренирования",
+        "prep": "Подготовки от пациента не требуется, материал получают во время пункции; о начатых антибиотиках нужно сообщить врачу до процедуры",
+        "abnormal": "Рост бактерий может указывать на инфекцию в пунктированной полости, а отсутствие роста её не исключает: часть возбудителей требует бескислородных или специальных сред. Заключение делает лечащий врач"
+      },
+      "en": {
+        "what": "Culture of punctate fluid for bacteria that grow in the presence of oxygen",
+        "how": "Fluid obtained by puncture is transferred under sterile conditions into a container or transport medium and plated on media incubated in air; anaerobic bacteria are not detected by this culture",
+        "when": "Effusion in a joint, in the pleural or abdominal cavity, a fluid collection in soft tissue, the contents of an abscess or a cyst, assessment after drainage",
+        "prep": "No preparation is required from the patient, the material is obtained during the puncture; tell the doctor before the procedure about any antibiotics already started",
+        "abnormal": "Bacterial growth may point to infection in the punctured cavity, while no growth does not rule it out, since some organisms need oxygen-free or special media. The treating doctor draws the conclusion"
+      },
+      "sr": {
+        "what": "Zasijavanje punktata na bakterije koje rastu u prisustvu kiseonika",
+        "how": "Tečnost dobijena punkcijom pod sterilnim uslovima prenosi se u posudu ili transportnu podlogu i zasijava na podloge koje se drže na vazduhu; anaerobne bakterije se ovom kulturom ne otkrivaju",
+        "when": "Izliv u zglobu, plućnoj maramici ili trbušnoj duplji, nakupljanje tečnosti u mekim tkivima, sadržaj apscesa ili ciste, procjena poslije drenaže",
+        "prep": "Priprema pacijenta nije potrebna, materijal se dobija tokom punkcije; o započetim antibioticima treba obavijestiti ljekara prije zahvata",
+        "abnormal": "Porast bakterija može ukazivati na infekciju u punktiranoj šupljini, a izostanak porasta je ne isključuje: dio uzročnika traži bezkiseoničke ili posebne podloge. Zaključak donosi ljekar koji liječi"
+      },
+      "de": {
+        "what": "Kultur von Punktat auf Bakterien, die in Gegenwart von Sauerstoff wachsen",
+        "how": "Die bei der Punktion gewonnene Flüssigkeit wird unter sterilen Bedingungen in ein Gefäß oder Transportmedium überführt und auf Nährböden ausgestrichen, die an der Luft bebrütet werden; anaerobe Bakterien werden damit nicht erfasst",
+        "when": "Erguss in einem Gelenk, im Brust- oder Bauchraum, Flüssigkeitsansammlung im Weichgewebe, Inhalt eines Abszesses oder einer Zyste, Beurteilung nach einer Drainage",
+        "prep": "Vom Patienten ist keine Vorbereitung nötig, das Material wird während der Punktion gewonnen; bereits begonnene Antibiotika sind dem Arzt vor dem Eingriff mitzuteilen",
+        "abnormal": "Bakterienwachstum kann auf eine Infektion in der punktierten Höhle hinweisen, ein steriler Befund schließt sie nicht aus, da ein Teil der Erreger sauerstofffreie oder spezielle Nährböden braucht. Die Bewertung nimmt der behandelnde Arzt vor"
+      },
+      "tr": {
+        "what": "Ponksiyon sıvısının oksijenli ortamda üreyen bakteriler için kültürü",
+        "how": "Ponksiyonla alınan sıvı steril koşullarda kaba ya da taşıma besiyerine aktarılır ve havada inkübe edilen besiyerlerine ekilir; anaerop bakteriler bu kültürle saptanmaz",
+        "when": "Eklemde, akciğer zarında ya da karın boşluğunda sıvı toplanması, yumuşak dokuda sıvı birikimi, apse veya kist içeriği, drenaj sonrası değerlendirme",
+        "prep": "Hastadan hazırlık istenmez, örnek ponksiyon sırasında alınır; başlanmış antibiyotikler işlemden önce hekime bildirilmelidir",
+        "abnormal": "Bakteri üremesi ponksiyon yapılan boşlukta enfeksiyona işaret edebilir, üreme olmaması ise bunu dışlamaz, çünkü bazı etkenler oksijensiz ya da özel besiyeri ister. Değerlendirmeyi tedaviyi yürüten hekim yapar"
+      },
+      "sr_cyrl": {
+        "what": "Засијавање пунктата на бактерије које расту у присуству кисеоника",
+        "how": "Течност добијена пункцијом под стерилним условима преноси се у посуду или транспортну подлогу и засијава на подлоге које се држе на ваздуху; анаеробне бактерије се овом културом не откривају",
+        "when": "Излив у зглобу, плућној марамици или трбушној дупљи, накупљање течности у меким ткивима, садржај апсцеса или цисте, процјена послије дренаже",
+        "prep": "Припрема пацијента није потребна, материјал се добија током пункције; о започетим антибиотицима треба обавијестити љекара прије захвата",
+        "abnormal": "Пораст бактерија може указивати на инфекцију у пунктираној шупљини, а изостанак пораста је не искључује: дио узрочника тражи безкисеоничке или посебне подлоге. Закључак доноси љекар који лијечи"
+      }
+    }
+  },
+  {
+    "slug": "right-eye-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Посев материала с конъюнктивы правого глаза на грибковую флору",
+        "how": "Тампоном или петлёй собирают отделяемое и соскоб с конъюнктивы правого глаза, часть материала идёт на микроскопию, часть — на питательную среду для грибов",
+        "when": "Упорное покраснение и раздражение правого глаза, помутнение или язва роговицы после контакта с землёй и растениями, обследование при сниженном иммунитете, контроль после противогрибкового лечения",
+        "prep": "Приходить без косметики и контактных линз, глаз не промывать, капли в день забора не закапывать без указания врача",
+        "abnormal": "Рост грибов может быть связан с грибковым воспалением глаза, а может отражать носительство на коже век. Значение находки по клинической картине определяет офтальмолог"
+      },
+      "en": {
+        "what": "Culture of material from the conjunctiva of the right eye for fungal flora",
+        "how": "Discharge and a scraping from the conjunctiva of the right eye are collected with a swab or a loop, part of the material going for microscopy and part onto a fungal culture medium",
+        "when": "Persistent redness and irritation of the right eye, corneal clouding or ulcer after contact with soil or plants, work-up in reduced immunity, follow-up after antifungal treatment",
+        "prep": "Come without make-up and without contact lenses, do not rinse the eye and do not instil drops on the day of sampling unless the doctor says otherwise",
+        "abnormal": "Fungal growth may be related to fungal inflammation of the eye, or may reflect carriage on the skin of the lids. What the finding means in the clinical context is decided by the ophthalmologist"
+      },
+      "sr": {
+        "what": "Kultura materijala sa konjunktive desnog oka na gljivičnu floru",
+        "how": "Štapićem ili ezom skupljaju se sekret i strugotina sa konjunktive desnog oka, dio materijala ide na mikroskopiju, a dio na hranljivu podlogu za gljivice",
+        "when": "Uporno crvenilo i nadražaj desnog oka, zamućenje ili ulkus rožnjače poslije kontakta sa zemljom i biljkama, ispitivanje kod snižene imunosti, kontrola poslije antimikotične terapije",
+        "prep": "Doći bez šminke i bez kontaktnih sočiva, oko ne ispirati, a na dan uzimanja ne ukapavati kapi bez uputa ljekara",
+        "abnormal": "Porast gljivica može biti povezan sa gljivičnom upalom oka, ali može odražavati i nošenje gljivica na koži kapaka. Značaj nalaza prema kliničkoj slici određuje oftalmolog"
+      },
+      "de": {
+        "what": "Kultur von Material der Bindehaut des rechten Auges auf Pilzflora",
+        "how": "Mit Tupfer oder Öse werden Sekret und abgeschabtes Material von der Bindehaut des rechten Auges gewonnen, ein Teil geht zur Mikroskopie, ein Teil auf einen Pilznährboden",
+        "when": "Anhaltende Rötung und Reizung des rechten Auges, Hornhauttrübung oder Hornhautgeschwür nach Kontakt mit Erde oder Pflanzen, Abklärung bei geschwächter Abwehr, Kontrolle nach antimykotischer Behandlung",
+        "prep": "Ohne Make-up und ohne Kontaktlinsen erscheinen, das Auge nicht spülen und am Tag der Entnahme ohne ärztliche Anweisung keine Tropfen anwenden",
+        "abnormal": "Pilzwachstum kann mit einer Pilzentzündung des Auges zusammenhängen, kann aber auch eine Besiedlung der Lidhaut widerspiegeln. Was der Befund bedeutet, entscheidet der Augenarzt anhand des klinischen Bildes"
+      },
+      "tr": {
+        "what": "Sağ göz konjonktivasından alınan örneğin mantar florası için kültürü",
+        "how": "Eküvyon ya da öze ile sağ göz konjonktivasından akıntı ve kazıntı alınır, örneğin bir bölümü mikroskopiye, bir bölümü mantar besiyerine gider",
+        "when": "Sağ gözde geçmeyen kızarıklık ve batma, toprak ya da bitkiyle temastan sonra korneada bulanıklık veya ülser, bağışıklığı düşük kişilerde değerlendirme, antifungal tedavi sonrası kontrol",
+        "prep": "Makyajsız ve kontakt lenssiz gelinmeli, göz yıkanmamalı, örnek günü hekim aksini söylemedikçe damla damlatılmamalıdır",
+        "abnormal": "Mantar üremesi gözün mantar iltihabıyla ilişkili olabilir, göz kapağı derisindeki taşıyıcılığı da yansıtabilir. Bulgunun anlamını klinik tabloya göre göz hekimi belirler"
+      },
+      "sr_cyrl": {
+        "what": "Култура материјала са коњунктиве десног ока на гљивичну флору",
+        "how": "Штапићем или езом скупљају се секрет и струготина са коњунктиве десног ока, дио материјала иде на микроскопију, а дио на хранљиву подлогу за гљивице",
+        "when": "Упорно црвенило и надражај десног ока, замућење или улкус рожњаче послије контакта са земљом и биљкама, испитивање код снижене имуности, контрола послије антимикотичне терапије",
+        "prep": "Доћи без шминке и без контактних сочива, око не испирати, а на дан узимања не укапавати капи без упута љекара",
+        "abnormal": "Пораст гљивица може бити повезан са гљивичном упалом ока, али може одражавати и ношење гљивица на кожи капака. Значај налаза према клиничкој слици одређује офталмолог"
+      }
+    }
+  },
+  {
+    "slug": "skin-scraping-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Микологическое исследование чешуек, соскоблённых с поражённого участка кожи",
+        "how": "Тупым краем скальпеля или стеклом собирают чешуйки с активного края очага, часть помещают в препарат для микроскопии, часть засевают на среду для грибов",
+        "when": "Кольцевидные шелушащиеся очаги, опрелость и трещины между пальцами стоп, изменения кожи ладоней и подошв, очаги, не отвечающие на наружное лечение",
+        "prep": "За несколько дней отменить наружные противогрибковые средства, участок не мыть с мылом в день процедуры и не смазывать кремами; срок отмены уточняет дерматолог",
+        "abnormal": "Обнаружение элементов гриба в препарате или рост культуры может подтверждать грибковую природу изменений, но отрицательный ответ на фоне мазей её не исключает. Вывод делает дерматолог"
+      },
+      "en": {
+        "what": "Mycological examination of scales scraped from an affected area of skin",
+        "how": "Scales are collected with the blunt edge of a scalpel or a glass slide from the active edge of the lesion, part going into a preparation for microscopy and part onto a fungal culture medium",
+        "when": "Ring-shaped scaly patches, maceration and cracks between the toes, changes on the palms and soles, lesions that do not respond to topical treatment",
+        "prep": "Stop topical antifungals several days in advance, do not wash the area with soap on the day of the procedure and do not apply creams; the dermatologist sets the exact interval",
+        "abnormal": "Fungal elements in the preparation or growth in culture may confirm the fungal nature of the changes, while a negative result after the use of ointments does not rule it out. The dermatologist draws the conclusion"
+      },
+      "sr": {
+        "what": "Mikološko ispitivanje ljuspica sastruganih sa promijenjenog dijela kože",
+        "how": "Tupom ivicom skalpela ili staklom sakupljaju se ljuspice sa aktivne ivice žarišta, dio se stavlja u preparat za mikroskopiju, a dio zasijava na podlogu za gljivice",
+        "when": "Prstenasta ljuskava žarišta, vlaženje i pukotine među prstima stopala, promjene kože dlanova i tabana, žarišta koja ne reaguju na lokalnu terapiju",
+        "prep": "Nekoliko dana ranije prekinuti lokalne antimikotike, na dan zahvata to mjesto ne prati sapunom i ne mazati kremama; rok prekida određuje dermatolog",
+        "abnormal": "Nalaz gljivičnih elemenata u preparatu ili porast kulture može potvrditi gljivičnu prirodu promjena, a negativan nalaz uz prethodno mazanje je ne isključuje. Zaključak donosi dermatolog"
+      },
+      "de": {
+        "what": "Mykologische Untersuchung von Schuppen, die von einer veränderten Hautstelle abgeschabt wurden",
+        "how": "Mit der stumpfen Skalpellkante oder einem Objektträger werden Schuppen vom aktiven Rand des Herdes gewonnen, ein Teil kommt in ein Präparat zur Mikroskopie, ein Teil auf einen Pilznährboden",
+        "when": "Ringförmige schuppende Herde, aufgeweichte Haut und Risse zwischen den Zehen, Veränderungen an Handflächen und Fußsohlen, Herde ohne Ansprechen auf äußerliche Behandlung",
+        "prep": "Äußerliche Antimykotika einige Tage vorher absetzen, die Stelle am Tag der Entnahme nicht mit Seife waschen und nicht eincremen; den genauen Abstand legt der Hautarzt fest",
+        "abnormal": "Pilzelemente im Präparat oder Wachstum in der Kultur können die Pilznatur der Veränderungen stützen, ein negativer Befund nach Salbenanwendung schließt sie nicht aus. Die Bewertung nimmt der Hautarzt vor"
+      },
+      "tr": {
+        "what": "Derinin etkilenmiş bölgesinden kazınan pulların mikolojik incelemesi",
+        "how": "Neşterin küt kenarı ya da lam ile lezyonun etkin kenarından pullar toplanır, bir bölümü mikroskopi preparatına, bir bölümü mantar besiyerine konur",
+        "when": "Halka biçiminde pullanan lezyonlar, ayak parmak aralarında yumuşama ve çatlaklar, avuç içi ve ayak tabanı değişiklikleri, yerel tedaviye yanıt vermeyen lezyonlar",
+        "prep": "Yerel antifungaller birkaç gün önce bırakılmalı, işlem günü bölge sabunla yıkanmamalı ve krem sürülmemelidir; süreyi dermatolog belirler",
+        "abnormal": "Preparatta mantar yapılarının görülmesi ya da kültürde üreme değişikliklerin mantar kaynaklı olduğunu destekleyebilir, merhem kullanımından sonra çıkan olumsuz sonuç ise bunu dışlamaz. Yorumu dermatolog yapar"
+      },
+      "sr_cyrl": {
+        "what": "Миколошко испитивање љуспица саструганих са промијењеног дијела коже",
+        "how": "Тупом ивицом скалпела или стаклом сакупљају се љуспице са активне ивице жаришта, дио се ставља у препарат за микроскопију, а дио засијава на подлогу за гљивице",
+        "when": "Прстенаста љускава жаришта, влажење и пукотине међу прстима стопала, промјене коже дланова и табана, жаришта која не реагују на локалну терапију",
+        "prep": "Неколико дана раније прекинути локалне антимикотике, на дан захвата то мјесто не прати сапуном и не мазати кремама; рок прекида одређује дерматолог",
+        "abnormal": "Налаз гљивичних елемената у препарату или пораст културе може потврдити гљивичну природу промјена, а негативан налаз уз претходно мазање је не искључује. Закључак доноси дерматолог"
+      }
+    }
+  },
+  {
+    "slug": "urethral-swab-for-gonorrhea",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Взятие материала из мочеиспускательного канала для выявления Neisseria gonorrhoeae",
+        "how": "Тонкий зонд вводят в наружное отверстие уретры на небольшую глубину, материал используют для микроскопии окрашенного мазка, посева или молекулярного теста",
+        "when": "Выделения из уретры и жжение при мочеиспускании, обследование по направлению уролога или дерматовенеролога, обследование полового партнёра, контроль после лечения",
+        "prep": "Не мочиться несколько часов до взятия, накануне исключить половые контакты; антибиотики до исследования принимать только по согласованию с врачом",
+        "abnormal": "Обнаружение возбудителя означает, что дальнейшие шаги, включая обследование партнёра, нужно обсудить с врачом. Отрицательный результат при сохраняющихся жалобах не исключает других причин воспаления уретры"
+      },
+      "en": {
+        "what": "Collection of material from the urethra to detect Neisseria gonorrhoeae",
+        "how": "A thin probe is inserted a short way into the external opening of the urethra, and the material is used for microscopy of a stained smear, for culture or for a molecular test",
+        "when": "Urethral discharge and burning on urination, examination referred by a urologist or a dermatovenereologist, testing of a sexual partner, follow-up after treatment",
+        "prep": "Do not urinate for a few hours before sampling and avoid sexual contact the day before; take antibiotics before the test only in agreement with the doctor",
+        "abnormal": "Detection of the organism means that the next steps, including testing of the partner, should be discussed with the doctor. A negative result with persisting complaints does not rule out other causes of urethral inflammation"
+      },
+      "sr": {
+        "what": "Uzimanje materijala iz mokraćne cijevi radi dokazivanja Neisseria gonorrhoeae",
+        "how": "Tanka sonda uvodi se plitko u spoljašnji otvor uretre, a materijal se koristi za mikroskopiju obojenog razmaza, za kulturu ili za molekularni test",
+        "when": "Sekret iz uretre i peckanje pri mokrenju, ispitivanje po uputu urologa ili dermatovenerologa, pregled polnog partnera, kontrola poslije liječenja",
+        "prep": "Ne mokriti nekoliko sati prije uzimanja, dan ranije izbjegavati polne odnose; antibiotike prije ispitivanja uzimati samo uz dogovor sa ljekarom",
+        "abnormal": "Nalaz uzročnika znači da dalje korake, uključujući ispitivanje partnera, treba dogovoriti sa ljekarom. Negativan nalaz uz trajne tegobe ne isključuje druge uzroke upale uretre"
+      },
+      "de": {
+        "what": "Materialentnahme aus der Harnröhre zum Nachweis von Neisseria gonorrhoeae",
+        "how": "Eine dünne Sonde wird ein kurzes Stück in die äußere Harnröhrenöffnung eingeführt, das Material dient der Mikroskopie eines gefärbten Ausstrichs, der Kultur oder einem molekularen Test",
+        "when": "Ausfluss aus der Harnröhre und Brennen beim Wasserlassen, Untersuchung auf Überweisung des Urologen oder Dermatovenerologen, Abklärung des Sexualpartners, Kontrolle nach der Behandlung",
+        "prep": "Einige Stunden vor der Entnahme nicht Wasser lassen, am Vortag auf Geschlechtsverkehr verzichten; Antibiotika vor der Untersuchung nur nach Absprache mit dem Arzt einnehmen",
+        "abnormal": "Ein Erregernachweis bedeutet, dass die weiteren Schritte einschließlich der Untersuchung des Partners mit dem Arzt zu besprechen sind. Ein negativer Befund bei fortbestehenden Beschwerden schließt andere Ursachen einer Harnröhrenentzündung nicht aus"
+      },
+      "tr": {
+        "what": "Neisseria gonorrhoeae varlığını saptamak için üretradan örnek alınması",
+        "how": "İnce bir çubuk üretranın dış ağzından kısa bir mesafe içeri sokulur, alınan örnek boyalı yayma mikroskopisi, kültür ya da moleküler test için kullanılır",
+        "when": "Üretradan akıntı ve idrar yaparken yanma, üroloji ya da dermatoveneroloji hekiminin yönlendirmesi, cinsel eşin değerlendirilmesi, tedavi sonrası kontrol",
+        "prep": "Örnek alınmadan birkaç saat önce idrara çıkılmamalı, bir gün önce cinsel ilişkiden kaçınılmalıdır; testten önce antibiyotik yalnızca hekimle görüşülerek kullanılır",
+        "abnormal": "Etkenin saptanması, eşin değerlendirilmesi dahil sonraki adımların hekimle konuşulması gerektiği anlamına gelir. Yakınmalar sürerken olumsuz sonuç çıkması üretra iltihabının başka nedenlerini dışlamaz"
+      },
+      "sr_cyrl": {
+        "what": "Узимање материјала из мокраћне цијеви ради доказивања Neisseria gonorrhoeae",
+        "how": "Танка сонда уводи се плитко у спољашњи отвор уретре, а материјал се користи за микроскопију обојеног размаза, за културу или за молекуларни тест",
+        "when": "Секрет из уретре и пецкање при мокрењу, испитивање по упуту уролога или дерматовенеролога, преглед полног партнера, контрола послије лијечења",
+        "prep": "Не мокрити неколико сати прије узимања, дан раније избјегавати полне односе; антибиотике прије испитивања узимати само уз договор са љекаром",
+        "abnormal": "Налаз узрочника значи да даље кораке, укључујући испитивање партнера, треба договорити са љекаром. Негативан налаз уз трајне тегобе не искључује друге узроке упале уретре"
+      }
+    }
+  },
+  {
+    "slug": "vaginal-secretion",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Лабораторная оценка влагалищного отделяемого: состав микрофлоры и клеточные элементы",
+        "how": "Гинеколог берёт отделяемое со стенки влагалища, в лаборатории готовят нативный и окрашенный препараты и рассматривают их под микроскопом, при необходимости материал дополнительно засевают",
+        "when": "Изменение количества, цвета или запаха выделений, зуд и жжение, наблюдение при беременности, жалобы на фоне антибиотиков, контроль после лечения",
+        "prep": "Не сдавать во время менструации, за один-два дня отказаться от вагинальных свечей, кремов и спринцеваний, накануне воздержаться от половых контактов",
+        "abnormal": "Сдвиг состава флоры, большое число лейкоцитов или находка дрожжевых клеток могут быть связаны с воспалением или с нарушением баланса микрофлоры. Нужно ли лечение и требуется ли посев, определяет гинеколог"
+      },
+      "en": {
+        "what": "Laboratory assessment of vaginal discharge: the composition of the flora and the cellular elements",
+        "how": "The gynaecologist takes discharge from the vaginal wall, the laboratory prepares a wet mount and a stained slide and examines them under the microscope, and the material can additionally be cultured",
+        "when": "A change in the amount, colour or smell of discharge, itching and burning, monitoring in pregnancy, complaints while taking antibiotics, follow-up after treatment",
+        "prep": "Not taken during menstruation; avoid vaginal pessaries, creams and douching for one to two days and sexual contact the day before",
+        "abnormal": "A shift in the flora, a high number of leukocytes or the finding of yeast cells may be related to inflammation or to a disturbed balance of the vaginal flora. The gynaecologist decides whether treatment and a culture are needed"
+      },
+      "sr": {
+        "what": "Laboratorijska procjena vaginalnog sekreta: sastav mikroflore i ćelijski elementi",
+        "how": "Ginekolog uzima sekret sa zida vagine, u laboratoriji se prave nativni i obojeni preparat i gledaju pod mikroskopom, a po potrebi se materijal dodatno zasijava",
+        "when": "Promjena količine, boje ili mirisa sekreta, svrab i peckanje, praćenje u trudnoći, tegobe uz uzimanje antibiotika, kontrola poslije liječenja",
+        "prep": "Ne uzima se tokom menstruacije, jedan do dva dana ranije bez vaginaleta, krema i ispiranja, a dan ranije bez polnih odnosa",
+        "abnormal": "Promjena sastava flore, veći broj leukocita ili nalaz kvasničnih ćelija mogu biti povezani sa upalom ili sa poremećajem ravnoteže mikroflore. Da li je potrebno liječenje i da li treba kultura, odlučuje ginekolog"
+      },
+      "de": {
+        "what": "Laborbeurteilung des Vaginalsekrets: Zusammensetzung der Flora und Zellbestandteile",
+        "how": "Die Frauenärztin entnimmt Sekret von der Scheidenwand, im Labor werden ein Nativpräparat und ein gefärbter Ausstrich angefertigt und mikroskopiert, bei Bedarf wird das Material zusätzlich kultiviert",
+        "when": "Veränderte Menge, Farbe oder Geruch des Ausflusses, Juckreiz und Brennen, Kontrolle in der Schwangerschaft, Beschwerden unter Antibiotika, Verlaufskontrolle nach der Behandlung",
+        "prep": "Nicht während der Menstruation; ein bis zwei Tage vorher keine Vaginalzäpfchen, Cremes und Spülungen, am Vortag kein Geschlechtsverkehr",
+        "abnormal": "Eine verschobene Flora, viele Leukozyten oder der Nachweis von Hefezellen können mit einer Entzündung oder einer gestörten Balance der Scheidenflora zusammenhängen. Ob eine Behandlung und eine Kultur nötig sind, entscheidet die Frauenärztin"
+      },
+      "tr": {
+        "what": "Vajinal akıntının laboratuvar değerlendirmesi: flora bileşimi ve hücresel öğeler",
+        "how": "Jinekolog vajen duvarından akıntı alır, laboratuvarda nativ ve boyalı preparat hazırlanıp mikroskopla incelenir, gerekirse örnek ayrıca kültüre ekilir",
+        "when": "Akıntının miktarında, renginde ya da kokusunda değişiklik, kaşıntı ve yanma, gebelikte izlem, antibiyotik kullanırken ortaya çıkan yakınmalar, tedavi sonrası kontrol",
+        "prep": "Adet döneminde alınmaz; bir iki gün önce vajinal fitil, krem ve duş uygulanmamalı, bir gün önce cinsel ilişkiden kaçınılmalıdır",
+        "abnormal": "Flora bileşiminin değişmesi, lökosit sayısının artması ya da maya hücrelerinin görülmesi iltihapla ya da vajen florasının dengesinin bozulmasıyla ilişkili olabilir. Tedavi ve kültür gerekip gerekmediğine jinekolog karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Лабораторијска процјена вагиналног секрета: састав микрофлоре и ћелијски елементи",
+        "how": "Гинеколог узима секрет са зида вагине, у лабораторији се праве нативни и обојени препарат и гледају под микроскопом, а по потреби се материјал додатно засијава",
+        "when": "Промјена количине, боје или мириса секрета, свраб и пецкање, праћење у трудноћи, тегобе уз узимање антибиотика, контрола послије лијечења",
+        "prep": "Не узима се током менструације, један до два дана раније без вагиналета, крема и испирања, а дан раније без полних односа",
+        "abnormal": "Промјена састава флоре, већи број леукоцита или налаз квасничних ћелија могу бити повезани са упалом или са поремећајем равнотеже микрофлоре. Да ли је потребно лијечење и да ли треба култура, одлучује гинеколог"
+      }
+    }
+  },
+  {
+    "slug": "antibiogram",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Определение чувствительности выделенной бактерии к антибактериальным препаратам",
+        "how": "Из выросшей культуры готовят взвесь и наносят её на среду с дисками или в панель с разведениями препаратов, затем оценивают, при какой концентрации рост подавляется",
+        "when": "Выполняется дополнительно к посеву мочи, мазка, раны, мокроты или крови, когда бактерия выросла и врачу нужен обоснованный выбор препарата, а также при возврате жалоб после лечения",
+        "prep": "Отдельной подготовки нет: исследование делают из уже полученного материала, поэтому важны правила забора основного посева",
+        "abnormal": "Отметки о чувствительности и устойчивости относятся к выделенному штамму в лабораторных условиях и не являются назначением. Препарат, дозу и длительность определяет врач с учётом локализации инфекции и переносимости"
+      },
+      "en": {
+        "what": "Testing the susceptibility of an isolated bacterium to antibacterial drugs",
+        "how": "A suspension is made from the grown culture and applied to a medium with antibiotic discs or to a panel with drug dilutions, after which it is read at which concentration growth is suppressed",
+        "when": "Performed in addition to a culture of urine, a swab, a wound, sputum or blood once a bacterium has grown and the doctor needs a founded choice of drug, and when complaints return after treatment",
+        "prep": "No separate preparation: the test is done from material already collected, so what matters is the rules for taking the original culture",
+        "abnormal": "Susceptible and resistant markings refer to the isolated strain under laboratory conditions and are not a prescription. The drug, the dose and the duration are decided by the doctor, taking the site of infection and tolerance into account"
+      },
+      "sr": {
+        "what": "Određivanje osjetljivosti izolovane bakterije na antibakterijske lijekove",
+        "how": "Od izrasle kulture pravi se suspenzija i nanosi na podlogu sa diskovima ili u ploču sa razblaženjima lijekova, a zatim se očitava pri kojoj koncentraciji je rast zaustavljen",
+        "when": "Radi se uz kulturu urina, brisa, rane, ispljuvka ili krvi, kada je bakterija izrasla i ljekaru treba utemeljen izbor lijeka, kao i kod povratka tegoba poslije terapije",
+        "prep": "Posebne pripreme nema: nalaz se radi iz već uzetog materijala, pa su važna pravila uzimanja osnovne kulture",
+        "abnormal": "Oznake osjetljivosti i rezistencije odnose se na izolovani soj u laboratorijskim uslovima i nisu propisana terapija. Lijek, dozu i trajanje određuje ljekar prema mjestu infekcije i podnošljivosti"
+      },
+      "de": {
+        "what": "Prüfung der Empfindlichkeit eines isolierten Bakteriums gegenüber antibakteriellen Wirkstoffen",
+        "how": "Aus der gewachsenen Kultur wird eine Suspension hergestellt und auf einen Nährboden mit Testplättchen oder in eine Platte mit Wirkstoffverdünnungen gegeben, danach wird abgelesen, bei welcher Konzentration das Wachstum gehemmt ist",
+        "when": "Ergänzend zur Kultur von Urin, Abstrich, Wunde, Sputum oder Blut, wenn ein Bakterium gewachsen ist und der Arzt eine begründete Wirkstoffwahl braucht, sowie bei Wiederauftreten der Beschwerden nach der Behandlung",
+        "prep": "Keine eigene Vorbereitung: der Test erfolgt aus bereits gewonnenem Material, entscheidend sind die Regeln für die Entnahme der Ausgangskultur",
+        "abnormal": "Die Angaben empfindlich und resistent beziehen sich auf den isolierten Stamm unter Laborbedingungen und sind keine Verordnung. Wirkstoff, Dosis und Dauer legt der Arzt unter Berücksichtigung von Infektionsort und Verträglichkeit fest"
+      },
+      "tr": {
+        "what": "İzole edilen bakterinin antibakteriyel ilaçlara duyarlılığının belirlenmesi",
+        "how": "Üreyen kültürden süspansiyon hazırlanıp disklerin bulunduğu besiyerine ya da ilaç sulandırmaları içeren panele aktarılır, ardından üremenin hangi yoğunlukta durduğu okunur",
+        "when": "İdrar, sürüntü, yara, balgam ya da kan kültüründe bakteri ürediğinde ve hekimin gerekçeli ilaç seçimine ihtiyacı olduğunda, ayrıca tedavi sonrası yakınmalar yinelediğinde yapılır",
+        "prep": "Ayrı bir hazırlık gerekmez: test önceden alınmış örnekten yapılır, bu nedenle asıl kültürün alınma kuralları önemlidir",
+        "abnormal": "Duyarlı ve dirençli işaretleri laboratuvar koşullarında izole edilen suşa aittir ve bir reçete değildir. İlacı, dozu ve süreyi enfeksiyonun yerini ve hastanın toleransını göz önüne alarak hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Одређивање осјетљивости изоловане бактерије на антибактеријске лијекове",
+        "how": "Од израсле културе прави се суспензија и наноси на подлогу са дисковима или у плочу са разблажењима лијекова, а затим се очитава при којој концентрацији је раст заустављен",
+        "when": "Ради се уз културу урина, бриса, ране, испљувка или крви, када је бактерија израсла и љекару треба утемељен избор лијека, као и код повратка тегоба послије терапије",
+        "prep": "Посебне припреме нема: налаз се ради из већ узетог материјала, па су важна правила узимања основне културе",
+        "abnormal": "Ознаке осјетљивости и резистенције односе се на изоловани сој у лабораторијским условима и нису прописана терапија. Лијек, дозу и трајање одређује љекар према мјесту инфекције и подношљивости"
+      }
+    }
+  },
+  {
+    "slug": "antimycogram",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Определение чувствительности выделенного гриба к противогрибковым препаратам",
+        "how": "Из выросшей культуры гриба готовят стандартную взвесь и вносят в панель или на среду с противогрибковыми препаратами, результат читают позже, чем при бактериальном тесте",
+        "when": "Повторяющиеся грибковые жалобы, отсутствие эффекта от назначенного противогрибкового средства, находка редкого или плесневого гриба, обследование при сниженном иммунитете",
+        "prep": "Подготовки не требуется: тест ставят из уже выделенной культуры, полученной при посеве мазка, соскоба или другого материала",
+        "abnormal": "Результат показывает поведение конкретного изолята в лабораторных условиях и не всегда совпадает с ответом на лечение. Выбор препарата и схему определяет врач"
+      },
+      "en": {
+        "what": "Testing the susceptibility of an isolated fungus to antifungal drugs",
+        "how": "A standard suspension is prepared from the grown fungal culture and placed in a panel or on a medium containing antifungal agents, and the result is read later than in a bacterial test",
+        "when": "Recurring fungal complaints, no effect from the prescribed antifungal, growth of a rare fungus or a mould, work-up in reduced immunity",
+        "prep": "No preparation is needed: the test is set up from a culture already isolated from a swab, a scraping or other material",
+        "abnormal": "The result shows how the particular isolate behaves under laboratory conditions and does not always match the response to treatment. The choice of drug and the regimen are decided by the doctor"
+      },
+      "sr": {
+        "what": "Određivanje osjetljivosti izolovane gljivice na antimikotike",
+        "how": "Od izrasle kulture gljivice pravi se standardna suspenzija i unosi u ploču ili na podlogu sa antimikoticima, a rezultat se očitava kasnije nego kod bakterijskog testa",
+        "when": "Gljivične tegobe koje se ponavljaju, izostanak efekta propisanog antimikotika, nalaz rijetke ili plijesnive gljivice, ispitivanje kod snižene imunosti",
+        "prep": "Priprema nije potrebna: test se radi iz već izolovane kulture dobijene zasijavanjem brisa, strugotine ili drugog materijala",
+        "abnormal": "Nalaz pokazuje ponašanje konkretnog izolata u laboratorijskim uslovima i ne poklapa se uvijek sa odgovorom na terapiju. Izbor lijeka i način primjene određuje ljekar"
+      },
+      "de": {
+        "what": "Prüfung der Empfindlichkeit eines isolierten Pilzes gegenüber Antimykotika",
+        "how": "Aus der gewachsenen Pilzkultur wird eine standardisierte Suspension hergestellt und in eine Platte oder auf einen Nährboden mit Antimykotika gegeben, das Ergebnis wird später abgelesen als beim bakteriellen Test",
+        "when": "Wiederkehrende Pilzbeschwerden, fehlende Wirkung des verordneten Antimykotikums, Nachweis eines seltenen Pilzes oder eines Schimmelpilzes, Abklärung bei geschwächter Abwehr",
+        "prep": "Keine Vorbereitung nötig: der Test wird aus einer bereits isolierten Kultur aus Abstrich, Schuppen oder anderem Material angesetzt",
+        "abnormal": "Das Ergebnis zeigt das Verhalten des einzelnen Isolats unter Laborbedingungen und stimmt nicht immer mit dem Ansprechen auf die Behandlung überein. Wirkstoffwahl und Behandlungsschema legt der Arzt fest"
+      },
+      "tr": {
+        "what": "İzole edilen mantarın antifungal ilaçlara duyarlılığının belirlenmesi",
+        "how": "Üreyen mantar kültüründen standart süspansiyon hazırlanır ve antifungal içeren panele ya da besiyerine konur, sonuç bakteri testine göre daha geç okunur",
+        "when": "Yinelenen mantar yakınmaları, verilen antifungalden yanıt alınamaması, seyrek görülen bir mantarın ya da küfün üremesi, bağışıklığı düşük kişilerde değerlendirme",
+        "prep": "Hazırlık gerekmez: test sürüntü, kazıntı ya da başka bir örnekten daha önce izole edilmiş kültürden kurulur",
+        "abnormal": "Sonuç, izolatın laboratuvar koşullarındaki davranışını gösterir ve tedaviye yanıtla her zaman örtüşmez. İlaç seçimini ve uygulama düzenini hekim belirler"
+      },
+      "sr_cyrl": {
+        "what": "Одређивање осјетљивости изоловане гљивице на антимикотике",
+        "how": "Од израсле културе гљивице прави се стандардна суспензија и уноси у плочу или на подлогу са антимикотицима, а резултат се очитава касније него код бактеријског теста",
+        "when": "Гљивичне тегобе које се понављају, изостанак ефекта прописаног антимикотика, налаз ријетке или плијесниве гљивице, испитивање код снижене имуности",
+        "prep": "Припрема није потребна: тест се ради из већ изоловане културе добијене засијавањем бриса, струготине или другог материјала",
+        "abnormal": "Налаз показује понашање конкретног изолата у лабораторијским условима и не поклапа се увијек са одговором на терапију. Избор лијека и начин примјене одређује љекар"
+      }
+    }
+  },
+  {
+    "slug": "dermatophytes-hair-scraping",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Прямая микроскопия волос на признаки поражения дерматофитами",
+        "how": "Пинцетом берут обломанные волосы и чешуйки с очага на голове или другом волосистом участке, препарат помещают в осветляющий раствор и рассматривают под микроскопом",
+        "when": "Очаги поредения волос с шелушением, обломанные у самой кожи волосы, зуд волосистой части головы у детей, обследование контактных лиц, контроль после лечения",
+        "prep": "Волосы не мыть два-три дня, не использовать лечебные шампуни, мази и красители; интервал после противогрибковых средств уточняет дерматолог",
+        "abnormal": "Нити гриба и споры вокруг волоса или внутри него могут указывать на дерматомикоз волосистой части, а отрицательный препарат его не исключает и часто дополняется посевом. Заключение делает дерматолог"
+      },
+      "en": {
+        "what": "Direct microscopy of hair for signs of dermatophyte involvement",
+        "how": "Broken hairs and scales are taken with tweezers from a patch on the scalp or another hairy area, the preparation is placed in a clearing solution and examined under the microscope",
+        "when": "Patches of thinned hair with scaling, hairs broken off at skin level, an itchy scalp in children, examination of household contacts, follow-up after treatment",
+        "prep": "Do not wash the hair for two to three days and do not use medicated shampoos, ointments or dyes; the dermatologist sets the interval after antifungal products",
+        "abnormal": "Fungal filaments and spores around or inside the hair may point to a dermatophyte infection of the scalp, while a negative preparation does not rule it out and is often supplemented by a culture. The dermatologist draws the conclusion"
+      },
+      "sr": {
+        "what": "Direktna mikroskopija dlake na znake oštećenja dermatofitima",
+        "how": "Pincetom se uzimaju polomljene dlake i ljuspice sa žarišta na glavi ili drugom dlakavom dijelu, preparat se stavlja u rastvor za razbistravanje i gleda pod mikroskopom",
+        "when": "Žarišta prorijeđene dlake sa ljuštenjem, dlake polomljene uz samu kožu, svrab vlasišta kod djece, ispitivanje ukućana, kontrola poslije liječenja",
+        "prep": "Kosu ne prati dva do tri dana, ne koristiti ljekovite šampone, masti i boje; razmak poslije antimikotika određuje dermatolog",
+        "abnormal": "Niti gljivice i spore oko dlake ili u njoj mogu ukazivati na dermatomikozu vlasišta, a negativan preparat je ne isključuje i često se dopunjava kulturom. Zaključak donosi dermatolog"
+      },
+      "de": {
+        "what": "Direkte Mikroskopie von Haaren auf Zeichen eines Dermatophytenbefalls",
+        "how": "Mit einer Pinzette werden abgebrochene Haare und Schuppen aus einem Herd an der Kopfhaut oder einer anderen behaarten Stelle entnommen, das Präparat wird in eine aufhellende Lösung gegeben und mikroskopiert",
+        "when": "Herde mit schütterem Haar und Schuppung, dicht über der Haut abgebrochene Haare, juckende Kopfhaut bei Kindern, Untersuchung von Kontaktpersonen, Kontrolle nach der Behandlung",
+        "prep": "Die Haare zwei bis drei Tage nicht waschen und keine medizinischen Shampoos, Salben oder Färbemittel verwenden; den Abstand nach Antipilzmitteln legt der Hautarzt fest",
+        "abnormal": "Pilzfäden und Sporen um das Haar oder in ihm können auf eine Dermatophytose der Kopfhaut hinweisen, ein negatives Präparat schließt sie nicht aus und wird oft durch eine Kultur ergänzt. Die Bewertung nimmt der Hautarzt vor"
+      },
+      "tr": {
+        "what": "Kılların dermatofit tutulumu belirtileri için doğrudan mikroskopisi",
+        "how": "Saçlı deride ya da başka kıllı bir bölgedeki lezyondan cımbızla kırık kıllar ve pullar alınır, preparat berraklaştırıcı çözeltiye konarak mikroskopla incelenir",
+        "when": "Pullanmayla birlikte seyrelmiş saç alanları, deri hizasında kırılan kıllar, çocuklarda saçlı deri kaşıntısı, ev halkının taranması, tedavi sonrası kontrol",
+        "prep": "Saçlar iki üç gün yıkanmamalı, tedavi edici şampuan, merhem ve boya kullanılmamalıdır; antifungal kullanımından sonraki aralığı dermatolog belirler",
+        "abnormal": "Kılın çevresinde ya da içinde mantar iplikleri ve sporların görülmesi saçlı deri dermatomikozuna işaret edebilir, olumsuz preparat ise bunu dışlamaz ve sıklıkla kültürle tamamlanır. Yorumu dermatolog yapar"
+      },
+      "sr_cyrl": {
+        "what": "Директна микроскопија длаке на знаке оштећења дерматофитима",
+        "how": "Пинцетом се узимају поломљене длаке и љуспице са жаришта на глави или другом длакавом дијелу, препарат се ставља у раствор за разбистравање и гледа под микроскопом",
+        "when": "Жаришта проријеђене длаке са љуштењем, длаке поломљене уз саму кожу, свраб власишта код дјеце, испитивање укућана, контрола послије лијечења",
+        "prep": "Косу не прати два до три дана, не користити љековите шампоне, масти и боје; размак послије антимикотика одређује дерматолог",
+        "abnormal": "Нити гљивице и споре око длаке или у њој могу указивати на дерматомикозу власишта, а негативан препарат је не искључује и често се допуњава културом. Закључак доноси дерматолог"
+      }
+    }
+  },
+  {
+    "slug": "fungal-identification",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Определение рода и вида гриба, выросшего в культуре",
+        "how": "Выросшую колонию изучают по внешнему виду и под микроскопом, при необходимости пересевают на специальные среды и используют биохимические или экспресс-тесты",
+        "when": "Выполняется после положительного посева мазка, соскоба, мокроты или другого материала, когда врачу важно знать конкретного возбудителя, а также при повторных и упорных грибковых жалобах",
+        "prep": "Подготовки от пациента не требуется: работа идёт с уже выделенной культурой",
+        "abnormal": "Название вида говорит о том, какой гриб вырос, но не о том, вызывает ли он болезнь: часть видов относится к обычным обитателям кожи и слизистых. Значение находки и необходимость лечения оценивает врач"
+      },
+      "en": {
+        "what": "Determining the genus and species of a fungus grown in culture",
+        "how": "The colony that has grown is assessed by its appearance and under the microscope, subcultured on special media if needed, and tested with biochemical or rapid tests",
+        "when": "Performed after a positive culture of a swab, a scraping, sputum or other material when the doctor needs to know the exact organism, and in recurring or stubborn fungal complaints",
+        "prep": "No preparation is required from the patient: the work is done on a culture that has already been isolated",
+        "abnormal": "The species name says which fungus has grown, not whether it causes disease: some species are ordinary inhabitants of the skin and mucous membranes. The doctor assesses what the finding means and whether treatment is needed"
+      },
+      "sr": {
+        "what": "Određivanje roda i vrste gljivice izrasle u kulturi",
+        "how": "Izrasla kolonija se procjenjuje po izgledu i pod mikroskopom, po potrebi se presijava na posebne podloge i rade biohemijski ili brzi testovi",
+        "when": "Radi se poslije pozitivne kulture brisa, strugotine, ispljuvka ili drugog materijala, kada je ljekaru važno da zna tačnog uzročnika, kao i kod ponavljanih i upornih gljivičnih tegoba",
+        "prep": "Priprema pacijenta nije potrebna: radi se sa već izolovanom kulturom",
+        "abnormal": "Naziv vrste govori koja je gljivica izrasla, ali ne i da li ona izaziva bolest: dio vrsta pripada uobičajenim stanovnicima kože i sluznica. Značaj nalaza i potrebu za liječenjem procjenjuje ljekar"
+      },
+      "de": {
+        "what": "Bestimmung von Gattung und Art eines in der Kultur gewachsenen Pilzes",
+        "how": "Die gewachsene Kolonie wird nach Aussehen und unter dem Mikroskop beurteilt, bei Bedarf auf Spezialnährböden überimpft und mit biochemischen oder Schnelltests untersucht",
+        "when": "Erfolgt nach einer positiven Kultur aus Abstrich, Schuppen, Sputum oder anderem Material, wenn der Arzt den genauen Erreger kennen muss, sowie bei wiederkehrenden und hartnäckigen Pilzbeschwerden",
+        "prep": "Vom Patienten ist keine Vorbereitung nötig: gearbeitet wird mit einer bereits isolierten Kultur",
+        "abnormal": "Der Artname sagt, welcher Pilz gewachsen ist, nicht aber, ob er eine Erkrankung verursacht: ein Teil der Arten gehört zur normalen Besiedlung von Haut und Schleimhäuten. Bedeutung des Befunds und Behandlungsbedarf beurteilt der Arzt"
+      },
+      "tr": {
+        "what": "Kültürde üreyen mantarın cins ve türünün belirlenmesi",
+        "how": "Üreyen koloni görünümüne göre ve mikroskopla değerlendirilir, gerekirse özel besiyerlerine pasajlanır ve biyokimyasal ya da hızlı testlerle incelenir",
+        "when": "Sürüntü, kazıntı, balgam ya da başka bir örneğin kültürü pozitif çıktığında ve hekimin etkeni tam olarak bilmesi gerektiğinde, ayrıca yinelenen ve inatçı mantar yakınmalarında yapılır",
+        "prep": "Hastadan hazırlık istenmez: çalışma daha önce izole edilmiş kültür üzerinde yapılır",
+        "abnormal": "Tür adı hangi mantarın ürediğini söyler, hastalık yapıp yapmadığını değil: türlerin bir bölümü deri ve mukozaların olağan sakinleridir. Bulgunun anlamını ve tedavi gerekliliğini hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Одређивање рода и врсте гљивице израсле у култури",
+        "how": "Израсла колонија се процјењује по изгледу и под микроскопом, по потреби се пресијава на посебне подлоге и раде биохемијски или брзи тестови",
+        "when": "Ради се послије позитивне културе бриса, струготине, испљувка или другог материјала, када је љекару важно да зна тачног узрочника, као и код понављаних и упорних гљивичних тегоба",
+        "prep": "Припрема пацијента није потребна: ради се са већ изолованом културом",
+        "abnormal": "Назив врсте говори која је гљивица израсла, али не и да ли она изазива болест: дио врста припада уобичајеним становницима коже и слузница. Значај налаза и потребу за лијечењем процјењује љекар"
+      }
+    }
+  },
+  {
+    "slug": "liquid-based-cytology",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Цитологическое исследование клеток шейки матки, при котором материал переносят в жидкую консервирующую среду",
+        "how": "Гинеколог берёт клетки щёточкой, как при обычном мазке, но щёточку опускают во флакон с жидкостью, а тонкий слой клеток лаборатория готовит уже из него",
+        "when": "Плановый цервикальный скрининг, неинформативный результат обычного мазка, необходимость выполнить дополнительные исследования из того же материала, наблюдение после ранее выявленных изменений",
+        "prep": "Вне менструации, за один-два дня без вагинальных препаратов, спринцеваний и половых контактов",
+        "abnormal": "Изменения клеток могут быть связаны с воспалением, гормональным влиянием или с изменениями эпителия, требующими наблюдения, и описываются по стандартной классификации. Срок повторного обследования и необходимость кольпоскопии определяет гинеколог"
+      },
+      "en": {
+        "what": "Cytological examination of cervical cells in which the material is transferred into a liquid preservative",
+        "how": "The gynaecologist collects cells with a brush as in a conventional smear, but the brush is rinsed into a vial of fluid, from which the laboratory prepares a thin layer of cells",
+        "when": "Routine cervical screening, an unusable result of a conventional smear, the need to run additional tests from the same sample, follow-up after previously detected changes",
+        "prep": "Outside menstruation, with no vaginal products, douching or sexual contact for one to two days beforehand",
+        "abnormal": "Cell changes may be related to inflammation, hormonal influence or to epithelial changes that require follow-up, and are reported using a standard classification. The gynaecologist sets the interval for repeat testing and decides whether colposcopy is needed"
+      },
+      "sr": {
+        "what": "Citološki pregled ćelija grlića materice kod kojeg se uzorak prenosi u tečnu konzervišuću podlogu",
+        "how": "Ginekolog uzima ćelije četkicom kao i kod klasičnog brisa, ali se četkica spušta u bočicu sa tečnošću, a laboratorija iz nje pravi tanak sloj ćelija",
+        "when": "Redovan skrining grlića materice, neupotrebljiv nalaz klasičnog brisa, potreba da se iz istog uzorka urade dodatna ispitivanja, praćenje poslije ranije uočenih promjena",
+        "prep": "Van menstruacije, jedan do dva dana bez vaginalnih preparata, ispiranja i polnih odnosa",
+        "abnormal": "Promjene ćelija mogu biti povezane sa upalom, hormonskim uticajem ili sa promjenama epitela koje traže praćenje, a opisuju se standardnom klasifikacijom. Rok ponovnog pregleda i potrebu za kolposkopijom određuje ginekolog"
+      },
+      "de": {
+        "what": "Zytologische Untersuchung von Zellen des Gebärmutterhalses, bei der das Material in eine flüssige Konservierungslösung überführt wird",
+        "how": "Die Frauenärztin entnimmt die Zellen wie beim klassischen Abstrich mit einer Bürste, spült diese aber in ein Fläschchen mit Flüssigkeit, aus dem das Labor eine dünne Zellschicht herstellt",
+        "when": "Regelmäßige Gebärmutterhals-Vorsorge, nicht beurteilbarer klassischer Abstrich, Bedarf an weiteren Untersuchungen aus derselben Probe, Verlaufskontrolle nach früher festgestellten Veränderungen",
+        "prep": "Außerhalb der Menstruation, ein bis zwei Tage ohne Vaginalpräparate, Spülungen und Geschlechtsverkehr",
+        "abnormal": "Zellveränderungen können mit einer Entzündung, hormonellen Einflüssen oder mit Veränderungen des Epithels zusammenhängen, die eine Kontrolle brauchen, und werden nach einer Standardklassifikation beschrieben. Den Abstand bis zur Kontrolle und die Notwendigkeit einer Kolposkopie legt die Frauenärztin fest"
+      },
+      "tr": {
+        "what": "Örneğin sıvı koruyucu ortama aktarıldığı rahim ağzı hücre incelemesi",
+        "how": "Jinekolog hücreleri klasik smearde olduğu gibi fırçayla alır, ancak fırça sıvı dolu bir şişeye batırılır ve laboratuvar bu sıvıdan ince bir hücre tabakası hazırlar",
+        "when": "Düzenli rahim ağzı taraması, klasik smearin değerlendirilemeyen sonucu, aynı örnekten ek testlerin yapılması gereği, daha önce saptanmış değişikliklerin izlemi",
+        "prep": "Adet dönemi dışında, bir iki gün önce vajinal ürün, duş ve cinsel ilişki olmadan",
+        "abnormal": "Hücre değişiklikleri iltihapla, hormonal etkiyle ya da izlem gerektiren epitel değişiklikleriyle ilişkili olabilir ve standart bir sınıflamaya göre bildirilir. Kontrol aralığını ve kolposkopi gerekip gerekmediğini jinekolog belirler"
+      },
+      "sr_cyrl": {
+        "what": "Цитолошки преглед ћелија грлића материце код којег се узорак преноси у течну конзервишућу подлогу",
+        "how": "Гинеколог узима ћелије четкицом као и код класичног бриса, али се четкица спушта у бочицу са течношћу, а лабораторија из ње прави танак слој ћелија",
+        "when": "Редован скрининг грлића материце, неупотребљив налаз класичног бриса, потреба да се из истог узорка ураде додатна испитивања, праћење послије раније уочених промјена",
+        "prep": "Ван менструације, један до два дана без вагиналних препарата, испирања и полних односа",
+        "abnormal": "Промјене ћелија могу бити повезане са упалом, хормонским утицајем или са промјенама епитела које траже праћење, а описују се стандардном класификацијом. Рок поновног прегледа и потребу за колпоскопијом одређује гинеколог"
+      }
+    }
+  },
+  {
+    "slug": "punctate-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Исследование жидкости, полученной пункцией, на дрожжевые и плесневые грибы",
+        "how": "Материал в стерильном шприце или контейнере доставляют в лабораторию, часть идёт на микроскопию, часть — на среды для грибов, которые выдерживают дольше бактериальных",
+        "when": "Длительная лихорадка без ответа на антибиотики, скопление жидкости у пациента со сниженным иммунитетом или после долгой антибактериальной терапии, выпот в суставе или полости с подозрением на грибковую причину",
+        "prep": "От пациента подготовка не требуется, пункцию проводит врач; принимаемые противогрибковые препараты нужно назвать заранее",
+        "abnormal": "Рост грибов может означать участие грибковой флоры в воспалении, а может отражать загрязнение материала при получении. Вывод вместе с клинической картиной делает лечащий врач"
+      },
+      "en": {
+        "what": "Examination of fluid obtained by puncture for yeasts and moulds",
+        "how": "The material is delivered to the laboratory in a sterile syringe or container, part going for microscopy and part onto fungal media, which are kept longer than bacterial ones",
+        "when": "Prolonged fever with no response to antibiotics, a fluid collection in a patient with reduced immunity or after long antibacterial therapy, effusion in a joint or a cavity with a suspected fungal cause",
+        "prep": "No preparation is needed from the patient, the puncture is performed by a doctor; any antifungal drugs being taken should be named in advance",
+        "abnormal": "Fungal growth may mean that fungal flora takes part in the inflammation, or may reflect contamination of the sample during collection. The treating doctor draws the conclusion together with the clinical picture"
+      },
+      "sr": {
+        "what": "Ispitivanje tečnosti dobijene punkcijom na kvasnice i plijesni",
+        "how": "Materijal u sterilnom špricu ili posudi dostavlja se u laboratoriju, dio ide na mikroskopiju, a dio na podloge za gljivice koje se drže duže nego bakteriološke",
+        "when": "Dugotrajna temperatura bez odgovora na antibiotike, nakupljanje tečnosti kod pacijenta sa oslabljenim imunitetom ili poslije duge antibiotske terapije, izliv u zglobu ili šupljini uz sumnju na gljivični uzrok",
+        "prep": "Od pacijenta se priprema ne traži, punkciju radi ljekar; antimikotike koje uzima treba navesti unaprijed",
+        "abnormal": "Porast gljivica može značiti učešće gljivične flore u upali, ali i zagađenje uzorka pri uzimanju. Zaključak zajedno sa kliničkom slikom donosi ljekar koji liječi"
+      },
+      "de": {
+        "what": "Untersuchung von Punktionsflüssigkeit auf Hefen und Schimmelpilze",
+        "how": "Das Material wird in einer sterilen Spritze oder einem Gefäß ins Labor gebracht, ein Teil geht zur Mikroskopie, ein Teil auf Pilznährböden, die länger bebrütet werden als bakterielle",
+        "when": "Anhaltendes Fieber ohne Ansprechen auf Antibiotika, Flüssigkeitsansammlung bei geschwächter Abwehr oder nach langer antibakterieller Therapie, Erguss in einem Gelenk oder einer Höhle mit Verdacht auf eine Pilzursache",
+        "prep": "Vom Patienten ist keine Vorbereitung nötig, die Punktion führt der Arzt durch; eingenommene Antimykotika sollten vorher genannt werden",
+        "abnormal": "Pilzwachstum kann bedeuten, dass Pilzflora an der Entzündung beteiligt ist, kann aber auch eine Verunreinigung bei der Entnahme widerspiegeln. Die Bewertung nimmt der behandelnde Arzt zusammen mit dem klinischen Bild vor"
+      },
+      "tr": {
+        "what": "Ponksiyonla alınan sıvının maya ve küf mantarları yönünden incelenmesi",
+        "how": "Örnek steril enjektör ya da kap içinde laboratuvara ulaştırılır, bir bölümü mikroskopiye, bir bölümü bakteri besiyerlerinden daha uzun süre tutulan mantar besiyerlerine gider",
+        "when": "Antibiyotiklere yanıt vermeyen uzamış ateş, bağışıklığı düşük hastada ya da uzun antibakteriyel tedavi sonrası sıvı toplanması, mantar kaynaklı olduğundan kuşkulanılan eklem ya da boşluk sıvısı",
+        "prep": "Hastadan hazırlık istenmez, ponksiyonu hekim yapar; kullanılan antifungal ilaçlar önceden bildirilmelidir",
+        "abnormal": "Mantar üremesi iltihaba mantar florasının katıldığı anlamına gelebileceği gibi örnek alınırken bulaşmayı da yansıtabilir. Sonucu klinik tabloyla birlikte tedaviyi yürüten hekim değerlendirir"
+      },
+      "sr_cyrl": {
+        "what": "Испитивање течности добијене пункцијом на кваснице и плијесни",
+        "how": "Материјал у стерилном шприцу или посуди доставља се у лабораторију, дио иде на микроскопију, а дио на подлоге за гљивице које се држе дуже него бактериолошке",
+        "when": "Дуготрајна температура без одговора на антибиотике, накупљање течности код пацијента са ослабљеним имунитетом или послије дуге антибиотске терапије, излив у зглобу или шупљини уз сумњу на гљивични узрок",
+        "prep": "Од пацијента се припрема не тражи, пункцију ради љекар; антимикотике које узима треба навести унапријед",
+        "abnormal": "Пораст гљивица може значити учешће гљивичне флоре у упали, али и загађење узорка при узимању. Закључак заједно са клиничком сликом доноси љекар који лијечи"
+      }
+    }
+  },
+  {
+    "slug": "umbilicus-swab-fungi",
+    "entity_type": "lab_test",
+    "translations": {
+      "ru": {
+        "what": "Посев материала из пупочной складки на дрожжевые и плесневые грибы",
+        "how": "Тонким стерильным тампоном собирают отделяемое и налёт из глубины пупочной ямки, материал засевают на среду для грибов",
+        "when": "Влажность, белёсый налёт и неприятный запах в пупке, зуд и покраснение кожи вокруг, жалобы на фоне лишнего веса, диабета или длительного приёма антибиотиков, состояние после пирсинга",
+        "prep": "Пупок перед забором не мыть с мылом и не обрабатывать антисептиками, кремы и присыпки не наносить",
+        "abnormal": "Рост дрожжевых грибов может быть связан с воспалением складки из-за влажности, а встречается и без воспаления. Что делать с находкой, решает дерматолог"
+      },
+      "en": {
+        "what": "Culture of material from the navel fold for yeasts and moulds",
+        "how": "A thin sterile swab collects discharge and deposit from the depth of the umbilical pit, and the material is plated on fungal medium",
+        "when": "Moisture, a whitish deposit and an unpleasant smell in the navel, itching and redness of the surrounding skin, complaints in excess weight, diabetes or long antibiotic use, the state after piercing",
+        "prep": "Do not wash the navel with soap or treat it with antiseptics before sampling, and do not apply creams or powders",
+        "abnormal": "Growth of yeasts may be related to inflammation of the fold caused by moisture, and also occurs without inflammation. What follows from the finding is decided by the dermatologist"
+      },
+      "sr": {
+        "what": "Kultura materijala iz nabora pupka na kvasnice i plijesni",
+        "how": "Tankim sterilnim štapićem sakuplja se sekret i naslaga iz dubine pupčane jamice, a materijal se zasijava na podlogu za gljivice",
+        "when": "Vlaženje, bjelkasta naslaga i neprijatan miris u pupku, svrab i crvenilo kože oko njega, tegobe uz prekomjernu težinu, dijabetes ili dugo uzimanje antibiotika, stanje poslije pirsinga",
+        "prep": "Pupak prije uzimanja ne prati sapunom i ne tretirati antisepticima, ne nanositi kreme ni pudere",
+        "abnormal": "Porast kvasnica može biti povezan sa upalom nabora zbog vlage, a nalazi se i bez upale. Šta dalje sa nalazom, odlučuje dermatolog"
+      },
+      "de": {
+        "what": "Kultur von Material aus der Nabelfalte auf Hefen und Schimmelpilze",
+        "how": "Mit einem dünnen sterilen Tupfer werden Sekret und Belag aus der Tiefe der Nabelgrube gewonnen und auf Pilznährboden ausgestrichen",
+        "when": "Nässen, weißlicher Belag und unangenehmer Geruch im Nabel, Juckreiz und Rötung der umgebenden Haut, Beschwerden bei Übergewicht, Diabetes oder langer Antibiotikaeinnahme, Zustand nach einem Piercing",
+        "prep": "Den Nabel vor der Entnahme nicht mit Seife waschen und nicht mit Antiseptika behandeln, keine Cremes oder Puder auftragen",
+        "abnormal": "Das Wachstum von Hefepilzen kann mit einer feuchtigkeitsbedingten Entzündung der Falte zusammenhängen und kommt auch ohne Entzündung vor. Was aus dem Befund folgt, entscheidet der Hautarzt"
+      },
+      "tr": {
+        "what": "Göbek kıvrımından alınan örneğin maya ve küf mantarları için kültürü",
+        "how": "İnce steril eküvyonla göbek çukurunun derininden akıntı ve birikinti alınır, örnek mantar besiyerine ekilir",
+        "when": "Göbekte nemlenme, beyazımsı birikinti ve kötü koku, çevresindeki deride kaşıntı ve kızarıklık, fazla kilo, diyabet ya da uzun süreli antibiyotik kullanımıyla birlikte görülen yakınmalar, piercing sonrası durum",
+        "prep": "Örnek alınmadan önce göbek sabunla yıkanmamalı, antiseptikle temizlenmemeli, krem ve pudra sürülmemelidir",
+        "abnormal": "Maya mantarlarının üremesi nemden kaynaklanan kıvrım iltihabıyla ilişkili olabilir, iltihap olmadan da görülür. Bulguyla ne yapılacağına dermatolog karar verir"
+      },
+      "sr_cyrl": {
+        "what": "Култура материјала из набора пупка на кваснице и плијесни",
+        "how": "Танким стерилним штапићем сакупља се секрет и наслага из дубине пупчане јамице, а материјал се засијава на подлогу за гљивице",
+        "when": "Влажење, бјелкаста наслага и непријатан мирис у пупку, свраб и црвенило коже око њега, тегобе уз прекомјерну тежину, дијабетес или дуго узимање антибиотика, стање послије пирсинга",
+        "prep": "Пупак прије узимања не прати сапуном и не третирати антисептицима, не наносити креме ни пудере",
+        "abnormal": "Пораст квасница може бити повезан са упалом набора због влаге, а налази се и без упале. Шта даље са налазом, одлучује дерматолог"
+      }
+    }
+  }
 ]

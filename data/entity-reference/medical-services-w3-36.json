@@ -1,617 +1,722 @@
 [
-	{
-		"slug": "operating-theatre-costs-tier-i-121-to-180-points",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Работа операционной общей больницы при самых обширных и длительных вмешательствах",
-				"how": "Операция идёт много часов, задействованы расширенная хирургическая бригада, анестезиологическая служба, большое количество расходных материалов и аппаратуры; часто заранее готовят компоненты крови",
-				"when": "Обширные вмешательства на нескольких анатомических областях, реконструктивные и комбинированные операции, тяжёлые травмы",
-				"prep": "Плановая госпитализация с полным обследованием, консультации смежных специалистов, беседа с анестезиологом, отказ от курения и согласование лекарств заранее",
-				"abnormal": "После таких операций обычно следует наблюдение в палате интенсивной или полуинтенсивной терапии и постепенная реабилитация; план контрольных визитов и допустимую нагрузку определяет лечащий хирург"
-			},
-			"en": {
-				"what": "An operating theatre of a general hospital used for the most extensive and longest procedures",
-				"how": "The operation runs for many hours and involves an enlarged surgical team, the anaesthesia service, a large amount of supplies and equipment; blood components are often prepared in advance",
-				"when": "Extensive procedures covering several anatomical areas, reconstructive and combined operations, severe trauma",
-				"prep": "Planned admission with a full work-up, consultations with related specialists, a talk with the anaesthetist, stopping smoking and agreeing on medicines in advance",
-				"abnormal": "Such operations are usually followed by care in an intensive or semi-intensive unit and gradual rehabilitation; the treating surgeon sets the schedule of follow-up visits and the allowed level of activity"
-			},
-			"sr": {
-				"what": "Operaciona sala opšte bolnice kod najobimnijih i najdužih zahvata",
-				"how": "Operacija traje više sati i uključuje prošireni hirurški tim, anesteziološku službu, veliku količinu materijala i aparata; često se unaprijed obezbjeđuju komponente krvi",
-				"when": "Obimni zahvati na više anatomskih regija, rekonstruktivne i kombinovane operacije, teške povrede",
-				"prep": "Planirani prijem uz kompletnu obradu, pregledi kod srodnih specijalista, razgovor sa anesteziologom, prestanak pušenja i raniji dogovor o terapiji",
-				"abnormal": "Poslije ovakvih operacija obično slijedi boravak u intenzivnoj ili poluintenzivnoj njezi i postepena rehabilitacija; raspored kontrola i dozvoljeno opterećenje određuje hirurg koji vodi liječenje"
-			},
-			"de": {
-				"what": "Operationssaal eines allgemeinen Krankenhauses bei den umfangreichsten und längsten Eingriffen",
-				"how": "Die Operation dauert viele Stunden und bindet ein erweitertes Operationsteam, den Anästhesiedienst sowie viel Material und Technik; häufig werden Blutkomponenten im Voraus bereitgestellt",
-				"when": "Ausgedehnte Eingriffe über mehrere anatomische Regionen, rekonstruktive und kombinierte Operationen, schwere Verletzungen",
-				"prep": "Geplante Aufnahme mit vollständiger Abklärung, Vorstellung bei weiteren Fachärzten, Anästhesiegespräch, Rauchstopp und frühzeitige Abstimmung der Medikamente",
-				"abnormal": "Nach solchen Operationen folgen meist eine Betreuung auf einer Intensiv- oder Überwachungsstation und eine schrittweise Rehabilitation; Kontrolltermine und zulässige Belastung legt der behandelnde Chirurg fest"
-			},
-			"tr": {
-				"what": "Genel hastane ameliyathanesinin en kapsamlı ve en uzun girişimler için kullanımı",
-				"how": "Ameliyat saatlerce sürer; genişletilmiş cerrahi ekip, anestezi hizmeti, çok sayıda sarf malzemesi ve cihaz kullanılır, sıklıkla kan ürünleri önceden hazırlanır",
-				"when": "Birden fazla anatomik bölgeyi kapsayan geniş girişimler, rekonstrüktif ve birleşik ameliyatlar, ağır yaralanmalar",
-				"prep": "Tam değerlendirmeyle planlı yatış, ilgili uzmanların görüşleri, anestezi uzmanıyla görüşme, sigaranın bırakılması ve ilaçların önceden düzenlenmesi",
-				"abnormal": "Bu ameliyatlardan sonra genellikle yoğun bakım ya da yarı yoğun bakımda izlem ve kademeli rehabilitasyon gerekir; kontrol zamanlarını ve izin verilen aktiviteyi tedaviyi yürüten cerrah belirler"
-			}
-		}
-	},
-	{
-		"slug": "operating-theatre-costs-tier-i-21-to-50-points",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Работа операционной общей больницы при вмешательстве среднего объёма",
-				"how": "Операция идёт в стерильной операционной с хирургической бригадой, анестезиологом и операционной сестрой, занимает заметно больше времени, чем малые вмешательства, и чаще требует общей или регионарной анестезии",
-				"when": "Плановые и неотложные операции средней сложности: грыжесечение, удаление аппендикса, вмешательства на мягких тканях и суставах",
-				"prep": "Голодание перед наркозом по указанию анестезиолога, предоперационные анализы и ЭКГ, согласование постоянных лекарств с врачом",
-				"abnormal": "За такой операцией обычно следует наблюдение в палате в течение одного или нескольких дней; о температуре, нарастающей боли, покраснении или отделяемом из раны после выписки нужно сообщить оперировавшему хирургу"
-			},
-			"en": {
-				"what": "An operating theatre of a general hospital used for a procedure of moderate volume",
-				"how": "The operation takes place in a sterile theatre with a surgical team, an anaesthetist and a scrub nurse, takes noticeably longer than minor procedures and more often requires general or regional anaesthesia",
-				"when": "Planned and urgent operations of moderate complexity: hernia repair, appendix removal, procedures on soft tissues and joints",
-				"prep": "Fasting before anaesthesia as instructed by the anaesthetist, pre-operative tests and ECG, regular medicines agreed with the doctor",
-				"abnormal": "Such an operation is usually followed by one or several days of observation on the ward; fever, growing pain, redness or discharge from the wound after discharge should be reported to the operating surgeon"
-			},
-			"sr": {
-				"what": "Operaciona sala opšte bolnice za zahvat srednjeg obima",
-				"how": "Operacija se izvodi u sterilnoj sali sa hirurškim timom, anesteziologom i instrumentarkom, traje osjetno duže od malih zahvata i češće zahtijeva opštu ili regionalnu anesteziju",
-				"when": "Planirane i hitne operacije srednje složenosti: operacija kile, odstranjenje slijepog crijeva, zahvati na mekim tkivima i zglobovima",
-				"prep": "Nejedenje prije anestezije po uputstvu anesteziologa, preoperativni nalazi i EKG, dogovor o stalnoj terapiji sa ljekarom",
-				"abnormal": "Poslije ovakve operacije obično slijedi posmatranje na odjeljenju jedan ili više dana; temperaturu, pojačan bol, crvenilo ili sekreciju iz rane nakon otpusta treba javiti hirurgu koji je operisao"
-			},
-			"de": {
-				"what": "Operationssaal eines allgemeinen Krankenhauses für einen Eingriff mittleren Umfangs",
-				"how": "Die Operation erfolgt im sterilen Saal mit Operationsteam, Anästhesist und Instrumentierschwester, dauert deutlich länger als kleine Eingriffe und erfordert häufiger eine Vollnarkose oder Regionalanästhesie",
-				"when": "Geplante und dringliche Operationen mittlerer Schwierigkeit: Leistenbruch, Entfernung des Blinddarms, Eingriffe an Weichteilen und Gelenken",
-				"prep": "Nüchternheit vor der Narkose nach Anweisung des Anästhesisten, Voruntersuchungen und EKG, Dauermedikation mit dem Arzt abstimmen",
-				"abnormal": "Nach einer solchen Operation folgt meist eine Überwachung auf Station über einen oder mehrere Tage; Fieber, zunehmende Schmerzen, Rötung oder Sekret aus der Wunde nach der Entlassung sind dem operierenden Chirurgen zu melden"
-			},
-			"tr": {
-				"what": "Orta hacimli bir girişim için genel hastane ameliyathanesinin kullanımı",
-				"how": "Ameliyat steril salonda cerrahi ekip, anestezi uzmanı ve ameliyat hemşiresi ile yapılır, küçük girişimlerden belirgin biçimde uzun sürer ve daha sık genel ya da bölgesel anestezi gerektirir",
-				"when": "Orta güçlükteki planlı ve acil ameliyatlar: fıtık onarımı, apandisin alınması, yumuşak doku ve eklem girişimleri",
-				"prep": "Anestezi öncesi anestezi uzmanının belirttiği süre boyunca aç kalmak, ameliyat öncesi tetkikler ve EKG, sürekli kullanılan ilaçların hekimle görüşülmesi",
-				"abnormal": "Bu tür bir ameliyattan sonra genellikle serviste bir veya birkaç gün izlem gerekir; taburculuk sonrası ateş, artan ağrı, kızarıklık veya yarada akıntı ameliyatı yapan cerraha bildirilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "operating-theatre-costs-tier-i-5-to-20-points",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Использование операционной общей больницы для вмешательства небольшого объёма",
-				"how": "Пациента готовят в предоперационной, вмешательство проходит в стерильной операционной с участием хирурга, анестезиолога и операционной сестры; такие операции обычно короткие, часто под местной или регионарной анестезией",
-				"when": "Небольшие хирургические вмешательства, которые по соображениям безопасности делают не в перевязочной, а в операционной: иссечение образований кожи и мягких тканей, несложные вмешательства на конечностях",
-				"prep": "Зависит от самой операции: обычно не есть и не пить с вечера накануне, взять результаты предоперационных обследований и список постоянных лекарств",
-				"abnormal": "После короткого вмешательства пациента обычно наблюдают несколько часов и отпускают домой в тот же или на следующий день; усиление боли, кровотечение, повышение температуры или расхождение краёв раны требуют внепланового осмотра хирурга"
-			},
-			"en": {
-				"what": "Use of a general hospital operating theatre for a small-volume procedure",
-				"how": "The patient is prepared in the pre-operative area, the procedure is performed in a sterile theatre by a surgeon, an anaesthetist and a scrub nurse; such operations are usually short and often done under local or regional anaesthesia",
-				"when": "Minor surgical procedures that for safety reasons are done in a theatre rather than a treatment room: excision of skin and soft tissue lesions, simple procedures on the limbs",
-				"prep": "Depends on the operation itself: usually no food or drink from the evening before, bring pre-operative test results and a list of regular medicines",
-				"abnormal": "After a short procedure the patient is usually observed for a few hours and goes home the same or the next day; increasing pain, bleeding, fever or a wound that opens calls for an unscheduled visit to the surgeon"
-			},
-			"sr": {
-				"what": "Korišćenje operacione sale opšte bolnice za zahvat malog obima",
-				"how": "Pacijent se priprema u pripremnom prostoru, zahvat se izvodi u sterilnoj sali uz hirurga, anesteziologa i instrumentarku; takve operacije su obično kratke i često u lokalnoj ili regionalnoj anesteziji",
-				"when": "Manji hirurški zahvati koji se zbog bezbjednosti rade u sali, a ne u previjalištu: odstranjenje promjena kože i mekih tkiva, jednostavni zahvati na ekstremitetima",
-				"prep": "Zavisi od same operacije: obično se ne jede i ne pije od večeri uoči zahvata, ponijeti nalaze preoperativnih ispitivanja i spisak stalnih lijekova",
-				"abnormal": "Poslije kratkog zahvata pacijent se obično posmatra nekoliko sati i ide kući istog ili narednog dana; pojačan bol, krvarenje, povišena temperatura ili razdvajanje ivica rane traže vanredni pregled hirurga"
-			},
-			"de": {
-				"what": "Nutzung des Operationssaals eines allgemeinen Krankenhauses für einen Eingriff kleinen Umfangs",
-				"how": "Der Patient wird im Vorbereitungsraum vorbereitet, der Eingriff findet im sterilen Saal mit Chirurg, Anästhesist und Instrumentierschwester statt; solche Operationen sind meist kurz und oft in örtlicher oder regionaler Betäubung",
-				"when": "Kleinere chirurgische Eingriffe, die aus Sicherheitsgründen im Saal und nicht im Behandlungszimmer erfolgen: Entfernung von Haut- und Weichteilveränderungen, einfache Eingriffe an den Gliedmaßen",
-				"prep": "Richtet sich nach der Operation: meist nüchtern ab dem Vorabend, Befunde der Voruntersuchungen und eine Liste der Dauermedikamente mitbringen",
-				"abnormal": "Nach einem kurzen Eingriff wird der Patient einige Stunden überwacht und geht am selben oder am nächsten Tag nach Hause; zunehmende Schmerzen, Blutung, Fieber oder eine sich öffnende Wunde erfordern eine kurzfristige Vorstellung beim Chirurgen"
-			},
-			"tr": {
-				"what": "Küçük hacimli bir girişim için genel hastane ameliyathanesinin kullanılması",
-				"how": "Hasta hazırlık bölümünde hazırlanır, girişim steril ameliyathanede cerrah, anestezi uzmanı ve ameliyat hemşiresi eşliğinde yapılır; bu ameliyatlar genellikle kısadır ve sıklıkla lokal ya da bölgesel anestezi ile yapılır",
-				"when": "Güvenlik nedeniyle pansuman odasında değil ameliyathanede yapılan küçük cerrahi girişimler: deri ve yumuşak doku oluşumlarının çıkarılması, uzuvlarda basit girişimler",
-				"prep": "Ameliyata göre değişir: genellikle bir önceki akşamdan itibaren aç kalınır, ameliyat öncesi tetkik sonuçları ve sürekli kullanılan ilaçların listesi getirilir",
-				"abnormal": "Kısa girişimden sonra hasta birkaç saat izlenir ve aynı gün ya da ertesi gün evine gider; artan ağrı, kanama, ateş ya da yara kenarlarının ayrılması durumunda planlanandan önce cerraha başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "operating-theatre-costs-tier-i-51-to-120-points",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Работа операционной общей больницы при объёмном хирургическом вмешательстве",
-				"how": "Длительная операция с полной бригадой, общей анестезией и мониторингом жизненных показателей; после неё пациента переводят в послеоперационную палату или в палату усиленного наблюдения",
-				"when": "Крупные операции на органах брюшной полости, в гинекологии, урологии и травматологии, когда вмешательство занимает несколько часов",
-				"prep": "Госпитализация накануне или в день операции, полное предоперационное обследование, осмотр анестезиолога, отказ от еды и питья в оговорённые часы",
-				"abnormal": "Восстановление идёт дольше: в первые дни возможны слабость, боль в области раны и ограничение активности. Сроки контрольных осмотров и снятия швов определяет хирург, при лихорадке или резком ухудшении нужна срочная связь с больницей"
-			},
-			"en": {
-				"what": "An operating theatre of a general hospital used for an extensive surgical operation",
-				"how": "A long operation with a full team, general anaesthesia and monitoring of vital signs; afterwards the patient is moved to a recovery room or to a unit with closer observation",
-				"when": "Major operations on the abdominal organs, in gynaecology, urology and traumatology, when the procedure takes several hours",
-				"prep": "Admission the day before or on the day of surgery, full pre-operative work-up, assessment by the anaesthetist, no food or drink during the agreed hours",
-				"abnormal": "Recovery takes longer: weakness, pain around the wound and limited activity in the first days are common. The surgeon sets the timing of follow-up visits and suture removal, while fever or sudden deterioration requires urgent contact with the hospital"
-			},
-			"sr": {
-				"what": "Operaciona sala opšte bolnice kod obimnog hirurškog zahvata",
-				"how": "Duga operacija sa punim timom, u opštoj anesteziji i uz praćenje vitalnih parametara; poslije nje pacijent ide u sobu za buđenje ili na pojačan nadzor",
-				"when": "Velike operacije na trbušnim organima, u ginekologiji, urologiji i traumatologiji, kada zahvat traje više sati",
-				"prep": "Prijem uoči ili na dan operacije, kompletna preoperativna obrada, pregled anesteziologa, bez hrane i pića u dogovorenim satima",
-				"abnormal": "Oporavak traje duže: slabost, bol u predjelu rane i smanjena aktivnost prvih dana su očekivani. Rokove kontrola i vađenja konaca određuje hirurg, a kod temperature ili naglog pogoršanja treba se odmah javiti bolnici"
-			},
-			"de": {
-				"what": "Operationssaal eines allgemeinen Krankenhauses bei einem umfangreichen chirurgischen Eingriff",
-				"how": "Lange Operation mit vollständigem Team, Vollnarkose und Überwachung der Vitalwerte; danach kommt der Patient in den Aufwachraum oder auf eine Station mit engmaschiger Überwachung",
-				"when": "Große Operationen an Bauchorganen, in Gynäkologie, Urologie und Unfallchirurgie, wenn der Eingriff mehrere Stunden dauert",
-				"prep": "Aufnahme am Vortag oder am Operationstag, vollständige Voruntersuchung, Anästhesiegespräch, Nüchternheit in den vereinbarten Stunden",
-				"abnormal": "Die Erholung dauert länger: Schwäche, Schmerzen im Wundbereich und eingeschränkte Aktivität in den ersten Tagen sind üblich. Kontrolltermine und Fadenzug legt der Chirurg fest, bei Fieber oder plötzlicher Verschlechterung ist sofort das Krankenhaus zu kontaktieren"
-			},
-			"tr": {
-				"what": "Genel hastane ameliyathanesinin geniş kapsamlı bir cerrahi girişim için kullanımı",
-				"how": "Tam ekip, genel anestezi ve yaşamsal bulguların izlenmesiyle yapılan uzun bir ameliyattır; sonrasında hasta uyanma odasına ya da daha yakın izlem yapılan bir birime alınır",
-				"when": "Girişimin birkaç saat sürdüğü karın içi organ ameliyatları, jinekoloji, üroloji ve travmatoloji ameliyatları",
-				"prep": "Bir gün önce ya da ameliyat günü yatış, tam ameliyat öncesi değerlendirme, anestezi uzmanı muayenesi, belirlenen saatlerde aç kalmak",
-				"abnormal": "İyileşme daha uzun sürer: ilk günlerde halsizlik, yara bölgesinde ağrı ve hareket kısıtlılığı beklenir. Kontrol ve dikiş alma zamanını cerrah belirler, ateş ya da ani kötüleşmede hastaneye hemen başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "operating-theatre-costs-tier-ii-21-to-50-points",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Работа операционного блока клинического центра или специализированной больницы при вмешательстве среднего объёма",
-				"how": "Операцию выполняют в операционном блоке учреждения высшего уровня, где доступны узкие специалисты, расширенный анестезиологический мониторинг и профильное оборудование",
-				"when": "Операции средней сложности, которые ведут в специализированном центре из-за профиля вмешательства или сопутствующих заболеваний пациента",
-				"prep": "Направление профильного специалиста, предоперационное обследование и консультация анестезиолога, голодание перед наркозом по указанию врача",
-				"abnormal": "Длительность пребывания в больнице зависит от вида операции и течения восстановления; в выписке указан срок контрольного осмотра, а при лихорадке или проблемах с раной обращаются раньше"
-			},
-			"en": {
-				"what": "An operating block of a clinical centre or a specialised hospital used for a procedure of moderate volume",
-				"how": "The operation is carried out in the theatre block of a tertiary institution, where narrow specialists, extended anaesthetic monitoring and dedicated equipment are available",
-				"when": "Operations of moderate complexity that are done in a specialised centre because of the type of procedure or the patient's other conditions",
-				"prep": "A referral from the relevant specialist, pre-operative work-up and an anaesthetist's assessment, fasting before anaesthesia as instructed by the doctor",
-				"abnormal": "The length of the hospital stay depends on the type of operation and the course of recovery; the discharge letter states when to come for a check-up, and fever or wound problems mean coming sooner"
-			},
-			"sr": {
-				"what": "Operacioni blok kliničkog centra ili specijalne bolnice kod zahvata srednjeg obima",
-				"how": "Operacija se izvodi u operacionom bloku ustanove tercijarnog nivoa, gdje su dostupni uži specijalisti, prošireni anesteziološki nadzor i namjenska oprema",
-				"when": "Operacije srednje složenosti koje se vode u specijalizovanom centru zbog vrste zahvata ili pridruženih bolesti pacijenta",
-				"prep": "Uput nadležnog specijaliste, preoperativna obrada i pregled anesteziologa, nejedenje prije anestezije po uputstvu ljekara",
-				"abnormal": "Dužina boravka u bolnici zavisi od vrste operacije i toka oporavka; u otpusnoj listi stoji kada doći na kontrolu, a kod temperature ili problema sa ranom dolazi se ranije"
-			},
-			"de": {
-				"what": "Operationsbereich eines klinischen Zentrums oder einer Spezialklinik bei einem Eingriff mittleren Umfangs",
-				"how": "Die Operation erfolgt im Operationsbereich einer Einrichtung der höchsten Versorgungsstufe, wo Spezialisten, erweitertes Narkosemonitoring und spezielle Technik verfügbar sind",
-				"when": "Operationen mittlerer Schwierigkeit, die wegen der Art des Eingriffs oder wegen Begleiterkrankungen in einem spezialisierten Zentrum durchgeführt werden",
-				"prep": "Überweisung des zuständigen Facharztes, Voruntersuchungen und Anästhesiegespräch, Nüchternheit vor der Narkose nach ärztlicher Anweisung",
-				"abnormal": "Die Dauer des Krankenhausaufenthalts hängt von der Operation und vom Heilungsverlauf ab; im Entlassungsbrief steht der Kontrolltermin, bei Fieber oder Wundproblemen stellt man sich früher vor"
-			},
-			"tr": {
-				"what": "Klinik merkez ya da özel dal hastanesi ameliyat bloğunun orta hacimli bir girişim için kullanımı",
-				"how": "Ameliyat, yan dal uzmanlarının, genişletilmiş anestezi izleminin ve özel donanımın bulunduğu üçüncü basamak bir kurumun ameliyat bloğunda yapılır",
-				"when": "Girişimin türü ya da hastanın eşlik eden hastalıkları nedeniyle uzmanlaşmış merkezde yürütülen orta güçlükteki ameliyatlar",
-				"prep": "İlgili uzmanın sevki, ameliyat öncesi değerlendirme ve anestezi muayenesi, hekimin belirttiği süre boyunca aç kalmak",
-				"abnormal": "Hastanede kalış süresi ameliyatın türüne ve iyileşmenin seyrine bağlıdır; taburculuk raporunda kontrol zamanı belirtilir, ateş ya da yara sorunlarında daha erken başvurulur"
-			}
-		}
-	},
-	{
-		"slug": "peritoneal-dialysis",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Метод очищения крови, при котором фильтром служит собственная брюшина пациента",
-				"how": "Через постоянный катетер в брюшную полость вводят стерильный диализный раствор, он остаётся там заданное время и затем сливается вместе с избытком жидкости и продуктами обмена; при интермиттирующем режиме обмены проводят сеансами под наблюдением персонала",
-				"when": "Выраженная почечная недостаточность, когда нужна заместительная почечная терапия, ситуации, в которых гемодиализ не подходит или недоступен, начало длительной программы диализа",
-				"prep": "Перед сеансом опорожнить мочевой пузырь и кишечник, взвеситься, место выхода катетера держать чистым и сухим; режим и раствор подбирает нефролог",
-				"abnormal": "В ходе лечения оценивают самочувствие, вес, объём слитой жидкости и лабораторные показатели. Боль в животе, мутный слив, покраснение вокруг катетера или лихорадка требуют немедленного обращения к нефрологу"
-			},
-			"en": {
-				"what": "A method of blood purification in which the patient's own peritoneum works as the filter",
-				"how": "Sterile dialysis solution is run through a permanent catheter into the abdominal cavity, left there for a set time and then drained together with excess fluid and waste products; in the intermittent form the exchanges are done as sessions under supervision",
-				"when": "Advanced kidney failure requiring renal replacement therapy, situations where haemodialysis is not suitable or not available, start of a long-term dialysis programme",
-				"prep": "Empty the bladder and the bowel before the session, get weighed, keep the catheter exit site clean and dry; the schedule and the solution are chosen by the nephrologist",
-				"abnormal": "During treatment well-being, weight, the amount of drained fluid and laboratory values are followed. Abdominal pain, cloudy drained fluid, redness around the catheter or fever require immediate contact with the nephrologist"
-			},
-			"sr": {
-				"what": "Metoda pročišćavanja krvi u kojoj ulogu filtera ima sopstvena potrbušnica pacijenta",
-				"how": "Kroz stalni kateter se u trbušnu duplju uvodi sterilni dijalizni rastvor, ostaje određeno vrijeme i zatim se ispušta zajedno sa viškom tečnosti i produktima razmjene; kod intermitentnog režima izmjene se rade u seansama uz nadzor osoblja",
-				"when": "Uznapredovala bubrežna slabost kada je potrebna zamjena bubrežne funkcije, situacije u kojima hemodijaliza nije pogodna ili dostupna, uvođenje u dugotrajni program dijalize",
-				"prep": "Prije seanse isprazniti mokraćnu bešiku i crijeva, izmjeriti težinu, mjesto izlaska katetera držati čistim i suvim; režim i rastvor određuje nefrolog",
-				"abnormal": "Tokom liječenja prate se opšte stanje, težina, količina ispuštene tečnosti i laboratorijski nalazi. Bol u trbuhu, mutan ispust, crvenilo oko katetera ili temperatura traže hitno javljanje nefrologu"
-			},
-			"de": {
-				"what": "Blutreinigungsverfahren, bei dem das eigene Bauchfell des Patienten als Filter dient",
-				"how": "Über einen dauerhaften Katheter wird sterile Dialyselösung in die Bauchhöhle eingelassen, verbleibt dort eine festgelegte Zeit und wird dann mit überschüssiger Flüssigkeit und Stoffwechselprodukten abgelassen; beim intermittierenden Verfahren erfolgen die Wechsel als Sitzungen unter Aufsicht",
-				"when": "Fortgeschrittene Niereninsuffizienz mit Bedarf an Nierenersatztherapie, Situationen in denen eine Hämodialyse nicht geeignet oder nicht verfügbar ist, Beginn eines langfristigen Dialyseprogramms",
-				"prep": "Vor der Sitzung Blase und Darm entleeren, Gewicht bestimmen, die Katheteraustrittsstelle sauber und trocken halten; Schema und Lösung legt der Nephrologe fest",
-				"abnormal": "Während der Behandlung werden Befinden, Gewicht, abgelassene Flüssigkeitsmenge und Laborwerte kontrolliert. Bauchschmerzen, trübe Ablaufflüssigkeit, Rötung um den Katheter oder Fieber erfordern sofortigen Kontakt zum Nephrologen"
-			},
-			"tr": {
-				"what": "Hastanın kendi periton zarının filtre görevi gördüğü bir kan temizleme yöntemi",
-				"how": "Kalıcı bir kateterle karın boşluğuna steril diyaliz solüsyonu verilir, belirli bir süre bekletilir ve fazla sıvı ile atık ürünlerle birlikte boşaltılır; aralıklı uygulamada değişimler personel gözetiminde seanslar hâlinde yapılır",
-				"when": "Böbrek yerine koyma tedavisi gerektiren ileri böbrek yetmezliği, hemodiyalizin uygun ya da ulaşılabilir olmadığı durumlar, uzun süreli diyaliz programına başlangıç",
-				"prep": "Seanstan önce mesane ve bağırsağın boşaltılması, tartılma, kateter çıkış yerinin temiz ve kuru tutulması; program ve solüsyonu nefrolog belirler",
-				"abnormal": "Tedavi sırasında genel durum, kilo, boşaltılan sıvı miktarı ve laboratuvar değerleri izlenir. Karın ağrısı, bulanık boşaltma sıvısı, kateter çevresinde kızarıklık ya da ateş durumunda nefroloğa hemen başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "professor-consultative-examination",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Консультация врача с академическим званием профессора, обычно по направлению другого врача",
-				"how": "Врач разбирает историю болезни и уже выполненные обследования, проводит осмотр и формулирует письменное заключение с рекомендациями для направившего врача; приём, как правило, длиннее обычного",
-				"when": "Неясный диагноз, второе мнение перед операцией или сменой лечения, редкие и сочетанные заболевания, разбор лечения, которое не даёт результата",
-				"prep": "Взять направление, выписки, снимки и диски с исследованиями, результаты анализов и полный список принимаемых препаратов",
-				"abnormal": "По итогам консультации могут быть предложены дополнительные обследования, изменение плана лечения или наблюдение у профильного специалиста; выполнение рекомендаций согласуют с лечащим врачом"
-			},
-			"en": {
-				"what": "A consultation with a doctor holding the academic title of professor, usually on referral from another physician",
-				"how": "The doctor reviews the medical history and the investigations already done, examines the patient and writes an opinion with recommendations for the referring physician; the appointment is usually longer than a routine one",
-				"when": "Unclear diagnosis, a second opinion before surgery or a change of treatment, rare and combined conditions, review of treatment that is not working",
-				"prep": "Bring the referral, discharge letters, images and discs with investigations, laboratory results and a full list of medicines taken",
-				"abnormal": "The consultation may end with further investigations, a changed treatment plan or follow-up with a specialist; how the recommendations are carried out is agreed with the treating physician"
-			},
-			"sr": {
-				"what": "Konsultacija kod ljekara sa akademskim zvanjem profesora, najčešće po uputu drugog ljekara",
-				"how": "Ljekar analizira istoriju bolesti i ranije nalaze, pregleda pacijenta i piše mišljenje sa preporukama za ljekara koji je uputio; pregled obično traje duže od uobičajenog",
-				"when": "Nejasna dijagnoza, drugo mišljenje prije operacije ili promjene terapije, rijetke i udružene bolesti, analiza liječenja koje ne daje rezultat",
-				"prep": "Ponijeti uput, otpusne liste, snimke i diskove sa ispitivanjima, laboratorijske nalaze i potpun spisak lijekova koje pacijent uzima",
-				"abnormal": "Nakon konsultacije mogu se predložiti dodatna ispitivanja, izmjena plana liječenja ili praćenje kod specijaliste; sprovođenje preporuka dogovara se sa ljekarom koji vodi pacijenta"
-			},
-			"de": {
-				"what": "Beratung durch einen Arzt mit dem akademischen Titel Professor, meist auf Überweisung eines anderen Arztes",
-				"how": "Der Arzt sichtet Krankengeschichte und bisherige Befunde, untersucht den Patienten und verfasst eine Stellungnahme mit Empfehlungen für den überweisenden Arzt; der Termin dauert in der Regel länger als üblich",
-				"when": "Unklare Diagnose, Zweitmeinung vor einer Operation oder Therapieumstellung, seltene und kombinierte Erkrankungen, Überprüfung einer erfolglosen Behandlung",
-				"prep": "Überweisung, Entlassungsbriefe, Bilder und CDs mit Untersuchungen, Laborbefunde und eine vollständige Medikamentenliste mitbringen",
-				"abnormal": "Aus der Beratung können weitere Untersuchungen, ein geänderter Behandlungsplan oder eine fachärztliche Weiterbetreuung folgen; die Umsetzung wird mit dem behandelnden Arzt abgestimmt"
-			},
-			"tr": {
-				"what": "Genellikle başka bir hekimin sevkiyle, profesör unvanlı bir hekimden alınan görüş",
-				"how": "Hekim hastalık öyküsünü ve daha önce yapılmış tetkikleri inceler, muayene eder ve sevk eden hekim için önerileri içeren bir rapor yazar; görüşme genellikle olağan muayeneden uzun sürer",
-				"when": "Tanının netleşmemesi, ameliyat ya da tedavi değişikliği öncesi ikinci görüş, seyrek ve bir arada görülen hastalıklar, sonuç vermeyen tedavinin gözden geçirilmesi",
-				"prep": "Sevk belgesi, epikrizler, görüntüler ve tetkik diskleri, laboratuvar sonuçları ve kullanılan tüm ilaçların listesi getirilmelidir",
-				"abnormal": "Görüşme sonunda ek tetkikler, tedavi planında değişiklik ya da bir uzman tarafından izlem önerilebilir; önerilerin uygulanması tedaviyi yürüten hekimle birlikte kararlaştırılır"
-			}
-		}
-	},
-	{
-		"slug": "renal-concentration-test",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Проверка способности почек концентрировать мочу",
-				"how": "После ограничения приёма жидкости по указанию врача собирают несколько последовательных порций мочи и в каждой измеряют удельный вес или осмоляльность; проба занимает несколько часов и проходит под наблюдением персонала",
-				"when": "Жажда и обильное мочеиспускание, подозрение на нарушение работы почечных канальцев, наблюдение при хронических болезнях почек, уточнение причин полиурии",
-				"prep": "Ограничить жидкость в оговорённые врачом часы, накануне питаться как обычно; постоянные лекарства обсудить с врачом, при плохом самочувствии пробу прерывают",
-				"abnormal": "Сниженная концентрационная способность может быть связана с заболеваниями почек, гормональными причинами или питьевым режимом. Результат трактует нефролог вместе с остальными обследованиями"
-			},
-			"en": {
-				"what": "An assessment of how well the kidneys can concentrate urine",
-				"how": "After fluid intake is limited as instructed by the doctor, several consecutive urine samples are collected and the specific gravity or osmolality of each is measured; the test takes several hours and is done under supervision",
-				"when": "Thirst and large urine volumes, suspected disturbance of the renal tubules, follow-up in chronic kidney disease, clarifying the cause of polyuria",
-				"prep": "Limit fluids during the hours set by the doctor, eat as usual the day before; discuss regular medicines with the doctor, the test is stopped if the patient feels unwell",
-				"abnormal": "A reduced ability to concentrate urine may be related to kidney disease, hormonal causes or drinking habits. The result is interpreted by a nephrologist together with the other investigations"
-			},
-			"sr": {
-				"what": "Procjena sposobnosti bubrega da koncentriše mokraću",
-				"how": "Nakon ograničenja unosa tečnosti po uputstvu ljekara sakuplja se nekoliko uzastopnih uzoraka mokraće i u svakom se mjeri specifična težina ili osmolalnost; proba traje nekoliko sati uz nadzor osoblja",
-				"when": "Žeđ i obilno mokrenje, sumnja na poremećaj bubrežnih kanalića, praćenje kod hroničnih bolesti bubrega, razjašnjenje uzroka poliurije",
-				"prep": "Ograničiti tečnost u satima koje odredi ljekar, uoči pretrage se jede kao i obično; o stalnoj terapiji se dogovoriti sa ljekarom, a proba se prekida ako se pacijent loše osjeća",
-				"abnormal": "Smanjena sposobnost koncentracije može biti povezana sa bolestima bubrega, hormonskim uzrocima ili režimom unosa tečnosti. Nalaz tumači nefrolog zajedno sa ostalim ispitivanjima"
-			},
-			"de": {
-				"what": "Prüfung, wie gut die Nieren den Harn konzentrieren können",
-				"how": "Nach ärztlich angeordneter Flüssigkeitsbeschränkung werden mehrere aufeinanderfolgende Urinproben gesammelt und darin das spezifische Gewicht oder die Osmolalität bestimmt; der Test dauert mehrere Stunden und erfolgt unter Aufsicht",
-				"when": "Durst und große Urinmengen, Verdacht auf eine Störung der Nierenkanälchen, Verlaufskontrolle bei chronischer Nierenerkrankung, Abklärung einer Polyurie",
-				"prep": "Flüssigkeit in den vom Arzt festgelegten Stunden einschränken, am Vortag normal essen; Dauermedikamente mit dem Arzt besprechen, bei Unwohlsein wird der Test abgebrochen",
-				"abnormal": "Eine verminderte Konzentrationsfähigkeit kann mit Nierenerkrankungen, hormonellen Ursachen oder dem Trinkverhalten zusammenhängen. Die Beurteilung nimmt ein Nephrologe zusammen mit den übrigen Befunden vor"
-			},
-			"tr": {
-				"what": "Böbreklerin idrarı yoğunlaştırma yeteneğinin değerlendirilmesi",
-				"how": "Hekimin belirttiği biçimde sıvı alımı kısıtlandıktan sonra birbirini izleyen birkaç idrar örneği toplanır ve her birinde özgül ağırlık ya da osmolalite ölçülür; test birkaç saat sürer ve gözetim altında yapılır",
-				"when": "Susama ve çok idrar çıkarma, böbrek tübüllerinde bozukluk kuşkusu, kronik böbrek hastalığında izlem, poliüri nedeninin araştırılması",
-				"prep": "Hekimin belirlediği saatlerde sıvı kısıtlaması, bir önceki gün olağan beslenme; sürekli kullanılan ilaçlar hekimle görüşülür, rahatsızlık hissedilirse test durdurulur",
-				"abnormal": "Yoğunlaştırma yeteneğindeki azalma böbrek hastalıkları, hormonal nedenler ya da sıvı alma alışkanlıklarıyla ilişkili olabilir. Sonucu diğer incelemelerle birlikte nefrolog yorumlar"
-			}
-		}
-	},
-	{
-		"slug": "semi-intensive-care-bed-day",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Пребывание в палате полуинтенсивной терапии — промежуточном уровне наблюдения между обычным отделением и реанимацией",
-				"how": "Пациент находится в палате, где непрерывно или часто контролируют пульс, давление, дыхание и насыщение крови кислородом, а персонал и аппаратура рядом для быстрой реакции; наблюдение идёт круглосуточно, пока состояние не станет устойчивым",
-				"when": "Первые сутки после объёмных операций, нестабильное состояние, требующее частого контроля, перевод из реанимации перед возвращением в обычную палату, тяжёлые обострения хронических болезней",
-				"prep": "Отдельной подготовки нет, перевод решает лечащий врач; родственникам стоит заранее узнать часы посещений и список нужных вещей",
-				"abnormal": "При стабилизации показателей пациента переводят в обычную палату, при ухудшении — в отделение интенсивной терапии; решение принимает лечащий врач по результатам наблюдения"
-			},
-			"en": {
-				"what": "A stay in a semi-intensive care room, a level of observation between a regular ward and intensive care",
-				"how": "The patient stays in a room where pulse, blood pressure, breathing and blood oxygen are checked continuously or frequently, with staff and equipment close by for a quick response; observation runs around the clock until the condition is steady",
-				"when": "The first days after major surgery, an unstable condition requiring frequent checks, a step down from intensive care before returning to a regular ward, severe flare-ups of chronic disease",
-				"prep": "No separate preparation, the transfer is decided by the treating doctor; relatives should ask in advance about visiting hours and what to bring",
-				"abnormal": "When the readings become steady the patient is moved to a regular ward, and if the condition worsens, to intensive care; the decision is made by the treating doctor on the basis of the observations"
-			},
-			"sr": {
-				"what": "Boravak u sobi poluintenzivne njege, nivo nadzora između običnog odjeljenja i intenzivne njege",
-				"how": "Pacijent je u sobi u kojoj se stalno ili često prate puls, pritisak, disanje i zasićenost krvi kiseonikom, uz osoblje i opremu nadomak ruke za brzu reakciju; nadzor traje danonoćno dok se stanje ne stabilizuje",
-				"when": "Prvi dani poslije velikih operacija, nestabilno stanje koje traži česte provjere, prelazak iz intenzivne njege prije povratka na odjeljenje, teška pogoršanja hroničnih bolesti",
-				"prep": "Posebna priprema ne postoji, premještaj određuje ljekar koji vodi liječenje; porodici je korisno da unaprijed provjeri vrijeme posjeta i spisak potrebnih stvari",
-				"abnormal": "Kada se parametri stabilizuju pacijent prelazi na obično odjeljenje, a kod pogoršanja u jedinicu intenzivne njege; odluku donosi ljekar na osnovu praćenja"
-			},
-			"de": {
-				"what": "Aufenthalt in einem Zimmer der Überwachungspflege, einer Stufe zwischen Normalstation und Intensivstation",
-				"how": "Der Patient liegt in einem Zimmer, in dem Puls, Blutdruck, Atmung und Sauerstoffsättigung ständig oder häufig kontrolliert werden, Personal und Geräte sind für ein schnelles Eingreifen in der Nähe; die Überwachung läuft rund um die Uhr bis zur Stabilisierung",
-				"when": "Erste Tage nach großen Operationen, instabiler Zustand mit häufigen Kontrollen, Verlegung von der Intensivstation vor der Rückkehr auf die Normalstation, schwere Verschlechterungen chronischer Erkrankungen",
-				"prep": "Keine eigene Vorbereitung, die Verlegung entscheidet der behandelnde Arzt; Angehörige sollten Besuchszeiten und benötigte Dinge vorab erfragen",
-				"abnormal": "Bei stabilen Werten erfolgt die Verlegung auf die Normalstation, bei Verschlechterung auf die Intensivstation; die Entscheidung trifft der behandelnde Arzt anhand der Überwachung"
-			},
-			"tr": {
-				"what": "Normal servis ile yoğun bakım arasında bir izlem düzeyi olan yarı yoğun bakım odasında kalış",
-				"how": "Hasta; nabız, tansiyon, solunum ve kandaki oksijen düzeyinin sürekli ya da sık aralıklarla izlendiği, personel ve cihazların hızlı müdahale için yakında bulunduğu bir odada kalır; izlem durum kararlı hâle gelene kadar gece gündüz sürer",
-				"when": "Büyük ameliyatlardan sonraki ilk günler, sık kontrol gerektiren kararsız durum, yoğun bakımdan servise dönüş öncesi ara basamak, kronik hastalıkların ağır alevlenmeleri",
-				"prep": "Ayrı bir hazırlık gerekmez, nakile tedaviyi yürüten hekim karar verir; yakınların ziyaret saatlerini ve gerekli eşyaları önceden öğrenmesi yararlıdır",
-				"abnormal": "Değerler kararlı hâle gelince hasta normal servise, kötüleşme olursa yoğun bakıma alınır; karar izlem sonuçlarına göre tedaviyi yürüten hekim tarafından verilir"
-			}
-		}
-	},
-	{
-		"slug": "semi-intensive-nursing-care-for-children-1-month-to-7-years",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Усиленный сестринский уход за ребёнком раннего возраста, которому нужен частый контроль состояния",
-				"how": "Медсестра регулярно измеряет температуру, пульс, дыхание и количество мочи, следит за кормлением и питьём, ухаживает за кожей и венозным доступом, вводит назначенные врачом препараты; рядом обычно может находиться родитель",
-				"when": "Обезвоживание и отказ от еды, тяжёлые инфекции, состояние после операции, дыхательные нарушения, наблюдение за ребёнком после перевода из реанимации",
-				"prep": "Подготовка не требуется; с собой берут привычные вещи ребёнка, документы и сведения о прививках и аллергии",
-				"abnormal": "По мере улучшения объём наблюдения снижают и переходят к обычному уходу; о новой лихорадке, отказе от питья, вялости или учащённом дыхании родители сразу сообщают дежурному врачу"
-			},
-			"en": {
-				"what": "Enhanced nursing care for a young child whose condition needs frequent checks",
-				"how": "The nurse regularly measures temperature, pulse, breathing and urine output, watches feeding and fluid intake, cares for the skin and the intravenous line and gives the medicines prescribed by the doctor; a parent can usually stay nearby",
-				"when": "Dehydration and refusal to eat, severe infections, the period after an operation, breathing difficulties, observation of a child moved out of intensive care",
-				"prep": "No preparation is needed; bring the child's familiar things, documents and information about vaccinations and allergies",
-				"abnormal": "As the child improves the level of observation is reduced and ordinary care takes over; new fever, refusal to drink, drowsiness or fast breathing should be reported to the doctor on duty straight away"
-			},
-			"sr": {
-				"what": "Pojačana sestrinska njega malog djeteta kojem je potrebna česta provjera stanja",
-				"how": "Sestra redovno mjeri temperaturu, puls, disanje i količinu mokraće, prati hranjenje i unos tečnosti, njeguje kožu i venski put i daje lijekove koje je odredio ljekar; roditelj obično može biti uz dijete",
-				"when": "Dehidracija i odbijanje hrane, teške infekcije, stanje poslije operacije, otežano disanje, praćenje djeteta po izlasku iz intenzivne njege",
-				"prep": "Priprema nije potrebna; ponijeti djetetove uobičajene stvari, dokumenta i podatke o vakcinama i alergijama",
-				"abnormal": "Kako se stanje popravlja nadzor se smanjuje i prelazi se na običnu njegu; novu temperaturu, odbijanje tečnosti, pospanost ili ubrzano disanje roditelji odmah javljaju dežurnom ljekaru"
-			},
-			"de": {
-				"what": "Verstärkte pflegerische Betreuung eines Kleinkindes, dessen Zustand häufig kontrolliert werden muss",
-				"how": "Die Pflegekraft misst regelmäßig Temperatur, Puls, Atmung und Urinmenge, achtet auf Ernährung und Trinkmenge, versorgt Haut und Venenzugang und verabreicht die ärztlich verordneten Medikamente; ein Elternteil kann meist dabei bleiben",
-				"when": "Austrocknung und Nahrungsverweigerung, schwere Infektionen, Zustand nach einer Operation, Atemprobleme, Beobachtung nach Verlegung von der Intensivstation",
-				"prep": "Keine Vorbereitung nötig; vertraute Sachen des Kindes, Unterlagen sowie Angaben zu Impfungen und Allergien mitbringen",
-				"abnormal": "Mit der Besserung wird die Überwachung reduziert und die übliche Pflege fortgesetzt; neues Fieber, Trinkverweigerung, auffällige Müdigkeit oder schnelle Atmung sind sofort dem diensthabenden Arzt zu melden"
-			},
-			"tr": {
-				"what": "Durumunun sık aralıklarla izlenmesi gereken küçük çocuk için yoğunlaştırılmış hemşirelik bakımı",
-				"how": "Hemşire düzenli olarak ateş, nabız, solunum ve idrar miktarını ölçer, beslenme ve sıvı alımını izler, cilt ve damar yolu bakımını yapar, hekimin yazdığı ilaçları uygular; genellikle bir ebeveyn çocuğun yanında kalabilir",
-				"when": "Sıvı kaybı ve beslenmeyi reddetme, ağır enfeksiyonlar, ameliyat sonrası dönem, solunum güçlüğü, yoğun bakımdan çıkan çocuğun izlenmesi",
-				"prep": "Hazırlık gerekmez; çocuğun alışık olduğu eşyalar, belgeler, aşı ve alerji bilgileri getirilir",
-				"abnormal": "Durum düzeldikçe izlem azaltılır ve olağan bakıma geçilir; yeni ateş, sıvı almayı reddetme, uyku hâli ya da hızlı solunum hemen nöbetçi hekime bildirilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "semi-intensive-nursing-care-for-patients-over-7-years",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Усиленный сестринский уход за подростком или взрослым, который частично или полностью зависит от помощи персонала",
-				"how": "Персонал помогает с гигиеной, питанием и сменой положения тела, следит за дыханием и кровообращением, ухаживает за катетерами, дренажами и раной, предупреждает пролежни и тромбозы, контролирует приём назначенных лекарств",
-				"when": "Ранний период после операции, нарушения сознания или подвижности, тяжёлое течение заболевания, время после перевода из реанимации",
-				"prep": "Подготовки нет; полезно передать персоналу список постоянных лекарств, сведения об аллергии и привычные средства гигиены",
-				"abnormal": "Когда состояние становится устойчивым и человек начинает обслуживать себя сам, переходят к обычному уходу; при усилении боли, одышке, спутанности сознания или проблемах с раной персонал немедленно вызывает врача"
-			},
-			"en": {
-				"what": "Enhanced nursing care for an adolescent or adult who depends partly or fully on help from staff",
-				"how": "Staff help with hygiene, feeding and changing position, watch breathing and circulation, look after catheters, drains and the wound, prevent pressure sores and clots and make sure the prescribed medicines are taken",
-				"when": "The early period after an operation, impaired consciousness or mobility, a severe course of illness, the time after transfer out of intensive care",
-				"prep": "No preparation; it helps to give the staff a list of regular medicines, information about allergies and the patient's usual hygiene items",
-				"abnormal": "Once the condition is steady and the person starts managing on their own, ordinary care takes over; increasing pain, shortness of breath, confusion or wound problems make the staff call the doctor immediately"
-			},
-			"sr": {
-				"what": "Pojačana sestrinska njega adolescenta ili odrasle osobe koja djelimično ili potpuno zavisi od pomoći osoblja",
-				"how": "Osoblje pomaže pri higijeni, ishrani i promjeni položaja tijela, prati disanje i cirkulaciju, njeguje katetere, drenove i ranu, sprječava dekubitus i tromboze i kontroliše uzimanje propisane terapije",
-				"when": "Rani period poslije operacije, poremećaj svijesti ili pokretljivosti, teži tok bolesti, period nakon izlaska iz intenzivne njege",
-				"prep": "Priprema nije potrebna; korisno je osoblju predati spisak stalnih lijekova, podatke o alergijama i uobičajena sredstva za higijenu",
-				"abnormal": "Kada se stanje stabilizuje i osoba počne sama da se brine o sebi, prelazi se na običnu njegu; pojačan bol, otežano disanje, zbunjenost ili problem sa ranom razlog su da osoblje odmah pozove ljekara"
-			},
-			"de": {
-				"what": "Verstärkte pflegerische Betreuung von Jugendlichen und Erwachsenen, die teilweise oder ganz auf Hilfe angewiesen sind",
-				"how": "Das Personal hilft bei Körperpflege, Essen und Lagerung, überwacht Atmung und Kreislauf, versorgt Katheter, Drainagen und Wunde, beugt Druckgeschwüren und Thrombosen vor und achtet auf die Einnahme der verordneten Medikamente",
-				"when": "Frühe Phase nach einer Operation, eingeschränktes Bewusstsein oder eingeschränkte Beweglichkeit, schwerer Krankheitsverlauf, Zeit nach der Verlegung von der Intensivstation",
-				"prep": "Keine Vorbereitung; hilfreich sind eine Liste der Dauermedikamente, Angaben zu Allergien und die gewohnten Pflegeartikel",
-				"abnormal": "Sobald der Zustand stabil ist und der Patient sich wieder selbst versorgt, geht die Betreuung in die normale Pflege über; stärkere Schmerzen, Atemnot, Verwirrtheit oder Wundprobleme führen dazu, dass das Personal sofort den Arzt ruft"
-			},
-			"tr": {
-				"what": "Personelin yardımına kısmen ya da tamamen bağımlı olan ergen veya erişkin için yoğunlaştırılmış hemşirelik bakımı",
-				"how": "Personel hijyen, beslenme ve pozisyon değiştirmede yardım eder, solunum ve dolaşımı izler, kateter, dren ve yara bakımını yapar, bası yarası ve pıhtı oluşumunu önler, yazılan ilaçların alınmasını denetler",
-				"when": "Ameliyat sonrası erken dönem, bilinç ya da hareket kısıtlılığı, hastalığın ağır seyri, yoğun bakımdan çıkıştan sonraki dönem",
-				"prep": "Hazırlık gerekmez; sürekli kullanılan ilaçların listesi, alerji bilgileri ve kişisel bakım ürünlerinin personele iletilmesi yararlıdır",
-				"abnormal": "Durum kararlı hâle gelip kişi kendi gereksinimlerini karşılamaya başlayınca olağan bakıma geçilir; artan ağrı, nefes darlığı, bilinç bulanıklığı ya da yara sorunlarında personel hemen hekimi çağırır"
-			}
-		}
-	},
-	{
-		"slug": "specialist-consultative-examination",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Осмотр профильного специалиста по запросу другого врача для уточнения диагноза или плана лечения",
-				"how": "Специалист знакомится с направлением и имеющимися результатами, проводит осмотр в рамках своего профиля, при необходимости выполняет простые исследования и пишет заключение с ответом на поставленный вопрос; 15–30 минут",
-				"when": "Направление от семейного врача или из стационара, подозрение на заболевание вне компетенции направившего врача, оценка перед операцией, проверка текущей терапии",
-				"prep": "Специальной подготовки нет, если врач не назначил анализы заранее; взять направление, медицинскую документацию и список лекарств",
-				"abnormal": "Заключение специалиста обычно содержит рекомендации по дальнейшему обследованию или лечению, которые выполняет направивший врач; при ухудшении состояния до контрольного визита нужно обратиться к врачу раньше"
-			},
-			"en": {
-				"what": "An examination by a specialist requested by another doctor to clarify the diagnosis or the plan of care",
-				"how": "The specialist reads the referral and the available results, examines the patient within their own field, performs simple tests if needed and writes an opinion answering the question asked; 15–30 minutes",
-				"when": "Referral from a family doctor or from hospital, a suspected condition outside the referring doctor's field, assessment before surgery, review of current treatment",
-				"prep": "No special preparation unless tests were ordered in advance; bring the referral, medical records and a list of medicines",
-				"abnormal": "The specialist's opinion usually contains recommendations for further tests or treatment that the referring doctor carries out; if the condition worsens before the follow-up visit, see a doctor sooner"
-			},
-			"sr": {
-				"what": "Pregled specijaliste po traženju drugog ljekara radi razjašnjenja dijagnoze ili plana liječenja",
-				"how": "Specijalista pročita uput i dostupne nalaze, pregleda pacijenta u okviru svoje oblasti, po potrebi uradi jednostavna ispitivanja i napiše mišljenje sa odgovorom na postavljeno pitanje; 15–30 minuta",
-				"when": "Uput od izabranog doktora ili iz bolnice, sumnja na bolest izvan oblasti ljekara koji upućuje, procjena prije operacije, provjera postojeće terapije",
-				"prep": "Posebna priprema nije potrebna ako ljekar nije unaprijed zatražio analize; ponijeti uput, medicinsku dokumentaciju i spisak lijekova",
-				"abnormal": "Mišljenje specijaliste obično sadrži preporuke za dalja ispitivanja ili liječenje koje sprovodi ljekar koji je uputio pacijenta; ako se stanje pogorša prije kontrole, treba se javiti ranije"
-			},
-			"de": {
-				"what": "Fachärztliche Untersuchung auf Anforderung eines anderen Arztes zur Klärung der Diagnose oder des weiteren Vorgehens",
-				"how": "Der Facharzt sichtet Überweisung und vorhandene Befunde, untersucht den Patienten in seinem Fachgebiet, führt bei Bedarf einfache Untersuchungen durch und verfasst eine Stellungnahme zur gestellten Frage; 15–30 Minuten",
-				"when": "Überweisung vom Hausarzt oder aus dem Krankenhaus, Verdacht auf eine Erkrankung außerhalb des Fachgebiets des überweisenden Arztes, Beurteilung vor einer Operation, Überprüfung der laufenden Therapie",
-				"prep": "Keine besondere Vorbereitung, sofern nicht vorab Untersuchungen angeordnet wurden; Überweisung, Unterlagen und Medikamentenliste mitbringen",
-				"abnormal": "Die Stellungnahme enthält meist Empfehlungen für weitere Untersuchungen oder eine Behandlung, die der überweisende Arzt umsetzt; verschlechtert sich der Zustand vor dem Kontrolltermin, sollte man früher einen Arzt aufsuchen"
-			},
-			"tr": {
-				"what": "Tanının ya da tedavi planının netleşmesi için başka bir hekimin isteğiyle yapılan uzman muayenesi",
-				"how": "Uzman hekim sevk belgesini ve mevcut sonuçları inceler, kendi alanıyla ilgili muayeneyi yapar, gerekirse basit tetkikler uygular ve sorulan soruyu yanıtlayan bir rapor yazar; 15–30 dakika",
-				"when": "Aile hekiminden ya da hastaneden sevk, sevk eden hekimin alanı dışında bir hastalık kuşkusu, ameliyat öncesi değerlendirme, mevcut tedavinin gözden geçirilmesi",
-				"prep": "Önceden tetkik istenmediyse özel hazırlık gerekmez; sevk belgesi, tıbbi belgeler ve ilaç listesi getirilir",
-				"abnormal": "Uzman görüşü genellikle sevk eden hekimin uygulayacağı ileri tetkik ya da tedavi önerilerini içerir; kontrol öncesinde durum kötüleşirse daha erken hekime başvurulmalıdır"
-			}
-		}
-	},
-	{
-		"slug": "standard-nursing-care-for-patients-over-7-years",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Обычный сестринский уход в отделении для подростков и взрослых, которые в основном справляются сами",
-				"how": "Медсестра по графику измеряет температуру, давление и пульс, выдаёт назначенные препараты и делает инъекции, меняет повязки, помогает с гигиеной и передвижением, ведёт записи наблюдений",
-				"when": "Плановая госпитализация, стабильное течение болезни в стационаре, восстановление после перевода из палаты усиленного наблюдения, подготовка к выписке",
-				"prep": "Подготовка не требуется; с собой берут личные вещи, документы и список постоянных лекарств",
-				"abnormal": "Такой уход рассчитан на устойчивое состояние: если самочувствие ухудшается, объём наблюдения увеличивают. О новой боли, температуре или головокружении нужно сразу сказать медсестре или врачу"
-			},
-			"en": {
-				"what": "Routine nursing care on the ward for adolescents and adults who are largely able to manage by themselves",
-				"how": "The nurse measures temperature, blood pressure and pulse on schedule, gives the prescribed medicines and injections, changes dressings, assists with hygiene and walking and keeps the observation records",
-				"when": "Planned hospital admission, a stable course of illness in hospital, recovery after a step down from closer observation, preparation for discharge",
-				"prep": "No preparation is needed; bring personal items, documents and a list of regular medicines",
-				"abnormal": "This level of care assumes a steady condition: if the patient feels worse, observation is stepped up. New pain, fever or dizziness should be reported to the nurse or doctor at once"
-			},
-			"sr": {
-				"what": "Uobičajena sestrinska njega na odjeljenju za adolescente i odrasle koji se uglavnom snalaze sami",
-				"how": "Sestra po rasporedu mjeri temperaturu, pritisak i puls, daje propisane lijekove i injekcije, radi previjanje, pomaže pri higijeni i kretanju i vodi evidenciju zapažanja",
-				"when": "Planirani prijem u bolnicu, stabilan tok bolesti u stacionaru, oporavak nakon prelaska sa pojačanog nadzora, priprema za otpust",
-				"prep": "Priprema nije potrebna; ponijeti lične stvari, dokumenta i spisak stalnih lijekova",
-				"abnormal": "Ovaj nivo njege podrazumijeva stabilno stanje: ako se pacijent osjeća lošije, nadzor se pojačava. Novi bol, temperaturu ili vrtoglavicu treba odmah reći sestri ili ljekaru"
-			},
-			"de": {
-				"what": "Übliche pflegerische Betreuung auf Station für Jugendliche und Erwachsene, die sich weitgehend selbst versorgen",
-				"how": "Die Pflegekraft misst nach Plan Temperatur, Blutdruck und Puls, gibt verordnete Medikamente und Injektionen, wechselt Verbände, hilft bei Körperpflege und Bewegung und führt die Pflegedokumentation",
-				"when": "Geplante stationäre Aufnahme, stabiler Krankheitsverlauf im Krankenhaus, Erholung nach Verlegung von einer Überwachungsstation, Vorbereitung auf die Entlassung",
-				"prep": "Keine Vorbereitung nötig; persönliche Dinge, Unterlagen und eine Liste der Dauermedikamente mitbringen",
-				"abnormal": "Diese Betreuung setzt einen stabilen Zustand voraus: verschlechtert sich das Befinden, wird die Überwachung verstärkt. Neue Schmerzen, Fieber oder Schwindel sind sofort der Pflegekraft oder dem Arzt zu melden"
-			},
-			"tr": {
-				"what": "Büyük ölçüde kendi gereksinimlerini karşılayabilen ergen ve erişkinler için serviste verilen olağan hemşirelik bakımı",
-				"how": "Hemşire planlanan saatlerde ateş, tansiyon ve nabzı ölçer, yazılan ilaçları ve iğneleri uygular, pansuman yapar, hijyen ve harekette yardımcı olur, gözlem kayıtlarını tutar",
-				"when": "Planlı hastaneye yatış, hastanede kararlı hastalık seyri, daha yakın izlemden çıkıştan sonraki iyileşme dönemi, taburculuğa hazırlık",
-				"prep": "Hazırlık gerekmez; kişisel eşyalar, belgeler ve sürekli kullanılan ilaçların listesi getirilir",
-				"abnormal": "Bu bakım düzeyi kararlı bir durumu varsayar: hasta kötüleşirse izlem artırılır. Yeni ağrı, ateş ya da baş dönmesi hemen hemşireye ya da hekime bildirilmelidir"
-			}
-		}
-	},
-	{
-		"slug": "tubular-function-test",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Комплексная оценка работы почечных канальцев — того, как почка возвращает в кровь нужные вещества и выводит лишнее",
-				"how": "В крови и собранных порциях мочи определяют электролиты, кислотность и другие показатели, иногда после нагрузочной пробы; исследование может занимать несколько часов, часть сборов пациент делает сам",
-				"when": "Необъяснимые нарушения электролитов или кислотно-щелочного равновесия, подозрение на тубулопатию, мочекаменная болезнь, задержка роста у детей, контроль при лечении препаратами, влияющими на почки",
-				"prep": "Выполнять указания врача по питьевому режиму и сбору мочи, собрать все порции в выданную посуду; обо всех лекарствах и добавках сообщить заранее",
-				"abnormal": "Отклонения могут указывать на нарушение отдельных канальцевых функций, влияние лекарств или обменные причины. Трактовку и дальнейший план даёт нефролог"
-			},
-			"en": {
-				"what": "A combined assessment of how the renal tubules return needed substances to the blood and remove the rest",
-				"how": "Electrolytes, acidity and other values are measured in blood and in collected urine samples, sometimes after a loading test; the examination may take several hours and part of the collection is done by the patient",
-				"when": "Unexplained electrolyte or acid-base disturbances, suspected tubular disorder, kidney stones, growth delay in children, monitoring during treatment with medicines that affect the kidneys",
-				"prep": "Follow the doctor's instructions on drinking and on collecting urine, collect every portion into the containers provided; mention all medicines and supplements in advance",
-				"abnormal": "Deviations may point to a disturbance of particular tubular functions, an effect of medicines or metabolic causes. The interpretation and the next steps come from a nephrologist"
-			},
-			"sr": {
-				"what": "Objedinjena procjena rada bubrežnih kanalića, odnosno kako bubreg vraća potrebne materije u krv a ostalo izlučuje",
-				"how": "U krvi i sakupljenim uzorcima mokraće određuju se elektroliti, kiselost i drugi parametri, ponekad poslije opterećenja; ispitivanje može trajati nekoliko sati, a dio sakupljanja pacijent radi sam",
-				"when": "Nerazjašnjeni poremećaji elektrolita ili acidobazne ravnoteže, sumnja na tubulopatiju, kamen u bubregu, zaostajanje u rastu kod djece, praćenje tokom terapije koja opterećuje bubrege",
-				"prep": "Pridržavati se uputstva ljekara o unosu tečnosti i sakupljanju mokraće, sakupiti sve porcije u dobijenu posudu; unaprijed prijaviti sve lijekove i dodatke ishrani",
-				"abnormal": "Odstupanja mogu ukazivati na poremećaj pojedinih kanalićnih funkcija, uticaj lijekova ili metaboličke uzroke. Tumačenje i dalji plan daje nefrolog"
-			},
-			"de": {
-				"what": "Zusammengefasste Beurteilung der Nierenkanälchen, also wie die Niere benötigte Stoffe zurückholt und Überschüssiges ausscheidet",
-				"how": "In Blut und gesammelten Urinproben werden Elektrolyte, Säuregrad und weitere Werte bestimmt, teils nach einem Belastungstest; die Untersuchung kann mehrere Stunden dauern, einen Teil der Sammlung übernimmt der Patient",
-				"when": "Ungeklärte Elektrolyt- oder Säure-Basen-Störungen, Verdacht auf eine Tubulopathie, Nierensteine, Wachstumsverzögerung bei Kindern, Kontrolle unter nierenbelastenden Medikamenten",
-				"prep": "Anweisungen des Arztes zu Trinkmenge und Urinsammlung befolgen, alle Portionen in die ausgegebenen Gefäße sammeln; alle Medikamente und Nahrungsergänzungsmittel vorher angeben",
-				"abnormal": "Abweichungen können auf eine Störung einzelner Kanälchenfunktionen, auf Medikamentenwirkungen oder auf Stoffwechselursachen hinweisen. Beurteilung und weiteres Vorgehen legt der Nephrologe fest"
-			},
-			"tr": {
-				"what": "Böbrek tübüllerinin gerekli maddeleri kana geri alıp fazlasını atma işlevinin bütünlüklü değerlendirilmesi",
-				"how": "Kanda ve toplanan idrar örneklerinde elektrolitler, asitlik ve diğer değerler, kimi zaman bir yükleme testinden sonra ölçülür; inceleme birkaç saat sürebilir ve toplamanın bir bölümünü hasta kendisi yapar",
-				"when": "Açıklanamayan elektrolit ya da asit-baz bozuklukları, tübülopati kuşkusu, böbrek taşı, çocuklarda büyüme geriliği, böbreği etkileyen ilaçlarla tedavide izlem",
-				"prep": "Hekimin sıvı alımı ve idrar toplama ile ilgili yönergelerine uyulur, tüm porsiyonlar verilen kaba toplanır; kullanılan tüm ilaçlar ve takviyeler önceden bildirilir",
-				"abnormal": "Sapmalar tek tek tübül işlevlerinde bozukluğa, ilaç etkisine ya da metabolik nedenlere işaret edebilir. Yorum ve sonraki adımları nefrolog belirler"
-			}
-		}
-	},
-	{
-		"slug": "ultrasound-lymph-nodes",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Ультразвуковой осмотр групп лимфатических узлов на шее, в подмышечных, паховых и других доступных областях",
-				"how": "На кожу наносят гель, датчиком осматривают выбранные группы узлов, оценивая их размер, форму, структуру и кровоток; 10–20 минут, безболезненно",
-				"when": "Увеличенные или болезненные лимфоузлы, длительная лихорадка неясного происхождения, наблюдение за известными изменениями, выбор узла перед биопсией",
-				"prep": "Не требуется; одежда должна открывать доступ к осматриваемой области",
-				"abnormal": "Изменения размера и структуры узлов могут сопровождать инфекции, воспаление или другие процессы и сами по себе не являются диагнозом. Заключение оценивает направивший врач и при необходимости назначает анализы или биопсию"
-			},
-			"en": {
-				"what": "An ultrasound look at groups of lymph nodes in the neck, armpits, groin and other accessible areas",
-				"how": "Gel is applied to the skin and the probe is moved over the chosen node groups, assessing their size, shape, structure and blood flow; 10–20 minutes, painless",
-				"when": "Enlarged or tender lymph nodes, prolonged fever of unclear origin, follow-up of known changes, choosing a node before a biopsy",
-				"prep": "Not required; clothing should allow access to the area being examined",
-				"abnormal": "Changes in the size and structure of nodes can accompany infections, inflammation or other processes and are not a diagnosis in themselves. The referring doctor interprets the report and may order tests or a biopsy"
-			},
-			"sr": {
-				"what": "Ultrazvučni pregled grupa limfnih čvorova na vratu, u pazuhu, preponama i drugim dostupnim regijama",
-				"how": "Na kožu se nanosi gel, a sondom se pregledaju izabrane grupe čvorova uz procjenu veličine, oblika, građe i protoka krvi; 10–20 minuta, bezbolno",
-				"when": "Uvećani ili bolni limfni čvorovi, dugotrajna temperatura nejasnog uzroka, praćenje poznatih promjena, izbor čvora prije biopsije",
-				"prep": "Nije potrebna; odjeća treba da omogući pristup regiji koja se pregleda",
-				"abnormal": "Promjene veličine i građe čvorova mogu pratiti infekcije, upalu ili druge procese i same po sebi nisu dijagnoza. Nalaz tumači ljekar koji je uputio pacijenta i po potrebi traži analize ili biopsiju"
-			},
-			"de": {
-				"what": "Ultraschalluntersuchung von Lymphknotengruppen am Hals, in den Achseln, in der Leiste und in anderen zugänglichen Regionen",
-				"how": "Gel wird auf die Haut aufgetragen, die Sonde über die ausgewählten Knotengruppen geführt und dabei Größe, Form, Struktur und Durchblutung beurteilt; 10–20 Minuten, schmerzfrei",
-				"when": "Vergrößerte oder schmerzhafte Lymphknoten, anhaltendes Fieber unklarer Ursache, Verlaufskontrolle bekannter Veränderungen, Auswahl eines Knotens vor einer Biopsie",
-				"prep": "Nicht erforderlich; die Kleidung sollte den Zugang zur untersuchten Region ermöglichen",
-				"abnormal": "Veränderungen von Größe und Struktur der Knoten können Infektionen, Entzündungen oder andere Prozesse begleiten und sind für sich genommen keine Diagnose. Den Befund beurteilt der überweisende Arzt und veranlasst bei Bedarf Laboruntersuchungen oder eine Biopsie"
-			},
-			"tr": {
-				"what": "Boyun, koltuk altı, kasık ve ulaşılabilir diğer bölgelerdeki lenf nodu gruplarının ultrasonla incelenmesi",
-				"how": "Cilde jel sürülür ve prob seçilen nod grupları üzerinde gezdirilerek boyut, biçim, yapı ve kan akımı değerlendirilir; 10–20 dakika, ağrısızdır",
-				"when": "Büyümüş ya da ağrılı lenf nodları, nedeni belirsiz uzun süreli ateş, bilinen değişikliklerin izlenmesi, biyopsi öncesi nod seçimi",
-				"prep": "Gerekmez; giysiler incelenecek bölgeye erişime izin vermelidir",
-				"abnormal": "Nodların boyut ve yapısındaki değişiklikler enfeksiyonlara, iltihaba ya da başka süreçlere eşlik edebilir ve tek başına tanı değildir. Raporu sevk eden hekim yorumlar, gerekirse tetkik ya da biyopsi ister"
-			}
-		}
-	}
+  {
+    "slug": "operating-theatre-costs-tier-i-121-to-180-points",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Работа операционной общей больницы при самых обширных и длительных вмешательствах",
+        "how": "Операция идёт много часов, задействованы расширенная хирургическая бригада, анестезиологическая служба, большое количество расходных материалов и аппаратуры; часто заранее готовят компоненты крови",
+        "when": "Обширные вмешательства на нескольких анатомических областях, реконструктивные и комбинированные операции, тяжёлые травмы",
+        "prep": "Плановая госпитализация с полным обследованием, консультации смежных специалистов, беседа с анестезиологом, отказ от курения и согласование лекарств заранее",
+        "abnormal": "После таких операций обычно следует наблюдение в палате интенсивной или полуинтенсивной терапии и постепенная реабилитация; план контрольных визитов и допустимую нагрузку определяет лечащий хирург"
+      },
+      "en": {
+        "what": "An operating theatre of a general hospital used for the most extensive and longest procedures",
+        "how": "The operation runs for many hours and involves an enlarged surgical team, the anaesthesia service, a large amount of supplies and equipment; blood components are often prepared in advance",
+        "when": "Extensive procedures covering several anatomical areas, reconstructive and combined operations, severe trauma",
+        "prep": "Planned admission with a full work-up, consultations with related specialists, a talk with the anaesthetist, stopping smoking and agreeing on medicines in advance",
+        "abnormal": "Such operations are usually followed by care in an intensive or semi-intensive unit and gradual rehabilitation; the treating surgeon sets the schedule of follow-up visits and the allowed level of activity"
+      },
+      "sr": {
+        "what": "Operaciona sala opšte bolnice kod najobimnijih i najdužih zahvata",
+        "how": "Operacija traje više sati i uključuje prošireni hirurški tim, anesteziološku službu, veliku količinu materijala i aparata; često se unaprijed obezbjeđuju komponente krvi",
+        "when": "Obimni zahvati na više anatomskih regija, rekonstruktivne i kombinovane operacije, teške povrede",
+        "prep": "Planirani prijem uz kompletnu obradu, pregledi kod srodnih specijalista, razgovor sa anesteziologom, prestanak pušenja i raniji dogovor o terapiji",
+        "abnormal": "Poslije ovakvih operacija obično slijedi boravak u intenzivnoj ili poluintenzivnoj njezi i postepena rehabilitacija; raspored kontrola i dozvoljeno opterećenje određuje hirurg koji vodi liječenje"
+      },
+      "de": {
+        "what": "Operationssaal eines allgemeinen Krankenhauses bei den umfangreichsten und längsten Eingriffen",
+        "how": "Die Operation dauert viele Stunden und bindet ein erweitertes Operationsteam, den Anästhesiedienst sowie viel Material und Technik; häufig werden Blutkomponenten im Voraus bereitgestellt",
+        "when": "Ausgedehnte Eingriffe über mehrere anatomische Regionen, rekonstruktive und kombinierte Operationen, schwere Verletzungen",
+        "prep": "Geplante Aufnahme mit vollständiger Abklärung, Vorstellung bei weiteren Fachärzten, Anästhesiegespräch, Rauchstopp und frühzeitige Abstimmung der Medikamente",
+        "abnormal": "Nach solchen Operationen folgen meist eine Betreuung auf einer Intensiv- oder Überwachungsstation und eine schrittweise Rehabilitation; Kontrolltermine und zulässige Belastung legt der behandelnde Chirurg fest"
+      },
+      "tr": {
+        "what": "Genel hastane ameliyathanesinin en kapsamlı ve en uzun girişimler için kullanımı",
+        "how": "Ameliyat saatlerce sürer; genişletilmiş cerrahi ekip, anestezi hizmeti, çok sayıda sarf malzemesi ve cihaz kullanılır, sıklıkla kan ürünleri önceden hazırlanır",
+        "when": "Birden fazla anatomik bölgeyi kapsayan geniş girişimler, rekonstrüktif ve birleşik ameliyatlar, ağır yaralanmalar",
+        "prep": "Tam değerlendirmeyle planlı yatış, ilgili uzmanların görüşleri, anestezi uzmanıyla görüşme, sigaranın bırakılması ve ilaçların önceden düzenlenmesi",
+        "abnormal": "Bu ameliyatlardan sonra genellikle yoğun bakım ya da yarı yoğun bakımda izlem ve kademeli rehabilitasyon gerekir; kontrol zamanlarını ve izin verilen aktiviteyi tedaviyi yürüten cerrah belirler"
+      },
+      "sr_cyrl": {
+        "what": "Операциона сала опште болнице код најобимнијих и најдужих захвата",
+        "how": "Операција траје више сати и укључује проширени хируршки тим, анестезиолошку службу, велику количину материјала и апарата; често се унапријед обезбјеђују компоненте крви",
+        "when": "Обимни захвати на више анатомских регија, реконструктивне и комбиноване операције, тешке повреде",
+        "prep": "Планирани пријем уз комплетну обраду, прегледи код сродних специјалиста, разговор са анестезиологом, престанак пушења и ранији договор о терапији",
+        "abnormal": "Послије оваквих операција обично слиједи боравак у интензивној или полуинтензивној њези и постепена рехабилитација; распоред контрола и дозвољено оптерећење одређује хирург који води лијечење"
+      }
+    }
+  },
+  {
+    "slug": "operating-theatre-costs-tier-i-21-to-50-points",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Работа операционной общей больницы при вмешательстве среднего объёма",
+        "how": "Операция идёт в стерильной операционной с хирургической бригадой, анестезиологом и операционной сестрой, занимает заметно больше времени, чем малые вмешательства, и чаще требует общей или регионарной анестезии",
+        "when": "Плановые и неотложные операции средней сложности: грыжесечение, удаление аппендикса, вмешательства на мягких тканях и суставах",
+        "prep": "Голодание перед наркозом по указанию анестезиолога, предоперационные анализы и ЭКГ, согласование постоянных лекарств с врачом",
+        "abnormal": "За такой операцией обычно следует наблюдение в палате в течение одного или нескольких дней; о температуре, нарастающей боли, покраснении или отделяемом из раны после выписки нужно сообщить оперировавшему хирургу"
+      },
+      "en": {
+        "what": "An operating theatre of a general hospital used for a procedure of moderate volume",
+        "how": "The operation takes place in a sterile theatre with a surgical team, an anaesthetist and a scrub nurse, takes noticeably longer than minor procedures and more often requires general or regional anaesthesia",
+        "when": "Planned and urgent operations of moderate complexity: hernia repair, appendix removal, procedures on soft tissues and joints",
+        "prep": "Fasting before anaesthesia as instructed by the anaesthetist, pre-operative tests and ECG, regular medicines agreed with the doctor",
+        "abnormal": "Such an operation is usually followed by one or several days of observation on the ward; fever, growing pain, redness or discharge from the wound after discharge should be reported to the operating surgeon"
+      },
+      "sr": {
+        "what": "Operaciona sala opšte bolnice za zahvat srednjeg obima",
+        "how": "Operacija se izvodi u sterilnoj sali sa hirurškim timom, anesteziologom i instrumentarkom, traje osjetno duže od malih zahvata i češće zahtijeva opštu ili regionalnu anesteziju",
+        "when": "Planirane i hitne operacije srednje složenosti: operacija kile, odstranjenje slijepog crijeva, zahvati na mekim tkivima i zglobovima",
+        "prep": "Nejedenje prije anestezije po uputstvu anesteziologa, preoperativni nalazi i EKG, dogovor o stalnoj terapiji sa ljekarom",
+        "abnormal": "Poslije ovakve operacije obično slijedi posmatranje na odjeljenju jedan ili više dana; temperaturu, pojačan bol, crvenilo ili sekreciju iz rane nakon otpusta treba javiti hirurgu koji je operisao"
+      },
+      "de": {
+        "what": "Operationssaal eines allgemeinen Krankenhauses für einen Eingriff mittleren Umfangs",
+        "how": "Die Operation erfolgt im sterilen Saal mit Operationsteam, Anästhesist und Instrumentierschwester, dauert deutlich länger als kleine Eingriffe und erfordert häufiger eine Vollnarkose oder Regionalanästhesie",
+        "when": "Geplante und dringliche Operationen mittlerer Schwierigkeit: Leistenbruch, Entfernung des Blinddarms, Eingriffe an Weichteilen und Gelenken",
+        "prep": "Nüchternheit vor der Narkose nach Anweisung des Anästhesisten, Voruntersuchungen und EKG, Dauermedikation mit dem Arzt abstimmen",
+        "abnormal": "Nach einer solchen Operation folgt meist eine Überwachung auf Station über einen oder mehrere Tage; Fieber, zunehmende Schmerzen, Rötung oder Sekret aus der Wunde nach der Entlassung sind dem operierenden Chirurgen zu melden"
+      },
+      "tr": {
+        "what": "Orta hacimli bir girişim için genel hastane ameliyathanesinin kullanımı",
+        "how": "Ameliyat steril salonda cerrahi ekip, anestezi uzmanı ve ameliyat hemşiresi ile yapılır, küçük girişimlerden belirgin biçimde uzun sürer ve daha sık genel ya da bölgesel anestezi gerektirir",
+        "when": "Orta güçlükteki planlı ve acil ameliyatlar: fıtık onarımı, apandisin alınması, yumuşak doku ve eklem girişimleri",
+        "prep": "Anestezi öncesi anestezi uzmanının belirttiği süre boyunca aç kalmak, ameliyat öncesi tetkikler ve EKG, sürekli kullanılan ilaçların hekimle görüşülmesi",
+        "abnormal": "Bu tür bir ameliyattan sonra genellikle serviste bir veya birkaç gün izlem gerekir; taburculuk sonrası ateş, artan ağrı, kızarıklık veya yarada akıntı ameliyatı yapan cerraha bildirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Операциона сала опште болнице за захват средњег обима",
+        "how": "Операција се изводи у стерилној сали са хируршким тимом, анестезиологом и инструментарком, траје осјетно дуже од малих захвата и чешће захтијева општу или регионалну анестезију",
+        "when": "Планиране и хитне операције средње сложености: операција киле, одстрањење слијепог цријева, захвати на меким ткивима и зглобовима",
+        "prep": "Неједење прије анестезије по упутству анестезиолога, преоперативни налази и ЕКГ, договор о сталној терапији са љекаром",
+        "abnormal": "Послије овакве операције обично слиједи посматрање на одјељењу један или више дана; температуру, појачан бол, црвенило или секрецију из ране након отпуста треба јавити хирургу који је оперисао"
+      }
+    }
+  },
+  {
+    "slug": "operating-theatre-costs-tier-i-5-to-20-points",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Использование операционной общей больницы для вмешательства небольшого объёма",
+        "how": "Пациента готовят в предоперационной, вмешательство проходит в стерильной операционной с участием хирурга, анестезиолога и операционной сестры; такие операции обычно короткие, часто под местной или регионарной анестезией",
+        "when": "Небольшие хирургические вмешательства, которые по соображениям безопасности делают не в перевязочной, а в операционной: иссечение образований кожи и мягких тканей, несложные вмешательства на конечностях",
+        "prep": "Зависит от самой операции: обычно не есть и не пить с вечера накануне, взять результаты предоперационных обследований и список постоянных лекарств",
+        "abnormal": "После короткого вмешательства пациента обычно наблюдают несколько часов и отпускают домой в тот же или на следующий день; усиление боли, кровотечение, повышение температуры или расхождение краёв раны требуют внепланового осмотра хирурга"
+      },
+      "en": {
+        "what": "Use of a general hospital operating theatre for a small-volume procedure",
+        "how": "The patient is prepared in the pre-operative area, the procedure is performed in a sterile theatre by a surgeon, an anaesthetist and a scrub nurse; such operations are usually short and often done under local or regional anaesthesia",
+        "when": "Minor surgical procedures that for safety reasons are done in a theatre rather than a treatment room: excision of skin and soft tissue lesions, simple procedures on the limbs",
+        "prep": "Depends on the operation itself: usually no food or drink from the evening before, bring pre-operative test results and a list of regular medicines",
+        "abnormal": "After a short procedure the patient is usually observed for a few hours and goes home the same or the next day; increasing pain, bleeding, fever or a wound that opens calls for an unscheduled visit to the surgeon"
+      },
+      "sr": {
+        "what": "Korišćenje operacione sale opšte bolnice za zahvat malog obima",
+        "how": "Pacijent se priprema u pripremnom prostoru, zahvat se izvodi u sterilnoj sali uz hirurga, anesteziologa i instrumentarku; takve operacije su obično kratke i često u lokalnoj ili regionalnoj anesteziji",
+        "when": "Manji hirurški zahvati koji se zbog bezbjednosti rade u sali, a ne u previjalištu: odstranjenje promjena kože i mekih tkiva, jednostavni zahvati na ekstremitetima",
+        "prep": "Zavisi od same operacije: obično se ne jede i ne pije od večeri uoči zahvata, ponijeti nalaze preoperativnih ispitivanja i spisak stalnih lijekova",
+        "abnormal": "Poslije kratkog zahvata pacijent se obično posmatra nekoliko sati i ide kući istog ili narednog dana; pojačan bol, krvarenje, povišena temperatura ili razdvajanje ivica rane traže vanredni pregled hirurga"
+      },
+      "de": {
+        "what": "Nutzung des Operationssaals eines allgemeinen Krankenhauses für einen Eingriff kleinen Umfangs",
+        "how": "Der Patient wird im Vorbereitungsraum vorbereitet, der Eingriff findet im sterilen Saal mit Chirurg, Anästhesist und Instrumentierschwester statt; solche Operationen sind meist kurz und oft in örtlicher oder regionaler Betäubung",
+        "when": "Kleinere chirurgische Eingriffe, die aus Sicherheitsgründen im Saal und nicht im Behandlungszimmer erfolgen: Entfernung von Haut- und Weichteilveränderungen, einfache Eingriffe an den Gliedmaßen",
+        "prep": "Richtet sich nach der Operation: meist nüchtern ab dem Vorabend, Befunde der Voruntersuchungen und eine Liste der Dauermedikamente mitbringen",
+        "abnormal": "Nach einem kurzen Eingriff wird der Patient einige Stunden überwacht und geht am selben oder am nächsten Tag nach Hause; zunehmende Schmerzen, Blutung, Fieber oder eine sich öffnende Wunde erfordern eine kurzfristige Vorstellung beim Chirurgen"
+      },
+      "tr": {
+        "what": "Küçük hacimli bir girişim için genel hastane ameliyathanesinin kullanılması",
+        "how": "Hasta hazırlık bölümünde hazırlanır, girişim steril ameliyathanede cerrah, anestezi uzmanı ve ameliyat hemşiresi eşliğinde yapılır; bu ameliyatlar genellikle kısadır ve sıklıkla lokal ya da bölgesel anestezi ile yapılır",
+        "when": "Güvenlik nedeniyle pansuman odasında değil ameliyathanede yapılan küçük cerrahi girişimler: deri ve yumuşak doku oluşumlarının çıkarılması, uzuvlarda basit girişimler",
+        "prep": "Ameliyata göre değişir: genellikle bir önceki akşamdan itibaren aç kalınır, ameliyat öncesi tetkik sonuçları ve sürekli kullanılan ilaçların listesi getirilir",
+        "abnormal": "Kısa girişimden sonra hasta birkaç saat izlenir ve aynı gün ya da ertesi gün evine gider; artan ağrı, kanama, ateş ya da yara kenarlarının ayrılması durumunda planlanandan önce cerraha başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Коришћење операционе сале опште болнице за захват малог обима",
+        "how": "Пацијент се припрема у припремном простору, захват се изводи у стерилној сали уз хирурга, анестезиолога и инструментарку; такве операције су обично кратке и често у локалној или регионалној анестезији",
+        "when": "Мањи хируршки захвати који се због безбједности раде у сали, а не у превијалишту: одстрањење промјена коже и меких ткива, једноставни захвати на екстремитетима",
+        "prep": "Зависи од саме операције: обично се не једе и не пије од вечери уочи захвата, понијети налазе преоперативних испитивања и списак сталних лијекова",
+        "abnormal": "Послије кратког захвата пацијент се обично посматра неколико сати и иде кући истог или наредног дана; појачан бол, крварење, повишена температура или раздвајање ивица ране траже ванредни преглед хирурга"
+      }
+    }
+  },
+  {
+    "slug": "operating-theatre-costs-tier-i-51-to-120-points",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Работа операционной общей больницы при объёмном хирургическом вмешательстве",
+        "how": "Длительная операция с полной бригадой, общей анестезией и мониторингом жизненных показателей; после неё пациента переводят в послеоперационную палату или в палату усиленного наблюдения",
+        "when": "Крупные операции на органах брюшной полости, в гинекологии, урологии и травматологии, когда вмешательство занимает несколько часов",
+        "prep": "Госпитализация накануне или в день операции, полное предоперационное обследование, осмотр анестезиолога, отказ от еды и питья в оговорённые часы",
+        "abnormal": "Восстановление идёт дольше: в первые дни возможны слабость, боль в области раны и ограничение активности. Сроки контрольных осмотров и снятия швов определяет хирург, при лихорадке или резком ухудшении нужна срочная связь с больницей"
+      },
+      "en": {
+        "what": "An operating theatre of a general hospital used for an extensive surgical operation",
+        "how": "A long operation with a full team, general anaesthesia and monitoring of vital signs; afterwards the patient is moved to a recovery room or to a unit with closer observation",
+        "when": "Major operations on the abdominal organs, in gynaecology, urology and traumatology, when the procedure takes several hours",
+        "prep": "Admission the day before or on the day of surgery, full pre-operative work-up, assessment by the anaesthetist, no food or drink during the agreed hours",
+        "abnormal": "Recovery takes longer: weakness, pain around the wound and limited activity in the first days are common. The surgeon sets the timing of follow-up visits and suture removal, while fever or sudden deterioration requires urgent contact with the hospital"
+      },
+      "sr": {
+        "what": "Operaciona sala opšte bolnice kod obimnog hirurškog zahvata",
+        "how": "Duga operacija sa punim timom, u opštoj anesteziji i uz praćenje vitalnih parametara; poslije nje pacijent ide u sobu za buđenje ili na pojačan nadzor",
+        "when": "Velike operacije na trbušnim organima, u ginekologiji, urologiji i traumatologiji, kada zahvat traje više sati",
+        "prep": "Prijem uoči ili na dan operacije, kompletna preoperativna obrada, pregled anesteziologa, bez hrane i pića u dogovorenim satima",
+        "abnormal": "Oporavak traje duže: slabost, bol u predjelu rane i smanjena aktivnost prvih dana su očekivani. Rokove kontrola i vađenja konaca određuje hirurg, a kod temperature ili naglog pogoršanja treba se odmah javiti bolnici"
+      },
+      "de": {
+        "what": "Operationssaal eines allgemeinen Krankenhauses bei einem umfangreichen chirurgischen Eingriff",
+        "how": "Lange Operation mit vollständigem Team, Vollnarkose und Überwachung der Vitalwerte; danach kommt der Patient in den Aufwachraum oder auf eine Station mit engmaschiger Überwachung",
+        "when": "Große Operationen an Bauchorganen, in Gynäkologie, Urologie und Unfallchirurgie, wenn der Eingriff mehrere Stunden dauert",
+        "prep": "Aufnahme am Vortag oder am Operationstag, vollständige Voruntersuchung, Anästhesiegespräch, Nüchternheit in den vereinbarten Stunden",
+        "abnormal": "Die Erholung dauert länger: Schwäche, Schmerzen im Wundbereich und eingeschränkte Aktivität in den ersten Tagen sind üblich. Kontrolltermine und Fadenzug legt der Chirurg fest, bei Fieber oder plötzlicher Verschlechterung ist sofort das Krankenhaus zu kontaktieren"
+      },
+      "tr": {
+        "what": "Genel hastane ameliyathanesinin geniş kapsamlı bir cerrahi girişim için kullanımı",
+        "how": "Tam ekip, genel anestezi ve yaşamsal bulguların izlenmesiyle yapılan uzun bir ameliyattır; sonrasında hasta uyanma odasına ya da daha yakın izlem yapılan bir birime alınır",
+        "when": "Girişimin birkaç saat sürdüğü karın içi organ ameliyatları, jinekoloji, üroloji ve travmatoloji ameliyatları",
+        "prep": "Bir gün önce ya da ameliyat günü yatış, tam ameliyat öncesi değerlendirme, anestezi uzmanı muayenesi, belirlenen saatlerde aç kalmak",
+        "abnormal": "İyileşme daha uzun sürer: ilk günlerde halsizlik, yara bölgesinde ağrı ve hareket kısıtlılığı beklenir. Kontrol ve dikiş alma zamanını cerrah belirler, ateş ya da ani kötüleşmede hastaneye hemen başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Операциона сала опште болнице код обимног хируршког захвата",
+        "how": "Дуга операција са пуним тимом, у општој анестезији и уз праћење виталних параметара; послије ње пацијент иде у собу за буђење или на појачан надзор",
+        "when": "Велике операције на трбушним органима, у гинекологији, урологији и трауматологији, када захват траје више сати",
+        "prep": "Пријем уочи или на дан операције, комплетна преоперативна обрада, преглед анестезиолога, без хране и пића у договореним сатима",
+        "abnormal": "Опоравак траје дуже: слабост, бол у предјелу ране и смањена активност првих дана су очекивани. Рокове контрола и вађења конаца одређује хирург, а код температуре или наглог погоршања треба се одмах јавити болници"
+      }
+    }
+  },
+  {
+    "slug": "operating-theatre-costs-tier-ii-21-to-50-points",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Работа операционного блока клинического центра или специализированной больницы при вмешательстве среднего объёма",
+        "how": "Операцию выполняют в операционном блоке учреждения высшего уровня, где доступны узкие специалисты, расширенный анестезиологический мониторинг и профильное оборудование",
+        "when": "Операции средней сложности, которые ведут в специализированном центре из-за профиля вмешательства или сопутствующих заболеваний пациента",
+        "prep": "Направление профильного специалиста, предоперационное обследование и консультация анестезиолога, голодание перед наркозом по указанию врача",
+        "abnormal": "Длительность пребывания в больнице зависит от вида операции и течения восстановления; в выписке указан срок контрольного осмотра, а при лихорадке или проблемах с раной обращаются раньше"
+      },
+      "en": {
+        "what": "An operating block of a clinical centre or a specialised hospital used for a procedure of moderate volume",
+        "how": "The operation is carried out in the theatre block of a tertiary institution, where narrow specialists, extended anaesthetic monitoring and dedicated equipment are available",
+        "when": "Operations of moderate complexity that are done in a specialised centre because of the type of procedure or the patient's other conditions",
+        "prep": "A referral from the relevant specialist, pre-operative work-up and an anaesthetist's assessment, fasting before anaesthesia as instructed by the doctor",
+        "abnormal": "The length of the hospital stay depends on the type of operation and the course of recovery; the discharge letter states when to come for a check-up, and fever or wound problems mean coming sooner"
+      },
+      "sr": {
+        "what": "Operacioni blok kliničkog centra ili specijalne bolnice kod zahvata srednjeg obima",
+        "how": "Operacija se izvodi u operacionom bloku ustanove tercijarnog nivoa, gdje su dostupni uži specijalisti, prošireni anesteziološki nadzor i namjenska oprema",
+        "when": "Operacije srednje složenosti koje se vode u specijalizovanom centru zbog vrste zahvata ili pridruženih bolesti pacijenta",
+        "prep": "Uput nadležnog specijaliste, preoperativna obrada i pregled anesteziologa, nejedenje prije anestezije po uputstvu ljekara",
+        "abnormal": "Dužina boravka u bolnici zavisi od vrste operacije i toka oporavka; u otpusnoj listi stoji kada doći na kontrolu, a kod temperature ili problema sa ranom dolazi se ranije"
+      },
+      "de": {
+        "what": "Operationsbereich eines klinischen Zentrums oder einer Spezialklinik bei einem Eingriff mittleren Umfangs",
+        "how": "Die Operation erfolgt im Operationsbereich einer Einrichtung der höchsten Versorgungsstufe, wo Spezialisten, erweitertes Narkosemonitoring und spezielle Technik verfügbar sind",
+        "when": "Operationen mittlerer Schwierigkeit, die wegen der Art des Eingriffs oder wegen Begleiterkrankungen in einem spezialisierten Zentrum durchgeführt werden",
+        "prep": "Überweisung des zuständigen Facharztes, Voruntersuchungen und Anästhesiegespräch, Nüchternheit vor der Narkose nach ärztlicher Anweisung",
+        "abnormal": "Die Dauer des Krankenhausaufenthalts hängt von der Operation und vom Heilungsverlauf ab; im Entlassungsbrief steht der Kontrolltermin, bei Fieber oder Wundproblemen stellt man sich früher vor"
+      },
+      "tr": {
+        "what": "Klinik merkez ya da özel dal hastanesi ameliyat bloğunun orta hacimli bir girişim için kullanımı",
+        "how": "Ameliyat, yan dal uzmanlarının, genişletilmiş anestezi izleminin ve özel donanımın bulunduğu üçüncü basamak bir kurumun ameliyat bloğunda yapılır",
+        "when": "Girişimin türü ya da hastanın eşlik eden hastalıkları nedeniyle uzmanlaşmış merkezde yürütülen orta güçlükteki ameliyatlar",
+        "prep": "İlgili uzmanın sevki, ameliyat öncesi değerlendirme ve anestezi muayenesi, hekimin belirttiği süre boyunca aç kalmak",
+        "abnormal": "Hastanede kalış süresi ameliyatın türüne ve iyileşmenin seyrine bağlıdır; taburculuk raporunda kontrol zamanı belirtilir, ateş ya da yara sorunlarında daha erken başvurulur"
+      },
+      "sr_cyrl": {
+        "what": "Операциони блок клиничког центра или специјалне болнице код захвата средњег обима",
+        "how": "Операција се изводи у операционом блоку установе терцијарног нивоа, гдје су доступни ужи специјалисти, проширени анестезиолошки надзор и намјенска опрема",
+        "when": "Операције средње сложености које се воде у специјализованом центру због врсте захвата или придружених болести пацијента",
+        "prep": "Упут надлежног специјалисте, преоперативна обрада и преглед анестезиолога, неједење прије анестезије по упутству љекара",
+        "abnormal": "Дужина боравка у болници зависи од врсте операције и тока опоравка; у отпусној листи стоји када доћи на контролу, а код температуре или проблема са раном долази се раније"
+      }
+    }
+  },
+  {
+    "slug": "peritoneal-dialysis",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Метод очищения крови, при котором фильтром служит собственная брюшина пациента",
+        "how": "Через постоянный катетер в брюшную полость вводят стерильный диализный раствор, он остаётся там заданное время и затем сливается вместе с избытком жидкости и продуктами обмена; при интермиттирующем режиме обмены проводят сеансами под наблюдением персонала",
+        "when": "Выраженная почечная недостаточность, когда нужна заместительная почечная терапия, ситуации, в которых гемодиализ не подходит или недоступен, начало длительной программы диализа",
+        "prep": "Перед сеансом опорожнить мочевой пузырь и кишечник, взвеситься, место выхода катетера держать чистым и сухим; режим и раствор подбирает нефролог",
+        "abnormal": "В ходе лечения оценивают самочувствие, вес, объём слитой жидкости и лабораторные показатели. Боль в животе, мутный слив, покраснение вокруг катетера или лихорадка требуют немедленного обращения к нефрологу"
+      },
+      "en": {
+        "what": "A method of blood purification in which the patient's own peritoneum works as the filter",
+        "how": "Sterile dialysis solution is run through a permanent catheter into the abdominal cavity, left there for a set time and then drained together with excess fluid and waste products; in the intermittent form the exchanges are done as sessions under supervision",
+        "when": "Advanced kidney failure requiring renal replacement therapy, situations where haemodialysis is not suitable or not available, start of a long-term dialysis programme",
+        "prep": "Empty the bladder and the bowel before the session, get weighed, keep the catheter exit site clean and dry; the schedule and the solution are chosen by the nephrologist",
+        "abnormal": "During treatment well-being, weight, the amount of drained fluid and laboratory values are followed. Abdominal pain, cloudy drained fluid, redness around the catheter or fever require immediate contact with the nephrologist"
+      },
+      "sr": {
+        "what": "Metoda pročišćavanja krvi u kojoj ulogu filtera ima sopstvena potrbušnica pacijenta",
+        "how": "Kroz stalni kateter se u trbušnu duplju uvodi sterilni dijalizni rastvor, ostaje određeno vrijeme i zatim se ispušta zajedno sa viškom tečnosti i produktima razmjene; kod intermitentnog režima izmjene se rade u seansama uz nadzor osoblja",
+        "when": "Uznapredovala bubrežna slabost kada je potrebna zamjena bubrežne funkcije, situacije u kojima hemodijaliza nije pogodna ili dostupna, uvođenje u dugotrajni program dijalize",
+        "prep": "Prije seanse isprazniti mokraćnu bešiku i crijeva, izmjeriti težinu, mjesto izlaska katetera držati čistim i suvim; režim i rastvor određuje nefrolog",
+        "abnormal": "Tokom liječenja prate se opšte stanje, težina, količina ispuštene tečnosti i laboratorijski nalazi. Bol u trbuhu, mutan ispust, crvenilo oko katetera ili temperatura traže hitno javljanje nefrologu"
+      },
+      "de": {
+        "what": "Blutreinigungsverfahren, bei dem das eigene Bauchfell des Patienten als Filter dient",
+        "how": "Über einen dauerhaften Katheter wird sterile Dialyselösung in die Bauchhöhle eingelassen, verbleibt dort eine festgelegte Zeit und wird dann mit überschüssiger Flüssigkeit und Stoffwechselprodukten abgelassen; beim intermittierenden Verfahren erfolgen die Wechsel als Sitzungen unter Aufsicht",
+        "when": "Fortgeschrittene Niereninsuffizienz mit Bedarf an Nierenersatztherapie, Situationen in denen eine Hämodialyse nicht geeignet oder nicht verfügbar ist, Beginn eines langfristigen Dialyseprogramms",
+        "prep": "Vor der Sitzung Blase und Darm entleeren, Gewicht bestimmen, die Katheteraustrittsstelle sauber und trocken halten; Schema und Lösung legt der Nephrologe fest",
+        "abnormal": "Während der Behandlung werden Befinden, Gewicht, abgelassene Flüssigkeitsmenge und Laborwerte kontrolliert. Bauchschmerzen, trübe Ablaufflüssigkeit, Rötung um den Katheter oder Fieber erfordern sofortigen Kontakt zum Nephrologen"
+      },
+      "tr": {
+        "what": "Hastanın kendi periton zarının filtre görevi gördüğü bir kan temizleme yöntemi",
+        "how": "Kalıcı bir kateterle karın boşluğuna steril diyaliz solüsyonu verilir, belirli bir süre bekletilir ve fazla sıvı ile atık ürünlerle birlikte boşaltılır; aralıklı uygulamada değişimler personel gözetiminde seanslar hâlinde yapılır",
+        "when": "Böbrek yerine koyma tedavisi gerektiren ileri böbrek yetmezliği, hemodiyalizin uygun ya da ulaşılabilir olmadığı durumlar, uzun süreli diyaliz programına başlangıç",
+        "prep": "Seanstan önce mesane ve bağırsağın boşaltılması, tartılma, kateter çıkış yerinin temiz ve kuru tutulması; program ve solüsyonu nefrolog belirler",
+        "abnormal": "Tedavi sırasında genel durum, kilo, boşaltılan sıvı miktarı ve laboratuvar değerleri izlenir. Karın ağrısı, bulanık boşaltma sıvısı, kateter çevresinde kızarıklık ya da ateş durumunda nefroloğa hemen başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Метода прочишћавања крви у којој улогу филтера има сопствена потрбушница пацијента",
+        "how": "Кроз стални катетер се у трбушну дупљу уводи стерилни дијализни раствор, остаје одређено вријеме и затим се испушта заједно са вишком течности и продуктима размјене; код интермитентног режима измјене се раде у сеансама уз надзор особља",
+        "when": "Узнапредовала бубрежна слабост када је потребна замјена бубрежне функције, ситуације у којима хемодијализа није погодна или доступна, увођење у дуготрајни програм дијализе",
+        "prep": "Прије сеансе испразнити мокраћну бешику и цријева, измјерити тежину, мјесто изласка катетера држати чистим и сувим; режим и раствор одређује нефролог",
+        "abnormal": "Током лијечења прате се опште стање, тежина, количина испуштене течности и лабораторијски налази. Бол у трбуху, мутан испуст, црвенило око катетера или температура траже хитно јављање нефрологу"
+      }
+    }
+  },
+  {
+    "slug": "professor-consultative-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Консультация врача с академическим званием профессора, обычно по направлению другого врача",
+        "how": "Врач разбирает историю болезни и уже выполненные обследования, проводит осмотр и формулирует письменное заключение с рекомендациями для направившего врача; приём, как правило, длиннее обычного",
+        "when": "Неясный диагноз, второе мнение перед операцией или сменой лечения, редкие и сочетанные заболевания, разбор лечения, которое не даёт результата",
+        "prep": "Взять направление, выписки, снимки и диски с исследованиями, результаты анализов и полный список принимаемых препаратов",
+        "abnormal": "По итогам консультации могут быть предложены дополнительные обследования, изменение плана лечения или наблюдение у профильного специалиста; выполнение рекомендаций согласуют с лечащим врачом"
+      },
+      "en": {
+        "what": "A consultation with a doctor holding the academic title of professor, usually on referral from another physician",
+        "how": "The doctor reviews the medical history and the investigations already done, examines the patient and writes an opinion with recommendations for the referring physician; the appointment is usually longer than a routine one",
+        "when": "Unclear diagnosis, a second opinion before surgery or a change of treatment, rare and combined conditions, review of treatment that is not working",
+        "prep": "Bring the referral, discharge letters, images and discs with investigations, laboratory results and a full list of medicines taken",
+        "abnormal": "The consultation may end with further investigations, a changed treatment plan or follow-up with a specialist; how the recommendations are carried out is agreed with the treating physician"
+      },
+      "sr": {
+        "what": "Konsultacija kod ljekara sa akademskim zvanjem profesora, najčešće po uputu drugog ljekara",
+        "how": "Ljekar analizira istoriju bolesti i ranije nalaze, pregleda pacijenta i piše mišljenje sa preporukama za ljekara koji je uputio; pregled obično traje duže od uobičajenog",
+        "when": "Nejasna dijagnoza, drugo mišljenje prije operacije ili promjene terapije, rijetke i udružene bolesti, analiza liječenja koje ne daje rezultat",
+        "prep": "Ponijeti uput, otpusne liste, snimke i diskove sa ispitivanjima, laboratorijske nalaze i potpun spisak lijekova koje pacijent uzima",
+        "abnormal": "Nakon konsultacije mogu se predložiti dodatna ispitivanja, izmjena plana liječenja ili praćenje kod specijaliste; sprovođenje preporuka dogovara se sa ljekarom koji vodi pacijenta"
+      },
+      "de": {
+        "what": "Beratung durch einen Arzt mit dem akademischen Titel Professor, meist auf Überweisung eines anderen Arztes",
+        "how": "Der Arzt sichtet Krankengeschichte und bisherige Befunde, untersucht den Patienten und verfasst eine Stellungnahme mit Empfehlungen für den überweisenden Arzt; der Termin dauert in der Regel länger als üblich",
+        "when": "Unklare Diagnose, Zweitmeinung vor einer Operation oder Therapieumstellung, seltene und kombinierte Erkrankungen, Überprüfung einer erfolglosen Behandlung",
+        "prep": "Überweisung, Entlassungsbriefe, Bilder und CDs mit Untersuchungen, Laborbefunde und eine vollständige Medikamentenliste mitbringen",
+        "abnormal": "Aus der Beratung können weitere Untersuchungen, ein geänderter Behandlungsplan oder eine fachärztliche Weiterbetreuung folgen; die Umsetzung wird mit dem behandelnden Arzt abgestimmt"
+      },
+      "tr": {
+        "what": "Genellikle başka bir hekimin sevkiyle, profesör unvanlı bir hekimden alınan görüş",
+        "how": "Hekim hastalık öyküsünü ve daha önce yapılmış tetkikleri inceler, muayene eder ve sevk eden hekim için önerileri içeren bir rapor yazar; görüşme genellikle olağan muayeneden uzun sürer",
+        "when": "Tanının netleşmemesi, ameliyat ya da tedavi değişikliği öncesi ikinci görüş, seyrek ve bir arada görülen hastalıklar, sonuç vermeyen tedavinin gözden geçirilmesi",
+        "prep": "Sevk belgesi, epikrizler, görüntüler ve tetkik diskleri, laboratuvar sonuçları ve kullanılan tüm ilaçların listesi getirilmelidir",
+        "abnormal": "Görüşme sonunda ek tetkikler, tedavi planında değişiklik ya da bir uzman tarafından izlem önerilebilir; önerilerin uygulanması tedaviyi yürüten hekimle birlikte kararlaştırılır"
+      },
+      "sr_cyrl": {
+        "what": "Консултација код љекара са академским звањем професора, најчешће по упуту другог љекара",
+        "how": "Љекар анализира историју болести и раније налазе, прегледа пацијента и пише мишљење са препорукама за љекара који је упутио; преглед обично траје дуже од уобичајеног",
+        "when": "Нејасна дијагноза, друго мишљење прије операције или промјене терапије, ријетке и удружене болести, анализа лијечења које не даје резултат",
+        "prep": "Понијети упут, отпусне листе, снимке и дискове са испитивањима, лабораторијске налазе и потпун списак лијекова које пацијент узима",
+        "abnormal": "Након консултације могу се предложити додатна испитивања, измјена плана лијечења или праћење код специјалисте; спровођење препорука договара се са љекаром који води пацијента"
+      }
+    }
+  },
+  {
+    "slug": "renal-concentration-test",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Проверка способности почек концентрировать мочу",
+        "how": "После ограничения приёма жидкости по указанию врача собирают несколько последовательных порций мочи и в каждой измеряют удельный вес или осмоляльность; проба занимает несколько часов и проходит под наблюдением персонала",
+        "when": "Жажда и обильное мочеиспускание, подозрение на нарушение работы почечных канальцев, наблюдение при хронических болезнях почек, уточнение причин полиурии",
+        "prep": "Ограничить жидкость в оговорённые врачом часы, накануне питаться как обычно; постоянные лекарства обсудить с врачом, при плохом самочувствии пробу прерывают",
+        "abnormal": "Сниженная концентрационная способность может быть связана с заболеваниями почек, гормональными причинами или питьевым режимом. Результат трактует нефролог вместе с остальными обследованиями"
+      },
+      "en": {
+        "what": "An assessment of how well the kidneys can concentrate urine",
+        "how": "After fluid intake is limited as instructed by the doctor, several consecutive urine samples are collected and the specific gravity or osmolality of each is measured; the test takes several hours and is done under supervision",
+        "when": "Thirst and large urine volumes, suspected disturbance of the renal tubules, follow-up in chronic kidney disease, clarifying the cause of polyuria",
+        "prep": "Limit fluids during the hours set by the doctor, eat as usual the day before; discuss regular medicines with the doctor, the test is stopped if the patient feels unwell",
+        "abnormal": "A reduced ability to concentrate urine may be related to kidney disease, hormonal causes or drinking habits. The result is interpreted by a nephrologist together with the other investigations"
+      },
+      "sr": {
+        "what": "Procjena sposobnosti bubrega da koncentriše mokraću",
+        "how": "Nakon ograničenja unosa tečnosti po uputstvu ljekara sakuplja se nekoliko uzastopnih uzoraka mokraće i u svakom se mjeri specifična težina ili osmolalnost; proba traje nekoliko sati uz nadzor osoblja",
+        "when": "Žeđ i obilno mokrenje, sumnja na poremećaj bubrežnih kanalića, praćenje kod hroničnih bolesti bubrega, razjašnjenje uzroka poliurije",
+        "prep": "Ograničiti tečnost u satima koje odredi ljekar, uoči pretrage se jede kao i obično; o stalnoj terapiji se dogovoriti sa ljekarom, a proba se prekida ako se pacijent loše osjeća",
+        "abnormal": "Smanjena sposobnost koncentracije može biti povezana sa bolestima bubrega, hormonskim uzrocima ili režimom unosa tečnosti. Nalaz tumači nefrolog zajedno sa ostalim ispitivanjima"
+      },
+      "de": {
+        "what": "Prüfung, wie gut die Nieren den Harn konzentrieren können",
+        "how": "Nach ärztlich angeordneter Flüssigkeitsbeschränkung werden mehrere aufeinanderfolgende Urinproben gesammelt und darin das spezifische Gewicht oder die Osmolalität bestimmt; der Test dauert mehrere Stunden und erfolgt unter Aufsicht",
+        "when": "Durst und große Urinmengen, Verdacht auf eine Störung der Nierenkanälchen, Verlaufskontrolle bei chronischer Nierenerkrankung, Abklärung einer Polyurie",
+        "prep": "Flüssigkeit in den vom Arzt festgelegten Stunden einschränken, am Vortag normal essen; Dauermedikamente mit dem Arzt besprechen, bei Unwohlsein wird der Test abgebrochen",
+        "abnormal": "Eine verminderte Konzentrationsfähigkeit kann mit Nierenerkrankungen, hormonellen Ursachen oder dem Trinkverhalten zusammenhängen. Die Beurteilung nimmt ein Nephrologe zusammen mit den übrigen Befunden vor"
+      },
+      "tr": {
+        "what": "Böbreklerin idrarı yoğunlaştırma yeteneğinin değerlendirilmesi",
+        "how": "Hekimin belirttiği biçimde sıvı alımı kısıtlandıktan sonra birbirini izleyen birkaç idrar örneği toplanır ve her birinde özgül ağırlık ya da osmolalite ölçülür; test birkaç saat sürer ve gözetim altında yapılır",
+        "when": "Susama ve çok idrar çıkarma, böbrek tübüllerinde bozukluk kuşkusu, kronik böbrek hastalığında izlem, poliüri nedeninin araştırılması",
+        "prep": "Hekimin belirlediği saatlerde sıvı kısıtlaması, bir önceki gün olağan beslenme; sürekli kullanılan ilaçlar hekimle görüşülür, rahatsızlık hissedilirse test durdurulur",
+        "abnormal": "Yoğunlaştırma yeteneğindeki azalma böbrek hastalıkları, hormonal nedenler ya da sıvı alma alışkanlıklarıyla ilişkili olabilir. Sonucu diğer incelemelerle birlikte nefrolog yorumlar"
+      },
+      "sr_cyrl": {
+        "what": "Процјена способности бубрега да концентрише мокраћу",
+        "how": "Након ограничења уноса течности по упутству љекара сакупља се неколико узастопних узорака мокраће и у сваком се мјери специфична тежина или осмолалност; проба траје неколико сати уз надзор особља",
+        "when": "Жеђ и обилно мокрење, сумња на поремећај бубрежних каналића, праћење код хроничних болести бубрега, разјашњење узрока полиурије",
+        "prep": "Ограничити течност у сатима које одреди љекар, уочи претраге се једе као и обично; о сталној терапији се договорити са љекаром, а проба се прекида ако се пацијент лоше осјећа",
+        "abnormal": "Смањена способност концентрације може бити повезана са болестима бубрега, хормонским узроцима или режимом уноса течности. Налаз тумачи нефролог заједно са осталим испитивањима"
+      }
+    }
+  },
+  {
+    "slug": "semi-intensive-care-bed-day",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Пребывание в палате полуинтенсивной терапии — промежуточном уровне наблюдения между обычным отделением и реанимацией",
+        "how": "Пациент находится в палате, где непрерывно или часто контролируют пульс, давление, дыхание и насыщение крови кислородом, а персонал и аппаратура рядом для быстрой реакции; наблюдение идёт круглосуточно, пока состояние не станет устойчивым",
+        "when": "Первые сутки после объёмных операций, нестабильное состояние, требующее частого контроля, перевод из реанимации перед возвращением в обычную палату, тяжёлые обострения хронических болезней",
+        "prep": "Отдельной подготовки нет, перевод решает лечащий врач; родственникам стоит заранее узнать часы посещений и список нужных вещей",
+        "abnormal": "При стабилизации показателей пациента переводят в обычную палату, при ухудшении — в отделение интенсивной терапии; решение принимает лечащий врач по результатам наблюдения"
+      },
+      "en": {
+        "what": "A stay in a semi-intensive care room, a level of observation between a regular ward and intensive care",
+        "how": "The patient stays in a room where pulse, blood pressure, breathing and blood oxygen are checked continuously or frequently, with staff and equipment close by for a quick response; observation runs around the clock until the condition is steady",
+        "when": "The first days after major surgery, an unstable condition requiring frequent checks, a step down from intensive care before returning to a regular ward, severe flare-ups of chronic disease",
+        "prep": "No separate preparation, the transfer is decided by the treating doctor; relatives should ask in advance about visiting hours and what to bring",
+        "abnormal": "When the readings become steady the patient is moved to a regular ward, and if the condition worsens, to intensive care; the decision is made by the treating doctor on the basis of the observations"
+      },
+      "sr": {
+        "what": "Boravak u sobi poluintenzivne njege, nivo nadzora između običnog odjeljenja i intenzivne njege",
+        "how": "Pacijent je u sobi u kojoj se stalno ili često prate puls, pritisak, disanje i zasićenost krvi kiseonikom, uz osoblje i opremu nadomak ruke za brzu reakciju; nadzor traje danonoćno dok se stanje ne stabilizuje",
+        "when": "Prvi dani poslije velikih operacija, nestabilno stanje koje traži česte provjere, prelazak iz intenzivne njege prije povratka na odjeljenje, teška pogoršanja hroničnih bolesti",
+        "prep": "Posebna priprema ne postoji, premještaj određuje ljekar koji vodi liječenje; porodici je korisno da unaprijed provjeri vrijeme posjeta i spisak potrebnih stvari",
+        "abnormal": "Kada se parametri stabilizuju pacijent prelazi na obično odjeljenje, a kod pogoršanja u jedinicu intenzivne njege; odluku donosi ljekar na osnovu praćenja"
+      },
+      "de": {
+        "what": "Aufenthalt in einem Zimmer der Überwachungspflege, einer Stufe zwischen Normalstation und Intensivstation",
+        "how": "Der Patient liegt in einem Zimmer, in dem Puls, Blutdruck, Atmung und Sauerstoffsättigung ständig oder häufig kontrolliert werden, Personal und Geräte sind für ein schnelles Eingreifen in der Nähe; die Überwachung läuft rund um die Uhr bis zur Stabilisierung",
+        "when": "Erste Tage nach großen Operationen, instabiler Zustand mit häufigen Kontrollen, Verlegung von der Intensivstation vor der Rückkehr auf die Normalstation, schwere Verschlechterungen chronischer Erkrankungen",
+        "prep": "Keine eigene Vorbereitung, die Verlegung entscheidet der behandelnde Arzt; Angehörige sollten Besuchszeiten und benötigte Dinge vorab erfragen",
+        "abnormal": "Bei stabilen Werten erfolgt die Verlegung auf die Normalstation, bei Verschlechterung auf die Intensivstation; die Entscheidung trifft der behandelnde Arzt anhand der Überwachung"
+      },
+      "tr": {
+        "what": "Normal servis ile yoğun bakım arasında bir izlem düzeyi olan yarı yoğun bakım odasında kalış",
+        "how": "Hasta; nabız, tansiyon, solunum ve kandaki oksijen düzeyinin sürekli ya da sık aralıklarla izlendiği, personel ve cihazların hızlı müdahale için yakında bulunduğu bir odada kalır; izlem durum kararlı hâle gelene kadar gece gündüz sürer",
+        "when": "Büyük ameliyatlardan sonraki ilk günler, sık kontrol gerektiren kararsız durum, yoğun bakımdan servise dönüş öncesi ara basamak, kronik hastalıkların ağır alevlenmeleri",
+        "prep": "Ayrı bir hazırlık gerekmez, nakile tedaviyi yürüten hekim karar verir; yakınların ziyaret saatlerini ve gerekli eşyaları önceden öğrenmesi yararlıdır",
+        "abnormal": "Değerler kararlı hâle gelince hasta normal servise, kötüleşme olursa yoğun bakıma alınır; karar izlem sonuçlarına göre tedaviyi yürüten hekim tarafından verilir"
+      },
+      "sr_cyrl": {
+        "what": "Боравак у соби полуинтензивне његе, ниво надзора између обичног одјељења и интензивне његе",
+        "how": "Пацијент је у соби у којој се стално или често прате пулс, притисак, дисање и засићеност крви кисеоником, уз особље и опрему надомак руке за брзу реакцију; надзор траје даноноћно док се стање не стабилизује",
+        "when": "Први дани послије великих операција, нестабилно стање које тражи честе провјере, прелазак из интензивне његе прије повратка на одјељење, тешка погоршања хроничних болести",
+        "prep": "Посебна припрема не постоји, премјештај одређује љекар који води лијечење; породици је корисно да унапријед провјери вријеме посјета и списак потребних ствари",
+        "abnormal": "Када се параметри стабилизују пацијент прелази на обично одјељење, а код погоршања у јединицу интензивне његе; одлуку доноси љекар на основу праћења"
+      }
+    }
+  },
+  {
+    "slug": "semi-intensive-nursing-care-for-children-1-month-to-7-years",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Усиленный сестринский уход за ребёнком раннего возраста, которому нужен частый контроль состояния",
+        "how": "Медсестра регулярно измеряет температуру, пульс, дыхание и количество мочи, следит за кормлением и питьём, ухаживает за кожей и венозным доступом, вводит назначенные врачом препараты; рядом обычно может находиться родитель",
+        "when": "Обезвоживание и отказ от еды, тяжёлые инфекции, состояние после операции, дыхательные нарушения, наблюдение за ребёнком после перевода из реанимации",
+        "prep": "Подготовка не требуется; с собой берут привычные вещи ребёнка, документы и сведения о прививках и аллергии",
+        "abnormal": "По мере улучшения объём наблюдения снижают и переходят к обычному уходу; о новой лихорадке, отказе от питья, вялости или учащённом дыхании родители сразу сообщают дежурному врачу"
+      },
+      "en": {
+        "what": "Enhanced nursing care for a young child whose condition needs frequent checks",
+        "how": "The nurse regularly measures temperature, pulse, breathing and urine output, watches feeding and fluid intake, cares for the skin and the intravenous line and gives the medicines prescribed by the doctor; a parent can usually stay nearby",
+        "when": "Dehydration and refusal to eat, severe infections, the period after an operation, breathing difficulties, observation of a child moved out of intensive care",
+        "prep": "No preparation is needed; bring the child's familiar things, documents and information about vaccinations and allergies",
+        "abnormal": "As the child improves the level of observation is reduced and ordinary care takes over; new fever, refusal to drink, drowsiness or fast breathing should be reported to the doctor on duty straight away"
+      },
+      "sr": {
+        "what": "Pojačana sestrinska njega malog djeteta kojem je potrebna česta provjera stanja",
+        "how": "Sestra redovno mjeri temperaturu, puls, disanje i količinu mokraće, prati hranjenje i unos tečnosti, njeguje kožu i venski put i daje lijekove koje je odredio ljekar; roditelj obično može biti uz dijete",
+        "when": "Dehidracija i odbijanje hrane, teške infekcije, stanje poslije operacije, otežano disanje, praćenje djeteta po izlasku iz intenzivne njege",
+        "prep": "Priprema nije potrebna; ponijeti djetetove uobičajene stvari, dokumenta i podatke o vakcinama i alergijama",
+        "abnormal": "Kako se stanje popravlja nadzor se smanjuje i prelazi se na običnu njegu; novu temperaturu, odbijanje tečnosti, pospanost ili ubrzano disanje roditelji odmah javljaju dežurnom ljekaru"
+      },
+      "de": {
+        "what": "Verstärkte pflegerische Betreuung eines Kleinkindes, dessen Zustand häufig kontrolliert werden muss",
+        "how": "Die Pflegekraft misst regelmäßig Temperatur, Puls, Atmung und Urinmenge, achtet auf Ernährung und Trinkmenge, versorgt Haut und Venenzugang und verabreicht die ärztlich verordneten Medikamente; ein Elternteil kann meist dabei bleiben",
+        "when": "Austrocknung und Nahrungsverweigerung, schwere Infektionen, Zustand nach einer Operation, Atemprobleme, Beobachtung nach Verlegung von der Intensivstation",
+        "prep": "Keine Vorbereitung nötig; vertraute Sachen des Kindes, Unterlagen sowie Angaben zu Impfungen und Allergien mitbringen",
+        "abnormal": "Mit der Besserung wird die Überwachung reduziert und die übliche Pflege fortgesetzt; neues Fieber, Trinkverweigerung, auffällige Müdigkeit oder schnelle Atmung sind sofort dem diensthabenden Arzt zu melden"
+      },
+      "tr": {
+        "what": "Durumunun sık aralıklarla izlenmesi gereken küçük çocuk için yoğunlaştırılmış hemşirelik bakımı",
+        "how": "Hemşire düzenli olarak ateş, nabız, solunum ve idrar miktarını ölçer, beslenme ve sıvı alımını izler, cilt ve damar yolu bakımını yapar, hekimin yazdığı ilaçları uygular; genellikle bir ebeveyn çocuğun yanında kalabilir",
+        "when": "Sıvı kaybı ve beslenmeyi reddetme, ağır enfeksiyonlar, ameliyat sonrası dönem, solunum güçlüğü, yoğun bakımdan çıkan çocuğun izlenmesi",
+        "prep": "Hazırlık gerekmez; çocuğun alışık olduğu eşyalar, belgeler, aşı ve alerji bilgileri getirilir",
+        "abnormal": "Durum düzeldikçe izlem azaltılır ve olağan bakıma geçilir; yeni ateş, sıvı almayı reddetme, uyku hâli ya da hızlı solunum hemen nöbetçi hekime bildirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Појачана сестринска њега малог дјетета којем је потребна честа провјера стања",
+        "how": "Сестра редовно мјери температуру, пулс, дисање и количину мокраће, прати храњење и унос течности, његује кожу и венски пут и даје лијекове које је одредио љекар; родитељ обично може бити уз дијете",
+        "when": "Дехидрација и одбијање хране, тешке инфекције, стање послије операције, отежано дисање, праћење дјетета по изласку из интензивне његе",
+        "prep": "Припрема није потребна; понијети дјететове уобичајене ствари, документа и податке о вакцинама и алергијама",
+        "abnormal": "Како се стање поправља надзор се смањује и прелази се на обичну његу; нову температуру, одбијање течности, поспаност или убрзано дисање родитељи одмах јављају дежурном љекару"
+      }
+    }
+  },
+  {
+    "slug": "semi-intensive-nursing-care-for-patients-over-7-years",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Усиленный сестринский уход за подростком или взрослым, который частично или полностью зависит от помощи персонала",
+        "how": "Персонал помогает с гигиеной, питанием и сменой положения тела, следит за дыханием и кровообращением, ухаживает за катетерами, дренажами и раной, предупреждает пролежни и тромбозы, контролирует приём назначенных лекарств",
+        "when": "Ранний период после операции, нарушения сознания или подвижности, тяжёлое течение заболевания, время после перевода из реанимации",
+        "prep": "Подготовки нет; полезно передать персоналу список постоянных лекарств, сведения об аллергии и привычные средства гигиены",
+        "abnormal": "Когда состояние становится устойчивым и человек начинает обслуживать себя сам, переходят к обычному уходу; при усилении боли, одышке, спутанности сознания или проблемах с раной персонал немедленно вызывает врача"
+      },
+      "en": {
+        "what": "Enhanced nursing care for an adolescent or adult who depends partly or fully on help from staff",
+        "how": "Staff help with hygiene, feeding and changing position, watch breathing and circulation, look after catheters, drains and the wound, prevent pressure sores and clots and make sure the prescribed medicines are taken",
+        "when": "The early period after an operation, impaired consciousness or mobility, a severe course of illness, the time after transfer out of intensive care",
+        "prep": "No preparation; it helps to give the staff a list of regular medicines, information about allergies and the patient's usual hygiene items",
+        "abnormal": "Once the condition is steady and the person starts managing on their own, ordinary care takes over; increasing pain, shortness of breath, confusion or wound problems make the staff call the doctor immediately"
+      },
+      "sr": {
+        "what": "Pojačana sestrinska njega adolescenta ili odrasle osobe koja djelimično ili potpuno zavisi od pomoći osoblja",
+        "how": "Osoblje pomaže pri higijeni, ishrani i promjeni položaja tijela, prati disanje i cirkulaciju, njeguje katetere, drenove i ranu, sprječava dekubitus i tromboze i kontroliše uzimanje propisane terapije",
+        "when": "Rani period poslije operacije, poremećaj svijesti ili pokretljivosti, teži tok bolesti, period nakon izlaska iz intenzivne njege",
+        "prep": "Priprema nije potrebna; korisno je osoblju predati spisak stalnih lijekova, podatke o alergijama i uobičajena sredstva za higijenu",
+        "abnormal": "Kada se stanje stabilizuje i osoba počne sama da se brine o sebi, prelazi se na običnu njegu; pojačan bol, otežano disanje, zbunjenost ili problem sa ranom razlog su da osoblje odmah pozove ljekara"
+      },
+      "de": {
+        "what": "Verstärkte pflegerische Betreuung von Jugendlichen und Erwachsenen, die teilweise oder ganz auf Hilfe angewiesen sind",
+        "how": "Das Personal hilft bei Körperpflege, Essen und Lagerung, überwacht Atmung und Kreislauf, versorgt Katheter, Drainagen und Wunde, beugt Druckgeschwüren und Thrombosen vor und achtet auf die Einnahme der verordneten Medikamente",
+        "when": "Frühe Phase nach einer Operation, eingeschränktes Bewusstsein oder eingeschränkte Beweglichkeit, schwerer Krankheitsverlauf, Zeit nach der Verlegung von der Intensivstation",
+        "prep": "Keine Vorbereitung; hilfreich sind eine Liste der Dauermedikamente, Angaben zu Allergien und die gewohnten Pflegeartikel",
+        "abnormal": "Sobald der Zustand stabil ist und der Patient sich wieder selbst versorgt, geht die Betreuung in die normale Pflege über; stärkere Schmerzen, Atemnot, Verwirrtheit oder Wundprobleme führen dazu, dass das Personal sofort den Arzt ruft"
+      },
+      "tr": {
+        "what": "Personelin yardımına kısmen ya da tamamen bağımlı olan ergen veya erişkin için yoğunlaştırılmış hemşirelik bakımı",
+        "how": "Personel hijyen, beslenme ve pozisyon değiştirmede yardım eder, solunum ve dolaşımı izler, kateter, dren ve yara bakımını yapar, bası yarası ve pıhtı oluşumunu önler, yazılan ilaçların alınmasını denetler",
+        "when": "Ameliyat sonrası erken dönem, bilinç ya da hareket kısıtlılığı, hastalığın ağır seyri, yoğun bakımdan çıkıştan sonraki dönem",
+        "prep": "Hazırlık gerekmez; sürekli kullanılan ilaçların listesi, alerji bilgileri ve kişisel bakım ürünlerinin personele iletilmesi yararlıdır",
+        "abnormal": "Durum kararlı hâle gelip kişi kendi gereksinimlerini karşılamaya başlayınca olağan bakıma geçilir; artan ağrı, nefes darlığı, bilinç bulanıklığı ya da yara sorunlarında personel hemen hekimi çağırır"
+      },
+      "sr_cyrl": {
+        "what": "Појачана сестринска њега адолесцента или одрасле особе која дјелимично или потпуно зависи од помоћи особља",
+        "how": "Особље помаже при хигијени, исхрани и промјени положаја тијела, прати дисање и циркулацију, његује катетере, дренове и рану, спрјечава декубитус и тромбозе и контролише узимање прописане терапије",
+        "when": "Рани период послије операције, поремећај свијести или покретљивости, тежи ток болести, период након изласка из интензивне његе",
+        "prep": "Припрема није потребна; корисно је особљу предати списак сталних лијекова, податке о алергијама и уобичајена средства за хигијену",
+        "abnormal": "Када се стање стабилизује и особа почне сама да се брине о себи, прелази се на обичну његу; појачан бол, отежано дисање, збуњеност или проблем са раном разлог су да особље одмах позове љекара"
+      }
+    }
+  },
+  {
+    "slug": "specialist-consultative-examination",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Осмотр профильного специалиста по запросу другого врача для уточнения диагноза или плана лечения",
+        "how": "Специалист знакомится с направлением и имеющимися результатами, проводит осмотр в рамках своего профиля, при необходимости выполняет простые исследования и пишет заключение с ответом на поставленный вопрос; 15–30 минут",
+        "when": "Направление от семейного врача или из стационара, подозрение на заболевание вне компетенции направившего врача, оценка перед операцией, проверка текущей терапии",
+        "prep": "Специальной подготовки нет, если врач не назначил анализы заранее; взять направление, медицинскую документацию и список лекарств",
+        "abnormal": "Заключение специалиста обычно содержит рекомендации по дальнейшему обследованию или лечению, которые выполняет направивший врач; при ухудшении состояния до контрольного визита нужно обратиться к врачу раньше"
+      },
+      "en": {
+        "what": "An examination by a specialist requested by another doctor to clarify the diagnosis or the plan of care",
+        "how": "The specialist reads the referral and the available results, examines the patient within their own field, performs simple tests if needed and writes an opinion answering the question asked; 15–30 minutes",
+        "when": "Referral from a family doctor or from hospital, a suspected condition outside the referring doctor's field, assessment before surgery, review of current treatment",
+        "prep": "No special preparation unless tests were ordered in advance; bring the referral, medical records and a list of medicines",
+        "abnormal": "The specialist's opinion usually contains recommendations for further tests or treatment that the referring doctor carries out; if the condition worsens before the follow-up visit, see a doctor sooner"
+      },
+      "sr": {
+        "what": "Pregled specijaliste po traženju drugog ljekara radi razjašnjenja dijagnoze ili plana liječenja",
+        "how": "Specijalista pročita uput i dostupne nalaze, pregleda pacijenta u okviru svoje oblasti, po potrebi uradi jednostavna ispitivanja i napiše mišljenje sa odgovorom na postavljeno pitanje; 15–30 minuta",
+        "when": "Uput od izabranog doktora ili iz bolnice, sumnja na bolest izvan oblasti ljekara koji upućuje, procjena prije operacije, provjera postojeće terapije",
+        "prep": "Posebna priprema nije potrebna ako ljekar nije unaprijed zatražio analize; ponijeti uput, medicinsku dokumentaciju i spisak lijekova",
+        "abnormal": "Mišljenje specijaliste obično sadrži preporuke za dalja ispitivanja ili liječenje koje sprovodi ljekar koji je uputio pacijenta; ako se stanje pogorša prije kontrole, treba se javiti ranije"
+      },
+      "de": {
+        "what": "Fachärztliche Untersuchung auf Anforderung eines anderen Arztes zur Klärung der Diagnose oder des weiteren Vorgehens",
+        "how": "Der Facharzt sichtet Überweisung und vorhandene Befunde, untersucht den Patienten in seinem Fachgebiet, führt bei Bedarf einfache Untersuchungen durch und verfasst eine Stellungnahme zur gestellten Frage; 15–30 Minuten",
+        "when": "Überweisung vom Hausarzt oder aus dem Krankenhaus, Verdacht auf eine Erkrankung außerhalb des Fachgebiets des überweisenden Arztes, Beurteilung vor einer Operation, Überprüfung der laufenden Therapie",
+        "prep": "Keine besondere Vorbereitung, sofern nicht vorab Untersuchungen angeordnet wurden; Überweisung, Unterlagen und Medikamentenliste mitbringen",
+        "abnormal": "Die Stellungnahme enthält meist Empfehlungen für weitere Untersuchungen oder eine Behandlung, die der überweisende Arzt umsetzt; verschlechtert sich der Zustand vor dem Kontrolltermin, sollte man früher einen Arzt aufsuchen"
+      },
+      "tr": {
+        "what": "Tanının ya da tedavi planının netleşmesi için başka bir hekimin isteğiyle yapılan uzman muayenesi",
+        "how": "Uzman hekim sevk belgesini ve mevcut sonuçları inceler, kendi alanıyla ilgili muayeneyi yapar, gerekirse basit tetkikler uygular ve sorulan soruyu yanıtlayan bir rapor yazar; 15–30 dakika",
+        "when": "Aile hekiminden ya da hastaneden sevk, sevk eden hekimin alanı dışında bir hastalık kuşkusu, ameliyat öncesi değerlendirme, mevcut tedavinin gözden geçirilmesi",
+        "prep": "Önceden tetkik istenmediyse özel hazırlık gerekmez; sevk belgesi, tıbbi belgeler ve ilaç listesi getirilir",
+        "abnormal": "Uzman görüşü genellikle sevk eden hekimin uygulayacağı ileri tetkik ya da tedavi önerilerini içerir; kontrol öncesinde durum kötüleşirse daha erken hekime başvurulmalıdır"
+      },
+      "sr_cyrl": {
+        "what": "Преглед специјалисте по тражењу другог љекара ради разјашњења дијагнозе или плана лијечења",
+        "how": "Специјалиста прочита упут и доступне налазе, прегледа пацијента у оквиру своје области, по потреби уради једноставна испитивања и напише мишљење са одговором на постављено питање; 15–30 минута",
+        "when": "Упут од изабраног доктора или из болнице, сумња на болест изван области љекара који упућује, процјена прије операције, провјера постојеће терапије",
+        "prep": "Посебна припрема није потребна ако љекар није унапријед затражио анализе; понијети упут, медицинску документацију и списак лијекова",
+        "abnormal": "Мишљење специјалисте обично садржи препоруке за даља испитивања или лијечење које спроводи љекар који је упутио пацијента; ако се стање погорша прије контроле, треба се јавити раније"
+      }
+    }
+  },
+  {
+    "slug": "standard-nursing-care-for-patients-over-7-years",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Обычный сестринский уход в отделении для подростков и взрослых, которые в основном справляются сами",
+        "how": "Медсестра по графику измеряет температуру, давление и пульс, выдаёт назначенные препараты и делает инъекции, меняет повязки, помогает с гигиеной и передвижением, ведёт записи наблюдений",
+        "when": "Плановая госпитализация, стабильное течение болезни в стационаре, восстановление после перевода из палаты усиленного наблюдения, подготовка к выписке",
+        "prep": "Подготовка не требуется; с собой берут личные вещи, документы и список постоянных лекарств",
+        "abnormal": "Такой уход рассчитан на устойчивое состояние: если самочувствие ухудшается, объём наблюдения увеличивают. О новой боли, температуре или головокружении нужно сразу сказать медсестре или врачу"
+      },
+      "en": {
+        "what": "Routine nursing care on the ward for adolescents and adults who are largely able to manage by themselves",
+        "how": "The nurse measures temperature, blood pressure and pulse on schedule, gives the prescribed medicines and injections, changes dressings, assists with hygiene and walking and keeps the observation records",
+        "when": "Planned hospital admission, a stable course of illness in hospital, recovery after a step down from closer observation, preparation for discharge",
+        "prep": "No preparation is needed; bring personal items, documents and a list of regular medicines",
+        "abnormal": "This level of care assumes a steady condition: if the patient feels worse, observation is stepped up. New pain, fever or dizziness should be reported to the nurse or doctor at once"
+      },
+      "sr": {
+        "what": "Uobičajena sestrinska njega na odjeljenju za adolescente i odrasle koji se uglavnom snalaze sami",
+        "how": "Sestra po rasporedu mjeri temperaturu, pritisak i puls, daje propisane lijekove i injekcije, radi previjanje, pomaže pri higijeni i kretanju i vodi evidenciju zapažanja",
+        "when": "Planirani prijem u bolnicu, stabilan tok bolesti u stacionaru, oporavak nakon prelaska sa pojačanog nadzora, priprema za otpust",
+        "prep": "Priprema nije potrebna; ponijeti lične stvari, dokumenta i spisak stalnih lijekova",
+        "abnormal": "Ovaj nivo njege podrazumijeva stabilno stanje: ako se pacijent osjeća lošije, nadzor se pojačava. Novi bol, temperaturu ili vrtoglavicu treba odmah reći sestri ili ljekaru"
+      },
+      "de": {
+        "what": "Übliche pflegerische Betreuung auf Station für Jugendliche und Erwachsene, die sich weitgehend selbst versorgen",
+        "how": "Die Pflegekraft misst nach Plan Temperatur, Blutdruck und Puls, gibt verordnete Medikamente und Injektionen, wechselt Verbände, hilft bei Körperpflege und Bewegung und führt die Pflegedokumentation",
+        "when": "Geplante stationäre Aufnahme, stabiler Krankheitsverlauf im Krankenhaus, Erholung nach Verlegung von einer Überwachungsstation, Vorbereitung auf die Entlassung",
+        "prep": "Keine Vorbereitung nötig; persönliche Dinge, Unterlagen und eine Liste der Dauermedikamente mitbringen",
+        "abnormal": "Diese Betreuung setzt einen stabilen Zustand voraus: verschlechtert sich das Befinden, wird die Überwachung verstärkt. Neue Schmerzen, Fieber oder Schwindel sind sofort der Pflegekraft oder dem Arzt zu melden"
+      },
+      "tr": {
+        "what": "Büyük ölçüde kendi gereksinimlerini karşılayabilen ergen ve erişkinler için serviste verilen olağan hemşirelik bakımı",
+        "how": "Hemşire planlanan saatlerde ateş, tansiyon ve nabzı ölçer, yazılan ilaçları ve iğneleri uygular, pansuman yapar, hijyen ve harekette yardımcı olur, gözlem kayıtlarını tutar",
+        "when": "Planlı hastaneye yatış, hastanede kararlı hastalık seyri, daha yakın izlemden çıkıştan sonraki iyileşme dönemi, taburculuğa hazırlık",
+        "prep": "Hazırlık gerekmez; kişisel eşyalar, belgeler ve sürekli kullanılan ilaçların listesi getirilir",
+        "abnormal": "Bu bakım düzeyi kararlı bir durumu varsayar: hasta kötüleşirse izlem artırılır. Yeni ağrı, ateş ya da baş dönmesi hemen hemşireye ya da hekime bildirilmelidir"
+      },
+      "sr_cyrl": {
+        "what": "Уобичајена сестринска њега на одјељењу за адолесценте и одрасле који се углавном сналазе сами",
+        "how": "Сестра по распореду мјери температуру, притисак и пулс, даје прописане лијекове и ињекције, ради превијање, помаже при хигијени и кретању и води евиденцију запажања",
+        "when": "Планирани пријем у болницу, стабилан ток болести у стационару, опоравак након преласка са појачаног надзора, припрема за отпуст",
+        "prep": "Припрема није потребна; понијети личне ствари, документа и списак сталних лијекова",
+        "abnormal": "Овај ниво његе подразумијева стабилно стање: ако се пацијент осјећа лошије, надзор се појачава. Нови бол, температуру или вртоглавицу треба одмах рећи сестри или љекару"
+      }
+    }
+  },
+  {
+    "slug": "tubular-function-test",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Комплексная оценка работы почечных канальцев — того, как почка возвращает в кровь нужные вещества и выводит лишнее",
+        "how": "В крови и собранных порциях мочи определяют электролиты, кислотность и другие показатели, иногда после нагрузочной пробы; исследование может занимать несколько часов, часть сборов пациент делает сам",
+        "when": "Необъяснимые нарушения электролитов или кислотно-щелочного равновесия, подозрение на тубулопатию, мочекаменная болезнь, задержка роста у детей, контроль при лечении препаратами, влияющими на почки",
+        "prep": "Выполнять указания врача по питьевому режиму и сбору мочи, собрать все порции в выданную посуду; обо всех лекарствах и добавках сообщить заранее",
+        "abnormal": "Отклонения могут указывать на нарушение отдельных канальцевых функций, влияние лекарств или обменные причины. Трактовку и дальнейший план даёт нефролог"
+      },
+      "en": {
+        "what": "A combined assessment of how the renal tubules return needed substances to the blood and remove the rest",
+        "how": "Electrolytes, acidity and other values are measured in blood and in collected urine samples, sometimes after a loading test; the examination may take several hours and part of the collection is done by the patient",
+        "when": "Unexplained electrolyte or acid-base disturbances, suspected tubular disorder, kidney stones, growth delay in children, monitoring during treatment with medicines that affect the kidneys",
+        "prep": "Follow the doctor's instructions on drinking and on collecting urine, collect every portion into the containers provided; mention all medicines and supplements in advance",
+        "abnormal": "Deviations may point to a disturbance of particular tubular functions, an effect of medicines or metabolic causes. The interpretation and the next steps come from a nephrologist"
+      },
+      "sr": {
+        "what": "Objedinjena procjena rada bubrežnih kanalića, odnosno kako bubreg vraća potrebne materije u krv a ostalo izlučuje",
+        "how": "U krvi i sakupljenim uzorcima mokraće određuju se elektroliti, kiselost i drugi parametri, ponekad poslije opterećenja; ispitivanje može trajati nekoliko sati, a dio sakupljanja pacijent radi sam",
+        "when": "Nerazjašnjeni poremećaji elektrolita ili acidobazne ravnoteže, sumnja na tubulopatiju, kamen u bubregu, zaostajanje u rastu kod djece, praćenje tokom terapije koja opterećuje bubrege",
+        "prep": "Pridržavati se uputstva ljekara o unosu tečnosti i sakupljanju mokraće, sakupiti sve porcije u dobijenu posudu; unaprijed prijaviti sve lijekove i dodatke ishrani",
+        "abnormal": "Odstupanja mogu ukazivati na poremećaj pojedinih kanalićnih funkcija, uticaj lijekova ili metaboličke uzroke. Tumačenje i dalji plan daje nefrolog"
+      },
+      "de": {
+        "what": "Zusammengefasste Beurteilung der Nierenkanälchen, also wie die Niere benötigte Stoffe zurückholt und Überschüssiges ausscheidet",
+        "how": "In Blut und gesammelten Urinproben werden Elektrolyte, Säuregrad und weitere Werte bestimmt, teils nach einem Belastungstest; die Untersuchung kann mehrere Stunden dauern, einen Teil der Sammlung übernimmt der Patient",
+        "when": "Ungeklärte Elektrolyt- oder Säure-Basen-Störungen, Verdacht auf eine Tubulopathie, Nierensteine, Wachstumsverzögerung bei Kindern, Kontrolle unter nierenbelastenden Medikamenten",
+        "prep": "Anweisungen des Arztes zu Trinkmenge und Urinsammlung befolgen, alle Portionen in die ausgegebenen Gefäße sammeln; alle Medikamente und Nahrungsergänzungsmittel vorher angeben",
+        "abnormal": "Abweichungen können auf eine Störung einzelner Kanälchenfunktionen, auf Medikamentenwirkungen oder auf Stoffwechselursachen hinweisen. Beurteilung und weiteres Vorgehen legt der Nephrologe fest"
+      },
+      "tr": {
+        "what": "Böbrek tübüllerinin gerekli maddeleri kana geri alıp fazlasını atma işlevinin bütünlüklü değerlendirilmesi",
+        "how": "Kanda ve toplanan idrar örneklerinde elektrolitler, asitlik ve diğer değerler, kimi zaman bir yükleme testinden sonra ölçülür; inceleme birkaç saat sürebilir ve toplamanın bir bölümünü hasta kendisi yapar",
+        "when": "Açıklanamayan elektrolit ya da asit-baz bozuklukları, tübülopati kuşkusu, böbrek taşı, çocuklarda büyüme geriliği, böbreği etkileyen ilaçlarla tedavide izlem",
+        "prep": "Hekimin sıvı alımı ve idrar toplama ile ilgili yönergelerine uyulur, tüm porsiyonlar verilen kaba toplanır; kullanılan tüm ilaçlar ve takviyeler önceden bildirilir",
+        "abnormal": "Sapmalar tek tek tübül işlevlerinde bozukluğa, ilaç etkisine ya da metabolik nedenlere işaret edebilir. Yorum ve sonraki adımları nefrolog belirler"
+      },
+      "sr_cyrl": {
+        "what": "Обједињена процјена рада бубрежних каналића, односно како бубрег враћа потребне материје у крв а остало излучује",
+        "how": "У крви и сакупљеним узорцима мокраће одређују се електролити, киселост и други параметри, понекад послије оптерећења; испитивање може трајати неколико сати, а дио сакупљања пацијент ради сам",
+        "when": "Неразјашњени поремећаји електролита или ацидобазне равнотеже, сумња на тубулопатију, камен у бубрегу, заостајање у расту код дјеце, праћење током терапије која оптерећује бубреге",
+        "prep": "Придржавати се упутства љекара о уносу течности и сакупљању мокраће, сакупити све порције у добијену посуду; унапријед пријавити све лијекове и додатке исхрани",
+        "abnormal": "Одступања могу указивати на поремећај појединих каналићних функција, утицај лијекова или метаболичке узроке. Тумачење и даљи план даје нефролог"
+      }
+    }
+  },
+  {
+    "slug": "ultrasound-lymph-nodes",
+    "entity_type": "medical_service",
+    "translations": {
+      "ru": {
+        "what": "Ультразвуковой осмотр групп лимфатических узлов на шее, в подмышечных, паховых и других доступных областях",
+        "how": "На кожу наносят гель, датчиком осматривают выбранные группы узлов, оценивая их размер, форму, структуру и кровоток; 10–20 минут, безболезненно",
+        "when": "Увеличенные или болезненные лимфоузлы, длительная лихорадка неясного происхождения, наблюдение за известными изменениями, выбор узла перед биопсией",
+        "prep": "Не требуется; одежда должна открывать доступ к осматриваемой области",
+        "abnormal": "Изменения размера и структуры узлов могут сопровождать инфекции, воспаление или другие процессы и сами по себе не являются диагнозом. Заключение оценивает направивший врач и при необходимости назначает анализы или биопсию"
+      },
+      "en": {
+        "what": "An ultrasound look at groups of lymph nodes in the neck, armpits, groin and other accessible areas",
+        "how": "Gel is applied to the skin and the probe is moved over the chosen node groups, assessing their size, shape, structure and blood flow; 10–20 minutes, painless",
+        "when": "Enlarged or tender lymph nodes, prolonged fever of unclear origin, follow-up of known changes, choosing a node before a biopsy",
+        "prep": "Not required; clothing should allow access to the area being examined",
+        "abnormal": "Changes in the size and structure of nodes can accompany infections, inflammation or other processes and are not a diagnosis in themselves. The referring doctor interprets the report and may order tests or a biopsy"
+      },
+      "sr": {
+        "what": "Ultrazvučni pregled grupa limfnih čvorova na vratu, u pazuhu, preponama i drugim dostupnim regijama",
+        "how": "Na kožu se nanosi gel, a sondom se pregledaju izabrane grupe čvorova uz procjenu veličine, oblika, građe i protoka krvi; 10–20 minuta, bezbolno",
+        "when": "Uvećani ili bolni limfni čvorovi, dugotrajna temperatura nejasnog uzroka, praćenje poznatih promjena, izbor čvora prije biopsije",
+        "prep": "Nije potrebna; odjeća treba da omogući pristup regiji koja se pregleda",
+        "abnormal": "Promjene veličine i građe čvorova mogu pratiti infekcije, upalu ili druge procese i same po sebi nisu dijagnoza. Nalaz tumači ljekar koji je uputio pacijenta i po potrebi traži analize ili biopsiju"
+      },
+      "de": {
+        "what": "Ultraschalluntersuchung von Lymphknotengruppen am Hals, in den Achseln, in der Leiste und in anderen zugänglichen Regionen",
+        "how": "Gel wird auf die Haut aufgetragen, die Sonde über die ausgewählten Knotengruppen geführt und dabei Größe, Form, Struktur und Durchblutung beurteilt; 10–20 Minuten, schmerzfrei",
+        "when": "Vergrößerte oder schmerzhafte Lymphknoten, anhaltendes Fieber unklarer Ursache, Verlaufskontrolle bekannter Veränderungen, Auswahl eines Knotens vor einer Biopsie",
+        "prep": "Nicht erforderlich; die Kleidung sollte den Zugang zur untersuchten Region ermöglichen",
+        "abnormal": "Veränderungen von Größe und Struktur der Knoten können Infektionen, Entzündungen oder andere Prozesse begleiten und sind für sich genommen keine Diagnose. Den Befund beurteilt der überweisende Arzt und veranlasst bei Bedarf Laboruntersuchungen oder eine Biopsie"
+      },
+      "tr": {
+        "what": "Boyun, koltuk altı, kasık ve ulaşılabilir diğer bölgelerdeki lenf nodu gruplarının ultrasonla incelenmesi",
+        "how": "Cilde jel sürülür ve prob seçilen nod grupları üzerinde gezdirilerek boyut, biçim, yapı ve kan akımı değerlendirilir; 10–20 dakika, ağrısızdır",
+        "when": "Büyümüş ya da ağrılı lenf nodları, nedeni belirsiz uzun süreli ateş, bilinen değişikliklerin izlenmesi, biyopsi öncesi nod seçimi",
+        "prep": "Gerekmez; giysiler incelenecek bölgeye erişime izin vermelidir",
+        "abnormal": "Nodların boyut ve yapısındaki değişiklikler enfeksiyonlara, iltihaba ya da başka süreçlere eşlik edebilir ve tek başına tanı değildir. Raporu sevk eden hekim yorumlar, gerekirse tetkik ya da biyopsi ister"
+      },
+      "sr_cyrl": {
+        "what": "Ултразвучни преглед група лимфних чворова на врату, у пазуху, препонама и другим доступним регијама",
+        "how": "На кожу се наноси гел, а сондом се прегледају изабране групе чворова уз процјену величине, облика, грађе и протока крви; 10–20 минута, безболно",
+        "when": "Увећани или болни лимфни чворови, дуготрајна температура нејасног узрока, праћење познатих промјена, избор чвора прије биопсије",
+        "prep": "Није потребна; одјећа треба да омогући приступ регији која се прегледа",
+        "abnormal": "Промјене величине и грађе чворова могу пратити инфекције, упалу или друге процесе и саме по себи нису дијагноза. Налаз тумачи љекар који је упутио пацијента и по потреби тражи анализе или биопсију"
+      }
+    }
+  }
 ]

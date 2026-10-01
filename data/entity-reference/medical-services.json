@@ -288,54 +288,6 @@
 		}
 	},
 	{
-		"slug": "blood-collection-fee",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Отдельная позиция прайса — оплата самой манипуляции взятия крови, помимо стоимости анализов",
-				"how": "Медсестра накладывает жгут, обрабатывает кожу и берёт кровь из вены в пробирки; занимает 1–2 минуты, число пробирок зависит от списка анализов",
-				"when": "При сдаче любых анализов крови — начисляется один раз за визит независимо от количества показателей",
-				"prep": "Зависит от анализов: часть требует сдачи натощак, часть — отмены препаратов; уточнять по конкретному списку заранее",
-				"abnormal": "Само взятие крови не даёт результата — результаты и их трактовка относятся к заказанным анализам. Небольшой синяк в месте вкола обычно проходит за несколько дней"
-			},
-			"en": {
-				"what": "A separate price-list item — the charge for drawing the blood itself, in addition to the cost of the tests",
-				"how": "A nurse applies a tourniquet, cleans the skin and draws blood from a vein into tubes; it takes one to two minutes and the number of tubes depends on the list of tests",
-				"when": "With any blood test — charged once per visit regardless of how many parameters are ordered",
-				"prep": "Depends on the tests: some require fasting, some require pausing medication; check the requirements for your specific list in advance",
-				"abnormal": "The blood draw itself produces no result — results and their interpretation belong to the tests ordered. A small bruise at the puncture site usually fades within a few days"
-			},
-			"sr": {
-				"what": "Posebna stavka cjenovnika — naplata samog vađenja krvi, uz cijenu analiza",
-				"how": "Medicinska sestra stavlja povesku, dezinfikuje kožu i vadi krv iz vene u epruvete; traje jedan do dva minuta, a broj epruveta zavisi od spiska analiza",
-				"when": "Pri svakom vađenju krvi za analize — naplaćuje se jednom po posjeti, bez obzira na broj parametara",
-				"prep": "Zavisi od analiza: neke zahtijevaju vađenje natašte, neke pauzu u uzimanju lijekova; provjeriti uslove za svoj spisak unaprijed",
-				"abnormal": "Samo vađenje krvi ne daje rezultat — rezultati i njihovo tumačenje odnose se na naručene analize. Manja modrica na mjestu uboda obično prođe za nekoliko dana"
-			},
-			"de": {
-				"what": "Ein eigener Posten der Preisliste — die Gebühr für die Blutentnahme selbst, zusätzlich zu den Kosten der Analysen",
-				"how": "Eine Pflegekraft legt eine Staubinde an, desinfiziert die Haut und entnimmt Blut aus einer Vene in Röhrchen; das dauert ein bis zwei Minuten, die Anzahl der Röhrchen richtet sich nach den bestellten Analysen",
-				"when": "Bei jeder Blutuntersuchung — wird einmal pro Besuch berechnet, unabhängig von der Anzahl der Parameter",
-				"prep": "Hängt von den Analysen ab: manche erfordern Nüchternheit, andere ein Pausieren von Medikamenten; die Vorgaben für die eigene Liste vorab klären",
-				"abnormal": "Die Blutentnahme selbst liefert kein Ergebnis — Ergebnisse und deren Deutung gehören zu den bestellten Analysen. Ein kleiner Bluterguss an der Einstichstelle vergeht meist in wenigen Tagen"
-			},
-			"tr": {
-				"what": "Fiyat listesinde ayrı bir kalem — tetkik bedellerinin yanı sıra kan alma işleminin kendisinin ücreti",
-				"how": "Hemşire turnike uygular, cildi temizler ve damardan tüplere kan alır; bir iki dakika sürer, tüp sayısı istenen tetkiklere bağlıdır",
-				"when": "Her kan tetkikinde — parametre sayısından bağımsız olarak ziyaret başına bir kez alınır",
-				"prep": "Tetkiklere göre değişir: bazıları açlık, bazıları ilaçlara ara verilmesini gerektirir; kendi listeniz için koşulları önceden öğrenin",
-				"abnormal": "Kan alma işleminin kendisi bir sonuç vermez — sonuçlar ve yorumu istenen tetkiklere aittir. Giriş yerindeki küçük morluk genellikle birkaç günde geçer"
-			},
-			"sr_cyrl": {
-				"what": "Посебна ставка цјеновника — наплата самог вађења крви, уз цијену анализа",
-				"how": "Медицинска сестра ставља повеску, дезинфикује кожу и вади крв из вене у епрувете; траје један до два минута, а број епрувета зависи од списка анализа",
-				"when": "При сваком вађењу крви за анализе — наплаћује се једном по посјети, без обзира на број параметара",
-				"prep": "Зависи од анализа: неке захтијевају вађење наташте, неке паузу у узимању лијекова; провјерити услове за свој списак унапријед",
-				"abnormal": "Само вађење крви не даје резултат — резултати и њихово тумачење односе се на наручене анализе. Мања модрица на мјесту убода обично прође за неколико дана"
-			}
-		}
-	},
-	{
 		"slug": "expert-pregnancy-ultrasound",
 		"entity_type": "medical_service",
 		"translations": {
@@ -764,54 +716,6 @@
 				"when": "Осјећај пуног уха, сумња на течност у средњем уху, честе упале уха код дјеце, контрола након терапије, процјена функције Еустахијеве тубе, допуна аудиометрији",
 				"prep": "Није потребна; код прехладе или свјеже упале уха љекар може одложити преглед, а чепове од воска боље је претходно уклонити",
 				"abnormal": "Промјене на кривој могу указивати на течност у средњем уху, поремећену вентилацију кроз Еустахијеву тубу или промјене на бубној опни. Закључак даје ОРЛ љекар уз преглед и аудиометрију"
-			}
-		}
-	},
-	{
-		"slug": "ear-irrigation",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Удаление серной пробки промыванием слухового прохода тёплой водой или физраствором",
-				"how": "Врач или медсестра под контролем осмотра вводит струю тёплой жидкости шприцем без иглы или аппаратом, промывные воды собирают в лоток; занимает 5–15 минут",
-				"when": "Заложенность и снижение слуха из-за серной пробки, подготовка к аудиометрии или отоскопии, зуд и ощущение полноты в ухе",
-				"prep": "За 2–3 дня по рекомендации врача закапывать капли, размягчающие серу; при перфорации перепонки, свежем отите или операции на ухе промывание не делают — сообщить об этом заранее",
-				"abnormal": "После промывания врач осматривает слуховой проход и перепонку. Сохраняющееся снижение слуха, боль или головокружение требуют дообследования у ЛОР-врача — причина может быть не в пробке"
-			},
-			"en": {
-				"what": "Removal of an earwax plug by irrigating the ear canal with warm water or saline",
-				"how": "A doctor or nurse directs a stream of warm fluid with a needle-free syringe or an irrigation device while watching the canal, and the fluid is collected in a bowl; it takes 5–15 minutes",
-				"when": "Blocked ear and reduced hearing from wax, preparation for audiometry or otoscopy, itching and a feeling of fullness in the ear",
-				"prep": "Use wax-softening drops for 2–3 days beforehand if your doctor advises; irrigation is not done with a perforated eardrum, a recent ear infection or after ear surgery — mention this in advance",
-				"abnormal": "After irrigation the doctor inspects the canal and eardrum. Persisting hearing loss, pain or dizziness need further ENT assessment — the cause may not be the wax"
-			},
-			"sr": {
-				"what": "Uklanjanje čepa od voska ispiranjem ušnog kanala toplom vodom ili fiziološkim rastvorom",
-				"how": "Ljekar ili medicinska sestra uz kontrolu pogledom ubacuje mlaz tople tečnosti špricem bez igle ili aparatom, a tečnost se skuplja u posudu; traje 5–15 minuta",
-				"when": "Osjećaj punog uha i slabiji sluh zbog voska, priprema za audiometriju ili otoskopiju, svrab i pritisak u uhu",
-				"prep": "Po savjetu ljekara 2–3 dana ukapavati kapi koje razmekšavaju vosak; kod perforacije bubne opne, svježe upale ili nakon operacije uha ispiranje se ne radi — to obavezno reći unaprijed",
-				"abnormal": "Nakon ispiranja ljekar pregleda kanal i bubnu opnu. Ako sluh ostane oslabljen ili se javi bol ili vrtoglavica, potrebna je dodatna ORL obrada — uzrok možda nije vosak"
-			},
-			"de": {
-				"what": "Entfernung eines Ohrenschmalzpfropfs durch Spülen des Gehörgangs mit warmem Wasser oder Kochsalzlösung",
-				"how": "Ärztin, Arzt oder Pflegekraft leitet unter Sicht einen Strahl warmer Flüssigkeit mit einer nadelfreien Spritze oder einem Spülgerät ein, die Flüssigkeit wird in einer Schale aufgefangen; das dauert 5–15 Minuten",
-				"when": "Verstopftes Ohr und schlechteres Hören durch Ohrenschmalz, Vorbereitung auf Audiometrie oder Otoskopie, Juckreiz und Druckgefühl im Ohr",
-				"prep": "Auf ärztlichen Rat 2–3 Tage vorher aufweichende Tropfen anwenden; bei einem Loch im Trommelfell, frischer Ohrentzündung oder nach Ohroperationen wird nicht gespült — das vorher mitteilen",
-				"abnormal": "Nach der Spülung begutachtet die Ärztin oder der Arzt Gehörgang und Trommelfell. Bleibt das Hören schlechter oder treten Schmerzen oder Schwindel auf, ist eine weitere HNO-Abklärung nötig — die Ursache muss nicht der Pfropf sein"
-			},
-			"tr": {
-				"what": "Kulak yolunun ılık su veya serum fizyolojikle yıkanarak kulak kiri tıkacının çıkarılması",
-				"how": "Hekim veya hemşire kanalı görerek iğnesiz şırıngayla ya da yıkama cihazıyla ılık sıvı verir, sıvı bir kapta toplanır; 5–15 dakika sürer",
-				"when": "Kulak kirine bağlı dolgunluk ve işitme azalması, odyometri veya otoskopi öncesi hazırlık, kulakta kaşıntı ve basınç hissi",
-				"prep": "Hekim önerirse 2–3 gün önceden kiri yumuşatan damlalar kullanın; kulak zarında delik, yeni geçirilmiş iltihap ya da kulak ameliyatı varsa yıkama yapılmaz — bunu önceden bildirin",
-				"abnormal": "Yıkamadan sonra hekim kulak yolunu ve zarı değerlendirir. İşitme azlığı sürerse ya da ağrı veya baş dönmesi olursa KBB ileri değerlendirmesi gerekir — neden kir olmayabilir"
-			},
-			"sr_cyrl": {
-				"what": "Уклањање чепа од воска испирањем ушног канала топлом водом или физиолошким раствором",
-				"how": "Љекар или медицинска сестра уз контролу погледом убацује млаз топле течности шприцем без игле или апаратом, а течност се скупља у посуду; траје 5–15 минута",
-				"when": "Осјећај пуног уха и слабији слух због воска, припрема за аудиометрију или отоскопију, свраб и притисак у уху",
-				"prep": "По савјету љекара 2–3 дана укапавати капи које размекшавају восак; код перфорације бубне опне, свјеже упале или након операције уха испирање се не ради — то обавезно рећи унапријед",
-				"abnormal": "Након испирања љекар прегледа канал и бубну опну. Ако слух остане ослабљен или се јави бол или вртоглавица, потребна је додатна ОРЛ обрада — узрок можда није восак"
 			}
 		}
 	},
@@ -3024,54 +2928,6 @@
 		}
 	},
 	{
-		"slug": "ceramic-crown-on-gold",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Керамическая коронка на каркасе из золотосодержащего сплава — сочетание естественного вида керамики и мягкого блеска золота под ней",
-				"how": "Обточка зуба, слепок, изготовление золотого каркаса и послойное нанесение керамики в лаборатории, примерка и фиксация; обычно 2-3 визита",
-				"when": "Восстановление зуба, когда важны биосовместимость каркаса и точность прилегания; замена реставрации при непереносимости других сплавов",
-				"prep": "Специальной подготовки не требуется; уточнить у клиники, входит ли стоимость сплава в цену работы",
-				"abnormal": "Небольшая чувствительность после фиксации проходит за несколько дней; сохраняющаяся боль, подвижность коронки или воспаление десны требуют осмотра стоматолога"
-			},
-			"en": {
-				"what": "A ceramic crown on a gold-alloy framework — combining the natural look of ceramic with the soft sheen of gold underneath",
-				"how": "Tooth preparation, an impression, fabrication of the gold framework and layering of ceramic in the laboratory, try-in and cementation; usually 2-3 visits",
-				"when": "Restoration of a tooth where framework biocompatibility and precise fit matter; replacement of a restoration in patients who do not tolerate other alloys",
-				"prep": "No special preparation is required; check with the clinic whether the cost of the alloy is included in the price",
-				"abnormal": "Slight sensitivity after cementation subsides within a few days; persistent pain, a loose crown, or gum inflammation require a dental examination"
-			},
-			"sr": {
-				"what": "Keramička krunica na skeletu od legure sa zlatom — spaja prirodan izgled keramike i blagi sjaj zlata ispod nje",
-				"how": "Brušenje zuba, otisak, izrada zlatnog skeleta i slojevito nanošenje keramike u laboratoriji, proba i cementiranje; obično 2-3 posjete",
-				"when": "Obnova zuba kada su važni biokompatibilnost skeleta i precizno naslanjanje; zamjena restauracije kod nepodnošenja drugih legura",
-				"prep": "Posebna priprema nije potrebna; provjeriti u klinici da li je cijena legure uključena u cijenu rada",
-				"abnormal": "Blaga osjetljivost nakon cementiranja prolazi za nekoliko dana; bol koja ne prolazi, klaćenje krunice ili upala desni zahtijevaju pregled kod stomatologa"
-			},
-			"de": {
-				"what": "Eine Keramikkrone auf einem Gerüst aus goldhaltiger Legierung — natürliche Optik der Keramik und der weiche Schimmer des Goldes darunter",
-				"how": "Beschleifen des Zahns, Abdruck, Anfertigung des Goldgerüsts und schichtweises Aufbrennen der Keramik im Labor, Anprobe und Zementieren; in der Regel 2-3 Termine",
-				"when": "Versorgung eines Zahns, wenn Biokompatibilität des Gerüsts und Passgenauigkeit wichtig sind; Ersatz einer Restauration bei Unverträglichkeit anderer Legierungen",
-				"prep": "Keine besondere Vorbereitung nötig; in der Praxis nachfragen, ob die Legierungskosten im Preis enthalten sind",
-				"abnormal": "Leichte Empfindlichkeit nach dem Zementieren geht innerhalb weniger Tage zurück; anhaltende Schmerzen, eine gelockerte Krone oder eine Zahnfleischentzündung erfordern eine zahnärztliche Untersuchung"
-			},
-			"tr": {
-				"what": "Altın içeren alaşım alt yapı üzerine yapılan seramik kron — seramiğin doğal görünümüyle altındaki altının yumuşak parlaklığını birleştirir",
-				"how": "Dişin aşındırılması, ölçü, laboratuvarda altın alt yapının hazırlanması ve seramiğin katman katman işlenmesi, prova ve simantasyon; genellikle 2-3 seans",
-				"when": "Alt yapının doku uyumu ve hassas oturumun önemli olduğu diş restorasyonları; diğer alaşımların tolere edilmediği durumlarda restorasyon değişimi",
-				"prep": "Özel hazırlık gerekmez; alaşım bedelinin fiyata dahil olup olmadığını klinikten teyit etmek",
-				"abnormal": "Simantasyon sonrası hafif hassasiyet birkaç günde geçer; geçmeyen ağrı, kronun oynaması veya diş eti iltihabı hekim muayenesi gerektirir"
-			},
-			"sr_cyrl": {
-				"what": "Керамичка круница на скелету од легуре са златом — спаја природан изглед керамике и благи сјај злата испод ње",
-				"how": "Брушење зуба, отисак, израда златног скелета и слојевито наношење керамике у лабораторији, проба и цементирање; обично 2-3 посјете",
-				"when": "Обнова зуба када су важни биокомпатибилност скелета и прецизно наслањање; замјена рестаурације код неподношења других легура",
-				"prep": "Посебна припрема није потребна; провјерити у клиници да ли је цијена легуре укључена у цијену рада",
-				"abnormal": "Блага осјетљивост након цементирања пролази за неколико дана; бол која не пролази, клаћење крунице или упала десни захтијевају преглед код стоматолога"
-			}
-		}
-	},
-	{
 		"slug": "zirconia-crown-with-veneer",
 		"entity_type": "medical_service",
 		"translations": {
@@ -4940,54 +4796,6 @@
 				"when": "Губитак волумена са годинама, назолабијалне боре, корекција облика усана, браде и јагодица — зоне и количину одређује љекар на консултацији",
 				"prep": "Неколико дана прије треба избјегавати алкохол и, у договору са љекаром, лијекове који повећавају крварење; обавијестити о трудноћи, аутоимуним болестима, склоности херпесу и раније убризгаваним препаратима",
 				"abnormal": "Отицање, црвенило и модрице првих 2-7 дана су уобичајена реакција; бијељење коже, јака бол, сметње вида, као и појачана асиметрија или чворићи захтијевају хитно обраћање љекару који је радио процедуру"
-			}
-		}
-	},
-	{
-		"slug": "hyaluronic-filler",
-		"entity_type": "medical_service",
-		"translations": {
-			"ru": {
-				"what": "Инъекции гиалуронового филлера для сглаживания складок и восстановления объёма в выбранной зоне лица",
-				"how": "После консультации и разметки препарат вводят инъекциями в кожу или под кожу; 20-40 минут, эффект виден сразу и окончательно оценивается через 1-2 недели, когда сойдёт отёк",
-				"when": "Морщины и складки, потеря объёма губ и скул, асимметрия контуров — показания определяет врач",
-				"prep": "Не планировать процедуру перед важными событиями (нужен запас 2 недели на отёк и синяки); сообщить об аллергиях, приёме антикоагулянтов, беременности и кормлении",
-				"abnormal": "Небольшой отёк, чувствительность и синяки в первые дни ожидаемы; при выраженной боли, побелении или изменении цвета кожи, ухудшении зрения нужно немедленно связаться с врачом"
-			},
-			"en": {
-				"what": "Injections of a hyaluronic filler to smooth folds and restore volume in a chosen facial area",
-				"how": "After the consultation and marking, the product is injected into or under the skin; 20-40 minutes, with the effect visible immediately and fully assessed after 1-2 weeks once the swelling subsides",
-				"when": "Wrinkles and folds, loss of volume in the lips and cheekbones, contour asymmetry — the indications are determined by the doctor",
-				"prep": "Do not schedule the procedure right before important events (allow 2 weeks for swelling and bruising); report allergies, anticoagulant use, pregnancy, and breastfeeding",
-				"abnormal": "Slight swelling, tenderness, and bruising in the first days are expected; with marked pain, blanching or a change in skin color, or impaired vision, contact the doctor immediately"
-			},
-			"sr": {
-				"what": "Injekcije hijaluronskog filera radi ublažavanja bora i vraćanja volumena u izabranoj zoni lica",
-				"how": "Nakon konsultacije i obilježavanja, preparat se ubrizgava u kožu ili pod kožu; 20-40 minuta, efekat je vidljiv odmah, a konačno se procjenjuje nakon 1-2 nedjelje kada oticanje prođe",
-				"when": "Bore i brazde, izgubljen volumen usana i jagodica, asimetrija kontura — indikacije određuje ljekar",
-				"prep": "Ne planirati proceduru neposredno pred važne događaje (ostaviti 2 nedjelje zbog oticanja i modrica); obavijestiti o alergijama, uzimanju antikoagulanasa, trudnoći i dojenju",
-				"abnormal": "Blago oticanje, osjetljivost i modrice prvih dana su očekivani; kod izražene boli, bijeljenja ili promjene boje kože i pogoršanja vida treba se odmah obratiti ljekaru"
-			},
-			"de": {
-				"what": "Injektionen eines Hyaluron-Fillers, um Falten zu glätten und Volumen in einem gewählten Gesichtsbereich wiederherzustellen",
-				"how": "Nach Beratung und Markierung wird das Präparat in oder unter die Haut injiziert; 20-40 Minuten, das Ergebnis ist sofort sichtbar und wird nach 1-2 Wochen endgültig beurteilt, wenn die Schwellung abgeklungen ist",
-				"when": "Falten und Furchen, Volumenverlust an Lippen und Wangenknochen, Konturasymmetrien — die Indikation stellt der Arzt",
-				"prep": "Den Termin nicht unmittelbar vor wichtigen Anlässen legen (2 Wochen Puffer für Schwellung und Blutergüsse); Allergien, Einnahme von Antikoagulanzien, Schwangerschaft und Stillzeit mitteilen",
-				"abnormal": "Leichte Schwellung, Empfindlichkeit und Blutergüsse in den ersten Tagen sind zu erwarten; bei starken Schmerzen, Abblassen oder Farbveränderung der Haut sowie Sehverschlechterung sofort den Arzt kontaktieren"
-			},
-			"tr": {
-				"what": "Seçilen yüz bölgesinde kıvrımları yumuşatmak ve hacim kazandırmak için hyaluronik dolgu enjeksiyonları",
-				"how": "Muayene ve işaretlemeden sonra ürün cilde veya cilt altına enjekte edilir; 20-40 dakika, etki hemen görülür ve şişlik geçtikten sonra 1-2 hafta içinde tam olarak değerlendirilir",
-				"when": "Kırışıklık ve kıvrımlar, dudak ve elmacıkta hacim kaybı, hat asimetrisi — endikasyonu hekim belirler",
-				"prep": "İşlemi önemli etkinliklerin hemen öncesine planlamamak (şişlik ve morluk için 2 hafta pay bırakmak); alerjileri, kan sulandırıcı kullanımını, gebelik ve emzirmeyi bildirmek",
-				"abnormal": "İlk günlerde hafif şişlik, hassasiyet ve morluk beklenir; belirgin ağrı, ciltte solma veya renk değişikliği ve görmede bozulma durumunda derhal hekime başvurmak gerekir"
-			},
-			"sr_cyrl": {
-				"what": "Ињекције хијалуронског филера ради ублажавања бора и враћања волумена у изабраној зони лица",
-				"how": "Након консултације и обиљежавања, препарат се убризгава у кожу или под кожу; 20-40 минута, ефекат је видљив одмах, а коначно се процјењује након 1-2 недјеље када отицање прође",
-				"when": "Боре и бразде, изгубљен волумен усана и јагодица, асиметрија контура — индикације одређује љекар",
-				"prep": "Не планирати процедуру непосредно пред важне догађаје (оставити 2 недјеље због отицања и модрица); обавијестити о алергијама, узимању антикоагуланаса, трудноћи и дојењу",
-				"abnormal": "Благо отицање, осјетљивост и модрице првих дана су очекивани; код изражене боли, бијељења или промјене боје коже и погоршања вида треба се одмах обратити љекару"
 			}
 		}
 	},

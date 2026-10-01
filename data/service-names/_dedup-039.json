@@ -1,0 +1,113 @@
+{
+	"_comment": "Решения 039 — дубли, которые различаются одним словом или языком записи (детектор их не видит). Найдены агентами волны 3 справок (prd/service-reference-content/PROGRESS.md) и тремя проходами по базе: один код ФЗОЦГ на разных записях, разница слагов в одно слово, совпадение названия или синонима между языками. Правило прежнее: решает код прайса, а не название. Адресация по слагу; primary — запись, которая остаётся. Сборщик: scripts/services/build-name-variant-dedup-sql.mjs. Применять ПОСЛЕ 038.",
+
+	"prep": [
+		{
+			"op": "range", "catalog": "svc", "slug": "x-ray-chest-and-heart", "clinic": "opsta-bolnica-niksic",
+			"from_code": "J06051", "code": "J06051/J06052", "price_max": 12.53,
+			"why": "клиника 137 держит J06052 «Teleradiografija pluća i srca uz RTGsk» (12,53 €) на heart-teleradiography — это снимок лёгких и сердца с рентгеноскопией, а не сердца. Сворачиваем в диапазон на записи лёгких и сердца — так же лежит строка клиники 88 (J06051/J06052, 7,50–15,03)"
+		},
+		{
+			"op": "drop-row", "catalog": "svc", "slug": "heart-teleradiography", "clinic": "opsta-bolnica-niksic", "code": "J06052",
+			"why": "её цена перенесена шагом выше; освобождает место под J06010 этой же клиники"
+		},
+		{
+			"op": "move", "from": "x-ray-chest-heart", "to": "heart-teleradiography", "code": "J06010",
+			"why": "J06010 — «Teleradiografija srca – za svaki pravac» (снимок сердца) и в PZZ, и в секундарном прайсе, и в прайсах Данило и Никшича. На x-ray-chest-heart («RTG pluća i srca») его держали 85, 88 и 137, отсюда и отказ в 038. Клиника 85 стоит на обеих записях с одной строкой прайса — её копия на x-ray-chest-heart удаляется"
+		},
+		{
+			"op": "range", "catalog": "svc", "slug": "mri-pelvic-organs", "clinic": "opsta-bolnica-niksic",
+			"from_code": "J09017", "code": "J09017/J09018", "price_max": 117.00,
+			"why": "МРТ в каталоге по контрасту не делится: у клиники 88 все 13 исследований блока J09 лежат на одной записи с двумя кодами и диапазоном. Клиника 137 держит J09017 (без контраста, 90 €) на mri-pelvic-organs и J09018 (с контрастом, 117 €) на mri-pelvis — после слияния будет 90–117 €, как у других её МРТ"
+		},
+		{
+			"op": "range", "catalog": "svc", "slug": "frenectomy", "clinic": "buntic-stomatoloska-ordinacija-bar",
+			"from_price": 50.00, "price_max": 70.00,
+			"why": "клиника 60 держит «Frenektomija» за 50 € и «Frenulektomija» за 70 €. Это одна операция (иссечение уздечки), чем различаются две строки прайса, не установить: сайт клиники больше не работает, домен продаётся. Чтобы не потерять ни одну цену, ставим диапазон 50–70 €"
+		}
+	],
+
+	"merges_svc": [
+		{ "primary": "x-ray-chest-heart", "secondary": "x-ray-chest-and-heart", "why": "после переноса J06010 обе записи — снимок лёгких и сердца (J06051/J06052 у 88, 131, 137, «RTG pluća i srca» у Milmedika). Основная — старшая запись: её справка из батча 1 и URL с июля" },
+		{ "primary": "heart-teleradiography", "secondary": "telecardiography", "why": "«Telekardiografija» ДЗ 80/127 = «Teleradiografija srca»: код J06010 у всех, цены 7,00–7,74" },
+		{ "primary": "mri-pelvic-organs", "secondary": "mri-pelvis", "why": "МРТ малого таза: J09017/J09018 (см. подготовку). Основная держит тарифы J09017 и категорию MRI" },
+		{ "primary": "dental-sinus-lift", "secondary": "sinus-lift-with-augmentation", "why": "синус-лифт — это и есть подъём дна пазухи с аугментацией. У клиники 117 на сайте одна процедура «Sinus lift» с костным графтом Bio-Oss; обе её строки без цены, поэтому отказ 038 («117 держит обе») не держится. Цены остальных клиник те же 700–1000 €" },
+		{ "primary": "frenectomy", "secondary": "frenulectomy", "why": "френэктомия = френулэктомия, иссечение уздечки. У клиники 117 на сайте одно «uklanjanje frenuluma»; цены клиники 60 — см. подготовку" },
+		{ "primary": "ear-wick-application", "secondary": "ear-wick-placement", "why": "«Aplikacija štrajfne u uho» = «Plasiranje štrajfne za uho»; основная держит код X07063" },
+		{ "primary": "enema", "secondary": "enema-administration", "why": "«Davanje klistira» = клизма. Код HN_X01006 в расчёт не берём: в X01 коды ДЗ Херцег-Нови сдвинуты, решает название" },
+		{ "primary": "throat-swab-culture", "secondary": "throat-swab", "why": "«Bris grla» = «Bris ždrijela» (K01007 у 80 и 137)" },
+		{ "primary": "glaucoma-provocation-test", "secondary": "glaucoma-provocation-tests", "why": "одна проба, единственное и множественное число; код X06050" },
+		{ "primary": "primary-wound-care-without-sutures", "secondary": "primary-wound-treatment-without-suturing", "why": "«Primarna obrada rane bez šivenja» = «(bez šavova)», X01014" },
+		{ "primary": "primary-wound-care-with-sutures", "secondary": "primary-wound-treatment-with-suturing", "why": "«Primarna obrada rane sa šivenjem» = «(sa šavovima)», X02036" },
+		{ "primary": "lumbar-sacral-or-coccygeal-block", "secondary": "lumbar-sacral-and-coccygeal-block", "why": "сербское название совпадает дословно, у всех код X15011" },
+		{ "primary": "venous-blood-draw", "secondary": "blood-collection-fee", "why": "«Naknada za uzimanje krvi» частных лабораторий — та же манипуляция, что «Uzimanje krvi iz vene» (Z04001). Отказ 038 venous-blood-draw ≠ venipuncture не задет: венопункция там — трансфузиологическая X12033" },
+		{ "primary": "first-radiologist-examination", "secondary": "radiologist-examination", "why": "один код J01001 «Prvi specijalistički pregled (radiolog)» у клиники 85 и у 80/88/127/131/137" },
+		{ "primary": "x-ray-head-craniogram", "secondary": "x-ray-skull-and-face", "why": "J06001 «Snimanje skeleta lobanje i lica – za svaki snimak» у 85, 88, 137; краниограмма — название той же позиции у клиники 88" },
+		{ "primary": "x-ray-head-craniogram", "secondary": "skull-and-face-x-ray-per-image", "why": "тот же J06001 у ДЗ 80/127, название дословно из прайса. Тариф PZZ J06001, который 038 переносит сюда, слиянием вернётся на основную вместе с секундарным" },
+		{ "primary": "foreign-body-localization-x-ray-except-eye", "secondary": "foreign-body-localization-imaging", "why": "J06004 «Lokalizacija stranog tijela u bilo kojem organu» у ДЗ 80/127" },
+		{ "primary": "foreign-body-localization-x-ray-except-eye", "secondary": "x-ray-foreign-body-localization", "why": "J06004 у клиники 85" },
+		{ "primary": "microbiology-sample-collection", "secondary": "sample-collection", "why": "K01003 «Uzimanje uzorka» — в PZZ и секундарном прайсе одна позиция микробиологии" },
+		{ "primary": "external-cardiac-defibrillation", "secondary": "defibrillation", "why": "X03002: «Defibrilacija» в PZZ, «Spoljašnja defibrilacija srca» в секундарном" },
+		{ "primary": "ergometry-stress-test", "secondary": "exercise-ecg-ergometry", "why": "X14003 «Dinamska elektrokardiografija (ergometrija)» у клиники 131; 88/137 с этим кодом сливаются в ту же основную в 038 (ergometry-ecg-stress-test)" },
+		{ "primary": "ergocycle-stress-test-with-complete-ecg", "secondary": "submaximal-exercise-stress-test-on-bicycle-ergometer-with-complete-ecg", "why": "X14004 у клиники 131 — полное название той же позиции" },
+		{ "primary": "pharmacological-test-for-ischemia-or-myocardial-viability", "secondary": "pharmacological-stress-echocardiography-for-myocardial-ischemia-and-viability-assessment", "why": "X14006 у клиники 131, название то же плюс «(stres eho test)»" },
+		{ "primary": "spinal-anesthesiaanalgesia", "secondary": "specialized-anesthesia-analgesia", "why": "X15001 — «Spinalna anestezija/analgezija» (прайс Данило); «Specijalna» у клиники 131 — ошибка распознавания FINAL.json" },
+		{ "primary": "treatment-of-patients-with-respiratory-insufficiency", "secondary": "treatment-of-patients-with-respiratory-insufficiency-on-a-ventilator-per-hour-of-effective-specialist-work-maximum-2-hours", "why": "X15018 у клиники 131 — полное название той же позиции" },
+		{ "primary": "individual-supportive-psychotherapy-and-counseling", "secondary": "individual-psychiatric-therapy-counseling", "why": "H01004: «Površna individualna terapija (savjeti pacijentu)» в PZZ = «Površinska individualna psihoterapija, savjetovanje» в секундарном; тариф PZZ уже стоит на основной" },
+		{ "primary": "group-psychotherapy-session-for-addictions", "secondary": "addiction-group-psychotherapy", "why": "H01007 — групповая психотерапия зависимых в обоих прайсах" },
+		{ "primary": "family-psychotherapy-session", "secondary": "family-and-couples-psychotherapy", "why": "H01008 — семейная психотерапия в обоих прайсах" },
+		{ "primary": "analytically-oriented-depth-psychotherapy-session", "secondary": "analytical-therapy-session", "why": "H01009: «Analitički usmjerena terapija» (PZZ) = «Seansa dubinske (analitički orijentisane) psihoterapije»; название дубля «Analitički sumnjivni razgovor» — ошибка распознавания" },
+		{ "primary": "personality-structure-assessment-for-adults", "secondary": "adult-personality-structure-assessment", "why": "H01017 — название в обоих прайсах дословно одно" },
+		{ "primary": "psychologist-interview", "secondary": "anamnesis-diagnostic-interview", "why": "H02001: «Anamneza, dijagnostički intervju» (PZZ) = «Intervju psihologa»; тариф PZZ уже стоит на основной" },
+		{ "primary": "psychological-testing-category-a", "secondary": "psychological-test-data-collection-category-a", "why": "H02002 — название в обоих прайсах одно" },
+		{ "primary": "psychological-testing-category-b", "secondary": "psychological-test-data-collection-category-b", "why": "H02003" },
+		{ "primary": "psychological-testing-category-c", "secondary": "psychological-test-data-collection-category-c", "why": "H02004" },
+		{ "primary": "psychological-testing-category-d", "secondary": "psychological-test-data-collection-category-d", "why": "H02005" },
+		{ "primary": "pediatric-articulation-speech-therapy-assessment", "secondary": "speech-therapy-assessment-of-childs-articulation-abilities", "why": "I03001 — двойник из шапки 033 («artikulacijskih»/«artikulacionih»)" },
+		{ "primary": "speech-fluency-assessment", "secondary": "speech-therapy-assessment-of-stuttering-severity", "why": "I03002 — двойник из шапки 033" },
+		{ "primary": "specific-reading-disorder-assessment", "secondary": "speech-therapy-assessment-of-specific-learning-disorders", "why": "I03004 — двойник из шапки 033" },
+		{ "primary": "combined-logopedic-somatopedic-oligophrenological-psychomotor-assessment", "secondary": "speech-therapy-somatopedic-and-oligophrenological-assessment", "why": "I03005 — двойник из шапки 033" },
+		{ "primary": "psychomotor-instability-defectology-treatment", "secondary": "defectological-or-speech-therapy-treatment-of-a-child-with-pdd", "why": "I03012 — двойник из шапки 033" },
+		{ "primary": "defectologist-parental-counseling", "secondary": "counseling-for-parents", "why": "I03018 — двойник из шапки 033" },
+		{ "primary": "pedagogical-assessment", "secondary": "consultation-for-school-or-kindergarten-educator", "why": "I03020 — двойник из шапки 033" },
+		{ "primary": "defectology-multidisciplinary-patient-workup", "secondary": "team-based-patient-evaluation", "why": "I03021 — двойник из шапки 033" },
+		{ "primary": "learning-disorder-defectology-speech-therapy", "secondary": "defectological-speech-therapy-treatment-of-a-child-with-disabilities", "why": "I03022 — двойник из шапки 033" }
+	],
+
+	"merges_lab": [
+		{ "primary": "rapid-strep-a", "secondary": "rapid-strep-test", "why": "экспресс-тест из мазка зева — это и есть тест на антиген стрептококка группы A" },
+		{ "primary": "sputum-bacteria", "secondary": "sputum-culture-bacteria", "why": "посев мокроты; у клиники 88 на основной K01026 «Sputum kultura»" },
+		{ "primary": "sputum-fungi", "secondary": "sputum-culture-fungi", "why": "посев мокроты на грибы, пара к предыдущей" },
+		{ "primary": "sars-cov-2-pcr", "secondary": "covid-19-pcr", "why": "один ПЦР-тест, «COVID-19 PCR» уже синоним основной" },
+		{ "primary": "t3", "secondary": "total-t3", "why": "Z02025 «T3 (trijodtironin ukupni)»: T3 без уточнения — общий T3, свободный лежит отдельно" },
+		{ "primary": "t4", "secondary": "total-t4", "why": "Z02026 «T4 (tiroksin ukupni)», как с T3" },
+		{ "primary": "anti-hcv", "secondary": "hcv-total-antibodies", "why": "частные «HCV ukupna antitela» = Anti-HCV. Клиника 88 держала на дубле X12055 «Combo test Ag/At HCV» — другой тест (антиген + антитела) из трансфузиологического блока; своей записи в каталоге у него нет, и при слиянии эта строка уходит (на основной у 88 остаётся X12025 «Anti HCV antitijela»)" },
+		{ "primary": "anti-tshr", "secondary": "anti-tshr-antibodies", "why": "антитела к рецептору ТТГ (TRAb), клиники не пересекаются" },
+		{ "primary": "herpes-simplex-i-igg", "secondary": "hsv1-igg", "why": "HSV1 = Herpes simplex I; клиника 48 держала обе записи по одной цене 14 €" },
+		{ "primary": "herpes-simplex-ii-igg", "secondary": "hsv2-igg", "why": "HSV2 = Herpes simplex II; та же картина у клиники 48" },
+		{ "primary": "urine-fungi", "secondary": "urine-culture-fungi", "why": "посев мочи на грибы; клиники не пересекаются" },
+		{ "primary": "sperm-culture-bacteria", "secondary": "semen-culture-bacteria", "why": "посев спермы на бактерии (русское название совпадает дословно)" },
+		{ "primary": "sperm-culture-fungi", "secondary": "semen-culture-fungi", "why": "посев спермы на грибы (турецкое название совпадает дословно)" },
+		{ "primary": "wound-swab-fungi", "secondary": "wound-swab-aerobic-fungi", "why": "мазок раны на грибы, «aerobni uslovi» — формулировка прайса Milmedika (немецкое название совпадает дословно)" },
+		{ "primary": "hpv-quant-4", "secondary": "hpv-quant-4-types-pcr", "why": "один коммерческий тест HPV Quant-4 (типы 6, 11, 16, 18)" },
+		{ "primary": "hpv-quant-4", "secondary": "hpv-quant-4-6-11-16-18", "why": "то же, третья запись" },
+		{ "primary": "hpv-quant-21", "secondary": "hpv-quant-21-types-pcr", "why": "HPV Quant-21" },
+		{ "primary": "hpv-quant-21", "secondary": "hpv-quant-21-6-11-16-18-26-31-33-35-39-44-45-51-52-53-56-58-59-66-68-73-82", "why": "HPV Quant-21, третья запись" },
+		{ "primary": "hpv-quant-15-types-pcr", "secondary": "hpv-quant-15-6-11-16-18-31-33-35-39-45-51-52-56-58-59-68", "why": "HPV Quant-15" },
+		{ "primary": "phencyclidine", "secondary": "phencyclidine-pcp", "why": "PCP — это и есть фенциклидин" },
+		{ "primary": "amylase-in-urine", "secondary": "alpha-amylase-in-urine", "why": "Z01063 «Određivanje alfa amilaze u urinu» у 88 стоит на основной, у 80/127/137 — на дубле" },
+		{ "primary": "blood-eosinophils", "secondary": "absolute-eosinophil-count-manual-chamber-method", "why": "Z02111 «Brojanje eozinofilnih granulocita u komori» у 88 и 131 стоит на основной, у 137 — на дубле" },
+		{ "primary": "mycoplasma-hominis-ureaplasma", "secondary": "mycoplasma-hominis-ureaplasma-culture", "why": "клиника 64 держала обе записи по одной цене 25 €, у основной справка" }
+	],
+
+	"dismissals_svc": [],
+	"dismissals_lab": [
+		{ "a": "throat-swab-fungi", "b": "throat-swab-fungi-culture", "why": "клиника 64 держит обе по разной цене (5 и 10 €)" },
+		{ "a": "metanephrines-in-urine", "b": "metanephrine-in-urine", "why": "клиника 64 держит обе по разной цене (46 и 48 €): метанефрины суммарно и один метанефрин" }
+	],
+
+	"open": [
+		"troponin ↔ troponin-i: один код Z02053 у 88/131 (на troponin-i) и у 137 (на troponin) — по правилу это дубль, но во всех трёх прайсах написано просто «Troponin», и какой это тропонин (I или T), из данных не видно. Слить в troponin-i — закрепить непроверенное «I», слить в troponin — оставить справку про тропонин I на общей записи. Нужен ответ лаборатории или решение по названию",
+		"Межкаталожные пары (услуга ↔ анализ) сюда не входят: throat-swab-culture и посевы из зева в анализах, wound-fungal-culture (услуга, 137 K01047) ↔ wound-swab-fungi (анализ, 88 K01047). Это перенос между каталогами, как в 029, а не слияние"
+	]
+}

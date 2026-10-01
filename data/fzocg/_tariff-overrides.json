@@ -1,0 +1,124 @@
+[
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X10044",
+		"name": "Ekscizija i direktna sutura većih benignih lezija (ožiljastih, fibroznih, cističnih) kože, potkožnog tkiva",
+		"why": "OCR и прайс Данило; цена подтверждена клиниками (22,75 = 2,5 × 9,10)"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X06073",
+		"name": "Excochleatio chalazionis kod djece",
+		"why": "OCR и прайс Данило; цена подтверждена (32,50 = 2,5 × 13,00)"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "D03003",
+		"name": "Ureterolitotomija",
+		"why": "OCR и прайс Данило; цена подтверждена (260 = 2,5 × 104)"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X01046",
+		"name": "Dijagnostička ili terapijska punkcija peritonealne šupljine sa uzimanjem uzorka",
+		"why": "прайс Данило «DIJAGNOST ILI TERAP PUNKCIJA PERITON ŠUPLJINE SA UZIMANJ UZO», хвост OCR «…uzorka»; цена подтверждена (6,50 = 2,5 × 2,60)"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "D05083",
+		"name": "Fraktura metatarzalnih kostiju - zatvorena ili otvorena (složena) repozicija sa ili bez unutrašnje ili spoljašnje fiksacije",
+		"why": "в FINAL скопировано имя D05082 (tarzalnih); OCR и Данило — metatarzalnih"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "D05114",
+		"name": "Fasciektomija, ekscizija do jedne polovine palmarne fascije uključujući vertikalne trake i digitalne produžetke",
+		"why": "OCR и Данило — «do jedne polovine»; «više od polovine» в FINAL — соседняя позиция"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "D05115",
+		"name": "Suprakondilarna ili transkondilarna fraktura humerusa - zatvorena ili otvorena (složena) repozicija sa ili bez unutrašnje fiksacije klinom",
+		"why": "в FINAL обрезано на «unutrašnj»; полный текст по OCR"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "J09020",
+		"name": "MR pregled vrata - bez kontrasta",
+		"why": "OCR и Данило «MR PREGLED VRATA-BEZ KONTRASTA»; цену по клиникам проверить нечем — не трогаем"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X07115",
+		"name": "Retrogradna dilatacija jednjaka po Tucker-u",
+		"price_odjeljenje_eur": 6.5,
+		"price_ambulanta_eur": 13.9,
+		"why": "съехала строка целиком: клиника 16,25 = 2,5 × 6,50, Данило 41,70 = 3 × 13,90"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X07117",
+		"name": "Kontrolni fonijatrijski pregled",
+		"price_odjeljenje_eur": 1.95,
+		"price_ambulanta_eur": 4.17,
+		"why": "съехала строка целиком: клиника 4,88 = 2,5 × 1,95, Данило 12,51 = 3 × 4,17"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X07118",
+		"name": "Fonijatrijske vježbe",
+		"price_odjeljenje_eur": 6.5,
+		"price_ambulanta_eur": 13.9,
+		"why": "съехала строка целиком: клиника 16,25 = 2,5 × 6,50, Данило 41,70 = 3 × 13,90"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X15025",
+		"name": "Kombinovana spinalna i epiduralna anestezija",
+		"price_odjeljenje_eur": 13,
+		"price_ambulanta_eur": 27.8,
+		"why": "съехала строка целиком: клиника 32,50 = 2,5 × 13,00, Данило 83,40 = 3 × 27,80"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X01032",
+		"name": "Kateterizacija mokraćne bešike kod žene sa ili bez ispiranja",
+		"price_odjeljenje_eur": 0.65,
+		"price_ambulanta_eur": 1.39,
+		"why": "съехала строка целиком: клиника 1,63 = 2,5 × 0,65, Данило 4,17 = 3 × 1,39"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "Y10012",
+		"name": "Longeta podlaktice i šake ispod 10 godina",
+		"why": "в FINAL имя соседа Y10011 («od ramena do šake»); OCR и Данило — podlaktice; цены у позиции нет"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "E09004",
+		"name": "Prvi pregled djeteta - dječiji nefrolog",
+		"price_ambulanta_eur": 8.34,
+		"why": "имена E09004/E09005 переставлены, цены чужие: OCR 8,34, Данило 25,02 = 3 × 8,34"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "E09005",
+		"name": "Ponovni (kontrolni) pregled odojčeta - dječiji nefrolog",
+		"price_ambulanta_eur": 2.78,
+		"why": "имена E09004/E09005 переставлены, цены чужие: OCR 2,78, Данило 8,34 = 3 × 2,78"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X07121",
+		"name": "Artikulacioni tretman",
+		"price_odjeljenje_eur": 6.5,
+		"price_ambulanta_eur": 13.9,
+		"why": "хвост сдвига блока X07: OCR «Artikulacioni tretman», клиника 16,25 = 2,5 × 6,50, Данило 41,70 = 3 × 13,90"
+	},
+	{
+		"src": "fzocg-sekundarna",
+		"code": "X07105",
+		"name": "Hirurška ekstirpacija rinolita ili stranog tijela iz nosa lateralnom rinotomijom",
+		"why": "имя донора в БД с мусором («u kao»); прайс Данило «HIRUŠ EKSTIRP RINOL ILI STR TIJEL IZ NOSA LATER RINOTOMIJOM»; цена подтверждена клиниками"
+	}
+]

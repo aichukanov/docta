@@ -2785,28 +2785,28 @@
     },
     {
       "code": "Y04003",
-      "name": "Nemedicinski dio BO dana - stacionar u DZ",
+      "name": "Nemedicinski dio BO dana - opšte i specijalne bolnice",
       "price_odjeljenje_eur": 10.47,
       "price_ambulanta_eur": null,
       "section": "1. OPŠTE USLUGE SEKUNDARNOG I TERCIJARNOG NIVOA ZDRAVSTVENE ZAŠTITE",
       "subsection": "Trošak ishrane i nemedicinski BO dana",
       "name_paddle": "Nemedicinski dio BO dana-opstei specijalne bolnice",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "Y04004",
-      "name": "Nemedicinski dio BO dana u Centru za rizičnu novorodjenčad",
+      "name": "Nemedicinski dio BO dana u intenzivnoj njezi, koronarnoj jedinici i neonatologiji-opšte i specijalne bolnice",
       "price_odjeljenje_eur": 20.94,
       "price_ambulanta_eur": null,
       "section": "1. OPŠTE USLUGE SEKUNDARNOG I TERCIJARNOG NIVOA ZDRAVSTVENE ZAŠTITE",
       "subsection": "Trošak ishrane i nemedicinski BO dana",
       "name_paddle": "Nemedicinski dio BO dana u intenzivnoj njezi, koronarnoj jedinicii neonatologiji-opsteispecijalne bolnice",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
@@ -2840,14 +2840,14 @@
     },
     {
       "code": "Y04007",
-      "name": "Nemedicinski dio BO dana - opšte i specijalne bolnice",
+      "name": "Nemedicinski dio BO dana - Klinički centar",
       "price_odjeljenje_eur": 13.68,
       "price_ambulanta_eur": null,
       "section": "1. OPŠTE USLUGE SEKUNDARNOG I TERCIJARNOG NIVOA ZDRAVSTVENE ZAŠTITE",
       "subsection": "Trošak ishrane i nemedicinski BO dana",
       "name_paddle": "Nemedicinski dio BO dana - Klinicki centar",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
@@ -2868,28 +2868,28 @@
     },
     {
       "code": "Y04009",
-      "name": "Nemedicinski dio BO dana u intenzivnoj njezi, koronarnoj jedinici i neonatologiji - Klinički centar",
+      "name": "Nemedicinski dio BO dana u Centru za rizičnu novorođenčad",
       "price_odjeljenje_eur": 32.72,
       "price_ambulanta_eur": null,
       "section": "1. OPŠTE USLUGE SEKUNDARNOG I TERCIJARNOG NIVOA ZDRAVSTVENE ZAŠTITE",
       "subsection": "Trošak ishrane i nemedicinski BO dana",
       "name_paddle": "Nemedicinski dio BO dana u Centru za rizicnu novorodencad",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "Y04010",
-      "name": "Nemedicinski dio BO dana u intenzivnoj njezi, koronarnoj jedinici - opšte i specijalne bolnice",
+      "name": "Nemedicinski dio BO dana - za kardiohirurgiju",
       "price_odjeljenje_eur": 20.94,
       "price_ambulanta_eur": null,
       "section": "1. OPŠTE USLUGE SEKUNDARNOG I TERCIJARNOG NIVOA ZDRAVSTVENE ZAŠTITE",
       "subsection": "Trošak ishrane i nemedicinski BO dana",
       "name_paddle": "Nemedicinski dio BO dana za kardiohirugiju",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
@@ -3474,7 +3474,7 @@
     },
     {
       "code": "Y10012",
-      "name": "Longeta od ramena do šake ispod 10 godina",
+      "name": "Longeta podlaktice i šake ispod 10 godina",
       "price_operacija_eur": 2.91,
       "price_anestezija_eur": null,
       "price_ukupno_eur": null,
@@ -3482,7 +3482,7 @@
       "subsection": "Utrošak gipsanih zavoja - imobilizacija",
       "name_paddle": "Longeta podlakticei sake ispod 10 godina",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -3969,70 +3969,70 @@
     },
     {
       "code": "X19002",
-      "name": "Izvođenje dinamskih testova HHN",
+      "name": "Izvođenje dinamskih testova za ispitivanje nadbubrežnih žljezda",
       "price_odjeljenje_eur": 1.3,
       "price_ambulanta_eur": 2.78,
       "section": "10. ENDOKRINOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE ENDOKRINOLOGIJA (za djecu i odrasle)",
       "name_paddle": "Izvodenje dinamskih testova za ispitivanje nadbubreznih zljezda",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X19003",
-      "name": "Izvođenje dinamskih testova za ispitivanje nadbubrežnih žljezda",
+      "name": "Ispitivanje funkcije i građe ženskog reproduktivnog sistema",
       "price_odjeljenje_eur": 1.3,
       "price_ambulanta_eur": 2.78,
       "section": "10. ENDOKRINOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE ENDOKRINOLOGIJA (za djecu i odrasle)",
       "name_paddle": "Ispitivanje funkcije igrade zenskog reproduktivnog sistema",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X19004",
-      "name": "Ispitivanje funkcije i grade ženskog reproduktivnog sistema",
+      "name": "Ispitivanje funkcije i građe muškog reproduktivnog sistema",
       "price_odjeljenje_eur": 1.3,
       "price_ambulanta_eur": 2.78,
       "section": "10. ENDOKRINOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE ENDOKRINOLOGIJA (za djecu i odrasle)",
       "name_paddle": "lspitivanje funkcije igrade muskog reproduktivnog sistema",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X19005",
-      "name": "Ispitivanje funkcije i grade muškog reproduktivnog sistema",
+      "name": "Ispitivanje endokrinog pankreasa",
       "price_odjeljenje_eur": 1.3,
       "price_ambulanta_eur": 2.78,
       "section": "10. ENDOKRINOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE ENDOKRINOLOGIJA (za djecu i odrasle)",
       "name_paddle": "Ispitivanje endokrinog pankreasa",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X19006",
-      "name": "Ispitivanje endokrinog pankreasa",
+      "name": "Davanje insulinske terapije",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "10. ENDOKRINOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE ENDOKRINOLOGIJA (za djecu i odrasle)",
       "name_paddle": "Davanje insulinske terapije",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -4238,15 +4238,15 @@
     },
     {
       "code": "E09004",
-      "name": "Ponovni (kontrolni) pregled odojčeta - dječiji nefrolog",
+      "name": "Prvi pregled djeteta - dječiji nefrolog",
       "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 11.12,
+      "price_ambulanta_eur": 8.34,
       "section": "12. NEFROLOGIJA",
       "subsection": null,
       "name_paddle": "Prvi pregled djeteta - djeciji nefrolog",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "paddle-as-ambulanta-via-llm-hint",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm",
         "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-na-STN-od-01.02.2025.items.json"
       },
@@ -4254,15 +4254,15 @@
     },
     {
       "code": "E09005",
-      "name": "Prvi pregled djeteta - dječiji nefrolog",
+      "name": "Ponovni (kontrolni) pregled odojčeta - dječiji nefrolog",
       "price_odjeljenje_eur": null,
-      "price_ambulanta_eur": 5.56,
+      "price_ambulanta_eur": 2.78,
       "section": "12. NEFROLOGIJA",
       "subsection": null,
       "name_paddle": "Ponovni (kontrolni) pregled odojeta -djcciji nefrolog",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "paddle-as-ambulanta-via-llm-hint",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm",
         "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-na-STN-od-01.02.2025.items.json"
       },
@@ -5250,14 +5250,14 @@
     },
     {
       "code": "H01026",
-      "name": "Elektrošok u opštoj anesteziji i miorelaksaciji (bilateralni ili unilateralni)",
+      "name": "Dnevna seansa okupaciono - radne terapije u bolnici",
       "price_odjeljenje_eur": 5.2,
       "price_ambulanta_eur": 11.12,
       "section": "18. PSIHIJATRIJA",
       "subsection": null,
       "name_paddle": "Dnevna seansa okupaciono-radne terapije u bolnici",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -6384,14 +6384,14 @@
     },
     {
       "code": "Z02021",
-      "name": "Insulin",
+      "name": "CEA (Karcinoembrionalni antigen)",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 7.76,
       "section": "2. BIOHEMIJSKO-HEMATOLOŠKA I IMUNOLOŠKA LABORATORIJSKA DIJAGNOSTIKA",
       "subsection": "ENDOKRINOLOGIJA I SPECIFIČNI PROTEINI",
       "name_paddle": "CEA (Karcinoembrionalni antigen)",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -9408,28 +9408,28 @@
     },
     {
       "code": "X10001",
-      "name": "Ekscizija manjih lezija kože suturom rane",
+      "name": "Ekscizija malignih lezija kože suturom rane",
       "price_odjeljenje_eur": 13.0,
       "price_ambulanta_eur": 27.8,
       "section": "20. OPŠTA HIRURGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OPŠTA HIRURGIJA",
       "name_paddle": "Ekscizija malignih lezija koze suturom rane",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X10006",
-      "name": "Ekscizija nokatne ploče sa otklanjanjem mostova",
+      "name": "Ekscizija nokatne ploče sa matriksom",
       "price_odjeljenje_eur": 13.0,
       "price_ambulanta_eur": 27.8,
       "section": "20. OPŠTA HIRURGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OPŠTA HIRURGIJA",
       "name_paddle": "Ekscizija nokatne ploce sa matriksom",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -9449,14 +9449,14 @@
     },
     {
       "code": "X10008",
-      "name": "Obrada većih lezija kože suturom rane",
+      "name": "Obrada većih lacerokontuznih rana",
       "price_odjeljenje_eur": 7.8,
       "price_ambulanta_eur": 16.68,
       "section": "20. OPŠTA HIRURGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OPŠTA HIRURGIJA",
       "name_paddle": "Obrada yecih lacerokontuznih rana",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -9816,14 +9816,14 @@
     },
     {
       "code": "X10044",
-      "name": "Ekscizija dehiscentih sutura sekundarnim šavom (cijiljanih, fibroznih, dišljivih) kožih, potkožnog tkiva",
+      "name": "Ekscizija i direktna sutura većih benignih lezija (ožiljastih, fibroznih, cističnih) kože, potkožnog tkiva",
       "price_odjeljenje_eur": 9.1,
       "price_ambulanta_eur": 19.46,
       "section": "20. OPŠTA HIRURGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OPŠTA HIRURGIJA",
       "name_paddle": "Ekscizijaidirektna sutura vecih benignih lezija (oziljastih,fibroznih, cističnih) koze, potkoznog tkiva",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -9871,14 +9871,14 @@
     },
     {
       "code": "X10048",
-      "name": "Ekstirpacija ksengioma",
+      "name": "Ekstirpacija hemangioma",
       "price_odjeljenje_eur": 10.4,
       "price_ambulanta_eur": 22.24,
       "section": "20. OPŠTA HIRURGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OPŠTA HIRURGIJA",
       "name_paddle": "Ekstirpacija hemangioma",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -9912,14 +9912,14 @@
     },
     {
       "code": "X10051",
-      "name": "Ligatura pljuvačne žljezde ili kanala",
+      "name": "Incizija pljuvačne žlijezde ili kanala",
       "price_odjeljenje_eur": 39.0,
       "price_ambulanta_eur": 83.4,
       "section": "20. OPŠTA HIRURGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OPŠTA HIRURGIJA",
       "name_paddle": "Incizija pljuvacne Zlijezde ili kanala",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -9940,14 +9940,14 @@
     },
     {
       "code": "X10053",
-      "name": "Sklerozaglajenje krvnih hemangioma",
+      "name": "Sklerozacija manjih hemangioma",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "20. OPŠTA HIRURGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OPŠTA HIRURGIJA",
       "name_paddle": "Sklerozaciia manjih hemangioma",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -10169,14 +10169,14 @@
     },
     {
       "code": "X24002",
-      "name": "Torakoskopska biopsija pleure",
+      "name": "Torakoskopska biopsija pluća",
       "price_odjeljenje_eur": 32.5,
       "price_ambulanta_eur": 69.5,
       "section": "24. GRUDNA HIRURGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE GRUDNA HIRURGIJA",
       "name_paddle": "Torakoskopska biopsija pluca",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -11279,14 +11279,14 @@
     },
     {
       "code": "X11021",
-      "name": "Punkcija i evakuacija sadržaja hidrocele, varikokele, spermatocele ili abscesne kolekcije",
+      "name": "Punkcija i evakuacija sadržaja hidrocele, funikulocele, spermatocele ili abscesne kolekcije",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "28. UROLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE UROLOGIJA",
       "name_paddle": "Punkcijai evakuacija sadrzaja hidrocele, funikulocele. spermatocele ili abscesne kolekcije",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -13894,14 +13894,14 @@
     },
     {
       "code": "K03056",
-      "name": "Bakteriološko ispitivanje likvora - aerobno",
+      "name": "Bakteriološko ispitivanje perikardijalne tečnosti - aerobno",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 6.91,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "BAKTERIOLOGIJA",
       "name_paddle": "Bakteriolosko ispitivanje perikardijalne tecnosti - aerobno",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -14070,14 +14070,14 @@
     },
     {
       "code": "K03068",
-      "name": "Bakteriološko ispitivanje žuči - aerobno",
+      "name": "Bakteriološko ispitivanje sinovijalne tečnosti - aerobno",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 6.91,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "BAKTERIOLOGIJA",
       "name_paddle": "Bakteriolosko ispitivanje sinovijalne tenosti- aerobno",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -14114,14 +14114,14 @@
     },
     {
       "code": "K03070",
-      "name": "Bakteriološko ispitivanje dilatacione tečnosti - aerobno",
+      "name": "Bakteriološko ispitivanje dijalizne tečnosti - aerobno",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 6.91,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "BAKTERIOLOGIJA",
       "name_paddle": "Bakteriolosko ispitivanje dijalizne tenosti- aerobno",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -14398,112 +14398,112 @@
     },
     {
       "code": "K03091",
-      "name": "Ispitivanje prisustva Echinococcus spp. - bojeni preparat",
+      "name": "Bakteriološko ispitivanje sadržaja drena - aerobno",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 8.21,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "PARAZITOLOGIJA I MIKOLOGIJA",
       "name_paddle": "Bakteriolosko ispitivanje sadrzaja drena -anaerobno",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "K03092",
-      "name": "Ispitivanje prisustva Echinococcus spp. - nativni preparat",
+      "name": "Ispitivanje prisustva Echinococcus spp. - bojeni preparat",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.31,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "PARAZITOLOGIJA I MIKOLOGIJA",
       "name_paddle": "Ispitivanje prisustva Echinococcus spp.-bojeni preparat",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "K03093",
-      "name": "Ispitivanje prisustva Babesia spp. - bojeni preparat guste kapi",
+      "name": "Ispitivanje prisustva Echinococcus spp. - nativni preparat",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.31,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "PARAZITOLOGIJA I MIKOLOGIJA",
       "name_paddle": "Ispitivanje prisustva Echinococcus spp.-nativni preparat",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "K03094",
-      "name": "Ispitivanje prisustva Babesia spp. - bojeni preparat krvnog razmaza",
+      "name": "Ispitivanje prisustva Babesia spp. - bojeni preparat guste kapi",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 11.1,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "PARAZITOLOGIJA I MIKOLOGIJA",
       "name_paddle": "Ispitivanje prisustva Babesia spp.-bojeni preparat guste kapi",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "K03095",
-      "name": "Ispitivanje prisustva Cryptococcus spp. - kultivacija",
+      "name": "Ispitivanje prisustva Babesia spp. - bojeni preparat krvnog razmaza",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 11.1,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "PARAZITOLOGIJA I MIKOLOGIJA",
       "name_paddle": "Ispitivanje prisustva Babesia spp.-bojeni preparat krvnog razmaza",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "K03096",
-      "name": "Ispitivanje prisustva Cryptococcus spp. - bojeni preparat",
+      "name": "Ispitivanje prisustva Cryptococcus spp. - kultivacija",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.44,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "PARAZITOLOGIJA I MIKOLOGIJA",
       "name_paddle": "Ispitivanje prisustva Cryptococcus spp.- kultivacija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "K03097",
-      "name": "Ispitivanje prisustva Cryptococcus spp. - tuš preparat",
+      "name": "Ispitivanje prisustva Cryptococcus spp. - bojeni preparat",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.44,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "PARAZITOLOGIJA I MIKOLOGIJA",
       "name_paddle": "Ispitivanje prisustva Cryptococcus spp.-bojeni preparat",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "K03098",
-      "name": "Ispitivanje prisustva krvnih i tkivnih parazita - bojeni preparat guste kapi",
+      "name": "Ispitivanje prisustva Cryptococcus spp. - tuš preparat",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.44,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "PARAZITOLOGIJA I MIKOLOGIJA",
       "name_paddle": "Ispitivanje prisustva Cryptococcus spp.-tus preparat",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -14769,14 +14769,14 @@
     },
     {
       "code": "K03118",
-      "name": "Anti Coxiella burnetii IgA antitijela faza 2 - ELISA",
+      "name": "Anti Coxsackie B virus IgM antitijela - ELISA",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.76,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "VIRUSOLOGIJA I SEROLOGIJA",
       "name_paddle": "Anti Coxsackie B virus IgM antitijela -ELISA",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -14853,14 +14853,14 @@
     },
     {
       "code": "K03124",
-      "name": "Anti Echinococcus granulosus antitijela - indirektna hemaglutinacija",
+      "name": "Anti Hanta virus IgM antitijela - ELISA",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.76,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "VIRUSOLOGIJA I SEROLOGIJA",
       "name_paddle": "Anti Hanta virus igM antitijela - ELISA",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -14881,14 +14881,14 @@
     },
     {
       "code": "K03126",
-      "name": "Anti Hanta virus IgG antitijela - ELISA",
+      "name": "Anti HBc antitijela - ELISA",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.76,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "VIRUSOLOGIJA I SEROLOGIJA",
       "name_paddle": "Anti HBc antitijela - ELISA",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -14909,14 +14909,14 @@
     },
     {
       "code": "K03128",
-      "name": "Anti HBc IgM antitijela - ELISA",
+      "name": "Anti HBeAg antitijela - ELISA",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.76,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "VIRUSOLOGIJA I SEROLOGIJA",
       "name_paddle": "Anti HBeAg antitijela - ELISA",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -14937,14 +14937,14 @@
     },
     {
       "code": "K03130",
-      "name": "Anti HBsAg antitijela - ELISA",
+      "name": "Anti Hepatitis C virus antitijela - IMUNO BLOT",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 14.08,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "VIRUSOLOGIJA I SEROLOGIJA",
       "name_paddle": "Anti Hepatitis C virus antitijela -IMUNO BLOT",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -15007,14 +15007,14 @@
     },
     {
       "code": "K03135",
-      "name": "Anti Hepatitis E virus IgG antitijela - ELISA",
+      "name": "Anti HIV 1 antitijela - potvrdni test - VESTERN BLOT",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 14.08,
       "section": "3. MIKROBIOLOŠKA DIJAGNOSTIKA",
       "subsection": "VIRUSOLOGIJA I SEROLOGIJA",
       "name_paddle": "Anti HIV 1 antitijela - potvrdni test - VESTERN BLOT",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -16073,14 +16073,14 @@
     },
     {
       "code": "X07026",
-      "name": "Instalacija lijeka kroz bubnu opnu u bubnu duplju",
+      "name": "Repozicija svježeg preloma nosnih kostiju sa imobilizacijom",
       "price_odjeljenje_eur": 7.8,
       "price_ambulanta_eur": 16.68,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Repozicija svjezeg preloma nosnih kostiju sa imobilizacijom",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -16100,14 +16100,14 @@
     },
     {
       "code": "X07028",
-      "name": "Kateterizacija Eustahijeve tube",
+      "name": "Laringofaringoskopija indirektna sa biopsijom",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Laringofaringoskopija indirektna sa biopsijom",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -16220,14 +16220,14 @@
     },
     {
       "code": "X07038",
-      "name": "Akumetrijski ispitivanja sluha",
+      "name": "Epifaringoskopija direktna",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Epifaringoskopija direktna",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -16467,14 +16467,14 @@
     },
     {
       "code": "X07060",
-      "name": "Ekscizija (biopsija) limfnog čvora vrata sa primarnom plastikom",
+      "name": "Ekscizija benignih tumora jezika sa primarnom plastikom",
       "price_odjeljenje_eur": 32.5,
       "price_ambulanta_eur": 69.5,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Eksciziia benignih tumora jezika sa primarnom plastikom",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -16872,14 +16872,14 @@
     },
     {
       "code": "X07091",
-      "name": "Vestibulokalorički testovi",
+      "name": "Pozicioni test",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Pozicioni test",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -16954,28 +16954,28 @@
     },
     {
       "code": "X07097",
-      "name": "Repozicija svježeg preloma nosnih kostiju sa imobilizacijom",
+      "name": "Traženje simptoma fistule",
       "price_odjeljenje_eur": 3.9,
       "price_ambulanta_eur": 8.34,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Trazenie simptoma fistule",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X07098",
-      "name": "Endoskopski pregled nosa",
+      "name": "Instilacija lijeka kroz bubnu opnu u bubnu duplju",
       "price_odjeljenje_eur": 3.9,
       "price_ambulanta_eur": 8.34,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Institacija lijeka kroz bubnu opnu u bubnu duplju",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -17021,14 +17021,14 @@
     },
     {
       "code": "X07102",
-      "name": "Laringofaringoskopija indirektna sa biopsijom",
+      "name": "Kateterizacija Eustahijeve tube",
       "price_odjeljenje_eur": 3.9,
       "price_ambulanta_eur": 8.34,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Kateterizaciia Eustahjieve tube",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -17062,14 +17062,14 @@
     },
     {
       "code": "X07105",
-      "name": "Paracenteza bubne opne",
+      "name": "Hirurška ekstirpacija rinolita ili stranog tijela iz nosa lateralnom rinotomijom",
       "price_odjeljenje_eur": 52.0,
       "price_ambulanta_eur": 111.2,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "t   .5 .",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -17144,155 +17144,155 @@
     },
     {
       "code": "X07111",
-      "name": "Subjektivna otitakonarrija",
+      "name": "Subjektivna olfaktometrija",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Subjektivna olfaktometrija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X07112",
-      "name": "Aspiraciona biopsija tankom iglom",
+      "name": "Elektrokohleografija odraslih",
       "price_odjeljenje_eur": 10.4,
       "price_ambulanta_eur": 22.24,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Elektrokohleografija odraslih",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X07113",
-      "name": "Elektrokohleografija odraslih",
+      "name": "Elektrokohleografija djece",
       "price_odjeljenje_eur": 13.0,
       "price_ambulanta_eur": 27.8,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Elektrokohleografija djece",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X07114",
-      "name": "Elektrokohleografija djece",
-      "price_odjeljenje_eur": 13,
-      "price_ambulanta_eur": 27.8,
+      "name": "Ezofagoskopija sa biopsijom, odstranjivanjem tumora ili dilatacijom",
+      "price_odjeljenje_eur": 23.4,
+      "price_ambulanta_eur": 50.04,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Ezofagoskopija sa biopsijom, odstranjivanjem tumora ili dilatacijom",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
     {
       "code": "X07115",
-      "name": "Hirurška ekstirpacija rinolita ili stranog tijela u kao lateralnom rinotomijom",
-      "price_odjeljenje_eur": 52,
-      "price_ambulanta_eur": 111.2,
+      "name": "Retrogradna dilatacija jednjaka po Tucker-u",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Retrogradna dilatacija jednjaka po Tucker-u",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
     {
       "code": "X07116",
-      "name": "Ezofagoskopija sa biopsijom, odstranjenjem tumora ili dilatacijom",
-      "price_odjeljenje_eur": 23.4,
-      "price_ambulanta_eur": 50.04,
-      "section": "30. OTORINOLARINGOLOGIJA",
-      "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
-      "name_paddle": "Osnovni fonijatrijski pregled",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
-        "section": "llm"
-      }
-    },
-    {
-      "code": "X07117",
-      "name": "Retrogradna ezofagoskopija po Tucker-u",
-      "price_odjeljenje_eur": 6.5,
-      "price_ambulanta_eur": 13.9,
-      "section": "30. OTORINOLARINGOLOGIJA",
-      "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
-      "name_paddle": "Kontrolni fonijatrijski pregled",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
-        "section": "llm"
-      }
-    },
-    {
-      "code": "X07118",
       "name": "Osnovni fonijatrijski pregled",
       "price_odjeljenje_eur": 3.9,
       "price_ambulanta_eur": 8.34,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
+      "name_paddle": "Osnovni fonijatrijski pregled",
+      "_sources": {
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X07117",
+      "name": "Kontrolni fonijatrijski pregled",
+      "price_odjeljenje_eur": 1.95,
+      "price_ambulanta_eur": 4.17,
+      "section": "30. OTORINOLARINGOLOGIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
+      "name_paddle": "Kontrolni fonijatrijski pregled",
+      "_sources": {
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X07118",
+      "name": "Fonijatrijske vježbe",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
+      "section": "30. OTORINOLARINGOLOGIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Fonijatrijske vjezbe",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
     {
       "code": "X07119",
-      "name": "Inicijalni fonijatrijski pregled",
-      "price_odjeljenje_eur": 1.95,
-      "price_ambulanta_eur": 4.17,
-      "section": "30. OTORINOLARINGOLOGIJA",
-      "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
-      "name_paddle": "Vjezbe fonacije",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
-        "section": "llm"
-      }
-    },
-    {
-      "code": "X07120",
       "name": "Vježbe fonacije",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
+      "name_paddle": "Vjezbe fonacije",
+      "_sources": {
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X07120",
+      "name": "Vježbe artikulacije",
+      "price_odjeljenje_eur": 7.8,
+      "price_ambulanta_eur": 16.68,
+      "section": "30. OTORINOLARINGOLOGIJA",
+      "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Vjezbe artikulacije",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
     {
       "code": "X07121",
-      "name": "Artikulacioni pregled",
-      "price_odjeljenje_eur": 3.9,
-      "price_ambulanta_eur": 8.34,
+      "name": "Artikulacioni tretman",
+      "price_odjeljenje_eur": 6.5,
+      "price_ambulanta_eur": 13.9,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Artikulacioni tretman",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -17338,15 +17338,15 @@
     },
     {
       "code": "X07125",
-      "name": "Vježbe artikulacije",
-      "price_odjeljenje_eur": 7.8,
-      "price_ambulanta_eur": 16.68,
+      "name": "Uvježbavanje ezofagusnog govora",
+      "price_odjeljenje_eur": 3.9,
+      "price_ambulanta_eur": 8.34,
       "section": "30. OTORINOLARINGOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OTORINOLARINGOLOGIJA",
       "name_paddle": "Uvjezbavanje ezofagusnog govora",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -17469,14 +17469,14 @@
     },
     {
       "code": "X06007",
-      "name": "Pregled fundusa biomikroskopom i Goldman-kupom sa 3 ogledala",
+      "name": "Ekstrakcija stranog tijela rožnjače sa siderozom (abrazija)",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Ekstrakcija stranog tijela roznjace sa siderozom (abrazia)",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -17510,14 +17510,14 @@
     },
     {
       "code": "X06011",
-      "name": "Hrvatski tetreni hordeolumi, abscesa ili flegmone kapka ili obrve",
+      "name": "Hirurški tretman hordeoluma, abscesa ili flegmone kapka ili obrve",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Hirurski tretman hordeoluma, abscesa ili flegmone kapka ili obrve",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -17734,84 +17734,84 @@
     },
     {
       "code": "X06029",
-      "name": "Eutiskopija u Cupersu i etapama",
+      "name": "Epilacija elektrolizom ili elektrokoagulacijom - seansa",
       "price_odjeljenje_eur": 1.95,
       "price_ambulanta_eur": 4.17,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Epilacija elektrolizom ili elektrokoagulacijom-seansa",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X06030",
-      "name": "Vježbe na koordinatoru",
+      "name": "Eutiskopija po Cupersu u etapama",
       "price_odjeljenje_eur": 1.95,
       "price_ambulanta_eur": 4.17,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Eutiskopija po Cupersu u etapama",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X06031",
-      "name": "Vježbe u prostoru",
+      "name": "Vježbe na koordinatoru",
       "price_odjeljenje_eur": 1.95,
       "price_ambulanta_eur": 4.17,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Vjezbe na koordinatoru",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X06032",
-      "name": "Vježbe elastičnosti akomodacije - konvergencije kod akomodativnih strabizama",
+      "name": "Vježbe fuzije u prostoru",
       "price_odjeljenje_eur": 1.95,
       "price_ambulanta_eur": 4.17,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Vjezbe fuzije u prostoru",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X06033",
-      "name": "Pregled ortoraktorom i interpretacija nalaza svih funkcija",
+      "name": "Vježbe elasticiteta akomodacije-konvergencije kod akomodativnih strabizama",
       "price_odjeljenje_eur": 1.95,
       "price_ambulanta_eur": 4.17,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Vjezbe elasticiteta akomodacije-konvergencije kod akomodativnin strabizama",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X06034",
-      "name": "Egzoftalmometrija",
+      "name": "Pregled ortorajterom i interpretacija nalaza svih funkcija",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Pregled ortorajterom i interpretacija nalaza svih funkcija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -18101,28 +18101,28 @@
     },
     {
       "code": "X06057",
-      "name": "Određivanje naočara na usku zjenicu bez astigmatizma",
+      "name": "Određivanje refrakcije na široku zjenicu bez astigmatizma",
       "price_odjeljenje_eur": 1.3,
       "price_ambulanta_eur": 2.78,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Odredivanje refrakcije na siroku zjenicu bez astigmatizma",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X06058",
-      "name": "Određivanje naočara na široku zjenicu bez astigmatizma",
+      "name": "Određivanje naočara na usku zjenicu bez astigmatizma",
       "price_odjeljenje_eur": 1.3,
       "price_ambulanta_eur": 2.78,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Odredivanje naocara na usku zjenicu bez astigmatizma",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -18317,28 +18317,28 @@
     },
     {
       "code": "X06073",
-      "name": "Indirektna oftalmoskopija pomoću binokularnog oftalmoskopa",
+      "name": "Excochleatio chalazionis kod djece",
       "price_odjeljenje_eur": 13.0,
       "price_ambulanta_eur": 27.8,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Excohleatio chalazionis kod diece",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X06074",
-      "name": "Ekzoftalmo chalazionis kod djece",
+      "name": "Skijaskopija kod djece",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Skijaskopija kod djece",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -18401,28 +18401,28 @@
     },
     {
       "code": "X06079",
-      "name": "OCT (optička koherentna tomografija)",
+      "name": "Indirektna oftalmoskopija pomoću binokularnog oftalmoskopa",
       "price_odjeljenje_eur": 3.9,
       "price_ambulanta_eur": 8.34,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Indirektna oftalmoskopija pomocu binokularnog oftalmoskopa",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X06080",
-      "name": "Skijaskopija kod djece",
+      "name": "OCT (optička koherentna tomografija)",
       "price_odjeljenje_eur": 14.3,
       "price_ambulanta_eur": 30.58,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "OCT (opticka koherentna tomografija)",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -18604,14 +18604,14 @@
     },
     {
       "code": "X06094",
-      "name": "Vježbe vida, opšti supresije",
+      "name": "Vježbe vida, protiv supresije",
       "price_odjeljenje_eur": 1.95,
       "price_ambulanta_eur": 4.17,
       "section": "31. OFTALMOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE OFTALMOLOGIJA",
       "name_paddle": "Vjezbe vida, protiv supresije",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -19157,28 +19157,28 @@
     },
     {
       "code": "X04007",
-      "name": "CTG-kardiotokografija u trudnoći",
+      "name": "Elektrokoagulacija cerviksa uterusa-površina po seansi (max. tri seanse)",
       "price_odjeljenje_eur": 3.9,
       "price_ambulanta_eur": 8.34,
       "section": "34. GINEKOLOGIJA I AKUŠERSTVO",
       "subsection": "INTERVENCIJE I PROCEDURE GINEKOLOGIJA",
       "name_paddle": "Elektrokoagulacija cerviksa uterusa-povrsna po seansi (max. tri seanse)",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X04010",
-      "name": "Amnioskopija u trudnoći",
+      "name": "CTG-kardiotokografija u trudnoći",
       "price_odjeljenje_eur": 5.2,
       "price_ambulanta_eur": 11.12,
       "section": "34. GINEKOLOGIJA I AKUŠERSTVO",
       "subsection": "INTERVENCIJE I PROCEDURE GINEKOLOGIJA",
       "name_paddle": "CTG-kardiotokografija u trudnoci",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -19736,14 +19736,14 @@
     },
     {
       "code": "X04055",
-      "name": "Uklanjanje tumora vaginalnog zida",
+      "name": "Uklanjanje vaginalnih septuma",
       "price_odjeljenje_eur": 26.0,
       "price_ambulanta_eur": 55.6,
       "section": "34. GINEKOLOGIJA I AKUŠERSTVO",
       "subsection": "INTERVENCIJE I PROCEDURE GINEKOLOGIJA",
       "name_paddle": "Uklanjanje vaginalnih septuma",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -19819,14 +19819,14 @@
     },
     {
       "code": "X04061",
-      "name": "Elektrokoagulacija cerviksa uterusa-površina po seansi (max. tri seanse)",
+      "name": "Histerometrija",
       "price_odjeljenje_eur": 1.3,
       "price_ambulanta_eur": 2.78,
       "section": "34. GINEKOLOGIJA I AKUŠERSTVO",
       "subsection": "INTERVENCIJE I PROCEDURE GINEKOLOGIJA",
       "name_paddle": "Histerometrija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -19874,14 +19874,14 @@
     },
     {
       "code": "X04065",
-      "name": "Uklanjanje vaginalnih septuma",
+      "name": "Uklanjanje tumora vaginalnog zida",
       "price_odjeljenje_eur": 26.0,
       "price_ambulanta_eur": 55.6,
       "section": "34. GINEKOLOGIJA I AKUŠERSTVO",
       "subsection": "INTERVENCIJE I PROCEDURE GINEKOLOGIJA",
       "name_paddle": "Uklanjanie tumora vaginalnog zida",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -19969,14 +19969,14 @@
     },
     {
       "code": "X15001",
-      "name": "Specijalna anestezija/analgezija",
+      "name": "Spinalna anestezija/analgezija",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "35. ANESTEZIJA SA REANIMACIJOM",
       "subsection": "INTERVENCIJE I PROCEDURE ANESTEZIJA SA REANIMACIJOM",
       "name_paddle": "Spinalna anestezija/analgezija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "llm-fallback",
         "section": "llm"
       }
@@ -20285,15 +20285,15 @@
     },
     {
       "code": "X15025",
-      "name": "Kaudalna anestezija/analgezija",
-      "price_odjeljenje_eur": 5.2,
-      "price_ambulanta_eur": 11.12,
+      "name": "Kombinovana spinalna i epiduralna anestezija",
+      "price_odjeljenje_eur": 13.0,
+      "price_ambulanta_eur": 27.8,
       "section": "35. ANESTEZIJA SA REANIMACIJOM",
       "subsection": "INTERVENCIJE I PROCEDURE ANESTEZIJA SA REANIMACIJOM",
       "name_paddle": "Kombinovana spinalnaiepiduralna anestezija",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -20394,7 +20394,7 @@
     },
     {
       "code": "D02003",
-      "name": "Splenektomija obična ili kod traumatske rupture",
+      "name": "Veća resekcija vene saphene externe i susjednih vena, unilateralna",
       "price_operacija_eur": 45.5,
       "price_anestezija_eur": 9.1,
       "price_ukupno_eur": 54.6,
@@ -20402,7 +20402,7 @@
       "subsection": null,
       "name_paddle": "Veca resekcija vene saphene externei susjednih vena,unitateralna",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -20885,7 +20885,7 @@
     },
     {
       "code": "D02041",
-      "name": "Derivacija pseudociste pankreasa izvođenjem crijevnom vijugom",
+      "name": "Derivacija pseudociste pankreasa izdvojenom crijevnom vijugom",
       "price_operacija_eur": 195.0,
       "price_anestezija_eur": 39.0,
       "price_ukupno_eur": 234.0,
@@ -20893,7 +20893,7 @@
       "subsection": null,
       "name_paddle": "Derivacija pseudociste pankreasa izdvojenom crijevnom vijugom",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -21567,7 +21567,7 @@
     },
     {
       "code": "D02094",
-      "name": "Laparoskopska eksploracija trbušne duplje",
+      "name": "Ekscizija komplikovane analne fistule",
       "price_operacija_eur": 65.0,
       "price_anestezija_eur": 9.1,
       "price_ukupno_eur": 74.1,
@@ -21575,7 +21575,7 @@
       "subsection": null,
       "name_paddle": "Eksciziia komplikovane analne fistule",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -23127,16 +23127,16 @@
     },
     {
       "code": "D02216",
-      "name": "Vađenje stranog tijela iz rektuma rektalnim putem (pomoću regionalne ili opšte anestezije)",
-      "price_operacija_eur": 10.4,
-      "price_anestezija_eur": 6.5,
-      "price_ukupno_eur": 16.9,
+      "name": "Supraselektivna vagotomija-laparoskopska op.",
+      "price_operacija_eur": 130.0,
+      "price_anestezija_eur": 26.0,
+      "price_ukupno_eur": 156.0,
       "section": "36. OPERACIJE - HIRURGIJA",
       "subsection": null,
       "name_paddle": "Supraselektivna vagotomija -laparoskopska op.",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -23231,7 +23231,7 @@
     },
     {
       "code": "D02223",
-      "name": "Atipične resekcije jetre unilateralno",
+      "name": "Atipične resekcije jetre - laparoskopska op.",
       "price_operacija_eur": 156,
       "price_anestezija_eur": 31.2,
       "price_ukupno_eur": 187.2,
@@ -23239,7 +23239,7 @@
       "subsection": null,
       "name_paddle": "Atipicne resekcije jetre -laparoskopska op.",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "llm-fallback",
         "section": "llm"
       }
@@ -23274,16 +23274,16 @@
     },
     {
       "code": "D02226",
-      "name": "Sutura srca kod povrede",
-      "price_operacija_eur": 195,
-      "price_anestezija_eur": 39,
-      "price_ukupno_eur": 234,
+      "name": "Transversokolektomija laparoskopska",
+      "price_operacija_eur": 156.0,
+      "price_anestezija_eur": 31.2,
+      "price_ukupno_eur": 187.2,
       "section": "36. OPERACIJE - HIRURGIJA",
       "subsection": null,
       "name_paddle": "Transversokolektomija laparoskopska",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -23362,16 +23362,16 @@
     },
     {
       "code": "D02233",
-      "name": "Izvođenje derivacione stome kolona bez resekcije",
-      "price_operacija_eur": 130,
-      "price_anestezija_eur": 26,
-      "price_ukupno_eur": 156,
+      "name": "Lijeva lobektomija jetre-laparoskopska op.",
+      "price_operacija_eur": 195.0,
+      "price_anestezija_eur": 39.0,
+      "price_ukupno_eur": 234.0,
       "section": "36. OPERACIJE - HIRURGIJA",
       "subsection": null,
       "name_paddle": "Lijeva lobektomija jetre-laparoskopska op.",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -23450,7 +23450,7 @@
     },
     {
       "code": "D02242",
-      "name": "Desna lobektomija jetre-laparoskopska op.",
+      "name": "Cefalična duodenopankreatektomija (Whipplae) - laparoskopska",
       "price_operacija_eur": 325.0,
       "price_anestezija_eur": 65.0,
       "price_ukupno_eur": 390.0,
@@ -23458,7 +23458,7 @@
       "subsection": null,
       "name_paddle": "Cefalicna duodenopankreatektomija (Whipllae)-laparoskopska",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -23523,7 +23523,7 @@
     },
     {
       "code": "D02247",
-      "name": "Laparoskopska evakuacija ciste abdominalnih organa izvan jetre",
+      "name": "Evakuacija hidatidne ciste abdominalnih organa izvan jetre",
       "price_operacija_eur": 156.0,
       "price_anestezija_eur": 31.2,
       "price_ukupno_eur": 187.2,
@@ -23531,7 +23531,7 @@
       "subsection": null,
       "name_paddle": "Evakuacija hidatidne ciste abdominalnih organa izvan jetre",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -25825,14 +25825,14 @@
     },
     {
       "code": "K05034",
-      "name": "Preparacija i citogenetička analiza: kultivisane ćelije fetalne krvi - tehnika G traka -30 metafaza",
+      "name": "Preparacija i citogenetička analiza: kultivisani limfociti fetalne krvi-tehnika G traka - 30 metafaza",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 74.17,
       "section": "4. KLINIČKA I MEDICINSKA GENETIKA I IMUNOLOGIJA",
       "subsection": null,
       "name_paddle": "Preparacijai citogeneticka analiza: kultivisani limfociti fetalne krvi-tehnika G traka -30 metafaza",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -28868,7 +28868,7 @@
     },
     {
       "code": "D26097",
-      "name": "Resekcija i sintetski graft vene cave inferior",
+      "name": "Resekcija i autovenski graft vene cave inferior",
       "price_operacija_eur": 325.0,
       "price_anestezija_eur": 65.0,
       "price_ukupno_eur": 390.0,
@@ -28876,7 +28876,7 @@
       "subsection": null,
       "name_paddle": "Resekcija i autovenski graft vene cave inferior",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -37448,7 +37448,7 @@
     },
     {
       "code": "D03003",
-      "name": "Uretrofiksacija",
+      "name": "Ureterolitotomija",
       "price_operacija_eur": 104.0,
       "price_anestezija_eur": 20.8,
       "price_ukupno_eur": 124.8,
@@ -37456,7 +37456,7 @@
       "subsection": null,
       "name_paddle": "Ureterolitotomija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -37520,7 +37520,7 @@
     },
     {
       "code": "D03010",
-      "name": "Cistolitotomija (samo patrijak)",
+      "name": "Cistolitotomija bez resekcije vrata",
       "price_operacija_eur": 52.0,
       "price_anestezija_eur": 9.1,
       "price_ukupno_eur": 61.1,
@@ -37528,7 +37528,7 @@
       "subsection": null,
       "name_paddle": "Cistolitotomija bez resekcije vrata",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -40624,7 +40624,7 @@
     },
     {
       "code": "D04068",
-      "name": "Miringoplastika, transmeatalni pristup",
+      "name": "Miringoplastika, retroaurikularni pristup",
       "price_operacija_eur": 78,
       "price_anestezija_eur": 15.6,
       "price_ukupno_eur": 93.6,
@@ -40632,7 +40632,7 @@
       "subsection": null,
       "name_paddle": "Miringoplastika, retroaurikularni pristup",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "llm-fallback",
         "section": "llm"
       }
@@ -43006,7 +43006,7 @@
     },
     {
       "code": "D05032",
-      "name": "Fasciotomija, plantarna i/ili prsta subkutana",
+      "name": "Amputacija noge kroz tibiju i fibulu",
       "price_operacija_eur": 78.0,
       "price_anestezija_eur": 15.6,
       "price_ukupno_eur": 93.6,
@@ -43014,14 +43014,14 @@
       "subsection": null,
       "name_paddle": "Amputacija noge kroz tibiju i fibulu",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "D05033",
-      "name": "Tenoliza fleksora stopala, više (kroz isti rez)",
+      "name": "Fasciotomija, plantarna i/ili prsta subkutana",
       "price_operacija_eur": 15.6,
       "price_anestezija_eur": 6.5,
       "price_ukupno_eur": 22.1,
@@ -43029,14 +43029,14 @@
       "subsection": null,
       "name_paddle": "Fasciotomija,plantarna ifili prsta subkutana",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "D05034",
-      "name": "Tenoliza ekstenzora stopala, više (kroz isti rez)",
+      "name": "Tenoliza fleksora stopala, više (kroz isti rez)",
       "price_operacija_eur": 39.0,
       "price_anestezija_eur": 9.1,
       "price_ukupno_eur": 48.1,
@@ -43044,7 +43044,7 @@
       "subsection": null,
       "name_paddle": "Tenoliza fleksora stopala,vise (kroz isti rez)",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -43312,7 +43312,7 @@
     },
     {
       "code": "D05061",
-      "name": "Tenotomija ekstenzora jedan ili više",
+      "name": "Tenotomija ekstenzora šake i stopala",
       "price_operacija_eur": 32.5,
       "price_anestezija_eur": 9.1,
       "price_ukupno_eur": 41.6,
@@ -43320,7 +43320,7 @@
       "subsection": null,
       "name_paddle": "Tenotomija ekstenzora sake i stopala",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "llm-fallback",
         "section": "llm"
       }
@@ -43612,7 +43612,7 @@
     },
     {
       "code": "D05083",
-      "name": "Fraktura tarzalnih kostiju - zatvorena ili otvorena (složena) repozicija sa ili bez unutrašnje ili spoljašnje fiksacije",
+      "name": "Fraktura metatarzalnih kostiju - zatvorena ili otvorena (složena) repozicija sa ili bez unutrašnje ili spoljašnje fiksacije",
       "price_operacija_eur": 39,
       "price_anestezija_eur": 9.1,
       "price_ukupno_eur": 48.1,
@@ -43620,7 +43620,7 @@
       "subsection": null,
       "name_paddle": "Fraktura metatarzalnih kostiju-zatvorena ili otvorena (slozena) repozicija sa ili bez unutrasnje ili spoljasnje fiksacije",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "llm-fallback",
         "section": "llm"
       }
@@ -44068,7 +44068,7 @@
     },
     {
       "code": "D05114",
-      "name": "Fasciektomija, koja zahtijeva više od jedne polovine palmarne fascije uključujući vertikalne trake i digitalne procetke",
+      "name": "Fasciektomija, ekscizija do jedne polovine palmarne fascije uključujući vertikalne trake i digitalne produžetke",
       "price_operacija_eur": 65.0,
       "price_anestezija_eur": 9.1,
       "price_ukupno_eur": 74.1,
@@ -44076,14 +44076,14 @@
       "subsection": null,
       "name_paddle": "Fasciektomija,ekscizija do jedne polovine palmarne fascije ukljuujuci vertikalne trakei digitalne produzetke",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "D05115",
-      "name": "Suprakondilarna ili transkondilarna fraktura humerusa - zatvorena ili otvorena (složena) repozicija sa ili bez unutrašnje ili spoljašnje fiksacije klinom",
+      "name": "Suprakondilarna ili transkondilarna fraktura humerusa - zatvorena ili otvorena (složena) repozicija sa ili bez unutrašnje fiksacije klinom",
       "price_operacija_eur": 65.0,
       "price_anestezija_eur": 9.1,
       "price_ukupno_eur": 74.1,
@@ -44091,7 +44091,7 @@
       "subsection": null,
       "name_paddle": "Suprakondilarna ili transkondilarna fraktura humerusa, zatvorena ili otvorena (slozena) repozicija sa ili bez unutrasnje fiksacije klinom",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -46875,14 +46875,14 @@
     },
     {
       "code": "L01080",
-      "name": "Pregled totalne resekcije želuca sa omentumom",
+      "name": "Pregled totalne resekcije prostate",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 27.8,
       "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
       "subsection": null,
       "name_paddle": "Pregled totalne resekcije prostate",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -46944,28 +46944,28 @@
     },
     {
       "code": "L01085",
-      "name": "Resekovano crijevo kod Whipple-ove bolesti",
+      "name": "Pregled totalne resekcije debelog crijeva",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 41.7,
       "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
       "subsection": null,
       "name_paddle": "Pregled totalne resekcije debelog crijeva",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "L01086",
-      "name": "Pregled blok resekcije crijeva",
+      "name": "Resekovano crijevo kod Whipple-ove bolesti",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 41.7,
       "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
       "subsection": null,
       "name_paddle": "Resekovano crijevo kod Whipple-ove bolesti",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -47037,14 +47037,14 @@
     },
     {
       "code": "L01093",
-      "name": "Pregled tumora pljuvačnih žlijezda",
+      "name": "Pregled biopsije pljuvačne žlijezde",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 11.12,
       "section": "5. PATOLOŠKA ANATOMIJA I HISTOLOGIJA",
       "subsection": null,
       "name_paddle": "Pregied biopsije pljuvane Zlijezde",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -48161,14 +48161,14 @@
     },
     {
       "code": "F01014",
-      "name": "Zbrinjavanje rupture materice i šoka u porođaju",
+      "name": "Zbrinjavanje krvavljenja i šoka u porođaju",
       "price_odjeljenje_eur": 13.0,
       "price_ambulanta_eur": null,
       "section": "51. PORODAJNA SALA",
       "subsection": null,
       "name_paddle": "Zbrinjavanje krvavljenja i soka u porodaju",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
@@ -48285,14 +48285,14 @@
     },
     {
       "code": "F01027",
-      "name": "Zbrinjavanje pukotine uterusa",
+      "name": "Zbrinjavanje rupture uterusa",
       "price_odjeljenje_eur": 52.0,
       "price_ambulanta_eur": null,
       "section": "51. PORODAJNA SALA",
       "subsection": null,
       "name_paddle": "Zbrinjavanje rupture uterusa",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
@@ -50300,14 +50300,14 @@
     },
     {
       "code": "J06059",
-      "name": "Cistografija (uretrocistografija) standardna",
+      "name": "Intravenozna cistografija",
       "price_odjeljenje_eur": null,
       "price_ambulanta_eur": 4.93,
       "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
       "subsection": "RADIOLOGIJA",
       "name_paddle": "Intravenozna cistografija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-ambulanta-via-llm-hint",
         "section": "llm"
       }
@@ -51523,14 +51523,14 @@
     },
     {
       "code": "J09020",
-      "name": "MR hipofize - sa kontrastom",
+      "name": "MR pregled vrata - bez kontrasta",
       "price_odjeljenje_eur": 80.0,
       "price_ambulanta_eur": null,
       "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
       "subsection": "MR DIJAGNOSTIKA",
       "name_paddle": "MR pregled vrata - bez kontrasta",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm",
         "amendment": "Odluka-o-izmjeni-i-dopuni-Cjenovnika-STN-od-17.10.2023.g.items.json"
@@ -51601,14 +51601,14 @@
     },
     {
       "code": "J09025",
-      "name": "MR dojke - sa kontrastom",
+      "name": "MR toraksa/medijastinuma - bez kontrasta",
       "price_odjeljenje_eur": 90.0,
       "price_ambulanta_eur": null,
       "section": "6. RADIOLOŠKA DIJAGNOSTIKA",
       "subsection": "MR DIJAGNOSTIKA",
       "name_paddle": "MR toraksa/medijastinuma - bez kontrasta",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm",
         "amendment": "1632118391Odluka-o-izmjeni-Cjenovnika-STN-usluge-MR.items.json"
@@ -55518,28 +55518,28 @@
     },
     {
       "code": "D23020",
-      "name": "Mortalna amputacija",
+      "name": "Mortalna ekstirpacija",
       "price_odjeljenje_eur": 18.66,
       "price_ambulanta_eur": null,
       "section": "67. STOMATOLOGIJA",
       "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA",
       "name_paddle": "Mortalna ekstirpacija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
     },
     {
       "code": "D23021",
-      "name": "Mortalna ekstirpacija",
+      "name": "Mortalna amputacija",
       "price_odjeljenje_eur": 14.92,
       "price_ambulanta_eur": null,
       "section": "67. STOMATOLOGIJA",
       "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA",
       "name_paddle": "Mortalna amputaciia",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
@@ -55667,14 +55667,14 @@
     },
     {
       "code": "D23031",
-      "name": "Liječenje zuba u terapeutske svrhe",
+      "name": "Brušenje zuba u terapeutske svrhe",
       "price_odjeljenje_eur": 2.24,
       "price_ambulanta_eur": null,
       "section": "67. STOMATOLOGIJA",
       "subsection": "DJEČJA PREVENTIVNA STOMATOLOGIJA",
       "name_paddle": "Brusenje zuba u terapeutske svrhe",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle-as-odjeljenje-via-llm-hint",
         "section": "llm"
       }
@@ -56747,14 +56747,14 @@
     },
     {
       "code": "X01006",
-      "name": "Davanje klizme za ispiranje",
+      "name": "Davanje kiseonika",
       "price_odjeljenje_eur": 1.3,
       "price_ambulanta_eur": 2.78,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Davanje kiseonika",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "llm-fallback",
         "section": "llm"
       }
@@ -56803,85 +56803,85 @@
     },
     {
       "code": "X01010",
-      "name": "Tuberkulinsko testiranje",
+      "name": "Inhalaciona terapija",
       "price_odjeljenje_eur": 0.65,
       "price_ambulanta_eur": 1.39,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Inhalaciona terapija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "llm-fallback",
         "section": "llm"
       }
     },
     {
       "code": "X01011",
-      "name": "Inhalaciona terapija",
-      "price_odjeljenje_eur": 0.65,
-      "price_ambulanta_eur": 1.39,
-      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
-      "subsection": "MALI ZAHVATI",
-      "name_paddle": "Aspiraciona punkcija abscesa ili hematoma",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
-        "section": "llm"
-      }
-    },
-    {
-      "code": "X01012",
       "name": "Aspiraciona punkcija abscesa ili hematoma",
       "price_odjeljenje_eur": 1.95,
       "price_ambulanta_eur": 4.17,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
+      "name_paddle": "Aspiraciona punkcija abscesa ili hematoma",
+      "_sources": {
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01012",
+      "name": "Toaleta i održavanje stome",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI",
       "name_paddle": "Toaletaiadrzavanje stoma",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
     {
       "code": "X01013",
-      "name": "Toaleta i održavanje stome",
+      "name": "Toaleta vještačkog anusa",
       "price_odjeljenje_eur": 0.65,
       "price_ambulanta_eur": 1.39,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Toaleta vjestackog anusa",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "llm-fallback",
         "section": "llm"
       }
     },
     {
       "code": "X01014",
-      "name": "Toaleta vještačkog anusa",
-      "price_odjeljenje_eur": 0.65,
-      "price_ambulanta_eur": 1.39,
-      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
-      "subsection": "MALI ZAHVATI",
-      "name_paddle": "Primarna obrada rane (bez savova)",
-      "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
-        "section": "llm"
-      }
-    },
-    {
-      "code": "X01015",
       "name": "Primarna obrada rane (bez šavova)",
       "price_odjeljenje_eur": 1.3,
       "price_ambulanta_eur": 2.78,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
+      "name_paddle": "Primarna obrada rane (bez savova)",
+      "_sources": {
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
+        "section": "llm"
+      }
+    },
+    {
+      "code": "X01015",
+      "name": "Skidanje hirurških konaca",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
+      "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
+      "subsection": "MALI ZAHVATI",
       "name_paddle": "Skidanje hirurskih konaca",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -56999,15 +56999,15 @@
     },
     {
       "code": "X01032",
-      "name": "Uzimanje sputuma za citološku analizu",
-      "price_odjeljenje_eur": 0.26,
-      "price_ambulanta_eur": 0.56,
+      "name": "Kateterizacija mokraćne bešike kod žene sa ili bez ispiranja",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Kateterizacija mokracne besike kod Zene sa lli bez ispiranja",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -57027,15 +57027,15 @@
     },
     {
       "code": "X01034",
-      "name": "Postavljanje kanile i uključivanje infuzije",
-      "price_odjeljenje_eur": 1.3,
-      "price_ambulanta_eur": 2.78,
+      "name": "Određivanje glikemije glukometrom",
+      "price_odjeljenje_eur": 0.65,
+      "price_ambulanta_eur": 1.39,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Odredivanje glikemije glukometrom",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -57055,15 +57055,15 @@
     },
     {
       "code": "X01036",
-      "name": "Kateterizacija mokraćne bešike kod muškarca sa ili bez ispiranja",
-      "price_odjeljenje_eur": 1.04,
-      "price_ambulanta_eur": 2.22,
+      "name": "Punkciona biopsija štitne žlijezde",
+      "price_odjeljenje_eur": 1.3,
+      "price_ambulanta_eur": 2.78,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Punkciona biopsija Stitne zliijezde",
       "_sources": {
-        "name": "llm-substantive",
-        "price": "llm-fallback",
+        "name": "shift-fix-2026-09",
+        "price": "shift-fix-2026-09",
         "section": "llm"
       }
     },
@@ -57151,28 +57151,28 @@
     },
     {
       "code": "X01046",
-      "name": "Endotrahealna intubacija",
+      "name": "Dijagnostička ili terapijska punkcija peritonealne šupljine sa uzimanjem uzorka",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "cYanmntaYtetlb [_.6 uzorka",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X01047",
-      "name": "Hirurško zbrinjavanje uraslog nokta",
+      "name": "Endotrahealna intubacija",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Endotrahealna intubacija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -57192,42 +57192,42 @@
     },
     {
       "code": "X01049",
-      "name": "Punkcija u terapijske ili dijagnostičke svrhe",
+      "name": "Incizija i drenaža furunkula, karbunkula, zagnojenih cista, manjeg kožnog ili potkožnog abscesa, paronihije ili hematoma",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Incizijaidrenaza furunkula, karbunkula,zagnojenih cista, manjeg koznog ili potkoznog abscesa, paronihija illi hematoma",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X01050",
-      "name": "Toaleta veće rane mokrim oblogama, jedan dnevno",
+      "name": "Punkcija zgloba u terapijske ili dijagnostičke svrhe",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Punkcija zgloba u terapijske iili dijagnosticke svrhe",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X01051",
-      "name": "Lokalna anestezija - regionalna",
+      "name": "Transfuzija krvi i krvnih derivata",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Transfuzija krvii krvnih derivata",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -57273,28 +57273,28 @@
     },
     {
       "code": "X01055",
-      "name": "Lokalna anestezija",
+      "name": "Ishrana bolesnika preko sonde, jedan obrok",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "lshrana bolesnika preko sonde, jedan obrok",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X01058",
-      "name": "Plasiranje/evakuacija nazogastrične ili orogastrične sonde sa ispiranjem",
+      "name": "Lokalna anestezija - manja",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Lokalna anestezija -manja",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -57434,14 +57434,14 @@
     },
     {
       "code": "X01070",
-      "name": "Terapija febrolnat aparatom",
+      "name": "Terapija flebomat aparatom",
       "price_odjeljenje_eur": 1.95,
       "price_ambulanta_eur": 4.17,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "MALI ZAHVATI",
       "name_paddle": "Terapija flebomat aparatom",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -57820,14 +57820,14 @@
     },
     {
       "code": "X02038",
-      "name": "Ekscizija manjih benignih multiroznih ožiljaka, fibroznih, cističnih kongenitalnih lezija i sluznica, potkožnog tkiva sa direktnom suturom rane",
+      "name": "Ekscizija manjih benignih tumoroznih ožiljaka, fibroznih, cističnih kongenitalnih lezija kože, potkožnog tkiva sa direktnom suturom rane",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "7. INTERVENCIJE I PROCEDURE U SPECIJALISTIČKO-KONSULTATIVNOJ ZDRAVSTVENOJ ZAŠTITI - ZAJEDNIČKE DJELATNOSTI",
       "subsection": "SREDNJE VELIKI ZAHVATI",
       "name_paddle": "Ekscizija manjih benignih tumoroznih oziljaka,fibroznih,cistionih kongenitalnih lezija koze, potkoznog tkiva sa direktnom suturom rane",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
@@ -58863,56 +58863,56 @@
     },
     {
       "code": "X17004",
-      "name": "Testovi funkcije disanja - test višekratnog udaha",
+      "name": "Testovi funkcije disanja - test jednokratnog udaha",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "9. PULMOLOGIJA/PNEUMOFTIZIOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE PULMOLOGIJA/PNEUMOFTIZIOLOGIJA",
       "name_paddle": "Testovi funkcije disanja -test jednokratnog udaha",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X17005",
-      "name": "Tjelesna pletismografija",
+      "name": "Testovi funkcije disanja - test višekratnog udaha",
       "price_odjeljenje_eur": 6.5,
       "price_ambulanta_eur": 13.9,
       "section": "9. PULMOLOGIJA/PNEUMOFTIZIOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE PULMOLOGIJA/PNEUMOFTIZIOLOGIJA",
       "name_paddle": "Testovi funkcije disanja -test visekratnog udaha",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X17006",
-      "name": "Test arterijsko-alveolarnog gradijenta CO2",
+      "name": "Tjelesna pletismografija",
       "price_odjeljenje_eur": 5.2,
       "price_ambulanta_eur": 11.12,
       "section": "9. PULMOLOGIJA/PNEUMOFTIZIOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE PULMOLOGIJA/PNEUMOFTIZIOLOGIJA",
       "name_paddle": "Tjelesna pletismografija",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }
     },
     {
       "code": "X17007",
-      "name": "Transbronhijalna punkcija",
+      "name": "Test arterijsko-alveolarnog gradijenta CO2",
       "price_odjeljenje_eur": 2.6,
       "price_ambulanta_eur": 5.56,
       "section": "9. PULMOLOGIJA/PNEUMOFTIZIOLOGIJA",
       "subsection": "INTERVENCIJE I PROCEDURE PULMOLOGIJA/PNEUMOFTIZIOLOGIJA",
       "name_paddle": "Test arterijsko-alveolarnog gradijenta Co2",
       "_sources": {
-        "name": "llm-substantive",
+        "name": "shift-fix-2026-09",
         "price": "paddle",
         "section": "llm"
       }

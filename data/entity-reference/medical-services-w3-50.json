@@ -480,54 +480,6 @@
     }
   },
   {
-    "slug": "surgical-suture-removal",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Удаление нитей, которыми была ушита операционная рана, с осмотром рубца перед этим",
-        "how": "Врач или медсестра осматривает линию шва, обрабатывает её антисептиком, подрезает каждую нить у самой кожи и вытягивает пинцетом, при длинном разрезе часть швов иногда снимают первыми, а остальные через несколько дней; занимает несколько минут и обычно без анестезии",
-        "when": "В срок, назначенный оперировавшим врачом после хирургического вмешательства; сроки разные для лица, конечностей, живота и спины и зависят от вида шва",
-        "prep": "Подготовка не нужна; принести выписку из стационара или протокол операции, если оперировали в другом учреждении, не мочить рану перед визитом и не заклеивать её толстым слоем пластыря",
-        "abnormal": "После снятия швов рубец ещё несколько недель остаётся плотным и розовым, его созревание продолжается месяцами. Если край раны разошёлся, появились отделяемое, краснота или боль, часть нитей оставляют на месте, а срок повторного осмотра определяет врач"
-      },
-      "en": {
-        "what": "Removal of the threads that closed a surgical wound, after the scar has been inspected",
-        "how": "A doctor or nurse examines the suture line, cleans it with antiseptic, cuts each thread close to the skin and pulls it out with forceps; with a long incision some stitches are sometimes removed first and the rest a few days later; it takes a few minutes and usually needs no anaesthesia",
-        "when": "On the date set by the operating doctor after surgery; the timing differs for the face, limbs, abdomen and back and depends on the type of suture",
-        "prep": "No preparation is needed; bring the hospital discharge letter or operative report if you were operated on elsewhere, do not wet the wound before the visit and do not cover it with a thick layer of tape",
-        "abnormal": "After the stitches come out the scar stays firm and pink for several weeks and continues to mature over months. If a wound edge has separated, or discharge, redness or pain appear, some threads are left in place and the doctor sets the date for a repeat check"
-      },
-      "sr": {
-        "what": "Vađenje konaca kojima je bila ušivena hirurška rana, uz pregled ožiljka prije toga",
-        "how": "Ljekar ili sestra pregleda liniju šava, očisti je antiseptikom, presiječe svaki konac tik uz kožu i izvuče ga pincetom, a kod dugog reza se ponekad prvo skine dio konaca pa ostatak nakon nekoliko dana; traje nekoliko minuta i obično bez anestezije",
-        "when": "U roku koji je odredio ljekar koji je operisao; rokovi su različiti za lice, udove, trbuh i leđa i zavise od vrste šava",
-        "prep": "Priprema nije potrebna; ponijeti otpusnu listu ili operativni nalaz ako je operacija rađena u drugoj ustanovi, ranu ne kvasiti prije dolaska i ne prelijepljivati je debelim slojem flastera",
-        "abnormal": "Poslije vađenja konaca ožiljak još nekoliko sedmica ostaje čvrst i ružičast, a sazrijeva mjesecima. Ako se ivica rane razmakne ili se pojave iscjedak, crvenilo i bol, dio konaca se ostavlja, a rok ponovnog pregleda određuje ljekar"
-      },
-      "de": {
-        "what": "Entfernung der Fäden, mit denen eine Operationswunde verschlossen wurde, nach vorheriger Beurteilung der Narbe",
-        "how": "Arzt oder Pflegekraft begutachtet die Nahtlinie, reinigt sie mit Antiseptikum, schneidet jeden Faden dicht an der Haut durch und zieht ihn mit der Pinzette heraus; bei langem Schnitt wird manchmal zuerst ein Teil der Fäden entfernt und der Rest einige Tage später; es dauert wenige Minuten und kommt meist ohne Betäubung aus",
-        "when": "Zu dem Termin, den der operierende Arzt festgelegt hat; die Fristen unterscheiden sich für Gesicht, Gliedmaßen, Bauch und Rücken und hängen von der Nahtart ab",
-        "prep": "Keine Vorbereitung nötig; Entlassungsbrief oder Operationsbericht mitbringen, wenn die Operation anderswo erfolgte, die Wunde vor dem Termin nicht nass machen und nicht mit einer dicken Pflasterschicht abkleben",
-        "abnormal": "Nach der Fadenentfernung bleibt die Narbe noch einige Wochen fest und rosa und reift über Monate weiter. Hat sich ein Wundrand geöffnet oder treten Sekret, Rötung und Schmerz auf, bleibt ein Teil der Fäden liegen und der Arzt legt den Termin für die erneute Kontrolle fest"
-      },
-      "tr": {
-        "what": "Cerrahi yarayı kapatan ipliklerin, öncesinde nedbe değerlendirilerek alınması",
-        "how": "Hekim ya da hemşire dikiş hattını inceler, antiseptikle temizler, her ipliği cilde yakın keser ve pensle çeker; uzun kesilerde bazen önce bir kısım dikiş, birkaç gün sonra kalanı alınır; birkaç dakika sürer ve genellikle anestezi gerektirmez",
-        "when": "Ameliyatı yapan hekimin belirlediği tarihte; süreler yüz, kol ve bacaklar, karın ve sırt için farklıdır ve dikiş türüne bağlıdır",
-        "prep": "Hazırlık gerekmez; ameliyat başka bir kurumda yapıldıysa taburculuk özetini ya da ameliyat raporunu getirin, randevudan önce yarayı ıslatmayın ve kalın bant tabakasıyla kapatmayın",
-        "abnormal": "Dikişler alındıktan sonra nedbe birkaç hafta daha sert ve pembe kalır, olgunlaşması aylarca sürer. Yara kenarı açıldıysa ya da akıntı, kızarıklık ve ağrı ortaya çıktıysa ipliklerin bir bölümü yerinde bırakılır ve yeni kontrol tarihini hekim belirler"
-      },
-      "sr_cyrl": {
-        "what": "Вађење конаца којима је била ушивена хируршка рана, уз преглед ожиљка прије тога",
-        "how": "Љекар или сестра прегледа линију шава, очисти је антисептиком, пресијече сваки конац тик уз кожу и извуче га пинцетом, а код дугог реза се понекад прво скине дио конаца па остатак након неколико дана; траје неколико минута и обично без анестезије",
-        "when": "У року који је одредио љекар који је оперисао; рокови су различити за лице, удове, трбух и леђа и зависе од врсте шава",
-        "prep": "Припрема није потребна; понијети отпусну листу или оперативни налаз ако је операција рађена у другој установи, рану не квасити прије доласка и не прелијепљивати је дебелим слојем фластера",
-        "abnormal": "Послије вађења конаца ожиљак још неколико седмица остаје чврст и ружичаст, а сазријева мјесецима. Ако се ивица ране размакне или се појаве исцједак, црвенило и бол, дио конаца се оставља, а рок поновног прегледа одређује љекар"
-      }
-    }
-  },
-  {
     "slug": "wound-suturing-under-local-anesthesia",
     "entity_type": "medical_service",
     "translations": {

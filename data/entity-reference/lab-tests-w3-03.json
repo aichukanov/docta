@@ -624,7 +624,7 @@
     }
   },
   {
-    "slug": "urine-culture-fungi",
+    "slug": "urine-fungi",
     "entity_type": "lab_test",
     "translations": {
       "ru": {
@@ -764,54 +764,6 @@
         "when": "Гнојни секрет и непријатан мирис, црвенило и оток ивица ране, постоперативне ране и ране које споро зарастају, улцерације и опекотинске површине, избор антибактеријске терапије од стране љекара",
         "prep": "Завој се скида непосредно прије узимања, а рана се претходно не третира антисептицима; о већ започетим антибиотицима обавијестити лабораторију",
         "abnormal": "Пораст аеробних бактерија може одражавати инфекцију ране или колонизацију без упале, а дио узрочника расте само без кисеоника и не улази у ову културу. Налаз процјењује љекар који лијечи"
-      }
-    }
-  },
-  {
-    "slug": "wound-swab-aerobic-fungi",
-    "entity_type": "lab_test",
-    "translations": {
-      "ru": {
-        "what": "Посев материала из раны на среды для грибов с инкубацией в присутствии кислорода",
-        "how": "Материал берут стерильным тампоном со дна раны, засевают на среды для грибов и наблюдают рост в течение нескольких дней, дольше, чем при бактериальном посеве",
-        "when": "Раны, которые долго не заживают, отсутствие эффекта от антибактериального лечения, белый или творожистый налёт на раневой поверхности, сахарный диабет, сниженный иммунитет, ожоги",
-        "prep": "Перед взятием рану не обрабатывать антисептиками и противогрибковыми мазями, повязку снимают непосредственно перед процедурой",
-        "abnormal": "Рост грибов может означать поверхностную колонизацию раны или их участие в воспалении. Вид гриба вместе с видом раны и жалобами оценивает лечащий врач, он же решает, нужно ли лечение"
-      },
-      "en": {
-        "what": "Culture of wound material on fungal media with incubation in the presence of oxygen",
-        "how": "Material is collected from the wound base with a sterile swab, plated on fungal media and observed over several days, longer than in a bacterial culture",
-        "when": "Wounds that do not heal for a long time, no effect from antibacterial treatment, white or curd-like coating on the wound surface, diabetes mellitus, reduced immunity, burns",
-        "prep": "Do not treat the wound with antiseptics or antifungal ointments before sampling, the dressing is removed immediately before the procedure",
-        "abnormal": "Growth of fungi may mean superficial colonisation of the wound or their involvement in the inflammation. The treating doctor assesses the type of fungus together with the wound and the complaints and decides whether treatment is needed"
-      },
-      "sr": {
-        "what": "Zasijavanje materijala iz rane na podloge za gljivice uz inkubaciju u prisustvu kiseonika",
-        "how": "Materijal se sterilnim štapićem uzima sa dna rane, zasijava na podloge za gljivice i prati nekoliko dana, duže nego kod bakteriološke kulture",
-        "when": "Rane koje dugo ne zarastaju, izostanak efekta antibakterijske terapije, bjeličaste ili sirolike naslage na površini rane, šećerna bolest, oslabljen imunitet, opekotine",
-        "prep": "Prije uzimanja ranu ne tretirati antisepticima ni antimikoticima, a zavoj se skida neposredno prije postupka",
-        "abnormal": "Porast gljivica može značiti površinsku kolonizaciju rane ili njihovo učešće u upali. Vrstu gljivice zajedno sa izgledom rane i tegobama procjenjuje ljekar koji liječi i on odlučuje da li je terapija potrebna"
-      },
-      "de": {
-        "what": "Anzucht von Wundmaterial auf Pilznährböden mit Bebrütung unter Sauerstoff",
-        "how": "Das Material wird mit einem sterilen Tupfer vom Wundgrund entnommen, auf Pilznährböden ausgestrichen und über mehrere Tage beobachtet, länger als bei einer bakteriellen Kultur",
-        "when": "Wunden, die lange nicht heilen, ausbleibende Wirkung einer antibakteriellen Behandlung, weißlicher oder krümeliger Belag auf der Wundfläche, Diabetes mellitus, geschwächte Immunabwehr, Verbrennungen",
-        "prep": "Die Wunde vor der Entnahme nicht mit Antiseptika oder Antimykotika behandeln, der Verband wird unmittelbar vor dem Eingriff abgenommen",
-        "abnormal": "Pilzwachstum kann eine oberflächliche Besiedlung der Wunde oder eine Beteiligung an der Entzündung bedeuten. Die Pilzart zusammen mit dem Wundbild und den Beschwerden beurteilt der behandelnde Arzt, er entscheidet auch über eine Behandlung"
-      },
-      "tr": {
-        "what": "Yara materyalinin oksijenli ortamda inkübe edilerek mantar besiyerlerine ekilmesi",
-        "how": "Materyal steril eküvyonla yaranın tabanından alınır, mantar besiyerlerine ekilir ve bakteri kültürüne göre daha uzun, birkaç gün boyunca izlenir",
-        "when": "Uzun süre iyileşmeyen yaralar, antibakteriyel tedaviye yanıt alınamaması, yara yüzeyinde beyazımsı veya kesilmiş süt görünümünde tabaka, şeker hastalığı, bağışıklığın zayıf olması, yanıklar",
-        "prep": "Örnek alınmadan önce yara antiseptik ve mantar merhemleriyle temizlenmemeli, pansuman işlemden hemen önce açılmalı",
-        "abnormal": "Mantar üremesi yarada yüzeysel kolonizasyonu ya da mantarların iltihaba katılımını gösterebilir. Mantar türünü yaranın görünümü ve şikayetlerle birlikte tedaviyi yürüten hekim değerlendirir ve tedavi gerekip gerekmediğine karar verir"
-      },
-      "sr_cyrl": {
-        "what": "Засијавање материјала из ране на подлоге за гљивице уз инкубацију у присуству кисеоника",
-        "how": "Материјал се стерилним штапићем узима са дна ране, засијава на подлоге за гљивице и прати неколико дана, дуже него код бактериолошке културе",
-        "when": "Ране које дуго не зарастају, изостанак ефекта антибактеријске терапије, бјеличасте или сиролике наслаге на површини ране, шећерна болест, ослабљен имунитет, опекотине",
-        "prep": "Прије узимања рану не третирати антисептицима ни антимикотицима, а завој се скида непосредно прије поступка",
-        "abnormal": "Пораст гљивица може значити површинску колонизацију ране или њихово учешће у упали. Врсту гљивице заједно са изгледом ране и тегобама процјењује љекар који лијечи и он одлучује да ли је терапија потребна"
       }
     }
   }

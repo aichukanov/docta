@@ -144,54 +144,6 @@
     }
   },
   {
-    "slug": "bladder-catheterization",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Проведение тонкого катетера через мочеиспускательный канал в мочевой пузырь, чтобы выпустить мочу, взять стерильную порцию или ввести раствор",
-        "how": "Область обрабатывают антисептиком, в уретру вводят гель с анестетиком, катетер проводят до появления мочи; при разовой катетеризации пузырь опорожняют и катетер сразу убирают, при постоянном — фиксируют баллоном и подключают мочеприёмник; несколько минут",
-        "when": "Задержка мочи, измерение остаточной мочи, стерильный забор мочи на посев, опорожнение пузыря перед исследованием или операцией, промывание пузыря и введение в него лекарства, уход при недержании и обездвиженности",
-        "prep": "Специальной подготовки нет; сообщить о сужениях уретры и операциях на простате, об аллергии на латекс и анестетики; если катетеризацию делают в рамках исследования, врач скажет, приходить с наполненным пузырём или нет",
-        "abnormal": "Позывы и лёгкое жжение после процедуры обычно проходят за несколько часов. Невозможность провести катетер, кровь в моче, озноб и температура, боль внизу живота или в пояснице, отсутствие оттока при установленном катетере — повод связаться с врачом"
-      },
-      "en": {
-        "what": "Passing a thin catheter through the urethra into the bladder to drain urine, obtain a sterile sample or instil a solution",
-        "how": "The area is cleaned with antiseptic, anaesthetic gel is instilled into the urethra and the catheter is advanced until urine appears; with a single catheterisation the bladder is emptied and the catheter removed at once, with an indwelling one the balloon is inflated and a drainage bag attached; a few minutes",
-        "when": "Urinary retention, measuring residual urine, taking a sterile urine sample for culture, emptying the bladder before a test or operation, bladder irrigation and instillation of medication, care in incontinence and immobility",
-        "prep": "No special preparation; report urethral narrowing and prostate operations, allergy to latex and to anaesthetic gels; if the catheterisation is part of an investigation, the doctor says whether to arrive with a full bladder",
-        "abnormal": "Urgency and mild burning after the procedure usually pass within a few hours. Failure to pass the catheter, blood in the urine, chills and fever, pain in the lower abdomen or flank, or no drainage from an indwelling catheter are reasons to contact a doctor"
-      },
-      "sr": {
-        "what": "Uvođenje tanke cjevčice kroz mokraćnu cijev u bešiku radi ispuštanja mokraće, uzimanja sterilnog uzorka ili davanja rastvora",
-        "how": "Predio se očisti antiseptikom, u mokraćnu cijev se stavi anestetički gel i kateter se uvodi dok se ne pojavi mokraća; kod jednokratne kateterizacije bešika se isprazni i kateter se odmah vadi, a kod trajnog se napuni balončić i priključi kesa; traje nekoliko minuta",
-        "when": "Zastoj mokraće, mjerenje rezidualne mokraće, sterilno uzimanje uzorka za urinokulturu, pražnjenje bešike prije pretrage ili operacije, ispiranje bešike i davanje lijeka u nju, njega kod inkontinencije i nepokretnosti",
-        "prep": "Posebna priprema nije potrebna; reći za suženja mokraćne cijevi i operacije prostate, za alergiju na lateks i anestetičke gelove; ako je kateterizacija dio pretrage, ljekar kaže da li dolazite pune bešike",
-        "abnormal": "Nagon i blago peckanje poslije zahvata obično prođu za nekoliko sati. Nemogućnost uvođenja katetera, krv u mokraći, drhtavica i povišena temperatura, bol u donjem dijelu stomaka ili u slabinama, kao i izostanak oticanja kod postavljenog katetera, razlog su za javljanje ljekaru"
-      },
-      "de": {
-        "what": "Einführen eines dünnen Katheters über die Harnröhre in die Blase, um Urin abzuleiten, eine sterile Probe zu gewinnen oder eine Lösung einzubringen",
-        "how": "Der Bereich wird desinfiziert, Gleitgel mit Betäubungsmittel in die Harnröhre gegeben und der Katheter vorgeschoben, bis Urin kommt; bei der Einmalkatheterisierung wird die Blase entleert und der Katheter sofort entfernt, beim Dauerkatheter wird der Ballon gefüllt und ein Beutel angeschlossen; wenige Minuten",
-        "when": "Harnverhalt, Messung des Restharns, sterile Uringewinnung für die Kultur, Entleerung der Blase vor einer Untersuchung oder Operation, Blasenspülung und Einbringen von Medikamenten, Pflege bei Inkontinenz und Bettlägerigkeit",
-        "prep": "Keine besondere Vorbereitung; Verengungen der Harnröhre und Prostataoperationen angeben, ebenso Allergien gegen Latex und Betäubungsgele; gehört die Katheterisierung zu einer Untersuchung, sagt der Arzt, ob die Blase gefüllt sein soll",
-        "abnormal": "Harndrang und leichtes Brennen nach dem Eingriff klingen meist innerhalb weniger Stunden ab. Wenn der Katheter nicht eingeführt werden kann, Blut im Urin, Schüttelfrost und Fieber, Schmerzen im Unterbauch oder in der Flanke oder kein Urinabfluss bei liegendem Katheter auftreten, ist ärztlicher Kontakt nötig"
-      },
-      "tr": {
-        "what": "İdrarı boşaltmak, steril örnek almak veya mesaneye solüsyon vermek amacıyla üretradan mesaneye ince bir kateter ilerletilmesi",
-        "how": "Bölge antiseptikle temizlenir, üretraya anestezikli jel verilir ve idrar gelene kadar kateter ilerletilir; tek seferlik kateterizasyonda mesane boşaltılıp kateter hemen çıkarılır, kalıcı kateterde balon şişirilir ve torba takılır; birkaç dakika sürer",
-        "when": "İdrar yapamama, rezidüel idrarın ölçülmesi, kültür için steril idrar örneği alınması, tetkik veya ameliyat öncesi mesanenin boşaltılması, mesane yıkaması ve mesane içine ilaç verilmesi, idrar kaçırma ve yatağa bağımlılıkta bakım",
-        "prep": "Özel hazırlık gerekmez; üretra darlığını ve prostat ameliyatlarını, lateks ile anestezik jellere alerjiyi bildirin; işlem bir tetkiğin parçasıysa mesanenin dolu olup olmayacağını hekim söyler",
-        "abnormal": "İşlem sonrası sıkışma hissi ve hafif yanma genellikle birkaç saatte geçer. Kateterin ilerletilememesi, idrarda kan, titreme ve ateş, karın alt bölgesinde veya belde ağrı, takılı kateterden idrar gelmemesi hekime başvurmayı gerektirir"
-      },
-      "sr_cyrl": {
-        "what": "Увођење танке цјевчице кроз мокраћну цијев у бешику ради испуштања мокраће, узимања стерилног узорка или давања раствора",
-        "how": "Предио се очисти антисептиком, у мокраћну цијев се стави анестетички гел и катетер се уводи док се не појави мокраћа; код једнократне катетеризације бешика се испразни и катетер се одмах вади, а код трајног се напуни балончић и прикључи кеса; траје неколико минута",
-        "when": "Застој мокраће, мјерење резидуалне мокраће, стерилно узимање узорка за уринокултуру, пражњење бешике прије претраге или операције, испирање бешике и давање лијека у њу, њега код инконтиненције и непокретности",
-        "prep": "Посебна припрема није потребна; рећи за сужења мокраћне цијеви и операције простате, за алергију на латекс и анестетичке гелове; ако је катетеризација дио претраге, љекар каже да ли долазите пуне бешике",
-        "abnormal": "Нагон и благо пецкање послије захвата обично прођу за неколико сати. Немогућност увођења катетера, крв у мокраћи, дрхтавица и повишена температура, бол у доњем дијелу стомака или у слабинама, као и изостанак отицања код постављеног катетера, разлог су за јављање љекару"
-      }
-    }
-  },
-  {
     "slug": "first-urologist-examination",
     "entity_type": "medical_service",
     "translations": {

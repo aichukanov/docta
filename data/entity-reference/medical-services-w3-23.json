@@ -48,54 +48,6 @@
     }
   },
   {
-    "slug": "panoramic-jaw-x-ray",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Развёрнутое изображение обеих челюстей целиком: зубные ряды, зачатки и непрорезавшиеся зубы, височно-нижнечелюстные суставы",
-        "how": "Голову фиксируют на подбородочной опоре, пациент прикусывает пластиковый валик и стоит неподвижно, пока трубка и детектор обходят голову по дуге; оборот длится около 20 секунд",
-        "when": "Планирование имплантации и протезирования, удаление зубов мудрости, оценка изменений у корней зубов, ортодонтическое лечение, травма челюсти, контроль после операции на челюсти",
-        "prep": "Подготовка не нужна; снять серьги, очки, заколки, съёмные протезы и пирсинг в области лица и шеи, сообщить о возможной беременности",
-        "abnormal": "На снимке видны участки разрежения кости у корней, положение непрорезавшихся зубов, состояние костной ткани и краёв суставов, а мелкие детали отдельного зуба лучше различимы на прицельном внутриротовом снимке. Заключение и план лечения определяет стоматолог или челюстно-лицевой хирург"
-      },
-      "en": {
-        "what": "A single unfolded image of both jaws: the dental arches, unerupted and developing teeth and the temporomandibular joints",
-        "how": "The head is fixed on a chin rest, you bite on a plastic block and stand still while the tube and detector travel around the head in an arc; the rotation takes about 20 seconds",
-        "when": "Planning of implants and dentures, removal of wisdom teeth, assessment of changes around tooth roots, orthodontic treatment, jaw injury, follow-up after jaw surgery",
-        "prep": "No preparation needed; remove earrings, glasses, hair clips, removable dentures and facial or neck piercings, and mention a possible pregnancy",
-        "abnormal": "The image shows areas of bone loss around the roots, the position of unerupted teeth, the state of the bone and the joint margins, while fine detail of a single tooth is better seen on a close-up intraoral film. The conclusion and the treatment plan come from the dentist or the maxillofacial surgeon"
-      },
-      "sr": {
-        "what": "Razvijeni snimak obje vilice u cjelini: zubni nizovi, neiznikli zubi i zameci, kao i temporomandibularni zglobovi",
-        "how": "Glava se fiksira na naslon za bradu, pacijent zagrize plastični nastavak i stoji mirno dok cijev i detektor obilaze glavu u luku; obrt traje oko 20 sekundi",
-        "when": "Planiranje implantata i protetike, vađenje umnjaka, procjena promjena oko korijena zuba, ortodontsko liječenje, povreda vilice, kontrola poslije operacije na vilici",
-        "prep": "Priprema nije potrebna; skinuti minđuše, naočare, ukosnice, pokretne proteze i pirsing na licu i vratu, a o mogućoj trudnoći reći unaprijed",
-        "abnormal": "Snimak pokazuje zone prorijeđene kosti oko korijena, položaj neizniklih zuba, stanje koštanog tkiva i rubove zglobova, dok se sitni detalji pojedinog zuba bolje vide na ciljanom intraoralnom snimku. Zaključak i plan liječenja daje stomatolog ili maksilofacijalni hirurg"
-      },
-      "de": {
-        "what": "Eine einzige abgewickelte Aufnahme beider Kiefer: Zahnreihen, nicht durchgebrochene Zähne und Zahnkeime sowie die Kiefergelenke",
-        "how": "Der Kopf wird an einer Kinnstütze fixiert, man beißt auf einen Kunststoffblock und steht still, während Röhre und Detektor den Kopf im Bogen umlaufen; der Umlauf dauert etwa 20 Sekunden",
-        "when": "Planung von Implantaten und Zahnersatz, Entfernung von Weisheitszähnen, Beurteilung von Veränderungen an den Zahnwurzeln, kieferorthopädische Behandlung, Kieferverletzung, Kontrolle nach einer Kieferoperation",
-        "prep": "Keine Vorbereitung nötig; Ohrringe, Brille, Haarspangen, herausnehmbaren Zahnersatz und Piercings im Gesichts- und Halsbereich ablegen, eine mögliche Schwangerschaft mitteilen",
-        "abnormal": "Sichtbar werden aufgehellte Knochenbezirke an den Wurzelspitzen, die Lage nicht durchgebrochener Zähne, der Zustand des Knochens und die Gelenkränder, feine Details eines einzelnen Zahns zeigt dagegen eine Einzelzahnaufnahme besser. Befund und Behandlungsplan legen Zahnmedizin oder Mund-Kiefer-Gesichtschirurgie fest"
-      },
-      "tr": {
-        "what": "Her iki çenenin tek bir açılmış görüntüsü: diş sıraları, sürmemiş dişler ve diş tomurcukları ile çene eklemleri",
-        "how": "Baş çene desteğine sabitlenir, plastik ısırma parçası ısırılır ve tüp ile dedektör baş çevresinde yay çizerek dönerken hareketsiz durulur; dönüş yaklaşık 20 saniye sürer",
-        "when": "İmplant ve protez planlaması, yirmi yaş dişi çekimi, diş kökleri çevresindeki değişikliklerin değerlendirilmesi, ortodontik tedavi, çene travması, çene ameliyatı sonrası kontrol",
-        "prep": "Hazırlık gerekmez; küpe, gözlük, toka, hareketli protez ve yüz ile boyundaki piercingler çıkarılır, olası gebelik bildirilir",
-        "abnormal": "Görüntüde kök çevresindeki kemik kaybı alanları, sürmemiş dişlerin konumu, kemik dokusunun durumu ve eklem sınırları görülür; tek bir dişin ince ayrıntıları ise ağız içi periapikal filmde daha iyi seçilir. Sonucu ve tedavi planını diş hekimi ya da çene cerrahı belirler"
-      },
-      "sr_cyrl": {
-        "what": "Развијени снимак обје вилице у цјелини: зубни низови, неизникли зуби и замеци, као и темпоромандибуларни зглобови",
-        "how": "Глава се фиксира на наслон за браду, пацијент загризе пластични наставак и стоји мирно док цијев и детектор обилазе главу у луку; обрт траје око 20 секунди",
-        "when": "Планирање имплантата и протетике, вађење умњака, процјена промјена око коријена зуба, ортодонтско лијечење, повреда вилице, контрола послије операције на вилици",
-        "prep": "Припрема није потребна; скинути минђуше, наочаре, укоснице, покретне протезе и пирсинг на лицу и врату, а о могућој трудноћи рећи унапријед",
-        "abnormal": "Снимак показује зоне проријеђене кости око коријена, положај неизниклих зуба, стање коштаног ткива и рубове зглобова, док се ситни детаљи појединог зуба боље виде на циљаном интраоралном снимку. Закључак и план лијечења даје стоматолог или максилофацијални хирург"
-      }
-    }
-  },
-  {
     "slug": "pharynx-and-larynx-x-ray",
     "entity_type": "medical_service",
     "translations": {
@@ -380,54 +332,6 @@
         "when": "Бол у обје бутне кости, шепање и разлика у дужини ногу код дјетета, деформитети и болести скелета које захватају обје стране, контрола срастања и положаја металних имплантата послије операције",
         "prep": "Припрема није потребна; скинути панталоне и одјећу са металним дијеловима, а о могућој трудноћи обавезно рећи јер је поље снимка близу карлице",
         "abnormal": "Процјењују се цјеловитост и осовина костију, грађа коштаног ткива и знаци срастања, а поређење страна помаже да се уочи разлика у дужини и облику. Снимке описује радиолог, а даљу тактику одређује трауматолог ортопед"
-      }
-    }
-  },
-  {
-    "slug": "x-ray-chest-and-heart",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Рентгеновский снимок грудной клетки, на котором вместе с лёгочными полями оценивают размеры и контуры сердца и крупных сосудов",
-        "how": "Снимок делают стоя, лицом к панели и с расстояния около двух метров, чтобы тень сердца не увеличивалась, на глубоком вдохе с задержкой дыхания; по назначению добавляют боковую проекцию, всё вместе несколько минут",
-        "when": "Одышка и быстрая утомляемость, отёки ног, шум в сердце, наблюдение при пороках и сердечной недостаточности, подготовка к операции, затяжной кашель",
-        "prep": "Подготовка не нужна; раздеться до пояса, снять цепочки и бельё с металлическими деталями, сообщить о возможной беременности",
-        "abnormal": "Оценивают размер и форму сердечной тени, лёгочный рисунок и наличие жидкости в плевральной полости, при этом работу клапанов рентген не показывает и ЭхоКГ не заменяет. Снимок описывает рентгенолог, а сопоставляет с осмотром кардиолог или терапевт"
-      },
-      "en": {
-        "what": "A chest X-ray on which the size and outlines of the heart and great vessels are assessed together with the lung fields",
-        "how": "Taken standing and facing the panel from about two metres, so that the heart shadow is not magnified, on a deep breath held; a lateral view is added if ordered, and the whole visit takes a few minutes",
-        "when": "Shortness of breath and easy fatigue, swollen legs, a heart murmur, monitoring of valve disease and heart failure, preparation for surgery, a lingering cough",
-        "prep": "No preparation needed; undress to the waist, remove necklaces and underwear with metal parts, and mention a possible pregnancy",
-        "abnormal": "The size and shape of the cardiac shadow, the lung markings and fluid in the pleural cavity are assessed, while X-ray does not show how the valves work and does not replace echocardiography. A radiologist describes the image and the cardiologist or general practitioner compares it with the examination"
-      },
-      "sr": {
-        "what": "Rendgenski snimak grudnog koša na kojem se, uz plućna polja, procjenjuju veličina i obrisi srca i velikih krvnih sudova",
-        "how": "Snima se stojeći, licem prema panelu i sa udaljenosti od oko dva metra da se sjenka srca ne uveća, uz duboki udah i zadržavanje daha; po potrebi se dodaje bočna projekcija, a sve zajedno traje nekoliko minuta",
-        "when": "Nedostatak daha i brzo zamaranje, otoci nogu, šum na srcu, praćenje kod srčanih mana i slabosti srca, priprema za operaciju, dugotrajan kašalj",
-        "prep": "Priprema nije potrebna; skinuti odjeću do pojasa, ukloniti lančiće i rublje sa metalnim dijelovima, reći o mogućoj trudnoći",
-        "abnormal": "Procjenjuju se veličina i oblik srčane sjenke, plućni crtež i prisustvo tečnosti u plućnoj maramici, dok rendgen ne prikazuje rad zalistaka i ne zamjenjuje ehokardiografiju. Snimak opisuje radiolog, a sa pregledom ga poredi kardiolog ili izabrani ljekar"
-      },
-      "de": {
-        "what": "Röntgenaufnahme des Brustkorbs, auf der neben den Lungenfeldern Größe und Konturen von Herz und großen Gefäßen beurteilt werden",
-        "how": "Die Aufnahme erfolgt im Stehen mit dem Gesicht zur Platte aus etwa zwei Metern Abstand, damit der Herzschatten nicht vergrößert wird, bei tiefem Einatmen und angehaltener Luft; bei Bedarf kommt eine seitliche Aufnahme dazu, insgesamt wenige Minuten",
-        "when": "Luftnot und rasche Erschöpfung, geschwollene Beine, Herzgeräusch, Verlaufskontrolle bei Herzklappenfehlern und Herzschwäche, Vorbereitung auf eine Operation, anhaltender Husten",
-        "prep": "Keine Vorbereitung nötig; Oberkörper frei machen, Ketten und Wäsche mit Metallteilen ablegen, eine mögliche Schwangerschaft mitteilen",
-        "abnormal": "Beurteilt werden Größe und Form des Herzschattens, die Lungenzeichnung und Flüssigkeit im Rippenfellraum, die Funktion der Herzklappen zeigt das Röntgenbild dagegen nicht und es ersetzt keine Echokardiographie. Die Radiologie beschreibt das Bild, Kardiologie oder Hausarztpraxis vergleichen es mit der Untersuchung"
-      },
-      "tr": {
-        "what": "Akciğer alanlarıyla birlikte kalbin ve büyük damarların boyut ve sınırlarının değerlendirildiği göğüs röntgeni",
-        "how": "Film ayakta, yüz panele dönük olarak ve kalp gölgesi büyümesin diye yaklaşık iki metre mesafeden, derin nefes alıp tutarak çekilir; istenirse yan film eklenir, tümü birkaç dakika sürer",
-        "when": "Nefes darlığı ve çabuk yorulma, bacaklarda şişlik, kalpte üfürüm, kapak hastalıkları ve kalp yetersizliğinde izlem, ameliyat öncesi hazırlık, uzun süren öksürük",
-        "prep": "Hazırlık gerekmez; belden yukarısı çıkarılır, kolyeler ve metal parçalı iç çamaşırı alınır, olası gebelik bildirilir",
-        "abnormal": "Kalp gölgesinin boyutu ve şekli, akciğer damar gölgeleri ve akciğer zarında sıvı değerlendirilir; röntgen kapakların çalışmasını göstermez ve ekokardiyografinin yerini tutmaz. Görüntüyü radyoloji uzmanı tanımlar, muayeneyle birlikte kardiyoloji ya da aile hekimi değerlendirir"
-      },
-      "sr_cyrl": {
-        "what": "Рендгенски снимак грудног коша на којем се, уз плућна поља, процјењују величина и обриси срца и великих крвних судова",
-        "how": "Снима се стојећи, лицем према панелу и са удаљености од око два метра да се сјенка срца не увећа, уз дубоки удах и задржавање даха; по потреби се додаје бочна пројекција, а све заједно траје неколико минута",
-        "when": "Недостатак даха и брзо замарање, отоци ногу, шум на срцу, праћење код срчаних мана и слабости срца, припрема за операцију, дуготрајан кашаљ",
-        "prep": "Припрема није потребна; скинути одјећу до појаса, уклонити ланчиће и рубље са металним дијеловима, рећи о могућој трудноћи",
-        "abnormal": "Процјењују се величина и облик срчане сјенке, плућни цртеж и присуство течности у плућној марамици, док рендген не приказује рад залистака и не замјењује ехокардиографију. Снимак описује радиолог, а са прегледом га пореди кардиолог или изабрани љекар"
       }
     }
   },

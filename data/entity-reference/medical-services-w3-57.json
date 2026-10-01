@@ -672,54 +672,6 @@
     }
   },
   {
-    "slug": "spirometry-recording-and-reading",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Запись дыхательных кривых на спирометре и их последующее описание врачом с письменным заключением",
-        "how": "Сначала медсестра или техник измеряет рост и вес, вводит данные в прибор и учит правильному манёвру: глубокий вдох и резкий полный выдох в мундштук с зажимом на носу, обычно три пригодные попытки; затем врач оценивает качество кривых, сравнивает показатели с расчётными для возраста, роста и пола и пишет заключение",
-        "when": "Жалобы на одышку и длительный кашель, установленная астма или ХОБЛ, профилактический осмотр у курильщиков и на вредном производстве, оценка перед операцией, экспертиза трудоспособности, описание записи, сделанной в другом учреждении",
-        "prep": "Перед записью несколько часов не курить, не пить кофе и не заниматься спортом, плотно не есть, надеть одежду, не стесняющую грудную клетку, снять съёмный протез, если он мешает удерживать мундштук, ингаляторы использовать только по согласованию с врачом",
-        "abnormal": "Заключение описывает, есть ли сужение дыхательных путей, насколько показатели отличаются от расчётных и насколько надёжны попытки: слабый или прерванный выдох делает запись непригодной и её повторяют. Что это значит в вашем случае, объясняет пульмонолог или направивший врач"
-      },
-      "en": {
-        "what": "Recording of the breathing curves on a spirometer and their subsequent reading by a doctor with a written report",
-        "how": "First a nurse or technician measures height and weight, enters them into the device and teaches the manoeuvre: a deep breath in and a sharp full breath out into the mouthpiece with a nose clip, usually three usable attempts; the doctor then judges the quality of the curves, compares the values with those predicted for age, height and sex and writes the report",
-        "when": "Breathlessness and a long-standing cough, known asthma or COPD, check-ups for smokers and for work with harmful exposure, assessment before an operation, fitness-for-work assessment, reading of a recording made at another facility",
-        "prep": "No smoking, coffee or sport for several hours before the recording, no heavy meal, clothing that does not restrict the chest, removal of a denture if it stops you holding the mouthpiece, and inhalers used only as agreed with the doctor",
-        "abnormal": "The report says whether the airways are narrowed, how far the values differ from the predicted ones and how reliable the attempts were: a weak or interrupted breath out makes the recording unusable and it is repeated. What it means in your case is explained by the pulmonologist or the referring doctor"
-      },
-      "sr": {
-        "what": "Snimanje disajnih krivih na spirometru i njihovo naknadno očitavanje uz pisani nalaz ljekara",
-        "how": "Najprije sestra ili tehničar izmjeri visinu i težinu, unese podatke u aparat i pokaže manevar: dubok udah i snažan potpun izdah u nastavak za usta uz štipaljku na nosu, obično tri upotrebljiva pokušaja; zatim ljekar ocjenjuje kvalitet krivih, poredi vrijednosti sa očekivanim za uzrast, visinu i pol i piše nalaz",
-        "when": "Zaduha i dugotrajan kašalj, poznata astma ili HOBP, sistematski pregledi pušača i radnika na štetnim poslovima, procjena prije operacije, ocjena radne sposobnosti, očitavanje snimka urađenog u drugoj ustanovi",
-        "prep": "Nekoliko sati prije snimanja ne pušiti, ne piti kafu i ne vježbati, ne jesti obilno, obući odjeću koja ne steže grudni koš, izvaditi pokretnu protezu ako smeta držanju nastavka, a inhalatore koristiti samo u dogovoru sa ljekarom",
-        "abnormal": "Nalaz govori da li su disajni putevi suženi, koliko se vrijednosti razlikuju od očekivanih i koliko su pokušaji pouzdani: slab ili prekinut izdah čini snimak neupotrebljivim, pa se ponavlja. Šta to znači u vašem slučaju objašnjava pulmolog ili ljekar koji vas je uputio"
-      },
-      "de": {
-        "what": "Die Aufzeichnung der Atemkurven am Spirometer und ihre anschließende Beurteilung durch einen Arzt mit schriftlichem Befund",
-        "how": "Zuerst misst eine Pflegekraft oder eine Assistenz Größe und Gewicht, gibt sie in das Gerät ein und übt das Manöver: tief einatmen und kräftig vollständig in das Mundstück ausatmen, mit Nasenklemme und meist drei verwertbaren Versuchen; danach beurteilt der Arzt die Qualität der Kurven, vergleicht die Werte mit den für Alter, Größe und Geschlecht erwarteten und verfasst den Befund",
-        "when": "Luftnot und lang anhaltender Husten, bekanntes Asthma oder COPD, Vorsorge bei Rauchern und bei Arbeit mit Schadstoffen, Beurteilung vor einer Operation, Begutachtung der Arbeitsfähigkeit, Auswertung einer in einer anderen Einrichtung erstellten Aufzeichnung",
-        "prep": "Mehrere Stunden vor der Aufzeichnung nicht rauchen, keinen Kaffee trinken und keinen Sport treiben, keine schwere Mahlzeit, Kleidung, die den Brustkorb nicht einengt, eine herausnehmbare Prothese entfernen, wenn sie das Halten des Mundstücks stört, Inhalatoren nur nach Absprache anwenden",
-        "abnormal": "Der Befund sagt, ob die Atemwege verengt sind, wie weit die Werte von den erwarteten abweichen und wie verlässlich die Versuche waren: ein schwaches oder abgebrochenes Ausatmen macht die Aufzeichnung unbrauchbar, sie wird dann wiederholt. Was das in Ihrem Fall bedeutet, erklärt der Lungenfacharzt oder der überweisende Arzt"
-      },
-      "tr": {
-        "what": "Solunum eğrilerinin spirometre ile kaydedilmesi ve ardından hekim tarafından yorumlanıp yazılı rapora dönüştürülmesi",
-        "how": "Önce hemşire ya da teknisyen boy ve kiloyu ölçüp cihaza girer ve manevrayı öğretir: derin nefes alıp ağızlığa hızlı ve tam nefes vermek, burunda mandalla, genellikle üç geçerli deneme; ardından hekim eğrilerin kalitesini değerlendirir, değerleri yaş, boy ve cinsiyete göre beklenenlerle karşılaştırır ve raporu yazar",
-        "when": "Nefes darlığı ve uzun süren öksürük, bilinen astım ya da KOAH, sigara içenlerde ve zararlı ortamda çalışanlarda tarama, ameliyat öncesi değerlendirme, iş göremezlik değerlendirmesi, başka bir kurumda yapılan kaydın yorumlanması",
-        "prep": "Kayıttan birkaç saat önce sigara içmemek, kahve içmemek ve spor yapmamak, ağır yemek yememek, göğsü sıkmayan kıyafet giymek, ağızlığı tutmayı zorlaştırıyorsa takma protezi çıkarmak, inhalerleri yalnızca hekimle konuşarak kullanmak",
-        "abnormal": "Rapor hava yollarının daralıp daralmadığını, değerlerin beklenenden ne kadar farklı olduğunu ve denemelerin ne kadar güvenilir olduğunu belirtir: zayıf ya da yarıda kesilen nefes verme kaydı kullanılamaz hale getirir ve işlem tekrarlanır. Bunun sizin durumunuzda ne anlama geldiğini göğüs hastalıkları uzmanı ya da sizi yönlendiren hekim açıklar"
-      },
-      "sr_cyrl": {
-        "what": "Снимање дисајних кривих на спирометру и њихово накнадно очитавање уз писани налаз љекара",
-        "how": "Најприје сестра или техничар измјери висину и тежину, унесе податке у апарат и покаже маневар: дубок удах и снажан потпун издах у наставак за уста уз штипаљку на носу, обично три употребљива покушаја; затим љекар оцјењује квалитет кривих, пореди вриједности са очекиваним за узраст, висину и пол и пише налаз",
-        "when": "Задуха и дуготрајан кашаљ, позната астма или ХОБП, систематски прегледи пушача и радника на штетним пословима, процјена прије операције, оцјена радне способности, очитавање снимка урађеног у другој установи",
-        "prep": "Неколико сати прије снимања не пушити, не пити кафу и не вјежбати, не јести обилно, обући одјећу која не стеже грудни кош, извадити покретну протезу ако смета држању наставка, а инхалаторе користити само у договору са љекаром",
-        "abnormal": "Налаз говори да ли су дисајни путеви сужени, колико се вриједности разликују од очекиваних и колико су покушаји поуздани: слаб или прекинут издах чини снимак неупотребљивим, па се понавља. Шта то значи у вашем случају објашњава пулмолог или љекар који вас је упутио"
-      }
-    }
-  },
-  {
     "slug": "follow-up-subspecialist-pediatric-examination",
     "entity_type": "medical_service",
     "translations": {

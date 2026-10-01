@@ -336,54 +336,6 @@
     }
   },
   {
-    "slug": "mri-pelvis",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Магнитно-резонансное исследование малого таза: мочевого пузыря, конечного отдела кишечника, предстательной железы или матки с яичниками, окружающих мышц и лимфатических узлов",
-        "how": "Пациент лежит на спине в туннеле томографа, над тазом размещают приёмную катушку; часть протоколов требует контраста в вену, иногда просят прийти с умеренно наполненным мочевым пузырём; обычно 30-45 минут",
-        "when": "Уточнение находок УЗИ, стойкая боль в тазу, эндометриоз и миомы, оценка свищей и воспалительных изменений конечного отдела кишечника, изменения предстательной железы, травма таза, наблюдение после лечения",
-        "prep": "Обычно просят несколько часов не есть и дают отдельные указания о питье; заранее сообщить о металле в теле, кардиостимуляторе, внутриматочной спирали и клаустрофобии, снять украшения и одежду с металлом, взять прежние снимки и выписки",
-        "abnormal": "Снимок может показать воспаление, кисты, узлы, спайки, свищи или объёмное образование, а часть находок лечения не требует. Заключение рентгенолога вместе с осмотром и анализами оценивает лечащий врач"
-      },
-      "en": {
-        "what": "A magnetic resonance study of the lesser pelvis: the bladder, the final part of the bowel, the prostate or the uterus and ovaries, the surrounding muscles and lymph nodes",
-        "how": "The patient lies on their back inside the scanner tunnel with a coil placed over the pelvis; some protocols require contrast into a vein and sometimes a moderately full bladder is requested; it usually takes 30-45 minutes",
-        "when": "Clarifying ultrasound findings, persistent pelvic pain, endometriosis and fibroids, assessment of fistulas and inflammatory changes of the final part of the bowel, changes in the prostate, pelvic injury, follow-up after treatment",
-        "prep": "You are usually asked not to eat for a few hours and given separate instructions about drinking; report in advance any metal in the body, a pacemaker, an intrauterine device and claustrophobia, remove jewellery and clothes with metal, bring previous images and reports",
-        "abnormal": "The scan may show inflammation, cysts, nodes, adhesions, fistulas or a mass, and some findings need no treatment. The radiologist's report is assessed together with the examination and tests by the attending doctor"
-      },
-      "sr": {
-        "what": "Pregled male karlice magnetnom rezonancom: mokraćne bešike, završnog dijela crijeva, prostate ili materice i jajnika, okolnih mišića i limfnih čvorova",
-        "how": "Pacijent leži na leđima u tunelu aparata, iznad karlice se postavlja prijemni kalem; dio protokola traži kontrast u venu, a ponekad se traži umjereno puna bešika; obično traje 30-45 minuta",
-        "when": "Razjašnjenje nalaza ultrazvuka, uporan bol u karlici, endometrioza i miomi, procjena fistula i upalnih promjena završnog dijela crijeva, promjene na prostati, povreda karlice, praćenje nakon liječenja",
-        "prep": "Obično se traži da se nekoliko sati ne jede, uz posebno uputstvo o pijenju; unaprijed prijaviti metal u tijelu, pejsmejker, spiralu i klaustrofobiju, skinuti nakit i odjeću sa metalom, ponijeti ranije snimke i nalaze",
-        "abnormal": "Snimak može pokazati upalu, ciste, čvorove, priraslice, fistule ili tvorbu, a dio nalaza ne traži liječenje. Zaključak radiologa, uz pregled i analize, procjenjuje ljekar koji vodi liječenje"
-      },
-      "de": {
-        "what": "Eine Magnetresonanzuntersuchung des kleinen Beckens: Harnblase, Enddarm, Prostata oder Gebärmutter und Eierstöcke sowie die umgebenden Muskeln und Lymphknoten",
-        "how": "Der Patient liegt auf dem Rücken in der Röhre, über dem Becken wird eine Empfangsspule platziert; manche Protokolle erfordern Kontrastmittel über die Vene, teils wird eine mäßig gefüllte Blase gewünscht; die Untersuchung dauert meist 30-45 Minuten",
-        "when": "Abklärung von Ultraschallbefunden, anhaltende Beckenschmerzen, Endometriose und Myome, Beurteilung von Fisteln und entzündlichen Veränderungen des Enddarms, Veränderungen der Prostata, Beckenverletzung, Verlaufskontrolle nach Behandlung",
-        "prep": "Meist wird gebeten, einige Stunden nichts zu essen, zum Trinken gibt es eine eigene Anweisung; Metall im Körper, Herzschrittmacher, Spirale und Klaustrophobie vorab melden, Schmuck und Kleidung mit Metall ablegen, frühere Bilder und Befunde mitbringen",
-        "abnormal": "Die Aufnahme kann Entzündungen, Zysten, Knoten, Verwachsungen, Fisteln oder eine Raumforderung zeigen, ein Teil der Befunde bedarf keiner Behandlung. Den Befund des Radiologen ordnet der behandelnde Arzt zusammen mit Untersuchung und Laborwerten ein"
-      },
-      "tr": {
-        "what": "Küçük pelvisin manyetik rezonans incelemesi: idrar kesesi, bağırsağın son bölümü, prostat ya da rahim ve yumurtalıklar, çevre kaslar ve lenf düğümleri",
-        "how": "Hasta sırtüstü cihazın tünelinde yatar, pelvis üzerine alıcı sargı yerleştirilir; bazı protokoller damardan kontrast gerektirir, kimi zaman idrar kesesinin ılımlı dolu olması istenir; genellikle 30-45 dakika sürer",
-        "when": "Ultrason bulgularının netleştirilmesi, geçmeyen pelvik ağrı, endometriozis ve miyomlar, fistüllerin ve bağırsağın son bölümündeki iltihabi değişikliklerin değerlendirilmesi, prostattaki değişiklikler, pelvis yaralanması, tedavi sonrası izlem",
-        "prep": "Genellikle birkaç saat aç kalmanız istenir, su içme konusunda ayrı talimat verilir; vücuttaki metal, kalp pili, rahim içi araç ve kapalı yer korkusu önceden bildirilmeli, takılar ve metal içeren giysiler çıkarılmalı, önceki görüntü ve raporlar getirilmelidir",
-        "abnormal": "Görüntü iltihap, kist, nodül, yapışıklık, fistül ya da kitle gösterebilir, bulguların bir kısmı tedavi gerektirmez. Radyoloğun raporunu muayene ve tahlillerle birlikte tedaviyi yürüten hekim değerlendirir"
-      },
-      "sr_cyrl": {
-        "what": "Преглед мале карлице магнетном резонанцом: мокраћне бешике, завршног дијела цријева, простате или материце и јајника, околних мишића и лимфних чворова",
-        "how": "Пацијент лежи на леђима у тунелу апарата, изнад карлице се поставља пријемни калем; дио протокола тражи контраст у вену, а понекад се тражи умјерено пуна бешика; обично траје 30-45 минута",
-        "when": "Разјашњење налаза ултразвука, упоран бол у карлици, ендометриоза и миоми, процјена фистула и упалних промјена завршног дијела цријева, промјене на простати, повреда карлице, праћење након лијечења",
-        "prep": "Обично се тражи да се неколико сати не једе, уз посебно упутство о пијењу; унапријед пријавити метал у тијелу, пејсмејкер, спиралу и клаустрофобију, скинути накит и одјећу са металом, понијети раније снимке и налазе",
-        "abnormal": "Снимак може показати упалу, цисте, чворове, прираслице, фистуле или творбу, а дио налаза не тражи лијечење. Закључак радиолога, уз преглед и анализе, процјењује љекар који води лијечење"
-      }
-    }
-  },
-  {
     "slug": "newborn-discharge",
     "entity_type": "medical_service",
     "translations": {

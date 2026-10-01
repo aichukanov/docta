@@ -48,54 +48,6 @@
     }
   },
   {
-    "slug": "intramuscular-medication-application",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Разовое введение назначенного препарата в мышцу в процедурном кабинете",
-        "how": "Медсестра выбирает мышцу плеча, бедра или ягодицы, обрабатывает кожу и вводит препарат иглой под прямым углом; укол длится секунды, при первом введении обычно просят подождать в клинике",
-        "when": "Назначенные препараты, которые вводятся только в мышцу, продолжение лечения сразу после приёма врача, ситуации, когда таблетка не подходит из-за рвоты или проблем с желудком",
-        "prep": "Принести назначение врача и сам препарат, если клиника его не выдаёт; перед уколом лучше поесть, сказать об аллергиях и о приёме кроверазжижающих",
-        "abnormal": "Из мышцы препарат всасывается быстрее, чем из таблетки, и место укола день-два может быть чувствительным. Сыпь, отёк лица или затруднённое дыхание сразу после введения требуют немедленной помощи, а твёрдое болезненное уплотнение с температурой — осмотра врача"
-      },
-      "en": {
-        "what": "A single administration of a prescribed medication into a muscle in a treatment room",
-        "how": "The nurse selects a muscle of the upper arm, thigh or buttock, cleans the skin and injects the medication with the needle at a right angle; the injection takes seconds, and for a first dose the patient is usually asked to wait at the clinic",
-        "when": "Prescribed medicines that can only be given into a muscle, continuation of treatment right after a consultation, situations where tablets are unsuitable because of vomiting or stomach problems",
-        "prep": "Bring the prescription and the medicine itself if the clinic does not supply it; it is better to eat beforehand, and to mention allergies and blood-thinning medication",
-        "abnormal": "A medicine given into a muscle is absorbed faster than a tablet, and the site may stay tender for a day or two. A rash, facial swelling or breathing difficulty right after the injection needs immediate help, and a firm painful lump with fever needs a doctor's review"
-      },
-      "sr": {
-        "what": "Jednokratno davanje propisanog lijeka u mišić u ambulanti",
-        "how": "Sestra bira mišić nadlaktice, buta ili sjedalne regije, dezinfikuje kožu i ubrizgava lijek iglom pod pravim uglom; ubod traje nekoliko sekundi, a kod prve doze se obično traži da se sačeka u klinici",
-        "when": "Propisani lijekovi koji se daju samo u mišić, nastavak terapije odmah poslije pregleda, situacije kada tableta nije pogodna zbog povraćanja ili tegoba sa želucem",
-        "prep": "Ponijeti nalog ljekara i sam lijek ako ga klinika ne izdaje; prije uboda je bolje nešto pojesti, prijaviti alergije i terapiju za razrjeđivanje krvi",
-        "abnormal": "Iz mišića se lijek upija brže nego iz tablete, a mjesto uboda može biti osjetljivo dan-dva. Osip, otok lica ili otežano disanje odmah poslije davanja traže hitnu pomoć, a tvrd i bolan čvorić uz povišenu temperaturu pregled ljekara"
-      },
-      "de": {
-        "what": "Einmalige Gabe eines verordneten Medikaments in den Muskel im Behandlungsraum",
-        "how": "Die Pflegekraft wählt einen Muskel an Oberarm, Oberschenkel oder Gesäß, desinfiziert die Haut und spritzt das Medikament im rechten Winkel; die Injektion dauert Sekunden, bei der ersten Gabe wird meist um eine kurze Wartezeit in der Praxis gebeten",
-        "when": "Verordnete Medikamente, die nur in den Muskel gegeben werden können, Fortsetzung der Behandlung direkt nach der Sprechstunde, Situationen, in denen Tabletten wegen Erbrechen oder Magenbeschwerden nicht infrage kommen",
-        "prep": "Verordnung und das Medikament selbst mitbringen, falls die Praxis es nicht ausgibt; vorher möglichst etwas essen, Allergien und blutverdünnende Medikamente angeben",
-        "abnormal": "Aus dem Muskel wird ein Medikament schneller aufgenommen als aus einer Tablette, die Einstichstelle kann ein bis zwei Tage empfindlich bleiben. Hautausschlag, Schwellung im Gesicht oder Atemnot direkt nach der Gabe erfordern sofortige Hilfe, ein harter schmerzhafter Knoten mit Fieber eine ärztliche Kontrolle"
-      },
-      "tr": {
-        "what": "Hekimin yazdığı ilacın müdahale odasında tek seferde kas içine verilmesi",
-        "how": "Hemşire kolun, uyluğun veya kalçanın kasını seçer, cildi temizler ve ilacı dik açıyla verir; iğne birkaç saniye sürer, ilk dozda genellikle klinikte kısa süre beklenmesi istenir",
-        "when": "Yalnızca kas içine verilebilen ilaçlar, muayeneden hemen sonra tedavinin sürdürülmesi, kusma veya mide sorunları nedeniyle tabletin uygun olmadığı durumlar",
-        "prep": "Hekim isteğini ve klinik vermiyorsa ilacın kendisini getirin; işlemden önce bir şeyler yemek iyi olur, alerjiler ve kan sulandırıcı ilaçlar bildirilir",
-        "abnormal": "Kas içine verilen ilaç tablete göre daha hızlı emilir, iğne yeri bir iki gün hassas kalabilir. İşlemden hemen sonra döküntü, yüzde şişlik veya nefes darlığı acil yardım gerektirir; ateşle birlikte sert ve ağrılı şişlik ise hekim değerlendirmesi ister"
-      },
-      "sr_cyrl": {
-        "what": "Једнократно давање прописаног лијека у мишић у амбуланти",
-        "how": "Сестра бира мишић надлактице, бута или сједалне регије, дезинфикује кожу и убризгава лијек иглом под правим углом; убод траје неколико секунди, а код прве дозе се обично тражи да се сачека у клиници",
-        "when": "Прописани лијекови који се дају само у мишић, наставак терапије одмах послије прегледа, ситуације када таблета није погодна због повраћања или тегоба са желуцем",
-        "prep": "Понијети налог љекара и сам лијек ако га клиника не издаје; прије убода је боље нешто појести, пријавити алергије и терапију за разрјеђивање крви",
-        "abnormal": "Из мишића се лијек упија брже него из таблете, а мјесто убода може бити осјетљиво дан-два. Осип, оток лица или отежано дисање одмах послије давања траже хитну помоћ, а тврд и болан чворић уз повишену температуру преглед љекара"
-      }
-    }
-  },
-  {
     "slug": "subconjunctival-injection",
     "entity_type": "medical_service",
     "translations": {

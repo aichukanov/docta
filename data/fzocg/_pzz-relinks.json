@@ -1,0 +1,200 @@
+[
+	{
+		"tariff_id": 371,
+		"code": "A01001",
+		"pzz_name": "Preventivni pregled djece u 1. godini života",
+		"from": "first-anesthesiologist-examination",
+		"from_sr": "Prvi pregled - anesteziolog",
+		"to": "preventive-examination-up-to-age-1",
+		"to_sr": "Preventivni pregled u dobi do 1. godine života",
+		"action": "relink",
+		"why": "вручную: по названию автомат выбрал соседа «u 2. godini»; «до 1 года» подтверждают и смысл, и коды ДЗ 80 (A01001) и 127 (MO_A01001)"
+	},
+	{
+		"tariff_id": 142,
+		"code": "H01005",
+		"pzz_name": "Dubinska individualna terapija (savjetodavna terapija)",
+		"from": "individual-cognitive-or-behavioral-psychotherapy-session",
+		"from_sr": "Individualna seansa kognitivno ili bihejvioralno baziranih psihoterapijskih tehnika",
+		"to": null,
+		"to_sr": null,
+		"action": "unlink",
+		"why": "PZZ-позиция не о «Individualna seansa kognitivno ili bihejvioralno baziranih psihoterapijskih tehnika» (сходство 0.30), подходящей услуги в каталоге нет — отвязываем"
+	},
+	{
+		"tariff_id": 143,
+		"code": "H01006",
+		"pzz_name": "Grupna psihoterapija psihodinamskih i sociodinamskih kinflikata (grupa sa najmanje 6 osoba)",
+		"from": "group-psychotherapy-session-for-anxiety-depression-or-psychotic-disorders",
+		"from_sr": "Dnevna seansa grupne psihoterapije pacijenata sa anksioznim, depresivnim ili psihotičnim poremećajem",
+		"to": "group-psychodynamic-and-sociodynamic-therapy",
+		"to_sr": "Grupna psihoterapija psihodinamičkih i sociodinamičkih konflikata",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Dnevna seansa grupne psihoterapije pacijenata sa anksioznim, depresivnim ili psihotičnim poremećajem» (сходство 0.29); по названию это «Grupna psihoterapija psihodinamičkih i sociodinamičkih konflikata» (0.70)"
+	},
+	{
+		"tariff_id": 103,
+		"code": "I01001",
+		"pzz_name": "Preventivni pregled rizičnog neonatusa i odojčeta",
+		"from": "first-infectious-disease-specialist-examination",
+		"from_sr": "Prvi pregled - infektolog",
+		"to": "high-risk-neonate-and-infant-preventive-examination",
+		"to_sr": "Preventivni pregled rizičnog neonatusa i odojčeta",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Prvi pregled - infektolog» (сходство 0.28); по названию это «Preventivni pregled rizičnog neonatusa i odojčeta» (1.00)"
+	},
+	{
+		"tariff_id": 104,
+		"code": "I01002",
+		"pzz_name": "Kontrolni preventivni pregled rizičnog neonatusa i odojčeta",
+		"from": "follow-up-infectious-disease-specialist-examination",
+		"from_sr": "Ponovni pregled - infektolog",
+		"to": "high-risk-neonate-and-infant-follow-up-examination",
+		"to_sr": "Kontrolni preventivni pregled rizičnog neonatusa i odojčeta",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Ponovni pregled - infektolog» (сходство 0.26); по названию это «Kontrolni preventivni pregled rizičnog neonatusa i odojčeta» (1.00)"
+	},
+	{
+		"tariff_id": 2,
+		"code": "J06001",
+		"pzz_name": "Snimanje skeleta lobanje i lica-za svaki snimak",
+		"from": "x-ray-head-craniogram",
+		"from_sr": "Rendgen glave (Kraniogram)",
+		"to": "skull-and-face-x-ray-per-image",
+		"to_sr": "Snimanje skeleta lobanje i lica za svaki snimak",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Rendgen glave (Kraniogram)» (сходство 0.00); по названию это «Snimanje skeleta lobanje i lica za svaki snimak» (1.00)"
+	},
+	{
+		"tariff_id": 261,
+		"code": "L01001",
+		"pzz_name": "Patronažna posjeta djeteta u prvoj godini života na zdravstvenom vaspitanju majke i porodice",
+		"from": "histopathology-of-appendectomy-specimen",
+		"from_sr": "Pregled amputiranog apendiksa",
+		"to": "newborn-and-family-home-patronage-visit",
+		"to_sr": "Patronažna posjeta novorođenčetu i porodici",
+		"action": "relink",
+		"why": "вручную: смысл совпадает, формулировка короче порога; коды ДЗ 80 (HN_L01001) и 127 (MO_HN_L01001)"
+	},
+	{
+		"tariff_id": 262,
+		"code": "L01002",
+		"pzz_name": "Patronažna posjeta kod djeteta u drugoj godini života",
+		"from": "histopathology-of-colon-endoscopic-biopsy",
+		"from_sr": "Pregled endoskopske biopsije kolona",
+		"to": "home-patronage-visit-child-age-2",
+		"to_sr": "Patronažna posjeta djetetu u drugoj godini života",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Pregled endoskopske biopsije kolona» (сходство 0.07); по названию это «Patronažna posjeta djetetu u drugoj godini života» (0.88)"
+	},
+	{
+		"tariff_id": 263,
+		"code": "L01003",
+		"pzz_name": "Patronažna posjeta kod djeteta u četvrtoj godini života",
+		"from": "histopathology-of-lip-biopsy",
+		"from_sr": "Pregled biopsije usne (labium oris)",
+		"to": "home-patronage-visit-child-age-4",
+		"to_sr": "Patronažna posjeta djetetu u četvrtoj godini života",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Pregled biopsije usne (labium oris)» (сходство 0.00); по названию это «Patronažna posjeta djetetu u četvrtoj godini života» (0.89)"
+	},
+	{
+		"tariff_id": 264,
+		"code": "L01007",
+		"pzz_name": "Patronažna posjeta trudnica sa zdravstvenim vaspitanjem (savjetovanje u trudnoći i pripremi za porođaj, o dojenju, pravilnoj ishrani i njezi novorođenčeta (odojčeta))",
+		"from": "histopathology-of-hemorrhoidectomy-specimen",
+		"from_sr": "Pregled hemoroidektomije",
+		"to": "pregnancy-patronage-visit-birth-and-newborn-care-preparation",
+		"to_sr": "Patronažna posjeta trudnici za pripremu na porod i njegu novorođenčeta",
+		"action": "relink",
+		"why": "вручную: смысл совпадает; коды ДЗ 80 и 127 (HN_L01007)"
+	},
+	{
+		"tariff_id": 265,
+		"code": "L01008",
+		"pzz_name": "Patronažna posjeta kod babinjara sa zdravstvenim vaspitanjem",
+		"from": "histopathology-of-colon-polyp-endoscopic-resection",
+		"from_sr": "Pregled endoskopski reseciranog polipa kolona",
+		"to": "postpartum-patronage-visit",
+		"to_sr": "Patronažna posjeta babinjari",
+		"action": "relink",
+		"why": "вручную: смысл совпадает; коды ДЗ 80 и 127 (HN_L01008)"
+	},
+	{
+		"tariff_id": 266,
+		"code": "L01009",
+		"pzz_name": "Patronažna posjeta kod žena koje više od 3. godine nisu bile kod ginekologa",
+		"from": "histopathology-of-partial-gastrectomy-with-ulcer",
+		"from_sr": "Pregled parcijalne resekcije želuca sa ulkusom",
+		"to": "patronage-visit-for-women-without-gynecological-visit-3-years",
+		"to_sr": "Patronažna posjeta ženama koje 3 godine nisu bile kod ginekologa",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Pregled parcijalne resekcije želuca sa ulkusom» (сходство 0.07); по названию это «Patronažna posjeta ženama koje 3 godine nisu bile kod ginekologa» (0.86)"
+	},
+	{
+		"tariff_id": 267,
+		"code": "L01012",
+		"pzz_name": "Patronažna posjeta osoba starijih od 65 godina, koje tokom kalendarske godine nisu bile kod svog izabranog doktora",
+		"from": "histopathology-of-myoma",
+		"from_sr": "Pregled mioma",
+		"to": "senior-patronage-visit-over-65",
+		"to_sr": "Patronažna posjeta osobama starijim od 65 godina",
+		"action": "relink",
+		"why": "вручную: смысл совпадает; коды ДЗ 80 и 127 (HN_L01012)"
+	},
+	{
+		"tariff_id": 203,
+		"code": "X01023",
+		"pzz_name": "Davanje metadona",
+		"from": "nasogastric-tube-placement",
+		"from_sr": "Plasiranje nazogastrične sonde",
+		"to": "methadone-administration",
+		"to_sr": "Davanje metadona",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Plasiranje nazogastrične sonde» (сходство 0.13); по названию это «Davanje metadona» (1.00)"
+	},
+	{
+		"tariff_id": 450,
+		"code": "X01024",
+		"pzz_name": "Lokalno apliciranje lijeka (vaginalno i cervikalno)",
+		"from": "uncomplicated-wound-examination-and-dressing",
+		"from_sr": "Pregled, kontrola i previjanje nekomplikovane rane",
+		"to": "vaginal-suppository-application",
+		"to_sr": "Lokalno apliciranje lijeka vaginalete",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Pregled, kontrola i previjanje nekomplikovane rane» (сходство 0.12); по названию это «Lokalno apliciranje lijeka vaginalete» (0.77)"
+	},
+	{
+		"tariff_id": 451,
+		"code": "X01025",
+		"pzz_name": "Stavljanje IUD",
+		"from": "lymph-node-biopsy-or-excision",
+		"from_sr": "Ekstirpacija ili biopsija limfne žlijezde",
+		"to": "intrauterine-device-insertion",
+		"to_sr": "Postavljanje IUD",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Ekstirpacija ili biopsija limfne žlijezde» (сходство 0.00); по названию это «Postavljanje IUD» (0.87)"
+	},
+	{
+		"tariff_id": 416,
+		"code": "X02003",
+		"pzz_name": "Incizija abscesa",
+		"from": "incision-and-drainage-of-larger-skin-or-subcutaneous-abscess-carbuncle-or-hematoma",
+		"from_sr": "Incizija i drenaža većeg kožnog ili potkožnog apscesa, karbunkula, flegmone ili hematoma",
+		"to": "abscess-incision",
+		"to_sr": "Incizija apscesa",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Incizija i drenaža većeg kožnog ili potkožnog apscesa, karbunkula, flegmone ili hematoma» (сходство 0.24); по названию это «Incizija apscesa» (0.81)"
+	},
+	{
+		"tariff_id": 220,
+		"code": "X02014",
+		"pzz_name": "Terapijska punkcija pleure",
+		"from": "thoracentesis",
+		"from_sr": "Torakocenteza",
+		"to": "therapeutic-pleural-puncture",
+		"to_sr": "Terapijska punkcija pleure",
+		"action": "relink",
+		"why": "PZZ-позиция не о «Torakocenteza» (сходство 0.00); по названию это «Terapijska punkcija pleure» (1.00)"
+	}
+]

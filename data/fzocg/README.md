@@ -127,6 +127,30 @@ mysql ... < server/sql/update-medical-service-tariffs-name-match.sql
 
 Сводный VERIFY-чеклист по всем 9 документам (7 FZOCG + 2 KBKotor) — в [sekundarna-ostalo/_VERIFY_LIST.md](sekundarna-ostalo/_VERIFY_LIST.md). 19 HIGH-priority items требуют ручной сверки с PDF, ~1100 INFO — зафиксированные расхождения с выбранным каноном.
 
+### ⚠️ Сдвиг имён в FINAL — найден и исправлен 2026-09 (миграция 038)
+
+При слиянии OCR и LLM (`merge_to_final.py`) там, где имена «содержательно» расходились (`_sources.name = llm-substantive`), бралось имя LLM. А LLM местами пропускал или склеивал строку, и имена съезжали на соседний код, иногда вместе с ценой (`_sources.price = llm-fallback`). Под верным кодом на странице услуги стояло чужое название: у X01036 (биопсия щитовидной железы) — «катетеризация у мужчин», у X10001 — «manjih» вместо «malignih».
+
+Исправлены 123 строки секундарного прайса. Как искали и чем подтверждали — [docs/audit/service-names-2026-09.md](../../docs/audit/service-names-2026-09.md), раздел «038». Правки внесены и в `sekundarna-ostalo-FINAL.json` (`_sources.name = shift-fix-2026-09`), так что полная пересборка из FINAL их не откатит. Скрипты:
+
+| скрипт | что делает |
+|---|---|
+| `scripts/fzocg/find-shifted-tariff-names.mjs` | имя в БД не похоже на построчный OCR этого кода (триграммы) |
+| `scripts/fzocg/find-sibling-shifted-tariff-names.mjs` | имя совпадает с соседом по серии почти целиком, но отличается ключевым словом |
+| `scripts/fzocg/plan-tariff-name-fixes.mjs` | решение по каждой строке; ручные решения — `_tariff-overrides.json` |
+| `scripts/fzocg/plan-pzz-relinks.mjs` | PZZ-тарифы на больничных услугах; ручные решения — `_pzz-relink-overrides.json` |
+
+Независимые проверки, на которых всё держится:
+- **построчный OCR** (`paddleocr/*.items.json`) позиции не путает. Исключение — блок PZZ H01: там сдвинут сам OCR, а БД права;
+- **прайс Данило** (`data/clinic-services-import/bolnica-danilo-cetinje/_full.json`): 2790 кодов с названиями, цена = 3 × «ambulanta»;
+- **цены клиник 88 и 137**: = 2,5 × «odjeljenje» (у операций — × «operacija»), = 1,17 × «ambulanta».
+
+Не исправлено: около 70 строк, где OCR нечитаем, а услуги или клиник нет, — сверять по PDF. Список лежит в `_tariff-name-fixes.json` → `manual`.
+
+### ⚠️ Перелинковка по голому коду снова сломает PZZ
+
+Коды PZZ и секундарного прайса пересекаются и значат разное: X01025 в PZZ — «Stavljanje IUD», в секундарном — биопсия лимфоузла; L01001 — патронаж против гистологии. `update-medical-service-tariffs-linkage.sql` связывает по коду без учёта прайса, и PZZ-позиция садится на больничную услугу. 038 перенесла 16 таких тарифов и отвязала один. Перед повторной линковкой ограничьте её: PZZ-тарифы — только к услугам, которые держат дома здоровья (коды `HN_`, `MO_`, `_KO` или ДЗ 80/85 с голым кодом), секундарные — только к больницам 88/131/137.
+
 ## Схемы цен (`scheme` column)
 
 | Scheme | Колонки | Где встречается |

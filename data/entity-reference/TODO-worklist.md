@@ -1,5 +1,11 @@
 # Справки: что осталось написать
 
+> **Файл исторический.** Актуальный остаток считается скриптом:
+> `node scripts/entity-reference/build-reference-roster.mjs --min-clinics N`.
+> На 2026-10-01 тиры ≥3 клиник закрыты; что осталось и в каком порядке —
+> в `prd/service-reference-content/PROGRESS.md` → «План работы».
+
+
 Сгенерировано из БД + выгрузок GSC (`data/gsc/perf.txt`, `perf7d.txt`).
 Только услуги без карточки в `medical_service_reference_info`, у которых есть хотя бы одна клиника.
 

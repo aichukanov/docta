@@ -522,3 +522,126 @@
 | Ultrazvuk CNS |  | 40 |  |  |
 | Ultrazvuk perifernih regija |  | 60 |  |  |
 | VZV IgG, VZV IgM (Varicella-zoster) | 36 |  |  |  |
+
+## 5. Импорт недостающих позиций (миграция 048)
+
+Построено 2026-10-02 из раздела 4. 138 строк: 107 — на существующие записи каталога, 31 — на 15 новых (помечены **новая**). Сопоставление проверено построчно.
+
+| Запись каталога | Название на сайте | PG | NK | TV | BD |
+|---|---|---|---|---|---|
+|  `lab:5-hiaa-in-24h-urine` | 5-HIAA u 24-časovnom urinu (test za karcinoidni tumor) | 30 |  |  |  |
+|  `lab:acid-phosphatase` | Kisela fosfataza | 6 |  |  |  |
+|  `lab:adenovirus-igg` | ADV IgG (adenovirus IgG) | 18 |  |  |  |
+|  `lab:adenovirus-igg-igm-panel` | ADV IgG, ADV IgM (adenovirus IgG i IgM) | 36 |  |  |  |
+|  `lab:adenovirus-igm` | ADV IgM (adenovirus IgM) | 18 |  |  |  |
+|  `lab:albumin-creatinine-ratio` | ACR analiza (odnos albumin / kreatinin) | 24 |  |  | 24 |
+|  `lab:aldosterone` | Aldosteron (hormon nadbubrežne žlijezde) |  | 35 |  |  |
+|  `lab:ana-antinuclear-antibodies` | s-ANA (antinuklearna antitijela) | 24 |  |  |  |
+|  `lab:anti-gad-antibodies` | Anti-GAD (marker autoimunog dijabetesa / tip 1) |  | 28 |  |  |
+|  `lab:antithrombin-iii` | Antitrombin III (test na poremećaje koagulacije, citratna plazma) | 24 |  |  |  |
+|  `lab:apoa-i` | APO A (Apolipoprotein A1) |  | 12 |  |  |
+|  `lab:apolipoprotein-b` | APO B (Apolipoprotein B) |  | 12 |  |  |
+|  `lab:avri-multiplex-16` | AVRI multiplex – detekcija 16 respiratornih virusa | 75 |  |  | 75 |
+| **новая** Osnovni laboratorijski nalazi `lab:basic-lab-panel` | Osnovni laboratorijski nalazi (glukoza, urea, kreatinin, holesterol, trigliceridi, AST, ALT) / Osnovni laboratorijski nalazi | 14 | 24 | 40 |  |
+| **новая** Osnovni laboratorijski nalazi sa frakcijama holesterola `lab:basic-lab-panel-with-cholesterol-fractions` | Osnovni laboratorijski nalazi + frakcije holesterola (HDL, LDL) / Osnovni laboratorijski nalazi sa frakcijama holesterola | 20 | 34 | 56 |  |
+| **новая** Osnovni laboratorijski nalazi sa urinom `lab:basic-lab-panel-with-urinalysis` | Osnovni laboratorijski nalazi sa urinom |  | 30 | 50 |  |
+|  `lab:beta-2-glycoprotein-1-igg` | Beta-2 GP1 IgG | 18 |  |  |  |
+|  `lab:beta-2-glycoprotein-1-igm` | Beta-2 GP1 IgM | 18 |  |  |  |
+|  `lab:beta-2-microglobulin` | Beta-2 mikroglobulin (marker limfoproliferativnih bolesti) | 24 |  |  | 24 |
+|  `lab:bicarbonates` | Bikarbonati (kiselinsko-bazna ravnoteža) | 24 |  |  |  |
+|  `lab:bnp` | BNP (marker za srčanu insuficijenciju) |  | 40 |  |  |
+|  `lab:borrelia-burgdorferi-igg` | Borelija IgG (Lyme bolest) | 18 |  |  |  |
+|  `lab:borrelia-burgdorferi-igg-igm-panel` | Borelija IgG, Borelija IgM (Lyme bolest) | 36 |  |  |  |
+|  `lab:borrelia-burgdorferi-igm` | Borelija IgM (Lyme bolest) | 18 |  |  |  |
+|  `lab:calcium-in-urine` | Kalcijum u urinu | 6 |  |  | 6 |
+|  `lab:candida-albicans-pcr` | Candida albicans (Real-Time PCR) | 27 |  |  | 27 |
+| **новая** Kardiološki paket laboratorijskih nalaza `lab:cardiology-lab-package` | Kardiološki paket lab. nalaza (KKS, osnovni lab. nalazi paket 2, sedimentacija, TSH, FT4, kalijum, natrijum) | 50 |  |  |  |
+| **новая** KKS, CRP, AST, ALT, LDH `lab:cbc-crp-ast-alt-ldh` | KKS, CRP, AST, ALT, LDH | 22 | 24 | 40 |  |
+| **новая** KKS, CRP, D-dimer `lab:cbc-crp-d-dimer` | KKS, CRP, D-dimer | 32 | 33 | 54 |  |
+| **новая** KKS, glukoza, urin `lab:cbc-glucose-and-urinalysis` | KKS, glukoza, urin | 15 | 15 | 24 |  |
+|  `lab:cbc-with-crp-and-mxa` | KKS + CRP + MxA (immunoturbidimetric rapid determination) | 18 |  |  | 18 |
+| **новая** Sistematski paket 1 laboratorijskih nalaza `lab:check-up-lab-package-1` | Sistematski paket 1 lab. nalaza (KKS, osnovni lab. nalazi paket 2, sedimentacija, TSH, FT4, urin | 50 |  |  |  |
+| **новая** Sistematski paket 2 laboratorijskih nalaza `lab:check-up-lab-package-2` | Sistematski paket 2 lab. nalaza (sistematski paket 1 + PSA, specificni antigen prostate) | 65 |  |  |  |
+|  `lab:chromogranin-a` | Hromogranin A (neuroendokrini marker) | 48 |  |  | 40 |
+|  `lab:coxsackie-b-igg` | Coxackie IgG | 18 |  |  |  |
+|  `lab:coxsackie-b-igm` | Coxackie IgM | 18 |  |  |  |
+|  `lab:coxsackie-igg-igm-panel` | Coxackie IgG, Coxackie IgM | 36 |  |  |  |
+|  `lab:cytomegalovirus-igg-igm-panel` | CMV IgG, CMV IgM | 36 |  |  |  |
+|  `lab:epstein-barr-igg-igm-panel` | EBV IgG, EBV IgM (Epstein-Barr virus) | 36 |  |  |  |
+|  `lab:food-allergy-panel-30-allergens` | Polycheck Food 30-II – nutritivni panel (30 alergena) / Food panel (30 alergena) | 60 | 72 |  | 60 |
+|  `lab:free-beta-hcg` | F-BHCG (slobodni beta-HCG) | 24 |  |  |  |
+|  `lab:free-estriol` | s-Free estriol (slobodni estriol) | 24 |  |  | 24 |
+|  `lab:gad-antibodies` | GAD (test za dijabetes tip 1) | 48 |  |  |  |
+| **новая** Glijadin IgM antitijela `lab:gliadin-igm-antibodies` | s-AGA-T IgM (antiglijadinska antitijela IgM – celijakija) | 18 | 18 | 30 | 18 |
+|  `lab:hav-total-antibodies` | Anti-HAV (hepatitis A) |  | 18 |  |  |
+|  `lab:helicobacter-pylori-igg-iga-panel` | HBP IgG, HBP IgA (Helicobacter pylori – oba tipa antitijela) | 36 |  |  |  |
+|  `lab:herpes-simplex-i-igg-igm-panel` | HSV 1 lgG, HSV 1 IgM | 36 |  |  |  |
+|  `lab:herpes-simplex-ii-igg-igm-panel` | HSV 2 IgG, HSV 2 lgM | 36 |  |  |  |
+|  `lab:ia-2-antibodies` | Anti-IA2 (marker autoimunog dijabetesa / tip 1) |  | 30 |  |  |
+|  `lab:igf-1` | IGF-I (marker hormona rasta) |  | 40 |  |  |
+|  `lab:immunoglobulins-panel-igg-iga-igm` | lmunoglobulini (IgG, IgA, IgM) | 18 |  |  |  |
+|  `lab:inhalant-allergy-panel-30-allergens` | Polycheck Inhalant 30-I – inhalatorni panel (30 alergena) / Inhalacioni panel ( 30 alergena ) | 60 | 72 |  | 60 |
+|  `lab:inhibin-a` | Inhibin A | 36 |  |  | 36 |
+|  `lab:le-cells` | LE ćelije (test na autoimune bolesti, citratna plazma) | 24 |  |  |  |
+|  `lab:lipid-profile` | Lipidni status (holesterol, trigliceridi, HDL, LDL) | 10 |  |  |  |
+|  `lab:lipoprotein-a` | Lipoprotein A |  | 12 |  |  |
+|  `lab:lupus-anticoagulant` | LA (lupus antikoagulans, citratna plazma) | 18 |  |  |  |
+|  `lab:microalbumin-in-urine` | Mikroalbumini u urinu (rana detekcija oštećenja bubrega) | 18 |  |  | 18 |
+|  `lab:mumps-igg` | Mumps IgG | 18 |  |  |  |
+|  `lab:mumps-igg-igm-panel` | Mumps IgG, Mumps IgM | 36 |  |  |  |
+|  `lab:mumps-igm` | Mumps IgM | 18 |  |  |  |
+|  `lab:mxa-crp` | CRP MxA (brza metoda – CRP + virusni marker) |  | 12 | 20 |  |
+|  `lab:mycoplasma-chlamydia-pneumoniae-panel` | Mycoplasma i Chlamydia pneumoniae – respiratorne infekcije | 55 |  |  | 55 |
+| **новая** Mycoplasma i Chlamydia pneumoniae + AVRI multiplex `lab:mycoplasma-chlamydia-pneumoniae-with-avri-multiplex` | Mycoplasma/Chlamydia pneumoniae + AVRI multiplex | 110 |  |  | 110 |
+|  `lab:ovarian-antibodies` | Anti-ovarijalna antitijela | 24 |  |  |  |
+|  `lab:papp-a` | PAPP-A (plazma protein A povezan s trudnoćom) | 24 |  |  |  |
+|  `lab:parvovirus-b19-iga` | Parvo B19 IgA | 18 |  |  |  |
+|  `lab:parvovirus-b19-igg` | Parvo B19 IgG | 18 |  |  |  |
+|  `lab:parvovirus-b19-igg-iga-panel` | Parvo B19 IgG, Parvo B19 IgA | 36 |  |  |  |
+|  `lab:phosphorus-in-urine` | Fosfor u urinu | 6 |  |  | 6 |
+|  `lab:prolactin-3x-with-iv-cannula` | Prolaktin (3 puta) sa braunilom | 36 |  |  | 30 |
+|  `lab:protein-c` | Protein C (citratna plazma) | 42 |  |  |  |
+|  `lab:protein-s` | Protein S (citratna plazma) | 42 |  |  |  |
+|  `lab:protein-s-100` | S100 protein (marker melanoma) |  | 42 |  |  |
+|  `lab:renin` | Renin (hormon regulacije krvnog pritiska) |  | 32 |  |  |
+|  `lab:rubella-igg-igm-panel` | Rubela IgG, Rubela IgM | 36 |  |  |  |
+|  `lab:spermatozoa-antibodies-asa` | Anti-spermatozoidna antitijela | 36 |  |  |  |
+| **новая** STD Multiplex 8 – detekcija 8 patogena `lab:std-multiplex-8` | STD Multiplex 8 – detekcija bilo koja 8 navedena patogena | 125 |  |  | 125 |
+|  `lab:thyroid-panel-tsh-ft3-ft4` | TSH, FT3, FT4 | 26 |  |  | 26 |
+|  `lab:toxoplasma-igg-igm-panel` | TOXO IgG, TOXO IgM | 36 |  |  |  |
+|  `lab:ultra-sensitive-tsh` | Ultra TSH (ultrasenzitivni TSH test) | 12 |  |  | 12 |
+|  `lab:uric-acid-in-urine` | Mokraćna kiselina u urinu | 6 |  |  | 6 |
+|  `lab:varicella-zoster-igg-igm-panel` | VZV IgG, VZV IgM (Varicella-zoster) | 36 |  |  |  |
+|  `lab:znt8-antibodies` | Anti-ZnT8 (marker autoimunog dijabetesa / tip 1) |  | 54 |  |  |
+|  `svc:crp-turbidimetry` | CRP (immunoturbidimetric rapid determination) | 10 |  |  | 10 |
+|  `svc:ct-scan-reading` | Opis CT pregleda |  | 50 |  |  |
+| **новая** Dopler donjih ekstremiteta i vrata `svc:doppler-lower-extremities-and-neck` | Dopler donjih ekstremiteta i vrata |  | 80 |  |  |
+|  `svc:ecg` | EKG |  |  |  | 15 |
+|  `svc:follow-up-specialist-examination` | Kontrolni specijalistički pregled |  | 40 |  |  |
+|  `svc:follow-up-subspecialist-examination` | Kontrolni subspecijalistički pregled / Subspecijalistički kontrolni pregled | 50 |  |  | 50 |
+| **новая** Nazofaringolaringoskopija sa video otoskopijom `svc:nasopharyngolaryngoscopy-with-video-otoscopy` | Nazofaringolaringoskopija sa video otoskopijom (kombinovani endoskopski pregled nosa, ždrijela i grkljana, uz video pregled uha) | 80 |  |  |  |
+|  `svc:peripheral-region-ultrasound` | Ultrazvuk perifernih regija |  | 60 |  |  |
+|  `svc:specialist-examination` | Specijalistički pregled |  | 50 |  |  |
+|  `svc:specialist-examination-with-ultrasound` | Specijalistički pregled sa ultrazvukom |  | 80 |  |  |
+|  `svc:subspecialist-examination` | Subspecijalistički pregled | 60 |  |  |  |
+| **новая** Subspecijalistički pregled dječijeg fizijatra `svc:subspecialist-pediatric-physiatrist-examination` | Subspecijalisticki pregled dječijeg fizijatra | 60 |  |  |  |
+|  `svc:tympanometry` | Timpanometrija | 15 |  |  | 15 |
+|  `svc:ultrasound-infant-cns` | Ultrazvuk CNS |  | 40 |  |  |
+
+### Не импортировано
+
+| Филиал | Название на сайте | Почему |
+|---|---|---|
+| NK | RTG grudnog koša | у NK строка x-ray-chest уже есть, 35 € = сайт |
+| NK | PH hirurgija 2 – dodatni uzorak | на сайте NK четыре «доп. образца PH» на две наши записи |
+| NK | PAPA test – tečna citologija sa uzimanjem brisa | неясно, как соотносится с PAP-позициями (решение 2026-10-02) |
+| NK | Dodatni uzorak za PH analizu 2 | то же |
+| NK | Coxsackie B IgM | у NK строка coxsackie-b-igm уже есть (из «Coxackie IgM»), 18 € = сайт |
+| NK | Coxsackie B IgG, IgM | у NK две похожие панели по 36 €, наша уже занята «Coxackie IgG, Coxackie IgM» |
+| NK | Koprokultura – analiza stolice na bakterije (Salmonella, Shigella, E. coli O157) | у NK на сайте две копрокультуры (12 и 15 €), наша строка уже на первой |
+| TV | Mala obrada rane | у TV на сайте ещё и «Obrada rane – mala» 200 €, наша строка small-wound-care уже на ней |
+
+### Замечено попутно
+
+- Общий «Coxackie IgG/IgM» с сайта у нас висит на записях «Koksaki B» (coxsackie-b-*), а у Никшича на сайте есть и отдельные «Coxsackie B …». Новые строки Подгорицы положены туда же для единообразия; правильно — общие на coxsackie-virus-igg/igm. Отдельная правка каталога.
+- В каталоге две записи про GAD: gad-antibodies и anti-gad-antibodies — кандидат на слияние (у Никшича на сайте обе позиции с разной ценой, 48 и 28 €).

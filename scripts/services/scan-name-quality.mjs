@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Аудит качества названий услуг во всех шести локалях + покрытие синонимами.
+ * Аудит качества названий услуг или анализов (--catalog svc|lab) во всех шести
+ * локалях + покрытие синонимами.
  *
  * Разбор находок и план работ — docs/audit/service-names-2026-09.md.
  * Скрипт ничего не правит: он собирает рабочий список, по которому вычитка
@@ -13,9 +14,12 @@
  *                      опорного существительного («Перелом пяточной»);
  *   short_vs_en      — локаль вдвое короче name_en: смысл потерян либо сжат;
  *   copy_of_en       — name_de / name_tr / name_ru дословно равны name_en;
- *   no_synonyms      — у услуги нет ни одной строки в medical_service_synonyms.
+ *   empty_<loc>      — локаль пустая или NULL (у анализов такое есть);
+ *   mixed_script     — кириллица и латиница внутри одного слова (такое слово
+ *                      выглядит нормально, но не находится поиском);
+ *   no_synonyms      — у записи нет ни одной строки в таблице синонимов.
  *
- * Usage: node scripts/services/scan-name-quality.mjs [--min-clinics 0] [--json <path>]
+ * Usage: node scripts/services/scan-name-quality.mjs [--catalog svc|lab] [--min-clinics 0] [--json <path>]
  */
 
 import mysql from 'mysql2/promise';
@@ -25,8 +29,9 @@ import { fileURLToPath } from 'node:url';
 import { loadEnv, dbConfigFromEnv } from '../common/dedup-text.mjs';
 import {
 	EKAVICA, DIACRITIC_HOMOGRAPHS, RU_ADJ_TAIL, RU_ADJ_TAIL_OK, RU_LATIN_OK,
-	tokens, foldSerbian as fold, hasDiacritics, lastWord,
+	tokens, foldSerbian as fold, hasDiacritics, lastWord, mixedScriptWords,
 } from '../common/service-name-rules.mjs';
+import { catalogFromArgv } from '../common/name-review-catalog.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..', '..');
@@ -34,7 +39,8 @@ const ROOT = resolve(__dirname, '..', '..');
 const argMin = process.argv.indexOf('--min-clinics');
 const MIN_CLINICS = argMin > -1 ? Number(process.argv[argMin + 1]) : 0;
 const argJson = process.argv.indexOf('--json');
-const JSON_OUT = resolve(ROOT, argJson > -1 ? process.argv[argJson + 1] : 'data/service-names/_flags.json');
+const C = catalogFromArgv(ROOT);
+const JSON_OUT = resolve(ROOT, argJson > -1 ? process.argv[argJson + 1] : `${C.dir}/_flags.json`);
 
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -45,11 +51,11 @@ const [rows] = await db.query(`
 	SELECT s.id, s.slug, s.name_en, s.name_sr, s.name_sr_cyrl, s.name_ru, s.name_de, s.name_tr,
 	       COUNT(DISTINCT cs.clinic_id) AS clinics,
 	       GROUP_CONCAT(DISTINCT cat.name ORDER BY cat.name SEPARATOR ', ') AS categories,
-	       (SELECT COUNT(*) FROM medical_service_synonyms m WHERE m.medical_service_id = s.id) AS synonyms
-	  FROM medical_services s
-	  LEFT JOIN clinic_medical_services cs ON cs.medical_service_id = s.id
-	  LEFT JOIN medical_service_categories_relations rel ON rel.medical_service_id = s.id
-	  LEFT JOIN medical_service_categories cat ON cat.id = rel.medical_service_category_id
+	       (SELECT COUNT(*) FROM ${C.synonymTable} m WHERE m.${C.fk} = s.id) AS synonyms
+	  FROM ${C.table} s
+	  LEFT JOIN ${C.clinicTable} cs ON cs.${C.fk} = s.id
+	  LEFT JOIN ${C.categoryRelTable} rel ON rel.${C.fk} = s.id
+	  LEFT JOIN ${C.categoryTable} cat ON cat.id = rel.${C.categoryRelColumn}
 	 GROUP BY s.id
 	 ORDER BY clinics DESC, s.name_en`);
 await db.end();
@@ -87,6 +93,11 @@ const flag = (kind, r, detail) => {
 
 for (const r of rows) {
 	if (r.clinics < MIN_CLINICS) continue;
+	for (const col of ['name_en', 'name_sr', 'name_sr_cyrl', 'name_ru', 'name_de', 'name_tr']) {
+		if (!r[col] || !String(r[col]).trim()) { flag(`empty_${col.slice(5)}`, r, col); r[col] = ''; }
+	}
+	const mixed = ['name_sr', 'name_sr_cyrl', 'name_ru', 'name_de', 'name_tr'].flatMap((col) => mixedScriptWords(r[col]).map((w) => `${col.slice(5)}: ${w}`));
+	if (mixed.length) flag('mixed_script', r, mixed.join(', '));
 	const { name_en: en = '', name_sr: sr = '', name_ru: ru = '', name_de: de = '', name_tr: tr = '' } = r;
 
 	const ekavica = [...new Set(tokens(sr).filter((t) => EKAVICA.has(t)))];
@@ -121,7 +132,7 @@ for (const r of rows) {
 	buckets[c >= 10 ? '10+' : c >= 5 ? '5-9' : c >= 3 ? '3-4' : c === 2 ? '2' : c === 1 ? '1' : '0'] += 1;
 }
 
-console.log(`услуг: ${rows.length}, покрытие клиниками: ` + Object.entries(buckets).map(([k, v]) => `${k}=${v}`).join(' '));
+console.log(`${C.noun}: ${rows.length}, покрытие клиниками: ` + Object.entries(buckets).map(([k, v]) => `${k}=${v}`).join(' '));
 console.log('');
 for (const [kind, list] of [...Object.entries(flags), ['no_synonyms', noSynonyms]].sort((a, b) => b[1].length - a[1].length)) {
 	console.log(`${String(list.length).padStart(5)}  ${kind}`);

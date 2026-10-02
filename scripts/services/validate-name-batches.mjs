@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
- * Проверка батчей вычитки названий услуг перед сборкой SQL.
+ * Проверка батчей вычитки названий услуг или анализов (--catalog svc|lab) перед
+ * сборкой SQL.
  *
- * Батч — data/service-names/{fix,review}-NN.json, ростер к нему —
- * _batch-{fix,review}-NN.json. Формат и правила — data/service-names/README.md.
+ * Батч — <dir>/{fix,review}-NN.json, ростер к нему — _batch-{fix,review}-NN.json;
+ * <dir> — из scripts/common/name-review-catalog.mjs. Формат и правила —
+ * data/service-names/README.md (для анализов — ещё data/labtest-names/README.md).
  *
  * ERROR — батч в SQL не пойдёт, WARN — посмотреть глазами. Проверяется:
  *   - покрытие: каждая услуга ростера ровно один раз, чужих слагов нет;
@@ -17,7 +19,7 @@
  * Без --file проверяются все батчи разом — только так ловятся столкновения
  * между батчами (агент A переименовал услугу в то, что агент B взял синонимом).
  *
- * Usage: node scripts/services/validate-name-batches.mjs [--file data/service-names/review-07.json]
+ * Usage: node scripts/services/validate-name-batches.mjs [--catalog svc|lab] [--file data/service-names/review-07.json]
  */
 
 import mysql from 'mysql2/promise';
@@ -29,10 +31,12 @@ import {
 	EKAVICA, RU_ADJ_TAIL, RU_ADJ_TAIL_OK, RU_LATIN_OK,
 	tokens, lastWord, mixedScriptWords, searchFold,
 } from '../common/service-name-rules.mjs';
+import { catalogFromArgv } from '../common/name-review-catalog.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..', '..');
-const DIR = resolve(ROOT, 'data/service-names');
+const C = catalogFromArgv(ROOT);
+const DIR = C.dirAbs;
 
 const NAME_LOCALES = ['en', 'sr', 'ru', 'de', 'tr'];
 const DB_NAME_COLUMNS = ['name_en', 'name_sr', 'name_sr_cyrl', 'name_ru', 'name_de', 'name_tr'];
@@ -53,6 +57,11 @@ const GENERIC = new Set([
 	'analiza', 'procedura', 'lijecenje', 'terapija', 'masaza', 'biopsija', 'punkcija', 'uklanjanje',
 	'previjanje', 'injekcija', 'ljekar', 'lekar', 'dijagnostika', 'snimak', 'anestezija', 'hirurgija',
 	'plomba', 'krunica', 'proteza', 'implant',
+	// анализы: материал, метод и класс антител сами по себе ничего не ищут
+	'кровь', 'моча', 'кал', 'мазок', 'посев', 'пцр', 'ифа', 'антитела', 'igg', 'igm', 'iga', 'ige',
+	'krv', 'urin', 'stolica', 'bris', 'kultura', 'antitijela', 'antitela', 'pcr', 'elisa',
+	'blood', 'urine', 'stool', 'swab', 'culture', 'antibodies', 'blut', 'abstrich', 'kultur',
+	'antikorper', 'kan', 'idrar', 'gaita', 'suruntu', 'kultur', 'antikor',
 	'surgery', 'operation', 'examination', 'consultation', 'ultrasound', 'x-ray', 'xray', 'mri', 'test',
 	'procedure', 'treatment', 'therapy', 'massage', 'biopsy', 'puncture', 'removal', 'dressing',
 	'injection', 'doctor', 'diagnostics', 'scan', 'anesthesia', 'filling', 'crown', 'denture',
@@ -75,8 +84,8 @@ if (!files.length) {
 
 loadEnv(ROOT);
 const db = await mysql.createConnection(dbConfigFromEnv());
-const [services] = await db.query(`SELECT id, slug, ${DB_NAME_COLUMNS.join(', ')} FROM medical_services`);
-const [existingSynonyms] = await db.query('SELECT medical_service_id AS id, another_name FROM medical_service_synonyms');
+const [services] = await db.query(`SELECT id, slug, ${DB_NAME_COLUMNS.join(', ')} FROM ${C.table}`);
+const [existingSynonyms] = await db.query(`SELECT ${C.fk} AS id, another_name FROM ${C.synonymTable}`);
 await db.end();
 
 const bySlug = new Map(services.map((s) => [s.slug, s]));
@@ -207,7 +216,8 @@ for (const { path, items, parseError } of loaded) {
 					if (ek.length) err(`${tag}: экавица «${ek.join(', ')}»`);
 				}
 				if (loc === 'ru') {
-					if (!hasCyrillic(value)) err(`${tag}: нет кириллицы`);
+					// Латинское название (микроорганизм, бренд), у которого меняется только регистр, — не ошибка
+					if (!hasCyrillic(value) && value.toLowerCase() !== (before || '').toLowerCase()) err(`${tag}: нет кириллицы`);
 					const latin = value.replace(RU_LATIN_OK, '').match(/[A-Za-z]{4,}/g);
 					if (latin) warn(`${tag}: латиница «${latin.join(', ')}» — бренд? иначе перевести`);
 					const tail = lastWord(value);
@@ -275,6 +285,6 @@ for (const { path, items, parseError } of loaded) {
 	for (const line of out) console.log(line);
 }
 
-console.log(`\nуслуг: ${stats.items}; переименований: ${NAME_LOCALES.map((l) => `${l} ${stats.renamed[l]}`).join(', ')}; синонимов: ${stats.synonyms}`);
+console.log(`\n${C.noun}: ${stats.items}; переименований: ${NAME_LOCALES.map((l) => `${l} ${stats.renamed[l]}`).join(', ')}; синонимов: ${stats.synonyms}`);
 console.log(`ERROR: ${errors}, WARN: ${warns}`);
 process.exit(errors ? 1 : 0);

@@ -23,7 +23,7 @@
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createJiti } from 'jiti';
-import { PROTECTED_LATIN_TOKENS } from './sr-cyrl-protected.mjs';
+import { PROTECTED_LATIN_TOKENS, LATIN_GENERA } from './sr-cyrl-protected.mjs';
 import { EKAVICA, mixedScriptWords, tokens } from './service-name-rules.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -34,14 +34,18 @@ const MARK_RE = new RegExp(`${MARK}(\\d+)${MARK}`, 'g');
 const WORD = /[\p{L}\p{N}][\p{L}\p{N}-]*/gu;
 const ASCII_WORD = /^[A-Za-z0-9-]+$/;
 /**
- * Не бывает в сербском слове: x y w q, диграфы th ph ch sh ae oe ck и удвоенные
- * согласные (Monteggia, Caldwell, Straumann). «dd» и «jj» не входят — они
- * законно возникают на стыке приставки: poddijafragmalni, najjači.
+ * Не бывает в сербском слове: x y w q, диграфы th ph ch sh ck, латинское
+ * окончание -ae (popliteae, pneumoniae) и удвоенные согласные (Monteggia,
+ * Caldwell, Straumann). «dd» и «jj» не входят — они законно возникают на стыке
+ * приставки: poddijafragmalni, najjači. «ae»/«oe» внутри слова — тоже сербские
+ * (aerobni, gastroenterolog, apikoektomija, eritropoetin), их транслитерируем.
  */
-const FOREIGN = /[xywq]|th|ph|ch|sh|ae|oe|ck|([bcfgklmnprstvz])\1/i;
+const FOREIGN = /[xywq]|th|ph|ch|sh|ae$|ck|([bcfgklmnprstvz])\1/i;
+/** Римские цифры в названиях («Herpes simplex I IgG»): toCyrillic сделал бы из I «И». */
+const ROMAN = /^(?:I|II|III|IV|V|VI|VII|VIII|IX|X)$/;
 
 /** Латинские обороты в названиях: транслитерация ломает их в «ex темпоре». */
-const LATIN_PHRASES = ['ex tempore', 'in situ', 'vena cava', 'Roux-en-Y', 'per os', 'ductus thoracicus'];
+const LATIN_PHRASES = ['ex tempore', 'in situ', 'vena cava', 'Roux-en-Y', 'per os', 'ductus thoracicus', 'sectio caesarea', 'cavum uterusa', 'cavum uteri', 'E. coli', 'C. difficile', 'H. pylori'];
 /** Сколько раз и с какой долей каталог должен записать токен одинаково, чтобы это считалось решением. */
 const MIN_SUPPORT = 2;
 const MIN_SHARE = 0.6;
@@ -55,13 +59,40 @@ const NJ_EXCEPTIONS = [
 	[/коњункт/g, 'конјункт'], [/Коњункт/g, 'Конјункт'],
 ];
 
+/**
+ * Только для названий (в справочных текстах этим словам латиница не нужна):
+ * английские слова брендов и наборов анализов — «NIPT Panorama Basic»,
+ * «Femoflor Screen», «SARS-CoV-2 IgG Spike protein».
+ */
+const NAME_ONLY_PROTECTED = ['Panorama', 'Basic', 'Full', 'Plus', 'Screen', 'Femoflor', 'Androflor', 'Spike', 'Sentis', 'Loop', 'Silver', 'Ultra', 'Protia'];
+/**
+ * Обозначения, которые каталог пишет латиницей и в кириллице: одиночная буква
+ * варианта («Протеин C», «Имуноглобулин G» — «Протеин С» из S читался бы как C),
+ * двухбуквенные «Ag», «Ab», коды аллергенов «f44», «d2».
+ */
+const LATIN_DESIGNATION = /^(?:[A-Z]|[A-Z][a-z]|[a-z]{1,2}\d{1,3})$/;
 const MULTIWORD_PROTECTED = [...LATIN_PHRASES, ...PROTECTED_LATIN_TOKENS.filter((t) => /\s/.test(t))];
-const SINGLE_PROTECTED = new Set(PROTECTED_LATIN_TOKENS.filter((t) => !/\s/.test(t)));
+const SINGLE_PROTECTED = new Set([...PROTECTED_LATIN_TOKENS.filter((t) => !/\s/.test(t)), ...NAME_ONLY_PROTECTED]);
+/** «Род вид» (вид — строчными, может быть сокращён «spp.»): латиницей целиком, см. LATIN_GENERA. */
+const BINOMIAL = new RegExp(`(^|[^\\p{L}])((?:${LATIN_GENERA.join('|')})(?:\\s+(?:spp?\\.|[a-z][a-z-]+))?)(?=$|[^\\p{L}])`, 'gu');
+const GENERA = new Set(LATIN_GENERA);
 
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const hasLetter = (s) => /[A-Za-z]/.test(s);
 const isAsciiWord = (s) => ASCII_WORD.test(s) && hasLetter(s);
 const hasCyrillic = (s) => /\p{Script=Cyrillic}/u.test(s);
+/** Слово, которое в кириллице законно остаётся латиницей. */
+const foreignWord = (w) => {
+	const bare = w.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
+	// аббревиатура (две заглавные и больше, в т.ч. HBc, dsDNA), обозначение с цифрой
+	// из коротких букв (B12, IA-2, F24 — но не «Beta-2»), защищённый токен, род, x/y/w/th
+	const letters = bare.replace(/[^A-Za-z]/g, '');
+	const abbr = bare.split('-').some((part) => (part.match(/[A-Z]/g) || []).length >= 2);
+	return abbr || (/\d/.test(bare) && letters.length <= 3) ||
+		SINGLE_PROTECTED.has(bare) || bare.split('-').some((p) => SINGLE_PROTECTED.has(p)) ||
+		(bare.includes('-') && bare.split('-').every((p) => SINGLE_PROTECTED.has(p) || LATIN_DESIGNATION.test(p))) ||
+		GENERA.has(bare) || FOREIGN.test(bare) || ROMAN.test(bare) || LATIN_DESIGNATION.test(bare);
+};
 const fold = (s) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').replace(/đ/g, 'dj');
 
 /**
@@ -111,8 +142,16 @@ export function createNameTransliterator(rows) {
 	}
 
 	const render = (token) => {
-		if (learned.has(token)) return learned.get(token);
-		if (SINGLE_PROTECTED.has(token) || FOREIGN.test(token)) return token;
+		if (learned.has(token)) {
+			// Регистр первой буквы — из исходного слова: «PH Pregled» в каталоге
+			// записан «PH преглед», и выученное «преглед» не должно сносить заглавную.
+			const v = learned.get(token);
+			return /^[A-Z]/.test(token) ? v.charAt(0).toUpperCase() + v.slice(1) : v;
+		}
+		if (SINGLE_PROTECTED.has(token) || FOREIGN.test(token) || ROMAN.test(token) || LATIN_DESIGNATION.test(token)) return token;
+		// «Rh-D», «Anti-HCV»: защищённая часть через дефис защищает токен целиком
+		// «Rh-D», «Ag-Ab»: токен через дефис, все части которого — защищённые слова или обозначения
+		if (token.includes('-') && token.split('-').every((p) => SINGLE_PROTECTED.has(p) || LATIN_DESIGNATION.test(p))) return token;
 		return null;
 	};
 
@@ -130,6 +169,7 @@ export function createNameTransliterator(rows) {
 				(_, before, match) => `${before}${park(match)}`,
 			);
 		}
+		masked = masked.replace(BINOMIAL, (_, before, match) => `${before}${park(match)}`);
 		masked = masked.replace(WORD, (token) => {
 			if (!isAsciiWord(token)) return token;
 			const fixed = render(token);
@@ -163,6 +203,15 @@ export function createNameTransliterator(rows) {
 		const ow = oldSr.split(' ');
 		if (cw.length !== gw.length || gw.length !== sw.length) return gen;
 		const unchanged = ow.length === sw.length;
+		// Слова латинских биномов («Trichinella spiralis») — только у генератора:
+		// старая кириллица записывала вид кириллицей («Trichinella спиралис»).
+		const inBinomial = new Set();
+		sw.forEach((w, i) => {
+			if (GENERA.has(w)) {
+				inBinomial.add(i);
+				if (/^(?:spp?\.|[a-z][a-z-]+)$/.test(sw[i + 1] || '')) inBinomial.add(i + 1);
+			}
+		});
 		return cw
 			.map((c, i) => {
 				const g = gw[i];
@@ -170,7 +219,19 @@ export function createNameTransliterator(rows) {
 				if (c === g) return c;
 				if (mixedScriptWords(c).length) return g;
 				if (!unchanged || ow[i] !== s) return g;
-				if (!hasCyrillic(c)) return c;
+				if (inBinomial.has(i)) return g;
+				// Отличие только в регистре («преглед» при «Pregled», «Simplex» при «simplex») — регистр берём из sr
+				if (c.toLowerCase() === g.toLowerCase()) return g;
+				if (!hasCyrillic(c) && c.toLowerCase() === s.toLowerCase() && c !== s) return g;
+				// Латинское слово — решение, только если оно и правда иностранное:
+				// аббревиатура, защищённый токен, род микроорганизма, x/y/w/th и т.п.
+				// Обычное сербское слово латиницей («aerobne», «Karcinoembrionalni») —
+				// недопереведённая старая кириллица, её берём у генератора.
+				// Латинское слово с заглавной не в начале названия или перед другим
+				// латинским словом — бренд или эпоним («NIPT Silver», «Parvo B19»).
+				const next = cw[i + 1];
+				const brandLike = /^[A-Z][a-z]/.test(c) && (i > 0 || (next && !hasCyrillic(next) && !LATIN_DESIGNATION.test(next)));
+				if (!hasCyrillic(c)) return foreignWord(c) || brandLike || !hasCyrillic(g) ? c : g;
 				// Генератор оставил латиницей то, что люди уже записали кириллицей
 				// («Фејс лифт» против «Face лифт»): латиница — стиль, не исправление.
 				if (!hasCyrillic(g)) return c;

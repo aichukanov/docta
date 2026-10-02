@@ -1,0 +1,952 @@
+[
+	{
+		"slug": "gamma-gt",
+		"id": 35,
+		"clinics": 16,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Gamma-GT",
+			"sr": "Gama-glutamil transferaza",
+			"sr_cyrl": "Гама-глутамил трансфераза",
+			"ru": "Гамма-глутамилтрансфераза",
+			"de": "Gamma-Glutamyltransferase",
+			"tr": "Gama-Glutamil Transferaz"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Gamma-GT",
+				"GGT-Aktivität"
+			],
+			"en": [
+				"Gamma GT",
+				"GGT",
+				"GGT Activity"
+			],
+			"ru": [
+				"ГГТ"
+			],
+			"sr": [
+				"Aktivnost gama glutamil transferaza GGT",
+				"GGT"
+			],
+			"sr-cyrl": [
+				"Активност гама глутамил трансфераза ГГТ"
+			],
+			"tr": [
+				"GGT",
+				"GGT aktivitesi"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "glucose",
+		"id": 17,
+		"clinics": 17,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Glucose",
+			"sr": "Glukoza",
+			"sr_cyrl": "Глукоза",
+			"ru": "Глюкоза",
+			"de": "Glukose",
+			"tr": "Glikoz"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Serum-Glucose"
+			],
+			"en": [
+				"Blood glucose",
+				"Blood Sugar",
+				"Serum Glucose"
+			],
+			"ru": [
+				"Глюкоза сыворотки",
+				"Сахар крови"
+			],
+			"sr": [
+				"Glukoza u serumu",
+				"Šećer u krvi"
+			],
+			"sr-cyrl": [
+				"Глукоза у серуму",
+				"Шећер у крви"
+			],
+			"tr": [
+				"Glukoz",
+				"Serum glukoz"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "hba1c",
+		"id": 53,
+		"clinics": 14,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "HbA1c",
+			"sr": "Glikovani hemoglobin",
+			"sr_cyrl": "Гликовани хемоглобин",
+			"ru": "Гликированный гемоглобин",
+			"de": "Glykiertes Hämoglobin",
+			"tr": "Glikozile Hemoglobin"
+		},
+		"existing_synonyms": {
+			"de": [
+				"HbA1c"
+			],
+			"en": [
+				"A1C",
+				"Glycated Hemoglobin"
+			],
+			"ru": [
+				"Гликозилированный гемоглобин"
+			],
+			"sr": [
+				"HbA1c"
+			],
+			"tr": [
+				"HbA1c"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "hdl-cholesterol",
+		"id": 24,
+		"clinics": 15,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "HDL Cholesterol",
+			"sr": "HDL holesterol",
+			"sr_cyrl": "HDL холестерол",
+			"ru": "Холестерин ЛПВП",
+			"de": "HDL-Cholesterin",
+			"tr": "HDL Kolesterol"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Good Cholesterol",
+				"HDL"
+			],
+			"ru": [
+				"ЛПВП",
+				"Хороший холестерин",
+				"ХС ЛПВП HDL"
+			],
+			"sr": [
+				"HDL-holesterol"
+			],
+			"sr-cyrl": [
+				"ХДЛ холестерол"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "homocysteine",
+		"id": 208,
+		"clinics": 10,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Homocysteine",
+			"sr": "Homocistein",
+			"sr_cyrl": "Хомоцистеин",
+			"ru": "Гомоцистеин",
+			"de": "Homocystein",
+			"tr": "Homosistein"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Hcy"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "iron",
+		"id": 41,
+		"clinics": 14,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Iron",
+			"sr": "Gvožđe",
+			"sr_cyrl": "Гвожђе",
+			"ru": "Железо",
+			"de": "Eisen",
+			"tr": "Demir"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Serum-Eisen"
+			],
+			"en": [
+				"Fe",
+				"Serum Iron"
+			],
+			"ru": [
+				"Железо сыворотки"
+			],
+			"sr": [
+				"Određivanje gvožđa u serumu"
+			],
+			"sr-cyrl": [
+				"Одређивање гвожђа у серуму"
+			],
+			"tr": [
+				"Serum demir"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-sekundarna",
+				"code": "Z01035",
+				"name": "Određivanje gvožđa u serumu"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "lactate",
+		"id": 582,
+		"clinics": 4,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Lactate",
+			"sr": "Laktat",
+			"sr_cyrl": "Лактат",
+			"ru": "Лактат",
+			"de": "Laktat",
+			"tr": "Laktat"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Lactic Acid"
+			],
+			"ru": [
+				"Молочная кислота"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "ldh",
+		"id": 36,
+		"clinics": 16,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "LDH",
+			"sr": "Laktat dehidrogenaza",
+			"sr_cyrl": "Лактат дехидрогеназа",
+			"ru": "Лактатдегидрогеназа",
+			"de": "Laktatdehydrogenase",
+			"tr": "Laktat Dehidrojenaz"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Laktatdehydrogenase LDH",
+				"LDH"
+			],
+			"en": [
+				"LDH Activity"
+			],
+			"ru": [
+				"Лактатдегидрогеназа ЛДГ",
+				"ЛДГ"
+			],
+			"sr": [
+				"Aktivnost laktat dehidrogenaze LDH",
+				"LDH"
+			],
+			"sr-cyrl": [
+				"Активност лактат дехидрогеназе ЛДХ"
+			],
+			"tr": [
+				"Laktat dehidrojenaz LDH",
+				"LDH"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "ldl-cholesterol",
+		"id": 25,
+		"clinics": 15,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "LDL Cholesterol",
+			"sr": "LDL holesterol",
+			"sr_cyrl": "LDL холестерол",
+			"ru": "Холестерин ЛПНП",
+			"de": "LDL-Cholesterin",
+			"tr": "LDL Kolesterol"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Bad Cholesterol",
+				"LDL"
+			],
+			"ru": [
+				"ЛПНП",
+				"Плохой холестерин"
+			],
+			"sr": [
+				"LDL holesterol računski",
+				"LDL-holesterol"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "lipase",
+		"id": 72,
+		"clinics": 10,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Lipase",
+			"sr": "Lipaza",
+			"sr_cyrl": "Липаза",
+			"ru": "Липаза",
+			"de": "Lipase",
+			"tr": "Lipaz"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: de"
+		]
+	},
+	{
+		"slug": "osteocalcin",
+		"id": 205,
+		"clinics": 6,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Osteocalcin",
+			"sr": "Osteokalcin",
+			"sr_cyrl": "Остеокалцин",
+			"ru": "Остеокальцин",
+			"de": "Osteocalcin",
+			"tr": "Osteokalsin"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: de"
+		]
+	},
+	{
+		"slug": "pancreatic-amylase",
+		"id": 20,
+		"clinics": 5,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Pancreatic Amylase",
+			"sr": "Pankreasna amilaza",
+			"sr_cyrl": "Панкреасна амилаза",
+			"ru": "Панкреатическая амилаза",
+			"de": "Pankreas-Amylase",
+			"tr": "Pankreas Amilazı"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "pleural-fluid-analysis",
+		"id": 1993,
+		"clinics": 3,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Pleural Fluid Analysis",
+			"sr": "Analiza pleuralne tečnosti",
+			"sr_cyrl": "Анализа плеуралне течности",
+			"ru": "Анализ плевральной жидкости",
+			"de": "Pleuraflüssigkeitsanalyse",
+			"tr": "Plevra sıvısı analizi"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "tibc",
+		"id": 42,
+		"clinics": 15,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "TIBC",
+			"sr": "Ukupni kapacitet vezivanja gvožđa",
+			"sr_cyrl": "Укупни капацетет везивања гвожђа",
+			"ru": "Общая железосвязывающая способность",
+			"de": "Totale Eisenbindungskapazität",
+			"tr": "Total Demir Bağlama Kapasitesi"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Gesamt-Eisenbindungskapazität TIBC",
+				"TIBC"
+			],
+			"en": [
+				"Total Iron Binding Capacity TIBC"
+			],
+			"ru": [
+				"Общая железосвязывающая способность TIBC",
+				"ОЖСС"
+			],
+			"sr": [
+				"Kapacitet vezivanja gvožđa TIBC",
+				"TIBC"
+			],
+			"sr-cyrl": [
+				"Капацитет везивања гвожђа ТИБЦ"
+			],
+			"tr": [
+				"TIBC",
+				"Total demir bağlama kapasitesi TIBC"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "total-bilirubin",
+		"id": 33,
+		"clinics": 16,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Total Bilirubin",
+			"sr": "Ukupni bilirubin",
+			"sr_cyrl": "Укупни билирубин",
+			"ru": "Общий билирубин",
+			"de": "Gesamtbilirubin",
+			"tr": "Total Bilirubin"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Gesamtbilirubin im Serum"
+			],
+			"en": [
+				"Serum Total Bilirubin",
+				"TBil"
+			],
+			"ru": [
+				"Билирубин общий",
+				"Общий билирубин сыворотки"
+			],
+			"sr": [
+				"Bilirubin ukupni",
+				"Ukupni bilirubin u serumu"
+			],
+			"sr-cyrl": [
+				"Укупни билирубин у серуму"
+			],
+			"tr": [
+				"Serum total bilirubin",
+				"Toplam bilirubin"
+			]
+		},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: tr"
+		]
+	},
+	{
+		"slug": "total-protein",
+		"id": 31,
+		"clinics": 16,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Total Protein",
+			"sr": "Ukupni proteini",
+			"sr_cyrl": "Укупни протеини",
+			"ru": "Общий белок",
+			"de": "Gesamtprotein",
+			"tr": "Total Protein"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Gesamteiweiß im Serum"
+			],
+			"en": [
+				"Serum Total Protein",
+				"TP"
+			],
+			"ru": [
+				"Общий белок сыворотки"
+			],
+			"sr": [
+				"Ukupni proteini u serumu"
+			],
+			"sr-cyrl": [
+				"Укупни протеини у серуму"
+			],
+			"tr": [
+				"Serum total protein",
+				"Toplam protein"
+			]
+		},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: tr"
+		]
+	},
+	{
+		"slug": "transferrin",
+		"id": 44,
+		"clinics": 10,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Transferrin",
+			"sr": "Transferin",
+			"sr_cyrl": "Трансферин",
+			"ru": "Трансферрин",
+			"de": "Transferrin",
+			"tr": "Transferrin"
+		},
+		"existing_synonyms": {
+			"en": [
+				"TRF"
+			]
+		},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: de",
+			"copy_of_en: tr"
+		]
+	},
+	{
+		"slug": "triglycerides",
+		"id": 23,
+		"clinics": 17,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Triglycerides",
+			"sr": "Trigliceridi",
+			"sr_cyrl": "Триглицериди",
+			"ru": "Триглицериды",
+			"de": "Triglyceride",
+			"tr": "Trigliserit"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Triglyceride im Serum",
+				"Triglyzeride"
+			],
+			"en": [
+				"Serum Triglycerides",
+				"TG"
+			],
+			"ru": [
+				"Триглицериды сыворотки"
+			],
+			"sr": [
+				"Trigliceridi u serumu"
+			],
+			"sr-cyrl": [
+				"Триглицериди у серуму"
+			],
+			"tr": [
+				"Serum trigliserid",
+				"Trigliserid"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "uibc",
+		"id": 43,
+		"clinics": 15,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "UIBC",
+			"sr": "Neiskorišćeni kapacitet vezivanja gvožđa",
+			"sr_cyrl": "Неискоришћени капацитет везивања гвожђа",
+			"ru": "Ненасыщенная железосвязывающая способность",
+			"de": "Ungesättigte Eisenbindungskapazität",
+			"tr": "Kullanılmamış Demir Bağlama Kapasitesi"
+		},
+		"existing_synonyms": {
+			"de": [
+				"UIBC",
+				"Ungesättigte Eisenbindungskapazität UIBC"
+			],
+			"en": [
+				"Unsaturated Iron Binding Capacity UIBC"
+			],
+			"ru": [
+				"Ненасыщенная железосвязывающая способность UIBC",
+				"НЖСС"
+			],
+			"sr": [
+				"Slobodni kapacitet vezivanja gvožđa UIBC",
+				"UIBC"
+			],
+			"sr-cyrl": [
+				"Слободни капацитет везивања гвожђа УИБЦ"
+			],
+			"tr": [
+				"Doymamış demir bağlama kapasitesi UIBC",
+				"UIBC"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "urea",
+		"id": 19,
+		"clinics": 14,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Urea",
+			"sr": "Urea",
+			"sr_cyrl": "Уреа",
+			"ru": "Мочевина",
+			"de": "Harnstoff",
+			"tr": "Üre"
+		},
+		"existing_synonyms": {
+			"en": [
+				"BUN"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "urea-clearance",
+		"id": 93,
+		"clinics": 14,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Urea Clearance",
+			"sr": "Klirens ureje",
+			"sr_cyrl": "Клиренс уреје",
+			"ru": "Клиренс мочевины",
+			"de": "Harnstoff-Clearance",
+			"tr": "Üre Klirensi"
+		},
+		"existing_synonyms": {
+			"sr": [
+				"Klirens uree"
+			],
+			"sr-cyrl": [
+				"Клиренс урее"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "uric-acid",
+		"id": 30,
+		"clinics": 15,
+		"categories": [
+			"Biochemistry"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Uric Acid",
+			"sr": "Mokraćna kiselina",
+			"sr_cyrl": "Мокраћна киселина",
+			"ru": "Мочевая кислота",
+			"de": "Harnsäure",
+			"tr": "Ürik Asit"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Serum-Harnsäure"
+			],
+			"en": [
+				"Serum Uric Acid",
+				"UA"
+			],
+			"ru": [
+				"МК",
+				"Мочевая кислота сыворотки"
+			],
+			"sr": [
+				"Mokraćna kiselina u serumu"
+			],
+			"sr-cyrl": [
+				"Мокраћна киселина у серуму"
+			],
+			"tr": [
+				"Serum ürik asit"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "brca1-brca2-genetic-test",
+		"id": 1783,
+		"clinics": 5,
+		"categories": [
+			"Genetics"
+		],
+		"specialties": [],
+		"names": {
+			"en": "BRCA1 BRCA2 Genetic Test",
+			"sr": "BRCA1 / BRCA2 – genetski test",
+			"sr_cyrl": "BRCA1 / BRCA2 – генетски тест",
+			"ru": "BRCA1 / BRCA2 – генетический тест",
+			"de": "BRCA1 / BRCA2 Gentest",
+			"tr": "BRCA1 / BRCA2 Genetik Test"
+		},
+		"existing_synonyms": {
+			"de": [
+				"BRCA1 BRCA2",
+				"Sentis-Panel BRCA 1-2"
+			],
+			"en": [
+				"BRCA1 BRCA2",
+				"Breast Cancer Genes",
+				"Sentis Panel BRCA 1-2"
+			],
+			"ru": [
+				"BRCA1 BRCA2",
+				"Sentis панель BRCA 1-2",
+				"Гены рака молочной железы"
+			],
+			"sr": [
+				"BRCA1 BRCA2",
+				"Sentis panel BRCA 1-2"
+			],
+			"sr-cyrl": [
+				"BRCA1 BRCA2",
+				"Sentis панел BRCA 1-2"
+			],
+			"tr": [
+				"BRCA1 BRCA2",
+				"Sentis Paneli BRCA 1-2"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "factor-v-leiden-locus-1691",
+		"id": 1319,
+		"clinics": 4,
+		"categories": [
+			"Genetics"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Factor V Leiden Locus 1691",
+			"sr": "Faktor V Leiden lokus 1691",
+			"sr_cyrl": "Фактор V Leiden локус 1691",
+			"ru": "Фактор V Лейден локус 1691",
+			"de": "Faktor V Leiden Locus 1691",
+			"tr": "Faktör V Leiden Lokus 1691"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Factor V Leiden"
+			],
+			"ru": [
+				"Лейденская мутация"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "mthfr-locus-1298",
+		"id": 1321,
+		"clinics": 4,
+		"categories": [
+			"Genetics"
+		],
+		"specialties": [],
+		"names": {
+			"en": "MTHFR Locus 1298",
+			"sr": "MTHFR lokus 1298",
+			"sr_cyrl": "MTHFR локус 1298",
+			"ru": "MTHFR локус 1298",
+			"de": "MTHFR Locus 1298",
+			"tr": "MTHFR Lokus 1298"
+		},
+		"existing_synonyms": {
+			"en": [
+				"MTHFR A1298C"
+			]
+		},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: de"
+		]
+	},
+	{
+		"slug": "mthfr-locus-677-pcr",
+		"id": 1320,
+		"clinics": 4,
+		"categories": [
+			"Genetics"
+		],
+		"specialties": [],
+		"names": {
+			"en": "MTHFR Locus 677 PCR",
+			"sr": "MTHFR lokus 677 PCR",
+			"sr_cyrl": "MTHFR локус 677 PCR",
+			"ru": "MTHFR локус 677 ПЦР",
+			"de": "MTHFR Locus 677 PCR",
+			"tr": "MTHFR Lokus 677 PCR"
+		},
+		"existing_synonyms": {
+			"en": [
+				"MTHFR C677T"
+			]
+		},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: de"
+		]
+	},
+	{
+		"slug": "pai-1-675-4g-5g",
+		"id": 1322,
+		"clinics": 4,
+		"categories": [
+			"Genetics"
+		],
+		"specialties": [],
+		"names": {
+			"en": "PAI-1 675 4G 5G",
+			"sr": "PAI-1 675 4G 5G",
+			"sr_cyrl": "PAI-1 675 4G 5G",
+			"ru": "PAI-1 675 4G 5G",
+			"de": "PAI-1 675 4G 5G",
+			"tr": "PAI-1 675 4G 5G"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: ru",
+			"copy_of_en: de",
+			"copy_of_en: tr"
+		]
+	},
+	{
+		"slug": "prothrombin-ii-locus-20210-pcr",
+		"id": 1317,
+		"clinics": 4,
+		"categories": [
+			"Genetics"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Prothrombin II Locus 20210 PCR",
+			"sr": "Protrombin II lokus 20210 PCR",
+			"sr_cyrl": "Протромбин II локус 20210 PCR",
+			"ru": "Протромбин II локус 20210 ПЦР",
+			"de": "Prothrombin II Locus 20210 PCR",
+			"tr": "Protrombin II Lokus 20210 PCR"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Prothrombin G20210A"
+			]
+		},
+		"fzocg": [],
+		"hints": [
+			"copy_of_en: de"
+		]
+	},
+	{
+		"slug": "thrombophilia-3-genes-5-loci",
+		"id": 1347,
+		"clinics": 4,
+		"categories": [
+			"Genetics"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Thrombophilia 3 Genes 5 Loci",
+			"sr": "Trombofilija 3 gena 5 lokusa",
+			"sr_cyrl": "Тромбофилија 3 гена 5 локуса",
+			"ru": "Тромбофилия 3 гена 5 локусов",
+			"de": "Thrombophilie 3 Gene 5 Loci",
+			"tr": "Trombofili 3 Gen 5 Lokus"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	}
+]

@@ -1,0 +1,433 @@
+[
+	{
+		"slug": "sputum-fungi",
+		"names": {
+			"en": "Sputum Culture for Fungi",
+			"sr": "Kultura sputuma na gljivice",
+			"ru": "Посев мокроты на грибы",
+			"de": "Sputumkultur auf Pilze",
+			"tr": "Balgam Kültüründe Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Kultura ispljuvka na gljivice"],
+			"ru": ["Мокрота на грибы"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "throat-swab-bacteria",
+		"names": {
+			"en": "Throat Swab for Bacteria",
+			"sr": "Bris grla na bakterije",
+			"ru": "Мазок из горла на бактерии",
+			"de": "Rachenabstrich auf Bakterien",
+			"tr": "Boğaz Sürüntüsünde Bakteri"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Bris ždrijela na bakterije", "Bris ždrela na bakterije"],
+			"ru": ["Мазок из зева на бактерии", "Мазок из горла на флору"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "throat-swab-fungi",
+		"names": {
+			"en": "Throat Swab for Fungi",
+			"sr": "Bris grla na gljivice",
+			"ru": "Мазок из горла на грибы",
+			"de": "Rachenabstrich auf Pilze",
+			"tr": "Boğaz Sürüntüsünde Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Bris ždrijela na gljivice"],
+			"ru": ["Мазок из зева на грибы"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "tongue-swab-bacteria",
+		"names": {
+			"en": "Tongue Swab for Bacteria",
+			"sr": "Bris jezika na bakterije",
+			"ru": "Мазок с языка на бактерии",
+			"de": "Zungenabstrich auf Bakterien",
+			"tr": "Dil Sürüntüsünde Bakteri"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Мазок с языка на флору"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "tongue-swab-fungi",
+		"names": {
+			"en": "Tongue Swab for Fungi",
+			"sr": "Bris jezika na gljivice",
+			"ru": "Мазок с языка на грибы",
+			"de": "Zungenabstrich auf Pilze",
+			"tr": "Dil Sürüntüsünde Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "trichomonas-test",
+		"names": {},
+		"synonyms": {
+			"en": ["Trichomoniasis Test"],
+			"sr": [],
+			"ru": ["Мазок на трихомонады", "Анализ на трихомониаз"],
+			"de": [],
+			"tr": []
+		},
+		"note": "В existing_synonyms sr-cyrl сломана транслитерация латинского названия: «Преглед препарата на Трицхомонас вагиналис нативни» (во втором синониме та же фраза оставлена латиницей). Стоит пересобрать sr-cyrl с protected-списком."
+	},
+	{
+		"slug": "umbilicus-swab-bacteria",
+		"names": {
+			"en": "Umbilical Swab for Bacteria",
+			"de": "Nabelabstrich auf Bakterien",
+			"tr": "Göbek Sürüntüsünde Bakteri"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Мазок с пупка на бактерии", "Мазок из пупочной ранки"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "umbilicus-swab-fungi",
+		"names": {
+			"en": "Umbilical Swab for Fungi",
+			"de": "Nabelabstrich auf Pilze",
+			"tr": "Göbek Sürüntüsünde Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Мазок с пупка на грибы"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "urethral-swab-bacteria",
+		"names": {
+			"en": "Urethral Swab for Bacteria",
+			"sr": "Bris uretre na bakterije",
+			"ru": "Мазок из уретры на бактерии",
+			"de": "Harnröhrenabstrich auf Bakterien",
+			"tr": "Üretra Sürüntüsünde Bakteri"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Мазок из уретры на флору", "Мазок из мочеиспускательного канала на бактерии"],
+			"de": ["Urethralabstrich auf Bakterien"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "urethral-swab-for-gonorrhea",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Мазок из мочеиспускательного канала на гонорею"],
+			"de": ["Urethralabstrich auf Gonorrhoe"],
+			"tr": ["Üretra sürüntüsünde gonore"]
+		},
+		"note": "existing_synonyms «Gonorrhea» (en) и «Гонорея» (ru) — голое название болезни; в каталоге есть и другие анализы на гонорею (endocervical-swab-for-gonorrhea, neisseria-gonorrhoeae-culture, микроскопия мазка на гонорею), такой синоним перетягивает их запросы. Вероятно, стоит удалить. Не трогал."
+	},
+	{
+		"slug": "urethral-swab-fungi",
+		"names": {
+			"en": "Urethral Swab for Fungi",
+			"sr": "Bris uretre na gljivice",
+			"ru": "Мазок из уретры на грибы",
+			"de": "Harnröhrenabstrich auf Pilze",
+			"tr": "Üretra Sürüntüsünde Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Мазок из мочеиспускательного канала на грибы"],
+			"de": ["Urethralabstrich auf Pilze"],
+			"tr": []
+		}
+	},
+	{
+		"slug": "urine-culture",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Kultura urina na bakterije"],
+			"ru": ["Бакпосев мочи", "Посев мочи на флору"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "urine-fungi",
+		"names": {
+			"en": "Urine Culture for Fungi",
+			"sr": "Kultura urina na gljivice",
+			"ru": "Посев мочи на грибы",
+			"de": "Urinkultur auf Pilze",
+			"tr": "İdrar Kültüründe Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Urinokultura na gljivice"],
+			"ru": ["Анализ мочи на грибы"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "vaginal-secretion",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Vaginalni iscjedak", "Vaginalni iscedak"],
+			"ru": ["Выделения из влагалища", "Вагинальное отделяемое"],
+			"de": ["Vaginalausfluss"],
+			"tr": ["Vajinal akıntı"]
+		},
+		"note": "existing_synonyms ru «Выделения» — голое общее слово, будет ловить любые запросы про выделения; вероятно, стоит удалить. Не трогал. Что именно делают с секретом (микроскопия / посев / pH), ни одна локаль не говорит — название оставлено как есть."
+	},
+	{
+		"slug": "vaginal-swab-bacteria",
+		"names": {
+			"en": "Vaginal Swab for Bacteria",
+			"sr": "Bris vagine na bakterije",
+			"ru": "Мазок из влагалища на бактерии",
+			"de": "Vaginalabstrich auf Bakterien",
+			"tr": "Vajinal Sürüntüde Bakteri"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Vaginalni bris na bakterije"],
+			"ru": ["Бакпосев из влагалища"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "vaginal-swab-fungi",
+		"names": {
+			"en": "Vaginal Swab for Fungi",
+			"sr": "Bris vagine na gljivice",
+			"ru": "Мазок из влагалища на грибы",
+			"de": "Vaginalabstrich auf Pilze",
+			"tr": "Vajinal Sürüntüde Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": ["Vaginalni bris na gljivice"],
+			"ru": ["Мазок на молочницу"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "vulvar-swab-bacteria",
+		"names": {
+			"en": "Vulvar Swab for Bacteria",
+			"sr": "Bris vulve na bakterije",
+			"ru": "Мазок с вульвы на бактерии",
+			"de": "Vulvaabstrich auf Bakterien",
+			"tr": "Vulvar Sürüntüde Bakteri"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "vulvar-swab-fungi",
+		"names": {
+			"en": "Vulvar Swab for Fungi",
+			"sr": "Bris vulve na gljivice",
+			"ru": "Мазок с вульвы на грибы",
+			"de": "Vulvaabstrich auf Pilze",
+			"tr": "Vulvar Sürüntüde Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "wound-swab-bacteria",
+		"names": {
+			"en": "Wound Swab for Bacteria",
+			"sr": "Bris rane na bakterije",
+			"ru": "Мазок из раны на бактерии",
+			"de": "Wundabstrich auf Bakterien",
+			"tr": "Yara Sürüntüsünde Bakteri"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Бакпосев из раны"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "wound-swab-fungi",
+		"names": {
+			"en": "Wound Swab for Fungi",
+			"sr": "Bris rane na gljivice",
+			"ru": "Мазок из раны на грибы",
+			"de": "Wundabstrich auf Pilze",
+			"tr": "Yara Sürüntüsünde Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "amphetamine",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Test na amfetamin"],
+			"ru": ["Тест на амфетамин"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "cocaine",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Test na kokain"],
+			"ru": ["Тест на кокаин"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "drug-panel-10-ii",
+		"names": {
+			"tr": "Uyuşturucu Paneli 10 II"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "Возможный дубль: drug-panel-10 (id 117, fix-01, en «Drug Panel 10») и psychoactive-substances-panel-10-parameters — все три выглядят как панель на 10 веществ; existing_synonym en «Drug Panel 10» здесь совпадает с name_en записи 117. Что значит «II», ни одна локаль не объясняет — оставлено. Синонимов не добавлял, пока не решено слияние. tr: «İlaç» (лекарство) → «Uyuşturucu», как в существующем синониме; у drug-panel-10 в fix-01 осталось «İlaç Paneli 10» — поправить туда же для единообразия."
+	},
+	{
+		"slug": "drug-panel-5-new",
+		"names": {
+			"tr": "Uyuşturucu Paneli 5 Yeni"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["Тест на 5 наркотиков"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "ecstasy",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": ["МДМА", "Тест на экстази"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "marijuana",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Test na marihuanu"],
+			"ru": ["Тест на марихуану", "Каннабис"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "morphine",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": ["Test na morfin"],
+			"ru": ["Тест на морфин"],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "psychoactive-substances-panel-10-parameters",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "Похоже на дубль drug-panel-10-ii / drug-panel-10 (панель на 10 наркотиков) — решить, сливать ли; синонимы не добавлены."
+	},
+	{
+		"slug": "psychoactive-substances-panel-5-10-parameters",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "single-psychoactive-substance-test",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	}
+]

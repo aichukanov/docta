@@ -288,54 +288,6 @@
     }
   },
   {
-    "slug": "prothrombin-time-pt",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Коагулологическое исследование: за какое время плазма крови образует сгусток по одному из путей свёртывания",
-        "how": "Венозную кровь набирают в пробирку с цитратом строго до метки, пробирку аккуратно перемешивают, затем плазму отделяют и исследуют на коагулометре; сам забор занимает пару минут",
-        "when": "Подготовка к операции и инвазивным вмешательствам, подбор и контроль терапии антагонистами витамина K, оценка работы печени, обследование при кровоточивости дёсен и обширных синяках, обследование перед родами",
-        "prep": "Специальной подготовки обычно не требуется; сообщить обо всех препаратах, влияющих на свёртывание, и о времени последнего приёма, а при контроле терапии приходить в час, который назвал врач",
-        "abnormal": "Удлинение или укорочение времени свёртывания может быть связано с приёмом антикоагулянтов, нехваткой витамина K, болезнями печени, редкими нарушениями отдельных факторов свёртывания, а также с техникой забора, например неполной пробиркой. Результат оценивает и решение принимает лечащий врач"
-      },
-      "en": {
-        "what": "A coagulation test showing how long blood plasma takes to form a clot along one of the coagulation pathways",
-        "how": "Venous blood is drawn into a citrate tube exactly to the mark, the tube is gently mixed, then the plasma is separated and measured on a coagulometer; the draw itself takes a couple of minutes",
-        "when": "Preparation for surgery and invasive procedures, starting and monitoring treatment with vitamin K antagonists, assessment of liver function, work-up for bleeding gums and extensive bruising, assessment before childbirth",
-        "prep": "Usually no special preparation; report all medicines that affect clotting and when they were last taken, and for treatment monitoring come at the hour the doctor specified",
-        "abnormal": "A longer or shorter clotting time may be related to anticoagulant treatment, a lack of vitamin K, liver disease, rare disorders of individual clotting factors, or to the sampling technique, for example an underfilled tube. The result is assessed and decisions are made by the treating doctor"
-      },
-      "sr": {
-        "what": "Koagulaciona pretraga: za koliko vremena plazma krvi stvori ugrušak jednim od puteva zgrušavanja",
-        "how": "Venska krv se uzima u epruvetu sa citratom tačno do oznake, epruveta se pažljivo promiješa, zatim se plazma odvaja i mjeri na koagulometru; samo uzimanje traje par minuta",
-        "when": "Priprema za operaciju i invazivne zahvate, uvođenje i kontrola terapije antagonistima vitamina K, procjena rada jetre, obrada kod krvarenja desni i velikih modrica, obrada prije porođaja",
-        "prep": "Posebna priprema obično nije potrebna; prijaviti sve lijekove koji utiču na zgrušavanje i vrijeme posljednje doze, a kod kontrole terapije doći u sat koji je odredio ljekar",
-        "abnormal": "Produženo ili skraćeno vrijeme zgrušavanja može biti povezano sa antikoagulantnom terapijom, manjkom vitamina K, bolestima jetre, rijetkim poremećajima pojedinih faktora zgrušavanja, ali i sa načinom uzimanja uzorka, na primjer nedovoljno napunjenom epruvetom. Nalaz procjenjuje i odluku donosi ljekar koji vodi liječenje"
-      },
-      "de": {
-        "what": "Eine Gerinnungsuntersuchung: wie lange das Blutplasma braucht, um über einen der Gerinnungswege ein Gerinnsel zu bilden",
-        "how": "Venöses Blut wird genau bis zur Markierung in ein Citratröhrchen abgenommen, das Röhrchen vorsichtig geschwenkt, dann das Plasma abgetrennt und am Koagulometer gemessen; die Blutentnahme dauert wenige Minuten",
-        "when": "Vorbereitung auf Operationen und invasive Eingriffe, Einstellung und Kontrolle einer Therapie mit Vitamin-K-Antagonisten, Beurteilung der Leberfunktion, Abklärung bei Zahnfleischbluten und ausgedehnten Blutergüssen, Abklärung vor der Entbindung",
-        "prep": "Meist keine besondere Vorbereitung; alle Medikamente angeben, die die Gerinnung beeinflussen, samt Zeitpunkt der letzten Einnahme, und zur Therapiekontrolle zu der vom Arzt genannten Uhrzeit kommen",
-        "abnormal": "Eine verlängerte oder verkürzte Gerinnungszeit kann mit gerinnungshemmender Therapie, Vitamin-K-Mangel, Lebererkrankungen, seltenen Störungen einzelner Gerinnungsfaktoren oder auch mit der Entnahmetechnik, etwa einem zu wenig gefüllten Röhrchen, zusammenhängen. Die Beurteilung und die weiteren Schritte übernimmt der behandelnde Arzt"
-      },
-      "tr": {
-        "what": "Kan plazmasının pıhtılaşma yollarından biri üzerinden pıhtı oluşturma süresini gösteren koagülasyon tetkiki",
-        "how": "Damardan alınan kan sitratlı tüpe tam çizgisine kadar doldurulur, tüp nazikçe karıştırılır, ardından plazma ayrılır ve koagülometrede ölçülür; kan alma işlemi birkaç dakika sürer",
-        "when": "Ameliyat ve girişimsel işlemlere hazırlık, K vitamini antagonistleriyle tedavinin başlanması ve izlenmesi, karaciğer işlevinin değerlendirilmesi, diş eti kanaması ve yaygın morluklarda inceleme, doğum öncesi değerlendirme",
-        "prep": "Genellikle özel hazırlık gerekmez; pıhtılaşmayı etkileyen tüm ilaçları ve son alım saatini bildirin, tedavi takibinde hekimin belirttiği saatte gelin",
-        "abnormal": "Pıhtılaşma süresinin uzaması ya da kısalması pıhtı önleyici tedaviyle, K vitamini eksikliğiyle, karaciğer hastalıklarıyla, tek tek pıhtılaşma faktörlerinin seyrek görülen bozukluklarıyla ve örnek alma tekniğiyle, örneğin eksik doldurulmuş tüple ilişkili olabilir. Sonucu tedaviyi yürüten hekim değerlendirir"
-      },
-      "sr_cyrl": {
-        "what": "Коагулациона претрага: за колико времена плазма крви створи угрушак једним од путева згрушавања",
-        "how": "Венска крв се узима у епрувету са цитратом тачно до ознаке, епрувета се пажљиво промијеша, затим се плазма одваја и мјери на коагулометру; само узимање траје пар минута",
-        "when": "Припрема за операцију и инвазивне захвате, увођење и контрола терапије антагонистима витамина К, процјена рада јетре, обрада код крварења десни и великих модрица, обрада прије порођаја",
-        "prep": "Посебна припрема обично није потребна; пријавити све лијекове који утичу на згрушавање и вријеме посљедње дозе, а код контроле терапије доћи у сат који је одредио љекар",
-        "abnormal": "Продужено или скраћено вријеме згрушавања може бити повезано са антикоагулантном терапијом, мањком витамина К, болестима јетре, ријетким поремећајима појединих фактора згрушавања, али и са начином узимања узорка, на примјер недовољно напуњеном епруветом. Налаз процјењује и одлуку доноси љекар који води лијечење"
-      }
-    }
-  },
-  {
     "slug": "serum-separation",
     "entity_type": "medical_service",
     "translations": {

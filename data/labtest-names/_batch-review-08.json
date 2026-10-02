@@ -1,0 +1,789 @@
+[
+	{
+		"slug": "amine-test",
+		"id": 288,
+		"clinics": 7,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Amine Test",
+			"sr": "Amin test",
+			"sr_cyrl": "Амин тест",
+			"ru": "Аминовый тест",
+			"de": "Amin-Test",
+			"tr": "Amin Testi"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Amintest"
+			],
+			"sr": [
+				"Aminski test"
+			],
+			"sr-cyrl": [
+				"Амински тест"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "antibiogram",
+		"id": 1999,
+		"clinics": 3,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Antibiogram",
+			"sr": "Izrada antibiograma",
+			"sr_cyrl": "Израда антибиограма",
+			"ru": "Антибиотикограмма",
+			"de": "Antibiogramm",
+			"tr": "Antibiyogram"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Antibiogrammerstellung"
+			],
+			"en": [
+				"Antibiogram Production",
+				"Antibiotic Sensitivity Testing",
+				"AST"
+			],
+			"ru": [
+				"Изготовление антибиограммы"
+			],
+			"tr": [
+				"Antibiyogram hazırlanması"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "antimycogram",
+		"id": 2004,
+		"clinics": 3,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Antimycogram",
+			"sr": "Izrada antimikograma",
+			"sr_cyrl": "Израда антимикограма",
+			"ru": "Антимикограмма",
+			"de": "Antimykogramm",
+			"tr": "Antimikogram"
+		},
+		"existing_synonyms": {
+			"en": [
+				"Antifungal Sensitivity Testing"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "K01049",
+				"name": "Izrada antimikograma"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "K01049",
+				"name": "Izrada antimikograma"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "bacteriological-examination-ear-swab",
+		"id": 296,
+		"clinics": 7,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Bacteriological Examination Ear Swab",
+			"sr": "Bakteriološki pregled bris uha",
+			"sr_cyrl": "Бактериолошки преглед брис уха",
+			"ru": "Бактериологический посев мазка из уха",
+			"de": "Bakteriologische Untersuchung Ohrabstrich",
+			"tr": "Kulak Sürüntüsü Bakteriyolojik İncelemesi"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Ohrabstrich-Kultur"
+			],
+			"en": [
+				"Ear Swab Culture"
+			],
+			"ru": [
+				"Мазок из уха"
+			],
+			"sr": [
+				"Bris uha"
+			],
+			"sr-cyrl": [
+				"Брис уха"
+			],
+			"tr": [
+				"Kulak sürüntü kültürü"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "K01012",
+				"name": "Bris uha"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "K01012",
+				"name": "Bris uha"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "blood-culture",
+		"id": 1724,
+		"clinics": 7,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Blood Culture",
+			"sr": "Hemokultura (bakterije)",
+			"sr_cyrl": "Хемокултура (бактерије)",
+			"ru": "Гемокультура (бактерии)",
+			"de": "Blutkultur (Bakterien)",
+			"tr": "Kan Kültürü (Bakteri)"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "breast-swab-bacteria",
+		"id": 1720,
+		"clinics": 7,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Breast Swab Bacteria",
+			"sr": "Bris dojke (bakterije)",
+			"sr_cyrl": "Брис дојке (бактерије)",
+			"ru": "Мазок молочной железы (бактерии)",
+			"de": "Brustabstrich (Bakterien)",
+			"tr": "Meme Sürüntüsü (Bakteri)"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Brustabstrich-Kultur"
+			],
+			"en": [
+				"Breast Swab Culture"
+			],
+			"ru": [
+				"Мазок с молочной железы"
+			],
+			"sr": [
+				"Bris dojke"
+			],
+			"sr-cyrl": [
+				"Брис дојке"
+			],
+			"tr": [
+				"Meme sürüntü kültürü"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "K01016",
+				"name": "Bris dojke"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "K01016",
+				"name": "Bris dojke"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "cervical-swab-bacteria",
+		"id": 1178,
+		"clinics": 11,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Cervical Swab Bacteria",
+			"sr": "Bris cerviksa bakterije",
+			"sr_cyrl": "Брис цервикса бактерије",
+			"ru": "Мазок из шейки матки бактерии",
+			"de": "Zervixabstrich Bakterien",
+			"tr": "Servikal Sürüntü Bakteri"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Zervix-Kultur"
+			],
+			"en": [
+				"Cervical Culture"
+			],
+			"ru": [
+				"Посев цервикального материала"
+			],
+			"sr": [
+				"Cervikalna kultura"
+			],
+			"sr-cyrl": [
+				"Цервикална култура"
+			],
+			"tr": [
+				"Servikal kültür"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "K01027",
+				"name": "Cervikalna kultura"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "K01027",
+				"name": "Cervikalna kultura"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "cervical-swab-fungi",
+		"id": 1180,
+		"clinics": 8,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Cervical Swab Fungi",
+			"sr": "Bris cerviksa gljivice",
+			"sr_cyrl": "Брис цервикса гљивице",
+			"ru": "Мазок из шейки матки грибы",
+			"de": "Zervixabstrich Pilze",
+			"tr": "Servikal Sürüntü Mantar"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "dermatophytes-hair-scraping",
+		"id": 2000,
+		"clinics": 3,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Dermatophytes Hair Scraping",
+			"sr": "Pregled preparata na dermatomikoze dlake",
+			"sr_cyrl": "Преглед препарата на дерматомикозе длаке",
+			"ru": "Исследование препарата волос на дерматомикозы",
+			"de": "Dermatophyten Haarschabung",
+			"tr": "Saç kazıntısında dermatofitler"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Haar-Dermatomykose-Untersuchung"
+			],
+			"en": [
+				"Hair Dermatomycosis Examination"
+			],
+			"ru": [
+				"Микроскопия дерматомикоза волос"
+			],
+			"sr": [
+				"Pregled preparata dermatomikoze dlake"
+			],
+			"sr-cyrl": [
+				"Преглед препарата дерматомикозе длаке"
+			],
+			"tr": [
+				"Saç dermatomikoz incelemesi"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "dermatophytes-nail-scraping",
+		"id": 1236,
+		"clinics": 4,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Dermatophytes Nail Scraping",
+			"sr": "Dermatofiti strugotina nokta",
+			"sr_cyrl": "Дерматофити струготина нокта",
+			"ru": "Дерматофиты соскоб ногтя",
+			"de": "Dermatophyten Nagelabschabung",
+			"tr": "Dermatofit Tırnak Kazıntı"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Nageldermatomykose-Untersuchung"
+			],
+			"en": [
+				"Nail Dermatomycosis Examination",
+				"Nail Fungus"
+			],
+			"ru": [
+				"Микроскопия дерматомикоза ногтя"
+			],
+			"sr": [
+				"Pregled preparata dermatomikoze nokta"
+			],
+			"sr-cyrl": [
+				"Преглед препарата дерматомикозе нокта"
+			],
+			"tr": [
+				"Tırnak dermatomikoz incelemesi"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "dermatophytes-skin-scraping",
+		"id": 1235,
+		"clinics": 3,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Dermatophytes Skin Scraping",
+			"sr": "Dermatofiti strugotina kože",
+			"sr_cyrl": "Дерматофити струготина коже",
+			"ru": "Дерматофиты соскоб кожи",
+			"de": "Dermatophyten Hautabschabung",
+			"tr": "Dermatofit Cilt Kazıntı"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Hautdermatomykose-Untersuchung"
+			],
+			"en": [
+				"Skin Dermatomycosis Examination",
+				"Skin Fungus"
+			],
+			"ru": [
+				"Микроскопия дерматомикоза кожи"
+			],
+			"sr": [
+				"Pregled preparata dermatomikoze kože"
+			],
+			"sr-cyrl": [
+				"Преглед препарата дерматомикозе коже"
+			],
+			"tr": [
+				"Cilt dermatomikoz incelemesi"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "direct-microscopic-preparation",
+		"id": 300,
+		"clinics": 4,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Direct Microscopic Preparation",
+			"sr": "Direktan mikroskopski preparat",
+			"sr_cyrl": "Директан микроскопски препарат",
+			"ru": "Прямая микроскопия мазка",
+			"de": "Direkte mikroskopische Präparation",
+			"tr": "Direkt Mikroskobik Preparat"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Direkte mikroskopische Präparation Abstrich",
+				"Zytologisch-mikroskopische Untersuchung"
+			],
+			"en": [
+				"Cytological Microscopic Examination",
+				"Direct Microscopic Preparation Swab"
+			],
+			"ru": [
+				"Цитологическое микроскопическое исследование"
+			],
+			"sr": [
+				"Direktan mikroskopski preparat brisa",
+				"Mikroskopski citološki pregled (zapija)"
+			],
+			"sr-cyrl": [
+				"Директан микроскопски препарат бриса",
+				"Микроскопски цитолошки преглед (запија)"
+			],
+			"tr": [
+				"Direkt Mikroskobik Preparat Sürüntü",
+				"Sitolojik mikroskopik inceleme"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "ear-swab-fungi",
+		"id": 1735,
+		"clinics": 7,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Ear Swab Fungi",
+			"sr": "Bris uha (gljivice)",
+			"sr_cyrl": "Брис уха (гљивице)",
+			"ru": "Мазок уха (грибки)",
+			"de": "Ohrabstrich (Pilze)",
+			"tr": "Kulak Sürüntüsü (Mantar)"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "endocervical-swab-for-gonorrhea",
+		"id": 292,
+		"clinics": 5,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Endocervical Swab for Gonorrhea",
+			"sr": "Bris endocerviksa na gonoreju",
+			"sr_cyrl": "Брис ендоцервикса на гонореју",
+			"ru": "Мазок из эндоцервикса на гонорею",
+			"de": "Endozervikaler Abstrich auf Gonorrhoe",
+			"tr": "Gonorea İçin Endoservikal Sürüntü"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "eye-swab-chlamydia",
+		"id": 1718,
+		"clinics": 7,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Eye Swab Chlamydia",
+			"sr": "Bris oka – hlamidija",
+			"sr_cyrl": "Брис ока – хламидија",
+			"ru": "Мазок глаза – хламидия",
+			"de": "Augenabstrich – Chlamydien",
+			"tr": "Göz Sürüntüsü – Klamidya"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Augenabstrich auf Chlamydia trachomatis"
+			],
+			"en": [
+				"Chlamydia Trachomatis Eye Swab"
+			],
+			"ru": [
+				"Мазок из глаза на Chlamydia trachomatis"
+			],
+			"sr": [
+				"Bris oka na Chlamydia trachomatis"
+			],
+			"sr-cyrl": [
+				"Брис ока на Chlamydia trachomatis"
+			],
+			"tr": [
+				"Göz sürüntüsü Chlamydia trachomatis"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "fungal-identification",
+		"id": 2003,
+		"clinics": 3,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Fungal Identification",
+			"sr": "Identifikacija gljivica",
+			"sr_cyrl": "Идентификација гљивица",
+			"ru": "Идентификация грибков",
+			"de": "Pilzidentifikation",
+			"tr": "Mantar identifikasyonu"
+		},
+		"existing_synonyms": {
+			"ru": [
+				"Идентификация грибов"
+			],
+			"tr": [
+				"Mantar tanımlaması"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "K01048",
+				"name": "Identifikacija gljivica"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "K01048",
+				"name": "Identifikacija gljivica"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "glans-swab-bacteria",
+		"id": 1191,
+		"clinics": 11,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Glans Swab Bacteria",
+			"sr": "Bris glansa bakterije",
+			"sr_cyrl": "Брис гланса бактерије",
+			"ru": "Мазок с головки бактерии",
+			"de": "Glans-Abstrich Bakterien",
+			"tr": "Glans Sürüntüsü Bakteri"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Glansabstrich-Kultur"
+			],
+			"en": [
+				"Glans Swab Culture"
+			],
+			"ru": [
+				"Мазок с головки"
+			],
+			"sr": [
+				"Bris glansa"
+			],
+			"sr-cyrl": [
+				"Брис гланса"
+			],
+			"tr": [
+				"Glans sürüntü kültürü"
+			]
+		},
+		"fzocg": [
+			{
+				"source": "fzocg-pzz",
+				"code": "K01019",
+				"name": "Bris glansa"
+			},
+			{
+				"source": "fzocg-sekundarna",
+				"code": "K01019",
+				"name": "Bris glansa"
+			}
+		],
+		"hints": []
+	},
+	{
+		"slug": "glans-swab-fungi",
+		"id": 1192,
+		"clinics": 10,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Glans Swab Fungi",
+			"sr": "Bris glansa gljivice",
+			"sr_cyrl": "Брис гланса гљивице",
+			"ru": "Мазок с головки грибы",
+			"de": "Glans-Abstrich Pilze",
+			"tr": "Glans Sürüntüsü Mantar"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Glans-Pilzkultur"
+			],
+			"en": [
+				"Glans Fungal Culture"
+			],
+			"ru": [
+				"Посев мазка с головки на грибы"
+			],
+			"sr": [
+				"Kultura brisa glansa na gljivice"
+			],
+			"sr-cyrl": [
+				"Култура бриса гланса на гљивице"
+			],
+			"tr": [
+				"Glans mantar kültürü"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "hair-swab-fungi",
+		"id": 2001,
+		"clinics": 3,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Hair Swab Fungi",
+			"sr": "Kultura brisa dlake na gljivice",
+			"sr_cyrl": "Култура бриса длаке на гљивице",
+			"ru": "Культура мазка волос на грибки",
+			"de": "Haarabstrich Pilze",
+			"tr": "Saç sürüntüsü mantar"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Haarpilzkultur"
+			],
+			"en": [
+				"Hair Fungal Culture"
+			],
+			"ru": [
+				"Посев волос на грибы"
+			],
+			"sr": [
+				"Kultura dlake na gljivice"
+			],
+			"sr-cyrl": [
+				"Култура длаке на гљивице"
+			],
+			"tr": [
+				"Saç mantar kültürü"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	},
+	{
+		"slug": "left-eye-swab",
+		"id": 1168,
+		"clinics": 4,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Left Eye Swab",
+			"sr": "Bris lijevog oka",
+			"sr_cyrl": "Брис левог ока",
+			"ru": "Мазок из левого глаза",
+			"de": "Linkes Auge Abstrich",
+			"tr": "Sol Göz Sürüntüsü"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"ekavica_sr: levog",
+			"шаг 1 уже поправил sr: «Bris levog oka» → «Bris lijevog oka» — не переделывай без причины"
+		]
+	},
+	{
+		"slug": "left-eye-swab-fungi",
+		"id": 1179,
+		"clinics": 4,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Left Eye Swab Fungi",
+			"sr": "Bris lijevog oka gljivice",
+			"sr_cyrl": "Брис левог ока гљивице",
+			"ru": "Мазок из левого глаза грибы",
+			"de": "Linkes Auge Abstrich Pilze",
+			"tr": "Sol Göz Sürüntüsü Mantar"
+		},
+		"existing_synonyms": {},
+		"fzocg": [],
+		"hints": [
+			"ekavica_sr: levog",
+			"шаг 1 уже поправил sr: «Bris levog oka gljivice» → «Bris lijevog oka gljivice» — не переделывай без причины"
+		]
+	},
+	{
+		"slug": "microscopic-examination-of-swab-for-gonorrhea",
+		"id": 1995,
+		"clinics": 3,
+		"categories": [
+			"Microbiology"
+		],
+		"specialties": [],
+		"names": {
+			"en": "Microscopic Examination of Swab for Gonorrhea",
+			"sr": "Pregled preparata uretralnog, vaginalnog ili cervikalnog brisa na gonoreju",
+			"sr_cyrl": "Преглед препарата уретралног, вагиналног или цервикалног бриса на гонореју",
+			"ru": "Микроскопия мазка из уретры, влагалища или шейки на гонорею",
+			"de": "Mikroskopische Untersuchung von Urethral-, Vaginal- oder Zervixabstrich auf Gonorrhö",
+			"tr": "Üretra, vajen veya serviks sürüntüsünde gonore mikroskopik incelemesi"
+		},
+		"existing_synonyms": {
+			"de": [
+				"Mikroskopie auf Gonorrhoe",
+				"Mikroskopie eines Urethral-, Vaginal- oder Zervixabstrichs auf Gonorrhoe"
+			],
+			"en": [
+				"Gonorrhea Smear Examination",
+				"Urethral, Vaginal or Cervical Gonorrhea Smear Examination"
+			],
+			"ru": [
+				"Микроскопия мазка из уретры, влагалища или шейки матки на гонорею",
+				"Микроскопия на гонорею"
+			],
+			"sr": [
+				"Pregled preparata na gonoreju"
+			],
+			"sr-cyrl": [
+				"Преглед препарата на гонореју"
+			],
+			"tr": [
+				"Gonore yayma incelemesi",
+				"Üretra, vajina veya serviks sürüntüsünde gonore mikroskopisi"
+			]
+		},
+		"fzocg": [],
+		"hints": []
+	}
+]

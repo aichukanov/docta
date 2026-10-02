@@ -1,0 +1,133 @@
+[
+	{
+		"slug": "17-hydroxyprogesterone",
+		"names": { "sr": "17-hidroksiprogesteron", "tr": "17-Hidroksiprogesteron" },
+		"synonyms": { "en": ["17-OHP", "17-OH Progesterone"], "sr": [], "ru": ["17-ОН-прогестерон", "17-ОПГ"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "acth",
+		"names": {},
+		"synonyms": { "en": ["Adrenocorticotropic Hormone", "Corticotropin"], "sr": [], "ru": ["Кортикотропин"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "androstenedione",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Андростенедион"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "c-peptide",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "calcitonin",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Тиреокальцитонин"], "de": ["Kalzitonin"], "tr": [] }
+	},
+	{
+		"slug": "cortisol",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Гидрокортизон"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "dhea-s",
+		"names": {},
+		"synonyms": { "en": ["Dehydroepiandrosterone Sulfate"], "sr": [], "ru": ["ДГЭА-сульфат"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "estradiol",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": ["Östradiol"], "tr": [] }
+	},
+	{
+		"slug": "free-t3",
+		"names": {},
+		"synonyms": { "en": ["Free Triiodothyronine"], "sr": ["Slobodni trijodtironin"], "ru": ["Трийодтиронин свободный"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "free-t4",
+		"names": {},
+		"synonyms": { "en": ["Free Thyroxine"], "sr": ["Slobodni tiroksin"], "ru": ["Тироксин свободный"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "free-testosterone",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "fsh",
+		"names": {},
+		"synonyms": { "en": ["Follicle-Stimulating Hormone"], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "inhibin-a",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Ингибин А"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "inhibin-b",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": ["Ингибин В"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "insulin",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "intact-pth",
+		"names": {},
+		"synonyms": { "en": ["Intact Parathyroid Hormone"], "sr": ["Intaktni parathormon"], "ru": ["Интактный паратгормон"], "de": ["Intaktes Parathormon"], "tr": [] }
+	},
+	{
+		"slug": "lh",
+		"names": {},
+		"synonyms": { "en": ["Luteinizing Hormone"], "sr": [], "ru": [], "de": [], "tr": ["Lüteinize Edici Hormon"] }
+	},
+	{
+		"slug": "progesterone",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "prolactin",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "pth",
+		"names": { "tr": "Paratiroid Hormonu" },
+		"synonyms": { "en": ["Parathormone"], "sr": [], "ru": ["Паратгормон"], "de": [], "tr": [] },
+		"note": "«Паратгормон» уже лежит в БД синонимом у intact-pth (id 713), а сам PTH (id 158) по нему не находится. Добавил его и сюда — это общее название гормона. Нужно решить: PTH и Intact PTH — это два разных анализа или дубль (современные методы почти всегда меряют интактный ПТГ)? Если это дубль, их надо слить, а если нет — снять «Паратгормон» с intact-pth."
+	},
+	{
+		"slug": "shbg",
+		"names": {},
+		"synonyms": { "en": ["Sex Hormone-Binding Globulin"], "sr": [], "ru": ["Сексстероидсвязывающий глобулин"], "de": [], "tr": [] }
+	},
+	{
+		"slug": "t3",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "t4",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "testosterone",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "thyroglobulin",
+		"names": {},
+		"synonyms": { "en": [], "sr": [], "ru": [], "de": [], "tr": [] }
+	},
+	{
+		"slug": "tsh",
+		"names": {},
+		"synonyms": { "en": ["Thyroid-Stimulating Hormone"], "sr": ["Tireotropni hormon"], "ru": ["Анализ на ТТГ"], "de": ["Thyreotropin"], "tr": [] }
+	}
+]

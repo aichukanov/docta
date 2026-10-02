@@ -138,3 +138,25 @@ export const PROTECTED_LATIN_TOKENS = [
 	// НЕ защищаем: DNK, RNK, PCR, EKG, HOBP, ORL, B12, B6 — у них устоявшаяся
 	// сербская кириллица (ДНК, ПЦР, ЕКГ, ХОБП, ОРЛ, Б12), список их только испортит.
 ];
+
+/**
+ * Роды микроорганизмов: латинский бином «Род вид» в сербской кириллице
+ * остаётся латиницей ЦЕЛИКОМ. Без этого род, похожий на иностранное слово
+ * («Trichinella» — двойная согласная), оставался латиницей, а вид, похожий на
+ * сербское слово («spiralis»), транслитерировался: «Trichinella спиралис».
+ * Используется генератором названий (sr-cyrl-names.mjs).
+ */
+export const LATIN_GENERA = [
+	'Aspergillus', 'Bartonella', 'Bordetella', 'Borrelia', 'Brucella', 'Campylobacter', 'Candida',
+	'Chlamydia', 'Chlamydophila', 'Clostridioides', 'Clostridium', 'Coxiella', 'Cryptococcus',
+	'Cryptosporidium', 'Echinococcus', 'Entamoeba', 'Enterobius', 'Escherichia', 'Gardnerella',
+	'Giardia', 'Haemophilus', 'Helicobacter', 'Klebsiella', 'Legionella', 'Leishmania', 'Leptospira',
+	'Listeria', 'Malassezia', 'Mycoplasma', 'Neisseria', 'Pityrosporum', 'Plasmodium', 'Pseudomonas',
+	'Rickettsia', 'Salmonella', 'Shigella', 'Staphylococcus', 'Streptococcus', 'Toxocara', 'Toxoplasma',
+	'Treponema', 'Trichinella', 'Trichomonas', 'Ureaplasma', 'Vibrio', 'Yersinia',
+	// аллерготесты и паразиты: растения, плесени, клещи, гельминты
+	'Acarus', 'Alnus', 'Alternaria', 'Ambrosia', 'Anisakis', 'Artemisia', 'Ascaris', 'Betula', 'Blomia',
+	'Chenopodium', 'Cladosporium', 'Corylus', 'Cupressus', 'Cynodon', 'Dactylis', 'Dermatophagoides',
+	'Festuca', 'Glycyphagus', 'Holcus', 'Humulus', 'Lepidoglyphus', 'Lolium', 'Olea', 'Parietaria',
+	'Penicillium', 'Phleum', 'Plantago', 'Poa', 'Secale', 'Strongyloides', 'Taenia', 'Tyrophagus',
+];

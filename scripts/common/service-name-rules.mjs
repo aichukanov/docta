@@ -46,6 +46,10 @@ export const EKAVICA = new Set([
 	'slepo', 'slepog', 'slepa', 'veštački', 'veštačka', 'veštačke', 'veštačkog',
 	'izbeljivanje', 'izbeljivanja', 'nameštanje', 'nameštanja', 'lepljenje', 'lepljenja',
 	'deljenje', 'posle', 'pre', 'unapred', 'napred', 'uvek', 'sledeći', 'sledeća', 'sledeće',
+	// анализы: в иекавице «antitijela», «bjelančevine», «mliječna», «ljepljiv», «obje»
+	'antitela', 'antitelo', 'antitelima', 'antitelu', 'autoantitela', 'antitelom',
+	'belančevine', 'belancevine', 'belančevina', 'mlečna', 'mlečne', 'mlečnu',
+	'lepljivim', 'lepljiva', 'lepljivom', 'obe',
 ]);
 
 /**
@@ -69,6 +73,10 @@ export const RU_ADJ_TAIL_OK = new Set([
 	'задней', 'костной', 'больным', 'больной', 'новорождённым', 'взрослой', 'скорой',
 	'нагрузкой', 'подвеской', 'стому', 'слизистой', 'клетчатой', 'лампой', 'облицовкой',
 	'кислотой', 'септопластикой', 'глаукому', 'поясничной', 'грудной', 'заплатой', 'зелёным',
+	// анализы: условия посева, метод и вид определения
+	'аэробное', 'анаэробное', 'аэробные', 'анаэробные', 'аэробный', 'анаэробный',
+	'количественный', 'качественный', 'высокочувствительный', 'комбинированный', 'базовый',
+	'расчетный', 'расчётный', 'суточный', 'терминальный', 'новый', 'формулой',
 ]);
 
 /** Аббревиатуры и бренды: латиница в name_ru для них законна. */

@@ -48,54 +48,6 @@
     }
   },
   {
-    "slug": "nose-swab",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Взятие материала со слизистой носовых ходов стерильным тампоном для лабораторного исследования",
-        "how": "Пациент слегка запрокидывает голову, тонкий тампон вводят в носовой ход и несколько раз проворачивают у стенки, затем помещают в пробирку с транспортной средой; на оба носовых хода уходит меньше минуты",
-        "when": "Затяжной насморк и гнойное отделяемое, подозрение на бактериальное воспаление пазух, обследование перед плановой операцией или госпитализацией, проверка носительства у персонала, подбор препарата по чувствительности возбудителя",
-        "prep": "В день забора не капать и не распылять в нос лекарства, нос не промывать, мазями не пользоваться; если приём антибиотика уже начат, обязательно сказать об этом",
-        "abnormal": "Лаборатория сообщает, какие микроорганизмы выросли и к каким препаратам они чувствительны, при этом часть находок относится к обычным обитателям носа. Нужно ли на это реагировать, решает направивший врач вместе с осмотром и жалобами"
-      },
-      "en": {
-        "what": "Collection of material from the lining of the nasal passages with a sterile swab for laboratory testing",
-        "how": "With the head tilted slightly back, a thin swab is inserted into the nostril and rotated against the wall, then placed in a tube with transport medium; both nostrils take less than a minute",
-        "when": "A prolonged runny nose with purulent discharge, suspected bacterial sinus infection, work-up before planned surgery or admission, carrier screening in staff, choosing a medicine according to the sensitivity of the organism",
-        "prep": "On the day of collection do not use nasal drops, sprays or ointments and do not rinse the nose; if you have already started an antibiotic, say so",
-        "abnormal": "The laboratory reports which organisms have grown and which medicines they are sensitive to, and some findings belong to the normal inhabitants of the nose. Whether anything needs to be done is decided by the referring doctor together with the examination and symptoms"
-      },
-      "sr": {
-        "what": "Uzimanje materijala sa sluznice nosnih hodnika sterilnim štapićem za laboratorijsku obradu",
-        "how": "Pacijent malo zabaci glavu, tanki štapić se uvodi u nosni hodnik i nekoliko puta okrene uz zid, a zatim stavlja u epruvetu sa transportnom podlogom; za obje nozdrve treba manje od minuta",
-        "when": "Dugotrajna sekrecija i gnojav iscjedak iz nosa, sumnja na bakterijsku upalu sinusa, obrada prije planirane operacije ili prijema u bolnicu, provjera kliconoštva kod osoblja, izbor lijeka prema osjetljivosti uzročnika",
-        "prep": "Na dan uzimanja ne ukapavati i ne raspršivati lijekove u nos, nos ne ispirati i ne koristiti masti; ako je antibiotik već započet, to obavezno reći",
-        "abnormal": "Laboratorija javlja koji su mikroorganizmi izrasli i na koje su lijekove osjetljivi, pri čemu dio nalaza pripada uobičajenim stanovnicima nosa. Da li na to treba reagovati, odlučuje ljekar koji je uputio, uz pregled i tegobe"
-      },
-      "de": {
-        "what": "Entnahme von Material aus der Schleimhaut der Nasengänge mit einem sterilen Tupfer für die Laboruntersuchung",
-        "how": "Der Kopf wird leicht zurückgeneigt, ein dünner Tupfer in den Nasengang eingeführt und an der Wand mehrfach gedreht, dann in ein Röhrchen mit Transportmedium gegeben; beide Nasengänge dauern weniger als eine Minute",
-        "when": "Lang anhaltender Schnupfen mit eitrigem Sekret, Verdacht auf bakterielle Nebenhöhlenentzündung, Abklärung vor geplanter Operation oder Aufnahme, Trägerkontrolle bei Personal, Auswahl eines Medikaments nach Empfindlichkeit des Erregers",
-        "prep": "Am Entnahmetag keine Nasentropfen, Sprays oder Salben verwenden und die Nase nicht spülen; eine bereits begonnene Antibiotikaeinnahme unbedingt angeben",
-        "abnormal": "Das Labor meldet, welche Keime gewachsen sind und auf welche Mittel sie empfindlich reagieren, wobei ein Teil der Befunde zu den üblichen Bewohnern der Nase gehört. Ob etwas unternommen werden muss, entscheidet die zuweisende Ärztin oder der Arzt zusammen mit Untersuchung und Beschwerden"
-      },
-      "tr": {
-        "what": "Laboratuvar incelemesi için burun içi mukozasından steril eküvyonla örnek alınması",
-        "how": "Baş hafifçe geriye yatırılır, ince eküvyon burun deliğine sokulup duvara değdirilerek birkaç kez döndürülür, sonra taşıma besiyerli tüpe konur; iki burun deliği bir dakikadan kısa sürer",
-        "when": "Uzayan burun akıntısı ve irinli sekresyon, bakteriyel sinüs iltihabı şüphesi, planlı ameliyat veya yatış öncesi değerlendirme, personelde taşıyıcılık taraması, etkenin duyarlılığına göre ilaç seçimi",
-        "prep": "Örnek alınacak gün buruna damla, sprey veya merhem uygulamayın, burnu yıkamayın; antibiyotiğe başlanmışsa mutlaka belirtin",
-        "abnormal": "Laboratuvar hangi mikroorganizmaların ürediğini ve hangi ilaçlara duyarlı olduğunu bildirir; bulguların bir kısmı burnun olağan florasına aittir. Bir şey yapılması gerekip gerekmediğine, muayene ve şikâyetlerle birlikte yönlendiren hekim karar verir"
-      },
-      "sr_cyrl": {
-        "what": "Узимање материјала са слузнице носних ходника стерилним штапићем за лабораторијску обраду",
-        "how": "Пацијент мало забаци главу, танки штапић се уводи у носни ходник и неколико пута окрене уз зид, а затим ставља у епрувету са транспортном подлогом; за обје ноздрве треба мање од минута",
-        "when": "Дуготрајна секреција и гнојав исцједак из носа, сумња на бактеријску упалу синуса, обрада прије планиране операције или пријема у болницу, провјера клицоноштва код особља, избор лијека према осјетљивости узрочника",
-        "prep": "На дан узимања не укапавати и не распршивати лијекове у нос, нос не испирати и не користити масти; ако је антибиотик већ започет, то обавезно рећи",
-        "abnormal": "Лабораторија јавља који су микроорганизми израсли и на које су лијекове осјетљиви, при чему дио налаза припада уобичајеним становницима носа. Да ли на то треба реаговати, одлучује љекар који је упутио, уз преглед и тегобе"
-      }
-    }
-  },
-  {
     "slug": "sinus-ultrasound",
     "entity_type": "medical_service",
     "translations": {
@@ -764,54 +716,6 @@
         "when": "Сумња на упалу синуса, дуготрајна запушеност носа и бол у лицу, контрола послије лијечења или пункције, повреда костију лица, процјена стања синуса прије захвата",
         "prep": "Није потребна; прије снимања издувати нос, скинути наочаре, минђуше и покретну протезу, а могућу трудноћу пријавити прије почетка",
         "abnormal": "Пројекције се допуњују: оно што на једном кадру заклањају кости види се на другом, па је серија често информативнија од појединачног снимка. Налаз пише радиолог, а даље кораке одређује ОРЛ љекар, који код упорних тегоба упућује на скенер"
-      }
-    }
-  },
-  {
-    "slug": "tongue-swab",
-    "entity_type": "medical_service",
-    "translations": {
-      "ru": {
-        "what": "Взятие налёта и отделяемого с поверхности языка стерильным тампоном для лаборатории",
-        "how": "Пациент высовывает язык, медработник проводит тампоном по спинке языка и по участкам с налётом и убирает тампон в пробирку с транспортной средой; занимает несколько секунд, иногда вызывает кратковременный рвотный позыв",
-        "when": "Стойкий налёт на языке, жжение и изменение вкуса, воспаление слизистой рта, жалобы на фоне антибиотиков, зубных протезов или ингаляционных препаратов, контроль после лечения",
-        "prep": "Утром до еды и питья: не чистить зубы и язык, не полоскать рот антисептиком, не курить за пару часов; если антибиотик или противогрибковый препарат уже принимают, сказать об этом",
-        "abnormal": "Лаборатория сообщает, какие бактерии или грибы выросли, при этом часть из них постоянно живёт в полости рта, поэтому находка сама по себе ещё не говорит о болезни. Сопоставляет результат с осмотром и решает, нужно ли лечение, врач"
-      },
-      "en": {
-        "what": "Collection of coating and secretions from the surface of the tongue with a sterile swab for the laboratory",
-        "how": "You stick out your tongue while the swab is drawn over the back of the tongue and any coated areas, after which it goes into a tube with transport medium; it takes a few seconds and may briefly trigger a gag reflex",
-        "when": "Persistent coating on the tongue, burning and altered taste, inflammation of the mouth lining, complaints while on antibiotics or using dentures or inhaled medicines, follow-up after treatment",
-        "prep": "In the morning before eating or drinking: do not brush your teeth or tongue, do not rinse with an antiseptic mouthwash and do not smoke for a couple of hours; say if you are already taking an antibiotic or an antifungal",
-        "abnormal": "The laboratory reports which bacteria or fungi have grown, and some of them live in the mouth all the time, so a finding alone does not yet indicate disease. The doctor compares the result with the examination and decides whether treatment is needed"
-      },
-      "sr": {
-        "what": "Uzimanje naslaga i sekreta sa površine jezika sterilnim štapićem za laboratoriju",
-        "how": "Pacijent isplazi jezik, a zdravstveni radnik štapićem prebriše leđa jezika i mjesta sa naslagama i stavi ga u epruvetu sa transportnom podlogom; traje nekoliko sekundi i ponekad izazove kratkotrajan nagon na povraćanje",
-        "when": "Uporne naslage na jeziku, pečenje i promjena ukusa, upala sluznice usta, tegobe uz antibiotike, zubnu protezu ili inhalacione lijekove, kontrola poslije liječenja",
-        "prep": "Ujutru prije jela i pića: ne prati zube ni jezik, ne ispirati usta antiseptikom i ne pušiti nekoliko sati; reći ako se antibiotik ili lijek protiv gljivica već uzima",
-        "abnormal": "Laboratorija javlja koje su bakterije ili gljivice izrasle, a dio njih stalno živi u ustima, pa nalaz sam po sebi još ne govori o bolesti. Nalaz sa pregledom povezuje i o potrebi liječenja odlučuje ljekar"
-      },
-      "de": {
-        "what": "Entnahme von Belag und Sekret von der Zungenoberfläche mit einem sterilen Tupfer für das Labor",
-        "how": "Die Zunge wird herausgestreckt, der Tupfer über den Zungenrücken und belegte Stellen geführt und anschließend in ein Röhrchen mit Transportmedium gegeben; es dauert wenige Sekunden und kann kurz einen Würgereiz auslösen",
-        "when": "Hartnäckiger Zungenbelag, Brennen und verändertes Geschmacksempfinden, Entzündung der Mundschleimhaut, Beschwerden unter Antibiotika, mit Zahnersatz oder inhalativen Medikamenten, Kontrolle nach Behandlung",
-        "prep": "Morgens vor dem Essen und Trinken: Zähne und Zunge nicht putzen, den Mund nicht mit einem Antiseptikum spülen und einige Stunden nicht rauchen; eine bereits begonnene Antibiotika- oder Antipilzbehandlung angeben",
-        "abnormal": "Das Labor meldet, welche Bakterien oder Pilze gewachsen sind, wobei ein Teil davon dauerhaft im Mund lebt, sodass ein Befund allein noch keine Erkrankung bedeutet. Die Ärztin oder der Arzt verbindet das Ergebnis mit der Untersuchung und entscheidet über eine Behandlung"
-      },
-      "tr": {
-        "what": "Laboratuvar için dil yüzeyindeki pas ve salgının steril eküvyonla alınması",
-        "how": "Hasta dilini çıkarır, sağlık görevlisi eküvyonu dil sırtında ve pas olan bölgelerde gezdirip taşıma besiyerli tüpe koyar; birkaç saniye sürer ve bazen kısa süreli öğürme hissi yaratır",
-        "when": "Dilde geçmeyen pas, yanma ve tat değişikliği, ağız mukozası iltihabı, antibiyotik kullanırken ya da protez ve inhaler ilaçlarla ortaya çıkan şikâyetler, tedavi sonrası kontrol",
-        "prep": "Sabah yemeden ve içmeden önce: diş ve dil fırçalamayın, ağzı antiseptikle çalkalamayın, birkaç saat sigara içmeyin; antibiyotik veya mantar ilacı kullanıyorsanız belirtin",
-        "abnormal": "Laboratuvar hangi bakteri ya da mantarın ürediğini bildirir; bunların bir bölümü ağızda sürekli bulunur, bu nedenle bulgu tek başına hastalık anlamına gelmez. Sonucu muayeneyle birleştirip tedavi gerekip gerekmediğine hekim karar verir"
-      },
-      "sr_cyrl": {
-        "what": "Узимање наслага и секрета са површине језика стерилним штапићем за лабораторију",
-        "how": "Пацијент исплази језик, а здравствени радник штапићем пребрише леђа језика и мјеста са наслагама и стави га у епрувету са транспортном подлогом; траје неколико секунди и понекад изазове краткотрајан нагон на повраћање",
-        "when": "Упорне наслаге на језику, печење и промјена укуса, упала слузнице уста, тегобе уз антибиотике, зубну протезу или инхалационе лијекове, контрола послије лијечења",
-        "prep": "Ујутру прије јела и пића: не прати зубе ни језик, не испирати уста антисептиком и не пушити неколико сати; рећи ако се антибиотик или лијек против гљивица већ узима",
-        "abnormal": "Лабораторија јавља које су бактерије или гљивице израсле, а дио њих стално живи у устима, па налаз сам по себи још не говори о болести. Налаз са прегледом повезује и о потреби лијечења одлучује љекар"
       }
     }
   },

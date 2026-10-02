@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 /**
- * Раскладывает услуги по батчам для вычитки названий (docs/audit/service-names-2026-09.md):
+ * Раскладывает услуги или анализы (--catalog svc|lab) по батчам для вычитки
+ * названий; папка батчей — из scripts/common/name-review-catalog.mjs:
  *
- *   data/service-names/_batch-fix-NN.json     — шаг 1: механические дефекты по всему
- *                                               каталогу (ekavica_sr, diacritics_sr, truncated_ru);
- *   data/service-names/_batch-review-NN.json  — шаг 2: полная вычитка + синонимы
- *                                               для услуг с клиниками >= --min-clinics.
+ *   <dir>/_batch-fix-NN.json     — шаг 1: механические дефекты по всему каталогу
+ *                                  (ekavica_sr, diacritics_sr, truncated_ru, пустые
+ *                                  локали, смешение алфавитов);
+ *   <dir>/_batch-review-NN.json  — шаг 2: полная вычитка + синонимы для записей
+ *                                  с клиниками >= --min-clinics.
  *
  * Агенту нужны факты, иначе он допишет названия по общим знаниям: поэтому в
  * ростере все шесть локалей, категории, специальности, уже существующие синонимы,
@@ -15,9 +17,9 @@
  * name_en — серия («Rendgen …», «Pregled …») попадает к одному агенту целиком,
  * и формулировки внутри серии выходят одинаковыми.
  *
- * Требует свежий data/service-names/_flags.json (scan-name-quality.mjs).
+ * Требует свежий <dir>/_flags.json (scan-name-quality.mjs с тем же --catalog).
  *
- * Usage: node scripts/services/build-name-review-roster.mjs [--min-clinics 3] [--review-size 45] [--fix-size 40]
+ * Usage: node scripts/services/build-name-review-roster.mjs [--catalog svc|lab] [--min-clinics 3] [--review-size 45] [--fix-size 40]
  */
 
 import mysql from 'mysql2/promise';
@@ -25,10 +27,12 @@ import { readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadEnv, dbConfigFromEnv } from '../common/dedup-text.mjs';
+import { catalogFromArgv } from '../common/name-review-catalog.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..', '..');
-const DIR = resolve(ROOT, 'data/service-names');
+const C = catalogFromArgv(ROOT);
+const DIR = C.dirAbs;
 
 const arg = (name, fallback) => {
 	const i = process.argv.indexOf(name);
@@ -39,7 +43,11 @@ const REVIEW_SIZE = arg('--review-size', 45);
 const FIX_SIZE = arg('--fix-size', 40);
 
 /** Классы сканера, которые чинятся на шаге 1. Остальные идут подсказками в шаг 2. */
-const MECHANICAL = ['ekavica_sr', 'diacritics_sr', 'truncated_ru'];
+const MECHANICAL = [
+	'ekavica_sr', 'diacritics_sr', 'truncated_ru', 'mixed_script',
+	// empty_sr_cyrl агенту не отдаётся: кириллицу собирает сборщик из sr
+	'empty_en', 'empty_sr', 'empty_ru', 'empty_de', 'empty_tr',
+];
 const HINTS = [...MECHANICAL, 'copy_of_en', 'short_vs_en'];
 
 const flagsReport = JSON.parse(readFileSync(resolve(DIR, '_flags.json'), 'utf-8'));
@@ -59,22 +67,25 @@ const q = async (sql) => (await db.query(sql))[0];
 const services = await q(`
 	SELECT s.id, s.slug, s.name_en, s.name_sr, s.name_sr_cyrl, s.name_ru, s.name_de, s.name_tr,
 	       COUNT(DISTINCT cs.clinic_id) AS clinics
-	  FROM medical_services s
-	  LEFT JOIN clinic_medical_services cs ON cs.medical_service_id = s.id
+	  FROM ${C.table} s
+	  LEFT JOIN ${C.clinicTable} cs ON cs.${C.fk} = s.id
 	 GROUP BY s.id`);
 const categories = await q(`
-	SELECT rel.medical_service_id AS id, cat.name
-	  FROM medical_service_categories_relations rel
-	  JOIN medical_service_categories cat ON cat.id = rel.medical_service_category_id`);
-const specialties = await q(`
+	SELECT rel.${C.fk} AS id, cat.name
+	  FROM ${C.categoryRelTable} rel
+	  JOIN ${C.categoryTable} cat ON cat.id = rel.${C.categoryRelColumn}`);
+const specialties = C.hasSpecialties
+	? await q(`
 	SELECT rsp.medical_service_id AS id, sp.name
 	  FROM medical_services_specialties rsp
-	  JOIN specialties sp ON sp.id = rsp.specialty_id`);
-const synonyms = await q(`SELECT medical_service_id AS id, language, another_name FROM medical_service_synonyms`);
+	  JOIN specialties sp ON sp.id = rsp.specialty_id`)
+	: [];
+const synonyms = await q(`SELECT ${C.fk} AS id, language, another_name FROM ${C.synonymTable}`);
+// Тарифы FZOCG есть у обоих каталогов (lab_test_id — с миграции 028)
 const tariffs = await q(`
-	SELECT medical_service_id AS id, tariff_source, code, name_sr_latin
+	SELECT ${C.fk} AS id, tariff_source, code, name_sr_latin
 	  FROM medical_service_tariffs
-	 WHERE medical_service_id IS NOT NULL AND name_sr_latin IS NOT NULL
+	 WHERE ${C.fk} IS NOT NULL AND name_sr_latin IS NOT NULL
 	 ORDER BY tariff_source, code`);
 await db.end();
 
@@ -118,7 +129,7 @@ const card = (s) => ({
 	clinics: s.clinics,
 	categories: catsById.get(s.id) || [],
 	specialties: specsById.get(s.id) || [],
-	names: { en: s.name_en, sr: s.name_sr, sr_cyrl: s.name_sr_cyrl, ru: s.name_ru, de: s.name_de, tr: s.name_tr },
+	names: { en: s.name_en ?? '', sr: s.name_sr ?? '', sr_cyrl: s.name_sr_cyrl ?? '', ru: s.name_ru ?? '', de: s.name_de ?? '', tr: s.name_tr ?? '' },
 	existing_synonyms: synsById.get(s.id) || {},
 	fzocg: (tariffsById.get(s.id) || []).slice(0, 3),
 	hints: hintsById.get(s.id) || [],
@@ -162,7 +173,7 @@ for (const s of services.filter((s) => s.clinics >= MIN_CLINICS)) {
 }
 const chunks = [];
 for (const rows of byCategory.values()) {
-	rows.sort((a, b) => a.name_en.localeCompare(b.name_en));
+	rows.sort((a, b) => (a.name_en ?? '').localeCompare(b.name_en ?? ''));
 	const parts = Math.ceil(rows.length / REVIEW_SIZE);
 	const size = Math.ceil(rows.length / parts);
 	for (let i = 0; i < rows.length; i += size) chunks.push(rows.slice(i, i + size));
@@ -178,8 +189,8 @@ for (const chunk of chunks) {
 reviewBatches.forEach((rows, i) => write('review', i + 1, rows.map(reviewCard)));
 
 const reviewCount = reviewBatches.reduce((n, b) => n + b.length, 0);
-console.log(`шаг 1: ${fixRows.length} услуг → ${fixBatches} батчей по ≤${FIX_SIZE}`);
-console.log(`шаг 2: ${reviewCount} услуг (клиник >= ${MIN_CLINICS}) → ${reviewBatches.length} батчей по ≤${REVIEW_SIZE}`);
+console.log(`шаг 1: ${fixRows.length} ${C.noun} → ${fixBatches} батчей по ≤${FIX_SIZE}`);
+console.log(`шаг 2: ${reviewCount} ${C.noun} (клиник >= ${MIN_CLINICS}) → ${reviewBatches.length} батчей по ≤${REVIEW_SIZE}`);
 for (const [i, rows] of reviewBatches.entries()) {
 	const cats = [...new Set(rows.map((r) => primaryCategory(r.id)))];
 	console.log(`  review-${String(i + 1).padStart(2, '0')}: ${String(rows.length).padStart(2)}  ${cats.slice(0, 4).join(', ')}${cats.length > 4 ? ` +${cats.length - 4}` : ''}`);

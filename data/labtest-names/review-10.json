@@ -1,0 +1,418 @@
+[
+	{
+		"slug": "adenovirus-respiratory-test",
+		"names": {
+			"en": "Adenovirus Respiratory Test (Nasal Swab)",
+			"ru": "Тест на аденовирус (мазок из носа)",
+			"de": "Adenovirus-Atemwegstest (Nasenabstrich)",
+			"tr": "Adenovirüs Solunum Testi (Burun Sürüntüsü)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Bris nosa na adenovirus"
+			],
+			"ru": [
+				"Мазок на аденовирус"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "azf-y-chromosome-deletions",
+		"names": {
+			"ru": "Делеции Y-хромосомы (AZF)",
+			"de": "AZF-Deletionen des Y-Chromosoms",
+			"tr": "Y Kromozomu AZF Delesyonları"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "В каталоге есть анализ id 315 с названием «Mikrodelecije Y hromozoma» — вероятно, тот же тест (делеции AZF = микроделеции Y-хромосомы). Синонимы про микроделеции не добавлены, чтобы не перетягивать запросы; решить, сливать ли."
+	},
+	{
+		"slug": "breast-swab-fungi",
+		"names": {
+			"en": "Breast Swab for Fungi",
+			"sr": "Bris dojke na gljivice",
+			"ru": "Мазок с молочной железы на грибы",
+			"de": "Brustabstrich auf Pilze",
+			"tr": "Meme Sürüntüsünde Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Bris grudi na gljivice"
+			],
+			"ru": [
+				"Мазок из груди на грибы"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "campylobacter-stool-test",
+		"names": {
+			"ru": "Тест на Campylobacter (кал)",
+			"de": "Campylobacter-Stuhltest"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [
+				"Кампилобактер в кале"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "candida-culture",
+		"names": {
+			"ru": "Candida (культура)",
+			"de": "Candida-Kultur",
+			"tr": "Candida Kültürü"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Kandida (kultura)"
+			],
+			"ru": [
+				"Кандида (культура)",
+				"Посев на кандиду"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "cbc-with-crp",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Complete Blood Count with CRP"
+			],
+			"sr": [
+				"Kompletna krvna slika + CRP"
+			],
+			"ru": [
+				"Общий анализ крови + СРБ",
+				"Клинический анализ крови + С-реактивный белок"
+			],
+			"de": [],
+			"tr": [
+				"Hemogram + CRP"
+			]
+		}
+	},
+	{
+		"slug": "chlamydia-genital-swab",
+		"names": {
+			"en": "Chlamydia trachomatis Genital Swab",
+			"ru": "Chlamydia trachomatis – мазок из половых путей",
+			"de": "Chlamydia trachomatis – Genitalabstrich",
+			"tr": "Chlamydia trachomatis – Genital Sürüntü"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Bris na hlamidiju"
+			],
+			"ru": [
+				"Мазок на хламидии",
+				"Хламидиоз (мазок)"
+			],
+			"de": [],
+			"tr": [
+				"Klamidya sürüntüsü"
+			]
+		}
+	},
+	{
+		"slug": "clostridium-difficile-toxin-ab",
+		"names": {
+			"ru": "Clostridium difficile – токсин A+B",
+			"tr": "Clostridium difficile Toksin A+B"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [
+				"Клостридиум диффициле – токсин A+B"
+			],
+			"de": [],
+			"tr": []
+		},
+		"note": "Похоже на дубль clostridium-difficile-toxin-a-and-b (ростер review-20: «Clostridium Difficile Toxin A and B») — решить, сливать ли."
+	},
+	{
+		"slug": "dermatomycosis-nmp",
+		"names": {
+			"en": "Dermatomycosis (Nails, Hair, Skin) – NMP",
+			"de": "Dermatomykosen (Nägel, Haare, Haut) – NMP",
+			"tr": "Dermatomikoz (Tırnak, Saç, Cilt) – NMP"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		},
+		"note": "«NMP» нигде не расшифровано (скорее всего nativni mikroskopski preparat — микроскопия нативного препарата). Оставлено как есть в en/de/tr, в ru его нет. Если расшифровка верна — можно написать «Микроскопия на дерматомикозы (ногти, волосы, кожа)» во всех локалях."
+	},
+	{
+		"slug": "dermatophytes-culture",
+		"names": {
+			"de": "Dermatophyten-Kultur",
+			"tr": "Dermatofit Kültürü"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Kultura na dermatofite"
+			],
+			"ru": [
+				"Посев на дерматофиты"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "double-test-first-trimester-screening",
+		"names": {
+			"sr": "Dabl test (biohemijski skrining 1. trimestra)",
+			"tr": "İkili Test (1. Trimester Taraması)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [
+				"Биохимический скрининг 1 триместра"
+			],
+			"de": [],
+			"tr": []
+		},
+		"note": "Похоже на дубль double-test (ростер review-17: «Double Test» / «Двойной тест») — решить, сливать ли. У соседа triple-test-second-trimester-screening (review-11) та же грамматическая ошибка в sr: «skrining 2. trimestar» → «2. trimestra»."
+	},
+	{
+		"slug": "ear-swab-bacteria",
+		"names": {
+			"en": "Ear Swab for Bacteria",
+			"sr": "Bris uha na bakterije",
+			"ru": "Мазок из уха на бактерии",
+			"de": "Ohrabstrich auf Bakterien",
+			"tr": "Kulak Sürüntüsünde Bakteri"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [
+				"Мазок из уха на флору"
+			],
+			"de": [],
+			"tr": []
+		},
+		"note": "Похоже на дубль bacteriological-examination-ear-swab (id 296, review-08, к нему привязан код FZOCG K01012 «Bris uha») — решить, сливать ли."
+	},
+	{
+		"slug": "eye-swab-bacteria",
+		"names": {
+			"en": "Eye Swab for Bacteria",
+			"sr": "Bris oka na bakterije",
+			"ru": "Мазок из глаза на бактерии",
+			"de": "Augenabstrich auf Bakterien",
+			"tr": "Göz Sürüntüsünde Bakteri"
+		},
+		"synonyms": {
+			"en": [
+				"Conjunctival Swab Culture"
+			],
+			"sr": [
+				"Bris konjunktive"
+			],
+			"ru": [
+				"Мазок с конъюнктивы"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "eye-swab-fungi",
+		"names": {
+			"en": "Eye Swab for Fungi",
+			"sr": "Bris oka na gljivice",
+			"ru": "Мазок из глаза на грибы",
+			"de": "Augenabstrich auf Pilze",
+			"tr": "Göz Sürüntüsünde Mantar"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Bris konjunktive na gljivice"
+			],
+			"ru": [
+				"Мазок с конъюнктивы на грибы"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "insulin-resistance-test-3-point",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "insulin-resistance-test-5-point",
+		"names": {},
+		"synonyms": {
+			"en": [],
+			"sr": [],
+			"ru": [],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "kindergarten-microbiology-2",
+		"names": {
+			"en": "Kindergarten Microbiology, 2 Sites (Throat, Perianal Tape Test)",
+			"ru": "Микробиологический анализ для детсада, 2 зоны (зев, соскоб на энтеробиоз)",
+			"de": "Mikrobiologischer Befund für den Kindergarten, 2 Proben (Rachen, Perianalabklatsch)",
+			"tr": "Anaokulu Mikrobiyoloji Testi, 2 Bölge (Boğaz, Perianal Bant Testi)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Analize za vrtić – grlo i perianalni otisak"
+			],
+			"ru": [
+				"Анализы для детского сада: зев и энтеробиоз"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "kindergarten-microbiology-3",
+		"names": {
+			"en": "Kindergarten Microbiology, 3 Sites (Throat, Nose, Perianal Tape Test)",
+			"ru": "Микробиологический анализ для детсада, 3 зоны (зев, нос, соскоб на энтеробиоз)",
+			"de": "Mikrobiologischer Befund für den Kindergarten, 3 Proben (Rachen, Nase, Perianalabklatsch)",
+			"tr": "Anaokulu Mikrobiyoloji Testi, 3 Bölge (Boğaz, Burun, Perianal Bant Testi)"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Analize za vrtić – grlo, nos i perianalni otisak"
+			],
+			"ru": [
+				"Анализы для детского сада: зев, нос и энтеробиоз"
+			],
+			"de": [],
+			"tr": []
+		}
+	},
+	{
+		"slug": "mycoplasma-ureaplasma-genital-swab",
+		"names": {
+			"ru": "Mycoplasma + Ureaplasma – мазок из половых путей",
+			"de": "Mycoplasma + Ureaplasma – Genitalabstrich",
+			"tr": "Mycoplasma + Ureaplasma – Genital Sürüntü"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Bris na mikoplazmu i ureaplazmu"
+			],
+			"ru": [
+				"Мазок на микоплазму и уреаплазму",
+				"Микоплазма и уреаплазма в мазке"
+			],
+			"de": [],
+			"tr": [
+				"Mikoplazma üreaplazma sürüntüsü"
+			]
+		}
+	},
+	{
+		"slug": "neisseria-gonorrhoeae-culture",
+		"names": {
+			"ru": "Neisseria gonorrhoeae (культура)",
+			"tr": "Neisseria gonorrhoeae Kültürü"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Gonokok (kultura)"
+			],
+			"ru": [
+				"Гонококк (культура)",
+				"Посев на гонорею"
+			],
+			"de": [],
+			"tr": [
+				"Gonore kültürü"
+			]
+		}
+	},
+	{
+		"slug": "neisseria-gonorrhoeae-rapid-test",
+		"names": {
+			"sr": "Neisseria gonorrhoeae – DMP + brzi test",
+			"ru": "Neisseria gonorrhoeae – быстрый тест",
+			"tr": "Neisseria gonorrhoeae Hızlı Testi"
+		},
+		"synonyms": {
+			"en": [],
+			"sr": [
+				"Brzi test na gonoreju"
+			],
+			"ru": [
+				"Гонококк – быстрый тест",
+				"Экспресс-тест на гонорею"
+			],
+			"de": [],
+			"tr": [
+				"Gonore hızlı testi"
+			]
+		},
+		"note": "В sr есть «DMP» (скорее всего direktni mikroskopski preparat — прямая микроскопия), в остальных локалях его нет; не добавлял, т.к. расшифровки нет ни в одном источнике. «rapid test» в sr заменён на «brzi test» — так уже записано в текущем sr_cyrl («брзи тест»)."
+	},
+	{
+		"slug": "ogtt-3-point",
+		"names": {},
+		"synonyms": {
+			"en": [
+				"Glucose Tolerance Test 3-point"
+			],
+			"sr": [
+				"Opterećenje glukozom (0, 60, 120 min)"
+			],
+			"ru": [
+				"Глюкозотолерантный тест, 3 точки",
+				"Сахарная кривая, 3 точки"
+			],
+			"de": [],
+			"tr": [
+				"Şeker yükleme testi 3 nokta"
+			]
+		}
+	}
+]

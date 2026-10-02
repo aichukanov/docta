@@ -329,7 +329,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `language` (varchar(10)): Language code.
 - _Unique constraint_: (`another_name`, `language`) — globally unique, unlike `medical_service_synonyms` which scopes uniqueness per record.
 - _Comment_: Merging lab tests writes the losing record's names here (all six languages), so a clinic's own phrasing keeps resolving after the merge. A merge also moves the losing record's existing synonyms across, and one of those can end up equal to the surviving record's own name — the cleanup query for that lives in `duplicate-synonyms-fix.txt` and ran as migration 031.
-- _Collation trap_: this table is `utf8mb4_0900_ai_ci` while `lab_tests` is `utf8mb4_unicode_ci`. Comparing `another_name` against a `lab_tests.name_*` column fails with ERROR 1267 unless an explicit `COLLATE utf8mb4_unicode_ci` is written into the expression; the `SET NAMES` header does not help, it only governs literals.
+- _Collation_: was `utf8mb4_0900_ai_ci` until migration 044, which converted it (and seven other tables) to `utf8mb4_unicode_ci` like the rest of the schema. On a database without 044, comparing `another_name` against a `lab_tests.name_*` column fails with ERROR 1267 unless an explicit `COLLATE utf8mb4_unicode_ci` is written into the expression. See `docs/rules/SQL_COLLATIONS.md`.
 
 ### `lab_test_reference_info`
 

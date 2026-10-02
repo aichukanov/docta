@@ -1,0 +1,28 @@
+{
+	"_comment": "Ошибочные синонимы, которые уже лежат в БД. Сборщик (build-service-names-sql.mjs --catalog lab) удаляет их в миграции шага 2. perianal-swab: синонимы пришли из перевода FZOCG «Bris čmara» (K01024) как «гной» и с опечаткой «žmara»; перианальный мазок — не мазок гноя. complement-fixation: опечатка «rezigracije» вместо «vezivanja». urethral-swab-for-gonorrhea: голое название болезни перетягивает запросы трёх других анализов на гонорею. vaginal-secretion: «Выделения» — общее слово. trichomonas-test: сломанная транслитерация латинского названия. nse: «НSE» со смешанным алфавитом (кириллическая Н).",
+	"perianal-swab": [
+		"Pus Swab Culture",
+		"Мазок гноя",
+		"Eiterabstrich-Kultur",
+		"İrin sürüntü kültürü",
+		"Bris žmara",
+		"Брис жмара"
+	],
+	"antimicrobial-antibody-detection-by-complement-fixation": [
+		"Detekcija antimikrobnih antitijela reakcijom rezigracije komplementa",
+		"Детекција антимикробних антитијела реакцијом резиграције комплемента"
+	],
+	"urethral-swab-for-gonorrhea": [
+		"Gonorrhea",
+		"Гонорея"
+	],
+	"vaginal-secretion": [
+		"Выделения"
+	],
+	"trichomonas-test": [
+		"Преглед препарата на Трицхомонас вагиналис нативни"
+	],
+	"nse": [
+		"НSE"
+	]
+}

@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * Собирает миграции названий услуг из батчей data/service-names/ (README там же):
+ * Собирает миграции названий услуг или анализов (--catalog svc|lab) из батчей
+ * (папка и номера миграций — scripts/common/name-review-catalog.mjs):
  *
- *   036-service-names-mechanical.sql — шаг 1: батчи fix-*.json + синхронизация
- *                                      name_sr_cyrl с name_sr по всему каталогу;
- *   037-service-names-review.sql     — шаг 2: батчи review-*.json (названия + синонимы).
+ *   шаг 1 (услуги — 036, анализы — 046): батчи fix-*.json + синхронизация
+ *                                        name_sr_cyrl с name_sr по всему каталогу;
+ *   шаг 2 (услуги — 037, анализы — 047): батчи review-*.json (названия + синонимы).
  *
- * Применяются строго по порядку: 037 считается поверх 036.
+ * Применяются строго по порядку: шаг 2 считается поверх шага 1.
  *
  * Что сборщик делает сам, а батчи не пишут:
  *   - name_sr_cyrl — из name_sr (scripts/common/sr-cyrl-names.mjs) с сохранением
@@ -25,7 +26,7 @@
  * Строки обновляются по slug, а не по id: локальная БД и прод расходятся
  * по автоинкременту (импорты, применённые только локально).
  *
- * Usage: node scripts/services/build-service-names-sql.mjs
+ * Usage: node scripts/services/build-service-names-sql.mjs [--catalog svc|lab]
  */
 
 import mysql from 'mysql2/promise';
@@ -35,10 +36,15 @@ import { fileURLToPath } from 'node:url';
 import { loadEnv, dbConfigFromEnv } from '../common/dedup-text.mjs';
 import { createNameTransliterator } from '../common/sr-cyrl-names.mjs';
 import { EKAVICA, tokens, searchFold } from '../common/service-name-rules.mjs';
+import { catalogFromArgv } from '../common/name-review-catalog.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..', '..');
-const DIR = resolve(ROOT, 'data/service-names');
+const C = catalogFromArgv(ROOT);
+const DIR = C.dirAbs;
+const FIX_SQL = C.migrations.fix;
+const REVIEW_SQL = C.migrations.review;
+const num = (file) => file.slice(0, 3);
 const MIGRATIONS = resolve(ROOT, 'server/sql/migrations');
 
 const LOCALES = ['en', 'sr', 'ru', 'de', 'tr'];
@@ -53,15 +59,15 @@ const readBatches = (prefix) =>
 loadEnv(ROOT);
 const db = await mysql.createConnection(dbConfigFromEnv());
 const [services] = await db.query(
-	'SELECT id, slug, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr FROM medical_services',
+	`SELECT id, slug, name_en, name_sr, name_sr_cyrl, name_ru, name_de, name_tr FROM ${C.table}`,
 );
-const [existingSynonyms] = await db.query('SELECT medical_service_id AS id, another_name, language FROM medical_service_synonyms');
+const [existingSynonyms] = await db.query(`SELECT ${C.fk} AS id, another_name, language FROM ${C.synonymTable}`);
 await db.end();
 
 const { mergeCyrillic, transliterate } = createNameTransliterator(services);
 
 const bySlug = new Map(services.map((s) => [s.slug, s]));
-const dbNames = new Map(services.map((s) => [s.slug, Object.fromEntries(COLUMNS.map((c) => [c, s[`name_${c}`]]))]));
+const dbNames = new Map(services.map((s) => [s.slug, Object.fromEntries(COLUMNS.map((c) => [c, s[`name_${c}`] ?? '']))]));
 const existingSyn = new Map();
 for (const r of existingSynonyms) {
 	const slug = services.find((s) => s.id === r.id)?.slug;
@@ -75,6 +81,12 @@ const reviewBatches = readBatches('review');
 const overrides = existsSync(resolve(DIR, '_overrides.json'))
 	? JSON.parse(readFileSync(resolve(DIR, '_overrides.json'), 'utf-8'))
 	: {};
+// Ошибочные синонимы, которые уже лежат в БД ({ "slug": ["строка", …] }) —
+// батчи умеют только добавлять, поэтому удаление — отдельным списком.
+const removals = existsSync(resolve(DIR, '_synonym-removals.json'))
+	? JSON.parse(readFileSync(resolve(DIR, '_synonym-removals.json'), 'utf-8'))
+	: {};
+for (const slug of Object.keys(removals)) if (slug !== '_comment' && !bySlug.has(slug)) throw new Error(`_synonym-removals.json: слага ${slug} нет в БД`);
 
 // ── Состояние после каждой стадии: DB → A (fix) → B (review + overrides).
 const clone = (m) => new Map([...m].map(([k, v]) => [k, { ...v }]));
@@ -92,7 +104,12 @@ const reviewSynonyms = new Map(); // slug → {loc: [..]}
 for (const { items } of reviewBatches) {
 	for (const item of items) {
 		if (item.names && Object.keys(item.names).length) reviewChanges.set(item.slug, { ...(reviewChanges.get(item.slug) || {}), ...item.names });
-		if (item.synonyms) reviewSynonyms.set(item.slug, item.synonyms);
+		// Синонимы складываются: ручной батч (от 90) по тому же слагу не должен стирать синонимы агента
+		if (item.synonyms) {
+			const acc = reviewSynonyms.get(item.slug) || {};
+			for (const [loc, list] of Object.entries(item.synonyms)) acc[loc] = [...(acc[loc] || []), ...(list || [])];
+			reviewSynonyms.set(item.slug, acc);
+		}
 	}
 }
 
@@ -185,10 +202,22 @@ function updates(before, after, slugs) {
 		const a = after.get(slug);
 		const changed = COLUMNS.filter((c) => a[c] !== b[c]);
 		if (!changed.length) continue;
-		lines.push(`UPDATE medical_services SET\n${changed.map((c) => `\tname_${c} = ${sq(a[c])}`).join(',\n')}\n WHERE slug = ${sq(slug)};`);
+		lines.push(`UPDATE ${C.table} SET\n${changed.map((c) => `\tname_${c} = ${sq(a[c])}`).join(',\n')}\n WHERE slug = ${sq(slug)};`);
 		diff.push({ slug, changes: changed.map((c) => ({ col: c, from: b[c], to: a[c] })) });
 	}
 	return { sql: lines.join('\n\n'), diff };
+}
+
+function removalSql() {
+	const lines = [];
+	for (const [slug, list] of Object.entries(removals)) {
+		if (slug === '_comment') continue;
+		for (const value of list) {
+			lines.push(`DELETE syn FROM ${C.synonymTable} syn JOIN ${C.table} e ON e.id = syn.${C.fk}
+ WHERE e.slug = ${sq(slug)} AND syn.another_name COLLATE utf8mb4_unicode_ci = ${sq(value)};`);
+		}
+	}
+	return lines.length ? `-- Ошибочные синонимы из ${C.dir}/_synonym-removals.json\n${lines.join('\n')}` : '';
 }
 
 function inserts(synonymsBySlug) {
@@ -196,9 +225,9 @@ function inserts(synonymsBySlug) {
 	for (const [slug, list] of synonymsBySlug) {
 		if (!list.length) continue;
 		const selects = list.map(
-			(s, i) => `${i ? 'UNION ALL ' : '          '}SELECT id, ${sq(s.value)}, ${sq(s.language)} FROM medical_services WHERE slug = ${sq(slug)}`,
+			(s, i) => `${i ? 'UNION ALL ' : '          '}SELECT id, ${sq(s.value)}, ${sq(s.language)} FROM ${C.table} WHERE slug = ${sq(slug)}`,
 		);
-		blocks.push(`INSERT IGNORE INTO medical_service_synonyms (medical_service_id, another_name, language)\n${selects.join('\n')};`);
+		blocks.push(`INSERT IGNORE INTO ${C.synonymTable} (${C.fk}, another_name, language)\n${selects.join('\n')};`);
 	}
 	return blocks.join('\n\n');
 }
@@ -225,16 +254,17 @@ for (const slug of new Set([...reviewChanges.keys(), ...reviewSynonyms.keys(), .
 	syn037.set(slug, synonymsFor(slug, stateA.get(slug), stateB.get(slug), reviewSynonyms.get(slug)));
 }
 const syn037Count = [...syn037.values()].reduce((n, l) => n + l.length, 0);
-const reviewedCount = reviewBatches.reduce((n, b) => n + b.items.length, 0);
+// Ручные батчи (от 90) — согласование серий и механика поверх вычитки, вычитанными их не считаем
+const reviewedCount = reviewBatches.filter((b) => Number(b.file.match(/\d+/)[0]) < 90).reduce((n, b) => n + b.items.length, 0);
 
 const cmd = (file) => `-- Run: mysql -u root -p --default-character-set=utf8mb4 docta_me < server/sql/migrations/${file}`;
 
-const sql036 = `-- 036: названия услуг — механические дефекты (шаг 1 из docs/audit/service-names-2026-09.md).
+const sql036 = `-- ${num(FIX_SQL)}: названия ${C.noun} — механические дефекты (шаг 1 из ${C.audit}).
 --
-${cmd('036-service-names-mechanical.sql')}
+${cmd(FIX_SQL)}
 --
 -- Собрано скриптом scripts/services/build-service-names-sql.mjs из
--- data/service-names/fix-*.json — руками не править, пересобирать.
+-- ${C.dir}/fix-*.json (--catalog ${C.key}) — руками не править, пересобирать.
 --
 -- Что чинится:
 --   - русские названия, обрубленные на прилагательном без опорного слова
@@ -252,7 +282,7 @@ ${cmd('036-service-names-mechanical.sql')}
 --
 -- Обновление по slug, а не по id: у локальной БД и прода разный автоинкремент.
 -- Идемпотентно: присваиваются готовые значения, синонимы — INSERT IGNORE.
--- Применять ДО 037.
+-- Применять ДО ${num(REVIEW_SQL)}.
 
 ${HEADER}
 
@@ -263,23 +293,22 @@ ${inserts(syn036)}
 COMMIT;
 `;
 
-const sql037 = `-- 037: названия услуг — вычитка и синонимы (шаг 2 из docs/audit/service-names-2026-09.md).
+const sql037 = `-- ${num(REVIEW_SQL)}: названия ${C.noun} — вычитка и синонимы (шаг 2 из ${C.audit}).
 --
-${cmd('037-service-names-review.sql')}
+${cmd(REVIEW_SQL)}
 --
 -- Собрано скриптом scripts/services/build-service-names-sql.mjs из
--- data/service-names/review-*.json — руками не править, пересобирать.
--- Применять ПОСЛЕ 036: значения посчитаны поверх неё.
+-- ${C.dir}/review-*.json (--catalog ${C.key}) — руками не править, пересобирать.
+-- Применять ПОСЛЕ ${num(FIX_SQL)}: значения посчитаны поверх неё.
 --
--- Вычитаны услуги, которые есть в трёх клиниках и больше (${reviewedCount} шт.), во всех
+-- Вычитаны ${C.key === 'svc' ? 'услуги' : 'анализы'}, которые есть в трёх клиниках и больше (${reviewedCount} шт.), во всех
 -- локалях: обрубки, кальки и латинизмы там, где есть обычное слово, порядок
 -- слов из прайса, неверные термины, разнобой внутри серий.
--- Строк: ${u037.diff.length}. Синонимов: ${syn037Count}. До этой миграции синонимы были у 83 услуг
--- из 4991, и почти все попали туда побочно, при слиянии дублей.
+-- Строк: ${u037.diff.length}. Синонимов: ${syn037Count}.
 --
--- Поиск читает синонимы уже сейчас (server/api/services/list.ts) — кода не нужно.
+-- Поиск читает синонимы уже сейчас (${C.searchApi}) — кода не нужно.
 -- sr-cyrl-синонимы получены транслитерацией sr. Синоним, совпадающий с
--- названием другой услуги или являющийся подстрокой своего, отброшен.
+-- названием другой записи каталога или являющийся подстрокой своего, отброшен.
 --
 -- Обновление по slug, а не по id. Идемпотентно.
 
@@ -289,11 +318,28 @@ ${u037.sql}
 
 ${inserts(syn037)}
 
+${removalSql()}
+
+-- Старые синонимы, совпавшие с новым собственным названием (как 031): они
+-- больше ничего не находят и засоряют подпись «найдено по …».
+-- COLLATE обязателен: таблицы синонимов в utf8mb4_0900_ai_ci, каталог — в unicode_ci.
+DELETE syn FROM ${C.synonymTable} syn
+  JOIN ${C.table} e ON e.id = syn.${C.fk}
+ WHERE syn.another_name COLLATE utf8mb4_unicode_ci = CASE syn.language
+           WHEN 'en' THEN e.name_en
+           WHEN 'sr' THEN e.name_sr
+           WHEN 'sr-cyrl' THEN e.name_sr_cyrl
+           WHEN 'ru' THEN e.name_ru
+           WHEN 'de' THEN e.name_de
+           WHEN 'tr' THEN e.name_tr
+           ELSE NULL
+       END;
+
 COMMIT;
 `;
 
-writeFileSync(resolve(MIGRATIONS, '036-service-names-mechanical.sql'), sql036);
-writeFileSync(resolve(MIGRATIONS, '037-service-names-review.sql'), sql037);
+writeFileSync(resolve(MIGRATIONS, FIX_SQL), sql036);
+writeFileSync(resolve(MIGRATIONS, REVIEW_SQL), sql037);
 
 // ── Отчёты для глаз
 const md = (title, diff, syn) => {
@@ -312,8 +358,8 @@ const md = (title, diff, syn) => {
 	}
 	return lines.join('\n') + '\n';
 };
-writeFileSync(resolve(DIR, '_diff-036.md'), md('036 — механика', u036.diff, syn036));
-writeFileSync(resolve(DIR, '_diff-037.md'), md('037 — вычитка и синонимы', u037.diff, syn037));
+writeFileSync(resolve(DIR, `_diff-${num(FIX_SQL)}.md`), md(`${num(FIX_SQL)} — механика`, u036.diff, syn036));
+writeFileSync(resolve(DIR, `_diff-${num(REVIEW_SQL)}.md`), md(`${num(REVIEW_SQL)} — вычитка и синонимы`, u037.diff, syn037));
 writeFileSync(
 	resolve(DIR, '_conflicts.md'),
 	`# Конфликты шага 1 и шага 2\n\nПоле поправлено обоими шагами по-разному. По умолчанию побеждает шаг 2; решение — в _overrides.json.\n\n` +
@@ -322,6 +368,6 @@ writeFileSync(
 			: 'Нет.\n'),
 );
 
-console.log(`036: строк ${u036.diff.length} (батчи ${fixedRows}, кириллица ${cyrOnlyRows}), синонимов ${syn036Count}`);
-console.log(`037: строк ${u037.diff.length}, синонимов ${syn037Count} (вычитано ${reviewedCount} из ${reviewBatches.length} батчей)`);
-console.log(`конфликтов fix/review: ${conflicts.length} → data/service-names/_conflicts.md`);
+console.log(`${num(FIX_SQL)}: строк ${u036.diff.length} (батчи ${fixedRows}, кириллица ${cyrOnlyRows}), синонимов ${syn036Count}`);
+console.log(`${num(REVIEW_SQL)}: строк ${u037.diff.length}, синонимов ${syn037Count} (вычитано ${reviewedCount} из ${reviewBatches.length} батчей)`);
+console.log(`конфликтов fix/review: ${conflicts.length} → ${C.dir}/_conflicts.md`);

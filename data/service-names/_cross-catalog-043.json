@@ -1,0 +1,899 @@
+{
+	"_comment": "Решения 043 — хвост 029: позиции лабораторного прайса, которые ДЗ Херцег-Нови (80), ДЗ Мойковац (127) и Никшич завели в каталоге УСЛУГ, хотя тот же код у клиники 88 лежит в каталоге анализов. Сверка отпечатков в 029 их не поймала: названия различаются одним словом («Bris nosa» / «Bris nosa bakterije»). Цель — анализ клиники 88 с тем же кодом; у строк ДЗ решает название (коды ДЗ в K01/Z01 местами сдвинуты), у строк Никшича — код (названия его услуг в K03 съехали с соседних позиций, такие не заводятся синонимами: keep_names = 0). Клиники — только по slug. Сборщик: scripts/services/build-cross-catalog-move-sql.mjs.",
+	"prep": [
+		{
+			"op": "lab-range",
+			"clinic": "opsta-bolnica-niksic",
+			"lab": "hbsag",
+			"from_code": "X12023",
+			"price": 11.9,
+			"price_max": 26.35,
+			"code": "K03168/X12023",
+			"why": "Никшич держит HBsAg дважды: ELISA K03168 (11,90 €, сейчас услуга hbs-antigen-detection-elisaantigen) и трансфузиологический X12023 (26,35 €, уже на анализе). Один аналит — диапазон, как у МРТ в 039"
+		},
+		{
+			"op": "lab-relink",
+			"clinic": "bolnica-danilo-i-cetinje",
+			"code": "K01007",
+			"from": "bacteriological-examination-pharyngeal-swab",
+			"to": "throat-swab-bacteria",
+			"why": "в прайсе Данило K01007 — «Bris ždrijela» (зев), а строка висела на мазке из НОСОГЛОТКИ; сюда же переезжает «Bris ždrijela» ДЗ и Никшича"
+		},
+		{
+			"op": "lab-relink",
+			"clinic": "bolnica-danilo-i-cetinje",
+			"code": "K01011",
+			"from": "right-eye-swab-bacteria",
+			"to": "eye-swab-bacteria",
+			"why": "в прайсе Данило K01011 — «Bris oka» без стороны; «правый глаз» — позиция частных лабораторий, которые делят правый и левый"
+		}
+	],
+	"moves": [
+		{
+			"service": "gonorrhea-smear-examination",
+			"lab": "microscopic-examination-of-swab-for-gonorrhea",
+			"keep_names": 1,
+			"why": "«Pregled preparata na gonoreju» → microscopic-examination-of-swab-for-gonorrhea"
+		},
+		{
+			"service": "throat-swab-culture",
+			"lab": "throat-swab-bacteria",
+			"keep_names": 1,
+			"why": "«Bris ždrijela» → throat-swab-bacteria"
+		},
+		{
+			"service": "oral-cavity-swab-culture",
+			"lab": "oral-cavity-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01008: «Bris usne duplje» → «Bris usne duplje bakterije»"
+		},
+		{
+			"service": "tongue-swab",
+			"lab": "tongue-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01009: «Bris jezika» → «Bris jezika bakterije»"
+		},
+		{
+			"service": "nose-swab",
+			"lab": "nose-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01010: «Bris nosa» → «Bris nosa bakterije»"
+		},
+		{
+			"service": "ear-swab-culture",
+			"lab": "bacteriological-examination-ear-swab",
+			"keep_names": 1,
+			"why": "«Bris uha» → bacteriological-examination-ear-swab"
+		},
+		{
+			"service": "eye-swab-culture",
+			"lab": "eye-swab-bacteria",
+			"keep_names": 1,
+			"why": "«Bris oka» → eye-swab-bacteria"
+		},
+		{
+			"service": "wound-swab",
+			"lab": "wound-swab-bacteria",
+			"keep_names": 1,
+			"why": "«Bris rane» → wound-swab-bacteria"
+		},
+		{
+			"service": "skin-swab-culture",
+			"lab": "skin-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01015: «Bris kože» → «Bris kože bakterije»"
+		},
+		{
+			"service": "breast-swab-culture",
+			"lab": "breast-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01016: «Bris dojke» → «Bris dojke (bakterije)»"
+		},
+		{
+			"service": "vaginal-swab-culture",
+			"lab": "vaginal-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01017: «Bris vagine» → «Bris vagine bakterije»"
+		},
+		{
+			"service": "vulvar-swab-culture",
+			"lab": "vulvar-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01018: «Bris vulve» → «Bris vulve bakterije»"
+		},
+		{
+			"service": "glans-swab-culture",
+			"lab": "glans-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01019: «Bris glansa» → «Bris glansa bakterije»"
+		},
+		{
+			"service": "prepuce-swab-culture",
+			"lab": "prepuce-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01020: «Bris prepucijuma» → «Bris prepucijuma bakterije»"
+		},
+		{
+			"service": "urethral-swab-culture",
+			"lab": "urethral-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01021: «Bris uretre» → «Bris uretre bakterije»"
+		},
+		{
+			"service": "pus-swab-culture",
+			"lab": "perianal-swab",
+			"keep_names": 1,
+			"why": "K01024: «Bris žmara» → «Perianalni bris»"
+		},
+		{
+			"service": "sputum-culture",
+			"lab": "sputum-bacteria",
+			"keep_names": 1,
+			"why": "K01026: «Sputum kultura» → «Sputum bakterije»"
+		},
+		{
+			"service": "cervical-culture",
+			"lab": "cervical-swab-bacteria",
+			"keep_names": 1,
+			"why": "K01027: «Cervikalna kultura» → «Bris cerviksa bakterije»"
+		},
+		{
+			"service": "mycoplasma-culture-with-antibiogram",
+			"lab": "mycoplasma-hominis-ureaplasma",
+			"keep_names": 1,
+			"why": "«Mycoplasma kultura sa antibiogramom» → mycoplasma-hominis-ureaplasma"
+		},
+		{
+			"service": "nail-dermatomycosis-examination",
+			"lab": "dermatophytes-nail-scraping",
+			"keep_names": 1,
+			"why": "K01030: «Pregled preparata dermatomikoze nokta» → «Dermatofiti strugotina nokta»"
+		},
+		{
+			"service": "skin-dermatomycosis-examination",
+			"lab": "dermatophytes-skin-scraping",
+			"keep_names": 1,
+			"why": "«Pregled preparata dermatomikoze kože» → dermatophytes-skin-scraping"
+		},
+		{
+			"service": "skin-fungal-culture",
+			"lab": "skin-swab-fungi",
+			"keep_names": 1,
+			"why": "K01033: «Kultura brisa kože na gljivice» → «Bris kože gljivice»"
+		},
+		{
+			"service": "hair-fungal-culture",
+			"lab": "hair-swab-fungi",
+			"keep_names": 1,
+			"why": "K01034: «Kultura dlake na gljivice» → «Kultura brisa dlake na gljivice»"
+		},
+		{
+			"service": "nail-fungal-culture",
+			"lab": "nail-swab-fungi",
+			"keep_names": 1,
+			"why": "K01035: «Kultura nokta na gljivice» → «Bris nokta gljivice»"
+		},
+		{
+			"service": "vaginal-fungal-culture",
+			"lab": "vaginal-swab-fungi",
+			"keep_names": 1,
+			"why": "K01036: «Kultura vaginalnog sekreta na gljivice» → «Bris vagine gljivice»"
+		},
+		{
+			"service": "vulvar-fungal-culture",
+			"lab": "vulvar-swab-fungi",
+			"keep_names": 1,
+			"why": "K01037: «Kultura vulve na gljivice» → «Bris vulve gljivice»"
+		},
+		{
+			"service": "glans-fungal-culture",
+			"lab": "glans-swab-fungi",
+			"keep_names": 1,
+			"why": "K01038: «Kultura brisa glansa na gljivice» → «Bris glansa gljivice»"
+		},
+		{
+			"service": "prepuce-fungal-culture",
+			"lab": "prepuce-swab-fungi",
+			"keep_names": 1,
+			"why": "K01039: «Kultura prepucijuma na gljivice» → «Bris prepucijuma gljivice»"
+		},
+		{
+			"service": "semen-fungal-culture",
+			"lab": "sperm-culture-fungi",
+			"keep_names": 1,
+			"why": "«Kultura sjemenskog sekreta na gljivice» → sperm-culture-fungi"
+		},
+		{
+			"service": "urethral-fungal-culture",
+			"lab": "urethral-swab-fungi",
+			"keep_names": 1,
+			"why": "K01040: «Kultura uretralnog sekreta na gljivice» → «Bris uretre gljivice»"
+		},
+		{
+			"service": "stool-fungal-culture",
+			"lab": "stool-fungi",
+			"keep_names": 1,
+			"why": "K01041: «Kultura stolice na gljivice» → «Stolica gljivice»"
+		},
+		{
+			"service": "urine-fungal-culture",
+			"lab": "urine-fungi",
+			"keep_names": 1,
+			"why": "K01042: «Kultura urina na gljivice» → «Urin gljivice»"
+		},
+		{
+			"service": "sputum-fungal-culture",
+			"lab": "sputum-fungi",
+			"keep_names": 1,
+			"why": "K01044: «Kultura sputuma na gljivice» → «Sputum gljivice»"
+		},
+		{
+			"service": "throat-fungal-culture",
+			"lab": "throat-swab-fungi",
+			"keep_names": 1,
+			"why": "K01045: «Kultura grla na gljivice» → «Bris grla gljivice»"
+		},
+		{
+			"service": "palate-fungal-culture",
+			"lab": "palate-swab-fungi",
+			"keep_names": 1,
+			"why": "K01046: «Kultura nepca na gljivice» → «Kultura brisa nepca na gljivice»"
+		},
+		{
+			"service": "nose-fungal-culture",
+			"lab": "nose-swab-fungi",
+			"keep_names": 1,
+			"why": "«Kultura nosa na gljivice» → nose-swab-fungi"
+		},
+		{
+			"service": "wound-fungal-culture",
+			"lab": "wound-swab-fungi",
+			"keep_names": 1,
+			"why": "K01047: «Kultura brisa rane na gljivice» → «Bris rane gljivice»"
+		},
+		{
+			"service": "trichomonas-vaginalis-native-examination",
+			"lab": "trichomonas-test",
+			"keep_names": 1,
+			"why": "«Pregled preparata na Trichomonas vaginalis nativni» → trichomonas-test"
+		},
+		{
+			"service": "urethral-or-vaginal-trichomonas-vaginalis-smear-examination-grading",
+			"lab": "trichomonas-test",
+			"keep_names": 1,
+			"why": "«Pregled preparata uretralnog ili vaginalnog brisa na Trichomonas vaginalis (stepen)» → trichomonas-test"
+		},
+		{
+			"service": "stool-helminth-microscopy-cellophane-tape-method",
+			"lab": "perianal-cellophane-tape-test-pinworm",
+			"keep_names": 1,
+			"why": "K01051: «Mikroskopski pregled stolice na helminte (ljepljivim celofanom)» → «Mikroskopski pregled perianalnog otiska ljepljivim celofanom»"
+		},
+		{
+			"service": "stool-helminth-microscopy",
+			"lab": "stool-parasites",
+			"keep_names": 1,
+			"why": "«Mikroskopski pregled stolice na helminte» → stool-parasites"
+		},
+		{
+			"service": "malaria-microscopy",
+			"lab": "malaria",
+			"keep_names": 1,
+			"why": "K01056: «Mikroskopski pregled na malariju» → «Malarija»"
+		},
+		{
+			"service": "skin-ectoparasite-identification",
+			"lab": "skin-ectoparasite-identification",
+			"keep_names": 1,
+			"why": "«Pregled i identifikacija ektoparazita kože» → skin-ectoparasite-identification"
+		},
+		{
+			"service": "hair-demodex-examination",
+			"lab": "demodex-species",
+			"keep_names": 1,
+			"why": "«Pregled brisa kose na Demodex» → demodex-species"
+		},
+		{
+			"service": "aso-latex-test",
+			"lab": "asto",
+			"keep_names": 1,
+			"why": "K01061: «ASTO-LATEX» → «ASTO antistreptolizin O»"
+		},
+		{
+			"service": "paul-bunnell-mononucleosis-reaction",
+			"lab": "monosticon",
+			"keep_names": 1,
+			"why": "«Paul-Bunnell reakcija mononukleozni test» → monosticon"
+		},
+		{
+			"service": "tpha-test",
+			"lab": "tpha-treponema-pallidum",
+			"keep_names": 1,
+			"why": "«TPHA» → tpha-treponema-pallidum"
+		},
+		{
+			"service": "cytological-microscopic-examination",
+			"lab": "direct-microscopic-preparation",
+			"keep_names": 1,
+			"why": "«Mikroskopski citološki pregled (zapija)» → direct-microscopic-preparation"
+		},
+		{
+			"service": "rheumatoid-factor-latex-test",
+			"lab": "rheumatoid-factor",
+			"keep_names": 1,
+			"why": "K01067: «REUMA FAKTOR (RF) LATEX» → «Reumatoidni faktor»"
+		},
+		{
+			"service": "tongue-fungal-culture",
+			"lab": "tongue-swab-fungi",
+			"keep_names": 1,
+			"why": "K01070: «Kultura jezika na gljivice» → «Bris jezika (gljivice)»"
+		},
+		{
+			"service": "antimicrobial-antibody-elisa-detection",
+			"lab": "antimicrobial-antibody-detection-by-elisa",
+			"keep_names": 1,
+			"why": "K02001: «Detekcija antimikrobnih antitijela ELISA» → «Detekcija antimikrobnih antitijela ELISA testom»"
+		},
+		{
+			"service": "microbial-antigen-elisa-detection",
+			"lab": "microbial-antigen-detection-by-elisa",
+			"keep_names": 1,
+			"why": "K02002: «Detekcija mikrobnih antigena ELISA» → «Detekcija mikrobnih antigena ELISA testom»"
+		},
+		{
+			"service": "antimicrobial-antibody-complement-fixation-reaction",
+			"lab": "antimicrobial-antibody-detection-by-complement-fixation",
+			"keep_names": 1,
+			"why": "K02005: «Detekcija antimikrobnih antitijela reakcijom rezigracije komplementa» → «Detekcija antimikrobnih antitijela reakcijom vezivanja komplementa»"
+		},
+		{
+			"service": "antibody-hemagglutination-test",
+			"lab": "antimicrobial-antibody-detection-by-hemagglutination",
+			"keep_names": 1,
+			"why": "K02006: «Detekcija antitijela testom hemaglutinacije» → «Detekcija antimikrobnih antitijela testom hemaglutinacije»"
+		},
+		{
+			"service": "antibody-latex-agglutination",
+			"lab": "antimicrobial-antibody-detection-by-latex-agglutination",
+			"keep_names": 1,
+			"why": "«Detekcija antitijela lateks aglutinacijom» → antimicrobial-antibody-detection-by-latex-agglutination"
+		},
+		{
+			"service": "microbial-antigen-nucleic-acid-hybridization-test",
+			"lab": "microbial-nucleic-acid-detection-by-hybridization",
+			"keep_names": 1,
+			"why": "K02009: «Detekcija mikrobnih antigena testom hibridizacije nukleinskih kiselina» → «Detekcija mikrobnih nukleinskih kiselina testom hibridizacije»"
+		},
+		{
+			"service": "sperm-culture",
+			"lab": "sperm-culture-bacteria",
+			"keep_names": 1,
+			"why": "K03004: «Spermokultura» → «Kultura sperme bakterije»"
+		},
+		{
+			"service": "campylobacter-culture",
+			"lab": "campylobacter-culture",
+			"keep_names": 1,
+			"why": "K03019: «Kultura na Campylobacter» → «Campylobacter sp. (kultura)»"
+		},
+		{
+			"service": "helicobacter-pylori-antibodies-elisa",
+			"lab": "helicobacter-pylori",
+			"keep_names": 1,
+			"why": "«ELISA anti-Helicobacter pylori» → helicobacter-pylori"
+		},
+		{
+			"service": "aerobic-bacterial-culture-of-bronchoalveolar-lavage",
+			"lab": "bronchoalveolar-lavage-culture-aerobic",
+			"keep_names": 1,
+			"why": "K03032: «Bakteriološko ispitivanje brisa bronhoalveolarnog ispirka - aerobno» → «Bakteriološko ispitivanje bronhoalveolarnog ispirka - aerobno»"
+		},
+		{
+			"service": "aerobic-bacterial-culture-of-uterine-cavity-swab",
+			"lab": "uterine-cavity-swab-culture-aerobic",
+			"keep_names": 1,
+			"why": "K03053: «Bakteriološko ispitivanje brisa iz cavum uterusa - aerobno» → «Bakteriološko ispitivanje brisa iz cavum uterusa - aerobno»"
+		},
+		{
+			"service": "aerobic-bacterial-culture-of-dilation-fluid",
+			"lab": "dialysis-fluid-culture-aerobic",
+			"keep_names": 1,
+			"why": "K03070: «Bakteriološko ispitivanje dilatacione tečnosti - aerobno» → «Bakteriološko ispitivanje dijalizne tečnosti - aerobno»"
+		},
+		{
+			"service": "aerobic-bacterial-culture-of-tissue-segment-swab",
+			"lab": "tissue-biopsy-culture-aerobic",
+			"keep_names": 1,
+			"why": "K03071: «Bakteriološko ispitivanje brisa isječka tkiva - aerobno» → «Bakteriološko ispitivanje isječka tkiva - aerobno»"
+		},
+		{
+			"service": "bordetella-pertussis-culture-from-nasopharyngeal-swab",
+			"lab": "bordetella-pertussis-nasopharyngeal-swab-culture-aerobic",
+			"keep_names": 1,
+			"why": "K03073: «Ispitivanje prisustva Bordetellae pertussis iz brisa nazofarinksa - aerobno» → «Bordetella pertussis iz brisa nazofarinksa - aerobno»"
+		},
+		{
+			"service": "microbial-antigen-latex-agglutination-detection-in-cerebrospinal-fluid",
+			"lab": "soluble-bacterial-antigens-in-csf-latex-agglutination",
+			"keep_names": 1,
+			"why": "K03074: «Ispitivanje prisustva solubilnih bakterijskih antigena u likvoru - latex aglutinacija» → «Solubilni bakterijski antigeni u likvoru - latex aglutinacija»"
+		},
+		{
+			"service": "anaerobic-bacterial-culture-of-tissue-segment-swab",
+			"lab": "tissue-biopsy-culture-anaerobic",
+			"keep_names": 1,
+			"why": "K03086: «Bakteriološko ispitivanje brisa isječka tkiva - anaerobno» → «Bakteriološko ispitivanje isječka tkiva - anaerobno»"
+		},
+		{
+			"service": "blood-and-tissue-parasites-detection-native-preparation-2",
+			"lab": "blood-and-tissue-parasite-detection-native-preparation",
+			"keep_names": 0,
+			"why": "K03101: «Ispitivanje prisustva krvnih i tkivnih parazita - nativni preparat (2)» → «Ispitivanje prisustva krvnih i tkivnih parazita - nativni preparat»"
+		},
+		{
+			"service": "borrelia-burgdorferi-igg-antibodies-confirmatory-test-western-blot",
+			"lab": "borrelia-burgdorferi-igg-western-blot",
+			"keep_names": 1,
+			"why": "K03107: «Anti Borrelia burgdorferi IgG antitijela - potvrdni test (Western Blot)» → «Borrelia Burgdorferi IgG Western Blot»"
+		},
+		{
+			"service": "borrelia-burgdorferi-igm-antibodies-confirmatory-test-western-blot",
+			"lab": "borrelia-burgdorferi-igm-western-blot",
+			"keep_names": 1,
+			"why": "K03108: «Anti Borrelia burgdorferi IgM antitijela - potvrdni test (Western Blot)» → «Borrelia Burgdorferi IgM Western Blot»"
+		},
+		{
+			"service": "brucella-igm-antibodies-elisa",
+			"lab": "brucella-igm",
+			"keep_names": 1,
+			"why": "K03111: «Anti Brucella IgM antitijela - ELISA» → «Brucela IgM»"
+		},
+		{
+			"service": "coxiella-burnetii-igg-antibodies-phase-1-elisa",
+			"lab": "coxiella-burnetii-igg-phase-1-elisa",
+			"keep_names": 1,
+			"why": "K03114: «Anti Coxiella burnetii IgG antitijela faza 1 - ELISA» → «Anti Coxiella burnetii IgG faza 1 - ELISA»"
+		},
+		{
+			"service": "coxiella-burnetii-iga-antibodies-phase-1-elisa",
+			"lab": "coxiella-burnetii-iga-phase-1-elisa",
+			"keep_names": 1,
+			"why": "K03115: «Anti Coxiella burnetii IgA antitijela faza 1 - ELISA» → «Anti Coxiella burnetii IgA faza 1 - ELISA»"
+		},
+		{
+			"service": "coxiella-burnetii-igm-antibodies-phase-2-elisa",
+			"lab": "coxiella-burnetii-igm-phase-2-elisa",
+			"keep_names": 1,
+			"why": "K03116: «Anti Coxiella burnetii IgM antitijela faza 2 - ELISA» → «Anti Coxiella burnetii IgM faza 2 - ELISA»"
+		},
+		{
+			"service": "coxiella-burnetii-igg-antibodies-phase-2-elisa",
+			"lab": "coxiella-burnetii-igg-phase-2-elisa",
+			"keep_names": 1,
+			"why": "K03117: «Anti Coxiella burnetii IgG antitijela faza 2 - ELISA» → «Anti Coxiella burnetii IgG faza 2 - ELISA»"
+		},
+		{
+			"service": "coxiella-burnetii-iga-antibodies-phase-2-elisa",
+			"lab": "coxsackie-b-igm",
+			"keep_names": 0,
+			"why": "K03118: строка Никшича по коду — «Koksaki B IgM»; название услуги «Anti Coxiella burnetii IgA antitijela faza 2 - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "coxsackie-b-virus-igm-antibodies-elisa",
+			"lab": "coxsackie-b-igg",
+			"keep_names": 0,
+			"why": "K03119: строка Никшича по коду — «Koksaki B IgG»; название услуги «Anti Coxsackie B virus IgM antitijela - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "coxsackie-b-virus-igg-antibodies-elisa",
+			"lab": "coxsackie-virus-igm",
+			"keep_names": 0,
+			"why": "K03120: строка Никшича по коду — «Koksaki virus IgM»; название услуги «Anti Coxsackie B virus IgG antitijela - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "coxsackie-virus-igm-antibodies-elisa",
+			"lab": "coxsackie-virus-igg",
+			"keep_names": 0,
+			"why": "K03121: строка Никшича по коду — «Koksaki virus IgG»; название услуги «Anti Coxsackie virus IgM antitijela - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "coxsackie-virus-igg-antibodies-elisa",
+			"lab": "echinococcus-igg-elisa",
+			"keep_names": 0,
+			"why": "K03122: строка Никшича по коду — «Echinococcus IgG ELISA»; название услуги «Anti Coxsackie virus IgG antitijela - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "echinococcus-granulosus-igg-antibodies-elisa",
+			"lab": "echinococcus-granulosus-antibodies-indirect-hemagglutination",
+			"keep_names": 0,
+			"why": "K03123: «Anti Echinococcus granulosus IgG antitijela - ELISA» → «Anti Echinococcus granulosus antitijela - indirektna hemaglutinacija»"
+		},
+		{
+			"service": "anti-hanta-virus-igm-antibodies-elisa",
+			"lab": "hantavirus-igg-elisa",
+			"keep_names": 0,
+			"why": "K03125: «Anti Hanta virus IgM antitijela - ELISA» → «Anti Hanta virus IgG - ELISA»"
+		},
+		{
+			"service": "anti-hanta-virus-igg-antibodies-elisa",
+			"lab": "anti-hbc-total-elisa",
+			"keep_names": 0,
+			"why": "K03126: строка Никшича по коду — «Anti HBc antitijela - ELISA»; название услуги «Anti Hanta virus IgG antitijela - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "anti-hbeag-antibodies-elisa",
+			"lab": "hbsab",
+			"keep_names": 0,
+			"why": "K03129: строка Никшича по коду — «HBsAb»; название услуги «Anti HBeAg antitijela - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "anti-hbsag-antibodies-elisa",
+			"lab": "anti-hcv-antibodies-immunoblot",
+			"keep_names": 0,
+			"why": "K03130: строка Никшича по коду — «Anti hepatitis C virus antitijela - imuno blot»; название услуги «Anti HBsAg antitijela - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "anti-hepatitis-c-virus-antibodies-confirmatory-test-immunoblot",
+			"lab": "hav-igm",
+			"keep_names": 0,
+			"why": "K03131: строка Никшича по коду — «Hepatitis A IgM»; название услуги «Anti Hepatitis C virus antitijela - potvrdni test - Immunoblot» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "anti-hepatitis-a-virus-igm-antibodies-elisa",
+			"lab": "hav-total-antibodies",
+			"keep_names": 0,
+			"why": "K03132: строка Никшича по коду — «HAV ukupna antitela»; название услуги «Anti Hepatitis A virus IgM antitijela - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "anti-hepatitis-a-virus-igg-antibodies-elisa",
+			"lab": "anti-hev-igm-elisa",
+			"keep_names": 0,
+			"why": "K03133: «Anti Hepatitis A virus IgG antitijela - ELISA» → «Anti hepatitis E virus IgM - ELISA»"
+		},
+		{
+			"service": "anti-hepatitis-e-virus-igm-antibodies-elisa",
+			"lab": "anti-hev-igg-elisa",
+			"keep_names": 0,
+			"why": "K03134: «Anti Hepatitis E virus IgM antitijela - ELISA» → «Anti hepatitis E virus IgG - ELISA»"
+		},
+		{
+			"service": "anti-hepatitis-e-virus-igg-antibodies-elisa",
+			"lab": "anti-hiv-1-western-blot-confirmation",
+			"keep_names": 0,
+			"why": "K03135: строка Никшича по коду — «Anti HIV 1 antitijela - potvrdni test - western blot»; название услуги «Anti Hepatitis E virus IgG antitijela - ELISA» съехало с соседней позиции, синонимом не заводим"
+		},
+		{
+			"service": "anti-influenza-b-virus-igm-antibodies-elisa",
+			"lab": "influenza-b-virus-igg-elisa",
+			"keep_names": 0,
+			"why": "K03138: «Anti Influenza B virus IgM antitijela - ELISA» → «Anti influenza B virus IgG - ELISA»"
+		},
+		{
+			"service": "anti-influenza-b-virus-igg-antibodies-elisa",
+			"lab": "influenza-a-virus-igm-elisa",
+			"keep_names": 0,
+			"why": "K03139: «Anti Influenza B virus IgG antitijela - ELISA» → «Anti influenza A virus IgM - ELISA»"
+		},
+		{
+			"service": "anti-influenza-a-virus-igm-antibodies-elisa",
+			"lab": "influenza-a-virus-igg-elisa",
+			"keep_names": 0,
+			"why": "K03140: «Anti Influenza A virus IgM antitijela - ELISA» → «Anti influenza A virus IgG - ELISA»"
+		},
+		{
+			"service": "legionella-pneumophila-igm-elisa",
+			"lab": "legionella-pneumophila-igg",
+			"keep_names": 0,
+			"why": "K03142: «Anti Legionella pneumophila IgM - ELISA» → «Legionella Pneumophila IgG»"
+		},
+		{
+			"service": "legionella-pneumophila-igg-elisa",
+			"lab": "legionella-pneumophila-iga-elisa",
+			"keep_names": 0,
+			"why": "K03143: «Anti Legionella pneumophila IgG - ELISA» → «Anti Legionella pneumophila IgA - ELISA»"
+		},
+		{
+			"service": "toxocara-canis-igg-elisa",
+			"lab": "toxocara-canis-igg",
+			"keep_names": 1,
+			"why": "K03157: «Anti Toxocara canis IgG - ELISA» → «Toxocara Canis IgG»"
+		},
+		{
+			"service": "trichinella-spiralis-igg-antibodies-elisa",
+			"lab": "trichinella-spiralis-igg",
+			"keep_names": 1,
+			"why": "K03158: «Anti Trichinella spiralis IgG antitijela - ELISA» → «Trichinella Spiralis IgG»"
+		},
+		{
+			"service": "west-nile-virus-igm-antibodies-elisa",
+			"lab": "west-nile-virus-igm-elisa",
+			"keep_names": 1,
+			"why": "K03160: «Anti West Nile virus IgM antitijela - ELISA» → «Anti West Nile virus IgM - ELISA»"
+		},
+		{
+			"service": "west-nile-virus-igg-antibodies-elisa",
+			"lab": "west-nile-virus-igg-elisa",
+			"keep_names": 1,
+			"why": "K03161: «Anti West Nile virus IgG antitijela - ELISA» → «Anti West Nile virus IgG - ELISA»"
+		},
+		{
+			"service": "cytomegalovirus-igg-antibody-avidity-elisaelfa",
+			"lab": "cmv-avidity",
+			"keep_names": 1,
+			"why": "«Aviditet Anti Cytomegalovirus IgG antitijela - ELISA/ELFA» → cmv-avidity"
+		},
+		{
+			"service": "rubella-virus-igg-antibody-avidity-elisa",
+			"lab": "rubella-igg-avidity",
+			"keep_names": 1,
+			"why": "K03163: «Aviditet Anti Rubella virus IgG antitijela - ELISA» → «Rubela IgG aviditet»"
+		},
+		{
+			"service": "toxoplasma-gondii-igg-antibody-avidity-elisaelfa",
+			"lab": "toxoplasma-igg-avidity",
+			"keep_names": 1,
+			"why": "K03164: «Aviditet Anti Toxoplasma gondii IgG antitijela - ELISA/ELFA» → «Toxoplasma IgG aviditet»"
+		},
+		{
+			"service": "clostridium-difficile-toxin-ab-detection-elisaelfa",
+			"lab": "clostridium-difficile-toxin-a-and-b",
+			"keep_names": 1,
+			"why": "K03165: «Ispitivanje prisustva Clostridium difficile toksina (A i B) - ELISA/ELFA» → «Clostridium Difficile toksin A i B»"
+		},
+		{
+			"service": "cytomegalovirus-detection-indirect-immunofluorescence",
+			"lab": "cytomegalovirus-antigen-indirect-immunofluorescence",
+			"keep_names": 1,
+			"why": "K03166: «Ispitivanje prisustva Cytomegalovirusa - indirektna imunofluorescencija» → «Ispitivanje prisustva Cytomegalovirus antigena - indirektna imunofluorescencija»"
+		},
+		{
+			"service": "hbe-antigen-detection-elisaantigen",
+			"lab": "hbeag",
+			"keep_names": 1,
+			"why": "«Ispitivanje prisustva HBe antigena - ELISA/ANTIGEN» → hbeag"
+		},
+		{
+			"service": "hbs-antigen-detection-elisaantigen",
+			"lab": "hbsag",
+			"keep_names": 1,
+			"why": "«Ispitivanje prisustva HBs antigena - ELISA/ANTIGEN» → hbsag"
+		},
+		{
+			"service": "p24-antigen-detection-elisaantigen",
+			"lab": "hiv-p24-antigen-elisa",
+			"keep_names": 1,
+			"why": "K03172: «Ispitivanje prisustva P24 antigena - ELISA/ANTIGEN» → «Ispitivanje prisustva p24 antigena - ELISA»"
+		},
+		{
+			"service": "pap-test-lab-analysis",
+			"lab": "pap-papanicolaou-test",
+			"keep_names": 1,
+			"why": "«PAPA test (laboratorijska analiza)» → pap-papanicolaou-test"
+		},
+		{
+			"service": "hiv-1-2-ag-ab-combo-test",
+			"lab": "hiv-1-plus-2-ag-ab",
+			"keep_names": 1,
+			"why": "X12024: «Combo test Ag/At HIV 1/2» → «HIV 1 Plus 2 Ag Ab»"
+		},
+		{
+			"service": "hcv-antibody-test-anti-hcv",
+			"lab": "anti-hcv",
+			"keep_names": 1,
+			"why": "X12025: «Test na HCV - Anti-HCV antitijela» → «Anti-HCV»"
+		},
+		{
+			"service": "irregular-antibody-screening-test-gel-method",
+			"lab": "irregular-antibody-enzyme-screening-gel-method",
+			"keep_names": 1,
+			"why": "X12052: «Ispitivanje iregularnih antitijela - enzimski skrining test/gel metoda» → «Ispitivanje iregularnih antitijela enzim screening — gel metoda»"
+		},
+		{
+			"service": "crossmatch-test-gel-method",
+			"lab": "crossmatch-gel-method",
+			"keep_names": 1,
+			"why": "X12053: «Interreakcija/gel metoda» → «Interreakcija — gel metoda»"
+		},
+		{
+			"service": "prothrombin-time-pt",
+			"lab": "prothrombin-time-pt-inr",
+			"keep_names": 1,
+			"why": "Z01009: «Određivanje protrombinskog vremena» → «Protrombinsko vreme PT INR»"
+		},
+		{
+			"service": "serum-total-protein",
+			"lab": "total-protein",
+			"keep_names": 1,
+			"why": "Z01014: «Ukupni proteini u serumu» → «Ukupni proteini»"
+		},
+		{
+			"service": "serum-total-bilirubin",
+			"lab": "total-bilirubin",
+			"keep_names": 1,
+			"why": "Z01015: «Ukupni bilirubin u serumu» → «Ukupni bilirubin»"
+		},
+		{
+			"service": "serum-glucose",
+			"lab": "glucose",
+			"keep_names": 1,
+			"why": "Z01016: «Glukoza u serumu» → «Glukoza»"
+		},
+		{
+			"service": "oral-glucose-tolerance-test-ogtt",
+			"lab": "oral-glucose-tolerance-test",
+			"keep_names": 1,
+			"why": "Z01017: «Oralni glukoza tolerans test OGTT» → «Oralni test tolerancije glukoze»"
+		},
+		{
+			"service": "serum-triglycerides",
+			"lab": "triglycerides",
+			"keep_names": 1,
+			"why": "Z01018: «Trigliceridi u serumu» → «Trigliceridi»"
+		},
+		{
+			"service": "serum-cholesterol",
+			"lab": "cholesterol",
+			"keep_names": 1,
+			"why": "Z01019: «Holesterol u serumu» → «Holesterol»"
+		},
+		{
+			"service": "alkaline-phosphatase-activity",
+			"lab": "alkaline-phosphatase",
+			"keep_names": 1,
+			"why": "Z01021: «Aktivnost alkalne fosfataze» → «Alkalna fosfataza»"
+		},
+		{
+			"service": "ast-activity",
+			"lab": "ast",
+			"keep_names": 1,
+			"why": "«Aktivnost AST» → ast"
+		},
+		{
+			"service": "ck-mb-activity",
+			"lab": "ck-mb",
+			"keep_names": 1,
+			"why": "«Aktivnost CK-MB» → ck-mb"
+		},
+		{
+			"service": "ck-activity",
+			"lab": "ck",
+			"keep_names": 1,
+			"why": "«Aktivnost CK» → ck"
+		},
+		{
+			"service": "ggt-activity",
+			"lab": "gamma-gt",
+			"keep_names": 1,
+			"why": "Z01027: «Aktivnost gama glutamil transferaza GGT» → «Gama-glutamil transferaza»"
+		},
+		{
+			"service": "serum-uric-acid",
+			"lab": "uric-acid",
+			"keep_names": 1,
+			"why": "Z01031: «Mokraćna kiselina u serumu» → «Mokraćna kiselina»"
+		},
+		{
+			"service": "serum-potassium-k",
+			"lab": "potassium",
+			"keep_names": 1,
+			"why": "Z01032: «Kalijum K u serumu» → «Kalijum»"
+		},
+		{
+			"service": "total-serum-calcium",
+			"lab": "calcium",
+			"keep_names": 1,
+			"why": "«Određivanje ukupnih kalcijuma u serumu» → calcium"
+		},
+		{
+			"service": "serum-iron",
+			"lab": "iron",
+			"keep_names": 1,
+			"why": "«Određivanje gvožđa u serumu» → iron"
+		},
+		{
+			"service": "total-iron-binding-capacity-tibc",
+			"lab": "tibc",
+			"keep_names": 1,
+			"why": "Z01037: «Kapacitet vezivanja gvožđa TIBC» → «Ukupni kapacitet vezivanja gvožđa»"
+		},
+		{
+			"service": "urinalysis-with-sediment-microscopy",
+			"lab": "complete-urinalysis",
+			"keep_names": 1,
+			"why": "«Ispitivanje urina test traka i sediment mikroskopski» → complete-urinalysis"
+		},
+		{
+			"service": "direct-bilirubin-in-serum",
+			"lab": "direct-bilirubin",
+			"keep_names": 1,
+			"why": "Z01064: «Određivanje direktnog bilirubina u serumu» → «Direktni bilirubin»"
+		},
+		{
+			"service": "unsaturated-iron-binding-capacity-uibc",
+			"lab": "uibc",
+			"keep_names": 1,
+			"why": "Z01066: «Slobodni kapacitet vezivanja gvožđa UIBC» → «Neiskorišćeni kapacitet vezivanja gvožđa»"
+		},
+		{
+			"service": "urinalysis-with-flow-cytometry",
+			"lab": "complete-urinalysis-with-flow-cytometry",
+			"keep_names": 1,
+			"why": "Z01084: «Ispitivanje urina sa flow citometrijom» → «Kompletan pregled urina (test traka + flow citometrija sedimenta)»"
+		},
+		{
+			"service": "alt-activity",
+			"lab": "alt",
+			"keep_names": 1,
+			"why": "«Aktivnost ALT» → alt"
+		},
+		{
+			"service": "serum-sodium-na",
+			"lab": "sodium",
+			"keep_names": 1,
+			"why": "Z01097: «Natrijum Na u serumu» → «Natrijum»"
+		},
+		{
+			"service": "serum-chloride-cl",
+			"lab": "chloride",
+			"keep_names": 1,
+			"why": "«Hloridi Cl u serumu» → chloride"
+		},
+		{
+			"service": "serum-calcium-ca",
+			"lab": "ionized-calcium",
+			"keep_names": 0,
+			"why": "«Kalcijum Ca u serumu» → ionized-calcium"
+		},
+		{
+			"service": "reticulocyte-cytochemistry",
+			"lab": "reticulocytes",
+			"keep_names": 1,
+			"why": "Z01103: «Retikulociti citohemija» → «Retikulociti»"
+		},
+		{
+			"service": "ldh-activity",
+			"lab": "ldh",
+			"keep_names": 1,
+			"why": "Z01104: «Aktivnost laktat dehidrogenaze LDH» → «Laktat dehidrogenaza»"
+		},
+		{
+			"service": "five-part-differential-cbc",
+			"lab": "complete-blood-count-with-leukocyte-formula",
+			"keep_names": 1,
+			"why": "«KKS PET PAR DIF» → complete-blood-count-with-leukocyte-formula"
+		},
+		{
+			"service": "aptt-capillary-blood",
+			"lab": "activated-partial-thromboplastin-time",
+			"keep_names": 1,
+			"why": "«APTT iz kapilarne krvi» → activated-partial-thromboplastin-time"
+		},
+		{
+			"service": "psychoactive-substance-detection",
+			"lab": "single-psychoactive-substance-test",
+			"keep_names": 1,
+			"why": "Z02093: «Određivanje psihoaktivnih supstanci» → «Određivanje pojedinačne psihoaktivne supstance (test traka)»"
+		},
+		{
+			"service": "urine-protein-quantitative-secondary",
+			"lab": "protein-in-urine",
+			"keep_names": 1,
+			"why": "Z02098: «Proteini u urinu kvantitativno (sek)» → «Proteini u urinu»"
+		}
+	],
+	"skipped": [
+		{
+			"service": "vaginal-smear-microscopy",
+			"why": "HN_K01051 «Mikroskopski pregled vaginalnog brisa»: код — перианальный отпечаток, название — вагинальный мазок; подходящего анализа нет"
+		},
+		{
+			"service": "joint-fluid-native-preparation",
+			"why": "HN_K01054 «Nativni preparat - artritis»: код — амёбы с провокацией, название — синовиальная жидкость; подходящего анализа нет"
+		},
+		{
+			"service": "complete-blood-count-with-differential",
+			"why": "HN_Z01003 «KKS sa diferencijalnom»: у 88 Z01003 «KS, tri par dif» стоит на «Izabrani parametri krvne slike», а пятидольная у ДЗ лежит отдельно — сначала разобрать модель крови"
+		}
+	]
+}

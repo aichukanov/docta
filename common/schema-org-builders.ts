@@ -1334,8 +1334,9 @@ export function buildOffersSchema(options: {
 	getCityName: (id: number) => string | undefined;
 }) {
 	const validPrices =
-		options.clinicPrices?.filter((p) =>
-			isSchemaOfferPrice(p.price, p.isOutdated),
+		// позиции, которой больше нет в прайсе клиники, в разметке не место
+		options.clinicPrices?.filter(
+			(p) => !p.isObsolete && isSchemaOfferPrice(p.price, p.isOutdated),
 		) || [];
 
 	if (validPrices.length === 0) {

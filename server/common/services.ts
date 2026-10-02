@@ -1,5 +1,6 @@
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
+import { priceRowIsActiveSql } from '~/server/common/price-row-visibility';
 import type {
 	ClinicSummaryService,
 	ClinicServicesByClinicId,
@@ -104,6 +105,7 @@ export async function getServicesByClinicAndSpecialty(
 		INNER JOIN medical_services ms ON cms.medical_service_id = ms.id
 		INNER JOIN medical_services_specialties mss ON ms.id = mss.medical_service_id
 		WHERE cms.clinic_id IN (${clinicPlaceholders})
+			AND ${priceRowIsActiveSql('cms')}
 			AND mss.specialty_id IN (${specialtyPlaceholders})
 		GROUP BY cms.clinic_id, ms.id, ms.slug, ms.name_en, ms.name_sr, ms.name_sr_cyrl,
 			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max, cms.is_price_outdated
@@ -244,6 +246,7 @@ export async function getDoctorsForServiceByClinic(
 			 JOIN doctors d ON d.id = dc.doctor_id AND ${doctorIsPublicSql('d')}
 			 WHERE cms.medical_service_id = ?
 			   AND cms.clinic_id IN (${fbPlaceholders})
+			   AND ${priceRowIsActiveSql('cms')}
 			 GROUP BY dc.clinic_id, d.id, d.rank_score
 			 ORDER BY dc.clinic_id, d.rank_score DESC, d.id`,
 			[medicalServiceId, ...fallbackClinicIds],
@@ -433,6 +436,7 @@ export async function getServicesForDoctors(
 		WHERE (cms.clinic_id, mss.specialty_id) IN (${clinicSpecialtyPairs
 			.map(() => '(?,?)')
 			.join(',')})
+			AND ${priceRowIsActiveSql('cms')}
 		GROUP BY cms.clinic_id, ms.id, ms.slug, ms.name_en, ms.name_sr, ms.name_sr_cyrl,
 			ms.name_ru, ms.name_de, ms.name_tr, ms.sort_order, cms.price, cms.price_min, cms.price_max
 		ORDER BY cms.clinic_id, ms.sort_order IS NULL, ms.sort_order ASC, ms.name_en ASC;

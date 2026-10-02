@@ -486,6 +486,8 @@ Reference tariffs from the state insurer (FZOCG) pricelists. **Not** clinic pric
 - `code` (varchar(50)): Clinic-specific test code.
 - `price` (decimal(10,2))
 - `price_max` (decimal(10,2)): Maximum price (for price ranges).
+- `is_price_outdated` (tinyint(1), NOT NULL, default 0): Price is old; shown as "+X%".
+- `is_obsolete` (tinyint(1), NOT NULL, default 0): The clinic no longer lists this item (migration 045). Same meaning and handling as in `clinic_medical_services`.
 - `created_at` (timestamp)
 - _Unique constraint_: (`clinic_id`, `lab_test_id`)
 
@@ -498,6 +500,8 @@ Reference tariffs from the state insurer (FZOCG) pricelists. **Not** clinic pric
 - `price` (decimal(10,2))
 - `price_max` (decimal(10,2)): Maximum price (for price ranges).
 - `price_min` (decimal(10,2)): Minimum price (for price ranges).
+- `is_price_outdated` (tinyint(1), NOT NULL, default 0): Price is old; shown as "+X%".
+- `is_obsolete` (tinyint(1), NOT NULL, default 0): The clinic no longer lists this item in its pricelist (migration 045). The row is kept, not deleted, so code, price and history survive. Search, listings, filters, clinic/doctor pages, counts, ranking, sitemap and JSON-LD skip it. The service/lab test detail page (direct link) still shows the clinic, last in the list, with the note "the clinic may no longer offer this service". The predicate is built only by `priceRowIsActiveSql()` (`server/common/price-row-visibility.ts`); `tests/unit/price-row-visibility.spec.ts` makes every file that reads these tables declare whether it is public.
 - `created_at` (timestamp)
 - _Unique constraint_: (`clinic_id`, `medical_service_id`)
 

@@ -1,5 +1,6 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
+import { priceRowIsActiveSql } from '~/server/common/price-row-visibility';
 import { lastmodSql, toLastmod } from '~/server/common/sitemap/lastmod';
 import { LabTestCategory } from '~/enums/labtest-category';
 
@@ -64,7 +65,7 @@ export async function getCategoryCityCombinations() {
 			${lastmod} as lastmod
 		FROM lab_tests lt
 		INNER JOIN lab_test_categories_relations ltcr ON lt.id = ltcr.lab_test_id
-		INNER JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id
+		INNER JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id AND ${priceRowIsActiveSql('clt')}
 		INNER JOIN clinics c ON clt.clinic_id = c.id
 			AND ${clinicIsPublicSql('c')}
 		GROUP BY ltcr.category_id, c.city_id
@@ -98,7 +99,7 @@ export async function getEntityCityCombinations(threshold: number) {
 			COUNT(DISTINCT clt.clinic_id) as clinicCount,
 			${lastmod} as lastmod
 		FROM lab_tests lt
-		INNER JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id
+		INNER JOIN clinic_lab_tests clt ON lt.id = clt.lab_test_id AND ${priceRowIsActiveSql('clt')}
 		INNER JOIN clinics c ON clt.clinic_id = c.id
 			AND ${clinicIsPublicSql('c')}
 		GROUP BY lt.slug, c.city_id

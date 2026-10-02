@@ -6,6 +6,7 @@ import type {
 import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
 import { type Conn, withConnection } from '~/server/common/medicines/helpers';
 import { getLocalizedNameField } from '~/server/common/utils';
+import { priceRowIsActiveSql } from '~/server/common/price-row-visibility';
 
 type CountRow = { count: number };
 type CategoryRow = { categoryId: number | null; count: number };
@@ -14,14 +15,14 @@ const TOP_LIMIT = 10;
 
 const TOTAL_SQL = {
 	services: `
-		SELECT COUNT(DISTINCT medical_service_id) AS count
-		FROM clinic_medical_services
-		WHERE clinic_id = ?
+		SELECT COUNT(DISTINCT cms.medical_service_id) AS count
+		FROM clinic_medical_services cms
+		WHERE cms.clinic_id = ? AND ${priceRowIsActiveSql('cms')}
 	`,
 	labtests: `
-		SELECT COUNT(DISTINCT lab_test_id) AS count
-		FROM clinic_lab_tests
-		WHERE clinic_id = ?
+		SELECT COUNT(DISTINCT clt.lab_test_id) AS count
+		FROM clinic_lab_tests clt
+		WHERE clt.clinic_id = ? AND ${priceRowIsActiveSql('clt')}
 	`,
 	doctors: `
 		SELECT COUNT(DISTINCT doctor_id) AS count
@@ -40,7 +41,7 @@ const CATEGORY_SQL = {
 		FROM clinic_medical_services cms
 		LEFT JOIN medical_service_categories_relations mscr
 			ON mscr.medical_service_id = cms.medical_service_id
-		WHERE cms.clinic_id = ?
+		WHERE cms.clinic_id = ? AND ${priceRowIsActiveSql('cms')}
 		GROUP BY mscr.medical_service_category_id
 	`,
 	labtests: `
@@ -50,7 +51,7 @@ const CATEGORY_SQL = {
 		FROM clinic_lab_tests clt
 		LEFT JOIN lab_test_categories_relations ltcr
 			ON ltcr.lab_test_id = clt.lab_test_id
-		WHERE clt.clinic_id = ?
+		WHERE clt.clinic_id = ? AND ${priceRowIsActiveSql('clt')}
 		GROUP BY ltcr.category_id
 	`,
 	doctors: `
@@ -108,7 +109,7 @@ function buildPricedTopSql(options: {
 			${withOutdatedFlag ? 'r.is_price_outdated' : 'NULL'} AS isOutdated
 		FROM ${relationTable} r
 		JOIN ${table} i ON i.id = r.${itemFk}
-		WHERE r.clinic_id = ?
+		WHERE r.clinic_id = ? AND ${priceRowIsActiveSql('r')}
 		ORDER BY ${orderBy}
 		LIMIT ${TOP_LIMIT}
 	`;

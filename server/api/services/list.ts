@@ -1,5 +1,6 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
+import { priceRowIsActiveSql } from '~/server/common/price-row-visibility';
 import {
 	parseClinicPricesData,
 	getClinicRankOrderBySQL,
@@ -70,14 +71,14 @@ export async function getMedicalServiceList(
 
 	if (body.clinicIds != null && body.clinicIds.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f WHERE cms_f.medical_service_id = ms.id AND cms_f.clinic_id IN (${buildInPlaceholders(
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f WHERE cms_f.medical_service_id = ms.id AND ${priceRowIsActiveSql('cms_f')} AND cms_f.clinic_id IN (${buildInPlaceholders(
 				body.clinicIds,
 			)}))`,
 		);
 	}
 	if (body.cityIds != null && body.cityIds.length > 0) {
 		whereFilters.push(
-			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND ${clinicIsPublicSql('c_f')} AND c_f.city_id IN (${buildInPlaceholders(
+			`EXISTS (SELECT 1 FROM clinic_medical_services cms_f JOIN clinics c_f ON cms_f.clinic_id = c_f.id WHERE cms_f.medical_service_id = ms.id AND ${priceRowIsActiveSql('cms_f')} AND ${clinicIsPublicSql('c_f')} AND c_f.city_id IN (${buildInPlaceholders(
 				body.cityIds,
 			)}))`,
 		);
@@ -183,7 +184,7 @@ export async function getMedicalServiceList(
 		(body.sort === 'price-asc' || body.sort === 'price-desc') &&
 		singleClinicId != null;
 	const sortPriceSelect = usePriceSort
-		? `(SELECT cms_sort.price FROM clinic_medical_services cms_sort WHERE cms_sort.medical_service_id = ms.id AND cms_sort.clinic_id = ? AND cms_sort.price IS NOT NULL ORDER BY cms_sort.price ASC LIMIT 1) as sortPrice,`
+		? `(SELECT cms_sort.price FROM clinic_medical_services cms_sort WHERE cms_sort.medical_service_id = ms.id AND ${priceRowIsActiveSql('cms_sort')} AND cms_sort.clinic_id = ? AND cms_sort.price IS NOT NULL ORDER BY cms_sort.price ASC LIMIT 1) as sortPrice,`
 		: '';
 	const sortPriceParams: number[] = usePriceSort ? [singleClinicId!] : [];
 
@@ -232,11 +233,11 @@ export async function getMedicalServiceList(
 			ms.sort_order,
 			${sortPriceSelect}
 			${matchedSynonymsSelect}
-			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${rankOrder}), '') FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND ${clinicIsPublicSql('c_rank')} WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicIds,
+			(SELECT COALESCE(GROUP_CONCAT(DISTINCT cms.clinic_id ORDER BY ${rankOrder}), '') FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND ${clinicIsPublicSql('c_rank')} WHERE cms.medical_service_id = ms.id AND ${priceRowIsActiveSql('cms')}${cityFilterInSelect}) as clinicIds,
 			(SELECT GROUP_CONCAT(
 				DISTINCT CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''), ':', cms.is_price_outdated)
 				ORDER BY ${rankOrder}
-			) FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND ${clinicIsPublicSql('c_rank')} WHERE cms.medical_service_id = ms.id${cityFilterInSelect}) as clinicPricesData,
+			) FROM clinic_medical_services cms JOIN clinics c_rank ON c_rank.id = cms.clinic_id AND ${clinicIsPublicSql('c_rank')} WHERE cms.medical_service_id = ms.id AND ${priceRowIsActiveSql('cms')}${cityFilterInSelect}) as clinicPricesData,
 			(
 				SELECT GROUP_CONCAT(DISTINCT mscr2.medical_service_category_id ORDER BY mscr2.medical_service_category_id)
 				FROM medical_service_categories_relations mscr2

@@ -128,6 +128,24 @@ const {
 	computed(() => labTestData.value?.clinicPrices),
 );
 
+// Строки, которых нет в текущем прайсе клиники (isObsolete), показываются в
+// списке с пометкой, но в заголовок, описание, авто-факты и JSON-LD не идут:
+// это уже не предложение клиники.
+const obsoleteClinicIds = computed(
+	() =>
+		new Set(
+			(filteredClinicPrices.value ?? [])
+				.filter((p) => p.isObsolete)
+				.map((p) => p.clinicId),
+		),
+);
+const seoClinics = computed(() =>
+	labTestClinics.value.filter((c) => !obsoleteClinicIds.value.has(c.id)),
+);
+const seoClinicPrices = computed(() =>
+	(filteredClinicPrices.value ?? []).filter((p) => !p.isObsolete),
+);
+
 const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
 const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
 const pendingMapAction = ref<(() => void) | null>(null);
@@ -155,7 +173,7 @@ const showClinicOnMap = (clinic: ClinicData) => {
 // ниже: при фильтре по городу страница каноническая для этого города, и цифры
 // обязаны совпадать с тем, что реально отрисовано.
 const autoFacts = computed(() =>
-	computeEntityAutoFacts(labTestClinics.value, filteredClinicPrices.value),
+	computeEntityAutoFacts(seoClinics.value, seoClinicPrices.value),
 );
 
 const formatPrice = (value: number) => n(value, priceFormatOptions(value));
@@ -189,7 +207,7 @@ const pageTitle = computed(() => {
 	}
 
 	const usedCities: { [key: string]: true } = {};
-	const uniqueCities = labTestClinics.value
+	const uniqueCities = seoClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
 				return null;
@@ -229,7 +247,7 @@ const pageDescription = computed(() => {
 		localName && localName !== name ? `${name} (${localName})` : name;
 
 	const usedCities: { [key: string]: true } = {};
-	const cityNames = labTestClinics.value
+	const cityNames = seoClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
 				return '';
@@ -317,8 +335,8 @@ watchEffect(() => {
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
 				pageUrl,
-				clinics: labTestClinics.value,
-				clinicPrices: filteredClinicPrices.value,
+				clinics: seoClinics.value,
+				clinicPrices: seoClinicPrices.value,
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [

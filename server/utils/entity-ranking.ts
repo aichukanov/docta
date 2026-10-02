@@ -1,3 +1,4 @@
+import { priceRowIsActiveSql } from '~/server/common/price-row-visibility';
 import { OUTDATED_PRICE_FACTOR } from '~/common/ranking';
 import { type Conn, withConnection } from '~/server/common/medicines/helpers';
 
@@ -413,7 +414,7 @@ async function recalculateClinicScores(connection: Conn): Promise<void> {
 				OR (c.email IS NOT NULL AND c.email != '')
 				OR (c.website IS NOT NULL AND c.website != '')
 			) AS hasContact,
-			EXISTS(SELECT 1 FROM clinic_medical_services cms WHERE cms.clinic_id = c.id) AS hasService,
+			EXISTS(SELECT 1 FROM clinic_medical_services cms WHERE cms.clinic_id = c.id AND ${priceRowIsActiveSql('cms')}) AS hasService,
 			EXISTS(SELECT 1 FROM doctor_clinics dc WHERE dc.clinic_id = c.id) AS hasDoctor
 		FROM clinics c
 	`);
@@ -440,16 +441,16 @@ async function recalculateServiceScores(connection: Conn): Promise<void> {
 		SELECT
 			ms.id,
 			ms.rank_score AS currentScore,
-			(SELECT COUNT(DISTINCT cms.clinic_id) FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id) AS clinicCount,
+			(SELECT COUNT(DISTINCT cms.clinic_id) FROM clinic_medical_services cms WHERE cms.medical_service_id = ms.id AND ${priceRowIsActiveSql('cms')}) AS clinicCount,
 			(SELECT COUNT(DISTINCT cmsd.doctor_id) FROM clinic_medical_service_doctors cmsd WHERE cmsd.medical_service_id = ms.id) AS doctorCount,
 			EXISTS(
 				SELECT 1 FROM clinic_medical_services cms
-				WHERE cms.medical_service_id = ms.id AND cms.price IS NOT NULL
+				WHERE cms.medical_service_id = ms.id AND cms.price IS NOT NULL AND ${priceRowIsActiveSql('cms')}
 					AND COALESCE(cms.is_price_outdated, 0) = 0
 			) AS hasFreshPricing,
 			EXISTS(
 				SELECT 1 FROM clinic_medical_services cms
-				WHERE cms.medical_service_id = ms.id AND cms.price IS NOT NULL
+				WHERE cms.medical_service_id = ms.id AND cms.price IS NOT NULL AND ${priceRowIsActiveSql('cms')}
 			) AS hasAnyPricing
 		FROM medical_services ms
 	`);
@@ -483,15 +484,15 @@ async function recalculateLabTestScores(connection: Conn): Promise<void> {
 		SELECT
 			lt.id,
 			lt.rank_score AS currentScore,
-			(SELECT COUNT(DISTINCT clt.clinic_id) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id) AS clinicCount,
+			(SELECT COUNT(DISTINCT clt.clinic_id) FROM clinic_lab_tests clt WHERE clt.lab_test_id = lt.id AND ${priceRowIsActiveSql('clt')}) AS clinicCount,
 			EXISTS(
 				SELECT 1 FROM clinic_lab_tests clt
-				WHERE clt.lab_test_id = lt.id AND clt.price IS NOT NULL
+				WHERE clt.lab_test_id = lt.id AND clt.price IS NOT NULL AND ${priceRowIsActiveSql('clt')}
 					AND COALESCE(clt.is_price_outdated, 0) = 0
 			) AS hasFreshPricing,
 			EXISTS(
 				SELECT 1 FROM clinic_lab_tests clt
-				WHERE clt.lab_test_id = lt.id AND clt.price IS NOT NULL
+				WHERE clt.lab_test_id = lt.id AND clt.price IS NOT NULL AND ${priceRowIsActiveSql('clt')}
 			) AS hasAnyPricing
 		FROM lab_tests lt
 	`);

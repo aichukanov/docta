@@ -65,8 +65,8 @@ export default defineEventHandler(async (event): Promise<boolean> => {
 
 			// 1. Переносим связи с клиниками (только те, которых ещё нет)
 			await connection.execute(
-				`INSERT IGNORE INTO clinic_lab_tests (lab_test_id, clinic_id, price, price_max, code, is_price_outdated)
-				 SELECT ?, clinic_id, price, price_max, code, is_price_outdated
+				`INSERT IGNORE INTO clinic_lab_tests (lab_test_id, clinic_id, price, price_max, code, is_price_outdated, is_obsolete)
+				 SELECT ?, clinic_id, price, price_max, code, is_price_outdated, is_obsolete
 				 FROM clinic_lab_tests
 				 WHERE lab_test_id = ?`,
 				[body.primaryLabTestId, body.secondaryLabTestId],

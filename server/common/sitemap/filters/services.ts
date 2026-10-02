@@ -1,5 +1,6 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
+import { priceRowIsActiveSql } from '~/server/common/price-row-visibility';
 import { lastmodSql, toLastmod } from '~/server/common/sitemap/lastmod';
 import { MedicalServiceCategory } from '~/enums/medical-service-category';
 
@@ -68,7 +69,7 @@ export async function getCategoryCityCombinations() {
 			${lastmod} as lastmod
 		FROM medical_services ms
 		INNER JOIN medical_service_categories_relations mscr ON ms.id = mscr.medical_service_id
-		INNER JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id
+		INNER JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id AND ${priceRowIsActiveSql('cms')}
 		INNER JOIN clinics c ON cms.clinic_id = c.id
 			AND ${clinicIsPublicSql('c')}
 		GROUP BY mscr.medical_service_category_id, c.city_id
@@ -102,7 +103,7 @@ export async function getEntityCityCombinations(threshold: number) {
 			COUNT(DISTINCT cms.clinic_id) as clinicCount,
 			${lastmod} as lastmod
 		FROM medical_services ms
-		INNER JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id
+		INNER JOIN clinic_medical_services cms ON ms.id = cms.medical_service_id AND ${priceRowIsActiveSql('cms')}
 		INNER JOIN clinics c ON cms.clinic_id = c.id
 			AND ${clinicIsPublicSql('c')}
 		GROUP BY ms.slug, c.city_id

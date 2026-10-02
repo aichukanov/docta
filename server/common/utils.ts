@@ -61,13 +61,14 @@ export function parseClinicPricesData(clinicPricesData: string | null): Array<{
 	priceMax: number | null;
 	code: string | null;
 	isOutdated: boolean;
+	isObsolete: boolean;
 }> {
 	if (!clinicPricesData) {
 		return [];
 	}
 
 	return clinicPricesData.split(',').map((priceData) => {
-		const [clinicId, price, priceMin, priceMax, code, isOutdated] =
+		const [clinicId, price, priceMin, priceMax, code, isOutdated, isObsolete] =
 			priceData.split(':');
 		return {
 			clinicId: Number(clinicId),
@@ -76,6 +77,8 @@ export function parseClinicPricesData(clinicPricesData: string | null): Array<{
 			priceMax: priceMax === '' ? null : Number(priceMax),
 			code: code || null,
 			isOutdated: isOutdated === '1',
+			// седьмое поле отдают только details-запросы; в листингах устаревших строк нет
+			isObsolete: isObsolete === '1',
 		};
 	});
 }

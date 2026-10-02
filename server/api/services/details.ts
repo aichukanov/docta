@@ -30,10 +30,12 @@ export default defineEventHandler(
 
 			// Порядок клиник: композитный скор без локации (rank_score + бонус
 			// за цену); вклад расстояния добавит клиент (use-clinic-ranking.ts)
-			const rankOrder = getClinicRankOrderBySQL('c_rank', 'cms', {
+			// Строки, которых клиника больше нет в прайсе (is_obsolete), по прямой
+			// ссылке показываются с пометкой — в конце списка.
+			const rankOrder = `cms.is_obsolete ASC, ${getClinicRankOrderBySQL('c_rank', 'cms', {
 				hasPriceMin: true,
 				hasOutdatedFlag: true,
-			});
+			})}`;
 			const medicalServiceQuery = `
 			SELECT DISTINCT
 				ms.id,
@@ -52,7 +54,7 @@ export default defineEventHandler(
 				) as clinicIds,
 				(
 					SELECT GROUP_CONCAT(
-						CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''), ':', cms.is_price_outdated)
+						CONCAT(cms.clinic_id, ':', IFNULL(cms.price, ''), ':', IFNULL(cms.price_min, ''), ':', IFNULL(cms.price_max, ''), ':', COALESCE(cms.code, ''), ':', cms.is_price_outdated, ':', cms.is_obsolete)
 						ORDER BY ${rankOrder}
 					)
 					FROM clinic_medical_services cms

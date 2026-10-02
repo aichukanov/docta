@@ -100,9 +100,14 @@ export function useClinicRanking() {
 					hasPrice: prices ? hasPriceInfo(priceInfo) : undefined,
 					isPriceOutdated: priceInfo?.isOutdated,
 				}),
+				// позиции нет в прайсе клиники — такая клиника всегда в конце
+				// (зеркало `is_obsolete ASC` в details-запросах)
+				isObsolete: Boolean(priceInfo?.isObsolete),
 			};
 		});
-		scored.sort((a, b) => b.score - a.score);
+		scored.sort(
+			(a, b) => Number(a.isObsolete) - Number(b.isObsolete) || b.score - a.score,
+		);
 		const ranked = scored.map(({ clinic }) => clinic);
 		renderedOrder = ranked.map((clinic) => clinic.id);
 		return ranked;

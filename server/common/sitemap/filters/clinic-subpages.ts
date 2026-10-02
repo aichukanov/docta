@@ -1,6 +1,7 @@
 import { CLINIC_ITEMS_INLINE_THRESHOLD } from '~/common/constants';
 import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
+import { priceRowIsActiveSql } from '~/server/common/price-row-visibility';
 import { getConnection } from '~/server/common/db-mysql';
 
 export interface ClinicSubpageSlugs {
@@ -21,7 +22,7 @@ export async function getClinicSubpageSlugs(
 		services: `
 			SELECT c.slug
 			FROM clinics c
-			JOIN clinic_medical_services cms ON cms.clinic_id = c.id
+			JOIN clinic_medical_services cms ON cms.clinic_id = c.id AND ${priceRowIsActiveSql('cms')}
 			WHERE ${clinicIsPublicSql('c')}
 			GROUP BY c.id, c.slug
 			HAVING COUNT(DISTINCT cms.medical_service_id) > ?
@@ -29,7 +30,7 @@ export async function getClinicSubpageSlugs(
 		labtests: `
 			SELECT c.slug
 			FROM clinics c
-			JOIN clinic_lab_tests clt ON clt.clinic_id = c.id
+			JOIN clinic_lab_tests clt ON clt.clinic_id = c.id AND ${priceRowIsActiveSql('clt')}
 			WHERE ${clinicIsPublicSql('c')}
 			GROUP BY c.id, c.slug
 			HAVING COUNT(DISTINCT clt.lab_test_id) > ?

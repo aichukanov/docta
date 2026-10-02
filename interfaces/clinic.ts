@@ -144,6 +144,9 @@ export interface ClinicPrice {
 	code?: string | null;
 	// Цена помечена как устаревшая — см. ClinicItemTopEntry.isOutdated
 	isOutdated?: boolean;
+	// Позиции больше нет в прайсе клиники (is_obsolete в БД). Приходит только
+	// со страницы деталей: в листингах и поиске таких строк нет вовсе.
+	isObsolete?: boolean;
 }
 
 export interface ClinicServiceWithPrices extends ClinicServiceItem {

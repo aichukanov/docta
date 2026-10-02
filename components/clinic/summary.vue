@@ -80,6 +80,7 @@ watch(
 			:priceMin="priceInfo?.priceMin"
 			:priceMax="priceInfo?.priceMax"
 			:isOutdated="priceInfo?.isOutdated"
+			:isObsolete="priceInfo?.isObsolete"
 			:showPrice="showPrice"
 			:distance="distance"
 			@show-on-map="$emit('show-on-map')"

@@ -1,5 +1,6 @@
 import { getConnection } from '~/server/common/db-mysql';
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
+import { priceRowIsActiveSql } from '~/server/common/price-row-visibility';
 
 // Отдельным блоком, чтобы справочный режим мог его не запрашивать.
 const DESCRIPTION_COLUMNS = `
@@ -303,7 +304,7 @@ export async function getClinicList(
 			) OR EXISTS (
 				SELECT 1 FROM clinic_medical_services cms_f
 				JOIN medical_services_specialties mss_f ON mss_f.medical_service_id = cms_f.medical_service_id
-				WHERE cms_f.clinic_id = c.id AND mss_f.specialty_id IN (${servicePlaceholders})
+				WHERE cms_f.clinic_id = c.id AND ${priceRowIsActiveSql('cms_f')} AND mss_f.specialty_id IN (${servicePlaceholders})
 			))`,
 		);
 	}

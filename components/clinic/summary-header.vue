@@ -14,6 +14,8 @@ const props = withDefaults(
 		priceMin?: number | null;
 		priceMax?: number | null;
 		isOutdated?: boolean;
+		// Позиции больше нет в прайсе клиники — см. ClinicPrice.isObsolete
+		isObsolete?: boolean;
 		showPrice?: boolean;
 		// Расстояние до пользователя в км; null/undefined — локация неизвестна
 		distance?: number | null;
@@ -154,9 +156,18 @@ const reviewsLink = computed(() => {
 				<div
 					v-if="showPrice"
 					class="price-badge"
-					:class="{ 'price-badge__unknown': !hasPrice }"
+					:class="{
+						'price-badge__unknown': !hasPrice && !isObsolete,
+						'price-badge__obsolete': isObsolete,
+					}"
 				>
-					<template v-if="formattedPrice">
+					<!-- Позиции нет в текущем прайсе: цена зачёркнута, «+X%» уже не к месту -->
+					<template v-if="isObsolete">
+						<s v-if="formattedPrice">{{ formattedPrice }}</s>
+						<template v-else>{{ t('PriceUnknown') }}</template>
+						<ClinicObsoleteBadge />
+					</template>
+					<template v-else-if="formattedPrice">
 						{{ formattedPrice }}
 						<template v-if="isOutdated">
 							{{ t('PriceOutdatedSuffix') }}</template
@@ -293,6 +304,13 @@ const reviewsLink = computed(() => {
 		color: var(--kit-color-text-muted);
 		font-weight: var(--kit-font-weight-normal);
 		font-style: italic;
+	}
+
+	// text-muted на surface-secondary — 4.55:1 (расчёт), для текста ≥ 4.5:1
+	&__obsolete {
+		background: var(--kit-color-surface-secondary);
+		color: var(--kit-color-text-muted);
+		font-weight: var(--kit-font-weight-normal);
 	}
 }
 

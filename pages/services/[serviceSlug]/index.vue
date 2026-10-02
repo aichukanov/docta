@@ -128,6 +128,24 @@ const {
 	computed(() => medicalServiceData.value?.clinicPrices),
 );
 
+// Строки, которых нет в текущем прайсе клиники (isObsolete), показываются в
+// списке с пометкой, но в заголовок, описание, авто-факты и JSON-LD не идут:
+// это уже не предложение клиники.
+const obsoleteClinicIds = computed(
+	() =>
+		new Set(
+			(filteredClinicPrices.value ?? [])
+				.filter((p) => p.isObsolete)
+				.map((p) => p.clinicId),
+		),
+);
+const seoClinics = computed(() =>
+	medicalServiceClinics.value.filter((c) => !obsoleteClinicIds.value.has(c.id)),
+);
+const seoClinicPrices = computed(() =>
+	(filteredClinicPrices.value ?? []).filter((p) => !p.isObsolete),
+);
+
 const mapRef = ref<InstanceType<typeof ClinicServicesMap> | null>(null);
 const { target: mapSentinel, hasBeenVisible: isMapVisible } = useInViewport();
 const pendingMapAction = ref<(() => void) | null>(null);
@@ -158,10 +176,7 @@ const hasTariffs = computed(() => tariffs.value.length > 0);
 // ниже: при фильтре по городу страница каноническая для этого города, и цифры
 // обязаны совпадать с тем, что реально отрисовано.
 const autoFacts = computed(() =>
-	computeEntityAutoFacts(
-		medicalServiceClinics.value,
-		filteredClinicPrices.value,
-	),
+	computeEntityAutoFacts(seoClinics.value, seoClinicPrices.value),
 );
 
 const formatPrice = (value: number) => n(value, priceFormatOptions(value));
@@ -190,7 +205,7 @@ const pageTitle = computed(() => {
 	}
 
 	const usedCities: { [key: string]: true } = {};
-	const uniqueCities = medicalServiceClinics.value
+	const uniqueCities = seoClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
 				return null;
@@ -232,7 +247,7 @@ const pageDescription = computed(() => {
 	const { name } = medicalServiceData.value;
 
 	const usedCities: { [key: string]: true } = {};
-	const cityNames = medicalServiceClinics.value
+	const cityNames = seoClinics.value
 		.map((clinic) => {
 			if (usedCities[clinic.cityId]) {
 				return '';
@@ -319,8 +334,8 @@ watchEffect(() => {
 				pageTitle: pageTitle.value,
 				pageDescription: pageDescription.value,
 				pageUrl,
-				clinics: medicalServiceClinics.value,
-				clinicPrices: filteredClinicPrices.value,
+				clinics: seoClinics.value,
+				clinicPrices: seoClinicPrices.value,
 				getCityName,
 			}),
 			buildBreadcrumbsSchema(pageUrl, [

@@ -28,9 +28,11 @@ export default defineEventHandler(
 			const locale = isValidLocale(body.locale) ? body.locale : 'en';
 			// Порядок клиник: композитный скор без локации (rank_score + бонус
 			// за цену); вклад расстояния добавит клиент (use-clinic-ranking.ts)
-			const rankOrder = getClinicRankOrderBySQL('c_rank', 'clt', {
+			// Строки, которых клиника больше нет в прайсе (is_obsolete), по прямой
+			// ссылке показываются с пометкой — в конце списка.
+			const rankOrder = `clt.is_obsolete ASC, ${getClinicRankOrderBySQL('c_rank', 'clt', {
 				hasOutdatedFlag: true,
-			});
+			})}`;
 
 			const labTestQuery = `
 			SELECT DISTINCT
@@ -50,7 +52,7 @@ export default defineEventHandler(
 				) as clinicIds,
 				(
 					SELECT GROUP_CONCAT(
-						CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''), ':', clt.is_price_outdated)
+						CONCAT(clt.clinic_id, ':', IFNULL(clt.price, ''), ':', '', ':', IFNULL(clt.price_max, ''), ':', COALESCE(clt.code, ''), ':', clt.is_price_outdated, ':', clt.is_obsolete)
 						ORDER BY ${rankOrder}
 					)
 					FROM clinic_lab_tests clt

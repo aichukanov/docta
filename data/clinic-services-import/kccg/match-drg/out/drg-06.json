@@ -1,0 +1,1183 @@
+{
+ "batch": "drg-06",
+ "items": [
+  {
+   "code": "G01B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Rectal Resection without Very Severe CC",
+   "slug": "hospitalization-for-rectal-resection-without-very-severe-cc",
+   "name_sr": "Resekcija rektuma bez vrlo teških KK",
+   "name_ru": "Госпитализация: резекция прямой кишки без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Rektumresektion ohne sehr schwere KK",
+   "name_tr": "Yatış: rektum rezeksiyonu, çok ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Small and Large Bowel Procedures with Very Severe CC",
+   "slug": "hospitalization-for-major-small-and-large-bowel-procedures-with-very-severe-cc",
+   "name_sr": "Veliki zahvati na tankom i debelom crijevu sa vrlo teškim KK",
+   "name_ru": "Госпитализация: крупные операции на тонкой и толстой кишке с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: größere Eingriffe am Dünn- und Dickdarm mit sehr schweren KK",
+   "name_tr": "Yatış: ince ve kalın bağırsakta büyük cerrahi girişimler, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Small and Large Bowel Procedures without Very Severe CC",
+   "slug": "hospitalization-for-major-small-and-large-bowel-procedures-without-very-severe-cc",
+   "name_sr": "Veliki zahvati na tankom i debelom crijevu bez vrlo teških KK",
+   "name_ru": "Госпитализация: крупные операции на тонкой и толстой кишке без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: größere Eingriffe am Dünn- und Dickdarm ohne sehr schwere KK",
+   "name_tr": "Yatış: ince ve kalın bağırsakta büyük cerrahi girişimler, çok ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G03A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Stomach, Esophagus and Duodenum Procedures with Malignancy or Very Severe CC",
+   "slug": "hospitalization-for-upper-gi-surgery-with-malignancy-or-very-severe-cc",
+   "name_sr": "Zahvati na želucu, jednjaku i dvanaestopalačnom crijevu sa malignom bolešću ili sa vrlo teškim KK",
+   "name_ru": "Госпитализация: операции на желудке, пищеводе и двенадцатиперстной кишке со злокачественным заболеванием или с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Magen, Speiseröhre und Zwölffingerdarm mit bösartiger Erkrankung oder mit sehr schweren KK",
+   "name_tr": "Yatış: mide, yemek borusu ve onikiparmak bağırsağı ameliyatları, kötü huylu hastalık veya çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G03C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Stomach, Esophagus and Duodenum Procedures without Malignancy without CC",
+   "slug": "hospitalization-for-upper-gi-surgery-without-malignancy-without-cc",
+   "name_sr": "Zahvati na želucu, jednjaku i dvanaestopalačnom crijevu, bez maligne bolesti, bez KK",
+   "name_ru": "Госпитализация: операции на желудке, пищеводе и двенадцатиперстной кишке, без злокачественного заболевания, без ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Magen, Speiseröhre und Zwölffingerdarm, ohne bösartige Erkrankung, ohne KK",
+   "name_tr": "Yatış: mide, yemek borusu ve onikiparmak bağırsağı ameliyatları, kötü huylu hastalık ve CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G04A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "lysis-of-abdominal-adhesions-for-ileus",
+   "id": 5964,
+   "note": "адгезиолиз брюшины; общей записи нет, взята запись без указания доступа (есть ещё 4773 открытая, 6108 лапароскопическая)"
+  },
+  {
+   "code": "G04B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "lysis-of-abdominal-adhesions-for-ileus",
+   "id": 5964,
+   "note": "см. G04A"
+  },
+  {
+   "code": "G05C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Minor Small and Large Bowel Procedures without CC",
+   "slug": "hospitalization-for-minor-small-and-large-bowel-procedures-without-cc",
+   "name_sr": "Manji zahvati na tankom i debelom crijevu bez KK",
+   "name_ru": "Госпитализация: малые операции на тонкой и толстой кишке без ОО",
+   "name_de": "Stationäre Behandlung: kleinere Eingriffe am Dünn- und Dickdarm ohne KK",
+   "name_tr": "Yatış: ince ve kalın bağırsakta küçük cerrahi girişimler, CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G07B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "laparoscopic-appendectomy",
+   "id": 3412,
+   "note": "см. G07A"
+  },
+  {
+   "code": "G10A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "hernia-operation",
+   "id": 2124,
+   "note": ""
+  },
+  {
+   "code": "G10B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "hernia-operation",
+   "id": 2124,
+   "note": ""
+  },
+  {
+   "code": "G11Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Anal and Stomal Procedures",
+   "slug": "hospitalization-for-anal-and-stomal-procedures",
+   "name_sr": "Zahvati na anusu i stomi",
+   "name_ru": "Госпитализация: операции на заднем проходе и стоме",
+   "name_de": "Stationäre Behandlung: Eingriffe am Anus und an der Stoma",
+   "name_tr": "Yatış: anüs ve stoma ameliyatları",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G12B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Gastrointestinal Procedures with Severe or Moderate CC",
+   "slug": "hospitalization-for-other-gastrointestinal-procedures-with-severe-or-moderate-cc",
+   "name_sr": "Ostali operativni zahvati na gastrointestinalnom sistemu sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: прочие операции на желудочно-кишечном тракте с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe am Verdauungstrakt mit schweren oder mäßigen KK",
+   "name_tr": "Yatış: sindirim sisteminde diğer ameliyatlar, ağır veya orta CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G47B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "esophagogastroduodenoscopy",
+   "id": 5356,
+   "note": "см. G47A"
+  },
+  {
+   "code": "G48B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "colonoscopy-with-or-without-terminal-ileoscopy-with-or-without-biopsy",
+   "id": 5365,
+   "note": "см. G48A"
+  },
+  {
+   "code": "G60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Gastrointestinal Malignancy without Very Severe CC",
+   "slug": "hospitalization-for-gastrointestinal-malignancy-without-very-severe-cc",
+   "name_sr": "Maligna bolest gastrointestinalnog sistema bez vrlo teških KK",
+   "name_ru": "Госпитализация: злокачественное заболевание желудочно-кишечного тракта без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: bösartige Erkrankung des Verdauungstrakts ohne sehr schwere KK",
+   "name_tr": "Yatış: sindirim sisteminin kötü huylu hastalığı, çok ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Gastrointestinal Bleeding with Very Severe or Severe CC",
+   "slug": "hospitalization-for-gastrointestinal-bleeding-with-very-severe-or-severe-cc",
+   "name_sr": "Krvarenje iz gastrointestinalnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: желудочно-кишечное кровотечение с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: gastrointestinale Blutung mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: gastrointestinal kanama, çok ağır veya ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Gastrointestinal Bleeding without Very Severe or Severe CC",
+   "slug": "hospitalization-for-gastrointestinal-bleeding-without-very-severe-or-severe-cc",
+   "name_sr": "Krvarenje iz gastrointestinalnog sistema bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: желудочно-кишечное кровотечение без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: gastrointestinale Blutung ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: gastrointestinal kanama, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G64B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Inflammatory Bowel Disease without CC",
+   "slug": "hospitalization-for-inflammatory-bowel-disease-without-cc",
+   "name_sr": "Zapaljenska bolest crijeva bez KK",
+   "name_ru": "Госпитализация: воспалительное заболевание кишечника без ОО",
+   "name_de": "Stationäre Behandlung: chronisch-entzündliche Darmerkrankung ohne KK",
+   "name_tr": "Yatış: inflamatuar bağırsak hastalığı, CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G65A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Gastrointestinal Obstruction with Very Severe or Severe CC",
+   "slug": "hospitalization-for-gastrointestinal-obstruction-with-very-severe-or-severe-cc",
+   "name_sr": "Opstrukcija gastrointestinalnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: непроходимость желудочно-кишечного тракта с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Obstruktion des Verdauungstrakts mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: sindirim sistemi tıkanıklığı, çok ağır veya ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G65B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Gastrointestinal Obstruction without Very Severe or Severe CC",
+   "slug": "hospitalization-for-gastrointestinal-obstruction-without-very-severe-or-severe-cc",
+   "name_sr": "Opstrukcija gastrointestinalnog sistema bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: непроходимость желудочно-кишечного тракта без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Obstruktion des Verdauungstrakts ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: sindirim sistemi tıkanıklığı, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G66Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Abdominal Pain or Mesenteric Adenitis",
+   "slug": "hospitalization-for-abdominal-pain-or-mesenteric-adenitis",
+   "name_sr": "Bol u abdomenu ili mezenterijumski adenitis",
+   "name_ru": "Госпитализация: боль в животе или мезентериальный лимфаденит",
+   "name_de": "Stationäre Behandlung: Bauchschmerzen oder mesenteriale Lymphadenitis",
+   "name_tr": "Yatış: karın ağrısı veya mezenterik lenfadenit",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G67A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Esophagitis and Gastroenteritis with Very Severe or Severe CC",
+   "slug": "hospitalization-for-esophagitis-and-gastroenteritis-with-very-severe-or-severe-cc",
+   "name_sr": "Ezofagitis i gastroenteritis sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: эзофагит и гастроэнтерит с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Ösophagitis und Gastroenteritis mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: özofajit ve gastroenterit, çok ağır veya ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G67B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Esophagitis and Gastroenteritis without Very Severe or Severe CC",
+   "slug": "hospitalization-for-esophagitis-and-gastroenteritis-without-very-severe-or-severe-cc",
+   "name_sr": "Ezofagitis i gastroenteritis bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: эзофагит и гастроэнтерит без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Ösophagitis und Gastroenteritis ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: özofajit ve gastroenterit, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G70A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Gastrointestinal Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-gastrointestinal-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Druge bolesti gastrointestinalnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: другие заболевания желудочно-кишечного тракта с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: sonstige Erkrankungen des Verdauungstrakts mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: diğer sindirim sistemi hastalıkları, çok ağır veya ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G70B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Gastrointestinal Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-gastrointestinal-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Druge bolesti gastrointestinalnog sistema bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: другие заболевания желудочно-кишечного тракта без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: sonstige Erkrankungen des Verdauungstrakts ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: diğer sindirim sistemi hastalıkları, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G01A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Rectal Resection with Very Severe CC",
+   "slug": "hospitalization-for-rectal-resection-with-very-severe-cc",
+   "name_sr": "Resekcija rektuma sa vrlo teškim KK",
+   "name_ru": "Госпитализация: резекция прямой кишки с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Rektumresektion mit sehr schweren KK",
+   "name_tr": "Yatış: rektum rezeksiyonu, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G03B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Stomach, Esophagus and Duodenum Procedures without Malignancy with Severe or Moderate CC",
+   "slug": "hospitalization-for-upper-gi-surgery-without-malignancy-with-severe-or-moderate-cc",
+   "name_sr": "Zahvati na želucu, jednjaku i dvanaestopalačnom crijevu, bez maligne bolesti, sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: операции на желудке, пищеводе и двенадцатиперстной кишке, без злокачественного заболевания, с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Magen, Speiseröhre und Zwölffingerdarm, ohne bösartige Erkrankung, mit schweren oder mäßigen KK",
+   "name_tr": "Yatış: mide, yemek borusu ve onikiparmak bağırsağı ameliyatları, kötü huylu hastalık olmadan, ağır veya orta CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G04C",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "lysis-of-abdominal-adhesions-for-ileus",
+   "id": 5964,
+   "note": "см. G04A"
+  },
+  {
+   "code": "G05A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Minor Small and Large Bowel Procedures with Very Severe CC",
+   "slug": "hospitalization-for-minor-small-and-large-bowel-procedures-with-very-severe-cc",
+   "name_sr": "Manji zahvati na tankom i debelom crijevu sa vrlo teškim KK",
+   "name_ru": "Госпитализация: малые операции на тонкой и толстой кишке с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: kleinere Eingriffe am Dünn- und Dickdarm mit sehr schweren KK",
+   "name_tr": "Yatış: ince ve kalın bağırsakta küçük cerrahi girişimler, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G05B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Minor Small and Large Bowel Procedures with Severe or Moderate CC",
+   "slug": "hospitalization-for-minor-small-and-large-bowel-procedures-with-severe-or-moderate-cc",
+   "name_sr": "Manji zahvati na tankom i debelom crijevu sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: малые операции на тонкой и толстой кишке с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: kleinere Eingriffe am Dünn- und Dickdarm mit schweren oder mäßigen KK",
+   "name_tr": "Yatış: ince ve kalın bağırsakta küçük cerrahi girişimler, ağır veya orta CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G06Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pyloromyotomy",
+   "slug": "hospitalization-for-pyloromyotomy",
+   "name_sr": "Pilorotomija",
+   "name_ru": "Госпитализация: пилоромиотомия",
+   "name_de": "Stationäre Behandlung: Pyloromyotomie",
+   "name_tr": "Yatış: piloromiyotomi",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "PEDIATRIC_SURGERY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G07A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "laparoscopic-appendectomy",
+   "id": 3412,
+   "note": "общей записи «аппендэктомия» нет; DRG покрывает и открытую (3413)"
+  },
+  {
+   "code": "G12A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Gastrointestinal Procedures with Very Severe CC",
+   "slug": "hospitalization-for-other-gastrointestinal-procedures-with-very-severe-cc",
+   "name_sr": "Ostali operativni zahvati na gastrointestinalnom sistemu sa vrlo teškim KK",
+   "name_ru": "Госпитализация: прочие операции на желудочно-кишечном тракте с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe am Verdauungstrakt mit sehr schweren KK",
+   "name_tr": "Yatış: sindirim sisteminde diğer ameliyatlar, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G12C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Gastrointestinal Procedures without CC",
+   "slug": "hospitalization-for-other-gastrointestinal-procedures-without-cc",
+   "name_sr": "Ostali operativni zahvati na gastrointestinalnom sistemu bez KK",
+   "name_ru": "Госпитализация: прочие операции на желудочно-кишечном тракте без ОО",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe am Verdauungstrakt ohne KK",
+   "name_tr": "Yatış: sindirim sisteminde diğer ameliyatlar, CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G46A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Complex Gastroscopy with Very Severe CC",
+   "slug": "hospitalization-for-complex-gastroscopy-with-very-severe-cc",
+   "name_sr": "Složena gastroskopija sa vrlo teškim KK",
+   "name_ru": "Госпитализация: сложная гастроскопия с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: komplexe Gastroskopie mit sehr schweren KK",
+   "name_tr": "Yatış: kompleks gastroskopi, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G46B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Complex Gastroscopy without Very Severe CC",
+   "slug": "hospitalization-for-complex-gastroscopy-without-very-severe-cc",
+   "name_sr": "Složena gastroskopija bez vrlo teških KK",
+   "name_ru": "Госпитализация: сложная гастроскопия без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: komplexe Gastroskopie ohne sehr schwere KK",
+   "name_tr": "Yatış: kompleks gastroskopi, çok ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G46C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Complex Gastroscopy Same Day",
+   "slug": "hospitalization-for-complex-gastroscopy-same-day",
+   "name_sr": "Složena gastroskopija, isti dan",
+   "name_ru": "Госпитализация: сложная гастроскопия, в течение одного дня",
+   "name_de": "Stationäre Behandlung: komplexe Gastroskopie, am selben Tag",
+   "name_tr": "Yatış: kompleks gastroskopi, aynı gün",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G47A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "esophagogastroduodenoscopy",
+   "id": 5356,
+   "note": "«прочие» (не сложные) гастроскопии = обычная ЭГДС; сложные G46 — отдельная new"
+  },
+  {
+   "code": "G47C",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "esophagogastroduodenoscopy",
+   "id": 5356,
+   "note": "см. G47A"
+  },
+  {
+   "code": "G48A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "colonoscopy-with-or-without-terminal-ileoscopy-with-or-without-biopsy",
+   "id": 5365,
+   "note": "самая общая запись колоноскопии"
+  },
+  {
+   "code": "G48C",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "colonoscopy-with-or-without-terminal-ileoscopy-with-or-without-biopsy",
+   "id": 5365,
+   "note": "см. G48A"
+  },
+  {
+   "code": "G60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Gastrointestinal Malignancy with Very Severe CC",
+   "slug": "hospitalization-for-gastrointestinal-malignancy-with-very-severe-cc",
+   "name_sr": "Maligna bolest gastrointestinalnog sistema sa vrlo teškim KK",
+   "name_ru": "Госпитализация: злокачественное заболевание желудочно-кишечного тракта с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: bösartige Erkrankung des Verdauungstrakts mit sehr schweren KK",
+   "name_tr": "Yatış: sindirim sisteminin kötü huylu hastalığı, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G62Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Complicated Peptic Ulcer",
+   "slug": "hospitalization-for-complicated-peptic-ulcer",
+   "name_sr": "Komplikovani peptički ulkus",
+   "name_ru": "Госпитализация: осложнённая пептическая язва",
+   "name_de": "Stationäre Behandlung: kompliziertes peptisches Ulkus",
+   "name_tr": "Yatış: komplike peptik ülser",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "G64A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Inflammatory Bowel Disease with CC",
+   "slug": "hospitalization-for-inflammatory-bowel-disease-with-cc",
+   "name_sr": "Zapaljenska bolest crijeva sa KK",
+   "name_ru": "Госпитализация: воспалительное заболевание кишечника с ОО",
+   "name_de": "Stationäre Behandlung: chronisch-entzündliche Darmerkrankung mit KK",
+   "name_tr": "Yatış: inflamatuar bağırsak hastalığı, CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H01B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pancreas, Liver and Shunt Procedures without Very Severe CC",
+   "slug": "hospitalization-for-pancreas-liver-and-shunt-procedures-without-very-severe-cc",
+   "name_sr": "Zahvati na pankreasu, jetri i šantovima bez vrlo teških KK",
+   "name_ru": "Госпитализация: операции на поджелудочной железе, печени и шунтирующие операции без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Pankreas, Leber und Shunts ohne sehr schwere KK",
+   "name_tr": "Yatış: pankreas, karaciğer ve şant ameliyatları, çok ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Biliary Tract Procedures with Very Severe CC",
+   "slug": "hospitalization-for-major-biliary-tract-procedures-with-very-severe-cc",
+   "name_sr": "Veliki zahvati na bilijarnom traktu sa vrlo teškim KK",
+   "name_ru": "Госпитализация: крупные операции на желчевыводящих путях с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: größere Eingriffe an den Gallenwegen mit sehr schweren KK",
+   "name_tr": "Yatış: safra yollarında büyük cerrahi girişimler, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H05B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hepatobiliary Diagnostic Procedures without Very Severe CC",
+   "slug": "hospitalization-for-hepatobiliary-diagnostic-procedures-without-very-severe-cc",
+   "name_sr": "Dijagnostički zahvati na hepatobilijarnom sistemu bez vrlo teških KK",
+   "name_ru": "Госпитализация: диагностические вмешательства на гепатобилиарной системе без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: diagnostische Eingriffe am hepatobiliären System ohne sehr schwere KK",
+   "name_tr": "Yatış: hepatobiliyer sistemde tanısal girişimler, çok ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H07B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "open-cholecystectomy",
+   "id": 3415,
+   "note": ""
+  },
+  {
+   "code": "H08A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "laparoscopic-cholecystectomy",
+   "id": 3414,
+   "note": ""
+  },
+  {
+   "code": "H08B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "laparoscopic-cholecystectomy",
+   "id": 3414,
+   "note": ""
+  },
+  {
+   "code": "H60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cirrhosis and Alcoholic Hepatitis with Severe or Moderate CC",
+   "slug": "hospitalization-for-cirrhosis-and-alcoholic-hepatitis-with-severe-or-moderate-cc",
+   "name_sr": "Ciroza i alkoholni hepatitis sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: цирроз печени и алкогольный гепатит с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Leberzirrhose und alkoholische Hepatitis mit schweren oder mäßigen KK",
+   "name_tr": "Yatış: siroz ve alkolik hepatit, ağır veya orta CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H60C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cirrhosis and Alcoholic Hepatitis without CC",
+   "slug": "hospitalization-for-cirrhosis-and-alcoholic-hepatitis-without-cc",
+   "name_sr": "Ciroza i alkoholni hepatitis bez KK",
+   "name_ru": "Госпитализация: цирроз печени и алкогольный гепатит без ОО",
+   "name_de": "Stationäre Behandlung: Leberzirrhose und alkoholische Hepatitis ohne KK",
+   "name_tr": "Yatış: siroz ve alkolik hepatit, CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hepatobiliary and Pancreatic Malignancy with Very Severe CC",
+   "slug": "hospitalization-for-hepatobiliary-and-pancreatic-malignancy-with-very-severe-cc",
+   "name_sr": "Maligna bolest hepatobilijarnog sistema i pankreasa sa vrlo teškim KK",
+   "name_ru": "Госпитализация: злокачественное заболевание гепатобилиарной системы и поджелудочной железы с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: bösartige Erkrankung des hepatobiliären Systems und des Pankreas mit sehr schweren KK",
+   "name_tr": "Yatış: hepatobiliyer sistem ve pankreasın kötü huylu hastalığı, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hepatobiliary and Pancreatic Malignancy without Very Severe CC",
+   "slug": "hospitalization-for-hepatobiliary-and-pancreatic-malignancy-without-very-severe-cc",
+   "name_sr": "Maligna bolest hepatobilijarnog sistema i pankreasa bez vrlo teških KK",
+   "name_ru": "Госпитализация: злокачественное заболевание гепатобилиарной системы и поджелудочной железы без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: bösartige Erkrankung des hepatobiliären Systems und des Pankreas ohne sehr schwere KK",
+   "name_tr": "Yatış: hepatobiliyer sistem ve pankreasın kötü huylu hastalığı, çok ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H62B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pancreatic Disorders except Malignancy without Very Severe or Severe CC",
+   "slug": "hospitalization-for-non-malignant-pancreatic-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Poremećaji pankreasa, osim maligne bolesti, bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: заболевания поджелудочной железы, кроме злокачественных, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des Pankreas außer bösartigen, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: kötü huylu hastalık dışındaki pankreas hastalıkları, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H63A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Liver Disorders except Malignancy, Cirrhosis and Alcoholic Hepatitis with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-liver-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Poremećaji jetre, osim maligne bolesti, ciroze i alkoholnog hepatitisa, sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: заболевания печени, кроме злокачественных, цирроза и алкогольного гепатита, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen der Leber außer bösartigen, Zirrhose und alkoholischer Hepatitis, mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: kötü huylu hastalık, siroz ve alkolik hepatit dışındaki karaciğer hastalıkları, çok ağır veya ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H63B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Liver Disorders except Malignancy, Cirrhosis and Alcoholic Hepatitis without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-liver-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Poremećaji jetre, osim maligne bolesti, ciroze i alkoholnog hepatitisa, bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: заболевания печени, кроме злокачественных, цирроза и алкогольного гепатита, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen der Leber außer bösartigen, Zirrhose und alkoholischer Hepatitis, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: kötü huylu hastalık, siroz ve alkolik hepatit dışındaki karaciğer hastalıkları, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H64A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Biliary System Disorders with CC",
+   "slug": "hospitalization-for-biliary-system-disorders-with-cc",
+   "name_sr": "Poremećaji bilijarnog sistema sa KK",
+   "name_ru": "Госпитализация: заболевания желчевыводящей системы с ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des Gallensystems mit KK",
+   "name_tr": "Yatış: safra sistemi hastalıkları, CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H01A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pancreas, Liver and Shunt Procedures with Very Severe CC",
+   "slug": "hospitalization-for-pancreas-liver-and-shunt-procedures-with-very-severe-cc",
+   "name_sr": "Zahvati na pankreasu, jetri i šantovima sa vrlo teškim KK",
+   "name_ru": "Госпитализация: операции на поджелудочной железе, печени и шунтирующие операции с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Pankreas, Leber und Shunts mit sehr schweren KK",
+   "name_tr": "Yatış: pankreas, karaciğer ve şant ameliyatları, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Biliary Tract Procedures with Severe CC",
+   "slug": "hospitalization-for-major-biliary-tract-procedures-with-severe-cc",
+   "name_sr": "Veliki zahvati na bilijarnom traktu sa teškim KK",
+   "name_ru": "Госпитализация: крупные операции на желчевыводящих путях с тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: größere Eingriffe an den Gallenwegen mit schweren KK",
+   "name_tr": "Yatış: safra yollarında büyük cerrahi girişimler, ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H02C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Biliary Tract Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-major-biliary-tract-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Veliki zahvati na bilijarnom traktu bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: крупные операции на желчевыводящих путях без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: größere Eingriffe an den Gallenwegen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: safra yollarında büyük cerrahi girişimler, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H05A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hepatobiliary Diagnostic Procedures with Very Severe CC",
+   "slug": "hospitalization-for-hepatobiliary-diagnostic-procedures-with-very-severe-cc",
+   "name_sr": "Dijagnostički zahvati na hepatobilijarnom sistemu sa vrlo teškim KK",
+   "name_ru": "Госпитализация: диагностические вмешательства на гепатобилиарной системе с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: diagnostische Eingriffe am hepatobiliären System mit sehr schweren KK",
+   "name_tr": "Yatış: hepatobiliyer sistemde tanısal girişimler, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H06A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Hepatobiliary and Pancreas Procedures with Very Severe CC",
+   "slug": "hospitalization-for-other-hepatobiliary-and-pancreas-procedures-with-very-severe-cc",
+   "name_sr": "Ostali operativni zahvati na hepatobilijarnom sistemu i pankreasu sa vrlo teškim KK",
+   "name_ru": "Госпитализация: прочие операции на гепатобилиарной системе и поджелудочной железе с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe am hepatobiliären System und Pankreas mit sehr schweren KK",
+   "name_tr": "Yatış: hepatobiliyer sistem ve pankreasta diğer ameliyatlar, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H06B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Hepatobiliary and Pancreas Procedures without Very Severe CC",
+   "slug": "hospitalization-for-other-hepatobiliary-and-pancreas-procedures-without-very-severe-cc",
+   "name_sr": "Ostali operativni zahvati na hepatobilijarnom sistemu i pankreasu bez vrlo teških KK",
+   "name_ru": "Госпитализация: прочие операции на гепатобилиарной системе и поджелудочной железе без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe am hepatobiliären System und Pankreas ohne sehr schwere KK",
+   "name_tr": "Yatış: hepatobiliyer sistem ve pankreasta diğer ameliyatlar, çok ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY",
+    "GASTROINTESTINAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H07A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "open-cholecystectomy",
+   "id": 3415,
+   "note": ""
+  },
+  {
+   "code": "H40A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Endoscopic Procedures for Bleeding Esophageal Varices with Very Severe CC",
+   "slug": "hospitalization-for-bleeding-esophageal-varices-endoscopy-with-very-severe-cc",
+   "name_sr": "Endoskopske procedure zbog krvarenja iz ezofagealnih varikoziteta sa vrlo teškim KK",
+   "name_ru": "Госпитализация: эндоскопические вмешательства при кровотечении из варикозно расширенных вен пищевода с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: endoskopische Eingriffe bei Blutung aus Ösophagusvarizen mit sehr schweren KK",
+   "name_tr": "Yatış: özofagus varis kanamasında endoskopik girişimler, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H40B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Endoscopic Procedures for Bleeding Esophageal Varices without Very Severe CC",
+   "slug": "hospitalization-for-bleeding-esophageal-varices-endoscopy-without-very-severe-cc",
+   "name_sr": "Endoskopske procedure zbog krvarenja iz ezofagealnih varikoziteta bez vrlo teških KK",
+   "name_ru": "Госпитализация: эндоскопические вмешательства при кровотечении из варикозно расширенных вен пищевода без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: endoskopische Eingriffe bei Blutung aus Ösophagusvarizen ohne sehr schwere KK",
+   "name_tr": "Yatış: özofagus varis kanamasında endoskopik girişimler, çok ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H43A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Complex Therapeutic ERCP with Very Severe or Severe CC",
+   "slug": "hospitalization-for-complex-therapeutic-ercp-with-very-severe-or-severe-cc",
+   "name_sr": "Složeni terapijski zahvati pomoću endoskopske retrogradne holangiopankreatografije (ERCP) sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: сложные лечебные вмешательства с помощью ЭРХПГ с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: komplexe therapeutische Eingriffe mittels ERCP mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: ERCP ile kompleks terapötik girişimler, çok ağır veya ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H43B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Complex Therapeutic ERCP without Very Severe or Severe CC",
+   "slug": "hospitalization-for-complex-therapeutic-ercp-without-very-severe-or-severe-cc",
+   "name_sr": "Složeni terapijski zahvati pomoću endoskopske retrogradne holangiopankreatografije (ERCP) bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: сложные лечебные вмешательства с помощью ЭРХПГ без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: komplexe therapeutische Eingriffe mittels ERCP ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: ERCP ile kompleks terapötik girişimler, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cirrhosis and Alcoholic Hepatitis with Very Severe CC",
+   "slug": "hospitalization-for-cirrhosis-and-alcoholic-hepatitis-with-very-severe-cc",
+   "name_sr": "Ciroza i alkoholni hepatitis sa vrlo teškim KK",
+   "name_ru": "Госпитализация: цирроз печени и алкогольный гепатит с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Leberzirrhose und alkoholische Hepatitis mit sehr schweren KK",
+   "name_tr": "Yatış: siroz ve alkolik hepatit, çok ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "H62A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pancreatic Disorders except Malignancy with Very Severe or Severe CC",
+   "slug": "hospitalization-for-non-malignant-pancreatic-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Poremećaji pankreasa, osim maligne bolesti, sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: заболевания поджелудочной железы, кроме злокачественных, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des Pankreas außer bösartigen, mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: kötü huylu hastalık dışındaki pankreas hastalıkları, çok ağır veya ağır CC ile",
+   "categories": [
+    "GASTROENTEROLOGY"
+   ],
+   "specialties": [
+    "GASTROENTEROLOGY"
+   ],
+   "note": ""
+  }
+ ]
+}

@@ -59,7 +59,7 @@ const mojLabPodgoricaLink = computed(() =>
 	getClinicLink('moj-lab-podgorica-1'),
 );
 const mojLabPedijatriaLink = computed(() =>
-	getClinicLink('moj-lab-pedijatria-podgorica'),
+	getClinicLink('moj-lab-pedijatrija-podgorica'),
 );
 const medikidLink = computed(() => getClinicLink('medikid-podgorica'));
 

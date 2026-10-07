@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "slug": "nasa-medicina-podgorica",
+  "name": "Naša medicina",
+  "city": "Podgorica",
+  "cityId": 1,
+  "googlePlaceId": "ChIJn8uW797rTRMRrS2RaFjJif0",
+  "clinicTypeIds": [
+    1
+  ],
+  "languageIds": [
+    1
+  ],
+  "sql": [
+    "server/sql/insert-clinic-prices-nasa-medicina-podgorica.sql"
+  ],
+  "status": {
+    "generated": "2026-10-02",
+    "appliedLocal": "2026-10-02",
+    "appliedProd": "2026-10-02",
+    "clinicId": 35,
+    "doctorIds": {},
+    "note": "Клиника уже была в БД (id 35 и локально, и на проде, сверено через /api/clinics/details). Записи о первичном импорте нет: 19 справок без источника, цены у 6. Эта запись — первая, с синхронизации цен 2026-10. googlePlaceId взят из data/google-places/podgorica/nasa-medicina.json; в clinics.google_place_id был NULL — SQL ставит его (только если поле пустое и id не занят). Применено на проде 2026-10-02 (VERIFICATION: 31 строка, все с ценой; google_place_id записан; сверено через /api/services/list — 31 строка, 0 расхождений, поиск по синонимам работает). Локально применено до прода, сверено 2026-10-02: 31 строка, все с ценой, google_place_id на месте."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "ref": "https://nasa-medicina.me/usluge/",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "snapshot": "data/clinic-pricelists/sources/nasa-medicina-podgorica/2026-10-02.html",
+      "priceDate": "2026-06-15",
+      "priceDateSource": "lastmod /usluge/ в https://nasa-medicina.me/wp-sitemap-posts-page-1.xml (2026-06-15T15:04:38+02:00). page-sitemap.xml и sitemap_index.xml отдают 404.",
+      "note": "WordPress + Divi, прайс на одной странице, читается curl'ом по сырому HTML. Три блока: «Ljekarsko uvjerenje o:» (21 строка, формат «– 20 €»), «CJENOVNIK PSIHIJATAR» (2), «CJENOVNIK PSIHOLOG» (7). 30 позиций, 33 цены: у строки «za sportiste» их четыре. Под справками оговорка «PZU Naša Medicina zadrzava pravo da odobri popust kao i gratis ljekarsko»: клиника может дать скидку или выдать справку бесплатно. Над прайсом — напоминание, что для справки на оружие нужна выписка из медкарты о хронических и психических болезнях."
+    },
+    {
+      "type": "google-places",
+      "ref": "data/google-places/podgorica/nasa-medicina.json",
+      "collected": null,
+      "machineReadable": true,
+      "note": "Взят только place_id для clinics.google_place_id. Совпадают телефон +382 68 215 002, сайт nasa-medicina.me и 58 отзывов (как на проде). formattedAddress — только «Подгорица, Црна Гора»."
+    }
+  ],
+  "coverage": {
+    "prices": "сайт, все 30 позиций",
+    "labTests": "клиника анализов не публикует",
+    "doctors": "на сайте врачей нет, только подпись «Izvršni direktor Jelena Nerić» под прайсом; психиатр и психолог упомянуты без имён",
+    "notes": "Скидки и бесплатные справки на усмотрение клиники («zadržava pravo da odobri popust kao i gratis ljekarsko») — в цены не заложено, на сайте docta.me сейчас не показывается."
+  },
+  "catalogAdditions": [
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate Copy",
+      "nameSr": "Prepis ljekarskog uvjerenja",
+      "slug": "medical-certificate-copy",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45
+      ],
+      "reason": "Копии или дубликата справки в каталоге нет.",
+      "prodId": 8260
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Social Care Institution Accommodation",
+      "nameSr": "Ljekarsko uvjerenje za smještaj u ustanove socijalne zaštite",
+      "slug": "medical-certificate-for-social-care-institution-accommodation",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45
+      ],
+      "reason": "Запись medical-certificate-for-elderly-home-accommodation не подходит: учреждения соцзащиты — не только дома престарелых. Решение юзера 2026-10-02.",
+      "prodId": 8259
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Psychological Counseling",
+      "nameSr": "Psihološko savjetovanje",
+      "slug": "psychological-counseling",
+      "categoryIds": [],
+      "specialtyIds": [
+        22
+      ],
+      "reason": "Есть только консультирование беременных и консультирование при бесплодии (GEA); individual-supportive-psychotherapy-and-counseling — психотерапия психиатра по FZOCG.",
+      "prodId": 8261
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Psychological Mental Status Assessment",
+      "nameSr": "Psihološka procjena mentalnog stanja",
+      "slug": "psychological-mental-status-assessment",
+      "categoryIds": [],
+      "specialtyIds": [
+        22
+      ],
+      "reason": "Батарея тестов на психический статус, для детей и взрослых. В каталоге аналога нет: psychological-assessment-for-children-with-special-needs — только для детей с особыми потребностями.",
+      "prodId": 8262
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "IQ Test",
+      "nameSr": "Test inteligencije (IQ)",
+      "slug": "iq-test",
+      "categoryIds": [],
+      "specialtyIds": [
+        22
+      ],
+      "reason": "Тесты интеллекта в каталоге есть только для детей с особыми потребностями до 14 лет (Goodenough, Binet-Simon и др., FZOCG).",
+      "prodId": 8263
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Cognitive Function Assessment for School or Work",
+      "nameSr": "Procjena kognitivnih funkcija za školovanje ili rad",
+      "slug": "cognitive-function-assessment-for-school-or-work",
+      "categoryIds": [],
+      "specialtyIds": [
+        22
+      ],
+      "reason": "Отличается от neuropsychological-examination-with-cognitive-assessment-for-adults (у клиники это «Testiranje 1», 150 €): малая батарея (2–3 теста), для детей и взрослых, цель — учёба или работа.",
+      "prodId": 8264
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Psychological Testing for Suspected Dementia",
+      "nameSr": "Psihološko testiranje kod sumnje na demenciju",
+      "slug": "psychological-testing-for-suspected-dementia",
+      "categoryIds": [],
+      "specialtyIds": [
+        22
+      ],
+      "reason": "Скрининга на деменцию в каталоге нет.",
+      "prodId": 8265
+    }
+  ],
+  "services": [
+    {
+      "nameEn": "Medical Certificate for General Work",
+      "source": "sposobnosti za zasnivanje i produzenje radnog odnosa (opšti poslovi) – 20 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Difficult Working Conditions Without High Risk",
+      "source": "sposobnosti za rad na radnim mjestima bez povećanih rizika i otežanim uslovima rada – prethodni/periodični/vanredni – 45 €"
+    },
+    {
+      "nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+      "source": "sposobnosti za rad na radnim mjestima sa povećanim rizikom i otežanim uslovima rada – prethodni/periodični/vanredni/sistematski – 45 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Driving License Category A, B, C, D, E",
+      "source": "za upravljanje vozilom (A, B, C, D, E kategorije), polaganje – 20 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Driving License Renewal Category A, B, C, D, E",
+      "source": "za upravljanje vozilom ( A, B, C, D, E kategorije) produzenje – 25 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Professional Drivers",
+      "source": "za upravljanje vozilom, C,D i E kategorije, specijalnim vozilima i taxi – 45 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Driving Instructor Category B, C, D, E",
+      "source": "za posao instruktora B,C,D i E kategorije – 45 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Boat Operation up to 12 Meters",
+      "source": "za upravljanje čamcom do 12 metara – 45 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Firearms Possession",
+      "source": "za posjedovanje vatrenog oružja – 45 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Military Service",
+      "source": "za obavljanje službe u Vojsci Crne Gore – 45 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Underage Marriage",
+      "source": "za sklapanje braka za maloljetne osobe – 25 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Child Adoption",
+      "source": "za podobnost za usvajanje djeteta – 25 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Court Expert",
+      "source": "za posao sudskog vještaka – 25 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Study Abroad and Visa",
+      "source": "za dalji nastavak školovanja i boravak u inostranstvu/viza – 25 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Life Insurance",
+      "source": "za životno osiguranje – 45 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Social Care Institution Accommodation",
+      "source": "za smještaj u ustanove socijalne zaštite – 25 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Collective Accommodation",
+      "source": "za kolektivni smještaj – 10 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Athletes",
+      "source": "za sportiste (do 14 god.-15€, do 18 god.-20 €, do 25 god. – 25 €, sportske sudije- 40 € )",
+      "note": "возрастные цены — диапазоном 15–25; судьи — отдельной строкой"
+    },
+    {
+      "nameEn": "Medical Certificate for Sports Referees",
+      "source": "za sportiste (… sportske sudije- 40 € )"
+    },
+    {
+      "nameEn": "Medical Certificate for Residence and Work in Montenegro",
+      "source": "za boravak i rad u Crnoj Gori – 25 €"
+    },
+    {
+      "nameEn": "Medical Certificate for Maritime Workers",
+      "source": "za rad u vodenom saobraćaju (pomorci) – 120 €"
+    },
+    {
+      "nameEn": "Medical Certificate Copy",
+      "source": "prepis ljekarskog uvjerenja – 5 €"
+    },
+    {
+      "nameEn": "First Psychiatrist Examination",
+      "source": "Prvi pregled specijaliste psihijatra…………………………….40 €"
+    },
+    {
+      "nameEn": "Follow-up Psychiatrist Examination",
+      "source": "Kontrolni pregled specijaliste psihijatra……………………..35 €"
+    },
+    {
+      "nameEn": "First Psychological Examination",
+      "source": "Psihološki pregled – 40 €"
+    },
+    {
+      "nameEn": "Psychological Counseling",
+      "source": "Psihološko savjetovanje (individualno/partnersko/porodično) – 40 €"
+    },
+    {
+      "nameEn": "Neuropsychological Examination with Cognitive Assessment for Adults",
+      "source": "Psihološko testiranje 1 (baterija testova – kognitivno funkcionisanje komb. 4/6 testova za svrhe psihijatra/neurologa; za odrasle ) – 150 €"
+    },
+    {
+      "nameEn": "Psychological Mental Status Assessment",
+      "source": "Psihološko testiranje 2 (baterija testova – procjena mentalnog stanja/psihičkog statusa komb. 3/6 testa za svrhe psihijtra/psihologa; za djecu i odrasle) – 130 €"
+    },
+    {
+      "nameEn": "IQ Test",
+      "source": "Psihološko testiranje 3 (procjena inteligencije 1 test različite svrhe; za djecu i odrasle) – 100 €"
+    },
+    {
+      "nameEn": "Cognitive Function Assessment for School or Work",
+      "source": "Psihološko testiranje 4 (procjena kognitivnih funkcija u svrhu školovanja, rada i td komb. 2/3 testa; za djecu i odrasle) – 100 €"
+    },
+    {
+      "nameEn": "Psychological Testing for Suspected Dementia",
+      "source": "Psihološko testiranje 5 (sumnja na demenciju – komb.4 testa bez testa inteligencije) – 60 €"
+    }
+  ],
+  "doctors": [],
+  "excluded": [
+    {
+      "source": "za smještaj u ustanove socijalne zaštite – 25 €",
+      "reason": "Спорная 2026-10-02, решена в тот же день: заведена новая запись medical-certificate-for-social-care-institution-accommodation, позиция перенесена в services.",
+      "resolved": "2026-10-02"
+    }
+  ],
+  "openQuestions": [
+    "Справки спортсменам по возрасту (15/20/25 €) сведены в диапазон 15–25 на одной записи. Если каталогу нужны возрастные записи — понадобится отдельное решение для всех клиник с medical-certificate-for-athletes."
+  ],
+  "decisions": [
+    {
+      "date": "2026-10-02",
+      "question": "«za smještaj u ustanove socijalne zaštite»",
+      "decision": "новая запись, а не дом престарелых"
+    },
+    {
+      "date": "2026-10-02",
+      "question": "«bez povećanih rizika i otežanim uslovima rada»",
+      "decision": "оставить на medical-certificate-for-difficult-working-conditions-without-high-risk"
+    },
+    {
+      "date": "2026-10-02",
+      "question": "clinics.google_place_id = NULL",
+      "decision": "поставить из data/google-places"
+    }
+  ]
+}

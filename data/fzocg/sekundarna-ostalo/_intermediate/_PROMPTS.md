@@ -291,7 +291,7 @@ OCR FZOCG поправки к cjenovnik (sekundarna ostalo). Это отдель
 
 См. план в e:/pet/docta.me/nuxt/data/fzocg/sekundarna-ostalo/_PLAN.md.
 
-**Источник поправок**: 14 PDF в e:/pet/docta.me/прейскуранты/fzocg/SEKUNDARNA I TERCIJARNA ZDRAVSTVENA ZAŠTITA – OSTALO BOLNIČKO LIJEČENJE I SPECIJALISTIČKO KONSULATATIVNA I DIJAGNOSTIČKA ZDRAVSTVENE ZAŠTITA/
+**Источник поправок**: 14 PDF в data/pricelists/fzocg/SEKUNDARNA I TERCIJARNA ZDRAVSTVENA ZAŠTITA – OSTALO BOLNIČKO LIJEČENJE I SPECIJALISTIČKO KONSULATATIVNA I DIJAGNOSTIČKA ZDRAVSTVENE ZAŠTITA/
 
 **Картинки уже отрендерены** в e:/tmp/fzocg_pages/sekundarna_ostalo/<slug>/page-NN-top.png и -bot.png. Папки (slug):
 - Odluka-o-dopuni-Cjenovnika-na-STN/ (2p, нет даты в имени)

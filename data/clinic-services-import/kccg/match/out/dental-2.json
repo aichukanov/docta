@@ -1,0 +1,1094 @@
+{
+ "batch": "dental-2",
+ "items": [
+  {
+   "code": "D22002",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Follow-up Dental Specialist Examination",
+   "slug": "follow-up-dental-specialist-examination",
+   "name_sr": "Kontrolni specijalistički pregled — stomatologija",
+   "name_ru": "Повторный осмотр врача-стоматолога (специалиста)",
+   "name_de": "Zahnärztliche fachärztliche Kontrolluntersuchung",
+   "name_tr": "Diş hekimi uzman kontrol muayenesi",
+   "categories": [
+    "DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Ponovni specijalistički pregled — stomatologija",
+     "lang": "sr"
+    }
+   ],
+   "sort_order": 2,
+   "note": "pair to 5280 First Dental Specialist Examination (D22001); catalog separates specialist vs general (1648)"
+  },
+  {
+   "code": "D22003",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "dental-consultation",
+   "id": 1632,
+   "note": "konsultativni pregled -> X Consultation, as 4721 Ophthalmology Consultation = Konsultativni oftalmoloski pregled; 6921 is the hospital-wide Y01004"
+  },
+  {
+   "code": "D22004",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Counseling",
+   "slug": "dental-counseling",
+   "name_sr": "Stomatološko savjetovanje u ordinaciji",
+   "name_ru": "Стоматологическое консультирование в кабинете",
+   "name_de": "Zahnärztliche Beratung in der Praxis",
+   "name_tr": "Muayenehanede diş sağlığı danışmanlığı",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "same as D23041 (other section, price 5.58 vs 11.16)"
+  },
+  {
+   "code": "D22005",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "dental-local-anesthesia",
+   "id": 4546,
+   "note": "same as D23025"
+  },
+  {
+   "code": "D22006",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Local Medication Application",
+   "slug": "dental-local-medication-application",
+   "name_sr": "Lokalna aplikacija lijeka (stomatologija)",
+   "name_ru": "Местное нанесение лекарственного средства (стоматология)",
+   "name_de": "Lokale Medikamentenapplikation (Zahnmedizin)",
+   "name_tr": "Lokal ilaç uygulaması (diş hekimliği)",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "same as D23037 (price 11.16 vs 36.27); not 1653, that one includes a temporary filling"
+  },
+  {
+   "code": "D22007",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "infected-tooth-drainage",
+   "id": 4373,
+   "note": "same as D23036"
+  },
+  {
+   "code": "D22008",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "soft-dental-deposit-removal",
+   "id": 4367,
+   "note": "FZOCG \"Ukazivanje\" is an OCR error for \"Uklanjanje\""
+  },
+  {
+   "code": "D22009",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental X-Ray Interpretation",
+   "slug": "dental-x-ray-interpretation",
+   "name_sr": "Analiza RTG snimka zuba",
+   "name_ru": "Описание рентгеновского снимка зубов",
+   "name_de": "Auswertung einer zahnärztlichen Röntgenaufnahme",
+   "name_tr": "Diş röntgeni değerlendirmesi",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Čitanje RTG snimka zuba",
+     "lang": "sr"
+    }
+   ],
+   "note": "\"(ima 22)\" / \"(na 22)\" is an OCR artifact, dropped from the name; same as D23032"
+  },
+  {
+   "code": "D22011",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Tooth Vitality Test",
+   "slug": "tooth-vitality-test",
+   "name_sr": "Ispitivanje vitaliteta zuba",
+   "name_ru": "Определение жизнеспособности пульпы зуба",
+   "name_de": "Vitalitätsprüfung des Zahnes",
+   "name_tr": "Diş vitalite testi",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Pulp Vitality Test",
+     "lang": "en"
+    }
+   ],
+   "note": "same as D23006"
+  },
+  {
+   "code": "D22012",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "phosphate-cement-filling",
+   "id": 1655,
+   "note": "same as D23038"
+  },
+  {
+   "code": "D22013",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Filling Single Surface",
+   "slug": "dental-filling-single-surface",
+   "name_sr": "Ispun na jednoj površini",
+   "name_ru": "Пломба на одну поверхность зуба",
+   "name_de": "Einflächige Zahnfüllung",
+   "name_tr": "Tek yüzlü diş dolgusu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Jednopovršinski ispun",
+     "lang": "sr"
+    }
+   ],
+   "note": "material not stated, so not amalgam/composite records; same as D23011 (price 27.99 vs 39.15)"
+  },
+  {
+   "code": "D22014",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Filling Two Surfaces",
+   "slug": "dental-filling-two-surfaces",
+   "name_sr": "Ispun na dvije površine",
+   "name_ru": "Пломба на две поверхности зуба",
+   "name_de": "Zweiflächige Zahnfüllung",
+   "name_tr": "İki yüzlü diş dolgusu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Dvopovršinski ispun",
+     "lang": "sr"
+    }
+   ],
+   "note": "same as D23012 (44.73 vs 50.40)"
+  },
+  {
+   "code": "D22015",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Filling Three Surfaces",
+   "slug": "dental-filling-three-surfaces",
+   "name_sr": "Ispun na tri površine",
+   "name_ru": "Пломба на три поверхности зуба",
+   "name_de": "Dreiflächige Zahnfüllung",
+   "name_tr": "Üç yüzlü diş dolgusu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Tropovršinski ispun",
+     "lang": "sr"
+    }
+   ],
+   "note": "same as D23013 (55.98 vs 63.03)"
+  },
+  {
+   "code": "D22016",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Tooth Build-up",
+   "slug": "tooth-build-up",
+   "name_sr": "Nadogradnja zuba",
+   "name_ru": "Наращивание (восстановление) коронки зуба",
+   "name_de": "Zahnaufbau",
+   "name_tr": "Diş kuronunun yeniden yapılandırılması",
+   "categories": [
+    "DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "material not stated, so not 4651 (composite), 1698 (cast) or 1699 (FRC)"
+  },
+  {
+   "code": "D22017",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "pulp-capping-direct-or-indirect",
+   "id": 1654,
+   "note": "direct/indirect not specified -> combined record; same as D23015"
+  },
+  {
+   "code": "D22018",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Pulp and Gingival Polyp Cauterization",
+   "slug": "pulp-and-gingival-polyp-cauterization",
+   "name_sr": "Kauterizacija polipa pulpe i gingive",
+   "name_ru": "Коагуляция полипа пульпы и десны",
+   "name_de": "Kauterisation von Pulpa- und Zahnfleischpolypen",
+   "name_tr": "Pulpa ve diş eti polibi koterizasyonu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "same as D23017"
+  },
+  {
+   "code": "D22019",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "mortal-pulpotomy",
+   "id": 4372,
+   "note": "same as D23021"
+  },
+  {
+   "code": "D22020",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Mortal Pulp Extirpation",
+   "slug": "mortal-pulp-extirpation",
+   "name_sr": "Mortalna ekstirpacija pulpe",
+   "name_ru": "Девитальная экстирпация пульпы",
+   "name_de": "Devitale Pulpaexstirpation",
+   "name_tr": "Devital pulpa ekstirpasyonu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "without root filling (filling is separate D22023), so not 4007/4008 (with definitive filling) nor 4648 (vital or mortal); same as D23020"
+  },
+  {
+   "code": "D22021",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Vital Pulp Extirpation",
+   "slug": "vital-pulp-extirpation",
+   "name_sr": "Vitalna ekstirpacija pulpe",
+   "name_ru": "Витальная экстирпация пульпы",
+   "name_de": "Vitale Pulpaexstirpation",
+   "name_tr": "Vital pulpa ekstirpasyonu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "as D22020; same as D23019"
+  },
+  {
+   "code": "D22022",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "conservative-treatment-of-periapical-process-and-dental-gangrene",
+   "id": 4009,
+   "note": "conservative gangrene treatment, not per root count (1673-1675); same as D23022"
+  },
+  {
+   "code": "D22023",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "root-canal-obturation",
+   "id": 3673,
+   "note": "root canal filling = definitive obturation; same as D23023"
+  },
+  {
+   "code": "D22024",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Removal of Old Root Canal Filling",
+   "slug": "removal-of-old-root-canal-filling",
+   "name_sr": "Vađenje starog punjenja iz kanala korijena zuba",
+   "name_ru": "Распломбирование корневого канала",
+   "name_de": "Entfernung einer alten Wurzelkanalfüllung",
+   "name_tr": "Kök kanalından eski dolgunun çıkarılması",
+   "categories": [
+    "DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Удаление старой пломбы из корневого канала",
+     "lang": "ru"
+    }
+   ],
+   "note": "only removal of the old root filling, not the full retreatment (1676)"
+  },
+  {
+   "code": "D22025",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Broken Instrument Removal from Root Canal",
+   "slug": "broken-instrument-removal-from-root-canal",
+   "name_sr": "Uklanjanje zalomljenog instrumenta iz kanala korijena",
+   "name_ru": "Извлечение сломанного инструмента из корневого канала",
+   "name_de": "Entfernung eines frakturierten Instruments aus dem Wurzelkanal",
+   "name_tr": "Kök kanalından kırık alet çıkarılması",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "same as D23024"
+  },
+  {
+   "code": "D22026",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Composite Splint",
+   "slug": "composite-splint",
+   "name_sr": "Postavljanje kompozitnog splinta",
+   "name_ru": "Наложение композитной шины",
+   "name_de": "Kompositschienung",
+   "name_tr": "Kompozit splint uygulaması",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Kompozitni splint",
+     "lang": "sr"
+    }
+   ],
+   "note": "same as D23033; prices differ a lot (13.68 vs 82.08) - check; not 1747 (periodontal splint, different indication)"
+  },
+  {
+   "code": "D23001",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "First Pediatric Dentist Examination",
+   "slug": "first-pediatric-dentist-examination",
+   "name_sr": "Prvi pregled — dječji stomatolog",
+   "name_ru": "Первичный осмотр детского стоматолога",
+   "name_de": "Erstuntersuchung beim Kinderzahnarzt",
+   "name_tr": "Çocuk diş hekimi ilk muayenesi",
+   "categories": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Prvi specijalistički pregled — dječja stomatologija",
+     "lang": "sr"
+    }
+   ],
+   "sort_order": 1,
+   "note": "pediatric dentist; catalog separates pediatric variants (3680 vs 1632)"
+  },
+  {
+   "code": "D23002",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Follow-up Pediatric Dentist Examination",
+   "slug": "follow-up-pediatric-dentist-examination",
+   "name_sr": "Kontrolni pregled — dječji stomatolog",
+   "name_ru": "Повторный осмотр детского стоматолога",
+   "name_de": "Kontrolluntersuchung beim Kinderzahnarzt",
+   "name_tr": "Çocuk diş hekimi kontrol muayenesi",
+   "categories": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Ponovni specijalistički pregled — dječja stomatologija",
+     "lang": "sr"
+    }
+   ],
+   "sort_order": 2,
+   "note": ""
+  },
+  {
+   "code": "D23003",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "pediatric-dentist-consultation",
+   "id": 3680,
+   "note": "consultative/consilium examination by a pediatric dentist"
+  },
+  {
+   "code": "D23004",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Plaque and Calculus Removal",
+   "slug": "plaque-and-calculus-removal",
+   "name_sr": "Uklanjanje mekih naslaga i kamenca",
+   "name_ru": "Удаление зубного налёта и зубного камня",
+   "name_de": "Entfernung von Zahnbelag und Zahnstein",
+   "name_tr": "Diş plağı ve diş taşı temizliği",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "KCCG \"Uklanjanje mekih naslaga i kamenca\"; FZOCG \"Savjetovanje u ordinaciji\" is shifted (counseling is D23041); not 4367 (soft deposits only), not 4033 (with Air-Flow)"
+  },
+  {
+   "code": "D23005",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "topical-fluoride-treatment",
+   "id": 4366,
+   "note": ""
+  },
+  {
+   "code": "D23006",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Tooth Vitality Test",
+   "slug": "tooth-vitality-test",
+   "name_sr": "Ispitivanje vitaliteta zuba",
+   "name_ru": "Определение жизнеспособности пульпы зуба",
+   "name_de": "Vitalitätsprüfung des Zahnes",
+   "name_tr": "Diş vitalite testi",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Pulp Vitality Test",
+     "lang": "en"
+    }
+   ],
+   "note": "same as D22011"
+  },
+  {
+   "code": "D23007",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "dental-first-aid",
+   "id": 3998,
+   "note": "as D22010 (hospital-code match)"
+  },
+  {
+   "code": "D23008",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Preventive Resin Restoration",
+   "slug": "preventive-resin-restoration",
+   "name_sr": "Preventivni ispun",
+   "name_ru": "Профилактическая пломба",
+   "name_de": "Erweiterte Fissurenversiegelung",
+   "name_tr": "Koruyucu rezin restorasyon",
+   "categories": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "PRR",
+     "lang": "en"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "code": "D23011",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Filling Single Surface",
+   "slug": "dental-filling-single-surface",
+   "name_sr": "Ispun na jednoj površini",
+   "name_ru": "Пломба на одну поверхность зуба",
+   "name_de": "Einflächige Zahnfüllung",
+   "name_tr": "Tek yüzlü diş dolgusu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Jednopovršinski ispun",
+     "lang": "sr"
+    }
+   ],
+   "note": "same as D22013"
+  },
+  {
+   "code": "D23012",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Filling Two Surfaces",
+   "slug": "dental-filling-two-surfaces",
+   "name_sr": "Ispun na dvije površine",
+   "name_ru": "Пломба на две поверхности зуба",
+   "name_de": "Zweiflächige Zahnfüllung",
+   "name_tr": "İki yüzlü diş dolgusu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Dvopovršinski ispun",
+     "lang": "sr"
+    }
+   ],
+   "note": "same as D22014"
+  },
+  {
+   "code": "D23013",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Filling Three Surfaces",
+   "slug": "dental-filling-three-surfaces",
+   "name_sr": "Ispun na tri površine",
+   "name_ru": "Пломба на три поверхности зуба",
+   "name_de": "Dreiflächige Zahnfüllung",
+   "name_tr": "Üç yüzlü diş dolgusu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Tropovršinski ispun",
+     "lang": "sr"
+    }
+   ],
+   "note": "same as D22015"
+  },
+  {
+   "code": "D23014",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Fractured Tooth Build-up",
+   "slug": "fractured-tooth-build-up",
+   "name_sr": "Nadogradnja frakturiranog zuba",
+   "name_ru": "Восстановление сломанного зуба",
+   "name_de": "Aufbau eines frakturierten Zahnes",
+   "name_tr": "Kırık dişin restorasyonu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "build-up of a traumatically fractured crown; distinct from generic D22016"
+  },
+  {
+   "code": "D23015",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "pulp-capping-direct-or-indirect",
+   "id": 1654,
+   "note": "same as D22017"
+  },
+  {
+   "code": "D23016",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "glass-ionomer-filling",
+   "id": 4547,
+   "note": ""
+  },
+  {
+   "code": "D23017",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Pulp and Gingival Polyp Cauterization",
+   "slug": "pulp-and-gingival-polyp-cauterization",
+   "name_sr": "Kauterizacija polipa pulpe i gingive",
+   "name_ru": "Коагуляция полипа пульпы и десны",
+   "name_de": "Kauterisation von Pulpa- und Zahnfleischpolypen",
+   "name_tr": "Pulpa ve diş eti polibi koterizasyonu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "\"Kautrizacija\" typo; same as D22018"
+  },
+  {
+   "code": "D23018",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Vital Pulpotomy",
+   "slug": "vital-pulpotomy",
+   "name_sr": "Vitalna amputacija pulpe",
+   "name_ru": "Витальная ампутация пульпы",
+   "name_de": "Vitalamputation der Pulpa",
+   "name_tr": "Vital pulpotomi",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Vital Pulp Amputation",
+     "lang": "en"
+    }
+   ],
+   "note": "catalog separates mortal (4372); 4554 is the combined \"vital or mortal\""
+  },
+  {
+   "code": "D23019",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Vital Pulp Extirpation",
+   "slug": "vital-pulp-extirpation",
+   "name_sr": "Vitalna ekstirpacija pulpe",
+   "name_ru": "Витальная экстирпация пульпы",
+   "name_de": "Vitale Pulpaexstirpation",
+   "name_tr": "Vital pulpa ekstirpasyonu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "same as D22021"
+  },
+  {
+   "code": "D23020",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Mortal Pulp Extirpation",
+   "slug": "mortal-pulp-extirpation",
+   "name_sr": "Mortalna ekstirpacija pulpe",
+   "name_ru": "Девитальная экстирпация пульпы",
+   "name_de": "Devitale Pulpaexstirpation",
+   "name_tr": "Devital pulpa ekstirpasyonu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "same as D22020"
+  },
+  {
+   "code": "D23021",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "mortal-pulpotomy",
+   "id": 4372,
+   "note": "same as D22019"
+  },
+  {
+   "code": "D23022",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "conservative-treatment-of-periapical-process-and-dental-gangrene",
+   "id": 4009,
+   "note": "same as D22022"
+  },
+  {
+   "code": "D23023",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "root-canal-obturation",
+   "id": 3673,
+   "note": "same as D22023"
+  },
+  {
+   "code": "D23024",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Broken Instrument Removal from Root Canal",
+   "slug": "broken-instrument-removal-from-root-canal",
+   "name_sr": "Uklanjanje zalomljenog instrumenta iz kanala korijena",
+   "name_ru": "Извлечение сломанного инструмента из корневого канала",
+   "name_de": "Entfernung eines frakturierten Instruments aus dem Wurzelkanal",
+   "name_tr": "Kök kanalından kırık alet çıkarılması",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "same as D22025"
+  },
+  {
+   "code": "D23025",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "dental-local-anesthesia",
+   "id": 4546,
+   "note": "same as D22005"
+  },
+  {
+   "code": "D23029",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "alveolitis-treatment",
+   "id": 1737,
+   "note": "as D20040 (fzocg-link)"
+  },
+  {
+   "code": "D23030",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "intraoral-abscess-incision",
+   "id": 5579,
+   "note": "intraoral incision in dentistry = abscess incision"
+  },
+  {
+   "code": "D23031",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Therapeutic Tooth Grinding",
+   "slug": "therapeutic-tooth-grinding",
+   "name_sr": "Brušenje zuba u terapeutske svrhe",
+   "name_ru": "Избирательное пришлифовывание зубов",
+   "name_de": "Therapeutisches Einschleifen der Zähne",
+   "name_tr": "Terapötik diş aşındırma",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Selective Grinding",
+     "lang": "en"
+    },
+    {
+     "name": "Occlusal Adjustment",
+     "lang": "en"
+    }
+   ],
+   "note": "not 4567 (cosmetic contouring); same name in orthodontics D24012 (batch dental-3)"
+  },
+  {
+   "code": "D23032",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental X-Ray Interpretation",
+   "slug": "dental-x-ray-interpretation",
+   "name_sr": "Analiza RTG snimka zuba",
+   "name_ru": "Описание рентгеновского снимка зубов",
+   "name_de": "Auswertung einer zahnärztlichen Röntgenaufnahme",
+   "name_tr": "Diş röntgeni değerlendirmesi",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Čitanje RTG snimka zuba",
+     "lang": "sr"
+    }
+   ],
+   "note": "same as D22009"
+  },
+  {
+   "code": "D23033",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Composite Splint",
+   "slug": "composite-splint",
+   "name_sr": "Postavljanje kompozitnog splinta",
+   "name_ru": "Наложение композитной шины",
+   "name_de": "Kompositschienung",
+   "name_tr": "Kompozit splint uygulaması",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Kompozitni splint",
+     "lang": "sr"
+    }
+   ],
+   "note": "FZOCG \"Kompozicni\" typo; same as D22026 (price 82.08 vs 13.68)"
+  },
+  {
+   "code": "D23034",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Aesthetic Correction of Tooth Structure Anomalies",
+   "slug": "aesthetic-correction-of-tooth-structure-anomalies",
+   "name_sr": "Estetska korekcija anomalija strukture zuba",
+   "name_ru": "Эстетическая коррекция аномалий структуры зубов",
+   "name_de": "Ästhetische Korrektur von Zahnstrukturanomalien",
+   "name_tr": "Diş yapısı anomalilerinin estetik düzeltilmesi",
+   "categories": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "not 4036 (generic aesthetic defects); FZOCG: \"anomalije razvoja zuba\""
+  },
+  {
+   "code": "D23035",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Tooth Extraction in Children with Special Needs",
+   "slug": "tooth-extraction-in-children-with-special-needs",
+   "name_sr": "Vađenje zuba kod djece sa posebnim potrebama",
+   "name_ru": "Удаление зуба у детей с особыми потребностями",
+   "name_de": "Zahnextraktion bei Kindern mit besonderen Bedürfnissen",
+   "name_tr": "Özel gereksinimli çocuklarda diş çekimi",
+   "categories": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": ""
+  },
+  {
+   "code": "D23036",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "infected-tooth-drainage",
+   "id": 4373,
+   "note": "same as D22007"
+  },
+  {
+   "code": "D23037",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Local Medication Application",
+   "slug": "dental-local-medication-application",
+   "name_sr": "Lokalna aplikacija lijeka (stomatologija)",
+   "name_ru": "Местное нанесение лекарственного средства (стоматология)",
+   "name_de": "Lokale Medikamentenapplikation (Zahnmedizin)",
+   "name_tr": "Lokal ilaç uygulaması (diş hekimliği)",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "same as D22006"
+  },
+  {
+   "code": "D23038",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "phosphate-cement-filling",
+   "id": 1655,
+   "note": "same as D22012"
+  },
+  {
+   "code": "D23039",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Gingival Pocket Curettage",
+   "slug": "gingival-pocket-curettage",
+   "name_sr": "Kiretaža gingivalnog džepa",
+   "name_ru": "Кюретаж десневого кармана",
+   "name_de": "Kürettage der Zahnfleischtasche",
+   "name_tr": "Diş eti cebi küretajı",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "\"gingevalnog\" typo; not 4652/1745 (periodontal pocket)"
+  },
+  {
+   "code": "D23040",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Temporary Root Canal Filling",
+   "slug": "temporary-root-canal-filling",
+   "name_sr": "Privremeno punjenje kanala korijena",
+   "name_ru": "Временное пломбирование корневого канала",
+   "name_de": "Provisorische Wurzelkanalfüllung",
+   "name_tr": "Geçici kök kanal dolgusu",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "not 1653 (temporary crown filling with medication)"
+  },
+  {
+   "code": "D23041",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Dental Counseling",
+   "slug": "dental-counseling",
+   "name_sr": "Stomatološko savjetovanje u ordinaciji",
+   "name_ru": "Стоматологическое консультирование в кабинете",
+   "name_de": "Zahnärztliche Beratung in der Praxis",
+   "name_tr": "Muayenehanede diş sağlığı danışmanlığı",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "same as D22004"
+  },
+  {
+   "code": "D23042",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Old Filling Removal",
+   "slug": "old-filling-removal",
+   "name_sr": "Uklanjanje starog ispuna",
+   "name_ru": "Удаление старой пломбы",
+   "name_de": "Entfernung einer alten Füllung",
+   "name_tr": "Eski dolgunun sökülmesi",
+   "categories": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "specialties": [
+    "DENTISTRY",
+    "PEDIATRIC_DENTISTRY"
+   ],
+   "synonyms": [],
+   "note": "not 4010 (filling revision)"
+  },
+  {
+   "code": "D23043",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "frc-post-build-up",
+   "id": 1699,
+   "note": "catalog also has 1635 \"Restauracija zuba fiberglas kolcicem\" - likely duplicate of 1699"
+  }
+ ]
+}

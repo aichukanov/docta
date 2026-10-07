@@ -1,0 +1,525 @@
+{
+ "batch": "drg-10",
+ "items": [
+  {
+   "code": "O01A",
+   "name_kccg": "Porođaj carskim rezom sa vrlo teškim ili teškim KK",
+   "name_fzocg": "Porođaj carskim rezom sa vrlo teškim ili teškim KK",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 5302.26,
+   "coefficient": 2.79
+  },
+  {
+   "code": "O01B",
+   "name_kccg": "Porođaj carskim rezom bez vrlo teških ili teških KK",
+   "name_fzocg": "Porođaj carskim rezom bez vrlo teškim ili teškim KK",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 3762.89,
+   "coefficient": 1.98
+  },
+  {
+   "code": "O02A",
+   "name_kccg": "Vaginalni porođaj sa operativnim zahvatom sa vrlo teškim ili teškim KK",
+   "name_fzocg": "Vaginalni porođaj sa operativnim zahvatima sa vrlo teškim ili teškim KK",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 4257.01,
+   "coefficient": 2.24
+  },
+  {
+   "code": "O02B",
+   "name_kccg": "Vaginalni porođaj sa operativnim zahvatom bez vrlo teških ili teških KK",
+   "name_fzocg": "Vaginalni porođaj sa operativnim zahvatima bez vrlo teškim ili teškim KK",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 2869.68,
+   "coefficient": 1.51
+  },
+  {
+   "code": "O03A",
+   "name_kccg": "Ektopična trudnoća sa KK",
+   "name_fzocg": "Ektopična trudnoća sa KK",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 3173.75,
+   "coefficient": 1.67
+  },
+  {
+   "code": "O03B",
+   "name_kccg": "Ektopična trudnoća bez KK",
+   "name_fzocg": "Ektopična trudnoća bez KK",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 2166.51,
+   "coefficient": 1.14
+  },
+  {
+   "code": "O04A",
+   "name_kccg": "Period nakon porođaja i nakon abortusa sa operativnim zahvatom sa vrlo teškim ili teškim KK",
+   "name_fzocg": "Period nakon porođaja i nakon abortusa sa operat. zahvatom sa vrlo teškim ili teškim KK",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 4827.14,
+   "coefficient": 2.54
+  },
+  {
+   "code": "O04B",
+   "name_kccg": "Period nakon porođaja i nakon abortusa sa operativnim zahvatom bez vrlo teških ili teških KK",
+   "name_fzocg": "Period nakon porođaja i nakon abortusa sa operat. zahvatom bez vrlo teškim ili teškim KK",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 1520.36,
+   "coefficient": 0.8
+  },
+  {
+   "code": "O05Z",
+   "name_kccg": "Abortus sa operativnim zahvatom",
+   "name_fzocg": "Abortus sa operativnim zahvatom",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 798.19,
+   "coefficient": 0.42
+  },
+  {
+   "code": "O60Z",
+   "name_kccg": "Vaginalni porođaj",
+   "name_fzocg": "Vaginalni porođaj",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 2128.5,
+   "coefficient": 1.12
+  },
+  {
+   "code": "O61Z",
+   "name_kccg": "Period nakon porođaja i nakon abortusa bez operativnog zahvata",
+   "name_fzocg": "Period nakon porođaja i nakon abortusa bez operativnog zahvata",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 1026.24,
+   "coefficient": 0.54
+  },
+  {
+   "code": "O63Z",
+   "name_kccg": "Abortus bez operativnog zahvata",
+   "name_fzocg": "Abortus bez operativnog zahvata",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 646.15,
+   "coefficient": 0.34
+  },
+  {
+   "code": "O64Z",
+   "name_kccg": "Lažni trudovi",
+   "name_fzocg": "Lažni trudovi",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 703.17,
+   "coefficient": 0.37
+  },
+  {
+   "code": "O66Z",
+   "name_kccg": "Prenatalni ili drugi akušerski prijem",
+   "name_fzocg": "Prenatalni ili drugi akušerski prijem",
+   "section": "MDC 14 Trudnoća, porođaj i puerperijum",
+   "price_eur": 627.15,
+   "coefficient": 0.33
+  },
+  {
+   "code": "P66C",
+   "name_kccg": "Novorođenče, masa pri prijemu 2000-2499 g, bez značajnog operativnog zahvata, sa ostalim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prijemu 2000-2499 g, sa ostalim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 4827.14,
+   "coefficient": 2.54
+  },
+  {
+   "code": "P66D",
+   "name_kccg": "Novorođenče, masa pri prijemu 2000-2499 g, bez značajnog operativnog zahvata, bez poremećaja",
+   "name_fzocg": "Novorođenče, masa pri prijemu 2000-2499 g, bez poremećaja",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 1748.41,
+   "coefficient": 0.92
+  },
+  {
+   "code": "P67C",
+   "name_kccg": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog zahvata, sa ostalim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prijemu > 2499 g bez značajnog operativnog zahvata, sa ostalim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 2242.53,
+   "coefficient": 1.18
+  },
+  {
+   "code": "P67D",
+   "name_kccg": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog zahvata, bez poremećaja",
+   "name_fzocg": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog zahvata, bez poremećaja",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 1045.25,
+   "coefficient": 0.55
+  },
+  {
+   "code": "P01Z",
+   "name_kccg": "Novorođenče, smrtni ishod ili premješteno u drugu ustanovu boravak <5 dana, sa značajnim operativnim zahvatom",
+   "name_fzocg": "Novorođenče, smrtni ishod ili premješteno u drugu ustanovu boravak <5 dana, sa značajnim operativnim zahvatom",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 2451.58,
+   "coefficient": 1.29
+  },
+  {
+   "code": "P02Z",
+   "name_kccg": "Kardiotorakalni zahvati/zahvati na krvnim sudovima kod novorođenčeta",
+   "name_fzocg": "Kardiotorakalni zahvati/zahvati na velikim sudovima kod novorođenčeta",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 41182.75,
+   "coefficient": 21.67
+  },
+  {
+   "code": "P03Z",
+   "name_kccg": "Novorođenče, masa pri prijemu 1000-1499 g, sa značajnim operativnim zahvatom",
+   "name_fzocg": "Novorođenče, masa pri prijemu 1000-1499 g, sa značajnim operativnim zahvatom",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 32630.73,
+   "coefficient": 17.17
+  },
+  {
+   "code": "P04Z",
+   "name_kccg": "Novorođenče, masa pri prijemu 1500-1999 g, sa značajnim operativnim zahvatom",
+   "name_fzocg": "Novorođenče, masa pri prijemu 1500-1999 g, sa značajnim operativnim zahvatom",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 23470.56,
+   "coefficient": 12.35
+  },
+  {
+   "code": "P05Z",
+   "name_kccg": "Novorođenče, masa pri prijemu 2000-2499 g, sa značajnim operativnim zahvatom",
+   "name_fzocg": "Novorođenče, masa pri prijemu 2000-2499 g, sa značajnim operativnim zahvatom",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 22615.35,
+   "coefficient": 11.9
+  },
+  {
+   "code": "P06A",
+   "name_kccg": "Novorođenče, masa pri prijemu > 2499 g, sa značajnim operativnim zahvatom i sa višestrukim velikim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prijemu > 2499 g, sa značajnim operativnim zahvatom i sa višestrukim velikim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 30692.27,
+   "coefficient": 16.15
+  },
+  {
+   "code": "P06B",
+   "name_kccg": "Novorođenče, masa pri prijemu > 2499 g, sa značajnim operativnim zahvatom, bez višestrukih velikih poremećaja",
+   "name_fzocg": "Novorođenče, masa pri prijemu > 2499 g, sa značajnim operativnim zahvatom, bez višestrukih velikih poremećaja",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 10832.57,
+   "coefficient": 5.7
+  },
+  {
+   "code": "P60A",
+   "name_kccg": "Novorođenče, smrtni ishod ili premješteno u drugu ustanovu < 5 dana od prijema, bez značajnog operativnog zahvata, novorođeno",
+   "name_fzocg": "Novorođenče, smrtni ishod ili premješteno u drugu ustanovu < 5 dana od prijema, bez značajnog operativnog zahvata",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 722.17,
+   "coefficient": 0.38
+  },
+  {
+   "code": "P60B",
+   "name_kccg": "Novorođenče, smrtni ishod ili premješteno u drugu ustanovu < 5 dana od prijema, bez značajnog operativnog zahvata, nije novorođeno",
+   "name_fzocg": "Novorođenče, smrtni ishod ili premješteno u drugu ustanovu < 5 dana od prijema, bez značajnog operativnog zahvata, nije novorođeno",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 1273.3,
+   "coefficient": 0.67
+  },
+  {
+   "code": "P61Z",
+   "name_kccg": "Novorođenče, masa pri prijemu < 750 g",
+   "name_fzocg": "Novorođenče, masa pri prijemu < 750 g",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 74383.61,
+   "coefficient": 39.14
+  },
+  {
+   "code": "P62Z",
+   "name_kccg": "Novorođenče, masa pri prijemu 750-999 g",
+   "name_fzocg": "Novorođenče, masa pri prijemu 750-999 g",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 55740.2,
+   "coefficient": 29.33
+  },
+  {
+   "code": "P63Z",
+   "name_kccg": "Novorođenče, masa pri prijemu 1000-1249 g, bez značajnog operativnog zahvata",
+   "name_fzocg": "Novorođenče, masa pri prijemu 1000-1249 g, bez značajnog operativnog zahvata",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 15108.58,
+   "coefficient": 7.95
+  },
+  {
+   "code": "P64Z",
+   "name_kccg": "Novorođenče, masa pri prijemu 1250 -1499 g, bez značajnog operativnog zahvata",
+   "name_fzocg": "Novorođenče, masa pri prijemu 1250-1499 g, bez značajnog operativnog zahvata",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 13835.28,
+   "coefficient": 7.28
+  },
+  {
+   "code": "P65A",
+   "name_kccg": "Novorođenče, masa pri prijemu 1500-1999 g, bez značajnog operativnog zahvata, sa višestrukim velikim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prijemu 1500-1999 g, sa višestrukim velikim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 13360.16,
+   "coefficient": 7.03
+  },
+  {
+   "code": "P65B",
+   "name_kccg": "Novorođenče, masa pri prijemu 1500-1999 g, bez značajnog operativnog zahvata, sa velikim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prijemu 1500-1999 g, sa velikim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 10281.43,
+   "coefficient": 5.41
+  },
+  {
+   "code": "P65C",
+   "name_kccg": "Novorođenče, masa pri prijemu 1500-1999 g, bez značajnog operativnog zahvata, sa ostalim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prijemu 1500-1999 g, sa ostalim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 8266.96,
+   "coefficient": 4.35
+  },
+  {
+   "code": "P65D",
+   "name_kccg": "Novorođenče, masa pri prijemu 1500-1999 g, bez značajnog operativnog zahvata, bez poremećaja",
+   "name_fzocg": "Novorođenče, masa pri prijemu 1500-1999 g, bez poremećaja",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 6461.53,
+   "coefficient": 3.4
+  },
+  {
+   "code": "P66A",
+   "name_kccg": "Novorođenče, masa pri prijemu 2000-2499 g, bez značajnog operativnog zahvata, sa višestrukim velikim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prijemu 2000-2499 g, sa višestrukim velikim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 8818.09,
+   "coefficient": 4.64
+  },
+  {
+   "code": "P66B",
+   "name_kccg": "Novorođenče, masa pri prijemu 2000-2499 g, bez značajnog operativnog zahvata, sa velikim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prijemu 2000-2499 g, sa velikim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 6157.46,
+   "coefficient": 3.24
+  },
+  {
+   "code": "P67A",
+   "name_kccg": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog postupka, sa višestrukim velikim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog postupka, sa višestrukim velikim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 7886.87,
+   "coefficient": 4.15
+  },
+  {
+   "code": "P67B",
+   "name_kccg": "Novorođenče, masa pri prijemu > 2499 g bez značajnog operativnog zahvata, sa velikim poremećajima",
+   "name_fzocg": "Novorođenče, masa pri prij. > 2499 g bez znač. operat. zahvata, sa velikim poremećajima",
+   "section": "MDC 15 Novorođenčad (novorođena djeca do četiri sedmice starosti)",
+   "price_eur": 3743.89,
+   "coefficient": 1.97
+  },
+  {
+   "code": "Q02B",
+   "name_kccg": "Ostali operativni zahvati zbog bolesti krvi ili krvotvornih organa bez vrlo teških ili teških KK",
+   "name_fzocg": "Ostali operativni zahvati zbog bolesti krvi i krvotvornih organa bez vrlo tešk. ili teškim KK",
+   "section": "MDC 16 Bolesti i poremećaji krvi i krvotvornih organa i imunološki poremećaji",
+   "price_eur": 2071.49,
+   "coefficient": 1.09
+  },
+  {
+   "code": "Q60C",
+   "name_kccg": "Retikuloendotelni i poremećaji imuniteta, bez maligne bolesti, bez vrlo teških ili teških KK",
+   "name_fzocg": "Retikuloendoteleni i poremećaji imuniteta, bez maligne bolesti, bez vrlo teškim ili teškim KK",
+   "section": "MDC 16 Bolesti i poremećaji krvi i krvotvornih organa i imunološki poremećaji",
+   "price_eur": 627.15,
+   "coefficient": 0.33
+  },
+  {
+   "code": "Q61A",
+   "name_kccg": "Poremećaji eritrocita sa vrlo teškim ili teškim KK",
+   "name_fzocg": "Poremećaji eritrocita sa vrlo teškim ili teškim KK",
+   "section": "MDC 16 Bolesti i poremećaji krvi i krvotvornih organa i imunološki poremećaji",
+   "price_eur": 2774.66,
+   "coefficient": 1.46
+  },
+  {
+   "code": "Q61B",
+   "name_kccg": "Poremećaji eritrocita bez vrlo teških ili teških KK",
+   "name_fzocg": "Poremećaji eritrocita bez vrlo teškim ili teškim KK",
+   "section": "MDC 16 Bolesti i poremećaji krvi i krvotvornih organa i imunološki poremećaji",
+   "price_eur": 703.17,
+   "coefficient": 0.37
+  },
+  {
+   "code": "Q62Z",
+   "name_kccg": "Poremećaji koagulacije krvi",
+   "name_fzocg": "Poremećaji koagulacije krvi",
+   "section": "MDC 16 Bolesti i poremećaji krvi i krvotvornih organa i imunološki poremećaji",
+   "price_eur": 1254.3,
+   "coefficient": 0.66
+  },
+  {
+   "code": "Q02A",
+   "name_kccg": "Ostali operativni zahvati zbog bolesti krvi ili krvotvornih organa sa vrlo teškim ili teškim KK",
+   "name_fzocg": "Ostali operativni zahvati zbog bolesti krvi i krvotvornih organa sa vrlo tešk. ili teškim KK",
+   "section": "MDC 16 Bolesti i poremećaji krvi i krvotvornih organa i imunološki poremećaji",
+   "price_eur": 10433.47,
+   "coefficient": 5.49
+  },
+  {
+   "code": "Q60A",
+   "name_kccg": "Retikuloendotelni i poremećaji imuniteta sa vrlo teškim ili teškim KK",
+   "name_fzocg": "Retikuloendoteleni i poremećaji imuniteta sa vrlo teškim ili teškim KK",
+   "section": "MDC 16 Bolesti i poremećaji krvi i krvotvornih organa i imunološki poremećaji",
+   "price_eur": 4751.12,
+   "coefficient": 2.5
+  },
+  {
+   "code": "Q60B",
+   "name_kccg": "Retikuloendotelni i poremećaji imuniteta sa malignom bolešću, bez vrlo teških ili teških KK",
+   "name_fzocg": "Retikuloendoteleni i poremećaji imuniteta sa malignom bolešću, bez vrlo teškim ili teškim KK",
+   "section": "MDC 16 Bolesti i poremećaji krvi i krvotvornih organa i imunološki poremećaji",
+   "price_eur": 1919.45,
+   "coefficient": 1.01
+  },
+  {
+   "code": "R01A",
+   "name_kccg": "Limfom i leukemija sa velikim operativnim zahvatima i sa vrlo teškim ili teškim KK",
+   "name_fzocg": "Limfom i leukemija sa velikim operativnim zahvatima sa vrlo teškim ili teškim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 18928.48,
+   "coefficient": 9.96
+  },
+  {
+   "code": "R01B",
+   "name_kccg": "Limfom i leukemija sa velikim operativnim zahvatima, bez vrlo teških ili teških KK",
+   "name_fzocg": "Limfom i leukemija sa velikim operativnim zahvatima, bez vrlo teškim ili teškim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 5188.23,
+   "coefficient": 2.73
+  },
+  {
+   "code": "R02A",
+   "name_kccg": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima sa vrlo teškim KK",
+   "name_fzocg": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima sa vrlo teškim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 13968.31,
+   "coefficient": 7.35
+  },
+  {
+   "code": "R02B",
+   "name_kccg": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima sa teškim ili umjerenim KK",
+   "name_fzocg": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima sa teškim ili umjerenim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 7088.68,
+   "coefficient": 3.73
+  },
+  {
+   "code": "R02C",
+   "name_kccg": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima, bez KK",
+   "name_fzocg": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima, bez KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 4618.09,
+   "coefficient": 2.43
+  },
+  {
+   "code": "R03A",
+   "name_kccg": "Limfom i leukemija sa ostalim operativnim zahvatima sa vrlo teškim ili teškim KK",
+   "name_fzocg": "Limfom i leukemija sa ostalim operativnim zahvatima sa vrlo teškim ili teškim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 13797.27,
+   "coefficient": 7.26
+  },
+  {
+   "code": "R03B",
+   "name_kccg": "Limfom i leukemija sa ostalim operativnim zahvatima, bez vrlo teških ili teških KK",
+   "name_fzocg": "Limfom i leukemija sa ostalim operativnim zahvatima, bez vrlo teškim ili teškim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 2565.61,
+   "coefficient": 1.35
+  },
+  {
+   "code": "R04A",
+   "name_kccg": "Ostali neoplastični poremećaji sa ostalim operativnim zahvatima, sa KK",
+   "name_fzocg": "Ostali neoplastični poremećaji sa ostalim operativnim zahvatima, sa KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 4789.13,
+   "coefficient": 2.52
+  },
+  {
+   "code": "R04B",
+   "name_kccg": "Ostali neoplastični poremećaji sa ostalim operativnim zahvatima, bez KK",
+   "name_fzocg": "Ostali neoplastični poremećaji sa ostalim operativnim zahvatima, bez KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 2375.56,
+   "coefficient": 1.25
+  },
+  {
+   "code": "R60A",
+   "name_kccg": "Akutna leukemija sa vrlo teškim KK",
+   "name_fzocg": "Akutna leukemija sa vrlo teškim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 13493.19,
+   "coefficient": 7.1
+  },
+  {
+   "code": "R60B",
+   "name_kccg": "Akutna leukemija bez vrlo teških KK",
+   "name_fzocg": "Akutna leukemija bez vrlo teškim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 2033.48,
+   "coefficient": 1.07
+  },
+  {
+   "code": "R61A",
+   "name_kccg": "Limfom i ne-akutna leukemija sa vrlo teškim KK",
+   "name_fzocg": "Limfom i ne-akutna leukemija sa vrlo teškim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 9236.19,
+   "coefficient": 4.86
+  },
+  {
+   "code": "R61B",
+   "name_kccg": "Limfom i ne-akutna leukemija bez vrlo teških KK",
+   "name_fzocg": "Limfom i ne-akutna leukemija sa teškim KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 3477.82,
+   "coefficient": 1.83
+  },
+  {
+   "code": "R61C",
+   "name_kccg": "Limfom i ne-akutna leukemija, isti dan",
+   "name_fzocg": "Limfom i ne-akutna leukemija, isti dan",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 475.11,
+   "coefficient": 0.25
+  },
+  {
+   "code": "R62A",
+   "name_kccg": "Ostali neoplastični poremećaji sa KK",
+   "name_fzocg": "Ostali neoplastični poremećaji sa KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 3059.72,
+   "coefficient": 1.61
+  },
+  {
+   "code": "R62B",
+   "name_kccg": "Ostali neoplastični poremećaji bez KK",
+   "name_fzocg": "Ostali neoplastični poremećaji bez KK",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 1558.37,
+   "coefficient": 0.82
+  },
+  {
+   "code": "R63Z",
+   "name_kccg": "Hemoterapija",
+   "name_fzocg": "Hemoterapija",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 627.15,
+   "coefficient": 0.33
+  },
+  {
+   "code": "R64Z",
+   "name_kccg": "Radioterapija",
+   "name_fzocg": "Radioterapija",
+   "section": "MDC 17 Neoplastični poremećaji (hematološke i solidne neoplazme)",
+   "price_eur": 912.22,
+   "coefficient": 0.48
+  }
+ ]
+}

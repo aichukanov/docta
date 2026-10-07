@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "slug": "drviller-reheart-tivat",
+  "name": "DrViller Reheart",
+  "city": "Tivat",
+  "cityId": 4,
+  "googlePlaceId": null,
+  "sql": [
+    "server/sql/insert-clinic-prices-drviller-reheart-tivat.sql"
+  ],
+  "status": {
+    "generated": "2026-10-02",
+    "appliedLocal": "2026-10-06 (сверено: число строк локально = прод)",
+    "appliedProd": "2026-10-02",
+    "clinicId": 24,
+    "doctorIds": {},
+    "note": "Применено на прод 2026-10-02 (VERIFICATION сошёлся: 12 услуг, price 175.00, price_min 390.00). Новые записи каталога на проде: 8248 professor-cardiologist-examination-with-ecg, 8249 intravenous-ozone-therapy, 8250 local-ozone-therapy, 8251 autohemotherapy, 8252 ozone-autohemotherapy, 8253 medical-documentation-review. Локально не применено."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "ref": "https://doctor-viller.com/servises",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "note": "Tilda, по-русски. Таблица t431: заголовок в div.t431__data-part1 («Услуга;Стоимость, EUR»), строки в div.t431__data-part2 через «;» и перевод строки, в сыром HTML. 13 строк. Даты в документе нет; HTTP Last-Modified: Tue, 08 Sep 2026 20:11:35 GMT — дата публикации страницы в Tilda, не обязательно дата цен. Снимок: data/clinic-pricelists/sources/drviller-reheart-tivat/2026-10-02.html. Сайт за ddos-guard, curl с User-Agent проходит."
+    },
+    {
+      "type": "website",
+      "ref": "https://doctor-viller.com/doctor",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "note": "Только для контекста сопоставления: «Виллер Александр Григорьевич, Профессор, доктор медицинских наук», кардиоваскулярная медицина/сердечно-сосудистая хирургия. Других врачей на сайте нет. Поэтому «Прием профессора» → профессорский осмотр кардиолога."
+    }
+  ],
+  "coverage": {
+    "prices": "12 из 13 позиций импортированы (6 на существующие записи каталога, 6 на новые). «Мониторинг ЭКГ в амбулатории» не заведён — см. excluded.",
+    "labTests": "лаборатории в прайсе нет",
+    "priceDate": "не указана; Last-Modified страницы 2026-09-08 → is_price_outdated = 0"
+  },
+  "catalogAdditions": [
+    {
+      "table": "medical_services",
+      "nameEn": "Professor Cardiologist Examination with ECG",
+      "nameSr": "Profesorski pregled kardiologa sa EKG-om",
+      "categories": [
+        8
+      ],
+      "specialties": [
+        1
+      ],
+      "note": "Пара к существующим Professor Cardiologist Examination (1946) и Cardiologist Examination with ECG (1944); sort_order = 1 как у 1944"
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Intravenous Ozone Therapy",
+      "nameSr": "Intravenska ozonoterapija",
+      "categories": [
+        29
+      ],
+      "specialties": [],
+      "note": "Озонотерапии в каталоге не было вовсе (ни локально, ни в поиске на проде)"
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Local Ozone Therapy",
+      "nameSr": "Lokalna ozonoterapija",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Autohemotherapy",
+      "nameSr": "Autohemoterapija",
+      "categories": [
+        29
+      ],
+      "specialties": [],
+      "note": "НЕ Autologous Transfusion (5803, «Аутогемотрансфузия», FZOCG X12028) — та про возврат собственной крови в хирургии"
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Ozone Autohemotherapy",
+      "nameSr": "Ozonska autohemoterapija",
+      "categories": [
+        29
+      ],
+      "specialties": []
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Documentation Review",
+      "nameSr": "Pregled medicinske dokumentacije",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ],
+      "note": "НЕ Medical Documentation Review and Prescription (2057) — там ещё выписка рецепта"
+    }
+  ],
+  "services": [
+    {
+      "nameEn": "Professor Cardiologist Examination",
+      "source": "Прием профессора; от 70"
+    },
+    {
+      "nameEn": "Specialist Examination",
+      "source": "Прием врача; 60",
+      "note": "Решение владельца каталога 2026-10-02: специальность врача на сайте не названа, ставим общий осмотр специалиста (2060)."
+    },
+    {
+      "nameEn": "Professor Cardiologist Examination with ECG",
+      "source": "Прием профессора с ЭКГ; от 70"
+    },
+    {
+      "nameEn": "Professor Cardiology Package",
+      "source": "Прием профессора с ЭКГ с доп. исследованиями;от 100",
+      "note": "Решение владельца каталога 2026-10-02 (1953): состав «доп. исследований» на сайте не раскрыт."
+    },
+    {
+      "nameEn": "ECG",
+      "source": "ЭКГ с расшифровкой;20"
+    },
+    {
+      "nameEn": "Medical Documentation Review",
+      "source": "Анализ медицинской документации и анализов;30"
+    },
+    {
+      "nameEn": "Infusion Therapy",
+      "source": "Капельница в зависимости от количества препаратов;от 40"
+    },
+    {
+      "nameEn": "Intravenous Ozone Therapy",
+      "source": "Капельница с озонотерапией;от 60"
+    },
+    {
+      "nameEn": "Intramuscular Injection",
+      "source": "Внутримышечная инъекция;15"
+    },
+    {
+      "nameEn": "Local Ozone Therapy",
+      "source": "Местная озонотерапия;от 50"
+    },
+    {
+      "nameEn": "Autohemotherapy",
+      "source": "Аутогемотерапия;20"
+    },
+    {
+      "nameEn": "Ozone Autohemotherapy",
+      "source": "Аутогемотерапия в комбинации с озонотерапией;30"
+    }
+  ],
+  "doctors": [],
+  "excluded": [
+    {
+      "source": "Мониторинг ЭКГ в амбулатории;20",
+      "reason": "Непонятно, что это: Holter ECG 24h (1992) у других клиник 35–100 €, за 20 € это вряд ли он; скорее наблюдение по монитору в кабинете (например, во время капельницы). Cardiac Telemetry (5823) — тоже не очевидно. Решение владельца каталога 2026-10-02: не заводить."
+    }
+  ],
+  "openQuestions": []
+}

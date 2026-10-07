@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "slug": "primus-medical-podgorica",
+  "name": "Primus Medical",
+  "city": "Podgorica",
+  "cityId": 1,
+  "googlePlaceId": null,
+  "sql": [
+    "server/sql/insert-clinic-prices-primus-medical-podgorica.sql",
+    "server/sql/update-clinic-prices-primus-medical-podgorica-not-outdated.sql"
+  ],
+  "status": {
+    "generated": "2026-10-02",
+    "appliedLocal": "2026-10-02",
+    "appliedProd": "2026-10-02",
+    "clinicId": 40,
+    "doctorIds": {},
+    "note": "Только цены услуг; клиника и врачи (5) уже в БД, их не трогали. id клиники на проде — 40 (/api/clinics/details), локально тоже 40, но SQL резолвит по slug. clinics.google_place_id = NULL; в data/google-places/podgorica/pzu-primus-medical.json есть только hexId 0x134deb1e2cd3a71b:0xdeeb54f63b41a173 и KG /g/11gznq817, ChIJ-идентификатора нет. 2026-10-02 флаг is_price_outdated снят с урологии и нефрологии (update-clinic-prices-primus-medical-podgorica-not-outdated.sql, применён локально и на проде, по API устаревших 0 из 20). Почему: даты в обоих PDF нет, дата файла сама по себе флага не обосновывает; живой сайт ссылается на эти прайсы как на действующие; прайс вен клиника обновила в 2025, а эти оставила; цены на уровне рынка или выше (приём уролога с УЗИ 100 при 50–80 у других, цистоскопия 150 при 150/170).",
+    "catalogIdsProd": {
+      "laser-varicose-vein-surgery-both-legs": 8254,
+      "laser-varicose-vein-surgery-with-ligation": 8255,
+      "sclerotherapy-veins-by-region-and-number-of-sessions": 8256,
+      "follow-up-vascular-surgeon-examination-after-2-years": 8257,
+      "follow-up-urologist-examination-after-6-months": 8258
+    },
+    "verifiedProd": "2026-10-02: /api/services/list {clinicIds:[40]} — 20 услуг, цены и is_price_outdated совпадают с SQL; страницы 5 новых карточек 200 (ru); поиск EVLA/ЭВЛК/TRUS/ТРУЗИ/Previjanje venske rane находит нужные карточки; после update — is_price_outdated 0 у всех 20"
+  },
+  "sources": [
+    {
+      "type": "pdf",
+      "ref": "https://primus-medical.me/wp-content/uploads/2023/03/Cjenovnik-vene-2023.pdf",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "note": "Флебология, 10 позиций, текстовый слой есть. Дата актуальности — «Podgorica 01.09.2025.» в документе; Last-Modified 2026-04-17, PDF ModDate 2026-04-17 (Word 2019). Имя файла 2023, но файл перезаливали на место — актуальный. Подписан «DIREKTOR PZU PRIMUS MEDICALA JELENA BOGAVAC». Снимок: data/clinic-pricelists/sources/primus-medical-podgorica/2026-10-02.Cjenovnik-vene-2023.pdf"
+    },
+    {
+      "type": "pdf",
+      "ref": "https://primus-medical.me/wp-content/uploads/2023/01/cjenovnik-urologija.pdf",
+      "collected": "2026-10-02",
+      "machineReadable": false,
+      "note": "Урология, 7 позиций. Скан (HP Scan) без текстового слоя, прочитан с отрендеренной страницы (110 dpi, текст чёткий, OCR не понадобился). Даты в документе нет; Last-Modified 2023-01-11, PDF CreationDate 2023-01-10 — флаг устаревания сначала поставили по дате файла, 2026-10-02 сняли (см. status.note). На этот же PDF по ошибке ведут кнопки «Cjenovnik» на /opsta-medicina/ и /radiologija/. Снимок: …/2026-10-02.cjenovnik-urologija.pdf"
+    },
+    {
+      "type": "pdf",
+      "ref": "https://primus-medical.me/wp-content/uploads/2022/01/cjenovnik-nefrologija.pdf",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "note": "Нефрология, 2 позиции. Даты в документе нет; Last-Modified 2022-01-27, PDF ModDate 2021-09-11 — флаг устаревания сначала поставили по дате файла, 2026-10-02 сняли (см. status.note). Файл 5,4 МБ — вместо снимка URL + sha256 в …/2026-10-02.cjenovnik-nefrologija.url.txt"
+    }
+  ],
+  "coverage": {
+    "prices": "19 позиций из трёх PDF → 20 строк clinic_medical_services (цистоскопия без пола — в обе записи, M и F). Своих прайсов нет у /opsta-medicina/, /radiologija/ (кнопка ведёт на урологию) и /estetika/ (кнопки нет)",
+    "labTests": "в прайсах нет ни одного анализа",
+    "doctors": "не трогали — 5 врачей уже в БД; привязку услуг к врачам (clinic_medical_service_doctors) не делали"
+  },
+  "catalogAdditions": [
+    {
+      "table": "medical_services",
+      "nameEn": "Laser Varicose Vein Surgery (Both Legs)",
+      "nameSr": "Laserska operacija proširenih vena — obje noge",
+      "slug": "laser-varicose-vein-surgery-both-legs",
+      "categories": [
+        17
+      ],
+      "specialties": [
+        3,
+        34
+      ],
+      "reason": "у одной ноги цена своя; образец — пара Vein Surgery (One Leg) / Vein Surgery Both Legs"
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Laser Varicose Vein Surgery with Ligation",
+      "nameSr": "Laserska operacija proširenih vena sa ligaturom",
+      "slug": "laser-varicose-vein-surgery-with-ligation",
+      "categories": [
+        17
+      ],
+      "specialties": [
+        3,
+        34
+      ],
+      "reason": "отдельная позиция прайса со своей ценой"
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Sclerotherapy Veins (by Region and Number of Sessions)",
+      "nameSr": "Skleroterapija vena (po regiji i broju tretmana)",
+      "slug": "sclerotherapy-veins-by-region-and-number-of-sessions",
+      "categories": [
+        17
+      ],
+      "specialties": [
+        34
+      ],
+      "reason": "вторая позиция склеротерапии со своей ценой (300–850 против 100–200 у «Redovna skleroterapija»); обычная склеротерапия — в Sclerotherapy Veins"
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Follow-up Vascular Surgeon Examination after 2 Years",
+      "nameSr": "Kontrolni pregled — vaskularni hirurg, nakon dvije godine",
+      "slug": "follow-up-vascular-surgeon-examination-after-2-years",
+      "categories": [
+        14
+      ],
+      "specialties": [
+        3,
+        34
+      ],
+      "sortOrder": 2,
+      "reason": "контроль после двух лет стоит иначе (100 против 70); контроль в пределах двух лет — в Follow-up Vascular Surgeon Examination"
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Follow-up Urologist Examination after 6 Months",
+      "nameSr": "Kontrolni pregled urologa nakon 6 mjeseci",
+      "slug": "follow-up-urologist-examination-after-6-months",
+      "categories": [
+        22
+      ],
+      "specialties": [
+        9
+      ],
+      "sortOrder": 2,
+      "reason": "контроль после 6 месяцев стоит иначе (100 против 80); контроль в пределах 6 месяцев — в Follow-up Urologist Examination"
+    }
+  ],
+  "services": [
+    {
+      "nameEn": "Doppler Lower Extremity Blood Vessels",
+      "source": "1.Doppler krvnih sudova donjih ekstremiteta................................100,00"
+    },
+    {
+      "nameEn": "Laser Varicose Vein Surgery",
+      "source": "2.Endovenska laser ablacija (EVLA) jedne noge ........................... 1750,00"
+    },
+    {
+      "nameEn": "Laser Varicose Vein Surgery (Both Legs)",
+      "source": "3.Endovenska laser ablacija (EVLA) obije noge ...............................2750,00"
+    },
+    {
+      "nameEn": "Laser Varicose Vein Surgery with Ligation",
+      "source": "4.Endovenska laser ablacija (EVLA) sa ligaturom .........................1700,00"
+    },
+    {
+      "nameEn": "Leg Ulcer Dressing",
+      "source": "5.Prevoj i obrada venske rane .........................................................50,00"
+    },
+    {
+      "nameEn": "Sclerotherapy Veins (by Region and Number of Sessions)",
+      "source": "6.Skleroterapija (regija,broj tretmana)............................................300,00-850,00"
+    },
+    {
+      "nameEn": "First Vascular Surgeon Examination",
+      "source": "7.Pregled specijaliste .........................................................................70,00"
+    },
+    {
+      "nameEn": "Follow-up Vascular Surgeon Examination after 2 Years",
+      "source": "8.Kontrolni pregled nakon dvije godine .........................................100,00"
+    },
+    {
+      "nameEn": "Sclerotherapy Veins",
+      "source": "9.Redovna skleroterapija...................................................................100,00-200,00"
+    },
+    {
+      "nameEn": "Follow-up Vascular Surgeon Examination",
+      "source": "10.Kontrolni pregled do dvije godine................................................70,00"
+    },
+    {
+      "nameEn": "Urologist Examination with Ultrasound",
+      "source": "1.Prvi pregled specijaliste sa UZ urotrakta -100,00 €"
+    },
+    {
+      "nameEn": "Transrectal Prostate Echosonography",
+      "source": "2.Transrektalni UZ -20,00 €"
+    },
+    {
+      "nameEn": "Follow-up Urologist Examination",
+      "source": "3.Kontrolni pregled do 6 mjeseci - 80,00 €"
+    },
+    {
+      "nameEn": "Follow-up Urologist Examination after 6 Months",
+      "source": "4.Kontrolni pregled nakon 6 mjeseci - 100,00 €"
+    },
+    {
+      "nameEn": "Urinary Catheter Placement",
+      "source": "5.Kateterizacija mokracne besike - 30,00 €"
+    },
+    {
+      "nameEn": "Cystoscopy (Male)",
+      "source": "6.Cistoskopija mokracne besike - 150,00 €"
+    },
+    {
+      "nameEn": "Cystoscopy (Female)",
+      "source": "6.Cistoskopija mokracne besike - 150,00 €"
+    },
+    {
+      "nameEn": "Wound Dressing",
+      "source": "7.Prevoj - 15,00€ -30,00 €"
+    },
+    {
+      "nameEn": "First Nephrologist Examination",
+      "source": "1. Prvi pregled specijaliste nefrologa - 50,00 €"
+    },
+    {
+      "nameEn": "Follow-up Nephrologist Examination",
+      "source": "2. Kontrolni pregled - 50,00 €"
+    }
+  ],
+  "doctors": [],
+  "excluded": [
+    {
+      "source": "https://primus-medical.me/wp-content/uploads/2022/01/cjenovnik-primus.pdf",
+      "reason": "старый прайс по венам, ни одна страница на него не ссылается; заменён 2023/03/Cjenovnik-vene-2023.pdf"
+    },
+    {
+      "source": "https://primus-medical.me/wp-content/uploads/2022/02/cjenovnik-vene.pdf",
+      "reason": "устаревший, без ссылок с сайта"
+    },
+    {
+      "source": "https://primus-medical.me/wp-content/uploads/2023/10/Vene-cijene.png",
+      "reason": "устаревший (2023-10-25), без ссылок с сайта; актуальный — PDF от 01.09.2025"
+    },
+    {
+      "source": "Кнопка «Cjenovnik» на /opsta-medicina/ и /radiologija/",
+      "reason": "ведёт на PDF урологии по ошибке; своих цен у этих отделений нет, общей медицине и радиологии урологические цены не приписывали"
+    }
+  ],
+  "openQuestions": [
+    "Пары «обычный / условный вариант» (склеротерапия, контроль сосудистого хирурга до/после 2 лет, контроль уролога до/после 6 месяцев) разведены так: обычный вариант — в существующую запись каталога, условный — в новую. Если какая-то другая клиника однажды даст «контроль в пределах N», это та же базовая запись, а не новая.",
+    "EVLA одной ноги положена в общую запись Laser Varicose Vein Surgery (у других клиник там цена NULL). Если у этой записи смысл «любая EVLA», одна нога заслуживает своей записи (One Leg), а общая — без цены у Primus.",
+    "EVLA с лигатурой (1700) в прайсе дешевле EVLA одной ноги (1750). Так в источнике — не правили, но это может быть опечатка клиники.",
+    "«Pregled specijaliste» в прайсе вен положен в First Vascular Surgeon Examination: отделение флебологии, врач Dario Jocić — общий и сосудистый хирург (специальности 3, 34).",
+    "Cistoskopija без указания пола положена в обе записи каталога — Cystoscopy (Male) и (Female), — по 150 €: общей записи «Cystoscopy» в каталоге нет."
+  ]
+}

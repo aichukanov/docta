@@ -329,7 +329,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - `language` (varchar(10)): Language code.
 - _Unique constraint_: (`another_name`, `language`) — globally unique, unlike `medical_service_synonyms` which scopes uniqueness per record.
 - _Comment_: Merging lab tests writes the losing record's names here (all six languages), so a clinic's own phrasing keeps resolving after the merge. A merge also moves the losing record's existing synonyms across, and one of those can end up equal to the surviving record's own name — the cleanup query for that lives in `duplicate-synonyms-fix.txt` and ran as migration 031.
-- _Collation_: was `utf8mb4_0900_ai_ci` until migration 044, which converted it (and seven other tables) to `utf8mb4_unicode_ci` like the rest of the schema. On a database without 044, comparing `another_name` against a `lab_tests.name_*` column fails with ERROR 1267 unless an explicit `COLLATE utf8mb4_unicode_ci` is written into the expression. See `docs/rules/SQL_COLLATIONS.md`.
+- _Collation_: `utf8mb4_unicode_ci`, like the rest of the schema. It was `utf8mb4_0900_ai_ci` until migration 044 (2026-10-02), so older migrations compare `another_name` with an explicit `COLLATE utf8mb4_unicode_ci` — now a no-op, harmless. See `docs/rules/SQL_COLLATIONS.md`.
 
 ### `lab_test_reference_info`
 
@@ -399,7 +399,7 @@ This file provides a structured reference of the MySQL database for the docta.me
 - _Comment_: Mirrors `lab_test_synonyms`, but scoped per service rather than globally unique on name — the same wording may legitimately point at more than one service. Merging services writes the losing record's names here, so a clinic's own phrasing keeps resolving after the merge.
 - _Coverage_: until migrations 036/037 only 83 of 4991 services had any row here, nearly all as merge fallout rather than editorial work — the import prompt documented synonyms for lab tests only, so no import ever wrote one for a service. 036/037 add 3854 rows for 927 services (every service in ≥3 clinics was reviewed). Batches, pipeline and rules: `data/service-names/README.md`; audit: `docs/audit/service-names-2026-09.md`; the convention for new imports: `docs/import/CLINIC_SERVICES_IMPORT.md` §1.6.
 - _Language codes_: `sr-cyrl` with a hyphen, as in `lab_test_synonyms`. The `sr_cyrl` spelling in the table comment in `server/sql/create-medical-service-synonyms.sql` is wrong — no row uses it.
-- _Collation_: unlike the lab-test pair, both this table and `medical_services` are `utf8mb4_unicode_ci`, so comparing `another_name` against a `name_*` column does NOT need an explicit `COLLATE`.
+- _Collation_: `utf8mb4_unicode_ci`, same as `medical_services` and (since migration 044) `lab_test_synonyms`, so comparing `another_name` against a `name_*` column or the other synonym table needs no explicit `COLLATE`.
 
 ### `medical_service_duplicate_candidates`
 

@@ -1,0 +1,1134 @@
+{
+ "batch": "drg-09",
+ "items": [
+  {
+   "code": "L02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Peritoneal Dialysis Catheter Insertion with Very Severe or Severe CC",
+   "slug": "hospitalization-for-peritoneal-dialysis-catheter-insertion-with-very-severe-or-severe-cc",
+   "name_sr": "Operativno postavljanje peritonealnog katetera zbog dijalize sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: хирургическая установка перитонеального катетера для диализа с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: operative Anlage eines Peritonealdialysekatheters mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: diyaliz için periton kateterinin cerrahi yerleştirilmesi, çok ağır veya ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "NEPHROLOGY",
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Peritoneal Dialysis Catheter Insertion without Very Severe or Severe CC",
+   "slug": "hospitalization-for-peritoneal-dialysis-catheter-insertion-without-very-severe-or-severe-cc",
+   "name_sr": "Operativno postavljanje peritonealnog katetera zbog dijalize bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: хирургическая установка перитонеального катетера для диализа без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: operative Anlage eines Peritonealdialysekatheters ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: diyaliz için periton kateterinin cerrahi yerleştirilmesi, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "NEPHROLOGY",
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L03C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Kidney, Ureter and Bladder Procedures for Neoplasm without Very Severe or Severe CC",
+   "slug": "hospitalization-for-major-kidney-ureter-and-bladder-procedures-for-neoplasm-without-very-severe-or-severe-cc",
+   "name_sr": "Veliki zahvati zbog neoplazme (tumora) bubrega, uretera i mokraćne bešike bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: большие операции по поводу новообразования почки, мочеточника и мочевого пузыря без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: große Eingriffe bei Neubildung von Niere, Harnleiter und Harnblase ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: böbrek, üreter ve mesane neoplazmı nedeniyle büyük girişimler, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L04C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Kidney, Ureter and Bladder Procedures for Non-Neoplasm without Very Severe or Severe CC",
+   "slug": "hospitalization-for-major-kidney-ureter-and-bladder-procedures-for-non-neoplasm-without-very-severe-or-severe-cc",
+   "name_sr": "Veliki postupci na bubregu, ureteru i mokraćnoj bešici, osim zbog neoplazme (tumora), bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: большие операции на почке, мочеточнике и мочевом пузыре не по поводу новообразования без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: große Eingriffe an Niere, Harnleiter und Harnblase außer bei Neubildung ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: neoplazm dışı nedenlerle böbrek, üreter ve mesanede büyük girişimler, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L05A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "tur-of-prostate-bladder-neck-resection",
+   "id": 6228,
+   "note": "TURP (MDC 11), тяжёлые ОО; вместе с L05B/M02A/M02B"
+  },
+  {
+   "code": "L05B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "tur-of-prostate-bladder-neck-resection",
+   "id": 6228,
+   "note": "TURP (MDC 11) без тяжёлых ОО"
+  },
+  {
+   "code": "L06B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Minor Bladder Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-minor-bladder-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Manji zahvati na mokraćnoj bešici bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: малые операции на мочевом пузыре без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: kleinere Eingriffe an der Harnblase ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: mesanede küçük girişimler, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L07A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Transurethral Procedures Except Prostatectomy with CC",
+   "slug": "hospitalization-for-transurethral-procedures-except-prostatectomy-with-cc",
+   "name_sr": "Transuretralni zahvati, osim prostatektomije, sa KK",
+   "name_ru": "Госпитализация: трансуретральные операции, кроме простатэктомии, с ОО",
+   "name_de": "Stationäre Behandlung: transurethrale Eingriffe außer Prostatektomie mit KK",
+   "name_tr": "Yatış: prostatektomi dışı transüretral girişimler, CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L07B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Transurethral Procedures Except Prostatectomy without CC",
+   "slug": "hospitalization-for-transurethral-procedures-except-prostatectomy-without-cc",
+   "name_sr": "Transuretralni zahvati, osim prostatektomije, bez KK",
+   "name_ru": "Госпитализация: трансуретральные операции, кроме простатэктомии, без ОО",
+   "name_de": "Stationäre Behandlung: transurethrale Eingriffe außer Prostatektomie ohne KK",
+   "name_tr": "Yatış: prostatektomi dışı transüretral girişimler, CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Renal Failure with Very Severe CC",
+   "slug": "hospitalization-for-renal-failure-with-very-severe-cc",
+   "name_sr": "Insuficijencija bubrega sa vrlo teškim KK",
+   "name_ru": "Госпитализация: почечная недостаточность с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Niereninsuffizienz mit sehr schweren KK",
+   "name_tr": "Yatış: böbrek yetmezliği, çok ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "NEPHROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Renal Failure with Severe CC",
+   "slug": "hospitalization-for-renal-failure-with-severe-cc",
+   "name_sr": "Insuficijencija bubrega sa teškim KK",
+   "name_ru": "Госпитализация: почечная недостаточность с тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Niereninsuffizienz mit schweren KK",
+   "name_tr": "Yatış: böbrek yetmezliği, ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "NEPHROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L60C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Renal Failure without Very Severe or Severe CC",
+   "slug": "hospitalization-for-renal-failure-without-very-severe-or-severe-cc",
+   "name_sr": "Insuficijencija bubrega bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: почечная недостаточность без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Niereninsuffizienz ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: böbrek yetmezliği, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "NEPHROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L62A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Kidney and Urinary Tract Neoplasms with Very Severe or Severe CC",
+   "slug": "hospitalization-for-kidney-and-urinary-tract-neoplasms-with-very-severe-or-severe-cc",
+   "name_sr": "Neoplazma (tumor) bubrega i urinarnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: новообразование почки и мочевыводящих путей с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Neubildung der Niere und der Harnwege mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: böbrek ve idrar yolu neoplazmı, çok ağır veya ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L62B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Kidney and Urinary Tract Neoplasms without Very Severe or Severe CC",
+   "slug": "hospitalization-for-kidney-and-urinary-tract-neoplasms-without-very-severe-or-severe-cc",
+   "name_sr": "Neoplazma (tumor) bubrega i urinarnog sistema bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: новообразование почки и мочевыводящих путей без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Neubildung der Niere und der Harnwege ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: böbrek ve idrar yolu neoplazmı, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L63A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Kidney and Urinary Tract Infection with Very Severe or Severe CC",
+   "slug": "hospitalization-for-kidney-and-urinary-tract-infection-with-very-severe-or-severe-cc",
+   "name_sr": "Infekcija bubrega i urinarnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: инфекция почек и мочевыводящих путей с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Infektion der Niere und der Harnwege mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: böbrek ve idrar yolu enfeksiyonu, çok ağır veya ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "NEPHROLOGY"
+   ],
+   "note": "пара к существующей 7814 (без тяжёлых ОО)"
+  },
+  {
+   "code": "L64Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Urinary Stones and Obstruction",
+   "slug": "hospitalization-for-urinary-stones-and-obstruction",
+   "name_sr": "Urinarni konkrementi i opstrukcija",
+   "name_ru": "Госпитализация: камни и обструкция мочевыводящих путей",
+   "name_de": "Stationäre Behandlung: Harnsteine und Harnwegsobstruktion",
+   "name_tr": "Yatış: idrar yolu taşları ve tıkanıklığı",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L65A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Kidney and Urinary Tract Signs and Symptoms with Very Severe or Severe CC",
+   "slug": "hospitalization-for-kidney-and-urinary-tract-signs-and-symptoms-with-very-severe-or-severe-cc",
+   "name_sr": "Znakovi i simptomi povezani sa bubregom i urinarnim sistemom sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: признаки и симптомы со стороны почек и мочевыводящих путей с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Zeichen und Symptome an Niere und Harnwegen mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: böbrek ve idrar yoluna ilişkin belirti ve bulgular, çok ağır veya ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "NEPHROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L65B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Kidney and Urinary Tract Signs and Symptoms without Very Severe or Severe CC",
+   "slug": "hospitalization-for-kidney-and-urinary-tract-signs-and-symptoms-without-very-severe-or-severe-cc",
+   "name_sr": "Znakovi i simptomi povezani sa bubregom i urinarnim sistemom bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: признаки и симптомы со стороны почек и мочевыводящих путей без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Zeichen und Symptome an Niere und Harnwegen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: böbrek ve idrar yoluna ilişkin belirti ve bulgular, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "NEPHROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L66Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Urethral Stricture",
+   "slug": "hospitalization-for-urethral-stricture",
+   "name_sr": "Striktura uretre",
+   "name_ru": "Госпитализация: стриктура уретры",
+   "name_de": "Stationäre Behandlung: Harnröhrenstriktur",
+   "name_tr": "Yatış: üretra darlığı",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L67A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Kidney and Urinary System Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-kidney-and-urinary-system-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Ostale bolesti bubrega i urinarnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: прочие заболевания почек и мочевыводящих путей с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: sonstige Erkrankungen der Niere und der Harnwege mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: diğer böbrek ve idrar yolu hastalıkları, çok ağır veya ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "NEPHROLOGY"
+   ],
+   "note": "пара к существующей 7815 (без тяжёлых ОО)"
+  },
+  {
+   "code": "L03A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Kidney, Ureter and Bladder Procedures for Neoplasm with Very Severe CC",
+   "slug": "hospitalization-for-major-kidney-ureter-and-bladder-procedures-for-neoplasm-with-very-severe-cc",
+   "name_sr": "Veliki zahvati zbog neoplazme (tumora) bubrega, uretera i mokraćne bešike sa vrlo teškim KK",
+   "name_ru": "Госпитализация: большие операции по поводу новообразования почки, мочеточника и мочевого пузыря с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: große Eingriffe bei Neubildung von Niere, Harnleiter und Harnblase mit sehr schweren KK",
+   "name_tr": "Yatış: böbrek, üreter ve mesane neoplazmı nedeniyle büyük girişimler, çok ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L03B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Kidney, Ureter and Bladder Procedures for Neoplasm with Severe CC",
+   "slug": "hospitalization-for-major-kidney-ureter-and-bladder-procedures-for-neoplasm-with-severe-cc",
+   "name_sr": "Veliki zahvati zbog neoplazme (tumora) bubrega, uretera i mokraćne bešike sa teškim KK",
+   "name_ru": "Госпитализация: большие операции по поводу новообразования почки, мочеточника и мочевого пузыря с тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: große Eingriffe bei Neubildung von Niere, Harnleiter und Harnblase mit schweren KK",
+   "name_tr": "Yatış: böbrek, üreter ve mesane neoplazmı nedeniyle büyük girişimler, ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L04A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Kidney, Ureter and Bladder Procedures for Non-Neoplasm with Very Severe CC",
+   "slug": "hospitalization-for-major-kidney-ureter-and-bladder-procedures-for-non-neoplasm-with-very-severe-cc",
+   "name_sr": "Veliki zahvati na bubregu, ureteru i mokraćnoj bešici, osim zbog neoplazme (tumora), sa vrlo teškim KK",
+   "name_ru": "Госпитализация: большие операции на почке, мочеточнике и мочевом пузыре не по поводу новообразования с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: große Eingriffe an Niere, Harnleiter und Harnblase außer bei Neubildung mit sehr schweren KK",
+   "name_tr": "Yatış: neoplazm dışı nedenlerle böbrek, üreter ve mesanede büyük girişimler, çok ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L04B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Kidney, Ureter and Bladder Procedures for Non-Neoplasm with Severe CC",
+   "slug": "hospitalization-for-major-kidney-ureter-and-bladder-procedures-for-non-neoplasm-with-severe-cc",
+   "name_sr": "Veliki postupci na bubregu, ureteru i mokraćnoj bešici, osim zbog neoplazme (tumora), sa teškim KK",
+   "name_ru": "Госпитализация: большие операции на почке, мочеточнике и мочевом пузыре не по поводу новообразования с тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: große Eingriffe an Niere, Harnleiter und Harnblase außer bei Neubildung mit schweren KK",
+   "name_tr": "Yatış: neoplazm dışı nedenlerle böbrek, üreter ve mesanede büyük girişimler, ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L06A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Minor Bladder Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-minor-bladder-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Manji zahvati na mokraćnoj bešici sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: малые операции на мочевом пузыре с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: kleinere Eingriffe an der Harnblase mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: mesanede küçük girişimler, çok ağır veya ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L08A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Urethral Procedures with CC",
+   "slug": "hospitalization-for-urethral-procedures-with-cc",
+   "name_sr": "Zahvati na uretri sa KK",
+   "name_ru": "Госпитализация: операции на уретре с ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an der Harnröhre mit KK",
+   "name_tr": "Yatış: üretra girişimleri, CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L08B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Urethral Procedures without CC",
+   "slug": "hospitalization-for-urethral-procedures-without-cc",
+   "name_sr": "Zahvati na uretri bez KK",
+   "name_ru": "Госпитализация: операции на уретре без ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an der Harnröhre ohne KK",
+   "name_tr": "Yatış: üretra girişimleri, CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L09A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Procedures for Kidney and Urinary Tract Disorders with Very Severe CC",
+   "slug": "hospitalization-for-other-procedures-for-kidney-and-urinary-tract-disorders-with-very-severe-cc",
+   "name_sr": "Ostali zahvati zbog poremećaja bubrega i urinarnog sistema sa vrlo teškim KK",
+   "name_ru": "Госпитализация: прочие операции при заболеваниях почек и мочевыводящих путей с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: sonstige Eingriffe bei Erkrankungen der Niere und der Harnwege mit sehr schweren KK",
+   "name_tr": "Yatış: böbrek ve idrar yolu bozuklukları nedeniyle diğer girişimler, çok ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L09B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Procedures for Kidney and Urinary Tract Disorders with Severe CC",
+   "slug": "hospitalization-for-other-procedures-for-kidney-and-urinary-tract-disorders-with-severe-cc",
+   "name_sr": "Ostali zahvati zbog poremećaja bubrega i urinarnog sistema sa teškim KK",
+   "name_ru": "Госпитализация: прочие операции при заболеваниях почек и мочевыводящих путей с тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: sonstige Eingriffe bei Erkrankungen der Niere und der Harnwege mit schweren KK",
+   "name_tr": "Yatış: böbrek ve idrar yolu bozuklukları nedeniyle diğer girişimler, ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L09C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Procedures for Kidney and Urinary Tract Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-procedures-for-kidney-and-urinary-tract-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Ostali zahvati zbog poremećaja bubrega i urinarnog sistema bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: прочие операции при заболеваниях почек и мочевыводящих путей без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: sonstige Eingriffe bei Erkrankungen der Niere und der Harnwege ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: böbrek ve idrar yolu bozuklukları nedeniyle diğer girişimler, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "L40Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "exploratory-ureterorenoscopy-semi-rigid-or-flexible",
+   "id": 5770,
+   "note": "проверить: в каталоге только эксплоративная уретерореноскопия, DRG-группа включает и лечебную"
+  },
+  {
+   "code": "L41Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cystourethroscopy Same Day",
+   "slug": "hospitalization-for-cystourethroscopy-same-day",
+   "name_sr": "Cistouretroskopija, isti dan",
+   "name_ru": "Госпитализация: цистоуретроскопия в течение одного дня",
+   "name_de": "Stationäre Behandlung: Zystourethroskopie am selben Tag",
+   "name_tr": "Yatış: sistoüretroskopi, aynı gün",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": "не привязано к cystoscopy-male/female: группа MDC 11 для обоих полов"
+  },
+  {
+   "code": "L42Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for ESWL (Lithotripsy) for Urinary Stones",
+   "slug": "hospitalization-for-eswl-lithotripsy-for-urinary-stones",
+   "name_sr": "ESWL (litotripsija) zbog urinarnih konkremenata",
+   "name_ru": "Госпитализация: ДУВЛ (дистанционная литотрипсия) при камнях мочевыводящих путей",
+   "name_de": "Stationäre Behandlung: ESWL (Lithotripsie) bei Harnsteinen",
+   "name_tr": "Yatış: idrar yolu taşları için ESWL (litotripsi)",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": "в каталоге нет ESWL мочевых камней (shock-wave-therapy — физиотерапия)"
+  },
+  {
+   "code": "L61Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "chronic-hemodialysis-session",
+   "id": 5266,
+   "note": "проверить: сеанс гемодиализа; альтернативы 7412 hemodialysis-services, 5272 urgent-hemodialysis"
+  },
+  {
+   "code": "L68Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "peritoneal-dialysis",
+   "id": 5273,
+   "note": ""
+  },
+  {
+   "code": "M01A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Male Pelvic Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-major-male-pelvic-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Veliki zahvati na muškoj karlici sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: большие операции на органах малого таза у мужчин с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: große Eingriffe im männlichen Becken mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: erkek pelvisinde büyük girişimler, çok ağır veya ağır CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "M01B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Male Pelvic Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-major-male-pelvic-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Veliki zahvati na muškoj karlici bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: большие операции на органах малого таза у мужчин без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: große Eingriffe im männlichen Becken ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: erkek pelvisinde büyük girişimler, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "M02A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "tur-of-prostate-bladder-neck-resection",
+   "id": 6228,
+   "note": "TURP (MDC 12), тяжёлые ОО"
+  },
+  {
+   "code": "M02B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "tur-of-prostate-bladder-neck-resection",
+   "id": 6228,
+   "note": "TURP (MDC 12) без тяжёлых ОО"
+  },
+  {
+   "code": "M03Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Penile Procedures",
+   "slug": "hospitalization-for-penile-procedures",
+   "name_sr": "Zahvati na penisu",
+   "name_ru": "Госпитализация: операции на половом члене",
+   "name_de": "Stationäre Behandlung: Eingriffe am Penis",
+   "name_tr": "Yatış: penis girişimleri",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "M04Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Testicular Procedures",
+   "slug": "hospitalization-for-testicular-procedures",
+   "name_sr": "Zahvati na testisima",
+   "name_ru": "Госпитализация: операции на яичках",
+   "name_de": "Stationäre Behandlung: Eingriffe an den Hoden",
+   "name_tr": "Yatış: testis girişimleri",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "M05Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "circumcision-spinal-general-anesthesia",
+   "id": 2153,
+   "note": "проверить: циркумцизия в каталоге разбита по анестезии (2152 местная, 2153 спинальная/общая, 2199 общая); для стационара взята 2153"
+  },
+  {
+   "code": "M06A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Male Reproductive System Procedures with CC",
+   "slug": "hospitalization-for-other-male-reproductive-system-procedures-with-cc",
+   "name_sr": "Ostali operativni zahvati na muškom reproduktivnom sistemu sa KK",
+   "name_ru": "Госпитализация: прочие операции на мужской репродуктивной системе с ОО",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe am männlichen Reproduktionssystem mit KK",
+   "name_tr": "Yatış: erkek üreme sisteminde diğer cerrahi girişimler, CC ile",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "M06B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Male Reproductive System Procedures without CC",
+   "slug": "hospitalization-for-other-male-reproductive-system-procedures-without-cc",
+   "name_sr": "Ostali operativni zahvati na muškom reproduktivnom sistemu bez KK",
+   "name_ru": "Госпитализация: прочие операции на мужской репродуктивной системе без ОО",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe am männlichen Reproduktionssystem ohne KK",
+   "name_tr": "Yatış: erkek üreme sisteminde diğer cerrahi girişimler, CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "M40Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "cystoscopy-male",
+   "id": 2200,
+   "note": "проверить: группа MDC 12 (мужская) → cystoscopy-male"
+  },
+  {
+   "code": "M60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Male Reproductive System Malignancy without Very Severe or Severe CC",
+   "slug": "hospitalization-for-male-reproductive-system-malignancy-without-very-severe-or-severe-cc",
+   "name_sr": "Maligna bolest muškog reproduktivnog sistema bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: злокачественное заболевание мужской репродуктивной системы без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: bösartige Erkrankung des männlichen Reproduktionssystems ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: erkek üreme sistemi malign hastalığı, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": "пара к существующей 7816 (с тяжёлыми ОО)"
+  },
+  {
+   "code": "M61Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Benign Prostatic Hyperplasia",
+   "slug": "hospitalization-for-benign-prostatic-hyperplasia",
+   "name_sr": "Benigna hipertrofija prostate",
+   "name_ru": "Госпитализация: доброкачественная гиперплазия предстательной железы",
+   "name_de": "Stationäre Behandlung: benigne Prostatahyperplasie",
+   "name_tr": "Yatış: benign prostat hiperplazisi",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "M62Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Male Reproductive System Inflammation",
+   "slug": "hospitalization-for-male-reproductive-system-inflammation",
+   "name_sr": "Zapaljenje muškog reproduktivnog sistema",
+   "name_ru": "Госпитализация: воспалительные заболевания мужской репродуктивной системы",
+   "name_de": "Stationäre Behandlung: Entzündung des männlichen Reproduktionssystems",
+   "name_tr": "Yatış: erkek üreme sistemi iltihabı",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "M63Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Male Sterilization",
+   "slug": "hospitalization-for-male-sterilization",
+   "name_sr": "Sterilizacija muškarca",
+   "name_ru": "Госпитализация: мужская стерилизация",
+   "name_de": "Stationäre Behandlung: Sterilisation des Mannes",
+   "name_tr": "Yatış: erkek sterilizasyonu",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": "вазэктомии в каталоге нет"
+  },
+  {
+   "code": "M64Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Male Reproductive System Disorders",
+   "slug": "hospitalization-for-other-male-reproductive-system-disorders",
+   "name_sr": "Ostale bolesti muškog reproduktivnog sistema",
+   "name_ru": "Госпитализация: прочие заболевания мужской репродуктивной системы",
+   "name_de": "Stationäre Behandlung: sonstige Erkrankungen des männlichen Reproduktionssystems",
+   "name_tr": "Yatış: diğer erkek üreme sistemi hastalıkları",
+   "categories": [
+    "UROLOGY"
+   ],
+   "specialties": [
+    "UROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N04B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hysterectomy for Non-Malignant Conditions without Very Severe or Severe CC",
+   "slug": "hospitalization-for-hysterectomy-for-non-malignant-conditions-without-very-severe-or-severe-cc",
+   "name_sr": "Histerektomija zbog nemalignih uzroka bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: гистерэктомия по поводу незлокачественных заболеваний без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Hysterektomie bei nicht bösartiger Erkrankung ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: malign olmayan nedenlerle histerektomi, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": "общей «histerektomija» в каталоге нет"
+  },
+  {
+   "code": "N07Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Uterine and Adnexal Procedures for Non-Malignant Conditions",
+   "slug": "hospitalization-for-other-uterine-and-adnexal-procedures-for-non-malignant-conditions",
+   "name_sr": "Ostali zahvati na materici i adneksima zbog nemalignih uzroka",
+   "name_ru": "Госпитализация: прочие операции на матке и придатках по поводу незлокачественных заболеваний",
+   "name_de": "Stationäre Behandlung: sonstige Eingriffe an Gebärmutter und Adnexen bei nicht bösartiger Erkrankung",
+   "name_tr": "Yatış: malign olmayan nedenlerle uterus ve adnekslerde diğer girişimler",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N09Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Conization and Cervical, Vaginal and Vulvar Procedures",
+   "slug": "hospitalization-for-conization-and-cervical-vaginal-and-vulvar-procedures",
+   "name_sr": "Konizacija, zahvati na grliću materice, vagini i vulvi",
+   "name_ru": "Госпитализация: конизация и операции на шейке матки, влагалище и вульве",
+   "name_de": "Stationäre Behandlung: Konisation und Eingriffe an Gebärmutterhals, Vagina und Vulva",
+   "name_tr": "Yatış: konizasyon ve serviks, vajina ve vulva girişimleri",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": "группа шире конизации (шейка, влагалище, вульва); альтернатива — existing 3391 cervical-conization"
+  },
+  {
+   "code": "N10Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Diagnostic Curettage or Diagnostic Hysteroscopy",
+   "slug": "hospitalization-for-diagnostic-curettage-or-diagnostic-hysteroscopy",
+   "name_sr": "Dijagnostička kiretaža ili dijagnostička histeroskopija",
+   "name_ru": "Госпитализация: диагностическое выскабливание или диагностическая гистероскопия",
+   "name_de": "Stationäre Behandlung: diagnostische Kürettage oder diagnostische Hysteroskopie",
+   "name_tr": "Yatış: tanısal küretaj veya tanısal histeroskopi",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": "или/или: 5410 exploratory-curettage либо 2254 diagnostic-hysteroscopy"
+  },
+  {
+   "code": "N01Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pelvic Evisceration and Radical Vulvectomy",
+   "slug": "hospitalization-for-pelvic-evisceration-and-radical-vulvectomy",
+   "name_sr": "Evisceracija karlice i radikalna vulvektomija",
+   "name_ru": "Госпитализация: эвисцерация малого таза и радикальная вульвэктомия",
+   "name_de": "Stationäre Behandlung: Beckeneviszeration und radikale Vulvektomie",
+   "name_tr": "Yatış: pelvik eviserasyon ve radikal vulvektomi",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS",
+    "GYNECOLOGIC_ONCOLOGY"
+   ],
+   "note": "две операции в группе: 6155 total-pelvic-exenteration и 3380 vulvectomy — не одна процедура"
+  },
+  {
+   "code": "N04A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hysterectomy for Non-Malignant Conditions with Very Severe or Severe CC",
+   "slug": "hospitalization-for-hysterectomy-for-non-malignant-conditions-with-very-severe-or-severe-cc",
+   "name_sr": "Histerektomija zbog nemalignih uzroka sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: гистерэктомия по поводу незлокачественных заболеваний с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Hysterektomie bei nicht bösartiger Erkrankung mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: malign olmayan nedenlerle histerektomi, çok ağır veya ağır CC ile",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": "общей «histerektomija» в каталоге нет, только варианты доступа (3389/3390/3404/3405…)"
+  },
+  {
+   "code": "N05A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Oophorectomy and Complex Fallopian Tube Procedures for Non-Malignant Conditions with Very Severe or Severe CC",
+   "slug": "hospitalization-for-oophorectomy-and-complex-fallopian-tube-procedures-for-non-malignant-conditions-with-very-severe-or-severe-cc",
+   "name_sr": "Ovarijektomija i složeni zahvati na jajovodu zbog nemalignih uzroka sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: овариэктомия и сложные операции на маточных трубах по поводу незлокачественных заболеваний с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Ovarektomie und komplexe Eingriffe am Eileiter bei nicht bösartiger Erkrankung mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: malign olmayan nedenlerle ooforektomi ve karmaşık tüp girişimleri, çok ağır veya ağır CC ile",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N05B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Oophorectomy and Complex Fallopian Tube Procedures for Non-Malignant Conditions without Very Severe or Severe CC",
+   "slug": "hospitalization-for-oophorectomy-and-complex-fallopian-tube-procedures-for-non-malignant-conditions-without-very-severe-or-severe-cc",
+   "name_sr": "Ovarijektomija i složeni zahvati na jajovodu zbog nemalignih uzroka bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: овариэктомия и сложные операции на маточных трубах по поводу незлокачественных заболеваний без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Ovarektomie und komplexe Eingriffe am Eileiter bei nicht bösartiger Erkrankung ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: malign olmayan nedenlerle ooforektomi ve karmaşık tüp girişimleri, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N06A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Female Reproductive System Reconstructive Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-female-reproductive-system-reconstructive-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Rekonstruktivni zahvati na ženskom reproduktivnom sistemu sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: реконструктивные операции на женской репродуктивной системе с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: rekonstruktive Eingriffe am weiblichen Reproduktionssystem mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: kadın üreme sisteminde rekonstrüktif girişimler, çok ağır veya ağır CC ile",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N06B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Female Reproductive System Reconstructive Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-female-reproductive-system-reconstructive-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Rekonstruktivni zahvati na ženskom reproduktivnom sistemu bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: реконструктивные операции на женской репродуктивной системе без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: rekonstruktive Eingriffe am weiblichen Reproduktionssystem ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: kadın üreme sisteminde rekonstrüktif girişimler, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N08Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Endoscopic and Laparoscopic Female Reproductive System Procedures",
+   "slug": "hospitalization-for-endoscopic-and-laparoscopic-female-reproductive-system-procedures",
+   "name_sr": "Endoskopski i laparoskopski zahvati na ženskom reproduktivnom sistemu",
+   "name_ru": "Госпитализация: эндоскопические и лапароскопические операции на женской репродуктивной системе",
+   "name_de": "Stationäre Behandlung: endoskopische und laparoskopische Eingriffe am weiblichen Reproduktionssystem",
+   "name_tr": "Yatış: kadın üreme sisteminde endoskopik ve laparoskopik girişimler",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N11Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Female Reproductive System Procedures",
+   "slug": "hospitalization-for-other-female-reproductive-system-procedures",
+   "name_sr": "Ostali operativni zahvati na ženskom reproduktivnom sistemu",
+   "name_ru": "Госпитализация: прочие операции на женской репродуктивной системе",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe am weiblichen Reproduktionssystem",
+   "name_tr": "Yatış: kadın üreme sisteminde diğer cerrahi girişimler",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N12A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Uterine and Adnexal Procedures for Malignancy with Very Severe CC",
+   "slug": "hospitalization-for-uterine-and-adnexal-procedures-for-malignancy-with-very-severe-cc",
+   "name_sr": "Zahvati na materici i adneksima zbog malignih uzroka sa vrlo teškim KK",
+   "name_ru": "Госпитализация: операции на матке и придатках по поводу злокачественных заболеваний с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Gebärmutter und Adnexen bei bösartiger Erkrankung mit sehr schweren KK",
+   "name_tr": "Yatış: malign nedenlerle uterus ve adneks girişimleri, çok ağır CC ile",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS",
+    "GYNECOLOGIC_ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N12B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Uterine and Adnexal Procedures for Malignancy without Very Severe CC",
+   "slug": "hospitalization-for-uterine-and-adnexal-procedures-for-malignancy-without-very-severe-cc",
+   "name_sr": "Zahvati na materici i adneksima zbog malignih uzroka bez vrlo teških KK",
+   "name_ru": "Госпитализация: операции на матке и придатках по поводу злокачественных заболеваний без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Gebärmutter und Adnexen bei bösartiger Erkrankung ohne sehr schwere KK",
+   "name_tr": "Yatış: malign nedenlerle uterus ve adneks girişimleri, çok ağır CC olmadan",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS",
+    "GYNECOLOGIC_ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Female Reproductive System Malignancy with Very Severe CC",
+   "slug": "hospitalization-for-female-reproductive-system-malignancy-with-very-severe-cc",
+   "name_sr": "Maligna bolest ženskog reproduktivnog sistema sa vrlo teškim KK",
+   "name_ru": "Госпитализация: злокачественное заболевание женской репродуктивной системы с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: bösartige Erkrankung des weiblichen Reproduktionssystems mit sehr schweren KK",
+   "name_tr": "Yatış: kadın üreme sistemi malign hastalığı, çok ağır CC ile",
+   "categories": [
+    "GYNECOLOGY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS",
+    "GYNECOLOGIC_ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "N60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Female Reproductive System Malignancy without Very Severe CC",
+   "slug": "hospitalization-for-female-reproductive-system-malignancy-without-very-severe-cc",
+   "name_sr": "Maligna bolest ženskog reproduktivnog sistema bez vrlo teških KK",
+   "name_ru": "Госпитализация: злокачественное заболевание женской репродуктивной системы без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: bösartige Erkrankung des weiblichen Reproduktionssystems ohne sehr schwere KK",
+   "name_tr": "Yatış: kadın üreme sistemi malign hastalığı, çok ağır CC olmadan",
+   "categories": [
+    "GYNECOLOGY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS",
+    "GYNECOLOGIC_ONCOLOGY"
+   ],
+   "note": ""
+  }
+ ]
+}

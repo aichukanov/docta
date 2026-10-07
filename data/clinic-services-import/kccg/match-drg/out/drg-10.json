@@ -1,0 +1,1191 @@
+{
+ "batch": "drg-10",
+ "items": [
+  {
+   "code": "O01A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "low-isthmic-cesarean-section-with-delivery",
+   "id": 5929,
+   "note": "кесарево сечение с тяжёлыми ОО; стандартное кесарево сечение каталога (FZOCG «Niski isthmični carski rez»)"
+  },
+  {
+   "code": "O01B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "low-isthmic-cesarean-section-with-delivery",
+   "id": 5929,
+   "note": "кесарево сечение без тяжёлых ОО"
+  },
+  {
+   "code": "O02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Vaginal Delivery with Operative Procedure with Very Severe or Severe CC",
+   "slug": "hospitalization-for-vaginal-delivery-with-operative-procedure-with-very-severe-or-severe-cc",
+   "name_sr": "Vaginalni porođaj sa operativnim zahvatom sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: вагинальные роды с оперативным вмешательством, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: vaginale Entbindung mit operativem Eingriff, mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: operatif girişimli vajinal doğum, çok ağır veya ağır CC ile",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "O02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Vaginal Delivery with Operative Procedure without Very Severe or Severe CC",
+   "slug": "hospitalization-for-vaginal-delivery-with-operative-procedure-without-very-severe-or-severe-cc",
+   "name_sr": "Vaginalni porođaj sa operativnim zahvatom bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: вагинальные роды с оперативным вмешательством, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: vaginale Entbindung mit operativem Eingriff, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: operatif girişimli vajinal doğum, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "O03A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Ectopic Pregnancy with CC",
+   "slug": "hospitalization-for-ectopic-pregnancy-with-cc",
+   "name_sr": "Ektopična trudnoća sa KK",
+   "name_ru": "Госпитализация: внематочная беременность, с ОО",
+   "name_de": "Stationäre Behandlung: Extrauterinschwangerschaft, mit KK",
+   "name_tr": "Yatış: dış gebelik, CC ile",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "O03B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Ectopic Pregnancy without CC",
+   "slug": "hospitalization-for-ectopic-pregnancy-without-cc",
+   "name_sr": "Ektopična trudnoća bez KK",
+   "name_ru": "Госпитализация: внематочная беременность, без ОО",
+   "name_de": "Stationäre Behandlung: Extrauterinschwangerschaft, ohne KK",
+   "name_tr": "Yatış: dış gebelik, CC olmadan",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "O04A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Postpartum and Post-Abortion Care with Operative Procedure with Very Severe or Severe CC",
+   "slug": "hospitalization-for-postpartum-and-post-abortion-care-with-operative-procedure-with-very-severe-or-severe-cc",
+   "name_sr": "Period nakon porođaja i nakon abortusa sa operativnim zahvatom sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: послеродовой период и период после аборта с оперативным вмешательством, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Wochenbett und Zustand nach Abort mit operativem Eingriff, mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: operatif girişimli doğum sonrası ve düşük sonrası dönem, çok ağır veya ağır CC ile",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "O04B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Postpartum and Post-Abortion Care with Operative Procedure without Very Severe or Severe CC",
+   "slug": "hospitalization-for-postpartum-and-post-abortion-care-with-operative-procedure-without-very-severe-or-severe-cc",
+   "name_sr": "Period nakon porođaja i nakon abortusa sa operativnim zahvatom bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: послеродовой период и период после аборта с оперативным вмешательством, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Wochenbett und Zustand nach Abort mit operativem Eingriff, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: operatif girişimli doğum sonrası ve düşük sonrası dönem, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "O05Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Abortion with Operative Procedure",
+   "slug": "hospitalization-for-abortion-with-operative-procedure",
+   "name_sr": "Abortus sa operativnim zahvatom",
+   "name_ru": "Госпитализация: аборт с оперативным вмешательством",
+   "name_de": "Stationäre Behandlung: Abort mit operativem Eingriff",
+   "name_tr": "Yatış: operatif girişimli düşük",
+   "categories": [
+    "GYNECOLOGY",
+    "GYNECOLOGICAL_SURGERY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": "abortus = и самопроизвольный, и искусственный; не привязано к 5408 (искусственный аборт)"
+  },
+  {
+   "code": "O60Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "vaginal-delivery-anterior-occiput-presentation",
+   "id": 5236,
+   "note": "«Vođenje porođaja (prednji potiljačni stav)» — обычные роды; DRG покрывает все вагинальные роды без операции (вкл. тазовое, 5237)"
+  },
+  {
+   "code": "O61Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Postpartum and Post-Abortion Care without Operative Procedure",
+   "slug": "hospitalization-for-postpartum-and-post-abortion-care-without-operative-procedure",
+   "name_sr": "Period nakon porođaja i nakon abortusa bez operativnog zahvata",
+   "name_ru": "Госпитализация: послеродовой период и период после аборта без оперативного вмешательства",
+   "name_de": "Stationäre Behandlung: Wochenbett und Zustand nach Abort ohne operativen Eingriff",
+   "name_tr": "Yatış: operatif girişim olmadan doğum sonrası ve düşük sonrası dönem",
+   "categories": [
+    "GYNECOLOGY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "O63Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Abortion without Operative Procedure",
+   "slug": "hospitalization-for-abortion-without-operative-procedure",
+   "name_sr": "Abortus bez operativnog zahvata",
+   "name_ru": "Госпитализация: аборт без оперативного вмешательства",
+   "name_de": "Stationäre Behandlung: Abort ohne operativen Eingriff",
+   "name_tr": "Yatış: operatif girişim olmadan düşük",
+   "categories": [
+    "GYNECOLOGY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "O64Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for False Labor",
+   "slug": "hospitalization-for-false-labor",
+   "name_sr": "Lažni trudovi",
+   "name_ru": "Госпитализация: ложные схватки",
+   "name_de": "Stationäre Behandlung: Vorwehen (falsche Wehen)",
+   "name_tr": "Yatış: yalancı doğum sancıları",
+   "categories": [
+    "GYNECOLOGY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "O66Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Antenatal and Other Obstetric Admission",
+   "slug": "hospitalization-for-antenatal-and-other-obstetric-admission",
+   "name_sr": "Prenatalni ili drugi akušerski prijem",
+   "name_ru": "Госпитализация: дородовая или иная акушерская госпитализация",
+   "name_de": "Stationäre Behandlung: pränatale oder sonstige geburtshilfliche Aufnahme",
+   "name_tr": "Yatış: doğum öncesi veya diğer obstetrik yatış",
+   "categories": [
+    "GYNECOLOGY"
+   ],
+   "specialties": [
+    "GYNECOLOGY_OBSTETRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P66C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 2000-2499 g without Significant Operative Procedure, with Other Problems",
+   "slug": "hospitalization-for-newborn-2000-2499-g-without-significant-surgery-with-other-problems",
+   "name_sr": "Novorođenče, masa pri prijemu 2000–2499 g, bez značajnog operativnog zahvata, sa ostalim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 2000–2499 г, без значимого оперативного вмешательства, с прочими нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 2000–2499 g, ohne signifikanten operativen Eingriff, mit sonstigen Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2000–2499 g, önemli cerrahi girişim olmadan, diğer bozukluklarla",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P66D",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 2000-2499 g without Significant Operative Procedure, without Problems",
+   "slug": "hospitalization-for-newborn-2000-2499-g-without-significant-surgery-without-problems",
+   "name_sr": "Novorođenče, masa pri prijemu 2000–2499 g, bez značajnog operativnog zahvata, bez poremećaja",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 2000–2499 г, без значимого оперативного вмешательства, без нарушений",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 2000–2499 g, ohne signifikanten operativen Eingriff, ohne Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2000–2499 g, önemli cerrahi girişim olmadan, bozukluk olmadan",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P67C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight over 2499 g without Significant Operative Procedure, with Other Problems",
+   "slug": "hospitalization-for-newborn-over-2499-g-without-significant-surgery-with-other-problems",
+   "name_sr": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog zahvata, sa ostalim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении более 2499 г, без значимого оперативного вмешательства, с прочими нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht über 2499 g, ohne signifikanten operativen Eingriff, mit sonstigen Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2499 g üzeri, önemli cerrahi girişim olmadan, diğer bozukluklarla",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P67D",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight over 2499 g without Significant Operative Procedure, without Problems",
+   "slug": "hospitalization-for-newborn-over-2499-g-without-significant-surgery-without-problems",
+   "name_sr": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog zahvata, bez poremećaja",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении более 2499 г, без значимого оперативного вмешательства, без нарушений",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht über 2499 g, ohne signifikanten operativen Eingriff, ohne Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2499 g üzeri, önemli cerrahi girişim olmadan, bozukluk olmadan",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P01Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn, Death or Transfer, Stay < 5 Days, with Significant Operative Procedure",
+   "slug": "hospitalization-for-newborn-death-or-transfer-stay-under-5-days-with-significant-surgery",
+   "name_sr": "Novorođenče, smrtni ishod ili premještaj u drugu ustanovu, boravak < 5 dana, sa značajnim operativnim zahvatom",
+   "name_ru": "Госпитализация: новорождённый, смерть или перевод в другое учреждение, пребывание < 5 дней, со значимым оперативным вмешательством",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Tod oder Verlegung, Aufenthalt < 5 Tage, mit signifikantem operativem Eingriff",
+   "name_tr": "Yatış: yenidoğan, ölüm veya sevk, yatış < 5 gün, önemli cerrahi girişimle",
+   "categories": [
+    "PEDIATRICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEONATOLOGY",
+    "PEDIATRIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P02Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Neonatal Cardiothoracic or Great Vessel Procedures",
+   "slug": "hospitalization-for-neonatal-cardiothoracic-or-great-vessel-procedures",
+   "name_sr": "Kardiotorakalni zahvati / zahvati na velikim krvnim sudovima kod novorođenčeta",
+   "name_ru": "Госпитализация: кардиоторакальные вмешательства и вмешательства на магистральных сосудах у новорождённого",
+   "name_de": "Stationäre Behandlung: kardiothorakale Eingriffe oder Eingriffe an den großen Gefäßen beim Neugeborenen",
+   "name_tr": "Yatış: yenidoğanda kardiyotorasik veya büyük damar girişimleri",
+   "categories": [
+    "PEDIATRICS",
+    "CARDIOLOGY"
+   ],
+   "specialties": [
+    "NEONATOLOGY",
+    "CARDIAC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P03Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 1000-1499 g with Significant Operative Procedure",
+   "slug": "hospitalization-for-newborn-1000-1499-g-with-significant-surgery",
+   "name_sr": "Novorođenče, masa pri prijemu 1000–1499 g, sa značajnim operativnim zahvatom",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 1000–1499 г, со значимым оперативным вмешательством",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 1000–1499 g, mit signifikantem operativem Eingriff",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 1000–1499 g, önemli cerrahi girişimle",
+   "categories": [
+    "PEDIATRICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEONATOLOGY",
+    "PEDIATRIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P04Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 1500-1999 g with Significant Operative Procedure",
+   "slug": "hospitalization-for-newborn-1500-1999-g-with-significant-surgery",
+   "name_sr": "Novorođenče, masa pri prijemu 1500–1999 g, sa značajnim operativnim zahvatom",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 1500–1999 г, со значимым оперативным вмешательством",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 1500–1999 g, mit signifikantem operativem Eingriff",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 1500–1999 g, önemli cerrahi girişimle",
+   "categories": [
+    "PEDIATRICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEONATOLOGY",
+    "PEDIATRIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P05Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 2000-2499 g with Significant Operative Procedure",
+   "slug": "hospitalization-for-newborn-2000-2499-g-with-significant-surgery",
+   "name_sr": "Novorođenče, masa pri prijemu 2000–2499 g, sa značajnim operativnim zahvatom",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 2000–2499 г, со значимым оперативным вмешательством",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 2000–2499 g, mit signifikantem operativem Eingriff",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2000–2499 g, önemli cerrahi girişimle",
+   "categories": [
+    "PEDIATRICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEONATOLOGY",
+    "PEDIATRIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P06A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight over 2499 g with Significant Operative Procedure and Multiple Major Problems",
+   "slug": "hospitalization-for-newborn-over-2499-g-with-significant-surgery-and-multiple-major-problems",
+   "name_sr": "Novorođenče, masa pri prijemu > 2499 g, sa značajnim operativnim zahvatom i sa višestrukim velikim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении более 2499 г, со значимым оперативным вмешательством и множественными тяжёлыми нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht über 2499 g, mit signifikantem operativem Eingriff und mehreren schweren Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2499 g üzeri, önemli cerrahi girişimle ve çoklu majör bozukluklarla",
+   "categories": [
+    "PEDIATRICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEONATOLOGY",
+    "PEDIATRIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P06B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight over 2499 g with Significant Operative Procedure, without Multiple Major Problems",
+   "slug": "hospitalization-for-newborn-over-2499-g-with-significant-surgery-without-multiple-major-problems",
+   "name_sr": "Novorođenče, masa pri prijemu > 2499 g, sa značajnim operativnim zahvatom, bez višestrukih velikih poremećaja",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении более 2499 г, со значимым оперативным вмешательством, без множественных тяжёлых нарушений",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht über 2499 g, mit signifikantem operativem Eingriff, ohne mehrere schwere Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2499 g üzeri, önemli cerrahi girişimle, çoklu majör bozukluk olmadan",
+   "categories": [
+    "PEDIATRICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEONATOLOGY",
+    "PEDIATRIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn, Death or Transfer within 5 Days of Admission, without Significant Operative Procedure, Birth Admission",
+   "slug": "hospitalization-for-newborn-death-or-transfer-within-5-days-of-admission-without-significant-surgery-birth-admission",
+   "name_sr": "Novorođenče, smrtni ishod ili premještaj u drugu ustanovu < 5 dana od prijema, bez značajnog operativnog zahvata, novorođeno",
+   "name_ru": "Госпитализация: новорождённый, смерть или перевод в другое учреждение < 5 дней от поступления, без значимого оперативного вмешательства, госпитализация при рождении",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Tod oder Verlegung < 5 Tage nach Aufnahme, ohne signifikanten operativen Eingriff, Geburtsaufenthalt",
+   "name_tr": "Yatış: yenidoğan, kabulden itibaren < 5 gün içinde ölüm veya sevk, önemli cerrahi girişim olmadan, doğum yatışı",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": "«novorođeno / nije novorođeno» — эпизод рождения vs. поступление извне (AR-DRG Newborn / Not Newborn)"
+  },
+  {
+   "code": "P60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn, Death or Transfer within 5 Days of Admission, without Significant Operative Procedure, Not Birth Admission",
+   "slug": "hospitalization-for-newborn-death-or-transfer-within-5-days-of-admission-without-significant-surgery-not-birth-admission",
+   "name_sr": "Novorođenče, smrtni ishod ili premještaj u drugu ustanovu < 5 dana od prijema, bez značajnog operativnog zahvata, nije novorođeno",
+   "name_ru": "Госпитализация: новорождённый, смерть или перевод в другое учреждение < 5 дней от поступления, без значимого оперативного вмешательства, поступление не при рождении",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Tod oder Verlegung < 5 Tage nach Aufnahme, ohne signifikanten operativen Eingriff, kein Geburtsaufenthalt",
+   "name_tr": "Yatış: yenidoğan, kabulden itibaren < 5 gün içinde ölüm veya sevk, önemli cerrahi girişim olmadan, doğum yatışı değil",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P61Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight under 750 g",
+   "slug": "hospitalization-for-newborn-under-750-g",
+   "name_sr": "Novorođenče, masa pri prijemu < 750 g",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении менее 750 г",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht unter 750 g",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 750 g altı",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P62Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 750-999 g",
+   "slug": "hospitalization-for-newborn-750-999-g",
+   "name_sr": "Novorođenče, masa pri prijemu 750–999 g",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 750–999 г",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 750–999 g",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 750–999 g",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P63Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 1000-1249 g without Significant Operative Procedure",
+   "slug": "hospitalization-for-newborn-1000-1249-g-without-significant-surgery",
+   "name_sr": "Novorođenče, masa pri prijemu 1000–1249 g, bez značajnog operativnog zahvata",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 1000–1249 г, без значимого оперативного вмешательства",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 1000–1249 g, ohne signifikanten operativen Eingriff",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 1000–1249 g, önemli cerrahi girişim olmadan",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P64Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 1250-1499 g without Significant Operative Procedure",
+   "slug": "hospitalization-for-newborn-1250-1499-g-without-significant-surgery",
+   "name_sr": "Novorođenče, masa pri prijemu 1250–1499 g, bez značajnog operativnog zahvata",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 1250–1499 г, без значимого оперативного вмешательства",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 1250–1499 g, ohne signifikanten operativen Eingriff",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 1250–1499 g, önemli cerrahi girişim olmadan",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P65A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 1500-1999 g without Significant Operative Procedure, with Multiple Major Problems",
+   "slug": "hospitalization-for-newborn-1500-1999-g-without-significant-surgery-with-multiple-major-problems",
+   "name_sr": "Novorođenče, masa pri prijemu 1500–1999 g, bez značajnog operativnog zahvata, sa višestrukim velikim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 1500–1999 г, без значимого оперативного вмешательства, с множественными тяжёлыми нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 1500–1999 g, ohne signifikanten operativen Eingriff, mit mehreren schweren Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 1500–1999 g, önemli cerrahi girişim olmadan, çoklu majör bozukluklarla",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P65B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 1500-1999 g without Significant Operative Procedure, with Major Problems",
+   "slug": "hospitalization-for-newborn-1500-1999-g-without-significant-surgery-with-major-problems",
+   "name_sr": "Novorođenče, masa pri prijemu 1500–1999 g, bez značajnog operativnog zahvata, sa velikim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 1500–1999 г, без значимого оперативного вмешательства, с тяжёлыми нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 1500–1999 g, ohne signifikanten operativen Eingriff, mit schweren Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 1500–1999 g, önemli cerrahi girişim olmadan, majör bozukluklarla",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P65C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 1500-1999 g without Significant Operative Procedure, with Other Problems",
+   "slug": "hospitalization-for-newborn-1500-1999-g-without-significant-surgery-with-other-problems",
+   "name_sr": "Novorođenče, masa pri prijemu 1500–1999 g, bez značajnog operativnog zahvata, sa ostalim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 1500–1999 г, без значимого оперативного вмешательства, с прочими нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 1500–1999 g, ohne signifikanten operativen Eingriff, mit sonstigen Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 1500–1999 g, önemli cerrahi girişim olmadan, diğer bozukluklarla",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P65D",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 1500-1999 g without Significant Operative Procedure, without Problems",
+   "slug": "hospitalization-for-newborn-1500-1999-g-without-significant-surgery-without-problems",
+   "name_sr": "Novorođenče, masa pri prijemu 1500–1999 g, bez značajnog operativnog zahvata, bez poremećaja",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 1500–1999 г, без значимого оперативного вмешательства, без нарушений",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 1500–1999 g, ohne signifikanten operativen Eingriff, ohne Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 1500–1999 g, önemli cerrahi girişim olmadan, bozukluk olmadan",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P66A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 2000-2499 g without Significant Operative Procedure, with Multiple Major Problems",
+   "slug": "hospitalization-for-newborn-2000-2499-g-without-significant-surgery-with-multiple-major-problems",
+   "name_sr": "Novorođenče, masa pri prijemu 2000–2499 g, bez značajnog operativnog zahvata, sa višestrukim velikim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 2000–2499 г, без значимого оперативного вмешательства, с множественными тяжёлыми нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 2000–2499 g, ohne signifikanten operativen Eingriff, mit mehreren schweren Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2000–2499 g, önemli cerrahi girişim olmadan, çoklu majör bozukluklarla",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P66B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight 2000-2499 g without Significant Operative Procedure, with Major Problems",
+   "slug": "hospitalization-for-newborn-2000-2499-g-without-significant-surgery-with-major-problems",
+   "name_sr": "Novorođenče, masa pri prijemu 2000–2499 g, bez značajnog operativnog zahvata, sa velikim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении 2000–2499 г, без значимого оперативного вмешательства, с тяжёлыми нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht 2000–2499 g, ohne signifikanten operativen Eingriff, mit schweren Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2000–2499 g, önemli cerrahi girişim olmadan, majör bozukluklarla",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P67A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight over 2499 g without Significant Operative Procedure, with Multiple Major Problems",
+   "slug": "hospitalization-for-newborn-over-2499-g-without-significant-surgery-with-multiple-major-problems",
+   "name_sr": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog zahvata, sa višestrukim velikim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении более 2499 г, без значимого оперативного вмешательства, с множественными тяжёлыми нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht über 2499 g, ohne signifikanten operativen Eingriff, mit mehreren schweren Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2499 g üzeri, önemli cerrahi girişim olmadan, çoklu majör bozukluklarla",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "P67B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Newborn with Admission Weight over 2499 g without Significant Operative Procedure, with Major Problems",
+   "slug": "hospitalization-for-newborn-over-2499-g-without-significant-surgery-with-major-problems",
+   "name_sr": "Novorođenče, masa pri prijemu > 2499 g, bez značajnog operativnog zahvata, sa velikim poremećajima",
+   "name_ru": "Госпитализация: новорождённый с массой при поступлении более 2499 г, без значимого оперативного вмешательства, с тяжёлыми нарушениями",
+   "name_de": "Stationäre Behandlung: Neugeborenes, Aufnahmegewicht über 2499 g, ohne signifikanten operativen Eingriff, mit schweren Störungen",
+   "name_tr": "Yatış: yenidoğan, kabul ağırlığı 2499 g üzeri, önemli cerrahi girişim olmadan, majör bozukluklarla",
+   "categories": [
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Q02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Operative Procedures for Blood and Blood-Forming Organ Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-operative-procedures-for-blood-and-blood-forming-organ-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Ostali operativni zahvati zbog bolesti krvi i krvotvornih organa bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: прочие оперативные вмешательства при болезнях крови и кроветворных органов, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe bei Erkrankungen des Blutes und der blutbildenden Organe, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: kan ve kan yapıcı organ hastalıklarında diğer cerrahi girişimler, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Q60C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Reticuloendothelial and Immunity Disorders without Malignancy, without Very Severe or Severe CC",
+   "slug": "hospitalization-for-reticuloendothelial-and-immunity-disorders-without-malignancy-without-very-severe-or-severe-cc",
+   "name_sr": "Retikuloendotelni poremećaji i poremećaji imuniteta, bez maligne bolesti, bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: ретикулоэндотелиальные нарушения и нарушения иммунитета, без злокачественного заболевания, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des retikuloendothelialen Systems und Immunstörungen, ohne Malignom, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: retiküloendotelyal sistem ve bağışıklık bozuklukları, malignite olmadan, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "IMMUNOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Q61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Red Blood Cell Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-red-blood-cell-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Poremećaji eritrocita sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: болезни эритроцитов, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen der Erythrozyten, mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: eritrosit bozuklukları, çok ağır veya ağır CC ile",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Q61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Red Blood Cell Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-red-blood-cell-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Poremećaji eritrocita bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: болезни эритроцитов, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen der Erythrozyten, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: eritrosit bozuklukları, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Q62Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Coagulation Disorders",
+   "slug": "hospitalization-for-coagulation-disorders",
+   "name_sr": "Poremećaji koagulacije krvi",
+   "name_ru": "Госпитализация: нарушения свёртывания крови",
+   "name_de": "Stationäre Behandlung: Gerinnungsstörungen",
+   "name_tr": "Yatış: kan pıhtılaşma bozuklukları",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Q02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Operative Procedures for Blood and Blood-Forming Organ Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-operative-procedures-for-blood-and-blood-forming-organ-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Ostali operativni zahvati zbog bolesti krvi i krvotvornih organa sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: прочие оперативные вмешательства при болезнях крови и кроветворных органов, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: sonstige operative Eingriffe bei Erkrankungen des Blutes und der blutbildenden Organe, mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: kan ve kan yapıcı organ hastalıklarında diğer cerrahi girişimler, çok ağır veya ağır CC ile",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Q60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Reticuloendothelial and Immunity Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-reticuloendothelial-and-immunity-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Retikuloendotelni poremećaji i poremećaji imuniteta sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: ретикулоэндотелиальные нарушения и нарушения иммунитета, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des retikuloendothelialen Systems und Immunstörungen, mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: retiküloendotelyal sistem ve bağışıklık bozuklukları, çok ağır veya ağır CC ile",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "IMMUNOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Q60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Reticuloendothelial and Immunity Disorders with Malignancy, without Very Severe or Severe CC",
+   "slug": "hospitalization-for-reticuloendothelial-and-immunity-disorders-with-malignancy-without-very-severe-or-severe-cc",
+   "name_sr": "Retikuloendotelni poremećaji i poremećaji imuniteta, sa malignom bolešću, bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: ретикулоэндотелиальные нарушения и нарушения иммунитета, со злокачественным заболеванием, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des retikuloendothelialen Systems und Immunstörungen, mit Malignom, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: retiküloendotelyal sistem ve bağışıklık bozuklukları, malignite ile, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "IMMUNOLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R01A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Lymphoma and Leukemia with Major Operative Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-lymphoma-and-leukemia-with-major-operative-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Limfom i leukemija sa velikim operativnim zahvatima sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: лимфома и лейкоз с большими оперативными вмешательствами, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Lymphom und Leukämie mit großen operativen Eingriffen, mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: majör cerrahi girişimli lenfoma ve lösemi, çok ağır veya ağır CC ile",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "ONCOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R01B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Lymphoma and Leukemia with Major Operative Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-lymphoma-and-leukemia-with-major-operative-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Limfom i leukemija sa velikim operativnim zahvatima bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: лимфома и лейкоз с большими оперативными вмешательствами, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Lymphom und Leukämie mit großen operativen Eingriffen, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: majör cerrahi girişimli lenfoma ve lösemi, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "ONCOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Neoplastic Disorders with Major Operative Procedures with Very Severe CC",
+   "slug": "hospitalization-for-other-neoplastic-disorders-with-major-operative-procedures-with-very-severe-cc",
+   "name_sr": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima sa vrlo teškim KK",
+   "name_ru": "Госпитализация: прочие опухолевые заболевания с большими оперативными вмешательствами, с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: sonstige neoplastische Erkrankungen mit großen operativen Eingriffen, mit sehr schweren KK",
+   "name_tr": "Yatış: majör cerrahi girişimli diğer neoplastik hastalıklar, çok ağır CC ile",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ONCOLOGY",
+    "ONCOLOGIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Neoplastic Disorders with Major Operative Procedures with Severe or Moderate CC",
+   "slug": "hospitalization-for-other-neoplastic-disorders-with-major-operative-procedures-with-severe-or-moderate-cc",
+   "name_sr": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: прочие опухолевые заболевания с большими оперативными вмешательствами, с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: sonstige neoplastische Erkrankungen mit großen operativen Eingriffen, mit schweren oder mäßigen KK",
+   "name_tr": "Yatış: majör cerrahi girişimli diğer neoplastik hastalıklar, ağır veya orta CC ile",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ONCOLOGY",
+    "ONCOLOGIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R02C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Neoplastic Disorders with Major Operative Procedures without CC",
+   "slug": "hospitalization-for-other-neoplastic-disorders-with-major-operative-procedures-without-cc",
+   "name_sr": "Ostali neoplastični poremećaji sa velikim operativnim zahvatima bez KK",
+   "name_ru": "Госпитализация: прочие опухолевые заболевания с большими оперативными вмешательствами, без ОО",
+   "name_de": "Stationäre Behandlung: sonstige neoplastische Erkrankungen mit großen operativen Eingriffen, ohne KK",
+   "name_tr": "Yatış: majör cerrahi girişimli diğer neoplastik hastalıklar, CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ONCOLOGY",
+    "ONCOLOGIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R03A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Lymphoma and Leukemia with Other Operative Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-lymphoma-and-leukemia-with-other-operative-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Limfom i leukemija sa ostalim operativnim zahvatima sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: лимфома и лейкоз с прочими оперативными вмешательствами, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Lymphom und Leukämie mit sonstigen operativen Eingriffen, mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: diğer cerrahi girişimli lenfoma ve lösemi, çok ağır veya ağır CC ile",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "ONCOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R03B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Lymphoma and Leukemia with Other Operative Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-lymphoma-and-leukemia-with-other-operative-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Limfom i leukemija sa ostalim operativnim zahvatima bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: лимфома и лейкоз с прочими оперативными вмешательствами, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Lymphom und Leukämie mit sonstigen operativen Eingriffen, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: diğer cerrahi girişimli lenfoma ve lösemi, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "ONCOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R04A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Neoplastic Disorders with Other Operative Procedures with CC",
+   "slug": "hospitalization-for-other-neoplastic-disorders-with-other-operative-procedures-with-cc",
+   "name_sr": "Ostali neoplastični poremećaji sa ostalim operativnim zahvatima sa KK",
+   "name_ru": "Госпитализация: прочие опухолевые заболевания с прочими оперативными вмешательствами, с ОО",
+   "name_de": "Stationäre Behandlung: sonstige neoplastische Erkrankungen mit sonstigen operativen Eingriffen, mit KK",
+   "name_tr": "Yatış: diğer cerrahi girişimli diğer neoplastik hastalıklar, CC ile",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ONCOLOGY",
+    "ONCOLOGIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R04B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Neoplastic Disorders with Other Operative Procedures without CC",
+   "slug": "hospitalization-for-other-neoplastic-disorders-with-other-operative-procedures-without-cc",
+   "name_sr": "Ostali neoplastični poremećaji sa ostalim operativnim zahvatima bez KK",
+   "name_ru": "Госпитализация: прочие опухолевые заболевания с прочими оперативными вмешательствами, без ОО",
+   "name_de": "Stationäre Behandlung: sonstige neoplastische Erkrankungen mit sonstigen operativen Eingriffen, ohne KK",
+   "name_tr": "Yatış: diğer cerrahi girişimli diğer neoplastik hastalıklar, CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ONCOLOGY",
+    "ONCOLOGIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Acute Leukemia with Very Severe CC",
+   "slug": "hospitalization-for-acute-leukemia-with-very-severe-cc",
+   "name_sr": "Akutna leukemija sa vrlo teškim KK",
+   "name_ru": "Госпитализация: острый лейкоз, с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: akute Leukämie, mit sehr schweren KK",
+   "name_tr": "Yatış: akut lösemi, çok ağır CC ile",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Acute Leukemia without Very Severe CC",
+   "slug": "hospitalization-for-acute-leukemia-without-very-severe-cc",
+   "name_sr": "Akutna leukemija bez vrlo teških KK",
+   "name_ru": "Госпитализация: острый лейкоз, без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: akute Leukämie, ohne sehr schwere KK",
+   "name_tr": "Yatış: akut lösemi, çok ağır CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Lymphoma and Non-Acute Leukemia with Very Severe CC",
+   "slug": "hospitalization-for-lymphoma-and-non-acute-leukemia-with-very-severe-cc",
+   "name_sr": "Limfom i neakutna leukemija sa vrlo teškim KK",
+   "name_ru": "Госпитализация: лимфома и неострый лейкоз, с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Lymphom und nicht akute Leukämie, mit sehr schweren KK",
+   "name_tr": "Yatış: lenfoma ve akut olmayan lösemi, çok ağır CC ile",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Lymphoma and Non-Acute Leukemia without Very Severe CC",
+   "slug": "hospitalization-for-lymphoma-and-non-acute-leukemia-without-very-severe-cc",
+   "name_sr": "Limfom i neakutna leukemija bez vrlo teških KK",
+   "name_ru": "Госпитализация: лимфома и неострый лейкоз, без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Lymphom und nicht akute Leukämie, ohne sehr schwere KK",
+   "name_tr": "Yatış: lenfoma ve akut olmayan lösemi, çok ağır CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "ONCOLOGY"
+   ],
+   "note": "name_kccg «bez vrlo teških KK» (в FZOCG «sa teškim KK») — взято по КЦЦГ"
+  },
+  {
+   "code": "R61C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Lymphoma and Non-Acute Leukemia Same Day",
+   "slug": "hospitalization-for-lymphoma-and-non-acute-leukemia-same-day",
+   "name_sr": "Limfom i neakutna leukemija, isti dan",
+   "name_ru": "Госпитализация: лимфома и неострый лейкоз, в течение одного дня",
+   "name_de": "Stationäre Behandlung: Lymphom und nicht akute Leukämie, am selben Tag",
+   "name_tr": "Yatış: lenfoma ve akut olmayan lösemi, aynı gün",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "HEMATOLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R62A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Neoplastic Disorders with CC",
+   "slug": "hospitalization-for-other-neoplastic-disorders-with-cc",
+   "name_sr": "Ostali neoplastični poremećaji sa KK",
+   "name_ru": "Госпитализация: прочие опухолевые заболевания, с ОО",
+   "name_de": "Stationäre Behandlung: sonstige neoplastische Erkrankungen, mit KK",
+   "name_tr": "Yatış: diğer neoplastik hastalıklar, CC ile",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R62B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Neoplastic Disorders without CC",
+   "slug": "hospitalization-for-other-neoplastic-disorders-without-cc",
+   "name_sr": "Ostali neoplastični poremećaji bez KK",
+   "name_ru": "Госпитализация: прочие опухолевые заболевания, без ОО",
+   "name_de": "Stationäre Behandlung: sonstige neoplastische Erkrankungen, ohne KK",
+   "name_tr": "Yatış: diğer neoplastik hastalıklar, CC olmadan",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "R63Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "chemotherapy-application",
+   "id": 5895,
+   "note": "DRG — эпизод химиотерапии; привязано к «Aplikacija hemoterapije»"
+  },
+  {
+   "code": "R64Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Radiotherapy",
+   "slug": "hospitalization-for-radiotherapy",
+   "name_sr": "Radioterapija",
+   "name_ru": "Госпитализация: лучевая терапия",
+   "name_de": "Stationäre Behandlung: Strahlentherapie",
+   "name_tr": "Yatış: radyoterapi",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "ONCOLOGY"
+   ],
+   "note": "радиотерапии в каталоге нет"
+  }
+ ]
+}

@@ -27,12 +27,12 @@
 PRE-RESOLUTION SNAPSHOT (исходный чеклист, оставлен для истории):
 
 **Где смотреть PDF-источники:**
-- FZOCG: `e:/pet/docta.me/прейскуранты/fzocg/<категория>/`
-- KBKotor: `e:/pet/docta.me/прейскуранты/kbkotor/`
+- FZOCG: `data/pricelists/fzocg/<категория>/`
+- KBKotor: `data/pricelists/risan bolnica/`
 
 **Где смотреть JSON-результаты:**
 - `data/fzocg/<категория>/<категория>-FINAL.json`
-- `data/kbkotor/<slug>/<slug>-FINAL.json`
+- `data/risan-bolnica/<slug>/<slug>-FINAL.json`
 
 В каждом item:
 - `_sources` — откуда взяты name/price/section (paddle / llm-* / paddle-as-*-via-llm-hint / llm-fallback / llm-only / paddle-single-rescue / llm-substantive)

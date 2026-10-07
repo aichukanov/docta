@@ -186,7 +186,7 @@ py -3.12 scripts/fzocg/merge_to_final.py <category-slug>
 ## Хранение файлов
 
 ```
-e:/pet/docta.me/прейскуранты/<source>/<category>/      # raw входные PDF (не в репо)
+nuxt/data/pricelists/<source>/<category>/              # raw входные PDF (см. data/pricelists/README.md)
   └── *.pdf
 
 nuxt/data/<root>/<category>/                           # OCR-выходы + финал

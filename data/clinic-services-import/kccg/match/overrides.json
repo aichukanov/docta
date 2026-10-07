@@ -1,0 +1,593 @@
+{
+ "D20001": {
+  "decision": "existing",
+  "kind": "medical_service",
+  "slug": "first-dental-specialist-examination",
+  "id": 5280,
+  "why": "Первичный осмотр в отделении оральной хирургии: та же запись, что у остальных стоматологических отделений КЦЦГ (D22001, D25001); цены отделений сводятся в диапазон."
+ },
+ "D21001": {
+  "decision": "existing",
+  "kind": "medical_service",
+  "slug": "first-dental-specialist-examination",
+  "id": 5280,
+  "why": "Первичный осмотр пародонтолога — общая запись 5280, как у D22001/D25001."
+ },
+ "D20002": {
+  "copy_from": "D22002",
+  "why": "Повторный осмотр — общая новая запись, как D22002/D25002."
+ },
+ "D21002": {
+  "copy_from": "D22002",
+  "why": "Повторный осмотр — общая новая запись, как D22002/D25002."
+ },
+ "D20003": {
+  "decision": "existing",
+  "kind": "medical_service",
+  "slug": "dental-consultation",
+  "id": 1632,
+  "why": "Консультативный осмотр — 1632, как D22003."
+ },
+ "D21003": {
+  "decision": "existing",
+  "kind": "medical_service",
+  "slug": "dental-consultation",
+  "id": 1632,
+  "why": "Консультативный осмотр — 1632, как D22003."
+ },
+ "D20033": {
+  "copy_from": "D22009",
+  "why": "«Analiza RTG snimaka» — та же новая запись, что в D22/D23/D24/D25."
+ },
+ "D21022": {
+  "copy_from": "D22009",
+  "why": "То же."
+ },
+ "D20034": {
+  "copy_from": "D22004",
+  "why": "«Savjetovanje i instrukcije» — та же новая запись «Dental Counseling»."
+ },
+ "D21004": {
+  "copy_from": "D22004",
+  "why": "То же."
+ },
+ "D20026": {
+  "categories": [
+   "DENTISTRY",
+   "PEDIATRIC_DENTISTRY"
+  ],
+  "specialties": [
+   "DENTISTRY",
+   "PEDIATRIC_DENTISTRY"
+  ],
+  "why": "Реплантация зуба — общая запись для D20026 и D23046 (детская)."
+ },
+ "D23046": {
+  "copy_from": "D20026",
+  "why": "«Replantacija stalnih zuba» — та же услуга, что D20026."
+ },
+ "Z03100": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "copper-in-24h-urine",
+  "id": 1436,
+  "why": "Вид пробы не указан; медь в моче клинически определяют в суточной моче (диагностика болезни Вильсона) — 1436."
+ },
+ "X32013": {
+  "decision": "doubtful",
+  "note": "Цена 1,50 = 3 × 0,50 FZOCG — цена за единицу дозы, не за процедуру; на сайте выглядела бы как цена облучения."
+ },
+ "X32014": {
+  "decision": "doubtful",
+  "note": "Цена 0,99 = 3 × 0,33 FZOCG — цена за единицу дозы, не за процедуру."
+ },
+ "X32015": {
+  "decision": "doubtful",
+  "note": "Облучение компонентов крови перед трансфузией — не услуга пациенту; цена 0,84 за единицу."
+ },
+ "H07006": {
+  "decision": "doubtful",
+  "note": "Диетпрограмма для коллективного питания — услуга организациям, не пациенту."
+ },
+ "Z03050": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "free-cortisol-in-urine",
+  "id": 605,
+  "why": "Материал не указан; свободный кортизол определяют в моче — единственный разумный кандидат 605 (общий «в моче», не суточная 1460)."
+ },
+ "D24016": {
+  "decision": "existing",
+  "kind": "medical_service",
+  "slug": "x-ray-maxilla-mandible-tmj",
+  "id": 2019,
+  "why": "«Tendgen maxile i mandibule» — опечатка «Rendgen»; ближайшая запись 2019 «Rendgen maksile, mandibule i temporomandibularnog zgloba»."
+ },
+ "X29012": {
+  "decision": "existing",
+  "kind": "medical_service",
+  "slug": "infant-brain-ultrasound-neurosonography",
+  "id": 4147,
+  "why": "Агент выбрал cranial-ultrasound-for-newborns-and-infants; 2026-10-05 она слита в 4147 (slug_redirects)."
+ },
+ "Z03105": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "n-acetyl-beta-glucosaminidase-nag",
+  "id": 5416,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): N-Acetyl-Beta-Glucosaminidase NAG. Тот же фермент NAG (N-acetyl-beta-D-glucosaminidase), разница только в порядке слов и букве D"
+ },
+ "K06063": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "ena-screening",
+  "id": 3744,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): ENA Screening. ENA скрининг — один и тот же скрининг-тест антител к экстрагируемым ядерным антигенам"
+ },
+ "K06030": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "anca-profile",
+  "id": 3745,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): ANCA Profile. Оба — профиль ANCA; в каталоге число антигенов не указано, у КЦЦГ 7 (стандартный ANCA-профиль immunoblot), расхождение по составу панели не исключено"
+ },
+ "K06040": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "anti-annexin-igg-antibodies",
+  "id": 3624,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): Anti-Annexin IgG Antibodies. Анти-аннексин IgG; в каталоге не указано «V», но в антифосфолипидной диагностике анти-аннексин — это аннексин V. Класс IgG совпадает. Пара IgM (anti-annexin-v-igm) в каталоге-срезе отсутствует"
+ },
+ "K06070": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "liver-autoantibody-panel-13-antigens",
+  "id": 3622,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): Liver Autoantibody Panel 13 Antigens. Оба — иммуноблот-панель аутоантител печени (AMA-M2, Sp100, gp210, LKM-1, LC-1, SLA/LP...); у КЦЦГ состав и число антигенов не указаны, может отличаться от 13"
+ },
+ "K05030": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "karyotype-from-abortion-material",
+  "id": 5384,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): Karyotype from Abortion Material. Продукты концепции (abortus, mola) = абортивный материал; кариотип плода G-бэндинг"
+ },
+ "K05033": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "karyotype-from-amniotic-fluid",
+  "id": 5385,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): Karyotype from Amniotic Fluid. Кариотип из культивированных клеток амниотической жидкости — тот же анализ (одноплодная; вариант для близнецов — отдельная запись 5386)"
+ },
+ "K05034": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "karyotype-from-cordocentesis-blood",
+  "id": 5389,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): Karyotype from Cordocentesis Blood. Фетальная кровь получается кордоцентезом; кариотип культивированных лимфоцитов фетальной крови"
+ },
+ "K05032": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "karyotype-from-chorionic-villi",
+  "id": 5388,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): Karyotype from Chorionic Villi. Каталог не различает кратко- и долгосрочную культуру; стандартный кариотип ворсин хориона (G, 30 метафаз) — долгосрочная культура. Краткосрочную (karyotype-from-chorionic-villi-short-term-culture) оставить новой записью"
+ },
+ "K05037": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "karyotype-from-bone-marrow",
+  "id": 5387,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): Karyotype from Bone Marrow. Синоним каталога «Kariotip iz kostne srži kultura» — культивированный вариант, а не прямой метод; длительность культуры (72 ч) в каталоге не указана. Прямой метод (karyotype-from-bone-marrow-direct-method) оставить новой записью"
+ },
+ "K05036": {
+  "decision": "existing",
+  "kind": "lab_test",
+  "slug": "chromosomal-aberration-test",
+  "id": 5296,
+  "why": "Запись появилась в каталоге после 2026-10-02 (другой импорт): Chromosomal Aberration Test. Цитогенетическая биодозиметрия — это анализ хромосомных аберраций в лимфоцитах (профэкспозиция облучению); в каталоге метод/число метафаз не указаны, проверить по прайсу-источнику записи 5296"
+ },
+ "F10A": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Coronary Intervention in Acute Myocardial Infarction with Very Severe CC",
+  "slug": "hospitalization-for-coronary-intervention-in-acute-myocardial-infarction-with-very-severe-cc",
+  "name_sr": "Interventni koronarni zahvat kod akutnog infarkta miokarda sa vrlo teškim KK",
+  "name_ru": "Госпитализация: чрескожное коронарное вмешательство при остром инфаркте миокарда с очень тяжёлыми ОО",
+  "name_de": "Stationäre Behandlung: Koronarintervention bei akutem Myokardinfarkt mit sehr schweren KK",
+  "name_tr": "Yatış: Akut miyokard enfarktüsünde koroner girişim, çok şiddetli CC ile",
+  "categories": [
+   "CARDIOLOGY"
+  ],
+  "specialties": [
+   "CARDIOLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "F10B": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Coronary Intervention in Acute Myocardial Infarction without Very Severe CC",
+  "slug": "hospitalization-for-coronary-intervention-in-acute-myocardial-infarction-without-very-severe-cc",
+  "name_sr": "Interventni koronarni zahvat kod akutnog infarkta miokarda bez vrlo teških KK",
+  "name_ru": "Госпитализация: чрескожное коронарное вмешательство при остром инфаркте миокарда без очень тяжёлых ОО",
+  "name_de": "Stationäre Behandlung: Koronarintervention bei akutem Myokardinfarkt ohne sehr schwere KK",
+  "name_tr": "Yatış: Akut miyokard enfarktüsünde koroner girişim, çok şiddetli CC olmadan",
+  "categories": [
+   "CARDIOLOGY"
+  ],
+  "specialties": [
+   "CARDIOLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "F15A": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Coronary Intervention with Stent without Acute Myocardial Infarction with Very Severe or Severe CC",
+  "slug": "hospitalization-for-coronary-intervention-with-stent-without-acute-myocardial-infarction-with-very-severe-or-severe-cc",
+  "name_sr": "Interventni koronarni zahvati sa ugradnjom stenta, bez akutnog infarkta miokarda, sa vrlo teškim ili teškim KK",
+  "name_ru": "Госпитализация: коронарное вмешательство со стентированием без острого инфаркта миокарда, с очень тяжёлыми или тяжёлыми ОО",
+  "name_de": "Stationäre Behandlung: Koronarintervention mit Stent ohne akuten Myokardinfarkt mit sehr schweren oder schweren KK",
+  "name_tr": "Yatış: Akut miyokard enfarktüsü olmadan stentli koroner girişim, çok şiddetli veya şiddetli CC ile",
+  "categories": [
+   "CARDIOLOGY"
+  ],
+  "specialties": [
+   "CARDIOLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "F15B": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Coronary Intervention with Stent without Acute Myocardial Infarction without Very Severe or Severe CC",
+  "slug": "hospitalization-for-coronary-intervention-with-stent-without-acute-myocardial-infarction-without-very-severe-or-severe-cc",
+  "name_sr": "Interventni koronarni zahvati sa ugradnjom stenta, bez akutnog infarkta miokarda, bez vrlo teških ili teških KK",
+  "name_ru": "Госпитализация: коронарное вмешательство со стентированием без острого инфаркта миокарда, без очень тяжёлых или тяжёлых ОО",
+  "name_de": "Stationäre Behandlung: Koronarintervention mit Stent ohne akuten Myokardinfarkt ohne sehr schwere oder schwere KK",
+  "name_tr": "Yatış: Akut miyokard enfarktüsü olmadan stentli koroner girişim, çok şiddetli veya şiddetli CC olmadan",
+  "categories": [
+   "CARDIOLOGY"
+  ],
+  "specialties": [
+   "CARDIOLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "F16A": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Coronary Intervention without Stent without Acute Myocardial Infarction with CC",
+  "slug": "hospitalization-for-coronary-intervention-without-stent-without-acute-myocardial-infarction-with-cc",
+  "name_sr": "Interventni koronarni zahvati bez ugradnje stenta, bez akutnog infarkta miokarda, sa KK",
+  "name_ru": "Госпитализация: коронарное вмешательство без стентирования и без острого инфаркта миокарда, с ОО",
+  "name_de": "Stationäre Behandlung: Koronarintervention ohne Stent ohne akuten Myokardinfarkt mit KK",
+  "name_tr": "Yatış: Akut miyokard enfarktüsü olmadan stentsiz koroner girişim, CC ile",
+  "categories": [
+   "CARDIOLOGY"
+  ],
+  "specialties": [
+   "CARDIOLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "F16B": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Coronary Intervention without Stent without Acute Myocardial Infarction without CC",
+  "slug": "hospitalization-for-coronary-intervention-without-stent-without-acute-myocardial-infarction-without-cc",
+  "name_sr": "Interventni koronarni zahvati bez ugradnje stenta, bez akutnog infarkta miokarda, bez KK",
+  "name_ru": "Госпитализация: коронарное вмешательство без стентирования и без острого инфаркта миокарда, без ОО",
+  "name_de": "Stationäre Behandlung: Koronarintervention ohne Stent ohne akuten Myokardinfarkt ohne KK",
+  "name_tr": "Yatış: Akut miyokard enfarktüsü olmadan stentsiz koroner girişim, CC olmadan",
+  "categories": [
+   "CARDIOLOGY"
+  ],
+  "specialties": [
+   "CARDIOLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "M40Z": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Cystourethroscopy Same Day",
+  "slug": "hospitalization-for-cystourethroscopy-same-day",
+  "name_sr": "Cistouretroskopija, istog dana",
+  "name_ru": "Госпитализация: цистоуретроскопия в течение одного дня",
+  "name_de": "Stationäre Behandlung: Zystourethroskopie am selben Tag",
+  "name_tr": "Yatış: Sistoüretroskopi, aynı gün",
+  "categories": [
+   "UROLOGY"
+  ],
+  "specialties": [
+   "UROLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G47A": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Other Gastroscopy with Very Severe CC",
+  "slug": "hospitalization-for-other-gastroscopy-with-very-severe-cc",
+  "name_sr": "Ostale gastroskopije sa vrlo teškim KK",
+  "name_ru": "Госпитализация: прочие гастроскопии с очень тяжёлыми ОО",
+  "name_de": "Stationäre Behandlung: Sonstige Gastroskopien mit sehr schweren KK",
+  "name_tr": "Yatış: Diğer gastroskopiler, çok şiddetli CC ile",
+  "categories": [
+   "GASTROENTEROLOGY"
+  ],
+  "specialties": [
+   "GASTROENTEROLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G47B": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Other Gastroscopy without Very Severe CC",
+  "slug": "hospitalization-for-other-gastroscopy-without-very-severe-cc",
+  "name_sr": "Ostale gastroskopije bez vrlo teških KK",
+  "name_ru": "Госпитализация: прочие гастроскопии без очень тяжёлых ОО",
+  "name_de": "Stationäre Behandlung: Sonstige Gastroskopien ohne sehr schwere KK",
+  "name_tr": "Yatış: Diğer gastroskopiler, çok şiddetli CC olmadan",
+  "categories": [
+   "GASTROENTEROLOGY"
+  ],
+  "specialties": [
+   "GASTROENTEROLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G47C": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Other Gastroscopy Same Day",
+  "slug": "hospitalization-for-other-gastroscopy-same-day",
+  "name_sr": "Ostale gastroskopije, istog dana",
+  "name_ru": "Госпитализация: прочие гастроскопии в течение одного дня",
+  "name_de": "Stationäre Behandlung: Sonstige Gastroskopien am selben Tag",
+  "name_tr": "Yatış: Diğer gastroskopiler, aynı gün",
+  "categories": [
+   "GASTROENTEROLOGY"
+  ],
+  "specialties": [
+   "GASTROENTEROLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G48A": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Colonoscopy with Very Severe or Severe CC",
+  "slug": "hospitalization-for-colonoscopy-with-very-severe-or-severe-cc",
+  "name_sr": "Kolonoskopija sa vrlo teškim ili teškim KK",
+  "name_ru": "Госпитализация: колоноскопия с очень тяжёлыми или тяжёлыми ОО",
+  "name_de": "Stationäre Behandlung: Koloskopie mit sehr schweren oder schweren KK",
+  "name_tr": "Yatış: Kolonoskopi, çok şiddetli veya şiddetli CC ile",
+  "categories": [
+   "GASTROENTEROLOGY"
+  ],
+  "specialties": [
+   "GASTROENTEROLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G48B": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Colonoscopy without Very Severe or Severe CC",
+  "slug": "hospitalization-for-colonoscopy-without-very-severe-or-severe-cc",
+  "name_sr": "Kolonoskopija bez vrlo teških ili teških KK",
+  "name_ru": "Госпитализация: колоноскопия без очень тяжёлых или тяжёлых ОО",
+  "name_de": "Stationäre Behandlung: Koloskopie ohne sehr schwere oder schwere KK",
+  "name_tr": "Yatış: Kolonoskopi, çok şiddetli veya şiddetli CC olmadan",
+  "categories": [
+   "GASTROENTEROLOGY"
+  ],
+  "specialties": [
+   "GASTROENTEROLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G48C": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Colonoscopy Same Day",
+  "slug": "hospitalization-for-colonoscopy-same-day",
+  "name_sr": "Kolonoskopija, istog dana",
+  "name_ru": "Госпитализация: колоноскопия в течение одного дня",
+  "name_de": "Stationäre Behandlung: Koloskopie am selben Tag",
+  "name_tr": "Yatış: Kolonoskopi, aynı gün",
+  "categories": [
+   "GASTROENTEROLOGY"
+  ],
+  "specialties": [
+   "GASTROENTEROLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "A06D": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Tracheostomy without Very Severe CC",
+  "slug": "hospitalization-for-tracheostomy-without-very-severe-cc",
+  "name_sr": "Traheostomija bez vrlo teških KK",
+  "name_ru": "Госпитализация: трахеостомия без очень тяжёлых ОО",
+  "name_de": "Stationäre Behandlung: Tracheostomie ohne sehr schwere KK",
+  "name_tr": "Yatış: Trakeostomi, çok şiddetli CC olmadan",
+  "categories": [
+   "GENERAL_SURGERY"
+  ],
+  "specialties": [
+   "GENERAL_SURGERY",
+   "ANESTHESIOLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "L68Z": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Peritoneal Dialysis",
+  "slug": "hospitalization-for-peritoneal-dialysis",
+  "name_sr": "Peritonealna dijaliza",
+  "name_ru": "Госпитализация: перитонеальный диализ",
+  "name_de": "Stationäre Behandlung: Peritonealdialyse",
+  "name_tr": "Yatış: Periton diyalizi",
+  "categories": [
+   "UROLOGY"
+  ],
+  "specialties": [
+   "NEPHROLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "L40Z": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Ureteroscopy",
+  "slug": "hospitalization-for-ureteroscopy",
+  "name_sr": "Ureteroskopija",
+  "name_ru": "Госпитализация: уретероскопия",
+  "name_de": "Stationäre Behandlung: Ureteroskopie",
+  "name_tr": "Yatış: Üreteroskopi",
+  "categories": [
+   "UROLOGY"
+  ],
+  "specialties": [
+   "UROLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "R63Z": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Chemotherapy",
+  "slug": "hospitalization-for-chemotherapy",
+  "name_sr": "Hemoterapija",
+  "name_ru": "Госпитализация: химиотерапия",
+  "name_de": "Stationäre Behandlung: Chemotherapie",
+  "name_tr": "Yatış: Kemoterapi",
+  "categories": [
+   "GENERAL_MEDICINE",
+   "INJECTIONS_INFUSIONS"
+  ],
+  "specialties": [
+   "ONCOLOGY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G04A": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Peritoneal Adhesiolysis with Very Severe CC",
+  "slug": "hospitalization-for-peritoneal-adhesiolysis-with-very-severe-cc",
+  "name_sr": "Adhezioliza peritoneuma sa vrlo teškim KK",
+  "name_ru": "Госпитализация: адгезиолиз брюшины с очень тяжёлыми ОО",
+  "name_de": "Stationäre Behandlung: Peritoneale Adhäsiolyse mit sehr schweren KK",
+  "name_tr": "Yatış: Periton adezyolizi, çok şiddetli CC ile",
+  "categories": [
+   "ABDOMINAL_SURGERY",
+   "GENERAL_SURGERY"
+  ],
+  "specialties": [
+   "GENERAL_SURGERY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G04B": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Peritoneal Adhesiolysis with Severe or Moderate CC",
+  "slug": "hospitalization-for-peritoneal-adhesiolysis-with-severe-or-moderate-cc",
+  "name_sr": "Adhezioliza peritoneuma sa teškim ili umjerenim KK",
+  "name_ru": "Госпитализация: адгезиолиз брюшины с тяжёлыми или умеренными ОО",
+  "name_de": "Stationäre Behandlung: Peritoneale Adhäsiolyse mit schweren oder moderaten KK",
+  "name_tr": "Yatış: Periton adezyolizi, şiddetli veya orta CC ile",
+  "categories": [
+   "ABDOMINAL_SURGERY",
+   "GENERAL_SURGERY"
+  ],
+  "specialties": [
+   "GENERAL_SURGERY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G04C": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Peritoneal Adhesiolysis without CC",
+  "slug": "hospitalization-for-peritoneal-adhesiolysis-without-cc",
+  "name_sr": "Adhezioliza peritoneuma bez KK",
+  "name_ru": "Госпитализация: адгезиолиз брюшины без ОО",
+  "name_de": "Stationäre Behandlung: Peritoneale Adhäsiolyse ohne KK",
+  "name_tr": "Yatış: Periton adezyolizi, CC olmadan",
+  "categories": [
+   "ABDOMINAL_SURGERY",
+   "GENERAL_SURGERY"
+  ],
+  "specialties": [
+   "GENERAL_SURGERY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G07A": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Appendectomy with Malignancy or Peritonitis or with Very Severe or Severe CC",
+  "slug": "hospitalization-for-appendectomy-with-malignancy-or-peritonitis-or-with-very-severe-or-severe-cc",
+  "name_sr": "Apendektomija sa malignim oboljenjem ili peritonitisom ili sa vrlo teškim ili teškim KK",
+  "name_ru": "Госпитализация: аппендэктомия при злокачественном заболевании или перитоните либо с очень тяжёлыми или тяжёлыми ОО",
+  "name_de": "Stationäre Behandlung: Appendektomie bei Malignom oder Peritonitis oder mit sehr schweren oder schweren KK",
+  "name_tr": "Yatış: Malignite veya peritonit ile ya da çok şiddetli veya şiddetli CC ile apendektomi",
+  "categories": [
+   "ABDOMINAL_SURGERY",
+   "GENERAL_SURGERY"
+  ],
+  "specialties": [
+   "GENERAL_SURGERY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ },
+ "G07B": {
+  "decision": "new",
+  "kind": "medical_service",
+  "name_en": "Hospitalization for Appendectomy without Malignancy or Peritonitis without Very Severe or Severe CC",
+  "slug": "hospitalization-for-appendectomy-without-malignancy-or-peritonitis-without-very-severe-or-severe-cc",
+  "name_sr": "Apendektomija bez malignog oboljenja ili peritonitisa, bez vrlo teških ili teških KK",
+  "name_ru": "Госпитализация: аппендэктомия без злокачественного заболевания и перитонита, без очень тяжёлых или тяжёлых ОО",
+  "name_de": "Stationäre Behandlung: Appendektomie ohne Malignom oder Peritonitis ohne sehr schwere oder schwere KK",
+  "name_tr": "Yatış: Malignite veya peritonit olmadan apendektomi, çok şiddetli veya şiddetli CC olmadan",
+  "categories": [
+   "ABDOMINAL_SURGERY",
+   "GENERAL_SURGERY"
+  ],
+  "specialties": [
+   "GENERAL_SURGERY"
+  ],
+  "synonyms": [],
+  "why": "Цена эпизода госпитализации (DRG) не должна сливаться в один диапазон с амбулаторной ценой той же процедуры у КЦЦГ, либо процедура в каталоге совпадает неточно — отдельная запись по конвенции hospitalization-for-*."
+ }
+}

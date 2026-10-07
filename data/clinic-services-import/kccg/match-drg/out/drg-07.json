@@ -1,0 +1,1417 @@
+{
+ "batch": "drg-07",
+ "items": [
+  {
+   "code": "I03B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "total-hip-arthroplasty",
+   "id": 4686,
+   "note": ""
+  },
+  {
+   "code": "I08B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Hip and Femur Procedures without Very Severe CC",
+   "slug": "hospitalization-for-other-hip-and-femur-procedures-without-very-severe-cc",
+   "name_sr": "Ostali zahvati na kuku i femuru bez vrlo teških KK",
+   "name_ru": "Госпитализация: прочие операции на тазобедренном суставе и бедренной кости без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe an Hüfte und Femur ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan diğer kalça ve femur girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I11Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Limb Lengthening Procedures",
+   "slug": "hospitalization-for-limb-lengthening-procedures",
+   "name_sr": "Zahvati radi produženja ekstremiteta",
+   "name_ru": "Госпитализация: операции по удлинению конечностей",
+   "name_de": "Stationäre Behandlung: Eingriffe zur Extremitätenverlängerung",
+   "name_tr": "Yatış: Ekstremite uzatma girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I13B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Humerus, Tibia, Fibula and Ankle Procedures without CC",
+   "slug": "hospitalization-for-humerus-tibia-fibula-and-ankle-procedures-without-cc",
+   "name_sr": "Zahvati na humerusu, tibiji, fibuli i skočnom zglobu bez KK",
+   "name_ru": "Госпитализация: операции на плечевой, большеберцовой и малоберцовой костях и голеностопном суставе без ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Humerus, Tibia, Fibula und Sprunggelenk ohne KK",
+   "name_tr": "Yatış: CC olmadan humerus, tibia, fibula ve ayak bileği girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I18Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Knee Procedures",
+   "slug": "hospitalization-for-other-knee-procedures",
+   "name_sr": "Ostali zahvati na koljenu",
+   "name_ru": "Госпитализация: прочие операции на коленном суставе",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe am Knie",
+   "name_tr": "Yatış: Diğer diz girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I19B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Elbow and Forearm Procedures without CC",
+   "slug": "hospitalization-for-other-elbow-and-forearm-procedures-without-cc",
+   "name_sr": "Ostali zahvati na laktu i podlaktici bez KK",
+   "name_ru": "Госпитализация: прочие операции на локтевом суставе и предплечье без ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe an Ellenbogen und Unterarm ohne KK",
+   "name_tr": "Yatış: CC olmadan diğer dirsek ve önkol girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I20Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Foot Procedures",
+   "slug": "hospitalization-for-other-foot-procedures",
+   "name_sr": "Ostali zahvati na stopalu",
+   "name_ru": "Госпитализация: прочие операции на стопе",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe am Fuß",
+   "name_tr": "Yatış: Diğer ayak girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I23Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "osteosynthetic-material-removal",
+   "id": 6524,
+   "note": "группа = локальная эксцизия ИЛИ удаление внутреннего фиксатора (кроме тазобедренного сустава и бедра); привязано к удалению металлоконструкций — проверить"
+  },
+  {
+   "code": "I30Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hand Procedures",
+   "slug": "hospitalization-for-hand-procedures",
+   "name_sr": "Zahvati na šaci",
+   "name_ru": "Госпитализация: операции на кисти",
+   "name_de": "Stationäre Behandlung: Eingriffe an der Hand",
+   "name_tr": "Yatış: El girişimleri",
+   "categories": [
+    "ORTHOPEDICS",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "PLASTIC_SURGERY"
+   ],
+   "note": "широкий класс операций на кисти — new (carpal-tunnel-surgery 2209 не подходит)"
+  },
+  {
+   "code": "I64B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Osteomyelitis without Very Severe or Severe CC",
+   "slug": "hospitalization-for-osteomyelitis-without-very-severe-or-severe-cc",
+   "name_sr": "Osteomijelitis bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: остеомиелит без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Osteomyelitis ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan osteomiyelit",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I66B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Inflammatory Musculoskeletal Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-inflammatory-musculoskeletal-disorders-without-very-severe-or-severe",
+   "name_sr": "Zapaljenski poremećaji mišićno-skeletnog sistema bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: воспалительные заболевания опорно-двигательного аппарата без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Entzündliche Erkrankungen des Bewegungsapparats ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan inflamatuvar kas-iskelet sistemi bozuklukları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "RHEUMATOLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I68A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Non-Surgical Spinal Disorders with CC",
+   "slug": "hospitalization-for-non-surgical-spinal-disorders-with-cc",
+   "name_sr": "Nehirurški poremećaji kičme sa KK",
+   "name_ru": "Госпитализация: нехирургические заболевания позвоночника с ОО",
+   "name_de": "Stationäre Behandlung: Nichtchirurgische Wirbelsäulenerkrankungen mit KK",
+   "name_tr": "Yatış: CC ile cerrahi dışı omurga bozuklukları",
+   "categories": [
+    "ORTHOPEDICS",
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I68B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Non-Surgical Spinal Disorders without CC",
+   "slug": "hospitalization-for-non-surgical-spinal-disorders-without-cc",
+   "name_sr": "Nehirurški poremećaji kičme bez KK",
+   "name_ru": "Госпитализация: нехирургические заболевания позвоночника без ОО",
+   "name_de": "Stationäre Behandlung: Nichtchirurgische Wirbelsäulenerkrankungen ohne KK",
+   "name_tr": "Yatış: CC olmadan cerrahi dışı omurga bozuklukları",
+   "categories": [
+    "ORTHOPEDICS",
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I69B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bone Diseases and Arthropathies without Very Severe or Severe CC",
+   "slug": "hospitalization-for-bone-diseases-and-arthropathies-without-very-severe-or-severe-cc",
+   "name_sr": "Bolesti kostiju i artropatije bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: болезни костей и артропатии без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Knochenerkrankungen und Arthropathien ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan kemik hastalıkları ve artropatiler",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "RHEUMATOLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I71B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Musculotendinous Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-musculotendinous-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Ostali mišićno-tetivni poremećaji bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: прочие заболевания мышц и сухожилий без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Muskel- und Sehnenerkrankungen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan diğer kas-tendon bozuklukları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I73A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Aftercare with Musculoskeletal Implant or Prosthesis with Very Severe or Severe CC",
+   "slug": "hospitalization-for-aftercare-with-musculoskeletal-implant-or-prosthesis-with-very-severe",
+   "name_sr": "Naknadna njega dijela tijela sa mišićno-skeletnim implantatom/protezom, sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: последующее лечение при ортопедическом имплантате или протезе с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Nachbehandlung bei muskuloskelettalem Implantat oder Prothese mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile kas-iskelet implantı veya protezi sonrası bakım",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I73B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Aftercare with Musculoskeletal Implant or Prosthesis without Very Severe or Severe CC",
+   "slug": "hospitalization-for-aftercare-with-musculoskeletal-implant-or-prosthesis-without-very",
+   "name_sr": "Naknadna njega dijela tijela sa mišićno-skeletnim implantatom/protezom, bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: последующее лечение при ортопедическом имплантате или протезе без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Nachbehandlung bei muskuloskelettalem Implantat oder Prothese ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan kas-iskelet implantı veya protezi sonrası bakım",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I75B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Shoulder, Upper Arm, Elbow, Knee, Lower Leg or Ankle Injury without CC",
+   "slug": "hospitalization-for-shoulder-upper-arm-elbow-knee-lower-leg-or-ankle-injury-without-cc",
+   "name_sr": "Povreda ramena, nadlaktice, lakta, koljena, potkoljenice ili gležnja bez KK",
+   "name_ru": "Госпитализация: травма плечевого сустава, плеча, локтя, колена, голени или голеностопного сустава без ОО",
+   "name_de": "Stationäre Behandlung: Verletzung von Schulter, Oberarm, Ellenbogen, Knie, Unterschenkel oder Sprunggelenk ohne KK",
+   "name_tr": "Yatış: CC olmadan omuz, üst kol, dirsek, diz, alt bacak veya ayak bileği yaralanması",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I78B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Femoral Neck Fracture without Very Severe or Severe CC",
+   "slug": "hospitalization-for-femoral-neck-fracture-without-very-severe-or-severe-cc",
+   "name_sr": "Prelom vrata femura bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: перелом шейки бедренной кости без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Schenkelhalsfraktur ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan femur boynu kırığı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I79B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pathological Fracture without Very Severe CC",
+   "slug": "hospitalization-for-pathological-fracture-without-very-severe-cc",
+   "name_sr": "Patološka fraktura bez vrlo teških KK",
+   "name_ru": "Госпитализация: патологический перелом без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Pathologische Fraktur ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan patolojik kırık",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I01A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bilateral or Multiple Major Lower Limb Joint Procedures with Revision or Very Severe CC",
+   "slug": "hospitalization-for-bilateral-or-multiple-major-lower-limb-joint-procedures-with-revision",
+   "name_sr": "Obostrani ili višestruki veliki zahvati na zglobovima donjih ekstremiteta sa revizijom ili sa vrlo teškim KK",
+   "name_ru": "Госпитализация: двусторонние или множественные большие операции на суставах нижних конечностей с ревизией или очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Beidseitige oder multiple große Eingriffe an Gelenken der unteren Extremitäten mit Revision oder sehr schweren KK",
+   "name_tr": "Yatış: Revizyon veya çok şiddetli CC ile bilateral veya çoklu büyük alt ekstremite eklem girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I01B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bilateral or Multiple Major Lower Limb Joint Procedures without Revision or Very Severe CC",
+   "slug": "hospitalization-for-bilateral-or-multiple-major-lower-limb-joint-procedures-without",
+   "name_sr": "Obostrani ili višestruki veliki zahvati na zglobovima donjih ekstremiteta bez revizije ili vrlo teških KK",
+   "name_ru": "Госпитализация: двусторонние или множественные большие операции на суставах нижних конечностей без ревизии и очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Beidseitige oder multiple große Eingriffe an Gelenken der unteren Extremitäten ohne Revision oder sehr schwere KK",
+   "name_tr": "Yatış: Revizyon veya çok şiddetli CC olmadan bilateral veya çoklu büyük alt ekstremite eklem girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Microvascular Tissue Transfer or Skin Graft with Very Severe or Severe CC, Excluding Hand",
+   "slug": "hospitalization-for-microvascular-tissue-transfer-or-skin-graft-with-very-severe-or",
+   "name_sr": "Mikrovaskularni prenos tkiva ili presađivanje kože sa vrlo teškim ili teškim KK, isključujući šaku",
+   "name_ru": "Госпитализация: микрососудистая пересадка тканей или пересадка кожи с очень тяжёлыми или тяжёлыми ОО, кроме кисти",
+   "name_de": "Stationäre Behandlung: Mikrovaskulärer Gewebetransfer oder Hauttransplantation mit sehr schweren oder schweren KK, außer Hand",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile mikrovasküler doku transferi veya deri grefti (el hariç)",
+   "categories": [
+    "ORTHOPEDICS",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": "в KCCG «režnja kože», по AR-DRG I02A — skin graft; sr приведён к смыслу группы"
+  },
+  {
+   "code": "I02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Skin Graft without Very Severe or Severe CC, Excluding Hand",
+   "slug": "hospitalization-for-skin-graft-without-very-severe-or-severe-cc-excluding-hand",
+   "name_sr": "Presađivanje kože bez vrlo teških ili teških KK, isključujući šaku",
+   "name_ru": "Госпитализация: пересадка кожи без очень тяжёлых или тяжёлых ОО, кроме кисти",
+   "name_de": "Stationäre Behandlung: Hauttransplantation ohne sehr schwere oder schwere KK, außer Hand",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan deri grefti (el hariç)",
+   "categories": [
+    "ORTHOPEDICS",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": "FZOCG пишет «sa vrlo teškim ili teškim KK» — взято «bez» из KCCG (соответствует I02B)"
+  },
+  {
+   "code": "I03A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "total-hip-arthroplasty",
+   "id": 4686,
+   "note": ""
+  },
+  {
+   "code": "I04A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "total-knee-replacement",
+   "id": 6527,
+   "note": ""
+  },
+  {
+   "code": "I04B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "total-knee-replacement",
+   "id": 6527,
+   "note": ""
+  },
+  {
+   "code": "I05A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Joint Replacements with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-joint-replacements-with-very-severe-or-severe-cc",
+   "name_sr": "Zamjene ostalih zglobova sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: эндопротезирование прочих суставов с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Ersatz sonstiger Gelenke mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile diğer eklem protezleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I05B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Joint Replacements without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-joint-replacements-without-very-severe-or-severe-cc",
+   "name_sr": "Zamjene ostalih zglobova bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: эндопротезирование прочих суставов без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Ersatz sonstiger Gelenke ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan diğer eklem protezleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I06Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Spinal Fusion for Deformity",
+   "slug": "hospitalization-for-spinal-fusion-for-deformity",
+   "name_sr": "Spinalna fuzija kod deformiteta",
+   "name_ru": "Госпитализация: спондилодез при деформации позвоночника",
+   "name_de": "Stationäre Behandlung: Spondylodese bei Wirbelsäulendeformität",
+   "name_tr": "Yatış: Deformite için spinal füzyon",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "NEUROSURGERY"
+   ],
+   "note": "спондилодеза в каталоге нет"
+  },
+  {
+   "code": "I07Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Amputation",
+   "slug": "hospitalization-for-amputation",
+   "name_sr": "Amputacija",
+   "name_ru": "Госпитализация: ампутация",
+   "name_de": "Stationäre Behandlung: Amputation",
+   "name_tr": "Yatış: Amputasyon",
+   "categories": [
+    "ORTHOPEDICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "VASCULAR_SURGERY"
+   ],
+   "note": "общей записи «ампутация» нет, только по уровням"
+  },
+  {
+   "code": "I08A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Hip and Femur Procedures with Very Severe CC",
+   "slug": "hospitalization-for-other-hip-and-femur-procedures-with-very-severe-cc",
+   "name_sr": "Ostali zahvati na kuku i femuru sa vrlo teškim KK",
+   "name_ru": "Госпитализация: прочие операции на тазобедренном суставе и бедренной кости с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe an Hüfte und Femur mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile diğer kalça ve femur girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I09A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Spinal Fusion with Very Severe CC",
+   "slug": "hospitalization-for-spinal-fusion-with-very-severe-cc",
+   "name_sr": "Spinalna fuzija sa vrlo teškim KK",
+   "name_ru": "Госпитализация: спондилодез с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Spondylodese mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile spinal füzyon",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "NEUROSURGERY"
+   ],
+   "note": "спондилодеза в каталоге нет"
+  },
+  {
+   "code": "I09B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Spinal Fusion without Very Severe CC",
+   "slug": "hospitalization-for-spinal-fusion-without-very-severe-cc",
+   "name_sr": "Spinalna fuzija bez vrlo teških KK",
+   "name_ru": "Госпитализация: спондилодез без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Spondylodese ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan spinal füzyon",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "NEUROSURGERY"
+   ],
+   "note": "спондилодеза в каталоге нет"
+  },
+  {
+   "code": "I10A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Back and Neck Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-back-and-neck-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Ostali zahvati na leđima i vratu sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: прочие операции на спине и шее с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe an Rücken und Hals mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile diğer sırt ve boyun girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "NEUROSURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I10B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Back and Neck Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-back-and-neck-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Ostali zahvati na leđima i vratu bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: прочие операции на спине и шее без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe an Rücken und Hals ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan diğer sırt ve boyun girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "NEUROSURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I12A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bone and Joint Infection or Inflammation Surgery with Very Severe CC",
+   "slug": "hospitalization-for-bone-and-joint-infection-or-inflammation-surgery-with-very-severe-cc",
+   "name_sr": "Infekcija/upala kostiju i zglobova sa raznim zahvatima na mišićno-skeletnom sistemu sa vrlo teškim KK",
+   "name_ru": "Госпитализация: инфекция или воспаление костей и суставов с операциями на опорно-двигательном аппарате с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Knochen- und Gelenkinfektion oder -entzündung mit Eingriffen am Bewegungsapparat mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile kas-iskelet girişimli kemik ve eklem enfeksiyonu veya iltihabı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I12B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bone and Joint Infection or Inflammation Surgery with Severe or Moderate CC",
+   "slug": "hospitalization-for-bone-and-joint-infection-or-inflammation-surgery-with-severe-or",
+   "name_sr": "Infekcija/upala kostiju i zglobova sa raznim zahvatima na mišićno-skeletnom sistemu sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: инфекция или воспаление костей и суставов с операциями на опорно-двигательном аппарате с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Knochen- und Gelenkinfektion oder -entzündung mit Eingriffen am Bewegungsapparat mit schweren oder moderaten KK",
+   "name_tr": "Yatış: Şiddetli veya orta CC ile kas-iskelet girişimli kemik ve eklem enfeksiyonu veya iltihabı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I12C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bone and Joint Infection or Inflammation Surgery without CC",
+   "slug": "hospitalization-for-bone-and-joint-infection-or-inflammation-surgery-without-cc",
+   "name_sr": "Infekcija/upala kostiju i zglobova sa raznim zahvatima na mišićno-skeletnom sistemu bez KK",
+   "name_ru": "Госпитализация: инфекция или воспаление костей и суставов с операциями на опорно-двигательном аппарате без ОО",
+   "name_de": "Stationäre Behandlung: Knochen- und Gelenkinfektion oder -entzündung mit Eingriffen am Bewegungsapparat ohne KK",
+   "name_tr": "Yatış: CC olmadan kas-iskelet girişimli kemik ve eklem enfeksiyonu veya iltihabı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I13A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Humerus, Tibia, Fibula and Ankle Procedures with CC",
+   "slug": "hospitalization-for-humerus-tibia-fibula-and-ankle-procedures-with-cc",
+   "name_sr": "Zahvati na humerusu, tibiji, fibuli i skočnom zglobu sa KK",
+   "name_ru": "Госпитализация: операции на плечевой, большеберцовой и малоберцовой костях и голеностопном суставе с ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Humerus, Tibia, Fibula und Sprunggelenk mit KK",
+   "name_tr": "Yatış: CC ile humerus, tibia, fibula ve ayak bileği girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I15Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Craniofacial Surgery",
+   "slug": "hospitalization-for-craniofacial-surgery",
+   "name_sr": "Kraniofacijalni hirurški zahvati",
+   "name_ru": "Госпитализация: черепно-лицевые операции",
+   "name_de": "Stationäre Behandlung: Kraniofaziale Eingriffe",
+   "name_tr": "Yatış: Kraniyofasiyal cerrahi girişimler",
+   "categories": [
+    "PLASTIC_SURGERY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "MAXILLOFACIAL_SURGERY",
+    "PLASTIC_SURGERY",
+    "NEUROSURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I16Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Shoulder Procedures",
+   "slug": "hospitalization-for-other-shoulder-procedures",
+   "name_sr": "Ostali zahvati na ramenu",
+   "name_ru": "Госпитализация: прочие операции на плечевом суставе",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe an der Schulter",
+   "name_tr": "Yatış: Diğer omuz girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I17A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Maxillofacial Surgery with CC",
+   "slug": "hospitalization-for-maxillofacial-surgery-with-cc",
+   "name_sr": "Maksilofacijalni hirurški zahvati sa KK",
+   "name_ru": "Госпитализация: челюстно-лицевые операции с ОО",
+   "name_de": "Stationäre Behandlung: Mund-, Kiefer- und Gesichtschirurgische Eingriffe mit KK",
+   "name_tr": "Yatış: CC ile maksillofasiyal cerrahi girişimler",
+   "categories": [
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I17B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Maxillofacial Surgery without CC",
+   "slug": "hospitalization-for-maxillofacial-surgery-without-cc",
+   "name_sr": "Maksilofacijalni hirurški zahvati bez KK",
+   "name_ru": "Госпитализация: челюстно-лицевые операции без ОО",
+   "name_de": "Stationäre Behandlung: Mund-, Kiefer- und Gesichtschirurgische Eingriffe ohne KK",
+   "name_tr": "Yatış: CC olmadan maksillofasiyal cerrahi girişimler",
+   "categories": [
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I19A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Elbow and Forearm Procedures with CC",
+   "slug": "hospitalization-for-other-elbow-and-forearm-procedures-with-cc",
+   "name_sr": "Ostali zahvati na laktu i podlaktici sa KK",
+   "name_ru": "Госпитализация: прочие операции на локтевом суставе и предплечье с ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe an Ellenbogen und Unterarm mit KK",
+   "name_tr": "Yatış: CC ile diğer dirsek ve önkol girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I21Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "osteosynthetic-material-removal",
+   "id": 6524,
+   "note": "группа = локальная эксцизия ИЛИ удаление внутреннего фиксатора (тазобедренный сустав и бедро); привязано к удалению металлоконструкций — проверить"
+  },
+  {
+   "code": "I24Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Arthroscopy",
+   "slug": "hospitalization-for-arthroscopy",
+   "name_sr": "Artroskopija",
+   "name_ru": "Госпитализация: артроскопия",
+   "name_de": "Stationäre Behandlung: Arthroskopie",
+   "name_tr": "Yatış: Artroskopi",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": "общей записи «артроскопия» в каталоге нет (есть только по суставам: колено 4689, плечо 4671 и др.) — new"
+  },
+  {
+   "code": "I27B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Soft Tissue Procedures without CC",
+   "slug": "hospitalization-for-soft-tissue-procedures-without-cc",
+   "name_sr": "Zahvati na mekom tkivu bez KK",
+   "name_ru": "Госпитализация: операции на мягких тканях без ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Weichteilen ohne KK",
+   "name_tr": "Yatış: CC olmadan yumuşak doku girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I28B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Musculoskeletal Procedures without CC",
+   "slug": "hospitalization-for-other-musculoskeletal-procedures-without-cc",
+   "name_sr": "Ostali zahvati na mišićno-skeletnom sistemu bez KK",
+   "name_ru": "Госпитализация: прочие операции на опорно-двигательном аппарате без ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe am Bewegungsapparat ohne KK",
+   "name_tr": "Yatış: CC olmadan diğer kas-iskelet sistemi girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I29Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Knee Reconstruction or Revision",
+   "slug": "hospitalization-for-knee-reconstruction-or-revision",
+   "name_sr": "Rekonstrukcija ili revizija koljena",
+   "name_ru": "Госпитализация: реконструкция или ревизия коленного сустава",
+   "name_de": "Stationäre Behandlung: Rekonstruktion oder Revision des Knies",
+   "name_tr": "Yatış: Diz rekonstrüksiyonu veya revizyonu",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Distal Femur Fracture without CC",
+   "slug": "hospitalization-for-distal-femur-fracture-without-cc",
+   "name_sr": "Prelom donjeg dijela femura bez KK",
+   "name_ru": "Госпитализация: перелом дистального отдела бедренной кости без ОО",
+   "name_de": "Stationäre Behandlung: Distale Femurfraktur ohne KK",
+   "name_tr": "Yatış: CC olmadan distal femur kırığı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I63B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Sprains, Strains and Dislocations of Hip, Pelvis and Thigh without CC",
+   "slug": "hospitalization-for-sprains-strains-and-dislocations-of-hip-pelvis-and-thigh-without-cc",
+   "name_sr": "Uganuće, istegnuće i iščašenje u području kuka, karlice i femura bez KK",
+   "name_ru": "Госпитализация: растяжения, надрывы и вывихи в области тазобедренного сустава, таза и бедра без ОО",
+   "name_de": "Stationäre Behandlung: Verstauchungen, Zerrungen und Luxationen von Hüfte, Becken und Oberschenkel ohne KK",
+   "name_tr": "Yatış: CC olmadan kalça, pelvis ve uyluk burkulma, gerilme ve çıkıkları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I72B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Specific Musculotendinous Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-specific-musculotendinous-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Specifični mišićno-tetivni poremećaji bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: специфические заболевания мышц и сухожилий без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Spezifische Muskel- und Sehnenerkrankungen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan spesifik kas-tendon bozuklukları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I74Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Forearm, Wrist, Hand or Foot Injury",
+   "slug": "hospitalization-for-forearm-wrist-hand-or-foot-injury",
+   "name_sr": "Povreda podlaktice, ručnog zgloba, šake ili stopala",
+   "name_ru": "Госпитализация: травма предплечья, запястья, кисти или стопы",
+   "name_de": "Stationäre Behandlung: Verletzung von Unterarm, Handgelenk, Hand oder Fuß",
+   "name_tr": "Yatış: Önkol, el bileği, el veya ayak yaralanması",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I75A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Shoulder, Upper Arm, Elbow, Knee, Lower Leg or Ankle Injury with CC",
+   "slug": "hospitalization-for-shoulder-upper-arm-elbow-knee-lower-leg-or-ankle-injury-with-cc",
+   "name_sr": "Povreda ramena, nadlaktice, lakta, koljena, potkoljenice ili gležnja sa KK",
+   "name_ru": "Госпитализация: травма плечевого сустава, плеча, локтя, колена, голени или голеностопного сустава с ОО",
+   "name_de": "Stationäre Behandlung: Verletzung von Schulter, Oberarm, Ellenbogen, Knie, Unterschenkel oder Sprunggelenk mit KK",
+   "name_tr": "Yatış: CC ile omuz, üst kol, dirsek, diz, alt bacak veya ayak bileği yaralanması",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I76B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Musculoskeletal Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-musculoskeletal-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Drugi mišićno-skeletni poremećaji bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: прочие заболевания опорно-двигательного аппарата без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Erkrankungen des Bewegungsapparats ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan diğer kas-iskelet sistemi bozuklukları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I77A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pelvic Fracture with Very Severe or Severe CC",
+   "slug": "hospitalization-for-pelvic-fracture-with-very-severe-or-severe-cc",
+   "name_sr": "Prelom karlice sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: перелом таза с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Beckenfraktur mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile pelvis kırığı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I77B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pelvic Fracture without Very Severe or Severe CC",
+   "slug": "hospitalization-for-pelvic-fracture-without-very-severe-or-severe-cc",
+   "name_sr": "Prelom karlice bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: перелом таза без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Beckenfraktur ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan pelvis kırığı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I78A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Femoral Neck Fracture with Very Severe or Severe CC",
+   "slug": "hospitalization-for-femoral-neck-fracture-with-very-severe-or-severe-cc",
+   "name_sr": "Prelom vrata femura sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: перелом шейки бедренной кости с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Schenkelhalsfraktur mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile femur boynu kırığı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I25A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Diagnostic Bone and Joint Procedures Including Biopsy with CC",
+   "slug": "hospitalization-for-diagnostic-bone-and-joint-procedures-including-biopsy-with-cc",
+   "name_sr": "Dijagnostičke procedure na kostima i zglobovima uključujući biopsiju sa KK",
+   "name_ru": "Госпитализация: диагностические процедуры на костях и суставах, включая биопсию с ОО",
+   "name_de": "Stationäre Behandlung: Diagnostische Eingriffe an Knochen und Gelenken einschließlich Biopsie mit KK",
+   "name_tr": "Yatış: CC ile biyopsi dahil kemik ve eklem tanısal işlemleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I25B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Diagnostic Bone and Joint Procedures Including Biopsy without CC",
+   "slug": "hospitalization-for-diagnostic-bone-and-joint-procedures-including-biopsy-without-cc",
+   "name_sr": "Dijagnostičke procedure na kostima i zglobovima uključujući biopsiju bez KK",
+   "name_ru": "Госпитализация: диагностические процедуры на костях и суставах, включая биопсию без ОО",
+   "name_de": "Stationäre Behandlung: Diagnostische Eingriffe an Knochen und Gelenken einschließlich Biopsie ohne KK",
+   "name_tr": "Yatış: CC olmadan biyopsi dahil kemik ve eklem tanısal işlemleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I27A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Soft Tissue Procedures with CC",
+   "slug": "hospitalization-for-soft-tissue-procedures-with-cc",
+   "name_sr": "Zahvati na mekom tkivu sa KK",
+   "name_ru": "Госпитализация: операции на мягких тканях с ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Weichteilen mit KK",
+   "name_tr": "Yatış: CC ile yumuşak doku girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I28A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Musculoskeletal Procedures with CC",
+   "slug": "hospitalization-for-other-musculoskeletal-procedures-with-cc",
+   "name_sr": "Ostali zahvati na mišićno-skeletnom sistemu sa KK",
+   "name_ru": "Госпитализация: прочие операции на опорно-двигательном аппарате с ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Eingriffe am Bewegungsapparat mit KK",
+   "name_tr": "Yatış: CC ile diğer kas-iskelet sistemi girişimleri",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I31A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "revision-hip-arthroplasty",
+   "id": 7881,
+   "note": ""
+  },
+  {
+   "code": "I31B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "revision-hip-arthroplasty",
+   "id": 7881,
+   "note": ""
+  },
+  {
+   "code": "I32A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "revision-knee-arthroplasty",
+   "id": 4697,
+   "note": ""
+  },
+  {
+   "code": "I32B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "revision-knee-arthroplasty",
+   "id": 4697,
+   "note": ""
+  },
+  {
+   "code": "I32C",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "revision-knee-arthroplasty",
+   "id": 4697,
+   "note": ""
+  },
+  {
+   "code": "I60Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Femoral Shaft Fracture",
+   "slug": "hospitalization-for-femoral-shaft-fracture",
+   "name_sr": "Prelom tijela femura",
+   "name_ru": "Госпитализация: перелом диафиза бедренной кости",
+   "name_de": "Stationäre Behandlung: Femurschaftfraktur",
+   "name_tr": "Yatış: Femur cisim kırığı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Distal Femur Fracture with CC",
+   "slug": "hospitalization-for-distal-femur-fracture-with-cc",
+   "name_sr": "Prelom donjeg dijela femura sa KK",
+   "name_ru": "Госпитализация: перелом дистального отдела бедренной кости с ОО",
+   "name_de": "Stationäre Behandlung: Distale Femurfraktur mit KK",
+   "name_tr": "Yatış: CC ile distal femur kırığı",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I63A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Sprains, Strains and Dislocations of Hip, Pelvis and Thigh with CC",
+   "slug": "hospitalization-for-sprains-strains-and-dislocations-of-hip-pelvis-and-thigh-with-cc",
+   "name_sr": "Uganuće, istegnuće i iščašenje u području kuka, karlice i femura sa KK",
+   "name_ru": "Госпитализация: растяжения, надрывы и вывихи в области тазобедренного сустава, таза и бедра с ОО",
+   "name_de": "Stationäre Behandlung: Verstauchungen, Zerrungen und Luxationen von Hüfte, Becken und Oberschenkel mit KK",
+   "name_tr": "Yatış: CC ile kalça, pelvis ve uyluk burkulma, gerilme ve çıkıkları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I64A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Osteomyelitis with Very Severe or Severe CC",
+   "slug": "hospitalization-for-osteomyelitis-with-very-severe-or-severe-cc",
+   "name_sr": "Osteomijelitis sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: остеомиелит с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Osteomyelitis mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile osteomiyelit",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I65A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Musculoskeletal Malignant Neoplasms with Very Severe CC",
+   "slug": "hospitalization-for-musculoskeletal-malignant-neoplasms-with-very-severe-cc",
+   "name_sr": "Maligne neoplazme mišićno-skeletnog sistema sa vrlo teškim KK",
+   "name_ru": "Госпитализация: злокачественные новообразования опорно-двигательного аппарата с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Maligne Neoplasien des Bewegungsapparats mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile kas-iskelet sistemi malign neoplazmları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ONCOLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": "FZOCG: «vrlo teškim ili teškim KK»; взято по KCCG"
+  },
+  {
+   "code": "I65B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Musculoskeletal Malignant Neoplasms without Very Severe CC",
+   "slug": "hospitalization-for-musculoskeletal-malignant-neoplasms-without-very-severe-cc",
+   "name_sr": "Maligne neoplazme mišićno-skeletnog sistema bez vrlo teških KK",
+   "name_ru": "Госпитализация: злокачественные новообразования опорно-двигательного аппарата без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Maligne Neoplasien des Bewegungsapparats ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan kas-iskelet sistemi malign neoplazmları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ONCOLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": "FZOCG: «vrlo teškim ili teškim KK»; взято по KCCG"
+  },
+  {
+   "code": "I66A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Inflammatory Musculoskeletal Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-inflammatory-musculoskeletal-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Zapaljenski poremećaji mišićno-skeletnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: воспалительные заболевания опорно-двигательного аппарата с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Entzündliche Erkrankungen des Bewegungsapparats mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile inflamatuvar kas-iskelet sistemi bozuklukları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "RHEUMATOLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I67A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Septic Arthritis with Very Severe or Severe CC",
+   "slug": "hospitalization-for-septic-arthritis-with-very-severe-or-severe-cc",
+   "name_sr": "Septički artritis sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: септический артрит с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Septische Arthritis mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile septik artrit",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I67B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Septic Arthritis without Very Severe or Severe CC",
+   "slug": "hospitalization-for-septic-arthritis-without-very-severe-or-severe-cc",
+   "name_sr": "Septički artritis bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: септический артрит без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Septische Arthritis ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan septik artrit",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I68C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Non-Surgical Spinal Disorders Same Day",
+   "slug": "hospitalization-for-non-surgical-spinal-disorders-same-day",
+   "name_sr": "Nehirurški poremećaji kičme, istog dana",
+   "name_ru": "Госпитализация одного дня: нехирургические заболевания позвоночника",
+   "name_de": "Tagesstationäre Behandlung: Nichtchirurgische Wirbelsäulenerkrankungen",
+   "name_tr": "Günübirlik yatış: Cerrahi dışı omurga bozuklukları",
+   "categories": [
+    "ORTHOPEDICS",
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I69A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bone Diseases and Arthropathies with Very Severe or Severe CC",
+   "slug": "hospitalization-for-bone-diseases-and-arthropathies-with-very-severe-or-severe-cc",
+   "name_sr": "Bolesti kostiju i artropatije sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: болезни костей и артропатии с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Knochenerkrankungen und Arthropathien mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile kemik hastalıkları ve artropatiler",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "RHEUMATOLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I71A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Musculotendinous Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-musculotendinous-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Ostali mišićno-tetivni poremećaji sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: прочие заболевания мышц и сухожилий с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Muskel- und Sehnenerkrankungen mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile diğer kas-tendon bozuklukları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I72A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Specific Musculotendinous Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-specific-musculotendinous-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Specifični mišićno-tetivni poremećaji sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: специфические заболевания мышц и сухожилий с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Spezifische Muskel- und Sehnenerkrankungen mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile spesifik kas-tendon bozuklukları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I76A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Musculoskeletal Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-musculoskeletal-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Drugi mišićno-skeletni poremećaji sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: прочие заболевания опорно-двигательного аппарата с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Sonstige Erkrankungen des Bewegungsapparats mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile diğer kas-iskelet sistemi bozuklukları",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "I79A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pathological Fracture with Very Severe CC",
+   "slug": "hospitalization-for-pathological-fracture-with-very-severe-cc",
+   "name_sr": "Patološka fraktura sa vrlo teškim KK",
+   "name_ru": "Госпитализация: патологический перелом с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Pathologische Fraktur mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile patolojik kırık",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  }
+ ]
+}

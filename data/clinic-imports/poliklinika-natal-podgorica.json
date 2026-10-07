@@ -1,0 +1,616 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-natal-podgorica",
+	"name": "Poliklinika Natal",
+	"city": "Podgorica",
+	"googlePlaceId": null,
+	"sql": [
+		"server/sql/insert-clinic-prices-poliklinika-natal-podgorica.sql",
+		"server/sql/merge-infant-brain-ultrasound-duplicates.sql"
+	],
+	"status": {
+		"generated": "2026-10-05",
+		"appliedLocal": "2026-10-05",
+		"appliedProd": "2026-10-05",
+		"clinicId": 54,
+		"doctorIds": {},
+		"note": "Синхронизация прайса: клиника уже в базе (id 54 и локально, и на проде; SQL резолвит по slug). Врачи не трогались. googlePlaceId этим импортом не проверялся (null — не «места нет», а «не смотрели»). merge-…sql — правка общего каталога, к клинике относится косвенно; порядок применения двух файлов не важен. Применено 2026-10-05 локально и на проде: VERIFICATION 92 строки / 2 obsolete / 26 анализов; прод сверен через /api/services/list построчно с локальной; слияние — 4 клиники на infant-brain-ultrasound-neurosonography, 301 со старых slug работает."
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://poliklinikanatal.me/cjenovnik/",
+			"collected": "2026-10-02",
+			"machineReadable": true,
+			"note": "Elementor + JetEngine, архив CPT cjenovnik (в меню нет). Каждая позиция — .jet-listing-grid__item[data-post-id] с двумя .jet-listing-dynamic-field__content: название и цена «40,00 €». 130 позиций, повторов нет. Снимок: sources/poliklinika-natal-podgorica/2026-10-02.html, разобранный (название, цена, раздел, modified) — 2026-10-02.parsed.json."
+		},
+		{
+			"type": "json-api",
+			"ref": "https://poliklinikanatal.me/wp-json/wp/v2/cjenovnik?per_page=100 (page=1,2)",
+			"collected": "2026-10-02",
+			"machineReadable": true,
+			"note": "X-WP-Total 130. Название, slug, раздел (class_list cjenovnik-oblasti-*), date/modified. Цен нет (мета JetEngine). post id совпадает с data-post-id в HTML. Slug записи хранит исходное название: 1816 «…-do-5-mladeza». Снимки 2026-10-02.wp-json-p1.json, -p2.json."
+		},
+		{
+			"type": "website",
+			"ref": "https://poliklinikanatal.me/pod-usluge/rendgen/",
+			"collected": "2026-10-05",
+			"machineReadable": true,
+			"note": "Описание услуги «Rendgen (RTG)»: «Snimanje željene regije (pluća, kostiju, ekstremiteta, kičme…)» — видов снимков нет. Описания услуг — CPT pod-usluge (wp-json/wp/v2/pod-usluge), у педиатрии (usluge 18) свои страницы. Снимок 2026-10-05.pod-usluge-rendgen.html."
+		}
+	],
+	"coverage": {
+		"prices": "86 услуг поликлиники + 26 PCR-мазков сайта ↔ 86 + 26 строк БД. Совпало 99, меняется 10, перепривязка 1, новых строк 6, is_obsolete 2. Педиатрия (18) — отдельной клиникой.",
+		"labTests": "26 PCR-мазков (раздел ginekoloski-brisevi-pcr-dijagnostika) уже в clinic_lab_tests, цены совпали все.",
+		"doctors": "не трогались",
+		"pediatrics": "Раздел pedijatrija — отдельная клиника pedijatrija-natal-kids-podgorica (insert-clinic-pedijatrija-natal-kids-podgorica.sql, запись data/clinic-imports/pedijatrija-natal-kids-podgorica.json). Туда же переводятся 11 педиатров с этой клиники."
+	},
+	"catalogAdditions": [],
+	"catalogFixes": [
+		{
+			"slug": "extremity-x-ray-per-image",
+			"added": {
+				"categoryIds": [
+					3
+				],
+				"specialtyIds": [
+					10
+				],
+				"synonyms": 9
+			},
+			"why": "стояла только в «Ортопедии», в разделе рентгена не показывалась"
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Infusion Therapy",
+			"source": "Intervenska infuzija u ordinaciji – 35,00 €"
+		},
+		{
+			"nameEn": "Breast Cyst Puncture",
+			"source": "Punkcija ciste na dojkama – 90,00 €"
+		},
+		{
+			"nameEn": "First ENT Examination",
+			"source": "ORL pregled – 50,00 €"
+		},
+		{
+			"nameEn": "Digital Dermoscopy Up to 5 Moles",
+			"source": "Digitalna dermoskopija I FotoFinder ATBM digitalnim dermoskopom – 90,00 €"
+		},
+		{
+			"nameEn": "Dermatoscopy",
+			"source": "Dermoskopija – 70,00 €"
+		},
+		{
+			"nameEn": "Dermatologist Examination",
+			"source": "Dermatološki pregled – 60,00 €"
+		},
+		{
+			"nameEn": "X-Ray Chest",
+			"source": "Rendgen – 40,00 €"
+		},
+		{
+			"nameEn": "Abdomen Ultrasound",
+			"source": "Ultrazvuk abdomena – 50,00 €"
+		},
+		{
+			"nameEn": "Thyroid Ultrasound",
+			"source": "Ultrazvuk štitaste žlijezde – 50,00 €"
+		},
+		{
+			"nameEn": "Systematic Gynecological Examination Package",
+			"source": "Sistematski ginekološki pregled – 140,00 €"
+		},
+		{
+			"nameEn": "Progesterone Injection",
+			"source": "Injekcija progesterona – 10,00 €"
+		},
+		{
+			"nameEn": "Intra-articular Injection",
+			"source": "Aplikacija injekcije interartikularna – 50,00 €"
+		},
+		{
+			"nameEn": "Intramuscular Injection",
+			"source": "Aplikacija lijeka – 10,00 €"
+		},
+		{
+			"nameEn": "Thyroid Fine Needle Biopsy with Histopathology",
+			"source": "Biopsija štitaste žlijezde tankom iglom sa Ph nalazom – 120,00 €"
+		},
+		{
+			"nameEn": "Thyroid Biopsy",
+			"source": "Biopsija štitaste žlijezde tankom iglom – 90,00 €"
+		},
+		{
+			"nameEn": "Thyroid Examination with Ultrasound",
+			"source": "Pregled i ultrazvuk štitaste žlijezde – 90,00 €"
+		},
+		{
+			"nameEn": "Suture Removal",
+			"source": "Skidanje konaca – 30,00 €"
+		},
+		{
+			"nameEn": "Wound Dressing",
+			"source": "Previjanje – 20,00 €"
+		},
+		{
+			"nameEn": "Surgical Mole Removal with Histopathology",
+			"source": "Hirurško uklanjanje mladeža sa Ph nalazom – 185,00 €"
+		},
+		{
+			"nameEn": "Puncture with Histopathology",
+			"source": "Punkcija sa Ph nalazom – 100,00 €"
+		},
+		{
+			"nameEn": "Maxillofacial Surgeon Examination",
+			"source": "Pregled maksilofacijalnog hirurga – 50,00 €"
+		},
+		{
+			"nameEn": "Oncological Surgeon Examination",
+			"source": "Pregled hirurga onkologa – 90,00 €"
+		},
+		{
+			"nameEn": "Neurology Examination with Head and Neck Doppler",
+			"source": "Neurološki pregled, kolor dopler krvnih sudova glave i vrata – 200,00 €"
+		},
+		{
+			"nameEn": "Doppler Neck Blood Vessels",
+			"source": "Kolor dopler krvnih sudova vrata – 50,00 €"
+		},
+		{
+			"nameEn": "Doppler Head Blood Vessels",
+			"source": "Kolor dopler krvnih sudova glave – 80,00 €"
+		},
+		{
+			"nameEn": "First Neurologist Examination",
+			"source": "Neurološki pregled – 100,00 €"
+		},
+		{
+			"nameEn": "Follow-up Professor ENT Examination",
+			"source": "Kontrola ORL profesora (gostujući ljekar) – 60,00 €"
+		},
+		{
+			"nameEn": "Radiowave Conchoplasty",
+			"source": "Radiotalasna konhoplastika – 330,00 €"
+		},
+		{
+			"nameEn": "Cerumen Ear Irrigation",
+			"source": "Ispiranje ušiju – 10,00 €"
+		},
+		{
+			"nameEn": "Tympanometry",
+			"source": "Timpanometrija – 10,00 €"
+		},
+		{
+			"nameEn": "Audiometry",
+			"source": "Audiometrija – 10,00 €"
+		},
+		{
+			"nameEn": "Professor ENT Examination",
+			"source": "ORL pregled profesora (gostujući ljekar) – 90,00 €"
+		},
+		{
+			"nameEn": "Rheumatologist Examination",
+			"source": "Pregled reumatologa – 70,00 €"
+		},
+		{
+			"nameEn": "Cardiologist Examination with Ultrasound",
+			"source": "Kardiološki pregled, ultrazvuk i EKG – 80,00 €"
+		},
+		{
+			"nameEn": "Echocardiography (Heart Ultrasound)",
+			"source": "EHO srca (kardiološki ultrazvuk) – 60,00 €"
+		},
+		{
+			"nameEn": "Holter ECG 24h",
+			"source": "Holter EKG-a (Schiller) – 60,00 €"
+		},
+		{
+			"nameEn": "Cardiologist Examination with ECG",
+			"source": "Kardiološki pregled i EKG – 60,00 €"
+		},
+		{
+			"nameEn": "Bronchodilator Test",
+			"source": "Spirometrija BDT – 40,00 €"
+		},
+		{
+			"nameEn": "Spirometry",
+			"source": "Spirometrija – 30,00 €"
+		},
+		{
+			"nameEn": "Follow-up Pulmonologist Examination",
+			"source": "Kontrola pulmologa – 40,00 €"
+		},
+		{
+			"nameEn": "Pulmonologist Examination",
+			"source": "Pregled pulmologa – 60,00 €"
+		},
+		{
+			"nameEn": "Hematologist-Oncologist Expert Opinion",
+			"source": "Stručno mišljenje hematologa-onkologa prof. dr Nadežde Basare putem email-a – 300,00 €"
+		},
+		{
+			"nameEn": "Hematologist-Oncologist Consultation",
+			"source": "Pregled hematologa-onkologa prof. dr Nadežde Basare – 300,00 €"
+		},
+		{
+			"nameEn": "Radiowave Skin Lesion Removal",
+			"source": "Uklanjanje kožnih promjena radiotalasima – 60,00 €"
+		},
+		{
+			"nameEn": "Total Body Mole Mapping Digital Dermoscopy",
+			"source": "Mapa mladeža čitavog tijela FotoFinder ATBM digitalnim dermoskopom(total body scan) – 120,00 €"
+		},
+		{
+			"nameEn": "Professor Dermatoscopy",
+			"source": "Dermoskopija profesora (gostujući ljekar) – 90,00 €"
+		},
+		{
+			"nameEn": "Professor Dermatologist Examination",
+			"source": "Dermatološki pregled profesora (gostujući ljekar) – 90,00 €"
+		},
+		{
+			"nameEn": "Core Biopsy with Histopathology and Receptors",
+			"source": "CORE biopsija sa Ph nalazom i receptorima – 325,00 €"
+		},
+		{
+			"nameEn": "Core Biopsy with Histopathology",
+			"source": "CORE biopsija sa Ph nalazom – 175,00 €"
+		},
+		{
+			"nameEn": "Professor Breast Examination Package",
+			"source": "Pregled, ultrazvuk i digitalna 3D mamografija (gostujući ljekar) – 160,00 €"
+		},
+		{
+			"nameEn": "Professor 3D Tomosynthesis Mammography",
+			"source": "Digitalna 3D (tomosinteza) mamografija (gostujući ljekar) – 110,00 €"
+		},
+		{
+			"nameEn": "3D Digital Tomosynthesis Mammography",
+			"source": "Digitalna 3D (tomosinteza) mamografija – 90,00 €"
+		},
+		{
+			"nameEn": "Blood Vessels Doppler",
+			"source": "Kolor dopler krvnih sudova – 50,00 €"
+		},
+		{
+			"nameEn": "Professor Ultrasound Three Regions",
+			"source": "Ultrazvuk tri regije profesora (gostujući doktor) – 180,00 €"
+		},
+		{
+			"nameEn": "Professor Ultrasound Two Regions",
+			"source": "Ultrazvuk dvije regije profesora (gostujući doktor) – 160,00 €"
+		},
+		{
+			"nameEn": "Professor Ultrasound Single Region",
+			"source": "Ultrazvuk jedne regije profesora (gostujući ljekar) – 110,00 €"
+		},
+		{
+			"nameEn": "Breast Ultrasound",
+			"source": "Ultrazvuk dojki – 50,00 €"
+		},
+		{
+			"nameEn": "Genital Condyloma Removal Grade 3",
+			"source": "Radiotalasno uklanjanje kondiloma - III stepen – 300,00 €"
+		},
+		{
+			"nameEn": "Genital Condyloma Removal Grade 2",
+			"source": "Radiotalasno uklanjanje kondiloma - II stepen – 200,00 €"
+		},
+		{
+			"nameEn": "Genital Condyloma Removal Grade 1",
+			"source": "Radiotalasno uklanjanje kondiloma - I stepen – 100,00 €"
+		},
+		{
+			"nameEn": "Brief Doctor Visit Consultation",
+			"source": "Konsultacija – 20,00 €"
+		},
+		{
+			"nameEn": "IUD Removal",
+			"source": "Uklanjanje spirale – 50,00 €"
+		},
+		{
+			"nameEn": "IUD Insertion",
+			"source": "Stavljanje spirale – 70,00 €"
+		},
+		{
+			"nameEn": "CTG Extended Fetal Monitoring",
+			"source": "CTG II – 20,00 €"
+		},
+		{
+			"nameEn": "CTG Fetal Monitoring",
+			"source": "CTG I – 15,00 €"
+		},
+		{
+			"nameEn": "Folliculometry",
+			"source": "Folikulometrija – 30,00 €"
+		},
+		{
+			"nameEn": "Fertility Couple Subspecialist Examination",
+			"source": "Subspecijalistički pregled para za fertilitet – 60,00 €"
+		},
+		{
+			"nameEn": "Exploratory Curettage with Anesthesia",
+			"source": "Eksplorativna kiretaža sa anestezijom – 300,00 €"
+		},
+		{
+			"nameEn": "Exploratory Curettage without Anesthesia",
+			"source": "Eksplorativna kiretaža bez anestezije – 240,00 €"
+		},
+		{
+			"nameEn": "Cervical Biopsy",
+			"source": "Biopsija grlića materice – 150,00 €"
+		},
+		{
+			"nameEn": "LEEP Excision with Histopathology",
+			"source": "Loop ekscizija sa Ph nalazom – 480,00 €"
+		},
+		{
+			"nameEn": "PAP Test with Smear Collection",
+			"source": "PAPA test – 25,00 €"
+		},
+		{
+			"nameEn": "Professor Colposcopy",
+			"source": "Kolposkopija (gostujući ljekar) – 60,00 €"
+		},
+		{
+			"nameEn": "Colposcopy",
+			"source": "Kolposkopija – 50,00 €"
+		},
+		{
+			"nameEn": "Professor Gynecological Examination",
+			"source": "Ginekološki pregled profesora (gostujući ljekar) – 60,00 €"
+		},
+		{
+			"nameEn": "Professor Expert Pregnancy Ultrasound",
+			"source": "Ekspertski ultrazvuk profesora (gostujući ljekar) – 100,00 €"
+		},
+		{
+			"nameEn": "Gynecological Specialist Examination with Ultrasound",
+			"source": "Ultrazvuk i ginekološki pregled – 80,00 €"
+		},
+		{
+			"nameEn": "4D Pregnancy Ultrasound",
+			"source": "4D ultrazvuk – 90,00 €"
+		},
+		{
+			"nameEn": "Follow-up Expert Ultrasound",
+			"source": "Drugi ekspertski ultrazvuk – 90,00 €"
+		},
+		{
+			"nameEn": "Expert Pregnancy Ultrasound",
+			"source": "Prvi ekspertski ultrazvuk – 70,00 €"
+		},
+		{
+			"nameEn": "Perinatologist Ultrasound Examination",
+			"source": "Ultrazvučni pregled perinatologa – 60,00 €"
+		},
+		{
+			"nameEn": "Gynecological Ultrasound",
+			"source": "Ultrazvučni pregled – 50,00 €"
+		},
+		{
+			"nameEn": "Gynecological Specialist Examination",
+			"source": "Ginekološki pregled – 40,00 €"
+		},
+		{
+			"nameEn": "Follow-up Rheumatologist Examination",
+			"source": "Kontrolni pregled reumatologa – 40,00 €"
+		},
+		{
+			"nameEn": "IV Therapy Service",
+			"source": "Usluga davanje intravenske terapije – 30,00 €"
+		},
+		{
+			"nameEn": "X-Ray Cervical Spine",
+			"source": "Rendgen – 40,00 €"
+		},
+		{
+			"nameEn": "X-Ray Thoracic Spine",
+			"source": "Rendgen – 40,00 €"
+		},
+		{
+			"nameEn": "X-Ray Lumbar Spine and Sacrum",
+			"source": "Rendgen – 40,00 €"
+		},
+		{
+			"nameEn": "Extremity X-Ray per Image",
+			"source": "Rendgen – 40,00 €"
+		},
+		{
+			"nameEn": "Musculoskeletal Ultrasound",
+			"source": "Reumatološki ultrazvuk MSK – 50,00 €"
+		}
+	],
+	"labTests": [
+		{
+			"nameEn": "Thrombofolate Panel 4+4 SNP",
+			"source": "Trombofolatni panel 4+4 SNP – 120,00 €"
+		},
+		{
+			"nameEn": "Folate Metabolism Panel 4 SNP",
+			"source": "Folatni metabolizam panel 4 SNP – 60,00 €"
+		},
+		{
+			"nameEn": "Thrombophilia Panel 8 SNP",
+			"source": "Trombofilija panel 8SNP – 100,00 €"
+		},
+		{
+			"nameEn": "Femoflor 16 and HPV-quant-15",
+			"source": "Femoflor 16 i HPV-quant-15 – 160,00 €"
+		},
+		{
+			"nameEn": "Femoflor Screen and HPV-quant-21",
+			"source": "Femoflor Screen i HPV-quant-21 – 180,00 €"
+		},
+		{
+			"nameEn": "STD Panel 14 PCR",
+			"source": "PANEL 14 (Chlamydia trachomatis, Neisseria gonorrhoeae, Mycoplasma genitalium, Mycoplasma hominis, Trichomonas vaginalis, Ureaplasma parvum, Ureaplasma urealyticum, HPV-quant-4, HSV 1/2, Candida albicans, Gardnerella vaginalis) – 160,00 €"
+		},
+		{
+			"nameEn": "STD Panel 12 PCR",
+			"source": "PANEL 12 (Chlamydia trachomatis Neisseria gonorrhoeae Mycoplasma genitalium Mycoplasma hominis Trichomonas vaginalis Ureaplasma parvum Ureaplasma urealyticum, HPV-quant-4,HSV 1/2) – 120,00 €"
+		},
+		{
+			"nameEn": "STD Panel 7 PCR",
+			"source": "PANEL 7 (Chlamydia trachomatis, Neisseria gonorrhoeae, Mycoplasma genitalium, Mycoplasma hominis, Trichomonas vaginalis, Ureaplasma parvum, Ureaplasma urealyticum) – 90,00 €"
+		},
+		{
+			"nameEn": "STD Panel 3 PCR",
+			"source": "PANEL 3 (Chlamydia trachomatis, Mycoplasma hominis, Ureaplasma urealyticum) – 80,00 €"
+		},
+		{
+			"nameEn": "Androflor",
+			"source": "Androflor – 85,00 €"
+		},
+		{
+			"nameEn": "Androflor Screen",
+			"source": "Androflor screen – 150,00 €"
+		},
+		{
+			"nameEn": "Femoflor 16",
+			"source": "Femoflor 16 – 110,00 €"
+		},
+		{
+			"nameEn": "Femoflor Screen",
+			"source": "Femoflor screen – 85,00 €"
+		},
+		{
+			"nameEn": "HPV Quant 21",
+			"source": "HPV-quant-21 – 105,00 €"
+		},
+		{
+			"nameEn": "HPV Quant 15 Types PCR",
+			"source": "HPV-quant-15 – 80,00 €"
+		},
+		{
+			"nameEn": "HPV Quant 4",
+			"source": "HPV-quant-4 – 60,00 €"
+		},
+		{
+			"nameEn": "UMC multiplex",
+			"source": "UMC multiplex – 55,00 €"
+		},
+		{
+			"nameEn": "Gardnerella vaginalis (Real-Time PCR)",
+			"source": "Gardnerella vaginalis – 30,00 €"
+		},
+		{
+			"nameEn": "Candida albicans PCR",
+			"source": "Candida albicans – 30,00 €"
+		},
+		{
+			"nameEn": "Trichomonas vaginalis (Real-Time PCR)",
+			"source": "Trichomonas vaginalis – 30,00 €"
+		},
+		{
+			"nameEn": "Ureaplasma urealyticum PCR",
+			"source": "Ureaplasma urealyticum – 30,00 €"
+		},
+		{
+			"nameEn": "Ureaplasma parvum PCR",
+			"source": "Ureaplasma parvum – 30,00 €"
+		},
+		{
+			"nameEn": "Mycoplasma hominis (Real-Time PCR)",
+			"source": "Mycoplasma hominis – 30,00 €"
+		},
+		{
+			"nameEn": "Mycoplasma genitalium (Real-Time PCR)",
+			"source": "Mycoplasma genitalium – 30,00 €"
+		},
+		{
+			"nameEn": "Neisseria gonorrhoeae PCR Swab",
+			"source": "Neisseria gonorrhoeae – 30,00 €"
+		},
+		{
+			"nameEn": "Chlamydia trachomatis PCR Swab",
+			"source": "Chlamydia trachomatis – 30,00 €"
+		}
+	],
+	"doctors": [],
+	"excluded": [
+		{
+			"source": "Pregled pedijatra – 50,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: pediatric-examination. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Kontrolni pregled pedijatra – 40,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: follow-up-pediatric-examination. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Konsultacija pedijatra – 30,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: pediatric-counseling. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Ultrazvuk kukova – 40,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: pediatric-hip-ultrasound. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Kućna posjeta pedijatra – 150,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: новая запись Pediatrician Home Visit / Kućna posjeta pedijatra. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Sistematski pregled novorođenčeta – 60,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: systematic-infant-examination. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Sistematski pregled za školu – 60,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: preventive-examination-for-kindergarten-and-school-enrollment. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Pregled neonatologa – 60,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: neonatologist-examination. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Ultrazvuk mozga kod beba (CNS) – 50,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: infant-brain-ultrasound-neurosonography. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Pregled dječijeg pulmologa – 120,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: pediatric-pulmonologist-examination. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Pregled dječijeg kardiologa sa ultrazvukom i EKG-om – 120,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: pediatric-cardiologist-examination-with-echocardiography. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Pregled dječijeg gastroenterologa – 120,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: pediatric-gastroenterologist-examination. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Pregled dječijeg neurologa – 100,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: pediatric-neurologist-examination. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Pregled dječijeg fizijatara – 100,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: subspecialist-pediatric-physiatrist-examination. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Pregled dječijeg ortopeda – 60,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: новая запись Pediatric Orthopedist Examination / Pregled dječjeg ortopeda. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Pregled dječijeg urologa – 50,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: новая запись Pediatric Urologist Examination / Pregled dječjeg urologa. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "ORL pregled djece – 50,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: pediatric-ent-examination. 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Pregled dječijeg radiologa (jedna regija) – 50,00 €",
+			"reason": "2026-10-02: педиатрия Natal Kids — другой адрес; 2026-10-05 решено завести отдельной клиникой. Кандидат: новая запись Pediatric Radiologist Examination (Single Region) / Pregled dječjeg radiologa (jedna regija). 2026-10-06: импортирована в pedijatrija-natal-kids-podgorica (часть позиций — с другим сопоставлением, см. её запись)."
+		},
+		{
+			"source": "Digitalna dermoskopija više od 5 mladeža (в БД, на сайте нет)",
+			"reason": "is_obsolete = 1: на сайте одна цифровая дермоскопия: запись wp-json 1816 со slug …-do-5-mladeza, из названия уточнение «do 5 mladeža» убрали 2026-04-01; «više od 5» на сайте нет."
+		},
+		{
+			"source": "Kontrolni specijalistički pregled (в БД, на сайте нет)",
+			"reason": "is_obsolete = 1: общего «Kontrolni specijalistički pregled» на сайте нет; это бывший «Kontrolni pregled reumatologa» (запись 1775 создана без названия 2025-12-02, название дали 2025-12-03), он теперь своей строкой."
+		}
+	],
+	"openQuestions": []
+}

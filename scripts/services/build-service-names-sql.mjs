@@ -322,7 +322,7 @@ ${removalSql()}
 
 -- Старые синонимы, совпавшие с новым собственным названием (как 031): они
 -- больше ничего не находят и засоряют подпись «найдено по …».
--- COLLATE обязателен: таблицы синонимов в utf8mb4_0900_ai_ci, каталог — в unicode_ci.
+-- COLLATE — для баз без 044: до неё lab_test_synonyms была в utf8mb4_0900_ai_ci.
 DELETE syn FROM ${C.synonymTable} syn
   JOIN ${C.table} e ON e.id = syn.${C.fk}
  WHERE syn.another_name COLLATE utf8mb4_unicode_ci = CASE syn.language

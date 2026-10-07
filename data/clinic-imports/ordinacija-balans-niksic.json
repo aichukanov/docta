@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "slug": "ordinacija-balans-niksic",
+  "name": "Ordinacija Balans",
+  "city": "Nikšić",
+  "cityId": 2,
+  "googlePlaceId": null,
+  "sql": [
+    "server/sql/insert-clinic-prices-ordinacija-balans-niksic.sql"
+  ],
+  "status": {
+    "generated": "2026-10-02",
+    "appliedLocal": "2026-10-06 (сверено: число строк локально = прод)",
+    "appliedProd": "2026-10-02",
+    "clinicId": 69,
+    "doctorIds": {},
+    "note": "Клиника и врачи уже в БД (локально и на проде clinic id = 69; врачи 101 bakic-nikola spec 15, 921 natasa-radovic spec 12, 922 igor-jovanovic spec 16). Импорт только цен услуг, к врачам не привязаны. googlePlaceId не сверялся — импорт его не использует. Применено на прод 2026-10-02, VERIFICATION: 34 услуги, price_sum 1350.00, price_max_sum 70.00, outdated 0. Новые записи каталога на проде: 8266 ecg-with-internist-or-cardiologist-consultation, 8267 follow-up-nutritionist-examination, 8268 abdomen-thyroid-and-breast-ultrasound. Локально не применялось."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "ref": "https://drbalans.me/cjenovnik/",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "note": "WordPress, HTML-таблица в <article>, читается curl'ом по сырому HTML. 34 строки, 35 цен (строка нутрициолога несёт две цены: «Konsultacija nutricioniste sa izradom individualnog jelovnika Kontrola nutricioniste | 60,00€40,00€»). Формат «40,00€», диапазоны «10,00-20,00€». Даты в документе нет; wp-json /wp/v2/pages?search=cjen → id 115 «cjenovnik», modified 2025-12-01T18:31:29. Снимок: data/clinic-pricelists/sources/ordinacija-balans-niksic/2026-10-02.html."
+    }
+  ],
+  "coverage": {
+    "prices": "34 из 35 цен импортированы (31 на существующие записи каталога, 3 на новые). «24h mobilni EKG» не заведён по решению, см. excluded.",
+    "labTests": "лаборатории в прайсе нет",
+    "physiotherapy": "в прайсе нет ни одной позиции физикальной терапии, хотя у ординации есть «centar za fizikalnu terapiju» (страница /centarzafizikalnu/ без цен, не проверялась — вне карты)",
+    "priceDate": "в документе не указана; wp modified 2025-12-01 → is_price_outdated = 0",
+    "notes": "Примечания прайса не импортируются строками: «CIJENE LJEKARSKIH PREGLEDA I PRUŽANJA USLUGA NERADNIM DANIMA I VAN RADNOG VREMENA UVEĆAVAJU SE ZA 10,00€!», «10% POPUSTA NA DRUGI PREGLED!», «KONTROLNI PREGLED VAŽI DO MJESEC DANA OD PRVOG PREGLEDA!», «CIJENA LIJEKA NIJE URAČUNATA U CIJENU DAVANJA TERAPIJE!»"
+  },
+  "catalogAdditions": [
+    {
+      "table": "medical_services",
+      "nameEn": "ECG with Internist or Cardiologist Consultation",
+      "nameSr": "EKG uz konsultaciju interniste ili kardiologa",
+      "categories": [
+        8
+      ],
+      "specialties": [
+        1,
+        2
+      ],
+      "note": "НЕ Internist Examination with ECG (1942) — это полноценный осмотр, у других клиник 50–70 €, а здесь 20 € при осмотре специалиста 40 €. И не голый ECG (1616) — тот здесь отдельной строкой за 10 €"
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Follow-up Nutritionist Examination",
+      "nameSr": "Kontrolni pregled nutricioniste",
+      "categories": [
+        9
+      ],
+      "specialties": [
+        45
+      ],
+      "note": "Пара к Nutritionist Specialist Examination (4119), категории/специальности как у неё; sort_order = 2"
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Abdomen, Thyroid and Breast Ultrasound",
+      "nameSr": "Ultrazvuk abdomena, štitne žlijezde i dojki",
+      "categories": [
+        4
+      ],
+      "specialties": [
+        10
+      ],
+      "note": "Комбо-пакет. Соседние: Abdomen Urinary Tract and Thyroid Ultrasound (2107), Breast and Thyroid Ultrasound (2108) — состав другой"
+    }
+  ],
+  "services": [
+    {
+      "nameEn": "Specialist Examination",
+      "source": "Specijalistički pregled | 40,00€"
+    },
+    {
+      "nameEn": "Subspecialist Examination",
+      "source": "Subspecijalistički pregled(kardiolog, endokrinolog, reumatolog, pulmolog, gastroenterohepatolog-infektolog, hematolog) | 50,00€"
+    },
+    {
+      "nameEn": "Follow-up Specialist Examination",
+      "source": "Kontrolni pregled specijaliste | 25,00€"
+    },
+    {
+      "nameEn": "Follow-up Subspecialist Examination",
+      "source": "Kontrolni pregled subspecijaliste | 40,00€"
+    },
+    {
+      "nameEn": "Echocardiography (Heart Ultrasound)",
+      "source": "Ultrazvuk srca | 40,00€"
+    },
+    {
+      "nameEn": "Nutritionist Specialist Examination",
+      "source": "Konsultacija nutricioniste sa izradom individualnog jelovnika | 60,00€"
+    },
+    {
+      "nameEn": "Follow-up Nutritionist Examination",
+      "source": "Kontrola nutricioniste | 40,00€"
+    },
+    {
+      "nameEn": "Holter ECG 24h",
+      "source": "24h Holter EKG monitoring | 50,00€"
+    },
+    {
+      "nameEn": "Holter ECG 48h",
+      "source": "48h Holter EKG monitoring | 90,00€"
+    },
+    {
+      "nameEn": "Holter Blood Pressure 24h",
+      "source": "Holter krvnog pritiska | 50,00€"
+    },
+    {
+      "nameEn": "Ergometry Stress Test",
+      "source": "Test opterećenja-Ergometrija | 60,00€"
+    },
+    {
+      "nameEn": "ECG",
+      "source": "EKG | 10,00€"
+    },
+    {
+      "nameEn": "ECG with Internist or Cardiologist Consultation",
+      "source": "EKG uz konsultaciju interniste/kardiologa | 20,00€"
+    },
+    {
+      "nameEn": "Spirometry",
+      "source": "Spirometrija | 20,00€"
+    },
+    {
+      "nameEn": "Home Visit City Center",
+      "source": "Kućna posjeta u gradu | 60,00€"
+    },
+    {
+      "nameEn": "Intramuscular Injection",
+      "source": "Davanje intramuskularne injekcije | 10,00-20,00€"
+    },
+    {
+      "nameEn": "Intravenous Medication Application",
+      "source": "Davanje intravenske injekcije | 10,00-50,00€"
+    },
+    {
+      "nameEn": "Inhalation Therapy",
+      "source": "Inhalacija | 10,00€"
+    },
+    {
+      "nameEn": "Aspiration",
+      "source": "Aspiracija | 10,00€"
+    },
+    {
+      "nameEn": "Abdomen Ultrasound",
+      "source": "Ultrazvučni pregled abdomena(jetra, pankreas, slezina, bubrezi, mokraćna bešika) | 50,00€"
+    },
+    {
+      "nameEn": "Urinary Tract Ultrasound",
+      "source": "Ultrazvučni pregled urotrakta(bubrezi, mokraćna bešika, prostata) | 30,00€"
+    },
+    {
+      "nameEn": "Upper Abdomen Ultrasound",
+      "source": "Utrazvučni pregled (gornji abdomen) (jetra, pankreas, slezina, žučna kesa) | 30,00€"
+    },
+    {
+      "nameEn": "Breast Ultrasound",
+      "source": "Ultrazvučni pregled dojki | 40,00€"
+    },
+    {
+      "nameEn": "Peripheral Region Ultrasound",
+      "source": "Ultrazvučni pregled perifernih tkiva (regionalni limfatici) | 40,00€"
+    },
+    {
+      "nameEn": "Thyroid Ultrasound",
+      "source": "Ultrazvučni pregled štitaste žlijezde | 35,00€"
+    },
+    {
+      "nameEn": "Ultrasound Neck Glands and Soft Tissue",
+      "source": "Ultrazvučni pregled vratnih struktura(štitasta žlijezda, pljuvačne žlijezde, meka tkiva vrata) | 50,00€"
+    },
+    {
+      "nameEn": "Soft Tissue Ultrasound",
+      "source": "Ultrazvučni pregled mekih tkiva | 30,00€"
+    },
+    {
+      "nameEn": "Testicular Ultrasound",
+      "source": "Ultrazvučni pregled testisa | 40,00€"
+    },
+    {
+      "nameEn": "Lung Base Ultrasound",
+      "source": "Ultrazvučni pregled plućnih baza | 30,00€"
+    },
+    {
+      "nameEn": "Abdomen, Thyroid and Breast Ultrasound",
+      "source": "Ultrazvučni pregled abdomena, štitaste žlijezde, dojki | 110,00€"
+    },
+    {
+      "nameEn": "Orthopedic Ultrasound, Single Joint",
+      "source": "Ultrazvučni pregled zglobova | 40,00€"
+    },
+    {
+      "nameEn": "Doppler Neck Blood Vessels",
+      "source": "Kolor dopler duplex scan krvnih sudova vrata | 40,00€"
+    },
+    {
+      "nameEn": "Doppler Lower Extremity Blood Vessels",
+      "source": "Kolor dopler duplex scan krvnih sudova donjih ekstremiteta | 50,00€"
+    },
+    {
+      "nameEn": "Doppler Upper Extremity Blood Vessels",
+      "source": "Kolor dopler duplex scan krvnih sudova gornjih ekstremiteta | 40,00€"
+    }
+  ],
+  "doctors": [],
+  "excluded": [
+    {
+      "source": "24h mobilni EKG | 10,00€",
+      "reason": "Непонятно, что за услуга: 24-часовая запись за 10 € при Holter EKG 24h у той же ординации за 50 € — либо другой прибор (носимый/телефонный ЭКГ), либо опечатка в цене. Подходящей записи в каталоге нет, новую под неясный состав не заводили. 2026-10-02 решение юзера: не добавлять."
+    }
+  ],
+  "openQuestions": [
+    "Konsultacija nutricioniste sa izradom individualnog jelovnika сопоставлена с Nutritionist Specialist Examination (4119), без Personalized Nutrition Plan (4124): консультация и план — одна позиция за 60 €. Если план надо показывать отдельно — добавить вторую строку на 4124 нельзя (цена одна), нужна была бы комбинированная запись.",
+    "Специалистический/субспециалистический осмотр положены на обобщённые Specialist Examination (2060) / Subspecialist Examination (2064): в прайсе специальность не названа, а у трёх врачей клиники разные (эндокринолог, гематолог, ревматолог)."
+  ]
+}

@@ -1,0 +1,658 @@
+{
+	"schemaVersion": 1,
+	"slug": "codra-hospital-podgorica",
+	"name": "Codra Hospital",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJh9GNyhXrTRMRpAcKDQoHEyk",
+	"clinicTypeIds": [
+		1,
+		3
+	],
+	"sql": [
+		"server/sql/insert-clinic-prices-codra-hospital-podgorica.sql"
+	],
+	"status": {
+		"generated": "2026-10-02",
+		"appliedLocal": "2026-10-05",
+		"appliedProd": "2026-10-05",
+		"clinicId": 28,
+		"doctorIds": {},
+		"note": "Применено локально и на проде 2026-10-05. VERIFICATION: clinic_id 28, 81 анализ, outdated 81, сумма 816.50, venous-blood-draw 1.00. Прод сверен по API (/api/labtests/details по каждому slug + /api/services/list): все 81 цена совпали, у всех isOutdated, isObsolete нет. Импорт только цен: врачей, описаний и отзывов не трогали."
+	},
+	"sources": [
+		{
+			"type": "pricelist-image",
+			"ref": "https://www.codra.me/wp-content/uploads/2022/02/Cenovnik_Laboratorija-02.jpg",
+			"snapshot": "data/clinic-pricelists/sources/codra-hospital-podgorica/2026-10-02.jpg",
+			"sha256": "18616dbc5693a58ae746cde712bc17b259705b242ecfaef70cf83dcae66c3007",
+			"priceDate": "2022-02-14",
+			"priceDateSource": "wp-json /wp/v2/media id 1115: date = modified = 2022-02-14T11:24:08; путь загрузки /2022/02/",
+			"collected": "2026-10-02",
+			"machineReadable": false,
+			"note": "Одна JPG 1600×983, «CJENOVNIK - LABORATORIJA», 4 колонки, 20 разделов, 83 строки. Текст чёткий, распознан чтением картинки (Read) с увеличением каждой колонки ×2, каждая строка сверена глазами. Валюта не указана, цены в EUR. Картинка выложена на странице https://www.codra.me/cjenovnik-lab-dijagnostika/ (ссылка с /laboratorijska-dijagnostika/). Других цен на сайте нет (хирургия, IVF, PET CT — без цен), см. map.json."
+		}
+	],
+	"coverage": {
+		"labTests": "81 анализ из 82 лабораторных строк (BETA HCG дважды), все сопоставлены с существующими записями каталога, is_price_outdated = 1",
+		"services": "1 — VAĐENJE KRVI → Venous Blood Draw, is_price_outdated = 1",
+		"prices": "прайс 2022-02 — старше 2 лет, все строки с is_price_outdated = 1",
+		"doctors": "не в объёме задачи",
+		"googlePlaceId": "в clinics.google_place_id NULL; в data/google-places/podgorica/ два места — codra-hospital.json (ChIJh9GNyhXrTRMRpAcKDQoHEyk, «Codra Hospital») и codra.json (ChIJr5ZefwDrTRMRpr_D-A8V8vk, «Codra», 4. Jul). Здесь записан первый; в БД не пишется"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Venous Blood Draw",
+			"slug": "venous-blood-draw",
+			"source": "VAĐENJE KRVI",
+			"section": "USLUGE",
+			"price": 1
+		}
+	],
+	"labTests": [
+		{
+			"slug": "complete-blood-count",
+			"nameEn": "Complete Blood Count",
+			"source": "KRVNA SLIKA",
+			"section": "HEMATOLOGIJA",
+			"price": 5
+		},
+		{
+			"slug": "erythrocyte-sedimentation-rate",
+			"nameEn": "Erythrocyte Sedimentation Rate",
+			"source": "SEDIMENTACIJA ERITROCITA",
+			"section": "HEMATOLOGIJA",
+			"price": 1
+		},
+		{
+			"slug": "bleeding-time",
+			"nameEn": "Bleeding Time",
+			"source": "VRIJEME KRVARENJA",
+			"section": "KOAGULACIJA",
+			"price": 1
+		},
+		{
+			"slug": "coagulation-time",
+			"nameEn": "Coagulation Time",
+			"source": "VRIJEME KOAGULACIJE",
+			"section": "KOAGULACIJA",
+			"price": 1
+		},
+		{
+			"slug": "fibrinogen",
+			"nameEn": "Fibrinogen",
+			"source": "FIBRINOGEN",
+			"section": "KOAGULACIJA",
+			"price": 3
+		},
+		{
+			"slug": "prothrombin-time-pt-inr",
+			"nameEn": "Prothrombin Time PT INR",
+			"source": "PROTROBINSKO VRIJEME",
+			"section": "KOAGULACIJA",
+			"price": 3
+		},
+		{
+			"slug": "d-dimer",
+			"nameEn": "D-Dimer",
+			"source": "D-DIMER",
+			"section": "KOAGULACIJA",
+			"price": 20
+		},
+		{
+			"slug": "activated-partial-thromboplastin-time",
+			"nameEn": "Activated Partial Thromboplastin Time",
+			"source": "APTT",
+			"section": "KOAGULACIJA",
+			"price": 6
+		},
+		{
+			"slug": "glucose",
+			"nameEn": "Glucose",
+			"source": "GLUKOZA",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "oral-glucose-tolerance-test",
+			"nameEn": "Oral Glucose Tolerance Test",
+			"source": "TEST OPTERECENJA GLUKOZOM (O-GTT)",
+			"section": "BIOHEMIJA",
+			"price": 12
+		},
+		{
+			"slug": "urea",
+			"nameEn": "Urea",
+			"source": "UREA",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "urea-clearance",
+			"nameEn": "Urea Clearance",
+			"source": "UREA KLIRENS",
+			"section": "BIOHEMIJA",
+			"price": 8
+		},
+		{
+			"slug": "creatinine",
+			"nameEn": "Creatinine",
+			"source": "KREATININ",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "creatinine-clearance",
+			"nameEn": "Creatinine Clearance",
+			"source": "KREATININ KLIRENS",
+			"section": "BIOHEMIJA",
+			"price": 8
+		},
+		{
+			"slug": "uric-acid",
+			"nameEn": "Uric Acid",
+			"source": "ACIDUM URICUM",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "total-bilirubin",
+			"nameEn": "Total Bilirubin",
+			"source": "BILIRUBIN UKUPNI",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "direct-bilirubin",
+			"nameEn": "Direct Bilirubin",
+			"source": "BILIRUBIN DIREKTNI",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "total-protein",
+			"nameEn": "Total Protein",
+			"source": "PROTEINI UKUPNI",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "albumin",
+			"nameEn": "Albumin",
+			"source": "ALBUMINI",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "cholesterol",
+			"nameEn": "Cholesterol",
+			"source": "HOLESTEROL",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "triglycerides",
+			"nameEn": "Triglycerides",
+			"source": "TRIGLECERIDI",
+			"section": "BIOHEMIJA",
+			"price": 2
+		},
+		{
+			"slug": "lipid-profile",
+			"nameEn": "Lipid Profile",
+			"source": "LIPIDNI STATUS (HDL,LDL)",
+			"section": "BIOHEMIJA",
+			"price": 8
+		},
+		{
+			"slug": "complete-urinalysis",
+			"nameEn": "Complete Urinalysis",
+			"source": "KVALITATIVNO SA SEDIMENTOM",
+			"section": "PREGLED URINA",
+			"price": 4
+		},
+		{
+			"slug": "calcium-in-24h-urine",
+			"nameEn": "Calcium in 24h Urine",
+			"source": "KALCIJUM U24H",
+			"section": "PREGLED URINA",
+			"price": 4
+		},
+		{
+			"slug": "drug-panel-10-ii",
+			"nameEn": "Drug Panel 10 II",
+			"source": "TEST NA OPOJNE DROGE - PANEL (10)",
+			"section": "PAS",
+			"price": 50
+		},
+		{
+			"slug": "ast",
+			"nameEn": "AST",
+			"source": "AST (SGPT)",
+			"section": "ENZIMI",
+			"price": 2
+		},
+		{
+			"slug": "alt",
+			"nameEn": "ALT",
+			"source": "ALT (SGOT)",
+			"section": "ENZIMI",
+			"price": 2
+		},
+		{
+			"slug": "gamma-gt",
+			"nameEn": "Gamma-GT",
+			"source": "GAMA GT",
+			"section": "ENZIMI",
+			"price": 2
+		},
+		{
+			"slug": "alkaline-phosphatase",
+			"nameEn": "Alkaline Phosphatase",
+			"source": "ALKALNA FOSFATAZA",
+			"section": "ENZIMI",
+			"price": 2
+		},
+		{
+			"slug": "ck",
+			"nameEn": "CK",
+			"source": "KREATIN KINAZA (CK)",
+			"section": "ENZIMI",
+			"price": 2
+		},
+		{
+			"slug": "ldh",
+			"nameEn": "LDH",
+			"source": "LDH",
+			"section": "ENZIMI",
+			"price": 2
+		},
+		{
+			"slug": "amylase",
+			"nameEn": "Amylase",
+			"source": "ALFA AMILAZA (SERUM)",
+			"section": "ENZIMI",
+			"price": 4
+		},
+		{
+			"slug": "amylase-in-urine",
+			"nameEn": "Amylase in Urine",
+			"source": "ALFA AMILAZA (URIN)",
+			"section": "ENZIMI",
+			"price": 4
+		},
+		{
+			"slug": "troponin",
+			"nameEn": "Troponin",
+			"source": "TROPONIN",
+			"section": "ENZIMI",
+			"price": 12
+		},
+		{
+			"slug": "lipase",
+			"nameEn": "Lipase",
+			"source": "LIPAZA",
+			"section": "ENZIMI",
+			"price": 5
+		},
+		{
+			"slug": "iron",
+			"nameEn": "Iron",
+			"source": "GVOŽĐE (FE)",
+			"section": "METABOLITI",
+			"price": 3
+		},
+		{
+			"slug": "ferritin",
+			"nameEn": "Ferritin",
+			"source": "FERITIN",
+			"section": "METABOLITI",
+			"price": 13
+		},
+		{
+			"slug": "vitamin-b12",
+			"nameEn": "Vitamin B12",
+			"source": "VITAMIN B12",
+			"section": "METABOLITI",
+			"price": 13
+		},
+		{
+			"slug": "vitamin-d-25-oh",
+			"nameEn": "Vitamin D 25-OH",
+			"source": "VITAMIN D",
+			"section": "METABOLITI",
+			"price": 30
+		},
+		{
+			"slug": "sodium",
+			"nameEn": "Sodium",
+			"source": "NATRIJUM",
+			"section": "ELEKTROLITI",
+			"price": 3
+		},
+		{
+			"slug": "potassium",
+			"nameEn": "Potassium",
+			"source": "KALIJUM",
+			"section": "ELEKTROLITI",
+			"price": 3
+		},
+		{
+			"slug": "calcium",
+			"nameEn": "Calcium",
+			"source": "KALCIJUM UKUPNI",
+			"section": "ELEKTROLITI",
+			"price": 3
+		},
+		{
+			"slug": "chloride",
+			"nameEn": "Chloride",
+			"source": "HLORIDI",
+			"section": "ELEKTROLITI",
+			"price": 3
+		},
+		{
+			"slug": "magnesium",
+			"nameEn": "Magnesium",
+			"source": "MAGNEZIJUM",
+			"section": "ELEKTROLITI",
+			"price": 3
+		},
+		{
+			"slug": "phosphorus",
+			"nameEn": "Phosphorus",
+			"source": "FOSFOR",
+			"section": "ELEKTROLITI",
+			"price": 3
+		},
+		{
+			"slug": "c-reactive-protein",
+			"nameEn": "C-Reactive Protein",
+			"source": "CRP",
+			"section": "REUMATSKI TESTOVI",
+			"price": 5
+		},
+		{
+			"slug": "tsh",
+			"nameEn": "TSH",
+			"source": "TSH",
+			"section": "HORMONI / TIREOIDNI",
+			"price": 5.5
+		},
+		{
+			"slug": "free-t3",
+			"nameEn": "Free T3",
+			"source": "FREE T3",
+			"section": "HORMONI / TIREOIDNI",
+			"price": 10
+		},
+		{
+			"slug": "free-t4",
+			"nameEn": "Free T4",
+			"source": "FREE T4",
+			"section": "HORMONI / TIREOIDNI",
+			"price": 10
+		},
+		{
+			"slug": "thyroglobulin",
+			"nameEn": "Thyroglobulin",
+			"source": "TIREOGLOBULIN",
+			"section": "HORMONI / TIREOIDNI",
+			"price": 15
+		},
+		{
+			"slug": "anti-tpo",
+			"nameEn": "Anti-TPO",
+			"source": "ANTI PO",
+			"section": "HORMONI / TIREOIDNI",
+			"price": 15
+		},
+		{
+			"slug": "anti-thyroglobulin-antibodies",
+			"nameEn": "Anti-Thyroglobulin Antibodies",
+			"source": "ANTI TG At",
+			"section": "HORMONI / TIREOIDNI",
+			"price": 15
+		},
+		{
+			"slug": "estradiol",
+			"nameEn": "Estradiol",
+			"source": "ESTRADIOL",
+			"section": "HORMONI / REPRODUKTIVNI",
+			"price": 8
+		},
+		{
+			"slug": "lh",
+			"nameEn": "LH",
+			"source": "LH",
+			"section": "HORMONI / REPRODUKTIVNI",
+			"price": 8
+		},
+		{
+			"slug": "fsh",
+			"nameEn": "FSH",
+			"source": "FSH",
+			"section": "HORMONI / REPRODUKTIVNI",
+			"price": 8
+		},
+		{
+			"slug": "prolactin",
+			"nameEn": "Prolactin",
+			"source": "PROLAKTIN",
+			"section": "HORMONI / REPRODUKTIVNI",
+			"price": 8
+		},
+		{
+			"slug": "progesterone",
+			"nameEn": "Progesterone",
+			"source": "PROGESTERON",
+			"section": "HORMONI / REPRODUKTIVNI",
+			"price": 8
+		},
+		{
+			"slug": "beta-hcg",
+			"nameEn": "Beta HCG",
+			"source": "BETA HCG, also BETA HCG (TESTISI) 14.00 under TUMOR MARKERI",
+			"section": "HORMONI / REPRODUKTIVNI",
+			"price": 14
+		},
+		{
+			"slug": "testosterone",
+			"nameEn": "Testosterone",
+			"source": "TESTOSTERON",
+			"section": "HORMONI / REPRODUKTIVNI",
+			"price": 10
+		},
+		{
+			"slug": "cortisol",
+			"nameEn": "Cortisol",
+			"source": "KORTIZOL",
+			"section": "ADRENALNA FUNKCIJA",
+			"price": 9
+		},
+		{
+			"slug": "pth",
+			"nameEn": "PTH",
+			"source": "PTH",
+			"section": "OSTEOPOROZA (+ prenatal screening printed in the same block)",
+			"price": 15
+		},
+		{
+			"slug": "calcitonin",
+			"nameEn": "Calcitonin",
+			"source": "KALCITONIN",
+			"section": "OSTEOPOROZA (+ prenatal screening printed in the same block)",
+			"price": 15
+		},
+		{
+			"slug": "triple-test-second-trimester-screening",
+			"nameEn": "Triple Test",
+			"source": "TRIPLE TEST",
+			"section": "OSTEOPOROZA (+ prenatal screening printed in the same block)",
+			"price": 48
+		},
+		{
+			"slug": "double-test-first-trimester-screening",
+			"nameEn": "Double Test",
+			"source": "DUBLE TEST",
+			"section": "OSTEOPOROZA (+ prenatal screening printed in the same block)",
+			"price": 40
+		},
+		{
+			"slug": "hba1c",
+			"nameEn": "HbA1c",
+			"source": "BA1C",
+			"section": "DIJABETES",
+			"price": 14
+		},
+		{
+			"slug": "insulin",
+			"nameEn": "Insulin",
+			"source": "INSULIN",
+			"section": "DIJABETES",
+			"price": 12
+		},
+		{
+			"slug": "c-peptide",
+			"nameEn": "C-Peptide",
+			"source": "C-PEPTID",
+			"section": "DIJABETES",
+			"price": 12
+		},
+		{
+			"slug": "afp",
+			"nameEn": "AFP",
+			"source": "AFP (JETRA, TESTISI)",
+			"section": "TUMOR MARKERI",
+			"price": 15
+		},
+		{
+			"slug": "cea",
+			"nameEn": "CEA",
+			"source": "CEA (OPSTI, KOLON)",
+			"section": "TUMOR MARKERI",
+			"price": 15
+		},
+		{
+			"slug": "ca-15-3",
+			"nameEn": "CA 15-3",
+			"source": "CA 15-3 (DOJKA)",
+			"section": "TUMOR MARKERI",
+			"price": 16
+		},
+		{
+			"slug": "ca-125",
+			"nameEn": "CA 125",
+			"source": "CA 125 (JAJNICI)",
+			"section": "TUMOR MARKERI",
+			"price": 16
+		},
+		{
+			"slug": "he4",
+			"nameEn": "HE4",
+			"source": "HE-4",
+			"section": "TUMOR MARKERI",
+			"price": 25
+		},
+		{
+			"slug": "ca-19-9",
+			"nameEn": "CA 19-9",
+			"source": "CA 19-9 (PANKREAS)",
+			"section": "TUMOR MARKERI",
+			"price": 15
+		},
+		{
+			"slug": "psa",
+			"nameEn": "PSA",
+			"source": "PSA (PROSTATA)",
+			"section": "TUMOR MARKERI",
+			"price": 14
+		},
+		{
+			"slug": "free-psa",
+			"nameEn": "Free PSA",
+			"source": "FREE PSA (PROSTATA)",
+			"section": "TUMOR MARKERI",
+			"price": 14
+		},
+		{
+			"slug": "procalcitonin",
+			"nameEn": "Procalcitonin",
+			"source": "PROCALCITONIN",
+			"section": "SEPSA",
+			"price": 30
+		},
+		{
+			"slug": "hiv-ag-ab",
+			"nameEn": "HIV Ag-Ab",
+			"source": "HIV",
+			"section": "VIRUSI",
+			"price": 15
+		},
+		{
+			"slug": "anti-hcv",
+			"nameEn": "Anti-HCV",
+			"source": "HCV",
+			"section": "VIRUSI",
+			"price": 15
+		},
+		{
+			"slug": "hbsag",
+			"nameEn": "HBsAg",
+			"source": "HBsAg",
+			"section": "VIRUSI",
+			"price": 14
+		},
+		{
+			"slug": "covid-19-antigen-test",
+			"nameEn": "COVID-19 Antigen Test",
+			"source": "BRZI ANTIGENSKI TEST",
+			"section": "COVID 19",
+			"price": 20
+		},
+		{
+			"slug": "anti-sars-cov",
+			"nameEn": "Anti-SARS-CoV",
+			"source": "ANTI SARS COV-2 UKUPNA ANTITIJELA",
+			"section": "COVID 19",
+			"price": 20
+		}
+	],
+	"labTestSynonymsAdded": [
+		{
+			"slug": "lipid-profile",
+			"names": [
+				"Lipidni status",
+				"Липидни статус"
+			],
+			"language": "sr"
+		},
+		{
+			"slug": "drug-panel-10-ii",
+			"names": [
+				"Test na opojne droge",
+				"Тест на опојне дроге"
+			],
+			"language": "sr"
+		}
+	],
+	"doctors": [],
+	"excluded": [
+		{
+			"source": "BETA HCG (TESTISI) 14.00 (раздел TUMOR MARKERI)",
+			"reason": "Тот же анализ, что BETA HCG 14.00 в разделе REPRODUKTIVNI, цена совпадает. Строка clinic_lab_tests одна (beta-hcg); у записи каталога уже есть категории HORMONES + PREGNANCY_FERTILITY, онкомаркером её не делаем."
+		}
+	],
+	"notes": [
+		"В источнике «AST (SGPT)» и «ALT (SGOT)» — аббревиатуры в скобках перепутаны (AST = SGOT, ALT = SGPT). Сопоставлено по основному названию.",
+		"«ANTI PO» — опечатка источника, это Anti-TPO (раздел TIREOIDNI, рядом ANTI TG At).",
+		"TRIPLE TEST / DUBLE TEST напечатаны в блоке OSTEOPOROZA, по смыслу это пренатальный скрининг.",
+		"COVID-позиции заведены: обе уже есть в каталоге (covid-19-antigen-test, anti-sars-cov — у последнего синоним «COVID-19 Antibodies», так же заведены у Milmedika и Dr Zejnilović).",
+		"Triple/Double test: импорт писался на triple-test / double-test, до применения их слили в triple-test-second-trimester-screening / double-test-first-trimester-screening (slug_redirects 628, 642) — SQL и запись поправлены под основные записи.",
+		"drug-panel-10 / drug-panel-10-ii НЕ дубли по решению миграции 050: у Novi Standard обе записи с разными ценами (45 и 40). Codra взят на drug-panel-10-ii, как Diagnostica, Vaše zdravlje и Milmedika для «panel 10 droga».",
+		"TROPONIN без уточнения I/T → общая запись troponin (кроме Codra — только Opšta bolnica Nikšić). Хвост «тропонин I/T» из аудита названий: если общую запись будут разносить на I/T, строку Codra переносить вместе с ней.",
+		"KRVNA SLIKA → complete-blood-count (без лейкоформулы): из прайса не видно, входит ли формула; базовая запись — единственный разумный кандидат."
+	],
+	"openQuestions": []
+}

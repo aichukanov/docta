@@ -1,0 +1,1329 @@
+{
+ "batch": "drg-11",
+ "items": [
+  {
+   "code": "S60Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for HIV, Same Day",
+   "slug": "hospitalization-for-hiv-same-day",
+   "name_sr": "HIV, isti dan",
+   "name_ru": "Госпитализация: ВИЧ, в течение одного дня",
+   "name_de": "Stationäre Behandlung: HIV, am selben Tag",
+   "name_tr": "Yatış: HIV, aynı gün",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "S65A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for HIV-Related Diseases with Very Severe CC",
+   "slug": "hospitalization-for-hiv-related-diseases-with-very-severe-cc",
+   "name_sr": "Bolesti povezane sa HIV-om sa vrlo teškim KK",
+   "name_ru": "Госпитализация: заболевания, связанные с ВИЧ с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: HIV-assoziierte Erkrankungen mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile HIV ile ilişkili hastalıklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "S65B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for HIV-Related Diseases with Severe CC",
+   "slug": "hospitalization-for-hiv-related-diseases-with-severe-cc",
+   "name_sr": "Bolesti povezane sa HIV-om sa teškim KK",
+   "name_ru": "Госпитализация: заболевания, связанные с ВИЧ с тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: HIV-assoziierte Erkrankungen mit schweren KK",
+   "name_tr": "Yatış: Şiddetli CC ile HIV ile ilişkili hastalıklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "S65C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for HIV-Related Diseases without Very Severe or Severe CC",
+   "slug": "hospitalization-for-hiv-related-diseases-without-very-severe-or-severe-cc",
+   "name_sr": "Bolesti povezane sa HIV-om bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: заболевания, связанные с ВИЧ без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: HIV-assoziierte Erkrankungen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan HIV ile ilişkili hastalıklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T01A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Operating Room Procedures for Infectious and Parasitic Diseases with Very Severe CC",
+   "slug": "hospitalization-for-operating-room-procedures-for-infectious-and-parasitic-diseases-with-very-severe-cc",
+   "name_sr": "Operativni zahvati zbog infektivnih i parazitarnih bolesti sa vrlo teškim KK",
+   "name_ru": "Госпитализация: операции при инфекционных и паразитарных болезнях с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Operative Eingriffe bei infektiösen und parasitären Krankheiten mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile enfeksiyöz ve paraziter hastalıklar nedeniyle cerrahi girişimler",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T01B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Operating Room Procedures for Infectious and Parasitic Diseases with Severe or Moderate CC",
+   "slug": "hospitalization-for-operating-room-procedures-for-infectious-and-parasitic-diseases-with-severe-or-moderate-cc",
+   "name_sr": "Operativni zahvati zbog infektivnih i parazitarnih bolesti sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: операции при инфекционных и паразитарных болезнях с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Operative Eingriffe bei infektiösen und parasitären Krankheiten mit schweren oder moderaten KK",
+   "name_tr": "Yatış: Şiddetli veya orta CC ile enfeksiyöz ve paraziter hastalıklar nedeniyle cerrahi girişimler",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T62A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Fever of Unknown Origin with CC",
+   "slug": "hospitalization-for-fever-of-unknown-origin-with-cc",
+   "name_sr": "Febrilno stanje nejasnog porijekla sa KK",
+   "name_ru": "Госпитализация: лихорадка неясного происхождения с ОО",
+   "name_de": "Stationäre Behandlung: Fieber unklarer Genese mit KK",
+   "name_tr": "Yatış: CC ile nedeni bilinmeyen ateş",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES",
+    "INTERNAL_MEDICINE"
+   ],
+   "note": "пара к существующей 7819 hospitalization-for-fever-of-unknown-origin-without-cc (другая тяжесть)"
+  },
+  {
+   "code": "T63Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Viral Illness",
+   "slug": "hospitalization-for-viral-illness",
+   "name_sr": "Virusna bolest",
+   "name_ru": "Госпитализация: вирусное заболевание",
+   "name_de": "Stationäre Behandlung: Viruserkrankung",
+   "name_tr": "Yatış: Viral hastalık",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T64B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Infectious and Parasitic Diseases with Severe or Moderate CC",
+   "slug": "hospitalization-for-other-infectious-and-parasitic-diseases-with-severe-or-moderate-cc",
+   "name_sr": "Druge infektivne i parazitarne bolesti sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: другие инфекционные и паразитарные болезни с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Andere infektiöse und parasitäre Krankheiten mit schweren oder moderaten KK",
+   "name_tr": "Yatış: Şiddetli veya orta CC ile diğer enfeksiyöz ve paraziter hastalıklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T64C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Infectious and Parasitic Diseases without CC",
+   "slug": "hospitalization-for-other-infectious-and-parasitic-diseases-without-cc",
+   "name_sr": "Druge infektivne i parazitarne bolesti bez KK",
+   "name_ru": "Госпитализация: другие инфекционные и паразитарные болезни без ОО",
+   "name_de": "Stationäre Behandlung: Andere infektiöse und parasitäre Krankheiten ohne KK",
+   "name_tr": "Yatış: CC olmadan diğer enfeksiyöz ve paraziter hastalıklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T01C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Operating Room Procedures for Infectious and Parasitic Diseases without CC",
+   "slug": "hospitalization-for-operating-room-procedures-for-infectious-and-parasitic-diseases-without-cc",
+   "name_sr": "Operativni zahvati zbog infektivnih i parazitarnih bolesti bez KK",
+   "name_ru": "Госпитализация: операции при инфекционных и паразитарных болезнях без ОО",
+   "name_de": "Stationäre Behandlung: Operative Eingriffe bei infektiösen und parasitären Krankheiten ohne KK",
+   "name_tr": "Yatış: CC olmadan enfeksiyöz ve paraziter hastalıklar nedeniyle cerrahi girişimler",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T40Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Infectious and Parasitic Diseases with Ventilator Support",
+   "slug": "hospitalization-for-infectious-and-parasitic-diseases-with-ventilator-support",
+   "name_sr": "Infektivne i parazitarne bolesti sa ventilacijskom podrškom",
+   "name_ru": "Госпитализация: инфекционные и паразитарные болезни с ИВЛ",
+   "name_de": "Stationäre Behandlung: Infektiöse und parasitäre Krankheiten mit Beatmung",
+   "name_tr": "Yatış: Mekanik ventilasyon desteğiyle enfeksiyöz ve paraziter hastalıklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES",
+    "ANESTHESIOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Septicemia with Very Severe CC",
+   "slug": "hospitalization-for-septicemia-with-very-severe-cc",
+   "name_sr": "Septikemija sa vrlo teškim KK",
+   "name_ru": "Госпитализация: септицемия с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Septikämie mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile septisemi",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Septicemia without Very Severe CC",
+   "slug": "hospitalization-for-septicemia-without-very-severe-cc",
+   "name_sr": "Septikemija bez vrlo teških KK",
+   "name_ru": "Госпитализация: септицемия без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Septikämie ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan septisemi",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Postoperative and Post-Traumatic Infections with Very Severe or Severe CC",
+   "slug": "hospitalization-for-postoperative-and-post-traumatic-infections-with-very-severe-or-severe-cc",
+   "name_sr": "Postoperativne i posttraumatske infekcije sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: послеоперационные и посттравматические инфекции с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Postoperative und posttraumatische Infektionen mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile ameliyat sonrası ve travma sonrası enfeksiyonlar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Postoperative and Post-Traumatic Infections without Very Severe or Severe CC",
+   "slug": "hospitalization-for-postoperative-and-post-traumatic-infections-without-very-severe-or-severe-cc",
+   "name_sr": "Postoperativne i posttraumatske infekcije bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: послеоперационные и посттравматические инфекции без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Postoperative und posttraumatische Infektionen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan ameliyat sonrası ve travma sonrası enfeksiyonlar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "T64A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Infectious and Parasitic Diseases with Very Severe CC",
+   "slug": "hospitalization-for-other-infectious-and-parasitic-diseases-with-very-severe-cc",
+   "name_sr": "Druge infektivne i parazitarne bolesti sa vrlo teškim KK",
+   "name_ru": "Госпитализация: другие инфекционные и паразитарные болезни с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Andere infektiöse und parasitäre Krankheiten mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile diğer enfeksiyöz ve paraziter hastalıklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U40Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Mental Health Treatment with ECT, Same Day",
+   "slug": "hospitalization-for-mental-health-treatment-with-ect-same-day",
+   "name_sr": "Liječenje mentalnog zdravlja, isti dan, sa elektrokonvulzivnom terapijom",
+   "name_ru": "Госпитализация: психиатрическое лечение с электросудорожной терапией, в течение одного дня",
+   "name_de": "Stationäre Behandlung: Psychiatrische Behandlung mit Elektrokrampftherapie, am selben Tag",
+   "name_tr": "Yatış: Elektrokonvülsif tedavi ile ruh sağlığı tedavisi, aynı gün",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": "кандидат existing: 5207 electroconvulsive-therapy-under-general-anesthesia; оставлено new — группа = эпизод лечения, а не сама процедура"
+  },
+  {
+   "code": "U60Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Mental Health Treatment without ECT, Same Day",
+   "slug": "hospitalization-for-mental-health-treatment-without-ect-same-day",
+   "name_sr": "Liječenje mentalnog zdravlja, isti dan, bez elektrokonvulzivne terapije",
+   "name_ru": "Госпитализация: психиатрическое лечение без электросудорожной терапии, в течение одного дня",
+   "name_de": "Stationäre Behandlung: Psychiatrische Behandlung ohne Elektrokrampftherapie, am selben Tag",
+   "name_tr": "Yatış: Elektrokonvülsif tedavi olmadan ruh sağlığı tedavisi, aynı gün",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U61Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Schizophrenia Disorders",
+   "slug": "hospitalization-for-schizophrenia-disorders",
+   "name_sr": "Šizofreni poremećaji",
+   "name_ru": "Госпитализация: шизофренические расстройства",
+   "name_de": "Stationäre Behandlung: Schizophrene Störungen",
+   "name_tr": "Yatış: Şizofrenik bozukluklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U62A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Paranoia and Acute Psychotic Disorder with Very Severe or Severe CC or Mental Health Legal Status",
+   "slug": "hospitalization-for-paranoia-and-acute-psychotic-disorder-with-very-severe-or-severe-cc",
+   "name_sr": "Paranoja i akutni psihotični poremećaj sa vrlo teškim ili teškim KK ili sa legalnim statusom mentalnog zdravlja",
+   "name_ru": "Госпитализация: паранойя и острое психотическое расстройство с очень тяжёлыми или тяжёлыми ОО или с недобровольным психиатрическим статусом",
+   "name_de": "Stationäre Behandlung: Paranoia und akute psychotische Störung mit sehr schweren oder schweren KK oder mit psychiatrischem Rechtsstatus",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile ya da yasal ruh sağlığı statüsüyle paranoya ve akut psikotik bozukluk",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U62B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Paranoia and Acute Psychotic Disorder without Very Severe or Severe CC, without Mental Health Legal Status",
+   "slug": "hospitalization-for-paranoia-and-acute-psychotic-disorder-without-very-severe-or-severe-cc",
+   "name_sr": "Paranoja i akutni psihotični poremećaj bez vrlo teških ili teških KK, bez legalnog statusa mentalnog zdravlja",
+   "name_ru": "Госпитализация: паранойя и острое психотическое расстройство без очень тяжёлых или тяжёлых ОО, без недобровольного психиатрического статуса",
+   "name_de": "Stationäre Behandlung: Paranoia und akute psychotische Störung ohne sehr schwere oder schwere KK, ohne psychiatrischen Rechtsstatus",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan, yasal ruh sağlığı statüsü olmadan paranoya ve akut psikotik bozukluk",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U63Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Affective Disorders",
+   "slug": "hospitalization-for-major-affective-disorders",
+   "name_sr": "Veliki afektivni poremećaji",
+   "name_ru": "Госпитализация: большие аффективные расстройства",
+   "name_de": "Stationäre Behandlung: Schwere affektive Störungen",
+   "name_tr": "Yatış: Majör duygudurum bozuklukları",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U64Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Affective and Somatoform Disorders",
+   "slug": "hospitalization-for-other-affective-and-somatoform-disorders",
+   "name_sr": "Ostali afektivni i somatoformni poremećaji",
+   "name_ru": "Госпитализация: прочие аффективные и соматоформные расстройства",
+   "name_de": "Stationäre Behandlung: Andere affektive und somatoforme Störungen",
+   "name_tr": "Yatış: Diğer duygudurum ve somatoform bozukluklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U65Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Anxiety Disorders",
+   "slug": "hospitalization-for-anxiety-disorders",
+   "name_sr": "Anksiozni poremećaji",
+   "name_ru": "Госпитализация: тревожные расстройства",
+   "name_de": "Stationäre Behandlung: Angststörungen",
+   "name_tr": "Yatış: Anksiyete bozuklukları",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U66Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Eating and Obsessive-Compulsive Disorders",
+   "slug": "hospitalization-for-eating-and-obsessive-compulsive-disorders",
+   "name_sr": "Poremećaji hranjenja i opsesivno-kompulzivni poremećaji",
+   "name_ru": "Госпитализация: расстройства пищевого поведения и обсессивно-компульсивные расстройства",
+   "name_de": "Stationäre Behandlung: Essstörungen und Zwangsstörungen",
+   "name_tr": "Yatış: Yeme bozuklukları ve obsesif-kompulsif bozukluklar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U67Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Personality Disorders and Acute Reactions",
+   "slug": "hospitalization-for-personality-disorders-and-acute-reactions",
+   "name_sr": "Poremećaji ličnosti i akutne reakcije",
+   "name_ru": "Госпитализация: расстройства личности и острые реакции",
+   "name_de": "Stationäre Behandlung: Persönlichkeitsstörungen und akute Reaktionen",
+   "name_tr": "Yatış: Kişilik bozuklukları ve akut reaksiyonlar",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "U68Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Childhood Mental Disorders",
+   "slug": "hospitalization-for-childhood-mental-disorders",
+   "name_sr": "Mentalni poremećaji u dječjem uzrastu",
+   "name_ru": "Госпитализация: психические расстройства детского возраста",
+   "name_de": "Stationäre Behandlung: Psychische Störungen im Kindesalter",
+   "name_tr": "Yatış: Çocukluk çağı ruhsal bozuklukları",
+   "categories": [
+    "GENERAL_MEDICINE",
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "PSYCHIATRY",
+    "PEDIATRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "V60Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Alcohol Intoxication and Withdrawal",
+   "slug": "hospitalization-for-alcohol-intoxication-and-withdrawal",
+   "name_sr": "Intoksikacija alkoholom i apstinencija",
+   "name_ru": "Госпитализация: алкогольная интоксикация и абстиненция",
+   "name_de": "Stationäre Behandlung: Alkoholintoxikation und -entzug",
+   "name_tr": "Yatış: Alkol intoksikasyonu ve yoksunluğu",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "V61Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Drug Intoxication and Withdrawal",
+   "slug": "hospitalization-for-drug-intoxication-and-withdrawal",
+   "name_sr": "Intoksikacija lijekovima (drogama) i apstinencija",
+   "name_ru": "Госпитализация: интоксикация лекарствами (наркотиками) и абстиненция",
+   "name_de": "Stationäre Behandlung: Medikamenten- und Drogenintoxikation und -entzug",
+   "name_tr": "Yatış: İlaç (uyuşturucu) intoksikasyonu ve yoksunluğu",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "V62A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Alcohol Use Disorders and Dependence",
+   "slug": "hospitalization-for-alcohol-use-disorders-and-dependence",
+   "name_sr": "Poremećaji i zavisnost zbog upotrebe alkohola",
+   "name_ru": "Госпитализация: расстройства и зависимость, связанные с употреблением алкоголя",
+   "name_de": "Stationäre Behandlung: Alkoholbedingte Störungen und Abhängigkeit",
+   "name_tr": "Yatış: Alkol kullanım bozuklukları ve bağımlılığı",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "V62B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Alcohol Use Disorders and Dependence, Same Day",
+   "slug": "hospitalization-for-alcohol-use-disorders-and-dependence-same-day",
+   "name_sr": "Poremećaji i zavisnost zbog upotrebe alkohola, isti dan",
+   "name_ru": "Госпитализация: расстройства и зависимость, связанные с употреблением алкоголя, в течение одного дня",
+   "name_de": "Stationäre Behandlung: Alkoholbedingte Störungen und Abhängigkeit, am selben Tag",
+   "name_tr": "Yatış: Alkol kullanım bozuklukları ve bağımlılığı, aynı gün",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "V63Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Opioid Use Disorders and Dependence",
+   "slug": "hospitalization-for-opioid-use-disorders-and-dependence",
+   "name_sr": "Poremećaji i zavisnost zbog upotrebe opijata",
+   "name_ru": "Госпитализация: расстройства и зависимость, связанные с употреблением опиоидов",
+   "name_de": "Stationäre Behandlung: Opioidbedingte Störungen und Abhängigkeit",
+   "name_tr": "Yatış: Opioid kullanım bozuklukları ve bağımlılığı",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "V64Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Drug Use Disorders and Dependence",
+   "slug": "hospitalization-for-other-drug-use-disorders-and-dependence",
+   "name_sr": "Poremećaji i zavisnost zbog upotrebe ostalih lijekova",
+   "name_ru": "Госпитализация: расстройства и зависимость, связанные с употреблением других лекарств (наркотиков)",
+   "name_de": "Stationäre Behandlung: Störungen und Abhängigkeit durch andere Substanzen",
+   "name_tr": "Yatış: Diğer madde kullanım bozuklukları ve bağımlılığı",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "W60Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Polytrauma, Death or Transfer to Intensive Care, Stay < 5 Days",
+   "slug": "hospitalization-for-polytrauma-death-or-transfer-to-intensive-care-stay-under-5-days",
+   "name_sr": "Politrauma, smrtni ishod ili premještaj u drugu ustanovu za intenzivnu njegu, boravak < 5 dana",
+   "name_ru": "Госпитализация: политравма, смерть или перевод в другое учреждение для интенсивной терапии, пребывание < 5 дней",
+   "name_de": "Stationäre Behandlung: Polytrauma, Tod oder Verlegung in eine andere Einrichtung zur Intensivpflege, Aufenthalt < 5 Tage",
+   "name_tr": "Yatış: Politravma, ölüm veya yoğun bakım için başka kuruma sevk, yatış < 5 gün",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "EMERGENCY_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X04B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Procedures for Lower Limb Injury without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-procedures-for-lower-limb-injury-without-very-severe-or-severe-cc",
+   "name_sr": "Ostali zahvati zbog povrede donjeg ekstremiteta bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: прочие операции при травме нижней конечности без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Andere Eingriffe bei Verletzung der unteren Extremität ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan alt ekstremite yaralanması nedeniyle diğer girişimler",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X05B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Procedures for Hand Injury without CC",
+   "slug": "hospitalization-for-other-procedures-for-hand-injury-without-cc",
+   "name_sr": "Ostali zahvati zbog povrede šake bez KK",
+   "name_ru": "Госпитализация: прочие операции при травме кисти без ОО",
+   "name_de": "Stationäre Behandlung: Andere Eingriffe bei Handverletzung ohne KK",
+   "name_tr": "Yatış: CC olmadan el yaralanması nedeniyle diğer girişimler",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X06B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Procedures for Other Injuries without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-procedures-for-other-injuries-without-very-severe-or-severe-cc",
+   "name_sr": "Ostali zahvati zbog ostalih povreda bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: прочие операции при других травмах без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Andere Eingriffe bei sonstigen Verletzungen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan diğer yaralanmalar nedeniyle diğer girişimler",
+   "categories": [
+    "ORTHOPEDICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Injuries without Very Severe or Severe CC",
+   "slug": "hospitalization-for-injuries-without-very-severe-or-severe-cc",
+   "name_sr": "Povrede bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: травмы без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Verletzungen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan yaralanmalar",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "EMERGENCY_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X61Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Allergic Reactions",
+   "slug": "hospitalization-for-allergic-reactions",
+   "name_sr": "Alergijske reakcije",
+   "name_ru": "Госпитализация: аллергические реакции",
+   "name_de": "Stationäre Behandlung: Allergische Reaktionen",
+   "name_tr": "Yatış: Alerjik reaksiyonlar",
+   "categories": [
+    "ALLERGOLOGY"
+   ],
+   "specialties": [
+    "ALLERGOLOGY",
+    "EMERGENCY_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X62A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Poisoning or Toxic Effects of Drugs and Other Substances with Very Severe or Severe CC",
+   "slug": "hospitalization-for-poisoning-or-toxic-effects-of-drugs-and-other-substances-with-very-severe-or-severe-cc",
+   "name_sr": "Trovanje/toksično dejstvo lijekova ili drugih supstanci, sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: отравление или токсическое действие лекарств или других веществ с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Vergiftung oder toxische Wirkung von Arzneimitteln oder anderen Substanzen mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile ilaç veya diğer maddelerle zehirlenme ya da toksik etki",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "EMERGENCY_MEDICINE",
+    "INTERNAL_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X62B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Poisoning or Toxic Effects of Drugs and Other Substances without Very Severe or Severe CC",
+   "slug": "hospitalization-for-poisoning-or-toxic-effects-of-drugs-and-other-substances-without-very-severe-or-severe-cc",
+   "name_sr": "Trovanje/toksično dejstvo lijekova ili drugih supstanci, bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: отравление или токсическое действие лекарств или других веществ без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Vergiftung oder toxische Wirkung von Arzneimitteln oder anderen Substanzen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan ilaç veya diğer maddelerle zehirlenme ya da toksik etki",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "EMERGENCY_MEDICINE",
+    "INTERNAL_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X63B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Sequelae of Treatment without Very Severe or Severe CC",
+   "slug": "hospitalization-for-sequelae-of-treatment-without-very-severe-or-severe-cc",
+   "name_sr": "Posljedice liječenja bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: последствия лечения без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Behandlungsfolgen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan tedavi komplikasyonları",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INTERNAL_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X64B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Injury, Poisoning and Toxic Effect Diagnoses without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-injury-poisoning-and-toxic-effect-diagnoses-without-very-severe-or-severe-cc",
+   "name_sr": "Ostale dijagnoze povreda, trovanja i toksičnih dejstava lijekova bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: прочие диагнозы травм, отравлений и токсического действия лекарств без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Andere Diagnosen bei Verletzungen, Vergiftungen und toxischen Wirkungen von Arzneimitteln ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan diğer yaralanma, zehirlenme ve ilaç toksik etkisi tanıları",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "EMERGENCY_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "W01Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Ventilation or Craniotomy for Polytrauma",
+   "slug": "hospitalization-for-ventilation-or-craniotomy-for-polytrauma",
+   "name_sr": "Zahvati ventilacije i kraniotomije usljed politraume",
+   "name_ru": "Госпитализация: ИВЛ и краниотомия при политравме",
+   "name_de": "Stationäre Behandlung: Beatmung und Kraniotomie bei Polytrauma",
+   "name_tr": "Yatış: Politravma nedeniyle ventilasyon ve kraniyotomi",
+   "categories": [
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "ANESTHESIOLOGY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "W02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hip, Femur and Limb Procedures for Polytrauma Including Implants with Very Severe or Severe CC",
+   "slug": "hospitalization-for-hip-femur-and-limb-procedures-for-polytrauma-including-implants-with-very-severe-or-severe-cc",
+   "name_sr": "Zahvati na kuku, femuru i ekstremitetima zbog politraume, uključujući primjenu implantata, sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: операции на тазобедренном суставе, бедре и конечностях при политравме, включая имплантаты с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Hüfte, Femur und Extremitäten bei Polytrauma einschließlich Implantaten mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile implant uygulaması dahil politravma nedeniyle kalça, femur ve ekstremite girişimleri",
+   "categories": [
+    "ORTHOPEDICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "W02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hip, Femur and Limb Procedures for Polytrauma Including Implants without Very Severe or Severe CC",
+   "slug": "hospitalization-for-hip-femur-and-limb-procedures-for-polytrauma-including-implants-without-very-severe-or-severe-cc",
+   "name_sr": "Zahvati na kuku, femuru i ekstremitetima zbog politraume, uključujući primjenu implantata, bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: операции на тазобедренном суставе, бедре и конечностях при политравме, включая имплантаты без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Hüfte, Femur und Extremitäten bei Polytrauma einschließlich Implantaten ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan implant uygulaması dahil politravma nedeniyle kalça, femur ve ekstremite girişimleri",
+   "categories": [
+    "ORTHOPEDICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "W03Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Abdominal Procedures for Polytrauma",
+   "slug": "hospitalization-for-abdominal-procedures-for-polytrauma",
+   "name_sr": "Zahvati na abdomenu zbog politraume",
+   "name_ru": "Госпитализация: абдоминальные операции при политравме",
+   "name_de": "Stationäre Behandlung: Abdominale Eingriffe bei Polytrauma",
+   "name_tr": "Yatış: Politravma nedeniyle abdominal girişimler",
+   "categories": [
+    "GENERAL_SURGERY",
+    "ABDOMINAL_SURGERY"
+   ],
+   "specialties": [
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "W04A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Operating Room Procedures for Polytrauma with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-operating-room-procedures-for-polytrauma-with-very-severe-or-severe-cc",
+   "name_sr": "Ostali operativni zahvati zbog politraume sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: прочие операции при политравме с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Andere operative Eingriffe bei Polytrauma mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile politravma nedeniyle diğer cerrahi girişimler",
+   "categories": [
+    "ORTHOPEDICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "W04B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Operating Room Procedures for Polytrauma without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-operating-room-procedures-for-polytrauma-without-very-severe-or-severe-cc",
+   "name_sr": "Ostali operativni zahvati zbog politraume bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: прочие операции при политравме без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Andere operative Eingriffe bei Polytrauma ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan politravma nedeniyle diğer cerrahi girişimler",
+   "categories": [
+    "ORTHOPEDICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "W61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Polytrauma without Significant Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-polytrauma-without-significant-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Politrauma bez značajnih zahvata sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: политравма без значимых операций с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Polytrauma ohne signifikante Eingriffe mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile önemli girişim olmadan politravma",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "EMERGENCY_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "W61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Polytrauma without Significant Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-polytrauma-without-significant-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Politrauma bez značajnih zahvata bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: политравма без значимых операций без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Polytrauma ohne signifikante Eingriffe ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan önemli girişim olmadan politravma",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "EMERGENCY_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Microvascular Tissue Transfer or Skin Graft with Very Severe or Severe CC for Hand Injury",
+   "slug": "hospitalization-for-microvascular-tissue-transfer-or-skin-graft-for-hand-injury-with-cc",
+   "name_sr": "Mikrovaskularni prenos tkiva ili presađivanje kože sa vrlo teškim ili teškim KK zbog povrede šake",
+   "name_ru": "Госпитализация: микрососудистая пересадка тканей или пересадка кожи с очень тяжёлыми или тяжёлыми ОО при травме кисти",
+   "name_de": "Stationäre Behandlung: Mikrovaskulärer Gewebetransfer oder Hauttransplantation mit sehr schweren oder schweren KK bei Handverletzung",
+   "name_tr": "Yatış: El yaralanması nedeniyle mikrovasküler doku transferi veya çok şiddetli veya şiddetli CC ile deri grefti",
+   "categories": [
+    "ORTHOPEDICS",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Skin Graft for Hand Injury without Very Severe or Severe CC",
+   "slug": "hospitalization-for-skin-graft-for-hand-injury-without-very-severe-or-severe-cc",
+   "name_sr": "Presađivanje kože zbog povrede šake bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: пересадка кожи при травме кисти без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Hauttransplantation bei Handverletzung ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan el yaralanması nedeniyle deri grefti",
+   "categories": [
+    "ORTHOPEDICS",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X04A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Procedures for Lower Limb Injury with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-procedures-for-lower-limb-injury-with-very-severe-or-severe-cc",
+   "name_sr": "Ostali zahvati zbog povrede donjeg ekstremiteta sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: прочие операции при травме нижней конечности с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Andere Eingriffe bei Verletzung der unteren Extremität mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile alt ekstremite yaralanması nedeniyle diğer girişimler",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X05A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Procedures for Hand Injury with CC",
+   "slug": "hospitalization-for-other-procedures-for-hand-injury-with-cc",
+   "name_sr": "Ostali zahvati zbog povrede šake sa KK",
+   "name_ru": "Госпитализация: прочие операции при травме кисти с ОО",
+   "name_de": "Stationäre Behandlung: Andere Eingriffe bei Handverletzung mit KK",
+   "name_tr": "Yatış: CC ile el yaralanması nedeniyle diğer girişimler",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X06A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Procedures for Other Injuries with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-procedures-for-other-injuries-with-very-severe-or-severe-cc",
+   "name_sr": "Ostali zahvati zbog ostalih povreda sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: прочие операции при других травмах с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Andere Eingriffe bei sonstigen Verletzungen mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile diğer yaralanmalar nedeniyle diğer girişimler",
+   "categories": [
+    "ORTHOPEDICS",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X07A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Skin Graft for Injury Excluding Hand, with Microvascular Tissue Transfer or with Very Severe or Severe CC",
+   "slug": "hospitalization-for-skin-graft-for-injury-excluding-hand-with-microvascular-transfer-or-cc",
+   "name_sr": "Presađivanje kože zbog povrede, osim povrede šake, sa mikrovaskularnim prenosom tkiva ili sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: пересадка кожи при травме (кроме кисти) с микрососудистой пересадкой тканей или с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Hauttransplantation bei Verletzung (außer Hand) mit mikrovaskulärem Gewebetransfer oder mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: El dışı yaralanma nedeniyle mikrovasküler doku transferi ile veya çok şiddetli veya şiddetli CC ile deri grefti",
+   "categories": [
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X07B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Skin Graft for Injury Excluding Hand, without Microvascular Tissue Transfer, without Very Severe or Severe CC",
+   "slug": "hospitalization-for-skin-graft-for-injury-excluding-hand-without-microvascular-transfer-or-cc",
+   "name_sr": "Presađivanje kože zbog povrede, osim povrede šake, bez mikrovaskularnog prenosa tkiva, bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: пересадка кожи при травме (кроме кисти) без микрососудистой пересадки тканей, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Hauttransplantation bei Verletzung (außer Hand) ohne mikrovaskulären Gewebetransfer, ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: El dışı yaralanma nedeniyle mikrovasküler doku transferi olmadan, çok şiddetli veya şiddetli CC olmadan deri grefti",
+   "categories": [
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X40Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Injuries, Poisoning and Toxic Effects of Drugs with Ventilator Support",
+   "slug": "hospitalization-for-injuries-poisoning-and-toxic-effects-of-drugs-with-ventilator-support",
+   "name_sr": "Povrede, trovanja i toksična dejstva lijekova sa ventilacijskom podrškom",
+   "name_ru": "Госпитализация: травмы, отравления и токсическое действие лекарств с ИВЛ",
+   "name_de": "Stationäre Behandlung: Verletzungen, Vergiftungen und toxische Wirkungen von Arzneimitteln mit Beatmung",
+   "name_tr": "Yatış: Mekanik ventilasyon desteğiyle yaralanmalar, zehirlenmeler ve ilaçların toksik etkileri",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "EMERGENCY_MEDICINE",
+    "ANESTHESIOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Injuries with Very Severe or Severe CC",
+   "slug": "hospitalization-for-injuries-with-very-severe-or-severe-cc",
+   "name_sr": "Povrede sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: травмы с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Verletzungen mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile yaralanmalar",
+   "categories": [
+    "ORTHOPEDICS"
+   ],
+   "specialties": [
+    "ORTHOPEDICS_TRAUMATOLOGY",
+    "EMERGENCY_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X63A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Sequelae of Treatment with Very Severe or Severe CC",
+   "slug": "hospitalization-for-sequelae-of-treatment-with-very-severe-or-severe-cc",
+   "name_sr": "Posljedice liječenja sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: последствия лечения с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Behandlungsfolgen mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile tedavi komplikasyonları",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "INTERNAL_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "X64A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Injury, Poisoning and Toxic Effect Diagnoses with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-injury-poisoning-and-toxic-effect-diagnoses-with-very-severe-or-severe-cc",
+   "name_sr": "Ostale dijagnoze povreda, trovanja i toksičnih dejstava lijekova sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: прочие диагнозы травм, отравлений и токсического действия лекарств с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Andere Diagnosen bei Verletzungen, Vergiftungen und toxischen Wirkungen von Arzneimitteln mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile diğer yaralanma, zehirlenme ve ilaç toksik etkisi tanıları",
+   "categories": [
+    "GENERAL_MEDICINE"
+   ],
+   "specialties": [
+    "EMERGENCY_MEDICINE"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Y01Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Ventilation for Burns and Severe Full-Thickness Burns",
+   "slug": "hospitalization-for-ventilation-for-burns-and-severe-full-thickness-burns",
+   "name_sr": "Ventilacija radi opekotina i teških opekotina pune debljine",
+   "name_ru": "Госпитализация: ИВЛ при ожогах и тяжёлых ожогах на всю толщину кожи",
+   "name_de": "Stationäre Behandlung: Beatmung bei Verbrennungen und schweren Verbrennungen in voller Hautdicke",
+   "name_tr": "Yatış: Yanıklar ve ağır tam kat yanıklar nedeniyle ventilasyon",
+   "categories": [
+    "WOUND_CARE",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY",
+    "ANESTHESIOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Y02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Burns with Skin Graft with CC",
+   "slug": "hospitalization-for-other-burns-with-skin-graft-with-cc",
+   "name_sr": "Ostale opekotine sa presađivanjem kože, sa KK",
+   "name_ru": "Госпитализация: прочие ожоги с пересадкой кожи с ОО",
+   "name_de": "Stationäre Behandlung: Andere Verbrennungen mit Hauttransplantation mit KK",
+   "name_tr": "Yatış: CC ile deri grefti ile diğer yanıklar",
+   "categories": [
+    "WOUND_CARE",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Y02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Burns with Skin Graft without CC",
+   "slug": "hospitalization-for-other-burns-with-skin-graft-without-cc",
+   "name_sr": "Ostale opekotine sa presađivanjem kože, bez KK",
+   "name_ru": "Госпитализация: прочие ожоги с пересадкой кожи без ОО",
+   "name_de": "Stationäre Behandlung: Andere Verbrennungen mit Hauttransplantation ohne KK",
+   "name_tr": "Yatış: CC olmadan deri grefti ile diğer yanıklar",
+   "categories": [
+    "WOUND_CARE",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Y03Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Operating Room Procedures for Other Burns",
+   "slug": "hospitalization-for-other-operating-room-procedures-for-other-burns",
+   "name_sr": "Ostali operativni zahvati zbog ostalih opekotina",
+   "name_ru": "Госпитализация: прочие операции при прочих ожогах",
+   "name_de": "Stationäre Behandlung: Andere operative Eingriffe bei sonstigen Verbrennungen",
+   "name_tr": "Yatış: Diğer yanıklar nedeniyle diğer cerrahi girişimler",
+   "categories": [
+    "WOUND_CARE",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Y60Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Burns, Transfer to Intensive Care, Stay < 5 Days",
+   "slug": "hospitalization-for-burns-transfer-to-intensive-care-stay-under-5-days",
+   "name_sr": "Opekotine, premještaj u drugu ustanovu za intenzivnu njegu, boravak < 5 dana",
+   "name_ru": "Госпитализация: ожоги, перевод в другое учреждение для интенсивной терапии, пребывание < 5 дней",
+   "name_de": "Stationäre Behandlung: Verbrennungen, Verlegung in eine andere Einrichtung zur Intensivpflege, Aufenthalt < 5 Tage",
+   "name_tr": "Yatış: Yanıklar, yoğun bakım için başka kuruma sevk, yatış < 5 gün",
+   "categories": [
+    "WOUND_CARE"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Y61Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Severe Burns",
+   "slug": "hospitalization-for-severe-burns",
+   "name_sr": "Teške opekotine",
+   "name_ru": "Госпитализация: тяжёлые ожоги",
+   "name_de": "Stationäre Behandlung: Schwere Verbrennungen",
+   "name_tr": "Yatış: Ağır yanıklar",
+   "categories": [
+    "WOUND_CARE",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Y62A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Burns with CC",
+   "slug": "hospitalization-for-other-burns-with-cc",
+   "name_sr": "Ostale opekotine, sa KK",
+   "name_ru": "Госпитализация: прочие ожоги с ОО",
+   "name_de": "Stationäre Behandlung: Andere Verbrennungen mit KK",
+   "name_tr": "Yatış: CC ile diğer yanıklar",
+   "categories": [
+    "WOUND_CARE"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "Y62B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Burns without CC",
+   "slug": "hospitalization-for-other-burns-without-cc",
+   "name_sr": "Ostale opekotine, bez KK",
+   "name_ru": "Госпитализация: прочие ожоги без ОО",
+   "name_de": "Stationäre Behandlung: Andere Verbrennungen ohne KK",
+   "name_tr": "Yatış: CC olmadan diğer yanıklar",
+   "categories": [
+    "WOUND_CARE"
+   ],
+   "specialties": [
+    "PLASTIC_SURGERY"
+   ],
+   "note": ""
+  }
+ ]
+}

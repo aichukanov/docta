@@ -1,0 +1,745 @@
+{
+  "schemaVersion": 1,
+  "slug": "svjetlost-eye-clinic-budva",
+  "name": "Svjetlost Eye Clinic",
+  "city": "Budva",
+  "googlePlaceId": null,
+  "sql": [
+    "server/sql/insert-clinic-prices-svjetlost-eye-clinic-budva.sql"
+  ],
+  "status": {
+    "generated": "2026-10-02",
+    "appliedLocal": "2026-10-06 (сверено: число строк локально = прод)",
+    "appliedProd": "2026-10-02",
+    "clinicId": 26,
+    "doctorIds": {},
+    "note": "Импорт только прайса: клиника уже в базе. Применён на проде 2026-10-02 и сверен через /api/services/list: 66/66 цен совпадают с SQL, новые записи каталога получили id 8269–8290, поиск по синонимам работает (kauzoma, кросслинкинг, Пентакам, Avastin, pupiloplastika). Локально не применялся. Врачи не трогались. googlePlaceId этим импортом не проверялся."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "ref": "https://svjetlostbudva.me/cjenovnik/",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "note": "WordPress. Прайс — одна страница, wp-json /wp/v2/pages/1334, modified 2026-04-07T11:31:57 (дата актуальности). В content.rendered блоки .price-list__item с __name / __price; между разделами инлайновый <style>, его вырезать. Цена «80,00 €», тысячи через точку («1.400,00 €»), один диапазон «300,00–500,00 €». 69 строк, из них 4 повтора: «Pregled za operaciju katarakte» (PREGLEDI и KATARAKTA) и «Pregled za lasersko skidanje dioptrije» (PREGLEDI и LASERSKO) с одной ценой; пары «Operacija zadnje vitrektomije sa operacijom katarakte» = «Operacija vitrektomija sa tamponadom silikonskim uljem ili gasom sa operacijom katarakte i ugradnjom IOL» (3500) и «Operacija vitrektomije i vađenje ulja» = «Operacija vađenja silikonskog ulja» (1500). Снимки: data/clinic-pricelists/sources/svjetlost-eye-clinic-budva/2026-10-02.html и .json."
+    }
+  ],
+  "coverage": {
+    "prices": "66 строк clinic_medical_services из 69 строк источника: 2 повтора осмотров пропущены, две пары-синонима заднего отрезка легли по одной записи (67 строк → 65 услуг), «LASIK / PRK» разложен на две записи. Вне SQL ничего не осталось.",
+    "labTests": "анализов в прайсе нет",
+    "decisions": "Решения юзера 2026-10-02: аргоновая лазеркоагуляция «po oku» → focal-laser-photocoagulation-single-eye (3618, её name_sr общее); RLE с Eyhance / Eyhance toric / EDOF — три новые записи рядом с refractive-lens-exchange-with-multifocal-iol.",
+    "causoma": "«Primjena lokalne terapije (causoma)» — causoma (kauzoma) = химический ожог глаза кислотой или щёлочью: https://simptomi.rs/bolesti/13-oftalmologija-bolesti-oka/1198-hemijske-povrede-oka (подсказка юзера, проверено curl 2026-10-02). В каталоге аналога нет (есть только кожные ожоги) — заведена chemical-eye-burn-treatment.",
+    "doctors": "не трогались",
+    "perEye": "Цены «po oku» (punctum plug, YAG-капсулотомия, LASIK / PRK, аргон-лазер) — за один глаз. Отдельные записи «один глаз / оба глаза» в каталоге есть только у LASIK, лазеркоагуляции (клиника 25) и КВП / CCT (клиника 115, dr Jovović). LASIK и PRK легли в «Single Eye». Для КВП Svjetlost глаз не указывает — взята общая visual-field-test. У Raonić (93) цен нет, только названия, разбиения по глазам нет."
+  },
+  "catalogAdditions": [
+    {
+      "table": "medical_services",
+      "slug": "pediatric-ophthalmological-examination",
+      "nameEn": "Pediatric Ophthalmological Examination",
+      "nameSr": "Dječiji oftalmološki pregled",
+      "categoryIds": [
+        23,
+        25
+      ],
+      "specialtyIds": [
+        6,
+        4
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "preoperative-cataract-examination",
+      "nameEn": "Preoperative Cataract Examination",
+      "nameSr": "Pregled za operaciju katarakte",
+      "categoryIds": [
+        23
+      ],
+      "specialtyIds": [
+        6
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "pentacam-corneal-tomography",
+      "nameEn": "Pentacam Corneal Tomography",
+      "nameSr": "Pentakam analiza rožnjače",
+      "categoryIds": [
+        23
+      ],
+      "specialtyIds": [
+        6
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "chemical-eye-burn-treatment",
+      "nameEn": "Chemical Eye Burn Treatment",
+      "nameSr": "Liječenje hemijske povrede oka (kauzoma)",
+      "categoryIds": [
+        23
+      ],
+      "specialtyIds": [
+        6
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "ophthalmology-second-opinion-consultation",
+      "nameEn": "Ophthalmology Second Opinion Consultation",
+      "nameSr": "Drugo mišljenje oftalmologa",
+      "categoryIds": [
+        23
+      ],
+      "specialtyIds": [
+        6
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "anterior-chamber-viscoelastic-injection",
+      "nameEn": "Anterior Chamber Viscoelastic Injection",
+      "nameSr": "Aplikacija viskoelastika u prednju očnu sobicu",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "cataract-surgery-with-eyhance-iol",
+      "nameEn": "Cataract Surgery with Eyhance IOL",
+      "nameSr": "Operacija katarakte sa Eyhance sočivom",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "cataract-surgery-with-toric-eyhance-iol",
+      "nameEn": "Cataract Surgery with Toric Eyhance IOL",
+      "nameSr": "Operacija katarakte sa toričnim Eyhance sočivom",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "cataract-surgery-with-edof-iol",
+      "nameEn": "Cataract Surgery with EDOF IOL",
+      "nameSr": "Operacija katarakte sa EDOF sočivom",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "cataract-surgery-with-toric-multifocal-iol",
+      "nameEn": "Cataract Surgery with Toric Multifocal IOL",
+      "nameSr": "Operacija katarakte sa toričnim multifokalnim sočivom",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "intraocular-lens-repositioning",
+      "nameEn": "Intraocular Lens Repositioning",
+      "nameSr": "Repozicija intraokularnog sočiva",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "sulcus-fixated-iol-implantation",
+      "nameEn": "Sulcus-Fixated IOL Implantation",
+      "nameSr": "Sulkusna fiksacija intraokularnog sočiva",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "intravitreal-anti-vegf-injection-avastin",
+      "nameEn": "Intravitreal Anti-VEGF Injection Avastin",
+      "nameSr": "Anti-VEGF intravitrealna injekcija Avastin",
+      "categoryIds": [
+        23,
+        29
+      ],
+      "specialtyIds": [
+        6
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "phakic-iol-implantation-icl",
+      "nameEn": "Phakic IOL Implantation (ICL)",
+      "nameSr": "Ugradnja fakičnog intraokularnog sočiva (ICL)",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "toric-phakic-iol-implantation-icl",
+      "nameEn": "Toric Phakic IOL Implantation (ICL)",
+      "nameSr": "Ugradnja toričnog fakičnog intraokularnog sočiva (ICL)",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "anterior-chamber-phakic-iol-implantation-verisyse",
+      "nameEn": "Anterior Chamber Phakic IOL Implantation (Verisyse)",
+      "nameSr": "Ugradnja fakičnog sočiva u prednju očnu sobicu (Verisyse)",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "refractive-lens-exchange-with-eyhance-iol",
+      "nameEn": "Refractive Lens Exchange with Eyhance IOL",
+      "nameSr": "Refraktivna zamjena sočiva sa Eyhance implantatom",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "refractive-lens-exchange-with-toric-eyhance-iol",
+      "nameEn": "Refractive Lens Exchange with Toric Eyhance IOL",
+      "nameSr": "Refraktivna zamjena sočiva sa toričnim Eyhance implantatom",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "refractive-lens-exchange-with-edof-iol",
+      "nameEn": "Refractive Lens Exchange with EDOF IOL",
+      "nameSr": "Refraktivna zamjena sočiva sa EDOF implantatom",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "keratoconus-examination",
+      "nameEn": "Keratoconus Examination",
+      "nameSr": "Pregled za keratokonus",
+      "categoryIds": [
+        23
+      ],
+      "specialtyIds": [
+        6
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "corneal-cross-linking-cxl",
+      "nameEn": "Corneal Cross-Linking (CXL)",
+      "nameSr": "Crosslinking rožnjače (CXL)",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    },
+    {
+      "table": "medical_services",
+      "slug": "corneal-cross-linking-with-trans-prk",
+      "nameEn": "Corneal Cross-Linking with Trans-PRK",
+      "nameSr": "Crosslinking rožnjače sa Trans-PRK",
+      "categoryIds": [
+        33
+      ],
+      "specialtyIds": [
+        81
+      ]
+    }
+  ],
+  "catalogRelationsAdded": [
+    {
+      "slug": "preoperative-examination-for-refractive-surgery",
+      "add": "категория 23 OPHTHALMOLOGY (была только 9 GENERAL_MEDICINE)"
+    },
+    {
+      "note": "Существующим записям прайса добавлена недостающая привязка специальностей по правилу категория → специальность (23→6, 33→81, 25→4, 18→18), INSERT IGNORE."
+    }
+  ],
+  "services": [
+    {
+      "slug": "comprehensive-ophthalmological-examination",
+      "nameEn": "Comprehensive Ophthalmological Examination",
+      "source": "Opšti oftalmološki pregled",
+      "price": "80 €"
+    },
+    {
+      "slug": "pediatric-ophthalmological-examination",
+      "nameEn": "Pediatric Ophthalmological Examination",
+      "source": "Dječiji oftalmološki pregled",
+      "price": "100 €"
+    },
+    {
+      "slug": "preoperative-examination-for-refractive-surgery",
+      "nameEn": "Preoperative Examination for Refractive Surgery",
+      "source": "Pregled za lasersko skidanje dioptrije",
+      "price": "150 €"
+    },
+    {
+      "slug": "preoperative-cataract-examination",
+      "nameEn": "Preoperative Cataract Examination",
+      "source": "Pregled za operaciju katarakte",
+      "price": "150 €"
+    },
+    {
+      "slug": "complete-glaucoma-examination",
+      "nameEn": "Complete Glaucoma Examination",
+      "source": "Pregled za glaukom (pregled+CVP+OCT+gonioskopija)",
+      "price": "150 €"
+    },
+    {
+      "slug": "gonioscopy",
+      "nameEn": "Gonioscopy",
+      "source": "Gonioskopija",
+      "price": "30 €"
+    },
+    {
+      "slug": "follow-up-ophthalmologist-examination",
+      "nameEn": "Follow-up Ophthalmologist Examination",
+      "source": "Kontrolni pregled",
+      "price": "50 €"
+    },
+    {
+      "slug": "autokeratorefractometry",
+      "nameEn": "Autokeratorefractometry",
+      "source": "Auto keratorefraktometrija",
+      "price": "20 €"
+    },
+    {
+      "slug": "optical-coherence-tomography-oct",
+      "nameEn": "Optical Coherence Tomography (OCT)",
+      "source": "OCT (optička koherentna tomografija)",
+      "price": "60 €"
+    },
+    {
+      "slug": "pentacam-corneal-tomography",
+      "nameEn": "Pentacam Corneal Tomography",
+      "source": "Pentakam analiza rožnjače",
+      "price": "60 €"
+    },
+    {
+      "slug": "visual-field-test",
+      "nameEn": "Visual Field Test",
+      "source": "KVP (kompjuterizovano vidno polje)",
+      "price": "60 €"
+    },
+    {
+      "slug": "ophthalmic-ultrasound-a-scan-and-b-scan",
+      "nameEn": "Ophthalmic Ultrasound (A-Scan and B-Scan)",
+      "source": "UZ oka, orbita i biometrija",
+      "price": "50 €"
+    },
+    {
+      "slug": "pachymetry",
+      "nameEn": "Pachymetry",
+      "source": "Pahimetrija",
+      "price": "30 €"
+    },
+    {
+      "slug": "iol-power-calculation",
+      "nameEn": "IOL Power Calculation",
+      "source": "IOL master izračun dioptrijske vrijednosti sočiva",
+      "price": "40 €"
+    },
+    {
+      "slug": "dry-eye-test-schirmer",
+      "nameEn": "Schirmer Test for Dry Eye",
+      "source": "Schirmer test (mjerenje lučenja suza)",
+      "price": "20 €"
+    },
+    {
+      "slug": "exophthalmometry-hertel",
+      "nameEn": "Hertel Exophthalmometry",
+      "source": "Egzoftalmometrija (HERTEL)",
+      "price": "20 €"
+    },
+    {
+      "slug": "lacrimal-duct-irrigation",
+      "nameEn": "Lacrimal Duct Irrigation",
+      "source": "Propiranje suznih kanala",
+      "price": "70 €"
+    },
+    {
+      "slug": "punctum-plug-implantation",
+      "nameEn": "Punctum Plug Implantation",
+      "source": "Implantatio plugs po oku",
+      "price": "100 €"
+    },
+    {
+      "slug": "eye-swab-conjunctiva-and-lid-margin",
+      "nameEn": "Eye Swab Conjunctiva and Lid Margin",
+      "source": "Bris oka",
+      "price": "30 €"
+    },
+    {
+      "slug": "chemical-eye-burn-treatment",
+      "nameEn": "Chemical Eye Burn Treatment",
+      "source": "Primjena lokalne terapije (causoma)",
+      "price": "120 €"
+    },
+    {
+      "slug": "foreign-body-removal-eye",
+      "nameEn": "Eye Foreign Body Removal",
+      "source": "Uklanjanje stranog tijela",
+      "price": "100 €"
+    },
+    {
+      "slug": "emergency-ophthalmological-examination",
+      "nameEn": "Emergency Ophthalmological Examination",
+      "source": "Hitan pregled tokom dana",
+      "price": "100 €"
+    },
+    {
+      "slug": "ophthalmology-second-opinion-consultation",
+      "nameEn": "Ophthalmology Second Opinion Consultation",
+      "source": "Drugo mišljenje oftalmologa",
+      "price": "200 €"
+    },
+    {
+      "slug": "xanthelasma-removal-eye-area",
+      "nameEn": "Xanthelasma Removal Around the Eyes",
+      "source": "Operacija uklanjanja masnih naslaga na koži kapaka",
+      "price": "400 €"
+    },
+    {
+      "slug": "blepharoplasty",
+      "nameEn": "Blepharoplasty",
+      "source": "Operativna korekcija kapaka – blefaroplastika po kapku",
+      "price": "od 600 €"
+    },
+    {
+      "slug": "chalazion-removal-local-anesthesia",
+      "nameEn": "Chalazion Removal under Local Anesthesia",
+      "source": "Chalazion intervencija i hordeolum",
+      "price": "150 €"
+    },
+    {
+      "slug": "pterygium-removal",
+      "nameEn": "Pterygium Removal",
+      "source": "Duplikatura vežnjače – Pterygium",
+      "price": "300–500 €"
+    },
+    {
+      "slug": "trabeculectomy",
+      "nameEn": "Trabeculectomy",
+      "source": "Operacija glaukoma – trabekulektomija",
+      "price": "1600 €"
+    },
+    {
+      "slug": "anterior-chamber-viscoelastic-injection",
+      "nameEn": "Anterior Chamber Viscoelastic Injection",
+      "source": "Aplikacija viskoelastika u prednju sobicu",
+      "price": "300 €"
+    },
+    {
+      "slug": "ndyag-laser-iridotomy",
+      "nameEn": "Nd:YAG Laser Iridotomy",
+      "source": "Yag laser iridotomija",
+      "price": "150 €"
+    },
+    {
+      "slug": "cataract-surgery-with-standard-iol",
+      "nameEn": "Cataract Surgery with Standard IOL",
+      "source": "Operacija katarakte ultrazvukom (PHACO) – sa ugradnjom monofokalno akrilatno intraokularnog sočiva",
+      "price": "1400 €"
+    },
+    {
+      "slug": "cataract-surgery-with-aspheric-monofocal-iol",
+      "nameEn": "Cataract Surgery with Aspheric Monofocal IOL",
+      "source": "Operacija katarakte ultrazvukom (PHACO) – sa ugradnjom monofokalno asferično intraokularnog sočiva",
+      "price": "1500 €"
+    },
+    {
+      "slug": "cataract-surgery-with-eyhance-iol",
+      "nameEn": "Cataract Surgery with Eyhance IOL",
+      "source": "Operacija katarakte ultrazvukom (PHACO) – sa ugradnjom monofokalno plus intraokularnog sočiva (Eyhance)",
+      "price": "1600 €"
+    },
+    {
+      "slug": "cataract-surgery-with-toric-eyhance-iol",
+      "nameEn": "Cataract Surgery with Toric Eyhance IOL",
+      "source": "Operacija katarakte ultrazvukom (PHACO) – sa ugradnjom monofokalno plus torično intraokularnog sočiva (Eyhance)",
+      "price": "1800 €"
+    },
+    {
+      "slug": "cataract-surgery-with-edof-iol",
+      "nameEn": "Cataract Surgery with EDOF IOL",
+      "source": "Operacija katarakte ultrazvukom (PHACO) – sa ugradnjom monofokalno intraokularnog EDOF sočiva",
+      "price": "2200 €"
+    },
+    {
+      "slug": "cataract-surgery-with-multifocal-iol",
+      "nameEn": "Cataract Surgery with Multifocal IOL",
+      "source": "Operacija katarakte ultrazvukom (PHACO) – sa ugradnjom multifokalno intraokularnog sočiva (Low-add, Symfony, Synergy)",
+      "price": "2400 €"
+    },
+    {
+      "slug": "cataract-surgery-with-toric-multifocal-iol",
+      "nameEn": "Cataract Surgery with Toric Multifocal IOL",
+      "source": "Operacija katarakte ultrazvukom (PHACO) – sa ugradnjom multifokalno torično intraokularnog sočiva",
+      "price": "2400 €"
+    },
+    {
+      "slug": "anterior-vitrectomy",
+      "nameEn": "Anterior Vitrectomy",
+      "source": "Operacija prednja vitrektomija",
+      "price": "500 €"
+    },
+    {
+      "slug": "intraocular-lens-repositioning",
+      "nameEn": "Intraocular Lens Repositioning",
+      "source": "Operacija repozicije intraokularnog sočiva",
+      "price": "800 €"
+    },
+    {
+      "slug": "iridoplasty",
+      "nameEn": "Iridoplasty",
+      "source": "Operacija rekonstrukcije zenice (pupiloplastika)",
+      "price": "1400 €"
+    },
+    {
+      "slug": "artificial-intraocular-lens-removal",
+      "nameEn": "Artificial Intraocular Lens Removal",
+      "source": "Operacija vađenja (eksplantacija) sočiva",
+      "price": "800 €"
+    },
+    {
+      "slug": "secondary-iol-implantation",
+      "nameEn": "Secondary IOL Implantation",
+      "source": "Sekundarna implantacija sočiva u stražnju očnu sobicu",
+      "price": "800 €"
+    },
+    {
+      "slug": "sulcus-fixated-iol-implantation",
+      "nameEn": "Sulcus-Fixated IOL Implantation",
+      "source": "Sulcus fiksacija intraokularnog sočiva",
+      "price": "1300 €"
+    },
+    {
+      "slug": "ndyag-laser-capsulotomy",
+      "nameEn": "Nd:YAG Laser Capsulotomy",
+      "source": "Yag laser capsulotomia, uklanjanje sek. katarakte Yag laserom (po oku)",
+      "price": "150 €"
+    },
+    {
+      "slug": "phaco-vitrectomy",
+      "nameEn": "Phaco-Vitrectomy",
+      "source": [
+        "Operacija zadnje vitrektomije sa operacijom katarakte",
+        "Operacija vitrektomija sa tamponadom silikonskim uljem ili gasom sa operacijom katarakte i ugradnjom IOL"
+      ],
+      "price": "3500 €"
+    },
+    {
+      "slug": "silicone-oil-removal",
+      "nameEn": "Silicone Oil Removal",
+      "source": [
+        "Operacija vitrektomije i vađenje ulja",
+        "Operacija vađenja silikonskog ulja"
+      ],
+      "price": "1500 €"
+    },
+    {
+      "slug": "oct-posterior-segment",
+      "nameEn": "OCT Posterior Segment",
+      "source": "OCT – Optička koherentna tomografija retine i vidnog živca",
+      "price": "50 €"
+    },
+    {
+      "slug": "focal-laser-photocoagulation-single-eye",
+      "nameEn": "Focal Laser Photocoagulation Single Eye",
+      "source": "Laserska fotokoagulacija retine argonskim laserom (po oku)",
+      "price": "150 €"
+    },
+    {
+      "slug": "intravitreal-anti-vegf-injection-avastin",
+      "nameEn": "Intravitreal Anti-VEGF Injection Avastin",
+      "source": "Liječenje degeneracije makule i vaskularnih oboljenja retine i makule (injekcija Avastin)",
+      "price": "200 €"
+    },
+    {
+      "slug": "intravitreal-anti-vegf-injection-eylea",
+      "nameEn": "Intravitreal Anti-VEGF Injection Eylea",
+      "source": "Liječenje degeneracije makule i vaskularnih oboljenja retine i makule (injekcija Eylea)",
+      "price": "850 €"
+    },
+    {
+      "slug": "intravitreal-anti-vegf-injection-lucentis",
+      "nameEn": "Intravitreal Anti-VEGF Injection Lucentis",
+      "source": "Liječenje degeneracije makule i vaskularnih oboljenja retine i makule (injekcija Lucentis)",
+      "price": "850 €"
+    },
+    {
+      "slug": "intravitreal-anti-vegf-injection-vabysmo",
+      "nameEn": "Intravitreal Anti-VEGF Injection Vabysmo",
+      "source": "Liječenje degeneracije makule i vaskularnih oboljenja retine i makule (injekcija Vabysmo)",
+      "price": "1100 €"
+    },
+    {
+      "slug": "vitrectomy",
+      "nameEn": "Vitrectomy",
+      "source": "Operacija vitrektomija sa tamponadom silikonskim uljem ili gasom",
+      "price": "3000 €"
+    },
+    {
+      "slug": "lasik-single-eye",
+      "nameEn": "LASIK Single Eye",
+      "source": "Lasersko skidanje dioptrije LASIK / PRK (po oku)",
+      "price": "850 €"
+    },
+    {
+      "slug": "prk-single-eye",
+      "nameEn": "PRK Single Eye",
+      "source": "Lasersko skidanje dioptrije LASIK / PRK (po oku)",
+      "price": "850 €"
+    },
+    {
+      "slug": "phakic-iol-implantation-icl",
+      "nameEn": "Phakic IOL Implantation (ICL)",
+      "source": "Operacija ugradnje fakično intraokularnog sočiva za zadnju očnu sobicu (ICL)",
+      "price": "2000 €"
+    },
+    {
+      "slug": "toric-phakic-iol-implantation-icl",
+      "nameEn": "Toric Phakic IOL Implantation (ICL)",
+      "source": "Operacija ugradnje fakično intraokularno toričnog sočiva za zadnju očnu sobicu (ICL)",
+      "price": "2200 €"
+    },
+    {
+      "slug": "anterior-chamber-phakic-iol-implantation-verisyse",
+      "nameEn": "Anterior Chamber Phakic IOL Implantation (Verisyse)",
+      "source": "Operacija ugradnje fakično intraokularnog sočiva za prednju očnu sobicu (Verisyse)",
+      "price": "1600 €"
+    },
+    {
+      "slug": "refractive-lens-exchange-with-eyhance-iol",
+      "nameEn": "Refractive Lens Exchange with Eyhance IOL",
+      "source": "Operacija ugradnje monofokalnog plus intraokularnog sočiva (Eyhance)",
+      "price": "1600 €"
+    },
+    {
+      "slug": "refractive-lens-exchange-with-toric-eyhance-iol",
+      "nameEn": "Refractive Lens Exchange with Toric Eyhance IOL",
+      "source": "Operacija ugradnje monofokalnog plus toričnog intraokularnog sočiva (Eyhance)",
+      "price": "1800 €"
+    },
+    {
+      "slug": "refractive-lens-exchange-with-edof-iol",
+      "nameEn": "Refractive Lens Exchange with EDOF IOL",
+      "source": "Operacija ugradnje monofokalnog intraokularnog EDOF sočiva",
+      "price": "2200 €"
+    },
+    {
+      "slug": "refractive-lens-exchange-with-multifocal-iol",
+      "nameEn": "Refractive Lens Exchange with Multifocal IOL",
+      "source": "Operacija ugradnje multifokalnog intraokularnog sočiva",
+      "price": "2400 €"
+    },
+    {
+      "slug": "keratoconus-examination",
+      "nameEn": "Keratoconus Examination",
+      "source": "Pregled za keratoconus",
+      "price": "150 €"
+    },
+    {
+      "slug": "corneal-cross-linking-cxl",
+      "nameEn": "Corneal Cross-Linking (CXL)",
+      "source": "CXL",
+      "price": "850 €"
+    },
+    {
+      "slug": "corneal-cross-linking-with-trans-prk",
+      "nameEn": "Corneal Cross-Linking with Trans-PRK",
+      "source": "CXL + Trans PRK",
+      "price": "1000 €"
+    },
+    {
+      "slug": "contact-lens-fitting",
+      "nameEn": "Contact Lens Fitting",
+      "source": "Fitovanje GP sočiva",
+      "price": "130 €"
+    }
+  ],
+  "excluded": [
+    {
+      "source": "Pregled za operaciju katarakte — 150,00 € (повтор в разделе KATARAKTA)",
+      "reason": "дубль строки из PREGLEDI I USLUGE, та же цена"
+    },
+    {
+      "source": "Pregled za lasersko skidanje dioptrije — 150,00 € (повтор в разделе LASERSKO SKIDANJE DIOPTRIJE)",
+      "reason": "дубль строки из PREGLEDI I USLUGE, та же цена"
+    }
+  ],
+  "openQuestions": [
+    {
+      "topic": "Блефаропластика «po kapku» 600 €",
+      "detail": "Записана в blepharoplasty как price_min = 600 («от 600 €»): цена за одно веко, а у других клиник blepharoplasty — за операцию (1000 €). Альтернатива — price = 600, но тогда сравнение цен вводит в заблуждение."
+    },
+    {
+      "topic": "Пахиметрия: дубль в каталоге",
+      "detail": "Взята pachymetry (5500, FZOCG, sr «Pahimetrija» дословно). Рядом corneal-pachymetry (4725, клиника 115) — та же услуга, кандидат на слияние."
+    },
+    {
+      "topic": "Ultra B2 (5950, FZOCG D07001) и новая corneal-cross-linking-cxl",
+      "detail": "UltraB2, похоже, — раствор рибофлавина для CXL. Если так, CXL лучше слить с 5950: код тарифа FZOCG есть только у неё. Не проверено, поэтому CXL в SQL заведён отдельной записью."
+    },
+    {
+      "topic": "Сопоставления на проверку",
+      "detail": "«Propiranje suznih kanala» → lacrimal-duct-irrigation (propiranje = промывание; у Milmedika «Propiranje suznih puteva» стоит под en «Probing» — похоже, ошибка той записи); «Duplikatura vežnjače – Pterygium» → pterygium-removal (не with-conjunctival-graft); «UZ oka, orbita i biometrija» → ophthalmic-ultrasound-a-scan-and-b-scan; «IOL master izračun…» → iol-power-calculation (не iol-master-biometry); «pupiloplastika» → iridoplasty, с синонимами; «Fitovanje GP sočiva» → contact-lens-fitting; «Operacija vitrektomija sa tamponadom silikonskim uljem ili gasom» → vitrectomy; «Pregled za operaciju katarakte» → новая preoperative-cataract-examination, а не 4235 «…sa terapijom» (Raonić)."
+    }
+  ]
+}

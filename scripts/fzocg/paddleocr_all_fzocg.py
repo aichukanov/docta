@@ -17,7 +17,7 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC_ROOT = Path(r'e:/pet/docta.me/прейскуранты/fzocg').resolve()
+SRC_ROOT = ROOT / 'data' / 'pricelists' / 'fzocg'
 OUT_ROOT = ROOT / 'data' / 'fzocg'
 
 # Map source subfolder name -> output category slug under data/fzocg/

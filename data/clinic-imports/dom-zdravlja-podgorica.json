@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "slug": "dom-zdravlja-podgorica",
+  "name": "JZU Dom zdravlja Glavnog grada",
+  "city": "Podgorica",
+  "cityId": 1,
+  "googlePlaceId": null,
+  "sql": [
+    "server/sql/insert-clinic-prices-dom-zdravlja-podgorica.sql"
+  ],
+  "status": {
+    "generated": "2026-10-02",
+    "appliedLocal": "2026-10-02",
+    "appliedProd": "2026-10-02",
+    "clinicId": 140,
+    "doctorIds": {},
+    "note": "Новый прайс: до импорта у клиники 0 услуг локально и на проде. Применён юзером локально и на проде 2026-10-02. Прод сверен: VERIFICATION (38 строк, outdated 0, сумма 1640.00, 16 записей каталога с cats 9 / specs 45,50 или 45, 33 синонима) и /api/services/list {clinicIds:[140]} — 38 строк, коды PG_MR_*/PG_SP_*, сумма 1640. Поиск по синонимам «ПМЖ», «stalni boravak», «погрузчика», «viljuškara», «Чекап» находит записи с клиникой 140. clinicId 140 одинаков локально и на проде. Prod id новых записей: 8291–8304; общие с Naša medicina — 8259 (social care), 8260 (copy). googlePlaceId в clinics пуст; в data/google-places/podgorica есть места отдельных амбулант ДЗ, но не головного учреждения — не подставлялся.",
+    "catalogIdsProd": {
+      "medical-certificate-for-work-at-height": 8291,
+      "medical-certificate-for-work-with-noise-and-vibration-exposure": 8292,
+      "medical-certificate-for-work-with-chemical-and-dust-exposure": 8293,
+      "medical-certificate-for-forklift-and-construction-machinery-operators": 8294,
+      "medical-certificate-for-work-with-non-ionizing-radiation-exposure": 8295,
+      "medical-certificate-for-heavy-physical-work": 8296,
+      "medical-certificate-for-work-in-adverse-microclimate-conditions": 8297,
+      "medical-certificate-for-ionizing-radiation-workers-with-chromosomal-aberration-test": 8298,
+      "medical-certificate-for-unarmed-security-personnel": 8299,
+      "medical-certificate-for-traffic-school-enrollment": 8300,
+      "medical-certificate-for-firefighters": 8301,
+      "medical-certificate-for-citizenship-and-permanent-residence": 8302,
+      "comprehensive-health-checkup-for-women": 8303,
+      "comprehensive-health-checkup-for-men": 8304,
+      "medical-certificate-for-social-care-institution-accommodation": 8259,
+      "medical-certificate-copy": 8260
+    }
+  },
+  "sources": [
+    {
+      "type": "website",
+      "ref": "https://www.dzpg.me/medicina-rada/",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "note": "HTML-страница «Ljekarska uvjerenja», читалась curl'ом по сырому HTML. «CJENOVNIK usluga i pregleda iz oblasti Medicine rada», принят Odborom direktora на 3-й сессии 08.07.2021. 30 пронумерованных позиций, у п.2 подпункты a)–g): 36 цен формата «NN,00 eur-a». yoast schema: datePublished 2016-07-30, dateModified 2026-04-30. Last-Modified сервер не отдаёт. Все осмотры — Centar za medicinu rada, Stari aerodrom, Aerodromska bb, тел. 19816, будни 07–15 (кровь для справок — 07–09). Снимок: data/clinic-pricelists/sources/dom-zdravlja-podgorica/2026-10-02.medicina-rada.html (sha256 38ed7e92178f4dbaebf2068571da4912d755464a228de0ef518dfc05f744bde4)."
+    },
+    {
+      "type": "pdf",
+      "ref": "https://www.dzpg.me/wp-content/uploads/2025/09/cjenovnik.pdf",
+      "collected": "2026-10-02",
+      "machineReadable": false,
+      "note": "Скан без текстового слоя, 1 стр., прочитан с рендера страницы (текст чёткий, OCR не понадобился). «ODLUKA o usvajanju cijena za utvrdjivanje zdravstvene sposobnosti sportista, sportskih sudija i trenera», Broj 05/16-253/2, Podgorica 15.01.2025, подпись predsjednika Odbora direktora Mr Filip Boljević. 3 цены: sportisti do 18 godina 10,00 e.; preko 18 godina 15,00 e.; sportske sudije i treneri 30,00 e. Odluka «stupa na snagu danom donošenja» и перекрывает пп. 25 и 26 прайса medicina rada 2021. Ссылка «CJENOVNIK» со страницы /sportska-medicina/. PDF creationDate 2025-06-11, Last-Modified 2025-09-28. Снимок: data/clinic-pricelists/sources/dom-zdravlja-podgorica/2026-10-02.sportska-medicina-cjenovnik.pdf (sha256 bc0d0f040a7eb994e5924986b28438a74d43c12b838fc6f1182db1bf3ff2a751)."
+    },
+    {
+      "type": "pdf",
+      "ref": "https://www.dzpg.me/wp-content/uploads/2026/04/Cijenovnik-PZZ-2026-1.pdf",
+      "collected": null,
+      "machineReadable": false,
+      "note": "НЕ использован сознательно: это тарифник FZOCG «Cjenovnik usluga primarne zdravstvene zaštite» 2026, а не собственный прайс ДЗ. Сверяется с medical_service_tariffs отдельным агентом."
+    }
+  ],
+  "coverage": {
+    "prices": "собственные цены самооплаты: 36 позиций medicina rada (прайс от 08.07.2021) + 2 строки sportska medicina (Odluka 15.01.2025). Пп. 25–26 medicina rada заменены Odlukom 2025. is_price_outdated = 0 на всех строках — решение юзера 2026-10-02: дата документа одна устаревания не доказывает.",
+    "certificates": "все 30 пунктов прайса medicina rada заведены, кроме п.25–26 (заменены Odlukom 2025); пп.10 и 20 называют по две справки за одну цену — по две строки с одним кодом",
+    "labTests": "собственного прайса анализов на сайте нет (/laboratorijska-dijagnostika/ без цен); clinic_lab_tests не заполнялась",
+    "otherServices": "RTG/UZ, специалисты и прочее — без собственных цен на сайте; для застрахованных действует тарифник FZOCG (не импортировался)",
+    "discount": "под прайсом medicina rada: «JZU Dom zdravlja Podgorica zadržava pravo da odobri popust do 30%» — скидка на усмотрение ДЗ, в цены не закладывалась"
+  },
+  "catalogAdditions": [
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Work at Height",
+      "nameSr": "Ljekarsko uvjerenje za rad na visini",
+      "slug": "medical-certificate-for-work-at-height",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.2a. В каталоге только общие 4525 «High Risk and Difficult Working Conditions» и 4526 «… Without High Risk»; у ДЗ Подгорица 7 подвидов п.2 с разными ценами (35–50), в одну запись не сводятся."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Work with Noise and Vibration Exposure",
+      "nameSr": "Ljekarsko uvjerenje za rad u uslovima buke i vibracija",
+      "slug": "medical-certificate-for-work-with-noise-and-vibration-exposure",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.2b, см. 2a."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Work with Chemical and Dust Exposure",
+      "nameSr": "Ljekarsko uvjerenje za rad izložen hemijskim materijama, gasovima i prašini",
+      "slug": "medical-certificate-for-work-with-chemical-and-dust-exposure",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.2c, см. 2a."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Forklift and Construction Machinery Operators",
+      "nameSr": "Ljekarsko uvjerenje za rukovaoce građevinskih mašina, viljuškara i dizalica",
+      "slug": "medical-certificate-for-forklift-and-construction-machinery-operators",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.2d «unutrašnji transport», см. 2a. name_en по перечню профессий из скобок источника — по нему и ищут."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Work with Non-Ionizing Radiation Exposure",
+      "nameSr": "Ljekarsko uvjerenje za rad izložen nejonizujućem zračenju",
+      "slug": "medical-certificate-for-work-with-non-ionizing-radiation-exposure",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.2e, см. 2a. Не путать с 7850 (ионизирующее)."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Heavy Physical Work",
+      "nameSr": "Ljekarsko uvjerenje za srednje težak i težak fizički rad",
+      "slug": "medical-certificate-for-heavy-physical-work",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.2f, см. 2a."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Work in Adverse Microclimate Conditions",
+      "nameSr": "Ljekarsko uvjerenje za rad u nepovoljnim mikroklimatskim uslovima",
+      "slug": "medical-certificate-for-work-in-adverse-microclimate-conditions",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.2g, см. 2a."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Ionizing Radiation Workers with Chromosomal Aberration Test",
+      "nameSr": "Ljekarsko uvjerenje za rad u zoni jonizujućeg zračenja sa analizom hromozomskih aberacija",
+      "slug": "medical-certificate-for-ionizing-radiation-workers-with-chromosomal-aberration-test",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.3, 185 €. Вариант без аберраций (п.4, 85 €) — существующая 7850; один прайс разводит их ценой, значит это разные услуги."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Unarmed Security Personnel",
+      "nameSr": "Ljekarsko uvjerenje za rad u obezbjeđenju bez nošenja oružja",
+      "slug": "medical-certificate-for-unarmed-security-personnel",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.7 (portiri), 35 €. 7866 «Security Personnel» по name_sr — только с оружием (п.6, 50 €)."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Traffic School Enrollment",
+      "nameSr": "Ljekarsko uvjerenje za upis u srednju školu saobraćajnog smjera",
+      "slug": "medical-certificate-for-traffic-school-enrollment",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.11. Общая 7841 «Secondary School Enrollment» не подходит: у ДЗ Подгорица платная справка только для saobraćajni smjer (зрение/вождение), общая справка в школу в этом прайсе отсутствует — сопоставление показало бы цену 25 € на обычную справку в школу."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Firefighters",
+      "nameSr": "Ljekarsko uvjerenje za posao vatrogasca",
+      "slug": "medical-certificate-for-firefighters",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.21. В каталоге нет."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Citizenship and Permanent Residence",
+      "nameSr": "Ljekarsko uvjerenje za dobijanje državljanstva i stalnog boravka",
+      "slug": "medical-certificate-for-citizenship-and-permanent-residence",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.24. Не 4541 «Residence and Work in Montenegro»: та — справка для временного ВНЖ и работы, а для ПМЖ и гражданства обследование, вероятно, шире (решение юзера 2026-10-02). Синонимы «državljanstvo», «stalni boravak», «ПМЖ», «Citizenship / Permanent Residence Medical Certificate» — на эту запись, к 4541 не добавлялись."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate for Social Care Institution Accommodation",
+      "nameSr": "Ljekarsko uvjerenje za smještaj u ustanove socijalne zaštite",
+      "slug": "medical-certificate-for-social-care-institution-accommodation",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45
+      ],
+      "reason": "п.16. Запись создана импортом Naša medicina (уже применён локально и на проде 2026-10-02, prod id 8259); строка в этом SQL идентична и ничего не меняет. Не 7852 «Elderly Home Accommodation»: учреждения соцзащиты шире дома престарелых (решение юзера 2026-10-02)."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Medical Certificate Copy",
+      "nameSr": "Prepis ljekarskog uvjerenja",
+      "slug": "medical-certificate-copy",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45
+      ],
+      "reason": "п.28 «Izdavanje duplikata uvjerenja». Запись создана импортом Naša medicina («prepis ljekarskog uvjerenja – 5 €»; уже применён локально и на проде 2026-10-02, prod id 8260), синонимы «Duplikat ljekarskog uvjerenja» / «Duplicate Medical Certificate» / «Дубликат медицинской справки» ставит тот файл. Строка в этом SQL идентична и ничего не меняет."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Comprehensive Health Checkup for Women",
+      "nameSr": "Sistematski pregled za žene",
+      "slug": "comprehensive-health-checkup-for-women",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.29, 120 €. Названо по образцу 3572 «Comprehensive Health Checkup» (Bonomedica, 200 €); у ДЗ раздельные цены для женщин и мужчин. Состав осмотра на сайте не раскрыт."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Comprehensive Health Checkup for Men",
+      "nameSr": "Sistematski pregled za muškarce",
+      "slug": "comprehensive-health-checkup-for-men",
+      "categoryIds": [
+        9
+      ],
+      "specialtyIds": [
+        45,
+        50
+      ],
+      "reason": "п.30, 110 €. См. п.29."
+    }
+  ],
+  "services": [
+    {
+      "nameEn": "Medical Certificate for General Work",
+      "code": "PG_MR_01",
+      "source": "1 Ljekarsko uvjerenje o sposobnosti za rad na radnim mjestima bez povećanog rizika - opšta zdravstvena sposobnost 20,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Work at Height",
+      "code": "PG_MR_02a",
+      "source": "2 Ljekarsko uvjerenje o sposobnosti za rad na radnim mjestima sa posebnim uslovima rada odnosno povećanim rizikom - prethodni i periodični pregledi: a) Radna mjesta sa radom na visini 50,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Work with Noise and Vibration Exposure",
+      "code": "PG_MR_02b",
+      "source": "b) Radna mjesta sa radom u uslovima buke, vibracija (opšte - lokalne) 50,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Work with Chemical and Dust Exposure",
+      "code": "PG_MR_02c",
+      "source": "c) Radna mjesta izIožena uticaju hemijskih materija, gasova, prašine (fibrozogena i nefibrozogena) 45,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Forklift and Construction Machinery Operators",
+      "code": "PG_MR_02d",
+      "source": "d) Radna mjesta unutrašnjeg transporta ( rukovaoci građevinskih mašina, vozači viljuškara, dizalica) 35,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Work with Non-Ionizing Radiation Exposure",
+      "code": "PG_MR_02e",
+      "source": "e) Radna mjesta izložena uticaju nejonizujućeg zračenja 50,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Heavy Physical Work",
+      "code": "PG_MR_02f",
+      "source": "f) Radna mjesta koja uključuju srednje težak i težak fizički rad 35,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Work in Adverse Microclimate Conditions",
+      "code": "PG_MR_02g",
+      "source": "g) Radna mjesta koja uključuju rad u nepovoljnim mikroklimatskim - nehigijenskim uslovima, prisustvu vlage i isparenja 35,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Ionizing Radiation Workers with Chromosomal Aberration Test",
+      "code": "PG_MR_03",
+      "source": "3 Ljekarsko uvjerenje o sposobnosti za rad u zoni jonizujućeg zračenja - sa hromozomskim aberacijama (prethodni pregled i periodični pregled svake 3. godine) 185,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Ionizing Radiation Workers",
+      "code": "PG_MR_04",
+      "source": "4 Ljekarsko uvjerenje o sposobnosti za rad u zoni jonizujućeg zračenja - bez hromozomskih aberacija (periodični pregled) 85,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Military Service",
+      "code": "PG_MR_05",
+      "source": "5 Ljekarsko uvjerenje o sposobnosti za obavljanje službe u Vojsci Crne Gore 50,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Security Personnel",
+      "code": "PG_MR_06",
+      "source": "6 Ljekarska uvjerenja o sposobnosti za rad u obezbjeđenju uz nošenje oružja — zaštitari 50,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Unarmed Security Personnel",
+      "code": "PG_MR_07",
+      "source": "7 Ljekarska uvjerenja o sposobnosti za rad u obezbjeđenju bez nošenje oružja — portiri 35,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Class A and B Drivers",
+      "code": "PG_MR_08",
+      "source": "8 Ljekarsko uvjerenje o sposobnosti za upravljanje motornim vozilima A, B kategorije - amateri (polaganje vozačkog ispita i produženje vozačke dozvole) 20,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Professional Drivers",
+      "code": "PG_MR_09",
+      "source": "9 Ljekarsko uvjerenje o sposobnosti za upravljanje motornim vozilima B, C, E, D kategorije profesionalci 40,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Driving Instructor Category B, C, D, E",
+      "code": "PG_MR_10",
+      "source": "10 Ljekarsko uvjerenje o sposobnosti za posao instruktora za obuku vozača i vozači taksi vozila 30,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Taxi Driver",
+      "code": "PG_MR_10",
+      "source": "10 Ljekarsko uvjerenje o sposobnosti za posao instruktora za obuku vozača i vozači taksi vozila 30,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Traffic School Enrollment",
+      "code": "PG_MR_11",
+      "source": "11 Ljekarsko uvjerenje o sposobnosti za upis u srednju školu - saobraćajnog smjera 25,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for University Enrollment",
+      "code": "PG_MR_12",
+      "source": "12 Ljekarsko uvjerenje o sposobnosti za upis na fakultet 15,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Study Abroad and Visa",
+      "code": "PG_MR_13",
+      "source": "13 Ljekarsko uvjerenje o sposobnosti za odlazak na školovanje i boravak u inostranstvu, izdavanje vize 25,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Child Adoption",
+      "code": "PG_MR_14",
+      "source": "14 Ljekarsko uvjerenje o sposobnosti za usvajanje djeteta, starateljstvo 25,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Underage Marriage",
+      "code": "PG_MR_15",
+      "source": "15 Ljekarsko uvjerenje o sposobnosti za sklapanje braka maloljetnih lica 25,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Social Care Institution Accommodation",
+      "code": "PG_MR_16",
+      "source": "16 Ljekarsko uvjerenje za smještaj u ustanove socijalne zaštite 20,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Firearms Possession",
+      "code": "PG_MR_17",
+      "source": "17 Ljekarsko uvjerenje o podobnosti fizičkog lica za posjedovanja vatrenog oružja 30,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Maritime Workers",
+      "code": "PG_MR_18",
+      "source": "18 Ljekarsko uvjerenje za rad u vodenom saobraćaju — pomorci 100,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Boat Operation up to 12 Meters",
+      "code": "PG_MR_19",
+      "source": "19 Ljekarsko uvjerenje o sposobnosti za upravljanje čamcem 35,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Lifeguards",
+      "code": "PG_MR_20",
+      "source": "20 Ljekarsko uvjerenje o sposobnosti za posao spasioca i ronioca 30,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Divers",
+      "code": "PG_MR_20",
+      "source": "20 Ljekarsko uvjerenje o sposobnosti za posao spasioca i ronioca 30,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Firefighters",
+      "code": "PG_MR_21",
+      "source": "21 Ljekarsko uvjerenje o sposobnosti za posao vatrogasca 50,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Life Insurance",
+      "code": "PG_MR_22",
+      "source": "22 Ljekarsko uvjerenje za životno osiguranje 20,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Court Expert",
+      "code": "PG_MR_23",
+      "source": "23 Ljekarsko uvjerenje za posao sudskog vještaka 35,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Citizenship and Permanent Residence",
+      "code": "PG_MR_24",
+      "source": "24 Ljekarsko uvjerenje za dobijanje državljanstva, stalnog boravka u CG 30,00 eur-a"
+    },
+    {
+      "nameEn": "Color Sensitivity Test with Anomaloscope",
+      "code": "PG_MR_27",
+      "source": "27 Pregled kolornog vida - anomaloskop (AQ koeficijent) 20,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate Copy",
+      "code": "PG_MR_28",
+      "source": "28 lzdavanje duplikata uvjerenja 10,00 eur-a"
+    },
+    {
+      "nameEn": "Comprehensive Health Checkup for Women",
+      "code": "PG_MR_29",
+      "source": "29 Sistematski pregled za žene 120,00 eur-a"
+    },
+    {
+      "nameEn": "Comprehensive Health Checkup for Men",
+      "code": "PG_MR_30",
+      "source": "30 Sistematski pregled za muškarce 110,00 eur-a"
+    },
+    {
+      "nameEn": "Medical Certificate for Athletes",
+      "code": "PG_SP_1-2",
+      "source": "- ljekarsko uvjerenje za utvrdjivanje zdravstvene sposobnosti sportista do 18 godina.......10,oo e. / - ljekarsko uvjerenje za utvrdjivanje zdravstvene sposobnosti sportista preko 18 godina....15,oo e."
+    },
+    {
+      "nameEn": "Medical Certificate for Sports Referees",
+      "code": "PG_SP_3",
+      "source": "- ljekarsko uvjerenje za utvrdjivanje zdravstvene sposobnosti sportskih sudija i trenera .....30,oo e"
+    }
+  ],
+  "doctors": [],
+  "excluded": [
+    {
+      "source": "25 Ljekarsko uvjerenje za utvrđivanje zdravstvene sposobnosti sportista 20,00 eur-a",
+      "reason": "Заменено Odlukom 05/16-253/2 от 15.01.2025 (10 € до 18 лет / 15 € старше). Взята цена из Odluke — строка PG_SP_1-2."
+    },
+    {
+      "source": "26 Ljekarsko uvjerenje za utvrđivanje zdravstvene sposobnosti sportskih sudija, trenera 30,00 eur-a",
+      "reason": "Подтверждено Odlukom 15.01.2025 той же ценой 30 €. Заведено одной строкой PG_SP_3 по Odluke (is_price_outdated = 0), а не по прайсу 2021."
+    },
+    {
+      "source": "https://www.dzpg.me/wp-content/uploads/2026/04/Cijenovnik-PZZ-2026-1.pdf",
+      "reason": "Тарифник FZOCG ПЗЗ 2026, не собственный прайс ДЗ. Для него отдельный агент (сверка с medical_service_tariffs)."
+    },
+    {
+      "source": "NAPOMENA: JZU Dom zdravlja Podgorica zadržava pravo da odobri popust do 30%.",
+      "reason": "Скидка на усмотрение ДЗ, не цена. Зафиксирована в coverage.discount, в цены не закладывалась."
+    }
+  ],
+  "openQuestions": [
+    "Старый прайс medicina rada (08.07.2021, дата принятия в тексте страницы; yoast dateModified страницы 2026-04-30). is_price_outdated = 0 по решению юзера (2026-10-02). Доводы, что цены актуальны: живая страница публикует этот прайс как действующий; в 2025 ДЗ пересмотрел только спортивные цены (Odluka 15.01.2025, п.26 подтверждён теми же 30 €), а medicina rada оставил как есть; страница правилась в 2026. Доводы, что устарели: дата 2021 в шапке; часть цен ниже, чем у других ДЗ каталога (оружие 30 € против 70 у Тивата/Котора/Бело-Поля, страхование жизни 20 против 40, армия 50 против 60, моряки 100 против 110), но столица может держать цены ниже. Что именно правили на странице в 2026, не проверялось (Wayback не смотрел). Если появится прайс новее — флаг: UPDATE clinic_medical_services SET is_price_outdated = 1 WHERE clinic_id = (SELECT id FROM clinics WHERE slug = 'dom-zdravlja-podgorica') AND code LIKE 'PG_MR_%'.",
+    "п.2 a)–g): заведено 7 новых записей каталога вместо одной общей 4525 «High Risk and Difficult Working Conditions» с диапазоном 35–50 €. Плюс — поиск по конкретной профессии («работа на высоте», «погрузчик»); минус — 7 записей с одной клиникой. Если решишь свести в 4525 (price 35, price_max 50), удалить строки PG_MR_02a…02g и новые записи.",
+    "п.27 «Pregled kolornog vida - anomaloskop (AQ koeficijent)» сопоставлен с 5509 «Color Sensitivity Test with Anomaloscope» (FZOCG X06081). В каталоге есть и 5488 «Nagel Anomaloscopy» (X06048) — AQ-коэффициент даёт как раз аномалоскоп Нагеля. 5509 и 5488 — вероятные дубли (одинаковая цена 7.80/16.68, обе у Danilo и Nikšić), кода у ДЗ Подгорица нет. Вопрос для ревью каталога, не для этого импорта.",
+    "Каталог: 4529 «Professional Drivers» и 7921 «Class B C D and E Drivers» (Тиват) похожи на дубль — п.9 ДЗ Подгорица («B, C, E, D kategorije profesionalci») подходит под обе. Сопоставлено с 4529 (3 клиники против 1). Аналогично 7840/7849 против 4977 «Lifeguards Divers and Boat Operators» (Котор, Тиват): ДЗ Подгорица, как и Бело-Поле, разводит лодку (п.19) и спасателей с дайверами (п.20), поэтому взяты раздельные 7840 и 7849."
+  ]
+}

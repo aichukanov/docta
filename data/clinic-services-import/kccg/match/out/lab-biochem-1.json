@@ -1,0 +1,870 @@
+{
+ "batch": "lab-biochem-1",
+ "items": [
+  {
+   "code": "Z01109",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Urinary Protein (Qualitative)",
+   "slug": "urinary-protein-qualitative",
+   "name_sr": "Dokazivanje proteina u urinu (kvalitativno)",
+   "name_ru": "Белок в моче (качественно)",
+   "name_de": "Eiweiß im Urin (qualitativ)",
+   "name_tr": "İdrarda protein (kalitatif)",
+   "categories": [
+    "URINALYSIS"
+   ],
+   "synonyms": [
+    {
+     "name": "Qualitative Urine Protein",
+     "lang": "en"
+    }
+   ],
+   "note": "Качественное определение (ПМСП, 2.10 €); запись 94 Protein in Urine — количественная (синоним «kvantitativno (sek)»)"
+  },
+  {
+   "code": "Z02090",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "d-dimer",
+   "id": 10,
+   "note": "Синоним «D-dimer - test traka» уже есть в каталоге"
+  },
+  {
+   "code": "Z02094",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "ldl-cholesterol",
+   "id": 25,
+   "note": "Синоним «LDL holesterol računski» уже есть в каталоге"
+  },
+  {
+   "code": "Z03014",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "factor-ix",
+   "id": 566,
+   "note": ""
+  },
+  {
+   "code": "Z03015",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "factor-x",
+   "id": 567,
+   "note": ""
+  },
+  {
+   "code": "Z03016",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "factor-xi",
+   "id": 568,
+   "note": ""
+  },
+  {
+   "code": "Z03017",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "factor-xii-hageman",
+   "id": 569,
+   "note": ""
+  },
+  {
+   "code": "Z03018",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "protein-c",
+   "id": 573,
+   "note": "Активность протеина C (антиген — отдельный код Z03020)"
+  },
+  {
+   "code": "Z03019",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "protein-s",
+   "id": 571,
+   "note": "Активность протеина S (антиген — отдельный код Z03021)"
+  },
+  {
+   "code": "Z03020",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Protein C Antigen",
+   "slug": "protein-c-antigen",
+   "name_sr": "Protein C, antigen",
+   "name_ru": "Протеин C, антиген",
+   "name_de": "Protein-C-Antigen",
+   "name_tr": "Protein C antijeni",
+   "categories": [
+    "COAGULATION"
+   ],
+   "synonyms": [],
+   "note": "В каталоге только Protein C (573, активность)"
+  },
+  {
+   "code": "Z03021",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Protein S Antigen",
+   "slug": "protein-s-antigen",
+   "name_sr": "Protein S, antigen",
+   "name_ru": "Протеин S, антиген",
+   "name_de": "Protein-S-Antigen",
+   "name_tr": "Protein S antijeni",
+   "categories": [
+    "COAGULATION"
+   ],
+   "synonyms": [],
+   "note": "В каталоге только Protein S (571, активность)"
+  },
+  {
+   "code": "Z03022",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Lupus Anticoagulant Screening Test (LA1)",
+   "slug": "lupus-anticoagulant-screening-test-la1",
+   "name_sr": "Lupus antikoagulans – skrining test (LA1)",
+   "name_ru": "Волчаночный антикоагулянт, скрининговый тест (LA1)",
+   "name_de": "Lupusantikoagulans-Suchtest (LA1)",
+   "name_tr": "Lupus antikoagülanı tarama testi (LA1)",
+   "categories": [
+    "COAGULATION"
+   ],
+   "synonyms": [
+    {
+     "name": "dRVVT Screen",
+     "lang": "en"
+    },
+    {
+     "name": "LA1",
+     "lang": "sr"
+    }
+   ],
+   "note": "LA1/LA2 — скрининг/подтверждение dRVVT, тарифицируются раздельно; общая запись Lupus Anticoagulant 559 этапы не различает"
+  },
+  {
+   "code": "Z03023",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Lupus Anticoagulant Confirmation Test (LA2)",
+   "slug": "lupus-anticoagulant-confirmation-test-la2",
+   "name_sr": "Lupus antikoagulans – potvrdni test (LA2)",
+   "name_ru": "Волчаночный антикоагулянт, подтверждающий тест (LA2)",
+   "name_de": "Lupusantikoagulans-Bestätigungstest (LA2)",
+   "name_tr": "Lupus antikoagülanı doğrulama testi (LA2)",
+   "categories": [
+    "COAGULATION"
+   ],
+   "synonyms": [
+    {
+     "name": "dRVVT Confirm",
+     "lang": "en"
+    },
+    {
+     "name": "LA2",
+     "lang": "sr"
+    }
+   ],
+   "note": "См. Z03022"
+  },
+  {
+   "code": "Z03024",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "heparin-anti-xa-activity",
+   "id": 560,
+   "note": "Гепарин в плазме определяется как анти-Xa активность"
+  },
+  {
+   "code": "Z03025",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Plasminogen",
+   "slug": "plasminogen",
+   "name_sr": "Plazminogen",
+   "name_ru": "Плазминоген",
+   "name_de": "Plasminogen",
+   "name_tr": "Plazminojen",
+   "categories": [
+    "COAGULATION"
+   ],
+   "synonyms": [],
+   "note": ""
+  },
+  {
+   "code": "Z03026",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "pai-1",
+   "id": 306,
+   "note": "PAI-1 как белок (генный полиморфизм — отдельная запись 1322); у 306 ошибочная категория GENETICS, по смыслу COAGULATION"
+  },
+  {
+   "code": "Z03027",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "von-willebrand-factor-activity",
+   "id": 543,
+   "note": ""
+  },
+  {
+   "code": "Z03028",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "von-willebrand-factor-antigen",
+   "id": 544,
+   "note": ""
+  },
+  {
+   "code": "Z03029",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "apcr-resistance-to-activated-protein-c",
+   "id": 577,
+   "note": "В каталоге APC-R не разведена по вариантам; тест с FV-дефицитной плазмой — стандартная модифицированная APC-R"
+  },
+  {
+   "code": "Z03030",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Endogenous Thrombin Potential",
+   "slug": "endogenous-thrombin-potential",
+   "name_sr": "Endogeni trombinski potencijal",
+   "name_ru": "Эндогенный тромбиновый потенциал",
+   "name_de": "Endogenes Thrombinpotenzial",
+   "name_tr": "Endojen trombin potansiyeli",
+   "categories": [
+    "COAGULATION"
+   ],
+   "synonyms": [
+    {
+     "name": "ETP",
+     "lang": "en"
+    },
+    {
+     "name": "Thrombin Generation Test",
+     "lang": "en"
+    },
+    {
+     "name": "Тест генерации тромбина",
+     "lang": "ru"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "code": "Z03031",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Platelet Function Test on Aspirin Therapy",
+   "slug": "platelet-function-test-on-aspirin-therapy",
+   "name_sr": "Funkcionalna aktivnost trombocita kod pacijenata na terapiji aspirinom",
+   "name_ru": "Функциональная активность тромбоцитов на фоне терапии аспирином",
+   "name_de": "Thrombozytenfunktionstest unter Aspirintherapie",
+   "name_tr": "Aspirin tedavisi altında trombosit fonksiyon testi",
+   "categories": [
+    "COAGULATION",
+    "THERAPEUTIC_DRUG_MONITORING"
+   ],
+   "synonyms": [
+    {
+     "name": "Aspirin Resistance Test",
+     "lang": "en"
+    },
+    {
+     "name": "Rezistencija na aspirin",
+     "lang": "sr"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "code": "Z03032",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Platelet Function Test on Clopidogrel Therapy",
+   "slug": "platelet-function-test-on-clopidogrel-therapy",
+   "name_sr": "Funkcionalna aktivnost trombocita kod pacijenata na terapiji klopidogrelom (Plavix)",
+   "name_ru": "Функциональная активность тромбоцитов на фоне терапии клопидогрелом (Плавикс)",
+   "name_de": "Thrombozytenfunktionstest unter Clopidogrel-Therapie (Plavix)",
+   "name_tr": "Klopidogrel (Plavix) tedavisi altında trombosit fonksiyon testi",
+   "categories": [
+    "COAGULATION",
+    "THERAPEUTIC_DRUG_MONITORING"
+   ],
+   "synonyms": [
+    {
+     "name": "Clopidogrel Resistance Test",
+     "lang": "en"
+    },
+    {
+     "name": "Plavix",
+     "lang": "en"
+    }
+   ],
+   "note": "Plavix — бренд клопидогрела; в name_en МНН"
+  },
+  {
+   "code": "Z03033",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Anti-Beta-2 Glycoprotein I Antibodies",
+   "slug": "anti-beta-2-glycoprotein-i-antibodies",
+   "name_sr": "Antitijela na beta-2 glikoprotein I",
+   "name_ru": "Антитела к бета-2-гликопротеину I",
+   "name_de": "Anti-Beta-2-Glykoprotein-I-Antikörper",
+   "name_tr": "Anti-beta-2 glikoprotein I antikorları",
+   "categories": [
+    "AUTOIMMUNE_ANTIBODIES",
+    "COAGULATION"
+   ],
+   "synonyms": [
+    {
+     "name": "Anti-β2GPI",
+     "lang": "en"
+    }
+   ],
+   "note": "Класс в прайсе не указан; в каталоге раздельные IgG (847) и IgM (848) — не то же"
+  },
+  {
+   "code": "Z03034",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Batroxobin Time",
+   "slug": "batroxobin-time",
+   "name_sr": "Batroksobinsko vrijeme",
+   "name_ru": "Батроксобиновое время",
+   "name_de": "Batroxobinzeit",
+   "name_tr": "Batroksobin zamanı",
+   "categories": [
+    "COAGULATION"
+   ],
+   "synonyms": [
+    {
+     "name": "Reptilase Time",
+     "lang": "en"
+    },
+    {
+     "name": "Reptilazno vrijeme",
+     "lang": "sr"
+    },
+    {
+     "name": "Рептилазное время",
+     "lang": "ru"
+    },
+    {
+     "name": "Reptilasezeit",
+     "lang": "de"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "code": "Z03035",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Neonatal TSH",
+   "slug": "neonatal-tsh",
+   "name_sr": "Neonatalni TSH",
+   "name_ru": "Неонатальный ТТГ",
+   "name_de": "Neonatales TSH",
+   "name_tr": "Yenidoğan TSH",
+   "categories": [
+    "HORMONES"
+   ],
+   "synonyms": [
+    {
+     "name": "Newborn TSH Screening",
+     "lang": "en"
+    },
+    {
+     "name": "Скрининг на врождённый гипотиреоз",
+     "lang": "ru"
+    }
+   ],
+   "note": "Скрининг новорождённых (сухое пятно крови); отличается от обычного TSH 125"
+  },
+  {
+   "code": "Z03036",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "procalcitonin",
+   "id": 70,
+   "note": ""
+  },
+  {
+   "code": "Z03037",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "NGAL",
+   "slug": "ngal",
+   "name_sr": "Lipokalin vezan za neutrofilnu želatinazu (NGAL)",
+   "name_ru": "NGAL (липокалин, ассоциированный с желатиназой нейтрофилов)",
+   "name_de": "NGAL (Neutrophilen-Gelatinase-assoziiertes Lipocalin)",
+   "name_tr": "NGAL (nötrofil jelatinaz ilişkili lipokalin)",
+   "categories": [
+    "BIOCHEMISTRY"
+   ],
+   "synonyms": [
+    {
+     "name": "Neutrophil Gelatinase-Associated Lipocalin",
+     "lang": "en"
+    },
+    {
+     "name": "Lipocalin-2",
+     "lang": "en"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "code": "Z03038",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Myeloperoxidase",
+   "slug": "myeloperoxidase",
+   "name_sr": "Mijeloperoksidaza",
+   "name_ru": "Миелопероксидаза",
+   "name_de": "Myeloperoxidase",
+   "name_tr": "Miyeloperoksidaz",
+   "categories": [
+    "CARDIAC_MARKERS",
+    "INFLAMMATORY_MARKERS"
+   ],
+   "synonyms": [
+    {
+     "name": "MPO",
+     "lang": "en"
+    }
+   ],
+   "note": "Сам фермент МПО, не антитела anti-MPO (827 ANCA-P Anti-MPO)"
+  },
+  {
+   "code": "Z03039",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "calcitonin",
+   "id": 133,
+   "note": ""
+  },
+  {
+   "code": "Z03040",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "thyroglobulin",
+   "id": 131,
+   "note": "OCR: Tireoglubulin → Tireoglobulin"
+  },
+  {
+   "code": "Z03041",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "gastrin",
+   "id": 738,
+   "note": ""
+  },
+  {
+   "code": "Z03042",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "leptin",
+   "id": 152,
+   "note": ""
+  },
+  {
+   "code": "Z03043",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "17-hydroxyprogesterone",
+   "id": 734,
+   "note": ""
+  },
+  {
+   "code": "Z03044",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "dhea-s",
+   "id": 142,
+   "note": ""
+  },
+  {
+   "code": "Z03045",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "shbg",
+   "id": 143,
+   "note": ""
+  },
+  {
+   "code": "Z03046",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "free-testosterone",
+   "id": 174,
+   "note": ""
+  },
+  {
+   "code": "Z03047",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "androstenedione",
+   "id": 144,
+   "note": ""
+  },
+  {
+   "code": "Z03048",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "anti-mullerian-hormone",
+   "id": 148,
+   "note": ""
+  },
+  {
+   "code": "Z03049",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "inhibin-b",
+   "id": 157,
+   "note": ""
+  },
+  {
+   "code": "Z03050",
+   "decision": "doubtful",
+   "kind": "lab_test",
+   "note": "Свободный кортизол без указания материала. В каталоге только мочевые варианты (605 Free Cortisol in Urine, 1460 в 24h моче) — обычно свободный кортизол меряют в моче, но раздел не уточняет; возможен и сывороточный. Уточнить у КЦЦГ или привязать к 605"
+  },
+  {
+   "code": "Z03051",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "acth",
+   "id": 173,
+   "note": ""
+  },
+  {
+   "code": "Z03052",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Corticosteroid-Binding Globulin",
+   "slug": "corticosteroid-binding-globulin",
+   "name_sr": "Globulin koji vezuje kortikosteroide",
+   "name_ru": "Кортикостероид-связывающий глобулин",
+   "name_de": "Cortisol-bindendes Globulin",
+   "name_tr": "Kortikosteroid bağlayıcı globulin",
+   "categories": [
+    "HORMONES"
+   ],
+   "synonyms": [
+    {
+     "name": "CBG",
+     "lang": "en"
+    },
+    {
+     "name": "Transcortin",
+     "lang": "en"
+    },
+    {
+     "name": "Transkortin",
+     "lang": "sr"
+    },
+    {
+     "name": "Транскортин",
+     "lang": "ru"
+    },
+    {
+     "name": "Transkortin",
+     "lang": "de"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "code": "Z03053",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "aldosterone",
+   "id": 184,
+   "note": ""
+  },
+  {
+   "code": "Z03054",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "renin",
+   "id": 177,
+   "note": "По name_kccg (Renin); в FZOCG название перепутано с Z03055"
+  },
+  {
+   "code": "Z03055",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "ace",
+   "id": 55,
+   "note": "По name_kccg (ACE); в FZOCG название перепутано с Z03054"
+  },
+  {
+   "code": "Z03056",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Adrenaline",
+   "slug": "adrenaline",
+   "name_sr": "Adrenalin",
+   "name_ru": "Адреналин",
+   "name_de": "Adrenalin",
+   "name_tr": "Adrenalin",
+   "categories": [
+    "HORMONES"
+   ],
+   "synonyms": [
+    {
+     "name": "Epinephrine",
+     "lang": "en"
+    },
+    {
+     "name": "Epinefrin",
+     "lang": "sr"
+    },
+    {
+     "name": "Эпинефрин",
+     "lang": "ru"
+    }
+   ],
+   "note": "Отдельный аналит; в каталоге только суммарные Catecholamines in Plasma 698 (адреналин там синонимом). Материал в прайсе не указан"
+  },
+  {
+   "code": "Z03057",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Noradrenaline",
+   "slug": "noradrenaline",
+   "name_sr": "Noradrenalin",
+   "name_ru": "Норадреналин",
+   "name_de": "Noradrenalin",
+   "name_tr": "Noradrenalin",
+   "categories": [
+    "HORMONES"
+   ],
+   "synonyms": [
+    {
+     "name": "Norepinephrine",
+     "lang": "en"
+    },
+    {
+     "name": "Norepinefrin",
+     "lang": "sr"
+    },
+    {
+     "name": "Норэпинефрин",
+     "lang": "ru"
+    }
+   ],
+   "note": "См. Z03056"
+  },
+  {
+   "code": "Z03058",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Dopamine",
+   "slug": "dopamine",
+   "name_sr": "Dopamin",
+   "name_ru": "Дофамин",
+   "name_de": "Dopamin",
+   "name_tr": "Dopamin",
+   "categories": [
+    "HORMONES"
+   ],
+   "synonyms": [],
+   "note": "См. Z03056"
+  },
+  {
+   "code": "Z03059",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "serotonin",
+   "id": 700,
+   "note": ""
+  },
+  {
+   "code": "Z03060",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "metanephrines",
+   "id": 116,
+   "note": ""
+  },
+  {
+   "code": "Z03061",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "5-hiaa",
+   "id": 105,
+   "note": ""
+  },
+  {
+   "code": "Z03062",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "vma",
+   "id": 111,
+   "note": ""
+  },
+  {
+   "code": "Z03063",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Placental Growth Factor",
+   "slug": "placental-growth-factor",
+   "name_sr": "Placentalni faktor rasta (PlGF)",
+   "name_ru": "Плацентарный фактор роста (PlGF)",
+   "name_de": "Plazentarer Wachstumsfaktor (PlGF)",
+   "name_tr": "Plasental büyüme faktörü (PlGF)",
+   "categories": [
+    "PREGNANCY_FERTILITY"
+   ],
+   "synonyms": [
+    {
+     "name": "PlGF",
+     "lang": "en"
+    }
+   ],
+   "note": "OCR: Plancetrani → Placentalni. Отдельный маркер, не панель Preeclampsia Screening (1144/1145)"
+  },
+  {
+   "code": "Z03064",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "growth-hormone",
+   "id": 182,
+   "note": ""
+  },
+  {
+   "code": "Z03065",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "igf-1",
+   "id": 185,
+   "note": ""
+  },
+  {
+   "code": "Z03066",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "igfbp-3",
+   "id": 735,
+   "note": ""
+  },
+  {
+   "code": "Z03067",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "free-estriol",
+   "id": 156,
+   "note": ""
+  },
+  {
+   "code": "Z03068",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "free-beta-hcg",
+   "id": 153,
+   "note": ""
+  },
+  {
+   "code": "Z03069",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "papp-a",
+   "id": 151,
+   "note": ""
+  },
+  {
+   "code": "Z03070",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "inhibin-a",
+   "id": 736,
+   "note": ""
+  },
+  {
+   "code": "Z03071",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Double Test Risk Calculation",
+   "slug": "double-test-risk-calculation",
+   "name_sr": "Obrada podataka za dabl test (izračunavanje rizika)",
+   "name_ru": "Обработка данных двойного теста (расчёт риска)",
+   "name_de": "Datenauswertung Double-Test (Risikoberechnung)",
+   "name_tr": "İkili test veri işleme (risk hesaplaması)",
+   "categories": [
+    "PREGNANCY_FERTILITY"
+   ],
+   "synonyms": [],
+   "note": "Только расчёт риска; маркеры (free beta HCG, PAPP-A) тарифицируются своими кодами. Полный Double Test 155 — другое"
+  },
+  {
+   "code": "Z03072",
+   "decision": "new",
+   "kind": "lab_test",
+   "name_en": "Triple Test Risk Calculation",
+   "slug": "triple-test-risk-calculation",
+   "name_sr": "Obrada podataka za tripl test (izračunavanje rizika)",
+   "name_ru": "Обработка данных тройного теста (расчёт риска)",
+   "name_de": "Datenauswertung Triple-Test (Risikoberechnung)",
+   "name_tr": "Üçlü test veri işleme (risk hesaplaması)",
+   "categories": [
+    "PREGNANCY_FERTILITY"
+   ],
+   "synonyms": [],
+   "note": "Только расчёт риска; полный Triple Test 154 — другое"
+  },
+  {
+   "code": "Z03073",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "ca-72-4",
+   "id": 198,
+   "note": ""
+  },
+  {
+   "code": "Z03074",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "scc-squamous-cell-carcinoma-antigen",
+   "id": 213,
+   "note": ""
+  },
+  {
+   "code": "Z03075",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "nse",
+   "id": 203,
+   "note": ""
+  },
+  {
+   "code": "Z03076",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "he4",
+   "id": 199,
+   "note": ""
+  },
+  {
+   "code": "Z03077",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "cyfra-21-1",
+   "id": 202,
+   "note": "OCR: Cifa → CYFRA"
+  },
+  {
+   "code": "Z03078",
+   "decision": "existing",
+   "kind": "lab_test",
+   "slug": "chromogranin-a",
+   "id": 206,
+   "note": ""
+  }
+ ]
+}

@@ -1,0 +1,373 @@
+{
+	"schemaVersion": 1,
+	"slug": "dnevna-bolnica-optimal-podgorica",
+	"name": "Dnevna bolnica Optimal",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": null,
+	"sql": [
+		"server/sql/insert-clinic-prices-dnevna-bolnica-optimal-podgorica.sql"
+	],
+	"status": {
+		"generated": "2026-10-02",
+		"appliedLocal": "2026-10-02",
+		"appliedProd": "2026-10-02",
+		"clinicId": 25,
+		"doctorIds": {},
+		"note": "Цены к 69 уже заведённым услугам (заведены раньше, отдельной записи об импорте не было) + новая связь с Internist Examination + 8 анализов без цены. googlePlaceId не проверялся — этот импорт клинику не трогает. На 2026-10-02 id клиники 25 и локально, и на проде; в SQL всё равно по slug. Применено 2026-10-02 локально и на проде; сверено: VERIFICATION юзера + /api/services/list и /api/labtests/list на проде (70 услуг, 67 с ценой, 65 outdated, сумма 33186.50, 8 анализов без цены; построчно цены и флаги совпали)."
+	},
+	"sources": [
+		{
+			"type": "pdf",
+			"ref": "https://optimalmed.me/wp-content/uploads/2016/02/Cjenovnik.pdf",
+			"collected": "2026-10-02",
+			"machineReadable": true,
+			"note": "Снимок data/clinic-pricelists/sources/dnevna-bolnica-optimal-podgorica/2026-10-02.pdf (4 162 405 байт, sha256 a03983a32ca9ed11f8fb5adafea41fcffd8b5e5eaa2dacce6c983419fa772238). Дата прайса: CreationDate 2016-02-19 (метаданные PDF, Producer ILOVEPDF.COM), Last-Modified 2016-02-24 (заголовок ответа). Две страницы «Cjenovnik usluga»: dijagnostika (34 строки) и operacije (36 строк). Текстовый слой есть: pdftotext (poppler) и PyMuPDF дают читаемый текст без сдвига кодировки — «Caesar +29» из карты воспроизводится только у наивного парсера потоков, нормальной библиотеке он не мешает. Но pdftotext теряет пробелы и диакритику (Š→S, Č→C, Ć выпадает целиком), поэтому строки сверены по рендеру страниц: source ниже переписан с картинки. Сайт не обновляется с 2016: RSS /feed/ lastBuildDate 2016-04-12, последняя запись 2015-09-08, jQuery 1.12.4 / шаблон «©Design by CEZAM». Страница /cjenovnik/ из меню убрана, но отвечает 200 и ссылается на этот PDF. В Wayback ни /cjenovnik/, ни PDF не сохранены — более нового прайса не найдено. Цены даны с «.00 €»; три строки в другом формате — «15,00 €», «20,00 €», «1.500.00 €» (= 1500)."
+		},
+		{
+			"type": "website",
+			"ref": "https://optimalmed.me/usluge-i-oprema/",
+			"collected": "2026-10-02",
+			"machineReadable": true,
+			"note": "Список услуг без цен — по нему, судя по набору, и заводились 69 услуг. Использован только для сверки трёх услуг без пары в PDF: SLT и «komplikovani slučaj» катаракты там есть, Anti-VEGF отдельно нет."
+		}
+	],
+	"coverage": {
+		"prices": "66 из 69 заведённых услуг получили цену из PDF + Internist Examination 30 €, все с ценой > 0 — с is_price_outdated = 1 (решение юзера). 3 без пары в PDF оставлены без цены.",
+		"codes": "в прайсе кодов нет, code не заполнялся",
+		"labTests": "8 анализов из строки «LABORATORIJSKE ANALIZE (…)» 20 € — без цены: цена дана на набор, поштучных цен в прайсе нет.",
+		"doctors": "не трогались"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Comprehensive Ophthalmological Examination",
+			"source": "OPŠTI OFTALMOLOŠKI PREGLED (ARK,VOU,IOP,SPALT,PAHIMETRIJA) — 50.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Follow-up Ophthalmological Examination",
+			"source": "KONTROLNI PREGLED — 15.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "IOL Master Biometry",
+			"source": "IOL MASTER — 15.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "A-Scan Biometry",
+			"source": "BIOMETRIJA ( A-SCAN ) — 15.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "B-Scan Ocular Ultrasound",
+			"source": "ULTRAZVUK OKA ( B-SCAN ) — 15.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Optical Coherence Tomography (OCT)",
+			"source": "OCT -OPTIČKA KOHERENTNA TOMOGRAFIJA — 50.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Visual Field Test Single Eye",
+			"source": "KOMPJUTERIZOVANO VIDNO POLJE (JEDNO OKO) — 15.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Visual Field Test Both Eyes",
+			"source": "KOMPJUTERIZOVANO VIDNO POLJE (OBA OKA) — 25.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Fluorescein Angiography",
+			"source": "FLUORESCEINSKA ANGIOGRAFIJA — 65.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Fundus Photography",
+			"source": "FOTOGRAFIJA FUNDUSA — 15.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Corneal Topography Sirius",
+			"source": "KOMPLETNI KOMPJUTERIZOVANI PREGLED ROŽNJAČE \"SIRIUS\" — 20.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Panretinal Laser Photocoagulation Single Eye",
+			"source": "PANRETINALNA LASER FOTOKOAGULACIJA MREŽNJAČE-JEDNO OKO — 260.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Focal Laser Photocoagulation Single Eye",
+			"source": "LASER FOTOKOAGULACIJA MREŽNJAČE - JEDNO OKO — 100.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Additional Laser Photocoagulation",
+			"source": "DOPUNSKA LASER FOTOKOAGULACIJA — 50.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Laser Trabeculoplasty",
+			"source": "LASER TRABEKULOPLASTIKA (LASER ZA LIJEČENJE GLAUKOMA) — 100.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Nd:YAG Laser Capsulotomy",
+			"source": "ND YAG LASER CAPSULOTOMIJA — 80.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Nd:YAG Laser Iridotomy",
+			"source": "ND YAG LASER IRIDOTOMIJA — 100.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Gonioplasty",
+			"source": "GONIOPLASTIKA — 100.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Goniopuncture",
+			"source": "GONIOPUNKTURA — 50.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Macular Laser Stimulation 5 Sessions",
+			"source": "LASERSKA STIMULACIJA MAKULE-(5 SEANSA) — 70.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Paraocular Injection",
+			"source": "APLIKACIJA PARAOKULARNE INJEKCIJE — 12.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Eyelid Hygiene Care",
+			"source": "TOALETA KAPAKA — 10.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Lacrimal Duct Irrigation",
+			"source": "ISPIRANJE SUZNIH KANALIĆA — 15.00 € (dijagnostika, на обеих страницах, на второй «15,00 €»)"
+		},
+		{
+			"nameEn": "Eye Foreign Body Removal",
+			"source": "UKLANJANJE STRANOG TIJELA IZ ROZNJAČE — 20.00 € (dijagnostika, на обеих страницах, на второй «20,00 €»)"
+		},
+		{
+			"nameEn": "Chalazion Injection Treatment",
+			"source": "LIJEČENJE HALACIONA INJEKCIJAMA — 30.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Schirmer Test for Dry Eye",
+			"source": "ŠIRMEROV TEST — 6.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Postoperative Follow-up First Month",
+			"source": "KONTROLNI POSTOPERATIVNI PREGLED U MJESECU NAKON OPERACIJE — 10.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Treatment Follow-up First Month",
+			"source": "KONTROLA LIJEČENJA U MJESECU NAKON PRVOG PREGLEDA — 10.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Preoperative Examination Package",
+			"source": "PREDOPERATIVNA PRIPREMA (PREGLED INTERNISTE I LABORATORIJSKE ANALIZE) — 52.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "Preoperative Examination for Refractive Surgery",
+			"source": "PREDOPERATIVNA PRIPREMA ZA REFRAKTIVNU HIRURGIJU (KKS, SE ) — 6.50 € (dijagnostika)"
+		},
+		{
+			"nameEn": "First Postoperative Follow-up",
+			"source": "PRVI KONTROLNI POSTOPERATIVNI PREGLED — 0.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "First Treatment Follow-up",
+			"source": "PRVI KONTROLNI PREGLED NAKON POČETKA LIJEČENJA — 0.00 € (dijagnostika)"
+		},
+		{
+			"nameEn": "LASIK Single Eye",
+			"source": "EXIMER-LASERSKO SKIDANJE DIOPTRIJE (JEDNO OKO) - LASIK — 790.00 € (operacije)"
+		},
+		{
+			"nameEn": "LASIK Both Eyes",
+			"source": "EXIMER-LASERSKO SKIDANJE DIOPTRIJE (OBA OKA) - LASIK — 1550.00 € (operacije)"
+		},
+		{
+			"nameEn": "SuperLASIK Single Eye",
+			"source": "EXIMER-LASERSKO SKIDANJE DIOPTRIJE (JEDNO OKO) - SUPERLASIK — 800.00 € (operacije)"
+		},
+		{
+			"nameEn": "PRK Single Eye",
+			"source": "EXIMER-LASERSKO SKIDANJE DIOPTRIJE (JEDNO OKO) - PRK — 400.00 € (operacije)"
+		},
+		{
+			"nameEn": "Intracorneal Ring Segments Keratoconus",
+			"source": "IMPLANTACIJA INTRAKORNEALNIH SEGMENATA KOD KERATOKONUSA — 1100.00 € (operacije)"
+		},
+		{
+			"nameEn": "Limbal Relaxing Incisions LRI",
+			"source": "LIMBALNE RELAKSIRAJUĆE INCIZIJE (LRI) — 300.00 € (operacije)"
+		},
+		{
+			"nameEn": "Cataract Surgery with Standard IOL",
+			"source": "UKLANJANJE KATARAKTE SA UGRADNJOM STANDARDNOG SOČIVA — 990.00 € (operacije)"
+		},
+		{
+			"nameEn": "Cataract Surgery with Toric IQ IOL",
+			"source": "UKLANJANJE KATARAKTE SA UGRADNJOM TORIČNOG, IQ SOČIVA — 1250.00 € (operacije)"
+		},
+		{
+			"nameEn": "Cataract Surgery with Multifocal IOL",
+			"source": "UKLANJANJE KATARAKTE SA UGRADNJOM MULTIFOKALNOG SOČIVA — 1590.00 € (operacije)"
+		},
+		{
+			"nameEn": "Intraocular Lens Exchange",
+			"source": "ZAMJENA INTRAOKULARNOG SOČIVA — 1100.00 € (operacije)"
+		},
+		{
+			"nameEn": "Secondary IOL Implantation",
+			"source": "SEKUNDARNA IMPLANTACIJA IOL-A — 800.00 € (operacije)"
+		},
+		{
+			"nameEn": "Phacoemulsification with Trabeculectomy",
+			"source": "FAKOEMULZIFIKACIJA I TRABEKULEKTOMIJA — 1500.00 € (operacije)"
+		},
+		{
+			"nameEn": "Trabeculectomy",
+			"source": "TRABEKULEKTOMIJA — 1200.00 € (operacije)"
+		},
+		{
+			"nameEn": "Deep Sclerectomy Non-penetrating Glaucoma",
+			"source": "GLAUKOM BEZ PENETRACIJE-DUBOKA SKLEROTOMIJA — 1300.00 € (operacije)"
+		},
+		{
+			"nameEn": "Trabeculectomy with Implant",
+			"source": "TRABEKULEKTOMIJA SA IMPLANTOM — 1400.00 € (operacije)"
+		},
+		{
+			"nameEn": "Cyclocryotherapy",
+			"source": "CYCLOCRIO APLIKACIJA — 500.00 € (operacije)"
+		},
+		{
+			"nameEn": "Intravitreal Anti-VEGF Injection Lucentis",
+			"source": "INTRAVITREALNA INJEKCIJA LUCENTIS — 800.00 € (operacije)"
+		},
+		{
+			"nameEn": "Vitrectomy Category I",
+			"source": "VITREKTOMIJA I KATEGORIJE — 1800.00 € (operacije)"
+		},
+		{
+			"nameEn": "Vitrectomy Category II",
+			"source": "VITREKTOMIJA II KATEGORIJE — 2200.00 € (operacije)"
+		},
+		{
+			"nameEn": "Vitrectomy Category III",
+			"source": "VITREKTOMIJA III KATEGORIJE — 3000.00 € (operacije)"
+		},
+		{
+			"nameEn": "Silicone Oil Exchange",
+			"source": "ZAMJENA SILIKONSKOG ULJA — 1200.00 € (operacije)"
+		},
+		{
+			"nameEn": "Silicone Oil Removal",
+			"source": "EVAKUACIJA SILIKONSKOG ULJA — 800.00 € (operacije)"
+		},
+		{
+			"nameEn": "Episcleral Retinal Detachment Surgery",
+			"source": "EPISKLERALNA OPERACIJA ABLACIJE MREŽNJAČE — 1500.00 € (operacije, напечатано «1.500.00 €»)"
+		},
+		{
+			"nameEn": "Chalazion Removal under Local Anesthesia",
+			"source": "UKLANJANJE HALACIONA — 100.00 € (operacije)"
+		},
+		{
+			"nameEn": "Pterygium Removal",
+			"source": "UKLANJANJE PTERIGIJUMA — 200.00 € (operacije)"
+		},
+		{
+			"nameEn": "Pterygium Removal with Conjunctival Graft",
+			"source": "UKLANJANJE PTERIGIJUMA SA KALEMOM KONJUNKTIVE — 400.00 € (operacije)"
+		},
+		{
+			"nameEn": "Eyelid Correction Surgery",
+			"source": "KOREKCIJA KAPKA — 300.00 € (operacije)"
+		},
+		{
+			"nameEn": "Minor Ophthalmic Surgical Procedure",
+			"source": "MALI HIRURŠKI ZAHVAT — 115.00 € (operacije)"
+		},
+		{
+			"nameEn": "Eyelid Tumor Surgical Removal",
+			"source": "UKLANJANJE TUMORA KAPKA I KONJUNKTIVE — 200.00 € (operacije)"
+		},
+		{
+			"nameEn": "Strabismus Surgery",
+			"source": "OPERACIJA STRABIZMA — 890.00 € (operacije)"
+		},
+		{
+			"nameEn": "Vitreous Cavity Revision",
+			"source": "REVIZIJA PROSTORA STAKLASTOG TIJELA — 500.00 € (operacije)"
+		},
+		{
+			"nameEn": "General IV Anesthesia",
+			"source": "OPŠTA ANESTEZIJA — 200.00 € (operacije)"
+		},
+		{
+			"nameEn": "AcrySof IQ IOL Surcharge",
+			"source": "DOPLATA ZA IMPLANTACIJU SOČIVA ACRYSOF IQ — 300.00 € (operacije)"
+		},
+		{
+			"nameEn": "Multifocal IOL Surcharge",
+			"source": "DOPLATA ZA IMPLANTACIJU MULTIFOKALNOG SOČIVA — 700.00 € (operacije)"
+		},
+		{
+			"nameEn": "Internist Examination",
+			"source": "PREGLED INTERNISTE — 30.00 € (dijagnostika)"
+		}
+	],
+	"doctors": [],
+	"excluded": [],
+	"openQuestions": [
+		"Сопоставления приемлемые, но не дословные (записи общего каталога со своими формулировками, связи клиники с ними были до этого импорта): «KONTROLNI PREGLED» → Follow-up Ophthalmological Examination (name_sr «…do 2 sedmice od prvog pregleda»); «OPŠTA ANESTEZIJA» → General IV Anesthesia («Opšta venska anestezija»); «UKLANJANJE TUMORA KAPKA I KONJUNKTIVE» → Eyelid Tumor Surgical Removal (в записи только веко); «UKLANJANJE STRANOG TIJELA IZ ROZNJAČE» → Eye Foreign Body Removal; «UKLANJANJE HALACIONA» → Chalazion Removal under Local Anesthesia."
+	],
+	"labTests": [
+		{
+			"nameEn": "Complete Blood Count",
+			"source": "KKS ← LABORATORIJSKE ANALIZE (KKS, SE, GLIKEMIJA ,UREA, NA, K, VRIJ.KRVARENJA I VRIJ.KOAGULACIJE) — 20.00 € за весь набор (dijagnostika)",
+			"price": null
+		},
+		{
+			"nameEn": "Erythrocyte Sedimentation Rate",
+			"source": "SE ← LABORATORIJSKE ANALIZE (KKS, SE, GLIKEMIJA ,UREA, NA, K, VRIJ.KRVARENJA I VRIJ.KOAGULACIJE) — 20.00 € за весь набор (dijagnostika)",
+			"price": null
+		},
+		{
+			"nameEn": "Glucose",
+			"source": "GLIKEMIJA ← LABORATORIJSKE ANALIZE (KKS, SE, GLIKEMIJA ,UREA, NA, K, VRIJ.KRVARENJA I VRIJ.KOAGULACIJE) — 20.00 € за весь набор (dijagnostika)",
+			"price": null
+		},
+		{
+			"nameEn": "Urea",
+			"source": "UREA ← LABORATORIJSKE ANALIZE (KKS, SE, GLIKEMIJA ,UREA, NA, K, VRIJ.KRVARENJA I VRIJ.KOAGULACIJE) — 20.00 € за весь набор (dijagnostika)",
+			"price": null
+		},
+		{
+			"nameEn": "Sodium",
+			"source": "NA ← LABORATORIJSKE ANALIZE (KKS, SE, GLIKEMIJA ,UREA, NA, K, VRIJ.KRVARENJA I VRIJ.KOAGULACIJE) — 20.00 € за весь набор (dijagnostika)",
+			"price": null
+		},
+		{
+			"nameEn": "Potassium",
+			"source": "K ← LABORATORIJSKE ANALIZE (KKS, SE, GLIKEMIJA ,UREA, NA, K, VRIJ.KRVARENJA I VRIJ.KOAGULACIJE) — 20.00 € за весь набор (dijagnostika)",
+			"price": null
+		},
+		{
+			"nameEn": "Bleeding Time",
+			"source": "VRIJ.KRVARENJA ← LABORATORIJSKE ANALIZE (KKS, SE, GLIKEMIJA ,UREA, NA, K, VRIJ.KRVARENJA I VRIJ.KOAGULACIJE) — 20.00 € за весь набор (dijagnostika)",
+			"price": null
+		},
+		{
+			"nameEn": "Coagulation Time",
+			"source": "VRIJ.KOAGULACIJE ← LABORATORIJSKE ANALIZE (KKS, SE, GLIKEMIJA ,UREA, NA, K, VRIJ.KRVARENJA I VRIJ.KOAGULACIJE) — 20.00 € за весь набор (dijagnostika)",
+			"price": null
+		}
+	],
+	"decisions": [
+		{
+			"date": "2026-10-02",
+			"decision": "PREGLED INTERNISTE и LABORATORIJSKE ANALIZE заводятся отдельно, не только в составе пакета 52 € (решение юзера). В первой версии записи были в excluded."
+		},
+		{
+			"date": "2026-10-02",
+			"decision": "Anti-VEGF Injection рядом с Intravitreal Anti-VEGF Injection Lucentis и SLT рядом с Laser Trabeculoplasty остаются у клиники обе записи (решение юзера: несколько записей — не страшно). Без пары в PDF остаются без цены."
+		},
+		{
+			"date": "2026-10-02",
+			"decision": "is_price_outdated = 1 на все строки с ценой > 0 (65 строк; две позиции по 0.00 € без флага) — решение юзера по доводам: ЗА устаревание: (1) сайт заброшен с 2016 — RSS lastBuildDate 2016-04-12, шаблон 2016; (2) страницу /cjenovnik/ убрали из меню, PDF остался только на скрытой странице; (3) диагностика заметно дешевле частных клиник каталога: поле зрения 15/25 € против 20/40 у Jovović, OCT 50 против 60, фото фундуса 15 против 20, инородное тело 20 против 40, промывание слёзных путей 15 против 50, тест Ширмера 6 против 10 (Jovović) и 20 (Milmedika), контрольный осмотр 15 против 30 (Milmedika); (4) 10 лет без изменений. ПРОТИВ: (1) другого прайса нет нигде, включая Wayback, — скрытая страница по-прежнему ведёт на этот PDF; (2) общий осмотр 50 € = Jovović 50 €; (3) часть операций дороже частного рынка: халязион 100 против 50–70, птеригиум 200 против 180, общая анестезия 200 против 120 (Normedica). Цены по крупным операциям сравнить не с чем — у коллег там только госпитальные тарифы (Danilo, Opšta bolnica). Рекомендация: ставить флаг — доводы (1)–(3) «за» независимы друг от друга, а «против» говорит лишь о том, что новее ничего не опубликовано."
+		}
+	]
+}

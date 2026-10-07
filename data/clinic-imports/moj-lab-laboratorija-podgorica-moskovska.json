@@ -1,0 +1,4062 @@
+{
+	"schemaVersion": 1,
+	"slug": "moj-lab-laboratorija-podgorica-moskovska",
+	"name": "Moj Lab Laboratorija Podgorica Moskovska",
+	"city": "podgorica",
+	"googlePlaceId": null,
+	"sql": [
+		"server/sql/update-clinics-moj-lab-2026-10.sql",
+		"server/sql/insert-clinics-moj-lab-network-2026-10.sql",
+		"server/sql/update-clinics-moj-lab-names-types-2026-10.sql",
+		"server/sql/insert-clinic-lab-tests-moj-lab-2026-10.sql",
+		"server/sql/migrations/050-labtest-dedup-moj-lab.sql",
+		"server/sql/insert-clinic-lab-tests-moj-lab-rules-2026-10.sql",
+		"server/sql/insert-lab-tests-new-moj-lab-2026-10.sql",
+		"server/sql/migrations/051-moj-lab-followup.sql"
+	],
+	"status": {
+		"generated": "2026-10-05",
+		"appliedLocal": "2026-10-02 (первые шесть файлов), 2026-10-04 (insert-lab-tests-new-moj-lab-2026-10.sql); 2026-10-05 (051)",
+		"appliedProd": "2026-10-02 (первые шесть файлов), 2026-10-04 (insert-lab-tests-new-moj-lab-2026-10.sql); сверено API 2026-10-04: каталог 1712, у 9 лабораторий по 703 анализа и 7 услуг, цен 0; 2026-10-05 (051), сверено API: каталог 1774, у 9 лабораторий по 704 анализа и 6 услуг, 301 со старых slug",
+		"clinicId": 153,
+		"doctorIds": []
+	},
+	"network": {
+		"note": "Перечень анализов один на сеть и привязан ко всем 9 лабораториям одинаково; отдельных записей на остальные 8 нет — эта действует на всех.",
+		"labs": [
+			"moj-lab-laboratorija-podgorica-moskovska",
+			"moj-lab-laboratorija-city-kvart",
+			"moj-lab-laboratorija-budva",
+			"moj-lab-laboratorija-ulcinj",
+			"moj-lab-laboratorija-cetinje",
+			"moj-lab-laboratorija-herceg-novi",
+			"moj-lab-laboratorija-kotor",
+			"moj-lab-laboratorija-niksic",
+			"moj-lab-laboratorija-tivat"
+		]
+	},
+	"sources": [
+		{
+			"type": "html",
+			"ref": "https://mojlab.me/laboratorija",
+			"collected": "2026-10-02",
+			"machineReadable": true,
+			"note": "Webflow, вкладки с h5-группами и p-позициями; снимок в data/clinic-pricelists/sources/moj-lab-laboratorija-podgorica-moskovska/2026-10-02.html"
+		},
+		{
+			"type": "html",
+			"ref": "https://mojlab.me/lokacije/*",
+			"collected": "2026-10-02",
+			"machineReadable": true,
+			"note": "адреса, часы, email 17 локаций"
+		}
+	],
+	"coverage": {
+		"labTests": "704 записи каталога у каждой из 9 лабораторий (после 051); 6 позиций патогистологии — услугами КЦЦГ",
+		"prices": "нет на сайте нигде (страницы, бандлы, PDF; разовые акции в новостях — проценты)",
+		"services": "не импортировались",
+		"doctors": "не импортировались"
+	},
+	"catalogAdditions": [
+		{
+			"nameEn": "Eyelid Swab for Bacteria",
+			"slug": "eyelid-swab-bacteria",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Eyelid Swab for Fungi",
+			"slug": "eyelid-swab-fungi",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Swab for Bacteria (Catheter, Cyst, Other Material)",
+			"slug": "swab-bacteria-catheter-cyst-other",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Swab for Fungi (Catheter, Cyst, Other Material)",
+			"slug": "swab-fungi-catheter-cyst-other",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Nail Swab for Bacteria",
+			"slug": "nail-swab-for-bacteria",
+			"origin": "общая с другим неприменённым импортом (КЦЦГ / Diagnostica)"
+		},
+		{
+			"nameEn": "Tracheostomy Swab for Fungi",
+			"slug": "tracheostomy-swab-fungi",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Enterovirus Antigen Rapid Test",
+			"slug": "enterovirus-antigen-rapid-test",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Adenovirus Respiratory Test (Eye Swab)",
+			"slug": "adenovirus-respiratory-test-eye-swab",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "RSV Antigen Rapid Test",
+			"slug": "rsv-antigen-rapid-test",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "SARS-CoV-2, Influenza A/B and RSV Antigen Rapid Test",
+			"slug": "sars-cov-2-influenza-ab-rsv-antigen-rapid-test",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Yersinia enterocolitica Detection",
+			"slug": "yersinia-enterocolitica-detection",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Platelets in Citrated Blood",
+			"slug": "platelets-in-citrated-blood",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Non-HDL Cholesterol",
+			"slug": "non-hdl-cholesterol",
+			"origin": "общая с другим неприменённым импортом (КЦЦГ / Diagnostica)"
+		},
+		{
+			"nameEn": "Atherogenic Index",
+			"slug": "atherogenic-index",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "ACE in CSF",
+			"slug": "ace-in-csf",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Tartrate-Resistant Acid Phosphatase",
+			"slug": "tartrate-resistant-acid-phosphatase",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Cortisol in Saliva",
+			"slug": "cortisol-in-saliva",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Androstanediol Glucuronide",
+			"slug": "androstanediol-glucuronide",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "3-Methoxytyramine in Urine",
+			"slug": "3-methoxytyramine-in-urine",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Dopamine",
+			"slug": "dopamine",
+			"origin": "общая с другим неприменённым импортом (КЦЦГ / Diagnostica)"
+		},
+		{
+			"nameEn": "PIVKA-II",
+			"slug": "pivka-ii",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Vitamin B3",
+			"slug": "vitamin-b3",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Vitamin B5",
+			"slug": "vitamin-b5",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Uroporphyrin in Urine",
+			"slug": "uroporphyrin-in-urine",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Drug and Psychoactive Substance Screen (3000 Metabolites)",
+			"slug": "drug-and-psychoactive-substance-screen-3000-metabolites",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Psychoactive Substances in Hair",
+			"slug": "psychoactive-substances-in-hair",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Bromide",
+			"slug": "bromide",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Fluoride",
+			"slug": "fluoride",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Tin",
+			"slug": "tin",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Silver",
+			"slug": "silver",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Sulfur",
+			"slug": "sulfur",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hair Mineral Analysis (35 Elements)",
+			"slug": "hair-mineral-analysis-35-elements",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Aripiprazole Level",
+			"slug": "aripiprazole-level",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Fluconazole Level",
+			"slug": "fluconazole-level",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Mitotane Level",
+			"slug": "mitotane-level",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Omeprazole Level",
+			"slug": "omeprazole-level",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Venlafaxine and Metabolites Level",
+			"slug": "venlafaxine-and-metabolites-level",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Food Intolerance Panel 54 Foods",
+			"slug": "food-intolerance-panel-54-foods",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Food Intolerance Panel 216 Foods",
+			"slug": "food-intolerance-panel-216-foods",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "ISAC Allergen Component Panel (112 Allergens)",
+			"slug": "isac-allergen-component-panel-112-allergens",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Bartonella henselae IgG IgM Panel",
+			"slug": "bartonella-henselae-igg-igm-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Beta-D-Glucan",
+			"slug": "beta-d-glucan",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Chlamydia trachomatis IgA",
+			"slug": "chlamydia-trachomatis-iga",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Dengue Virus Antigen",
+			"slug": "dengue-virus-antigen",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Dengue Virus IgG",
+			"slug": "dengue-virus-igg",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Dengue Virus IgM",
+			"slug": "dengue-virus-igm",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Diphtheria Antitoxin Antibodies",
+			"slug": "diphtheria-antitoxin-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Epstein-Barr EA IgG",
+			"slug": "epstein-barr-ea-igg",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Neisseria meningitidis IgG",
+			"slug": "neisseria-meningitidis-igg",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Nematode IgG Panel (Anisakis, Ascaris, Filaria, Strongyloides, Toxocara, Trichinella)",
+			"slug": "nematode-igg-panel-anisakis-ascaris-filaria-strongyloides-toxocara-trichinella",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Poliovirus Type 1 Antibodies",
+			"slug": "poliovirus-type-1-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Poliovirus Type 3 Antibodies",
+			"slug": "poliovirus-type-3-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Toxocara canis IgG Western Blot",
+			"slug": "toxocara-canis-igg-western-blot",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Yersinia IgA Western Blot",
+			"slug": "yersinia-iga-western-blot",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Yersinia IgG Western Blot",
+			"slug": "yersinia-igg-western-blot",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Newborn Screening Panel",
+			"slug": "newborn-screening-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Liver Autoantibody Panel 13 Antigens",
+			"slug": "liver-autoantibody-panel-13-antigens",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "ANNA-3 Antibodies",
+			"slug": "anna-3-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Anti-Annexin IgG Antibodies",
+			"slug": "anti-annexin-igg-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "ASCA IgM",
+			"slug": "asca-igm",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Anti-Centromere Antibodies",
+			"slug": "anti-centromere-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Endomysial IgG Antibodies",
+			"slug": "endomysial-igg-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Anti-Fibrillarin (U3-RNP) Antibodies",
+			"slug": "anti-fibrillarin-u3-rnp-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Anti-Interferon Alpha Antibodies",
+			"slug": "anti-interferon-alpha-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Ganglioside Antibody Profile",
+			"slug": "ganglioside-antibody-profile",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NMDAR IgA Antibodies",
+			"slug": "nmdar-iga-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NMDAR IgM Antibodies",
+			"slug": "nmdar-igm-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Anti-NOR90 Antibodies",
+			"slug": "anti-nor90-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Anti-PM-Scl Antibodies",
+			"slug": "anti-pm-scl-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Anti-Ri Antibodies",
+			"slug": "anti-ri-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Anti-Ro52 Antibodies",
+			"slug": "anti-ro52-antibodies",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Spermatozoa Antibodies ASA IgA",
+			"slug": "spermatozoa-antibodies-asa-iga",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Spermatozoa Antibodies ASA IgM",
+			"slug": "spermatozoa-antibodies-asa-igm",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hypocretin (Orexin)",
+			"slug": "hypocretin-orexin",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Carbohydrate-Deficient Transferrin",
+			"slug": "carbohydrate-deficient-transferrin",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "14-3-3 Protein",
+			"slug": "14-3-3-protein",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Neuronal Antibodies Panel in CSF",
+			"slug": "neuronal-antibodies-panel-in-csf",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Influenza A, B, C PCR",
+			"slug": "influenza-a-b-c-pcr",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Chlamydia pneumoniae PCR",
+			"slug": "chlamydia-pneumoniae-pcr",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Leishmania PCR",
+			"slug": "leishmania-pcr",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Malaria PCR",
+			"slug": "malaria-pcr",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Mumps Virus PCR",
+			"slug": "mumps-virus-pcr",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "PAI-1 Locus 844",
+			"slug": "pai-1-locus-844",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Thrombophilia 3 Genes 4 Loci",
+			"slug": "thrombophilia-3-genes-4-loci",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Cystic Fibrosis CFTR Full Gene Analysis",
+			"slug": "cystic-fibrosis-cftr-full-gene-analysis",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Cystic Fibrosis F508del Mutation",
+			"slug": "cystic-fibrosis-f508del-mutation",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "CYP2C9 Genotyping",
+			"slug": "cyp2c9-genotyping",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "HLA Single Allele Typing",
+			"slug": "hla-single-allele-typing",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "JAK2 Exon 12 Mutation",
+			"slug": "jak2-exon-12-mutation",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Marfan Syndrome Genetic Test",
+			"slug": "marfan-syndrome-genetic-test",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Familial Mediterranean Fever Genetic Test",
+			"slug": "familial-mediterranean-fever-genetic-test",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "PMP22 MLPA Test",
+			"slug": "pmp22-mlpa-test",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Alpha-Thalassemia Carrier Screening",
+			"slug": "alpha-thalassemia-carrier-screening",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Comprehensive Carrier Screening Panel (One Partner)",
+			"slug": "comprehensive-carrier-screening-panel-one-partner",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Comprehensive Carrier Screening Panel (Both Partners)",
+			"slug": "comprehensive-carrier-screening-panel-both-partners",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Guidelines-Based Carrier Screening Panel (One Person)",
+			"slug": "guidelines-based-carrier-screening-panel-one-person",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Guidelines-Based Carrier Screening Panel (Two Persons)",
+			"slug": "guidelines-based-carrier-screening-panel-two-persons",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Breast and Gynecologic Cancer Panel",
+			"slug": "hereditary-breast-and-gynecologic-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Breast and Gynecologic Cancer Panel (Guidelines-Based)",
+			"slug": "hereditary-breast-and-gynecologic-cancer-panel-guidelines-based",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Breast and Gynecologic Cancer Panel (High Risk)",
+			"slug": "hereditary-breast-and-gynecologic-cancer-panel-high-risk",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Colorectal Cancer Panel",
+			"slug": "hereditary-colorectal-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Colorectal Cancer Panel (High Risk)",
+			"slug": "hereditary-colorectal-cancer-panel-high-risk",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Non-Polyposis Colorectal Cancer Panel",
+			"slug": "hereditary-non-polyposis-colorectal-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Polyposis Colorectal Cancer Panel",
+			"slug": "hereditary-polyposis-colorectal-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Myelodysplastic Syndrome/Leukemia Genetic Panel",
+			"slug": "myelodysplastic-syndrome-leukemia-genetic-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Gastric Cancer Panel",
+			"slug": "hereditary-gastric-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Prostate Cancer Panel",
+			"slug": "hereditary-prostate-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Pancreatic Cancer Panel",
+			"slug": "hereditary-pancreatic-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Renal Cancer Panel",
+			"slug": "hereditary-renal-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Skin Cancer Panel",
+			"slug": "hereditary-skin-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Familial Melanoma Panel",
+			"slug": "familial-melanoma-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Paraganglioma/Pheochromocytoma Panel",
+			"slug": "hereditary-paraganglioma-pheochromocytoma-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Parathyroid Cancer Panel",
+			"slug": "hereditary-parathyroid-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hereditary Thyroid Cancer Panel",
+			"slug": "hereditary-thyroid-cancer-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Pan-Cancer Hereditary Panel",
+			"slug": "pan-cancer-hereditary-panel",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Veracity Basic",
+			"slug": "nipt-veracity-basic",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Veracity Plus",
+			"slug": "nipt-veracity-plus",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Veracity Premium",
+			"slug": "nipt-veracity-premium",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Veragene",
+			"slug": "nipt-veragene",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Sequentia Basic",
+			"slug": "nipt-sequentia-basic",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Sequentia Plus",
+			"slug": "nipt-sequentia-plus",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Sequentia Plus Expert",
+			"slug": "nipt-sequentia-plus-expert",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Sequentia Premium",
+			"slug": "nipt-sequentia-premium",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Sequentia Safe Karyo Plus",
+			"slug": "nipt-sequentia-safe-karyo-plus",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Sequentia PremiumGene",
+			"slug": "nipt-sequentia-premiumgene",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "NIPT Sequentia Safe Full Karyo Plus",
+			"slug": "nipt-sequentia-safe-full-karyo-plus",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Chlamydia trachomatis (Direct Immunofluorescence)",
+			"slug": "chlamydia-trachomatis-direct-immunofluorescence",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Coxiella burnetii IgG",
+			"slug": "coxiella-burnetii-igg",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Coxiella burnetii IgM",
+			"slug": "coxiella-burnetii-igm",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Enterovirus IgM",
+			"slug": "enterovirus-igm",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Enterovirus IgG",
+			"slug": "enterovirus-igg",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Immunofixation Protein Serum",
+			"slug": "immunofixation-protein-serum",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Immunofixation Protein Urine",
+			"slug": "immunofixation-protein-urine",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Histopathology Cervical Biopsy and Fractional Curettage Three Samples",
+			"slug": "histopathology-cervical-biopsy-and-fractional-curettage-three-samples",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Histopathology Endoscopic Biopsy (Each Additional Sample)",
+			"slug": "histopathology-endoscopic-biopsy-each-additional-sample",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Histopathology Ovary Examination",
+			"slug": "histopathology-ovary-examination",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Candida DNA PCR",
+			"slug": "candida-dna-pcr",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hepatitis E Virus RNA PCR",
+			"slug": "hepatitis-e-virus-rna-pcr",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Hemochromatosis HFE Genetic Test",
+			"slug": "hemochromatosis-hfe-genetic-test",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Spinal Muscular Atrophy Genetic Test",
+			"slug": "spinal-muscular-atrophy-genetic-test",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Beta Hemoglobinopathies Carrier Screening",
+			"slug": "beta-hemoglobinopathies-carrier-screening",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Cystic Fibrosis Carrier Screening",
+			"slug": "cystic-fibrosis-carrier-screening",
+			"origin": "новая запись (этот импорт)"
+		},
+		{
+			"nameEn": "Reverse T3",
+			"slug": "reverse-t3",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Everolimus Level",
+			"slug": "everolimus-level",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Topiramate Level",
+			"slug": "topiramate-level",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Tryptase",
+			"slug": "tryptase",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Francisella tularensis IgG",
+			"slug": "francisella-tularensis-igg",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Francisella tularensis IgM",
+			"slug": "francisella-tularensis-igm",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "HTLV I/II Antibodies",
+			"slug": "htlv-i-ii-antibodies",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Influenza B Virus IgA",
+			"slug": "influenza-b-virus-iga",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Streptococcus pneumoniae IgG",
+			"slug": "streptococcus-pneumoniae-igg",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Treponema pallidum IgM Western Blot",
+			"slug": "treponema-pallidum-igm-western-blot",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Anti-RNP/Sm Antibodies",
+			"slug": "anti-rnp-sm-antibodies",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "NMDAR Antibodies in CSF",
+			"slug": "nmdar-antibodies-in-csf",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Beta-Amyloid",
+			"slug": "beta-amyloid",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Serum Amyloid A",
+			"slug": "serum-amyloid-a",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Cytomegalovirus PCR",
+			"slug": "cytomegalovirus-pcr",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Epstein-Barr Virus PCR",
+			"slug": "epstein-barr-virus-pcr",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "HBV PCR DNA Qualitative",
+			"slug": "hbv-pcr-dna-qualitative",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Toxoplasma gondii PCR",
+			"slug": "toxoplasma-gondii-pcr",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "JAK2 V617F Mutation",
+			"slug": "jak2-v617f-mutation",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "LDH Isoenzymes",
+			"slug": "ldh-isoenzymes",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Treponema pallidum Total Antibodies",
+			"slug": "treponema-pallidum-total-antibodies",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Human Herpesvirus 6 IgG",
+			"slug": "human-herpesvirus-6-igg",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Human Herpesvirus 6 IgM",
+			"slug": "human-herpesvirus-6-igm",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Soluble Transferrin Receptor",
+			"slug": "soluble-transferrin-receptor",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Estrone",
+			"slug": "estrone",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Holotranscobalamin",
+			"slug": "holotranscobalamin",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Pyridinium Crosslinks in Urine",
+			"slug": "pyridinium-crosslinks-in-urine",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Kidney Stone Analysis",
+			"slug": "kidney-stone-analysis",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "GQ1b Antibodies IgG",
+			"slug": "gq1b-antibodies-igg",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "GQ1b Antibodies IgM",
+			"slug": "gq1b-antibodies-igm",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Haemophilus influenzae IgG",
+			"slug": "haemophilus-influenzae-igg",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Parainfluenza Virus 1, 2, 3 IgA",
+			"slug": "parainfluenza-virus-1-2-3-iga",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Parainfluenza Virus 1, 2, 3 IgG",
+			"slug": "parainfluenza-virus-1-2-3-igg",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Tetanus Antibodies",
+			"slug": "tetanus-antibodies",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Very Long Chain Fatty Acids C22-C26",
+			"slug": "very-long-chain-fatty-acids-c22-c26",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Amino Acid Profile in Serum",
+			"slug": "amino-acid-profile-in-serum",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "ENA Screening",
+			"slug": "ena-screening",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "ANCA Profile",
+			"slug": "anca-profile",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Anti-Hu Antibodies",
+			"slug": "anti-hu-antibodies",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Anti-Ribosomal P Antibodies",
+			"slug": "anti-ribosomal-p-antibodies",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Mycobacterium tuberculosis Complex PCR",
+			"slug": "mycobacterium-tuberculosis-complex-pcr",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Sickle Cell Mutation (HBB Codon 6)",
+			"slug": "sickle-cell-mutation-hbb-codon-6",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "HLA-A Typing",
+			"slug": "hla-a-typing",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "HLA-B Typing",
+			"slug": "hla-b-typing",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "HLA-C Typing",
+			"slug": "hla-c-typing",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		},
+		{
+			"nameEn": "Borrelia burgdorferi PCR in Tick",
+			"slug": "borrelia-burgdorferi-pcr-in-tick",
+			"origin": "общая с insert-clinic-prices-tesla-medical-berane-lab.sql"
+		}
+	],
+	"labTests": [
+		{
+			"slug": "17-hydroxyprogesterone",
+			"source": "17 OH Progesteron"
+		},
+		{
+			"slug": "17-ketosteroids",
+			"source": "17 Ketosteroidi"
+		},
+		{
+			"slug": "5-hiaa",
+			"source": "5-HIAA"
+		},
+		{
+			"slug": "ace",
+			"source": "ACE"
+		},
+		{
+			"slug": "acetylcholine-receptor-antibodies",
+			"source": "Anti acetilholin receptor"
+		},
+		{
+			"slug": "acth",
+			"source": "ACTH"
+		},
+		{
+			"slug": "activated-partial-thromboplastin-time",
+			"source": "aPTT"
+		},
+		{
+			"slug": "acylcarnitine-profile",
+			"source": "Acilkarnitin"
+		},
+		{
+			"slug": "adalimumab-antibodies",
+			"source": "Adalimumab antitijela"
+		},
+		{
+			"slug": "adalimumab-level",
+			"source": "Adalimumab (Humira)"
+		},
+		{
+			"slug": "adenovirus-iga",
+			"source": "Anti Adenovirus IgA"
+		},
+		{
+			"slug": "adenovirus-igg",
+			"source": "Anti Adenovirus IgG"
+		},
+		{
+			"slug": "adenovirus-respiratory-test",
+			"source": "Adeno respiratorni virus (bris nosa) (imunohromatografija)"
+		},
+		{
+			"slug": "adenovirus-rotavirus-in-stool",
+			"source": "Rota/Adeno virus (imunohromatografija)"
+		},
+		{
+			"slug": "adrenal-antibodies",
+			"source": "Anti adrenalna antitijela"
+		},
+		{
+			"slug": "afp",
+			"source": "AFP"
+		},
+		{
+			"slug": "albumin",
+			"source": "Albumin"
+		},
+		{
+			"slug": "aldolase",
+			"source": "Aldolaza"
+		},
+		{
+			"slug": "aldosterone",
+			"source": "Aldosteron"
+		},
+		{
+			"slug": "alkaline-phosphatase",
+			"source": "Alkalna fosfataza (ALP)"
+		},
+		{
+			"slug": "alkaline-phosphatase-isoenzymes",
+			"source": "Izoenzimi alkalne fosfataze"
+		},
+		{
+			"slug": "alpha-1-antitrypsin",
+			"source": "Alfa 1 antitripsin"
+		},
+		{
+			"slug": "alpha-1-antitrypsin-genotyping",
+			"source": "Alfa 1 antitripsin deficijencija"
+		},
+		{
+			"slug": "alpha-1-microglobulin",
+			"source": "Alfa 1 mikroglobulin"
+		},
+		{
+			"slug": "alt",
+			"source": "ALT"
+		},
+		{
+			"slug": "aluminum",
+			"source": "Aluminijum"
+		},
+		{
+			"slug": "ama-antimitochondrial-m2",
+			"source": "Ant AMA-M2 antitijela"
+		},
+		{
+			"slug": "amine-test",
+			"source": "Aminski test"
+		},
+		{
+			"slug": "amphetamine",
+			"source": "Amfetamin"
+		},
+		{
+			"slug": "amylase",
+			"source": "Amilaza"
+		},
+		{
+			"slug": "amylase-in-urine",
+			"source": "Urin - Amilaza"
+		},
+		{
+			"slug": "ana-antinuclear-antibodies",
+			"source": "ANA"
+		},
+		{
+			"slug": "ana-hep-2",
+			"source": "ANA (IFA metoda)"
+		},
+		{
+			"slug": "anca-c-anti-pr3",
+			"source": "Anti PR3 (cANCA)"
+		},
+		{
+			"slug": "anca-p-anti-mpo",
+			"source": "Anti MPO (pANCA)"
+		},
+		{
+			"slug": "androstenedione",
+			"source": "Androstenedion"
+		},
+		{
+			"slug": "anti-ccp-antibodies",
+			"source": "Anti-CCP (hs)"
+		},
+		{
+			"slug": "anti-hbc-total-elisa",
+			"source": "HBc antitijela"
+		},
+		{
+			"slug": "anti-hbe-elisa",
+			"source": "Hepatitis B-omotač At"
+		},
+		{
+			"slug": "anti-hcv",
+			"source": "Anti HCV"
+		},
+		{
+			"slug": "anti-hcv-antibodies-immunoblot",
+			"source": "Hepatitis C (Western blot, serum)"
+		},
+		{
+			"slug": "anti-heart-antibodies-asa",
+			"source": "Anti srčana antitijela"
+		},
+		{
+			"slug": "anti-insulin-antibodies",
+			"source": "Anti insulinska IgG"
+		},
+		{
+			"slug": "anti-jo-1-antibodies",
+			"source": "Anti Jo-1 antitijela"
+		},
+		{
+			"slug": "anti-la-ssb-antibodies",
+			"source": "Anti SS-B At"
+		},
+		{
+			"slug": "anti-mullerian-hormone",
+			"source": "AMH"
+		},
+		{
+			"slug": "anti-parietal-cell-antibodies-apa",
+			"source": "Anti H+/K+-ATPaza (parijetalna) antitijela"
+		},
+		{
+			"slug": "anti-ro-ssa-antibodies",
+			"source": "Anti SS-A At"
+		},
+		{
+			"slug": "anti-scl-70-antibodies",
+			"source": "Anti Scl-70"
+		},
+		{
+			"slug": "anti-smooth-muscle-antibodies-asma",
+			"source": "Anti ASMA"
+		},
+		{
+			"slug": "anti-thyroglobulin-antibodies",
+			"source": "TgAt"
+		},
+		{
+			"slug": "anti-tpo",
+			"source": "TPOAt"
+		},
+		{
+			"slug": "anti-tshr",
+			"source": "TSH-R At"
+		},
+		{
+			"slug": "anticardiolipin-igg",
+			"source": "Anti kardiolipinska IgG"
+		},
+		{
+			"slug": "anticardiolipin-igm",
+			"source": "Anti kardiolipinska IgM"
+		},
+		{
+			"slug": "antimycogram",
+			"source": "Antimikogram"
+		},
+		{
+			"slug": "antithrombin-iii",
+			"source": "Antitrobin III"
+		},
+		{
+			"slug": "apcr-resistance-to-activated-protein-c",
+			"source": "APCR (rezistencija na aktivni protein C)"
+		},
+		{
+			"slug": "asca-iga",
+			"source": "Anti ASCA IgA"
+		},
+		{
+			"slug": "asca-igg",
+			"source": "Anti ASCA IgG"
+		},
+		{
+			"slug": "ast",
+			"source": "AST"
+		},
+		{
+			"slug": "asto",
+			"source": "ASTO"
+		},
+		{
+			"slug": "barbiturates",
+			"source": "Barbiturati"
+		},
+		{
+			"slug": "benzodiazepines",
+			"source": "Benzodiazepin"
+		},
+		{
+			"slug": "beta-2-glycoprotein-i-igg",
+			"source": "Anti beta-2-glikoproteinska I IgG"
+		},
+		{
+			"slug": "beta-2-glycoprotein-i-igm",
+			"source": "Anti beta-2-glikoproteinska I IgM"
+		},
+		{
+			"slug": "beta-2-microglobulin",
+			"source": "B2 mikroglobulin"
+		},
+		{
+			"slug": "beta-2-microglobulin-in-urine",
+			"source": "B2 mikroglobulin urin"
+		},
+		{
+			"slug": "beta-crosslaps",
+			"source": "Beta cross laps"
+		},
+		{
+			"slug": "bioavailable-testosterone",
+			"source": "Biodostupni testosteron"
+		},
+		{
+			"slug": "bk-virus-pcr",
+			"source": "BK virus DNK"
+		},
+		{
+			"slug": "bleeding-time",
+			"source": "Vrijeme krvarenja"
+		},
+		{
+			"slug": "blood-culture",
+			"source": "Hemokultura"
+		},
+		{
+			"slug": "bordetella-pertussis-pcr",
+			"source": "Bordetella pertussis DNK"
+		},
+		{
+			"slug": "borrelia-burgdorferi-igg",
+			"source": "Anti Borrelia burgdorferi IgG"
+		},
+		{
+			"slug": "borrelia-burgdorferi-igg-western-blot",
+			"source": "Borrelia IgG, imunoblot"
+		},
+		{
+			"slug": "borrelia-burgdorferi-igm",
+			"source": "Anti Borrelia burgdorferi IgM"
+		},
+		{
+			"slug": "borrelia-burgdorferi-igm-western-blot",
+			"source": "Borrelia IgM, imunoblot"
+		},
+		{
+			"slug": "brca1-brca2-genetic-test",
+			"source": "BRCA1/BRCA2 (genetika karcinoma)"
+		},
+		{
+			"slug": "breast-swab-bacteria",
+			"source": "Bris dojke na bakterije"
+		},
+		{
+			"slug": "breast-swab-fungi",
+			"source": "Bris dojke na gljivice"
+		},
+		{
+			"slug": "brucella-igg-elisa",
+			"source": "Brucella IgG"
+		},
+		{
+			"slug": "brucella-igm",
+			"source": "Brucella IgM"
+		},
+		{
+			"slug": "c-peptide",
+			"source": "C-peptid"
+		},
+		{
+			"slug": "c-peptide-in-urine",
+			"source": "C-peptid u urinu"
+		},
+		{
+			"slug": "c-reactive-protein",
+			"source": "CRP"
+		},
+		{
+			"slug": "c3-complement",
+			"source": "C3"
+		},
+		{
+			"slug": "c4-complement",
+			"source": "C4"
+		},
+		{
+			"slug": "ca-125",
+			"source": "CA 125"
+		},
+		{
+			"slug": "ca-15-3",
+			"source": "CA15-3"
+		},
+		{
+			"slug": "ca-19-9",
+			"source": "CA 19-9"
+		},
+		{
+			"slug": "ca-72-4",
+			"source": "Ca 72-4"
+		},
+		{
+			"slug": "calcitonin",
+			"source": "Kalcitonin"
+		},
+		{
+			"slug": "calcium",
+			"source": "Kalcijum ukupni"
+		},
+		{
+			"slug": "calcium-in-urine",
+			"source": "Urin - Kalcijum"
+		},
+		{
+			"slug": "carbamazepine-level",
+			"source": "Karbamazepin (Tegretol)"
+		},
+		{
+			"slug": "carnitine-acylcarnitine-profile",
+			"source": "Karnitin, acilkarnitin"
+		},
+		{
+			"slug": "cea",
+			"source": "CEA"
+		},
+		{
+			"slug": "centromere-protein-b-antibodies",
+			"source": "Anti centromerna B antitijela"
+		},
+		{
+			"slug": "ceruloplasmin",
+			"source": "Ceruloplazmin"
+		},
+		{
+			"slug": "cervical-swab-bacteria",
+			"source": "Cervikalni bris na bakterije"
+		},
+		{
+			"slug": "cervical-swab-fungi",
+			"source": "Cervikalni bris na gljivice"
+		},
+		{
+			"slug": "chitotriosidase",
+			"source": "Hitotriozidaza"
+		},
+		{
+			"slug": "chlamydia-pneumoniae-igg",
+			"source": "Anti Chlamydia pneumoniae IgG"
+		},
+		{
+			"slug": "chlamydia-pneumoniae-igm",
+			"source": "Anti Chlamydia pneumoniae IgM"
+		},
+		{
+			"slug": "chlamydia-trachomatis-igg",
+			"source": "Chlamydia trachomatis IgG"
+		},
+		{
+			"slug": "chlamydia-trachomatis-iht",
+			"source": "Chlamydia trachomatis (imnohromatografija)"
+		},
+		{
+			"slug": "chloride",
+			"source": "Hloridi"
+		},
+		{
+			"slug": "cholesterol",
+			"source": "Holesterol"
+		},
+		{
+			"slug": "chromogranin-a",
+			"source": "Hromogranin A"
+		},
+		{
+			"slug": "ck",
+			"source": "CK"
+		},
+		{
+			"slug": "ck-mb",
+			"source": "CKMB aktivnost"
+		},
+		{
+			"slug": "cmv-avidity",
+			"source": "CMV IgG aviditet"
+		},
+		{
+			"slug": "coagulation-factor-v",
+			"source": "Faktor V"
+		},
+		{
+			"slug": "coagulation-factor-viii",
+			"source": "Faktor VIII"
+		},
+		{
+			"slug": "coagulation-factor-xiii",
+			"source": "Faktor XIII"
+		},
+		{
+			"slug": "coagulation-time",
+			"source": "Vrijem koagulacije"
+		},
+		{
+			"slug": "cocaine",
+			"source": "Kokain"
+		},
+		{
+			"slug": "coenzyme-q10",
+			"source": "Koenzim Q10"
+		},
+		{
+			"slug": "cold-agglutinins",
+			"source": "Hladni aglutinini"
+		},
+		{
+			"slug": "complete-blood-count",
+			"source": "Krvna slika"
+		},
+		{
+			"slug": "copper-in-24h-urine",
+			"source": "Bakar u 24h urinu"
+		},
+		{
+			"slug": "cortisol",
+			"source": "Kortizol"
+		},
+		{
+			"slug": "cortisol-in-urine",
+			"source": "Kortizol u urinu"
+		},
+		{
+			"slug": "covid-19-antigen-test",
+			"source": "Sars-Cov-2 antigen test (brzi test)"
+		},
+		{
+			"slug": "creatinine-clearance",
+			"source": "Kreatin klirens"
+		},
+		{
+			"slug": "creatinine-in-urine",
+			"source": "Urin - Kreatinin"
+		},
+		{
+			"slug": "cryoglobulins",
+			"source": "Krioglobulini"
+		},
+		{
+			"slug": "cyfra-21-1",
+			"source": "Cyfra 21-1"
+		},
+		{
+			"slug": "cystatin-c",
+			"source": "Cistatin C"
+		},
+		{
+			"slug": "cysticercosis-igg",
+			"source": "Cysticercosis"
+		},
+		{
+			"slug": "cystine-in-24h-urine",
+			"source": "Cistin u 24h urinu"
+		},
+		{
+			"slug": "cytomegalovirus-igg",
+			"source": "Cytomegalo virus IgG"
+		},
+		{
+			"slug": "cytomegalovirus-igm",
+			"source": "Cytomegalo virus IgM"
+		},
+		{
+			"slug": "d-dimer",
+			"source": "D-dimer"
+		},
+		{
+			"slug": "demodex-species",
+			"source": "Demodex (mikroskopski preparat)"
+		},
+		{
+			"slug": "dermatomycosis-nmp",
+			"source": "Dermatomikoze (nokti,dlaka,koza) NMP"
+		},
+		{
+			"slug": "dermatophytes-culture",
+			"source": "Dermatophiti (mikoloska kultura)"
+		},
+		{
+			"slug": "dermatophytes-hair-scraping",
+			"source": "Korjen dlake - nativni preparat"
+		},
+		{
+			"slug": "dhea-s",
+			"source": "DHEAS"
+		},
+		{
+			"slug": "digoxin-level",
+			"source": "Digoxin"
+		},
+		{
+			"slug": "dihydrotestosterone",
+			"source": "Dihidrotestosteron"
+		},
+		{
+			"slug": "direct-bilirubin",
+			"source": "Bilirubin direktni"
+		},
+		{
+			"slug": "double-test",
+			"source": "Double test"
+		},
+		{
+			"slug": "drug-panel-5-new",
+			"source": "Panel 5 (kokain, amfetamin, kanabinoidi, ekstazi, opijati)"
+		},
+		{
+			"slug": "dsdna-igg-antibodies",
+			"source": "Anti dsDNA IgG"
+		},
+		{
+			"slug": "duchenne-muscular-dystrophy",
+			"source": "Duchenne mišićna distrofija (skrining na nasledne bolesti)"
+		},
+		{
+			"slug": "ear-swab-bacteria",
+			"source": "Bris uha na bakterije"
+		},
+		{
+			"slug": "ear-swab-fungi",
+			"source": "Bris uha na gljivice"
+		},
+		{
+			"slug": "echinococcus-igg-elisa",
+			"source": "Anti Echinococcus IgG"
+		},
+		{
+			"slug": "ecp-eosinophil-cationic-protein",
+			"source": "Eozinofilni kationski protein (ECP)"
+		},
+		{
+			"slug": "ecstasy",
+			"source": "Ekstazi"
+		},
+		{
+			"slug": "endomysial-iga-antibodies",
+			"source": "Anti endomizijalna IgA"
+		},
+		{
+			"slug": "epstein-barr-ebna-igg",
+			"source": "EBV EBNA IgG"
+		},
+		{
+			"slug": "epstein-barr-igg",
+			"source": "EBV VCA IgG"
+		},
+		{
+			"slug": "epstein-barr-igm",
+			"source": "EBV VCA IgM"
+		},
+		{
+			"slug": "erythrocyte-resistance",
+			"source": "Osmotska rezistencija eritrocita"
+		},
+		{
+			"slug": "erythrocyte-sedimentation-rate",
+			"source": "Sedimentacija"
+		},
+		{
+			"slug": "erythrocytes",
+			"source": "Eritociti"
+		},
+		{
+			"slug": "erythropoietin",
+			"source": "Eritropoetin"
+		},
+		{
+			"slug": "estradiol",
+			"source": "Estradiol"
+		},
+		{
+			"slug": "eye-swab-bacteria",
+			"source": "Bris oka na bakterije ; Bris konjuktive na bakterije"
+		},
+		{
+			"slug": "eye-swab-fungi",
+			"source": "Bris oka na gljivice ; Bris konjuktive na gljivice"
+		},
+		{
+			"slug": "factor-v-leiden-locus-1691",
+			"source": "Mutacija gena Faktor V Leiden (G1691A) ; Faktor V Leiden (G1691A)"
+		},
+		{
+			"slug": "ferritin",
+			"source": "Feritin"
+		},
+		{
+			"slug": "fibrinogen",
+			"source": "Fibrinogen"
+		},
+		{
+			"slug": "folic-acid",
+			"source": "Folati u serumu"
+		},
+		{
+			"slug": "food-allergy-panel-30-allergens",
+			"source": "Nutritivni panel 30 alergena"
+		},
+		{
+			"slug": "food-intolerance-108-panel",
+			"source": "Intolerancija - 108 namirnica"
+		},
+		{
+			"slug": "fragile-x-syndrome-gene-analysis",
+			"source": "Fragilni X hromozom (skrining na nasledne bolesti)"
+		},
+		{
+			"slug": "free-psa",
+			"source": "PSA, slobodni"
+		},
+		{
+			"slug": "free-t3",
+			"source": "T3 slobodni"
+		},
+		{
+			"slug": "free-t4",
+			"source": "T4 slobodni"
+		},
+		{
+			"slug": "free-testosterone",
+			"source": "Slobodni testosteron"
+		},
+		{
+			"slug": "fructosamine",
+			"source": "Fruktozamin"
+		},
+		{
+			"slug": "fsh",
+			"source": "FSH"
+		},
+		{
+			"slug": "gamma-gt",
+			"source": "GGT"
+		},
+		{
+			"slug": "gbm-antibodies",
+			"source": "Antitijela na glomerularnu bazalnu membranu (GBM)"
+		},
+		{
+			"slug": "gbs-culture",
+			"source": "Kultura na Streptococcus gr. B (GBS)"
+		},
+		{
+			"slug": "glans-swab-bacteria",
+			"source": "Bris glansa na bakterije"
+		},
+		{
+			"slug": "glans-swab-fungi",
+			"source": "Bris glansa na gljivice"
+		},
+		{
+			"slug": "gliadin-iga-antibodies",
+			"source": "Anti glijadinska IgA"
+		},
+		{
+			"slug": "gliadin-igg-antibodies",
+			"source": "Anti glijadinska IgG"
+		},
+		{
+			"slug": "glucose",
+			"source": "Glukoza"
+		},
+		{
+			"slug": "gonococcus-iht",
+			"source": "Neisseria gonorrhoeae (imunohromatografija)"
+		},
+		{
+			"slug": "hair-swab-fungi",
+			"source": "Korijen dlake na gljivice"
+		},
+		{
+			"slug": "haptoglobin",
+			"source": "Haptoglobin"
+		},
+		{
+			"slug": "hav-igm",
+			"source": "Anti HAV IgM"
+		},
+		{
+			"slug": "hba1c",
+			"source": "HbA1c"
+		},
+		{
+			"slug": "hbeag",
+			"source": "Hepatitis B-omotač Ag"
+		},
+		{
+			"slug": "hbsab",
+			"source": "Hepatitis B-površinska At"
+		},
+		{
+			"slug": "hbsag",
+			"source": "HBSAg"
+		},
+		{
+			"slug": "hcv-pcr-rna-qualitative",
+			"source": "Hepatitis C PCR kvalitativno"
+		},
+		{
+			"slug": "hcv-rna-genotyping",
+			"source": "Hepatitis C RNK tipizacija"
+		},
+		{
+			"slug": "hdl-cholesterol",
+			"source": "HDL holesterol"
+		},
+		{
+			"slug": "he4",
+			"source": "HE4"
+		},
+		{
+			"slug": "helicobacter-pylori-antigen-in-feces",
+			"source": "Helicobacter pylori Ag (imunohromatografija)"
+		},
+		{
+			"slug": "helicobacter-pylori-iga",
+			"source": "Anti Helicobacter pylori IgA"
+		},
+		{
+			"slug": "helicobacter-pylori-igg",
+			"source": "Anti Helicobacter pylori IgG"
+		},
+		{
+			"slug": "hemoglobin-electrophoresis",
+			"source": "Elektroforeza hemoglobina"
+		},
+		{
+			"slug": "heparin-anti-xa-activity",
+			"source": "LMW Heparin (anti Xa aktivnost)"
+		},
+		{
+			"slug": "herpes-simplex-i-igg",
+			"source": "HSV 1 IgG"
+		},
+		{
+			"slug": "herpes-simplex-i-igm",
+			"source": "HSV 1 IgM"
+		},
+		{
+			"slug": "herpes-simplex-ii-igg",
+			"source": "HSV 2 IgG"
+		},
+		{
+			"slug": "herpes-simplex-ii-igm",
+			"source": "HSV 2 IgM"
+		},
+		{
+			"slug": "histopathology-bilateral-testis-biopsies",
+			"source": "Obostrana biopsija testisa"
+		},
+		{
+			"slug": "histopathology-brain-tumor-examination",
+			"source": "Pregled tumora mozga"
+		},
+		{
+			"slug": "histopathology-bronchoscopic-biopsy",
+			"source": "Bronhoskopska biopsija"
+		},
+		{
+			"slug": "histopathology-cervical-biopsy",
+			"source": "Biopsija grlića materice"
+		},
+		{
+			"slug": "histopathology-cervical-biopsy-and-curettage",
+			"source": "Biopsija grlića materice i kiretaža"
+		},
+		{
+			"slug": "histopathology-cervical-polyp-examination",
+			"source": "Pregled polipa grlića"
+		},
+		{
+			"slug": "histopathology-colon-biopsy",
+			"source": "Biopsija debelog crijeva"
+		},
+		{
+			"slug": "histopathology-conization-specimen",
+			"source": "Pregled konizata"
+		},
+		{
+			"slug": "histopathology-conization-specimen-with-curettage",
+			"source": "Pregled konizata sa kiretažom"
+		},
+		{
+			"slug": "histopathology-consultation",
+			"source": "Ph konsultacija"
+		},
+		{
+			"slug": "histopathology-curettage",
+			"source": "Kiretaža"
+		},
+		{
+			"slug": "histopathology-cytology-smear",
+			"source": "Citološki pregled - razmaz"
+		},
+		{
+			"slug": "histopathology-duodenum-biopsy",
+			"source": "Biopsija duodenuma"
+		},
+		{
+			"slug": "histopathology-endoscopic-biopsy",
+			"source": "Endoskopski uzeta biopsija"
+		},
+		{
+			"slug": "histopathology-fractional-curettage-two-samples",
+			"source": "Frakciona kiretaža dva uzorka"
+		},
+		{
+			"slug": "histopathology-larynx-biopsy",
+			"source": "Biopsija larinksa"
+		},
+		{
+			"slug": "histopathology-liver-biopsy",
+			"source": "Biopsija jetre"
+		},
+		{
+			"slug": "histopathology-lung-tumor-examination",
+			"source": "Pregled tumora pluća"
+		},
+		{
+			"slug": "histopathology-lymph-node-examination",
+			"source": "Biopsija limfnog čvora"
+		},
+		{
+			"slug": "histopathology-mediastinum-biopsy",
+			"source": "Biopsija medijastinuma"
+		},
+		{
+			"slug": "histopathology-multiple-biopsy",
+			"source": "Multipla biopsija"
+		},
+		{
+			"slug": "histopathology-needle-biopsy-liver-lung-kidney",
+			"source": "Iglena biopsija (jetra, pluća, bubreg)"
+		},
+		{
+			"slug": "histopathology-needle-breast-biopsy-without-ihc",
+			"source": "Iglena biopsija dojke bez imunohistohemije"
+		},
+		{
+			"slug": "histopathology-needle-prostate-biopsy",
+			"source": "Iglena biopsija prostata"
+		},
+		{
+			"slug": "histopathology-needle-prostate-biopsy-multiple-samples",
+			"source": "Iglena biopsija prostate više uzoraka"
+		},
+		{
+			"slug": "histopathology-oral-cavity-biopsy",
+			"source": "Biopsija usne duplje"
+		},
+		{
+			"slug": "histopathology-orchiectomy-testis-examination",
+			"source": "Pregled orhiektomije"
+		},
+		{
+			"slug": "histopathology-other-biopsies",
+			"source": "Ostale biopsije"
+		},
+		{
+			"slug": "histopathology-pleura-biopsy",
+			"source": "Biopsija pleure"
+		},
+		{
+			"slug": "histopathology-radical-surgery",
+			"source": "Ph radikalne operacije"
+		},
+		{
+			"slug": "histopathology-removed-breast-examination",
+			"source": "Pregled odstranjene dojke"
+		},
+		{
+			"slug": "histopathology-report-review",
+			"source": "Revizija biopsije"
+		},
+		{
+			"slug": "histopathology-skin-tumor-additional-samples-15",
+			"source": "Biopsija tumora kože svaki sledeći uzorak"
+		},
+		{
+			"slug": "histopathology-standard-diagnostics",
+			"source": "Ph standardna dijagnostika"
+		},
+		{
+			"slug": "histopathology-subcutaneous-tumor-examination",
+			"source": "Pregled potkožnog tumora"
+		},
+		{
+			"slug": "histopathology-surgical-breast-biopsy-without-ihc",
+			"source": "Klinoidna biopsija dojke bez imunohistohemije"
+		},
+		{
+			"slug": "histopathology-testis-biopsy",
+			"source": "Biopsija testisa"
+		},
+		{
+			"slug": "histopathology-thyroid-biopsy",
+			"source": "Biopsija štitne žlijezde"
+		},
+		{
+			"slug": "histopathology-trus-prostate",
+			"source": "TRUS prostate"
+		},
+		{
+			"slug": "histopathology-uterus-examination",
+			"source": "Pregled uterusa"
+		},
+		{
+			"slug": "histopathology-vulvar-biopsy",
+			"source": "Biopsija vulve"
+		},
+		{
+			"slug": "hiv-1-plus-2-ag-ab",
+			"source": "HIV 1+2 ( Ag/At)"
+		},
+		{
+			"slug": "hla-b27",
+			"source": "HLA-B27"
+		},
+		{
+			"slug": "homocysteine",
+			"source": "Homocistein"
+		},
+		{
+			"slug": "hpv-14-types-pcr",
+			"source": "HPV genotipizacija - visokorizične (16,18,31,33,35,39,45,51,52,56,58,59,66,68)"
+		},
+		{
+			"slug": "human-herpesvirus-6-pcr",
+			"source": "Herpes tip 6 DNK"
+		},
+		{
+			"slug": "ia-2-antibodies",
+			"source": "Anti IA2 (tirozin fosfataza) antitijela"
+		},
+		{
+			"slug": "ica-antibodies",
+			"source": "Anti ICA (pankreasna ostrvca) antitijela"
+		},
+		{
+			"slug": "iga",
+			"source": "IgA"
+		},
+		{
+			"slug": "ige",
+			"source": "IgE"
+		},
+		{
+			"slug": "igf-1",
+			"source": "IgF1"
+		},
+		{
+			"slug": "igg",
+			"source": "IgG"
+		},
+		{
+			"slug": "igg-subclasses",
+			"source": "IgG potklase (IgG1, IgG2, IgG3, IgG4)"
+		},
+		{
+			"slug": "igm",
+			"source": "IgM"
+		},
+		{
+			"slug": "immunohistochemistry-5-to-10-antibodies",
+			"source": "Imunohistohemijska analiza 5 do 10 antitijela"
+		},
+		{
+			"slug": "immunohistochemistry-more-than-10-antibodies",
+			"source": "Imunohistohemijska analiza više od 10 antitijela"
+		},
+		{
+			"slug": "immunohistochemistry-per-antibody",
+			"source": "Imunohistohemijska analiza po jednom antitijelu"
+		},
+		{
+			"slug": "infliximab-antibodies",
+			"source": "Infliximab antitjela"
+		},
+		{
+			"slug": "infliximab-level",
+			"source": "Infliximab (Remicade)"
+		},
+		{
+			"slug": "influenza-a-plus-b-iht",
+			"source": "Influenza A/B (imunohromatografija)"
+		},
+		{
+			"slug": "influenza-b-virus-igg-elisa",
+			"source": "Influenca B IgG"
+		},
+		{
+			"slug": "inhalant-allergy-panel-30-allergens",
+			"source": "Inhalatorni panel 30 alergena"
+		},
+		{
+			"slug": "inhibin-b",
+			"source": "Inhibin B"
+		},
+		{
+			"slug": "insulin",
+			"source": "Insulin"
+		},
+		{
+			"slug": "interleukin-6",
+			"source": "Interleukin 6"
+		},
+		{
+			"slug": "intrinsic-factor-antibodies",
+			"source": "Anti intrinzični faktor antitijela"
+		},
+		{
+			"slug": "ionized-calcium",
+			"source": "Kalcijum slobodni (jonizovani)"
+		},
+		{
+			"slug": "iron",
+			"source": "Gvožđe"
+		},
+		{
+			"slug": "karyotype",
+			"source": "Kariotip"
+		},
+		{
+			"slug": "lactose-intolerance-pcr",
+			"source": "Intolerancija na laktozu"
+		},
+		{
+			"slug": "lamotrigine-level",
+			"source": "Lamictal (Lamotrigine)"
+		},
+		{
+			"slug": "ldh",
+			"source": "LDH"
+		},
+		{
+			"slug": "ldl-cholesterol",
+			"source": "LDL holesterol"
+		},
+		{
+			"slug": "legionella-pneumophila-igg",
+			"source": "Legionella pneum. IgG"
+		},
+		{
+			"slug": "legionella-pneumophila-igm",
+			"source": "Legionella pneum. IgM"
+		},
+		{
+			"slug": "leukocytes",
+			"source": "Leukociti"
+		},
+		{
+			"slug": "levetiracetam-level",
+			"source": "Levitiracetam (Kepra)"
+		},
+		{
+			"slug": "lh",
+			"source": "LH"
+		},
+		{
+			"slug": "lipase",
+			"source": "Lipaza"
+		},
+		{
+			"slug": "lipoprotein-a",
+			"source": "Lp (a)"
+		},
+		{
+			"slug": "lithium",
+			"source": "Litijum"
+		},
+		{
+			"slug": "lupus-anticoagulant",
+			"source": "LA (LA 1/ LA2)"
+		},
+		{
+			"slug": "macroprolactin",
+			"source": "Makroprolaktin"
+		},
+		{
+			"slug": "magnesium",
+			"source": "Magnezijum"
+		},
+		{
+			"slug": "magnesium-in-urine",
+			"source": "Urin - Magnezijum"
+		},
+		{
+			"slug": "marijuana",
+			"source": "Kanabinoidi"
+		},
+		{
+			"slug": "measles-igg",
+			"source": "Anti Measles IgG"
+		},
+		{
+			"slug": "measles-igm",
+			"source": "Anti Measles IgM"
+		},
+		{
+			"slug": "melatonin",
+			"source": "Melatonin"
+		},
+		{
+			"slug": "metanephrines-in-urine",
+			"source": "Metanefrini u urinu"
+		},
+		{
+			"slug": "methadone",
+			"source": "Metadon"
+		},
+		{
+			"slug": "methamphetamine",
+			"source": "Metamfetamin"
+		},
+		{
+			"slug": "methylmalonic-acid",
+			"source": "Metilmalonska kisjelina"
+		},
+		{
+			"slug": "microalbumin-in-urine",
+			"source": "Urin - Albumin"
+		},
+		{
+			"slug": "mog-myelin-oligodendrocyte-glycoprotein",
+			"source": "Anti MOG (mijelin-oligodendrocitni glikoprotein) IgG"
+		},
+		{
+			"slug": "monosticon",
+			"source": "Monostikon test"
+		},
+		{
+			"slug": "mthfr-locus-1298",
+			"source": "MTHFR A1298C ; Mutacija gena MTHFR (A1298C)"
+		},
+		{
+			"slug": "mthfr-locus-677-pcr",
+			"source": "MTHFR C677T ; Mutacija gena MTHFR (C677T)"
+		},
+		{
+			"slug": "mumps-igg",
+			"source": "Anti Mumps IgG"
+		},
+		{
+			"slug": "mumps-igm",
+			"source": "Anti Mumps IgM"
+		},
+		{
+			"slug": "mycoplasma-hominis-genitalium-pcr",
+			"source": "Mycoplasma panel (Mycoplasma hominis, Mycoplasma genitalium"
+		},
+		{
+			"slug": "mycoplasma-hominis-ureaplasma",
+			"source": "Mycoplasma hominis/Ureaplasma urealyticum (kultura sa antibiogramom)"
+		},
+		{
+			"slug": "mycoplasma-pneumoniae-iga",
+			"source": "Mycoplasma pneumoniae IgA"
+		},
+		{
+			"slug": "mycoplasma-pneumoniae-igg",
+			"source": "Mycoplasma pneumoniae IgG"
+		},
+		{
+			"slug": "nail-swab-fungi",
+			"source": "Bris nokta na gljivice"
+		},
+		{
+			"slug": "needle-breast-biopsy-with-her2-and-ki67-receptors",
+			"source": "Iglena biopsija dojke sa određivanjem steroidnih receptora, Her2 i Ki67"
+		},
+		{
+			"slug": "neisseria-gonorrhoeae-culture",
+			"source": "Neisseria gonorrhoeae (kultura)"
+		},
+		{
+			"slug": "norovirus-in-stool",
+			"source": "Noro virus (imunohromatografija)"
+		},
+		{
+			"slug": "nose-swab-bacteria",
+			"source": "Bris nosa na bakterije"
+		},
+		{
+			"slug": "nose-swab-fungi",
+			"source": "Bris nosa na glivice"
+		},
+		{
+			"slug": "nse",
+			"source": "NSE"
+		},
+		{
+			"slug": "nt-probnp",
+			"source": "NT-ProBNP"
+		},
+		{
+			"slug": "opiates",
+			"source": "Opijati"
+		},
+		{
+			"slug": "oral-cavity-fungi",
+			"source": "Bris usne duplje na gljivice"
+		},
+		{
+			"slug": "oral-cavity-swab-bacteria",
+			"source": "Bris usne duplje na bakterije"
+		},
+		{
+			"slug": "oral-glucose-tolerance-test",
+			"source": "OGTT"
+		},
+		{
+			"slug": "osteocalcin",
+			"source": "Osteokalcin"
+		},
+		{
+			"slug": "oxcarbazepine-level",
+			"source": "Oksikarbazepin"
+		},
+		{
+			"slug": "pai-1-675-4g-5g",
+			"source": "Mutacija gena PAI-1 4G/5G"
+		},
+		{
+			"slug": "pancreatic-amylase",
+			"source": "Pankreasna amilaza"
+		},
+		{
+			"slug": "pap-papanicolaou-test",
+			"source": "PAPA test"
+		},
+		{
+			"slug": "parvovirus-b19-igg",
+			"source": "Anti Parvovirus B19 IgG"
+		},
+		{
+			"slug": "parvovirus-b19-igm",
+			"source": "Anti Parvovirus B19 IgM"
+		},
+		{
+			"slug": "pediatric-allergy-panel-30-allergens",
+			"source": "Pedijatrijski panel 30 alergena"
+		},
+		{
+			"slug": "perianal-impression",
+			"source": "Perianalni otisak"
+		},
+		{
+			"slug": "phenobarbital-level",
+			"source": "Fenobarbiton"
+		},
+		{
+			"slug": "phospholipid-igg-antibodies",
+			"source": "Anti fosfolipidna IgG"
+		},
+		{
+			"slug": "phospholipid-igm-antibodies",
+			"source": "Anti fosfolipidna IgM"
+		},
+		{
+			"slug": "phosphorus",
+			"source": "Fosfati"
+		},
+		{
+			"slug": "phosphorus-in-urine",
+			"source": "Urin - Fosfati"
+		},
+		{
+			"slug": "platelet-count-microscopic",
+			"source": "Trombociti u komori"
+		},
+		{
+			"slug": "platelets",
+			"source": "Trombociti"
+		},
+		{
+			"slug": "porphobilinogen",
+			"source": "Porfobilinogen"
+		},
+		{
+			"slug": "potassium",
+			"source": "Kalijum"
+		},
+		{
+			"slug": "prepuce-swab-bacteria",
+			"source": "Bris prepucijuma na bakterije"
+		},
+		{
+			"slug": "prepuce-swab-fungi",
+			"source": "Bris prepucijuma na gljivice"
+		},
+		{
+			"slug": "procalcitonin",
+			"source": "Prokalcitonin"
+		},
+		{
+			"slug": "progesterone",
+			"source": "Progesteron"
+		},
+		{
+			"slug": "prolactin",
+			"source": "Prolaktin"
+		},
+		{
+			"slug": "protein-c",
+			"source": "Protein C (akt)"
+		},
+		{
+			"slug": "protein-electrophoresis-serum",
+			"source": "Elektroforeza proteina seruma"
+		},
+		{
+			"slug": "protein-electrophoresis-urine",
+			"source": "Elektroforeza proteina urina"
+		},
+		{
+			"slug": "protein-in-urine",
+			"source": "Urin - Proteini"
+		},
+		{
+			"slug": "protein-s",
+			"source": "Protein S (akt)"
+		},
+		{
+			"slug": "protein-s-100",
+			"source": "S-100"
+		},
+		{
+			"slug": "prothrombin-ii-locus-20210-pcr",
+			"source": "Mutacija gena Faktor II protrombin (G20210A) ; Faktor II protrombin (G20210A)"
+		},
+		{
+			"slug": "prothrombin-time-pt-inr",
+			"source": "Protrombinsko vrijeme ; INR"
+		},
+		{
+			"slug": "protozoa-stool-test",
+			"source": "Ag Protozoa (Cryptosporidium, Giardia i Entamoeba)"
+		},
+		{
+			"slug": "psa",
+			"source": "PSA, ukupni"
+		},
+		{
+			"slug": "pth",
+			"source": "PTH"
+		},
+		{
+			"slug": "punctate-aerobic",
+			"source": "Punktat na bakterije"
+		},
+		{
+			"slug": "punctate-fungi",
+			"source": "Punktat na gljivice"
+		},
+		{
+			"slug": "pyruvate",
+			"source": "Piruvati"
+		},
+		{
+			"slug": "quantiferon",
+			"source": "IGRA-TB (komercijalni naziv drugih testova Quantiferon)"
+		},
+		{
+			"slug": "rapid-strep-a",
+			"source": "Streptococcus Pyogenes Ag (brzi test)"
+		},
+		{
+			"slug": "removed-breast-and-axillary-lymph-nodes-examination",
+			"source": "Pregled odstranjene dojke sa aksilarnim limfnim čvorovima"
+		},
+		{
+			"slug": "removed-breast-with-her2-and-ki67-receptors",
+			"source": "Pregled odstranjene dojke sa sa određivanjem steroidnih receptora, Her2 i Ki67"
+		},
+		{
+			"slug": "reticulocytes",
+			"source": "Retikulociti"
+		},
+		{
+			"slug": "rheumatoid-factor",
+			"source": "Reuma faktor"
+		},
+		{
+			"slug": "roma-index",
+			"source": "Roma index"
+		},
+		{
+			"slug": "rubella-igg",
+			"source": "Anti Rubella IgG"
+		},
+		{
+			"slug": "rubella-igm",
+			"source": "Anti Rubella IgM"
+		},
+		{
+			"slug": "sars-cov-2-igg-spike-protein",
+			"source": "Sars-Cov-2 IgG - Spike (Clia)"
+		},
+		{
+			"slug": "sars-cov-2-igm",
+			"source": "Sars-Cov-2 IgM (Clia)"
+		},
+		{
+			"slug": "sars-cov-2-pcr",
+			"source": "SARS-Cov2 (RT-PCR)"
+		},
+		{
+			"slug": "scc-squamous-cell-carcinoma-antigen",
+			"source": "SCC"
+		},
+		{
+			"slug": "selenium",
+			"source": "Selen"
+		},
+		{
+			"slug": "serotonin",
+			"source": "Serotonin"
+		},
+		{
+			"slug": "serum-osmolality",
+			"source": "Osmolalnost seuma"
+		},
+		{
+			"slug": "shbg",
+			"source": "SHBG"
+		},
+		{
+			"slug": "skin-swab-bacteria",
+			"source": "Bris kože na bakterije"
+		},
+		{
+			"slug": "skin-swab-fungi",
+			"source": "Bris kože na gljivice"
+		},
+		{
+			"slug": "sma-smn1-gene-copy-number",
+			"source": "Spinalna mišićna atrofija (skrining na nasledne bolesti)"
+		},
+		{
+			"slug": "sodium",
+			"source": "Natrijum"
+		},
+		{
+			"slug": "sperm-culture-bacteria",
+			"source": "Spermokultura"
+		},
+		{
+			"slug": "sperm-culture-fungi",
+			"source": "Spermokultura na gljivice"
+		},
+		{
+			"slug": "sputum-bacteria",
+			"source": "Sputum na bakterije"
+		},
+		{
+			"slug": "sputum-fungi",
+			"source": "Sputum na gljivice"
+		},
+		{
+			"slug": "std-multiplex-3",
+			"source": "STD panel manji (Trichomonas vaginalis, Neisseria gonorrhoeae, Chlamydia trachomatis)"
+		},
+		{
+			"slug": "stool-fungi",
+			"source": "Stolica na gljivice"
+		},
+		{
+			"slug": "stool-parasites",
+			"source": "Stolica na parazite"
+		},
+		{
+			"slug": "surgical-breast-biopsy-with-her2-and-ki67-receptors",
+			"source": "Klinoidna biopsija dojke sa određivanjem steroidnih receptora, Her2 i Ki67"
+		},
+		{
+			"slug": "t3",
+			"source": "T3 ukupni"
+		},
+		{
+			"slug": "t4",
+			"source": "T4 ukupni"
+		},
+		{
+			"slug": "tacrolimus-level",
+			"source": "Tacrolimus"
+		},
+		{
+			"slug": "testosterone",
+			"source": "Testosteron"
+		},
+		{
+			"slug": "throat-swab-bacteria",
+			"source": "Bris grla na bakterije"
+		},
+		{
+			"slug": "throat-swab-fungi",
+			"source": "Bris grla na gljivice"
+		},
+		{
+			"slug": "thrombin-time",
+			"source": "Trombinsko vrijeme"
+		},
+		{
+			"slug": "thyroglobulin",
+			"source": "Tireoglobulin"
+		},
+		{
+			"slug": "tibc",
+			"source": "TIBC"
+		},
+		{
+			"slug": "tongue-swab-bacteria",
+			"source": "Bris jezika na bakterije"
+		},
+		{
+			"slug": "tongue-swab-fungi",
+			"source": "Bris jezika na gljivice"
+		},
+		{
+			"slug": "torch-panel",
+			"source": "TORCH"
+		},
+		{
+			"slug": "total-bile-acids",
+			"source": "Žučne kisjeline"
+		},
+		{
+			"slug": "total-bilirubin",
+			"source": "Bilirubin ukupni"
+		},
+		{
+			"slug": "total-protein",
+			"source": "Proteini"
+		},
+		{
+			"slug": "total-tau-protein",
+			"source": "Tau protein"
+		},
+		{
+			"slug": "toxoplasma-igg",
+			"source": "Anti Toxoplasma IgG"
+		},
+		{
+			"slug": "toxoplasma-igm",
+			"source": "Anti Toxoplasma IgM"
+		},
+		{
+			"slug": "tpmt-gene-mutation-detection",
+			"source": "Tiopurin metil transferaza deficijencija"
+		},
+		{
+			"slug": "transferrin",
+			"source": "Transferin"
+		},
+		{
+			"slug": "transferrin-saturation",
+			"source": "Saturacija transferina"
+		},
+		{
+			"slug": "transglutaminase-iga-antibodies",
+			"source": "Anti tkivna transglutaminaza IgA"
+		},
+		{
+			"slug": "transglutaminase-igg-antibodies",
+			"source": "Anti tkivna transglutaminaza IgG"
+		},
+		{
+			"slug": "tricyclic-antidepressants",
+			"source": "TCA (triciklični antidepresivi)"
+		},
+		{
+			"slug": "triglycerides",
+			"source": "Trigliceridi"
+		},
+		{
+			"slug": "triple-test-second-trimester-screening",
+			"source": "Tripl test"
+		},
+		{
+			"slug": "troponin-t-hs",
+			"source": "hs Troponin T"
+		},
+		{
+			"slug": "tsh",
+			"source": "TSH"
+		},
+		{
+			"slug": "ugt1a1-gilbert-syndrome",
+			"source": "UGT1A1 - Gilbertov sindrom"
+		},
+		{
+			"slug": "uibc",
+			"source": "UIBC"
+		},
+		{
+			"slug": "umbilicus-swab-bacteria",
+			"source": "Bris pupka na bakterije"
+		},
+		{
+			"slug": "umbilicus-swab-fungi",
+			"source": "Bris pupka na gljivice"
+		},
+		{
+			"slug": "urea",
+			"source": "Urea"
+		},
+		{
+			"slug": "urea-clearance",
+			"source": "Urea klirens"
+		},
+		{
+			"slug": "urea-in-urine",
+			"source": "Urin - Urea"
+		},
+		{
+			"slug": "urethral-swab-bacteria",
+			"source": "Bris uretre na bakterije"
+		},
+		{
+			"slug": "urethral-swab-fungi",
+			"source": "Bris uretre na gljivice"
+		},
+		{
+			"slug": "uric-acid",
+			"source": "Mokraćna kisjelina"
+		},
+		{
+			"slug": "uric-acid-in-urine",
+			"source": "Urin - Mokraćna kisjelina"
+		},
+		{
+			"slug": "urine-culture",
+			"source": "Urinokultura"
+		},
+		{
+			"slug": "urine-fungi",
+			"source": "Urinokultura na gljivice"
+		},
+		{
+			"slug": "urine-osmolality",
+			"source": "Osmolalnost urina"
+		},
+		{
+			"slug": "vaginal-swab-bacteria",
+			"source": "Bris vagine na bakterije"
+		},
+		{
+			"slug": "vaginal-swab-fungi",
+			"source": "Bris vagine na gljivice"
+		},
+		{
+			"slug": "valproic-acid",
+			"source": "Valproična kisjelina"
+		},
+		{
+			"slug": "varicella-zoster-virus-igg",
+			"source": "Anti Varicella zoster IgG"
+		},
+		{
+			"slug": "varicella-zoster-virus-igm",
+			"source": "Anti Varicella zoster IgM"
+		},
+		{
+			"slug": "vdrl",
+			"source": "VDRL (flokulacioni test)"
+		},
+		{
+			"slug": "vitamin-a",
+			"source": "Vitamin A"
+		},
+		{
+			"slug": "vitamin-b1-level",
+			"source": "Vitamin B1"
+		},
+		{
+			"slug": "vitamin-b12",
+			"source": "Vitamin B12"
+		},
+		{
+			"slug": "vitamin-b2",
+			"source": "Vitamin B2"
+		},
+		{
+			"slug": "vitamin-d-25-oh",
+			"source": "Vitamin D"
+		},
+		{
+			"slug": "vitamin-e-level",
+			"source": "Vitamin E"
+		},
+		{
+			"slug": "vitamin-h-b7-biotin-level",
+			"source": "Vitamin H"
+		},
+		{
+			"slug": "vldl",
+			"source": "VLDL holesterol"
+		},
+		{
+			"slug": "vulvar-swab-bacteria",
+			"source": "Bris vulve na bakterije"
+		},
+		{
+			"slug": "vulvar-swab-fungi",
+			"source": "Bris vulve na gljivice"
+		},
+		{
+			"slug": "waaler-rose-test",
+			"source": "Waller-rose"
+		},
+		{
+			"slug": "west-nile-virus-igg-elisa",
+			"source": "Virus zapadnog Nila IgG"
+		},
+		{
+			"slug": "west-nile-virus-igm-elisa",
+			"source": "Virus zapadnog Nila IgM"
+		},
+		{
+			"slug": "wound-swab-bacteria",
+			"source": "Bris rane na bakterije"
+		},
+		{
+			"slug": "wound-swab-culture-anaerobic",
+			"source": "Bris rane na anaerobne bakterije"
+		},
+		{
+			"slug": "wound-swab-fungi",
+			"source": "Bris rane na gljivice"
+		},
+		{
+			"slug": "y-chromosome-microdeletion",
+			"source": "Mikrodelecija na Y hromozomu"
+		},
+		{
+			"slug": "znt8-antibodies",
+			"source": "Anti Zn transporter antitijela"
+		}
+	],
+	"excluded": [
+		{
+			"source": "Bris kapka na bakterije",
+			"reason": "new: Мазка с века нет; eye-swab-* — конъюнктива/глаз, другая локализация",
+			"nameEn": "Eyelid Swab for Bacteria",
+			"candidates": []
+		},
+		{
+			"source": "Bris kapka na gljivice",
+			"reason": "new: Мазка с века нет; eye-swab-fungi — конъюнктива, другая локализация",
+			"nameEn": "Eyelid Swab for Fungi",
+			"candidates": []
+		},
+		{
+			"source": "Bris na bakterije (kateter, cista...)",
+			"reason": "new: Общий мазок с прочего материала (катетер, киста…); в каталоге только узкие записи под конкретные катетеры (CVC, urinary catheter и т.д.) и cyst-punctate-analysis (не посев)",
+			"nameEn": "Swab Culture for Bacteria (Catheter, Cyst, Other Material)",
+			"candidates": []
+		},
+		{
+			"source": "Bris na gljivice (kateter, cista...)",
+			"reason": "new: Аналог п.9 на грибы; общей записи нет",
+			"nameEn": "Swab Culture for Fungi (Catheter, Cyst, Other Material)",
+			"candidates": []
+		},
+		{
+			"source": "Bris nokta na bakterije",
+			"reason": "new: Есть только nail-swab-fungi (грибы), на бактерии — нет",
+			"nameEn": "Nail Swab for Bacteria",
+			"candidates": []
+		},
+		{
+			"source": "Bris traheostome na gljivice",
+			"reason": "new: Нет никакого трахеального/трахеостомного мазка на грибы",
+			"nameEn": "Tracheostomy Swab for Fungi",
+			"candidates": []
+		},
+		{
+			"source": "Enterovirus (imunohromatografija)",
+			"reason": "new: Энтеровирусов в каталоге нет вообще",
+			"nameEn": "Enterovirus Antigen (Immunochromatography)",
+			"candidates": []
+		},
+		{
+			"source": "Adeno respiratorni virus (bris oka) (imunohromatografija)",
+			"reason": "new: Аденовирусного экспресс-теста из мазка глаза нет; есть только из носа и из стула",
+			"nameEn": "Adenovirus Antigen Rapid Test (Eye Swab)",
+			"candidates": []
+		},
+		{
+			"source": "RSV (Respiratorni sincicijalni virus)",
+			"reason": "new: В каталоге по RSV только серология (rsv-igm, rsv-igg); во вкладке Mikrobiologija это антигенный тест",
+			"nameEn": "RSV Antigen Rapid Test",
+			"candidates": []
+		},
+		{
+			"source": "Imunohromatografski test SARS-CoV-2 +FLU A+ FLU B + RSV",
+			"reason": "new: Комбинированного антигенного теста 4-в-1 нет; есть только отдельные COVID и грипп A/B",
+			"nameEn": "SARS-CoV-2 + Influenza A/B + RSV Antigen Rapid Test",
+			"candidates": []
+		},
+		{
+			"source": "Yersinia enterokolitika",
+			"reason": "new: Yersinia в каталоге нет совсем. Метод не указан; серология Yersinia IgA/IgG blot у Moj Lab в другой вкладке, значит здесь прямое выявление (вероятно, из стула)",
+			"nameEn": "Yersinia enterocolitica (Stool)",
+			"candidates": []
+		},
+		{
+			"source": "Trombociti na citratu",
+			"reason": "new: Подсчёта тромбоцитов в цитратной крови нет; есть platelets и platelet-count-microscopic",
+			"nameEn": "Platelet Count in Citrated Blood",
+			"candidates": []
+		},
+		{
+			"source": "Non HDL holesterol",
+			"reason": "new: Non-HDL холестерина нет",
+			"nameEn": "Non-HDL Cholesterol",
+			"candidates": []
+		},
+		{
+			"source": "Indeks ateroskleroze",
+			"reason": "new: Индекса атерогенности нет",
+			"nameEn": "Atherogenic Index",
+			"candidates": []
+		},
+		{
+			"source": "Solubilni transferinski receptori (sTfr)",
+			"reason": "new: sTfR нет (есть только transferrin, transferrin-saturation)",
+			"nameEn": "Soluble Transferrin Receptor (sTfR)",
+			"candidates": []
+		},
+		{
+			"source": "ACE u likvoru",
+			"reason": "new: ace — сывороточный; ACE в ликворе — другой материал",
+			"nameEn": "ACE in CSF",
+			"candidates": []
+		},
+		{
+			"source": "aza (tartarat rezistentna)",
+			"reason": "new: Вторая половина разорванной позиции «Kisjela fosfataza (tartarat rezistentna)». TRAP в каталоге нет (acid-phosphatase — общая кислая фосфатаза)",
+			"nameEn": "Tartrate-Resistant Acid Phosphatase (TRAP)",
+			"candidates": []
+		},
+		{
+			"source": "Reverzni T3",
+			"reason": "new: Reverse T3 нет",
+			"nameEn": "Reverse T3",
+			"candidates": []
+		},
+		{
+			"source": "Kortizol u pljuvačci",
+			"reason": "new: Кортизола в слюне нет; есть только сыворотка (по часам) и моча",
+			"nameEn": "Salivary Cortisol",
+			"candidates": []
+		},
+		{
+			"source": "Estron (E1)",
+			"reason": "new: Эстрона нет",
+			"nameEn": "Estrone (E1)",
+			"candidates": []
+		},
+		{
+			"source": "Androstandiol glukuronid",
+			"reason": "new: Андростандиол глюкуронида нет",
+			"nameEn": "Androstanediol Glucuronide",
+			"candidates": []
+		},
+		{
+			"source": "3-metoksitiramin u urinu",
+			"reason": "new: 3-метокситирамина нет (метанефрины есть, это другие метаболиты)",
+			"nameEn": "3-Methoxytyramine in Urine",
+			"candidates": []
+		},
+		{
+			"source": "Dopamin",
+			"reason": "new: Дофамина отдельно нет (catecholamines-in-plasma — адреналин/норадреналин); материал не указан",
+			"nameEn": "Dopamine",
+			"candidates": []
+		},
+		{
+			"source": "PIVKA",
+			"reason": "new: PIVKA-II нет",
+			"nameEn": "PIVKA-II",
+			"candidates": []
+		},
+		{
+			"source": "Holotranskobalmin (aktivni vitamin B12)",
+			"reason": "new: Есть только vitamin-b12 (общий B12) — это другой анализ",
+			"nameEn": "Holotranscobalamin (Active Vitamin B12)",
+			"candidates": [
+				"vitamin-b12"
+			]
+		},
+		{
+			"source": "Vitamin B3",
+			"reason": "new: В каталоге нет B3/ниацина",
+			"nameEn": "Vitamin B3 (Niacin)",
+			"candidates": []
+		},
+		{
+			"source": "Vitamin B5",
+			"reason": "new: В каталоге нет B5/пантотеновой кислоты",
+			"nameEn": "Vitamin B5 (Pantothenic Acid)",
+			"candidates": []
+		},
+		{
+			"source": "D-Pirilinx (piridinolin)",
+			"reason": "new: D-Pirilinx = Pyrilinks-D, маркер резорбции кости (пиридинолиновые сшивки) в моче; в каталоге ничего похожего нет",
+			"nameEn": "Deoxypyridinoline (DPD) in Urine",
+			"candidates": []
+		},
+		{
+			"source": "Uroporfirin u urinu",
+			"reason": "new: Уропорфирина отдельно нет; есть только суммарные порфирины",
+			"nameEn": "Uroporphyrin in Urine",
+			"candidates": [
+				"porphyrins-in-urine"
+			]
+		},
+		{
+			"source": "Analiza kamena",
+			"reason": "new: Анализ состава конкремента — лабораторный анализ; в каталоге нет",
+			"nameEn": "Urinary Stone Analysis",
+			"candidates": []
+		},
+		{
+			"source": "Ljekovi i psihoaktivne supstance (3000 metabolita)",
+			"reason": "new: Широкий скрининг лекарств и ПАВ (3000 метаболитов); в каталоге только панели на 5–10 веществ",
+			"nameEn": "Comprehensive Drug and Toxicology Screen (3000 Metabolites)",
+			"candidates": []
+		},
+		{
+			"source": "Psihoaktivne supstance u kosi",
+			"reason": "new: ПАВ в волосах; в каталоге только моча и тест-полоски",
+			"nameEn": "Psychoactive Substances in Hair",
+			"candidates": []
+		},
+		{
+			"source": "Bromidi",
+			"reason": "new: Бромидов в каталоге нет",
+			"nameEn": "Bromide",
+			"candidates": []
+		},
+		{
+			"source": "Fluorid",
+			"reason": "new: Фторидов в каталоге нет",
+			"nameEn": "Fluoride",
+			"candidates": []
+		},
+		{
+			"source": "Kalaj",
+			"reason": "new: Олова (Sn, kalaj) в каталоге нет",
+			"nameEn": "Tin",
+			"candidates": []
+		},
+		{
+			"source": "Srebro",
+			"reason": "new: Серебра в каталоге нет",
+			"nameEn": "Silver",
+			"candidates": []
+		},
+		{
+			"source": "Sumpor",
+			"reason": "new: Серы в каталоге нет",
+			"nameEn": "Sulfur",
+			"candidates": []
+		},
+		{
+			"source": "Analiza kose (aluminium, antimon, arsen, bakar, barium, berilium, bizmut, bor, kadmium, kalaj, kalcijum, hrom, germanium, gvožđe, jod, kobalt, litium, magnezium, mangan, molibden, nikl, olovo, paladium, platina, selen, srebro, stroncium, talium, titan, uran, vanadium, volfram, cinc, cirkonium, živa)",
+			"reason": "new: Элементный анализ волос, 35 элементов; в каталоге нет",
+			"nameEn": "Hair Mineral Analysis (35 Elements)",
+			"candidates": []
+		},
+		{
+			"source": "Aripiprazol",
+			"reason": "new: Нет в каталоге",
+			"nameEn": "Aripiprazole Level",
+			"candidates": []
+		},
+		{
+			"source": "Everolimus",
+			"reason": "new: Нет в каталоге (есть такролимус, сиролимус, циклоспорин)",
+			"nameEn": "Everolimus Level",
+			"candidates": []
+		},
+		{
+			"source": "Fluconazol (Adizol)",
+			"reason": "new: Нет в каталоге",
+			"nameEn": "Fluconazole Level",
+			"candidates": []
+		},
+		{
+			"source": "Mitotan",
+			"reason": "new: Нет в каталоге",
+			"nameEn": "Mitotane Level",
+			"candidates": []
+		},
+		{
+			"source": "Omeprazol",
+			"reason": "new: Нет в каталоге",
+			"nameEn": "Omeprazole Level",
+			"candidates": []
+		},
+		{
+			"source": "Topiramate (Topamax)",
+			"reason": "new: Нет в каталоге",
+			"nameEn": "Topiramate Level",
+			"candidates": []
+		},
+		{
+			"source": "Venlafaksin i metaboliti (Velafax)",
+			"reason": "new: Нет в каталоге",
+			"nameEn": "Venlafaxine and Metabolites Level",
+			"candidates": []
+		},
+		{
+			"source": "Intolerancija - 54 namirnice",
+			"reason": "new: В каталоге есть панели на 90 и 108 продуктов, на 54 нет",
+			"nameEn": "Food Intolerance Panel 54 Foods",
+			"candidates": [
+				"food-intolerance-panel-90-foods",
+				"food-intolerance-108-panel"
+			]
+		},
+		{
+			"source": "Intolerancija - 216 namirnica",
+			"reason": "new: В каталоге есть 90 и 108, на 216 нет",
+			"nameEn": "Food Intolerance Panel 216 Foods",
+			"candidates": []
+		},
+		{
+			"source": "ISAC panel (112 alergena)",
+			"reason": "new: Компонентная аллергодиагностика ISAC, 112 компонентов; в каталоге нет (Protia — другие панели)",
+			"nameEn": "ImmunoCAP ISAC Allergen Component Panel (112 Components)",
+			"candidates": []
+		},
+		{
+			"source": "Triptaza",
+			"reason": "new: Триптазы в каталоге нет",
+			"nameEn": "Tryptase",
+			"candidates": []
+		},
+		{
+			"source": "Bartonella henselae IgM/IgG",
+			"reason": "new: Комбинированная позиция IgM+IgG; в каталоге только раздельные записи",
+			"nameEn": "Bartonella henselae IgG IgM Panel",
+			"candidates": [
+				"bartonella-henselae-igm",
+				"bartonella-henselae-igg"
+			]
+		},
+		{
+			"source": "Beta-D-Glukan",
+			"reason": "new: (1→3)-β-D-глюкан не найден; есть только галактоманнан Aspergillus — другой аналит",
+			"nameEn": "Beta-D-Glucan",
+			"candidates": []
+		},
+		{
+			"source": "Chlamydia trachomatis IgA",
+			"reason": "new: В каталоге только IgM и IgG",
+			"nameEn": "Chlamydia trachomatis IgA",
+			"candidates": []
+		},
+		{
+			"source": "Denga antigen",
+			"reason": "new: Денге в каталоге нет; на сайте просто «antigen» — обычно NS1, проверить",
+			"nameEn": "Dengue NS1 Antigen",
+			"candidates": []
+		},
+		{
+			"source": "Denga groznica IgG",
+			"reason": "new:",
+			"nameEn": "Dengue Virus IgG",
+			"candidates": []
+		},
+		{
+			"source": "Denga groznica IgM",
+			"reason": "new:",
+			"nameEn": "Dengue Virus IgM",
+			"candidates": []
+		},
+		{
+			"source": "Difterija antitoksin imunitet",
+			"reason": "new: Антитела к дифтерийному токсину (оценка иммунитета) не найдены",
+			"nameEn": "Diphtheria Antitoxin IgG",
+			"candidates": []
+		},
+		{
+			"source": "EBV EA IgG",
+			"reason": "new: Есть EBNA IgG, VCA/общие IgG/IgM и авидность, но не Early Antigen",
+			"nameEn": "Epstein-Barr EA IgG",
+			"candidates": []
+		},
+		{
+			"source": "Francisella tularensis IgG",
+			"reason": "new:",
+			"nameEn": "Francisella tularensis IgG",
+			"candidates": []
+		},
+		{
+			"source": "Francisella tularensis IgM",
+			"reason": "new: На сайте дублируется позицией 274 «Tularemija IgM»",
+			"nameEn": "Francisella tularensis IgM",
+			"candidates": []
+		},
+		{
+			"source": "GQ1B IgG (Quadrosialo gangliozid)",
+			"reason": "new: Антиганглиозидных антител в каталоге нет",
+			"nameEn": "Anti-GQ1b Ganglioside IgG",
+			"candidates": []
+		},
+		{
+			"source": "GQ1B IgM (Quadrosialo gangliozid)",
+			"reason": "new:",
+			"nameEn": "Anti-GQ1b Ganglioside IgM",
+			"candidates": []
+		},
+		{
+			"source": "Haemophilus influenzae tip B IgG",
+			"reason": "new:",
+			"nameEn": "Haemophilus influenzae type b IgG",
+			"candidates": []
+		},
+		{
+			"source": "Humani T limfocitni virus I/II (HTLV) IgG",
+			"reason": "new:",
+			"nameEn": "HTLV I/II Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "Influenca B IgA",
+			"reason": "new: В каталоге только IgM и IgG",
+			"nameEn": "Influenza B Virus IgA",
+			"candidates": []
+		},
+		{
+			"source": "Meningococcus IgG",
+			"reason": "new:",
+			"nameEn": "Neisseria meningitidis IgG",
+			"candidates": []
+		},
+		{
+			"source": "Nematode IgG (Anisakis, Ascaris,",
+			"reason": "new: Начало названия, продолжение в позиции 264; групповой тест — в каталоге только отдельные Toxocara/Strongyloides/Trichinella",
+			"nameEn": "Nematode IgG Panel (Anisakis, Ascaris, Filaria, Strongyloides, Toxocara, Trichinella)",
+			"candidates": []
+		},
+		{
+			"source": "Parainfluenca IgA",
+			"reason": "new:",
+			"nameEn": "Parainfluenza Virus IgA",
+			"candidates": []
+		},
+		{
+			"source": "Parainfluenca IgG",
+			"reason": "new:",
+			"nameEn": "Parainfluenza Virus IgG",
+			"candidates": []
+		},
+		{
+			"source": "Pneumococcus IgG",
+			"reason": "new:",
+			"nameEn": "Streptococcus pneumoniae IgG",
+			"candidates": []
+		},
+		{
+			"source": "Poliovirus tip 1 antitijela",
+			"reason": "new:",
+			"nameEn": "Poliovirus Type 1 Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "Poliovirus tip 3 antitijela",
+			"reason": "new:",
+			"nameEn": "Poliovirus Type 3 Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "Tetanus antitoksin imunitet",
+			"reason": "new:",
+			"nameEn": "Tetanus Antitoxin IgG",
+			"candidates": []
+		},
+		{
+			"source": "Toxocara canis-IgG, blot",
+			"reason": "new: В каталоге toxocara-canis-igg — ELISA (по синонимам), blot ≠ ELISA",
+			"nameEn": "Toxocara canis IgG Western Blot",
+			"candidates": [
+				"toxocara-canis-igg"
+			]
+		},
+		{
+			"source": "Treponema pallidum IgM (blot)",
+			"reason": "new:",
+			"nameEn": "Treponema pallidum IgM Western Blot",
+			"candidates": []
+		},
+		{
+			"source": "Tularemija IgM",
+			"reason": "new: Дубль позиции 245 на сайте (туляремия = F. tularensis); тот же новый анализ",
+			"nameEn": "Francisella tularensis IgM",
+			"candidates": []
+		},
+		{
+			"source": "Yersinia IgA, blot",
+			"reason": "new:",
+			"nameEn": "Yersinia IgA Western Blot",
+			"candidates": []
+		},
+		{
+			"source": "Yersinia IgG, blot",
+			"reason": "new:",
+			"nameEn": "Yersinia IgG Western Blot",
+			"candidates": []
+		},
+		{
+			"source": "Neonatalni skrining (hipotireoza, galaktozemija, biotinidaza, KAH, poremećaj metabilizma amino i organskih kisjelina)",
+			"reason": "new: Неонатальный скрининг (гипотиреоз, галактоземия, биотинидаза, ВГКН, амино/органические ацидурии) в каталоге отсутствует",
+			"nameEn": "Newborn Screening Panel",
+			"candidates": []
+		},
+		{
+			"source": "Masne kisjeline dugih lanaca",
+			"reason": "new: В каталоге только NEFA и омега-6/омега-3 — другие анализы",
+			"nameEn": "Very Long Chain Fatty Acids",
+			"candidates": []
+		},
+		{
+			"source": "Aminokisjeline",
+			"reason": "new: Материал на сайте не указан",
+			"nameEn": "Amino Acid Profile",
+			"candidates": []
+		},
+		{
+			"source": "ENA",
+			"reason": "new: В каталоге только комбинированные ANA ENA профили 15/25 — шире",
+			"nameEn": "ENA Screen",
+			"candidates": [
+				"ana-ena-profile-15-antibodies",
+				"ana-ena-profile-25-antibodies"
+			]
+		},
+		{
+			"source": "Anti Sm At",
+			"reason": "new:",
+			"nameEn": "Anti-Sm Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "ANCA",
+			"reason": "new: Общий скрининг ANCA; в каталоге только anti-MPO и anti-PR3 по отдельности",
+			"nameEn": "ANCA Screen",
+			"candidates": [
+				"anca-p-anti-mpo",
+				"anca-c-anti-pr3"
+			]
+		},
+		{
+			"source": "Anti RNP/Sm",
+			"reason": "new:",
+			"nameEn": "Anti-RNP/Sm Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "Liver panel (AMA-M2, M2-3E, Sp100, PML, gp210, LKM-1, LC-1,SLA/LP, SS-A native, Ro-52, Scl-70, Centromer A, Centromer B)",
+			"reason": "new: Многопараметровая панель; в каталоге отдельные LKM-1, SLA/LP, Scl-70, CENP-B, AMA-M2, но не панель",
+			"nameEn": "Autoimmune Liver Disease Panel (Immunoblot)",
+			"candidates": [
+				"lkm-1-antibodies",
+				"anti-sla-lp-antibodies",
+				"ama-antimitochondrial-m2"
+			]
+		},
+		{
+			"source": "ANNA 3 antitijela",
+			"reason": "new: В каталоге общая запись neuronal-antibodies — шире",
+			"nameEn": "ANNA-3 Antibodies",
+			"candidates": [
+				"neuronal-antibodies"
+			]
+		},
+		{
+			"source": "Anti anexin IgG",
+			"reason": "new: в каталоге нет антител к аннексину",
+			"nameEn": "Anti-Annexin V IgG",
+			"candidates": []
+		},
+		{
+			"source": "Anti ASCA IgM",
+			"reason": "new: в каталоге только ASCA IgA и IgG",
+			"nameEn": "ASCA IgM",
+			"candidates": []
+		},
+		{
+			"source": "Anti centromerna antitijela",
+			"reason": "new: в каталоге только Centromere Protein B (более узкая запись); у лаборатории CENP-B отдельной позицией (321)",
+			"nameEn": "Anti-Centromere Antibodies",
+			"candidates": [
+				"centromere-protein-b-antibodies"
+			]
+		},
+		{
+			"source": "Anti endomizijalna IgG",
+			"reason": "new: в каталоге только IgA",
+			"nameEn": "Endomysial IgG Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "Anti fibrilarin-U3RNP antitijela",
+			"reason": "new:",
+			"nameEn": "Anti-Fibrillarin (U3-RNP) Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "Anti Hu D antitijela",
+			"reason": "new: отдельной записи нет; в каталоге только общий neuronal-antibodies",
+			"nameEn": "Anti-Hu (HuD) Antibodies",
+			"candidates": [
+				"neuronal-antibodies"
+			]
+		},
+		{
+			"source": "Anti interferon alfa antitijela",
+			"reason": "new:",
+			"nameEn": "Anti-Interferon Alpha Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "Gangliozidni profil (GM1M, GM1G, GD1BM, GD1BG, GQ1BM, GQ1BG, GM2M, GM2G, GM3M, GM3G, GD1AM, GD1AG, GT1BM, GT1BG)",
+			"reason": "new: профиля антител к ганглиозидам в каталоге нет",
+			"nameEn": "Ganglioside Antibody Profile",
+			"candidates": []
+		},
+		{
+			"source": "Anti NMDA receptor IgA",
+			"reason": "new: в каталоге одна NMDAR-запись (сыворотка) без класса",
+			"nameEn": "Anti-NMDA Receptor IgA",
+			"candidates": [
+				"nmdar-antibodies-in-serum"
+			]
+		},
+		{
+			"source": "Anti NMDA receptor IgM",
+			"reason": "new: в каталоге одна NMDAR-запись (сыворотка) без класса",
+			"nameEn": "Anti-NMDA Receptor IgM",
+			"candidates": [
+				"nmdar-antibodies-in-serum"
+			]
+		},
+		{
+			"source": "Anti NMDA receptorska antitijela (likvor)",
+			"reason": "new: в каталоге NMDAR только в сыворотке; ликвор — другой материал",
+			"nameEn": "NMDAR Antibodies in CSF",
+			"candidates": [
+				"nmdar-antibodies-in-serum"
+			]
+		},
+		{
+			"source": "Anti NOR90 antitijela",
+			"reason": "new:",
+			"nameEn": "Anti-NOR90 Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "Anti PM-SCL antitijela",
+			"reason": "new:",
+			"nameEn": "Anti-PM-Scl Antibodies",
+			"candidates": []
+		},
+		{
+			"source": "Anti Ri antitijela",
+			"reason": "new: отдельной записи нет; есть только общий neuronal-antibodies",
+			"nameEn": "Anti-Ri Antibodies",
+			"candidates": [
+				"neuronal-antibodies"
+			]
+		},
+		{
+			"source": "Anti ribozoalni P protein IgG",
+			"reason": "new:",
+			"nameEn": "Anti-Ribosomal P Protein IgG",
+			"candidates": []
+		},
+		{
+			"source": "Anti Ro 52",
+			"reason": "new: в каталоге есть Anti-Ro SSA (более общая запись), Ro52 отдельно не заведён",
+			"nameEn": "Anti-Ro52 Antibodies",
+			"candidates": [
+				"anti-ro-ssa-antibodies"
+			]
+		},
+		{
+			"source": "Anti spermatozoidna (ASA) IgA",
+			"reason": "new: в каталоге одна ASA без класса",
+			"nameEn": "Antisperm Antibodies ASA IgA",
+			"candidates": [
+				"spermatozoa-antibodies-asa"
+			]
+		},
+		{
+			"source": "Anti spermatozoidna (ASA) IgM",
+			"reason": "new: в каталоге одна ASA без класса",
+			"nameEn": "Antisperm Antibodies ASA IgM",
+			"candidates": [
+				"spermatozoa-antibodies-asa"
+			]
+		},
+		{
+			"source": "Beta amiloid",
+			"reason": "new: бета-амилоида в каталоге нет",
+			"nameEn": "Beta-Amyloid",
+			"candidates": []
+		},
+		{
+			"source": "Hipokretin",
+			"reason": "new:",
+			"nameEn": "Hypocretin (Orexin)",
+			"candidates": []
+		},
+		{
+			"source": "Serumski amiloid A",
+			"reason": "new:",
+			"nameEn": "Serum Amyloid A",
+			"candidates": []
+		},
+		{
+			"source": "Transferin deficijentan ugljenim hidratima",
+			"reason": "new: в каталоге только transferrin и transferrin-saturation",
+			"nameEn": "Carbohydrate-Deficient Transferrin (CDT)",
+			"candidates": []
+		},
+		{
+			"source": "Protein 14-3-3",
+			"reason": "new:",
+			"nameEn": "14-3-3 Protein",
+			"candidates": []
+		},
+		{
+			"source": "Neuralna antitijela panel (Amphiphysin 1, ANNA-III, CRMP5, CV-2, Ri antigen, Yo, Hu D antigen, Ma2 (Ta), PCA-2, Tr) u likvoru",
+			"reason": "new: та же панель в ликворе; в каталоге neuronal-antibodies без указания материала",
+			"nameEn": "Neural Antibodies Panel in CSF",
+			"candidates": [
+				"neuronal-antibodies"
+			]
+		},
+		{
+			"source": "Biopsija grlića materice i frakciona kiretaža ukupno tri uzorka",
+			"reason": "not_labtest: патогистология: биопсия шейки матки + фракционная кюретаж, 3 образца; точной записи нет",
+			"nameEn": "Histopathology Cervical Biopsy and Fractional Curettage (Three Samples)",
+			"candidates": [
+				"histopathology-cervical-biopsy-and-curettage",
+				"histopathology-fractional-curettage-two-samples"
+			]
+		},
+		{
+			"source": "Biopsija tumora kože",
+			"reason": "not_labtest: патогистология опухоли кожи (первый образец); точной записи нет, есть только общая «стандартная биопсия кожи и других органов»",
+			"nameEn": "Histopathology Skin Tumor Biopsy",
+			"candidates": [
+				"histopathology-standard-skin-and-organ-biopsy"
+			]
+		},
+		{
+			"source": "Endoskopska biopsija (svaki sledeći uzorak)",
+			"reason": "not_labtest: патогистология: каждый следующий образец эндоскопической биопсии; такой записи нет",
+			"nameEn": "Histopathology Endoscopic Biopsy (Each Additional Sample)",
+			"candidates": [
+				"histopathology-endoscopic-biopsy"
+			]
+		},
+		{
+			"source": "Ex tempore biopsija",
+			"reason": "not_labtest: интраоперационная срочная гистология (ex tempore); в каталоге нет",
+			"nameEn": "Histopathology Intraoperative Frozen Section (Ex Tempore)",
+			"candidates": []
+		},
+		{
+			"source": "Ph tumora kože",
+			"reason": "not_labtest: патогистология опухоли кожи; судя по названию, то же, что 379; точной записи нет",
+			"nameEn": "Histopathology Skin Tumor",
+			"candidates": [
+				"histopathology-standard-skin-and-organ-biopsy"
+			]
+		},
+		{
+			"source": "Pregled jajnika",
+			"reason": "not_labtest: патогистология операционного материала (яичник); в каталоге нет",
+			"nameEn": "Histopathology Ovary Examination",
+			"candidates": []
+		},
+		{
+			"source": "Pregled nefrektomije",
+			"reason": "not_labtest: патогистология операционного материала (нефрэктомия); точной записи нет, есть общая «радикальные операции»",
+			"nameEn": "Histopathology Nephrectomy Specimen",
+			"candidates": [
+				"histopathology-radical-surgery"
+			]
+		},
+		{
+			"source": "Pregled odstranjenog mioma",
+			"reason": "not_labtest: патогистология удалённой миомы; в каталоге нет (есть только «Pregled uterusa»)",
+			"nameEn": "Histopathology Myoma Examination",
+			"candidates": [
+				"histopathology-uterus-examination"
+			]
+		},
+		{
+			"source": "Pregled prostaktetomije",
+			"reason": "not_labtest: патогистология операционного материала (простатэктомия); точной записи нет, есть общая «радикальные операции»",
+			"nameEn": "Histopathology Prostatectomy Specimen",
+			"candidates": [
+				"histopathology-radical-surgery"
+			]
+		},
+		{
+			"source": "Pregled tumora dojke",
+			"reason": "new: В каталоге только «PH Pregled odstranjene dojke»; Moj Lab перечисляет её отдельно (батч 4), значит «tumor dojke» — другая позиция",
+			"nameEn": "Histopathology Breast Tumor Examination",
+			"candidates": [
+				"histopathology-removed-breast-examination"
+			]
+		},
+		{
+			"source": "Pregled uterusa sa adneksama",
+			"reason": "new: С придатками — больший объём материала, чем «Pregled uterusa»; Moj Lab даёт обе позиции",
+			"nameEn": "Histopathology Uterus with Adnexa Examination",
+			"candidates": [
+				"histopathology-uterus-examination"
+			]
+		},
+		{
+			"source": "Influenca A, B, C",
+			"reason": "new: В каталоге только грипп A+B PCR; здесь ещё и тип C — шире",
+			"nameEn": "Influenza A, B, C PCR",
+			"candidates": [
+				"influenza-a-plus-b-pcr",
+				"pcr-multiplex-influenza-plus-sars-cov"
+			]
+		},
+		{
+			"source": "Chlamydia pneumoniae DNK",
+			"reason": "new: Есть только комбинированная панель Mycoplasma + Chlamydia pneumoniae; одиночного ПЦР на C. pneumoniae нет",
+			"nameEn": "Chlamydia pneumoniae PCR",
+			"candidates": [
+				"mycoplasma-chlamydia-pneumoniae-panel"
+			]
+		},
+		{
+			"source": "Cytomegalo virus",
+			"reason": "new: Во вкладке молекулярной диагностики — ПЦР ЦМВ; в каталоге только серология и антиген (ИФ)",
+			"nameEn": "Cytomegalovirus PCR",
+			"candidates": [
+				"cytomegalovirus-antigen-indirect-immunofluorescence"
+			]
+		},
+		{
+			"source": "EBV DNK",
+			"reason": "new: ПЦР ВЭБ в каталоге нет, только серология",
+			"nameEn": "Epstein-Barr Virus PCR",
+			"candidates": []
+		},
+		{
+			"source": "Hepatitis B PCR kvalitativno",
+			"reason": "new: В каталоге HBV только количественный и комбинированный HIV/HCV/HBV качественный",
+			"nameEn": "HBV PCR DNA Qualitative",
+			"candidates": [
+				"hbv-pcr-dna-quantitative",
+				"hiv-hcv-hbv-pcr-qualitative"
+			]
+		},
+		{
+			"source": "Leishmania DNK",
+			"reason": "new: ПЦР на лейшманию нет, только серология и микроскопия",
+			"nameEn": "Leishmania PCR",
+			"candidates": []
+		},
+		{
+			"source": "Malarija DNK",
+			"reason": "new: В каталоге малярия только микроскопией",
+			"nameEn": "Malaria PCR",
+			"candidates": [
+				"malaria",
+				"plasmodium-detection-stained-thick-drop"
+			]
+		},
+		{
+			"source": "M. tuberculosis DNK",
+			"reason": "new: tb-test — тест иммунного ответа по крови (по справке), не ДНК возбудителя",
+			"nameEn": "Mycobacterium tuberculosis PCR",
+			"candidates": [
+				"tb-test"
+			]
+		},
+		{
+			"source": "Parotitis epidemica RNK",
+			"reason": "new: ПЦР на паротит нет, только серология",
+			"nameEn": "Mumps Virus RNA PCR",
+			"candidates": [
+				"mumps-igg-igm-panel"
+			]
+		},
+		{
+			"source": "Toxoplasma gondii DNK",
+			"reason": "new: ПЦР на токсоплазму нет, только серология и окрашенный препарат",
+			"nameEn": "Toxoplasma gondii PCR",
+			"candidates": [
+				"toxoplasma-gondii-detection-stained-preparation"
+			]
+		},
+		{
+			"source": "Mutacija gena PAI-1 844",
+			"reason": "new: Другой полиморфизм PAI-1 (844), а не 4G/5G",
+			"nameEn": "PAI-1 Locus 844",
+			"candidates": [
+				"pai-1-675-4g-5g"
+			]
+		},
+		{
+			"source": "Thrombofilija mutacije panel:",
+			"reason": "new: Состав по сайту: FII G20210A, FV Leiden, MTHFR A1298C, MTHFR C677T (3 гена, 4 локуса). В каталоге 3/3, 3/5, 4/6, 8 SNP — по числу локусов ни один не совпадает; состав thrombophilia-folate-panel неизвестен",
+			"nameEn": "Thrombophilia 3 Genes 4 Loci",
+			"candidates": [
+				"thrombophilia-3-genes-3-loci",
+				"thrombophilia-3-genes-5-loci",
+				"thrombophilia-folate-panel",
+				"thrombophilia-panel-8-snp"
+			]
+		},
+		{
+			"source": "Anemija srpastih ćelija",
+			"reason": "new: Генетического теста на серповидноклеточную анемию нет",
+			"nameEn": "Sickle Cell Anemia Genetic Test",
+			"candidates": []
+		},
+		{
+			"source": "Cistična fibroza cijeli gen",
+			"reason": "new: Весь ген CFTR шире панели 34 мутаций",
+			"nameEn": "Cystic Fibrosis Full CFTR Gene Analysis",
+			"candidates": [
+				"cystic-fibrosis-34-mutations"
+			]
+		},
+		{
+			"source": "Cistična fibroza del508",
+			"reason": "new: Одна мутация del508 уже панели 34 мутаций",
+			"nameEn": "Cystic Fibrosis F508del Mutation",
+			"candidates": [
+				"cystic-fibrosis-34-mutations"
+			]
+		},
+		{
+			"source": "CYP2C9",
+			"reason": "new: Одиночный ген CYP2C9; pharmacogenomic-test — общий тест",
+			"nameEn": "CYP2C9 Genotyping",
+			"candidates": [
+				"pharmacogenomic-test"
+			]
+		},
+		{
+			"source": "HLA tipizacija jednog alela",
+			"reason": "new: Типирование одного аллеля HLA на выбор; конкретные HLA-B27/B5701 уже",
+			"nameEn": "HLA Typing Single Allele",
+			"candidates": [
+				"hla-b27",
+				"hla-b5701"
+			]
+		},
+		{
+			"source": "HLA-A (Klasa 1)",
+			"reason": "new: Типирования локуса HLA-A нет",
+			"nameEn": "HLA-A Typing (Class I)",
+			"candidates": []
+		},
+		{
+			"source": "HLA-B (Klasa 1)",
+			"reason": "new: Типирование локуса HLA-B шире, чем B27/B5701",
+			"nameEn": "HLA-B Typing (Class I)",
+			"candidates": [
+				"hla-b27",
+				"hla-b5701"
+			]
+		},
+		{
+			"source": "HLA-Cw (Klasa 1)",
+			"reason": "new: Типирования локуса HLA-C нет",
+			"nameEn": "HLA-C Typing (Class I)",
+			"candidates": []
+		},
+		{
+			"source": "JAK2-egzon12 mutacija",
+			"reason": "new: JAK2 в каталоге нет",
+			"nameEn": "JAK2 Exon 12 Mutation",
+			"candidates": []
+		},
+		{
+			"source": "JAK2-V617F mutacija",
+			"reason": "new: JAK2 в каталоге нет",
+			"nameEn": "JAK2 V617F Mutation",
+			"candidates": []
+		},
+		{
+			"source": "Marfanov sindrom",
+			"reason": "new: Нет",
+			"nameEn": "Marfan Syndrome Genetic Test",
+			"candidates": []
+		},
+		{
+			"source": "Mediteranska porodična groznica",
+			"reason": "new: Нет",
+			"nameEn": "Familial Mediterranean Fever Genetic Test",
+			"candidates": []
+		},
+		{
+			"source": "PMP22-MLPA test",
+			"reason": "new: Нет",
+			"nameEn": "PMP22 MLPA Test",
+			"candidates": []
+		},
+		{
+			"source": "A-thalassemia (skrining na nasledne bolesti)",
+			"reason": "new: Альфа-талассемии в каталоге нет",
+			"nameEn": "Alpha-Thalassemia Carrier Screening",
+			"candidates": []
+		},
+		{
+			"source": "Sveobuhvatni panel nasljednih bolesti - jedan partner (skrining na nasledne bolesti)",
+			"reason": "new: Расширенный скрининг носительства, один партнёр",
+			"nameEn": "Comprehensive Carrier Screening Panel (One Partner)",
+			"candidates": [
+				"clinical-exome-sequencing"
+			]
+		},
+		{
+			"source": "Sveobuhvatni panel nasljednih bolesti - oba partnera (skrining na nasledne bolesti)",
+			"reason": "new: Расширенный скрининг носительства, пара",
+			"nameEn": "Comprehensive Carrier Screening Panel (Both Partners)",
+			"candidates": []
+		},
+		{
+			"source": "Panel prema vodičima za jednu osobu (skrining na nasledne bolesti)",
+			"reason": "new: Скрининг носительства по рекомендациям, один человек",
+			"nameEn": "Guidelines-Based Carrier Screening Panel (One Person)",
+			"candidates": []
+		},
+		{
+			"source": "Panel prema vodičima za dvije osobe (skrining na nasledne bolesti)",
+			"reason": "new: Скрининг носительства по рекомендациям, двое",
+			"nameEn": "Guidelines-Based Carrier Screening Panel (Two Persons)",
+			"candidates": []
+		},
+		{
+			"source": "Dojka/Ginekološki panel (genetika karcinoma)",
+			"reason": "new: Панель наследственного рака груди/гинекологии; Sentis Hereditary Cancer — другой продукт, объём неизвестен",
+			"nameEn": "Hereditary Breast and Gynecologic Cancer Panel",
+			"candidates": [
+				"sentis-panel-hereditary-cancer",
+				"brca1-brca2-genetic-test"
+			]
+		},
+		{
+			"source": "Dojka/Ginekološki panel prema vodičima (genetika karcinoma)",
+			"reason": "new: Вариант «по рекомендациям»",
+			"nameEn": "Hereditary Breast and Gynecologic Cancer Panel (Guidelines-Based)",
+			"candidates": []
+		},
+		{
+			"source": "Dojka/Ginekološki panel visok rizik (genetika karcinoma)",
+			"reason": "new: Вариант «высокий риск»",
+			"nameEn": "Hereditary Breast and Gynecologic Cancer Panel (High Risk)",
+			"candidates": []
+		},
+		{
+			"source": "Kolorektalni karcinom panel (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Colorectal Cancer Panel",
+			"candidates": []
+		},
+		{
+			"source": "Kolorektalni karcinom panel viskok rizik (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Colorectal Cancer Panel (High Risk)",
+			"candidates": []
+		},
+		{
+			"source": "Nalijedni nepolipozni kolorektalni karcinom (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Non-Polyposis Colorectal Cancer Panel",
+			"candidates": []
+		},
+		{
+			"source": "Nalijedni polipozni kolorektalni karcinom (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Polyposis Colorectal Cancer Panel",
+			"candidates": []
+		},
+		{
+			"source": "Mijelodisplastični sindrom/Leukemija panel (genetika karcinoma)",
+			"reason": "new: Нет; BCR-ABL — одиночная мишень",
+			"nameEn": "Myelodysplastic Syndrome/Leukemia Panel",
+			"candidates": [
+				"bcr-abl-molecular-detection"
+			]
+		},
+		{
+			"source": "Želudac panel (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Gastric Cancer Panel",
+			"candidates": []
+		},
+		{
+			"source": "Prostata panel (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Prostate Cancer Panel",
+			"candidates": []
+		},
+		{
+			"source": "Pankreas panel (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Pancreatic Cancer Panel",
+			"candidates": []
+		},
+		{
+			"source": "Renalni panel (genetika karcinoma)",
+			"reason": "new: Рак почки, а не наследственные болезни почек",
+			"nameEn": "Hereditary Renal Cancer Panel",
+			"candidates": [
+				"sentis-panel-hereditary-kidney-disease"
+			]
+		},
+		{
+			"source": "Koža panel (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Skin Cancer Panel",
+			"candidates": []
+		},
+		{
+			"source": "Familijarni melanom panel (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Familial Melanoma Panel",
+			"candidates": []
+		},
+		{
+			"source": "Paragangliom/feohromacitom panel (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Paraganglioma/Pheochromocytoma Panel",
+			"candidates": []
+		},
+		{
+			"source": "Paratireoidni panel (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Parathyroid Cancer Panel",
+			"candidates": []
+		},
+		{
+			"source": "Tireoidini panel (genetika karcinoma)",
+			"reason": "new: Нет",
+			"nameEn": "Hereditary Thyroid Cancer Panel",
+			"candidates": []
+		},
+		{
+			"source": "Pan karcer panel (genetika karcinoma)",
+			"reason": "new: Общая онкопанель; в каталоге есть только чужие брендовые продукты (Sentis, HerediGEN 33) с неизвестным объёмом",
+			"nameEn": "Pan-Cancer Hereditary Panel",
+			"candidates": [
+				"sentis-panel-hereditary-cancer",
+				"heredigen-33"
+			]
+		},
+		{
+			"source": "Genetski testovi za različite poremećaje dostupni na upit (neurološki, epliepsije, migrene, kardiovaskularni, vezivnog tkiva, rasta i razvoja, endokrinološki, ORL, oftalmološki itd)",
+			"reason": "not_labtest: Не анализ, а объявление: генетические тесты на прочие болезни по запросу",
+			"nameEn": null,
+			"candidates": [
+				"clinical-exome-sequencing"
+			]
+		},
+		{
+			"source": "Veracity Basic",
+			"reason": "new: Продукта Veracity в каталоге нет; есть только Panorama, Silver и общий NIPT",
+			"nameEn": "NIPT Veracity Basic",
+			"candidates": [
+				"non-invasive-prenatal-test-nipt",
+				"nipt-silver",
+				"nipt-panorama-basic"
+			]
+		},
+		{
+			"source": "Veracity Plus",
+			"reason": "new: Продукта Veracity в каталоге нет",
+			"nameEn": "NIPT Veracity Plus",
+			"candidates": [
+				"non-invasive-prenatal-test-nipt"
+			]
+		},
+		{
+			"source": "Veracity Premium",
+			"reason": "new: Продукта Veracity в каталоге нет",
+			"nameEn": "NIPT Veracity Premium",
+			"candidates": [
+				"non-invasive-prenatal-test-nipt"
+			]
+		},
+		{
+			"source": "Veragene",
+			"reason": "new: Продукта Veragene в каталоге нет",
+			"nameEn": "Veragene",
+			"candidates": []
+		},
+		{
+			"source": "Sequentia Basic",
+			"reason": "new: Продукта Sequentia в каталоге нет",
+			"nameEn": "NIPT Sequentia Basic",
+			"candidates": [
+				"non-invasive-prenatal-test-nipt"
+			]
+		},
+		{
+			"source": "Sequentia Plus",
+			"reason": "new: Продукта Sequentia в каталоге нет",
+			"nameEn": "NIPT Sequentia Plus",
+			"candidates": []
+		},
+		{
+			"source": "Sequentia Plus Expert",
+			"reason": "new: Продукта Sequentia в каталоге нет",
+			"nameEn": "NIPT Sequentia Plus Expert",
+			"candidates": []
+		},
+		{
+			"source": "Sequentia Premium",
+			"reason": "new: Продукта Sequentia в каталоге нет",
+			"nameEn": "NIPT Sequentia Premium",
+			"candidates": []
+		},
+		{
+			"source": "Sequentia Safe Kario Plus",
+			"reason": "new: Продукта Sequentia в каталоге нет; на сайте, видимо, дубль 518 с опечаткой Kario/Karyo",
+			"nameEn": "NIPT Sequentia Safe Karyo Plus",
+			"candidates": []
+		},
+		{
+			"source": "Sequentia PremiumGene",
+			"reason": "new: Продукта Sequentia в каталоге нет",
+			"nameEn": "NIPT Sequentia PremiumGene",
+			"candidates": []
+		},
+		{
+			"source": "Sequentia Safe Karyo Plus",
+			"reason": "new: Продукта Sequentia в каталоге нет; дубль 516",
+			"nameEn": "NIPT Sequentia Safe Karyo Plus",
+			"candidates": []
+		},
+		{
+			"source": "Sequentia Safe Full Karyo Plus",
+			"reason": "new: Продукта Sequentia в каталоге нет",
+			"nameEn": "NIPT Sequentia Safe Full Karyo Plus",
+			"candidates": []
+		}
+	],
+	"openQuestions": [],
+	"services": [
+		{
+			"slug": "histopathology-of-breast-tumor",
+			"source": "Pregled tumora dojke"
+		},
+		{
+			"slug": "histopathology-of-uterus-with-bilateral-adnexa",
+			"source": "Pregled uterusa sa adneksama"
+		},
+		{
+			"slug": "frozen-section-histopathology-ex-tempore",
+			"source": "Ex tempore biopsija"
+		},
+		{
+			"slug": "histopathology-of-nephrectomy",
+			"source": "Pregled nefrektomije"
+		},
+		{
+			"slug": "histopathology-of-myoma",
+			"source": "Pregled odstranjenog mioma"
+		},
+		{
+			"slug": "histopathology-of-total-prostatectomy",
+			"source": "Pregled prostaktetomije"
+		}
+	]
+}

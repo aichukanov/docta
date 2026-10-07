@@ -4,8 +4,8 @@ PaddleOCR PP-StructureV3.
 
 Same one-time pipeline load pattern as paddleocr_all_fzocg.py.
 
-Source:  e:/pet/docta.me/прейскуранты/kbkotor/*.pdf
-Output:  data/kbkotor/<slug>/paddleocr/<pdf-basename>.json
+Source:  data/pricelists/risan bolnica/*.pdf
+Output:  data/risan-bolnica/<slug>/paddleocr/<pdf-basename>.json
 
 Usage:
     py -3.12 scripts/kbkotor/paddleocr_kbkotor.py
@@ -19,10 +19,10 @@ if sys.stdout.encoding.lower() not in ('utf-8','utf8'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC_DIR = Path(r'e:/pet/docta.me/прейскуранты/kbkotor').resolve()
-OUT_ROOT = ROOT / 'data' / 'kbkotor'
+SRC_DIR = ROOT / 'data' / 'pricelists' / 'risan bolnica'
+OUT_ROOT = ROOT / 'data' / 'risan-bolnica'
 
-# Map PDF basename → output slug (subfolder under data/kbkotor/)
+# Map PDF basename → output slug (subfolder under data/risan-bolnica/)
 JOBS = {
     'cjenovnik ambulanta za treca lica_compressed.pdf': 'ambulanta-treca-lica',
     'cjenovnik odjeljenja za treca lica_compressed.pdf': 'odjeljenja-treca-lica',

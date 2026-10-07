@@ -1,0 +1,323 @@
+{
+	"schemaVersion": 1,
+	"slug": "pedijatrija-natal-kids-podgorica",
+	"name": "Pedijatrija Natal Kids",
+	"city": "Podgorica",
+	"googlePlaceId": null,
+	"sql": [
+		"server/sql/insert-clinic-pedijatrija-natal-kids-podgorica.sql"
+	],
+	"status": {
+		"generated": "2026-10-06",
+		"appliedLocal": "2026-10-06",
+		"appliedProd": "2026-10-06",
+		"clinicId": 161,
+		"doctorIds": {
+			"predrag-ilic": 1438,
+			"aida-eco": 1439,
+			"dragan-nesovic": 1440
+		},
+		"note": "Новая клиника — педиатрическое отделение Poliklinika Natal (54) по отдельному адресу. googlePlaceId null: ссылка юзера ведёт на place адреса (ChIJ82tzSbSUTRMRjKZRS5OEFtc, «2g II Crnogorskog Bataljona»), не на карточку заведения. Применено 2026-10-06 локально и на проде. id — прод (клиника 161, новые врачи 1438–1440); локально клиника 188, врачи 1439–1441. Прод сверен: /api/services/list по 161 = локальная построчно (25), 15 врачей на 161, на 54 педиатров 0, страницы клиники, врача и трёх новых услуг — 200."
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://poliklinikanatal.me/cjenovnik/",
+			"collected": "2026-10-02",
+			"machineReadable": true,
+			"note": "Раздел cjenovnik-oblasti «pedijatrija» (id 113), 18 позиций, созданы 2026-04-21; 2026-10-06 перепроверено по wp-json modified — без изменений. Снимки — sources/poliklinika-natal-podgorica/2026-10-02.*."
+		},
+		{
+			"type": "website",
+			"ref": "https://poliklinikanatal.me/pod-usluge/<djecija-…|opsta-pedijatrija|preventivni-pregledi|neonatologija>/",
+			"collected": "2026-10-06",
+			"machineReadable": true,
+			"note": "Перечни услуг отделений (CPT pod-usluge, usluge = 18). Дали области «Pregled dječijeg radiologa (jedna regija)» и услуги без цены (hirurg, obrada rane, skidanje konaca, alergo testovi)."
+		},
+		{
+			"type": "website",
+			"ref": "подвал страниц poliklinikanatal.me",
+			"collected": "2026-10-06",
+			"machineReadable": true,
+			"note": "«Pedijatrija Natal Kids, Drugog Crnogorskog bataljona 2H, kod Vezirovog mosta, Podgorica; +382 20 273 274, +382 66 273 274, info@pedijatrijanatal.me; Ponedjeljak – petak 08:00 – 20:00h, Subota 08:00 – 16:00h, Nedjeljom ne radimo». Домен pedijatrijanatal.me не открывается."
+		},
+		{
+			"type": "json-api",
+			"ref": "https://poliklinikanatal.me/wp-json/wp/v2/nas-tim?per_page=100 (usluge = 18) + /nas-tim/<slug>/",
+			"collected": "2026-10-06",
+			"machineReadable": true,
+			"note": "15 педиатров. Биографии есть у Predrag Ilić и Milorada Nešović; у Aida Ećo и Dragan Nešović только специальность. Фото 75.png — общая заглушка. Снимки 2026-10-06.nas-tim-*.html, 2026-10-06.wp-json-nas-tim-new-pediatricians.json."
+		},
+		{
+			"type": "google-maps-link",
+			"ref": "https://maps.app.goo.gl/gAC38fozJ1pBydJRA",
+			"collected": "2026-10-06",
+			"machineReadable": true,
+			"note": "От юзера. Разворачивается в place «2g II Crnogorskog Bataljona», 42.4521563, 19.2627952."
+		}
+	],
+	"coverage": {
+		"prices": "18 позиций с ценами → 17 строк + 5 областей радиолога по 50 € + диапазон 40–50 на УЗИ тазобедренных; 3 услуги без цены; всего 25 строк.",
+		"labTests": "анализов в разделе нет",
+		"doctors": "15: 11 переведены с клиники 54, Milorada Nešović добавлена второй клиникой (остаётся в Doktorica Mica, 113), 3 новых.",
+		"workingHours": "из подвала сайта",
+		"social": "своих соцсетей нет; website — общий сайт поликлиники, logo_url — логотип Natal"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "pediatrician-home-visit",
+			"nameEn": "Pediatrician Home Visit",
+			"nameSr": "Kućna posjeta pedijatra",
+			"categoryIds": [
+				25,
+				30
+			],
+			"specialtyIds": [
+				4
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pediatric-orthopedist-examination",
+			"nameEn": "Pediatric Orthopedist Examination",
+			"nameSr": "Pregled dječjeg ortopeda",
+			"categoryIds": [
+				25,
+				10
+			],
+			"specialtyIds": [
+				4,
+				32
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pediatric-urologist-examination",
+			"nameEn": "Pediatric Urologist Examination",
+			"nameSr": "Pregled dječjeg urologa",
+			"categoryIds": [
+				25,
+				22
+			],
+			"specialtyIds": [
+				4,
+				33
+			]
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Pediatric Examination",
+			"source": "Pregled pedijatra – 50,00 €"
+		},
+		{
+			"nameEn": "Follow-up Pediatric Examination",
+			"source": "Kontrolni pregled pedijatra – 40,00 €"
+		},
+		{
+			"nameEn": "Pediatric Counseling",
+			"source": "Konsultacija pedijatra – 30,00 €"
+		},
+		{
+			"nameEn": "Pediatric Hip Ultrasound",
+			"source": "Ultrazvuk kukova – 40,00 €; «Ultrazvuk kukova specijaliste dječije radiologije» (radiolog, jedna regija – 50,00 €)"
+		},
+		{
+			"nameEn": "Pediatrician Home Visit",
+			"source": "Kućna posjeta pedijatra – 150,00 €"
+		},
+		{
+			"nameEn": "Systematic Infant Examination",
+			"source": "Sistematski pregled novorođenčeta – 60,00 €"
+		},
+		{
+			"nameEn": "Preventive Examination for Kindergarten and School Enrollment",
+			"source": "Sistematski pregled za školu – 60,00 €"
+		},
+		{
+			"nameEn": "Neonatologist Examination",
+			"source": "Pregled neonatologa – 60,00 €"
+		},
+		{
+			"nameEn": "Infant Brain Ultrasound (Neurosonography)",
+			"source": "Ultrazvuk mozga kod beba (CNS) – 50,00 €"
+		},
+		{
+			"nameEn": "Pediatric Pulmonologist Examination",
+			"source": "Pregled dječijeg pulmologa – 120,00 €"
+		},
+		{
+			"nameEn": "Pediatric Cardiologist Examination with Echocardiography",
+			"source": "Pregled dječijeg kardiologa sa ultrazvukom i EKG-om – 120,00 €"
+		},
+		{
+			"nameEn": "Pediatric Gastroenterologist Examination",
+			"source": "Pregled dječijeg gastroenterologa – 120,00 €"
+		},
+		{
+			"nameEn": "Pediatric Neurologist Examination",
+			"source": "Pregled dječijeg neurologa – 100,00 €"
+		},
+		{
+			"nameEn": "Subspecialist Pediatric Physiatrist Examination",
+			"source": "Pregled dječijeg fizijatara – 100,00 €"
+		},
+		{
+			"nameEn": "Pediatric Orthopedist Examination",
+			"source": "Pregled dječijeg ortopeda – 60,00 €"
+		},
+		{
+			"nameEn": "Pediatric Urologist Examination",
+			"source": "Pregled dječijeg urologa – 50,00 €"
+		},
+		{
+			"nameEn": "Pediatric ENT Examination",
+			"source": "ORL pregled djece – 50,00 €"
+		},
+		{
+			"nameEn": "Abdomen Ultrasound",
+			"source": "Pregled dječijeg radiologa (jedna regija) – 50,00 € → область «Ultrazvuk abdomena» (/pod-usluge/djecija-radiologija/)"
+		},
+		{
+			"nameEn": "Ultrasound Neck Glands and Soft Tissue",
+			"source": "Pregled dječijeg radiologa (jedna regija) – 50,00 € → область «Ultrazvuk mekih tkiva vrata» (/pod-usluge/djecija-radiologija/)"
+		},
+		{
+			"nameEn": "Urinary Tract Ultrasound",
+			"source": "Pregled dječijeg radiologa (jedna regija) – 50,00 € → область «Ultrazvuk urotrakta» (/pod-usluge/djecija-radiologija/)"
+		},
+		{
+			"nameEn": "Thyroid Ultrasound",
+			"source": "Pregled dječijeg radiologa (jedna regija) – 50,00 € → область «Ultrazvuk štitaste žlijezde» (/pod-usluge/djecija-radiologija/)"
+		},
+		{
+			"nameEn": "Testicular Ultrasound",
+			"source": "Pregled dječijeg radiologa (jedna regija) – 50,00 € → область «Ultrazvuk testisa» (/pod-usluge/djecija-radiologija/)"
+		},
+		{
+			"nameEn": "Pediatric Surgeon Examination",
+			"source": "Pregled dječijeg hirurga (/pod-usluge/djecija-hirurgija/, без цены)"
+		},
+		{
+			"nameEn": "Wound Care",
+			"source": "Obrada rane (/pod-usluge/djecija-hirurgija/, без цены)"
+		},
+		{
+			"nameEn": "Suture Removal",
+			"source": "Skidanje konaca (/pod-usluge/djecija-hirurgija/, без цены)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "slavica-ostojic",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "snezana-sebek",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "snezana-bugaric",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "dragan-prokic",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "olga-prentic",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "vesna-bardak",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "snezana-perazic",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "aleksandar-sovtic",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "vladislav-vukomanovic",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "sonja-milasinovic",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "marija-kolinovic",
+			"existing": true,
+			"movedFrom": "poliklinika-natal-podgorica"
+		},
+		{
+			"slug": "milorada-nesovic",
+			"existing": true,
+			"position": "Specijalista pedijatrije, subspecijalista neonatologije",
+			"note": "вторая клиника, Doktorica Mica остаётся"
+		},
+		{
+			"slug": "predrag-ilic",
+			"nameSr": "Predrag Ilić",
+			"specialtyIds": [
+				24,
+				33
+			],
+			"position": "Specijalista dječje hirurgije, supspecijalista dječje urologije (gostujući ljekar)",
+			"services": [
+				"Pediatric Urologist Examination"
+			],
+			"hasBio": true
+		},
+		{
+			"slug": "aida-eco",
+			"nameSr": "Aida Ećo",
+			"specialtyIds": [
+				4,
+				68
+			],
+			"position": "Specijalista pedijatrije, subspecijalista neonatologije",
+			"hasBio": false
+		},
+		{
+			"slug": "dragan-nesovic",
+			"nameSr": "Dragan Nešović",
+			"specialtyIds": [
+				10
+			],
+			"position": "Specijalista radiologije, dječji radiolog",
+			"hasBio": false
+		}
+	],
+	"excluded": [
+		{
+			"source": "Alergo testovi (/pod-usluge/djecija-pulmologija/)",
+			"reason": "2026-10-06: без цены и без перечня, какие тесты — сопоставить не с чем."
+		},
+		{
+			"source": "Pregled dječijeg pulmologa i spirometrija (/pod-usluge/djecija-pulmologija/)",
+			"reason": "2026-10-06: спирометрия входит в позицию прайса «Pregled dječijeg pulmologa» 120 €, отдельной строкой не заводим."
+		},
+		{
+			"source": "Pregled dječijeg radiologa (jedna regija) – 50,00 €",
+			"reason": "2026-10-06: общей записи не заводим (как с рентгеном поликлиники) — цена разложена на области, см. services."
+		}
+	],
+	"openQuestions": [
+		"Google-карточка Natal Kids: найти place заведения (не адреса), записать google_place_id и подтянуть отзывы."
+	]
+}

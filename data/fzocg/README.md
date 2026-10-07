@@ -67,7 +67,7 @@ DRG имеет особую схему (`coefficient × base_rate`), поэто�
 
 ## Как обновить, если FZOCG выпустил новую редакцию
 
-1. Положить новый PDF в `e:/pet/docta.me/прейскуранты/fzocg/<категория>/`.
+1. Положить новый PDF в `data/pricelists/fzocg/<категория>/`.
 2. `py -3.12 scripts/fzocg/paddleocr_all_fzocg.py` — добавит новые PDF в paddleocr/, старые пропустит (idempotent).
 3. Прогнать LLM-OCR (мультимодальный Claude — кидать страницы PDF, на выходе `batch-N-base-pages-*.json` + `amendments-raw/*.json`). Для больших документов разбивать на батчи — см. `sekundarna-ostalo/_intermediate/_PLAN.md` как пример.
 4. `py -3.12 scripts/fzocg/paddle_to_items.py`
@@ -141,7 +141,7 @@ mysql ... < server/sql/update-medical-service-tariffs-name-match.sql
 | `scripts/fzocg/plan-pzz-relinks.mjs` | PZZ-тарифы на больничных услугах; ручные решения — `_pzz-relink-overrides.json` |
 
 Независимые проверки, на которых всё держится:
-- **построчный OCR** (`paddleocr/*.items.json`) позиции не путает. Исключение — блок PZZ H01: там сдвинут сам OCR, а БД права;
+- **построчный OCR** (`paddleocr/*.items.json`) позиции не путает. Исключение — блок PZZ H01: там сдвинут сам OCR. В БД имена правы, а цены были взяты из сдвинутого OCR — исправлено 2026-10, см. [pzz-2026-diff.md](pzz-2026-diff.md);
 - **прайс Данило** (`data/clinic-services-import/bolnica-danilo-cetinje/_full.json`): 2790 кодов с названиями, цена = 3 × «ambulanta»;
 - **цены клиник 88 и 137**: = 2,5 × «odjeljenje» (у операций — × «operacija»), = 1,17 × «ambulanta».
 

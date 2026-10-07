@@ -2,12 +2,12 @@
 Build FINAL.json for KBKotor (JZU Specijalna bolnica Risan) treca-lica pricelists.
 
 Inputs:
-  data/kbkotor/<slug>/paddleocr/*.items.json     (paddle, parsed)
+  data/risan-bolnica/<slug>/paddleocr/*.items.json     (paddle, parsed)
   data/fzocg/sekundarna-ostalo/sekundarna-ostalo-FINAL.json   (for name enrichment)
 
 Outputs:
-  data/kbkotor/ambulanta-treca-lica/ambulanta-treca-lica-FINAL.json
-  data/kbkotor/odjeljenja-treca-lica/odjeljenja-treca-lica-FINAL.json
+  data/risan-bolnica/ambulanta-treca-lica/ambulanta-treca-lica-FINAL.json
+  data/risan-bolnica/odjeljenja-treca-lica/odjeljenja-treca-lica-FINAL.json
 
 Notes:
   - KBKotor uses FZOCG sekundarna codes with a third-party multiplier
@@ -91,7 +91,7 @@ def norm_name(s):
 
 
 def build_pricelist(slug, cfg, fzocg_by_code):
-    paddle = json.load(open(ROOT / 'data' / 'kbkotor' / slug / cfg['paddle'], encoding='utf-8'))
+    paddle = json.load(open(ROOT / 'data' / 'risan-bolnica' / slug / cfg['paddle'], encoding='utf-8'))
 
     items = []
     stats = {
@@ -234,7 +234,7 @@ def build_pricelist(slug, cfg, fzocg_by_code):
     payload['items_total'] = len(items)
     payload['items'] = items
 
-    out_path = ROOT / 'data' / 'kbkotor' / slug / f'{slug}-FINAL.json'
+    out_path = ROOT / 'data' / 'risan-bolnica' / slug / f'{slug}-FINAL.json'
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
     return out_path, payload

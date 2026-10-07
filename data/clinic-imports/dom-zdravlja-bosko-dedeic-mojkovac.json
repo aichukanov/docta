@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "slug": "dom-zdravlja-bosko-dedeic-mojkovac",
+  "name": "Dom zdravlja \"Boško Dedeić\" Mojkovac",
+  "city": "Mojkovac",
+  "cityId": 14,
+  "googlePlaceId": null,
+
+  "sql": [
+    "server/sql/insert-clinic-prices-dom-zdravlja-bosko-dedeic-mojkovac.sql"
+  ],
+
+  "status": {
+    "generated": "2026-10-02",
+    "appliedLocal": "2026-10-02",
+    "appliedProd": "2026-10-02",
+    "clinicId": 127,
+    "doctorIds": {},
+    "note": "Запись заведена 2026-10-02 при дополнении справками и санитарными осмотрами. Основной прайс (274 услуги + 36 анализов из PDF 02.10.2025, цены ×3, коды MO_*) применён на прод 2026-05-18 ещё до появления записей; его SQL удалён после выката, рабочие данные — data/clinic-services-import/dom-zdravlja-mojkovac/_progress.json. Поэтому в sql только файл дополнения, а services перечисляет только его 23 строки. clinicId 127 совпадает локально и на проде (сверено /api/clinics/details 2026-10-02); Применено 2026-10-02: VERIFICATION на проде — 23 строки, все outdated, сумма 892.00, всего 297; прод-API /api/services/list отдаёт 297 строк, поиск по новым синонимам («za trenere», «kozmetičke salone») находит нужные услуги. Локально тоже 297/23."
+  },
+
+  "sources": [
+    {
+      "type": "pdf",
+      "ref": "https://dzmojkovac.me/wp-content/uploads/2019/03/02.10.2025.pdf",
+      "collected": "2026-05-09",
+      "machineReadable": false,
+      "note": "Основной прайс для неосигурантов FZOCG («Cjenovnik usluga prema trećim licima koji nijesu osiguranici FZOCG 02.10.2025»), скан 23 стр., 12.5 МБ. Две колонки — Cijena и Cijena×3; взята ×3 (застрахованные не платят). Локальная копия: E:/pet/docta.me/nuxt/data/pricelists/mojkovac dz/02.10.2025.pdf. В этой записи не пересобирался; collected — дата решения по колонкам из обсуждения импорта, точная дата скачивания не записана."
+    },
+    {
+      "type": "pdf",
+      "ref": "https://dzmojkovac.me/wp-content/uploads/2019/03/cjenovnik_ljekarskih_uvjerenja.pdf",
+      "collected": "2026-10-02",
+      "machineReadable": false,
+      "note": "Справки: «ЦЈЕНОВНИК здравствених услуга које се пружају трећим лицима», број 1674, Мојковац 24.05.2021, подпись директора др Милоје Зејак. Скан на кириллице без текстового слоя, 2 стр., прочитан с рендера страниц (текст чёткий, OCR не понадобился). 20 позиций. Документ отменяет прежний цјеновник број 569 од 29.03.2017. Путь /2019/03/ — артефакт переноса на сайт (Last-Modified 2022-04-28), дата прайса — 24.05.2021 из самого документа. Снимок: data/clinic-pricelists/sources/dom-zdravlja-bosko-dedeic-mojkovac/2026-10-02.uvjerenja.pdf (sha256 a81ce223e363e7f3747d959d7d36f917aa874e5794cd73110f248e13793f2a01)."
+    },
+    {
+      "type": "pdf",
+      "ref": "https://dzmojkovac.me/wp-content/uploads/2019/03/Cjenovnik_za_sanitarne_preglede.pdf",
+      "collected": "2026-10-02",
+      "machineReadable": false,
+      "note": "Санитарные осмотры: «CJENOVNIK zdravstvenih usluga koje se pružaju trećim licima za obavezne zdravstvene preglede određenih kategorija zaposlenih (sanitarni pregledi)», broj 1115, Mojkovac 29.06.2016, подпись директорицы dr Ikonija Minić. Скан на латинице, 1 стр., 3 позиции (32/20/15 € — те же цены, что у ДЗ Тиват). Last-Modified 2022-04-28. Снимок: data/clinic-pricelists/sources/dom-zdravlja-bosko-dedeic-mojkovac/2026-10-02.sanitarni.pdf (sha256 ae72e049486d553f837926aa401feb682edb318166504f8bdc5ced6a4971136c)."
+    },
+    {
+      "type": "website",
+      "ref": "https://dzmojkovac.me/?p=147",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "note": "Страница «Cjenovnik usluga». Ссылки на справки и санитарные осмотры ведут на мёртвый mojkovac.mojmail.me — те же файлы лежат по тому же пути на dzmojkovac.me. wp-json работает только через ?rest_route= (обычный /wp-json/ отдаёт HTML главной). Проверка новых прайсов 2026-10-02: пост 147 не менялся с 2025-10-03, основной PDF тот же (12 529 981 байт, Last-Modified 2025-10-03), поиск по media (cjen/cijen/цјен) даёт только три файла 2019/03, среди 79 PDF, загруженных после 2025-10-01, прайсов нет (финансовые отчёты на page_id=3332, запросы о доступе к информации на ?p=6779, списки сотрудников, договоры о дополнительной работе)."
+    }
+  ],
+
+  "coverage": {
+    "prices": "основной прайс 02.10.2025 (274 услуги + 36 анализов, актуальный) + дополнение 2026-10-02: 20 справок (24.05.2021) и 3 санитарных осмотра (29.06.2016), все 23 с is_price_outdated = 1",
+    "certificates": "все 20 позиций цјеновника 1674 заведены, все на существующие записи каталога",
+    "sanitaryExams": "все 3 позиции заведены",
+    "labTests": "36 анализов из основного прайса; дополнение анализов не содержит",
+    "doctors": "не импортировались"
+  },
+
+  "catalogAdditions": [],
+
+  "services": [
+    { "nameEn": "Pre-Employment Medical Certificate", "source": "1.Љекарско увјерење о способности за рад, приликом заснивања радног односа (радна мјеста без повећаног ризика 20,00€ (бесплатно*)" },
+    { "nameEn": "Medical Certificate for General Work", "source": "2.Љекарско увјерење о способноси за рад при запошљавању и раду на радним мјестима без повећаног ризика и отежаним условима рада/предходни,периодични ванредни 35,00 €" },
+    { "nameEn": "Medical Certificate for High Risk and Difficult Working Conditions", "source": "3.Љекарско увјерење о способноси за рад при запошљављању и раду на радним мјестима са повећаним ризиком и отежаним условима рада предходни, периодични ,ванредни/систематски 50,00€" },
+    { "nameEn": "Medical Certificate for Difficult Working Conditions Without High Risk", "source": "4. Љекарско увјерење о способноси за рад при запошљавању и раду на радним мјестима са отежаним условима рада-предходни, периодични,ванредни 40,00 €" },
+    { "nameEn": "Medical Certificate for Class A and B Drivers", "source": "5.Љекарско увјерење о способноси/контролни здравствени преглед, за управљање моторним возилом у друмском саобраћају, А и Б категорија 30,00 €" },
+    { "nameEn": "Driver Class C D E Health Examination", "source": "6.Љекарско увјерење о способноси/контролни здравствени преглед, за управљање моторним возилом у друмском саобраћају, Ц, Д и Е категорије спец.возила и такси возилом 40,00 €" },
+    { "nameEn": "Medical Certificate for Driving Instructor Category B, C, D, E", "source": "7.Љекарско увјерење о способноси/контролни здравствени преглед за посао инструктора Б, Ц, Д и Е категорије 60,00 €" },
+    { "nameEn": "Medical Certificate for Firearms Possession", "source": "8. Љекарско увјерење о подобности за посједовање ватреног оружја 50,00 €" },
+    { "nameEn": "Medical Certificate for Military Service", "source": "9. Љекарско увјерење о способноси за обављање службе у Војсци Црне Горе 50,00 €" },
+    { "nameEn": "Medical Certificate for Underage Marriage", "source": "10. Љекарско увјерење за склапање брака малољетне особе 25,00 €" },
+    { "nameEn": "Medical Certificate for Child Adoption", "source": "11. Љекарско увјерење о подобности за усвајање дјетета 25,00 €" },
+    { "nameEn": "Medical Certificate for Study Abroad and Visa", "source": "12. Љекарско увјерење за даље школовање и боравак у иностранству 25,00 €" },
+    { "nameEn": "Medical Certificate for Lifeguards Divers and Boat Operators", "source": "13. Љекарско увјерење за спасиоце , рониоце и управљање чамцем 35,00 €" },
+    { "nameEn": "Medical Certificate for Maritime Workers", "source": "14. Љекарско увјерење за рад у воденом саобраћају (поморци) 110,00 €" },
+    { "nameEn": "Medical Certificate for Ionizing Radiation Workers", "source": "15. Љекарско увјерење-предходни и периодични преглед радника професионално изложених јонизирајућим зрачењима 85,00 €" },
+    { "nameEn": "Medical Certificate for Court Expert", "source": "16. Љекарско увјерење за посао судског вјештака 35,00 €" },
+    { "nameEn": "Medical Certificate for Life Insurance", "source": "17. Љекарско увјерење ради животног осигурања 40,00 €" },
+    { "nameEn": "Medical Certificate for Collective Accommodation", "source": "18. Љекарско увјерење за колективни смјештај 5,00 €" },
+    { "nameEn": "Medical Certificate for Athletes", "source": "19. Љекарско увјерење за утврђивање здравствене способности спортисте 25,00 €" },
+    { "nameEn": "Medical Certificate for Sports Referees", "source": "20. Љекарско увјерење за тренере, спортске судије и друге раднике у спорту 40,00 €" },
+    { "nameEn": "Sanitary Examination for Food Industry and Water Supply Workers", "source": "1. Za zaposlene koji rade u proizvodnji i prometu hrane ( ugostitelji, trgovci i druga lica u vezi sa hranom), i na poslovima snadbijevanja građana vodom za piće -------32,00€." },
+    { "nameEn": "Sanitary Examination for Healthcare and Educational Workers", "source": "2.Za zaposlene koji rade u zdravstvenim ustanovama u kojima se vrše zdravstveni. pregledi, njega, ishrana, u odjeljenjima sa povećanim rizikom, u preškolskim, školskim i drugim ustanovama, ustanovama za stara lica, u proizvodnji i prometu ljekova i prevozu hrane.---20.00€" },
+    { "nameEn": "Sanitary Examination for Hairdressers and Service Personnel", "source": "3. Za zaposlene koji rade na zdravstvenim pegledima u ambulantama i laboratorijama, na održavanju higijene u odjeljenjima sa povećanim rizikom i na poslovima higijenske njege građana ( frizerski i kozmetički saloni i dr.).---15,00€" }
+  ],
+
+  "doctors": [],
+
+  "excluded": [],
+
+  "openQuestions": [
+    "Позиции 1 и 2 подтверждают, что Pre-Employment Medical Certificate (4976) и Medical Certificate for General Work (4524) — разные услуги: в одном прайсе 20 € и 35 €. Сопоставлено как у ДЗ Котор (4976 = 20 €, 4524 = 35 €). Пометка в data/service-names/review-29.json «похоже на дубль, сверить» этим снимается. Зато у ДЗ Тиват 4524 стоит за 20 €, а 35 € — отдельная запись 7414 «Medical Certificate Low-Risk Work with Examination»: похоже, 7414 — дубль 4524, а тиватская 4524 по смыслу — 4976. Решить при следующем ревью каталога.",
+    "Позиция 6 (Ц, Д, Е, спецвозила и такси) сопоставлена с 7418 «Driver Class C D E Health Examination» — пара к 7417 (A и Б), как у Тивата. Рядом есть 4529 «Medical Certificate for Professional Drivers» (Котор, Бело-Поле) с тем же смыслом — кандидат на слияние с 7418.",
+    "Позиция 20 (тренеры, спортивные судьи, другие работники спорта) сопоставлена с 7846 «Medical Certificate for Sports Referees» (Бело-Поле). 4978 «Medical Certificate for Sports Referees and Other Purposes» (Котор, «za druge potrebe (sportske sudije i dr.)») — сборная «для прочих целей», к спортивной справке Мойковца подходит хуже.",
+    "У записи 7435 опечатка в name_sr/name_sr_cyrl: «Sanitarni pregled frizera i nasturavog osoblja» / «…настуравог особља» — слова «nasturavog» в сербском нет. По составу позиции (Мойковац, Тиват: амбулатории, лаборатории, уборка в отделениях повышенного риска, парикмахерские и косметические салоны) правильнее «Sanitarni pregled frizera i uslužnog osoblja» или шире. Каталог в этом SQL не правился."
+  ]
+}

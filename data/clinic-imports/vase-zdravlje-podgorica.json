@@ -1,0 +1,1330 @@
+{
+	"schemaVersion": 1,
+	"slug": "vase-zdravlje-podgorica",
+	"name": "Vaše zdravlje",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": null,
+	"sql": [
+		"server/sql/insert-clinic-prices-vase-zdravlje-podgorica.sql",
+		"server/sql/update-clinic-prices-vase-zdravlje-podgorica-dobutamine.sql",
+		"server/sql/update-clinic-prices-vase-zdravlje-podgorica-disputed.sql"
+	],
+	"status": {
+		"generated": "2026-10-02",
+		"appliedLocal": "2026-10-05",
+		"appliedProd": "2026-10-05",
+		"clinicId": 39,
+		"doctorIds": {},
+		"note": "Первая версия insert-файла применена локально и на проде 2026-10-05. При сверке нашлась ошибка: «Dobutaminski test» был слит в Stress Echocardiography, хотя есть своя запись Pharmacological Stress Echo Test Dobutamine (id 3295). Insert-файл исправлен; update-clinic-prices-vase-zdravlje-podgorica-dobutamine.sql применён локально и на проде 2026-10-06. Прод сверен по API: 88 услуг, сумма 3070.00, 5 диапазонов, построчно совпадает с insert-файлом; 147 анализов, сумма 1816.00, outdated 0, построчно; синонимы LA1 / Holter TA / Hijama / Hidžama / Dobutaminski ищутся. Карточку клиники и врачей не трогали. Спорные позиции закрыты 2026-10-06: update-clinic-prices-vase-zdravlje-podgorica-disputed.sql (hs Troponin → troponin 10.00 + синоним; «posebnim uslovima» — та же запись, что «povećanim rizikom», только синоним). До применения прод = локаль: 88 услуг / 3070.00, 147 анализов / 1816.00; после — 148 анализов / 1826.00. openQuestions пуст.",
+		"appliedDetail": {
+			"insert-clinic-prices-vase-zdravlje-podgorica.sql": {
+				"local": "2026-10-05",
+				"prod": "2026-10-05"
+			},
+			"update-clinic-prices-vase-zdravlje-podgorica-dobutamine.sql": {
+				"local": "2026-10-06",
+				"prod": "2026-10-06"
+			},
+			"update-clinic-prices-vase-zdravlje-podgorica-disputed.sql": {
+				"local": "2026-10-06",
+				"prod": "2026-10-06"
+			}
+		}
+	},
+	"sources": [
+		{
+			"type": "html",
+			"ref": "https://vasezdravlje.me/cjenovnik/",
+			"collected": "2026-10-02",
+			"machineReadable": true,
+			"note": "WordPress page 684. Дата актуальности: modified 2026-04-22T08:44:10 из https://vasezdravlje.me/wp-json/wp/v2/pages/684?_fields=modified (корень /wp-json/ и sitemap отдают 403, а конкретная страница по id отвечает 200; date 2018-11-15). В футере «Copyright © 2020» — это не дата прайса. 255 строк с ценой (у трёх нет знака €). У «produženje vozačke dozvole … – 25€ 20€» число 25 обёрнуто в <s> — зачёркнуто, действующая цена 20. Снимки: data/clinic-pricelists/sources/vase-zdravlje-podgorica/2026-10-02.html (страница целиком) и 2026-10-02.json (content из wp-json)."
+		}
+	],
+	"coverage": {
+		"prices": "88 строк clinic_medical_services из 102 строк источника (несколько строк на одну запись → диапазон; «posebnim uslovima» — на той же записи, что «povećanim rizikom»)",
+		"labTests": "148 строк clinic_lab_tests (147 из insert-файла + hs Troponin из disputed-файла), все на существующие записи каталога",
+		"doctors": "не трогали"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"nameEn": "Home Therapy Administration",
+			"nameSr": "Aplikacija terapije u kućnim uslovima",
+			"slug": "home-therapy-administration",
+			"categories": [
+				29,
+				30
+			],
+			"specialties": [
+				45
+			],
+			"reason": "общей записи нет: есть только патронажные IM/IV на дому «город / периферия» (4135–4138) с зонами, которых в прайсе нет",
+			"prodId": 8335
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Occupational Medicine Specialist Examination",
+			"nameSr": "Pregled specijaliste medicine rada",
+			"slug": "occupational-medicine-specialist-examination",
+			"categories": [
+				9
+			],
+			"specialties": [
+				50
+			],
+			"reason": "осмотра специалиста медицины труда в каталоге нет (есть только справки)",
+			"prodId": 8336
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Follow-up Occupational Medicine Specialist Examination",
+			"nameSr": "Kontrolni pregled specijaliste medicine rada",
+			"slug": "follow-up-occupational-medicine-specialist-examination",
+			"categories": [
+				9
+			],
+			"specialties": [
+				50
+			],
+			"reason": "пара к первичному осмотру",
+			"prodId": 8337
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Residual Work Capacity Assessment",
+			"nameSr": "Pregled za ocjenu preostale radne sposobnosti",
+			"slug": "residual-work-capacity-assessment",
+			"categories": [
+				9
+			],
+			"specialties": [
+				50
+			],
+			"reason": "записи нет; обычный (35) и консилиумный (50) осмотр слиты в диапазон 35–50",
+			"prodId": 8338
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Medical Certificate for Firefighters",
+			"nameSr": "Ljekarsko uvjerenje za posao vatrogasca",
+			"slug": "medical-certificate-for-firefighters",
+			"categories": [
+				9
+			],
+			"specialties": [
+				45,
+				50
+			],
+			"reason": "общая с dom-zdravlja-podgorica — определение скопировано дословно, чтобы ON DUPLICATE KEY свёл их в одну запись",
+			"prodId": 8301,
+			"note": "2026-10-06: в каталоге одна запись (локально id 8331, на проде 8301), её держат vase-zdravlje и соседний импорт — дубля не возникло."
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Medical Certificate for Unarmed Security Personnel",
+			"nameSr": "Ljekarsko uvjerenje za rad u obezbjeđenju bez nošenja oružja",
+			"slug": "medical-certificate-for-unarmed-security-personnel",
+			"categories": [
+				9
+			],
+			"specialties": [
+				45,
+				50
+			],
+			"reason": "общая с dom-zdravlja-podgorica — определение скопировано дословно, чтобы ON DUPLICATE KEY свёл их в одну запись",
+			"prodId": 8299,
+			"note": "2026-10-06: в каталоге одна запись (локально id 8329, на проде 8299), её держат vase-zdravlje и соседний импорт — дубля не возникло."
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Medical Certificate for Traffic School Enrollment",
+			"nameSr": "Ljekarsko uvjerenje za upis u srednju školu saobraćajnog smjera",
+			"slug": "medical-certificate-for-traffic-school-enrollment",
+			"categories": [
+				9
+			],
+			"specialties": [
+				45,
+				50
+			],
+			"reason": "общая с dom-zdravlja-podgorica — определение скопировано дословно, чтобы ON DUPLICATE KEY свёл их в одну запись",
+			"prodId": 8300,
+			"note": "2026-10-06: в каталоге одна запись (локально id 8330, на проде 8300), её держат vase-zdravlje и соседний импорт — дубля не возникло."
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Medical Certificate Copy",
+			"nameSr": "Prepis ljekarskog uvjerenja",
+			"slug": "medical-certificate-copy",
+			"categories": [
+				9
+			],
+			"specialties": [
+				45
+			],
+			"reason": "общая с nasa-medicina-podgorica — определение скопировано дословно, чтобы ON DUPLICATE KEY свёл их в одну запись",
+			"prodId": 8260,
+			"note": "2026-10-06: в каталоге одна запись (локально id 8290, на проде 8260), её держат vase-zdravlje и соседний импорт — дубля не возникло."
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Psychological Counseling",
+			"nameSr": "Psihološko savjetovanje",
+			"slug": "psychological-counseling",
+			"categories": [],
+			"specialties": [
+				22
+			],
+			"reason": "общая с nasa-medicina-podgorica — определение скопировано дословно, чтобы ON DUPLICATE KEY свёл их в одну запись",
+			"prodId": 8261,
+			"note": "2026-10-06: в каталоге одна запись (локально id 8291, на проде 8261), её держат vase-zdravlje и соседний импорт — дубля не возникло."
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Gynecological Examination with Swab Collection",
+			"nameSr": "Ginekološki pregled sa uzimanjem briseva",
+			"slug": "gynecological-examination-with-swab-collection",
+			"categories": [
+				7
+			],
+			"specialties": [
+				5
+			],
+			"reason": "есть только осмотр (Gynecological Specialist Examination) и отдельно взятие мазков (Gynecological Swab Collection); у клиники это одна позиция со своей ценой",
+			"prodId": 8339
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Follow-up Hematologist Examination",
+			"nameSr": "Kontrolni pregled hematologa",
+			"slug": "follow-up-hematologist-examination",
+			"categories": [
+				9
+			],
+			"specialties": [
+				15
+			],
+			"reason": "у Hematologist Examination (sort_order 1) нет пары-контроля",
+			"prodId": 8340
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Psychiatrist Home Visit",
+			"nameSr": "Kućna posjeta psihijatra",
+			"slug": "psychiatrist-home-visit",
+			"categories": [
+				30
+			],
+			"specialties": [
+				21
+			],
+			"reason": "домашние визиты в каталоге только общие или по зонам; у клиники отдельная цена по специальности",
+			"prodId": 8341
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Neurologist Home Visit",
+			"nameSr": "Kućna posjeta neurologa",
+			"slug": "neurologist-home-visit",
+			"categories": [
+				30,
+				21
+			],
+			"specialties": [
+				8
+			],
+			"reason": "как у психиатра",
+			"prodId": 8342
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "X-Ray per Segment",
+			"nameSr": "Rendgenski snimak po segmentu",
+			"slug": "x-ray-per-segment",
+			"categories": [
+				3
+			],
+			"specialties": [
+				10
+			],
+			"reason": "в каталоге рентген только по конкретным областям; клиника даёт единую цену «за сегмент + описание», раскладывать её по 20 областям значило бы угадывать, какие снимают",
+			"prodId": 8343
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Home X-Ray",
+			"nameSr": "Rendgenski snimak u kućnim uslovima",
+			"slug": "home-x-ray",
+			"categories": [
+				3,
+				30
+			],
+			"specialties": [
+				10
+			],
+			"reason": "выездного рентгена в каталоге нет",
+			"prodId": 8344
+		},
+		{
+			"table": "medical_services",
+			"nameEn": "Home Blood Draw",
+			"nameSr": "Uzimanje krvi u kućnim uslovima",
+			"slug": "home-blood-draw",
+			"categories": [
+				28,
+				29,
+				30
+			],
+			"specialties": [
+				2
+			],
+			"reason": "есть только Venous Blood Draw в кабинете",
+			"prodId": 8345
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Family Medicine Examination",
+			"source": "Pregled specijaliste porodične medicine – 20€"
+		},
+		{
+			"nameEn": "Follow-up Family Medicine Examination",
+			"source": "Kontrolni pregled specijaliste porodične medicine  – 15€"
+		},
+		{
+			"nameEn": "Home Visit Examination",
+			"source": "Prva kućna posjeta specijaliste – 50€"
+		},
+		{
+			"nameEn": "Home Therapy Administration",
+			"source": "Davanje terapije u kući -10€/dan (nije uključena cijena medikamenata)",
+			"note": "2026-10-06: несколько строк на одну запись — оставлено так: обе строки — 10 €, это одна услуга («davanje» и «aplikacija» терапии на дому)."
+		},
+		{
+			"nameEn": "Home Therapy Administration",
+			"source": "Aplikacija terapije u kućnim uslovima – 10 € (nije uključena cijena medikamenata)"
+		},
+		{
+			"nameEn": "Intramuscular Injection",
+			"source": "Intramuskularna injekcija (uključuje 1 lijek) – 5€",
+			"note": "2026-10-06: несколько строк на одну запись — оставлено так: цена зависит от числа лекарств (1 / 2+) — вариант одной услуги, диапазон 5–10."
+		},
+		{
+			"nameEn": "Intramuscular Injection",
+			"source": "Intramuskularna injekcija (uključuje 2+ lijeka) – 10€"
+		},
+		{
+			"nameEn": "Infusion Therapy",
+			"source": "Infuzija – 10 €",
+			"note": "2026-10-06: несколько строк на одну запись — оставлено так: цена зависит от состава инфузии — варианты одной услуги, диапазон 10–25."
+		},
+		{
+			"nameEn": "Infusion Therapy",
+			"source": "Infuzija manitol – 10 €"
+		},
+		{
+			"nameEn": "Infusion Therapy",
+			"source": "Infuzija (uključuje 1-2 lijeka) – 15€"
+		},
+		{
+			"nameEn": "Infusion Therapy",
+			"source": "Infuzija (uključuje 3 lijeka ) – 20 €"
+		},
+		{
+			"nameEn": "Infusion Therapy",
+			"source": "Infuzija (uključuje antibiotik) – 20€"
+		},
+		{
+			"nameEn": "Infusion Therapy",
+			"source": "Infuzija (uključuje 2+ lijeka i antibiotik ) – 25€"
+		},
+		{
+			"nameEn": "Occupational Medicine Specialist Examination",
+			"source": "prvi pregled specijaliste medicine rada – 30€"
+		},
+		{
+			"nameEn": "Follow-up Occupational Medicine Specialist Examination",
+			"source": "kontrolni pregled specijaliste medicine rada – 25€"
+		},
+		{
+			"nameEn": "Residual Work Capacity Assessment",
+			"source": "pregled za ocjenu preostale radne sposobnosti – 35€",
+			"note": "2026-10-06: несколько строк на одну запись — оставлено так: обычный и консилиумный осмотр — диапазон 35–50; отдельной записи для консилиума в каталоге нет и под одну клинику не заводим."
+		},
+		{
+			"nameEn": "Residual Work Capacity Assessment",
+			"source": "konzilijarni pregld za ocjenu preostale radne sposobnosti -50€"
+		},
+		{
+			"nameEn": "Medical Certificate for Athletes",
+			"source": "do 10 godina – 10€",
+			"note": "2026-10-06: несколько строк на одну запись — оставлено так: цена по возрасту (до 10 / 11–17 / 18+) — диапазон 10–20, как и у dom-zdravlja-podgorica (10 / 15)."
+		},
+		{
+			"nameEn": "Medical Certificate for Athletes",
+			"source": "11-17 godina – 15€"
+		},
+		{
+			"nameEn": "Medical Certificate for Athletes",
+			"source": "18+ godina – 20€"
+		},
+		{
+			"nameEn": "Medical Certificate for Class A and B Drivers",
+			"source": "ljekarsko uvjerenje za polaganje A,B kategorije – 20€"
+		},
+		{
+			"nameEn": "Medical Certificate for Professional Drivers",
+			"source": "ljekarsko  uvjerenje za polaganje C,D,E kategorije – 25€",
+			"note": "2026-10-06: C, D, E — профессиональные категории, как у dom-zdravlja-podgorica («B, C, D, E profesionalci»); A, B — в Class A and B Drivers. Вопрос закрыт."
+		},
+		{
+			"nameEn": "Medical Certificate for Driving License Renewal Category A, B, C, D, E",
+			"source": "ljekarsko uvjerenje za produženje vozačke dozvole A,B,C,D,E kategorije – 25€   20€"
+		},
+		{
+			"nameEn": "Medical Certificate for General Work",
+			"source": "radna mjesta bez povećanog rizika (opšta zdravstvene sposobnost: službenici, konobari, kuvari, administrativni poslovi …) – 20€"
+		},
+		{
+			"nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+			"source": "radna mjesta sa posebnim uslovima – 35€",
+			"note": "2026-10-06, перенесено из excluded. Та же запись, что у соседней строки «povećanim rizikom (prethodni pregled) – 35€»: в прайсе Dom zdravlja Podgorica это одна категория — «radnim mjestima sa posebnim uslovima rada odnosno povećanim rizikom». Строка клиники на записи уже есть с той же ценой 35, вторую положить нельзя (UNIQUE clinic + service), цена не меняется; формулировка клиники добавлена синонимом (sr, sr-cyrl)."
+		},
+		{
+			"nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+			"source": "radna mjesta sa povećanim rizikom (prethodni pregled) – 35€"
+		},
+		{
+			"nameEn": "Medical Certificate for Military Service",
+			"source": "obavljanje službe u Vojsci Crne Gore -35€"
+		},
+		{
+			"nameEn": "Medical Certificate for Firefighters",
+			"source": "vatrogasca-35€"
+		},
+		{
+			"nameEn": "Medical Certificate for Security Personnel",
+			"source": "zaštitara (obezbjeđenje uz nošenje oružja)-35€"
+		},
+		{
+			"nameEn": "Medical Certificate for Unarmed Security Personnel",
+			"source": "portira (obezbjeđenje bez nošenje oružja)-20€"
+		},
+		{
+			"nameEn": "Medical Certificate for Maritime Workers",
+			"source": "pomorca – 85€"
+		},
+		{
+			"nameEn": "Medical Certificate for Court Expert",
+			"source": "sudskog vještaka – 35€"
+		},
+		{
+			"nameEn": "Medical Certificate for Firearms Possession",
+			"source": "posjedovanje vatrenog oružja – 35€"
+		},
+		{
+			"nameEn": "Medical Certificate for Driving Instructor Category B, C, D, E",
+			"source": "upravljanje motornim vozilom za instruktore vožnje – 30€"
+		},
+		{
+			"nameEn": "Medical Certificate for Lifeguards",
+			"source": "dobijanje licence za spasioca na vodi -30€"
+		},
+		{
+			"nameEn": "Medical Certificate for Divers",
+			"source": "ronioca-profesionalca, rukovodioca i instruktora ronjenja-30€"
+		},
+		{
+			"nameEn": "Medical Certificate for Boat Operation up to 12 Meters",
+			"source": "upravitelja čamca-30€"
+		},
+		{
+			"nameEn": "Medical Certificate for Traffic School Enrollment",
+			"source": "upis u srednju školu-saobraćajnog smjera -25€"
+		},
+		{
+			"nameEn": "Medical Certificate for Sports Referees",
+			"source": "sportske sudije-35€"
+		},
+		{
+			"nameEn": "Medical Certificate for Residence and Work in Montenegro",
+			"source": "boravak i rad u Crnoj Gori-20€"
+		},
+		{
+			"nameEn": "Medical Certificate for Elderly Home Accommodation",
+			"source": "kolektivni smještaj za za ustanove socijalnog staranja-20€"
+		},
+		{
+			"nameEn": "Medical Certificate for Child Adoption",
+			"source": "podobnost za usvajanje djeteta, starateljstvo-20€"
+		},
+		{
+			"nameEn": "Medical Certificate for Underage Marriage",
+			"source": "sklapanje braka za maloljetne osobe-20€;"
+		},
+		{
+			"nameEn": "Medical Certificate for Life Insurance",
+			"source": "radi životnog osiguranja-20€;"
+		},
+		{
+			"nameEn": "Medical Certificate for University Enrollment",
+			"source": "upis na fakultet – 15€"
+		},
+		{
+			"nameEn": "Medical Certificate for Study Abroad and Visa",
+			"source": "dalji nastavak školovanja i boravak u inostranstvu, izdavanje viza -15€"
+		},
+		{
+			"nameEn": "Medical Certificate for Collective Accommodation",
+			"source": "kolektivni smještaj za đake i studente – 15€"
+		},
+		{
+			"nameEn": "Medical Certificate Copy",
+			"source": "izdavanje duplikata uvjerenja-10€"
+		},
+		{
+			"nameEn": "Gynecological Specialist Examination",
+			"source": "Ginekološko-akušerski pregled  — 30,00 €"
+		},
+		{
+			"nameEn": "Gynecological Ultrasound",
+			"source": "Ultrazvučni pregled –30,00 €"
+		},
+		{
+			"nameEn": "Gynecological Specialist Examination with Ultrasound",
+			"source": "Ginekološko-akušerski pregled  sa ultrazvukom—50 €"
+		},
+		{
+			"nameEn": "Gynecological Examination with Swab Collection",
+			"source": "Ginekološki pregled sa uzivamnje briseva—35 €"
+		},
+		{
+			"nameEn": "PAP Test with Smear Collection",
+			"source": "PAPA test I -15€"
+		},
+		{
+			"nameEn": "Internist Examination",
+			"source": "Pregled interniste – 40€"
+		},
+		{
+			"nameEn": "Follow-up Internist Examination",
+			"source": "Kontrolni pregled interniste – 30€"
+		},
+		{
+			"nameEn": "Cardiologist Examination",
+			"source": "pregled kardiologa – 40"
+		},
+		{
+			"nameEn": "Follow-up Cardiologist Examination",
+			"source": "Kontrolni pregled kardiologa – 30"
+		},
+		{
+			"nameEn": "ECG",
+			"source": "Elektrokardiografija (EKG)- 5€"
+		},
+		{
+			"nameEn": "Holter Blood Pressure 24h",
+			"source": "Holter krvnog pritiska 24 sata (holter TA) – 40€"
+		},
+		{
+			"nameEn": "Holter ECG 24h",
+			"source": "Holter rada srca 24 sata (holter EKG) – 40€"
+		},
+		{
+			"nameEn": "Echocardiography (Heart Ultrasound)",
+			"source": "Ultrazvuk srca (UZV srca) – 40€"
+		},
+		{
+			"nameEn": "Cardiologist Examination with Ultrasound",
+			"source": "Pregled kardiologa i UZ srca – 60€"
+		},
+		{
+			"nameEn": "Ergometry Stress Test",
+			"source": "Test fizičkog opterećenja (TFO)-ergometrija – 60€"
+		},
+		{
+			"nameEn": "Pharmacological Stress Echo Test Dobutamine",
+			"source": "Dobutaminski test – 80€"
+		},
+		{
+			"nameEn": "Stress Echocardiography",
+			"source": "Stres ehokardiografski test (stres EHO) – 80€"
+		},
+		{
+			"nameEn": "First Endocrinologist Examination",
+			"source": "Prvi pregled endokrinologa – 40€"
+		},
+		{
+			"nameEn": "Follow-up Endocrinologist Examination",
+			"source": "Kontrolni pregled endokrinologa – 30€"
+		},
+		{
+			"nameEn": "Musculoskeletal Ultrasound",
+			"source": "Ultratvučni pregled koštano-zglobnog sistem (rame, lakat, koljeno,skočni zglob) – 40€",
+			"note": "2026-10-06: несколько строк на одну запись — оставлено так: одна и та же строка дважды (во второй опечатка «Ultratvučni»), обе 40 €."
+		},
+		{
+			"nameEn": "Musculoskeletal Ultrasound",
+			"source": "Ultrazvučni pregled koštano-zglobnog sistem (rame, lakat, koljeno,skočni zglob) – 40€"
+		},
+		{
+			"nameEn": "First Rheumatologist Examination",
+			"source": "Prvi pregled reumatologa (uključuje aplikaciju lijeka u zglob) – 40€"
+		},
+		{
+			"nameEn": "Follow-up Rheumatologist Examination",
+			"source": "Kontrolni pregled reumatologa (uključuje aplikaciju lijeka u zglob)  – 30€"
+		},
+		{
+			"nameEn": "Hematologist Examination",
+			"source": "Prvi pregled hematologa – 50€"
+		},
+		{
+			"nameEn": "Follow-up Hematologist Examination",
+			"source": "Kontrolni pregled hematologa – 40€"
+		},
+		{
+			"nameEn": "Psychotherapy",
+			"source": "Tretman psihoterapeuta – 40€"
+		},
+		{
+			"nameEn": "First Psychiatrist Examination",
+			"source": "Prvi pregled psihijatra – 50€"
+		},
+		{
+			"nameEn": "Follow-up Psychiatrist Examination",
+			"source": "Kontrolni pregled psihijatra – 50€"
+		},
+		{
+			"nameEn": "First Neurologist Examination",
+			"source": "Prvi pregled neurologa – 40€"
+		},
+		{
+			"nameEn": "Follow-up Neurologist Examination",
+			"source": "Kontrolni pregled neurologa – 30€"
+		},
+		{
+			"nameEn": "Psychiatrist Home Visit",
+			"source": "Kućna posjeta psihijatra – 70€"
+		},
+		{
+			"nameEn": "Neurologist Home Visit",
+			"source": "Kućna posjeta neurologa – 70€"
+		},
+		{
+			"nameEn": "Psychological Counseling",
+			"source": "Tretman psihologa – 30€",
+			"note": "2026-10-06: несколько строк на одну запись — оставлено так: «Tretman psihologa» не ложится однозначно ни на Psychotherapy, ни на Family Psychological Treatment — остаётся диапазоном 20–30 на консультации психолога."
+		},
+		{
+			"nameEn": "Psychological Counseling",
+			"source": "Savjetovanje psihologa-20€"
+		},
+		{
+			"nameEn": "Psychological Testing",
+			"source": "Psihološka dijagnostika-45€"
+		},
+		{
+			"nameEn": "Career Counseling and Vocational Guidance",
+			"source": "Profesionalna orijetacija-45€"
+		},
+		{
+			"nameEn": "Ultrasound Thyroid and Parathyroid Glands",
+			"source": "Ultrazvučni pregled štitne i paraštitne žlijezde – 40€"
+		},
+		{
+			"nameEn": "Abdomen Ultrasound",
+			"source": "Ultrazvučni pregled abdomena (jetre, žučne kese, žučnih puteva, gušterače, slezene, bubrega, nadbubrega, mokraćne bešike i limfnih žlijezda abdomena) – 40€"
+		},
+		{
+			"nameEn": "Urinary Tract Ultrasound",
+			"source": "Ultrazvučni pregled bubrega, nadbubrega, mokraćne bešike i prostate – 40€"
+		},
+		{
+			"nameEn": "Breast Ultrasound",
+			"source": "Ultrazvučni pregled dojki – 50€"
+		},
+		{
+			"nameEn": "Testicular Ultrasound",
+			"source": "Ultrazvučni pregled testisa – 40€"
+		},
+		{
+			"nameEn": "Soft Tissue Ultrasound",
+			"source": "Ultrazvučni pregled mekih tkiva – 40€"
+		},
+		{
+			"nameEn": "Ultrasound Lymph Nodes",
+			"source": "Ultrazvučni pregled limfnih žlijezda (prepone, pazuha, potključne i natkljčne regije) – 50€"
+		},
+		{
+			"nameEn": "Doppler Neck Blood Vessels",
+			"source": "dopler krvnih sudova vrata – 50 €"
+		},
+		{
+			"nameEn": "Doppler Upper Extremity Blood Vessels",
+			"source": "dopler krvnih sudova gornjih ekstremiteta – 50 €"
+		},
+		{
+			"nameEn": "Doppler Lower Extremity Blood Vessels",
+			"source": "dopler krvnih sudova donjih esktremiteta  – 50 €"
+		},
+		{
+			"nameEn": "X-Ray per Segment",
+			"source": "Rendgenski snimak (po segmentu) + opis – 25€"
+		},
+		{
+			"nameEn": "X-Ray Full Spine",
+			"source": "Rendgenski snimak cijele kičme + opis – 60€"
+		},
+		{
+			"nameEn": "Home X-Ray",
+			"source": "Rendgenski snimak u kućnim uslovima + opis – 80€"
+		},
+		{
+			"nameEn": "Chiropractic Treatment",
+			"source": "Prvi pregled kiropraktičara (uključuje i tretman) – 35€",
+			"note": "2026-10-06: несколько строк на одну запись — оставлено так: первичный и контрольный приём с процедурой — оба 35 €, отдельная запись ничего не добавит."
+		},
+		{
+			"nameEn": "Chiropractic Treatment",
+			"source": "Kontrolni pregled kiropraktičara (uključuje i tretman) – 35€"
+		},
+		{
+			"nameEn": "Cupping Therapy",
+			"source": "Tretman hidžamom – 30€"
+		},
+		{
+			"nameEn": "Venous Blood Draw",
+			"source": "Uzorkovanje u ordinaciji – BESPLATNO"
+		},
+		{
+			"nameEn": "Home Blood Draw",
+			"source": "Uzorkovanje u kući – 10€"
+		}
+	],
+	"labTests": [
+		{
+			"nameEn": "Complete Blood Count",
+			"source": "KKS (kompletna krvna slika) – 5€"
+		},
+		{
+			"nameEn": "Erythrocyte Sedimentation Rate",
+			"source": "SE (sedimentacija eritrocita) – 2€"
+		},
+		{
+			"nameEn": "C-Reactive Protein",
+			"source": "CRP – 5€"
+		},
+		{
+			"nameEn": "Glucose",
+			"source": "Glukoza – 2€"
+		},
+		{
+			"nameEn": "Urea",
+			"source": "Urea – 2€"
+		},
+		{
+			"nameEn": "Creatinine",
+			"source": "Kreatinin – 2€"
+		},
+		{
+			"nameEn": "Cholesterol",
+			"source": "Holesterol – 2€"
+		},
+		{
+			"nameEn": "HDL Cholesterol",
+			"source": "HDL-holesterol – 3€"
+		},
+		{
+			"nameEn": "LDL Cholesterol",
+			"source": "LDL-holesterol – 2€"
+		},
+		{
+			"nameEn": "Triglycerides",
+			"source": "Trigliceridi-  3€"
+		},
+		{
+			"nameEn": "AST",
+			"source": "AST – 2€"
+		},
+		{
+			"nameEn": "ALT",
+			"source": "ALT – 2€"
+		},
+		{
+			"nameEn": "Gamma-GT",
+			"source": "GGT – 3€"
+		},
+		{
+			"nameEn": "LDH",
+			"source": "LDH – 3€"
+		},
+		{
+			"nameEn": "Total Bilirubin",
+			"source": "Ukupni bilirubin – 3€"
+		},
+		{
+			"nameEn": "Direct Bilirubin",
+			"source": "Direktni bilirubin – 3€"
+		},
+		{
+			"nameEn": "Amylase",
+			"source": "Amilaza – 2€"
+		},
+		{
+			"nameEn": "Alkaline Phosphatase",
+			"source": "ALP -2€"
+		},
+		{
+			"nameEn": "Total Protein",
+			"source": "Proteini – 2€"
+		},
+		{
+			"nameEn": "Albumin",
+			"source": "Albumin – 2€"
+		},
+		{
+			"nameEn": "Uric Acid",
+			"source": "Mokraćna kiselina – 2€"
+		},
+		{
+			"nameEn": "Iron",
+			"source": "Gvožđe – 3€"
+		},
+		{
+			"nameEn": "TIBC",
+			"source": "TIBC – 5€"
+		},
+		{
+			"nameEn": "UIBC",
+			"source": "UIBC – 5€"
+		},
+		{
+			"nameEn": "CK",
+			"source": "CK – 3€"
+		},
+		{
+			"nameEn": "CK-MB",
+			"source": "CK-MB – 3€"
+		},
+		{
+			"nameEn": "Magnesium",
+			"source": "Magnezijum – 3€"
+		},
+		{
+			"nameEn": "Phosphorus",
+			"source": "Fosfor – 2€"
+		},
+		{
+			"nameEn": "Calcium",
+			"source": "Ukupni kalcijum – 2€"
+		},
+		{
+			"nameEn": "Ionized Calcium",
+			"source": "Jonizovani kalcijum – 2€"
+		},
+		{
+			"nameEn": "Sodium",
+			"source": "Natrijum – 3€"
+		},
+		{
+			"nameEn": "Potassium",
+			"source": "Kalijum – 3€"
+		},
+		{
+			"nameEn": "Chloride",
+			"source": "Hloridi – 3€"
+		},
+		{
+			"nameEn": "Procalcitonin",
+			"source": "Prokalcitonin – 25€"
+		},
+		{
+			"nameEn": "Interleukin-6",
+			"source": "Interleukin-6 (IL-6) – 40€"
+		},
+		{
+			"nameEn": "Transferrin",
+			"source": "Transferin – 12€"
+		},
+		{
+			"nameEn": "Ferritin",
+			"source": "Feritin – 12€"
+		},
+		{
+			"nameEn": "HbA1c",
+			"source": "HbA1C – 14€"
+		},
+		{
+			"nameEn": "Fructosamine",
+			"source": "Fruktozamin – 6€"
+		},
+		{
+			"nameEn": "ACE",
+			"source": "ACE – 20€"
+		},
+		{
+			"nameEn": "Beta-CrossLaps",
+			"source": "Beta Cross Laps – 15€"
+		},
+		{
+			"nameEn": "Osteocalcin",
+			"source": "Osteokalcin – 15€"
+		},
+		{
+			"nameEn": "Troponin",
+			"source": "hs Troponin – 10€",
+			"note": "2026-10-06, перенесено из excluded. T или I в строке не сказано; в каталоге есть общая запись без буквы — Troponin (troponin): на ней же «TROPONIN» у Codra и безбуквенный тариф FZOCG Z02053 «Troponin» у Opšta bolnica Nikšić (у KCCG, Danilo, Risan тот же код лежит на Troponin I — разнобой каталога, не этого импорта). «hs» — чувствительность метода, не изоформа, так что общая запись утверждает ровно то, что клиника. По сопоставимым частным лабораториям выбор был бы T, не I (Troponin T HS: In Vitro ×3 по 10 €, Milmedika ×4, Moj Lab ×9, Diagnostica, Lab Medical, Dr Zejnilović, Tesla; Troponin I: Novi Standard, Tesla), но букву пришлось бы угадывать. Синоним «hs Troponin» (sr, en)."
+		},
+		{
+			"nameEn": "Urea Clearance",
+			"source": "Klirens uree  – 7€"
+		},
+		{
+			"nameEn": "Creatinine Clearance",
+			"source": "Klirens kreatinina – 7€"
+		},
+		{
+			"nameEn": "Fibrinogen",
+			"source": "Fibrinogen – 4€"
+		},
+		{
+			"nameEn": "Activated Partial Thromboplastin Time",
+			"source": "APTT – 12€"
+		},
+		{
+			"nameEn": "Prothrombin Time PT INR",
+			"source": "Protrombinsko vrijeme/INR – 4€"
+		},
+		{
+			"nameEn": "D-Dimer",
+			"source": "D-dimer – 15€"
+		},
+		{
+			"nameEn": "Bleeding Time",
+			"source": "Vrijeme krvarenja – 3€"
+		},
+		{
+			"nameEn": "Coagulation Time",
+			"source": "Vrijeme koagulacije – 3€"
+		},
+		{
+			"nameEn": "Protein C",
+			"source": "Protein C – 15€"
+		},
+		{
+			"nameEn": "Protein S",
+			"source": "Protein S – 15€"
+		},
+		{
+			"nameEn": "Lupus Anticoagulant",
+			"source": "LA 1 – 15€",
+			"note": "2026-10-06: LA1 — скрининговый реагент на волчаночный антикоагулянт (dRVVT), сопоставление оставлено; синоним LA1 уже есть."
+		},
+		{
+			"nameEn": "Antithrombin III",
+			"source": "Antitrombin III – 15€"
+		},
+		{
+			"nameEn": "Rheumatoid Factor",
+			"source": "Reuma faktor – 4€"
+		},
+		{
+			"nameEn": "Anti-CCP Antibodies",
+			"source": "Anti CCP – 15€"
+		},
+		{
+			"nameEn": "ASTO",
+			"source": "ASTO – 4€"
+		},
+		{
+			"nameEn": "Waaler-Rose Test",
+			"source": "WALLER ROSE – 5€"
+		},
+		{
+			"nameEn": "ANA Antinuclear Antibodies",
+			"source": "ANA – 20€"
+		},
+		{
+			"nameEn": "dsDNA IgM Antibodies",
+			"source": "ds DNA-M – 15€"
+		},
+		{
+			"nameEn": "dsDNA IgG Antibodies",
+			"source": "ds DNA-G – 15€"
+		},
+		{
+			"nameEn": "Transglutaminase IgA Antibodies",
+			"source": "At na tkivnu transglutaminazu IgA – 15€"
+		},
+		{
+			"nameEn": "Transglutaminase IgG Antibodies",
+			"source": "At na tkivnu transglutaminazu IgG – 15€"
+		},
+		{
+			"nameEn": "Anticardiolipin IgM",
+			"source": "Kardiolipinska antitijela IgM – 15€"
+		},
+		{
+			"nameEn": "Anticardiolipin IgG",
+			"source": "Kardiolipinska antitijela IgG – 15€"
+		},
+		{
+			"nameEn": "Gliadin IgA Antibodies",
+			"source": "Gliadin-A – 15€"
+		},
+		{
+			"nameEn": "Gliadin IgG Antibodies",
+			"source": "Gliadin-G – 15€"
+		},
+		{
+			"nameEn": "Beta-2 Glycoprotein I IgM",
+			"source": "Beta 2 glikoprotein-M – 15€"
+		},
+		{
+			"nameEn": "Beta-2 Glycoprotein I IgG",
+			"source": "Beta 2 glikoprotein-G – 15€"
+		},
+		{
+			"nameEn": "Anti-GAD Antibodies",
+			"source": "At na glutamat dekarboksilazu (GAD) IgG – 20€"
+		},
+		{
+			"nameEn": "IA-2 Antibodies",
+			"source": "At na tirozin fosfatazu (IA2) IgG – 20€"
+		},
+		{
+			"nameEn": "Ovarian Antibodies",
+			"source": "Anti ovarijalna antitijela – 20€"
+		},
+		{
+			"nameEn": "Spermatozoa Antibodies ASA",
+			"source": "Anti spermatozoidna antitijela – 35"
+		},
+		{
+			"nameEn": "Helicobacter pylori IgA",
+			"source": "Helicobacter pylori IgA – 13€"
+		},
+		{
+			"nameEn": "Helicobacter pylori IgG",
+			"source": "Helicobakter pylori IgG – 13€"
+		},
+		{
+			"nameEn": "IgA",
+			"source": "Imunoglobulin A – 5€"
+		},
+		{
+			"nameEn": "IgM",
+			"source": "Imunoglobulin M – 5€"
+		},
+		{
+			"nameEn": "IgG",
+			"source": "Imunoglobulin G – 11€"
+		},
+		{
+			"nameEn": "IgE",
+			"source": "Imunoglobulin E – 11€"
+		},
+		{
+			"nameEn": "C3 Complement",
+			"source": "C – 3 – 5€"
+		},
+		{
+			"nameEn": "C4 Complement",
+			"source": "C – 4 – 5€"
+		},
+		{
+			"nameEn": "TSH",
+			"source": "TSH – 6€"
+		},
+		{
+			"nameEn": "T3",
+			"source": "T3 – 6€"
+		},
+		{
+			"nameEn": "T4",
+			"source": "T4 – 6€"
+		},
+		{
+			"nameEn": "Free T3",
+			"source": "FT3 – 11€"
+		},
+		{
+			"nameEn": "Free T4",
+			"source": "FT4 – 11€"
+		},
+		{
+			"nameEn": "Anti-Thyroglobulin Antibodies",
+			"source": "TgAt – 15€"
+		},
+		{
+			"nameEn": "Anti-TPO",
+			"source": "Anti TPO – 15€"
+		},
+		{
+			"nameEn": "Anti-TSHR",
+			"source": "Anti TSHR – 25€"
+		},
+		{
+			"nameEn": "Thyroglobulin",
+			"source": "Tireoglobulin – 12€"
+		},
+		{
+			"nameEn": "Calcitonin",
+			"source": "Kalcitonin – 15€"
+		},
+		{
+			"nameEn": "Cortisol",
+			"source": "Kortizol – 10€"
+		},
+		{
+			"nameEn": "PTH",
+			"source": "PTH – 15€"
+		},
+		{
+			"nameEn": "Insulin",
+			"source": "Insulin – 12€"
+		},
+		{
+			"nameEn": "C-Peptide",
+			"source": "C – peptid – 12€"
+		},
+		{
+			"nameEn": "Beta HCG",
+			"source": "Beta HCG – 15€"
+		},
+		{
+			"nameEn": "Triple Test Second Trimester Screening",
+			"source": "Tripl test (14 – 19 nedelja) – 45€",
+			"note": "2026-10-06: общая запись Triple Test уже слита в эту миграцией 050 (slug triple-test → 301). Дубля больше нет."
+		},
+		{
+			"nameEn": "Double Test First Trimester Screening",
+			"source": "Dabl test (8 – 13 nedelja) – 38€",
+			"note": "2026-10-06: общая запись Double Test уже слита в эту миграцией 051 (slug double-test → 301). Дубля больше нет."
+		},
+		{
+			"nameEn": "PAPP-A",
+			"source": "PAPP – A – 16€"
+		},
+		{
+			"nameEn": "Free Beta HCG",
+			"source": "Free  beta HCG – 17€"
+		},
+		{
+			"nameEn": "Free Estriol",
+			"source": "Free  estriol – 15€"
+		},
+		{
+			"nameEn": "AFP",
+			"source": "AFP – 12€"
+		},
+		{
+			"nameEn": "FSH",
+			"source": "FSH – 7€"
+		},
+		{
+			"nameEn": "LH",
+			"source": "LH – 7€"
+		},
+		{
+			"nameEn": "Prolactin",
+			"source": "Prolaktin – 7€"
+		},
+		{
+			"nameEn": "Estradiol",
+			"source": "Estradiol – 8€"
+		},
+		{
+			"nameEn": "Progesterone",
+			"source": "Progesteron – 8€"
+		},
+		{
+			"nameEn": "Testosterone",
+			"source": "Testosteron – 10€"
+		},
+		{
+			"nameEn": "Free Testosterone",
+			"source": "Free testosteron – 25€"
+		},
+		{
+			"nameEn": "DHEA-S",
+			"source": "DHEAS – 12€"
+		},
+		{
+			"nameEn": "SHBG",
+			"source": "SHBG – 15€"
+		},
+		{
+			"nameEn": "Androstenedione",
+			"source": "Androstendion – 16€"
+		},
+		{
+			"nameEn": "Anti-Mullerian Hormone",
+			"source": "Antimilerov Hormon – 30€"
+		},
+		{
+			"nameEn": "Inhibin B",
+			"source": "Inhibin B – 20€"
+		},
+		{
+			"nameEn": "17-Hydroxyprogesterone",
+			"source": "17-OHP – 15€"
+		},
+		{
+			"nameEn": "ACTH",
+			"source": "ACTH – 18€"
+		},
+		{
+			"nameEn": "Renin",
+			"source": "Renin – 30€"
+		},
+		{
+			"nameEn": "NT-proBNP",
+			"source": "NT pro-BNP – 40€"
+		},
+		{
+			"nameEn": "PSA",
+			"source": "PSA – 14€"
+		},
+		{
+			"nameEn": "Free PSA",
+			"source": "Free PSA – 14€"
+		},
+		{
+			"nameEn": "CEA",
+			"source": "CEA – 14€"
+		},
+		{
+			"nameEn": "CA 15-3",
+			"source": "CA-15-3 – 14€"
+		},
+		{
+			"nameEn": "CA 125",
+			"source": "CA-125 – 14€"
+		},
+		{
+			"nameEn": "CA 19-9",
+			"source": "CA-19.9 – 14€"
+		},
+		{
+			"nameEn": "CYFRA 21-1",
+			"source": "CYFRA 21-1 – 15€"
+		},
+		{
+			"nameEn": "NSE",
+			"source": "NSE – 15€"
+		},
+		{
+			"nameEn": "Protein S-100",
+			"source": "S 100 – 25€"
+		},
+		{
+			"nameEn": "CA 72-4",
+			"source": "CA-72-4 – 20€"
+		},
+		{
+			"nameEn": "HE4",
+			"source": "HE-4 – 25€"
+		},
+		{
+			"nameEn": "Chromogranin A",
+			"source": "Hromogranin A – 40€"
+		},
+		{
+			"nameEn": "5-HIAA",
+			"source": "5-HIAA – 25€"
+		},
+		{
+			"nameEn": "ROMA Index",
+			"source": "Roma Index (CA-125+ HE-4) – 38€"
+		},
+		{
+			"nameEn": "Vitamin D 25-OH",
+			"source": "Vitamin D – 25€"
+		},
+		{
+			"nameEn": "Vitamin B12",
+			"source": "Vitamin B12 – 15€"
+		},
+		{
+			"nameEn": "VMA",
+			"source": "VMA – 15€"
+		},
+		{
+			"nameEn": "Valproic Acid",
+			"source": "Valproati – 20€"
+		},
+		{
+			"nameEn": "Fecal Occult Blood",
+			"source": "Test na okultno krvarenje (bakterijska serologija) -15€"
+		},
+		{
+			"nameEn": "Helicobacter pylori Antigen in Feces",
+			"source": "Test na Helicobacter pylori Ag (imunohromatografija) -15€"
+		},
+		{
+			"nameEn": "Complete Urinalysis",
+			"source": "Citohemijska analiza urina – 5€"
+		},
+		{
+			"nameEn": "Uric Acid in Urine",
+			"source": "Mokraćna kiselina u urinu – 3€"
+		},
+		{
+			"nameEn": "Protein in Urine",
+			"source": "Proteini u urinu – 10€"
+		},
+		{
+			"nameEn": "Microalbumin in Urine",
+			"source": "Albumin u urinu – 10€"
+		},
+		{
+			"nameEn": "Amylase in Urine",
+			"source": "Amilaza u urinu – 2€"
+		},
+		{
+			"nameEn": "Calcium in Urine",
+			"source": "Kalcijum u urinu – 3€"
+		},
+		{
+			"nameEn": "Phosphorus in Urine",
+			"source": "Fosfor u urinu – 3€"
+		},
+		{
+			"nameEn": "Drug Panel 10 II",
+			"source": "Test na psihoaktivne supstance (panel od 10 testova) – 40€",
+			"note": "2026-10-06: слить с Drug Panel 10 нельзя — Novi Standard держит обе (45 и 40), это разные позиции (050). Psychoactive Substances Panel (10 Parameters) — тариф FZOCG Z02092 больниц; к какой из двух частных панелей он относится, неизвестно. Сопоставление оставлено: здесь больше всего клиник и синонимов."
+		},
+		{
+			"nameEn": "Drug Panel 5 New",
+			"source": "Test na psihoaktivne supstance (panel od 5 testova) – 25€",
+			"note": "2026-10-06: Psychoactive Substances Panel (5-10 Parameters) — тариф FZOCG Z02091 больниц («od 5 do 10 parametara»), шире панели из 5; не дубль. Сопоставление оставлено."
+		}
+	],
+	"doctors": [],
+	"excluded": [
+		{
+			"source": "Davanje terapije u ordinaciji – BESPLATNO (nije uključena cijena medikamenata)",
+			"reason": "бесплатное введение терапии в кабинете (лекарства отдельно): общей записи «введение терапии» в каталоге нет, а цена 0 рядом с платными инъекциями/инфузиями (5–25 €) читалась бы как «уколы бесплатно»"
+		},
+		{
+			"source": "Ugovor za “Vaš doktor”-“Vaša poliklinika-80€/mjesečno",
+			"reason": "абонемент «Vaš doktor / Vaša poliklinika» 80 €/мес — договор на обслуживание, не медицинская услуга"
+		},
+		{
+			"source": "Ugovor za “Vaš doktor”-“Vaša poliklinika-40€/mjesečno (član uže porodice)",
+			"reason": "тот же абонемент для члена семьи 40 €/мес — договор, не услуга"
+		},
+		{
+			"source": "Pregled interniste (uključuje izrada različitih programa pravilne ishrane) – 40€",
+			"reason": "дубль Pregled interniste за ту же цену 40 €; пометка «составление программ питания» отдельной записи не стоит, а вторую строку на ту же запись положить нельзя (UNIQUE clinic + service)"
+		},
+		{
+			"source": "Škola roditeljstva (u malim grupama, 8-10 polaznika) cjena tematske cjeline -15€/po osobi",
+			"reason": "школа родительства — групповой курс 8–10 человек, цена за тематический блок с человека; записи в каталоге нет, заводить ли курс — решение каталога"
+		}
+	],
+	"openQuestions": []
+}

@@ -1,0 +1,749 @@
+{
+ "batch": "drg-03",
+ "items": [
+  {
+   "code": "C01Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Procedures for Penetrating Eye Injury",
+   "slug": "hospitalization-for-procedures-for-penetrating-eye-injury",
+   "name_sr": "Zahvati zbog penetrantne povrede oka",
+   "name_ru": "Госпитализация: операции при проникающем ранении глаза",
+   "name_de": "Stationäre Behandlung: Eingriffe bei penetrierender Augenverletzung",
+   "name_tr": "Yatış: delici göz yaralanmasına yönelik girişimler",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C02Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Enucleation and Orbital Procedures",
+   "slug": "hospitalization-for-enucleation-and-orbital-procedures",
+   "name_sr": "Enukleacija i zahvati na orbiti",
+   "name_ru": "Госпитализация: энуклеация глаза и операции на орбите",
+   "name_de": "Stationäre Behandlung: Enukleation und Eingriffe an der Orbita",
+   "name_tr": "Yatış: göz enükleasyonu ve orbita girişimleri",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C03Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Retinal Procedures",
+   "slug": "hospitalization-for-retinal-procedures",
+   "name_sr": "Zahvati na mrežnjači",
+   "name_ru": "Госпитализация: операции на сетчатке",
+   "name_de": "Stationäre Behandlung: Eingriffe an der Netzhaut",
+   "name_tr": "Yatış: retina girişimleri",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C04Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Corneal, Scleral and Conjunctival Procedures",
+   "slug": "hospitalization-for-major-corneal-scleral-and-conjunctival-procedures",
+   "name_sr": "Veliki zahvati na rožnjači, beonjači i konjunktivi",
+   "name_ru": "Госпитализация: крупные операции на роговице, склере и конъюнктиве",
+   "name_de": "Stationäre Behandlung: große Eingriffe an Hornhaut, Lederhaut und Bindehaut",
+   "name_tr": "Yatış: kornea, sklera ve konjonktivaya yönelik büyük girişimler",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": "«konjunktivi» (у FZOCG опечатка «konjuktivi»)"
+  },
+  {
+   "code": "C10Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "strabismus-surgery",
+   "id": 3665,
+   "note": "операция косоглазия"
+  },
+  {
+   "code": "C11Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Eyelid Procedures",
+   "slug": "hospitalization-for-eyelid-procedures",
+   "name_sr": "Zahvati na kapcima",
+   "name_ru": "Госпитализация: операции на веках",
+   "name_de": "Stationäre Behandlung: Eingriffe an den Augenlidern",
+   "name_tr": "Yatış: göz kapağı girişimleri",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C12Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Corneal, Scleral and Conjunctival Procedures",
+   "slug": "hospitalization-for-other-corneal-scleral-and-conjunctival-procedures",
+   "name_sr": "Drugi zahvati na rožnjači, beonjači i konjunktivi",
+   "name_ru": "Госпитализация: прочие операции на роговице, склере и конъюнктиве",
+   "name_de": "Stationäre Behandlung: sonstige Eingriffe an Hornhaut, Lederhaut und Bindehaut",
+   "name_tr": "Yatış: kornea, sklera ve konjonktivaya yönelik diğer girişimler",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": "«konjunktivi» (у FZOCG опечатка «konjuktivi»)"
+  },
+  {
+   "code": "C13Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Lacrimal Procedures",
+   "slug": "hospitalization-for-lacrimal-procedures",
+   "name_sr": "Zahvati na suznom aparatu",
+   "name_ru": "Госпитализация: операции на слёзном аппарате",
+   "name_de": "Stationäre Behandlung: Eingriffe am Tränenapparat",
+   "name_tr": "Yatış: gözyaşı sistemi girişimleri",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C14Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Eye Procedures",
+   "slug": "hospitalization-for-other-eye-procedures",
+   "name_sr": "Drugi zahvati na oku",
+   "name_ru": "Госпитализация: прочие операции на глазу",
+   "name_de": "Stationäre Behandlung: sonstige Eingriffe am Auge",
+   "name_tr": "Yatış: diğer göz girişimleri",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C15A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Glaucoma and Complex Cataract Procedures",
+   "slug": "hospitalization-for-glaucoma-and-complex-cataract-procedures",
+   "name_sr": "Glaukom i složeni zahvati zbog katarakte",
+   "name_ru": "Госпитализация: операции при глаукоме и сложные операции при катаракте",
+   "name_de": "Stationäre Behandlung: Glaukomeingriffe und komplexe Kataraktoperationen",
+   "name_tr": "Yatış: glokom ve komplike katarakt girişimleri",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C15B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Glaucoma and Complex Cataract Procedures Same Day",
+   "slug": "hospitalization-for-glaucoma-and-complex-cataract-procedures-same-day",
+   "name_sr": "Glaukom i složeni zahvati zbog katarakte, isti dan",
+   "name_ru": "Госпитализация: операции при глаукоме и сложные операции при катаракте, в течение одного дня",
+   "name_de": "Stationäre Behandlung: Glaukomeingriffe und komplexe Kataraktoperationen, am selben Tag",
+   "name_tr": "Yatış: glokom ve komplike katarakt girişimleri, aynı gün",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY",
+    "OPHTHALMIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C16Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "phacoemulsification-cataract-surgery-with-iol-implantation",
+   "id": 6588,
+   "note": "проверить: «Zahvati na sočivu» (DRG Lens Procedures) — практически операция катаракты с ИОЛ, но формально класс"
+  },
+  {
+   "code": "C60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Acute and Major Eye Infections with CC",
+   "slug": "hospitalization-for-acute-and-major-eye-infections-with-cc",
+   "name_sr": "Akutne i velike infekcije oka sa KK",
+   "name_ru": "Госпитализация: острые и тяжёлые инфекции глаза с ОО",
+   "name_de": "Stationäre Behandlung: akute und schwere Augeninfektionen mit KK",
+   "name_tr": "Yatış: akut ve ciddi göz enfeksiyonları, CC ile",
+   "categories": [
+    "OPHTHALMOLOGY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Acute and Major Eye Infections without CC",
+   "slug": "hospitalization-for-acute-and-major-eye-infections-without-cc",
+   "name_sr": "Akutne i velike infekcije oka bez KK",
+   "name_ru": "Госпитализация: острые и тяжёлые инфекции глаза без ОО",
+   "name_de": "Stationäre Behandlung: akute und schwere Augeninfektionen ohne KK",
+   "name_tr": "Yatış: akut ve ciddi göz enfeksiyonları, CC olmadan",
+   "categories": [
+    "OPHTHALMOLOGY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Neurological and Vascular Disorders of the Eye with CC",
+   "slug": "hospitalization-for-neurological-and-vascular-disorders-of-the-eye-with-cc",
+   "name_sr": "Neurološki poremećaji i poremećaji krvnih sudova oka sa KK",
+   "name_ru": "Госпитализация: неврологические и сосудистые нарушения глаза с ОО",
+   "name_de": "Stationäre Behandlung: neurologische und vaskuläre Erkrankungen des Auges mit KK",
+   "name_tr": "Yatış: gözün nörolojik ve vasküler bozuklukları, CC ile",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Neurological and Vascular Disorders of the Eye without CC",
+   "slug": "hospitalization-for-neurological-and-vascular-disorders-of-the-eye-without-cc",
+   "name_sr": "Neurološki poremećaji i poremećaji krvnih sudova oka bez KK",
+   "name_ru": "Госпитализация: неврологические и сосудистые нарушения глаза без ОО",
+   "name_de": "Stationäre Behandlung: neurologische und vaskuläre Erkrankungen des Auges ohne KK",
+   "name_tr": "Yatış: gözün nörolojik ve vasküler bozuklukları, CC olmadan",
+   "categories": [
+    "OPHTHALMOLOGY",
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "C62Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Hyphema and Medically Managed Eye Trauma",
+   "slug": "hospitalization-for-hyphema-and-medically-managed-eye-trauma",
+   "name_sr": "Hifema i medicinski obrađena trauma oka",
+   "name_ru": "Госпитализация: гифема и травма глаза без операции",
+   "name_de": "Stationäre Behandlung: Hyphäma und konservativ behandeltes Augentrauma",
+   "name_tr": "Yatış: hifema ve ameliyatsız tedavi edilen göz travması",
+   "categories": [
+    "OPHTHALMOLOGY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY"
+   ],
+   "note": "name_fzocg ошибочный («medicinski oslabljeno oko»), name_sr взят из КЦЦГ"
+  },
+  {
+   "code": "C63Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Eye Disorders",
+   "slug": "hospitalization-for-other-eye-disorders",
+   "name_sr": "Drugi poremećaji oka",
+   "name_ru": "Госпитализация: прочие заболевания глаза",
+   "name_de": "Stationäre Behandlung: sonstige Erkrankungen des Auges",
+   "name_tr": "Yatış: diğer göz bozuklukları",
+   "categories": [
+    "OPHTHALMOLOGY"
+   ],
+   "specialties": [
+    "OPHTHALMOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D02C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Head and Neck Procedures without Malignancy, without CC",
+   "slug": "hospitalization-for-head-and-neck-procedures-without-malignancy-without-cc",
+   "name_sr": "Zahvati na glavi i vratu bez maligne bolesti, bez KK",
+   "name_ru": "Госпитализация: операции на голове и шее без злокачественной опухоли, без ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Kopf und Hals ohne bösartige Erkrankung, ohne KK",
+   "name_tr": "Yatış: baş ve boyun girişimleri, malignite olmadan, CC olmadan",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY",
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D10Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nasal Procedures",
+   "slug": "hospitalization-for-nasal-procedures",
+   "name_sr": "Zahvati na nosu",
+   "name_ru": "Госпитализация: операции на носу",
+   "name_de": "Stationäre Behandlung: Eingriffe an der Nase",
+   "name_tr": "Yatış: burun girişimleri",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D11Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "tonsillectomy",
+   "id": 4666,
+   "note": "«и/или аденоидэктомия» — привязано к тонзиллэктомии (есть также 6354 tonsillectomy-with-adenotomy, 6351 adenotomy)"
+  },
+  {
+   "code": "D12Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Ear, Nose, Mouth and Throat Procedures",
+   "slug": "hospitalization-for-other-ear-nose-mouth-and-throat-procedures",
+   "name_sr": "Drugi zahvati na uhu, nosu, usnoj šupljini i grlu",
+   "name_ru": "Госпитализация: прочие операции на ухе, носу, полости рта и горле",
+   "name_de": "Stationäre Behandlung: sonstige Eingriffe an Ohr, Nase, Mund und Rachen",
+   "name_tr": "Yatış: diğer kulak, burun, ağız ve boğaz girişimleri",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D13Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "tympanostomy-tube-insertion",
+   "id": 4665,
+   "note": "миринготомия с установкой вентиляционной трубки"
+  },
+  {
+   "code": "D61Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Disequilibrium",
+   "slug": "hospitalization-for-disequilibrium",
+   "name_sr": "Gubitak ravnoteže",
+   "name_ru": "Госпитализация: нарушение равновесия",
+   "name_de": "Stationäre Behandlung: Gleichgewichtsstörung",
+   "name_tr": "Yatış: denge kaybı",
+   "categories": [
+    "ENT",
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D62Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Epistaxis",
+   "slug": "hospitalization-for-epistaxis",
+   "name_sr": "Krvarenje iz nosa (epistaksa)",
+   "name_ru": "Госпитализация: носовое кровотечение",
+   "name_de": "Stationäre Behandlung: Nasenbluten (Epistaxis)",
+   "name_tr": "Yatış: burun kanaması (epistaksis)",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D66B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Ear, Nose, Mouth and Throat Diagnoses without CC",
+   "slug": "hospitalization-for-other-ear-nose-mouth-and-throat-diagnoses-without-cc",
+   "name_sr": "Druge dijagnoze uha, nosa, usne šupljine i grla bez KK",
+   "name_ru": "Госпитализация: прочие заболевания уха, носа, полости рта и горла без ОО",
+   "name_de": "Stationäre Behandlung: sonstige Diagnosen an Ohr, Nase, Mund und Rachen ohne KK",
+   "name_tr": "Yatış: diğer kulak, burun, ağız ve boğaz tanıları, CC olmadan",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY"
+   ],
+   "note": "name_sr унифицирован с D66A (без «kod»)"
+  },
+  {
+   "code": "D02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Head and Neck Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-head-and-neck-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Zahvati na glavi i vratu sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: операции на голове и шее с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Kopf und Hals mit äußerst schweren oder schweren KK",
+   "name_tr": "Yatış: baş ve boyun girişimleri, çok ağır veya ağır CC ile",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY",
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Head and Neck Procedures with Malignancy or Moderate CC",
+   "slug": "hospitalization-for-head-and-neck-procedures-with-malignancy-or-moderate-cc",
+   "name_sr": "Zahvati na glavi i vratu sa malignom bolešću ili sa umjerenim KK",
+   "name_ru": "Госпитализация: операции на голове и шее при злокачественной опухоли или с умеренными ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an Kopf und Hals bei bösartiger Erkrankung oder mit mäßigen KK",
+   "name_tr": "Yatış: baş ve boyun girişimleri, malignite veya orta CC ile",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY",
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D03Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cleft Lip or Palate Repair",
+   "slug": "hospitalization-for-cleft-lip-or-palate-repair",
+   "name_sr": "Hirurški zahvat kod rascjepa usne ili nepca",
+   "name_ru": "Госпитализация: операция при расщелине губы или нёба",
+   "name_de": "Stationäre Behandlung: Operation bei Lippen- oder Gaumenspalte",
+   "name_tr": "Yatış: dudak veya damak yarığı ameliyatı",
+   "categories": [
+    "ENT",
+    "PLASTIC_SURGERY"
+   ],
+   "specialties": [
+    "MAXILLOFACIAL_SURGERY",
+    "PLASTIC_SURGERY"
+   ],
+   "note": "операции при расщелине губы/нёба в каталоге нет"
+  },
+  {
+   "code": "D04A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Maxillary Surgery with CC",
+   "slug": "hospitalization-for-maxillary-surgery-with-cc",
+   "name_sr": "Operacija maksilarne regije sa KK",
+   "name_ru": "Госпитализация: операции в области верхней челюсти с ОО",
+   "name_de": "Stationäre Behandlung: Operationen im Oberkieferbereich mit KK",
+   "name_tr": "Yatış: üst çene bölgesi ameliyatları, CC ile",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "MAXILLOFACIAL_SURGERY",
+    "OTORHINOLARYNGOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D04B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Maxillary Surgery without CC",
+   "slug": "hospitalization-for-maxillary-surgery-without-cc",
+   "name_sr": "Operacija maksilarne regije bez KK",
+   "name_ru": "Госпитализация: операции в области верхней челюсти без ОО",
+   "name_de": "Stationäre Behandlung: Operationen im Oberkieferbereich ohne KK",
+   "name_tr": "Yatış: üst çene bölgesi ameliyatları, CC olmadan",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "MAXILLOFACIAL_SURGERY",
+    "OTORHINOLARYNGOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D05Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Parotid Gland Procedures",
+   "slug": "hospitalization-for-parotid-gland-procedures",
+   "name_sr": "Zahvati na parotidnoj žlijezdi",
+   "name_ru": "Госпитализация: операции на околоушной слюнной железе",
+   "name_de": "Stationäre Behandlung: Eingriffe an der Ohrspeicheldrüse",
+   "name_tr": "Yatış: parotis bezi girişimleri",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY",
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": "паротидэктомии в каталоге нет"
+  },
+  {
+   "code": "D06Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Sinus and Complex Middle Ear Procedures",
+   "slug": "hospitalization-for-sinus-and-complex-middle-ear-procedures",
+   "name_sr": "Zahvati na sinusima i složeni zahvati na srednjem uhu",
+   "name_ru": "Госпитализация: операции на околоносовых пазухах и сложные операции на среднем ухе",
+   "name_de": "Stationäre Behandlung: Eingriffe an den Nasennebenhöhlen und komplexe Eingriffe am Mittelohr",
+   "name_tr": "Yatış: sinüs girişimleri ve komplike orta kulak girişimleri",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D14Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Mouth and Salivary Gland Procedures",
+   "slug": "hospitalization-for-mouth-and-salivary-gland-procedures",
+   "name_sr": "Zahvati na usnoj šupljini i pljuvačnim žlijezdama",
+   "name_ru": "Госпитализация: операции в полости рта и на слюнных железах",
+   "name_de": "Stationäre Behandlung: Eingriffe an Mundhöhle und Speicheldrüsen",
+   "name_tr": "Yatış: ağız boşluğu ve tükürük bezi girişimleri",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY",
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D15Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "mastoidectomy",
+   "id": 6326,
+   "note": "проверить: «Zahvati na mastoidu» — фактически мастоидэктомия, но формально класс; name_fzocg во входе ошибочный (Vađenje i nadoknada zuba)"
+  },
+  {
+   "code": "D40Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Dental Extraction and Restorations",
+   "slug": "hospitalization-for-dental-extraction-and-restorations",
+   "name_sr": "Vađenje i nadoknada zuba",
+   "name_ru": "Госпитализация: удаление и восстановление зубов",
+   "name_de": "Stationäre Behandlung: Zahnextraktion und Zahnrestauration",
+   "name_tr": "Yatış: diş çekimi ve diş restorasyonu",
+   "categories": [
+    "DENTISTRY"
+   ],
+   "specialties": [
+    "ORAL_SURGERY",
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Ear, Nose, Mouth and Throat Malignancy with Very Severe or Severe CC",
+   "slug": "hospitalization-for-ear-nose-mouth-and-throat-malignancy-with-very-severe-or-severe-cc",
+   "name_sr": "Maligna bolest uha, nosa, usne šupljine i grla sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: злокачественные опухоли уха, носа, полости рта и горла с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: bösartige Erkrankung von Ohr, Nase, Mund und Rachen mit äußerst schweren oder schweren KK",
+   "name_tr": "Yatış: kulak, burun, ağız ve boğaz kanseri, çok ağır veya ağır CC ile",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Ear, Nose, Mouth and Throat Malignancy without Very Severe or Severe CC",
+   "slug": "hospitalization-for-ear-nose-mouth-and-throat-malignancy-without-very-severe-or-severe-cc",
+   "name_sr": "Maligna bolest uha, nosa, usne šupljine i grla bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: злокачественные опухоли уха, носа, полости рта и горла без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: bösartige Erkrankung von Ohr, Nase, Mund und Rachen ohne äußerst schwere oder schwere KK",
+   "name_tr": "Yatış: kulak, burun, ağız ve boğaz kanseri, çok ağır veya ağır CC olmadan",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY",
+    "ONCOLOGY"
+   ],
+   "note": "name_sr исправлен (у FZOCG «bez vrlo teškim ili teškim»)"
+  },
+  {
+   "code": "D65Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nasal Trauma and Deformity",
+   "slug": "hospitalization-for-nasal-trauma-and-deformity",
+   "name_sr": "Trauma i deformacija nosa",
+   "name_ru": "Госпитализация: травма и деформация носа",
+   "name_de": "Stationäre Behandlung: Nasentrauma und Nasendeformität",
+   "name_tr": "Yatış: burun travması ve deformitesi",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D66A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Ear, Nose, Mouth and Throat Diagnoses with CC",
+   "slug": "hospitalization-for-other-ear-nose-mouth-and-throat-diagnoses-with-cc",
+   "name_sr": "Druge dijagnoze uha, nosa, usne šupljine i grla sa KK",
+   "name_ru": "Госпитализация: прочие заболевания уха, носа, полости рта и горла с ОО",
+   "name_de": "Stationäre Behandlung: sonstige Diagnosen an Ohr, Nase, Mund und Rachen mit KK",
+   "name_tr": "Yatış: diğer kulak, burun, ağız ve boğaz tanıları, CC ile",
+   "categories": [
+    "ENT"
+   ],
+   "specialties": [
+    "OTORHINOLARYNGOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D67A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Oral and Dental Disorders except Extraction and Restorations",
+   "slug": "hospitalization-for-oral-and-dental-disorders-except-extraction-and-restorations",
+   "name_sr": "Poremećaji usne šupljine i zuba, osim vađenja i nadoknade zuba",
+   "name_ru": "Госпитализация: заболевания полости рта и зубов, кроме удаления и восстановления зубов",
+   "name_de": "Stationäre Behandlung: Erkrankungen von Mundhöhle und Zähnen, außer Zahnextraktion und -restauration",
+   "name_tr": "Yatış: ağız ve diş bozuklukları (diş çekimi ve restorasyonu hariç)",
+   "categories": [
+    "DENTISTRY"
+   ],
+   "specialties": [
+    "ORAL_SURGERY",
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "D67B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Oral and Dental Disorders except Extraction and Restorations Same Day",
+   "slug": "hospitalization-for-oral-and-dental-disorders-except-extraction-and-restorations-same-day",
+   "name_sr": "Poremećaji usne šupljine i zuba, osim vađenja i nadoknade zuba, isti dan",
+   "name_ru": "Госпитализация: заболевания полости рта и зубов, кроме удаления и восстановления зубов, в течение одного дня",
+   "name_de": "Stationäre Behandlung: Erkrankungen von Mundhöhle und Zähnen, außer Zahnextraktion und -restauration, am selben Tag",
+   "name_tr": "Yatış: ağız ve diş bozuklukları (diş çekimi ve restorasyonu hariç), aynı gün",
+   "categories": [
+    "DENTISTRY"
+   ],
+   "specialties": [
+    "ORAL_SURGERY",
+    "MAXILLOFACIAL_SURGERY"
+   ],
+   "note": ""
+  }
+ ]
+}

@@ -23,7 +23,7 @@ Items shape:
 
 Usage:
     py -3.12 scripts/kbkotor/kbkotor_to_items.py <input.json> <output.json>
-    py -3.12 scripts/kbkotor/kbkotor_to_items.py --all   (process all data/kbkotor/*/paddleocr/*.json)
+    py -3.12 scripts/kbkotor/kbkotor_to_items.py --all   (process all data/risan-bolnica/*/paddleocr/*.json)
 """
 import sys, json, re
 from pathlib import Path
@@ -225,7 +225,7 @@ def main():
     if len(sys.argv) < 2:
         print('Usage: kbkotor_to_items.py <input.json> <output.json>'); sys.exit(1)
     if sys.argv[1] == '--all':
-        for f in (ROOT / 'data' / 'kbkotor').glob('*/paddleocr/*.json'):
+        for f in (ROOT / 'data' / 'risan-bolnica').glob('*/paddleocr/*.json'):
             if f.name.endswith('.items.json'): continue
             out = f.with_suffix('.items.json')
             process(f, out)

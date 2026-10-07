@@ -1,0 +1,720 @@
+{
+  "schemaVersion": 1,
+  "slug": "nova-medic-poliklinika",
+  "name": "Nova Medic Poliklinika",
+  "city": "Podgorica",
+  "cityId": 1,
+  "googlePlaceId": "ChIJDfrMbPbrTRMRU5Ho9LfQwuc",
+  "clinicTypeIds": [
+    1
+  ],
+  "languageIds": [
+    1
+  ],
+  "sql": [
+    "server/sql/insert-clinic-prices-nova-medic-poliklinika.sql",
+    "server/sql/update-nova-medic-doctors-and-dermatoscopy-specialty.sql"
+  ],
+  "status": {
+    "generated": "2026-10-02",
+    "appliedLocal": "2026-10-02 (insert-clinic-prices-nova-medic-poliklinika.sql)",
+    "appliedProd": "2026-10-02 (insert-clinic-prices-nova-medic-poliklinika.sql; VERIFICATION сошёлся: 165/103/62, новые записи каталога на проде 8246, 8247); 2026-10-02 update-nova-medic-doctors-and-dermatoscopy-specialty.sql (у клиники 3 врача, у шестерых 0 клиник, у 2311 специальность 7; проверено через /api/doctors/list и /api/doctors/details)",
+    "clinicId": 101,
+    "doctorIds": {
+      "dragan-lagator": 1026,
+      "vladan-boskovic": 849,
+      "dejan-biro": 1027
+    },
+    "note": "Клиника уже была в БД (id 101 и локально, и на проде, сверено через /api/clinics/details). Записи о первичном импорте (2026-04-16, 162 услуги) нет; по ценам он сделан с прайса, совпадающего со снимком Wayback 2026-05-14. Эта запись — первая, с синхронизации цен 2026-10. googlePlaceId взят из data/google-places/podgorica/poliklinika-nova-medic-podgorica.json; в clinics.google_place_id он не записан (NULL)."
+  },
+  "sources": [
+    {
+      "type": "website",
+      "ref": "https://novamedic.me/cjenovnik/",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "snapshot": "data/clinic-pricelists/sources/nova-medic-poliklinika/2026-10-02.html",
+      "priceDate": "2026-09-30",
+      "priceDateSource": "modified страницы 2148 в https://novamedic.me/wp-json/wp/v2/pages/2148 (2026-09-30T11:17:39); снимок wp-json — 2026-10-02.json.",
+      "note": "WordPress + WPBakery: аккордеоны, формат «€50». Эпиляция — таблица в 4 колонки (ŽENE | MUŠKARCI), читать по <tr>, иначе зоны путаются. Блок Exilis для тела выведен дважды, «Akcijski paketi» повторяют позиции. У третьей строки филлеров опечатка «Filer 1ml» вместо 3ml."
+    },
+    {
+      "type": "website",
+      "ref": "https://novamedic.me/wp-json/wp/v2/pages?per_page=100",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "snapshot": "data/clinic-pricelists/sources/nova-medic-poliklinika/2026-10-02.pages.json",
+      "note": "41 страница. Цены есть только в блоках vc_raw_html (base64 от URL-encoded HTML) на /lola-tretman/, /btl-exilis-ultra-360-tretman-tijela/, /anticelulit-program/, /ljetnji-anti-aging-fresh-skin-paket/; все дублируют /cjenovnik/."
+    },
+    {
+      "type": "website",
+      "ref": "http://web.archive.org/web/20260514095533/https://novamedic.me/cjenovnik/",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "snapshot": "data/clinic-pricelists/sources/nova-medic-poliklinika/2026-05-14.wayback.html",
+      "note": "Прайс до перепрофилирования: с терапией, эндокринологией, пульмонологией, УЗИ, физиатрией, ЛФК, массажем, хиджамой и Xeomin. Нужен как доказательство для is_obsolete."
+    },
+    {
+      "type": "website",
+      "ref": "http://web.archive.org/web/20260514105852/https://novamedic.me/nas-tim/",
+      "collected": "2026-10-02",
+      "machineReadable": true,
+      "snapshot": "data/clinic-pricelists/sources/nova-medic-poliklinika/nas-tim-2026-05-14.wayback.html",
+      "note": "Состав команды до перепрофилирования: 9 человек, из них шестеро убраны 2026-09-30."
+    }
+  ],
+  "coverage": {
+    "prices": "сайт, все 103 позиций прайса, кроме сезонной акции; 62 строк прежнего прайса — is_obsolete",
+    "labTests": "клиника анализов не публикует",
+    "doctors": "в «Naš tim» на 2026-09-30 три дерматовенеролога (Lagator, Bošković, Biro) и медсестра Marija Vešović (в БД её нет). Шестеро ушедших (Mandić, Radunović, Delić, Kuzmanović, Marković, Asanović) отвязываются update-nova-medic-doctors-and-dermatoscopy-specialty.sql; по решению юзера профили остаются публичными без клиники.",
+    "notes": "Оплата в рассрочку (CKB Shopping, Hipotekarna Premium), страховки SAVA/GRAWE/UNIQA — в майском прайсе, в текущем на /anticelulit-program/."
+  },
+  "catalogAdditions": [
+    {
+      "table": "medical_services",
+      "nameEn": "Follow-up Dermatologist Examination with Dermatoscopy",
+      "nameSr": "Kontrolni pregled dermatologa sa dermatoskopijom",
+      "slug": "follow-up-dermatologist-examination-with-dermatoscopy",
+      "categoryIds": [
+        24
+      ],
+      "specialtyIds": [
+        7
+      ],
+      "reason": "Есть осмотр дерматолога с дерматоскопией (2311) и контрольный осмотр дерматолога (2298), контрольного осмотра с дерматоскопией нет. Названия по образцу 2311; sort_order NULL, как у 2298 и 2311."
+    },
+    {
+      "table": "medical_services",
+      "nameEn": "Laser Hair Removal Legs and Intimate Area Package 6 Treatments",
+      "nameSr": "Laserska epilacija nogu i intimne regije – 6 tretmana",
+      "slug": "laser-hair-removal-legs-and-intimate-area-package-6-treatments",
+      "categoryIds": [
+        24
+      ],
+      "specialtyIds": [
+        7
+      ],
+      "reason": "Из пакетов эпиляции в каталоге только «всё тело, 6 процедур» (4487). Названия по образцу 4487. Синонимов нет: name_sr совпадает со строкой сайта."
+    }
+  ],
+  "services": [
+    {
+      "nameEn": "Dermatologist Examination",
+      "slug": "dermatologist-examination",
+      "source": "DERMATOVENEROLOGIJA › Specijalistički dermatovenerološki pregled — €50"
+    },
+    {
+      "nameEn": "Follow-up Dermatologist Examination",
+      "slug": "follow-up-dermatologist-examination",
+      "source": "DERMATOVENEROLOGIJA › Kontrolni pregled dermatovenerologa — €40"
+    },
+    {
+      "nameEn": "Dermatologist Examination with Dermatoscopy",
+      "slug": "dermatologist-examination-with-dermatoscopy",
+      "source": "DERMATOVENEROLOGIJA › Dermoskopski pregled — €80"
+    },
+    {
+      "nameEn": "Follow-up Dermatologist Examination with Dermatoscopy",
+      "slug": "follow-up-dermatologist-examination-with-dermatoscopy",
+      "source": "DERMATOVENEROLOGIJA › Kontrolni dermoskopski pregled — €50"
+    },
+    {
+      "nameEn": "Skin Biopsy with Histopathology Report",
+      "slug": "skin-biopsy-with-histopathology-report",
+      "source": "DERMATOVENEROLOGIJA › Dermatološki pregled sa biopsijom kože i analizom uzorka — €150"
+    },
+    {
+      "nameEn": "Condyloma Cryotherapy Removal with Examination",
+      "slug": "condyloma-cryotherapy-removal-with-examination",
+      "source": "DERMATOVENEROLOGIJA › Uklanjanje kondiloma tečnim azotom sa pregledom — €150"
+    },
+    {
+      "nameEn": "Cryotherapy Liquid Nitrogen Up to 5 Lesions",
+      "slug": "cryotherapy-liquid-nitrogen-up-to-5-lesions",
+      "source": "DERMATOVENEROLOGIJA › Krioterapija (tečni azot) – do 5 promjena — €40"
+    },
+    {
+      "nameEn": "Cryotherapy Liquid Nitrogen 6 to 20 Lesions",
+      "slug": "cryotherapy-liquid-nitrogen-6-to-20-lesions",
+      "source": "DERMATOVENEROLOGIJA › Krioterapija (tečni azot) – od 6 do 20 promjena — €60"
+    },
+    {
+      "nameEn": "Cryotherapy Liquid Nitrogen Over 20 Lesions",
+      "slug": "cryotherapy-liquid-nitrogen-over-20-lesions",
+      "source": "DERMATOVENEROLOGIJA › Krioterapija (tečni azot) – preko 20 promjena — €80"
+    },
+    {
+      "nameEn": "Plasma Pen Treatment Up to 3 Lesions",
+      "slug": "plasma-pen-treatment-up-to-3-lesions",
+      "source": "DERMATOVENEROLOGIJA › Plasmapen (do 3 promjene) — €40"
+    },
+    {
+      "nameEn": "Plasma Pen Treatment Up to 10 Lesions",
+      "slug": "plasma-pen-treatment-up-to-10-lesions",
+      "source": "DERMATOVENEROLOGIJA › Plasmapen (do 10 promjena) — €70"
+    },
+    {
+      "nameEn": "Plasma Pen Treatment Over 10 Lesions",
+      "slug": "plasma-pen-treatment-over-10-lesions",
+      "source": "DERMATOVENEROLOGIJA › Plasmapen (preko 10 promjena) — €120"
+    },
+    {
+      "nameEn": "RF Electrocauterization Up to 3 Lesions",
+      "slug": "rf-electrocauterization-up-to-3-lesions",
+      "source": "DERMATOVENEROLOGIJA › RT Elektrokauterizacija (do 3 promjene) — €50"
+    },
+    {
+      "nameEn": "RF Electrocauterization Up to 10 Lesions",
+      "slug": "rf-electrocauterization-up-to-10-lesions",
+      "source": "DERMATOVENEROLOGIJA › RT Elektrokauterizacija (do 10 promjena) — €100"
+    },
+    {
+      "nameEn": "RF Electrocauterization Over 10 Lesions",
+      "slug": "rf-electrocauterization-over-10-lesions",
+      "source": "DERMATOVENEROLOGIJA › RT Elektrokauterizacija (preko 10 promjena) — €150"
+    },
+    {
+      "nameEn": "Aesthetic Consultation",
+      "slug": "aesthetic-consultation",
+      "source": "ESTETSKA MEDICINA › *Konsultacija — €30"
+    },
+    {
+      "nameEn": "Botox Bocouture 1 Region",
+      "slug": "botox-bocouture-1-region",
+      "source": "ESTETSKA MEDICINA › BOTOX › Botox – 1 regija (Bocouture) — €150"
+    },
+    {
+      "nameEn": "Botox Bocouture 2 Regions",
+      "slug": "botox-bocouture-2-regions",
+      "source": "ESTETSKA MEDICINA › BOTOX › Botox – 2 regije (Bocouture) — €250"
+    },
+    {
+      "nameEn": "Botox Bocouture 3 Regions",
+      "slug": "botox-bocouture-3-regions",
+      "source": "ESTETSKA MEDICINA › BOTOX › Botox – 3 regije (Bocouture) — €300"
+    },
+    {
+      "nameEn": "Axillary Hyperhidrosis Botox Bocouture",
+      "slug": "axillary-hyperhidrosis-botox-bocouture",
+      "source": "ESTETSKA MEDICINA › BOTOX › Hiperhidroza pazuha (Bocouture) — €300"
+    },
+    {
+      "nameEn": "Palmar Hyperhidrosis Botox Bocouture",
+      "slug": "palmar-hyperhidrosis-botox-bocouture",
+      "source": "ESTETSKA MEDICINA › BOTOX › Hiperhidroza šaka (Bocouture) — €300"
+    },
+    {
+      "nameEn": "Hyaluronic Fillers 1ml",
+      "slug": "hyaluronic-fillers-1ml",
+      "source": "ESTETSKA MEDICINA › HIJALURONSKI FILERI › Filer 1ml (Neauvia, Helene) — €200"
+    },
+    {
+      "nameEn": "Hyaluronic Fillers 2ml",
+      "slug": "hyaluronic-fillers-2ml",
+      "source": "ESTETSKA MEDICINA › HIJALURONSKI FILERI › Filer 2ml (Neauvia, Helene) — €350"
+    },
+    {
+      "nameEn": "Hyaluronic Fillers 3ml",
+      "slug": "hyaluronic-fillers-3ml",
+      "source": "ESTETSKA MEDICINA › HIJALURONSKI FILERI › Filer 1ml (Neauvia, Helene) — третья строка, 530 € — €530",
+      "note": "опечатка сайта: в снимке 2026-05-14 строка «Fileri 3ml (Neauvia/Helene) €530»"
+    },
+    {
+      "nameEn": "COG Thread Lift 2 Threads",
+      "slug": "cog-thread-lift-2-threads",
+      "source": "ESTETSKA MEDICINA › NITI › COG niti (2 kom.) — €100"
+    },
+    {
+      "nameEn": "COG Thread Lift 4 Threads",
+      "slug": "cog-thread-lift-4-threads",
+      "source": "ESTETSKA MEDICINA › NITI › COG niti (4 kom.) — €200"
+    },
+    {
+      "nameEn": "Spanish Glow Biorevitalization",
+      "slug": "spanish-glow-biorevitalization",
+      "source": "ESTETSKA MEDICINA › BIOREVITALIZACIJA › Spanish glow (Lola + HA eyes + Hylift) — €300"
+    },
+    {
+      "nameEn": "Skinbuilder LOLA Biorevitalization",
+      "slug": "skinbuilder-lola-biorevitalization",
+      "source": "ESTETSKA MEDICINA › BIOREVITALIZACIJA › Skinbuilder – LOLA — €220",
+      "note": "то же на /lola-tretman/: «Redovna cijena 220€»; ниже там же устаревший блок «Redovna cijena 250€ / Vaša cijena 225€»"
+    },
+    {
+      "nameEn": "Hyalift 75 Pro Skin Booster",
+      "slug": "hyalift-75-pro-skin-booster",
+      "source": "ESTETSKA MEDICINA › BIOREVITALIZACIJA › Skin booster – HYALIFT 75 — €120",
+      "note": "в мае было «HYALIFT 75 PRO»"
+    },
+    {
+      "nameEn": "HA Eyes Biorevitalization",
+      "slug": "ha-eyes-biorevitalization",
+      "source": "ESTETSKA MEDICINA › BIOREVITALIZACIJA › HA EYES — €50"
+    },
+    {
+      "nameEn": "Facial Mesotherapy Single Treatment",
+      "slug": "facial-mesotherapy-single-treatment",
+      "source": "ESTETSKA MEDICINA › MEZOTERAPIJA › Cijelo lice — €50"
+    },
+    {
+      "nameEn": "Face and Neck Mesotherapy",
+      "slug": "face-and-neck-mesotherapy",
+      "source": "ESTETSKA MEDICINA › MEZOTERAPIJA › Cijelo lice i vrat — €75"
+    },
+    {
+      "nameEn": "Face Neck and Decollete Mesotherapy",
+      "slug": "face-neck-and-decollete-mesotherapy",
+      "source": "ESTETSKA MEDICINA › MEZOTERAPIJA › Cijelo lice, vrat i dekolte — €90"
+    },
+    {
+      "nameEn": "Scalp Mesotherapy",
+      "slug": "scalp-mesotherapy",
+      "source": "ESTETSKA MEDICINA › MEZOTERAPIJA › Vlasište — €50"
+    },
+    {
+      "nameEn": "Lipolysis",
+      "slug": "lipolysis",
+      "source": "ESTETSKA MEDICINA › MEZOTERAPIJA › Lipolitik, po vialu — €50"
+    },
+    {
+      "nameEn": "Chemical Face Peel",
+      "slug": "chemical-peeling-face",
+      "source": "ESTETSKA MEDICINA › HEMIJSKI PILING › Cijelo lice — €40"
+    },
+    {
+      "nameEn": "Chemical Peel Face and Neck",
+      "slug": "chemical-peel-face-and-neck",
+      "source": "ESTETSKA MEDICINA › HEMIJSKI PILING › Cijelo lice i vrat — €50"
+    },
+    {
+      "nameEn": "Chemical Peel Face Neck and Decollete",
+      "slug": "chemical-peel-face-neck-and-decollete",
+      "source": "ESTETSKA MEDICINA › HEMIJSKI PILING › Cijelo lice, vrat i dekolte — €60"
+    },
+    {
+      "nameEn": "Laser Hair Removal Upper Lip Women",
+      "slug": "laser-hair-removal-upper-lip-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Nausnice — €15"
+    },
+    {
+      "nameEn": "Laser Hair Removal Chin and Upper Lip Women",
+      "slug": "laser-hair-removal-chin-and-upper-lip-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Brada i nausnice — €25"
+    },
+    {
+      "nameEn": "Laser Hair Removal Chin and Under Chin Women",
+      "slug": "laser-hair-removal-chin-and-under-chin-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Brada i podbradak — €25"
+    },
+    {
+      "nameEn": "Laser Hair Removal Sideburns Women",
+      "slug": "laser-hair-removal-sideburns-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Zulufi — €15"
+    },
+    {
+      "nameEn": "Laser Hair Removal Underarms Women",
+      "slug": "laser-hair-removal-underarms-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Pazušne jame — €40"
+    },
+    {
+      "nameEn": "Laser Hair Removal Forearms Women",
+      "slug": "laser-hair-removal-forearms-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Podlaktice — €40"
+    },
+    {
+      "nameEn": "Laser Hair Removal Full Arms Women",
+      "slug": "laser-hair-removal-full-arms-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Cijele ruke — €60"
+    },
+    {
+      "nameEn": "Laser Hair Removal Bikini Line Women",
+      "slug": "laser-hair-removal-bikini-line-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Prepone — €40"
+    },
+    {
+      "nameEn": "Laser Hair Removal Intimate Zone 1 Women",
+      "slug": "laser-hair-removal-intimate-zone-1-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Intimna zona 1 — €50"
+    },
+    {
+      "nameEn": "Laser Hair Removal Intimate Zone 2 Women",
+      "slug": "laser-hair-removal-intimate-zone-2-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Intimna zona 2 — €60"
+    },
+    {
+      "nameEn": "Laser Hair Removal Lower Legs Women",
+      "slug": "laser-hair-removal-lower-legs-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Potkoljenice — €60"
+    },
+    {
+      "nameEn": "Laser Hair Removal Full Legs Women",
+      "slug": "laser-hair-removal-full-legs-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Cijele noge — €100"
+    },
+    {
+      "nameEn": "Laser Hair Removal Full Legs and Bikini Women",
+      "slug": "laser-hair-removal-full-legs-and-bikini-women",
+      "source": "LASERSKA EPILACIJA › ŽENE › Cijele noge i prepone — €130"
+    },
+    {
+      "nameEn": "Laser Hair Removal Beard Men",
+      "slug": "laser-hair-removal-beard-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Brada — €50"
+    },
+    {
+      "nameEn": "Laser Hair Removal Sideburns Men",
+      "slug": "laser-hair-removal-sideburns-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Zulufi — €20"
+    },
+    {
+      "nameEn": "Laser Hair Removal Cheeks Men",
+      "slug": "laser-hair-removal-cheeks-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Jagodice — €20"
+    },
+    {
+      "nameEn": "Laser Hair Removal Ears Men",
+      "slug": "laser-hair-removal-ears-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Ušne školjke — €20"
+    },
+    {
+      "nameEn": "Laser Hair Removal Neck Men",
+      "slug": "laser-hair-removal-neck-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Vrat — €25"
+    },
+    {
+      "nameEn": "Laser Hair Removal Underarms Men",
+      "slug": "laser-hair-removal-underarms-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Pazušne jame — €50"
+    },
+    {
+      "nameEn": "Laser Hair Removal Forearms Men",
+      "slug": "laser-hair-removal-forearms-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Podlaktice — €50"
+    },
+    {
+      "nameEn": "Laser Hair Removal Full Arms Men",
+      "slug": "laser-hair-removal-full-arms-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Cijele ruke — €70"
+    },
+    {
+      "nameEn": "Laser Hair Removal Chest Men",
+      "slug": "laser-hair-removal-chest-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Grudi — €40"
+    },
+    {
+      "nameEn": "Laser Hair Removal Abdomen Men",
+      "slug": "laser-hair-removal-abdomen-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Stomak — €40"
+    },
+    {
+      "nameEn": "Laser Hair Removal Full Back Men",
+      "slug": "laser-hair-removal-full-back-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Leđa cijela — €60"
+    },
+    {
+      "nameEn": "Laser Hair Removal Shoulders Men",
+      "slug": "laser-hair-removal-shoulders-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Ramena — €30"
+    },
+    {
+      "nameEn": "Laser Hair Removal Lower Legs Men",
+      "slug": "laser-hair-removal-lower-legs-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Potkoljenice — €70"
+    },
+    {
+      "nameEn": "Laser Hair Removal Full Legs Men",
+      "slug": "laser-hair-removal-full-legs-men",
+      "source": "LASERSKA EPILACIJA › MUŠKARCI › Cijele noge — €110"
+    },
+    {
+      "nameEn": "CO2 Laser Face",
+      "slug": "co2-laser-face",
+      "source": "CO2 LASER › Cijelo lice — €130"
+    },
+    {
+      "nameEn": "CO2 Laser Face and Neck",
+      "slug": "co2-laser-face-and-neck",
+      "source": "CO2 LASER › Cijelo lice i vrat — €150"
+    },
+    {
+      "nameEn": "CO2 Laser Neck and Decollete",
+      "slug": "co2-laser-neck-and-decollete",
+      "source": "CO2 LASER › Vrat i dekolte — €130"
+    },
+    {
+      "nameEn": "CO2 Laser Decollete",
+      "slug": "co2-laser-decollete",
+      "source": "CO2 LASER › Dekolte — €80"
+    },
+    {
+      "nameEn": "CO2 Laser Face Neck and Decollete",
+      "slug": "co2-laser-face-neck-and-decollete",
+      "source": "CO2 LASER › Cijelo lice, vrat i dekolte — €250"
+    },
+    {
+      "nameEn": "CO2 Laser Eyelids Upper or Lower",
+      "slug": "co2-laser-eyelids-upper-or-lower",
+      "source": "CO2 LASER › Kapci donji ili gornji — €80"
+    },
+    {
+      "nameEn": "CO2 Laser Eyelids Upper and Lower",
+      "slug": "co2-laser-eyelids-upper-and-lower",
+      "source": "CO2 LASER › Kapci gornji i donji — €150"
+    },
+    {
+      "nameEn": "CO2 Laser Stretch Marks Abdomen Small",
+      "slug": "co2-laser-stretch-marks-abdomen-small",
+      "source": "CO2 LASER › Strije stomak, mala regija — €100"
+    },
+    {
+      "nameEn": "CO2 Laser Stretch Marks Abdomen Medium",
+      "slug": "co2-laser-stretch-marks-abdomen-medium",
+      "source": "CO2 LASER › Strije stomak, srednja regija — €150"
+    },
+    {
+      "nameEn": "CO2 Laser Stretch Marks Abdomen Large",
+      "slug": "co2-laser-stretch-marks-abdomen-large",
+      "source": "CO2 LASER › Strije stomak, velika regija — €220"
+    },
+    {
+      "nameEn": "CO2 Laser Stretch Marks Thighs Small",
+      "slug": "co2-laser-stretch-marks-thighs-small",
+      "source": "CO2 LASER › Strije butine, mala regija — €150"
+    },
+    {
+      "nameEn": "CO2 Laser Stretch Marks Thighs Medium",
+      "slug": "co2-laser-stretch-marks-thighs-medium",
+      "source": "CO2 LASER › Strije butine, srednja regija — €220"
+    },
+    {
+      "nameEn": "CO2 Laser Stretch Marks Thighs Large",
+      "slug": "co2-laser-stretch-marks-thighs-large",
+      "source": "CO2 LASER › Strije butine, velika regija — €250"
+    },
+    {
+      "nameEn": "CO2 Laser Scar Up to 10cm",
+      "slug": "co2-laser-scar-up-to-10cm",
+      "source": "CO2 LASER › Ožiljak do 10cm — €50"
+    },
+    {
+      "nameEn": "CO2 Laser Scar Up to 20cm",
+      "slug": "co2-laser-scar-up-to-20cm",
+      "source": "CO2 LASER › Ožiljak do 20cm — €80"
+    },
+    {
+      "nameEn": "CO2 Laser Scar Up to 30cm",
+      "slug": "co2-laser-scar-up-to-30cm",
+      "source": "CO2 LASER › Ožiljak do 30cm — €120"
+    },
+    {
+      "nameEn": "Anti-Cellulite BTL X-wave Package",
+      "slug": "anti-cellulite-btl-x-wave-package",
+      "source": "TRETMANI TIJELA › ANTI-CELULIT › Anticelulit paket (10 tretmana BTL X-wave, 5 presoterapija, 2 mezoterapije) — €350"
+    },
+    {
+      "nameEn": "Pressotherapy 30 min",
+      "slug": "pressotherapy-30-min",
+      "source": "TRETMANI TIJELA › PRESOTERAPIJA › Presoterapija – aparaturna limfna drenaža 30 min. — €15"
+    },
+    {
+      "nameEn": "Pressotherapy 45 min",
+      "slug": "pressotherapy-45-min",
+      "source": "TRETMANI TIJELA › PRESOTERAPIJA › Presoterapija – aparaturna limfna drenaža 45 min. — €20"
+    },
+    {
+      "nameEn": "Pressotherapy 60 min",
+      "slug": "pressotherapy-60-min",
+      "source": "TRETMANI TIJELA › PRESOTERAPIJA › Presoterapija – aparaturna limfna drenaža 60 min. — €25"
+    },
+    {
+      "nameEn": "Pressotherapy 30 min Package 10 Treatments",
+      "slug": "pressotherapy-30-min-package-10-treatments",
+      "source": "TRETMANI TIJELA › PRESOTERAPIJA PAKET 10 TRETMANA › Presoterapija – aparaturna limfna drenaža 30 min. — €120",
+      "note": "в снимке 2026-05-14 тоже 120 €"
+    },
+    {
+      "nameEn": "Pressotherapy 45 min Package 10 Treatments",
+      "slug": "pressotherapy-45-min-package-10-treatments",
+      "source": "TRETMANI TIJELA › PRESOTERAPIJA PAKET 10 TRETMANA › Presoterapija – aparaturna limfna drenaža 45 min. — €150"
+    },
+    {
+      "nameEn": "Pressotherapy 60 min Package 10 Treatments",
+      "slug": "pressotherapy-60-min-package-10-treatments",
+      "source": "TRETMANI TIJELA › PRESOTERAPIJA PAKET 10 TRETMANA › Presoterapija – aparaturna limfna drenaža 60 min. — €200"
+    },
+    {
+      "nameEn": "Exilis Abdomen Fat Reduction with Pressotherapy",
+      "slug": "exilis-abdomen-fat-reduction-with-pressotherapy",
+      "source": "EXILIS ULTRA 360 › TIJELO › Exilis – redukcija masnih naslaga (stomak) 5 tretmana + 5 presoterapija — €200"
+    },
+    {
+      "nameEn": "Exilis Abdomen Fat Reduction with Pressotherapy and Drainage",
+      "slug": "exilis-abdomen-fat-reduction-with-pressotherapy-and-drainage",
+      "source": "EXILIS ULTRA 360 › TIJELO › Exilis – redukcija masnih naslaga (stomak) 5 tretmana + 5 presoterapija + 5 manuelnih limfnih drenaža — €300"
+    },
+    {
+      "nameEn": "Exilis Flanks Fat Reduction with Pressotherapy",
+      "slug": "exilis-flanks-fat-reduction-with-pressotherapy",
+      "source": "EXILIS ULTRA 360 › TIJELO › Exilis – redukcija masnih naslaga (bokovi) 5 tretmana + 5 presoterapija — €200"
+    },
+    {
+      "nameEn": "Exilis Flanks Fat Reduction with Pressotherapy and Drainage",
+      "slug": "exilis-flanks-fat-reduction-with-pressotherapy-and-drainage",
+      "source": "EXILIS ULTRA 360 › TIJELO › Exilis – redukcija masnih naslaga (bokovi) 5 tretmana + 5 presoterapija + 5 manuelnih limfnih drenaža — €300"
+    },
+    {
+      "nameEn": "Exilis Abdomen and Flanks Fat Reduction with Pressotherapy",
+      "slug": "exilis-abdomen-and-flanks-fat-reduction-with-pressotherapy",
+      "source": "EXILIS ULTRA 360 › TIJELO › Exilis – redukcija masnih naslaga (stomak i bokovi) 5 tretmana + 5 presoterapija — €350"
+    },
+    {
+      "nameEn": "Exilis Abdomen and Flanks Fat Reduction with Pressotherapy and Drainage",
+      "slug": "exilis-abdomen-and-flanks-fat-reduction-with-pressotherapy-and-drainage",
+      "source": "EXILIS ULTRA 360 › TIJELO › Exilis – redukcija masnih naslaga (stomak i bokovi) 5 tretmana + 5 presoterapija + 5 manuelnih limfnih drenaža — €450"
+    },
+    {
+      "nameEn": "Exilis Thighs Bilateral with Pressotherapy",
+      "slug": "exilis-thighs-bilateral-with-pressotherapy",
+      "source": "EXILIS ULTRA 360 › TIJELO › Exilis – butine (obostrano) 5 tretmana + 5 presoterapija — €400"
+    },
+    {
+      "nameEn": "Exilis Thighs Bilateral with Pressotherapy and Drainage",
+      "slug": "exilis-thighs-bilateral-with-pressotherapy-and-drainage",
+      "source": "EXILIS ULTRA 360 › TIJELO › Exilis – butine (obostrano) 5 tretmana + 5 presoterapija + 5 manuelnih limfnih drenaža — €500"
+    },
+    {
+      "nameEn": "Exilis Upper Arms 5 Treatments",
+      "slug": "exilis-upper-arms-5-treatments",
+      "source": "EXILIS ULTRA 360 › TIJELO › Exilis – nadlaktice 5 tretmana — €200"
+    },
+    {
+      "nameEn": "Exilis Face Lifting 6 Treatments",
+      "slug": "exilis-face-lifting-6-treatments",
+      "source": "EXILIS ULTRA 360 › LICE › Exilis Face Lifting (tretman cijelog lica) 6 tretmana — €200"
+    },
+    {
+      "nameEn": "Exilis Face Lifting with Peptides 8 Treatments",
+      "slug": "exilis-face-lifting-with-peptides-8-treatments",
+      "source": "EXILIS ULTRA 360 › LICE › Exilis Face Lifting (tretman cijelog lica) 4 tretmana + 4 tretmana peptidima — €450"
+    },
+    {
+      "nameEn": "Exilis Face and Neck Lifting 4 Treatments",
+      "slug": "exilis-face-and-neck-lifting-4-treatments",
+      "source": "EXILIS ULTRA 360 › LICE › Exilis Face & Neck Lifting (lice,podbradak, vrat i dekolte) 4 tretmana — €300"
+    },
+    {
+      "nameEn": "Exilis Face and Neck Lifting with Peptides 8 Treatments",
+      "slug": "exilis-face-and-neck-lifting-with-peptides-8-treatments",
+      "source": "EXILIS ULTRA 360 › LICE › Exilis Face & Neck Lifting (lice,podbradak, vrat i dekolte) 4 tretmana + 4 tretmana peptidima — €500"
+    },
+    {
+      "nameEn": "Laser Hair Removal Full Body Package 6 Treatments",
+      "slug": "laser-hair-removal-full-body-package-6-treatments",
+      "source": "AKCIJSKI PAKETI › LASERSKA EPILACIJA › Laserska epilacija cijelo tijelo 6 tretmana — €500"
+    },
+    {
+      "nameEn": "Laser Hair Removal Legs and Intimate Area Package 6 Treatments",
+      "slug": "laser-hair-removal-legs-and-intimate-area-package-6-treatments",
+      "source": "AKCIJSKI PAKETI › LASERSKA EPILACIJA › Laserska epilacija nogu i intimne regije 6 tretmana — €312"
+    }
+  ],
+  "obsolete": [
+    {
+      "group": "Botox Xeomin",
+      "reason": "Раздел BOTOX на 2026-05-14 содержал строки Bocouture и Xeomin, на 2026-09-30 остался только Bocouture. Отдельной страницы про ботокс нет: /botox/ отдаёт 301 на главную.",
+      "nameEn": [
+        "Botox Xeomin 1 Region",
+        "Botox Xeomin 2 Regions",
+        "Botox Xeomin 3 Regions",
+        "Axillary Hyperhidrosis Botox Xeomin",
+        "Palmar Hyperhidrosis Botox Xeomin"
+      ]
+    },
+    {
+      "group": "Физиатрия, физиотерапия, ЛФК, массаж, хиджама",
+      "reason": "Разделы FIZIJATRIJA, FIZIKALNA TERAPIJA (+ PAKETI), VJEŽBE (+ PAKETI), MASAŽE, CUPPING из прайса удалены. Страниц услуг тоже больше нет: /fizikalna-terapija/, /masaze/, /pregled-fizijatra/, /shockwave-terapija/, /kineziterapija/, /cupping-terapija-hidzama/ отдают 301 на главную или на вложения; в wp-json/pages их нет. Из «Naš tim» убраны физиатры dr Dragana Radunović и dr Marina Delić и три физиотерапевта.",
+      "nameEn": [
+        "First Physiatrist Examination",
+        "Follow-up Physiatrist Examination",
+        "Physiatrist Consultation",
+        "Intramuscular Injection",
+        "Electrotherapy",
+        "Laser Therapy",
+        "Ultrasound Therapy",
+        "Magnetic Therapy",
+        "Ultrasound Therapy with Analgesic",
+        "Dry Needling",
+        "Shock Wave Therapy",
+        "Physical Therapy Silver Package 10 Treatments",
+        "Physical Therapy Gold Package 15 Treatments",
+        "Physical Therapy Platinum Package 20 Treatments",
+        "Shockwave Therapy Package 10 Treatments",
+        "Kinesiotherapy 30 min",
+        "Kinesiotherapy 45 min",
+        "Schroth Method 45 min",
+        "Schroth Method 45 min Second Child",
+        "Kinesiotherapy 30 min Package 10 Treatments",
+        "Kinesiotherapy 45 min Package 10 Treatments",
+        "Schroth Method Package 10 Treatments",
+        "Schroth Method Second Child Package 10 Treatments",
+        "Visceral Osteopathy",
+        "Swedish Therapeutic Massage 30 min",
+        "Swedish Therapeutic Massage 45 min",
+        "Swedish Therapeutic Massage 60 min",
+        "Pregnancy Massage 30 min",
+        "Pregnancy Massage 45 min",
+        "Sports Massage 30 min",
+        "Sports Massage 45 min",
+        "Sports Massage 60 min",
+        "Manual Lymphatic Drainage 30 min",
+        "Manual Lymphatic Drainage 40 min",
+        "Manual Lymphatic Drainage 60 min",
+        "Dry Cupping Back",
+        "Wet Cupping Back",
+        "Cupping Full Body"
+      ]
+    },
+    {
+      "group": "Терапия, эндокринология, пульмология, УЗИ",
+      "reason": "Разделы INTERNA MEDICINA, ENDOKRINOLOGIJA, PULMOLOGIJA, ULTRAZVUČNI PREGLEDI из прайса удалены, из меню сайта тоже. /pregled-interniste/ и /pregled-endokrinologa/ отдают 301 на главную. Страницы /interna-medicina-1/, /kardioloski-pregled/, /holter/, /ultrazvucni-pregledi/, /ultrazvuk-*/, /dopler-krvnih-sudova/ ещё опубликованы, но цен на них нет, и ссылаются они только друг на друга (сироты, правились 2026-06-02 и 2026-07-17). Из «Naš tim» убран dr Borislav Mandić (терапевт, эндокринолог).",
+      "nameEn": [
+        "Internist Examination",
+        "Internist Examination with ECG",
+        "Follow-up Internist Examination",
+        "ECG",
+        "Endocrinologist Examination",
+        "Endocrinologist Examination with Thyroid Ultrasound",
+        "Follow-up Endocrinologist Examination",
+        "Pulmonologist Examination",
+        "Follow-up Pulmonologist Examination",
+        "Soft Tissue Ultrasound",
+        "Thyroid Ultrasound",
+        "Breast Ultrasound",
+        "Abdomen and Kidney Ultrasound",
+        "Lower Abdomen Ultrasound",
+        "Orthopedic Ultrasound, Single Joint",
+        "Blood Vessels Doppler",
+        "Follow-up Ultrasound Examination",
+        "Multi-segment Ultrasound Examination"
+      ]
+    },
+    {
+      "group": "Эпиляция всего лица (жен.)",
+      "reason": "В таблице эпиляции нет строки «cijelo lice» ни сейчас, ни в снимке 2026-05-14 (13 женских зон, все остальные у нас есть). На /laserska-epilacija/ цен нет. Откуда строка пришла при импорте 2026-04-16, установить не удалось.",
+      "nameEn": [
+        "Laser Hair Removal Full Face Women"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "source": "AKCIJSKI PAKETI › LJETNJI Anti Aging & Fresh Skin PAKET — «Ljetnji reset za lice, kožu i sigurniji osjećaj tokom ljeta» €640",
+      "reason": "Сезонная летняя акция (страница /ljetnji-anti-aging-fresh-skin-paket/ правилась 2026-07-08, сейчас октябрь). Набор из трёх процедур со скидкой 20 % (Botulinum toxin на верхние 2/3 лица 250 €, RRS HA Long Lasting Skin Booster 250 €, ботокс от гипергидроза 300 €), и каждая из них есть в прайсе отдельной строкой. Отдельная запись каталога под акцию устареет вместе с ней."
+    }
+  ],
+  "openQuestions": [
+    "skin-biopsy-with-histopathology-report: «Dermatološki pregled sa biopsijom kože i analizom uzorka» 150 € сопоставлен с существующей записью; если нужна отдельная запись «осмотр с биопсией», убрать строку из раздела 2 SQL.",
+    "Терапия, эндокринология, пульмонология, УЗИ: страницы /interna-medicina-1/, /kardioloski-pregled/, /holter/, /ultrazvuk-*/ ещё опубликованы (без цен, вне меню). is_obsolete поставлен — при возврате разделов в прайс снять.",
+    "laser-hair-removal-full-face-women: источник строки не найден ни в каком снимке прайса."
+  ]
+}

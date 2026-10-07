@@ -1,0 +1,4391 @@
+[
+	{
+		"site": "https://milmedika.com/poliklinika-podgorica",
+		"clinics": [
+			{
+				"id": 1,
+				"slug": "milmedika-podgorica",
+				"name": "Milmedika Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 139,
+					"servicesPriced": 139,
+					"labTests": 309,
+					"labTestsPriced": 309
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://milmedika.com/cjenovnik/milmedika-podgorica",
+				"kind": "html",
+				"scope": "все услуги + лаборатория (биохимия, гематология, молекулярная диагностика)",
+				"approx_items": 449,
+				"date_hint": "lastUpdated 2026-02-06 (поле в RSC-данных Next.js на странице)"
+			},
+			{
+				"url": "https://milmedika.com/en/price-list/milmedika-podgorica",
+				"kind": "html",
+				"scope": "EN-версия того же прайса",
+				"approx_items": 449,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "совпадает: на сайте ~449 позиций, в БД 139 услуг + 311 анализов = 450 (импорт с этого прайса)",
+		"notes": "Next.js на Vercel, прайс в SSR HTML (curl читает). Формат «50,00 €». Индекс /cjenovnik — выбор филиала без цен.",
+		"checked": "страница клиники (ссылка на /cjenovnik/milmedika-podgorica), прайс-страница, подсчёт \"price\" в RSC-данных и € в HTML",
+		"flags": [
+			"imported: цены с сайта (migrations/045-milmedika-prices-and-obsolete.sql, 048-milmedika-missing-items.sql), в проде 2026-10-02"
+		],
+		"recheckHint": "в RSC-данных страницы поле lastUpdated",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://milmedika.com/poliklinika-niksic",
+		"clinics": [
+			{
+				"id": 2,
+				"slug": "milmedika-niksic",
+				"name": "Milmedika Nikšić",
+				"city": "niksic",
+				"db": {
+					"services": 264,
+					"servicesPriced": 264,
+					"labTests": 323,
+					"labTestsPriced": 323
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://milmedika.com/cjenovnik/milmedika-niksic",
+				"kind": "html",
+				"scope": "все услуги + лаборатория",
+				"approx_items": 594,
+				"date_hint": "lastUpdated 2026-09-08 (RSC-данные страницы)"
+			},
+			{
+				"url": "https://milmedika.com/en/price-list/milmedika-niksic",
+				"kind": "html",
+				"scope": "EN-версия",
+				"approx_items": 593,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "почти совпадает: сайт ~594, в БД 264 + 325 = 589; прайс обновлён 2026-09-08 — стоит сверить, возможно появились новые позиции",
+		"notes": "Самый свежий из прайсов Milmedika (2026-09-08).",
+		"checked": "страница клиники, прайс-страница, RSC-данные",
+		"flags": [
+			"recently-updated: lastUpdated 2026-09-08",
+			"imported: цены с сайта (migrations/045-milmedika-prices-and-obsolete.sql, 048-milmedika-missing-items.sql), в проде 2026-10-02"
+		],
+		"recheckHint": "поле lastUpdated",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://milmedika.com/poliklinika-tivat",
+		"clinics": [
+			{
+				"id": 3,
+				"slug": "milmedika-tivat",
+				"name": "Milmedika Tivat",
+				"city": "tivat",
+				"db": {
+					"services": 183,
+					"servicesPriced": 183,
+					"labTests": 305,
+					"labTestsPriced": 305
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://milmedika.com/cjenovnik/milmedika-porto-montenegro",
+				"kind": "html",
+				"scope": "все услуги + лаборатория",
+				"approx_items": 493,
+				"date_hint": "lastUpdated 2025-03-25 (RSC-данные страницы)"
+			}
+		],
+		"coverageVsDb": "совпадает: сайт ~493, в БД 183 + 308 = 491",
+		"notes": "Прайс Тивата называется milmedika-porto-montenegro (не tivat). Примечание на странице: «*40% popust na usluge za državljane Crne Gore». Дата прайса 2025-03-25 — старейшая в сети. EN-версия /en/price-list/milmedika-porto-montenegro по аналогии (не открывал).",
+		"checked": "страница клиники poliklinika-tivat ссылается на /cjenovnik/milmedika-porto-montenegro; прайс-страница, RSC-данные",
+		"flags": [
+			"stale-source: lastUpdated 2025-03-25",
+			"imported: цены с сайта (migrations/045-milmedika-prices-and-obsolete.sql, 048-milmedika-missing-items.sql), в проде 2026-10-02"
+		],
+		"recheckHint": "поле lastUpdated",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://milmedika.com/poliklinika-budva",
+		"clinics": [
+			{
+				"id": 4,
+				"slug": "milmedika-budva",
+				"name": "Milmedika Budva",
+				"city": "budva",
+				"db": {
+					"services": 71,
+					"servicesPriced": 71,
+					"labTests": 262,
+					"labTestsPriced": 262
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://milmedika.com/cjenovnik/milmedika-budva",
+				"kind": "html",
+				"scope": "все услуги + лаборатория",
+				"approx_items": 334,
+				"date_hint": "lastUpdated 2026-02-06 (RSC-данные страницы)"
+			},
+			{
+				"url": "https://milmedika.com/en/price-list/milmedika-budva",
+				"kind": "html",
+				"scope": "EN-версия",
+				"approx_items": 337,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "совпадает: сайт ~334, в БД 71 + 264 = 335",
+		"notes": null,
+		"checked": "страница клиники, прайс-страница, RSC-данные",
+		"flags": [
+			"imported: цены с сайта (migrations/045-milmedika-prices-and-obsolete.sql, 048-milmedika-missing-items.sql), в проде 2026-10-02"
+		],
+		"recheckHint": "поле lastUpdated",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://mojlab.me/lokacije",
+		"clinics": [
+			{
+				"id": 176,
+				"slug": "moj-lab-bolnica-podgorica",
+				"name": "Moj Lab Bolnica Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 179,
+				"slug": "moj-lab-laboratorija-city-kvart",
+				"name": "Moj Lab Laboratorija City kvart",
+				"city": "podgorica",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 704,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 183,
+				"slug": "moj-lab-laboratorija-podgorica-moskovska",
+				"name": "Moj Lab Laboratorija Podgorica Moskovska",
+				"city": "podgorica",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 704,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 9,
+				"slug": "moj-lab-pedijatrija-podgorica",
+				"name": "Moj Lab Pedijatrija Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 5,
+				"slug": "moj-lab-podgorica-1",
+				"name": "Moj Lab Poliklinika Podgorica Dalmatinska",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 6,
+				"slug": "moj-lab-podgorica-2",
+				"name": "Moj Lab Poliklinika Podgorica Donja Gorica",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 182,
+				"slug": "moj-lab-laboratorija-niksic",
+				"name": "Moj Lab Laboratorija Nikšić",
+				"city": "niksic",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 704,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 7,
+				"slug": "moj-lab-budva",
+				"name": "Moj Lab Poliklinika Budva",
+				"city": "budva",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 177,
+				"slug": "moj-lab-laboratorija-budva",
+				"name": "Moj Lab Laboratorija Budva",
+				"city": "budva",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 704,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 186,
+				"slug": "moj-lab-pedijatrija-budva",
+				"name": "Moj Lab Pedijatrija Budva",
+				"city": "budva",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 184,
+				"slug": "moj-lab-laboratorija-tivat",
+				"name": "Moj Lab Laboratorija Tivat",
+				"city": "tivat",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 704,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 185,
+				"slug": "moj-lab-laboratorija-ulcinj",
+				"name": "Moj Lab Laboratorija Ulcinj",
+				"city": "ulcinj",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 704,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 187,
+				"slug": "moj-lab-pedijatrija-ulcinj",
+				"name": "Moj Lab Pedijatrija Ulcinj",
+				"city": "ulcinj",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 8,
+				"slug": "moj-lab-ulcinj",
+				"name": "Moj Lab Poliklinika Ulcinj",
+				"city": "ulcinj",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 181,
+				"slug": "moj-lab-laboratorija-kotor",
+				"name": "Moj Lab Laboratorija Kotor",
+				"city": "kotor",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 704,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 180,
+				"slug": "moj-lab-laboratorija-herceg-novi",
+				"name": "Moj Lab Laboratorija Herceg Novi",
+				"city": "herceg-novi",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 704,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 178,
+				"slug": "moj-lab-laboratorija-cetinje",
+				"name": "Moj Lab Laboratorija Cetinje",
+				"city": "cetinje",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 704,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "Цен нет ни у кого. У 9 лабораторий по 704 анализа и 6 услуг патогистологии без цен — перечень сети с mojlab.me/laboratorija, растянут на все лаборатории (решение юзера 2026-10-02); в проде, последняя правка 2026-10-05 (051).",
+		"notes": "Сеть из 17 локаций (sitemap: /lokacije/*): поликлиники Dalmatinska, Donja Gorica (IVF), Budva, Ulcinj; больница Donja Gorica; педиатрии Podgorica, Budva, Ulcinj; 9 лабораторий. Сайт на Webflow с 2026; старые URL /poliklinika/<город> отдают 404, website у всех клиник обновлён на /lokacije/<локация>, телефон — call-центр 19989. Цены на сайте не публикуются: проверены все 340 страниц, бандлы Webflow, поля CMS, оба PDF (политика ИМС, подготовка к анализам); в новостях-акциях только проценты, единственная сумма — 16 € за справку для водительских прав (12.03.2025). Записи на сайте нет; есть приложение «MojLab Montenegro» с записью — curl недоступно, цены там не проверены. Разбор перечня анализов — data/clinic-imports/moj-lab-labtests-2026-10.md.",
+		"checked": "sitemap.xml, все 17 /lokacije/*, /laboratorija (742 строки перечня), 322 страницы без /en/ (услуги, врачи, новости), 5 JS-бандлов Webflow, формы, PDF",
+		"flags": [],
+		"recheckHint": "Перечень анализов — вкладки w-tab-pane с <h5>-группами и <p>-позициями на /laboratorija; часть строк на сайте разорвана или склеена (см. разбор). Цены искать в приложении MojLab Montenegro, если появится веб-версия.",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.poliklinikasmartmed.me/",
+		"clinics": [
+			{
+				"id": 10,
+				"slug": "smartmed-podgorica",
+				"name": "SmartMed Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://www.poliklinikasmartmed.me/aktuelno/specijalne-ponude",
+				"kind": "html",
+				"scope": "акции: гинекологические пакеты 60/120 €, допплер сосудов шеи 25 € (обычно 50), допплер конечностей 60 € (обычно 100), систематский осмотр детей 30 € (обычно 52)",
+				"approx_items": 5,
+				"date_hint": null
+			},
+			{
+				"url": "https://www.poliklinikasmartmed.me/usluge/urologija",
+				"kind": "html",
+				"scope": "превентивный урологический осмотр 96 € (обычно 137 €), декабрьская акция",
+				"approx_items": 1,
+				"date_hint": null
+			},
+			{
+				"url": "https://www.poliklinikasmartmed.me/usluge/sistematski-pregledi",
+				"kind": "html",
+				"scope": "систематский осмотр для мужчин/женщин 150 € (только в meta description)",
+				"approx_items": 1,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "в БД цен нет; на сайте ~7 акционных/пакетных цен",
+		"notes": "Страница /cjenovnik существует, но пустая (только заголовок «CJENOVNIK», серверный рендер, без JS-подгрузки) — возможно, прайс появится там. Цены курсов на /skola-za-trudnice/* (3 страницы) — не медуслуги. Акции без дат.",
+		"checked": "меню, sitemap.xml (43 URL — все прогнаны на €), /cjenovnik, /aktuelno/specijalne-ponude, страницы услуг, школа для беременных",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.poliklinikasmartmed.me/usluge/poliklinika-smart-med-kotor",
+		"clinics": [
+			{
+				"id": 12,
+				"slug": "smartmed-kotor",
+				"name": "SmartMed Kotor",
+				"city": "kotor",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "в БД цен нет",
+		"notes": "URL из БД — soft 404 (HTTP 200, текст «Page Not Found»); филиала Kotor на сайте больше нет. Общие для сети акционные цены — см. запись SmartMed Podgorica.",
+		"checked": "URL из БД, sitemap.xml (нет ни одного URL с kotor), главная (Kotor не упоминается)",
+		"flags": [
+			"lab-only: врачи отвязаны (update-clinics-2026-10-pricelist-map.sql), тип → Diagnostic Laboratory (update-clinics-2026-10-followup.sql), в проде",
+			"website-cleared: поле website очищено (update-clinics-2026-10-06-konzilijum-smartmed.sql), в проде 2026-10-06"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 13,
+				"slug": "dr-orkina-elena-uroloska-ordinacija",
+				"name": "Dr Orkina Elena — uroloska ordinacija",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 14,
+				"slug": "ortopedija-aligrudic-podgorica",
+				"name": "Ortopedija Aligrudić",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://a3medical.org/",
+		"clinics": [
+			{
+				"id": 15,
+				"slug": "a3-medical-sutomore",
+				"name": "A3 Medical",
+				"city": "bar",
+				"db": {
+					"services": 472,
+					"servicesPriced": 384,
+					"labTests": 4,
+					"labTestsPriced": 4
+				}
+			}
+		],
+		"status": "prices_on_service_pages",
+		"pricelists": [
+			{
+				"url": "https://a3medical.org/me/specialty/gynecology/",
+				"kind": "html",
+				"scope": "гинекология",
+				"approx_items": 41,
+				"date_hint": "sitemap lastmod 2026-06-12 (у всего раздела /me/)"
+			},
+			{
+				"url": "https://a3medical.org/me/specialty/cardiology/",
+				"kind": "html",
+				"scope": "кардиология",
+				"approx_items": 6,
+				"date_hint": null
+			},
+			{
+				"url": "https://a3medical.org/me/specialty/urology/",
+				"kind": "html",
+				"scope": "урология",
+				"approx_items": 4,
+				"date_hint": null
+			},
+			{
+				"url": "https://a3medical.org/me/services/",
+				"kind": "html",
+				"scope": "кардиология + урология (дубль 10 позиций)",
+				"approx_items": 10,
+				"date_hint": null
+			},
+			{
+				"url": "https://a3medical.org/me/pricelist/",
+				"kind": "html",
+				"scope": "ВСЕ услуги — но сейчас только названия (~500), без цен",
+				"approx_items": 0,
+				"date_hint": "в Wayback 2026-05-14 эта же страница содержала ~400 цен (класс listOfServicesPerCategoryServicePrice); к 2026-10 колонка цен удалена"
+			}
+		],
+		"coverageVsDb": "меньше: сейчас на сайте ~51 цена (гинекология, кардиология, урология), в БД 331 цена из 472 — они с прежней версии /me/pricelist/, где цены были до мая 2026",
+		"notes": "Важно: прайс-страница потеряла цены между 2026-05-14 и 2026-10-02 (разметка та же, но нет элементов ...ServicePrice). Возможно, временно/намеренно. Цены в БД для ~280 услуг больше не подтверждаются сайтом; архивный источник — http://web.archive.org/web/20260514101448/https://a3medical.org/me/pricelist/. Формат «39€».",
+		"checked": "Hugo-сайт; /me/pricelist/ (+/en/, /ru/) — сырой HTML, 500 позиций без цен; sitemap /me/sitemap.xml (128 URL); все /me/specialty/* (19 страниц) на €; /me/tags/cjenovnik/; Wayback CDX и снимок 20260514101448 прайса",
+		"flags": [
+			"prices-removed: /me/pricelist/ без цен, в Wayback 2026-05-14 было ~400 цен",
+			"outdated-marked: 348 услуг + 3 анализа без цены на сайте → is_price_outdated (update-clinics-2026-10-followup.sql; is_obsolete из pricelist-map снят); свежие 36 + 1 со страниц специальностей"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://orlalphagr.com/",
+		"clinics": [
+			{
+				"id": 16,
+				"slug": "alpha-gr-ordinacija-za-bolesti-uha-grla-i-nosa-bar",
+				"name": "Alpha G.R. Ordinacija za bolesti uha, grla i nosa",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "в БД цен нет — совпадает",
+		"notes": "Статический HTML, Last-Modified usluge.html 2025-09-20, футер © 2025. Список услуг без цен, запись по телефону.",
+		"checked": "все страницы статического сайта: index, usluge.html (+EN services.html, RU uslugeRU.html), onama, kontakt; картинки — только кнопки языков",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://bonomedica.com/",
+		"clinics": [
+			{
+				"id": 17,
+				"slug": "bonomedica-budva",
+				"name": "BonoMedica",
+				"city": "budva",
+				"db": {
+					"services": 71,
+					"servicesPriced": 71,
+					"labTests": 5,
+					"labTestsPriced": 5
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://bonomedica.com/mne-cjenovnik/",
+				"kind": "html",
+				"scope": "все услуги (осмотры, процедуры, УЗИ, несколько анализов); остальная лаборатория — «po cjenovniku laboratorije»",
+				"approx_items": 78,
+				"date_hint": "заголовок «Bono Medica - cjenovnik 2025»; ссылка из меню, редиректит на /en/mne-cjenovnik/ (wp modified 2026-06-13T13:12:06)"
+			},
+			{
+				"url": "https://bonomedica.com/cjenovnik/",
+				"kind": "html",
+				"scope": "дубль того же прайса",
+				"approx_items": 78,
+				"date_hint": "wp modified 2026-05-15"
+			},
+			{
+				"url": "https://bonomedica.com/en/price-list/",
+				"kind": "html",
+				"scope": "EN-дубль",
+				"approx_items": 78,
+				"date_hint": "wp modified 2026-05-15"
+			},
+			{
+				"url": "https://bonomedica.com/ru/prais-list/",
+				"kind": "html",
+				"scope": "RU-дубль (не открывал)",
+				"approx_items": null,
+				"date_hint": "wp modified 2026-05-15"
+			}
+		],
+		"coverageVsDb": "совпадает: сайт 78 позиций, в БД 71 + 5 = 76",
+		"notes": "WordPress/Elementor за mod_security: короткий UA получает 406 Not Acceptable — нужен полный браузерный UA + Accept. Пять копий страницы с одинаковым содержимым; при перепроверке брать /mne-cjenovnik/ (из меню). Дисклеймер «cijene informativnog karaktera».",
+		"checked": "меню (Cjenovnik → /mne-cjenovnik/), wp-json pages, 5 вариантов прайс-страницы",
+		"flags": [],
+		"recheckHint": "полный браузерный UA + Accept, иначе 406",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.medicalvranes.me/",
+		"clinics": [
+			{
+				"id": 18,
+				"slug": "medical-vranes-bar",
+				"name": "Medical Vraneš",
+				"city": "bar",
+				"db": {
+					"services": 30,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "в БД 30 услуг без цен — совпадает",
+		"notes": "Старый PHP-шаблон (годы 2013/2017 на странице), фактически заброшен. Есть только Facebook (facebook.com/medicalvranes).",
+		"checked": "все страницы меню (index, o-nama.php, usluge.php, nas-tim.php, zanimljivosti.php, kontakt.php); sitemap.xml и cjenovnik.php — 404",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 19,
+				"slug": "temel-dental-podgorica",
+				"name": "Temel Dental",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.dental-clinic-pavlin.me/",
+		"clinics": [
+			{
+				"id": 20,
+				"slug": "pavlin-dental-clinic-bar",
+				"name": "Pavlin Dental Clinic",
+				"city": "bar",
+				"db": {
+					"services": 30,
+					"servicesPriced": 30,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.dental-clinic-pavlin.me/",
+				"kind": "html",
+				"scope": "таблица «Dental prices» на главной: стоматология общая",
+				"approx_items": 13,
+				"date_hint": "футер © 2026"
+			},
+			{
+				"url": "https://www.dental-clinic-pavlin.me/orthodontics/",
+				"kind": "html",
+				"scope": "ортодонтия (брекеты, замена брекета, снятие, трейнер, ретейнер)",
+				"approx_items": 6,
+				"date_hint": null
+			},
+			{
+				"url": "https://www.dental-clinic-pavlin.me/veneers/",
+				"kind": "html",
+				"scope": "виниры/реставрации",
+				"approx_items": 4,
+				"date_hint": null
+			},
+			{
+				"url": "https://www.dental-clinic-pavlin.me/me/",
+				"kind": "html",
+				"scope": "та же таблица на черногорском (есть ещё /ru/, /de/, /it/, /si/)",
+				"approx_items": 13,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "меньше: на сайте ~15-18 уникальных цен (главная + ортодонтия), в БД 30 цен — часть, видимо, из другого источника или прежней версии",
+		"notes": "Диапазоны («40-70€», «25-30€», «120-150€»), «from»; лечение каналов и пародонтология — «Pricing on consultation»; имплантаты/хирургия/коронки не делают (направляют). sitemap.xml отдаёт главную.",
+		"checked": "главная (EN), /me/, /ru/, страницы услуг orthodontics, pediatric-dentistry, root-canal, teeth-cleaning, teeth-whitening, veneers",
+		"flags": [
+			"site-fewer-than-db"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "http://www.drbarjaktarovic.me/",
+		"clinics": [
+			{
+				"id": 22,
+				"slug": "orl-klinika-dr-barjaktarovic-herceg-novi",
+				"name": "Dr Barjaktarović — ORL Klinika",
+				"city": "herceg-novi",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг, на сайте цен нет — совпадает.",
+		"notes": "Статичный сайт ORL-клиники Herceg Novi, только описания операций/обследований. URL без .html (/about, /operacije) из меню отдают 404, работают только варианты с .html. Есть ссылки на FB/Instagram, но прайса там не проверить.",
+		"checked": "Главная, все пункты меню (about.html, operacije.html, galerija1.html, kontakt.html); sitemap.xml и /cjenovnik(.html) дают 404; grep €/EUR/cjen/cijen по сырому HTML.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://poliklinikafilipovic.me/",
+		"clinics": [
+			{
+				"id": 23,
+				"slug": "poliklinika-filipovic-podgorica",
+				"name": "Poliklinika Filipović",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "site_down",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг. Публичного прайса нет.",
+		"notes": "Сайт закрыт заглушкой 'under construction', а WP-контент через REST открыт. В скрытом контенте нашлась ровно одна цена: пакет 'STOP PREHLADI' (осмотр + рентген лёгких + CRP + анализ крови) за 49.00 € на странице https://poliklinikafilipovic.me/ (главная в wp-json, modified 2023-08-30), устарела. Блоки 'EUR 5.81/0.00' на странице /instagram/ — это отчёт о рекламных расходах в соцсетях, к услугам отношения не имеют. Последние правки страниц: 2022-12…2025-01.",
+		"checked": "Главная (плагин UnderConstructionPage, 'Sorry, we're doing some work on the site'); wp-json pages (~130 страниц, контент через REST доступен) — grep €/EUR/cijena по всему контенту; wp-json media (PDF только про PRP и Genosense).",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://doctor-viller.com/",
+		"clinics": [
+			{
+				"id": 24,
+				"slug": "drviller-reheart-tivat",
+				"name": "DrViller Reheart",
+				"city": "tivat",
+				"db": {
+					"services": 12,
+					"servicesPriced": 12,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://doctor-viller.com/servises",
+				"kind": "html",
+				"scope": "все услуги амбулатории (приёмы, ЭКГ, капельницы, озонотерапия, инъекции)",
+				"approx_items": 13,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "В БД 0 услуг — на сайте 13 позиций с ценами, у нас их нет.",
+		"notes": "Сайт на Tilda, по-русски. Цены лежат в таблице Tilda t431 (данные в div.t431__data-part2 'Услуга;Стоимость, EUR'), в сыром HTML они есть. Формат 'от 70', 'от 100' — нижняя граница. Пример: приём профессора от 70 €, приём врача 60 €, ЭКГ с расшифровкой 20 €. Даты нет.",
+		"checked": "Главная, sitemap.xml (7 URL), /servises, /doctor, /contacts, /review; /price и /prices дают 404.",
+		"flags": [
+			"imported: insert-clinic-prices-drviller-reheart-tivat.sql, в проде 2026-10-02"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.optimalmed.me",
+		"clinics": [
+			{
+				"id": 25,
+				"slug": "dnevna-bolnica-optimal-podgorica",
+				"name": "Dnevna bolnica Optimal",
+				"city": "podgorica",
+				"db": {
+					"services": 70,
+					"servicesPriced": 67,
+					"labTests": 8,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://optimalmed.me/wp-content/uploads/2016/02/Cjenovnik.pdf",
+				"kind": "pdf",
+				"scope": "все услуги офтальмологии: диагностика, лазеры, операции (LASIK/PRK, катаракта и др.)",
+				"approx_items": 70,
+				"date_hint": "PDF CreationDate 2016-02-19; Last-Modified 2016-02-24; сайт не обновляется с 2016 (RSS lastBuildDate 2016-04-12)"
+			}
+		],
+		"coverageVsDb": "Импортировано 2026-10-02, в проде (insert-clinic-prices-dnevna-bolnica-optimal-podgorica.sql). В PDF 70 строк = 68 позиций (две повторены на второй странице). 66 цен к заведённым услугам + Internist Examination 30 €; 8 анализов из строки «Laboratorijske analize (…)» 20 € за набор — без цены. Без пары в PDF 3 наши услуги: Anti-VEGF Injection, SLT, Cataract Surgery Complicated Case.",
+		"notes": "Сайт заброшен: шаблон 2016 года, '©Design by CEZAM'. Цены 2016 года; is_price_outdated = 1 на 65 строк с ценой > 0 по решению юзера (доводы в data/clinic-imports/dnevna-bolnica-optimal-podgorica.json). Снимок PDF: sources/dnevna-bolnica-optimal-podgorica/2026-10-02.pdf.",
+		"checked": "Меню (O nama, Usluge i oprema, Utisci, Galerija, Blog, Kontakt); /usluge-i-oprema/ (список услуг без цен); скрытая страница https://optimalmed.me/cjenovnik/ (в меню её нет, отвечает 200), в её HTML ссылка на Cjenovnik.pdf; REST API выключен (rest_no_route); sitemap — 404; RSS /feed/ — последняя запись 2015-09-08; Wayback — ни /cjenovnik/, ни PDF не сохранены, более нового прайса нет.",
+		"flags": [
+			"stale-source: PDF 2016",
+			"outdated-marked: 65 услуг с ценой > 0 → is_price_outdated (insert-clinic-prices-dnevna-bolnica-optimal-podgorica.sql); две позиции по 0.00 € без флага"
+		],
+		"recheckHint": "Сдвига кодировки (Caesar +29) у pdftotext/PyMuPDF нет — он только у наивного парсера потоков. Но pdftotext теряет диакритику (Š→S, Č→C, Ć выпадает) — названия сверять по рендеру страниц. Новый прайс искать на скрытой /cjenovnik/, не в меню.",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://svjetlostbudva.me/",
+		"clinics": [
+			{
+				"id": 26,
+				"slug": "svjetlost-eye-clinic-budva",
+				"name": "Svjetlost Eye Clinic",
+				"city": "budva",
+				"db": {
+					"services": 66,
+					"servicesPriced": 66,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://svjetlostbudva.me/cjenovnik/",
+				"kind": "html",
+				"scope": "все услуги глазной клиники: осмотры, диагностика, пластика век, глаукома, катаракта, витрэктомия, анти-VEGF, лазерная коррекция, ICL, CXL",
+				"approx_items": 69,
+				"date_hint": "wp-json modified 2026-04-07"
+			}
+		],
+		"coverageVsDb": "совпадает: на сайте 69 строк (65 уникальных услуг), в БД 66 строк — импорт с этого прайса 2026-10-02 (LASIK / PRK — две записи каталога).",
+		"notes": "Автовердикт подтверждён. Формат '80,00 €' с запятой и точкой для тысяч ('1.400,00 €'); один диапазон: Pterygium 300,00–500,00 €. Пример: общий офтальмологический осмотр 80 €, LASIK/PRK 850 € за глаз.",
+		"checked": "Пункт меню Cjenovnik; wp-json pages?search=cjen; текст страницы.",
+		"flags": [
+			"imported: insert-clinic-prices-svjetlost-eye-clinic-budva.sql, в проде 2026-10-02"
+		],
+		"recheckHint": "wp-json /wp/v2/pages/1334 → поле modified (срез 2026-04-07T11:31:57); снимок data/clinic-pricelists/sources/svjetlost-eye-clinic-budva/",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.normedica.me/",
+		"clinics": [
+			{
+				"id": 27,
+				"slug": "normedica-herceg-novi",
+				"name": "Normedica",
+				"city": "herceg-novi",
+				"db": {
+					"services": 33,
+					"servicesPriced": 33,
+					"labTests": 3,
+					"labTestsPriced": 3
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://www.normedica.me/normedica_cjenovnik.pdf",
+				"kind": "pdf",
+				"scope": "все услуги (осмотры специалистов, УЗИ, эндоскопия, Холтер, процедуры) + 3-4 анализа (HbA1c, OGTT, H. pylori, пролактин)",
+				"approx_items": 35,
+				"date_hint": "в PDF дата 28.10.2024; Last-Modified 2025-07-25; ссылка на странице подписана 'Cjenovnik Normedica 2023'"
+			}
+		],
+		"coverageVsDb": "Совпадает: в БД 33 услуги + 3 анализа с ценами, выборочная сверка через API прода (вне работы 100, продлённый осмотр 70, гастроскопия с извлечением инородного тела 150) соответствует PDF от 28.10.2024, а не старому HTML-списку.",
+		"notes": "ЛОВУШКА: на /cjenovnik.html старый прайс 2023 года (33 позиции, ниже по цене) лежит в HTML-комментарии <!-- -->. Краулер находит его по grep (hits=34), но на странице он не отображается. Видна только ссылка на PDF. Перепроверять только по PDF. Цены пишутся как '60 E', диапазоны '90 E -120E'.",
+		"checked": "/cjenovnik.html (сырой HTML), PDF по ссылке, Last-Modified; выборочно /api/services/list с clinicIds=27 на проде.",
+		"flags": [],
+		"recheckHint": "на /cjenovnik.html старый прайс 2023 в HTML-комментарии — сверять только PDF",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.codra.me/",
+		"clinics": [
+			{
+				"id": 28,
+				"slug": "codra-hospital-podgorica",
+				"name": "Codra Hospital",
+				"city": "podgorica",
+				"db": {
+					"services": 1,
+					"servicesPriced": 1,
+					"labTests": 81,
+					"labTestsPriced": 81
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://www.codra.me/wp-content/uploads/2022/02/Cenovnik_Laboratorija-02.jpg",
+				"kind": "image",
+				"scope": "только лаборатория (гематология, биохимия, гормоны, онкомаркеры, вирусы, COVID)",
+				"approx_items": 83,
+				"date_hint": "wp-json media id 1115: date = modified 2022-02-14T11:24:08; страница-контейнер modified 2022-02-14. Старше 2 лет — все строки с is_price_outdated = 1"
+			}
+		],
+		"coverageVsDb": "Импортировано 2026-10-05, в проде (insert-clinic-prices-codra-hospital-podgorica.sql; прод сверен по API: 81 анализ, сумма 816.50, у всех isOutdated; услуга venous-blood-draw 1.00). Из 83 строк картинки: 82 анализа (BETA HCG дважды — одна строка) + VAĐENJE KRVI. Новых записей каталога нет. Запись: data/clinic-imports/codra-hospital-podgorica.json.",
+		"notes": "Прайс — одна JPG-картинка 1600×983, в HTML цен нет, поэтому краулер дал hits=0. Распознана чтением картинки, без OCR. Цены 2022 года (есть блок COVID-19). На прочие услуги больницы (хирургия, IVF, PET CT) цен нет. Снимок: sources/codra-hospital-podgorica/2026-10-02.jpg (sha256 18616dbc…3007).",
+		"checked": "Страница https://www.codra.me/cjenovnik-lab-dijagnostika/ (картинка-прайс), ссылка на неё с /laboratorijska-dijagnostika/; wp-json search cjen/cen по pages и media; контент всех страниц (~400 через REST) — grep €/EUR/cijena (все совпадения ложные, это 'pacijenata'); PET CT и другие страницы без цен.",
+		"flags": [
+			"imported: insert-clinic-prices-codra-hospital-podgorica.sql, в проде 2026-10-05; всё is_price_outdated (JPG 2022)"
+		],
+		"recheckHint": "сравнить sha256 картинки и date/modified медиа 1115 в wp-json (/wp-json/wp/v2/media?search=Cenovnik_Laboratorija); новая картинка обычно приходит новым файлом в /wp-content/uploads/<год>/<месяц>/ — смотреть img на /cjenovnik-lab-dijagnostika/",
+		"lastChecked": "2026-10-05"
+	},
+	{
+		"site": "https://rzkerber.com/",
+		"clinics": [
+			{
+				"id": 29,
+				"slug": "rezidencija-zdravlja-kerber-podgorica",
+				"name": "Rezidencija zdravlja Kerber",
+				"city": "podgorica",
+				"db": {
+					"services": 84,
+					"servicesPriced": 0,
+					"labTests": 17,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://rzkerber.com/mart-je-novi-oktobar/",
+				"kind": "html",
+				"scope": "акционный пост: УЗИ груди, гинекологический пакет, ботокс/гиалурон/Profhilo",
+				"approx_items": 8,
+				"date_hint": "wp-json post date 2025-09-22, modified 2025-11-03"
+			}
+		],
+		"coverageVsDb": "В БД 84 услуги + 17 анализов без цен. Регулярного прайса на сайте нет, есть только 8 акционных цен (старая цена зачёркнута).",
+		"notes": "Акционные цены из поста за март (опубликован в сентябре 2025), для перепроверки ненадёжны. В меню есть estetska-medicina и hirurgija, но оба URL отдают 404. Сайт на Elementor, страницы обновлялись в июне 2026.",
+		"checked": "wp-json pages (35 страниц) и posts (9) — grep €/EUR/cijena/cjenovnik по контенту; HTML страниц djelatnosti (dermatologija, ginekologija, kardiologija, radiologija); sitemap_index; /cjenovnik/ — 404; wp-json media без PDF; WooCommerce-маршрутов нет.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 30,
+				"slug": "health-clinic-cg-podgorica",
+				"name": "Health clinic CG",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://fizikalnavertebra.me/",
+		"clinics": [
+			{
+				"id": 31,
+				"slug": "fizikalna-terapija-vertebra-podgorica",
+				"name": "Fizikalna Terapija Vertebra",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг, на сайте цен нет — совпадает.",
+		"notes": "Физиотерапия, Podgorica, сайт на 3 языках (me/en/ru). Цен нет нигде, в том числе на странице онлайн-консультаций. Совпадения 'cijen' — это слово 'pacijenata'.",
+		"checked": "sitemap_index → pbmit-service-sitemap (16 страниц /tretmani/*) — все прогнаны на суммы в €; page-sitemap (usluge, online-konsultacije, kontakt, o-nama); wp-json pages (7) и posts (10) — grep €/cijena/cjenovnik; media без прайс-файлов.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 32,
+				"slug": "stomatoloska-ordinacija-dr-senad-podgorica",
+				"name": "Dr Senad — stomatoloska ordinacija",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": null,
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://vadis.me",
+		"clinics": [
+			{
+				"id": 33,
+				"slug": "vadis-stomatologija-podgorica",
+				"name": "VADIS Stomatologija",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "site_down",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг.",
+		"notes": "Стоматология, сайт в режиме обслуживания (Joomla offline). Контент 2018 года, похоже, заброшен.",
+		"checked": "https://vadis.me/, www и http — все отдают HTTP 503 и Joomla offline: 'Sajt trenutno ne radi zbog tekućeg održavanja'; RSS /index.php?format=feed&type=rss открыт (6 статей 2018 года: врачи, O nama, Usluge, Naš tim — цен нет); sitemap 503; Wayback 2023 — пустая оболочка.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 34,
+				"slug": "sotir-dental-centar-podgorica",
+				"name": "Sotir dental centar",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://nasa-medicina.me/",
+		"clinics": [
+			{
+				"id": 35,
+				"slug": "nasa-medicina-podgorica",
+				"name": "Naša medicina",
+				"city": "podgorica",
+				"db": {
+					"services": 31,
+					"servicesPriced": 31,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://nasa-medicina.me/usluge/",
+				"kind": "html",
+				"scope": "медицинские справки (ljekarska uvjerenja: работа, вождение, оружие, моряки, спорт и т.п.) + психиатр + психолог",
+				"approx_items": 33,
+				"date_hint": "lastmod /usluge/ в wp-sitemap-posts-page-1.xml: 2026-06-15"
+			}
+		],
+		"coverageVsDb": "совпадает: на сайте 30 позиций / 33 цены, в БД 31 строка, все с ценой (синхронизировано 2026-10-02; спортсмены по возрасту — диапазон 15–25 одной строкой, судьи отдельно).",
+		"notes": "Автовердикт 'prices-on-service-pages' неточен: это одна страница-прайс. Формат '– 20 €'; у спортсменов цена по возрасту (до 14 лет — 15 €, до 18 — 20 €, до 25 — 25 €, судьи — 40 €). Оговорка 'zadržava pravo da odobri popust'. Синхронизация 2026-10-02: data/clinic-imports/nasa-medicina-podgorica-prices-2026-10.md, снимок sources/nasa-medicina-podgorica/2026-10-02.html.",
+		"checked": "/usluge/ (весь прайс на одной странице), wp-sitemap-posts-page-1.xml (lastmod; page-sitemap.xml и sitemap_index.xml — 404), меню (O nama, Usluge, Galerija, Politika QMS-a, Kontakt); wp-json — 403; PDF в uploads — это QMS-политика и ISO-сертификат, не прайс.",
+		"flags": [],
+		"recheckHint": "дата прайса — lastmod /usluge/ в wp-sitemap-posts-page-1.xml; page-sitemap.xml отдаёт 404",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://humanreproduction.com/",
+		"clinics": [
+			{
+				"id": 36,
+				"slug": "humana-reprodukcija-budva",
+				"name": "Humana reprodukcija",
+				"city": "budva",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг, на сайте цен нет — совпадает.",
+		"notes": "Сертификат сейчас валиден: curl без -k проходит, ошибка CERT_HAS_EXPIRED у краулера, видимо, была до переезда на новый сайт (пост 'novi-website'). IVF-центр в Budva, цен не публикует, только контакт/запись. Языки me/en/ru.",
+		"checked": "Главная (редирект на /me); все 42 ссылки /me/s/* и /me/posts/* с главной — grep сумм в €/'cjenovnik'/'cijena' (все совпадения ложные: 'pacijenata' и счётчики '98%/1000+').",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 37,
+				"slug": "ginekoloska-ordinacija-dr-soc-podgorica",
+				"name": " Dr Šoć — ginekološka ordinacija",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": null,
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://sumedica.me/",
+		"clinics": [
+			{
+				"id": 38,
+				"slug": "sumedica-podgorica",
+				"name": "Sumedica",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг, на сайте цен нет — совпадает.",
+		"notes": "Маленький статичный сайт, usluge.html Last-Modified 2026-08-03 — свежий, но цен нет.",
+		"checked": "Все 4 страницы сайта (index, usluge.html, o-nama.html, kontakt.html), sitemap.xml; /cjenovnik.html — 404.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://vasezdravlje.me/",
+		"clinics": [
+			{
+				"id": 39,
+				"slug": "vase-zdravlje-podgorica",
+				"name": "Vaše zdravlje",
+				"city": "podgorica",
+				"db": {
+					"services": 88,
+					"servicesPriced": 88,
+					"labTests": 148,
+					"labTestsPriced": 148
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://vasezdravlje.me/cjenovnik/",
+				"kind": "html",
+				"scope": "все услуги: семейная медицина, терапия, медицина труда/справки, специалисты, УЗИ/радиология, большой лабораторный раздел (гормоны, онкомаркеры, моча)",
+				"approx_items": 255,
+				"date_hint": "wp-json /wp/v2/pages/684?_fields=modified: 2026-04-22T08:44:10 (корень /wp-json/ и sitemap — 403, а страница по id отвечает); created 2018-11-15. Свежий — is_price_outdated = 0"
+			}
+		],
+		"coverageVsDb": "Импортировано 2026-10-05, в проде (insert-clinic-prices-vase-zdravlje-podgorica.sql + правка update-…-dobutamine.sql 2026-10-06; прод сверен по API построчно: 88 услуг, сумма 3070.00, 5 диапазонов; 147 анализов, сумма 1816.00, все current). Из 255 строк: 101 услуга → 88 строк (слияния в диапазон), 147 анализов, 7 не заведено (2 спорных: hs Troponin T/I, «radna mjesta sa posebnim uslovima»). Новых записей каталога 16, из них 5 общие с dom-zdravlja-podgorica / nasa-medicina-podgorica. Запись: data/clinic-imports/vase-zdravlje-podgorica.json.",
+		"notes": "Двойная цена «produženje vozačke … – 25€ 20€» — не загадка: 25 обёрнуто в <s> (зачёркнуто), действует 20. Формат «– 20€», у трёх строк знака € нет. Абонемент «Vaš doktor» 80/40 €/мес — договор, не заводили.",
+		"checked": "Пункт меню Cjenovnik, текст страницы (251 знак €); /akcije/ (акции картинками из uploads 2021-09/2022-03, текстовых цен нет); wp-json и sitemap отдают 403.",
+		"flags": [
+			"disputed-resolved: update-clinic-prices-vase-zdravlje-podgorica-disputed.sql, в проде 2026-10-06"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-06"
+	},
+	{
+		"site": "https://primus-medical.me/",
+		"clinics": [
+			{
+				"id": 40,
+				"slug": "primus-medical-podgorica",
+				"name": "Primus Medical",
+				"city": "podgorica",
+				"db": {
+					"services": 20,
+					"servicesPriced": 20,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://primus-medical.me/wp-content/uploads/2023/03/Cjenovnik-vene-2023.pdf",
+				"kind": "pdf",
+				"scope": "флебология/вены (допплер, EVLA, склеротерапия, осмотры)",
+				"approx_items": 10,
+				"date_hint": "в PDF 'Podgorica 01.09.2025'; Last-Modified 2026-04-17 (имя файла 2023, содержимое обновлено)"
+			},
+			{
+				"url": "https://primus-medical.me/wp-content/uploads/2023/01/cjenovnik-urologija.pdf",
+				"kind": "pdf",
+				"scope": "урология (скан, текста нет)",
+				"approx_items": 7,
+				"date_hint": "Last-Modified 2023-01-11"
+			},
+			{
+				"url": "https://primus-medical.me/wp-content/uploads/2022/01/cjenovnik-nefrologija.pdf",
+				"kind": "pdf",
+				"scope": "нефрология (первичный и контрольный осмотр)",
+				"approx_items": 2,
+				"date_hint": "Last-Modified 2022-01-27"
+			}
+		],
+		"coverageVsDb": "В БД 0 услуг — на сайте около 19 цен в 3 PDF по отделениям, у нас их нет.",
+		"notes": "Кнопка 'Cjenovnik' на /opsta-medicina/ и /radiologija/ по ошибке ведёт на PDF урологии, своих прайсов у этих отделений нет; у /estetika/ прайса нет. В media лежат устаревшие файлы без ссылок: 2022/01/cjenovnik-primus.pdf (вены, старые цены), 2022/02/cjenovnik-vene.pdf, 2022/01/cjenovnik-urologija.pdf, 2023/10/Vene-cijene.png (2023-10-25); URL 2023/10/Cjenovnik-vene-2023.pdf отдаёт 404. Актуальный файл по венам — 2023/03/…, обновлён на месте (01.09.2025).",
+		"checked": "wp-json pages (15) и posts (3) — найдены кнопки 'Cjenovnik' (Divi button_url); отрендеренный HTML страниц opsta-medicina, radiologija, urologija, nefrologija, vene, estetika, главной; wp-json media — список PDF; все PDF скачаны и прочитаны (урология — скан, отрендерен в картинку).",
+		"flags": [
+			"imported: insert-clinic-prices-primus-medical-podgorica.sql (+ update-…-not-outdated.sql), в проде 2026-10-02"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 41,
+				"slug": "dental-esthetic-studio-dr-debelja",
+				"name": "Dr Debelja — Dental & Esthetic studio",
+				"city": "bar",
+				"db": {
+					"services": 7,
+					"servicesPriced": 7,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [
+			"source-offline: цены в БД без сайта-источника"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 42,
+				"slug": "just-dental-clinic-bar",
+				"name": "JUST Dental Clinic",
+				"city": "bar",
+				"db": {
+					"services": 16,
+					"servicesPriced": 16,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [
+			"source-offline: цены в БД без сайта-источника"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.dzbudva.me/",
+		"clinics": [
+			{
+				"id": 43,
+				"slug": "dom-zdravlja-budva",
+				"name": "Dom zdravlja Budva",
+				"city": "budva",
+				"db": {
+					"services": 18,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 18 услуг без цен, это сходится с сайтом. Цен для неосигуранных на сайте нет; если они нужны, брать из тарифов FZOCG (medical_service_tariffs).",
+		"notes": "/services-pricings — демо-страница темы Clinika с WP-шаблоном, цен в ней нет (краулер сработал на слово в slug). /wp-content/uploads/2024/05/Pravilnik.pdf — скан на 6 страниц без текстового слоя, судя по разделу «Pravilnici», это внутренний регламент, а не прайс. Сайт живой: страницы обновлялись в июле–августе 2026.",
+		"checked": "wp-json pages (per_page=100, все 54 страницы), wp-json search по cjen/cijen/cenov, media search по cjen/cijen/cenov/tarif/price; страницы dopunski-rad, medicina-rada, ostala-dokumenta, pravilnici (вложения); /services-pricings; пост 23157 про медицину труда",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 44,
+				"slug": "altabella-health-beauty-studio-budva",
+				"name": "Altabella Health & Beauty Studio",
+				"city": "budva",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.dukleydentalclinic.com/",
+		"clinics": [
+			{
+				"id": 45,
+				"slug": "dukley-dental-clinic-budva",
+				"name": "Dukley Dental Clinic",
+				"city": "budva",
+				"db": {
+					"services": 65,
+					"servicesPriced": 65,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.dukleydentalclinic.com/me/cijene",
+				"kind": "html",
+				"scope": "вся стоматология: konzervativa, endodoncija, protetika, estetska, oralna hirurgija, parodontologija, rendgen, ortodoncija",
+				"approx_items": 68,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "Примерно то же: на сайте ~68 позиций, в БД 65/65 с ценами.",
+		"notes": "Язык ME. Есть диапазоны («50-90 €», «150-200 €», «650-700 €» за импланты). В HTML цена местами разорвана тегами («25|0 €», «160 |€»), поэтому парсить по ячейкам, а не регуляркой по строке. Last-Modified динамический (текущая дата), даты прайса на странице нет.",
+		"checked": "/me/cijene (curl + grep по €), разбивка по разделам",
+		"flags": [],
+		"recheckHint": "цены разорваны тегами",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://apoloniarasovic.com/",
+		"clinics": [
+			{
+				"id": 46,
+				"slug": "apolonia-rasovic-stomatoloska-ordinacija-podgorica",
+				"name": "Apolonia Rašović — stomatološka ordinacija (Podgorica)",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг, на сайте цен тоже нет.",
+		"notes": "Next.js SSR, весь контент есть в HTML, цены не публикуются.",
+		"checked": "навигация Next.js (/mne, /mne/services и 6 подстраниц услуг, about, contact, team, blog); grep по €/EUR/cijen/cjenovnik (совпадения только «pacijenata»); sitemap.xml и robots.txt отдают 404",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 47,
+				"slug": "dental-expert-tivat",
+				"name": "Dental Expert",
+				"city": "tivat",
+				"db": {
+					"services": 15,
+					"servicesPriced": 15,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [
+			"source-offline: цены в БД без сайта-источника"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://drzejnilovic.me/",
+		"clinics": [
+			{
+				"id": 48,
+				"slug": "dr-zejnilovic-pzu-dnevna-bolnica",
+				"name": "Dr Zejnilović — PZU Dnevna bolnica",
+				"city": "bar",
+				"db": {
+					"services": 8,
+					"servicesPriced": 8,
+					"labTests": 352,
+					"labTestsPriced": 352
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас цены из другого источника (8 услуг + 352 анализа с ценами), на сайте их нет.",
+		"notes": "Next.js, цен нет нигде. Ссылки на FB zejnilovic.laboratorija.bar и IG drzejnilovicdnevnabolnica: если прайс лаборатории публикуется, то, видимо, там (не проверено, соцсети не читаются). Откуда в БД 352 цены, надо смотреть по истории импорта.",
+		"checked": "sitemap.xml (28 URL: услуги, врачи, контакт), все 9 страниц /dijagnostika-i-lecenje/*, 9 JS-чанков Next.js (нет строк price/cijen/api/€), WebSearch",
+		"flags": [
+			"source-offline: 352 цены анализов в БД, на сайте цен нет"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02",
+		"localSource": "data/pricelists/Zejnilovic/"
+	},
+	{
+		"site": "http://www.domzdravljabar.com/",
+		"clinics": [
+			{
+				"id": 49,
+				"slug": "dom-zdravlja-bar",
+				"name": "Dom Zdravlja Bar",
+				"city": "bar",
+				"db": {
+					"services": 15,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 15 услуг без цен, это сходится с сайтом.",
+		"notes": "Самописная CMS. Найденные «EUR» относятся к бюджету проекта Interreg. Прайса санитарно-гигиенической лаборатории (вода/еда) среди файлов тоже нет, есть только формы заявок 2025.",
+		"checked": "обход всех ~60 внутренних ссылок с главной (organizacija/*, dokumenta/*, informacije/*) с grep по €/cjenovnik/cijen; списки файлов в dokumenta/ostala-dokumenta, pravilnici, uputstva, odsjek-za-higijenu (заявки, статут, сертификаты, прайса нет); turisticke-ordinacije",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 50,
+				"slug": "dental-studio-dr-zejak-bar",
+				"name": "Dr. Zejak — Dental Studio",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 51,
+				"slug": "dental-clinic-dr-bajagic-bar",
+				"name": "Dr. Bajagic — Dental Clinic",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 52,
+				"slug": "jovetic-dent-bar",
+				"name": "Jovetić dent",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 53,
+				"slug": "stomatologija-cicmil-bar",
+				"name": "Stomatologija Cicmil",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://poliklinikanatal.me/",
+		"clinics": [
+			{
+				"id": 54,
+				"slug": "poliklinika-natal-podgorica",
+				"name": "Poliklinika Natal",
+				"city": "podgorica",
+				"db": {
+					"services": 90,
+					"servicesPriced": 90,
+					"labTests": 26,
+					"labTestsPriced": 26
+				}
+			},
+			{
+				"id": 161,
+				"slug": "pedijatrija-natal-kids-podgorica",
+				"name": "Pedijatrija Natal Kids",
+				"city": "podgorica",
+				"db": {
+					"services": 25,
+					"servicesPriced": 22,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://poliklinikanatal.me/cjenovnik/",
+				"kind": "html",
+				"scope": "все отделения: ginekologija (27), PCR-brisevi (26), pedijatrija (18), interna (13), radiologija (13), dermatologija, hirurgija, ORL (по 7), ostalo (5), neurologija (4), nuklearna (3)",
+				"approx_items": 130,
+				"date_hint": "wp-json: записи CPT cjenovnik изменялись с 2025-12-01 по 2026-04-21 (последняя правка поликлиники — 2026-04-01, педиатрии — 2026-04-21)"
+			},
+			{
+				"url": "https://poliklinikanatal.me/wp-json/wp/v2/cjenovnik?per_page=100",
+				"kind": "json-api",
+				"scope": "те же 130 позиций (X-WP-Total=130, 2 страницы): только названия, slug, категория и modified, цены в API НЕТ (лежат в мета-полях JetEngine)",
+				"approx_items": 130,
+				"date_hint": "поле modified у каждой позиции"
+			}
+		],
+		"coverageVsDb": "Синхронизировано 2026-10-05 (поликлиника) и 2026-10-06 (педиатрия), в проде. Natal (54): 112 позиций ↔ 92 услуги (90 активных + 2 is_obsolete) + 26 анализов; «Rendgen» 40 € разложен на 5 записей. Natal Kids (161): 18 позиций раздела pedijatrija ↔ 25 строк (радиолог «jedna regija» разложен на 5 областей УЗИ, 3 услуги со страниц отделений без цены).",
+		"notes": "Elementor + JetEngine. Архив /cjenovnik/ не стоит в главном меню (на главной нет ссылки), поэтому краулер его не нашёл. Формат цен «40,00 €». Для автосверки удобно: дату правки брать из wp-json по modified, цену — парсить с /cjenovnik/. Раздел «pedijatrija» = Pedijatrija Natal Kids, Drugog Crnogorskog bataljona 2H (свой телефон, info@pedijatrijanatal.me) — отдельная клиника pedijatrija-natal-kids-podgorica (id 161 на проде). Описания услуг — CPT pod-usluge (wp-json/wp/v2/pod-usluge). Сверка: data/clinic-imports/poliklinika-natal-podgorica-prices-2026-10.md.",
+		"checked": "wp-json/wp/v2/types (нашёлся CPT cjenovnik и таксономия cjenovnik-oblasti), /cjenovnik/ (130 цен в €, 142 jet-listing-элемента), страницы категорий /cjenovnik-oblasti/<slug>/, /usluge/*, /pod-usluge/, главная",
+		"flags": [],
+		"recheckHint": "у каждой позиции wp-json CPT есть modified",
+		"lastChecked": "2026-10-06"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 55,
+				"slug": "body-balance-studio-bar",
+				"name": "Body Balance Studio",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.dental-tourism.me/",
+		"clinics": [
+			{
+				"id": 56,
+				"slug": "zecevic-dental-budva",
+				"name": "Zečević Dental",
+				"city": "budva",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг, на сайте цен нет.",
+		"notes": "Только маркетинг на английском («prices 70%-80% lower than in USA…», «special prices»), конкретных цен нет. В разделе событий висят тестовые записи «test-eng/test2», сайт малоподдерживаемый.",
+		"checked": "главная /en и /me, все страницы меню EN (aesthetic-dentistry, implantology, veneers, x-ray-orthopan, endodontics, orthodontics, about-us, contact), угаданные /en/price-list, /en/prices, /me/cjenovnik (отдают 200, но без цен, похоже на soft-404)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.medicalcentarbudva.com/",
+		"clinics": [
+			{
+				"id": 57,
+				"slug": "medical-centar-budva",
+				"name": "Medical Centar Budva",
+				"city": "budva",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг, на сайте цен нет.",
+		"notes": "Самописный сайт (jQuery), языки ME/EN/RU. Цен нет даже на эстетических процедурах (botox, juvederm, epilacija).",
+		"checked": "все ~40 внутренних страниц /me/* (дерматология, anti-age, лазеры, поликлиника, контакт, о нас, новости), ссылки извлечены из onclick-путей; grep по €/eur/cjenovnik/cijena (совпадения только «pacijenata»); sitemap.xml пустой",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://drmasonicic.com/",
+		"clinics": [
+			{
+				"id": 58,
+				"slug": "poliklinika-dr-masonicic-bar",
+				"name": "Dr Masoničić — poliklinika",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг, на сайте цен нет.",
+		"notes": "Страница /promotivne-cijene-pregleda/ существует (modified 2019-03-06), но кроме заголовка там пусто. Сайт живой: на главной расписание до сентября 2026.",
+		"checked": "wp-json pages (19), wp-json search по cjen/cijen/cenov, media search, /promotivne-cijene-pregleda/, /usluge/, portfolio-category/*, главная, пост об акции к месяцу борьбы с раком груди",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://cenexmedical.com/",
+		"clinics": [
+			{
+				"id": 59,
+				"slug": "novi-cenex-medical-podgorica",
+				"name": "Novi Cenex Medical",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "В БД 0 услуг, на сайте цен нет.",
+		"notes": "ВНИМАНИЕ: сайт взломан, в контент главной вставлен SEO-спам казино на греческом (около 17 упоминаний casino, «BDM Bet Casino … €450»). Вердикт краулера some-prices — это ложное срабатывание на спам. Ссылаться на сайт с карточки клиники стоит осторожно.",
+		"checked": "контент всех 99 WP-страниц через wp-json (поиск €/«N eur»), wp-json search по cjen/cijen/cenov/paket/akcij, media search, /usluge/*",
+		"flags": [
+			"site-hacked: на главной спам казино"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "http://www.montenegrodentistry.me/",
+		"clinics": [
+			{
+				"id": 60,
+				"slug": "buntic-stomatoloska-ordinacija-bar",
+				"name": "Buntić - stomatološka ordinacija",
+				"city": "bar",
+				"db": {
+					"services": 145,
+					"servicesPriced": 145,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "site_down",
+		"pricelists": [
+			{
+				"url": "http://web.archive.org/web/20260216045109/http://www.montenegrodentistry.me/cjenovnik-usluga/index.php",
+				"kind": "html",
+				"scope": "вся стоматология (архивная копия, на живом сайте страницы уже нет)",
+				"approx_items": 145,
+				"date_hint": "снапшот Wayback от 2026-02-16; ещё один от 2024-02-25 по /cjenovnik-usluga/"
+			}
+		],
+		"coverageVsDb": "Цены в БД (145/145), видимо, взяты с этой страницы: в архиве ~146 «€», совпадает. Живого источника для перепроверки нет.",
+		"notes": "Домен припаркован/продаётся. Живым сайт был ещё в снапшоте 2026-04-19 (title «Specijalistička stomatološka ordinacija za zubotehničkom laboratorijom Buntić, Bar»), значит, отвалился в последние месяцы. Новый домен клиники через поиск не нашёлся. Цены в БД стоит считать неперепроверяемыми; возможно, у клиники сменился сайт или она закрылась.",
+		"checked": "curl на все 4 варианта http/https и www/без www (все ведут на ww38.montenegrodentistry.me с паркингом «domain may be for sale»), DNS 103.224.212.214, Wayback CDX и снапшоты, 2 WebSearch",
+		"flags": [
+			"domain-parked: montenegrodentistry.me продаётся, прайс только в Wayback 2026-02-16",
+			"website-cleared: поле website очищено (update-clinics-2026-10-pricelist-map.sql)"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 61,
+				"slug": "dr-simonovic-stomatoloska-ordinacija-bar",
+				"name": "Dr Simonović — Stomatološka Ordinacija",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "http://www.diagnostica.me/",
+		"clinics": [
+			{
+				"id": 62,
+				"slug": "poliklinika-diagnostica-podgorica",
+				"name": "Poliklinika Diagnostica",
+				"city": "podgorica",
+				"db": {
+					"services": 129,
+					"servicesPriced": 129,
+					"labTests": 447,
+					"labTestsPriced": 432
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://diagnostica.me/cjenovnik",
+				"kind": "html",
+				"scope": "SPA-страница «Analize i pregledi»: лаборатория и пункт «Pregledi i dijagnostika»; без JS пустая",
+				"approx_items": 634,
+				"date_hint": null
+			},
+			{
+				"url": "https://api.diagnostica.me/api/public/pricelist",
+				"kind": "json-api",
+				"scope": "полный прайс в JSON: departments lab (14 групп, 469 позиций, у 467 есть цена) + clinic (9 групп, 165 позиций, все с ценой); поля code/name/price/note/group",
+				"approx_items": 634,
+				"date_hint": "дат в данных нет; срез 2026-10-02, ETag W/\"3076b-Su6M3Ps9/t8DYE4GkhRXVBti3hU\""
+			}
+		],
+		"coverageVsDb": "Импортировано 2026-10-05, в проде (insert-clinic-prices-poliklinika-diagnostica-podgorica.sql; прод сверен по API: 556 строк — цена, диапазон, код). Из 634 позиций сайта: 434 анализа + 122 услуги (432 и 122 с ценой; PSA+fPSA и ROMA — na upit), 26 строк сведены в диапазоны или одну запись, 12 исключены (скидочные/договорные ставки, санконтроль поверхностей, объём суточной мочи), 40 спорных не импортированы — список в data/clinic-imports/poliklinika-diagnostica-podgorica.json.",
+		"notes": "Цены в евро, в условиях сайта цены «orijentacioni karakter», прайс периодически обновляется. Лабораторные коды 4-значные («0001»), записаны в code строк клиники — по ним автосверка (структура JSON и правила — sourceFormat в записи импорта). Снимок: sources/poliklinika-diagnostica-podgorica/2026-10-02.json (+ заголовки ответа).",
+		"checked": "SPA-оболочка /cjenovnik (1,9 КБ, React/Vite), бандл /assets/index-CDkkm4_n.js (нашлись эндпоинты /api/public/pricelist и /api/public/bootstrap на https://api.diagnostica.me), оба API запрошены curl'ом, JSON разобран",
+		"flags": [
+			"disputed-resolved: update-clinic-prices-poliklinika-diagnostica-podgorica-disputed.sql, в проде 2026-10-06"
+		],
+		"recheckHint": "брать JSON API, HTML пустой без JS; сверять по code (2 позиции с кодом-слагом: profil-prolactina, ljekarsko-uvjerenje-za-djecu-sportiste); сведённые строки (excluded.mergedInto) своего code в БД не имеют",
+		"lastChecked": "2026-10-05"
+	},
+	{
+		"site": "http://www.drnenezic.me/",
+		"clinics": [
+			{
+				"id": 63,
+				"slug": "dr-nenezic-podgorica",
+				"name": "Dr Nenezić",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://drnenezic.me/cijene-usluga/",
+				"kind": "html",
+				"scope": "только 3 пакета лечения (физиотерапия/акупунктура/PRP), WooCommerce-товары со скидкой",
+				"approx_items": 3,
+				"date_hint": "wp modified страницы 2023-08-22; /paketi-tretmana/ modified 2026-09-28"
+			},
+			{
+				"url": "https://drnenezic.me/wp-json/wc/store/v1/products?per_page=100",
+				"kind": "json-api",
+				"scope": "те же 3 пакета: Paket 1 70€ (было 90), Paket 2 295€ (было 350), Paket 3 175€ (было 210), состав в description",
+				"approx_items": 3,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "В БД 0 услуг. На сайте только 3 пакетные цены, отдельных цен на услуги нет.",
+		"notes": "Хотя страница называется «Cijene usluga», на ней только 3 пакета с зачёркнутыми «Original price». Состав пакетов: Paket 1 — диагностический пакет (pregled + UZ), Paket 2 — 10 физиотерапий + 10 акупунктур + осмотр, Paket 3 — PRP + 5 физиотерапий + kiropraktika atlasa.",
+		"checked": "/cijene-usluga/, /paketi-tretmana/, /shop/, WooCommerce Store API, wp-json pages, /service/akupunktura|fizikalna-terapija|shock-wave-terapija (цен нет)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "http://www.novistandard.me/",
+		"clinics": [
+			{
+				"id": 64,
+				"slug": "novi-standard-poliklinika",
+				"name": "Novi Standard Poliklinika",
+				"city": "bar",
+				"db": {
+					"services": 107,
+					"servicesPriced": 107,
+					"labTests": 939,
+					"labTestsPriced": 938
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://www.novistandard.me/api/novistandard/posts",
+				"kind": "json-api",
+				"scope": "новости/акции: из 209 постов цены есть в 9 (панели анализов 31/56€, офтальмолог для первоклассников 20€, аллергопанели 43€, pregled+UZ 75€, ботокс-пакеты 290–345€)",
+				"approx_items": 15,
+				"date_hint": "поле datum в постах, цены в постах от 2025-10-14 до 2026-06-23"
+			}
+		],
+		"coverageVsDb": "У нас цены из другого источника (107 услуг + 938 анализов; по заметкам — фото/PDF прайса). На сайте только акционные цены в новостях.",
+		"notes": "Прайса нет ни на /lab, ни на /radiologija (контент зашит в бандл, цен нет). Для перепроверки 1045 цен из БД сайт не подходит, нужен прежний источник (PDF/фото от клиники). sitemap.xml возвращает SPA-оболочку.",
+		"checked": "SPA-оболочка (React/Vite), бандл /assets/index-CHoW9DRC.js: маршруты /, /lab, /radiologija, /medicina-rada, /tim, /o-nama, /novosti и API /api/novistandard/posts; в бандле нет ни €, ни слова cjenovnik; все 209 постов из API разобраны",
+		"flags": [
+			"source-offline: сайт даёт только акции, наши 1045 цен из PDF/фото"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02",
+		"localSource": "data/pricelists/Novi Standard/"
+	},
+	{
+		"site": "https://www.kccg.me/",
+		"clinics": [
+			{
+				"id": 65,
+				"slug": "klinicki-centar-crne-gore-podgorica",
+				"name": "Klinički Centar Crne Gore",
+				"city": "podgorica",
+				"db": {
+					"services": 2199,
+					"servicesPriced": 2199,
+					"labTests": 658,
+					"labTestsPriced": 658
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://www.kccg.me/wp-content/uploads/2026/08/Cjenovnik-2019.pdf",
+				"kind": "pdf",
+				"scope": "прайс для неосигуранных/третьих лиц: амбулатории и стационар (DRG), с кодами услуг (Y01004 и т.п.)",
+				"approx_items": 2274,
+				"date_hint": "документ 20.05.2019 (Broj 03/01-12050/1, «maj 2019»), заново загружен 2026-08-20; амбулатории стр. 3–59 — 2274 кода, стационар DRG стр. 60–78 (полностью заменён DRG 2025)"
+			},
+			{
+				"url": "https://www.kccg.me/wp-content/uploads/2026/08/Cjenovnik-izmjene-i-dopune-2025.pdf",
+				"kind": "pdf",
+				"scope": "изменения и дополнения к прайсу для неосигуранных (амбулаторно + стационар)",
+				"approx_items": 822,
+				"date_hint": "Odluka Odbora direktora 03/01-21069/3-1 от 01.08.2025, согласие Минздрава 18.08.2025; файл загружен 2026-08-20. DRG стр. 3–23 — 698 групп (коэффициент × 1.900,45), осмотры стр. 24–27 — 124 кода"
+			},
+			{
+				"url": "https://www.kccg.me/wp-content/uploads/2019/08/Cjenovnik-za-treca-lica-DRG-STACIONAR-i-AMBULANTE-2019-1_compressed.pdf",
+				"kind": "pdf",
+				"scope": "старая копия прайса 2019 (те же 78 страниц), устарела",
+				"approx_items": null,
+				"date_hint": "Last-Modified 2019-08-09"
+			}
+		],
+		"coverageVsDb": "Импортировано 2026-10-06, в проде (insert-clinic-prices-klinicki-centar-crne-gore-podgorica.sql; прод сверен по API: 2199 услуг + 658 анализов — цена, диапазон, код). 2975 кодов источника: 2277 амбулаторных (2019 + изменения 2025 по коду) и 698 групп DRG 2025 (импортировано 2967); 963 новые записи каталога (623 — hospitalization-for-* по DRG). Не импортированы 8: цены за единицу дозы облучения (X32013–X32015), B2B-диетпрограмма H07006, D25019 без кандидата, служебные DRG 960Z/961Z/963Z с ценой 0. is_price_outdated = 0 (решение юзера). Подробности — data/clinic-imports/klinicki-centar-crne-gore-podgorica.json.",
+		"notes": "Сканы без текстового слоя: PaddleOCR + независимая LLM-транскрипция, рабочие файлы и конвейер — data/clinic-services-import/kccg/README.md. Цена 2019 = 3,0 × FZOCG ambulanta (как у Danilo), осмотры 2025 = 3 × текущий FZOCG, DRG = коэффициент × 1900,45 (2,5 × база FZOCG). Коды FZOCG записаны в code строк клиники; DRG у процедур с амбулаторной ценой вынесены в отдельные hospitalization-записи. Снимки PDF: sources/klinicki-centar-crne-gore-podgorica/2026-10-02-*.pdf.",
+		"checked": "wp-json search и media search по cjenovnik/cijene/tarif (нашлись 4 PDF), ссылки на оба файла 2026/08 стоят на /o-nama/ (блок правовых актов); обе PDF скачаны, у них нет текстового слоя, я посмотрел рендер страниц (стр. 3 прайса 2019 — «KLINIČKI CENTAR CRNE GORE - Cjenovnik ambulante», стр. 1–2 изменений — Odluka и письмо Минздрава); otherFiles проверены, ilovepdf-merged-1.pdf — это лист ожидания свободных терминов, не прайс",
+		"flags": [],
+		"recheckHint": "сверять по code: новый PDF изменений — накладывать по коду поверх 2019; DRG пересчитывать от vrijednost koeficijenta; старая копия uploads/2019/08/…_compressed.pdf не нужна",
+		"lastChecked": "2026-10-06"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 66,
+				"slug": "malbaski-podgorica",
+				"name": "Malbaški",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 67,
+				"slug": "bona-lab-prima-podgorica",
+				"name": "Bona-lab prima",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 1,
+					"labTestsPriced": 1
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [
+			"source-offline: цены в БД без сайта-источника"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://konzilijum.me/",
+		"clinics": [
+			{
+				"id": 68,
+				"slug": "konzilijum-poliklinika-i-bolnica-podgorica",
+				"name": "Konzilijum — Poliklinika i bolnica",
+				"city": "podgorica",
+				"db": {
+					"services": 238,
+					"servicesPriced": 215,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "Сейчас на сайте цен нет вообще, а у нас в БД 214 цен. Значит, они из другого источника или из старой версии сайта: в Wayback на 2022-05-26 страница /cjenovnik-magnetna-rezonanca/ ещё содержала таблицу 'Cijena Usluge (€)', около 68 упоминаний €.",
+		"notes": "Слаги /cjenovnik-*/ остались от старого сайта, теперь там только описания услуг и врачей, цифр с €/EUR нет. Цены сняты где-то между 2022 и 2024 (страницы переделаны 2024-06). На частые запросы хостинг Loopia временно отдаёт 'website is currently not available'. Ближайший кандидат для сверки: Wayback-снимки 2022 года (web.archive.org/web/20220526145445/https://konzilijum.me/cjenovnik-magnetna-rezonanca/ и соседние), но они устарели.",
+		"checked": "Главная и меню (из cjenovnik-ссылок только kardiologija и psihijatrija-psihologija), все 5 страниц /cjenovnik-*/ (kardiologija, psihijatrija-psihologija, ultrazvucna-dijagnostika, magnetna-rezonanca, kompjuterizovana-tomografija), /usluge-radiologija/, wp-json pages per_page=100 (около 100 страниц, ни одной с ценами), wp-json search=cjenovnik и media mime=pdf: пусто. sitemap.xml пустой. Wayback CDX.",
+		"flags": [
+			"prices-removed: цены были до 2022 (Wayback), сейчас страницы /cjenovnik-* без цен",
+			"outdated-marked: все 215 услуг с ценой → is_price_outdated (update-clinics-2026-10-06-konzilijum-smartmed.sql), в проде 2026-10-06"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://drbalans.me/",
+		"clinics": [
+			{
+				"id": 69,
+				"slug": "ordinacija-balans-niksic",
+				"name": "Ordinacija Balans",
+				"city": "niksic",
+				"db": {
+					"services": 34,
+					"servicesPriced": 34,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://drbalans.me/cjenovnik/",
+				"kind": "html",
+				"scope": "все услуги ординации: специалистические осмотры, интерна, УЗИ, физикальная терапия, нутрициология",
+				"approx_items": 35,
+				"date_hint": "wp modified 2025-12-01T18:31:29 (wp-json)"
+			}
+		],
+		"coverageVsDb": "На сайте больше: около 35 цен, у нас в БД 0 услуг.",
+		"notes": "Формат '40,00 €'. В конце примечание: в нерабочие дни и вне рабочего времени цены выше на 10,00 €. Никшич.",
+		"checked": "/cjenovnik/ (HTML-таблица, проверено curl), wp-json pages?search=cjen",
+		"flags": [
+			"imported: insert-clinic-prices-ordinacija-balans-niksic.sql, в проде 2026-10-02"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.hipokrat.me/",
+		"clinics": [
+			{
+				"id": 70,
+				"slug": "hipokrat-poliklinika-podgorica",
+				"name": "Hipokrat Poliklinika Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 71,
+				"slug": "hipokrat-poliklinika-radanovici",
+				"name": "Hipokrat Poliklinika Radanovići",
+				"city": "kotor",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 72,
+				"slug": "hipokrat-poliklinika-niksic",
+				"name": "Hipokrat Poliklinika Nikšić",
+				"city": "niksic",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "Совпадает с БД: цен нет ни на сайте, ни у нас (0/0).",
+		"notes": "Самописный сайт, не WordPress. На странице akcije написано 'Trenutno nemamo aktivnih akcija'. Цены, если и есть, то только в Instagram (hipokrat_poliklinika), это не проверялось.",
+		"checked": "Меню с главной и все разделы /hipokrat/*: akcije, departments, magnetna_rezonanca_podgorica, medical_doc_info, osiguravajuce_kuce, neurolog_podgorica. sitemap.xml (8 URL). Grep по €/EUR/cijen.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.invitro.co.me",
+		"clinics": [
+			{
+				"id": 73,
+				"slug": "in-vitro-podgorica",
+				"name": "In Vitro",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 355,
+					"labTestsPriced": 355
+				}
+			},
+			{
+				"id": 74,
+				"slug": "in-vitro-plus-podgorica",
+				"name": "In Vitro plus",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 355,
+					"labTestsPriced": 355
+				}
+			},
+			{
+				"id": 75,
+				"slug": "in-vitro-z-podgorica",
+				"name": "In Vitro Z",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 355,
+					"labTestsPriced": 355
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.invitro.co.me/cjenovnik.php",
+				"kind": "html",
+				"scope": "лаборатория: все анализы (биохимия, гематология, гормоны, аллергопанели, бакпосевы, мазки), плюс выезд на дом",
+				"approx_items": 352,
+				"date_hint": null
+			},
+			{
+				"url": "https://www.invitro.co.me/cms/pdf/create/invitro_cjenovnik.pdf",
+				"kind": "pdf",
+				"scope": "тот же прайс лаборатории, сгруппированный по разделам",
+				"approx_items": 352,
+				"date_hint": "PDF собирается на лету: Last-Modified равен моменту запроса (2026-10-02), поэтому дату актуальности из него не узнать"
+			}
+		],
+		"coverageVsDb": "Примерно то же, что в БД: 352 позиции на сайте против 354 у нас.",
+		"notes": "Цены без знака € и в формате '15.0', поэтому краулер насчитал 0. На странице есть калькулятор выбранных анализов. Тот же сайт и прайс у клиник 74 и 75.",
+		"checked": "/cjenovnik.php (352 чекбокса onclick='izabrane()' с ценой), PDF (8 страниц, текстовый слой есть, pdftotext), curl -I",
+		"flags": [],
+		"recheckHint": "PDF генерируется на лету (хэш меняется) — сверять HTML",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.labmedical.me/",
+		"clinics": [
+			{
+				"id": 76,
+				"slug": "lab-medical-laboratorija-podgorica",
+				"name": "Lab Medical Laboratorija",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 155,
+					"labTestsPriced": 155
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.labmedical.me/cjenovnik/",
+				"kind": "html",
+				"scope": "лаборатория: все анализы",
+				"approx_items": 156,
+				"date_hint": "wp modified 2024-11-16T18:47:41 (wp-json)"
+			},
+			{
+				"url": "https://www.labmedical.me/wp-content/uploads/2024/06/Cjenovnik-Lab-Medical.pdf",
+				"kind": "pdf",
+				"scope": "лаборатория (кнопка на главной)",
+				"approx_items": 165,
+				"date_hint": "Last-Modified: Tue, 25 Jun 2024 20:13:18 GMT; в пути uploads/2024/06"
+			}
+		],
+		"coverageVsDb": "Примерно то же: 156 позиций в HTML (165 строк с ценой в PDF) против 155 у нас.",
+		"notes": "HTML-страница свежее PDF: 2024-11 против 2024-06, поэтому для сверки лучше брать HTML. Формат '5€'. Divi.",
+		"checked": "/cjenovnik/ (156 цен с €), PDF (текстовый, pdftotext), откуда на него ссылка (кнопка на главной), wp-json pages?search=cjen",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://geamedical.me/",
+		"clinics": [
+			{
+				"id": 77,
+				"slug": "gea-medical-ginekoloska-ordinacija",
+				"name": "Gea Medical — ginekološka ordinacija",
+				"city": "bar",
+				"db": {
+					"services": 45,
+					"servicesPriced": 45,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://geamedical.me/usluge-i-cijene/",
+				"kind": "html",
+				"scope": "гинекология, перинатология, мелкие вмешательства, психологические консультации",
+				"approx_items": 46,
+				"date_hint": "wp modified 2026-07-14T16:42:47 (wp-json)"
+			}
+		],
+		"coverageVsDb": "Совпадает: 46 позиций на сайте, 45 у нас.",
+		"notes": "Цены записаны словом 'eur', поэтому краулер насчитал по € только 2 цены из блока акций. Есть диапазоны: удаление кондилом '30,00 - 100,00 eur'.",
+		"checked": "/usluge-i-cijene/ (Elementor-аккордеон, цены в заголовках вида '30,00 eur'), wp-json pages?search=cijen",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.ambulanta.me/",
+		"clinics": [
+			{
+				"id": 78,
+				"slug": "imc-international-medical-center-orl-ambulanta",
+				"name": "IMC (International Medical Center) — ORL ambulanta",
+				"city": "podgorica",
+				"db": {
+					"services": 11,
+					"servicesPriced": 11,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.ambulanta.me/cjenovnik",
+				"kind": "html",
+				"scope": "ЛОР-осмотры и аудиология",
+				"approx_items": 11,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "Совпадает: 11 позиций, у нас 11/11.",
+		"notes": "Формат '50e'. Про остальные услуги на странице сказано 'kontaktirajte nas', то есть цена по запросу. Joomla, сайт заброшен: копирайт 2014, последние новости 2016, на странице висит PHP Notice.",
+		"checked": "/cjenovnik, меню (usluge/*, aktuelnosti)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 79,
+				"slug": "bolnica-meljine-herceg-novi",
+				"name": "Bolnica Meljine",
+				"city": "herceg-novi",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://domzdravljahn.me/",
+		"clinics": [
+			{
+				"id": 80,
+				"slug": "dom-zdravlja-herceg-novi",
+				"name": "Dom zdravlja Herceg Novi",
+				"city": "herceg-novi",
+				"db": {
+					"services": 365,
+					"servicesPriced": 365,
+					"labTests": 109,
+					"labTestsPriced": 109
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "http://domzdravljahn.me/wp-content/uploads/2019/03/CJENOVNIK.pdf",
+				"kind": "pdf",
+				"scope": "все платные услуги ДЗ, включая лабораторию",
+				"approx_items": null,
+				"date_hint": "Last-Modified: Tue, 05 Mar 2019 13:48:56 GMT; wp media modified 2019-03-05"
+			}
+		],
+		"coverageVsDb": "Судя по всему, это и есть источник нашего импорта (скан PDF, clinic 80): 365 услуг и 109 анализов в БД.",
+		"notes": "Скан на 7,7 МБ, без OCR число позиций не посчитать. Прайс 2019 года, новее на сайте нет.",
+		"checked": "PDF (curl -I, 21 страница, скан без текстового слоя), ссылка из пункта меню menu-item-1620, wp-json media/pages/posts search=cjen",
+		"flags": [
+			"stale-source: PDF 2019, скан"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02",
+		"localSource": "data/pricelists/herceg novi dz/"
+	},
+	{
+		"site": "https://spamedica.me/",
+		"clinics": [
+			{
+				"id": 81,
+				"slug": "spa-medica-podgorica",
+				"name": "Spa Medica",
+				"city": "podgorica",
+				"db": {
+					"services": 49,
+					"servicesPriced": 49,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://spamedica.me/cjenovnik/",
+				"kind": "html",
+				"scope": "физикальная медицина и реабилитация: осмотры физиатра и ортопеда, процедуры",
+				"approx_items": 49,
+				"date_hint": "wp modified 2026-01-26T18:55:02 (wp-json)"
+			},
+			{
+				"url": "https://spamedica.me/cjenovnik-2/",
+				"kind": "html",
+				"scope": "SPA-услуги: сауна, бассейн, массажи",
+				"approx_items": 20,
+				"date_hint": "wp modified 2025-09-17T11:36:06 (wp-json)"
+			}
+		],
+		"coverageVsDb": "Медицинская часть совпадает: 49 позиций, у нас 49. SPA-страница (20 позиций) у нас не заведена.",
+		"notes": "Цены без знака € в формате '40.00', поэтому краулер насчитал 0. Таблица идёт в HTML ниже огромного меню интернет-магазина оборудования.",
+		"checked": "/cjenovnik/ и /cjenovnik-2/ (HTML-таблицы), wp-json pages?search=cjen",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://lucamedical.me/",
+		"clinics": [
+			{
+				"id": 82,
+				"slug": "luca-medical-podgorica",
+				"name": "Luča medical",
+				"city": "podgorica",
+				"db": {
+					"services": 61,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "Совпадает: у нас 61 услуга и 0 цен, на сайте цен тоже нет.",
+		"notes": "На /usluge/ только перечень услуг и пакетов (Kardio paket osnovni/srednji/napredni) без цен. Divi.",
+		"checked": "Главная и меню, /usluge/, /kardiologija/, wp-json pages per_page=100 (22 страницы, cjenovnik нет). Grep по €/EUR/cijen.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 83,
+				"slug": "hirurgija-dr-eli-podgorica",
+				"name": "Dr Eli — Hirurgija",
+				"city": "podgorica",
+				"db": {
+					"services": 25,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.domzdravljadg.me/",
+		"clinics": [
+			{
+				"id": 85,
+				"slug": "dom-zdravlja-dimitrije-dika-marenic-danilovgrad",
+				"name": "Dom zdravlja Danilovgrad „Dimitrije-Dika Marenić\"",
+				"city": "danilovgrad",
+				"db": {
+					"services": 86,
+					"servicesPriced": 61,
+					"labTests": 32,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "http://www.domzdravljadg.me/images/Cjenovnikusluga.pdf",
+				"kind": "pdf",
+				"scope": "только Centar za dijagnostiku: рентген, УЗИ, стоматологический рентген (с кодами J01/J06/J07/J11)",
+				"approx_items": 28,
+				"date_hint": "Last-Modified: Tue, 03 Dec 2019 08:33:28 GMT"
+			}
+		],
+		"coverageVsDb": "На сайте меньше: 28 позиций по рентгену и УЗИ, у нас 61 цена на услуги, а 32 анализа без цен. Остальные цены в БД, видимо, из другого источника (тарифы FZOCG?).",
+		"notes": "Скан без текстового слоя. Цены с копейками (9.99, 7.49, 32.18) похожи на тарифы FZOCG. Joomla, копирайт 2017.",
+		"checked": "Главная (на PDF ведёт плитка), скан PDF на 2 страницы просмотрен глазами, /component/k2/288-cjenovnik (пустая K2-статья), поиск Joomla по 'cjenovnik', /dokumenta/dopunski-rad (docx со списком врачей с дополнительной работой, цен там нет)",
+		"flags": [
+			"stale-source: PDF 2019, скан"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.teslamedical.me/",
+		"clinics": [
+			{
+				"id": 86,
+				"slug": "tesla-medical-berane",
+				"name": "Tesla Medical",
+				"city": "berane",
+				"db": {
+					"services": 121,
+					"servicesPriced": 121,
+					"labTests": 900,
+					"labTestsPriced": 900
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.teslamedical.me/cene/",
+				"kind": "html",
+				"scope": "все услуги поликлиники: кардиология, гастро, неврология, терапия, физикальная, УЗИ, рентген, ГБО",
+				"approx_items": 119,
+				"date_hint": "wp-json pages/57 modified 2020-01-13T09:58:04. is_price_outdated = 0: кроме даты, признаков устаревания нет (отзывы 2025 — «cijene povoljne»; решение юзера 2026-10-05)"
+			},
+			{
+				"url": "https://www.teslamedical.me/wp-content/uploads/2019/11/cenovnik-biohemija-radna-verzija.pdf",
+				"kind": "pdf",
+				"scope": "лаборатория: биохимия, гормоны, аллергия ('radna verzija')",
+				"approx_items": 879,
+				"date_hint": "Last-Modified и CreationDate PDF 2019-11-26; помечен «radna verzija», применён по решению юзера; is_price_outdated = 0"
+			},
+			{
+				"url": "https://www.teslamedical.me/wp-content/uploads/2019/11/cenovnik-mikrobiologija.pdf",
+				"kind": "pdf",
+				"scope": "лаборатория: микробиология",
+				"approx_items": 118,
+				"date_hint": "Last-Modified и CreationDate PDF 2019-11-26; is_price_outdated = 0"
+			}
+		],
+		"coverageVsDb": "Синхронизировано и импортировано 2026-10-05, в проде и локально (insert-clinic-prices-tesla-medical-berane.sql + -lab.sql; прод сверен по API построчно: 121 активная услуга + 1 is_obsolete (spinal-decompression → mechanical-spinal-traction), 882 анализа, цены и диапазоны совпали, isOutdated нет). Услуги: 76 строк сайта совпали по цене, 43 добавлены (МРТ, КТ, эхо, УЗИ малого таза, допплер таза), 6 новых записей каталога. Лаборатория: 925 строк PDF → 882 цены (249 новых записей каталога), 30 спорных и 6 «nakon provere DNK» не заведены, 9 исключены. Запись: data/clinic-imports/tesla-medical-berane.json, разбор — data/clinic-imports/tesla-medical-berane-prices-2026-10.md.",
+		"notes": "Цены в таблице /cene/ без € в формате «30.00», поэтому краулер насчитал 0. PDF биохимии — Excel-распечатка на 54 страницы, колонки разнесены по страницам (1–18 раздел, 19–36 название, 37–54 цена), склеивать по y-координате (PyMuPDF); pdftotext -layout сдвигает цены на строку. Метки #/## — служебные; по отзыву 2022 часть анализов уходит в Moj Lab. Laboratorija-Usluge.pdf — сроки выдачи, не цены. Снимки: sources/tesla-medical-berane/2026-10-02-*.",
+		"checked": "/cene/ (HTML-таблица, внизу 'Sve cene su izražene u evrima'), /cenovnik (редиректит на главную), /laboratorija/ (там ссылки на 3 PDF), wp-json pages/media/search по 'cen', pdftotext",
+		"flags": [
+			"lab-pdf-2019-draft",
+			"imported: insert-clinic-prices-tesla-medical-berane(.sql, -lab.sql), в проде 2026-10-05; outdated не ставили (решение юзера)",
+			"disputed-resolved: update-clinic-prices-tesla-medical-berane-disputed.sql, в проде 2026-10-06"
+		],
+		"recheckHint": "сравнить wp-json /wp/v2/pages/57 modified и Last-Modified обоих PDF (/wp-content/uploads/2019/11/cenovnik-*.pdf); новый прайс скорее придёт новым файлом в uploads — смотреть ссылки на /laboratorija/",
+		"lastChecked": "2026-10-05"
+	},
+	{
+		"site": "https://www.domzdravljabp.me/",
+		"clinics": [
+			{
+				"id": 87,
+				"slug": "dom-zdravlja-bijelo-polje",
+				"name": "Dom zdravlja Bijelo Polje",
+				"city": "belo-polje",
+				"db": {
+					"services": 35,
+					"servicesPriced": 27,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://www.domzdravljabp.me/images/2018/CJENOVNIK_2026.pdf",
+				"kind": "pdf",
+				"scope": "только медицинские справки (ljekarsko uvjerenje): для работы, водителей, оружия, школы и т.п.",
+				"approx_items": 26,
+				"date_hint": "имя файла CJENOVNIK_2026; Last-Modified: Wed, 26 Aug 2026 05:40:55 GMT; в тексте ссылка на согласие Минздрава от 15.02.2016, на штампе дата 19.02.20?6"
+			}
+		],
+		"coverageVsDb": "Совпадает: 26 цен в PDF, у нас 26 цен из 35 услуг.",
+		"notes": "Скан на 1 странице (повёрнут, без текстового слоя). Цены целые, в €. Файл назван '2026' и залит 2026-08, но по содержанию это старый прайс с основанием от 2016 года.",
+		"checked": "Меню главной, /ljekarska-uvjerenja и /o-nama/medicina-rada (на обеих ссылка на PDF), dokumenta/odluke, akta-ustanove, ostala-dokumenta, pravilnici, поиск Joomla по 'cjenovnik'. Скан просмотрен глазами.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://daniloprvi.me/",
+		"clinics": [
+			{
+				"id": 88,
+				"slug": "bolnica-danilo-i-cetinje",
+				"name": "Bolnica Danilo I Cetinje",
+				"city": "cetinje",
+				"db": {
+					"services": 2349,
+					"servicesPriced": 2296,
+					"labTests": 387,
+					"labTestsPriced": 387
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас 2296 цен на услуги и 387 на анализы. Источник: два PDF, выгруженных из Oracle Reports (SPECIJALISTICKE-AMBULANTErwservlet.pdf, BOLNICKO-LIJECENJErwservlet.pdf), лежат локально в E:/pet/docta.me/nuxt/data/pricelists/danilo prvi/. Публичного URL на них не нашлось.",
+		"notes": "Пункт меню https://daniloprvi.me/cjenovnik-usluga-prema-trecim-licima/ существует, но отдаёт заглушку плагина Maintenance Mode ('Sajt je trenutno u fazi izrade'). Остальные страницы, например /kontakt/, работают. Стоит перепроверять: когда заглушку снимут, там, скорее всего, появится прайс.",
+		"checked": "Сайт сейчас открывается, TLS в порядке (SAN daniloprvi.me, *.daniloprvi.me). Ошибка ERR_TLS_CERT_ALTNAME_INVALID у краулера уже не воспроизводится. Посмотрел главную, ссылку 'Cjenovnik usluga prema trećim licima' в блоке документов, wp-json (редиректит на 404.html), веб-поиск.",
+		"flags": [
+			"source-offline: страница прайса в Maintenance Mode, наши данные из локальных PDF"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02",
+		"localSource": "data/pricelists/danilo prvi/"
+	},
+	{
+		"site": "https://www.medikid.me/",
+		"clinics": [
+			{
+				"id": 89,
+				"slug": "medikid-podgorica",
+				"name": "Medikid",
+				"city": "podgorica",
+				"db": {
+					"services": 12,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://www.medikid.me/me/service/baby-start",
+				"kind": "html",
+				"scope": "only Baby Start home-visit packages (newborn care packages)",
+				"approx_items": 4,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "DB has 12 services, 0 priced. The site gives no prices for regular exams or diagnostics, only package prices: Baby Start 7 and Baby Start 10 at 40 EUR ('Akcija otvaranja' opening-promo price; 50 EUR regular is commented out in the HTML), Modern at 50 EUR, Premium at 65 EUR, the latter two marked 'Pozovite'. These packages do not map to our services.",
+		"notes": "Custom PHP site (rd-megamenu template), ME/EN/RU. The Baby Start prices sit in a template 'Pricing Table Classic' block with an opening-promo label and look outdated or placeholder. Exam prices not published.",
+		"checked": "home, mega-menu (all specialty pages), /me/services, /me/spec-services, /me/faq, /me/pediatrics, service pages (ultrasound, allergy-tests, baby-start), sitemap.xml; grep for €/&euro;/cijen/cjenovnik",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.amedic.me/",
+		"clinics": [
+			{
+				"id": 90,
+				"slug": "a-medic-plasticna-i-estetska-hirurgija",
+				"name": "A Medic - Plastična i estetska hirurgija",
+				"city": "podgorica",
+				"db": {
+					"services": 88,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "DB has 88 services, 0 priced. The site has none, so there is nothing to compare.",
+		"notes": "WordPress+Elementor, pages last modified 2025-02 to 2025-11. Service pages only describe procedures and invite a consultation. No price anywhere.",
+		"checked": "wp-json pages (~130, all content grepped for €/u20ac/eur/cijena/cjenovnik/price), wp-json posts (empty), wp search 'cjen'/'cijen', homepage, /konsultacije/",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 91,
+				"slug": "redent-budva",
+				"name": "ReDent",
+				"city": "budva",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": null,
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.bolnicabar.me/",
+		"clinics": [
+			{
+				"id": 92,
+				"slug": "opsta-bolnica-blazo-orlandic",
+				"name": "Opšta Bolnica Bar „Blažo Orlandić\"",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "DB has 0 services. The site publishes no prices of its own. It points to the state FZOCG tariff: non-urgent patients without a referral pay 'prema Cjenovniku Republičkog fonda za zdravstveno osiguranje' (/info-za-pacijente/dolazak-radi-pregleda). Our FZOCG medical_service_tariffs table covers that.",
+		"notes": "State general hospital (custom CMS). The PDFs the crawler flagged are an integrity plan, the dopunski-rad staff lists, first-available-appointment lists and a tender notice; none of them has prices. The 'Dopunski rad' list is a side finding: it names private clinics where hospital doctors also work.",
+		"checked": "full menu; dokumenta/* sections (odluke, pravilnici, razno, dopunski-rad 2026, uputstva, obavjestenja 2026, slobodan-pristup-informacijama); info-za-pacijente/* pages; opened the 'Dopunski rad avgust 2026' PDF (a scanned list of staff working at other clinics, not prices)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://oftalmoloskicentar.me/",
+		"clinics": [
+			{
+				"id": 93,
+				"slug": "oftalmoloski-centar-dr-raonic-podgorica",
+				"name": "Dr Raonić — Oftalmološki Centar",
+				"city": "podgorica",
+				"db": {
+					"services": 140,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "DB has 140 services, 0 priced. The site has none.",
+		"notes": "WordPress+Elementor, ME/EN. Mentions an online-booking platform but there is no external booking link with prices. Not checked: the price might be on social media.",
+		"checked": "wp-json pages (~100 ME+EN, content grepped for €/eur/cijena/cjenovnik/price), wp-json posts, /spisak-usluga/, /hirurske-usluge/, /povoljnosti-placanja/ (payment terms: card installments, CKB Shopping card, no prices), external links (only FB/IG/YouTube)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://teomed.me/",
+		"clinics": [
+			{
+				"id": 94,
+				"slug": "teo-med-pedijatrijska-ambulanta-podgorica",
+				"name": "Teo Med — Pedijatrijska ambulanta",
+				"city": "podgorica",
+				"db": {
+					"services": 29,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "DB has 29 services, 0 priced. The site has none.",
+		"notes": "The crawler's TLS error (ERR_TLS_CERT_ALTNAME_INVALID) did not reproduce: the certificate is valid for teomed.me and www.teomed.me. The site is up (Drupal 9, footer © 2026), a small site with 4-6 service pages. The host shares IP 62.84.179.17 with estetikadrbarovic.me and appears to rate-limit or ban after a burst of requests.",
+		"checked": "homepage via curl (200). Then the host 62.84.179.17 started timing out for this IP, so /usluge, /eeg-elektroencefalografija, /neonatologija, /djeciji-neurolog-podgorica, /usluge/ultrazvuk-glave-CNS-za-djecu, /o-nama and /kontakt were read through the r.jina.ai reader proxy; grep for €/eura/cijen/cjenovnik",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.drfilimanovic.com/",
+		"clinics": [
+			{
+				"id": 95,
+				"slug": "dr-filimanovic-stomatoloska-ordinacija-podgorica",
+				"name": "Dr Filimanović — stomatološka ordinacija",
+				"city": "podgorica",
+				"db": {
+					"services": 82,
+					"servicesPriced": 82,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.drfilimanovic.com/stomatoloskeordinacijepodgoricacjenovnik/",
+				"kind": "html",
+				"scope": "all dental services (exams, X-ray, surgery, endo, prosthetics etc.)",
+				"approx_items": 87,
+				"date_hint": "wp-json modified 2026-04-23T10:04:41"
+			}
+		],
+		"coverageVsDb": "Roughly the same: the site has ~87 prices, DB has 82/82 priced. This is most likely our source.",
+		"notes": "Format is 'NN €' with some ranges ('150 – 250 €'). WP Rocket lazy-loading, but the prices are in the static HTML.",
+		"checked": "crawler candidate page, wp-json pages search 'cjenovnik' (one Cjenovnik page plus Usluge)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 96,
+				"slug": "fizikalmed-fizikalna-ordinacija-podgorica",
+				"name": "Fizikalmed — fizikalna ordinacija",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 97,
+				"slug": "dental-studio-gacina",
+				"name": "Gaćina — Dental studio",
+				"city": "bar",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 98,
+				"slug": "extradent-stomatoloska-ordinacija-podgorica",
+				"name": "Extradent — stomatološka ordinacija",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "http://www.drkulusic.me/",
+		"clinics": [
+			{
+				"id": 99,
+				"slug": "kulusic-dental-clinic-niksic",
+				"name": "Kulušić Dental Clinic",
+				"city": "niksic",
+				"db": {
+					"services": 60,
+					"servicesPriced": 43,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.drkulusic.me/mne/cjenovnik/",
+				"kind": "html",
+				"scope": "all dental services (ME)",
+				"approx_items": 36,
+				"date_hint": "wp-json modified 2026-06-08T18:24:14"
+			},
+			{
+				"url": "https://www.drkulusic.me/mne/cenovnik-all-on-4-i-all-on-6/",
+				"kind": "html",
+				"scope": "All-on-4/6 implant packages + definitive bridges",
+				"approx_items": 6,
+				"date_hint": "wp-json modified 2026-02-23T13:31:47"
+			},
+			{
+				"url": "https://www.drkulusic.me/en/price-list/",
+				"kind": "html",
+				"scope": "all dental services (EN version)",
+				"approx_items": 33,
+				"date_hint": "wp-json modified 2026-06-08T18:33:21"
+			}
+		],
+		"coverageVsDb": "Roughly the same: the site has ~36+6 prices, DB has 43 of 60 priced.",
+		"notes": "Formats: 'NN €', ranges '50 – 60 – 70 €', and on the All-on page '3400 / eur' with no € sign (the crawler found only 4 hits there). The EN list differs from ME on some items (orthopan 20 € in EN vs 25 € in ME, two tartar-removal lines at 30 and 40 €), so treat the ME page as primary. The All-on page says prices are informative.",
+		"checked": "3 crawler candidates, wp-json search 'cjen'/'price'/'cenovnik'",
+		"flags": [],
+		"recheckHint": "основной ME, EN расходится",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://ordinacijaboskovic.me/",
+		"clinics": [
+			{
+				"id": 100,
+				"slug": "dr-boskovic-ginekolosko-akuserska-ordinacija",
+				"name": "Dr Bošković — ginekološko-akušerska ordinacija",
+				"city": "belo-polje",
+				"db": {
+					"services": 30,
+					"servicesPriced": 30,
+					"labTests": 3,
+					"labTestsPriced": 3
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://ordinacijaboskovic.me/cjenovnik.html",
+				"kind": "html",
+				"scope": "all gynecology/obstetrics services incl. a few lab-type tests (double/triple test, HPV, NIPT range)",
+				"approx_items": 33,
+				"date_hint": "Last-Modified: Tue, 10 Jun 2025 05:04:55 GMT"
+			}
+		],
+		"coverageVsDb": "Roughly the same: the site has ~33 prices, DB has 30 services + 3 lab tests, all priced. This is most likely our source.",
+		"notes": "Format is 'Naziv: NN eur', no € symbol. NIPT is a range (560-800 eur, depends on the lab). The crawler's gallery-0X.jpg 'hits' are false positives (photos, not price lists).",
+		"checked": "cjenovnik.html (static HTML), Last-Modified header, gallery images flagged by the crawler",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://novamedic.me/",
+		"clinics": [
+			{
+				"id": 101,
+				"slug": "nova-medic-poliklinika",
+				"name": "Nova Medic Poliklinika",
+				"city": "podgorica",
+				"db": {
+					"services": 103,
+					"servicesPriced": 103,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://novamedic.me/cjenovnik/",
+				"kind": "html",
+				"scope": "all services (dermatovenerology, aesthetic medicine, lasers, body treatments)",
+				"approx_items": 115,
+				"date_hint": "wp-json modified 2026-09-30T11:17:39"
+			}
+		],
+		"coverageVsDb": "Somewhat smaller than DB: the site has ~115 price strings, DB has 162/162 priced. Some DB items may come from service pages (e.g. Lola tretman, BTL Exilis pages modified 2026-07-30) or from an older version.",
+		"notes": "Format is '€50' (symbol before the number). Updated very recently (2026-09-30). Worth re-checking against the DB.",
+		"checked": "/cjenovnik/, wp-json search 'cjenovnik'",
+		"flags": [
+			"synced: insert-clinic-prices-nova-medic-poliklinika.sql + update-nova-medic-doctors-and-dermatoscopy-specialty.sql, в проде 2026-10-02; снятое — is_obsolete"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://drraznatovic.me/",
+		"clinics": [
+			{
+				"id": 102,
+				"slug": "dr-raznatovic-stomatoloska-ordinacija",
+				"name": "Dr Ražnatović — stomatološka ordinacija",
+				"city": "podgorica",
+				"db": {
+					"services": 104,
+					"servicesPriced": 104,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://drraznatovic.me/cjenovnik/",
+				"kind": "html",
+				"scope": "all dental services ('CJENOVNIK STOMATOLOSKIH USLUGA', numbered table)",
+				"approx_items": 107,
+				"date_hint": "wp-json modified 2015-09-25T10:36:43 (page content apparently from 2015)"
+			}
+		],
+		"coverageVsDb": "Roughly the same: ~107 numbered rows on the site, DB has 104/104 priced. This is most likely our source.",
+		"notes": "The crawler's 'no-prices-found' is wrong. Prices are written as '15.00' with no currency symbol, and the table sits outside the_content (wp-json content is empty), so it has to be parsed from the HTML. The site looks abandoned: every page was last modified in 2015-09 and test posts are still up. The prices are probably very outdated, so mark them as stale.",
+		"checked": "/cjenovnik/ raw HTML, wp-json pages list (all modified 2015), language variants /price-list/?lang=en and the RU page (~92 rows each)",
+		"flags": [
+			"stale-source: прайс не менялся с 2015-09"
+		],
+		"recheckHint": "таблица вне the_content, wp-json пустой — парсить HTML",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://endorfin.me/",
+		"clinics": [
+			{
+				"id": 103,
+				"slug": "endorfin-fizio-centar-podgorica",
+				"name": "Endorfin Fizio Centar Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 19,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 104,
+				"slug": "endorfin-medical-center-podgorica",
+				"name": "Endorfin Medical Center Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 19,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 105,
+				"slug": "endorfin-fizio-centar-radanovici",
+				"name": "Endorfin fizio centar Radanovići",
+				"city": "kotor",
+				"db": {
+					"services": 19,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 106,
+				"slug": "endorfin-fizio-centar-niksic",
+				"name": "Endorfin Fizio Centar Nikšić",
+				"city": "niksic",
+				"db": {
+					"services": 19,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "DB has 19 services per location, 0 priced. The site has none.",
+		"notes": "WordPress+Elementor, a physiotherapy chain (4 locations, one site). Price words found were only false matches inside 'pacijenata'.",
+		"checked": "wp-json pages, posts, custom types 'terapija' and 'bolest' (all content grepped), homepage, /terapija/shockwave-terapija/, /terapija/masaze/, /neurorobotika/, /kontakt/",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.drbarovic.me/",
+		"clinics": [
+			{
+				"id": 107,
+				"slug": "barovic-aesthetic-dental-centar",
+				"name": "Barović — Aesthetic & Dental centar ",
+				"city": "podgorica",
+				"db": {
+					"services": 39,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "price_on_request",
+		"pricelists": [],
+		"coverageVsDb": "DB has 39 services, 0 priced. The site has no figures of its own.",
+		"notes": "Webflow site. Service pages have 'Cijena' sections, but they only say the price depends on an exam and invite you to call ('teško procijeniti bez prethodnog pregleda'). /lijecenje-zuba quotes generic market ranges ('u našoj zemlji 20 do 80 eura', 'na zapadu 200-1000 eura'). Those are not the clinic's prices; do not import them.",
+		"checked": "home, /usluge, /ostale-usluge, /hirurgija, /lijecenje-zuba, /zubni-implanti, /lasersko-bijeljenje-zuba, /quick-aligner, /rekonstrukcija-osmjeha, blog; sitemap.xml returns 404",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://estetikadrbarovic.me/",
+		"clinics": [
+			{
+				"id": 108,
+				"slug": "aesthetic-medical-centar-barovic-dr-aleksandra-barovic",
+				"name": "Aesthetic Medical Centar Barović - Dr Aleksandra Barović",
+				"city": "podgorica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://estetikadrbarovic.me/sites/default/files/popup/baner-dr-barovic_1.webp",
+				"kind": "image",
+				"scope": "homepage popup promo banner 'Velika septembarska akcija': laser fungus removal package 200€, Hydra Glow 80€ (was 120€), Exion Body 3+1 free",
+				"approx_items": 2,
+				"date_hint": "September 2026 promo (banner text 'Velika septembarska akcija')"
+			}
+		],
+		"coverageVsDb": "DB has 0 services. The site has only 2 promo prices.",
+		"notes": "The crawler's TLS error did not reproduce: the host is up (Drupal, same server as teomed.me) but blocked further requests. The promo is time-limited, so do not import it as regular prices.",
+		"checked": "The host 62.84.179.17 timed out for curl, so pages were read through the r.jina.ai reader proxy: home plus ~30 internal links listed; scanned protokoli, botox, hijaluronski-fileri, candela-nordlys, exion-tretmani, deka-tetra-pro, laseri, profhilo, kontakt (no prices). The popup banner image was fetched through the images.weserv.nl proxy and read visually.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://prlja-medical.me/",
+		"clinics": [
+			{
+				"id": 109,
+				"slug": "dr-prlja-medical",
+				"name": "Dr Prlja Medical",
+				"city": "podgorica",
+				"db": {
+					"services": 82,
+					"servicesPriced": 82,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://prlja-medical.me/cjenovnik.htm",
+				"kind": "html",
+				"scope": "all ORL services + some aesthetic procedures (numbered 1-83)",
+				"approx_items": 82,
+				"date_hint": "page header 'CJENOVNIK (03.03.2023)'; Last-Modified: Sun, 29 Jun 2025 14:35:48 GMT"
+			}
+		],
+		"coverageVsDb": "Same: 82 prices on the site, 82/82 priced in DB. This is our source.",
+		"notes": "The crawler missed it because prices are written as '40,oo' (letter o instead of zero) under the column header '(cijena EURO)'. The EN and RU pages are empty shells (2019, '© 2011'). Site is an old Dreamweaver build.",
+		"checked": "cjenovnik.htm, price_list.htm (EN) and price_list_rus.htm (RU), Last-Modified headers",
+		"flags": [
+			"stale-source: прайс от 03.03.2023"
+		],
+		"recheckHint": "цены вида «40,oo»",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "http://ordinacijabellavista.me/",
+		"clinics": [
+			{
+				"id": 110,
+				"slug": "bellavista-stomatoloska-ordinacija",
+				"name": "Bellavista — stomatološka ordinacija",
+				"city": "herceg-novi",
+				"db": {
+					"services": 27,
+					"servicesPriced": 27,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "http://ordinacijabellavista.me/#employement",
+				"kind": "html",
+				"scope": "all dental services ('Cjenovnik' section on the one-page homepage)",
+				"approx_items": 27,
+				"date_hint": "Last-Modified: Tue, 06 Feb 2018 15:05:35 GMT"
+			},
+			{
+				"url": "http://ordinacijabellavista.me/eng/",
+				"kind": "html",
+				"scope": "same list in English",
+				"approx_items": 26,
+				"date_hint": "Last-Modified: Tue, 06 Feb 2018 15:08:02 GMT"
+			}
+		],
+		"coverageVsDb": "Same: 27 prices on the site, 27/27 priced in DB. This is our source.",
+		"notes": "Format is 'NN€'. Static site last modified in 2018, so prices are likely outdated (e.g. a composite filling at 20€). The flyer images/izabrani_stomatolog_flajer.pdf (2018-01) is about choosing them as your state-insurance dentist ('izabrani stomatolog'), not a price list.",
+		"checked": "homepage (one-page site, the menu item 'Cjenovnik' anchors to #employement), /eng/, Last-Modified headers, flyer PDF header",
+		"flags": [
+			"stale-source: Last-Modified 2018"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://drkukoljac.com/",
+		"clinics": [
+			{
+				"id": 111,
+				"slug": "dr-kukoljac-stomatoloska-ordinacija",
+				"name": "Dr Kukoljac — stomatološka ordinacija",
+				"city": "herceg-novi",
+				"db": {
+					"services": 27,
+					"servicesPriced": 27,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://drkukoljac.com/index.php/me/cjenovnik-zubar-stomatolog-hercg-novi-crna-gora",
+				"kind": "html",
+				"scope": "все стоматологические услуги (осмотр, чистка, удаление, пломбы, эндо, протезы, коронки, виниры, ботокс/гиалурон)",
+				"approx_items": 28,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "то же самое: 28 позиций на сайте против 27/27 в БД",
+		"notes": "Краулер упал на TLS (ERR_TLS_CERT_ALTNAME_INVALID): сертификат не покрывает домен, curl -k отдаёт страницу нормально. Цены вида '45-60€', '130-150€'. В футере COPYRIGHT 2019, даты прайса нет. Есть EN-версия сайта (/index.php/en/...).",
+		"checked": "главная (Joomla, редирект на /index.php/me/), пункт меню «Cjenovnik», заголовки ответа (Last-Modified нет)",
+		"flags": [],
+		"recheckHint": "битый TLS-сертификат, нужен curl -k",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.drmedan.me/",
+		"clinics": [
+			{
+				"id": 112,
+				"slug": "ordinacija-medan",
+				"name": "Ordinacija Medan",
+				"city": "podgorica",
+				"db": {
+					"services": 24,
+					"servicesPriced": 22,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.drmedan.me/me/cijenovnik/cijenovnik/",
+				"kind": "html",
+				"scope": "все гинекологические услуги (осмотры, УЗИ, ПАП, кольпоскопия, спираль, малые операции, PRP, лабиопластика)",
+				"approx_items": 24,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "то же самое: 24 строки, у 22 есть цена (у 2 только '€' без числа: ведение беременности, консультация по бесплодию) — совпадает с 24/22 в БД",
+		"notes": "Тот же прайс есть на /en/cijenovnik/cijenovnik/ и /ru/cijenovnik/cijenovnik/. В числах пробелы внутри ('5 0€', '8 00€'), парсить надо со склейкой цифр. Copyright 2019, даты прайса нет.",
+		"checked": "страница прайса ME, ссылки на EN/RU-версии, Last-Modified (нет)",
+		"flags": [],
+		"recheckHint": "пробелы внутри чисел «5 0€»",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://doktoricamica.com/",
+		"clinics": [
+			{
+				"id": 113,
+				"slug": "doktorica-mica-pedijatrijski-centar",
+				"name": "Doktorica Mica — pedijatrijski centar",
+				"city": "podgorica",
+				"db": {
+					"services": 17,
+					"servicesPriced": 17,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://doktoricamica.com/cjenovnik/",
+				"kind": "html",
+				"scope": "все педиатрические услуги (осмотры, визиты на дом, ингаляции, инъекции, аллерготесты)",
+				"approx_items": 17,
+				"date_hint": "2026-04-27 (WordPress modified страницы, wp-json)"
+			}
+		],
+		"coverageVsDb": "то же самое: 17 позиций против 17/17 в БД",
+		"notes": "Инъекции указаны как '8,00 € + cijena lijeka'. Пробелы внутри чисел ('6 0,00 €').",
+		"checked": "страница /cjenovnik/, wp-json pages?search=cjen",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://medtim.me/",
+		"clinics": [
+			{
+				"id": 114,
+				"slug": "medtim-privatna-bolnica",
+				"name": "Medtim — privatna bolnica",
+				"city": "podgorica",
+				"db": {
+					"services": 150,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://medtim.me/usluge/poliklinika/dermatologija-podgorica/",
+				"kind": "html",
+				"scope": "одна цена в FAQ: базовый дерматологический осмотр 50€",
+				"approx_items": 1,
+				"date_hint": null
+			},
+			{
+				"url": "https://medtim.me/usluge/hirurgija/vaskularna-hirurgija/",
+				"kind": "html",
+				"scope": "одна цена в FAQ: склеротерапия 300€",
+				"approx_items": 1,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "в БД 150 услуг без цен; сайт даёт только 2 цены в тексте FAQ",
+		"notes": "Прайса нет. Цены только упомянуты в тексте ('Osnovni dermatološki pregled je 50€', 'Cijena sklerozacija je 300€'), в остальном предлагают звонить.",
+		"checked": "wp-json pages (8), все 15 страниц CPT usluge, 29 постов/страниц врачей (CPT team), wp search по cjen/cijen/cen/price/paket",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://oftalmologija.drjovovic.me/",
+		"clinics": [
+			{
+				"id": 115,
+				"slug": "dr-jovovic-oftalmoloska-ordinacija",
+				"name": "Dr. Jovović — oftalmološka ordinacija ",
+				"city": "podgorica",
+				"db": {
+					"services": 56,
+					"servicesPriced": 56,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://oftalmologija.drjovovic.me/cjenovnik/",
+				"kind": "html",
+				"scope": "все офтальмологические услуги (осмотры, диагностика, лазер, малые операции)",
+				"approx_items": 57,
+				"date_hint": "2025-09-29 (schema.org dateModified / article:modified_time страницы)"
+			}
+		],
+		"coverageVsDb": "примерно то же: 57 цен на сайте против 56/56 в БД",
+		"notes": "Цены в формате '40.00 €'. Финальный URL краулера был с ?doing_wp_cron=..., это мусорный параметр.",
+		"checked": "страница /cjenovnik/, мета-теги дат, wp-json search",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://arsmedica.co.me/",
+		"clinics": [
+			{
+				"id": 116,
+				"slug": "ars-medica-specijalna-bolnica",
+				"name": "Ars Medica — specijalna bolnica",
+				"city": "podgorica",
+				"db": {
+					"services": 205,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			},
+			{
+				"id": 117,
+				"slug": "ars-medica-dental-clinic",
+				"name": "Ars Medica Dental Clinic",
+				"city": "podgorica",
+				"db": {
+					"services": 218,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://arsmedica.co.me/ginekologija/",
+				"kind": "html",
+				"scope": "одна цена: NIFTY-тест 690€ (то же на https://arsmedica.co.me/en/gynaecology/)",
+				"approx_items": 1,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "в БД 205 + 218 услуг без цен; на сайте одна цена (NIFTY), ни больница, ни стоматология цен не публикуют",
+		"notes": "О ценах сказано: «informacije o ... cijenama usluga ... putem telefona ili na licu mjesta», то есть цена по запросу. '1000 €' на странице пластики — это гарантия импланта, не цена. Большинство страниц не обновлялось с 2020 года.",
+		"checked": "wp-json pages (37 страниц ME+EN) — все скачаны и проверены grep'ом на €/cijen/price; wp search cjen/cijen/price/cost; wp media search cjen (пусто); внешние ссылки (других доменов нет)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "http://www.mansamedica.com/",
+		"clinics": [
+			{
+				"id": 118,
+				"slug": "mansa-medica-tivat",
+				"name": "Mansa Medica Tivat",
+				"city": "tivat",
+				"db": {
+					"services": 47,
+					"servicesPriced": 0,
+					"labTests": 2,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "в БД 47 услуг + 2 анализа без цен; сайт тоже без цен",
+		"notes": "Самописный CMS, Copyright 2021. В шапке ссылка на https://mansamedica.me/ — домен не резолвится.",
+		"checked": "главная, все 10 страниц /me/usluge/* (вкл. лабораторию/УЗИ/спецосмотры), картинки на страницах услуг (одна подозрительная 2024-09-04-Window.jpg — это фото кабинета), sitemap.xml (404)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://laserfocus.me/",
+		"clinics": [
+			{
+				"id": 119,
+				"slug": "laserfocus-centar-za-mikrohirurgiju-oka",
+				"name": "LaserFocus — Centar za mikrohirurgiju oka",
+				"city": "budva",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "в БД услуг нет; на сайте цен тоже нет",
+		"notes": "Автовердикт some-prices ложный: на главной только суммы подарочных ваучеров ('poklon vaučer od 200€', '100€'), это не цены услуг. Контент с 2020 года, акции обновляются (2026-09).",
+		"checked": "wp-json pages+posts (≈60), главная, FAQ /pitanja/, страницы лечения (LASIK/PRK, катаракта, ICL), /kontakt/, /dijagnostika/",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.orthocentar.com/",
+		"clinics": [
+			{
+				"id": 120,
+				"slug": "ortho-centar",
+				"name": "Ortho Centar",
+				"city": "kotor",
+				"db": {
+					"services": 25,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "в БД 25 услуг без цен; сайт тоже без цен",
+		"notes": "Статичный HTML, Copyright 2015, но объявление про отпуск до 17.08.2026 — клиника работает. На ortodoncija слово 'cijena' есть только в тексте ('visoka cijena' лингвальной техники).",
+		"checked": "главная и все страницы меню: usluge, estetska-stomatologija, ortodoncija, onama, nas-tim, prikaz-slucaja, kontakt, eng/index; картинки (только фото пациентов до/после)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://dentistmontenegro.com/",
+		"clinics": [
+			{
+				"id": 122,
+				"slug": "dental-studio-vucetic",
+				"name": "Dental Studio Vučetić",
+				"city": "kotor",
+				"db": {
+					"services": 31,
+					"servicesPriced": 31,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "у нас цены из другого источника: в БД 31/29 с ценами, на сайте ни одной",
+		"notes": "Стоматология Vučetić, Котор. Цен нет, только «цены до 70% ниже» и предложение прислать план лечения с ценами. Copyright 2018. Откуда взяты 29 цен в БД, стоит проверить (FB/Google/присланный прайс).",
+		"checked": "все 68 HTML-страниц сайта (ME/EN/RU) скачаны, grep по €/EUR/евро/cjenovnik/price; угаданные cenovnik.html/cjenovnik.html/cene.html/price-list.html — 404; sitemap пуст",
+		"flags": [
+			"source-offline: 29 цен в БД, на сайте цен нет"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 123,
+				"slug": "dental-clinic-kovacevic",
+				"name": "Dental Clinic Kovačević",
+				"city": "herceg-novi",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 124,
+				"slug": "dr-cetkovic-stomatoloska-ordinacija",
+				"name": "Dr Ćetković — Stomatološka ordinacija",
+				"city": "kotor",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": null,
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://drveselinovic.com/",
+		"clinics": [
+			{
+				"id": 125,
+				"slug": "dr-veselinovic-stomatoloska-klinika",
+				"name": "Dr Veselinović — Stomatološka klinika",
+				"city": "herceg-novi",
+				"db": {
+					"services": 100,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://drveselinovic.com/cenovnik-2/",
+				"kind": "html",
+				"scope": "ортодонтия: 4 цены на брекеты (500€, 600€, 600-700€, 750-850€ за челюсть); остальные таблицы (профилактика, хирургия, имплантология, протетика) без столбца цен",
+				"approx_items": 4,
+				"date_hint": "2023-09-29 (WordPress modified, wp-json)"
+			},
+			{
+				"url": "https://drveselinovic.com/cenovnik-1/",
+				"kind": "html",
+				"scope": "страница из меню: список услуг без цен, только оговорки",
+				"approx_items": 0,
+				"date_hint": "2023-10-10 (WordPress modified, wp-json)"
+			}
+		],
+		"coverageVsDb": "в БД 100 услуг без цен; сайт даёт 4 цены по ортодонтии",
+		"notes": "Похоже, цены сняли намеренно: в <td> только названия, столбца цены нет. В меню ведёт cenovnik-1 (без цен), cenovnik-2 нигде не прилинкован. Есть приписка о праве менять цены без предупреждения.",
+		"checked": "wp-json pages (≈50) и posts — все 63 скачаны и проверены grep'ом на цены; обе страницы cenovnik; /en/ версии (404); ссылки меню",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://domzdravljakotor.me/",
+		"clinics": [
+			{
+				"id": 126,
+				"slug": "dom-zdravlja-kotor",
+				"name": "Dom zdravlja Kotor",
+				"city": "kotor",
+				"db": {
+					"services": 19,
+					"servicesPriced": 19,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://domzdravljakotor.me/izdavanje-uvjerenja-dom-zdravlja-kotor/",
+				"kind": "html",
+				"scope": "услуги для третьих лиц: медицинские справки (работа, вождение, оружие, моряки, спорт и т.д.)",
+				"approx_items": 19,
+				"date_hint": "2025-07-30 (WordPress modified страницы); основание — Odluka o cijenama br.02-2069/1 od 26.10.2015"
+			},
+			{
+				"url": "https://domzdravljakotor.me/wp-content/uploads/2020/07/Cjenovnik-usluga-1.doc",
+				"kind": "docx",
+				"scope": "тот же прайс справок (.doc, Word 97); дубль https://domzdravljakotor.me/wp-content/uploads/2020/07/Cjenovnik-usluga.doc того же размера; ссылка со страницы https://domzdravljakotor.me/dokumenta/ostala-dokumenta/",
+				"approx_items": 19,
+				"date_hint": "Last-Modified 2020-07-30"
+			}
+		],
+		"coverageVsDb": "то же самое: 19 цен против 19/19 в БД",
+		"notes": "ВХОДНОЙ ДОМЕН dzkotor.me ПРИПАРКОВАН (Sedo parking, не DZ Kotor). Настоящий сайт — https://domzdravljakotor.me/, в каталоге нужно поменять URL. Ссылка на PDF Odluke (2017/10) отдаёт 404. Формат цен '20,00 €'. Сайт в БД исправлен с www.dzkotor.me (update-clinics-2026-10-pricelist-map.sql).",
+		"checked": "www.dzkotor.me (припаркован в Sedo), поиск настоящего домена, domzdravljakotor.me: wp-json pages, wp search 'cjenov', wp media search 'cjen', страницы документов",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://dzmojkovac.me/",
+		"clinics": [
+			{
+				"id": 127,
+				"slug": "dom-zdravlja-bosko-dedeic-mojkovac",
+				"name": "Dom zdravlja \"Boško Dedeić\" Mojkovac",
+				"city": "mojkovac",
+				"db": {
+					"services": 297,
+					"servicesPriced": 297,
+					"labTests": 36,
+					"labTestsPriced": 36
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://dzmojkovac.me/wp-content/uploads/2019/03/02.10.2025.pdf",
+				"kind": "pdf",
+				"scope": "все услуги для неосигурантов FZOCG (Cjenovnik usluga prema trećim licima koji nijesu osiguranici FZOCG 02.10.2025): поликлиника, лаборатория, диагностика; колонки Cijena и Cijena×3; число позиций взято из нашего импорта (274+36), сам PDF не пересчитывал",
+				"approx_items": 310,
+				"date_hint": "02.10.2025 (в названии и в имени файла); Last-Modified 2025-10-03"
+			},
+			{
+				"url": "https://dzmojkovac.me/wp-content/uploads/2019/03/cjenovnik_ljekarskih_uvjerenja.pdf",
+				"kind": "pdf",
+				"scope": "медицинские справки (скан, 2 стр.)",
+				"approx_items": null,
+				"date_hint": "Last-Modified 2022-04-28 (это дата переноса на сайт); сам файл из 2019/03"
+			},
+			{
+				"url": "https://dzmojkovac.me/wp-content/uploads/2019/03/Cjenovnik_za_sanitarne_preglede.pdf",
+				"kind": "pdf",
+				"scope": "санитарные осмотры (скан, 1 стр.)",
+				"approx_items": null,
+				"date_hint": "Last-Modified 2022-04-28; файл из 2019/03"
+			},
+			{
+				"url": "https://dzmojkovac.me/wp-content/uploads/2019/03/cjenovnik_van_fzocg.pdf",
+				"kind": "pdf",
+				"scope": "старый прайс для неосигурантов от 07.03.2019 (5 стр.), заменён версией 02.10.2025",
+				"approx_items": null,
+				"date_hint": "07.03.2019 (подпись ссылки); PDF CreationDate 2019-03-08"
+			}
+		],
+		"coverageVsDb": "основной PDF 02.10.2025 — ровно наш источник импорта (274 услуги + 36 анализов, цены ×3); справки и санитарные осмотры, вероятно, в БД не заведены",
+		"notes": "Страница прайса: https://dzmojkovac.me/?p=147 (modified 2025-10-03). На ней три старые ссылки ведут на мёртвый домен mojkovac.mojmail.me; те же файлы лежат по тому же пути на dzmojkovac.me (ссылки выше уже исправлены). Все PDF — сканы, без текстового слоя, основной весит 12.5 МБ.",
+		"checked": "wp-json через ?rest_route= (обычный /wp-json/ отдаёт HTML главной), media (все не-картинки), wp search cjen/cijen/cenovnik, пост ?p=147 «Cjenovnik usluga»",
+		"flags": [
+			"imported: справки и санитарные осмотры (insert-clinic-prices-dom-zdravlja-bosko-dedeic-mojkovac.sql), в проде 2026-10-02; 23 позиции is_price_outdated"
+		],
+		"recheckHint": "wp-json только через ?rest_route=",
+		"lastChecked": "2026-10-02",
+		"localSource": "data/pricelists/mojkovac dz/"
+	},
+	{
+		"site": "https://dzkolasin.me/",
+		"clinics": [
+			{
+				"id": 128,
+				"slug": "dom-zdravlja-kolasin",
+				"name": "Dom zdravlja Kolašin",
+				"city": "kolasin",
+				"db": {
+					"services": 26,
+					"servicesPriced": 26,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://dzkolasin.me/wp-content/uploads/2019/02/Cjenovnik-licima-koja-nisu-osiguranici.pdf",
+				"kind": "pdf",
+				"scope": "все услуги для неосигурантов (общий врач, ЭКГ/спирометрия, процедуры, УЗИ, рентген), 2 стр.",
+				"approx_items": 26,
+				"date_hint": "Last-Modified 2020-10-07; путь uploads/2019/02"
+			}
+		],
+		"coverageVsDb": "то же самое: файл побайтно совпадает с нашим источником (E:/pet/docta.me/nuxt/data/pricelists/kolasin dz/), 26/26",
+		"notes": "Сайт пересобран в мае 2026: пункт меню «Cjenovnik» стал href=\"#\" и никуда не ведёт, PDF остался по старому URL и не прилинкован (нашёл через Wayback). При следующей перепроверке может пропасть; новый прайс, если появится, надо искать по меню.",
+		"checked": "wp-json pages (16), media (картинки + 1 PDF о дополнительной работе), wp search cjen/cijen/cenov, главная, Wayback CDX по uploads/*jenovnik*",
+		"flags": [
+			"link-removed: пункт меню «Cjenovnik» ведёт на #, PDF жив только по прямой ссылке"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02",
+		"localSource": "data/pricelists/kolasin dz/"
+	},
+	{
+		"site": "https://domzdravljaandrijevica.com/",
+		"clinics": [
+			{
+				"id": 129,
+				"slug": "dom-zdravlja-andrijevica",
+				"name": "Dom Zdravlja Andrijevica",
+				"city": "andrijevica",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "в БД услуг нет; на сайте цен тоже нет",
+		"notes": "Документы держат в папках Google Drive (ссылки в меню), прайса там не видно. Страницы документов на самом сайте пустые.",
+		"checked": "wp-json pages (18), wp search cjen/cijen/cenov (только новости), media (только фото), страницы Usluge/Interna akta/Propisi/Izvještaji (пустые), «Pristup informacijama» → папка Google Drive (только SPI-документы), Wayback CDX (пусто)",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.bpbolnica.me/",
+		"clinics": [
+			{
+				"id": 130,
+				"slug": "opsta-bolnica-bijelo-polje",
+				"name": "Opšta Bolnica Bijelo Polje",
+				"city": "belo-polje",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас в БД 0 услуг, сайт тоже цен не даёт. Совпадает.",
+		"notes": "Автовердикт 'some-prices' ложный: сработала иконка fa-eur у пункта меню DONACIJE. Cjenovnik usluga za treća lica на сайте не опубликован.",
+		"checked": "меню (Joomla), /index.php/vazni-dokumenti (около 40 PDF), /odluke, /opsti-podaci, /javne-nabavke, /rad-specijalistickih-ambulanti, /zastitnik-prava-pacijenata, /organizacija, /2-uncategorised/53-analiticke-kartice-i-putni-nalozi. PDF 'Dopunski rad' (mart-2022, str1-3, dopunski_rad) отрендерил и просмотрел: там только списки врачей на дополнительной работе, цен нет. sitemap.xml отдаёт 404.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.bolnicarisan.me/",
+		"clinics": [
+			{
+				"id": 131,
+				"slug": "specijalna-bolnica-za-ortopediju-neurohirurgiju-i-neurologiju-vaso-cukovic-risan",
+				"name": "Specijalna bolnica za ortopediju, neurohirurgiju i neurologiju \"Vaso Ćuković\" - Risan",
+				"city": "kotor",
+				"db": {
+					"services": 858,
+					"servicesPriced": 681,
+					"labTests": 115,
+					"labTestsPriced": 103
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://www.bolnicarisan.me/index.php?option=com_phocadownload&view=category&download=191:cjenovnik-ambulanta&id=56:2023&Itemid=575",
+				"kind": "pdf",
+				"scope": "амбулаторные услуги для третьих лиц (самооплата), сканированный PDF на 13 стр., 'cjenovnik ambulanta za treca lica_compressed.pdf'",
+				"approx_items": null,
+				"date_hint": "метаданные PDF: создан 2023-05-11, изменён 2023-05-16; лежит в Dokumenta > Cjenovnici > 2023"
+			},
+			{
+				"url": "https://www.bolnicarisan.me/index.php?option=com_phocadownload&view=category&download=192:cjenovnik-odjeljenja&id=56:2023&Itemid=575",
+				"kind": "pdf",
+				"scope": "стационарные услуги (odjeljenja) для третьих лиц, сканированный PDF на 26 стр.",
+				"approx_items": null,
+				"date_hint": "метаданные PDF: создан 2023-05-11, изменён 2023-05-16"
+			},
+			{
+				"url": "https://www.bolnicarisan.me/index.php?option=com_phocadownload&view=category&download=190:odluka-o-povecanju-cijena-usluga&id=56:2023&Itemid=575",
+				"kind": "pdf",
+				"scope": "не прайс, а основание: письмо Минздрава 011-25/2019-2 от 14.02.2019 с коэффициентами к ценам FZOCG (амбулатория ×3, стационар ×2,5)",
+				"approx_items": 0,
+				"date_hint": "документ датирован 14.02.2019, PDF создан 2023-05-11"
+			}
+		],
+		"coverageVsDb": "Это те самые прайсы treća lica (ambulanta + odjeljenja), из которых собраны наши 858 услуг и 115 анализов (681 и 103 с ценой). Покрытие примерно совпадает. Сканы без текстового слоя, число позиций автоматически не посчитать.",
+		"notes": "Файлы отдаются через phocadownload с content-disposition: attachment. В категории 35 есть ещё download=54 'Scan.pdf' (1 стр., 2020): судя по названию, тоже письмо Минздрава 011-25/2019, не прайс. Новее версии 2023 на сайте нет. Для перепроверки достаточно смотреть категорию id=55:cjenovnici: появится ли там подкатегория нового года.",
+		"checked": "главная, Dokumenta (com_phocadownload view=categories), категории 55 'Cjenovnici' (там только подкатегория 2023 с 3 файлами), 56 '2023', 35 'Izmjena cjenovnika zdravstvenih usluga za treca lica'. Скачал все 3 файла, проверил метаданные и отрендерил odluka.",
+		"flags": [
+			"stale-source: прайсы 2023, сканы"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02",
+		"localSource": "data/pricelists/risan bolnica/"
+	},
+	{
+		"site": "https://kbckotor.me",
+		"clinics": [
+			{
+				"id": 133,
+				"slug": "opsta-bolnica-kotor",
+				"name": "Opšta Bolnica Kotor",
+				"city": "kotor",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас 0 услуг, на сайте цен нет.",
+		"notes": "Это действующий сайт ZU KBC Kotor. У той же клиники 133 есть старый сайт jzuobkotor.me (см. отдельную запись). Прайса для третьих лиц нет ни на одном из двух.",
+		"checked": "меню (Joomla, SP Page Builder), /za-pacijente, /za-pacijente/lista-cekanja, /nasa-bolnica (11 PDF: статут, систематизация, планы интегритета и донаций), /nasa-bolnica/organizacija, com_finder поиск 'cjenovnik' (результатов нет), com_phocadownload и sitemap.xml отдают 404.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://jzuobkotor.me",
+		"clinics": [
+			{
+				"id": 133,
+				"slug": "opsta-bolnica-kotor",
+				"name": "Opšta Bolnica Kotor",
+				"city": "kotor",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [
+			{
+				"url": "https://jzuobkotor.me/wp-content/uploads/2022/07/Cjenovnik-zdravstvenih-usluga-na-sekundarnom-i-tercijarnom-nivou-zdravstvene-zastite-STN.pdf",
+				"kind": "pdf",
+				"scope": "НЕ прайс больницы: скан тарифника FZOCG 'Cjenovnik zdravstvenih usluga na sekundarnom i tercijarnom nivou zdravstvene zaštite' (Podgorica, 2015). 120 стр., цены для расчётов с Фондом, без надбавок для третьих лиц",
+				"approx_items": null,
+				"date_hint": "на титуле 'Podgorica, 2015. godine'; скан от 2015-09-09 (метаданные); Last-Modified 2022-07-01, в wp media modified 2022-07-01"
+			}
+		],
+		"coverageVsDb": "У нас в БД по 133 цен нет. Тарифы FZOCG у нас и так лежат в medical_service_tariffs, причём в более свежей редакции, так что этот файл ничего не добавляет.",
+		"notes": "Старый, заброшенный сайт ОБ Kotor: последние документы датированы 2023-03, клиника переехала на kbckotor.me. PDF найден только поиском по медиатеке, из меню на него не ссылаются. Статус pricelist_file формальный: файл есть, но это государственный тарифник 2015 года, а не собственный прайс клиники. Как источник цен для перепроверки бесполезен.",
+		"checked": "wp-json pages (3 стр.: nasa-bolnica, dokumenta, dogadjaji), wp-json media search cjen/cijen/cenov/tarif/usluga, /dokumenta/ (ссылки на donacije, nabavke, dopunski rad, izvodi; на cjenovnik ссылки нет), /za-pacijente/, wp-json posts (последний пост 2022-05).",
+		"flags": [
+			"not-own-pricelist: в медиатеке только тарифник FZOCG 2015, своего прайса нет"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://dztivat.com/",
+		"clinics": [
+			{
+				"id": 134,
+				"slug": "dom-zdravlja-tivat",
+				"name": "Dom Zdravlja Tivat",
+				"city": "tivat",
+				"db": {
+					"services": 21,
+					"servicesPriced": 21,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://dztivat.com/cijenovnik-usluga/",
+				"kind": "html",
+				"scope": "'CJENOVNIK SANITARNIH PREGLEDA' и ljekarska uvjerenja (санитарные осмотры, справки для водителей, моряков, спасателей и т.п.)",
+				"approx_items": 21,
+				"date_hint": "wp-json modified 2022-11-08"
+			}
+		],
+		"coverageVsDb": "21 цена на странице, у нас 21 из 21 с ценой. Совпадает один в один.",
+		"notes": "Цены вида '32,00 €'. В примечании сказано, что для безработных (при наличии справки Zavoda za zapošljavanje) осмотры бесплатны. Страница не менялась с 2022-11.",
+		"checked": "/cijenovnik-usluga/ (разобрал все строки с €), wp-json pages search 'cijen', media search cjen/cijen, /ostala-dokumenta/.",
+		"flags": [
+			"stale-source: 2022-11"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://psihijatrijakotor.com/",
+		"clinics": [
+			{
+				"id": 135,
+				"slug": "specijalna-bolnica-za-psihijatriju-dobrota-kotor",
+				"name": "Specijalna bolnica za psihijatriju \"Dobrota\" Kotor",
+				"city": "kotor",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас 0 услуг, на сайте цен нет.",
+		"notes": "Психиатрическая больница Dobrota. Сайт живой (правки 2026-09), но прайса нет.",
+		"checked": "wp-json pages (29 стр., список полный), wp-json media search cjen/cijen/cenov/tarif/usluga, wp-json search cjenovnik/cijene/cjenik (пусто), страницы opsti-akti-bolnice, slobodan-pristup-informacijama, prava-pacijenata, dopunski-rad, zakonska-regulativa.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 136,
+				"slug": "inter-cardio-kotor",
+				"name": "Inter Cardio Kotor",
+				"city": "kotor",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": null,
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://kbcberane.me/",
+		"clinics": [
+			{
+				"id": 137,
+				"slug": "opsta-bolnica-berane",
+				"name": "Opšta Bolnica Berane",
+				"city": "berane",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас 0 услуг, на сайте цен нет.",
+		"notes": "Сайт отдаёт 406 на короткий User-Agent, нужен полный UA браузера и Accept: text/html. id 137 здесь соответствует Беране. Напоминание: на проде 137 = Беране, локально 137 = Никшич, в SQL адресовать по slug.",
+		"checked": "меню (Joomla/Gantry), vazni-dokumenti/akta-kbc-berane/opsta-akta (статут, систематизация, odluka o radnom vremenu 2026), .../izvjestaji (Izvjestaj o radu 2024), prava-pacijenata, integritet/slobodan-pristup-informacijama, com_finder поиск 'cjenovnik'. sitemap.xml отдаёт 406/404.",
+		"flags": [],
+		"recheckHint": "полный браузерный UA, иначе 406",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.bolnicapv.com/",
+		"clinics": [
+			{
+				"id": 138,
+				"slug": "opsta-bolnica-pljevlja",
+				"name": "Opšta Bolnica Pljevlja",
+				"city": "Pljevlja",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас 0 услуг, на сайте цен нет.",
+		"notes": "Автовердикт 'prices-on-home' ложный: на главной суммы донаций и закупок (50.000 eura, ультразвук 54.692 eura и т.п.), услуг с ценами нет.",
+		"checked": "главная (все упоминания € и eura разобраны), /2012-09-17-11-25-25/dokumenti-i-pravilnici, /pacijenti, /izvjestaji (ежемесячные отчёты 2019-2020), /javne-nabavke, поиск Joomla 'cjenovnik'.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://brezovik.me/",
+		"clinics": [
+			{
+				"id": 139,
+				"slug": "specijalna-bolnica-za-plucne-bolesti-dr-jovan-bulajic-brezovik",
+				"name": "Specijalna bolnica za plućne bolesti \"Dr Jovan Bulajić\" Brezovik",
+				"city": "niksic",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас 0 услуг, на сайте цен нет.",
+		"notes": "Специализированная больница лёгочных болезней Brezovik (Nikšić). На странице радиологии упоминается КТ для застрахованных, цен нет.",
+		"checked": "wp-json pages (24 стр.), wp-json media search cjen/cijen/cenov/tarif/usluga, wp-json search, /dokumenta/ (319 файлов, по тексту ссылок cjen/cijen/tarif не находится), /korisne-informacije/, /poliklinika/, /pravilnici/, страницы лабораторной и рентгенологической служб.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://www.dzpg.me/",
+		"clinics": [
+			{
+				"id": 140,
+				"slug": "dom-zdravlja-podgorica",
+				"name": "Dom zdravlja Glavnog grada",
+				"city": "podgorica",
+				"db": {
+					"services": 38,
+					"servicesPriced": 38,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.dzpg.me/medicina-rada/",
+				"kind": "html",
+				"scope": "'CJENOVNIK usluga i pregleda iz oblasti Medicine rada': ljekarska uvjerenja (общая трудоспособность, работа на высоте, водители A/B и C/D/E, оружие, моряки, гражданство/ВНЖ и пр.) и sistematski pregled для женщин и мужчин",
+				"approx_items": 36,
+				"date_hint": "в тексте: прайс принят Odborom direktora 08.07.2021; страница dateModified 2026-04-30 (yoast schema)"
+			},
+			{
+				"url": "https://www.dzpg.me/wp-content/uploads/2025/09/cjenovnik.pdf",
+				"kind": "pdf",
+				"scope": "спортивная медицина: 3 цены на справки для спортсменов до 18 лет (10 €) и старше (15 €), а также для судей и тренеров (30 €). Ссылка 'CJENOVNIK' на /sportska-medicina/",
+				"approx_items": 3,
+				"date_hint": "Odluka 05/16-253/2 от 15.01.2025 (в документе); PDF creationDate 2025-06-11; Last-Modified 2025-09-28. Перекрывает пп. 25–26 прайса medicina rada"
+			},
+			{
+				"url": "https://www.dzpg.me/wp-content/uploads/2026/04/Cijenovnik-PZZ-2026-1.pdf",
+				"kind": "pdf",
+				"scope": "НЕ собственный прайс: скан тарифника FZOCG 'Cjenovnik usluga primarne zdravstvene zaštite' 2026 (28 стр.), ссылка из /dokumenti/ ('Cjenovnik zdravstvenih usluga na primarnom nivou zdravstvene zaštite 2026')",
+				"approx_items": null,
+				"date_hint": "на титуле 'Podgorica, 2026. godine'; PDF создан 2026-04-17; Last-Modified 2026-04-29"
+			}
+		],
+		"coverageVsDb": "совпадает: на сайте 36 цен medicina rada + 3 спортивные (Odluka 2025 перекрывает пп. 25–26), в БД 38 строк, все с ценой (импорт 2026-10-02, в проде). Пп. 10 и 20 — по две справки за одну цену, две строки с одним кодом; спортсмены 10–15 € одной строкой. Тарифник PZZ 2026 от FZOCG не импортировался — сверка с medical_service_tariffs отдельно.",
+		"notes": "Под прайсом medicina rada примечание: 'JZU Dom zdravlja Podgorica zadržava pravo da odobri popust do 30%'. Цены вида '20,00 eur-a'. Автовердикт 'some-prices' сработал на jpg еженедельных отчётов, это не прайс. Оба PDF (PZZ и sport) сканы без текстового слоя. Импорт 2026-10-02: коды PG_MR_<nn> (номер пункта на /medicina-rada/) и PG_SP_<n>; is_price_outdated = 0 — дата 2021 одна устаревания не доказывает (решение юзера). Запись: data/clinic-imports/dom-zdravlja-podgorica.json, снимки sources/dom-zdravlja-podgorica/2026-10-02.*.",
+		"checked": "меню, /medicina-rada/ (HTML-прайс, 30 пронумерованных позиций и подпункты, всего 36 цен 'NN,00 eur-a'), /sportska-medicina/, /dokumenti/, /laboratorijska-dijagnostika/, /rtg-i-ultrazvucna-dijagnostika/, /ekonomsko-finansijski-poslovi/, поиск WP ?s=cjenovnik и ?s=cijene. wp-json закрыт: хостинг Loopia отдаёт страницу 'website not available'.",
+		"flags": [
+			"fzocg-pzz-2026-checked: PDF на dzpg.me = наша редакция от 01.05.2026; исправления импорта — update-tariff-fzocg-pzz-2026.sql, в проде"
+		],
+		"recheckHint": "Цены «NN,00 eur-a» без знака €, у спорта «10,oo e.» — краулер их не видит. Спортивные цены живут в отдельной Odluke, при перепроверке смотреть ссылку «CJENOVNIK» на /sportska-medicina/: новая Odluka может появиться новым PDF, а /medicina-rada/ остаться прежней.",
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://bolnica-nk.com/",
+		"clinics": [
+			{
+				"id": 141,
+				"slug": "opsta-bolnica-niksic",
+				"name": "Opšta Bolnica Nikšić",
+				"city": "niksic",
+				"db": {
+					"services": 2358,
+					"servicesPriced": 2358,
+					"labTests": 385,
+					"labTestsPriced": 385
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас 2358 услуг и 385 анализов, все с ценой, но не с этого сайта. Источник — PDF-прайс Никшича из data/clinic-services-import/opsta-bolnica-niksic (2780 позиций с кодами FZOCG; по шапке миграции 040, анализы = прайс Данило / 1,2). На сайте этот PDF не опубликован, откуда он взят, я не установил.",
+		"notes": "Для периодической перепроверки сайт бесполезен. Источник наших 2700+ цен стоит выяснить отдельно: возможно, это файл по запросу или с портала FZOCG/Минздрава. Локально id 137, на проде 141.",
+		"checked": "wp-json pages (2 страницы выдачи, около 150 стр.: dopunski rad по месяцам, liste čekanja, dokumenta, finansijska-dokumenta, zakoni, страницы всех ambulanti и odjeljenja), wp-json media search cjen/cijen/cenov/tarif/treca/usluga/price, wp-json search cjenovnik/cijene/cjenik (пусто), /dokumenta-2/, /finansijska-dokumenta/, /pacijenti/, /dopunski-rad*/. Старая установка /wordpress/wp-json отдаёт 404.",
+		"flags": [
+			"source-offline: наши данные из PDF, публичного URL не найдено"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02",
+		"localSource": "data/pricelists/opsta bolnica niksic/"
+	},
+	{
+		"site": "https://www.musura.me/",
+		"clinics": [
+			{
+				"id": 142,
+				"slug": "stomatoloska-ordinacija-musura",
+				"name": "Stomatološka ordinacija Mušura",
+				"city": "budva",
+				"db": {
+					"services": 44,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас 44 услуги без цен. Сайт цен тоже не даёт, совпадает.",
+		"notes": "Конструктор Gridbox (Joomla). Стоматология в Будве. Есть Facebook и Instagram, их не проверял: не читаются.",
+		"checked": "все 8 страниц /me/usluge/* (digitalno-snimanje, djeciji-kutak, implantologija, izbjeljivanje, lijecenje, oralna-hirurgija, ortodoncija, protetika), /me/o-nama, /me/kontakt. Grep по €/eur/cijen/cjen: совпадения только на слове 'pacijent'. /sitemap.xml и /me/en отдают 404.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://ipodo.pro/",
+		"clinics": [
+			{
+				"id": 143,
+				"slug": "ipodo-centar-za-podologiju-budva",
+				"name": "iPODO - centar za podologiju",
+				"city": "budva",
+				"db": {
+					"services": 5,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [
+			{
+				"url": "https://n825642.alteg.io/",
+				"kind": "json-api",
+				"scope": "НЕ ПОДТВЕРЖДЕНО: виджет онлайн-записи Altegio 'МАНИКЮР • ПЕДИКЮР | СТРИЖКИ • УХОД • ОКРАШИВАНИЕ'. Обычно показывает услуги с ценами, но без JS цены не видны",
+				"approx_items": null,
+				"date_hint": null
+			},
+			{
+				"url": "https://n1242196.alteg.io",
+				"kind": "json-api",
+				"scope": "НЕ ПОДТВЕРЖДЕНО: Altegio 'ОРТОПЕД | индивидуальные стельки'",
+				"approx_items": null,
+				"date_hint": null
+			},
+			{
+				"url": "https://n1455911.alteg.io",
+				"kind": "json-api",
+				"scope": "НЕ ПОДТВЕРЖДЕНО: Altegio 'КОСМЕТОЛОГ | эстетическая косметология'",
+				"approx_items": null,
+				"date_hint": null
+			},
+			{
+				"url": "https://n1456811.alteg.io",
+				"kind": "json-api",
+				"scope": "НЕ ПОДТВЕРЖДЕНО: Altegio 'ОСТЕОПАТ | доктор остеопатии'",
+				"approx_items": null,
+				"date_hint": null
+			}
+		],
+		"coverageVsDb": "У нас 5 услуг без цен. На самом ipodo.pro цен услуг нет.",
+		"notes": "Сайт по сути QR-меню салона iPODO (подология, маникюр, косметология, Dukley Gardens, Будва), на русском. Если цены есть, то только в виджетах Altegio. Проверить можно руками в браузере, открыв n825642.alteg.io и выбрав подологию. Есть Instagram и Telegram-бот @ipodo_bot.",
+		"checked": "ipodo.pro (Next.js на платформе ChoiceQR): разобрал __NEXT_DATA__. props.app.menu содержит 39 позиций с price 0, это бесплатные напитки ('КОМПЛИМЕНТАРНЫЙ НАПИТОК'). В customMenuLinks есть внутренняя страница /podologi и 4 ссылки на Altegio. /podologi в SSR без контента. Altegio SPA: /api/v1/bookform без авторизации отвечает 'No authorization data specified'. Данные виджета дальше не запрашивал, цены не подтверждены.",
+		"flags": [
+			"unverified: услуги в виджетах Altegio, не проверено"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://radiomedic.me/",
+		"clinics": [
+			{
+				"id": 144,
+				"slug": "radio-medic",
+				"name": "Radio Medic",
+				"city": "podgorica",
+				"db": {
+					"services": 17,
+					"servicesPriced": 1,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "У нас 17 услуг, 1 с ценой, взята не с сайта: на сайте цен нет.",
+		"notes": "Новый сайт (декабрь 2025) радиологического центра в Подгорице, контент чисто описательный. © 2026.",
+		"checked": "wp-json через ?rest_route= (/wp-json/ закрыт): 7 стр. (Home, Skener, Rentgen, Magnetna rezonanca, Ultrazvuk, O nama, Kontakt), все отдельно скачаны и проверены grep'ом по €/eura/cjenovnik/cijena (совпадения только 'pacijent'). Медиатека: только webp/jpg оборудования, PDF и прайсов нет. Посты: только 'Hello world!'.",
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": null,
+		"clinics": [
+			{
+				"id": 145,
+				"slug": "medicus-tim",
+				"name": "Medicus Tim",
+				"city": "podgorica",
+				"db": {
+					"services": 47,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_website",
+		"pricelists": [],
+		"coverageVsDb": null,
+		"notes": "есть только соцсети",
+		"checked": null,
+		"flags": [],
+		"recheckHint": null,
+		"lastChecked": "2026-10-02"
+	}
+]

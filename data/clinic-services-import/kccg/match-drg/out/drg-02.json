@@ -1,0 +1,1088 @@
+{
+ "batch": "drg-02",
+ "items": [
+  {
+   "code": "B05Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "carpal-tunnel-surgery",
+   "id": 2209,
+   "note": ""
+  },
+  {
+   "code": "B63Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Dementia and Other Chronic Brain Function Disorders",
+   "slug": "hospitalization-for-dementia-and-other-chronic-brain-function-disorders",
+   "name_sr": "Demencija i ostali hronični poremećaji funkcije mozga",
+   "name_ru": "Госпитализация: деменция и другие хронические нарушения функций мозга",
+   "name_de": "Stationäre Behandlung: Demenz und andere chronische Störungen der Hirnfunktion",
+   "name_tr": "Yatış: Demans ve diğer kronik beyin işlev bozuklukları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B64B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Delirium without Very Severe CC",
+   "slug": "hospitalization-for-delirium-without-very-severe-cc",
+   "name_sr": "Delirijum bez vrlo teških KK",
+   "name_ru": "Госпитализация: делирий без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Delir ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan deliryum",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B66B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nervous System Neoplasms without Very Severe or Severe CC",
+   "slug": "hospitalization-for-nervous-system-neoplasms-without-very-severe-or-severe-cc",
+   "name_sr": "Neoplazme (tumori) nervnog sistema bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: новообразования (опухоли) нервной системы без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Neoplasien (Tumoren) des Nervensystems ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan sinir sistemi neoplazmları (tümörleri)",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B67C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Degenerative Nervous System Disorders without Very Severe CC",
+   "slug": "hospitalization-for-degenerative-nervous-system-disorders-without-very-severe-cc",
+   "name_sr": "Degenerativni poremećaji nervnog sistema bez vrlo teških KK",
+   "name_ru": "Госпитализация: дегенеративные расстройства нервной системы без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Degenerative Nervensystemerkrankungen ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan dejeneratif sinir sistemi bozuklukları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": "B67B (умеренные KK) уже в каталоге, id 7796 — другой вариант тяжести"
+  },
+  {
+   "code": "B69B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Transient Ischemic Attack (TIA) and Precerebral Occlusion without Very Severe or Severe CC",
+   "slug": "hospitalization-for-transient-ischemic-attack-tia-and-precerebral-occlusion-without-very-severe-or-severe-cc",
+   "name_sr": "Tranzitorni ishemijski atak (TIA) i precerebralna okluzija bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: транзиторная ишемическая атака (ТИА) и прецеребральная окклюзия без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Transitorische ischämische Attacke (TIA) und präzerebraler Gefäßverschluss ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan geçici iskemik atak (TİA) ve preserebral tıkanıklık",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B70C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Stroke and Other Cerebrovascular Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-stroke-and-other-cerebrovascular-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Moždani udar i drugi cerebrovaskularni poremećaji bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: инсульт и другие цереброваскулярные нарушения без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Schlaganfall und andere zerebrovaskuläre Erkrankungen ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan inme ve diğer serebrovasküler bozukluklar",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B70D",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Stroke and Other Cerebrovascular Disorders, Death or Transfer, Stay < 5 Days",
+   "slug": "hospitalization-for-stroke-and-other-cerebrovascular-disorders-death-or-transfer-stay-under-5-days",
+   "name_sr": "Moždani udar i drugi cerebrovaskularni poremećaji, smrtni ishod ili premještanje u drugu ustanovu, boravak < 5 dana",
+   "name_ru": "Госпитализация: инсульт и другие цереброваскулярные нарушения, летальный исход или перевод в другое учреждение, пребывание < 5 дней",
+   "name_de": "Stationäre Behandlung: Schlaganfall und andere zerebrovaskuläre Erkrankungen, Tod oder Verlegung, Aufenthalt < 5 Tage",
+   "name_tr": "Yatış: İnme ve diğer serebrovasküler bozukluklar, ölüm veya sevk, yatış < 5 gün",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B71B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cranial and Peripheral Nerve Disorders without CC",
+   "slug": "hospitalization-for-cranial-and-peripheral-nerve-disorders-without-cc",
+   "name_sr": "Poremećaji kranijalnih i perifernih nerava bez KK",
+   "name_ru": "Госпитализация: нарушения черепных и периферических нервов без ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen der Hirn- und peripheren Nerven ohne KK",
+   "name_tr": "Yatış: CC olmadan kraniyal ve periferik sinir bozuklukları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B75Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Febrile Convulsions",
+   "slug": "hospitalization-for-febrile-convulsions",
+   "name_sr": "Febrilne konvulzije",
+   "name_ru": "Госпитализация: фебрильные судороги",
+   "name_de": "Stationäre Behandlung: Fieberkrämpfe",
+   "name_tr": "Yatış: Febril konvülziyonlar",
+   "categories": [
+    "NEUROLOGY",
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "PEDIATRIC_NEUROLOGY",
+    "PEDIATRICS"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B76B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Seizures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-seizures-without-very-severe-or-severe-cc",
+   "name_sr": "Epileptični napad bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: эпилептический приступ без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Epileptischer Anfall ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan epileptik nöbet",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B77Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Headache",
+   "slug": "hospitalization-for-headache",
+   "name_sr": "Glavobolja",
+   "name_ru": "Госпитализация: головная боль",
+   "name_de": "Stationäre Behandlung: Kopfschmerzen",
+   "name_tr": "Yatış: Baş ağrısı",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B81A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Nervous System Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-nervous-system-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Drugi poremećaji nervnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: другие расстройства нервной системы с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Andere Erkrankungen des Nervensystems mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile diğer sinir sistemi bozuklukları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B81B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Nervous System Disorders without Very Severe or Severe CC",
+   "slug": "hospitalization-for-other-nervous-system-disorders-without-very-severe-or-severe-cc",
+   "name_sr": "Drugi poremećaji nervnog sistema bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: другие расстройства нервной системы без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Andere Erkrankungen des Nervensystems ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan diğer sinir sistemi bozuklukları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B01A",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "shunt-revision",
+   "id": 6799,
+   "note": "Revizija šanta (нейрохирургия, cat 17) = ревизия вентрикулярного шунта"
+  },
+  {
+   "code": "B01B",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "shunt-revision",
+   "id": 6799,
+   "note": "Revizija šanta (нейрохирургия, cat 17) = ревизия вентрикулярного шунта"
+  },
+  {
+   "code": "B02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Craniotomy with Very Severe CC",
+   "slug": "hospitalization-for-craniotomy-with-very-severe-cc",
+   "name_sr": "Kraniotomija sa vrlo teškim KK",
+   "name_ru": "Госпитализация: краниотомия с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Kraniotomie mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile kraniyotomi",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY"
+   ],
+   "note": "в каталоге только decompressive-craniotomy (6793) — узкая процедура, не группа"
+  },
+  {
+   "code": "B02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Craniotomy with Severe CC",
+   "slug": "hospitalization-for-craniotomy-with-severe-cc",
+   "name_sr": "Kraniotomija sa teškim KK",
+   "name_ru": "Госпитализация: краниотомия с тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Kraniotomie mit schweren KK",
+   "name_tr": "Yatış: Şiddetli CC ile kraniyotomi",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY"
+   ],
+   "note": "в каталоге только decompressive-craniotomy (6793) — узкая процедура, не группа"
+  },
+  {
+   "code": "B02C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Craniotomy without Very Severe or Severe CC",
+   "slug": "hospitalization-for-craniotomy-without-very-severe-or-severe-cc",
+   "name_sr": "Kraniotomija bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: краниотомия без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Kraniotomie ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan kraniyotomi",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY"
+   ],
+   "note": "в каталоге только decompressive-craniotomy (6793) — узкая процедура, не группа"
+  },
+  {
+   "code": "B03A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Spinal Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-spinal-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Zahvati na kičmenom stubu sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: операции на позвоночнике с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an der Wirbelsäule mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile omurga girişimleri",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B03B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Spinal Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-spinal-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Zahvati na kičmenom stubu bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: операции на позвоночнике без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an der Wirbelsäule ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan omurga girişimleri",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B04A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Extracranial Vascular Procedures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-extracranial-vascular-procedures-with-very-severe-or-severe-cc",
+   "name_sr": "Ekstrakranijalni zahvati na krvnim sudovima sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: экстракраниальные операции на сосудах с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Extrakranielle Gefäßeingriffe mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile ekstrakraniyal damar girişimleri",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "VASCULAR_SURGERY",
+    "NEUROSURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B04B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Extracranial Vascular Procedures without Very Severe or Severe CC",
+   "slug": "hospitalization-for-extracranial-vascular-procedures-without-very-severe-or-severe-cc",
+   "name_sr": "Ekstrakranijalni zahvati na krvnim sudovima bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: экстракраниальные операции на сосудах без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Extrakranielle Gefäßeingriffe ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan ekstrakraniyal damar girişimleri",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "VASCULAR_SURGERY",
+    "NEUROSURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B06A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Procedures for Cerebral Palsy, Muscular Dystrophy and Neuropathy with CC",
+   "slug": "hospitalization-for-procedures-for-cerebral-palsy-muscular-dystrophy-and-neuropathy-with-cc",
+   "name_sr": "Zahvati zbog cerebralne paralize, mišićne distrofije i neuropatije sa KK",
+   "name_ru": "Госпитализация: операции при ДЦП, мышечной дистрофии и нейропатии с ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe bei Zerebralparese, Muskeldystrophie und Neuropathie mit KK",
+   "name_tr": "Yatış: CC ile serebral palsi, kas distrofisi ve nöropati için girişimler",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B06B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Procedures for Cerebral Palsy, Muscular Dystrophy and Neuropathy without CC",
+   "slug": "hospitalization-for-procedures-for-cerebral-palsy-muscular-dystrophy-and-neuropathy-without-cc",
+   "name_sr": "Zahvati zbog cerebralne paralize, mišićne distrofije i neuropatije bez KK",
+   "name_ru": "Госпитализация: операции при ДЦП, мышечной дистрофии и нейропатии без ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe bei Zerebralparese, Muskeldystrophie und Neuropathie ohne KK",
+   "name_tr": "Yatış: CC olmadan serebral palsi, kas distrofisi ve nöropati için girişimler",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "ORTHOPEDICS_TRAUMATOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B07A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Peripheral and Cranial Nerve and Other Nervous System Procedures with CC",
+   "slug": "hospitalization-for-peripheral-and-cranial-nerve-and-other-nervous-system-procedures-with-cc",
+   "name_sr": "Zahvati na perifernim i kranijalnim nervima i ostali zahvati na nervnom sistemu sa KK",
+   "name_ru": "Госпитализация: операции на периферических и черепных нервах и другие операции на нервной системе с ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an peripheren und Hirnnerven und andere Eingriffe am Nervensystem mit KK",
+   "name_tr": "Yatış: CC ile periferik ve kraniyal sinirlere yönelik ve diğer sinir sistemi girişimleri",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B07B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Peripheral and Cranial Nerve and Other Nervous System Procedures without CC",
+   "slug": "hospitalization-for-peripheral-and-cranial-nerve-and-other-nervous-system-procedures-without-cc",
+   "name_sr": "Zahvati na perifernim i kranijalnim nervima i ostali zahvati na nervnom sistemu bez KK",
+   "name_ru": "Госпитализация: операции на периферических и черепных нервах и другие операции на нервной системе без ОО",
+   "name_de": "Stationäre Behandlung: Eingriffe an peripheren und Hirnnerven und andere Eingriffe am Nervensystem ohne KK",
+   "name_tr": "Yatış: CC olmadan periferik ve kraniyal sinirlere yönelik ve diğer sinir sistemi girişimleri",
+   "categories": [
+    "NEUROLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "NEUROSURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B40Z",
+   "decision": "existing",
+   "kind": "medical_service",
+   "slug": "therapeutic-plasmapheresis",
+   "id": 5819,
+   "note": "плазмаферез одного дня при неврологической болезни"
+  },
+  {
+   "code": "B41Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Telemetric EEG Monitoring",
+   "slug": "hospitalization-for-telemetric-eeg-monitoring",
+   "name_sr": "Telemetrijski EEG monitoring",
+   "name_ru": "Госпитализация: телеметрический ЭЭГ-мониторинг",
+   "name_de": "Stationäre Behandlung: Telemetrisches EEG-Monitoring",
+   "name_tr": "Yatış: Telemetrik EEG izlemi",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": "многодневный стационарный ЭЭГ-мониторинг; 24-hour-or-overnight-eeg-recording (5223) — не то же"
+  },
+  {
+   "code": "B42A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nervous System Disorders with Ventilator Support with Very Severe CC",
+   "slug": "hospitalization-for-nervous-system-disorders-with-ventilator-support-with-very-severe-cc",
+   "name_sr": "Dijagnoze nervnog sistema sa ventilatornom podrškom sa vrlo teškim KK",
+   "name_ru": "Госпитализация: заболевания нервной системы с ИВЛ, с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des Nervensystems mit maschineller Beatmung mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile mekanik ventilasyon desteği gerektiren sinir sistemi hastalıkları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "ANESTHESIOLOGY"
+   ],
+   "note": "в прайсе «Dijagnostika … sa ventilacijskom podrškom» — калька с «Nervous System Diagnosis W Ventilator Support»"
+  },
+  {
+   "code": "B42B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nervous System Disorders with Ventilator Support without Very Severe CC",
+   "slug": "hospitalization-for-nervous-system-disorders-with-ventilator-support-without-very-severe-cc",
+   "name_sr": "Dijagnoze nervnog sistema sa ventilatornom podrškom bez vrlo teških KK",
+   "name_ru": "Госпитализация: заболевания нервной системы с ИВЛ, без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des Nervensystems mit maschineller Beatmung ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan mekanik ventilasyon desteği gerektiren sinir sistemi hastalıkları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "ANESTHESIOLOGY"
+   ],
+   "note": "в прайсе «Dijagnostika … sa ventilacijskom podrškom» — калька с «Nervous System Diagnosis W Ventilator Support»"
+  },
+  {
+   "code": "B60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Acute Paraplegia/Quadriplegia with or without Procedure with Very Severe CC",
+   "slug": "hospitalization-for-acute-paraplegia-quadriplegia-with-or-without-procedure-with-very-severe-cc",
+   "name_sr": "Akutna paraplegija/kvadriplegija sa ili bez operativnog zahvata sa vrlo teškim KK",
+   "name_ru": "Госпитализация: острая параплегия/тетраплегия с операцией или без, с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Akute Paraplegie/Tetraplegie mit oder ohne Eingriff mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile cerrahi girişimli veya girişimsiz akut parapleji/kuadripleji",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Acute Paraplegia/Quadriplegia with or without Procedure without Very Severe CC",
+   "slug": "hospitalization-for-acute-paraplegia-quadriplegia-with-or-without-procedure-without-very-severe-cc",
+   "name_sr": "Akutna paraplegija/kvadriplegija sa ili bez operativnog zahvata bez vrlo teških KK",
+   "name_ru": "Госпитализация: острая параплегия/тетраплегия с операцией или без, без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Akute Paraplegie/Tetraplegie mit oder ohne Eingriff ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan cerrahi girişimli veya girişimsiz akut parapleji/kuadripleji",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Spinal Cord Conditions with or without Procedure with Very Severe or Severe CC",
+   "slug": "hospitalization-for-spinal-cord-conditions-with-or-without-procedure-with-very-severe-or-severe-cc",
+   "name_sr": "Stanja kičmene moždine sa ili bez operativnog zahvata sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: заболевания спинного мозга с операцией или без, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des Rückenmarks mit oder ohne Eingriff mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile cerrahi girişimli veya girişimsiz omurilik hastalıkları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B65Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cerebral Palsy",
+   "slug": "hospitalization-for-cerebral-palsy",
+   "name_sr": "Cerebralna paraliza",
+   "name_ru": "Госпитализация: детский церебральный паралич",
+   "name_de": "Stationäre Behandlung: Zerebralparese",
+   "name_tr": "Yatış: Serebral palsi",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "PEDIATRIC_NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B66A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nervous System Neoplasms with Very Severe or Severe CC",
+   "slug": "hospitalization-for-nervous-system-neoplasms-with-very-severe-or-severe-cc",
+   "name_sr": "Neoplazme (tumori) nervnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: новообразования (опухоли) нервной системы с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Neoplasien (Tumoren) des Nervensystems mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile sinir sistemi neoplazmları (tümörleri)",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "ONCOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B68A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Multiple Sclerosis and Cerebellar Ataxia with CC",
+   "slug": "hospitalization-for-multiple-sclerosis-and-cerebellar-ataxia-with-cc",
+   "name_sr": "Multipla skleroza i cerebelarna ataksija sa KK",
+   "name_ru": "Госпитализация: рассеянный склероз и мозжечковая атаксия с ОО",
+   "name_de": "Stationäre Behandlung: Multiple Sklerose und zerebelläre Ataxie mit KK",
+   "name_tr": "Yatış: CC ile multipl skleroz ve serebellar ataksi",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B68B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Multiple Sclerosis and Cerebellar Ataxia without CC",
+   "slug": "hospitalization-for-multiple-sclerosis-and-cerebellar-ataxia-without-cc",
+   "name_sr": "Multipla skleroza i cerebelarna ataksija bez KK",
+   "name_ru": "Госпитализация: рассеянный склероз и мозжечковая атаксия без ОО",
+   "name_de": "Stationäre Behandlung: Multiple Sklerose und zerebelläre Ataxie ohne KK",
+   "name_tr": "Yatış: CC olmadan multipl skleroz ve serebellar ataksi",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B69A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Transient Ischemic Attack (TIA) and Precerebral Occlusion with Very Severe or Severe CC",
+   "slug": "hospitalization-for-transient-ischemic-attack-tia-and-precerebral-occlusion-with-very-severe-or-severe-cc",
+   "name_sr": "Tranzitorni ishemijski atak (TIA) i precerebralna okluzija sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: транзиторная ишемическая атака (ТИА) и прецеребральная окклюзия с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Transitorische ischämische Attacke (TIA) und präzerebraler Gefäßverschluss mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile geçici iskemik atak (TİA) ve preserebral tıkanıklık",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B70A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Stroke and Other Cerebrovascular Disorders with Very Severe CC",
+   "slug": "hospitalization-for-stroke-and-other-cerebrovascular-disorders-with-very-severe-cc",
+   "name_sr": "Moždani udar i drugi cerebrovaskularni poremećaji sa vrlo teškim KK",
+   "name_ru": "Госпитализация: инсульт и другие цереброваскулярные нарушения с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Schlaganfall und andere zerebrovaskuläre Erkrankungen mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile inme ve diğer serebrovasküler bozukluklar",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B70B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Stroke and Other Cerebrovascular Disorders with Severe CC",
+   "slug": "hospitalization-for-stroke-and-other-cerebrovascular-disorders-with-severe-cc",
+   "name_sr": "Moždani udar i drugi cerebrovaskularni poremećaji sa teškim KK",
+   "name_ru": "Госпитализация: инсульт и другие цереброваскулярные нарушения с тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Schlaganfall und andere zerebrovaskuläre Erkrankungen mit schweren KK",
+   "name_tr": "Yatış: Şiddetli CC ile inme ve diğer serebrovasküler bozukluklar",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B72A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nervous System Infection Except Viral Meningitis with Very Severe or Severe CC",
+   "slug": "hospitalization-for-nervous-system-infection-except-viral-meningitis-with-very-severe-or-severe-cc",
+   "name_sr": "Infekcija nervnog sistema osim virusnog meningitisa sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: инфекции нервной системы, кроме вирусного менингита, с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Infektion des Nervensystems außer viraler Meningitis mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile viral menenjit dışındaki sinir sistemi enfeksiyonu",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B72B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nervous System Infection Except Viral Meningitis without Very Severe or Severe CC",
+   "slug": "hospitalization-for-nervous-system-infection-except-viral-meningitis-without-very-severe-or-severe-cc",
+   "name_sr": "Infekcija nervnog sistema osim virusnog meningitisa bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: инфекции нервной системы, кроме вирусного менингита, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Infektion des Nervensystems außer viraler Meningitis ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan viral menenjit dışındaki sinir sistemi enfeksiyonu",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B73Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Viral Meningitis",
+   "slug": "hospitalization-for-viral-meningitis",
+   "name_sr": "Virusni meningitis",
+   "name_ru": "Госпитализация: вирусный менингит",
+   "name_de": "Stationäre Behandlung: Virale Meningitis",
+   "name_tr": "Yatış: Viral menenjit",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B74B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nontraumatic Stupor and Coma without CC",
+   "slug": "hospitalization-for-nontraumatic-stupor-and-coma-without-cc",
+   "name_sr": "Netraumatski stupor i koma bez KK",
+   "name_ru": "Госпитализация: нетравматический ступор и кома без ОО",
+   "name_de": "Stationäre Behandlung: Nichttraumatischer Stupor und Koma ohne KK",
+   "name_tr": "Yatış: CC olmadan travma dışı stupor ve koma",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B80Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Head Injuries",
+   "slug": "hospitalization-for-other-head-injuries",
+   "name_sr": "Druge povrede glave",
+   "name_ru": "Госпитализация: другие травмы головы",
+   "name_de": "Stationäre Behandlung: Andere Kopfverletzungen",
+   "name_tr": "Yatış: Diğer kafa yaralanmaları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B82C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Chronic and Unspecified Paraplegia/Quadriplegia with or without Procedure without Very Severe or Severe CC",
+   "slug": "hospitalization-for-chronic-and-unspecified-paraplegia-quadriplegia-with-or-without-procedure-without-very-severe-or-severe-cc",
+   "name_sr": "Hronična i neodređena paraplegija/kvadriplegija sa ili bez operativnog zahvata bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: хроническая и неуточнённая параплегия/тетраплегия с операцией или без, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Chronische und nicht näher bezeichnete Paraplegie/Tetraplegie mit oder ohne Eingriff ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan cerrahi girişimli veya girişimsiz kronik ve tanımlanmamış parapleji/kuadripleji",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "PHYSICAL_MEDICINE_REHABILITATION"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Spinal Cord Conditions with or without Procedure without Very Severe or Severe CC",
+   "slug": "hospitalization-for-spinal-cord-conditions-with-or-without-procedure-without-very-severe-or-severe-cc",
+   "name_sr": "Stanja kičmene moždine sa ili bez operativnog zahvata bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: заболевания спинного мозга с операцией или без, без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen des Rückenmarks mit oder ohne Eingriff ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan cerrahi girişimli veya girişimsiz omurilik hastalıkları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B62Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Apheresis",
+   "slug": "hospitalization-for-apheresis",
+   "name_sr": "Prijem zbog afereze",
+   "name_ru": "Госпитализация: аферез",
+   "name_de": "Stationäre Behandlung: Apherese",
+   "name_tr": "Yatış: Aferez",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "HEMATOLOGY"
+   ],
+   "note": "приём на аферез (вид не указан) — не привязан к therapeutic-plasmapheresis/cytapheresis"
+  },
+  {
+   "code": "B64A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Delirium with Very Severe CC",
+   "slug": "hospitalization-for-delirium-with-very-severe-cc",
+   "name_sr": "Delirijum sa vrlo teškim KK",
+   "name_ru": "Госпитализация: делирий с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Delir mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile deliryum",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "PSYCHIATRY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B67A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Degenerative Nervous System Disorders with Very Severe or Severe CC",
+   "slug": "hospitalization-for-degenerative-nervous-system-disorders-with-very-severe-or-severe-cc",
+   "name_sr": "Degenerativni poremećaji nervnog sistema sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: дегенеративные расстройства нервной системы с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Degenerative Nervensystemerkrankungen mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile dejeneratif sinir sistemi bozuklukları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B71A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cranial and Peripheral Nerve Disorders with CC",
+   "slug": "hospitalization-for-cranial-and-peripheral-nerve-disorders-with-cc",
+   "name_sr": "Poremećaji kranijalnih i perifernih nerava sa KK",
+   "name_ru": "Госпитализация: нарушения черепных и периферических нервов с ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen der Hirn- und peripheren Nerven mit KK",
+   "name_tr": "Yatış: CC ile kraniyal ve periferik sinir bozuklukları",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B74A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Nontraumatic Stupor and Coma with CC",
+   "slug": "hospitalization-for-nontraumatic-stupor-and-coma-with-cc",
+   "name_sr": "Netraumatski stupor i koma sa KK",
+   "name_ru": "Госпитализация: нетравматический ступор и кома с ОО",
+   "name_de": "Stationäre Behandlung: Nichttraumatischer Stupor und Koma mit KK",
+   "name_tr": "Yatış: CC ile travma dışı stupor ve koma",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B76A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Seizures with Very Severe or Severe CC",
+   "slug": "hospitalization-for-seizures-with-very-severe-or-severe-cc",
+   "name_sr": "Epileptični napad sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: эпилептический приступ с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Epileptischer Anfall mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile epileptik nöbet",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B78A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Intracranial Injury with Very Severe or Severe CC",
+   "slug": "hospitalization-for-intracranial-injury-with-very-severe-or-severe-cc",
+   "name_sr": "Intrakranijalna povreda sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: внутричерепная травма с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Intrakranielle Verletzung mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile kafa içi yaralanma",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B78B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Intracranial Injury without Very Severe or Severe CC",
+   "slug": "hospitalization-for-intracranial-injury-without-very-severe-or-severe-cc",
+   "name_sr": "Intrakranijalna povreda bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: внутричерепная травма без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Intrakranielle Verletzung ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan kafa içi yaralanma",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B79A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Skull Fracture with Very Severe or Severe CC",
+   "slug": "hospitalization-for-skull-fracture-with-very-severe-or-severe-cc",
+   "name_sr": "Fraktura lobanje sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: перелом черепа с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Schädelfraktur mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile kafatası kırığı",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B79B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Skull Fracture without Very Severe or Severe CC",
+   "slug": "hospitalization-for-skull-fracture-without-very-severe-or-severe-cc",
+   "name_sr": "Fraktura lobanje bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: перелом черепа без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Schädelfraktur ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan kafatası kırığı",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROSURGERY",
+    "NEUROLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "B82A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Chronic and Unspecified Paraplegia/Quadriplegia with or without Procedure with Very Severe CC",
+   "slug": "hospitalization-for-chronic-and-unspecified-paraplegia-quadriplegia-with-or-without-procedure-with-very-severe-cc",
+   "name_sr": "Hronična i neodređena paraplegija/kvadriplegija sa ili bez operativnog zahvata sa vrlo teškim KK",
+   "name_ru": "Госпитализация: хроническая и неуточнённая параплегия/тетраплегия с операцией или без, с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Chronische und nicht näher bezeichnete Paraplegie/Tetraplegie mit oder ohne Eingriff mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile cerrahi girişimli veya girişimsiz kronik ve tanımlanmamış parapleji/kuadripleji",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "PHYSICAL_MEDICINE_REHABILITATION"
+   ],
+   "note": "KCCG: «sa vrlo teškim KK», FZOCG: «sa vrlo teškim/teškim KK»; взято KCCG, т. к. B82B = «sa teškim KK»"
+  },
+  {
+   "code": "B82B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Chronic and Unspecified Paraplegia/Quadriplegia with or without Procedure with Severe CC",
+   "slug": "hospitalization-for-chronic-and-unspecified-paraplegia-quadriplegia-with-or-without-procedure-with-severe-cc",
+   "name_sr": "Hronična i neodređena paraplegija/kvadriplegija sa ili bez operativnog zahvata sa teškim KK",
+   "name_ru": "Госпитализация: хроническая и неуточнённая параплегия/тетраплегия с операцией или без, с тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Chronische und nicht näher bezeichnete Paraplegie/Tetraplegie mit oder ohne Eingriff mit schweren KK",
+   "name_tr": "Yatış: Şiddetli CC ile cerrahi girişimli veya girişimsiz kronik ve tanımlanmamış parapleji/kuadripleji",
+   "categories": [
+    "NEUROLOGY"
+   ],
+   "specialties": [
+    "NEUROLOGY",
+    "PHYSICAL_MEDICINE_REHABILITATION"
+   ],
+   "note": ""
+  }
+ ]
+}

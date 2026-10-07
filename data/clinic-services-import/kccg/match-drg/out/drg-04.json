@@ -1,0 +1,751 @@
+{
+ "batch": "drg-04",
+ "items": [
+  {
+   "code": "E42A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bronchoscopy with Very Severe CC",
+   "slug": "hospitalization-for-bronchoscopy-with-very-severe-cc",
+   "name_sr": "Bronhoskopija sa vrlo teškim KK",
+   "name_ru": "Госпитализация: бронхоскопия с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Bronchoskopie mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile bronkoskopi",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": "в каталоге нет общей «Bronchoscopy», только частные варианты (5377 rigid, 5378/5381 flexible с лаважом) — не привязано"
+  },
+  {
+   "code": "E61A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pulmonary Embolism with Very Severe CC",
+   "slug": "hospitalization-for-pulmonary-embolism-with-very-severe-cc",
+   "name_sr": "Plućna embolija sa vrlo teškim KK",
+   "name_ru": "Госпитализация: тромбоэмболия лёгочной артерии с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Lungenembolie mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile pulmoner emboli",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E61B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pulmonary Embolism without Very Severe CC",
+   "slug": "hospitalization-for-pulmonary-embolism-without-very-severe-cc",
+   "name_sr": "Plućna embolija bez vrlo teških KK",
+   "name_ru": "Госпитализация: тромбоэмболия лёгочной артерии без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Lungenembolie ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan pulmoner emboli",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E62A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Respiratory Infections with Very Severe CC",
+   "slug": "hospitalization-for-respiratory-infections-with-very-severe-cc",
+   "name_sr": "Respiratorne infekcije sa vrlo teškim KK",
+   "name_ru": "Госпитализация: респираторные инфекции с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Atemwegsinfektionen mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile solunum yolu enfeksiyonları",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E64A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pulmonary Edema and Respiratory Failure with Very Severe CC",
+   "slug": "hospitalization-for-pulmonary-edema-and-respiratory-failure-with-very-severe-cc",
+   "name_sr": "Edem pluća i respiratorna insuficijencija sa vrlo teškim KK",
+   "name_ru": "Госпитализация: отёк лёгких и дыхательная недостаточность с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Lungenödem und respiratorische Insuffizienz mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile akciğer ödemi ve solunum yetmezliği",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E64B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pulmonary Edema and Respiratory Failure without Very Severe CC",
+   "slug": "hospitalization-for-pulmonary-edema-and-respiratory-failure-without-very-severe-cc",
+   "name_sr": "Edem pluća i respiratorna insuficijencija bez vrlo teških KK",
+   "name_ru": "Госпитализация: отёк лёгких и дыхательная недостаточность без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Lungenödem und respiratorische Insuffizienz ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan akciğer ödemi ve solunum yetmezliği",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E65A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for COPD with Very Severe or Severe CC",
+   "slug": "hospitalization-for-copd-with-very-severe-or-severe-cc",
+   "name_sr": "Hronična opstruktivna bolest respiratornih puteva sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: ХОБЛ с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: COPD mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile KOAH",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E66B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Chest Trauma with Severe or Moderate CC",
+   "slug": "hospitalization-for-major-chest-trauma-with-severe-or-moderate-cc",
+   "name_sr": "Velika trauma grudnog koša sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: тяжёлая травма грудной клетки с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Schweres Thoraxtrauma mit schweren oder moderaten KK",
+   "name_tr": "Yatış: Şiddetli veya orta CC ile majör göğüs travması",
+   "categories": [
+    "PULMONOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "THORACIC_SURGERY",
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E66C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Chest Trauma without CC",
+   "slug": "hospitalization-for-major-chest-trauma-without-cc",
+   "name_sr": "Velika trauma grudnog koša bez KK",
+   "name_ru": "Госпитализация: тяжёлая травма грудной клетки без ОО",
+   "name_de": "Stationäre Behandlung: Schweres Thoraxtrauma ohne KK",
+   "name_tr": "Yatış: CC olmadan majör göğüs travması",
+   "categories": [
+    "PULMONOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "THORACIC_SURGERY",
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E67A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Respiratory Signs and Symptoms with Very Severe or Severe CC",
+   "slug": "hospitalization-for-respiratory-signs-and-symptoms-with-very-severe-or-severe-cc",
+   "name_sr": "Respiratorni znaci i simptomi sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: респираторные признаки и симптомы с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Respiratorische Zeichen und Symptome mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile solunum sistemi belirti ve bulguları",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E67B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Respiratory Signs and Symptoms without Very Severe or Severe CC",
+   "slug": "hospitalization-for-respiratory-signs-and-symptoms-without-very-severe-or-severe-cc",
+   "name_sr": "Respiratorni znaci i simptomi bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: респираторные признаки и симптомы без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Respiratorische Zeichen und Symptome ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan solunum sistemi belirti ve bulguları",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E68A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pneumothorax with CC",
+   "slug": "hospitalization-for-pneumothorax-with-cc",
+   "name_sr": "Pneumotoraks sa KK",
+   "name_ru": "Госпитализация: пневмоторакс с ОО",
+   "name_de": "Stationäre Behandlung: Pneumothorax mit KK",
+   "name_tr": "Yatış: CC ile pnömotoraks",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "THORACIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E68B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pneumothorax without CC",
+   "slug": "hospitalization-for-pneumothorax-without-cc",
+   "name_sr": "Pneumotoraks bez KK",
+   "name_ru": "Госпитализация: пневмоторакс без ОО",
+   "name_de": "Stationäre Behandlung: Pneumothorax ohne KK",
+   "name_tr": "Yatış: CC olmadan pnömotoraks",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "THORACIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E70A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Whooping Cough and Acute Bronchiolitis with CC",
+   "slug": "hospitalization-for-whooping-cough-and-acute-bronchiolitis-with-cc",
+   "name_sr": "Veliki kašalj i akutni bronhiolitis sa KK",
+   "name_ru": "Госпитализация: коклюш и острый бронхиолит с ОО",
+   "name_de": "Stationäre Behandlung: Keuchhusten und akute Bronchiolitis mit KK",
+   "name_tr": "Yatış: CC ile boğmaca ve akut bronşiolit",
+   "categories": [
+    "PULMONOLOGY",
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "PEDIATRIC_PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E70B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Whooping Cough and Acute Bronchiolitis without CC",
+   "slug": "hospitalization-for-whooping-cough-and-acute-bronchiolitis-without-cc",
+   "name_sr": "Veliki kašalj i akutni bronhiolitis bez KK",
+   "name_ru": "Госпитализация: коклюш и острый бронхиолит без ОО",
+   "name_de": "Stationäre Behandlung: Keuchhusten und akute Bronchiolitis ohne KK",
+   "name_tr": "Yatış: CC olmadan boğmaca ve akut bronşiolit",
+   "categories": [
+    "PULMONOLOGY",
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "PEDIATRIC_PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E73B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pleural Effusion with Severe or Moderate CC",
+   "slug": "hospitalization-for-pleural-effusion-with-severe-or-moderate-cc",
+   "name_sr": "Pleuralni izliv sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: плевральный выпот с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Pleuraerguss mit schweren oder moderaten KK",
+   "name_tr": "Yatış: Şiddetli veya orta CC ile plevral efüzyon",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E75C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Respiratory System Disorders without CC",
+   "slug": "hospitalization-for-other-respiratory-system-disorders-without-cc",
+   "name_sr": "Druge bolesti respiratornog sistema bez KK",
+   "name_ru": "Госпитализация: другие болезни дыхательной системы без ОО",
+   "name_de": "Stationäre Behandlung: Andere Erkrankungen der Atmungsorgane ohne KK",
+   "name_tr": "Yatış: CC olmadan diğer solunum sistemi hastalıkları",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E01A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Chest Procedures with Very Severe CC",
+   "slug": "hospitalization-for-major-chest-procedures-with-very-severe-cc",
+   "name_sr": "Veliki zahvati na grudnom košu sa vrlo teškim KK",
+   "name_ru": "Госпитализация: большие операции на грудной клетке с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Große Eingriffe am Thorax mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile majör göğüs cerrahisi işlemleri",
+   "categories": [
+    "PULMONOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "THORACIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E01B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Chest Procedures without Very Severe CC",
+   "slug": "hospitalization-for-major-chest-procedures-without-very-severe-cc",
+   "name_sr": "Veliki zahvati na grudnom košu bez vrlo teških KK",
+   "name_ru": "Госпитализация: большие операции на грудной клетке без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Große Eingriffe am Thorax ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan majör göğüs cerrahisi işlemleri",
+   "categories": [
+    "PULMONOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "THORACIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E02A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Respiratory System Procedures with Very Severe CC",
+   "slug": "hospitalization-for-other-respiratory-system-procedures-with-very-severe-cc",
+   "name_sr": "Drugi operativni zahvati na respiratornom sistemu sa vrlo teškim KK",
+   "name_ru": "Госпитализация: другие операции на дыхательной системе с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Andere operative Eingriffe an den Atmungsorganen mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile diğer solunum sistemi ameliyatları",
+   "categories": [
+    "PULMONOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "THORACIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E02B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Respiratory System Procedures with Severe or Moderate CC",
+   "slug": "hospitalization-for-other-respiratory-system-procedures-with-severe-or-moderate-cc",
+   "name_sr": "Drugi operativni zahvati na respiratornom sistemu sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: другие операции на дыхательной системе с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Andere operative Eingriffe an den Atmungsorganen mit schweren oder moderaten KK",
+   "name_tr": "Yatış: Şiddetli veya orta CC ile diğer solunum sistemi ameliyatları",
+   "categories": [
+    "PULMONOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "THORACIC_SURGERY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E02C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Respiratory System Disorders or Procedures without CC",
+   "slug": "hospitalization-for-other-respiratory-system-disorders-or-procedures-without-cc",
+   "name_sr": "Druge bolesti ili operativni zahvati na respiratornom sistemu bez KK",
+   "name_ru": "Госпитализация: другие болезни или операции на дыхательной системе без ОО",
+   "name_de": "Stationäre Behandlung: Andere Erkrankungen oder operative Eingriffe an den Atmungsorganen ohne KK",
+   "name_tr": "Yatış: CC olmadan diğer solunum sistemi hastalıkları veya ameliyatları",
+   "categories": [
+    "PULMONOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "THORACIC_SURGERY",
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E40A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Respiratory System Disorders with Ventilator Support with Very Severe CC",
+   "slug": "hospitalization-for-respiratory-system-disorders-with-ventilator-support-with-very-severe",
+   "name_sr": "Bolesti respiratornog sistema sa ventilacijskom podrškom sa vrlo teškim KK",
+   "name_ru": "Госпитализация: болезни дыхательной системы с ИВЛ с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen der Atmungsorgane mit maschineller Beatmung mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile mekanik ventilasyon desteğiyle solunum sistemi hastalıkları",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "ANESTHESIOLOGY"
+   ],
+   "note": "5839 (лечение дыхательной недостаточности на респираторе, почасово) — не эпизод госпитализации"
+  },
+  {
+   "code": "E40B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Respiratory System Disorders with Ventilator Support without Very Severe CC",
+   "slug": "hospitalization-for-respiratory-system-disorders-with-ventilator-support-without-very-seve",
+   "name_sr": "Bolesti respiratornog sistema sa ventilacijskom podrškom bez vrlo teških KK",
+   "name_ru": "Госпитализация: болезни дыхательной системы с ИВЛ без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Erkrankungen der Atmungsorgane mit maschineller Beatmung ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan mekanik ventilasyon desteğiyle solunum sistemi hastalıkları",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "ANESTHESIOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E41Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Respiratory System Disorder with Non-Invasive Ventilation",
+   "slug": "hospitalization-for-respiratory-system-disorder-with-non-invasive-ventilation",
+   "name_sr": "Bolest respiratornog sistema sa neinvazivnom ventilacijom",
+   "name_ru": "Госпитализация: болезнь дыхательной системы с неинвазивной вентиляцией лёгких",
+   "name_de": "Stationäre Behandlung: Erkrankung der Atmungsorgane mit nichtinvasiver Beatmung",
+   "name_tr": "Yatış: Non-invaziv ventilasyonla solunum sistemi hastalığı",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "ANESTHESIOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E42B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bronchoscopy without Very Severe CC",
+   "slug": "hospitalization-for-bronchoscopy-without-very-severe-cc",
+   "name_sr": "Bronhoskopija bez vrlo teških KK",
+   "name_ru": "Госпитализация: бронхоскопия без очень тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Bronchoskopie ohne sehr schwere KK",
+   "name_tr": "Yatış: Çok şiddetli CC olmadan bronkoskopi",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": "см. E42A"
+  },
+  {
+   "code": "E42C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Bronchoscopy, Same Day",
+   "slug": "hospitalization-for-bronchoscopy-same-day",
+   "name_sr": "Bronhoskopija, istog dana",
+   "name_ru": "Госпитализация: бронхоскопия в течение одного дня",
+   "name_de": "Stationäre Behandlung: Bronchoskopie am selben Tag",
+   "name_tr": "Yatış: Aynı gün bronkoskopi",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": "см. E42A"
+  },
+  {
+   "code": "E60A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cystic Fibrosis with Very Severe or Severe CC",
+   "slug": "hospitalization-for-cystic-fibrosis-with-very-severe-or-severe-cc",
+   "name_sr": "Cistična fibroza sa vrlo teškim ili teškim KK",
+   "name_ru": "Госпитализация: муковисцидоз с очень тяжёлыми или тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Mukoviszidose mit sehr schweren oder schweren KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC ile kistik fibrozis",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "PEDIATRIC_PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E60B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Cystic Fibrosis without Very Severe or Severe CC",
+   "slug": "hospitalization-for-cystic-fibrosis-without-very-severe-or-severe-cc",
+   "name_sr": "Cistična fibroza bez vrlo teških ili teških KK",
+   "name_ru": "Госпитализация: муковисцидоз без очень тяжёлых или тяжёлых ОО",
+   "name_de": "Stationäre Behandlung: Mukoviszidose ohne sehr schwere oder schwere KK",
+   "name_tr": "Yatış: Çok şiddetli veya şiddetli CC olmadan kistik fibrozis",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "PEDIATRIC_PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E63Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Sleep Apnea",
+   "slug": "hospitalization-for-sleep-apnea",
+   "name_sr": "Apneja u spavanju",
+   "name_ru": "Госпитализация: апноэ сна",
+   "name_de": "Stationäre Behandlung: Schlafapnoe",
+   "name_tr": "Yatış: Uyku apnesi",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": "диагноз, не процедура; полисомнография 4115 — не то же самое"
+  },
+  {
+   "code": "E66A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Major Chest Trauma with Very Severe CC",
+   "slug": "hospitalization-for-major-chest-trauma-with-very-severe-cc",
+   "name_sr": "Velika trauma grudnog koša sa vrlo teškim KK",
+   "name_ru": "Госпитализация: тяжёлая травма грудной клетки с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Schweres Thoraxtrauma mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile majör göğüs travması",
+   "categories": [
+    "PULMONOLOGY",
+    "GENERAL_SURGERY"
+   ],
+   "specialties": [
+    "THORACIC_SURGERY",
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E72Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Respiratory Problems Arising from the Neonatal Period",
+   "slug": "hospitalization-for-respiratory-problems-arising-from-the-neonatal-period",
+   "name_sr": "Respiratorni problemi koji potiču iz neonatalnog perioda",
+   "name_ru": "Госпитализация: респираторные нарушения, возникшие в неонатальном периоде",
+   "name_de": "Stationäre Behandlung: Atemwegsprobleme mit Ursprung in der Neugeborenenperiode",
+   "name_tr": "Yatış: Yenidoğan döneminden kaynaklanan solunum sorunları",
+   "categories": [
+    "PULMONOLOGY",
+    "PEDIATRICS"
+   ],
+   "specialties": [
+    "NEONATOLOGY",
+    "PEDIATRIC_PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E73A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pleural Effusion with Very Severe CC",
+   "slug": "hospitalization-for-pleural-effusion-with-very-severe-cc",
+   "name_sr": "Pleuralni izliv sa vrlo teškim KK",
+   "name_ru": "Госпитализация: плевральный выпот с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Pleuraerguss mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile plevral efüzyon",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E73C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Pleural Effusion without CC",
+   "slug": "hospitalization-for-pleural-effusion-without-cc",
+   "name_sr": "Pleuralni izliv bez KK",
+   "name_ru": "Госпитализация: плевральный выпот без ОО",
+   "name_de": "Stationäre Behandlung: Pleuraerguss ohne KK",
+   "name_tr": "Yatış: CC olmadan plevral efüzyon",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E74A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Interstitial Lung Disease with Very Severe CC",
+   "slug": "hospitalization-for-interstitial-lung-disease-with-very-severe-cc",
+   "name_sr": "Intersticijalna bolest pluća sa vrlo teškim KK",
+   "name_ru": "Госпитализация: интерстициальная болезнь лёгких с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Interstitielle Lungenerkrankung mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile interstisyel akciğer hastalığı",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E74B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Interstitial Lung Disease with Severe or Moderate CC",
+   "slug": "hospitalization-for-interstitial-lung-disease-with-severe-or-moderate-cc",
+   "name_sr": "Intersticijalna bolest pluća sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: интерстициальная болезнь лёгких с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Interstitielle Lungenerkrankung mit schweren oder moderaten KK",
+   "name_tr": "Yatış: Şiddetli veya orta CC ile interstisyel akciğer hastalığı",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E74C",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Interstitial Lung Disease without CC",
+   "slug": "hospitalization-for-interstitial-lung-disease-without-cc",
+   "name_sr": "Intersticijalna bolest pluća bez KK",
+   "name_ru": "Госпитализация: интерстициальная болезнь лёгких без ОО",
+   "name_de": "Stationäre Behandlung: Interstitielle Lungenerkrankung ohne KK",
+   "name_tr": "Yatış: CC olmadan interstisyel akciğer hastalığı",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E75A",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Respiratory System Disorders with Very Severe CC",
+   "slug": "hospitalization-for-other-respiratory-system-disorders-with-very-severe-cc",
+   "name_sr": "Druge bolesti respiratornog sistema sa vrlo teškim KK",
+   "name_ru": "Госпитализация: другие болезни дыхательной системы с очень тяжёлыми ОО",
+   "name_de": "Stationäre Behandlung: Andere Erkrankungen der Atmungsorgane mit sehr schweren KK",
+   "name_tr": "Yatış: Çok şiddetli CC ile diğer solunum sistemi hastalıkları",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E75B",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Other Respiratory System Disorders with Severe or Moderate CC",
+   "slug": "hospitalization-for-other-respiratory-system-disorders-with-severe-or-moderate-cc",
+   "name_sr": "Druge bolesti respiratornog sistema sa teškim ili umjerenim KK",
+   "name_ru": "Госпитализация: другие болезни дыхательной системы с тяжёлыми или умеренными ОО",
+   "name_de": "Stationäre Behandlung: Andere Erkrankungen der Atmungsorgane mit schweren oder moderaten KK",
+   "name_tr": "Yatış: Şiddetli veya orta CC ile diğer solunum sistemi hastalıkları",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY"
+   ],
+   "note": ""
+  },
+  {
+   "code": "E76Z",
+   "decision": "new",
+   "kind": "medical_service",
+   "name_en": "Hospitalization for Respiratory Tuberculosis",
+   "slug": "hospitalization-for-respiratory-tuberculosis",
+   "name_sr": "Tuberkuloza respiratornog trakta",
+   "name_ru": "Госпитализация: туберкулёз органов дыхания",
+   "name_de": "Stationäre Behandlung: Tuberkulose der Atmungsorgane",
+   "name_tr": "Yatış: Solunum yolu tüberkülozu",
+   "categories": [
+    "PULMONOLOGY"
+   ],
+   "specialties": [
+    "PULMONOLOGY",
+    "INFECTIOUS_DISEASES"
+   ],
+   "note": ""
+  }
+ ]
+}

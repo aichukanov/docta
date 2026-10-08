@@ -51,16 +51,16 @@ const websiteUrlWithUtm = computed(() => {
 		"Website": "Официальный сайт"
 	},
 	"sr": {
-		"Website": "Oficijelni sajt"
+		"Website": "Zvanični sajt"
 	},
 	"sr-cyrl": {
-		"Website": "Официјелни сајт"
+		"Website": "Званични сајт"
 	},
 	"de": {
 		"Website": "Offizielle Website"
 	},
 	"tr": {
-		"Website": "Ofisielle Website"
+		"Website": "Resmi web sitesi"
 	}
 }
 </i18n>

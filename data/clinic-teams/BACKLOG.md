@@ -78,7 +78,7 @@ SQL лежит в `server/sql/update-doctors-2026-10-<группа>.sql`, реш
 
 ## Осталось
 
-- **Специальности (решение 2026-10-07):** добавлены пародонтология (95), спортивная медицина (96), дефектология (97) — код (`enums/specialty.ts`, `i18n/specialty.ts`, schema.org) + `migrations/052-specialties-periodontology-sports-defectology.sql` (3 + 5 + 2 врача, 9 + 4 + 13 услуг). Судебная медицина и эмбриолог — не заводятся: нет пациентского выбора (Ivana Čurović Šoškić, эмбриологи Humana/Moj Lab/Ars Medica — без записи).
+- **Специальности (решение 2026-10-07):** добавлены пародонтология (95), спортивная медицина (96), дефектология (97) — код (`enums/specialty.ts`, `i18n/specialty.ts`, schema.org) + `migrations/052-specialties-periodontology-sports-defectology.sql` (3 + 5 + 2 врача, 9 + 4 + 13 услуг). Код и миграция в проде 2026-10-08, сверено: API по specialtyIds 95/96/97, заголовки страниц на sr/ru/en, фолбэк на странице услуги. Судебная медицина и эмбриолог — не заводятся: нет пациентского выбора (Ivana Čurović Šoškić, эмбриологи Humana/Moj Lab/Ars Medica — без записи).
 
 - **Не заведены до прояснения:**
   - Goran Batrićević / Šoković (КЦЦГ);

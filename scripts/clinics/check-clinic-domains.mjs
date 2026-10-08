@@ -6,6 +6,8 @@
  *   - websiteUri мест из data/google-places/<город>/*.json;
  *   - сайты кандидатов из data/clinic-candidates/candidates.json (site и newSite);
  *   - ручной список data/clinic-domains/decisions.json (поле watch).
+ * Для свободных и умирающих доменов дополнительно смотрит Wayback Machine: был ли на
+ * домене сайт и сколько он прожил. Найденные вручную ссылки на домен — decisions.json → research.
  * По каждому регистрируемому домену смотрит регистрацию (WHOIS для .me/.rs/.ru,
  * RDAP для остальных), DNS и ответ сайта. Домены агрегаторов и соцсетей пропускаются.
  *
@@ -36,6 +38,7 @@ const CANDIDATES_FILE = resolve(ROOT, 'data/clinic-candidates/candidates.json');
 const CONCURRENCY = 6;
 const EXPIRING_DAYS = 45;
 const today = todayFn();
+const monthAgo = new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10);
 
 const only = process.argv
 	.find((a) => a.startsWith('--only='))
@@ -55,11 +58,15 @@ const FOREIGN_DOMAINS = new Set([
 	'facebook.com', 'instagram.com', 'google.com', 'linkedin.com', 'youtube.com', 'tiktok.com', 't.me',
 	'wa.me', 'linktr.ee', 'business.site', 'wixsite.com', 'weebly.com', 'wordpress.com', 'tilda.ws',
 	'registarfirmi.me', 'travelmontenegro.me', 'stomatologija.me', 'tapqo.co', 'firme-cg.com', 'mojgrad.rs',
-	'booksy.com', 'fresha.com', 'cdm.me', 'barinfo.me',
+	'booksy.com', 'fresha.com', 'cdm.me', 'barinfo.me', 'ordinacije.me', 'odmaraj.me',
 ]);
 const SECOND_LEVEL = new Set(['co.me', 'org.me', 'net.me', 'its.me', 'edu.me', 'gov.me', 'co.rs', 'org.rs', 'in.rs', 'co.uk', 'com.tr']);
 const WHOIS_SERVERS = { me: 'whois.nic.me', rs: 'whois.rnids.rs', ru: 'whois.tcinet.ru' };
 const WHOIS_NOT_FOUND = /Domain not found|No entries found|not registered|NOT FOUND|No match for/i;
+const NON_CLINIC_TYPES = new Set([
+	'pharmacy', 'veterinary_care', 'hair_care', 'nail_salon', 'cosmetics_store', 'beauty_salon', 'hotel',
+	'resort_hotel', 'car_repair', 'coworking_space', 'garden_center', 'painter',
+]);
 const PARKED = /\/lander\b|parking|sedoparking|dan\.com|afternic|hugedomains|Account Suspended|Domain has been assigned|domain is for sale|buy this domain/i;
 // Домен перекуплен под спам: так обычно выглядит освободившийся домен, который
 // забрали раньше нас. Клинике нужен новый сайт, ссылку в карточке — снять.
@@ -112,6 +119,7 @@ for (const city of readdirSync(PLACES_DIR)) {
 		const type = place.primaryType || place.types?.[0] || '';
 		addDomain(place.websiteUri, {
 			kind: 'google',
+			type,
 			label: `${place.displayName?.text} (${city}, ${place.userRatingCount || 0} отз., ${type})`,
 		});
 	}
@@ -287,43 +295,119 @@ await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 state.lastRun = today;
 writeFileSync(STATE_FILE, `${JSON.stringify(state, null, '\t')}\n`);
 
+// ─── история сайта в Wayback ─────────────────────────────────────────────────
+
+// Свободный домен ценен, только если на нём жил сайт клиники: тогда на него остались
+// ссылки (каталоги, статьи, карточка в Google). Архив отвечает, был ли сайт и когда.
+// Запросы строго по одному: archive.org отвечает 429 на параллельные.
+const WAYBACK_STATUSES = new Set(['free', 'pending_delete', 'expired', 'expiring_dead', 'dead', 'parked', 'hijacked']);
+async function wayback(domain) {
+	const url = `https://web.archive.org/cdx/search/cdx?url=${domain}&matchType=domain&output=json&fl=timestamp,original&filter=statuscode:200&limit=5000`;
+	for (const pause of [0, 10000, 30000]) {
+		if (pause) await sleep(pause);
+		try {
+			const res = await fetch(url, { signal: AbortSignal.timeout(60000), headers: { 'user-agent': UA } });
+			if (res.status === 429) continue;
+			const rows = (await res.json()).slice(1);
+			const months = new Set(rows.map(([ts]) => ts.slice(0, 6)));
+			const pages = new Set(rows.map(([, u]) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/[?#].*$/, '').replace(/\/$/, '')));
+			const ts = rows.map(([t]) => t).sort();
+			return {
+				captures: rows.length,
+				months: months.size,
+				pages: pages.size,
+				first: ts[0] ? `${ts[0].slice(0, 4)}-${ts[0].slice(4, 6)}` : null,
+				last: ts.at(-1) ? `${ts.at(-1).slice(0, 4)}-${ts.at(-1).slice(4, 6)}` : null,
+				checked: today,
+			};
+		} catch {
+			// повтор
+		}
+	}
+	return { error: 'archive.org не ответил', checked: today };
+}
+
+const waybackQueue = Object.entries(state.domains).filter(
+	([domain, d]) =>
+		WAYBACK_STATUSES.has(d.status) && (!only || only.includes(domain)) && (!d.wayback || d.wayback.error || d.wayback.checked < monthAgo),
+);
+if (waybackQueue.length) console.log(`Wayback: ${waybackQueue.length}`);
+for (const [domain, d] of waybackQueue) {
+	d.wayback = await wayback(domain);
+	await sleep(1500);
+}
+writeFileSync(STATE_FILE, `${JSON.stringify(state, null, '\t')}\n`);
+
 // ─── отчёт ───────────────────────────────────────────────────────────────────
 
 const decided = decisions.decided || {};
+const research = decisions.research || {};
 const rows = Object.entries(state.domains).map(([domain, d]) => ({ domain, ...d }));
 const open = rows.filter((r) => !decided[r.domain]);
+// Не клиника — если домен знают только места Google немедицинских типов (аптеки, салоны, ветеринария).
+const isClinic = (r) => r.sources.some((s) => s.kind !== 'google' || !NON_CLINIC_TYPES.has(s.type));
+const hadSite = (r) => (r.wayback?.months || 0) > 0;
 const fmtSources = (r) => r.sources.map((s) => s.label).join('; ');
 const siteNote = (r) =>
 	!r.site ? '' : r.site.http === 'error' ? `сайт: ${r.site.error}` : `сайт: ${r.site.http}${r.site.parked ? ', парковка' : ''}${r.site.title ? `, «${r.site.title.slice(0, 40)}»` : ''}`;
-const line = (r) => `| ${r.domain} | ${r.expiry || '—'} | ${r.statusSince} | ${[siteNote(r), (r.registryStatus || []).filter((s) => /pending|redemption|hold|autoRenew/i.test(s)).join(', ')].filter(Boolean).join('; ')} | ${fmtSources(r)} |`;
+const archiveNote = (r) =>
+	!r.wayback
+		? '—'
+		: r.wayback.error
+			? r.wayback.error
+			: r.wayback.months
+				? `${r.wayback.first} … ${r.wayback.last}, ${r.wayback.months} мес., ${r.wayback.pages} стр.`
+				: 'снимков нет';
+const linksNote = (r) => {
+	const x = research[r.domain];
+	if (!x) return 'не искали';
+	const found = x.links?.length ? `${x.links.length}: ${x.links.slice(0, 3).join(', ')}${x.links.length > 3 ? '…' : ''}` : 'не найдено';
+	return `${found}${x.note ? ` — ${x.note}` : ''} (${x.checked})`;
+};
+const line = (r) =>
+	`| ${r.domain} | ${r.expiry || '—'} | ${archiveNote(r)} | ${linksNote(r)} | ${[siteNote(r), (r.registryStatus || []).filter((s) => /pending|redemption|hold|autoRenew/i.test(s)).join(', ')].filter(Boolean).join('; ')} | ${fmtSources(r)} |`;
 const table = (list) =>
 	list.length
-		? ['| Домен | Истекает | С какого дня | Состояние | Чей |', '|---|---|---|---|---|', ...list.map(line)].join('\n')
+		? ['| Домен | Истекает | Сайт в архиве | Ссылки на домен | Состояние | Чей |', '|---|---|---|---|---|---|', ...list.map(line)].join('\n')
 		: 'Нет.';
-const byStatus = (...st) => open.filter((r) => st.includes(r.status)).sort((a, b) => (a.expiry || '').localeCompare(b.expiry || ''));
+const byStatus = (...st) =>
+	open
+		.filter((r) => st.includes(r.status))
+		.sort((a, b) => (b.wayback?.months || 0) - (a.wayback?.months || 0) || (a.expiry || '').localeCompare(b.expiry || ''));
 const ownClinic = (r) => r.sources.some((s) => s.kind === 'db');
+const free = byStatus('free');
 
 const report = `# Домены клиник
 
-Генерируется \`node scripts/clinics/check-clinic-domains.mjs\`; состояние — \`state.json\`, решения — \`decisions.json\`. Последний прогон: **${today}**.
+Генерируется \`node scripts/clinics/check-clinic-domains.mjs\`; состояние — \`state.json\`, решения и найденные ссылки — \`decisions.json\`. Последний прогон: **${today}**.
 
-Проверено доменов: ${rows.length}. Свободны: ${byStatus('free').length}, скоро освободятся: ${byStatus('pending_delete', 'expired', 'expiring_dead').length}, сайт мёртв или припаркован: ${byStatus('dead', 'parked').length}, перекуплены под спам: ${byStatus('hijacked').length}.
+Проверено доменов: ${rows.length}. Свободны: ${free.length}, из них бывших сайтов клиник — ${free.filter((r) => isClinic(r) && hadSite(r)).length}. Скоро освободятся: ${byStatus('pending_delete', 'expired', 'expiring_dead').length}, сайт мёртв или припаркован: ${byStatus('dead', 'parked').length}, перекуплены под спам: ${byStatus('hijacked').length}.
 
-## Свободны — можно регистрировать
+«Сайт в архиве» — снимки Wayback Machine: первый … последний месяц, сколько месяцев и страниц сохранено. Нет снимков — сайта на домене, скорее всего, не было (адрес вписан в карточку Google, но не запущен), и ссылок на него нет. «Ссылки на домен» — где домен упоминается снаружи; собирается вручную в \`decisions.json → research\`.
 
-${table(byStatus('free'))}
+## Свободны: бывшие сайты клиник
+
+Главный список на выкуп.
+
+${table(free.filter((r) => isClinic(r) && hadSite(r)))}
+
+## Свободны: сайта в архиве нет
+
+Домен указан у клиники, но в архиве его нет — покупать незачем, пока не найдутся ссылки.
+
+${table(free.filter((r) => isClinic(r) && !hadSite(r)))}
 
 ## Скоро освободятся
 
 Удаление в реестре, срок уже истёк или истекает в ближайшие ${EXPIRING_DAYS} дней при мёртвом сайте.
 
-${table(byStatus('pending_delete', 'expired', 'expiring_dead'))}
+${table(byStatus('pending_delete', 'expired', 'expiring_dead').filter(isClinic))}
 
 ## Заняты, но сайт мёртв или припаркован
 
 Следить: такие домены обычно не продлевают.
 
-${table(byStatus('dead', 'parked'))}
+${table(byStatus('dead', 'parked').filter(isClinic))}
 
 ## Перекуплены под спам
 
@@ -336,6 +420,12 @@ ${table(byStatus('hijacked'))}
 Сайт работает, но если клиника не продлит домен — ссылка в карточке станет битой.
 
 ${table(byStatus('expiring').filter(ownClinic))}
+
+## Не клиники
+
+Аптеки, салоны, ветеринария — свободные и умирающие домены, для сведения.
+
+${table(open.filter((r) => !isClinic(r) && ['free', 'pending_delete', 'expired', 'expiring_dead'].includes(r.status)))}
 
 ## Не удалось проверить
 

@@ -1,6 +1,112 @@
 {
 	"watch": [
-		{ "domain": "drsenad.me", "note": "был сайтом клиники БД #32 stomatoloska-ordinacija-dr-senad-podgorica (из гугл-таблицы: свободный, но ссылок мало)" }
+		{
+			"domain": "drsenad.me",
+			"note": "был сайтом клиники БД #32 stomatoloska-ordinacija-dr-senad-podgorica (из гугл-таблицы: свободный, но ссылок мало)"
+		},
+		{
+			"domain": "standard.me",
+			"note": "старый сайт Novi Standard (БД #64, теперь novistandard.me); заброшен, по разбору dodoktora.me"
+		}
 	],
-	"decided": {}
+	"decided": {
+		"apoteke-cg.com": {
+			"decision": "не покупать",
+			"note": "ссылочный профиль — спам: автостатистика, каталоги, линкофермы; живые ссылки только со страниц корейских турагентств"
+		}
+	},
+	"research": {
+		"drsenad.me": {
+			"checked": "2026-10-08",
+			"links": [
+				"YouTube — описания роликов «Ordinacija DR SENAD» (2 ролика)"
+			],
+			"note": "в карточке Google сайта уже нет; на ordinacije/foursquare/vymaps ссылки нет"
+		},
+		"pjerotic.me": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «Dental Clinic “Pjerotic”» (26 отз.)"
+			],
+			"note": "в профиле на ordinacije.me ссылки нет; поиск по имени домена других упоминаний не дал"
+		},
+		"dentalclinicreident.com": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «DENTAL CLINIC REIDENT» (37 отз.)"
+			],
+			"note": "поиск по имени домена других упоминаний не дал"
+		},
+		"neuromedica.me": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «Neuromedica Dr Slavica Vujisić» (19 отз.)"
+			],
+			"note": "поиск по имени домена других упоминаний не дал"
+		},
+		"ordinacijadzajovic.me": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «Stomatološka ordinacija Džajović» (9 отз.)"
+			],
+			"note": "поиск по имени домена других упоминаний не дал"
+		},
+		"stojovic.me": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «PZU Stojovic» (9 отз.)"
+			],
+			"note": "поиск по имени домена других упоминаний не дал"
+		},
+		"istanbuldentalclinic.me": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «İstanbul Stomatološka Ordinacija» (7 отз.)"
+			],
+			"note": "поиск по имени домена других упоминаний не дал"
+		},
+		"dentaltours.me": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «Dental Clinic» (0 отз.)"
+			],
+			"note": "выдача — про румынскую DentalTours, не эту"
+		},
+		"senasoftsurgery.rs": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «Hirurgija Budva - Dr Bobana» (5 отз.)"
+			],
+			"note": "поиск по имени домена других упоминаний не дал"
+		},
+		"imne.me": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «Dental studio Gaćina» (115 отз.) — на поддомен dental.imne.me"
+			],
+			"note": "сайт клиники жил на поддомене, imne.me — чей-то общий домен; поиск по имени домена других упоминаний не дал"
+		},
+		"pollexphysio.me": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «PZU POLLEX PHYSIO» (25 отз.)"
+			],
+			"note": "клиника переехала на pollexphysio.com; поиск по имени домена других упоминаний не дал"
+		},
+		"apoteke-cg.com": {
+			"checked": "2026-10-08",
+			"links": [
+				"карточка Google Maps «Apoteka 36.6» (75 отз.) — на /36_6.html",
+				"verygoodtour.com, vgt.kr — страницы туров корейского турагентства (dofollow, видны до 2025–2026)",
+				"worldjob.or.kr — страница о Черногории (до 2020)",
+				"zaposli.me — вакансия «Apoteka Stari grad» (до 2021)"
+			],
+			"note": "остальное — сайты автостатистики, каталоги доменов и линкофермы; DA 92 у huldra.pages.dev — оценка всего pages.dev, а не страницы; ссылки-спам с сентября 2026 — домен уже в списках дропа"
+		},
+		"miljkovicjankov.me": {
+			"checked": "2026-10-08",
+			"links": [],
+			"note": "старый домен LaserFocus (#119, бывш. Miljković & Jankov); на Maps не указан"
+		}
+	}
 }

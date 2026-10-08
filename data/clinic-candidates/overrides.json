@@ -1,0 +1,126 @@
+{
+	"_comment": "Ручные правки для scripts/clinics/build-clinic-candidates.mjs. inDb: ключ кандидата (домен или place:<id>) или id места Google → id клиник в БД, когда автоматически (домен сайта / google_place_id / progress.json) не совпало. exclude: ключ или id места → почему не кандидат.",
+	"inDb": {
+		"imne.me": [
+			97
+		],
+		"arsmedica.me": [
+			116,
+			117
+		],
+		"drmedtim.me": [
+			114
+		],
+		"drjovovic.me": [
+			115
+		],
+		"dzkotor.me": [
+			126
+		],
+		"bolnicaberane.com": [
+			137
+		],
+		"jzuobkotor.me": [
+			133
+		],
+		"medicalcg.me": [
+			138
+		],
+		"drsenad.me": [
+			32
+		],
+		"sotirdentalcentar.com": [
+			34
+		],
+		"temeldental.com": [
+			19
+		],
+		"montenegrodentistry.me": [
+			60
+		],
+		"ChIJ08ASZcp1ThMRg2_iOA0Bogk": [
+			42
+		],
+		"ChIJ1YjFZmB1ThMRmprUnTlIL-w": [
+			97
+		],
+		"ChIJp2RGMoDZTRMR9c8gBH2BHbA": [
+			51
+		],
+		"ChIJHeBZc8KTUhMRHpseyw1JK3Y": [
+			137
+		],
+		"ChIJLc3KGQCTUhMRc3OvGaHfe3o": [
+			137
+		],
+		"ChIJK-MXLNA7TBMRjzfI6SlAApY": [
+			123
+		],
+		"ChIJwQSxMXwzTBMRwrW_e_eeazs": [
+			122
+		],
+		"ChIJ4fK0n8AtTBMRsAgj_O-ihMI": [
+			136
+		],
+		"ChIJtfAUpjIzTBMRXLWWaDcC8gw": [
+			124
+		],
+		"ChIJ9bD-JwDrTRMRG5z3BvyRkQo": [
+			59
+		],
+		"ChIJr5ZefwDrTRMRpr_D-A8V8vk": [
+			28
+		],
+		"ChIJA_Lh-JHrTRMRR79x3vcFnik": [
+			83
+		],
+		"ChIJP0QWP1HrTRMRWfYKnPWtkaY": [
+			96
+		],
+		"ChIJ6x5i00PrTRMReKiljcEjOO8": [
+			66
+		],
+		"ChIJMSy4XGjrTRMROwxAqX1_dhM": [
+			66
+		],
+		"ChIJxc_K492VTRMROvaROWL-gd4": [
+			14
+		],
+		"ChIJD92qzinrTRMRoeZ77e_UMww": [
+			98
+		],
+		"ChIJAdz_Ti7WTRMR9ECeCKczv5k": [
+			43
+		]
+	},
+	"exclude": {
+		"veterina.me": "ветеринарная клиника",
+		"citiwell.me": "сеть лазерной эпиляции, не медицина",
+		"optikakuburic.me": "оптика",
+		"medikaloptik.me": "оптика",
+		"audiobm.me": "слуховые аппараты, магазин",
+		"bioenergija.me": "биоэнергетик, не медицина",
+		"si14pharma.com": "не клиника",
+		"ldmlsdrchk.com": "украинская клиника, к Черногории отношения нет",
+		"acibadem.rs": "информационный офис турецкой сети, приёма нет",
+		"livhospital.me": "представительство турецкой больницы, приёма нет",
+		"udruzenjevodovoda.me": "ассоциация водоканалов, ошибка категории Google",
+		"sclubmontenegro.ru": "не клиника",
+		"medicinabar.com": "портал НКО об истории медицины в Баре; сайт поликлиники — drmasonicic.com (БД #58)",
+		"hitna.me": "Завод за хитну медицинску помоћ — скорая помощь, не клиника для каталога",
+		"mojdermatolog.me": "SEO-справочник чужих клиник",
+		"dentalgrupa-mne.com": "оптовый магазин стоматологических материалов",
+		"ivadent.me": "зуботехническая лаборатория, продаёт стоматологам",
+		"doctorinmontenegro.com": "агентство медицинского сопровождения (Monte Medical), своего приёма нет",
+		"place:ChIJmd_NHn47TBMRUKcZKLcJdPA": "салон красоты (тип «doctor» в Google ошибочный)",
+		"place:ChIJM7AS0YA8TBMRQMXrVMa8GmM": "массаж, косметика, фитнес",
+		"place:ChIJ9RtNVAAxTBMRhf9xAsW0rno": "массажист",
+		"place:ChIJhyvlvTDrTRMRcAPmBeTciiA": "салон по уходу за телом",
+		"place:ChIJgyWwHag7TBMR0f78FQ49v-g": "аптека",
+		"place:ChIJM4itQLvrTRMRmoHZHfubsaM": "Ургентни центар КЦЦГ — часть клиники #65",
+		"place:ChIJtSXYTErrTRMRGMuQr9_uCgs": "скорая помощь (Zavod za hitnu medicinsku pomoć)",
+		"place:ChIJ8UAREWQTThMRQFF1dBkM-nA": "скорая помощь Улцинь (Zavod za hitnu medicinsku pomoć)",
+		"place:ChIJ5yO6ZgA5TRMR5L84BCR1aD4": "скорая помощь Жабляк (Zavod za hitnu medicinsku pomoć)",
+		"medikol.me": "ПЭТ/КТ Medikol физически в Codra Hospital (#28), черногорское юрлицо Medikol — не медучреждение; правильнее завести ПЭТ/КТ услугой Codra (разбор dodoktora.me)"
+	}
+}

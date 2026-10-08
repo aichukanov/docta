@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "slug": "llolla-dent-ulcinj",
+  "name": "Stomatološka ordinacija Llolla Dent",
+  "city": "Ulcinj",
+  "cityId": 5,
+  "googlePlaceId": "ChIJSXExDCITThMRP9seBhnncR8",
+  "clinicTypeIds": [2],
+  "languageIds": [1],
+
+  "sql": [
+    "server/sql/insert-clinic-llolla-dent-ulcinj.sql"
+  ],
+
+  "status": {
+    "generated": "2026-10-08",
+    "appliedLocal": "2026-10-08",
+    "appliedProd": "2026-10-08",
+    "clinicId": { "local": 189, "prod": 162 },
+    "doctorIds": {
+      "miradin-lolovic": { "local": 3079, "prod": 1840 },
+      "resid-lolovic": { "local": 3080, "prod": 1841 }
+    },
+    "note": "Клиника пришла из списка врачей юзера (ссылка на stomatologija.me). Прод сверен через /api/clinics/details и /working-hours. Правка «Улцине» → «Ульцине» в description_ru (как в i18n/city.ts) — после первого прогона, нужен повторный прогон файла на обеих БД."
+  },
+
+  "sources": [
+    {
+      "type": "google-places",
+      "ref": "data/google-places/ulcinj/llolla-dent.json",
+      "collected": "2026-10-08",
+      "machineReadable": true,
+      "note": "place_id, координаты 41.9304332 / 19.2363261 (единственный источник), телефон +382 69 522 029, адрес «bb Кодра, Улцињ 85360». websiteUri ведёт на stomatologija.me — агрегатор, в website не пишем. В JSON 5 отзывов из 11."
+    },
+    {
+      "type": "aggregator",
+      "ref": "stomatologija.me — карточка ordinacija/llolla-dent",
+      "collected": "2026-10-08",
+      "machineReadable": true,
+      "note": "Конкурент: данные берём, ссылок не ставим. Сырой HTML читается curl'ом. Дал адрес «Kodre bb, Ulcinj», телефоны +382 30 407 050 и +382 69 522 029, email llolladent@t-com.me, часы «Ponedeljak – Četvrtak: 08-16h; Petak, Subota, Nedelja: Neradni», услуги и «Ordiniraju: dr Rešid Lolović, dr Miradin Lolović». На странице комментарий от 2026-07-12 — карточка живая."
+    },
+    {
+      "type": "aggregator",
+      "ref": "stomatologija.me — интервью «Dr Miradin Lolović: Najveći problemi loša oralna higijena…» (2016-06-20) и «Oduvijek sam volio oralnu hirurgiju» (2025-11-17), статья «Llolla Dent – Vaš put do savršenog osmijeha u Ulcinju» (2025-10-07)",
+      "collected": "2026-10-08",
+      "machineReadable": true,
+      "note": "Био Miradin: specijalista protetike i implantologije; UCAM (Murcia) — jednogodišnje studije iz implantologije, kasnije parodontologije; первый опыт имплантологии в Бразилии; imedijatno opterećenje; 3D/intraoralni skener, digitalna laboratorija, CAD/CAM (2016). «moj otac započeo taj biznis još 1981». Фото с подписью «Foto: stomatologija.me» — не берём."
+    },
+    {
+      "type": "aggregator",
+      "ref": "registarfirmi.me — r/llolla-dent-ulcinj",
+      "collected": "2026-10-08",
+      "machineReadable": true,
+      "note": "Kodre bb 85360 Ulcinj, +382 30 407 050, «Viber i WhatsApp +382 69 522 029». Данные помечены «nisu verifikovani»."
+    },
+    {
+      "type": "aggregator",
+      "ref": "ordinacije.me — stomatoloska-ordinacija-llolla-dent",
+      "collected": "2026-10-08",
+      "machineReadable": true,
+      "note": "Конкурент. Устаревший текст: «Ordinira Doktor Rašid Lalović» (искажение Rešid Lolović), часы 09–13 и 17–21, «privatno javno partnerstvo sa Fondom za zdravstveno osiguranje», и противоречащая таблица (только понедельник). Ничего отсюда не взято."
+    },
+    {
+      "type": "facebook",
+      "ref": "https://www.facebook.com/llolla.dental",
+      "collected": "2026-10-08",
+      "machineReadable": false,
+      "note": "URL назвал поиск субагента; curl отдаёт 400, веб-поиск страницу не находит. Не записан."
+    }
+  ],
+
+  "coverage": {
+    "address": "Kodre bb — stomatologija.me, registarfirmi, Google согласованы; кириллица «Кодре бб»",
+    "phone": "+38230407050;+38269522029 — оба с stomatologija.me и registarfirmi, второй подтверждён Google",
+    "email": "llolladent@t-com.me — только stomatologija.me",
+    "website": "нет своего сайта",
+    "social": "whatsapp/viber +38269522029 (registarfirmi); facebook не подтверждён; instagram не найден",
+    "workingHours": "пн–чт 08:00–16:00, пт–вс закрыто — актуальная карточка stomatologija.me",
+    "languages": "клиника сопровождение не заявляет → только SR",
+    "doctors": "2 врача из «Ordiniraju»; био только у Miradin",
+    "services": "не заводились — цен нет ни в одном источнике",
+    "reviews": "не импортированы"
+  },
+
+  "catalogAdditions": [],
+  "services": [],
+
+  "doctors": [
+    {
+      "slug": "miradin-lolovic",
+      "nameSr": "Miradin Lolović",
+      "specialtyIds": [78],
+      "position": null,
+      "services": [],
+      "hasBio": true
+    },
+    {
+      "slug": "resid-lolovic",
+      "nameSr": "Rešid Lolović",
+      "specialtyIds": [78],
+      "position": null,
+      "services": [],
+      "hasBio": false
+    }
+  ],
+
+  "excluded": [
+    {
+      "source": "Ordinacija je u privatno javnom partnerstvu sa Fondom za zdravstveno osiguranje Crne Gore. (ordinacije.me)",
+      "reason": "Только в устаревшем тексте агрегатора рядом с неактуальными часами; не подтверждено"
+    },
+    {
+      "source": "facebook.com/llolla.dental",
+      "reason": "Существование страницы не подтверждено"
+    }
+  ],
+
+  "openQuestions": [
+    "Договор с ФЗО — актуален ли (влияет на описание и бесплатный приём по страховке).",
+    "Google-отзывы: в JSON 5 из 11, нужен полный сбор, если импортировать.",
+    "Специальность Rešid Lolović и родство с Miradin не заявлены."
+  ]
+}

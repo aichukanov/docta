@@ -19,15 +19,11 @@
  * Первый прогон — базовая линия: всё «новое», изменений нет.
  */
 
-import { execFile } from 'node:child_process';
-import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-import { dirname, join, resolve } from 'node:path';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { promisify } from 'node:util';
+import { fetchUrl, sha, stableJson, visibleText } from './lib/source-fetch.mjs';
 
-const run = promisify(execFile);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '../..');
 const DIR = resolve(ROOT, 'data/clinic-pricelists');
@@ -36,14 +32,11 @@ const STATE_FILE = resolve(DIR, 'journal.json');
 const REPORT_FILE = resolve(DIR, 'journal.md');
 const IMPORTS_DIR = resolve(ROOT, 'data/clinic-imports');
 
-const UA =
-	'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36';
 const CONCURRENCY = 5;
 const MAX_SNAPSHOT_BYTES = 5 * 1024 * 1024;
 const today = new Date().toISOString().slice(0, 10);
 
 // Особенности отдельных сайтов (recheckHint в map.json)
-const INSECURE_HOSTS = new Set(['drkukoljac.com']); // битый TLS-сертификат
 const SKIP_URL = [
 	/web\.archive\.org/, // архив — не живой источник
 	/invitro\.co\.me\/cms\/pdf\/create\//, // PDF генерируется на лету, сверяется HTML
@@ -54,59 +47,6 @@ const only = process.argv
 	?.slice(7)
 	.split(',');
 
-const sha = (buf) => createHash('sha256').update(buf).digest('hex');
-
-async function fetchUrl(url) {
-	const tmp = join(tmpdir(), `pl-${process.pid}-${Math.random().toString(36).slice(2)}`);
-	const host = new URL(url).hostname.replace(/^www\./, '');
-	const args = [
-		'-sL',
-		'--max-time',
-		'90',
-		'-A',
-		UA,
-		'-H',
-		'Accept: text/html,application/xhtml+xml,application/json,application/pdf,*/*;q=0.8',
-		'-H',
-		'Accept-Language: sr,en;q=0.8',
-		'-D',
-		'-',
-		'-o',
-		tmp,
-		'-w',
-		'\n@@%{http_code}|%{content_type}|%{url_effective}',
-	];
-	if (INSECURE_HOSTS.has(host)) args.push('-k');
-	args.push(url);
-	try {
-		const { stdout } = await run('curl', args, { maxBuffer: 50e6 });
-		const [headers, tail] = stdout.split('\n@@');
-		const [code, contentType, finalUrl] = tail.trim().split('|');
-		// при редиректах заголовков несколько блоков — нужен последний
-		const lastModified = [...headers.matchAll(/^last-modified:\s*(.+)$/gim)].pop()?.[1]?.trim() ?? null;
-		const body = existsSync(tmp) ? readFileSync(tmp) : Buffer.alloc(0);
-		return { status: Number(code), contentType, finalUrl, lastModified, body };
-	} catch (e) {
-		return { error: String(e.stderr || e.message).trim().slice(0, 200) || `curl exit ${e.code}` };
-	} finally {
-		if (existsSync(tmp)) rmSync(tmp);
-	}
-}
-
-function visibleText(html) {
-	return html
-		.replace(/<!--[\s\S]*?-->/g, ' ')
-		.replace(/<(script|style|svg|noscript|template)\b[\s\S]*?<\/\1>/gi, ' ')
-		.replace(/<br\s*\/?>|<\/(p|div|li|tr|td|th|h\d)>/gi, '\n')
-		.replace(/<[^>]+>/g, ' ')
-		.replace(/&nbsp;|&#160;/g, ' ')
-		.replace(/&euro;|&#8364;/g, '€')
-		.replace(/&amp;/g, '&')
-		.replace(/[ \t]+/g, ' ')
-		.replace(/\s*\n\s*/g, '\n')
-		.trim();
-}
-
 // Ценовые токены: «40 €», «€50», «40,00», «15.00», «40,oo», «3400 / eur», «1.400,00 €»
 const PRICE_RE =
 	/€\s?\d[\d.,]*|\d[\d.,]*\s?(?:€|eur\b|eura\b|evra\b)|\b\d{1,5}[.,](?:\d{2}|oo)\b|\b\d{1,5}\s*\/\s*eur\b/gi;
@@ -115,16 +55,6 @@ function priceTokens(text) {
 	return (text.match(PRICE_RE) || [])
 		.map((t) => t.toLowerCase().replace(/\s+/g, '').replace(/oo$/, '00'))
 		.sort();
-}
-
-function stableJson(value) {
-	if (Array.isArray(value)) return `[${value.map(stableJson).join(',')}]`;
-	if (value && typeof value === 'object')
-		return `{${Object.keys(value)
-			.sort()
-			.map((k) => `${JSON.stringify(k)}:${stableJson(value[k])}`)
-			.join(',')}}`;
-	return JSON.stringify(value);
 }
 
 function fingerprint(res, url) {

@@ -28,6 +28,7 @@ export type AnalyticsContactType =
 	| 'email'
 	| 'address'
 	| 'website'
+	| 'doctor_schedule'
 	| 'whatsapp'
 	| 'viber'
 	| 'telegram'

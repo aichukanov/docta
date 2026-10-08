@@ -123,6 +123,9 @@ const SPECIALTY_TO_SCHEMA_ORG_MEMBER: Partial<
 	[DoctorSpecialty.MAXILLOFACIAL_SURGERY]: 'Surgical',
 	[DoctorSpecialty.CARDIAC_SURGERY]: 'Cardiovascular',
 	[DoctorSpecialty.ORTHODONTIST]: 'Dentistry',
+	[DoctorSpecialty.PERIODONTOLOGY]: 'Dentistry',
+	[DoctorSpecialty.SPORTS_MEDICINE]: 'Musculoskeletal',
+	// DEFECTOLOGY — немедицинская специальность, подходящего MedicalSpecialty в schema.org нет
 };
 
 export function getDoctorSpecialtySchemaOrgUrlById(

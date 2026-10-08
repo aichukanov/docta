@@ -112,6 +112,10 @@ export default {
 				'Maxillofacial Surgery',
 			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Cardiac Surgery',
 			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Orthodontics',
+			[`specialty_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Periodontology',
+			[`specialty_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Sports Medicine',
+			[`specialty_${DoctorSpecialty.DEFECTOLOGY}`]:
+				'Special Education (Defectology)',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologist',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Cardiologists',
@@ -402,6 +406,19 @@ export default {
 
 			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Orthodontist',
 			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Orthodontists',
+
+			[`doctor_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Periodontist',
+			[`doctors_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Periodontists',
+
+			[`doctor_${DoctorSpecialty.SPORTS_MEDICINE}`]:
+				'Sports Medicine Physician',
+			[`doctors_${DoctorSpecialty.SPORTS_MEDICINE}`]:
+				'Sports Medicine Physicians',
+
+			[`doctor_${DoctorSpecialty.DEFECTOLOGY}`]:
+				'Special Educator (Defectologist)',
+			[`doctors_${DoctorSpecialty.DEFECTOLOGY}`]:
+				'Special Educators (Defectologists)',
 		},
 		'ru': {
 			Specialty: 'Специальность',
@@ -798,6 +815,18 @@ export default {
 			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Ортодонтия',
 			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Ортодонт',
 			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Ортодонты',
+
+			[`specialty_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Пародонтология',
+			[`doctor_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Пародонтолог',
+			[`doctors_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Пародонтологи',
+
+			[`specialty_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Спортивная медицина',
+			[`doctor_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Спортивный врач',
+			[`doctors_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Спортивные врачи',
+
+			[`specialty_${DoctorSpecialty.DEFECTOLOGY}`]: 'Дефектология',
+			[`doctor_${DoctorSpecialty.DEFECTOLOGY}`]: 'Дефектолог',
+			[`doctors_${DoctorSpecialty.DEFECTOLOGY}`]: 'Дефектологи',
 		},
 		'sr': {
 			Specialty: 'Specijalnost',
@@ -1182,6 +1211,19 @@ export default {
 			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodoncija',
 			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodont',
 			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodonti',
+
+			[`specialty_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Parodontologija',
+			[`doctor_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Parodontolog',
+			[`doctors_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Parodontolozi',
+
+			[`specialty_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Sportska medicina',
+			[`doctor_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Ljekar sportske medicine',
+			[`doctors_${DoctorSpecialty.SPORTS_MEDICINE}`]:
+				'Ljekari sportske medicine',
+
+			[`specialty_${DoctorSpecialty.DEFECTOLOGY}`]: 'Defektologija',
+			[`doctor_${DoctorSpecialty.DEFECTOLOGY}`]: 'Defektolog',
+			[`doctors_${DoctorSpecialty.DEFECTOLOGY}`]: 'Defektolozi',
 		},
 		'de': {
 			Specialty: 'Fachrichtung',
@@ -1291,6 +1333,9 @@ export default {
 				'Mund-Kiefer-Gesichtschirurgie',
 			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Herzchirurgie',
 			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Kieferorthopädie',
+			[`specialty_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Parodontologie',
+			[`specialty_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Sportmedizin',
+			[`specialty_${DoctorSpecialty.DEFECTOLOGY}`]: 'Heilpädagogik',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologe',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiologen',
@@ -1555,6 +1600,15 @@ export default {
 
 			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Kieferorthopäde',
 			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Kieferorthopäden',
+
+			[`doctor_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Parodontologe',
+			[`doctors_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Parodontologen',
+
+			[`doctor_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Sportmediziner',
+			[`doctors_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Sportmediziner',
+
+			[`doctor_${DoctorSpecialty.DEFECTOLOGY}`]: 'Heilpädagoge',
+			[`doctors_${DoctorSpecialty.DEFECTOLOGY}`]: 'Heilpädagogen',
 		},
 		'tr': {
 			Specialty: 'Uzmanlık',
@@ -1659,6 +1713,9 @@ export default {
 				'Çene ve Yüz Cerrahisi',
 			[`specialty_${DoctorSpecialty.CARDIAC_SURGERY}`]: 'Kalp Cerrahisi',
 			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodonti',
+			[`specialty_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Periodontoloji',
+			[`specialty_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Spor Hekimliği',
+			[`specialty_${DoctorSpecialty.DEFECTOLOGY}`]: 'Özel Eğitim',
 
 			[`doctor_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyolog',
 			[`doctors_${DoctorSpecialty.CARDIOLOGY}`]: 'Kardiyologlar',
@@ -1935,6 +1992,15 @@ export default {
 
 			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodontist',
 			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Ortodontistler',
+
+			[`doctor_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Periodontolog',
+			[`doctors_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Periodontologlar',
+
+			[`doctor_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Spor Hekimi',
+			[`doctors_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Spor Hekimleri',
+
+			[`doctor_${DoctorSpecialty.DEFECTOLOGY}`]: 'Özel Eğitim Uzmanı',
+			[`doctors_${DoctorSpecialty.DEFECTOLOGY}`]: 'Özel Eğitim Uzmanları',
 		},
 		'sr-cyrl': {
 			Specialty: 'Специјалност',
@@ -2318,6 +2384,19 @@ export default {
 			[`specialty_${DoctorSpecialty.ORTHODONTIST}`]: 'Ортодонција',
 			[`doctor_${DoctorSpecialty.ORTHODONTIST}`]: 'Ортодонт',
 			[`doctors_${DoctorSpecialty.ORTHODONTIST}`]: 'Ортодонти',
+
+			[`specialty_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Пародонтологија',
+			[`doctor_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Пародонтолог',
+			[`doctors_${DoctorSpecialty.PERIODONTOLOGY}`]: 'Пародонтолози',
+
+			[`specialty_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Спортска медицина',
+			[`doctor_${DoctorSpecialty.SPORTS_MEDICINE}`]: 'Љекар спортске медицине',
+			[`doctors_${DoctorSpecialty.SPORTS_MEDICINE}`]:
+				'Љекари спортске медицине',
+
+			[`specialty_${DoctorSpecialty.DEFECTOLOGY}`]: 'Дефектологија',
+			[`doctor_${DoctorSpecialty.DEFECTOLOGY}`]: 'Дефектолог',
+			[`doctors_${DoctorSpecialty.DEFECTOLOGY}`]: 'Дефектолози',
 		},
 	},
 };

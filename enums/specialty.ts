@@ -77,6 +77,9 @@ export enum DoctorSpecialty {
 	MAXILLOFACIAL_SURGERY = 91,
 	CARDIAC_SURGERY = 92,
 	ORTHODONTIST = 93,
+	PERIODONTOLOGY = 95,
+	SPORTS_MEDICINE = 96,
+	DEFECTOLOGY = 97,
 }
 
 // Pediatric specialties group

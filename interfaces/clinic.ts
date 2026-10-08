@@ -76,6 +76,9 @@ export interface ClinicData extends ContactList, Coordinates {
 	rating?: Rating;
 	reviews?: Review[];
 	workingHours?: Omit<WorkingHours, 'clinicId'>;
+	// График приёма врачей на сайте клиники — только details-эндпоинт.
+	// Сам график не храним, см. prd/doctor-schedules/.
+	doctorScheduleUrl?: string;
 	itemsSummary?: ClinicItemsSummary;
 	// Заполняются только на details-эндпоинте: непубличная клиника видна
 	// владельцу/админу, страница показывает owner-баннер.

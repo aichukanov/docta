@@ -233,6 +233,14 @@ const hasWorkingHours = computed(() => {
 	);
 });
 
+const doctorScheduleUrl = computed(() => clinicData.value?.doctorScheduleUrl);
+
+// Секция «Часы работы» нужна и клинике без часов, но со ссылкой на график
+// приёма врачей
+const hasHoursSection = computed(
+	() => hasWorkingHours.value || !!doctorScheduleUrl.value,
+);
+
 const isFound = computed(() => clinicData.value?.id != null);
 
 // Непубличная клиника (скрыта админом или черновик) — такие данные доезжают
@@ -366,7 +374,7 @@ const tabs = computed(() => {
 		result.push({ id: 'about', label: t('TabAbout') });
 	}
 	result.push({ id: 'contacts', label: t('TabContacts') });
-	if (hasWorkingHours.value) {
+	if (hasHoursSection.value) {
 		result.push({ id: 'hours', label: t('WorkingHours') });
 	}
 	if (totals.value.doctors > 0) {
@@ -829,14 +837,23 @@ watchEffect(() => {
 
 			<!-- Working Hours -->
 			<EntityPageSection
-				v-if="hasWorkingHours && workingHoursData"
+				v-if="hasHoursSection"
 				sectionId="hours"
 				:title="t('WorkingHours')"
 			>
 				<template #icon>
 					<IconClock :size="20" />
 				</template>
-				<ClinicWorkingHours :workingHours="workingHoursData" />
+				<div class="clinic-hours">
+					<ClinicWorkingHours
+						v-if="hasWorkingHours && workingHoursData"
+						:workingHours="workingHoursData"
+					/>
+					<ContactsDoctorScheduleLine
+						v-if="doctorScheduleUrl"
+						:scheduleUrl="doctorScheduleUrl"
+					/>
+				</div>
 			</EntityPageSection>
 
 			<!-- Doctors -->
@@ -1186,6 +1203,12 @@ watchEffect(() => {
 </i18n>
 
 <style lang="less" scoped>
+.clinic-hours {
+	display: flex;
+	flex-direction: column;
+	gap: var(--kit-spacing-md);
+}
+
 .coupon-title {
 	display: inline-flex;
 	align-items: center;

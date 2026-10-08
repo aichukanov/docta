@@ -69,7 +69,7 @@ export default defineEventHandler(async (event): Promise<boolean | null> => {
 			const updateClinicQuery = `
 				UPDATE clinics
 				SET slug = ?, name_sr = ?, name_sr_cyrl = ?, name_ru = ?, city_id = ?, address_sr = ?, address_sr_cyrl = ?, town_sr = ?, town_sr_cyrl = ?, postal_code = ?, latitude = ?, longitude = ?,
-				    phone = ?, email = ?, website = ?, facebook = ?, instagram = ?,
+				    phone = ?, email = ?, website = ?, doctor_schedule_url = ?, facebook = ?, instagram = ?,
 				    telegram = ?, whatsapp = ?, viber = ?,
 				    description_sr = ?, description_sr_cyrl = ?, description_en = ?, description_ru = ?, description_de = ?, description_tr = ?,
 				    logo_url = ?, hidden = ?, hidden_reason = ?
@@ -92,6 +92,7 @@ export default defineEventHandler(async (event): Promise<boolean | null> => {
 				body.phone || '',
 				body.email || '',
 				body.website || '',
+				body.doctorScheduleUrl?.trim() || null,
 				body.facebook || '',
 				body.instagram || '',
 				body.telegram || '',

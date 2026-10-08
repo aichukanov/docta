@@ -25,6 +25,7 @@ interface ClinicAdminData {
 	whatsapp: string;
 	viber: string;
 	website: string;
+	doctorScheduleUrl: string;
 	description_sr: string;
 	description_sr_cyrl: string;
 	description_en: string;
@@ -82,6 +83,7 @@ export default defineEventHandler(
 					c.whatsapp,
 					c.viber,
 					c.website,
+					c.doctor_schedule_url as doctorScheduleUrl,
 					c.description_sr,
 					c.description_sr_cyrl,
 					c.description_en,
@@ -134,6 +136,7 @@ export default defineEventHandler(
 				whatsapp: clinic.whatsapp || '',
 				viber: clinic.viber || '',
 				website: clinic.website || '',
+				doctorScheduleUrl: clinic.doctorScheduleUrl || '',
 				description_sr: clinic.description_sr || '',
 				description_sr_cyrl: clinic.description_sr_cyrl || '',
 				description_en: clinic.description_en || '',

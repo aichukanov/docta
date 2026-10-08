@@ -78,12 +78,8 @@ SQL лежит в `server/sql/update-doctors-2026-10-<группа>.sql`, реш
 
 ## Осталось
 
-- **Нет специальностей.** Новая специальность — это i18n на фронте.
-  - пародонтолог — Ana Bulatović пока стоматолог;
-  - спортивная медицина — 3 врача ДЗ Подгорица заведены как `general_medicine`, «spec. sportske medicine» записано в `position`;
-  - судебная медицина — Ivana Čurović Šoškić (КЦЦГ) не заведена;
-  - эмбриолог;
-  - дефектолог.
+- **Специальности (решение 2026-10-07):** добавлены пародонтология (95), спортивная медицина (96), дефектология (97) — код (`enums/specialty.ts`, `i18n/specialty.ts`, schema.org) + `migrations/052-specialties-periodontology-sports-defectology.sql` (3 + 5 + 2 врача, 9 + 4 + 13 услуг). Судебная медицина и эмбриолог — не заводятся: нет пациентского выбора (Ivana Čurović Šoškić, эмбриологи Humana/Moj Lab/Ars Medica — без записи).
+
 - **Не заведены до прояснения:**
   - Goran Batrićević / Šoković (КЦЦГ);
   - лаборатория Brezovik (Matić, Perović, Lučić);
@@ -94,5 +90,4 @@ SQL лежит в `server/sql/update-doctors-2026-10-<группа>.sql`, реш
   - Medical Vraneš — Antipina, Dejeva, Nesterova;
   - ОБ Котор — 22 врача, проверить нечем.
 - **Опечатка:** у `bozovic-bjanka` в `name_sr` «Božovic» без диакритики.
-- **Повторная сверка составов** — по той же карте. Журнала для врачей пока нет; его можно
-  сделать по аналогии с `scripts/clinics/check-pricelists.mjs`, через отпечатки `teamSources`.
+- **Повторная сверка составов** — журнал готов 2026-10-07: `scripts/clinics/check-doctor-teams.mjs`, отчёт `journal.md` (см. README). Открыто: регулярный запуск раз в месяц вместе с журналом прайсов.

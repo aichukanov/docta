@@ -28,6 +28,7 @@ interface ClinicAdminModel extends Omit<
 	languageIds: number[];
 	hidden: boolean;
 	hiddenReason: string;
+	doctorScheduleUrl: string;
 }
 
 interface BillingService {
@@ -286,6 +287,12 @@ const hiddenModified = computed(
 const hiddenReasonModified = computed(
 	() => originalHiddenReason.value !== clinicModel.value?.hiddenReason,
 );
+// Ссылки на график в /api/clinics/list тоже нет — исходное из details
+const originalDoctorScheduleUrl = ref('');
+const doctorScheduleUrlModified = computed(
+	() =>
+		originalDoctorScheduleUrl.value !== clinicModel.value?.doctorScheduleUrl,
+);
 
 const descriptionSrModified = computed(() => fieldModified('description_sr'));
 const descriptionEnModified = computed(() => fieldModified('description_en'));
@@ -355,7 +362,8 @@ const hasChanges = computed(() => {
 		clinicTypeIdsModified.value ||
 		languageIdsModified.value ||
 		hiddenModified.value ||
-		hiddenReasonModified.value
+		hiddenReasonModified.value ||
+		doctorScheduleUrlModified.value
 	);
 });
 
@@ -404,6 +412,7 @@ const saveChanges = async () => {
 			phone: clinicModel.value.phone,
 			email: clinicModel.value.email,
 			website: clinicModel.value.website,
+			doctorScheduleUrl: clinicModel.value.doctorScheduleUrl,
 			facebook: clinicModel.value.facebook,
 			instagram: clinicModel.value.instagram,
 			telegram: clinicModel.value.telegram,
@@ -425,6 +434,7 @@ const saveChanges = async () => {
 
 	originalHidden.value = clinicModel.value.hidden;
 	originalHiddenReason.value = clinicModel.value.hiddenReason;
+	originalDoctorScheduleUrl.value = clinicModel.value.doctorScheduleUrl;
 
 	emit('updated');
 };
@@ -486,9 +496,11 @@ watch(selectedClinic, async (clinic) => {
 				languageIds: adminData.languageIds,
 				hidden: adminData.hidden,
 				hiddenReason: adminData.hiddenReason || '',
+				doctorScheduleUrl: adminData.doctorScheduleUrl || '',
 			};
 			originalHidden.value = adminData.hidden;
 			originalHiddenReason.value = adminData.hiddenReason || '';
+			originalDoctorScheduleUrl.value = adminData.doctorScheduleUrl || '';
 			cityIds.value = [adminData.cityId];
 		} else {
 			// Fallback на данные из списка, если админский API недоступен
@@ -515,9 +527,11 @@ watch(selectedClinic, async (clinic) => {
 				languageIds: clinic.languageIds.split(',').map(Number),
 				hidden: false,
 				hiddenReason: '',
+				doctorScheduleUrl: '',
 			};
 			originalHidden.value = false;
 			originalHiddenReason.value = '';
+			originalDoctorScheduleUrl.value = '';
 			cityIds.value = [clinic.cityId];
 		}
 	}
@@ -685,6 +699,13 @@ onMounted(async () => {
 				:readonly="!editable"
 				:modified="websiteModified"
 				@reset="clinicModel.website = selectedClinic?.website || ''"
+			/>
+			<AdminEditableField
+				label="График приёма врачей на сайте клиники"
+				v-model:value="clinicModel.doctorScheduleUrl"
+				:readonly="!editable"
+				:modified="doctorScheduleUrlModified"
+				@reset="clinicModel.doctorScheduleUrl = originalDoctorScheduleUrl"
 			/>
 			<AdminEditableField
 				label="Facebook"

@@ -39,7 +39,7 @@ export const OG_IMAGE_HEIGHT = 630;
 
 // Контактные данные проекта
 export const PROJECT_CONTACTS = {
-	email: 'contact@svad.net',
+	email: 'contact@docta.me',
 	telegram: 'https://t.me/svad_net',
 };
 

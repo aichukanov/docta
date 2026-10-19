@@ -410,7 +410,7 @@ useSeoMeta({
 		"QuestionsTitle": "Questions?",
 		"QuestionsText": "If you have questions about privacy or your data, contact us:",
 		"DataControllerTitle": "Data controller",
-		"DataControllerText": "The data controller for docta.me is an Individual Entrepreneur registered in the Republic of Armenia (state registration number: {registrationNumber}). For any data-related inquiries, contact us at contact{'@'}svad.net."
+		"DataControllerText": "The data controller for docta.me is an Individual Entrepreneur registered in the Republic of Armenia (state registration number: {registrationNumber}). For any data-related inquiries, contact us at contact{'@'}docta.me."
 	},
 	"ru": {
 		"PrivacyPageTitle": "Политика конфиденциальности",
@@ -474,7 +474,7 @@ useSeoMeta({
 		"QuestionsTitle": "Вопросы?",
 		"QuestionsText": "Если есть вопросы о конфиденциальности или ваших данных, свяжитесь с нами:",
 		"DataControllerTitle": "Оператор данных",
-		"DataControllerText": "Оператором персональных данных на docta.me является индивидуальный предприниматель, зарегистрированный в Республике Армения (ОГРН: {registrationNumber}). По вопросам обработки данных: contact{'@'}svad.net."
+		"DataControllerText": "Оператором персональных данных на docta.me является индивидуальный предприниматель, зарегистрированный в Республике Армения (ОГРН: {registrationNumber}). По вопросам обработки данных: contact{'@'}docta.me."
 	},
 	"sr": {
 		"PrivacyPageTitle": "Politika privatnosti",
@@ -538,7 +538,7 @@ useSeoMeta({
 		"QuestionsTitle": "Pitanja?",
 		"QuestionsText": "Ako imate pitanja o privatnosti ili vašim podacima, kontaktirajte nas:",
 		"DataControllerTitle": "Kontrolor podataka",
-		"DataControllerText": "Kontrolor podataka za docta.me je individualni preduzetnik registrovan u Republici Jermeniji (registracioni broj: {registrationNumber}). Za pitanja u vezi sa podacima: contact{'@'}svad.net."
+		"DataControllerText": "Kontrolor podataka za docta.me je individualni preduzetnik registrovan u Republici Jermeniji (registracioni broj: {registrationNumber}). Za pitanja u vezi sa podacima: contact{'@'}docta.me."
 	},
 	"sr-cyrl": {
 		"PrivacyPageTitle": "Политика приватности",
@@ -602,7 +602,7 @@ useSeoMeta({
 		"QuestionsTitle": "Питања?",
 		"QuestionsText": "Ако имате питања о приватности или вашим подацима, контактирајте нас:",
 		"DataControllerTitle": "Контролор података",
-		"DataControllerText": "Контролор података за docta.me је индивидуални предузетник регистрован у Републици Јерменији (регистрациони број: {registrationNumber}). За питања у вези са подацима: contact{'@'}svad.net."
+		"DataControllerText": "Контролор података за docta.me је индивидуални предузетник регистрован у Републици Јерменији (регистрациони број: {registrationNumber}). За питања у вези са подацима: contact{'@'}docta.me."
 	},
 	"de": {
 		"PrivacyPageTitle": "Datenschutzerklärung",
@@ -666,7 +666,7 @@ useSeoMeta({
 		"QuestionsTitle": "Fragen?",
 		"QuestionsText": "Wenn Sie Fragen zum Datenschutz oder Ihren Daten haben, kontaktieren Sie uns:",
 		"DataControllerTitle": "Datenverantwortlicher",
-		"DataControllerText": "Der Datenverantwortliche für docta.me ist ein Einzelunternehmer, registriert in der Republik Armenien (Registrierungsnummer: {registrationNumber}). Bei Fragen zu Ihren Daten: contact{'@'}svad.net."
+		"DataControllerText": "Der Datenverantwortliche für docta.me ist ein Einzelunternehmer, registriert in der Republik Armenien (Registrierungsnummer: {registrationNumber}). Bei Fragen zu Ihren Daten: contact{'@'}docta.me."
 	},
 	"tr": {
 		"PrivacyPageTitle": "Gizlilik Politikası",
@@ -730,7 +730,7 @@ useSeoMeta({
 		"QuestionsTitle": "Sorular?",
 		"QuestionsText": "Gizlilik veya verileriniz hakkında sorularınız varsa, bizimle iletişime geçin:",
 		"DataControllerTitle": "Veri sorumlusu",
-		"DataControllerText": "docta.me için veri sorumlusu, Ermenistan Cumhuriyeti'nde kayıtlı bireysel girişimcidir (kayıt numarası: {registrationNumber}). Veri ile ilgili sorularınız için: contact{'@'}svad.net."
+		"DataControllerText": "docta.me için veri sorumlusu, Ermenistan Cumhuriyeti'nde kayıtlı bireysel girişimcidir (kayıt numarası: {registrationNumber}). Veri ile ilgili sorularınız için: contact{'@'}docta.me."
 	}
 }
 </i18n>

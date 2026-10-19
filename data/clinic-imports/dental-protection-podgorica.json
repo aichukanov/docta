@@ -1,0 +1,384 @@
+{
+	"schemaVersion": 1,
+	"slug": "dental-protection-podgorica",
+	"name": "Stomatološka poliklinika Dental Protection",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJR1VVqhTrTRMR8AW3tk2L5Lo",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dental-protection-podgorica.sql",
+		"server/sql/insert-clinic-dental-protection-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 191,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент Q. Сухой прогон на локальной БД (без записи) — 0 ошибок, см. итоговый отчёт агента. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 218
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://dentalprotection.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress + WPML (me/en). Прочитаны через WP REST (/wp-json/wp/v2/pages/{id}) и сырой HTML: /our-clinic/about/ (2017-12-04), /departments/ «Sektori» (2017-12-04), /contact/ (2017-12-26), /our-clinic/team/ (2017-11-23), /portfolio-item/dr-{novak,zana,milovan,marko,petar}-popovic/. ⚠️ Сайт не обновлялся с 2017–2019 (главная — 2019-02-21): состав и био — по состоянию на 2017 год. /services/ — недоделанный шаблон темы (Lorem ipsum, «Nabrojati podvrste…»), в меню не выведен — не использован. Цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/dental-protection.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Place «Dental Protection», «105/3, 4. Jul, Podgorica», +382 20 622 703, 31 отзыв (rating 4.7) — не импортировались (pending). Отзыв называет «др Жану Поповић» — совпадает с составом."
+		}
+	],
+	"coverage": {
+		"address": "4. jula 105/3 (сайт: «Ulica 4. Jul 105/3», «Lamela Zetagradnje 105/3») = Google; координаты — место Google",
+		"phone": "+38220622703 — сайт = Google",
+		"email": "info@dentalprotection.me — сайт",
+		"website": "https://dentalprotection.me/",
+		"social": "facebook.com/stomatologijapg, @dentalprotection.me — шапка сайта",
+		"logo": "https://dentalprotection.me/wp-content/uploads/2017/11/lo22go.fw_-1.png",
+		"workingHours": "пн–пт 09–20, сб 09–13 (футер); вс не названо — записано выходным",
+		"doctors": "5 «Dr» на /our-clinic/team/: 4 новых + Petar Popović (id 1012) уже в БД — привязка",
+		"doctorPhotos": "у всех 5 — /wp-content/uploads/2017/11/*.jpg (у Петра в БД своё фото, не трогаем)",
+		"doctorBios": "у 4 новых — из /portfolio-item/; личное (семья, хобби) не переносилось",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Specialist Dental Examination",
+			"slug": "specialist-dental-examination",
+			"source": "/ (главная): «Brzo i lako zakažite redovan ili specijalistički pregled»"
+		},
+		{
+			"nameEn": "Follow-up Dental Examination",
+			"slug": "follow-up-dental-examination",
+			"source": "/: «Redovni preventivni pregledi — Filozofija naše Poliklinike bazirana je na konceptu redovnih posjeta»; Restaurativna: «Dobra higijena i redovne kontrole»"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "/departments/ Oralna hirurgija: «rutinska … vadjenja zuba»"
+		},
+		{
+			"nameEn": "Complex Tooth Extraction",
+			"slug": "tooth-extraction-complex",
+			"source": "«… i komplikovana vadjenja zuba»"
+		},
+		{
+			"nameEn": "Surgical Extraction of Residual Root",
+			"slug": "surgical-extraction-of-residual-root",
+			"source": "«uklanjanje zaostalih korijenova zuba»"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "«operacije vrha korijena zuba»"
+		},
+		{
+			"nameEn": "Oral Fibroma and Bone Exostosis Removal",
+			"slug": "oral-fibroma-and-bone-exostosis-removal",
+			"source": "«uklanjanje koštanih izraslina»"
+		},
+		{
+			"nameEn": "Cystectomy",
+			"slug": "cystectomy",
+			"source": "«operacije cista, kao i drugih promjena na viličnim kostima»"
+		},
+		{
+			"nameEn": "Implantologist Consultation",
+			"slug": "implantologist-consultation",
+			"source": "«Preduslov ugradnje dentalnih implatata je specijalistički pregled koji obavljamo na našoj Poliklinici»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "«ugradnji posebnih korijenskih nadoknada (IMPLANTATA) izradjenih od titanijuma» — бренд не назван"
+		},
+		{
+			"nameEn": "Orthodontic Consultation",
+			"slug": "orthodontic-consultation",
+			"source": "Ortopedija vilica: «svoje dijete dovedu kod ortodonta na pregled … u uzrastu 7-9 godina»"
+		},
+		{
+			"nameEn": "Comprehensive Orthodontic Diagnostics",
+			"slug": "comprehensive-orthodontic-diagnostics",
+			"source": "«Ortodonska dijagnoza zahtijeva detaljnu analizu pacijenta, sa izradom plana terapije»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "«MOBILNI ORTODONSKI APARATI … sastoje se od akrilatne ploče, žičanih elemenata i raznih vrsta šrafova»"
+		},
+		{
+			"nameEn": "Fixed Braces (Metal) per Jaw",
+			"slug": "fixed-braces-metal-per-jaw",
+			"source": "«vršimo terapiju kako klasičnim fiksnim protezama (metalnim)»"
+		},
+		{
+			"nameEn": "Fixed Braces (Ceramic or Composite) per Jaw",
+			"slug": "fixed-braces-ceramic-or-composite-per-jaw",
+			"source": "«… tako i estetskim fiksnim protezama»"
+		},
+		{
+			"nameEn": "Pediatric Dentist Consultation",
+			"slug": "pediatric-dentist-consultation",
+			"source": "Dječija i preventivna: «Već sa nicanjem mliječnih zuba kod djeteta treba ga dovesti … gdje će uz pregled roditelji dobiti savijete»"
+		},
+		{
+			"nameEn": "Pediatric Dental Adaptation",
+			"slug": "pediatric-dental-adaptation",
+			"source": "«… da se upozna sa ambijentom i osobljem ordinacije»"
+		},
+		{
+			"nameEn": "Pediatric Caries Treatment",
+			"slug": "pediatric-caries-treatment",
+			"source": "«vrši se bezbolno zbrinjavanje svih oboljenja usta i zuba kod djece»"
+		},
+		{
+			"nameEn": "Dental and Soft Tissue Trauma Treatment",
+			"slug": "dental-and-soft-tissue-trauma-treatment",
+			"source": "«… i zbrinjavanje fraktura zuba» (отделение детской стоматологии)"
+		},
+		{
+			"nameEn": "Plaque and Calculus Removal",
+			"slug": "plaque-and-calculus-removal",
+			"source": "Parodontologija: «uklanjanje mekih i tvrdih naslaga … nakon čega se radi poliranje svih zubnih površina»"
+		},
+		{
+			"nameEn": "Periodontal Scaling and Root Planing",
+			"slug": "periodontal-scaling-root-planing",
+			"source": "«kao i uklanjanje inficiranog tkiva sa površine zuba»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery",
+			"slug": "flap-surgery-periodontal",
+			"source": "«U odredjenim slučajevima je potrebno primjeniti hiruršku terapiju. Hirurškim tretmanom smanjuje se dubina parodontalnog dzepa»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery with Bone Graft per Tooth",
+			"slug": "periodontal-flap-surgery-with-bone-graft-per-tooth",
+			"source": "«postavljaju se koštani zamjenici»"
+		},
+		{
+			"nameEn": "Guided Tissue Regeneration",
+			"slug": "guided-tissue-regeneration",
+			"source": "«kao i materijali koji omogućavaju brzu i bolju regeneraciju kako kosti tako i mekog tkiva»"
+		},
+		{
+			"nameEn": "Aphthous Ulcer Treatment",
+			"slug": "aphthous-ulcer-treatment",
+			"source": "Oralna medicina: «Alergijske reakcije u ustima, afte i razna virusna i gljivična oboljenja»"
+		},
+		{
+			"nameEn": "Treatment of Oral Manifestations of Systemic Diseases",
+			"slug": "treatment-of-oral-manifestations-of-systemic-diseases",
+			"source": "«Promjene u ustima kao posledica raznih kožnih i krvnih bolesti kao i endokrinih i vitaminskih poremećaja»"
+		},
+		{
+			"nameEn": "Dental Caries Treatment",
+			"slug": "dental-caries-treatment",
+			"source": "Restaurativna: «Restauracija zuba zubnim plombama ili ispunima … šupljine u zubu, nastale djelovanjem karijesa» — материал не назван"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "Endodoncija: «odstraniti pulpno tkivo (ručnim i mašinskim instrumentima), zatim … kanale … ispuniti»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "«naročito kod višekorijenih zuba … i po četiri i više kanala»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "Estetska: «da se izbjele prebojeni zubi» — способ не назван"
+		},
+		{
+			"nameEn": "Aesthetic Tooth Restoration",
+			"slug": "aesthetic-tooth-restoration",
+			"source": "«da se plombe koje ruže izgled zamijene novim visoko estetskim ispunima»"
+		},
+		{
+			"nameEn": "Gingivoplasty",
+			"slug": "gingivoplasty",
+			"source": "«kao i da se meko tkivo (desni) preoblikuje»"
+		},
+		{
+			"nameEn": "Complete Denture",
+			"slug": "complete-denture",
+			"source": "Protetika: «riješavanja problema parcijalne i totalne bezubosti»; «Protetske nadoknade se dijele na fiksne, mobilne i kombinovane»"
+		},
+		{
+			"nameEn": "Partial Denture",
+			"slug": "partial-denture",
+			"source": "«… parcijalne … bezubosti»"
+		},
+		{
+			"nameEn": "Partial Denture with Precision Attachment",
+			"slug": "partial-denture-with-precision-attachment",
+			"source": "«… i kombinovane»"
+		},
+		{
+			"nameEn": "3D Dental X-Ray CBCT",
+			"slug": "3d-dental-x-ray-cbct",
+			"source": "Radiologija: «digitalnim aparatima najnovije generacije za snimanje zuba uključujući snimanja u tri dimenzije (3D)»"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "«… za snimanje zuba»; /our-clinic/about/: «rentgen kabinet sa modernim digitalnim aparatima za sve vrste snimanja zuba i vilica»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "/our-clinic/about/: «… za sve vrste snimanja zuba i vilica»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "novak-popovic",
+			"nameSr": "Novak Popović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista dječije i preventivne stomatologije; osnivač i vlasnik",
+			"specialtyIds": [
+				78,
+				87
+			],
+			"languageIds": [
+				1,
+				6
+			],
+			"existing": false,
+			"hasBio": true,
+			"services": [
+				"pediatric-dentist-consultation",
+				"pediatric-dental-adaptation",
+				"pediatric-caries-treatment",
+				"dental-and-soft-tissue-trauma-treatment"
+			],
+			"languagesSource": "SR + DE: «Govori Njemački jezik.» (/portfolio-item/dr-novak-popovic/)"
+		},
+		{
+			"slug": "zana-popovic",
+			"nameSr": "Žana Popović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista parodontologije i oralne medicine",
+			"specialtyIds": [
+				78,
+				95
+			],
+			"languageIds": [
+				1,
+				3
+			],
+			"existing": false,
+			"hasBio": true,
+			"services": [],
+			"languagesSource": "SR + EN: «Govori engleski jezik.»"
+		},
+		{
+			"slug": "marko-popovic",
+			"nameSr": "Marko Popović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista oralne hirurgije",
+			"specialtyIds": [
+				78,
+				74
+			],
+			"languageIds": [
+				1,
+				3
+			],
+			"existing": false,
+			"hasBio": true,
+			"services": [],
+			"languagesSource": "SR + EN: «Govori engleski jezik.»"
+		},
+		{
+			"slug": "petar-popovic",
+			"nameSr": "Petar Popović",
+			"professionalTitle": null,
+			"position": "Specijalista ortopedije vilica",
+			"specialtyIds": [
+				93
+			],
+			"languageIds": [
+				3
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"existingId": 1012,
+			"note": "Уже в БД: id 1012, ортодонт (93), клиника kulusic-dental-clinic-niksic (#99). Био в БД дословно совпадает с /portfolio-item/dr-petar-popovic/ (год диплома 2010, специализация 2016) — тот же человек. Только привязка, поля врача не трогаем.",
+			"languagesSource": "EN: «Govori engleski jezik.» — добавляется INSERT IGNORE к уже имеющемуся SR"
+		},
+		{
+			"slug": "milovan-popovic",
+			"nameSr": "Milovan Popović",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije, specijalista farmacije; izvršni direktor",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1,
+				3
+			],
+			"existing": false,
+			"hasBio": true,
+			"services": [],
+			"languagesSource": "SR + EN: «Govori engleski jezik.»"
+		}
+	],
+	"excluded": [
+		{
+			"source": "/services/: «Our Services – An overview with pricing», «Keramičke fasete / Izbjeljivanje zuba / Bezmetalna keramika / Implantati u estetskoj zoni / Produženje kliničkih kruna / Kompozitni ispuni — Nabrojati podvrste, ili kratka opisna rečenica…»",
+			"reason": "Недоделанный шаблон темы (Lorem ipsum, плейсхолдеры), страница не выведена в меню сайта. Не заявление клиники."
+		},
+		{
+			"source": "Protetika: «fiksne … protetske nadoknade»; «implantologiju koja nam omogućava sve veći procenat fiksnih protetskih nadoknada»",
+			"reason": "Материал коронок/мостов не назван, generic-записи «коронка» в каталоге нет (только по материалу). Не угадываем."
+		},
+		{
+			"source": "Dječija i preventivna: «Dječija protetika je takodje zastupljena u našem radu»",
+			"reason": "Не названо, что именно (space maintainer, детский протез и т.п.) — нет конкретной позиции."
+		},
+		{
+			"source": "«Preporučujemo budućim mamama da već za vrijeme trudnoće posjete našu Polikliniku gdje će dobiti savijet»",
+			"reason": "Рекомендация, а не отдельная услуга; покрывается обычным осмотром."
+		},
+		{
+			"source": "Estetska: «da se nadoknadi nepostojeći zub, da se smanji ili potpuno zatvori prostor izmedju zuba … da se koriguje loš oblik i raspored zuba»",
+			"reason": "Перечень задач эстетической стоматологии без способа — конкретной процедуры нет."
+		},
+		{
+			"source": "Dr Milovan Popović — «Specijalista farmacije»",
+			"reason": "Специальности «фармация» в enums/specialty.ts нет; заведён как DENTISTRY (78) по диплому и «svakodnevnom radu sa pacijentima», фармация — в position и био."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Сайт устарел (2017–2019)",
+			"detail": "Состав и био — по состоянию на 2017. В отзыве Google фигурирует «Драгна Дедић» (не врач, судя по контексту — персонал). Если клиника обновит состав — пересверить."
+		},
+		{
+			"topic": "Milovan Popović — заводить ли как стоматолога",
+			"detail": "Сайт-чек его исключил как фармацевта; по био он doktor stomatologije, ведёт пациентов и директор клиники, но «još uvijek je stalno zaposlen u kompaniji KRKA». Заведён (78). Если юзер считает, что не практикует — убрать блок из SQL."
+		}
+	]
+}

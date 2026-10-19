@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "dental-implant-sweden-martina",
+    "name_en": "Dental Implant Sweden & Martina",
+    "name_sr": "Ugradnja implantata Sweden & Martina",
+    "table": "medical_services",
+    "clinic": "micunovic-medical-podgorica",
+    "alsoUsedBy": [],
+    "categories": [20],
+    "specialties": [74, 78],
+    "reason": "Mićunović /stomatoloske-usluge/ «Vrhunski implantološki sistemi: Nobel Biocare / Sweden & Martina / Camlog i JDental Care». Бренд назван, в каталоге его нет. Схема и переводы — как у dental-implant-nobel-biocare (20 / 74, 78)."
+  },
+  {
+    "slug": "dental-implant-camlog",
+    "name_en": "Dental Implant Camlog",
+    "name_sr": "Ugradnja implantata Camlog",
+    "table": "medical_services",
+    "clinic": "micunovic-medical-podgorica",
+    "alsoUsedBy": [],
+    "categories": [20],
+    "specialties": [74, 78],
+    "reason": "Mićunović «Camlog i JDental Care». См. dental-implant-sweden-martina."
+  },
+  {
+    "slug": "dental-implant-jdental-care",
+    "name_en": "Dental Implant JDental Care",
+    "name_sr": "Ugradnja implantata JDental Care",
+    "table": "medical_services",
+    "clinic": "micunovic-medical-podgorica",
+    "alsoUsedBy": [],
+    "categories": [20],
+    "specialties": [74, 78],
+    "reason": "Mićunović «Camlog i JDental Care». Написание бренда — как на сайте; официальное «JDentalCare» — синоним. См. dental-implant-sweden-martina."
+  },
+  {
+    "slug": "ceramic-dental-bridge",
+    "name_en": "Ceramic Dental Bridge",
+    "name_sr": "Keramički most",
+    "table": "medical_services",
+    "clinic": "micunovic-medical-podgorica",
+    "alsoUsedBy": [],
+    "categories": [20],
+    "specialties": [78],
+    "reason": "Mićunović «postavljanje keramičkih krunica i mostova». Керамическая коронка есть (all-ceramic-crown), моста как изделия в каталоге нет — только Maryland, временный мост 4 члена, опора (dental-bridge-abutment) и металлокерамический промежуточный элемент (metal-ceramic-bridge-pontic). Если координатор предпочтёт не заводить generic-мост — снять из канонического списка клиники."
+  },
+  {
+    "slug": "medical-certificate-for-petrol-station-workers",
+    "name_en": "Medical Certificate for Petrol Station Workers",
+    "name_sr": "Ljekarsko uvjerenje za radnike na pumpi",
+    "table": "medical_services",
+    "clinic": "moj-doktor-niksic",
+    "alsoUsedBy": [],
+    "categories": [9],
+    "specialties": [45],
+    "reason": "Moj Doktor /ljekarska-uvjerenja/ «LJEKARSKO UVJERENJE ZA RADNIKE NA PUMPI». Отдельного вида справки в каталоге нет; по условиям труда (hemijske materije, povećan rizik) — другие справки. Категория/специальность — как у остальных medical-certificate-* (9 / 45)."
+  },
+  {
+    "slug": "nurse-home-visit",
+    "name_en": "Nurse Home Visit",
+    "name_sr": "Kućna posjeta medicinske sestre",
+    "table": "medical_services",
+    "clinic": "moj-doktor-niksic",
+    "alsoUsedBy": [],
+    "categories": [30],
+    "specialties": [],
+    "reason": "Moj Doktor /kucne-posjete-doktora/ «Dolazak patronažne sestre». В каталоге визит патронажной сестры только как тарифы ДЗ с расстоянием (patronage-nurse-treatment-visit-up-to-5-km и т.п., без категории) и «ljekar + tehničar» (home-visit-doctor-and-nurse). Категория 30 = HOME_VISITS, специальности для неё нет."
+  },
+  {
+    "slug": "wound-dressing-home-visit",
+    "name_en": "Wound Dressing Home Visit",
+    "name_sr": "Previjanje rane u kućnoj posjeti",
+    "table": "medical_services",
+    "clinic": "moj-doktor-niksic",
+    "alsoUsedBy": [],
+    "categories": [30, 31],
+    "specialties": [],
+    "reason": "Moj Doktor /kucne-posjete-doktora/ «Previjanje rana». Перевязки в каталоге только амбулаторные; домашние варианты инъекции/инфузии/катетера заведены волной 2a (*-home-visit, Feniks Medika) — эта запись по той же схеме. Категории 30 HOME_VISITS + 31 WOUND_CARE."
+  }
+]

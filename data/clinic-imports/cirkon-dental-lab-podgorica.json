@@ -1,0 +1,482 @@
+{
+	"schemaVersion": 1,
+	"slug": "cirkon-dental-lab-podgorica",
+	"name": "Cirkon Dental Lab",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": null,
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-cirkon-dental-lab-podgorica.sql",
+		"server/sql/insert-clinic-cirkon-dental-lab-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 171,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: services-файл резолвит клинику по slug (google_place_id нет). Сгенерировано агентом E подволны 2a (прайс без врачей); новые записи каталога — также в data/clinic-imports/_wave2a-new-catalog-E.json. clinicId заполнить после применения из VERIFICATION. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 198
+	},
+	"pricelist": {
+		"url": "https://www.cirkondentallab.com/cjenovnik",
+		"date": null,
+		"dateSource": "Даты на странице нет; HTTP Last-Modified нет (Vercel, X-Nextjs-Prerender); sitemap lastmod 2026-10-07T15:17:41Z одинаков у всех URL — это дата сборки, не правки прайса. Снят 2026-10-08.",
+		"rows": 25,
+		"rowsWithPrice": 25,
+		"rowsIncludedNoPrice": 0,
+		"rowsMapped": 24,
+		"rowsDisputed": 1,
+		"note": "В заметках проверки сайта (site-checks.json) было «27 позиций, estetska 6» — пересчитано по HTML и по RSC-payload Next.js: 25 (dijagnostika 3, estetska 5, protetika 8, terapija 8, ortodoncija 1). Строка «Nano kompozitne fasete i plombe» дала две записи каталога. Страница есть в sitemap, в меню сайта её нет."
+	},
+	"priceContradictions": [
+		{
+			"topic": "Осмотр платный или бесплатный",
+			"detail": "Над прайсом: «Cijene su informativne. Za preciznu ponudu potreban je pregled — pregled i konsultacije su besplatni.»; плашка «Besplatne konsultacije» на всех страницах; /en/dental-tourism: «Consultation & treatment plan — Free». В том же прайсе: «Stomatološki pregled 10 €». Взята цена из прайса (10 €) — по указанию координатора."
+		},
+		{
+			"topic": "Ортопан 25 € vs €20",
+			"detail": "/cjenovnik: «Ortopan snimak 25 €»; /en/dental-tourism (таблица сравнения с Западной Европой): «Digital OPG X-ray — €20». Взят прайс."
+		},
+		{
+			"topic": "Циркониевая коронка 180 € vs from €200",
+			"detail": "/cjenovnik: «Cirkon krunica klasik 180 €»; /en/dental-tourism: «Zirconia crown (per tooth) — from €200». Взят прайс."
+		}
+	],
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.cirkondentallab.com/cjenovnik",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Next.js, SSR-HTML + RSC-payload, curl. 25 строк «название — N €» в 5 блоках. Даты нет. Блок «Najtraženije: Hollywood Smile paket — Zatraži ponudu» без цены."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.cirkondentallab.com/ (главная, JSON-LD @type Dentist)",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "JSON-LD: telephone +38267604664, streetAddress «Ilije Plamenca, East Side Ljubović, Zabjelo», openingHours Mo–Fr 09:00–17:00, Sa 09:00–13:00, logo /ikona%20cirkon.png (200 image/png), sameAs Instagram / Facebook / TikTok. Поля geo нет. На главной «30 godina — Sa vama i vašim osmijehom» против «20 god. — Tradicije od 2005.» на /o-nama: в описание не вынесено ни то, ни другое, только дата 10.11.2005."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.cirkondentallab.com/o-nama",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "«Poslujemo od 10.11.2005. godine», ординация + своя лаборатория, 3D skener, 2D ortopan, Smile Design, изготовление 24–48h, «Pisana garancija na sve protetske radove i materijale». «Elvir Šuntić — Direktor, Cirkon Dental Lab» — специальность не указана, врачом не заводился (подволна 2a)."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.cirkondentallab.com/kontakt + футер всех страниц",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "«Ilije Plamenca (East side Ljubović), Zabjelo, Podgorica / Zgrada „Ist Sajd“ BB», +382 67 604 664, «Pon–Pet 09:00–17:00 • Sub 09:00–13:00» (футер так же). Email нет — только форма. Карта — iframe maps.google.com/maps?q=Ilije Plamenca, Zabjelo, Podgorica (по тексту, без координат)."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.cirkondentallab.com/usluge + /usluge/hollywood-smile, /usluge/zubne-krunice, /usluge/zubne-fasete, /usluge/izbjeljivanje-zuba, /usluge/akrilatne-proteze",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "12 карточек услуг на /usluge (Hollywood Smile, bezmetalne krunice, akrilatne proteze, zubne fasete, izbjeljivanje, digitalni 2D ortopan, pregled i konsultacije, 3D skeniranje vilice, liječenje kanala, bijele plombe, oralna hirurgija, profesionalno čišćenje). Подстраницы: CEREC/CAD/CAM коронки, оттенки Bleach 1–4, керамические vs композитные фасеты, отбеливание в кабинете / отдельных зубов / дома. Цен нет."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.cirkondentallab.com/dentalni-turizam, /en/dental-tourism, /en, /en/services",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Организация пребывания (жильё, трансфер из аэропортов Podgorica/Tivat, гид, 24/7). EN: индикативная таблица цен (OPG €20, zirconia crown from €200, consultation free) — противоречит /cjenovnik, не использовалась. Оплата: наличные, карты, перевод, рассрочка. О языке приёма ничего."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.cirkondentallab.com/nasi-radovi",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Галерея пустая («Galerija se priprema»)."
+		},
+		{
+			"type": "google-places",
+			"ref": null,
+			"collected": "2026-10-08",
+			"machineReadable": false,
+			"note": "Места в выгрузке data/google-places нет (поиск по названию, телефону и домену). Places API не запрашивался — по указанию координатора."
+		}
+	],
+	"coverage": {
+		"address": "Ilije Plamenca bb, zgrada „Ist Sajd“ (East Side Ljubović), Zabjelo — /kontakt («Zgrada „Ist Sajd“ BB»). Кириллица «Илије Пламенца бб, зграда „Ист Сајд“ (East Side Ljubović), Забјело». Почтовый индекс на сайте не указан — пусто",
+		"coordinates": "НЕТ (NULL): сайт не даёт координат (iframe карты по текстовому адресу, в JSON-LD нет geo), места Google нет. Не геокодировали",
+		"phone": "+38267604664 — сайт (футер, /kontakt, JSON-LD)",
+		"email": "на сайте нет (форма обратной связи)",
+		"website": "https://www.cirkondentallab.com/",
+		"social": "Instagram @cirkondentallab, facebook.com/p/Cirkon-Dental-Lab-100091784692022/ (из JSON-LD sameAs и футера); WhatsApp +38267604664 (ссылки wa.me на сайте); TikTok @cirkondentallab — колонки нет; Viber не заявлен",
+		"logo": "https://www.cirkondentallab.com/ikona%20cirkon.png (JSON-LD logo; 200 image/png). Белый логотип шапки /beli logo.png не брали — рассчитан на тёмный фон",
+		"workingHours": "пн–пт 09:00–17:00, сб 09:00–13:00 (футер, /kontakt, JSON-LD совпадают); воскресенье не упомянуто нигде → closed",
+		"languages": "только SR: английская версия сайта и dental tourism есть, но приём на английском прямо не заявлен",
+		"doctors": "на сайте нет списка",
+		"doctorServices": "не заполнялась — врачей нет",
+		"services": "28 записей каталога: 25 с ценой, 3 без цены; новых в каталоге 6. 24 из 25 строк прайса (одна строка → две записи) + 3 позиции со страниц /usluge/* без цены",
+		"labTests": "лаборатории анализов нет (лаборатория зуботехническая) — анализов не заводили",
+		"reviews": "pending: места Google в выгрузке нет — отзывы появятся только если место найдётся при полной выгрузке"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "nano-composite-filling",
+			"nameEn": "Nano-Composite Filling",
+			"nameSr": "Nano kompozitna plomba",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "«Nano kompozitne fasete i plombe 70 €» при отдельной «Kompozitne plombe 35 €». Материал назван, Composite Filling занят ценой 35 €. По образцу Microhybrid Composite Filling."
+		},
+		{
+			"table": "medical_services",
+			"slug": "zirconia-crown-emax-4d",
+			"nameEn": "Zirconia Crown EMAX 4D",
+			"nameSr": "Cirkonijum krunica EMAX 4D",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "«Cirkonijum premium krunica EMAX 4D 300 €». Бренд/линейка названы; CAD/CAM E-max Layered Crown — облицованная, без «cirkonijum» и «4D»."
+		},
+		{
+			"table": "medical_services",
+			"slug": "hollywood-smile-zirconia-crown",
+			"nameEn": "Hollywood Smile Zirconia Crown",
+			"nameSr": "Cirkon krunica Hollywood Smile",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "«Hollywood Smile cirkon krunica 250 €» рядом с «Cirkon krunica klasik 180 €». Отличие сайт не называет — bleach/multilayer не приписываем."
+		},
+		{
+			"table": "medical_services",
+			"slug": "metal-ceramic-crown-with-3d-printed-framework",
+			"nameEn": "Metal-Ceramic Crown with 3D-Printed Framework",
+			"nameSr": "Metalokeramička krunica na printanom metalu",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "«Krunica print metal keramika 150 €». Технология каркаса названа; в каталоге металлокерамика только generic или по сплаву."
+		},
+		{
+			"table": "medical_services",
+			"slug": "pulpitis-treatment-single-root",
+			"nameEn": "Pulpitis Treatment, Single-Root Tooth",
+			"nameSr": "Liječenje pulpitisa jednokorijenog zuba",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "«Liječenje pulpita (1 korijen) 35 €». Однокорневой пульпит в каталоге только с методикой (NiTi / mašinski); generic-пара к gangrene-treatment-single-root."
+		},
+		{
+			"table": "medical_services",
+			"slug": "clear-aligner-per-tray",
+			"nameEn": "Clear Aligner per Tray",
+			"nameSr": "Ortodontska folija (po foliji)",
+			"categories": [
+				34
+			],
+			"specialties": [
+				93
+			],
+			"reason": "«Ortodontska folija (1 folija) 100 €» — цена за каппу, бренда нет. Clear Aligner Therapy — курс целиком."
+		}
+	],
+	"services": [
+		{
+			"slug": "dental-consultation",
+			"nameEn": "Dental Consultation",
+			"source": "Dijagnostika: Stomatološki pregled — 10 €",
+			"price": 10,
+			"priceMax": null,
+			"note": "Над прайсом «pregled i konsultacije su besplatni» — взята цена из прайса, см. priceContradictions"
+		},
+		{
+			"slug": "panoramic-x-ray",
+			"nameEn": "Panoramic X-Ray",
+			"source": "Dijagnostika: Ortopan snimak — 25 €",
+			"price": 25,
+			"priceMax": null,
+			"note": "/en/dental-tourism: «Digital OPG X-ray €20» — взят прайс"
+		},
+		{
+			"slug": "intraoral-x-ray",
+			"nameEn": "Intraoral X-Ray",
+			"source": "Dijagnostika: Intraoralni snimak — 10 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "direct-composite-veneer",
+			"nameEn": "Direct Composite Veneer",
+			"source": "Estetska stomatologija: Nano kompozitne fasete i plombe — 70 €",
+			"price": 70,
+			"priceMax": null,
+			"note": "Фасетная часть строки. Композитные фасеты на /usluge/zubne-fasete — «često jedna posjeta» (прямые). Синоним «Nano kompozitne fasete»"
+		},
+		{
+			"slug": "nano-composite-filling",
+			"nameEn": "Nano-Composite Filling",
+			"source": "Estetska stomatologija: Nano kompozitne fasete i plombe — 70 €",
+			"price": 70,
+			"priceMax": null,
+			"note": "Пломбовая часть строки; новая запись каталога"
+		},
+		{
+			"slug": "zirconia-crown-emax-4d",
+			"nameEn": "Zirconia Crown EMAX 4D",
+			"source": "Estetska stomatologija: Cirkonijum premium krunica EMAX 4D — 300 €",
+			"price": 300,
+			"priceMax": null,
+			"note": "Новая запись каталога"
+		},
+		{
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"source": "Estetska stomatologija: Cirkon krunica klasik — 180 €",
+			"price": 180,
+			"priceMax": null,
+			"note": "/en/dental-tourism: «Zirconia crown from €200» — взят прайс"
+		},
+		{
+			"slug": "home-teeth-whitening-per-arch",
+			"nameEn": "Home Teeth Whitening per Arch",
+			"source": "Estetska stomatologija: Izbjeljivanje zuba folijom – 1 vilica — 150 €",
+			"price": 150,
+			"priceMax": null,
+			"note": "/usluge/izbjeljivanje-zuba: «Izbjeljivanje kod kuće — … silikonske splintove (folije) u koje se stavlja gel … 5–7 dana kod kuće»"
+		},
+		{
+			"slug": "hollywood-smile-zirconia-crown",
+			"nameEn": "Hollywood Smile Zirconia Crown",
+			"source": "Estetska stomatologija: Hollywood Smile cirkon krunica — 250 €",
+			"price": 250,
+			"priceMax": null,
+			"note": "Новая запись каталога"
+		},
+		{
+			"slug": "complete-acrylic-denture",
+			"nameEn": "Complete Acrylic Denture",
+			"source": "Protetika: Totalna akrilatna proteza — 300 €",
+			"price": 300,
+			"priceMax": null
+		},
+		{
+			"slug": "partial-acrylic-denture",
+			"nameEn": "Partial Acrylic Denture",
+			"source": "Protetika: Parcijalna akrilatna proteza — 200 €",
+			"price": 200,
+			"priceMax": null
+		},
+		{
+			"slug": "skeletal-partial-denture",
+			"nameEn": "Skeletal Partial Denture",
+			"source": "Protetika: Skeletarna – Vizil proteza — 400 €",
+			"price": 400,
+			"priceMax": null,
+			"note": "Синоним «Vizil proteza»"
+		},
+		{
+			"slug": "precision-attachment-for-denture",
+			"nameEn": "Precision Attachment for Denture",
+			"source": "Protetika: Atečmeni — 100 €",
+			"price": 100,
+			"priceMax": null
+		},
+		{
+			"slug": "metal-ceramic-crown-with-3d-printed-framework",
+			"nameEn": "Metal-Ceramic Crown with 3D-Printed Framework",
+			"source": "Protetika: Krunica print metal keramika — 150 €",
+			"price": 150,
+			"priceMax": null,
+			"note": "Новая запись каталога"
+		},
+		{
+			"slug": "flexible-denture",
+			"nameEn": "Flexible Denture",
+			"source": "Protetika: Flex ili providna proteza — 500 €",
+			"price": 500,
+			"priceMax": null,
+			"note": "Синонимы «Providna proteza», «Flex proteza»"
+		},
+		{
+			"slug": "crown-removal",
+			"nameEn": "Crown Removal",
+			"source": "Protetika: Skidanje stare krunice — 10 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "temporary-crown",
+			"nameEn": "Temporary Crown",
+			"source": "Protetika: Privremene krunice — 20 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-first-aid",
+			"nameEn": "Dental First Aid",
+			"source": "Terapija: Ukazivanje prve pomoći — 20 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "plaque-and-calculus-removal",
+			"nameEn": "Plaque and Calculus Removal",
+			"source": "Terapija: Ultrazvučno uklanjanje kamenca i mekih naslaga — 35 €",
+			"price": 35,
+			"priceMax": null,
+			"note": "Синоним «Ultrazvučno uklanjanje kamenca»"
+		},
+		{
+			"slug": "tooth-extraction",
+			"nameEn": "Tooth Extraction",
+			"source": "Terapija: Rutinsko vađenje zuba — 25 €",
+			"price": 25,
+			"priceMax": null,
+			"note": "Пара с «Komplikovano vađenje» → как у Prima Dent (tooth-extraction / tooth-extraction-complex). Синоним «Rutinsko vađenje zuba»"
+		},
+		{
+			"slug": "tooth-extraction-complex",
+			"nameEn": "Complex Tooth Extraction",
+			"source": "Terapija: Komplikovano vađenje zuba — 50 €",
+			"price": 50,
+			"priceMax": null
+		},
+		{
+			"slug": "composite-filling",
+			"nameEn": "Composite Filling",
+			"source": "Terapija: Kompozitne plombe — 35 €",
+			"price": 35,
+			"priceMax": null
+		},
+		{
+			"slug": "pulpitis-treatment-single-root",
+			"nameEn": "Pulpitis Treatment, Single-Root Tooth",
+			"source": "Terapija: Liječenje pulpita (1 korijen) — 35 €",
+			"price": 35,
+			"priceMax": null,
+			"note": "Новая запись каталога. «(1 korijen)» может значить и «за корень»; для однокорневого зуба цена верна в обоих прочтениях"
+		},
+		{
+			"slug": "gangrene-treatment-single-root",
+			"nameEn": "Gangrene Treatment, Single-Root Tooth",
+			"source": "Terapija: Liječenje gangrene (1 korijen) — 35 €",
+			"price": 35,
+			"priceMax": null,
+			"note": "См. пульпит: «(1 korijen)» — однокорневой зуб или за корень"
+		},
+		{
+			"slug": "clear-aligner-per-tray",
+			"nameEn": "Clear Aligner per Tray",
+			"source": "Ortodontcija: Ortodontska folija (1 folija) — 100 €",
+			"price": 100,
+			"priceMax": null,
+			"note": "Новая запись каталога"
+		},
+		{
+			"slug": "ceramic-veneer",
+			"nameEn": "Ceramic Veneer",
+			"source": "/usluge/zubne-fasete: «Keramičke fasete oblikuju skladniji osmijeh…», шаг «Izrada keramičkih faseta»",
+			"price": null,
+			"priceMax": null,
+			"note": "В прайсе керамических фасет нет (только нано-композитные)"
+		},
+		{
+			"slug": "in-office-teeth-whitening-single-arch",
+			"nameEn": "In-Office Teeth Whitening Single Arch",
+			"source": "/usluge/izbjeljivanje-zuba: «Izbjeljivanje u ordinaciji — Profesionalni tretman pod nadzorom stomatologa — tri puta po 15 minuta»",
+			"price": null,
+			"priceMax": null,
+			"note": "Единственная запись кабинетного отбеливания в каталоге; единицу «одна челюсть» сайт не называет, но цены нет — на выдачу не влияет. Альтернатива — generic teeth-whitening (теряет способ)"
+		},
+		{
+			"slug": "digital-smile-design",
+			"nameEn": "Digital Smile Design",
+			"source": "/cjenovnik «Najtraženije: Hollywood Smile paket … Digitalni Smile Design»; /usluge/zubne-fasete «Digital Smile Design povezuje fotografije, sken i proporcije lica»; /o-nama «Smile Design u realnom vremenu»",
+			"price": null,
+			"priceMax": null
+		}
+	],
+	"doctors": [],
+	"disputed": [
+		{
+			"source": "Terapija: Nadogradnje Helio — 50 €",
+			"reason": "Что такое «Helio» — сайт не поясняет (вероятно, композит Ivoclar Heliomolar/Helio-линейки, но это догадка). Кандидаты: tooth-build-up «Nadogradnja zuba» (generic — теряет названное), composite-core-build-up «Kompozitna nadogradnja» (материал не заявлен), новая брендовая запись (бренд не установлен). Не заведена."
+		},
+		{
+			"source": "/usluge: «Digitalni otisak — 3D skeniranje vilice: Digitalnim skeniranjem bilježimo oblik zuba i vilice, bez klasičnih otisnih masa»",
+			"reason": "Записи «цифровой оттиск / интраоральное сканирование» в каталоге нет (3d-dental-scan «3D snimanje» — рентген). Цены нет. Не заведена."
+		},
+		{
+			"source": "/usluge/izbjeljivanje-zuba: «Izbjeljivanje pojedinačnih zuba — Neki zubi mogu biti tamniji zbog starijih ili neadekvatnih tretmana»",
+			"reason": "Кандидат internal-bleaching-of-devitalized-tooth («Izbjeljivanje devitalizovanog zuba»), но девитальность сайт прямо не называет. Цены нет. Не заведена."
+		}
+	],
+	"excluded": [
+		{
+			"source": "/cjenovnik «Najtraženije: Hollywood Smile paket — Potpuna rekonstrukcija osmijeha uz digitalni dizajn … Zatraži ponudu»; /usluge/hollywood-smile",
+			"reason": "Пакет без цены — комбинация коронок/фасет «zavisno od slučaja». Покрыт строкой «Hollywood Smile cirkon krunica» и digital-smile-design; отдельной записи-пакета не заводили."
+		},
+		{
+			"source": "Плашка «Besplatne konsultacije» на всех страницах; «pregled i konsultacije su besplatni» над прайсом",
+			"reason": "Противоречит строке прайса «Stomatološki pregled 10 €» — взята строка прайса; в описание клиники «бесплатно» не вынесено."
+		},
+		{
+			"source": "/usluge: «Liječenje kanala korijena», «Bijele plombe», «Oralna hirurgija — Vađenje zuba i manje hirurške zahvate», «Profesionalno čišćenje — Uklanjanjem kamenca i poliranjem zuba», «Bezmetalne krunice», «Akrilatne proteze», «Digitalni 2D ortopan», «Pregled i konsultacije»",
+			"reason": "Покрыты строками прайса (пульпит/гангрена, kompozitne plombe, vađenje, uklanjanje kamenca, cirkon krunice, akrilatne proteze, ortopan, pregled). «Manji hirurški zahvati» без конкретики не заводили."
+		},
+		{
+			"source": "/usluge/zubne-krunice: «CEREC tehnologija … pojedinačna krunica može biti izrađena za oko 30 minuta»",
+			"reason": "Технология изготовления без отдельной позиции и цены; упомянута в описании клиники как CAD/CAM."
+		},
+		{
+			"source": "/en/dental-tourism: «Consultation & treatment plan — Free», «Digital OPG X-ray — €20», «Zirconia crown (per tooth) — from €200»",
+			"reason": "Индикативная таблица для иностранцев, противоречит /cjenovnik — взят прайс (см. priceContradictions)."
+		},
+		{
+			"source": "/o-nama: «Elvir Šuntić — Direktor, Cirkon Dental Lab»; отзыв Google на сайте: «Dr Alen Šuntić»",
+			"reason": "Подволна 2a: врачей не заводим (на сайте нет списка врачей, у директора специальность не указана)."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Осмотр 10 € или бесплатно",
+			"detail": "Взяли «Stomatološki pregled 10 €» из прайса при «pregled i konsultacije su besplatni» на той же странице. Если считать осмотр бесплатным — поставить 0.00 (как dentart-tivat у dental-consultation)."
+		},
+		{
+			"topic": "is_price_outdated",
+			"detail": "Даты прайса нет вовсе. Флаг не ставили — решение юзера."
+		},
+		{
+			"topic": "Язык приёма",
+			"detail": "Есть английская версия сайта и страница dental tourism для иностранцев («Questions international patients ask us»), но приём на английском прямо не заявлен → только SR. Если считать EN-сайт заявлением — добавить язык EN."
+		}
+	],
+	"coordinates": {
+		"latitude": 42.429896,
+		"longitude": 19.250732,
+		"source": "ссылка Google Maps от юзера 2026-10-08: https://maps.app.goo.gl/1UJdXnVQ31ipunTEA → maps/search/42.429896,+19.250732"
+	}
+}

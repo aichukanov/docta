@@ -1,0 +1,2480 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-feniks-medika-podgorica",
+	"name": "Poliklinika Feniks Medika",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJGyTHrE7rTRMRgB1yl3q_vK8",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-feniks-medika-podgorica.sql",
+		"server/sql/insert-clinic-poliklinika-feniks-medika-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 170,
+		"doctorIds": {},
+		"note": "Подволна 2a (прайс без врачей), агент D. Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug. clinicId заполнить после применения из блока VERIFICATION. Прайс от 2022 года — is_price_outdated НЕ ставился (решение юзера 2026-10-08). Отзывы не импортировались (в файле места Google 5 из 24 — лимит API). Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 197
+	},
+	"sources": [
+		{
+			"type": "pricelist-docx",
+			"ref": "https://feniks-medika.me/wp-content/uploads/2023/03/CJENOVNIK-USLUGA-PZU-POLIKLINIKE-2022-2023.docx",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Дата прайса — подпись в конце документа «Podgorica, 04.11.2022.godine. PZU FENIKS MEDIKA»; docProps created 2023-01-17, modified 2023-03-10 (lastPrinted 2023-03-10); имя файла «2022-2023». Прочитан как zip → word/document.xml: все строки — абзацы (таблиц нет), «НАЗВАНИЕ……… 40,00 eur» с точками-заполнителями. ~300 строк: 17 разделов специалистов, ЭХО, РТГ, лаборатория (~130 анализов), ПАВ, систематские, кућне посјете, транспорт, уверения. Опечатки источника сохранены в source (KRVINH, EVAUKACIJOMI, SPECIJLISTE, KONTRONI, «Da DNA-M»)."
+		},
+		{
+			"type": "website",
+			"ref": "https://feniks-medika.me/wp-json/wp/v2/pages",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "9 страниц, все modified 2023-03-06…10: dobrodosli (главная), zakazivanje-pregleda (ссылка на DOCX, часы), ginekologija, medicina-rada, pedijatrija-u-podgorici, laboratorijska-dijagnostika-u-podgorici, radioloski-kabinet-u-podgorici, fizijatrija, mamograf. Плюс 1 запись блога (дубль текстов главной). Email — в шапке HTML главной. Имён врачей нет нигде."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/klinika-podgorica-feniks-medika.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4432743 / 19.2654579 (единственный источник), телефон +382 20 511 888. Адрес Google «50-60 Bulevar Ivana Crnojevića» — диапазон домов, записан адрес сайта 58/3. displayName «Klinika Podgorica | Feniks Medika» — SEO-имя. rating 3, userRatingCount 24, в файле 5 отзывов."
+		}
+	],
+	"coverage": {
+		"address": "Bulevar Ivana Crnojevića 58/3 — с сайта; Google даёт диапазон «50-60», согласовано",
+		"phone": "+38220511888;+38269120015;+38269120016;+38267373414 — все четыре с главной, первый подтверждён Google",
+		"email": "feniksmedika@t-com.me (шапка сайта)",
+		"website": "https://feniks-medika.me/",
+		"social": "на сайте нет",
+		"logo": "custom-logo темы WordPress, горизонтальный 300×113 png",
+		"workingHours": "пн–пт 07:30–20:00, сб 07:30–14:00 (главная и /zakazivanje-pregleda/); воскресенье не названо — записано closed",
+		"doctors": "на сайте нет списка — имён врачей нет ни на одной из 9 страниц, ни в DOCX (только специальности). Врачи не заводились",
+		"doctorPhotos": "—",
+		"prices": "услуги: 143 из 144 с ценой; анализы: 153 из 154 с ценой. Прайс от 04.11.2022 (подпись DOCX), is_price_outdated НЕ ставился (решение юзера)",
+		"labTests": "154 записей clinic_lab_tests: раздел «HEMATOLOŠKE ANALIZE» (фактически вся биохимия/электролиты/коагуляция), онкомаркеры, гормоны, иммунология, панели ПАВ, гинекологические и ЛОР-мазки, PH-находки. Новых анализов в каталог не добавлялось",
+		"reviews": "pending — ждут выгрузки (в файле места Google 5 из 24)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "trigger-point-injection",
+			"nameEn": "Trigger Point Injection",
+			"nameSr": "Infiltracija anestetika u mišić u terapiji bola",
+			"categories": [
+				19,
+				29
+			],
+			"specialties": []
+		},
+		{
+			"table": "medical_services",
+			"slug": "bursa-or-cyst-puncture-with-drug-infiltration",
+			"nameEn": "Bursa or Cyst Puncture with Drug Infiltration",
+			"nameSr": "Punkcija burze ili ciste sa evakuacijom i infiltracijom lijeka",
+			"categories": [
+				15,
+				29
+			],
+			"specialties": []
+		},
+		{
+			"table": "medical_services",
+			"slug": "blood-pressure-and-bmi-measurement",
+			"nameEn": "Blood Pressure and BMI Measurement",
+			"nameSr": "Mjerenje BMI i arterijskog pritiska",
+			"categories": [
+				9
+			],
+			"specialties": [
+				45
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "expert-gynecological-ultrasound",
+			"nameEn": "Expert Gynecological Ultrasound",
+			"nameSr": "Ekspertski ginekološki ultrazvuk",
+			"categories": [
+				4,
+				7
+			],
+			"specialties": [
+				5
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "tonsil-lavage",
+			"nameEn": "Tonsil Lavage",
+			"nameSr": "Ispiranje krajnika",
+			"categories": [
+				11
+			],
+			"specialties": [
+				11
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "sinus-lavage",
+			"nameEn": "Sinus Lavage",
+			"nameSr": "Ispiranje sinusa",
+			"categories": [
+				11
+			],
+			"specialties": [
+				11
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pulmonologist-examination-with-chest-x-ray",
+			"nameEn": "Pulmonologist Examination with Chest X-Ray",
+			"nameSr": "Pregled pulmologa sa RTG snimkom pluća",
+			"categories": [
+				12,
+				3
+			],
+			"specialties": [
+				14
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pulmonologist-examination-with-chest-x-ray-and-spirometry",
+			"nameEn": "Pulmonologist Examination with Chest X-Ray and Spirometry",
+			"nameSr": "Pregled pulmologa sa RTG snimkom pluća i spirometrijom",
+			"categories": [
+				12,
+				3
+			],
+			"specialties": [
+				14
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pulmonologist-examination-with-spirometry",
+			"nameEn": "Pulmonologist Examination with Spirometry",
+			"nameSr": "Pregled pulmologa sa spirometrijom",
+			"categories": [
+				12
+			],
+			"specialties": [
+				14
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pulmonologist-examination-with-x-ray-reading",
+			"nameEn": "Pulmonologist Examination with X-Ray Reading",
+			"nameSr": "Pregled pulmologa sa očitavanjem snimka",
+			"categories": [
+				12
+			],
+			"specialties": [
+				14
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "expert-breast-ultrasound",
+			"nameEn": "Expert Breast Ultrasound",
+			"nameSr": "Ekspertski ultrazvuk dojki",
+			"categories": [
+				4,
+				7
+			],
+			"specialties": [
+				5
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "systematic-examination-for-women-type-a",
+			"nameEn": "Systematic Examination for Women Type A",
+			"nameSr": "Sistematski pregled za žene tip A",
+			"categories": [
+				9,
+				7
+			],
+			"specialties": [
+				45,
+				5
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "systematic-examination-for-women-type-b",
+			"nameEn": "Systematic Examination for Women Type B",
+			"nameSr": "Sistematski pregled za žene tip B",
+			"categories": [
+				9,
+				7
+			],
+			"specialties": [
+				45,
+				5
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "systematic-examination-for-men",
+			"nameEn": "Systematic Examination for Men",
+			"nameSr": "Sistematski pregled za muškarce",
+			"categories": [
+				9
+			],
+			"specialties": [
+				45
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "intramuscular-injection-home-visit",
+			"nameEn": "Intramuscular Injection Home Visit",
+			"nameSr": "Intramuskularna injekcija u kućnoj posjeti",
+			"categories": [
+				29,
+				30
+			],
+			"specialties": []
+		},
+		{
+			"table": "medical_services",
+			"slug": "infusion-therapy-home-visit",
+			"nameEn": "Infusion Therapy Home Visit",
+			"nameSr": "Infuzija u kućnoj posjeti",
+			"categories": [
+				29,
+				30
+			],
+			"specialties": []
+		},
+		{
+			"table": "medical_services",
+			"slug": "urinary-catheter-placement-home-visit",
+			"nameEn": "Urinary Catheter Placement Home Visit",
+			"nameSr": "Postavljanje ili zamjena urinarnog katetera u kućnoj posjeti",
+			"categories": [
+				22,
+				30
+			],
+			"specialties": [
+				9
+			]
+		}
+	],
+	"catalogFixes": [
+		{
+			"table": "medical_services",
+			"slug": "medical-transport-per-km",
+			"change": "INSERT IGNORE категории 13 (MEDICAL_TRANSPORT) — у записи категории не было"
+		},
+		{
+			"table": "lab_tests",
+			"slug": "gad-antibodies",
+			"change": "INSERT IGNORE категории 14 (AUTOIMMUNE_ANTIBODIES)"
+		},
+		{
+			"table": "lab_tests",
+			"slug": "chlamydia-genital-swab",
+			"change": "INSERT IGNORE категории 10 (INFECTIOUS_DISEASES)"
+		},
+		{
+			"table": "lab_tests",
+			"slug": "mycoplasma-ureaplasma-genital-swab",
+			"change": "INSERT IGNORE категории 10 (INFECTIOUS_DISEASES)"
+		},
+		{
+			"table": "lab_tests",
+			"slug": "ear-swab-bacteria",
+			"change": "INSERT IGNORE категории 21 (MICROBIOLOGY)"
+		},
+		{
+			"table": "lab_tests",
+			"slug": "eye-swab-bacteria",
+			"change": "INSERT IGNORE категории 21 (MICROBIOLOGY)"
+		}
+	],
+	"services": [
+		{
+			"slug": "internist-examination-with-ecg",
+			"nameEn": "Internist Examination with ECG",
+			"source": "OPŠTI INTERNISTIČKI PREGLED SA URAĐENIM EKG-om 40,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "40"
+		},
+		{
+			"slug": "internist-examination",
+			"nameEn": "Internist Examination",
+			"source": "OPŠTI INTERNISTIČKI PREGLED BEZ EKG-a 35,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "35"
+		},
+		{
+			"slug": "general-practitioner-examination",
+			"nameEn": "General Practitioner Examination",
+			"source": "PREGLED DOKTORA OPŠTE PRAKSE 35,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "35"
+		},
+		{
+			"slug": "ecg",
+			"nameEn": "ECG",
+			"source": "EKG (bez komletnog ljekarskog pregleda) 15,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "15"
+		},
+		{
+			"slug": "spirometry",
+			"nameEn": "Spirometry",
+			"source": "SPIROMETRIJA 20,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "20"
+		},
+		{
+			"slug": "follow-up-internist-examination",
+			"nameEn": "Follow-up Internist Examination",
+			"source": "KONTROLNI PREGLED INTERNISTE 25,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "25"
+		},
+		{
+			"slug": "follow-up-general-practitioner-examination",
+			"nameEn": "Follow-up General Practitioner Examination",
+			"source": "KONTROLNI PREGLED DOKTORA OPŠTE PRAKSE 20,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "20"
+		},
+		{
+			"slug": "intramuscular-injection",
+			"nameEn": "Intramuscular Injection",
+			"source": "PARENTERALNA TERAPIJA, intramuskularno 5,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "5"
+		},
+		{
+			"slug": "intravenous-medication-application",
+			"nameEn": "Intravenous Medication Application",
+			"source": "PARENTERALNA TERAPIJA … intravenozno 8,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "8"
+		},
+		{
+			"slug": "small-wound-dressing",
+			"nameEn": "Small Wound Dressing",
+			"source": "PREVIJANJE MALO 10,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "10"
+		},
+		{
+			"slug": "ambulatory-medium-dressing",
+			"nameEn": "Medium Outpatient Dressing",
+			"source": "PREVIJANJE SREDNJE 15,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "15"
+		},
+		{
+			"slug": "large-wound-dressing",
+			"nameEn": "Large Wound Dressing",
+			"source": "PREVIJANJE VELIKO 20,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "20"
+		},
+		{
+			"slug": "trigger-point-injection",
+			"nameEn": "Trigger Point Injection",
+			"source": "INFILTRACIJA ANESTETIKA U MIŠIĆ U TERAPIJI BOLA SA LIJEKOM I ANESTETIKOM 25,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "25",
+			"new": true
+		},
+		{
+			"slug": "bursa-or-cyst-puncture-with-drug-infiltration",
+			"nameEn": "Bursa or Cyst Puncture with Drug Infiltration",
+			"source": "PUNKCIJA BURSI I CISTA SA EVAUKACIJOMI INFILTRACIJOM MEDIKAMENATA 25,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "25",
+			"new": true
+		},
+		{
+			"slug": "blood-pressure-and-bmi-measurement",
+			"nameEn": "Blood Pressure and BMI Measurement",
+			"source": "MJERENJE BMI I ARTERIJSKOG PRITISKA 2,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "2",
+			"new": true
+		},
+		{
+			"slug": "urinary-catheter-placement",
+			"nameEn": "Urinary Catheter Placement",
+			"source": "POSTAVLJANJE URINARNOG KATETERA 25,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "25"
+		},
+		{
+			"slug": "indwelling-urinary-catheter-replacement",
+			"nameEn": "Indwelling Urinary Catheter Replacement",
+			"source": "ZAMJENA URINARNOG KATETERA 30,00 eur",
+			"section": "opšta i interna medicina",
+			"price": "30"
+		},
+		{
+			"slug": "surgical-examination",
+			"nameEn": "Surgical Examination",
+			"source": "HIRURŠKI PREGLED 50,00 eur; повтор в блоке хирурга: PREGLED HIRURGA 50,00 eur",
+			"section": "hirurgija",
+			"price": "50"
+		},
+		{
+			"slug": "follow-up-surgical-examination",
+			"nameEn": "Follow-up Surgical Examination",
+			"source": "KONTROLNI HIRURŠKI PREGLED 30,00 eur; повтор: KONTROLA HIRURGA 30,00 eur",
+			"section": "hirurgija",
+			"price": "30"
+		},
+		{
+			"slug": "suture-removal",
+			"nameEn": "Suture Removal",
+			"source": "SKIDANJE KONACA POSLE HIRURŠKOG ZAHVATA 20,00 eur",
+			"section": "hirurgija",
+			"price": "20"
+		},
+		{
+			"slug": "ingrown-toenail-surgery",
+			"nameEn": "Ingrown Toenail Surgery",
+			"source": "INTERVENCIJA URASLI NOKAT 160,00 eur",
+			"section": "hirurgija",
+			"price": "160"
+		},
+		{
+			"slug": "lipoma-removal",
+			"nameEn": "Lipoma Removal",
+			"source": "INTERVENCIJA UKLANJANJE MASNOG TKIVA 130,00 eur",
+			"section": "hirurgija",
+			"price": "130"
+		},
+		{
+			"slug": "foot-callus-surgical-removal",
+			"nameEn": "Foot Callus Surgical Removal",
+			"source": "INTERVENCIJA “KURJE OKO” 115,00 eur",
+			"section": "hirurgija",
+			"price": "115"
+		},
+		{
+			"slug": "gynecological-specialist-examination",
+			"nameEn": "Gynecological Specialist Examination",
+			"source": "PREGLED SPECIJALISTE GINEKOLOGA 25,00 eur",
+			"section": "ginekologija",
+			"price": "25"
+		},
+		{
+			"slug": "gynecological-ultrasound",
+			"nameEn": "Gynecological Ultrasound",
+			"source": "ULTRAZVUČNI PREGLED MALE KARLICE 30,00 eur; ULTRAZVUČNI PREGLED VAGINALNOM SONDOM 30,00 eur",
+			"section": "ginekologija",
+			"price": "30"
+		},
+		{
+			"slug": "expert-gynecological-ultrasound",
+			"nameEn": "Expert Gynecological Ultrasound",
+			"source": "EXPERTSKI ULTRAZVUK-GINEKOLOŠKI 50,00 eur",
+			"section": "ginekologija",
+			"price": "50",
+			"new": true
+		},
+		{
+			"slug": "4d-pregnancy-ultrasound",
+			"nameEn": "4D Pregnancy Ultrasound",
+			"source": "4D ULTRAZVUK 60,00 eur",
+			"section": "ginekologija",
+			"price": "60"
+		},
+		{
+			"slug": "colposcopy",
+			"nameEn": "Colposcopy",
+			"source": "KOLPOSKOPIJA 40,00 eur",
+			"section": "ginekologija",
+			"price": "40"
+		},
+		{
+			"slug": "ctg-fetal-monitoring",
+			"nameEn": "CTG Fetal Monitoring",
+			"source": "CTG 15,00 eur",
+			"section": "ginekologija",
+			"price": "15"
+		},
+		{
+			"slug": "diagnostic-hysteroscopy",
+			"nameEn": "Diagnostic Hysteroscopy",
+			"source": "HISTEROSKOPIJA (dijagnostika) 250,00 eur",
+			"section": "ginekologija",
+			"price": "250"
+		},
+		{
+			"slug": "surgical-hysteroscopy",
+			"nameEn": "Surgical Hysteroscopy",
+			"source": "HISTEROSKOPIJA (operativna) 800,00 eur",
+			"section": "ginekologija",
+			"price": "800"
+		},
+		{
+			"slug": "first-trimester-surgical-abortion-curettage",
+			"nameEn": "First-Trimester Surgical Abortion (Curettage)",
+			"source": "KIRETAŽA U LOKALNOJ ANESTEZIJI 120,00 eur; KIRETAŽA U OPŠTOJ ANESTEZIJI (do 8 nedelje trudnoće) 200,00 eur; (preko 8 nedelja trudnoće) 240,00 eur",
+			"section": "ginekologija",
+			"price": "120-240"
+		},
+		{
+			"slug": "exploratory-curettage",
+			"nameEn": "Exploratory Curettage",
+			"source": "EKSPLORATIVNA KIRETAŽA U LOKALNOJ ANESTEZIJI 120,00. eur; … U OPŠTOJ ANESTEZIJI 180,00 eur (+ ph nalaz 50,00 eur)",
+			"section": "ginekologija",
+			"price": "120-180"
+		},
+		{
+			"slug": "condyloma-radio-wave-removal",
+			"nameEn": "Condyloma Radio Wave Removal",
+			"source": "UKLANJANJE KONDILOMA RADIO HIR. NOŽEM (zavisno od broja) 30-100 eur",
+			"section": "ginekologija",
+			"price": "30-100"
+		},
+		{
+			"slug": "cervical-conization",
+			"nameEn": "Cervical Conization",
+			"source": "KONIZACIJA GRLIĆA MATERICE U LOKALNOJ 200,00 eur; … U OPŠTOJ ANESTEZIJI 260,00 eur (+ ph nalaz 50,00 eur)",
+			"section": "ginekologija",
+			"price": "200-260"
+		},
+		{
+			"slug": "leep-excision",
+			"nameEn": "LEEP Excision",
+			"source": "LOOP EKSCIZIJA GRLIĆA MATERICE 170,00 eur (+ ph nalaz 50,00 eur)",
+			"section": "ginekologija",
+			"price": "170"
+		},
+		{
+			"slug": "cervical-biopsy",
+			"nameEn": "Cervical Biopsy",
+			"source": "BIOPSIJA GRLIĆA MATERICE 30,00 eur (+ ph nalaz 50,00 eur)",
+			"section": "ginekologija",
+			"price": "30"
+		},
+		{
+			"slug": "bartholin-gland-incision-and-marsupialization",
+			"nameEn": "Bartholin Gland Incision and Marsupialization",
+			"source": "MARSUPIJALIZACIJA BERTOLINIJEVE ŽLIJEZDE U LOKALNOJ ANESTEZIJI 90,00 eur",
+			"section": "ginekologija",
+			"price": "90"
+		},
+		{
+			"slug": "iud-insertion",
+			"nameEn": "IUD Insertion",
+			"source": "POSTAVLJANJE SPIRALE 30,00 eur + cijena spirale",
+			"section": "ginekologija",
+			"price": "30"
+		},
+		{
+			"slug": "iud-removal",
+			"nameEn": "IUD Removal",
+			"source": "UKLANJANJE SPIRALE 30,00 eur",
+			"section": "ginekologija",
+			"price": "30"
+		},
+		{
+			"slug": "pediatric-examination",
+			"nameEn": "Pediatric Examination",
+			"source": "PREGLED SPECIJLISTE PEDIJATRA 30,00 eur; PREGLED NOVOROĐENČADI DO 12. MJESECI 30,00 eur",
+			"section": "pedijatrija",
+			"price": "30"
+		},
+		{
+			"slug": "follow-up-pediatric-examination",
+			"nameEn": "Follow-up Pediatric Examination",
+			"source": "KONTROLNI PREGLED 15,00 eur (pedijatrija)",
+			"section": "pedijatrija",
+			"price": "15"
+		},
+		{
+			"slug": "inhalation-therapy",
+			"nameEn": "Inhalation Therapy",
+			"source": "INHALACIJA ZA DJECU 8,00 eur (pedijatrija); INHALACIONA TERAPIJA 15,00 eur (pulmolog)",
+			"section": "pedijatrija",
+			"price": "8-15"
+		},
+		{
+			"slug": "pediatric-hip-ultrasound",
+			"nameEn": "Pediatric Hip Ultrasound",
+			"source": "ULTRAZVUK KUKOVA 30,00 eur (pedijatrija)",
+			"section": "pedijatrija",
+			"price": "30"
+		},
+		{
+			"slug": "infant-brain-ultrasound-neurosonography",
+			"nameEn": "Infant Brain Ultrasound (Neurosonography)",
+			"source": "ULTRAZVUK GLAVE KOD BEBA 30,00 eur",
+			"section": "pedijatrija",
+			"price": "30"
+		},
+		{
+			"slug": "well-child-preventive-check-up",
+			"nameEn": "Well-Child Preventive Check-up",
+			"source": "SAVJETOVALIŠTE ZA BEBE 20,00 eur",
+			"section": "pedijatrija",
+			"price": "20"
+		},
+		{
+			"slug": "abdomen-ultrasound",
+			"nameEn": "Abdomen Ultrasound",
+			"source": "EHO PREGLED ABDOMENA 35,00 eur (dječiji radiolog); EHO PREGLED ABDOMENA kod opšteg radiologa 40,00 eur",
+			"section": "eho dijagnostika",
+			"price": "35-40"
+		},
+		{
+			"slug": "urinary-tract-ultrasound",
+			"nameEn": "Urinary Tract Ultrasound",
+			"source": "EHO PREGLED UROTRAKTA 35,00 eur (dječiji radiolog); ULTRAZVUČNI PREGLED UROTRAKTA 30,00 eur (urologija); EHO PREGLED UROTRAKTA (bubrega, mokracne bešike/sa rezidualnim urinom, prostate) 40,00 eur",
+			"section": "eho dijagnostika",
+			"price": "30-40"
+		},
+		{
+			"slug": "neck-ultrasound",
+			"nameEn": "Neck Ultrasound",
+			"source": "EHO PREGLED VRATA 35,00 eur (dječiji radiolog)",
+			"section": "eho dijagnostika",
+			"price": "35"
+		},
+		{
+			"slug": "follow-up-ultrasound-examination",
+			"nameEn": "Follow-up Ultrasound Examination",
+			"source": "KONTROLNI EHO PREGLED 30,00 eur",
+			"section": "eho dijagnostika",
+			"price": "30"
+		},
+		{
+			"slug": "breast-ultrasound",
+			"nameEn": "Breast Ultrasound",
+			"source": "EHO PREGLED DOJKI 40,00 eur",
+			"section": "eho dijagnostika",
+			"price": "40"
+		},
+		{
+			"slug": "expert-breast-ultrasound",
+			"nameEn": "Expert Breast Ultrasound",
+			"source": "EXPERTSKI ULTRAZVUK DOJKI 50,00 eur",
+			"section": "eho dijagnostika",
+			"price": "50",
+			"new": true
+		},
+		{
+			"slug": "thyroid-ultrasound",
+			"nameEn": "Thyroid Ultrasound",
+			"source": "EHO ŠTITASTE ŽLIJEZDE 40,00 eur",
+			"section": "eho dijagnostika",
+			"price": "40"
+		},
+		{
+			"slug": "ultrasound-lymph-nodes",
+			"nameEn": "Ultrasound Lymph Nodes",
+			"source": "EHO PREGLED REGIONALNIH LIMFATIKA 40.00 eur",
+			"section": "eho dijagnostika",
+			"price": "40"
+		},
+		{
+			"slug": "doppler-neck-blood-vessels",
+			"nameEn": "Doppler Neck Blood Vessels",
+			"source": "COLOR DOPLER KRVNIH SUDOVA VRATA 45,00 eur",
+			"section": "eho dijagnostika",
+			"price": "45"
+		},
+		{
+			"slug": "doppler-lower-extremity-blood-vessels",
+			"nameEn": "Doppler Lower Extremity Blood Vessels",
+			"source": "COLOR DOPLER KRVINH SUDOVA DONJIH EKSTREMITETA 45,00 eur",
+			"section": "eho dijagnostika",
+			"price": "45"
+		},
+		{
+			"slug": "doppler-upper-extremity-blood-vessels",
+			"nameEn": "Doppler Upper Extremity Blood Vessels",
+			"source": "COLOR DOPLER KRVNIH SUDOVA GORNJIH EKSTREMITETA 45,00 eur",
+			"section": "eho dijagnostika",
+			"price": "45"
+		},
+		{
+			"slug": "doppler-renal-arteries",
+			"nameEn": "Doppler Renal Arteries",
+			"source": "COLOR DOPLER RENALNIH ARTERIJA 45,00 eur",
+			"section": "eho dijagnostika",
+			"price": "45"
+		},
+		{
+			"slug": "doppler-portal-vein",
+			"nameEn": "Doppler Portal Vein",
+			"source": "COLOR DOPLER PORTNOG SISTEMA 50,00 eur",
+			"section": "eho dijagnostika",
+			"price": "50"
+		},
+		{
+			"slug": "musculoskeletal-ultrasound",
+			"nameEn": "Musculoskeletal Ultrasound",
+			"source": "EHO MEKIH TKIVA (mišići, nervi, tetive, ligamenti itd.) 45,00 eur",
+			"section": "eho dijagnostika",
+			"price": "45"
+		},
+		{
+			"slug": "hematologist-examination",
+			"nameEn": "Hematologist Examination",
+			"source": "PREGLED SPECIJALISTE HEMATOLOGA 40,00 eur",
+			"section": "hematologija",
+			"price": "40"
+		},
+		{
+			"slug": "follow-up-hematologist-examination",
+			"nameEn": "Follow-up Hematologist Examination",
+			"source": "KONTROLNI PREGLED 35,00 eur (hematologija)",
+			"section": "hematologija",
+			"price": "35"
+		},
+		{
+			"slug": "urologist-examination",
+			"nameEn": "Urologist Examination",
+			"source": "PREGLED SPECIJALISTE UROLOGA 30,00 eur",
+			"section": "urologija",
+			"price": "30"
+		},
+		{
+			"slug": "testicular-ultrasound",
+			"nameEn": "Testicular Ultrasound",
+			"source": "ULTRAZVUČNI PREGLED TESTISA 35,00 eur",
+			"section": "urologija",
+			"price": "35"
+		},
+		{
+			"slug": "urologist-examination-with-ultrasound",
+			"nameEn": "Urologist Examination with Ultrasound",
+			"source": "ULTRAZVUČNI PREGLED SA PREGLEDOM SPECIJALISTE 50,00 eur (urologija)",
+			"section": "urologija",
+			"price": "50"
+		},
+		{
+			"slug": "follow-up-urologist-examination",
+			"nameEn": "Follow-up Urologist Examination",
+			"source": "KONTROLNI PREGLED 25,00 eur (urologija)",
+			"section": "urologija",
+			"price": "25"
+		},
+		{
+			"slug": "electrocoagulation-or-excision-of-condyloma-acuminata",
+			"nameEn": "Electrocoagulation or Excision of Condyloma Acuminata",
+			"source": "KONDILOMI 140,00 eur (u ovu cijenu je uračunata kontrola i sve eventualne komplikacije u roku od mjesec dana) — urologija",
+			"section": "urologija",
+			"price": "140"
+		},
+		{
+			"slug": "circumcision-local-anesthesia",
+			"nameEn": "Circumcision under Local Anesthesia",
+			"source": "FIMOZA 250,00 eur — urologija",
+			"section": "urologija",
+			"price": "250"
+		},
+		{
+			"slug": "ent-specialist-examination",
+			"nameEn": "ENT Specialist Examination",
+			"source": "PREGLED SPECIJALISTE ORL 40,00 eur",
+			"section": "orl",
+			"price": "40"
+		},
+		{
+			"slug": "follow-up-ent-examination",
+			"nameEn": "Follow-up ENT Examination",
+			"source": "KONTROLNI PREGLED 30,00 eur (ORL)",
+			"section": "orl",
+			"price": "30"
+		},
+		{
+			"slug": "tympanometry",
+			"nameEn": "Tympanometry",
+			"source": "TIMPANOMETRIJA 15,00 eur",
+			"section": "orl",
+			"price": "15"
+		},
+		{
+			"slug": "audiometry",
+			"nameEn": "Audiometry",
+			"source": "AUDIOMETRIJA 10,00 eur",
+			"section": "orl",
+			"price": "10"
+		},
+		{
+			"slug": "cerumen-ear-irrigation",
+			"nameEn": "Cerumen Ear Irrigation",
+			"source": "ISPIRANJE UHA 15,00 eur",
+			"section": "orl",
+			"price": "15"
+		},
+		{
+			"slug": "tonsil-lavage",
+			"nameEn": "Tonsil Lavage",
+			"source": "ISPIRANJE KRAJNIKA 15,00 eur",
+			"section": "orl",
+			"price": "15",
+			"new": true
+		},
+		{
+			"slug": "sinus-lavage",
+			"nameEn": "Sinus Lavage",
+			"source": "ISPIRANJE SINUSA 15,00 eur",
+			"section": "orl",
+			"price": "15",
+			"new": true
+		},
+		{
+			"slug": "first-physiatrist-examination",
+			"nameEn": "First Physiatrist Examination",
+			"source": "PREGLED SPECIJALISTE FIZIJATRA 35,00 eur",
+			"section": "fizijatar",
+			"price": "35"
+		},
+		{
+			"slug": "follow-up-physiatrist-examination",
+			"nameEn": "Follow-up Physiatrist Examination",
+			"source": "KONTROLNI PREGLED 25,00 eur (fizijatar)",
+			"section": "fizijatar",
+			"price": "25"
+		},
+		{
+			"slug": "physical-therapy-per-therapy-day",
+			"nameEn": "Physical Therapy per Therapy Day",
+			"source": "FIZIKALNA TERAPIJA 15,00eur, 20,00eur,25,00 eur",
+			"section": "fizijatar",
+			"price": "15-25"
+		},
+		{
+			"slug": "first-neurologist-examination",
+			"nameEn": "First Neurologist Examination",
+			"source": "PREGLED SPECIJALISTE NEUROLOGA 40,00 eur",
+			"section": "neurolog",
+			"price": "40"
+		},
+		{
+			"slug": "follow-up-neurologist-examination",
+			"nameEn": "Follow-up Neurologist Examination",
+			"source": "KONTROLNI PREGLED 25,00 eur (neurolog)",
+			"section": "neurolog",
+			"price": "25"
+		},
+		{
+			"slug": "cardiologist-examination",
+			"nameEn": "Cardiologist Examination",
+			"source": "PREGLED SPECIJALISTE KARDIOLOGA 40,00 eur",
+			"section": "kardiolog",
+			"price": "40"
+		},
+		{
+			"slug": "echocardiography-heart-ultrasound",
+			"nameEn": "Echocardiography (Heart Ultrasound)",
+			"source": "EHO (ultrazvučni) PREGLED SRCA(u cijenu uračunat EKG) 50,00 eur",
+			"section": "kardiolog",
+			"price": "50"
+		},
+		{
+			"slug": "cardiologist-examination-with-ecg-and-echocardiography-heart-ultrasound",
+			"nameEn": "Cardiologist Examination with ECG and Echocardiography (Heart Ultrasound)",
+			"source": "PREGLED KARDIOLOGA SA EHO PREGLEDOM SRCA (plus EKG) 70,00 eur",
+			"section": "kardiolog",
+			"price": "70"
+		},
+		{
+			"slug": "rheumatologist-examination",
+			"nameEn": "Rheumatologist Examination",
+			"source": "PREGLED SPECIJALISTE REUMATOLOGA 40,00 eur",
+			"section": "reumatolog",
+			"price": "40"
+		},
+		{
+			"slug": "follow-up-rheumatologist-examination",
+			"nameEn": "Follow-up Rheumatologist Examination",
+			"source": "KONTROLNI PREGLED 30,00 eur (reumatolog)",
+			"section": "reumatolog",
+			"price": "30"
+		},
+		{
+			"slug": "medication-infiltration",
+			"nameEn": "Medication Infiltration",
+			"source": "INFILTRACIJA LIJEKA 30,00 eur (reumatolog)",
+			"section": "reumatolog",
+			"price": "30"
+		},
+		{
+			"slug": "endocrinologist-examination",
+			"nameEn": "Endocrinologist Examination",
+			"source": "PREGLED SPECIJALISTE ENDOKRINOLOGA 40,00 eur",
+			"section": "endokrinolog",
+			"price": "40"
+		},
+		{
+			"slug": "follow-up-endocrinologist-examination",
+			"nameEn": "Follow-up Endocrinologist Examination",
+			"source": "KONTROLNI PREGLED 30,00 eur (endokrinolog)",
+			"section": "endokrinolog",
+			"price": "30"
+		},
+		{
+			"slug": "endocrinologist-examination-with-thyroid-ultrasound",
+			"nameEn": "Endocrinologist Examination with Thyroid Ultrasound",
+			"source": "PREGLED ENDOKRINOLOGA SA UZ PREGLEDOM ŠTITASTE ŽLIJEZDE 60,00 eur",
+			"section": "endokrinolog",
+			"price": "60"
+		},
+		{
+			"slug": "dermatologist-examination",
+			"nameEn": "Dermatologist Examination",
+			"source": "PREGLED SPECIJALISTE DERMATOVENEROLOGA 40,00 eur",
+			"section": "dermatovenerolog",
+			"price": "40"
+		},
+		{
+			"slug": "follow-up-dermatologist-examination",
+			"nameEn": "Follow-up Dermatologist Examination",
+			"source": "KONTROLNI PREGLED 30,00 eur (dermatovenerolog)",
+			"section": "dermatovenerolog",
+			"price": "30"
+		},
+		{
+			"slug": "dermatologist-examination-with-dermatoscopy",
+			"nameEn": "Dermatologist Examination with Dermatoscopy",
+			"source": "PREGLED SA DERMATOSKOPIJOM 50,00 eur",
+			"section": "dermatovenerolog",
+			"price": "50"
+		},
+		{
+			"slug": "pulmonologist-examination",
+			"nameEn": "Pulmonologist Examination",
+			"source": "PRVI PREGLED LJEKARA SPECIJALISTE 40,00 eur (pulmolog)",
+			"section": "pulmolog",
+			"price": "40"
+		},
+		{
+			"slug": "follow-up-pulmonologist-examination",
+			"nameEn": "Follow-up Pulmonologist Examination",
+			"source": "KONTROLNI PREGLED LJEKARA SPECIJALISTE 30,00 eur; KONTRONI PREGLED PACIJENATA NA DUGOTRAJNOJ OKSIGENOTERAPIJI 30,00 eur",
+			"section": "pulmolog",
+			"price": "30"
+		},
+		{
+			"slug": "home-visit-examination",
+			"nameEn": "Home Visit Examination",
+			"source": "PRVI PREGLED LJEKARA SPECIJALISTE-KUĆNA POSJETA 80,00 eur; KONTROLNI PREGLED PACIJENATA NA DUGOTRAJNOJ OKSIGENOTERAPIIJ-KUĆNA POSJETA 40,00 eur (pulmolog)",
+			"section": "pulmolog",
+			"price": "40-80"
+		},
+		{
+			"slug": "pulmonologist-examination-with-chest-x-ray",
+			"nameEn": "Pulmonologist Examination with Chest X-Ray",
+			"source": "PRVI PREGLED … SA RTG SNIMKOM PLUCA 65,00 eur; KONTROLNI … SA RTG SNIMKOM PLUĆA 55,00 eur",
+			"section": "pulmolog",
+			"price": "55-65",
+			"new": true
+		},
+		{
+			"slug": "pulmonologist-examination-with-chest-x-ray-and-spirometry",
+			"nameEn": "Pulmonologist Examination with Chest X-Ray and Spirometry",
+			"source": "PRVI PREGLED … SA RTG SNIMKOM PLUCA+SPIROMETRIJA 75,00 eur; KONTROLA PULMOLOGA SA RTG SNIMKOM+SPIROMETRIJA 65,00 eur",
+			"section": "pulmolog",
+			"price": "65-75",
+			"new": true
+		},
+		{
+			"slug": "pulmonologist-examination-with-spirometry",
+			"nameEn": "Pulmonologist Examination with Spirometry",
+			"source": "KONTROLNI PREGLED LJEKARA SPECIJALISTE+SPIROMETRIJA 55,00 eur",
+			"section": "pulmolog",
+			"price": "55",
+			"new": true
+		},
+		{
+			"slug": "pulmonologist-examination-with-x-ray-reading",
+			"nameEn": "Pulmonologist Examination with X-Ray Reading",
+			"source": "PRVI PREGLED … SA OCITAVANJEM SNIMKA 45,00eu; KONTROLNI … SA OCITAVANJEM SNIMKA 40,00eur",
+			"section": "pulmolog",
+			"price": "40-45",
+			"new": true
+		},
+		{
+			"slug": "bronchodilator-test",
+			"nameEn": "Bronchodilator Test",
+			"source": "BRONHODILATACIJSKI TEST SA OPISOM NALAZA 25,00 eur",
+			"section": "pulmolog",
+			"price": "25"
+		},
+		{
+			"slug": "pulse-oximetry",
+			"nameEn": "Pulse Oximetry",
+			"source": "ODREĐIVANJE SATURACIJE KISEONIKA 5,00 eur",
+			"section": "pulmolog",
+			"price": "5"
+		},
+		{
+			"slug": "first-psychiatrist-examination",
+			"nameEn": "First Psychiatrist Examination",
+			"source": "PREGLED SPECIJALISTE PSIHIJATRA 40,00 eur",
+			"section": "psihijatar",
+			"price": "40"
+		},
+		{
+			"slug": "follow-up-psychiatrist-examination",
+			"nameEn": "Follow-up Psychiatrist Examination",
+			"source": "KONTROLNI PREGLED 30,00 eur (psihijatar)",
+			"section": "psihijatar",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-chest-heart",
+			"nameEn": "X-Ray Lungs and Heart",
+			"source": "RTG PLUĆA I SRCA (PA projekcija) 30,00 eur; RTG PLUĆA I SRCA (PA i profilna projekcija) 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-per-segment",
+			"nameEn": "X-Ray per Segment",
+			"source": "RTG KOSTIJU U DVA PRAVCA 30,00 eur; RTG ZGLOBOVA U DVA PRAVCA 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-head-craniogram",
+			"nameEn": "X-Ray Head (Craniogram)",
+			"source": "KRANIOGRAM 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-mastoid-shuller",
+			"nameEn": "X-Ray Mastoid (Schüller View)",
+			"source": "SPECIJALNI SNIMCI GLAVE (mastoidi, piramide) 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-temporal-bones",
+			"nameEn": "X-Ray Temporal Bones (Petrous Pyramids, Mayer and Stenvers Views)",
+			"source": "SPECIJALNI SNIMCI GLAVE (mastoidi, piramide) 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-paranasal-sinuses",
+			"nameEn": "X-Ray Paranasal Sinuses",
+			"source": "RTG PARANAZALNIH ŠUPLJINA 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-hand",
+			"nameEn": "X-Ray Hand",
+			"source": "RTG SNIMCI ŠAKE,KOLJENA, RAMENA (cijena se odnosi na jedan snimak) 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-knee",
+			"nameEn": "X-Ray Knee",
+			"source": "RTG SNIMCI ŠAKE,KOLJENA, RAMENA (cijena se odnosi na jedan snimak) 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-shoulder",
+			"nameEn": "X-Ray Shoulder",
+			"source": "RTG SNIMCI ŠAKE,KOLJENA, RAMENA (cijena se odnosi na jedan snimak) 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-lower-leg",
+			"nameEn": "X-Ray Lower Leg",
+			"source": "RTG JEDNE NOGE, STOPALA 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-foot",
+			"nameEn": "X-Ray Foot",
+			"source": "RTG JEDNE NOGE, STOPALA 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-pelvis",
+			"nameEn": "X-Ray Pelvis",
+			"source": "RTG KARLICA SA KUKOVIMA 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-cervical-spine",
+			"nameEn": "X-Ray Cervical Spine",
+			"source": "RTG KIČME (kičma se snima iz tri dijela-cijena se odnosi na jedan snimak) 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-thoracic-spine",
+			"nameEn": "X-Ray Thoracic Spine",
+			"source": "RTG KIČME (kičma se snima iz tri dijela-cijena se odnosi na jedan snimak) 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-lumbar-spine-and-sacrum",
+			"nameEn": "X-Ray Lumbar Spine and Sacrum",
+			"source": "RTG KIČME (kičma se snima iz tri dijela-cijena se odnosi na jedan snimak) 30,00 eur",
+			"section": "rtg",
+			"price": "30"
+		},
+		{
+			"slug": "x-ray-abdomen-native",
+			"nameEn": "Plain X-Ray of the Abdomen",
+			"source": "RTG PREGLED ABDOMENA- NATIVNO 35,00 eur",
+			"section": "rtg",
+			"price": "35"
+		},
+		{
+			"slug": "x-ray-urinary-tract-native",
+			"nameEn": "Plain X-Ray of the Urinary Tract",
+			"source": "RTG PREGLED UROTRAKTA-NATIVNO 35,00 eur",
+			"section": "rtg",
+			"price": "35"
+		},
+		{
+			"slug": "x-ray-both-hands",
+			"nameEn": "X-Ray Both Hands",
+			"source": "RTG OBJE ŠAKE (страница /radioloski-kabinet-u-podgorici/, в прайсе отдельной строки нет)",
+			"section": "rtg",
+			"price": null
+		},
+		{
+			"slug": "mammography",
+			"nameEn": "Mammography",
+			"source": "MAMOGRAFIJA 50,00 eur",
+			"section": "rtg",
+			"price": "50"
+		},
+		{
+			"slug": "breast-biopsy",
+			"nameEn": "Breast Biopsy",
+			"source": "BIOPSIJA DOJKE 500,00 eur (sa PH nalazom)",
+			"section": "rtg",
+			"price": "500"
+		},
+		{
+			"slug": "breast-cyst-puncture",
+			"nameEn": "Breast Cyst Puncture",
+			"source": "PUNKCIJA CISTI(DOJKA) sa PH nalazom 120,00 eur",
+			"section": "rtg",
+			"price": "120"
+		},
+		{
+			"slug": "venous-blood-draw",
+			"nameEn": "Venous Blood Draw",
+			"source": "VAĐENJE KRVI 1,00 eur",
+			"section": "laboratorija",
+			"price": "1"
+		},
+		{
+			"slug": "systematic-examination-for-women-type-a",
+			"nameEn": "Systematic Examination for Women Type A",
+			"source": "SISTEMATSKI PREGLED TIP “A” ZA ŽENE … 170,00 eur",
+			"section": "sistematski pregledi",
+			"price": "170",
+			"new": true
+		},
+		{
+			"slug": "systematic-examination-for-women-type-b",
+			"nameEn": "Systematic Examination for Women Type B",
+			"source": "SISTEMATSKI PREGLED TIP “B” ZA ŽENE … 200,00 eur",
+			"section": "sistematski pregledi",
+			"price": "200",
+			"new": true
+		},
+		{
+			"slug": "systematic-examination-for-men",
+			"nameEn": "Systematic Examination for Men",
+			"source": "SISTEMATSKI PREGLED ZA MUŠKARCE … 170,00 eur",
+			"section": "sistematski pregledi",
+			"price": "170",
+			"new": true
+		},
+		{
+			"slug": "intramuscular-injection-home-visit",
+			"nameEn": "Intramuscular Injection Home Visit",
+			"source": "INTRAMUSKULARNA INJEKCIJA U KUĆNOJ POSJETI (jednom dnevno vise davanja) 8,00 eur",
+			"section": "kućne posjete",
+			"price": "8",
+			"new": true
+		},
+		{
+			"slug": "intravenous-therapy-home-visit-city",
+			"nameEn": "Intravenous Therapy Home Visit City",
+			"source": "INTRAVENSKA INJEKCIJA U KUĆNOJ POSJETI 10,00 eur",
+			"section": "kućne posjete",
+			"price": "10"
+		},
+		{
+			"slug": "infusion-therapy-home-visit",
+			"nameEn": "Infusion Therapy Home Visit",
+			"source": "INFUZIJSKI RASTVOR U KUĆNOJ POSJETI DO 30 MINUTA 15,00 eur; DO 60 MINUTA 30,00 eur",
+			"section": "kućne posjete",
+			"price": "15-30",
+			"new": true
+		},
+		{
+			"slug": "urinary-catheter-placement-home-visit",
+			"nameEn": "Urinary Catheter Placement Home Visit",
+			"source": "URINARNI KATETER U KUĆNOJ POSJETI (postavljanje ili zamjena) 35,00 eur",
+			"section": "kućne posjete",
+			"price": "35",
+			"new": true
+		},
+		{
+			"slug": "medical-transport-per-km",
+			"nameEn": "Medical Transport per km",
+			"source": "TRANSPORT PACIJENTA NA TERITORIJI PODGORICE (bez pratnje ljekara) 3,00 eur/km",
+			"section": "transport",
+			"price": "3"
+		},
+		{
+			"slug": "medical-transport-with-gp-per-km",
+			"nameEn": "Medical Transport with GP per km",
+			"source": "TRANSPORT PACIJENTA NA TERITORIJI PODGORICE (sa pratnjom ljekara) 4,00 eur/km",
+			"section": "transport",
+			"price": "4"
+		},
+		{
+			"slug": "medical-certificate-for-general-work",
+			"nameEn": "Medical Certificate for General Work",
+			"source": "LJEKARSKO UVJERENJE ZA ZASNIVANJE RADNOG ODNOSA(za sve poslove koji ne podrazumijevaju rad u otezanim uslovima rada) 20,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "20"
+		},
+		{
+			"slug": "medical-certificate-for-university-enrollment",
+			"nameEn": "Medical Certificate for University Enrollment",
+			"source": "LJEKARSKO UVJERENJE ZA UPIS NA FAKULTET 20,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "20"
+		},
+		{
+			"slug": "medical-certificate-for-residence-and-work-in-montenegro",
+			"nameEn": "Medical Certificate for Residence and Work in Montenegro",
+			"source": "LJEKARSKO UVJERENJE ZA BORAVAK I RAD U CRNOJ GORI 25,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "25"
+		},
+		{
+			"slug": "medical-certificate-for-security-personnel",
+			"nameEn": "Medical Certificate for Security Personnel",
+			"source": "LJEKARSKO UVJERENJE ZA ZASTITARA LICA I IMOVINE 45,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "45"
+		},
+		{
+			"slug": "medical-certificate-for-firearms-possession",
+			"nameEn": "Medical Certificate for Firearms Possession",
+			"source": "LJEKARSKO UVJERENJE REGULISANJE ORUZANOG LISTA 40,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "40"
+		},
+		{
+			"slug": "medical-certificate-for-high-risk-and-difficult-working-conditions",
+			"nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+			"source": "LJEKARSKO UVJERENJE U OTEZANIM USLOVIMA RADA(RAD NA VISINI) 45,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "45"
+		},
+		{
+			"slug": "medical-certificate-for-boat-operation-up-to-12-meters",
+			"nameEn": "Medical Certificate for Boat Operation up to 12 Meters",
+			"source": "LJEKARSKO UVJERENJE ZA VODITELJA CAMCA 35,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "35"
+		},
+		{
+			"slug": "medical-certificate-for-professional-drivers",
+			"nameEn": "Medical Certificate for Professional Drivers",
+			"source": "LJEKARSKO UVJERENJE ZA PROFESIONALNOG VOZACA 45,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "45"
+		},
+		{
+			"slug": "medical-certificate-for-driving-license-category-a-b-c-d-e",
+			"nameEn": "Medical Certificate for Driving License Category A, B, C, D, E",
+			"source": "LJEKARSKO UVJERENJE ZA POLAGANJE VOZACKOG ISPITA 20,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "20"
+		},
+		{
+			"slug": "medical-certificate-for-driving-license-renewal-category-a-b-c-d-e",
+			"nameEn": "Medical Certificate for Driving License Renewal Category A, B, C, D, E",
+			"source": "LJEKARSKO UVJERENJE ZA PRODUZENJE VOZACKE DOZVOLE 25,00eur",
+			"section": "ljekarska uvjerenja",
+			"price": "25"
+		}
+	],
+	"labTests": [
+		{
+			"slug": "complete-blood-count",
+			"nameEn": "Complete Blood Count",
+			"source": "KRVNA SLIKA 5,00 eur",
+			"section": "hematološke analize",
+			"price": "5"
+		},
+		{
+			"slug": "erythrocyte-sedimentation-rate",
+			"nameEn": "Erythrocyte Sedimentation Rate",
+			"source": "SEDIMENTACIJA 3,00 eur (строка повторяется дважды)",
+			"section": "hematološke analize",
+			"price": "3"
+		},
+		{
+			"slug": "prothrombin-time-pt-inr",
+			"nameEn": "Prothrombin Time PT INR",
+			"source": "INR (gustina krvi) 5,00 eur; PROTROMBINSKO VRIJEME/INR 5,00 eur",
+			"section": "hematološke analize",
+			"price": "5"
+		},
+		{
+			"slug": "glucose",
+			"nameEn": "Glucose",
+			"source": "GLUKOZA 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "urea",
+			"nameEn": "Urea",
+			"source": "UREA 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "creatinine",
+			"nameEn": "Creatinine",
+			"source": "KREATININ 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "uric-acid",
+			"nameEn": "Uric Acid",
+			"source": "MOKRAĆNA KISELINA 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "total-protein",
+			"nameEn": "Total Protein",
+			"source": "PROTEINI (bjelančevine) 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "albumin",
+			"nameEn": "Albumin",
+			"source": "ALBUMIN 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "total-bilirubin",
+			"nameEn": "Total Bilirubin",
+			"source": "UKUPNI BILIRUBIN 4,00 eur",
+			"section": "biohemija",
+			"price": "4"
+		},
+		{
+			"slug": "direct-bilirubin",
+			"nameEn": "Direct Bilirubin",
+			"source": "DIREKTNI BILIRUBIN 4,00 eur",
+			"section": "biohemija",
+			"price": "4"
+		},
+		{
+			"slug": "cholesterol",
+			"nameEn": "Cholesterol",
+			"source": "HOLESTEROL 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "hdl-cholesterol",
+			"nameEn": "HDL Cholesterol",
+			"source": "HDL-holesterol 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "ldl-cholesterol",
+			"nameEn": "LDL Cholesterol",
+			"source": "LDL-holesterol 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "triglycerides",
+			"nameEn": "Triglycerides",
+			"source": "TRIGLICERIDI 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "ast",
+			"nameEn": "AST",
+			"source": "AST 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "alt",
+			"nameEn": "ALT",
+			"source": "ALT 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "alkaline-phosphatase",
+			"nameEn": "Alkaline Phosphatase",
+			"source": "ALP 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "gamma-gt",
+			"nameEn": "Gamma-GT",
+			"source": "GGT 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "amylase",
+			"nameEn": "Amylase",
+			"source": "AMILAZA 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "lipase",
+			"nameEn": "Lipase",
+			"source": "LIPAZA 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "ldh",
+			"nameEn": "LDH",
+			"source": "LDH 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "iron",
+			"nameEn": "Iron",
+			"source": "GVOŽĐE 4,00 eur",
+			"section": "biohemija",
+			"price": "4"
+		},
+		{
+			"slug": "tibc",
+			"nameEn": "TIBC",
+			"source": "TIBC 5,00 eur",
+			"section": "biohemija",
+			"price": "5"
+		},
+		{
+			"slug": "uibc",
+			"nameEn": "UIBC",
+			"source": "UIBC 5,00 eur",
+			"section": "biohemija",
+			"price": "5"
+		},
+		{
+			"slug": "c-reactive-protein",
+			"nameEn": "C-Reactive Protein",
+			"source": "CRP 5,00 eur",
+			"section": "biohemija",
+			"price": "5"
+		},
+		{
+			"slug": "complete-urinalysis",
+			"nameEn": "Complete Urinalysis",
+			"source": "URIN 5,00 eur",
+			"section": "biohemija",
+			"price": "5"
+		},
+		{
+			"slug": "urine-culture",
+			"nameEn": "Urine Culture",
+			"source": "URINOKULTURA 10.00 eur",
+			"section": "biohemija",
+			"price": "10"
+		},
+		{
+			"slug": "sodium",
+			"nameEn": "Sodium",
+			"source": "NATRIJUM 4,00 eur",
+			"section": "elektroliti",
+			"price": "4"
+		},
+		{
+			"slug": "potassium",
+			"nameEn": "Potassium",
+			"source": "KALIJUM 4,00 eur",
+			"section": "elektroliti",
+			"price": "4"
+		},
+		{
+			"slug": "chloride",
+			"nameEn": "Chloride",
+			"source": "HLORIDI 4,00 eur",
+			"section": "elektroliti",
+			"price": "4"
+		},
+		{
+			"slug": "phosphorus",
+			"nameEn": "Phosphorus",
+			"source": "FOSFOR 4,00 eur",
+			"section": "elektroliti",
+			"price": "4"
+		},
+		{
+			"slug": "calcium",
+			"nameEn": "Calcium",
+			"source": "KALCIJUM 4,00 eur",
+			"section": "elektroliti",
+			"price": "4"
+		},
+		{
+			"slug": "calcium-in-urine",
+			"nameEn": "Calcium in Urine",
+			"source": "KALCIJUM (U URINU) 5,00 eur",
+			"section": "elektroliti",
+			"price": "5"
+		},
+		{
+			"slug": "magnesium",
+			"nameEn": "Magnesium",
+			"source": "MAGNEZIJUM 4,00 eur",
+			"section": "elektroliti",
+			"price": "4"
+		},
+		{
+			"slug": "copper-in-serum",
+			"nameEn": "Copper in Serum",
+			"source": "BAKAR 10,00 eur",
+			"section": "elektroliti",
+			"price": "10"
+		},
+		{
+			"slug": "zinc-in-serum",
+			"nameEn": "Zinc in Serum",
+			"source": "CINK 10,00 eur",
+			"section": "elektroliti",
+			"price": "10"
+		},
+		{
+			"slug": "ck",
+			"nameEn": "CK",
+			"source": "CK 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "ck-mb",
+			"nameEn": "CK-MB",
+			"source": "CK-MB 3,00 eur",
+			"section": "biohemija",
+			"price": "3"
+		},
+		{
+			"slug": "vitamin-b12",
+			"nameEn": "Vitamin B12",
+			"source": "VITAMIN B12 15,00 eur",
+			"section": "vitamini",
+			"price": "15"
+		},
+		{
+			"slug": "vitamin-d-25-oh",
+			"nameEn": "Vitamin D 25-OH",
+			"source": "VITAMIN D 25,00 eur",
+			"section": "vitamini",
+			"price": "25"
+		},
+		{
+			"slug": "activated-partial-thromboplastin-time",
+			"nameEn": "Activated Partial Thromboplastin Time",
+			"source": "Apt 12,00 eur",
+			"section": "koagulacija",
+			"price": "12"
+		},
+		{
+			"slug": "d-dimer",
+			"nameEn": "D-Dimer",
+			"source": "D-DIMER 15,00 eur",
+			"section": "koagulacija",
+			"price": "15"
+		},
+		{
+			"slug": "fibrinogen",
+			"nameEn": "Fibrinogen",
+			"source": "FIBRINOGEN 5,00 eur",
+			"section": "koagulacija",
+			"price": "5"
+		},
+		{
+			"slug": "protein-c",
+			"nameEn": "Protein C",
+			"source": "PROTEIN C 15,00 eur",
+			"section": "koagulacija",
+			"price": "15"
+		},
+		{
+			"slug": "protein-s",
+			"nameEn": "Protein S",
+			"source": "PROTEIN S 15,00 eur",
+			"section": "koagulacija",
+			"price": "15"
+		},
+		{
+			"slug": "lupus-anticoagulant",
+			"nameEn": "Lupus Anticoagulant",
+			"source": "LA1 15,00 eur",
+			"section": "koagulacija",
+			"price": "15"
+		},
+		{
+			"slug": "antithrombin-iii",
+			"nameEn": "Antithrombin III",
+			"source": "ANTITROMBIN III 15,00 eur",
+			"section": "koagulacija",
+			"price": "15"
+		},
+		{
+			"slug": "bleeding-time",
+			"nameEn": "Bleeding Time",
+			"source": "VRIJEME KRVARENJA 3,00 eur",
+			"section": "koagulacija",
+			"price": "3"
+		},
+		{
+			"slug": "coagulation-time",
+			"nameEn": "Coagulation Time",
+			"source": "VRIJEME KOAGULACIJE 3,00 eur",
+			"section": "koagulacija",
+			"price": "3"
+		},
+		{
+			"slug": "fecal-occult-blood",
+			"nameEn": "Fecal Occult Blood",
+			"source": "TEST NA OKULTNO KRVARENJE 15,00 eur",
+			"section": "stolica",
+			"price": "15"
+		},
+		{
+			"slug": "helicobacter-pylori-antigen-in-feces",
+			"nameEn": "Helicobacter pylori Antigen in Feces",
+			"source": "TEST NA HELIKO BAKTERIJU PYLORI 10,00 eur",
+			"section": "stolica",
+			"price": "10"
+		},
+		{
+			"slug": "transferrin",
+			"nameEn": "Transferrin",
+			"source": "TRANSFERIN,,,, 13,00 eur",
+			"section": "biohemija",
+			"price": "13"
+		},
+		{
+			"slug": "ferritin",
+			"nameEn": "Ferritin",
+			"source": "FERITIN 13,00 eur",
+			"section": "biohemija",
+			"price": "13"
+		},
+		{
+			"slug": "homocysteine",
+			"nameEn": "Homocysteine",
+			"source": "HOMOCISTEIN 30,00 eur",
+			"section": "biohemija",
+			"price": "30"
+		},
+		{
+			"slug": "folic-acid",
+			"nameEn": "Folic Acid",
+			"source": "FOLNA KISELINA 30,00 eur",
+			"section": "vitamini",
+			"price": "30"
+		},
+		{
+			"slug": "hba1c",
+			"nameEn": "HbA1c",
+			"source": "HbA1c 14,00 eur",
+			"section": "biohemija",
+			"price": "14"
+		},
+		{
+			"slug": "afp",
+			"nameEn": "AFP",
+			"source": "AFP 15,00 eur",
+			"section": "tumor markeri",
+			"price": "15"
+		},
+		{
+			"slug": "cea",
+			"nameEn": "CEA",
+			"source": "CEA 15,00 eur",
+			"section": "tumor markeri",
+			"price": "15"
+		},
+		{
+			"slug": "ca-15-3",
+			"nameEn": "CA 15-3",
+			"source": "CA 15-3 15,00 eur",
+			"section": "tumor markeri",
+			"price": "15"
+		},
+		{
+			"slug": "ca-19-9",
+			"nameEn": "CA 19-9",
+			"source": "CA 19-9 15,00 eur",
+			"section": "tumor markeri",
+			"price": "15"
+		},
+		{
+			"slug": "ca-125",
+			"nameEn": "CA 125",
+			"source": "CA 125 15,00 eur",
+			"section": "tumor markeri",
+			"price": "15"
+		},
+		{
+			"slug": "cyfra-21-1",
+			"nameEn": "CYFRA 21-1",
+			"source": "CYFRA 21-1 15,00 eur",
+			"section": "tumor markeri",
+			"price": "15"
+		},
+		{
+			"slug": "nse",
+			"nameEn": "NSE",
+			"source": "NSE 15,00 eur",
+			"section": "tumor markeri",
+			"price": "15"
+		},
+		{
+			"slug": "protein-s-100",
+			"nameEn": "Protein S-100",
+			"source": "S 100 25,00 eur",
+			"section": "tumor markeri",
+			"price": "25"
+		},
+		{
+			"slug": "ca-72-4",
+			"nameEn": "CA 72-4",
+			"source": "CA 72-4 20,00 eur",
+			"section": "tumor markeri",
+			"price": "20"
+		},
+		{
+			"slug": "he4",
+			"nameEn": "HE4",
+			"source": "HE-4 26,00 eur",
+			"section": "tumor markeri",
+			"price": "26"
+		},
+		{
+			"slug": "chromogranin-a",
+			"nameEn": "Chromogranin A",
+			"source": "HROMOGRANIN A 40,00 eur",
+			"section": "tumor markeri",
+			"price": "40"
+		},
+		{
+			"slug": "roma-index",
+			"nameEn": "ROMA Index",
+			"source": "ROMA INDEX(CA-125+HE-4) 40,00 eur",
+			"section": "tumor markeri",
+			"price": "40"
+		},
+		{
+			"slug": "psa",
+			"nameEn": "PSA",
+			"source": "PSA (ukupni) 14,00 eur",
+			"section": "tumor markeri za prostatu",
+			"price": "14"
+		},
+		{
+			"slug": "free-psa",
+			"nameEn": "Free PSA",
+			"source": "PSA (slobodni) 15,00 eur",
+			"section": "tumor markeri za prostatu",
+			"price": "15"
+		},
+		{
+			"slug": "t3",
+			"nameEn": "T3",
+			"source": "T3 (ukupni T3) 6,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "6"
+		},
+		{
+			"slug": "t4",
+			"nameEn": "T4",
+			"source": "T4 (ukupni T4) 6,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "6"
+		},
+		{
+			"slug": "tsh",
+			"nameEn": "TSH",
+			"source": "TSH 6,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "6"
+		},
+		{
+			"slug": "free-t3",
+			"nameEn": "Free T3",
+			"source": "FT3 (slobodni T3) 10,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "10"
+		},
+		{
+			"slug": "free-t4",
+			"nameEn": "Free T4",
+			"source": "FT4 (slobodni T4) 10,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "10"
+		},
+		{
+			"slug": "anti-tpo",
+			"nameEn": "Anti-TPO",
+			"source": "Anti TPO-Antitijela 15,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "15"
+		},
+		{
+			"slug": "anti-thyroglobulin-antibodies",
+			"nameEn": "Anti-Thyroglobulin Antibodies",
+			"source": "Anti TG-Antitijela 15,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "15"
+		},
+		{
+			"slug": "anti-tshr",
+			"nameEn": "Anti-TSHR",
+			"source": "Anti TSHR 25,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "25"
+		},
+		{
+			"slug": "thyroglobulin",
+			"nameEn": "Thyroglobulin",
+			"source": "TIREOGLOBULIN 12,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "12"
+		},
+		{
+			"slug": "calcitonin",
+			"nameEn": "Calcitonin",
+			"source": "KALCITONIN 15,00 eur",
+			"section": "hormoni štitaste žlijezde",
+			"price": "15"
+		},
+		{
+			"slug": "fsh",
+			"nameEn": "FSH",
+			"source": "FSH 8,00 eur",
+			"section": "polni hormoni",
+			"price": "8"
+		},
+		{
+			"slug": "lh",
+			"nameEn": "LH",
+			"source": "LH 8,00 eur",
+			"section": "polni hormoni",
+			"price": "8"
+		},
+		{
+			"slug": "prolactin",
+			"nameEn": "Prolactin",
+			"source": "PROLAKTIN 8,00 eur",
+			"section": "polni hormoni",
+			"price": "8"
+		},
+		{
+			"slug": "estradiol",
+			"nameEn": "Estradiol",
+			"source": "ESTRADIOL 9,00 eur",
+			"section": "polni hormoni",
+			"price": "9"
+		},
+		{
+			"slug": "free-estriol",
+			"nameEn": "Free Estriol",
+			"source": "ESTRIOL 10,00 eur",
+			"section": "polni hormoni",
+			"price": "10"
+		},
+		{
+			"slug": "progesterone",
+			"nameEn": "Progesterone",
+			"source": "PROGESTERON 9,00 eur",
+			"section": "polni hormoni",
+			"price": "9"
+		},
+		{
+			"slug": "testosterone",
+			"nameEn": "Testosterone",
+			"source": "TESTOSTERON 10,00 eur",
+			"section": "polni hormoni",
+			"price": "10"
+		},
+		{
+			"slug": "dhea-s",
+			"nameEn": "DHEA-S",
+			"source": "DHEAS 13,00 eur",
+			"section": "polni hormoni",
+			"price": "13"
+		},
+		{
+			"slug": "shbg",
+			"nameEn": "SHBG",
+			"source": "SHBG 15,00 eur",
+			"section": "polni hormoni",
+			"price": "15"
+		},
+		{
+			"slug": "androstenedione",
+			"nameEn": "Androstenedione",
+			"source": "ANDROSTENDION 17,00 eur",
+			"section": "polni hormoni",
+			"price": "17"
+		},
+		{
+			"slug": "anti-mullerian-hormone",
+			"nameEn": "Anti-Mullerian Hormone",
+			"source": "ANTIMILEROV HORMON 30,00 eur",
+			"section": "polni hormoni",
+			"price": "30"
+		},
+		{
+			"slug": "inhibin-b",
+			"nameEn": "Inhibin B",
+			"source": "INHIBIN B 21,00 eur",
+			"section": "polni hormoni",
+			"price": "21"
+		},
+		{
+			"slug": "inhibin-a",
+			"nameEn": "Inhibin A",
+			"source": "INHIBIN A 21,00 eur",
+			"section": "polni hormoni",
+			"price": "21"
+		},
+		{
+			"slug": "17-hydroxyprogesterone",
+			"nameEn": "17-Hydroxyprogesterone",
+			"source": "17-OHP 16,00 eur",
+			"section": "polni hormoni",
+			"price": "16"
+		},
+		{
+			"slug": "free-testosterone",
+			"nameEn": "Free Testosterone",
+			"source": "FREE TESTOSTERON 26,00 eur",
+			"section": "polni hormoni",
+			"price": "26"
+		},
+		{
+			"slug": "bioavailable-testosterone",
+			"nameEn": "Bioavailable Testosterone",
+			"source": "BIO RASPOLOŽIVI TESTOSTERON 26,00 eur",
+			"section": "polni hormoni",
+			"price": "26"
+		},
+		{
+			"slug": "beta-hcg",
+			"nameEn": "Beta HCG",
+			"source": "BETA Hcg 15,00 eur",
+			"section": "polni hormoni",
+			"price": "15"
+		},
+		{
+			"slug": "cortisol",
+			"nameEn": "Cortisol",
+			"source": "KORTIZOL 11,00 eur",
+			"section": "ostali hormoni",
+			"price": "11"
+		},
+		{
+			"slug": "pth",
+			"nameEn": "PTH",
+			"source": "PTH 17,00 eur",
+			"section": "ostali hormoni",
+			"price": "17"
+		},
+		{
+			"slug": "insulin",
+			"nameEn": "Insulin",
+			"source": "INSULIN 13,00 eur",
+			"section": "ostali hormoni",
+			"price": "13"
+		},
+		{
+			"slug": "c-peptide",
+			"nameEn": "C-Peptide",
+			"source": "C-PEPTID 13,00 eur",
+			"section": "ostali hormoni",
+			"price": "13"
+		},
+		{
+			"slug": "acth",
+			"nameEn": "ACTH",
+			"source": "ACTH 19,00 eur",
+			"section": "ostali hormoni",
+			"price": "19"
+		},
+		{
+			"slug": "renin",
+			"nameEn": "Renin",
+			"source": "RENIN 30,00 eur",
+			"section": "ostali hormoni",
+			"price": "30"
+		},
+		{
+			"slug": "torch-panel",
+			"nameEn": "TORCH panel",
+			"source": "TORCH TEST 110,00 eur",
+			"section": "ostali hormoni",
+			"price": "110"
+		},
+		{
+			"slug": "double-test-first-trimester-screening",
+			"nameEn": "Double Test First Trimester Screening",
+			"source": "DOUBLE TEST 40,00 eur",
+			"section": "ostali hormoni",
+			"price": "40"
+		},
+		{
+			"slug": "triple-test-second-trimester-screening",
+			"nameEn": "Triple Test Second Trimester Screening",
+			"source": "страница /ginekologija/: «double i triple test u trudnoći» — в прайсе только DOUBLE TEST",
+			"section": "ginekologija",
+			"price": null
+		},
+		{
+			"slug": "rheumatoid-factor",
+			"nameEn": "Rheumatoid Factor",
+			"source": "REUMA FAKTOR 5,00 eur",
+			"section": "imunologija",
+			"price": "5"
+		},
+		{
+			"slug": "asto",
+			"nameEn": "ASTO",
+			"source": "ASTO 5,00 eur",
+			"section": "imunologija",
+			"price": "5"
+		},
+		{
+			"slug": "waaler-rose-test",
+			"nameEn": "Waaler-Rose Test",
+			"source": "WALLER ROSE 5,00 eur",
+			"section": "imunologija",
+			"price": "5"
+		},
+		{
+			"slug": "ana-antinuclear-antibodies",
+			"nameEn": "ANA Antinuclear Antibodies",
+			"source": "ANA(antinuklearna antitijela) 20,00 eur",
+			"section": "imunologija",
+			"price": "20"
+		},
+		{
+			"slug": "dsdna-igm-antibodies",
+			"nameEn": "dsDNA IgM Antibodies",
+			"source": "Da DNA-M 15,00 eur (опечатка «Da» = ds)",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "dsdna-igg-antibodies",
+			"nameEn": "dsDNA IgG Antibodies",
+			"source": "Ds DNA-G 15,00 eur",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "transglutaminase-iga-antibodies",
+			"nameEn": "Transglutaminase IgA Antibodies",
+			"source": "AT NA TKIVNU TRANSGLUTAMINAZU IgA 15,00 eur",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "transglutaminase-igg-antibodies",
+			"nameEn": "Transglutaminase IgG Antibodies",
+			"source": "AT NA TKIVNU TRANSGLUTAMINAZU IgG 15,00 eur",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "anticardiolipin-igm",
+			"nameEn": "Anticardiolipin IgM",
+			"source": "CARDIOLIPINSKA ANTITIJELA IgM 15,00 eur",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "anticardiolipin-igg",
+			"nameEn": "Anticardiolipin IgG",
+			"source": "CARDIOLIPINSKA ANTITIJELA IgG 15,00 eur",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "gliadin-iga-antibodies",
+			"nameEn": "Gliadin IgA Antibodies",
+			"source": "GLIADIN-A 15,00 eur",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "gliadin-igg-antibodies",
+			"nameEn": "Gliadin IgG Antibodies",
+			"source": "GLIADIN-G 15,00 eur",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "beta-2-glycoprotein-i-igm",
+			"nameEn": "Beta-2 Glycoprotein I IgM",
+			"source": "Beta 2 GLIKOPROTEIN-M 15,00 eur",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "beta-2-glycoprotein-i-igg",
+			"nameEn": "Beta-2 Glycoprotein I IgG",
+			"source": "Beta 2 GLIKOPROTEIN-G 15,00 eur",
+			"section": "imunologija",
+			"price": "15"
+		},
+		{
+			"slug": "gad-antibodies",
+			"nameEn": "GAD Antibodies",
+			"source": "At na GLUTAMAT DEKARBROKSILAZU (GAD) IgG 20,00 eur",
+			"section": "imunologija",
+			"price": "20"
+		},
+		{
+			"slug": "ia-2-antibodies",
+			"nameEn": "IA-2 Antibodies",
+			"source": "At na TIROZIN FOSFATAZU (IA2) IgG 20,00 eur",
+			"section": "imunologija",
+			"price": "20"
+		},
+		{
+			"slug": "ovarian-antibodies",
+			"nameEn": "Ovarian Antibodies",
+			"source": "ANTI OVARIJALNA AT 20,00 eur",
+			"section": "imunologija",
+			"price": "20"
+		},
+		{
+			"slug": "spermatozoa-antibodies-asa",
+			"nameEn": "Spermatozoa Antibodies ASA",
+			"source": "ANTI SPERMATOZOIDNA AT 35,00 eur",
+			"section": "imunologija",
+			"price": "35"
+		},
+		{
+			"slug": "iga",
+			"nameEn": "IgA",
+			"source": "IMUNOGLOBIN A 5,00 eur",
+			"section": "imunologija",
+			"price": "5"
+		},
+		{
+			"slug": "igm",
+			"nameEn": "IgM",
+			"source": "IMUNOGLOBIN M 5,00 eur",
+			"section": "imunologija",
+			"price": "5"
+		},
+		{
+			"slug": "igg",
+			"nameEn": "IgG",
+			"source": "IMUNOGLOBIN G 11,00 eur",
+			"section": "imunologija",
+			"price": "11"
+		},
+		{
+			"slug": "c3-complement",
+			"nameEn": "C3 Complement",
+			"source": "C-3 5,00 eur",
+			"section": "imunologija",
+			"price": "5"
+		},
+		{
+			"slug": "c4-complement",
+			"nameEn": "C4 Complement",
+			"source": "C-4 5,00 eur",
+			"section": "imunologija",
+			"price": "5"
+		},
+		{
+			"slug": "drug-panel-10-ii",
+			"nameEn": "Drug Panel 10 II",
+			"source": "KOMPLET TESTOVA SE RADI PO CIJENI OD 40,00 eur (KOKAIN, AMFETAMIN, METAMFETAMIN, MARIHUANA, METADON, OPIJATI (OPI), MDMA, BARBITURATI, BENZODIAZEPINI, OPIJATI (MOP)) — «od»: в clinic_lab_tests нет price_min, записано 40",
+			"section": "testovi na psihoaktivne supstance",
+			"price": "40"
+		},
+		{
+			"slug": "drug-panel-5-new",
+			"nameEn": "Drug Panel 5 New",
+			"source": "PALETA OD 5(PET) ANALIZA 25,00 eur",
+			"section": "testovi na psihoaktivne supstance",
+			"price": "25"
+		},
+		{
+			"slug": "hpv-genotyping-pcr",
+			"nameEn": "HPV Genotyping PCR",
+			"source": "HPV TIPIZACIJA 120,00 eur",
+			"section": "ginekologija",
+			"price": "120"
+		},
+		{
+			"slug": "cervical-swab-bacteria",
+			"nameEn": "Cervical Swab for Bacteria",
+			"source": "CERVIKALNI BRIS NA BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "ginekologija",
+			"price": "15"
+		},
+		{
+			"slug": "cervical-swab-fungi",
+			"nameEn": "Cervical Swab for Fungi",
+			"source": "CERVIKALNI BRIS NA BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "ginekologija",
+			"price": "15"
+		},
+		{
+			"slug": "vaginal-swab-bacteria",
+			"nameEn": "Vaginal Swab for Bacteria",
+			"source": "VAGINALNI BRIS NA BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "ginekologija",
+			"price": "15"
+		},
+		{
+			"slug": "vaginal-swab-fungi",
+			"nameEn": "Vaginal Swab for Fungi",
+			"source": "VAGINALNI BRIS NA BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "ginekologija",
+			"price": "15"
+		},
+		{
+			"slug": "vaginal-discharge-dmp",
+			"nameEn": "Vaginal Discharge DMP",
+			"source": "STEPEN ČISTOĆE 10,00 eur",
+			"section": "ginekologija",
+			"price": "10"
+		},
+		{
+			"slug": "amine-test",
+			"nameEn": "Amine Test",
+			"source": "AMINSKI TEST 8,00 eur",
+			"section": "ginekologija",
+			"price": "8"
+		},
+		{
+			"slug": "chlamydia-genital-swab",
+			"nameEn": "Chlamydia trachomatis Genital Swab",
+			"source": "CERVIKALNI BRIS NA HLAMIDIJU 25,00 eur",
+			"section": "ginekologija",
+			"price": "25"
+		},
+		{
+			"slug": "mycoplasma-ureaplasma-genital-swab",
+			"nameEn": "Mycoplasma Ureaplasma Genital Swab",
+			"source": "CERVIKALNI BRIS NA UREAPLAZMU I MIKOPLAZMU 25,00 eur",
+			"section": "ginekologija",
+			"price": "25"
+		},
+		{
+			"slug": "pap-papanicolaou-test",
+			"nameEn": "PAP Papanicolaou Test",
+			"source": "PAPA BRIS 17,00 eur",
+			"section": "ginekologija",
+			"price": "17"
+		},
+		{
+			"slug": "vulvar-swab-bacteria",
+			"nameEn": "Vulvar Swab for Bacteria",
+			"source": "BRIS SPOLJNIH GENITALIJA 15,00 eur",
+			"section": "ginekologija",
+			"price": "15"
+		},
+		{
+			"slug": "histopathology-curettage",
+			"nameEn": "Histopathology Curettage",
+			"source": "+ ph nalaz 50,00 eur (к EKSPLORATIVNA KIRETAŽA в общей и в местной анестезии)",
+			"section": "ginekologija",
+			"price": "50"
+		},
+		{
+			"slug": "histopathology-conization-specimen",
+			"nameEn": "Histopathology Conization Specimen",
+			"source": "+ ph nalaz 50,00 eur (к KONIZACIJA GRLIĆA MATERICE в общей/местной анестезии и LOOP EKSCIZIJA)",
+			"section": "ginekologija",
+			"price": "50"
+		},
+		{
+			"slug": "histopathology-cervical-biopsy",
+			"nameEn": "Histopathology Cervical Biopsy",
+			"source": "+ ph nalaz 50,00 eur (к BIOPSIJA GRLIĆA MATERICE)",
+			"section": "ginekologija",
+			"price": "50"
+		},
+		{
+			"slug": "histopathology-standard-skin-and-organ-biopsy",
+			"nameEn": "Histopathology Standard Skin and Organ Biopsy",
+			"source": "PH Nalaz 30,00 eur (блок хирурга, после INTERVENCIJA UKLANJANJE MASNOG TKIVA)",
+			"section": "hirurgija",
+			"price": "30"
+		},
+		{
+			"slug": "throat-swab-bacteria",
+			"nameEn": "Throat Swab for Bacteria",
+			"source": "BRIS GRLA A BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "orl",
+			"price": "15"
+		},
+		{
+			"slug": "throat-swab-fungi",
+			"nameEn": "Throat Swab for Fungi",
+			"source": "BRIS GRLA A BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "orl",
+			"price": "15"
+		},
+		{
+			"slug": "ear-swab-bacteria",
+			"nameEn": "Ear Swab for Bacteria",
+			"source": "BRIS UHA NA BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "orl",
+			"price": "15"
+		},
+		{
+			"slug": "ear-swab-fungi",
+			"nameEn": "Ear Swab for Fungi",
+			"source": "BRIS UHA NA BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "orl",
+			"price": "15"
+		},
+		{
+			"slug": "nose-swab-bacteria",
+			"nameEn": "Nose Swab for Bacteria",
+			"source": "BRIS NOSA NA BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "orl",
+			"price": "15"
+		},
+		{
+			"slug": "nose-swab-fungi",
+			"nameEn": "Nose Swab for Fungi",
+			"source": "BRIS NOSA NA BAKTERIJE I GLJIVICE 15,00 eur (одна цена на пару)",
+			"section": "orl",
+			"price": "15"
+		},
+		{
+			"slug": "eye-swab-bacteria",
+			"nameEn": "Eye Swab for Bacteria",
+			"source": "BRIS OKA 15,00 eur",
+			"section": "orl",
+			"price": "15"
+		}
+	],
+	"doctors": [],
+	"excluded": [
+		{
+			"source": "VAGINALNI BRIS SA AMINSKIM TESTOM 20,00 eur",
+			"reason": "Комбинация двух позиций, у которых есть свои строки и цены (VAGINALNI BRIS … 15, AMINSKI TEST 8). Записи-комбинации в каталоге нет, заводить ради неё отдельный анализ не стали."
+		},
+		{
+			"source": "GASNA ANALIZA I ACIDOBAZNI STATUS(TUMAČENJE NALAZA) 5,00 eur",
+			"reason": "Это толкование чужого результата («tumačenje nalaza»), а не сам анализ газов крови: Acid-Base Status с ценой 5€ ввёл бы в заблуждение."
+		},
+		{
+			"source": "CIJENA LJEKARSKOG PREGLEDA U KUĆNOJ POSJETI UVEĆANA JE ZA 100%.",
+			"reason": "Правило ценообразования, а не позиция. Явно названные выезды пульмолога (80/40€) заведены как Home Visit Examination."
+		},
+		{
+			"source": "TRANSPORT PACIJENATA VAN PODGORICE DOGOVARA SE U SKLADU SA KILOMETRAŽOM KOJU JE POTREBNO PREĆI.",
+			"reason": "Цена по договорённости; тарифы по Подгорице (3 и 4 €/км) заведены."
+		},
+		{
+			"source": "KOKAIN (COC), AMFETAMIN (AMP), METAMFETAMAIN (MET), MARIHUANA, METADON (MTD), OPIJATI (OPI), MDMA, BARBITURATI (BAR), BENZODIAZEPINI (BZO), OPIJATI (MOP)",
+			"reason": "Состав «KOMPLET TESTOVA … OD 40,00 eur», отдельных цен у веществ нет — заведена только панель (Drug Panel 10 II)."
+		},
+		{
+			"source": "+ cijena spirale (к POSTAVLJANJE SPIRALE 30,00 eur)",
+			"reason": "Стоимость самой спирали не указана; в IUD Insertion записано 30€ за постановку, примечание — в source."
+		},
+		{
+			"source": "/ginekologija: «ultrazvuk u ranoj trudnoći … ekspertni ultrazvuk u 20-23-oj Nedjelji», «uklanjanja kondiloma kao i biopsija»",
+			"reason": "Перечень того, что можно сделать после осмотра. Кондиломы и биопсия есть в прайсе; УЗИ ранней беременности и экспертное УЗИ 20–23 нед. как отдельные позиции не заведены — в прайсе есть только «EXPERTSKI ULTRAZVUK-GINEKOLOŠKI» (заведён буквально), выдавать его за Expert Pregnancy Ultrasound не стали. Без цены из страницы добавлен только triple test."
+		},
+		{
+			"source": "/zakazivanje-pregleda/: «Za djecu takođe vršimo sistematske preglede za odlazak u skolu»; /medicina-rada/: «zdrastveni pregledi za procjenu radne sposobnosti, upise u skolu I sl.»",
+			"reason": "Без цены и без точной позиции каталога (школьный систематский осмотр для младших классов в каталоге не заведён); уверения с ценами из DOCX заведены."
+		},
+		{
+			"source": "/fizijatrija: RTG, CT, MRI, EMNG, ULTRAZVUK mekih tkiva i zglobova, DOPPLER … — «dodatna dijagnostika»",
+			"reason": "Перечень доп. диагностики, которую назначает физиатр, а не услуги поликлиники (КТ/МРТ у клиники нет)."
+		}
+	],
+	"disputed": [
+		{
+			"topic": "«bris na bakterije i gljivice 15 eur» → две записи по 15€",
+			"detail": "Цервикальный, вагинальный мазки, мазки из зева, уха и носа: в каталоге бактерии и грибы — разные анализы, комбинированных нет. Обеим записям поставлено по 15€ — реальная цена, за которую делается каждое из исследований (в паре). Альтернатива — завести 5 комбинированных анализов «… for Bacteria and Fungi»."
+		},
+		{
+			"topic": "Одна запись — несколько строк с разной ценой (диапазон)",
+			"detail": "Abdomen Ultrasound 35–40 (детский радиолог 35 / общий радиолог 40); Urinary Tract Ultrasound 30–40 (уролог 30 / детский 35 / радиолог 40); Inhalation Therapy 8–15 (дети 8 / пульмолог 15); Exploratory Curettage 120–180 (местная / общая анестезия); Cervical Conization 200–260 (местная / общая); First-Trimester Surgical Abortion (Curettage) 120–240 (местная; общая до 8 нед. 200; после 8 нед. 240); Home Visit Examination 40–80 (выезды пульмолога: контроль на кислородотерапии 40 / первичный 80); комбинации пульмолога — первичный и контрольный приём одной записью (55–65, 65–75, 40–45)."
+		},
+		{
+			"topic": "KIRETAŽA U LOKALNOJ ANESTEZIJI 120 → аборт-кюретаж",
+			"detail": "Строка без уточнения стоит в одной группе с «KIRETAŽA U OPŠTOJ ANESTEZIJI (do 8 nedelje trudnoće)» / «(preko 8 nedelja)», а эксплоративная кюретаж в местной анестезии идёт отдельной строкой. Поэтому трактована как прерывание беременности в местной анестезии и вошла в нижнюю границу First-Trimester Surgical Abortion (Curettage)."
+		},
+		{
+			"topic": "Неоднозначные сопоставления",
+			"detail": "TEST NA HELIKO BAKTERIJU PYLORI → H. pylori Antigen in Feces (стоит рядом с тестом на скрытую кровь; серология IgG/IgA не исключена). FIMOZA 250 → Circumcision under Local Anesthesia (анестезия не указана; для поликлиники вероятнее местная). BRIS SPOLJNIH GENITALIJA → Vulvar Swab for Bacteria (раздел гинекологии). EHO MEKIH TKIVA (mišići, nervi, tetive, ligamenti) → Musculoskeletal Ultrasound, а не Soft Tissue Ultrasound — по перечню в скобках. RTG KOSTIJU / ZGLOBOVA U DVA PRAVCA → X-Ray per Segment. RTG JEDNE NOGE, STOPALA → X-Ray Lower Leg + X-Ray Foot. SPECIJALNI SNIMCI GLAVE (mastoidi, piramide) → X-Ray Mastoid (Schüller) + X-Ray Temporal Bones. RTG KIČME (po snimku) → три отдела по 30€. KONDILOMI 140 (урология) → Electrocoagulation or Excision of Condyloma Acuminata; гинекологическое «radio hir. nožem 30-100» → Condyloma Radio Wave Removal. INFILTRACIJA LIJEKA (reumatolog) → Medication Infiltration (дословное имя; запись в категории физиотерапии). STEPEN ČISTOĆE → Vaginal Discharge DMP («grupa» вагинального секрета). ESTRIOL → Free Estriol. PH Nalaz 30 (хирург) → Histopathology Standard Skin and Organ Biopsy."
+		},
+		{
+			"topic": "Психиатрия без категории",
+			"detail": "First/Follow-up Psychiatrist Examination в каталоге без категории (категории PSYCHIATRY в enum нет) — сопоставлены как есть, категория не добавлялась (правило: новых категорий не создавать)."
+		},
+		{
+			"topic": "KOMPLET TESTOVA … OD 40 eur",
+			"detail": "«od» (от) — в clinic_lab_tests нет price_min; записано price = 40."
+		}
+	],
+	"openQuestions": []
+}

@@ -1,0 +1,471 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-dr-vuksanovic-bar",
+	"name": "Poliklinika Dr Vuksanović Bar",
+	"city": "Bar",
+	"cityId": 7,
+	"googlePlaceId": "ChIJWw0mSQB0ThMRp5kv75bb8rg",
+	"clinicTypeIds": [
+		1,
+		4
+	],
+	"languageIds": [
+		1
+	],
+	"network": {
+		"name": "Poliklinika „Dr Vuksanović“",
+		"siblings": [
+			"poliklinika-dr-vuksanovic-ulcinj"
+		],
+		"note": "Бар — лаборатория + медицина труда (все врачи); Ульцинь — точка лаборатории (без врачей, тот же список анализов)."
+	},
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-dr-vuksanovic-bar.sql",
+		"server/sql/insert-clinic-poliklinika-dr-vuksanovic-bar-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 187,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен. Подволна 2c, агент O. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 214
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://drvuksanovic.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": "2021-12 (единственная цена — баннер экспресс-теста SARS-CoV-2, файл wp-content/uploads/2021/12/SARS-CoV-2-BAT.jpg; на главной в 2026)",
+			"note": "WordPress, WP REST открыт: 13 страниц (3 — демо темы), 7 постов. Перечня анализов и прайса нет; анализы — из памяток подготовки (2020-08), промо-сета 2020 (49 € акция, не перенесена), постов и баннера."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://drvuksanovic.me/wp-content/uploads/dokumenti/Raspored-zdravstvenih-radnika.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "«Raspored zdravstvenih radnika», Godina 2026, подпись 07.09.2026: 15 сотрудников. Шрифт теряет ć/Ć/đ/Đ, č/š/ž → c/s/z. Восстановление: Vuksanović ×2, Bulatović — однозначно; «Duki» → Dukić (D сохранилась, сокращение «S. D.»); «Maci» → Mačić и «etkovi» → Ćetković — по существующим в БД психиатрам ДЗ Котор."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://drvuksanovic.me/wp-content/uploads/dokumenti/Odluka-o-radnom-vremenu.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Решение о рабочем времени 10.09.2025: Laboratorija Bar пн–пт 07–16, сб 07–14; Medicina rada Bar пн–пт 07–15; Laboratorija Ulcinj пн–пт 08–11, сб 08–10."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/bar/poliklinika-dr-vuksanovic.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.0994644 / 19.0946885, +382 30 315 900, 29 отзывов (rating 4.1) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Poslovni centar Topolica G-9 — сайт = Google",
+		"phone": "+38230315900;+38269038130;+38268896900 — сайт (первый подтверждён Google)",
+		"email": "info@drvuksanovic.me — сайт",
+		"website": "https://drvuksanovic.me/",
+		"social": "нет",
+		"logo": "https://drvuksanovic.me/wp-content/uploads/2020/09/Poliklinika-Dr-Vuksanovic-Logo.jpg",
+		"workingHours": "«Odluka o radnom vremenu» (PDF, 10.09.2025): «Laboratorija Bar Ponedjeljak – Petak 07 – 16, Subota 07 – 14»; «Medicina rada Bar Ponedjeljak – Petak 07 – 15» (на /kontakt/bar/ — 08–14). В карточку — часы лаборатории.",
+		"doctors": "7 карточек из PDF состава: 2 найдены в БД (aleksandar-macic, andrija-cetkovic), 5 новых",
+		"doctorPhotos": "нет на сайте",
+		"doctorBios": "нет на сайте",
+		"prices": "только экспресс-тест SARS-CoV-2 (10.00 €, баннер 2021-12); остальное NULL",
+		"labTests": "26 — по памяткам/постам/баннеру; групп анализов (гематология, биохимия …) без перечня — в excluded",
+		"reviews": "pending — ждут полной выгрузки"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Pre-Employment Medical Certificate",
+			"slug": "pre-employment-medical-certificate",
+			"source": "/o-nama/, пост medicina-rada: «za zasnivanje radnog odnosa»"
+		},
+		{
+			"nameEn": "Medical Certificate for General Work",
+			"slug": "medical-certificate-for-general-work",
+			"source": "«… u administraciji, laka radna mjesta»; «sistematske, prethodne, periodične … preglede radnika za poslove bez rizika»"
+		},
+		{
+			"nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+			"slug": "medical-certificate-for-high-risk-and-difficult-working-conditions",
+			"source": "«… preglede radnika za … poslove sa rizikom i otežanim uslovima rada»"
+		},
+		{
+			"nameEn": "Medical Certificate for Court Expert",
+			"slug": "medical-certificate-for-court-expert",
+			"source": "«sudskog vještaka»"
+		},
+		{
+			"nameEn": "Medical Certificate for Child Adoption",
+			"slug": "medical-certificate-for-child-adoption",
+			"source": "«podobnost usvajanja djeteta»"
+		},
+		{
+			"nameEn": "Medical Certificate for University Enrollment",
+			"slug": "medical-certificate-for-university-enrollment",
+			"source": "«upis na fakultet»"
+		},
+		{
+			"nameEn": "Medical Certificate for Residence and Work in Montenegro",
+			"slug": "medical-certificate-for-residence-and-work-in-montenegro",
+			"source": "«boravak u Crnoj Gori …»"
+		},
+		{
+			"nameEn": "Medical Certificate for Study Abroad and Visa",
+			"slug": "medical-certificate-for-study-abroad-and-visa",
+			"source": "«… i inostranstvu»"
+		},
+		{
+			"nameEn": "Medical Certificate for Collective Accommodation",
+			"slug": "medical-certificate-for-collective-accommodation",
+			"source": "«kolektivni život u studentskom domu»"
+		},
+		{
+			"nameEn": "Medical Certificate for Driving License Category A, B, C, D, E",
+			"slug": "medical-certificate-for-driving-license-category-a-b-c-d-e",
+			"source": "«za vozače motornih vozila … (A, B, C, D, E kategorije)»"
+		},
+		{
+			"nameEn": "Medical Certificate for Professional Drivers",
+			"slug": "medical-certificate-for-professional-drivers",
+			"source": "«profesionalne vozače svih kategorija»"
+		},
+		{
+			"nameEn": "Medical Certificate for Taxi Driver",
+			"slug": "medical-certificate-for-taxi-driver",
+			"source": "«taxi vozače»"
+		},
+		{
+			"nameEn": "Medical Certificate for Driving Instructor Category B, C, D, E",
+			"slug": "medical-certificate-for-driving-instructor-category-b-c-d-e",
+			"source": "«… i instruktore»"
+		},
+		{
+			"nameEn": "Medical Certificate for Boat Operation up to 12 Meters",
+			"slug": "medical-certificate-for-boat-operation-up-to-12-meters",
+			"source": "«za upravljanje čamcem» — единственная запись про лодку"
+		},
+		{
+			"nameEn": "Medical Certificate for Lifeguards",
+			"slug": "medical-certificate-for-lifeguards",
+			"source": "«za spasioce na vodi …»"
+		},
+		{
+			"nameEn": "Medical Certificate for Divers",
+			"slug": "medical-certificate-for-divers",
+			"source": "«… ronioce»"
+		},
+		{
+			"nameEn": "Medical Certificate for Firearms Possession",
+			"slug": "medical-certificate-for-firearms-possession",
+			"source": "«uvjerenja o tjelesnoj i duševnoj sposobnosti za nabavljanje, držanje i nošenje vatrenog oružja»"
+		},
+		{
+			"nameEn": "Medical Certificate for Security Personnel",
+			"slug": "medical-certificate-for-security-personnel",
+			"source": "«za poslove u službi zaštite imovine i lica uz nošenje vatrenog oružja»"
+		},
+		{
+			"nameEn": "Medical Certificate for Athletes",
+			"slug": "medical-certificate-for-athletes",
+			"source": "«sportista i sportskih radnika»"
+		},
+		{
+			"nameEn": "Medical Certificate for Maritime Workers",
+			"slug": "medical-certificate-for-maritime-workers",
+			"source": "«pomoraca i drugih radnika u vodenom saobraćaju»"
+		}
+	],
+	"labTests": [
+		{
+			"nameEn": "COVID-19 Antigen Test",
+			"slug": "covid-19-antigen-test",
+			"price": 10,
+			"source": "главная, баннер «Brzi antigen test-BAT na SARS-CoV-2 10.00 €» (картинка 2021-12, на главной 2026)"
+		},
+		{
+			"nameEn": "Urine Culture",
+			"slug": "urine-culture",
+			"price": null,
+			"source": "/preporuke/…mikrobioloska…: «Urin za urinokulturu»"
+		},
+		{
+			"nameEn": "Throat Swab for Bacteria",
+			"slug": "throat-swab-bacteria",
+			"price": null,
+			"source": "«Brisevi grla, nosa i usne duplje»; промо-сет: «bris nosa i grla na bakterije i gljivice»"
+		},
+		{
+			"nameEn": "Throat Swab for Fungi",
+			"slug": "throat-swab-fungi",
+			"price": null,
+			"source": "промо-сет: «bris … grla na … gljivice»"
+		},
+		{
+			"nameEn": "Nose Swab for Bacteria",
+			"slug": "nose-swab-bacteria",
+			"price": null,
+			"source": "«Brisevi … nosa»; промо-сет"
+		},
+		{
+			"nameEn": "Nose Swab for Fungi",
+			"slug": "nose-swab-fungi",
+			"price": null,
+			"source": "промо-сет: «bris nosa … na … gljivice»"
+		},
+		{
+			"nameEn": "Oral Cavity Swab for Bacteria",
+			"slug": "oral-cavity-swab-bacteria",
+			"price": null,
+			"source": "«Brisevi grla, nosa i usne duplje»"
+		},
+		{
+			"nameEn": "Vaginal Swab for Bacteria",
+			"slug": "vaginal-swab-bacteria",
+			"price": null,
+			"source": "«Vaginalni i cervikalni bris»; промо-сет: «vaginalni i cervikalni bris na bakterije i gljivice»"
+		},
+		{
+			"nameEn": "Vaginal Swab for Fungi",
+			"slug": "vaginal-swab-fungi",
+			"price": null,
+			"source": "промо-сет"
+		},
+		{
+			"nameEn": "Cervical Swab for Bacteria",
+			"slug": "cervical-swab-bacteria",
+			"price": null,
+			"source": "«Vaginalni i cervikalni bris»; промо-сет"
+		},
+		{
+			"nameEn": "Cervical Swab for Fungi",
+			"slug": "cervical-swab-fungi",
+			"price": null,
+			"source": "промо-сет"
+		},
+		{
+			"nameEn": "Urethral Swab for Bacteria",
+			"slug": "urethral-swab-bacteria",
+			"price": null,
+			"source": "«Uretralni bris»"
+		},
+		{
+			"nameEn": "Sperm Culture for Bacteria",
+			"slug": "sperm-culture-bacteria",
+			"price": null,
+			"source": "«Spermokultura»"
+		},
+		{
+			"nameEn": "Sputum Culture for Bacteria",
+			"slug": "sputum-bacteria",
+			"price": null,
+			"source": "«Ispljuvak-sputum»"
+		},
+		{
+			"nameEn": "Stool Culture",
+			"slug": "stool-culture",
+			"price": null,
+			"source": "«Za koprokulturu»; промо-сет «koprokulturu»"
+		},
+		{
+			"nameEn": "Stool Parasites",
+			"slug": "stool-parasites",
+			"price": null,
+			"source": "«Za parazite … pregled tri uzorka stolice»"
+		},
+		{
+			"nameEn": "Perianal Impression",
+			"slug": "perianal-impression",
+			"price": null,
+			"source": "«Perianalni otisak»"
+		},
+		{
+			"nameEn": "Prothrombin Time PT INR",
+			"slug": "prothrombin-time-pt-inr",
+			"price": null,
+			"source": "/posebne-preporuke/: «Protrombinsko vrijeme – pacijente koji su na oralnoj antikoagulantnoj terapiji»"
+		},
+		{
+			"nameEn": "Oral Glucose Tolerance Test",
+			"slug": "oral-glucose-tolerance-test",
+			"price": null,
+			"source": "«Test opterećenja glukozom (OGTT)»"
+		},
+		{
+			"nameEn": "Catecholamines in 24h Urine",
+			"slug": "catecholamines-in-24h-urine",
+			"price": null,
+			"source": "«skupljanje 24h urina za kateholamine, VMA, ketosteroide, kortikosteroide, serotonin i 5-HIAA»"
+		},
+		{
+			"nameEn": "VMA in Urine",
+			"slug": "vma-in-urine",
+			"price": null,
+			"source": "«… VMA …» (24h urin)"
+		},
+		{
+			"nameEn": "17-Ketosteroids",
+			"slug": "17-ketosteroids",
+			"price": null,
+			"source": "«… ketosteroide …» (24h urin)"
+		},
+		{
+			"nameEn": "Serotonin in 24h Urine",
+			"slug": "serotonin-in-24h-urine",
+			"price": null,
+			"source": "«… serotonin …» (24h urin)"
+		},
+		{
+			"nameEn": "5-HIAA in 24h Urine",
+			"slug": "5-hiaa-in-24h-urine",
+			"price": null,
+			"source": "«… i 5-HIAA» (24h urin)"
+		},
+		{
+			"nameEn": "Spermogram",
+			"slug": "spermogram",
+			"price": null,
+			"source": "«Spermogram … Uzorak sperme se daje u laboratoriji»"
+		},
+		{
+			"nameEn": "Fecal Occult Blood",
+			"slug": "fecal-occult-blood",
+			"price": null,
+			"source": "«Uputstva za test na okultno krvavljenje-krv u stolici Imunohemijski test»; пост «Jednostavan imunohemijski test»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "milica-vuksanovic",
+			"nameSr": "Milica Vuksanović",
+			"professionalTitle": "Prim. dr sci. med.",
+			"position": "Osnivačica i direktorica; specijalista medicinske biohemije (Biohemijska laboratorija)",
+			"specialtyIds": [
+				39
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "savo-vuksanovic",
+			"nameSr": "Savo Vuksanović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista kliničke biohemije (Biohemijska laboratorija)",
+			"specialtyIds": [
+				39
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "slobodan-dukic",
+			"nameSr": "Slobodan Dukić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista mikrobiologije (Mikrobiološka laboratorija)",
+			"specialtyIds": [
+				40
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "miodrag-bulatovic",
+			"nameSr": "Miodrag Bulatović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista medicine rada",
+			"specialtyIds": [
+				50
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "aleksandar-macic",
+			"nameSr": "Aleksandar Mačić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista psihijatrije (Medicina rada)",
+			"specialtyIds": [
+				21
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "andrija-cetkovic",
+			"nameSr": "Andrija Ćetković",
+			"professionalTitle": "Dr",
+			"position": "Specijalista psihijatrije (Medicina rada)",
+			"specialtyIds": [
+				21
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "mersiha-fetahovic",
+			"nameSr": "Mersiha Fetahović",
+			"professionalTitle": null,
+			"position": "Psiholog (Medicina rada)",
+			"specialtyIds": [
+				22
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		}
+	],
+	"excluded": [
+		{
+			"source": "Главная и /o-nama/: «hematološke analize, biohemijske analize, analize hormona i tumorskih markera, imunološke analize, alergološke analize, ispitivanja iz oblasti mikrobiologije»",
+			"reason": "Группы анализов, а не конкретные тесты; перечня анализов на сайте нет. Заведены только тесты, названные в памятках подготовки (/preporuke/), промо-сете и баннерах."
+		},
+		{
+			"source": "/kako-se-pripremiti…/: «CK, LDH, AST, kalijum … glukoze, holesterola, triglicerida, fosfata, proteina, gvožđa, vitamina … ACTH, prolaktin, kateholamini, kortizol»",
+			"reason": "Примеры влияния питания/нагрузки на результаты в общей памятке, не перечень услуг. Не заведено."
+		},
+		{
+			"source": "/posebne-preporuke/: «24h urin za … kortikosteroide»",
+			"reason": "Несколько равноценных кандидатов (кортизол в 24ч моче, свободный кортизол, 17-OH-кортикостероиды) — в спорные."
+		},
+		{
+			"source": "Пост «Test netolerancije na hranu» (2020-08)",
+			"reason": "Число продуктов в панели не названо, в каталоге 5 панелей (54/90/95/108/216) — в спорные."
+		},
+		{
+			"source": "Пост «Promotivna ponuda» (2020-08): «Set mikrobioloških analiza za odlazak u porodilište 49 € (puna cijena 73 €)»",
+			"reason": "Акция 2020 года; составляющие анализы (брисы носа/горла/влагалища/шейки, копрокультура) заведены по отдельности без цен."
+		},
+		{
+			"source": "/posebne-preporuke/: «Pravilno sakupljanje urina … za analizu»; «Sakupljanje 24h urina»",
+			"reason": "Общие инструкции сбора мочи без названия анализа."
+		},
+		{
+			"source": "Medicina rada: «… i druga građanska prava»",
+			"reason": "Обобщение, конкретное удостоверение не названо."
+		},
+		{
+			"source": "PDF «Raspored zdravstvenih radnika»: лаб. техники (Đorđije Šorović, Olivera Vujošević, Melisa Crnovršanin, Mavera Nimanbegu, Branka Sekić/Šekić), медсёстры (Radojka Božović, Amera Murić), гигиенистка (Havaja Demirović); «Mjesečni raspored»: N. F. – Natalija Filipović (профессия не указана)",
+			"reason": "Не врачи / профессия не указана."
+		},
+		{
+			"source": "Страницы-заготовки темы /750-2/, /elementor-720/, /678-2/ (Lorem/«Our Doctors … 42 Boulevard, California»)",
+			"reason": "Демо-контент темы WordPress, к клинике не относится."
+		}
+	],
+	"openQuestions": [
+		"Фамилии из PDF без диакритики: «Duki» → Dukić (по правилам шрифта, не Đukić); «Maci» → Mačić и «etkovi» → Ćetković привязаны к существующим психиатрам ДЗ Котор. Если клиника пишет иначе — поправить.",
+		"Спорные анализы: «kortikosteroidi» в 24ч моче (кортизол / свободный кортизол / 17-OH-кортикостероиды) и «test netolerancije na hranu» (панели 54/90/95/108/216) — не заведены, нужен выбор.",
+		"Mersiha Fetahović — психолог (не врач) заведена карточкой с PSYCHOLOGY (22), как другие психологи в БД."
+	]
+}

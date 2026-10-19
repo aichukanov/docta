@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "infant-spinal-ultrasound",
+    "name_en": "Infant Spinal Ultrasound",
+    "name_sr": "Ultrazvuk kičme kod beba",
+    "table": "medical_services",
+    "clinic": "diagnost-budva",
+    "categories": [
+      4,
+      25
+    ],
+    "specialties": [
+      10,
+      4,
+      68
+    ],
+    "reason": "Diagnost: «UZ pregled kičme kod beba» — «ultrazvuk kičme kod novorođenčadi i mlađe odojčadi zbog dijagnostike spine bifide». В каталоге есть УЗИ мозга и бёдер младенцев, УЗИ позвоночника (спинного мозга) у младенцев нет ни под одним названием (поиск spin|kičm + ultra). Схема категорий/специальностей — как у infant-brain-ultrasound-neurosonography: 4 ULTRASOUND + 25 PEDIATRICS; 10 RADIOLOGY, 4 PEDIATRICS, 68 NEONATOLOGY."
+  },
+  {
+    "slug": "voiding-urosonography",
+    "name_en": "Voiding Urosonography",
+    "name_sr": "Ultrazvučna mikciona cistografija",
+    "table": "medical_services",
+    "clinic": "diagnost-budva",
+    "categories": [
+      4,
+      25
+    ],
+    "specialties": [
+      10,
+      9,
+      4
+    ],
+    "reason": "Diagnost: «UZ mikciona cistografija» — «zamenjuje pregled koji se doskora radio pod snopom rendgenskih zraka … utvrđuje postojanje refluksa». В каталоге только рентгеновская voiding-cystourethrography (категория 3 XRAY) — другая модальность, ставить её нельзя. Категории 4 ULTRASOUND + 25 PEDIATRICS (исследование детское), специальности 10 RADIOLOGY + 9 UROLOGY (как у VCUG) + 4 PEDIATRICS."
+  },
+  {
+    "slug": "kidney-ultrasound",
+    "name_en": "Kidney Ultrasound",
+    "name_sr": "Ultrazvuk bubrega",
+    "table": "medical_services",
+    "clinic": "ordinacija-dr-rahovic-bijelo-polje",
+    "categories": [
+      4
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "Dr Rahović: «Eho bubrega» — отдельной строкой рядом с «Eho urotrakta». УЗИ только почек в каталоге нет (есть комбинации abdomen-and-kidney / hip-and-kidney / kidney-with-doppler и urinary-tract-ultrasound — «bubrezi i mokraćna bešika», которая у этой клиники уже стоит отдельно). Схема — как у urinary-tract-ultrasound: 4 ULTRASOUND, 10 RADIOLOGY."
+  },
+  {
+    "slug": "bone-x-ray",
+    "name_en": "Bone X-Ray",
+    "name_sr": "Rendgen kostiju",
+    "table": "medical_services",
+    "clinic": "dr-abramovic-a-medical-bar",
+    "categories": [
+      3
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "Dr Abramović: «Rtg snimanje: … kostiju tijela, kičme i glave». Кичма и голова заведены существующими записями; общего «рентген костей» в каталоге нет — только 60+ частных проекций (запястье, лодыжка, грудина …) и extremity-x-ray-per-image (только конечности, тариф «за снимак»). Общая услуга кабинетов рентгена. 3 XRAY, 10 RADIOLOGY."
+  },
+  {
+    "slug": "athlete-cardiology-examination",
+    "name_en": "Cardiology Examination for Athletes",
+    "name_sr": "Kardiološki pregled sportista",
+    "table": "medical_services",
+    "clinic": "sanicard-podgorica",
+    "categories": [
+      8
+    ],
+    "specialties": [
+      1,
+      23
+    ],
+    "reason": "Sanicard: «KARDIOLOŠKI PREGLEDI SPORTISTA ZA DJECU I ODRASLE». В каталоге только sports-medical-examination (общий спортивно-медицинский осмотр, не кардиолог), medical-certificate-for-athletes (справка) и три брендовых пакета одной клиники (sports-cardiology-package-basic/intermediate/advanced) — generic-записи кардиологического осмотра спортсмена нет. 8 CARDIOLOGY; специальности 1 CARDIOLOGY + 23 PEDIATRIC_CARDIOLOGY («za djecu i odrasle»)."
+  }
+]

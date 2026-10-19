@@ -1,0 +1,279 @@
+{
+	"schemaVersion": 1,
+	"slug": "razvojni-centar-integra-podgorica",
+	"name": "Razvojni centar Integra",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJhf2cS1jtTRMRDmrZU-NvYao",
+	"clinicTypeIds": [
+		15
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-razvojni-centar-integra-podgorica.sql",
+		"server/sql/insert-clinic-razvojni-centar-integra-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 244,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент M. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Slug клиники и всех трёх специалистов на проде свободны (API 204). Сухой прогон — см. отчёт агента. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 271
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://integracentar.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress, wp-json pages (17). Главная (modified 2026-07-23), /o-nama/, /usluge/ + 8 страниц услуг (2025-08-16), /nas-tim-psihologa/ (2025-07-20), /kontakt/. Цен нет. curl с браузерным UA — 200."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/razvojni-centar-integra.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJhf2cS1jtTRMRDmrZU-NvYao, 42.4324717 / 19.2838325, +382 68 248 942, «C-14 Vojina Katnića, Podgorica 81000», рейтинг 5.0, 9 отзывов (в файле 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Vojina Katnića C-14 — сайт = Google",
+		"phone": "+38268248942;+38268885327;+38268448900 — три номера сайта",
+		"email": "kontakt@integracentar.me",
+		"website": "https://integracentar.me/",
+		"social": "facebook.com/RazvojniCentarIntegra, @razvojnicentarintegra; viber — те же три номера (ссылки viber://); YouTube не заносится (колонки нет)",
+		"logo": "https://integracentar.me/wp-content/uploads/2025/07/Razvojni-centar-integra-scaled.png",
+		"workingHours": "Пн–Пт 09:00–20:00 (подвал), Сб/Вс closed",
+		"description": "из главной, /o-nama/, /nas-tim-psihologa/ и страниц услуг",
+		"languages": "только SR",
+		"doctors": "3 психолога — все новые карточки (22+51, 22+51, 22)",
+		"doctorPhotos": "3 из 3 (wp-content)",
+		"prices": "цен нет — 8 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — 9 отзывов Google (на сайте виджет: 13) ждут полной выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "couples-therapy",
+			"nameEn": "Couples Therapy",
+			"nameSr": "Terapija parova",
+			"categoryIds": [],
+			"specialtyIds": [
+				22,
+				51
+			],
+			"reason": "Integra: «Terapija parova» (/usluge/terapija-parova/). Терапии пар в каталоге нет ни под одним названием (поиск couple|parov|partner — только генетическое консультирование пар). Спец. 22 PSYCHOLOGY + 51 PSYCHOTHERAPY. Без категории — как все психиатрические/психологические записи каталога (first-psychiatrist-examination, psychotherapy, psychological-counseling): категории «психиатрия» в enum нет."
+		},
+		{
+			"table": "medical_services",
+			"slug": "child-psychotherapy",
+			"nameEn": "Child Psychotherapy",
+			"nameSr": "Psihoterapija djece",
+			"categoryIds": [
+				25
+			],
+			"specialtyIds": [
+				4,
+				22,
+				51
+			],
+			"reason": "Integra: «Psihoterapija djece školskog uzrasta». В каталоге для детей есть только осмотры/тесты (child-psychologist-consultation, child-psychiatrist-examination), психотерапии детей нет. Категория 25 PEDIATRICS (как child-psychologist-consultation) → спец. 4 (авто) + 22 + 51."
+		},
+		{
+			"table": "medical_services",
+			"slug": "adolescent-psychotherapy",
+			"nameEn": "Adolescent Psychotherapy",
+			"nameSr": "Psihoterapija adolescenata",
+			"categoryIds": [
+				25
+			],
+			"specialtyIds": [
+				4,
+				22,
+				51
+			],
+			"reason": "Integra: «Psihoterapija adolescenata» — отдельная страница-услуга рядом с детской. В каталоге нет. Категория 25 PEDIATRICS (подростковый возраст, как first-pediatric-and-adolescent-gynecology-examination) → спец. 4 + 22 + 51."
+		},
+		{
+			"table": "medical_services",
+			"slug": "online-psychotherapy",
+			"nameEn": "Online Psychotherapy",
+			"nameSr": "Online psihoterapija",
+			"categoryIds": [],
+			"specialtyIds": [
+				22,
+				51
+			],
+			"reason": "Integra: «Online psihoterapija … putem video poziva (Zoom, Google Meet …)». Онлайн-приёмов психотерапевта в каталоге нет (есть только telephone-medical-consultation — врачебная консультация по телефону). Спец. 22 + 51. Без категории — как все психиатрические/психологические записи каталога (first-psychiatrist-examination, psychotherapy, psychological-counseling): категории «психиатрия» в enum нет."
+		},
+		{
+			"table": "medical_services",
+			"slug": "group-psychotherapy",
+			"nameEn": "Group Psychotherapy",
+			"nameSr": "Grupna psihoterapija",
+			"categoryIds": [],
+			"specialtyIds": [
+				21,
+				22,
+				51
+			],
+			"reason": "Integra: «Grupna psihoterapija … iskustveno-terapijske grupe, 6-10 učesnika»; MonteRehab: «Group therapy online». В каталоге групповая психотерапия есть только как тарифные позиции FZOCG с конкретным профилем (…for-addictions, …anxiety-depression-or-psychotic-disorders, group-psychodynamic-and-sociodynamic-therapy) — общей записи нет. Спец. 21 + 22 + 51. Без категории — как все психиатрические/психологические записи каталога (first-psychiatrist-examination, psychotherapy, psychological-counseling): категории «психиатрия» в enum нет.",
+			"note": "Общая запись нескольких клиник порции M (razvojni-centar-integra-podgorica, monterehab-budva); создаётся идемпотентно в каждом services-SQL."
+		}
+	],
+	"services": [
+		{
+			"slug": "psychotherapy",
+			"nameEn": "Psychotherapy",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/usluge/individualna-psihoterapija/: «Individualna psihoterapija» (Za odrasle) — общая запись «Psihoterapija» (спец. 51)"
+		},
+		{
+			"slug": "psychological-counseling",
+			"nameEn": "Psychological Counseling",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/usluge/psihoterapijsko-savjetovanje/: «Psihoterapijsko savjetovanje … kraći, strukturisaniji i konkretnije usmjeren rad» — запись «Psihološko savjetovanje»"
+		},
+		{
+			"slug": "couples-therapy",
+			"nameEn": "Couples Therapy",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/usluge/terapija-parova/: «Terapija parova … Susreti se odvijaju uživo ili online»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "family-psychotherapy-session",
+			"nameEn": "Family Psychotherapy Session",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/usluge/porodicna-terapija/: «Porodična terapija se temelji na sistemskom pristupu» — запись «Seansa porodične psihoterapije» (единственная общая семейная психотерапия; family-psychological-treatment — «psihološki tretman porodice» тарифа, менее точна)"
+		},
+		{
+			"slug": "adolescent-psychotherapy",
+			"nameEn": "Adolescent Psychotherapy",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/usluge/psihoterapija-adolescenata/: «Psihoterapija adolescenata»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "child-psychotherapy",
+			"nameEn": "Child Psychotherapy",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/usluge/psihoterapija-djece-skolskog-uzrasta/: «Psihoterapija djece školskog uzrasta»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "online-psychotherapy",
+			"nameEn": "Online Psychotherapy",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/usluge/online-psihoterapija/: «Online psihoterapija … putem video poziva (Zoom, Google Meet ili druga bezbjedna platforma)»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "group-psychotherapy",
+			"nameEn": "Group Psychotherapy",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/usluge/grupna-psihoterapija/: «Grupna psihoterapija … Grupe su poluzatvorenog tipa, obično broje od 6-10 učesnika»",
+			"newInCatalog": true
+		}
+	],
+	"labTests": [],
+	"doctors": [
+		{
+			"slug": "marko-minic",
+			"nameSr": "Marko Minić",
+			"professionalTitle": "dipl. psiholog",
+			"position": "Dipl. psiholog; geštalt i transakcioni analitičar psihoterapeut",
+			"specialtyIds": [
+				22,
+				51
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"photo": "https://integracentar.me/wp-content/uploads/2025/06/Marko-Minic.webp",
+			"services": [
+				"psychotherapy"
+			],
+			"note": "Новая карточка: психолог, психотерапевт (ТА + гештальт). Био с сайта."
+		},
+		{
+			"slug": "ljubica-anicic",
+			"nameSr": "Ljubica Aničić",
+			"professionalTitle": "dipl. psiholog",
+			"position": "Dipl. psiholog; geštalt psihoterapeut",
+			"specialtyIds": [
+				22,
+				51
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"photo": "https://integracentar.me/wp-content/uploads/2025/12/Ljubica-Anicic-Dipl.psiholog-gestalt-psihoterapeut.webp",
+			"services": [
+				"psychotherapy",
+				"adolescent-psychotherapy",
+				"child-psychotherapy"
+			],
+			"note": "Новая карточка: психолог, гештальт-психотерапевт. Био с сайта."
+		},
+		{
+			"slug": "dragana-zivkovic",
+			"nameSr": "Dragana Živković",
+			"professionalTitle": "dipl. psiholog",
+			"position": "Dipl. psiholog; savjetnik u sistemskoj porodičnoj psihoterapiji",
+			"specialtyIds": [
+				22
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"photo": "https://integracentar.me/wp-content/uploads/2025/12/Dragana-Zivkovic-Dipl.-psiholog-savjetnik-u-sistemskoj-porodicnoj-psihoterapiji.webp",
+			"services": [
+				"psychological-counseling",
+				"couples-therapy",
+				"family-psychotherapy-session"
+			],
+			"note": "Новая карточка: психолог, консультант в системной семейной психотерапии (только спец. 22)."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«Edukacije i radionice», «Grupni programi podrške» (Novosti), программа «Šta kažeš poslije zbogom» 2026",
+			"reason": "Разовые образовательные события и новости, не постоянные услуги прайса/меню."
+		},
+		{
+			"source": "Отзывы Trustindex на главной («besplatne grupne terapije» и др.)",
+			"reason": "Отзывы — не источник фактов об услугах/ценах; отзывы ждут выгрузки."
+		}
+	],
+	"openQuestions": []
+}

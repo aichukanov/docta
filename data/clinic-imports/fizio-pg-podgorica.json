@@ -1,0 +1,326 @@
+{
+	"schemaVersion": 1,
+	"slug": "fizio-pg-podgorica",
+	"name": "Fizio PG",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJCU-J5kLrTRMRvx5Ou2CKSfo",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-fizio-pg-podgorica.sql",
+		"server/sql/insert-clinic-fizio-pg-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 188,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и врачей по slug. Подволна 2c, агент P. Сухой прогон 2026-10-08 на локали (dryrun.mjs: DML через EXPLAIN внутри START TRANSACTION … ROLLBACK, плюс shadow-проход для новых записей каталога): 0 ошибок; несматченные slug — только свои новые записи каталога (в shadow-проходе — 0); привязки врач↔услуга в сухом прогоне не сматчены ожидаемо (клиники ещё нет); счётчики clinics/doctors/doctor_clinics/clinic_medical_services/medical_services/medical_service_synonyms/clinic_medical_service_doctors/clinic_working_hours/clinic_languages до и после совпали (174/1901/2566/14705/5809/5464/187/144/185). Новые slug клиник и врачей сверены с прод-API (204). Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 215
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.fiziopg.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Самописный одностраничник (© 2025 FizioPG). Контакты, часы, «Prihvatamo dobrovoljno zdravstveno osiguranje», JSON-LD MedicalBusiness (адрес, индекс 81000, часы, sameAs facebook.com/fiziocg и instagram.com/fizio_zu, paymentAccepted «Cash, Credit Card, Health Insurance»). Цен нет нигде. Ссылка на /en — 404. Логотип из JSON-LD (/wp-content/uploads/2020/10/Fizio-logo.png) — 404."
+		},
+		{
+			"type": "website-api",
+			"ref": "https://www.fiziopg.me/api.php?action=load",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "JSON: employees 7 (имя, звание, био, фото data:-URI), therapies 14 (название + описание), partners 12, gallery 12. Те же данные продублированы в инлайн-скрипте страницы. Внешних URL фото нет — photo_url не заполнялся."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/fizio.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4509845 / 19.2360855, телефон +382 69 026 947, адрес «ugao ulice Sava Čelebića i Milutina Vučinića». 18 отзывов (в файле 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Sava Čelebića 35, Blok IX — сайт; Google даёт тот же угол улиц; индекс 81000 — JSON-LD",
+		"phone": "+38269026947;+38267513575 — сайт (первый подтверждён Google)",
+		"email": "office@fiziopg.me — сайт",
+		"website": "https://www.fiziopg.me/",
+		"social": "facebook.com/fiziocg, @fizio_zu — ссылки сайта и JSON-LD sameAs",
+		"logo": "нет: URL из JSON-LD отдаёт 404, логотип на странице — data:-URI",
+		"workingHours": "Пн–Сб 07–22, Вс закрыто — сайт и JSON-LD",
+		"description": "из перечня терапий, команды, блока страховщиков и JSON-LD (оплата)",
+		"doctors": "7 из 7 — все физиотерапевты (спец. 94), все новые; Dragana Knežević и Anđela Golubović — тёзки людей в БД с другой специальностью, заведены отдельно (slug с суффиксом -fizioterapeut)",
+		"doctorPhotos": "нет ни одного: на сайте только data:-URI",
+		"prices": "цен на сайте нет — все 13 услуг без цены",
+		"labTests": "лаборатории нет",
+		"reviews": "pending — ждут полной выгрузки юзера (18 в Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "physiotherapist-examination",
+			"nameEn": "Physiotherapist Examination",
+			"nameSr": "Pregled fizioterapeuta",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Осмотр физиотерапевта (не врача): Fizio Centar Nikšić — «Pregled obuhvata komunikaciju pacijenta i terapeuta, upoznavanje sa problemom, testiranja kroz određene vježbe, određivanje protokola, a trajanje pregleda je od 45 min do 1h»; Fizio PG — «Specijalistički pregled — Detaljna procjena i individualni plan tretmana» (в штате только физиотерапевты). В каталоге есть осмотры физиатра (врача), осмотра физиотерапевта нет. sort_order = 1, как у первичных осмотров."
+		},
+		{
+			"table": "medical_services",
+			"slug": "magnetophoresis",
+			"nameEn": "Magnetophoresis",
+			"nameSr": "Magnetoforeza",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Fizio PG «Magnetoforeza — Sofisticirana fizio-estetska terapija…». Введение препарата магнитным полем (по аналогии с Electrophoresis / Phonophoresis), в каталоге нет; Magnetic Therapy — без препарата."
+		}
+	],
+	"services": [
+		{
+			"slug": "physiotherapist-examination",
+			"nameEn": "Physiotherapist Examination",
+			"price": null,
+			"source": "Specijalistički pregled — «Detaljna procjena i individualni plan tretmana» (naslovna; u timu samo specijalisti primijenjene fizioterapije i fizioterapeuti)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "tecar-therapy",
+			"nameEn": "Tecar Therapy",
+			"price": null,
+			"source": "INDIBA terapija — «Svjetski lider u radiofrekventnoj terapiji. Ubrzano liječenje, oporavak mišića, ublažavanje bolova i poboljšanje tonusa kože.»"
+		},
+		{
+			"slug": "hilt-laser-therapy",
+			"nameEn": "HILT Laser Therapy",
+			"price": null,
+			"source": "K Laser — «Napredni terapijski laser klase IV koji koristi infracrvenu i blisko-infracrvenu svjetlost…»"
+		},
+		{
+			"slug": "laser-therapy",
+			"nameEn": "Laser Therapy",
+			"price": null,
+			"source": "Laser terapija — «Laseri male snage bez izraženog termičkog dejstva…»; Medicinski Laser M-Hi (MLS®) — «…koristi naprednu MLS tehnologiju…»"
+		},
+		{
+			"slug": "muscle-electrical-stimulation",
+			"nameEn": "Muscle Electrical Stimulation",
+			"price": null,
+			"source": "Compex terapija — «Vodeća svjetska tehnologija mišićne elektrostimulacije…»; Elektrostimulacija — «…električne impulse za izazivanje mišićne kontrakcije»"
+		},
+		{
+			"slug": "super-inductive-system-therapy",
+			"nameEn": "Super Inductive System Therapy",
+			"price": null,
+			"source": "BTL SIS – Super Induktivni Sistem — «…fokusirano visoko-intenzivno elektromagnetno polje…»"
+		},
+		{
+			"slug": "shock-wave-therapy",
+			"nameEn": "Shock Wave Therapy",
+			"price": null,
+			"source": "ShockWave terapija — «Savremena neinvazivna metoda rehabilitacije radijalnim talasima…»"
+		},
+		{
+			"slug": "mechanical-spinal-traction",
+			"nameEn": "Mechanical Spinal Traction",
+			"price": null,
+			"source": "Trakcija kičme — «Istezanje kičmenog stuba primenom mehaničke sile na specijalnom trakcionom stolu…»"
+		},
+		{
+			"slug": "lymphatic-drainage-complete",
+			"nameEn": "Complete Lymphatic Drainage",
+			"price": null,
+			"source": "Limfna drenaža — «Terapija koja poboljšava kretanje limfe, drenažu tkiva i krvotok.» (generic-запись «limfna drenaža» в каталоге — Complete Lymphatic Drainage, синоним «Manual Lymphatic Drainage»)"
+		},
+		{
+			"slug": "magnetophoresis",
+			"nameEn": "Magnetophoresis",
+			"price": null,
+			"source": "Magnetoforeza — «Sofisticirana fizio-estetska terapija koja nadoknađuje deficit kolagena, poboljšava pokretljivost zglobova i usporava starenje kože.»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "thermotherapy-cryotherapy",
+			"nameEn": "Thermotherapy: Cryotherapy",
+			"price": null,
+			"source": "Enraf-Nonius CryoOne — «Lokalizovani uređaj za terapiju hladnim vazduhom (-30°C do -43°C)…»"
+		},
+		{
+			"slug": "exercises-on-equipment-pulley-ergocycle-cpm-suspension",
+			"nameEn": "Exercises on Equipment (Pulley, Ergocycle, CPM, Suspension)",
+			"price": null,
+			"source": "Robot – Kinetec CPM — «Aparat za ranu rehabilitaciju. Pasivni pokreti zglobova koljena, stopala i kuka putem motornog BTL-CPMotion sistema.» (в каталоге CPM = «kinetička šina» в этой записи)"
+		},
+		{
+			"slug": "sports-injury-rehabilitation",
+			"nameEn": "Sports Injury Rehabilitation",
+			"price": null,
+			"source": "JSON-LD description: «Pružamo usluge fizioterapije, sportske rehabilitacije, INDIBA terapije, laser terapije i ShockWave tretmana.»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "jugoslav-toskovic",
+			"nameSr": "Jugoslav Tošković",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": []
+		},
+		{
+			"slug": "dragana-knezevic-fizioterapeut",
+			"nameSr": "Dragana Knežević",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": [],
+			"note": "Тёзка в БД: dragana-knezevic (педиатр, ДЗ Херцег-Нови) — другой человек; ищем ТОЛЬКО по своему slug, не по имени."
+		},
+		{
+			"slug": "suad-nikocevic",
+			"nameSr": "Suad Nikočević",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": []
+		},
+		{
+			"slug": "andjela-golubovic-fizioterapeut",
+			"nameSr": "Anđela Golubović",
+			"professionalTitle": null,
+			"position": "Fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": [],
+			"note": "Тёзка в БД: andjela-golubovic (психолог, КЦЦГ / Smartmed) — другая специальность, другой человек; ищем ТОЛЬКО по своему slug."
+		},
+		{
+			"slug": "tijana-knezevic",
+			"nameSr": "Tijana Knežević",
+			"professionalTitle": null,
+			"position": "Fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": []
+		},
+		{
+			"slug": "balsa-garic",
+			"nameSr": "Balša Garić",
+			"professionalTitle": null,
+			"position": "Master student primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": []
+		},
+		{
+			"slug": "nina-toskovic",
+			"nameSr": "Nina Tošković",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": []
+		}
+	],
+	"disputed": [
+		{
+			"source": "Guna kolagen — «Medicinska sredstva na bazi kolagena za tretman ortopedsko-traumatoloških slučajeva.»",
+			"reason": "Как у OrthoExpert («Terapija Guna kolagenom»): кандидата в каталоге нет, Guna — бренд медицинских изделий, способ применения (инъекции / мезотерапия / с магнитофорезом) сайт не описывает, категорию выбрать не из чего. Решать вместе с OrthoExpert — одна запись на обе клиники."
+		}
+	],
+	"excluded": [
+		{
+			"source": "«Iznajmite robota za kućnu rehabilitaciju» / «Iznajmi Robota →» (Kinetec CPM)",
+			"reason": "Аренда аппарата — не медицинская услуга, записи каталога нет."
+		},
+		{
+			"source": "Блоки «30+ Godina iskustva», «5000+ Zadovoljnih pacijenata», «12 Metoda liječenja», отзывы на странице",
+			"reason": "Маркетинг и отзывы — не перечень услуг; отзывы ждут выгрузки Google."
+		},
+		{
+			"source": "Partneri: Telekom CG, Aerodromi CG, Djina Vrbica, Poliklinika Filipović",
+			"reason": "Корпоративные партнёры, не страховщики; в описание не взяты."
+		},
+		{
+			"source": "Ссылка на блог www.fizioterapeut.me/blog",
+			"reason": "Внешний блог, не перечень услуг."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Название и slug",
+			"detail": "Google «Fizio», сайт «FizioPG» / логотип «Fizio PG», юрлицо PZU Fizio. Заведено «Fizio PG», slug fizio-pg-podgorica (на проде свободен). Если нужно ровно как в Google — поменять name_sr до применения."
+		},
+		{
+			"topic": "MLS laser M-Hi",
+			"detail": "Сопоставлен с Laser Therapy (+синоним «MLS laser»): сайт не говорит о высокой интенсивности, в отличие от K Laser («klase IV» → HILT Laser Therapy)."
+		}
+	]
+}

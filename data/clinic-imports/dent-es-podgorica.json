@@ -1,0 +1,247 @@
+{
+	"schemaVersion": 1,
+	"slug": "dent-es-podgorica",
+	"name": "Stomatološka ordinacija Dent-ES",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJyzoiodjqTRMRkYqHpi_xiNU",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dent-es-podgorica.sql",
+		"server/sql/insert-clinic-dent-es-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 203,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент S. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. ⚠️ Услуги и состав — 2017, могли устареть. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 230
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://dent-es.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress. Прочитаны через WP REST /wp-json/wp/v2/pages/{id}: Početna (248, modified 2025-02-16), Usluge (313, 2017-11-06), O Nama (290, 2017-10-10), Stručni tim (283, 2017-10-10), Kontakt (281, 2021-02-16). ⚠️ Перечень услуг и состав — 2017, могли устареть. Цен нет: блог-акция 2015/2016 «po cijeni od 9,90EUR … Do 15.03.2016» — не цена, не импортировалась; баннер главной 2025 (картинка OD-3.png) — «Uz EYCA karticu 5-20% popusta na sve stomatološke usluge» — не цена."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/stomatoloska-ordinacija-dent-es.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatološka ordinacija - Dent-ES», «CITY KVART, LAMELA2-7/L-3C, Podgorica 81000», +382 20 512 697, 11 отзывов (rating 4.3) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "City kvart, lamela 2-7/L-3C (сайт = Google); координаты — место Google",
+		"phone": "+38220512697 (= Google), +38267874362, +38267481047 (Ortopan kabinet) — сайт",
+		"email": "ordinacija.dentes@gmail.com — сайт",
+		"website": "https://dent-es.me/",
+		"social": "facebook.com/stomatoloskaordinacija.dentes (Google+ — мёртв)",
+		"logo": "https://dent-es.me/wp-content/uploads/2016/09/NOVI-LOGO-1.png (шапка сайта)",
+		"workingHours": "пн–пт 09–20, сб–вс закрыто — главная (2025); на «O Nama» 2017 — 09–18 + каждая вторая суббота",
+		"doctors": "3 доктора, все новые; Tatjana Đaletić — стоматологическая сестра, не заводилась",
+		"doctorPhotos": "у всех 3 — /wp-content/uploads/2015/03/*-1.jpg",
+		"doctorBios": "только у Maida Hrapović; у Tanja Rakočević и Drago Žujović на сайте био нет",
+		"prices": "нет — все услуги NULL; тарифы ФЗО для детской ортодонтии не ставились",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Dental Caries Treatment",
+			"slug": "dental-caries-treatment",
+			"source": "OSNOVNE STOMATOLOŠKE USLUGE ZA DJECU I ODRASLE: «popravka zuba sa najsavremenijim materijalima» — материал не назван"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "«ekstrakcija zuba»"
+		},
+		{
+			"nameEn": "Plaque and Calculus Removal",
+			"slug": "plaque-and-calculus-removal",
+			"source": "«uklanjanje zubnog kamenca …»"
+		},
+		{
+			"nameEn": "Periodontal Scaling and Root Planing",
+			"slug": "periodontal-scaling-root-planing",
+			"source": "«… i tretman parodontopatičnih zuba» (повторено в HIRURŠKE USLUGE)"
+		},
+		{
+			"nameEn": "Partial Acrylic Denture",
+			"slug": "partial-acrylic-denture",
+			"source": "PROTETSKE USLUGE: «izrada pločastih parcijalnih … proteza»"
+		},
+		{
+			"nameEn": "Complete Acrylic Denture",
+			"slug": "complete-acrylic-denture",
+			"source": "«izrada pločastih … totalnih proteza»"
+		},
+		{
+			"nameEn": "Skeletal Partial Denture",
+			"slug": "skeletal-partial-denture",
+			"source": "«izrada skeletiranih- vizil proteza» (синоним записи «Vizil proteza»)"
+		},
+		{
+			"nameEn": "Metal-Ceramic Bridge Pontic",
+			"slug": "metal-ceramic-bridge-pontic",
+			"source": "«izrada metalo-keramičkih mostova»"
+		},
+		{
+			"nameEn": "All-Ceramic Crown",
+			"slug": "all-ceramic-crown",
+			"source": "«bezmetalna keramika» — отдельная строка, вид работы не уточнён"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "«cirkonijum»"
+		},
+		{
+			"nameEn": "Cast Post and Core",
+			"slug": "cast-post-and-core",
+			"source": "«izrad livenih nadogradnji …»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "ORTODONTSKE USLUGE: «ortodontski mobilni aparati»; «djeca mogu dobiti mobilne ortodontske aparate besplatno sa ovjerenom zdravsvenom knjižicom» (договор с ФЗО — цена не ставится)"
+		},
+		{
+			"nameEn": "Fixed Braces (Metal) per Jaw",
+			"slug": "fixed-braces-metal-per-jaw",
+			"source": "«fiksni ortodontski aparati sa metalnim … bravicama ( tzv. “fiksna proteza” )»"
+		},
+		{
+			"nameEn": "Fixed Braces (Ceramic or Composite) per Jaw",
+			"slug": "fixed-braces-ceramic-or-composite-per-jaw",
+			"source": "«… i estetskim bravicama»"
+		},
+		{
+			"nameEn": "Frenectomy",
+			"slug": "frenectomy",
+			"source": "HIRUŠKE USLUGE: «resekcija frenuluma» (стоматологическая запись; frenulum-resection — ЛОР)"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "«apikotomija»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery",
+			"slug": "flap-surgery-periodontal",
+			"source": "«režanj operacije»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "«ugradnja implanta» — бренд не назван"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "SNIMANJE ZUBA: «Ortopan snimak»; главная/Kontakt: «Ortopan kabinet: +382 67 481 047»"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "«Klasični snimak zuba»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "maida-hrapovic",
+			"nameSr": "Maida Hrapović",
+			"professionalTitle": "dr",
+			"position": "Specijalista ortopedije vilica",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://dent-es.me/wp-content/uploads/2015/03/Maida-Hrapovic-1.jpg",
+			"services": []
+		},
+		{
+			"slug": "tanja-rakocevic",
+			"nameSr": "Tanja Rakočević",
+			"professionalTitle": "dr",
+			"position": "Specijalista ortopedije vilica",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://dent-es.me/wp-content/uploads/2015/03/Tanja-Rakocevic-1.jpg",
+			"services": []
+		},
+		{
+			"slug": "drago-zujovic",
+			"nameSr": "Drago Žujović",
+			"professionalTitle": "dr",
+			"position": "Stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://dent-es.me/wp-content/uploads/2015/03/Drago-Zujovic-1.jpg",
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "PROTETSKE USLUGE: «izrad … solo kruna»",
+			"reason": "Материал одиночной коронки не назван; generic-коронки в каталоге нет. Безметалловая и циркониевая заведены отдельными строками."
+		},
+		{
+			"source": "O Nama / Usluge: «Iz oblasti ortodoncije, ordinacija DENT-ES ima ugovor sa Fondom za zdravstveno osiguranje tako da djeca mogu dobiti mobilne ortodontske aparate besplatno»",
+			"reason": "Факт для описания (внесён в description_*). Тарифы ФЗОЦГ ценами не ставим; цена 0 не ставится — бесплатно только по договору ФЗО."
+		},
+		{
+			"source": "Блог «Ultrazvučno skidanje kamenca sa poliranjem i besplatan stomatološki pregled …» (2015): «Do 15.03.2016. … po cijeni od 9,90EUR»",
+			"reason": "Акция 2016 года — не цена и не перечень услуг."
+		},
+		{
+			"source": "Главная, баннер wp-content/uploads/2025/02/OD-3.png: «UZ EYCA KARTICU 5-20% POPUSTA NA SVE STOMATOLOŠKE USLUGE»",
+			"reason": "Скидка по молодёжной карте, не цена; купоны клиник (clinic_coupons) — это ручное решение юзера."
+		},
+		{
+			"source": "O Nama: «Podržavamo aktivnosti u cilju promovisanja prevencije, ranog otkrivanja bolesti i edukacije stanovništva»",
+			"reason": "Декларация, а не услуга."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Перечень и состав 2017 года",
+			"detail": "Страницы Usluge/Stručni tim/O Nama не правились с 2017; главная обновлена в 2025 (EYCA, часы, блок «Stručni tim» с теми же тремя врачами и сестрой). Состав мог устареть."
+		},
+		{
+			"topic": "EYCA-скидка 5–20%",
+			"detail": "Если юзер хочет показывать её как купон клиники — это отдельное решение (clinic_coupons), в импорт не включено."
+		}
+	]
+}

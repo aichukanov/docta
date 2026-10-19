@@ -1,0 +1,828 @@
+{
+	"schemaVersion": 1,
+	"slug": "dom-zdravlja-berane",
+	"name": "JZU Dom zdravlja \"Dr Nika Labović\" Berane",
+	"city": "Berane",
+	"cityId": 9,
+	"googlePlaceId": "ChIJ6bOlY8KTUhMR1jGc6dKoOkM",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dom-zdravlja-berane.sql",
+		"server/sql/insert-clinic-dom-zdravlja-berane-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 175,
+		"doctorIds": {},
+		"note": "Подволна 2b, агент H. Сухой прогон 2026-10-08 на локальной БД (scratchpad/agentD/scripts/dryrun.mjs: DML → EXPLAIN в START TRANSACTION … ROLLBACK): 0 ошибок, 0 несматченных slug услуг (29/29 есть и локально, и на проде по /api/services/details), 4 существующих врача найдены по slug; счётчики clinics/doctors/clinic_medical_services/doctor_clinics/clinic_working_hours/clinic_languages до и после совпали. Порядок применения: сначала insert-clinic-dom-zdravlja-berane.sql, затем -services.sql. Все 31 новых slug врачей и slug клиники проверены на проде (/api/doctors/details, /api/clinics/details) — свободны. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 202
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://domzdravljaberane.me/index.php/ljekarska-uvjerenja",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceDate": "2016-06-07",
+			"note": "Joomla; curl без браузерного User-Agent и Accept получает 406 от mod_security. «Cjenovnik zdravstvenih usluga koje JZU Dom zdravlja \"Dr Nika Labović\" Berane pruža trećim licima i po osnovu kojih se izdaje dokaz o zdravstvenom stanju građanina», на основании акта Ministarstva zdravlja br. 404-220/2015 od 01.10.2015; подпись «Broj: 1623/2, Berane, 07.06.2016. godine, DIREKTORKA dr Zuhra Hadrović». 20 цен «Usluge Medicine rada». Там же — состав tim za ljekarska uvjerenja (dr Refka Lejla Latić + 7 врачей + 2 психолога) и «ambulanta Medicine rada na drugom spratu glavnog objekta, 07,00–15,00». Даты правки страница не отдаёт."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaberane.me/index.php/sanitarne-knjizice",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceDate": "2016-06-29",
+			"note": "«Cjenovnik za zdravstvene preglede … u okviru sanitarnih pregleda», акт МЗ br. 404-220/2015 od 22.06.2016; «Broj: 1727/2, Berane, 29.06.2016». 3 цены формата «32,00» без знака €. Уплата через žiro-račun или наличными в ХЭС; контакт ХЭС 051-236-584, email epid.dz.berane@t-com.me (скрыт JS-клоакингом Joomla, декодирован из HTML)."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaberane.me/index.php/brojevi-telefona-u-ordinacijama",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Список ординаций: izabrani doktori za djecu (5 врачей, 3 ординации), za odrasle (12, 6 ординаций), za žene (2); специалистические амбулатории: Internistička ambulanta, Medicina rada; прочие службы (ХЭС, savjetovališta, Centar za djecu sa smetnjama u razvoju, sanitetski prevoz) — только телефоны, без врачей."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaberane.me/index.php/radno-vrijeme-izabranih-doktora",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Недельный график «za period 5. – 11. oktobar 2026». Сверх списка ординаций дал: замещающих врачей (Marija Bojić за Jelenu Banjac, Jasna Đurašković Lutovac за Sanju Kovačević), ZS Petnjica (Jasmina Garčević, Srđan Škrkić — za odrasle; педиатры ротируются), и гинекологов KBC Berane, которые замещают dr Jovanu Mihajlović (Vlado Dragaš, Marijana Pešić, Denis Adrović, Damir Šabotić). Фамилия «Mihajlović» здесь против «Mihailović» на странице телефонов."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaberane.me/index.php/radno-vrijeme-sluzbi",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Часы по службам. Izabrani doktor za odrasle: I smjena 07–15, II smjena 13–21; vikend/praznik — jedan tim ID 07–15. Za djecu: 07–14 / 13–21; vikend jedan tim 07–15. Za žene 07–15, vikend ne radi. Centri, HES, patronaža (I i II smjena, vikend jedan tim), sanitetski prevoz, fizikalna terapija, medicina rada, savjetovališta — 07–15. Povjerljivo savjetovalište za HIV — pon/uto/sri 16–20."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaberane.me/index.php/o-nama/info",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Описание: центр ПЗЗ для общин Berane и Petnjica; 14 команд za odrasle (12 Berane + 2 Petnjica), 5 za djecu, 2 za žene; 5 центров, 2 специалистические амбулатории, 3 единицы поддержки; перечень областей работы. Численность (162 сотрудника, 37 врачей) и статистика 2024 в описание не переносились."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaberane.me/index.php/o-nama/objekti",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Четыре объекта: Lamela A (главный), Lamela B, Centar za reproduktivno zdravlje, ZS Petnjica; 8 сельских амбулаторий в Berane и 5 в Petnjica. В Lamela A арендуют помещения Zavod za hitnu medicinsku pomoć и 6 частных стоматологий — не часть ДЗ, в описание не взяты."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaberane.me/index.php/kontaktirajte-nas",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Адрес «Ulica Miljana Tomičića, br. 4, Berane 84300», тел. +38251233324 (ДЗ), +38251233325 (Info centar). /o-nama/menadzment: директор Marica Janković, diplomirana pravnica."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaberane.me/index.php/aktuelnosti/292-apel-roditeljima-cija-su-djeca-propustila-imunizaciju-iz-kalendara-obavezne-vakcinacije",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Пост 2026-05-13: izabrani doktori za djecu (в тексте — «Pedijatri») вакцинируют пропущенные дозы по Kalendaru obavezne vakcinacije."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/berane/jzu-dom-zdravlja-dr-nika-labovic.json",
+			"collected": null,
+			"machineReadable": true,
+			"note": "place_id, координаты 42.8495959 / 19.8695469, телефон +382 51 233 324 (совпадает с сайтом). formattedAddress «RVX9+RRM, Miljana Tomčića» — опечатка в фамилии, адрес взят с сайта. 1 отзыв (5★, 2022). Google не перезапрашивался."
+		}
+	],
+	"coverage": {
+		"address": "Miljana Tomičića 4, 84300 — по сайту (/kontaktirajte-nas)",
+		"phone": "+38251233324;+38251233325",
+		"email": "не записан: общего адреса на сайте нет, только форма; epid.dz.berane@t-com.me — ящик ХЭС для санитарных осмотров",
+		"website": "https://domzdravljaberane.me/",
+		"facebook": "facebook.com/JZU-Dom-zdravlja-Dr-Nika-Labovi%C4%87-Berane-269038347034 (футер сайта)",
+		"logo": "внешний URL файла шаблона: /templates/g5_hydrogen/custom/images/Dom-zdravlja-Berane-logo-transparent.png (200 OK)",
+		"workingHours": "пн–пт 07:00–21:00, сб–вс 07:00–15:00 — по izabrani doktor za odrasle (/radno-vrijeme-sluzbi)",
+		"description": "6 языков, только из /o-nama/info, /o-nama/objekti, /ljekarska-uvjerenja, /sanitarne-knjizice",
+		"doctors": "35: 31 новых + 4 найдены в БД (все у opsta-bolnica-berane). Фото на сайте нет.",
+		"prices": "24 строк с ценой (20 позиций medicina rada → 21 запись, т.к. 3b разнесён на две; 3 санитарных осмотра); акты 2015/2016; is_price_outdated = 0 (решение юзера 2026-10-08)",
+		"servicesWithoutPrice": "5: осмотры у izabranih doktora (odrasli/djeca/žene), Internistička ambulanta, вакцинация детей по календарю",
+		"labTests": "нет: Mikrobiološka laboratorija есть, но перечня анализов на сайте нет",
+		"reviews": "pending: 1 отзыв в файле места, ждёт полной выгрузки",
+		"branches": "ZS Petnjica (2 izabrana doktora za odrasle + ротация педиатров) и сельские амбулатории — отдельными клиниками не заводились: адресов на сайте нет, города Petnjica в enum нет; врачи ZS Petnjica привязаны к этой карточке с position «…, ZS Petnjica»",
+		"siteIntegrity": "сайт не взломан — скрытых блоков казино нет. bolnicaberane.com (перекуплен под казино) — не сайт ДЗ, не использовался"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Pre-Employment Medical Certificate",
+			"slug": "pre-employment-medical-certificate",
+			"price": 20,
+			"code": "BE_MR_01",
+			"source": "Ljekarsko uvjerenje o sposobnosti za rad, prilikom zasnivanja radnog odnosa (radna mjesta bez povećanih rizika) — 20,00 € (besplatno*)"
+		},
+		{
+			"nameEn": "Medical Certificate for General Work",
+			"slug": "medical-certificate-for-general-work",
+			"price": 35,
+			"code": "BE_MR_02a",
+			"source": "Ljekarsko uvjerenje o: - sposobnosti za rad pri zapošljavanju i radu na radnim mjestima bez povećanih rizika i otežanim uslovima rada – prethodni /periodični /vanredni — 35,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+			"slug": "medical-certificate-for-high-risk-and-difficult-working-conditions",
+			"price": 70,
+			"code": "BE_MR_02b",
+			"source": "Ljekarsko uvjerenje o: - sposobnosti za rad pri zapošljavanju i radu na radnim mjestima sa povećanim rizikom i otežanim uslovima rada – prethodni /periodični /vanredni /sistematski — 70,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Difficult Working Conditions Without High Risk",
+			"slug": "medical-certificate-for-difficult-working-conditions-without-high-risk",
+			"price": 50,
+			"code": "BE_MR_02c",
+			"source": "Ljekarsko uvjerenje o: - sposobnosti za rad pri zapošljavanju i radu na radnim mjestima sa otežanim uslovima rada – prethodni /periodični /vanredni — 50,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Class A and B Drivers",
+			"slug": "medical-certificate-for-class-a-and-b-drivers",
+			"price": 35,
+			"code": "BE_MR_03a",
+			"source": "Ljekarsko uvjerenje o - sposobnosti/kontrolni zdravstveni pregled, za upravljanje motornim vozilom u drumskom saobraćaju, A i B kategorije — 35,00 €"
+		},
+		{
+			"nameEn": "Driver Class C D E Health Examination",
+			"slug": "driver-class-c-d-e-health-examination",
+			"price": 50,
+			"code": "BE_MR_03b",
+			"source": "Ljekarsko uvjerenje o - sposobnosti/kontrolni zdravstveni pregled, za upravljanje motornim vozilom u drumskom saobraćaju, C,D i E kategorije, specijalnim vozilima i taxi — 50,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Taxi Driver",
+			"slug": "medical-certificate-for-taxi-driver",
+			"price": 50,
+			"code": "BE_MR_03b",
+			"source": "та же строка 3b («… specijalnim vozilima i taxi») — 50,00 €; вторая запись каталога по схеме ДЗ Подгорица (одна строка прайса → две справки, один код)"
+		},
+		{
+			"nameEn": "Medical Certificate for Driving Instructor Category B, C, D, E",
+			"slug": "medical-certificate-for-driving-instructor-category-b-c-d-e",
+			"price": 60,
+			"code": "BE_MR_03c",
+			"source": "Ljekarsko uvjerenje o - sposobnosti /kontrolni zdravstveni pregled, za posao instruktora B, C, D i E kategorije — 60,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Firearms Possession",
+			"slug": "medical-certificate-for-firearms-possession",
+			"price": 70,
+			"code": "BE_MR_04",
+			"source": "Ljekarsko uvjerenje o podobnosti za posjedovanje vatrenog oružja — 70,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Military Service",
+			"slug": "medical-certificate-for-military-service",
+			"price": 60,
+			"code": "BE_MR_05",
+			"source": "Ljekarsko uvjerenje o sposobnosti za obavljanje službe u Vojsci Crne Gore — 60,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Underage Marriage",
+			"slug": "medical-certificate-for-underage-marriage",
+			"price": 25,
+			"code": "BE_MR_06",
+			"source": "Ljekarsko uvjerenje za sklapanje braka za maloljetne osobe — 25,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Child Adoption",
+			"slug": "medical-certificate-for-child-adoption",
+			"price": 25,
+			"code": "BE_MR_07",
+			"source": "Ljekarsko uvjerenje za podobnost za usvajanje djeteta — 25,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Study Abroad and Visa",
+			"slug": "medical-certificate-for-study-abroad-and-visa",
+			"price": 25,
+			"code": "BE_MR_08",
+			"source": "Ljekarsko uvjerenje za dalji nastavak školovanja i boravak u inostranstvu/viza — 25,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Maritime Workers",
+			"slug": "medical-certificate-for-maritime-workers",
+			"price": 110,
+			"code": "BE_MR_09a",
+			"source": "Ljekarsko uvjerenje za: - rad u vodenom saobraćaju (pomorci) — 110,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Lifeguards Divers and Boat Operators",
+			"slug": "medical-certificate-for-lifeguards-divers-and-boat-operators",
+			"price": 35,
+			"code": "BE_MR_09b",
+			"source": "Ljekarsko uvjerenje za: - spasioce /ronioce /upravljanje čamcem — 35,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Ionizing Radiation Workers",
+			"slug": "medical-certificate-for-ionizing-radiation-workers",
+			"price": 85,
+			"code": "BE_MR_10",
+			"source": "Ljekarsko uvjerenje – prethodni i periodični pregledi radnika profesionalno izloženih jonizirajućim zračenjem — 85,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Court Expert",
+			"slug": "medical-certificate-for-court-expert",
+			"price": 35,
+			"code": "BE_MR_11",
+			"source": "Ljekarsko uvjerenje za posao sudskog vještaka — 35,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Life Insurance",
+			"slug": "medical-certificate-for-life-insurance",
+			"price": 40,
+			"code": "BE_MR_12",
+			"source": "Ljekarsko uvjerenje radi životnog osiguranja — 40,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Collective Accommodation",
+			"slug": "medical-certificate-for-collective-accommodation",
+			"price": 5,
+			"code": "BE_MR_13",
+			"source": "Ljekarsko uvjerenje za kolektivni smještaj — 5,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Athletes",
+			"slug": "medical-certificate-for-athletes",
+			"price": 50,
+			"code": "BE_MR_14",
+			"source": "Ljekarsko uvjerenje za utvrđivanje zdravstvene sposobnosti sportiste — 50,00 €"
+		},
+		{
+			"nameEn": "Medical Certificate for Sports Referees and Other Purposes",
+			"slug": "medical-certificate-for-sports-referees-and-other-purposes",
+			"price": 60,
+			"code": "BE_MR_15",
+			"source": "Ljekarsko uvjerenje za druge potrebe (sportske sudije i dr.) — 60,00 €"
+		},
+		{
+			"nameEn": "Sanitary Examination for Food Industry and Water Supply Workers",
+			"slug": "sanitary-examination-for-food-industry-and-water-supply-workers",
+			"price": 32,
+			"code": "BE_SAN_1",
+			"source": "Sanitarni pregled za zaposlene u proizvodnji, pripremi i prometu hrane (ugostitelji, trgovci i druga lica u vezi sa hranom), kao i na poslovima snadbijevanja građana vodom za piće. — 32,00"
+		},
+		{
+			"nameEn": "Sanitary Examination for Healthcare and Educational Workers",
+			"slug": "sanitary-examination-for-healthcare-and-educational-workers",
+			"price": 20,
+			"code": "BE_SAN_2",
+			"source": "Sanitarni pregled za zaposlene koji rade u zdravstvenim ustanovama u kojima se vrše zdravstveni pregledi, njega, ishrana, u odjeljenjima sa povećanim rizikom, u predškolskim, školskim i drugim ustanovama, ustanovama za stara lica, u proizvodnji i prometu ljekova i prevozu hrane. — 20,00"
+		},
+		{
+			"nameEn": "Sanitary Examination for Hairdressers and Service Personnel",
+			"slug": "sanitary-examination-for-hairdressers-and-service-personnel",
+			"price": 15,
+			"code": "BE_SAN_3",
+			"source": "Sanitarni pregled za zaposlene koji rade na zdravstvenim pregledima u ambulantama i laboratorijama, na održavanju higijene u odjeljenjima sa povećanim rizikom i na poslovima higijenske njege građana (frizerski i kozmetički saloni). — 15,00"
+		},
+		{
+			"nameEn": "General Practitioner Examination",
+			"slug": "general-practitioner-examination",
+			"price": null,
+			"code": null,
+			"source": "/brojevi-telefona-u-ordinacijama «Izabrani doktori za odrasle» (ordinacije 1–6, «telefon za zakazivanje») + /radno-vrijeme-izabranih-doktora «prije dolaska kod izabranog doktora zakažu pregled»"
+		},
+		{
+			"nameEn": "Pediatric Examination",
+			"slug": "pediatric-examination",
+			"price": null,
+			"code": null,
+			"source": "/brojevi-telefona-u-ordinacijama «Izabrani doktori za djecu» (ordinacije 1–3); пост 2026-05-13 называет их «Pedijatri»"
+		},
+		{
+			"nameEn": "Gynecological Specialist Examination",
+			"slug": "gynecological-specialist-examination",
+			"price": null,
+			"code": null,
+			"source": "/brojevi-telefona-u-ordinacijama «Izabrani doktori za žene» (ordinacije 1–2); /radno-vrijeme-izabranih-doktora «mijenjaju specijaliste ginekologije iz KBC Berane»"
+		},
+		{
+			"nameEn": "Internist Examination",
+			"slug": "internist-examination",
+			"price": null,
+			"code": null,
+			"source": "/brojevi-telefona-u-ordinacijama «Specijalističke ambulante Doma zdravlja — Internistička ambulanta 069-350-184»"
+		},
+		{
+			"nameEn": "Pediatric Vaccination and Revaccination by Schedule",
+			"slug": "pediatric-vaccination-and-revaccination-by-schedule",
+			"price": null,
+			"code": null,
+			"source": "пост 2026-05-13 «Apel roditeljima…»: «izabrani doktori za djecu … dovedu dijecu u Dom zdravlja … radi vakcinacije propuštenim dozama iz Kalendara obavezne vakcinacije»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "gordana-cantric",
+			"nameSr": "Gordana Čantrić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu, ordinacija 1",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES «Izabrani doktori za djecu» ord. 1 + SCHED"
+		},
+		{
+			"slug": "vesna-djukic",
+			"nameSr": "Vesna Đukić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu, ordinacija 2",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 2 + SCHED"
+		},
+		{
+			"slug": "marija-joksimovic",
+			"nameSr": "Marija Joksimović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu, ordinacija 2",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 2 + SCHED"
+		},
+		{
+			"slug": "suzana-savovic",
+			"nameSr": "Suzana Savović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu, ordinacija 3",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 3 + SCHED"
+		},
+		{
+			"slug": "ana-popovic-3",
+			"nameSr": "Ana Popović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu, ordinacija 3",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 3 + SCHED; slug ana-popovic / popovic-ana / ana-popovic-2 заняты другими врачами"
+		},
+		{
+			"slug": "lenka-radunovic",
+			"nameSr": "Lenka Radunović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 1",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES «Izabrani doktori za odrasle» ord. 1 + SCHED"
+		},
+		{
+			"slug": "zuhra-hadrovic",
+			"nameSr": "Zuhra Hadrović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 1",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 1 + SCHED; подписывала прайсы 2016 как DIREKTORKA, сейчас директор — Marica Janković (/o-nama/menadzment)"
+		},
+		{
+			"slug": "biljana-ralevic",
+			"nameSr": "Biljana Ralević",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 2",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 2 + SCHED"
+		},
+		{
+			"slug": "sasa-stefanovski",
+			"nameSr": "Saša Stefanovski",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 2",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 2 + SCHED"
+		},
+		{
+			"slug": "julijana-zecevic",
+			"nameSr": "Julijana Zečević",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 3",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 3 + SCHED"
+		},
+		{
+			"slug": "marija-rakonjac",
+			"nameSr": "Marija Rakonjac",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 3",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 3 + SCHED"
+		},
+		{
+			"slug": "sanja-kovacevic",
+			"nameSr": "Sanja Kovačević",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 4",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 4 + SCHED (сейчас её замещает dr Jasna Đurašković Lutovac)"
+		},
+		{
+			"slug": "milka-miladinovic",
+			"nameSr": "Milka Miladinović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 4",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 4 + SCHED"
+		},
+		{
+			"slug": "radoslav-brajovic",
+			"nameSr": "Radoslav Brajović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 5",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 5 + SCHED"
+		},
+		{
+			"slug": "vesna-pantovic",
+			"nameSr": "Vesna Pantović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 5",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 5 + SCHED"
+		},
+		{
+			"slug": "andjela-corovic",
+			"nameSr": "Anđela Ćorović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 6",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 6 + SCHED"
+		},
+		{
+			"slug": "jelena-banjac",
+			"nameSr": "Jelena Banjac",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ordinacija 6",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 6 + SCHED (сейчас её замещает dr Marija Bojić)"
+		},
+		{
+			"slug": "marija-bojic",
+			"nameSr": "Marija Bojić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle (zamjena), ordinacija 6",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "SCHED: «dr Jelenu Banjac mijenja dr Marija Bojić»"
+		},
+		{
+			"slug": "jasna-djuraskovic-lutovac",
+			"nameSr": "Jasna Đurašković Lutovac",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle (zamjena), ordinacija 4",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "SCHED: «dr Sanju Kovačević mijenja dr Jasna Đurašković Lutovac»"
+		},
+		{
+			"slug": "jasmina-garcevic",
+			"nameSr": "Jasmina Garčević",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ZS Petnjica",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "SCHED «Izabrani doktori u Zdravstvenoj stanici Petnjica» ord. 1"
+		},
+		{
+			"slug": "srdjan-skrkic",
+			"nameSr": "Srđan Škrkić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ZS Petnjica",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "SCHED «Izabrani doktori u Zdravstvenoj stanici Petnjica» ord. 2"
+		},
+		{
+			"slug": "jovana-mihailovic",
+			"nameSr": "Jovana Mihailović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za žene, ordinacija 1",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES «Izabrani doktori za žene» ord. 1; в SCHED написано «Mihajlović»",
+			"lookupSlugs": [
+				"jovana-mihajlovic"
+			]
+		},
+		{
+			"slug": "aleksandar-grdinic",
+			"nameSr": "Aleksandar Grdinić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za žene, ordinacija 2",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "PHONES ord. 2"
+		},
+		{
+			"slug": "vlado-dragas",
+			"nameSr": "Vlado Dragaš",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za žene (zamjena), specijalista ginekologije KBC Berane",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "SCHED: «Dr Jovanu Mihajlović … mijenjaju specijaliste ginekologije iz KBC Berane»"
+		},
+		{
+			"slug": "marijana-pesic",
+			"nameSr": "Marijana Pešić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za žene (zamjena), specijalista ginekologije KBC Berane",
+			"specialtyIds": [
+				5
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"note": "SCHED, замена из KBC Berane; в БД — OB Berane (#137), gynecology_obstetrics. Только привязка doctor_clinics, поля врача и специальности не менялись."
+		},
+		{
+			"slug": "denis-adrovic",
+			"nameSr": "Denis Adrović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za žene (zamjena), specijalista ginekologije KBC Berane",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "SCHED, замена из KBC Berane"
+		},
+		{
+			"slug": "damir-sabotic",
+			"nameSr": "Damir Šabotić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za žene (zamjena), specijalista ginekologije KBC Berane",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "SCHED, замена из KBC Berane"
+		},
+		{
+			"slug": "refka-lejla-latic",
+			"nameSr": "Refka Lejla Latić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista medicine rada, koordinatorka tima za ljekarska uvjerenja",
+			"specialtyIds": [
+				50
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "UVJ «tim čijim radom koordinira dr Refka Lejla Latić, specijalista medicine rada»"
+		},
+		{
+			"slug": "sonja-joksimovic",
+			"nameSr": "Sonja Joksimović",
+			"professionalTitle": "Dr",
+			"position": "Tim za ljekarska uvjerenja, spec. ORL",
+			"specialtyIds": [
+				11
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"note": "UVJ «dr Sonja Joksimović, spec. ORL»; в БД — OB Berane (#137), otorhinolaryngology. Только привязка doctor_clinics, поля врача и специальности не менялись."
+		},
+		{
+			"slug": "fadil-kalac",
+			"nameSr": "Fadil Kalač",
+			"professionalTitle": "Dr",
+			"position": "Tim za ljekarska uvjerenja, spec. radiologije",
+			"specialtyIds": [
+				10
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "UVJ «dr Fadil Kalač, spec. radiologije»"
+		},
+		{
+			"slug": "irena-scekic",
+			"nameSr": "Irena Šćekić",
+			"professionalTitle": "Dr",
+			"position": "Tim za ljekarska uvjerenja, spec. biohemije",
+			"specialtyIds": [
+				39
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "UVJ «dr Irena Šćekić, spec. biohemije»"
+		},
+		{
+			"slug": "saveta-obradovic-kljajic",
+			"nameSr": "Saveta Kljajić Obradović",
+			"professionalTitle": "Dr",
+			"position": "Tim za ljekarska uvjerenja, spec. oftalmologije",
+			"specialtyIds": [
+				6
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"note": "UVJ «dr Saveta Kljajić Obradović, spec. oftalmologije»; в БД как «Saveta Obradović Kljajić» — OB Berane (#137), ophthalmology. Только привязка doctor_clinics, поля врача и специальности не менялись."
+		},
+		{
+			"slug": "jasmina-novalic",
+			"nameSr": "Jasmina Novalić",
+			"professionalTitle": "Dr",
+			"position": "Tim za ljekarska uvjerenja, spec. oftalmologije",
+			"specialtyIds": [
+				6
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"note": "UVJ «dr Jasmina Novalić, spec. oftalmologije»; в БД — OB Berane (#137), ophthalmology. Только привязка doctor_clinics, поля врача и специальности не менялись."
+		},
+		{
+			"slug": "jasmin-hasic",
+			"nameSr": "Jasmin Hasić",
+			"professionalTitle": "Dr",
+			"position": "Tim za ljekarska uvjerenja, spec. psihijatrije",
+			"specialtyIds": [
+				21
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "UVJ «dr Jasmin Hasić, spec. psihijatrije»"
+		},
+		{
+			"slug": "damir-music",
+			"nameSr": "Damir Musić",
+			"professionalTitle": "Dr",
+			"position": "Tim za ljekarska uvjerenja, spec. psihijatrije",
+			"specialtyIds": [
+				21
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "UVJ «dr Damir Musić, spec. psihijatrije»"
+		}
+	],
+	"excluded": [
+		{
+			"source": "Ana Golubović Popović, dipl. psihološkinja; Snežana Vukajlović, dipl. psihološkinja (/ljekarska-uvjerenja)",
+			"reason": "психологи без врачебной специальности — по правилу подволны 2b не заводятся"
+		},
+		{
+			"source": "Marica Janković, direktorka, diplomirana pravnica (/o-nama/menadzment)",
+			"reason": "не врач"
+		},
+		{
+			"source": "Mihailo Lalić (pomoćnik direktora), Tatjana Bulatović (glavna sestra), Suzana Radenović, Dejan Ćorac, Rafet Šabotić (/kontaktirajte-nas); sanitarni tehničari HES (pripravnost)",
+			"reason": "не врачи"
+		},
+		{
+			"source": "Centar za plućne bolesti i TBC; Centar za mentalno zdravlje; Centar za djecu sa smetnjama u razvoju; Mikrobiološka dijagnostika; Higijensko-epidemiološka služba; Jedinica za patronažu; Jedinica za fizikalnu terapiju primarnog nivoa; Jedinica za sanitetski prevoz; Savjetovalište za mlade; Populaciono savjetovalište; Savjetovalište za reproduktivno zdravlje; Povjerljivo savjetovalište za HIV (/radno-vrijeme-sluzbi)",
+			"reason": "названия организационных единиц без конкретной услуги или обследования — не услуги (правило 2 дополнения 2b)"
+		},
+		{
+			"source": "«oftalmologije» в перечне областей /o-nama/info; два офтальмолога в tim za ljekarska uvjerenja",
+			"reason": "офтальмологическая амбулатория на сайте не названа (в «Specijalističke ambulante» только Internistička и Medicina rada) — осмотр офтальмолога не заведён"
+		},
+		{
+			"source": "HES: «organizuje i po epidemiološkim indikacijama sprovodi preventivne mjere i aktivnosti kao što su imunoprofilaksa, seroprofilaksa i hemoprofilaksa»; «zdravstveni nadzor nad licima koja dolaze iz zemalja u kojima ima kolere, kuge…»",
+			"reason": "противоэпидемические мероприятия службы, а не услуга по запросу пациента"
+		},
+		{
+			"source": "«Postupak izdavanja ljekarskog uvjerenja započinje pregledom u ambulanti Medicine rada»; «Postupak izdavanja sanitarne knjižice započinje uzimanjem uzoraka u Mikrobiološkoj laboratoriji»",
+			"reason": "часть процедуры справки / санитарного осмотра, уже покрыта ценовыми строками — отдельный осмотр медицины труда и забор проб не заводились"
+		},
+		{
+			"source": "Radionice na temu dijabetesa u Populacionom savjetovalištu (aktuelnosti)",
+			"reason": "новостной пост о групповых занятиях, не услуга с приёмом"
+		},
+		{
+			"source": "Jedinica Zavoda za hitnu medicinsku pomoć, šest stomatoloških ambulanti privatnih ordinacija, biohemijska laboratorija KBC Berane, apoteka Montefarm (в источнике «apoteka Montefarma»; /o-nama/objekti)",
+			"reason": "арендаторы помещений ДЗ, не его службы"
+		}
+	],
+	"disputed": [],
+	"openQuestions": [
+		"Гинекологи KBC Berane на замене (Vlado Dragaš, Denis Adrović, Damir Šabotić — новые; Marijana Pešić — уже у opsta-bolnica-berane) привязаны к ДЗ с position «… (zamjena), specijalista ginekologije KBC Berane», как замещающие у ДЗ Подгорица. Новых троих не привязывали к opsta-bolnica-berane: сайт ДЗ называет KBC Berane, но это не источник состава больницы. Если замены временные и их привязка к ДЗ не нужна — убрать 4 строки doctor_clinics.",
+		"Ana Popović (izabrani doktor za djecu) заведена как ana-popovic-3: ana-popovic (дерматолог КЦЦГ), popovic-ana (кардиолог Codra) и ana-popovic-2 (ДЗ Херцег-Нови, general_medicine) — другие люди. Координатору: проверить, не занял ли ana-popovic-3 параллельный агент другой Аной Попович.",
+		"Jovana Mihailović / Mihajlović — на странице телефонов «Mihailović», в недельном графике «Mihajlović». Заведена как Mihailović (jovana-mihailovic), поиск также по jovana-mihajlovic."
+	]
+}

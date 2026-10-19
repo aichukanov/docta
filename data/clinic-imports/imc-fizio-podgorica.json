@@ -1,0 +1,189 @@
+{
+	"schemaVersion": 1,
+	"slug": "imc-fizio-podgorica",
+	"name": "IMC Fizio",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJLfQykhTrTRMRa2HADgzJ7G8",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-imc-fizio-podgorica.sql",
+		"server/sql/insert-clinic-imc-fizio-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 231,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Y. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и физиотерапевта по slug. Сухой прогон 2026-10-09 на локали (plain + shadow для services) — см. отчёт агента. Slug клиники и физиотерапевта сверены с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 258
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://imcfizio.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Статический сайт (Jekyll 4.3.3), me/en/ru/tr, sitemap.xml — 14 страниц × 4 языка. Прочитаны главная (перечень услуг, «O nama», контакты, schema.org MedicalBusiness + Person) и 13 страниц /usluge/*. Цен нет: только промо «Ostvarite 50% popusta na prvu sesiju odabrane terapije», schema priceRange «$$». Часы — schema.org openingHoursSpecification."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/imc-fizio.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJLfQykhTrTRMRa2HADgzJ7G8, координаты 42.4303078 / 19.2415288, +382 69 789 882, «34 Iva Vizina, Podgorica 81000». 43 отзыва (в файле 5). Часов в файле нет."
+		}
+	],
+	"coverage": {
+		"address": "Iva Vizina 34, 81000 — сайт и Google совпадают",
+		"phone": "+38269789882 — сайт и Google",
+		"email": "filip@imcfizio.me — сайт",
+		"website": "https://imcfizio.me/",
+		"social": "facebook.com/imcfizio, @imc_fizio — ссылки шапки сайта (не открывались)",
+		"logo": "https://imcfizio.me/assets/images/logo.svg",
+		"workingHours": "Пн–Пт 08–14 и 16–21, Сб 08–14, Вс выходной — schema.org на главной (единственный график)",
+		"description": "из главной и страниц услуг",
+		"languages": "только SR — сайт на 4 языках, но приём на других языках не заявлен",
+		"doctors": "1 физиотерапевт (94 PHYSIOTHERAPY, title NULL), новый, с фото и био",
+		"prices": "цен нет — все 12 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — 43 в Google, ждут выгрузки"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"slug": "tecar-therapy",
+			"nameEn": "Tecar Therapy",
+			"price": null,
+			"source": "/usluge/tecar-terapija — «Tecar terapija Podgorica - BTL-6000 Elite TR-Therapy … U zavisnosti od regije koja se tretira tretman traje od 15 do 30 minuta»"
+		},
+		{
+			"slug": "electrotherapy",
+			"nameEn": "Electrotherapy",
+			"price": null,
+			"source": "/usluge/elektroterapija — «Elektroterapija Podgorica - BTL-4825SL Premium aparat … korišćenje brojnih modaliteta električne struje»"
+		},
+		{
+			"slug": "ultrasound-therapy",
+			"nameEn": "Ultrasound Therapy",
+			"price": null,
+			"source": "/usluge/ultrazvucna-terapija — «Ultrazvučna terapija Podgorica - dubinska stimulacija tkiva»"
+		},
+		{
+			"slug": "laser-therapy",
+			"nameEn": "Laser Therapy",
+			"price": null,
+			"source": "/usluge/laseroterapija — «LASEROTERAPIJA je potpuno prirodna i neinvazivna metoda lijecenja»"
+		},
+		{
+			"slug": "shock-wave-therapy",
+			"nameEn": "Shock Wave Therapy",
+			"price": null,
+			"source": "/usluge/shockwave-terapija — «SHOCKWAVE TERAPIJA ili terapija udarnim talasima … Efekti radijalne terapije shockwave talasima»"
+		},
+		{
+			"slug": "mechanical-spinal-traction",
+			"nameEn": "Mechanical Spinal Traction",
+			"price": null,
+			"source": "/usluge/spinalna-trakcija — «Trakcija cervikalnog (vratnog) dijela kičme», «Trakcija lumbalnog (L/S) dijela kičme», «kompjuterska trakcija cervikalne i lumbalne kičme»; /usluge/mastercare — «MASTERCARE (svedski trakcioni sto) … način istezanja … Master Back-A-Traction sto» (Mastercare — синоним, отдельной записи не заводим)"
+		},
+		{
+			"slug": "spinal-decompression",
+			"nameEn": "Spinal Decompression",
+			"price": null,
+			"source": "/usluge/spinalna-trakcija — «Dekompresiona terapija kičme (DTK) je izuzetno uspješna neoperativna procedura … na sofisticiranom stolu (BTL-6000)»"
+		},
+		{
+			"slug": "vacuum-massage",
+			"nameEn": "Vacuum Massage",
+			"price": null,
+			"source": "/usluge/vakuum-terapija — «VAKUUM TERAPIJA (kompresivna terapija) … primjena promjenljivog ili stalnog pritiska na povrijedjeni dio tijela» (единственная запись вакуумной процедуры в кат. 5)"
+		},
+		{
+			"slug": "infrared-ultraviolet-and-bioptron-lamp-irradiation",
+			"nameEn": "Infrared, Ultraviolet and Bioptron Lamp Irradiation",
+			"price": null,
+			"source": "/usluge/bioptron-terapija — «BIOPTRON SVJETLOSNA TERAPIJA … posebnu vrtstu svjetlosti … bez stetnog UV zracenja» (единственная запись с Bioptron)"
+		},
+		{
+			"slug": "bobath-therapy",
+			"nameEn": "Bobath Therapy",
+			"price": null,
+			"source": "/usluge/bobath-koncept — «BOBATH KONCEPT je vazan pristup u osposobljavanju osoba sa neuroloskim ostecenjima»; главная — «Bobath koncept u radu sa djecom koja imaju smetnje u razvoju, omladinom i odraslima»"
+		},
+		{
+			"slug": "kinesiotherapy",
+			"nameEn": "Kinesiotherapy",
+			"price": null,
+			"source": "/usluge/kineziterapija — «U kineziterapiji primjenjujemo sve tipove vježbi: pasivne, aktivne, aktivno potpomognute, kao I primjena Bobath i PNF koncepta»; /usluge/pnf-koncept — «PNF (proprioceptivna neuromuskularna facilitacija) je koncept» (PNF — уже синоним kinesiotherapy)"
+		},
+		{
+			"slug": "therapeutic-massage-complete",
+			"nameEn": "Complete Therapeutic Massage",
+			"price": null,
+			"source": "/usluge/manuelna-masaza — «MANUELNA MASAZA je tehnika tretiranja misica i mekih tkiva koja se izvodi rucno … Cilj je poboljsati cirkulaciju krvi, smanjiti napetost misica» (зона и длительность не указаны — generic, как в fizio-tim-podgorica)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "filip-pejovic",
+			"nameSr": "Filip Pejović",
+			"professionalTitle": null,
+			"position": "Fizioterapeut, specijalista primijenjene fizioterapije u neurologiji",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://imcfizio.me/assets/images/filip.png",
+			"services": [
+				"tecar-therapy",
+				"electrotherapy",
+				"ultrasound-therapy",
+				"laser-therapy",
+				"shock-wave-therapy",
+				"mechanical-spinal-traction",
+				"spinal-decompression",
+				"vacuum-massage",
+				"infrared-ultraviolet-and-bioptron-lamp-irradiation",
+				"bobath-therapy",
+				"kinesiotherapy",
+				"therapeutic-massage-complete"
+			]
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Главная — «Ostvarite 50% popusta na prvu sesiju odabrane terapije»",
+			"reason": "Промо-акция, не цена."
+		},
+		{
+			"source": "Главная, вкладка «Liječenje» — «Terapija vježbanjem», «Manuelna terapija», «Termoterapija i krioterapija», «Edukacija i savjetovanje»",
+			"reason": "Общий просветительский текст («Ovdje su neki od ključnih segmenata liječenja u fizikalnoj terapiji»), а не перечень услуг клиники; в списке «Usluge koje pružamo» этих позиций нет. Не заведены."
+		},
+		{
+			"source": "Главная — «Kineziterapija za cervikalni i lumbalni sindrom / kod reumatskih oboljenja / nakon povreda kostano-zglobnog sistema / kod neuroloških stanja / u pedijatiji»",
+			"reason": "Показания одной услуги — заведена общая kinesiotherapy, показания в описании клиники. kinesiotherapy-for-children-with-deformities не подходит (сайт говорит о педиатрии вообще, не о деформациях)."
+		},
+		{
+			"source": "/usluge/shockwave-terapija — «Shock wave terapija se uspješno koristi u estetskoj medicini … otklanjaju celulit», «Uklanjanje celulit»",
+			"reason": "Упоминание применения метода, не отдельная услуга (anti-cellulite-shockwave-* не заведено)."
+		},
+		{
+			"source": "Главная — «konsultujte se sa fizioterapeutom oko kreiranja plana vašeg oporavka», «zakažite pregled»",
+			"reason": "Призыв позвонить, отдельной услуги осмотра в перечне нет — physiotherapist-examination не заведён (правило: не добавлять «логичные» консультации)."
+		}
+	],
+	"openQuestions": []
+}

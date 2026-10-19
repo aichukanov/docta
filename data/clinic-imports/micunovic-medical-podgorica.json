@@ -1,0 +1,408 @@
+{
+	"schemaVersion": 1,
+	"slug": "micunovic-medical-podgorica",
+	"name": "Mićunović Medical",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJ1VxH0hTrTRMRyy8OYWPH7kU",
+	"clinicTypeIds": [
+		2,
+		7
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-micunovic-medical-podgorica.sql",
+		"server/sql/insert-clinic-micunovic-medical-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 181,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Сухой прогон 2026-10-08 (агент K, DML через EXPLAIN внутри START TRANSACTION … ROLLBACK): 0 ошибок; несматченные slug — только 4 свои новые записи каталога; счётчики clinics/doctors/clinic_medical_services/clinic_lab_tests/medical_services/doctor_clinics до и после совпали (163/1743/14174/13576/5797/2343). Подволна 2c, агент K. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 208
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.micunovicmedical.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress (тема doctio + Elementor). Читается через WP REST: /wp-json/wp/v2/pages (10 страниц: home-one и nas-tim modified 2026-08-28, o-nama 2026-07-29, kontakt и nase-usluge 2026-07-27, stomatoloske-usluge / ginekoloske-usluge / usluge-ultrazvucne-dijagnostike / faqs 2026-07-17), /wp/v2/doctio_team (био 4 человек + главная сестра), /wp/v2/posts (3 поста о ZygoMax). ⚠️ curl с коротким UA «Mozilla/5.0» получает 403 Forbidden; без UA или с полным UA браузера — 200. /wp/v2/doctio_service и WooCommerce-товары — демо-заглушки темы (Lorem ipsum, «Md Nadim Khan»), игнорируются. Цен нет ни на одной странице."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/micunovic-medical.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4540883 / 19.2369073, телефон +382 69 869 377, адрес «22 Slovačka, Podgorica». 74 отзыва (rating 4.6) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Slovačka 22 — сайт /kontakt/ («Slovačka 22, Podgorica») и Google согласованы; индекс 81000",
+		"phone": "+38269869377;+38220623626;+38220623880 — /kontakt/ «Stomatologija: 069869377 / Ginekologija: 020623626» (первый подтверждён Google) + главная и /o-nama/ «+382 20 623 880». На портретах врачей ещё +382 20 623 626 — в карточку не вынесен (только водяной знак картинки)",
+		"email": "micunovicmedical@gmail.com — /kontakt/",
+		"website": "https://www.micunovicmedical.me/",
+		"social": "facebook.com/Micunovicmedical, @micunovic_medical — футер сайта",
+		"logo": "https://www.micunovicmedical.me/wp-content/uploads/2026/07/micunovic-medical-logo.png",
+		"workingHours": "пн–сб 09:00–17:00, вс закрыто — «Naše radno vrijeme je svakog dana od 09:00 do 17:00 h, nedjelja je neradna» (страницы гинекологии и УЗИ)",
+		"doctors": "11 из 11 врачей /nas-tim/: 10 новых, 1 найден в БД (Miloš Simonović, id 690 локаль). Анестетичар Edin Osmanović не заведён (не врач)",
+		"doctorPhotos": "5 из 11: портреты 2026/08/{2,6,1-2,4,5-1}.png. У 6 врачей на /nas-tim/ общая заглушка 2026/08/images.jpeg (8,9 КБ) — photo_url NULL",
+		"doctorBios": "3 из 11 — страницы /team/dr-petar-micunovic/, /team/dr-miljan-micunovic/, /team/dr-gradimirka-micunovic/ (+ посты ZygoMax для Miljana)",
+		"prices": "нет — ни одной цены на сайте; 19 услуг из прозы трёх страниц услуг, все price = NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера (74 в Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "dental-implant-sweden-martina",
+			"nameEn": "Dental Implant Sweden & Martina",
+			"nameSr": "Ugradnja implantata Sweden & Martina",
+			"categoryIds": [
+				20
+			],
+			"specialtyIds": [
+				74,
+				78
+			],
+			"reason": "Бренд назван сайтом, в каталоге нет; схема dental-implant-nobel-biocare"
+		},
+		{
+			"table": "medical_services",
+			"slug": "dental-implant-camlog",
+			"nameEn": "Dental Implant Camlog",
+			"nameSr": "Ugradnja implantata Camlog",
+			"categoryIds": [
+				20
+			],
+			"specialtyIds": [
+				74,
+				78
+			],
+			"reason": "Бренд назван сайтом, в каталоге нет"
+		},
+		{
+			"table": "medical_services",
+			"slug": "dental-implant-jdental-care",
+			"nameEn": "Dental Implant JDental Care",
+			"nameSr": "Ugradnja implantata JDental Care",
+			"categoryIds": [
+				20
+			],
+			"specialtyIds": [
+				74,
+				78
+			],
+			"reason": "Бренд назван сайтом («JDental Care»), в каталоге нет; «JDentalCare» — синоним"
+		},
+		{
+			"table": "medical_services",
+			"slug": "ceramic-dental-bridge",
+			"nameEn": "Ceramic Dental Bridge",
+			"nameSr": "Keramički most",
+			"categoryIds": [
+				20
+			],
+			"specialtyIds": [
+				78
+			],
+			"reason": "«keramičkih krunica i mostova» — моста как изделия в каталоге нет (только Maryland, временный, опора, металлокерамический промежуточный элемент)"
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Dental Consultation",
+			"source": "«Preventiva i liječenje: Redovni pregledi» (/stomatoloske-usluge/)"
+		},
+		{
+			"nameEn": "Complete Dental Cleaning",
+			"source": "«profesionalno čišćenje zuba»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"source": "«liječenje korijena zuba (endonocija)» — опечатка источника «endonocija»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"source": "«liječenje korijena zuba (endonocija)»"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"source": "«vađenje zuba kada je to neophodno»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"source": "«Estetska stomatologija: Profesionalno izbjeljivanje zuba»"
+		},
+		{
+			"nameEn": "All-Ceramic Crown",
+			"source": "«postavljanje keramičkih krunica»"
+		},
+		{
+			"nameEn": "Ceramic Dental Bridge",
+			"source": "«postavljanje keramičkih krunica i mostova»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"source": "«izrada visokoestetskih faseta (vinira)»"
+		},
+		{
+			"nameEn": "Dental Implant Nobel Biocare",
+			"source": "«Vrhunski implantološki sistemi … Nobel Biocare»"
+		},
+		{
+			"nameEn": "Dental Implant Sweden & Martina",
+			"source": "«Sweden & Martina»"
+		},
+		{
+			"nameEn": "Dental Implant Camlog",
+			"source": "«Camlog i JDental Care»"
+		},
+		{
+			"nameEn": "Dental Implant JDental Care",
+			"source": "«Camlog i JDental Care»"
+		},
+		{
+			"nameEn": "Gynecological Specialist Examination",
+			"source": "«Ginekološki pregledi i liječenje: Dijagnostika i uspješno liječenje različitih ginekoloških stanja» (/ginekoloske-usluge/)"
+		},
+		{
+			"nameEn": "Contraception Consultation",
+			"source": "«Savjetovanje i planiranje porodice: Stručni savjeti o kontracepciji»"
+		},
+		{
+			"nameEn": "Family Planning and Pregnancy Counseling",
+			"source": "«Savjetovanje i planiranje porodice: … planiranju trudnoće i očuvanju reproduktivnog zdravlja»"
+		},
+		{
+			"nameEn": "Gynecological Ultrasound",
+			"source": "«Specijalizovani ginekološki ultrazvuk» (/usluge-ultrazvucne-dijagnostike/); «detaljan uvid u zdravlje reproduktivnih organa» (/ginekoloske-usluge/)"
+		},
+		{
+			"nameEn": "Pregnancy Ultrasound",
+			"source": "«precizno praćenje trudnoće»; «neophodan za preciznu analizu i praćenje svih faza trudnoće»"
+		},
+		{
+			"nameEn": "4D Pregnancy Ultrasound",
+			"source": "«2D, 3D i 4D ultrazvučni pregledi» / «Savremena ultrazvučna dijagnostika (2D, 3D i 4D)»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "petar-micunovic",
+			"nameSr": "Petar Mićunović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista stomatološke protetike",
+			"specialtyIds": [
+				78
+			],
+			"hasBio": true,
+			"services": [],
+			"note": "«spec. protetike». Протетики в enum нет → DENTISTRY, как у остальных протетиков в БД. Фото 2026/08/2.png (портрет с подписью «Dr Petar MIĆUNOVIĆ, Specijalista protetike»)."
+		},
+		{
+			"slug": "miljan-micunovic",
+			"nameSr": "Miljan Mićunović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista oralne hirurgije",
+			"specialtyIds": [
+				78,
+				74
+			],
+			"hasBio": true,
+			"services": [],
+			"note": "Био: зигоматические импланты, владелец ZAGA centar Crna Gora, основатель ZygoMax. Рейтинги («među 100 najboljih doktora u svijetu») и «direktor» (сайт противоречив) не перенесены."
+		},
+		{
+			"slug": "gradimirka-micunovic",
+			"nameSr": "Gradimirka Mićunović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista ginekologije i akušerstva",
+			"specialtyIds": [
+				5
+			],
+			"hasBio": true,
+			"services": [],
+			"note": "Единственный гинеколог; гинекологические услуги ей не привязаны — страница услуг врача не называет."
+		},
+		{
+			"slug": "snezana-raznatovic",
+			"nameSr": "Snežana Ražnatović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista ortopedije vilice",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "Фото — заглушка. Однофамильцы Ražnatović в БД — другие люди."
+		},
+		{
+			"slug": "milos-simonovic",
+			"nameSr": "Miloš Simonović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista ortopedije vilice",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "НАЙДЕН В БД: id 690 (локаль), «dr spec.», DENTISTRY, клиника «Dr Simonović — Stomatološka Ordinacija» (Бар). Привязан как единственный кандидат, добавлена ORTHODONTIST (93). См. openQuestions."
+		},
+		{
+			"slug": "elizabeta-sinishtaj",
+			"nameSr": "Elizabeta Sinishtaj",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "Албанская орфография фамилии сохранена; кириллица «Сиништај» (sh = ш), не побуквенная «Синисхтај»."
+		},
+		{
+			"slug": "nenad-mracevic",
+			"nameSr": "Nenad Mračević",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "Фото 2026/08/4.png."
+		},
+		{
+			"slug": "medina-tuzovic",
+			"nameSr": "Medina Tuzović",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "Фото 2026/08/5-1.png. Отзыв на главной: «Dr Medina T. je izuzetan specijalista» — специализации на /nas-tim/ нет, оставлено «doktor stomatologije»."
+		},
+		{
+			"slug": "milena-milikic",
+			"nameSr": "Milena Milikić",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "Фото — заглушка."
+		},
+		{
+			"slug": "emina-ostojic",
+			"nameSr": "Emina Ostojić",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "Фото — заглушка."
+		},
+		{
+			"slug": "dejan-maras",
+			"nameSr": "Dejan Maraš",
+			"professionalTitle": "Dr",
+			"position": "Specijalista anesteziologije, reanimatologije i intenzivne terapije",
+			"specialtyIds": [
+				19
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "Фото — заглушка. Опечатка сайта «intezivne» исправлена в position."
+		}
+	],
+	"excluded": [
+		{
+			"source": "Edin Osmanović — anestetičar (/nas-tim/)",
+			"reason": "Не врач (анестезиологический техник/сестра) — таблица doctors только для врачей."
+		},
+		{
+			"source": "Dr Ana Gadža — /team/dr-ana-gadza/ («Od 2022 godine radi u Micunović medical … Govori engleski i grčki jezik»)",
+			"reason": "Отдельная страница существует (modified 2026-07-17), но в текущем составе /nas-tim/ и на главной (обе правка 2026-08-28) её нет — вероятно, ушла. Не заведена; если вернётся — языки EN (3) и грецкий заявлены явно."
+		},
+		{
+			"source": "Tatjana Lazović — glavna sestra (/team/tatjana-lazovic/)",
+			"reason": "Медсестра, не врач."
+		},
+		{
+			"source": "«Oralna hirurgija i implantologija: Sve oralno-hirurške indikacije rješavamo s lakoćom»",
+			"reason": "Направление, а не конкретная процедура. Из импланто­логии заведены только бренды имплантов, которые сайт называет."
+		},
+		{
+			"source": "Пломбы",
+			"reason": "На сайте не названы нигде (проверены все 10 страниц, посты и сырой HTML: нет «plomb», «ispun», «kompozit»). В задании упомянуты — по источнику не подтверждаются."
+		},
+		{
+			"source": "/faqs/: «metalokeramičke i bezmetalne krunice», «impaktiran umnjak … ukloniti hirurškim putem», «privremena krunica», «popravka mliječnog zuba», «fluor», «vađenje živca», «skidanje kamenca»",
+			"reason": "Общепросветительский FAQ (часть ответов дословно повторяется на /o-nama/), а не перечень услуг клиники. Детской стоматологии клиника нигде как услугу не заявляет."
+		},
+		{
+			"source": "«uz detaljnu prethodnu analizu i snimak zuba»; «uz podršku najnovije generacije rendgen dijagnostike»",
+			"reason": "Конкретный снимок (интраоральный, ОПТГ, CBCT) не назван — рентген-позиции не заведены, факт оставлен в description_*."
+		},
+		{
+			"source": "Ортодонтия (два «specijalista ortopedije vilice» в составе)",
+			"reason": "Ни одной ортодонтической услуги (брекеты, пластинки, элайнеры) сайт не называет — специальность врача не превращена в услуги."
+		},
+		{
+			"source": "Анестезиология (Dr Dejan Maraš, anestetičar Edin Osmanović)",
+			"reason": "Седация/общий наркоз как услуга не названы."
+		},
+		{
+			"source": "«Dijagnostika i uspješno liječenje … poremećaja menstrualnog ciklusa, upornih infekcija»",
+			"reason": "Перечень состояний, а не процедур; покрыто Gynecological Specialist Examination."
+		},
+		{
+			"source": "«Rano otkrivanje komplikacija»",
+			"reason": "Цель обследования, не отдельная услуга."
+		},
+		{
+			"source": "«2D, 3D i 4D» — 3D отдельно",
+			"reason": "Отдельной generic-записи 3D-УЗИ в каталоге нет (есть 3d4d-uterine-ultrasound-for-anomalies — узкая, про аномалии матки). 3D/4D покрыты 4D Pregnancy Ultrasound, 2D — Pregnancy/Gynecological Ultrasound."
+		},
+		{
+			"source": "/wp/v2/doctio_service (plastic-surgery, eye-surgery, neuro-surgery, blood-cancer …), WooCommerce-товары",
+			"reason": "Демо-контент темы doctio, Lorem ipsum. К клинике отношения не имеет."
+		},
+		{
+			"source": "«jedna od vodećih zdravstvenih ustanova u Crnoj Gori», «najboljeg stomatologa» (2022), «među 100 najboljih doktora u svijetu»",
+			"reason": "Маркетинговые превосходные степени — в описания не перенесены."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Miloš Simonović — тот же человек, что в Баре?",
+			"detail": "SQL по правилу find-or-create привяжет существующего doctors.id 690 (локаль; slug milos-simonovic, «dr spec.», DENTISTRY, клиника «Dr Simonović — Stomatološka Ordinacija», Бар, сайта у неё нет) и добавит ему ORTHODONTIST (93). Тёзка-стоматолог со званием специалиста в соседнем городе — единственный кандидат; совмещение частных практик в ЧГ обычно. Веб-поиск подтверждения не дал. Если это другой человек — заменить в PART 3 slug на 'milos-simonovic-2' (или иной) и убрать поиск по name_sr."
+		},
+		{
+			"topic": "Зигоматические импланты",
+			"detail": "Био Miljana: «stručnjak za zigomatske implantate», «vlasnik i jedan od vodećih hirurga u ZAGA centru Crna Gora»; посты о конгрессе ZygoMax и live surgery (Скопье). В перечне услуг клиники их нет, в каталоге записи нет. Не заведено: источник — биография врача, а не перечень услуг. Если считать услугой клиники — новая запись «Zygomatic Dental Implant» (20 / 74, 78)."
+		},
+		{
+			"topic": "Endodoncija → две записи",
+			"detail": "Generic-записи «лечение каналов» в каталоге нет: он делит эндодонтию по типу зуба (endodontic-treatment-single-canal-tooth / -multi-canal-tooth) или по корню/каналу. Фраза «liječenje korijena zuba (endonocija)» сопоставлена с парой single/multi, а не заведена новой generic-записью — чтобы не плодить generic при параллельной работе агентов I и J."
+		},
+		{
+			"topic": "Ceramic Dental Bridge — новая generic-запись",
+			"detail": "Сайт: «keramičkih krunica i mostova». Мостов как изделия в каталоге нет. Заведена новая запись; если координатор решит, что мост моделируется только опорами/промежуточными элементами, — убрать строку из канонического списка и PART 0."
+		}
+	]
+}

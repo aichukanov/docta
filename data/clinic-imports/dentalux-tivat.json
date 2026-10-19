@@ -1,0 +1,373 @@
+{
+	"schemaVersion": 1,
+	"slug": "dentalux-tivat",
+	"name": "Stomatološka ordinacija Dentalux",
+	"city": "Tivat",
+	"cityId": 4,
+	"googlePlaceId": "ChIJe7RkFpYxTBMRHTr3t1ahdTY",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dentalux-tivat.sql",
+		"server/sql/insert-clinic-dentalux-tivat-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 201,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент S. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. ⚠️ Состав мог устареть: футер © 2019, страницы врачей ~2020. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 228
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.dentalux.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Самописная CMS (Web Center), me/en/ru. Прочитаны /me/, /me/O-nama/, /me/naš-tim/, 3 страницы врачей (/me/Prof.-dr-Jasminka-Anđelić/, /me/-dr-Ivana-Anđelić/, /me/Prof.dr-Snežana-Matijević/), /me/usluge/ + 5 статей /me/service/…, 7 разделов /me/обслуживание/<Раздел>/, /me/IZBJELJIVANJE-ZUBA-ZOOM-LAMPOM/, /me/MENTORSTVO-U-ORTODONCIJI/. CMS отдаёт 200 с пустым шаблоном (14 228 байт) на любой несуществующий slug — проверено на /me/nepostoji-xyz/; все использованные страницы непустые. ⚠️ Футер © 2019, фото врачей — январь 2020 (timestamp в имени файла), менторство — 2024-05: состав мог устареть. Цен нет («Cijena usluge mentorstva dostupna je na upit» — не медуслуга)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/tivat/stomatoloska-ordinacija-dentalux.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatološka ordinacija Dentalux», «Podkuk 85320», +382 69 086 740, 22 отзыва (rating 3.0) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Pod kuk bb (сайт «Pod kuk bb, 85320 Tivat») = Google «Podkuk 85320»; координаты — место Google",
+		"phone": "+38232672262;+38269086740;+38267646558 — футер сайта; +382 69 086 740 = Google",
+		"viberWhatsapp": "+38269086740;+38267646558 — строка футера «… (Vib./WhatsApp)»",
+		"email": "jasminka@dentalux.me — футер (dentaluxtivat@gmail.com — только для заявок на менторство, не заносили)",
+		"website": "https://www.dentalux.me/",
+		"social": "facebook.com/dentaluxtivat, @dentalux_tivat — футер",
+		"logo": "https://www.dentalux.me/images/dentalux.png",
+		"workingHours": "на сайте нет — не заполнено",
+		"doctors": "3 на /me/naš-tim/, все новые (в БД нет)",
+		"doctorPhotos": "у всех 3 — /files/images/*.jpg (пробелы → %20)",
+		"doctorBios": "у всех 3 — со страниц врачей",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "compomer-filling",
+			"nameEn": "Compomer Filling",
+			"nameSr": "Kompomerni ispun",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "dentalux.me /me/обслуживание/Restaurativna-stomatologija/: «U Dentaluxu koristimo najkvalitetnije materijale …: kompoziti, glasjonomeri, kompomeri». Материал назван отдельно от композита и стеклоиономера (оба в каталоге есть); компомера в каталоге нет ни под одним названием (compomer/kompomer). Категория 20 DENTISTRY, специальность 78 — как у glass-ionomer-filling."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Zoom izbjeljivanje zuba",
+			"language": "sr",
+			"reason": "Сайт называет систему «Zoom lampa» (dentalux.me /me/usluge Za još blistaviji osmijeh, ortholine.me /izbjeljivanje-zuba «ZOOM TM izbjeljivanje»). Это ординационное отбеливание той же сути, что teeth-whitening; бренд-дубль не заводим (правило 10), бренд сохраняем синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Zoom избјељивање зуба",
+			"language": "sr-cyrl",
+			"reason": "Сайт называет систему «Zoom lampa» (dentalux.me /me/usluge Za još blistaviji osmijeh, ortholine.me /izbjeljivanje-zuba «ZOOM TM izbjeljivanje»). Это ординационное отбеливание той же сути, что teeth-whitening; бренд-дубль не заводим (правило 10), бренд сохраняем синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Zoom teeth whitening",
+			"language": "en",
+			"reason": "Сайт называет систему «Zoom lampa» (dentalux.me /me/usluge Za još blistaviji osmijeh, ortholine.me /izbjeljivanje-zuba «ZOOM TM izbjeljivanje»). Это ординационное отбеливание той же сути, что teeth-whitening; бренд-дубль не заводим (правило 10), бренд сохраняем синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Отбеливание Zoom",
+			"language": "ru",
+			"reason": "Сайт называет систему «Zoom lampa» (dentalux.me /me/usluge Za još blistaviji osmijeh, ortholine.me /izbjeljivanje-zuba «ZOOM TM izbjeljivanje»). Это ординационное отбеливание той же сути, что teeth-whitening; бренд-дубль не заводим (правило 10), бренд сохраняем синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Zoom-Bleaching",
+			"language": "de",
+			"reason": "Сайт называет систему «Zoom lampa» (dentalux.me /me/usluge Za još blistaviji osmijeh, ortholine.me /izbjeljivanje-zuba «ZOOM TM izbjeljivanje»). Это ординационное отбеливание той же сути, что teeth-whitening; бренд-дубль не заводим (правило 10), бренд сохраняем синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Zoom diş beyazlatma",
+			"language": "tr",
+			"reason": "Сайт называет систему «Zoom lampa» (dentalux.me /me/usluge Za još blistaviji osmijeh, ortholine.me /izbjeljivanje-zuba «ZOOM TM izbjeljivanje»). Это ординационное отбеливание той же сути, что teeth-whitening; бренд-дубль не заводим (правило 10), бренд сохраняем синонимом для поиска."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Dental Caries Treatment",
+			"slug": "dental-caries-treatment",
+			"source": "Restaurativna stomatologija: «U restaurativnu stomatologiju spadaju dijagnostika, liječenje zuba …», «Karijes … Redovne posjete stomatologu, u mnogome pomažu ranom otkrivanju karijesa i njegovom gotovo bezbolnom saniranju»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "«… nadoknada oštećenog zubnog tkiva kompozitnim ispunama … kompoziti»"
+		},
+		{
+			"nameEn": "Glass Ionomer Filling",
+			"slug": "glass-ionomer-filling",
+			"source": "«… koristimo najkvalitetnije materijale …: kompoziti, glasjonomeri, kompomeri»"
+		},
+		{
+			"nameEn": "Compomer Filling",
+			"slug": "compomer-filling",
+			"source": "«… kompoziti, glasjonomeri, kompomeri»"
+		},
+		{
+			"nameEn": "Aesthetic Tooth Restoration",
+			"slug": "aesthetic-tooth-restoration",
+			"source": "«upotrebu estetskih adhezivnih materijala u boji zuba … idealnu estetsku rekonstrukciju oštećenih i oboljelih zuba»"
+		},
+		{
+			"nameEn": "Fractured Tooth Build-up",
+			"slug": "fractured-tooth-build-up",
+			"source": "«najčešće se radi zbrinjavanje zuba sa karijesnim i nekarijesnim oštećenjima …, zbrinjavanje frakturiranih krunica zuba»"
+		},
+		{
+			"nameEn": "Partial Denture with Precision Attachment",
+			"slug": "partial-denture-with-precision-attachment",
+			"source": "Protetika: «Postoje i kombinovane nadoknade, kod kojih je jedan dio fiksiran na postojeće zube, a drugi mobilan», «… bilo da se radi o krunicama, mostovima ili kombinovanim radovima»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "Ortodoncija: «ortodontsku terapiju mobilnim i fiksnim ortodontskim aparatima»; /me/service/Mobilne-proteze…: «Mobilne proteze … za korekciju nepravilnosti u mlađem uzrastu, obično između šest i 12 godina»"
+		},
+		{
+			"nameEn": "Fixed Braces (Metal) per Jaw",
+			"slug": "fixed-braces-metal-per-jaw",
+			"source": "«kroz primjenu klasičnih metalnih bravica»; /me/service/Fiksne-proteze…: «koristimo izuzetne njemačke materijale proizvođača “Dentaurum”» (производитель брекетов, не отдельная запись)"
+		},
+		{
+			"nameEn": "Fixed Braces (Ceramic or Composite) per Jaw",
+			"slug": "fixed-braces-ceramic-or-composite-per-jaw",
+			"source": "«… keramičkih bravica»"
+		},
+		{
+			"nameEn": "Lingual Braces per Jaw",
+			"slug": "lingual-braces-per-jaw",
+			"source": "«… ali i kroz primjenu lingvalne tehnike tj. lijepljenjem bravica sa unutrašnje strane zuba»"
+		},
+		{
+			"nameEn": "Invisalign Aligner",
+			"slug": "invisalign-aligner",
+			"source": "«Folije za ispravljanje zuba — … jedan od najnaprednijih sistema za nevidljivo ispravljanje zuba – INVISALIGN»"
+		},
+		{
+			"nameEn": "Dental Fissure Sealant",
+			"slug": "dental-fissure-sealant",
+			"source": "Dječja i preventivna stomatologija: «Radimo preventivno zalivanje fisura mliječnih i stalnih zuba»"
+		},
+		{
+			"nameEn": "Topical Fluoride Treatment",
+			"slug": "topical-fluoride-treatment",
+			"source": "«Pored toga radimo loklanu aplikaciju fluora»"
+		},
+		{
+			"nameEn": "Dental Counseling",
+			"slug": "dental-counseling",
+			"source": "«Roditeljima i djeci dajemo iscrpne savjete i demonstriramo pravilno održavanje higijene usta i zuba … Dajemo savjete i u pogledu pravilne ishrane trudnica i djece»"
+		},
+		{
+			"nameEn": "Dental Consultation",
+			"slug": "dental-consultation",
+			"source": "/me/service/Preventivna-stomatologija…: «redovni stomatološki pregledi … Ove posjete trebalo bi uvesti u svoju rutinu na svakih šest mjeseci»; /me/Kontakt: «zakažite pregled»"
+		},
+		{
+			"nameEn": "Plaque and Calculus Removal",
+			"slug": "plaque-and-calculus-removal",
+			"source": "/me/service/Preventivna-stomatologija…: «Tokom redovnih posjeta stomatolog će vam očistiti zube od kamenca i plaka»"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "Oralna hirurgija: «grana stomatologije koja se bavi vađenjem zuba … omogućava vađenje zuba iz protetskih, ortodontskih, paradentoloških i drugih razloga»"
+		},
+		{
+			"nameEn": "Wisdom Tooth Extraction",
+			"slug": "wisdom-tooth-extraction",
+			"source": "«U našem centru vršimo usluge hirurških zahvata, kao što su vađenje umnjaka»"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "«… apikotomije»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery",
+			"slug": "flap-surgery-periodontal",
+			"source": "«… hirurške intervencije na parodoncijumu»"
+		},
+		{
+			"nameEn": "Periodontal Pocket Treatment",
+			"slug": "periodontal-pocket-treatment",
+			"source": "«… terapija gingivalnih džepova»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "Implantologija: «Primjena dentalnih implantata …», «Jednostavna, bezbolna i brza hirurška procedura» — бренд не назван"
+		},
+		{
+			"nameEn": "Implant Suprastructure",
+			"slug": "implant-suprastructure",
+			"source": "«U daljoj terapiji se za implantate vezuju protetske nadoknade (krunice, mostovi)»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "Za još blistaviji osmijeh: «BIJELJENJE ZUBA ZOOM LAMPOM … za samo 30 minuta»; акция главной «IZBJELJIVANJE ZUBA ZOOM LAMPOM» — бренд Zoom сохранён синонимом"
+		},
+		{
+			"nameEn": "Home Teeth Whitening",
+			"slug": "home-teeth-whitening",
+			"source": "«BIJELJENJE ZUBA VACUUM FORMER APARATOM — … u ordinaciji se izrađuju folije za zube, koje služe kao nosači gela … Izbjeljivanje se zatim vrši u kućnim uslovima»"
+		},
+		{
+			"nameEn": "Dental Jewelry Application",
+			"slug": "dental-jewelry-application",
+			"source": "«NAKIT ZA ZUBE — … laka i brza ugradnja nekog blistavog ornamenta na površini zdravog zuba»"
+		},
+		{
+			"nameEn": "Hyaluronic Acid Filler",
+			"slug": "hyaluronic-acid-filler",
+			"source": "«ANTI-AGING STOMATOLOGIJA — Našim pacijentima nudimo aplikaciju hijaluronske kiseline …» (показания: marionetske linije, nazolabijalne brazde, „pušačke bore”, hipotrofični ožiljci)"
+		},
+		{
+			"nameEn": "Lip Augmentation",
+			"slug": "lip-augmentation",
+			"source": "Показания к гиалуроновой кислоте: «asimetrije usana (genetske i stečene)», «volumen i kontura usana»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "jasminka-andjelic",
+			"nameSr": "Jasminka Anđelić",
+			"professionalTitle": "prof. dr",
+			"position": "Specijalista ortopedije vilica",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://www.dentalux.me/files/images/1580738315-FDSM8336-8%20(1).jpg",
+			"services": [
+				"orthodontic-removable-plate-appliance",
+				"fixed-braces-metal-per-jaw",
+				"fixed-braces-ceramic-or-composite-per-jaw",
+				"lingual-braces-per-jaw",
+				"invisalign-aligner"
+			],
+			"languagesSource": "SR + EN: /me/MENTORSTVO-U-ORTODONCIJI/ — «Program mentorstva odvija se na crnogorskom/hrvatskom/srpskom/bošnjačkom i na engleskom jeziku» (программу ведёт она лично, «jedan na jedan»)"
+		},
+		{
+			"slug": "ivana-andjelic",
+			"nameSr": "Ivana Anđelić",
+			"professionalTitle": "dr",
+			"position": "Doktor dentalne medicine",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://www.dentalux.me/files/images/1580118562-dr%20Ivana%20Andjelic.jpg",
+			"services": [],
+			"note": "Сайт (~2020): «budući specijalista ortopedije vilica», специализация с 2017. Если уже специалист — добавить 93 после подтверждения."
+		},
+		{
+			"slug": "snezana-matijevic",
+			"nameSr": "Snežana Matijević",
+			"professionalTitle": "prof. dr",
+			"position": "Specijalista dječje i preventivne stomatologije",
+			"specialtyIds": [
+				78,
+				87
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://www.dentalux.me/files/images/1579874688-FDSM8383%20(1)-min.jpg",
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Protetika: «… usluge kompletne protetske rehabilitacije orofacijalnog sistema bilo da se radi o krunicama, mostovima …»; Hollywood smile: «krunica, faseta, mostova»",
+			"reason": "Материал коронок/мостов/виниров не назван; generic-записи «коронка»/«мост» в каталоге нет (только по материалу). Не угадываем (как Dental Protection)."
+		},
+		{
+			"source": "Protetika: «… dok se mobilne protetske nadoknade skidaju i pacijent ih sam vadi iz usta»",
+			"reason": "Объяснение раздела, а не заявленная услуга; вид протеза (частичный/полный, материал) не назван. Комбинированные работы заведены (partial-denture-with-precision-attachment)."
+		},
+		{
+			"source": "Restaurativna: «zbrinjavanju zuba nakon završene terapije korijena zuba»",
+			"reason": "Речь о реставрации после эндодонтии; само лечение каналов сайт как услугу не называет — эндодонтию не заводили."
+		},
+		{
+			"source": "Oralna hirurgija: «hirurškim uklanjanjem patoloških promena u vilicama»",
+			"reason": "Определение раздела без конкретной процедуры."
+		},
+		{
+			"source": "/me/MENTORSTVO-U-ORTODONCIJI/: «nude uslugu mentorstva … Cijena usluge mentorstva dostupna je na upit»",
+			"reason": "Обучение для ортодонтов (B2B), не медицинская услуга пациенту. Упомянуто в био и описании."
+		},
+		{
+			"source": "/me/O-nama/: «Pacijentima smo na usluzi 24h, budući da posjedujemo kontakt za hitne situacije i konsultacije»",
+			"reason": "Доступность контакта, а не процедура; dental-first-aid не ставили. Упомянуто в описании."
+		},
+		{
+			"source": "Zoom: «Uz tretman Zoom lampom, Dentalux poklanja folije …»",
+			"reason": "Подарок к услуге, не отдельная позиция."
+		},
+		{
+			"source": "Anti-aging: «dento-skeletne profilne diskrepance manjeg stepena (klasa 2, klasa 3)», «hipotrofični ožiljci», «nazolabijalne brazde»",
+			"reason": "Показания одной процедуры (введение гиалуроновой кислоты) — заведена одна hyaluronic-acid-filler + lip-augmentation для губ; scar-correction и т.п. не плодили."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Сайт ~2019–2020, состав мог устареть",
+			"detail": "Футер © 2019, фото врачей — январь 2020, менторство — 2024 (упоминает обеих профессорок). dr Ivana Anđelić на 2020 — «budući specijalista ortopedije vilica»; если уже специалист — добавить ей 93."
+		},
+		{
+			"topic": "Язык EN у prof. dr Jasminka Anđelić",
+			"detail": "Снят координатором 2026-10-09: английский заявлен для программы менторства («Program mentorstva odvija se … i na engleskom jeziku»), не для приёма пациентов. Оставлен только SR."
+		},
+		{
+			"topic": "Zoom → teeth-whitening + синонимы",
+			"detail": "Бренд-запись под Zoom не заводилась (правило «брендовый дубль той же сути не заводить»); бренд сохранён синонимами на 6 языках. Та же схема у Ortholine (Zoom, Opalescence Boost)."
+		}
+	]
+}

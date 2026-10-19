@@ -1,0 +1,585 @@
+{
+	"schemaVersion": 1,
+	"slug": "vrmac-health-wellbeing-retreat-kotor",
+	"name": "VRMAC Health & Wellbeing Retreat de’MAR",
+	"city": "Kotor",
+	"cityId": 6,
+	"googlePlaceId": "ChIJAQAAZAo0TBMRgstKSiF85iY",
+	"clinicTypeIds": [
+		24,
+		14
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-vrmac-health-wellbeing-retreat-kotor.sql",
+		"server/sql/insert-clinic-vrmac-health-wellbeing-retreat-kotor-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 208,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент T. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и врачей по slug. Сухой прогон 2026-10-09 на локали (scripts/sql/dryrun-import.mjs, plain + shadow для services): 0 ошибок, счётчики 14 таблиц до/после совпали; несматченных slug — 0 (новых записей каталога нет); unlinked_doctor marina-delic ожидаем (клиники ещё нет). Slug клиники и новых физиотерапевтов сверены с прод-API (204); marina-delic на проде — id 1025 без клиник. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 235
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://vrmacwellbeing.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": "2026-06-19",
+			"note": "WordPress + Elementor, en и /me/. wp-json/wp/v2/pages: 28 страниц, modified 2026-06-10 … 2026-06-30. Прочитаны /about-us/, /medical-services/, /physical-therapy/, /manual-therapy/, /beauty-treatments/ и 8 подстраниц, /health-wellbeing-programs/ и 6 программ, /contact/, /faqs/, /philosophy/, /me/ (названия услуг по-черногорски). Цены — только у программ (страницы программ modified 2026-06-19 — дата прайса). Часов работы нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/tivat/health-wellbeing-retreat-de-mar-vrmac.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4646493 / 18.7329959, +382 69 113 222, «FP7M+V55, Jadranska magistrala, Prčanj». Файл лежит в папке tivat, но точка — община Котор. 3 отзыва — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Hyatt Regency Kotor Bay Resort, Donji Stoliv bb (town Donji Stoliv) — сайт «Donji Stoliv bb, Kotor, Montenegro»; Google — Prčanj. Индекс не заполнен (нет ни на сайте, ни в Google)",
+		"phone": "+38269113222 — сайт и Google",
+		"whatsapp": "+38269113222 — ссылка wa.me на сайте",
+		"email": "vrmac.kotorregency@hyatt.com — сайт",
+		"website": "https://vrmacwellbeing.com/",
+		"social": "facebook.com/profile.php?id=100076239241728, @vrmac.wellbeing — ссылки сайта (не открывались)",
+		"logo": "https://vrmacwellbeing.com/wp-content/uploads/2026/06/VRMAC-LOGO.svg (тёмный; logo-Vrmac-wh.svg белый)",
+		"workingHours": "на сайте нет — не заполнены",
+		"description": "из /about-us/, страниц услуг и программ",
+		"languages": "только SR — сайт en/me, но приём на других языках прямо не заявлен",
+		"doctors": "Dr Marina Delić найдена в БД (marina-delic, 14+42) — только привязка с position «Glavni doktor»; 3 физиотерапевта (94) — новые, без фото, с описаниями по тексту сайта",
+		"prices": "у отдельных услуг цен нет — 42 услуги без цены; цены есть только у 6 программ (спорные)",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"slug": "pulmonary-rehabilitation",
+			"name_en": "Pulmonary Rehabilitation",
+			"name_sr": "Plućna rehabilitacija",
+			"table": "medical_services",
+			"addedBy": "coordinator",
+			"date": "2026-10-09"
+		},
+		{
+			"slug": "hifem-therapy",
+			"name_en": "HIFEM Therapy",
+			"name_sr": "HIFEM terapija",
+			"table": "medical_services",
+			"addedBy": "coordinator",
+			"date": "2026-10-09"
+		}
+	],
+	"services": [
+		{
+			"slug": "specialist-examination",
+			"nameEn": "Specialist Examination",
+			"price": null,
+			"source": "Medical Services — «Examination by a Specialist Doctor — Comprehensive medical evaluation by a specialist physician…» (me: «Pregled kod specijalista»)"
+		},
+		{
+			"slug": "follow-up-specialist-examination",
+			"nameEn": "Follow-up Specialist Examination",
+			"price": null,
+			"source": "«Control Examination — Follow-up medical assessment…» (me: «Kontrolni pregled»)"
+		},
+		{
+			"slug": "physiotherapist-examination",
+			"nameEn": "Physiotherapist Examination",
+			"price": null,
+			"source": "«Examination by a Physiotherapist — Professional assessment of posture, movement, pain, muscle function, and mobility…» (me: «Fizioterapeutski pregled»)"
+		},
+		{
+			"slug": "body-composition-analysis",
+			"nameEn": "Body Composition Analysis",
+			"price": null,
+			"source": "«BIA (Body Impedance Analiser) — Non-invasive body composition analysis measuring body fat, muscle mass, hydration…»"
+		},
+		{
+			"slug": "ecg",
+			"nameEn": "ECG",
+			"price": null,
+			"source": "«ECG (Electrocardiogram)»"
+		},
+		{
+			"slug": "spirometry",
+			"nameEn": "Spirometry",
+			"price": null,
+			"source": "Lung Function Tests — «Spirometry»"
+		},
+		{
+			"slug": "bronchodilator-test",
+			"nameEn": "Bronchodilator Test",
+			"price": null,
+			"source": "«BDT (Bronhodilatator Test) — Respiratory test performed before and after bronchodilator medication…»"
+		},
+		{
+			"slug": "body-plethysmography",
+			"nameEn": "Body Plethysmography",
+			"price": null,
+			"source": "«Bodyplethysmographya — Advanced lung function testing that measures total lung volume and airway resistance…»"
+		},
+		{
+			"slug": "diffusion-test",
+			"nameEn": "Diffusion Test",
+			"price": null,
+			"source": "«Diffusion Capacity Testing — Diagnostic test evaluating how efficiently oxygen passes from the lungs into the bloodstream.»"
+		},
+		{
+			"slug": "intramuscular-injection",
+			"nameEn": "Intramuscular Injection",
+			"price": null,
+			"source": "Injection Therapy — «Intramuscular Injection»"
+		},
+		{
+			"slug": "infusion-therapy",
+			"nameEn": "Infusion Therapy",
+			"price": null,
+			"source": "«Infusion with Medication — Intravenous therapy that delivers medications and fluids…»"
+		},
+		{
+			"slug": "vitamin-or-anti-aging-tad-infusion",
+			"nameEn": "Vitamin or Anti-aging (TAD) Infusion",
+			"price": null,
+			"source": "«Vitamins Cocktail Infusion — Intravenous vitamin and nutrient therapy…» (единственная generic-запись витаминной капельницы, Myers — конкретная формула, сайт её не называет)"
+		},
+		{
+			"slug": "immune-booster-iv",
+			"nameEn": "Immune Booster IV",
+			"price": null,
+			"source": "«Immuno Boost Infusion — Specialized IV infusion of vitamins, minerals, and antioxidants aimed at supporting immune system function»"
+		},
+		{
+			"slug": "wound-care",
+			"nameEn": "Wound Care",
+			"price": null,
+			"source": "«Interventions (Wound Care, etc.) — … wound treatment, dressing changes, minor interventions…»"
+		},
+		{
+			"slug": "inhalation-therapy",
+			"nameEn": "Inhalation Therapy",
+			"price": null,
+			"source": "«Inhalation with Medicine — Respiratory therapy using medicated inhalation…»"
+		},
+		{
+			"slug": "individual-kinesiotherapy",
+			"nameEn": "Individual Kinesiotherapy",
+			"price": null,
+			"source": "Physical Therapy — «Individual Kinesiotherapy 30 - 60 min»"
+		},
+		{
+			"slug": "group-exercises-type-b",
+			"nameEn": "Group Exercises (per Person)",
+			"price": null,
+			"source": "«Group Kinesiotherapy - (up to 6 people) 45 min» («Grupne vježbe, po osobi»)"
+		},
+		{
+			"slug": "active-assisted-exercises-in-water",
+			"nameEn": "Active-Assisted Exercises in Water",
+			"price": null,
+			"source": "«Hidrokinesiotherapy 30 min — Therapeutic exercises performed in water…» (единственная запись упражнений в воде)"
+		},
+		{
+			"slug": "electrotherapy",
+			"nameEn": "Electrotherapy",
+			"price": null,
+			"source": "«Electrotherapy»"
+		},
+		{
+			"slug": "ultrasound-therapy",
+			"nameEn": "Ultrasound Therapy",
+			"price": null,
+			"source": "«Ultrasound Therapy»"
+		},
+		{
+			"slug": "magnetic-therapy",
+			"nameEn": "Magnetic Therapy",
+			"price": null,
+			"source": "«Magnetotherapy 30 min — Low-frequency magnetic field therapy…»"
+		},
+		{
+			"slug": "hilt-laser-therapy",
+			"nameEn": "HILT Laser Therapy",
+			"price": null,
+			"source": "«HILT – High Intensity Laser»"
+		},
+		{
+			"slug": "shock-wave-therapy",
+			"nameEn": "Shock Wave Therapy",
+			"price": null,
+			"source": "«Shock Wave Therapy»"
+		},
+		{
+			"slug": "tecar-therapy",
+			"nameEn": "Tecar Therapy",
+			"price": null,
+			"source": "«TECAR Therapy — Radiofrequency therapy…»"
+		},
+		{
+			"slug": "manual-therapy",
+			"nameEn": "Manual Therapy",
+			"price": null,
+			"source": "Manual Therapy — «Holistic Manual Treatments 45 - 90 min», «Regenerative Therapeutic Manual Treatments 30 - 90 min», «Target Manual Treatment 20 - 30 min»"
+		},
+		{
+			"slug": "cupping-therapy",
+			"nameEn": "Cupping Therapy",
+			"price": null,
+			"source": "«CuMan Therapy (Cupping and Manual Therapy) 30 - 90 min»"
+		},
+		{
+			"slug": "pressotherapy",
+			"nameEn": "Pressotherapy",
+			"price": null,
+			"source": "«Lymphatic Drainage by Apparatus 30 - 40 min — Mechanical lymphatic stimulation…»"
+		},
+		{
+			"slug": "lymphatic-drainage-complete",
+			"nameEn": "Complete Lymphatic Drainage",
+			"price": null,
+			"source": "«Manual Lymphatic Drainage 30 - 60 min» (длительность диапазоном — generic-запись, синоним Manual Lymphatic Drainage)"
+		},
+		{
+			"slug": "apparatus-assisted-massage",
+			"nameEn": "Apparatus-Assisted Massage",
+			"price": null,
+			"source": "«Vibro Massage 20 - 30 min — Therapeutic vibration massage…» («Aparaturna masaža»)"
+		},
+		{
+			"slug": "hydrotherapy-underwater-massage",
+			"nameEn": "Hydrotherapy: Underwater Massage",
+			"price": null,
+			"source": "«Underwater Shower Massage 20 min»"
+		},
+		{
+			"slug": "pearl-bath-therapy",
+			"nameEn": "Pearl Bath Therapy",
+			"price": null,
+			"source": "«Bubble Bath 20 min — Relaxing hydrotherapy bath with warm, bubbling water» («Terapija bisernim kupkama»)"
+		},
+		{
+			"slug": "thermotherapy-thermo-pack",
+			"nameEn": "Thermotherapy: Thermo Pack",
+			"price": null,
+			"source": "«Thermo Herbal Packing 30 min — Warm herbal compress therapy that combines heat and medicinal herbs to relieve pain…»"
+		},
+		{
+			"slug": "taping-application",
+			"nameEn": "Taping Application",
+			"price": null,
+			"source": "«Kinesio Taping»"
+		},
+		{
+			"slug": "dry-needling",
+			"nameEn": "Dry Needling",
+			"price": null,
+			"source": "«Dry Needling»"
+		},
+		{
+			"slug": "botox-injection",
+			"nameEn": "Botox Injection",
+			"price": null,
+			"source": "Beauty Treatments — «Botox Non-Surgical Injectable Treatment»"
+		},
+		{
+			"slug": "hyaluronic-acid-filler",
+			"nameEn": "Hyaluronic Acid Filler",
+			"price": null,
+			"source": "«Hyaluronic Acid Fillers»"
+		},
+		{
+			"slug": "profhilo-treatment",
+			"nameEn": "Profhilo Treatment",
+			"price": null,
+			"source": "«Profhilo®»"
+		},
+		{
+			"slug": "exosome-therapy",
+			"nameEn": "Exosome Therapy",
+			"price": null,
+			"source": "«Exosome Therapy» (топические экзосомы после микронидлинга/лазера)"
+		},
+		{
+			"slug": "facial-mesotherapy-single-treatment",
+			"nameEn": "Facial Mesotherapy Single Treatment",
+			"price": null,
+			"source": "«Mesotherapy Skin Rejuvenation Treatment … microinjections» (зоны: лицо, под глазами, шея, руки…)"
+		},
+		{
+			"slug": "scalp-mesotherapy",
+			"nameEn": "Scalp Mesotherapy",
+			"price": null,
+			"source": "Mesotherapy — «What Areas Can Mesotherapy Treat? … Scalp and hair thinning areas»"
+		},
+		{
+			"slug": "dermapen-microneedling",
+			"nameEn": "Dermapen Microneedling",
+			"price": null,
+			"source": "Facial Treatments — «Dermapen Face + Booster 75 Minutes», «Dermapen Face, Neck & Décolleté + Booster 75 Minutes»"
+		},
+		{
+			"slug": "emface-facial-treatment",
+			"nameEn": "Emface Facial Treatment",
+			"price": null,
+			"source": "«Emface 1 Area 30 Minutes», «Emface 2 Areas 45 Minutes»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "marina-delic",
+			"nameSr": "Marina Delić",
+			"professionalTitle": "dr",
+			"position": "Glavni doktor",
+			"specialtyIds": [
+				42,
+				14
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"specialist-examination",
+				"follow-up-specialist-examination"
+			],
+			"note": "Существующая карточка (id 1025 локаль и прод), фото и описание sr уже есть — не перезаписываются. В её описании «tečno govori engleski jezik», но язык EN врачу не добавлен: сайт клиники этого не заявляет."
+		},
+		{
+			"slug": "jovana-vukovic",
+			"nameSr": "Jovana Vuković",
+			"professionalTitle": null,
+			"position": "Fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": []
+		},
+		{
+			"slug": "fedis-kardovic",
+			"nameSr": "Fedis Kardović",
+			"professionalTitle": null,
+			"position": "Fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": []
+		},
+		{
+			"slug": "dragana-gudelj",
+			"nameSr": "Dragana Gudelj",
+			"professionalTitle": null,
+			"position": "Fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Manual Therapy — «Aroma Bath 20 min», «Epsom Bath 20 min», «Herbal Packing 30 min — Therapeutic herbal body wrap…»",
+			"reason": "Wellness/spa-процедуры без медицинской составляющей (в отличие от Bubble Bath = pearl-bath-therapy и Thermo Herbal Packing = thermotherapy-thermo-pack). Упомянуты в описании обобщённо («kupke, biljne obloge»)."
+		},
+		{
+			"source": "Beauty — «Neolifting … non-invasive facial sculpting … bio-active skincare and expert manual techniques … buccal sculpting»",
+			"reason": "Косметический ручной facial (La Fervance), без медицинской составляющей — решение юзера."
+		},
+		{
+			"source": "Beauty — «Neoderma Professional Treatments … Neoderma Bio-Peeling … Neo Hydro / Balance / Defense»",
+			"reason": "Косметическая линейка ухода за кожей — не медицинская услуга."
+		},
+		{
+			"source": "Facial Treatments — Essential / Essence / Experience Facial, Eye Perfection, Purification Facial, Neo-Hydro, Neo-Sense, Marine-Enzyme, Bio-Lift, Neo-Marine, Hydrofacial, Hydrofacial Glow Touch",
+			"reason": "Косметические facials — решение юзера не заводить. Из этой страницы заведены только Dermapen (микронидлинг) и Emface (аппарат RF + HIFES)."
+		},
+		{
+			"source": "Программы: «6-min Walking Test (6MWT)», «Breathing Exercises», «Aqua Gym», «Pilates», «Fango Application», «Respiratory Kinesytherapy», «Mind Release Therapy», «Mediterranean Warm Pack»",
+			"reason": "Встречаются только в составе программ, отдельными услугами клиника их не предлагает."
+		},
+		{
+			"source": "Ivana Bošković — «Wellness & Spa Expert»; Marija Lučić — «Aesthetician & Massage Therapist»",
+			"reason": "Не медицинский персонал — не заводятся (решение юзера)."
+		},
+		{
+			"source": "/faqs/: «nutrition guidance», «personalized wellness consultations»",
+			"reason": "Обобщения из FAQ о программах, не отдельные услуги."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Типы клиники",
+			"detail": "Поставлены 24 PHYSIOTHERAPY_CLINIC + 14 AESTHETIC_CLINIC. Альтернатива для 24 — 13 REHABILITATION_CENTER (не в публичном фильтре)."
+		},
+		{
+			"topic": "Vitamins Cocktail Infusion",
+			"detail": "Сопоставлено с vitamin-or-anti-aging-tad-infusion (generic «Vitaminska … infuzija»); myers-cocktail-iv — конкретная формула, сайт её не называет."
+		}
+	],
+	"resolved": [
+		{
+			"source": "Physical Therapy — «HIFEM/HIFM Therapy — High-Intensity Focused Electromagnetic technology used for muscle strengthening, rehabilitation, improved stability, and functional recovery»",
+			"reason": "Несколько равноценных кандидатов: super-inductive-system-therapy (BTL SIS, «visoko-intenzivno elektromagnetno polje»), high-inductive-magnet-therapy, emsculpt-neo-body-contouring (эстетика, HIFEM + RF). Аппарат сайт не называет. Предложение: super-inductive-system-therapy с синонимом HIFEM, если юзер согласен, что это реабилитационный HIFEM, а не Emsculpt.",
+			"resolution": "Новая запись hifem-therapy (HIFEM Therapy, кат. 5, спец. 42). Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "Manual Therapy — «Foot Reflexology 20 - 30 min — Therapeutic pressure applied to reflex points on the feet…»",
+			"reason": "В каталоге рефлексологии нет. Это комплементарная/wellness-техника; завести «Foot Reflexology» (кат. 5) или не заводить — решить юзеру.",
+			"resolution": "Не заводится: комплементарная техника (правило — альтернативную медицину не заводить). Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "Pure Breath Experience — Respiratory Support Program — Duration: From 5 Days, «€550,00» («Standalone package not including accommodations»)",
+			"url": "https://vrmacwellbeing.com/health-wellbeing-programs/pure-breath-experience-respiratory-support-program/",
+			"price": "€550,00",
+			"duration": "Duration: From 5 Days",
+			"includes": [
+				"Initial Medical Check-up",
+				"Lung Functional Tests + ECG + 6-min Walking Test (6MWT)",
+				"3 x Breathing Exercises – Seaside/TAI CHI 20 min",
+				"3 x Respiratory Kinesytherapy 30 min",
+				"5 x Pool Exercises – AI CHI 30 min",
+				"5 x Inhalation + Possible Postural Drainage",
+				"2 x Magneto Therapy",
+				"3 x Manual Treatment (Neck, Shoulder, Back) 30 min",
+				"Final Medical Check-up with Written Medical Report"
+			],
+			"reason": "Многодневная программа-пакет, аналога в каталоге нет. Не заведена (решение юзера: программы — в спорные с предложением).",
+			"proposal": "Это по сути 5-дневная лёгочная реабилитация под контролем физиатра-пульмолога: функциональные тесты, дыхательная кинезиотерапия, ингаляции, постуральный дренаж. Предложение: новая запись «Pulmonary Rehabilitation Program 5 Days» (кат. 12 PULMONOLOGY + 5 PHYSIOTHERAPY), price_min 550 («from 5 days»).",
+			"resolution": "Новая запись pulmonary-rehabilitation (Pulmonary Rehabilitation, кат. 5+12, спец. 42+14), price_min 550; привязка marina-delic. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "Longevity Living — Healthy Aging Program — Duration: From 5 Days, «€550,00» («Standalone package not including accommodations»)",
+			"url": "https://vrmacwellbeing.com/health-wellbeing-programs/longevity-living-healthy-aging-program/",
+			"price": "€550,00",
+			"duration": "Duration: From 5 Days",
+			"includes": [
+				"Initial Medical Check-up with ECG",
+				"2 x Morning Gym 30 min (with breathing exercises)",
+				"3 x Kinesitherapy 30 min",
+				"5 x Aqua Gym 30 min",
+				"5 x Electro/Sono/Magneto/Lasero Therapy 30 min (by Doctor's Choice with lymphatic apparatus)",
+				"2 x Manual Treatment 30 min",
+				"1 x Aroma Bath 20 min",
+				"1 x Fango Application 20 min",
+				"Final Medical Check-up"
+			],
+			"reason": "Многодневная программа-пакет, аналога в каталоге нет. Не заведена (решение юзера: программы — в спорные с предложением).",
+			"proposal": "Самая «медицинская» после Pure Breath: осмотры + кинезиотерапия + физиопроцедуры по выбору врача. Можно завести «Physical Therapy Program 5 Days» (кат. 5) с price_min 550 — по схеме пакетов, иначе не заводить.",
+			"resolution": "Не заводится: wellness-программа, медицинская часть — только осмотры. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "Inner Light Reset — Medical Detox Program — Duration: From 5 Days (обязателен пакет проживания с полупансионом), «€625,00» («Standalone package not including accommodations»)",
+			"url": "https://vrmacwellbeing.com/health-wellbeing-programs/inner-light-reset-medical-detox-program/",
+			"price": "€625,00",
+			"duration": "Duration: From 5 Days (обязателен пакет проживания с полупансионом)",
+			"includes": [
+				"Initial Medical Check-up with ECG + BIA",
+				"5 x Morning Speed Walk by the Sea 30 min",
+				"5 x Aqua Gym 30 min",
+				"2 x Cardio Fitness 30 min",
+				"3 x Pilates 30 min",
+				"1 x Detox Massage 45 min",
+				"2 x Lymphdrainage 30 min",
+				"1 x Epsom Bath 20 min",
+				"1 x Herbal Detox Package (Full Body) 30 min",
+				"Nutrition Instruction",
+				"Final Medical Check-up with Body Mass measurements and Advise for Home",
+				"Голодание на соках и супах"
+			],
+			"reason": "Многодневная программа-пакет, аналога в каталоге нет. Не заведена (решение юзера: программы — в спорные с предложением).",
+			"proposal": "Wellness-детокс (соковое голодание, фитнес, массажи). Медицинская часть — только осмотры с ЭКГ/BIA. Предложение: не заводить.",
+			"resolution": "Не заводится: wellness-программа, медицинская часть — только осмотры. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "Deep Calm Escape — Stress Recovery Program — Duration: From 5 Days, «€550,00» («Standalone package not including accommodations»)",
+			"url": "https://vrmacwellbeing.com/health-wellbeing-programs/deep-calm-escape-stress-recovery-program/",
+			"price": "€550,00",
+			"duration": "Duration: From 5 Days",
+			"includes": [
+				"Initial Medical Check-up",
+				"3 x Breathing Exercises – Seaside/TAI CHI 30 min",
+				"2 x Stretching/Pilates Exercises 30 min",
+				"5 x Aqua Gym 30 min",
+				"2 x Manual Treatment 45 min",
+				"1 x Aroma Bath 20 min",
+				"1 x Body Wrap 30 min",
+				"1 x Foot Massage 30 min",
+				"Final Medical Check-up"
+			],
+			"reason": "Многодневная программа-пакет, аналога в каталоге нет. Не заведена (решение юзера: программы — в спорные с предложением).",
+			"proposal": "Wellness-антистресс. Предложение: не заводить.",
+			"resolution": "Не заводится: wellness-программа, медицинская часть — только осмотры. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "Core Vitality — Immune Support Program — Duration: From 5 Days (обязателен пакет проживания с полупансионом), «€550,00» («Standalone package not including accommodations»)",
+			"url": "https://vrmacwellbeing.com/health-wellbeing-programs/core-vitality-immune-support-program/",
+			"price": "€550,00",
+			"duration": "Duration: From 5 Days (обязателен пакет проживания с полупансионом)",
+			"includes": [
+				"Initial Medical Check-up with ECG",
+				"3 x Morning Gym 30 min (breathing and stretching exercises on the beach)",
+				"2 x Brisk Walking 30 min",
+				"5 x Aqua Gym 30 min",
+				"2 x Lymphatic Drainage Massage 30 min (with lymphatic apparatus)",
+				"1 x Epsom Bath 20 min",
+				"1 x Herbal Package 30 min",
+				"1 x Manual Treatment 45 min",
+				"Mediterranean Diet Based on HB",
+				"Final Medical Check-up"
+			],
+			"reason": "Многодневная программа-пакет, аналога в каталоге нет. Не заведена (решение юзера: программы — в спорные с предложением).",
+			"proposal": "Wellness-программа «для иммунитета». Предложение: не заводить.",
+			"resolution": "Не заводится: wellness-программа, медицинская часть — только осмотры. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "Managers Retreat — Executive Stress & Performance Recovery Program — Duration: From 2 Days, «€110,00 Price Per Day» («Standalone package not including accommodations»)",
+			"url": "https://vrmacwellbeing.com/health-wellbeing-programs/managers-retreat-executive-stress-performance-recovery-program/",
+			"price": "€110,00 Price Per Day",
+			"duration": "Duration: From 2 Days",
+			"includes": [
+				"2 x Breathing Exercises 30 min (on the beach)",
+				"2 x Exercises in Pool, Antistress 30 min",
+				"1 x Mind Release Therapy 60 min",
+				"1 x Mediterranean Warm Pack 40 min",
+				"1 x Foot Reflexology 20 min"
+			],
+			"reason": "Многодневная программа-пакет, аналога в каталоге нет. Не заведена (решение юзера: программы — в спорные с предложением).",
+			"proposal": "Без медицинских осмотров, чистый wellness, цена за день. Предложение: не заводить.",
+			"resolution": "Не заводится: wellness-программа, медицинская часть — только осмотры. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		}
+	]
+}

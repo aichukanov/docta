@@ -1,0 +1,228 @@
+{
+	"schemaVersion": 1,
+	"slug": "ordinacija-obradovic-medical-podgorica",
+	"name": "Ordinacija Obradović Medical",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJ2ZTShGXrTRMRLnoTvuA3lrg",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ordinacija-obradovic-medical-podgorica.sql",
+		"server/sql/insert-clinic-ordinacija-obradovic-medical-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 165,
+		"doctorIds": {
+			"mladjen-obradovic": 1850
+		},
+		"note": "Порядок применения обязателен. Сухой прогон 2026-10-08 (DML через EXPLAIN, ROLLBACK) — синтаксис чист, существующие name_en находятся. Тип клиники — POLYCLINIC (1) по решению юзера 2026-10-08. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 192
+	},
+	"sources": [
+		{
+			"type": "pdf",
+			"ref": "https://obradovicmedical.me/Cjenovnik_Obradovic_jun_2026.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": false,
+			"priceListDate": "2026-06-01",
+			"note": "Скан, 1 страница, 12 позиций. Заголовок «Novi cjenovnik zdravstvenih usluga u PZU OBRADOVIĆ MEDICAL (od 01.06.2026.god)», штамп «Broj 07/2026, Datum 27.05.2026». Текстовый слой мусорный — прочитан глазами по рендеру (pypdfium2, scale 2.5). Все 12 цен читаются уверенно. Предварительное OCR-чтение ошибалось: п.1 «prvi pregled» = 70 e (не нечитаемо), п.11 = 110 e без «+40e», п.12 = 40 e."
+		},
+		{
+			"type": "website",
+			"ref": "https://obradovicmedical.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Одностраничник, сырой HTML curl'ом. Дал био врача, перечень услуг («Šta mi to radimo»), контакты, часы, соцсети, логотип и фото врача. Раздел «Team» и галерея — шаблонные заглушки («Jenn Gwapa CEO/Founder», «Logo Design»), игнорируются."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/ordinacija-obradovic-medical.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4280788 / 19.2586901, телефон +382 63 220 122, адрес «56a 4. Jul, Podgorica». 6 отзывов (в файле 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "4. jula 56a, zgrada Euro Pact, Zabjelo — сайт и Google согласованы; индекса нет ни в одном источнике",
+		"phone": "+38220651116;+38263220122;+38267378037 — сайт; второй подтверждён Google",
+		"email": "obradovicmedical@gmail.com — сайт",
+		"website": "https://obradovicmedical.me/",
+		"social": "facebook.com/obradovicmedical, @obradovicmedical — сайт",
+		"logo": "https://obradovicmedical.me/img/medical220.png",
+		"workingHours": "пн–ср и пт 10:00–15:30 и 16:30–20:00, чт/сб/вс закрыто — блок «RADNO VRIJEME»",
+		"doctors": "1 из 1, новый",
+		"doctorPhotos": "img/dmladjo.jpg (портрет в блоке «O ordinaciji»)",
+		"prices": "12 из 12 строк прайса → 9 позиций каталога с ценой (2 пары сведены в диапазоны); +4 услуги с главной без цены",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "thyroid-fnab-with-cyst-sclerotherapy",
+			"nameEn": "Thyroid FNAB with Cyst Sclerotherapy",
+			"nameSr": "FNAB štitaste žlijezde sa skleroziranjem ciste",
+			"categoryIds": [
+				26,
+				15
+			],
+			"specialtyIds": [
+				12,
+				88
+			]
+		}
+	],
+	"services": [
+		{
+			"nameEn": "First Nuclear Medicine Specialist Examination",
+			"price": 70,
+			"source": "1. Prvi pregled specijaliste — 70 e"
+		},
+		{
+			"nameEn": "Follow-up Nuclear Medicine Specialist Examination",
+			"price": 30,
+			"priceMax": 50,
+			"source": "2. Kontrolni pregled specijaliste, nakon više od 15 dana — 50 e; 3. Kontrolni pregled specijaliste, unutar 15 dana od inicijalnog pregleda — 30 e"
+		},
+		{
+			"nameEn": "Thyroid Ultrasound",
+			"price": 50,
+			"source": "4. UZV pregled štitaste žlijezde sa CD* analizom — 50 e (CD = Color Doppler, TIRADS skor)"
+		},
+		{
+			"nameEn": "Neck Ultrasound",
+			"price": 60,
+			"source": "5. UZV pregled vrata sa CD* analizom — 60 e (štitasta, paraštitaste, zaušne i podvilične pljuvačne žlijezde, limfni čvorovi vrata)"
+		},
+		{
+			"nameEn": "Thyroid Examination with Ultrasound",
+			"price": 80,
+			"priceMax": 90,
+			"source": "6. Prvi specijalistički pregled + UZV pregled štitaste žlijezde — 90 e; 7. Kontrolni specijalistički pregled + UZV pregled štitaste žlijezde — 80 e"
+		},
+		{
+			"nameEn": "Specialist Examination with Ultrasound",
+			"price": 90,
+			"priceMax": 100,
+			"source": "8. Prvi specijalistički pregled + UZV vrata — 100 e; 9. Kontrolni specijalistički pregled + UZV vrata — 90 e"
+		},
+		{
+			"nameEn": "Thyroid Biopsy",
+			"price": 90,
+			"source": "10. UZV vođena aspiraciona punkcija (FNAB*) štitaste žlijezde sa pravljenjem razmaza — 90 e"
+		},
+		{
+			"nameEn": "Thyroid FNAB with Cyst Sclerotherapy",
+			"price": 110,
+			"source": "11. FNAB štitaste žlijezde sa pravljenjem razmaza i skleroziranjem ciste — 110 e",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "E-Consultation with Specialist",
+			"price": 40,
+			"source": "12. Konsultacija putem interneta / „drugo“ mišljenje... — 40 e"
+		},
+		{
+			"nameEn": "Abdomen and Urinary Tract Ultrasound",
+			"price": null,
+			"source": "naslovna, «Šta mi to radimo»: «UZV abdomena, urotrakta» — cijene u PDF nema"
+		},
+		{
+			"nameEn": "Doppler Neck Blood Vessels",
+			"price": null,
+			"source": "naslovna: «Color Doppler krvnih sudova vrata, ruku, nogu» — cijene u PDF nema"
+		},
+		{
+			"nameEn": "Doppler Upper Extremity Blood Vessels",
+			"price": null,
+			"source": "naslovna: «Color Doppler krvnih sudova vrata, ruku, nogu» — cijene u PDF nema"
+		},
+		{
+			"nameEn": "Doppler Lower Extremity Blood Vessels",
+			"price": null,
+			"source": "naslovna: «Color Doppler krvnih sudova vrata, ruku, nogu» — cijene u PDF nema"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "mladjen-obradovic",
+			"nameSr": "Mlađen Obradović",
+			"professionalTitle": "Dr",
+			"position": "Osnivač ordinacije",
+			"specialtyIds": [
+				88
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://obradovicmedical.me/img/dmladjo.jpg",
+			"services": [
+				"First Nuclear Medicine Specialist Examination",
+				"Follow-up Nuclear Medicine Specialist Examination",
+				"Thyroid Ultrasound",
+				"Neck Ultrasound",
+				"Thyroid Examination with Ultrasound",
+				"Specialist Examination with Ultrasound",
+				"Thyroid Biopsy",
+				"Thyroid FNAB with Cyst Sclerotherapy",
+				"E-Consultation with Specialist",
+				"Abdomen and Urinary Tract Ultrasound",
+				"Doppler Neck Blood Vessels",
+				"Doppler Upper Extremity Blood Vessels",
+				"Doppler Lower Extremity Blood Vessels"
+			],
+			"note": "specijalista nuklearne medicine (tiroidologija). Единственный врач — привязан ко всем услугам (clinic_medical_service_doctors, цены NULL). Дата/место рождения и школа из био не взяты. В отзыве на сайте назван «ljekar onkolog KCCG» — слова пациентки, онкологию не ставили."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Liječenje hipertireoze i hipotireoze",
+			"reason": "Направление работы, а не позиция каталога; отражено в описании и осмотрах."
+		},
+		{
+			"source": "Preoperativna priprema pacijenata za bezbjedno OP liječenje štitaste žlijezde",
+			"reason": "Подготовка в рамках осмотров; Preoperative Assessment в каталоге — общая предоперационная подготовка у интерниста, не то. В описании упомянуто."
+		},
+		{
+			"source": "Priprema pacijenata za liječenje terapijskom dozom I-131…",
+			"reason": "Сама терапия I-131 проводится в стационаре, ординация только готовит. Записи «подготовка к I-131» в каталоге нет; в описании упомянуто."
+		},
+		{
+			"source": "Postoperativno praćenje kod verifikovanih karcinoma štitaste žlijezde",
+			"reason": "Это контрольные осмотры (Follow-up Nuclear Medicine Specialist Examination); отдельной позиции не заводили."
+		},
+		{
+			"source": "Ordinacija neće raditi u periodu 4-10 MAJ i 1-7 JUN 2026.",
+			"reason": "Разовое объявление об отпуске, в часы работы не переносится."
+		},
+		{
+			"source": "Preko 2150 zadovoljnih klijenata",
+			"reason": "Оценочное заявление клиники, в описание не взято."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Осмотр + УЗИ шеи (100 € / 90 €)",
+			"detail": "Сопоставлено с общей Specialist Examination with Ultrasound (диапазон 90–100). Если общая запись не годится — завести «Thyroid Examination with Neck Ultrasound» или убрать."
+		},
+		{
+			"topic": "Сведённые пары цен",
+			"detail": "Контрольный осмотр >15 дней (50) и ≤15 дней (30) → одна запись 30–50; осмотр + УЗИ щитовидки первичный (90) и контрольный (80) → Thyroid Examination with Ultrasound 80–90."
+		},
+		{
+			"topic": "Neck Ultrasound — почти-дубль в каталоге",
+			"detail": "Есть «Ultrasound Neck Thyroid Parathyroid Salivary Glands» (1 клиника, без категорий) — по описанию это ровно п.5 прайса. Выбрана основная Neck Ultrasound; дубль стоит слить."
+		}
+	]
+}

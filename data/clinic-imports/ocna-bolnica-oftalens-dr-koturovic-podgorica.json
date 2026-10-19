@@ -1,0 +1,317 @@
+{
+	"schemaVersion": 1,
+	"slug": "ocna-bolnica-oftalens-dr-koturovic-podgorica",
+	"name": "Očna bolnica Oftalens Dr Koturović",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJHfHowEbrTRMRkoGZRCr1aVE",
+	"clinicTypeIds": [
+		9
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ocna-bolnica-oftalens-dr-koturovic-podgorica.sql",
+		"server/sql/insert-clinic-ocna-bolnica-oftalens-dr-koturovic-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 221,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент V. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Сухой прогон — см. отчёт агента. Новый врач и slug клиники сверены с прод-API (204), haris-kujundzic — 200. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 248
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://drkoturovic.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Статический сайт, 7 страниц по sitemap.xml, © 2026. Врачи — onama.html, услуги — usluge.html (аккордеон), страхование/оплата — infozapacijente.html, часы/контакты — все страницы. Email — из assets/theme/js/email.js. Цен нет. curl с браузерным UA — 200."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/ocna-bolnica-oftalens-dr-koturovic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJHfHowEbrTRMRkoGZRCr1aVE, 42.4353783 / 19.2636988, +382 67 323 655, «C7P7+5F4, Bratstva i Jedinstva, Podgorica 81000», рейтинг 3.1, 28 отзывов (в файле 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Stara varoš, blok 7 (Bratstva i Jedinstva bb, vojna zgrada) — сайт; Google «Bratstva i Jedinstva»",
+		"phone": "+38267323655;+38269855909 — сайт (первый = Google)",
+		"email": "kotur@t-com.me — из email.js (на страницах пустой span.email)",
+		"website": "https://drkoturovic.me/",
+		"social": "facebook.com/drKoturovic, @oftalens_dr_koturovic — ссылки сайта",
+		"logo": "https://drkoturovic.me/assets/images/favicon-navbar-black-480.png (логотип-глаз из навбара, 480×272)",
+		"workingHours": "пн–пт 10–14 и 17–21, сб/вс закрыто (не названы)",
+		"description": "из onama.html («Kratko o nama»), usluge.html, infozapacijente.html (страхование и оплата), подвала",
+		"languages": "только SR",
+		"doctors": "2: zoran-koturovic (новый) + haris-kujundzic (найден в БД, КЦЦГ)",
+		"doctorPhotos": "нет на сайте",
+		"doctorBios": "2 — onama.html (у haris-kujundzic — только если пусто)",
+		"prices": "цен нет — 22 услуги без цены",
+		"labTests": "нет",
+		"insurance": "«Prihvatamo većinu velikih osiguravajućih planova» — в описании, без привязки страховых (компании не названы)",
+		"reviews": "pending — 28 отзывов ждут полной выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "cataract-surgery-with-toric-iol",
+			"nameEn": "Cataract Surgery with Toric IOL",
+			"nameSr": "Operacija katarakte sa toričnim sočivom",
+			"categoryIds": [
+				33
+			],
+			"specialtyIds": [
+				81
+			],
+			"reason": "Oftalens Dr Koturović: «Torična intraokularna sočiva … ugrađuju se tokom operacije katarakte kako bi se istovremeno uklonila siva mrena i ispravio astigmatizam» — бренд линзы не назван. В каталоге торические только брендовые/комбинированные: Toric IQ (AcrySof), Toric Vivity, Toric Eyhance, Toric Multifocal — общей «с торической ИОЛ» нет (мультифокальная и EDOF общие есть). Категория 33 OPHTHALMIC_SURGERY, специальность 81."
+		},
+		{
+			"table": "medical_services",
+			"slug": "macular-surgery",
+			"nameEn": "Macular Surgery",
+			"nameSr": "Operacija žute mrlje (makule)",
+			"categoryIds": [
+				33
+			],
+			"specialtyIds": [
+				81
+			],
+			"reason": "Oftalens Dr Koturović: «Operacije žute mrlje (makule) … makularna rupa, epiretinalna membrana …». Операций на макуле (макулярное отверстие, эпиретинальная мембрана) в каталоге нет ни под одним названием; vitrectomy заведена отдельно — у клиники это отдельный пункт «Pars plana vitrektomija». Категория 33, специальность 81."
+		},
+		{
+			"table": "medical_services",
+			"slug": "ultrasound-biomicroscopy-ubm",
+			"nameEn": "Ultrasound Biomicroscopy (UBM)",
+			"nameSr": "Ultrazvučna biomikroskopija (UBM)",
+			"categoryIds": [
+				23,
+				4
+			],
+			"specialtyIds": [
+				6
+			],
+			"reason": "Oftalens Dr Koturović: «Ultrazvučna biomikroskopija (UBM) … veoma detaljnu sliku prednjeg segmenta oka». В каталоге есть B-scan и A-scan биометрия, UBM нет. Категории 23 OPHTHALMOLOGY + 4 ULTRASOUND (как у остальных УЗИ глаза), специальность 6."
+		}
+	],
+	"services": [
+		{
+			"slug": "ophthalmological-examination",
+			"nameEn": "Ophthalmological Examination",
+			"price": null,
+			"source": "faq.html: «Koliko traje kompletan pregled u klinici? Standardni pregled obično traje 20–30 minuta»; главная «Zakaži pregled!»"
+		},
+		{
+			"slug": "optical-coherence-tomography-oct",
+			"nameEn": "Optical Coherence Tomography (OCT)",
+			"price": null,
+			"source": "«OCT dijagnostika oka»"
+		},
+		{
+			"slug": "cataract-surgery-with-standard-iol",
+			"nameEn": "Cataract Surgery with Standard IOL",
+			"price": null,
+			"source": "«Operacija katarakte … zamućeno sočivo se uklanja, a ugrađuje se novo, providno veštačko sočivo» (базовая операция; типы линз — отдельными записями)"
+		},
+		{
+			"slug": "cataract-surgery-with-toric-iol",
+			"nameEn": "Cataract Surgery with Toric IOL",
+			"price": null,
+			"source": "Sočiva: «Torična intraokularna sočiva … ugrađuju se tokom operacije katarakte … ispravio astigmatizam»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "cataract-surgery-with-multifocal-iol",
+			"nameEn": "Cataract Surgery with Multifocal IOL",
+			"price": null,
+			"source": "Sočiva: «Multifokalna intraokularna sočiva … ugrađuju se tokom operacije katarakte»"
+		},
+		{
+			"slug": "cataract-surgery-with-edof-iol",
+			"nameEn": "Cataract Surgery with EDOF IOL",
+			"price": null,
+			"source": "Sočiva: «EDOF sočiva (produženi fokus) … ugrađuju se tokom operacije katarakte»"
+		},
+		{
+			"slug": "complete-glaucoma-examination",
+			"nameEn": "Complete Glaucoma Examination",
+			"price": null,
+			"source": "«Liječenje glaukoma … Redovni pregledi omogućavaju rano otkrivanje i pravovremeno liječenje»; «1. Kapi za oči»"
+		},
+		{
+			"slug": "laser-trabeculoplasty",
+			"nameEn": "Laser Trabeculoplasty",
+			"price": null,
+			"source": "Glaukom: «2. Laser — … laserski tretman koji pomaže boljem oticanju očne tečnosti i snižavanju pritiska»"
+		},
+		{
+			"slug": "glaucoma-filtering-surgery",
+			"nameEn": "Glaucoma Filtering Surgery",
+			"price": null,
+			"source": "Glaukom: «3. Operacija — … operativni zahvat kojim se stvara novi put za oticanje očne tečnosti» (фильтрующая операция; трабекулэктомия сайтом не названа)"
+		},
+		{
+			"slug": "eyeglass-prescription-for-adults",
+			"nameEn": "Eyeglass Prescription for Adults",
+			"price": null,
+			"source": "«Naočare i kontaktna sočiva — Određivanje dioptrije za naočare …»"
+		},
+		{
+			"slug": "contact-lens-fitting",
+			"nameEn": "Contact Lens Fitting",
+			"price": null,
+			"source": "«Pregled za kontaktna sočiva: … određivanje vrste i jačine sočiva — proba kontaktnih sočiva»"
+		},
+		{
+			"slug": "retinal-detachment-surgery-with-vitrectomy-and-silicone-oil",
+			"nameEn": "Retinal Detachment Surgery with Vitrectomy and Silicone Oil",
+			"price": null,
+			"source": "«Operacija ablacije retine (odvajanja mrežnjače) … uklanjanjem tečnosti ispod mrežnjače i njenim učvršćivanjem posebnim gasom, uljem ili laserskim tretmanom»"
+		},
+		{
+			"slug": "macular-surgery",
+			"nameEn": "Macular Surgery",
+			"price": null,
+			"source": "«Operacije žute mrlje (makule) … makularna rupa, epiretinalna membrana …»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "vitrectomy",
+			"nameEn": "Vitrectomy",
+			"price": null,
+			"source": "«Pars plana vitrektomija»; «Operacije kod promjena u sklopu šećerne bolesti — uklanjanje krvi iz oka, uklanjanje ožiljnog tkiva, ponovno pripajanje mrežnjače» (= витрэктомия; синоним добавлен)"
+		},
+		{
+			"slug": "b-scan-ocular-ultrasound",
+			"nameEn": "B-Scan Ocular Ultrasound",
+			"price": null,
+			"source": "«Ultrazvučna dijagnostika oka (B-scan)»"
+		},
+		{
+			"slug": "ultrasound-biomicroscopy-ubm",
+			"nameEn": "Ultrasound Biomicroscopy (UBM)",
+			"price": null,
+			"source": "«Ultrazvučna biomikroskopija (UBM) (A-scan)»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "a-scan-biometry",
+			"nameEn": "A-Scan Biometry",
+			"price": null,
+			"source": "заголовок «… (UBM) (A-scan)»"
+		},
+		{
+			"slug": "anti-vegf-injection",
+			"nameEn": "Anti-VEGF Injection",
+			"price": null,
+			"source": "«Anti-VEGF injekcije»"
+		},
+		{
+			"slug": "pterygium-removal",
+			"nameEn": "Pterygium Removal",
+			"price": null,
+			"source": "«Operacija pterigijuma»"
+		},
+		{
+			"slug": "blepharoplasty",
+			"nameEn": "Blepharoplasty",
+			"price": null,
+			"source": "«Estetska hirurgija kapaka … poznata i kao blefaroplastika»"
+		},
+		{
+			"slug": "surgical-treatment-of-hordeolum-abscess-or-phlegmon",
+			"nameEn": "Surgical Treatment of Hordeolum, Abscess or Phlegmon",
+			"price": null,
+			"source": "«Operacija čmička — Čmičak je bolna, crvena kvržica na kapku koja nastaje zbog infekcije žlezde … hirurško uklanjanje» (čmičak = hordeolum; запись «Hirurško zbrinjavanje hordeoluma»)"
+		},
+		{
+			"slug": "focal-laser-photocoagulation-single-eye",
+			"nameEn": "Focal Laser Photocoagulation Single Eye",
+			"price": null,
+			"source": "«Laser fotokoagulacija — … dijabetička retinopatija, rupture mrežnjače …» — запись «Laser fotokoagulacija mrežnjače jedno oko» (панретинальная — отдельной записью, сайт техники не различает)"
+		}
+	],
+	"labTests": [],
+	"doctors": [
+		{
+			"slug": "zoran-koturovic",
+			"nameSr": "Zoran Koturović",
+			"professionalTitle": "Dr sci. med.",
+			"position": "Osnivač, specijalista oftalmologije, očni hirurg",
+			"specialtyIds": [
+				6,
+				81
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": [
+				"ophthalmological-examination",
+				"cataract-surgery-with-standard-iol",
+				"cataract-surgery-with-toric-iol",
+				"cataract-surgery-with-multifocal-iol",
+				"cataract-surgery-with-edof-iol"
+			],
+			"note": "Новый; прод-API 204. Основатель (имя в названии клиники)."
+		},
+		{
+			"slug": "haris-kujundzic",
+			"nameSr": "Haris Kujundžić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista oftalmologije",
+			"specialtyIds": [
+				6,
+				81
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": true,
+			"hasBio": true,
+			"photo": null,
+			"services": [
+				"ophthalmological-examination",
+				"cataract-surgery-with-standard-iol",
+				"cataract-surgery-with-toric-iol",
+				"cataract-surgery-with-multifocal-iol",
+				"cataract-surgery-with-edof-iol",
+				"retinal-detachment-surgery-with-vitrectomy-and-silicone-oil",
+				"macular-surgery",
+				"vitrectomy",
+				"anti-vegf-injection",
+				"focal-laser-photocoagulation-single-eye"
+			],
+			"note": "Найден в БД (haris-kujundzic, КЦЦГ — подтверждено сайтом). Привязка + описание (только если пусто) + name_ru/name_en."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "infozapacijente.html: «Prihvatamo većinu velikih osiguravajućih planova … Kontaktirajte nas za više detalja o prihvaćenim osiguravajućim kućama»",
+			"reason": "Страховые не названы — clinic_insurance не заполнялась; факт — в описании."
+		},
+		{
+			"source": "novosti.html: конгресс ASCRS (Вашингтон), «najnovija mašina … UNITY», «alcon-clareon-panoptix-pro.jpeg»",
+			"reason": "Новость о конгрессе, а не услуга: что клиника ставит PanOptix/Clareon, сайт не говорит — брендовые записи не привязывали."
+		},
+		{
+			"source": "«Glaukom — 1. Kapi za oči»",
+			"reason": "Назначение капель — часть осмотра (complete-glaucoma-examination), отдельной услуги нет."
+		},
+		{
+			"source": "usluge.html «Operacija katarakte … Pacijenti iz Budve i drugih gradova Crne Gore često dolaze …»",
+			"reason": "SEO-фраза, не отдельная клиника/филиал — только в описании."
+		}
+	],
+	"openQuestions": []
+}

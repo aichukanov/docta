@@ -1,0 +1,624 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-mela-sana-podgorica",
+	"name": "Poliklinika Mela Sana",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJz2FctqnrTRMRclWJwV6YtEM",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-mela-sana-podgorica.sql",
+		"server/sql/insert-clinic-poliklinika-mela-sana-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 179,
+		"doctorIds": {},
+		"note": "Подволна 2c (врачи + перечень услуг без цен), агент J. Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug и врачей по slug. ⚠️ Сайт не обновлялся с июня 2022 (Last-Modified всех страниц 29–30.06.2022): состав врачей и перечень услуг могли устареть. Сухой прогон на локальной БД 2026-10-08 (EXPLAIN внутри START TRANSACTION … ROLLBACK): 0 ошибок, 0 несматченных slug услуг, счётчики clinics/doctors/clinic_medical_services/medical_services/cmsd/синонимов до и после совпали. Отзывы не импортировались (в файле места Google 5 из 24 — лимит API). Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 206
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.melasana.me/ (index, about-us, who-we-are, all-services, all-departments, all-doctors, faqs, contacts-1, gallery)",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Статический HTML-шаблон «MedService» (Jthemes), без CMS, sitemap.xml нет. Last-Modified: index 2022-06-29, all-doctors 2022-06-30, all-services 2022-06-29, all-departments 2022-06-29 — сайт не менялся ~4 года. Внутри HTML-комментариев скрытого содержимого нет (кроме демо-контакта шаблона «Hannah Harper» на contacts-1 — не используется). about.html, service-1.html, service-2.html — 404. Переключатель «EN» — ссылка «#». Цен нет нигде (cjenovnik.html / cijene.html — 404)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/mela-sana.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4292745 / 19.2729261 (единственный источник), телефон +382 67 344 888. Адрес «61 Admirala Zmajevića, Podgorica 81000» — индекс взят с сайта (81110). rating 4.2, userRatingCount 24, в файле 5 отзывов."
+		}
+	],
+	"coverage": {
+		"address": "Admirala Zmajevića 61, 81110 — с сайта; Google согласован (дом 61)",
+		"phone": "+38267344888;+38269134888;+38220261148 — шапка сайта и FAQ; первый подтверждён Google. Ночные номера санитетского транспорта (069 220 743, 069 261 299) в карточку не взяты",
+		"email": "office@melasana.me (футер)",
+		"website": "https://www.melasana.me/ (https работает, Google хранит http)",
+		"social": "facebook.com/MelaSana-107724957745827, @melasanapodgorica (футер)",
+		"logo": "https://www.melasana.me/images/logo.png",
+		"workingHours": "пн–сб 08:00–20:00, вс закрыто (все страницы)",
+		"doctors": "13 врачей из «Naš tim»: 10 найдены в БД, 3 новых (Nikola Bašić, Ivan Đorđević, Ivan Krgović). Психологи, дефектолог и медсестра не заводились",
+		"doctorPhotos": "новые — фото с сайта у всех трёх; найденным фото дописано только где было пусто (Bašović, Vujović, Karađinović, Vučeljić). На сайте 404 у Rakočević, Brnović, Šiljak (имена файлов с диакритикой); у Uskoković — заглушка-силуэт",
+		"prices": "нет на сайте — все 34 услуги с NULL по дизайну",
+		"services": "34 записи clinic_medical_services, все из существующего каталога; 16 привязок врач ↔ услуга у 11 врачей",
+		"labTests": "не заполнялись: «Laboratorija» — только строка в списке odjeljenja, без перечня анализов",
+		"reviews": "pending — ждут выгрузки (в файле места Google 5 из 24)"
+	},
+	"catalogAdditions": [],
+	"catalogFixes": [
+		{
+			"table": "medical_services",
+			"slug": "ultrasound-abdomen-and-pelvis",
+			"change": "INSERT IGNORE категории 4 (ULTRASOUND) и специальности 10 (RADIOLOGY) — у записи не было ни категории, ни специальности"
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "sclerotherapy-veins",
+			"change": "синонимы «Sklerozacija kapilara» (sr), «Склерозација капилара» (sr-cyrl), «Spider Vein Sclerotherapy» (en), «Склеротерапия капилляров», «Склеротерапия сосудистых звёздочек» (ru)"
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "myers-cocktail-iv",
+			"change": "синонимы «Majersov koktel» (sr), «Мајерсов коктел» (sr-cyrl) — написание сайта"
+		}
+	],
+	"services": [
+		{
+			"slug": "general-practitioner-examination",
+			"nameEn": "General Practitioner Examination",
+			"source": "Pregledi opšte prakse — «Pregled podrazumijeva: Klinički pregled – auskultatorni pregled srca i pluća; Snimanje i očitavanje EKGa; Mjerenje pulsa i krvnog pritiska; Palpaciju žljezda i stomaka; Pregled grla; Dijagnoza i ordiniranje terapije»",
+			"section": "Pregledi opšte prakse",
+			"price": null
+		},
+		{
+			"slug": "surgical-examination",
+			"nameEn": "Surgical Examination",
+			"source": "Hirurgija — «Osim opštog hirurškog pregleda pacijenta posebnu pažnju poklanjamo I promjenama na koži»",
+			"section": "Hirurgija",
+			"price": null
+		},
+		{
+			"slug": "pigmented-nevus-surgical-removal",
+			"nameEn": "Pigmented Nevus Surgical Removal",
+			"source": "«Mladeži, ateromi, fibromi, lipomi ili ožiljci … mogu se jednostavno i bezbolno ukloniti jer spadaju u kategoriju takozvanih malih hirurških zahvata … u lokalnoj anesteziji»",
+			"section": "Hirurgija",
+			"price": null
+		},
+		{
+			"slug": "atheroma-removal",
+			"nameEn": "Atheroma Removal",
+			"source": "(та же фраза) «… ateromi …»",
+			"section": "Hirurgija",
+			"price": null
+		},
+		{
+			"slug": "excision-of-small-benign-tumor-scars-fibromas-or-cysts",
+			"nameEn": "Excision of Small Benign Tumor-Like Scars, Fibromas or Cysts",
+			"source": "(та же фраза) «… fibromi … ili ožiljci …»",
+			"section": "Hirurgija",
+			"price": null,
+			"note": "Фибромы и рубцы — одна запись каталога (Ekscizija manjih benignih tumoroznih ožiljaka, fibroznih, cističnih promjena), как dermatofibrom в импорте MOA"
+		},
+		{
+			"slug": "lipoma-removal",
+			"nameEn": "Lipoma Removal",
+			"source": "(та же фраза) «… lipomi …»",
+			"section": "Hirurgija",
+			"price": null
+		},
+		{
+			"slug": "pediatric-examination",
+			"nameEn": "Pediatric Examination",
+			"source": "Pedijatrija — «Pregled pedijatra podrazumijeva mjerenje tjelesne težine, tjelesne visine, obima glave, grudnog koša, pregled svih čula, srca, pluća, kostiju, mišića»",
+			"section": "Pedijatrija",
+			"price": null
+		},
+		{
+			"slug": "child-psychiatrist-examination",
+			"nameEn": "Child Psychiatrist Examination",
+			"source": "«Mentalno zdravlje djece» (all-services), «Dispanzer za mentalno zdravlje djece» (index) + в команде «Dr Ivan Krgović — Specijalista dječije psihijatrije»",
+			"section": "Mentalno zdravlje djece",
+			"price": null
+		},
+		{
+			"slug": "ultrasound-abdomen-and-pelvis",
+			"nameEn": "Ultrasound Abdomen and Pelvis",
+			"source": "«U ORDINACIJI MELA SANA MOŽETE OBAVITI SLEDEĆE ULTRAZVUČNE PREGLEDE: * ABDOMENA I MALE KARLICE»",
+			"section": "Ultrazvuk",
+			"price": null
+		},
+		{
+			"slug": "urinary-tract-ultrasound",
+			"nameEn": "Urinary Tract Ultrasound",
+			"source": "«*ULTRAZVUK UROTRAKTA»",
+			"section": "Ultrazvuk",
+			"price": null
+		},
+		{
+			"slug": "breast-ultrasound-with-axilla",
+			"nameEn": "Breast Ultrasound with Axilla",
+			"source": "«*ULTRAZVUK DOJKI I PAZUŠNIH JAMA»",
+			"section": "Ultrazvuk",
+			"price": null
+		},
+		{
+			"slug": "neck-ultrasound",
+			"nameEn": "Neck Ultrasound",
+			"source": "«*ULTRAZVUK VRATA I ŠTITNE ŽLIJEZDE»",
+			"section": "Ultrazvuk",
+			"price": null,
+			"note": "Одна строка сайта → две записи каталога (шея и щитовидная железа): комбинированной записи «шея + щитовидка» без паращитовидных/слюнных желёз нет"
+		},
+		{
+			"slug": "thyroid-ultrasound",
+			"nameEn": "Thyroid Ultrasound",
+			"source": "«*ULTRAZVUK VRATA I ŠTITNE ŽLIJEZDE»",
+			"section": "Ultrazvuk",
+			"price": null
+		},
+		{
+			"slug": "soft-tissue-ultrasound",
+			"nameEn": "Soft Tissue Ultrasound",
+			"source": "«*ULTRAZVUK MEKIH TKIVA»",
+			"section": "Ultrazvuk",
+			"price": null
+		},
+		{
+			"slug": "peripheral-region-ultrasound",
+			"nameEn": "Peripheral Region Ultrasound",
+			"source": "«*ULTRAZVUK PERIFERNIH REGIJA»",
+			"section": "Ultrazvuk",
+			"price": null
+		},
+		{
+			"slug": "blood-vessels-doppler",
+			"nameEn": "Blood Vessels Doppler",
+			"source": "«*KOLOR DOPLER KRVNIH SUDOVA»",
+			"section": "Ultrazvuk",
+			"price": null
+		},
+		{
+			"slug": "urologist-examination",
+			"nameEn": "Urologist Examination",
+			"source": "Urologija — «Najčešći razlozi zbog kojih se pacijenti obraćaju urologu su …»",
+			"section": "Urologija",
+			"price": null
+		},
+		{
+			"slug": "first-psychiatrist-examination",
+			"nameEn": "First Psychiatrist Examination",
+			"source": "Psihijatrija — «Psihijatrijski pregled se odvija kroz razgovor sa psihijatrom … Prvi pregled traje oko sat vremena»",
+			"section": "Psihijatrija",
+			"price": null
+		},
+		{
+			"slug": "follow-up-psychiatrist-examination",
+			"nameEn": "Follow-up Psychiatrist Examination",
+			"source": "«… dok su kontrolni pregledi kraći»",
+			"section": "Psihijatrija",
+			"price": null
+		},
+		{
+			"slug": "first-neurologist-examination",
+			"nameEn": "First Neurologist Examination",
+			"source": "Neurologija — «Pregled kod neurologa je bezbolan i nije neprijatan»",
+			"section": "Neurologija",
+			"price": null,
+			"note": "Общей записи «осмотр невролога» в каталоге нет — только первичный и контрольный; взят первичный"
+		},
+		{
+			"slug": "internist-examination",
+			"nameEn": "Internist Examination",
+			"source": "Interna medicina — «Ljekar čija je specijalnost interna medicina, naziva se internistom»",
+			"section": "Interna medicina",
+			"price": null
+		},
+		{
+			"slug": "oncologist-examination",
+			"nameEn": "Oncologist Examination",
+			"source": "Onkologija — «Onkolog objašnjava pacijentu dijagnozu i stadijum u kojoj je tumor …»",
+			"section": "Onkologija",
+			"price": null
+		},
+		{
+			"slug": "ent-specialist-examination",
+			"nameEn": "ENT Specialist Examination",
+			"source": "ORL — «Pregled otorinolaringologa predstavlja specijalistički pregled uha, nosa i grla … konsultanske pregled obavlja prim dr IVAN DJORDJEVIĆ»",
+			"section": "ORL",
+			"price": null
+		},
+		{
+			"slug": "medical-transport-per-km",
+			"nameEn": "Medical Transport per km",
+			"source": "«Tranport pacijenata (sanitetski transport) — Obezbeđujemo medicinski stručan i bezbjedan transport pacijenata kako na području Podgorice i Crne Gore, tako i u inostranstvu»",
+			"section": "Sanitetski transport",
+			"price": null,
+			"note": "Самая общая запись санитарного транспорта в каталоге; единица «за км» — от записи, не от сайта"
+		},
+		{
+			"slug": "home-visit-examination",
+			"nameEn": "Home Visit Examination",
+			"source": "Kućne posjete — «u periodu od 00-24h za odrasle … usluge pregleda doktora opšte medicine»",
+			"section": "Kućne posjete",
+			"price": null
+		},
+		{
+			"slug": "ecg-home-visit",
+			"nameEn": "ECG Home Visit",
+			"source": "«… EKG dijagnostika …» (kućne posjete)",
+			"section": "Kućne posjete",
+			"price": null
+		},
+		{
+			"slug": "wound-dressing-home-visit",
+			"nameEn": "Wound Dressing",
+			"source": "«… sve vrste previjanja …» (kućne posjete)",
+			"section": "Kućne posjete",
+			"price": null,
+			"note": "Перевязки на дому отдельной записью в каталоге нет — общая"
+		},
+		{
+			"slug": "suture-removal",
+			"nameEn": "Suture Removal",
+			"source": "«… skidanja konaca …» (kućne posjete)",
+			"section": "Kućne posjete",
+			"price": null,
+			"note": "Снятия швов на дому отдельной записью нет — общая"
+		},
+		{
+			"slug": "urinary-catheter-placement-home-visit",
+			"nameEn": "Urinary Catheter Placement Home Visit",
+			"source": "«… zamjena katetera …» (kućne posjete)",
+			"section": "Kućne posjete",
+			"price": null
+		},
+		{
+			"slug": "infusion-therapy-home-visit",
+			"nameEn": "Infusion Therapy Home Visit",
+			"source": "«… davanje terapije (infuzije, …)» (kućne posjete)",
+			"section": "Kućne posjete",
+			"price": null
+		},
+		{
+			"slug": "intramuscular-injection-home-visit",
+			"nameEn": "Intramuscular Injection Home Visit",
+			"source": "«… intramuskularne injekcije» (kućne posjete)",
+			"section": "Kućne posjete",
+			"price": null
+		},
+		{
+			"slug": "home-therapy-administration",
+			"nameEn": "Home Therapy Administration",
+			"source": "«… intravenske … injekcije» (kućne posjete)",
+			"section": "Kućne posjete",
+			"price": null,
+			"note": "Внутривенных инъекций на дому отдельной общей записью нет (intravenous-therapy-home-visit-city — «patronaža grad», привязана к тарифу ДЗ); взята «Aplikacija terapije u kućnim uslovima»"
+		},
+		{
+			"slug": "myers-cocktail-iv",
+			"nameEn": "Myers Cocktail IV",
+			"source": "«MYERS' Cocktail — Majersov koktel je intravenozna infuzija (vitamina i minerala)»",
+			"section": "MYERS' Cocktail",
+			"price": null
+		},
+		{
+			"slug": "sclerotherapy-veins",
+			"nameEn": "Sclerotherapy Veins",
+			"source": "«*NOVO* Sklerozacija kapilara — procedura uklanjanja proširenih kapilara, venula ubacivanjem aktivne supstance direktno u krvni sud»",
+			"section": "Sklerozacija kapilara",
+			"price": null,
+			"note": "Отдельной записи «склеротерапия капилляров» в каталоге нет; laser-capillary-treatment — другой метод (сайт противопоставляет склерозацию лазеру). Формулировка сайта добавлена синонимом"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "dimitrije-burzan",
+			"nameSr": "Dimitrije Burzan",
+			"professionalTitle": "Dr",
+			"position": "Direktor, specijalista opšte hirurgije",
+			"specialtyIds": [
+				3
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 360 (Codra, Hirurgija dr Eli), фото уже есть",
+			"hasBio": false,
+			"photo": "https://www.melasana.me/images/slike/MelaSana-21.jpg",
+			"services": [
+				"Surgical Examination",
+				"Pigmented Nevus Surgical Removal",
+				"Atheroma Removal",
+				"Excision of Small Benign Tumor-Like Scars, Fibromas or Cysts",
+				"Lipoma Removal"
+			],
+			"note": "«Hirurški tim Mela Sane predvodi dr Dimitrije Burzan»; основатель и директор (index, faqs)"
+		},
+		{
+			"slug": "nikola-basic",
+			"nameSr": "Nikola Bašić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista urgentne medicine",
+			"specialtyIds": [
+				48
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": false,
+			"photo": "https://www.melasana.me/images/slike/MelaSana-16.jpg",
+			"services": []
+		},
+		{
+			"slug": "radomir-rakocevic",
+			"nameSr": "Radomir Rakočević",
+			"professionalTitle": "Dr",
+			"position": "Specijalista radiologije",
+			"specialtyIds": [
+				10
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 456 (Kerber, Diagnostica), фото уже есть",
+			"hasBio": false,
+			"photo": null,
+			"services": [],
+			"note": "Фото на сайте — 404. УЗИ к нему не привязаны: сайт не говорит, кто их делает"
+		},
+		{
+			"slug": "edita-basovic",
+			"nameSr": "Edita Bašović",
+			"professionalTitle": "Dr (в БД); на сайте «Primarijus dr»",
+			"position": "Specijalista pedijatrije",
+			"specialtyIds": [
+				4
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 1233 (ДЗ Подгорица, ZO Stari Aerodrom; ДЗ Даниловград); титул в БД не перезаписывается",
+			"hasBio": false,
+			"photo": "https://www.melasana.me/images/slike/Edita%20Basovic.jpg",
+			"services": [
+				"Pediatric Examination"
+			]
+		},
+		{
+			"slug": "sandra-vujovic",
+			"nameSr": "Sandra Vujović",
+			"professionalTitle": "Dr",
+			"position": "Neurolog",
+			"specialtyIds": [
+				8
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 773 (КЦЦГ)",
+			"hasBio": false,
+			"photo": "https://www.melasana.me/images/sandra.png",
+			"services": [
+				"First Neurologist Examination"
+			]
+		},
+		{
+			"slug": "vanja-karadjinovic",
+			"nameSr": "Vanja Karađinović",
+			"professionalTitle": "Dr",
+			"position": "Onkolog",
+			"specialtyIds": [
+				47
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 889 (КЦЦГ)",
+			"hasBio": false,
+			"photo": "https://www.melasana.me/images/vanja.png",
+			"services": [
+				"Oncologist Examination"
+			]
+		},
+		{
+			"slug": "nebojsa-brnovic",
+			"nameSr": "Nebojša Brnović",
+			"professionalTitle": "Dr",
+			"position": "Internista",
+			"specialtyIds": [
+				2
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 2684 (КЦЦГ, «Urgentni centar, direktor», специальность 48); добавлена 2 INTERNAL_MEDICINE по сайту",
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"Internist Examination"
+			],
+			"note": "Фото на сайте — 404"
+		},
+		{
+			"slug": "ivan-djordjevic",
+			"nameSr": "Ivan Đorđević",
+			"professionalTitle": "Prim. dr",
+			"position": "Specijalista ORL, konsultant",
+			"specialtyIds": [
+				11
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://www.melasana.me/images/IVAN.png",
+			"services": [
+				"ENT Specialist Examination"
+			],
+			"note": "Био — одна фраза вкладки ORL: «prim dr IVAN DJORDJEVIĆ, spec. ORL, direktor bolnice za ORL, KBC Dragiša Mišović, Dedinje, dugogodišnji stručni konsultant u Institutu za bolesti djece u KCCG Podgorica» (данные 2022 года). Описание пишется только если пусто"
+		},
+		{
+			"slug": "vladimir-vuceljic",
+			"nameSr": "Vladimir Vučeljić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista hirurgije, onkohirurg dojke",
+			"specialtyIds": [
+				3,
+				77
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "на сайте «Dr Vlado Vučelić»; в БД — Vladimir Vučeljić, локально id 317 (КЦЦГ, Bonomedica; специальности 3, 76, 77 — тот же профиль онкохирурга молочной железы). Vlado — бытовая форма Vladimir, файл фото на сайте «dr vlado vuceljic.jpg» → написание с lj. Явный фолбэк на slug",
+			"hasBio": false,
+			"photo": "https://www.melasana.me/images/dr%20vlado%20vuceljic.jpg",
+			"services": [
+				"Surgical Examination"
+			]
+		},
+		{
+			"slug": "uskokovic-filip",
+			"nameSr": "Filip Uskoković",
+			"professionalTitle": "Dr",
+			"position": "Specijalista grudne hirurgije",
+			"specialtyIds": [
+				49
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 392, name_sr «Uskoković Filip» (Codra, КЦЦГ; специальности 3, 49), фото уже есть",
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"Surgical Examination"
+			],
+			"note": "Фото на сайте — заглушка-силуэт (slike/m.png), не взято"
+		},
+		{
+			"slug": "vukovic-marko",
+			"nameSr": "Marko Vuković",
+			"professionalTitle": "Dr",
+			"position": "Specijalista urologije",
+			"specialtyIds": [
+				9
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 355 (Codra, КЦЦГ), фото уже есть. ⚠️ name_sr в БД — «Vuković Marko» с хвостовым TAB (поиск по имени не находит) — явный фолбэк на slug vukovic-marko; саму запись не правили",
+			"hasBio": false,
+			"photo": "https://www.melasana.me/images/dr%20Marko%20Vukovic.jpg",
+			"services": [
+				"Urologist Examination"
+			]
+		},
+		{
+			"slug": "ivan-krgovic",
+			"nameSr": "Ivan Krgović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista dječije psihijatrije",
+			"specialtyIds": [
+				21
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": false,
+			"photo": "https://www.melasana.me/images/dr%20ivan%20krgovic.jpg",
+			"services": [
+				"Child Psychiatrist Examination"
+			],
+			"note": "Специальности «детская психиатрия» в enums нет — 21 PSYCHIATRY, детский профиль в position. Vladimir Krgović (радиолог, Konzilijum) — другой человек"
+		},
+		{
+			"slug": "ivana-siljak",
+			"nameSr": "Ivana Šiljak",
+			"professionalTitle": "Dr",
+			"position": "Specijalista psihijatrije",
+			"specialtyIds": [
+				21
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 2951 (ДЗ Подгорица, Centar za mentalno zdravlje)",
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"First Psychiatrist Examination",
+				"Follow-up Psychiatrist Examination"
+			],
+			"note": "Фото на сайте — 404"
+		}
+	],
+	"excluded": [
+		{
+			"source": "Milica Pušonjić — Dječiji psiholog; Magistar Dragana Tvrdišić — Dječiji psiholog",
+			"reason": "Психологи — не врачи, в doctors не заводятся. Отдельных психологических услуг сайт не называет (вкладка «Mentalno zdravlje djece» — общий текст)."
+		},
+		{
+			"source": "Olga Popović — Defektolog / Logoped",
+			"reason": "Не врач. Логопедических услуг сайт не перечисляет."
+		},
+		{
+			"source": "Vasilisa Maričević — Medicinska sestra",
+			"reason": "Не врач."
+		},
+		{
+			"source": "Odjeljenja: «X-Ray Diagnostic» (all-departments, faqs)",
+			"reason": "Название отделения без описания и без перечня снимков — не услуга (подволна 2c: направления/отделения — не услуги). Упомянуто в описании клиники."
+		},
+		{
+			"source": "Odjeljenja: «Kardiologija» (all-departments, faqs)",
+			"reason": "Название отделения без описания; кардиолога в команде нет (ЭКГ входит в осмотр врача общей практики и в kućne posjete). Упомянуто в описании клиники."
+		},
+		{
+			"source": "Odjeljenja: «Laboratorija» (all-departments, faqs)",
+			"reason": "Перечня анализов нет; тип DIAGNOSTIC_LAB не ставится (как у Feniks Medika). Упомянуто в описании клиники."
+		},
+		{
+			"source": "Kućne posjete: «terapija bola», «hipertenzivne krize, astmatični napadi … febrilna stanja»",
+			"reason": "Состояния, которые решают на выезде, а не отдельные позиции каталога; покрыто Home Visit Examination."
+		},
+		{
+			"source": "Hirurgija: «svo uklonjeno tkivo se po potrebi šalje na patohistološku analizu»",
+			"reason": "Гистологию делает сторонняя лаборатория, услуга клиники — только удаление."
+		},
+		{
+			"source": "«Naši partneri»: логотипы Sava osiguranje и Generali (файл delta.png)",
+			"reason": "Связки «клиника ↔ страховая» в схеме нет — факт перенесён в описание."
+		}
+	],
+	"disputed": [],
+	"openQuestions": [
+		{
+			"topic": "Актуальность сайта",
+			"detail": "Все страницы не менялись с 29–30.06.2022. Состав врачей (13) и услуги взяты как есть; 10 из 13 врачей работают и в государственных/других частных клиниках, кто из них принимает в Mela Sana сейчас — сайт не подтверждает. Проверять по свежим отзывам/соцсетям при следующем обновлении."
+		}
+	]
+}

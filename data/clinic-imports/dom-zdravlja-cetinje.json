@@ -1,0 +1,616 @@
+{
+	"schemaVersion": 1,
+	"slug": "dom-zdravlja-cetinje",
+	"name": "Dom zdravlja Cetinje",
+	"officialName": "JZU Dom zdravlja Cetinje",
+	"city": "Cetinje",
+	"cityId": 10,
+	"googlePlaceId": "ChIJ49c5O17OTRMRuU4JnVePgbc",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dom-zdravlja-cetinje.sql",
+		"server/sql/insert-clinic-dom-zdravlja-cetinje-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 174,
+		"doctorIds": {},
+		"note": "Подволна 2b (дома здоровья), агент F. Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug. Сухой прогон на локальной БД (EXPLAIN в START TRANSACTION … ROLLBACK) — 0 ошибок, 0 несматченных slug. clinicId и doctorIds заполнить после применения из блока VERIFICATION. Отзывы не импортировались (в файле места Google 5 из 7 — лимит API). Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 201
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.dzcetinje.me/index.php/srp/organizacija/timovi-izabranih-doktora",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Joomla. Карусель + 13 страниц команд: Odrasli 7 врачей + Injekciona ambulanta (медсестра), Žene 1, Djeca 4 (вкл. dr Mitar Popović, spec. porodične medicine). Фото — заглушка no-image."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.dzcetinje.me/index.php/srp/organizacija/ostale-jedinice",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "8 служб: fizikalna terapija (3 физиотерапевта), patronaža, sanitetski transport, mikrobiološka dijagnostika (dr Žarko Nikčević), Centar za plućne bolesti i TBC (dr Ljiljana Ivanović Radoman), Centar za mentalno zdravlje (dr Ana Đuranović; psiholog Marija Perišić), savjetovališta, hemodijaliza (персонал без «dr»)."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.dzcetinje.me/index.php/srp/opste-informacije/o-nama",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Основан 1991, адрес Vuka Mićunovića broj 5, амбулатории Rijeka Crnojevića/Čevo/Trešnjevo + Njeguši, список оргединиц; в здании — Hitna и службы OB «Danilo I» (oftalmologija, internistička ambulanta, RTG, laboratorija, ORL, dermatologija); внешние специалисты (fizijatar, internista, nefrolog) без имён. Страница /kontakt — ошибка PHP (get_magic_quotes_gpc), контактов не дала."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.dzcetinje.me/index.php/srp/aktuelnosti/42-raspored-rada-id ; 226-raspored-rada-vikendom ; 40-… ; 41-…",
+			"collected": "2026-10-08",
+			"machineReadable": false,
+			"note": "Графики ID на октябрь 2026 (JPG): взрослые — 7 врачей; дети 05–11.10 — Lopičić Kašćelan, Otašević, Iličković, Đuro Latković, Vesna Peranović, Ivan Ivanović (нед.). Смены в выходные 07–14 / 14–21; текст «Raspored rada vikendom» — ID odrasli 08–12 i 15–19."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://www.dzcetinje.me/images/dokumenta/Spisak_zaposlenih.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": false,
+			"note": "Скан-таблица iText, без текстового слоя, повёрнута; прочитана с рендера. «Pregled zaposlenih po organizacionim jedinicama», odštampan 16.07.2025, ukupno 94; Last-Modified 2025-07-16. Сверка: совпадает с сайтом, дополнительно — dr Ana Lopičić Kašćelan (spec. pedijatrije, IDD) и dr Milena Ivanović (spec. interne medicine, odsjek za hemodijalizu); у Marković Branislave и Popović Mitra — «specijalista opšte medicine» (сайт: porodične), Mitar Popović числится в IDO (сайт: Djeca). 5 специализантов. sha256 58ec3adbe6221c4e09b0ae041faaf5f074ea42e7d4545b5cc1300652915e18aa."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://www.dzcetinje.me/images/dokumenta/Cjenovnik_i_saglasnost.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": false,
+			"note": "CamScanner, 3 стр., без текстового слоя, прочитан с рендера. «CJENOVNIK ZA PRUŽANJE USLUGA IZDAVANJA LJEKARSKIH UVJERENJA», broj akta 2346, 08.06.2021; «Stupio na snagu 09.06.2021»; saglasnost MZ 1-501/21-1867/4 od 07.06.2021 (стр. 3). 14 пунктов / 20 строк: 19 цен 5–70 € + 1b «besplatno». Last-Modified 2021-07-27. sha256 a1e73404f4f75ed141f84b62b6f8790e60c8bed420b9561a255965bc42e0e861. Дата прайса: 2021-06-09."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://www.dzcetinje.me/images/dokumenta/Cjenovnik_zdravstvenih_usluga_za_Hemodijalizu_za_strance_m.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": false,
+			"note": "CamScanner, 3 стр., прочитан с рендера. «CJENOVNIK zdravstvenih usluga za Hemodijalizu JZU Dom zdravlja Cetinje — za strance», broj 2905, 26.07.2021, «Stupio na snagu 29.VII 2021»; saglasnost MZ 1-501/21-2212 od 27.07.2021. V01007 urgentna, V01001 hronična hemodijaliza, V01008 peritoneumska dijaliza — по 160,00 € «sa utrošenim dijalizatorom i sanitetskim materijalom»; цена включает санитарный транспорт (čl. 5); не применяется к гражданам стран с соглашениями о соцстраховании (čl. 7). Last-Modified 2021-07-29. sha256 c3b5c2752f7c51422f7ac699358a92ac995e3d585a105f9bc95208f92bcb463b. Дата прайса: 2021-07-29."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/cetinje/dom-zdravlja-cetinje.json",
+			"collected": null,
+			"machineReadable": true,
+			"note": "ChIJ49c5O17OTRMRuU4JnVePgbc, «Дом здравља Цетиње», 7 отзывов (rating 5), 42.3896049/18.9273818, +382 41 231 379, «Vuka Mićunovića, Cetinje»."
+		}
+	],
+	"coverage": {
+		"address": "Vuka Mićunovića 5 — /o-nama; Google без номера. Почтовый индекс — нет в источниках",
+		"phone": "+38241231379 — call centar (шапка сайта) = Google",
+		"email": "на сайте нет (страница /kontakt сломана)",
+		"website": "https://www.dzcetinje.me/",
+		"social": "на сайте нет",
+		"logo": "/images/modules/logoDZv.png (шапка сайта)",
+		"workingHours": "НЕ заполнено: будни без часов, выходные — два противоречащих источника",
+		"description": "6 языков, только из /o-nama и списка оргединиц",
+		"doctors": "22 записи: 5 существующих (привязка) + 17 новых (из них 3 физиотерапевта). Фото на сайте нет (заглушки).",
+		"services": "28 услуг: 24 с ценой (21 справка + 3 диализа для иностранцев), 4 без цены (IDO, IDD, IDŽ, injekciona ambulanta); все — существующие записи каталога",
+		"prices": "ljekarska uvjerenja (на снаге с 09.06.2021) + hemodijaliza za strance (с 29.07.2021); is_price_outdated не ставился",
+		"labTests": "нет: перечня анализов нет; лаборатория в здании — OB «Danilo I»",
+		"reviews": "pending: ждут выгрузки (в файле места 5 из 7)"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"slug": "pre-employment-medical-certificate",
+			"nameEn": "Pre-Employment Medical Certificate",
+			"source": "1a) sposobnosti za rad prilikom zasnivanja radnog odnosa (radna mjesta bez povećanih rizika) — 20,00 (1b: isto uvjerenje na teret obaveznog zdravstvenog osiguranja — besplatno)",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "20"
+		},
+		{
+			"slug": "medical-certificate-for-general-work",
+			"nameEn": "Medical Certificate for General Work",
+			"source": "2a) sposobnosti za rad pri zapošljavanju i radu na radnim mjestima bez povećanih rizika i otežanim uslovima rada — prethodni/periodični vanredni — 20,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "20"
+		},
+		{
+			"slug": "medical-certificate-for-high-risk-and-difficult-working-conditions",
+			"nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+			"source": "2b) … na radnim mjestima sa povećanim rizikom i otežanim uslovima rada — prethodni/periodični/vanredni/sistematski — 50,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "50"
+		},
+		{
+			"slug": "medical-certificate-for-difficult-working-conditions-without-high-risk",
+			"nameEn": "Medical Certificate for Difficult Working Conditions Without High Risk",
+			"source": "2c) … na radnim mjestima sa otežanim uslovima rada — prethodni/periodični/vanredni — 35,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "35"
+		},
+		{
+			"slug": "medical-certificate-for-driving-license-category-a-b-c-d-e",
+			"nameEn": "Medical Certificate for Driving License Category A, B, C, D, E",
+			"source": "3a) sposobnosti/kontrolni zdravstveni pregled, za upravljanje motornim vozilima u drumskom saobraćaju, A, B, C, D i E kategorije /vozači amateri/ — 20,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "20"
+		},
+		{
+			"slug": "medical-certificate-for-driving-license-renewal-category-a-b-c-d-e",
+			"nameEn": "Medical Certificate for Driving License Renewal Category A, B, C, D, E",
+			"source": "3a) … /kontrolni zdravstveni pregled … A, B, C, D i E kategorije — 20,00 (ista stavka kao gore)",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "20"
+		},
+		{
+			"slug": "medical-certificate-for-professional-drivers",
+			"nameEn": "Medical Certificate for Professional Drivers",
+			"source": "3b) sposobnosti/kontrolni zdravstveni pregled, za upravljanje motornim vozilom u drumskom saobraćaju, C, D i E kategorije, specijalnim vozilima — 40,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "40"
+		},
+		{
+			"slug": "medical-certificate-for-driving-instructor-category-b-c-d-e",
+			"nameEn": "Medical Certificate for Driving Instructor Category B, C, D, E",
+			"source": "3b) … i za posao instruktora B, C, D i E kategorije — 40,00 (ista stavka)",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "40"
+		},
+		{
+			"slug": "medical-certificate-for-taxi-driver",
+			"nameEn": "Medical Certificate for Taxi Driver",
+			"source": "3c) sposobnosti/kontrolni zdravstveni pregled, za upravljanje taxi vozilima — 30,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "30"
+		},
+		{
+			"slug": "medical-certificate-for-firearms-possession",
+			"nameEn": "Medical Certificate for Firearms Possession",
+			"source": "4. Ljekarsko uvjerenje o podobnosti za posjedovanje vatrenog oružja — 35,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "35"
+		},
+		{
+			"slug": "medical-certificate-for-military-service",
+			"nameEn": "Medical Certificate for Military Service",
+			"source": "5. Ljekarsko uvjerenje o sposobnosti za obavljanje službe u Vojsci Crne Gore — 40,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "40"
+		},
+		{
+			"slug": "medical-certificate-for-underage-marriage",
+			"nameEn": "Medical Certificate for Underage Marriage",
+			"source": "6. Ljekarsko uvjerenje za sklapanje braka za maloljetne osobe — 25,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "25"
+		},
+		{
+			"slug": "medical-certificate-for-child-adoption",
+			"nameEn": "Medical Certificate for Child Adoption",
+			"source": "7. Ljekarsko uvjerenje za podobnost za usvajanje djeteta — 25,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "25"
+		},
+		{
+			"slug": "medical-certificate-for-study-abroad-and-visa",
+			"nameEn": "Medical Certificate for Study Abroad and Visa",
+			"source": "8. Ljekarsko uvjerenje za dalji nastavak školovanja i boravak u inostranstvu/viza — 25,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "25"
+		},
+		{
+			"slug": "medical-certificate-for-maritime-workers",
+			"nameEn": "Medical Certificate for Maritime Workers",
+			"source": "9a) Ljekarsko uvjerenje za rad u vodenom saobraćaju/(pomorci) — 70,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "70"
+		},
+		{
+			"slug": "medical-certificate-for-lifeguards-divers-and-boat-operators",
+			"nameEn": "Medical Certificate for Lifeguards Divers and Boat Operators",
+			"source": "9b) Ljekarsko uvjerenje za spasioce/ronioce/upravljanje čamcem — 35,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "35"
+		},
+		{
+			"slug": "medical-certificate-for-court-expert",
+			"nameEn": "Medical Certificate for Court Expert",
+			"source": "10. Ljekarsko uvjerenja za posao sudskog vještaka — 35,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "35"
+		},
+		{
+			"slug": "medical-certificate-for-life-insurance",
+			"nameEn": "Medical Certificate for Life Insurance",
+			"source": "11. Ljekarsko uvjerenje radi životnog osiguranja — 40,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "40"
+		},
+		{
+			"slug": "medical-certificate-for-collective-accommodation",
+			"nameEn": "Medical Certificate for Collective Accommodation",
+			"source": "12. Ljekarsko uvjerenje za kolektivni smještaj — 5,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "5"
+		},
+		{
+			"slug": "medical-certificate-for-athletes",
+			"nameEn": "Medical Certificate for Athletes",
+			"source": "13. Ljekarsko uvjerenje za utvrđivanje zdravstvene sposobnosti sprotiste — 50,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "50"
+		},
+		{
+			"slug": "medical-certificate-for-sports-referees-and-other-purposes",
+			"nameEn": "Medical Certificate for Sports Referees and Other Purposes",
+			"source": "14. Ljekarsko uvjerenje za druge potrebe (sposrtske sudije i dr.) — 60,00",
+			"section": "Cjenovnik ljekarskih uvjerenja 2021",
+			"price": "60"
+		},
+		{
+			"slug": "urgent-hemodialysis",
+			"nameEn": "Urgent Hemodialysis",
+			"source": "V01007 Intermitentna zamjena bubrežne funkcije – Urgentna hemodijaliza — 160,00",
+			"section": "Cjenovnik hemodijalize za strance 2021",
+			"price": "160",
+			"code": "V01007"
+		},
+		{
+			"slug": "chronic-hemodialysis-session",
+			"nameEn": "Chronic Hemodialysis Session",
+			"source": "V01001 Intermitentna zamjena bubrežne funkcije – Hronična hemodijaliza — 160,00",
+			"section": "Cjenovnik hemodijalize za strance 2021",
+			"price": "160",
+			"code": "V01001"
+		},
+		{
+			"slug": "peritoneal-dialysis",
+			"nameEn": "Peritoneal Dialysis",
+			"source": "V01008 Intermitentna zamjena bubrežne funkcije – Peritineumska dijaliza — 160,00",
+			"section": "Cjenovnik hemodijalize za strance 2021",
+			"price": "160",
+			"code": "V01008"
+		},
+		{
+			"slug": "general-practitioner-examination",
+			"nameEn": "General Practitioner Examination",
+			"source": "Timovi izabranih doktora — Odrasli",
+			"section": "timovi-izabranih-doktora",
+			"price": null
+		},
+		{
+			"slug": "pediatric-examination",
+			"nameEn": "Pediatric Examination",
+			"source": "Timovi izabranih doktora — Djeca",
+			"section": "timovi-izabranih-doktora",
+			"price": null
+		},
+		{
+			"slug": "gynecological-specialist-examination",
+			"nameEn": "Gynecological Specialist Examination",
+			"source": "Timovi izabranih doktora — Žene: dr Aleksandra Perišić, spec. ginekologije i akušerstva",
+			"section": "timovi-izabranih-doktora",
+			"price": null
+		},
+		{
+			"slug": "subcutaneous-or-intramuscular-injection",
+			"nameEn": "Subcutaneous or Intramuscular Injection",
+			"source": "Injekciona ambulanta — Radojka Gardašević, med. sestra",
+			"section": "timovi-izabranih-doktora",
+			"price": null
+		}
+	],
+	"doctors": [
+		{
+			"slug": "branislava-markovic",
+			"nameSr": "Branislava Marković",
+			"existing": false,
+			"specialties": [
+				"family_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "timovi-izabranih-doktora: «Dr Branislava Marković, spec. porodične medicine» (Spisak zaposlenih 07/2025: spec. opšte medicine); raspored ID oktobar 2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "slavko-popovic",
+			"nameSr": "Slavko Popović",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "timovi: «dr Slavko Popović, doktor medicine»; raspored ID oktobar 2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "vesna-peranovic",
+			"nameSr": "Vesna Peranović",
+			"existing": false,
+			"specialties": [
+				"general_medicine",
+				"family_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "timovi: «spec. opšte i porodične medicine»; raspored ID oktobar 2026 (i II smjena ID za djecu 08–09.10)",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "tatjana-borilovic-stamenkovic",
+			"nameSr": "Tatjana Borilović Stamenković",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za odrasle",
+			"source": "timovi: «spec. opšte medicine»; raspored ID oktobar 2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "marija-vuletic",
+			"nameSr": "Marija Vuletić",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "timovi: «spec. opšte medicine»; raspored ID oktobar 2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "bosko-jankovic",
+			"nameSr": "Boško Janković",
+			"existing": false,
+			"specialties": [
+				"sports_medicine"
+			],
+			"position": "Izabrani doktor za odrasle (spec. sportske medicine)",
+			"source": "timovi: «spec. sportske medicine»; raspored ID oktobar 2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "ivana-katnic",
+			"nameSr": "Ivana Katnić",
+			"existing": false,
+			"specialties": [
+				"occupational_medicine"
+			],
+			"position": "Izabrani doktor za odrasle (spec. medicine rada)",
+			"source": "timovi: «spec. medicine rada»; raspored ID oktobar 2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "aleksandra-perisic",
+			"nameSr": "Aleksandra Perišić",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za žene",
+			"source": "timovi: «spec. ginekologije i akušerstva»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "biljana-ivelja",
+			"nameSr": "Biljana Ivelja",
+			"existing": false,
+			"specialties": [
+				"pediatrics"
+			],
+			"position": "Izabrani doktor za djecu",
+			"source": "timovi: «spec. pedijatrije»; Spisak zaposlenih 07/2025",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "mirjana-ilickovic",
+			"nameSr": "Mirjana Iličković",
+			"existing": false,
+			"specialties": [
+				"pediatrics"
+			],
+			"position": "Izabrani doktor za djecu",
+			"source": "timovi: «spec. pedijatar»; raspored ID djeca 05–11.10.2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "danica-otasevic",
+			"nameSr": "Danica Otašević",
+			"existing": false,
+			"specialties": [
+				"pediatrics"
+			],
+			"position": "Izabrani doktor za djecu",
+			"source": "timovi: «spec. pedijatar»; raspored ID djeca 05–11.10.2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "lopicic-kascelan-ana",
+			"nameSr": "Ana Lopičić Kašćelan",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za djecu",
+			"source": "Spisak zaposlenih 07/2025: «LOPIČIĆ KAŠĆELAN ANA, specijalista pedijatrije, izabrani doktor za djecu»; raspored ID djeca 05–11.10.2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "mitar-popovic",
+			"nameSr": "Mitar Popović",
+			"existing": false,
+			"specialties": [
+				"family_medicine"
+			],
+			"position": "Izabrani doktor za djecu",
+			"source": "timovi (Djeca): «dr Mitar Popović, spec. porodične medicine» (Spisak 07/2025: spec. opšte medicine, IDO)",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "latkovic-djuro",
+			"nameSr": "Đuro Latković",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za djecu",
+			"source": "raspored ID djeca 05–11.10.2026: II smjena 05.–06.10, I smjena 10.10",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "ivan-ivanovic",
+			"nameSr": "Ivan Ivanović",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za djecu (vikend)",
+			"source": "raspored ID djeca 05–11.10.2026: 11.10 (nedjelja)",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "zarko-nikcevic",
+			"nameSr": "Žarko Nikčević",
+			"existing": false,
+			"specialties": [
+				"microbiology"
+			],
+			"position": "Mikrobiološka dijagnostika",
+			"source": "ostale-jedinice: «dr Žarko Nikčević, spec. mikrobiolog»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "ljiljana-ivanovic-radoman",
+			"nameSr": "Ljiljana Ivanović Radoman",
+			"existing": false,
+			"specialties": [
+				"pulmonology"
+			],
+			"position": "Centar za plućne bolesti i TBC",
+			"source": "ostale-jedinice: «dr Ljiljana Ivanović Radoman, spec. pneumoftiziolog»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "ana-djuranovic",
+			"nameSr": "Ana Đuranović",
+			"existing": false,
+			"specialties": [
+				"psychiatry"
+			],
+			"position": "Centar za mentalno zdravlje",
+			"source": "ostale-jedinice: «dr Ana Đuranović, spec. psihijatar»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "milena-ivanovic",
+			"nameSr": "Milena Ivanović",
+			"existing": false,
+			"specialties": [
+				"internal_medicine"
+			],
+			"position": "Odsjek za hemodijalizu",
+			"source": "Spisak zaposlenih 07/2025: «IVANOVIĆ MILENA, specijalista interne medicine, doktor u odsjeku za hemodijalizu»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "mirjana-pravilovic",
+			"nameSr": "Mirjana Pravilović",
+			"existing": false,
+			"specialties": [
+				"Physiotherapy"
+			],
+			"position": "Jedinica za fizikalnu terapiju (fizioterapeut)",
+			"source": "ostale-jedinice: «Fizioterapeuti: Mirjana Pravilović, Snežana Radović, Slavica Joković»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "snezana-radovic",
+			"nameSr": "Snežana Radović",
+			"existing": false,
+			"specialties": [
+				"Physiotherapy"
+			],
+			"position": "Jedinica za fizikalnu terapiju (fizioterapeut)",
+			"source": "ostale-jedinice",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "slavica-jokovic",
+			"nameSr": "Slavica Joković",
+			"existing": false,
+			"specialties": [
+				"Physiotherapy"
+			],
+			"position": "Jedinica za fizikalnu terapiju (fizioterapeut)",
+			"source": "ostale-jedinice",
+			"services": [],
+			"hasBio": false
+		}
+	],
+	"excluded": [
+		{
+			"source": "Cjenovnik 1b) «… uvjerenje se izdaje na teret sredstava obaveznog zdravstvenog osiguranja (član 25. stav 1. tačka 4 …) — besplatno»",
+			"reason": "Та же услуга, что 1a (pre-employment-medical-certificate, 20 €); вторая строка с той же записью каталога невозможна. Бесплатность для застрахованных — в комментарии SQL и здесь."
+		},
+		{
+			"source": "O nama: «U našem objektu smještena je … službe OB „Danilo I“ Cetinje poput: Oftalmologije, Internističke ambulante, RTG dijagnostike, Laboratorijske dijagnostike, Otorinolaringologije, Dermatologije»",
+			"reason": "Услуги клиники 88 (ОБ Данило I), не ДЗ."
+		},
+		{
+			"source": "O nama: «angažovanje spoljno med. kadra, poput spec. fizijatra, spec. interne medicine, spec. nefrologije»",
+			"reason": "Имена не названы."
+		},
+		{
+			"source": "Menadžment: «Direktor dr Marko Radović» (Spisak: doktor stomatologije)",
+			"reason": "Директор, администрация."
+		},
+		{
+			"source": "Centar za mentalno zdravlje: Marija Perišić, dipl. psiholog; Spisak: Ivanović Sandra — psiholog, Boljević Snežana — socijalni radnik",
+			"reason": "Не врачи (по заданию психолог не заводится)."
+		},
+		{
+			"source": "Spisak zaposlenih: specijalizanti Kostić Tatjana, Radojević Milan, Drakulović Maša, Adžić Nikola, Koljčević Alen",
+			"reason": "Специализанты не заводятся (единые правила ДЗ)."
+		},
+		{
+			"source": "Hemodijaliza: Svetlana Vujanović; Ivan Čolaković; Mihailo Vujović",
+			"reason": "Медсёстры/техники (Spisak), не врачи."
+		},
+		{
+			"source": "Centar za plućne bolesti i TBC; Centar za mentalno zdravlje; Mikrobiološka dijagnostika; Savjetovališta; Jedinica za patronažu; Jedinica za fizikalnu terapiju; Jedinica za sanitetski transport",
+			"reason": "Названия организационных единиц без описания услуг (правило 2b). Отличие от ДЗ Никшич: там у центров есть описание работы."
+		}
+	],
+	"disputed": [
+		{
+			"topic": "3a «sposobnosti/kontrolni zdravstveni pregled … A, B, C, D i E kategorije /vozači amateri/» 20 €",
+			"detail": "Одна строка прайса заведена на две записи: medical-certificate-for-driving-license-category-a-b-c-d-e и …-renewal-… (обе 20 €), т.к. строка покрывает и первичный, и контрольный осмотр. Так же оба есть у ДЗ Данилоград и Бело-Поле."
+		},
+		{
+			"topic": "3b «C, D i E kategorije, specijalnim vozilima i za posao instruktora B, C, D i E kategorije» 40 €",
+			"detail": "Одна строка на две записи: medical-certificate-for-professional-drivers и medical-certificate-for-driving-instructor-category-b-c-d-e (обе 40 €)."
+		},
+		{
+			"topic": "2a «… bez povećanih rizika i otežanim uslovima rada — prethodni/periodični vanredni» 20 € vs 1a «prilikom zasnivanja radnog odnosa» 20 €",
+			"detail": "1a → pre-employment-medical-certificate, 2a → medical-certificate-for-general-work (как у ДЗ Котор: pre-employment 20 + general-work)."
+		},
+		{
+			"topic": "Injekciona ambulanta",
+			"detail": "Сопоставлено с subcutaneous-or-intramuscular-injection (s.c. + i.m.); альтернатива — intramuscular-injection."
+		}
+	],
+	"openQuestions": [
+		"Рабочее время: будни — часы не названы (две смены ID); выходные — 08–12/15–19 (страница «Raspored rada vikendom») или 07–14/14–21 (график ID октябрь 2026). Не заполнено.",
+		"dr Mitar Popović: сайт — «spec. porodične medicine», команда «Djeca»; Spisak 07/2025 — «specijalista opšte medicine», IDO. Записан по сайту: family_medicine, Izabrani doktor za djecu. В графике детей 05–11.10.2026 его нет."
+	]
+}

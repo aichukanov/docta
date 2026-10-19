@@ -1,0 +1,219 @@
+{
+	"schemaVersion": 1,
+	"slug": "pollex-physio-podgorica",
+	"name": "Pollex Physio",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJfaGYgC3rTRMRHWWeeXeO6Wo",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-pollex-physio-podgorica.sql",
+		"server/sql/insert-clinic-pollex-physio-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 232,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Y. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Сухой прогон 2026-10-09 на локали (plain + shadow для services) — см. отчёт агента. Slug клиники и новой записи каталога сверены с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 259
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://pollexphysio.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Lovable/Vite SPA, сырой HTML пустой; контент — словари i18n MNE/EN в /assets/index-CuY2Jtws.js (const mj={MNE:{…},EN:{…}}). Маршруты /, /shop, /contact. Цен на услуги и пакеты нет; /shop — 6 цифровых PDF-«товаров» €14.99–€34.99 с placeholder.svg и текстом-заглушкой Lovable Cloud — не прайс. Футер «© 2024 PhysioTherapy Pro» — шаблон. Часов работы нет."
+		},
+		{
+			"type": "website",
+			"ref": "http://www.pollexphysio.me/",
+			"collected": "2026-10-08",
+			"machineReadable": false,
+			"note": "Старый домен — редирект на forsale.godaddy.com (проверка сайтов 2026-10-08)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/pzu-pollex-physio.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJfaGYgC3rTRMRHWWeeXeO6Wo, «PZU POLLEX PHYSIO», координаты 42.4424779 / 19.2194562, +382 67 270 793, «Vinogradska, Podgorica 81000» (без номера), websiteUri — старый pollexphysio.me. 25 отзывов (в файле 5)."
+		}
+	],
+	"coverage": {
+		"address": "Majevička 29 — с сайта («Ul. Majevička 29, Podgorica»); координаты 42.4416319 / 19.2141759 — ось Majevičke по OSM (дома 29 в OSM нет). Google — «Vinogradska» без номера, ~430 м: вероятно, прежний адрес; google_place_id оставлен",
+		"phone": "+38267270793 — сайт и Google совпадают",
+		"email": "pollexphysio@gmail.com — сайт",
+		"website": "https://pollexphysio.com/ (новый; в Google ещё старый pollexphysio.me)",
+		"social": "нет — на сайте ссылок на соцсети нет",
+		"logo": "https://pollexphysio.com/assets/logo-JPSBtqTK.png",
+		"workingHours": "нет — ни на сайте, ни в Google",
+		"description": "из словарей сайта: hero, «O Našoj Praksi», услуги, пакеты, FAQ",
+		"languages": "только SR — сайт me/en, приём на других языках не заявлен",
+		"doctors": "нет — имён на сайте нет («fizioterapeut Aleksandar» — только в отзыве, без фамилии)",
+		"prices": "цен нет — 9 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — 25 в Google, ждут выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "physiotherapist-home-visit",
+			"nameEn": "Physiotherapist Home Visit",
+			"nameSr": "Kućna posjeta fizioterapeuta",
+			"categoryIds": [
+				5,
+				30
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Общая запись «физиотерапия на дому» без километража. Pollex Physio: «Fizioterapija — Patronažna terapija je oblik fizikalne terapije sprovedene van zdravstvene ustanove u kućnom okruženju», расстояний и цен нет. В каталоге только physiotherapist-home-visit-up-to-5-km / -5-to-15-km / -over-15-km (тарифы по расстоянию) — ни один не подходит без расстояния. Кат. 5 PHYSIOTHERAPY + 30 HOME_VISITS, спец. 42."
+		}
+	],
+	"services": [
+		{
+			"slug": "kinesiotherapy",
+			"nameEn": "Kinesiotherapy",
+			"price": null,
+			"source": "services.kinesitherapy — «Kineziterapija je najvažniji oblik fizikalne terapije. Odnosi se na upotrebu pokreta i vježbi kao terapeutski postupak u rehabilitaciji pacijenata»"
+		},
+		{
+			"slug": "manual-therapy",
+			"nameEn": "Manual Therapy",
+			"price": null,
+			"source": "services.manual — «Manualna Terapija … upotrebu specijalnih manuelnih tehnika i vještina koje fizioterapeut sprovodi rukama»"
+		},
+		{
+			"slug": "electrotherapy",
+			"nameEn": "Electrotherapy",
+			"price": null,
+			"source": "services.electrotherapy — «Elektroterapija … primjenu strujnih modaliteta u terapeutske svrhe uz pomoć specijalne opreme»"
+		},
+		{
+			"slug": "acupuncture",
+			"nameEn": "Acupuncture",
+			"price": null,
+			"source": "services.acupuncture — «Akupunktura je primjena veoma tankih sterilnih igala u mišićne strukture ili tetive u cilju eliminacije mišićne napetosti i bola»",
+			"note": "Сайт называет услугу «Akupunktura»; по описанию (иглы в мышцы и сухожилия против мышечного напряжения) это ближе к dry needling, но название метода сайта не меняем."
+		},
+		{
+			"slug": "individual-kinesiotherapy",
+			"nameEn": "Individual Kinesiotherapy",
+			"price": null,
+			"source": "services.exercises «Grupne i Individualne Vježbe» — «Individualni trening ima za cilj jačanje ciljanih mišića, ispravljanje deformiteta i stabilizaciju kičmenog stuba»"
+		},
+		{
+			"slug": "group-exercises-type-b",
+			"nameEn": "Group Exercises (per Person)",
+			"price": null,
+			"source": "services.exercises — «Grupne vježbe radimo u broju od 2 do 4 osobe»"
+		},
+		{
+			"slug": "therapeutic-massage-complete",
+			"nameEn": "Complete Therapeutic Massage",
+			"price": null,
+			"source": "services.massage — «Masaže su oblik fizikalne terapije koji podrazumjeva primjenu specijalnih tehnika masaže za opuštanje i rehabilitaciju mišića» (зона и длительность не указаны — generic)"
+		},
+		{
+			"slug": "physiotherapist-home-visit",
+			"nameEn": "Physiotherapist Home Visit",
+			"price": null,
+			"source": "services.visiting «Fizioterapija» — «Patronažna terapija je oblik fizikalne terapije sprovedene van zdravstvene ustanove u kućnom okruženju»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "chiropractic-treatment",
+			"nameEn": "Chiropractic Treatment",
+			"price": null,
+			"source": "services.chiropractic «Kiropraktika» (описание на сайте — копия текста patronažne terapije, ошибка вёрстки; название услуги однозначно)"
+		}
+	],
+	"doctors": [],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "services.visceral «Visceralna Manipulacija» — «Tehnika usmjerena na poboljšanje funkcije organa trbušne šupljine…»",
+			"reason": "Альтернативная медицина — не заводить (решение юзера)."
+		},
+		{
+			"source": "Пакеты: Family Box, Sport Recovery Box, Relax Business Box, Master Reset Box",
+			"reason": "Пакеты без цен — не отдельные услуги (решение юзера), упомянуты в описании клиники.",
+			"packages": [
+				{
+					"name": "Family Box",
+					"features": [
+						"4 tretmana terapeutske masaže od 30 min",
+						"4 tretmana spinalne manipulacije kičmenog stuba"
+					],
+					"prices": "не указаны"
+				},
+				{
+					"name": "Sport Recovery Box",
+					"features": [
+						"1 tretman sportske masaže od 30 min",
+						"1 tretman dijatermije Tcare terapijom",
+						"1 tretman akupunkture iglama",
+						"1 tretman dry cupping (vakuum terapija)"
+					],
+					"prices": "не указаны"
+				},
+				{
+					"name": "Relax Business Box",
+					"features": [
+						"2 tretmana terapeutske masaže od 30 min",
+						"1 tretman YUMEIHO akupresure",
+						"1 tretman akupunkture iglama"
+					],
+					"prices": "не указаны"
+				},
+				{
+					"name": "Master Reset Box",
+					"features": [
+						"1 tretman terapeutske masaže 45 min",
+						"1 tretman YUMEIHO akupresure",
+						"1 tretman OMT spinalne manipulacije",
+						"1 tretman akupunkture iglama"
+					],
+					"prices": "не указаны"
+				}
+			]
+		},
+		{
+			"source": "Пакеты — «dijatermije Tcare terapijom», «dry cupping (vakuum terapija)», «sportske masaže od 30 min», «OMT spinalne manipulacije»",
+			"reason": "Встречаются только в составе пакетов, отдельными услугами в разделе «Naše Usluge» не перечислены — не заведены (tecar-therapy, cupping-therapy, sports-massage-30-min)."
+		},
+		{
+			"source": "Пакеты — «YUMEIHO akupresure»",
+			"reason": "Альтернативная техника и только в пакетах — не заводится."
+		},
+		{
+			"source": "/shop — «Digitalni Zdravstveni Resursi»: 6 PDF-vodiča €14.99–€34.99",
+			"reason": "Цифровые товары-заглушки шаблона Lovable (placeholder.svg), не медицинские услуги."
+		},
+		{
+			"source": "cert.* — «Doktor Fizikalne Terapije (DPT)», «McKenzie Metod Certifikacija», «Funkcionalni Pokretni Ekran (FMS)», «Napredni Praktičar Suvog Iglovanja»",
+			"reason": "Шаблонный блок сертификатов без имени владельца; услуги из него (McKenzie, FMS, dry needling) не заводятся."
+		},
+		{
+			"source": "testimonials.goco — «Fizioterapeut Aleksandar, za samo 6 mjeseci…»",
+			"reason": "Имя только в отзыве и без фамилии — специалист не заводится."
+		}
+	],
+	"openQuestions": [],
+	"resolved": [
+		{
+			"topic": "Координаты",
+			"date": "2026-10-09",
+			"decision": "Координатор: координаты по адресу сайта (Majevička 29) — точка улицы по OSM 42.4416319 / 19.2141759 (номера дома в OSM нет); точка места Google на Vinogradska (~430 м) — вероятно, прежний адрес; google_place_id оставлен (тот же телефон)."
+		}
+	]
+}

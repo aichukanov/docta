@@ -1,0 +1,239 @@
+{
+	"schemaVersion": 1,
+	"slug": "diagnost-budva",
+	"name": "Diagnost — ordinacija za ultrazvučnu dijagnostiku",
+	"city": "Budva",
+	"cityId": 3,
+	"googlePlaceId": "ChIJKQtwIC_VTRMRbjpsrWfQwiI",
+	"clinicTypeIds": [
+		1,
+		12
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-diagnost-budva.sql",
+		"server/sql/insert-clinic-diagnost-budva-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 237,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Z. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Slug клиники и врача свободны на проде (API 204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 264
+	},
+	"siteOutdated": {
+		"copyright": "© 2026 (автоматический), sitemap lastmod 2019-09 … 2021-12",
+		"note": "Drupal 7, страницы не обновлялись с 2021. Врач, часы и перечень могли устареть; в отзывах Google 2025 г. упомянут второй радиолог «dr Igor» — на сайте его нет."
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.ultrazvuk.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Главная, /o-nama (биография dr Marija Mandić, фото), /kontakt (адрес «Veljka Vlahovića BB (kod parkinga hotela Podostrog) 85310 Budva», телефон, email «diagnost&ultrazvuk.me» = diagnost@ultrazvuk.me, часы), /ultrazvu-na-dijagnostika (12 пунктов) и 11 страниц исследований. sitemap lastmod 2019–2021. Цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/budva/diagnost-ultrasound-diagnostic-clinic-montenegro.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJKQtwIC_VTRMRbjpsrWfQwiI, 42.2891426 / 18.8491471, +382 68 555 595, 15 отзывов (rating 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Veljka Vlahovića bb, 85310 Budva («kod parkinga hotela Podostrog» — в описании) — сайт = Google",
+		"phone": "+38268555595 — сайт = Google",
+		"email": "diagnost@ultrazvuk.me — сайт (записан как «diagnost&ultrazvuk.me»)",
+		"website": "https://www.ultrazvuk.me/",
+		"social": "Facebook-страница и @diagnost.ordinacija — ссылки с сайта",
+		"logo": "https://www.ultrazvuk.me/sites/default/files/diagnost-logo.png",
+		"workingHours": "пн–пт 10–12 и 17–19, сб 10–12, вс закрыто — /kontakt",
+		"description": "по главной, /o-nama и страницам исследований",
+		"languages": "только SR — других языков нет",
+		"doctors": "1: marija-mandic (новая)",
+		"doctorPhotos": "1 из 1 — с /o-nama",
+		"doctorBios": "1 — /o-nama",
+		"prices": "цен нет — 14 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки (15 в Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "infant-spinal-ultrasound",
+			"nameEn": "Infant Spinal Ultrasound",
+			"nameSr": "Ultrazvuk kičme kod beba",
+			"categoryIds": [
+				4,
+				25
+			],
+			"specialtyIds": [
+				10,
+				4,
+				68
+			],
+			"reason": "Diagnost: «UZ pregled kičme kod beba» — «ultrazvuk kičme kod novorođenčadi i mlađe odojčadi zbog dijagnostike spine bifide». В каталоге есть УЗИ мозга и бёдер младенцев, УЗИ позвоночника (спинного мозга) у младенцев нет ни под одним названием (поиск spin|kičm + ultra). Схема категорий/специальностей — как у infant-brain-ultrasound-neurosonography: 4 ULTRASOUND + 25 PEDIATRICS; 10 RADIOLOGY, 4 PEDIATRICS, 68 NEONATOLOGY."
+		},
+		{
+			"table": "medical_services",
+			"slug": "voiding-urosonography",
+			"nameEn": "Voiding Urosonography",
+			"nameSr": "Ultrazvučna mikciona cistografija",
+			"categoryIds": [
+				4,
+				25
+			],
+			"specialtyIds": [
+				10,
+				9,
+				4
+			],
+			"reason": "Diagnost: «UZ mikciona cistografija» — «zamenjuje pregled koji se doskora radio pod snopom rendgenskih zraka … utvrđuje postojanje refluksa». В каталоге только рентгеновская voiding-cystourethrography (категория 3 XRAY) — другая модальность, ставить её нельзя. Категории 4 ULTRASOUND + 25 PEDIATRICS (исследование детское), специальности 10 RADIOLOGY + 9 UROLOGY (как у VCUG) + 4 PEDIATRICS."
+		}
+	],
+	"services": [
+		{
+			"slug": "pediatric-hip-ultrasound",
+			"nameEn": "Pediatric Hip Ultrasound",
+			"price": null,
+			"source": "«UZ pregled kukova kod beba» — «Ultrazvuk kukova je pregled koji se obavezno radi kod svakog deteta u uzrastu do 3 meseca …»"
+		},
+		{
+			"slug": "infant-brain-ultrasound-neurosonography",
+			"nameEn": "Infant Brain Ultrasound (Neurosonography)",
+			"price": null,
+			"source": "«UZ pregled mozga beba»; главная: «ultrazvuk centralnog nervnog sistema (CNS) kod novorodjenčadi i odojčadi»"
+		},
+		{
+			"slug": "infant-spinal-ultrasound",
+			"nameEn": "Infant Spinal Ultrasound",
+			"price": null,
+			"source": "«UZ pregled kičme kod beba» — «ultrazvuk kičme kod novorodjenčadi i mladje odojčadi zbog dijagnostike spine bifide» (НОВАЯ)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "gynecological-ultrasound",
+			"nameEn": "Gynecological Ultrasound",
+			"price": null,
+			"source": "«UZ pregled male karlice» — главная: «ultrazvuk male karlice kod dece kod sumnje na ginekološke anomalije i preuranjeni pubertet kod devojčica»; страница: и у мальчиков, и у взрослых. «Ultrazvuk male karlice» в каталоге — синоним gynecological-ultrasound, отдельной записи УЗИ малого таза нет"
+		},
+		{
+			"slug": "abdomen-ultrasound",
+			"nameEn": "Abdomen Ultrasound",
+			"price": null,
+			"source": "«UZ pregled abdomena» — «jetre, žučne kese, žučnih puteva, pankreasa, slezine, bubrega, nadbubrežnih žlezda, mokraćne bešike, aorte, retroperitonealnog prostora»"
+		},
+		{
+			"slug": "breast-ultrasound",
+			"nameEn": "Breast Ultrasound",
+			"price": null,
+			"source": "«UZ pregled dojki» / «ultrazvučni pregled dojki»"
+		},
+		{
+			"slug": "urinary-tract-ultrasound",
+			"nameEn": "Urinary Tract Ultrasound",
+			"price": null,
+			"source": "«UZ pregled urinarnog trakta kod dece» — «kod ponavljanih urinarnih infekcija, sumnje na urodjene anomalije urotrakta …»"
+		},
+		{
+			"slug": "voiding-urosonography",
+			"nameEn": "Voiding Urosonography",
+			"price": null,
+			"source": "«UZ mikciona cistografija» — «zamenjuje pregled koji se doskora radio pod snopom rendgenskih zraka … Naša ordinacija je jedina ustanova u Crnoj Gori u kojoj se vrši ovaj pregled» (НОВАЯ)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "thyroid-ultrasound",
+			"nameEn": "Thyroid Ultrasound",
+			"price": null,
+			"source": "«UZ pregled štitaste žlezde»; главная: «ultrazvuk štitaste žlezde i mekih tkiva vrata dece i odraslih»"
+		},
+		{
+			"slug": "ultrasound-neck-glands-and-soft-tissue",
+			"nameEn": "Ultrasound Neck Glands and Soft Tissue",
+			"price": null,
+			"source": "главная: «… i mekih tkiva vrata»; страница щитовидки: «prikazuju se i limfni čvorovi na vratu, kao i pljuvačne žlezde» (у записи синоним «Ultrazvuk mekih tkiva vrata»)"
+		},
+		{
+			"slug": "testicular-ultrasound",
+			"nameEn": "Testicular Ultrasound",
+			"price": null,
+			"source": "«UZ pregled testisa» — «dece i odraslih i uz pregled nespuštenih testisa kod dečaka»"
+		},
+		{
+			"slug": "doppler-renal-arteries",
+			"nameEn": "Doppler Renal Arteries",
+			"price": null,
+			"source": "«Color dopler ultrazvuk»: «krvnim sudovima … bubrega (najčešće kod povišenog krvnog pritiska)»; главная: «kolor dopler (CD) pregled krvnih sudova bubrega i portnog sistema»"
+		},
+		{
+			"slug": "doppler-portal-vein",
+			"nameEn": "Doppler Portal Vein",
+			"price": null,
+			"source": "«Color dopler»: «krvnim sudovima jetre (kod raznih hroničnih bolesti jetre)»; главная: «… i portnog sistema … sumnje na portnu hipertenziju»"
+		},
+		{
+			"slug": "doppler-neck-blood-vessels",
+			"nameEn": "Doppler Neck Blood Vessels",
+			"price": null,
+			"source": "«Color dopler»: «… kao i na krvnim sudovima vrata»"
+		}
+	],
+	"labTests": [],
+	"doctors": [
+		{
+			"slug": "marija-mandic",
+			"nameSr": "Marija Mandić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista radiologije, subspecijalista digestivne radiologije",
+			"specialtyIds": [
+				10
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"photo": "https://www.ultrazvuk.me/sites/default/files/dr_Marija_Mandic_0.jpg",
+			"services": [
+				"pediatric-hip-ultrasound",
+				"infant-brain-ultrasound-neurosonography",
+				"infant-spinal-ultrasound",
+				"gynecological-ultrasound",
+				"abdomen-ultrasound",
+				"breast-ultrasound",
+				"urinary-tract-ultrasound",
+				"voiding-urosonography",
+				"thyroid-ultrasound",
+				"ultrasound-neck-glands-and-soft-tissue",
+				"testicular-ultrasound",
+				"doppler-renal-arteries",
+				"doppler-portal-vein",
+				"doppler-neck-blood-vessels"
+			],
+			"note": "Новая; прод-API 204. Фото с /o-nama (dr_Marija_Mandic_0.jpg). Сайт 2019–2021 — состав мог устареть."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Главная: «Takodje se vrši i uspešna dijagnostika stanja akutnog bola u stomaku najčešće uzrokovanog akutnom upalom slepog creva …»",
+			"reason": "Показание к УЗИ живота, не отдельная услуга — покрыто abdomen-ultrasound."
+		},
+		{
+			"source": "/shop — пустой шаблон магазина",
+			"reason": "Товаров и цен нет."
+		},
+		{
+			"source": "Отзыв Google: «Najbolji radiolozi dr Marija i dr Igor»",
+			"reason": "Второго врача на сайте нет; по отзыву не заводим."
+		}
+	],
+	"openQuestions": []
+}

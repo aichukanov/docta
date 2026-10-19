@@ -1,0 +1,488 @@
+{
+	"schemaVersion": 1,
+	"slug": "prima-dent-stomatoloska-ordinacija-podgorica",
+	"name": "Stomatološka ordinacija Prima Dent",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJx7QUgULrTRMR-qolqxNm6Yo",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-prima-dent-stomatoloska-ordinacija-podgorica.sql",
+		"server/sql/insert-clinic-prima-dent-stomatoloska-ordinacija-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 168,
+		"doctorIds": {
+			"masan-sljivancanin": 1856
+		},
+		"note": "Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug. Сгенерировано агентом A волны 1; новые записи каталога — также в data/clinic-imports/_wave1-new-catalog-A.json (координатор сверяет пересечения с B/C до применения). clinicId и doctorIds заполнить после применения из VERIFICATION. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 195
+	},
+	"pricelist": {
+		"url": "https://www.primadent.me/cjenovnik/",
+		"date": "2023-07-17",
+		"dateSource": "wp-json /wp/v2/pages: modified страницы cjenovnik 2023-07-17T13:41:20 (создана 2014-02-03). Дата правки страницы.",
+		"rows": 34,
+		"rowsWithPrice": 32,
+		"rowsIncludedNoPrice": 2,
+		"rowsMapped": 32,
+		"rowsDisputed": 2
+	},
+	"fzoContract": {
+		"stated": true,
+		"source": "Главная https://www.primadent.me/: «NOVO!! IMAMO POTPISAN UGOVOR SA FONDOM ZDRAVSTVA CRNE GORE NOVO!!» + «BESPLATNE USLUGE ZA: -DJECU DO 18 G. -STUDENTE DO 26 G. -TRUDNICE -PENZIONERE PREKO 65 G.»; /usluge/djecja-i-preventivna-stomatologija/: «BESPLATNE USLUGE ZA DJECU DO 18 G. UZ OVJERENU ZDRAVSTVENU KNJIŽICU!!»",
+		"pageModified": "главная (pocetna) — wp-json modified 2015-05-04",
+		"storedIn": "description_* клиники (поля в схеме нет)"
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.primadent.me/cjenovnik/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "WordPress, HTML-таблица, curl. 32 строки с ценой + 2 «uključeno u cijenu». wp-json modified 2023-07-17."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.primadent.me/ (главная)",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "«Ordinira dr Mašan Šljivančanin» — единственный врач, специальность не названа, фото нет. Договор с ФЗО и бесплатные категории. «Zakažite svoj besplatan pregled» (страница 2015) — противоречит прайсу «stomatološki pregled 10 €» (2023), взят прайс."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.primadent.me/kontakt/ + футер всех страниц",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "/kontakt/ (modified 2023-07-17): «PONEDELJAK - PETAK: 13h -20h / SUBOTA: po zakazivanju», тел. +382 69 956 673, +382 69 956 670, primadent.me@gmail.com. Футер: «ponedeljak - petak: 11h -19h / subota: 9h - 13h», +382 20 223 224, +382 69 956 673. Facebook primadent.me; Instagram нет."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.primadent.me/usluge/ (bolesti-zuba = Endodoncija, djecja-i-preventivna-stomatologija, estetska-stomatologija, protetika, ortodoncija, oralna-hirurgija, rtg-dijagnostika)",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Тексты 2014–2015 (wp-json). Источник позиций без цены: ревизия эндодонтии, фторирование, отбеливание, удаление корней, цистэктомия, имплантация, аугментация."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/stomatoloska-ordinacija-prima-dent.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4428706 / 19.2506733 (единственный источник), телефон +382 69 956 673, адрес «30 Bulevar Svetog Petra Cetinjskog, Podgorica 81000». Рейтинга нет, 0 отзывов."
+		}
+	],
+	"coverage": {
+		"address": "Bulevar Svetog Petra Cetinjskog 30, I sprat — сайт; Google совпадает (без этажа). Кириллица «Булевар Светог Петра Цетињског 30, I спрат»",
+		"phone": "+38269956673;+38220223224;+38269956670 — первый с сайта и Google, второй из футера, третий с /kontakt/",
+		"email": "primadent.me@gmail.com — /kontakt/",
+		"website": "https://www.primadent.me/",
+		"social": "facebook.com/primadent.me; Instagram на сайте нет",
+		"logo": "https://www.primadent.me/wp-content/uploads/2014/02/Untitled-primadent-300x102.png (картинка-логотип в футере; 200 image/png)",
+		"workingHours": "НЕ заполнены — сайт противоречит сам себе (футер пн–пт 11–19, сб 9–13; /kontakt/ пн–пт 13–20, сб по записи). См. openQuestions",
+		"languages": "только SR",
+		"fzo": "договор с ФЗОЦГ заявлен на главной — в description_* и meta.fzoContract",
+		"doctors": "1 врач, новый в БД (однофамилец Predrag Šljivančanin id 1399 — офтальмолог, другой человек). Специальность на сайте не названа → DENTISTRY (78). Фото нет",
+		"doctorServices": "не заполнялась: врач один, но страница ортодонтии говорит о «specijalista ortodoncije» — приписывать ему все услуги сайт не даёт оснований",
+		"services": "39 записей каталога: 31 с ценой, 8 без цены; новых в каталоге 2. 31 из 32 строк с ценой + 1 из 2 «uključeno u cijenu» без цены + 7 позиций со страниц /usluge/* без цены.",
+		"labTests": "лаборатории нет — анализов не заводили",
+		"reviews": "pending: в файле места Google 0 из 0 (у места нет отзывов) — ждут полной выгрузки приложением юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "composite-filling-single-surface",
+			"nameEn": "Composite Filling Single Surface",
+			"nameSr": "Kompozitni ispun – jedna površina",
+			"categories": [
+				20,
+				35
+			],
+			"specialties": [
+				78,
+				87
+			],
+			"reason": "Решение юзера 2026-10-08: прайс прямо называет материал (Lopičić «Kompozitni ispun I površinski», Prima Dent «jednopovršinska (bijela) plomba») — нужен generic-композит по поверхностям. В каталоге композит либо без поверхностей (Composite Filling), либо брендовый (Ivoclar EvoCeram). Категории/специальности — как у dental-filling-*."
+		},
+		{
+			"table": "medical_services",
+			"slug": "composite-filling-two-surfaces",
+			"nameEn": "Composite Filling Two Surfaces",
+			"nameSr": "Kompozitni ispun – dvije površine",
+			"categories": [
+				20,
+				35
+			],
+			"specialties": [
+				78,
+				87
+			],
+			"reason": "Решение юзера 2026-10-08: Lopičić «Kompozitni ispun II površinski», Prima Dent «dvopovršinska (bijela) plomba». См. composite-filling-single-surface."
+		}
+	],
+	"services": [
+		{
+			"slug": "dental-consultation",
+			"nameEn": "Dental Consultation",
+			"source": "Cjenovnik: stomatološki pregled — 10 €",
+			"price": 10,
+			"priceMax": null,
+			"note": "Главная (2015) обещает «besplatan pregled» — взята цена из прайса (правка 2023-07-17)"
+		},
+		{
+			"slug": "composite-filling-single-surface",
+			"nameEn": "Composite Filling Single Surface",
+			"source": "KONZERVATIVA: jednopovršinska (bijela) plomba — 35 €",
+			"price": 35,
+			"priceMax": null,
+			"note": "Решение юзера 2026-10-08: «bijela plomba» = композит"
+		},
+		{
+			"slug": "composite-filling-two-surfaces",
+			"nameEn": "Composite Filling Two Surfaces",
+			"source": "KONZERVATIVA: dvopovršinska (bijela) plomba — 40 €",
+			"price": 40,
+			"priceMax": null
+		},
+		{
+			"slug": "deep-caries-treatment",
+			"nameEn": "Deep Caries Treatment",
+			"source": "KONZERVATIVA: liječenje (dubokog karijesa) caries profunda — 30 €",
+			"price": 30,
+			"priceMax": null
+		},
+		{
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"source": "KONZERVATIVA: liječenje (vađenje živca) jednokorijenog zuba — 50 €",
+			"price": 50,
+			"priceMax": null
+		},
+		{
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"source": "KONZERVATIVA: liječenje (vađenje živca) višekorijenog zuba — 70 €",
+			"price": 70,
+			"priceMax": null
+		},
+		{
+			"slug": "conservative-treatment-of-periapical-process-and-dental-gangrene",
+			"nameEn": "Conservative Treatment of Periapical Process and Dental Gangrene",
+			"source": "KONZERVATIVA: liječenje gangrene — 80 €",
+			"price": 80,
+			"priceMax": null
+		},
+		{
+			"slug": "tooth-extraction",
+			"nameEn": "Tooth Extraction",
+			"source": "KONZERVATIVA: vađenje zuba — 25 €",
+			"price": 25,
+			"priceMax": null
+		},
+		{
+			"slug": "tooth-extraction-complex",
+			"nameEn": "Complex Tooth Extraction",
+			"source": "KONZERVATIVA: komplikovano vađenje zuba — 40 €",
+			"price": 40,
+			"priceMax": null
+		},
+		{
+			"slug": "primary-tooth-extraction",
+			"nameEn": "Primary Tooth Extraction",
+			"source": "KONZERVATIVA: vađenje mliječnog zuba — 20 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-fissure-sealant",
+			"nameEn": "Dental Fissure Sealant",
+			"source": "KONZERVATIVA: zalivanje fisura — 15 €",
+			"price": 15,
+			"priceMax": null
+		},
+		{
+			"slug": "heavy-dental-scaling-and-polishing",
+			"nameEn": "Heavy Dental Scaling and Polishing",
+			"source": "KONZERVATIVA: uklanjanje zubnog kamenca sa poliranjem zuba — 30 €",
+			"price": 30,
+			"priceMax": null
+		},
+		{
+			"slug": "intraoral-x-ray",
+			"nameEn": "Intraoral X-Ray",
+			"source": "KONZERVATIVA: RTG snimak zuba — 10 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "temporary-crown",
+			"nameEn": "Temporary Crown",
+			"source": "PROTETIKA: privremena krunica — 20 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "metal-ceramic-crown",
+			"nameEn": "Metal-Ceramic Crown",
+			"source": "PROTETIKA: metalo-keramička krunica — 100-120 €",
+			"price": 100,
+			"priceMax": 120
+		},
+		{
+			"slug": "cast-post-and-core",
+			"nameEn": "Cast Post and Core",
+			"source": "PROTETIKA: livena nadogradnja — 20 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"source": "PROTETIKA: bezmetalna (cirkonijum) krunica — 200 €",
+			"price": 200,
+			"priceMax": null
+		},
+		{
+			"slug": "metal-ceramic-crown-gold",
+			"nameEn": "Metal Ceramic Crown Gold",
+			"source": "PROTETIKA: krunica zlato keramika — 320 €",
+			"price": 320,
+			"priceMax": null
+		},
+		{
+			"slug": "complete-acrylic-denture",
+			"nameEn": "Complete Acrylic Denture",
+			"source": "PROTETIKA: totalna akrilatna proteza — 250 €",
+			"price": 250,
+			"priceMax": null
+		},
+		{
+			"slug": "partial-acrylic-denture",
+			"nameEn": "Partial Acrylic Denture",
+			"source": "PROTETIKA: parcijalna akrilatna proteza — 250 €",
+			"price": 250,
+			"priceMax": null
+		},
+		{
+			"slug": "skeletal-partial-denture",
+			"nameEn": "Skeletal Partial Denture",
+			"source": "PROTETIKA: skeletirana (vizil) proteza — 500 €",
+			"price": 500,
+			"priceMax": null
+		},
+		{
+			"slug": "partial-denture-with-precision-attachment",
+			"nameEn": "Partial Denture with Precision Attachment",
+			"source": "PROTETIKA: skeletirana (vizil) proteza sa atacmenima — 650 €",
+			"price": 650,
+			"priceMax": null
+		},
+		{
+			"slug": "denture-repair",
+			"nameEn": "Denture Repair",
+			"source": "PROTETIKA: reparatura proteze — 30 €",
+			"price": 30,
+			"priceMax": null
+		},
+		{
+			"slug": "denture-tooth-addition",
+			"nameEn": "Denture Tooth Addition",
+			"source": "PROTETIKA: dodatak zuba na protezi — 30 €",
+			"price": 30,
+			"priceMax": null
+		},
+		{
+			"slug": "orthodontic-consultation",
+			"nameEn": "Orthodontic Consultation",
+			"source": "ORTODONCIJA: pregled ortodonta i mišljenje — uključeno u cijenu terapije",
+			"price": null,
+			"priceMax": null,
+			"note": "Отдельной цены нет — входит в стоимость лечения"
+		},
+		{
+			"slug": "orthodontic-removable-plate-appliance",
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"source": "ORTODONCIJA: mobilni aparat — 220 €",
+			"price": 220,
+			"priceMax": null
+		},
+		{
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"source": "ORTODONCIJA: fiksni aparat — 500 €",
+			"price": 500,
+			"priceMax": null,
+			"note": "«Po vilici» сайт не пишет (как у Lopičić)"
+		},
+		{
+			"slug": "intraoral-abscess-incision",
+			"nameEn": "Intraoral Abscess Incision",
+			"source": "ORALNA HIRURGIJA: incizija i drenaža apscesa — 20 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "surgical-tooth-extraction",
+			"nameEn": "Surgical Tooth Extraction",
+			"source": "ORALNA HIRURGIJA: hirurško vađenje zuba — 80€",
+			"price": 80,
+			"priceMax": null
+		},
+		{
+			"slug": "impacted-tooth-extraction",
+			"nameEn": "Impacted Tooth Extraction",
+			"source": "ORALNA HIRURGIJA: vađenje impaktiranog umnjaka — 140€",
+			"price": 140,
+			"priceMax": null,
+			"note": "У записи есть синоним «Vađenje impaktiranog umnjaka»"
+		},
+		{
+			"slug": "frenectomy",
+			"nameEn": "Frenectomy",
+			"source": "ORALNA HIRURGIJA: frenektomija — 60€",
+			"price": 60,
+			"priceMax": null
+		},
+		{
+			"slug": "apicoectomy",
+			"nameEn": "Apicoectomy",
+			"source": "ORALNA HIRURGIJA: apikotomija — 120€",
+			"price": 120,
+			"priceMax": null
+		},
+		{
+			"slug": "root-canal-retreatment",
+			"nameEn": "Root Canal Retreatment",
+			"source": "«potrebna je revizija endodontskog liječenja … Mašinska endodoncija omogućuje brzu i uspješnu reviziju» (/usluge/bolesti-zuba/ (Endodoncija))",
+			"price": null,
+			"priceMax": null
+		},
+		{
+			"slug": "topical-fluoride-treatment",
+			"nameEn": "Topical Fluoride Treatment",
+			"source": "«Tretmane fluorizacije» (/usluge/djecja-i-preventivna-stomatologija/)",
+			"price": null,
+			"priceMax": null
+		},
+		{
+			"slug": "teeth-whitening",
+			"nameEn": "Teeth Whitening",
+			"source": "«Izbjeljivanje zuba» (/usluge/estetska-stomatologija/)",
+			"price": null,
+			"priceMax": null
+		},
+		{
+			"slug": "surgical-extraction-of-residual-root",
+			"nameEn": "Surgical Extraction of Residual Root",
+			"source": "«vađenje zaostalih i slomljenih korijenova zuba» (/usluge/oralna-hirurgija/)",
+			"price": null,
+			"priceMax": null
+		},
+		{
+			"slug": "cystectomy",
+			"nameEn": "Cystectomy",
+			"source": "«vađenje ciste (cistectomija)» (/usluge/oralna-hirurgija/)",
+			"price": null,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-implant-placement",
+			"nameEn": "Dental Implant Placement",
+			"source": "«ugradnju dentalnih implantata» (/usluge/oralna-hirurgija/)",
+			"price": null,
+			"priceMax": null
+		},
+		{
+			"slug": "bone-augmentation",
+			"nameEn": "Bone Augmentation",
+			"source": "«augmentacija kosti sa ili bez umjetne kosti» (/usluge/oralna-hirurgija/)",
+			"price": null,
+			"priceMax": null
+		}
+	],
+	"doctors": [
+		{
+			"slug": "masan-sljivancanin",
+			"nameSr": "Mašan Šljivančanin",
+			"professionalTitle": "Dr",
+			"position": "Stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"photo": null,
+			"phone": null,
+			"hasBio": true,
+			"services": [],
+			"foundInDb": false,
+			"note": "Единственный врач клиники («Ordinira dr Mašan Šljivančanin»). Фото на сайте нет. В БД есть однофамилец Predrag Šljivančanin (id 1399, офтальмолог) — другой человек."
+		}
+	],
+	"disputed": [
+		{
+			"source": "PROTETIKA: podlaganje proteze — 30 €",
+			"reason": "Прямое или непрямое перебазирование — не указано. В каталоге две равноценные записи (Direct Denture Relining, Indirect Denture Relining), generic нет. Цена 30 € намекает на прямое, но это домысел."
+		},
+		{
+			"source": "ORALNA HIRURGIJA: pregled hirurga i mišljenje — uključeno u cijenu zahvata",
+			"reason": "Записи «приём/консультация орального хирурга» в каталоге нет (есть только Implantologist Consultation, Specialist Dental Examination). Цены нет — входит в стоимость операции."
+		},
+		{
+			"source": "/usluge/oralna-hirurgija/: «hemisekcije»",
+			"reason": "Гемисекции в каталоге нет. Цены нет (страница 2014)."
+		},
+		{
+			"source": "/usluge/protetika/: «Udlage — stabilizacijske udlage za liječenje poremećaja temporomandibularnog zgloba»",
+			"reason": "Кандидаты: новая Michigan Occlusal Splint (заведена для Lopičić; Michigan-шина — разновидность стабилизирующей, но сайт тип не называет), Bruxism Night Guard (folija — другое). Цены нет."
+		}
+	],
+	"excluded": [
+		{
+			"source": "Главная (2015): «Zakažite svoj besplatan pregled.»",
+			"reason": "Противоречит прайсу 2023 «stomatološki pregled 10 €» — взят прайс."
+		},
+		{
+			"source": "/usluge/ortodoncija/: «klasične metalne, estetske bijele plastične, estetske bijele keramičke, Damon bravice»",
+			"reason": "Типы брекетов из текста 2014 года без цен; в прайсе одна строка «fiksni aparat 500 €». Отдельные записи (Fixed Braces Metal / Ceramic / Self-Ligating) не заводили, чтобы не плодить позиции без подтверждения."
+		},
+		{
+			"source": "/usluge/protetika/: «Nadogradnje», «Krunice … bezmetalne krunice», «Mostovi»",
+			"reason": "Покрыто строками прайса (livena nadogradnja, коронки); мосты — без цены и без единицы, в каталоге только Dental Bridge Abutment (член моста)."
+		},
+		{
+			"source": "/usluge/estetska-stomatologija/: «Profesionalno čišćenje kamenca i naslaga», «Estetske ispune», «Cirkon keramičke krune»",
+			"reason": "Покрыто строками прайса (uklanjanje kamenca sa poliranjem, bijele plombe, bezmetalna (cirkonijum) krunica)."
+		},
+		{
+			"source": "ФЗО: «BESPLATNE USLUGE ZA: djecu do 18 g., studente do 26 g., trudnice, penzionere preko 65 g.»",
+			"reason": "Бесплатность — для застрахованных категорий, а не цена услуги. Цены 0.00 не ставили; факт — в описании клиники."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Часы работы",
+			"detail": "Футер: пн–пт 11–19, сб 9–13. /kontakt/ (правка 2023-07-17): пн–пт 13–20, сб по записи. Не заполнены — выбрать вариант (вероятнее /kontakt/ как более свежий) или уточнить у клиники."
+		},
+		{
+			"topic": "is_price_outdated",
+			"detail": "Прайс правился 2023-07-17. Флаг не ставили — решение юзера."
+		},
+		{
+			"topic": "Договор с ФЗО в схеме",
+			"detail": "Поля/флага «работает с ФЗОЦГ» у clinics нет — факт только в description_*. Если нужен фильтр — это отдельная задача."
+		},
+		{
+			"topic": "Специальность врача",
+			"detail": "Сайт называет dr Mašana Šljivančanina просто «ordinira», без специальности → DENTISTRY (78)."
+		}
+	]
+}

@@ -1,0 +1,338 @@
+{
+	"schemaVersion": 1,
+	"slug": "stomatoloska-poliklinika-vukotic-podgorica",
+	"name": "Stomatološka poliklinika Vukotić Podgorica",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJD4HEq07rTRMRt07EFEmcmMw",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"network": {
+		"name": "Stomatološka poliklinika Vukotić",
+		"siblings": [
+			"stomatoloska-poliklinika-vukotic-herceg-novi"
+		],
+		"note": "Две поликлиники одной практики (главная: «Naše Poliklinike — Podgorica / Herceg Novi»); у нас — отдельные клиники (как Milmedika). Сайт не делит ни врачей, ни услуги — одинаковые списки."
+	},
+	"sql": [
+		"server/sql/insert-clinic-stomatoloska-poliklinika-vukotic-podgorica.sql",
+		"server/sql/insert-clinic-stomatoloska-poliklinika-vukotic-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 194,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент Q. Сухой прогон на локальной БД (без записи) — 0 ошибок, см. итоговый отчёт агента. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 221
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://dentalclinicvukotic.com/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress + Polylang, текст в сыром HTML. Прочитаны ME-страницы /, /usluge/, /tim/, /sedacija/, /rendgen-kabinet/, /zubotehnicka-laboratorija/, /o-nama/, /ordinacije/, /prijem/, /higijena/, /zdravstveni-turizam/, /zakazite-termin/ и /en/team/ (WP REST: modified 2022-01…2022-04). /en/services/pricing/ и /en/services/cost-calculator/ — демо темы (пакеты в $), реальных цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/stomatoloska-poliklinika-vukotic.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Place «Stomatološka Poliklinika \"Vukotić\"», «54/3 Bulevar Ivana Crnojevića, Podgorica 81000», +382 20 673 030, 1 отзыв (5.0) — не импортировался."
+		}
+	],
+	"coverage": {
+		"address": "Bulevar Ivana Crnojevića 54/3 — сайт = Google; координаты — место Google",
+		"phone": "+38220673030 — сайт = Google",
+		"email": "info@dentalclinicvukotic.com — сайт",
+		"website": "https://dentalclinicvukotic.com/",
+		"social": "facebook.com/stomatoloska.poliklinika.vukotic, @stomatologija_vukotic — футер",
+		"logo": "https://dentalclinicvukotic.com/wp-content/uploads/2021/12/logovukotic.png",
+		"workingHours": "не заполнено — на сайте два разных расписания (9–17 и 9–21), по поликлиникам не разделено",
+		"doctors": "4 «Dr» с /tim/, все новые; привязаны к обеим поликлиникам",
+		"doctorPhotos": "у всех — портреты /tim/",
+		"doctorBios": "нет на сайте",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "inhalation-sedation",
+			"nameEn": "Inhalation Sedation",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "dentalclinicvukotic.com /sedacija/: «Inhalaciona Sedacija — Upotrebom posebne opreme … omogućava se udisanje smješe gasova preko maske za nos … ostaje u svjesnom stanju». Единственная седация в каталоге — conscious-sedation, и она внутривенная («Analgosedacija (kratkotrajna venska anestezija)»), это другая процедура. Категория 20 DENTISTRY, специальность 78."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Aesthetic Tooth Restoration",
+			"slug": "aesthetic-tooth-restoration",
+			"source": "/usluge/: «Estetsko rekonstruktivna stomatologija — … vrhunska estetika materijala koje primjenjujemo. (3M, GC, DENSPLY)»"
+		},
+		{
+			"nameEn": "Rotary Root Canal Treatment per Canal",
+			"slug": "machine-root-canal-treatment-per-canal",
+			"source": "«Zubno liječenje — … Mašinska obrada kanala korijena, adekvatni preparati tokom tretmana (SEPTODONT)»"
+		},
+		{
+			"nameEn": "Complete Denture",
+			"slug": "complete-denture",
+			"source": "Protetika: «izradu svih vrsta mobilnih protetskih nadoknada ( IVOCLAR )»"
+		},
+		{
+			"nameEn": "Partial Denture",
+			"slug": "partial-denture",
+			"source": "то же"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "«kao i fiksnih metalo-keramičkih (VITA , NORITAKE) … krunica» — две марки керамики через запятую, бренд-дубль не заводим"
+		},
+		{
+			"nameEn": "Metal-Ceramic Bridge Pontic",
+			"slug": "metal-ceramic-bridge-pontic",
+			"source": "«… metalo-keramičkih … mostova»"
+		},
+		{
+			"nameEn": "All-Ceramic Crown",
+			"slug": "all-ceramic-crown",
+			"source": "«i čisto keramičkih krunica»"
+		},
+		{
+			"nameEn": "Ceramic Dental Bridge",
+			"slug": "ceramic-dental-bridge",
+			"source": "«… i mostova»"
+		},
+		{
+			"nameEn": "Partial Denture with Precision Attachment",
+			"slug": "partial-denture-with-precision-attachment",
+			"source": "«i kombinacije fiksnih i mobilnih protetskih nadoknada»"
+		},
+		{
+			"nameEn": "Soft Dental Deposit Removal",
+			"slug": "soft-dental-deposit-removal",
+			"source": "Parodontologija: «konzervativno liječenje kao uklanjanje mekih naslaga»"
+		},
+		{
+			"nameEn": "Dental Calculus Removal and Air-Flow",
+			"slug": "dental-calculus-removal-and-air-flow",
+			"source": "«ultrazvučno čišćenje zubnog kamenca, peskiranje i poliranje zuba»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery",
+			"slug": "flap-surgery-periodontal",
+			"source": "«a u težim slučajevima hirurški tretman desni»"
+		},
+		{
+			"nameEn": "Bone Augmentation Bio-Oss",
+			"slug": "bone-augmentation-biooss",
+			"source": "«i ugradnju vještačke kosti. (BIO-OSS , BIO-GIDE)»"
+		},
+		{
+			"nameEn": "Resorbable Membrane",
+			"slug": "resorbable-membrane",
+			"source": "то же — Geistlich Bio-Gide = резорбируемая мембрана (как у Mušura)"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "Oralna hirurgija: «operativni tremani zubnih granuloma»"
+		},
+		{
+			"nameEn": "Cystectomy",
+			"slug": "cystectomy",
+			"source": "«viličnih cista»"
+		},
+		{
+			"nameEn": "Surgical Tooth Extraction",
+			"slug": "surgical-tooth-extraction",
+			"source": "«hirurško vađenje zuba»"
+		},
+		{
+			"nameEn": "Pre-prosthetic Soft and Hard Tissue Correction",
+			"slug": "pre-prosthetic-soft-and-hard-tissue-correction",
+			"source": "«predprotetski hirurški tretmani mekih tkiva» — единственный кандидат"
+		},
+		{
+			"nameEn": "Dental Implant Straumann",
+			"slug": "dental-implant-straumann",
+			"source": "Implantologija: «Ugradnjom implantata (STRAUMANN , BIOHORIZONS)»"
+		},
+		{
+			"nameEn": "Dental Implant Biohorizons",
+			"slug": "dental-implant-biohorizons",
+			"source": "то же"
+		},
+		{
+			"nameEn": "Implant Suprastructure",
+			"slug": "implant-suprastructure",
+			"source": "«… funkcionalnost krunica i mostova na implantatima»"
+		},
+		{
+			"nameEn": "Orthodontic Treatment Planning",
+			"slug": "orthodontic-treatment-planning",
+			"source": "Ortopedija vilica: «Pažljivim planiranjem terapije»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "«izradom mobilnih i fiksnih aparata (DENTAURUM)»"
+		},
+		{
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"source": "то же — материал брекетов не назван"
+		},
+		{
+			"nameEn": "Fixed Orthodontic Check-up",
+			"slug": "fixed-orthodontic-check-up",
+			"source": "«i kontrolama pacijenata kroz određeni vremenski period»"
+		},
+		{
+			"nameEn": "Orthodontic Follow-up of Removable Appliance",
+			"slug": "orthodontic-follow-up-of-removable-appliance",
+			"source": "то же"
+		},
+		{
+			"nameEn": "Pediatric Dental Adaptation",
+			"slug": "pediatric-dental-adaptation",
+			"source": "Dječija i preventivna: «Posebnu pažnju posvećujemo radu sa djecom što podrazumjeva oslobađanje od straha»"
+		},
+		{
+			"nameEn": "Inhalation Sedation",
+			"slug": "inhalation-sedation",
+			"source": "/sedacija/: «Inhalaciona Sedacija — … udisanje smješe gasova preko maske za nos» (НОВАЯ запись каталога)"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "/rendgen-kabinet/: «tehnologijom digitalne radiografije za snimanje zuba (KODAK)»; /usluge/: «Digitalna radioviziografija»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "«digitalnim ortopantomograf aparatom (PLANMECA) za snimanje kompletnih vilica, sinusa i viličnih zglobova»"
+		},
+		{
+			"nameEn": "Dental First Aid",
+			"slug": "dental-first-aid",
+			"source": "Главная: «Za hitne intervencije klijentima smo na raspolaganju 24 časa dnevno»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "ivan-vukotic",
+			"nameSr": "Ivan Vukotić",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": []
+		},
+		{
+			"slug": "mladen-vukotic",
+			"nameSr": "Mladen Vukotić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista oralne hirurgije i implantologije",
+			"specialtyIds": [
+				78,
+				74
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": []
+		},
+		{
+			"slug": "tatjana-vukotic",
+			"nameSr": "Tatjana Vukotić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista ortopedije vilice",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": []
+		},
+		{
+			"slug": "sandra-brkic",
+			"nameSr": "Sandra Brkić",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"note": "В БД её нет (ни по slug, ни по имени). По заметке site-checks она же указана у Polident (Bijela) — Polident в БД не заведён; при его импорте — привязка к sandra-brkic."
+		}
+	],
+	"excluded": [
+		{
+			"source": "Oralna hirurgija: «kao i hirurški tretmani sinusa»",
+			"reason": "Несколько равноценных кандидатов (dental-sinus-lift, sinus-closure, caldwell-luc-procedure) — см. openQuestions."
+		},
+		{
+			"source": "/usluge/ Tehnologije: «Dijagnostički laser — Zubni laser (KAVO) … nezamjenjiv u dijagnostici svih oštećenja zubnih tkiva»; «Intraoralna kamera»",
+			"reason": "Оборудование для диагностики, не отдельная услуга; в описании клиники не упомянуто, в услуги не заведено."
+		},
+		{
+			"source": "Dječija i preventivna: «motivacija djece za pravilnu higijenu usta i zuba»; «apsolutno bezbolne intervencije»",
+			"reason": "Без конкретной процедуры; заведена только адаптация ребёнка («oslobađanje od straha»)."
+		},
+		{
+			"source": "/en/services/pricing/, /en/services/cost-calculator/, /en/services/solutions/ …",
+			"reason": "Демо-контент темы WordPress (пакеты в $, «Budapest», «Flight London to Bratislava») — не цены клиники."
+		},
+		{
+			"source": "/zubotehnicka-laboratorija/: «Moderno opremljena zubotehnička labaratorija (RENFERT) omogućava izradu svih vrsta protetskih nadoknada»",
+			"reason": "Свойство клиники (в описании), не услуга."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "«hirurški tretmani sinusa»",
+			"detail": "Не заведено: под фразу подходят dental-sinus-lift (поднятие дна пазухи), sinus-closure (закрытие соустья) и caldwell-luc-procedure. Если считать это синус-лифтом (самое частое в имплантологии) — добавить dental-sinus-lift в оба списка."
+		},
+		{
+			"topic": "Часы работы",
+			"detail": "Главная: пн–пт 9–17, сб 9–13; /zakazite-termin/: пн–пт 9–21, сб 9–14; по поликлиникам не разделено. Не заполнены — уточнить у клиники."
+		},
+		{
+			"topic": "Врачи по поликлиникам",
+			"detail": "Сайт не делит команду; все 4 врача привязаны к обеим. Отзывы Google Herceg Novi называют «др. Иван» и «Др Младен», Podgorica — «др Вуковић» (опечатка). Sandra Brkić по site-checks также работает в Polident (Bijela, рядом с Herceg Novi) — возможно, только Igalo."
+		}
+	]
+}

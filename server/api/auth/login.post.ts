@@ -13,8 +13,11 @@ import {
 	logFailedLogin,
 	logSuccessfulLogin,
 } from '~/server/utils/login-history';
+import { enforceRateLimit, RATE_LIMITS } from '~/server/utils/rate-limit';
 
 export default defineEventHandler(async (event) => {
+	enforceRateLimit(event, RATE_LIMITS.login);
+
 	const body = await readBody(event);
 	const { email, password } = body;
 

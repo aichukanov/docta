@@ -1,0 +1,431 @@
+{
+	"schemaVersion": 1,
+	"slug": "kavaric-medical-podgorica",
+	"name": "Kavarić Medical",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJt_kc5UjrTRMROG5wvBFbn8w",
+	"clinicTypeIds": [
+		7,
+		8
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-kavaric-medical-podgorica.sql",
+		"server/sql/insert-clinic-kavaric-medical-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 220,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент V. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Сухой прогон — см. отчёт агента. Новый врач и slug клиники сверены с прод-API (204), petar-kavaric — 200. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 247
+	},
+	"siteOutdated": {
+		"copyright": "© 2016 by P@jo",
+		"note": "Статический сайт 2016 г. (ISO-8859-1, шаблонный «Text o kompaniji» в подвале). Состав врачей, часы (две разные версии), место работы dr Petar Kavarić («radi u KCCG») и перечень услуг могли устареть. Свежих подтверждений нет: отзывов в Google 0."
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.kavaricmedical.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "index.html (Osnivači, контакты, часы «9:30-13h i 16-20:30, Subota 9:30-13h») и usluge.html (16 пунктов, часы «08 do 21h»). © 2016. Цен нет. curl с браузерным UA — 200."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/kavaric-medical.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJt_kc5UjrTRMROG5wvBFbn8w, 42.4485514 / 19.2448652, +382 69 012 826, «58 Далматинска улица, Подгорица 81000», рейтинга и отзывов нет."
+		}
+	],
+	"coverage": {
+		"address": "Dalmatinska 58 («iza Bazara» — в описании) — сайт = Google",
+		"phone": "+38269012826;+38220671132 — сайт (мобильный совпадает с Google)",
+		"email": "kavaricmedical@gmail.com — сайт",
+		"website": "https://www.kavaricmedical.me/",
+		"social": "нет на сайте",
+		"logo": "https://www.kavaricmedical.me/images/Logo-Kavaric-Medical-01.gif",
+		"workingHours": "пн–пт 09:30–13:00 и 16:00–20:30, сб 09:30–13:00, вс закрыто — главная (решение координатора 2026-10-09); «08 do 21h» на usluge.html — общая фраза, не взята; ⚠️ сайт 2016",
+		"description": "из блоков «Osnivači», «Kontakt» и перечня usluge.html",
+		"languages": "только SR — других языков нет",
+		"doctors": "2: petar-kavaric (найден в БД, Novi Cenex) + vesna-globarevic-kavaric (новая)",
+		"doctorPhotos": "2 из 2 — gif 125×125 с сайта (у petar-kavaric в БД фото не было — дозаполнение)",
+		"doctorBios": "2 — из «Osnivači»; у petar-kavaric описание пишется только если пусто",
+		"prices": "цен нет — 31 услуга и 2 анализа без цены",
+		"labTests": "2 — спермограмма, патогистология TRUS-биопсии",
+		"reviews": "нет — в Google 0 отзывов"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "infertility-consultation",
+			"nameEn": "Infertility Consultation",
+			"nameSr": "Konsultacija o neplodnosti",
+			"categoryIds": [
+				7
+			],
+			"specialtyIds": [
+				5,
+				38
+			],
+			"reason": "Vita Feminae: «Bračna neplodnost — Folikulometrija, priprema za IVF …»; Filia: «Ispitivanje i liječenje steriliteta»; Kavarić Medical: «Dijagnostika i liječenje steriliteta (kod žena i muškaraca)». В каталоге только fertility-couple-subspecialist-examination (субспециалистический осмотр пары, тариф уровня субспециалиста) и психологическое консультирование при бесплодии — консультации специалиста по бесплодию нет. Категория 7, специальности 5 + 38 REPRODUCTIVE_MEDICINE.",
+			"note": "Общая запись нескольких клиник порции V (ginekoloska-ordinacija-vita-feminae-kotor, ginekolosko-akuserska-ordinacija-filia-tivat, kavaric-medical-podgorica); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "in-vitro-fertilization-ivf",
+			"nameEn": "In Vitro Fertilization (IVF)",
+			"nameSr": "Vantjelesna oplodnja (IVF)",
+			"categoryIds": [
+				7
+			],
+			"specialtyIds": [
+				5,
+				38
+			],
+			"reason": "Kavarić Medical: «IUI i IVF»; dr Vesna Globarević Kavarić «… procedurama asistirane reproduktivne tehnologije, kao što su inseminacija i vantjelesna oplodnja». Общей записи «ЭКО» в каталоге нет — только этапы больничного тарифа (follicle-aspiration, embryo-transfer, ivf-laboratory-procedure, ivf-anesthesia), а у IVF-центров (in-vitro-podgorica и др.) услуги ЭКО не заведены. Категория 7, специальности 5 + 38."
+		},
+		{
+			"table": "medical_services",
+			"slug": "dorsal-slit-of-the-foreskin",
+			"nameEn": "Dorsal Slit of the Foreskin",
+			"nameSr": "Dorzalna incizija prepucijuma",
+			"categoryIds": [
+				22
+			],
+			"specialtyIds": [
+				9
+			],
+			"reason": "Kavarić Medical: «Cirkumcizija + dorzalna incizija». Дорсального рассечения крайней плоти в каталоге нет (есть только циркумцизия трёх видов анестезии и репозиция парафимоза). Категория 22 UROLOGY, специальность 9."
+		},
+		{
+			"table": "medical_services",
+			"slug": "female-stress-urinary-incontinence-treatment",
+			"nameEn": "Female Stress Urinary Incontinence Treatment",
+			"nameSr": "Liječenje stresne urinarne inkontinencije kod žena",
+			"categoryIds": [
+				22,
+				7
+			],
+			"specialtyIds": [
+				9,
+				5
+			],
+			"reason": "Kavarić Medical: «Liječenje nekontrolisanog mokrenja kod žena (stresne inkontinencije)» — метод не назван. В каталоге только хирургия: transvaginal-incontinence-correction-tottvt-tape (TOT/TVT) и male-incontinence-correction — приписывать операцию нельзя. Категории 22 UROLOGY + 7 GYNECOLOGY, специальности 9 + 5."
+		}
+	],
+	"services": [
+		{
+			"slug": "gynecological-specialist-examination",
+			"nameEn": "Gynecological Specialist Examination",
+			"price": null,
+			"source": "«Ginekološki i urološki pregledi»"
+		},
+		{
+			"slug": "urologist-examination",
+			"nameEn": "Urologist Examination",
+			"price": null,
+			"source": "«Ginekološki i urološki pregledi»"
+		},
+		{
+			"slug": "gynecological-ultrasound",
+			"nameEn": "Gynecological Ultrasound",
+			"price": null,
+			"source": "«Ultrazvuk u ginekologiji i urologiji»"
+		},
+		{
+			"slug": "urinary-tract-ultrasound",
+			"nameEn": "Urinary Tract Ultrasound",
+			"price": null,
+			"source": "«Ultrazvuk u ginekologiji i urologiji»"
+		},
+		{
+			"slug": "pregnancy-ultrasound",
+			"nameEn": "Pregnancy Ultrasound",
+			"price": null,
+			"source": "«Ultrazvuk i pregledi u trudnoći, CTG»"
+		},
+		{
+			"slug": "pregnancy-specialist-examination",
+			"nameEn": "Pregnancy Specialist Examination",
+			"price": null,
+			"source": "«Ultrazvuk i pregledi u trudnoći, …»"
+		},
+		{
+			"slug": "ctg-fetal-monitoring",
+			"nameEn": "CTG Fetal Monitoring",
+			"price": null,
+			"source": "«… CTG»"
+		},
+		{
+			"slug": "4d-pregnancy-ultrasound",
+			"nameEn": "4D Pregnancy Ultrasound",
+			"price": null,
+			"source": "«3D UZ, …» — отдельной 3D-записи нет, запись «4D ultrazvuk» (синоним «3D ultrazvuk» ставит Vita Feminae-SQL и этот файл)"
+		},
+		{
+			"slug": "pelvic-color-doppler",
+			"nameEn": "Pelvic Color Doppler",
+			"price": null,
+			"source": "«… Color doppler, …» (в строке с 3D UZ и folikulometrijom — гинекологический допплер малого таза)"
+		},
+		{
+			"slug": "folliculometry",
+			"nameEn": "Folliculometry",
+			"price": null,
+			"source": "«… folikulometrija»"
+		},
+		{
+			"slug": "std-testing-package",
+			"nameEn": "STD Testing Package",
+			"price": null,
+			"source": "«Dijagnostika i liječenje urogenitalnih infekcija …» (как ana-medica «Polno prenosive bolesti»)"
+		},
+		{
+			"slug": "pap-test-with-smear-collection",
+			"nameEn": "PAP Test with Smear Collection",
+			"price": null,
+			"source": "«Rana dijagnostika premalignih i malignih lezija na grliću materice (PAPA bris, …)»"
+		},
+		{
+			"slug": "hpv-test",
+			"nameEn": "HPV Test",
+			"price": null,
+			"source": "«(… HPV brisevi, …)» — метод не назван; запись услуги «HPV test» (взятие мазка), не ПЦР-анализ"
+		},
+		{
+			"slug": "colposcopy",
+			"nameEn": "Colposcopy",
+			"price": null,
+			"source": "«(… kolposkopija, …)»"
+		},
+		{
+			"slug": "cervical-biopsy",
+			"nameEn": "Cervical Biopsy",
+			"price": null,
+			"source": "«(… biopsija)» — в контексте грлића материце"
+		},
+		{
+			"slug": "cervical-or-uterine-polypectomy",
+			"nameEn": "Cervical or Uterine Polypectomy",
+			"price": null,
+			"source": "«Ginekološke intervencije: polipi, …»"
+		},
+		{
+			"slug": "exploratory-curettage",
+			"nameEn": "Exploratory Curettage",
+			"price": null,
+			"source": "«… curettage expl.»"
+		},
+		{
+			"slug": "iud-insertion",
+			"nameEn": "IUD Insertion",
+			"price": null,
+			"source": "«Ugradnja / skidanje spirale i kontracepcija»"
+		},
+		{
+			"slug": "iud-removal",
+			"nameEn": "IUD Removal",
+			"price": null,
+			"source": "«Ugradnja / skidanje spirale …»"
+		},
+		{
+			"slug": "contraception-consultation",
+			"nameEn": "Contraception Consultation",
+			"price": null,
+			"source": "«… i kontracepcija»"
+		},
+		{
+			"slug": "infertility-consultation",
+			"nameEn": "Infertility Consultation",
+			"price": null,
+			"source": "«Dijagnostika i liječenje steriliteta (kod žena i muškaraca)»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "intrauterine-insemination-iui",
+			"nameEn": "Intrauterine Insemination (IUI)",
+			"price": null,
+			"source": "«IUI i IVF»"
+		},
+		{
+			"slug": "in-vitro-fertilization-ivf",
+			"nameEn": "In Vitro Fertilization (IVF)",
+			"price": null,
+			"source": "«IUI i IVF»; dr Vesna: «… inseminacija i vantjelesna oplodnja»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "cystoscopy-male",
+			"nameEn": "Cystoscopy (Male)",
+			"price": null,
+			"source": "«Cistoskopije, …» — пол не указан → обе записи"
+		},
+		{
+			"slug": "cystoscopy-female",
+			"nameEn": "Cystoscopy (Female)",
+			"price": null,
+			"source": "«Cistoskopije, …»"
+		},
+		{
+			"slug": "urethral-stricture-dilatation",
+			"nameEn": "Urethral Stricture Dilatation",
+			"price": null,
+			"source": "«…, bužiranje» (бужирование уретры = дилатация стриктуры уретры; синоним добавлен)"
+		},
+		{
+			"slug": "circumcision-local-anesthesia",
+			"nameEn": "Circumcision under Local Anesthesia",
+			"price": null,
+			"source": "«Cirkumcizija + …» — анестезия не названа; амбулаторный кабинет → вариант под местной анестезией (спинальной/общей у кабинета нет)"
+		},
+		{
+			"slug": "dorsal-slit-of-the-foreskin",
+			"nameEn": "Dorsal Slit of the Foreskin",
+			"price": null,
+			"source": "«… + dorzalna incizija»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "trus-guided-prostate-biopsy",
+			"nameEn": "TRUS-Guided Prostate Biopsy",
+			"price": null,
+			"source": "«Rana dijagnostika Carcinoma prostate (TRUS biopsija prostate + PH)»"
+		},
+		{
+			"slug": "urinary-catheter-placement",
+			"nameEn": "Urinary Catheter Placement",
+			"price": null,
+			"source": "«Kateterizacija mokraćne bešike»"
+		},
+		{
+			"slug": "female-stress-urinary-incontinence-treatment",
+			"nameEn": "Female Stress Urinary Incontinence Treatment",
+			"price": null,
+			"source": "«Liječenje nekontrolisanog mokrenja kod žena (stresne inkontinencije)»",
+			"newInCatalog": true
+		}
+	],
+	"labTests": [
+		{
+			"slug": "spermogram",
+			"nameEn": "Spermogram",
+			"price": null,
+			"source": "«spermogrami»"
+		},
+		{
+			"slug": "histopathology-trus-prostate",
+			"nameEn": "Histopathology TRUS Prostate",
+			"price": null,
+			"source": "«(TRUS biopsija prostate + PH)» — запись «PH TRUS prostate»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "petar-kavaric",
+			"nameSr": "Petar Kavarić",
+			"professionalTitle": "Dr",
+			"position": "Osnivač, specijalista urolog",
+			"specialtyIds": [
+				9
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": true,
+			"hasBio": true,
+			"photo": "https://www.kavaricmedical.me/images/slike%20limuzine/demo/petar.gif",
+			"services": [
+				"urologist-examination",
+				"urinary-tract-ultrasound",
+				"cystoscopy-male",
+				"cystoscopy-female",
+				"urethral-stricture-dilatation",
+				"circumcision-local-anesthesia",
+				"dorsal-slit-of-the-foreskin",
+				"trus-guided-prostate-biopsy",
+				"urinary-catheter-placement",
+				"female-stress-urinary-incontinence-treatment",
+				"std-testing-package",
+				"infertility-consultation"
+			],
+			"note": "Найден в БД (petar-kavaric, Novi Cenex Medical, уролог). Привязка + фото + описание (только если пусто). Данные сайта 2016 г."
+		},
+		{
+			"slug": "vesna-globarevic-kavaric",
+			"nameSr": "Vesna Globarević Kavarić",
+			"professionalTitle": "Dr",
+			"position": "Osnivač, specijalista ginekologije i akušerstva",
+			"specialtyIds": [
+				5
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"photo": "https://www.kavaricmedical.me/images/slike%20limuzine/demo/vesna.gif",
+			"services": [
+				"gynecological-specialist-examination",
+				"gynecological-ultrasound",
+				"pregnancy-ultrasound",
+				"pregnancy-specialist-examination",
+				"ctg-fetal-monitoring",
+				"4d-pregnancy-ultrasound",
+				"pelvic-color-doppler",
+				"folliculometry",
+				"std-testing-package",
+				"pap-test-with-smear-collection",
+				"hpv-test",
+				"colposcopy",
+				"cervical-biopsy",
+				"cervical-or-uterine-polypectomy",
+				"exploratory-curettage",
+				"iud-insertion",
+				"iud-removal",
+				"contraception-consultation",
+				"infertility-consultation",
+				"intrauterine-insemination-iui",
+				"in-vitro-fertilization-ivf"
+			],
+			"note": "Новая; прод-API 204. Фото с сайта (gif 125×125)."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Главная: «Ginekologija / Urologija / Ultrazvuk / Pregledi / Konsultacije»",
+			"reason": "Рубрики без конкретики — покрыты перечнем usluge.html."
+		},
+		{
+			"source": "«Radi u KCCG na Klinici za urologiju i nefrologiju od 1990 godine» (dr Petar Kavarić)",
+			"reason": "Привязку врача к КЦЦГ не добавляли: чужая клиника, данные 2016 г. Факт — в описании врача."
+		},
+		{
+			"source": "Подвал «Text o kompaniji Text o kompaniji …»",
+			"reason": "Шаблонный текст."
+		}
+	],
+	"openQuestions": [],
+	"resolved": [
+		{
+			"topic": "Часы работы",
+			"date": "2026-10-09",
+			"decision": "Решение координатора: часы по главной — Пн–Пт 09:30–13:00 и 16:00–20:30, Сб 09:30–13:00, Вс closed. «Radno vrijeme 08 do 21h» на usluge.html — общая фраза, не берётся."
+		},
+		{
+			"topic": "Кондиломы",
+			"source": "«Dijagnostika i liječenje urogenitalnih infekcija i kondiloma»",
+			"date": "2026-10-09",
+			"decision": "Решение координатора: удаление кондилом не заводить — метод и пол пациента не названы, равноценных кандидатов несколько (condyloma-removal-small-lesion / -large-lesion, electrocoagulation-or-excision-of-condyloma-acuminata, vulvar-and-vaginal-condyloma-abrasion, condyloma-radio-wave-removal, genital-condyloma-removal-grade-1). Инфекции → std-testing-package заведены."
+		}
+	]
+}

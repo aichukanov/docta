@@ -1,0 +1,215 @@
+{
+	"schemaVersion": 1,
+	"slug": "nova-medicina-rada-niksic",
+	"name": "Nova Medicina Rada Nikšić",
+	"city": "Nikšić",
+	"cityId": 2,
+	"googlePlaceId": "ChIJZ6WskGepTRMRatT0sa89Uv8",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"relatedClinics": [
+		{
+			"slug": "nova-medicina-rada-podgorica",
+			"relation": "филиал той же сети (PZU Nova Medicina Rada), отдельная карточка — другой город"
+		}
+	],
+	"sql": [
+		"server/sql/insert-clinic-nova-medicina-rada-niksic.sql",
+		"server/sql/insert-clinic-nova-medicina-rada-niksic-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 243,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Z. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Slug свободен на проде (API 204). Врачей нет — имена на сайте не указаны. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 270
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.novamedicinarada.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Главная, /usluge, /niksic (адрес, телефоны, email, часы филиала), 6 страниц услуг /podgorica/… (у Никшича своих страниц нет — 404). © 2026, блог 2026-09. Цен и имён врачей нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/niksic/nova-medicina-rada-niksic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJZ6WskGepTRMRatT0sa89Uv8 («Nova Medicina Rada Niksic»), 42.7730952 / 18.96578, +382 68 875 500, «Vuka Karadzica 84, Никшић 81400», отзывов 0. ⚠️ Координатор считал, что места у Никшича нет, — файл есть (коммит 7808c4d «raw clinics data»), взят он, примерная точка не нужна."
+		}
+	],
+	"coverage": {
+		"address": "Vuka Karadžića 84, 81400 Nikšić — сайт = Google",
+		"phone": "+38268875500;+38268875501 — сайт",
+		"email": "niksic@novamedicinarada.com — сайт",
+		"website": "https://www.novamedicinarada.com/niksic",
+		"social": "facebook.com/profile.php?id=100038215403169, @nova_medicina_rada — ссылки с сайта (общие для сети)",
+		"logo": "https://www.novamedicinarada.com/brand/nmr-logo-horizontalni-niksic-svijetla-podloga.svg",
+		"workingHours": "/niksic: «Radno vrijeme: Ponedjeljak - Petak: 09:00 - 17:00, Subota - Nedjelja: Zatvoreno».",
+		"description": "по главной, /usluge, странице филиала и страницам услуг",
+		"languages": "только SR",
+		"doctors": "0 — имён на сайте нет",
+		"doctorPhotos": "—",
+		"doctorBios": "—",
+		"prices": "цен нет — 18 услуг и 1 анализ без цены",
+		"labTests": "1 — общий анализ крови («krvna slika»); «biohemija» и «mnoge druge analize» без перечня не заводились",
+		"reviews": "нет — в Google 0 отзывов"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"slug": "pre-employment-medical-certificate",
+			"nameEn": "Pre-Employment Medical Certificate",
+			"price": null,
+			"source": "«Pregledi za zaposlenje i sistematski pregledi — Inicijalni, periodični i kontrolni pregledi»; /…/sistematski-pregledi-za-zaposlenje: «sistematske preglede za zaposlenje u skladu sa zakonskim propisima Crne Gore» — инициальный (при приёме на работу)"
+		},
+		{
+			"slug": "occupational-medicine-specialist-examination",
+			"nameEn": "Occupational Medicine Specialist Examination",
+			"price": null,
+			"source": "«… periodični … pregledi»; «Procjena radne sposobnosti» (синоним добавлен); «Sistematski pregled obuhvata opšti ljekarski pregled, laboratorijske analize, EKG, spirometriju i psihološku procjenu …»"
+		},
+		{
+			"slug": "follow-up-occupational-medicine-specialist-examination",
+			"nameEn": "Follow-up Occupational Medicine Specialist Examination",
+			"price": null,
+			"source": "«… i kontrolni pregledi»"
+		},
+		{
+			"slug": "medical-certificate-for-high-risk-and-difficult-working-conditions",
+			"nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+			"price": null,
+			"source": "«Ljekarsko uvjerenje za posebne pozicije» — справка для работы на особых (повышенный риск) рабочих местах"
+		},
+		{
+			"slug": "psychological-counseling",
+			"nameEn": "Psychological Counseling",
+			"price": null,
+			"source": "«Psihološko savjetovanje — Individualno savjetovanje i podrška, Procjena stresa i anksioznosti, Krizno savjetovanje»; «Naši psiholozi …» (психологи — не врачи, врачами не заводятся)"
+		},
+		{
+			"slug": "first-psychiatrist-examination",
+			"nameEn": "First Psychiatrist Examination",
+			"price": null,
+			"source": "«Psihijatrijski pregledi — Procjena mentalnog zdravlja … Pregledi u okviru radne procjene»; «Standardni psihijatrijski pregled traje 30-45 minuta»"
+		},
+		{
+			"slug": "follow-up-psychiatrist-examination",
+			"nameEn": "Follow-up Psychiatrist Examination",
+			"price": null,
+			"source": "«Terapeutska podrška i praćenje»; «Kontinuirana podrška i praćenje stanja pacijenata nakon pregleda»"
+		},
+		{
+			"slug": "medical-certificate-for-driving-license-category-a-b-c-d-e",
+			"nameEn": "Medical Certificate for Driving License Category A, B, C, D, E",
+			"price": null,
+			"source": "«Pregledi za vozače — Ljekarski pregledi za sve kategorije»"
+		},
+		{
+			"slug": "medical-certificate-for-driving-license-renewal-category-a-b-c-d-e",
+			"nameEn": "Medical Certificate for Driving License Renewal Category A, B, C, D, E",
+			"price": null,
+			"source": "«Obnavljanje ljekarskih uvjerenja»"
+		},
+		{
+			"slug": "medical-certificate-for-professional-drivers",
+			"nameEn": "Medical Certificate for Professional Drivers",
+			"price": null,
+			"source": "«ovlašćena za izdavanje ljekarskih uvjerenja za sve kategorije vozačkih dozvola, uključujući profesionalne vozače i vozače teretnih vozila»"
+		},
+		{
+			"slug": "ecg",
+			"nameEn": "ECG",
+			"price": null,
+			"source": "«Laboratorijska dijagnostika — … EKG i mjerenje krvnog pritiska …»"
+		},
+		{
+			"slug": "blood-pressure-and-bmi-measurement",
+			"nameEn": "Blood Pressure and BMI Measurement",
+			"price": null,
+			"source": "«… i mjerenje krvnog pritiska» — единственная запись измерения давления в каталоге (с ИМТ)"
+		},
+		{
+			"slug": "spirometry",
+			"nameEn": "Spirometry",
+			"price": null,
+			"source": "«Spirometrija»"
+		},
+		{
+			"slug": "abdomen-ultrasound",
+			"nameEn": "Abdomen Ultrasound",
+			"price": null,
+			"source": "«Ultrazvučni (UZ) pregledi — Abdominalni, štitne žlijezde, dojki»"
+		},
+		{
+			"slug": "thyroid-ultrasound",
+			"nameEn": "Thyroid Ultrasound",
+			"price": null,
+			"source": "«… štitne žlijezde …»"
+		},
+		{
+			"slug": "breast-ultrasound",
+			"nameEn": "Breast Ultrasound",
+			"price": null,
+			"source": "«… dojki»"
+		},
+		{
+			"slug": "soft-tissue-ultrasound",
+			"nameEn": "Soft Tissue Ultrasound",
+			"price": null,
+			"source": "«Mekih tkiva i limfnih čvorova»"
+		},
+		{
+			"slug": "ultrasound-lymph-nodes",
+			"nameEn": "Ultrasound Lymph Nodes",
+			"price": null,
+			"source": "«… i limfnih čvorova»"
+		}
+	],
+	"labTests": [
+		{
+			"slug": "complete-blood-count",
+			"nameEn": "Complete Blood Count",
+			"price": null,
+			"source": "«Osnovne laboratorijske analize»; «Krvna slika, biohemija, EKG, spirometrija i mnoge druge analize» — конкретно названа только «krvna slika»"
+		}
+	],
+	"doctors": [],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«Korporativni paketi», «Nudimo posebne pakete za kompanije … grupni pregledi zaposlenih»",
+			"reason": "Состав и цена пакетов не названы — в описание, не услугой."
+		},
+		{
+			"source": "«Krvna slika, biohemija, EKG, spirometrija i mnoge druge analize»",
+			"reason": "«Biohemija» и «mnoge druge analize» — без перечня; заведён только общий анализ крови."
+		},
+		{
+			"source": "«Preventivni pregledi» (блок УЗИ)",
+			"reason": "Общее слово, конкретная услуга не названа."
+		},
+		{
+			"source": "Водители: «pregled vida i sluha, psihološku procjenu»",
+			"reason": "Состав осмотра водителя, не отдельные услуги."
+		},
+		{
+			"source": "«10+ godina postojanja», «80k+ zadovoljnih pacijenata», «4.9/5.0»",
+			"reason": "Маркетинговые цифры — не в описание."
+		},
+		{
+			"source": "Психологи, психиатры, специалисты без имён",
+			"reason": "Решение юзера: безымянных не заводить; психологи — не врачи."
+		}
+	],
+	"openQuestions": []
+}

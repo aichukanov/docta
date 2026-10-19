@@ -1,0 +1,126 @@
+[
+  {
+    "slug": "menopause-consultation",
+    "name_en": "Menopause Consultation",
+    "name_sr": "Konsultacija o menopauzi",
+    "table": "medical_services",
+    "clinic": "ginekoloska-ordinacija-vita-feminae-kotor",
+    "alsoUsedBy": [
+      "ginekolosko-akuserska-ordinacija-filia-tivat"
+    ],
+    "categories": [
+      7
+    ],
+    "specialties": [
+      5
+    ],
+    "reason": "Vita Feminae: «Menopauza — Ublažavanje tegoba menopauzalnog perioda»; Filia: «Menopauza – hormonska supstituciona terapija (HRT)». Записи о менопаузе/HRT в каталоге нет ни под одним названием (поиск menopaus|climacter|hormone replacement — пусто). Общая услуга гинекологических кабинетов. Категория 7 GYNECOLOGY, специальность 5. HRT — синонимом, не отдельной записью."
+  },
+  {
+    "slug": "infertility-consultation",
+    "name_en": "Infertility Consultation",
+    "name_sr": "Konsultacija o neplodnosti",
+    "table": "medical_services",
+    "clinic": "ginekoloska-ordinacija-vita-feminae-kotor",
+    "alsoUsedBy": [
+      "ginekolosko-akuserska-ordinacija-filia-tivat",
+      "kavaric-medical-podgorica"
+    ],
+    "categories": [
+      7
+    ],
+    "specialties": [
+      5,
+      38
+    ],
+    "reason": "Vita Feminae: «Bračna neplodnost — Folikulometrija, priprema za IVF …»; Filia: «Ispitivanje i liječenje steriliteta»; Kavarić Medical: «Dijagnostika i liječenje steriliteta (kod žena i muškaraca)». В каталоге только fertility-couple-subspecialist-examination (субспециалистический осмотр пары, тариф уровня субспециалиста) и психологическое консультирование при бесплодии — консультации специалиста по бесплодию нет. Категория 7, специальности 5 + 38 REPRODUCTIVE_MEDICINE."
+  },
+  {
+    "slug": "in-vitro-fertilization-ivf",
+    "name_en": "In Vitro Fertilization (IVF)",
+    "name_sr": "Vantjelesna oplodnja (IVF)",
+    "table": "medical_services",
+    "clinic": "kavaric-medical-podgorica",
+    "categories": [
+      7
+    ],
+    "specialties": [
+      5,
+      38
+    ],
+    "reason": "Kavarić Medical: «IUI i IVF»; dr Vesna Globarević Kavarić «… procedurama asistirane reproduktivne tehnologije, kao što su inseminacija i vantjelesna oplodnja». Общей записи «ЭКО» в каталоге нет — только этапы больничного тарифа (follicle-aspiration, embryo-transfer, ivf-laboratory-procedure, ivf-anesthesia), а у IVF-центров (in-vitro-podgorica и др.) услуги ЭКО не заведены. Категория 7, специальности 5 + 38."
+  },
+  {
+    "slug": "dorsal-slit-of-the-foreskin",
+    "name_en": "Dorsal Slit of the Foreskin",
+    "name_sr": "Dorzalna incizija prepucijuma",
+    "table": "medical_services",
+    "clinic": "kavaric-medical-podgorica",
+    "categories": [
+      22
+    ],
+    "specialties": [
+      9
+    ],
+    "reason": "Kavarić Medical: «Cirkumcizija + dorzalna incizija». Дорсального рассечения крайней плоти в каталоге нет (есть только циркумцизия трёх видов анестезии и репозиция парафимоза). Категория 22 UROLOGY, специальность 9."
+  },
+  {
+    "slug": "female-stress-urinary-incontinence-treatment",
+    "name_en": "Female Stress Urinary Incontinence Treatment",
+    "name_sr": "Liječenje stresne urinarne inkontinencije kod žena",
+    "table": "medical_services",
+    "clinic": "kavaric-medical-podgorica",
+    "categories": [
+      22,
+      7
+    ],
+    "specialties": [
+      9,
+      5
+    ],
+    "reason": "Kavarić Medical: «Liječenje nekontrolisanog mokrenja kod žena (stresne inkontinencije)» — метод не назван. В каталоге только хирургия: transvaginal-incontinence-correction-tottvt-tape (TOT/TVT) и male-incontinence-correction — приписывать операцию нельзя. Категории 22 UROLOGY + 7 GYNECOLOGY, специальности 9 + 5."
+  },
+  {
+    "slug": "cataract-surgery-with-toric-iol",
+    "name_en": "Cataract Surgery with Toric IOL",
+    "name_sr": "Operacija katarakte sa toričnim sočivom",
+    "table": "medical_services",
+    "clinic": "ocna-bolnica-oftalens-dr-koturovic-podgorica",
+    "categories": [
+      33
+    ],
+    "specialties": [
+      81
+    ],
+    "reason": "Oftalens Dr Koturović: «Torična intraokularna sočiva … ugrađuju se tokom operacije katarakte kako bi se istovremeno uklonila siva mrena i ispravio astigmatizam» — бренд линзы не назван. В каталоге торические только брендовые/комбинированные: Toric IQ (AcrySof), Toric Vivity, Toric Eyhance, Toric Multifocal — общей «с торической ИОЛ» нет (мультифокальная и EDOF общие есть). Категория 33 OPHTHALMIC_SURGERY, специальность 81."
+  },
+  {
+    "slug": "macular-surgery",
+    "name_en": "Macular Surgery",
+    "name_sr": "Operacija žute mrlje (makule)",
+    "table": "medical_services",
+    "clinic": "ocna-bolnica-oftalens-dr-koturovic-podgorica",
+    "categories": [
+      33
+    ],
+    "specialties": [
+      81
+    ],
+    "reason": "Oftalens Dr Koturović: «Operacije žute mrlje (makule) … makularna rupa, epiretinalna membrana …». Операций на макуле (макулярное отверстие, эпиретинальная мембрана) в каталоге нет ни под одним названием; vitrectomy заведена отдельно — у клиники это отдельный пункт «Pars plana vitrektomija». Категория 33, специальность 81."
+  },
+  {
+    "slug": "ultrasound-biomicroscopy-ubm",
+    "name_en": "Ultrasound Biomicroscopy (UBM)",
+    "name_sr": "Ultrazvučna biomikroskopija (UBM)",
+    "table": "medical_services",
+    "clinic": "ocna-bolnica-oftalens-dr-koturovic-podgorica",
+    "categories": [
+      23,
+      4
+    ],
+    "specialties": [
+      6
+    ],
+    "reason": "Oftalens Dr Koturović: «Ultrazvučna biomikroskopija (UBM) … veoma detaljnu sliku prednjeg segmenta oka». В каталоге есть B-scan и A-scan биометрия, UBM нет. Категории 23 OPHTHALMOLOGY + 4 ULTRASOUND (как у остальных УЗИ глаза), специальность 6."
+  }
+]

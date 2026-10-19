@@ -1,0 +1,829 @@
+{
+	"schemaVersion": 1,
+	"slug": "orthoexpert-physio-podgorica",
+	"name": "OrthoExpert Physio Podgorica",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJhfDvLo_rTRMRosr6ahUrUwI",
+	"clinicTypeIds": [
+		22,
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-orthoexpert-physio-podgorica.sql",
+		"server/sql/insert-clinic-orthoexpert-physio-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 164,
+		"doctorIds": {
+			"jelena-klikovac": 1849,
+			"sonja-nejkov": 1468,
+			"srdjan-zivanovic": 1848
+		},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id. Сухой прогон 2026-10-08 (DML через EXPLAIN, транзакция с ROLLBACK) — синтаксис чист, все существующие name_en находятся в каталоге. Sonja Nejkov уже в базе (локально id 2702, импорт КЦЦГ) — на проде id другой, резолвится по slug. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 191
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.orthoexpert.me/cenovnik",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Joomla, сырой HTML curl'ом. Общий прайс сети на трёх ординаций; взят только блок «Ordinacija OrthoExpert Physio Podgorica», «Cijena (EUR)», 68 строк с ценой. Явной даты прайса нет: JSON-LD страницы datePublished/dateModified 2022-06-07 (это дата создания страницы, цены могли правиться позже — Joomla не отдаёт дату правки содержимого), футер «© 2022-2026». is_price_outdated не ставился."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.orthoexpert.me/o-nama/lekari-fizioterapeuti",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Команда сети — 12 человек; у трёх в карточке город «Podgorica» (у Živanović — «Beograd, Niš, Podgorica»). Профили: /dr-srdjan-zivanovic-ortoped, /dr-sonja-nejkov-fizijatar-rehabilitacija-podgorica, /jelena-klikovac-fizoterapeut-podgorica. Фото — /images/team/<slug>.webp (полноразмерные, из профилей)."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.orthoexpert.me/ (naslovna, o-nama, fizikalna-terapija, ordinacije, kontakt)",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Футер: «Podgorica — Ankarski bulevar 35 L1, Podgorica — (068) 107-241 — office@orthoexpert.me», PIB/RB филиала. JSON-LD MedicalClinic описывает белградскую ординацию (адрес Svetog Save 32/8, openingHours Mo-Fr 09-17) — для Подгорицы не использовался. Соцсети r.orthoexpert.rs/* редиректят на аккаунты Белграда."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/orthoexpert-physio-podgorica.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.439211 / 19.2399208 (единственный источник), телефон +382 68 107 241, адрес «Ankarski bulevar, 35 Lamela 1, Podgorica 81101». 14 отзывов (в файле 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Ankarski bulevar 35, lamela 1 — сайт («Ankarski bulevar 35 L1») и Google согласованы; индекс 81101 из Google",
+		"phone": "+38268107241 — сайт и Google",
+		"email": "office@orthoexpert.me — футер сайта",
+		"website": "https://www.orthoexpert.me/ (общий сайт сети)",
+		"social": "не заполнены: ссылки сайта ведут на белградские аккаунты сети",
+		"logo": "общий логотип сети logo-300x60.png (из JSON-LD)",
+		"workingHours": "не заполнены: для Подгорицы на сайте нет; openingHours JSON-LD — Белград",
+		"description": "из прайса Подгорицы, состава врачей и способов оплаты; методики со страницы /fizikalna-terapija (DNS, McKenzie, PNF, dry needling) — общие для сети и в прайсе Подгорицы не названы, в описание не взяты",
+		"doctors": "3 из 3: 1 новый врач, 1 найден в БД (КЦЦГ), 1 новый физиотерапевт",
+		"doctorPhotos": "у всех трёх — внешние URL с сайта",
+		"prices": "63 из 68 строк прайса заведены (51 позиция каталога, 49 с ценой); 5 строк — в disputed",
+		"labTests": "лаборатории нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "ultrasound-guided-blockade",
+			"nameEn": "Ultrasound-Guided Blockade",
+			"nameSr": "Blokada pod kontrolom ultrazvuka",
+			"categoryIds": [
+				10,
+				19
+			],
+			"specialtyIds": [
+				17
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "intra-articular-hyaluronic-acid-injection",
+			"nameEn": "Intra-articular Hyaluronic Acid Injection",
+			"nameSr": "Intraartikularna infiltracija hijalurona",
+			"categoryIds": [
+				10,
+				29
+			],
+			"specialtyIds": [
+				17
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "preoperative-rehabilitation",
+			"nameEn": "Preoperative Rehabilitation",
+			"nameSr": "Preoperativna rehabilitacija",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "physical-therapy-per-therapy-day",
+			"nameEn": "Physical Therapy per Therapy Day",
+			"nameSr": "Fizikalna terapija po terapijskom danu",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "physical-therapy-package-10-sessions-with-follow-up-examination",
+			"nameEn": "Physical Therapy Package 10 Sessions with Follow-up Examination",
+			"nameSr": "Paket fizikalne terapije – 10 terapija + kontrolni pregled",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "kinesiotherapy-60-min",
+			"nameEn": "Kinesiotherapy 60 min",
+			"nameSr": "Kineziterapija – 60 min.",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "kinesiotherapy-60-min-package-10-treatments",
+			"nameEn": "Kinesiotherapy 60 min Package 10 Treatments",
+			"nameSr": "Kineziterapija 60 min. – paket 10 tretmana",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "kinesiotherapy-60-min-package-20-treatments",
+			"nameEn": "Kinesiotherapy 60 min Package 20 Treatments",
+			"nameSr": "Kineziterapija 60 min. – paket 20 tretmana",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "anti-cellulite-shockwave-therapy-with-lymphatic-drainage",
+			"nameEn": "Anti-Cellulite Shockwave Therapy with Lymphatic Drainage",
+			"nameSr": "Shockwave anticelulit + limfna drenaža",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "relaxing-massage-60-min",
+			"nameEn": "Relaxing Massage 60 min",
+			"nameSr": "Relaks masaža 60 min",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "tecar-beauty-face-and-neck",
+			"nameEn": "TECAR Beauty Face and Neck",
+			"nameSr": "TECAR Beauty lice i vrat",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "tecar-beauty-face-and-neck-package-6-treatments",
+			"nameEn": "TECAR Beauty Face and Neck Package 6 Treatments",
+			"nameSr": "TECAR Beauty lice i vrat – paket 6 tretmana",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "tecar-beauty-face-neck-and-decollete",
+			"nameEn": "TECAR Beauty Face, Neck and Decollete",
+			"nameSr": "TECAR Beauty lice, vrat i dekolte",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "tecar-beauty-face-neck-and-decollete-package-6-treatments",
+			"nameEn": "TECAR Beauty Face, Neck and Decollete Package 6 Treatments",
+			"nameSr": "TECAR Beauty lice, vrat i dekolte – paket 6 tretmana",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "foreign-consultant-examination-with-ultrasound",
+			"nameEn": "Foreign Consultant Examination with Ultrasound",
+			"nameSr": "Pregled inostranog konsultanta sa ultrazvukom",
+			"categoryIds": [
+				9
+			],
+			"specialtyIds": [
+				2,
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "foreign-consultant-examination-with-ultrasound-and-blockade",
+			"nameEn": "Foreign Consultant Examination with Ultrasound and Blockade",
+			"nameSr": "Pregled inostranog konsultanta sa ultrazvukom i blokadom",
+			"categoryIds": [
+				9,
+				19
+			],
+			"specialtyIds": [
+				2,
+				10,
+				17
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "professor-examination-with-ultrasound-and-blockade",
+			"nameEn": "Professor Examination with Ultrasound and Blockade",
+			"nameSr": "Profesorski pregled sa ultrazvukom i blokadom",
+			"categoryIds": [
+				9,
+				19
+			],
+			"specialtyIds": [
+				2,
+				10,
+				17
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "subspecialist-examination-with-ultrasound-and-blockade",
+			"nameEn": "Subspecialist Examination with Ultrasound and Blockade",
+			"nameSr": "Subspecijalistički pregled sa ultrazvukom i blokadom",
+			"categoryIds": [
+				9,
+				19
+			],
+			"specialtyIds": [
+				2,
+				10,
+				17
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "specialist-examination-with-ultrasound-and-blockade",
+			"nameEn": "Specialist Examination with Ultrasound and Blockade",
+			"nameSr": "Specijalistički pregled sa ultrazvukom i blokadom",
+			"categoryIds": [
+				9,
+				19
+			],
+			"specialtyIds": [
+				2,
+				10,
+				17
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "follow-up-foreign-consultant-examination-with-ultrasound",
+			"nameEn": "Follow-up Foreign Consultant Examination with Ultrasound",
+			"nameSr": "Kontrolni pregled inostranog konsultanta sa ultrazvukom",
+			"categoryIds": [
+				9
+			],
+			"specialtyIds": [
+				2,
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "follow-up-professor-examination-with-ultrasound",
+			"nameEn": "Follow-up Professor Examination with Ultrasound",
+			"nameSr": "Kontrolni profesorski pregled sa ultrazvukom",
+			"categoryIds": [
+				9
+			],
+			"specialtyIds": [
+				2,
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "follow-up-subspecialist-examination-with-ultrasound",
+			"nameEn": "Follow-up Subspecialist Examination with Ultrasound",
+			"nameSr": "Kontrolni subspecijalistički pregled sa ultrazvukom",
+			"categoryIds": [
+				9
+			],
+			"specialtyIds": [
+				2,
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "follow-up-specialist-examination-with-ultrasound",
+			"nameEn": "Follow-up Specialist Examination with Ultrasound",
+			"nameSr": "Kontrolni specijalistički pregled sa ultrazvukom",
+			"categoryIds": [
+				9
+			],
+			"specialtyIds": [
+				2,
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "follow-up-foreign-consultant-examination-with-ultrasound-and-blockade",
+			"nameEn": "Follow-up Foreign Consultant Examination with Ultrasound and Blockade",
+			"nameSr": "Kontrolni pregled inostranog konsultanta sa ultrazvukom i blokadom",
+			"categoryIds": [
+				9,
+				19
+			],
+			"specialtyIds": [
+				2,
+				10,
+				17
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "follow-up-professor-examination-with-ultrasound-and-blockade",
+			"nameEn": "Follow-up Professor Examination with Ultrasound and Blockade",
+			"nameSr": "Kontrolni profesorski pregled sa ultrazvukom i blokadom",
+			"categoryIds": [
+				9,
+				19
+			],
+			"specialtyIds": [
+				2,
+				10,
+				17
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "follow-up-subspecialist-examination-with-ultrasound-and-blockade",
+			"nameEn": "Follow-up Subspecialist Examination with Ultrasound and Blockade",
+			"nameSr": "Kontrolni subspecijalistički pregled sa ultrazvukom i blokadom",
+			"categoryIds": [
+				9,
+				19
+			],
+			"specialtyIds": [
+				2,
+				10,
+				17
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "follow-up-specialist-examination-with-ultrasound-and-blockade",
+			"nameEn": "Follow-up Specialist Examination with Ultrasound and Blockade",
+			"nameSr": "Kontrolni specijalistički pregled sa ultrazvukom i blokadom",
+			"categoryIds": [
+				9,
+				19
+			],
+			"specialtyIds": [
+				2,
+				10,
+				17
+			]
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Specialist Examination",
+			"price": 60,
+			"source": "Specijalistički pregled — 60,00"
+		},
+		{
+			"nameEn": "Subspecialist Examination",
+			"price": 70,
+			"source": "Subspecijalistički pregled — 70,00"
+		},
+		{
+			"nameEn": "Professor Examination",
+			"price": 80,
+			"source": "Pregled profesora — 80,00"
+		},
+		{
+			"nameEn": "Follow-up Specialist Examination",
+			"price": 30,
+			"source": "Kontrolni specijalistički pregled (do 30 dana) — 30,00"
+		},
+		{
+			"nameEn": "Follow-up Subspecialist Examination",
+			"price": 30,
+			"source": "Kontrolni subspecijalistički pregled — 30,00"
+		},
+		{
+			"nameEn": "Follow-up Professor Examination",
+			"price": 40,
+			"source": "Kontrolni pregled profesora — 40,00"
+		},
+		{
+			"nameEn": "Musculoskeletal Ultrasound",
+			"price": 50,
+			"source": "Ultrazvučni pregled — 50,00 (ortopedska ordinacija; naslovna: «Specijalistički i subspecijalistički ultrazvučni ortopedski pregledi»)"
+		},
+		{
+			"nameEn": "Ultrasound-Guided Blockade",
+			"price": 50,
+			"source": "Blokada — 50,00 (blok «Pojedinačne usluge: pregledi, blokade pod kontrolom ultrazvuka»)",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Intramuscular Injection",
+			"price": 20,
+			"source": "Intramuskularne injekcije — 20,00"
+		},
+		{
+			"nameEn": "Intra-articular Hyaluronic Acid Injection",
+			"price": 270,
+			"source": "Intraartikularna infiltracija hijalurona — 270,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Botox Injection",
+			"price": 220,
+			"source": "Aplikacija botoxa — 220,00"
+		},
+		{
+			"nameEn": "Specialist Examination with Ultrasound",
+			"price": 90,
+			"source": "Paket 1 (pregled + ultrazvuk): Specijalistički pregled + ultrazvučni pregled — 90,00"
+		},
+		{
+			"nameEn": "Subspecialist Examination with Ultrasound",
+			"price": 100,
+			"source": "Paket 1: Subspecijalistički pregled + ultrazvučni pregled — 100,00"
+		},
+		{
+			"nameEn": "Professor Examination with Ultrasound",
+			"price": 110,
+			"source": "Paket 1: Pregled profesora + ultrazvučni pregled — 110,00"
+		},
+		{
+			"nameEn": "Foreign Consultant Examination with Ultrasound",
+			"price": 150,
+			"source": "Paket 1: Pregled inostranog konsultanta + ultrazvučni pregled — 150,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Foreign Consultant Examination with Ultrasound and Blockade",
+			"price": 180,
+			"source": "Paket 2 (pregled + ultrazvuk + blokada): Pregled inostranog konsultanta + ultrazvučni pregled + blokada — 180,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Professor Examination with Ultrasound and Blockade",
+			"price": 140,
+			"source": "Paket 2: Pregled profesora + ultrazvučni pregled + blokada — 140,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Subspecialist Examination with Ultrasound and Blockade",
+			"price": 120,
+			"source": "Paket 2: Subspecijalistički pregled + ultrazvučni pregled + blokada — 120,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Specialist Examination with Ultrasound and Blockade",
+			"price": 110,
+			"source": "Paket 2: Specijalistički pregled + ultrazvučni pregled + blokada — 110,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Follow-up Foreign Consultant Examination with Ultrasound",
+			"price": 110,
+			"source": "Paket 3 (kontrolni pregled + ultrazvuk): Kontrolni pregled inostranog konsultanta + ultrazvučni pregled — 110,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Follow-up Professor Examination with Ultrasound",
+			"price": 80,
+			"source": "Paket 3: Kontrolni pregled profesora + ultrazvučni pregled — 80,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Follow-up Subspecialist Examination with Ultrasound",
+			"price": 70,
+			"source": "Paket 3: Kontrolni subspecijalistički pregled + ultrazvučni pregled — 70,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Follow-up Specialist Examination with Ultrasound",
+			"price": 70,
+			"source": "Paket 3: Kontrolni specijalistički pregled + ultrazvučni pregled — 70,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Follow-up Foreign Consultant Examination with Ultrasound and Blockade",
+			"price": 140,
+			"source": "Paket 4 (kontrolni pregled + ultrazvuk + blokada): Kontrolni pregled inostranog konsultanta + ultrazvučni pregled + blokada — 140,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Follow-up Professor Examination with Ultrasound and Blockade",
+			"price": 100,
+			"source": "Paket 4: Kontrolni pregled profesora + ultrazvučni pregled + blokada — 100,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Follow-up Subspecialist Examination with Ultrasound and Blockade",
+			"price": 90,
+			"source": "Paket 4: Kontrolni subspecijalistički pregled + ultrazvučni pregled + blokada — 90,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Follow-up Specialist Examination with Ultrasound and Blockade",
+			"price": 90,
+			"source": "Paket 4: Kontrolni specijalistički pregled + ultrazvučni pregled + blokada — 90,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Preoperative Rehabilitation",
+			"price": 600,
+			"source": "Preoperativna rehabilitacija: SIS/TECAR + klasični fizikalni agensi + KTH x 20 — 600,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Postoperative Locomotor System Rehabilitation",
+			"price": 700,
+			"source": "Postoperativna rehabilitacija: SIS/TECAR + klasični fizikalni agensi + KTH x 20 — 700,00"
+		},
+		{
+			"nameEn": "Physical Therapy per Therapy Day",
+			"price": 20,
+			"priceMax": 45,
+			"source": "Fizikalna terapija po terapijskom danu, #1–#8: #1 ≤ 2 klasična fizikalna agensa bez kineziterapije 20,00; #2 > 2 agensa bez KT 25,00; #3 ≤ 2 sa KT 30,00; #4 > 2 sa KT 35,00; #5 SIS/TECAR + ≤ 2 bez KT 35,00; #6 SIS/TECAR + > 2 bez KT 40,00; #7 SIS/TECAR + ≤ 2 sa KT 40,00; #8 SIS/TECAR + > 2 sa KT 45,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Physical Therapy Package 10 Sessions with Follow-up Examination",
+			"price": 200,
+			"priceMax": 450,
+			"source": "Terapijski paketi FT#1–FT#8 «10 terapija + kontrolni pregled»: FT#1 200,00; FT#2 250,00; FT#3 300,00; FT#4 350,00; FT#5 350,00; FT#6 400,00; FT#7 400,00; FT#8 450,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Tecar Therapy",
+			"price": null,
+			"source": "«SIS/TECAR» — sastavni dio pre-/postoperativne rehabilitacije i dana fizikalne terapije #5–#8; zasebne cijene nema"
+		},
+		{
+			"nameEn": "Super Inductive System Therapy",
+			"price": null,
+			"source": "«SIS/TECAR» — sastavni dio pre-/postoperativne rehabilitacije i dana fizikalne terapije #5–#8; zasebne cijene nema"
+		},
+		{
+			"nameEn": "Kinesiotherapy 30 min",
+			"price": 25,
+			"source": "Kineziterapija individualne vježbe 30 min — 25,00"
+		},
+		{
+			"nameEn": "Kinesiotherapy 60 min",
+			"price": 40,
+			"source": "Kineziterapija individualne vježbe 60 min — 40,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Kinesiotherapy 60 min Package 10 Treatments",
+			"price": 360,
+			"source": "Kineziterapija individualne vježbe 60 min - 10 terapija — 360,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Kinesiotherapy 60 min Package 20 Treatments",
+			"price": 700,
+			"source": "Kineziterapija individualne vježbe 60 min - 20 terapija — 700,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Schroth Method",
+			"price": 60,
+			"source": "Kineziterapija individualne vježbe po Šrotu — 60,00"
+		},
+		{
+			"nameEn": "Shock Wave Therapy",
+			"price": 30,
+			"source": "Shockwave terapija — 30,00"
+		},
+		{
+			"nameEn": "Anti-Cellulite Shockwave Therapy with Lymphatic Drainage",
+			"price": 60,
+			"source": "Shockwave anticelulit + limfna drenaža — 60,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Taping Application",
+			"price": 20,
+			"source": "Kineziotejping — 20,00"
+		},
+		{
+			"nameEn": "Acupuncture",
+			"price": 25,
+			"source": "Akupunktura — 25,00"
+		},
+		{
+			"nameEn": "Manual Lymphatic Drainage 60 min",
+			"price": 35,
+			"source": "Manuelna limfna drenaža cijelo tijelo 60 min — 35,00"
+		},
+		{
+			"nameEn": "Pressotherapy",
+			"price": 30,
+			"source": "Aparaturna limfna drenaža — 30,00"
+		},
+		{
+			"nameEn": "Relaxing Massage 60 min",
+			"price": 35,
+			"source": "Terapeutska relax masaža 60 min — 35,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "Sports Massage 60 min",
+			"price": 50,
+			"source": "Terapeutska sportska masaža 60 min — 50,00"
+		},
+		{
+			"nameEn": "Partial Therapeutic Massage",
+			"price": 25,
+			"source": "Parcijalna masaža — 25,00"
+		},
+		{
+			"nameEn": "TECAR Beauty Face and Neck",
+			"price": 30,
+			"source": "Fizioestetika: TECAR Beauty lice i vrat — 30,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "TECAR Beauty Face and Neck Package 6 Treatments",
+			"price": 150,
+			"source": "Fizioestetika: TECAR Beauty lice i vrat x6 — 150,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "TECAR Beauty Face, Neck and Decollete",
+			"price": 50,
+			"source": "Fizioestetika: TECAR Beauty lice, vrat i dekolte — 50,00",
+			"newInCatalog": true
+		},
+		{
+			"nameEn": "TECAR Beauty Face, Neck and Decollete Package 6 Treatments",
+			"price": 250,
+			"source": "Fizioestetika: TECAR Beauty lice, vrat i dekolte x6 — 250,00",
+			"newInCatalog": true
+		}
+	],
+	"doctors": [
+		{
+			"slug": "srdjan-zivanovic",
+			"nameSr": "Srđan Živanović",
+			"professionalTitle": "Dr med",
+			"position": null,
+			"specialtyIds": [
+				17
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://www.orthoexpert.me/images/team/srdjan-zivanovic.webp",
+			"services": [],
+			"note": "ortoped / ortopedski hirurg / traumatolog; принимает в Beograd, Niš, Podgorica. Основное место работы — RH Viborg (Дания). По JSON-LD — основатель OrthoExpert (founder). Из био не взято оценочное «najbolji ortoped u Srbiji»."
+		},
+		{
+			"slug": "sonja-nejkov",
+			"nameSr": "Sonja Nejkov",
+			"professionalTitle": "Dr (в БД); на сайте «Prim. dr»",
+			"position": null,
+			"specialtyIds": [
+				42
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 2702, created 2026-10-06, привязана к klinicki-centar-crne-gore-podgorica (position «Centar za fizikalnu medicinu i rehabilitaciju, direktorica»). Профиль orthoexpert.me называет то же место и должность.",
+			"hasBio": true,
+			"photo": "https://www.orthoexpert.me/images/team/sonja-nejkov.webp",
+			"services": [],
+			"note": "Фото и описания дозаполняются только если пусты. Карточка списка: «subspecijalista medicine bola, načelnik dela za ambulantnu rehabilitaciju Centra… KCCG»; профиль: «direktorica Centra za fizikalnu medicinu i rehabilitaciju» — в описание взят профиль (свежее и совпадает с КЦЦГ)."
+		},
+		{
+			"slug": "jelena-klikovac",
+			"nameSr": "Jelena Klikovac",
+			"professionalTitle": null,
+			"position": null,
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://www.orthoexpert.me/images/team/jelena-klikovac.webp",
+			"services": [],
+			"note": "Физиотерапевт (не врач) — как другие физиотерапевты в БД со специальностью 94. Степень расходится: карточка списка «BSc primijenjene fizioterapije», профиль «master primijenjene fizioterapije» — в описании уровень не указан."
+		}
+	],
+	"disputed": [
+		{
+			"source": "Pregled inostranog konsultanta — 120,00; Kontrolni pregled inostranog konsultanta — 80,00",
+			"reason": "В каталоге нет ранга «иностранный консультант» (есть Specialist / Subspecialist / Professor). Решение юзера 2026-10-08 — оставить спорными. Пакеты с иностранным консультантом (1–4) при этом заведены отдельными записями."
+		},
+		{
+			"source": "Mezoterapija — 50,00 (дважды: в «Pojedinačne usluge» и в блоке «Kineziterapija», цена одна)",
+			"reason": "Общей записи «Mesotherapy» в каталоге нет — только эстетические (лицо, скальп, Mesotherapy 1/2/3). Цель (обезболивание или эстетика) прайс не называет, категорию выбрать не из чего."
+		},
+		{
+			"source": "Terapija Guna kolagenom — 30,00",
+			"reason": "Кандидата в каталоге нет; Guna — бренд (коллагеновые медицинские изделия), сайт не описывает процедуру. Завести «Guna Collagen Therapy» можно, но категорию (ортопедия / инъекции / физиотерапия) источник не подтверждает."
+		}
+	],
+	"excluded": [
+		{
+			"source": "Блоки «Ordinacija OrthoExpert Beograd» и «Ordinacija OrthoExpert Physio Niš» на /cenovnik (цены в RSD)",
+			"reason": "Другие города сети, у нас только филиал в Подгорице."
+		},
+		{
+			"source": "Врачи и физиотерапевты Beograd/Niš (Mladen Pavlović, Ognjen Vukadin, Aleksandar Jevtić, Milica Kostić, Dragan Stamenković, Vladimir Radeka, Viktor Vujošević, Marko Simić, Stefan Filipović)",
+			"reason": "В Подгорице не принимают (фильтр «Podgorica» на /lekari-fizioterapeuti)."
+		},
+		{
+			"source": "«openingHours»: «Mo,Tu,We,Th,Fr 09:00-17:00» (JSON-LD)",
+			"reason": "Относится к белградской ординации (address Svetog Save 32/8 в том же JSON-LD)."
+		},
+		{
+			"source": "Соцсети r.orthoexpert.rs/facebook, /instagram, /youtube…",
+			"reason": "Редиректят на facebook.com/OrthoExpertBeograd и instagram.com/orthoexpert_beograd — аккаунты Белграда."
+		},
+		{
+			"source": "Korisnici privatnog zdravstvenog osiguranja Generali, Uniqa, Dunav ili Wiener Städtische…",
+			"reason": "Текст общий для сети, логотипы партнёров из images/partners/sr/ (сербские страховщики). Что договоры действуют для Подгорицы, сайт не говорит — к страховым не привязывали."
+		},
+		{
+			"source": "Методики со страницы /fizikalna-terapija (DNS, kinezio tejping, manuelna terapija, dry needling, miofascijalna, neurokinetička, McKenzie, PNF) и справочные статьи о процедурах (artroskopija, proteze, blokade po regijama)",
+			"reason": "Общие тексты сети, в прайсе Подгорицы не названы; операции в Подгорице не проводятся."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Спорные позиции прайса (5 строк)",
+			"detail": "См. disputed: отдельные осмотры «inostrani konsultant» (120 / 80), Mezoterapija (2 строки), Guna kolagen — по решению юзера 2026-10-08 остаются спорными. Пакеты 1–4 заведены (13 новых записей), диапазоны физиотерапии 20–45 € и 200–450 € юзер принял."
+		},
+		{
+			"topic": "Botox Injection",
+			"detail": "«Aplikacija botoxa» (220 €) сопоставлена с общей Botox Injection — у неё эстетические категории (PLASTIC_SURGERY, DERMATOLOGY). В ортопедической ординации это может быть и лечебный ботокс; прайс цель не называет."
+		},
+		{
+			"topic": "Дата прайса",
+			"detail": "Явной нет; JSON-LD 2022-06-07 — дата создания страницы. Решение про is_price_outdated — за юзером."
+		}
+	]
+}

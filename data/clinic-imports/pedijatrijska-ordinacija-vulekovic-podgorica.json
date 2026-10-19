@@ -1,0 +1,288 @@
+{
+	"schemaVersion": 1,
+	"slug": "pedijatrijska-ordinacija-vulekovic-podgorica",
+	"name": "Pedijatrijska ordinacija Vuleković Podgorica",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJYWpwNDHrTRMRbH9EJu0L02c",
+	"clinicTypeIds": [
+		12
+	],
+	"languageIds": [
+		1
+	],
+	"network": {
+		"name": "Privatna pedijatrijska ordinacija „Vuleković“",
+		"siblings": [
+			"pedijatrijska-ordinacija-vulekovic-sutomore"
+		],
+		"note": "Две ординации; у нас — отдельные клиники. Врачи: явно подгорицкие (Sušić, Vujanović) — только Подгорица, остальные — к обеим."
+	},
+	"sql": [
+		"server/sql/insert-clinic-pedijatrijska-ordinacija-vulekovic-podgorica.sql",
+		"server/sql/insert-clinic-pedijatrijska-ordinacija-vulekovic-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 186,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен. Подволна 2c, агент O. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 213
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://vulekovic.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress + Polylang (me/en/ru). WP REST /wp/v2/pages (17) и /posts (5). Страницы правлены 2025-01-21…2025-01-29. Фото врачей — только sinisa.jpg и gsusic.jpg на /o-nama/. Цен нет."
+		}
+	],
+	"coverage": {
+		"address": "Svetozara Markovića 5 — сайт = Google",
+		"phone": "+38220244244;+38269072242 — сайт (первый подтверждён Google)",
+		"email": "ordinacija@vulekovic.me — сайт",
+		"website": "https://vulekovic.me/",
+		"social": "facebook.com/drvulekovic — ссылка с сайта",
+		"logo": "https://vulekovic.me/wp-content/uploads/2025/01/vulekovic-logo.png",
+		"workingHours": "не заполнено: только летнее расписание на главной",
+		"doctors": "12 карточек: 11 врачей /nasi-ljekari/ + логопед; 9 найдены в БД, 3 новых",
+		"doctorPhotos": "с сайта — только Vuleković и Sušić; у найденных в БД фото уже есть",
+		"doctorBios": "Vuleković, Sušić (новые), Vujanović (существующая, только если био пусто)",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Pediatric Examination",
+			"slug": "pediatric-examination",
+			"source": "/ FAQ: «detaljan ljekarski pregled … Pregled nije potrebno zakazivati»; /nasi-ljekari/ «OPŠTA PEDIJATRIJA»"
+		},
+		{
+			"nameEn": "Newborn Home Visit",
+			"slug": "newborn-home-visit",
+			"source": "/ FAQ: «u ponudi naše ordinacije su i kućne posjete, koje uključuju i detaljan pregled pedijatra, mjerenje djeteta i savjete oko njege novorođenčadi»"
+		},
+		{
+			"nameEn": "Pediatric Rheumatologist Examination",
+			"slug": "pediatric-rheumatologist-examination",
+			"source": "/o-nama/: «Pregled vašeg djeteta i adolescenta sa reumatskim tegobama možete zakazati kod prim. dr Gordane Sušić, pedijatra – reumatologa»"
+		},
+		{
+			"nameEn": "ENT Specialist Examination",
+			"slug": "ent-specialist-examination",
+			"source": "/o-nama/: «ORL pregledi u našoj ordinaciji … ordinira dr Maja Jovanović, specijalista ORL»"
+		},
+		{
+			"nameEn": "Dermatologist Examination",
+			"slug": "dermatologist-examination",
+			"source": "/nasi-ljekari/: «U našoj ordinaciji u Podgorici osim pregleda i konsultacija kod dr Sanje Vujanović, dermatovenerologa …»"
+		},
+		{
+			"nameEn": "Benign Skin Lesion Removal with Electrocautery (1 lesion)",
+			"slug": "benign-skin-lesion-removal-with-electrocautery-1-lesion",
+			"source": "«… dostupno je i bezbolno uklanjanje promjena na koži uz korišćenje uređaja Hyfrecator2000 … izrasline ne veće od 1 cm» (seboroične keratoze, bradavice, papilomi, kondilomi, milije, sebacealne hiperplazije, cherry hemangiomi, dermatofibrom)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "sinisa-vulekovic",
+			"nameSr": "Siniša Vuleković",
+			"professionalTitle": "Dr",
+			"position": "Specijalista pedijatar, osnivač ordinacije",
+			"specialtyIds": [
+				4
+			],
+			"hasBio": true,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "latkovic-djuro",
+			"nameSr": "Đuro Latković",
+			"professionalTitle": "dr",
+			"position": "Specijalista pedijatar",
+			"specialtyIds": [
+				4
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "ivan-ivanovic",
+			"nameSr": "Ivan Ivanović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista pedijatar",
+			"specialtyIds": [
+				4
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "zanka-cerovic",
+			"nameSr": "Žanka Cerović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista radiolog",
+			"specialtyIds": [
+				10
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "latkovic-danijela",
+			"nameSr": "Danijela Latković",
+			"professionalTitle": "dr",
+			"position": "Specijalista radiolog",
+			"specialtyIds": [
+				10
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "gordana-susic",
+			"nameSr": "Gordana Sušić",
+			"professionalTitle": "Prim. dr sci. med.",
+			"position": "Pedijatar – reumatolog",
+			"specialtyIds": [
+				4,
+				16
+			],
+			"hasBio": true,
+			"existingInDb": false,
+			"services": [
+				"pediatric-rheumatologist-examination"
+			]
+		},
+		{
+			"slug": "jovanovic-maja",
+			"nameSr": "Maja Jovanović",
+			"professionalTitle": "dr",
+			"position": "Specijalista ORL",
+			"specialtyIds": [
+				11
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": [
+				"ent-specialist-examination"
+			]
+		},
+		{
+			"slug": "vladimir-ljubic",
+			"nameSr": "Vladimir Ljubić",
+			"professionalTitle": "dr",
+			"position": "Specijalista ORL",
+			"specialtyIds": [
+				11
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "pocek-lidija",
+			"nameSr": "Lidija Poček",
+			"professionalTitle": "dr",
+			"position": "Specijalista pedijatar, subspecijalista alergolog",
+			"specialtyIds": [
+				4,
+				30
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "snezana-barjaktarovic-labovic",
+			"nameSr": "Snežana Barjaktarović Labović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista higijene, subspecijalista dijetoterapije",
+			"specialtyIds": [],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "sanja-vujanovic",
+			"nameSr": "Sanja Vujanović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista dermatovenerologije",
+			"specialtyIds": [
+				7
+			],
+			"hasBio": true,
+			"existingInDb": true,
+			"services": [
+				"dermatologist-examination",
+				"benign-skin-lesion-removal-with-electrocautery-1-lesion"
+			]
+		},
+		{
+			"slug": "anita-maric",
+			"nameSr": "Anita Marić",
+			"professionalTitle": null,
+			"position": "Logoped",
+			"specialtyIds": [
+				70
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		}
+	],
+	"excluded": [
+		{
+			"source": "Главная, вкладка «Ultrazvuk»; /nasi-ljekari/ «RADIOLOGIJA — Dr Žanka Cerović, Dr Danijela Latković»",
+			"reason": "Направление: какие именно УЗИ делают (органы), сайт не называет; generic «УЗИ» в каталоге нет. Радиологи привязаны к клинике, услуги не заведены."
+		},
+		{
+			"source": "/nasi-ljekari/: «ALERGOLOGIJA — Dr Lidija Poček»",
+			"reason": "Направление без названной процедуры (ни осмотра, ни кожных проб). Врач привязан, услуга не заведена."
+		},
+		{
+			"source": "/nasi-ljekari/: «PRAVILNA ISHRANA – DIJETOTERAPIJA — Dr sci. med. Snežana Barjaktarović Labović»",
+			"reason": "Направление без названной процедуры. Врач привязан."
+		},
+		{
+			"source": "/nasi-ljekari/: «LOGOPEDIJA — Anita Marić, logoped»",
+			"reason": "Направление без названной процедуры (оценка/терапия не названы). Специалист привязан."
+		},
+		{
+			"source": "/ FAQ: «Preporučuje se 7 redovnih pregleda novorođenčeta do navršene 1 godine života, 2 pregleda tokom druge godine…»",
+			"reason": "Рекомендация, а не отдельная услуга; покрыто pediatric-examination."
+		},
+		{
+			"source": "Статья /en/allergy-to-pollen-pollinosis: «it is necessary to do skin tests and possibly blood analysis»",
+			"reason": "Просветительская статья, не перечень услуг."
+		},
+		{
+			"source": "Главная, «Ljetnje radno vrijeme: Radnim danima 08–13h i 17h–20h, Subotom 08–13h i 16–19h, Nedjeljom 09–12h»",
+			"reason": "Только летнее (сезонное) расписание, страница 2025-01 — в clinic_working_hours не записано, чтобы не показывать летние часы круглый год."
+		},
+		{
+			"source": "Главная, «Partneri i prijatelji»: логотипы Generali и Lovćen osiguranje",
+			"reason": "Партнёрство не расшифровано (полисы/скидки) — не импортировано, только отмечено."
+		},
+		{
+			"source": "Цены",
+			"reason": "Ни одной цены на сайте (0 вхождений €/EUR/cijen) — все услуги NULL."
+		}
+	],
+	"openQuestions": [
+		"Ivan Ivanović — частое имя; привязан к существующей карточке ivan-ivanovic (педиатр, Cetinje) по правилу «то же имя + та же специальность». Если в Vuleković работает другой Ivan Ivanović — развести.",
+		"Snežana Barjaktarović Labović — привязана к карточке snezana-barjaktarovic-labovic (ДЗ Бар, гигиена); на сайте Vuleković — «Dr sci. med., specijalista higijene, subspecijalista dijetoterapije»."
+	],
+	"languagesNote": "Сайт переведён на русский (/ru/: Главная, О нас, Сутоморе, Галерея, Контакты, Новости), но приём на русском прямо не заявлен → languageIds только SR (по заданию координатора)."
+}

@@ -28684,5 +28684,2690 @@
 		"checked": "WP REST (index.php?rest_route=/wp/v2/pages, 7 stranica sa content: Home, O nama, Magnetna rezonanca, Rentgen, Skener, Ultrazvuk, Kontakt; posts — samo 'Hello world'; types — 'project' prazan). Grep po Jarić/Ćosović/Radmili i 'dr ' — nema.",
 		"notes": "Sajt (Divi, decembar 2025, izmjene do 2026-03-09) samo opisuje opremu i 'iskusne radiologe / profesionalan tim' bez imena.",
 		"lastChecked": "2026-10-02"
+	},
+	{
+		"site": "https://moa.clinic/",
+		"clinics": [
+			{
+				"id": 163,
+				"slug": "poliklinika-moa-podgorica",
+				"name": "Poliklinika MOA",
+				"dbDoctors": 10
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://moa.clinic/",
+				"kind": "html",
+				"scope": "блок «Upoznajte naš tim» на главной",
+				"date_hint": null
+			},
+			{
+				"url": "https://moa.clinic/o-nama/",
+				"kind": "html",
+				"scope": "O nama",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [
+			"bilal-albeik",
+			"djordjije-kaludjerovic",
+			"edin-kulovic",
+			"erna-topalovic",
+			"marina-vukovic",
+			"milan-djordjevic",
+			"milic-petar",
+			"natalia-shamenkova",
+			"sanja-vujanovic"
+		],
+		"possibleMatches": [],
+		"dbOnly": [
+			{
+				"slug": "milos-nikolic"
+			}
+		],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт волны 1 2026-10-08: состав взят с сайта целиком",
+		"notes": "Отдельных страниц врачей нет. prof. dr Miloš Nikolić — приглашённый дерматолог (визиты 2026-01/03/10, по постам блога), в составе на главной его нет — dbOnly ожидаем. Другие гостевые врачи из блога не заводились.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.orthoexpert.me/",
+		"clinics": [
+			{
+				"id": 164,
+				"slug": "orthoexpert-physio-podgorica",
+				"name": "OrthoExpert Physio Podgorica",
+				"dbDoctors": 3
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.orthoexpert.me/o-nama/lekari-fizioterapeuti",
+				"kind": "html",
+				"scope": "врачи и физиотерапевты сети; для Подгорицы — 3",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [
+			"jelena-klikovac",
+			"sonja-nejkov",
+			"srdjan-zivanovic"
+		],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт волны 1 2026-10-08: состав взят с сайта целиком",
+		"notes": "Список общий на сеть, у каждого указаны города приёма; к Подгорице относятся 3.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://obradovicmedical.me/",
+		"clinics": [
+			{
+				"id": 165,
+				"slug": "ordinacija-obradovic-medical-podgorica",
+				"name": "Ordinacija Obradović Medical",
+				"dbDoctors": 1
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://obradovicmedical.me/",
+				"kind": "html",
+				"scope": "главная, единственный врач",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [
+			"mladjen-obradovic"
+		],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт волны 1 2026-10-08: состав взят с сайта целиком",
+		"notes": "Ординация одного врача.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.stomatoloskaordinacija.me/",
+		"clinics": [
+			{
+				"id": 166,
+				"slug": "lopicic-stomatoloska-ordinacija-podgorica",
+				"name": "Stomatološka ordinacija Lopičić",
+				"dbDoctors": 3
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.stomatoloskaordinacija.me/o-nama",
+				"kind": "html",
+				"scope": "блок NAŠ TIM: 3 врача + 3 сестры",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [
+			"aleksandar-lopicic",
+			"amra-amidovic-hamzic",
+			"andjela-djurisic"
+		],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт волны 1 2026-10-08: состав взят с сайта целиком",
+		"notes": "Фото врачей на сайте битые (URL с диакритикой отдаёт HTML) — photo_url NULL.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dentart.me/",
+		"clinics": [
+			{
+				"id": 167,
+				"slug": "dentart-tivat",
+				"name": "Stomatološka ordinacija DentArt",
+				"dbDoctors": 2
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://dentart.me/o-nama/",
+				"kind": "html",
+				"scope": "O nama: 2 врача + медсестра",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [
+			"sandra-stanisic",
+			"zorica-popovic"
+		],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт волны 1 2026-10-08: состав взят с сайта целиком",
+		"notes": "",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.primadent.me/",
+		"clinics": [
+			{
+				"id": 168,
+				"slug": "prima-dent-stomatoloska-ordinacija-podgorica",
+				"name": "Stomatološka ordinacija Prima Dent",
+				"dbDoctors": 1
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.primadent.me/",
+				"kind": "html",
+				"scope": "главная, единственный врач",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [
+			"masan-sljivancanin"
+		],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт волны 1 2026-10-08: состав взят с сайта целиком",
+		"notes": "Ординация одного врача, специальность на сайте не указана.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://poliklinikastojanovic.me/",
+		"clinics": [
+			{
+				"id": 169,
+				"slug": "poliklinika-stojanovic-medical-berane",
+				"name": "Poliklinika Stojanović Medical",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: на сайте нет списка врачей",
+		"notes": "Блок «Naše osoblje» — заглушки «Dr. Ime i Prezime». Гостевые врачи из новостей (Štilet, Milošević) не заводились.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://feniks-medika.me/",
+		"clinics": [
+			{
+				"id": 170,
+				"slug": "poliklinika-feniks-medika-podgorica",
+				"name": "Poliklinika Feniks Medika",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: на сайте нет списка врачей",
+		"notes": "Имён врачей нет ни на 9 страницах сайта, ни в DOCX (специальности указаны).",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.cirkondentallab.com/",
+		"clinics": [
+			{
+				"id": 171,
+				"slug": "cirkon-dental-lab-podgorica",
+				"name": "Cirkon Dental Lab",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: на сайте нет списка врачей",
+		"notes": "Врачей сайт не перечисляет: в /o-nama только «Elvir Šuntić — direktor» без специальности.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://domzdravljaulcinj.me/",
+		"clinics": [
+			{
+				"id": 172,
+				"slug": "dom-zdravlja-ulcinj",
+				"name": "Dom zdravlja Ulcinj",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://domzdravljaulcinj.me/izabrani-doktori-za-odrasle/",
+				"kind": "html",
+				"scope": "izabrani doktori za odrasle",
+				"date_hint": null
+			},
+			{
+				"url": "https://domzdravljaulcinj.me/izabrani-doktori-za-djecu/",
+				"kind": "html",
+				"scope": "izabrani doktori za djecu",
+				"date_hint": null
+			},
+			{
+				"url": "https://domzdravljaulcinj.me/izabrani-doktori-za-zene/",
+				"kind": "html",
+				"scope": "izabrani doktori za žene",
+				"date_hint": null
+			},
+			{
+				"url": "https://domzdravljaulcinj.me/wp-content/uploads/2026/10/Opsta-medicina-Raspored-rada-05.10.2026-11.10.2026.pdf",
+				"kind": "html",
+				"scope": "еженедельный график общей медицины — новый PDF каждую неделю",
+				"date_hint": null
+			},
+			{
+				"url": "https://domzdravljaulcinj.me/wp-content/uploads/2025/10/RASPORED-RADA-SPECIALISTA.pdf",
+				"kind": "html",
+				"scope": "график специалистов",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Состав сверен по еженедельным графикам 28.09 и 05.10.2026. Специализанты, медсёстры, психолог, логопед не заводились. Прод-id врачей не выписаны (см. запись импорта).",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://domzdravljaniksic.me/",
+		"clinics": [
+			{
+				"id": 173,
+				"slug": "dom-zdravlja-niksic",
+				"name": "Dom zdravlja Nikšić",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://domzdravljaniksic.me/izabrani-doktor/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://domzdravljaniksic.me/izabrani-doktor-za-djecu/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://domzdravljaniksic.me/izabrani-doktor-za-zene/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://domzdravljaniksic.me/centri-za-podrsku/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://domzdravljaniksic.me/sluzba-medicine-rada-i-sporta-zu-dom-zdravlja-niksic/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.dzcetinje.me/index.php/srp/",
+		"clinics": [
+			{
+				"id": 174,
+				"slug": "dom-zdravlja-cetinje",
+				"name": "Dom zdravlja Cetinje",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.dzcetinje.me/index.php/srp/organizacija/timovi-izabranih-doktora",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://www.dzcetinje.me/index.php/srp/organizacija/ostale-jedinice",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://domzdravljaberane.me/",
+		"clinics": [
+			{
+				"id": 175,
+				"slug": "dom-zdravlja-berane",
+				"name": "Dom zdravlja Berane",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://domzdravljaberane.me/index.php/brojevi-telefona-u-ordinacijama",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://domzdravljaberane.me/index.php/ljekarska-uvjerenja",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dzrozaje.me/",
+		"clinics": [
+			{
+				"id": 176,
+				"slug": "dom-zdravlja-rozaje",
+				"name": "Dom zdravlja Rožaje",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://dzrozaje.me/organizacione-jedinice/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://dzrozaje.me/specijalisticke-ambulante/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://davincipoliklinika.me/tim-davinci/",
+		"clinics": [
+			{
+				"id": 177,
+				"slug": "poliklinika-da-vinci-podgorica",
+				"name": "Poliklinika Da Vinci",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://davincipoliklinika.me/tim-davinci/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://akmedica.me/",
+		"clinics": [
+			{
+				"id": 178,
+				"slug": "poliklinika-ak-medica-bijelo-polje",
+				"name": "Poliklinika AK Medica",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://akmedica.me/nas-tim/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "http://www.melasana.me/",
+		"clinics": [
+			{
+				"id": 179,
+				"slug": "poliklinika-mela-sana-podgorica",
+				"name": "Poliklinika Mela Sana",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "http://www.melasana.me/all-doctors.html",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://internosmedical.me/",
+		"clinics": [
+			{
+				"id": 180,
+				"slug": "internos-medical-podgorica",
+				"name": "Internos Medical",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://internosmedical.me/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://internosmedical.me/team-member/dr-vladimir-brajovic/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://internosmedical.me/team-member/dr-mira-obradovic/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://internosmedical.me/team-member/dr-sergej-kolosov/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.micunovicmedical.me/",
+		"clinics": [
+			{
+				"id": 181,
+				"slug": "micunovic-medical-podgorica",
+				"name": "Mićunović Medical",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.micunovicmedical.me/nas-tim/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://mojdoktor.co.me/",
+		"clinics": [
+			{
+				"id": 182,
+				"slug": "moj-doktor-niksic",
+				"name": "PZU Moj Doktor",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://mojdoktor.co.me/onama/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://mojdoktor.co.me/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			},
+			{
+				"url": "https://mojdoktor.co.me/pedijatar/",
+				"kind": "html",
+				"scope": "состав врачей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.vdental.me/",
+		"clinics": [
+			{
+				"id": 183,
+				"slug": "v-dental-centar-podgorica",
+				"name": "V Dental Centar Podgorica",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.vdental.me/doktori",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.vdental.me/",
+		"clinics": [
+			{
+				"id": 184,
+				"slug": "v-dental-centar-budva",
+				"name": "V Dental Centar Budva",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.vdental.me/doktori",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://drfaticmedical.com/",
+		"clinics": [
+			{
+				"id": 185,
+				"slug": "poliklinika-dr-fatic-medical-podgorica",
+				"name": "Poliklinika Dr Fatić Medical",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://drfaticmedical.com/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			},
+			{
+				"url": "https://drfaticmedical.com/urologija/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://vulekovic.me/",
+		"clinics": [
+			{
+				"id": 186,
+				"slug": "pedijatrijska-ordinacija-vulekovic-podgorica",
+				"name": "Pedijatrijska ordinacija Vuleković",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://vulekovic.me/nasi-ljekari/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://drvuksanovic.me/",
+		"clinics": [
+			{
+				"id": 187,
+				"slug": "poliklinika-dr-vuksanovic-bar",
+				"name": "Poliklinika Dr Vuksanović Bar",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://drvuksanovic.me/wp-content/uploads/dokumenti/Raspored-zdravstvenih-radnika.pdf",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.fiziopg.me/",
+		"clinics": [
+			{
+				"id": 188,
+				"slug": "fizio-pg-podgorica",
+				"name": "Fizio PG",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.fiziopg.me/api.php?action=load",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://fiziocentar.me/",
+		"clinics": [
+			{
+				"id": 189,
+				"slug": "fizio-centar-niksic",
+				"name": "Fizio Centar Nikšić",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://fiziocentar.me/o-nama/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			},
+			{
+				"url": "https://fiziocentar.me/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.fizioaxon.com/",
+		"clinics": [
+			{
+				"id": 190,
+				"slug": "axon-fizikalna-terapija-podgorica",
+				"name": "AXON fizikalna terapija",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.fizioaxon.com/o-nama.html",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dentalprotection.me/",
+		"clinics": [
+			{
+				"id": 191,
+				"slug": "dental-protection-podgorica",
+				"name": "Dental Protection",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://dentalprotection.me/our-clinic/team/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.djurkovicdent.me/",
+		"clinics": [
+			{
+				"id": 192,
+				"slug": "dentix-djurkovic-niksic",
+				"name": "Dentix Nikšić",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.djurkovicdent.me/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			},
+			{
+				"url": "https://www.djurkovicdent.me/about.html",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.djurkovicdent.me/",
+		"clinics": [
+			{
+				"id": 193,
+				"slug": "dentix-djurkovic-podgorica",
+				"name": "Dentix Podgorica",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.djurkovicdent.me/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			},
+			{
+				"url": "https://www.djurkovicdent.me/about.html",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dentalclinicvukotic.com/",
+		"clinics": [
+			{
+				"id": 194,
+				"slug": "stomatoloska-poliklinika-vukotic-podgorica",
+				"name": "Stomatološka poliklinika Vukotić Podgorica",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://dentalclinicvukotic.com/tim/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dentalclinicvukotic.com/",
+		"clinics": [
+			{
+				"id": 195,
+				"slug": "stomatoloska-poliklinika-vukotic-herceg-novi",
+				"name": "Stomatološka poliklinika Vukotić Igalo",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://dentalclinicvukotic.com/tim/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.dentalmontenegro.com/me",
+		"clinics": [
+			{
+				"id": 196,
+				"slug": "dental-montenegro-budva",
+				"name": "Dental Montenegro",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.dentalmontenegro.com/me/o-nama",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://anamedica.me/",
+		"clinics": [
+			{
+				"id": 197,
+				"slug": "ana-medica-podgorica",
+				"name": "Ana Medica",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://anamedica.me/",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://mercurnera.me/",
+		"clinics": [
+			{
+				"id": 198,
+				"slug": "poliklinika-mercur-nera-podgorica",
+				"name": "Poliklinika Mercur Nera",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://mercurnera.me/index.php?option=com_content&view=article&id=73&Itemid=491",
+				"kind": "html",
+				"scope": "состав",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Прод-id врачей не выписаны — см. запись импорта.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://vulekovic.me/",
+		"clinics": [
+			{
+				"id": 199,
+				"slug": "pedijatrijska-ordinacija-vulekovic-sutomore",
+				"name": "Pedijatrijska ordinacija Vuleković Sutomore",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://vulekovic.me/nasi-ljekari/",
+				"kind": "html",
+				"scope": "общий состав сети",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: состав взят с сайта целиком",
+		"notes": "Сайт не делит врачей по ординациям, кроме двух явно подгоричских.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://drvuksanovic.me/",
+		"clinics": [
+			{
+				"id": 200,
+				"slug": "poliklinika-dr-vuksanovic-ulcinj",
+				"name": "Poliklinika Dr Vuksanović Ulcinj",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-08: на сайте нет списка врачей",
+		"notes": "PDF состава не делит врачей по городам — врачи привязаны только к Бару.",
+		"synced": "2026-10-08",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.dentalux.me/",
+		"clinics": [
+			{
+				"id": 201,
+				"slug": "dentalux-tivat",
+				"name": "Stomatološka ordinacija Dentalux",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.dentalux.me/me/naš-tim/",
+				"kind": "html",
+				"scope": "3 врача, личные страницы с биографиями",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Сайт © 2019, фото врачей 2020 — состав мог устареть.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "http://www.drsevaljevic.me/",
+		"clinics": [
+			{
+				"id": 202,
+				"slug": "dr-sevaljevic-tivat",
+				"name": "Stomatološka ordinacija dr Ševaljević",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "http://www.drsevaljevic.me/",
+				"kind": "html",
+				"scope": "раздел «Tim» на главной: 3 стоматолога; консультанты без имён",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Сайт ~2015 — состав мог устареть.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://dent-es.me/",
+		"clinics": [
+			{
+				"id": 203,
+				"slug": "dent-es-podgorica",
+				"name": "Stomatološka ordinacija Dent-ES",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://dent-es.me/strucni-tim/",
+				"kind": "html",
+				"scope": "3 врача + сестра",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Страница услуг 2017 — состав мог устареть.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://ortholine.me/",
+		"clinics": [
+			{
+				"id": 204,
+				"slug": "ortholine-podgorica",
+				"name": "Stomatološka ordinacija Ortholine",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://ortholine.me/o-nama",
+				"kind": "html",
+				"scope": "3 врача + 2 медсестры",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Страницы 2020 — состав мог устареть.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.tafica.com/",
+		"clinics": [
+			{
+				"id": 209,
+				"slug": "tafica-dental-clinic-ulcinj",
+				"name": "Tafica Dental & Dermatology Clinic",
+				"dbDoctors": 4
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.tafica.com/",
+				"kind": "html",
+				"scope": "заглушка: 4 «Dr.» с телефонами, без специальностей",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Специальности выведены по косвенным признакам (email dentalclinic@/dermatologyclinic@), врачи заводятся повторным прогоном основного SQL — см. APPLY-2026-10-09.md.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://kmed.me/",
+		"clinics": [
+			{
+				"id": 205,
+				"slug": "k-med-ambulanta-bar",
+				"name": "K-med Ambulanta Bar",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://kmed.me/",
+				"kind": "html",
+				"scope": "блок команды на главной: 3 врача, 2 сестры, техник; по точкам не разделены",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Команда общая на все точки сети.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://kmed.me/",
+		"clinics": [
+			{
+				"id": 206,
+				"slug": "k-med-ambulanta-stoj-ulcinj",
+				"name": "K-med Ambulanta Štoj",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://kmed.me/",
+				"kind": "html",
+				"scope": "блок команды на главной: команда общая на все точки",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Команда общая на все точки сети.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://physiocareteam.me/",
+		"clinics": [
+			{
+				"id": 207,
+				"slug": "physiocare-team-podgorica",
+				"name": "PhysioCare Team",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://physiocareteam.me/",
+				"kind": "html",
+				"scope": "3 физиотерапевта, личные страницы /tamara-mijanovic, /iva-tomkovic, /mitar-adrovic",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Физиотерапевты, не врачи.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://vrmacwellbeing.com/",
+		"clinics": [
+			{
+				"id": 208,
+				"slug": "vrmac-health-wellbeing-retreat-kotor",
+				"name": "VRMAC Health & Wellbeing Retreat de'MAR",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://vrmacwellbeing.com/about-us/",
+				"kind": "html",
+				"scope": "head doctor + 3 физиотерапевта + wellness/spa (не заводятся)",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Marina Delić уже была в БД (marina-delic).",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://dentalstudioglusica.me/",
+		"clinics": [
+			{
+				"id": 210,
+				"slug": "dental-studio-przno-budva",
+				"name": "Dental Studio Pržno",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://dentalstudioglusica.me/o-nama/",
+				"kind": "html",
+				"scope": "2 стоматолога + сестра",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "В отзывах Google упоминается стоматолог «Виталий из Украины» — на сайте его нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.dentalsmiletivat.com/",
+		"clinics": [
+			{
+				"id": 211,
+				"slug": "dental-smile-tivat",
+				"name": "Dental Smile",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.dentalsmiletivat.com/o_nama",
+				"kind": "html",
+				"scope": "2 врача + сестра + менеджер",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "В отзывах 2024–2025 упоминается «dr Katarina» — на сайте её нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://mitranicdental.com/",
+		"clinics": [
+			{
+				"id": 212,
+				"slug": "stomatoloska-ordinacija-mitranic-bar",
+				"name": "Opšta stomatološka ordinacija Mitranić",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://mitranicdental.com/o-nama/",
+				"kind": "html",
+				"scope": "2 стоматолога + сестра",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Страницы услуг 2016–2018. Ортодонты Stojković (Белград) — партнёры 2018, не заведены.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://vivadent.me/",
+		"clinics": [
+			{
+				"id": 213,
+				"slug": "stomatoloska-ordinacija-vivadent-podgorica",
+				"name": "Stomatološka ordinacija Vivadent",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://vivadent.me/o-nama/",
+				"kind": "html",
+				"scope": "2 врача",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Фото Stefan Lekić на /mediji/ — 404.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.montenegrodentalcare.com/",
+		"clinics": [
+			{
+				"id": 214,
+				"slug": "ordinacija-dr-jankovic-podgorica",
+				"name": "Stomatološka ordinacija Dr Janković",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.montenegrodentalcare.com/",
+				"kind": "html",
+				"scope": "блок «Naš tim»: 2 стоматолога + сестра",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Petar Janković — специализант протетики, специальность не ставилась.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://kiropraktika.me/",
+		"clinics": [
+			{
+				"id": 215,
+				"slug": "dr-radunovic-kiropraktika-podgorica",
+				"name": "Dr Radunović – Chiropractic & Physical Therapy",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://kiropraktika.me/o-nama",
+				"kind": "html",
+				"scope": "хиропрактик + спортивный физиотерапевт",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Оба заведены со специальностью 94, как другие хиропрактики в БД.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://seastarscentar.me/",
+		"clinics": [
+			{
+				"id": 216,
+				"slug": "seastars-herceg-novi",
+				"name": "SeaStars edukativni centar",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://seastarscentar.me/o-centru",
+				"kind": "html",
+				"scope": "2 детских физиотерапевта",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Адрес — из Google; блок контактов сайта шаблонный.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://fiziotim.me/",
+		"clinics": [
+			{
+				"id": 217,
+				"slug": "fizio-tim-podgorica",
+				"name": "Fizio Tim Crna Gora",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://fiziotim.me/nas-tim/",
+				"kind": "html",
+				"scope": "2 физиотерапевта (оба также в КЦЦГ)",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Физиотерапевты, не врачи.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://ginekologijakotor.com/",
+		"clinics": [
+			{
+				"id": 218,
+				"slug": "ginekoloska-ordinacija-vita-feminae-kotor",
+				"name": "Ginekološka ordinacija Vita Feminae",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://ginekologijakotor.com/",
+				"kind": "html",
+				"scope": "2 гинеколога (один гостевой) + сестра-бабица",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Antonia Mihaljević уже была в БД без клиники — привязана.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.filia.co.me/",
+		"clinics": [
+			{
+				"id": 219,
+				"slug": "ginekolosko-akuserska-ordinacija-filia-tivat",
+				"name": "Ginekološko akušerska ordinacija Filia",
+				"dbDoctors": 0
+			}
+		],
+		"status": "partial_team",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://filia.co.me/o-nama/",
+				"kind": "html",
+				"scope": "2 гинеколога в тексте; /our-team-member/ — демо шаблона",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Julija Samardžić также в ДЗ Тиват. Консультанты без имён.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.kavaricmedical.me/",
+		"clinics": [
+			{
+				"id": 220,
+				"slug": "kavaric-medical-podgorica",
+				"name": "Kavarić Medical",
+				"dbDoctors": 0
+			}
+		],
+		"status": "partial_team",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.kavaricmedical.me/",
+				"kind": "html",
+				"scope": "уролог + гинеколог на главной",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Petar Kavarić уже был в БД (Novi Cenex) — привязан.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://drkoturovic.me/",
+		"clinics": [
+			{
+				"id": 221,
+				"slug": "ocna-bolnica-oftalens-dr-koturovic-podgorica",
+				"name": "Očna bolnica Oftalens Dr Koturović",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://drkoturovic.me/onama.html",
+				"kind": "html",
+				"scope": "2 офтальмолога",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Haris Kujundžić также в КЦЦГ.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://patlab.me/",
+		"clinics": [
+			{
+				"id": 222,
+				"slug": "pat-lab-podgorica",
+				"name": "Pat Lab",
+				"dbDoctors": 0
+			}
+		],
+		"status": "partial_team",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://patlab.me/",
+				"kind": "html",
+				"scope": "2 психиатра; патологи не названы",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Оба психиатра уже были в БД (КЦЦГ, Mela Sana) — привязаны.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://stefanijadental.me/",
+		"clinics": [
+			{
+				"id": 223,
+				"slug": "stefanija-dental-podgorica",
+				"name": "Stomatološka ordinacija Stefanija Dental",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://stefanijadental.me/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://polident.me/",
+		"clinics": [
+			{
+				"id": 224,
+				"slug": "polident-bijela",
+				"name": "Stomatološka ordinacija Polident",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://polident.me/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.drkekovic.com/dental-implant-centar.html",
+		"clinics": [
+			{
+				"id": 225,
+				"slug": "dental-implant-centar-podgorica",
+				"name": "Dental Implant Centar",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.drkekovic.com/dental-implant-centar.html",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://drnumanovic.me/",
+		"clinics": [
+			{
+				"id": 226,
+				"slug": "numanovic-dental-aesthetic-podgorica",
+				"name": "Numanović Dental & Aesthetic",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://drnumanovic.me/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.omnidental.me/",
+		"clinics": [
+			{
+				"id": 227,
+				"slug": "omnidental-bar",
+				"name": "Stomatološka ordinacija Omnidental",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.dentalesteticcentar.com/",
+		"clinics": [
+			{
+				"id": 228,
+				"slug": "dental-estetic-centar-podgorica",
+				"name": "Dental & Estetic Centar",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.ital-dent.com/",
+		"clinics": [
+			{
+				"id": 229,
+				"slug": "ital-dent-podgorica",
+				"name": "Ital-Dent",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://ordinacijadjurovic.me/",
+		"clinics": [
+			{
+				"id": 230,
+				"slug": "stomatoloska-ordinacija-djurovic-kolasin",
+				"name": "Stomatološka ordinacija Đurović",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://ordinacijadjurovic.me/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://imcfizio.me/",
+		"clinics": [
+			{
+				"id": 231,
+				"slug": "imc-fizio-podgorica",
+				"name": "IMC Fizio",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://imcfizio.me/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://pollexphysio.com/",
+		"clinics": [
+			{
+				"id": 232,
+				"slug": "pollex-physio-podgorica",
+				"name": "Pollex Physio",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.oss-physio.com/",
+		"clinics": [
+			{
+				"id": 233,
+				"slug": "ossphysio-bar",
+				"name": "OssPhysio",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://medcontour.me/",
+		"clinics": [
+			{
+				"id": 234,
+				"slug": "medcontour-institute-budva",
+				"name": "Medcontour Institute",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://fontiscg.com/",
+		"clinics": [
+			{
+				"id": 235,
+				"slug": "ordinacija-fontis-podgorica",
+				"name": "Ordinacija Fontis",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://fontiscg.com/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://drtodorovic.com/me/",
+		"clinics": [
+			{
+				"id": 236,
+				"slug": "todorovic-ophthalmology-aesthetics-kotor",
+				"name": "Todorović Ophthalmology & Aesthetics",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://drtodorovic.com/me/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.ultrazvuk.me/",
+		"clinics": [
+			{
+				"id": 237,
+				"slug": "diagnost-budva",
+				"name": "Diagnost — ordinacija za ultrazvučnu dijagnostiku",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.ultrazvuk.me/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.drabramovic.com/",
+		"clinics": [
+			{
+				"id": 238,
+				"slug": "dr-abramovic-a-medical-bar",
+				"name": "Dr Abramović — A Medical",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.drabramovic.com/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.drrahovic.com/",
+		"clinics": [
+			{
+				"id": 239,
+				"slug": "ordinacija-dr-rahovic-bijelo-polje",
+				"name": "Ordinacija za ultrazvučnu dijagnostiku dr Rahović",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://sanicard.me/",
+		"clinics": [
+			{
+				"id": 240,
+				"slug": "sanicard-podgorica",
+				"name": "Sanicard",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://sanicard.me/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "http://www.dermatolog-kaludjer.org/",
+		"clinics": [
+			{
+				"id": 241,
+				"slug": "ordinacija-dr-kaludjerovic-podgorica",
+				"name": "Ordinacija dr Kaluđerović",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "http://www.dermatolog-kaludjer.org/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.novamedicinarada.com/podgorica",
+		"clinics": [
+			{
+				"id": 242,
+				"slug": "nova-medicina-rada-podgorica",
+				"name": "Nova Medicina Rada Podgorica",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.novamedicinarada.com/niksic",
+		"clinics": [
+			{
+				"id": 243,
+				"slug": "nova-medicina-rada-niksic",
+				"name": "Nova Medicina Rada Nikšić",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://integracentar.me/",
+		"clinics": [
+			{
+				"id": 244,
+				"slug": "razvojni-centar-integra-podgorica",
+				"name": "Razvojni centar Integra",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://integracentar.me/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 3",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.doctorzobin.com/",
+		"clinics": [
+			{
+				"id": 245,
+				"slug": "medicinski-centar-dr-zobin-kotor",
+				"name": "Medicinski centar dr Zobin",
+				"dbDoctors": 0
+			}
+		],
+		"status": "team_page",
+		"coverage": "full",
+		"teamSources": [
+			{
+				"url": "https://www.doctorzobin.com/",
+				"kind": "html",
+				"scope": "состав с сайта, врачей у нас 1",
+				"date_hint": null
+			}
+		],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": true,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: состав взят с сайта целиком",
+		"notes": "Импорт 2e 2026-10-09.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://monterehab.com/",
+		"clinics": [
+			{
+				"id": 246,
+				"slug": "monterehab-budva",
+				"name": "MonteRehab",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.ijzcg.me/",
+		"clinics": [
+			{
+				"id": 247,
+				"slug": "institut-za-javno-zdravlje-crne-gore-podgorica",
+				"name": "Institut za javno zdravlje Crne Gore",
+				"dbDoctors": 0
+			}
+		],
+		"status": "no_team_list",
+		"coverage": "none",
+		"teamSources": [],
+		"siteDoctors": [],
+		"matched": [],
+		"possibleMatches": [],
+		"dbOnly": [],
+		"dbOnlyIsEvidence": false,
+		"siteOnly": [],
+		"checked": "импорт 2026-10-09: на сайте нет списка врачей",
+		"notes": "Имён врачей на сайте нет.",
+		"synced": "2026-10-09",
+		"lastChecked": "2026-10-09"
 	}
 ]

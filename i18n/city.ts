@@ -86,7 +86,7 @@ export default {
 			[`city_${CityId.PLJEVLJA}`]: 'Плевля',
 			[`city_${CityId.PLJEVLJA}_genitive`]: 'Плевле',
 			[`city_${CityId.ROZAJE}`]: 'Рожае',
-			[`city_${CityId.ROZAJE}_genitive`]: 'Рожаје',
+			[`city_${CityId.ROZAJE}_genitive`]: 'Рожае',
 		},
 		'sr': {
 			City: 'Grad',

@@ -1,0 +1,336 @@
+{
+	"schemaVersion": 1,
+	"slug": "dr-sevaljevic-tivat",
+	"name": "Stomatološka ordinacija Dr Ševaljević",
+	"city": "Tivat",
+	"cityId": 4,
+	"googlePlaceId": "ChIJ0yC6VJwxTBMRLu4wgJzWJCU",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dr-sevaljevic-tivat.sql",
+		"server/sql/insert-clinic-dr-sevaljevic-tivat-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 202,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент S. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. ⚠️ Сайт ~2015 — состав мог устареть. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 229
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.drsevaljevic.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Одностраничник (me), блоки O nama / Naš tim / Naše usluge (вкладки) / Kontakt. Английская версия — http://www.drsevaljevic.com/ (тот же состав, не использовалась). ⚠️ Last-Modified фото врачей 2015-07-08, логотипа 2015-12-05, в шапке ссылки на Google+ и Twitter — сайт ~2015, состав мог устареть. Цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/tivat/stomatoloska-ordinacija-dr-sevaljevic-dentist-dr-sevaljevic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatološka ordinacija ,,dr Ševaljević'' / Dentist \"dr Sevaljevic\"», «1 A Njegoševa, Tivat 85320», +382 69 088 810, 20 отзывов (rating 4.6) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Njegoševa 1A (сайт) = Google «1 A Njegoševa»; координаты — место Google",
+		"phone": "+38232671977 (fiksni) + мобильные трёх врачей; +382 69 088 810 (dr Marina) = Google",
+		"email": "kontakt@drsevaljevic.me — сайт",
+		"website": "https://www.drsevaljevic.me/ (http и https отвечают; англ. версия drsevaljevic.com)",
+		"social": "facebook.com/drsevaljevic (Twitter, Google+ — полей нет / мёртв)",
+		"logo": "https://www.drsevaljevic.me/img/logo-dr-sevaljevic.png",
+		"workingHours": "пн–пт 08–13 и 16–20, сб 08–11, вс закрыто — сайт",
+		"doctors": "3 стоматолога на сайте, все новые; «Konsultanti: Oralni Hirurg i Ortodont» без имён — не заводились",
+		"doctorPhotos": "у всех 3 — /img/team/dr-*.jpg",
+		"doctorBios": "у всех 3 — по 3 факта с сайта (диплом, практика, год прихода)",
+		"doctorPhones": "мобильные врачей с сайта — в doctors.phone и в телефонах клиники",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Dental Consultation",
+			"slug": "dental-consultation",
+			"source": "Pregled i dijagnostika: «Radi spriječavanja svih bolesti zuba i usne šupljine preporučuje se pregled i cišćenje kamenca najmanje dva puta godišnje»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "Endodoncija: «liječenje korjenskih kanala zuba … dijeli na dvije oblasti liječenja zubnih kanala (pulpi)» — число каналов не названо, как у Mušura"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "там же"
+		},
+		{
+			"nameEn": "Root Canal Retreatment",
+			"slug": "root-canal-retreatment",
+			"source": "«… i revizije punjenja kanala»"
+		},
+		{
+			"nameEn": "Dental Fissure Sealant",
+			"slug": "dental-fissure-sealant",
+			"source": "Dječja stomatologija: «Zalivanje fisura»"
+		},
+		{
+			"nameEn": "Pediatric Caries Treatment",
+			"slug": "pediatric-caries-treatment",
+			"source": "«Plombe na mliječnim i trajnim zubima kod djece»"
+		},
+		{
+			"nameEn": "Primary Tooth Pulp Treatment",
+			"slug": "primary-tooth-pulp-treatment",
+			"source": "«Endodontsko liječenje mliječnih zubi»"
+		},
+		{
+			"nameEn": "Primary Tooth Extraction",
+			"slug": "primary-tooth-extraction",
+			"source": "«Vađenje mliječnih zubi»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "Ortopedija vilica: «Ploče sa šrafom i pokretnim aparatima»"
+		},
+		{
+			"nameEn": "Orthodontic Functional Monoblock Appliance",
+			"slug": "orthodontic-functional-monoblock-appliance",
+			"source": "«Bimaksilarni blok- monoblok»"
+		},
+		{
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"source": "«Samoligirajući fiksni aparat» — материал брекетов не назван, а self-ligating в каталоге только с материалом (metal/ceramic) → generic fixed, см. openQuestions"
+		},
+		{
+			"nameEn": "Retention Aligner Fabrication",
+			"slug": "retention-aligner-fabrication",
+			"source": "«Retenciona folija» (дословный синоним записи)"
+		},
+		{
+			"nameEn": "Heavy Dental Scaling and Polishing",
+			"slug": "heavy-dental-scaling-and-polishing",
+			"source": "Parodontologija: «Ultrazvučno čišćenje zubnog kamenca i poliranje zuba»"
+		},
+		{
+			"nameEn": "Soft Dental Deposit Removal",
+			"slug": "soft-dental-deposit-removal",
+			"source": "«Čišćenje zubnih naslaga»"
+		},
+		{
+			"nameEn": "Periodontal Scaling and Root Planing",
+			"slug": "periodontal-scaling-root-planing",
+			"source": "«Liječenje parodonta (kiretaža zuba)» (у записи синоним «Zatvorena kiretaža parodontalnih džepova»)"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "Zubna protetika: «Krunice i mostovi: Metal- Keramika»"
+		},
+		{
+			"nameEn": "Metal-Ceramic Bridge Pontic",
+			"slug": "metal-ceramic-bridge-pontic",
+			"source": "там же (мосты металлокерамика → член моста, как в прежних импортах)"
+		},
+		{
+			"nameEn": "CAD/CAM E-max Layered Crown",
+			"slug": "cadcam-e-max-layered-crown",
+			"source": "«Bezmetalna keramika (e.max, cirkon)» — e.max в каталоге только эта запись (синоним «Emax krunica»); CAD/CAM и облицовка сайтом не названы"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "«Bezmetalna keramika (e.max, cirkon)»"
+		},
+		{
+			"nameEn": "Ceramic Dental Bridge",
+			"slug": "ceramic-dental-bridge",
+			"source": "«Krunice i mostovi: … Bezmetalna keramika»"
+		},
+		{
+			"nameEn": "Skeletal Partial Denture",
+			"slug": "skeletal-partial-denture",
+			"source": "«Zubne proteze: Skeletirane (parcijalne)»"
+		},
+		{
+			"nameEn": "Complete Denture",
+			"slug": "complete-denture",
+			"source": "«Zubne proteze: … Totalne» — материал не назван"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "«Keramičke (porcelanske) fasete»"
+		},
+		{
+			"nameEn": "Partial Denture with Precision Attachment",
+			"slug": "partial-denture-with-precision-attachment",
+			"source": "«Kombinovani protetski radovi (fiksno-mobilni+ atečmeni)»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "Implanti: «Ugradnjom implanta u kost zamjenjuje se korijen zuba» — бренд не назван"
+		},
+		{
+			"nameEn": "Implant Crown Metal Ceramic",
+			"slug": "implant-crown-metal-ceramic",
+			"source": "«… stavlja se nosač krunice (abatment) koja može biti metalno-keramička …»"
+		},
+		{
+			"nameEn": "Metal-Free Implant Crown with Original Abutment",
+			"slug": "metal-free-implant-crown-with-original-abutment",
+			"source": "«… ili bezmetalna keramička krunica (cirkon)» (как у Mušura)"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "Kozmetički radovi: «Bijeljenje zuba» — способ не назван"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "Oralna hirurgija: «Vađenje zuba»"
+		},
+		{
+			"nameEn": "Surgical Tooth Extraction",
+			"slug": "surgical-tooth-extraction",
+			"source": "«Alveotomija ili hirurško uklanjanje … zuba … iz kosti (najčešće umnjaka)»"
+		},
+		{
+			"nameEn": "Impacted Tooth Extraction",
+			"slug": "impacted-tooth-extraction",
+			"source": "«… hirurško uklanjanje impaktiranih ili retiniranih zuba»"
+		},
+		{
+			"nameEn": "Surgical Extraction of Residual Root",
+			"slug": "surgical-extraction-of-residual-root",
+			"source": "«… dijelova zuba ili korijena iz kosti»"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "«Apikotomija – hirurški zahvat kojim se odstranjuje vrh korijena zuba uz hronični upalni proces»"
+		},
+		{
+			"nameEn": "Frenectomy",
+			"slug": "frenectomy",
+			"source": "«Frenulektomija – hirurško odstranjivanje abnormalno razvijenog frenuluma»"
+		},
+		{
+			"nameEn": "Bone Augmentation",
+			"slug": "bone-augmentation",
+			"source": "«Augmentacija – hirurški postupak dodavanja vjestacke kosti … radi ugradnje implanta»"
+		},
+		{
+			"nameEn": "Dental Sinus Lift",
+			"slug": "dental-sinus-lift",
+			"source": "«Sinus lifting – hirurški zahvat kojim se podiže dno sinusa … za ugradnju implanta»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "marina-sevaljevic",
+			"nameSr": "Marina Ševaljević",
+			"professionalTitle": "dr",
+			"position": "Stomatolog; osnivač ordinacije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://www.drsevaljevic.me/img/team/dr-marina-sevaljevic.jpg",
+			"services": []
+		},
+		{
+			"slug": "jovan-sevaljevic",
+			"nameSr": "Jovan Ševaljević",
+			"professionalTitle": "dr",
+			"position": "Stomatolog; osnivač ordinacije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://www.drsevaljevic.me/img/team/dr-jovan-sevaljevic.jpg",
+			"services": []
+		},
+		{
+			"slug": "branko-sevaljevic",
+			"nameSr": "Branko Ševaljević",
+			"professionalTitle": "dr",
+			"position": "Stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://www.drsevaljevic.me/img/team/dr-branko-sevaljevic.jpg",
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Dječja stomatologija: «Prevencija zubnog karijesa kod djece»",
+			"reason": "Заголовок направления без конкретной процедуры (конкретные — zalivanje fisura, plombe, endo, vađenje — заведены)."
+		},
+		{
+			"source": "Zubna protetika / Implanti: «Implantati su načinjeni od veoma kvalitetnog i provjerenog materijala»",
+			"reason": "Описание, бренд имплантов не назван — dental-implant-placement."
+		},
+		{
+			"source": "Tim: «Konsultanti — Oralni Hirurg i Ortodont»; O nama: «timom stručnjaka … (oralni hirurg, ortodont, protetičari, itd.)»",
+			"reason": "Без имён — врачей не заводили (решение координатора)."
+		},
+		{
+			"source": "Галерея: «zoom-reklama-ordinacije-dr-sevaljevic.jpg»",
+			"reason": "Только имя файла картинки, в тексте Zoom не назван — способ отбеливания не указываем."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Сайт ~2015, состав мог устареть",
+			"detail": "Фото и логотип 2015 года, Google+ в шапке. Branko Ševaljević «počeo sa radom 2015» — свежее данных нет."
+		}
+	],
+	"resolved": [
+		{
+			"source": "Kozmetički radovi: «Bijeljenje zuba», «Cirkoni»",
+			"reason": "«Cirkoni» в разделе косметики без пояснения: это либо стразы-украшения на зубах (dental-jewelry-application — так «svjetlucavi cirkoni» у Dentalux), либо разговорное «цирконы» = циркониевые коронки (metal-free-zirconia-ceramic-crown уже заведена из протетики). Два равноценных кандидата — не заводили.",
+			"resolution": "dental-jewelry-application: «Cirkoni» в косметике рядом с отбеливанием, циркониевые коронки уже в протетике. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"topic": "Samoligirajući fiksni aparat без материала",
+			"resolution": "Оставлен generic fixed-orthodontic-braces-per-arch: материал сайт не называет.",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"topic": "e.max",
+			"resolution": "Оставлен cadcam-e-max-layered-crown — единственная запись с e.max, бренд не теряется.",
+			"resolvedAt": "2026-10-09"
+		}
+	]
+}

@@ -1,19 +1,13 @@
 <script setup lang="ts">
-import { marked } from 'marked';
+import { renderSafeMarkdown } from '~/common/safe-markdown';
 
 const props = defineProps<{
 	content?: string | null;
 }>();
 
-const htmlContent = computed(() => {
-	if (!props.content) {
-		return '';
-	}
-	return marked.parse(props.content, {
-		breaks: true,
-		gfm: true,
-	});
-});
+const htmlContent = computed(() =>
+	props.content ? renderSafeMarkdown(props.content) : '',
+);
 </script>
 
 <template>

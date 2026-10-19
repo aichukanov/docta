@@ -1,0 +1,127 @@
+{
+	"schemaVersion": 1,
+	"slug": "polident-bijela",
+	"name": "Stomatološka ordinacija Polident",
+	"city": "Herceg Novi",
+	"cityId": 8,
+	"googlePlaceId": "ChIJLY89jhUxTBMRtWuukyexrlE",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-polident-bijela.sql",
+		"server/sql/insert-clinic-polident-bijela-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 224,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2e, агент X. Сайт — заглушка 2023 (главная изменена 2023-11-18), отзывы Google 2024–2025 подтверждают dr Sandru Brkić. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 251
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://polident.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress (Salient), одностраничная заглушка: реальны заголовок, «Upoznajte Dr. Sandru Brkić» и 4 направления; остальное — демо темы (lorem ipsum). wp-json /pages — 404. Адреса, телефона, часов, цен нет. Facebook/Instagram в шапке."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/tivat/stomatoloska-ordinacija-polident-dom-zdravlja-bijela.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatološka Ordinacija \"Polident\" Dom zdravlja Bijela», «b.b Dom Zdravlja, Bijela 85343», +382 69 341 846, 30 отзывов (rating 4.9) — не импортировались (pending). Файл лежит в папке tivat, но Bijela — муниципалитет Herceg Novi."
+		}
+	],
+	"coverage": {
+		"address": "Dom zdravlja Bijela bb, Bijela 85343 — Google (на сайте адреса нет); координаты — место Google",
+		"phone": "+38269341846 — Google (на сайте нет)",
+		"email": "на сайте нет",
+		"website": "https://polident.me/",
+		"social": "Facebook https://www.facebook.com/polident.bijela, Instagram https://www.instagram.com/polident.bijela/ — сайт",
+		"logo": "https://polident.me/wp-content/uploads/2023/07/cropped-Site-Logo-250x250-1.png",
+		"workingHours": "не заполнено — нет ни на сайте, ни в Google",
+		"doctors": "1 врач (dr Sandra Brkić) — уже в БД, привязка",
+		"doctorPhotos": "у карточки уже есть (Vukotić); polident.me /2023/11/Sandra-Brkic.jpg — запасное, только если пусто",
+		"doctorBios": "нет",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Dental Caries Treatment",
+			"slug": "dental-caries-treatment",
+			"source": "«Konzervativna Stomatologija — Popravljanje, ekstrakcije, endodonsko liječenje zuba»: «Popravljanje» (бытовое «popravka zuba» = лечение кариеса/пломба)"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "«Konzervativna Stomatologija — … ekstrakcije …»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "«Konzervativna Stomatologija — … endodonsko liječenje zuba» — число каналов не названо (как dental-smile-tivat)"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "там же"
+		},
+		{
+			"nameEn": "Plaque and Calculus Removal",
+			"slug": "plaque-and-calculus-removal",
+			"source": "«Estetska Stomatologija — Uklanjanje zubnog kamenca i bijeljenje zuba»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "«Estetska Stomatologija — … bijeljenje zuba»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "sandra-brkic",
+			"nameSr": "Sandra Brkić",
+			"professionalTitle": "Dr",
+			"position": "Stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": true,
+			"hasBio": false,
+			"photo": "https://polident.me/wp-content/uploads/2023/11/Sandra-Brkic.jpg",
+			"services": [],
+			"note": "Уже в БД (Vukotić Podgorica / Igalo); добавлена связь с Polident."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«Stomatološka Protetika — Mobilne proteze krunice i mostovi.»",
+			"reason": "Материал коронок/мостов и вид протезов не названы — конкретные записи (по материалу) не угадываем; общих записей «коронка»/«мост»/«съёмный протез» в каталоге нет. В описание клиники."
+		},
+		{
+			"source": "«Dječija Stomatologija — Strpljiv i bezbolan pristup djeci.»",
+			"reason": "Направление без конкретной процедуры — не заводили; в описание клиники."
+		},
+		{
+			"source": "Весь остальной текст главной («Refreshingly unique workspace locations», «Luxury amenities…», lorem ipsum, Kara Lucas / Alex Cohen / Jake Smith)",
+			"reason": "Демо-контент темы Salient — игнорируется полностью (решение юзера)."
+		}
+	],
+	"openQuestions": []
+}

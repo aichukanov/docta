@@ -1,0 +1,299 @@
+{
+	"schemaVersion": 1,
+	"slug": "internos-medical-podgorica",
+	"name": "Internos Medical & Laboratorija",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJeTqm7EjrTRMRwOE9-ehR6jo",
+	"clinicTypeIds": [
+		1,
+		4
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-internos-medical-podgorica.sql",
+		"server/sql/insert-clinic-internos-medical-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 180,
+		"doctorIds": {},
+		"note": "Подволна 2c (врачи + перечень услуг без цен), агент J. Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug и врачей по slug. Сухой прогон на локальной БД 2026-10-08 (EXPLAIN внутри START TRANSACTION … ROLLBACK): 0 ошибок, 0 несматченных slug услуг, счётчики clinics/doctors/clinic_medical_services/medical_services/cmsd/синонимов до и после совпали. Отзывы не импортировались (в файле места Google 5 из 17 — лимит API). Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 207
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://internosmedical.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "WordPress (тема Xcare / pbmit), одностраничник. wp-sitemap: главная (modified 2026-03-12), pbmit-service ×5 (2025-04-03: ginekologija, 001 = internistički pregledi, laboratorija, kucna-njega-i-patronaza, kozmetika-i-estetika), pbmit-team-member ×3 (2026-03-12: Brajović, Obradović, Kolosov). /wp-json/wp/v2/pages — одна страница, posts — пусто, кастомные типы через REST не отдаются. Страницы /service/* — только заголовок и фото; kozmetika-i-estetika — английский демо-текст шаблона. Фото врачей нет. Цен нет (0 вхождений €/EUR)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/internos-medical-laboratorija.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4341256 / 19.2436515 (единственный источник), телефон +382 69 540 400, адрес «76 8. Marta, Podgorica» — совпадает с сайтом. rating 4.2, userRatingCount 17, в файле 5 отзывов."
+		}
+	],
+	"coverage": {
+		"address": "8. marta 76 — сайт и Google совпадают; индекса на сайте нет — 81000",
+		"phone": "+38269540400 (Medical);+38269223422 (Laboratorija) — блок контактов; первый подтверждён Google",
+		"email": "info@internosmedical.me",
+		"website": "https://internosmedical.me/",
+		"social": "на сайте нет",
+		"logo": "https://internosmedical.me/wp-content/uploads/2025/04/cropped-Logo.png (custom-logo темы)",
+		"workingHours": "на сайте нет («Stojimo vam na raspolaganju 24/7» — слоган); не заполнялись",
+		"doctors": "7 врачей: 6 найдены в БД, 1 новая (Dijana Drekalović). Психолог Radmila Stupar Đurišić не заводилась; dr Sergej Kolosov — в спорных (специальность не указана)",
+		"doctorPhotos": "на сайте нет ни одного фото врача; у найденных в БД остаются свои",
+		"prices": "нет на сайте — все 9 услуг с NULL по дизайну",
+		"services": "9 записей clinic_medical_services, все из существующего каталога; 5 привязок врач ↔ услуга (только где сайт сам называет врача направления)",
+		"labTests": "не заполнялись: «LABORATORIJA» — только заголовок карточки, перечня анализов нет. Тип DIAGNOSTIC_LAB проставлен (лаборатория в названии, отдельный телефон)",
+		"reviews": "pending — ждут выгрузки (в файле места Google 5 из 17)"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"slug": "cardiologist-examination",
+			"nameEn": "Cardiologist Examination",
+			"source": "Kardiologija — «Prevencija, rano otkrivanje i adekvatno liječenje … sprovodi ih internista – kardiolog. U našem medicinskom centru iz oblasti kardiologije ordinira dr Dijana Drekalović – spec.internista-kardiolog»",
+			"section": "Kardiologija",
+			"price": null
+		},
+		{
+			"slug": "surgical-examination",
+			"nameEn": "Surgical Examination",
+			"source": "Hirurgija — «Konsultativne preglede iz hirurgije za naše pacijente obavljaju provjereni stručnjaci iz te oblasti: Dr Perica Maraš-spec.opšte hirurgije-subspecijalista vaskularne hirurgije»",
+			"section": "Hirurgija",
+			"price": null
+		},
+		{
+			"slug": "first-psychiatrist-examination",
+			"nameEn": "First Psychiatrist Examination",
+			"source": "Psihijatrija — «Psihijatrijsko savjetovalište u našoj klinici obavlja provjereni stručnjak iz te oblasti dr Lidija Injac Stevović – spec.psihijatrije»",
+			"section": "Psihijatrija",
+			"price": null,
+			"note": "Общей записи «осмотр психиатра» в каталоге нет — только первичный и контрольный; взят первичный"
+		},
+		{
+			"slug": "endocrinologist-examination",
+			"nameEn": "Endocrinologist Examination",
+			"source": "Endokrinologija — «Konsultativne preglede iz endokrinologije za naše pacijente obavlja provjereni stručnjak iz te oblasti: Dr Đorđe Krnjević-spec.internista endokrinolog»",
+			"section": "Endokrinologija",
+			"price": null
+		},
+		{
+			"slug": "urologist-examination",
+			"nameEn": "Urologist Examination",
+			"source": "Urologija — «Konsultativne-specijalističke preglede iz urologije obavlja provjereni stručnjak iz te oblasti: dr Vladimir Brajović-spec.urolog»",
+			"section": "Urologija",
+			"price": null
+		},
+		{
+			"slug": "psychological-counseling",
+			"nameEn": "Psychological Counseling",
+			"source": "Psihološko savjetovalište za adolescente i odrasle — «obavlja član našeg tima, psihološkinja Radmila Stupar Đurišić, a to uključuje: •individualni rad sa klijentom •program za porodicu •bračno savjetovanje i sl.»",
+			"section": "Psihološko savjetovalište",
+			"price": null,
+			"note": "Все три формы — одна запись: у Psychological Counseling уже есть синонимы «Partnersko savjetovanje», «Porodično psihološko savjetovanje», «Couples Counseling». Психолог — не врач, к услуге не привязан"
+		},
+		{
+			"slug": "4d-pregnancy-ultrasound",
+			"nameEn": "4D Pregnancy Ultrasound",
+			"source": "«4D ultrazvuk+slika — Savremeni dijagnostički ultrazvučni aparat više klase, najnovije generacije …»",
+			"section": "4D ultrazvuk",
+			"price": null,
+			"note": "name_sr записи — «4D ultrazvuk», единственная 4D-запись каталога; к врачу не привязан (сайт не называет, кто делает)"
+		},
+		{
+			"slug": "gynecological-specialist-examination",
+			"nameEn": "Gynecological Specialist Examination",
+			"source": "Карточка услуги «GINEKOLOGIJA» (главная, /service/ginekologija/ — пустая)",
+			"section": "Ginekologija",
+			"price": null,
+			"note": "Гинеколог на сайте не назван — к врачу не привязано"
+		},
+		{
+			"slug": "internist-examination",
+			"nameEn": "Internist Examination",
+			"source": "Карточка «INTERNISTIČKI PREGLEDI»; «od skoro smo svoju djelatnost proširili i na internističku ambulantu»",
+			"section": "Internistički pregledi",
+			"price": null,
+			"note": "Кто принимает, сайт не говорит (интернисты в составе — Drekalović и Krnjević, оба по своим субспециальностям) — к врачу не привязано"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "dijana-drekalovic",
+			"nameSr": "Dijana Drekalović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista interne medicine – kardiolog",
+			"specialtyIds": [
+				2,
+				1
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"Cardiologist Examination"
+			],
+			"note": "Siniša Drekalović (анестезиолог КЦЦГ) — другой человек"
+		},
+		{
+			"slug": "maras-perica",
+			"nameSr": "Perica Maraš",
+			"professionalTitle": "dr (в БД)",
+			"position": "Specijalista opšte hirurgije, subspecijalista vaskularne hirurgije",
+			"specialtyIds": [
+				3,
+				34
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 58, name_sr «Maraš Perica» (Milmedika, Codra, КЦЦГ, Konzilijum)",
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"Surgical Examination"
+			]
+		},
+		{
+			"slug": "lidija-injac-stevovic",
+			"nameSr": "Lidija Injac Stevović",
+			"professionalTitle": "prof. dr. (в БД)",
+			"position": "Specijalista psihijatrije",
+			"specialtyIds": [
+				21
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 778 (КЦЦГ)",
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"First Psychiatrist Examination"
+			]
+		},
+		{
+			"slug": "mira-obradovic",
+			"nameSr": "Mira Obradović",
+			"professionalTitle": "dr (в БД)",
+			"position": "Specijalista radiologije",
+			"specialtyIds": [
+				10
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 984 (Medikid, с биографией)",
+			"hasBio": false,
+			"photo": null,
+			"services": [],
+			"note": "Карточка team-member: «spec.radiolog»; текст направления: «Preglede iz oblasti radiologije za djecu i odrasle obavljaju … Dr Mira Obradović – spec.radiolog i Dr Sanja Čejović – spec. radiolog». Вид обследований не назван — привязок нет"
+		},
+		{
+			"slug": "sanja-cejovic",
+			"nameSr": "Sanja Čejović",
+			"professionalTitle": "dr mr sci. med. (в БД)",
+			"position": "Specijalista radiologije",
+			"specialtyIds": [
+				10
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 171 (Moj Lab)",
+			"hasBio": false,
+			"photo": null,
+			"services": []
+		},
+		{
+			"slug": "djordjije-krnjevic",
+			"nameSr": "Đorđije Krnjević",
+			"professionalTitle": "dr (в БД)",
+			"position": "Specijalista interne medicine – endokrinolog",
+			"specialtyIds": [
+				2,
+				12
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "на сайте «Dr Đorđe Krnjević»; в БД — Đorđije Krnjević, локально id 723 (КЦЦГ, эндокринология). Đorđe — бытовая форма Đorđije (прецедент MOA, подтверждён юзером 2026-10-08) → явный фолбэк на slug. Добавлена 2 INTERNAL_MEDICINE по сайту («spec.internista endokrinolog»)",
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"Endocrinologist Examination"
+			]
+		},
+		{
+			"slug": "brajovic-vladimir",
+			"nameSr": "Vladimir Brajović",
+			"professionalTitle": "dr (в БД)",
+			"position": "Specijalista urologije",
+			"specialtyIds": [
+				9
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"foundInDbNote": "локально id 5, name_sr «Brajović Vladimir» (Milmedika, Codra, Kerber)",
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"Urologist Examination"
+			]
+		}
+	],
+	"excluded": [
+		{
+			"source": "Radmila Stupar Đurišić — psihološkinja (Psihološko savjetovalište)",
+			"reason": "Психолог — не врач, в doctors не заводится; её услуги учтены как Psychological Counseling."
+		},
+		{
+			"source": "Radiologija — «Preglede iz oblasti radiologije za djecu i odrasle obavljaju … Dr Mira Obradović … i Dr Sanja Čejović»",
+			"reason": "Направление без названного вида обследования (УЗИ? рентген?) — не услуга. Радиологи заведены врачами; 4D ultrazvuk учтён отдельно."
+		},
+		{
+			"source": "Карточка «LABORATORIJA», «Laboratorija» в названии клиники",
+			"reason": "Перечня анализов на сайте нет — clinic_lab_tests пуст. Тип DIAGNOSTIC_LAB проставлен."
+		},
+		{
+			"source": "Карточка «KUĆNA NJEGA I PATRONAŽA» (/service/kucna-njega-i-patronaza/ — пустая)",
+			"reason": "Направление без перечня процедур — не услуга. Упомянуто в описании клиники."
+		},
+		{
+			"source": "Карточка «KOZMETIKA I ESTETIKA» (/service/kozmetika-i-estetika/)",
+			"reason": "Страница — английский демо-текст шаблона Xcare (ambulance models, lorem ipsum). В описании клиники — только фраза «O nama» о косметико-эстетических услугах, без перечня."
+		}
+	],
+	"disputed": [
+		{
+			"topic": "dr Sergej Kolosov",
+			"detail": "Карточка team-member /team-member/dr-sergej-kolosov/ (modified 2026-03-12) и блок «Naši doktori» на главной — только «Dr Sergej Kolosov», без специальности; в текстах направлений не упоминается; в БД нет. Без специальности врач не заводится. Решение: уточнить специальность у клиники или завести позже."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "dr Sergej Kolosov",
+			"detail": "Специальность на сайте не указана (см. disputed). Языки врача сайт тоже не называет — русскую фамилию не трактуем как русский язык приёма."
+		}
+	]
+}

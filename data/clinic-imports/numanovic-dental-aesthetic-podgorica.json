@@ -1,0 +1,167 @@
+{
+	"schemaVersion": 1,
+	"slug": "numanovic-dental-aesthetic-podgorica",
+	"name": "Numanović Dental & Aesthetic",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJ73Ry4dXrTRMRm2ShmpTyQfc",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-numanovic-dental-aesthetic-podgorica.sql",
+		"server/sql/insert-clinic-numanovic-dental-aesthetic-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 226,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2e, агент X. Врач eldin-numanovic — по косвенным признакам. Сайт наполняется (2026-10) — при следующем обновлении проверить /tim/ и страницы услуг. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 253
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://drnumanovic.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress (AncoraThemes), wp-json /pages: Početna, O nama, Naš tim, Usluge, Kontakt, Blog (пусто), Politika privatnosti; изменены 2026-10-03…2026-10-09. Плюс 10 страниц /services/*/ (по одной фразе на сербском, остальное — демо). Цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/stomatoloska-ordinacija-dr-numanovic-podgorica.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatološka ordinacija Dr Numanović - Podgorica», «br 5 13. Jula», +382 67 012 392, 22 отзыва (rating 5) — не импортировались (pending). В одном отзыве (2026-01-11): «Odradila sam obje vilice kod dr.Eldina»."
+		}
+	],
+	"coverage": {
+		"address": "Ulica 13. jula 5 — сайт = Google; координаты — место Google",
+		"phone": "+38267012392;+38267218350 — сайт (первый = Google)",
+		"email": "dental@drnumanovic.me — сайт",
+		"website": "https://drnumanovic.me/",
+		"social": "Instagram https://www.instagram.com/numanovic_dental/ — сайт",
+		"logo": "https://drnumanovic.me/wp-content/uploads/2026/10/Numanovic-Dental-Aesthetic-Logo.webp",
+		"workingHours": "пн–вт 12–20, ср–пт 9–17 — /o-nama/ (шаблонный график в шапке /services/ отброшен)",
+		"doctors": "1 новый по косвенным признакам — dr Eldin Numanović (бренд «Dr Numanović» + отзыв Google «kod dr.Eldina»); на сайте только демо-команда",
+		"doctorPhotos": "нет",
+		"doctorBios": "нет",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Dental Consultation",
+			"slug": "dental-consultation",
+			"source": "/o-nama/ «Opšta stomatologija — Pregledi, dijagnostika i opšta stomatološka terapija»; /services/opsta-stomatologija/: «Preventivni pregledi, dijagnostika»; /tim/: «Zakažite konsultaciju»"
+		},
+		{
+			"nameEn": "Dental Caries Treatment",
+			"slug": "dental-caries-treatment",
+			"source": "/services/lijecenje-karijesa/: «Savremeno liječenje karijesa …»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "/services/lijecenje-karijesa/: «… i estetske kompozitne restauracije»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "/services/endodoncija/: «Dijagnostika i liječenje kanala korijena zuba» — число каналов не названо"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "там же"
+		},
+		{
+			"nameEn": "Periodontal Scaling and Root Planing",
+			"slug": "periodontal-scaling-root-planing",
+			"source": "/services/parodontologija/: «Prevencija i terapija oboljenja desni i potpornog aparata zuba»"
+		},
+		{
+			"nameEn": "Complete Dental Cleaning",
+			"slug": "complete-dental-cleaning",
+			"source": "/services/profesionalno-ciscenje-zuba/: «Profesionalno uklanjanje zubnog kamenca, naslaga i pigmentacija» — kamenac + naslage + pigmentacije = полная чистка"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "/services/izbjeljivanje-zuba/: «Profesionalno izbjeljivanje zuba uz prethodnu procjenu stanja zuba i desni» — метод не назван"
+		},
+		{
+			"nameEn": "Aesthetic Tooth Restoration",
+			"slug": "aesthetic-tooth-restoration",
+			"source": "/services/estetska-stomatologija/: «Individualno planiranje osmijeha, estetske restauracije i protetska rješenja»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "/services/implantologija/: «Planiranje implantološke terapije i protetske nadoknade zuba»; /usluge/: «Implantologija»"
+		},
+		{
+			"nameEn": "Pediatric Dentist Consultation",
+			"slug": "pediatric-dentist-consultation",
+			"source": "/o-nama/ «Dječja stomatologija — Preventivna i terapijska stomatološka njega za djecu»; /services/djecja-stomatologija/: «preventivni pregledi i terapija prilagođena uzrastu djeteta»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "eldin-numanovic",
+			"nameSr": "Eldin Numanović",
+			"professionalTitle": "dr",
+			"position": "Stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": null,
+			"services": [],
+			"note": "Заведён по косвенным признакам (бренд «Dr Numanović» + отзыв Google «kod dr.Eldina»), решение координатора 2026-10-09."
+		}
+	],
+	"disputed": [],
+	"resolved": [
+		{
+			"topic": "Врач «dr Eldin (Numanović?)»",
+			"date": "2026-10-09",
+			"decision": "Координатор: завести Eldin Numanović, стоматолог (78), по косвенным признакам (бренд «Dr Numanović» + отзыв Google «kod dr.Eldina»); только привязка к клинике, без услуг."
+		}
+	],
+	"excluded": [
+		{
+			"source": "/services/dentalna-protetika/: «Fiksna protetska rješenja, krunice i mostovi planirani sa ciljem prirodnog izgleda»",
+			"reason": "Материал коронок/мостов не назван — записи по материалу не угадываем; общих «коронка»/«мост» в каталоге нет. В описание."
+		},
+		{
+			"source": "/services/estetska-stomatologija/: «Individualno planiranje osmijeha»",
+			"reason": "Не названо цифровое планирование (Digital Smile Design) — бренд/метод не приписываем; покрыто aesthetic-tooth-restoration."
+		},
+		{
+			"source": "/services/parodontologija/: «… uz profesionalno čišćenje i plan održavanja oralnog zdravlja»",
+			"reason": "Чистка заведена отдельно (complete-dental-cleaning); «план поддержки» — не услуга."
+		},
+		{
+			"source": "Заголовок сайта: «… i neinvazivni estetski tretmani u Podgorici»; название «Dental & Aesthetic»",
+			"reason": "Конкретные эстетические процедуры (ботокс, филлеры и т. п.) нигде не названы — не заводили."
+		},
+		{
+			"source": "Главная: «Free consultations», «Cavity Protection / Implant Dentistry / Cosmetic Dentistry / Paradontosis», «Radiographs», «Orthodontics», команда Dr. Jessica Smith и др., «Mn - St: 8:00am - 9:00pm», «1 800 345 67 56»",
+			"reason": "Демо-контент темы AncoraThemes (английский шаблон) — игнорируется полностью (решение юзера). Ортодонтию и рентген сербский текст не называет."
+		}
+	],
+	"openQuestions": []
+}

@@ -1,0 +1,303 @@
+{
+	"schemaVersion": 1,
+	"slug": "sanicard-podgorica",
+	"name": "Sanicard",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJk8O8ac7rTRMRFUCm_58AP9U",
+	"clinicTypeIds": [
+		12,
+		11
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-sanicard-podgorica.sql",
+		"server/sql/insert-clinic-sanicard-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 240,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Z. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Slug клиники и врача свободны на проде (API 204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 267
+	},
+	"siteOutdated": {
+		"copyright": "© 2023. Sanicard",
+		"note": "Страницы услуг 2023-02, «о нас» 2022-12 («proslavila je 23 godine rada» — текст не обновлялся). Блог обновляется (2026-04). В шапке — шаблонные часы и устаревший адрес «Ilije Plamenca 105»."
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://sanicard.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": "2023-02-26",
+			"note": "Главная (единственная цена — справка для моряков 60 €; дата — wp-json modified главной), /usluge/ (2023-02-26), /o-nama/ (2022-12-06, биография основателя, фото), /kontakt/ (адрес Bulevar Ilije Plamenca 64, телефоны, emails). me/en/ru-версии — переводы тех же страниц."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/zdravstvena-ustanova-sanicard.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJk8O8ac7rTRMRFUCm_58AP9U, 42.4335757 / 19.2434791, +382 69 767 506, 2 отзыва — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Bulevar Ilije Plamenca 64 — /kontakt/ и подвал = Google («64 Ilije Plamenca»); «Ilije Plamenca 105» в шапке — устаревший шаблон, не взят",
+		"phone": "+38220662039;+38220662013;+38269013550;+38269767506 — сайт (последний = Google)",
+		"email": "kontakt@sanicard.me;sanicard@hotmail.com — /kontakt/",
+		"website": "https://sanicard.me/",
+		"social": "facebook.com/profile.php?id=100064059334752, @sanicard.me (ссылка на facebook.com/mawebdesign1 — веб-студия, не взята)",
+		"logo": "https://sanicard.me/wp-content/uploads/elementor/thumbs/sanicard-pykvh5xbnmjdft1dqel8gw05liiihqtupmh7lag0d4.png",
+		"workingHours": "пн–пт 09–13 и 17–20, сб 09–14, вс закрыто — блок подвала «Radno vrijeme u ordinaciji Sanicard»; шаблонный «8am to 8pm / 07am – 1pm» не взят",
+		"description": "по главной, /usluge/, /o-nama/",
+		"languages": "только SR — en/ru-версии сайта не заявление",
+		"doctors": "1: svjetlana-zekovic (новая); безымянные консультанты не заводились",
+		"doctorPhotos": "1 из 1 — портрет на /o-nama/",
+		"doctorBios": "1 — /o-nama/",
+		"prices": "1 из 28 — справка для моряков 60 €; остальные без цены",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки (2 в Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "athlete-cardiology-examination",
+			"nameEn": "Cardiology Examination for Athletes",
+			"nameSr": "Kardiološki pregled sportista",
+			"categoryIds": [
+				8
+			],
+			"specialtyIds": [
+				1,
+				23
+			],
+			"reason": "Sanicard: «KARDIOLOŠKI PREGLEDI SPORTISTA ZA DJECU I ODRASLE». В каталоге только sports-medical-examination (общий спортивно-медицинский осмотр, не кардиолог), medical-certificate-for-athletes (справка) и три брендовых пакета одной клиники (sports-cardiology-package-basic/intermediate/advanced) — generic-записи кардиологического осмотра спортсмена нет. 8 CARDIOLOGY; специальности 1 CARDIOLOGY + 23 PEDIATRIC_CARDIOLOGY («za djecu i odrasle»)."
+		}
+	],
+	"services": [
+		{
+			"slug": "pediatric-examination",
+			"nameEn": "Pediatric Examination",
+			"price": null,
+			"source": "«Pedijatrija — Pregledi bolesne … dijece»"
+		},
+		{
+			"slug": "well-child-preventive-check-up",
+			"nameEn": "Well-Child Preventive Check-up",
+			"price": null,
+			"source": "«… i sistematski pregledi zdrave dijece»"
+		},
+		{
+			"slug": "systematic-infant-examination",
+			"nameEn": "Systematic Infant Examination",
+			"price": null,
+			"source": "«Neonatologija — Sistematski pregledi odojčadi …»"
+		},
+		{
+			"slug": "pediatric-hip-ultrasound",
+			"nameEn": "Pediatric Hip Ultrasound",
+			"price": null,
+			"source": "«Neonatologija — … UZ kukova …»; /o-nama/: «vrsni neonatolog na ultrazvučnom aparatu prati i razvoj CNS-a i kukova»"
+		},
+		{
+			"slug": "infant-brain-ultrasound-neurosonography",
+			"nameEn": "Infant Brain Ultrasound (Neurosonography)",
+			"price": null,
+			"source": "«Neonatologija — … UZ … CNS-a»"
+		},
+		{
+			"slug": "cardiologist-examination-with-ecg",
+			"nameEn": "Cardiologist Examination with ECG",
+			"price": null,
+			"source": "«KARDIOLOGIJA ZA DJECU I ODRASLE — Fizikalni pregled sa EKG-om i monitoriranjem» (взрослые)"
+		},
+		{
+			"slug": "first-pediatric-cardiologist-examination",
+			"nameEn": "First Pediatric Cardiologist Examination",
+			"price": null,
+			"source": "«KARDIOLOGIJA ZA DJECU …» — осмотр детского кардиолога (основатель — педиатр-кардиолог); общей записи «осмотр детского кардиолога» в каталоге нет, есть первичный/повторный"
+		},
+		{
+			"slug": "echocardiography-heart-ultrasound",
+			"nameEn": "Echocardiography (Heart Ultrasound)",
+			"price": null,
+			"source": "«Ehokardiografija srca sa color-dopplerom» (взрослые)"
+		},
+		{
+			"slug": "pediatric-echocardiography",
+			"nameEn": "Pediatric Echocardiography",
+			"price": null,
+			"source": "«Ehokardiografija srca sa color-dopplerom» (дети; биография: «uvodi ehokardiografsku dijagnostiku kod djece u Crnoj Gori»)"
+		},
+		{
+			"slug": "ergometry-stress-test",
+			"nameEn": "Ergometry Stress Test",
+			"price": null,
+			"source": "«Test opterečenja /ergometrija»"
+		},
+		{
+			"slug": "holter-ecg-24h",
+			"nameEn": "Holter ECG 24h",
+			"price": null,
+			"source": "«HOLTER EKG-a» — длительность не названа → стандартный 24 ч"
+		},
+		{
+			"slug": "holter-blood-pressure-24h",
+			"nameEn": "Holter Blood Pressure 24h",
+			"price": null,
+			"source": "«HOLTER - krvnog pritiska»"
+		},
+		{
+			"slug": "spirometry",
+			"nameEn": "Spirometry",
+			"price": null,
+			"source": "«Spirometrija»"
+		},
+		{
+			"slug": "athlete-cardiology-examination",
+			"nameEn": "Cardiology Examination for Athletes",
+			"price": null,
+			"source": "«KARDIOLOŠKI PREGLEDI SPORTISTA ZA DJECU I ODRASLE» (НОВАЯ)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "internist-examination",
+			"nameEn": "Internist Examination",
+			"price": null,
+			"source": "«INTERNA MEDICINA»; /o-nama/: «PEDIJATRIJSKA I INTERNISTIČKA ORDINACIJA»"
+		},
+		{
+			"slug": "abdomen-and-urinary-tract-ultrasound",
+			"nameEn": "Abdomen and Urinary Tract Ultrasound",
+			"price": null,
+			"source": "«Ultrazvuk abdomena i urotrakta»"
+		},
+		{
+			"slug": "thyroid-ultrasound",
+			"nameEn": "Thyroid Ultrasound",
+			"price": null,
+			"source": "«Ultrazvuk štitaste žlijezde»"
+		},
+		{
+			"slug": "breast-ultrasound",
+			"nameEn": "Breast Ultrasound",
+			"price": null,
+			"source": "«Ultrazvuk dojke»"
+		},
+		{
+			"slug": "doppler-neck-blood-vessels",
+			"nameEn": "Doppler Neck Blood Vessels",
+			"price": null,
+			"source": "«Doppler kratidnih [karotidnih] arterija»"
+		},
+		{
+			"slug": "doppler-lower-extremity-blood-vessels",
+			"nameEn": "Doppler Lower Extremity Blood Vessels",
+			"price": null,
+			"source": "«Doppler perifernih krvnih sudova»; /o-nama/: «dopller krvnih sudova vrata i nogu»"
+		},
+		{
+			"slug": "gynecological-specialist-examination",
+			"nameEn": "Gynecological Specialist Examination",
+			"price": null,
+			"source": "«KONSULTANTSKI PREGLEDI — Ginekologija»; /o-nama/: «Rad je proširen i ginekološkim pregledima»"
+		},
+		{
+			"slug": "endocrinologist-examination",
+			"nameEn": "Endocrinologist Examination",
+			"price": null,
+			"source": "«KONSULTANTSKI PREGLEDI — … endokrinologija»"
+		},
+		{
+			"slug": "pediatric-gastroenterologist-examination",
+			"nameEn": "Pediatric Gastroenterologist Examination",
+			"price": null,
+			"source": "«KONSULTANTSKI PREGLEDI — … gastroenterologija za djecu»"
+		},
+		{
+			"slug": "orthopedist-examination",
+			"nameEn": "Orthopedist Examination",
+			"price": null,
+			"source": "«KONSULTANTSKI PREGLEDI — … ortopedija»; /o-nama/: «Konsultacije vrši i ortoped»"
+		},
+		{
+			"slug": "first-neurologist-examination",
+			"nameEn": "First Neurologist Examination",
+			"price": null,
+			"source": "/o-nama/: «od konsultanata radi neurolog. Uz klasičan pregled, sprovodi se i EMG-dijagnostika»"
+		},
+		{
+			"slug": "electromyoneurography-emng",
+			"nameEn": "Electromyoneurography (EMNG)",
+			"price": null,
+			"source": "«NEUROLOGIJA I PSIHIJATRIJA — Elektormiografija /EMNG/»"
+		},
+		{
+			"slug": "comprehensive-health-checkup",
+			"nameEn": "Comprehensive Health Checkup",
+			"price": null,
+			"source": "/o-nama/: «vrše … sistematski pregledi za zaposlenike sa prefiksom UN-a u Crnoj Gori»"
+		},
+		{
+			"slug": "medical-certificate-for-maritime-workers",
+			"nameEn": "Medical Certificate for Maritime Workers",
+			"price": 60,
+			"source": "Главная: «Ljekarsa uvjerenja za pomorce sa sistematskim pregledom (cijena 60€)» — 60 €"
+		}
+	],
+	"labTests": [],
+	"doctors": [
+		{
+			"slug": "svjetlana-zekovic",
+			"nameSr": "Svjetlana Zeković",
+			"professionalTitle": "prim. dr sci. med.",
+			"position": "Osnivač i rukovodilac; pedijatar, subspecijalista kardiologije",
+			"specialtyIds": [
+				4,
+				23
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"photo": "https://sanicard.me/wp-content/uploads/2022/12/unnamed.jpg",
+			"services": [
+				"pediatric-examination",
+				"well-child-preventive-check-up",
+				"first-pediatric-cardiologist-examination",
+				"pediatric-echocardiography"
+			],
+			"note": "Новая; прод-API 204. Фото — портрет на /o-nama/. Консультанты сайта (гинеколог, эндокринолог, гастроэнтеролог, ортопед, невролог, неонатолог) без имён — не заводились."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Заголовок «NEUROLOGIJA I PSIHIJATRIJA» и общий текст о психиатрии на главной",
+			"reason": "В перечне блока — только EMNG; психиатр в составе консультантов (/o-nama/) не назван → осмотр психиатра не заведён."
+		},
+		{
+			"source": "/o-nama/: «aparatima za oksimetriju»",
+			"reason": "Перечень оборудования, не услуга."
+		},
+		{
+			"source": "/o-nama/: «u planu je i intenzivniji razvoj Centra za prenatalnu dijagnostiku»",
+			"reason": "Планы, не текущая услуга."
+		},
+		{
+			"source": "Шапка/«Kontakt»: «Ponedjeljak – Petak: 8am to 8pm | Subota: 07am – 1pm»; «Ilije Plamenca 105»",
+			"reason": "Шаблонный график и устаревший адрес темы; взяты график подвала и адрес /kontakt/."
+		},
+		{
+			"source": "Консультанты без имён (гинеколог, эндокринолог, детский гастроэнтеролог, ортопед, невролог, неонатолог)",
+			"reason": "Решение юзера: безымянных врачей не заводить. Их осмотры заведены услугами клиники."
+		}
+	],
+	"openQuestions": []
+}

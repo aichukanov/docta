@@ -4412,5 +4412,2477 @@
 		"flags": [],
 		"recheckHint": null,
 		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://moa.clinic/",
+		"clinics": [
+			{
+				"id": 163,
+				"slug": "poliklinika-moa-podgorica",
+				"name": "Poliklinika MOA",
+				"city": "podgorica",
+				"db": {
+					"services": 80,
+					"servicesPriced": 74,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://moa.clinic/cjenovnik-usluga-dermatovenerologija/",
+				"kind": "html",
+				"scope": "dermatovenerologija",
+				"approx_items": null,
+				"date_hint": "wp-json modified 2026-09-14/15"
+			},
+			{
+				"url": "https://moa.clinic/cjenovnik-hirurskih-intervencija/",
+				"kind": "html",
+				"scope": "opšta hirurgija",
+				"approx_items": null,
+				"date_hint": "wp-json modified 2026-09-14/15"
+			},
+			{
+				"url": "https://moa.clinic/cjenovnik-estetska-medicina-i-antiaging/",
+				"kind": "html",
+				"scope": "estetska medicina (цены «lokalni doktor» / «gostujući doktor»)",
+				"approx_items": null,
+				"date_hint": "wp-json modified 2026-09-14/15"
+			},
+			{
+				"url": "https://moa.clinic/cjenovnik-fizikalna-medicina-i-rehabilitacija/",
+				"kind": "html",
+				"scope": "fizikalna medicina (2 осмотра)",
+				"approx_items": null,
+				"date_hint": "wp-json modified 2026-09-14/15"
+			},
+			{
+				"url": "https://moa.clinic/cjenovnik-usluga-laserskih-i-inovativnih-tretmana/",
+				"kind": "html",
+				"scope": "laserski i inovativni tretmani, пакеты",
+				"approx_items": null,
+				"date_hint": "wp-json modified 2026-09-14/15"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 80 услуг, 74 с ценой",
+		"notes": "WordPress + Brizy, прайс на 5 страницах, ~147 строк. Стоматология «u osnivanju», её прайс — заглушка. Опечатка «Soprano cijelo tijelo 10 tretmana 350 €» исправлена на 1350.",
+		"checked": "волна 1 кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-moa-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "wp-json modified у 5 страниц cjenovnik-*",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.orthoexpert.me/",
+		"clinics": [
+			{
+				"id": 164,
+				"slug": "orthoexpert-physio-podgorica",
+				"name": "OrthoExpert Physio Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 51,
+					"servicesPriced": 49,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.orthoexpert.me/cenovnik",
+				"kind": "html",
+				"scope": "только блок «Ordinacija OrthoExpert Physio Podgorica» (на странице прайсы всей сербской сети)",
+				"approx_items": 68,
+				"date_hint": "JSON-LD dateModified 2022-06-07 — дата создания страницы, не прайса"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 51 услуг, 49 с ценой",
+		"notes": "Joomla, общий сайт сети OrthoExpert. Блоки Белграда и Ниша не брать. В спорных: отдельные осмотры «inostrani konsultant», Mezoterapija, Guna.",
+		"checked": "волна 1 кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-orthoexpert-physio-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "искать блок Подгорицы по заголовку, цены в EUR",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://obradovicmedical.me/",
+		"clinics": [
+			{
+				"id": 165,
+				"slug": "ordinacija-obradovic-medical-podgorica",
+				"name": "Ordinacija Obradović Medical",
+				"city": "podgorica",
+				"db": {
+					"services": 13,
+					"servicesPriced": 9,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://obradovicmedical.me/Cjenovnik_Obradovic_jun_2026.pdf",
+				"kind": "pdf",
+				"scope": "все услуги, 12 позиций",
+				"approx_items": 12,
+				"date_hint": "в PDF «od 01.06.2026», штамп 27.05.2026"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 13 услуг, 9 с ценой",
+		"notes": "PDF-скан, текстовый слой мусорный — читать как изображение. Новый прайс скорее всего появится под новым именем файла.",
+		"checked": "волна 1 кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ordinacija-obradovic-medical-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "скан без текста: сравнивать байты файла и искать ссылку на новый Cjenovnik_*.pdf на главной",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.stomatoloskaordinacija.me/",
+		"clinics": [
+			{
+				"id": 166,
+				"slug": "lopicic-stomatoloska-ordinacija-podgorica",
+				"name": "Stomatološka ordinacija Lopičić",
+				"city": "podgorica",
+				"db": {
+					"services": 101,
+					"servicesPriced": 97,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.stomatoloskaordinacija.me/cjenovnik",
+				"kind": "html",
+				"scope": "все услуги, 9 разделов",
+				"approx_items": 106,
+				"date_hint": "даты нет; «Cijene su okvirne»"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 101 услуг, 97 с ценой",
+		"notes": "Страница прайса не в меню — только прямым URL. sitemap.xml мусорный (localhost шаблона).",
+		"checked": "волна 1 кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-lopicic-stomatoloska-ordinacija-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "страницу /cjenovnik открывать напрямую",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dentart.me/",
+		"clinics": [
+			{
+				"id": 167,
+				"slug": "dentart-tivat",
+				"name": "Stomatološka ordinacija DentArt",
+				"city": "tivat",
+				"db": {
+					"services": 52,
+					"servicesPriced": 46,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://dentart.me/cenovnik/",
+				"kind": "html",
+				"scope": "все стоматологические услуги",
+				"approx_items": 46,
+				"date_hint": "wp-json modified 2022-03-19"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 52 услуг, 46 с ценой",
+		"notes": "Страница прайса не в меню, найдена через wp-json. Эстетика (мезотерапия, филлеры, ботокс, эпиляция) — без цен, акционные цены не брались. is_price_outdated не ставился (решение юзера).",
+		"checked": "волна 1 кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dentart-tivat-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "wp-json modified страницы cenovnik",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.primadent.me/",
+		"clinics": [
+			{
+				"id": 168,
+				"slug": "prima-dent-stomatoloska-ordinacija-podgorica",
+				"name": "Stomatološka ordinacija Prima Dent",
+				"city": "podgorica",
+				"db": {
+					"services": 39,
+					"servicesPriced": 31,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.primadent.me/cjenovnik/",
+				"kind": "html",
+				"scope": "все услуги, HTML-таблица",
+				"approx_items": 32,
+				"date_hint": "wp-json modified 2023-07-17"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 39 услуг, 31 с ценой",
+		"notes": "Договор с ФЗОЦГ (бесплатно детям до 18, студентам до 26, беременным, 65+) — записан в описание. Часы работы на сайте противоречат друг другу, не заполнены.",
+		"checked": "волна 1 кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-prima-dent-stomatoloska-ordinacija-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "wp-json modified страницы cjenovnik",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://poliklinikastojanovic.me/",
+		"clinics": [
+			{
+				"id": 169,
+				"slug": "poliklinika-stojanovic-medical-berane",
+				"name": "Poliklinika Stojanović Medical",
+				"city": "berane",
+				"db": {
+					"services": 113,
+					"servicesPriced": 101,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://poliklinikastojanovic.me/cjenovnik-2/",
+				"kind": "html",
+				"scope": "только радиология: УЗИ, CT/MSCT (нативно / с контрастом), MRI, маммография, стоматологическая диагностика",
+				"approx_items": 84,
+				"date_hint": "wp-json modified 2024-10-11"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 113 услуг, 101 с ценой",
+		"notes": "WordPress/Elementor. В сыром HTML цены продублированы (десктоп/мобайл вёрстка) — не считать дважды. MRI: нативная цена в price, с контрастом в price_max (как КЦЦГ/Konzilijum/Danilo). Стоматология, гинекология, интернист — без цен; «Laboratorija» — внешняя BONA LAB. В Google у места сайта нет — найден по разбору dodoktora.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-stojanovic-medical-berane-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "wp-json modified страницы cjenovnik-2; цены дублируются в вёрстке",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://feniks-medika.me/",
+		"clinics": [
+			{
+				"id": 170,
+				"slug": "poliklinika-feniks-medika-podgorica",
+				"name": "Poliklinika Feniks Medika",
+				"city": "podgorica",
+				"db": {
+					"services": 144,
+					"servicesPriced": 143,
+					"labTests": 154,
+					"labTestsPriced": 153
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://feniks-medika.me/wp-content/uploads/2023/03/CJENOVNIK-USLUGA-PZU-POLIKLINIKE-2022-2023.docx",
+				"kind": "docx",
+				"scope": "все услуги и лаборатория (~301 строка)",
+				"approx_items": 301,
+				"date_hint": "в документе «Podgorica, 04.11.2022»; файл 2022-2023, docProps modified 2023-03-10"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 144 услуг, 143 с ценой",
+		"notes": "DOCX читать через word/document.xml. Ссылка на прайс — со страницы /zakazivanje-pregleda/. is_price_outdated не ставился (решение юзера).",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-feniks-medika-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "новый прайс скорее всего появится новым файлом в wp-content/uploads — искать ссылку на /zakazivanje-pregleda/",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.cirkondentallab.com/",
+		"clinics": [
+			{
+				"id": 171,
+				"slug": "cirkon-dental-lab-podgorica",
+				"name": "Cirkon Dental Lab",
+				"city": "podgorica",
+				"db": {
+					"services": 28,
+					"servicesPriced": 25,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_page",
+		"pricelists": [
+			{
+				"url": "https://www.cirkondentallab.com/cjenovnik",
+				"kind": "html",
+				"scope": "все услуги, 25 строк",
+				"approx_items": 25,
+				"date_hint": "даты нет; sitemap lastmod = дата сборки Next.js"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 28 услуг, 25 с ценой",
+		"notes": "Next.js, SSR-HTML читается. /cjenovnik есть в sitemap, в меню нет. «Pregled i konsultacije su besplatni» при «Stomatološki pregled 10 €» в прайсе — взята цена прайса. Места в выгрузке Google нет; координаты по ссылке юзера (42.429896, 19.250732).",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-cirkon-dental-lab-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "страницу /cjenovnik открывать напрямую; цены также в Next.js page data",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://domzdravljaulcinj.me/",
+		"clinics": [
+			{
+				"id": 172,
+				"slug": "dom-zdravlja-ulcinj",
+				"name": "Dom zdravlja Ulcinj",
+				"city": "ulcinj",
+				"db": {
+					"services": 277,
+					"servicesPriced": 262,
+					"labTests": 72,
+					"labTestsPriced": 72
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://domzdravljaulcinj.me/wp-content/uploads/2019/04/Cijenovnik-PZZ-za-treca-lica.pdf",
+				"kind": "pdf",
+				"scope": "PZZ za treća lica (неосигуранные), 349 строк с кодами ФЗОЦГ, текстовый слой",
+				"approx_items": 349,
+				"date_hint": "посты 2019-03-04 и 2019-04-12"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 277 услуг, 262 с ценой",
+		"notes": "Собственный прайс ДЗ для неосигуранных = тариф ФЗОЦГ 2019 × 3 / × 2,5. Ссылки на PDF — из постов 2019 года, в меню нет. Снимок — sources/dom-zdravlja-ulcinj/. is_price_outdated не ставился (решение юзера). Сопоставление кодов поправлено миграцией 054.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dom-zdravlja-ulcinj-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": "новый прайс скорее всего появится постом в wp-json /posts с PDF «Cijenovnik»",
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://domzdravljaniksic.me/",
+		"clinics": [
+			{
+				"id": 173,
+				"slug": "dom-zdravlja-niksic",
+				"name": "Dom zdravlja Nikšić",
+				"city": "niksic",
+				"db": {
+					"services": 32,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 32 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/dom-zdravlja-niksic.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dom-zdravlja-niksic-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.dzcetinje.me/index.php/srp/",
+		"clinics": [
+			{
+				"id": 174,
+				"slug": "dom-zdravlja-cetinje",
+				"name": "Dom zdravlja Cetinje",
+				"city": "cetinje",
+				"db": {
+					"services": 28,
+					"servicesPriced": 24,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://www.dzcetinje.me/images/dokumenta/Cjenovnik_i_saglasnost.pdf",
+				"kind": "pdf",
+				"scope": "см. запись импорта",
+				"approx_items": 23,
+				"date_hint": "Ljekarska uvjerenja: stupio na snagu 09.06.2021 (saglasnost MZ 07.06.2021); Hemodijaliza za strance: 26.07.2021, na snazi 29.07.2021; Last-Modified 27/29 Jul 2021"
+			},
+			{
+				"url": "https://www.dzcetinje.me/images/dokumenta/Cjenovnik_zdravstvenih_usluga_za_Hemodijalizu_za_strance_m.pdf",
+				"kind": "pdf",
+				"scope": "см. запись импорта",
+				"approx_items": 23,
+				"date_hint": "Ljekarska uvjerenja: stupio na snagu 09.06.2021 (saglasnost MZ 07.06.2021); Hemodijaliza za strance: 26.07.2021, na snazi 29.07.2021; Last-Modified 27/29 Jul 2021"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 28 услуг, 24 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/dom-zdravlja-cetinje.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dom-zdravlja-cetinje-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://domzdravljaberane.me/",
+		"clinics": [
+			{
+				"id": 175,
+				"slug": "dom-zdravlja-berane",
+				"name": "Dom zdravlja Berane",
+				"city": "berane",
+				"db": {
+					"services": 29,
+					"servicesPriced": 24,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "pricelist_file",
+		"pricelists": [
+			{
+				"url": "https://domzdravljaberane.me/index.php/ljekarska-uvjerenja",
+				"kind": "html",
+				"scope": "см. запись импорта",
+				"approx_items": 23,
+				"date_hint": "ljekarska uvjerenja: akt Ministarstva zdravlja br. 404-220/2015 od 01.10.2015 (Broj 1623/2); sanitarne: 22.06.2016 / Berane 29.06.2016"
+			},
+			{
+				"url": "https://domzdravljaberane.me/index.php/sanitarne-knjizice",
+				"kind": "html",
+				"scope": "см. запись импорта",
+				"approx_items": 23,
+				"date_hint": "ljekarska uvjerenja: akt Ministarstva zdravlja br. 404-220/2015 od 01.10.2015 (Broj 1623/2); sanitarne: 22.06.2016 / Berane 29.06.2016"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 29 услуг, 24 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/dom-zdravlja-berane.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dom-zdravlja-berane-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dzrozaje.me/",
+		"clinics": [
+			{
+				"id": 176,
+				"slug": "dom-zdravlja-rozaje",
+				"name": "Dom zdravlja Rožaje",
+				"city": "rozaje",
+				"db": {
+					"services": 8,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 8 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/dom-zdravlja-rozaje.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dom-zdravlja-rozaje-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://davincipoliklinika.me/tim-davinci/",
+		"clinics": [
+			{
+				"id": 177,
+				"slug": "poliklinika-da-vinci-podgorica",
+				"name": "Poliklinika Da Vinci",
+				"city": "podgorica",
+				"db": {
+					"services": 15,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [
+			{
+				"url": "https://davincipoliklinika.me/cjenovnik/",
+				"kind": "html",
+				"scope": "см. запись импорта",
+				"approx_items": null,
+				"date_hint": "wp-json modified 2024-08-22"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 15 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/poliklinika-da-vinci-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-da-vinci-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://akmedica.me/",
+		"clinics": [
+			{
+				"id": 178,
+				"slug": "poliklinika-ak-medica-bijelo-polje",
+				"name": "Poliklinika AK Medica",
+				"city": "belo-polje",
+				"db": {
+					"services": 42,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 42 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/poliklinika-ak-medica-bijelo-polje.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-ak-medica-bijelo-polje-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "http://www.melasana.me/",
+		"clinics": [
+			{
+				"id": 179,
+				"slug": "poliklinika-mela-sana-podgorica",
+				"name": "Poliklinika Mela Sana",
+				"city": "podgorica",
+				"db": {
+					"services": 34,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 34 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/poliklinika-mela-sana-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-mela-sana-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://internosmedical.me/",
+		"clinics": [
+			{
+				"id": 180,
+				"slug": "internos-medical-podgorica",
+				"name": "Internos Medical",
+				"city": "podgorica",
+				"db": {
+					"services": 9,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 9 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/internos-medical-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-internos-medical-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.micunovicmedical.me/",
+		"clinics": [
+			{
+				"id": 181,
+				"slug": "micunovic-medical-podgorica",
+				"name": "Mićunović Medical",
+				"city": "podgorica",
+				"db": {
+					"services": 19,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 19 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/micunovic-medical-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-micunovic-medical-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://mojdoktor.co.me/",
+		"clinics": [
+			{
+				"id": 182,
+				"slug": "moj-doktor-niksic",
+				"name": "PZU Moj Doktor",
+				"city": "niksic",
+				"db": {
+					"services": 40,
+					"servicesPriced": 0,
+					"labTests": 28,
+					"labTestsPriced": 1
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://mojdoktor.co.me/laboratorijske-analize/",
+				"kind": "html",
+				"scope": "см. запись импорта",
+				"approx_items": 1,
+				"date_hint": "wp-json modified 2023-03-15"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 40 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2b/2c 2026-10-08; подробности — data/clinic-imports/moj-doktor-niksic.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-moj-doktor-niksic-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.vdental.me/",
+		"clinics": [
+			{
+				"id": 183,
+				"slug": "v-dental-centar-podgorica",
+				"name": "V Dental Centar Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 36,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 36 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2c 2026-10-08; подробности — data/clinic-imports/v-dental-centar-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-v-dental-centar-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.vdental.me/",
+		"clinics": [
+			{
+				"id": 184,
+				"slug": "v-dental-centar-budva",
+				"name": "V Dental Centar Budva",
+				"city": "budva",
+				"db": {
+					"services": 36,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 36 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2c 2026-10-08; подробности — data/clinic-imports/v-dental-centar-budva.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-v-dental-centar-budva-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://drfaticmedical.com/",
+		"clinics": [
+			{
+				"id": 185,
+				"slug": "poliklinika-dr-fatic-medical-podgorica",
+				"name": "Poliklinika Dr Fatić Medical",
+				"city": "podgorica",
+				"db": {
+					"services": 42,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 42 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2c 2026-10-08; подробности — data/clinic-imports/poliklinika-dr-fatic-medical-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-dr-fatic-medical-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://vulekovic.me/",
+		"clinics": [
+			{
+				"id": 186,
+				"slug": "pedijatrijska-ordinacija-vulekovic-podgorica",
+				"name": "Pedijatrijska ordinacija Vuleković",
+				"city": "podgorica",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 6 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2c 2026-10-08; подробности — data/clinic-imports/pedijatrijska-ordinacija-vulekovic-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-pedijatrijska-ordinacija-vulekovic-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://drvuksanovic.me/",
+		"clinics": [
+			{
+				"id": 187,
+				"slug": "poliklinika-dr-vuksanovic-bar",
+				"name": "Poliklinika Dr Vuksanović Bar",
+				"city": "bar",
+				"db": {
+					"services": 20,
+					"servicesPriced": 0,
+					"labTests": 26,
+					"labTestsPriced": 1
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 20 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2c 2026-10-08; подробности — data/clinic-imports/poliklinika-dr-vuksanovic-bar.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-dr-vuksanovic-bar-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.fiziopg.me/",
+		"clinics": [
+			{
+				"id": 188,
+				"slug": "fizio-pg-podgorica",
+				"name": "Fizio PG",
+				"city": "podgorica",
+				"db": {
+					"services": 13,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 13 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2c 2026-10-08; подробности — data/clinic-imports/fizio-pg-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-fizio-pg-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://fiziocentar.me/",
+		"clinics": [
+			{
+				"id": 189,
+				"slug": "fizio-centar-niksic",
+				"name": "Fizio Centar Nikšić",
+				"city": "niksic",
+				"db": {
+					"services": 28,
+					"servicesPriced": 1,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://fiziocentar.me/usluge/",
+				"kind": "html",
+				"scope": "отдельные цены",
+				"approx_items": 1,
+				"date_hint": "wp-json modified страницы /usluge/ 2025-10-22"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 28 услуг, 1 с ценой",
+		"notes": "Импорт подволны 2c 2026-10-08; подробности — data/clinic-imports/fizio-centar-niksic.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-fizio-centar-niksic-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.fizioaxon.com/",
+		"clinics": [
+			{
+				"id": 190,
+				"slug": "axon-fizikalna-terapija-podgorica",
+				"name": "AXON fizikalna terapija",
+				"city": "podgorica",
+				"db": {
+					"services": 22,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 22 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2c 2026-10-08; подробности — data/clinic-imports/axon-fizikalna-terapija-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-axon-fizikalna-terapija-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dentalprotection.me/",
+		"clinics": [
+			{
+				"id": 191,
+				"slug": "dental-protection-podgorica",
+				"name": "Dental Protection",
+				"city": "podgorica",
+				"db": {
+					"services": 38,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 38 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2d 2026-10-08; подробности — data/clinic-imports/dental-protection-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dental-protection-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.djurkovicdent.me/",
+		"clinics": [
+			{
+				"id": 192,
+				"slug": "dentix-djurkovic-niksic",
+				"name": "Dentix Nikšić",
+				"city": "niksic",
+				"db": {
+					"services": 20,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 20 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2d 2026-10-08; подробности — data/clinic-imports/dentix-djurkovic-niksic.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dentix-djurkovic-niksic-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.djurkovicdent.me/",
+		"clinics": [
+			{
+				"id": 193,
+				"slug": "dentix-djurkovic-podgorica",
+				"name": "Dentix Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 20,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 20 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2d 2026-10-08; подробности — data/clinic-imports/dentix-djurkovic-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dentix-djurkovic-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dentalclinicvukotic.com/",
+		"clinics": [
+			{
+				"id": 194,
+				"slug": "stomatoloska-poliklinika-vukotic-podgorica",
+				"name": "Stomatološka poliklinika Vukotić Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 31,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 31 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2d 2026-10-08; подробности — data/clinic-imports/stomatoloska-poliklinika-vukotic-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-stomatoloska-poliklinika-vukotic-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://dentalclinicvukotic.com/",
+		"clinics": [
+			{
+				"id": 195,
+				"slug": "stomatoloska-poliklinika-vukotic-herceg-novi",
+				"name": "Stomatološka poliklinika Vukotić Igalo",
+				"city": "herceg-novi",
+				"db": {
+					"services": 31,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 31 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2d 2026-10-08; подробности — data/clinic-imports/stomatoloska-poliklinika-vukotic-herceg-novi.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-stomatoloska-poliklinika-vukotic-herceg-novi-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.dentalmontenegro.com/me",
+		"clinics": [
+			{
+				"id": 196,
+				"slug": "dental-montenegro-budva",
+				"name": "Dental Montenegro",
+				"city": "budva",
+				"db": {
+					"services": 9,
+					"servicesPriced": 1,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 9 услуг, 1 с ценой",
+		"notes": "Импорт подволны 2d 2026-10-08; подробности — data/clinic-imports/dental-montenegro-budva.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dental-montenegro-budva-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://anamedica.me/",
+		"clinics": [
+			{
+				"id": 197,
+				"slug": "ana-medica-podgorica",
+				"name": "Ana Medica",
+				"city": "podgorica",
+				"db": {
+					"services": 11,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 11 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2d 2026-10-08; подробности — data/clinic-imports/ana-medica-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ana-medica-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://mercurnera.me/",
+		"clinics": [
+			{
+				"id": 198,
+				"slug": "poliklinika-mercur-nera-podgorica",
+				"name": "Poliklinika Mercur Nera",
+				"city": "podgorica",
+				"db": {
+					"services": 51,
+					"servicesPriced": 0,
+					"labTests": 10,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 51 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2d 2026-10-08; подробности — data/clinic-imports/poliklinika-mercur-nera-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-mercur-nera-podgorica-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://vulekovic.me/",
+		"clinics": [
+			{
+				"id": 199,
+				"slug": "pedijatrijska-ordinacija-vulekovic-sutomore",
+				"name": "Pedijatrijska ordinacija Vuleković Sutomore",
+				"city": "bar",
+				"db": {
+					"services": 3,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 3 услуг, 0 с ценой",
+		"notes": "Филиал Vuleković в Сутоморе; места в Google нет, координаты по ссылке юзера. Подробности — data/clinic-imports/pedijatrijska-ordinacija-vulekovic-sutomore.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-pedijatrijska-ordinacija-vulekovic-sutomore-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://drvuksanovic.me/",
+		"clinics": [
+			{
+				"id": 200,
+				"slug": "poliklinika-dr-vuksanovic-ulcinj",
+				"name": "Poliklinika Dr Vuksanović Ulcinj",
+				"city": "ulcinj",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 26,
+					"labTestsPriced": 1
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-08: 0 услуг, 0 с ценой",
+		"notes": "Лаборатория Vuksanović в Ульцине; координаты ПРИМЕРНЫЕ (район Bulevar Sami Frashëri, Тотоши — место в Google юзер не нашёл).",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-poliklinika-dr-vuksanovic-ulcinj-services.sql, в проде 2026-10-08"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-08"
+	},
+	{
+		"site": "https://www.dentalux.me/",
+		"clinics": [
+			{
+				"id": 201,
+				"slug": "dentalux-tivat",
+				"name": "Stomatološka ordinacija Dentalux",
+				"city": "tivat",
+				"db": {
+					"services": 29,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 29 услуг, 0 с ценой",
+		"notes": "Цен нет; CMS отдаёт 200 с пустым шаблоном на любой slug (/me/cjenovnik/ — пустая).",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dentalux-tivat-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "http://www.drsevaljevic.me/",
+		"clinics": [
+			{
+				"id": 202,
+				"slug": "dr-sevaljevic-tivat",
+				"name": "Stomatološka ordinacija dr Ševaljević",
+				"city": "tivat",
+				"db": {
+					"services": 37,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 37 услуг, 0 с ценой",
+		"notes": "Одностраничник, цен нет.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dr-sevaljevic-tivat-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://dent-es.me/",
+		"clinics": [
+			{
+				"id": 203,
+				"slug": "dent-es-podgorica",
+				"name": "Stomatološka ordinacija Dent-ES",
+				"city": "podgorica",
+				"db": {
+					"services": 20,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 20 услуг, 0 с ценой",
+		"notes": "Цен нет; акция 2016 в блоге не цена. Детская ортодонтия по договору с ФЗО.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dent-es-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://ortholine.me/",
+		"clinics": [
+			{
+				"id": 204,
+				"slug": "ortholine-podgorica",
+				"name": "Stomatološka ordinacija Ortholine",
+				"city": "podgorica",
+				"db": {
+					"services": 61,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 61 услуг, 0 с ценой",
+		"notes": "Цен нет. Тот же сайт под вторым доменом stomatologpodgorica.me.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ortholine-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.tafica.com/",
+		"clinics": [
+			{
+				"id": 209,
+				"slug": "tafica-dental-clinic-ulcinj",
+				"name": "Tafica Dental & Dermatology Clinic",
+				"city": "ulcinj",
+				"db": {
+					"services": 0,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "site_down",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 0 услуг, 0 с ценой",
+		"notes": "Заглушка «under construction» (Last-Modified 2026-02-11), услуг и цен нет.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-tafica-dental-clinic-ulcinj-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": "перепроверить, когда сайт запустится",
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://kmed.me/",
+		"clinics": [
+			{
+				"id": 205,
+				"slug": "k-med-ambulanta-bar",
+				"name": "K-med Ambulanta Bar",
+				"city": "bar",
+				"db": {
+					"services": 14,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 14 услуг, 0 с ценой",
+		"notes": "Цен нет; скидка 10% по купонам отелей — не цена. Сезонная сеть, точки Dobra Voda и Čanj — в описании.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-k-med-ambulanta-bar-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://kmed.me/",
+		"clinics": [
+			{
+				"id": 206,
+				"slug": "k-med-ambulanta-stoj-ulcinj",
+				"name": "K-med Ambulanta Štoj",
+				"city": "ulcinj",
+				"db": {
+					"services": 14,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 14 услуг, 0 с ценой",
+		"notes": "Цен нет. Филиал сети K-med (Bar).",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-k-med-ambulanta-stoj-ulcinj-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://physiocareteam.me/",
+		"clinics": [
+			{
+				"id": 207,
+				"slug": "physiocare-team-podgorica",
+				"name": "PhysioCare Team",
+				"city": "podgorica",
+				"db": {
+					"services": 21,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 21 услуг, 0 с ценой",
+		"notes": "Цен нет; /cjenovnik отдаёт главную.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-physiocare-team-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://vrmacwellbeing.com/",
+		"clinics": [
+			{
+				"id": 208,
+				"slug": "vrmac-health-wellbeing-retreat-kotor",
+				"name": "VRMAC Health & Wellbeing Retreat de'MAR",
+				"city": "kotor",
+				"db": {
+					"services": 44,
+					"servicesPriced": 1,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [
+			{
+				"url": "https://vrmacwellbeing.com/health-wellbeing-programs/pure-breath-experience-respiratory-support-program/",
+				"kind": "html",
+				"scope": "программа Pure Breath, от 5 дней, 550 €",
+				"approx_items": 1,
+				"date_hint": "wp-json modified 2026-06"
+			},
+			{
+				"url": "https://vrmacwellbeing.com/health-wellbeing-programs/longevity-living-healthy-aging-program/",
+				"kind": "html",
+				"scope": "wellness-программы, 550–625 €, не заведены",
+				"approx_items": 5,
+				"date_hint": "wp-json modified 2026-06"
+			}
+		],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 44 услуг, 1 с ценой",
+		"notes": "Цены только у 6 многодневных программ; заводится одна (pulmonary-rehabilitation), остальные — wellness. При Hyatt Regency Kotor Bay; файл места лежит в папке tivat.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-vrmac-health-wellbeing-retreat-kotor-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://dentalstudioglusica.me/",
+		"clinics": [
+			{
+				"id": 210,
+				"slug": "dental-studio-przno-budva",
+				"name": "Dental Studio Pržno",
+				"city": "budva",
+				"db": {
+					"services": 28,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 28 услуг, 0 с ценой",
+		"notes": "Цен нет; на главной остатки демо-шаблона.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dental-studio-przno-budva-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.dentalsmiletivat.com/",
+		"clinics": [
+			{
+				"id": 211,
+				"slug": "dental-smile-tivat",
+				"name": "Dental Smile",
+				"city": "tivat",
+				"db": {
+					"services": 53,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 53 услуг, 0 с ценой",
+		"notes": "Цен нет; akcija.html и cjenovnik — 404. Часы на сайте противоречат друг другу — не заполнены.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dental-smile-tivat-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://mitranicdental.com/",
+		"clinics": [
+			{
+				"id": 212,
+				"slug": "stomatoloska-ordinacija-mitranic-bar",
+				"name": "Opšta stomatološka ordinacija Mitranić",
+				"city": "bar",
+				"db": {
+					"services": 41,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 41 услуг, 0 с ценой",
+		"notes": "Цен нет. Без браузерного UA — 406.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-stomatoloska-ordinacija-mitranic-bar-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://vivadent.me/",
+		"clinics": [
+			{
+				"id": 213,
+				"slug": "stomatoloska-ordinacija-vivadent-podgorica",
+				"name": "Stomatološka ordinacija Vivadent",
+				"city": "podgorica",
+				"db": {
+					"services": 24,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 24 услуг, 0 с ценой",
+		"notes": "Цен нет.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-stomatoloska-ordinacija-vivadent-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.montenegrodentalcare.com/",
+		"clinics": [
+			{
+				"id": 214,
+				"slug": "ordinacija-dr-jankovic-podgorica",
+				"name": "Stomatološka ordinacija Dr Janković",
+				"city": "podgorica",
+				"db": {
+					"services": 30,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "price_on_request",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 30 услуг, 0 с ценой",
+		"notes": "Цены присылают после фото/ортопана (раздел «Dentalni turizam»).",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ordinacija-dr-jankovic-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://kiropraktika.me/",
+		"clinics": [
+			{
+				"id": 215,
+				"slug": "dr-radunovic-kiropraktika-podgorica",
+				"name": "Dr Radunović – Chiropractic & Physical Therapy",
+				"city": "podgorica",
+				"db": {
+					"services": 17,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 17 услуг, 0 с ценой",
+		"notes": "Цен нет; /cijene, /cjenovnik — 404.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dr-radunovic-kiropraktika-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://seastarscentar.me/",
+		"clinics": [
+			{
+				"id": 216,
+				"slug": "seastars-herceg-novi",
+				"name": "SeaStars edukativni centar",
+				"city": "herceg-novi",
+				"db": {
+					"services": 10,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 10 услуг, 0 с ценой",
+		"notes": "Цен нет. Второй файл того же места: herceg-novi/seastars-edukativni-centar.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-seastars-herceg-novi-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://fiziotim.me/",
+		"clinics": [
+			{
+				"id": 217,
+				"slug": "fizio-tim-podgorica",
+				"name": "Fizio Tim Crna Gora",
+				"city": "podgorica",
+				"db": {
+					"services": 30,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 30 услуг, 0 с ценой",
+		"notes": "Цен нет.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-fizio-tim-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://ginekologijakotor.com/",
+		"clinics": [
+			{
+				"id": 218,
+				"slug": "ginekoloska-ordinacija-vita-feminae-kotor",
+				"name": "Ginekološka ordinacija Vita Feminae",
+				"city": "kotor",
+				"db": {
+					"services": 12,
+					"servicesPriced": 0,
+					"labTests": 1,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 12 услуг, 0 с ценой",
+		"notes": "Цен нет. По этому адресу принимает и Центр доктора Зобина (doctorzobin.com) — отдельный кандидат 2e.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ginekoloska-ordinacija-vita-feminae-kotor-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.filia.co.me/",
+		"clinics": [
+			{
+				"id": 219,
+				"slug": "ginekolosko-akuserska-ordinacija-filia-tivat",
+				"name": "Ginekološko akušerska ordinacija Filia",
+				"city": "tivat",
+				"db": {
+					"services": 18,
+					"servicesPriced": 0,
+					"labTests": 11,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 18 услуг, 0 с ценой",
+		"notes": "Цен нет. Сайт медленный (~60 с).",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ginekolosko-akuserska-ordinacija-filia-tivat-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.kavaricmedical.me/",
+		"clinics": [
+			{
+				"id": 220,
+				"slug": "kavaric-medical-podgorica",
+				"name": "Kavarić Medical",
+				"city": "podgorica",
+				"db": {
+					"services": 31,
+					"servicesPriced": 0,
+					"labTests": 2,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 31 услуг, 0 с ценой",
+		"notes": "Цен нет. Сайт © 2016.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-kavaric-medical-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://drkoturovic.me/",
+		"clinics": [
+			{
+				"id": 221,
+				"slug": "ocna-bolnica-oftalens-dr-koturovic-podgorica",
+				"name": "Očna bolnica Oftalens Dr Koturović",
+				"city": "podgorica",
+				"db": {
+					"services": 22,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 22 услуг, 0 с ценой",
+		"notes": "Цен нет.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ocna-bolnica-oftalens-dr-koturovic-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://patlab.me/",
+		"clinics": [
+			{
+				"id": 222,
+				"slug": "pat-lab-podgorica",
+				"name": "Pat Lab",
+				"city": "podgorica",
+				"db": {
+					"services": 3,
+					"servicesPriced": 0,
+					"labTests": 4,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 3 услуг, 0 с ценой",
+		"notes": "Цен нет. /services, /about и др. — демо-контент темы.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-pat-lab-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://stefanijadental.me/",
+		"clinics": [
+			{
+				"id": 223,
+				"slug": "stefanija-dental-podgorica",
+				"name": "Stomatološka ordinacija Stefanija Dental",
+				"city": "podgorica",
+				"db": {
+					"services": 29,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 29 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/stefanija-dental-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-stefanija-dental-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://polident.me/",
+		"clinics": [
+			{
+				"id": 224,
+				"slug": "polident-bijela",
+				"name": "Stomatološka ordinacija Polident",
+				"city": "herceg-novi",
+				"db": {
+					"services": 6,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 6 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/polident-bijela.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-polident-bijela-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.drkekovic.com/dental-implant-centar.html",
+		"clinics": [
+			{
+				"id": 225,
+				"slug": "dental-implant-centar-podgorica",
+				"name": "Dental Implant Centar",
+				"city": "podgorica",
+				"db": {
+					"services": 7,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 7 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/dental-implant-centar-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dental-implant-centar-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://drnumanovic.me/",
+		"clinics": [
+			{
+				"id": 226,
+				"slug": "numanovic-dental-aesthetic-podgorica",
+				"name": "Numanović Dental & Aesthetic",
+				"city": "podgorica",
+				"db": {
+					"services": 11,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 11 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/numanovic-dental-aesthetic-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-numanovic-dental-aesthetic-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.omnidental.me/",
+		"clinics": [
+			{
+				"id": 227,
+				"slug": "omnidental-bar",
+				"name": "Stomatološka ordinacija Omnidental",
+				"city": "bar",
+				"db": {
+					"services": 25,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 25 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/omnidental-bar.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-omnidental-bar-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.dentalesteticcentar.com/",
+		"clinics": [
+			{
+				"id": 228,
+				"slug": "dental-estetic-centar-podgorica",
+				"name": "Dental & Estetic Centar",
+				"city": "podgorica",
+				"db": {
+					"services": 40,
+					"servicesPriced": 1,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 40 услуг, 1 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/dental-estetic-centar-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dental-estetic-centar-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.ital-dent.com/",
+		"clinics": [
+			{
+				"id": 229,
+				"slug": "ital-dent-podgorica",
+				"name": "Ital-Dent",
+				"city": "podgorica",
+				"db": {
+					"services": 14,
+					"servicesPriced": 2,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "price_on_request",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 14 услуг, 2 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/ital-dent-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ital-dent-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://ordinacijadjurovic.me/",
+		"clinics": [
+			{
+				"id": 230,
+				"slug": "stomatoloska-ordinacija-djurovic-kolasin",
+				"name": "Stomatološka ordinacija Đurović",
+				"city": "kolasin",
+				"db": {
+					"services": 9,
+					"servicesPriced": 1,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "price_on_request",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 9 услуг, 1 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/stomatoloska-ordinacija-djurovic-kolasin.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-stomatoloska-ordinacija-djurovic-kolasin-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://imcfizio.me/",
+		"clinics": [
+			{
+				"id": 231,
+				"slug": "imc-fizio-podgorica",
+				"name": "IMC Fizio",
+				"city": "podgorica",
+				"db": {
+					"services": 12,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 12 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/imc-fizio-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-imc-fizio-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://pollexphysio.com/",
+		"clinics": [
+			{
+				"id": 232,
+				"slug": "pollex-physio-podgorica",
+				"name": "Pollex Physio",
+				"city": "podgorica",
+				"db": {
+					"services": 9,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 9 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/pollex-physio-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-pollex-physio-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.oss-physio.com/",
+		"clinics": [
+			{
+				"id": 233,
+				"slug": "ossphysio-bar",
+				"name": "OssPhysio",
+				"city": "bar",
+				"db": {
+					"services": 12,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 12 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/ossphysio-bar.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ossphysio-bar-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://medcontour.me/",
+		"clinics": [
+			{
+				"id": 234,
+				"slug": "medcontour-institute-budva",
+				"name": "Medcontour Institute",
+				"city": "budva",
+				"db": {
+					"services": 37,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 37 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/medcontour-institute-budva.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-medcontour-institute-budva-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://fontiscg.com/",
+		"clinics": [
+			{
+				"id": 235,
+				"slug": "ordinacija-fontis-podgorica",
+				"name": "Ordinacija Fontis",
+				"city": "podgorica",
+				"db": {
+					"services": 26,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 26 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/ordinacija-fontis-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ordinacija-fontis-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://drtodorovic.com/me/",
+		"clinics": [
+			{
+				"id": 236,
+				"slug": "todorovic-ophthalmology-aesthetics-kotor",
+				"name": "Todorović Ophthalmology & Aesthetics",
+				"city": "kotor",
+				"db": {
+					"services": 27,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 27 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/todorovic-ophthalmology-aesthetics-kotor.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-todorovic-ophthalmology-aesthetics-kotor-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.ultrazvuk.me/",
+		"clinics": [
+			{
+				"id": 237,
+				"slug": "diagnost-budva",
+				"name": "Diagnost — ordinacija za ultrazvučnu dijagnostiku",
+				"city": "budva",
+				"db": {
+					"services": 14,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 14 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/diagnost-budva.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-diagnost-budva-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.drabramovic.com/",
+		"clinics": [
+			{
+				"id": 238,
+				"slug": "dr-abramovic-a-medical-bar",
+				"name": "Dr Abramović — A Medical",
+				"city": "bar",
+				"db": {
+					"services": 18,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 18 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/dr-abramovic-a-medical-bar.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-dr-abramovic-a-medical-bar-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.drrahovic.com/",
+		"clinics": [
+			{
+				"id": 239,
+				"slug": "ordinacija-dr-rahovic-bijelo-polje",
+				"name": "Ordinacija za ultrazvučnu dijagnostiku dr Rahović",
+				"city": "bijelo-polje",
+				"db": {
+					"services": 14,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 14 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/ordinacija-dr-rahovic-bijelo-polje.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ordinacija-dr-rahovic-bijelo-polje-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://sanicard.me/",
+		"clinics": [
+			{
+				"id": 240,
+				"slug": "sanicard-podgorica",
+				"name": "Sanicard",
+				"city": "podgorica",
+				"db": {
+					"services": 28,
+					"servicesPriced": 1,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 28 услуг, 1 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/sanicard-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-sanicard-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "http://www.dermatolog-kaludjer.org/",
+		"clinics": [
+			{
+				"id": 241,
+				"slug": "ordinacija-dr-kaludjerovic-podgorica",
+				"name": "Ordinacija dr Kaluđerović",
+				"city": "podgorica",
+				"db": {
+					"services": 4,
+					"servicesPriced": 1,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 4 услуг, 1 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/ordinacija-dr-kaludjerovic-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-ordinacija-dr-kaludjerovic-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.novamedicinarada.com/podgorica",
+		"clinics": [
+			{
+				"id": 242,
+				"slug": "nova-medicina-rada-podgorica",
+				"name": "Nova Medicina Rada Podgorica",
+				"city": "podgorica",
+				"db": {
+					"services": 18,
+					"servicesPriced": 0,
+					"labTests": 1,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 18 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/nova-medicina-rada-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-nova-medicina-rada-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.novamedicinarada.com/niksic",
+		"clinics": [
+			{
+				"id": 243,
+				"slug": "nova-medicina-rada-niksic",
+				"name": "Nova Medicina Rada Nikšić",
+				"city": "niksic",
+				"db": {
+					"services": 18,
+					"servicesPriced": 0,
+					"labTests": 1,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 18 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/nova-medicina-rada-niksic.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-nova-medicina-rada-niksic-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://integracentar.me/",
+		"clinics": [
+			{
+				"id": 244,
+				"slug": "razvojni-centar-integra-podgorica",
+				"name": "Razvojni centar Integra",
+				"city": "podgorica",
+				"db": {
+					"services": 8,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 8 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/razvojni-centar-integra-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-razvojni-centar-integra-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.doctorzobin.com/",
+		"clinics": [
+			{
+				"id": 245,
+				"slug": "medicinski-centar-dr-zobin-kotor",
+				"name": "Medicinski centar dr Zobin",
+				"city": "kotor",
+				"db": {
+					"services": 9,
+					"servicesPriced": 0,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 9 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/medicinski-centar-dr-zobin-kotor.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-medicinski-centar-dr-zobin-kotor-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://monterehab.com/",
+		"clinics": [
+			{
+				"id": 246,
+				"slug": "monterehab-budva",
+				"name": "MonteRehab",
+				"city": "budva",
+				"db": {
+					"services": 18,
+					"servicesPriced": 3,
+					"labTests": 0,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "partial_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 18 услуг, 3 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/monterehab-budva.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-monterehab-budva-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
+	},
+	{
+		"site": "https://www.ijzcg.me/",
+		"clinics": [
+			{
+				"id": 247,
+				"slug": "institut-za-javno-zdravlje-crne-gore-podgorica",
+				"name": "Institut za javno zdravlje Crne Gore",
+				"city": "podgorica",
+				"db": {
+					"services": 8,
+					"servicesPriced": 0,
+					"labTests": 26,
+					"labTestsPriced": 0
+				}
+			}
+		],
+		"status": "no_prices",
+		"pricelists": [],
+		"coverageVsDb": "импорт с этого прайса 2026-10-09: 8 услуг, 0 с ценой",
+		"notes": "Импорт подволны 2e 2026-10-09; подробности — data/clinic-imports/institut-za-javno-zdravlje-crne-gore-podgorica.json.",
+		"checked": "импорт кандидатов (data/clinic-candidates/WAVE1_IMPORT_PROMPT.md): curl по сырому HTML / wp-json",
+		"flags": [
+			"imported: insert-clinic-institut-za-javno-zdravlje-crne-gore-podgorica-services.sql, в проде 2026-10-09"
+		],
+		"recheckHint": null,
+		"lastChecked": "2026-10-09"
 	}
 ]

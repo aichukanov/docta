@@ -1,0 +1,168 @@
+{
+	"schemaVersion": 1,
+	"slug": "ital-dent-podgorica",
+	"name": "Ital-Dent",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJWZaIIQrrTRMRgnAL_yZDUcA",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1,
+		8
+	],
+	"sql": [
+		"server/sql/insert-clinic-ital-dent-podgorica.sql",
+		"server/sql/insert-clinic-ital-dent-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 229,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2e, агент X. Сайт 2018 (последнее изменение главной 2018-10-09) — перечень мог устареть. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 256
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.ital-dent.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress, только итальянский; wp-json /pages: Home (2018-10-09), Clinica (2018-05-14), FAQs (2018-05-24). Цены по запросу; бесплатные снимки на главной."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/ital-dent.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Ital-Dent», «36a Pete Proleterske Brigade», +382 20 621 332, 6 отзывов (rating 4.8) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Peta proleterska 36a — сайт = Google; координаты — место Google",
+		"phone": "+38220621332;+38268815555 — сайт (первый = Google)",
+		"email": "info@ital-dent.com — сайт",
+		"website": "https://www.ital-dent.com/",
+		"social": "на сайте нет",
+		"logo": "https://www.ital-dent.com/wp-content/uploads/2018/03/logo_1.png",
+		"workingHours": "пн–пт 9–13 и 15–19 — подвал сайта",
+		"doctors": "нет — по именам не названы («medici stomatologi italiani»)",
+		"doctorPhotos": "нет",
+		"doctorBios": "нет",
+		"prices": "2 из 14: ортопан и прицельный снимок 0 € («gratuite su CD»); остальные — по запросу (NULL)",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Conscious Sedation",
+			"slug": "conscious-sedation",
+			"source": "/clinica/: «Eseguiamo interventi in sedazione con la presenza di anestetista»; FAQ «Cosa si intende per sedazione cosciente?? — Un anestesista pratica una sedazione al paziente»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "/clinica/: «Implantologia»; «Utilizzo tecnica Piezosurgery ©» (FAQ: «permette di inserire gli impianti la dove un tempo non era possibile … ad ultrasuoni»)"
+		},
+		{
+			"nameEn": "Immediate Implant Placement",
+			"slug": "immediate-implant-placement",
+			"source": "FAQ: «Dopo un'estrazione dentale, quanto deve passare per inserire un impianto? — Normalmente 60 giorni, in alcuni casi anche subito dopo»"
+		},
+		{
+			"nameEn": "Laser Teeth Whitening",
+			"slug": "laser-teeth-whitening",
+			"source": "/clinica/: «Sbiancamento dentale con laser …»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "/clinica/: «Sbiancamento dentale … o lampada al plasma» — ламповое отбеливание в кабинете"
+		},
+		{
+			"nameEn": "Dental Caries Treatment",
+			"slug": "dental-caries-treatment",
+			"source": "/clinica/: «Cure dentali conservative»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "/clinica/: «Faccette in ceramica …»"
+		},
+		{
+			"nameEn": "Direct Composite Veneer",
+			"slug": "direct-composite-veneer",
+			"source": "/clinica/: «Faccette … o composito»"
+		},
+		{
+			"nameEn": "Periodontal Scaling and Root Planing",
+			"slug": "periodontal-scaling-root-planing",
+			"source": "/clinica/: «Parodontologia (per curare la \"piorrea\")» — пиорея = пародонтит"
+		},
+		{
+			"nameEn": "Dental Sinus Lift",
+			"slug": "dental-sinus-lift",
+			"source": "/clinica/: «Chirurgia del rialzo del seno mascellare …»"
+		},
+		{
+			"nameEn": "Bone Augmentation",
+			"slug": "bone-augmentation",
+			"source": "/clinica/: «… e/o innesti ossei»; FAQ: «interventi specifici che permettono di aumentare il suo spessore»"
+		},
+		{
+			"nameEn": "Clear Aligner Therapy",
+			"slug": "clear-aligner-therapy",
+			"source": "/clinica/: «Ortodonzia invisibile» — бренд не назван, общая запись элайнеров"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "/clinica/: «Esami radiologici digitali su tutta l'arcata»; главная: «Eseguiamo ortopantomografie digitali (panoramiche) gratuite su CD» — 0 €",
+			"price": 0,
+			"priceMin": null,
+			"priceMax": null
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "/clinica/: «… o settoriali»; главная: «Eseguiamo radiografie endoriali digitali (ogni singolo dente) gratuite su CD» — 0 €",
+			"price": 0,
+			"priceMin": null,
+			"priceMax": null
+		}
+	],
+	"doctors": [],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/clinica/: «Tecniche di ipnosi per pazienti fobici»",
+			"reason": "Гипноз — немедицинская альтернатива седации, не медицинская седация (решение юзера: не заводить). Седация с анестезиологом заведена отдельно."
+		},
+		{
+			"source": "/clinica/: «Protesi dentali fisse o mobili»",
+			"reason": "Вид и материал протезов не названы — записи по материалу не угадываем. В описание."
+		},
+		{
+			"source": "/clinica/: «Utilizzo tecnica Piezosurgery ©»",
+			"reason": "Методика/аппарат (ультразвуковая пьезохирургия) для имплантации, не отдельная услуга — в src имплантации и в описание; синоним не ставили (Piezosurgery применяется не только при имплантации)."
+		},
+		{
+			"source": "Главная: «Chiedi un preventivo gratuito»; FAQ: «Applichi la panoramica su un vetro … la spedisca … via email»",
+			"reason": "Бесплатная смета по присланному снимку — онлайн-форма, не очная консультация; услугу с ценой 0 не заводили."
+		},
+		{
+			"source": "Главная: «Alloggio gratuito per 2 persone», «Viaggio gratuito in aereo per preventivi superiori ai 10.000 €», «Trasporto gratuito … aeroporto di Podgorica / porto di Bar», «Diamo assistenza in Italia»",
+			"reason": "Сервис дентального туризма, не медицинские услуги — в описание."
+		},
+		{
+			"source": "Главная: «Le fatture … sono accettate da tutte le assicurazioni mediche che rimborsano spese dentistiche (Assilt, Fasi, Pronto Care, Previmedical ecc)»",
+			"reason": "Итальянские страховые для возмещения — не страховые справочника Черногории; в описание без перечня."
+		}
+	],
+	"openQuestions": []
+}

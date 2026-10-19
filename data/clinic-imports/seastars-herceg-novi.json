@@ -1,0 +1,258 @@
+{
+	"schemaVersion": 1,
+	"slug": "seastars-herceg-novi",
+	"name": "SeaStars edukativni centar",
+	"city": "Herceg Novi",
+	"cityId": 8,
+	"googlePlaceId": "ChIJL79BQtA7TBMRcOIzlP2p4sA",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-seastars-herceg-novi.sql",
+		"server/sql/insert-clinic-seastars-herceg-novi-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 216,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент U. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и физиотерапевтов по slug. Сухой прогон 2026-10-09 на локали (plain + shadow для services) — см. итог в отчёте агента. Slug клиники и физиотерапевтов сверены с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 243
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://seastarscentar.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Zyro, 4 страницы (/, /o-centru, /tretmani, /kontakt), sitemap lastmod 2026-10-08, © 2025 FinFitt Technology. Цен нет. Отзывы на сайте — с фото unsplash (шаблон), не использованы. Instagram в подвале — пустая ссылка."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/herceg-novi/seastars-edukativni-centar-za-skoliozu-i-ranu-djeciju-terapi.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Основной файл: place_id ChIJL79BQtA7TBMRcOIzlP2p4sA, полное имя, 82 отзыва. Координаты 42.4568398 / 18.5295299, +382 67 044 114, «78 Orijenskog Bataljona, Herceg - Novi 85340»."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/herceg-novi/seastars-edukativni-centar.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Дубль того же места (тот же place_id, короткое имя «SeaStars “edukativni centar”», 79 отзывов — более ранний снимок). Отдельной карточки нет."
+		}
+	],
+	"coverage": {
+		"address": "Orijenskog bataljona 78, 85340 — Google. /kontakt «Bulevar JNA 12, Herceg Novi» не взят (блок с шаблонными текстами конструктора, расходится с Google)",
+		"phone": "+38267044114 — сайт (tel:) и Google",
+		"email": "centarseastars@gmail.com — сайт",
+		"website": "https://seastarscentar.me/",
+		"social": "нет — ссылка Instagram в подвале пустая (https://www.instagram.com/)",
+		"logo": "https://assets.zyrosite.com/fP5Q0oHiRvl7XULp/logo-1-OU28WRUrZ4XzfPUF.jpg",
+		"workingHours": "Пн–Пт 09:00–17:00, Сб 09:00–14:00, Вс closed — главная; /kontakt «Pon-Pet 08-16» — расхождение, см. openQuestions",
+		"description": "из главной, /o-centru и /tretmani",
+		"languages": "только SR — другие не заявлены",
+		"doctors": "2 физиотерапевта (94 PHYSIOTHERAPY, title NULL), обе новые, с фото и био",
+		"prices": "цен нет — все услуги без цены",
+		"labTests": "нет",
+		"reviews": "pending — 82 в Google, ждут выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "dynamic-neuromuscular-stabilization",
+			"nameEn": "Dynamic Neuromuscular Stabilization",
+			"nameSr": "Dinamička neuromuskularna stabilizacija",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Именная методика (Пражская школа, DNS): SeaStars /tretmani «Dinamička neuromuskularna stabilizacija», Fizio Tim /kineziterapija «DNS (Dinamička neuromuskularna stabilizacija)». В каталоге записи нет (kinesiotherapy — общая ЛФК, PNF заведён синонимом к ней, но DNS — отдельный метод, сайты называют его отдельно). Кат. 5 PHYSIOTHERAPY, спец. 42."
+		},
+		{
+			"table": "medical_services",
+			"slug": "vojta-therapy",
+			"nameEn": "Vojta Therapy",
+			"nameSr": "Vojta metoda",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Именная методика: seastarscentar.me /tretmani «Vojta metoda je refleksna lokomotorna tehnika koja stimuliše urođene motoričke reakcije». В каталоге нет; cns-sensorimotor-development-stimulation («specifične metode», FZOCG) — зонтик без названия метода, бренд/метод не теряем. Кат. 5, спец. 42 (применяется и у взрослых, педиатрию не ставим)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "bobath-therapy",
+			"nameEn": "Bobath Therapy",
+			"nameSr": "Bobath koncept",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Именная методика: seastarscentar.me /tretmani «Bobath koncept integriše specifične senzomotorne stimulacije». В каталоге нет (см. vojta-therapy — тот же довод). Кат. 5, спец. 42."
+		},
+		{
+			"table": "medical_services",
+			"slug": "infant-massage",
+			"nameEn": "Infant Massage",
+			"nameSr": "Masaža za bebe",
+			"categoryIds": [
+				5,
+				25
+			],
+			"specialtyIds": [
+				42,
+				4
+			],
+			"reason": "seastarscentar.me /tretmani «Masaža za bebe koristi nežne, strukturirane taktilne stimulacije koje podržavaju sazrevanje nervnog sistema». Массажа для младенцев в каталоге нет. Кат. 5 + 25 PEDIATRICS (как high-risk-infant-stimulation-exercises), спец. 42 + 4 (авто)."
+		}
+	],
+	"services": [
+		{
+			"slug": "schroth-method",
+			"nameEn": "Schroth Method",
+			"price": null,
+			"source": "/tretmani — «Schroth terapija je prilagođeni trodimenzionalni tretman skolioze sa specifičnim obrascem disanja», tim — «ISST Schroth terapeut»"
+		},
+		{
+			"slug": "dynamic-neuromuscular-stabilization",
+			"nameEn": "Dynamic Neuromuscular Stabilization",
+			"price": null,
+			"source": "/tretmani — «Dinamička neuromuskularna stabilizacija koristi principe razvojne neurobiomehanike»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "postural-exercises",
+			"nameEn": "Postural Exercises",
+			"price": null,
+			"source": "/tretmani — «Korektivna gimnastika obuhvata ciljane vežbe za ispravljanje posturalnih odstupanja»"
+		},
+		{
+			"slug": "vojta-therapy",
+			"nameEn": "Vojta Therapy",
+			"price": null,
+			"source": "/tretmani — «Vojta metoda je refleksna lokomotorna tehnika»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "bobath-therapy",
+			"nameEn": "Bobath Therapy",
+			"price": null,
+			"source": "/tretmani — «Bobath koncept integriše specifične senzomotorne stimulacije»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "parental-developmental-stimulation-training",
+			"nameEn": "Parental Developmental Stimulation Training",
+			"price": null,
+			"source": "/tretmani — «Baby handling podučava roditelje sigurnim i razvojnim principima rukovanja bebom … podstiču optimalan neuromotorički razvoj» (= обучение родителей стимуляции развития; бренд-термин — синоним)"
+		},
+		{
+			"slug": "infant-massage",
+			"nameEn": "Infant Massage",
+			"price": null,
+			"source": "/tretmani — «Masaža za bebe»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "high-risk-infant-stimulation-exercises",
+			"nameEn": "High-Risk Infant Stimulation Exercises",
+			"price": null,
+			"source": "главная — «Tretmani za neurorizične bebe — namenjeni bebama sa povećanim neurorazvojnim rizikom. Kroz nežne, ciljane pokrete i vođenje roditelja…»"
+		},
+		{
+			"slug": "kinesiotherapy-for-children-with-deformities",
+			"nameEn": "Kinesiotherapy for Children with Deformities",
+			"price": null,
+			"source": "главная — «Termini za decu sa posturalnim deformitetima — Program je namenjen deci sa skoliozom, kifozom, lordozom … Kroz specifične korektivne vežbe»"
+		},
+		{
+			"slug": "pediatric-rehabilitation",
+			"nameEn": "Pediatric Rehabilitation",
+			"price": null,
+			"source": "главная — «Termini za decu sa grubim motoričkim smetnjama — namenjeni deci koja imaju poteškoće u hodu, stajanju, ravnoteži»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "dragana-popovic",
+			"nameSr": "Dragana Popović",
+			"professionalTitle": null,
+			"position": "Neurorazvojni i ISST Schroth terapeut, osnivačica centra",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://assets.zyrosite.com/fP5Q0oHiRvl7XULp/dragana-PmdfWqLD4FUI8mz6.jpg",
+			"services": [
+				"schroth-method",
+				"bobath-therapy"
+			]
+		},
+		{
+			"slug": "ivana-vujisic",
+			"nameSr": "Ivana Vujisić",
+			"professionalTitle": null,
+			"position": "Pedijatrijski fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://assets.zyrosite.com/fP5Q0oHiRvl7XULp/iva-mjxH5orII5lYAzEd.jpg",
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "главная — «Podrška terapeutima — Omogućavamo edukaciju, superviziju i zajedničko planiranje tretmana za razvoj stručnog tima»",
+			"reason": "Услуга для специалистов (B2B), не для пациентов."
+		},
+		{
+			"source": "главная — «Digitalni karton korisnika – mobilna aplikacija StarsRehabcare», «Koordinacija sa StarsTherapy timom»",
+			"reason": "Формат работы и партнёрство (Stars Therapy, Banja Koviljača) — упомянуты в описании, не услуги."
+		},
+		{
+			"source": "главная — «Podrška roditeljima — Roditelji dobijaju smernice, edukaciju i ohrabrenje», «Kontinuirani proces rehabilitacije kod kuće — Dajemo jasne smernice za vežbe kod kuće»",
+			"reason": "Часть каждого тренинга (описание), не отдельная услуга; обучение родителей покрыто parental-developmental-stimulation-training (Baby handling)."
+		},
+		{
+			"source": "/o-centru, /tretmani — отзывы «Marija M.», «Petar S.», «Jana M.»",
+			"reason": "Отзывы с сайта не импортируются (стоковые фото — вероятно шаблон)."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Часы работы",
+			"detail": "Главная: «Pon–Pet: 09:00–17:00; Subota: 09:00–14:00»; /kontakt: «Radno Pon-Pet 08-16». Взяты часы главной. Если верны часы /kontakt — поправить clinic_working_hours."
+		},
+		{
+			"topic": "Адрес на /kontakt",
+			"detail": "«Bulevar JNA 12, Herceg Novi» против Google «78 Orijenskog Bataljona». Взят Google (точка карты совпадает с ним). Блок /kontakt окружён шаблонными текстами конструктора — вероятно, не обновлён."
+		},
+		{
+			"topic": "Дубль в каталоге",
+			"detail": "stimulative-exercises-for-at-risk-infants (кат. 5, 4 клиники) и high-risk-infant-stimulation-exercises (кат. 5+25, 3 клиники) — одна и та же услуга двумя записями. Взята вторая (с педиатрической категорией). Кандидат на слияние."
+		}
+	]
+}

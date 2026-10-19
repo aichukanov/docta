@@ -1,0 +1,271 @@
+{
+	"schemaVersion": 1,
+	"slug": "stomatoloska-ordinacija-vivadent-podgorica",
+	"name": "Stomatološka ordinacija VIVAdent",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJW6ohrkDrTRMRp0sMhQl0oFc",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-stomatoloska-ordinacija-vivadent-podgorica.sql",
+		"server/sql/insert-clinic-stomatoloska-ordinacija-vivadent-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 213,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент W. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. Страницы сайта 2024-08 — состав свежий. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 240
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://vivadent.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress (Divi), me/en/ru. Текст — /wp-json/wp/v2/pages?per_page=100 (content с шорткодами Divi, очищен): o-nama, savremena-dijagnostika, estetska-stomatologija, implantologija, oralna-hirurgija, ortodoncija, lijecenje-parodontopatije, protetika-2, dental-plan-za-firme, dentalni-turizam-2, kontakt, mediji; home — только слайдер и онлайн-запись. Страницы созданы/изменены 2024-08 (home — 2025-05). Цен нет («Niske cijene stomatoloških usluga» — не цена)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/stomatoloska-ordinacija-vivadent.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatoloska ordinacija VIVADENT», «47 Kralja Nikole, Podgorica 81000», +382 67 210 663, 13 отзывов (rating 4.7) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Kralja Nikole 47, prvi sprat — /kontakt/ (= Google «47 Kralja Nikole»); координаты — место Google",
+		"phone": "+38220623519;+38267210663;+38267224524 — /kontakt/; второй = Google",
+		"email": "vivadent@t-com.me — /kontakt/",
+		"website": "https://vivadent.me/",
+		"social": "на сайте нет",
+		"logo": "https://vivadent.me/wp-content/uploads/2024/07/cropped-vivadent4-logo.png",
+		"workingHours": "на сайте нет — не заполнено",
+		"doctors": "2 на /o-nama/, оба новые",
+		"doctorPhotos": "нет: на /o-nama/ фото нет, фото Stefan на /mediji/ — 404",
+		"doctorBios": "у обоих — с /o-nama/",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "/savremena-dijagnostika/: «Ortopan – tomografija», «snimanje pomoću digitalniog senzorskog ortopan aparata»"
+		},
+		{
+			"nameEn": "Cephalometric X-Ray",
+			"slug": "cephalometric-x-ray",
+			"source": "/savremena-dijagnostika/: «Telerendgen»"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "/savremena-dijagnostika/: «Retroalveolarni snimci»; /o-nama/: «usluge digitalnog intraoralnog radiografskog snimanja zuba»"
+		},
+		{
+			"nameEn": "X-Ray Paranasal Sinuses",
+			"slug": "x-ray-paranasal-sinuses",
+			"source": "/savremena-dijagnostika/: «Rtg paranazalnih sinusa»"
+		},
+		{
+			"nameEn": "X-Ray Temporomandibular Joint",
+			"slug": "x-ray-temporomandibular-joint",
+			"source": "/savremena-dijagnostika/: «Rtg temporomandibularnog zgloba»"
+		},
+		{
+			"nameEn": "X-Ray Hand",
+			"slug": "x-ray-hand",
+			"source": "/savremena-dijagnostika/: «Rtg šake»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "/estetska-stomatologija/: «Viniri (keramičke fasete)»"
+		},
+		{
+			"nameEn": "All-Ceramic Crown",
+			"slug": "all-ceramic-crown",
+			"source": "/estetska-stomatologija/: «Bezmetalne krunice»; /protetika-2/: «Krunice i mostovi izrađeni od bezmetalne keramike» — материал (цирконий/пресс) не назван → общая безметалловая"
+		},
+		{
+			"nameEn": "Direct Composite Veneer",
+			"slug": "direct-composite-veneer",
+			"source": "/estetska-stomatologija/: «Kompozitne fasete» — техника не названа, прямая (в кресле) — основной вид"
+		},
+		{
+			"nameEn": "Home Teeth Whitening",
+			"slug": "home-teeth-whitening",
+			"source": "/estetska-stomatologija/: «Izbjeljivanje zuba … dobiti foliju izrađenu po modelu Vaših zuba i sredstvo za bjeljenje … bjeliti zube kod kuće»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "/implantologija/: «Zubni implant je imitacija korijena zuba, obično napravljen od titanijuma»; /oralna-hirurgija/: «ugradnja dentalnih implantata» — бренд не назван"
+		},
+		{
+			"nameEn": "Wisdom Tooth Extraction",
+			"slug": "wisdom-tooth-extraction",
+			"source": "/oralna-hirurgija/: «ekstrakcija (vađenje) umnjaka»"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "/oralna-hirurgija/: «apikotomija»"
+		},
+		{
+			"nameEn": "Dental and Soft Tissue Trauma Treatment",
+			"slug": "dental-and-soft-tissue-trauma-treatment",
+			"source": "/oralna-hirurgija/: «zbrinjavanje facijalne traume»"
+		},
+		{
+			"nameEn": "Pre-prosthetic Soft and Hard Tissue Correction",
+			"slug": "pre-prosthetic-soft-and-hard-tissue-correction",
+			"source": "/oralna-hirurgija/: «preprotetska hirurgija», «korektivni i preventivni zahvati na koštanim i mekim tkivima»"
+		},
+		{
+			"nameEn": "Bone Augmentation",
+			"slug": "bone-augmentation",
+			"source": "/oralna-hirurgija/: «koštani graftovi»"
+		},
+		{
+			"nameEn": "Self-Ligating Braces (Metal) per Jaw",
+			"slug": "self-ligating-braces-metal-per-jaw",
+			"source": "/ortodoncija/: «Među njima su fiksni aparati Damon system» — Damon уже синоним этой записи (ortholine-podgorica, dental-smile-tivat)"
+		},
+		{
+			"nameEn": "Plaque and Calculus Removal",
+			"slug": "plaque-and-calculus-removal",
+			"source": "/lijecenje-parodontopatije/: «profesionalno ukljanjanje čvrstih i mekih naslaga», «Uklanjanje mikrobiološkog plaka i kalkulusa (kamenca)»"
+		},
+		{
+			"nameEn": "Periodontal Scaling and Root Planing",
+			"slug": "periodontal-scaling-root-planing",
+			"source": "/lijecenje-parodontopatije/: «nehirurški (konzervativni) tretman prostora ispod nivoa desni … čišćenje zubnog kamenca i mekih naslaga ultrazvukom i specijalnim kiretama»"
+		},
+		{
+			"nameEn": "Therapeutic Tooth Grinding",
+			"slug": "therapeutic-tooth-grinding",
+			"source": "/lijecenje-parodontopatije/: «U ovoj fazi ponekad radimo i tzv. okluzalno uravnoteženje»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery",
+			"slug": "flap-surgery-periodontal",
+			"source": "/lijecenje-parodontopatije/: «Hirurška terapija … modifikovana Vidmanova režanj operacija»"
+		},
+		{
+			"nameEn": "Guided Tissue Regeneration",
+			"slug": "guided-tissue-regeneration",
+			"source": "/lijecenje-parodontopatije/: «vođena regeneracija tkiva»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery with Bone Graft per Tooth",
+			"slug": "periodontal-flap-surgery-with-bone-graft-per-tooth",
+			"source": "/lijecenje-parodontopatije/: «koštani graftovi (transplantati)» в хирургическом лечении пародонтита"
+		},
+		{
+			"nameEn": "Ceramic Dental Bridge",
+			"slug": "ceramic-dental-bridge",
+			"source": "/protetika-2/: «Krunice i mostovi izrađeni od bezmetalne keramike»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "jovanka-lekic",
+			"nameSr": "Jovanka Lekić",
+			"professionalTitle": "dr",
+			"position": "Specijalista ortodoncije",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": null,
+			"services": [
+				"self-ligating-braces-metal-per-jaw"
+			]
+		},
+		{
+			"slug": "stefan-lekic",
+			"nameSr": "Stefan Lekić",
+			"professionalTitle": "dr",
+			"position": "Specijalista oralne hirurgije",
+			"specialtyIds": [
+				78,
+				74
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": null,
+			"services": [
+				"dental-implant-placement",
+				"wisdom-tooth-extraction",
+				"apicoectomy",
+				"dental-and-soft-tissue-trauma-treatment",
+				"pre-prosthetic-soft-and-hard-tissue-correction",
+				"bone-augmentation",
+				"flap-surgery-periodontal",
+				"guided-tissue-regeneration",
+				"periodontal-flap-surgery-with-bone-graft-per-tooth"
+			]
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/oralna-hirurgija/: «terapija bolne disfunkcije temporomandibularnog (donjoviličnog) zgloba»",
+			"reason": "Метод лечения не назван (шина, инъекции, физиотерапия) — несколько неравноценных кандидатов, ни один не назван сайтом; не заводили."
+		},
+		{
+			"source": "/lijecenje-parodontopatije/: «zamjena starih i hrapavih zubnih ispuna i drugih nadoknada»",
+			"reason": "Этап подготовки пародонтологического лечения; материал пломб не назван — old-filling-removal / пломбы не ставили."
+		},
+		{
+			"source": "/protetika-2/: «za razliku od metalo – keramčkih krunica gdje se siva linija vremenom pojavljuje»",
+			"reason": "Металлокерамика упомянута только для сравнения — не заводили."
+		},
+		{
+			"source": "/protetika-2/: «Radimo sve vrste protetskih radova»",
+			"reason": "Общая фраза без конкретных видов — протезы (съёмные) не добавляли."
+		},
+		{
+			"source": "/lijecenje-parodontopatije/: «Dobra tehnika pranja zuba … Korišćenje zubnog konca i interdentalnih četkica»",
+			"reason": "Советы по профилактике, не услуга."
+		},
+		{
+			"source": "/dental-plan-za-firme/: «Vaši zaposleni mogu plaćati stomatološke usluge u tri do šest mjesečnih rata»",
+			"reason": "Условия оплаты (рассрочка), не медицинская услуга — упомянуто в описании."
+		},
+		{
+			"source": "/dentalni-turizam-2/: «Postoji mogućnost organizovanja smještaja, prevoza i prevodioca»",
+			"reason": "Сервис для туристов, не медицинская услуга — упомянуто в описании."
+		},
+		{
+			"source": "/mediji/",
+			"reason": "Интервью и ТВ-эфиры врачей — не услуги."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Фото врачей",
+			"detail": "На сайте фото врачей нет (на /mediji/ ссылка на фото dr Stefan Lekić — 404). Карточки без фото."
+		}
+	]
+}

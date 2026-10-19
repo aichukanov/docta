@@ -1,0 +1,510 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-da-vinci-podgorica",
+	"name": "Poliklinika Da Vinci",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJkc08ut3rTRMRWn6Gc02KfjM",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-da-vinci-podgorica.sql",
+		"server/sql/insert-clinic-poliklinika-da-vinci-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 177,
+		"doctorIds": {},
+		"note": "Подволна 2c, агент I. Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug. Сухой прогон на локали 2026-10-08 (EXPLAIN в START TRANSACTION … ROLLBACK): 0 ошибок, 0 несматченных slug, счётчики таблиц до/после совпали. Поиск врачей на локали: 10 найдены (id 666, 756, 757, 953, 365, 733, 317, 543, 255, 718), 8 будут созданы. clinicId и doctorIds заполнить после применения из блоков VERIFICATION. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 204
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://davincipoliklinika.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "WordPress + Elementor; curl сырого HTML 15 страниц + wp-json /wp/v2/pages (16) и /posts (6). Главная (modified 2024-12-18): адрес, 3 телефона, часы, соцсети, 8 направлений, «dnevna bolnica», «preko 20 konsultanata sa VMA». Страницы направлений правились 2024-08-27…2024-09-11. Цен нет. Часть текста — шаблон темы: /cjenovnik/, /contact/, 3 из 6 постов блога (Lorem ipsum), «Naš tim internista/ginekologa» (Lorem ipsum), отзывы-цитаты на главной."
+		},
+		{
+			"type": "website",
+			"ref": "https://davincipoliklinika.me/tim-davinci/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Состав: 18 врачей в разделах Urolozi (6, включая интервенционного радиолога Uskokovića), Hirurzi (5), Endokrinologija, Hematologija, Kardiologija (2), Onkologija, Nefrologija (2). wp-json modified 2024-09-03. Фото только у dr Vavića, у остальных — Image_Placeholder-13122021.jpg."
+		},
+		{
+			"type": "website",
+			"ref": "https://davincipoliklinika.me/neven-vavic/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Биография prim. dr sc. med. Nevena Vavića + фото. modified 2024-09-03. Экавица источника приведена к иекавице в description_*."
+		},
+		{
+			"type": "website",
+			"ref": "https://davincipoliklinika.me/cjenovnik/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "ЗАГЛУШКА темы, не прайс: «Ultrazvuk 35eur, Specijalistički pregled 45eur, Operacija 1 2589eur…», Lorem ipsum ×3; в меню нет. modified 2024-08-22. Цены не брались."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/poliklinika-davinci.json",
+			"collected": null,
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4261178 / 19.2570443, телефон +382 69 059 359 (= первый с сайта), адрес «bb 4. Jul». websiteUri — старый мёртвый домен poliklinikadavinci.me. 14 отзывов, в файле 5."
+		}
+	],
+	"coverage": {
+		"address": "4. jula bb — шапка сайта «Adresa: 4. jula bb, 81000 Podgorica»; Google «bb 4. Jul» — согласовано",
+		"phone": "+38269059359;+38267059359;+38268059359 — шапка сайта; первый подтверждён Google",
+		"email": "не записан: на сайте «infopoliklinikadavinci.me» (без @), домен poliklinikadavinci.me не отвечает",
+		"website": "https://davincipoliklinika.me/ (в Google — старый мёртвый poliklinikadavinci.me)",
+		"social": "facebook.com/PoliklinikaDaVinciOfficial, @poliklinikadavinci. Viber/WhatsApp упомянуты без номера — поля пустые",
+		"logo": "cropped-DaVinciOriginal.png из шапки",
+		"workingHours": "пн–сб 08:00–20:00 («Pon-Sub od 08h do 20h»); воскресенье не названо — closed",
+		"doctors": "18 из /tim-davinci/: 10 найдены в БД, 8 новых",
+		"doctorPhotos": "только dr Vavić (Vavic-2.jpg); у 17 — плейсхолдер темы, photo_url NULL",
+		"prices": "нет — /cjenovnik/ заглушка темы; все 15 услуг NULL по дизайну",
+		"services": "15: 8 приёмов по направлениям меню + ЭхоКГ + 6 лапароскопических операций, названных от первого лица",
+		"labTests": "лаборатории нет",
+		"reviews": "pending — ждут выгрузки (в файле места Google 5 из 14)"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"slug": "urologist-examination",
+			"nameEn": "Urologist Examination",
+			"source": "Urologija — «Imate urološki problem? Pozovite odmah i zakažite pregled!»",
+			"section": "ПРИЁМЫ — направления из меню и блока «Usluge poliklinike DaVinci» (главная); каждая страница кончается «zakažite pregled»",
+			"price": null
+		},
+		{
+			"slug": "first-nephrologist-examination",
+			"nameEn": "First Nephrologist Examination",
+			"source": "Nefrologija — «Treba vam nefrolog? … zakažite pregled!»; /neven-vavic/ «Potreban Vam je pregled kod dr Nevena?»",
+			"section": "ПРИЁМЫ — направления из меню и блока «Usluge poliklinike DaVinci» (главная); каждая страница кончается «zakažite pregled»",
+			"price": null
+		},
+		{
+			"slug": "hematologist-examination",
+			"nameEn": "Hematologist Examination",
+			"source": "Hematologija — «Imate problem za hematologa? … zakažite pregled!»",
+			"section": "ПРИЁМЫ — направления из меню и блока «Usluge poliklinike DaVinci» (главная); каждая страница кончается «zakažite pregled»",
+			"price": null
+		},
+		{
+			"slug": "surgical-examination",
+			"nameEn": "Surgical Examination",
+			"source": "Hirurgija — «Potrebna Vam je operacija? Pozovite odmah i zakažite pregled!»",
+			"section": "ПРИЁМЫ — направления из меню и блока «Usluge poliklinike DaVinci» (главная); каждая страница кончается «zakažite pregled»",
+			"price": null
+		},
+		{
+			"slug": "gynecological-specialist-examination",
+			"nameEn": "Gynecological Specialist Examination",
+			"source": "Ginekologija — «Dijagnostika … obuhvata: Ginekološke preglede»; «Imate ginekološki problem? … zakažite pregled!»",
+			"section": "ПРИЁМЫ — направления из меню и блока «Usluge poliklinike DaVinci» (главная); каждая страница кончается «zakažite pregled»",
+			"price": null
+		},
+		{
+			"slug": "oncologist-examination",
+			"nameEn": "Oncologist Examination",
+			"source": "Onkologija — «Imate onkološki problem? … zakažite pregled!» (onkolog — internista-onkolog, «Pregled interniste onkologa»)",
+			"section": "ПРИЁМЫ — направления из меню и блока «Usluge poliklinike DaVinci» (главная); каждая страница кончается «zakažite pregled»",
+			"price": null
+		},
+		{
+			"slug": "cardiologist-examination",
+			"nameEn": "Cardiologist Examination",
+			"source": "Kardiologija — «… zakažite pregled!»",
+			"section": "ПРИЁМЫ — направления из меню и блока «Usluge poliklinike DaVinci» (главная); каждая страница кончается «zakažite pregled»",
+			"price": null
+		},
+		{
+			"slug": "endocrinologist-examination",
+			"nameEn": "Endocrinologist Examination",
+			"source": "Endokrinologija — «Imate problem sa žlijezdama? … zakažite pregled!»",
+			"section": "ПРИЁМЫ — направления из меню и блока «Usluge poliklinike DaVinci» (главная); каждая страница кончается «zakažite pregled»",
+			"price": null
+		},
+		{
+			"slug": "echocardiography-heart-ultrasound",
+			"nameEn": "Echocardiography (Heart Ultrasound)",
+			"source": "Ultrazvuk srca (Ehokardiogram); «Dopler ultrazvuk» там же — допплер в составе ЭхоКГ",
+			"section": "DIJAGNOSTIKA — /kardiologija/ «U Poliklinici Da Vinci, koristimo sledeće metode»",
+			"price": null
+		},
+		{
+			"slug": "laparoscopic-cholecystectomy",
+			"nameEn": "Laparoscopic Cholecystectomy",
+			"source": "Laparoskopska kolecistektomija: Uklanjanje žučne kese",
+			"section": "LAPAROSKOPSKA HIRURGIJA — /hirurgija/ «U Poliklinici Da Vinci, obavljamo različite laparoskopske postupke»",
+			"price": null
+		},
+		{
+			"slug": "laparoscopic-appendectomy",
+			"nameEn": "Laparoscopic Appendectomy",
+			"source": "Laparoskopska apendektomija: Uklanjanje slijepog crijeva",
+			"section": "LAPAROSKOPSKA HIRURGIJA — /hirurgija/ «U Poliklinici Da Vinci, obavljamo različite laparoskopske postupke»",
+			"price": null
+		},
+		{
+			"slug": "laparoscopic-hernia-operation",
+			"nameEn": "Laparoscopic Hernia Operation",
+			"source": "Laparoskopska hernioplastika: Popravka trbušnih kila",
+			"section": "LAPAROSKOPSKA HIRURGIJA — /hirurgija/ «U Poliklinici Da Vinci, obavljamo različite laparoskopske postupke»",
+			"price": null
+		},
+		{
+			"slug": "laparoscopic-colectomy",
+			"nameEn": "Laparoscopic Colectomy",
+			"source": "Laparoskopska resekcija crijeva (divertikulitis, rak crijeva)",
+			"section": "LAPAROSKOPSKA HIRURGIJA — /hirurgija/ «U Poliklinici Da Vinci, obavljamo različite laparoskopske postupke»",
+			"price": null
+		},
+		{
+			"slug": "total-laparoscopic-abdominal-hysterectomy",
+			"nameEn": "Total Laparoscopic Abdominal Hysterectomy",
+			"source": "Laparoskopska operacija materice: Uklanjanje materice (histerektomija)",
+			"section": "LAPAROSKOPSKA HIRURGIJA — /hirurgija/ «U Poliklinici Da Vinci, obavljamo različite laparoskopske postupke»",
+			"price": null
+		},
+		{
+			"slug": "laparoscopic-myomectomy",
+			"nameEn": "Laparoscopic Myomectomy",
+			"source": "Laparoskopska operacija materice: … ili mioma materice",
+			"section": "LAPAROSKOPSKA HIRURGIJA — /hirurgija/ «U Poliklinici Da Vinci, obavljamo različite laparoskopske postupke»",
+			"price": null
+		}
+	],
+	"doctors": [
+		{
+			"slug": "aleksandar-magdelinic",
+			"nameSr": "Aleksandar Magdelinić",
+			"professionalTitle": "dr",
+			"position": "Urolog, direktor Klinike za urologiju KCCG",
+			"specialtyIds": [
+				9
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 666 (KCCG, Novi Cenex; спец. 3,9,48). Сайт: «Direktor klinike za urologiju KCCG»."
+		},
+		{
+			"slug": "predrag-aleksic",
+			"nameSr": "Predrag Aleksić",
+			"professionalTitle": "Prof. dr",
+			"position": "Urolog, načelnik Klinike za urologiju VMA",
+			"specialtyIds": [
+				9
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новый. «Prof Predrag Aleksić — Načelnik klinike za urologiju VMA»."
+		},
+		{
+			"slug": "eldin-sabovic",
+			"nameSr": "Eldin Šabović",
+			"professionalTitle": "dr",
+			"position": "Urolog, načelnik Odjeljenja za endoskopiju Klinike za urologiju KCCG",
+			"specialtyIds": [
+				9
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 756 (KCCG, Natal)."
+		},
+		{
+			"slug": "almir-rebronja",
+			"nameSr": "Almir Rebronja",
+			"professionalTitle": "dr",
+			"position": "Urolog, načelnik Odjeljenja za onkologiju Klinike za urologiju KCCG",
+			"specialtyIds": [
+				9
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 757 (KCCG). Тот же врач в AK Medica (Bijelo Polje) — одна запись. На сайте «Almir rebronja» со строчной."
+		},
+		{
+			"slug": "aleksandar-spasic",
+			"nameSr": "Aleksandar Spasić",
+			"professionalTitle": "dr",
+			"position": "Urolog",
+			"specialtyIds": [
+				9
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 953 (Konzilijum, уролог). На сайте подписи нет, только раздел «Urolozi»."
+		},
+		{
+			"slug": "sasa-uskokovic",
+			"nameSr": "Saša Uskoković",
+			"professionalTitle": "dr",
+			"position": "Subspecijalista interventne radiologije",
+			"specialtyIds": [
+				3
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новая карточка: в Codra uskokovic-sasa — хирург (general_surgery), здесь — субспециалист интервенционной радиологии; специальности не совпадают → две карточки (правило юзера 2026-10-08). Специальность radiology (10).",
+			"existingId": null,
+			"isNew": true,
+			"matched": false
+		},
+		{
+			"slug": "mihajlo-bezmarevic",
+			"nameSr": "Mihajlo Bezmarević",
+			"professionalTitle": "Ass. dr",
+			"position": "Specijalista opšte hirurgije",
+			"specialtyIds": [
+				3
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новый. Сайт пишет «Mihajlo» (/tim-davinci/) и «Mihailo» (/hirurgija/). Взято «Mihajlo» — по основному списку состава (решение координатора 2026-10-08); поиск — по обоим."
+		},
+		{
+			"slug": "dragan-sekulic",
+			"nameSr": "Dragan Sekulić",
+			"professionalTitle": "dr",
+			"position": "Specijalista vaskularne hirurgije",
+			"specialtyIds": [
+				34
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новый."
+		},
+		{
+			"slug": "milan-petrovic",
+			"nameSr": "Milan Petrović",
+			"professionalTitle": "dr",
+			"position": "Specijalista hirurgije",
+			"specialtyIds": [
+				3
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новый. На сайте «Milan Petrovič» — č вместо ć, опечатка (сербская фамилия на -ović); поиск — по обоим."
+		},
+		{
+			"slug": "srdjan-dedic",
+			"nameSr": "Srđan Dedić",
+			"professionalTitle": "dr",
+			"position": "Subspecijalista digestivne hirurgije",
+			"specialtyIds": [
+				3,
+				90
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 733 (KCCG)."
+		},
+		{
+			"slug": "vladimir-vuceljic",
+			"nameSr": "Vladimir Vučeljić",
+			"professionalTitle": "dr",
+			"position": "Specijalista hirurgije",
+			"specialtyIds": [
+				3
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 317 (KCCG, BonoMedica; спец. 3,76,77)."
+		},
+		{
+			"slug": "zoran-hajdukovic",
+			"nameSr": "Zoran Hajduković",
+			"professionalTitle": "Prof. dr",
+			"position": "Endokrinolog, dugogodišnji načelnik Klinike za endokrinologiju VMA",
+			"specialtyIds": [
+				12
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новый."
+		},
+		{
+			"slug": "dragana-stamatovic",
+			"nameSr": "Dragana Stamatović",
+			"professionalTitle": "dr",
+			"position": "Hematolog, dugogodišnja načelnica Klinike za hematologiju VMA",
+			"specialtyIds": [
+				15
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новая. В БД есть Ana Stamatović Jovanović — другая (гинеколог)."
+		},
+		{
+			"slug": "nemanja-djenic",
+			"nameSr": "Nemanja Đenić",
+			"professionalTitle": "Prof. dr",
+			"position": "Kardiolog, načelnik Klinike za urgentnu medicinu VMA",
+			"specialtyIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новый. Раздел «Kardiologija»; ургентная медицина — должность, специальность EMERGENCY_MEDICINE не ставили."
+		},
+		{
+			"slug": "eco-sinan",
+			"nameSr": "Sinan Ećo",
+			"professionalTitle": "dr",
+			"position": "Kardiolog, Klinika za kardiologiju KCCG",
+			"specialtyIds": [
+				1
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 543 «Ećo Sinan» (KCCG, Zejnilović)."
+		},
+		{
+			"slug": "nevenka-lukovac-janjic",
+			"nameSr": "Nevenka Lukovac Janjić",
+			"professionalTitle": "dr",
+			"position": "Onkolog, Institut za onkologiju KCCG",
+			"specialtyIds": [
+				2,
+				47
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 255 «Nevenka Lukovac Janjić» (KCCG, SmartMed; internista-onkolog). Сайт Da Vinci пишет «Lutovac Janjić» — та же врач Instituta za onkologiju KCCG, расхождение в одну букву; написание БД (как у KCCG и SmartMed) сохранено, поиск — и по варианту сайта."
+		},
+		{
+			"slug": "neven-vavic",
+			"nameSr": "Neven Vavić",
+			"professionalTitle": "Prim. dr sc. med.",
+			"position": "Nefrolog, dugogodišnji načelnik Klinike za nefrologiju VMA",
+			"specialtyIds": [
+				46,
+				2
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"hasPhoto": true,
+			"services": [
+				"first-nephrologist-examination"
+			],
+			"note": "Новый. Фото и био со страницы /neven-vavic/ (специализация interne medicine → INTERNAL_MEDICINE + NEPHROLOGY)."
+		},
+		{
+			"slug": "elvir-mucic",
+			"nameSr": "Elvir Mučić",
+			"professionalTitle": "dr",
+			"position": "Nefrolog, načelnik Klinike za nefrologiju KCCG",
+			"specialtyIds": [
+				2,
+				46
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 718 (KCCG, Medicus Tim, с био — не трогали)."
+		}
+	],
+	"excluded": [
+		{
+			"source": "/cjenovnik/: «Ultrazvuk 35eur, Specijalistički pregled 45eur, Operacija 1 2589eur … Operacija 4», Lorem ipsum",
+			"reason": "Демо-контент темы WordPress, не прайс клиники (страницы нет в меню)."
+		},
+		{
+			"source": "/onkologija/: «Dijagnostika raka u Poliklinici Da Vinci obuhvata: Laboratorijske testove, Biopsije, Genetske testove. Liječenje … uključuje: Hemoterapiju, Radioterapiju, Hirurške zahvate, Imunoterapiju, Ciljanu terapiju, Hormonsku terapiju»",
+			"reason": "Шаблонный SEO-текст: радиотерапия в поликлинике невозможна, значит перечень не описывает реальные услуги. Взят только приём онколога."
+		},
+		{
+			"source": "/hematologija/: «Biopsiju koštane srži … Transfuziju krvi, Transplantaciju koštane srži …»",
+			"reason": "Тот же шаблон: трансплантация костного мозга в поликлинике невозможна. Взят только приём гематолога."
+		},
+		{
+			"source": "/ginekologija/: «Dijagnostika … obuhvata: … PAPA testove, Ultrazvuk, Laboratorijske testove, Biopsije»; «Liječenje stres inkontinencije … uretralne sling operacije, Pesar, Kegelove vježbe»",
+			"reason": "Тот же шаблонный текст, команда гинекологов на странице — Lorem ipsum, ни одного гинеколога в /tim-davinci/. Взят только гинекологический осмотр (направление есть в меню). См. openQuestions."
+		},
+		{
+			"source": "/urologija/: «Dijagnostika … Slikovne metode: Ultrazvuk, CT, MRI i rendgenski snimci; Endoskopija: … cistoskop; Urodinamička ispitivanja»",
+			"reason": "Общий список методов урологии; КТ/МРТ/рентгена поликлиника не заявляет. Цистоскопия и уродинамика отдельно от первого лица не названы."
+		},
+		{
+			"source": "/kardiologija/: «Dopler ultrazvuk: … brzinu i smjer protoka krvi kroz srčane šupljine i krvne sudove»",
+			"reason": "В контексте ЭхоКГ (кардиологическая страница) — допплер сердца входит в Echocardiography; отдельную позицию допплера сосудов не заводили. «Intervencijski postupci: angioplastika ili stentiranje» — «u nekim slučajevima može biti potrebna», не услуга клиники."
+		},
+		{
+			"source": "/radiologija/ (Ultrazvuk: trudnoća, abdomen, srce, ginekologija, urologija, štitna žlijezda, mišićno-koštani sistem; Dopler: arterije ruku i nogu, vene, trudnoća, bubrezi)",
+			"reason": "Страница-сирота: нет ни в меню, ни на главной, интро скопировано («Najbolji hematolozi …»), список — «Primjene ultrazvuka» вообще, а не услуги клиники."
+		},
+		{
+			"source": "/interna-medicina/ «Potreban vam je pregled interniste?»",
+			"reason": "Страница-сирота (нет в меню и на главной), команда — Lorem ipsum. Приём интерниста не заводили."
+		},
+		{
+			"source": "Dragan Sekulić — «Spec. Vaskularne hirurgije»",
+			"reason": "Направления сосудистой хирургии на сайте нет, приём вазохирурга не заведён — врач виден на сайте по специальности."
+		},
+		{
+			"source": "/neven-vavic/: «ultrazvučnih i doplerskih pregleda bubrega»",
+			"reason": "Описание профессионального пути врача, а не перечень услуг поликлиники. Перенесено в био, отдельных позиций УЗИ/допплера почек не заводили."
+		},
+		{
+			"source": "Отзывы-цитаты на главной («Milić Maljević, IT Tehničar», «Marija Bulatović, Nastavnica», «Damir Anelov, Arhitekta»); посты блога «Endometrioza», «Miomi materice», «Hirurško liječenje cistokele» (prof. dr Buta)",
+			"reason": "Шаблонный/заимствованный контент (пост про цистокеле — хорватская лексика «kirurškom», «prof. dr. Buta» не в составе). В описание и импорт не переносится."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Email",
+			"detail": "На сайте «infopoliklinikadavinci.me» — без @. Вероятно info@poliklinikadavinci.me, но домен poliklinikadavinci.me не отвечает (на 2026-10-08), почта на нём сомнительна. clinics.email пустой — уточнить у клиники."
+		},
+		{
+			"topic": "Тип HOSPITAL (3)?",
+			"detail": "Клиника пишет «organizovana po principu poliklinike sa dnevnom bolnicom» и про операционную. Проставлен только POLYCLINIC (1). У Dr Zejnilović («PZU Dnevna bolnica») типы 1,3,4 — если дневной стационар считать больницей, добавить 3."
+		},
+		{
+			"topic": "Гинекология без гинеколога",
+			"detail": "Направление «Ginekologija» есть в меню и на главной, но в /tim-davinci/ ни одного гинеколога (блок команды на странице — Lorem ipsum). Заведён только Gynecological Specialist Examination и лапароскопические гистерэктомия/миомэктомия со страницы «Hirurgija». Если гинекологического приёма фактически нет — убрать."
+		}
+	]
+}

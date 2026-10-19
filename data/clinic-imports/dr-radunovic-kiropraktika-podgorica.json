@@ -1,0 +1,316 @@
+{
+	"schemaVersion": 1,
+	"slug": "dr-radunovic-kiropraktika-podgorica",
+	"name": "Dr Radunović – kiropraktika i fizioterapija",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJR59Y3w_rTRMRQvdUlNg7kZM",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dr-radunovic-kiropraktika-podgorica.sql",
+		"server/sql/insert-clinic-dr-radunovic-kiropraktika-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 215,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент U. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и специалистов по slug. Сухой прогон 2026-10-09 на локали (scripts/sql/dryrun-import.mjs, plain + shadow для services) — см. итог в отчёте агента. Slug клиники и специалистов сверены с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 242
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://kiropraktika.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "GoDaddy Website Builder, © 2022, sitemap.website.xml: lastmod 2025-05-25 у всех 29 страниц. Прочитаны все: главная, /o-nama, /kiropraktika, Usluge (/vježbe, /masaže, /jontoforeza, /graston-tehnika, /spinalna-dekompresija, /plavi-koktel), /video, 18 страниц состояний. Цен нет нигде. Email нет (пустой mailto)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/dr-radunovic-chiropractic-physical-therapy.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJR59Y3w_rTRMRQvdUlNg7kZM, координаты 42.4440357 / 19.2639713, +382 69 317 317, «BB Vaka Đurovića, Podgorica 81000». 82 отзыва (в файле 5). Часов работы в файле нет."
+		}
+	],
+	"coverage": {
+		"address": "Vaka Đurovića bb (Stadion pod Goricom – Trg Argentina) — Google + подвал сайта, индекс 81000",
+		"phone": "+38269317317 — сайт (tel:) и Google",
+		"email": "нет — на сайте пустой mailto",
+		"website": "https://kiropraktika.me/",
+		"social": "facebook.com/drradunovic, instagram.com/drsavo, WhatsApp +38269317317 — ссылки сайта (Facebook/Instagram не читаются)",
+		"logo": "нет — текстовый логотип",
+		"workingHours": "Пн–Пт 12:00–20:00, Сб–Вс 10:00–13:00 — подвал «Ponedeljak - petak: 12 - 8, Vikendom: 10 - 1» (12-часовая запись)",
+		"description": "из главной, /o-nama, /kiropraktika, страниц услуг и состояний",
+		"languages": "только SR — другие не заявлены",
+		"doctors": "2 специалиста (94 PHYSIOTHERAPY, title NULL): доктор хиропрактики и спортивный физиотерапевт, оба новые, с фото и био",
+		"prices": "цен нет — все услуги без цены",
+		"labTests": "нет",
+		"reviews": "pending — 82 в Google, ждут выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "chiropractor-examination",
+			"nameEn": "Chiropractor Examination",
+			"nameSr": "Pregled kiropraktičara",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "kiropraktika.me: FAQ «Inicijalna analiza pacijenta i funkcionalni pregled može da bude odradjen bez snimka», «Konsultacije se zakazuju», /kiropraktika «Doktor kiropraktike prvo uzima detaljnu anamnezu … pristupa fizikalnom pregledu, ortopedskim i neurološkim testovima, čitanju snimaka». Осмотр доктора хиропрактики ≠ physiotherapist-examination (другая профессия) и ≠ chiropractic-treatment (процедура). Кат. 5, спец. 42, sort_order 1 (осмотр)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "relaxing-massage",
+			"nameEn": "Relaxing Massage",
+			"nameSr": "Relaks masaža",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "kiropraktika.me /masaže: «Relax masaža … Primarna svrha ove masaže je opuštanje organizma» — длительность не указана. В каталоге только relaxing-massage-60-min; общая запись без длительности (по схеме therapeutic-massage-complete). Кат. 5, спец. 42."
+		},
+		{
+			"table": "medical_services",
+			"slug": "sports-massage",
+			"nameEn": "Sports Massage",
+			"nameSr": "Sportska masaža",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "kiropraktika.me /masaže: «Sportska masaža služi za ublažavanje stresa i napetosti … intenzivnija masaža» — длительность не указана. В каталоге только sports-massage-30/45/60-min; общая запись без длительности. Кат. 5, спец. 42."
+		},
+		{
+			"table": "medical_services",
+			"slug": "face-and-decollete-massage",
+			"nameEn": "Face and Decollete Massage",
+			"nameSr": "Masaža lica i dekoltea",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "kiropraktika.me /masaže: «Masaža lica i dekoltea — Masaža lica služi za opuštanje mišića lica i očiju, ublažava glavobolje i stres». Массажа лица в каталоге нет (есть только аппаратные/инъекционные процедуры лица). Кат. 5 (массаж, делает физиотерапевт), спец. 42."
+		},
+		{
+			"table": "medical_services",
+			"slug": "iontophoresis-for-hyperhidrosis",
+			"nameEn": "Iontophoresis for Hyperhidrosis",
+			"nameSr": "Jontoforeza za hiperhidrozu",
+			"categoryIds": [
+				5,
+				24
+			],
+			"specialtyIds": [
+				42,
+				7
+			],
+			"reason": "kiropraktika.me /jontoforeza: «jontoforeza za hiperhidrozu … uređaj koji generiše jednosmjernu struju … stavljanje ruku i/ili stopala u dvije plitke posude napunjene sa vodom sa česme. Tretman traje 10-20 minuta». Водопроводный ионофорез без лекарства — не electrophoresis (введение препарата током) и не botox. Кат. 5 PHYSIOTHERAPY + 24 DERMATOLOGY (показание — гипергидроз), спец. 42 + 7 (авто по категориям)."
+		}
+	],
+	"services": [
+		{
+			"slug": "chiropractor-examination",
+			"nameEn": "Chiropractor Examination",
+			"price": null,
+			"source": "FAQ — «Inicijalna analiza pacijenta i funkcionalni pregled može da bude odradjen bez snimka», «Konsultacije se zakazuju, najidealnije je jedan dan unaprijed», /kiropraktika — «Doktor kiropraktike prvo uzima detaljnu anamnezu … fizikalnom pregledu, ortopedskim i neurološkim testovima, čitanju snimaka»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "chiropractic-treatment",
+			"nameEn": "Chiropractic Treatment",
+			"price": null,
+			"source": "/kiropraktika — «Kiropraktika», «kiropraktičko namještanje», «od brzih namještanja do takozvanih dekompresivnih terapija»"
+		},
+		{
+			"slug": "spinal-decompression",
+			"nameEn": "Spinal Decompression",
+			"price": null,
+			"source": "Usluge → Spinalna dekompresija — «kompjuterizovana spinalna dekompresija … kompjuterski kontrolisana mehanička trakcija»"
+		},
+		{
+			"slug": "iastm-therapy",
+			"nameEn": "IASTM Therapy",
+			"price": null,
+			"source": "Usluge → Graston tehnika — «sastoji se od 6 instrumenata od kojih je svaki izrađen od nerđajuceg čelika» (Graston = бренд IASTM, синоним)"
+		},
+		{
+			"slug": "iontophoresis-for-hyperhidrosis",
+			"nameEn": "Iontophoresis for Hyperhidrosis",
+			"price": null,
+			"source": "Usluge → Jontoforeza — «jontoforeza za hiperhidrozu … Tretman traje 10-20 minuta. Obično je potrebno 10 tretmana»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "group-exercises-type-b",
+			"nameEn": "Group Exercises (per Person)",
+			"price": null,
+			"source": "Usluge → Vježbe — «vježbe za zdravu kičmu … organizujemo grupne vježbe za sve one koji nemaju problema sa kičmom»"
+		},
+		{
+			"slug": "individual-kinesiotherapy",
+			"nameEn": "Individual Kinesiotherapy",
+			"price": null,
+			"source": "Usluge → Vježbe — «Individualne vježbe sa terapeutom», /diskus-hernija-1 — «Individualizovanu kineziterapiju primjenjujemo»"
+		},
+		{
+			"slug": "relaxing-massage",
+			"nameEn": "Relaxing Massage",
+			"price": null,
+			"source": "Usluge → Masaže — «Relax masaža»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "therapeutic-massage-partial",
+			"nameEn": "Partial Therapeutic Massage",
+			"price": null,
+			"source": "Usluge → Masaže — «Parcijalna masaža je masaža jednog dijela tijela. Može se raditi masaža leđa, ruku, nogu»"
+		},
+		{
+			"slug": "sports-massage",
+			"nameEn": "Sports Massage",
+			"price": null,
+			"source": "Usluge → Masaže — «Sportska masaža»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "therapeutic-massage-complete",
+			"nameEn": "Complete Therapeutic Massage",
+			"price": null,
+			"source": "Usluge → Masaže — «Terapeutska masaža — Ova masaža poboljšava cirkulaciju, ubrzava proces izliječenja»"
+		},
+		{
+			"slug": "face-and-decollete-massage",
+			"nameEn": "Face and Decollete Massage",
+			"price": null,
+			"source": "Usluge → Masaže — «Masaža lica i dekoltea»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "hilt-laser-therapy",
+			"nameEn": "HILT Laser Therapy",
+			"price": null,
+			"source": "/diskus-hernija-1 — «Dodatne terapije aparatima posljednje generacije u fizioterapiji, poput lasera visokog intenziteta, Tacar terapije …»"
+		},
+		{
+			"slug": "tecar-therapy",
+			"nameEn": "Tecar Therapy",
+			"price": null,
+			"source": "/diskus-hernija-1 — «… Tacar terapije …» (Tacar = Tecar, опечатка сайта)"
+		},
+		{
+			"slug": "magnetic-therapy",
+			"nameEn": "Magnetic Therapy",
+			"price": null,
+			"source": "/golferski-lakat — «Radi se fizikalna terapija u okviru koje se radi masaža, magnetoterapija, ultrazvučna masaža», /faset-sindrom — «korištenje magneto terapije»"
+		},
+		{
+			"slug": "ultrasound-therapy",
+			"nameEn": "Ultrasound Therapy",
+			"price": null,
+			"source": "/golferski-lakat — «… ultrazvučna masaža» (= терапевтический ультразвук)"
+		},
+		{
+			"slug": "schroth-method",
+			"nameEn": "Schroth Method",
+			"price": null,
+			"source": "/skolioza — «korištenjem svjetski najpoznatijeg Schroth-ovog metoda»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "savo-radunovic",
+			"nameSr": "Savo Radunović",
+			"professionalTitle": null,
+			"position": "Doktor kiropraktike (DC)",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://img1.wsimg.com/isteam/ip/7ef11ffa-485e-45b2-b785-7c4940387c6b/84EA90F9-EC41-4F4D-BA35-51B097429CBF.jpeg",
+			"services": [
+				"chiropractor-examination",
+				"chiropractic-treatment",
+				"iastm-therapy"
+			]
+		},
+		{
+			"slug": "ljubo-radunovic",
+			"nameSr": "Ljubo Radunović",
+			"professionalTitle": null,
+			"position": "Sportski fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://img1.wsimg.com/isteam/ip/7ef11ffa-485e-45b2-b785-7c4940387c6b/fb2229fcce4cefdd975038762e71a122.jpg",
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Usluge → Plavi koktel — «Plavi koktel je potpuno prirodna krema za umirivanje upale i ishranu zglobova i mišića»",
+			"reason": "Товар (крем), не услуга. Упоминание «koktela krema» в био Ljubo — тоже про крем."
+		},
+		{
+			"source": "Usluge → Masaže — «Refleksologija-masaža stopala — zasniva se na pritiskanju određenih tačaka na tabanima, dok je svaka tačka povezana sa određenim dijelom tijela»",
+			"reason": "Рефлексология — альтернативная медицина (решение юзера 2026-10-08: не заводить). Отдельной записи «массаж стоп» тоже не заводили, чтобы не переименовывать методику в generic."
+		},
+		{
+			"source": "/skolioza — «korištenja mehaničkih stolova pomoću kojih se pasivno uvodi pokret u kičmi»",
+			"reason": "Описания и названия нет (возможно flexion-distraction-стол). Ближайшая запись mechanical-spinal-traction — другое (вытяжение). Не заведено."
+		},
+		{
+			"source": "/spondiloza — «aplikacija toplote ima pozitivno dejstvo», «Elektromagnet dubinski povećava oksigenaciju»",
+			"reason": "Общие рассуждения о методах, не заявление «у нас делается»; магнитотерапия заведена по /golferski-lakat. Термотерапия не заведена."
+		},
+		{
+			"source": "18 страниц состояний (Diskus hernija, Skolioza, Subluksacija, Spondiloza, Gonartroza, Povrede ACL …)",
+			"reason": "Это состояния, не услуги; из них взяты только явно названные методы (HILT, Tecar, магнитотерапия, ультразвук, Schroth, кинезитерапия)."
+		},
+		{
+			"source": "/jontoforeza — «Obično je potrebno 10 tretmana, koji se rade u bloku»",
+			"reason": "Не пакет с ценой — курс лечения; пакетную услугу не заводили."
+		},
+		{
+			"source": "/video — ТВ-интервью Dr Savo Radunović",
+			"reason": "Медиа, не услуги."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Хиропрактика и «альтернативная медицина»",
+			"detail": "Сам сайт пишет «Kiropraktika je najpopularnija grana alternativne medicine». Услуга заведена: запись chiropractic-treatment уже в каталоге (7 клиник), координатор поставил клинику в очередь, клиника — PZU. Если юзер считает хиропрактику альтернативной медициной — снять chiropractic-treatment и chiropractor-examination до применения."
+		},
+		{
+			"topic": "Часы работы",
+			"detail": "«Ponedeljak - petak: 12 - 8, Vikendom: 10 - 1» прочитано как 12:00–20:00 и 10:00–13:00. Обратное прочтение (8–12) маловероятно, но сайт формат не уточняет."
+		}
+	]
+}

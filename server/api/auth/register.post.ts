@@ -14,8 +14,11 @@ import {
 } from '~/server/utils/api-codes';
 import { getLocalizedUrl } from '~/server/utils/base-url';
 import { isLoginPath } from '~/common/url-utils';
+import { enforceRateLimit, RATE_LIMITS } from '~/server/utils/rate-limit';
 
 export default defineEventHandler(async (event) => {
+	enforceRateLimit(event, RATE_LIMITS.email);
+
 	const body = await readBody(event);
 	const {
 		email,
@@ -38,6 +41,11 @@ export default defineEventHandler(async (event) => {
 	}
 
 	const trimmedName = name?.trim() || null;
+
+	// как в update-name: имя попадает в письма и БД, без лимита не пускаем
+	if (trimmedName && trimmedName.length > 255) {
+		return createErrorResponse(400, ERROR_CODES.NAME_TOO_LONG);
+	}
 
 	// Валидация email
 	if (!validateEmail(email)) {

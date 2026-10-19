@@ -1,0 +1,216 @@
+{
+	"schemaVersion": 1,
+	"slug": "ana-medica-podgorica",
+	"name": "Ana Medica",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJA5G1lTTrTRMRz1RQ8FugQoI",
+	"clinicTypeIds": [
+		10
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ana-medica-podgorica.sql",
+		"server/sql/insert-clinic-ana-medica-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 197,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит @clinic_id по google_place_id/slug. Подволна 2d, агент R. Сухой прогон обоих SQL на локальной БД 2026-10-08: 0 ошибок, 0 несматченных slug, счётчики таблиц до/после совпали. clinicId и doctorIds заполнить после применения из блоков VERIFICATION. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 224
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://anamedica.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress + Brizy, читается через /wp-json/wp/v2/pages (11 страниц; рабочие modified 2026-03-14, сайт новый — остались страницы шаблона Sample Page, «The New UMoMA Opens its Doors», about/kontakt-заглушки). Использованы: pocetna (направления, команда, футер с адресом/часами/телефоном/email), o-nama (команда с должностями и фото), usluge (перечень из 7 пунктов), contact-2 (текст о клинике). oblasti — 52 КБ просветительских текстов о болезнях («Vaš dermatolog određuje …») — перечнем услуг не считались. Цен нет. Соцсетей нет. В Google-поиске сайта нет, найден curl'ом по домену."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/ana-medica.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4384123 / 19.2392221, телефон +382 68 686 883, адрес «95 Marka Radovića, Podgorica 81000». Рейтинг 4.9, 49 отзывов — не импортировались (в файле 5, ждут полной выгрузки)."
+		}
+	],
+	"coverage": {
+		"address": "Marka Radovića 95, 81000 — сайт (футер) = Google",
+		"phone": "+38268686883 — сайт = Google",
+		"email": "anamedicamne@gmail.com — футер сайта; mailto info@tvojdomen.com в кнопке «Posaljite mail» — заглушка шаблона, не взят",
+		"website": "https://anamedica.me/",
+		"social": "нет ссылок на сайте",
+		"logo": "https://anamedica.me/wp-content/uploads/2026/03/1772578088820-ec4f1d4e-4097-4c42-9e49-3fab71f69371_1.png (шапка сайта, из него же favicon)",
+		"workingHours": "пн–пт 15:00–21:00, сб 09:00–14:00, вс закрыто (не упомянуто) — футер «Radno vrijeme». Блок «Zakazivanje termina» (будни 15–20, сб 10–14) — часы записи, не взяты",
+		"doctors": "3 из блока «Upoznajte naš tim»; 2 найдены в БД (ana-popovic, milena-djurovic), 1 новый (marija-bijelic). Lazar Popović (izvršni direktor, pravnik) и Jovana Vujošević (recepcija, med. sestra) — не врачи",
+		"doctorPhotos": "3 из 3 — портреты с сайта; у существующих карточек пишутся, только если фото пустое (сейчас пустые у обеих)",
+		"doctorBios": "нет — на сайте по одному рекламному предложению на врача («Posvećena savremenoj dijagnostici …»), фактов нет",
+		"prices": "нет — сайт цен не публикует; все 11 услуг price = NULL",
+		"labTests": "нет",
+		"reviews": "pending — 49 отзывов ждут полной выгрузки"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Dermatologist Examination",
+			"slug": "dermatologist-examination",
+			"source": "/contact-2/: «U našoj ustanovi možete obaviti dermatološki pregled»"
+		},
+		{
+			"nameEn": "Dermatoscopy",
+			"slug": "dermatoscopy",
+			"source": "/usluge/: «Dermoskopija — Neinvazivna metoda za rano otkrivanje melanoma … Omogućava čuvanje i poređenje slika kroz vrijeme»; /contact-2/: «dermoskopski pregled mladeža». Цифровые записи каталога разбиты по числу родинок — сайт числа не даёт, взята общая"
+		},
+		{
+			"nameEn": "Radiowave Skin Lesion Removal",
+			"slug": "radiowave-skin-lesion-removal",
+			"source": "«Elektrohirurgija radiotalasima — … uklanjanje dobroćudnih promjena»"
+		},
+		{
+			"nameEn": "Cryotherapy",
+			"slug": "cryotherapy",
+			"source": "«Kriohirurgija — Primjena tečnog azota (-196°C) za uništavanje lezija (keratoze, bradavice, fibromi, angiomi)» — общая запись кат. 24; варианты по числу очагов не подходят"
+		},
+		{
+			"nameEn": "Chemical Peel",
+			"slug": "chemical-peel",
+			"source": "«Hemijski pilinzi — Rastvori kiselina uklanjaju oštećeni sloj kože …»"
+		},
+		{
+			"nameEn": "Hyperhidrosis Botox Treatment",
+			"slug": "hyperhidrosis-botox-treatment",
+			"source": "«Hiperhidroza — Liječi se antiperspirantima, jontoforezom, lokalnom primjenom neuromodulatora …» — единственная процедура из перечня, которую делают в кабинете; см. openQuestions"
+		},
+		{
+			"nameEn": "Skin and Subcutaneous Tissue Biopsy",
+			"slug": "skin-and-subcutaneous-tissue-biopsy",
+			"source": "«Dijagnostička biopsija kože — Uzimanje uzorka kože pod lokalnom anestezijom» — без заявленного ПГ-заключения"
+		},
+		{
+			"nameEn": "Prick Test for Inhalant Allergens",
+			"slug": "prick-test-inhalation-allergens",
+			"source": "«Prick testovi: otkrivaju alergije na inhalacione …»"
+		},
+		{
+			"nameEn": "Prick Test for Food Allergens",
+			"slug": "prick-test-nutritive-allergens",
+			"source": "«… i prehrambene alergene»"
+		},
+		{
+			"nameEn": "Patch Test",
+			"slug": "patch-test",
+			"source": "«Epikutani (patch) testovi: … Testiranje traje 48–72 sata»"
+		},
+		{
+			"nameEn": "STD Testing Package",
+			"slug": "std-testing-package",
+			"source": "главная: «Polno prenosive bolesti — Diskretno testiranje i stručno liječenje»; name_sr записи «Testiranje na polno prenosive bolesti»"
+		}
+	],
+	"labTests": [],
+	"doctors": [
+		{
+			"slug": "ana-popovic",
+			"nameSr": "Ana Popović",
+			"professionalTitle": "dr sc. med.",
+			"position": "Specijalista dermatovenerologije, uži specijalista onkologije",
+			"specialtyIds": [
+				7,
+				47
+			],
+			"languageIds": [
+				1
+			],
+			"photo": "https://anamedica.me/wp-content/uploads/2026/03/1773494729359160.jpg",
+			"hasBio": false,
+			"services": [],
+			"existingInDb": true,
+			"note": "Существующая карточка (локаль и прод id 852, «dr sc. med.», 7 + 47, КЦЦГ) — совпадают титул и обе специальности. В SQL поиск только по slug: тёзки ana-popovic-2 (GP, ДЗ Херцег-Нови) и ana-popovic-3 (педиатр, ДЗ Беране). «Uži specijalista onkologije» — ONCOLOGY (47) у карточки уже есть."
+		},
+		{
+			"slug": "milena-djurovic",
+			"nameSr": "Milena Đurović",
+			"professionalTitle": "prof. dr",
+			"position": "Specijalista dermatovenerologije",
+			"specialtyIds": [
+				7
+			],
+			"languageIds": [
+				1
+			],
+			"photo": "https://anamedica.me/wp-content/uploads/2026/03/1773494720792783.png",
+			"hasBio": false,
+			"services": [],
+			"existingInDb": true,
+			"note": "Существующая карточка (локаль и прод id 846, «prof. dr.», 7, КЦЦГ) — тот же дерматолог. На сайте опечатка «Pror. dr»."
+		},
+		{
+			"slug": "marija-bijelic",
+			"nameSr": "Marija Bijelić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista dermatovenerologije",
+			"specialtyIds": [
+				7
+			],
+			"languageIds": [
+				1
+			],
+			"photo": "https://anamedica.me/wp-content/uploads/2026/03/1773494721609761.png",
+			"hasBio": false,
+			"services": [],
+			"existingInDb": false,
+			"note": "Новая; прод-API 204 по marija-bijelic и bijelic-marija. Однофамилица Gordana Bijelić (педиатр) — другой человек."
+		}
+	],
+	"excluded": [
+		{
+			"source": "/oblasti/: «Dijagnoza uključuje detaljnu anamnezu, klinički pregled, trihoskopiju …» (Opadanje kose)",
+			"reason": "Просветительский текст о болезни, а не заявление услуги клиники. Трихоскопию в перечне /usluge/ клиника не называет."
+		},
+		{
+			"source": "/oblasti/: «Pacijenti sa većim brojem mladeža trebaju razmotriti digitalnu dermoskopiju cijelog tijela (total body scan)»",
+			"reason": "Рекомендация в просветительском тексте; что клиника делает картирование всего тела, не сказано. Взята общая dermatoscopy."
+		},
+		{
+			"source": "/oblasti/: фототерапия, IPL, frakcionisana radiofrekvencija, laserski tretmani, skleroterapija, hirurško uklanjanje",
+			"reason": "Перечисление методов лечения в текстах о болезнях («koriste se», «mogu se ukloniti») — не перечень услуг. Лазеров/IPL/фототерапии в /usluge/ нет."
+		},
+		{
+			"source": "Главная: «Opšta i estetska dermatologija», «Alergijske i zapaljenske dermatoze», «Mladeži i tumori kože»",
+			"reason": "Направления, а не процедуры. Покрыты осмотром дерматолога, дерматоскопией, аллергопробами."
+		},
+		{
+			"source": "/usluge/ «Hiperhidroza»: «antiperspirantima, jontoforezom … ili hirurškom intervencijom znojnih žlijezda»",
+			"reason": "Антиперспиранты — назначение, не процедура; ионофорез и хирургию клиника как свою процедуру не заявляет (перечислены как варианты лечения). Заведено только введение нейромодулятора — см. openQuestions."
+		},
+		{
+			"source": "Lazar Popović — Izvršni direktor, Pravnik; Jovana Vujošević — Recepcija, Medicinska sestra",
+			"reason": "Не врачи — в doctors не заводятся."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Hiperhidroza → Hyperhidrosis Botox Treatment",
+			"detail": "Сайт: «Liječi se antiperspirantima, jontoforezom, lokalnom primjenom neuromodulatora ili hirurškom intervencijom». Сопоставлено с hyperhidrosis-botox-treatment (id 4190) — единственная кабинетная процедура из перечня, и других записей «лечение гипергидроза» в каталоге нет (только ботокс-варианты по зонам/брендам). Бренд Botox сайт не называет («neuromodulator»), но в каталоге это generic-запись ботулинотерапии. Если не устраивает — снять строку."
+		},
+		{
+			"topic": "Polno prenosive bolesti → STD Testing Package",
+			"detail": "«Diskretno testiranje i stručno liječenje» сопоставлено с std-testing-package (id 3988, name_sr «Testiranje na polno prenosive bolesti»). Запись в категории GYNECOLOGY (7), у одной клиники; состав пакета сайт не раскрывает."
+		},
+		{
+			"topic": "Биопсия кожи",
+			"detail": "«Dijagnostička biopsija kože — Uzimanje uzorka kože pod lokalnom anestezijom» → skin-and-subcutaneous-tissue-biopsy (3349). Альтернатива skin-biopsy-with-histopathology-report (3602) — сайт ПГ-заключение не упоминает, не выбрана."
+		},
+		{
+			"topic": "Prick testovi",
+			"detail": "«otkrivaju alergije na inhalacione i prehrambene alergene» — заведены две записи (inhalation 1995 + nutritive 1994), а не комбинированная 2102: сайт описывает класс тестов, не пакет."
+		}
+	]
+}

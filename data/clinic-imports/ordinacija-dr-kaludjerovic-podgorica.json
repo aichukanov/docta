@@ -1,0 +1,154 @@
+{
+	"schemaVersion": 1,
+	"slug": "ordinacija-dr-kaludjerovic-podgorica",
+	"name": "Ordinacija dr Kaluđerović",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJuQhy-znrTRMRvowiO4-vZg0",
+	"clinicTypeIds": [
+		10
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ordinacija-dr-kaludjerovic-podgorica.sql",
+		"server/sql/insert-clinic-ordinacija-dr-kaludjerovic-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 241,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Z. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Slug клиники и врача свободны на проде (API 204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 268
+	},
+	"siteOutdated": {
+		"copyright": "нет; meta 2014, блок COVID-19 до 2022-02",
+		"note": "Старый статический сайт (FrontPage/Word-HTML), последние материалы — COVID-19, 2021–2022. Часы и перечень могли устареть; в Google рейтинг 3.1 при 41 отзыве."
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "http://www.dermatolog-kaludjer.org/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "AES-cookie JS-челлендж (__test) решён: aes-128-cbc без паддинга, ключ/IV/шифртекст — три toNumbers(\"…\") со страницы-заглушки; curl -b \"__test=…\". Главная ?i=1 (услуги, часы, контакты, теледерматология), onama.html (биография, адрес, второй телефон 020 245 751, «Cjenovnik usluga je u prilogu» — вложения нет), SADRZAJ.html («u izradi»). Цен нет."
+		},
+		{
+			"type": "website",
+			"ref": "http://www.alergolog-kaludjer.org/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Сестринский домен, тот же челлендж (тот же cookie). Главная — блок ссылок COVID-19 (215–231) + те же услуги, часы и контакты. Новых фактов нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/ordinacija-dr-kaludjerovic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJuQhy-znrTRMRvowiO4-vZg0, 42.4404738 / 19.253997, +382 69 020 772, 41 отзыв (rating 3.1) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Ivana Milutinovića 19/9, prizemlje — сайт = Google («ranija Ulica Đura Salaja 17», «preko puta Sportskog centra Morača» — в описании)",
+		"phone": "+38269020772;+38220245751 — сайт (первый = Google)",
+		"email": "kalve@t-com.me — сайт",
+		"website": "http://www.dermatolog-kaludjer.org/ (https не отвечает)",
+		"social": "нет на сайте",
+		"logo": "нет",
+		"workingHours": "пн–пт 14–19, сб 14–18, вс закрыто (не назван) — сайт",
+		"description": "по главной и onama.html",
+		"languages": "только SR",
+		"doctors": "1: velimir-kaludjerovic (новый)",
+		"doctorPhotos": "0 из 1 — фото на сайте нет",
+		"doctorBios": "1 — onama.html",
+		"prices": "прайс заявлен, но не приложен; 1 цена — теледерматология 0 € (бесплатно)",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки (41 в Google)"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"slug": "dermatologist-examination",
+			"nameEn": "Dermatologist Examination",
+			"price": null,
+			"source": "«Specijalisticka ambulanta za KOŽNE I POLNE BOLESTI»"
+		},
+		{
+			"slug": "allergist-examination",
+			"nameEn": "Allergist Examination",
+			"price": null,
+			"source": "«Subspecijalisticka ambulanta za ALERGOLOGIJU»"
+		},
+		{
+			"slug": "prick-test-nutritive-and-inhalation-allergens",
+			"nameEn": "Prick Test for Food and Inhalant Allergens",
+			"price": null,
+			"source": "«Kompletno ALERGOLOŠKO TESTIRANJE» — метод не назван; «kompletno» → комбинированная запись кожных прик-тестов (пищевые + ингаляционные). patch-тест не заводится (сайт не называет, решение координатора 2026-10-09)"
+		},
+		{
+			"slug": "e-consultation-with-specialist",
+			"nameEn": "E-Consultation with Specialist",
+			"price": 0,
+			"source": "«TELEDERMATOLOGIJA … Usluge su besplatne i obavljaju se radnim danom od 16H-18H, adekvatno pripremljeni upiti u Wordu šalju se na mejl: kalve@t-com.me» — бесплатно → 0 €"
+		}
+	],
+	"labTests": [],
+	"doctors": [
+		{
+			"slug": "velimir-kaludjerovic",
+			"nameSr": "Velimir Kaluđerović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista dermatovenerolog, subspecijalista alergolog — klinički imunolog",
+			"specialtyIds": [
+				7,
+				79,
+				80
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"photo": null,
+			"services": [
+				"dermatologist-examination",
+				"allergist-examination",
+				"prick-test-nutritive-and-inhalation-allergens",
+				"e-consultation-with-specialist"
+			],
+			"note": "Новый; прод-API 204. Фото на сайте нет."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "onama.html: «Cjenovnik usluga je u prilogu.»",
+			"reason": "Вложения/ссылки на прайс на странице нет; /cjenovnik.html, /cjenovnik.pdf, /cijene.html отдают главную (site-checks 2026-10-08)."
+		},
+		{
+			"source": "Главная: «201.1. Cryoterapy» и ~30 статей о болезнях кожи и COVID-19",
+			"reason": "Просветительские статьи, не перечень услуг ординации; криопроцедуры в биографии — работа в КЦЦГ."
+		},
+		{
+			"source": "«za hitne slučajeve postoji mogućnost konsultacije telefonom i van radnog vremena», «možete uraditi konsultacije telefonom ili putem mejla»",
+			"reason": "Условие работы — в описании; дистанционная консультация заведена одной записью (теледерматология)."
+		},
+		{
+			"source": "«sa svojim saradnicima»",
+			"reason": "Сотрудники без имён — не заводятся (решение юзера)."
+		}
+	],
+	"openQuestions": [],
+	"resolved": [
+		{
+			"topic": "Состав «Kompletno alergološko testiranje»",
+			"date": "2026-10-09",
+			"decision": "Решение координатора: patch-тест не добавлять — сайт его не называет. Оставлен только комбинированный прик-тест (prick-test-nutritive-and-inhalation-allergens)."
+		}
+	]
+}

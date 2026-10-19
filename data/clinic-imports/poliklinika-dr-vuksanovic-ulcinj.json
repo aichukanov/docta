@@ -1,0 +1,276 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-dr-vuksanovic-ulcinj",
+	"name": "Poliklinika Dr Vuksanović Ulcinj",
+	"city": "Ulcinj",
+	"cityId": 5,
+	"googlePlaceId": null,
+	"clinicTypeIds": [
+		4
+	],
+	"languageIds": [
+		1
+	],
+	"network": {
+		"name": "Poliklinika „Dr Vuksanović“",
+		"siblings": [
+			"poliklinika-dr-vuksanovic-bar"
+		],
+		"note": "Бар — лаборатория + медицина труда (все врачи); Ульцинь — точка лаборатории (без врачей, тот же список анализов)."
+	},
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-dr-vuksanovic-ulcinj.sql",
+		"server/sql/insert-clinic-poliklinika-dr-vuksanovic-ulcinj-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 200,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен. Подволна 2c, агент O. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 227
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://drvuksanovic.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": "2021-12 (единственная цена — баннер экспресс-теста SARS-CoV-2, файл wp-content/uploads/2021/12/SARS-CoV-2-BAT.jpg; на главной в 2026)",
+			"note": "WordPress, WP REST открыт: 13 страниц (3 — демо темы), 7 постов. Перечня анализов и прайса нет; анализы — из памяток подготовки (2020-08), промо-сета 2020 (49 € акция, не перенесена), постов и баннера."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://drvuksanovic.me/wp-content/uploads/dokumenti/Raspored-zdravstvenih-radnika.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "«Raspored zdravstvenih radnika», Godina 2026, подпись 07.09.2026: 15 сотрудников. Шрифт теряет ć/Ć/đ/Đ, č/š/ž → c/s/z. Восстановление: Vuksanović ×2, Bulatović — однозначно; «Duki» → Dukić (D сохранилась, сокращение «S. D.»); «Maci» → Mačić и «etkovi» → Ćetković — по существующим в БД психиатрам ДЗ Котор."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://drvuksanovic.me/wp-content/uploads/dokumenti/Odluka-o-radnom-vremenu.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Решение о рабочем времени 10.09.2025: Laboratorija Bar пн–пт 07–16, сб 07–14; Medicina rada Bar пн–пт 07–15; Laboratorija Ulcinj пн–пт 08–11, сб 08–10."
+		}
+	],
+	"coverage": {
+		"address": "Braće Frašeri bb (напротив гимназии) — сайт; места Google нет → координаты NULL",
+		"phone": "+38269203773;+38230315900 — сайт",
+		"email": "info@drvuksanovic.me — сайт",
+		"website": "https://drvuksanovic.me/",
+		"social": "нет",
+		"logo": "https://drvuksanovic.me/wp-content/uploads/2020/09/Poliklinika-Dr-Vuksanovic-Logo.jpg",
+		"workingHours": "«Odluka o radnom vremenu» (10.09.2025): «Laboratorija Ulcinj Ponedjeljak – Petak 08 – 11, Subota 08 – 10» (= /kontakt/ulcinj/).",
+		"doctors": "нет (PDF не делит состав по городам)",
+		"doctorPhotos": "—",
+		"doctorBios": "—",
+		"prices": "только экспресс-тест SARS-CoV-2 (10.00 €, баннер 2021-12); остальное NULL",
+		"labTests": "26 — по памяткам/постам/баннеру; групп анализов (гематология, биохимия …) без перечня — в excluded",
+		"reviews": "нет места в Google"
+	},
+	"catalogAdditions": [],
+	"services": [],
+	"labTests": [
+		{
+			"nameEn": "COVID-19 Antigen Test",
+			"slug": "covid-19-antigen-test",
+			"price": 10,
+			"source": "главная, баннер «Brzi antigen test-BAT na SARS-CoV-2 10.00 €» (картинка 2021-12, на главной 2026)"
+		},
+		{
+			"nameEn": "Urine Culture",
+			"slug": "urine-culture",
+			"price": null,
+			"source": "/preporuke/…mikrobioloska…: «Urin za urinokulturu»"
+		},
+		{
+			"nameEn": "Throat Swab for Bacteria",
+			"slug": "throat-swab-bacteria",
+			"price": null,
+			"source": "«Brisevi grla, nosa i usne duplje»; промо-сет: «bris nosa i grla na bakterije i gljivice»"
+		},
+		{
+			"nameEn": "Throat Swab for Fungi",
+			"slug": "throat-swab-fungi",
+			"price": null,
+			"source": "промо-сет: «bris … grla na … gljivice»"
+		},
+		{
+			"nameEn": "Nose Swab for Bacteria",
+			"slug": "nose-swab-bacteria",
+			"price": null,
+			"source": "«Brisevi … nosa»; промо-сет"
+		},
+		{
+			"nameEn": "Nose Swab for Fungi",
+			"slug": "nose-swab-fungi",
+			"price": null,
+			"source": "промо-сет: «bris nosa … na … gljivice»"
+		},
+		{
+			"nameEn": "Oral Cavity Swab for Bacteria",
+			"slug": "oral-cavity-swab-bacteria",
+			"price": null,
+			"source": "«Brisevi grla, nosa i usne duplje»"
+		},
+		{
+			"nameEn": "Vaginal Swab for Bacteria",
+			"slug": "vaginal-swab-bacteria",
+			"price": null,
+			"source": "«Vaginalni i cervikalni bris»; промо-сет: «vaginalni i cervikalni bris na bakterije i gljivice»"
+		},
+		{
+			"nameEn": "Vaginal Swab for Fungi",
+			"slug": "vaginal-swab-fungi",
+			"price": null,
+			"source": "промо-сет"
+		},
+		{
+			"nameEn": "Cervical Swab for Bacteria",
+			"slug": "cervical-swab-bacteria",
+			"price": null,
+			"source": "«Vaginalni i cervikalni bris»; промо-сет"
+		},
+		{
+			"nameEn": "Cervical Swab for Fungi",
+			"slug": "cervical-swab-fungi",
+			"price": null,
+			"source": "промо-сет"
+		},
+		{
+			"nameEn": "Urethral Swab for Bacteria",
+			"slug": "urethral-swab-bacteria",
+			"price": null,
+			"source": "«Uretralni bris»"
+		},
+		{
+			"nameEn": "Sperm Culture for Bacteria",
+			"slug": "sperm-culture-bacteria",
+			"price": null,
+			"source": "«Spermokultura»"
+		},
+		{
+			"nameEn": "Sputum Culture for Bacteria",
+			"slug": "sputum-bacteria",
+			"price": null,
+			"source": "«Ispljuvak-sputum»"
+		},
+		{
+			"nameEn": "Stool Culture",
+			"slug": "stool-culture",
+			"price": null,
+			"source": "«Za koprokulturu»; промо-сет «koprokulturu»"
+		},
+		{
+			"nameEn": "Stool Parasites",
+			"slug": "stool-parasites",
+			"price": null,
+			"source": "«Za parazite … pregled tri uzorka stolice»"
+		},
+		{
+			"nameEn": "Perianal Impression",
+			"slug": "perianal-impression",
+			"price": null,
+			"source": "«Perianalni otisak»"
+		},
+		{
+			"nameEn": "Prothrombin Time PT INR",
+			"slug": "prothrombin-time-pt-inr",
+			"price": null,
+			"source": "/posebne-preporuke/: «Protrombinsko vrijeme – pacijente koji su na oralnoj antikoagulantnoj terapiji»"
+		},
+		{
+			"nameEn": "Oral Glucose Tolerance Test",
+			"slug": "oral-glucose-tolerance-test",
+			"price": null,
+			"source": "«Test opterećenja glukozom (OGTT)»"
+		},
+		{
+			"nameEn": "Catecholamines in 24h Urine",
+			"slug": "catecholamines-in-24h-urine",
+			"price": null,
+			"source": "«skupljanje 24h urina za kateholamine, VMA, ketosteroide, kortikosteroide, serotonin i 5-HIAA»"
+		},
+		{
+			"nameEn": "VMA in Urine",
+			"slug": "vma-in-urine",
+			"price": null,
+			"source": "«… VMA …» (24h urin)"
+		},
+		{
+			"nameEn": "17-Ketosteroids",
+			"slug": "17-ketosteroids",
+			"price": null,
+			"source": "«… ketosteroide …» (24h urin)"
+		},
+		{
+			"nameEn": "Serotonin in 24h Urine",
+			"slug": "serotonin-in-24h-urine",
+			"price": null,
+			"source": "«… serotonin …» (24h urin)"
+		},
+		{
+			"nameEn": "5-HIAA in 24h Urine",
+			"slug": "5-hiaa-in-24h-urine",
+			"price": null,
+			"source": "«… i 5-HIAA» (24h urin)"
+		},
+		{
+			"nameEn": "Spermogram",
+			"slug": "spermogram",
+			"price": null,
+			"source": "«Spermogram … Uzorak sperme se daje u laboratoriji»"
+		},
+		{
+			"nameEn": "Fecal Occult Blood",
+			"slug": "fecal-occult-blood",
+			"price": null,
+			"source": "«Uputstva za test na okultno krvavljenje-krv u stolici Imunohemijski test»; пост «Jednostavan imunohemijski test»"
+		}
+	],
+	"doctors": [],
+	"excluded": [
+		{
+			"source": "Главная и /o-nama/: «hematološke analize, biohemijske analize, analize hormona i tumorskih markera, imunološke analize, alergološke analize, ispitivanja iz oblasti mikrobiologije»",
+			"reason": "Группы анализов, а не конкретные тесты; перечня анализов на сайте нет. Заведены только тесты, названные в памятках подготовки (/preporuke/), промо-сете и баннерах."
+		},
+		{
+			"source": "/kako-se-pripremiti…/: «CK, LDH, AST, kalijum … glukoze, holesterola, triglicerida, fosfata, proteina, gvožđa, vitamina … ACTH, prolaktin, kateholamini, kortizol»",
+			"reason": "Примеры влияния питания/нагрузки на результаты в общей памятке, не перечень услуг. Не заведено."
+		},
+		{
+			"source": "/posebne-preporuke/: «24h urin za … kortikosteroide»",
+			"reason": "Несколько равноценных кандидатов (кортизол в 24ч моче, свободный кортизол, 17-OH-кортикостероиды) — в спорные."
+		},
+		{
+			"source": "Пост «Test netolerancije na hranu» (2020-08)",
+			"reason": "Число продуктов в панели не названо, в каталоге 5 панелей (54/90/95/108/216) — в спорные."
+		},
+		{
+			"source": "Пост «Promotivna ponuda» (2020-08): «Set mikrobioloških analiza za odlazak u porodilište 49 € (puna cijena 73 €)»",
+			"reason": "Акция 2020 года; составляющие анализы (брисы носа/горла/влагалища/шейки, копрокультура) заведены по отдельности без цен."
+		},
+		{
+			"source": "/posebne-preporuke/: «Pravilno sakupljanje urina … za analizu»; «Sakupljanje 24h urina»",
+			"reason": "Общие инструкции сбора мочи без названия анализа."
+		},
+		{
+			"source": "Medicina rada: «… i druga građanska prava»",
+			"reason": "Обобщение, конкретное удостоверение не названо."
+		},
+		{
+			"source": "PDF «Raspored zdravstvenih radnika»: лаб. техники (Đorđije Šorović, Olivera Vujošević, Melisa Crnovršanin, Mavera Nimanbegu, Branka Sekić/Šekić), медсёстры (Radojka Božović, Amera Murić), гигиенистка (Havaja Demirović); «Mjesečni raspored»: N. F. – Natalija Filipović (профессия не указана)",
+			"reason": "Не врачи / профессия не указана."
+		},
+		{
+			"source": "Страницы-заготовки темы /750-2/, /elementor-720/, /678-2/ (Lorem/«Our Doctors … 42 Boulevard, California»)",
+			"reason": "Демо-контент темы WordPress, к клинике не относится."
+		}
+	],
+	"openQuestions": [
+		"Места в Google нет: координаты NULL — карта клинику не покажет. Нужна точка (Braće Frašeri bb, напротив гимназии, Ulcinj).",
+		"Список анализов взят тот же, что в Баре (сайт: «laboratorija … nalazi se na još jednoj lokaciji»). Если в Ульцине только забор материала — это всё равно те же анализы."
+	]
+}

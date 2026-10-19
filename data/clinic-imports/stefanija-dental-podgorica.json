@@ -1,0 +1,358 @@
+{
+	"schemaVersion": 1,
+	"slug": "stefanija-dental-podgorica",
+	"name": "Stomatološka ordinacija Stefanija Dental",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJGfZDbdTrTRMRgSNa8wqx50s",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-stefanija-dental-podgorica.sql",
+		"server/sql/insert-clinic-stefanija-dental-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 223,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2e, агент X. Сайт свежий (2026-02/03). Врач уже в БД (stefanija-pantovic) — привязка, не новая карточка. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 250
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://stefanijadental.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress, me + en (wp-json /wp/v2/pages: 22 страницы, me изменены 2026-02-09…2026-03-02). Прочитаны Početna, O nama, Dr Stefanija, Kontakt, Opšta stomatologija, Protetika, Implantologija, Oralna hirurgija, Parodontologija, RTG dijagnostika, Estetska stomatologija. Цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/stomatoloska-ordinacija-stefanija-dental.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatološka ordinacija Stefanija Dental», «Central Point, 95 Marka Radovića», +382 67 009 072, 37 отзывов (rating 5) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Marka Radovića 95 (Central Point) — сайт = Google; координаты — место Google",
+		"phone": "+38267009072 — сайт = Google",
+		"email": "на сайте нет",
+		"website": "https://stefanijadental.me/",
+		"social": "Instagram https://www.instagram.com/stefanijadental/ — сайт",
+		"logo": "https://stefanijadental.me/wp-content/uploads/2025/11/stefanija_dental_Podgorica-removebg-preview-1.png",
+		"workingHours": "пн–пт 10–18, сб–вс выходной — /kontakt/",
+		"doctors": "1 врач (dr Stefanija Pantović) — уже в БД, привязка",
+		"doctorPhotos": "есть — /dr-stefanija/",
+		"doctorBios": "есть — /dr-stefanija/ (дозаполняется, только если био пустое)",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "gummy-smile-correction",
+			"nameEn": "Gummy Smile Correction",
+			"nameSr": "Korekcija gingivalnog osmijeha (gummy smile)",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "stefanijadental.me /parodontologija/: «Bavimo se … menadžmentom mekog tkiva i korekcijom gummy smile-a». Отдельной записи нет (поиск gummy / «десн* улыбк» / gingival smile — пусто). Метод сайт не называет (гингивэктомия, удлинение коронки или ботокс) — gingivectomy/dental-crown-lengthening не приписываем; общая услуга → новая запись. Категория 20, специальность 78."
+		},
+		{
+			"table": "medical_services",
+			"slug": "gingivitis-treatment",
+			"nameEn": "Gingivitis Treatment",
+			"nameSr": "Terapija gingivitisa",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "stefanijadental.me /parodontologija/: «Bavimo se terapijom gingivitisa, uklanjanjem zubnog kamenca, obradom parodontalnih džepova …». Записи нет (поиск gingivit — пусто); periodontal-scaling-root-planing — терапия пародонтита (поддесневая), не гингивита. Общая услуга → новая запись. Категория 20, специальность 78."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Flash izbjeljivanje zuba",
+			"language": "sr",
+			"reason": "stefanijadental.me /estetska-stomatologija/: «Izbjeljivanje je moguće u ordinaciji primjenom Flash sistema – za 60 minuta postiže se i do 8 nijansi svjetliji osmijeh». Система отбеливания названа сайтом; по сути это то же ordinacijsko izbjeljivanje (teeth-whitening, как Zoom/Opalescence Boost) — бренд-дубль не заводим, название системы — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Flash избјељивање зуба",
+			"language": "sr-cyrl",
+			"reason": "stefanijadental.me /estetska-stomatologija/: «Izbjeljivanje je moguće u ordinaciji primjenom Flash sistema – za 60 minuta postiže se i do 8 nijansi svjetliji osmijeh». Система отбеливания названа сайтом; по сути это то же ordinacijsko izbjeljivanje (teeth-whitening, как Zoom/Opalescence Boost) — бренд-дубль не заводим, название системы — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Flash teeth whitening",
+			"language": "en",
+			"reason": "stefanijadental.me /estetska-stomatologija/: «Izbjeljivanje je moguće u ordinaciji primjenom Flash sistema – za 60 minuta postiže se i do 8 nijansi svjetliji osmijeh». Система отбеливания названа сайтом; по сути это то же ordinacijsko izbjeljivanje (teeth-whitening, как Zoom/Opalescence Boost) — бренд-дубль не заводим, название системы — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Отбеливание Flash",
+			"language": "ru",
+			"reason": "stefanijadental.me /estetska-stomatologija/: «Izbjeljivanje je moguće u ordinaciji primjenom Flash sistema – za 60 minuta postiže se i do 8 nijansi svjetliji osmijeh». Система отбеливания названа сайтом; по сути это то же ordinacijsko izbjeljivanje (teeth-whitening, как Zoom/Opalescence Boost) — бренд-дубль не заводим, название системы — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Flash-Bleaching",
+			"language": "de",
+			"reason": "stefanijadental.me /estetska-stomatologija/: «Izbjeljivanje je moguće u ordinaciji primjenom Flash sistema – za 60 minuta postiže se i do 8 nijansi svjetliji osmijeh». Система отбеливания названа сайтом; по сути это то же ordinacijsko izbjeljivanje (teeth-whitening, как Zoom/Opalescence Boost) — бренд-дубль не заводим, название системы — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Flash diş beyazlatma",
+			"language": "tr",
+			"reason": "stefanijadental.me /estetska-stomatologija/: «Izbjeljivanje je moguće u ordinaciji primjenom Flash sistema – za 60 minuta postiže se i do 8 nijansi svjetliji osmijeh». Система отбеливания названа сайтом; по сути это то же ordinacijsko izbjeljivanje (teeth-whitening, как Zoom/Opalescence Boost) — бренд-дубль не заводим, название системы — синонимом."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Initial Dental Examination and Medical Record Opening",
+			"slug": "initial-dental-examination-and-medical-record-opening",
+			"source": "/o-nama/: «Poseban značaj pridajemo prvom stomatološkom pregledu. On obuhvata klinički pregled, anamnezu, RTG dijagnostiku, fotografisanje i 3D skeniranje zuba»"
+		},
+		{
+			"nameEn": "Follow-up Dental Examination",
+			"slug": "follow-up-dental-examination",
+			"source": "Главная, «Svakodnevne procedure»: «Redovni stomatološki pregledi — Kontrole koje omogućavaju pravovremenu dijagnostiku»"
+		},
+		{
+			"nameEn": "Dental Calculus Removal and Air-Flow",
+			"slug": "dental-calculus-removal-and-air-flow",
+			"source": "/opsta-stomatologija/: «uklanjanje zubnog kamenca i pjeskarenje»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "/opsta-stomatologija/: «kompozitne plombe»"
+		},
+		{
+			"nameEn": "Rotary Root Canal Treatment per Canal",
+			"slug": "machine-root-canal-treatment-per-canal",
+			"source": "/opsta-stomatologija/: «mašinsku endodonciju (liječenje kanala korijena zuba)»"
+		},
+		{
+			"nameEn": "Tooth Build-up",
+			"slug": "tooth-build-up",
+			"source": "/opsta-stomatologija/: «i nadogradnju zuba» — материал/штифт не названы"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "Главная, «Svakodnevne procedure»: «Vađenje i liječenje zuba — Vađenje ili liječenje zuba uz pažljiv i bezbjedan pristup»"
+		},
+		{
+			"nameEn": "All-Ceramic Crown",
+			"slug": "all-ceramic-crown",
+			"source": "/protetika/: «Bezmetalne krunice – prozirne su i prozračne … Čvrsta keramika garantuje dugotrajnost» — материал (цирконий/e.max) не назван → общая keramička krunica"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "/protetika/: «Keramičke ljuskice (prep i non-prep) – viniri ili fasete»; /estetska-stomatologija/: «izradu keramičkih ljuskica»"
+		},
+		{
+			"nameEn": "No-Prep Veneer",
+			"slug": "no-prep-veneer",
+			"source": "/protetika/: «(prep i non-prep) … Mogu se izraditi bez brušenja ili uz minimalnu pripremu zuba»"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "/protetika/: «Metalo-keramičke krunice – tradicionalne krunice koje imaju metalnu osnovu obloženu keramikom»"
+		},
+		{
+			"nameEn": "Ceramic Inlay Onlay",
+			"slug": "ceramic-inlay-onlay",
+			"source": "/protetika/: «Keramičke plombe – trajnije i otpornije od kompozitnih i amalgamskih ispuna … Izrađuju se od iste keramike kao i krunice»"
+		},
+		{
+			"nameEn": "Implant Overdenture with Locators",
+			"slug": "implant-overdenture-with-locators",
+			"source": "/protetika/: «Izrađujemo i … proteze na implantatima» — съёмный протез на имплантах; тип замков не назван, единственная общая запись (как dental-smile-tivat)"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "/implantologija/: «terapija izbora je ugradnja implantata na mjestu nedostatka … Ugradnja jednog implantata traje oko 20 minuta»; /oralna-hirurgija/: «implantacija»"
+		},
+		{
+			"nameEn": "Surgical Tooth Extraction",
+			"slug": "surgical-tooth-extraction",
+			"source": "/oralna-hirurgija/: «hirurško vađenje zuba»"
+		},
+		{
+			"nameEn": "Impacted Tooth Extraction",
+			"slug": "impacted-tooth-extraction",
+			"source": "/oralna-hirurgija/: «vađenje impaktiranih zuba»"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "/oralna-hirurgija/: «apikotomija (resekcija vrha korijena)»"
+		},
+		{
+			"nameEn": "Gingivectomy",
+			"slug": "gingivectomy",
+			"source": "/oralna-hirurgija/: «gingivektomija»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery",
+			"slug": "flap-surgery-periodontal",
+			"source": "/oralna-hirurgija/: «režanj operacije»; /parodontologija/: «režanj operacijama»"
+		},
+		{
+			"nameEn": "Bone Augmentation",
+			"slug": "bone-augmentation",
+			"source": "/oralna-hirurgija/: «augmentacija kosti» — материал не назван"
+		},
+		{
+			"nameEn": "Dental Sinus Lift",
+			"slug": "dental-sinus-lift",
+			"source": "/oralna-hirurgija/: «sinus lift»"
+		},
+		{
+			"nameEn": "Gingivitis Treatment",
+			"slug": "gingivitis-treatment",
+			"source": "/parodontologija/: «Bavimo se terapijom gingivitisa» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Periodontal Pocket Treatment",
+			"slug": "periodontal-pocket-treatment",
+			"source": "/parodontologija/: «obradom parodontalnih džepova»"
+		},
+		{
+			"nameEn": "Gummy Smile Correction",
+			"slug": "gummy-smile-correction",
+			"source": "/parodontologija/: «korekcijom gummy smile-a» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "/rtg-dijagnostika/: «digitalne retroalveolarne snimke (ciljani snimak jednog zuba)»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "/rtg-dijagnostika/: «digitalne panoramske 2D ortopan snimke svih zuba, zglobova i sinusa»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "/estetska-stomatologija/: «Izbjeljivanje je moguće u ordinaciji primjenom Flash sistema – za 60 minuta» → синоним Flash"
+		},
+		{
+			"nameEn": "Home Teeth Whitening",
+			"slug": "home-teeth-whitening",
+			"source": "/estetska-stomatologija/: «izrađujemo individualne folije za kućno izbjeljivanje u trajanju od 5 do 7 dana»"
+		},
+		{
+			"nameEn": "Internal Bleaching of Devitalized Tooth",
+			"slug": "internal-bleaching-of-devitalized-tooth",
+			"source": "/estetska-stomatologija/: «izbjeljivanje avitalnog zuba»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "stefanija-pantovic",
+			"nameSr": "Stefanija Pantović",
+			"professionalTitle": "dr",
+			"position": "Specijalista oralne hirurgije; osnivač ordinacije",
+			"specialtyIds": [
+				78,
+				74
+			],
+			"languageIds": [
+				1
+			],
+			"existing": true,
+			"hasBio": true,
+			"photo": "https://stefanijadental.me/wp-content/uploads/2026/01/938246EF-6178-45F6-ACD1-DD80C515C7B8__2_-removebg-preview_upscaled-819x1024.png",
+			"services": [
+				"dental-implant-placement",
+				"surgical-tooth-extraction",
+				"impacted-tooth-extraction",
+				"apicoectomy",
+				"gingivectomy",
+				"flap-surgery-periodontal",
+				"bone-augmentation",
+				"dental-sinus-lift"
+			],
+			"note": "Уже в БД (id 471 локально) с привязкой к sotir-dental-centar-podgorica; добавлена специальность 74 и клиника Stefanija Dental."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Главная: «Prevencija karijesa — Savremeni pristupi prevenciji uz redovne kontrole i profesionalnu higijenu»",
+			"reason": "Направление без конкретной процедуры (фторирование/герметизация не названы) — не заводили; контроль и чистка заведены отдельно."
+		},
+		{
+			"source": "Главная: «Popravka zuba — Popravka zuba uz savremene materijale i dugotrajna rješenja»",
+			"reason": "Расплывчатый пункт; пломбы и восстановления заведены со страницы opšta stomatologija."
+		},
+		{
+			"source": "/parodontologija/: «uklanjanjem zubnog kamenca»",
+			"reason": "Покрыто dental-calculus-removal-and-air-flow («uklanjanje zubnog kamenca i pjeskarenje» с opšta stomatologija) — отдельную запись не дублировали."
+		},
+		{
+			"source": "/parodontologija/: «menadžmentom mekog tkiva»",
+			"reason": "Расплывчато (не названа ни пересадка, ни пластика) — не заводили."
+		},
+		{
+			"source": "/protetika/: «Izrađujemo i različite vrste mobilnih proteza»",
+			"reason": "Виды съёмных протезов не названы — конкретные записи (полный/частичный/бюгельный) не угадываем."
+		},
+		{
+			"source": "/implantologija/: «a potom se izrađuje i krunica – vidljivi dio zuba»",
+			"reason": "Коронка на импланте без материала — запись по материалу не угадываем."
+		},
+		{
+			"source": "/o-nama/, главная: «fotografisanje i 3D skeniranje zuba», «3D intraoralni digitalni skener»",
+			"reason": "Часть первичного осмотра и оборудование, отдельной платной услугой не названы; записи интраорального сканирования в каталоге нет — в описание клиники."
+		},
+		{
+			"source": "Главная: «Rekonstrukcija osmjeha: specijalizovana estetska stomatologija»",
+			"reason": "Обобщающий блок без процедуры — не заводили (составляющие заведены)."
+		},
+		{
+			"source": "Главная: «Bezbolnost … Koristimo provjerene anestetike»",
+			"reason": "Принцип работы, не услуга (dental-local-anesthesia отдельно не перечислена) — не заводили."
+		},
+		{
+			"source": "/dr-stefanija/: «stekla je i zvanje iTOP instruktora»",
+			"reason": "Квалификация врача, не услуга — в био."
+		},
+		{
+			"source": "Отзывы Google: «the whole aligners treatment went smoothly»",
+			"reason": "На сайте алайнеров нет — не заводили (только факты сайта)."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Связь dr Stefanija Pantović с Sotir dental centar",
+			"detail": "В БД она привязана к sotir-dental-centar-podgorica (с 2025-09). Сайт: «Nakon višegodišnjeg rada u privatnoj stomatološkoj praksi, odlučila je da osnuje sopstvenu stomatološku ordinaciju» — вероятно, в Sotir она больше не работает. Чужую клинику не трогали; проверить состав Sotir и при необходимости снять связь."
+		}
+	]
+}

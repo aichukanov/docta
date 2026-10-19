@@ -1,0 +1,3308 @@
+{
+	"schemaVersion": 1,
+	"slug": "dom-zdravlja-ulcinj",
+	"name": "Dom zdravlja Ulcinj",
+	"city": "Ulcinj",
+	"cityId": 5,
+	"googlePlaceId": "ChIJkVrkFGQTThMRiBnsu9NYcLM",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dom-zdravlja-ulcinj.sql",
+		"server/sql/insert-clinic-dom-zdravlja-ulcinj-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 172,
+		"doctorIds": {},
+		"note": "Подволна 2b, агент G. Сухой прогон 2026-10-08 на локальной БД (scratchpad/agentD/scripts/dryrun.mjs: DML → EXPLAIN в START TRANSACTION … ROLLBACK): оба файла пары — 0 ошибок, 0 несматченных slug; счётчики clinics/doctors/clinic_medical_services/clinic_lab_tests/doctor_clinics/doctor_specialties/doctor_languages/clinic_languages/clinic_working_hours/clinic_clinic_types до и после совпали (scratchpad/agentG/dry/before.tsv, after.tsv). Все slug услуг/анализов есть и на проде (/api/services/details, /api/labtests/details); slug клиники и новых врачей на проде свободны (/api/clinics/details, /api/doctors/details → 204). Порядок применения обязателен: сначала клиника и врачи, затем -services.sql (резолвит клинику по google_place_id/slug). clinicId и doctorIds заполнить после применения из блоков VERIFICATION. 2026-10-08 (агент L): после правки каталога миграцией 054 добавлены 5 услуг и 1 анализ из бывших спорных, X01024 → cervical-drug-application; сухой прогон 054 + -services.sql вместе (scratchpad/agentD/scripts/dryrun.mjs, режим shadow) — 0 ошибок, 0 несматченных slug. Порядок применения: клиника и врачи → миграция 054 → -services.sql. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 199
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://domzdravljaulcinj.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "WordPress (Avada) + WPML (me / sq). wp-json /wp/v2/pages — 26 страниц, /wp/v2/posts — 337 записей. Даты modified: izabrani-doktori-za-odrasle 2025-05-16, -za-djecu 2025-05-16, -za-zene 2026-01-29, doktori-na-specijalizaciji 2025-05-16, centar-za-prevenciju 2022-08-17, centar-za-plucne-bolesti-i-tbc 2022-08-17, centar-za-dijagnostiku 2025-02-07, centar-za-mentalno-zdravlje 2025-02-07, direktor 2025-03-24, kontakt 2025-05-21, medicina-rada 2022-08-17, o-nama 2022-08-17, pocetna 2026-01-29. Пустые страницы (только заголовок): dopunski-rad, obavjestenja, turistiske-ordinacije, zdravstvena-stanica-vladimir, jedinica-za-sanitetski-prevoz, jedinica-za-fizikalnu-terapiju, jedinica-za-patronazu, sanitarna-hemija, sportska-medicina. Взлома (скрытых блоков казино и т. п.) нет."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://domzdravljaulcinj.me/wp-content/uploads/2019/04/Cijenovnik-PZZ-za-treca-lica.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceDate": "2019-03-04",
+			"note": "Прайс «Cijenovnik PZZ za treća lica» — посты «Cijenovnik usluga prema trećim licima u PZZ» 2019-03-04 и 2019-04-12 (категория «Cijenovnik usluga»); файлы /2019/03/ и /2019/04/ побайтно одинаковые, 278 486 байт, Last-Modified 2022-08-05 (перенос сайта). PDF «CJENOVNIK PZZ.xlsx», Microsoft Print to PDF, creationDate 2019-03-04 — это и есть дата прайса. 23 стр., текстовый слой есть (PyMuPDF). Колонки «Šifra usluge» (коды ФЗОЦГ), «Spisak usluga», «Cijena»; над таблицами множители 3.00 / 2.50 к тарифу — взята итоговая «Cijena». 349 строк, 329 кодов: izabrani doktor (A, X), ginekolog (C, X), Centar za plućne bolesti i TBC (G, X), Centar za mentalno zdravlje (H01 psihijatar, H02 psiholog, H04 socijalni radnik, H09 asertivni tim, X01023), Centar za dijagnostiku RTG i UZ (J), mikrobiologija (K), patronaža (L), fizikalna terapija (M). Снимок: data/clinic-pricelists/sources/dom-zdravlja-ulcinj/2026-10-08.cijenovnik-pzz-treca-lica.pdf (sha256 51f190f7fc252d5588561062bbb814f84c5081afcf3cc8ac6313d1c3f35e23c2). В карте сайта (site-checks.json) этот прайс не найден — «pricelist: none» неверно."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://domzdravljaulcinj.me/wp-content/uploads/2026/10/Opsta-medicina-Raspored-rada-05.10.2026-11.10.2026.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Еженедельные графики (пост 2026-10-03, категория «raspored radnog vremena lijekara»): Opšta medicina и Pedijatrija-Gin за 05.10.–11.10.2026, плюс то же за 28.09.–04.10.2026 (/2026/09/2-Opsta-medicina-…, /2026/09/Pedijatrija-Gin-…). Word → PDF, двуязычные (me/sq). Основной источник состава IDO, IDD, IDŽ."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://domzdravljaulcinj.me/wp-content/uploads/2025/10/RASPORED-RADA-SPECIALISTA.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Создан 2025-10-24, прикреплён к постам с графиками сентября–октября 2026. Interna medicina (Isat Jakupi, Teuta Leskovac), Psihijatrija (Basri Muja), Radiologija (Selim Ismaili), Oftalmologija (Nita Hoxha), HES (Kreshnik Mustafa — epidemiolog), Logoped (Artan Ljamović), Psiholog (Linda Kurt), Biohemijska laboratorija (Angelina Vračar)."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaulcinj.me/pripravnost-hes-dz-ulcinj-2025-godinu/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Пост 2025-05-16: «dr Kreshnik Mustafa specijalista epidemiologije» — подтверждает врачебную специальность директора."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/ulcinj/health-center-ulcinj.json",
+			"collected": null,
+			"machineReadable": true,
+			"note": "ChIJkVrkFGQTThMRiBnsu9NYcLM, «Health center Ulcinj», 13 оценок, 3.8. Адрес «W6H9+HMF, Boška Strugara, Ulcinj 85360», +382 30 412 433, 41.9289408/19.2191767. Не перезапрашивался."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/ulcinj/maternity-hospital-ulcinj.json",
+			"collected": null,
+			"machineReadable": true,
+			"note": "ChIJZw4EDmQTThMR505Lnn-T_fE, «Maternity hospital Ulcinj» — porodilište этого же ДЗ (тел. +382 67 237 444 = «Porodilište» на /kontakt/, сайт ДЗ). Отдельной клиникой НЕ заводится; place_id в БД не пишется. Отзывы этого места при выгрузке решать отдельно."
+		}
+	],
+	"coverage": {
+		"address": "Boška Strugara — только Google (сайт адреса не публикует); почтовый индекс 85360",
+		"phone": "+38230412433 (Google) + с сайта: Opšta medicina +38267147320, Pedijatrija +38267147319, Izabrani doktori za žene +38267016493. +38267237444 (главная называет его и IDŽ, и /kontakt/ — Porodilište) не взят",
+		"email": "policlinicul@t-com.me — со страницы /direktor/ (служебный ящик), личный iko_mustafa@hotmail.com не взят. hesulcinj@gmail.com — ящик ХЭС, не взят",
+		"website": "https://domzdravljaulcinj.me/",
+		"social": "на сайте нет",
+		"logo": "https://domzdravljaulcinj.me/wp-content/uploads/2022/08/logo-domzdravlja-ulcinj.png (200 OK)",
+		"doctorScheduleUrl": "https://domzdravljaulcinj.me/category/obavjestenja/raspored-radnog-vremena-lijekara/ — категория еженедельных графиков",
+		"workingHours": "пн–пт 07:00–21:00, сб 07:00–21:00, вс 07:00–14:00 — главная «od 07h-21h» + дежурный врач в графике 05.10.–11.10.2026",
+		"description": "6 языков, только из того, что ДЗ пишет о себе; ru — «в Ульцине» по i18n/city.ts",
+		"doctors": "26: 25 новых + 1 найден в БД (Gordana Jelušić). Фото только у директора",
+		"prices": "262 услуги и 72 анализа с ценой из прайса для третьих лиц 2019-03-04; is_price_outdated не ставится (решение юзера 2026-10-08). Один код в нескольких разделах — price/price_max (мин/макс)",
+		"servicesWithoutPrice": "15: 10 справок /medicina-rada/, 3 санитарных осмотра («sanitarne knjižice»), интернист, офтальмолог",
+		"labTests": "72: микробиологические анализы (включая K01064 → direct-microscopic-preparation, добавлен после миграции 054) + кариотип (C01002) — из того же прайса",
+		"reviews": "pending: ждут полной выгрузки"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Preventive Examination Up to Age 1",
+			"slug": "preventive-examination-up-to-age-1",
+			"code": "UL_A01001",
+			"price": 39.41,
+			"priceMax": null,
+			"source": "A01001 Preventivni pregledi djece u 1. godini života — 39.41 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Preventive Examination at Age 2",
+			"slug": "preventive-examination-at-age-2",
+			"code": "UL_A01002",
+			"price": 39.41,
+			"priceMax": null,
+			"source": "A01002 Preventivni pregled djece u 2. godini života — 39.41 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Preventive Examination at Age 4",
+			"slug": "preventive-examination-at-age-4",
+			"code": "UL_A01003",
+			"price": 39.41,
+			"priceMax": null,
+			"source": "A01003 Preventivni pregled djece u 4. godini života — 39.41 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Preventive Examination Before Primary School",
+			"slug": "preventive-examination-before-primary-school",
+			"code": "UL_A01004",
+			"price": 47.29,
+			"priceMax": null,
+			"source": "A01004 Preventivni pregled pred polazak u osnovnu školu — 47.29 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Primary School Preventive Examination",
+			"slug": "primary-school-preventive-examination",
+			"code": "UL_A01005",
+			"price": 36.25,
+			"priceMax": null,
+			"source": "A01005 Preventivni pregledi u osnovnoj školi ( 2, 4, 6 i posljednji razred osnovne škole) — 36.25 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Secondary School Preventive Systematic Examination",
+			"slug": "secondary-school-preventive-systematic-examination",
+			"code": "UL_A01006",
+			"price": 36.25,
+			"priceMax": null,
+			"source": "A01006 Preventivni (sistematski) pregled učenika u prvom i trećem razredu srednje škole — 36.25 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Student Systematic Preventive Examination",
+			"slug": "student-systematic-preventive-examination",
+			"code": "UL_A01007",
+			"price": 36.25,
+			"priceMax": null,
+			"source": "A01007 Preventivni (sistematski) pregled studenata na prvoj i trećoj godini studija — 36.25 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Systematic Preventive Examination for Patients Over 65",
+			"slug": "systematic-preventive-examination-for-patients-over-65",
+			"code": "UL_A01008",
+			"price": 36.25,
+			"priceMax": null,
+			"source": "A01008 Preventivni (sistematski) pregled lica starijih od 65 godina. — 36.25 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Follow-up Examination After Preventive Examination",
+			"slug": "follow-up-examination-after-preventive-examination",
+			"code": "UL_A01009",
+			"price": 23.64,
+			"priceMax": null,
+			"source": "A01009 Kontrolni pregled nakon preventivnog pregleda — 23.64 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Preventive Examination of Children Under 15 During an Epidemic",
+			"slug": "preventive-examination-of-children-under-15-during-epidemic",
+			"code": "UL_A01010",
+			"price": 36.25,
+			"priceMax": null,
+			"source": "A01010 Preventivni pregled djece do 15 godina u slučaju epidemije neke od zaraznih bolesti. — 36.25 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Pediatric Vaccination and Revaccination by Schedule",
+			"slug": "pediatric-vaccination-and-revaccination-by-schedule",
+			"code": "UL_A01011",
+			"price": 11.03,
+			"priceMax": null,
+			"source": "A01011 Vakcinacija i revakcinacija djece i omladine po kalendaru vakcinacija — 11.03 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Influenza Vaccination for Patients Over 65",
+			"slug": "influenza-vaccination-for-patients-over-65",
+			"code": "UL_A01012",
+			"price": 11.03,
+			"priceMax": null,
+			"source": "A01012 Vakcinacija starijih od 65 godina protiv gripe — 11.03 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Immunoprophylaxis and Chemoprophylaxis for Infectious Disease Prevention",
+			"slug": "immunoprophylaxis-and-chemoprophylaxis-for-infectious-disease-prevention",
+			"code": "UL_A01013",
+			"price": 11.03,
+			"priceMax": null,
+			"source": "A01013 Imunoprofilaksa, imunoprofilaksa sa serumom i hemioprofilaksa za spriječavanje zaraznih bolesti u skladu sa zakonom — 11.03 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Cardiovascular Risk Preventive Examination Adults Over 40",
+			"slug": "cardiovascular-risk-preventive-examination-adults-over-40",
+			"code": "UL_A01014",
+			"price": 23.64,
+			"priceMax": null,
+			"source": "A01014 Preventivni pregled muškaraca nakon 40 godine života, i žena nakon 45.godine života zbog ranog otkrivanje povišenog krvnog pritiska, holesterola i triglicerida i riziko faktora za pojavu bolesti srca i krvnih sudova i to svakih 5 godina jedanput. — 23.64 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Breast Cancer Early Detection Examination",
+			"slug": "breast-cancer-early-detection-examination",
+			"code": "UL_A01015",
+			"price": 23.64,
+			"priceMax": null,
+			"source": "A01015 Pregledi za rano otkrivanje raka dojke kod žena i to jedanput na 3 godine. Kod žena u rizičnoj grupi (sa rakom dojke kod majke, sestre, kćerke) pregledi se obavljaju svake godine — 23.64 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "First Curative Examination",
+			"slug": "first-curative-examination",
+			"code": "UL_A02001",
+			"price": 23.64,
+			"priceMax": null,
+			"source": "A02001 Prvi kurativni pregled — 23.64 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Follow-up Curative Examination",
+			"slug": "follow-up-curative-examination",
+			"code": "UL_A02002",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "A02002 Ponovni kurativni pregled (kontrolni) — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Pre-Operative Outpatient Examination General Anesthesia",
+			"slug": "pre-operative-outpatient-examination-general-anesthesia",
+			"code": "UL_A02003",
+			"price": 39.41,
+			"priceMax": null,
+			"source": "A02003 Pregled pacijenata koji se ambulantno spremaju za operaciju u opštoj anasteziji. — 39.41 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Brief Doctor Visit Without Examination",
+			"slug": "brief-doctor-visit-without-examination",
+			"code": "UL_A02004",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "A02004 Kratka posjeta doktoru (posjeta bez pregleda doktora) — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Home Visit First Curative Examination Up to 5 km",
+			"slug": "home-visit-first-curative-examination-up-to-5-km",
+			"code": "UL_A02005",
+			"price": 55.17,
+			"priceMax": null,
+			"source": "A02005 Prvi kurativni pregled u kući osiguranika na udaljenosti do 5 km od ambulante izabranog doktora — 55.17 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Home Visit First Curative Examination 5 to 15 km",
+			"slug": "home-visit-first-curative-examination-5-to-15-km",
+			"code": "UL_A02006",
+			"price": 70.93,
+			"priceMax": null,
+			"source": "A02006 Prvi kurativni pregled u kući osiguranika na udaljenosti od 5-15 km od ambulante izabranog doktora, ili teško dostupnim krajevima — 70.93 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Home Visit First Curative Examination Over 15 km",
+			"slug": "home-visit-first-curative-examination-over-15-km",
+			"code": "UL_A02007",
+			"price": 86.69,
+			"priceMax": null,
+			"source": "A02007 Prvi kurativni pregled u kući osiguranika na udaljenosti više od 15 km od ambulante izabranog doktora, ili teško dostupnim krajevima — 86.69 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Home Visit Follow-up Curative Examination Up to 5 km",
+			"slug": "home-visit-brief-doctor-visit-up-to-5-km",
+			"code": "UL_A02008",
+			"price": 47.29,
+			"priceMax": null,
+			"source": "A02008 Ponovni kurativni pregled (kontrolni) u kući osiguranika na udaljenosti do 5 km od ambulante izabranog doktora — 47.29 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Home Visit Follow-up Curative Examination 5 to 15 km",
+			"slug": "home-visit-follow-up-curative-examination-5-to-15-km",
+			"code": "UL_A02009",
+			"price": 63.05,
+			"priceMax": null,
+			"source": "A02009 Ponovni kurativni pregled (kontrolni) u kući osiguranika na udaljenosti od 5-15 km od ambulante izabranog doktora, ili teško dostupnim krajevima — 63.05 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Home Visit Follow-up Curative Examination Over 15 km",
+			"slug": "home-visit-follow-up-curative-examination-over-15-km",
+			"code": "UL_A02010",
+			"price": 78.81,
+			"priceMax": null,
+			"source": "A02010 Ponovni kurativni pregled (kontrolni) u kući osiguranika na udaljenosti više od 15 km od ambulante izabranog doktora, ili teško dostupnim krajevima — 78.81 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Doctor Visit for IPK Workup",
+			"slug": "doctor-visit-for-ipk-workup",
+			"code": "UL_A02011",
+			"price": 34.51,
+			"priceMax": null,
+			"source": "A02011 Posjeta doktoru radi obrade za IPK — 34.51 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Foreign Body Removal from Ear",
+			"slug": "foreign-body-removal-from-ear",
+			"code": "UL_X01001",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "X01001 odstranjivanje stranog tijela iz uha — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Foreign Body Removal from Throat",
+			"slug": "foreign-body-removal-from-throat",
+			"code": "UL_X01002",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "X01002 odstranjivanje stranog tijela iz grla — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Foreign Body Removal from Skin and Subcutaneous Tissue",
+			"slug": "foreign-body-removal-from-skin-and-subcutaneous-tissue",
+			"code": "UL_X01003",
+			"price": 7.88,
+			"priceMax": null,
+			"source": "X01003 odstranjivanje stranog tijela iz kože — 7.88 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Local Anesthesia Administration",
+			"slug": "local-anesthesia-administration",
+			"code": "UL_X01004",
+			"price": 6.57,
+			"priceMax": 7.88,
+			"source": "X01004 davanje lokalne anastezije — 7.88 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X01004 davanje lokalne anastezije — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Cerumen Ear Irrigation",
+			"slug": "cerumen-ear-irrigation",
+			"code": "UL_X01005",
+			"price": 7.88,
+			"priceMax": null,
+			"source": "X01005 ispiranje cerumena iz uha — 7.88 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Oxygen Administration",
+			"slug": "oxygen-administration",
+			"code": "UL_X01006",
+			"price": 4.32,
+			"priceMax": 6.57,
+			"source": "X01006 davanje kiseonika — 5.11 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X01006 davanje kiseonika — 6.57 (Usluge izabranog ginekologa) | X01006 davanje kiseonika — 4.32 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Swab Collection for Laboratory Analysis",
+			"slug": "swab-collection-for-laboratory-analysis",
+			"code": "UL_X01007",
+			"price": 6.57,
+			"priceMax": 7.88,
+			"source": "X01007 uzimanje briseva sa slanjem na analizu — 7.88 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X01007 uzimanje briseva sa slanjem na analizu — 6.57 (Usluge izabranog ginekologa) | X01007 uzimanje briseva sa slanjem na analizu — 6.66 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Inhalation Therapy",
+			"slug": "inhalation-therapy",
+			"code": "UL_X01010",
+			"price": 4.32,
+			"priceMax": 5.11,
+			"source": "X01010 davanje inhalacije — 5.11 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X01010 davanje inhalacije — 4.32 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Subcutaneous Hematoma Puncture",
+			"slug": "anterior-hematoma-puncture",
+			"code": "UL_X01011",
+			"price": 7.88,
+			"priceMax": null,
+			"source": "X01011 punkcija potkožnih hematoma — 7.88 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Gastrostomy Site Care",
+			"slug": "gastrostomy-site-care",
+			"code": "UL_X01012",
+			"price": 5.11,
+			"priceMax": null,
+			"source": "X01012 toaleta gastrostome — 5.11 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Colostomy Care",
+			"slug": "artificial-anus-care",
+			"code": "UL_X01013",
+			"price": 5.11,
+			"priceMax": null,
+			"source": "X01013 toaleta vještačkog anusa — 5.11 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Wound Care Without Suturing",
+			"slug": "wound-care-without-suturing",
+			"code": "UL_X01014",
+			"price": 6.57,
+			"priceMax": 7.88,
+			"source": "X01014 zbrinjavanje rane bez šivanja — 7.88 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X01014 zbrinjavanje rane bez šivanja — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Suture Removal",
+			"slug": "suture-removal",
+			"code": "UL_X01015",
+			"price": 5.11,
+			"priceMax": 6.57,
+			"source": "X01015 skidanje hirurških konaca — 5.11 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X01015 skidanje hirurških konaca — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Fixation Bandage",
+			"slug": "fixation-bandage",
+			"code": "UL_X01018",
+			"price": 5.11,
+			"priceMax": null,
+			"source": "X01018 fiksacioni zavoj — 5.11 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Immobilization",
+			"slug": "immobilization",
+			"code": "UL_X01019",
+			"price": 7.88,
+			"priceMax": null,
+			"source": "X01019 imobilizacija — 7.88 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Frictions (Rubbing Massage)",
+			"slug": "fixation",
+			"code": "UL_X01020",
+			"price": 5.11,
+			"priceMax": 6.57,
+			"source": "X01020 frikcije — 5.11 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X01020 frikcije — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Local Drug Application Subcutaneous and Intramuscular",
+			"slug": "local-drug-application-subcutaneous-and-intramuscular",
+			"code": "UL_X01021",
+			"price": 2.16,
+			"priceMax": 6.57,
+			"source": "X01021 lokalno apliciranje lijeka (subkutano i intramuskularno) — 2.56 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X01021 lokalno apliciranje lijeka (subkutano i intramuskularno) — 6.57 (Usluge izabranog ginekologa) | X01021 lokalno apliciranje lijeka (subkutano i intramuskularno) — 2.16 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Burn Wound Care",
+			"slug": "burn-wound-care",
+			"code": "UL_X02002",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "X02002 obrada opekotina — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Abscess Incision",
+			"slug": "abscess-incision",
+			"code": "UL_X02003",
+			"price": 6.57,
+			"priceMax": 15.76,
+			"source": "X02003 incizija abscesa — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X02003 incizija abscesa — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Eye Foreign Body Removal Cornea",
+			"slug": "eye-foreign-body-removal-cornea",
+			"code": "UL_X02004",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "X02004 odstranjivanje stranog tijela iz oka (rožnjače) — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Anterior Nasal Packing",
+			"slug": "anterior-nasal-packing",
+			"code": "UL_X02005",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "X02005 prednja tamponada nosa — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Urinary Catheter Placement",
+			"slug": "urinary-catheter-placement",
+			"code": "UL_X02006",
+			"price": 6.57,
+			"priceMax": 15.76,
+			"source": "X02006 kateterizacija mokraćne bešike sa ili bez ispiranja, — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X02006 kateterizacija mokraćne bešike sa ili bez ispiranja, — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Enema",
+			"slug": "enema",
+			"code": "UL_X02007",
+			"price": 6.57,
+			"priceMax": 7.67,
+			"source": "X02007 davanje klizme — 7.67 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X02007 davanje klizme — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Indwelling Catheter Placement",
+			"slug": "indwelling-catheter-placement",
+			"code": "UL_X02008",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "X02008 namještanje trajnog katetera, — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Intravenous Cannula Placement",
+			"slug": "intravenous-cannula-placement",
+			"code": "UL_X02009",
+			"price": 5.11,
+			"priceMax": 6.57,
+			"source": "X02009 postavljanje kanile u venu ili uključivanje infuzije — 5.11 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X02009 postavljanje kanile u venu ili uključivanje infuzije — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "ECG",
+			"slug": "ecg",
+			"code": "UL_X02010",
+			"price": 6.57,
+			"priceMax": 10.44,
+			"source": "X02010 snimanje i očitavanje EKG — 10.44 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X02010 snimanje i očitavanje EKG — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Spirometry",
+			"slug": "spirometry",
+			"code": "UL_X02011",
+			"price": 8.82,
+			"priceMax": 10.44,
+			"source": "X02011 snimanje i čitanje spirometrije — 10.44 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X02011 snimanje i čitanje spirometrije — 8.82 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Paraphimosis Reduction",
+			"slug": "paraphimosis-reduction",
+			"code": "UL_X02019",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "X02019 repozicija parafimoze — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Incarcerated Hernia Reduction",
+			"slug": "incarcerated-hernia-reduction",
+			"code": "UL_X02020",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "X02020 repozicija uklještene kile — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Atheroma, Cyst, Xanthoma or Small Benign Tumor Excision",
+			"slug": "atheroma-cyst-xanthoma-or-small-benign-tumor-excision",
+			"code": "UL_X02021",
+			"price": 6.57,
+			"priceMax": 15.76,
+			"source": "X02021 ekstirpac. ateroma, ciste ili manjeg benin. tumora — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X02021 ekstirpac. ateroma, ciste ili manjeg benin. tumora — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Wound Suturing Under Local Anesthesia",
+			"slug": "wound-suturing-under-local-anesthesia",
+			"code": "UL_X03001",
+			"price": 6.57,
+			"priceMax": 23.64,
+			"source": "X03001 obrada rane sa šivanjem uz lokalnu anesteziju — 23.64 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle)) | X03001 obrada rane sa šivanjem uz lokalnu anesteziju — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "External Cardiac Defibrillation",
+			"slug": "external-cardiac-defibrillation",
+			"code": "UL_X03002",
+			"price": 15.76,
+			"priceMax": null,
+			"source": "X03002 defibrilacija — 15.76 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Endotracheal Intubation",
+			"slug": "endotracheal-intubation",
+			"code": "UL_X03003",
+			"price": 37.06,
+			"priceMax": null,
+			"source": "X03003 intubacija — 37.06 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Gastric Lavage",
+			"slug": "gastric-lavage",
+			"code": "UL_X03004",
+			"price": 23.64,
+			"priceMax": null,
+			"source": "X03004 ispiranje želuca — 23.64 (Usluge izabranog doktora (za djecu do 15 g. – pedijatar i za odrasle))"
+		},
+		{
+			"nameEn": "Pregnancy Preventive Examination First Trimester",
+			"slug": "pregnancy-preventive-examination-first-trimester",
+			"code": "UL_C01001",
+			"price": 32.84,
+			"priceMax": null,
+			"source": "C01001 Preventivni pregled u toku trudnoće (pregled trudnice u I trimestru trudnoće i četiri kontrolna pregleda trudnoće) — 32.84 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Pregnancy Ultrasound",
+			"slug": "pregnancy-ultrasound",
+			"code": "UL_C01003",
+			"price": 26.27,
+			"priceMax": null,
+			"source": "C01003 Ultrazvučni pregled u toku trudnoće (prvi do 16. nedjelje trudnoće, drugi do 26. nedjelje trudnoće i treći do 34. ili 35. nedjelje trudnoće), a kod rizičnih trudnoća prema indikacijama — 26.27 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Postpartum Examination at 6 Weeks",
+			"slug": "postpartum-examination-at-6-weeks",
+			"code": "UL_C01004",
+			"price": 19.7,
+			"priceMax": null,
+			"source": "C01004 Pregled i savjetovanje 6 nedjelja nakon porođaja — 19.70 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Post-Abortion Examination and Counseling",
+			"slug": "post-abortion-examination-and-counseling",
+			"code": "UL_C01005",
+			"price": 19.7,
+			"priceMax": null,
+			"source": "C01005 Pregled i savjetovanje 3 nedjelje nakon spontanog ili dozvoljenog abortusa. — 19.70 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Post-Ectopic Pregnancy Examination and Counseling",
+			"slug": "post-ectopic-pregnancy-examination-and-counseling",
+			"code": "UL_C01006",
+			"price": 19.7,
+			"priceMax": null,
+			"source": "C01006 Pregled i savjetovanje 3 nedjelje nakon ekstrauterinog graviditeta. Pregled je kombinovan sa PAP testom, potrebnim laboratorijskim pretragama, savjetovanjem i određivanjem metode kontracepcije — 19.70 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Reproductive Age Women Preventive Examination with PAP Test",
+			"slug": "reproductive-age-women-preventive-examination-with-pap-test",
+			"code": "UL_C01007",
+			"price": 26.27,
+			"priceMax": null,
+			"source": "C01007 Preventivni pregled sa savjetovanjem žena u reproduktivnom dobu, pregled za otkrivanje raka na reproduktivnim organima žena i to na 3 godine jedanput u životnoj dobi od 20. do 75. godine starosti (osim ako izabrani ginekolog ne utvrdi drugačiju dinamiku) — 26.27 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "First Specialist Curative Gynecological Examination",
+			"slug": "first-specialist-curative-gynecological-examination",
+			"code": "UL_C02001",
+			"price": 19.7,
+			"priceMax": null,
+			"source": "C02001 Prvi kurativni pregled žena (specijalistički) — 19.70 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Follow-up Specialist Curative Gynecological Examination",
+			"slug": "follow-up-specialist-curative-gynecological-examination",
+			"code": "UL_C02002",
+			"price": 13.14,
+			"priceMax": null,
+			"source": "C02002 Ponovni kurativni pregled žena (kontrolni specijalistički) — 13.14 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Brief Gynecologist Visit Without Examination",
+			"slug": "brief-gynecologist-visit-without-examination",
+			"code": "UL_C02003",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "C02003 Kratka posjeta doktoru bez ponovnog pregleda. — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Mechanical Contraceptive Device Check",
+			"slug": "mechanical-contraceptive-device-check",
+			"code": "UL_X01017",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X01017 kontrola mehaničkog kontraceptivnog sredstva — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Local Drug Application (Vaginal and Cervical)",
+			"slug": "cervical-drug-application",
+			"code": "UL_X01024",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X01024 lokalno apliciranje lijeka (vaginalno i cervikalno) — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "IUD Insertion",
+			"slug": "iud-insertion",
+			"code": "UL_X01025",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X01025 stavljanje IUD — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "IUD Removal",
+			"slug": "iud-removal",
+			"code": "UL_X01026",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X01026 skidanje IUD — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Colposcopy",
+			"slug": "colposcopy",
+			"code": "UL_X02016",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X02016 kolposkopski pregled — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Bartholin Gland and Vulva Incision and Drainage",
+			"slug": "bartholin-gland-and-vulva-incision-and-drainage",
+			"code": "UL_X02017",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X02017 incizija i drenaža Bartolinijeve žlijezde i vulve — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Vulvar and Vaginal Condyloma Abrasion",
+			"slug": "vulvar-and-vaginal-condyloma-abrasion",
+			"code": "UL_X02018",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X02018 abrazija kondiloma vulve i vagine — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Vulva Biopsy with Lab Analysis",
+			"slug": "vulva-biopsy-with-lab-analysis",
+			"code": "UL_X03005",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X03005 uzimanje biopsije labije i vulve sa slanjem uzoraka na analizu — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Cervical Biopsy with Lab Analysis",
+			"slug": "cervical-biopsy-with-lab-analysis",
+			"code": "UL_X03006",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X03006 uzimanje biopsije vagine i cerviksa sa slanjem uzoraka na analizu — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Endometrial Biopsy with Lab Analysis",
+			"slug": "endometrial-biopsy-with-lab-analysis",
+			"code": "UL_X03007",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X03007 uzimanje biopsije endometrijuma sa slanjem uzoraka na analizu — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Cervical or Uterine Polypectomy",
+			"slug": "cervical-or-uterine-polypectomy",
+			"code": "UL_X03008",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X03008 polipektomija (grlića materice, cavum uteri) — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Amnioscopy",
+			"slug": "amnioscopy",
+			"code": "UL_X03009",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X03009 amnioskopija — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Gynecological Ultrasound",
+			"slug": "gynecological-ultrasound",
+			"code": "UL_X03010",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X03010 ultrazvučni pregled žene — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Pregnancy Cardiotocography (CTG)",
+			"slug": "pregnancy-cardiotocography-ctg",
+			"code": "UL_X03013",
+			"price": 6.57,
+			"priceMax": null,
+			"source": "X03013 CTG - kardiotokografija — 6.57 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Tuberculin Skin Test",
+			"slug": "tuberculin-skin-test",
+			"code": "UL_G01001",
+			"price": 7.02,
+			"priceMax": null,
+			"source": "G01001 Tuberkulinsko testiranje. — 7.02 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Adult Examination for Registered TB",
+			"slug": "adult-examination-for-registered-tb",
+			"code": "UL_G01002",
+			"price": 28.08,
+			"priceMax": null,
+			"source": "G01002 Pregled osoba sa registrovanom TBC — 28.08 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "TB Contact Tracing Examination",
+			"slug": "tb-contact-tracing-examination",
+			"code": "UL_G01003",
+			"price": 28.08,
+			"priceMax": null,
+			"source": "G01003 Pregled osoba iz kontakta — 28.08 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Patient Examination with Chemoprophylaxis",
+			"slug": "patient-examination-with-chemoprophylaxis",
+			"code": "UL_G01004",
+			"price": 28.08,
+			"priceMax": null,
+			"source": "G01004 Pregled i praćenje lica pod hemioprofilaksom. — 28.08 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "First Pulmonologist Curative Examination",
+			"slug": "first-pulmonologist-curative-examination",
+			"code": "UL_G02001",
+			"price": 28.08,
+			"priceMax": null,
+			"source": "G02001 Prvi kurativni pregled (specijalistički) — 28.08 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Follow-up Pulmonologist Curative Examination",
+			"slug": "follow-up-pulmonologist-curative-examination",
+			"code": "UL_G02002",
+			"price": 21.06,
+			"priceMax": null,
+			"source": "G02002 Ponovni kurativni pregled (kontrolni specijalistički). — 21.06 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Sputum Collection for Bacterial and Fungal Analysis",
+			"slug": "sputum-collection-for-bacterial-and-fungal-analysis",
+			"code": "UL_X01008",
+			"price": 2.16,
+			"priceMax": null,
+			"source": "X01008 uzimanje sputuma za analizu na bakterije i gljivice — 2.16 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Directly Observed Treatment for TB DOTS",
+			"slug": "directly-observed-treatment-for-tb-dots",
+			"code": "UL_X01022",
+			"price": 2.16,
+			"priceMax": 2.2,
+			"source": "X01022 direktno opservirana terapija za TBC (DOTs) — 2.16 (Centar za plućne bolesti i TBC) | X01022 direktno opservirana terapija za TBC (DOTs) — 2.20 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Prick Test for Inhalant Allergens",
+			"slug": "prick-test-inhalation-allergens",
+			"code": "UL_X02001",
+			"price": 22.32,
+			"priceMax": null,
+			"source": "X02001 ispitivanje kožne preosetljivosti na inhalacione alergene (alergološko prick - testiranje) — 22.32 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Bronchodilator Test",
+			"slug": "bronchodilator-test",
+			"code": "UL_X02012",
+			"price": 8.82,
+			"priceMax": null,
+			"source": "X02012 bronhodilatacijski testovi — 8.82 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Pleural Puncture",
+			"slug": "pleural-puncture",
+			"code": "UL_X02013",
+			"price": 26.64,
+			"priceMax": null,
+			"source": "X02013 dijagnostička punkcija pleure — 26.64 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Thoracentesis",
+			"slug": "thoracentesis",
+			"code": "UL_X02014",
+			"price": 26.64,
+			"priceMax": null,
+			"source": "X02014 terapijska punkcija pleure — 26.64 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Evacuation Pleural Puncture",
+			"slug": "evacuation-pleural-puncture",
+			"code": "UL_X02015",
+			"price": 26.64,
+			"priceMax": null,
+			"source": "X02015 evakuaciona punkcija pleure — 26.64 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "Sputum Collection for Cytology",
+			"slug": "sputum-collection-for-cytology",
+			"code": "UL_X03011",
+			"price": 2.16,
+			"priceMax": null,
+			"source": "X03011 uzimanje sputuma za citološku analizu — 2.16 (Centar za plućne bolesti i TBC)"
+		},
+		{
+			"nameEn": "First Psychiatrist Examination",
+			"slug": "first-psychiatrist-examination",
+			"code": "UL_H01001",
+			"price": 50.02,
+			"priceMax": null,
+			"source": "H01001 Prvi pregled (specijalistički) — 50.02 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Follow-up Psychiatrist Examination",
+			"slug": "follow-up-psychiatrist-examination",
+			"code": "UL_H01002",
+			"price": 33.35,
+			"priceMax": null,
+			"source": "H01002 Ponovni pregled (kontrolni specijalistički) — 33.35 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Brief Psychiatrist Visit Without Examination",
+			"slug": "brief-psychiatrist-visit-without-examination",
+			"code": "UL_H01003",
+			"price": 16.67,
+			"priceMax": null,
+			"source": "H01003 Kratka posjeta doktoru bez ponovnog pregleda — 16.67 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Individual Supportive Psychotherapy and Counseling",
+			"slug": "individual-supportive-psychotherapy-and-counseling",
+			"code": "UL_H01004",
+			"price": 33.35,
+			"priceMax": null,
+			"source": "H01004 Površna individualna terapija (savjeti pacijentu) — 33.35 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Additional Individual Therapy",
+			"slug": "additional-individual-therapy",
+			"code": "UL_H01005",
+			"price": 50.02,
+			"priceMax": null,
+			"source": "H01005 Dubinska individualna terapija (savjetodavna terapija) — 50.02 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Group Psychodynamic and Sociodynamic Therapy",
+			"slug": "group-psychodynamic-and-sociodynamic-therapy",
+			"code": "UL_H01006",
+			"price": 133.38,
+			"priceMax": null,
+			"source": "H01006 Grupna psihoterapija psihodinamskih i sociodinamskih kinflikata (grupa sa najmanje 6 osoba) — 133.38 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Group Psychotherapy Session for Addictions",
+			"slug": "group-psychotherapy-session-for-addictions",
+			"code": "UL_H01007",
+			"price": 133.38,
+			"priceMax": null,
+			"source": "H01007 Grupna psihoterapija kod lica sa bolestima zavisnosti (grupa sa najmanje 6 osoba) — 133.38 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Family Psychotherapy Session",
+			"slug": "family-psychotherapy-session",
+			"code": "UL_H01008",
+			"price": 100.04,
+			"priceMax": null,
+			"source": "H01008 Porodična psihoterapija (terapija bračnih i drugih parova) — 100.04 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Analytically-Oriented Depth Psychotherapy Session",
+			"slug": "analytically-oriented-depth-psychotherapy-session",
+			"code": "UL_H01009",
+			"price": 66.69,
+			"priceMax": null,
+			"source": "H01009 Analitički usmjerena terapija — 66.69 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Behavioral Psychotherapy",
+			"slug": "behavioral-psychotherapy",
+			"code": "UL_H01010",
+			"price": 66.69,
+			"priceMax": null,
+			"source": "H01010 Psihoterpija ponašanja — 66.69 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Relaxation Technique",
+			"slug": "relaxation-technique",
+			"code": "UL_H01011",
+			"price": 55.58,
+			"priceMax": null,
+			"source": "H01011 Tehnika relaksacije — 55.58 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Brief Psychodiagnostic Interview",
+			"slug": "brief-psychodiagnostic-interview",
+			"code": "UL_H01012",
+			"price": 16.67,
+			"priceMax": null,
+			"source": "H01012 Kraći psihodijagnostički intervju — 16.67 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Pediatric Psychomotor Development Assessment",
+			"slug": "pediatric-psychomotor-development-assessment",
+			"code": "UL_H01013",
+			"price": 100.04,
+			"priceMax": null,
+			"source": "H01013 Procjena psihomotornog razvoja djeteteta — 100.04 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Brief Pediatric Intellectual Status Test Under 15",
+			"slug": "brief-pediatric-intellectual-status-test-under-15",
+			"code": "UL_H01014",
+			"price": 50.02,
+			"priceMax": null,
+			"source": "H01014 Kratki klinički test procjene intelektualnog statusa za djece do 15 godina — 50.02 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Brief Adult Intellectual Status Test",
+			"slug": "brief-adult-intellectual-status-test",
+			"code": "UL_H01015",
+			"price": 33.35,
+			"priceMax": null,
+			"source": "H01015 Kratki klinički test procjene intelektualnog statusa za odrasle — 33.35 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Pediatric Personality Structure Assessment Under 15",
+			"slug": "pediatric-personality-structure-assessment-under-15",
+			"code": "UL_H01016",
+			"price": 88.92,
+			"priceMax": null,
+			"source": "H01016 Procjena strukture ličnosti (eksploracija) djece do 15 godina — 88.92 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Personality Structure Assessment for Adults",
+			"slug": "personality-structure-assessment-for-adults",
+			"code": "UL_H01017",
+			"price": 55.58,
+			"priceMax": null,
+			"source": "H01017 Procjena strukture ličnosti (eksploracija) za odrasle — 55.58 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Pediatric Individual Function Clinical Testing Under 15",
+			"slug": "pediatric-individual-function-clinical-testing-under-15",
+			"code": "UL_H01018",
+			"price": 27.79,
+			"priceMax": null,
+			"source": "H01018 Kliničko ispitivanje pojedinačnih funkcija djece do 15 godina. — 27.79 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Adult Individual Function Clinical Testing",
+			"slug": "adult-individual-function-clinical-testing",
+			"code": "UL_H01019",
+			"price": 15.56,
+			"priceMax": null,
+			"source": "H01019 Kliničko ispitivanje pojedinačnih funkcija za odrasle. — 15.56 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Results Processing and Report Writing (Psychiatry)",
+			"slug": "results-processing-integration-and-report-writing",
+			"code": "UL_H01020",
+			"price": 133.38,
+			"priceMax": null,
+			"source": "H01020 Obrada rezultata, integracija rezultata, pisanje nalaza — 133.38 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Heteroanamnesis",
+			"slug": "heteroanamnesis",
+			"code": "UL_H01021",
+			"price": 16.67,
+			"priceMax": null,
+			"source": "H01021 Heteroanamneza — 16.67 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Family Counseling",
+			"slug": "family-counseling",
+			"code": "UL_H01022",
+			"price": 16.67,
+			"priceMax": null,
+			"source": "H01022 Savjet roditeljima i članovima porodice — 16.67 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Multidisciplinary Team Patient Consultation",
+			"slug": "multidisciplinary-team-patient-consultation",
+			"code": "UL_H01023",
+			"price": 33.35,
+			"priceMax": null,
+			"source": "H01023 Konsultacija stručnog tima o pacijentu — 33.35 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Psychologist Interview",
+			"slug": "psychologist-interview",
+			"code": "UL_H02001",
+			"price": 27.36,
+			"priceMax": null,
+			"source": "H02001 Anamneza, dijagnostički intervju — 27.36 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Psychological Testing Category A",
+			"slug": "psychological-testing-category-a",
+			"code": "UL_H02002",
+			"price": 27.36,
+			"priceMax": null,
+			"source": "H02002 Prikupljanje podataka sa psihološkim testovima i metodama kategorije A(testovi:P, TRL, BTI, DAT, TMO, SPP3) — 27.36 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Psychological Testing Category B",
+			"slug": "psychological-testing-category-b",
+			"code": "UL_H02003",
+			"price": 45.6,
+			"priceMax": null,
+			"source": "H02003 Prikupljanje podataka sa psihološkim testovima i metodama kategorije B (testovi: D-48, LB, PM, AV, DAT, EOV) — 45.60 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Psychological Testing Category C",
+			"slug": "psychological-testing-category-c",
+			"code": "UL_H02004",
+			"price": 72.96,
+			"priceMax": null,
+			"source": "H02004 Prikupljanje podataka sa psihološkim testovima i metodama kategorije C (testovi: WB, WISC, OI, FPI, APQ, PIE) — 72.96 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Psychological Testing Category D",
+			"slug": "psychological-testing-category-d",
+			"code": "UL_H02005",
+			"price": 109.44,
+			"priceMax": null,
+			"source": "H02005 Prikupljanje podataka sa psihološkim testovima i metodama kategorije D (Rošahov dijagnostički test, PPM, usmjereni dijagnostički intrevju, neuropsihološka anliza) — 109.44 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Organicity Assessment",
+			"slug": "organicity-assessment",
+			"code": "UL_H02006",
+			"price": 109.44,
+			"priceMax": null,
+			"source": "H02006 Procjena organiciteta — 109.44 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Special Needs Child Diagnostic Interview",
+			"slug": "special-needs-child-diagnostic-interview",
+			"code": "UL_H02007",
+			"price": 54.72,
+			"priceMax": null,
+			"source": "H02007 Prvi intervju-Dijagnostički intervju djeteta sa posebnim potrebama — 54.72 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Goodenough Intelligence Test for Special Needs Children Under 14",
+			"slug": "goodenough-intelligence-test-for-special-needs-children-under-14",
+			"code": "UL_H02008",
+			"price": 19.95,
+			"priceMax": null,
+			"source": "H02008 Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama do 14 g.-Gudinaf-ov test — 19.95 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Binet-Simon Intelligence Test for Special Needs Children Under 14",
+			"slug": "binet-simon-intelligence-test-for-special-needs-children-under-14",
+			"code": "UL_H02009",
+			"price": 25.37,
+			"priceMax": null,
+			"source": "H02009 Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama do 14 g.-Bine-Simonova skala — 25.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "REVISK Intelligence Test for Special Needs Children Under 14",
+			"slug": "revisk-intelligence-test-for-special-needs-children-under-14",
+			"code": "UL_H02010",
+			"price": 22.66,
+			"priceMax": null,
+			"source": "H02010 Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama do 14 godina-Revisk — 22.66 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Progressive Matrices Test for Special Needs Children Under 14",
+			"slug": "progressive-matrices-test-for-special-needs-children-under-14",
+			"code": "UL_H02011",
+			"price": 30.78,
+			"priceMax": null,
+			"source": "H02011 Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama do 14 g.-Progresivne matrice — 30.78 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Viti Test for Special Needs Children Under 14",
+			"slug": "viti-test-for-special-needs-children-under-14",
+			"code": "UL_H02012",
+			"price": 25.37,
+			"priceMax": null,
+			"source": "H02012 Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama preko14 godina-Viti test — 25.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Wechsler-Bellevue Test for Special Needs Children Over 14",
+			"slug": "wechsler-bellevue-test-for-special-needs-children-over-14",
+			"code": "UL_H02013",
+			"price": 25.37,
+			"priceMax": null,
+			"source": "H02013 Procjena intelektualnih sposobnosti djeteta sa posebnim potrebama preko14 godina-W-B skala — 25.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Special Needs Child Psychomotor Development Assessment",
+			"slug": "special-needs-child-psychomotor-development-assessment",
+			"code": "UL_H02014",
+			"price": 22.66,
+			"priceMax": null,
+			"source": "H02014 Procjena psihomotornog razvoja djeteta sa posebnim potrebama — 22.66 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Special Needs Child Social Maturity Assessment",
+			"slug": "special-needs-child-social-maturity-assessment",
+			"code": "UL_H02015",
+			"price": 19.95,
+			"priceMax": null,
+			"source": "H02015 Procjena socijalne zrelosti djeteta sa posebnim potrebama — 19.95 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Multidisciplinary Developmental Disorder Patient Workup",
+			"slug": "multidisciplinary-developmental-disorder-patient-workup",
+			"code": "UL_H02016",
+			"price": 28.07,
+			"priceMax": null,
+			"source": "H02016 Timska obrada pacijenta sa smetnjama u razvoju — 28.07 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Play Diagnostic Assessment",
+			"slug": "play-diagnostic-assessment",
+			"code": "UL_H02017",
+			"price": 19.95,
+			"priceMax": null,
+			"source": "H02017 Dijagnostika igrom — 19.95 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Special Needs Child Personality Tests Underdeveloped",
+			"slug": "special-needs-child-personality-tests-underdeveloped",
+			"code": "UL_H02018",
+			"price": 25.37,
+			"priceMax": null,
+			"source": "H02018 Testovi ličnosti djeteta sa posebnim potrebama- Testovi nedovršenih rečenica — 25.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Special Needs Child Family Drawing Test",
+			"slug": "special-needs-child-family-drawing-test",
+			"code": "UL_H02019",
+			"price": 19.95,
+			"priceMax": null,
+			"source": "H02019 Testovi ličnosti djeteta sa posebnim potrebama-Crtež porodice — 19.95 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Special Needs Child Ego Perception Test",
+			"slug": "special-needs-child-ego-perception-test",
+			"code": "UL_H02020",
+			"price": 25.37,
+			"priceMax": null,
+			"source": "H02020 Testovi ličnosti djeteta sa posebnim potrebama - Test ego percepcije — 25.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Parental Counseling Work",
+			"slug": "parental-counseling-work",
+			"code": "UL_H02021",
+			"price": 28.07,
+			"priceMax": null,
+			"source": "H02021 Savjetodavan rad sa roditeljem — 28.07 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "School or Kindergarten Pedagogue Counseling",
+			"slug": "school-or-kindergarten-pedagogue-counseling",
+			"code": "UL_H02022",
+			"price": 14.54,
+			"priceMax": null,
+			"source": "H02022 Savjet pedagogu škole ili vrtića — 14.54 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Data Processing",
+			"slug": "data-processing",
+			"code": "UL_H02023",
+			"price": 19.95,
+			"priceMax": null,
+			"source": "H02023 Obrada podataka — 19.95 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Results Processing and Report Writing (Psychology)",
+			"slug": "results-integration-and-report-writing",
+			"code": "UL_H02024",
+			"price": 109.44,
+			"priceMax": null,
+			"source": "H02024 Obrada rezultata, integracija rezultata, pisanje nalaza — 109.44 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Individual Supportive Therapy",
+			"slug": "individual-supportive-therapy",
+			"code": "UL_H02025",
+			"price": 28.07,
+			"priceMax": null,
+			"source": "H02025 Individualna površna terapija — 28.07 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Social Worker Expert Assessment",
+			"slug": "social-worker-expert-assessment",
+			"code": "UL_H04001",
+			"price": 16.25,
+			"priceMax": null,
+			"source": "H04001 Socijalni radnik, nalaz i mišljenje — 16.25 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Social Worker Interview — Social History",
+			"slug": "social-worker-interview-social-history",
+			"code": "UL_H04002",
+			"price": 16.25,
+			"priceMax": null,
+			"source": "H04002 Socijalni radnik-intervju — 16.25 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Field Social Anamnesis",
+			"slug": "field-social-anamnesis",
+			"code": "UL_H04003",
+			"price": 24.37,
+			"priceMax": null,
+			"source": "H04003 Socijalna anamneza na terenu — 24.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Individual Sociotherapy",
+			"slug": "individual-sociotherapy",
+			"code": "UL_H04004",
+			"price": 32.49,
+			"priceMax": null,
+			"source": "H04004 Socio terapija-liječeni pacijenti — 32.49 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Marital Sociotherapy",
+			"slug": "marital-sociotherapy",
+			"code": "UL_H04005",
+			"price": 24.37,
+			"priceMax": null,
+			"source": "H04005 Socio tretman-bračni — 24.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Family Group Sociotherapy",
+			"slug": "family-group-sociotherapy",
+			"code": "UL_H04006",
+			"price": 24.37,
+			"priceMax": null,
+			"source": "H04006 Socio tretman-član porodice — 24.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Family Sociotherapy",
+			"slug": "family-sociotherapy",
+			"code": "UL_H04007",
+			"price": 32.49,
+			"priceMax": null,
+			"source": "H04007 Socio tretman- porodica-teren — 32.49 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Individual Stress Sociotherapy",
+			"slug": "individual-stress-sociotherapy",
+			"code": "UL_H04008",
+			"price": 24.37,
+			"priceMax": null,
+			"source": "H04008 Socio terapija-individualna seansa — 24.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Organized Sociotherapy",
+			"slug": "organized-sociotherapy",
+			"code": "UL_H04009",
+			"price": 32.49,
+			"priceMax": null,
+			"source": "H04009 Socio tretman-radna organizacija — 32.49 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Legal Responsibility Assessment",
+			"slug": "legal-responsibility-assessment",
+			"code": "UL_H04010",
+			"price": 24.37,
+			"priceMax": null,
+			"source": "H04010 Vještačenje zakonske odgovornosti — 24.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Cooperation with Social Protection Services and Other Healthcare Institutions",
+			"slug": "cooperation-with-social-protection-and-healthcare-services",
+			"code": "UL_H04011",
+			"price": 24.37,
+			"priceMax": null,
+			"source": "H04011 Saradnja sa službama socijalne zaštite i drugim zdravstvenim ustanovama — 24.37 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "First Discharge Team Home Visit Up to 5 km",
+			"slug": "first-discharge-team-home-visit-up-to-5-km",
+			"code": "UL_H09001",
+			"price": 142.64,
+			"priceMax": null,
+			"source": "H09001 Prva posjeta asertivnog tima u kući osiguranika na udaljenosti do 5 km od Doma zdravlja — 142.64 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "First Discharge Team Home Visit 5 to 15 km",
+			"slug": "first-discharge-team-home-visit-5-to-15-km",
+			"code": "UL_H09002",
+			"price": 164.59,
+			"priceMax": null,
+			"source": "H09002 Prva posjeta asertivnog tima u kući osiguranika na udaljenosti od 5-15 km od Doma zdravlja — 164.59 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "First Discharge Team Home Visit Over 15 km",
+			"slug": "first-discharge-team-home-visit-over-15-km",
+			"code": "UL_H09003",
+			"price": 186.53,
+			"priceMax": null,
+			"source": "H09003 Prva posjeta asertivnog tima u kući osiguranika na udaljenosti preko 15 km od Doma zdravlja — 186.53 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Follow-up Discharge Team Home Visit Up to 5 km",
+			"slug": "follow-up-discharge-team-home-visit-up-to-5-km",
+			"code": "UL_H09004",
+			"price": 109.73,
+			"priceMax": null,
+			"source": "H09004 Ponovna posjeta asertivnog tima u kući osiguranika na udaljenosti do 5 km od Doma zdravlja — 109.73 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Follow-up Discharge Team Home Visit 5 to 15 km",
+			"slug": "follow-up-discharge-team-home-visit-5-to-15-km",
+			"code": "UL_H09005",
+			"price": 131.67,
+			"priceMax": null,
+			"source": "H09005 Ponovna posjeta asertivnog tima u kući osiguranika na udaljenosti od 5-15 km od Doma zdravlja — 131.67 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Follow-up Discharge Team Home Visit Over 15 km",
+			"slug": "follow-up-discharge-team-home-visit-over-15-km",
+			"code": "UL_H09006",
+			"price": 153.62,
+			"priceMax": null,
+			"source": "H09006 Ponovna posjeta asertivnog tima u kući osiguranika na udaljenosti preko 15 km od Doma zdravlja — 153.62 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "Methadone Administration",
+			"slug": "methadone-administration",
+			"code": "UL_X01023",
+			"price": 3.71,
+			"priceMax": null,
+			"source": "X01023 davanje metadona — 3.71 (Centar za mentalno zdravlje)"
+		},
+		{
+			"nameEn": "First Radiologist Examination",
+			"slug": "first-radiologist-examination",
+			"code": "UL_J01001",
+			"price": 9.98,
+			"priceMax": null,
+			"source": "J01001 Prvi specijalistički pregled (radiolog) — 9.98 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Targeted Skull Region X-Ray per Image",
+			"slug": "targeted-skull-region-x-ray-per-image",
+			"code": "UL_J06001",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06001 Snimanje skeleta lobanje i lica-za svaki snimak — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "X-Ray Cervical Spine",
+			"slug": "x-ray-cervical-spine",
+			"code": "UL_J06002",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06002 Snimanje pojedinih dijelova kičme i sakroilijačne regije-za svaki snimak — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "X-Ray Thoracic Spine",
+			"slug": "x-ray-thoracic-spine",
+			"code": "UL_J06002",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06002 Snimanje pojedinih dijelova kičme i sakroilijačne regije-za svaki snimak — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "X-Ray Lumbar Spine and Sacrum",
+			"slug": "x-ray-lumbar-spine-and-sacrum",
+			"code": "UL_J06002",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06002 Snimanje pojedinih dijelova kičme i sakroilijačne regije-za svaki snimak — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "X-Ray Sacrum",
+			"slug": "x-ray-sacrum",
+			"code": "UL_J06002",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06002 Snimanje pojedinih dijelova kičme i sakroilijačne regije-za svaki snimak — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "X-Ray Sacroiliac Joints",
+			"slug": "x-ray-sacroiliac-joints",
+			"code": "UL_J06002",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06002 Snimanje pojedinih dijelova kičme i sakroilijačne regije-za svaki snimak — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Extremity X-Ray per Image",
+			"slug": "extremity-x-ray-per-image",
+			"code": "UL_J06003",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06003 Snimanje pojedinih djelova skeleta, ekstremiteta i karlice za svaki snimak -ekspoziciju — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "X-Ray Pelvis",
+			"slug": "x-ray-pelvis",
+			"code": "UL_J06003",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06003 Snimanje pojedinih djelova skeleta, ekstremiteta i karlice za svaki snimak -ekspoziciju — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Foreign Body Localization X-Ray (Except Eye)",
+			"slug": "foreign-body-localization-x-ray-except-eye",
+			"code": "UL_J06004",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06004 Lokalizacija stranog tijela u bilo kojem organu — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Pharynx and Larynx X-Ray",
+			"slug": "pharynx-and-larynx-x-ray",
+			"code": "UL_J06005",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06005 Snimanje ždrijela i grkljana — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Chest Ribs or Sternum X-Ray per View",
+			"slug": "chest-ribs-or-sternum-x-ray-per-view",
+			"code": "UL_J06006",
+			"price": 2.5,
+			"priceMax": null,
+			"source": "J06006 Snimanje toraksa (rebra, sternum) -za svaku projekciju — 2.50 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Lung Fluorography",
+			"slug": "lung-fluorography",
+			"code": "UL_J06007",
+			"price": 4.99,
+			"priceMax": null,
+			"source": "J06007 Fluorogram pluća — 4.99 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "X-Ray Chest",
+			"slug": "x-ray-chest",
+			"code": "UL_J06008",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06008 Snimanje pluća za svaki pravac — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Mediastinum X-Ray",
+			"slug": "mediastinum-x-ray",
+			"code": "UL_J06009",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06009 Snimak medijastinuma — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Heart Teleradiography",
+			"slug": "heart-teleradiography",
+			"code": "UL_J06010",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06010 Teleradiografija srca — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Hepatobiliary Tract X-Ray",
+			"slug": "hepatobiliary-tract-x-ray",
+			"code": "UL_J06011",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06011 Snimanje hepatobilijarnog trakta — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "X-Ray Urinary Tract",
+			"slug": "x-ray-urinary-tract",
+			"code": "UL_J06012",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06012 Snimanje urogenitalnog trakta — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Plain X-Ray of the Urinary Tract",
+			"slug": "x-ray-urinary-tract-native",
+			"code": "UL_J06013",
+			"price": 4.99,
+			"priceMax": null,
+			"source": "J06013 Nativni snimak urotrakta, sa snimkom male karlice — 4.99 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Mammography",
+			"slug": "mammography",
+			"code": "UL_J06014",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06014 Mamografija — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Plain X-Ray of the Abdomen",
+			"slug": "x-ray-abdomen-native",
+			"code": "UL_J06015",
+			"price": 7.49,
+			"priceMax": null,
+			"source": "J06015 Nativni snimak abdomena za svaki pravac — 7.49 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Upper Abdomen Ultrasound",
+			"slug": "upper-abdomen-ultrasound",
+			"code": "UL_J07001",
+			"price": 32.18,
+			"priceMax": null,
+			"source": "J07001 UZ gornjeg abdomena:žučne kese,žučnih puteva, jetre, gušterače i slezine — 32.18 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Lower Abdomen Ultrasound",
+			"slug": "lower-abdomen-ultrasound",
+			"code": "UL_J07002",
+			"price": 32.18,
+			"priceMax": null,
+			"source": "J07002 UZ donjega abdomena: mokraćne bešike i prostate, retroperitoneuma: bubrega, nadbubrežnih žljezda — 32.18 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Testicular Ultrasound",
+			"slug": "testicular-ultrasound",
+			"code": "UL_J07003",
+			"price": 32.18,
+			"priceMax": null,
+			"source": "J07003 UZ testisa kod muškaraca — 32.18 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Pediatric Hip Ultrasound",
+			"slug": "pediatric-hip-ultrasound",
+			"code": "UL_J07004",
+			"price": 32.18,
+			"priceMax": null,
+			"source": "J07004 UZ kukova kod odojčadi — 32.18 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Joint and Soft Tissue Ultrasound",
+			"slug": "joint-and-soft-tissue-ultrasound",
+			"code": "UL_J07005",
+			"price": 32.18,
+			"priceMax": null,
+			"source": "J07005 UZ ciljani pregled zglobova i mekih tkiva — 32.18 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Ultrasound Lymph Nodes",
+			"slug": "ultrasound-lymph-nodes",
+			"code": "UL_J07006",
+			"price": 32.18,
+			"priceMax": null,
+			"source": "J07006 UZ pregled limfnih žlijezda — 32.18 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Ultrasound Thyroid and Parathyroid Glands",
+			"slug": "ultrasound-thyroid-and-parathyroid-glands",
+			"code": "UL_J07007",
+			"price": 32.18,
+			"priceMax": null,
+			"source": "J07007 UZ štitne i paraštitne žlijezde — 32.18 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Breast Ultrasound",
+			"slug": "breast-ultrasound",
+			"code": "UL_J07008",
+			"price": 32.18,
+			"priceMax": null,
+			"source": "J07008 UZ pregled dojki — 32.18 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Panoramic Dental Radiography",
+			"slug": "panoramic-dental-radiography",
+			"code": "UL_J11001",
+			"price": 3.42,
+			"priceMax": null,
+			"source": "J11001 Panoramska dentalna radiografija — 3.42 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"code": "UL_J11002",
+			"price": 3.42,
+			"priceMax": null,
+			"source": "J11002 Obični intraoralni snimak zuba — 3.42 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"code": "UL_J11003",
+			"price": 27.36,
+			"priceMax": null,
+			"source": "J11003 Ortopantomografski snimak — 27.36 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Cephalometric X-Ray",
+			"slug": "cephalometric-x-ray",
+			"code": "UL_J11004",
+			"price": 5.13,
+			"priceMax": null,
+			"source": "J11004 Telerentgenski snimak glave — 5.13 (Centar za dijagnostiku – RTG i UZ)"
+		},
+		{
+			"nameEn": "Sample Reception and Sterile Container Distribution",
+			"slug": "sample-reception-and-sterile-container-distribution",
+			"code": "UL_K01002",
+			"price": 1.43,
+			"priceMax": null,
+			"source": "K01002 Prijem materijala i davanje sterilnih posuda za urin, sputum, stolicu i dr. — 1.43 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Microbiology Sample Collection",
+			"slug": "microbiology-sample-collection",
+			"code": "UL_K01003",
+			"price": 2.38,
+			"priceMax": null,
+			"source": "K01003 Uzimanje uzoraka — 2.38 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "CRP Latex Test",
+			"slug": "crp-latex-test",
+			"code": "UL_K01059",
+			"price": 7.61,
+			"priceMax": null,
+			"source": "K01059 CRP-LATEX — 7.61 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "CRP Turbidimetry",
+			"slug": "crp-turbidimetry",
+			"code": "UL_K01065",
+			"price": 7.61,
+			"priceMax": null,
+			"source": "K01065 CRP-TURBIDOMETRIJA — 7.61 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "ASO Turbidimetry",
+			"slug": "aso-turbidimetry",
+			"code": "UL_K01066",
+			"price": 9.52,
+			"priceMax": null,
+			"source": "K01066 ASTO-TURBIDOMETRIJA — 9.52 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Rheumatoid Factor Turbidimetry",
+			"slug": "rheumatoid-factor-turbidimetry",
+			"code": "UL_K01068",
+			"price": 9.52,
+			"priceMax": null,
+			"source": "K01068 REUMA FAKTOR (RF)-TURBIDOMETRIJA — 9.52 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Microbial Antigen Latex Agglutination Test",
+			"slug": "microbial-antigen-latex-agglutination-test",
+			"code": "UL_K02008",
+			"price": 4.28,
+			"priceMax": null,
+			"source": "K02008 Detekcija antimikrobnih antigena latex aglutinacionim testom — 4.28 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Newborn and Family Home Patronage Visit",
+			"slug": "newborn-and-family-home-patronage-visit",
+			"code": "UL_L01001",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L01001 Patronažna posjeta djeteta u prvoj godini života sa zdravstvenim vaspitanjem majke i porodice — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Home Patronage Visit Child Age 2",
+			"slug": "home-patronage-visit-child-age-2",
+			"code": "UL_L01002",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L01002 Patronažna posjeta kod djeteta u drugoj godini života — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Home Patronage Visit Child Age 4",
+			"slug": "home-patronage-visit-child-age-4",
+			"code": "UL_L01003",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L01003 Patronažna posjeta kod djeteta u čertvrtoj godini života — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Pregnancy Patronage Visit Birth and Newborn Care Preparation",
+			"slug": "pregnancy-patronage-visit-birth-and-newborn-care-preparation",
+			"code": "UL_L01007",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L01007 Patronažna posjeta trudnici sa zdravstvenim vaspitanjem (savjetovanje o trudnoći i pripremi za porođaj, o dojenju, pravilnoj ishrani i njezi novorođenčeta (odojčeta)) — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Postpartum Patronage Visit",
+			"slug": "postpartum-patronage-visit",
+			"code": "UL_L01008",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L01008 Patronažna posjeta kod babinjare sa zdravstvenim vaspitanjem — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Patronage Visit for Women Without Gynecological Visit 3 Years",
+			"slug": "patronage-visit-for-women-without-gynecological-visit-3-years",
+			"code": "UL_L01009",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L01009 Patronažna posjeta kod žena koje više od 3. godine nisu bile kod ginekologa — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Senior Patronage Visit Over 65",
+			"slug": "senior-patronage-visit-over-65",
+			"code": "UL_L01012",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L01012 Patronažna posjeta osoba starijih od 65 godina, koje tokom kalendarske godine nisu bile kod svog izabranog doktora — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Chronic Patient Patronage Visit",
+			"slug": "chronic-patient-patronage-visit",
+			"code": "UL_L02001",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L02001 Patronažne posjete hroničnom bolesniku (oboljelom od urođenog poremećaja zgrušavanja krvi, šećerne bolesti, duševnih bolesti, malignih bolesti i na peritonealnoj dijalizi), osobi sa bolestima zavisnosti i invalidnoj osobi po nalogu izabranog doktora. — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Active TB Patient Patronage Visit",
+			"slug": "active-tb-patient-patronage-visit",
+			"code": "UL_L02002",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L02002 Patronažne posjete kod lica sa aktivnom TBC — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Immobile Patient Patronage Visit",
+			"slug": "immobile-patient-patronage-visit",
+			"code": "UL_L02003",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L02003 Patronažne posjeta bolesniku kome je potrebna djelimična ili potpuna pomoć kod izvođenja osnovnih životnih aktivnosti zbog bolesti ili starosti (nepokretan ili ograničeno pokretan, vezan za kolica ili krevet ili hoda uz pomoć druge osobe i pomagala)(oboljelom od distrofije, multiple skleroze, cerebralne paralize) — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Family Health-Social Problem Patronage Visit",
+			"slug": "family-health-social-problem-patronage-visit",
+			"code": "UL_L02004",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L02004 Patronažna posjeta porodici u kojoj postoje zdravstveno-socijalni problemi — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Family with Elderly or Disabled Member Patronage Visit",
+			"slug": "family-with-elderly-or-disabled-member-patronage-visit",
+			"code": "UL_L02005",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L02005 Patronažna posjeta porodici koja se brine o invalidnoj osobi, teškom bolesniku ili o staroj osobi — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Preventive Action Participation",
+			"slug": "preventive-action-participation",
+			"code": "UL_L04001",
+			"price": 61.49,
+			"priceMax": null,
+			"source": "L04001 Uključivanje u preventivne akcije kod vodećih javnozdravstvenih problema — 61.49 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Health Education Group Work",
+			"slug": "health-education-group-work",
+			"code": "UL_L04002",
+			"price": 61.49,
+			"priceMax": null,
+			"source": "L04002 Zdravstveno vaspitni i promotivni programi- grupni rad — 61.49 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Chronic Patient Health Education",
+			"slug": "chronic-patient-health-education",
+			"code": "UL_L04003",
+			"price": 61.49,
+			"priceMax": null,
+			"source": "L04003 Zdravstveno vaspitni rad sa hroničnim bolesnicima — 61.49 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Patronage Nurse Treatment Visit Up to 5 km",
+			"slug": "patronage-nurse-treatment-visit-up-to-5-km",
+			"code": "UL_L03001",
+			"price": 20.5,
+			"priceMax": null,
+			"source": "L03001 Posjeta patronažne sestre zbog tretmana i postupaka kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti do 5 km od Doma zdravlja. — 20.50 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Patronage Nurse Treatment Visit 5 to 15 km",
+			"slug": "patronage-nurse-treatment-visit-5-to-15-km",
+			"code": "UL_L03002",
+			"price": 25.62,
+			"priceMax": null,
+			"source": "L03002 Posjeta patronažne sestre zbog tretmana i postupaka kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti od 5 do15 km od Doma zdravlja. — 25.62 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Patronage Nurse Treatment Visit Over 15 km",
+			"slug": "patronage-nurse-treatment-visit-over-15-km",
+			"code": "UL_L03003",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L03003 Posjeta patronažne sestre zbog tretmana i postupaka kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti više od 15 km od Doma zdravlja. — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Patronage Nurse Infusion Visit Up to 5 km",
+			"slug": "patronage-nurse-infusion-visit-up-to-5-km",
+			"code": "UL_L03004",
+			"price": 30.74,
+			"priceMax": null,
+			"source": "L03004 Posjeta patronažne sestre zbog davanja infuzije po nalogu izabranog doktora na udaljenosti do 5 km od Doma zdravlja. — 30.74 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Patronage Nurse Infusion Visit 5 to 15 km",
+			"slug": "patronage-nurse-infusion-visit-5-to-15-km",
+			"code": "UL_L03005",
+			"price": 35.87,
+			"priceMax": null,
+			"source": "L03005 Posjeta patronažne sestre zbog davanja infuzije po nalogu izabranog doktora na udaljenosti od 5do15 km od Doma zdravlja. — 35.87 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Patronage Nurse Infusion Visit Over 15 km",
+			"slug": "patronage-nurse-infusion-visit-over-15-km",
+			"code": "UL_L03006",
+			"price": 40.99,
+			"priceMax": null,
+			"source": "L03006 Posjeta patronažne sestre zbog davanja infuzije po nalogu izabranog doktora na udaljenosti više od 15 km od Doma zdravlja. — 40.99 (Jedinica za patronažu)"
+		},
+		{
+			"nameEn": "Manual Segmental Massage",
+			"slug": "manual-segmental-massage",
+			"code": "UL_M01001",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01001 Manuelna segmentna masaža. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Complete Lymphatic Drainage",
+			"slug": "lymphatic-drainage-complete",
+			"code": "UL_M01002",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01002 Manuelna limfna drenaža. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Apparatus-Assisted Massage",
+			"slug": "apparatus-assisted-massage",
+			"code": "UL_M01003",
+			"price": 5.54,
+			"priceMax": null,
+			"source": "M01003 Aparaturna masaža. — 5.54 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Thermotherapy: Cryotherapy",
+			"slug": "thermotherapy-cryotherapy",
+			"code": "UL_M01004",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01004 Krioterapija i kriomasaža. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Manual Muscle Test per Extremity",
+			"slug": "manual-muscle-test-per-extremity",
+			"code": "UL_M01005",
+			"price": 5.54,
+			"priceMax": null,
+			"source": "M01005 Manuelni mišićni test, po ekstremitetu. — 5.54 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Infrared, Ultraviolet and Bioptron Lamp Irradiation",
+			"slug": "infrared-ultraviolet-and-bioptron-lamp-irradiation",
+			"code": "UL_M01006",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01006 Zračenje infracrvenim, ultravioletnim i bioptrom lampom. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Thermotherapy: Parafango",
+			"slug": "thermotherapy-parafango",
+			"code": "UL_M01007",
+			"price": 5.54,
+			"priceMax": null,
+			"source": "M01007 Parafin i fango terapija. — 5.54 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Galvanic Therapy",
+			"slug": "galvanic-therapy",
+			"code": "UL_M01008",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01008 Galvanizacija. — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Electrophoresis",
+			"slug": "electrophoresis",
+			"code": "UL_M01009",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01009 Elektroforeza. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Diadynamic Currents",
+			"slug": "diadynamic-currents",
+			"code": "UL_M01010",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01010 Diadinamske struje. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Transcutaneous Electrical Nerve Stimulation TENS",
+			"slug": "transcutaneous-electrical-nerve-stimulation-tens",
+			"code": "UL_M01011",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01011 Transkutana nervna stimulacija. — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "KTD Diathermy",
+			"slug": "ktd-diathermy",
+			"code": "UL_M01012",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01012 KTD. — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Microwave Diathermy",
+			"slug": "microwave-diathermy",
+			"code": "UL_M01013",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01013 Mikrotalasna diatermija. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Sonophoresis",
+			"slug": "sonophoresis",
+			"code": "UL_M01014",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01014 Sonoforeza. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Muscle Electrical Stimulation",
+			"slug": "muscle-electrical-stimulation",
+			"code": "UL_M01015",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01015 Elektrostimulacija mišića. — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Condition-Specific Activities of Daily Living Training",
+			"slug": "activities-of-daily-living-training",
+			"code": "UL_M01016",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01016 Uvježbavanje aktivnosti svakodnevnog života prema patološkim stanjima. — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Gait Exercises",
+			"slug": "gait-exercises",
+			"code": "UL_M01017",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01017 Vježba hoda. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Gait Training with Walking Aid",
+			"slug": "gait-training-with-walking-aid",
+			"code": "UL_M01018",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01018 Obuka hoda sa pomagalom. — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Gait Coordination, Correction and Balance Automation Exercises",
+			"slug": "gait-coordination-correction-and-balance-automation-exercises",
+			"code": "UL_M01019",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01019 Vježbe koordinacije, korekcije i automatizacije balansa hoda. — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Breathing Exercises",
+			"slug": "breathing-exercises",
+			"code": "UL_M01020",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01020 Vježbe disanja. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Group Exercises Type B",
+			"slug": "group-exercises-type-b",
+			"code": "UL_M01021",
+			"price": 1.66,
+			"priceMax": null,
+			"source": "M01021 Grupne vježbe, po osobi. — 1.66 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "High-Risk Infant Stimulation Exercises",
+			"slug": "high-risk-infant-stimulation-exercises",
+			"code": "UL_M01022",
+			"price": 24.91,
+			"priceMax": null,
+			"source": "M01022 Stimulativne vježbe kod riziko beba. — 24.91 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Pediatric Play Therapy",
+			"slug": "pediatric-play-therapy",
+			"code": "UL_M01023",
+			"price": 16.61,
+			"priceMax": null,
+			"source": "M01023 Terapija igrom sa djecom i vježbe na spravama. — 16.61 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Passive and Assisted Exercises",
+			"slug": "passive-and-assisted-exercises",
+			"code": "UL_M01024",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01024 Pasivne i potpomognute vježbe. — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Active and Resistance Exercises",
+			"slug": "active-and-resistance-exercises",
+			"code": "UL_M01025",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01025 Aktivne vježbe i vježbe protiv otpora. — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Segmental Isometric Exercises",
+			"slug": "segmental-isometric-exercises",
+			"code": "UL_M01026",
+			"price": 8.3,
+			"priceMax": null,
+			"source": "M01026 Izometrijske vježbe - segmentne. — 8.30 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Kinesiotherapy for Spine Deformities",
+			"slug": "kinesiotherapy-for-spine-deformities",
+			"code": "UL_M01027",
+			"price": 16.61,
+			"priceMax": null,
+			"source": "M01027 Kineziterapija kod djece sa deformacijom kičmenog stuba i grudnog koša ili sa deformacijom ekstremiteta. — 16.61 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "CNS Sensorimotor Development Stimulation",
+			"slug": "cns-sensorimotor-development-stimulation",
+			"code": "UL_M01028",
+			"price": 22.14,
+			"priceMax": null,
+			"source": "M01028 Stimulacija senzomotornog razvoja i oštećenih funkcija CNS specifičnim tehnikama:Vojta, Bobath, Kabath i dr. — 22.14 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Activities of Daily Living Test",
+			"slug": "activities-of-daily-living-test",
+			"code": "UL_M01029",
+			"price": 16.61,
+			"priceMax": null,
+			"source": "M01029 Test aktivnosti svakodnevnog života. — 16.61 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Patient Training in Specific Protective Body Positions",
+			"slug": "patient-training-in-specific-protective-body-positions",
+			"code": "UL_M01030",
+			"price": 16.61,
+			"priceMax": null,
+			"source": "M01030 Obuka pacijenta specifičnim zaštitnim položajima tijela. — 16.61 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Interferential Currents",
+			"slug": "interferential-currents",
+			"code": "UL_M01031",
+			"price": 11.07,
+			"priceMax": null,
+			"source": "M01031 Interferentne struje — 11.07 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Physiotherapist Home Visit Up to 5 km",
+			"slug": "physiotherapist-home-visit-up-to-5-km",
+			"code": "UL_M01032",
+			"price": 27.68,
+			"priceMax": null,
+			"source": "M01032 Posjeta fizioterapeuta zbog sprovodjenja fizikalne terapije kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti do 5 km od Doma zdravlja — 27.68 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Physiotherapist Home Visit 5 to 15 km",
+			"slug": "physiotherapist-home-visit-5-to-15-km",
+			"code": "UL_M01033",
+			"price": 33.21,
+			"priceMax": null,
+			"source": "M01033 Posjeta fizioterapeuta zbog sprovodjenja fizikalne terapije kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti od 5 do 15 km od Doma zdravlja — 33.21 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Physiotherapist Home Visit Over 15 km",
+			"slug": "physiotherapist-home-visit-over-15-km",
+			"code": "UL_M01034",
+			"price": 38.75,
+			"priceMax": null,
+			"source": "M01034 Posjeta fizioterapeuta zbog sprovodjenja fizikalne terapije kod nepokretnih ili teško pokretnih bolesnika po nalogu izabranog doktora na udaljenosti više od 15 km od Doma zdravlja — 38.75 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Magnetic Therapy",
+			"slug": "magnetic-therapy",
+			"code": "UL_M02008",
+			"price": 12.51,
+			"priceMax": null,
+			"source": "M02008 Magnetoterapija — 12.51 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Ultrasound Therapy",
+			"slug": "ultrasound-therapy",
+			"code": "UL_M02009",
+			"price": 8.34,
+			"priceMax": null,
+			"source": "M02009 Terapija ultrazvukom — 8.34 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Underwater Ultrasound Therapy",
+			"slug": "underwater-ultrasound-therapy",
+			"code": "UL_M02010",
+			"price": 10.02,
+			"priceMax": null,
+			"source": "M02010 Terapija ultrazvukom u vodi — 10.02 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Laser Therapy",
+			"slug": "laser-therapy",
+			"code": "UL_M02011",
+			"price": 12.51,
+			"priceMax": null,
+			"source": "M02011 Laser terapija — 12.51 (Fizikalna terapija)"
+		},
+		{
+			"nameEn": "Pre-Employment Medical Certificate",
+			"slug": "pre-employment-medical-certificate",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «ljekarsko uvjerenje o sposobnosti za rad, prilikom zasnivanja radnog odnosa»"
+		},
+		{
+			"nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+			"slug": "medical-certificate-for-high-risk-and-difficult-working-conditions",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «pri zapošljavanju na radnim mjestima s posebnim zahtjevima radnog mjesta – posebnim uslovima rada (s povećanim rizikom) u našoj službi se obavljaju prethodni pregledi …» + «nakon periodičnog i ciljanog pregleda radnika koji rade na radnim mjestima s posebnim uslovima rada – ljekarsko uvjerenje – mišljenje o daljoj sposobnosti za rad»"
+		},
+		{
+			"nameEn": "Medical Certificate for Driving License Category A, B, C, D, E",
+			"slug": "medical-certificate-for-driving-license-category-a-b-c-d-e",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «ljekarska uvjerenja o sposobnosti za upravljanjem motornim vozilom u drumskom saobraćaju – svih kategorija i specijalnih vozila»"
+		},
+		{
+			"nameEn": "Medical Certificate for Boat Operation up to 12 Meters",
+			"slug": "medical-certificate-for-boat-operation-up-to-12-meters",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «ljekarsko uvjerenje o ispunjavanju uslova za voditelja čamca»"
+		},
+		{
+			"nameEn": "Medical Certificate for Firearms Possession",
+			"slug": "medical-certificate-for-firearms-possession",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «ljekarsko uvjerenje o podobnosti za posjedovanje, kao i za posjedovanje i nošenje vatrenog oružja»"
+		},
+		{
+			"nameEn": "Medical Certificate for Maritime Workers",
+			"slug": "medical-certificate-for-maritime-workers",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «ljekarsko uvjerenje o sposobnosti za pomorce»"
+		},
+		{
+			"nameEn": "Medical Certificate for Underage Marriage",
+			"slug": "medical-certificate-for-underage-marriage",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «ljekarsko uvjerenje za sklapanje braka – za maloljetne osobe»"
+		},
+		{
+			"nameEn": "Medical Certificate for Child Adoption",
+			"slug": "medical-certificate-for-child-adoption",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «ljekarsko uvjerenje o podobnosti za usvajanje djeteta»"
+		},
+		{
+			"nameEn": "Medical Certificate for Secondary School Enrollment",
+			"slug": "medical-certificate-for-secondary-school-enrollment",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «ljekarsko uvjerenje za upis u specifične srednje škole (saobraćajna, građevinska, neki smjerovi medicinske škole)»"
+		},
+		{
+			"nameEn": "Medical Certificate for Study Abroad and Visa",
+			"slug": "medical-certificate-for-study-abroad-and-visa",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/medicina-rada/ «ljekarsko uvjerenje za dalji nastavak školovanja i boravak u inostranstvu»"
+		},
+		{
+			"nameEn": "Sanitary Examination for Food Industry and Water Supply Workers",
+			"slug": "sanitary-examination-for-food-industry-and-water-supply-workers",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/centar-za-dijagnostiku/ «Mikrobiološka laboratorija … daje i usluge izdavanja sanitarnih knjižica» — категория работника не уточняется, заведены все три вида санитарного осмотра"
+		},
+		{
+			"nameEn": "Sanitary Examination for Healthcare and Educational Workers",
+			"slug": "sanitary-examination-for-healthcare-and-educational-workers",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "см. выше — «izdavanja sanitarnih knjižica»"
+		},
+		{
+			"nameEn": "Sanitary Examination for Hairdressers and Service Personnel",
+			"slug": "sanitary-examination-for-hairdressers-and-service-personnel",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "см. выше — «izdavanja sanitarnih knjižica»"
+		},
+		{
+			"nameEn": "Internist Examination",
+			"slug": "internist-examination",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "RASPORED RADA SPECIJALISTA «Interna medicina – Dr spec. Isat Jakupi – Internista, Dr spec. Teuta Leskovac – Internista, Ponedeljak – Petak 07:00 – 15:00»"
+		},
+		{
+			"nameEn": "Ophthalmological Examination",
+			"slug": "ophthalmological-examination",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "RASPORED RADA SPECIJALISTA «Oftamologija – Dr spec. Nita Hoxha - Oftamolog»"
+		}
+	],
+	"labTests": [
+		{
+			"nameEn": "Karyotype from Amniotic Fluid",
+			"slug": "karyotype-from-amniotic-fluid",
+			"code": "UL_C01002",
+			"price": 13.14,
+			"priceMax": null,
+			"source": "C01002 Prenatalno određivanje kariotipa fetusa iz ćelija plodove vode kod svih trudnica sa 35 i više godina pri začeću — 13.14 (Usluge izabranog ginekologa)"
+		},
+		{
+			"nameEn": "Microscopic Examination of Swab for Gonorrhea",
+			"slug": "microscopic-examination-of-swab-for-gonorrhea",
+			"code": "UL_K01004",
+			"price": 12.37,
+			"priceMax": null,
+			"source": "K01004 Pregled preparata uretralnog, vaginalnog ili cervikalnog brisa na gonoreju — 12.37 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Amine Test",
+			"slug": "amine-test",
+			"code": "UL_K01005",
+			"price": 2.38,
+			"priceMax": null,
+			"source": "K01005 Aminski test — 2.38 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Microscopic Examination for Treponema pallidum",
+			"slug": "microscopic-examination-for-treponema-pallidum",
+			"code": "UL_K01006",
+			"price": 12.37,
+			"priceMax": null,
+			"source": "K01006 Mikroskopski pregled na Treponema pallidum — 12.37 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Throat Swab for Bacteria",
+			"slug": "throat-swab-bacteria",
+			"code": "UL_K01007",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01007 Bris ždrijela — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Oral Cavity Swab for Bacteria",
+			"slug": "oral-cavity-swab-bacteria",
+			"code": "UL_K01008",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01008 Bris usne duplje — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Tongue Swab for Bacteria",
+			"slug": "tongue-swab-bacteria",
+			"code": "UL_K01009",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01009 Bris jezika — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Nose Swab for Bacteria",
+			"slug": "nose-swab-bacteria",
+			"code": "UL_K01010",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01010 Bris nosa — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Eye Swab for Bacteria",
+			"slug": "eye-swab-bacteria",
+			"code": "UL_K01011",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01011 Bris oka — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Bacteriological Examination of Ear Swab",
+			"slug": "bacteriological-examination-ear-swab",
+			"code": "UL_K01012",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01012 Bris uha — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Wound Swab for Bacteria",
+			"slug": "wound-swab-bacteria",
+			"code": "UL_K01013",
+			"price": 16.65,
+			"priceMax": null,
+			"source": "K01013 Bris rane — 16.65 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Umbilical Swab for Bacteria",
+			"slug": "umbilicus-swab-bacteria",
+			"code": "UL_K01014",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01014 Bris pupka — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Skin Swab for Bacteria",
+			"slug": "skin-swab-bacteria",
+			"code": "UL_K01015",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01015 Bris kože — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Breast Swab for Bacteria",
+			"slug": "breast-swab-bacteria",
+			"code": "UL_K01016",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01016 Bris dojke — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Vaginal Swab for Bacteria",
+			"slug": "vaginal-swab-bacteria",
+			"code": "UL_K01017",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01017 Bris vagine — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Vulvar Swab for Bacteria",
+			"slug": "vulvar-swab-bacteria",
+			"code": "UL_K01018",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01018 Bris vulve — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Glans Swab for Bacteria",
+			"slug": "glans-swab-bacteria",
+			"code": "UL_K01019",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01019 Bris glansa — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Prepuce Swab for Bacteria",
+			"slug": "prepuce-swab-bacteria",
+			"code": "UL_K01020",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01020 Bris prepucijuma — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Urethral Swab for Bacteria",
+			"slug": "urethral-swab-bacteria",
+			"code": "UL_K01021",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01021 Bris uretre — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Urine Culture",
+			"slug": "urine-culture",
+			"code": "UL_K01022",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01022 Urinokultura — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Stool Culture",
+			"slug": "stool-culture",
+			"code": "UL_K01023",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01023 Koprokultura. — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Perianal Swab",
+			"slug": "perianal-swab",
+			"code": "UL_K01024",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01024 Bris čmara — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Vibrio cholerae Culture",
+			"slug": "vibrio-cholerae-culture",
+			"code": "UL_K01025",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01025 Kultura na Vibrio kolera — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Sputum Culture for Bacteria",
+			"slug": "sputum-bacteria",
+			"code": "UL_K01026",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01026 Sputum kultura — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Cervical Swab for Bacteria",
+			"slug": "cervical-swab-bacteria",
+			"code": "UL_K01027",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01027 Cervikalna kultura — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Antibiogram",
+			"slug": "antibiogram",
+			"code": "UL_K01028",
+			"price": 7.61,
+			"priceMax": null,
+			"source": "K01028 Izrada antibiograma (radi se po potrebi) — 7.61 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Mycoplasma hominis and Ureaplasma Culture",
+			"slug": "mycoplasma-hominis-ureaplasma",
+			"code": "UL_K01029",
+			"price": 15.23,
+			"priceMax": null,
+			"source": "K01029 Kultivacija Mycoplasma sa izradom antibiograma — 15.23 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Nail Scraping for Dermatophytes",
+			"slug": "dermatophytes-nail-scraping",
+			"code": "UL_K01030",
+			"price": 17.13,
+			"priceMax": null,
+			"source": "K01030 Pregled preparata na dermatomikoze nokta — 17.13 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Skin Scraping for Dermatophytes",
+			"slug": "dermatophytes-skin-scraping",
+			"code": "UL_K01031",
+			"price": 17.13,
+			"priceMax": null,
+			"source": "K01031 Pregled preparata na dermatomikoze kože — 17.13 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Hair Scraping for Dermatophytes",
+			"slug": "dermatophytes-hair-scraping",
+			"code": "UL_K01032",
+			"price": 17.13,
+			"priceMax": null,
+			"source": "K01032 Pregled preparata na dermatomikoze dlake. — 17.13 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Skin Swab for Fungi",
+			"slug": "skin-swab-fungi",
+			"code": "UL_K01033",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01033 Kultura brisa kože na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Hair Swab for Fungi",
+			"slug": "hair-swab-fungi",
+			"code": "UL_K01034",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01034 Kultura brisa dlake na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Nail Swab for Fungi",
+			"slug": "nail-swab-fungi",
+			"code": "UL_K01035",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01035 Kultura brisa nokta na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Vaginal Swab for Fungi",
+			"slug": "vaginal-swab-fungi",
+			"code": "UL_K01036",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01036 Kultura vaginalnog sekreta na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Vulvar Swab for Fungi",
+			"slug": "vulvar-swab-fungi",
+			"code": "UL_K01037",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01037 Kultura brisa vulve na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Glans Swab for Fungi",
+			"slug": "glans-swab-fungi",
+			"code": "UL_K01038",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01038 Kultura brisa glansa na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Prepuce Swab for Fungi",
+			"slug": "prepuce-swab-fungi",
+			"code": "UL_K01039",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01039 Kultura brisa prepucijuma na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Urethral Swab for Fungi",
+			"slug": "urethral-swab-fungi",
+			"code": "UL_K01040",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01040 Kultura uretralnog sekreta na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Stool Culture for Fungi",
+			"slug": "stool-fungi",
+			"code": "UL_K01041",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01041 Kultura stolice na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Urine Culture for Fungi",
+			"slug": "urine-fungi",
+			"code": "UL_K01042",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01042 Kultura urina na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Nose Swab for Fungi",
+			"slug": "nose-swab-fungi",
+			"code": "UL_K01043",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01043 Kultura brisa nosa na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Sputum Culture for Fungi",
+			"slug": "sputum-fungi",
+			"code": "UL_K01044",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01044 Kultura sputuma na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Throat Swab for Fungi",
+			"slug": "throat-swab-fungi",
+			"code": "UL_K01045",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01045 Kultura brisa grla na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Palate Swab for Fungi",
+			"slug": "palate-swab-fungi",
+			"code": "UL_K01046",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01046 Kultura brisa nepca na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Wound Swab for Fungi",
+			"slug": "wound-swab-fungi",
+			"code": "UL_K01047",
+			"price": 16.65,
+			"priceMax": null,
+			"source": "K01047 Kultura brisa rane na gljivice — 16.65 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Fungal Identification",
+			"slug": "fungal-identification",
+			"code": "UL_K01048",
+			"price": 21.89,
+			"priceMax": null,
+			"source": "K01048 Identifikacija gljivica — 21.89 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Antimycogram",
+			"slug": "antimycogram",
+			"code": "UL_K01049",
+			"price": 12.37,
+			"priceMax": null,
+			"source": "K01049 Izrada antimikograma — 12.37 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Trichomonas Test",
+			"slug": "trichomonas-test",
+			"code": "UL_K01050",
+			"price": 12.37,
+			"priceMax": null,
+			"source": "K01050 Pregled preparata uretralnog ili vaginalnog brisa na Trichomonas vaginalis (stepen) — 12.37 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Perianal Cellophane Tape Test (Pinworm)",
+			"slug": "perianal-cellophane-tape-test-pinworm",
+			"code": "UL_K01051",
+			"price": 10.47,
+			"priceMax": null,
+			"source": "K01051 Mikroskopski pregled perianalnog otiska (ljepljivim celofanom) — 10.47 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Stool Parasites",
+			"slug": "stool-parasites",
+			"code": "UL_K01052",
+			"price": 17.13,
+			"priceMax": null,
+			"source": "K01052 Mikroskopski pregled stolice na helminte (metoda koncentracije). — 17.13 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Stool Microscopic Examination for Protozoa",
+			"slug": "stool-microscopic-examination-for-protozoa",
+			"code": "UL_K01053",
+			"price": 17.13,
+			"priceMax": null,
+			"source": "K01053 Mikroskopski pregled stolice na protozoe (metoda koncentracije) — 17.13 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Native Microscopic Preparation for Amebae with Provocation",
+			"slug": "native-microscopic-preparation-for-amebae-with-provocation",
+			"code": "UL_K01054",
+			"price": 12.37,
+			"priceMax": null,
+			"source": "K01054 Nativni mikroskopski preparat na amebe sa proviokacijom — 12.37 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Cryptosporidium in Stool (Ziehl-Neelsen)",
+			"slug": "cryptosporidium-in-stool-ziehl-neelsen",
+			"code": "UL_K01055",
+			"price": 12.37,
+			"priceMax": null,
+			"source": "K01055 Parazitoloski pregled stolice na Cryptosporidium vrste (Ziehl-Neelsen) — 12.37 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Malaria",
+			"slug": "malaria",
+			"code": "UL_K01056",
+			"price": 33.31,
+			"priceMax": null,
+			"source": "K01056 Mikroskopski preparat i pregled na malartiju — 33.31 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Skin Ectoparasite Identification (Larva, Pupa or Adult)",
+			"slug": "skin-ectoparasite-identification",
+			"code": "UL_K01057",
+			"price": 10.94,
+			"priceMax": null,
+			"source": "K01057 Pregled i identifikacija ektoparazita kože (larva, lutka ili adult) — 10.94 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Demodex Species",
+			"slug": "demodex-species",
+			"code": "UL_K01058",
+			"price": 12.37,
+			"priceMax": null,
+			"source": "K01058 Uzimanje i pregled otiska kože na Demodex vrste — 12.37 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "VDRL",
+			"slug": "vdrl",
+			"code": "UL_K01060",
+			"price": 7.61,
+			"priceMax": null,
+			"source": "K01060 VDRL — 7.61 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "ASTO",
+			"slug": "asto",
+			"code": "UL_K01061",
+			"price": 9.52,
+			"priceMax": null,
+			"source": "K01061 ASTO -LATEX — 9.52 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Monosticon",
+			"slug": "monosticon",
+			"code": "UL_K01062",
+			"price": 9.52,
+			"priceMax": null,
+			"source": "K01062 Paul Bunel-ova reakcija (monostikon test) — 9.52 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "TPHA Treponema pallidum",
+			"slug": "tpha-treponema-pallidum",
+			"code": "UL_K01063",
+			"price": 9.52,
+			"priceMax": null,
+			"source": "K01063 TPHA — 9.52 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Direct Microscopic Preparation",
+			"slug": "direct-microscopic-preparation",
+			"code": "UL_K01064",
+			"price": 12.37,
+			"priceMax": null,
+			"source": "K01064 Mikroskopsko citološki pregled (stepen) — 12.37 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Rheumatoid Factor",
+			"slug": "rheumatoid-factor",
+			"code": "UL_K01067",
+			"price": 9.52,
+			"priceMax": null,
+			"source": "K01067 REUMA FAKTOR (RF)-LATEX — 9.52 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Waaler-Rose Test",
+			"slug": "waaler-rose-test",
+			"code": "UL_K01069",
+			"price": 9.52,
+			"priceMax": null,
+			"source": "K01069 WAALER-ROSE TEST — 9.52 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Tongue Swab for Fungi",
+			"slug": "tongue-swab-fungi",
+			"code": "UL_K01070",
+			"price": 13.32,
+			"priceMax": null,
+			"source": "K01070 Kultura brisa jezika na gljivice — 13.32 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Antimicrobial Antibody Detection by ELISA",
+			"slug": "antimicrobial-antibody-detection-by-elisa",
+			"code": "UL_K02001",
+			"price": 14.27,
+			"priceMax": null,
+			"source": "K02001 Detekcija antimikrobnih antitijela ELISA -testom — 14.27 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Microbial Antigen Detection by ELISA",
+			"slug": "microbial-antigen-detection-by-elisa",
+			"code": "UL_K02002",
+			"price": 14.27,
+			"priceMax": null,
+			"source": "K02002 Detekcija mikrobnih antigena ELISA-testom — 14.27 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Antimicrobial Antibody Detection by Indirect Immunofluorescence",
+			"slug": "antimicrobial-antibody-detection-by-indirect-immunofluorescence",
+			"code": "UL_K02003",
+			"price": 21.41,
+			"priceMax": null,
+			"source": "K02003 Detekcija antimikrobnih antitijela indirektnom imunofluorescencijom — 21.41 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Microbial Antigen Detection by Direct Immunofluorescence",
+			"slug": "microbial-antigen-detection-by-direct-immunofluorescence",
+			"code": "UL_K02004",
+			"price": 21.41,
+			"priceMax": null,
+			"source": "K02004 Detekcija mikrobnih antigena direktnom imunofluorescencijom — 21.41 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Antimicrobial Antibody Detection by Complement Fixation",
+			"slug": "antimicrobial-antibody-detection-by-complement-fixation",
+			"code": "UL_K02005",
+			"price": 14.27,
+			"priceMax": null,
+			"source": "K02005 Detekcija antimikrobnih antitijela reakcijom vezivanja komplementa — 14.27 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Antimicrobial Antibody Detection by Hemagglutination",
+			"slug": "antimicrobial-antibody-detection-by-hemagglutination",
+			"code": "UL_K02006",
+			"price": 14.27,
+			"priceMax": null,
+			"source": "K02006 Detekcija antimikrobnih antitijela - testom hemaglutinacije — 14.27 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Antimicrobial Antibody Detection by Latex Agglutination",
+			"slug": "antimicrobial-antibody-detection-by-latex-agglutination",
+			"code": "UL_K02007",
+			"price": 4.28,
+			"priceMax": null,
+			"source": "K02007 Detekcija antimikrobnih antitijela latex aglutinacionim testom — 4.28 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		},
+		{
+			"nameEn": "Microbial Nucleic Acid Detection by Hybridization",
+			"slug": "microbial-nucleic-acid-detection-by-hybridization",
+			"code": "UL_K02009",
+			"price": 47.58,
+			"priceMax": null,
+			"source": "K02009 Detekcija mikrobnih nukleinskih kisjelina testom hibridizacije nukleinskih kisjelina — 47.58 (Centar za dijagnostiku – mikrobiološka dijagnostika)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "kreshnik-mustafa",
+			"nameSr": "Kreshnik Mustafa",
+			"professionalTitle": "Dr",
+			"position": "Direktor; specijalista epidemiologije, Higijensko-epidemiološka služba",
+			"specialtyIds": [
+				52
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": "https://domzdravljaulcinj.me/wp-content/uploads/2025/03/dr-Kreshnik-scaled.jpg",
+			"note": "/direktor/ «Dr. KRESHNIK MUSTAFA» (фото оттуда); RASPORED RADA SPECIJALISTA «Dr spec. Kreshnik Mustafa - Epidemiolog»; пост «Pripravnost HES» 2025 «dr Kreshnik Mustafa specijalista epidemiologije»; эпидемиолог → infectious_diseases (правило ДЗ)"
+		},
+		{
+			"slug": "jasmin-hodzic",
+			"nameSr": "Jasmin Hodžić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "IDO (/izabrani-doktori-za-odrasle/) + графики 28.09 и 05.10.2026 «Dr spec. Hodžić Jasmin» (специальность не названа)"
+		},
+		{
+			"slug": "mahbub-ljamovic",
+			"nameSr": "Mahbub Ljamović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "IDO + графики («Dr Ljamović Mahbub»; 28.09 — опечатка «Lamović»)"
+		},
+		{
+			"slug": "iva-hajdukovic",
+			"nameSr": "Iva Hajduković",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "IDO + графики"
+		},
+		{
+			"slug": "teuta-djecbitric",
+			"nameSr": "Teuta Đečbitrić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "IDO + графики"
+		},
+		{
+			"slug": "blendi-capriqi",
+			"nameSr": "Blendi Çapriqi",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "графики 28.09 и 05.10.2026 «Dr Çapriqi Blendi» (на странице IDO 2025-05 его ещё нет); slug вручную: generateSlug выбросил бы «ç»"
+		},
+		{
+			"slug": "majlinda-djenasevic-maraj",
+			"nameSr": "Majlinda Đenašević-Maraj",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "IDO «Dr Majlinda Đenašević – Maraj» + график 05.10.2026"
+		},
+		{
+			"slug": "maida-gjoni",
+			"nameSr": "Maida Gjoni",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "IDO + графики «Dr Gjoni Maida»"
+		},
+		{
+			"slug": "rialda-resulbegovic",
+			"nameSr": "Rialda Resulbegović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "графики 28.09 и 05.10.2026 «Dr Resulbegović Rialda»"
+		},
+		{
+			"slug": "sanela-abazovic-hot",
+			"nameSr": "Sanela Abazović-Hot",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "график 28.09–04.10.2026 «Dr Sanela Abazović-Hot» (в графике 05.10 на её месте Majlinda Đenašević-Maraj)"
+		},
+		{
+			"slug": "dorijana-mecikukic",
+			"nameSr": "Dorijana Mećikukić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ZS Vladimir",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "графики, блок «ID za odrasle zdravstvena ustanova Vladimir»"
+		},
+		{
+			"slug": "mevluda-djencic",
+			"nameSr": "Mevluda Đenčić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za odrasle, ZS Vladimir",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "IDO + графики, блок ZS Vladimir"
+		},
+		{
+			"slug": "isat-jakupi",
+			"nameSr": "Isat Jakupi",
+			"professionalTitle": "Dr",
+			"position": "Internista",
+			"specialtyIds": [
+				2
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "RASPORED RADA SPECIJALISTA «Dr spec. Isat Jakupi – Internista»; на странице IDO (2025-05) ещё числится izabranim doktorom, в графиках IDO 2026 его нет"
+		},
+		{
+			"slug": "teuta-leskovac",
+			"nameSr": "Teuta Leskovac",
+			"professionalTitle": "Dr",
+			"position": "Internista",
+			"specialtyIds": [
+				2
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "RASPORED RADA SPECIJALISTA «Dr spec. Teuta Leskovac – Internista»"
+		},
+		{
+			"slug": "vlora-duraku-kurti",
+			"nameSr": "Vlora Duraku-Kurti",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/izabrani-doktori-za-djecu/ «Dr Vlora Kurti»; графики «Dr spec. Duraku-Kurti Vlora» — имя по графику (полная фамилия)"
+		},
+		{
+			"slug": "sabaheta-capuni-paracka",
+			"nameSr": "Sabaheta Čapuni-Paračka",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "графики, Pedijatrija «Dr spec. Čapuni-Paračka Sabaheta»"
+		},
+		{
+			"slug": "mohamed-yahia-mouhsen",
+			"nameSr": "Mohamed Yahia Mouhsen",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu; spec. pedijatrije – subspec. neonatolog",
+			"specialtyIds": [
+				4,
+				68
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "графики, Pedijatrija «Dr spec. Mohamed Yahia Mouhsen, spec pediatrije – sub spec neonatolog»; порядок слов имени — как в графике"
+		},
+		{
+			"slug": "teuta-hodza",
+			"nameSr": "Teuta Hodža",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za žene",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/izabrani-doktori-za-zene/ (2026-01) «Dr Teuta Hodža»; графики «Dr spec. Hoxha Teuta»"
+		},
+		{
+			"slug": "zulfije-duraku",
+			"nameSr": "Zulfije Duraku",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za žene",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/centar-za-prevenciju/ «Dr Zulfije Duraku» (savjetovalište za reproduktivno zdravlje); график 05.10.2026, Ginekologija «Dr spec. Duraku Zylfije»"
+		},
+		{
+			"slug": "sadije-holaj",
+			"nameSr": "Sadije Holaj",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za žene",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/izabrani-doktori-za-zene/ «Dr Sadije Holaj»; график 28.09.2026 «Dr spec. Hollaj Sadije»"
+		},
+		{
+			"slug": "basri-muja",
+			"nameSr": "Basri Muja",
+			"professionalTitle": "Dr",
+			"position": "Psihijatar, Centar za mentalno zdravlje",
+			"specialtyIds": [
+				21
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/centar-za-mentalno-zdravlje/ «Dr Basri Muja (psihijatar)»; RASPORED RADA SPECIJALISTA"
+		},
+		{
+			"slug": "selim-ismaili",
+			"nameSr": "Selim Ismaili",
+			"professionalTitle": "Dr",
+			"position": "Radiolog",
+			"specialtyIds": [
+				10
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "RASPORED RADA SPECIJALISTA «Dr spec. Selim Ismaili - Radiolog»"
+		},
+		{
+			"slug": "nita-hoxha",
+			"nameSr": "Nita Hoxha",
+			"professionalTitle": "Dr",
+			"position": "Oftalmolog",
+			"specialtyIds": [
+				6
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "RASPORED RADA SPECIJALISTA «Dr spec. Nita Hoxha - Oftamolog»; написание фамилии — как в источнике"
+		},
+		{
+			"slug": "angelina-vracar",
+			"nameSr": "Angelina Vračar",
+			"professionalTitle": "Dr",
+			"position": "Biohemijska laboratorija",
+			"specialtyIds": [
+				39
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "RASPORED RADA SPECIJALISTA «Biohemijska Laboratorija – Dr spec. Angelina Vračar» → clinical_biochemistry"
+		},
+		{
+			"slug": "gordana-jelusic",
+			"nameSr": "Gordana Jelušić",
+			"professionalTitle": null,
+			"position": "Centar za dijagnostiku – mikrobiološka dijagnostika",
+			"specialtyIds": [
+				40
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/centar-za-dijagnostiku/ (2025-02) «Koordinatori: Dr Gordana Jelušić» (mikrobiološka laboratorija). В БД — microbiology, Moj Lab Laboratorija Podgorica (Moskovska), «Načelnica Mikrobiološke laboratorije»: полная тёзка с той же специальностью → только привязка"
+		},
+		{
+			"slug": "redzep-kraja",
+			"nameSr": "Redžep Kraja",
+			"professionalTitle": "Dr",
+			"position": "Centar za plućne bolesti i TBC",
+			"specialtyIds": [
+				14
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/centar-za-plucne-bolesti-i-tbc/ (2022-08) «Koordinatori: Dr Redžep Kraja»; специальность сайт не называет — по службе (pulmonology)"
+		}
+	],
+	"excluded": [
+		{
+			"source": "/doktori-na-specijalizaciji/: Dr Ardita Čauši, Dr Egzona Paleviq, Dr Jasmina Kurti, Dr Synora Salaj, Dr Nermina Bakalović, Dr Dhurata Kuqi, Dr Kujtim Sellaj, Dr Arlind Lika, Dr Ardijan Gjeka",
+			"reason": "специализанты не заводятся (правило ДЗ). Sellaj и Salaj есть и в графиках IDO 2026, но строки без смен"
+		},
+		{
+			"source": "/izabrani-doktori-za-odrasle/ (2025-05-16): Dr Hysni Myrteza, Dr Sabrije Taipi",
+			"reason": "в еженедельных графиках IDO 28.09 и 05.10.2026 (там перечислены все врачи IDO, включая специализантов) их нет — в текущем составе не значатся"
+		},
+		{
+			"source": "/centar-za-prevenciju/ (2022-08-17), «Koordinatori»: Dr Adem Mustafa, Dr Olivera Poček, Dr Pavle Marinković, Dr Srećko Hajduković, Dr Milan Rolović",
+			"reason": "страница 2022 года; ни в одном свежем источнике (графики IDO/IDD/IDŽ 2026, RASPORED RADA SPECIJALISTA 2025-10) их нет, специальность не названа. Остальные координаторы этой страницы (Hodžić, Taipi, Hodža, Duraku, Holaj) — izabrani doktori, поэтому отсутствие в графиках значимо"
+		},
+		{
+			"source": "RASPORED RADA SPECIJALISTA: Artan Ljamović — Logoped; Linda Kurt — Psiholog",
+			"reason": "не врачи (правило подволны 2b)"
+		},
+		{
+			"source": "Ramadan Ramović, Afrodita Đeka (координаторы центров), /menadzment/ (Nailj Redža, Kujtim Ismailaga, Kile Čaprić, Dilja Pekić, Mark Junković), медсёстры IDO/IDD/IDŽ",
+			"reason": "без «Dr» и врачебной специальности"
+		},
+		{
+			"source": "data/google-places/ulcinj/maternity-hospital-ulcinj.json (ChIJZw4EDmQTThMR505Lnn-T_fE)",
+			"reason": "porodilište в составе ДЗ — отдельной клиникой не заводится (решение координатора)"
+		},
+		{
+			"source": "Centar za prevenciju (savjetovališta za mlade, za dijabetes, za reproduktivno zdravlje, «Škola za trudnice»), Centar za plućne bolesti i TBC, Centar za mentalno zdravlje, Centar za djecu sa posebnim potrebama, Dnevni centar",
+			"reason": "организационные единицы, не услуги; их платные услуги приходят из прайса 2019 по кодам"
+		},
+		{
+			"source": "Страницы Dopunski rad, Turističke ordinacije, Sanitarna hemija, Sportska medicina, Jedinica za patronažu, Jedinica za fizikalnu terapiju, Jedinica za sanitetski prevoz, Zdravstvena stanica Vladimir",
+			"reason": "пустые (только заголовок). Патронаж и физиотерапия покрыты прайсом 2019; санитарная химия, спортивная медицина и санитетский превоз — без перечня услуг"
+		},
+		{
+			"source": "RASPORED RADA SPECIJALISTA: Radiologija, Psihijatrija, Higijenska epidemiološka služba, Biohemijska laboratorija",
+			"reason": "радиология и психиатрия уже с ценами из прайса (J, H01); ХЭС и биохимическая лаборатория — без конкретных услуг"
+		}
+	],
+	"disputed": [],
+	"openQuestions": [
+		"Прайс 2019 года: координатор и карта сайта (site-checks.json) считали, что цен на сайте нет, но в постах 2019-03-04/2019-04-12 лежит «Cijenovnik PZZ za treća lica» — импортирован (как основной прайс ДЗ Мойковац). Цены — тариф ФЗОЦГ 2019 × 3 / × 2.5, ниже нынешних (A01001: 39.41 € против 53.76 € у Мойковца по прайсу 2025). is_price_outdated не ставится по решению 2026-10-08; если юзер решит, что такой прайс брать не надо, удалить из -services.sql блоки с кодами UL_*.",
+		"Привязки medical_service_tariffs PZZ исправлены миграцией server/sql/migrations/054-fzocg-pzz-linkage-and-names.sql (A01010, A02008, C01002 → анализ, H01015, H01019, H02010–H02013, H04010/H04011, I02005, J07005/J07006, X01004, X01020, X01024, X02015); строки ДЗ Херцег-Нови и Мойковац с этими кодами перенесены на правильные записи там же. Шесть бывших спорных строк (A01010, A02008, X01020, H02010, H04011, K01064) теперь в -services.sql. Файл -services.sql применять ПОСЛЕ 054.",
+		"Названия записей каталога с ошибками распознавания (H09001–H09006 «asertivnog tima», H01005 «Dubinska individualna terapija (savjetodavna terapija)», H02018 «testovi nedovršenih rečenica», viti-test… «preko 14 godina», X01020 fixation → «Frikcije», X01024 cervical-drug-application → «(vaginalno i cervikalno)») исправлены миграцией 054, slug не менялись. UL_X01024 переставлен с vaginal-suppository-application на cervical-drug-application.",
+		"Gordana Jelušić привязана как существующая (slug gordana-jelusic, microbiology, Moj Lab Laboratorija Podgorica — «Načelnica Mikrobiološke laboratorije»): полная тёзка с той же редкой специальностью. Подтвердить, что это один человек.",
+		"Redžep Kraja заведён по странице Centar za plućne bolesti i TBC 2022 года (центр в графики не входит, свежее подтверждения нет), специальность pulmonology — по службе.",
+		"Sanela Abazović-Hot есть только в графике 28.09.–04.10.2026 (в графике 05.10 на её смене Majlinda Đenašević-Maraj) — возможно, замена. Заведена с position «Izabrani doktor za odrasle».",
+		"Санитарные осмотры: сайт пишет только «izdavanja sanitarnih knjižica», без категорий — заведены все три вида без цены.",
+		"i18n/city.ts: русский genitive для Рожае записан с сербской «ј» («Рожаје») — к Ульциню не относится, см. запись Рожае."
+	]
+}

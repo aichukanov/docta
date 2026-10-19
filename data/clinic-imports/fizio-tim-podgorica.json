@@ -1,0 +1,362 @@
+{
+	"schemaVersion": 1,
+	"slug": "fizio-tim-podgorica",
+	"name": "Fizio Tim",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJhRgbph3rTRMR6FfMAsrhluk",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-fizio-tim-podgorica.sql",
+		"server/sql/insert-clinic-fizio-tim-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 217,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент U. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и физиотерапевтов по slug. Сухой прогон 2026-10-09 на локали (plain + shadow для services) — см. итог в отчёте агента. Slug клиники и физиотерапевтов сверены с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 244
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://fiziotim.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress. Тексты через /wp-json/wp/v2/pages (16 страниц) и /posts (11 постов 2020–2024 — старые версии страниц услуг), /nas-tim — сырой HTML (фото). Страницы услуг modified 2024-02-04, главная и /kontakt — 2026-03-18. Цен и часов работы нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/fizio-tim-crna-gora.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJhRgbph3rTRMR6FfMAsrhluk, координаты 42.4291526 / 19.2608058, +382 67 758 000, «7 4. Jul, Podgorica 81000». 42 отзыва (в файле 5)."
+		}
+	],
+	"coverage": {
+		"address": "4. jula 7, 81000 — /kontakt и главная («Ulica 4. Jula br. 7»), совпадает с Google; на /o-nama устаревший «4. Jula 56-A (zgrada EUROPACTA)»",
+		"phone": "+38267758000 — сайт («067 758 000») и Google",
+		"email": "fiziotim.me@gmail.com — сайт",
+		"website": "https://fiziotim.me/",
+		"social": "facebook.com/fiziotimcrnagora, instagram.com/fiziotim.crnagora — шапка сайта (не открывались)",
+		"logo": "https://fiziotim.me/wp-content/uploads/2024/01/cropped-logosquarefiziotim.png",
+		"workingHours": "нет — ни на сайте, ни в файле Google",
+		"description": "из /o-nama, /usluge, /nas-tim и страниц услуг",
+		"languages": "только SR — другие не заявлены",
+		"doctors": "2 физиотерапевта (94 PHYSIOTHERAPY, title NULL), оба новые (по био — штатные в KCCG, но в БД их нет), с фото и био",
+		"prices": "цен нет — все услуги без цены",
+		"labTests": "нет",
+		"reviews": "pending — 42 в Google, ждут выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "dynamic-neuromuscular-stabilization",
+			"nameEn": "Dynamic Neuromuscular Stabilization",
+			"nameSr": "Dinamička neuromuskularna stabilizacija",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Именная методика (Пражская школа, DNS): SeaStars /tretmani «Dinamička neuromuskularna stabilizacija», Fizio Tim /kineziterapija «DNS (Dinamička neuromuskularna stabilizacija)». В каталоге записи нет (kinesiotherapy — общая ЛФК, PNF заведён синонимом к ней, но DNS — отдельный метод, сайты называют его отдельно). Кат. 5 PHYSIOTHERAPY, спец. 42."
+		},
+		{
+			"table": "medical_services",
+			"slug": "thermotherapy",
+			"nameEn": "Thermotherapy",
+			"nameSr": "Termoterapija",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"owner": "coordinator",
+			"reason": "Запись координатора (2026-10-09, впервые — physiocare-team-podgorica); создаётся идемпотентно по slug теми же значениями, что и в insert-clinic-physiocare-team-podgorica-services.sql."
+		}
+	],
+	"services": [
+		{
+			"slug": "sports-injury-rehabilitation",
+			"nameEn": "Sports Injury Rehabilitation",
+			"price": null,
+			"source": "Usluge → Sportska rehabilitacija — «Uža specijalnost naše ustanove je REHABILITACIJA SPORTSKIH POVREDA»"
+		},
+		{
+			"slug": "first-physiatrist-examination",
+			"nameEn": "First Physiatrist Examination",
+			"price": null,
+			"source": "Sportska rehabilitacija — «možete zakazati: – Pregled specijaliste fizijatra ili specijaliste primijenjene fizioterapije»"
+		},
+		{
+			"slug": "physiotherapist-examination",
+			"nameEn": "Physiotherapist Examination",
+			"price": null,
+			"source": "Sportska rehabilitacija — «… ili specijaliste primijenjene fizioterapije», Elektroterapija — «Prije svakog tretmana, potrebno je izvršiti specijalistički pregled … i izvršiti posebna testiranja»"
+		},
+		{
+			"slug": "musculoskeletal-ultrasound",
+			"nameEn": "Musculoskeletal Ultrasound",
+			"price": null,
+			"source": "Usluge → Mišićno skeletni ultrazvuk — «dijagnostički (mišićno-skeletni) ultrazvuk … FIZIO TIM sarađuje sa više stručnjaka iz ove oblasti, koji su specijalisti radiologije, fizikalne medicine ili ortopedije»"
+		},
+		{
+			"slug": "preoperative-rehabilitation",
+			"nameEn": "Preoperative Rehabilitation",
+			"price": null,
+			"source": "Sportska rehabilitacija — «Preoperativnu pripremu i postoperativni oporavak nakon raznih operacija koljena i ramena»"
+		},
+		{
+			"slug": "postoperative-locomotor-system-rehabilitation",
+			"nameEn": "Postoperative Locomotor System Rehabilitation",
+			"price": null,
+			"source": "Sportska rehabilitacija — «… postoperativni oporavak nakon raznih operacija koljena i ramena i dr (ligamentoplastika prednjeg ukrštenog ligamenta, povrede meniskusa …)»"
+		},
+		{
+			"slug": "tecar-therapy",
+			"nameEn": "Tecar Therapy",
+			"price": null,
+			"source": "Usluge → Indiba - Tecar terapija — «Tecar terapiju radimo sa najboljim i najprodavanijim TECAR uređajem u svijetu – Indibom» (INDIBA — уже синоним)"
+		},
+		{
+			"slug": "electrotherapy",
+			"nameEn": "Electrotherapy",
+			"price": null,
+			"source": "Usluge → Elektroterapija — «korišćenje neke vrste električne struje u terapijske svrhe … (INTERFERENTNE STRUJE, TENS, GALVANIZACIJA, ELEKTROFOREZA, DIJADINAMIK i dr.)»"
+		},
+		{
+			"slug": "shock-wave-therapy",
+			"nameEn": "Shock Wave Therapy",
+			"price": null,
+			"source": "Usluge → Shockwave — «SHOCKWAVE ili terapija udarnim talasom»"
+		},
+		{
+			"slug": "lymphatic-drainage-complete",
+			"nameEn": "Complete Lymphatic Drainage",
+			"price": null,
+			"source": "Usluge → Limfna drenaža — «specijalna manuelna tehnika … sertifikate po Voderu» (зона не указана — общая запись, как у большинства клиник)"
+		},
+		{
+			"slug": "muscle-electrical-stimulation",
+			"nameEn": "Muscle Electrical Stimulation",
+			"price": null,
+			"source": "Usluge → Elektromišićna stimulacija — «EMS ili ELEKTROMIŠIĆNA STIMULACIJA … Aparat za EMS – COMPEX» (Compex — уже синоним)"
+		},
+		{
+			"slug": "cupping-therapy",
+			"nameEn": "Cupping Therapy",
+			"price": null,
+			"source": "Usluge → Cupping masaža — «CUPPING terapija (vakum) … plasiraju se ventuze ili čašice»"
+		},
+		{
+			"slug": "dry-needling",
+			"nameEn": "Dry Needling",
+			"price": null,
+			"source": "Usluge → Dry needling i akupunktura — «DRY NEEDLING-MEDICINSKA AKUPUNKTURA je tehnika kojom se iglice, plasiraju u mišiće … TRIGGER POINTS»"
+		},
+		{
+			"slug": "acupuncture",
+			"nameEn": "Acupuncture",
+			"price": null,
+			"source": "Usluge → «Dry needling i akupunktura — Liječenje putem igala – akupunktura …», /nas-tim — «MEDICINSKA AKUPUNKTURA»"
+		},
+		{
+			"slug": "electroacupuncture",
+			"nameEn": "Electroacupuncture",
+			"price": null,
+			"source": "Dry needling i akupunktura — «iglice stimulisati putem određenih električnih impulsa i ta tehnika se zove ELEKTROAKUPUNKTURA … se kod nas uspješno sprovode»"
+		},
+		{
+			"slug": "thermotherapy",
+			"nameEn": "Thermotherapy",
+			"price": null,
+			"source": "Dry needling i akupunktura — «kombinovati sa … TERAPIJA TOPLOTOM … Sve ove pobrojane metode … se kod nas uspješno sprovode», Cupping — «pripremna procedura (masaža, terapija toplotom)» (запись координатора 2026-10-09)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "manual-therapy",
+			"nameEn": "Manual Therapy",
+			"price": null,
+			"source": "/nas-tim — «manuelne tehnike … (masaža, limfna drenaža, mobilizacije, manipulacije …)», Dry needling — «MIOFASCIJALNA RELAKSACIJA»"
+		},
+		{
+			"slug": "therapeutic-massage-complete",
+			"nameEn": "Complete Therapeutic Massage",
+			"price": null,
+			"source": "/nas-tim — «manuelne tehnike koje sprovodimo preventivno i o cilju oporavka (masaža …)» (зона и длительность не указаны — generic)"
+		},
+		{
+			"slug": "kinesiotherapy",
+			"nameEn": "Kinesiotherapy",
+			"price": null,
+			"source": "Usluge → Kineziterapija — «KINEZITERAPIJA … ili medicinske vježbe … aktivne, aktivno-potpomognute, pasivne … PNF (Proprioceptivna neuromuskularna facilitacija)» (PNF — уже синоним)"
+		},
+		{
+			"slug": "individual-kinesiotherapy",
+			"nameEn": "Individual Kinesiotherapy",
+			"price": null,
+			"source": "Kineziterapija — «za djecu i odrasle, trudnice i porodilje, grupno ili individualno»"
+		},
+		{
+			"slug": "group-exercises-type-b",
+			"nameEn": "Group Exercises (per Person)",
+			"price": null,
+			"source": "Kineziterapija — «… grupno ili individualno»"
+		},
+		{
+			"slug": "pregnancy-exercises",
+			"nameEn": "Pregnancy Exercises",
+			"price": null,
+			"source": "Kineziterapija — «za djecu i odrasle, trudnice i porodilje», «da se pripremite ili oporavite nakon porođaja»"
+		},
+		{
+			"slug": "schroth-method",
+			"nameEn": "Schroth Method",
+			"price": null,
+			"source": "Kineziterapija — «– SCHROTH (za korekciju posturalnih deformiteta)»"
+		},
+		{
+			"slug": "dynamic-neuromuscular-stabilization",
+			"nameEn": "Dynamic Neuromuscular Stabilization",
+			"price": null,
+			"source": "Kineziterapija — «– DNS (Dinamička neuromuskularna stabilizacija)»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "hilt-laser-therapy",
+			"nameEn": "HILT Laser Therapy",
+			"price": null,
+			"source": "/nas-tim — «uz opremu koju posjedujemo (INDIBA- TECAR, SHOCKWAVE, HILT LASER …)»"
+		},
+		{
+			"slug": "ultrasound-therapy",
+			"nameEn": "Ultrasound Therapy",
+			"price": null,
+			"source": "/nas-tim — «kombinovani aparati za … terapiju ultrazvukom»"
+		},
+		{
+			"slug": "magnetic-therapy",
+			"nameEn": "Magnetic Therapy",
+			"price": null,
+			"source": "/nas-tim — «… magnetoterapiju»"
+		},
+		{
+			"slug": "laser-therapy",
+			"nameEn": "Laser Therapy",
+			"price": null,
+			"source": "/nas-tim — «… laseroterapiju» (отдельно от HILT LASER)"
+		},
+		{
+			"slug": "iastm-therapy",
+			"nameEn": "IASTM Therapy",
+			"price": null,
+			"source": "/nas-tim — «nove tehnike (ERGON IASTM …)», сертификаты обоих «ERGON IASTM-oba levela» (Ergon — уже синоним)"
+		},
+		{
+			"slug": "taping-application",
+			"nameEn": "Taping Application",
+			"price": null,
+			"source": "/nas-tim — «KINESIOTAPING», сертификаты обоих «Kinesiotaping-oba levela»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "srdjan-kojic",
+			"nameSr": "Srđan Kojić",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://fiziotim.me/wp-content/uploads/elementor/thumbs/1-scaled-qj3wkoe1zcuqs07b3harpoi4xk8xdt9lkz1te1fmkg.jpg",
+			"services": [
+				"sports-injury-rehabilitation",
+				"physiotherapist-examination",
+				"shock-wave-therapy",
+				"tecar-therapy",
+				"dry-needling",
+				"electroacupuncture",
+				"iastm-therapy",
+				"taping-application",
+				"cupping-therapy",
+				"manual-therapy",
+				"dynamic-neuromuscular-stabilization",
+				"postoperative-locomotor-system-rehabilitation"
+			]
+		},
+		{
+			"slug": "alen-pepic",
+			"nameSr": "Alen Pepić",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://fiziotim.me/wp-content/uploads/elementor/thumbs/2-qj3wklkjeuqvt6bejy2w077r5emtqpyekl3cy7jt34.jpg",
+			"services": [
+				"sports-injury-rehabilitation",
+				"physiotherapist-examination",
+				"shock-wave-therapy",
+				"tecar-therapy",
+				"dry-needling",
+				"electroacupuncture",
+				"iastm-therapy",
+				"taping-application",
+				"cupping-therapy",
+				"manual-therapy"
+			]
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/nas-tim — сертификаты «Yumeiho-sva tri levela», «Visceralne manipulacije-oba levela»; перечень техник «YUMEIHO, VISCERALNE MANIPULACIJE»",
+			"reason": "Альтернативная медицина (решение юзера 2026-10-08) — не заведены; в био физиотерапевтов упомянуты как сертификаты."
+		},
+		{
+			"source": "/nas-tim — «opremu koju posjedujemo (… vibroterapiju …)»",
+			"reason": "Только в перечне аппаратов, без описания; записи в каталоге нет. Не заведено."
+		},
+		{
+			"source": "Kineziterapija — «bilo da se program sprovodi u našoj moderno opremlljenoj kinezi sali ili u Vašem domu»",
+			"reason": "Кинезитерапия на дому: в каталоге только physiotherapist-home-visit-* по километражу, сайт расстояний не называет. Не заведено."
+		},
+		{
+			"source": "Elektroterapija — «(INTERFERENTNE STRUJE, TENS, GALVANIZACIJA, ELEKTROFOREZA, DIJADINAMIK i dr.)»",
+			"reason": "Перечень видов электротерапии в общем объяснении («Različite vrste elektroterapijskih procedura … imaju za cilj …»), не заявление об отдельных процедурах; заведена общая electrotherapy."
+		},
+		{
+			"source": "Cupping — «Pored suve CUPPING terapije postoji i tzv. vlažna (HIDŽAMA)»",
+			"reason": "Описание вида, не заявление «делаем»; хиджама — синоним cupping-therapy уже в каталоге. wet-cupping-* не заведено."
+		},
+		{
+			"source": "/nas-tim — сертификат «Kinetic flossing»",
+			"reason": "Только сертификат, без описания услуги; записи нет. Упомянут в био."
+		},
+		{
+			"source": "Sportska rehabilitacija — «Preventivne tretmane (specifično jačanje, streching, masaže, cupping i dr)», «Tretman akutnih povreda …», «Tretman raznih sindroma prenaprezanja …», «Tretman hroničnih problema lumbalne, grudne i vratne kičme»",
+			"reason": "Состав спортивной реабилитации и показания; методы заведены отдельными строками (массаж, cupping, кинезитерапия), состояния — не услуги."
+		}
+	],
+	"openQuestions": []
+}

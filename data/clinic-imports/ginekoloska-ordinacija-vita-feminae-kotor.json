@@ -1,0 +1,247 @@
+{
+	"schemaVersion": 1,
+	"slug": "ginekoloska-ordinacija-vita-feminae-kotor",
+	"name": "Ginekološka ordinacija Vita Feminae",
+	"city": "Kotor",
+	"cityId": 6,
+	"googlePlaceId": "ChIJs2drV3kzTBMRGL56vSwCVSQ",
+	"clinicTypeIds": [
+		7
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ginekoloska-ordinacija-vita-feminae-kotor.sql",
+		"server/sql/insert-clinic-ginekoloska-ordinacija-vita-feminae-kotor-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 218,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент V. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Сухой прогон — см. отчёт агента. Slug клиники и нового врача сверены с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 245
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://ginekologijakotor.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress one-page на трёх языках (/, /en/, /ru/); wp-json pages modified 2026-04-28. Состав, часы, 7 блоков услуг, контакты. Цен нет. curl с браузерным UA — 200."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/kotor/ambulanta.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJs2drV3kzTBMRGL56vSwCVSQ (совпадает с place-id в Trustindex-виджете сайта), координаты 42.452811 / 18.7658524, +382 69 048 318, «Jadranski put, Dobrota 85330», имя «Ambulanta», 62 отзыва (в файле 5) — не импортировались."
+		},
+		{
+			"type": "facebook",
+			"ref": "facebook.com/PoliklinikaVitaFeminae",
+			"collected": null,
+			"machineReadable": false,
+			"note": "Ссылка из подвала сайта; не читается — не открывался."
+		}
+	],
+	"coverage": {
+		"address": "Jadranski put, town Dobrota, 85330 — сайт «Jadranski put, Dobrota, Kotor» = Google",
+		"phone": "+38269048318;+38232330909 — сайт (Google — +382 69 048 318). Номер записи к dr Mihaljević +382 69 826 645 — в описании",
+		"email": "vitafeminae@t-com.me — блок Kontakt",
+		"website": "https://ginekologijakotor.com/",
+		"social": "facebook.com/PoliklinikaVitaFeminae — ссылка с сайта",
+		"logo": "https://ginekologijakotor.com/wp-content/uploads/2025/08/Vita_Feminae_logo_horizontal-1024x191.png (в разметке ссылка на домен ginekologijakotor.me — тот редиректит 301, взят .com, 200 image/png)",
+		"workingHours": "пн/ср/чт 14–20, вт/пт 08–14, сб/вс закрыто (не названы) — «po zakazanom terminu»",
+		"description": "из блоков «Dobro došli», «Godine iskustva», «Naše usluge», «Naš tim», «Kontakt»",
+		"languages": "только SR: сайт на me/en/ru, но приём на других языках не заявлен; английский — только в отзывах",
+		"doctors": "2: predrag-djurovic (новый), antonia-mihaljevic (найдена в БД без клиники — привязка). Медсестра-бабица не заводится",
+		"doctorPhotos": "нет на сайте; у antonia-mihaljevic фото в БД уже есть",
+		"prices": "цен нет — 12 услуг и 1 анализ без цены",
+		"labTests": "1 — HPV genotipizacija (PCR)",
+		"reviews": "pending — 62 отзыва ждут полной выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "menopause-consultation",
+			"nameEn": "Menopause Consultation",
+			"nameSr": "Konsultacija o menopauzi",
+			"categoryIds": [
+				7
+			],
+			"specialtyIds": [
+				5
+			],
+			"reason": "Vita Feminae: «Menopauza — Ublažavanje tegoba menopauzalnog perioda»; Filia: «Menopauza – hormonska supstituciona terapija (HRT)». Записи о менопаузе/HRT в каталоге нет ни под одним названием (поиск menopaus|climacter|hormone replacement — пусто). Общая услуга гинекологических кабинетов. Категория 7 GYNECOLOGY, специальность 5. HRT — синонимом, не отдельной записью.",
+			"note": "Общая запись нескольких клиник порции V (ginekoloska-ordinacija-vita-feminae-kotor, ginekolosko-akuserska-ordinacija-filia-tivat); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "infertility-consultation",
+			"nameEn": "Infertility Consultation",
+			"nameSr": "Konsultacija o neplodnosti",
+			"categoryIds": [
+				7
+			],
+			"specialtyIds": [
+				5,
+				38
+			],
+			"reason": "Vita Feminae: «Bračna neplodnost — Folikulometrija, priprema za IVF …»; Filia: «Ispitivanje i liječenje steriliteta»; Kavarić Medical: «Dijagnostika i liječenje steriliteta (kod žena i muškaraca)». В каталоге только fertility-couple-subspecialist-examination (субспециалистический осмотр пары, тариф уровня субспециалиста) и психологическое консультирование при бесплодии — консультации специалиста по бесплодию нет. Категория 7, специальности 5 + 38 REPRODUCTIVE_MEDICINE.",
+			"note": "Общая запись нескольких клиник порции V (ginekoloska-ordinacija-vita-feminae-kotor, ginekolosko-akuserska-ordinacija-filia-tivat, kavaric-medical-podgorica); создаётся идемпотентно в каждом services-SQL."
+		}
+	],
+	"services": [
+		{
+			"slug": "gynecological-specialist-examination",
+			"nameEn": "Gynecological Specialist Examination",
+			"price": null,
+			"source": "EN: «Consultations and examinations are performed by Med. Dr. Predrag Đurović, Specialist in Gynecology and Obstetrics»; «pružamo usluge iz svih oblasti ginekologije i akušerstva»"
+		},
+		{
+			"slug": "pregnancy-specialist-examination",
+			"nameEn": "Pregnancy Specialist Examination",
+			"price": null,
+			"source": "«Kontrola trudnoće — Praćenje trudnoće i savjetovanje tokom svih njenih faza»"
+		},
+		{
+			"slug": "gynecological-ultrasound",
+			"nameEn": "Gynecological Ultrasound",
+			"price": null,
+			"source": "«Ultrazvučna dijagnostika — Detaljni ultrazvučni pregledi savremenom opremom (2D,3D,4D)»"
+		},
+		{
+			"slug": "pregnancy-ultrasound",
+			"nameEn": "Pregnancy Ultrasound",
+			"price": null,
+			"source": "«Ultrazvučna dijagnostika … (2D,3D,4D)» + «Kontrola trudnoće»"
+		},
+		{
+			"slug": "4d-pregnancy-ultrasound",
+			"nameEn": "4D Pregnancy Ultrasound",
+			"price": null,
+			"source": "«… (2D,3D,4D)» — 3D/4D УЗИ; запись каталога «4D ultrazvuk», синоним «3D ultrazvuk» добавлен"
+		},
+		{
+			"slug": "video-colposcopy",
+			"nameEn": "Video Colposcopy",
+			"price": null,
+			"source": "«Rano otkrivanje premalignih bolesti — Video kolposkopija, …» — метод «video» сохранён (есть отдельная запись)"
+		},
+		{
+			"slug": "pap-test-with-smear-collection",
+			"nameEn": "PAP Test with Smear Collection",
+			"price": null,
+			"source": "«… Papanicolau test, …» — взятие мазка в кабинете (услуга; цитология — в лаборатории)"
+		},
+		{
+			"slug": "contraception-consultation",
+			"nameEn": "Contraception Consultation",
+			"price": null,
+			"source": "«Kontracepcija — Savjetovanje i propisivanje kontracepcije»"
+		},
+		{
+			"slug": "menopause-consultation",
+			"nameEn": "Menopause Consultation",
+			"price": null,
+			"source": "«Menopauza — Ublažavanje tegoba menopauzalnog perioda»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "std-testing-package",
+			"nameEn": "STD Testing Package",
+			"price": null,
+			"source": "«Polno prenosive bolesti — Dijagnostika i liječenje polno prenosivih infekcija» (как у ana-medica-podgorica)"
+		},
+		{
+			"slug": "folliculometry",
+			"nameEn": "Folliculometry",
+			"price": null,
+			"source": "«Bračna neplodnost — Folikulometrija, …»"
+		},
+		{
+			"slug": "infertility-consultation",
+			"nameEn": "Infertility Consultation",
+			"price": null,
+			"source": "«Bračna neplodnost — …, priprema za IVF u koordinaciji sa poznatim Evropskim IVF centrima»",
+			"newInCatalog": true
+		}
+	],
+	"labTests": [
+		{
+			"slug": "hpv-genotyping-pcr",
+			"nameEn": "HPV Genotyping PCR",
+			"price": null,
+			"source": "«… HPV genotipizacija» — запись «Genotipizacija HPV - PCR» (генотипирование = ПЦР-метод; анализ по правилам CLINIC_SERVICES_IMPORT)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "predrag-djurovic",
+			"nameSr": "Predrag Đurović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista ginekologije i akušerstva",
+			"specialtyIds": [
+				5
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"gynecological-specialist-examination",
+				"pregnancy-specialist-examination"
+			],
+			"note": "Новый; прод-API 204. Английский упоминается только в отзывах (Trustindex) — не заводился."
+		},
+		{
+			"slug": "antonia-mihaljevic",
+			"nameSr": "Antonia Mihaljević",
+			"professionalTitle": "Dr",
+			"position": "Gostujući ljekar, specijalista ginekologije i akušerstva",
+			"specialtyIds": [
+				5
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"gynecological-specialist-examination"
+			],
+			"note": "Найдена в БД (antonia-mihaljevic, ни к одной клинике не была привязана) — только привязка + дозаполнение name_ru/name_en."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Struk. med. sestra - babica Danila Vučurović",
+			"reason": "Медсестра-акушерка — в doctors не заводится (решение юзера)."
+		},
+		{
+			"source": "Centar doktora Zobina (doctorzobin.com) — тот же адрес в Доброте",
+			"reason": "Отдельная клиника, на сайте Vita Feminae не упоминается; подволна 2e — не смешивать."
+		},
+		{
+			"source": "«Obavještavamo … ordinacija Vita Feminae neće raditi u periodu od 06. do 12. oktobra 2026. zbog godišnjeg odmora»",
+			"reason": "Разовое закрытие — в часы и описание не заносится."
+		},
+		{
+			"source": "Prijatelji ordinacije: логотипы SmartMed, SmartLab",
+			"reason": "Партнёры без описания услуг — не услуги клиники; связи с клиниками не заводились."
+		},
+		{
+			"source": "Отзывы Trustindex «He speaks English perfectly», «on govori odlično i engleski»",
+			"reason": "Отзывы, а не заявление клиники — английский врачу и клинике не ставили (решение юзера)."
+		}
+	],
+	"openQuestions": []
+}

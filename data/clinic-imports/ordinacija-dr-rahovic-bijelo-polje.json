@@ -1,0 +1,173 @@
+{
+	"schemaVersion": 1,
+	"slug": "ordinacija-dr-rahovic-bijelo-polje",
+	"name": "Ordinacija za ultrazvučnu dijagnostiku dr Rahović",
+	"city": "Bijelo Polje",
+	"cityId": 12,
+	"googlePlaceId": "ChIJf5_pUe2jUhMRCQ-FegySUig",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ordinacija-dr-rahovic-bijelo-polje.sql",
+		"server/sql/insert-clinic-ordinacija-dr-rahovic-bijelo-polje-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 239,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Z. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Slug клиники свободен на проде (API 204). Врачей нет — имя на сайте не указано. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 266
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.drrahovic.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Одностраничник: «Vršimo sledeće preglede» (14), «Radno vrijeme: Od ponedeljka do petka od 7:30 - 15:30h», «Zakazivanje: Pozvati broj telefona 069 050 055 radnim danima od 8h do 16h», «Adresa: Voja Lješnjaka b.b. Bijelo Polje», «© 2026». Цен, email, соцсетей, имени врача нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/bijelo-polje/specijalisticka-ordinacija-dr-rahovic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJf5_pUe2jUhMRCQ-FegySUig, 43.0344299 / 19.750138, телефона нет, formattedAddress битый (ссылка goo.gl), 5 отзывов (rating 5; тексты в файле — null)."
+		}
+	],
+	"coverage": {
+		"address": "Voja Lješnjaka bb, 84000 Bijelo Polje — сайт (в файле места адрес битый); координаты — Google",
+		"phone": "+38269050055 — сайт (в Google телефона нет)",
+		"email": "нет на сайте",
+		"website": "https://www.drrahovic.com/",
+		"social": "нет на сайте",
+		"logo": "нет",
+		"workingHours": "пн–пт 07:30–15:30, сб–вс закрыто — сайт",
+		"description": "по единственной странице сайта",
+		"languages": "только SR",
+		"doctors": "0 — имя врача на сайте не указано, Rahović в БД нет",
+		"doctorPhotos": "—",
+		"doctorBios": "—",
+		"prices": "цен нет — 14 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки (5 в Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "kidney-ultrasound",
+			"nameEn": "Kidney Ultrasound",
+			"nameSr": "Ultrazvuk bubrega",
+			"categoryIds": [
+				4
+			],
+			"specialtyIds": [
+				10
+			],
+			"reason": "Dr Rahović: «Eho bubrega» — отдельной строкой рядом с «Eho urotrakta». УЗИ только почек в каталоге нет (есть комбинации abdomen-and-kidney / hip-and-kidney / kidney-with-doppler и urinary-tract-ultrasound — «bubrezi i mokraćna bešika», которая у этой клиники уже стоит отдельно). Схема — как у urinary-tract-ultrasound: 4 ULTRASOUND, 10 RADIOLOGY."
+		}
+	],
+	"services": [
+		{
+			"slug": "abdomen-ultrasound",
+			"nameEn": "Abdomen Ultrasound",
+			"price": null,
+			"source": "«Eho pregled abdomena»"
+		},
+		{
+			"slug": "urinary-tract-ultrasound",
+			"nameEn": "Urinary Tract Ultrasound",
+			"price": null,
+			"source": "«Eho urotrakta»"
+		},
+		{
+			"slug": "kidney-ultrasound",
+			"nameEn": "Kidney Ultrasound",
+			"price": null,
+			"source": "«Eho bubrega» — отдельной строкой рядом с «Eho urotrakta» (НОВАЯ)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "testicular-ultrasound",
+			"nameEn": "Testicular Ultrasound",
+			"price": null,
+			"source": "«Eho testisa»"
+		},
+		{
+			"slug": "ultrasound-neck-glands-and-soft-tissue",
+			"nameEn": "Ultrasound Neck Glands and Soft Tissue",
+			"price": null,
+			"source": "«Eho mekih tkiva vrata» (у записи синоним «Ultrazvuk mekih tkiva vrata»)"
+		},
+		{
+			"slug": "breast-ultrasound",
+			"nameEn": "Breast Ultrasound",
+			"price": null,
+			"source": "«Eho dojki»"
+		},
+		{
+			"slug": "pediatric-hip-ultrasound",
+			"nameEn": "Pediatric Hip Ultrasound",
+			"price": null,
+			"source": "«Eho kukova kod djece»"
+		},
+		{
+			"slug": "ultrasound-bladder-with-prostate",
+			"nameEn": "Ultrasound Bladder with Prostate",
+			"price": null,
+			"source": "«Eho mokraćne bešike i prostate»"
+		},
+		{
+			"slug": "soft-tissue-ultrasound",
+			"nameEn": "Soft Tissue Ultrasound",
+			"price": null,
+			"source": "«Eho mekih tkiva»"
+		},
+		{
+			"slug": "doppler-neck-blood-vessels",
+			"nameEn": "Doppler Neck Blood Vessels",
+			"price": null,
+			"source": "«Kolor dopler KS vrata»"
+		},
+		{
+			"slug": "doppler-lower-extremity-blood-vessels",
+			"nameEn": "Doppler Lower Extremity Blood Vessels",
+			"price": null,
+			"source": "«Kolor dopler KS donnih [donjih] ekstremiteta»"
+		},
+		{
+			"slug": "doppler-upper-extremity-blood-vessels",
+			"nameEn": "Doppler Upper Extremity Blood Vessels",
+			"price": null,
+			"source": "«Kolor dopler KS gornjih ekstremiteta»"
+		},
+		{
+			"slug": "doppler-renal-arteries",
+			"nameEn": "Doppler Renal Arteries",
+			"price": null,
+			"source": "«Kolor dopler renalnih arterija»"
+		},
+		{
+			"slug": "doppler-portal-vein",
+			"nameEn": "Doppler Portal Vein",
+			"price": null,
+			"source": "«Kolor dopler splenoportalnog sistema» — запись «Kolor dopler vene porte» (синоним добавлен)"
+		}
+	],
+	"labTests": [],
+	"doctors": [],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«Dr Rahović» (врач без имени)",
+			"reason": "Имя не указано; в БД нет ни одного Rahović (поиск по фамилии в локали) → по правилу юзера врача не заводим. Если имя станет известно — добавить."
+		}
+	],
+	"openQuestions": []
+}

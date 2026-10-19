@@ -1,0 +1,169 @@
+{
+	"schemaVersion": 1,
+	"slug": "stomatoloska-ordinacija-djurovic-kolasin",
+	"name": "Stomatološka ordinacija Đurović",
+	"city": "Kolašin",
+	"cityId": 13,
+	"googlePlaceId": "ChIJ1UEIXoF9TRMRmL9j1wA5KOY",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-stomatoloska-ordinacija-djurovic-kolasin.sql",
+		"server/sql/insert-clinic-stomatoloska-ordinacija-djurovic-kolasin-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 230,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2e, агент X. Сайт 2023 на демо-шаблоне — состав мог устареть. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 257
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://ordinacijadjurovic.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress (стартовый шаблон темы), wp-json /pages изменены 2023-03-16: Početna, Dentalni turizam, Galerija, Blog (пусто). Реальны блок о клинике, 6 направлений, контакты, дентальный туризм; остальное — демо (Dr. Michael Martinez, +(888)…, $100 OFF, lorem ipsum). Цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/kolasin/stomatoloska-ordinacija-djurovic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatološka Ordinacija ĐUROVIĆ», «Boška Rašovića, Kolašin», +382 67 271 423, 19 отзывов (rating 5) — не импортировались (pending). Тот же файл (тот же place id) лежит и в data/google-places/berane/."
+		}
+	],
+	"coverage": {
+		"address": "Boška Rašovića bb, 81210 Kolašin — сайт = Google (номера дома нет); координаты — место Google",
+		"phone": "+38267271423 — сайт = Google",
+		"email": "djurovicdanilo@yahoo.com — сайт",
+		"website": "https://ordinacijadjurovic.me/",
+		"social": "Facebook https://www.facebook.com/profile.php?id=100008484588786 — подвал сайта",
+		"logo": "не заполнен — logo-icon.png 64×64 из стартового шаблона темы",
+		"workingHours": "не заполнено — «svakog radnog dana osim nedelje» без часов",
+		"doctors": "1 новый по косвенным признакам — dr Danilo Đurović (название ординации + email djurovicdanilo@)",
+		"doctorPhotos": "нет",
+		"doctorBios": "нет",
+		"prices": "1 из 9: осмотр 0 € («besplatni pregled»); остальные NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Dental Consultation",
+			"slug": "dental-consultation",
+			"source": "Главная: «svakom pacijentu obezbijedili smo besplatni pregled uz preciznu analizu zdravlja usta i zuba»; EN: «check the health of your teeth and gums for FREE» — 0 €",
+			"price": 0,
+			"priceMin": null,
+			"priceMax": null
+		},
+		{
+			"nameEn": "Dental Implant Nobel Biocare",
+			"slug": "dental-implant-nobel-biocare",
+			"source": "«Implanti — … U našoj ordinaciji koriste se implanti renomiranih proizvođača Nobel biocare, Bredent»"
+		},
+		{
+			"nameEn": "Dental Implant Bredent",
+			"slug": "dental-implant-bredent",
+			"source": "«Implanti — … Nobel biocare, Bredent»"
+		},
+		{
+			"nameEn": "Complete Denture",
+			"slug": "complete-denture",
+			"source": "«Protetika — … nadomještanjem izgubljenih zuba … potpunim (totalnim) … protezama» — материал не назван"
+		},
+		{
+			"nameEn": "Partial Denture",
+			"slug": "partial-denture",
+			"source": "«Protetika — … ili djelimičnim (parcijalnim) protezama»"
+		},
+		{
+			"nameEn": "Orthodontic Consultation",
+			"slug": "orthodontic-consultation",
+			"source": "«Ortopedija vilice je grana stomatologije koja se bavi dijagnostikom i liječenjem nepravilnosti zuba, vilica i lica kod djece i odraslih» — аппараты не названы, только диагностика"
+		},
+		{
+			"nameEn": "Dental Local Anesthesia",
+			"slug": "dental-local-anesthesia",
+			"source": "«Oralna hirurgija — Savremena stomatologija odgovarajućim hirurškim postupcima i primjenom lokalne anestezije omogućava bezbolne oralno hirurške intervencije»"
+		},
+		{
+			"nameEn": "Dental Caries Treatment",
+			"slug": "dental-caries-treatment",
+			"source": "«Bolesti zuba i usta — Najčešće intervencije u stomatologiji se primjenjuju u oblasti bolesti zuba i usta»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "«Izbljeljivanje zuba … postojeće nijanse zuba mijenjaju u nekoliko nijansi svjetlijih, postoji nekoliko metoda» — метод не назван"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "danilo-djurovic",
+			"nameSr": "Danilo Đurović",
+			"professionalTitle": "dr",
+			"position": "Stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": null,
+			"services": [],
+			"note": "Заведён по косвенным признакам (название ординации + email djurovicdanilo@), решение координатора 2026-10-09."
+		}
+	],
+	"disputed": [],
+	"resolved": [
+		{
+			"topic": "Врач «Danilo Đurović»?",
+			"date": "2026-10-09",
+			"decision": "Координатор: завести Danilo Đurović, стоматолог (78), по косвенным признакам (название «Stomatološka ordinacija Đurović» + email djurovicdanilo@); только привязка к клинике."
+		}
+	],
+	"excluded": [
+		{
+			"source": "«Oralna hirurgija — … bezbolne oralno hirurške intervencije»",
+			"reason": "Конкретные операции (удаление, резекция и т. п.) не названы — не угадываем; заведена только названная местная анестезия."
+		},
+		{
+			"source": "«Ortopedija vilice — … liječenjem nepravilnosti zuba, vilica i lica»",
+			"reason": "Вид аппаратов не назван — конкретные брекеты/пластинки не заводили; заведена ортодонтическая консультация (диагностика)."
+		},
+		{
+			"source": "«Bolesti zuba i usta — … oboljenja koja zahvataju zube i sluzokožu usne duplje»",
+			"reason": "Лечение слизистой — без конкретной процедуры; заведено только лечение кариеса."
+		},
+		{
+			"source": "Демо-блок «Dentistry for Today’s Lifestyle»: «Dental X-Rays», «Exams & Cleanings», «Cosmetic Dentistry», «Periodontal Disease», «Root Canals», «Extractions», «Teeth Whitening», «Braces & Implants» — «This is a short description elaborating the service…»",
+			"reason": "Демо-контент шаблона темы — игнорируется полностью (решение юзера), даже если пункт похож на реальную услугу."
+		},
+		{
+			"source": "Демо: «Dr. Michael Martinez — Master of Dentistry», «+(888) 695-9859», «FOR INSURANCE (007) 567-8976», «$100 OFF on All Dental Service*», отзывы Dorothy Palmer / Randy Tran / Amy Turner / Endang Everdeen / Joe Alan",
+			"reason": "Демо-контент темы — игнорируется."
+		},
+		{
+			"source": "/dentalni-turizam/: «Besplatan apartmanski smještaj», «Prevoz od/do aerodroma», «Vodiča», «Ličnog vozača-taksistu»; «poslati i digitalni Ortopan snimak»",
+			"reason": "Сервис дентального туризма, не медицинские услуги; ортопан пациент присылает свой — panoramic-x-ray не ставили. В описание."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Часы работы",
+			"detail": "«Ordinacija radi svakog radnog dana osim nedelje» — пн–сб, но часов нет ни на сайте, ни у Google. Не заполнено."
+		}
+	]
+}

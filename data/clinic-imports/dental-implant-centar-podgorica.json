@@ -1,0 +1,237 @@
+{
+	"schemaVersion": 1,
+	"slug": "dental-implant-centar-podgorica",
+	"name": "Dental Implant Centar",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJwYoB47WUTRMROul9mAMmcIk",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dental-implant-centar-podgorica.sql",
+		"server/sql/insert-clinic-dental-implant-centar-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 225,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2e, агент X. Сайт © 2019 (Last-Modified 2024-08-14) — состав мог устареть; отзывы Google 2024–2025 подтверждают dr Kekovića. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 252
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.drkekovic.com/dental-implant-centar.html",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Статическая страница (© 2019, Last-Modified 2024-08-14): биография dr spec. Vladana Kekovića и проза об ординации. Меню about/contact/gallery — 404. Цен нет; «Forma za besplatne konsultacije» — форма вопроса. Корень сайта — выбор города; белградская страница kekovic.html не заводилась."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/dental-implant-centar.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Dental Implant Centar», «F736+G47, Podgorica», +382 69 055 040, 10 отзывов (rating 4.2) — не импортировались (pending). Совпадает со встроенной картой сайта (cid)."
+		}
+	],
+	"coverage": {
+		"address": "Sedma omladinska bb (žuta zgrada) — сайт; координаты — место Google (подтверждено картой на сайте)",
+		"phone": "+38269055040 — сайт = Google",
+		"email": "на сайте нет",
+		"website": "https://www.drkekovic.com/dental-implant-centar.html",
+		"social": "на сайте нет",
+		"logo": "https://www.drkekovic.com/img/dental-implant-centar-header-logo.png",
+		"workingHours": "не заполнено — нет ни на сайте, ни в Google",
+		"doctors": "1 врач (dr spec. Vladan Keković) — новый",
+		"doctorPhotos": "есть — img/dr-kekovic-bio.jpg",
+		"doctorBios": "есть — со страницы",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "zygomatic-implant",
+			"nameEn": "Zygomatic Implant",
+			"nameSr": "Zigomatični implantat",
+			"categories": [
+				20
+			],
+			"specialties": [
+				74,
+				78,
+				91
+			],
+			"reason": "drkekovic.com /dental-implant-centar.html: «obavljaju se i napredni hirurški zahvati kao što su … ugradnja pterigoidnih i zigomatičnih implantata kod pacijenata kojima je to usled nedostatka kosti potrebno». В каталоге нет (поиск zygom/zigomat — только рентген скуловой кости). Самостоятельная хирургическая методика (анкеровка в скуловую кость), не бренд → новая запись. Категория 20; специальности 74, 78, 91 (как dental-sinus-lift)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "pterygoid-implant",
+			"nameEn": "Pterygoid Implant",
+			"nameSr": "Pterigoidni implantat",
+			"categories": [
+				20
+			],
+			"specialties": [
+				74,
+				78,
+				91
+			],
+			"reason": "drkekovic.com /dental-implant-centar.html: «… ugradnja pterigoidnih i zigomatičnih implantata». В каталоге нет (поиск pteryg/pterig — только птеригиум глаза). Самостоятельная методика (анкеровка в крыловидный отросток) → новая запись. Категория 20; специальности 74, 78, 91."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "bone-graft-with-membrane",
+			"synonym": "Vođena regeneracija kosti",
+			"language": "sr",
+			"reason": "drkekovic.com /dental-implant-centar.html: «sinus-lift procedura i vođene regeneracije kosti koje se u našoj ordinaciji rutinski rade». Вођена регенерация кости (GBR) = костная пластика с барьерной мембраной — единственная подходящая запись bone-graft-with-membrane («Koštana plastika sa membranom»); guided-tissue-regeneration (GTR) — пародонтологическая, другая. Название GBR — синонимом, без дубля."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "bone-graft-with-membrane",
+			"synonym": "Вођена регенерација кости",
+			"language": "sr-cyrl",
+			"reason": "drkekovic.com /dental-implant-centar.html: «sinus-lift procedura i vođene regeneracije kosti koje se u našoj ordinaciji rutinski rade». Вођена регенерация кости (GBR) = костная пластика с барьерной мембраной — единственная подходящая запись bone-graft-with-membrane («Koštana plastika sa membranom»); guided-tissue-regeneration (GTR) — пародонтологическая, другая. Название GBR — синонимом, без дубля."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "bone-graft-with-membrane",
+			"synonym": "Guided bone regeneration (GBR)",
+			"language": "en",
+			"reason": "drkekovic.com /dental-implant-centar.html: «sinus-lift procedura i vođene regeneracije kosti koje se u našoj ordinaciji rutinski rade». Вођена регенерация кости (GBR) = костная пластика с барьерной мембраной — единственная подходящая запись bone-graft-with-membrane («Koštana plastika sa membranom»); guided-tissue-regeneration (GTR) — пародонтологическая, другая. Название GBR — синонимом, без дубля."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "bone-graft-with-membrane",
+			"synonym": "Направленная регенерация кости",
+			"language": "ru",
+			"reason": "drkekovic.com /dental-implant-centar.html: «sinus-lift procedura i vođene regeneracije kosti koje se u našoj ordinaciji rutinski rade». Вођена регенерация кости (GBR) = костная пластика с барьерной мембраной — единственная подходящая запись bone-graft-with-membrane («Koštana plastika sa membranom»); guided-tissue-regeneration (GTR) — пародонтологическая, другая. Название GBR — синонимом, без дубля."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "bone-graft-with-membrane",
+			"synonym": "Gesteuerte Knochenregeneration (GBR)",
+			"language": "de",
+			"reason": "drkekovic.com /dental-implant-centar.html: «sinus-lift procedura i vođene regeneracije kosti koje se u našoj ordinaciji rutinski rade». Вођена регенерация кости (GBR) = костная пластика с барьерной мембраной — единственная подходящая запись bone-graft-with-membrane («Koštana plastika sa membranom»); guided-tissue-regeneration (GTR) — пародонтологическая, другая. Название GBR — синонимом, без дубля."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "bone-graft-with-membrane",
+			"synonym": "Yönlendirilmiş kemik rejenerasyonu",
+			"language": "tr",
+			"reason": "drkekovic.com /dental-implant-centar.html: «sinus-lift procedura i vođene regeneracije kosti koje se u našoj ordinaciji rutinski rade». Вођена регенерация кости (GBR) = костная пластика с барьерной мембраной — единственная подходящая запись bone-graft-with-membrane («Koštana plastika sa membranom»); guided-tissue-regeneration (GTR) — пародонтологическая, другая. Название GBR — синонимом, без дубля."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "«posebno je specijalizovana za oblast implantologije … Pored konvencionalne implantologije» — бренд имплантов не назван"
+		},
+		{
+			"nameEn": "Dental Sinus Lift",
+			"slug": "dental-sinus-lift",
+			"source": "«sinus-lift procedura … koje se u našoj ordinaciji rutinski rade»"
+		},
+		{
+			"nameEn": "Bone Graft with Membrane",
+			"slug": "bone-graft-with-membrane",
+			"source": "«vođene regeneracije kosti koje se u našoj ordinaciji rutinski rade» (GBR) → синоним"
+		},
+		{
+			"nameEn": "Bone Augmentation",
+			"slug": "bone-augmentation",
+			"source": "«obavljaju se i napredni hirurški zahvati kao što su transplantacija kosti» — источник кости не назван, единственная общая запись"
+		},
+		{
+			"nameEn": "Mucosal Autograft",
+			"slug": "mucosal-autograft",
+			"source": "«… transplantacija mekih tkiva» — слизистый/соединительнотканный трансплантат, единственная запись (Slobodni mukozni autotransplantat)"
+		},
+		{
+			"nameEn": "Pterygoid Implant",
+			"slug": "pterygoid-implant",
+			"source": "«ugradnja pterigoidnih … implantata kod pacijenata kojima je to usled nedostatka kosti potrebno» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Zygomatic Implant",
+			"slug": "zygomatic-implant",
+			"source": "«ugradnja … zigomatičnih implantata kod pacijenata kojima je to usled nedostatka kosti potrebno» (НОВАЯ запись)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "vladan-kekovic",
+			"nameSr": "Vladan Keković",
+			"professionalTitle": "dr",
+			"position": "Specijalista maksilofacijalne hirurgije, implantolog",
+			"specialtyIds": [
+				91,
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://www.drkekovic.com/img/dr-kekovic-bio.jpg",
+			"services": [
+				"dental-implant-placement",
+				"dental-sinus-lift",
+				"bone-graft-with-membrane",
+				"bone-augmentation",
+				"mucosal-autograft",
+				"pterygoid-implant",
+				"zygomatic-implant"
+			]
+		}
+	],
+	"disputed": [],
+	"placeMatch": {
+		"googlePlaceId": "ChIJwYoB47WUTRMROul9mAMmcIk",
+		"file": "data/google-places/podgorica/dental-implant-centar.json",
+		"matchedBy": [
+			"phone: сайт «+382 69 055 040» = internationalPhoneNumber места",
+			"map: встроенная карта Google на /dental-implant-centar.html — cid 0x89702603987de93a = 9903457377472866618 = cid из googleMapsUri места"
+		],
+		"decision": "Координатор 2026-10-09: место использовать (не примерную точку)."
+	},
+	"resolved": [
+		{
+			"topic": "Место Google вместо примерной точки",
+			"date": "2026-10-09",
+			"decision": "Координатор: использовать место dental-implant-centar.json — совпадение по телефону и встроенной карте сайта."
+		}
+	],
+	"excluded": [
+		{
+			"source": "«Dental implant centar je ordinacija koja pokriva čitav spektar stomatoloških usluga na visokom nivou»",
+			"reason": "Общая фраза без перечня — «логичные» общие услуги не добавляли."
+		},
+		{
+			"source": "«temeljnim praćenjem aktuelnih tema u oblasti implantologije i implanto-protetike»",
+			"reason": "Направление без конкретной работы (коронка/протез на имплантах не названы, материал не назван) — не заводили; в описание."
+		},
+		{
+			"source": "«Forma za besplatne konsultacije — Kontaktirajte nas, Pošaljite pitanje»",
+			"reason": "Онлайн-форма вопроса, не очная консультация — услугу с ценой 0 не заводили."
+		},
+		{
+			"source": "https://www.drkekovic.com/kekovic.html (BEOGRAD): «plastična hirurgija lica … blefaroplastike, mini facelift-a, deep plane facelift-a»; «za oblast maksilofacijalne hirurgije ordinira u Podgorici i u Beogradu»",
+			"reason": "Белградская страница (по заданию не заводится); на странице Dental Implant Centar эти процедуры не названы — не заводили."
+		},
+		{
+			"source": "Отзывы Google: «all on 6 u obje vilice», «krunice, implante, botoks i hijaluron»",
+			"reason": "На сайте не названы — не заводили (только факты сайта)."
+		}
+	],
+	"openQuestions": []
+}

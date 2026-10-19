@@ -1,5 +1,6 @@
 import { Language } from '~/enums/language';
 import type { Locale } from '~/composables/use-locale';
+import { escapeHtml } from '~/common/escape-html';
 
 export interface EmailTemplate {
 	subject: string;
@@ -504,8 +505,10 @@ export function getEmailVerificationEmail(
 		emailVerificationTemplates[locale as Locale] ||
 		emailVerificationTemplates[Language.EN];
 
+	// Имя задаёт сам пользователь, а письмо уходит на произвольный адрес —
+	// без экранирования это HTML-инъекция в наш шаблон
 	const contentHtml = `
-    <p>${template.greeting(userName)}</p>
+    <p>${template.greeting(escapeHtml(userName))}</p>
     ${template.content
 			.map((line, idx) => {
 				if (idx === 2) {
@@ -551,8 +554,10 @@ export function getLoginNotificationEmail(
 		loginNotificationTemplates[locale as Locale] ||
 		loginNotificationTemplates[Language.EN];
 
+	// userName задаёт пользователь, userAgent/ip/location приходят из запроса —
+	// всё внешнее экранируем
 	const contentHtml = `
-    <p>${template.greeting(userName)}</p>
+    <p>${template.greeting(escapeHtml(userName))}</p>
     <p>${template.intro}</p>
     <div class="info-box">
       <div class="info-row"><span class="label">${
@@ -570,13 +575,13 @@ export function getLoginNotificationEmail(
 			)}</div>
       <div class="info-row"><span class="label">${
 				template.infoLabels.ip
-			}</span> ${loginInfo.ip}</div>
+			}</span> ${escapeHtml(loginInfo.ip)}</div>
       <div class="info-row"><span class="label">${
 				template.infoLabels.device
-			}</span> ${loginInfo.userAgent}</div>
+			}</span> ${escapeHtml(loginInfo.userAgent)}</div>
       ${
 				loginInfo.location
-					? `<div class="info-row"><span class="label">${template.infoLabels.location}</span> ${loginInfo.location}</div>`
+					? `<div class="info-row"><span class="label">${template.infoLabels.location}</span> ${escapeHtml(loginInfo.location)}</div>`
 					: ''
 			}
     </div>
@@ -621,10 +626,10 @@ export function getEmailChangeNotificationEmail(
 		emailChangeNotificationTemplates[Language.EN];
 
 	const contentHtml = `
-    <p>${template.greeting(userName)}</p>
+    <p>${template.greeting(escapeHtml(userName))}</p>
     <p>${template.intro}</p>
-    <p><strong>${template.oldEmailLabel}</strong> ${oldEmail}</p>
-    <p><strong>${template.newEmailLabel}</strong> ${newEmail}</p>
+    <p><strong>${template.oldEmailLabel}</strong> ${escapeHtml(oldEmail)}</p>
+    <p><strong>${template.newEmailLabel}</strong> ${escapeHtml(newEmail)}</p>
     <p>${template.warning}</p>
   `;
 

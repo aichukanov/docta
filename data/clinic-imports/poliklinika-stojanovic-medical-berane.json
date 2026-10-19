@@ -1,0 +1,1118 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-stojanovic-medical-berane",
+	"name": "Poliklinika Stojanović Medical",
+	"city": "Berane",
+	"cityId": 9,
+	"googlePlaceId": "ChIJuSXfN7GTUhMRdCC_32memt0",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-stojanovic-medical-berane.sql",
+		"server/sql/insert-clinic-poliklinika-stojanovic-medical-berane-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 169,
+		"doctorIds": {},
+		"note": "Подволна 2a (прайс без врачей), агент D. Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug. clinicId заполнить после применения из блока VERIFICATION. Отзывы не импортировались (в файле места Google 5 из 25 — лимит API). Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 196
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://poliklinikastojanovic.me/cjenovnik-2/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Прайс — только радиология. Дата прайса — modified в wp-json /wp/v2/pages: 2024-10-11T15:35:39 (в тексте страницы даты нет). Таблицы ElementsKit разобраны по ячейкам <td> из content.rendered: пустые ячейки сохраняются, так видно, в какой колонке («Nativno» / «Sa IV kontrastom») стоит единственная цена. В сыром HTML страницы каждая цена дублируется (десктоп/мобайл), в content.rendered — один раз. Строки с ценой: УЗИ 18, рентген 18 (+2 подзаголовка), маммография 1, стоматологическая диагностика 3, КТ 19 строк / 27 цен, МР 23 строки / 28 цен."
+		},
+		{
+			"type": "website",
+			"ref": "https://poliklinikastojanovic.me/wp-json/wp/v2/pages",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "19 страниц: naslovna, kontakt, magnetna-rezonanca, skener, rendgen, ultrazvuk, mamograf, restorativna-stomatologija, endodoncija, protetika, oralna-hirurgija, preventiva, perinatologija, internisticka-ambulanta, laboratorija, novosti, blog, cjenovnik-2, sample-page. Дали адрес, телефоны, часы (без дней), Instagram, описания направлений. Laboratorija = контакт внешней BONA LAB (Podgorica). Страницы направлений — шаблонные тексты 2022 года."
+		},
+		{
+			"type": "website",
+			"ref": "https://poliklinikastojanovic.me/wp-json/wp/v2/posts",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "38 записей 2022–2024. Использованы: «MR Pregledi magnetnom rezonancom» (2024-08-06, список MR-регионов), «Snimak sinusa magnetnom rezonancom» (2024-08-06), «Stomatološka ordinacija poliklinike Stojanović Medical» (2024-08-06), пост про MR na teret Fonda (slug izentress…, 2022-03-31, правка 2023-02-14), «Pacijenti imaju pravo na slobodan izbor» (2023-02-14). Гостевые приёмы: dr Predrag Štilet (dermatolog, 2023-02-25), dr sci. med. Velimir Milošević (gastroenterolog, 2023-02 … 2024-04-20)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/berane/poliklinika-stojanovic-medical.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.8505999 / 19.8663489 (единственный источник), телефон +382 67 103 043, адрес «43 Milorada Jovančevića, Беране 84300». Сайта у места в Google нет. userRatingCount 25, в файле 5 отзывов."
+		}
+	],
+	"coverage": {
+		"address": "Milorada Jovančevića 43 — /kontakt и Google согласованы. Пост 2024-04-17 пишет «Ul. Milorada Jovančevića 59» — не взято",
+		"phone": "+38267103043;+38251233222 — с сайта, первый подтверждён Google",
+		"email": "на сайте нет",
+		"website": "https://poliklinikastojanovic.me/",
+		"social": "Instagram @poliklinika.stojanovic.medical (футер). Facebook на сайте нет",
+		"logo": "site icon WordPress 270×270 (круглый логотип клиники)",
+		"workingHours": "НЕ заполнено: «RADNO VRIJEME 09:00-17:00» в футере и «09h – 17h» в посте — дни недели не названы; решение координатора 2026-10-08 — не заполнять",
+		"doctors": "на сайте нет списка — блок «Naše osoblje» состоит из заглушек «Dr. Ime i Prezime / Titule» ×4. Врачи не заводились",
+		"doctorPhotos": "—",
+		"prices": "101 из 113 позиций с ценой; прайс от 2024-10-11 (wp-json modified), is_price_outdated не ставился. МР: нативно → price, с контрастом → price_max",
+		"labTests": "не импортировались: /laboratorija — контакт внешней лаборатории BONA LAB (Podgorica), своей лаборатории у поликлиники нет",
+		"dentistry": "цен на лечение нет. Без цены заведены 5 конкретных услуг, названных на страницах направлений и в посте 2024-08-06, у которых в каталоге есть generic-запись. Стоматологическая диагностика (2D/3D ortopan, dental) — с ценами",
+		"gynecology": "цен нет, конкретных услуг сайт не называет («prenatalna dijagnostika … neinvazivni i invazivni testovi») — не импортировалось",
+		"internalMedicine": "цен нет; «pregled interniste» → Internist Examination без цены",
+		"reviews": "pending — ждут выгрузки (в файле места Google 5 из 25)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "single-extremity-doppler",
+			"nameEn": "Single Extremity Doppler",
+			"nameSr": "Kolor dopler krvnih sudova jednog ekstremiteta",
+			"categories": [
+				4
+			],
+			"specialties": [
+				10,
+				34
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "x-ray-trachea",
+			"nameEn": "X-Ray Trachea",
+			"nameSr": "Rendgen traheje",
+			"categories": [
+				3
+			],
+			"specialties": [
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "soft-tissue-x-ray",
+			"nameEn": "Soft Tissue X-Ray",
+			"nameSr": "Rendgen mekih tkiva",
+			"categories": [
+				3
+			],
+			"specialties": [
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "barium-swallow-esophagography",
+			"nameEn": "Barium Swallow (Esophagography)",
+			"nameSr": "Rendgenski pregled akta gutanja i jednjaka",
+			"categories": [
+				3
+			],
+			"specialties": [
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "proctography",
+			"nameEn": "Proctography",
+			"nameSr": "Proktografija",
+			"categories": [
+				3
+			],
+			"specialties": [
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pediatric-msct-abdomen-and-pelvis-without-contrast",
+			"nameEn": "Pediatric MSCT Abdomen and Pelvis without Contrast",
+			"nameSr": "MSCT abdomena i male karlice kod djece bez kontrasta",
+			"categories": [
+				2,
+				25
+			],
+			"specialties": [
+				10,
+				4
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pediatric-msct-abdomen-and-pelvis-with-contrast",
+			"nameEn": "Pediatric MSCT Abdomen and Pelvis with Contrast",
+			"nameSr": "MSCT abdomena i male karlice kod djece sa kontrastom",
+			"categories": [
+				2,
+				25
+			],
+			"specialties": [
+				10,
+				4
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "msct-soft-tissue-neck-without-contrast",
+			"nameEn": "MSCT Soft Tissue Neck without Contrast",
+			"nameSr": "MSCT pregled mekih tkiva vrata bez kontrasta",
+			"categories": [
+				2
+			],
+			"specialties": [
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "msct-soft-tissues-without-contrast",
+			"nameEn": "MSCT Soft Tissues without Contrast",
+			"nameSr": "MSCT mekih tkiva bez kontrasta",
+			"categories": [
+				2
+			],
+			"specialties": [
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "msct-soft-tissues-with-contrast",
+			"nameEn": "MSCT Soft Tissues with Contrast",
+			"nameSr": "MSCT mekih tkiva sa kontrastom",
+			"categories": [
+				2
+			],
+			"specialties": [
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "mri-head-and-neck",
+			"nameEn": "MRI Head and Neck",
+			"nameSr": "MR glave i vrata",
+			"categories": [
+				1
+			],
+			"specialties": [
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "mri-elbow-joint",
+			"nameEn": "MRI Elbow Joint",
+			"nameSr": "MR pregled lakatnog zgloba",
+			"categories": [
+				1
+			],
+			"specialties": [
+				10
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "mri-angiography-with-contrast",
+			"nameEn": "MRI Angiography with Contrast",
+			"nameSr": "Kontrastna MR angiografija",
+			"categories": [
+				1
+			],
+			"specialties": [
+				10
+			]
+		}
+	],
+	"catalogFixes": [
+		{
+			"slug": "mri-full-spine",
+			"change": "INSERT IGNORE категории 1 (MRI) — у существующей записи категории не было"
+		},
+		{
+			"slug": "mri-urography",
+			"change": "INSERT IGNORE категории 1 (MRI) — у существующей записи категории не было"
+		}
+	],
+	"services": [
+		{
+			"slug": "ultrasound-thyroid-and-parathyroid-glands",
+			"nameEn": "Ultrasound Thyroid and Parathyroid Glands",
+			"source": "Ultrazvučna dijagnostika štitne i paraštitaste žlijezde 40€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "neck-ultrasound",
+			"nameEn": "Neck Ultrasound",
+			"source": "Ultrazvučna dijagnostika vrata 40€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "abdomen-and-urinary-tract-ultrasound",
+			"nameEn": "Abdomen and Urinary Tract Ultrasound",
+			"source": "Ultrazvučna dijagnostika organa gornjeg abdomena i urinarnog trakta 40€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "lower-abdomen-ultrasound",
+			"nameEn": "Lower Abdomen Ultrasound",
+			"source": "Ultrazvučni pregled organa male karlice 30€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "30"
+		},
+		{
+			"slug": "testicular-ultrasound",
+			"nameEn": "Testicular Ultrasound",
+			"source": "Ultrazvučna dijagnostika skrotuma (penisa, uretera) 40€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "breast-ultrasound-with-axilla",
+			"nameEn": "Breast Ultrasound with Axilla",
+			"source": "Ultrazvučna dijagnostika dojke i aksilla 40€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "hip-ultrasound",
+			"nameEn": "Hip Ultrasound",
+			"source": "Ultrazvučna dijagnostika kukova 25€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "25"
+		},
+		{
+			"slug": "orthopedic-ultrasound-single-joint",
+			"nameEn": "Orthopedic Ultrasound, Single Joint",
+			"source": "Ultrazvučna dijagnostika ramenog, kolenog i talokruralnog zgloba 30€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "30"
+		},
+		{
+			"slug": "soft-tissue-ultrasound",
+			"nameEn": "Soft Tissue Ultrasound",
+			"source": "Ultrazvučna dijagnostika površnih tumora 25€; Ultrazvučni pregled kože i potkožnog tkiva 30€ (обе строки — УЗИ мягких тканей, одна запись диапазоном)",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "25-30"
+		},
+		{
+			"slug": "doppler-neck-blood-vessels",
+			"nameEn": "Doppler Neck Blood Vessels",
+			"source": "Color duplex scan krvnih sudova vrata 40€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "doppler-upper-extremity-blood-vessels",
+			"nameEn": "Doppler Upper Extremity Blood Vessels",
+			"source": "Color duplex scan krvnih sudova gornjih ekstremiteta 50€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "50"
+		},
+		{
+			"slug": "doppler-lower-extremity-blood-vessels",
+			"nameEn": "Doppler Lower Extremity Blood Vessels",
+			"source": "Color duplex scan krvnih sudova donjih ekstremiteta 50€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "50"
+		},
+		{
+			"slug": "aorta-ultrasound",
+			"nameEn": "Aorta Ultrasound",
+			"source": "Color duplex scan velikih krvnih sudova( Abdominalna aorta i VCI- or) 35€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "35"
+		},
+		{
+			"slug": "doppler-renal-arteries",
+			"nameEn": "Doppler Renal Arteries",
+			"source": "Color duplex scan arterije aa. renales 35€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "35"
+		},
+		{
+			"slug": "lung-base-ultrasound",
+			"nameEn": "Lung Base Ultrasound",
+			"source": "UZ pregled plućnih baza 30€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "30"
+		},
+		{
+			"slug": "follow-up-ultrasound-examination",
+			"nameEn": "Follow-up Ultrasound Examination",
+			"source": "Kontrola 35€",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "35"
+		},
+		{
+			"slug": "single-extremity-doppler",
+			"nameEn": "Single Extremity Doppler",
+			"source": "Color duplex scan 1 ekstremiteta 30€ (новая запись)",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA",
+			"price": "30",
+			"new": true
+		},
+		{
+			"slug": "x-ray-head-craniogram",
+			"nameEn": "X-Ray Head (Craniogram)",
+			"source": "Lobanja 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-sella-turcica",
+			"nameEn": "X-Ray Sella Turcica",
+			"source": "Sella turcica 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-paranasal-sinuses",
+			"nameEn": "X-Ray Paranasal Sinuses",
+			"source": "P.N.Š.-e 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-cervical-spine",
+			"nameEn": "X-Ray Cervical Spine",
+			"source": "C-e kičme 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-thoracic-spine",
+			"nameEn": "X-Ray Thoracic Spine",
+			"source": "Th-e kičme 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-shoulder",
+			"nameEn": "X-Ray Shoulder",
+			"source": "Rendgenska dijagnostika koštanog sistema gornjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-upper-arm",
+			"nameEn": "X-Ray Upper Arm",
+			"source": "Rendgenska dijagnostika koštanog sistema gornjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-elbow",
+			"nameEn": "X-Ray Elbow",
+			"source": "Rendgenska dijagnostika koštanog sistema gornjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-forearm",
+			"nameEn": "X-Ray Forearm",
+			"source": "Rendgenska dijagnostika koštanog sistema gornjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-wrist",
+			"nameEn": "X-Ray Wrist",
+			"source": "Rendgenska dijagnostika koštanog sistema gornjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-hand",
+			"nameEn": "X-Ray Hand",
+			"source": "Rendgenska dijagnostika koštanog sistema gornjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-hip",
+			"nameEn": "X-Ray Hip",
+			"source": "Rendgenska dijagnostika koštanog sistema donjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-thigh",
+			"nameEn": "X-Ray Thigh",
+			"source": "Rendgenska dijagnostika koštanog sistema donjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-knee",
+			"nameEn": "X-Ray Knee",
+			"source": "Rendgenska dijagnostika koštanog sistema donjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-lower-leg",
+			"nameEn": "X-Ray Lower Leg",
+			"source": "Rendgenska dijagnostika koštanog sistema donjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-ankle",
+			"nameEn": "X-Ray Ankle",
+			"source": "Rendgenska dijagnostika koštanog sistema donjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-foot",
+			"nameEn": "X-Ray Foot",
+			"source": "Rendgenska dijagnostika koštanog sistema donjih ekstremiteta sa zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-pelvis",
+			"nameEn": "X-Ray Pelvis",
+			"source": "Rendgenska dijagnostika karlice sa K.F-im zglobovima 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "x-ray-trachea",
+			"nameEn": "X-Ray Trachea",
+			"source": "Rendgenska dijagnostika traheje 35€ (новая запись)",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "35",
+			"new": true
+		},
+		{
+			"slug": "x-ray-chest-heart",
+			"nameEn": "X-Ray Lungs and Heart",
+			"source": "Rendgenska dijagnostika pluća i srca 40€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "intravenous-urography",
+			"nameEn": "Intravenous Urography",
+			"source": "Rendgenska dijagnostika bubrega (IVU i infuziona urografija) 45€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "45"
+		},
+		{
+			"slug": "x-ray-abdomen-native",
+			"nameEn": "Plain X-Ray of the Abdomen",
+			"source": "Rendgenska dijagnostika abdomena(nativna radiografija) 35€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "35"
+		},
+		{
+			"slug": "barium-swallow-esophagography",
+			"nameEn": "Barium Swallow (Esophagography)",
+			"source": "-rendgenski pregled akta gutanja i jednjaka 50€ (новая запись)",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "50",
+			"new": true
+		},
+		{
+			"slug": "esophagus-stomach-and-duodenum-fluoroscopy",
+			"nameEn": "Esophagus, Stomach and Duodenum Fluoroscopy",
+			"source": "-radioskopija gastroduodenuma 60€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "60"
+		},
+		{
+			"slug": "small-bowel-standard-fluoroscopic-passage",
+			"nameEn": "Standard Fluoroscopic Small Bowel Follow-Through",
+			"source": "-pasaža tankog crijevastroduodenuma 50€ (склейка «crijeva»+«stroduodenuma» в источнике)",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "50"
+		},
+		{
+			"slug": "barium-enema",
+			"nameEn": "Barium Enema",
+			"source": "-irigografija 65€",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "65"
+		},
+		{
+			"slug": "proctography",
+			"nameEn": "Proctography",
+			"source": "-proktografija 80€ (новая запись)",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "80",
+			"new": true
+		},
+		{
+			"slug": "soft-tissue-x-ray",
+			"nameEn": "Soft Tissue X-Ray",
+			"source": "Rendgenska dijagnostika mekih tkiva gornjih i donjih estremiteta i grudnog koša 40€ (новая запись)",
+			"section": "RENDGENSKA DIJAGNOSTIKA",
+			"price": "40",
+			"new": true
+		},
+		{
+			"slug": "mammography",
+			"nameEn": "Mammography",
+			"source": "Rendgenska dijagnostika dojki i axilla (MAMOGRAFIJA) 40€",
+			"section": "MAMOGRAFSKA DIJAGNOSTIKA",
+			"price": "40"
+		},
+		{
+			"slug": "panoramic-x-ray",
+			"nameEn": "Panoramic X-Ray",
+			"source": "2D Ortopan 20€",
+			"section": "STOMATOLOŠKA DIJAGNOSTIKA",
+			"price": "20"
+		},
+		{
+			"slug": "3d-dental-x-ray-cbct",
+			"nameEn": "3D Dental X-Ray CBCT",
+			"source": "3D Ortopan 50€",
+			"section": "STOMATOLOŠKA DIJAGNOSTIKA",
+			"price": "50"
+		},
+		{
+			"slug": "intraoral-x-ray",
+			"nameEn": "Intraoral X-Ray",
+			"source": "Dental 5€",
+			"section": "STOMATOLOŠKA DIJAGNOSTIKA",
+			"price": "5"
+		},
+		{
+			"slug": "msct-abdomen-native",
+			"nameEn": "MSCT Abdomen Native",
+			"source": "MSCT gornjeg abdomena i urinarnog trakta 80€ | —",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-abdomen-with-contrast",
+			"nameEn": "MSCT Abdomen with Contrast",
+			"source": "MSCT gornjeg abdomena i urinarnog trakta — | 100€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "100"
+		},
+		{
+			"slug": "msct-ivu-intravenous-urography",
+			"nameEn": "MSCT IVU (Intravenous Urography)",
+			"source": "MSCT urografija — | 100€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "100"
+		},
+		{
+			"slug": "msct-pelvis-native",
+			"nameEn": "MSCT Pelvis Native",
+			"source": "MSCT dijagnstika organa male karlice 80€ | —",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-pelvis-with-contrast",
+			"nameEn": "MSCT Pelvis with Contrast",
+			"source": "MSCT dijagnstika organa male karlice — | 100€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "100"
+		},
+		{
+			"slug": "pediatric-msct-abdomen-and-pelvis-without-contrast",
+			"nameEn": "Pediatric MSCT Abdomen and Pelvis without Contrast",
+			"source": "MSCT dijagnostika abdomena i karlice u pedijatrijskoj populaciji 70€ | — (новая запись)",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "70",
+			"new": true
+		},
+		{
+			"slug": "pediatric-msct-abdomen-and-pelvis-with-contrast",
+			"nameEn": "Pediatric MSCT Abdomen and Pelvis with Contrast",
+			"source": "то же — | 90€ (новая запись)",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "90",
+			"new": true
+		},
+		{
+			"slug": "msct-angiography-abdominal-vessels",
+			"nameEn": "MSCT Angiography Abdominal Vessels",
+			"source": "MSCT arteriografija abdomena i male karlice — | 140€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "140"
+		},
+		{
+			"slug": "msct-angiography-abdominal-aorta-and-lower-extremities",
+			"nameEn": "MSCT Angiography Abdominal Aorta and Lower Extremities",
+			"source": "MSCT angiografija aortoilijačnog segmenta i arterija donjih ekstremiteta — | 140€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "140"
+		},
+		{
+			"slug": "msct-angiography-pulmonary-arteries-pte",
+			"nameEn": "MSCT Angiography Pulmonary Arteries (PTE)",
+			"source": "MSCT pneumoangiografija — | 120€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "120"
+		},
+		{
+			"slug": "msct-angiography-extremities",
+			"nameEn": "MSCT Angiography Extremities",
+			"source": "MSCT arteriografija arterija gornjih ekstremiteta — | 140€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "140"
+		},
+		{
+			"slug": "msct-angiography-head-and-neck-vessels",
+			"nameEn": "MSCT Angiography Head and Neck Vessels",
+			"source": "MSCT arteriografija vrata i endokranijuma — | 120€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "120"
+		},
+		{
+			"slug": "msct-head-endocranium-without-contrast",
+			"nameEn": "MSCT Head (Endocranium) without Contrast",
+			"source": "MSCT endokranijuma 80€ | —",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-head-endocranium-with-contrast",
+			"nameEn": "MSCT Head (Endocranium) with Contrast",
+			"source": "MSCT endokranijuma — | 100€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "100"
+		},
+		{
+			"slug": "msct-soft-tissue-neck-without-contrast",
+			"nameEn": "MSCT Soft Tissue Neck without Contrast",
+			"source": "MSCT vrata 80€ | — (новая запись)",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80",
+			"new": true
+		},
+		{
+			"slug": "msct-soft-tissue-neck-with-contrast",
+			"nameEn": "MSCT Soft Tissue Neck with Contrast",
+			"source": "MSCT vrata — | 100€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "100"
+		},
+		{
+			"slug": "msct-thorax-chest-without-contrast",
+			"nameEn": "MSCT Thorax (Chest) without Contrast",
+			"source": "MSCT pregled grudnog koša 80€ | —",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-thorax-chest-with-contrast",
+			"nameEn": "MSCT Thorax (Chest) with Contrast",
+			"source": "MSCT pregled grudnog koša — | 100€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "100"
+		},
+		{
+			"slug": "msct-neck-and-chest-with-contrast",
+			"nameEn": "MSCT Neck and Chest with Contrast",
+			"source": "MSCT pregled vrata i grudnog koša — | 180€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "180"
+		},
+		{
+			"slug": "msct-chest-and-abdomen-with-contrast",
+			"nameEn": "MSCT Chest and Abdomen with Contrast",
+			"source": "MSCT pregled grudnog koša i abdomena — | 180€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "180"
+		},
+		{
+			"slug": "msct-cervical-spine",
+			"nameEn": "MSCT Cervical Spine",
+			"source": "-C-e kičme 80€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-thoracic-spine",
+			"nameEn": "MSCT Thoracic Spine",
+			"source": "-Th-e kičme 80€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-lumbosacral-spine",
+			"nameEn": "MSCT Lumbosacral Spine",
+			"source": "-L/S kičme 80€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-upper-extremities-arm",
+			"nameEn": "MSCT Upper Extremities (Arm)",
+			"source": "-koštanih struktura gornjih i donjih ekstremiteta 80€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-lower-extremities-leg",
+			"nameEn": "MSCT Lower Extremities (Leg)",
+			"source": "-koštanih struktura gornjih i donjih ekstremiteta 80€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-pelvis-with-hips",
+			"nameEn": "MSCT Pelvis with Hips",
+			"source": "MSCT karlice sa K.F-im zglobovima 80€",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "80"
+		},
+		{
+			"slug": "msct-soft-tissues-without-contrast",
+			"nameEn": "MSCT Soft Tissues without Contrast",
+			"source": "MSCT dijagnostika mekih tkiva gornjih i donjih ekstremiteta, grudnog koša i abdomena. 70€ | — (новая запись)",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "70",
+			"new": true
+		},
+		{
+			"slug": "msct-soft-tissues-with-contrast",
+			"nameEn": "MSCT Soft Tissues with Contrast",
+			"source": "то же — | 90€ (новая запись)",
+			"section": "CT DIJAGNOSTIKA (Nativno | Sa IV kontrastom)",
+			"price": "90",
+			"new": true
+		},
+		{
+			"slug": "mri-brain",
+			"nameEn": "MRI Brain",
+			"source": "MRI endokranijuma 110€ | 130€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "110-130"
+		},
+		{
+			"slug": "mri-angiography-brain-and-neck-vessels",
+			"nameEn": "MRI Angiography Brain and Neck Vessels",
+			"source": "MRI angiografija endokranijuma i vrata — | 180€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "180"
+		},
+		{
+			"slug": "mri-pituitary-gland-sella-turcica",
+			"nameEn": "MRI Pituitary Gland (Sella Turcica)",
+			"source": "MRI hipofize — | 150€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "150"
+		},
+		{
+			"slug": "mri-soft-tissue-neck",
+			"nameEn": "MRI Soft Tissue Neck",
+			"source": "MRI vrata 110€ | 130€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "110-130"
+		},
+		{
+			"slug": "mri-head-and-neck",
+			"nameEn": "MRI Head and Neck",
+			"source": "MRI glave i vrata 210€ | 230€ (новая запись)",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "210-230",
+			"new": true
+		},
+		{
+			"slug": "mri-cervical-spine",
+			"nameEn": "MRI Cervical Spine",
+			"source": "-C-e kičme 110€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "110"
+		},
+		{
+			"slug": "mri-thoracic-spine",
+			"nameEn": "MRI Thoracic Spine",
+			"source": "-Th-e kičme 110€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "110"
+		},
+		{
+			"slug": "mri-lumbosacral-spine",
+			"nameEn": "MRI Lumbosacral Spine",
+			"source": "-L/S kičme 110€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "110"
+		},
+		{
+			"slug": "mri-full-spine",
+			"nameEn": "MRI Full Spine",
+			"source": "MRI C-e, Th-e i L/S 270€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "270"
+		},
+		{
+			"slug": "mri-musculoskeletal-system",
+			"nameEn": "MRI Musculoskeletal System",
+			"source": "- kostiju i mekih tkiva 120€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120"
+		},
+		{
+			"slug": "mri-shoulder",
+			"nameEn": "MRI Shoulder",
+			"source": "- ramenog zgloba 120€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120"
+		},
+		{
+			"slug": "mri-elbow-joint",
+			"nameEn": "MRI Elbow Joint",
+			"source": "- lakatnog zgloba 120€ (новая запись)",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120",
+			"new": true
+		},
+		{
+			"slug": "mri-wrist-joint-not-including-hand",
+			"nameEn": "MRI Wrist Joint (Not Including Hand)",
+			"source": "- ručnog zgloba 120€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120"
+		},
+		{
+			"slug": "mri-hip-joints-in-pelvis",
+			"nameEn": "MRI Hip Joints in Pelvis",
+			"source": "- karlice sa K.F-im zglobovima 120€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120"
+		},
+		{
+			"slug": "mri-knee-joint",
+			"nameEn": "MRI Knee Joint",
+			"source": "- kolenog zgloba 120€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120"
+		},
+		{
+			"slug": "mri-ankle-joint-not-including-foot",
+			"nameEn": "MRI Ankle Joint (Not Including Foot)",
+			"source": "- skočnog zgloba 120€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120"
+		},
+		{
+			"slug": "mri-temporomandibular-joints",
+			"nameEn": "MRI Temporomandibular Joints",
+			"source": "- temporomandibularnog zgloba 120€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120"
+		},
+		{
+			"slug": "mri-thorax-and-mediastinum",
+			"nameEn": "MRI Thorax and Mediastinum",
+			"source": "MRI grudnog koša 120€ | 140€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120-140"
+		},
+		{
+			"slug": "mri-abdomen",
+			"nameEn": "MRI Abdomen",
+			"source": "MRI abdomena 120€ | 140€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120-140"
+		},
+		{
+			"slug": "mri-urography",
+			"nameEn": "MRI Urography",
+			"source": "MRI urinarnog trakta — | 140€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "140"
+		},
+		{
+			"slug": "mri-prostate-multiparametric",
+			"nameEn": "MRI Prostate (Multiparametric)",
+			"source": "MRI prostate — | 160€ (контрастный протокол = мультипараметрическая МРТ)",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "160"
+		},
+		{
+			"slug": "mri-pelvic-organs",
+			"nameEn": "MRI Pelvic Organs",
+			"source": "MRI muške i ženske karlice 120€ | 140€",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "120-140"
+		},
+		{
+			"slug": "mri-angiography-with-contrast",
+			"nameEn": "MRI Angiography with Contrast",
+			"source": "Kontrastna MR angiografija — | 150€ (новая запись)",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "150",
+			"new": true
+		},
+		{
+			"slug": "mri-contrast-agent",
+			"nameEn": "MRI Contrast Agent",
+			"source": "Kontrasno sredstvo — | 20€ (опечатка «Kontrasno» в источнике)",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": "20"
+		},
+		{
+			"slug": "mri-breast",
+			"nameEn": "MRI Breast",
+			"source": "dojke",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": null
+		},
+		{
+			"slug": "mri-hand-not-including-wrist",
+			"nameEn": "MRI Hand (Not Including Wrist)",
+			"source": "šake",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": null
+		},
+		{
+			"slug": "mri-foot-not-including-ankle",
+			"nameEn": "MRI Foot (Not Including Ankle)",
+			"source": "stopala",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": null
+		},
+		{
+			"slug": "mri-enterography",
+			"nameEn": "MRI Enterography",
+			"source": "tanko crijevo",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": null
+		},
+		{
+			"slug": "mri-cholangiography-mrcp",
+			"nameEn": "MRI Cholangiography (MRCP)",
+			"source": "MRCP",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": null
+		},
+		{
+			"slug": "mri-paranasal-sinuses",
+			"nameEn": "MRI Paranasal Sinuses",
+			"source": "«MR paranazalnih šupljina»",
+			"section": "MAGNETNA REZONANCA (Nativno → price | Sa IV kontrastom → price_max)",
+			"price": null
+		},
+		{
+			"slug": "internist-examination",
+			"nameEn": "Internist Examination",
+			"source": "«našim pacijentima je omogućen pregled interniste»",
+			"section": "INTERNISTIČKA AMBULANTA (без цены)",
+			"price": null
+		},
+		{
+			"slug": "plaque-and-calculus-removal",
+			"nameEn": "Plaque and Calculus Removal",
+			"source": "/preventiva «SKIDANJE KAMENCA»",
+			"section": "STOMATOLOGIJA (без цены)",
+			"price": null
+		},
+		{
+			"slug": "topical-fluoride-treatment",
+			"nameEn": "Topical Fluoride Treatment",
+			"source": "/preventiva «fluorisanje zuba»",
+			"section": "STOMATOLOGIJA (без цены)",
+			"price": null
+		},
+		{
+			"slug": "surgical-tooth-extraction",
+			"nameEn": "Surgical Tooth Extraction",
+			"source": "/oralna-hirurgija «hiruško vađenje zuba ili zubnih korjenova»",
+			"section": "STOMATOLOGIJA (без цены)",
+			"price": null
+		},
+		{
+			"slug": "dental-implant-placement",
+			"nameEn": "Dental Implant Placement",
+			"source": "/protetika «Ugradnja implantata radi se pod lokalnom anestezijom»",
+			"section": "STOMATOLOGIJA (без цены)",
+			"price": null
+		},
+		{
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"source": "пост 2024-08-06 «ortodoncija (fiksne proteze)»",
+			"section": "STOMATOLOGIJA (без цены)",
+			"price": null
+		}
+	],
+	"doctors": [],
+	"excluded": [
+		{
+			"source": "Naše osoblje: Dr. Ime i Prezime / Titule ×4 (naslovna)",
+			"reason": "Заглушки шаблона, не врачи. Подволна 2a: врачей не заводим."
+		},
+		{
+			"source": "Dr Predrag Štilet, dermatolog, ordinira 25. februara (2023); Dr sci. med. Velimir Milošević ordinira … (gastroenterologija: specijalistički pregled, kolonoskopija, gastroskopija; 2023-02 … 2024-04-20)",
+			"reason": "Разовые гостевые приёмы из новостей, не состав и не постоянные услуги. Ни врачи, ни их услуги не заводились."
+		},
+		{
+			"source": "OKTOBAR – mjesec borbe protiv raka dojke: 50% popusta na ULTRAZVUK DOJKI (2024-10-01)",
+			"reason": "Акция, не цена прайса. Акции не импортируем."
+		},
+		{
+			"source": "Laboratorija → BONA LAB LABORATORIJA 020/218-628, http://5.2.76.143/bonalab/index.html",
+			"reason": "Внешняя лаборатория, не услуги клиники. Анализы не заводились."
+		},
+		{
+			"source": "Ginekologija / Perinatologija: «prenatalna dijagnostika … brojni najsavremeniji neinvazivni i invazivni testovi»; naslovna «Od preventive, preko održavanja trudnoće, do liječenja»",
+			"reason": "Конкретных услуг не названо — только описание направления."
+		},
+		{
+			"source": "/protetika: zubne krunice, zubni viniri (veneers); /restorativna-stomatologija: plombe, krune, mostovi; /endodoncija: endodontski tretman; пост 2024-08-06: protetika na implantima, proteze, mostovi",
+			"reason": "В каталоге нет generic-записей без материала (коронка — metal-ceramic / zirconia / e.max…, винир — ceramic / composite, пломба — composite / amalgam / GIC, эндодонтия — по каналам). Материал сайт не называет; выбирать за клинику не стали."
+		},
+		{
+			"source": "/preventiva: poliranje zuba",
+			"reason": "Generic-записи «полировка» в каталоге нет (Heavy Dental Scaling and Polishing — комбинация, Dental Air Polishing — другая методика)."
+		},
+		{
+			"source": "/oralna-hirurgija: liječenje viličnih cista, liječenje periapikalnih lezija, liječenje infekcija zubnog porijekla, lečenje paradontopatije, preimplantološka i preprotetska priprema",
+			"reason": "Перечень показаний, а не процедур: «лечение кист» не обязательно цистэктомия, «лечение пародонтопатии» не обязательно scaling. Взято только «hiruško vađenje zuba»."
+		},
+		{
+			"source": "/ultrazvuk и /skener: «pluća i toraksa, abdomena, jetre, pankreasa, žučne kese i žučnih puteva, nadbubrežne žlijezde, slezine, mozga i kičme i kičmenog stuba»",
+			"reason": "Один и тот же шаблонный абзац на страницах УЗИ и КТ — копипаст, не перечень услуг. Услуги взяты из прайса."
+		},
+		{
+			"source": "Пост «MR Pregledi magnetnom rezonancom»: glava, kičma, hipofiza, lakat, abdomen, angiografija, koljena, ramena, mala karlica, meka tkiva vrata, kukovi",
+			"reason": "Уже есть в прайсе с ценой. Из поста добавлены без цены только регионы, которых в прайсе нет: dojke, šake, stopala, tanko crijevo, MRCP (+ sinusi из отдельного поста)."
+		}
+	],
+	"disputed": [
+		{
+			"topic": "Рентген конечностей разложен на 12 позиций",
+			"detail": "Две строки прайса «Rendgenska dijagnostika koštanog sistema gornjih/donjih ekstremiteta sa zglobovima 40€» заведены как X-Ray Shoulder / Upper Arm / Elbow / Forearm / Wrist / Hand и X-Ray Hip / Thigh / Knee / Lower Leg / Ankle / Foot, все по 40€ (односторонние записи каталога). Альтернатива — одна generic-запись Extremity X-Ray per Image (40€), но она «за снимок», а клиника берёт 40€ за исследование отдела. Если юзер предпочитает generic — заменить 12 строк одной."
+		},
+		{
+			"topic": "MR: нативно / с контрастом = price / price_max",
+			"detail": "Контрастных MR-записей в каталоге нет; как у КЦЦГ, Konzilijum и Bolnica Danilo, две колонки легли диапазоном одной записи (MRI Brain 110–130 и т.п.). Отдельно заведён MRI Contrast Agent 20€ — это и есть разница колонок. Строки только с контрастной колонкой (hipofiza 150, urinarni trakt 140, prostata 160, angiografija 180) — price без диапазона."
+		},
+		{
+			"topic": "Сопоставления «ближайшим»",
+			"detail": "organi male karlice → Lower Abdomen Ultrasound; skrotum (penis, ureter) → Testicular Ultrasound; rameni/koleni/talokruralni zglob → Orthopedic Ultrasound Single Joint; velikih krvnih sudova (aorta i VCI) → Aorta Ultrasound; «površnih tumora 25€» и «kože i potkožnog tkiva 30€» → одна Soft Tissue Ultrasound 25–30 (решение координатора 2026-10-08: отдельная запись Superficial Tumor Ultrasound не заводится — сайт ничем, кроме цены, эти строки не различает); Kontrola (УЗИ) → Follow-up Ultrasound Examination; gornji abdomen i urinarni trakt: УЗИ → Abdomen and Urinary Tract Ultrasound, КТ → MSCT Abdomen Native / with Contrast; arteriografija abdomena i male karlice → MSCT Angiography Abdominal Vessels; arteriografija arterija gornjih ekstremiteta → MSCT Angiography Extremities; aortoilijačni segment + donji ekstremiteti → MSCT Angiography Abdominal Aorta and Lower Extremities; MRI urinarnog trakta → MRI Urography; MRI prostate (kontrast) → MRI Prostate (Multiparametric); MRI grudnog koša → MRI Thorax and Mediastinum; radioskopija gastroduodenuma → Esophagus, Stomach and Duodenum Fluoroscopy; pasaža tankog crijeva → Small Bowel Standard Fluoroscopic Passage; 3D Ortopan → 3D Dental X-Ray CBCT (а не 3D Dental Scan: у CBCT 6 клиник, у 3D Dental Scan 1)."
+		}
+	],
+	"openQuestions": [],
+	"decisions": [
+		{
+			"date": "2026-10-08",
+			"by": "координатор",
+			"detail": "Часы не заполнять; адрес — Milorada Jovančevića 43; 12 рентгенов конечностей на существующих записях оставить; superficial-tumor-ultrasound не заводить → Soft Tissue Ultrasound 25–30."
+		}
+	]
+}

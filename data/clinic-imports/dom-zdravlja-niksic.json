@@ -1,0 +1,1010 @@
+{
+	"schemaVersion": 1,
+	"slug": "dom-zdravlja-niksic",
+	"name": "Dom zdravlja Nikšić",
+	"officialName": "ZU Dom zdravlja Nikšić",
+	"city": "Nikšić",
+	"cityId": 2,
+	"googlePlaceId": "ChIJpxHe9q2pTRMRPnJUfQGgX_s",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dom-zdravlja-niksic.sql",
+		"server/sql/insert-clinic-dom-zdravlja-niksic-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 173,
+		"doctorIds": {},
+		"note": "Подволна 2b (дома здоровья), агент F. Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug. Сухой прогон на локальной БД (EXPLAIN в START TRANSACTION … ROLLBACK) — 0 ошибок, 0 несматченных slug. clinicId и doctorIds заполнить после применения из блока VERIFICATION. Отзывы не импортировались (в файле места Google 5 из 13 — лимит API). Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 200
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://domzdravljaniksic.me/izabrani-doktor/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "wp-json pages content.rendered (modified 2022-07-29). Таблицы «Izabrani doktor | Medicinska sestra»: 21 IDO в Никшиче, punkt Kličevo (dr Milica Tabaković), punkt Vidrovan (dr Goran Kosić), Šavnik (dr Sanja Bušaj), Plužine («Rada Adžić», «Mirjana Orbović» без «dr»). САЙТ ВЗЛОМАН: в шаблон страниц внедрены скрытые блоки онлайн-казино (casinia, kenspin, spinkings — венгерский/английский/литовский/болгарский текст), особенно на главной; в content.rendered разделов врачей и служб спама нет. Текст казино игнорировался."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaniksic.me/izabrani-doktor-za-djecu/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "7 педиатров (modified 2022-06-06). Текст: «preventivni i kurativni pregledi kao i vakcinacija, po redovnom kalendaru vakcinacije»; выходные и ночь — Hitna."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaniksic.me/izabrani-doktor-za-zene/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "2 гинеколога (modified 2022-06-06)."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaniksic.me/centri-za-podrsku/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "modified 2022-11-16. Centar za plućne bolesti i TBC (3 врача), mikrobiološka dijagnostika (2), Centar za mentalno zdravlje (3 психиатра поимённо: dr Vesna Joksimović, dr Dragica Minić, dr Jelica Živković — в заметках site-checks ошибочно «names NOT STATED»), Centar za djecu sa posebnim potrebama, savjetovališta, HES (3)."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaniksic.me/sluzba-medicine-rada-i-sporta-zu-dom-zdravlja-niksic/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "modified 2026-06-22. Rukovodilac dr Ema Milić; перечень справок и осмотров; состав sportsko-medicinskog pregleda. Цен нет."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaniksic.me/jedinica-za-patronazu/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Перечень 12 видов патронажных визитов по Uredbi o obimu prava."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaniksic.me/jedinica-za-fizikalnu-terapiju-primarnog-nivoa/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Физиатр (имя не указано) принимает «svake druge srijede», 8 физиотерапевтов (имена не указаны)."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaniksic.me/menadzment/ ; /kontakt/ ; /ambulante-ispostave/ ; /osnovne-informacije/ ; /call-centar/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Адрес Ul. Radoja Dakića b.b., тел. 040/231-202, e-mail dzniksic1@t-com.me, call centar 040 22 77 22; директор dr Radovan Vušović (стоматолог); помощник по медвопросам dr Milena Lalatović, spec. porodične medicine."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://domzdravljaniksic.me/downloads/raspored-za-ID-odrasle-5-oktobar.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Raspored doktora po ambulantama 05.10.–09.10.2026 (IDO, первая смена/терен). Добавил dr Vuk Dubak (Amb. 11). sha256 7bd3e829b1feb13d676991e5376ca63c3222578de15dab42fe5eabf43582c019."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://domzdravljaniksic.me/downloads/raspored-ID-za-djecu-5-oktobar.pdf",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Ссылка с главной без /downloads/ даёт 404; по /downloads/ — PDF. Педиатры 05–09.10.2026: Dašić, Šljivančanin, Višnjić, Vučić, Marta Kontić (новая), Mušikić, Jovanović. Jela Knežević отсутствует. sha256 feb83f4079fae31dc564860b667a6a15084b3980ce677d2cf4fa05f77ae016ee."
+		},
+		{
+			"type": "docx",
+			"ref": "http://domzdravljaniksic.me/wp-content/uploads/2026/06/Dopunski-rad-zaposlenih-u-ZU-Dom-zdravlja-Niksic-2.docx",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "«Spisak zaposlenih Doma zdravlja Nikšić koji obavljaju dopunski rad u drugim ustanovama — jun 2026»: специальности (Rutešić — interna, Račić — internista-pulmolog, Minić — neuropsihijatar, Svorcan Joksimović — psihijatar, Drašković Ivona — epidemiologija, Kankaraš — mikrobiologija) и врачи, которых нет на страницах: Milica Glušac и Adrijana Stanović Varajić (ginekologija), Mirjana Brajičić (doktor medicine). Апрельский docx (…/2026/05/…-1.docx): Utješinović — pneumoftiziolog, Bojović — spec. porodične i med. rada. sha256 jun eef1b9b9…, apr edab7d4c…."
+		},
+		{
+			"type": "website",
+			"ref": "https://domzdravljaniksic.me/wp-json/wp/v2/posts (2025–2026)",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Новости: 2026-04-01 реконструкция internističke ambulante; 2026-02-04 4D-УЗИ в гинекологии и «četiri ljekara specijalista ginekologije»; 2025-10-21 vakcinacija protiv sezonskog gripa; 2025-11-18 dr Goran Kosić — specijalista porodične medicine; 2025-09-05 ZS Plužine — dr Marija Đorđević."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/niksic/zu-dom-zdravlja-niksic.json",
+			"collected": null,
+			"machineReadable": true,
+			"note": "ChIJpxHe9q2pTRMRPnJUfQGgX_s, «ZU Dom zdravlja Nikšić», 13 отзывов (rating 3), 42.7773421/18.9452791, +382 40 231 202, «b.b Radoja Dakića, Niksic 81400»."
+		}
+	],
+	"coverage": {
+		"address": "Radoja Dakića bb, 81400 — сайт «Ul. Radoja Dakića b.b.» + Google",
+		"phone": "+38240231202 (сайт и Google) ; +38240227722 (call centar)",
+		"email": "dzniksic1@t-com.me — /menadzment/",
+		"website": "https://domzdravljaniksic.me/",
+		"social": "на сайте нет",
+		"logo": "wp-content/uploads/2022/07/logo-veliki.jpg (используется на сайте как заглушка терен-амбулаторий и логотип)",
+		"workingHours": "НЕ заполнено: только «dvije smjene 07–14 / 14–21» без режима выходных",
+		"description": "6 языков, только из текстов сайта (osnovne-informacije, ambulante, службы)",
+		"doctors": "50 записей: 11 существующих (привязка) + 39 новых. Фото на сайте нет.",
+		"services": "32 услуги без цен, все — существующие записи каталога",
+		"prices": "нет: прайса для неосигуранных на сайте нет; тарифы ФЗОЦГ не ставились",
+		"labTests": "нет: перечня анализов на сайте нет (mikrobiološka laboratorija описана без перечня)",
+		"reviews": "pending: ждут выгрузки (в файле места 5 из 13)"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"slug": "general-practitioner-examination",
+			"nameEn": "General Practitioner Examination",
+			"source": "Izabrani doktor za odrasle … kurativni rad koji podrazumijeva: dijagnostiku, liječenje i rehabilitaciju bolesti i povreda",
+			"section": "/izabrani-doktor/",
+			"price": null
+		},
+		{
+			"slug": "home-visit-examination",
+			"nameEn": "Home Visit Examination",
+			"source": "liječenje u stanu bolesnika",
+			"section": "/izabrani-doktor/",
+			"price": null
+		},
+		{
+			"slug": "pediatric-examination",
+			"nameEn": "Pediatric Examination",
+			"source": "U svakodnevnom radu izabranih doktora za djecu obavljaju se preventivni i kurativni pregledi",
+			"section": "/izabrani-doktor-za-djecu/",
+			"price": null
+		},
+		{
+			"slug": "pediatric-vaccination-and-revaccination-by-schedule",
+			"nameEn": "Pediatric Vaccination and Revaccination by Schedule",
+			"source": "kao i vakcinacija, po redovnom kalendaru vakcinacije",
+			"section": "/izabrani-doktor-za-djecu/",
+			"price": null
+		},
+		{
+			"slug": "influenza-vaccination",
+			"nameEn": "Influenza Vaccination",
+			"source": "Danas počinje vakcinacija protiv sezonskog gripa u DZ Nikšić",
+			"section": "post 2025-10-21",
+			"price": null
+		},
+		{
+			"slug": "gynecological-specialist-examination",
+			"nameEn": "Gynecological Specialist Examination",
+			"source": "GINEKOLOŠKA AMBULANTA +382 40 204 620; Izabrani doktor za žene",
+			"section": "/izabrani-doktor-za-zene/, naslovna",
+			"price": null
+		},
+		{
+			"slug": "gynecological-ultrasound",
+			"nameEn": "Gynecological Ultrasound",
+			"source": "u ginekološkoj ambulanti dobijen novi Ultazvučni aparat sa 4D sondom koji omogućava preciznu dijagnostiku",
+			"section": "post 2026-02-04",
+			"price": null
+		},
+		{
+			"slug": "internist-examination",
+			"nameEn": "Internist Examination",
+			"source": "rekonstrukcija i adaptacija internističke ambulante … uslovi za dijagnostiku, terapiju",
+			"section": "post 2026-04-01",
+			"price": null
+		},
+		{
+			"slug": "pulmonologist-examination",
+			"nameEn": "Pulmonologist Examination",
+			"source": "Centar za plućne bolesti i TBC pruža specijalističko-konsultativne usluge iz domena prevencije, dijagnostike, praćenja i liječenje akutnih i hroničnih bolesti pluća i tuberkuloze",
+			"section": "/centri-za-podrsku/",
+			"price": null
+		},
+		{
+			"slug": "first-psychiatrist-examination",
+			"nameEn": "First Psychiatrist Examination",
+			"source": "Centar za mentalno zdravlje … usmjeren na rano otkrivanje, dijagnostiku, očuvanje i liječenje mentalnog zdravlja pacijenata; 3 doktora spec. psihijatrije",
+			"section": "/centri-za-podrsku/",
+			"price": null
+		},
+		{
+			"slug": "microbiology-sample-collection",
+			"nameEn": "Microbiology Sample Collection",
+			"source": "Mikrobiološka laboratorija … Djelatnost se sprovodi kroz sljedeće aktivnosti: uzorkovanje, ispitivanje, izvještavanje",
+			"section": "/centri-za-podrsku/",
+			"price": null
+		},
+		{
+			"slug": "first-physiatrist-examination",
+			"nameEn": "First Physiatrist Examination",
+			"source": "Fizijatar obavlja specijalistički pregled i određuje vrstu fizikalne terapije",
+			"section": "/jedinica-za-fizikalnu-terapiju-primarnog-nivoa/",
+			"price": null
+		},
+		{
+			"slug": "pregnancy-patronage-visit-birth-and-newborn-care-preparation",
+			"nameEn": "Pregnancy Patronage Visit Birth and Newborn Care Preparation",
+			"source": "posjeta trudnici sa zdravstvenim vaspitanjem",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "postpartum-patronage-visit",
+			"nameEn": "Postpartum Patronage Visit",
+			"source": "posjeta kod babinjare sa zdravstvenim vaspitanjem",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "home-patronage-visit-child-age-2",
+			"nameEn": "Home Patronage Visit Child Age 2",
+			"source": "posjeta kod djeteta u drugoj godini života",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "home-patronage-visit-child-age-4",
+			"nameEn": "Home Patronage Visit Child Age 4",
+			"source": "posjeta kod djeteta u četvrtoj godini života",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "patronage-visit-for-women-without-gynecological-visit-3-years",
+			"nameEn": "Patronage Visit for Women Without Gynecological Visit 3 Years",
+			"source": "posjeta kod žena koje više od tri godine nijesu bile kod ginekologa",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "chronic-patient-patronage-visit",
+			"nameEn": "Chronic Patient Patronage Visit",
+			"source": "posjete hroničnim bolesnicima",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "senior-patronage-visit-over-65",
+			"nameEn": "Senior Patronage Visit Over 65",
+			"source": "posjeta starijim od 65 godina koji u kalendarskoj godini nijesu bili kod izabranog doktora",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "family-health-social-problem-patronage-visit",
+			"nameEn": "Family Health-Social Problem Patronage Visit",
+			"source": "porodicama koje imaju zdravstveno-socijalne probleme ili brinu o invalidnoj osobi",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "active-tb-patient-patronage-visit",
+			"nameEn": "Active TB Patient Patronage Visit",
+			"source": "posjete kod lica sa aktivnom tuberkolozom",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "immobile-patient-patronage-visit",
+			"nameEn": "Immobile Patient Patronage Visit",
+			"source": "posjeta kod bolesnika kome je potrebna djelimična ili potpuna pomoć kod izvođenja osnovnih životnih aktivnosti zbog bolesti ili starosti",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "family-with-elderly-or-disabled-member-patronage-visit",
+			"nameEn": "Family with Elderly or Disabled Member Patronage Visit",
+			"source": "posjeta porodici koja se brine o invalidnoj osobi, teškom bolesniku ili o staroj osobi",
+			"section": "/jedinica-za-patronazu/",
+			"price": null
+		},
+		{
+			"slug": "pre-employment-medical-certificate",
+			"nameEn": "Pre-Employment Medical Certificate",
+			"source": "ocjenu radne sposobnosti prije stupanja na rad … prethodni … pregled",
+			"section": "/sluzba-medicine-rada-i-sporta…/",
+			"price": null
+		},
+		{
+			"slug": "sports-medical-examination",
+			"nameEn": "Sports Medical Examination",
+			"source": "Sportsko-medicinski pregled obuhvata: Fizikalni pregled po sistemima; Antropometrija; EKG; Spirometrija; Dodatni konsultativni pregledi",
+			"section": "/sluzba-medicine-rada-i-sporta…/, /sportska-medicina/",
+			"price": null
+		},
+		{
+			"slug": "medical-certificate-for-driving-license-category-a-b-c-d-e",
+			"nameEn": "Medical Certificate for Driving License Category A, B, C, D, E",
+			"source": "pregleda za utvrđivanje zdrastvene sposobnosti … kandidata za upravljanje motornim vozilima svih kategorija",
+			"section": "/sluzba-medicine-rada-i-sporta…/",
+			"price": null
+		},
+		{
+			"slug": "medical-certificate-for-firearms-possession",
+			"nameEn": "Medical Certificate for Firearms Possession",
+			"source": "ocjenu podobnosti za posjedovanje oružja",
+			"section": "/sluzba-medicine-rada-i-sporta…/",
+			"price": null
+		},
+		{
+			"slug": "medical-certificate-for-continued-education",
+			"nameEn": "Medical Certificate for Continued Education",
+			"source": "Izdajemo ljekarska uvjerenja za nastavak školovanja",
+			"section": "/sluzba-medicine-rada-i-sporta…/",
+			"price": null
+		},
+		{
+			"slug": "medical-certificate-for-collective-accommodation",
+			"nameEn": "Medical Certificate for Collective Accommodation",
+			"source": "kolektivni smještaj",
+			"section": "/sluzba-medicine-rada-i-sporta…/",
+			"price": null
+		},
+		{
+			"slug": "medical-certificate-for-life-insurance",
+			"nameEn": "Medical Certificate for Life Insurance",
+			"source": "radi životnog osiguranja",
+			"section": "/sluzba-medicine-rada-i-sporta…/",
+			"price": null
+		},
+		{
+			"slug": "medical-certificate-for-child-adoption",
+			"nameEn": "Medical Certificate for Child Adoption",
+			"source": "o podobnosti za usvajanje djeteta",
+			"section": "/sluzba-medicine-rada-i-sporta…/",
+			"price": null
+		},
+		{
+			"slug": "medical-certificate-for-underage-marriage",
+			"nameEn": "Medical Certificate for Underage Marriage",
+			"source": "za sklapanje braka maloljetne osobe",
+			"section": "/sluzba-medicine-rada-i-sporta…/",
+			"price": null
+		}
+	],
+	"doctors": [
+		{
+			"slug": "vjera-bojovic",
+			"nameSr": "Vjera Bojović",
+			"existing": false,
+			"specialties": [
+				"family_medicine",
+				"occupational_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #1; Dopunski rad apr 2026: «Spec.porodične i med.rada»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "sonja-draganic",
+			"nameSr": "Sonja Draganić",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #2",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "tanja-pjescic",
+			"nameSr": "Tanja Pješčić",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #3",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "andja-rutesic",
+			"nameSr": "Anđa Rutešić",
+			"existing": false,
+			"specialties": [
+				"internal_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #4; Dopunski rad jun 2026: «Spec.interne medicine»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "suzana-golubovic",
+			"nameSr": "Suzana Golubović",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #5",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "tatjana-karadzic",
+			"nameSr": "Tatjana Karadžić",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #6",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "colakovic-slavka",
+			"nameSr": "Slavka Čolaković",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #7; raspored 05–09.10.2026: Ambulanta Kličevo",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "vesna-zelovic",
+			"nameSr": "Vesna Zelović",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #8",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "dragana-radunovic-2",
+			"nameSr": "Dragana Radunović",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #9; raspored 05–09.10.2026: Ambulanta Straševina",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "ognjenovic-lidija",
+			"nameSr": "Lidija Ognjenović",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #10",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "jelena-koprivica",
+			"nameSr": "Jelena Koprivica",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #11",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "lalatovic-milena",
+			"nameSr": "Milena Lalatović",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za odrasle; pomoćnik direktora za medicinska pitanja",
+			"source": "/izabrani-doktor/ #12; /menadzment/",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "stana-simic",
+			"nameSr": "Stana Simić",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #13",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "ljiljana-adzic",
+			"nameSr": "Ljiljana Adžić",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #14; mojdoktor.co.me: «specijalista opšte medicine». Slug согласован с агентом K (Moj Doktor)",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "svetlana-draskovic",
+			"nameSr": "Svetlana Drašković",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #15",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "nada-krivokapic",
+			"nameSr": "Nada Krivokapić",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #16",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "amela-rastoder-celebic",
+			"nameSr": "Amela Rastoder Čelebić",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #17",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "aleksandar-zdrale",
+			"nameSr": "Aleksandar Ždrale",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #18",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "sturanovic-marijana",
+			"nameSr": "Marijana Šturanović",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #19",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "ljubica-todorovic",
+			"nameSr": "Ljubica Todorović",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #20",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "jelena-kolak",
+			"nameSr": "Jelena Kolak",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "/izabrani-doktor/ #21",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "milica-tabakovic",
+			"nameSr": "Milica Tabaković",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle, punkt MZ Kličevo",
+			"source": "/izabrani-doktor/ Punkt MZ Kličevo",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "goran-kosic",
+			"nameSr": "Goran Kosić",
+			"existing": false,
+			"specialties": [
+				"family_medicine"
+			],
+			"position": "Izabrani doktor za odrasle, punkt MZ Vidrovan",
+			"source": "/izabrani-doktor/ Punkt MZ Vidrovan; raspored 05–09.10.2026: Ambulanta Vidrovan; post 2025-11-18 «specijalista porodične medicine dr Goran Kosić»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "sanja-busaj",
+			"nameSr": "Sanja Bušaj",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor, Zdravstvena stanica Šavnik",
+			"source": "/izabrani-doktor/ Lokacija: Opština Šavnik",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "vuk-dubak",
+			"nameSr": "Vuk Dubak",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Izabrani doktor za odrasle",
+			"source": "raspored-za-ID-odrasle-5-oktobar.pdf (05–09.10.2026): «Dr Vuk Dubak, Amb. 11»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "marija-djordjevic",
+			"nameSr": "Marija Đorđević",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": "Zdravstvena stanica Plužine",
+			"source": "post 2025-09-05 «medicinski tim ZS Plužine na čelu sa dr Marijom Đorđević»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "mirjana-brajicic",
+			"nameSr": "Mirjana Brajičić",
+			"existing": false,
+			"specialties": [
+				"general_medicine"
+			],
+			"position": null,
+			"source": "Dopunski rad apr+jun 2026: «Dr Mirjana Brajičić, Doktor medicine»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "mirjana-sljivancanin",
+			"nameSr": "Mirjana Šljivančanin",
+			"existing": false,
+			"specialties": [
+				"pediatrics"
+			],
+			"position": "Izabrani doktor za djecu",
+			"source": "/izabrani-doktor-za-djecu/ #1; raspored ID djeca 05–09.10.2026",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "snjezana-dasic",
+			"nameSr": "Snježana Dašić",
+			"existing": false,
+			"specialties": [
+				"pediatrics"
+			],
+			"position": "Izabrani doktor za djecu; Centar za djecu sa posebnim potrebama",
+			"source": "/izabrani-doktor-za-djecu/ #2; /centri-za-podrsku/ «specijalista pedijatar»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "jovanovic-tijana",
+			"nameSr": "Tijana Jovanović",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za djecu; Centar za djecu sa posebnim potrebama",
+			"source": "/izabrani-doktor-za-djecu/ #3; /centri-za-podrsku/",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "biljana-vucic",
+			"nameSr": "Biljana Vučić",
+			"existing": false,
+			"specialties": [
+				"pediatrics"
+			],
+			"position": "Izabrani doktor za djecu; Centar za djecu sa posebnim potrebama",
+			"source": "/izabrani-doktor-za-djecu/ #4; /centri-za-podrsku/",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "zorica-musikic",
+			"nameSr": "Zorica Mušikić",
+			"existing": false,
+			"specialties": [
+				"pediatrics"
+			],
+			"position": "Izabrani doktor za djecu",
+			"source": "/izabrani-doktor-za-djecu/ #5",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "marta-kontic",
+			"nameSr": "Marta Kontić",
+			"existing": false,
+			"specialties": [
+				"pediatrics"
+			],
+			"position": "Izabrani doktor za djecu",
+			"source": "raspored-ID-za-djecu-5-oktobar.pdf (05–09.10.2026): «Dr Marta Kontić» u koloni IZABRANI DR ZA DJECU",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "visnjic-stanislava",
+			"nameSr": "Stanislava Višnjić",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za djecu",
+			"source": "/izabrani-doktor-za-djecu/ #7",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "tamara-mijuskovic",
+			"nameSr": "Tamara Mijušković",
+			"existing": false,
+			"specialties": [
+				"gynecology_obstetrics"
+			],
+			"position": "Izabrani doktor za žene",
+			"source": "/izabrani-doktor-za-zene/ #1",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "raicevic-dragoljub",
+			"nameSr": "Dragoljub Raičević",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za žene",
+			"source": "/izabrani-doktor-za-zene/ #2",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "glusac-milica",
+			"nameSr": "Milica Glušac",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Izabrani doktor za žene",
+			"source": "Dopunski rad apr+jun 2026: «Spec.ginekologije i akušerstva»; post 2026-02-04 «četiri ljekara specijalista ginekologije»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "adrijana-stanovic-varajic",
+			"nameSr": "Adrijana Stanović Varajić",
+			"existing": false,
+			"specialties": [
+				"gynecology_obstetrics"
+			],
+			"position": "Izabrani doktor za žene",
+			"source": "Dopunski rad jun 2026: «Spec.ginekologije i akušerstva»; post 2026-02-04 «četiri ljekara specijalista ginekologije»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "vesna-marojevic",
+			"nameSr": "Vesna Marojević",
+			"existing": false,
+			"specialties": [
+				"pulmonology"
+			],
+			"position": "Centar za plućne bolesti i TBC",
+			"source": "/centri-za-podrsku/ «2 doktora – spec. pneumoftiziologa, 1 doktor spec. interne medicine»; Utješinović — pneumoftiziolog, Račić — internista-pulmolog (Dopunski rad) ⇒ Marojević pneumoftiziolog",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "utjesinovic-jovan",
+			"nameSr": "Jovan Utješinović",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Centar za plućne bolesti i TBC",
+			"source": "/centri-za-podrsku/; Dopunski rad apr 2026: «Spec.pneumoziolog», Codra i Moj Lab — kao u BP",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "milan-racic",
+			"nameSr": "Milan Račić",
+			"existing": false,
+			"specialties": [
+				"internal_medicine",
+				"pulmonology"
+			],
+			"position": "Centar za plućne bolesti i TBC",
+			"source": "/centri-za-podrsku/; Dopunski rad jun 2026: «spec.inter. medicine-pulmolog»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "nikolina-racic",
+			"nameSr": "Nikolina Račić",
+			"existing": false,
+			"specialties": [
+				"microbiology"
+			],
+			"position": "Centar za dijagnostiku — mikrobiološka laboratorija",
+			"source": "/centri-za-podrsku/ «2 doktora spec. mikrobiologa»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "milica-kankaras",
+			"nameSr": "Milica Kankaraš",
+			"existing": false,
+			"specialties": [
+				"microbiology"
+			],
+			"position": "Centar za dijagnostiku — mikrobiološka laboratorija",
+			"source": "/centri-za-podrsku/; Dopunski rad jun 2026: «Spec.mikrobiologije»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "vesna-svorcan-joksimovic",
+			"nameSr": "Vesna Svorcan Joksimović",
+			"existing": false,
+			"specialties": [
+				"psychiatry"
+			],
+			"position": "Centar za mentalno zdravlje",
+			"source": "/centri-za-podrsku/ «dr Vesna Joksimović – doktor specijalista»; Dopunski rad jun 2026: «Dr Vesna Svorcan Joksimović, Spec.psihijatar»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "dragica-minic",
+			"nameSr": "Dragica Minić",
+			"existing": false,
+			"specialties": [
+				"psychiatry",
+				"neurology"
+			],
+			"position": "Centar za mentalno zdravlje",
+			"source": "/centri-za-podrsku/; Dopunski rad jun 2026: «Spec.neuropsihijatar»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "jelica-zivkovic",
+			"nameSr": "Jelica Živković",
+			"existing": true,
+			"specialties": "не меняются (существующая запись)",
+			"position": "Centar za mentalno zdravlje",
+			"source": "/centri-za-podrsku/; Dopunski rad jun 2026: «Spec.psihijatrije i sud.psihijatrije», Cenex medical Podgorica — kao u BP",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "ivona-draskovic",
+			"nameSr": "Ivona Drašković",
+			"existing": false,
+			"specialties": [
+				"infectious_diseases"
+			],
+			"position": "Higijensko-epidemiološka služba",
+			"source": "/centri-za-podrsku/; Dopunski rad jun 2026: «Specijalista epidemiologije»",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "redzeb-zeinalagic",
+			"nameSr": "Redžeb Zeinalagić",
+			"existing": false,
+			"specialties": [
+				"infectious_diseases"
+			],
+			"position": "Higijensko-epidemiološka služba",
+			"source": "/centri-za-podrsku/",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "branka-erakovic",
+			"nameSr": "Branka Eraković",
+			"existing": false,
+			"specialties": [
+				"infectious_diseases"
+			],
+			"position": "Higijensko-epidemiološka služba",
+			"source": "/centri-za-podrsku/",
+			"services": [],
+			"hasBio": false
+		},
+		{
+			"slug": "ema-milic",
+			"nameSr": "Ema Milić",
+			"existing": false,
+			"specialties": [
+				"occupational_medicine"
+			],
+			"position": "Rukovodilac Službe medicine rada i sporta",
+			"source": "/sluzba-medicine-rada-i-sporta…/ «Rukovodilac službe: dr Ema Milić»; «kojim koordinira specijalista medicine rada»",
+			"services": [],
+			"hasBio": false
+		}
+	],
+	"excluded": [
+		{
+			"source": "Tabela Plužine: «Rada Adžić» (sestra Zoran Ćuković), «Mirjana Orbović» u koloni «Izabrani doktor», bez «dr»; tekst: «U Zdravstvenoj stanici u Plužinama radi jedan ID»",
+			"reason": "Не подтверждено, что это врачи (нет «dr», при одном ID две строки). Не заведены по указанию координатора. Врач ZS Plužine по новости 2025 — dr Marija Đorđević, заведена."
+		},
+		{
+			"source": "/izabrani-doktor-za-djecu/ #6 «dr Jela Knežević»",
+			"reason": "Страница не обновлялась с 2022; в графике педиатров 05–09.10.2026 её нет (на её месте dr Marta Kontić). В БД jela-knezevic — педиатр ДЗ Подгорица (ZO Nova Varoš, апрель 2026) и Moj Lab. Вероятно, перешла в Подгорицу — к ДЗ Никшич не привязана."
+		},
+		{
+			"source": "/menadzment/ «Direktor dr Radovan Vušović, stomatolog»",
+			"reason": "Директор (администрация), стоматологом работает в своей частной ординации — не врач ДЗ."
+		},
+		{
+			"source": "Centar za mentalno zdravlje: Olga Radović, Veselinka Milović, Nađa Milović — psiholog; Centar za djecu sa posebnim potrebama: Marija Petranić — psiholog, Ana Kovač — logoped",
+			"reason": "Не врачи; в задании психологи и сёстры не заводятся."
+		},
+		{
+			"source": "Jedinica za fizikalnu terapiju: «jedan doktor fizijatar … i osam fizioterapeuta»",
+			"reason": "Имена не названы."
+		},
+		{
+			"source": "Centar za djecu sa posebnim potrebama — «rano otkrivanje i intervencija … dijagnostičkih i terapeutskih procedura»",
+			"reason": "Название организационной единицы, конкретной услуги не названо."
+		},
+		{
+			"source": "Savjetovalište za dijabetes; Savjetovanje sa testiranjem na HIV; Savjetovalište za mlade («prevencija bolesti zavisnosti»); Savjetovalište za reproduktivno zdravlje",
+			"reason": "Подходящих записей каталога нет (HIV-консультирование с тестом, консультации по диабету/для молодёжи/репродуктивному здоровью); новые записи в 2b не заводятся. См. disputed."
+		},
+		{
+			"source": "Sportsko-medicinski pregled obuhvata: … Elektrokardiografija (EKG); Spirometrija",
+			"reason": "Составные части спортивного осмотра, а не отдельные услуги."
+		},
+		{
+			"source": "Centar za plućne bolesti: «DOT»; HES: prevencija i suzbijanje zaraznih bolesti; skrining raka debelog crijeva i grlića materice (saopštenje MZ)",
+			"reason": "Программы общественного здравоохранения, не услуги для записи."
+		}
+	],
+	"disputed": [
+		{
+			"topic": "Medicina rada: «prethodni, periodični, kontrolni, ciljni pregled»",
+			"detail": "Заведён только prethodni → pre-employment-medical-certificate. Для периодического, контрольного и целевого осмотров работников отдельных записей каталога нет (есть residual-work-capacity-assessment — другое). Нужна запись «Periodic Occupational Health Examination» или оставить так."
+		},
+		{
+			"topic": "Patronaža: «posjete zdravstvenog tehničara zbog tretmana i postupaka po nalogu izabranog doktora»",
+			"detail": "В каталоге три варианта по расстоянию (patronage-nurse-treatment-visit-up-to-5-km / 5-to-15-km / over-15-km), сайт расстояние не называет. Не заведено."
+		},
+		{
+			"topic": "HPV vakcina («Informacije i zakazivanje za HPV vakcinu +382 68 802 339»)",
+			"detail": "Записи «HPV vaccination» в каталоге нет. Не заведено."
+		},
+		{
+			"topic": "Savjetovalište za dijabetes / HIV savjetovanje sa testiranjem / Savjetovalište za mlade / reproduktivno zdravlje",
+			"detail": "Кандидатов нет (health-prevention-counseling — слишком общее, family-planning-and-pregnancy-counseling — уже). Не заведено."
+		},
+		{
+			"topic": "Psihijatar и pulmolog как услуги без цены",
+			"detail": "Названия «Centar za mentalno zdravlje» и «Centar za plućne bolesti i TBC» сами по себе не услуги (правило 2b), но сайт описывает их работу: «specijalističko-konsultativne usluge … dijagnostike, praćenja i liječenja» и «rano otkrivanje, dijagnostiku … liječenje mentalnog zdravlja», есть поимённые специалисты. Заведены pulmonologist-examination и first-psychiatrist-examination. Если координатор трактует строже — удалить две строки."
+		}
+	],
+	"openQuestions": [
+		"Рабочее время: Mon–Fri 07:00–21:00 по сайту; выходные — закрыто (детям — Hitna) или дежурство? Если «закрыто» — можно заполнить clinic_working_hours.",
+		"dr Jela Knežević: в БД она педиатр ДЗ Подгорица; на странице ДЗ Никшич 2022 г. тоже есть, в графике октября 2026 — нет. Не привязана; подтвердить."
+	]
+}

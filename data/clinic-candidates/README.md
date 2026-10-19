@@ -58,3 +58,66 @@ node scripts/clinics/build-clinic-candidates.mjs
 
 Освободившиеся домены клиник собираются отдельно, в [`data/clinic-domains/`](../clinic-domains/).
 Там же видно, у каких кандидатов сайт умер или припаркован.
+
+## Работа с волнами
+
+С чего начинать — [STATUS.md](STATUS.md): что сделано, что дальше, цикл одной подволны,
+решения юзера и открытые хвосты.
+
+| Файл | Что это |
+|---|---|
+| `STATUS.md` | Текущее состояние и порядок продолжения. |
+| `PLAN.md` | Волны и подволны со статусами. |
+| `WAVE1_IMPORT_PROMPT.md` | Общий промпт субагента-импортёра для всех волн. |
+| `WAVE2B_DZ_ADDENDUM.md` | Дополнение к промпту для домов здоровья. |
+| `APPLY-<дата>.md` | Команды применения, собранные одним списком на дату. |
+
+Скрипты:
+
+- `scripts/clinics/build-clinic-candidates.mjs` — пересборка очереди;
+- `scripts/sql/dryrun-import.mjs` — сухой прогон SQL без записи;
+- `scripts/clinics/check-prod-clinics.mjs` — сверка на проде: числа и кодировка;
+- `scripts/clinics/mark-imported-clinics.mjs` — отметки после применения;
+- `scripts/clinics/check-clinic-domains.mjs` — журнал доменов.
+
+## Отметки после применения — формат конфига
+
+`node scripts/clinics/mark-imported-clinics.mjs <config.json> [YYYY-MM-DD]`. Конфиг — массив
+по одной записи на клинику:
+
+```json
+[
+	{
+		"slug": "dom-zdravlja-ulcinj",
+		"name": "Dom zdravlja Ulcinj",
+		"city": "ulcinj",
+		"site": "https://domzdravljaulcinj.me/",
+		"prod": 172,
+		"local": 199,
+		"place": "ulcinj/health-center-ulcinj.json",
+		"doctors": {},
+		"db": { "services": 277, "servicesPriced": 262, "labTests": 72, "labTestsPriced": 72 },
+		"pricelistStatus": "pricelist_file",
+		"pricelists": [
+			{ "url": "https://…/Cijenovnik.pdf", "kind": "pdf", "scope": "…", "approx_items": 349, "date_hint": "…" }
+		],
+		"priceNotes": "…",
+		"recheckHint": null,
+		"teamStatus": "team_page",
+		"teamUrls": [["https://…/izabrani-doktori/", "что на странице"]],
+		"teamNotes": "…",
+		"siteDoctors": [],
+		"dbOnly": []
+	}
+]
+```
+
+Пояснения к полям:
+
+- `prod` и `local` — id клиники на проде и локально. Они расходятся: прод-id берётся из
+  `check-prod-clinics.mjs`, локальный — из SELECT.
+- `place` — файл места в `data/google-places/`; `null`, если места нет.
+- `doctors` — `{ slug: прод-id }`, можно `{}`.
+- `pricelistStatus` и `teamStatus` — по легендам карт `data/clinic-pricelists/README.md` и
+  `data/clinic-teams/README.md`.
+- Клиника без списка врачей — `teamStatus: "no_team_list"` и `teamUrls: []`.

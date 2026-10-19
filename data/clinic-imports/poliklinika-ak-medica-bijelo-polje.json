@@ -1,0 +1,614 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-ak-medica-bijelo-polje",
+	"name": "Poliklinika AK Medica",
+	"city": "Bijelo Polje",
+	"cityId": 12,
+	"googlePlaceId": "ChIJp_rPsp2lUhMRAP5YnLNnO7I",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-ak-medica-bijelo-polje.sql",
+		"server/sql/insert-clinic-poliklinika-ak-medica-bijelo-polje-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 178,
+		"doctorIds": {},
+		"note": "Подволна 2c, агент I. Порядок применения обязателен. Сухой прогон на локали 2026-10-08: 0 ошибок, единственный несматченный slug — своя новая запись endoscopic-submucosal-dissection-esd, счётчики до/после совпали. Поиск врачей на локали: 8 найдены (id 1236, 728, 757, 644, 1222, 453, 1240, 1238), 5 будут созданы. clinicId и doctorIds заполнить после применения. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 205
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://akmedica.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "WordPress + Elementor. wp-json /wp/v2/pages — 46 страниц (modified 2025-08-10…2026-08-24): 12 направлений с блоком «… usluge u poliklinici AK MEDICA», 27 страниц услуг, o-nama, kontakt, nas-tim. /wp/v2/posts — 3 новости 2026-08-24 (Muhović — делегат ESBGH; Dapčević и Delević на Radio Bijelo Polje). Цен нет нигде. HTML /nas-tim/ — для фото (srcset)."
+		},
+		{
+			"type": "website",
+			"ref": "https://akmedica.me/nas-tim/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "13 врачей «dr Ime Prezime - specijalnost». modified 2026-08-24. У троих (Zlajić, Salković, Metić) картинка 2025/05/images.png → 404."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/bijelo-polje/poliklinika-ak-medica.json",
+			"collected": null,
+			"machineReadable": true,
+			"note": "place_id, координаты 43.0394365 / 19.7556464, адрес «47 Voja Lješnjaka, Бијело Поље 84000» (единственный источник улицы), телефон = сайт. 5 отзывов."
+		}
+	],
+	"coverage": {
+		"address": "Voja Lješnjaka 47 — только Google; сайт пишет лишь «Bijelo Polje 84000»",
+		"phone": "+38268955555 — сайт и Google",
+		"email": "info@akmedica.me (видимый текст шапки, футер, /kontakt; mailto в шапке — опечатка info@akmedica.com)",
+		"website": "https://akmedica.me/",
+		"social": "на сайте нет",
+		"logo": "site icon WordPress cropped-AK-Medica-Ikonica-270x270.png",
+		"workingHours": "пн–сб 09:00–21:00, вс закрыто («Ponedjeljak – Subota: 09-21h, Nedjelja: Zatvoreno», /kontakt)",
+		"doctors": "13 из /nas-tim/: 8 найдены в БД, 5 новых",
+		"doctorPhotos": "10 — внешние URL akmedica.me (768 px из srcset, у Dapčević оригинал 725 px); у троих битая заглушка → NULL. У существующих врачей фото дозаполняется только при пустом photo_url (Rebronja, Muhović, Madžgalj, Muratović)",
+		"prices": "нет на сайте; все 42 услуги NULL по дизайну",
+		"services": "42 (1 новая запись каталога — ESD)",
+		"doctorServiceLinks": "нет — сайт не называет врача ни у одной услуги",
+		"labTests": "лаборатории нет",
+		"reviews": "pending — ждут выгрузки (в файле места Google 5)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "endoscopic-submucosal-dissection-esd",
+			"nameEn": "Endoscopic Submucosal Dissection (ESD)",
+			"nameSr": "Endoskopska submukozna disekcija (ESD)",
+			"categories": [
+				6
+			],
+			"specialties": [
+				13
+			]
+		}
+	],
+	"services": [
+		{
+			"slug": "cardiologist-examination",
+			"nameEn": "Cardiologist Examination",
+			"source": "Kardiološki pregled",
+			"section": "KARDIOLOGIJA — /kardiologija/ «Kardiološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "ecg",
+			"nameEn": "ECG",
+			"source": "EKG (elektrokardiogram)",
+			"section": "KARDIOLOGIJA — /kardiologija/ «Kardiološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "echocardiography-heart-ultrasound",
+			"nameEn": "Echocardiography (Heart Ultrasound)",
+			"source": "Ultrazvuk srca (ehokardiografija)",
+			"section": "KARDIOLOGIJA — /kardiologija/ «Kardiološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "holter-ecg-24h",
+			"nameEn": "Holter ECG 24h",
+			"source": "Holter EKG-a (24h/48h)",
+			"section": "KARDIOLOGIJA — /kardiologija/ «Kardiološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "holter-ecg-48h",
+			"nameEn": "Holter ECG 48h",
+			"source": "Holter EKG-a (24h/48h)",
+			"section": "KARDIOLOGIJA — /kardiologija/ «Kardiološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "holter-blood-pressure-24h",
+			"nameEn": "Holter Blood Pressure 24h",
+			"source": "Holter krvnog pritiska (24h)",
+			"section": "KARDIOLOGIJA — /kardiologija/ «Kardiološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "first-gastroenterologist-examination",
+			"nameEn": "First Gastroenterologist Examination",
+			"source": "Gastroenterohepatološki pregled",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "abdomen-ultrasound",
+			"nameEn": "Abdomen Ultrasound",
+			"source": "Ultrazvuk abdomena",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "gastroscopy-without-anesthesia",
+			"nameEn": "Gastroscopy without Anesthesia",
+			"source": "Endoskopski pregledi sa ili bez analgosedacije: Gastroskopija (ezofagogastroduodenoskopija)",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "gastroscopy-with-anesthesia",
+			"nameEn": "Gastroscopy with Anesthesia",
+			"source": "то же — с analgosedacijom",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "colonoscopy-without-anesthesia",
+			"nameEn": "Colonoscopy without Anesthesia",
+			"source": "Endoskopski pregledi sa ili bez analgosedacije: Kolonoskopija",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "colonoscopy-with-anesthesia",
+			"nameEn": "Colonoscopy with Anesthesia",
+			"source": "то же — с analgosedacijom",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "esophagogastroduodenoscopy-with-biopsy",
+			"nameEn": "Esophagogastroduodenoscopy with Biopsy",
+			"source": "Endoskopske intervencije: Biopsije sluznice želuca i dvanaestopalačnog crijeva",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "colonoscopy-with-polypectomy",
+			"nameEn": "Colonoscopy with Polypectomy",
+			"source": "Polipektomija – uklanjanje polipa iz debelog crijeva",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "emr-endoscopic-mucosal-resection",
+			"nameEn": "EMR Endoscopic Mucosal Resection",
+			"source": "Uklanjanje velikih tumorskih lezija iz debelog crijeva … endoskopske mukozne resekcije (EMR)",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "endoscopic-submucosal-dissection-esd",
+			"nameEn": "Endoscopic Submucosal Dissection (ESD)",
+			"source": "… i endoskopske submukozne disekcije (ESD) (новая запись)",
+			"section": "GASTROENTEROLOGIJA — /gastroenterologija/ «Gastroenterohepatološke usluge u poliklinici AK MEDICA»",
+			"price": null,
+			"newInCatalog": true
+		},
+		{
+			"slug": "pulmonologist-examination",
+			"nameEn": "Pulmonologist Examination",
+			"source": "Pregled pulmologa",
+			"section": "PULMOLOGIJA — /pulmologija/",
+			"price": null
+		},
+		{
+			"slug": "lung-ultrasound",
+			"nameEn": "Lung Ultrasound",
+			"source": "Ultrazvuk pluća",
+			"section": "PULMOLOGIJA — /pulmologija/",
+			"price": null
+		},
+		{
+			"slug": "rheumatologist-examination",
+			"nameEn": "Rheumatologist Examination",
+			"source": "Pregled reumatologa",
+			"section": "REUMATOLOGIJA — /reumatologija/",
+			"price": null
+		},
+		{
+			"slug": "joint-and-soft-tissue-ultrasound",
+			"nameEn": "Joint and Soft Tissue Ultrasound",
+			"source": "Ultrazvuk zglobova i mekih tkiva",
+			"section": "REUMATOLOGIJA — /reumatologija/",
+			"price": null
+		},
+		{
+			"slug": "hematologist-examination",
+			"nameEn": "Hematologist Examination",
+			"source": "Hematološki pregled",
+			"section": "HEMATOLOGIJA — /hematologija/",
+			"price": null
+		},
+		{
+			"slug": "endocrinologist-examination",
+			"nameEn": "Endocrinologist Examination",
+			"source": "Endokrinološki pregled",
+			"section": "ENDOKRINOLOGIJA — /endokrinologija/",
+			"price": null
+		},
+		{
+			"slug": "thyroid-ultrasound",
+			"nameEn": "Thyroid Ultrasound",
+			"source": "Ultrazvuk štitaste žlijezde",
+			"section": "ENDOKRINOLOGIJA — /endokrinologija/",
+			"price": null
+		},
+		{
+			"slug": "first-neurologist-examination",
+			"nameEn": "First Neurologist Examination",
+			"source": "Neurološki pregled",
+			"section": "NEUROLOGIJA — /neurologija/ «Neurološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "doppler-neck-blood-vessels",
+			"nameEn": "Doppler Neck Blood Vessels",
+			"source": "Color Doppler krvnih sudova vrata",
+			"section": "NEUROLOGIJA — /neurologija/ «Neurološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "electromyoneurography-emng",
+			"nameEn": "Electromyoneurography (EMNG)",
+			"source": "Elektromioneurografija (EMNG)",
+			"section": "NEUROLOGIJA — /neurologija/ «Neurološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "electroencephalography",
+			"nameEn": "Electroencephalography",
+			"source": "Elektroencefalografija (EEG)",
+			"section": "NEUROLOGIJA — /neurologija/ «Neurološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "allergist-examination",
+			"nameEn": "Allergist Examination",
+			"source": "Alergološki pregled",
+			"section": "ALERGOLOGIJA — /alergologija/",
+			"price": null
+		},
+		{
+			"slug": "urologist-examination",
+			"nameEn": "Urologist Examination",
+			"source": "Urološki pregled",
+			"section": "UROLOGIJA — /urologija/ «Urološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "urinary-tract-ultrasound",
+			"nameEn": "Urinary Tract Ultrasound",
+			"source": "Ultrazvučni urološki pregled — «Ultrazvuk bubrega, mokraćne bešike i prostate»",
+			"section": "UROLOGIJA — /urologija/ «Urološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "testicular-ultrasound",
+			"nameEn": "Testicular Ultrasound",
+			"source": "Ultrazvučni urološki pregled — «Ultrazvuk muškog reproduktivnog sistema» (testisi, epididimis)",
+			"section": "UROLOGIJA — /urologija/ «Urološke usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "pain-medicine-subspecialist-examination",
+			"nameEn": "Pain Medicine Subspecialist Examination",
+			"source": "SPECIJALISTIČKI PREGLED ZA TERAPIJU BOLA",
+			"section": "TERAPIJA BOLA — /terapija-bola/ «Usluge u okviru terapije bola u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "medication-infiltration",
+			"nameEn": "Medication Infiltration",
+			"source": "Invazivne procedure – … infiltracije",
+			"section": "TERAPIJA BOLA — /terapija-bola/ «Usluge u okviru terapije bola u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "epidural-steroid-injection-for-lumbar-syndrome",
+			"nameEn": "Epidural Steroid Injection for Lumbar Syndrome",
+			"source": "Invazivne procedure – … epiduralne injekcije (единственная запись каталога про эпидуральную инъекцию)",
+			"section": "TERAPIJA BOLA — /terapija-bola/ «Usluge u okviru terapije bola u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "tens-therapy",
+			"nameEn": "TENS Therapy",
+			"source": "Neinvazivne procedure – TENS (transkutana električna nervna stimulacija)",
+			"section": "TERAPIJA BOLA — /terapija-bola/ «Usluge u okviru terapije bola u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "acupuncture",
+			"nameEn": "Acupuncture",
+			"source": "Neinvazivne procedure – … akupunktura",
+			"section": "TERAPIJA BOLA — /terapija-bola/ «Usluge u okviru terapije bola u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "neck-ultrasound",
+			"nameEn": "Neck Ultrasound",
+			"source": "/ultrazvuk-vrata/ ULTRAZVUK VRATA",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA — отдельные страницы услуг",
+			"price": null
+		},
+		{
+			"slug": "ultrasound-axilla-and-groin",
+			"nameEn": "Ultrasound Axilla and Groin",
+			"source": "/ultrazvuk-pazusnih-jama-aksila/ ULTRAZVUK PAZUŠNIH JAMA (AKSILA) + ULTRAZVUK PREPONSKE (INGVINALNE) REGIJE",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA — отдельные страницы услуг",
+			"price": null
+		},
+		{
+			"slug": "doppler-lower-extremity-blood-vessels",
+			"nameEn": "Doppler Lower Extremity Blood Vessels",
+			"source": "/color-doppler-krvnih-sudova-donjih-ekstremiteta/ COLOR DOPPLER … DONJIH EKSTREMITETA",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA — отдельные страницы услуг",
+			"price": null
+		},
+		{
+			"slug": "doppler-upper-extremity-blood-vessels",
+			"nameEn": "Doppler Upper Extremity Blood Vessels",
+			"source": "та же страница: COLOR DOPPLER KRVNIH SUDOVA GORNJIH EKSTREMITETA",
+			"section": "ULTRAZVUČNA DIJAGNOSTIKA — отдельные страницы услуг",
+			"price": null
+		},
+		{
+			"slug": "first-psychiatrist-examination",
+			"nameEn": "First Psychiatrist Examination",
+			"source": "Psihijatrijski pregled",
+			"section": "PSIHIJATRIJA — /psihijatrija/ «Psihijatrijske usluge u poliklinici AK MEDICA»",
+			"price": null
+		},
+		{
+			"slug": "individual-supportive-psychotherapy-and-counseling",
+			"nameEn": "Individual Supportive Psychotherapy and Counseling",
+			"source": "Individualno savjetovanje i terapija",
+			"section": "PSIHIJATRIJA — /psihijatrija/ «Psihijatrijske usluge u poliklinici AK MEDICA»",
+			"price": null
+		}
+	],
+	"doctors": [
+		{
+			"slug": "ivan-bozovic",
+			"nameSr": "Ivan Božović",
+			"professionalTitle": "dr",
+			"position": "Endokrinolog",
+			"specialtyIds": [
+				12
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "В БД id 1236 (Opšta bolnica Bijelo Polje, спец. 2,12). Тот же город и специальность."
+		},
+		{
+			"slug": "milena-dapcevic",
+			"nameSr": "Milena Dapčević",
+			"professionalTitle": "dr",
+			"position": "Hematolog",
+			"specialtyIds": [
+				15
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "В БД id 728 (KCCG, Luča; с био и фото — не трогали)."
+		},
+		{
+			"slug": "almir-rebronja",
+			"nameSr": "Almir Rebronja",
+			"professionalTitle": "dr",
+			"position": "Urolog",
+			"specialtyIds": [
+				9
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "В БД id 757 (KCCG). Тот же врач в Poliklinika Da Vinci — одна запись. Фото дозаполняется (в БД пусто)."
+		},
+		{
+			"slug": "natasa-bogavac",
+			"nameSr": "Nataša Bogavac",
+			"professionalTitle": "dr",
+			"position": "Endokrinolog",
+			"specialtyIds": [
+				12
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "Новая. В БД есть natasa-tmusic-bogavac (izabrani doktor za odrasle) — другая специальность и двойная фамилия, не сопоставлена."
+		},
+		{
+			"slug": "damir-muhovic",
+			"nameSr": "Damir Muhović",
+			"professionalTitle": "dr",
+			"position": "Gastroenterohepatolog",
+			"specialtyIds": [
+				13
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "В БД id 644 (KCCG, Moj Lab, A3 Medical). Новость сайта: делегат ESBGH от Ljekarske komore — био у существующего врача не трогали."
+		},
+		{
+			"slug": "milan-madzgalj",
+			"nameSr": "Milan Madžgalj",
+			"professionalTitle": "dr",
+			"position": "Neurolog",
+			"specialtyIds": [
+				8
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "В БД id 1222 (ДЗ и ОБ Bijelo Polje)."
+		},
+		{
+			"slug": "nikola-delevic",
+			"nameSr": "Nikola Delević",
+			"professionalTitle": "dr",
+			"position": "Alergolog i klinički imunolog",
+			"specialtyIds": [
+				79,
+				80
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "В БД id 453 (KCCG, Kerber; спец. 79,80). «alergolog» (nas-tim), «alergolog i klinički imunolog» (новость)."
+		},
+		{
+			"slug": "erol-muratovic",
+			"nameSr": "Erol Muratović",
+			"professionalTitle": "dr",
+			"position": "Kardiolog",
+			"specialtyIds": [
+				1
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "В БД id 1240 (ОБ Bijelo Polje, спец. 1,2)."
+		},
+		{
+			"slug": "ivan-vucetic",
+			"nameSr": "Ivan Vučetić",
+			"professionalTitle": "dr",
+			"position": "Reumatolog",
+			"specialtyIds": [
+				16
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "Новый. В источнике мягкий перенос «Vuče­tić» — снят."
+		},
+		{
+			"slug": "stefan-stojkovic",
+			"nameSr": "Stefan Stojković",
+			"professionalTitle": "dr",
+			"position": "Gastroenterohepatolog",
+			"specialtyIds": [
+				13
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": true,
+			"services": [],
+			"note": "Новый."
+		},
+		{
+			"slug": "aleksandar-zlajic",
+			"nameSr": "Aleksandar Zlajić",
+			"professionalTitle": "dr",
+			"position": "Psihijatar",
+			"specialtyIds": [
+				21
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "В БД id 1238 (ОБ Bijelo Polje). Фото на сайте — битая заглушка."
+		},
+		{
+			"slug": "enes-salkovic",
+			"nameSr": "Enes Salković",
+			"professionalTitle": "dr",
+			"position": "Psihijatar",
+			"specialtyIds": [
+				21
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новый. Фото — битая заглушка."
+		},
+		{
+			"slug": "mersija-metic",
+			"nameSr": "Mersija Metić",
+			"professionalTitle": "dr",
+			"position": "Neurolog",
+			"specialtyIds": [
+				8
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"hasPhoto": false,
+			"services": [],
+			"note": "Новая. Фото — битая заглушка."
+		}
+	],
+	"excluded": [
+		{
+			"source": "/terapija-bola/: «Invazivne procedure – blokade nerava»",
+			"reason": "Спорное: в каталоге нет общей «блокады нерва», только конкретные (Intercostal / Sciatic / Brachial Plexus / Paravertebral / Other Peripheral Nerve Block…). Какие блокады делают — сайт не говорит."
+		},
+		{
+			"source": "/gastroenterologija/: «Zaustavljanje krvarenja jednjaka, želuca, dvanaestopalačnog crijeva i debelog crijeva»",
+			"reason": "Спорное: каталог делит эндоскопический гемостаз по методу (EGD/Colonoscopy with Injection Hemostasis, … with Mechanical Hemoclip Hemostasis), метод сайт не называет. Generic-записи «эндоскопический гемостаз» нет."
+		},
+		{
+			"source": "/terapija-bola/: «Farmakološke terapije – analgetici, mišićni relaksansi …; Nefarmakološke metode – edukacija, relaksacione tehnike, psihološka podrška»",
+			"reason": "Подходы к лечению, не процедуры каталога."
+		},
+		{
+			"source": "/psihijatrija/: «Edukacija porodice i podrška bližnjima»",
+			"reason": "Эквивалента в каталоге нет (Family Psychotherapy Session — психотерапия, не обучение семьи); заводить generic-запись под формулировку без конкретной процедуры не стали."
+		},
+		{
+			"source": "/gastroskopija/ «Gastroskopija omogućava: … uklanjanje polipa ili stranog tijela, dilataciju (širenje) suženja jednjaka»; /kolonoskopija/ «Kolonskopija omogućava: … biopsija …»",
+			"reason": "Возможности метода вообще. Услуги клиники — только список «Endoskopske intervencije» на /gastroenterologija/ (биопсии желудка и ДПК, полипэктомия толстой кишки, EMR/ESD, гемостаз)."
+		},
+		{
+			"source": "«Preporuka za dodatne pretrage … spirometrija, kapilaroskopija, bronhoskopija, specifični IgE, testovi na inhalacione ili nutritivne alergene, neuropsihološko testiranje …» (страницы pregleda)",
+			"reason": "Что врач может назначить, а не что делает клиника."
+		},
+		{
+			"source": "Ultrazvučni urološki pregled → Urologist Examination with Ultrasound",
+			"reason": "Не выбрано: сайт отделяет «Urološki pregled» от «Ultrazvučni urološki pregled», а страница последнего описывает УЗИ почек/мочевого пузыря/простаты и мошонки — сопоставлено с Urinary Tract Ultrasound + Testicular Ultrasound."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Направления без врача",
+			"detail": "Pulmologija (Pregled pulmologa, Ultrazvuk pluća) и Terapija bola (pregled, infiltracije, epiduralne injekcije, TENS, akupunktura) есть на сайте, но в /nas-tim/ нет ни пульмонолога, ни анестезиолога/алголога. Услуги заведены — сайт их заявляет; если направления фактически не работают — убрать."
+		},
+		{
+			"topic": "Epiduralne injekcije → Epidural Steroid Injection for Lumbar Syndrome",
+			"detail": "Единственная запись каталога про эпидуральную инъекцию (остальные — анестезия/катетер). Сайт не уточняет ни стероид, ни уровень."
+		},
+		{
+			"topic": "Infiltracije → Medication Infiltration",
+			"detail": "Выбрана «Infiltracija lijeka» (id 4079, категория физиотерапии) — инфильтрация лекарства, что и есть в терапии боли. Альтернатива — generic «Infiltration» (id 2126, амбулаторная хирургия)."
+		},
+		{
+			"topic": "EMR → EMR Endoscopic Mucosal Resection",
+			"detail": "Сайт: «Uklanjanje velikih tumorskih lezija iz debelog crijeva … EMR i ESD». Выбрана emr-endoscopic-mucosal-resection («EMR (za polipe 25 mm i više)») — про крупные образования; альтернатива colonoscopy-with-mucosectomy (FZOCG-позиция, без размера). ESD — новая запись."
+		},
+		{
+			"topic": "Адрес только из Google",
+			"detail": "Сайт не называет улицу. «Voja Lješnjaka 47» — из Google Places."
+		}
+	]
+}

@@ -1,0 +1,164 @@
+{
+	"schemaVersion": 1,
+	"slug": "tafica-dental-clinic-ulcinj",
+	"name": "Tafica Dental & Dermatology Clinic",
+	"city": "Ulcinj",
+	"cityId": 5,
+	"googlePlaceId": "ChIJja4C-WQTThMR-4-t1EmDqW8",
+	"clinicTypeIds": [
+		2,
+		10
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-tafica-dental-clinic-ulcinj.sql",
+		"server/sql/insert-clinic-tafica-dental-clinic-ulcinj-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 209,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug (услуг в нём нет — только проверки). Подволна 2d, агент S. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. ⚠️ Карточка почти пустая: сайт — заглушка, врачи не заведены (специальности не названы). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 236
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.tafica.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Заглушка «under construction» на 3 языках (sq/sr/en), Last-Modified 2026-02-11. Есть: название «Tafica Dental & Dermatology Clinic», 4 «Dr.» с телефонами (Dr. Liridon Tafica +382 69 572 346, dentalclinic@tafica.com; Dr. Darsei Curanovic +382 69 215 931; Dr. Admir Halili +382 69 229 134; Dr. Arbnore Tafica +355 69 727 8118, dermatologyclinic@tafica.com), «Instagram: tafica.clinic», ссылка на Google Maps, адрес «Rr. Nënë Tereza, Ulcinj 85360, Montenegro». Услуг, цен, часов, специальностей нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/ulcinj/tafica-dental-clinic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Tafica Dental Clinic» (types: dental_clinic, medical_clinic), «Rr. Nënë Tereza, Ulcinj 85360», +382 69 572 346, 15 отзывов (rating 5.0) — не импортировались (pending). В отзывах (не источник фактов для импорта): «dentist Liridon Tafica» (удаление зуба), «Dr Admir Halili» (восстановил моляр после выпавшей амальгамовой пломбы), лечение каналов, зуб мудрости."
+		}
+	],
+	"coverage": {
+		"address": "Majke Tereze (сайт и Google — «Rr. Nënë Tereza», алб.); координаты — место Google",
+		"phone": "+38269572346 (= Google, Dr. Liridon Tafica), +38269215931, +38269229134, +355697278118 — все со страницы",
+		"email": "dentalclinic@tafica.com (стоматология); dermatologyclinic@tafica.com (дерматология) — в карточке одно поле email, второй адрес — только в записи импорта",
+		"website": "https://www.tafica.com/ (заглушка)",
+		"social": "@tafica.clinic — страница",
+		"logo": "https://www.tafica.com/logo.png",
+		"workingHours": "на сайте нет — не заполнено",
+		"doctors": "done (4, по косвенным признакам)",
+		"doctorPhotos": "—",
+		"doctorBios": "—",
+		"services": "0 — на сайте нет",
+		"prices": "нет",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [],
+	"doctors": [
+		{
+			"slug": "liridon-tafica",
+			"name": "Liridon Tafica",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"position": "Stomatolog",
+			"phone": "+38269572346",
+			"existing": false,
+			"photo": null,
+			"basis": "email dentalclinic@, телефон = телефон места Google"
+		},
+		{
+			"slug": "darsei-curanovic",
+			"name": "Darsei Curanović",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"position": "Stomatolog",
+			"phone": "+38269215931",
+			"existing": false,
+			"photo": null,
+			"basis": "вторым в блоке стоматологов на странице; других признаков нет"
+		},
+		{
+			"slug": "admir-halili",
+			"name": "Admir Halili",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"position": "Stomatolog",
+			"phone": "+38269229134",
+			"existing": false,
+			"photo": null,
+			"basis": "в блоке стоматологов; отзыв Google о лечении моляра"
+		},
+		{
+			"slug": "arbnore-tafica",
+			"name": "Arbnore Tafica",
+			"specialtyIds": [
+				7
+			],
+			"languageIds": [
+				1
+			],
+			"position": "Dermatolog",
+			"phone": "+355697278118",
+			"existing": false,
+			"photo": null,
+			"basis": "email dermatologyclinic@"
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«Faqja jonë është aktualisht në ndërtim. / Naša web stranica je trenutno u izradi. / Our website is currently under construction.»",
+			"reason": "Заглушка — ни одной услуги на сайте. Услуги по отзывам Google (удаление, каналы, пломбы) не заводили: отзывы — не источник фактов импорта."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Карточка почти пустая, тип клиники",
+			"detail": "Сайт — заглушка. Заведены название, адрес, координаты, 4 телефона, email, Instagram, логотип, короткое описание и типы DENTAL_CLINIC + DERMATOLOGY_CLINIC (по названию «Dental & Dermatology Clinic»). Google знает место только как «Tafica Dental Clinic» (dental_clinic). Если дерматологии фактически нет в Ульцине (контакт с албанским номером) — оставить только тип 2."
+		}
+	],
+	"resolved": [
+		{
+			"source": "«Dr. Liridon Tafica — Tel.: +382 69 572 346 — Email: dentalclinic@tafica.com»",
+			"reason": "Специальность не названа. Косвенно — стоматолог: контакт dentalclinic@, его телефон = телефон места Google «Tafica Dental Clinic»; в отзыве Google — «dentist Liridon Tafica». Явного факта на сайте нет — не заведён. Если юзер согласен с косвенными признаками: slug liridon-tafica, 78 DENTISTRY.",
+			"resolution": "Заведён(а) по косвенным признакам. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "«Dr. Darsei Curanovic — Tel.: +382 69 215 931»",
+			"reason": "Специальность не названа, косвенных признаков нет (ни email, ни упоминаний в отзывах). Написание фамилии на сайте без диакритики — Curanovic/Ćuranović не проверить. Не заведён.",
+			"resolution": "Заведён(а) по косвенным признакам. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "«Dr. Admir Halili — Tel.: +382 69 229 134»",
+			"reason": "Специальность на сайте не названа. В отзыве Google: «Dr Admir Halili … поправил мне красивый моляр» — косвенно стоматолог, но отзыв не источник фактов. Не заведён. Если юзер согласен: slug admir-halili, 78.",
+			"resolution": "Заведён(а) по косвенным признакам. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "«Dr. Arbnore Tafica — Tel.: +355 69 727 8118 — Email: dermatologyclinic@tafica.com»",
+			"reason": "Специальность не названа. Косвенно — дерматолог (контакт dermatologyclinic@), номер албанский (+355) — возможно, принимает не постоянно. Не заведена. Если юзер согласен: slug arbnore-tafica, 7 DERMATOVENEROLOGY.",
+			"resolution": "Заведён(а) по косвенным признакам. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		}
+	]
+}

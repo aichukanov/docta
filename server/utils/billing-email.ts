@@ -7,6 +7,7 @@ import { BillingService } from '~/enums/billing-service';
 import { sendEmail } from './email';
 import { generateEmailHTML } from './email-templates';
 import { formatEurCents } from '~/interfaces/billing';
+import { escapeHtml } from '~/common/escape-html';
 
 export interface PurchasedServiceLine {
 	serviceId: number;
@@ -183,7 +184,7 @@ export async function sendPurchaseConfirmationEmail(params: {
 
 	const contentHtml = `
 		<p>${template.greeting}</p>
-		<p>${template.intro(params.clinicName)}</p>
+		<p>${template.intro(escapeHtml(params.clinicName))}</p>
 		<div class="info-box" style="background: white; padding: 15px; border-radius: 6px; margin: 15px 0;">
 			${rowsHtml}
 			<div class="info-row" style="margin-top: 12px;">

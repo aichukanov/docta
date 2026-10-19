@@ -1,0 +1,153 @@
+{
+	"schemaVersion": 1,
+	"slug": "ossphysio-bar",
+	"name": "OssPhysio",
+	"city": "Bar",
+	"cityId": 7,
+	"googlePlaceId": "ChIJW28rHgB1ThMRAFhjsoLtkI0",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ossphysio-bar.sql",
+		"server/sql/insert-clinic-ossphysio-bar-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 233,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Y. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Сухой прогон 2026-10-09 на локали (plain + shadow для services) — см. отчёт агента. Slug клиники сверен с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 260
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.oss-physio.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Vite/React SPA; словари i18n me/en в /assets/index-DXjDuVFh.js. Разделы: usluge (9), oprema (BTL Tecar, BTL Shockwave, BTL 4825SL), o nama, galerija, cjenovnik (только подписи: massage30, massage60, kinesitherapy, electrotherapy, tecar, shockwave, cupping, chiropractic — без чисел и без кода, который их выводит), kontakt. Часов работы нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/bar/ossphysio.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJW28rHgB1ThMRAFhjsoLtkI0, координаты 42.0881387 / 19.1219796, +382 69 962 056, «84 Belvederska, Bar 85000». Рейтинга и отзывов в файле нет."
+		}
+	],
+	"coverage": {
+		"address": "Belvederska 84, Čeluga, 85353 — улица/посёлок/индекс с сайта, номер дома из Google",
+		"phone": "+38269962056;+38268228337 — оба tel: сайта (первый = Google)",
+		"whatsapp": "+38269962056 — wa.me на сайте",
+		"email": "ossphysiobar@gmail.com — сайт",
+		"website": "https://www.oss-physio.com/",
+		"social": "@ossphysio — instagram.com/ossphysio на сайте (не открывался); Facebook нет",
+		"logo": "нет — только favicon",
+		"workingHours": "нет — ни на сайте, ни в Google",
+		"description": "из словарей сайта: hero, услуги, оборудование, «O nama»",
+		"languages": "только SR — сайт me/en, приём на других языках не заявлен",
+		"doctors": "нет — имён на сайте нет",
+		"prices": "цен нет — 12 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — в файле Google отзывов нет"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"slug": "relaxing-massage",
+			"nameEn": "Relaxing Massage",
+			"price": null,
+			"source": "services.massage «Masaža» — «Opuštajuća, sportska i medicinska masaža za relaksaciju i rehabilitaciju»",
+			"note": "Длительности 30/60 есть только в ключах словаря Cjenovnika (massage30/massage60), на странице не выводятся — взяты записи без длительности."
+		},
+		{
+			"slug": "sports-massage",
+			"nameEn": "Sports Massage",
+			"price": null,
+			"source": "services.massage — «… sportska … masaža»"
+		},
+		{
+			"slug": "therapeutic-massage-complete",
+			"nameEn": "Complete Therapeutic Massage",
+			"price": null,
+			"source": "services.massage — «… i medicinska masaža za … rehabilitaciju» (зона не указана — generic)"
+		},
+		{
+			"slug": "kinesiotherapy",
+			"nameEn": "Kinesiotherapy",
+			"price": null,
+			"source": "services.kinesitherapy — «Kineziterapija — Terapeutske vježbe za vraćanje pokretljivosti i snage»"
+		},
+		{
+			"slug": "electrotherapy",
+			"nameEn": "Electrotherapy",
+			"price": null,
+			"source": "services.electrotherapy — «Elektroterapija — Moderna terapija električnim stimulacijama za brži oporavak»; equipment.electro «BTL 4825SL – ELEKTRO I ULTRAZVUČNA TERAPIJA»"
+		},
+		{
+			"slug": "ultrasound-therapy",
+			"nameEn": "Ultrasound Therapy",
+			"price": null,
+			"source": "equipment.electro — «BTL 4825SL – ELEKTRO I ULTRAZVUČNA TERAPIJA … objedinjuje elektroterapiju, ultrazvučnu terapiju i kombinovanu terapiju. Koristi se … za smanjenje bola»"
+		},
+		{
+			"slug": "tecar-therapy",
+			"nameEn": "Tecar Therapy",
+			"price": null,
+			"source": "services.tecar «Tecar terapija» — «Napredna radiofrekventna terapija …»; equipment.tecar «BTL TECAR TERAPIJA»"
+		},
+		{
+			"slug": "shock-wave-therapy",
+			"nameEn": "Shock Wave Therapy",
+			"price": null,
+			"source": "services.shockwave «Shockwave terapija» — «Visokoenergetski akustični talasi …»; equipment.shockwave «BTL SHOCKWAVE TERAPIJA»"
+		},
+		{
+			"slug": "cupping-therapy",
+			"nameEn": "Cupping Therapy",
+			"price": null,
+			"source": "services.cupping «Hidžama (Cupping)» — «Tradicionalna terapija vakuum čašicama» (Hidžama — уже синоним; вид — сухая/влажная — не указан)"
+		},
+		{
+			"slug": "chiropractic-treatment",
+			"nameEn": "Chiropractic Treatment",
+			"price": null,
+			"source": "services.chiropractic «Kiropraktika» — «Manualna terapija za korekciju kičme i zglobova»"
+		},
+		{
+			"slug": "acupuncture",
+			"nameEn": "Acupuncture",
+			"price": null,
+			"source": "services.acupuncture «Akupunktura» — «Tradicionalna metoda za ublažavanje bola, poboljšanje cirkulacije i opšteg zdravlja»"
+		},
+		{
+			"slug": "taping-application",
+			"nameEn": "Taping Application",
+			"price": null,
+			"source": "services.kinesioTaping «Kinesio Taping» — «Elastični flasteri za podršku mišićima …» (Kinesio taping — уже синоним)"
+		}
+	],
+	"doctors": [],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "pricing «Cjenovnik — Transparentne cijene za sve usluge»: massage30 «Masaža», massage60 «Masaža», …, from «od»",
+			"reason": "Только подписи словаря, без чисел и длительностей на странице; компонент цен в бандле не выводит значений — цен нет, записи с длительностью (30/60 min) не взяты."
+		},
+		{
+			"source": "about.equipmentContent — «aparat za Elektroterapiju sa ultrazvukom i laserom»",
+			"reason": "Лазер упомянут только как функция аппарата, ни в услугах, ни в блоке оборудования как терапия не назван — laser-therapy не заведена (ультразвук заведён: блок «BTL 4825SL – ELEKTRO I ULTRAZVUČNA TERAPIJA»)."
+		},
+		{
+			"source": "services.cupping — «Tradicionalna terapija vakuum čašicama za detoksikaciju»",
+			"reason": "Сопоставлено с cupping-therapy (вид не указан, wet-cupping-back не взят); «detoksikacija» — формулировка сайта, в описание не вынесена."
+		}
+	],
+	"openQuestions": []
+}

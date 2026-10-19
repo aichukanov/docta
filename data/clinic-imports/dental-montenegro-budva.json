@@ -1,0 +1,215 @@
+{
+	"schemaVersion": 1,
+	"slug": "dental-montenegro-budva",
+	"name": "Dental Montenegro",
+	"city": "Budva",
+	"cityId": 3,
+	"googlePlaceId": "ChIJLcP15BbUTRMRC61qGgrhtCw",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"network": {
+		"name": "Dental Montenegro (Center for Dental Implantology and Cosmetic Dentistry)",
+		"siblings": [
+			"splendid-dental-budva"
+		],
+		"note": "Две ординации (/me/kontakt: «Dental Montenegro» — Alekse Šantića 1; «Splendid Dental (Dental Montenegro 2)» — Hotel Splendid SPA); у нас — отдельные клиники. Сайт не делит ни врачей, ни услуги — одинаковые списки."
+	},
+	"sql": [
+		"server/sql/insert-clinic-dental-montenegro-budva.sql",
+		"server/sql/insert-clinic-dental-montenegro-budva-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 196,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент Q. Сухой прогон на локальной БД (без записи) — 0 ошибок, см. итоговый отчёт агента. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 223
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.dentalmontenegro.com/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Самописный CMS (Minmedia), me/en/ru. Прочитаны /me, /me/o-nama, /me/usluge, /me/usluge/{implantologija,ortopedija,terapija-laserom,x-ray-ortopan,estetska-stomatologija}, /me/kontakt, /me/dental-montenegro, /me/splendid-dental (пустой шаблон), /me/nase-ordinacije (только Dental Montenegro), /me/dental-turizam, /me/novosti, /me/cijene (пустой шаблон — цен нет), /me/o-nama/{profesor-dr-zoran-lazi, dr-spec-bojan-skufca, dr-bojana-ivanovic}. sitemap.xml ещё на старом домене dental.creatiwwwa.me."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/budva/center-for-dental-implantology-and-cosmetic-dentistry-dental.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Place «Center for Dental Implantology and Cosmetic Dentistry-Dental Montenegro», «1 Alekse Šantića, Budva 85310», +382 67 211 777, 43 отзыва (4.4) — не импортировались. В отзывах — врачи, которых нет на сайте (см. excluded)."
+		}
+	],
+	"coverage": {
+		"address": "Alekse Šantića 1, Bečići — сайт = Google; координаты — место Google",
+		"phone": "+38233472935;+38267211777 — сайт; второй = Google",
+		"email": "dentalmontenegro@gmail.com — сайт",
+		"website": "https://www.dentalmontenegro.com/",
+		"social": "Facebook-страница «centar-za-implantologiju-i-estetsku-stomatologiju-137164939630773», @dental_montenegro — футер",
+		"logo": "https://www.dentalmontenegro.com/images/dental-montenegro-budva.svg",
+		"workingHours": "пн–пт 09–18, сб и вс — выходные (/me/kontakt)",
+		"doctors": "3 врача /me/o-nama: 2 новых + Bojana Ivanović (id 467) — привязка; привязаны к обеим ординациям",
+		"doctorPhotos": "у новых — оригиналы /fajlovi/*.jpg (без tumber.php); у Ivanović своё фото в БД",
+		"doctorBios": "у Lazić и Škufca — со страниц врачей",
+		"prices": "1 из 9: осмотр с предварительным расчётом = 0 € («besplatni»); остальные NULL. /me/cijene пустая",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "bitewing-x-ray",
+			"nameEn": "Bitewing X-Ray",
+			"categories": [
+				3,
+				20
+			],
+			"specialties": [
+				10,
+				78
+			],
+			"reason": "dentalmontenegro.com /me/usluge/x-ray-ortopan: «Zagrizni (bite wing) snimak — Zagrizni snimak koristi se za dijagnostiku karijesa u prostorima između dva zuba». Отдельная проекция, в каталоге нет ни под одним названием (bitewing / zagrizni / interproximal). Категории и специальности — как у intraoral-x-ray (3 XRAY + 20 DENTISTRY; 10 + 78)."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Dental Consultation with Treatment Plan",
+			"slug": "dental-consultation-with-treatment-plan",
+			"source": "/me/o-nama: «Pregled sa predračunom, konsultacije i savet su besplatni!»; /me/dental-turizam: «Besplatne konsultacije … okviran plan terapije, trajanje kao i iznos predračuna»",
+			"price": 0
+		},
+		{
+			"nameEn": "Dental Implant Nobel Biocare",
+			"slug": "dental-implant-nobel-biocare",
+			"source": "/me/usluge/implantologija: «Koriste se isključivo implantati Nobel Biocare»"
+		},
+		{
+			"nameEn": "Immediate Implant Placement",
+			"slug": "immediate-implant-placement",
+			"source": "«U toku implantološke intervencije koriste se sve najnovije savremene metode: imedijatna ugradnja»"
+		},
+		{
+			"nameEn": "Implant Suprastructure",
+			"slug": "implant-suprastructure",
+			"source": "«ukoliko nedostaje više zuba implantati služe kao nosač mosta»; «bezubost: … ugrađuje se minimum 6-8 implantata u jednu vilicu a zatim se izrađuje cirkularni most»"
+		},
+		{
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"source": "/me/usluge/ortopedija: «koristimo najkvalitetnije sisteme bravica na tržištu … fiksnih proteza» — материал/система не названы"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "/me/usluge/estetska-stomatologija: «Fasete su tanke ljuspice od keramike koje se fiksiraju na prednju površinu zuba»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "/me/usluge/x-ray-ortopan: «Za snimak ortopana …»; «digitalni ortopan poslednje generacije RayScan by Samsung»"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "«Retroalveolarni snimak daje nam uvid u stanje 1-3 zuba»; «digitalni intraoralni rendgen \"Cefla\"»"
+		},
+		{
+			"nameEn": "Bitewing X-Ray",
+			"slug": "bitewing-x-ray",
+			"source": "«Zagrizni (bite wing) snimak — … za dijagnostiku karijesa u prostorima između dva zuba» (НОВАЯ запись каталога)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "zoran-lazic",
+			"nameSr": "Zoran Lazić",
+			"professionalTitle": "Prof. dr",
+			"position": "Specijalista oralne hirurgije (implantologija)",
+			"specialtyIds": [
+				78,
+				74
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"services": []
+		},
+		{
+			"slug": "bojan-skufca",
+			"nameSr": "Bojan Škufca",
+			"professionalTitle": "Dr spec.",
+			"position": "Specijalista ortopedije vilica",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"services": []
+		},
+		{
+			"slug": "bojana-ivanovic",
+			"nameSr": "Bojana Ivanović",
+			"professionalTitle": null,
+			"position": "Konzervativna stomatologija, endodoncija, estetska stomatologija, protetika",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"existingId": 467,
+			"note": "Уже в БД: id 467, стоматолог (78), клиника vadis-stomatologija-podgorica (#33, сайт vadis.me в режиме обслуживания). Фото в БД (/uploads/doctors/0f3978f6-….webp, 430×700) — тот же снимок, что /fajlovi/o_1c97ka5ccqlt1q1k105l1vcftc5a.jpg на dentalmontenegro.com (размер = превью tumber.php w=430&h=700), т.е. карточку изначально заводили по этому сайту. Тот же человек; только привязка, поля не трогаем (языки RU/EN у неё уже есть)."
+		}
+	],
+	"excluded": [
+		{
+			"source": "/me/cijene",
+			"reason": "Страница есть в sitemap и меню отсутствует; отдаёт пустой шаблон (только шапка/подвал) — цен нет. Цена 0 € стоит только у осмотра с предварительным расчётом («besplatni»)."
+		},
+		{
+			"source": "/me/usluge/terapija-laserom: «Naša ordinacija poseduje diodni laser … Biolase, laser EZlase»; «Praktično ne postoji procedura u stomatologiji gde laser nije glavno ili pomocno sredstvo»",
+			"reason": "Ни одной конкретной лазерной процедуры не названо — только оборудование и общие преимущества. В описании клиники упомянут лазер, в услуги — нет."
+		},
+		{
+			"source": "/me/usluge/implantologija: «imedijatno opterećenje, regenerativne tehnike»",
+			"reason": "Немедленная нагрузка — протокол имплантации, не отдельная позиция; «regenerativne tehnike» — без конкретики."
+		},
+		{
+			"source": "/me/o-nama: «Bilo da je u pitanju implant, krunica ili totalni \"smile make over\"»",
+			"reason": "Рекламная фраза; материал коронки не назван."
+		},
+		{
+			"source": "Dr Bojana Ivanović: «Antiaging procedure»",
+			"reason": "Не названо, какие процедуры; в услуги клиники не заведено."
+		},
+		{
+			"source": "Отзывы Google: «Др. Александра Јовановић», «др Данис», «Викторија Александровна Евдокимова»",
+			"reason": "Врачи из отзывов, на сайте их нет — не заводятся (только факты с сайта клиники)."
+		},
+		{
+			"source": "«Russian Friendly» a quality certificate Russian diaspora Montenegro; сайт me/en/ru",
+			"reason": "Сертификат и RU-версия сайта — не заявление о приёме на русском; clinic_languages только SR."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Врачи по ординациям",
+			"detail": "Сайт не делит команду между Dental Montenegro и Splendid Dental — все трое привязаны к обеим. Prof. Lazić и dr Škufca — руководители отделений ВМА (Белград), очевидно приезжающие консультанты. В отзывах Google фигурируют врачи, которых на сайте нет (Aleksandra Jovanović, «dr Danis», Viktorija Evdokimova) — состав на сайте, вероятно, неполный."
+		}
+	]
+}

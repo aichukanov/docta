@@ -1,0 +1,353 @@
+{
+	"schemaVersion": 1,
+	"slug": "v-dental-centar-podgorica",
+	"name": "V Dental Centar Podgorica",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJq0zUMS7rTRMRx6_IYy9YQZo",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"network": {
+		"name": "V Dental Centar",
+		"siblings": [
+			"v-dental-centar-budva"
+		],
+		"note": "Две ординации одной ПЗУ; у нас — отдельные клиники (как Milmedika). Врачи по городам — как на /doktori."
+	},
+	"sql": [
+		"server/sql/insert-clinic-v-dental-centar-podgorica.sql",
+		"server/sql/insert-clinic-v-dental-centar-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 183,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2c, агент O. Сухой прогон — см. итоговый отчёт агента. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 210
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.vdental.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Wix, текст в сыром HTML. Прочитаны: /, /home (en), /podgorica, /budva, /doktori, /usluge, 8 страниц врачей (в т.ч. /copy-of-dr-bojan-miladinovic = Tijana Pavličić, /dr-aleksandar-stanisic = био Milana Martinovića). pages-sitemap: lastmod всех 26 страниц 2022-12-30. /kontakt и /o-nama — 404. Цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/v-dental-centar.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Place «V Dental Centar», адрес «49 Bulevar Džordža Vašingtona», +382 67 228 008, 13 отзывов (rating 4.2) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Bulevar Džordža Vašingtona 13/3 — по сайту (футер всех страниц). ⚠️ Google: «49 Bulevar Džordža Vašingtona» — расхождение номера дома; координаты взяты из места Google.",
+		"phone": "+38267228008 — сайт и Google совпадают",
+		"email": "vdental.pg@gmail.com — сайт",
+		"website": "https://www.vdental.me/",
+		"social": "нет (в футере — ссылки-заглушки Wix на facebook.com/wix, twitter.com/wix)",
+		"logo": "https://static.wixstatic.com/media/1b0103_22391fcdbda64f518668910451ea564a.jpg",
+		"workingHours": "нет на сайте и в Google — не заполнено",
+		"doctors": "5 из 5 врачей Подгорицы по /doktori (Vukotić — «Podgorica/Budva», привязан к обеим клиникам); все новые",
+		"doctorPhotos": "у всех — портреты /doktori (static.wixstatic.com, оригинал без трансформации)",
+		"doctorBios": "у всех — страницы dr-* сайта",
+		"prices": "нет — ни одной цены; все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Dental Consultation with Treatment Plan",
+			"slug": "dental-consultation-with-treatment-plan",
+			"source": "/ i /home: «Veliki akcenat stavljamo na prvi pregled … detaljno objašnjavamo plan terapije i dinamiku rada»"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "/usluge Oralna hirurgija: «rutinsko … vađenje zuba»"
+		},
+		{
+			"nameEn": "Complex Tooth Extraction",
+			"slug": "tooth-extraction-complex",
+			"source": "«komplikovano … vađenje zuba»"
+		},
+		{
+			"nameEn": "Surgical Tooth Extraction",
+			"slug": "surgical-tooth-extraction",
+			"source": "«hirurško vađenje zuba»"
+		},
+		{
+			"nameEn": "Surgical Extraction of Residual Root",
+			"slug": "surgical-extraction-of-residual-root",
+			"source": "«… vađenje zuba i korjena zuba»"
+		},
+		{
+			"nameEn": "Impacted Tooth Extraction",
+			"slug": "impacted-tooth-extraction",
+			"source": "«hirurško vađenje impaktiranih umnjaka»"
+		},
+		{
+			"nameEn": "Surgical Exposure of Impacted Tooth",
+			"slug": "surgical-exposure-impacted-tooth",
+			"source": "«hirurško ortodontska terapija impaktiranih očnjaka»"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "«resekcije korjena zuba (apikotomija)»"
+		},
+		{
+			"nameEn": "Cystectomy",
+			"slug": "cystectomy",
+			"source": "«uklanjanje viličnih cisti»"
+		},
+		{
+			"nameEn": "Bone Augmentation",
+			"slug": "bone-augmentation",
+			"source": "«preimplantatna hirurgija … (nadoknada koštanog tkiva»"
+		},
+		{
+			"nameEn": "Dental Sinus Lift",
+			"slug": "dental-sinus-lift",
+			"source": "«podizanje poda sinusa - sinus lift»"
+		},
+		{
+			"nameEn": "Mucosal Autograft",
+			"slug": "mucosal-autograft",
+			"source": "«transplantacije koštanog i mekog tkiva» — мягкие ткани; костная часть покрыта bone-augmentation"
+		},
+		{
+			"nameEn": "PRP Dental Application",
+			"slug": "prp-dental-application",
+			"source": "«primjena produkata krvne plazme pacijenta - PRP, PRF»"
+		},
+		{
+			"nameEn": "3D Dental X-Ray CBCT",
+			"slug": "3d-dental-x-ray-cbct",
+			"source": "«trodimenzionalni snimak vilica - CBCT»; Radiološka dijagnostika: «trodimenzionalnom CBCT … od 2011.»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "Implantologija: «Ugradnja implantata se obavlja u lokalnoj anesteziji» — бренд не назван («švajcarskih i njemačkih proizvođača»)"
+		},
+		{
+			"nameEn": "3D Implant Planning",
+			"slug": "3d-implant-planning",
+			"source": "Kompjuterom vođena implantologija: «virtuelno pozicioniranje implantata»"
+		},
+		{
+			"nameEn": "Surgical Guide per Implant",
+			"slug": "surgical-guide-per-implant",
+			"source": "«izrađuje guide, tj. vodič» (с 2015 — 3D printing)"
+		},
+		{
+			"nameEn": "Complete Denture",
+			"slug": "complete-denture",
+			"source": "Protetika: «mobilne protetske nadoknade»"
+		},
+		{
+			"nameEn": "Partial Denture",
+			"slug": "partial-denture",
+			"source": "«mobilne protetske nadoknade»"
+		},
+		{
+			"nameEn": "Partial Denture with Precision Attachment",
+			"slug": "partial-denture-with-precision-attachment",
+			"source": "«kombinovane protetske nadoknade»"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "«fiksne protetske nadoknade (metal keramičke … krunice»"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "«cirkonijumske … krunice»"
+		},
+		{
+			"nameEn": "All-Ceramic Crown",
+			"slug": "all-ceramic-crown",
+			"source": "«keramičke krunice»"
+		},
+		{
+			"nameEn": "Ceramic Dental Bridge",
+			"slug": "ceramic-dental-bridge",
+			"source": "«… krunice i mostove»"
+		},
+		{
+			"nameEn": "Digital Smile Design",
+			"slug": "digital-smile-design",
+			"source": "Digital Smile Design"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "Estetska stomatologija: «izbjeljivanja vitalnih … zuba … tretmanom u ordinaciji»"
+		},
+		{
+			"nameEn": "Home Teeth Whitening",
+			"slug": "home-teeth-whitening",
+			"source": "«… kućnim … tretmanom»"
+		},
+		{
+			"nameEn": "Internal Bleaching of Devitalized Tooth",
+			"slug": "internal-bleaching-of-devitalized-tooth",
+			"source": "«izbjeljivanja … avitalnih zuba»"
+		},
+		{
+			"nameEn": "Direct Composite Veneer",
+			"slug": "direct-composite-veneer",
+			"source": "«izradom kompozitnih … faseta»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "«… i keramičkih faseta»"
+		},
+		{
+			"nameEn": "PRP Facial Treatment",
+			"slug": "prp-facial-treatment",
+			"source": "«PRP … i PRF … koristimo ih i u Anti age tretmanima … ublažavanje bora, ožiljaka i pigmentacije na licu»"
+		},
+		{
+			"nameEn": "Composite Filling on Primary Tooth",
+			"slug": "composite-filling-on-primary-tooth",
+			"source": "Dječija i preventivna: «Sanacije karijesnih mliječnih zuba» — единственный кандидат каталога"
+		},
+		{
+			"nameEn": "Fissure Sealant with Fluoride",
+			"slug": "fissure-sealant-with-fluoride",
+			"source": "«Zalivanje fisura … nanošenjem površinskog premaza sa dodatkom fluora»"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "Radiološka dijagnostika: «pojedinačni (ciljani) snimci zuba»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "«ortopantomografski … snimci»"
+		},
+		{
+			"nameEn": "Cephalometric X-Ray",
+			"slug": "cephalometric-x-ray",
+			"source": "«telerentgen snimci»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "aleksandar-vukotic",
+			"nameSr": "Aleksandar Vukotić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista oralne hirurgije; osnivač i vlasnik PZU „V Dental Centar“",
+			"specialtyIds": [
+				78,
+				74
+			],
+			"hasBio": true,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "zoran-vlahovic",
+			"nameSr": "Zoran Vlahović",
+			"professionalTitle": "Dr sci.",
+			"position": "Specijalista oralne hirurgije",
+			"specialtyIds": [
+				78,
+				74
+			],
+			"hasBio": true,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "milan-martinovic",
+			"nameSr": "Milan Martinović",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"hasBio": true,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "andjela-vukovic",
+			"nameSr": "Anđela Vuković",
+			"professionalTitle": "Dr",
+			"position": "Specijalista preventivne i dječije stomatologije",
+			"specialtyIds": [
+				78,
+				87
+			],
+			"hasBio": true,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "tijana-pavlicic",
+			"nameSr": "Tijana Pavličić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista ortopedije vilica",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"hasBio": true,
+			"existingInDb": false,
+			"services": []
+		}
+	],
+	"excluded": [
+		{
+			"source": "«paradontalna i gingivalna hirurgija» (/usluge, Oralna hirurgija)",
+			"reason": "Направление, а не процедура: в каталоге несколько равноценных кандидатов (флэп-операция, гингивэктомия, гингивопластика, лечение рецессий) — ни один не назван."
+		},
+		{
+			"source": "Ortopedija vilica (/usluge): «Ortodonti … dijagnostikovanjem, prevencijom i korekcijom … malokluzija»",
+			"reason": "Направление: ни одного ортодонтического аппарата (брекеты, пластинки, элайнеры) сайт не называет. Специальность врачей (93) не превращена в услуги."
+		},
+		{
+			"source": "«Osim samostalnih krunica, implantati mogu biti nosači mostova … stabilizaciju proteza»; Protetika: «mobilne i fksne radove na implantatima»",
+			"reason": "Тип/материал работы на имплантах не назван; generic-записи «коронка на импланте» без материала в каталоге нет. Не заведено."
+		},
+		{
+			"source": "«Mi koristimo implantate renomiranih švajcarskih i njemačkih proizvođača»; био: Straumann (Vukotić), Bredent/Straumann/Zimmer (Vlahović)",
+			"reason": "Сайт клиники бренд имплантов не называет — бренды только в биографиях как опыт врачей. Заведена generic dental-implant-placement, бренды не приписаны."
+		},
+		{
+			"source": "«Ortopedija vilica» в карточках врачей Srzentić/Pavličić",
+			"reason": "См. выше — услуг ортодонтии нет."
+		},
+		{
+			"source": "Dr Aleksandar Stanisić — Wix-страницы /dr-aleksandar-stanisic(-en)",
+			"reason": "Страница под этим адресом содержит био Milana Martinovića (старый URL переиспользован); врача Stanisića на /doktori нет — не заведён."
+		},
+		{
+			"source": "Медсёстры и техник с /podgorica и /budva: Biljana Popović, Anđela Janković, Jadranka Jaramaz, Milica Muminović, Jelena Rašković, Ana Martinović, Ana Jovanović, Jelena Vujović (sestre), Nenad Radosavović (tehničar)",
+			"reason": "Не врачи."
+		},
+		{
+			"source": "Цены",
+			"reason": "На сайте нет ни одной цены (Wix, 0 вхождений €/EUR); все услуги price = NULL."
+		}
+	],
+	"openQuestions": [
+		"Адрес сайта ≠ адрес Google (13/3 vs 49 на Bulevar Džordža Vašingtona). Записан адрес сайта, координаты — точка Google. Если точка Google стоит не у входа — поправить координаты вручную.",
+		"Сайт не обновлялся с 2022 (lastmod 2022-12-30): состав врачей мог измениться."
+	]
+}

@@ -1,0 +1,174 @@
+{
+	"schemaVersion": 1,
+	"slug": "pat-lab-podgorica",
+	"name": "Pat Lab",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJ7wtduerrTRMRbP8KNitEJW4",
+	"clinicTypeIds": [
+		4,
+		15
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-pat-lab-podgorica.sql",
+		"server/sql/insert-clinic-pat-lab-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 222,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент V. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Сухой прогон — см. отчёт агента. Оба врача найдены в БД (прод-API 200); slug клиники на проде свободен. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 249
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://patlab.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress (Kadence). Главная (2 направления, 4 карточки патогистологии, 2 психиатра), /contact/, /pitanja-odgovori/. Демо-страницы темы игнорировались. Цен нет. curl с браузерным UA — 200."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/pat-lab.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJ7wtduerrTRMRbP8KNitEJW4, 42.4356665 / 19.2412269, +382 67 334 337, «108 Dr Vukašina Markovića, Podgorica 81000», рейтинг 4.7, 13 отзывов (в файле 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Dr Vukašina Markovića 108 — сайт = Google",
+		"phone": "+38267334337 — сайт = Google",
+		"email": "patlabpg@gmail.com;info@patlab.me — /contact (текст и mailto расходятся — оба)",
+		"website": "https://patlab.me/",
+		"social": "facebook.com/profile.php?id=61572568719233, @pzu_pat_lab — ссылки сайта",
+		"logo": "https://patlab.me/wp-content/uploads/2025/02/cropped-logo_horizontalni.png",
+		"workingHours": "НЕ заполнены — на сайте нет",
+		"description": "из главной (оба направления), /pitanja-odgovori (методы: H&E, ИГХ)",
+		"languages": "только SR",
+		"doctors": "2 психиатра, оба найдены в БД (tijana-brandmajer — КЦЦГ, ivan-krgovic — Mela Sana); патологи не названы",
+		"doctorPhotos": "2 на сайте; tijana-brandmajer — дозаполнение (в БД не было), у ivan-krgovic фото уже есть",
+		"prices": "цен нет — 3 услуги и 4 анализа без цены",
+		"labTests": "4 — PAPA конвенциональный, ThinPrep, ПГ биопсии, ИГХ",
+		"reviews": "pending — 13 отзывов ждут полной выгрузки"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"slug": "first-psychiatrist-examination",
+			"nameEn": "First Psychiatrist Examination",
+			"price": null,
+			"source": "Usluge iz oblasti psihijatrije: «psihijatrijska ambulanta nudi stručne konsultacije, …» (взрослые — dr Tijana Brandmajer, «Psihijatar»)"
+		},
+		{
+			"slug": "child-psychiatrist-examination",
+			"nameEn": "Child Psychiatrist Examination",
+			"price": null,
+			"source": "«… planiramo i odraslima i djeci pružiti visoko kvalitetnu uslugu»; «Dr. Ivan Krgović — Dječiji psihijatar»"
+		},
+		{
+			"slug": "individual-supportive-psychotherapy-and-counseling",
+			"nameEn": "Individual Supportive Psychotherapy and Counseling",
+			"price": null,
+			"source": "«… terapijske sesije i podršku pacijentima» — запись «Površna individualna psihoterapija, savjetovanje» (психиатрическая, спец. 21)"
+		}
+	],
+	"labTests": [
+		{
+			"slug": "pap-papanicolaou-test",
+			"nameEn": "PAP Papanicolaou Test",
+			"price": null,
+			"source": "«PAPA test … Pored konvencionalnog PAPA testa, …» — цитология в лаборатории (анализ). Rezultat 24h – 48h"
+		},
+		{
+			"slug": "liquid-based-cytology",
+			"nameEn": "Liquid-Based Cytology",
+			"price": null,
+			"source": "«… PAPA test na tečnoj podlozi (likvidni PAPA test – ThinPrep)» (ThinPrep уже синоним записи)"
+		},
+		{
+			"slug": "histopathology-standard-skin-and-organ-biopsy",
+			"nameEn": "Histopathology Standard Skin and Organ Biopsy",
+			"price": null,
+			"source": "«Patohistološka analiza biopsije … Analiza biopsija: 3-5 dana» — орган не назван; запись «PH standardne biopsije kože i drugih organa» (ближе всего к общей «биопсии»; histopathology-standard-diagnostics / -other-biopsies — менее точные)"
+		},
+		{
+			"slug": "immunohistochemistry-per-antibody",
+			"nameEn": "Immunohistochemistry per Antibody",
+			"price": null,
+			"source": "«Imunohistohemijske analize» — число антител не названо; базовая единица «Imunohistohemijska analiza po jednom antitijelu» (наборы 5–10 и >10 не заводили)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "tijana-brandmajer",
+			"nameSr": "Tijana Brandmajer",
+			"professionalTitle": "Dr",
+			"position": "Psihijatar",
+			"specialtyIds": [
+				21
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"photo": "https://patlab.me/wp-content/uploads/2025/03/Dr-Tijana.jpg",
+			"services": [
+				"first-psychiatrist-examination",
+				"individual-supportive-psychotherapy-and-counseling"
+			],
+			"note": "Найдена в БД (КЦЦГ, психиатр). Привязка + фото (в БД не было) + name_ru/name_en."
+		},
+		{
+			"slug": "ivan-krgovic",
+			"nameSr": "Ivan Krgović",
+			"professionalTitle": "Dr",
+			"position": "Dječiji psihijatar",
+			"specialtyIds": [
+				21
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"photo": "https://patlab.me/wp-content/uploads/2025/03/dr-ivan-krgovic.jpg",
+			"services": [
+				"child-psychiatrist-examination",
+				"individual-supportive-psychotherapy-and-counseling"
+			],
+			"note": "Найден в БД (Mela Sana, детский психиатр) — только привязка."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«Molekularne analize — … Određivanje pojedinačnih mutacija u tumoru omogućava nam primjenu „pametnih“ ljekova …»",
+			"reason": "Конкретные гены/мутации не названы, а записи каталога — по конкретным генам (EGFR, KRAS, BRAF …) — анализы не заводили; факт — в описании."
+		},
+		{
+			"source": "Патологи лаборатории («Doktori sa dokazanim iskustvom»)",
+			"reason": "Имена не названы — врачей не заводили."
+		},
+		{
+			"source": "/pitanja-odgovori: «Kontrola kvaliteta … kroz primenu strogo definisanih standarda akreditacije …», «saradnju psihijatara, kliničkih psihologa i socijalnih radnika»",
+			"reason": "FAQ сгенерирован (на странице остался след «o3-mini-high») — утверждения об аккредитации и составе команды в описание не переносили; из FAQ взяты только методы (H&E, ИГХ), совпадающие с главной."
+		},
+		{
+			"source": "/services, /about, /warranty, /new-patients (Dr. Betty Wible), /news и посты 2022 о стоматологии",
+			"reason": "Демо-контент темы."
+		},
+		{
+			"source": "«24/7 Posvećenost»",
+			"reason": "Слоган, не часы работы."
+		}
+	],
+	"openQuestions": []
+}

@@ -1,0 +1,563 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-dr-fatic-medical-podgorica",
+	"name": "Poliklinika Dr Fatić Medical",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJR3tem2HrTRMRa4Lw8UHmfL0",
+	"googlePlaceIdsDuplicate": [
+		{
+			"id": "ChIJo4WevlXrTRMRhKuZovjs9nc",
+			"name": "Vaskularna hirurgija Dr Fatic Medical",
+			"file": "data/google-places/podgorica/vaskularna-hirurgija-dr-fatic-medical.json",
+			"note": "Тот же адрес (178 Dr Vukašina Markovića), тот же телефон +382 67 006 115, те же координаты; website vaskularnahirurgija.me/zakazite-pregled. 4 отзыва — при полной выгрузке отнести к этой клинике.",
+			"note2e": "2e (2026-10-09): подтверждено — та же клиника (адрес 178, тел. 067 006 115, сайт vaskularnahirurgija.me/zakazite-pregled). Отдельную карточку не заводим; место в overrides заносит координатор."
+		}
+	],
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"relatedSites": [
+		{
+			"url": "https://vaskularnahirurgija.me/",
+			"decision": "та же клиника",
+			"note": "Персональный сайт сосудистого хирурга Dr Nikola Fatić (WPML: me/en/it/ru/sq). /zakazite-pregled (2024-07): «Adresa: Dr Vukašina Markovića 178 … 067 006 115, drfaticmedical.info@gmail.com»; футер «Poliklinika Dr Fatić MEDICAL - Dr Vukašina Markovića 178». Отдельной ординации с другим адресом нет → одна клиника; сайт упомянут в описании."
+		}
+	],
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-dr-fatic-medical-podgorica.sql",
+		"server/sql/insert-clinic-poliklinika-dr-fatic-medical-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 185,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен. Подволна 2c, агент O. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 212,
+		"update2e": {
+			"generated": "2026-10-09",
+			"agent": "Z",
+			"appliedLocal": null,
+			"appliedProd": null,
+			"note": "Изменён только services-SQL: +6 привязок nikola-fatic (17 → 23), услуги и каталог без изменений (42). Основной SQL клиники не менялся. Применять повторно только services-SQL."
+		}
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://drfaticmedical.com/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress, REST API закрыт (401) — читались все 33 URL из sitemap.xml (сгенерирован 2026-10-05; главная lastmod 2026-08-03). Email спрятан JS-обфускацией (eeb-…) — раскодирован: drfaticmedical.info@gmail.com. Команда — блок «NAŠ TIM» главной; фото врачей кроме Nikola — заглушки m.jpg/f.jpg. Ссылка «Русский» в меню ведёт на один RU-пост 2023-02 со сводным перечнем услуг. Цен нет."
+		},
+		{
+			"type": "website",
+			"ref": "https://vaskularnahirurgija.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WP REST /wp/v2/pages (68 страниц, большинство 2017-08; biografija 2026-08-03; online-konsultacije и zakazite-pregled 2024-07). Персональный сайт того же врача, адрес/телефон поликлиники. Цен нет («instrukcije za plaćanje» — по телефону). 2e (2026-10-09, агент Z): повторно прочитаны через WP REST content 13 страниц «Tretman», 7 «Dijagnostički testovi», online-konsultacije, zakazite-pregled, biografija (2026-08-03). Русская версия сайта (WPML) — не заявление о языке приёма.",
+			"collected2e": "2026-10-09"
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/poliklinika-dr-fatic-medical.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4361359 / 19.2403212, +382 67 006 115, 12 отзывов (rating 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Dr Vukašina Markovića 178 — сайт (футер, /kontakt/, /o-nama/ «kod Krivog mosta»), Google (второе место — с номером 178)",
+		"phone": "+38267006115;+38220615115 — сайт; +382 20 615 333 — факс (на /kontakt/ помечен «(fax)»), не записан",
+		"email": "drfaticmedical.info@gmail.com — раскодирован из JS; подтверждён vaskularnahirurgija.me/zakazite-pregled",
+		"website": "https://drfaticmedical.com/ (+ vaskularnahirurgija.me — в описании)",
+		"social": "facebook.com/dr.nikola.fatic (ссылка с сайта поликлиники — страница врача), @poliklinika.drfaticmedical",
+		"logo": "https://drfaticmedical.com/wp-content/uploads/2023/02/logo-novi-fatic2.png",
+		"workingHours": "пн–пт 09–13 и 16–20, сб–вс закрыто — футер drfaticmedical.com. ⚠️ vaskularnahirurgija.me (2024-07): пн–пт 10–14, 16–20, сб 9–14 — не взято",
+		"doctors": "8: «NAŠ TIM» (7) + уролог с /urologija/; 3 найдены в БД (nikola-fatic, srdjan-perazic, redzeb-zeinalagic), 5 новых",
+		"doctorPhotos": "1 из 8 (Nikola Fatić, DR2.jpg); остальные — заглушки сайта → NULL",
+		"doctorBios": "1 — CV Nikola Fatić (/dr-nikola-fatic-biografija/), пишется только если у карточки био пусто",
+		"prices": "нет — ни одной цены; все услуги NULL",
+		"labTests": "нет (патология — партнёрская IGA lab)",
+		"reviews": "pending — ждут полной выгрузки (12 + 4 на дублирующем месте Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "laser-tattoo-removal",
+			"nameEn": "Laser Tattoo Removal",
+			"nameSr": "Lasersko uklanjanje tetovaža",
+			"categoryIds": [
+				18,
+				24
+			],
+			"specialtyIds": [
+				7,
+				18
+			],
+			"reason": "«LASERSKO USKLANJANJE TRAJNE ŠMINKE, TETOVAŽA …» (/laserski-tretmani/). Удаления татуировок в каталоге нет совсем; перманентный макияж — синонимом."
+		},
+		{
+			"table": "medical_services",
+			"slug": "laser-skin-rejuvenation",
+			"nameEn": "Laser Skin Rejuvenation",
+			"nameSr": "Lasersko podmlađivanje kože",
+			"categoryIds": [
+				18,
+				24
+			],
+			"specialtyIds": [
+				7,
+				18
+			],
+			"reason": "«NEINVAZIVNO LASERSKO PODMLAĐIVANJE, ZATEZANJE I OSVJEŽAVANJE KOŽE». В каталоге только брендовые (Fractora, Ultraformer) и абляционные CO2 — generic нет."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Vascular Surgeon Examination",
+			"slug": "vascular-surgeon-examination",
+			"source": "«Zakažite pregled» (главная, блок Dr Nikola Fatić) + /vaskularna-hirurgija/ — vaskularni hirurg"
+		},
+		{
+			"nameEn": "Laser Varicose Vein Surgery",
+			"slug": "laser-varicose-vein-surgery",
+			"source": "/laserska-operacija-vena/: «Endovenska laserska ablacija proširenih vena (EVLA)»; laser Biolitec Leonardo 1470 nm, ELVeS Radial — бренд аппарата, не процедуры"
+		},
+		{
+			"nameEn": "Sclerotherapy Veins",
+			"slug": "sclerotherapy-veins",
+			"source": "пост 2026-05: «sklerozaciju koristimo isključivo kao finalni, estetski touch nakon što laserom odradimo glavni dio»"
+		},
+		{
+			"nameEn": "Doppler Lower Extremity Blood Vessels",
+			"slug": "doppler-lower-extremity-blood-vessels",
+			"source": "/vaskularna-hirurgija/ Dijagnostički testovi: «Color duplex scan arterija i vena nogu i ruku»"
+		},
+		{
+			"nameEn": "Doppler Upper Extremity Blood Vessels",
+			"slug": "doppler-upper-extremity-blood-vessels",
+			"source": "«Color duplex scan arterija i vena nogu i ruku»"
+		},
+		{
+			"nameEn": "Doppler Neck Blood Vessels",
+			"slug": "doppler-neck-blood-vessels",
+			"source": "«Color duplex scan karotidnih arterija»"
+		},
+		{
+			"nameEn": "Doppler Abdominal Arteries and Veins",
+			"slug": "doppler-abdominal-arteries-and-veins",
+			"source": "«Color Duplex scan krvnih sudova trbuha»"
+		},
+		{
+			"nameEn": "Ankle-Brachial Index by Doppler Ultrasound",
+			"slug": "ankle-brachial-index-by-doppler-ultrasound",
+			"source": "«Pedo-brahijani ili ABI indeksi»"
+		},
+		{
+			"nameEn": "E-Consultation with Specialist",
+			"slug": "e-consultation-with-specialist",
+			"source": "vaskularnahirurgija.me/online-konsultacije (2024-07): «poliklinika … nudi uslugu online medicinskih konsultacija» — у записи синонимы Online consultation"
+		},
+		{
+			"nameEn": "Botox Injection",
+			"slug": "botox-injection",
+			"source": "/antiaging/: «BOTOX tretmani»"
+		},
+		{
+			"nameEn": "Hyaluronic Acid Filler",
+			"slug": "hyaluronic-acid-filler",
+			"source": "«HIJALURONSKI fileri»"
+		},
+		{
+			"nameEn": "Facial Mesotherapy Single Treatment",
+			"slug": "facial-mesotherapy-single-treatment",
+			"source": "«MEZOTERAPIJA» (раздел anti-aging лица)"
+		},
+		{
+			"nameEn": "Dermapen Microneedling",
+			"slug": "dermapen-microneedling",
+			"source": "«DERMAPEN tretmani»"
+		},
+		{
+			"nameEn": "Biorevitalization",
+			"slug": "biorevitalization",
+			"source": "«BIOREVITALIZACIJA»"
+		},
+		{
+			"nameEn": "Laser Hair Removal",
+			"slug": "laser-hair-removal",
+			"source": "/laserski-tretmani/: «LASERSKA MEDICINSKA TRAJNA EPILACIJA»"
+		},
+		{
+			"nameEn": "Laser Tattoo Removal",
+			"slug": "laser-tattoo-removal",
+			"source": "«LASERSKO USKLANJANJE TRAJNE ŠMINKE, TETOVAŽA …» (НОВАЯ)"
+		},
+		{
+			"nameEn": "Melasma Hyperpigmentation Laser",
+			"slug": "melasma-hyperpigmentation-laser",
+			"source": "«… I PIGMENTACIJA SA KOŽE»"
+		},
+		{
+			"nameEn": "Laser Skin Rejuvenation",
+			"slug": "laser-skin-rejuvenation",
+			"source": "«NEINVAZIVNO LASERSKO PODMLAĐIVANJE, ZATEZANJE I OSVJEŽAVANJE KOŽE» (НОВАЯ)"
+		},
+		{
+			"nameEn": "Scar Correction",
+			"slug": "scar-correction",
+			"source": "«NEINVAZIVNO LASERSKO UKLANJANJE OŽILJAKA …» — generic-запись, синоним «Uklanjanje ožiljaka»"
+		},
+		{
+			"nameEn": "Stretch Mark Treatment",
+			"slug": "stretch-mark-treatment",
+			"source": "«… I STRIJA»"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "/protetika/: «Bezmetalne krunice … cirkonijom»"
+		},
+		{
+			"nameEn": "Pressed Ceramic Crown",
+			"slug": "pressed-ceramic-crown",
+			"source": "«Bezmetalne krunice … empresom» (press-keramika)"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "«Metal-keramičke krunice»"
+		},
+		{
+			"nameEn": "Partial Denture with Precision Attachment",
+			"slug": "partial-denture-with-precision-attachment",
+			"source": "«Skeletirane proteze sa atačmentima»"
+		},
+		{
+			"nameEn": "Partial Denture",
+			"slug": "partial-denture",
+			"source": "«Parcijalne proteze»"
+		},
+		{
+			"nameEn": "Complete Acrylic Denture",
+			"slug": "complete-acrylic-denture",
+			"source": "«Totalne ili akrilatne proteze»"
+		},
+		{
+			"nameEn": "Radiowave Skin Lesion Removal",
+			"slug": "radiowave-skin-lesion-removal",
+			"source": "RU-пост 2023: «Безболезненное удаление кожных и подкожных образований радиочастотными волнами»"
+		},
+		{
+			"nameEn": "Intra-articular Injection",
+			"slug": "intra-articular-injection",
+			"source": "RU-пост: «Ортопедия – минимально инвазивная терапия уколами для болезней суставов, связок и сухожилий»"
+		},
+		{
+			"nameEn": "Urologist Examination",
+			"slug": "urologist-examination",
+			"source": "/urologija/: «Pregled urologa»"
+		},
+		{
+			"nameEn": "Transrectal Prostate Echosonography",
+			"slug": "transrectal-prostate-echosonography",
+			"source": "«Transrektalni ultrazvuk prostate»"
+		},
+		{
+			"nameEn": "TRUS-Guided Prostate Biopsy",
+			"slug": "trus-guided-prostate-biopsy",
+			"source": "«Biospija prostate (TRUS biopsija prostate)»"
+		},
+		{
+			"nameEn": "Abdomen Ultrasound",
+			"slug": "abdomen-ultrasound",
+			"source": "/radiologija/: «CDS / Ultrazvuk abdomena»; /urologija/: «Ultrazvuk abdomena»"
+		},
+		{
+			"nameEn": "Thyroid Ultrasound",
+			"slug": "thyroid-ultrasound",
+			"source": "/radiologija/: «CDS / Ultrazvuk štitne žlijezde»; /endokrinologija/"
+		},
+		{
+			"nameEn": "Cardiologist Examination with ECG and Echocardiography (Heart Ultrasound)",
+			"slug": "cardiologist-examination-with-ecg-and-echocardiography-heart-ultrasound",
+			"source": "/kardiologija/: «Redovan kardiološki pregled obuhvata snimanje … na višekanalnom EKG aparatu, ehokardiografiju …, pregled kardiologa»"
+		},
+		{
+			"nameEn": "Professor Endocrinologist Examination",
+			"slug": "professor-endocrinologist-examination",
+			"source": "/endokrinologija/: «Pored kliničkog pregleda profesora endokrinologije …»"
+		},
+		{
+			"nameEn": "Spirometry",
+			"slug": "spirometry",
+			"source": "/pulmologija/: «koristimo … spirometrije»"
+		},
+		{
+			"nameEn": "Bronchodilator Test",
+			"slug": "bronchodilator-test",
+			"source": "«… bronhodilatatornih testova»"
+		},
+		{
+			"nameEn": "Tuberculin Skin Test",
+			"slug": "tuberculin-skin-test",
+			"source": "«… PPD testova»"
+		},
+		{
+			"nameEn": "Oncologist Examination",
+			"slug": "oncologist-examination",
+			"source": "/onkologija-hematologija/: «U poliklinici … možete obaviti … Klinički pregled»"
+		},
+		{
+			"nameEn": "Nutritionist Specialist Examination",
+			"slug": "nutritionist-specialist-examination",
+			"source": "/nutricionizam/: «Analiza kvaliteta ishrane, Savjetovanje»"
+		},
+		{
+			"nameEn": "Personalized Nutrition Plan",
+			"slug": "personalized-nutrition-plan",
+			"source": "«Program ishrane (jelovnik)»"
+		},
+		{
+			"nameEn": "Body Composition Analysis",
+			"slug": "body-composition-analysis",
+			"source": "RU-пост: «оценка состава тела/процента жиров»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "nikola-fatic",
+			"nameSr": "Nikola Fatić",
+			"professionalTitle": "prim. dr sc. med.",
+			"position": "Specijalista vaskularne hirurgije, osnivač Poliklinike",
+			"specialtyIds": [
+				34
+			],
+			"languageIds": [
+				1,
+				2,
+				3
+			],
+			"hasBio": true,
+			"existingInDb": true,
+			"services": [
+				"vascular-surgeon-examination",
+				"laser-varicose-vein-surgery",
+				"sclerotherapy-veins",
+				"doppler-lower-extremity-blood-vessels",
+				"doppler-upper-extremity-blood-vessels",
+				"doppler-neck-blood-vessels",
+				"doppler-abdominal-arteries-and-veins",
+				"ankle-brachial-index-by-doppler-ultrasound",
+				"e-consultation-with-specialist"
+			],
+			"servicesNote": "2e, vaskularnahirurgija.me, 2026-10-09: +6 привязок к уже заведённой диагностике и онлайн-консультации — они перечислены на его персональном сайте («Dijagnostički testovi», «Online konsultacije»)."
+		},
+		{
+			"slug": "andjela-fatic",
+			"nameSr": "Anđela Fatić",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije i sertifikovani ljekar estetske i antiaging medicine",
+			"specialtyIds": [
+				78,
+				44
+			],
+			"languageIds": [
+				1
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": [
+				"botox-injection",
+				"hyaluronic-acid-filler",
+				"facial-mesotherapy-single-treatment",
+				"dermapen-microneedling",
+				"biorevitalization",
+				"laser-hair-removal",
+				"laser-tattoo-removal",
+				"melasma-hyperpigmentation-laser",
+				"laser-skin-rejuvenation",
+				"scar-correction",
+				"stretch-mark-treatment"
+			]
+		},
+		{
+			"slug": "ivan-drobnjak",
+			"nameSr": "Ivan Drobnjak",
+			"professionalTitle": "Dr",
+			"position": "Specijalista opšte hirurgije",
+			"specialtyIds": [
+				3
+			],
+			"languageIds": [
+				1
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "dejan-maras-2",
+			"nameSr": "Dejan Maraš",
+			"professionalTitle": "Dr",
+			"position": "Specijalista interne medicine",
+			"specialtyIds": [
+				2
+			],
+			"languageIds": [
+				1
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "srdjan-perazic",
+			"nameSr": "Srđan Perazić",
+			"professionalTitle": "Dr",
+			"position": "Kardiolog",
+			"specialtyIds": [
+				1
+			],
+			"languageIds": [
+				1
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "redzeb-zeinalagic",
+			"nameSr": "Redžeb Zeinalagić",
+			"professionalTitle": "dr",
+			"position": "Nutricionista",
+			"specialtyIds": [],
+			"languageIds": [
+				1
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "jaksa-radovic",
+			"nameSr": "Jakša Radović",
+			"professionalTitle": "Dr",
+			"position": "Stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "rade-stanisavljevic",
+			"nameSr": "Rade Stanisavljević",
+			"professionalTitle": "Dr",
+			"position": "Specijalista urolog",
+			"specialtyIds": [
+				9
+			],
+			"languageIds": [
+				1
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": [
+				"urologist-examination",
+				"transrectal-prostate-echosonography",
+				"trus-guided-prostate-biopsy"
+			]
+		}
+	],
+	"excluded": [
+		{
+			"source": "/urologija/: «Intravenska pijelografija (IVP)», «MSCT (skenerska) urografija», «NMR (MRI) urografija»; /vaskularna-hirurgija/: «Angiografija», «MR angiografija»; /pulmologija/: «rendgena, CT skeniranja, … bronhoskopije, … MSCT angiografije … biopsije»",
+			"reason": "Методы описаны как диагностика специальности, но собственный раздел клиники /radiologija/ и сводный русский перечень услуг называют только УЗИ (CDS/УЗИ живота, CDS/УЗИ щитовидной железы). Аппаратов КТ/МРТ/ангиографии/бронхоскопии клиника не заявляет → не заведено, вынесено в openQuestions."
+		},
+		{
+			"source": "/urologija/: «razbijanje kamena u bubregu radi endoskopskom litotripsijom … laparoskopskom hirurgijom kamen vadi»",
+			"reason": "Стационарные операции; в сводном перечне (RU-пост) урология — только направлением. Не заведено, см. openQuestions."
+		},
+		{
+			"source": "/onkologija-hematologija/: «Liječenje malignih oboljenja: Citostatska, biološka i imuno terapija; Simptomatska i suportivna terapija»; «Patohistološka i citološka dijagnostika, Laboratorijska dijagnostika»",
+			"reason": "Онколога/гематолога в составе нет; химиотерапия требует дневного стационара, который клиника не заявляет. Заведён только «Klinički pregled» (oncologist-examination). См. openQuestions."
+		},
+		{
+			"source": "/patologija/: IGA lab — histohemija, imunohistohemija, ISH, FISH, citologija, PAPA, HPV tipizacija, LBC, paneli HER-2/EGFR/PD-L1",
+			"reason": "Работы выполняет партнёрская лаборатория IGA lab («u saradnji sa IGA lab»), не клиника — в анализы клиники не заведены."
+		},
+		{
+			"source": "/endokrinologija/: «Mjerenje glikemije (OGTT, cjelodnevni profil), određivanje HbA1c, insulinemije …», «kompletna laboratorijska dijagnostika»; /pulmologija/: «citološkog i bakteriološkog pregleda sputuma»",
+			"reason": "Своей лаборатории клиника не заявляет; анализы названы как элементы диагностики, перечня нет. Не заведено."
+		},
+		{
+			"source": "/laserski-tretmani/: «NEINVAZIVNI LASERSKI TRETMANI LICA»",
+			"reason": "Обобщающая категория, конкретная процедура не названа (остальные пункты страницы заведены)."
+		},
+		{
+			"source": "/opsta-stomatologija/: «Dijagnostika», «Popravljanje i liječenje zuba», «Redovne posjete stomatologu»",
+			"reason": "Описательный текст направления, конкретных процедур нет."
+		},
+		{
+			"source": "/opsta-hirurgija/: «gastroskopija, kolonoskopija, sigmoidoskopija … biopsije limfnih čvorova»",
+			"reason": "Определение специальности «что делает общий хирург» (общий текст), а не перечень услуг клиники."
+		},
+		{
+			"source": "/neurohirurgija/: 9 областей (povrede/tumori mozga, bolesti kičme …); RU: «межпозвоночные грыжи/сужение позвоночного канала/опухоли»",
+			"reason": "Направления, нейрохирурга в составе нет. Не заведено."
+		},
+		{
+			"source": "/ortopedija/: перечень заболеваний и «Ortopedski pregledi kod odraslih podrazumijevaju: …»",
+			"reason": "Перечень состояний; из ортопедии заведены только инъекции (RU-пост). Ортопеда в составе нет — осмотр не заведён."
+		},
+		{
+			"source": "/opsta-interna-medicina/, /pulmologija/ (spisak bolesti), /psihijatrija/, /psihologija/, /djecija-psihologija/",
+			"reason": "Описательные тексты направлений без конкретных процедур; психиатров/психологов в составе нет."
+		},
+		{
+			"source": "/antiaging/ FAQ: «blagi pilinzi, mezoterapija, PRP tretman i kvalitetna kozmetika»",
+			"reason": "Рекомендации в FAQ, а не перечень услуг (перечень — 5 пунктов над FAQ)."
+		},
+		{
+			"source": "vaskularnahirurgija.me «Tretman»: amputacije, karotidna endarterektomija, kateter-navođena tromboliza, dijalizni pristupi, otvorena i endovaskularna reparacija AAA, by-pass, TEVAR, trombolitička terapija (страницы 2017)",
+			"reason": "Персональный сайт хирурга, страницы 2017 г. (до основания поликлиники в 2023) — описания операций, выполняемых в стационаре. Поликлиника их не заявляет. Из сайта взяты только адрес/телефон (совпадают) и онлайн-консультации.",
+			"note2e": "2e, vaskularnahirurgija.me, 2026-10-09: перепроверено агентом Z (WP REST, 13 страниц «Tretman» + 7 «Dijagnostički testovi») — исключение подтверждено координатором, см. resolved."
+		},
+		{
+			"source": "Главная: «BONUS: SVE GODIŠNJE KONTROLE SU UKLJUČENE U PAKET»",
+			"reason": "Условие пакета EVLA, не отдельная услуга — в описание клиники."
+		},
+		{
+			"source": "Цены",
+			"reason": "Ни одной цены на 33 страницах drfaticmedical.com и на vaskularnahirurgija.me; все услуги NULL."
+		}
+	],
+	"openQuestions": [
+		"КТ/МРТ/ангиография/ИВП/МСКТ-урография, бронхоскопия, рентген (страницы урологии, сосудистой хирургии, пульмонологии) не заведены: собственная радиология клиники — только УЗИ (CDS абдомена и щитовидной железы, /radiologija/ и RU-перечень). Если клиника подтвердит, что делает их сама (а не направляет), — добавить.",
+		"Онкология: «Citostatska, biološka i imuno terapija» заявлена текстом, но онколога в составе нет — не заведено; заведён только «Klinički pregled». Литотрипсия/лапароскопия камней (урология) — тоже не заведены.",
+		"Dr Redžeb Zejnelagić (сайт) привязан к существующей карточке redzeb-zeinalagic («Zeinalagić», ДЗ Никшич, гигиена-эпидемиология) как к тому же человеку. Если это не так — завести отдельную карточку.",
+		"Dr Dejan Maraš — по правилу юзера отдельная карточка dejan-maras-2 (интернист), т.к. dejan-maras в БД — анестезиолог (Mićunović Medical). Возможно, это один человек — сайт Fatić в посте 2026-05 показывает его в видео о сосудистых проблемах.",
+		"Второе место Google «Vaskularna hirurgija Dr Fatic Medical» (ChIJo4WevlXrTRMRhKuZovjs9nc) — дубль этой клиники; google_place_id записан основной.",
+		"Facebook на сайте поликлиники ведёт на страницу врача (facebook.com/dr.nikola.fatic) — записан как есть."
+	],
+	"resolved": [
+		{
+			"topic": "Процедуры и диагностика с vaskularnahirurgija.me",
+			"date": "2026-10-09",
+			"decision": "Решение координатора 2e: решение агента O верное — операции и ангиографии поликлинике не заводятся. Сайт описывает их как стационарные: «Procedura se sprovodi u operacionoj sali» (ампутации), «u sterilnim uslovima i standardnoj operacionoj sali» (каротидная эндартерэктомия), «Prije izvođenja angiografije pacijent se mora hospitalizovati», «Procedura se izvodi u angio sali u radiološkom odjelu» (катетерный тромболизис); TEVAR/EVAR, шунтирования, открытая операция на аорте, AV-фистулы — хирургия; MR/MSCT-ангиография — аппаратов у поликлиники нет; страницы 2017-08, когда dr Fatić работал в КЦЦГ. Классическая операция вен (ligiranje, striping, avulzija — общая/регионарная анестезия) и «Diabetsko stopalo» (памятка по домашнему уходу) тоже не заведены. Итог 2e: услуг 42 (без изменений), привязок врач↔услуга 17 → 23 (nikola-fatic 3 → 9: color duplex ×4, ABI, онлайн-консультация). Новых записей каталога 2e нет."
+		}
+	]
+}

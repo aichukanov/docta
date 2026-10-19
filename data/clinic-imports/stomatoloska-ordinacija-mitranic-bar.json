@@ -1,0 +1,462 @@
+{
+	"schemaVersion": 1,
+	"slug": "stomatoloska-ordinacija-mitranic-bar",
+	"name": "Opšta stomatološka ordinacija Mitranić",
+	"city": "Bar",
+	"cityId": 7,
+	"googlePlaceId": "ChIJB0JfTwB0ThMRXHNR6Zb9OVU",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-stomatoloska-ordinacija-mitranic-bar.sql",
+		"server/sql/insert-clinic-stomatoloska-ordinacija-mitranic-bar-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 212,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент W. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. ⚠️ Страницы услуг 2016–2018: состав и перечень могли устареть. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 239
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://mitranicdental.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress (BeTheme), без браузерного UA — 406. Список страниц — /wp-json/wp/v2/pages (33 страницы, content пустой — конструктор), текст — из HTML: главная (2024-05), /o-nama/ (2018-05), /kontakt/, /preventivna-stomatologija/, /djecja-stomatologija/, /konzervativna-stomatologija/, /fiksna-protetika/, /mobilna-protetika/, /ortodoncija/ (2018-02), /izbjeljivanje-zuba/, /implantati/ (2017), /digitalna-radiografija/, /morpheus8/ (2024-05), /estetska-medicina-2/ (2020-04), /hijaluronski-fileri/, /botox-terapija-bora/, /mezoterapija/, /mezo-niti/, /dentalni-turizam/, /garancija/ (пустая). Стоматологические страницы 2016 — ⚠️ перечень мог устареть. Email — Cloudflare data-cfemail, раскодирован. Цен нет («najpovoljnije cijene u regionu» на /dentalni-turizam/ — не цена)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/bar/opsta-stomatoloska-ordinacija-mitranic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Opšta stomatološka ordinacija Mitranić», «G9 Ulica Jovana Tomasevica, Bar», +382 69 228 089, 20 отзывов (rating 4.6) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Jovana Tomaševića G9, Poslovni centar Topolica, III sprat — сайт (= Google «G9 Ulica Jovana Tomasevica»); координаты — место Google",
+		"phone": "+38269228089;+38268447245 — сайт; первый = Google",
+		"email": "info@mitranicdental.com — сайт (Cloudflare email protection, раскодирован)",
+		"website": "https://mitranicdental.com/",
+		"social": "facebook (страница 494528703918257), @mitranic_dental — шапка сайта",
+		"logo": "https://mitranicdental.com/wp-content/uploads/2015/12/stomatoloskaordinacija_mitranic_retinalogo.png",
+		"workingHours": "на сайте нет — не заполнено",
+		"doctors": "2 (оба новые); медсестра не заводится; ортодонты Stojković (Белград, партнёры) — не заводились",
+		"doctorPhotos": "у обоих — wp-content/uploads (Tamara — 2024, Janko — 2016)",
+		"doctorBios": "Tamara — с /estetska-medicina-2/; Janko — нет на сайте",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "composite-diastema-closure",
+			"nameEn": "Composite Diastema Closure",
+			"nameSr": "Zatvaranje dijasteme kompozitom",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "mitranicdental.com /konzervativna-stomatologija/: «Kompozitne materijale pored sanacije karijesnih lezija koristimo i za estetske korekcije dijasteme (veliki razmak između zuba) a bez brušenja zuba … zatvaranjem dijasteme a bez potrebe brušenja»; главная, Smile Makeover: «zatvaranje diasteme … kompozitnim materijalima bez brušenja zuba». Отдельная частая услуга; в каталоге нет (поиск dijastem/diastem/razmak); aesthetic-tooth-restoration и direct-composite-veneer — другие процедуры (восстановление разрушенного зуба / облицовка). Категория 20, специальность 78."
+		},
+		{
+			"table": "medical_services",
+			"slug": "morpheus8-radiofrequency-microneedling",
+			"nameEn": "Morpheus8 Radiofrequency Microneedling",
+			"nameSr": "Morpheus8 radiofrekventne mikroiglice",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			],
+			"reason": "mitranicdental.com /morpheus8/ (2024-05): «Morpheus 8 je revolucionarni aparat … putem radiofrekvencije i mikroiglica dopire i do najdubljh slojeva kože»; главная: «Morpheus8 inmode laserska platforma». В каталоге нет ни Morpheus8, ни радиочастотного микронидлинга (поиск morpheus/inmode/microneedl/radiofrequ); dermapen-microneedling — механический микронидлинг без RF, другая процедура. Названное сайтом устройство сохраняем в названии (как Ultraformer/Exilis в каталоге). Категории 18 + 24, специальности 7, 18, 44 — как у аппаратных эстетических процедур (ultraformer-laser-facial-rejuvenation, dermapen-microneedling)."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "facial-mesotherapy-single-treatment",
+			"synonym": "RRS mezoterapija",
+			"language": "sr",
+			"reason": "mitranicdental.com /mezoterapija/: «Koristimo proizvode renomiranog proizvođača Aesthetic Dermal RRS … profesionalni mezoterapijski kokteli» — бренд коктейлей; та же процедура, что facial-mesotherapy-single-treatment, бренд-дубль не заводим (решение юзера 2026-10-08) → синоним."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "facial-mesotherapy-single-treatment",
+			"synonym": "RRS мезотерапија",
+			"language": "sr-cyrl",
+			"reason": "mitranicdental.com /mezoterapija/: «Koristimo proizvode renomiranog proizvođača Aesthetic Dermal RRS … profesionalni mezoterapijski kokteli» — бренд коктейлей; та же процедура, что facial-mesotherapy-single-treatment, бренд-дубль не заводим (решение юзера 2026-10-08) → синоним."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "facial-mesotherapy-single-treatment",
+			"synonym": "RRS mesotherapy",
+			"language": "en",
+			"reason": "mitranicdental.com /mezoterapija/: «Koristimo proizvode renomiranog proizvođača Aesthetic Dermal RRS … profesionalni mezoterapijski kokteli» — бренд коктейлей; та же процедура, что facial-mesotherapy-single-treatment, бренд-дубль не заводим (решение юзера 2026-10-08) → синоним."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "facial-mesotherapy-single-treatment",
+			"synonym": "Мезотерапия RRS",
+			"language": "ru",
+			"reason": "mitranicdental.com /mezoterapija/: «Koristimo proizvode renomiranog proizvođača Aesthetic Dermal RRS … profesionalni mezoterapijski kokteli» — бренд коктейлей; та же процедура, что facial-mesotherapy-single-treatment, бренд-дубль не заводим (решение юзера 2026-10-08) → синоним."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "mesothreads-treatment",
+			"synonym": "Mezotrax",
+			"language": "sr",
+			"reason": "mitranicdental.com /mezo-niti/: «Stadijumi delovanja za Mezotrax proceduru» — бренд мезонитей; та же процедура, что mesothreads-treatment → синоним."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "mesothreads-treatment",
+			"synonym": "Mezotrax",
+			"language": "en",
+			"reason": "mitranicdental.com /mezo-niti/: «Stadijumi delovanja za Mezotrax proceduru» — бренд мезонитей; та же процедура, что mesothreads-treatment → синоним."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "mesothreads-treatment",
+			"synonym": "Мезотракс",
+			"language": "sr-cyrl",
+			"reason": "mitranicdental.com /mezo-niti/: «Stadijumi delovanja za Mezotrax proceduru» — бренд мезонитей; та же процедура, что mesothreads-treatment → синоним."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Fissure Sealant with Fluoride",
+			"slug": "fissure-sealant-with-fluoride",
+			"source": "/preventivna-stomatologija/: «ZALIVANJE FISURA … Zalivanje fisura vrši se tako što se na njih nanosi površinski premaz sa dodatkom fluora»; /djecja-stomatologija/: «ZALIVANJE FISURA»"
+		},
+		{
+			"nameEn": "Plaque and Calculus Removal",
+			"slug": "plaque-and-calculus-removal",
+			"source": "/preventivna-stomatologija/: «UKLANJANJE MEKIH I ČVRSTIH ZUBNIH NASLAGA … (zubni kamenac)»"
+		},
+		{
+			"nameEn": "Topical Fluoride Treatment",
+			"slug": "topical-fluoride-treatment",
+			"source": "/preventivna-stomatologija/: «POLIRANJE ZUBA … koriste se paste sa visokim koncentracijama fluora (lokalna fluorizacija zuba)»; /djecja-stomatologija/: «FLORIZACIJA ZUBA»"
+		},
+		{
+			"nameEn": "Dental Air Polishing",
+			"slug": "dental-air-polishing",
+			"source": "/preventivna-stomatologija/: «Poliranje se vrši takođe mikrogranulama pod pritiskom»"
+		},
+		{
+			"nameEn": "Pediatric Dental Adaptation",
+			"slug": "pediatric-dental-adaptation",
+			"source": "/djecja-stomatologija/: «U prvoj posjeti djeteta nikada ne planiramo ozbiljnije intervencije nego upoznajemo dijete sa prostorom i instrumentima, kroz igru i razgovor»"
+		},
+		{
+			"nameEn": "Dental Counseling",
+			"slug": "dental-counseling",
+			"source": "/djecja-stomatologija/: «Prva posjeta … U ovoj posjeti možete očekivati stručna uputstva o higijeni prvih zubića kao i savjete o ishrani» (как dentalux-tivat)"
+		},
+		{
+			"nameEn": "Dental Caries Treatment",
+			"slug": "dental-caries-treatment",
+			"source": "/konzervativna-stomatologija/: «Uklanjanje karijesa i lečenja oboljenja zubne pulpe …»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "/konzervativna-stomatologija/: «Korišćenjem velikog spektra boja kompozitnih ispuna (plombi)»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "/konzervativna-stomatologija/: «Liječenje oboljelog zuba uz tretiranje korjenskog kanala uz stalnu rentgensku kontrolu» — число каналов не названо (как Mušura, dr-sevaljevic-tivat)"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "там же"
+		},
+		{
+			"nameEn": "Composite Diastema Closure",
+			"slug": "composite-diastema-closure",
+			"source": "/konzervativna-stomatologija/: «koristimo i za estetske korekcije dijasteme … bez brušenja zuba»; главная Smile Makeover: «zatvaranje diasteme … kompozitnim materijalima bez brušenja zuba» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "/fiksna-protetika/: «Mogu se raditi na metalnoj osnovi (metalokeramičke krune I mostovi)»"
+		},
+		{
+			"nameEn": "Metal-Ceramic Bridge Pontic",
+			"slug": "metal-ceramic-bridge-pontic",
+			"source": "/fiksna-protetika/: «… (metalokeramičke krune I mostovi)»"
+		},
+		{
+			"nameEn": "All-Ceramic Crown",
+			"slug": "all-ceramic-crown",
+			"source": "/fiksna-protetika/: «mogu se raditi I bez metalne osnove (bezmetalna keramika)»"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "/fiksna-protetika/: «u ponudi je takođe CIRKONIJUM keramika»"
+		},
+		{
+			"nameEn": "Ceramic Dental Bridge",
+			"slug": "ceramic-dental-bridge",
+			"source": "/fiksna-protetika/: «Krunice ili mostovi izdrađuju se od keramike najnovijih generacija … bez metalne osnove»"
+		},
+		{
+			"nameEn": "Skeletal Partial Denture",
+			"slug": "skeletal-partial-denture",
+			"source": "/mobilna-protetika/: «SKELETIRANA PARCIJALNA VIZIL PROTEZA»"
+		},
+		{
+			"nameEn": "Partial Acrylic Denture",
+			"slug": "partial-acrylic-denture",
+			"source": "/mobilna-protetika/: «PLOČASTA PARCIJALNA PROTEZA … proteze sa žičanim kukicama»"
+		},
+		{
+			"nameEn": "Complete Acrylic Denture",
+			"slug": "complete-acrylic-denture",
+			"source": "/mobilna-protetika/: «TOTALNA AKRILATNA PROTEZA»"
+		},
+		{
+			"nameEn": "Partial Denture with Precision Attachment",
+			"slug": "partial-denture-with-precision-attachment",
+			"source": "/mobilna-protetika/: «KOMBINOVANI RADOVI … keramičke krunice sa posebnim ležistima za vezu … I Skeletirana proteza»"
+		},
+		{
+			"nameEn": "Orthodontic Consultation",
+			"slug": "orthodontic-consultation",
+			"source": "/ortodoncija/: «Djeca bi trebala doći na pregled kod ortodonta …», «Ortodontski pregledi moraju se obavljati periodično»"
+		},
+		{
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"source": "/ortodoncija/: «U ortodonciji se koriste fiksni aparati koji su pričvršćeni na zube» — вид брекетов не назван"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "/ortodoncija/: «… i mobilni aparati (koje može stavljati i skidati prema uputstvima ortodonta)»"
+		},
+		{
+			"nameEn": "Orthodontic Retainer",
+			"slug": "orthodontic-retainer",
+			"source": "/ortodoncija/: «nakon završene terapije nose se tzv. retencioni aparati»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "/izbjeljivanje-zuba/: «Ordinacijsko (profesionalno bjeljenje): vrsi se pod kontrolom ljekara u 2-3 seanse trajanja po 30 min a uz pomoć specijalnih lampi»"
+		},
+		{
+			"nameEn": "Home Teeth Whitening",
+			"slug": "home-teeth-whitening",
+			"source": "/izbjeljivanje-zuba/: «Kućno bjeljene: Nakon uzimanja otiska, pacijent dobija specijalne folije»"
+		},
+		{
+			"nameEn": "Internal Bleaching of Devitalized Tooth",
+			"slug": "internal-bleaching-of-devitalized-tooth",
+			"source": "/izbjeljivanje-zuba/: «Bjeljenje avitalnih zuba-prednje zube koji su devitalizovani … moguće je izbjeliti u 2-3 seanse»"
+		},
+		{
+			"nameEn": "Dental Implant Straumann",
+			"slug": "dental-implant-straumann",
+			"source": "/implantati/: «U Mitranić dental & aesthetic centru koristimo vrhunske Straumann implantate»"
+		},
+		{
+			"nameEn": "Dental Implant Sweden & Martina",
+			"slug": "dental-implant-sweden-martina",
+			"source": "/implantati/: «u našoj ponudi su i SWEDEN MARTINA implantni sistemi»"
+		},
+		{
+			"nameEn": "Implant Suprastructure",
+			"slug": "implant-suprastructure",
+			"source": "/implantati/: «na njega se postavlja implantatska suprastruktura, na koju se zatim postavlja protetski rad»"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "/digitalna-radiografija/: «SIMENS SIRONA VARIO DG digitalni dentalni retgen aparat», «Svakih 6 mjeseci za dijagnostiku interdentalnih karijesa»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "/digitalna-radiografija/: «Svake 2 godine panoramski (OPT) za opštu kontolu»; /implantati/: «digitalni rendgenski snimak obje vilice (ortopan)»"
+		},
+		{
+			"nameEn": "Hyaluronic Acid Filler",
+			"slug": "hyaluronic-acid-filler",
+			"source": "/hijaluronski-fileri/: «Hijaluronski fileri …», «Remodelacija jagodica»; /estetska-medicina-2/: «Remodelovanje kompletnog lica (Full Face Aproach) - hijaluronskim filerima»"
+		},
+		{
+			"nameEn": "Lip Augmentation",
+			"slug": "lip-augmentation",
+			"source": "/hijaluronski-fileri/: «Usne (ivice, volumen, promjena oblika)»"
+		},
+		{
+			"nameEn": "Wrinkle Correction Hyaluronic Acid",
+			"slug": "wrinkle-correction-hyaluronic-acid",
+			"source": "/hijaluronski-fileri/: «Nazolabijalne bore, Marionette, Bore iznad gornje usne, Bore ispod donje usne, Bore čeone regije, Bore izmedju obrva»"
+		},
+		{
+			"nameEn": "Botox Injection",
+			"slug": "botox-injection",
+			"source": "/botox-terapija-bora/: «Botox, u Europi poznat pod nazivom Vistabel … za uklanjanje bora na području čela» — назван Botox (vistabel-botox не ставили: Vistabel упомянут как европейское название того же препарата)"
+		},
+		{
+			"nameEn": "Facial Mesotherapy Single Treatment",
+			"slug": "facial-mesotherapy-single-treatment",
+			"source": "/mezoterapija/: «Mezoterapija je metoda koja se primjenjuje u estetskoj medicini s ciljem regeneracije kože … Koristimo proizvode … Aesthetic Dermal RRS» — бренд синонимом"
+		},
+		{
+			"nameEn": "Mesothreads Treatment",
+			"slug": "mesothreads-treatment",
+			"source": "/mezo-niti/: «Mezo-niti … Stadijumi delovanja za Mezotrax proceduru» — бренд синонимом"
+		},
+		{
+			"nameEn": "Face Lifting COG Threads",
+			"slug": "face-lifting-cog-threads",
+			"source": "/mezo-niti/: «Mezo-niti u kombinaciji sa COG Lift nazubljenim nitima pružaju trenutno i prirodno podmlađivanje»"
+		},
+		{
+			"nameEn": "PRP Facial Treatment",
+			"slug": "prp-facial-treatment",
+			"source": "/estetska-medicina-2/, подменю: «PRP terapija» (отдельной страницы нет; раздел — эстетика лица)"
+		},
+		{
+			"nameEn": "Morpheus8 Radiofrequency Microneedling",
+			"slug": "morpheus8-radiofrequency-microneedling",
+			"source": "/morpheus8/: «Morpheus 8 je revolucionarni aparat … putem radiofrekvencije i mikroiglica»; главная: «Morpheus8 inmode laserska platforma» (НОВАЯ запись)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "janko-mitranic",
+			"nameSr": "Janko Mitranić",
+			"professionalTitle": "dr",
+			"position": "Stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://mitranicdental.com/wp-content/uploads/2016/01/mitranic_dental_mitranic_janko.jpg",
+			"services": []
+		},
+		{
+			"slug": "tamara-mitranic",
+			"nameSr": "Tamara Mitranić",
+			"professionalTitle": "dr",
+			"position": "Stomatolog; estetska medicina",
+			"specialtyIds": [
+				78,
+				44
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://mitranicdental.com/wp-content/uploads/2024/04/tamara-mitranic.jpg",
+			"services": [
+				"hyaluronic-acid-filler",
+				"lip-augmentation",
+				"wrinkle-correction-hyaluronic-acid",
+				"botox-injection",
+				"facial-mesotherapy-single-treatment",
+				"mesothreads-treatment",
+				"face-lifting-cog-threads",
+				"prp-facial-treatment",
+				"morpheus8-radiofrequency-microneedling"
+			]
+		}
+	],
+	"disputed": [
+		{
+			"source": "Главная, Smile Makeover: «smanjenje vidljivosti desni pri osmjehu - gummy smile»",
+			"candidates": [
+				"gingivectomy",
+				"laser-gingivectomy",
+				"botox-injection"
+			],
+			"reason": "Метод не назван: «gummy smile» корректируют иссечением десны (гингивэктомия, в т. ч. лазерная) или ботулотоксином — оба есть в клинике по смыслу (стоматология + эстетика Tamara). Равноценные кандидаты — не заводили."
+		}
+	],
+	"excluded": [
+		{
+			"source": "/o-nama/: «Sabotic Senada — Stomatološka sestra»",
+			"reason": "Медсестра — не врач (решение юзера 2026-10-08)."
+		},
+		{
+			"source": "/ortodoncija/: «uspostavili smo saradnju sa vrhunskim Stojković Ortodoncija timom iz Beograda. Dr Ivana Stojković Golac … Prim. Dr Miodrag Stojković — specijalista dentofacijalne ortopedije»",
+			"reason": "Внешние партнёры (команда из Белграда), не сотрудники ординации; страница 2018. Не заводили — вопрос юзеру в openQuestions."
+		},
+		{
+			"source": "/konzervativna-stomatologija/: «materijali na bazi glas jonomer cemenenata … koriste se kao podloga na vitalnim zubima kao I prilikom cementiranja nadoknada»",
+			"reason": "Стеклоиономер — подкладка/цемент, а не пломба; glass-ionomer-filling не ставили."
+		},
+		{
+			"source": "/konzervativna-stomatologija/: «Amalgamske plombe (srebrne plombe) danas su stvar daleke prošlosti»",
+			"reason": "Амальгаму клиника не ставит."
+		},
+		{
+			"source": "/implantati/: «može se nositi i privremena krunica … na implantat se postavlja gingivo-former»",
+			"reason": "Этапы имплантации, не отдельные услуги (временная коронка на импланте — без отдельной записи)."
+		},
+		{
+			"source": "/ortodoncija/: «Kontrole su svaki mjesec do tri mjeseca»",
+			"reason": "Контроли в рамках лечения брекетами — fixed-orthodontic-check-up не ставили (вид аппарата не назван)."
+		},
+		{
+			"source": "/mezoterapija/: «… estetskih problema povezanih s kožom lica, tijela i glave», «U istu svrhu koriste se dermaroleri ili derma pen»",
+			"reason": "Мезотерапия тела/головы и дермапен упомянуты как варианты техники без отдельной услуги — заведена только мезотерапия лица."
+		},
+		{
+			"source": "/morpheus8/: «aparat se uspješno koristi i u drugim regijama tijela»",
+			"reason": "Регионы не названы — одна запись Morpheus8."
+		},
+		{
+			"source": "Главная, Smile Makeover: «detaljna anamneza … konzilijumski pristup … plan terapije»",
+			"reason": "Описание подхода комплексной эстетической реабилитации, не отдельная услуга (составляющие заведены)."
+		},
+		{
+			"source": "/dentalni-turizam/: «stomotološke usluge po najpovoljnijim cijenama u regionu»",
+			"reason": "Дентальный туризм — не услуга, цены не названы (упомянуто в описании не стали — маркетинг)."
+		},
+		{
+			"source": "/garancija/",
+			"reason": "Страница пустая."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Ортодонты Stojković (Белград)",
+			"detail": "/ortodoncija/ (2018-02): «saradnju sa vrhunskim Stojković Ortodoncija timom iz Beograda» — Dr Ivana Stojković Golac и Prim. Dr Miodrag Stojković, «specijalista dentofacijalne ortopedije», с биографиями. Это партнёры, а не сотрудники; не заводили. Если юзер считает, что они принимают в Баре, — завести обоих (78 + 93) и привязать ортодонтию. В БД их нет (stefan-stojkovic — другой человек)."
+		},
+		{
+			"topic": "Сайт 2016–2018, состав мог устареть",
+			"detail": "Стоматологические страницы 2016–2018, эстетика 2020, Morpheus8 и главная — 2024. На главной в 2024 те же двое врачей."
+		},
+		{
+			"topic": "Morpheus8 — новая запись с брендом в названии",
+			"detail": "Генерика «радиочастотный микронидлинг» в каталоге нет, а бренд назван сайтом, поэтому бренд в названии записи (как Ultraformer/Exilis). Если координатор предпочитает generic «Radiofrequency Microneedling» + Morpheus8 синонимом — переименовать до применения."
+		}
+	]
+}

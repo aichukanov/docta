@@ -1,0 +1,559 @@
+{
+	"schemaVersion": 1,
+	"slug": "moj-doktor-niksic",
+	"name": "Moj Doktor",
+	"city": "Nikšić",
+	"cityId": 2,
+	"googlePlaceId": "ChIJbaoQbACpTRMRFwDCc29-_GY",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-moj-doktor-niksic.sql",
+		"server/sql/insert-clinic-moj-doktor-niksic-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 182,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug и врачей по slug. dr Ljiljana Adžić параллельно заводит агент F (ДЗ Никшич) — оба файла делают find-or-create со slug 'ljiljana-adzic', порядок применения не важен. Сухой прогон 2026-10-08 (агент K, DML через EXPLAIN внутри START TRANSACTION … ROLLBACK): 0 ошибок; несматченные slug — только 3 свои новые записи каталога (и, в привязках, 2 новых врача, которых в сухом прогоне ещё нет); анализы — все 28 найдены; счётчики clinics/doctors/clinic_medical_services/clinic_lab_tests/medical_services/doctor_clinics до и после совпали (163/1743/14174/13576/5797/2343). Подволна 2c, агент K. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 209
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://mojdoktor.co.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": "2023-03-15",
+			"note": "WordPress (тема Avada). TLS-сертификат не проходит проверку — curl -k. Читается через WP REST /wp-json/wp/v2/pages: 8 страниц (home 2023-05-19; onama, pedijatar, kucne-posjete-doktora, ljekarska-uvjerenja, laboratorijske-analize 2023-03-15; usluge 2021-07-17; kontakt 2020-05-23). Постов нет. Единственная цена на сайте — «Kompletna krvna slika – 5.0€» на /laboratorijske-analize/; её дата — modified этой страницы (2023-03-15). Фото врачей нет; соцсетей клиники нет (в футере демо-ссылка темы facebook.com/pages/Themefusion/…)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/niksic/moj-doktor.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.7786885 / 18.9434218, телефон +382 68 339 999. formattedAddress «Drvoimpex, Nikšić 81400» — название соседнего объекта, не адрес; адрес взят с сайта. 3 отзыва (rating 3.7) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Nika Miljanića 1 — /kontakt/ «Ulica Nika Miljanića 1 (preko puta bolnice), Nikšić»; индекс 81400 (Google)",
+		"phone": "+38268339999;+38240280447 — /kontakt/ «Tel: 068 33 99 99, 040 280 447» (первый подтверждён Google). Номера направлений не вынесены в карточку: педиатр +38268028999 (/pedijatar/, вместе с 040 280 447), кардиолог Perazić 068 07 99 99, лаборатория 068 04 82 05, психолог Sekulović 069 00 77 88 (главная). Телефон Perazića в doctors.phone не записан — он существующий врач с другими местами работы",
+		"email": "mojdoktorniksic@yahoo.com — /kontakt/",
+		"website": "https://mojdoktor.co.me/",
+		"social": "нет — в футере только демо-ссылка темы Avada",
+		"logo": "https://mojdoktor.co.me/wp-content/uploads/2020/05/mojdoktorlogo.png",
+		"workingHours": "не указаны на сайте — clinic_working_hours не заполняется",
+		"doctors": "8 из 9: найдены в БД 5 (Mrkić 64, Pejaković 68, Perović 70, Šupić 1417, Perazić 2956 — id локали); новые 2 (Boško Kontić, Senka Dumović Kontić); Ljiljana Adžić — find-or-create совместно с агентом F; Prim. dr Ljiljana Žižić не заведена (нет специальности, см. openQuestions)",
+		"doctorPhotos": "нет ни одного на сайте",
+		"prices": "1 цена на весь сайт: Kompletna krvna slika 5.0 € (clinic_lab_tests). Услуги — 40, все без цены",
+		"labTests": "28 из 28 строк /laboratorijske-analize/ (строка «HDL – holesterol» в источнике повторена дважды — одна позиция; «TSH, T3, T4» — три позиции); «Uzorkovanje (usluga vadenja krvi)» — услуга Venous Blood Draw",
+		"reviews": "pending — ждут полной выгрузки юзера (3 в Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "medical-certificate-for-petrol-station-workers",
+			"nameEn": "Medical Certificate for Petrol Station Workers",
+			"nameSr": "Ljekarsko uvjerenje za radnike na pumpi",
+			"categoryIds": [
+				9
+			],
+			"specialtyIds": [
+				45
+			],
+			"reason": "«LJEKARSKO UVJERENJE ZA RADNIKE NA PUMPI» — такого вида справки в каталоге нет"
+		},
+		{
+			"table": "medical_services",
+			"slug": "nurse-home-visit",
+			"nameEn": "Nurse Home Visit",
+			"nameSr": "Kućna posjeta medicinske sestre",
+			"categoryIds": [
+				30
+			],
+			"specialtyIds": [],
+			"reason": "«Dolazak patronažne sestre» — в каталоге только тарифы ДЗ с расстоянием и визит «ljekar + tehničar»"
+		},
+		{
+			"table": "medical_services",
+			"slug": "wound-dressing-home-visit",
+			"nameEn": "Wound Dressing Home Visit",
+			"nameSr": "Previjanje rane u kućnoj posjeti",
+			"categoryIds": [
+				30,
+				31
+			],
+			"specialtyIds": [],
+			"reason": "«Previjanje rana» в перечне кućnih posjeta — по схеме *-home-visit волны 2a"
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Medical Certificate for Driving License Category A, B, C, D, E",
+			"source": "LJEKARSKA UVJERENJA ZA SVE KATEGORIJE VOŽNJE A, B, C, D, E"
+		},
+		{
+			"nameEn": "Medical Certificate for General Work",
+			"source": "LJEKARSKO UVJERENJE ZA OPŠTU RADNU SPOSOBNOST"
+		},
+		{
+			"nameEn": "Medical Certificate for High Risk and Difficult Working Conditions",
+			"source": "LJEKARSKO UVJERENJE ZA RAD U OTEŽANIM USLOVIMA"
+		},
+		{
+			"nameEn": "Medical Certificate for Professional Drivers",
+			"source": "LJEKARSKO UVJERENJE ZA RAD PROFESIONALNIH VOZAČA"
+		},
+		{
+			"nameEn": "Medical Certificate for Petrol Station Workers",
+			"source": "LJEKARSKO UVJERENJE ZA RADNIKE NA PUMPI"
+		},
+		{
+			"nameEn": "Medical Certificate for Citizenship and Permanent Residence",
+			"source": "LJEKARSKO UVJERENJE ZA DOBIJANJE DRŽAVLJANSTVA, PRODUŽENJE BORAVKA, DOBI JANJE DOZVOLE ZA RAD I ODLAZAK U INOSTRANSTVO"
+		},
+		{
+			"nameEn": "Medical Certificate for Residence and Work in Montenegro",
+			"source": "та же строка: «PRODUŽENJE BORAVKA, DOBI JANJE DOZVOLE ZA RAD»"
+		},
+		{
+			"nameEn": "Medical Certificate for Work Abroad",
+			"source": "та же строка: «ODLAZAK U INOSTRANSTVO»"
+		},
+		{
+			"nameEn": "Medical Certificate for Firearms Possession",
+			"source": "LJEKARSKO UVJERENJE ZA DOBIJANJE 1 PRODUŽENJE DOZVOLE ZA POSJEDOVANJE VATRENOG ORUŽJA (опечатка источника «1» вместо «I»)"
+		},
+		{
+			"nameEn": "Medical Certificate for Military Service",
+			"source": "LJEKARSKO UVJERENJE O SPOSOBNOSTI ZA OBAVLJANJE SLUŽBE U VOJSCI CRNE GORE"
+		},
+		{
+			"nameEn": "Medical Certificate for Underage Marriage",
+			"source": "LJEKARSKO UVJERENJE ZA SKLAPANJE BRAKA ZA MALOLJETNE OSOBE"
+		},
+		{
+			"nameEn": "Medical Certificate for Child Adoption",
+			"source": "LJEKARSKO UVJERENJE O PODOBNOSTI ZA USVAJANJE DJETETA"
+		},
+		{
+			"nameEn": "Medical Certificate for Court Expert",
+			"source": "LJEKARSKO UVJERENJE ZA POSAO SUDSKOG VJEŠTKA"
+		},
+		{
+			"nameEn": "Medical Certificate for Life Insurance",
+			"source": "LJEKARSKO UVJERENJE ZA ŽIVOTNO OSIGURANJE"
+		},
+		{
+			"nameEn": "Medical Certificate for Athletes",
+			"source": "LJEKARSKO UVJERENJE ZA SPORTISTE"
+		},
+		{
+			"nameEn": "Medical Certificate for Continued Education",
+			"source": "LJEKARSKO UVJERENJE ZA NASTAVAK ŠKOLOVANJA"
+		},
+		{
+			"nameEn": "Pediatric Examination",
+			"source": "Specijalistički pregled pedijatra za bebe i djecu (/pedijatar/)"
+		},
+		{
+			"nameEn": "Follow-up Pediatric Examination",
+			"source": "Kontrolni specijalistički pregled pedijatra"
+		},
+		{
+			"nameEn": "Pediatric Hip Ultrasound",
+			"source": "Ultrazvučni pregled kukova kod beba"
+		},
+		{
+			"nameEn": "Home Visit Examination",
+			"source": "Posjetu ljekara specijaliste; Pregledi i kontrole (/kucne-posjete-doktora/)"
+		},
+		{
+			"nameEn": "Home Visit Follow-up",
+			"source": "Pregledi i kontrole"
+		},
+		{
+			"nameEn": "ECG Home Visit",
+			"source": "EKG (в перечне «U kućnim uslovima možemo organizovati»)"
+		},
+		{
+			"nameEn": "Nurse Home Visit",
+			"source": "Dolazak patronažne sestre"
+		},
+		{
+			"nameEn": "Home Visit for Laboratory Sample Collection",
+			"source": "Uzimanje uzoraka za laboratorijske analize"
+		},
+		{
+			"nameEn": "Intramuscular Injection Home Visit",
+			"source": "Davanje terapije (injekcije, infuzije itd.)"
+		},
+		{
+			"nameEn": "Infusion Therapy Home Visit",
+			"source": "Davanje terapije (injekcije, infuzije itd.)"
+		},
+		{
+			"nameEn": "Wound Dressing Home Visit",
+			"source": "Previjanje rana"
+		},
+		{
+			"nameEn": "Urinary Catheter Placement Home Visit",
+			"source": "Zamjena urinarnog katetera…"
+		},
+		{
+			"nameEn": "Audiometry",
+			"source": "«audiometriju» (/onama/, /usluge/)"
+		},
+		{
+			"nameEn": "Spirometry",
+			"source": "«spirometriju» (/onama/, /usluge/)"
+		},
+		{
+			"nameEn": "ECG",
+			"source": "«ekg» (/onama/, /usluge/); главная «ULTRAZVUK SRCA, HOLTER, EKG»"
+		},
+		{
+			"nameEn": "Echocardiography (Heart Ultrasound)",
+			"source": "«ultrazvuk srca» (/onama/); главная «ULTRAZVUK SRCA»"
+		},
+		{
+			"nameEn": "Holter ECG 24h",
+			"source": "главная «ULTRAZVUK SRCA, HOLTER, EKG — Dr Srdjan Perazić Internista kardiolog»"
+		},
+		{
+			"nameEn": "Cardiologist Examination",
+			"source": "«internističko kardiološke preglede» (/onama/)"
+		},
+		{
+			"nameEn": "X-Ray Reading",
+			"source": "«opisivanje RTG i CT snimaka»"
+		},
+		{
+			"nameEn": "CT Scan Reading",
+			"source": "«opisivanje RTG i CT snimaka»"
+		},
+		{
+			"nameEn": "First Psychological Examination",
+			"source": "«pregled psihologa» (/onama/, /usluge/)"
+		},
+		{
+			"nameEn": "Psychological Counseling",
+			"source": "«psihološka savjetovanja»; главная «PSIHOLOŠKO SAVJETOVANJE — Monika Sekulović – Psiholog»"
+		},
+		{
+			"nameEn": "Nutritionist Specialist Examination",
+			"source": "главная «SPECIJALISTIČKA AMBULANTA ZA PRAVILNU ISHRANU — Prim. Dr Ljiljana Žižić – specijalista za pravilnu ishranu»"
+		},
+		{
+			"nameEn": "Venous Blood Draw",
+			"source": "«Uzorkovanje (usluga vadenja krvi)» (/laboratorijske-analize/)"
+		}
+	],
+	"labTests": [
+		{
+			"nameEn": "Complete Blood Count",
+			"price": 5,
+			"source": "-Kompletna krvna slika – 5.0€"
+		},
+		{
+			"nameEn": "Erythrocyte Sedimentation Rate",
+			"source": "– Sedimentacija"
+		},
+		{
+			"nameEn": "Glucose",
+			"source": "-Glukoza"
+		},
+		{
+			"nameEn": "Cholesterol",
+			"source": "– Holesterol"
+		},
+		{
+			"nameEn": "Triglycerides",
+			"source": "-Trigliceridi"
+		},
+		{
+			"nameEn": "HDL Cholesterol",
+			"source": "– HDL – holesterol (строка повторена дважды)"
+		},
+		{
+			"nameEn": "LDL Cholesterol",
+			"source": "– LDL – holesterol"
+		},
+		{
+			"nameEn": "Urea",
+			"source": "– Urea"
+		},
+		{
+			"nameEn": "Creatinine",
+			"source": "-Kreatinin"
+		},
+		{
+			"nameEn": "AST",
+			"source": "-AST"
+		},
+		{
+			"nameEn": "ALT",
+			"source": "-ALT"
+		},
+		{
+			"nameEn": "Alkaline Phosphatase",
+			"source": "-ALP (Alkalna fosfataza)"
+		},
+		{
+			"nameEn": "Amylase",
+			"source": "-Amilaza"
+		},
+		{
+			"nameEn": "LDH",
+			"source": "-LDH (Laktat dehidrogenaza)"
+		},
+		{
+			"nameEn": "Gamma-GT",
+			"source": "-GGT"
+		},
+		{
+			"nameEn": "Total Protein",
+			"source": "– Proteini"
+		},
+		{
+			"nameEn": "Albumin",
+			"source": "-Albumin"
+		},
+		{
+			"nameEn": "Calcium",
+			"source": "– Ukupni kalcijum"
+		},
+		{
+			"nameEn": "C-Reactive Protein",
+			"source": "– CRP"
+		},
+		{
+			"nameEn": "Iron",
+			"source": "– Gvožde"
+		},
+		{
+			"nameEn": "Total Bilirubin",
+			"source": "– Ukupni bilirubin"
+		},
+		{
+			"nameEn": "Direct Bilirubin",
+			"source": "– Direktni bilirubin"
+		},
+		{
+			"nameEn": "HbA1c",
+			"source": "– HbA1c; /onama/ «tromjesečni šećer»"
+		},
+		{
+			"nameEn": "Complete Urinalysis",
+			"source": "– Citohemijska analiza urina –"
+		},
+		{
+			"nameEn": "Psychoactive Substances Panel (10 Parameters)",
+			"source": "– Test na psihoaktivne supstance (panel od 10 testova)"
+		},
+		{
+			"nameEn": "TSH",
+			"source": "– Analiza hormona štitaste žlijezde: TSH, T3, T4"
+		},
+		{
+			"nameEn": "T3",
+			"source": "– Analiza hormona štitaste žlijezde: TSH, T3, T4"
+		},
+		{
+			"nameEn": "T4",
+			"source": "– Analiza hormona štitaste žlijezde: TSH, T3, T4"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "mrkic-zoran",
+			"nameSr": "Mrkić Zoran",
+			"professionalTitle": "dr",
+			"position": "Specijalista urologije",
+			"specialtyIds": [
+				9
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "НАЙДЕН В БД: id 64 (локаль), name_sr в порядке «Фамилия Имя»; Milmedika Nikšić, Codra, Opšta bolnica Nikšić. Источник: /onama/ «Spec urologije, dr Zoran Mrkić»."
+		},
+		{
+			"slug": "bosko-kontic",
+			"nameSr": "Boško Kontić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista medicine rada",
+			"specialtyIds": [
+				50
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "Новый. /onama/ «Spec medicine rada, dr Boško Kontić». Справки (medicina rada) ему не привязаны — сайт не ставит его над перечнем."
+		},
+		{
+			"slug": "pejakovic-miso",
+			"nameSr": "Pejaković Mišo",
+			"professionalTitle": "dr",
+			"position": "Specijalista otorinolaringologije (ORL)",
+			"specialtyIds": [
+				11
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "НАЙДЕН В БД: id 68 (Milmedika Nikšić). /onama/ «Spec otorinolaringolog (ORL), dr Mišo Pejaković»."
+		},
+		{
+			"slug": "senka-dumovic-kontic",
+			"nameSr": "Senka Dumović Kontić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista pedijatar",
+			"specialtyIds": [
+				4
+			],
+			"hasBio": false,
+			"services": [
+				"Pediatric Examination",
+				"Follow-up Pediatric Examination",
+				"Pediatric Hip Ultrasound"
+			],
+			"note": "Новая. /pedijatar/, /onama/."
+		},
+		{
+			"slug": "branka-supic",
+			"nameSr": "Branka Šupić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista pedijatar",
+			"specialtyIds": [
+				4
+			],
+			"hasBio": false,
+			"services": [
+				"Pediatric Examination",
+				"Follow-up Pediatric Examination",
+				"Pediatric Hip Ultrasound"
+			],
+			"note": "НАЙДЕНА В БД: id 1417, «Šef Odjeljenja pedijatrije» Opšte bolnice Nikšić."
+		},
+		{
+			"slug": "ljiljana-adzic",
+			"nameSr": "Ljiljana Adžić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista opšte medicine",
+			"specialtyIds": [
+				45
+			],
+			"hasBio": false,
+			"services": [
+				"Home Visit Examination",
+				"Home Visit Follow-up",
+				"ECG Home Visit",
+				"Nurse Home Visit",
+				"Home Visit for Laboratory Sample Collection",
+				"Intramuscular Injection Home Visit",
+				"Infusion Therapy Home Visit",
+				"Wound Dressing Home Visit",
+				"Urinary Catheter Placement Home Visit"
+			],
+			"note": "Find-or-create, slug строго ljiljana-adzic — её же заводит агент F (ДЗ Никшич, «ID odrasli»). На локали 2026-10-08 нет. «specijalista opšte medicine» → GENERAL_MEDICINE (45); если агент F ставит FAMILY_MEDICINE (20) — INSERT IGNORE даст обе, свести координатору."
+		},
+		{
+			"slug": "perovic-dejan",
+			"nameSr": "Perović Dejan",
+			"professionalTitle": "dr",
+			"position": "Specijalista radiolog",
+			"specialtyIds": [
+				10
+			],
+			"hasBio": false,
+			"services": [],
+			"note": "НАЙДЕН В БД: id 70, Milmedika Nikšić и Brezovik. Главная «ULTRAZVUČNA DIJAGNOSTIKA — Dr Dejan Perović specijalista radiolog» — конкретных УЗИ сайт не называет, привязок нет."
+		},
+		{
+			"slug": "srdjan-perazic",
+			"nameSr": "Srđan Perazić",
+			"professionalTitle": "Dr",
+			"position": "Internista kardiolog",
+			"specialtyIds": [
+				1,
+				2
+			],
+			"hasBio": false,
+			"services": [
+				"Echocardiography (Heart Ultrasound)",
+				"Holter ECG 24h",
+				"ECG",
+				"Cardiologist Examination"
+			],
+			"note": "НАЙДЕН В БД: id 2956 (Novi Cenex Medical, ДЗ Podgorica — «Internistička ambulanta»), та же специальность. На сайте «Srdjan» — slug srdjan-perazic совпадает. Единственный кандидат."
+		}
+	],
+	"excluded": [
+		{
+			"source": "Prim. Dr Ljiljana Žižić – specijalista za pravilnu ishranu (главная)",
+			"reason": "В enums/specialty.ts нет ни нутрициологии/диетологии, ни гигиены питания; новые специальности в волне не создаются (правило 8). Готовый закомментированный блок — в конце PART 3 insert-clinic-moj-doktor-niksic.sql. Её кабинет как услуга заведён (Nutritionist Specialist Examination). См. openQuestions."
+		},
+		{
+			"source": "Monika Sekulović – Psiholog 069 00 77 88 (главная)",
+			"reason": "Психолог, не врач. Услуги «pregled psihologa» и «psihološko savjetovanje» заведены на уровне клиники, без привязки к врачу."
+		},
+		{
+			"source": "«Određivanje i davanje terapija» (/pedijatar/)",
+			"reason": "Часть педиатрического приёма, не отдельная процедура."
+		},
+		{
+			"source": "«Nastavak liječenja kod kuće nakon otpusta iz bolnice»; «I mnoge druge.» (/kucne-posjete-doktora/)",
+			"reason": "Описание сценария, не процедура."
+		},
+		{
+			"source": "«sve vrste laboratorijskih nalaza» (/onama/, /usluge/)",
+			"reason": "Обобщение — анализы заведены по перечню /laboratorijske-analize/."
+		},
+		{
+			"source": "«ultrazvučne preglede»; главная «ULTRAZVUČNA DIJAGNOSTIKA — Dr Dejan Perović»",
+			"reason": "Ни одной области УЗИ не названо (кроме УЗИ сердца и кукова у beba, заведённых отдельно) — направление, не услуга."
+		},
+		{
+			"source": "«usluge iz oblasti medicine rada … i sportske medicine»",
+			"reason": "Направления. Медицина труда раскрыта перечнем /ljekarska-uvjerenja/, спортивная — справкой для спортсменов; спортивно-медицинский осмотр отдельно не назван."
+		},
+		{
+			"source": "Урологический и ЛОР-приём (dr Zoran Mrkić, dr Mišo Pejaković)",
+			"reason": "Сайт называет врачей, но не услуги их приёма — осмотры не заведены (не добавлять «логичные» услуги)."
+		},
+		{
+			"source": "«Analiza hormona štitaste žlijezde: TSH, T3, T4» → не Thyroid Panel TSH FT3 FT4",
+			"reason": "Сайт называет T3/T4, а не свободные фракции; заведены три отдельных анализа TSH, T3, T4."
+		},
+		{
+			"source": "«Najpovoljnije cijene ljekarskih uvjerenja Crna Gora»; «medicinskom opremom vrhunske tehnologije»",
+			"reason": "Маркетинговые утверждения — в описание не перенесены."
+		},
+		{
+			"source": "facebook.com/pages/Themefusion/101565403356430 (футер)",
+			"reason": "Демо-ссылка темы Avada, не страница клиники."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Prim. dr Ljiljana Žižić — специальность",
+			"detail": "«specijalista za pravilnu ishranu» (в ЧГ/Сербии это обычно специалист гигиены/нутрициологии). Подходящей специальности в enum нет. Варианты: завести новую специальность (NUTRITION / DIETETICS — правка enum + i18n на 6 языков) или поставить ближайшую существующую (например, GENERAL_MEDICINE 45) — тогда раскомментировать блок в insert-clinic-moj-doktor-niksic.sql, подставив id, и привязать её к Nutritionist Specialist Examination."
+		},
+		{
+			"topic": "Holter → Holter ECG 24h",
+			"detail": "Главная называет просто «HOLTER» в блоке «ULTRAZVUK SRCA, HOLTER, EKG» кардиолога. Сопоставлено с Holter ECG 24h (стандартный ЭКГ-холтер); холтер давления не заведён. Длительность сайт не указывает."
+		},
+		{
+			"topic": "«ZA RAD U OTEŽANIM USLOVIMA» → какая из двух справок",
+			"detail": "В каталоге две: medical-certificate-for-high-risk-and-difficult-working-conditions («povećan rizik i otežane uslove rada», 11 клиник) и …-difficult-working-conditions-without-high-risk («bez povećanog rizika», 8). Сайт говорит только «otežani uslovi» — выбрана первая как общая; «bez povećanog rizika» — уточнение, которого в источнике нет."
+		},
+		{
+			"topic": "Одна строка справок → три позиции",
+			"detail": "«ZA DOBIJANJE DRŽAVLJANSTVA, PRODUŽENJE BORAVKA, DOBIJANJE DOZVOLE ZA RAD I ODLAZAK U INOSTRANSTVO» разложена на citizenship-and-permanent-residence + residence-and-work-in-montenegro + work-abroad — в каталоге это три разных справки."
+		}
+	]
+}

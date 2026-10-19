@@ -1,0 +1,374 @@
+{
+	"schemaVersion": 1,
+	"slug": "ordinacija-fontis-podgorica",
+	"name": "Ordinacija Fontis",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJeemPdTrrTRMRDf_15muQOhc",
+	"clinicTypeIds": [
+		1,
+		14
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ordinacija-fontis-podgorica.sql",
+		"server/sql/insert-clinic-ordinacija-fontis-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 235,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Y. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и врача по slug. Сухой прогон 2026-10-09 на локали (plain + shadow для services) — см. отчёт агента. Slug клиники сверен с прод-API (204); predrag-maras на проде — id 133. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 262
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://fontiscg.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress/Elementor. wp-json /wp/v2/pages (16 страниц, modified до 2026-09-29: nas-tim, ordinacija-fontis, o-nama, nasa-istorija, nas-pristup, kontakt, pocetna + en) и /wp/v2/services (7 me + 7 en, modified 2026-04-13…17). Сырой HTML /kontakt и главной — соцсети, логотип. Исходный URL Google /me/kontakt-2 — 404. Цен, часов и email нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/ordinacija-fontis-interna-medicina.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Взято: «Ordinacija Fontis - Interna medicina», place_id ChIJeemPdTrrTRMRDf_15muQOhc, 42.4426187 / 19.2518847, +382 69 015 303, «1 Svetozara Markovića, Podgorica 81000». 16 отзывов (в файле 5)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/fontis.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Второе место той же компании по тому же адресу: «Fontis» (skin_care_clinic, manufacturer), place_id ChIJm0Il2zDrTRMR1Fm031vRYjE, 42.4427808 / 19.2519828, тот же телефон, 55 отзывов. Отдельной клиникой не заводится; его google_place_id в карточку не пишется (поле одно). Отзывы этого места — решать при выгрузке отзывов."
+		}
+	],
+	"coverage": {
+		"address": "Svetozara Markovića 1, 81000 — сайт и оба места Google",
+		"phone": "+38269015303;+38220248914;+38268739439 — /kontakt (первый = Google)",
+		"email": "нет на сайте",
+		"website": "https://fontiscg.com/",
+		"social": "facebook.com/p/Ordinacija-Fontis-100057308207673, @ordinacijafontis — ссылки сайта (не открывались)",
+		"logo": "https://fontiscg.com/wp-content/uploads/2026/04/fontis-text-logo.png",
+		"workingHours": "нет — ни на сайте, ни в Google",
+		"description": "из /o-nama, /nasa-istorija, /ordinacija-fontis и страниц услуг",
+		"languages": "только SR — сайт me/en, приём на других языках не заявлен",
+		"doctors": "1 врач — predrag-maras найден в БД (только привязка); фармацевты и косметологи не заводятся",
+		"prices": "цен нет — 26 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — 16 (медицинское место) + 55 (место «Fontis»), ждут выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "kidney-ultrasound",
+			"nameEn": "Kidney Ultrasound",
+			"nameSr": "Ultrazvuk bubrega",
+			"categoryIds": [
+				4
+			],
+			"specialtyIds": [
+				10
+			],
+			"owner": "Z",
+			"reason": "Запись агента Z (2026-10-09, впервые — ordinacija-dr-rahovic-bijelo-polje); создаётся идемпотентно по slug теми же значениями, что и в insert-clinic-ordinacija-dr-rahovic-bijelo-polje-services.sql. Fontis: «ultrazvučni pregledi (… bubrezi …)»."
+		},
+		{
+			"table": "medical_services",
+			"slug": "hydradermabrasion",
+			"nameEn": "Hydradermabrasion",
+			"nameSr": "Hidrodermoabrazija",
+			"categoryIds": [
+				24
+			],
+			"specialtyIds": [
+				7,
+				44
+			],
+			"reason": "Общая процедура (аппаратная гидродермабразия: вакуумное очищение + пилинг + инфузия сывороток). Medcontour Institute: «Hydra Clear … combines deep hydration, gentle exfoliation, and firming technologies»; Fontis: «Hydrafacial je neinvazivan, višestepeni tretman … Hydrafacial važi za najnježniju hidrodermoabraziju». В каталоге записи нет (есть только dermabrasion — глубокая дермабразия, и diamond-microdermabrasion). Два разных аппарата одной сути → одна общая запись, бренды HydraFacial и Hydra Clear — синонимами (решение юзера: брендовый дубль не заводить). Кат. 24 DERMATOLOGY, спец. 7 + 44 (как skin-hydration-treatment / facial-biorevitalization)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "microdermabrasion",
+			"nameEn": "Microdermabrasion",
+			"nameSr": "Mikrodermoabrazija",
+			"categoryIds": [
+				18,
+				24
+			],
+			"specialtyIds": [
+				7,
+				18
+			],
+			"reason": "Общая услуга: Medcontour /services «Face Up microdermabrasion» («Face Up mikrodermoabrazija»); Fontis /services/tretmani-lica-fontis «Mikrodermoabrazija lica i leđa (Reviderm)». В каталоге есть только diamond-microdermabrasion (конкретный метод — алмазная насадка, сайт метод не называет) и dermabrasion (глубокая дермабразия — другая процедура). Схема — как diamond-microdermabrasion: кат. 18 + 24, спец. 7 + 18."
+		},
+		{
+			"table": "medical_services",
+			"slug": "radiofrequency-skin-tightening",
+			"nameEn": "Radiofrequency Skin Tightening",
+			"nameSr": "Radiofrekventno zatezanje kože",
+			"categoryIds": [
+				18,
+				24
+			],
+			"specialtyIds": [
+				7,
+				18,
+				44
+			],
+			"reason": "Решение координатора 2026-10-09. Fontis /services/tretmani-lica-fontis — «RF Bipolar tretman – radiofrekventna tehnologija za poboljšanje tonusa, zatezanje kože i stimulaciju kolagena». Общей RF-записи без бренда в каталоге нет (exilis-*, ultraformer-*, renuvion — бренды; morpheus8 — RF-микронидлинг; face-and-body-skin-tightening — метод не указан). Категории как у exilis/morpheus8: 18 + 24, спец. 7 + 18 + 44."
+		}
+	],
+	"services": [
+		{
+			"slug": "internist-examination",
+			"nameEn": "Internist Examination",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «opšti internistički pregled»"
+		},
+		{
+			"slug": "ecg",
+			"nameEn": "ECG",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «EKG»"
+		},
+		{
+			"slug": "holter-blood-pressure-24h",
+			"nameEn": "Holter Blood Pressure 24h",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «24-časovni Holter monitoring krvnog pritiska»"
+		},
+		{
+			"slug": "endocrinologist-examination",
+			"nameEn": "Endocrinologist Examination",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «pregledi iz oblasti endokrinologije» (en: «endocrinology consultations»)",
+			"note": "Осмотр проводит интернист (единственный врач), отдельного эндокринолога нет; запись «Pregled endokrinologa» — единственная подходящая."
+		},
+		{
+			"slug": "thyroid-ultrasound",
+			"nameEn": "Thyroid Ultrasound",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «ultrazvučni pregledi (štitasta žlijezda, vrat, dojke, abdomen, mala karlica, bubrezi, prostata, mokraćna bešika, testisi)» — štitasta žlijezda"
+		},
+		{
+			"slug": "neck-ultrasound",
+			"nameEn": "Neck Ultrasound",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «ultrazvučni pregledi (štitasta žlijezda, vrat, dojke, abdomen, mala karlica, bubrezi, prostata, mokraćna bešika, testisi)» — vrat"
+		},
+		{
+			"slug": "breast-ultrasound",
+			"nameEn": "Breast Ultrasound",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «ultrazvučni pregledi (štitasta žlijezda, vrat, dojke, abdomen, mala karlica, bubrezi, prostata, mokraćna bešika, testisi)» — dojke"
+		},
+		{
+			"slug": "abdomen-ultrasound",
+			"nameEn": "Abdomen Ultrasound",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «ultrazvučni pregledi (štitasta žlijezda, vrat, dojke, abdomen, mala karlica, bubrezi, prostata, mokraćna bešika, testisi)» — abdomen"
+		},
+		{
+			"slug": "lower-abdomen-ultrasound",
+			"nameEn": "Lower Abdomen Ultrasound",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «ultrazvučni pregledi (štitasta žlijezda, vrat, dojke, abdomen, mala karlica, bubrezi, prostata, mokraćna bešika, testisi)» — mala karlica",
+			"note": "Трансабдоминальное УЗИ малого таза у интерниста (оба пола) → «Ultrazvuk donjeg dijela abdomena»; gynecological-ultrasound (синоним «Ultrazvuk male karlice») — гинекологическое, не взято."
+		},
+		{
+			"slug": "kidney-ultrasound",
+			"nameEn": "Kidney Ultrasound",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «ultrazvučni pregledi (štitasta žlijezda, vrat, dojke, abdomen, mala karlica, bubrezi, prostata, mokraćna bešika, testisi)» — bubrezi (запись агента Z, впервые — ordinacija-dr-rahovic-bijelo-polje; решение координатора 2026-10-09)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "urinary-tract-ultrasound",
+			"nameEn": "Urinary Tract Ultrasound",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «ultrazvučni pregledi (štitasta žlijezda, vrat, dojke, abdomen, mala karlica, bubrezi, prostata, mokraćna bešika, testisi)» — mokraćna bešika (названа отдельно от почек; отдельной записи УЗИ только мочевого пузыря нет, ultrasound-bladder-with-prostate — для «prostata»)"
+		},
+		{
+			"slug": "ultrasound-bladder-with-prostate",
+			"nameEn": "Ultrasound Bladder with Prostate",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «ultrazvučni pregledi (štitasta žlijezda, vrat, dojke, abdomen, mala karlica, bubrezi, prostata, mokraćna bešika, testisi)» — prostata (трансабдоминально, вместе с мочевым пузырём; трансректальное TRUS сайт не называет)"
+		},
+		{
+			"slug": "testicular-ultrasound",
+			"nameEn": "Testicular Ultrasound",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «ultrazvučni pregledi (štitasta žlijezda, vrat, dojke, abdomen, mala karlica, bubrezi, prostata, mokraćna bešika, testisi)» — testisi"
+		},
+		{
+			"slug": "doppler-neck-blood-vessels",
+			"nameEn": "Doppler Neck Blood Vessels",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «color dopler pregledi arterija vrata, ruku i nogu» — vrat"
+		},
+		{
+			"slug": "doppler-upper-extremity-blood-vessels",
+			"nameEn": "Doppler Upper Extremity Blood Vessels",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «color dopler pregledi arterija vrata, ruku i nogu» — ruke"
+		},
+		{
+			"slug": "doppler-lower-extremity-blood-vessels",
+			"nameEn": "Doppler Lower Extremity Blood Vessels",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «color dopler pregledi arterija vrata, ruku i nogu» — noge"
+		},
+		{
+			"slug": "nutritionist-specialist-examination",
+			"nameEn": "Nutritionist Specialist Examination",
+			"price": null,
+			"source": "/services/ordinacija-za-internu-medicinu «Usluge ordinacije» — «savjeti iz oblasti nutricionizma» (en: «nutritional counselling»; синоним «Konsultacija nutricioniste»)"
+		},
+		{
+			"slug": "dermapen-microneedling",
+			"nameEn": "Dermapen Microneedling",
+			"price": null,
+			"source": "/services/dermapen-4-mikronidling — «Dermapen 4™ mikronidling je savremeni regenerativni tretman … stvaranjem kontrolisanih mikrokanala»"
+		},
+		{
+			"slug": "hydradermabrasion",
+			"nameEn": "Hydradermabrasion",
+			"price": null,
+			"source": "/services/hydrafacial-tretman — «Hydrafacial je neinvazivan, višestepeni tretman … Hydrafacial važi za najnježniju hidrodermoabraziju» (VORTEX-FUSION™, бустеры — оригинальный аппарат HydraFacial; бренд — синоним)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "alma-soprano-titanium-special-edition-hair-removal",
+			"nameEn": "Alma Soprano Titanium Special Edition Hair Removal",
+			"price": null,
+			"source": "/services/laserska-epilacija — «U Fontisu se za lasersku epilaciju koristi Alma Soprano Titanium … PRVI U CRNOJ GORI» (единственная разовая запись этого аппарата; пакеты MOA — не то)"
+		},
+		{
+			"slug": "chemical-peeling-face",
+			"nameEn": "Chemical Face Peel",
+			"price": null,
+			"source": "/services/tretmani-lica-fontis — «Hemijski piling lica i leđa – ciljani tretman za ujednačavanje tena, smanjenje ožiljaka, akni i teksturalnih nepravilnosti» — lice (решение координатора 2026-10-09)"
+		},
+		{
+			"slug": "chemical-peeling-back",
+			"nameEn": "Chemical Peeling Back",
+			"price": null,
+			"source": "/services/tretmani-lica-fontis — «Hemijski piling lica i leđa» — leđa"
+		},
+		{
+			"slug": "microdermabrasion",
+			"nameEn": "Microdermabrasion",
+			"price": null,
+			"source": "/services/tretmani-lica-fontis — «Mikrodermoabrazija lica i leđa (Reviderm) – kontrolisani mehanički piling … Indikacije: akne, ožiljci, pigmentacije, UV oštećenja, strije i bore» (Reviderm — синоним; зона лицо и спина — одна общая запись)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "facial-mesotherapy-single-treatment",
+			"nameEn": "Facial Mesotherapy Single Treatment",
+			"price": null,
+			"source": "/services/tretmani-lica-fontis — «Mezoterapija – ciljano unošenje aktivnih supstanci prema indikacijama i stanju kože, za hidrataciju, regeneraciju i revitalizaciju»"
+		},
+		{
+			"slug": "radiofrequency-skin-tightening",
+			"nameEn": "Radiofrequency Skin Tightening",
+			"price": null,
+			"source": "/services/tretmani-lica-fontis — «RF Bipolar tretman – radiofrekventna tehnologija za poboljšanje tonusa, zatezanje kože i stimulaciju kolagena, idealna za bore, gubitak elastičnosti i slabiju cirkulaciju kože» (RF Bipolar — синоним)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "pressotherapy",
+			"nameEn": "Pressotherapy",
+			"price": null,
+			"source": "/services/tretmani-lica-fontis — «Ballancer® Pro – limfna drenaža – aparativni tretman koji podstiče limfnu cirkulaciju … smanjenje otoka» (Ballancer Pro — синоним)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "predrag-maras",
+			"nameSr": "Predrag Maraš",
+			"professionalTitle": "dr mr sci. med.",
+			"position": "Specijalista interne medicine",
+			"specialtyIds": [
+				2
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"internist-examination",
+				"ecg",
+				"holter-blood-pressure-24h",
+				"endocrinologist-examination",
+				"thyroid-ultrasound",
+				"neck-ultrasound",
+				"breast-ultrasound",
+				"abdomen-ultrasound",
+				"lower-abdomen-ultrasound",
+				"kidney-ultrasound",
+				"urinary-tract-ultrasound",
+				"ultrasound-bladder-with-prostate",
+				"testicular-ultrasound",
+				"doppler-neck-blood-vessels",
+				"doppler-upper-extremity-blood-vessels",
+				"doppler-lower-extremity-blood-vessels",
+				"nutritionist-specialist-examination"
+			],
+			"note": "Существующая карточка (id 133 локаль и прод, клиники 5,7,8,39,176 локально / 5,7,8,39,146 на проде). Фото и титул не перезаписываются."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/services/bicom-biorezonanca — «BICOM biorezonanca predstavlja komplementarnu dijagnostičko-terapijsku metodu …»; главная — «alternativne metode liječenja, uključujući kvantnu medicinu i BICOM biorezonancu»",
+			"reason": "Альтернативная медицина — не заводить (решение юзера)."
+		},
+		{
+			"source": "/services/tretmani-lica-fontis — «Klasični higijenski tretman lica», «Medicinski tretman akni», «Biološki tretman lica», «Organski tretmani za njegu kože», «Tretmani za aknoznu kožu», «Tretman kiseonikom – DermaOxy»",
+			"reason": "Косметический уход без медицинской процедуры — не заводится (решение юзера; координатор 2026-10-09 подтвердил для чистого ухода). Медэстетика с той же страницы заведена (пилинги, микродермабразия, мезотерапия, RF Bipolar, Ballancer Pro)."
+		},
+		{
+			"source": "/services/njega-zdrave-i-problematicne-koze — «tretiranje aknozne kože … tretiranje drugih promjena (ekcemi, psorijaza, ragade, bradavice, žuljevi)», «ekstrakcije i pilinga»",
+			"reason": "Уход за кожей собственными препаратами — решение юзера «njega kože — нет»."
+		},
+		{
+			"source": "/nas-tim — Slavica Vučurović dipl. farm., Jovana Krivokapić mag. farm., prof. dr Zorica Potpara – konsultant, Nataša Vujačić farm. tehničar, Marija Vešović med. sestra/kozmetolog, Dijana Perović kozmetolog",
+			"reason": "Фармацевты, медсёстры, косметологи — не заводятся врачами (решение юзера)."
+		},
+		{
+			"source": "/nasi-preparati — дермокозметика собственной лаборатории (Peloderm, F krem и др.)",
+			"reason": "Товары — не заводятся."
+		},
+		{
+			"source": "/nasa-istorija — «U tom periodu bila je aktivna interna ordinacija, kao i dermatološki segment, koji je kasnije ugašen»",
+			"reason": "Историческая справка: дерматология закрыта — не заводится."
+		}
+	],
+	"openQuestions": [],
+	"resolved": [
+		{
+			"topic": "УЗИ почек Fontis",
+			"date": "2026-10-09",
+			"decision": "Координатор: «bubrezi» → kidney-ultrasound (запись агента Z, PART 0 скопирован из insert-clinic-ordinacija-dr-rahovic-bijelo-polje-services.sql); «mokraćna bešika» названа отдельно → urinary-tract-ultrasound оставлен; «prostata» → ultrasound-bladder-with-prostate. Привязка к predrag-maras сохранена."
+		},
+		{
+			"topic": "«RF Bipolar tretman» Fontis",
+			"date": "2026-10-09",
+			"decision": "Координатор: новая общая запись radiofrequency-skin-tightening (кат. 18 + 24, как exilis/morpheus8) с синонимами RF Bipolar / Bipolarna radiofrekvencija. Проверка каталога: RF-лифтинга без бренда нет; face-and-body-skin-tightening (a-medic) — метод не указан, не сопоставлено."
+		},
+		{
+			"topic": "«Tretmani lica» Fontis",
+			"date": "2026-10-09",
+			"decision": "Координатор: медэстетические процедуры страницы завести (chemical-peeling-face, chemical-peeling-back, microdermabrasion + Reviderm, facial-mesotherapy-single-treatment, pressotherapy + Ballancer Pro), RF Bipolar — см. отдельное решение ниже, чистый косметический уход — не заводить. Привязки к predrag-maras для эстетики нет."
+		}
+	]
+}

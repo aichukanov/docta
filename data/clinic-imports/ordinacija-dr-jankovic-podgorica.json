@@ -1,0 +1,309 @@
+{
+	"schemaVersion": 1,
+	"slug": "ordinacija-dr-jankovic-podgorica",
+	"name": "Stomatološka ordinacija Dr Janković",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJlytQ7C7rTRMRDPUgGS8McXQ",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ordinacija-dr-jankovic-podgorica.sql",
+		"server/sql/insert-clinic-ordinacija-dr-jankovic-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 214,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент W. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. Дат на сайте нет; «porodična priča koja traje više od decenije». Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 241
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.montenegrodentalcare.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Одностраничный PHP-сайт «Montenegro Dental Care» (me; EN — /indexen.php, тот же состав). Блоки: O nama, Zubni implanti, Bolesti zuba (Liječenje kanala, Plombiranje, Inleji), Dječja i preventivna (Zalivanje fisura, Fluorizacija, Traume, Štitnici), Oralna hirurgija (6 вкладок + предпротетская), Estetska stomatologija (6 вкладок), Dentalni turizam, Naš tim, Kontakt. Дат на сайте нет. Цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/ordinacija-dr-jankovic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Ordinacija Dr Janković», «6 Vijenac Kosovskih Junaka, Podgorica 81000», +382 69 227 279, 2 отзыва (rating 5) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Vijenac kosovskih junaka 6 — сайт (= Google); координаты — место Google",
+		"phone": "+38220218557;+38269227279 — блок «KONTAKT»; второй = Google",
+		"email": "dentalcaremontenegro@gmail.com — сайт",
+		"website": "https://www.montenegrodentalcare.com/",
+		"social": "на сайте нет",
+		"logo": "нет (логотип — текст «Montenegro Dental Care»)",
+		"workingHours": "Пн–Пт 09:00–12:30 и 17:00–20:30, Сб 09:00–14:00 — блок «KONTAKT»",
+		"doctors": "2 в «NAŠ TIM», оба новые; сестра-ассистент не заводится",
+		"doctorPhotos": "у обоих — assets/img/doctors/tim1.jpg, tim2.jpg",
+		"doctorBios": "нет на сайте",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "composite-inlay-onlay",
+			"nameEn": "Composite Inlay Onlay",
+			"nameSr": "Kompozitni inlay ili onlay",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "dentalsmiletivat.com /inlay_overlay: «Inlay Overlay Onlay … Izrađuju se od kompozitnog ili keramičkog materijala u zubotehničkom laboratoriju na temelju otiska zuba». В каталоге вкладки только по материалу: ceramic-inlay-onlay, gold-inlay, zirconia-inlay; лабораторной композитной вкладки нет. Материал назван сайтом → отдельная запись по схеме ceramic-inlay-onlay. Категория 20, специальность 78.",
+			"reusedFrom": "dental-smile-tivat",
+			"note": "Запись заведена импортом dental-smile-tivat; здесь повторена идемпотентно (NOT EXISTS по slug), чтобы файл не зависел от порядка применения."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "«LIJEČENJE KANALA — Liječenje kanala korijena zuba - endodontska terapija … koristimo apex-locator» — число каналов не названо (как Mušura, dr-sevaljevic-tivat)"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "там же"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "«koristimo apex-locator i najsavremeniji rendgen aparat američke proizvodnje Gendex imaging»; травмы: «neophodan je Rtg snimak»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "«PLOMBIRANJE — Visokoestetski kompozitni i glasjonomerni ispuni»; «KOMPOZITNI ISPUNI … danas je kompozit sasvim sigurno favorit»"
+		},
+		{
+			"nameEn": "Nano-Composite Filling",
+			"slug": "nano-composite-filling",
+			"source": "«INLEJI … Tako dobijeni kaviteti se mogu nadoknaditi klasičnom plombom (nanohibridnim kompozitom)» — материал назван"
+		},
+		{
+			"nameEn": "Glass Ionomer Filling",
+			"slug": "glass-ionomer-filling",
+			"source": "«Visokoestetski kompozitni i glasjonomerni ispuni»"
+		},
+		{
+			"nameEn": "Ceramic Inlay Onlay",
+			"slug": "ceramic-inlay-onlay",
+			"source": "«Inlej izradjen od keramike i zlata je standard»; «INLEJI u narodu poznati kao keramičke i zlatne plombe … izradi inlej / onleja»"
+		},
+		{
+			"nameEn": "Gold Inlay",
+			"slug": "gold-inlay",
+			"source": "«Inlej izradjen od keramike i zlata je standard»"
+		},
+		{
+			"nameEn": "Composite Inlay Onlay",
+			"slug": "composite-inlay-onlay",
+			"source": "«… kompozit koji u svom puniocu ima 75% keramike takođe je našao svoje mjesto u izradi inleja» (НОВАЯ запись, заведена импортом dental-smile-tivat)"
+		},
+		{
+			"nameEn": "Dental Fissure Sealant",
+			"slug": "dental-fissure-sealant",
+			"source": "«ZALIVANJE FISURA MLIJEČNIH I STALNIH ZUBA — Nanošenje zaštitnog materijala na griznu površinu zuba»"
+		},
+		{
+			"nameEn": "Topical Fluoride Treatment",
+			"slug": "topical-fluoride-treatment",
+			"source": "«FLUORIZACIJA ZUBA — tretman kojim se na zube nanosi pasta visoke koncentracije fluora»"
+		},
+		{
+			"nameEn": "Dental and Soft Tissue Trauma Treatment",
+			"slug": "dental-and-soft-tissue-trauma-treatment",
+			"source": "«TRAUME MLIJEČNIH I STALNIH ZUBA KOD DJECE — Povrede mlečnih i stalnih zuba, kao i manje povrede mekog i koštanog tkiva orofacijalne regije»"
+		},
+		{
+			"nameEn": "Custom Dental Guard",
+			"slug": "custom-dental-guard",
+			"source": "«Štitnici za zube … Izrađuju se za svakog pacijenta individualno»"
+		},
+		{
+			"nameEn": "Complex Tooth Extraction",
+			"slug": "tooth-extraction-complex",
+			"source": "«KOMPLIKOVANO VAĐENJE ZUBA … uklanjanje zaostalih korijena»"
+		},
+		{
+			"nameEn": "Surgical Tooth Extraction",
+			"slug": "surgical-tooth-extraction",
+			"source": "«HIRURŠKO VAĐENJE ZUBA … Potrebno je napraviti rez u mekom tkivu oko zuba»"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "«APIKOTOMIJA … uklanja patološki sadržaj iz kosti u regiji vrha korijena zuba, zajedno sa vrhom korijena»"
+		},
+		{
+			"nameEn": "Cystectomy",
+			"slug": "cystectomy",
+			"source": "«CISTEKTOMIJA … odstranjenje cističnog sadržaja i same ciste»"
+		},
+		{
+			"nameEn": "Frenectomy",
+			"slug": "frenectomy",
+			"source": "«FRENEKTOMIJA … uklanjanje zadebljalog frenuluma (resica), najčešče kod djece»"
+		},
+		{
+			"nameEn": "Impacted Tooth Extraction",
+			"slug": "impacted-tooth-extraction",
+			"source": "«VAĐENJE IMPAKTIRANIH ZUBA … najčešće su impaktirani umnjaci, poslije njih očnjaci»"
+		},
+		{
+			"nameEn": "Pre-prosthetic Soft and Hard Tissue Correction",
+			"slug": "pre-prosthetic-soft-and-hard-tissue-correction",
+			"source": "«Predprotetski hirurški tretmani mekih tkiva. korekcija mekotkivnih I tvrdotkivnih deformiteta prije protetskog zbrinjavanja»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "«ZUBNI IMPLANTI — Implanti su titanijumska zamjena za izgubljeni zub» — бренд не назван"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "«IZBJELJIVANJE ZUBA … Peroksidi u preparatu za izbjeljivanje razlažu se na molekule aktivnog kiseonika» — метод/система не названы"
+		},
+		{
+			"nameEn": "Direct Composite Veneer",
+			"slug": "direct-composite-veneer",
+			"source": "«KOMPOZITNI VINIRI … nanohibridni kompozit koji posjeduje zadovoljavajuče osobine i za fasete»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "«KERAMIČKI VINIRI su kako estetski tako i funkcijonalno najprihvatljiviji»"
+		},
+		{
+			"nameEn": "Lumineers",
+			"slug": "lumineers",
+			"source": "«nova podgrupa tankih keramičkih vinira nazvani LUMINIRI … nema brušenja zuba»; «POLUFABRIKOVANI I FABRIKOVANI LUMINIRI»"
+		},
+		{
+			"nameEn": "All-Ceramic Crown",
+			"slug": "all-ceramic-crown",
+			"source": "«VISOKOESTETSKE / BEZMETALNE NAVLAKE — Visokoestetske krune i mostovi izrađuju se isključivo od keramike …»"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "«… ili za osnovu imaju cirkonijum»"
+		},
+		{
+			"nameEn": "Ceramic Dental Bridge",
+			"slug": "ceramic-dental-bridge",
+			"source": "«Visokoestetske krune i mostovi izrađuju se isključivo od keramike ili za osnovu imaju cirkonijum»"
+		},
+		{
+			"nameEn": "Complete Dental Cleaning",
+			"slug": "complete-dental-cleaning",
+			"source": "«PROFESIONALNO ČIŠĆENJE ZUBA … U SKLOPU TRETMANA UKLJUČENO JE: Uklanjanje zubnog kamenca (ultrazvučnim aparatom), Peskiranje zuba (Air-Flow), Poliranje i fluorisanje»"
+		},
+		{
+			"nameEn": "Dental Jewelry Application",
+			"slug": "dental-jewelry-application",
+			"source": "«U estetetsku stomatologiju spadaju: … nakit za zube»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "petar-jankovic",
+			"nameSr": "Petar Janković",
+			"professionalTitle": "dr",
+			"position": "Doktor stomatologije; specijalizant stomatološke protetike",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://www.montenegrodentalcare.com/assets/img/doctors/tim1.jpg",
+			"services": [],
+			"note": "Специализант протетики (не специалист) — специальность не ставили."
+		},
+		{
+			"slug": "marija-jankovic",
+			"nameSr": "Marija Janković",
+			"professionalTitle": "dr",
+			"position": "Specijalista oralne hirurgije – implantolog",
+			"specialtyIds": [
+				78,
+				74
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://www.montenegrodentalcare.com/assets/img/doctors/tim2.jpg",
+			"services": [
+				"tooth-extraction-complex",
+				"surgical-tooth-extraction",
+				"apicoectomy",
+				"cystectomy",
+				"frenectomy",
+				"impacted-tooth-extraction",
+				"pre-prosthetic-soft-and-hard-tissue-correction",
+				"dental-implant-placement"
+			]
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«NAŠ TIM»: «Slađana Golović — Stomatološka sestra - asistent»",
+			"reason": "Сестра-ассистент — не врач (решение юзера 2026-10-08)."
+		},
+		{
+			"source": "«VAĐENJE IMPAKTIRANIH ZUBA»: «problem se rešava u saradnji ortodonta … postavlja se fiksni aparat i pomoću njega bolje upravljamo izvlačenjem zuba»",
+			"reason": "Описание междисциплинарного подхода к ретинированному клыку; обнажение коронки и брекеты сайт как услугу не называет (ортодонта в команде нет) — surgical-exposure-impacted-tooth и брекеты не ставили."
+		},
+		{
+			"source": "«ESTETSKA STOMATOLOGIJA»: «možete dobiti HOLLYWOOD SMILE»",
+			"reason": "Маркетинговое название результата, не отдельная процедура (составляющие заведены)."
+		},
+		{
+			"source": "«PROFESIONALNO ČIŠĆENJE ZUBA»: «Uklanjanje zubnog kamenca», «Peskiranje zuba», «Poliranje i fluorisanje»",
+			"reason": "Части одного пакета «U SKLOPU TRETMANA UKLJUČENO JE» — заведена одна complete-dental-cleaning, составляющие отдельно не дублировали."
+		},
+		{
+			"source": "«IZBJELJIVANJE ZUBA»: «Posle tretmana bijeljenja zuba preporučuje se fluorizacija zuba»",
+			"reason": "Рекомендация; фторирование и так заведено из детского раздела."
+		},
+		{
+			"source": "«DENTALNI TURIZAM»: «digitalni ortopan snimak (snimak obije vilice) ili CBCT (3D snimak)»",
+			"reason": "Снимки пациент присылает сам для планирования — panoramic/CBCT как услугу клиники не заводили."
+		},
+		{
+			"source": "«VISOKOESTETSKE / BEZMETALNE NAVLAKE»: «Za razliku od metalo-keramičkih krunIca …»",
+			"reason": "Металлокерамика упомянута только для сравнения — не заводили."
+		},
+		{
+			"source": "«KOMPOZITNI ISPUNI»: «Dok se ranije koristio amalgam …»",
+			"reason": "Амальгаму клиника не ставит."
+		}
+	],
+	"openQuestions": []
+}

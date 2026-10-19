@@ -1,0 +1,270 @@
+{
+	"schemaVersion": 1,
+	"slug": "dentix-djurkovic-niksic",
+	"name": "Dentix Dr Đurković Nikšić",
+	"city": "Nikšić",
+	"cityId": 2,
+	"googlePlaceId": "ChIJQ8a_pU2oTRMRbxwj1PwkZpk",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"network": {
+		"name": "Dentix — Stomatološka ordinacija Dr Đurković (Đurković Dent)",
+		"siblings": [
+			"dentix-djurkovic-podgorica"
+		],
+		"note": "Две ординации одной практики (сайт: «Ordinacije — Niksic: Nika Miljanica 22; Podgorica: Ul 13.jul br 15»); у нас — отдельные клиники (как Milmedika). Сайт не делит ни врачей, ни услуги по ординациям — одинаковые списки."
+	},
+	"sql": [
+		"server/sql/insert-clinic-dentix-djurkovic-niksic.sql",
+		"server/sql/insert-clinic-dentix-djurkovic-niksic-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 192,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент Q. Сухой прогон на локальной БД (без записи) — 0 ошибок, см. итоговый отчёт агента. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 219
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.djurkovicdent.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Статичный шаблон: /, /about.html, /services.html, /contact.html (Last-Modified 2022-12-12). Часть блоков закомментирована в HTML (<!-- -->) — при извлечении комментарии вырезаны. Цен нет ни на одной странице; /cjenovnik.html, /prices.html — 404 (сайт-чек)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/niksic/dentix-stomatoloska-ordinacija-dr-djurkovic.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Place «Dentix - Стоматолошка ординација Др.Ђурковић», «22 Dr Nika Miljanića, Nikšić 81400», +382 69 078 272, 31 отзыв (4.7) — не импортировались."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/niksic/djurkovic-dent.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Второе место «Đurković Dent» (ChIJkQJkUJupTRMROd69naruGTw) по тому же адресу, +382 68 108 272, 8 отзывов — дубль; в БД не пишется (одна колонка google_place_id)."
+		}
+	],
+	"coverage": {
+		"address": "Nika Miljanića 22 — сайт = Google; координаты — основное место Google",
+		"phone": "+38268108272;+38269078272 — сайт; оба номера подтверждены двумя Google-местами",
+		"email": "velibordjurkovic9@yahoo.com — сайт",
+		"website": "https://www.djurkovicdent.me/",
+		"social": "@djurkovic_dent (Instagram), facebook.com/velibor.djurkovic — /contact.html «Zapratite nas» (это профиль врача, не страница клиники)",
+		"logo": "нет файла — логотип текстовый",
+		"workingHours": "пн–пт 09–20, сб 10–13 и 16–19 (/contact.html, где указан только адрес Nikšić); вс — выходной",
+		"doctors": "4 «Doktor stomatologije», все новые; привязаны к обеим ординациям",
+		"doctorPhotos": "у всех — assets/images/djurkovic/*.jpg с сайта",
+		"doctorBios": "нет на сайте",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера (два места Google — свести)"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "/: Oralna Hirurgija — «Vadjenje (ekstrakcija) zuba»"
+		},
+		{
+			"nameEn": "Wisdom Tooth Extraction",
+			"slug": "wisdom-tooth-extraction",
+			"source": "/services.html: «Hirusko Vadnjenje Umnjaka»"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "/: «Apikotomija-resekcija korijena zuba»"
+		},
+		{
+			"nameEn": "Frenectomy",
+			"slug": "frenectomy",
+			"source": "/: «Resekcija frenuluma»"
+		},
+		{
+			"nameEn": "Laser Frenectomy",
+			"slug": "laser-frenectomy",
+			"source": "/: «Najsvestraniji diodni laser — Bezbolno uklanjanje frenuluma kod djece i odraslih, bez krvi, bez potrebe za sivenjem»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery",
+			"slug": "flap-surgery-periodontal",
+			"source": "/: «Rezanj operacija»"
+		},
+		{
+			"nameEn": "Laser Gingivectomy",
+			"slug": "laser-gingivectomy",
+			"source": "/ (diodni laser): «Gingivektomija rjesavanje problema gummy-smile-a»"
+		},
+		{
+			"nameEn": "Aphthous Ulcer Treatment",
+			"slug": "aphthous-ulcer-treatment",
+			"source": "/ (diodni laser): «Terapija bola, pomaze u brzem zarastanju afti i herpesa»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "/: «Implantologija … ugradnjom implantata»; /services.html: «Ugradnja Zubnih Implanta» — бренд не назван"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "/: «Endodoncija … tretman obolele zubne pulpe – kako u kruničnom tako i u korenskom delu zuba»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "то же"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "/services.html: «Bijele Plombe»"
+		},
+		{
+			"nameEn": "Dental Caries Treatment",
+			"slug": "dental-caries-treatment",
+			"source": "/services.html: «Lijecenje Zuba»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "/: «Izbjeljivanje zuba — Bijeljenje zuba je proces uklanjanja raznih mrlja i diskoloracija»"
+		},
+		{
+			"nameEn": "Laser Teeth Whitening",
+			"slug": "laser-teeth-whitening",
+			"source": "/ (diodni laser): «Lasersko izbjeljivanje zuba»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "/: «Ortodoncija — Mobilna i Fiksna»"
+		},
+		{
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"source": "то же — материал брекетов не назван"
+		},
+		{
+			"nameEn": "3D Dental X-Ray CBCT",
+			"slug": "3d-dental-x-ray-cbct",
+			"source": "/: «Snimanje zuba — 3D Snimanje, Ortopan (2D), Retroalveolarni radiogram»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "«Ortopan (2D)»"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "«Retroalveolarni radiogram»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "vidoje-djurkovic",
+			"nameSr": "Vidoje Đurković",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": []
+		},
+		{
+			"slug": "velibor-djurkovic",
+			"nameSr": "Velibor Đurković",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": []
+		},
+		{
+			"slug": "snezana-perovic",
+			"nameSr": "Snežana Perović",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": []
+		},
+		{
+			"slug": "natasa-memedovic",
+			"nameSr": "Nataša Memedović",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": []
+		}
+	],
+	"excluded": [
+		{
+			"source": "/: «Paradontologija i Oralna medicina — Savremeno lijecenje oboljenja pradontalnih tkiva»",
+			"reason": "Направление без конкретной процедуры. Из пародонтологии заведено только названное: «Rezanj operacija», лазерная гингивэктомия."
+		},
+		{
+			"source": "/: «Protetika — Pojam zubna protetika obuhvata … zubni implantati, zubne krunice, ljuskice za zube (veneers), zubni most i zubne proteze»; /services.html: «Fiksne Proteze»",
+			"reason": "Определение протетики из энциклопедического текста, материал коронок/мостов/виниров не назван; generic-коронки в каталоге нет. Блок «Protetika — Mobilna i Fiksna» на главной закомментирован в HTML (не показывается)."
+		},
+		{
+			"source": "/: «Najsvestraniji diodni laser … Endodoncija (Kod gangrenoznih kanala)»",
+			"reason": "Лазерная дезинфекция каналов — часть эндодонтии (заведена); отдельной позиции «лазер в эндодонтии» в каталоге нет, а кандидатов «лечение гангрены» несколько (по корням / по каналу / консервативное) — не выбираем."
+		},
+		{
+			"source": "/: «Opsta Stomatologija … Nudimo vam sve vrste usluga»; «Djecija Stomatologija … naš dječiji (zubar) stomatolog stoji Vam na raspolaganju»; /services.html: «Estetska Stomatologija», «Stomatologija za najmladje»",
+			"reason": "Направления без конкретной процедуры."
+		},
+		{
+			"source": "/: «Oralna Hirurgija — Donec luctus rhoncus dignissim…»",
+			"reason": "Lorem ipsum шаблона."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Два места Google по одному адресу",
+			"detail": "«Dentix - Стоматолошка ординација Др.Ђурковић» (ChIJQ8a_pU2oTRMRbxwj1PwkZpk, 31 отзыв) и «Đurković Dent» (ChIJkQJkUJupTRMROd69naruGTw, 8 отзывов) — оба «22 Dr Nika Miljanića, Nikšić», координаты в 10 м друг от друга, оба ссылаются на djurkovicdent.me. В google_place_id записано первое. При выгрузке отзывов — сводить оба места в эту клинику."
+		},
+		{
+			"topic": "Врачи по ординациям",
+			"detail": "Сайт не говорит, кто принимает в Nikšić, а кто в Podgorica; все 4 привязаны к обеим. Уточнить у клиники."
+		}
+	]
+}

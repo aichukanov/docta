@@ -1,0 +1,304 @@
+{
+	"schemaVersion": 1,
+	"slug": "physiocare-team-podgorica",
+	"name": "PhysioCare Team",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJ5QD3ZCfrTRMR9QOV5UrtnyM",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-physiocare-team-podgorica.sql",
+		"server/sql/insert-clinic-physiocare-team-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 207,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент T. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и физиотерапевтов по slug. Сухой прогон 2026-10-09 на локали (scripts/sql/dryrun-import.mjs, plain + shadow для services): 0 ошибок, счётчики 14 таблиц до/после совпали; в plain-проходе несматчен только свой новый slug pregnancy-exercises, в shadow — 0; unlinked_doctor tamara-mijanovic / iva-tomkovic ожидаем (клиники ещё нет). Slug клиники и врачей сверены с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 234
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://physiocareteam.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Самописный PHP (© 2026). Прочитаны главная, /o-nama, /kontakt, /fizioterapeutska-procjena, /fizikalna-terapija, /kineziterapija, /medicinski-fitnes, /physiocare-office, /fizioterapeutska-masaza, /mulligan-terapija, /kinematic-tape, /neurocinetic (заглушка «Tekst»), /propioceptivna-nuromisicna-stabilizacija-pnf, /miofascijalno-opustanje-trigger-tacaka, /dry-needling-suva-punkcija, личные страницы трёх физиотерапевтов (только звание, «O meni» пусто), блог (1 статья). Пункты Scolio art — без страниц. Цен нет нигде."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/physiocare-team.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4394885 / 19.2318547, +382 69 204 224, «Lamela 3/1 Vojvode Maša Đurovića, Podgorica». Отзывов 0."
+		}
+	],
+	"coverage": {
+		"address": "Vojvode Maša Đurovića, Lamela L3-1 — сайт (Google: «Lamela 3/1 Vojvode Maša Đurovića»), индекс 81000 — Podgorica",
+		"phone": "+38269204224 — видимый текст сайта «+382 (0)69 204 224» и Google. Ссылка tel: на сайте ведёт на +38269223024 — не заведён (расходится с текстом и Google)",
+		"email": "info@physiocareteam.me — сайт",
+		"website": "https://physiocareteam.me/",
+		"social": "facebook.com/PhysioCarestudio — ссылка сайта (не открывалась: Facebook не читается)",
+		"logo": "https://physiocareteam.me/img/physiocare-logo.svg",
+		"workingHours": "Пн–Пт 08:00–12:00, 12:30–16:00, 16:30–21:00 («Pauza: 12:00 do 12:30 i 16:00 do 16:30»), Сб/Вс — closed (не названы)",
+		"description": "из главной, /o-nama и страниц услуг",
+		"languages": "только SR — другие не заявлены",
+		"doctors": "3 физиотерапевта (94 PHYSIOTHERAPY, title NULL), все новые, с фото; описаний нет — личные страницы пустые",
+		"prices": "цен нет — все 20 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — в Google отзывов 0"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "pregnancy-exercises",
+			"nameEn": "Pregnancy Exercises",
+			"nameSr": "Vježbe za trudnice",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "PhysioCare /medicinski-fitnes: «Vjžbe za trudnice» (так на сайте). В каталоге для беременных есть только массаж (Pregnancy Massage 30/45 min) — упражнений нет ни под одним названием. Категория 5 PHYSIOTHERAPY, специальность 42 (авто-привязка кат. 5)."
+		},
+		{
+			"slug": "thermotherapy",
+			"name_en": "Thermotherapy",
+			"name_sr": "Termoterapija",
+			"table": "medical_services",
+			"addedBy": "coordinator",
+			"date": "2026-10-09"
+		}
+	],
+	"services": [
+		{
+			"slug": "physiotherapist-examination",
+			"nameEn": "Physiotherapist Examination",
+			"price": null,
+			"source": "Fizioterapeutska procjena — «prvi kontakt sa pacjentom/klijentom podrazumijeva fizioterapeutska procjena … analiziramo Vašu posturu, aktivnu i pasivnu pokretljivost uz testiranje snage mišića», Scolio art «Pregled i analiza posture»"
+		},
+		{
+			"slug": "tens-therapy",
+			"nameEn": "TENS Therapy",
+			"price": null,
+			"source": "Fizikalna terapija — «-Elektroterapija ( TNS, …» (TNS = TENS)"
+		},
+		{
+			"slug": "diadynamic-currents",
+			"nameEn": "Diadynamic Currents",
+			"price": null,
+			"source": "Fizikalna terapija — «… diadinamičke struje …»"
+		},
+		{
+			"slug": "interferential-currents",
+			"nameEn": "Interferential Currents",
+			"price": null,
+			"source": "Fizikalna terapija — «… interferentne struje …»"
+		},
+		{
+			"slug": "galvanic-therapy",
+			"nameEn": "Galvanic Therapy",
+			"price": null,
+			"source": "Fizikalna terapija — «… galvanizacija …»"
+		},
+		{
+			"slug": "muscle-electrical-stimulation",
+			"nameEn": "Muscle Electrical Stimulation",
+			"price": null,
+			"source": "Fizikalna terapija — «… elektostimulacija)»"
+		},
+		{
+			"slug": "magnetic-therapy",
+			"nameEn": "Magnetic Therapy",
+			"price": null,
+			"source": "Fizikalna terapija — «- Magnetoterapija»"
+		},
+		{
+			"slug": "ultrasound-therapy",
+			"nameEn": "Ultrasound Therapy",
+			"price": null,
+			"source": "Fizikalna terapija — «-Terapijski ultrazvuk»"
+		},
+		{
+			"slug": "laser-therapy",
+			"nameEn": "Laser Therapy",
+			"price": null,
+			"source": "Fizikalna terapija — «-Terapijski laser»"
+		},
+		{
+			"slug": "thermotherapy-cryotherapy",
+			"nameEn": "Thermotherapy: Cryotherapy",
+			"price": null,
+			"source": "Fizikalna terapija — «- Krioterapija»"
+		},
+		{
+			"slug": "kinesiotherapy",
+			"nameEn": "Kinesiotherapy",
+			"price": null,
+			"source": "Kineziterapija — «Pokret ( vježba) je neizostavni dio rehabilitacije … Program vježbi kreira se u skladu sa vašim problemom», PNF — «Ovaj koncept vježbanja naročito je pogodan kod ortopedskih i neuroloških pacjenata»"
+		},
+		{
+			"slug": "individual-kinesiotherapy",
+			"nameEn": "Individual Kinesiotherapy",
+			"price": null,
+			"source": "Medicinski fitnes — «Individualno vježbanje»"
+		},
+		{
+			"slug": "group-exercises-type-b",
+			"nameEn": "Group Exercises (per Person)",
+			"price": null,
+			"source": "Medicinski fitnes — «Vježbanje u grupi — Grupno vježbanje sprovodi se u individualizovanim grupama ( 2-4 člana)»"
+		},
+		{
+			"slug": "pregnancy-exercises",
+			"nameEn": "Pregnancy Exercises",
+			"price": null,
+			"source": "Medicinski fitnes — «Vjžbe za trudnice»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "therapeutic-massage-complete",
+			"nameEn": "Complete Therapeutic Massage",
+			"price": null,
+			"source": "Fizioterapeutska masaža — «nudimo vam fizioterapeutski masažu kojom se ciljano rešavaju problemi svakog pacijenta» (зона и длительность не указаны — generic, как в axon)"
+		},
+		{
+			"slug": "manual-therapy",
+			"nameEn": "Manual Therapy",
+			"price": null,
+			"source": "Mulligan terapija — «manuelna tepaijska tehnika koja integriše mobilizaciju sa pokretom», Miofascijalno opuštanje trigger tačaka — «IMTT metoda …» (обе — ручные техники, бренд/метод — синонимы)"
+		},
+		{
+			"slug": "taping-application",
+			"nameEn": "Taping Application",
+			"price": null,
+			"source": "Kinematic Tape — «Kinematic taping je specifičan i jedinstven način lijepljenja trake na tijelo» (как KINESIOTAPE у fizio-centar-niksic)"
+		},
+		{
+			"slug": "dry-needling",
+			"nameEn": "Dry Needling",
+			"price": null,
+			"source": "Dry needling (suva punkcija) — «primjenu veoma malih iglica za jednokratnu upotrebu, koje se aplikuju u određene tačke u mišiću ( triger tačke)»"
+		},
+		{
+			"slug": "schroth-method",
+			"nameEn": "Schroth Method",
+			"price": null,
+			"source": "Scolio art — «Schroth metoda», tim «Schroth BSPTS terapeut»"
+		},
+		{
+			"slug": "kinesiotherapy-for-spine-deformities",
+			"nameEn": "Kinesiotherapy for Spine Deformities",
+			"price": null,
+			"source": "Scolio art — «Deformiteti kičmenog stuba», O nama «Posebnu pažnju poklanjamo posturalnom disbalansima i deformitetima kičmenog stuba kod djece»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "tamara-mijanovic",
+			"nameSr": "Tamara Mijanović",
+			"professionalTitle": null,
+			"position": "Specijalista fizioterapije, Schroth BSPTS terapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": false,
+			"photo": "https://physiocareteam.me/images/web/team/tamara-447x400.jpg",
+			"services": [
+				"schroth-method"
+			]
+		},
+		{
+			"slug": "iva-tomkovic",
+			"nameSr": "Iva Tomković",
+			"professionalTitle": null,
+			"position": "Specijalista fizioterapije, Schroth BSPTS terapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": false,
+			"photo": "https://physiocareteam.me/images/web/team/iva--447x400.jpg",
+			"services": [
+				"schroth-method"
+			]
+		},
+		{
+			"slug": "mitar-adrovic",
+			"nameSr": "Mitar Adrović",
+			"professionalTitle": null,
+			"position": "Bečelor primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": false,
+			"photo": "https://physiocareteam.me/images/web/team/mitar--477x400.jpg",
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "PhysioCare office — «Ovaj program sprovodi se u sardnji sa firmamama … edukativne forme … individualne konsultacije, preglede i specijalne tehnike»",
+			"reason": "Корпоративная программа для фирм — формат, не процедура; упомянута в описании."
+		},
+		{
+			"source": "Blog — «Skolioza i kifoza, ucestali deformiteti tokom rasta io razvoja»",
+			"reason": "Статья, не перечень услуг."
+		},
+		{
+			"source": "Fizikalna terapija — «-Elektroterapija ( TNS, diadinamičke struje, interferentne struje, galvanizacija, elektostimulacija)»",
+			"reason": "Не потеряно: зонтичную electrotherapy не заводили — заведены все пять названных видов токов отдельно."
+		},
+		{
+			"source": "Kinematic Tape — «Zasnovan je na principima Ortopedske Manipulativne Terapije (OMT)»",
+			"reason": "OMT — обоснование методики тейпа, не отдельная услуга."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Телефон",
+			"detail": "Видимый номер «+382 (0)69 204 224» (совпадает с Google), а href ссылки — tel:+38269223024. Заведён первый. Если второй тоже рабочий — добавить через «;»."
+		}
+	],
+	"resolved": [
+		{
+			"source": "Fizikalna terapija — «-Termoterapija»",
+			"reason": "Generic-записи «термотерапия» в каталоге нет, есть только конкретные (Thermotherapy: Parafango, Thermo Pack, Infrared/Solux) — сайт вид не называет. Варианты: завести generic «Thermotherapy» или не заводить.",
+			"resolution": "Новая запись thermotherapy (Thermotherapy, кат. 5, спец. 42). Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "Specijalne tehnike — «Neurocinetic» (страница /neurocinetic: только «Tekst»)",
+			"reason": "Описания нет (заглушка). Вероятно NeuroKinetic Therapy (NKT) — ручная техника тестирования/коррекции моторного контроля, но сайт этого не говорит. Кандидаты: manual-therapy (синоним) или отдельная запись — решить юзеру; пока не заведено, в описании названо как есть.",
+			"resolution": "Не заводится: страница-заглушка, содержание неизвестно. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		},
+		{
+			"source": "Scolio art — «Edukacija roditelja» (пункт меню без страницы)",
+			"reason": "Обучение родителей ребёнка со сколиозом. Кандидаты не подходят: family-health-education-work и parental-counseling-work — записи ДЗ/психологов, parental-developmental-stimulation-training — стимуляция развития. Не заведено.",
+			"resolution": "Не заводится: часть программы Schroth, не отдельная услуга. Решение координатора 2026-10-09 (юзер: «врачей по косвенным признакам можно заводить», «остальное реши сам», новые записи каталога — если общая или не похожа на существующие).",
+			"resolvedAt": "2026-10-09"
+		}
+	]
+}

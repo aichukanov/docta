@@ -1,0 +1,330 @@
+{
+	"schemaVersion": 1,
+	"slug": "medicinski-centar-dr-zobin-kotor",
+	"name": "Medicinski centar dr Zobin",
+	"city": "Kotor",
+	"cityId": 6,
+	"googlePlaceId": "ChIJF5cdFWYzTBMReM2jCGw4OrM",
+	"clinicTypeIds": [
+		15
+	],
+	"languageIds": [
+		1,
+		2
+	],
+	"sql": [
+		"server/sql/insert-clinic-medicinski-centar-dr-zobin-kotor.sql",
+		"server/sql/insert-clinic-medicinski-centar-dr-zobin-kotor-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 245,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент M. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Slug клиники и врача на проде свободны (API 204). Новые записи каталога общие с monterehab-budva. Сухой прогон — см. отчёт агента. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 272
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.doctorzobin.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Bitrix; основная версия на русском. /, /o-nas/, /uslugi/ + 9 страниц услуг, /treatment/, /doktora/mikhail_zobin/, /kontakty/, /rs/, /en/. Настоящего прайса нет. curl с браузерным UA — 200."
+		},
+		{
+			"type": "website-template",
+			"ref": "https://www.doctorzobin.com/tseny/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Шаблонная заглушка конструктора: цены в рублях (500 руб., 4200 руб. …) за стоматологию, анализы, УЗИ, массаж, психолога — к центру не относится. Игнорируется полностью (решение юзера)."
+		},
+		{
+			"type": "website-template",
+			"ref": "https://www.doctorzobin.com/licensiya/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Шаблон согласия по 152-ФЗ с плейсхолдерами <НАЗВАНИЕ_КОМПАНИИ>, <EMAIL-АДРЕС_ДЛЯ_ЖАЛОБ> — игнорируется."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/kotor/medicinski-centr-doktora-zobina.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJF5cdFWYzTBMReM2jCGw4OrM, 42.4529405 / 18.7658489, +382 69 894 167, «ul. Krivaja bb, Klinika “Vita Feminae, Dobrota 85331», рейтинг 5.0, 1 отзыв — не импортировался."
+		}
+	],
+	"coverage": {
+		"address": "Krivaja bb (Klinika Vita Feminae), Dobrota — сайт = Google; тот же адрес, что у ginekoloska-ordinacija-vita-feminae-kotor (арендатор)",
+		"phone": "+38269894167;+38269748888;+38269488709 — шапка + /kontakty/",
+		"email": "doctor.zobin@gmail.com;dr-zobin@mail.ru",
+		"website": "https://www.doctorzobin.com/",
+		"social": "facebook.com/ordinacija.zobina, @doctor_zobin; VK не заносится (колонки нет)",
+		"logo": "https://www.doctorzobin.com/include/logo.png",
+		"workingHours": "НЕ заполнены — на сайте нет",
+		"description": "из главной, /o-nas/, /treatment/ и страниц услуг (ru, сверено с /rs/)",
+		"languages": "SR + RU (русскоязычный сервис и врач — правило юзера)",
+		"doctors": "1 — новая карточка mihail-zobin (21 + 51), языки SR + RU",
+		"doctorPhotos": "1 из 1",
+		"prices": "прайса нет — 9 услуг без цены; /tseny/ — шаблон в рублях, игнорируется",
+		"labTests": "нет",
+		"reviews": "pending — 1 отзыв Google"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "drug-addiction-treatment",
+			"nameEn": "Drug Addiction Treatment",
+			"nameSr": "Liječenje zavisnosti od droga",
+			"categoryIds": [],
+			"specialtyIds": [
+				21,
+				51
+			],
+			"reason": "Зобин: «Лечение всех видов наркотической зависимости», «Лечение зависимости от психостимуляторов и каннабиса»; MonteRehab: «Drug addiction». В каталоге только стационарные DRG (hospitalization-for-drug-intoxication-and-withdrawal, …-other-drug-use-disorders) и methadone-administration — амбулаторного/реабилитационного лечения наркозависимости нет. Спец. 21 + 51. Без категории — как все психиатрические/психологические записи каталога (first-psychiatrist-examination, psychotherapy, psychological-counseling): категории «психиатрия» в enum нет.",
+			"note": "Общая запись нескольких клиник порции M (medicinski-centar-dr-zobin-kotor, monterehab-budva); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "alcohol-addiction-treatment",
+			"nameEn": "Alcohol Addiction Treatment",
+			"nameSr": "Liječenje zavisnosti od alkohola",
+			"categoryIds": [],
+			"specialtyIds": [
+				21,
+				51
+			],
+			"reason": "Зобин: «Лечение алкогольной зависимости»; MonteRehab: «Alcohol addiction». В каталоге только DRG-госпитализации (hospitalization-for-alcohol-…). Спец. 21 + 51. Без категории — как все психиатрические/психологические записи каталога (first-psychiatrist-examination, psychotherapy, psychological-counseling): категории «психиатрия» в enum нет.",
+			"note": "Общая запись нескольких клиник порции M (medicinski-centar-dr-zobin-kotor, monterehab-budva); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "opioid-addiction-treatment",
+			"nameEn": "Opioid Addiction Treatment",
+			"nameSr": "Liječenje zavisnosti od opioida",
+			"categoryIds": [],
+			"specialtyIds": [
+				21,
+				51
+			],
+			"reason": "Зобин: отдельная услуга «Лечение опиоидной зависимости» (свой протокол: воздержание 3 недели, 2 дня); MonteRehab: «Treatment of heroin / methadone / codeine addiction», «Treatment for tramadol», «Treatment for opiates». Опиоидная зависимость — устойчивое отдельное направление (ср. methadone-administration, hospitalization-for-opioid-use-disorders-and-dependence); амбулаторной записи нет. Спец. 21 + 51.",
+			"note": "Общая запись нескольких клиник порции M (medicinski-centar-dr-zobin-kotor, monterehab-budva); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "smoking-cessation-treatment",
+			"nameEn": "Smoking Cessation Treatment",
+			"nameSr": "Liječenje zavisnosti od pušenja",
+			"categoryIds": [],
+			"specialtyIds": [
+				21
+			],
+			"reason": "Зобин: «Лечение табакокурения» (препараты ≥7 дней + однодневная процедура), «Отказ от курения — табакокурение, курение е-сигарет и вейпов». В каталоге нет ни под одним названием (smok|nicotin|pušen — пусто). Спец. 21. Без категории — как все психиатрические/психологические записи каталога (first-psychiatrist-examination, psychotherapy, psychological-counseling): категории «психиатрия» в enum нет."
+		},
+		{
+			"table": "medical_services",
+			"slug": "gambling-addiction-treatment",
+			"nameEn": "Gambling Addiction Treatment",
+			"nameSr": "Liječenje zavisnosti od kockanja",
+			"categoryIds": [],
+			"specialtyIds": [
+				21,
+				51
+			],
+			"reason": "Зобин: «Лечение пристрастия к азартным играм» (три сеанса за пять дней); MonteRehab: «Treatment of gambling addiction». В каталоге нет. Отдельно от behavioral-addiction-treatment: у Зобина — только азартные игры, а «поведенческие зависимости» MonteRehab шире (интернет, шопинг, секс, еда). Спец. 21 + 51.",
+			"note": "Общая запись нескольких клиник порции M (medicinski-centar-dr-zobin-kotor, monterehab-budva); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "depression-treatment",
+			"nameEn": "Depression Treatment",
+			"nameSr": "Liječenje depresije",
+			"categoryIds": [],
+			"specialtyIds": [
+				21,
+				51
+			],
+			"reason": "Зобин: «Лечение депрессий» (протокол 5–12 дней); MonteRehab: «Depression treatment». В каталоге только DRG (hospitalization-for-major-affective-disorders). Спец. 21 + 51.",
+			"note": "Общая запись нескольких клиник порции M (medicinski-centar-dr-zobin-kotor, monterehab-budva); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "anxiety-disorder-treatment",
+			"nameEn": "Anxiety Disorder Treatment",
+			"nameSr": "Liječenje anksioznih poremećaja",
+			"categoryIds": [],
+			"specialtyIds": [
+				21,
+				51
+			],
+			"reason": "Зобин: «Лечение тревожных расстройств»; MonteRehab: «Anxiety treatment». В каталоге только DRG (hospitalization-for-anxiety-disorders). Спец. 21 + 51.",
+			"note": "Общая запись нескольких клиник порции M (medicinski-centar-dr-zobin-kotor, monterehab-budva); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "insomnia-treatment",
+			"nameEn": "Insomnia Treatment",
+			"nameSr": "Liječenje nesanice",
+			"categoryIds": [],
+			"specialtyIds": [
+				21,
+				51
+			],
+			"reason": "MonteRehab: «Insomnia treatment»; Зобин (главная): «предоставляет услуги по лечению: … нарушений сна». В каталоге только ЭЭГ во сне и апноэ. Спец. 21 + 51.",
+			"note": "Общая запись нескольких клиник порции M (monterehab-budva, medicinski-centar-dr-zobin-kotor); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "medical-detoxification",
+			"nameEn": "Medical Detoxification",
+			"nameSr": "Medicinska detoksikacija",
+			"categoryIds": [],
+			"specialtyIds": [
+				21
+			],
+			"reason": "MonteRehab: «Medical detox … under the supervision of experienced narcologists»; Зобин: «В некоторых случаях возможно проведение подготовительного детоксикационного периода в нашем центре». В каталоге нет (detox|detoks — пусто; есть только DRG «intoksikacija … i apstinencija»). Спец. 21. Способ (инфузии и т.п.) не назван — категорию 29 не ставим.",
+			"note": "Общая запись нескольких клиник порции M (monterehab-budva, medicinski-centar-dr-zobin-kotor); создаётся идемпотентно в каждом services-SQL."
+		}
+	],
+	"services": [
+		{
+			"slug": "drug-addiction-treatment",
+			"nameEn": "Drug Addiction Treatment",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/uslugi/lechenie_vsekh_vidov_narkoticheskoy_zavisimosti/: «Лечение всех видов наркотической зависимости» + /uslugi/lechenie_zavisimosti_ot_psikhostimulyatorov_i_kannabisa/: «Лечение зависимости от психостимуляторов и каннабиса» (одна запись: отдельной для стимуляторов/каннабиса не заводим — синонимом)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "alcohol-addiction-treatment",
+			"nameEn": "Alcohol Addiction Treatment",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/uslugi/lechenie_alkogolnoy_zavisimosti/: «Лечение алкогольной зависимости … проводится в течение одного дня»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "opioid-addiction-treatment",
+			"nameEn": "Opioid Addiction Treatment",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/uslugi/lechenie_opioidnoy_zavisimosti/: «Лечение опиоидной зависимости … Типовой терапевтический протокол занимает два дня»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "smoking-cessation-treatment",
+			"nameEn": "Smoking Cessation Treatment",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/uslugi/lechenie_tabakokureniya/: «Лечение табакокурения»; главная: «Отказ от курения — табакокурение, курение е-сигарет и вейпов»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "gambling-addiction-treatment",
+			"nameEn": "Gambling Addiction Treatment",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/uslugi/lechenie_pristrastiya_k_azartnym_igram/: «Лечение пристрастия к азартным играм … три лечебных сеанса в течение пяти дней»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "depression-treatment",
+			"nameEn": "Depression Treatment",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/uslugi/lechenie_depressiy/: «Лечение депрессий … от 5 до 12 дней»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "anxiety-disorder-treatment",
+			"nameEn": "Anxiety Disorder Treatment",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/uslugi/lechenie_trevozhnykh_rasstroystv/: «Лечение тревожных расстройств»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "insomnia-treatment",
+			"nameEn": "Insomnia Treatment",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "Главная: «Медицинский центр доктора Зобина предоставляет услуги по лечению: … нарушений сна»; /treatment/: «различные нарушения сна»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "medical-detoxification",
+			"nameEn": "Medical Detoxification",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/uslugi/lechenie_vsekh_vidov…/ и /treatment/: «В некоторых случаях возможно проведение подготовительного детоксикационного периода в нашем центре»",
+			"newInCatalog": true
+		}
+	],
+	"labTests": [],
+	"doctors": [
+		{
+			"slug": "mihail-zobin",
+			"nameSr": "Mihail Zobin",
+			"professionalTitle": "dr med. sci.",
+			"position": "Psihijatar-narkolog, psihoterapeut; rukovodilac kliničkih programa",
+			"specialtyIds": [
+				21,
+				51
+			],
+			"languageIds": [
+				1,
+				2
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"photo": "https://www.doctorzobin.com/upload/iblock/e51/rjd9qdidfrn1kkif25zawg0q46hrlh0f.jpg",
+			"services": [
+				"drug-addiction-treatment",
+				"alcohol-addiction-treatment",
+				"opioid-addiction-treatment",
+				"smoking-cessation-treatment",
+				"gambling-addiction-treatment",
+				"depression-treatment",
+				"anxiety-disorder-treatment",
+				"insomnia-treatment",
+				"medical-detoxification"
+			],
+			"note": "Новая карточка: психиатр-нарколог, психотерапевт, к.м.н. Языки SR + RU (русскоязычный сервис и врач). Био с сайта."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/uslugi/lechenie_prochikh_psikhicheskikh_i_povedencheskikh_rasstroystv/: «Лечение прочих психических и поведенческих расстройств — Выбор тактики лечения и ее продолжительность … определяется клинической картиной»",
+			"reason": "Собирательная страница без конкретного расстройства/услуги — подходящей записи нет, а заводить «прочие расстройства» в каталог бессмысленно. Перечисленное на главной (расстройства поведения, психозы, хронические болевые синдромы) — в описании клиники."
+		},
+		{
+			"source": "Главная: «…услуги по лечению: … расстройств поведения, психозов, хронических болевых синдромов»",
+			"reason": "Перечень направлений без отдельных страниц-услуг; записей «лечение психозов» и т.п. в каталоге нет — в описание, не в услуги."
+		},
+		{
+			"source": "Протоколы услуг: «первичную диагностику, консультирование ближайших родственников по проблеме…»",
+			"reason": "Этапы протокола лечения, не отдельные услуги — first-psychiatrist-examination / family-counseling не ставим."
+		},
+		{
+			"source": "/tseny/ (500 руб. … 4200 руб.: стоматология, УЗИ, массаж, психолог)",
+			"reason": "Шаблонная заглушка конструктора сайтов — не прайс центра (решение юзера)."
+		},
+		{
+			"source": "/licensiya/",
+			"reason": "Шаблон согласия по 152-ФЗ с плейсхолдерами — не лицензия."
+		}
+	],
+	"openQuestions": []
+}

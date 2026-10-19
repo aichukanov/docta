@@ -1,0 +1,269 @@
+{
+	"schemaVersion": 1,
+	"slug": "k-med-ambulanta-bar",
+	"name": "K-med Ambulanta i Pedijatrijska Ambulanta Bar",
+	"city": "Bar",
+	"cityId": 7,
+	"googlePlaceId": "ChIJq2ERcwB1ThMRmxfuKUAW7sA",
+	"clinicTypeIds": [
+		1,
+		12
+	],
+	"languageIds": [
+		1,
+		3
+	],
+	"sql": [
+		"server/sql/insert-clinic-k-med-ambulanta-bar.sql",
+		"server/sql/insert-clinic-k-med-ambulanta-bar-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 205,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент T. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Врачи общие с k-med-ambulanta-stoj-ulcinj (сайт не делит команду по точкам). Сухой прогон 2026-10-09 на локали (scripts/sql/dryrun-import.mjs, plain + shadow для services): 0 ошибок, счётчики 14 таблиц до/после совпали; в plain-проходе несматчен только свой новый slug telephone-medical-consultation, в shadow — 0; unlinked_doctor nebojsa-kavaric ожидаем (клиники ещё нет). Slug клиники и врачей сверены с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 232
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://kmed.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress one-page; wp-json/wp/v2/pages: «Početna» (modified 2025-11-26) и «Coming soon». Блоки услуг (8 карточек), O nama, Lokacije (4 точки с адресом, часами «08 - 21 h», телефоном), Naš tim (3 врача + 2 медсестры + техник), Partneri, FAQ, Kontakt. Цен нет. curl с браузерным UA — 200."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/bar/k-med-ambulanta-i-pedijatrijska-ambulanta-bar-2.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.0994538 / 19.0978428, +382 69 207 700, «4 A Mila Boskovica, Bar 85000», имя «K-med Ambulanta i Pedijatrijska Ambulanta Bar 2», 15 отзывов (в файле 5) — не импортировались."
+		},
+		{
+			"type": "facebook",
+			"ref": "таблица юзера",
+			"collected": null,
+			"machineReadable": false,
+			"note": "Не читается — не открывался."
+		}
+	],
+	"coverage": {
+		"address": "Mila Boškovića 4A — сайт и Google",
+		"phone": "+38269207700 — точка «K - Med Bar» на сайте, совпадает с Google. Номера Dobre Vode (+382 69 667 033, он же в шапке сайта) и Čanj (+382 63 207 743) — в описании",
+		"email": "kmed.montenegro@gmail.com — блок Kontakt (общий для всех точек)",
+		"website": "https://kmed.me/",
+		"social": "нет: на сайте ссылок нет, Facebook из таблицы юзера не читается",
+		"logo": "https://kmed.me/wp-content/uploads/2024/05/k-medvector.svg — логотип шапки",
+		"workingHours": "НЕ заполнены: «08 - 21 h» без дней недели, сеть для туристов на ljetovanju, круглый ли год — неизвестно (вопрос юзеру). Часы — в описании",
+		"description": "из блоков Usluge, O nama, Naš tim, Partneri, FAQ",
+		"languages": "SR + EN: «Svi naši ljekari govore engleski jezik» — явное заявление",
+		"doctors": "3 врача (Nebojša Kavarić — 4 PEDIATRICS, Igor Kavarić и Ardian Djeka — 45 GENERAL_MEDICINE), все новые, SR+EN, с фото; привязаны к обеим карточкам K-med",
+		"prices": "цен нет — все 14 услуг без цены",
+		"labTests": "конкретных анализов нет («Sve vrste analiza»)",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "telephone-medical-consultation",
+			"nameEn": "Telephone Medical Consultation",
+			"nameSr": "Savjetovanje ljekara putem telefona",
+			"categoryIds": [
+				9
+			],
+			"specialtyIds": [
+				45
+			],
+			"reason": "K-med «Savjetovanje — Mogućnost savjetovanja i putem telefona», «sa mogućnošću konsultacija telefonom». В каталоге нет консультации по телефону (e-consultation-with-specialist — консилиум ДЗ со специалистом, brief-doctor-visit-consultation — очный визит). Категория 9 GENERAL_MEDICINE, специальность 45."
+		}
+	],
+	"services": [
+		{
+			"slug": "general-practitioner-examination",
+			"nameEn": "General Practitioner Examination",
+			"price": null,
+			"source": "Pregledi — «Mogućnost pregleda u ambulanti ili na Vašoj lokaciji.» (ljekari bez navedene specijalizacije, ambulanta «namijenjena i djeci i odraslima»)"
+		},
+		{
+			"slug": "pediatric-examination",
+			"nameEn": "Pediatric Examination",
+			"price": null,
+			"source": "FAQ «Da li možemo dovesti djecu na pregled? Mi smo ambulanta koja je namijenjena i djeci i odraslima.», direktor — pedijatar (Google: «… i Pedijatrijska Ambulanta»)"
+		},
+		{
+			"slug": "home-visit-examination",
+			"nameEn": "Home Visit Examination",
+			"price": null,
+			"source": "«… ili na Vašoj lokaciji», «Posjete hotelskoj sobi», FAQ «mi dolazimo u roku od sat vremena na adresu»"
+		},
+		{
+			"slug": "infusion-therapy-home-visit",
+			"nameEn": "Infusion Therapy Home Visit",
+			"price": null,
+			"source": "Posjete hotelskoj sobi — «Uz mogućnost uključivanja infuzione terapije na smještaju.»"
+		},
+		{
+			"slug": "intramuscular-injection",
+			"nameEn": "Intramuscular Injection",
+			"price": null,
+			"source": "Terapije — «Injekciona, …» (O nama: «Injekciona terapija») — generic injekcija ambulante"
+		},
+		{
+			"slug": "inhalation-therapy",
+			"nameEn": "Inhalation Therapy",
+			"price": null,
+			"source": "Terapije — «… Inhalaciona, …»"
+		},
+		{
+			"slug": "infusion-therapy",
+			"nameEn": "Infusion Therapy",
+			"price": null,
+			"source": "Terapije — «… Infuziona.», FAQ «Da li imate infuzionu terapiju za rehidrataciju? Da …»"
+		},
+		{
+			"slug": "telephone-medical-consultation",
+			"nameEn": "Telephone Medical Consultation",
+			"price": null,
+			"source": "Savjetovanje — «Mogućnost savjetovanja i putem telefona.»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "venous-blood-draw",
+			"nameEn": "Venous Blood Draw",
+			"price": null,
+			"source": "Laboratorija — «Sve vrste analiza …», FAQ «Kod nas se mogu uzeti laboratorijske analize i šalju se pacijentima putem SMS-a ili mejla»"
+		},
+		{
+			"slug": "rapid-blood-glucose-test",
+			"nameEn": "Rapid Blood Glucose Test",
+			"price": null,
+			"source": "Laboratorija — «… glukometrija …»"
+		},
+		{
+			"slug": "pulse-oximetry",
+			"nameEn": "Pulse Oximetry",
+			"price": null,
+			"source": "Laboratorija — «… oksimetrija.»"
+		},
+		{
+			"slug": "ecg",
+			"nameEn": "ECG",
+			"price": null,
+			"source": "«EKG pregledi»"
+		},
+		{
+			"slug": "wound-care",
+			"nameEn": "Wound Care",
+			"price": null,
+			"source": "«Obrada i previjanje rana»"
+		},
+		{
+			"slug": "wound-dressing",
+			"nameEn": "Wound Dressing",
+			"price": null,
+			"source": "«Obrada i previjanje rana» (previjanje)"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "nebojsa-kavaric",
+			"nameSr": "Nebojša Kavarić",
+			"professionalTitle": "Prof. dr",
+			"position": "Direktor, specijalista pedijatrije",
+			"specialtyIds": [
+				4
+			],
+			"languageIds": [
+				1,
+				3
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://kmed.me/wp-content/uploads/2024/06/Nebojsa-ZA-NASLOVNU-UMJESTO-ONE-ZENE-1024x1024.jpg",
+			"services": [
+				"pediatric-examination"
+			]
+		},
+		{
+			"slug": "igor-kavaric",
+			"nameSr": "Igor Kavarić",
+			"professionalTitle": "Dr",
+			"position": "Ljekar",
+			"specialtyIds": [
+				45
+			],
+			"languageIds": [
+				1,
+				3
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://kmed.me/wp-content/uploads/2024/06/Image-2-1024x1024.jpeg",
+			"services": [],
+			"note": "Специальность на сайте не указана; 45 GENERAL_MEDICINE — «Dr.» без специализации, опыт в Zavodu za hitnu medicinsku pomoć. Альтернатива 48 EMERGENCY_MEDICINE — см. disputed."
+		},
+		{
+			"slug": "ardian-djeka",
+			"nameSr": "Ardian Djeka",
+			"professionalTitle": "Dr",
+			"position": "Ljekar",
+			"specialtyIds": [
+				45
+			],
+			"languageIds": [
+				1,
+				3
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://kmed.me/wp-content/uploads/2024/06/Image-3-1024x1024.jpeg",
+			"services": [],
+			"note": "Специальность на сайте не указана; 45 GENERAL_MEDICINE — «Dr.» без специализации, опыт в Zavodu za hitnu medicinsku pomoć. Альтернатива 48 EMERGENCY_MEDICINE — см. disputed."
+		}
+	],
+	"disputed": [
+		{
+			"source": "Dr. Igor Kavarić — «Bogato Iskustvo u rješavanju najsloženijih hitnih zdravstvenih problema, stečeno u Zavodu za Hitnu medicinsku pomoć Crne Gore»; Dr. Ardian Djeka — «radio je u Zavodu za Hitnu Medicinsku pomoć»",
+			"reason": "Специальность сайтом не названа. Заведены как 45 GENERAL_MEDICINE (врач без специализации в амбулатории первичной помощи). 48 EMERGENCY_MEDICINE означала бы специализацию по ургентной медицине, которую сайт не заявляет — если юзер знает, что она есть, поменять specialty в обоих clinic-SQL."
+		}
+	],
+	"excluded": [
+		{
+			"source": "«Dijagnostika» (карточка услуги без описания), «Turisti kod nas mogu dobiti kompletnu uslugu pregleda, dijagnostike, liječenja i rehabilitacije»",
+			"reason": "Обобщения без конкретной процедуры."
+		},
+		{
+			"source": "Laboratorija — «Sve vrste analiza»",
+			"reason": "Конкретные анализы не названы — анализов не заводили, заведён только забор крови (venous-blood-draw)."
+		},
+		{
+			"source": "Sestra Almira Marisenović (glavna sestra), Sestra Marina Raković, Tehničar Veljko Raković",
+			"reason": "Медсёстры и техник — в doctors не заводятся (решение юзера)."
+		},
+		{
+			"source": "Postanite naš partner — «popust od 10% za sve pacijente koji posjete naše klinike sa kuponom dobijenim na recepciji»",
+			"reason": "Скидка по купону отелей-партнёров — не цена. Упомянута в описании."
+		},
+		{
+			"source": "FAQ о страховке: «dobijate izvještaje … na engleskom jeziku … fiskalni račun … refundirati»",
+			"reason": "Не услуга — вынесено в описание."
+		},
+		{
+			"source": "Facebook K-med (ссылка из таблицы юзера)",
+			"reason": "Facebook не читается — не открывался; на сайте ссылок на соцсети нет, clinics.facebook пуст."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Dobra Voda и Čanj",
+			"detail": "Сайт подаёт их отдельными точками со своим адресом и телефоном (Dobra Voda bb pored hotela Kalamper, +382 69 667 033 — ссылка сайта ведёт на населённый пункт Dobra Voda 42.0339587 / 19.1443251, не на саму амбулаторию; Pearl Beach Resort, Čanj bb, +382 63 207 743 — у Čanj есть своё место Google «K - Med Ambulanta Čanj», 42.1592681 / 19.0036109, в data/google-places его нет). По решению юзера отдельных карточек нет — упомянуты в описании барской карточки. Нужны ли им свои карточки?"
+		},
+		{
+			"topic": "Часы работы",
+			"detail": "Сайт: «08 - 21 h» у каждой точки и FAQ «Od 8h do 21h», без дней недели; сеть «za Vaše zdravlje na ljetovanju». Если работает ежедневно круглый год — поставить 7 дней 08:00–21:00; если сезонно — оставить пустым (сейчас пусто, часы в описании)."
+		}
+	]
+}

@@ -70,6 +70,8 @@ export default {
 			[`error_${ERROR_CODES.INVALID_PROVIDER}`]: 'Invalid provider',
 			[`error_${ERROR_CODES.INVALID_LOCALE}`]: 'Invalid locale',
 			[`error_${ERROR_CODES.FORBIDDEN}`]: 'Access denied',
+			[`error_${ERROR_CODES.TOO_MANY_REQUESTS}`]:
+				'Too many attempts, try again later',
 			[`error_${ERROR_CODES.INTERNAL_ERROR}`]: 'Internal server error',
 			[`error_${ERROR_CODES.ERROR_CREATING_ACCOUNT}`]: 'Error creating account',
 			[`error_${ERROR_CODES.ERROR_SENDING_EMAIL}`]: 'Error sending email',
@@ -150,6 +152,8 @@ export default {
 			[`error_${ERROR_CODES.INVALID_PROVIDER}`]: 'Недействительный провайдер',
 			[`error_${ERROR_CODES.INVALID_LOCALE}`]: 'Недопустимый язык',
 			[`error_${ERROR_CODES.FORBIDDEN}`]: 'Доступ запрещён',
+			[`error_${ERROR_CODES.TOO_MANY_REQUESTS}`]:
+				'Слишком много попыток, попробуйте позже',
 			[`error_${ERROR_CODES.INTERNAL_ERROR}`]: 'Внутренняя ошибка сервера',
 			[`error_${ERROR_CODES.ERROR_CREATING_ACCOUNT}`]:
 				'Ошибка при создании аккаунта',
@@ -235,6 +239,8 @@ export default {
 			[`error_${ERROR_CODES.INVALID_PROVIDER}`]: 'Nevažeći provajder',
 			[`error_${ERROR_CODES.INVALID_LOCALE}`]: 'Nedozvoljen jezik',
 			[`error_${ERROR_CODES.FORBIDDEN}`]: 'Pristup odbijen',
+			[`error_${ERROR_CODES.TOO_MANY_REQUESTS}`]:
+				'Previše pokušaja, pokušajte kasnije',
 			[`error_${ERROR_CODES.INTERNAL_ERROR}`]: 'Interna greška servera',
 			[`error_${ERROR_CODES.ERROR_CREATING_ACCOUNT}`]:
 				'Greška pri kreiranju naloga',
@@ -325,6 +331,8 @@ export default {
 			[`error_${ERROR_CODES.INVALID_PROVIDER}`]: 'Ungültiger Anbieter',
 			[`error_${ERROR_CODES.INVALID_LOCALE}`]: 'Ungültige Sprache',
 			[`error_${ERROR_CODES.FORBIDDEN}`]: 'Zugriff verweigert',
+			[`error_${ERROR_CODES.TOO_MANY_REQUESTS}`]:
+				'Zu viele Versuche, versuchen Sie es später erneut',
 			[`error_${ERROR_CODES.INTERNAL_ERROR}`]: 'Interner Serverfehler',
 			[`error_${ERROR_CODES.ERROR_CREATING_ACCOUNT}`]:
 				'Fehler beim Erstellen des Kontos',
@@ -410,6 +418,8 @@ export default {
 			[`error_${ERROR_CODES.INVALID_PROVIDER}`]: 'Geçersiz sağlayıcı',
 			[`error_${ERROR_CODES.INVALID_LOCALE}`]: 'Geçersiz dil',
 			[`error_${ERROR_CODES.FORBIDDEN}`]: 'Erişim reddedildi',
+			[`error_${ERROR_CODES.TOO_MANY_REQUESTS}`]:
+				'Çok fazla deneme, daha sonra tekrar deneyin',
 			[`error_${ERROR_CODES.INTERNAL_ERROR}`]: 'İç sunucu hatası',
 			[`error_${ERROR_CODES.ERROR_CREATING_ACCOUNT}`]:
 				'Hesap oluşturulurken hata',
@@ -494,6 +504,8 @@ export default {
 			[`error_${ERROR_CODES.INVALID_PROVIDER}`]: 'Неважећи провајдер',
 			[`error_${ERROR_CODES.INVALID_LOCALE}`]: 'Недозвољен језик',
 			[`error_${ERROR_CODES.FORBIDDEN}`]: 'Приступ одбијен',
+			[`error_${ERROR_CODES.TOO_MANY_REQUESTS}`]:
+				'Превише покушаја, покушајте касније',
 			[`error_${ERROR_CODES.INTERNAL_ERROR}`]: 'Интерна грешка сервера',
 			[`error_${ERROR_CODES.ERROR_CREATING_ACCOUNT}`]:
 				'Грешка при креирању налога',

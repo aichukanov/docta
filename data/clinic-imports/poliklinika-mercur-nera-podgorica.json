@@ -1,0 +1,510 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-mercur-nera-podgorica",
+	"name": "Poliklinika Mercur Nera",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJARdxydjqTRMRs1L64zL89Gw",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-mercur-nera-podgorica.sql",
+		"server/sql/insert-clinic-poliklinika-mercur-nera-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 198,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит @clinic_id по google_place_id/slug. Подволна 2d, агент R. Сухой прогон обоих SQL на локальной БД 2026-10-08: 0 ошибок, 0 несматченных slug, счётчики таблиц до/после совпали. clinicId и doctorIds заполнить после применения из блоков VERIFICATION. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 225
+	},
+	"siteOutdated": {
+		"copyright": "© Mercurnera 2013",
+		"note": "Joomla 1.5 (шаблон OmegaTheme 2011–2012), тексты «nastala je prije 19 godina» = 2013. Состав врачей, часы работы, email (t-com.me) и перечень услуг могли устареть. Свежее подтверждение одного врача: отзыв Google 2026-01-19 «Cele trudnoće otišla kod doktora Predraga Radočevića» (= Rakočević). Отзыв 2 года назад упоминает «Hematolog Ćorac»."
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://mercurnera.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Joomla/K2, http://www.mercurnera.me/ отдаёт тот же сайт. Прочитаны главная (Dobrodošli, Radno vrijeme, Kontakt), все статьи меню com_content id 71 (O nama), 72 (Kontakt), 73 (Stručni tim), 74 (Ambulantno liječenje), 75 (Interna medicina), 76 (Ginekologija sa akušerstvom), 77 (Pedijatrija), 78 (Laboratorija), 79 (Mikrobiologija), 80 (Konsultativni pregledi), 81 (Sistematski pregledi), 87 (Reumatologija — пустая), 90 (Kapilaroskopija), блог (категория 80: 2 интервью врачей + «Vodič za roditelje»). Email спрятан Joomla email-cloak — раскодирован: mercurnera@t-com.me. Цен нигде нет. Соцсетей нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/mercur-nera.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4401368 / 19.2346483, телефон +382 20 230 330, адрес «21 Vojvode Maša Đurovića». Рейтинг 3.8, 23 отзыва — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Vojvode Maša Đurovića 21 (City kvart) — сайт = Google",
+		"phone": "+38220230300;+38220230330;+38267358880 — сайт (230 330 — «tel i fax», он же в Google)",
+		"email": "mercurnera@t-com.me — раскодирован из Joomla email-cloak на /Kontakt; ⚠️ адрес 2013 г.",
+		"website": "https://mercurnera.me/",
+		"social": "нет",
+		"logo": "NULL — единственный логотип templates/mercurnera/images/logo.png (240×93) белый на прозрачном фоне, на светлой карточке каталога невидим",
+		"workingHours": "пн–пт 07:30–19:30, сб 07:30–12:00, вс закрыто (не упомянуто) — главная «Radno vrijeme»; ⚠️ данные сайта 2013 г.",
+		"doctors": "3 из «Stručni tim»; 1 найден в БД (svetlana-aligrudic), 2 новых (snezana-corac, predrag-rakocevic). «U poliklinici rade konsultanti različitih specijalnosti» — без имён",
+		"doctorPhotos": "3 из 3 — images/tim/*.jpg (горизонтальные кадры 600×299/400×200 в кабинете)",
+		"doctorBios": "нет — на сайте только специальности; факт основания клиники dr Ćorac — в position и описании клиники",
+		"prices": "нет — все 51 услуга и 10 анализов price = NULL",
+		"labTests": "10 — только позиции с одной разумной записью каталога; групповые («Kompletna biohemijska obrada», «Hormonska dijagnostika») — excluded, неоднозначные — openQuestions",
+		"reviews": "pending — 23 отзыва ждут полной выгрузки"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Internist Examination",
+			"slug": "internist-examination",
+			"source": "O nama: «obavljamo internističke … preglede»; Sistematski: «Internistički pregled»"
+		},
+		{
+			"nameEn": "Hematologist Examination",
+			"slug": "hematologist-examination",
+			"source": "Interna medicina: «Hematalogija» (так на сайте)"
+		},
+		{
+			"nameEn": "Cardiologist Examination",
+			"slug": "cardiologist-examination",
+			"source": "Interna medicina: «Kardiologija»"
+		},
+		{
+			"nameEn": "Endocrinologist Examination",
+			"slug": "endocrinologist-examination",
+			"source": "Interna medicina: «Endokrinologija»"
+		},
+		{
+			"nameEn": "Rheumatologist Examination",
+			"slug": "rheumatologist-examination",
+			"source": "Interna medicina: «Reumatologija»; отдельный пункт меню «Reumatologija» (страница пустая)"
+		},
+		{
+			"nameEn": "Pulmonologist Examination",
+			"slug": "pulmonologist-examination",
+			"source": "Interna medicina: «Pulmologija»"
+		},
+		{
+			"nameEn": "Allergist Examination",
+			"slug": "allergist-examination",
+			"source": "Interna medicina: «Alergologija»"
+		},
+		{
+			"nameEn": "First Nephrologist Examination",
+			"slug": "first-nephrologist-examination",
+			"source": "Interna medicina: «Nefrologija» — общей записи «осмотр нефролога» нет, только первичный/повторный"
+		},
+		{
+			"nameEn": "First Gastroenterologist Examination",
+			"slug": "first-gastroenterologist-examination",
+			"source": "Interna medicina: «Gastroenterologija, Hepatologija» — гепатолога отдельно в каталоге нет"
+		},
+		{
+			"nameEn": "Nutritionist Specialist Examination",
+			"slug": "nutritionist-specialist-examination",
+			"source": "Interna medicina: «Higijena ishrane i dijetetika»"
+		},
+		{
+			"nameEn": "Gynecological Specialist Examination",
+			"slug": "gynecological-specialist-examination",
+			"source": "Ginekologija: «Ginekološki pregledi»"
+		},
+		{
+			"nameEn": "Pregnancy Specialist Examination",
+			"slug": "pregnancy-specialist-examination",
+			"source": "Ginekologija: «praćenje trudnoće»"
+		},
+		{
+			"nameEn": "Colposcopy",
+			"slug": "colposcopy",
+			"source": "Ginekologija: «kolposkopija»"
+		},
+		{
+			"nameEn": "Pediatric Examination",
+			"slug": "pediatric-examination",
+			"source": "Pedijatrija: «Pedijatrijski pregledi»"
+		},
+		{
+			"nameEn": "Urologist Examination",
+			"slug": "urologist-examination",
+			"source": "Konsultativni pregledi: «Urolog-pregled, ultrazvuk»"
+		},
+		{
+			"nameEn": "Oncologist Examination",
+			"slug": "oncologist-examination",
+			"source": "Konsultativni pregledi: «Onkolog-pregled, ultrazvuk»"
+		},
+		{
+			"nameEn": "First Neurologist Examination",
+			"slug": "first-neurologist-examination",
+			"source": "Konsultativni pregledi: «Neurolog» — общей записи нет, только первичный/повторный"
+		},
+		{
+			"nameEn": "Orthopedist Examination",
+			"slug": "orthopedist-examination",
+			"source": "Konsultativni pregledi: «Ortoped-pregled, EHO pregled»"
+		},
+		{
+			"nameEn": "First Psychiatrist Examination",
+			"slug": "first-psychiatrist-examination",
+			"source": "Konsultativni pregledi: «Psihijatar»"
+		},
+		{
+			"nameEn": "First Physiatrist Examination",
+			"slug": "first-physiatrist-examination",
+			"source": "Konsultativni pregledi: «Fizijatar-pregled, terapijski tretmani»"
+		},
+		{
+			"nameEn": "First Neurosurgeon Examination",
+			"slug": "first-neurosurgeon-examination",
+			"source": "Konsultativni pregledi: «Neurohirurg»"
+		},
+		{
+			"nameEn": "Surgical Examination",
+			"slug": "surgical-examination",
+			"source": "Konsultativni pregledi: «Hirurg»"
+		},
+		{
+			"nameEn": "Comprehensive Health Checkup",
+			"slug": "comprehensive-health-checkup",
+			"source": "Sistematski pregledi: «Kompletna laboratorijska obrada krvi, Analiza urina, Internistički pregled, EKG, Ultrazvučni pregled abdomena i štitaste žlijezde»; O nama: «sistematske preglede djece i odraslih, pojedinačne i kompanijske»"
+		},
+		{
+			"nameEn": "Preoperative Assessment",
+			"slug": "preoperative-assessment",
+			"source": "Ambulantno liječenje: «Preventivni i predoperativni pregledi»"
+		},
+		{
+			"nameEn": "ECG",
+			"slug": "ecg",
+			"source": "Sistematski pregledi: «Provjera elektrofiziologije srca (EKG)»"
+		},
+		{
+			"nameEn": "Ergometry Stress Test",
+			"slug": "ergometry-stress-test",
+			"source": "Ambulantno liječenje: «Test opterećenja srca (ergometrija)»"
+		},
+		{
+			"nameEn": "Stress Echocardiography",
+			"slug": "stress-echocardiography",
+			"source": "«… stres ehokardiografija»"
+		},
+		{
+			"nameEn": "Holter ECG 24h",
+			"slug": "holter-ecg-24h",
+			"source": "«24-satni Holter EKG-a …»"
+		},
+		{
+			"nameEn": "Holter Blood Pressure 24h",
+			"slug": "holter-blood-pressure-24h",
+			"source": "«… i krvnog pritiska»"
+		},
+		{
+			"nameEn": "Echocardiography (Heart Ultrasound)",
+			"slug": "echocardiography-heart-ultrasound",
+			"source": "Ultrazvučni pregledi: «Ultrazvuk srca»"
+		},
+		{
+			"nameEn": "Abdomen Ultrasound",
+			"slug": "abdomen-ultrasound",
+			"source": "«Ultrazvuk trbuha»"
+		},
+		{
+			"nameEn": "Thyroid Ultrasound",
+			"slug": "thyroid-ultrasound",
+			"source": "«Ultrazvuk štitaste žlijezde»"
+		},
+		{
+			"nameEn": "Soft Tissue Ultrasound",
+			"slug": "soft-tissue-ultrasound",
+			"source": "«Ultrazvuk površnih struktura»"
+		},
+		{
+			"nameEn": "Gynecological Ultrasound",
+			"slug": "gynecological-ultrasound",
+			"source": "«Ginekološki ultrazvuk»; Ginekologija: «ultrazvučna dijagnostika»"
+		},
+		{
+			"nameEn": "Urinary Tract Ultrasound",
+			"slug": "urinary-tract-ultrasound",
+			"source": "«Urološki ultrazvuk»"
+		},
+		{
+			"nameEn": "Musculoskeletal Ultrasound",
+			"slug": "musculoskeletal-ultrasound",
+			"source": "«Ortopedski ultrazvuk»; Konsultativni: «Ortoped-… EHO pregled»"
+		},
+		{
+			"nameEn": "Infant Brain Ultrasound (Neurosonography)",
+			"slug": "infant-brain-ultrasound-neurosonography",
+			"source": "«CNS» (список УЗИ); Pedijatrija: «ultrazvućna dijagnostika, CNS i kukova»"
+		},
+		{
+			"nameEn": "Pediatric Hip Ultrasound",
+			"slug": "pediatric-hip-ultrasound",
+			"source": "Pedijatrija: «… CNS i kukova»"
+		},
+		{
+			"nameEn": "Capillaroscopy",
+			"slug": "capillaroscopy",
+			"source": "страница «Kapilaroskopija» (id 90)"
+		},
+		{
+			"nameEn": "Oxygen Administration",
+			"slug": "oxygen-administration",
+			"source": "Ambulantno liječenje: «Oksigenoterapija …»"
+		},
+		{
+			"nameEn": "Inhalation Therapy",
+			"slug": "inhalation-therapy",
+			"source": "«…, inhalacije»"
+		},
+		{
+			"nameEn": "Intramuscular Injection",
+			"slug": "intramuscular-injection",
+			"source": "«Parentalna medikamentalna terapija (injekcije …»"
+		},
+		{
+			"nameEn": "Infusion Therapy",
+			"slug": "infusion-therapy",
+			"source": "«… i infuziona terapija)»"
+		},
+		{
+			"nameEn": "Primary Wound Care with Sutures",
+			"slug": "primary-wound-care-with-sutures",
+			"source": "«Šivenje rana …»"
+		},
+		{
+			"nameEn": "Wound Dressing",
+			"slug": "wound-dressing",
+			"source": "«… i previjanje»"
+		},
+		{
+			"nameEn": "Magnetic Therapy",
+			"slug": "magnetic-therapy",
+			"source": "Terapijski tretmani: «Kvantna terapija-magnet, …»"
+		},
+		{
+			"nameEn": "Laser Therapy",
+			"slug": "laser-therapy",
+			"source": "«Kvantna terapija-…, laser, …»"
+		},
+		{
+			"nameEn": "TENS Therapy",
+			"slug": "tens-therapy",
+			"source": "«Tens terapija-fizijatrijske procedure bolnih stanja …»"
+		},
+		{
+			"nameEn": "Home Visit Examination",
+			"slug": "home-visit-examination",
+			"source": "O nama: «Radimo kućne posjete doktora …»; Patronaža: «Medicinsko praćenje pacijenata u kućnim uslovima (specijalistički pregled …)»"
+		},
+		{
+			"nameEn": "Nurse Home Visit",
+			"slug": "nurse-home-visit",
+			"source": "O nama: «… i medicinskih sestara»"
+		},
+		{
+			"nameEn": "Home Visit for Laboratory Sample Collection",
+			"slug": "home-visit-for-laboratory-sample-collection",
+			"source": "Patronaža: «Uzimanje uzoraka krvi i urina po pozivu (kućne posjete i kućna njega)»"
+		}
+	],
+	"labTests": [
+		{
+			"nameEn": "Complete Urinalysis",
+			"slug": "complete-urinalysis",
+			"source": "Laboratorija: «Analiza urina»; Sistematski: «Analiza urina»"
+		},
+		{
+			"nameEn": "PSA",
+			"slug": "psa",
+			"source": "«Utvrđivanje tumor markera (… prostata …)»"
+		},
+		{
+			"nameEn": "CA 15-3",
+			"slug": "ca-15-3",
+			"source": "«… tumor markera (dojka, …)»"
+		},
+		{
+			"nameEn": "CEA",
+			"slug": "cea",
+			"source": "«… tumor markera (… debelo crijevo …)»"
+		},
+		{
+			"nameEn": "Helicobacter pylori Antibodies",
+			"slug": "helicobacter-pylori",
+			"source": "«Utvrđivanje antitijela na bakteriju … (HELICO BACTER PYLORI)» — запись «Antitijela na Helicobacter pylori»"
+		},
+		{
+			"nameEn": "HIV Ag-Ab",
+			"slug": "hiv-ag-ab",
+			"source": "«Virusološka obrada (HIV, …)»"
+		},
+		{
+			"nameEn": "HBsAg",
+			"slug": "hbsag",
+			"source": "«… HbS …»"
+		},
+		{
+			"nameEn": "Anti-HCV",
+			"slug": "anti-hcv",
+			"source": "«… HcV …»"
+		},
+		{
+			"nameEn": "Urine Culture",
+			"slug": "urine-culture",
+			"source": "Mikrobiologija: «urinokulture»"
+		},
+		{
+			"nameEn": "Stool Culture",
+			"slug": "stool-culture",
+			"source": "Mikrobiologija: «koprokulture»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "snezana-corac",
+			"nameSr": "Snežana Ćorac",
+			"professionalTitle": "dr",
+			"position": "Internista hematolog, osnivač Poliklinike",
+			"specialtyIds": [
+				2,
+				15
+			],
+			"languageIds": [
+				1
+			],
+			"photo": "https://mercurnera.me/images/tim/dr_snezana_corac.jpg",
+			"hasBio": false,
+			"services": [
+				"hematologist-examination"
+			],
+			"existingInDb": false,
+			"note": "Новая; прод-API 204 по snezana-corac и corac-snezana. Основатель клиники (1994). Привязана к hematologist-examination — единственный гематолог «Stručni tim»."
+		},
+		{
+			"slug": "predrag-rakocevic",
+			"nameSr": "Predrag Rakočević",
+			"professionalTitle": "dr sci. med.",
+			"position": "Ginekolog akušer",
+			"specialtyIds": [
+				5
+			],
+			"languageIds": [
+				1
+			],
+			"photo": "https://mercurnera.me/images/tim/dr_predrag_rakocevic.jpg",
+			"hasBio": false,
+			"services": [
+				"gynecological-specialist-examination"
+			],
+			"existingInDb": false,
+			"note": "Новый; прод-API 204 по обоим порядкам. Титул на сайте «dr sci med». Привязан к gynecological-specialist-examination — единственный гинеколог «Stručni tim»; отзыв Google 2026-01 (ведение беременности)."
+		},
+		{
+			"slug": "svetlana-aligrudic",
+			"nameSr": "Svetlana Aligrudić",
+			"professionalTitle": "dr",
+			"position": "Internista reumatolog",
+			"specialtyIds": [
+				2,
+				16
+			],
+			"languageIds": [
+				1
+			],
+			"photo": "https://mercurnera.me/images/tim/dr_Svetlana_Aligrudic.jpg",
+			"hasBio": false,
+			"services": [
+				"rheumatologist-examination"
+			],
+			"existingInDb": true,
+			"note": "Существующая карточка (прод id 1826, локаль 3060; 2 + 16, консультант Poliklinika Dr Masoničić, Bar) — тот же internista reumatolog. Привязана к rheumatologist-examination."
+		}
+	],
+	"excluded": [
+		{
+			"source": "Ambulantno liječenje: «Jednodnevno liječenje u poliklinici (posebno opremljena ambulanta za dnevni boravak …)»",
+			"reason": "Формат (дневной стационар), не процедура. В каталоге только DRG-записи УКЦЦГ «dnevna bolnica» — не подходят. Упомянуто в описании клиники."
+		},
+		{
+			"source": "«Intenzivna terapija»; «Kompletna medicinska obrada uz laboratorijsku dijagnostiku»",
+			"reason": "Обобщения без конкретной процедуры."
+		},
+		{
+			"source": "«Sva ultrazvučna i doppler dijagnostika»; «Radiološka dijanostika – ultrazvučni pregledi»",
+			"reason": "Обобщение: зоны допплера не названы. УЗИ заведены по списку «obavljamo sljedeće ultrazvučne preglede»."
+		},
+		{
+			"source": "Terapijski tretmani: «Kvantna terapija-magnet, laser, infraruž»",
+			"reason": "Магнит и лазер заведены (magnetic-therapy, laser-therapy). Инфракрасное облучение — в каталоге только сводная запись «Zračenje infracrvenom, ultravioletnom i bioptron lampom» (5145); УФ и биоптрон сайт не заявляет → не заведено."
+		},
+		{
+			"source": "Ginekologija: «mikrobioloska analiza … i sve vrste ginekoloskih testova»; Mikrobiologija: «Brisevi»",
+			"reason": "Вид мазка/теста не назван (вагинальный, цервикальный, ПАП …) — сопоставлять не с чем."
+		},
+		{
+			"source": "Pedijatrija: «Praćenje djeteta od 0-16»",
+			"reason": "Обобщение, покрыто pediatric-examination."
+		},
+		{
+			"source": "Laboratorija: «Laboratorijska obrada krvi», «Kompletna biohemijska obrada», «Hormonska dijagnostika»; Sistematski: «Kompletna laboratorijska obrada krvi»",
+			"reason": "Групповые формулировки без конкретных анализов. Даже ККС не заведён: сайт его не называет."
+		},
+		{
+			"source": "Konsultativni pregledi: «Onkolog-… ultrazvuk», «Radiolog-eho pregled», «Fizijatar-… terapijski tretmani»",
+			"reason": "Зона УЗИ / вид процедуры не названы; УЗИ покрыты списком ультразвуковых осмотров, физиотерапия — TENS/magnet/laser."
+		},
+		{
+			"source": "Konsultativni pregledi: «Urolog-pregled, ultrazvuk»",
+			"reason": "Не потеряно: urologist-examination + urinary-tract-ultrasound (из списка УЗИ «Urološki ultrazvuk»). Комбинированную запись urologist-examination-with-ultrasound не ставили, чтобы не дублировать."
+		},
+		{
+			"source": "Reumatologija (id 87)",
+			"reason": "Страница пустая — только заголовок."
+		},
+		{
+			"source": "«U poliklinici rade konsultanti različitih specijalnosti … eminentnim stručnjacima … iz regiona»",
+			"reason": "Имён нет — врачей не заводили."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Сайт ~2013 г.",
+			"detail": "Перечень, часы и email взяты как есть; сайт отмечен устаревшим (siteOutdated). Свежих источников (соцсетей) клиника не публикует. При появлении нового сайта — переимпорт."
+		},
+		{
+			"topic": "Testovi na droge",
+			"detail": "В каталоге несколько панелей (drug-panel-5-new, drug-panel-10, drug-panel-10-ii, 3000 метаболитов) — какая из них, сайт не говорит. Не заведено."
+		},
+		{
+			"topic": "Virusološka obrada — HAV",
+			"detail": "«HAV» без уточнения: hav-igm (232) или hav-total-antibodies (330) — два равноценных кандидата. Не заведено. HIV → hiv-ag-ab, HbS → hbsag, HcV → anti-hcv — по одному очевидному кандидату, заведены."
+		},
+		{
+			"topic": "Testovi intolerancije hrane",
+			"detail": "Панели на 54/90/95/108/216 продуктов — сайт не уточняет. Не заведено."
+		},
+		{
+			"topic": "Tumor markeri — materica, pluća",
+			"detail": "Маркеры названы органами. Заведены однозначные: prostata → PSA, dojka → CA 15-3, debelo crijevo → CEA. «Materica» (CA 125 / SCC / HE4) и «pluća» (CYFRA 21-1 / NSE / SCC / ProGRP) — неоднозначны, не заведены."
+		},
+		{
+			"topic": "Осмотры «first-*»",
+			"detail": "Для нефролога, гастроэнтеролога (+гепатология), невролога, психиатра, физиатра, нейрохирурга в каталоге нет общей записи осмотра — взяты first-*-examination (как у большинства клиник с этими осмотрами)."
+		},
+		{
+			"topic": "Interna medicina — субспециальности",
+			"detail": "Страница перечисляет «Hematalogija, Kardiologija, Endokrinologija, Reumatologija, Pulmologija, Alergologija, Nefrologija, Gastroenterologija, Hepatologija, Higijena ishrane i dijetetika» — каждая заведена осмотром соответствующего специалиста. Имён этих консультантов (кроме гематолога и ревматолога) сайт не даёт."
+		}
+	]
+}

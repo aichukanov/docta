@@ -1,0 +1,57 @@
+[
+	{
+		"slug": "telephone-medical-consultation",
+		"name_en": "Telephone Medical Consultation",
+		"name_sr": "Savjetovanje ljekara putem telefona",
+		"table": "medical_services",
+		"clinic": "k-med-ambulanta-bar",
+		"alsoUsedBy": [
+			"k-med-ambulanta-stoj-ulcinj"
+		],
+		"categories": [
+			9
+		],
+		"specialties": [
+			45
+		],
+		"reason": "kmed.me: «Savjetovanje — Mogućnost savjetovanja i putem telefona», «sa mogućnošću konsultacija telefonom». Консультации по телефону в каталоге нет (e-consultation-with-specialist — консилиум ДЗ со специалистом, brief-doctor-visit-consultation — очный визит). Категория 9 GENERAL_MEDICINE, специальность 45. Создаётся идемпотентно в обоих services-SQL K-med."
+	},
+	{
+		"slug": "pregnancy-exercises",
+		"name_en": "Pregnancy Exercises",
+		"name_sr": "Vježbe za trudnice",
+		"table": "medical_services",
+		"clinic": "physiocare-team-podgorica",
+		"categories": [
+			5
+		],
+		"specialties": [
+			42
+		],
+		"reason": "physiocareteam.me /medicinski-fitnes: «Vjžbe za trudnice». Для беременных в каталоге только массаж (Pregnancy Massage 30/45 min), упражнений нет ни под одним названием. Категория 5 PHYSIOTHERAPY, специальность 42 (авто-привязка кат. 5)."
+	},
+	{
+		"slug": "pulmonary-rehabilitation",
+		"name_en": "Pulmonary Rehabilitation",
+		"name_sr": "Plućna rehabilitacija",
+		"table": "medical_services",
+		"clinic": "vrmac-health-wellbeing-retreat-kotor",
+		"addedBy": "coordinator"
+	},
+	{
+		"slug": "hifem-therapy",
+		"name_en": "HIFEM Therapy",
+		"name_sr": "HIFEM terapija",
+		"table": "medical_services",
+		"clinic": "vrmac-health-wellbeing-retreat-kotor",
+		"addedBy": "coordinator"
+	},
+	{
+		"slug": "thermotherapy",
+		"name_en": "Thermotherapy",
+		"name_sr": "Termoterapija",
+		"table": "medical_services",
+		"clinic": "physiocare-team-podgorica",
+		"addedBy": "coordinator"
+	}
+]

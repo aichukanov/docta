@@ -1,0 +1,462 @@
+[
+  {
+    "slug": "single-extremity-doppler",
+    "name_en": "Single Extremity Doppler",
+    "name_sr": "Kolor dopler krvnih sudova jednog ekstremiteta",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      4
+    ],
+    "specialties": [
+      10,
+      34
+    ],
+    "reason": "«Color duplex scan 1 ekstremiteta 30€» при отдельных 50€ за сосуды обеих рук / обеих ног. Допплера одной конечности в каталоге нет."
+  },
+  {
+    "slug": "x-ray-trachea",
+    "name_en": "X-Ray Trachea",
+    "name_sr": "Rendgen traheje",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      3
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "«Rendgenska dijagnostika traheje 35€» + пост «Rendgen snimak traheje (dušnika)». Ближайшие Soft Tissue Neck X-Ray / Pharynx and Larynx X-Ray — другие области."
+  },
+  {
+    "slug": "soft-tissue-x-ray",
+    "name_en": "Soft Tissue X-Ray",
+    "name_sr": "Rendgen mekih tkiva",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      3
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "«Rendgenska dijagnostika mekih tkiva gornjih i donjih estremiteta i grudnog koša 40€». В каталоге только Soft Tissue Neck X-Ray."
+  },
+  {
+    "slug": "barium-swallow-esophagography",
+    "name_en": "Barium Swallow (Esophagography)",
+    "name_sr": "Rendgenski pregled akta gutanja i jednjaka",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      3
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "«-rendgenski pregled akta gutanja i jednjaka 50€» отдельной строкой рядом с «radioskopija gastroduodenuma 60€» (→ Esophagus, Stomach and Duodenum Fluoroscopy). Изолированного исследования пищевода в каталоге нет."
+  },
+  {
+    "slug": "proctography",
+    "name_en": "Proctography",
+    "name_sr": "Proktografija",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      3
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "«-proktografija 80€». Нет в каталоге (ни proctography, ни defecography)."
+  },
+  {
+    "slug": "pediatric-msct-abdomen-and-pelvis-without-contrast",
+    "name_en": "Pediatric MSCT Abdomen and Pelvis without Contrast",
+    "name_sr": "MSCT abdomena i male karlice kod djece bez kontrasta",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      2,
+      25
+    ],
+    "specialties": [
+      10,
+      4
+    ],
+    "reason": "«MSCT dijagnostika abdomena i karlice u pedijatrijskoj populaciji 70€ (nativno)». Детская цена ниже взрослой; сопоставить с MSCT Abdomen and Pelvis Native значило бы показать взрослым 70€ за исследование, которое клиника взрослым так не продаёт (у взрослых abdomen и karlica идут отдельными строками по 80€)."
+  },
+  {
+    "slug": "pediatric-msct-abdomen-and-pelvis-with-contrast",
+    "name_en": "Pediatric MSCT Abdomen and Pelvis with Contrast",
+    "name_sr": "MSCT abdomena i male karlice kod djece sa kontrastom",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      2,
+      25
+    ],
+    "specialties": [
+      10,
+      4
+    ],
+    "reason": "Та же строка, колонка «Sa IV kontrastom» 90€."
+  },
+  {
+    "slug": "msct-soft-tissue-neck-without-contrast",
+    "name_en": "MSCT Soft Tissue Neck without Contrast",
+    "name_sr": "MSCT pregled mekih tkiva vrata bez kontrasta",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      2
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "«MSCT vrata 80€ (nativno) / 100€ (kontrast)». Контрастная пара MSCT Soft Tissue Neck with Contrast в каталоге есть, нативной нет (как у пары sinusa without/with)."
+  },
+  {
+    "slug": "msct-soft-tissues-without-contrast",
+    "name_en": "MSCT Soft Tissues without Contrast",
+    "name_sr": "MSCT mekih tkiva bez kontrasta",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      2
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "«MSCT dijagnostika mekih tkiva gornjih i donjih ekstremiteta, grudnog koša i abdomena. 70€ (nativno)». Generic «CT jedne regije» — другое (у клиники обычная регион-КТ стоит 80€)."
+  },
+  {
+    "slug": "msct-soft-tissues-with-contrast",
+    "name_en": "MSCT Soft Tissues with Contrast",
+    "name_sr": "MSCT mekih tkiva sa kontrastom",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      2
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "Та же строка, колонка «Sa IV kontrastom» 90€."
+  },
+  {
+    "slug": "mri-head-and-neck",
+    "name_en": "MRI Head and Neck",
+    "name_sr": "MR glave i vrata",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      1
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "«MRI glave i vrata 210€ / 230€». Аналог MSCT Head and Neck without Contrast; MR-записи «голова + шея» в каталоге нет (MRI Brain and Cervical Spine — позвоночник, не шея)."
+  },
+  {
+    "slug": "mri-elbow-joint",
+    "name_en": "MRI Elbow Joint",
+    "name_sr": "MR pregled lakatnog zgloba",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      1
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "«MRI … lakatnog zgloba 120€» + пост «Magnetna rezonanca lakatnog zgloba». Плечо, запястье, колено, голеностоп в каталоге заведены отдельно, локтя нет."
+  },
+  {
+    "slug": "mri-angiography-with-contrast",
+    "name_en": "MRI Angiography with Contrast",
+    "name_sr": "Kontrastna MR angiografija",
+    "table": "medical_services",
+    "clinic": "poliklinika-stojanovic-medical-berane",
+    "alsoUsedBy": [],
+    "categories": [
+      1
+    ],
+    "specialties": [
+      10
+    ],
+    "reason": "«Kontrastna MR angiografija 150€» — без области, отдельной строкой от «MRI angiografija endokranijuma i vrata 180€». Generic MR-ангиографии в каталоге нет, есть только по областям."
+  },
+  {
+    "slug": "trigger-point-injection",
+    "name_en": "Trigger Point Injection",
+    "name_sr": "Infiltracija anestetika u mišić u terapiji bola",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      19,
+      29
+    ],
+    "specialties": [],
+    "reason": "«INFILTRACIJA ANESTETIKA U MIŠIĆ U TERAPIJI BOLA SA LIJEKOM I ANESTETIKOM 25,00 eur». В каталоге только Paravertebral Muscle Infiltration (конкретная зона) и безликое Infiltration; инъекции в триггерные точки нет."
+  },
+  {
+    "slug": "bursa-or-cyst-puncture-with-drug-infiltration",
+    "name_en": "Bursa or Cyst Puncture with Drug Infiltration",
+    "name_sr": "Punkcija burze ili ciste sa evakuacijom i infiltracijom lijeka",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      15,
+      29
+    ],
+    "specialties": [],
+    "reason": "«PUNKCIJA BURSI I CISTA SA EVAUKACIJOMI INFILTRACIJOM MEDIKAMENATA 25,00 eur». Joint Puncture with Infiltration — сустав, не бурса; Cyst Puncture under Ultrasound Guidance — без лекарства и под УЗИ."
+  },
+  {
+    "slug": "blood-pressure-and-bmi-measurement",
+    "name_en": "Blood Pressure and BMI Measurement",
+    "name_sr": "Mjerenje BMI i arterijskog pritiska",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      9
+    ],
+    "specialties": [
+      45
+    ],
+    "reason": "«MJERENJE BMI I ARTERIJSKOG PRITISKA 2,00 eur». Разового измерения давления в каталоге нет (только Holter Blood Pressure 24h)."
+  },
+  {
+    "slug": "expert-gynecological-ultrasound",
+    "name_en": "Expert Gynecological Ultrasound",
+    "name_sr": "Ekspertski ginekološki ultrazvuk",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      4,
+      7
+    ],
+    "specialties": [
+      5
+    ],
+    "reason": "«EXPERTSKI ULTRAZVUK-GINEKOLOŠKI 50,00 eur» рядом с обычным УЗИ малого таза 30€. Expert Pregnancy Ultrasound — про беременность, а строка прайса — «ginekološki»."
+  },
+  {
+    "slug": "tonsil-lavage",
+    "name_en": "Tonsil Lavage",
+    "name_sr": "Ispiranje krajnika",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      11
+    ],
+    "specialties": [
+      11
+    ],
+    "reason": "«ISPIRANJE KRAJNIKA 15,00 eur». В каталоге нет."
+  },
+  {
+    "slug": "sinus-lavage",
+    "name_en": "Sinus Lavage",
+    "name_sr": "Ispiranje sinusa",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      11
+    ],
+    "specialties": [
+      11
+    ],
+    "reason": "«ISPIRANJE SINUSA 15,00 eur». Nasal Irrigation (ispiranje nosa) — другая процедура."
+  },
+  {
+    "slug": "pulmonologist-examination-with-chest-x-ray",
+    "name_en": "Pulmonologist Examination with Chest X-Ray",
+    "name_sr": "Pregled pulmologa sa RTG snimkom pluća",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      12,
+      3
+    ],
+    "specialties": [
+      14
+    ],
+    "reason": "«PRVI PREGLED LJEKARA SPECIJALISTE SA RTG SNIMKOM PLUCA 65,00 eur» и «KONTROLNI … SA RTG SNIMKOM PLUĆA 55,00 eur» (раздел PULMOLOG). Комбинация с собственной ценой."
+  },
+  {
+    "slug": "pulmonologist-examination-with-chest-x-ray-and-spirometry",
+    "name_en": "Pulmonologist Examination with Chest X-Ray and Spirometry",
+    "name_sr": "Pregled pulmologa sa RTG snimkom pluća i spirometrijom",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      12,
+      3
+    ],
+    "specialties": [
+      14
+    ],
+    "reason": "«PRVI PREGLED … SA RTG SNIMKOM PLUCA+SPIROMETRIJA 75,00 eur», «KONTROLA PULMOLOGA SA RTG SNIMKOM+SPIROMETRIJA 65,00 eur»."
+  },
+  {
+    "slug": "pulmonologist-examination-with-spirometry",
+    "name_en": "Pulmonologist Examination with Spirometry",
+    "name_sr": "Pregled pulmologa sa spirometrijom",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      12
+    ],
+    "specialties": [
+      14
+    ],
+    "reason": "«KONTROLNI PREGLED LJEKARA SPECIJALISTE+SPIROMETRIJA 55,00 eur». Аналог Pediatric Examination with Spirometry для взрослого пульмонолога."
+  },
+  {
+    "slug": "pulmonologist-examination-with-x-ray-reading",
+    "name_en": "Pulmonologist Examination with X-Ray Reading",
+    "name_sr": "Pregled pulmologa sa očitavanjem snimka",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      12
+    ],
+    "specialties": [
+      14
+    ],
+    "reason": "«PRVI PREGLED LJEKARA SPECIJALISTE SA OCITAVANJEM SNIMKA 45,00eu», «KONTROLNI … SA OCITAVANJEM SNIMKA 40,00eur». Осмотр с чтением принесённого снимка."
+  },
+  {
+    "slug": "expert-breast-ultrasound",
+    "name_en": "Expert Breast Ultrasound",
+    "name_sr": "Ekspertski ultrazvuk dojki",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      4,
+      7
+    ],
+    "specialties": [
+      5
+    ],
+    "reason": "«EXPERTSKI ULTRAZVUK DOJKI 50,00 eur» отдельной строкой рядом с «EHO PREGLED DOJKI 40,00 eur»."
+  },
+  {
+    "slug": "systematic-examination-for-women-type-a",
+    "name_en": "Systematic Examination for Women Type A",
+    "name_sr": "Sistematski pregled za žene tip A",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      9,
+      7
+    ],
+    "specialties": [
+      45,
+      5
+    ],
+    "reason": "«SISTEMATSKI PREGLED TIP “A” ZA ŽENE … (opšti pregled, EKG, glikemija, holesterol, trigliceridi, eho abdomena, eho dojki, gin.pregled, Eho štitaste žlijezde) 170,00 eur». Состав пакета клиники."
+  },
+  {
+    "slug": "systematic-examination-for-women-type-b",
+    "name_en": "Systematic Examination for Women Type B",
+    "name_sr": "Sistematski pregled za žene tip B",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      9,
+      7
+    ],
+    "specialties": [
+      45,
+      5
+    ],
+    "reason": "«SISTEMATSKI PREGLED TIP “B” ZA ŽENE … (opšti pregled, ekg, glikemija, holesterol, trigliceridi, eho abdomena, eho dojki, mamografija, eho štitatste žlijezde) 200,00 eur»."
+  },
+  {
+    "slug": "systematic-examination-for-men",
+    "name_en": "Systematic Examination for Men",
+    "name_sr": "Sistematski pregled za muškarce",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      9
+    ],
+    "specialties": [
+      45
+    ],
+    "reason": "«SISTEMATSKI PREGLED ZA MUŠKARCE … (opšti pregled, color dopler krvnih sudova (po želji donjih ili gornjih ekstremiteta), eho abdomena, eho urotrakta, glikemija, Holesterol, trigliceridi) 170,00 eur»."
+  },
+  {
+    "slug": "intramuscular-injection-home-visit",
+    "name_en": "Intramuscular Injection Home Visit",
+    "name_sr": "Intramuskularna injekcija u kućnoj posjeti",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      29,
+      30
+    ],
+    "specialties": [],
+    "reason": "«INTRAMUSKULARNA INJEKCIJA U KUĆNOJ POSJETI (jednom dnevno vise davanja) 8,00 eur». Для в/в на дому запись есть (Intravenous Therapy Home Visit City), для в/м — нет."
+  },
+  {
+    "slug": "infusion-therapy-home-visit",
+    "name_en": "Infusion Therapy Home Visit",
+    "name_sr": "Infuzija u kućnoj posjeti",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      29,
+      30
+    ],
+    "specialties": [],
+    "reason": "«INFUZIJSKI RASTVOR U KUĆNOJ POSJETI DO 30 MINUTA 15,00 eur», «… DO 60 MINUTA 30,00 eur». Patronage Nurse Infusion Visit (по км) — тарифы ДЗ, другое."
+  },
+  {
+    "slug": "urinary-catheter-placement-home-visit",
+    "name_en": "Urinary Catheter Placement Home Visit",
+    "name_sr": "Postavljanje ili zamjena urinarnog katetera u kućnoj posjeti",
+    "table": "medical_services",
+    "clinic": "poliklinika-feniks-medika-podgorica",
+    "alsoUsedBy": [],
+    "categories": [
+      22,
+      30
+    ],
+    "specialties": [
+      9
+    ],
+    "reason": "«URINARNI KATETER U KUĆNOJ POSJETI (postavljanje ili zamjena) 35,00 eur». Амбулаторные установка (25€) и замена (30€) заведены отдельно."
+  }
+]

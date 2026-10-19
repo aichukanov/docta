@@ -1,0 +1,375 @@
+{
+	"schemaVersion": 1,
+	"slug": "medcontour-institute-budva",
+	"name": "Medcontour Institute",
+	"city": "Budva",
+	"cityId": 3,
+	"googlePlaceId": "ChIJ-2WsBQDVTRMRVEi1vkLXjaw",
+	"clinicTypeIds": [
+		14
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-medcontour-institute-budva.sql",
+		"server/sql/insert-clinic-medcontour-institute-budva-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 234,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Y. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Сухой прогон 2026-10-09 на локали (plain + shadow для services) — см. отчёт агента. Slug клиники и новых записей каталога сверены с прод-API (204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 261
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://medcontour.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Next.js SSR; /en, /ru, /sr и /…/services читаются сырым HTML (/me отдаёт ту же страницу, что /en). /services — 44 позиции без цен (в HTML нет ни €, ни чисел). Главная — разделы услуг и оборудование. Часы «Mon-Sat: 9 AM-9 PM» в шапке. Email нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/budva/medcontour-institute.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJ-2WsBQDVTRMRVEi1vkLXjaw, координаты 42.2852238 / 18.837329, +382 67 031 222, «11 22. Novembra, Budva 85310». 8 отзывов (в файле 5)."
+		}
+	],
+	"coverage": {
+		"address": "22. novembra 11, 85310 — сайт и Google совпадают",
+		"phone": "+38267031222 — сайт и Google",
+		"whatsapp": "+38267031222 — wa.me на сайте",
+		"email": "нет на сайте",
+		"website": "https://medcontour.me/",
+		"social": "facebook.com/p/Med-Contour-Institute-61578957897995, @medcontour_institute — шапка сайта (не открывались)",
+		"logo": "нет отдельного файла (inline + favicon)",
+		"workingHours": "Пн–Сб 09–21, Вс выходной — шапка сайта",
+		"description": "из главной и /services (en/sr)",
+		"languages": "только SR — сайт en/ru/sr, приём на других языках не заявлен",
+		"doctors": "нет — имён на сайте нет",
+		"prices": "цен нет — 37 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — 8 в Google, ждут выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "med-contour-plus-body-contouring",
+			"nameEn": "Med Contour Plus Body Contouring",
+			"nameSr": "Med Contour Plus oblikovanje tijela",
+			"categoryIds": [
+				18
+			],
+			"specialtyIds": [
+				18,
+				44
+			],
+			"reason": "Именной аппарат: Medcontour Institute /services «BODY SHAPING - MED CONTOUR PLUS», главная «Med Contour Plus — A painless, non-surgical method for body contouring, skin tightening, and localized fat reduction». В каталоге аналога этого аппарата нет (emsculpt-neo — другая технология, exilis/ultraformer — другие бренды, generic-кавитации нет); технологию сайт не называет — generic не приписываем. По схеме emsculpt-neo-body-contouring: кат. 18, спец. 18 + 44. Зоны (большая/комбинированная/малая/ягодицы) и пакеты из 5 без цен — одна запись, зоны в источнике."
+		},
+		{
+			"table": "medical_services",
+			"slug": "hydradermabrasion",
+			"nameEn": "Hydradermabrasion",
+			"nameSr": "Hidrodermoabrazija",
+			"categoryIds": [
+				24
+			],
+			"specialtyIds": [
+				7,
+				44
+			],
+			"reason": "Общая процедура (аппаратная гидродермабразия: вакуумное очищение + пилинг + инфузия сывороток). Medcontour Institute: «Hydra Clear … combines deep hydration, gentle exfoliation, and firming technologies»; Fontis: «Hydrafacial je neinvazivan, višestepeni tretman … Hydrafacial važi za najnježniju hidrodermoabraziju». В каталоге записи нет (есть только dermabrasion — глубокая дермабразия, и diamond-microdermabrasion). Два разных аппарата одной сути → одна общая запись, бренды HydraFacial и Hydra Clear — синонимами (решение юзера: брендовый дубль не заводить). Кат. 24 DERMATOLOGY, спец. 7 + 44 (как skin-hydration-treatment / facial-biorevitalization)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "microdermabrasion",
+			"nameEn": "Microdermabrasion",
+			"nameSr": "Mikrodermoabrazija",
+			"categoryIds": [
+				18,
+				24
+			],
+			"specialtyIds": [
+				7,
+				18
+			],
+			"reason": "Общая услуга: Medcontour /services «Face Up microdermabrasion» («Face Up mikrodermoabrazija»); Fontis /services/tretmani-lica-fontis «Mikrodermoabrazija lica i leđa (Reviderm)». В каталоге есть только diamond-microdermabrasion (конкретный метод — алмазная насадка, сайт метод не называет) и dermabrasion (глубокая дермабразия — другая процедура). Схема — как diamond-microdermabrasion: кат. 18 + 24, спец. 7 + 18."
+		}
+	],
+	"services": [
+		{
+			"slug": "med-contour-plus-body-contouring",
+			"nameEn": "Med Contour Plus Body Contouring",
+			"price": null,
+			"source": "/services «BODY SHAPING - MED CONTOUR PLUS» — «One treatment of a large area (thighs or abdomen)», «One treatment of a combined area (abdomen + thighs)», «Gluteal region treatment (buttocks)», «One treatment of a small area (lower abdomen, knees, calves, upper arms, lower back)» (+3 пакета по 5 — в excluded)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "hydradermabrasion",
+			"nameEn": "Hydradermabrasion",
+			"price": null,
+			"source": "/services «FACIAL AND SKIN TREATMENTS» — «Hydra Clear»; главная — «Hydra Clear is an advanced skin treatment that combines deep hydration, gentle exfoliation, and firming technologies»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "facial-mesotherapy-single-treatment",
+			"nameEn": "Facial Mesotherapy Single Treatment",
+			"price": null,
+			"source": "/services — «Facial mesotherapy» («Mezoterapija lica»); главная Aesthetic Medicine — «Mesotherapy – Skin & hair revitalization»"
+		},
+		{
+			"slug": "dermapen-microneedling",
+			"nameEn": "Dermapen Microneedling",
+			"price": null,
+			"source": "/services — «Dermapen (face + neck)»"
+		},
+		{
+			"slug": "biorevitalization",
+			"nameEn": "Biorevitalization",
+			"price": null,
+			"source": "/services — «Biorevitalization», «Biorevitalization RRS + under-eye mesotherapy»; главная — «Skin Boosters – Hydration and glow» (skin booster — синоним)"
+		},
+		{
+			"slug": "scalp-mesotherapy",
+			"nameEn": "Scalp Mesotherapy",
+			"price": null,
+			"source": "/services — «Hair mesotherapy» («Mezoterapija kose»); главная Trichology — «Hair Growth Mesotherapy – Stimulates follicles and improves circulation»"
+		},
+		{
+			"slug": "chemical-peel",
+			"nameEn": "Chemical Peel",
+			"price": null,
+			"source": "/services — «Chemical peel», «Jessner (Hollywood) peel»; главная — «Chemical Peels – Pigmentation, acne, skin tone» (Jessner — синоним, зона не указана — generic)"
+		},
+		{
+			"slug": "microdermabrasion",
+			"nameEn": "Microdermabrasion",
+			"price": null,
+			"source": "/services — «Face Up microdermabrasion»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "stretch-mark-treatment",
+			"nameEn": "Stretch Mark Treatment",
+			"price": null,
+			"source": "/services — «Stretch mark and scar treatment» («Tretman strija i ožiljaka»); главная — «Stretch Mark & Scar Removal – Skin smoothing»",
+			"note": "Одна позиция сайта; scar-correction (хирургическая ревизия рубца, спец. 18) по сути не то — не взята."
+		},
+		{
+			"slug": "botox-injection",
+			"nameEn": "Botox Injection",
+			"price": null,
+			"source": "Главная, Aesthetic Medicine — «Botox – Wrinkle reduction»"
+		},
+		{
+			"slug": "hyaluronic-acid-filler",
+			"nameEn": "Hyaluronic Acid Filler",
+			"price": null,
+			"source": "Главная, Aesthetic Medicine — «Fillers – Volume and contour enhancement» (generic-запись филлеров, синоним Dermal Filler)"
+		},
+		{
+			"slug": "nutritionist-specialist-examination",
+			"nameEn": "Nutritionist Specialist Examination",
+			"price": null,
+			"source": "Главная, Nutrition & Wellness — «One-on-One Nutrition Consultations» («Individualne konsultacije sa nutricionistom»; синоним «Konsultacija nutricioniste»)"
+		},
+		{
+			"slug": "personalized-nutrition-plan",
+			"nameEn": "Personalized Nutrition Plan",
+			"price": null,
+			"source": "Главная — «Custom Meal Plans – For weight loss/gain or medical needs» («Planovi ishrane po meri»)"
+		},
+		{
+			"slug": "laser-hair-removal",
+			"nameEn": "Laser Hair Removal",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Full body hair removal» и зоны без точной записи в каталоге: «Chin (women)», «Full face (men)», «Abdomen (women)», «Chest and abdomen (men)», «Bikini and pubic area (deep bikini)», «Half back (upper or lower)», «Full back and shoulders»"
+		},
+		{
+			"slug": "laser-hair-removal-upper-lip-women",
+			"nameEn": "Laser Hair Removal Upper Lip Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Upper lip»"
+		},
+		{
+			"slug": "laser-hair-removal-chin-and-upper-lip-women",
+			"nameEn": "Laser Hair Removal Chin and Upper Lip Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Upper lip and chin (women)»"
+		},
+		{
+			"slug": "laser-hair-removal-full-face-women",
+			"nameEn": "Laser Hair Removal Full Face Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Full face (women)»"
+		},
+		{
+			"slug": "laser-hair-removal-sideburns-women",
+			"nameEn": "Laser Hair Removal Sideburns Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Sideburns or ears»"
+		},
+		{
+			"slug": "laser-hair-removal-sideburns-men",
+			"nameEn": "Laser Hair Removal Sideburns Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Sideburns or ears»"
+		},
+		{
+			"slug": "laser-hair-removal-ears-men",
+			"nameEn": "Laser Hair Removal Ears Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Sideburns or ears»"
+		},
+		{
+			"slug": "laser-hair-removal-neck-men",
+			"nameEn": "Laser Hair Removal Neck Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Neck»"
+		},
+		{
+			"slug": "laser-hair-removal-underarms-women",
+			"nameEn": "Laser Hair Removal Underarms Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Underarms»"
+		},
+		{
+			"slug": "laser-hair-removal-underarms-men",
+			"nameEn": "Laser Hair Removal Underarms Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Underarms»"
+		},
+		{
+			"slug": "laser-hair-removal-forearms-women",
+			"nameEn": "Laser Hair Removal Forearms Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Half arms (including fingers)»"
+		},
+		{
+			"slug": "laser-hair-removal-forearms-men",
+			"nameEn": "Laser Hair Removal Forearms Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Half arms (including fingers)»"
+		},
+		{
+			"slug": "laser-hair-removal-full-arms-women",
+			"nameEn": "Laser Hair Removal Full Arms Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Full arms»"
+		},
+		{
+			"slug": "laser-hair-removal-full-arms-men",
+			"nameEn": "Laser Hair Removal Full Arms Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Full arms»"
+		},
+		{
+			"slug": "laser-hair-removal-abdomen-men",
+			"nameEn": "Laser Hair Removal Abdomen Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Abdomen (men)»"
+		},
+		{
+			"slug": "laser-hair-removal-chest-men",
+			"nameEn": "Laser Hair Removal Chest Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Chest (men)»"
+		},
+		{
+			"slug": "laser-hair-removal-bikini-line-women",
+			"nameEn": "Laser Hair Removal Bikini Line Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Bikini line»"
+		},
+		{
+			"slug": "laser-hair-removal-lower-legs-women",
+			"nameEn": "Laser Hair Removal Lower Legs Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Lower legs (including toes)»"
+		},
+		{
+			"slug": "laser-hair-removal-lower-legs-men",
+			"nameEn": "Laser Hair Removal Lower Legs Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Lower legs (including toes)»"
+		},
+		{
+			"slug": "laser-hair-removal-full-legs-women",
+			"nameEn": "Laser Hair Removal Full Legs Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Full legs»"
+		},
+		{
+			"slug": "laser-hair-removal-full-legs-men",
+			"nameEn": "Laser Hair Removal Full Legs Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Full legs»"
+		},
+		{
+			"slug": "laser-hair-removal-full-legs-and-bikini-women",
+			"nameEn": "Laser Hair Removal Full Legs and Bikini Women",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Legs and bikini»"
+		},
+		{
+			"slug": "laser-hair-removal-full-back-men",
+			"nameEn": "Laser Hair Removal Full Back Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Full back»"
+		},
+		{
+			"slug": "laser-hair-removal-shoulders-men",
+			"nameEn": "Laser Hair Removal Shoulders Men",
+			"price": null,
+			"source": "/services «PERMANENT HAIR REMOVAL - DIODE LASER» — «Shoulders»"
+		}
+	],
+	"doctors": [],
+	"disputed": [
+		{
+			"source": "/services «FACIAL AND SKIN TREATMENTS» — «Hyaluronic treatment» («Hijaluronski tretman»)",
+			"reason": "Несколько равноценных кандидатов: skin-hydration-treatment (Hidratacija kože), biorevitalization (инъекции ГК), hyaluronic-acid-filler; стоит в косметологическом разделе, а не в разделе инъекций — метод (инъекция или уход) не ясен. Не заведено."
+		},
+		{
+			"source": "Главная, Aesthetic Medicine — «Fibroma Removal – Scar-free, painless» («Uklanjanje fibroma – Bez ožiljaka, bez bola»)",
+			"reason": "Метод не назван; кандидаты laser-removal-of-fibromas-and-keratoses (лазер), radiowave-skin-lesion-removal (радиоволна), excision-of-small-benign-tumor-scars-fibromas-or-cysts (иссечение — противоречит «bez ožiljaka»). Не заведено."
+		}
+	],
+	"excluded": [
+		{
+			"source": "/services — «Package of 5 treatments for a large area (legs or abdomen)», «Package of 5 treatments for combined large areas (abdomen + legs)», «Package of 5 treatments for small areas»",
+			"reason": "Пакеты без цен — не отдельные услуги (решение юзера), упомянуты в описании клиники."
+		},
+		{
+			"source": "/services — «Deep cleansing facial treatmen»; главная — «Facials – Cleansing, hydration, renewal»",
+			"reason": "Косметический уход без медицинской процедуры (решение юзера)."
+		},
+		{
+			"source": "/services — «Face Up hydration (face, neck, decollete, and hands)»",
+			"reason": "Косметическая гидратация (аппаратный уход) — не медицинская процедура; skin-hydration-treatment не взят."
+		},
+		{
+			"source": "Главная, Cosmetology — «Acne Therapy – Inflammation control, texture improvement», «Rosacea Care – Redness, capillaries, sensitivity», «Biological Treatments – Natural skin regeneration»",
+			"reason": "Косметологический уход без названной процедуры (лазер, пилинг и т.п. не указаны) — не заведено."
+		},
+		{
+			"source": "Главная, Laser Treatments — «Other laser services available upon request»",
+			"reason": "Нет конкретной услуги."
+		},
+		{
+			"source": "Главная, Nutrition & Wellness — «Holistic Nutrition Programs – Energy, digestion, and skin improvement»; Trichology — «Scalp Health Programs – Customized regimens for hair restoration»",
+			"reason": "Wellness-программы без конкретной процедуры — не заведены (консультация нутрициолога, план питания и мезотерапия волос заведены)."
+		},
+		{
+			"source": "Главная — «All treatments are needle-free, painless, and require no recovery time»",
+			"reason": "Рекламная формулировка, противоречит инъекциям в перечне; в описание не вынесена."
+		}
+	],
+	"openQuestions": []
+}

@@ -1,0 +1,336 @@
+{
+	"schemaVersion": 1,
+	"slug": "dental-studio-przno-budva",
+	"name": "Dental Studio Pržno",
+	"city": "Budva",
+	"cityId": 3,
+	"googlePlaceId": "ChIJ1S6cCobVTRMRKa9sXal5EB4",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dental-studio-przno-budva.sql",
+		"server/sql/insert-clinic-dental-studio-przno-budva-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 210,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент W. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. Сайт с © 2020-2026, ординация открыта в 2020 — состав актуален на момент сбора. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 237
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://dentalstudioglusica.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress (Phlox + TranslatePress me/en/ru). Прочитаны главная, /o-nama/, /kontakt/ и 10 страниц меню USLUGE: /dentalni-laser/, /izbjeljivanje-zuba/, /kompozitne-plombe/, /ortodonski-aparati/, /krunice-i-viniri/, /lijecenje-kanala-korijena-zuba/, /zubni-implanti/, /proteze/, /rtg-dijagnostika-snimanje-zuba/, /djecija-i-preventivna-stomatologija/. На главной — остатки демо-шаблона (lorem ipsum, портфолио «Plumbing/Architecture», «Andrea Flock CEO & ESTABLISHER», «Nikola Glušica — Marketing & SEO») — проигнорированы. Цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/budva/dental-studio-przno.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «DENTAL STUDIO PRŽNO», «b.b Stefana Mitrovica St, Sveti Stefan 85315», +382 67 244 418, 34 отзыва (rating 4.8) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Pržno bb, town Sveti Stefan (сайт «Pržno BB, Sveti Stefan, Budva»); индекс 85315 и координаты — место Google",
+		"phone": "+38267244418;+38269244418 — /kontakt/; первый = Google",
+		"email": "на сайте нет — не заполнено",
+		"website": "https://dentalstudioglusica.me/",
+		"social": "facebook.com/profile.php?id=100066662723999, @dental_studio_przno — футер",
+		"logo": "https://dentalstudioglusica.me/wp-content/uploads/2020/10/dental-studio-PRZNO-logo.png",
+		"workingHours": "Пн–Пт 10–19, Сб 10–15, Вс закрыто — /kontakt/",
+		"doctors": "2 на /o-nama/ (оба новые); медсестра не заводится",
+		"doctorPhotos": "у обоих — /wp-content/uploads/2020/10/*.jpg",
+		"doctorBios": "нет на сайте",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "laser-periodontal-therapy",
+			"nameEn": "Laser Periodontal Therapy",
+			"nameSr": "Laserska terapija parodontopatije",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78,
+				95
+			],
+			"reason": "dentalstudioglusica.me /dentalni-laser/: «1. Laserska operacija desni / Laserska operacija parodontoze … uklanjanja infektivnog sadržaja sa desni i od kiretaže parodontalnog džepa … Za razliku od klasične režanj operacije», «3. Laserska obrada džepa». Метод назван (лазер) и противопоставлен классической режущей операции; в каталоге лазерного пародонтологического лечения нет (есть только laser-gingivectomy — иссечение десны, другая процедура; laser-frenectomy). Обе фразы сайта (операция и обработка кармана) — одна запись, вторая синонимом. Категория 20, специальности 78 + 95 PERIODONTOLOGY (как periodontal-pocket-treatment)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "laser-root-canal-disinfection",
+			"nameEn": "Laser Root Canal Disinfection",
+			"nameSr": "Laserska dezinfekcija kanala korijena",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "dentalstudioglusica.me /dentalni-laser/: «liječenje kanala korijena zuba (sterilizacija kanala-endodoncija)»; /lijecenje-kanala-korijena-zuba/: «Upotreba lasera u endodonciji — Poslije izvršene obrade, a prije punjenja kanala korijena definitivnim pastama, preporučuje se laserska terapija … smanjuje se broj mikroorganizama u kanalu». Отдельный этап эндодонтии сверх обработки канала; в каталоге нет (поиск laser/sterilizacija/dezinfekcija). Категория 20, специальность 78 — как у эндодонтических записей."
+		},
+		{
+			"table": "medical_services",
+			"slug": "biohpp-denture",
+			"nameEn": "BioHPP Denture",
+			"nameSr": "BioHPP proteza",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "dentalstudioglusica.me /proteze/: «proteze mogu biti: … Bio HPP proteze», «BioHPP … Ovaj materijal koristimo kao osnovu u izradi kruna i mostova na implantima i u protezama … BioHPP čini osnovu protetskog rada». Материал назван и выделен сайтом как отдельный вид протеза наравне с акрилатными, скелетированными и Valplast; в каталоге BioHPP нет ни под одним названием (поиск biohpp/hpp/peek). Не бренд-дубль: по сути другой базисный материал. Категория 20, специальность 78 — как у протезов."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "intraoral-x-ray",
+			"synonym": "Mali RA snimak",
+			"language": "sr",
+			"reason": "dentalstudioglusica.me /rtg-dijagnostika-snimanje-zuba/: «Mali RA snimak koristi se … snimiti stanje jednog zuba» — разговорное название ретроальвеолярного снимка; формулировка клиники для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "intraoral-x-ray",
+			"synonym": "Мали РА снимак",
+			"language": "sr-cyrl",
+			"reason": "dentalstudioglusica.me /rtg-dijagnostika-snimanje-zuba/: «Mali RA snimak koristi se … snimiti stanje jednog zuba» — разговорное название ретроальвеолярного снимка; формулировка клиники для поиска."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Laser Periodontal Therapy",
+			"slug": "laser-periodontal-therapy",
+			"source": "/dentalni-laser/: «liječenje parodontopatije», «terapija zubnog džepa»; «1. Laserska operacija desni / Laserska operacija parodontoze», «3. Laserska obrada džepa»"
+		},
+		{
+			"nameEn": "Laser Root Canal Disinfection",
+			"slug": "laser-root-canal-disinfection",
+			"source": "/dentalni-laser/: «liječenje kanala korijena zuba (sterilizacija kanala-endodoncija)»; /lijecenje-kanala-korijena-zuba/: «Upotreba lasera u endodonciji … preporučuje se laserska terapija»"
+		},
+		{
+			"nameEn": "Laser Frenectomy",
+			"slug": "laser-frenectomy",
+			"source": "/dentalni-laser/: «incizija frenuluma», «2. Laserska operacija resice - frenektomija»; /djecija-i-preventivna-stomatologija/: «Lasersko uklanjanje frenuluma»"
+		},
+		{
+			"nameEn": "Oral Mucosa Circumcision or Excision",
+			"slug": "oral-mucosa-circumcision-or-excision",
+			"source": "/dentalni-laser/: «cirkumcizija umnjaka» (laserom) — лазерной записи нет, метод в src"
+		},
+		{
+			"nameEn": "Laser Teeth Whitening",
+			"slug": "laser-teeth-whitening",
+			"source": "/dentalni-laser/: «lasersko izbjeljivanje zuba»; /izbjeljivanje-zuba/: «3. Lasersko izbjeljivanje zuba … laser aktivira djelovanje gela»"
+		},
+		{
+			"nameEn": "Home Teeth Whitening",
+			"slug": "home-teeth-whitening",
+			"source": "/izbjeljivanje-zuba/: «1. Kućno izbjeljivanje … izrade folije koje pacijent dobija zajedno sa gelom i nosi kući»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "/izbjeljivanje-zuba/: «2. Profesionalno izbjeljivanje zuba — Obavlja se u ordinaciji i traje do 45 minuta … Gel … se aktivira na svjetlost UV lampe»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "/kompozitne-plombe/: «Kompozitne (bijele) plombe … jedini materijal koji može odgovoriti tim zahtjevima je kompozit»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "/ortodonski-aparati/: «Mobilni ortodontski aparat — Terapija mobilnim ortodontskim aparatima … u ranom dobu»; dječija: «Izrada mobilnih ortodontskih aparata»"
+		},
+		{
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"source": "/ortodonski-aparati/: «Fiksna proteza sa bravicama … konvencionalnim ili klasičnim bravicama»; «Samoligirajući fiksni aparat» — материал брекетов не назван → generic (как dr-sevaljevic-tivat, решение координатора 2026-10-09)"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "/krunice-i-viniri/: «Bezmetalne krune … Osnova joj je cirkon, za razliku od metalokeramičke»"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "/krunice-i-viniri/: «Metalokeramička kruna … Osnov je metal, dok se preko tog metala nanosi sloj keramike»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "/krunice-i-viniri/: «Viniri … ili keramičke fasete izradjuju se najsavremenijim CAD/CAM tehnikama»"
+		},
+		{
+			"nameEn": "Rotary Root Canal Treatment per Canal",
+			"slug": "machine-root-canal-treatment-per-canal",
+			"source": "/lijecenje-kanala-korijena-zuba/: «Korišćenjem apeks lokatora … i mašinskom obradom kanala korijena postižu se izuzetna tačnost i uspješnost»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "/zubni-implanti/: «Implant predstavlja efikasnu zamjenu nedostajućeg zuba … Izrađeni su od biokompatibilnog materijala titanijuma» — бренд не назван"
+		},
+		{
+			"nameEn": "Implant Suprastructure",
+			"slug": "implant-suprastructure",
+			"source": "/zubni-implanti/: «radi se protetika na implantatu. Na implat se ušrafljuje originalna odgovarajuća suprastruktura preko koje se cementira krunica»"
+		},
+		{
+			"nameEn": "Partial Acrylic Denture",
+			"slug": "partial-acrylic-denture",
+			"source": "/proteze/: «Postoje dvije vrste akrilatnih proteza- parcijalna i totalna. Parcijalna akrilatna proteza …»"
+		},
+		{
+			"nameEn": "Complete Acrylic Denture",
+			"slug": "complete-acrylic-denture",
+			"source": "/proteze/: «Postoje dvije vrste akrilatnih proteza- parcijalna i totalna»"
+		},
+		{
+			"nameEn": "Skeletal Partial Denture",
+			"slug": "skeletal-partial-denture",
+			"source": "/proteze/: «Vizil ili metalne proteze (parcijalne skeletirane proteze)», «Skeletirana proteza … metalne kukice male veličine» (Vizil — уже синоним записи)"
+		},
+		{
+			"nameEn": "Flexible Denture",
+			"slug": "flexible-denture",
+			"source": "/proteze/: «Silikonske proteze (valplast proteza)», «Valplast proteza, poznatija kao savitljiva» (Valplast — уже синоним записи)"
+		},
+		{
+			"nameEn": "BioHPP Denture",
+			"slug": "biohpp-denture",
+			"source": "/proteze/: «Bio HPP proteze», «Ovaj materijal koristimo kao osnovu u izradi kruna i mostova na implantima i u protezama» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "/rtg-dijagnostika-snimanje-zuba/: «Mali RA snimak … snimiti stanje jednog zuba»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "/rtg-dijagnostika-snimanje-zuba/: «Ortopan snimak (OPT)»"
+		},
+		{
+			"nameEn": "3D Dental X-Ray CBCT",
+			"slug": "3d-dental-x-ray-cbct",
+			"source": "/rtg-dijagnostika-snimanje-zuba/: «3D, CBCT snimak … kada pacijet želi implantološko zbrinjavanje»; /zubni-implanti/: «Prvo što je neophodno uraditi je 3D snimak regije»"
+		},
+		{
+			"nameEn": "Primary Tooth Extraction",
+			"slug": "primary-tooth-extraction",
+			"source": "/djecija-i-preventivna-stomatologija/: «U našoj ordinaciji pružamo sve usluge iz dječije stomatologije: Vađenje zuba»"
+		},
+		{
+			"nameEn": "Pediatric Caries Treatment",
+			"slug": "pediatric-caries-treatment",
+			"source": "/djecija-i-preventivna-stomatologija/: «Terapija karijesa»"
+		},
+		{
+			"nameEn": "Dental and Soft Tissue Trauma Treatment",
+			"slug": "dental-and-soft-tissue-trauma-treatment",
+			"source": "/djecija-i-preventivna-stomatologija/: «Povreda Zuba»"
+		},
+		{
+			"nameEn": "Dental Fissure Sealant",
+			"slug": "dental-fissure-sealant",
+			"source": "/djecija-i-preventivna-stomatologija/: «Zalivanje fisura»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "nikola-glusica",
+			"nameSr": "Nikola Glušica",
+			"professionalTitle": "dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://dentalstudioglusica.me/wp-content/uploads/2020/10/Nikola-Glusica.jpg",
+			"services": []
+		},
+		{
+			"slug": "nikolina-glusica",
+			"nameSr": "Nikolina Glušica",
+			"professionalTitle": "dr",
+			"position": "Doktor stomatologije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://dentalstudioglusica.me/wp-content/uploads/2020/10/Nikolina-Glusica.jpg",
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/o-nama/: «Zorka Grujičić — MEDICINSKA SESTRA»",
+			"reason": "Медсестра — не врач (решение юзера 2026-10-08)."
+		},
+		{
+			"source": "Главная: «Nikolina Glušica CEO & ESTABLISHER», «Nikola Glušica Marketing & SEO», «Andrea Flock CEO & ESTABLISHER», портфолио, lorem ipsum",
+			"reason": "Остатки демо-шаблона темы — не факты о клинике."
+		},
+		{
+			"source": "/dentalni-laser/: «Za razliku od klasične režanj operacije, koja je do nedavno bila i jedino rješenje za parodontozu»",
+			"reason": "Классическая режущая операция упомянута для сравнения, не заявлена как услуга — flap-surgery-periodontal не ставили."
+		},
+		{
+			"source": "/krunice-i-viniri/: «… imaju duzi vijek trajanja u odnosu na kompozitne fasete»",
+			"reason": "Композитные фасеты упомянуты только для сравнения с керамическими — не заводили."
+		},
+		{
+			"source": "/lijecenje-kanala-korijena-zuba/: «Restauracija zuba se može postići kompozitnom plombom ili krunicom»; /zubni-implanti/: «cementira krunica»; /proteze/ BioHPP: «kruna i mostova na implantima»",
+			"reason": "Коронка на импланте/мост без материала — отдельные записи по материалу не угадываем; BioHPP-конструкции на имплантах покрыты biohpp-denture + implant-suprastructure."
+		},
+		{
+			"source": "/zubni-implanti/: «Nedostatak … moze se rješiti … protetski (mostovi)»",
+			"reason": "Мосты упомянуты как альтернатива имплантам, материал не назван — не заводили."
+		},
+		{
+			"source": "/djecija-i-preventivna-stomatologija/: «Roditelja i dijete treba motivisati i obučiti … pravilnom tehnikom pranja zuba», «Prilikom prvog kontakta trebalo bi dijete upoznati s metodama rada»",
+			"reason": "Общие рекомендации раздела, не перечислены в списке «pružamo sve usluge iz dječije stomatologije» — dental-counseling / pediatric-dental-adaptation не ставили."
+		},
+		{
+			"source": "/o-nama/: «Pružamo sve vrste stomatoloških usluga»",
+			"reason": "Общая фраза без конкретики — «логичные» услуги (осмотр, удаление зуба у взрослых, чистка камня) не добавляли."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Врач «Виталий из Украины» в отзыве Google (2024)",
+			"detail": "Отзыв в data/google-places/budva/dental-studio-przno.json упоминает «лицензированного стоматолога Виталия из Украины». На сайте его нет — не заводили. Если юзер знает фамилию и подтверждение — добавить отдельно."
+		},
+		{
+			"topic": "Языки",
+			"detail": "Сайт на me/en/ru (TranslatePress), но приём на других языках не заявлен — только SR (правило)."
+		}
+	]
+}

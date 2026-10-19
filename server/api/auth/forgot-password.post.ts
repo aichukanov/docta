@@ -12,8 +12,11 @@ import {
 	createErrorResponse,
 } from '~/server/utils/api-codes';
 import { getLocalizedUrl } from '~/server/utils/base-url';
+import { enforceRateLimit, RATE_LIMITS } from '~/server/utils/rate-limit';
 
 export default defineEventHandler(async (event) => {
+	enforceRateLimit(event, RATE_LIMITS.email);
+
 	const body = await readBody(event);
 	const { email } = body;
 

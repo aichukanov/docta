@@ -1,0 +1,300 @@
+{
+	"schemaVersion": 1,
+	"slug": "omnidental-bar",
+	"name": "Stomatološka ordinacija Omnidental",
+	"city": "Bar",
+	"cityId": 7,
+	"googlePlaceId": "ChIJNyvgJdZzThMRHMKtcvw2gvo",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-omnidental-bar.sql",
+		"server/sql/insert-clinic-omnidental-bar-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 227,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2e, агент X. Сайт Wix 2025-10. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 254
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.omnidental.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Wix, sitemap lastmod 2025-10-05: главная + /opsta-stomatologija, /djecja-stomatologija, /hitna-stanja, /estetska-stomatologija (шаблонный текст Wix + копия перечня). EN /en — тот же состав. Цен и врачей нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/bar/omnidental.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Omnidental», «2 Jelene Anzujske, Bar 85000», +382 67 624 395, 20 отзывов (rating 4.8) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Kraljice Jelene Anžujske 2, 85000 — сайт (= Google); координаты — место Google",
+		"phone": "+38267624395 — сайт = Google",
+		"email": "omnidental.me@gmail.com — сайт",
+		"website": "https://www.omnidental.me/",
+		"social": "на сайте нет",
+		"logo": "не заполнен (картинка Wix без устойчивого имени)",
+		"workingHours": "пн, чт, пт 7–15; вт, ср 13–21 — главная",
+		"doctors": "нет — на сайте не названы",
+		"doctorPhotos": "нет",
+		"doctorBios": "нет",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "gingivitis-treatment",
+			"nameEn": "Gingivitis Treatment",
+			"nameSr": "Terapija gingivitisa",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "stefanijadental.me /parodontologija/: «Bavimo se terapijom gingivitisa, uklanjanjem zubnog kamenca, obradom parodontalnih džepova …». Записи нет (поиск gingivit — пусто); periodontal-scaling-root-planing — терапия пародонтита (поддесневая), не гингивита. Общая услуга → новая запись. Категория 20, специальность 78.",
+			"reusedFrom": "stefanija-dental-podgorica",
+			"note": "Запись заведена импортом stefanija-dental-podgorica; здесь повторена идемпотентно (NOT EXISTS по slug), чтобы файл не зависел от порядка применения."
+		},
+		{
+			"table": "medical_services",
+			"slug": "halitosis-treatment",
+			"nameEn": "Halitosis Treatment",
+			"nameSr": "Liječenje zadaha (halitoze)",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "omnidental.me (главная, «Opšta Stomatologija»): «svjez dah koncept». В каталоге нет (поиск halit/breath/zadah — только дыхательные тесты и лёгочные пробы). Лечение неприятного запаха изо рта — общая стоматологическая услуга → новая запись. Категория 20, специальность 78."
+		},
+		{
+			"table": "medical_services",
+			"slug": "smile-makeover",
+			"nameEn": "Smile Makeover",
+			"nameSr": "Smile makeover (kompletno uređenje osmijeha)",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "omnidental.me (главная, «Estetska Stomatologija»): «izbijeljivanje zuba - kompozitne fasete - porcelanske fasete (viniri) - smile makeover - Invisalign» — отдельным пунктом рядом с конкретными процедурами. В каталоге нет (поиск makeover/smile — только digital-smile-design (план), hollywood-smile-zirconia-crown (конкретные циркониевые коронки) и mommy-makeover (пластика)). Комплексное эстетическое лечение улыбки — общая услуга, не план и не конкретная коронка → новая запись. Категория 20, специальность 78."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "dental-air-polishing",
+			"synonym": "Airflow poliranje",
+			"language": "sr",
+			"reason": "omnidental.me (главная, «Opšta Stomatologija»): «Airflow poliranje». Air-Flow — название метода/аппарата (EMS) для пескоструйной чистки; это та же dental-air-polishing («Pjeskarenje zuba»), у которой синонима Air-Flow нет. Бренд-дубль не заводим — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "dental-air-polishing",
+			"synonym": "Airflow полирање",
+			"language": "sr-cyrl",
+			"reason": "omnidental.me (главная, «Opšta Stomatologija»): «Airflow poliranje». Air-Flow — название метода/аппарата (EMS) для пескоструйной чистки; это та же dental-air-polishing («Pjeskarenje zuba»), у которой синонима Air-Flow нет. Бренд-дубль не заводим — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "dental-air-polishing",
+			"synonym": "Air-Flow polishing",
+			"language": "en",
+			"reason": "omnidental.me (главная, «Opšta Stomatologija»): «Airflow poliranje». Air-Flow — название метода/аппарата (EMS) для пескоструйной чистки; это та же dental-air-polishing («Pjeskarenje zuba»), у которой синонима Air-Flow нет. Бренд-дубль не заводим — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "dental-air-polishing",
+			"synonym": "Чистка Air-Flow",
+			"language": "ru",
+			"reason": "omnidental.me (главная, «Opšta Stomatologija»): «Airflow poliranje». Air-Flow — название метода/аппарата (EMS) для пескоструйной чистки; это та же dental-air-polishing («Pjeskarenje zuba»), у которой синонима Air-Flow нет. Бренд-дубль не заводим — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "dental-air-polishing",
+			"synonym": "Air-Flow-Reinigung",
+			"language": "de",
+			"reason": "omnidental.me (главная, «Opšta Stomatologija»): «Airflow poliranje». Air-Flow — название метода/аппарата (EMS) для пескоструйной чистки; это та же dental-air-polishing («Pjeskarenje zuba»), у которой синонима Air-Flow нет. Бренд-дубль не заводим — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "dental-air-polishing",
+			"synonym": "Air-Flow parlatma",
+			"language": "tr",
+			"reason": "omnidental.me (главная, «Opšta Stomatologija»): «Airflow poliranje». Air-Flow — название метода/аппарата (EMS) для пескоструйной чистки; это та же dental-air-polishing («Pjeskarenje zuba»), у которой синонима Air-Flow нет. Бренд-дубль не заводим — синонимом."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Dental Consultation",
+			"slug": "dental-consultation",
+			"source": "«Opšta Stomatologija: pregled i digitalno snimanje …» — «pregled»"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "«Opšta Stomatologija: pregled i digitalno snimanje …» — «digitalno snimanje», вид снимка не назван; решение координатора 2026-10-09"
+		},
+		{
+			"nameEn": "Plaque and Calculus Removal",
+			"slug": "plaque-and-calculus-removal",
+			"source": "«Opšta Stomatologija: … uklanjanje zubnog kamenca …»; «Dječja Stomatologija: … uklanjanje naslaga …»"
+		},
+		{
+			"nameEn": "Dental Air Polishing",
+			"slug": "dental-air-polishing",
+			"source": "«Opšta Stomatologija: … Airflow poliranje …» → синоним Airflow"
+		},
+		{
+			"nameEn": "Halitosis Treatment",
+			"slug": "halitosis-treatment",
+			"source": "«Opšta Stomatologija: … svjez dah koncept …» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Gingivitis Treatment",
+			"slug": "gingivitis-treatment",
+			"source": "«Opšta Stomatologija: … problemi sa desnima …» — решение координатора 2026-10-09 (запись заведена импортом stefanija-dental-podgorica)"
+		},
+		{
+			"nameEn": "Dentin Hypersensitivity Treatment",
+			"slug": "dentin-hypersensitivity-treatment",
+			"source": "«Opšta Stomatologija: … osjetiljivost zuba …»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "«Opšta Stomatologija: … estetske plombe …» — эстетическая пломба = композит"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "«Opšta Stomatologija: … tretman kanala korijena zuba …»; «Dječja: … tretman kanala korijena … stalnih zuba» — число каналов не названо"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "там же"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "«Opšta Stomatologija: … vadjenje zuba …»; «Dječja: … vadjenje … stalnih zuba»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "«Opšta Stomatologija: … implantati» — бренд не назван"
+		},
+		{
+			"nameEn": "Topical Fluoride Treatment",
+			"slug": "topical-fluoride-treatment",
+			"source": "«Dječja Stomatologija: ojacavanje zuba fluoridima …»"
+		},
+		{
+			"nameEn": "Dental Fissure Sealant",
+			"slug": "dental-fissure-sealant",
+			"source": "«Dječja Stomatologija: … zastita zuba zalivanjem fisura …»"
+		},
+		{
+			"nameEn": "Pediatric Caries Treatment",
+			"slug": "pediatric-caries-treatment",
+			"source": "«Dječja Stomatologija: … terapija zubnog karijesa mlijecnih i stalnih zzuba …»"
+		},
+		{
+			"nameEn": "Primary Tooth Pulp Treatment",
+			"slug": "primary-tooth-pulp-treatment",
+			"source": "«Dječja Stomatologija: … tretman kanala korijena mlijecnih … zuba …»"
+		},
+		{
+			"nameEn": "Primary Tooth Extraction",
+			"slug": "primary-tooth-extraction",
+			"source": "«Dječja Stomatologija: … vadjenje mlijecnih … zuba …»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "«Dječja Stomatologija: … ispravljanje nepravilnosti mobilnim … aparatima»"
+		},
+		{
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"source": "«Dječja Stomatologija: … ispravljanje nepravilnosti … fiksnim aparatima» — тип брекетов не назван, общая запись"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "«Estetska Stomatologija: izbijeljivanje zuba …» — метод не назван"
+		},
+		{
+			"nameEn": "Direct Composite Veneer",
+			"slug": "direct-composite-veneer",
+			"source": "«Estetska Stomatologija: … kompozitne fasete …»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "«Estetska Stomatologija: … porcelanske fasete (viniri) …»"
+		},
+		{
+			"nameEn": "Smile Makeover",
+			"slug": "smile-makeover",
+			"source": "«Estetska Stomatologija: … smile makeover …» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Invisalign Aligner",
+			"slug": "invisalign-aligner",
+			"source": "«Estetska Stomatologija: … Invisalign»"
+		},
+		{
+			"nameEn": "Dental First Aid",
+			"slug": "dental-first-aid",
+			"source": "«Hitna Stanja: bol - otok - fraktura zuba»"
+		}
+	],
+	"doctors": [],
+	"disputed": [],
+	"resolved": [
+		{
+			"source": "«Opšta Stomatologija: pregled i digitalno snimanje …» — «digitalno snimanje»",
+			"date": "2026-10-09",
+			"decision": "Координатор: intraoral-x-ray (кандидаты были intraoral-x-ray / panoramic-x-ray)."
+		},
+		{
+			"source": "«Opšta Stomatologija: … problemi sa desnima …»",
+			"date": "2026-10-09",
+			"decision": "Координатор: gingivitis-treatment (кандидаты были gingivitis-treatment / periodontal-scaling-root-planing)."
+		}
+	],
+	"excluded": [
+		{
+			"source": "«Opšta Stomatologija: … krune i mostovi - proteze …»",
+			"reason": "Материал коронок/мостов и вид протезов не названы — записи по материалу не угадываем; общих записей в каталоге нет. В описание."
+		},
+		{
+			"source": "«Hitna Stanja: … otok - fraktura zuba»",
+			"reason": "Конкретная процедура (разрез абсцесса, восстановление скола) не названа — покрыто dental-first-aid."
+		},
+		{
+			"source": "Подстраницы /opsta-stomatologija и др.: «This is your About Page…», «This is a Paragraph. Click on \"Edit Text\"…»",
+			"reason": "Шаблонный текст Wix — игнорируется."
+		}
+	],
+	"openQuestions": []
+}

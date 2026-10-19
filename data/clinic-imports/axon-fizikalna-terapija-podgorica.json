@@ -1,0 +1,350 @@
+{
+	"schemaVersion": 1,
+	"slug": "axon-fizikalna-terapija-podgorica",
+	"name": "AXON Fizikalna Terapija",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJNWX6KgDrTRMRskpO74r8428",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-axon-fizikalna-terapija-podgorica.sql",
+		"server/sql/insert-clinic-axon-fizikalna-terapija-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 190,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и врачей по slug. Подволна 2c, агент P. Сухой прогон 2026-10-08 на локали (dryrun.mjs: DML через EXPLAIN внутри START TRANSACTION … ROLLBACK, плюс shadow-проход для новых записей каталога): 0 ошибок; несматченные slug — только свои новые записи каталога (в shadow-проходе — 0); привязки врач↔услуга в сухом прогоне не сматчены ожидаемо (клиники ещё нет); счётчики clinics/doctors/doctor_clinics/clinic_medical_services/medical_services/medical_service_synonyms/clinic_medical_service_doctors/clinic_working_hours/clinic_languages до и после совпали (174/1901/2566/14705/5809/5464/187/144/185). Новые slug клиник и врачей сверены с прод-API (204). Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 217
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.fizioaxon.com/ (index, o-nama, specijalizacije, usluge, rezultati, kontakt)",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Статический HTML, © 2025, Last-Modified 30.09–06.10.2026. В Google сайта нет (там linktr.ee/axonpodgorica). Цен нет. Ссылка «Facebook» — заглушка facebook.com. Фото команды — /images/*.png|jpg (200)."
+		},
+		{
+			"type": "website",
+			"ref": "https://linktr.ee/axonpodgorica",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Ссылка из карточки Google: WhatsApp api.whatsapp.com/send?phone=38267080890 (взят в whatsapp), Instagram, карта."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/axon-fizikalna-terapija.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4355206 / 19.2412116, телефон +382 67 080 890, адрес «114 Dr Vukašina Markovića». 35 отзывов (в файле 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Dr Vukašina Markovića 114 — сайт и Google совпадают; индекс 81000 — сайт",
+		"phone": "+38267080890 — сайт, Google и WhatsApp в linktr.ee",
+		"email": "axonpodgorica@gmail.com — сайт",
+		"website": "https://www.fizioaxon.com/ (non-www редиректит на www)",
+		"social": "@axon_fizikalna_terapija; WhatsApp +38267080890 (linktr.ee); Facebook — заглушка, не заполнен",
+		"logo": "https://www.fizioaxon.com/images/axon-logo.png",
+		"workingHours": "Пн–Пт 08–22, Сб 08–18, Вс закрыто — футер и /kontakt.html",
+		"description": "из /usluge.html, /specijalizacije.html, FAQ и состава команды",
+		"doctors": "5 из 5: Dr Aleksandra Savić найдена в БД (aleksandra-savic, физиатр, КЦЦГ / ДЗ Колашин / Spa Medica) — привязка и дозаполнение пустых полей; 4 физиотерапевта новые",
+		"doctorPhotos": "у всех пяти — внешние URL с сайта (у Savić дописывается только если пусто — на проде пусто)",
+		"prices": "цен на сайте нет — все 21 услуга без цены",
+		"labTests": "лаборатории нет",
+		"reviews": "pending — ждут полной выгрузки юзера (35 в Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "electroacupuncture",
+			"nameEn": "Electroacupuncture",
+			"nameSr": "Elektroakupunktura",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Fizio Centar Nikšić «AKUPUNKTURU / ELEKTROAKUPUNKTURU»; AXON «Elektroakupunktura — Nadogradnja klasične akupunkture blagom električnom stimulacijom kroz igle». В каталоге только Acupuncture. Категория как у acupuncture (5)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "vestibular-rehabilitation",
+			"nameEn": "Vestibular Rehabilitation",
+			"nameSr": "Vestibularna rehabilitacija",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "AXON /specijalizacije.html: «Vrtoglavice i poremećaji ravnoteže — Benigni paroksizmalni vertigo (BPPV), Vestibularni neuritis, Cervikalni vertigo, Poremećaji ravnoteže i hoda»; Marko Mićković — «fizioterapije kod vertiga». Решение координатора 2026-10-08 — завести. Категория/специальность как у соседних реабилитационных записей (5 / 42)."
+		}
+	],
+	"services": [
+		{
+			"slug": "group-exercises-type-b",
+			"nameEn": "Group Exercises (per Person)",
+			"price": null,
+			"source": "«Poluindividualni treninzi pod nadzorom fizioterapeuta — Treninzi se održavaju u grupama do 3 osobe po terapeutu…»; FAQ «svaka grupa broji 3 do najviše 4 člana»"
+		},
+		{
+			"slug": "first-physiatrist-examination",
+			"nameEn": "First Physiatrist Examination",
+			"price": null,
+			"source": "«Pregled fizijatra — Detaljan specijalistički pregled podrazumijeva procjenu posture, pokretljivosti, mišićne snage i funkcionalnog statusa…»"
+		},
+		{
+			"slug": "schroth-method",
+			"nameEn": "Schroth Method",
+			"price": null,
+			"source": "«Schroth metoda — Trodimenzionalna terapija za korekciju skolioze i deformiteta kičme…»"
+		},
+		{
+			"slug": "spinal-discopathy-and-stenosis-rehabilitation",
+			"nameEn": "Spinal Discopathy and Stenosis Rehabilitation",
+			"price": null,
+			"source": "«Liječenje diskus hernije i bolova u kičmi — Program obuhvata kombinaciju manuelnih tehnika, aparaturnih terapija i specifičnih stabilizacionih vježbi.»"
+		},
+		{
+			"slug": "tecar-therapy",
+			"nameEn": "Tecar Therapy",
+			"price": null,
+			"source": "«TEKAR terapija — …putem radiofrekventne energije»"
+		},
+		{
+			"slug": "shock-wave-therapy",
+			"nameEn": "Shock Wave Therapy",
+			"price": null,
+			"source": "«Shockwave terapija»"
+		},
+		{
+			"slug": "electrotherapy",
+			"nameEn": "Electrotherapy",
+			"price": null,
+			"source": "«Elektroterapija — Primjena različitih vrsta terapijskih struja…»"
+		},
+		{
+			"slug": "laser-therapy",
+			"nameEn": "Laser Therapy",
+			"price": null,
+			"source": "«Laser terapija — Biostimulativna terapija…»"
+		},
+		{
+			"slug": "magnetic-therapy",
+			"nameEn": "Magnetic Therapy",
+			"price": null,
+			"source": "«Magnetoterapija — Koristi pulsirajuće magnetno polje…»"
+		},
+		{
+			"slug": "ultrasound-therapy",
+			"nameEn": "Ultrasound Therapy",
+			"price": null,
+			"source": "«Ultrazvučna terapija — Dubinska mikromasaža tkiva putem zvučnih talasa.»"
+		},
+		{
+			"slug": "acupuncture",
+			"nameEn": "Acupuncture",
+			"price": null,
+			"source": "«Akupunktura»"
+		},
+		{
+			"slug": "electroacupuncture",
+			"nameEn": "Electroacupuncture",
+			"price": null,
+			"source": "«Elektroakupunktura — Nadogradnja klasične akupunkture blagom električnom stimulacijom kroz igle.»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "dry-needling",
+			"nameEn": "Dry Needling",
+			"price": null,
+			"source": "specijalizacije «Dry Needling»; FAQ «Takođe koristimo dry needling i elektroakupunkturu»"
+		},
+		{
+			"slug": "chiropractic-treatment",
+			"nameEn": "Chiropractic Treatment",
+			"price": null,
+			"source": "«Kiropraktika — Manuelna tehnika… Kroz kontrolisane manipulacije zglobova…»"
+		},
+		{
+			"slug": "manual-therapy",
+			"nameEn": "Manual Therapy",
+			"price": null,
+			"source": "specijalizacije «Manuelna terapija i mobilizacija»; FAQ «manuelne terapijske tehnike poput kiropraktike, masaže i Mulligan mobilizacija»"
+		},
+		{
+			"slug": "therapeutic-massage-complete",
+			"nameEn": "Complete Therapeutic Massage",
+			"price": null,
+			"source": "«Medicinska masaža — Terapijska masaža usmjerena na smanjenje napetosti…» (зона и длительность не указаны — generic Complete Therapeutic Massage)"
+		},
+		{
+			"slug": "lymphatic-drainage-complete",
+			"nameEn": "Complete Lymphatic Drainage",
+			"price": null,
+			"source": "FAQ «sprovodimo relaks, terapeutske i sportske masaže, kao i limfnu drenažu»"
+		},
+		{
+			"slug": "pressotherapy",
+			"nameEn": "Pressotherapy",
+			"price": null,
+			"source": "«Presoterapija — savremena metoda limfne drenaže…»"
+		},
+		{
+			"slug": "sports-injury-rehabilitation",
+			"nameEn": "Sports Injury Rehabilitation",
+			"price": null,
+			"source": "specijalizacije «Sportske povrede — Ruptura ligamenata i mišića, Povrede koljena (LCA, meniskus)…»"
+		},
+		{
+			"slug": "postoperative-locomotor-system-rehabilitation",
+			"nameEn": "Postoperative Locomotor System Rehabilitation",
+			"price": null,
+			"source": "specijalizacije «Postoperativna stanja — Rana rehabilitacija nakon operacije…»"
+		},
+		{
+			"slug": "vestibular-rehabilitation",
+			"nameEn": "Vestibular Rehabilitation",
+			"price": null,
+			"source": "specijalizacije «Vrtoglavice i poremećaji ravnoteže — Vrtoglavice su čest, ali rijetko pravilno tretiran problem… Benigni paroksizmalni vertigo (BPPV), Vestibularni neuritis, Cervikalni vertigo, Poremećaji ravnoteže i hoda»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "central-and-peripheral-nervous-system-disease-rehabilitation",
+			"nameEn": "Central and Peripheral Nervous System Disease Rehabilitation",
+			"price": null,
+			"source": "specijalizacije «Neurološka stanja — Moždani udar, Multipla skleroza, Parkinsonova bolest, Periferne neuropatije»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "aleksandra-savic",
+			"nameSr": "Aleksandra Savić",
+			"professionalTitle": "Dr",
+			"position": "Specijalista fizikalne medicine i rehabilitacije",
+			"specialtyIds": [
+				42
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": true,
+			"hasBio": true,
+			"photo": "https://www.fizioaxon.com/images/Aleksandra.png",
+			"services": [
+				"first-physiatrist-examination",
+				"acupuncture",
+				"lymphatic-drainage-complete"
+			],
+			"note": "УЖЕ В БАЗЕ: slug aleksandra-savic (локально и на проде id 1312), физиатр (42), КЦЦГ / ДЗ Колашин / Spa Medica. Сайт AXON: «Specijalista fizikalne medicine i rehabilitacije … rehabilitaciji … pacijenata u KCCG» — тот же человек. Только привязка + дозаполнение пустых полей (фото, name_ru, name_en, описания пусты и на проде)."
+		},
+		{
+			"slug": "srdjan-mijovic",
+			"nameSr": "Srđan Mijović",
+			"professionalTitle": null,
+			"position": "Diplomirani fizioterapeut, ISST Schroth terapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://www.fizioaxon.com/images/Srdja.jpg",
+			"services": [
+				"schroth-method",
+				"dry-needling"
+			]
+		},
+		{
+			"slug": "marko-mickovic",
+			"nameSr": "Marko Mićković",
+			"professionalTitle": null,
+			"position": "Diplomirani fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://www.fizioaxon.com/images/Marko.jpg",
+			"services": [
+				"spinal-discopathy-and-stenosis-rehabilitation",
+				"vestibular-rehabilitation",
+				"sports-injury-rehabilitation"
+			]
+		},
+		{
+			"slug": "djordje-barovic",
+			"nameSr": "Đorđe Barović",
+			"professionalTitle": null,
+			"position": "Fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://www.fizioaxon.com/images/Djordje.jpg",
+			"services": [
+				"sports-injury-rehabilitation",
+				"lymphatic-drainage-complete"
+			]
+		},
+		{
+			"slug": "andrija-golubovic",
+			"nameSr": "Andrija Golubović",
+			"professionalTitle": null,
+			"position": "Fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://www.fizioaxon.com/images/Andrija.jpg",
+			"services": [
+				"group-exercises-type-b"
+			]
+		}
+	],
+	"disputed": [
+		{
+			"source": "FAQ «sprovodimo relaks, terapeutske i sportske masaže»",
+			"reason": "Sports massage и relaxing massage в каталоге есть только с длительностью (Sports Massage 30/45/60 min, Relaxing Massage 60 min); длительность сайт не называет («Treninzi i terapije obično traju oko 60 minuta» — общая фраза). Лечебный массаж заведён (Complete Therapeutic Massage)."
+		}
+	],
+	"excluded": [
+		{
+			"source": "«Zakažite besplatne konsultacije i saznajte koji tretman je pravi za vas»",
+			"reason": "Бесплатная консультация по подбору терапии — маркетинговый призыв без описания; Physiatrist Consultation с ценой 0 не заводили."
+		},
+		{
+			"source": "Квалификации из био (HVLA / iThrust, electric needling, cupping, CFSC, Vodder, SUIM, «Sportske masaže» у Golubović)",
+			"reason": "Квалификации сотрудников, а не перечень услуг клиники (сам перечень — /usluge.html и FAQ)."
+		},
+		{
+			"source": "Ссылка «Facebook» в футере → https://www.facebook.com",
+			"reason": "Заглушка, не страница клиники."
+		}
+	],
+	"openQuestions": []
+}

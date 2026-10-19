@@ -1,0 +1,1266 @@
+{
+	"schemaVersion": 1,
+	"slug": "poliklinika-moa-podgorica",
+	"name": "Poliklinika MOA (Ministry of Aesthetics)",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJXX2p6ZAhsGgRFH7ibUguCr8",
+	"clinicTypeIds": [
+		1,
+		14
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-poliklinika-moa-podgorica.sql",
+		"server/sql/insert-clinic-poliklinika-moa-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 163,
+		"doctorIds": {
+			"bilal-albeik": 1846,
+			"djordjije-kaludjerovic": 978,
+			"edin-kulovic": 1842,
+			"erna-topalovic": 1843,
+			"marina-vukovic": 1313,
+			"milan-djordjevic": 1844,
+			"milic-petar": 329,
+			"milos-nikolic": 1847,
+			"natalia-shamenkova": 1845,
+			"sanja-vujanovic": 1128
+		},
+		"note": "Решения юзера 2026-10-08: Kaluđerović = #978 подтверждено; пакеты заведены отдельными услугами; prof. dr Miloš Nikolić привязан; остальные гостевые врачи — нет. Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug. clinicId и doctorIds заполнить после применения из блоков VERIFICATION. Отзывы не импортировались (волна 1): в файле места Google 0 отзывов. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 190
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://moa.clinic/cjenovnik-usluga-dermatovenerologija/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Прайс дерматовенерологии, 14 строк с ценой. Дата прайса — modified в wp-json: 2026-09-14T22:26:31."
+		},
+		{
+			"type": "website",
+			"ref": "https://moa.clinic/cjenovnik-hirurskih-intervencija/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Прайс общей хирургии, 35 строк с ценой (вкл. 2 варианта с выездом на дом). wp-json modified 2026-09-14T22:31:59."
+		},
+		{
+			"type": "website",
+			"ref": "https://moa.clinic/cjenovnik-estetska-medicina-i-antiaging/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Две колонки: «LOKALNI DOKTOR» (9 позиций) и «GOSTUJUĆI DOKTOR» (8, без LIPOLIZA). Врачи не названы. wp-json modified 2026-09-15T00:07:19."
+		},
+		{
+			"type": "website",
+			"ref": "https://moa.clinic/cjenovnik-fizikalna-medicina-i-rehabilitacija/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Две строки: specijalistički pregled 50, kontrolni pregled 30. wp-json modified 2026-09-15T08:39:50."
+		},
+		{
+			"type": "website",
+			"ref": "https://moa.clinic/cjenovnik-usluga-laserskih-i-inovativnih-tretmana/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Emsculpt Neo, Emface, Exion (face/body/frakcioni), Alma Harmony XL Pro, Alma Soprano Titanium SE, осмотры, инфузия, прессотерапия; много пакетов. wp-json modified 2026-09-15T08:39:53. Страница-дубль /cjenovnik-laserskih-i-inovativnih-tretmana/ (id 1943) пустая."
+		},
+		{
+			"type": "website",
+			"ref": "https://moa.clinic/cjenovnik-usloga-stomatologije/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Заглушка Brizy: «The point of using dummy text…». Цен нет; на /cjenovnik и главной — «Stomatologija (u osnivanju)»."
+		},
+		{
+			"type": "website",
+			"ref": "https://moa.clinic/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Главная и /o-nama: состав «Upoznajte naš tim» (9 врачей с фото и подписью), адрес «Šeika Zaida 19/7», email info@moa.clinic, телефоны +382 67 941 941 и +382 20 257 259, «Ponedjeljak - Subota: 09h - 20h», соцсети. Страниц отдельных врачей нет. Страницы направлений (opsta-hirurgija, dermatovenologija, estetska-medicina-i-antiaging, fizikalna-medicina-i-rehabilitacija, laserski-i-inovativni-tretmani, stomatologija) — рекламный текст без цен. /estetske-procedure — шаблонная заглушка с «lorem»-текстом, не использовалась."
+		},
+		{
+			"type": "website",
+			"ref": "https://moa.clinic/wp-json/wp/v2/posts?per_page=100",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "23 поста блога 2025-03…2026-10: гостевые приёмы врачей, акции, Moj Lab. Использованы для услуг врачей (Shamenkova, Albeik, Erna) и для списка excluded (гостевые врачи)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/moa-clinic.json",
+			"collected": null,
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4403134 / 19.2434827, телефон +382 67 941 941, адрес «19 Šeika Zaida, Podgorica 81000». Отзывов в файле нет (userRatingCount 0)."
+		},
+		{
+			"type": "website",
+			"ref": "https://www.domzdravljadg.me/izabrani-doktori/izabrani-doktori-za-odrasle",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Только для сверки врача: «dr Đorđije Kaluđerović, spec. porodične medicine» — тот, кто в БД как djordjije-kaludjerovic."
+		}
+	],
+	"coverage": {
+		"address": "Šeika Zaida 19/7 (сайт); The Capital Plaza упомянут в описании. Google — «19 Šeika Zaida», согласовано",
+		"phone": "+38267941941;+38220257259 — с сайта, первый подтверждён Google. Короткий номер колл-центра 19979 не записан",
+		"email": "info@moa.clinic",
+		"website": "https://moa.clinic/",
+		"social": "facebook.com/profile.php?id=61564788040550, @moa.clinic (Instagram). TikTok @moa.clinic, LinkedIn и YouTube @moapoliklinika на сайте есть, полей в схеме нет",
+		"logo": "логотип Brizy 486×156 png с сайта",
+		"workingHours": "пн–сб 09:00–20:00 («Ponedjeljak - Subota: 09h - 20h»); воскресенье на сайте не названо — записано closed",
+		"doctors": "10: 9 из состава «Upoznajte naš tim» (4 найдены в БД, 5 новых) + гостевой prof. dr Miloš Nikolić (новый, решение юзера 2026-10-08)",
+		"doctorPhotos": "у 9 из состава — внешние URL moa.clinic; у prof. Nikolić фото нет (на сайте только промо-баннеры с текстом) (кроп 408×408). У существующих врачей фото дозаполняется только при пустом photo_url (Vuković, Kaluđerović)",
+		"prices": "74 из 80 позиций с ценой; прайс от 2026-09-14/15 (wp-json modified), is_price_outdated не ставился",
+		"labTests": "лаборатории нет. С 2026-02-10 в поликлинике пункт забора крови Moj Lab — анализы Moj Lab, не клиники; не импортировались",
+		"dentistry": "u osnivanju — стоматологов в составе нет, прайс-заглушка. Не импортировалась",
+		"reviews": "pending — ждут выгрузки (в файле места Google 0 отзывов)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "emsculpt-neo-body-contouring",
+			"nameEn": "Emsculpt Neo Body Contouring",
+			"nameSr": "Emsculpt Neo oblikovanje tijela",
+			"categories": [
+				18
+			],
+			"specialties": [
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "emface-facial-treatment",
+			"nameEn": "Emface Facial Treatment",
+			"nameSr": "Emface tretman lica",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "exion-face-treatment",
+			"nameEn": "Exion Face Treatment",
+			"nameSr": "Exion tretman lica",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "exion-body-treatment",
+			"nameEn": "Exion Body Treatment",
+			"nameSr": "Exion tretman tijela",
+			"categories": [
+				18
+			],
+			"specialties": [
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "exion-fractional-face-treatment",
+			"nameEn": "Exion Fractional Face Treatment",
+			"nameSr": "Exion frakcioni tretman lica",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "exion-fractional-body-treatment",
+			"nameEn": "Exion Fractional Body Treatment",
+			"nameSr": "Exion frakcioni tretman tijela",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "alma-harmony-clearskin-clearlift-laser-treatment",
+			"nameEn": "Alma Harmony ClearSkin / ClearLift Laser Treatment",
+			"nameSr": "Alma Harmony ClearSkin / ClearLift laserski tretman",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "alma-harmony-dvl-treatment",
+			"nameEn": "Alma Harmony DVL Treatment",
+			"nameSr": "Alma Harmony DVL tretman",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "alma-harmony-nir-treatment",
+			"nameEn": "Alma Harmony NIR Treatment",
+			"nameSr": "Alma Harmony NIR tretman",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "exosome-therapy",
+			"nameEn": "Exosome Therapy",
+			"nameSr": "Terapija egzozomima",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "molluscum-contagiosum-curettage",
+			"nameEn": "Molluscum Contagiosum Curettage",
+			"nameSr": "Kiretaža moluski",
+			"categories": [
+				24
+			],
+			"specialties": [
+				7
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pressure-ulcer-dressing",
+			"nameEn": "Pressure Ulcer Dressing",
+			"nameSr": "Obrada i previjanje dekubitusa",
+			"categories": [
+				31
+			],
+			"specialties": [
+				3
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "emsculpt-neo-1-region-package-4-treatments",
+			"nameEn": "Emsculpt Neo 1 Region Package 4 Treatments",
+			"nameSr": "Emsculpt Neo 1 regija – paket 4 tretmana",
+			"categories": [
+				18
+			],
+			"specialties": [
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "emsculpt-neo-2-regions-package-4-treatments",
+			"nameEn": "Emsculpt Neo 2 Regions Package 4 Treatments",
+			"nameSr": "Emsculpt Neo 2 regije – paket 4 tretmana",
+			"categories": [
+				18
+			],
+			"specialties": [
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "emsculpt-neo-4-regions-package-4-treatments",
+			"nameEn": "Emsculpt Neo 4 Regions Package 4 Treatments",
+			"nameSr": "Emsculpt Neo 4 regije – paket 4 tretmana",
+			"categories": [
+				18
+			],
+			"specialties": [
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "emface-package-4-treatments",
+			"nameEn": "Emface Package 4 Treatments",
+			"nameSr": "Emface – paket 4 tretmana",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "exion-face-package-4-treatments",
+			"nameEn": "Exion Face Package 4 Treatments",
+			"nameSr": "Exion tretman lica – paket 4 tretmana",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "exion-fractional-face-package-3-treatments",
+			"nameEn": "Exion Fractional Face Package 3 Treatments",
+			"nameSr": "Exion frakcioni tretman lica – paket 3 tretmana",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18,
+				44
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "alma-soprano-titanium-laser-hair-removal-full-body-package-7-treatments",
+			"nameEn": "Alma Soprano Titanium Laser Hair Removal Full Body Package 7 Treatments",
+			"nameSr": "Alma Soprano Titanium laserska epilacija cijelo tijelo – 7 tretmana",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "alma-soprano-titanium-laser-hair-removal-full-body-package-10-treatments",
+			"nameEn": "Alma Soprano Titanium Laser Hair Removal Full Body Package 10 Treatments",
+			"nameSr": "Alma Soprano Titanium laserska epilacija cijelo tijelo – 10 tretmana",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "alma-soprano-titanium-laser-hair-removal-full-body-maintenance",
+			"nameEn": "Alma Soprano Titanium Laser Hair Removal Full Body Maintenance",
+			"nameSr": "Alma Soprano Titanium laserska epilacija cijelo tijelo – održavanje",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "alma-soprano-titanium-laser-hair-removal-package-by-region",
+			"nameEn": "Alma Soprano Titanium Laser Hair Removal Package by Region",
+			"nameSr": "Alma Soprano Titanium laserska epilacija – paket po regiji",
+			"categories": [
+				18,
+				24
+			],
+			"specialties": [
+				7,
+				18
+			]
+		},
+		{
+			"table": "medical_services",
+			"slug": "pressotherapy-package-7-treatments",
+			"nameEn": "Pressotherapy Package 7 Treatments",
+			"nameSr": "Presoterapija – paket 7 tretmana",
+			"categories": [
+				5
+			],
+			"specialties": [
+				42
+			]
+		}
+	],
+	"services": [
+		{
+			"slug": "first-dermatologist-examination",
+			"nameEn": "First Dermatologist Examination",
+			"source": "PRVI PREGLED DERMATOLOGA 50 EUR",
+			"section": "dermatovenerologija",
+			"price": "50"
+		},
+		{
+			"slug": "follow-up-dermatologist-examination",
+			"nameEn": "Follow-up Dermatologist Examination",
+			"source": "KONTROLNI PREGLED DERMATOLOGA 30 EUR / U OKVIRU MJESEC DANA OD PRVOG PREGLEDA",
+			"section": "dermatovenerologija",
+			"price": "30"
+		},
+		{
+			"slug": "dermatoscopy",
+			"nameEn": "Dermatoscopy",
+			"source": "DERMOSKOPSKI PREGLED MLADEŽA 50 EUR",
+			"section": "dermatovenerologija",
+			"price": "50"
+		},
+		{
+			"slug": "dermatologist-examination-with-dermatoscopy",
+			"nameEn": "Dermatologist Examination with Dermatoscopy",
+			"source": "PREGLED DERMATOLOGA I DERMOSKOPIJA 80 EUR",
+			"section": "dermatovenerologija",
+			"price": "80"
+		},
+		{
+			"slug": "radiowave-skin-lesion-removal",
+			"nameEn": "Radiowave Skin Lesion Removal",
+			"source": "RADIOTALASNO UKLANJANJE VIRUSNIH BRADAVICA 60 EUR (ZAVISNO OD BROJA PROMJENA DO 100 €); RADIOTALASNO UKLANJANJE FIBROMA: DO 5 PROMJENA 70 EUR / DO 10 PROMJENA 90 EUR / 10+ PROMJENA 100 EUR",
+			"section": "dermatovenerologija",
+			"price": "60–100",
+			"note": "Две строки прайса (радиоволновое удаление вирусных бородавок и фибром) сведены в одну позицию каталога: под радиоволновое удаление есть только общая запись. Диапазон 60–100 покрывает обе."
+		},
+		{
+			"slug": "condyloma-radio-wave-removal",
+			"nameEn": "Condyloma Radio Wave Removal",
+			"source": "RAFIOTALASNO UKLANJANJE KONDILOMA 100 EUR (опечатка «RAFIOTALASNO» в источнике)",
+			"section": "dermatovenerologija",
+			"price": "100"
+		},
+		{
+			"slug": "cryotherapy",
+			"nameEn": "Cryotherapy",
+			"source": "KRIOTERAPIJA (TEČNI AZOT): DO 5 PROMJENA 50 EUR / DO 10 PROMJENA 80 EUR",
+			"section": "dermatovenerologija",
+			"price": "50–80",
+			"note": "Ступени каталога «до 5 / 6–20 / больше 20» не совпадают с «до 5 / до 10» клиники — взята общая запись Cryotherapy с диапазоном."
+		},
+		{
+			"slug": "senile-keratosis-treatment-with-liquid-nitrogen-per-session",
+			"nameEn": "Senile Keratosis Treatment with Liquid Nitrogen (per session)",
+			"source": "KRIOTERAPIJA KERATOZA 50 EUR",
+			"section": "dermatovenerologija",
+			"price": "50"
+		},
+		{
+			"slug": "molluscum-contagiosum-curettage",
+			"nameEn": "Molluscum Contagiosum Curettage",
+			"source": "KIRETIRANJE MOLUSKI KOD DJECE: DO 5 PROMJENA 60 EUR / DO 10 PROMJENA 90 EUR",
+			"section": "dermatovenerologija",
+			"price": "60–90",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "trichologist-examination",
+			"nameEn": "Trichologist Examination",
+			"source": "Trichološki pregledi za dijagnostiku uzroka opadanja kose",
+			"section": "dermatovenerologija (страница направления)",
+			"price": null,
+			"note": "Цены нет: прайс дерматологии её не содержит."
+		},
+		{
+			"slug": "prp-hair-vitality",
+			"nameEn": "PRP Hair Vitality",
+			"source": "PRP tretmani (plazma bogata trombocitima) za stimulaciju rasta kose",
+			"section": "dermatovenerologija (страница направления)",
+			"price": null,
+			"note": "Цены нет. Цена «PRP 200/250» из эстетического прайса поставлена на PRP Facial Treatment, см. openQuestions."
+		},
+		{
+			"slug": "surgical-examination",
+			"nameEn": "Surgical Examination",
+			"source": "Specijalistički pregled 50 EUR (cjenovnik usluga opšte hirurgije)",
+			"section": "opšta hirurgija",
+			"price": "50"
+		},
+		{
+			"slug": "small-wound-dressing",
+			"nameEn": "Small Wound Dressing",
+			"source": "HIRURŠKO PREVIJANJE RANE manje 40 EUR",
+			"section": "opšta hirurgija",
+			"price": "40"
+		},
+		{
+			"slug": "large-wound-dressing",
+			"nameEn": "Large Wound Dressing",
+			"source": "HIRUŠKO PREVIJANJE RANE veće 60 EUR",
+			"section": "opšta hirurgija",
+			"price": "60"
+		},
+		{
+			"slug": "necrectomy-and-wound-care",
+			"nameEn": "Necrectomy and Wound Care",
+			"source": "HIRURŠKI DEBRIDMAN RANE 75 EUR",
+			"section": "opšta hirurgija",
+			"price": "75"
+		},
+		{
+			"slug": "suture-removal",
+			"nameEn": "Suture Removal",
+			"source": "SKIDANJE HIR. KONACA 40 EUR",
+			"section": "opšta hirurgija",
+			"price": "40"
+		},
+		{
+			"slug": "primary-wound-care-with-sutures",
+			"nameEn": "Primary Wound Care with Sutures",
+			"source": "OBRADA I UŠIVANJE RANE manje 75 EUR / veće 90 EUR",
+			"section": "opšta hirurgija",
+			"price": "75–90"
+		},
+		{
+			"slug": "treatment-of-smaller-wounds-without-deep-structure-lesion-direct",
+			"nameEn": "Treatment of Smaller Wounds without Deep Structure Lesion by Direct Suture (Face, Eyelids, Nose, Lip, Ear, Hand)",
+			"source": "OBRADA I UŠIVANJE RANE lice 110 EUR",
+			"section": "opšta hirurgija",
+			"price": "110"
+		},
+		{
+			"slug": "leg-ulcer-dressing",
+			"nameEn": "Leg Ulcer Dressing",
+			"source": "OBRADA I PREVIJANJE ULCUS CRURIS-a manje 75 EUR / PREVIJANJE ULCUS CRURIS-a veće 90 EUR",
+			"section": "opšta hirurgija",
+			"price": "75–90"
+		},
+		{
+			"slug": "burn-wound-care",
+			"nameEn": "Burn Wound Care",
+			"source": "OBRADA I PREVIJANJE OPEKOTINA 80-110 EUR",
+			"section": "opšta hirurgija",
+			"price": "80–110"
+		},
+		{
+			"slug": "pressure-ulcer-dressing",
+			"nameEn": "Pressure Ulcer Dressing",
+			"source": "OBRADA I PREVIJANJE DEKUBITUSA manje 75 EUR / veće 110 EUR",
+			"section": "opšta hirurgija",
+			"price": "75–110",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "decubitus-surgical-treatment",
+			"nameEn": "Decubitus Surgical Treatment",
+			"source": "HIRURŠKA OBRADA I PREVIJANJE DEKUBITUSA 200 EUR / u kućnoj posjeti",
+			"section": "opšta hirurgija",
+			"price": "200",
+			"note": "Цена 200 € — с выездом на дом («u kućnoj posjeti»), амбулаторной цены прайс не даёт."
+		},
+		{
+			"slug": "ingrown-toenail-surgery",
+			"nameEn": "Ingrown Toenail Surgery",
+			"source": "HIRURŠKA INTERVENCIJA URASLOG NOKTA 135 EUR",
+			"section": "opšta hirurgija",
+			"price": "135"
+		},
+		{
+			"slug": "nail-ablation",
+			"nameEn": "Nail Ablation",
+			"source": "UKLANJANJE (ablacija) NOKATNE PLOČE 110 EUR",
+			"section": "opšta hirurgija",
+			"price": "110"
+		},
+		{
+			"slug": "foot-callus-surgical-removal",
+			"nameEn": "Foot Callus Surgical Removal",
+			"source": "HIRURŠKO LIJEČENJE KLAVUSA “kurjeg oka” 135 EUR",
+			"section": "opšta hirurgija",
+			"price": "135"
+		},
+		{
+			"slug": "small-skin-abscess-incision",
+			"nameEn": "Small Skin Abscess Incision",
+			"source": "INCIZIJA APSCESA mala 75 EUR",
+			"section": "opšta hirurgija",
+			"price": "75"
+		},
+		{
+			"slug": "large-skin-abscess-incision",
+			"nameEn": "Large Skin Abscess Incision",
+			"source": "INCIZIJA APSCESA veća 115 EUR",
+			"section": "opšta hirurgija",
+			"price": "115"
+		},
+		{
+			"slug": "excision-of-external-thrombosed-hemorrhoids",
+			"nameEn": "Excision of External Thrombosed Hemorrhoids",
+			"source": "EKSCIZIJA TROMBOZIRANOG SPOLJAŠNJEG HEMOROIDA 150 EUR",
+			"section": "opšta hirurgija",
+			"price": "150"
+		},
+		{
+			"slug": "pigmented-nevus-surgical-removal",
+			"nameEn": "Pigmented Nevus Surgical Removal",
+			"source": "EKSCIZIJA NEVUSA 115 EUR",
+			"section": "opšta hirurgija",
+			"price": "115"
+		},
+		{
+			"slug": "atheroma-removal",
+			"nameEn": "Atheroma Removal",
+			"source": "UKLANJANJE ATEROMA (sebacealne-epidermalne ciste) 60-80 EUR",
+			"section": "opšta hirurgija",
+			"price": "60–80"
+		},
+		{
+			"slug": "excision-of-small-benign-tumor-scars-fibromas-or-cysts",
+			"nameEn": "Excision of Small Benign Tumor-Like Scars, Fibromas or Cysts",
+			"source": "UKLANJANJE DERMATOFIBROMA 60-80 EUR",
+			"section": "opšta hirurgija",
+			"price": "60–80"
+		},
+		{
+			"slug": "lipoma-removal",
+			"nameEn": "Lipoma Removal",
+			"source": "UKLANJANJE LIPOMA 60-80 EUR",
+			"section": "opšta hirurgija",
+			"price": "60–80"
+		},
+		{
+			"slug": "viral-wart-surgical-removal",
+			"nameEn": "Surgical Removal of Viral Warts",
+			"source": "UKLANJANJE BRADAVICA (do 10) 50 EUR",
+			"section": "opšta hirurgija",
+			"price": "50"
+		},
+		{
+			"slug": "skin-lesion-removal",
+			"nameEn": "Skin Lesion Removal",
+			"source": "UKLANJANJE PREKANCEROZA (aktinične keratoze, susp. pigmentne promjene, cornu cutaneum i ostalo) 50-70 EUR",
+			"section": "opšta hirurgija",
+			"price": "50–70",
+			"note": "Отдельной позиции «удаление предраковых изменений кожи» в каталоге нет; Skin Lesion Removal — единственная общая запись."
+		},
+		{
+			"slug": "excision-of-malignant-skin-lesions-with-wound-suturing",
+			"nameEn": "Excision of Malignant Skin Lesions with Wound Suturing",
+			"source": "EKSCIZIJA EPITELIOMA BASOCELLULARE I SQUAMOCELLULARE 80-115 EUR",
+			"section": "opšta hirurgija",
+			"price": "80–115"
+		},
+		{
+			"slug": "skin-and-subcutaneous-tissue-biopsy",
+			"nameEn": "Skin and Subcutaneous Tissue Biopsy",
+			"source": "BIOPSIJA KOŽNIH PROMJENA 60 EUR",
+			"section": "opšta hirurgija",
+			"price": "60"
+		},
+		{
+			"slug": "foreign-body-extraction-surgery",
+			"nameEn": "Foreign Body Extraction Surgery",
+			"source": "VAĐENJE STRANOG TIJELA 60 EUR",
+			"section": "opšta hirurgija",
+			"price": "60"
+		},
+		{
+			"slug": "tick-removal",
+			"nameEn": "Tick Removal",
+			"source": "UKLANJANJE KRPELJA 60 EUR",
+			"section": "opšta hirurgija",
+			"price": "60"
+		},
+		{
+			"slug": "electrocoagulation-or-excision-of-condyloma-acuminata",
+			"nameEn": "Electrocoagulation or Excision of Condyloma Acuminata",
+			"source": "UKLANJENJE KONDILOMA (do 10 kondiloma) 90 EUR / UKLANJANJE KONDILOMA (više od 10 kondiloma) 115 EUR",
+			"section": "opšta hirurgija",
+			"price": "90–115"
+		},
+		{
+			"slug": "abdominal-paracentesis",
+			"nameEn": "Abdominal Paracentesis",
+			"source": "PUNKCIJA ASCITA 140 EUR",
+			"section": "opšta hirurgija",
+			"price": "140"
+		},
+		{
+			"slug": "urinary-catheter-placement",
+			"nameEn": "Urinary Catheter Placement",
+			"source": "PLASIRANJE ILI ZAMJENA URINARNOG KATETERA 50 EUR",
+			"section": "opšta hirurgija",
+			"price": "50",
+			"note": "Вариант с выездом на дом (95 €) не заведён — см. excluded."
+		},
+		{
+			"slug": "first-physiatrist-examination",
+			"nameEn": "First Physiatrist Examination",
+			"source": "SPECIJALISTIČKI PREGLED 50 EUR",
+			"section": "fizikalna medicina i rehabilitacija",
+			"price": "50"
+		},
+		{
+			"slug": "follow-up-physiatrist-examination",
+			"nameEn": "Follow-up Physiatrist Examination",
+			"source": "KONTROLNI PREGLED 30 EUR",
+			"section": "fizikalna medicina i rehabilitacija",
+			"price": "30"
+		},
+		{
+			"slug": "hyperhidrosis-botox-treatment",
+			"nameEn": "Hyperhidrosis Botox Treatment",
+			"source": "HIPERHIDROZA 300 EUR (lokalni i gostujući doktor)",
+			"section": "estetska medicina i antiaging",
+			"price": "300"
+		},
+		{
+			"slug": "non-surgical-rhinoplasty",
+			"nameEn": "Non-Surgical Rhinoplasty",
+			"source": "KOREKCIJA NOSA 300 EUR (lokalni i gostujući doktor)",
+			"section": "estetska medicina i antiaging",
+			"price": "300",
+			"note": "Нехирургическая: раздел эстетической медицины («niz nehirurških tretmana»), а опšta hirurgija прямо пишет «trenutno ne izvodimo kompleksne operativne zahvate»."
+		},
+		{
+			"slug": "jalupro-super-hydro-treatment",
+			"nameEn": "Jalupro Super Hydro Treatment",
+			"source": "JALUPRO SUPER HYDRO 250 EUR (lokalni) / 300 EUR (gostujući)",
+			"section": "estetska medicina i antiaging",
+			"price": "250–300",
+			"note": "Цена «lokalni doktor» → price, «gostujući doktor» → price_max; врачи в прайсе не названы, поэтому по врачам не разложено."
+		},
+		{
+			"slug": "jalupro-young-eye",
+			"nameEn": "Jalupro Young Eye",
+			"source": "JALUPRO YOUNG EYE 160 EUR (lokalni) / 200 EUR (gostujući)",
+			"section": "estetska medicina i antiaging",
+			"price": "160–200",
+			"note": "Цена «lokalni doktor» → price, «gostujući doktor» → price_max; врачи в прайсе не названы, поэтому по врачам не разложено."
+		},
+		{
+			"slug": "prp-facial-treatment",
+			"nameEn": "PRP Facial Treatment",
+			"source": "PRP 200 EUR (lokalni) / 250 EUR (gostujući)",
+			"section": "estetska medicina i antiaging",
+			"price": "200–250",
+			"note": "Цена «lokalni doktor» → price, «gostujući doktor» → price_max; врачи в прайсе не названы, поэтому по врачам не разложено. Прайс пишет просто «PRP», лицо выбрано как основная эстетическая PRP-позиция каталога, см. openQuestions."
+		},
+		{
+			"slug": "prp-therapy-cellular-matrix",
+			"nameEn": "PRP Therapy Cellular Matrix",
+			"source": "PRP CELLULAR 250 EUR (lokalni) / 290 EUR (gostujući)",
+			"section": "estetska medicina i antiaging",
+			"price": "250–290",
+			"note": "Цена «lokalni doktor» → price, «gostujući doktor» → price_max; врачи в прайсе не названы, поэтому по врачам не разложено."
+		},
+		{
+			"slug": "exosome-therapy",
+			"nameEn": "Exosome Therapy",
+			"source": "EGZOZOMI 200 EUR (lokalni) / 230 EUR (gostujući)",
+			"section": "estetska medicina i antiaging",
+			"price": "200–230",
+			"note": "Цена «lokalni doktor» → price, «gostujući doktor» → price_max; врачи в прайсе не названы, поэтому по врачам не разложено. Новая запись каталога."
+		},
+		{
+			"slug": "nefertiti-lift",
+			"nameEn": "Nefertiti Lift",
+			"source": "NEFERTITI 330 EUR (lokalni) / 360 EUR (gostujući)",
+			"section": "estetska medicina i antiaging",
+			"price": "330–360",
+			"note": "Цена «lokalni doktor» → price, «gostujući doktor» → price_max; врачи в прайсе не названы, поэтому по врачам не разложено."
+		},
+		{
+			"slug": "lipolysis",
+			"nameEn": "Lipolysis",
+			"source": "LIPOLIZA 200 EUR (только «lokalni doktor»)",
+			"section": "estetska medicina i antiaging",
+			"price": "200"
+		},
+		{
+			"slug": "botox-injection",
+			"nameEn": "Botox Injection",
+			"source": "Botox tretmani / Botoks (Botulinum toksin)",
+			"section": "estetska medicina i antiaging (страницы направления, o-nama, FAQ)",
+			"price": null,
+			"note": "Цены нет: в прайсе эстетики только перечисленные выше позиции."
+		},
+		{
+			"slug": "hyaluronic-acid-filler",
+			"nameEn": "Hyaluronic Acid Filler",
+			"source": "Hijaluronski fileri / Dermalni fileri",
+			"section": "estetska medicina i antiaging (страницы направления, o-nama, FAQ)",
+			"price": null,
+			"note": "Цены нет."
+		},
+		{
+			"slug": "chemical-peel",
+			"nameEn": "Chemical Peel",
+			"source": "Hemijski piling / Hemijski peel",
+			"section": "estetska medicina i antiaging (страницы направления, o-nama)",
+			"price": null,
+			"note": "Цены нет."
+		},
+		{
+			"slug": "facial-mesotherapy-single-treatment",
+			"nameEn": "Facial Mesotherapy Single Treatment",
+			"source": "Mezoterapija",
+			"section": "estetska medicina i antiaging (страницы направления, o-nama)",
+			"price": null,
+			"note": "Цены нет."
+		},
+		{
+			"slug": "emsculpt-neo-body-contouring",
+			"nameEn": "Emsculpt Neo Body Contouring",
+			"source": "EMSCULPT NEO, 1 REGIJA: stomak 300, butine 300, unutrašnja strana butina 250, listovi 250, biceps 250, triceps 250, gluteus 300 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "250–300",
+			"note": "Новая запись каталога; цена — разовый сеанс на одну область. Пакеты — excluded."
+		},
+		{
+			"slug": "emface-facial-treatment",
+			"nameEn": "Emface Facial Treatment",
+			"source": "EMFACE: 1 REGIJA (ČELO/OBRAZI/PODBRADAK) 200, 2 REGIJE 300, 3 REGIJE (ČELO, OBRAZI, SUBMENTUM) 450 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "200–450",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "exion-face-treatment",
+			"nameEn": "Exion Face Treatment",
+			"source": "EXION FACE: LICE (FULL FACE) 250, OKOLOOČNA REGIJA 60, REGIJA OKO USANA I USNE 60, VRAT 100, DEKOLTE 100 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "60–250",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "exion-body-treatment",
+			"nameEn": "Exion Body Treatment",
+			"source": "EXION BODY: VELIKA REGIJA (STOMAK, BUTINE, GLUTEUS) 250, MALA REGIJA (LISTOVI, KOLJENA, NADLAKTICE, ŠAKE) 150 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "150–250",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "exion-fractional-face-treatment",
+			"nameEn": "Exion Fractional Face Treatment",
+			"source": "EXION FRAKCIONI: LICE 450, LICE + VRAT 500, LICE + DEKOLTE 550, LICE + VRAT + DEKOLTE 600, VRAT + DEKOLTE 300 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "300–600",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "exion-fractional-body-treatment",
+			"nameEn": "Exion Fractional Body Treatment",
+			"source": "EXION FRAKCIONI - TIJELO: VELIKA REGIJA 500, VELIKA REGIJA + MALA REGIJA 550 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "500–550",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "alma-harmony-clearskin-clearlift-laser-treatment",
+			"nameEn": "Alma Harmony ClearSkin / ClearLift Laser Treatment",
+			"source": "ALMA HARMONY XL PRO — CLEAR SKIN/CLEAR LIFT: LICE 15O, LICE + VRAT 200, LICE + VRAT + DEKOLTE 250 EUR («15O» с буквой O — опечатка источника)",
+			"section": "laserski i inovativni tretmani",
+			"price": "150–250",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "alma-harmony-dvl-treatment",
+			"nameEn": "Alma Harmony DVL Treatment",
+			"source": "ALMA HARMONY XL PRO — DVL 100 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "100",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "alma-harmony-nir-treatment",
+			"nameEn": "Alma Harmony NIR Treatment",
+			"source": "ALMA HARMONY XL PRO — NIR 100 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "100",
+			"note": "Новая запись каталога."
+		},
+		{
+			"slug": "alma-soprano-titanium-special-edition-hair-removal",
+			"nameEn": "Alma Soprano Titanium Special Edition Hair Removal",
+			"source": "ALMA SOPRANO TITANIUM SPECIAL EDITION — POJEDINAČNI TRETMANI: žene mala/srednja/velika regija 25/35/60, muškarci 35/45/65, cijele noge 180, cijela leđa 110 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "25–180",
+			"note": "Диапазон разовых процедур. «Paketi po regijama» и «cijelo tijelo (7/10 tretmana)» — пакеты, excluded."
+		},
+		{
+			"slug": "general-practitioner-examination",
+			"nameEn": "General Practitioner Examination",
+			"source": "LJEKARSKI PREGLED 30 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "30"
+		},
+		{
+			"slug": "vitamin-or-anti-aging-tad-infusion",
+			"nameEn": "Vitamin or Anti-aging (TAD) Infusion",
+			"source": "INTRAVENSKA INFUZIJA (vitaminska inf. sa glutationom) 65 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "65",
+			"note": "TAD — торговая форма глутатиона, запись каталога покрывает и «витаминную», и «глутатион»."
+		},
+		{
+			"slug": "pressotherapy",
+			"nameEn": "Pressotherapy",
+			"source": "PRESO TERAPIJA 30 EUR",
+			"section": "laserski i inovativni tretmani",
+			"price": "30"
+		},
+		{
+			"slug": "emsculpt-neo-1-region-package-4-treatments",
+			"nameEn": "Emsculpt Neo 1 Region Package 4 Treatments",
+			"source": "EMS paket 4 tretmana: stomak 1100, butine 1100, unutrašnja strana butina 900, listovi 900, biceps 900, triceps 900, gluteus 1100 EUR (+ 2 preso terapije gratis)",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "900–1100",
+			"note": "Новая пакетная запись; один состав (4 сеанса, одна область), области сведены в диапазон."
+		},
+		{
+			"slug": "emsculpt-neo-2-regions-package-4-treatments",
+			"nameEn": "Emsculpt Neo 2 Regions Package 4 Treatments",
+			"source": "PAKET (2 VELIKE REGIJE) - 4 TRETMANA 1950 EUR; PAKET (2 MALE REGIJE) - 4 TRETMANA 1750 EUR; PAKET (MALA + VELIKA REGIJA) 4 TRETMANA 1850 EUR",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "1750–1950",
+			"note": "Новая пакетная запись; три сочетания областей сведены в диапазон."
+		},
+		{
+			"slug": "emsculpt-neo-4-regions-package-4-treatments",
+			"nameEn": "Emsculpt Neo 4 Regions Package 4 Treatments",
+			"source": "PAKET (4 REGIJE - 4 TRETMANA) 4500 EUR",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "4500",
+			"note": "Новая пакетная запись."
+		},
+		{
+			"slug": "emface-package-4-treatments",
+			"nameEn": "Emface Package 4 Treatments",
+			"source": "EMFACE PAKET 4 TRETMANA (2 REGIJE) 1200 EUR; PAKET 4 TRETMANA (3 REGIJE) 1600 EUR (+ 2 EXION FACE GRATIS)",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "1200–1600",
+			"note": "Новая пакетная запись."
+		},
+		{
+			"slug": "exion-face-package-4-treatments",
+			"nameEn": "Exion Face Package 4 Treatments",
+			"source": "EXION FACE PAKET 4 TRETMANA + 2 TRETMANA (VRAT/DEKOLTE) GRATIS 900 EUR",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "900",
+			"note": "Новая пакетная запись."
+		},
+		{
+			"slug": "exion-fractional-face-package-3-treatments",
+			"nameEn": "Exion Fractional Face Package 3 Treatments",
+			"source": "EXION FRAKCIONI PAKET 3 TRETMANA (LICE) 1100 EUR",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "1100",
+			"note": "Новая пакетная запись."
+		},
+		{
+			"slug": "alma-soprano-titanium-laser-hair-removal-full-body-package-7-treatments",
+			"nameEn": "Alma Soprano Titanium Laser Hair Removal Full Body Package 7 Treatments",
+			"source": "SOPRANO CIJELO TIJELO (7 TRETMANA): žene 1150 EUR, muškarci 1450 EUR",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "1150–1450",
+			"note": "Новая пакетная запись; женская и мужская цена — диапазон."
+		},
+		{
+			"slug": "alma-soprano-titanium-laser-hair-removal-full-body-package-10-treatments",
+			"nameEn": "Alma Soprano Titanium Laser Hair Removal Full Body Package 10 Treatments",
+			"source": "SOPRANO CIJELO TIJELO (10 TRETMANA): žene 350 EUR, muškarci 1600 EUR",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "1350–1600",
+			"note": "Новая пакетная запись. Женская цена «350» в прайсе — опечатка (10 процедур дешевле 7 за 1150 €), исправлено на 1350 по решению координатора 2026-10-08."
+		},
+		{
+			"slug": "alma-soprano-titanium-laser-hair-removal-full-body-maintenance",
+			"nameEn": "Alma Soprano Titanium Laser Hair Removal Full Body Maintenance",
+			"source": "SOPRANO CIJELO TIJELO - ODRŽAVANJE: žene 200 EUR, muškarci 33O EUR (буква O в источнике)",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "200–330",
+			"note": "Новая запись."
+		},
+		{
+			"slug": "alma-soprano-titanium-laser-hair-removal-package-by-region",
+			"nameEn": "Alma Soprano Titanium Laser Hair Removal Package by Region",
+			"source": "SOPRANO PAKETI PO REGIJAMA — žene: cijele noge 500, pola nogu 250, ruke 250, intimna regija 250, intimna regija sa gluteusom 320, cijelo lice 250, prepone 150, pazuh 150, nausnice 100; muškarci: cijele noge 800, cijelo lice 25O, leđa 600, stomak 350, grudi 350, cijele ruke 400, ramena 200, pazuh 200 EUR",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "100–800",
+			"note": "Новая пакетная запись; число процедур в пакете сайт не называет. Все области обоих полов — один состав, диапазон 100–800."
+		},
+		{
+			"slug": "pressotherapy-package-7-treatments",
+			"nameEn": "Pressotherapy Package 7 Treatments",
+			"source": "PAKET 7 PRESO TERAPIJA 190 EUR",
+			"section": "laserski i inovativni tretmani — пакеты",
+			"price": "190",
+			"note": "Новая пакетная запись."
+		}
+	],
+	"doctors": [
+		{
+			"slug": "djordjije-kaludjerovic",
+			"nameSr": "Đorđe Kaluđerović",
+			"professionalTitle": "dr",
+			"position": "Specijalista porodične medicine, sertifikovani doktor estetske medicine",
+			"specialtyIds": [
+				20,
+				44
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"services": [],
+			"note": "Сайт: «dr Đorđe Kaluđerović — specijalista porodične medicine, sertifikovani doktor estetske medicine». В БД есть «Đorđije Kaluđerović» (slug djordjije-kaludjerovic, family medicine, ДЗ Даниловград — сайт ДЗ: «dr Đorđije Kaluđerović, spec. porodične medicine»). Đorđe — бытовая форма имени Đorđije, фамилия и редкая специальность совпадают, Даниловград в 20 км → сопоставлен с существующим, имя в БД НЕ меняется. Подтверждено юзером 2026-10-08."
+		},
+		{
+			"slug": "edin-kulovic",
+			"nameSr": "Edin Kulović",
+			"professionalTitle": "dr",
+			"position": "Specijalista opšte hirurgije, doktor estetske medicine",
+			"specialtyIds": [
+				3,
+				44
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"services": [],
+			"note": "Новый."
+		},
+		{
+			"slug": "erna-topalovic",
+			"nameSr": "Erna Topalović",
+			"professionalTitle": "dr",
+			"position": "Doktor medicine, sertifikovani doktor estetske medicine",
+			"specialtyIds": [
+				44
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"services": [
+				"Botox Injection",
+				"Hyaluronic Acid Filler"
+			],
+			"note": "Новая. «doktor medicine» — без специализации, поэтому только AESTHETIC_MEDICINE (44). Услуги — из поста блога «Dr Erna ponovo dolazi u MOA Polikliniku» (2025-03-06): «hijaluronskih filera, botoksa i anti-age tretmana»; в посте только имя, другой Erna в составе нет."
+		},
+		{
+			"slug": "marina-vukovic",
+			"nameSr": "Marina Vuković",
+			"professionalTitle": "dr",
+			"position": "Specijalista fizikalne medicine i rehabilitacije",
+			"specialtyIds": [
+				42
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"services": [
+				"First Physiatrist Examination",
+				"Follow-up Physiatrist Examination"
+			],
+			"note": "Найдена в БД (id 1313 локально и на проде, physical medicine, КЦЦГ / ДЗ Колашин / Moj Lab). Та же специальность. photo_url в БД пустой — дозаполняется фото с moa.clinic. Единственный физиатр в составе → привязана к обоим осмотрам физиатра."
+		},
+		{
+			"slug": "milic-petar",
+			"nameSr": "Petar Milić",
+			"professionalTitle": "dr",
+			"position": "Specijalista opšte hirurgije",
+			"specialtyIds": [
+				3
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"services": [],
+			"note": "Найден в БД как «Milić Petar» (id 329 локально и на проде, general surgery, BonoMedica / ДЗ Будва / ОБ Котор). Сверено по фото: на docta.me и на moa.clinic один и тот же снимок (на docta.me — полный кадр с логотипом SmartMed). Фото в БД не трогаем."
+		},
+		{
+			"slug": "milan-djordjevic",
+			"nameSr": "Milan Đorđević",
+			"professionalTitle": "dr",
+			"position": "Specijalista opšte hirurgije, doktor estetske i antiejdžing medicine",
+			"specialtyIds": [
+				3,
+				44
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"services": [],
+			"note": "Новый."
+		},
+		{
+			"slug": "natalia-shamenkova",
+			"nameSr": "Natalia Shamenkova",
+			"professionalTitle": "dr",
+			"position": "Specijalista dermatologije, doktor estetske medicine",
+			"specialtyIds": [
+				7,
+				44
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"services": [
+				"Botox Injection",
+				"Hyaluronic Acid Filler",
+				"PRP Facial Treatment"
+			],
+			"note": "Новая. Блог: «Dolazak dr Shamenkove» (2025-03-13), «Dr Natalia Shamenkova u Poliklinici MOA 20. januara» (2026-01-12) — гостевые приёмы; botoks, dermalni fileri, PRP. Язык — только SR: русский сайт не заявляет."
+		},
+		{
+			"slug": "sanja-vujanovic",
+			"nameSr": "Sanja Vujanović",
+			"professionalTitle": "dr",
+			"position": "Specijalista dermatovenerologije",
+			"specialtyIds": [
+				7
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"services": [],
+			"note": "Найдена в БД (id 1128 локально и на проде, dermatovenerology, Bolnica Danilo I Cetinje). Та же специальность, фото на docta.me и moa.clinic — разные снимки, но внешне один человек. Фото в БД не трогаем."
+		},
+		{
+			"slug": "bilal-albeik",
+			"nameSr": "Bilal Albeik",
+			"professionalTitle": "dr",
+			"position": "Specijalista estetske dermatologije",
+			"specialtyIds": [
+				7,
+				44
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"services": [
+				"Botox Injection",
+				"Hyaluronic Acid Filler"
+			],
+			"note": "Новый. Отдельной специальности «эстетическая дерматология» нет → DERMATOVENEROLOGY (7) + AESTHETIC_MEDICINE (44). Блог «Renomirani estetski dermatolog dr Bilal Albeik ponovo dolazi u MOA Polikliniku» (2025-03-24) — гостевые приёмы."
+		},
+		{
+			"slug": "milos-nikolic",
+			"nameSr": "Miloš Nikolić",
+			"professionalTitle": "Prof. dr",
+			"position": "Specijalista dermatovenerologije, gostujući doktor",
+			"specialtyIds": [
+				7
+			],
+			"existingInDb": false,
+			"hasBio": true,
+			"services": [
+				"First Dermatologist Examination"
+			],
+			"note": "Новый: в БД однофамильцев-дерматологов нет (Nikolić: Olivera — radiology, Tatjana — pediatrics, Dejan — onkohirurg, Dragan — vaskularni hirurg, Marija, Emilija, Tanja Čađenović-Nikolić). Гостевой врач, привязан по решению юзера 2026-10-08. Источник — посты блога MOA: 2026-01-12 (приём 24.01.2026), 2026-02-17 (5–6.03.2026), 2026-10-06 (7–8.10.2026). Специальность и титул — баннер поста «PROF. DR Miloš Nikolić, specijalista dermatovenerologije». Отдельного портрета нет (только промо-баннеры с текстом) → photo_url NULL. Привязан к First Dermatologist Examination: посты — «specijalističke dermatološke preglede i konsultacije»."
+		}
+	],
+	"excluded": [
+		{
+			"source": "SPECIJALISTIČKI PREGLED 50 EUR (cjenovnik laserskih i inovativnih tretmana)",
+			"reason": "Специальность не названа; осмотры хирурга, дерматолога и физиатра по 50 € уже заведены из своих прайсов."
+		},
+		{
+			"source": "PLASIRANJE ILI ZAMJENA URINARNOG KATETERA 95 EUR — kućna posjeta",
+			"reason": "Вариант с выездом на дом; амбулаторная цена 50 € заведена. Отдельной позиции «катетер на дому» в каталоге нет."
+		},
+		{
+			"source": "Gostujući doktori из блога: Dr Iva Ćirović (stomatologija + estetska, 7.03.2026), Dr Milica Milenović (estetska, 22.02.2026), Dr Sava Latinović (dentalna medicina i ortodoncija, 28.02.2026), Dr Alexander Konovalov (opšta medicina, 23.02.2026), Dr Giovanni Angiolini (estetska, 2025-03)",
+			"reason": "Разовые гостевые приёмы по датам, в составе «Upoznajte naš tim» их нет; по решению юзера 2026-10-08 не привязываются. Цены «gostujući doktor» заведены как price_max без разнесения по врачам. Prof. dr Miloš Nikolić (регулярные визиты 24.01, 5–6.03, 7–8.10.2026) привязан — см. doctors."
+		},
+		{
+			"source": "Dr Predrag Milošević, specijalista opšte hirurgije («Našem timu se pridružuje», 2025-03-24); Dr Nikolina Ostojić, specijalista opšte hirurgije (od 25. marta 2025)",
+			"reason": "Посты 2025 года, в нынешнем составе на главной и /o-nama их нет. Оба есть в БД (predrag-milosevic — Bolnica Danilo I Cetinje; nikolina-ostojic — OB Pljevlja). Не привязаны."
+		},
+		{
+			"source": "Fizikalna medicina: kineziterapija, elektroterapija, laser terapija i magnetoterapija, manualna terapija i masaže (страница направления); пост «Novogodišnji popusti na masaže» (2025-12-12)",
+			"reason": "Прайс отделения (сентябрь 2026) содержит только два осмотра физиатра, терапевтических процедур в нём нет; перечень на странице направления — рекламный текст. Не заводились."
+		},
+		{
+			"source": "Skinbusteri (generic), Mikrodermoabrazija, laserski tretmani pigmentacija/kapilara/ožiljaka/strija, tretmani akni, rozacee, celulita (страницы направлений, o-nama)",
+			"reason": "Skinbooster в прайсе представлен конкретными Jalupro. Под generic-микродермабразию кандидата в каталоге нет (только Diamond Microdermabrasion — бренд/вариант сайт не называет). Остальное — показания, а не услуги."
+		},
+		{
+			"source": "Stomatologija (u osnivanju): preventivna, konzervativna, endodoncija, estetska, protetika, parodontologija, oralna hirurgija, implantologija, ortodoncija",
+			"reason": "Отделение в стадии открытия, стоматологов в составе нет, прайс — заглушка с dummy-текстом."
+		},
+		{
+			"source": "Uzorkovanje krvi Moj Lab u MOA Poliklinici od 10. februara (2026)",
+			"reason": "Забор крови и анализы — услуга лаборатории Moj Lab; в прайсе MOA нет. Упомянуто в description_*."
+		},
+		{
+			"source": "Alma Soprano Titanium – laserska epilacija cijelog tijela 890 € (akcija, пост 2026-02-17); новогодние скидки (2025-12); 20% na sve usluge 8. marta 2025",
+			"reason": "Акционные цены не импортируются."
+		},
+		{
+			"source": "/estetske-procedure (FACE LIFT, IMPLANT, FILLERS, RHINOPLASTY, EYES, SUPPORT)",
+			"reason": "Шаблонная страница темы с текстом-заглушкой, не контент клиники."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "PRP без уточнения",
+			"detail": "Эстетический прайс пишет просто «PRP 200/250». Сопоставлено с PRP Facial Treatment (основная эстетическая PRP-позиция, 5 клиник). Страница дерматологии упоминает PRP для роста волос — PRP Hair Vitality заведена без цены. Если цена общая — поставить её и на волосы."
+		},
+		{
+			"topic": "Опечатка в прайсе лазерной эпиляции",
+			"detail": "«ŽENE: CIJELO TIJELO (7 TRETMANA) 1150 EUR, CIJELO TIJELO (10 TRETMANA) 350 EUR» — 10 процедур дешевле 7, у мужчин 1450/1600. Вероятно 1350. Исправлено на 1350: alma-soprano-titanium-laser-hair-removal-full-body-package-10-treatments = 1350–1600."
+		},
+		{
+			"topic": "Одна позиция каталога на две строки прайса",
+			"detail": "Radiowave Skin Lesion Removal = радиоволновое удаление вирусных бородавок (60–100) + фибром (70/90/100) → 60–100. Отдельных записей под радиоволновое удаление бородавок/фибром нет."
+		},
+		{
+			"topic": "Hirurška obrada dekubitusa 200 € «u kućnoj posjeti»",
+			"detail": "Заведена на Decubitus Surgical Treatment с ценой 200 € — это цена с выездом на дом, амбулаторной в прайсе нет."
+		}
+	]
+}

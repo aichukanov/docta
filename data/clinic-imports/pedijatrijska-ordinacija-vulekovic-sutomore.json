@@ -1,0 +1,245 @@
+{
+	"schemaVersion": 1,
+	"slug": "pedijatrijska-ordinacija-vulekovic-sutomore",
+	"name": "Pedijatrijska ordinacija Vuleković Sutomore",
+	"city": "Sutomore (opština Bar)",
+	"cityId": 7,
+	"googlePlaceId": null,
+	"clinicTypeIds": [
+		12
+	],
+	"languageIds": [
+		1
+	],
+	"network": {
+		"name": "Privatna pedijatrijska ordinacija „Vuleković“",
+		"siblings": [
+			"pedijatrijska-ordinacija-vulekovic-podgorica"
+		],
+		"note": "Две ординации; у нас — отдельные клиники. Врачи: явно подгорицкие (Sušić, Vujanović) — только Подгорица, остальные — к обеим."
+	},
+	"sql": [
+		"server/sql/insert-clinic-pedijatrijska-ordinacija-vulekovic-sutomore.sql",
+		"server/sql/insert-clinic-pedijatrijska-ordinacija-vulekovic-sutomore-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 199,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен. Подволна 2c, агент O. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 226
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://vulekovic.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress + Polylang (me/en/ru). WP REST /wp/v2/pages (17) и /posts (5). Страницы правлены 2025-01-21…2025-01-29. Фото врачей — только sinisa.jpg и gsusic.jpg на /o-nama/. Цен нет."
+		}
+	],
+	"coverage": {
+		"address": "Vuka Karadžića 2, 85355 Sutomore — сайт (/kontakt/, RU-пост). Места в Google нет → координаты NULL",
+		"phone": "+38220244244;+38269072242 — сайт (общие с Подгорицей)",
+		"email": "ordinacija@vulekovic.me — сайт",
+		"website": "https://vulekovic.me/",
+		"social": "facebook.com/drvulekovic — ссылка с сайта",
+		"logo": "https://vulekovic.me/wp-content/uploads/2025/01/vulekovic-logo.png",
+		"workingHours": "не заполнено: только летнее расписание на главной; для Сутоморе — сезонное (RU-пост 2025-01: апрель–июль, ср и сб 16–19)",
+		"doctors": "10 карточек (без Sušić и Vujanović — явно «u Podgorici»); те же, что в Подгорице",
+		"doctorPhotos": "с сайта — только Vuleković и Sušić; у найденных в БД фото уже есть",
+		"doctorBios": "Vuleković",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "нет места в Google"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "Pediatric Examination",
+			"slug": "pediatric-examination",
+			"source": "/ FAQ: «detaljan ljekarski pregled … Pregled nije potrebno zakazivati»; /nasi-ljekari/ «OPŠTA PEDIJATRIJA»"
+		},
+		{
+			"nameEn": "Newborn Home Visit",
+			"slug": "newborn-home-visit",
+			"source": "/ FAQ: «u ponudi naše ordinacije su i kućne posjete, koje uključuju i detaljan pregled pedijatra, mjerenje djeteta i savjete oko njege novorođenčadi»"
+		},
+		{
+			"nameEn": "ENT Specialist Examination",
+			"slug": "ent-specialist-examination",
+			"source": "/o-nama/: «ORL pregledi u našoj ordinaciji … ordinira dr Maja Jovanović, specijalista ORL»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "sinisa-vulekovic",
+			"nameSr": "Siniša Vuleković",
+			"professionalTitle": "Dr",
+			"position": "Specijalista pedijatar, osnivač ordinacije",
+			"specialtyIds": [
+				4
+			],
+			"hasBio": true,
+			"existingInDb": false,
+			"services": []
+		},
+		{
+			"slug": "latkovic-djuro",
+			"nameSr": "Đuro Latković",
+			"professionalTitle": "dr",
+			"position": "Specijalista pedijatar",
+			"specialtyIds": [
+				4
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "ivan-ivanovic",
+			"nameSr": "Ivan Ivanović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista pedijatar",
+			"specialtyIds": [
+				4
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "zanka-cerovic",
+			"nameSr": "Žanka Cerović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista radiolog",
+			"specialtyIds": [
+				10
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "latkovic-danijela",
+			"nameSr": "Danijela Latković",
+			"professionalTitle": "dr",
+			"position": "Specijalista radiolog",
+			"specialtyIds": [
+				10
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "jovanovic-maja",
+			"nameSr": "Maja Jovanović",
+			"professionalTitle": "dr",
+			"position": "Specijalista ORL",
+			"specialtyIds": [
+				11
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": [
+				"ent-specialist-examination"
+			]
+		},
+		{
+			"slug": "vladimir-ljubic",
+			"nameSr": "Vladimir Ljubić",
+			"professionalTitle": "dr",
+			"position": "Specijalista ORL",
+			"specialtyIds": [
+				11
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "pocek-lidija",
+			"nameSr": "Lidija Poček",
+			"professionalTitle": "dr",
+			"position": "Specijalista pedijatar, subspecijalista alergolog",
+			"specialtyIds": [
+				4,
+				30
+			],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "snezana-barjaktarovic-labovic",
+			"nameSr": "Snežana Barjaktarović Labović",
+			"professionalTitle": "Dr",
+			"position": "Specijalista higijene, subspecijalista dijetoterapije",
+			"specialtyIds": [],
+			"hasBio": false,
+			"existingInDb": true,
+			"services": []
+		},
+		{
+			"slug": "anita-maric",
+			"nameSr": "Anita Marić",
+			"professionalTitle": null,
+			"position": "Logoped",
+			"specialtyIds": [
+				70
+			],
+			"hasBio": false,
+			"existingInDb": false,
+			"services": []
+		}
+	],
+	"excluded": [
+		{
+			"source": "Главная, вкладка «Ultrazvuk»; /nasi-ljekari/ «RADIOLOGIJA — Dr Žanka Cerović, Dr Danijela Latković»",
+			"reason": "Направление: какие именно УЗИ делают (органы), сайт не называет; generic «УЗИ» в каталоге нет. Радиологи привязаны к клинике, услуги не заведены."
+		},
+		{
+			"source": "/nasi-ljekari/: «ALERGOLOGIJA — Dr Lidija Poček»",
+			"reason": "Направление без названной процедуры (ни осмотра, ни кожных проб). Врач привязан, услуга не заведена."
+		},
+		{
+			"source": "/nasi-ljekari/: «PRAVILNA ISHRANA – DIJETOTERAPIJA — Dr sci. med. Snežana Barjaktarović Labović»",
+			"reason": "Направление без названной процедуры. Врач привязан."
+		},
+		{
+			"source": "/nasi-ljekari/: «LOGOPEDIJA — Anita Marić, logoped»",
+			"reason": "Направление без названной процедуры (оценка/терапия не названы). Специалист привязан."
+		},
+		{
+			"source": "/ FAQ: «Preporučuje se 7 redovnih pregleda novorođenčeta do navršene 1 godine života, 2 pregleda tokom druge godine…»",
+			"reason": "Рекомендация, а не отдельная услуга; покрыто pediatric-examination."
+		},
+		{
+			"source": "Статья /en/allergy-to-pollen-pollinosis: «it is necessary to do skin tests and possibly blood analysis»",
+			"reason": "Просветительская статья, не перечень услуг."
+		},
+		{
+			"source": "Главная, «Ljetnje radno vrijeme: Radnim danima 08–13h i 17h–20h, Subotom 08–13h i 16–19h, Nedjeljom 09–12h»",
+			"reason": "Только летнее (сезонное) расписание, страница 2025-01 — в clinic_working_hours не записано, чтобы не показывать летние часы круглый год."
+		},
+		{
+			"source": "Главная, «Partneri i prijatelji»: логотипы Generali и Lovćen osiguranje",
+			"reason": "Партнёрство не расшифровано (полисы/скидки) — не импортировано, только отмечено."
+		},
+		{
+			"source": "Цены",
+			"reason": "Ни одной цены на сайте (0 вхождений €/EUR/cijen) — все услуги NULL."
+		}
+	],
+	"openQuestions": [
+		"Места в Google нет: координаты NULL — карта клинику не покажет. Нужна точка (Vuka Karadžića 2, Sutomore) — вручную или после дособора Google Places.",
+		"Сайт не делит врачей по ординациям; к Сутоморе привязаны все, кроме явно подгорицких (Sušić, Vujanović). Если в Сутоморе принимает только часть команды — сократить.",
+		"Услуги Сутоморе: педиатрический осмотр, визит к новорождённому, ЛОР-осмотр — по правилу «если не разделяет — к обоим».",
+		"Ivan Ivanović — частое имя; привязан к существующей карточке ivan-ivanovic (педиатр, Cetinje) по правилу «то же имя + та же специальность». Если в Vuleković работает другой Ivan Ivanović — развести.",
+		"Snežana Barjaktarović Labović — привязана к карточке snezana-barjaktarovic-labovic (ДЗ Бар, гигиена); на сайте Vuleković — «Dr sci. med., specijalista higijene, subspecijalista dijetoterapije»."
+	]
+}

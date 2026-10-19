@@ -1,0 +1,357 @@
+{
+	"schemaVersion": 1,
+	"slug": "ginekolosko-akuserska-ordinacija-filia-tivat",
+	"name": "Ginekološko akušerska ordinacija Filia",
+	"city": "Tivat",
+	"cityId": 4,
+	"googlePlaceId": "ChIJnx6daAAxTBMRv3yePloZC4c",
+	"clinicTypeIds": [
+		7
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ginekolosko-akuserska-ordinacija-filia-tivat.sql",
+		"server/sql/insert-clinic-ginekolosko-akuserska-ordinacija-filia-tivat-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 219,
+		"doctorIds": {},
+		"note": "Подволна 2d, агент V. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Сухой прогон — см. отчёт агента. Новый врач и slug клиники сверены с прод-API (204), julija-samardzic — 200. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 246
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://filia.co.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "WordPress/Elementor (тема xcare), запущен 2024. Главная (табы услуг), /o-nama/ (врачи), /kontakt/, /zakazi-termin/, /service/{ginekologija,trudnoca,sterilitet,maligne-bolesti,endokrinologija}. Демо-страницы темы игнорировались. Цен нет. curl с браузерным UA — 200 (сайт отвечает медленно, до ~60 с)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/tivat/ginekolosko-akuserska-ordinacija-filia.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJnx6daAAxTBMRv3yePloZC4c, 42.4438029 / 18.6969683, +382 66 141 001, «22 Tomičići, Tivat 85320», 16 отзывов (в файле 5) — не импортировались. Часов в файле нет."
+		},
+		{
+			"type": "facebook",
+			"ref": "facebook.com/share/1pxBoJPHxRq7R1we",
+			"collected": null,
+			"machineReadable": false,
+			"note": "Share-ссылка с сайта; не читается — не открывался."
+		}
+	],
+	"coverage": {
+		"address": "Tomičići 22, 85320 — сайт = Google",
+		"phone": "+38266141001 — сайт = Google (второй номер на /kontakt — заглушка «+ 382 ** *** ***»)",
+		"email": "ordinacijafilia@gmail.com;info@filia.co.me — /kontakt",
+		"website": "https://filia.co.me/",
+		"social": "facebook share-ссылка и instagram @ginekoloska_ordinacija_filia — ссылки с сайта",
+		"logo": "https://filia.co.me/wp-content/uploads/2024/05/FILIA-LOGO-200.png (шапка)",
+		"workingHours": "пн–пт 14–20, сб 10–20, вс закрыто — подвал всех страниц (решение координатора 2026-10-09); «Ned: samo kada je hitan slučaj» — фразой в описании, шапка (виджет темы) не взята",
+		"description": "из /o-nama/ и табов услуг главной",
+		"languages": "только SR — других языков на сайте нет",
+		"doctors": "2: julija-samardzic (найдена в БД, ДЗ Тиват) + bozidar-petricevic (новый); консультанты без имён не заводятся",
+		"doctorPhotos": "нет на сайте",
+		"prices": "цен нет — 18 услуг и 11 анализов без цены",
+		"labTests": "11 — спермограмма, спермокультура, мазки на инфекции, HPV PCR, пренатальные скрининги и NIPT",
+		"reviews": "pending — 16 отзывов ждут полной выгрузки"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "menopause-consultation",
+			"nameEn": "Menopause Consultation",
+			"nameSr": "Konsultacija o menopauzi",
+			"categoryIds": [
+				7
+			],
+			"specialtyIds": [
+				5
+			],
+			"reason": "Vita Feminae: «Menopauza — Ublažavanje tegoba menopauzalnog perioda»; Filia: «Menopauza – hormonska supstituciona terapija (HRT)». Записи о менопаузе/HRT в каталоге нет ни под одним названием (поиск menopaus|climacter|hormone replacement — пусто). Общая услуга гинекологических кабинетов. Категория 7 GYNECOLOGY, специальность 5. HRT — синонимом, не отдельной записью.",
+			"note": "Общая запись нескольких клиник порции V (ginekoloska-ordinacija-vita-feminae-kotor, ginekolosko-akuserska-ordinacija-filia-tivat); создаётся идемпотентно в каждом services-SQL."
+		},
+		{
+			"table": "medical_services",
+			"slug": "infertility-consultation",
+			"nameEn": "Infertility Consultation",
+			"nameSr": "Konsultacija o neplodnosti",
+			"categoryIds": [
+				7
+			],
+			"specialtyIds": [
+				5,
+				38
+			],
+			"reason": "Vita Feminae: «Bračna neplodnost — Folikulometrija, priprema za IVF …»; Filia: «Ispitivanje i liječenje steriliteta»; Kavarić Medical: «Dijagnostika i liječenje steriliteta (kod žena i muškaraca)». В каталоге только fertility-couple-subspecialist-examination (субспециалистический осмотр пары, тариф уровня субспециалиста) и психологическое консультирование при бесплодии — консультации специалиста по бесплодию нет. Категория 7, специальности 5 + 38 REPRODUCTIVE_MEDICINE.",
+			"note": "Общая запись нескольких клиник порции V (ginekoloska-ordinacija-vita-feminae-kotor, ginekolosko-akuserska-ordinacija-filia-tivat, kavaric-medical-podgorica); создаётся идемпотентно в каждом services-SQL."
+		}
+	],
+	"services": [
+		{
+			"slug": "gynecological-specialist-examination",
+			"nameEn": "Gynecological Specialist Examination",
+			"price": null,
+			"source": "Ginekološke usluge: «Ginekološki pregled»"
+		},
+		{
+			"slug": "colposcopy",
+			"nameEn": "Colposcopy",
+			"price": null,
+			"source": "«Kolposkopski pregled»"
+		},
+		{
+			"slug": "pap-test-with-smear-collection",
+			"nameEn": "PAP Test with Smear Collection",
+			"price": null,
+			"source": "«PAPA test» (в блоке услуг кабинета — взятие мазка)"
+		},
+		{
+			"slug": "gynecological-ultrasound",
+			"nameEn": "Gynecological Ultrasound",
+			"price": null,
+			"source": "«UZ pregled male karlice»; Intervencije: «UZ dijagnostika endometrijalnog polipa»"
+		},
+		{
+			"slug": "pelvic-color-doppler",
+			"nameEn": "Pelvic Color Doppler",
+			"price": null,
+			"source": "«UZ pregled – color Doppler» (в гинекологии — допплер сосудов малого таза)"
+		},
+		{
+			"slug": "systematic-gynecological-examination-package",
+			"nameEn": "Systematic Gynecological Examination Package",
+			"price": null,
+			"source": "«Sistematski pregled: Ginekološki pregled, kolposkopija, PAPA, VS, UZ male karlice»"
+		},
+		{
+			"slug": "infertility-consultation",
+			"nameEn": "Infertility Consultation",
+			"price": null,
+			"source": "«Ispitivanje i liječenje steriliteta: spermogram, spermokultura hormonska ispitivanja supružnika, folikulometrija»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "folliculometry",
+			"nameEn": "Folliculometry",
+			"price": null,
+			"source": "«… folikulometrija»"
+		},
+		{
+			"slug": "menopause-consultation",
+			"nameEn": "Menopause Consultation",
+			"price": null,
+			"source": "«Menopauza – hormonska supstituciona terapija ( HRT)»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "contraception-consultation",
+			"nameEn": "Contraception Consultation",
+			"price": null,
+			"source": "«Kontracepcija»"
+		},
+		{
+			"slug": "std-testing-package",
+			"nameEn": "STD Testing Package",
+			"price": null,
+			"source": "/service/ginekologija «Oblasti koje nudimo — 05. Polno prenosive bolesti»"
+		},
+		{
+			"slug": "first-pediatric-and-adolescent-gynecology-examination",
+			"nameEn": "First Pediatric and Adolescent Gynecology Examination",
+			"price": null,
+			"source": "/service/ginekologija «Oblasti koje nudimo — 01. Dječija ginekologija … 02. Adolocenska ginekologija»"
+		},
+		{
+			"slug": "bartholin-gland-incision",
+			"nameEn": "Bartholin Gland Incision (Cyst or Abscess Drainage)",
+			"price": null,
+			"source": "Ginekološke intervencije: «Incizija Bartolinijeve žlezde»"
+		},
+		{
+			"slug": "iud-removal",
+			"nameEn": "IUD Removal",
+			"price": null,
+			"source": "«Extrakcija IUD ( spirale)»"
+		},
+		{
+			"slug": "pessary-insertion",
+			"nameEn": "Pessary Insertion",
+			"price": null,
+			"source": "«Aplikacija Pesara»"
+		},
+		{
+			"slug": "pregnancy-specialist-examination",
+			"nameEn": "Pregnancy Specialist Examination",
+			"price": null,
+			"source": "Trudnoća: «Dijagnostika i vođenje trudnoće»"
+		},
+		{
+			"slug": "pregnancy-ultrasound",
+			"nameEn": "Pregnancy Ultrasound",
+			"price": null,
+			"source": "«UZ pregled trudnoće»"
+		},
+		{
+			"slug": "expert-pregnancy-ultrasound",
+			"nameEn": "Expert Pregnancy Ultrasound",
+			"price": null,
+			"source": "«Screening fetalnih anomalija - UZ pregled» (экспертное УЗИ = скрининг аномалий; синоним добавлен)"
+		}
+	],
+	"labTests": [
+		{
+			"slug": "spermogram",
+			"nameEn": "Spermogram",
+			"price": null,
+			"source": "«Ispitivanje … steriliteta: spermogram, …»"
+		},
+		{
+			"slug": "sperm-culture-bacteria",
+			"nameEn": "Sperm Culture for Bacteria",
+			"price": null,
+			"source": "«… spermokultura …»"
+		},
+		{
+			"slug": "cervical-swab-bacteria",
+			"nameEn": "Cervical Swab for Bacteria",
+			"price": null,
+			"source": "Laboratorijske analize: «Dijagnostika cervikalnih infekcija»; /service/trudnoca «cervikalni bris i antibiogram»"
+		},
+		{
+			"slug": "chlamydia-genital-swab",
+			"nameEn": "Chlamydia trachomatis Genital Swab",
+			"price": null,
+			"source": "«Chlamydia, …» — метод не назван, запись «Chlamydia trachomatis – genitalni bris» без метода"
+		},
+		{
+			"slug": "mycoplasma-ureaplasma-genital-swab",
+			"nameEn": "Mycoplasma Ureaplasma Genital Swab",
+			"price": null,
+			"source": "«… Micoplazma, Ureaplazma, …» — запись «Mycoplasma + Ureaplasma – genitalni bris» без метода"
+		},
+		{
+			"slug": "bacterial-vaginosis-test",
+			"nameEn": "Bacterial Vaginosis Test",
+			"price": null,
+			"source": "«… Bakterijska vaginoza...»"
+		},
+		{
+			"slug": "hpv-genotyping-pcr",
+			"nameEn": "HPV Genotyping PCR",
+			"price": null,
+			"source": "«HPV tipizacija – PCR metodom»"
+		},
+		{
+			"slug": "double-test-first-trimester-screening",
+			"nameEn": "Double Test First Trimester Screening",
+			"price": null,
+			"source": "Trudnoća: «Otkrivanje genetskih (hromozomskih) anomalija ploda: Double, …»"
+		},
+		{
+			"slug": "triple-test-second-trimester-screening",
+			"nameEn": "Triple Test Second Trimester Screening",
+			"price": null,
+			"source": "«… Triple, …»"
+		},
+		{
+			"slug": "quadruple-test",
+			"nameEn": "Quadruple Test",
+			"price": null,
+			"source": "«… Quadriple test» (так на сайте)"
+		},
+		{
+			"slug": "non-invasive-prenatal-test-nipt",
+			"nameEn": "Non-Invasive Prenatal Test (NIPT)",
+			"price": null,
+			"source": "«NOVO – NIPT test ( otkrivanje genetskih anomalija ploda iz krvi majke)» — бренд не назван, общая запись NIPT"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "julija-samardzic",
+			"nameSr": "Julija Samardžić",
+			"professionalTitle": "Dr",
+			"position": "Ginekolog",
+			"specialtyIds": [
+				5
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": true,
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"gynecological-specialist-examination"
+			],
+			"note": "Найдена в БД (julija-samardzic, Dom zdravlja Tivat, гинеколог) — привязка, дозаполнение name_ru/name_en."
+		},
+		{
+			"slug": "bozidar-petricevic",
+			"nameSr": "Božidar Petričević",
+			"professionalTitle": "Dr",
+			"position": "Ginekolog",
+			"specialtyIds": [
+				5
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"gynecological-specialist-examination"
+			],
+			"note": "Новый; прод-API 204."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«Imamo i konsultante iz oblasti endokrinologije, mikrobiologije itd.»",
+			"reason": "Имена не названы — врачей не заводили."
+		},
+		{
+			"source": "/our-team-member/ (Jordan Peele, Bobby Flay …), форма «Zakaži termin» (Marija, Sanja, Jovan, Nikola, Sara), блог «Savjeti», «Homepage 02–05» и др.",
+			"reason": "Демо-контент темы xcare."
+		},
+		{
+			"source": "«Ispitivanje i liječenje poremećaja menstrualnog ciklusa»; /service/endokrinologija «Poremećaj polnog sazrijevanja … Hiperprolaktinemija … Endokrinologija menopauze»; /service/ginekologija «Disfunkcionalna krvarenja kod adolescentkinja»",
+			"reason": "Темы приёма гинеколога (покрываются gynecological-specialist-examination / menopause-consultation), отдельной услуги каталога нет."
+		},
+		{
+			"source": "Laboratorijske analize: «Određivanje nivoa hormona»; «hormonska ispitivanja supružnika»",
+			"reason": "Конкретные гормоны не названы — анализы не заводили."
+		},
+		{
+			"source": "Trudnoća: «Višetruka trudnoća, Spontani pobačaj, Prijevremeni porođaj, Infekcije ploda, Zastoj rasta ploda, Hipertenzivni sindrom u trudnoći, dijabetes melitus i trudnoća, Rh aloimunizacija»",
+			"reason": "Состояния, которые ведёт кабинет, а не услуги — покрываются pregnancy-specialist-examination."
+		},
+		{
+			"source": "/service/maligne-bolesti «Kod nas možete naći informacije i preporuke za liječenje … bolesti dojke, jajnika, endometrijuma, grlica …»; в форме записи пункт «Onkološko savjetovanje»",
+			"reason": "Онкогинеколог не назван; в каталоге только gynecological-oncologist-subspecialist-examination (субспециалист) — приписывать нельзя. Перечисленные там методы (PAPA, HPV DNK, мазки, УЗИ, онкомаркеры) — справочный текст; PAPA/HPV/мазки/УЗИ уже заведены из перечня, онкомаркеры конкретно не названы."
+		},
+		{
+			"source": "Шапка «Ponedeljak – Petak 08:00 - 20:00, Subota 09:00 - 17:00, Nedelja 09:00 - 15:00, 24/7 Usluga dostupne»",
+			"reason": "Виджет темы xcare (у демо — те же поля с другими цифрами) — в часы не взят, часы по подвалу (решение координатора 2026-10-09). «24/7» — не услуга."
+		}
+	],
+	"openQuestions": [],
+	"resolved": [
+		{
+			"topic": "Часы работы",
+			"date": "2026-10-09",
+			"decision": "Решение координатора: часы по подвалу всех страниц — Пн–Пт 14:00–20:00, Сб 10:00–20:00, Вс closed; «Ned: samo kada je hitan slučaj» — фразой в описании. Шапка (виджет темы xcare с «24/7 Usluga dostupne», Пн–Пт 08–20, Сб 09–17, Вс 09–15) не берётся."
+		}
+	]
+}

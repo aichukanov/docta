@@ -1,0 +1,390 @@
+{
+	"schemaVersion": 1,
+	"slug": "dental-estetic-centar-podgorica",
+	"name": "Dental & Estetic Centar",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJ2UUYSb3rTRMRCFwiFhxaskc",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dental-estetic-centar-podgorica.sql",
+		"server/sql/insert-clinic-dental-estetic-centar-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 228,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2e, агент X. Сайт свежий (2026-10). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 255
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.dentalesteticcentar.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Статический HTML (me + 8 языков), sitemap.xml. Прочитаны главная, stomatolog-podgorica, o-nama, kontakt, dentalni-turizam, 4 SEO-страницы, /usluge/stomatoloske-usluge.html + 15 подстраниц и 4 вида протезов, /usluge/estetika-lica.html + 8 подстраниц, блог (lijecenje-zuba, rekonstrukcija-zagriza-zuba, provjeren-kvalitet). /usluge/radovi-na-implantima.html — 404 (содержимое на /usluge/zubni-implanti.html). Цен нет, кроме «Prvi pregled je besplatan»."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/stomatoloska-ordinacija-dental-estetic-centar.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatoloska ordinacija \"Dental&Estetic Centar\"», «12 Jerevanska», +382 68 602 648, 12 отзывов (rating 4) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Jerevanska 12, Zabjelo — сайт = Google; координаты — место Google",
+		"phone": "+38268602648 — сайт = Google",
+		"email": "pzudentalesteticcentar@gmail.com — сайт",
+		"website": "https://www.dentalesteticcentar.com/",
+		"social": "Facebook https://www.facebook.com/profile.php?id=100054388485792, Instagram https://www.instagram.com/dental_estetic_centar/ — js/layout.js сайта",
+		"logo": "https://www.dentalesteticcentar.com/images/site/stomatolog-dental-estetc-centar.webp",
+		"workingHours": "пн–пт 9–13 и 17–20 — /kontakt.html",
+		"doctors": "нет — на сайте не названы",
+		"doctorPhotos": "нет",
+		"doctorBios": "нет",
+		"prices": "1 из 40: первичный осмотр 0 € («Prvi pregled je besplatan»); остальные NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "gummy-smile-correction",
+			"nameEn": "Gummy Smile Correction",
+			"nameSr": "Korekcija gingivalnog osmijeha (gummy smile)",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "stefanijadental.me /parodontologija/: «Bavimo se … menadžmentom mekog tkiva i korekcijom gummy smile-a». Отдельной записи нет (поиск gummy / «десн* улыбк» / gingival smile — пусто). Метод сайт не называет (гингивэктомия, удлинение коронки или ботокс) — gingivectomy/dental-crown-lengthening не приписываем; общая услуга → новая запись. Категория 20, специальность 78.",
+			"reusedFrom": "stefanija-dental-podgorica",
+			"note": "Запись заведена импортом stefanija-dental-podgorica; здесь повторена идемпотентно (NOT EXISTS по slug), чтобы файл не зависел от порядка применения."
+		},
+		{
+			"table": "medical_services",
+			"slug": "smile-makeover",
+			"nameEn": "Smile Makeover",
+			"nameSr": "Smile makeover (kompletno uređenje osmijeha)",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "omnidental.me (главная, «Estetska Stomatologija»): «izbijeljivanje zuba - kompozitne fasete - porcelanske fasete (viniri) - smile makeover - Invisalign» — отдельным пунктом рядом с конкретными процедурами. В каталоге нет (поиск makeover/smile — только digital-smile-design (план), hollywood-smile-zirconia-crown (конкретные циркониевые коронки) и mommy-makeover (пластика)). Комплексное эстетическое лечение улыбки — общая услуга, не план и не конкретная коронка → новая запись. Категория 20, специальность 78.",
+			"reusedFrom": "omnidental-bar",
+			"note": "Запись заведена импортом omnidental-bar; здесь повторена идемпотентно (NOT EXISTS по slug), чтобы файл не зависел от порядка применения."
+		},
+		{
+			"table": "medical_services",
+			"slug": "immediate-implant-loading",
+			"nameEn": "Immediate Implant Loading (Teeth in 24 Hours)",
+			"nameSr": "Imedijatno opterećenje implantata (zubi za 24h)",
+			"categories": [
+				20
+			],
+			"specialties": [
+				74,
+				78
+			],
+			"reason": "dentalesteticcentar.com /usluge/zubi-za-24h.html: «„Zubi za 24h“ označava brzi protokol u kojem se nakon ekstrakcija ili ugradnje implantata isti dan ili u vrlo kratkom roku postavlja privremeni fiksni osmijeh … Konačni keramički rad dolazi nakon zarastanja». В каталоге нет (поиск immediate load / same day / 24 / in a day): immediate-implant-placement — немедленная установка импланта в лунку, без нагрузки; All-on-4/6 — конкретные конструкции, сайт их не называет. Протокол немедленной нагрузки — общая услуга → новая запись. Категория 20; специальности 74, 78 (как dental-implant-placement)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "full-mouth-reconstruction",
+			"nameEn": "Full Mouth Reconstruction",
+			"nameSr": "Kompletna rekonstrukcija zuba i zagriza",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "dentalesteticcentar.com /usluge/kompletna-restauracija.html: «cjelokupnu rekonstrukciju lica i vilica … Plan može uključivati implantate, krunice, vinire, proteze … tako da donja trećina lica, zagriz i osmijeh čine cjelinu»; блог /rekonstrukcija-zagriza-zuba/: «Kod odraslih … često može da vrati visinu zuba, oslonac i sklad osmijeha krunama, vinirima ili kompletnom restauracijom»; /usluge/anti-aging-stomatologija.html: «krunice, viniri i podizanje zagriza». В каталоге нет (поиск full mouth / rehabilitat / bite / reconstruction). smile-makeover — эстетика улыбки (этот же импорт ставит его на Hollywood/Natural smile); здесь — функциональная реабилитация с восстановлением высоты прикуса → отдельная общая запись. Категория 20, специальность 78."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "complete-dental-cleaning",
+			"synonym": "Detox usne duplje",
+			"language": "sr",
+			"reason": "dentalesteticcentar.com /usluge/detox-usne-duplje.html: «Detox usne duplje je temeljno čišćenje: uklanjanje kamenca, mekog plaka, pigmentacija i bakterijskog biofilma» — собственное название клиники для полной профессиональной чистки (complete-dental-cleaning). Дубль не заводим, формулировку — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "complete-dental-cleaning",
+			"synonym": "Детокс усне дупље",
+			"language": "sr-cyrl",
+			"reason": "dentalesteticcentar.com /usluge/detox-usne-duplje.html: «Detox usne duplje je temeljno čišćenje: uklanjanje kamenca, mekog plaka, pigmentacija i bakterijskog biofilma» — собственное название клиники для полной профессиональной чистки (complete-dental-cleaning). Дубль не заводим, формулировку — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "complete-dental-cleaning",
+			"synonym": "Детокс полости рта",
+			"language": "ru",
+			"reason": "dentalesteticcentar.com /usluge/detox-usne-duplje.html: «Detox usne duplje je temeljno čišćenje: uklanjanje kamenca, mekog plaka, pigmentacija i bakterijskog biofilma» — собственное название клиники для полной профессиональной чистки (complete-dental-cleaning). Дубль не заводим, формулировку — синонимом."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Initial Dental Examination and Medical Record Opening",
+			"slug": "initial-dental-examination-and-medical-record-opening",
+			"source": "/stomatolog-podgorica.html: «Prvi pregled je besplatan», «Besplatan prvi pregled»; /lijecenje-zuba/: «Pregled je besplatan. Kažemo šta vidimo i šta predlažemo» — 0 € (как dental-montenegro-budva)",
+			"price": 0,
+			"priceMin": null,
+			"priceMax": null
+		},
+		{
+			"nameEn": "Follow-up Dental Examination",
+			"slug": "follow-up-dental-examination",
+			"source": "/lijecenje-zuba/: «Ako vas ništa ne boli, kontrola i dalje ima smisla … Poslije rada dobijate kada da se vratite na kontrolu»"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "/usluge/izbjeljivanje-zuba.html: «Profesionalno izbjeljivanje zuba u ordinaciji daje brži i kontrolisaniji rezultat od kućnih preparata»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "/usluge/plombe.html: «Kompozitne plombe — „Bijele plombe“ od smole u boji zuba»"
+		},
+		{
+			"nameEn": "Amalgam Filling",
+			"slug": "amalgam-filling",
+			"source": "/usluge/plombe.html: «Amalgamske plombe — „Srebrne plombe“ od mješavine metala»"
+		},
+		{
+			"nameEn": "Ceramic Inlay Onlay",
+			"slug": "ceramic-inlay-onlay",
+			"source": "/usluge/plombe.html: «Keramičke plombe — Od porculana»; /usluge/inley.html: «laboratorijski izrađeni ispuni (najčešće keramika ili kompozit)»"
+		},
+		{
+			"nameEn": "Gold Inlay",
+			"slug": "gold-inlay",
+			"source": "/usluge/plombe.html: «Zlatne plombe — Vrlo izdržljive (često preko 20 godina) … za stražnje zube»"
+		},
+		{
+			"nameEn": "Composite Inlay Onlay",
+			"slug": "composite-inlay-onlay",
+			"source": "/usluge/inley.html: «Inley i onley su laboratorijski izrađeni ispuni (najčešće keramika ili kompozit)»"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "/usluge/metalkeramicke-krunice.html: «Metalkeramička krunica ima metalnu kapicu prekrivenu keramikom»"
+		},
+		{
+			"nameEn": "Temporary Crown",
+			"slug": "temporary-crown",
+			"source": "/usluge/metalkeramicke-krunice.html: «Nakon brušenja zuba uzima se otisak, postavlja se privremena krunica, zatim se cementira gotov rad»"
+		},
+		{
+			"nameEn": "All-Ceramic Crown",
+			"slug": "all-ceramic-crown",
+			"source": "/usluge/bezmetalne-krunice.html: «Bezmetalne (keramičke / cirkonijumske) krunice nemaju metalnu podlogu»"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "/usluge/bezmetalne-krunice.html: «Bezmetalne (keramičke / cirkonijumske) krunice»; title «Cirkon i keramika»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "/usluge/viniri.html: «Fasete (viniri) su tanke keramičke ljuspice koje se lijepe na prednju stranu zuba»; /viniri-podgorica.html"
+		},
+		{
+			"nameEn": "Dental Mock-up",
+			"slug": "dental-mock-up",
+			"source": "/usluge/viniri.html: «Proces: pregled i digitalno/analitičko planiranje, eventualni mock-up, preparacija …»"
+		},
+		{
+			"nameEn": "Smile Makeover",
+			"slug": "smile-makeover",
+			"source": "/usluge/hollywood-smile.html: «Estetski tretman za savršen, bijeli i simetričan osmijeh: izbjeljivanje, keramičke fasete ili krunice, korekcija zagriza i linije osmijeha»; /usluge/natural-smile.html: «diskretnije vinire, blago izbjeljivanje i minimalno brušenje» (запись заведена импортом omnidental-bar)"
+		},
+		{
+			"nameEn": "Full Mouth Reconstruction",
+			"slug": "full-mouth-reconstruction",
+			"source": "/usluge/kompletna-restauracija.html: «cjelokupnu rekonstrukciju lica i vilica … implantate, krunice, vinire, proteze»; /rekonstrukcija-zagriza-zuba/; /usluge/anti-aging-stomatologija.html: «krunice, viniri i podizanje zagriza» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Immediate Implant Loading (Teeth in 24 Hours)",
+			"slug": "immediate-implant-loading",
+			"source": "/usluge/zubi-za-24h.html: «nakon ekstrakcija ili ugradnje implantata isti dan ili u vrlo kratkom roku postavlja privremeni fiksni osmijeh» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Complete Dental Cleaning",
+			"slug": "complete-dental-cleaning",
+			"source": "/usluge/detox-usne-duplje.html: «Detox usne duplje je temeljno čišćenje: uklanjanje kamenca, mekog plaka, pigmentacija i bakterijskog biofilma» → синоним «Detox usne duplje»"
+		},
+		{
+			"nameEn": "Gummy Smile Correction",
+			"slug": "gummy-smile-correction",
+			"source": "/usluge/gummy-smile.html: «Rješenja zavise od uzroka: botox za usnu, korekcija desni (gingivektomija / produženje krune), viniri ili kombinacija» (запись заведена импортом stefanija-dental-podgorica)"
+		},
+		{
+			"nameEn": "Gingivectomy",
+			"slug": "gingivectomy",
+			"source": "/usluge/gummy-smile.html: «korekcija desni (gingivektomija / produženje krune)»"
+		},
+		{
+			"nameEn": "Dental Crown Lengthening",
+			"slug": "dental-crown-lengthening",
+			"source": "/usluge/gummy-smile.html: «korekcija desni (gingivektomija / produženje krune)»"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "/usluge/zubni-implanti.html «Radovi na implantima»: «Ugradnja je u lokalnoj anesteziji. Osteointegracija traje 3 do 6 mjeseci»; /zubni-implanti-podgorica.html"
+		},
+		{
+			"nameEn": "Implant Suprastructure",
+			"slug": "implant-suprastructure",
+			"source": "/usluge/zubni-implanti.html: «Zatim se postavlja gingivo former, pa suprastruktura i protetski rad»"
+		},
+		{
+			"nameEn": "Complete Denture",
+			"slug": "complete-denture",
+			"source": "/usluge/proteze.html: «Potpune proteze — Kod gubitka svih prirodnih zuba prekrivaju cijelu vilicu»"
+		},
+		{
+			"nameEn": "Partial Denture",
+			"slug": "partial-denture",
+			"source": "/usluge/proteze.html: «Parcijalne proteze — Kada nedostaje jedan ili više zuba, a preostali zdravi zubi služe kao oslonac»"
+		},
+		{
+			"nameEn": "Complete Acrylic Denture",
+			"slug": "complete-acrylic-denture",
+			"source": "/usluge/akrilatna.html: «Akrilatna (plastična) proteza je klasična totalna ili parcijalna proteza od akrilata»"
+		},
+		{
+			"nameEn": "Partial Acrylic Denture",
+			"slug": "partial-acrylic-denture",
+			"source": "/usluge/akrilatna.html: «… klasična totalna ili parcijalna proteza od akrilata»"
+		},
+		{
+			"nameEn": "Flexible Denture",
+			"slug": "flexible-denture",
+			"source": "/usluge/fleksibilne-proteze.html: «Fleksibilne (termoplastične) proteze nemaju metalne kukice … Pogodne su za parcijalne nedostatke zuba»"
+		},
+		{
+			"nameEn": "Skeletal Partial Denture",
+			"slug": "skeletal-partial-denture",
+			"source": "/usluge/parcijalne-skeletirane-proteze.html: «Skeletirana (metalna) parcijalna proteza ima tanki liveni skelet»"
+		},
+		{
+			"nameEn": "Telescopic Crown",
+			"slug": "telescopic-crown",
+			"source": "/usluge/proteze-na-teleskop-krunicama.html: «Teleskop proteza se veže na preostale zube preko dvostrukih krunica (unutrašnja na zubu, spoljašnja u protezi)» — единственная запись (Teleskop krunica)"
+		},
+		{
+			"nameEn": "Hyaluronic Acid Filler",
+			"slug": "hyaluronic-acid-filler",
+			"source": "/usluge/hijaluronski-fileri.html: «Hijaluronski fileri su dermalni fileri koji se ubrizgavaju u kožu lica»; «Remodelacija jagodica»"
+		},
+		{
+			"nameEn": "Lip Augmentation",
+			"slug": "lip-augmentation",
+			"source": "/usluge/hijaluronski-fileri.html: «Usne: Hijaluronskim filerima možemo korigovati oblik, definiciju ivica, volumen i simetriju usana»"
+		},
+		{
+			"nameEn": "Wrinkle Correction Hyaluronic Acid",
+			"slug": "wrinkle-correction-hyaluronic-acid",
+			"source": "/usluge/hijaluronski-fileri.html: «Nazolabijalne bore», «Bore marionete», «Bore iznad i ispod usana», «Čeona regija i bore između obrva»"
+		},
+		{
+			"nameEn": "Botox Injection",
+			"slug": "botox-injection",
+			"source": "/usluge/botox.html: «Botox (botulinum toxin) … posebno kod mimičnih bora … čelo, prostor između obrva i bore oko očiju»"
+		},
+		{
+			"nameEn": "PRP Facial Treatment",
+			"slug": "prp-facial-treatment",
+			"source": "/usluge/prp-tretman.html: «PRP tretman (Platelet Rich Plasma) … za podmlađivanje kože … aplikuje se u kožu tankim iglicama»"
+		},
+		{
+			"nameEn": "Face Lifting COG Threads",
+			"slug": "face-lifting-cog-threads",
+			"source": "/usluge/cog-niti.html: «COG niti su savremena metoda za podmlađivanje lica bez hirurškog zahvata … za lifting i konturiranje lica»"
+		},
+		{
+			"nameEn": "Mesothreads Treatment",
+			"slug": "mesothreads-treatment",
+			"source": "/usluge/mezoniti.html: «Mezoniti su resorptivne niti koje se postavljaju u kožu radi zatezanja, liftinga i stimulacije kolagena»"
+		},
+		{
+			"nameEn": "Chemical Peel",
+			"slug": "chemical-peel",
+			"source": "/usluge/hemijski-piling.html: «Hemijski piling podrazumijeva nanošenje rastvora kiselina na kožu»"
+		},
+		{
+			"nameEn": "Facial Mesotherapy Single Treatment",
+			"slug": "facial-mesotherapy-single-treatment",
+			"source": "/usluge/mezoterapija.html: «Mezoterapija lica … Obično serija od 2 do 4 tretmana» — пакет без числа и цены → разовый tretman"
+		},
+		{
+			"nameEn": "Profhilo Treatment",
+			"slug": "profhilo-treatment",
+			"source": "/usluge/profhilo-tretman.html: «Profhilo … Dvije sesije, razdvojene četiri sedmice»"
+		}
+	],
+	"doctors": [],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/usluge/anti-aging-stomatologija.html: «Konsultacija je besplatna»",
+			"reason": "То же, что бесплатный первичный осмотр — отдельной консультации с ценой 0 не заводили (initial-dental-examination… = 0)."
+		},
+		{
+			"source": "/usluge/zubni-implanti.html: «Na implantima se postavljaju krunice ili mostovi; kod bezubosti fiksni radovi mogu se osloniti na implantate»; «gingivo former»",
+			"reason": "Материал коронок/мостов и вид конструкции (All-on-X) не названы — записи по материалу не угадываем; формирователь десны — этап, не услуга. Суперструктура заведена."
+		},
+		{
+			"source": "/usluge/metalkeramicke-krunice.html: «pogodna za bočne zube i mostove»",
+			"reason": "Мост упомянут как применение, без отдельной работы — metal-ceramic-bridge-pontic не ставили."
+		},
+		{
+			"source": "/usluge/viniri.html: «privremene fasete», «noćna udlaga (po potrebi)», «digitalno/analitičko planiranje»",
+			"reason": "Этапы и рекомендации внутри процесса изготовления виниров — отдельными услугами не заводили (Digital Smile Design не назван)."
+		},
+		{
+			"source": "/usluge/gummy-smile.html: «botox za usnu»",
+			"reason": "Ботокс заведён (botox-injection); отдельной записи «ботокс при десневой улыбке» в каталоге нет, а сайт подаёт это как один из вариантов коррекции — покрыто gummy-smile-correction."
+		},
+		{
+			"source": "/usluge/estetika-lica.html: «obrve, usne, ožiljci»; «osvježenje kože (piling, mezoterapija, PRP)»",
+			"reason": "Зоны применения перечисленных процедур — отдельные процедуры заведены со своих страниц."
+		},
+		{
+			"source": "/usluge/mezoterapija.html: «Koristi se i protiv opadanja kose»",
+			"reason": "Упомянуто как применение мезотерапии, без отдельной страницы — scalp-mesotherapy не ставили."
+		},
+		{
+			"source": "/dentalni-turizam.html: «apartmanski smještaj», «prevoz od i do aerodroma», «organizaciji izleta»; «potrebno je da nam pošaljete OPT snimak»",
+			"reason": "Сервис дентального туризма, не медицинские услуги; ортопан пациент присылает свой — panoramic-x-ray не ставили. В описание."
+		},
+		{
+			"source": "Главная: «Zagarantovani uspijeh tretmana … dugoročnom garancijom»; «Imamo niže cijene … u odnosu na druge stomatološke centre u inostranstvu»",
+			"reason": "Условия и маркетинг, не услуги — не заводили; гарантию в описание не выносили."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Новые записи-«концепции»",
+			"detail": "Заведены full-mouth-reconstruction (Kompletna restauracija / rekonstrukcija zagriza) и immediate-implant-loading («Zubi za 24h»); Hollywood smile и Natural smile поставлены на smile-makeover (из omnidental-bar), а не на hollywood-smile-zirconia-crown — сайт описывает Hollywood smile как план «viniri ili krunice», без циркония. Если координатор предпочитает меньше обобщающих записей — свести."
+		}
+	]
+}

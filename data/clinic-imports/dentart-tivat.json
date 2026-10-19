@@ -1,0 +1,629 @@
+{
+	"schemaVersion": 1,
+	"slug": "dentart-tivat",
+	"name": "Stomatološka ordinacija DentArt",
+	"city": "Tivat",
+	"cityId": 4,
+	"googlePlaceId": "ChIJFyjGiygyTBMROATKetg5SU8",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dentart-tivat.sql",
+		"server/sql/insert-clinic-dentart-tivat-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 167,
+		"doctorIds": {
+			"sandra-stanisic": 1854,
+			"zorica-popovic": 1855
+		},
+		"note": "Порядок применения обязателен: services-файл резолвит клинику по google_place_id/slug. Сгенерировано агентом A волны 1; новые записи каталога — также в data/clinic-imports/_wave1-new-catalog-A.json (координатор сверяет пересечения с B/C до применения). clinicId и doctorIds заполнить после применения из VERIFICATION. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 194
+	},
+	"pricelist": {
+		"url": "https://dentart.me/cenovnik/",
+		"date": "2022-03-19",
+		"dateSource": "wp-json /wp/v2/pages: modified страницы cenovnik 2022-03-19T13:32:43 (создана 2020-11-23); футер «Copyright © 2022». Это дата правки страницы, не обязательно дата цен.",
+		"rows": 46,
+		"rowsMapped": 46,
+		"rowsDisputed": 0
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://dentart.me/cenovnik/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "WordPress, сырой HTML, curl. В меню не слинкован. 46 строк «20.00 €». wp-json: modified 2022-03-19."
+		},
+		{
+			"type": "website",
+			"ref": "https://dentart.me/ (блок «Naš tim») и https://dentart.me/o-nama/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Dr Sandra Stanišić (rođ. Alavanja) — doktor stomatologije, с био, основала ординацию в 2007; Dr Zorica Popović — opšti stomatolog, с био; Milica Lutovac Radonjić — stomatološka sestra (не врач). Портреты jpg, отдаются 200 image/jpeg. «U ordinaciji su zaposlena dva doktora stomatologije … angažuje i renomirane stručnjake u svim specijalističkim oblastima»."
+		},
+		{
+			"type": "website",
+			"ref": "https://dentart.me/stomatoloske-usluge/, /estetska-stomatologija/, /rendgen-dijagnostika/, /dentalni-turizam/, /mezoterapija/, /hijaluronski-fileri/, /botox/, /laserska-epilacija/, /kontakt/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Описание и перечни услуг; часы «PON - PET 9 - 20 h; subotom i nedjeljom ne radimo»; email ordinacija@dentart.me; телефоны +382 69 358 322, +382 69 047 183, +382 32 671 120; Facebook/Instagram. Акции на главной (весна 2022, «Nagradna igra do 01.05.2022») не берём."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/tivat/dentart.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.4195315 / 18.7169773 (единственный источник), телефон +382 32 672 210 — на сайте такого нет (там 671 120), адрес «ul. Dumidran, bb, Tivat 85320». Рейтинг 4.0, 23 отзыва, в файле 5."
+		}
+	],
+	"coverage": {
+		"address": "Dumidran bb — сайт и Google совпадают; кириллица «Думидран бб»",
+		"phone": "+38269358322;+38269047183;+38232671120;+38232672210 — три с сайта + номер Google (на сайте его нет), см. openQuestions",
+		"email": "ordinacija@dentart.me — футер",
+		"website": "https://dentart.me/",
+		"social": "facebook.com/dentart.dentart.7, @dentart_tivat",
+		"logo": "https://dentart.me/wp-content/uploads/dentart_logo.png (200 image/png)",
+		"workingHours": "пн–пт 09:00–20:00, сб–вс closed — «PON - PET 9 - 20 h; subotom i nedjeljom ne radimo»",
+		"languages": "сайт (только на черногорском) других языков не заявляет; страница «Dentalni turizam» про иностранцев, но язык приёма не называет → только SR",
+		"doctors": "2 врача, оба новые в БД (по name_sr, перевёрнутому имени, девичьей фамилии Alavanja и slug — пусто). Фото с сайта, био у обоих",
+		"doctorServices": "сайт не приписывает услуги врачам — clinic_medical_service_doctors не заполнялась",
+		"services": "52 записей каталога: 46 с ценой, 6 без цены; новых в каталоге 6. 46 из 46 строк прайса + бесплатный осмотр с главной + 6 позиций со страниц услуг без цены (домашнее отбеливание, зубной декор, мезотерапия, филлеры, ботокс, лазерная эпиляция).",
+		"labTests": "лаборатории нет — анализов не заводили",
+		"reviews": "pending: в файле места Google 5 из 23 — ждут полной выгрузки приложением юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "teeth-whitening-per-arch",
+			"nameEn": "Teeth Whitening per Arch",
+			"nameSr": "Izbjeljivanje zuba po vilici",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "DentArt «izbjeljivanje zuba po vilici 100 €»: способ (домашнее/кабинетное) не назван. В каталоге «по челюсти» есть только Home Teeth Whitening per Arch и In-Office Teeth Whitening Single Arch — оба приписывают способ."
+		},
+		{
+			"table": "medical_services",
+			"slug": "pulpitis-treatment-per-canal",
+			"nameEn": "Pulpitis Treatment per Canal",
+			"nameSr": "Liječenje pulpitisa po kanalu",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "DentArt «pulpit po kanalu 15 €». В каталоге пульпит по корням (с NiTi/машинный) или без единицы; цена за канал в generic Pulpitis Treatment ввела бы в заблуждение."
+		},
+		{
+			"table": "medical_services",
+			"slug": "dental-gangrene-treatment-per-canal",
+			"nameEn": "Dental Gangrene Treatment per Canal",
+			"nameSr": "Liječenje gangrene po kanalu",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "DentArt «gangrene po kanalu 20 €». В каталоге гангрена по корням (1/2/3) — канал ≠ корень."
+		},
+		{
+			"table": "medical_services",
+			"slug": "dental-air-polishing",
+			"nameEn": "Dental Air Polishing",
+			"nameSr": "Pjeskarenje zuba",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "DentArt «pjeskarenje svih zuba 20 €» отдельно от «skidanje kamenca». Dental Calculus Removal and Air-Flow включает удаление камня."
+		},
+		{
+			"table": "medical_services",
+			"slug": "dental-implant-with-abutment",
+			"nameEn": "Dental Implant with Abutment",
+			"nameSr": "Ugradnja implanta sa nadogradnjom",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78,
+				74
+			],
+			"reason": "DentArt «ugradnja implanta + nadogradnja 800 €» — пакет. Цена в Dental Implant Placement (только имплант) завысила бы позицию."
+		},
+		{
+			"table": "medical_services",
+			"slug": "complete-denture-with-cast-metal-base",
+			"nameEn": "Complete Denture with Cast Metal Base",
+			"nameSr": "Totalna skeletirana proteza",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "DentArt «totalna skeletirana proteza 400 €» («metalom ojačane akrilatne proteze» на /stomatoloske-usluge/). Skeletal Partial Denture — частичный протез."
+		}
+	],
+	"services": [
+		{
+			"slug": "panoramic-x-ray",
+			"nameEn": "Panoramic X-Ray",
+			"source": "Cjenovnik usluga: ortopan snimak — 20.00 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "intraoral-x-ray",
+			"nameEn": "Intraoral X-Ray",
+			"source": "Cjenovnik usluga: retroalveolarni snimak — 10.00 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-first-aid",
+			"nameEn": "Dental First Aid",
+			"source": "Bolesti zuba: prva pomoć — 10.00 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "pulpitis-treatment-per-canal",
+			"nameEn": "Pulpitis Treatment per Canal",
+			"source": "Bolesti zuba: pulpit po kanalu — 15.00 €",
+			"price": 15,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-gangrene-treatment-per-canal",
+			"nameEn": "Dental Gangrene Treatment per Canal",
+			"source": "Bolesti zuba: gangrene po kanalu — 20.00 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "deep-caries-treatment",
+			"nameEn": "Deep Caries Treatment",
+			"source": "Bolesti zuba: liječenje dubokog karijesa — 10.00 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-filling-single-surface",
+			"nameEn": "Dental Filling Single Surface",
+			"source": "Bolesti zuba: plomba 1 površina — 25.00 €",
+			"price": 25,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-filling-two-surfaces",
+			"nameEn": "Dental Filling Two Surfaces",
+			"source": "Bolesti zuba: plomba 2 površine — 30.00 €",
+			"price": 30,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-filling-three-surfaces",
+			"nameEn": "Dental Filling Three Surfaces",
+			"source": "Bolesti zuba: plomba 3 površine — 35.00 €",
+			"price": 35,
+			"priceMax": null
+		},
+		{
+			"slug": "internal-bleaching-of-devitalized-tooth",
+			"nameEn": "Internal Bleaching of Devitalized Tooth",
+			"source": "Bolesti zuba: izbjeljivanje devitaliziranog zuba — 20.00 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "teeth-whitening-per-arch",
+			"nameEn": "Teeth Whitening per Arch",
+			"source": "Bolesti zuba: izbjeljivanje zuba po vilici — 100.00 €",
+			"price": 100,
+			"priceMax": null
+		},
+		{
+			"slug": "primary-tooth-pulp-treatment",
+			"nameEn": "Primary Tooth Pulp Treatment",
+			"source": "Dječija i preventivna stomatologija: pulpit mliječnog zuba — 10.00 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "infected-tooth-drainage",
+			"nameEn": "Infected Tooth Drainage",
+			"source": "Dječija i preventivna stomatologija: drenaža mliječnog zuba — 5.00 €",
+			"price": 5,
+			"priceMax": null,
+			"note": "Детской записи дренажа нет; Infected Tooth Drainage — generic"
+		},
+		{
+			"slug": "composite-filling-on-primary-tooth",
+			"nameEn": "Composite Filling on Primary Tooth",
+			"source": "Dječija i preventivna stomatologija: plomba na mliječnom zubu — 20.00 €",
+			"price": 20,
+			"priceMax": null,
+			"note": "Единственная запись пломбы молочного зуба; материал сайт не называет"
+		},
+		{
+			"slug": "primary-tooth-extraction",
+			"nameEn": "Primary Tooth Extraction",
+			"source": "Dječija i preventivna stomatologija: vađenje mliječnog zuba sa anestezijijom — 15.00 € | Dječija i preventivna stomatologija: vađenje mliječnog zuba bez anestezije — 5.00 €",
+			"price": 5,
+			"priceMax": 15,
+			"note": "С анестезией 15 € и без 5 € — одна запись, диапазон 5–15"
+		},
+		{
+			"slug": "dental-fissure-sealant",
+			"nameEn": "Dental Fissure Sealant",
+			"source": "Dječija i preventivna stomatologija: zalivanje fisura — 10.00 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "orthodontic-removable-plate-appliance",
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"source": "Ortodoncija: mobilni aparat po vilici — 200.00 €",
+			"price": 200,
+			"priceMax": null
+		},
+		{
+			"slug": "orthodontic-functional-monoblock-appliance",
+			"nameEn": "Orthodontic Functional Monoblock Appliance",
+			"source": "Ortodoncija: monoblok — 400.00 €",
+			"price": 400,
+			"priceMax": null,
+			"note": "Из двух дублей (Monoblock Appliance — 2 клиники) взят более употребимый (5 клиник)"
+		},
+		{
+			"slug": "fixed-orthodontic-braces-per-arch",
+			"nameEn": "Fixed Orthodontic Braces per Arch",
+			"source": "Ortodoncija: fiksni aparat po vilici — 700.00 €",
+			"price": 700,
+			"priceMax": null
+		},
+		{
+			"slug": "custom-dental-guard",
+			"nameEn": "Custom Dental Guard",
+			"source": "Ortodoncija: zaštitni splint — 50.00 €",
+			"price": 50,
+			"priceMax": null
+		},
+		{
+			"slug": "plaque-and-calculus-removal",
+			"nameEn": "Plaque and Calculus Removal",
+			"source": "Bolesti usta: skidanje kamenca sa svih zuba — 25.00 €",
+			"price": 25,
+			"priceMax": null
+		},
+		{
+			"slug": "soft-dental-deposit-removal",
+			"nameEn": "Soft Dental Deposit Removal",
+			"source": "Bolesti usta: skidanje mekih naslaga — 15.00 €",
+			"price": 15,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-air-polishing",
+			"nameEn": "Dental Air Polishing",
+			"source": "Bolesti usta: pjeskarenje svih zuba — 20.00 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "periodontal-surgical-therapy-flap-surgery-per-tooth",
+			"nameEn": "Periodontal Surgical Therapy (Flap Surgery) per Tooth",
+			"source": "Bolesti usta: hirurška obrada parodontalnog džepa — 60.00 €",
+			"price": 60,
+			"priceMax": null,
+			"note": "Хирургическая обработка кармана — лоскутная операция на зуб; «po vilici» — отдельной строкой ниже"
+		},
+		{
+			"slug": "periodontal-pocket-treatment",
+			"nameEn": "Periodontal Pocket Treatment",
+			"source": "Bolesti usta: obrada parodontalnog džepa — 10.00 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "tooth-extraction",
+			"nameEn": "Tooth Extraction",
+			"source": "Oralna hirurgija: vađenje zuba sa anestezijom — 20.00 €",
+			"price": 20,
+			"priceMax": null
+		},
+		{
+			"slug": "tooth-extraction-complex",
+			"nameEn": "Complex Tooth Extraction",
+			"source": "Oralna hirurgija: komplikovano vađenje zuba — 35.00 €",
+			"price": 35,
+			"priceMax": null
+		},
+		{
+			"slug": "impacted-tooth-extraction",
+			"nameEn": "Impacted Tooth Extraction",
+			"source": "Oralna hirurgija: vađenje impaktiranog zuba — 110.00 €",
+			"price": 110,
+			"priceMax": null
+		},
+		{
+			"slug": "apicoectomy-with-orthograde-root-canal-filling",
+			"nameEn": "Apicoectomy with Orthograde Root Canal Filling",
+			"source": "Oralna hirurgija: resekcija jednok. zuba sa punjenjem kanala — 100.00 € | Oralna hirurgija: resekcija dvokor. zuba sa punjenjem kanala — 120.00 €",
+			"price": 100,
+			"priceMax": 120,
+			"note": "Однокорневой 100 € и двухкорневой 120 € — одна запись, диапазон 100–120"
+		},
+		{
+			"slug": "frenectomy",
+			"nameEn": "Frenectomy",
+			"source": "Oralna hirurgija: plastika frenuluma, plike — 60.00 €",
+			"price": 60,
+			"priceMax": null,
+			"note": "Одна строка на две операции: уздечка → Frenectomy, складка → Oral Mucosal Fold Correction, обе по 60 €"
+		},
+		{
+			"slug": "oral-mucosal-fold-correction",
+			"nameEn": "Oral Mucosal Fold Correction",
+			"source": "Oralna hirurgija: plastika frenuluma, plike — 60.00 €",
+			"price": 60,
+			"priceMax": null
+		},
+		{
+			"slug": "alveolar-ridge-leveling",
+			"nameEn": "Alveolar Ridge Leveling",
+			"source": "Oralna hirurgija: nivelacija grebena — 60.00 €",
+			"price": 60,
+			"priceMax": null
+		},
+		{
+			"slug": "intraoral-abscess-incision",
+			"nameEn": "Intraoral Abscess Incision",
+			"source": "Oralna hirurgija: incizija abscesa — 15.00 €",
+			"price": 15,
+			"priceMax": null
+		},
+		{
+			"slug": "flap-surgery-periodontal",
+			"nameEn": "Periodontal Flap Surgery",
+			"source": "Oralna hirurgija: režanj operacija po vilici — 400.00 €",
+			"price": 400,
+			"priceMax": null,
+			"note": "Цена за челюсть; per-tooth запись занята строкой «hirurška obrada parodontalnog džepa»"
+		},
+		{
+			"slug": "dental-implant-with-abutment",
+			"nameEn": "Dental Implant with Abutment",
+			"source": "Oralna hirurgija: ugradnja implanta + nadogradnja — 800.00 €",
+			"price": 800,
+			"priceMax": null
+		},
+		{
+			"slug": "partial-acrylic-denture",
+			"nameEn": "Partial Acrylic Denture",
+			"source": "Stomatološka protetika: parcijalna akrilatna proteza — 200.00 €",
+			"price": 200,
+			"priceMax": null
+		},
+		{
+			"slug": "complete-acrylic-denture",
+			"nameEn": "Complete Acrylic Denture",
+			"source": "Stomatološka protetika: totalna akrilatna proteza — 250.00 €",
+			"price": 250,
+			"priceMax": null
+		},
+		{
+			"slug": "skeletal-partial-denture",
+			"nameEn": "Skeletal Partial Denture",
+			"source": "Stomatološka protetika: parcijalna skeletirana proteza — 350.00 €",
+			"price": 350,
+			"priceMax": null
+		},
+		{
+			"slug": "complete-denture-with-cast-metal-base",
+			"nameEn": "Complete Denture with Cast Metal Base",
+			"source": "Stomatološka protetika: totalna skeletirana proteza — 400.00 €",
+			"price": 400,
+			"priceMax": null
+		},
+		{
+			"slug": "partial-flexible-denture",
+			"nameEn": "Partial Flexible Denture",
+			"source": "Stomatološka protetika: parcijalna fleksibilna proteza — 280.00 €",
+			"price": 280,
+			"priceMax": null
+		},
+		{
+			"slug": "complete-flexible-denture",
+			"nameEn": "Complete Flexible Denture",
+			"source": "Stomatološka protetika: totalna fleksibilna proteza — 320.00 €",
+			"price": 320,
+			"priceMax": null
+		},
+		{
+			"slug": "metal-ceramic-crown",
+			"nameEn": "Metal-Ceramic Crown",
+			"source": "Stomatološka protetika: metalokeramička krunica — 100.00 €",
+			"price": 100,
+			"priceMax": null
+		},
+		{
+			"slug": "all-ceramic-crown",
+			"nameEn": "All-Ceramic Crown",
+			"source": "Stomatološka protetika: bezmetalna krunica — 200.00 €",
+			"price": 200,
+			"priceMax": null,
+			"note": "Материал не назван → All-Ceramic Crown (как у Lopičić)"
+		},
+		{
+			"slug": "ceramic-veneer",
+			"nameEn": "Ceramic Veneer",
+			"source": "Stomatološka protetika: bezmetalna faseta — 250.00 €",
+			"price": 250,
+			"priceMax": null
+		},
+		{
+			"slug": "temporary-crown",
+			"nameEn": "Temporary Crown",
+			"source": "Stomatološka protetika: privremena kruna — 10.00 €",
+			"price": 10,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-consultation",
+			"nameEn": "Dental Consultation",
+			"source": "«Stomatološki pregled i stručna dijagnostika se ne naplaćuju» (naslovna)",
+			"price": 0,
+			"priceMax": null,
+			"note": "Бесплатно → price 0.00 (как dental-studio-vucetic)"
+		},
+		{
+			"slug": "home-teeth-whitening",
+			"nameEn": "Home Teeth Whitening",
+			"source": "«Izbjeljivanje se može izvoditi kod kuće ili u ordinaciji» (/estetska-stomatologija/)",
+			"price": null,
+			"priceMax": null
+		},
+		{
+			"slug": "dental-jewelry-application",
+			"nameEn": "Dental Jewelry Application",
+			"source": "«Zubni nakit … najčešćeg cirkona» (/estetska-stomatologija/)",
+			"price": null,
+			"priceMax": null
+		},
+		{
+			"slug": "facial-mesotherapy-single-treatment",
+			"nameEn": "Facial Mesotherapy Single Treatment",
+			"source": "Mezoterapija (/mezoterapija/ + акция на главной «MEZOTERAPIJA LICA»)",
+			"price": null,
+			"priceMax": null,
+			"note": "Акционная цена 20 € не взята; запись каталога уже есть"
+		},
+		{
+			"slug": "hyaluronic-acid-filler",
+			"nameEn": "Hyaluronic Acid Filler",
+			"source": "Hijaluronski fileri (/hijaluronski-fileri/)",
+			"price": null,
+			"priceMax": null,
+			"note": "Акционная цена «1ml – 150 eura» не взята; запись каталога уже есть"
+		},
+		{
+			"slug": "botox-injection",
+			"nameEn": "Botox Injection",
+			"source": "Botox (/botox/)",
+			"price": null,
+			"priceMax": null
+		},
+		{
+			"slug": "laser-hair-removal",
+			"nameEn": "Laser Hair Removal",
+			"source": "Laserska epilacija (/laserska-epilacija/)",
+			"price": null,
+			"priceMax": null
+		}
+	],
+	"doctors": [
+		{
+			"slug": "sandra-stanisic",
+			"nameSr": "Sandra Stanišić",
+			"professionalTitle": "Dr",
+			"position": "Doktor stomatologije, osnivač ordinacije",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"photo": "https://dentart.me/wp-content/uploads/portret-sandra-stanisic2.jpg",
+			"phone": null,
+			"hasBio": true,
+			"services": [],
+			"foundInDb": false,
+			"note": "Курс мезотерапии — не специальность; AESTHETIC_MEDICINE не ставится."
+		},
+		{
+			"slug": "zorica-popovic",
+			"nameSr": "Zorica Popović",
+			"professionalTitle": "Dr",
+			"position": "Opšti stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"photo": "https://dentart.me/wp-content/uploads/portret-zorica-popovic.jpg",
+			"phone": null,
+			"hasBio": true,
+			"services": [],
+			"foundInDb": false,
+			"note": ""
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "Главная: «PROLJETNA AKCIJA: MEZOTERAPIJA LICA – 20 eura, HIJALURONSKI FILERI 1ml – 150 eura»; «AKCIJA 20% popusta na profesionalno čišćenje zuba»; «Nagradna igra do 01.05.2022»",
+			"reason": "Акции не импортируем (решение владельца каталога). Мезотерапия и филлеры заведены без цены по страницам /mezoterapija/ и /hijaluronski-fileri/."
+		},
+		{
+			"source": "/stomatoloske-usluge/: «Najtrajniji zubni ispun je keramički inlej»",
+			"reason": "Описательный текст про материалы, а не заявленная услуга с ценой; в прайсе вкладок нет."
+		},
+		{
+			"source": "/stomatoloske-usluge/: «u kost se ugrađuju implanti na koje se postave kopče ili metalne prečke»; «nosi se retencijski aparat tokom noći»",
+			"reason": "Общие описания методик без цены и без отдельной позиции; имплант с надстройкой и ортодонтия уже покрыты прайсом."
+		},
+		{
+			"source": "/mezoterapija/: «Oblast primjene: Ortopedija i traumatologija, Reumatologija … Celulit, Lokalne masne naslage, Opadanje kose …»",
+			"reason": "Перечень показаний метода из общей статьи, не услуги клиники. Заведена только мезотерапия лица (её клиника рекламирует на главной)."
+		},
+		{
+			"source": "/dentalni-turizam/: «smještaj u malom porodičnom hotelu Villa Royal», «prijevoz od aerodroma»",
+			"reason": "Не медицинские услуги — упомянуто в описании клиники."
+		},
+		{
+			"source": "Milica Lutovac Radonjić — stomatološka sestra",
+			"reason": "Не врач."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "is_price_outdated",
+			"detail": "Прайс правился 2022-03-19 (wp-json), © 2022. Флаг не ставили — решение за юзером (PLAN.md: «Прайс 2022 — нужен ли is_price_outdated, решает юзер»)."
+		},
+		{
+			"topic": "Телефон из Google",
+			"detail": "+382 32 672 210 есть только в Google, на сайте стационарный +382 32 671 120. Записан последним; если номер устарел — убрать."
+		},
+		{
+			"topic": "Тип клиники AESTHETIC_CLINIC?",
+			"detail": "У ординации 4 отдельные страницы эстетики (мезотерапия, филлеры, ботокс, лазерная эпиляция). Поставлен только DENTAL_CLINIC (2); добавить 14 — решение юзера."
+		},
+		{
+			"topic": "Бесплатный осмотр = 0.00",
+			"detail": "«Stomatološki pregled i stručna dijagnostika se ne naplaćuju» → Dental Consultation price 0.00 (прецедент: dental-studio-vucetic). Если 0 на сайте показывать не хотим — NULL."
+		},
+		{
+			"topic": "«plastika frenuluma, plike 60 €»",
+			"detail": "Разложено на Frenectomy и Oral Mucosal Fold Correction, обе 60 €. Альтернатива — Frenectomy with Lateral Fold Removal (одна запись, но «уклонение латеральных складок» уже, чем «plika»)."
+		}
+	]
+}

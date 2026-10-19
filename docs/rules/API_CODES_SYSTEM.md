@@ -170,6 +170,7 @@ const handleLogin = async () => {
 
 - `UNAUTHORIZED` - Требуется авторизация
 - `INVALID_CREDENTIALS` - Неверные учетные данные
+- `TOO_MANY_REQUESTS` - Превышен лимит запросов (429, см. `server/utils/rate-limit.ts`)
 
 #### Validation Errors
 

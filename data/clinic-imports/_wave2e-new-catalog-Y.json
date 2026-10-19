@@ -1,0 +1,145 @@
+[
+	{
+		"slug": "physiotherapist-home-visit",
+		"name_en": "Physiotherapist Home Visit",
+		"name_sr": "Kućna posjeta fizioterapeuta",
+		"table": "medical_services",
+		"clinic": "pollex-physio-podgorica",
+		"categories": [
+			5,
+			30
+		],
+		"specialties": [
+			42
+		],
+		"reason": "Общая запись «физиотерапия на дому» без километража. Pollex Physio: «Fizioterapija — Patronažna terapija je oblik fizikalne terapije sprovedene van zdravstvene ustanove u kućnom okruženju», расстояний и цен нет. В каталоге только physiotherapist-home-visit-up-to-5-km / -5-to-15-km / -over-15-km (тарифы по расстоянию) — ни один не подходит без расстояния. Кат. 5 PHYSIOTHERAPY + 30 HOME_VISITS, спец. 42."
+	},
+	{
+		"slug": "med-contour-plus-body-contouring",
+		"name_en": "Med Contour Plus Body Contouring",
+		"name_sr": "Med Contour Plus oblikovanje tijela",
+		"table": "medical_services",
+		"clinic": "medcontour-institute-budva",
+		"categories": [
+			18
+		],
+		"specialties": [
+			18,
+			44
+		],
+		"reason": "Именной аппарат: Medcontour Institute /services «BODY SHAPING - MED CONTOUR PLUS», главная «Med Contour Plus — A painless, non-surgical method for body contouring, skin tightening, and localized fat reduction». В каталоге аналога этого аппарата нет (emsculpt-neo — другая технология, exilis/ultraformer — другие бренды, generic-кавитации нет); технологию сайт не называет — generic не приписываем. По схеме emsculpt-neo-body-contouring: кат. 18, спец. 18 + 44. Зоны (большая/комбинированная/малая/ягодицы) и пакеты из 5 без цен — одна запись, зоны в источнике."
+	},
+	{
+		"slug": "hydradermabrasion",
+		"name_en": "Hydradermabrasion",
+		"name_sr": "Hidrodermoabrazija",
+		"table": "medical_services",
+		"clinic": "medcontour-institute-budva",
+		"categories": [
+			24
+		],
+		"specialties": [
+			7,
+			44
+		],
+		"reason": "Общая процедура (аппаратная гидродермабразия: вакуумное очищение + пилинг + инфузия сывороток). Medcontour Institute: «Hydra Clear … combines deep hydration, gentle exfoliation, and firming technologies»; Fontis: «Hydrafacial je neinvazivan, višestepeni tretman … Hydrafacial važi za najnježniju hidrodermoabraziju». В каталоге записи нет (есть только dermabrasion — глубокая дермабразия, и diamond-microdermabrasion). Два разных аппарата одной сути → одна общая запись, бренды HydraFacial и Hydra Clear — синонимами (решение юзера: брендовый дубль не заводить). Кат. 24 DERMATOLOGY, спец. 7 + 44 (как skin-hydration-treatment / facial-biorevitalization).",
+		"alsoUsedBy": [
+			"ordinacija-fontis-podgorica"
+		]
+	},
+	{
+		"slug": "microdermabrasion",
+		"name_en": "Microdermabrasion",
+		"name_sr": "Mikrodermoabrazija",
+		"table": "medical_services",
+		"clinic": "medcontour-institute-budva",
+		"categories": [
+			18,
+			24
+		],
+		"specialties": [
+			7,
+			18
+		],
+		"reason": "Общая услуга: Medcontour /services «Face Up microdermabrasion» («Face Up mikrodermoabrazija»); Fontis /services/tretmani-lica-fontis «Mikrodermoabrazija lica i leđa (Reviderm)». В каталоге есть только diamond-microdermabrasion (конкретный метод — алмазная насадка, сайт метод не называет) и dermabrasion (глубокая дермабразия — другая процедура). Схема — как diamond-microdermabrasion: кат. 18 + 24, спец. 7 + 18.",
+		"alsoUsedBy": [
+			"ordinacija-fontis-podgorica"
+		]
+	},
+	{
+		"slug": "radiofrequency-skin-tightening",
+		"name_en": "Radiofrequency Skin Tightening",
+		"name_sr": "Radiofrekventno zatezanje kože",
+		"table": "medical_services",
+		"clinic": "ordinacija-fontis-podgorica",
+		"categories": [
+			18,
+			24
+		],
+		"specialties": [
+			7,
+			18,
+			44
+		],
+		"reason": "Решение координатора 2026-10-09. Fontis /services/tretmani-lica-fontis — «RF Bipolar tretman – radiofrekventna tehnologija za poboljšanje tonusa, zatezanje kože i stimulaciju kolagena». Общей RF-записи без бренда в каталоге нет (exilis-*, ultraformer-*, renuvion — бренды; morpheus8 — RF-микронидлинг; face-and-body-skin-tightening — метод не указан). Категории как у exilis/morpheus8: 18 + 24, спец. 7 + 18 + 44."
+	},
+	{
+		"slug": "diabetic-retinopathy-examination",
+		"name_en": "Diabetic Retinopathy Examination",
+		"name_sr": "Pregled kod dijabetske retinopatije",
+		"table": "medical_services",
+		"clinic": "todorovic-ophthalmology-aesthetics-kotor",
+		"categories": [
+			23
+		],
+		"specialties": [
+			6
+		],
+		"reason": "Todorović /me/pregled-pacijenata-sa-dijabetskom-reinopatijom — «specijalizovani oftalmološki pregled namenjen otkrivanju i praćenju oštećenja mrežnjače uzrokovanih dijabetesom … traje oko 30-60 minuta». Отдельной записи нет (есть только panretinal-laser-photocoagulation — лечение, fundus-photography / OCT — методы). По схеме complete-glaucoma-examination: кат. 23, спец. 6."
+	},
+	{
+		"slug": "macular-degeneration-examination",
+		"name_en": "Macular Degeneration Examination",
+		"name_sr": "Pregled kod degeneracije žute mrlje",
+		"table": "medical_services",
+		"clinic": "todorovic-ophthalmology-aesthetics-kotor",
+		"categories": [
+			23
+		],
+		"specialties": [
+			6
+		],
+		"reason": "Todorović /me/pregled-pacijenata-senilnom-degeneracijom-zute-mrlje — «Pregled pacijenata sa senilnom degeneracijom žute mrlje (makularna degeneracija) … sveobuhvatan oftalmološki pregled … traje oko 60-90 minuta». Записи нет (oct-macula-analysis — один метод, macular-function-test-with-amsler-grid — один тест, macular-surgery — операция). По схеме complete-glaucoma-examination: кат. 23, спец. 6."
+	},
+	{
+		"slug": "polynucleotide-injection",
+		"name_en": "Polynucleotide Injection",
+		"name_sr": "Tretman polinukleotidima",
+		"table": "medical_services",
+		"clinic": "todorovic-ophthalmology-aesthetics-kotor",
+		"categories": [
+			18,
+			24
+		],
+		"specialties": [
+			7,
+			44
+		],
+		"reason": "Todorović /me/polinukleotidi-newest-plinest-plinest-eye — «Polinukleotidi, uključujući Newest, Plinest, i Plinest Eye … kompanije Mastelli … Materijal se potom injektuje tankim iglicama u kožu». Класс препаратов (PN), в каталоге нет ни общей, ни брендовой записи; бренды Mastelli (Plinest, Newest, Plinest Eye) — синонимами. Схема как у biorevitalization / profhilo-treatment: кат. 18 + 24, спец. 7 + 44."
+	},
+	{
+		"slug": "prx-t33-treatment",
+		"name_en": "PRX-T33 Treatment",
+		"name_sr": "PRX-T33 tretman",
+		"table": "medical_services",
+		"clinic": "todorovic-ophthalmology-aesthetics-kotor",
+		"categories": [
+			24
+		],
+		"specialties": [
+			7,
+			44
+		],
+		"reason": "Todorović /me/prx-t33 — «PRX T33 je medicinski preparat iz WIQo linije koji sadrži 33% trihlorsirćetnu kiselinu i hidrogen-peroksid … ne uzrokuje eksfolijaciju površinskih slojeva kože … biorevitalizaciju kože bez … uboda». Сайт отделяет его и от пилингов, и от инъекционной биоревитализации; в каталоге записи нет. Кат. 24, спец. 7 + 44."
+	}
+]

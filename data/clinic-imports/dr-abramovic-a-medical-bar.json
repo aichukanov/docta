@@ -1,0 +1,242 @@
+{
+	"schemaVersion": 1,
+	"slug": "dr-abramovic-a-medical-bar",
+	"name": "Dr Abramović — A Medical",
+	"city": "Bar",
+	"cityId": 7,
+	"googlePlaceId": "ChIJ87q7SAB0ThMRIed9XD0ALgs",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dr-abramovic-a-medical-bar.sql",
+		"server/sql/insert-clinic-dr-abramovic-a-medical-bar-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 238,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент Z. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Slug клиники и врача свободны на проде (API 204). Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 265
+	},
+	"siteOutdated": {
+		"copyright": "© 2020 drabramovic",
+		"note": "WordPress, 4 страницы, последняя правка 2022-03-11. Перечень и часы могли устареть."
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.drabramovic.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Главная, /o-nama/, /usluge/, /kako-do-nas/ (адрес «Poslovni centar G9 između Robne kuće i Doma zdravlja, Ulica Jovana Tomaševića G9, Bar 85000», телефоны, часы). wp-json pages modified 2022-03-11; /kontakt/ — 404. Цен и email нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/bar/dr-abramovic.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "place_id ChIJ87q7SAB0ThMRIed9XD0ALgs, 42.0993856 / 19.0946728, +382 69 062 316, 6 отзывов (rating 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Jovana Tomaševića G9 (Poslovni centar G9), 85000 Bar — сайт; Google «Ulica Jovana Tomasevica» — совпадает",
+		"phone": "+38269062316;+38269062317 — сайт (первый = Google)",
+		"email": "нет на сайте",
+		"website": "https://www.drabramovic.com/",
+		"social": "нет на сайте",
+		"logo": "https://www.drabramovic.com/wp-content/uploads/2020/04/Logo-vektorski-primer-tri-PNG-FILE.png",
+		"workingHours": "пн–пт 09–20, сб–вс закрыто (не названы) — сайт",
+		"description": "по /o-nama/, /usluge/, /kako-do-nas/",
+		"languages": "только SR",
+		"doctors": "1: zarko-abramovic (новый)",
+		"doctorPhotos": "0 из 1 — фото врача на сайте нет",
+		"doctorBios": "0 — биографии нет",
+		"prices": "цен нет — 18 услуг без цены",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки (6 в Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "bone-x-ray",
+			"nameEn": "Bone X-Ray",
+			"nameSr": "Rendgen kostiju",
+			"categoryIds": [
+				3
+			],
+			"specialtyIds": [
+				10
+			],
+			"reason": "Dr Abramović: «Rtg snimanje: … kostiju tijela, kičme i glave». Кичма и голова заведены существующими записями; общего «рентген костей» в каталоге нет — только 60+ частных проекций (запястье, лодыжка, грудина …) и extremity-x-ray-per-image (только конечности, тариф «за снимак»). Общая услуга кабинетов рентгена. 3 XRAY, 10 RADIOLOGY."
+		}
+	],
+	"services": [
+		{
+			"slug": "x-ray-chest-heart",
+			"nameEn": "X-Ray Lungs and Heart",
+			"price": null,
+			"source": "«Digitalni Rentgen — Rtg snimanje: grudnog koša pluća i srca»"
+		},
+		{
+			"slug": "bone-x-ray",
+			"nameEn": "Bone X-Ray",
+			"price": null,
+			"source": "«Rtg snimanje: kostiju tijela, kičme i glave» — кости тела (НОВАЯ общая запись)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "x-ray-cervical-spine",
+			"nameEn": "X-Ray Cervical Spine",
+			"price": null,
+			"source": "«… kičme …» — отделы не названы → три стандартные записи отделов"
+		},
+		{
+			"slug": "x-ray-thoracic-spine",
+			"nameEn": "X-Ray Thoracic Spine",
+			"price": null,
+			"source": "«… kičme …»"
+		},
+		{
+			"slug": "x-ray-lumbar-spine-and-sacrum",
+			"nameEn": "X-Ray Lumbar Spine and Sacrum",
+			"price": null,
+			"source": "«… kičme …»"
+		},
+		{
+			"slug": "x-ray-head-craniogram",
+			"nameEn": "X-Ray Head (Craniogram)",
+			"price": null,
+			"source": "«… i glave»"
+		},
+		{
+			"slug": "x-ray-paranasal-sinuses",
+			"nameEn": "X-Ray Paranasal Sinuses",
+			"price": null,
+			"source": "«Rtg snimanje: sinusa»"
+		},
+		{
+			"slug": "esophagus-stomach-and-duodenum-fluoroscopy",
+			"nameEn": "Esophagus, Stomach and Duodenum Fluoroscopy",
+			"price": null,
+			"source": "«Rtg snimanje: pasaža jednjaka i gastroduodenuma» (синоним «Pasaža jednjaka i gastroduodenuma» добавлен)"
+		},
+		{
+			"slug": "abdomen-ultrasound",
+			"nameEn": "Abdomen Ultrasound",
+			"price": null,
+			"source": "«4D Ultrazvuk — Pregledi trbušnog … prostora, jetre, žucne kese, pankreasa, bubrega …»"
+		},
+		{
+			"slug": "ultrasound-bladder-with-prostate",
+			"nameEn": "Ultrasound Bladder with Prostate",
+			"price": null,
+			"source": "«… bešike i prostate»"
+		},
+		{
+			"slug": "lung-ultrasound",
+			"nameEn": "Lung Ultrasound",
+			"price": null,
+			"source": "«Pregledi … grudnog prostora …» — общая запись УЗИ лёгких/грудной полости"
+		},
+		{
+			"slug": "4d-pregnancy-ultrasound",
+			"nameEn": "4D Pregnancy Ultrasound",
+			"price": null,
+			"source": "«4D pregledi trudnoće, materice i jajnika»"
+		},
+		{
+			"slug": "gynecological-ultrasound",
+			"nameEn": "Gynecological Ultrasound",
+			"price": null,
+			"source": "«4D pregledi … materice i jajnika»"
+		},
+		{
+			"slug": "blood-vessels-doppler",
+			"nameEn": "Blood Vessels Doppler",
+			"price": null,
+			"source": "«Collor doppler krvnih sudova» — сосуды не названы → общая запись"
+		},
+		{
+			"slug": "breast-ultrasound",
+			"nameEn": "Breast Ultrasound",
+			"price": null,
+			"source": "«Ultrazvuk dojke i štitne žlijezde»"
+		},
+		{
+			"slug": "thyroid-ultrasound",
+			"nameEn": "Thyroid Ultrasound",
+			"price": null,
+			"source": "«Ultrazvuk dojke i štitne žlijezde»"
+		},
+		{
+			"slug": "pediatric-hip-ultrasound",
+			"nameEn": "Pediatric Hip Ultrasound",
+			"price": null,
+			"source": "«Ultrazvuk dječjih kukova»"
+		},
+		{
+			"slug": "first-radiologist-examination",
+			"nameEn": "First Radiologist Examination",
+			"price": null,
+			"source": "«Spec.pregledi — Konsultacije uz pregled sa analizom laboratorijskih i drugih nalaza; Savjetovanje u vezi drugih pregleda i terapija»; врач — радиолог"
+		}
+	],
+	"labTests": [],
+	"doctors": [
+		{
+			"slug": "zarko-abramovic",
+			"nameSr": "Žarko Abramović",
+			"professionalTitle": "dr med.",
+			"position": "Specijalista radiologije",
+			"specialtyIds": [
+				10
+			],
+			"languageIds": [
+				1
+			],
+			"existingInDb": false,
+			"hasBio": false,
+			"photo": null,
+			"services": [
+				"x-ray-chest-heart",
+				"bone-x-ray",
+				"x-ray-cervical-spine",
+				"x-ray-thoracic-spine",
+				"x-ray-lumbar-spine-and-sacrum",
+				"x-ray-head-craniogram",
+				"x-ray-paranasal-sinuses",
+				"esophagus-stomach-and-duodenum-fluoroscopy",
+				"abdomen-ultrasound",
+				"ultrasound-bladder-with-prostate",
+				"lung-ultrasound",
+				"4d-pregnancy-ultrasound",
+				"gynecological-ultrasound",
+				"blood-vessels-doppler",
+				"breast-ultrasound",
+				"thyroid-ultrasound",
+				"pediatric-hip-ultrasound",
+				"first-radiologist-examination"
+			],
+			"note": "Новый; прод-API 204. Фото нет. Сайт © 2020 (WP, страницы 2022-03)."
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«Savjetovanje u vezi drugih pregleda i terapija»",
+			"reason": "Часть той же консультации радиолога (first-radiologist-examination), отдельной записью не заводилась."
+		},
+		{
+			"source": "Блоки шаблона «Great working conditions», «Health is the only way to be happy», «OUR TEAM», «Lorem ipsum»",
+			"reason": "Остатки шаблона темы, не данные клиники."
+		}
+	],
+	"openQuestions": []
+}

@@ -1,0 +1,447 @@
+{
+	"schemaVersion": 1,
+	"slug": "fizio-centar-niksic",
+	"name": "Fizio Centar Nikšić",
+	"city": "Nikšić",
+	"cityId": 2,
+	"googlePlaceId": "ChIJQ3xVS22pTRMRqiUQtvA-Pf0",
+	"clinicTypeIds": [
+		24
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-fizio-centar-niksic.sql",
+		"server/sql/insert-clinic-fizio-centar-niksic-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 189,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug и врачей по slug. Подволна 2c, агент P. Сухой прогон 2026-10-08 на локали (dryrun.mjs: DML через EXPLAIN внутри START TRANSACTION … ROLLBACK, плюс shadow-проход для новых записей каталога): 0 ошибок; несматченные slug — только свои новые записи каталога (в shadow-проходе — 0); привязки врач↔услуга в сухом прогоне не сматчены ожидаемо (клиники ещё нет); счётчики clinics/doctors/doctor_clinics/clinic_medical_services/medical_services/medical_service_synonyms/clinic_medical_service_doctors/clinic_working_hours/clinic_languages до и после совпали (174/1901/2566/14705/5809/5464/187/144/185). Новые slug клиник и врачей сверены с прод-API (204). Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 216
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://fiziocentar.me/ (главная, /o-nama/, /usluge/, /oprema/, /kontakt/, /usluge/protokol-za-*)",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"priceListDate": "2025-10-22",
+			"note": "WordPress + Divi, Rank Math page-sitemap: /usluge/ lastmod 2025-10-22 (на ней единственная цена «25e» — её дата), главная 2024-02-24, /o-nama/ 2023-12-26, протоколы 2024-02-24. Кнопки пакетов на страницах протоколов — ссылки на PDF (et_link_options_data)."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://fiziocentar.me/wp-content/uploads/2023/12/PAKET-*.pdf (17 файлов)",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "Состав пакетов STANDARD / INTENSIVE A / INTENSIVE + STANDARD / FUNKCIONALNI TRENING A, B по протоколам (cervikalni, lumbalna, koljeno, kuk, rame). Текстовый слой есть (pdftotext). Цен нет. Last-Modified 11.12.2023."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/niksic/fizio-centar-niksic.json",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "place_id, координаты 42.7758983 / 18.9501802, телефон +382 68 187 449, адрес «20 Njegoševa, Nikšić». 39 отзывов (в файле 5) — не импортировались."
+		}
+	],
+	"coverage": {
+		"address": "Njegoševa 20 — сайт и Google совпадают; индекс 81400 (Никшич)",
+		"phone": "+38268187449 — сайт и Google",
+		"email": "fiziocentar18@gmail.com — главная",
+		"website": "https://fiziocentar.me/",
+		"social": "facebook.com/fiziocentarniksic, @fizio_centar — ссылки сайта; у шести физиотерапевтов — личные Instagram из карточек команды (doctors.instagram)",
+		"logo": "https://fiziocentar.me/wp-content/uploads/2023/06/FIZIO-CENTRAR-LOGO.png",
+		"workingHours": "Пн–Пт 09–21, Сб 09–16, Вс закрыто — главная и /kontakt/",
+		"description": "из /usluge/, /oprema/, FAQ о пределах осмотра и страниц протоколов",
+		"doctors": "6 из 6 физиотерапевтов (спец. 94), все новые; Krsto Kovačević — тёзка стоматолога в БД, заведён отдельно (krsto-kovacevic-fizioterapeut). Тренер Ivan Đuričković и менеджер Žarko Dubljević не заведены",
+		"doctorPhotos": "у всех шести — внешние URL с сайта",
+		"prices": "1 цена на сайте: Terapeutska masaža (relax + elektroterapija) 40 min — 25 €; ACL-пакет «na upit»; остальные 26 услуг без цены",
+		"labTests": "лаборатории нет",
+		"reviews": "pending — ждут полной выгрузки юзера (39 в Google)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "physiotherapist-examination",
+			"nameEn": "Physiotherapist Examination",
+			"nameSr": "Pregled fizioterapeuta",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Осмотр физиотерапевта (не врача): Fizio Centar Nikšić — «Pregled obuhvata komunikaciju pacijenta i terapeuta, upoznavanje sa problemom, testiranja kroz određene vježbe, određivanje protokola, a trajanje pregleda je od 45 min do 1h»; Fizio PG — «Specijalistički pregled — Detaljna procjena i individualni plan tretmana» (в штате только физиотерапевты). В каталоге есть осмотры физиатра (врача), осмотра физиотерапевта нет. sort_order = 1, как у первичных осмотров."
+		},
+		{
+			"table": "medical_services",
+			"slug": "therapeutic-massage-with-electrotherapy-40-min",
+			"nameEn": "Therapeutic Massage with Electrotherapy 40 min",
+			"nameSr": "Terapeutska masaža sa elektroterapijom 40 min",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Fizio Centar Nikšić /usluge/: «Terapeutska masaža — Kombinacija relax masaže i elektroterapije u trajanju od 40 minuta po cijeni od 25e.» Единственная цена на сайте; комбинированная процедура с длительностью, в каталоге нет (ср. Anti-Cellulite Shockwave Therapy with Lymphatic Drainage)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "electroacupuncture",
+			"nameEn": "Electroacupuncture",
+			"nameSr": "Elektroakupunktura",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Fizio Centar Nikšić «AKUPUNKTURU / ELEKTROAKUPUNKTURU»; AXON «Elektroakupunktura — Nadogradnja klasične akupunkture blagom električnom stimulacijom kroz igle». В каталоге только Acupuncture. Категория как у acupuncture (5)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "game-ready-cryo-compression-therapy",
+			"nameEn": "Game Ready Cryo-Compression Therapy",
+			"nameSr": "Game Ready krioterapija sa kompresijom",
+			"categoryIds": [
+				5
+			],
+			"specialtyIds": [
+				42
+			],
+			"reason": "Fizio Centar Nikšić «GAME READY»; /oprema/: «AKTIVNA KRIOTERAPIJA … NAIZMJENIČNA KOMPRESIJA». Аппарат назван по имени; это крио + перемежающаяся компрессия, не то же, что Thermotherapy: Cryotherapy (одно охлаждение)."
+		}
+	],
+	"services": [
+		{
+			"slug": "physiotherapist-examination",
+			"nameEn": "Physiotherapist Examination",
+			"price": null,
+			"source": "FAQ «Šta sve obuhvata pregled?» — «Pregled obuhvata komunikaciju pacijenta i terapeuta, upoznavanje sa problemom, testiranja kroz određene vježbe, određivanje protokola, a trajanje pregleda je od 45 min do 1h.»; /usluge/ «Individualni pristup započinje pregledom»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "therapeutic-massage-with-electrotherapy-40-min",
+			"nameEn": "Therapeutic Massage with Electrotherapy 40 min",
+			"price": 25,
+			"source": "/usluge/ «Terapeutska masaža — Kombinacija relax masaže i elektroterapije u trajanju od 40 minuta po cijeni od 25e.»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "tecar-therapy",
+			"nameEn": "Tecar Therapy",
+			"price": null,
+			"source": "/usluge/ «TEKAR»; /oprema/ «BTL Tecar terapija … BTL-6000 TR-Therapy»"
+		},
+		{
+			"slug": "spinal-decompression",
+			"nameEn": "Spinal Decompression",
+			"price": null,
+			"source": "/usluge/ «KOMPJUTERIZOVANU SPINALNU DEKOMPRESIJU»; /oprema/ «DTS - Kompjuterizovana spinalna dekompresija» (Triton)"
+		},
+		{
+			"slug": "shock-wave-therapy",
+			"nameEn": "Shock Wave Therapy",
+			"price": null,
+			"source": "/usluge/ «SHOCKWAVE»; «Shockwave, Kiropraktika, SCHROTH, Kinezitejp»"
+		},
+		{
+			"slug": "super-inductive-system-therapy",
+			"nameEn": "Super Inductive System Therapy",
+			"price": null,
+			"source": "/usluge/ «VISOKOFREKVENTNI MAGNET»; /oprema/ «BTL Visokofrekventni magnet … elektromagnetskom polju visokog intenziteta» (картинка блока — BTL-Super-induktivni-sistem.png)"
+		},
+		{
+			"slug": "kinesiotherapy",
+			"nameEn": "Kinesiotherapy",
+			"price": null,
+			"source": "/usluge/ «KINEZITERAPIJU»; пакеты «Kineziterapijske tehnike (PNF, DNS)»"
+		},
+		{
+			"slug": "acupuncture",
+			"nameEn": "Acupuncture",
+			"price": null,
+			"source": "/usluge/ «AKUPUNKTURU / ELEKTROAKUPUNKTURU»; пакеты «Akupunktura»"
+		},
+		{
+			"slug": "electroacupuncture",
+			"nameEn": "Electroacupuncture",
+			"price": null,
+			"source": "/usluge/ «AKUPUNKTURU / ELEKTROAKUPUNKTURU»; protokol za artrozu ramena «elektroakupunktura»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "manual-therapy",
+			"nameEn": "Manual Therapy",
+			"price": null,
+			"source": "/usluge/ «MANIPULATIVNE TEHNIKE»"
+		},
+		{
+			"slug": "chiropractic-treatment",
+			"nameEn": "Chiropractic Treatment",
+			"price": null,
+			"source": "/usluge/ «Kiropraktika podrazumijeva ručno namještanje i manipulaciju kičme, pršljenova, velikih i malih zglobova i mekih tkiva.»"
+		},
+		{
+			"slug": "ultrasound-therapy",
+			"nameEn": "Ultrasound Therapy",
+			"price": null,
+			"source": "/usluge/ «ULTRAZVUK»; пакеты «Terapijski ultrazvuk»"
+		},
+		{
+			"slug": "electrotherapy",
+			"nameEn": "Electrotherapy",
+			"price": null,
+			"source": "/usluge/ «ELEKTROTERAPIJU I LASEROTERAPIJU»; /oprema/ «Kombinovana terapija - BTL-4825S»"
+		},
+		{
+			"slug": "laser-therapy",
+			"nameEn": "Laser Therapy",
+			"price": null,
+			"source": "/usluge/ «ELEKTROTERAPIJU I LASEROTERAPIJU»"
+		},
+		{
+			"slug": "interferential-currents",
+			"nameEn": "Interferential Currents",
+			"price": null,
+			"source": "protokol za artrozu ramena «IFS»; ACL «Četvoropolarne interferentne struje za smanjenje bola»"
+		},
+		{
+			"slug": "tens-therapy",
+			"nameEn": "TENS Therapy",
+			"price": null,
+			"source": "ACL protokol «TENS (transkutana električna nervna stimulacija)»"
+		},
+		{
+			"slug": "muscle-electrical-stimulation",
+			"nameEn": "Muscle Electrical Stimulation",
+			"price": null,
+			"source": "ACL protokol «Elektrostimulacija mišića kvadricepsa sa Compex-om»"
+		},
+		{
+			"slug": "electrophoresis",
+			"nameEn": "Electrophoresis",
+			"price": null,
+			"source": "PDF пакетов «Jontoforeza + Ljekovi za stimulaciju smanjenja upalnih procesa»"
+		},
+		{
+			"slug": "iastm-therapy",
+			"nameEn": "IASTM Therapy",
+			"price": null,
+			"source": "PDF PAKET STANDARD (cervikalni, lumbalna) «Ergon terapija za miofascijalnu relaksaciju»"
+		},
+		{
+			"slug": "thermotherapy-cryotherapy",
+			"nameEn": "Thermotherapy: Cryotherapy",
+			"price": null,
+			"source": "protokol za artrozu ramena «krioterapija»; PDF PAKET STANDARD (koljeno, rame) «Krioterapija»; ACL «Krioterapija za smanjenje otoka i upale»"
+		},
+		{
+			"slug": "game-ready-cryo-compression-therapy",
+			"nameEn": "Game Ready Cryo-Compression Therapy",
+			"price": null,
+			"source": "/usluge/ «GAME READY»; /oprema/ «Game Ready … AKTIVNA KRIOTERAPIJA … NAIZMJENIČNA KOMPRESIJA»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "exercises-on-equipment-pulley-ergocycle-cpm-suspension",
+			"nameEn": "Exercises on Equipment (Pulley, Ergocycle, CPM, Suspension)",
+			"price": null,
+			"source": "/usluge/ «СР MOTION» (в источнике кириллические С и Р); /oprema/ «BTL CPMotion … za povećanje opsega pokreta zglobova nakon operacija»"
+		},
+		{
+			"slug": "taping-application",
+			"nameEn": "Taping Application",
+			"price": null,
+			"source": "/usluge/ «KINESIOTAPE»; «Kinezitejp se koristi za podršku mišića i zglobova…»"
+		},
+		{
+			"slug": "therapeutic-massage-complete",
+			"nameEn": "Complete Therapeutic Massage",
+			"price": null,
+			"source": "/usluge/ «MANUELNE MASAŽE» (generic «terapijska masaža» без длительности и зоны — Complete Therapeutic Massage)"
+		},
+		{
+			"slug": "schroth-method",
+			"nameEn": "Schroth Method",
+			"price": null,
+			"source": "/usluge/ «Schroth metoda je dobra za deformitete koji se javljaju kod djece uzrasta od 13 do 17 godina…»"
+		},
+		{
+			"slug": "group-exercises-type-b",
+			"nameEn": "Group Exercises (per Person)",
+			"price": null,
+			"source": "/usluge/ «Progresivna kineziterapija … Maksimalan broj vježbača u jednom terminu je osam i uvijek su prisutna dva trenera.»"
+		},
+		{
+			"slug": "spinal-discopathy-and-stenosis-rehabilitation",
+			"nameEn": "Spinal Discopathy and Stenosis Rehabilitation",
+			"price": null,
+			"source": "«Protokol za cervikalni sindrom» и «Protokol za lumbalni sindrom» («bol u donjem dijelu ledja ili diskus hernia»), пакеты STANDARD / INTENSIVE A / INTENSIVE + STANDARD — без цен"
+		},
+		{
+			"slug": "postoperative-locomotor-system-rehabilitation",
+			"nameEn": "Postoperative Locomotor System Rehabilitation",
+			"price": null,
+			"source": "«PAKET OPORAVKA ACL-A NAKON OPERACIJE … CIJENA – na upit, zavisi od stanja pacijenta (protokol obično traje 41 terapijski dan…)»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "alessandra-quartulli",
+			"nameSr": "Alessandra Quartulli",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://fiziocentar.me/wp-content/uploads/2023/09/Alessandra-Quartulli.png",
+			"instagram": "@_alessandra.matijasevic_",
+			"services": [
+				"physiotherapist-examination",
+				"iastm-therapy"
+			],
+			"note": "В FAQ сайта — «Alessandra Quartulli Matijašević», Instagram _alessandra.matijasevic_; в карточке команды — «Alessandra Quartulli» (взято так)."
+		},
+		{
+			"slug": "zilha-kojcin",
+			"nameSr": "Zilha Kojčin",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://fiziocentar.me/wp-content/uploads/2023/09/Zilha-Kojcin.png",
+			"instagram": "@zkojcin",
+			"services": [
+				"therapeutic-massage-complete"
+			]
+		},
+		{
+			"slug": "petar-matijasevic",
+			"nameSr": "Petar Matijašević",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://fiziocentar.me/wp-content/uploads/2023/09/Petar-Matijasevic.png",
+			"instagram": "@fizio.petar",
+			"services": [
+				"physiotherapist-examination",
+				"schroth-method",
+				"postoperative-locomotor-system-rehabilitation"
+			]
+		},
+		{
+			"slug": "krsto-kovacevic-fizioterapeut",
+			"nameSr": "Krsto Kovačević",
+			"professionalTitle": null,
+			"position": "Doktor zdravstvenih nauka, fizioterapeut",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://fiziocentar.me/wp-content/uploads/2023/10/Krsto-Kovacevic-1.png",
+			"instagram": "@krstokovacevic",
+			"services": [
+				"physiotherapist-examination"
+			],
+			"note": "Тёзка в БД: krsto-kovacevic (стоматолог, Dental Clinic Kovačević) — другой человек; ищем ТОЛЬКО по своему slug. professional_title NULL: «doktor zdravstvenih nauka» — учёная степень, не врач."
+		},
+		{
+			"slug": "predrag-calic",
+			"nameSr": "Predrag Ćalić",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://fiziocentar.me/wp-content/uploads/2023/09/Predrag-Calic.png",
+			"instagram": "@p_e_dj_a__fizio",
+			"services": [
+				"physiotherapist-examination",
+				"postoperative-locomotor-system-rehabilitation"
+			],
+			"note": "На главной «Predrag Ćalic», на /o-nama/ «Predrag Ćalić» и «Calić» — взято «Ćalić»."
+		},
+		{
+			"slug": "vojin-kostic",
+			"nameSr": "Vojin Kostić",
+			"professionalTitle": null,
+			"position": "Specijalista primijenjene fizioterapije",
+			"specialtyIds": [
+				94
+			],
+			"languageIds": [
+				1
+			],
+			"foundInDb": false,
+			"hasBio": true,
+			"photo": "https://fiziocentar.me/wp-content/uploads/2023/09/Vojin-Kostic.png",
+			"instagram": "@vojin_fizio95",
+			"services": [
+				"physiotherapist-examination",
+				"iastm-therapy"
+			]
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "«Protokol za artrozu ramena / koljena / kuka» — пакеты STANDARD / INTENSIVE A / INTENSIVE + STANDARD (PDF, без цен)",
+			"reason": "Наборы процедур по диагнозу без цены; состав (ultrazvuk, jontoforeza, elektroterapija, shockwave, akupunktura, krioterapija, kineziterapija) заведён отдельными услугами. Ближайшая запись «Inflammatory and Degenerative Rheumatism Rehabilitation» — натяжка, не привязывали."
+		},
+		{
+			"source": "PAKET FUNKCIONALNI TRENING A / B (cervikalni, lumbalna) — «Testiranje esencijalnih kretnji», «Funkcionalni i inteligentni trening» с тренером",
+			"reason": "Фитнес-тренировки с тренером (Ivan Đuričković — тренер, не медработник), не медицинская услуга."
+		},
+		{
+			"source": "«Ljekovi za stimulaciju stvaranja hrskavice» (PDF пакетов)",
+			"reason": "Препарат в составе пакета, не услуга."
+		},
+		{
+			"source": "Ivan Đuričković — «Specijalista za sport i fitnes»; Žarko Dubljević — «Koordinator organizacionog sistema»",
+			"reason": "Не медицинский персонал (тренер и менеджер)."
+		},
+		{
+			"source": "Методики из био (PNF, DNS, Mulligan, Bobath, OMT, WAPF, Shiatsu, Cyriax, dry needling / terapija iglama, vestibularna rehabilitacija, limfna drenaža)",
+			"reason": "Квалификации сотрудников, а не перечень услуг центра (PNF и DNS входят в «Kineziterapijske tehnike» пакетов → Kinesiotherapy)."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "BTL visokofrekventni magnet",
+			"detail": "Сопоставлен с Super Inductive System Therapy: сайт пишет «BTL … elektromagnetsko polje visokog intenziteta», картинка блока — BTL-Super-induktivni-sistem.png. Альтернатива — High-Inductive Magnet Therapy (Spa Medica). Если считать, что бренд SIS сайт не называет, — поменять slug в списке услуг."
+		}
+	]
+}

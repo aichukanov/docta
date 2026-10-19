@@ -1,0 +1,445 @@
+{
+	"schemaVersion": 1,
+	"slug": "dom-zdravlja-rozaje",
+	"name": "Dom zdravlja Rožaje",
+	"city": "Rožaje",
+	"cityId": 17,
+	"googlePlaceId": "ChIJUxlYZUfmUhMRPsI6M2SUK6U",
+	"clinicTypeIds": [
+		1
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dom-zdravlja-rozaje.sql",
+		"server/sql/insert-clinic-dom-zdravlja-rozaje-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-08",
+		"appliedLocal": "2026-10-08",
+		"appliedProd": "2026-10-08",
+		"clinicId": 176,
+		"doctorIds": {},
+		"note": "Подволна 2b, агент G. Сухой прогон 2026-10-08 на локальной БД (scratchpad/agentD/scripts/dryrun.mjs: DML → EXPLAIN в START TRANSACTION … ROLLBACK): оба файла пары — 0 ошибок, 0 несматченных slug; счётчики clinics/doctors/clinic_medical_services/clinic_lab_tests/doctor_clinics/doctor_specialties/doctor_languages/clinic_languages/clinic_working_hours/clinic_clinic_types до и после совпали (scratchpad/agentG/dry/before.tsv, after.tsv). Все slug услуг/анализов есть и на проде (/api/services/details, /api/labtests/details); slug клиники и новых врачей на проде свободны (/api/clinics/details, /api/doctors/details → 204). Четыре врача ОБ Беране найдены по slug и на проде (200). Порядок применения: сначала клиника и врачи, затем -services.sql. clinicId и doctorIds заполнить после применения из блоков VERIFICATION. Применено юзером 2026-10-08 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 203
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://dzrozaje.me/",
+			"collected": "2026-10-08",
+			"machineReadable": true,
+			"note": "WordPress, wp-json /wp/v2/pages — 10 страниц, /wp/v2/posts — 9 записей (конкурсы на специализации 2025–2026, HPV, график выходных 2024). Даты modified: organizacione-jedinice 2026-07-08, specijalisticke-ambulante 2026-08-19, radno-vrijeme 2026-04-01, kontakt 2026-09-09, o-nama 2026-07-08, ugovori-o-dopunskom-radu 2026-06-10, dokumenta 2026-09-09. Прайса нет ни страницей, ни PDF («Dokumenta» — планы интегритета, путевые листы, аналитические карты, планы донаций, договоры о дополнительной работе 2023). Взлома нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/berane/health-center-rozaje.json",
+			"collected": null,
+			"machineReadable": true,
+			"note": "ChIJUxlYZUfmUhMRPsI6M2SUK6U, «Health Center Rozaje», 3 оценки, 4.7. «R5R8+77V, ul. 29 Novembar, Rožaje 84310», +382 51 271 347, 42.8405774/20.1648262. Не перезапрашивался."
+		}
+	],
+	"coverage": {
+		"address": "29. novembra, 84310 — сайт «ul. 29 novembra 84310 Rožaje» и Google согласованы",
+		"phone": "+38251271347 (сайт и Google) + Call Centar 067 004 666 → +38267004666",
+		"email": "dzrozaje@t-com.me",
+		"website": "https://dzrozaje.me/",
+		"social": "facebook.com/dzrozaje (футер)",
+		"logo": "https://dzrozaje.me/wp-content/uploads/2025/05/cropped-cropped-site-logo.webp (200 OK)",
+		"workingHours": "пн–пт 07:00–21:00, сб и вс 08:00–15:00. /kontakt/ (2026-09-09): «Pon – Pet 07:00 – 21:00, Subota 08:00 – 15:00», воскресенье не названо; /organizacione-jedinice/ (2026-07-08): «Vikendom 08:00 – 15:00»; /radno-vrijeme/ (2026-04-01): IDO/IDD «Sub – Ned / Praznici 08:00 – 14:00». Взято 08–15 по более свежей странице",
+		"description": "6 языков, только из того, что ДЗ пишет о себе. В ru нет местного падежа города: i18n/city.ts даёт «Рожаје» с сербской «ј», использовано несклоняемое «Рожае»",
+		"doctors": "20: 16 новых + 4 врача ОБ Беране (уже в БД, только привязка). Фото только у директора",
+		"prices": "цен на сайте нет",
+		"servicesWithoutPrice": "8: осмотры избранного врача для взрослых и педиатра, гинеколога, офтальмолога, психиатра, ORL, интерниста, гемодиализ — те же записи каталога, что у ДЗ Беране",
+		"labTests": "перечня анализов нет («Laboratorijska dijagnostika» — только часы работы)",
+		"reviews": "pending: ждут полной выгрузки"
+	},
+	"catalogAdditions": [],
+	"services": [
+		{
+			"nameEn": "General Practitioner Examination",
+			"slug": "general-practitioner-examination",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/radno-vrijeme/ «Izabrani doktor za odrasle — Pon – Pet I smjena: 07:00 – 14:00, II smjena: 14:00 – 21:00, Sub – Ned / Praznici I smjena: 08:00 – 14:00»"
+		},
+		{
+			"nameEn": "Pediatric Examination",
+			"slug": "pediatric-examination",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/organizacione-jedinice/ «Pedijatrija — Timovi — Izabrani doktor za djecu» (тимы 1–4, spec. pedijatri), /radno-vrijeme/ «Izabrani doktor za djecu»"
+		},
+		{
+			"nameEn": "Gynecological Specialist Examination",
+			"slug": "gynecological-specialist-examination",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/organizacione-jedinice/ «Ginekologija — Tim — Ginekološko akušerska ambulanta»; /specijalisticke-ambulante/ «Ginekološko akušerska ambulanta»"
+		},
+		{
+			"nameEn": "Ophthalmological Examination",
+			"slug": "ophthalmological-examination",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/specijalisticke-ambulante/ «Oftalmološka ambulanta — dr mr. spec. oftalmolog Saimir Markišić»"
+		},
+		{
+			"nameEn": "First Psychiatrist Examination",
+			"slug": "first-psychiatrist-examination",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/specijalisticke-ambulante/ «Psihijatrijska ambulanta — spec. psihijatar dr Sead Nurković»"
+		},
+		{
+			"nameEn": "First ENT Examination",
+			"slug": "first-ent-examination",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/specijalisticke-ambulante/ «ORL ambulanta — prim. dr spec. otorinolaringolog» (имени врача на странице нет)"
+		},
+		{
+			"nameEn": "Internist Examination",
+			"slug": "internist-examination",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/specijalisticke-ambulante/ «Internistička ambulanta — spec. interne medicine Asad Kalač»"
+		},
+		{
+			"nameEn": "Hemodialysis Services",
+			"slug": "hemodialysis-services",
+			"code": null,
+			"price": null,
+			"priceMax": null,
+			"source": "/specijalisticke-ambulante/ «Centar za hemodijalizu — spec. interne medicine Semir Murić»; /radno-vrijeme/ «Hemodijaliza … Radi vikendom»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "vanja-vukicevic",
+			"nameSr": "Vanja Vukićević",
+			"professionalTitle": null,
+			"position": "Fizijatar (OB Berane), dopunski rad",
+			"specialtyIds": [
+				42
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Dopunski rad doktora — Doktori iz drugih ustanova: Fizijatar — OB Berane, dr Vanja Vukićević», /ugovori-o-dopunskom-radu/ (последний договор 12.2025–05.2026). В БД — OB Berane, Physical Medicine and Rehabilitation"
+		},
+		{
+			"slug": "tanja-cimbaljevic",
+			"nameSr": "Tanja Cimbaljević",
+			"professionalTitle": null,
+			"position": "Urolog (OB Berane), dopunski rad",
+			"specialtyIds": [
+				9
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Urolog — OB Berane, dr Tanja Cimbaljević». В БД — OB Berane, urology"
+		},
+		{
+			"slug": "igor-babic",
+			"nameSr": "Igor Babić",
+			"professionalTitle": null,
+			"position": "Hirurg (OB Berane), dopunski rad",
+			"specialtyIds": [
+				3
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Hirurg — OB Berane, dr Igor Babić». В БД — OB Berane, general_surgery"
+		},
+		{
+			"slug": "sasa-novovic",
+			"nameSr": "Saša Novović",
+			"professionalTitle": null,
+			"position": "Ortoped (OB Berane), dopunski rad",
+			"specialtyIds": [
+				17
+			],
+			"existing": true,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Ortoped — OB Berane, dr Saša Novović». В БД — OB Berane, orthopedics_traumatology"
+		},
+		{
+			"slug": "asad-kalac",
+			"nameSr": "Asad Kalač",
+			"professionalTitle": "Dr",
+			"position": "Direktor; Internistička ambulanta, Interno odjeljenje",
+			"specialtyIds": [
+				2
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": "https://dzrozaje.me/wp-content/uploads/2026/07/direktor.jpeg.jpg",
+			"note": "/organizacione-jedinice/ «Direktor — Specijalista interne medicine, Dr Asad Kalač» (фото карточки), «Interno odjeljenje — Internista dr Asad Kalač»; /specijalisticke-ambulante/ «Internistička ambulanta — spec. interne medicine Asad Kalač»"
+		},
+		{
+			"slug": "jaho-pepic",
+			"nameSr": "Jaho Pepić",
+			"professionalTitle": "Dr",
+			"position": "Medicina rada, tim 1",
+			"specialtyIds": [
+				50
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Timovi — Medicina rada, Tim 1: Spec. medicine rada, dr Jaho Pepić»"
+		},
+		{
+			"slug": "fikret-mujevic",
+			"nameSr": "Fikret Mujević",
+			"professionalTitle": "Dr",
+			"position": "Medicina rada, tim 2",
+			"specialtyIds": [
+				50
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Tim 2: Spec. medicine rada, dr Fikret Mujević»"
+		},
+		{
+			"slug": "jasmin-sutovic",
+			"nameSr": "Jasmin Sutović",
+			"professionalTitle": "Dr",
+			"position": "Medicina rada, tim 3",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Tim 3: Spec. opšte medicine, dr Jasmin Sutović» → general_medicine"
+		},
+		{
+			"slug": "almir-honsic",
+			"nameSr": "Almir Honsić",
+			"professionalTitle": "Dr",
+			"position": "Medicina rada, tim 4",
+			"specialtyIds": [
+				45
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Tim 4: Doktor medicine, dr Almir Honsić» → general_medicine"
+		},
+		{
+			"slug": "mehmed-kurpejovic",
+			"nameSr": "Mehmed Kurpejović",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu, tim 1",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Timovi — Izabrani doktor za djecu, Tim 1: Spec. pedijatar, dr Mehmed Kurpejović»"
+		},
+		{
+			"slug": "nervija-dedeic",
+			"nameSr": "Nervija Dedeić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu, tim 2; Dječije odjeljenje",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Tim 2: Spec. pedijatar, dr Nervija Dedeić», «Dječije odjeljenje — Pedijatar dr Nervija Dedeić»"
+		},
+		{
+			"slug": "mirsad-hodzic",
+			"nameSr": "Mirsad Hodžić",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu, tim 3",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Tim 3: Spec. pedijatar, dr Mirsad Hodžić»"
+		},
+		{
+			"slug": "senad-lukac",
+			"nameSr": "Senad Lukač",
+			"professionalTitle": "Dr",
+			"position": "Izabrani doktor za djecu, tim 4",
+			"specialtyIds": [
+				4
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Tim 4: Spec. pedijatar, dr Senad Lukač»"
+		},
+		{
+			"slug": "azra-lukac",
+			"nameSr": "Azra Lukač",
+			"professionalTitle": "Prim. dr sci.",
+			"position": "Ginekološko-akušerska ambulanta",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Tim — Ginekološko akušerska ambulanta, Ginekolog prim. dr sci. Azra Lukač»; /specijalisticke-ambulante/"
+		},
+		{
+			"slug": "almina-dacic",
+			"nameSr": "Almina Dacić",
+			"professionalTitle": "Dr",
+			"position": "Ginekologija i akušerstvo (bolničko odjeljenje)",
+			"specialtyIds": [
+				5
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/organizacione-jedinice/ «Bolnički odjeli — Ginekologija i akušerstvo, Ginekolog dr Almina Dacić»"
+		},
+		{
+			"slug": "saimir-markisic",
+			"nameSr": "Saimir Markišić",
+			"professionalTitle": "Mr dr",
+			"position": "Oftalmološka ambulanta",
+			"specialtyIds": [
+				6
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/specijalisticke-ambulante/ «Oftalmološka ambulanta — dr mr. spec. oftalmolog Saimir Markišić»; /organizacione-jedinice/ также в «Dopunski rad unutar DZ — Medicina rada»"
+		},
+		{
+			"slug": "sead-nurkovic",
+			"nameSr": "Sead Nurković",
+			"professionalTitle": "Dr",
+			"position": "Psihijatrijska ambulanta",
+			"specialtyIds": [
+				21
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/specijalisticke-ambulante/ «Psihijatrijska ambulanta — spec. psihijatar dr Sead Nurković»; /organizacione-jedinice/ также в «Dopunski rad unutar DZ — Medicina rada»"
+		},
+		{
+			"slug": "sajma-pepic",
+			"nameSr": "Sajma Pepić",
+			"professionalTitle": "Dr",
+			"position": "Radiološka dijagnostika",
+			"specialtyIds": [
+				10
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/specijalisticke-ambulante/ «Radiološka dijagnostika — spec. radiolog dr Sajma Pepić»"
+		},
+		{
+			"slug": "sadat-sutkovic",
+			"nameSr": "Sadat Šutković",
+			"professionalTitle": null,
+			"position": "Higijensko-epidemiološka služba, spec. epidemiolog",
+			"specialtyIds": [
+				52
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/specijalisticke-ambulante/ «Higijensko epidemiološka služba — spec. epidemiolog Sadat Šutković» (без «dr» — титул не ставится); эпидемиолог → infectious_diseases (правило ДЗ)"
+		},
+		{
+			"slug": "semir-muric",
+			"nameSr": "Semir Murić",
+			"professionalTitle": null,
+			"position": "Centar za hemodijalizu, spec. interne medicine",
+			"specialtyIds": [
+				2
+			],
+			"existing": false,
+			"hasBio": false,
+			"services": [],
+			"photoUrl": null,
+			"note": "/specijalisticke-ambulante/ «Centar za hemodijalizu — spec. interne medicine Semir Murić» (без «dr» — титул не ставится)"
+		}
+	],
+	"excluded": [
+		{
+			"source": "/specijalisticke-ambulante/ «ORL ambulanta — prim. dr spec. otorinolaringolog»",
+			"reason": "имени врача нет — врач не заводится (амбулатория заведена услугой first-ent-examination)"
+		},
+		{
+			"source": "/organizacione-jedinice/ «Timovi — Medicina rada»: Tim 5 Almira Honsić, Tim 6 Irma Kardović, Tim 7 Melisa Zekić, Tim 8 Anesa Nurković",
+			"reason": "без «dr» и без специальности (правило ДЗ) — не заводятся. Скорее всего врачи (ведут свой тим с медсестрой) — см. openQuestions"
+		},
+		{
+			"source": "/ugovori-o-dopunskom-radu/: Dr Sanja Beloica (договоры 01.2024–09.2025), Dr Denis Kalač (04.2024–01.2026, в БД — радиолог ОБ Беране)",
+			"reason": "договоры о дополнительной работе истекли, в текущем списке «Dopunski rad doktora» (/organizacione-jedinice/, 2026-07-08) их нет"
+		},
+		{
+			"source": "Glavni tehničar Mirsad Muković (specijalista zdravstvene njege), медсёстры тимов",
+			"reason": "не врачи"
+		},
+		{
+			"source": "/specijalisticke-ambulante/ «Radiološka dijagnostika», «Higijensko epidemiološka služba»; /organizacione-jedinice/ «Medicina rada», bolnički odjeli; /radno-vrijeme/ laboratorija, Centar za plućne bolesti i TBC, Centar za mentalno zdravlje, patronaža, sanitetski prevoz, fizikalna terapija, populaciono savjetovalište, savjetovalište za reproduktivno zdravlje",
+			"reason": "организационные единицы без названной конкретной услуги (для medicina rada справки не перечислены)"
+		},
+		{
+			"source": "/o-nama/ «Medicinske usluge — Opšta medicina, Pedijatrija, Ginekologija, Interna medicina, Oftalmologija, Dermatologija, Radiologija, Laboratorija, Medicina rada, Psihijatrija»",
+			"reason": "список специальностей, не услуг; дерматолога в составе нет — дерматология не заводилась"
+		},
+		{
+			"source": "/organizacione-jedinice/ «Doktori iz drugih ustanova» — fizijatar, urolog, hirurg, ortoped OB Berane",
+			"reason": "врачи привязаны, но осмотры уролога/хирурга/ортопеда/физиатра услугами не заведены: сайт называет специальности врачей, а не амбулатории"
+		}
+	],
+	"disputed": [],
+	"openQuestions": [
+		"Восемь тимов на /organizacione-jedinice/ подписаны «Timovi — Medicina rada», но по составу (spec. opšte medicine, doktor medicine, тимы без титула с вечерними часами 15–18 и 18–21) и часам (две смены + выходные) похожи на izabrane doktore za odrasle. Position записан как на сайте («Medicina rada, tim N»); специальности — по подписи врача (Pepić, Mujević — occupational_medicine; Sutović, Honsić — general_medicine).",
+		"Almira Honsić, Irma Kardović, Melisa Zekić, Anesa Nurković (тимы 5–8) не заведены — на сайте без «dr». Если юзер подтвердит, что это врачи (по аналогии с соседними тимами), — завести с general_medicine.",
+		"Sadat Šutković и Semir Murić — на сайте «spec. epidemiolog» / «spec. interne medicine» без «dr»: заведены (специальность названа явно), professional_title = NULL.",
+		"Часы в воскресенье противоречат: /kontakt/ называет только субботу 08–15, /organizacione-jedinice/ — «Vikendom 08–15», /radno-vrijeme/ — «Sub–Ned 08–14». Записано вс 08:00–15:00.",
+		"i18n/city.ts: русский genitive города ROZAJE записан как «Рожаје» (сербская кириллица, буква «ј») — опечатка в коде, не правилась (код не трогаем по правилам волны)."
+	]
+}

@@ -1,0 +1,551 @@
+{
+	"schemaVersion": 1,
+	"slug": "dental-smile-tivat",
+	"name": "Stomatološka ordinacija Dental Smile",
+	"city": "Tivat",
+	"cityId": 4,
+	"googlePlaceId": "ChIJydO23XcxTBMRzyYOeS5QKa4",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-dental-smile-tivat.sql",
+		"server/sql/insert-clinic-dental-smile-tivat-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 211,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент W. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. Сайт © 2023, в команде сотрудник «od 2025 godine» — состав свежий; но в отзывах Google 2024–2025 — «dr Katarina», которой на сайте нет. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 238
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://www.dentalsmiletivat.com/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "Статический сайт (© 2023, me/en/ru, S&S Design). Прочитаны /, /o_nama, /kontakt и 26 страниц меню: /estetika_lica, /kompozitni_ispuni, /endodoncija, /beljenje_zuba, /inlay_overlay, /izbeljivanje_nakit, /ljuskice, /invisalign, /fiksna, /fukcionalna, /mobilna, /splintovi, /parodontologija, /otp, /rtg, /turbo, /pregledi, /implanti, /krunice_mostovi, /metalno_keramicke, /bezmetalno_keramicke, /totalne_proteze, /skeletirana, /proteze_dodaci, /proteza_implant. 404: /estetska.html, /akcija.html, /dentalni-turizam.html, /galerija.html. На /otp — копия текста парадонтологии. Цен нет («Naruči danas i ostvari popust», «Akcija» — без цифр)."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/tivat/dental-smile.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Dental Smile», «CMJX+MVQ, Stari Put», +382 68 466 142, 28 отзывов (rating 4.6) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Stari put 5/2, Kalimanj — сайт; индекс 85320 (на сайте опечатка 85230); координаты — место Google",
+		"phone": "+38232672588;+38269670892 — сайт; +38268466142 — Google (на сайте нет)",
+		"email": "office@dentalsmiletivat.com — сайт",
+		"website": "https://www.dentalsmiletivat.com/",
+		"social": "на сайте нет",
+		"logo": "https://www.dentalsmiletivat.com/images/logo.png",
+		"workingHours": "не заполнено: на сайте два противоречащих графика (главная Пн–Ср 13–20, Чт–Пт 9–17; футер Пн–Пт 9–20)",
+		"doctors": "2 врача на /o_nama (оба новые); медсестра и менеджер не заводятся",
+		"doctorPhotos": "у обоих — /images/team/*.jpg",
+		"doctorBios": "у обоих — короткие, с /o_nama",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "laser-periodontal-therapy",
+			"nameEn": "Laser Periodontal Therapy",
+			"nameSr": "Laserska terapija parodontopatije",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78,
+				95
+			],
+			"reason": "dentalstudioglusica.me /dentalni-laser/: «1. Laserska operacija desni / Laserska operacija parodontoze … uklanjanja infektivnog sadržaja sa desni i od kiretaže parodontalnog džepa … Za razliku od klasične režanj operacije», «3. Laserska obrada džepa». Метод назван (лазер) и противопоставлен классической режущей операции; в каталоге лазерного пародонтологического лечения нет (есть только laser-gingivectomy — иссечение десны, другая процедура; laser-frenectomy). Обе фразы сайта (операция и обработка кармана) — одна запись, вторая синонимом. Категория 20, специальности 78 + 95 PERIODONTOLOGY (как periodontal-pocket-treatment).",
+			"reusedFrom": "dental-studio-przno-budva",
+			"note": "Запись заведена импортом dental-studio-przno-budva; здесь повторена идемпотентно (NOT EXISTS по slug), чтобы файл не зависел от порядка применения."
+		},
+		{
+			"table": "medical_services",
+			"slug": "composite-inlay-onlay",
+			"nameEn": "Composite Inlay Onlay",
+			"nameSr": "Kompozitni inlay ili onlay",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "dentalsmiletivat.com /inlay_overlay: «Inlay Overlay Onlay … Izrađuju se od kompozitnog ili keramičkog materijala u zubotehničkom laboratoriju na temelju otiska zuba». В каталоге вкладки только по материалу: ceramic-inlay-onlay, gold-inlay, zirconia-inlay; лабораторной композитной вкладки нет. Материал назван сайтом → отдельная запись по схеме ceramic-inlay-onlay. Категория 20, специальность 78."
+		},
+		{
+			"table": "medical_services",
+			"slug": "tmj-occlusal-splint",
+			"nameEn": "TMJ Occlusal Splint",
+			"nameSr": "Okluzalni splint za TMZ",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "dentalsmiletivat.com /splintovi («Splintovi za TMZ»): «Poremećaji temporomandibularnog zgloba … Pravilnom dijagnostikom i izradom splinta moguće je znatno smanjiti ili eliminisati ove probleme». Тип шины не назван; в каталоге — только конкретный дизайн michigan-occlusal-splint и bruxism-night-guard (капа от бруксизма, другая цель). Michigan не приписываем (сайт его не называет) → общая запись. Категория 20, специальность 78 (как michigan-occlusal-splint)."
+		},
+		{
+			"table": "medical_services",
+			"slug": "dentin-hypersensitivity-treatment",
+			"nameEn": "Dentin Hypersensitivity Treatment",
+			"nameSr": "Desenzibilizacija osjetljivih zuba",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "dentalsmiletivat.com /turbo (TurboWaterlase MD, «Praktične primene lasera»): «Desenzibilizacija bola ogoljenih zuba osjetljivih na hladno i toplo». Процедуры снижения чувствительности зубов в каталоге нет ни под одним названием (поиск desenz/sensitiv/hiperestez/чувствит). Общая услуга (лазер — метод, в src) → новая запись. Категория 20, специальность 78."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "hyaluronic-acid-filler",
+			"synonym": "Restylane",
+			"language": "en",
+			"reason": "dentalsmiletivat.com /estetika_lica: «Moguci neželjeni efekti pri upotrebi Restilana …» — клиника называет препарат гиалуроновой кислоты (Restylane). Это та же процедура, что hyaluronic-acid-filler; бренд-дубль не заводим (решение юзера 2026-10-08), бренд — синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "hyaluronic-acid-filler",
+			"synonym": "Restylane filer",
+			"language": "sr",
+			"reason": "dentalsmiletivat.com /estetika_lica: «Moguci neželjeni efekti pri upotrebi Restilana …» — клиника называет препарат гиалуроновой кислоты (Restylane). Это та же процедура, что hyaluronic-acid-filler; бренд-дубль не заводим (решение юзера 2026-10-08), бренд — синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "hyaluronic-acid-filler",
+			"synonym": "Restilan",
+			"language": "sr",
+			"reason": "dentalsmiletivat.com /estetika_lica: «Moguci neželjeni efekti pri upotrebi Restilana …» — клиника называет препарат гиалуроновой кислоты (Restylane). Это та же процедура, что hyaluronic-acid-filler; бренд-дубль не заводим (решение юзера 2026-10-08), бренд — синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "hyaluronic-acid-filler",
+			"synonym": "Рестилан",
+			"language": "sr-cyrl",
+			"reason": "dentalsmiletivat.com /estetika_lica: «Moguci neželjeni efekti pri upotrebi Restilana …» — клиника называет препарат гиалуроновой кислоты (Restylane). Это та же процедура, что hyaluronic-acid-filler; бренд-дубль не заводим (решение юзера 2026-10-08), бренд — синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "hyaluronic-acid-filler",
+			"synonym": "Рестилайн",
+			"language": "ru",
+			"reason": "dentalsmiletivat.com /estetika_lica: «Moguci neželjeni efekti pri upotrebi Restilana …» — клиника называет препарат гиалуроновой кислоты (Restylane). Это та же процедура, что hyaluronic-acid-filler; бренд-дубль не заводим (решение юзера 2026-10-08), бренд — синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "hyaluronic-acid-filler",
+			"synonym": "Restylane-Filler",
+			"language": "de",
+			"reason": "dentalsmiletivat.com /estetika_lica: «Moguci neželjeni efekti pri upotrebi Restilana …» — клиника называет препарат гиалуроновой кислоты (Restylane). Это та же процедура, что hyaluronic-acid-filler; бренд-дубль не заводим (решение юзера 2026-10-08), бренд — синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "hyaluronic-acid-filler",
+			"synonym": "Restylane dolgu",
+			"language": "tr",
+			"reason": "dentalsmiletivat.com /estetika_lica: «Moguci neželjeni efekti pri upotrebi Restilana …» — клиника называет препарат гиалуроновой кислоты (Restylane). Это та же процедура, что hyaluronic-acid-filler; бренд-дубль не заводим (решение юзера 2026-10-08), бренд — синонимом для поиска."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "skeletal-partial-denture",
+			"synonym": "Wironit proteza",
+			"language": "sr",
+			"reason": "dentalsmiletivat.com /skeletirana: «Drugo poznatije ime za ovu nadoknadu je vizil ili wironit proteza» — разговорное название по сплаву (Wironit); «Vizil proteza» у записи уже есть."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "skeletal-partial-denture",
+			"synonym": "Виронит протеза",
+			"language": "sr-cyrl",
+			"reason": "dentalsmiletivat.com /skeletirana: «Drugo poznatije ime za ovu nadoknadu je vizil ili wironit proteza» — разговорное название по сплаву (Wironit); «Vizil proteza» у записи уже есть."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Hyaluronic Acid Filler",
+			"slug": "hyaluronic-acid-filler",
+			"source": "/estetika_lica: «moguće je u potpunosti remodelirati crte lica najkvalitetnijim preparatima hijaluronske kiseline», «Podizanje jagodica», «Za popunjavanje ožiljaka»; препарат — Restylane («pri upotrebi Restilana») → синоним"
+		},
+		{
+			"nameEn": "Lip Augmentation",
+			"slug": "lip-augmentation",
+			"source": "/estetika_lica: «Povećanje volumena usana»"
+		},
+		{
+			"nameEn": "Wrinkle Correction Hyaluronic Acid",
+			"slug": "wrinkle-correction-hyaluronic-acid",
+			"source": "/estetika_lica: «Popunjavanje bora lica», «Popunjavnaje bora vrata», «Bora oko usana», «Opuštenih uglova usana»"
+		},
+		{
+			"nameEn": "Hand Rejuvenation Hyaluronic Fillers",
+			"slug": "hand-rejuvenation-hyaluronic-fillers",
+			"source": "/estetika_lica: «Popunjavanje bora ruku»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "/kompozitni_ispuni: «Najsavremeniji kompozitni ispuni imaju snagu lijepljenja na zub daleko veću …»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "/endodoncija: «Lječenje kanala korena zuba … uklanjanje inficiranog pulpnog tkiva … punjenje kanala» — число каналов не названо (как Mušura, dr-sevaljevic-tivat)"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "там же"
+		},
+		{
+			"nameEn": "Laser Teeth Whitening",
+			"slug": "laser-teeth-whitening",
+			"source": "/beljenje_zuba: «Lasersko bijeljenje zuba je polučasovna procedura … White smile metoda … gel … i specijalne UV lampe»; /turbo: «20-to minutno beljenje zuba»"
+		},
+		{
+			"nameEn": "Ceramic Inlay Onlay",
+			"slug": "ceramic-inlay-onlay",
+			"source": "/inlay_overlay: «Keramički inlay svojom bojom može biti identičan prirodnom zubu», «Izrađuju se od kompozitnog ili keramičkog materijala»"
+		},
+		{
+			"nameEn": "Composite Inlay Onlay",
+			"slug": "composite-inlay-onlay",
+			"source": "/inlay_overlay: «Izrađuju se od kompozitnog ili keramičkog materijala u zubotehničkom laboratoriju» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Dental Air Polishing",
+			"slug": "dental-air-polishing",
+			"source": "/izbeljivanje_nakit: «Uklanjanje mekih naslaga i pigmentacija zuba … sistemom Air-Flow, a procedura se zove peskaranje zuba»"
+		},
+		{
+			"nameEn": "Dental Calculus Removal and Air-Flow",
+			"slug": "dental-calculus-removal-and-air-flow",
+			"source": "/izbeljivanje_nakit, «MINI MAKEOVER»: «Cišćenje i peskarenje zuba (air flow metodom)»"
+		},
+		{
+			"nameEn": "Dental Jewelry Application",
+			"slug": "dental-jewelry-application",
+			"source": "/izbeljivanje_nakit: «Zubni nakit – cirkoni … Ukrašavanje zuba cirkonima»; MINI MAKEOVER «Zubni nakit»"
+		},
+		{
+			"nameEn": "Lumineers",
+			"slug": "lumineers",
+			"source": "/ljuskice: «Lumineers su porculanske ljuspice unaprijed fabrički napravljane … ne zahtijevaju dodatna brušenja zuba»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "/ljuskice: «Keramičke ljuspice se izrađuju u zubotehničkoj laboratoriji press tehnikom ili kompjuteriziranom CAD/CAM tehnologijom»"
+		},
+		{
+			"nameEn": "Direct Composite Veneer",
+			"slug": "direct-composite-veneer",
+			"source": "/ljuskice: «Kompozitne ljuspice se najčešće izrađuju direktno u ustima pacijenta»"
+		},
+		{
+			"nameEn": "Laser Gingivectomy",
+			"slug": "laser-gingivectomy",
+			"source": "/ljuskice: «Po potrebi se laserom koriguju desni da bi bile simetrične»"
+		},
+		{
+			"nameEn": "Invisalign Aligner",
+			"slug": "invisalign-aligner",
+			"source": "/invisalign: «Invisalign ispravlja zube koristeći seriju skoro nevidljivih, skidajućih folija»"
+		},
+		{
+			"nameEn": "Fixed Braces (Metal) per Jaw",
+			"slug": "fixed-braces-metal-per-jaw",
+			"source": "/fiksna: «Imamo više vrsta bravica – od vidljivih (klasične, metalne) …»"
+		},
+		{
+			"nameEn": "Fixed Braces (Ceramic or Composite) per Jaw",
+			"slug": "fixed-braces-ceramic-or-composite-per-jaw",
+			"source": "/fiksna: «… do slabo vidljivih (estetska)»"
+		},
+		{
+			"nameEn": "Lingual Braces per Jaw",
+			"slug": "lingual-braces-per-jaw",
+			"source": "/fiksna: «… i nevidljivih (lingvalne ili sakrivene)», «Bravica može biti postavljena sa … unutrašnje strane zuba»"
+		},
+		{
+			"nameEn": "Self-Ligating Braces (Metal) per Jaw",
+			"slug": "self-ligating-braces-metal-per-jaw",
+			"source": "/fiksna: «U našoj ordinaciji najzastupljeniji je Damon system-samolegirajući breketi» — Damon уже синоним этой записи (ortholine-podgorica)"
+		},
+		{
+			"nameEn": "Orthodontic Functional Monoblock Appliance",
+			"slug": "orthodontic-functional-monoblock-appliance",
+			"source": "/fukcionalna: «Funkcionalni ortodonski aparati … mogu se izrađivati izjedna za obje vilice ili, pak, pojedinačno»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "/mobilna: «1. aktivni, pločasti ortodontski aparati … Pločasti ortodonski aparati se pričvršćuju pomoću žičanih kukica»"
+		},
+		{
+			"nameEn": "TMJ Occlusal Splint",
+			"slug": "tmj-occlusal-splint",
+			"source": "/splintovi: «Splintovi za TMZ … Pravilnom dijagnostikom i izradom splinta» (НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Periodontal Scaling and Root Planing",
+			"slug": "periodontal-scaling-root-planing",
+			"source": "/parodontologija: «U početnom stadijumu stvaranja džepova, dovoljno je ukloniti zubni kamenac, mehanički obraditi džepove i isprati ih rastvorom antiseptika»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery with Bone Graft per Tooth",
+			"slug": "periodontal-flap-surgery-with-bone-graft-per-tooth",
+			"source": "/parodontologija: «radi se hirurška intervencija, prilikom koje se čiste defekti u kosti … koriste se razne zamjene za kost tzv. vještačke kosti»"
+		},
+		{
+			"nameEn": "Guided Tissue Regeneration",
+			"slug": "guided-tissue-regeneration",
+			"source": "/parodontologija: «… vještačke kosti, membrane i faktori rasta, koji omogućavaju obnavljanje razorenog tkiva»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "меню «Digitalni rengen — OPT», страница /otp (текст страницы — копия парадонтологии, услуга по заголовку)"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "/rtg: «U našem stomatološkom studiju koristimo moderni digitalni zubni rentgen»"
+		},
+		{
+			"nameEn": "Laser Periodontal Therapy",
+			"slug": "laser-periodontal-therapy",
+			"source": "/turbo: «Terapija parodontopatije», «Terapija inficiranih i neinficiranih džepova oko zuba» (лазер TurboWaterlase MD, Biolase)"
+		},
+		{
+			"nameEn": "Laser Frenectomy",
+			"slug": "laser-frenectomy",
+			"source": "/turbo: «Incizija frenuluma» (лазер)"
+		},
+		{
+			"nameEn": "Oral Mucosa Circumcision or Excision",
+			"slug": "oral-mucosa-circumcision-or-excision",
+			"source": "/turbo: «Cirkumcizija umnjaka i neizniklih zuba» (лазер) — лазерной записи нет, метод в src"
+		},
+		{
+			"nameEn": "Aphthous Ulcer Treatment",
+			"slug": "aphthous-ulcer-treatment",
+			"source": "/turbo: «Terapija afti, herpesa, lihen planusa i drugih bolnih stanja u ustima» (лазер)"
+		},
+		{
+			"nameEn": "Dental Crown Lengthening",
+			"slug": "dental-crown-lengthening",
+			"source": "/turbo: «Produženje klinicke krune zuba i gingivoplastika» (лазер)"
+		},
+		{
+			"nameEn": "Gingivoplasty",
+			"slug": "gingivoplasty",
+			"source": "/turbo: «… i gingivoplastika» (лазер)"
+		},
+		{
+			"nameEn": "Dentin Hypersensitivity Treatment",
+			"slug": "dentin-hypersensitivity-treatment",
+			"source": "/turbo: «Desenzibilizacija bola ogoljenih zuba oseljivih na hladno i toplo» (лазер; НОВАЯ запись)"
+		},
+		{
+			"nameEn": "Intraoral Abscess Incision",
+			"slug": "intraoral-abscess-incision",
+			"source": "/turbo: «Incizija apscesa» (лазер; внутриротовой доступ — единственный при лазерном вскрытии)"
+		},
+		{
+			"nameEn": "Dental Consultation",
+			"slug": "dental-consultation",
+			"source": "/pregledi «Pregledi i konsultacije»: «zakažite Vaš prijegled i konsultaciju»"
+		},
+		{
+			"nameEn": "Dental Implant Nobel Biocare",
+			"slug": "dental-implant-nobel-biocare",
+			"source": "/implanti: «Implantat je vijak izrađen od titana … mogućnost odbacivanja implanta od strane Vašeg organizma (NOBEL Biocare), Vam sledeći ugrađuje gratis» — бренд назван"
+		},
+		{
+			"nameEn": "All on 4 Implant Prosthesis Nobel",
+			"slug": "all-on-4-implant-prosthesis-nobel",
+			"source": "/implanti: «možemo ih staviti u obliku fiksnog mosta na samo 4 implantata. To se zove sistem ALL-ON-FOUR» — импланты клиники Nobel Biocare (там же)"
+		},
+		{
+			"nameEn": "Implant Suprastructure",
+			"slug": "implant-suprastructure",
+			"source": "/krunice_mostovi «Krunice i mostovi na zubnim implantima»: «Suprastruktura je veza između implantata i krunice. Izrađuje se od titanijuma ili cirkonijum keramike»"
+		},
+		{
+			"nameEn": "Hybrid Abutment Zirconia",
+			"slug": "hybrid-abutment-zirconia",
+			"source": "/krunice_mostovi: «Suprastrukture izrađene od cirkonijum keramike se često ugrađuju u implantate u prednjem dijelu vilice»"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "/metalno_keramicke: «U osnovi, konstrukciji, imaju metal (čelik, titan, zlato), a sa svih strana presvučene su keramikom»"
+		},
+		{
+			"nameEn": "Metal Ceramic Crown Gold",
+			"slug": "metal-ceramic-crown-gold",
+			"source": "/metalno_keramicke: «metal (… zlato)», «Titanske i zlatne su kompjuterske izrade»"
+		},
+		{
+			"nameEn": "Ceramic Crown on Titanium",
+			"slug": "ceramic-crown-on-titanium",
+			"source": "/metalno_keramicke: «metal (… titan …)», «Titanske i zlatne su kompjuterske izrade»"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "/bezmetalno_keramicke «Bezmetalno-keramičke – cirkon»: «Keramika na cirkonu … daje živu, prirodnu boju»"
+		},
+		{
+			"nameEn": "Ceramic Dental Bridge",
+			"slug": "ceramic-dental-bridge",
+			"source": "/bezmetalno_keramicke: «Krunice i mostovi izrađeni od cirkona jaki su …»"
+		},
+		{
+			"nameEn": "Temporary Crown",
+			"slug": "temporary-crown",
+			"source": "/bezmetalno_keramicke: «U toku izrade krunice nose se privremene krunice»"
+		},
+		{
+			"nameEn": "Complete Denture",
+			"slug": "complete-denture",
+			"source": "/totalne_proteze: «Totalna proteza za zube stavlja se u slučajevima kada u vilici nema nijednog zuba» — материал не назван"
+		},
+		{
+			"nameEn": "Skeletal Partial Denture",
+			"slug": "skeletal-partial-denture",
+			"source": "/skeletirana: «Skeletirana proteza … skelet od neplemenite legure (kobalt-hrom-molibden) … vizil ili wironit proteza»"
+		},
+		{
+			"nameEn": "Partial Denture with Precision Attachment",
+			"slug": "partial-denture-with-precision-attachment",
+			"source": "/proteze_dodaci «Proteze sa atačmenima»: «Atečemeni su zapravo mehanički sklopovi iz dva dijela»"
+		},
+		{
+			"nameEn": "Implant Overdenture with Locators",
+			"slug": "implant-overdenture-with-locators",
+			"source": "/proteza_implant: «Proteze na zubnim implantima … izrađene su od posebnih elemenata koji se vezuju na elemente koji su ugrađeni u implante … jednostavno uklanjaju iz usta» — съёмный протез на имплантах; тип замков не назван, единственная общая запись"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "danijela-sindik",
+			"nameSr": "Danijela Sindik",
+			"professionalTitle": "dr",
+			"position": "Specijalista ortopedije vilica",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://www.dentalsmiletivat.com/images/team/danijela.jpg",
+			"services": [
+				"invisalign-aligner",
+				"fixed-braces-metal-per-jaw",
+				"fixed-braces-ceramic-or-composite-per-jaw",
+				"lingual-braces-per-jaw",
+				"self-ligating-braces-metal-per-jaw",
+				"orthodontic-functional-monoblock-appliance",
+				"orthodontic-removable-plate-appliance",
+				"tmj-occlusal-splint"
+			]
+		},
+		{
+			"slug": "nevena-djuricic",
+			"nameSr": "Nevena Đuričić",
+			"professionalTitle": "dr",
+			"position": "Stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": true,
+			"photo": "https://www.dentalsmiletivat.com/images/team/nevena.jpg",
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/o_nama: «Danica Krunić — Medicinska sestra», «Jelena Milenković — Menadžer ordinacije»",
+			"reason": "Медсестра и менеджер — не врачи (решение юзера 2026-10-08)."
+		},
+		{
+			"source": "/turbo: «Sanacija upalnih stanja oko krunica i mostova»",
+			"reason": "Расплывчатый пункт списка применений лазера без конкретной процедуры — не заводили."
+		},
+		{
+			"source": "/turbo: «Terapija bola vilicnog zgloba»",
+			"reason": "Лазерное обезболивание ВНЧС: стоматологической записи нет, laser-therapy — физиотерапевтическая (кат. 5); пункт расплывчатый — не заводили. ВНЧС покрыт tmj-occlusal-splint."
+		},
+		{
+			"source": "/izbeljivanje_nakit: «MINI MAKEOVER — Cišćenje i peskarenje zuba (air flow metodom), Izbjeljivanje, Zubni nakit»",
+			"reason": "Пакет без цены и состава по количеству — отдельной пакетной записи не заводили; составляющие заведены по отдельности."
+		},
+		{
+			"source": "/izbeljivanje_nakit: «… sa mjesta gdje tradicionalno uklanjanje zubnog kamenca ultrazvukom nije uspjelo»",
+			"reason": "Ультразвуковая чистка упомянута для сравнения; чистка заведена через dental-calculus-removal-and-air-flow (Mini makeover)."
+		},
+		{
+			"source": "/mobilna: «4. retencija (održavanje postignutih rezultata) posle terapije fiksnom tehnikom»",
+			"reason": "Показание пластиночного аппарата, а не отдельная услуга — retainer не заводили."
+		},
+		{
+			"source": "/krunice_mostovi: «… a na dio koji ostaje iznad implantata izrađuje se krunica»",
+			"reason": "Коронка на импланте без материала — запись по материалу не угадываем; суперструктуры заведены."
+		},
+		{
+			"source": "/metalno_keramicke: «metal (čelik …)»",
+			"reason": "Сталь — разговорное название CoCr-сплава; покрыто generic metal-ceramic-crown, metal-ceramic-crown-cocr не ставили (сайт CoCr не называет)."
+		},
+		{
+			"source": "Главная: «Kozmetičke proteze — Pristupačne proteze za djecu i odrasle»",
+			"reason": "Рекламный блок без конкретного вида протеза — виды заведены со страниц протезов."
+		},
+		{
+			"source": "Главная: «Intervencija istog dana», «Garantovani uspjeh u tretmanima»; /pregledi: «protetski radovi su osigurani na 5 godina»",
+			"reason": "Условия обслуживания и гарантии, не медицинские услуги — не заводили и в описание не выносили."
+		},
+		{
+			"source": "Меню футера «Dentalni turizam», «Akcija»",
+			"reason": "Страницы 404; не услуги."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Часы работы",
+			"detail": "На сайте два графика: главная «ponedeljak-srijeda 13:00 - 20:00, cetvrtak i petak 09:00 - 17:00, subota i nedelja neradni», футер «Ponedeljak–Petak 09:00 - 20:00». Не заполнено — какой верный, нужно уточнить у клиники."
+		},
+		{
+			"topic": "«Dr Katarina» в отзывах Google (2024–2025)",
+			"detail": "Несколько отзывов в data/google-places/tivat/dental-smile.json хвалят «dr Katarinu»; на сайте её нет (сайт © 2023, но с сотрудником с 2025). Не заводили; если юзер подтвердит фамилию — добавить."
+		},
+		{
+			"topic": "Новая запись tmj-occlusal-splint",
+			"detail": "Заведена общая окклюзионная шина при ВНЧС, т. к. сайт не называет тип (michigan-occlusal-splint — конкретный дизайн). Если координатор считает Michigan достаточным — заменить и не заводить запись."
+		}
+	]
+}

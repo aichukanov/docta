@@ -1,0 +1,641 @@
+{
+	"schemaVersion": 1,
+	"slug": "ortholine-podgorica",
+	"name": "Stomatološka ordinacija Ortholine",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJ4XH3VlLrTRMRIsNalxWsYSE",
+	"clinicTypeIds": [
+		2
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-ortholine-podgorica.sql",
+		"server/sql/insert-clinic-ortholine-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 204,
+		"doctorIds": {},
+		"note": "Порядок применения обязателен: второй SQL резолвит клинику по google_place_id/slug. Подволна 2d, агент S. Сухой прогон на локальной БД (без записи) — см. итоговый отчёт агента. ⚠️ Страницы 2020 — состав и перечень могли устареть. Второй домен того же сайта — https://stomatologpodgorica.me/. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 231
+	},
+	"sources": [
+		{
+			"type": "website",
+			"ref": "https://ortholine.me/",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"alsoServedAt": "https://stomatologpodgorica.me/",
+			"note": "WordPress (The7) + WPML (me/en/ru). Прочитаны через WP REST /wp-json/wp/v2/pages/{id} все 29 страниц: o-nama, home, kontakt, usluge, dijagnostika, djecja-i-preventivna-stomatologija, konzervativna-stomatologija, estetska-stomatologija, fasete, bijeljenje-zuba, izbjeljivanje-zuba, estetski-ispuni, keramicki-inlay, estetske-fiksne-proteze, protetika, fiksna-protetika, mobilna-zubna-protetika, o-zubu-i-zubnoj-krunici, ortodoncija, mobilni-aparati, fiksni-ortodonski-aparati, implantologija, oralna-hirurgija («Stranica je u izradi»), hijaluronski-fileri, parodontopatija, gummy-smile, pitanja-pacijenata (+ galerija, rekli-su-o-nama — без фактов). Posts — 0. ⚠️ modified 2020-04 (Kontakt — 2023-02): состав и перечень могли устареть. stomatologpodgorica.me отдаёт тот же сайт (сверено текстом главной). Цен нет. В заметке таблицы юзера «ортоплан» — на сайте слова нет (поиск по всем страницам), не использовано."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/stomatoloska-ordinacija-ortholine.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Place «Stomatoloska Ordinacija Ortholine», «21 Atinska, Podgorica 81000», +382 69 021 203, websiteUri https://ortholine.me/, 8 отзывов (rating 4.5) — не импортировались (pending)."
+		}
+	],
+	"coverage": {
+		"address": "Atinska 21 (сайт = Google); координаты — место Google",
+		"phone": "+38269819888;+38269021203;+38220655535 — /kontakt; +382 69 021 203 = Google",
+		"email": "ortholine@t-com.me — /kontakt",
+		"website": "https://ortholine.me/ (основной, на него ведёт Google); тот же сайт — https://stomatologpodgorica.me/",
+		"social": "facebook.com/ortholine.podgorica; Instagram в футере — ссылка «#», не заносили",
+		"logo": "https://ortholine.me/wp-content/uploads/2020/04/ortholine-newlogo.png",
+		"workingHours": "на сайте нет — не заполнено",
+		"insurance": "«Saradjujemo sa … Hipotekarnom Bankom, NLB Bankom, Lovcen osiguranjem, doo Celebic, Ekonomskim fakultetom, Ministarstvom Unutrasnjih Poslova, Atlas Televeizijom i dr. i vrsimo usluge za njihove osiguranike» — связи клиника↔страховая в БД нет (insurance_companies без таблицы связи), упомянуто в описании",
+		"doctors": "3 доктора, все новые; 2 медсестры не заводились",
+		"doctorPhotos": "у всех 3 — /wp-content/uploads/2020/04/*.jpg",
+		"doctorBios": "на сайте нет",
+		"prices": "нет — все услуги NULL",
+		"labTests": "нет",
+		"reviews": "pending — ждут полной выгрузки юзера"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "inman-aligner",
+			"nameEn": "Inman Aligner",
+			"nameSr": "Inman aparat",
+			"categories": [
+				34
+			],
+			"specialties": [
+				93
+			],
+			"reason": "ortholine.me /mobilni-aparati: «Inman aparat — Inman je jednostavan ortodontski aparat … pokretni ortodontski aparat … koristi nitinolske opruge sa unutrasnje strane i akrilatnu plocu sa spoljasnje strane zuba … (8-16 mjeseci)». Конструкция (пружины NiTi + акриловая дуга) отлична от пластинки с винтом и от элайнеров; в каталоге нет ни под каким названием. Категория 34 ORTHODONTICS, специальность 93."
+		},
+		{
+			"table": "medical_services",
+			"slug": "enamel-microabrasion",
+			"nameEn": "Enamel Microabrasion",
+			"nameSr": "Mikroabrazija gleđi",
+			"categories": [
+				20
+			],
+			"specialties": [
+				78
+			],
+			"reason": "ortholine.me /bijeljenje-zuba и /izbjeljivanje-zuba: «IZBJELJIVANJE HIPERPIGMETNIRANIH ZUBA (FLUOROZA) — OPALUSTRE TM ® — Mikro abrazivna pasta s česticama silicijumkarbida i hlorovodičnom kiselinom … Hemijsko i mehaničko izbjeljivanje». Это не перекисное отбеливание и не Icon-инфильтрация; в каталоге нет. Категория 20, специальность 78. Бренд Opalustre — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Opalescence Boost",
+			"language": "en",
+			"reason": "ortholine.me /bijeljenje-zuba: «Bijeljenje zuba u ordinaciji — Opalescence boost TM … Profesionalni sistem koji se izvodi u stomatološkoj ordinaciji». Та же суть, что teeth-whitening; бренд — синонимом (Zoom-синонимы добавлены импортом dentalux-tivat)."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "teeth-whitening",
+			"synonym": "Opalescence Boost izbjeljivanje",
+			"language": "sr",
+			"reason": "ortholine.me /bijeljenje-zuba: «Bijeljenje zuba u ordinaciji — Opalescence boost TM … Profesionalni sistem koji se izvodi u stomatološkoj ordinaciji». Та же суть, что teeth-whitening; бренд — синонимом (Zoom-синонимы добавлены импортом dentalux-tivat)."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "home-teeth-whitening",
+			"synonym": "Opalescence kućno izbjeljivanje",
+			"language": "sr",
+			"reason": "ortholine.me /izbjeljivanje-zuba: «izbjeljivanje zuba radimo američkim preparatom Opalescence … u ordinaciji se uzme otisak … kalup (tray) i pacijent nosi preparat u toku noći». Бренд геля — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "home-teeth-whitening",
+			"synonym": "Opalescence home whitening",
+			"language": "en",
+			"reason": "ortholine.me /izbjeljivanje-zuba: «izbjeljivanje zuba radimo američkim preparatom Opalescence … u ordinaciji se uzme otisak … kalup (tray) i pacijent nosi preparat u toku noći». Бренд геля — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "internal-bleaching-of-devitalized-tooth",
+			"synonym": "Opalescence Endo",
+			"language": "en",
+			"reason": "ortholine.me /bijeljenje-zuba: «BIJELJENJE LIJEČENIH/POTAMNJELIH ZUBA — OPALESCENCE ENDO TM … Gel se aplicira u unutrašnjost … potamnjelog zuba». Бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "internal-bleaching-of-devitalized-tooth",
+			"synonym": "Opalescence Endo",
+			"language": "sr",
+			"reason": "ortholine.me /bijeljenje-zuba: «BIJELJENJE LIJEČENIH/POTAMNJELIH ZUBA — OPALESCENCE ENDO TM … Gel se aplicira u unutrašnjost … potamnjelog zuba». Бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "self-ligating-braces-metal-per-jaw",
+			"synonym": "Damon breketi",
+			"language": "sr",
+			"reason": "ortholine.me /fiksni-ortodonski-aparati: «U Ortholine-u koristimo Damon system (Ormco) samoligirajucih breketa … metalne Damon bravice». Бренд системы — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "self-ligating-braces-metal-per-jaw",
+			"synonym": "Damon брекети",
+			"language": "sr-cyrl",
+			"reason": "ortholine.me /fiksni-ortodonski-aparati: «U Ortholine-u koristimo Damon system (Ormco) samoligirajucih breketa … metalne Damon bravice». Бренд системы — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "self-ligating-braces-metal-per-jaw",
+			"synonym": "Damon braces",
+			"language": "en",
+			"reason": "ortholine.me /fiksni-ortodonski-aparati: «U Ortholine-u koristimo Damon system (Ormco) samoligirajucih breketa … metalne Damon bravice». Бренд системы — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "self-ligating-braces-metal-per-jaw",
+			"synonym": "Брекеты Damon",
+			"language": "ru",
+			"reason": "ortholine.me /fiksni-ortodonski-aparati: «U Ortholine-u koristimo Damon system (Ormco) samoligirajucih breketa … metalne Damon bravice». Бренд системы — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "lingual-braces-per-jaw",
+			"synonym": "Incognito lingvalne bravice",
+			"language": "sr",
+			"reason": "ortholine.me /fiksni-ortodonski-aparati: «Lingvalne fiksne proteze … Najnovije kod nas! Incognito 3M … breketi se liju na zlatu». Та же суть (лингвальные брекеты), бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "lingual-braces-per-jaw",
+			"synonym": "Incognito lingual braces",
+			"language": "en",
+			"reason": "ortholine.me /fiksni-ortodonski-aparati: «Lingvalne fiksne proteze … Najnovije kod nas! Incognito 3M … breketi se liju na zlatu». Та же суть (лингвальные брекеты), бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "lingual-braces-per-jaw",
+			"synonym": "Лингвальные брекеты Incognito",
+			"language": "ru",
+			"reason": "ortholine.me /fiksni-ortodonski-aparati: «Lingvalne fiksne proteze … Najnovije kod nas! Incognito 3M … breketi se liju na zlatu». Та же суть (лингвальные брекеты), бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "prefabricated-composite-veneer",
+			"synonym": "Componeer",
+			"language": "en",
+			"reason": "ortholine.me /fasete: «Componeer fasete … nova vrsta faseta (vinira) izrađena od visoko kvalitetnog nano-hibridnog-kompozita … Coltène/Whaledent AG». Это и есть готовая (конфекционная) композитная ляминка; бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "prefabricated-composite-veneer",
+			"synonym": "Componeer fasete",
+			"language": "sr",
+			"reason": "ortholine.me /fasete: «Componeer fasete … nova vrsta faseta (vinira) izrađena od visoko kvalitetnog nano-hibridnog-kompozita … Coltène/Whaledent AG». Это и есть готовая (конфекционная) композитная ляминка; бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "prefabricated-composite-veneer",
+			"synonym": "Виниры Componeer",
+			"language": "ru",
+			"reason": "ortholine.me /fasete: «Componeer fasete … nova vrsta faseta (vinira) izrađena od visoko kvalitetnog nano-hibridnog-kompozita … Coltène/Whaledent AG». Это и есть готовая (конфекционная) композитная ляминка; бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "flexible-denture",
+			"synonym": "Valplast proteza",
+			"language": "sr",
+			"reason": "ortholine.me /mobilna-zubna-protetika: «… mnogo značajnije mjesto zauzimaju fiksne nadoknade (krunice i mostovi), skeletirane proteze i valplast proteze». Valplast = flexible denture (правило 10); бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "flexible-denture",
+			"synonym": "Valplast denture",
+			"language": "en",
+			"reason": "ortholine.me /mobilna-zubna-protetika: «… mnogo značajnije mjesto zauzimaju fiksne nadoknade (krunice i mostovi), skeletirane proteze i valplast proteze». Valplast = flexible denture (правило 10); бренд — синонимом."
+		},
+		{
+			"table": "medical_service_synonyms",
+			"slug": "flexible-denture",
+			"synonym": "Протез Valplast",
+			"language": "ru",
+			"reason": "ortholine.me /mobilna-zubna-protetika: «… mnogo značajnije mjesto zauzimaju fiksne nadoknade (krunice i mostovi), skeletirane proteze i valplast proteze». Valplast = flexible denture (правило 10); бренд — синонимом."
+		}
+	],
+	"services": [
+		{
+			"nameEn": "Dental Consultation",
+			"slug": "dental-consultation",
+			"source": "Početna: «Zakažite pregled — Redovna kontrola je pravi put do lijepog osmijeha … Zakažite kontrolu putem telefona»"
+		},
+		{
+			"nameEn": "Panoramic X-Ray",
+			"slug": "panoramic-x-ray",
+			"source": "/dijagnostika: «DIGITALNI ORTOPAN — Ortopan je panoramski snimak gornje i donje vilice … gotovo uvijek je sastavni dio prvog pregleda»"
+		},
+		{
+			"nameEn": "Intraoral X-Ray",
+			"slug": "intraoral-x-ray",
+			"source": "«U ordinaciji koristimo RVG senzor za snimanje pojedinacnih zuba», «kompletnu uslugu rendgenskog snimanja, bilo pojedinih zuba ili cijele vilice»"
+		},
+		{
+			"nameEn": "Pediatric Dentist Consultation",
+			"slug": "pediatric-dentist-consultation",
+			"source": "/djecja-i-preventivna-stomatologija: «Prvu posjetu stomatologu trebalo bi uraditi do prve godine zivota … Rane posjete stomatologu I preventivna njega»"
+		},
+		{
+			"nameEn": "Pediatric Dental Adaptation",
+			"slug": "pediatric-dental-adaptation",
+			"source": "«… kroz igru I razne animacije, plombe u boji, diplome I medalje za hrabre, oni rado dolaze»"
+		},
+		{
+			"nameEn": "Pediatric Caries Treatment",
+			"slug": "pediatric-caries-treatment",
+			"source": "«… plombe u boji» (детские пломбы), «Karijes mlečnih zuba …»"
+		},
+		{
+			"nameEn": "Dental Fissure Sealant",
+			"slug": "dental-fissure-sealant",
+			"source": "«Zalivanje fisura — Je preventivna metoda zastite zuba tecnom kompozitnom plombom»"
+		},
+		{
+			"nameEn": "Composite Filling",
+			"slug": "composite-filling",
+			"source": "/konzervativna-stomatologija: «Kompozitni ispuni (bijele plombe) imaju veliku estetsku prednost»; /estetski-ispuni: «Kompozitni materijali novih generacija»"
+		},
+		{
+			"nameEn": "Endodontic Treatment Single Canal Tooth",
+			"slug": "endodontic-treatment-single-canal-tooth",
+			"source": "«ENDODONCIJA-LIJEČENJE KANALA KORIJENA ZUBA … koju možemo uraditi ručno i mašinski» — число каналов не названо"
+		},
+		{
+			"nameEn": "Endodontic Treatment Multi-Canal Tooth",
+			"slug": "endodontic-treatment-multi-canal-tooth",
+			"source": "там же"
+		},
+		{
+			"nameEn": "Rotary Root Canal Treatment per Canal",
+			"slug": "machine-root-canal-treatment-per-canal",
+			"source": "«Mašinski postupak se radi uz pomoć endo-motora s apeks lokatorom»"
+		},
+		{
+			"nameEn": "Apicoectomy",
+			"slug": "apicoectomy",
+			"source": "«Tada je neophodno uraditi hirušku sanaciju- apikotomiju»; /usluge Oralna hirurgija: «operisanje korena zuba»"
+		},
+		{
+			"nameEn": "Ceramic Inlay Onlay",
+			"slug": "ceramic-inlay-onlay",
+			"source": "/keramicki-inlay: «Cjelokupni ispun … ispunjen je keramikom»; /fiksna-protetika: «Inlay I Onlay … koristimo Inlay ili Onlay keramicku nadoknadu»"
+		},
+		{
+			"nameEn": "Ceramic Veneer",
+			"slug": "ceramic-veneer",
+			"source": "/fasete: «Veniri(fasete) su tanke ljuspe od porcelana koji se lijepe na prednje zube»"
+		},
+		{
+			"nameEn": "Direct Composite Veneer",
+			"slug": "direct-composite-veneer",
+			"source": "/pitanja-pacijenata, /fiksna-protetika: «Fasete mogu biti keramicke ili kompozitne»"
+		},
+		{
+			"nameEn": "Prefabricated Composite Veneer",
+			"slug": "prefabricated-composite-veneer",
+			"source": "/fasete: «Componeer fasete – OSMIJEH ZA PONIJETI! … nano-hibridnog-kompozita … Coltène/Whaledent AG» (бренд — синонимом)"
+		},
+		{
+			"nameEn": "Teeth Whitening",
+			"slug": "teeth-whitening",
+			"source": "/bijeljenje-zuba: «Bijeljenje zuba u ordinaciji — Opalescence boost TM», «ZOOM TM izbjeljivanje … gel … aktivira se specijalno dizajniranom UV lampom»"
+		},
+		{
+			"nameEn": "Home Teeth Whitening",
+			"slug": "home-teeth-whitening",
+			"source": "«Bijeljenje zuba kod kuće — 10/15/20% H2O2 … Gel se nanosi u individualno izrađene trejeve»; /izbjeljivanje-zuba: «američkim preparatom Opalescence … kalup (tray)»"
+		},
+		{
+			"nameEn": "Internal Bleaching of Devitalized Tooth",
+			"slug": "internal-bleaching-of-devitalized-tooth",
+			"source": "«BIJELJENJE LIJEČENIH/POTAMNJELIH ZUBA — OPALESCENCE ENDO TM»"
+		},
+		{
+			"nameEn": "Enamel Microabrasion",
+			"slug": "enamel-microabrasion",
+			"source": "«IZBJELJIVANJE HIPERPIGMETNIRANIH ZUBA (FLUOROZA) — OPALUSTRE TM — Mikro abrazivna pasta»"
+		},
+		{
+			"nameEn": "Dental Air Polishing",
+			"slug": "dental-air-polishing",
+			"source": "«Air flow metoda poliranja zuba — … Bezbolno skida plak, nikotinske naslage …»"
+		},
+		{
+			"nameEn": "Orthodontic Consultation",
+			"slug": "orthodontic-consultation",
+			"source": "/ortodoncija: «Prva posjeta ortodontu trebala bi biti u 7 godini zivota»"
+		},
+		{
+			"nameEn": "Comprehensive Orthodontic Diagnostics",
+			"slug": "comprehensive-orthodontic-diagnostics",
+			"source": "/fiksni-ortodonski-aparati: «Odluka o vidu terapije … donosi se nakon detaljne i sveobuhvatne analize studijskih modela i rentgenskih snimaka (ortopan i profilni telerentgen)»"
+		},
+		{
+			"nameEn": "Orthodontic Treatment of Impacted Permanent Teeth",
+			"slug": "orthodontic-treatment-of-impacted-permanent-teeth",
+			"source": "/ortodoncija: «moguće je izvlaciti iz vilicne kosti zube koji nikada nisu nikli tzv: impaktirane zube (najcesce su to ocnjaci …)»"
+		},
+		{
+			"nameEn": "Orthodontic Removable Plate Appliance",
+			"slug": "orthodontic-removable-plate-appliance",
+			"source": "/mobilni-aparati: «Mobilni aparati — Mogu biti aktivni i funkcionalni … kod djece od 8-14 godina»"
+		},
+		{
+			"nameEn": "Orthodontic Functional Monoblock Appliance",
+			"slug": "orthodontic-functional-monoblock-appliance",
+			"source": "«… i funkcionalni» (функциональный аппарат; в каталоге generic-функциональный — monoblok)"
+		},
+		{
+			"nameEn": "Inman Aligner",
+			"slug": "inman-aligner",
+			"source": "«Inman aparat — Inman je jednostavan ortodontski aparat … nitinolske opruge … akrilatnu plocu»"
+		},
+		{
+			"nameEn": "Fixed Braces (Metal) per Jaw",
+			"slug": "fixed-braces-metal-per-jaw",
+			"source": "/fiksni-ortodonski-aparati: «Metalni fiksni aparati — Mozete ih uciniti zanimljivim izborom ligaturnih gumica»"
+		},
+		{
+			"nameEn": "Fixed Braces (Ceramic or Composite) per Jaw",
+			"slug": "fixed-braces-ceramic-or-composite-per-jaw",
+			"source": "«Estetski fiksni aparati … (bravice su od keramike, safirnog stakla)»; /estetske-fiksne-proteze: «polikarboksilat, keramika i safirno staklo»"
+		},
+		{
+			"nameEn": "Fixed Braces (Sapphire) per Jaw",
+			"slug": "fixed-braces-sapphire-per-jaw",
+			"source": "«… safirnog stakla» (отдельный материал, запись в каталоге есть)"
+		},
+		{
+			"nameEn": "Self-Ligating Braces (Metal) per Jaw",
+			"slug": "self-ligating-braces-metal-per-jaw",
+			"source": "«U Ortholine-u koristimo Damon system (Ormco) samoligirajucih breketa … metalne Damon bravice» (бренд — синонимом)"
+		},
+		{
+			"nameEn": "Lingual Braces per Jaw",
+			"slug": "lingual-braces-per-jaw",
+			"source": "«Lingvalne fiksne proteze … Incognito 3M … Bravice se izrađuju koristeci 3D tehnologiju od legure zlata» (бренд — синонимом)"
+		},
+		{
+			"nameEn": "Fixed Orthodontic Check-up",
+			"slug": "fixed-orthodontic-check-up",
+			"source": "«Kontrolni pregledi najcesce se vrse u intervalima 2-4 sedmice»"
+		},
+		{
+			"nameEn": "Orthodontic Retainer",
+			"slug": "orthodontic-retainer",
+			"source": "«Nakon skidanja fixnog aparata … RETENCIJA. Ritejneri su mobilni aparati ili folije»"
+		},
+		{
+			"nameEn": "Retention Aligner Fabrication",
+			"slug": "retention-aligner-fabrication",
+			"source": "«Ritejneri su mobilni aparati ili folije koji se nose po skidanju fiksnih aparata»"
+		},
+		{
+			"nameEn": "Metal-Ceramic Crown",
+			"slug": "metal-ceramic-crown",
+			"source": "/fiksna-protetika: «Mogu biti izradjene kao metalo-keramicke …»"
+		},
+		{
+			"nameEn": "Metal-Free (Zirconia) Ceramic Crown",
+			"slug": "metal-free-zirconia-ceramic-crown",
+			"source": "«… bezmetalne zirkonijum-keramicke …», «Zirkonijum keramika danas zauzima vodece mjesto»"
+		},
+		{
+			"nameEn": "Ceramic Crown on Titanium",
+			"slug": "ceramic-crown-on-titanium",
+			"source": "«… titanijum-keramicke …», «Titan keramika — … u potpunosti je prekriven keramikom»"
+		},
+		{
+			"nameEn": "Metal Ceramic Crown Gold",
+			"slug": "metal-ceramic-crown-gold",
+			"source": "«… I zlato-keramicke krunice», «Zlato-keramika … cesto se koristi u pokrivanju premolara i molara»"
+		},
+		{
+			"nameEn": "Temporary Crown",
+			"slug": "temporary-crown",
+			"source": "«Za izradu krunice potrebno je nekoliko dana, a pacijentu se za to vrijeme stavlja privremena krunica»"
+		},
+		{
+			"nameEn": "Partial Acrylic Denture",
+			"slug": "partial-acrylic-denture",
+			"source": "/mobilna-zubna-protetika: «Parcijalne plocaste proteze nastarije su I najduze koriscene»"
+		},
+		{
+			"nameEn": "Skeletal Partial Denture",
+			"slug": "skeletal-partial-denture",
+			"source": "«Parcijalna skeletirana proteza –Vizil proteza je maksimalno redukovana proteza ciju osnovu cini metalni skelet»"
+		},
+		{
+			"nameEn": "Flexible Denture",
+			"slug": "flexible-denture",
+			"source": "«… skratirane proteze i valplast proteze» (Valplast = flexible denture; бренд — синонимом)"
+		},
+		{
+			"nameEn": "Partial Denture with Precision Attachment",
+			"slug": "partial-denture-with-precision-attachment",
+			"source": "«Kombinovani protetski radovi … najcesce se koriste atecmeni»"
+		},
+		{
+			"nameEn": "Complete Denture",
+			"slug": "complete-denture",
+			"source": "/protetika: «… nadoknadjivanjem izgubljenih zuba krunicama, mostovima, fasetama (ljuskama) I parcijalnim ili totalnim protezama» — материал полного протеза не назван"
+		},
+		{
+			"nameEn": "Dental Implant Placement",
+			"slug": "dental-implant-placement",
+			"source": "/implantologija: «Sama ugradnja implantata traje oko 30 minuta» — бренд не назван"
+		},
+		{
+			"nameEn": "Bone Augmentation",
+			"slug": "bone-augmentation",
+			"source": "«Ako nema [koštane mase], prije implantiranja vrši se operacija ugradnje vještačke kosti»"
+		},
+		{
+			"nameEn": "Implant Suprastructure",
+			"slug": "implant-suprastructure",
+			"source": "«… na implant ušrafljuje nadograđena struktura (supra struktura) i vrši izrada protetskih nadoknada (krunica)»"
+		},
+		{
+			"nameEn": "Hyaluronic Acid Filler",
+			"slug": "hyaluronic-acid-filler",
+			"source": "/hijaluronski-fileri: «Gdje upotrebljavamo hijaluronske filere? … obrva, temporalna regija … nazo-labijalna regija, marionete … brada»"
+		},
+		{
+			"nameEn": "Lip Augmentation",
+			"slug": "lip-augmentation",
+			"source": "«korektivna terapija usana (volumen i oblik, podizanje ugla usana, bore oko usana)»; /usluge: «… ili povecanje usana»"
+		},
+		{
+			"nameEn": "Plaque and Calculus Removal",
+			"slug": "plaque-and-calculus-removal",
+			"source": "/parodontopatija: «Uklanjanjem dentalnog plaka, zubnog kamenca i drugih naslaga sa zuba …»"
+		},
+		{
+			"nameEn": "Periodontal Scaling and Root Planing",
+			"slug": "periodontal-scaling-root-planing",
+			"source": "«Prva ili kauzalna faza lečenja … i obradom parodontalnih džepova»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery",
+			"slug": "flap-surgery-periodontal",
+			"source": "«Druga faza lečenja je hirurška faza. Različitim vrstama tzv. režanj operacija …»"
+		},
+		{
+			"nameEn": "Periodontal Flap Surgery with Bone Graft per Tooth",
+			"slug": "periodontal-flap-surgery-with-bone-graft-per-tooth",
+			"source": "«Popunjavanjem koštanih defekata “vještačkom kosti” tokom režanj operacije …»"
+		},
+		{
+			"nameEn": "Gingivectomy",
+			"slug": "gingivectomy",
+			"source": "/gummy-smile: «Najcesce primjenjivana terapijska procedura je Gingivektomija»"
+		},
+		{
+			"nameEn": "Laser Gingivectomy",
+			"slug": "laser-gingivectomy",
+			"source": "«Gingivektomija se radi najcesce laserom, kod blazih slucajeva»"
+		},
+		{
+			"nameEn": "Dental Crown Lengthening",
+			"slug": "dental-crown-lengthening",
+			"source": "«Produzavanje klinicke krunice — … kada postoji potreba za ekstenzivnijom redukcijom gingive, najcesce i dijela kosti»"
+		},
+		{
+			"nameEn": "Tooth Extraction",
+			"slug": "tooth-extraction",
+			"source": "/usluge Oralna hirurgija: «vađenje običnih zuba»"
+		},
+		{
+			"nameEn": "Wisdom Tooth Extraction",
+			"slug": "wisdom-tooth-extraction",
+			"source": "«vađenje umnjaka operacijom»"
+		},
+		{
+			"nameEn": "Surgical Extraction of Residual Root",
+			"slug": "surgical-extraction-of-residual-root",
+			"source": "«… kao i vađenje zaostalog korijena zuba»"
+		},
+		{
+			"nameEn": "Bruxism Night Guard",
+			"slug": "bruxism-night-guard",
+			"source": "/pitanja-pacijenata «ZASTO SKRIPIMO ZUBIMA?»: «Na osnovu otisaka zuba pacijenta, radi se silikonski stitnik tzv: night-guard tray, koji se nosi nocu»"
+		}
+	],
+	"doctors": [
+		{
+			"slug": "dubravka-babic",
+			"nameSr": "Dubravka Babić",
+			"professionalTitle": "dr",
+			"position": "Specijalista ortopedije vilica",
+			"specialtyIds": [
+				78,
+				93
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://ortholine.me/wp-content/uploads/2020/04/dubravka_babic.jpg",
+			"services": []
+		},
+		{
+			"slug": "vladan-kovacevic",
+			"nameSr": "Vladan Kovačević",
+			"professionalTitle": "dr",
+			"position": "Opšti stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://ortholine.me/wp-content/uploads/2020/04/vladan_kovacevic.jpg",
+			"services": []
+		},
+		{
+			"slug": "ivona-gnjec",
+			"nameSr": "Ivona Gnječ",
+			"professionalTitle": "dr",
+			"position": "Opšti stomatolog",
+			"specialtyIds": [
+				78
+			],
+			"languageIds": [
+				1
+			],
+			"existing": false,
+			"hasBio": false,
+			"photo": "https://ortholine.me/wp-content/uploads/2020/04/ivona_gnjec.jpg",
+			"services": []
+		}
+	],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/fiksna-protetika: «Mostovi – povezuju prekinute zubne nizove u jednu cjelinu. Nosaci mosta su dvije ili vise krunica ili ugradjenih implantata»",
+			"reason": "Материал мостов не назван; generic-моста в каталоге нет. Коронки по материалам заведены."
+		},
+		{
+			"source": "/konzervativna-stomatologija: «Amaglamski ispuni (sive, srebrne plombe) … se sve manje koriste u modernoj stomatologiji»",
+			"reason": "Не заявлено, что клиника их ставит."
+		},
+		{
+			"source": "/djecja-i-preventivna-stomatologija: «Lokalnom primenom savremenih pasti za remineralizaciju zubne gleđi omogućava se selektivno ojačanje …»",
+			"reason": "Описание подхода в разделе «Savremena profilaksa», без заявления процедуры; записи «реминерализующая терапия» в каталоге нет. Фторирование (topical-fluoride) сайт противопоставляет — не ставили."
+		},
+		{
+			"source": "/pitanja-pacijenata: «Nakon bijeljenja, pozeljno je uraditi mineralizaciju (fluorizaciju) zuba»",
+			"reason": "Рекомендация в FAQ, не услуга."
+		},
+		{
+			"source": "/dijagnostika: «Posjedujemo i Intraoralnu kameru»",
+			"reason": "Оборудование (в описании), не услуга."
+		},
+		{
+			"source": "/ortodoncija: «rana ili Interceptivna ortodontska terapija», «pretprotetska ortodontska priprema»",
+			"reason": "Этапы/цели лечения теми же аппаратами; отдельных записей в каталоге нет, аппараты заведены."
+		},
+		{
+			"source": "/gummy-smile: «ortodontski tretman fixnim aparatima …, hirurska repozicija usnana, maxilofacijalna hirurska intervencija»",
+			"reason": "«moze da ukljuci» — перечень возможных процедур, клиника их прямо не заявляет (кроме гингивэктомии и удлинения коронки)."
+		},
+		{
+			"source": "/parodontopatija: «mukogingivalnu hirurgiju … estetsku parodontalnu hirurgiju … predprotetsku pripremu parodoncijuma»",
+			"reason": "Общие направления без конкретной процедуры."
+		},
+		{
+			"source": "Početna: «Samo za korisnike Premium Kartice Hipotekarne Banke omogucili smo prvi pregled bez naknade, 10% popusta na usluge ili plaćanja do 12 mjesečnih rata»",
+			"reason": "Условие для держателей карты банка — не цена; купон — решение юзера."
+		},
+		{
+			"source": "Početna: «Besplatni savjeti — … slobodno ih postavite ovdje», «Porodični paketi»",
+			"reason": "Онлайн-вопросы и маркетинговый пункт без состава пакета."
+		},
+		{
+			"source": "/oralna-hirurgija: «Stranica je u izradi»",
+			"reason": "Страница пустая; хирургия взята из /usluge."
+		}
+	],
+	"openQuestions": [
+		{
+			"topic": "Страницы 2020 — перечень и состав могли устареть",
+			"detail": "Все страницы услуг и «O nama» правлены 2020-04; Kontakt — 2023-02."
+		},
+		{
+			"topic": "Страховые (Lovćen osiguranje)",
+			"detail": "Сайт: «vrsimo usluge za njihove osiguranike». В БД нет таблицы связи клиника↔страховая (только insurance_companies/branches) — привязывать некуда, упомянуто в описании. Если связь появится — Lovćen (slug lovcen) единственная названная страховая."
+		},
+		{
+			"topic": "Бренды синонимами",
+			"detail": "Damon → self-ligating-braces-metal-per-jaw, Incognito → lingual-braces-per-jaw, Componeer → prefabricated-composite-veneer, Valplast → flexible-denture, Opalescence (Boost/home/Endo) → teeth-whitening/home-teeth-whitening/internal-bleaching. Бренд-дублей не заводили."
+		}
+	]
+}

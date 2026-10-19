@@ -1,0 +1,394 @@
+{
+	"schemaVersion": 1,
+	"slug": "institut-za-javno-zdravlje-crne-gore-podgorica",
+	"name": "Institut za javno zdravlje Crne Gore",
+	"city": "Podgorica",
+	"cityId": 1,
+	"googlePlaceId": "ChIJZXrorSTrTRMRS0H_vRxwHdc",
+	"clinicTypeIds": [
+		4
+	],
+	"languageIds": [
+		1
+	],
+	"sql": [
+		"server/sql/insert-clinic-institut-za-javno-zdravlje-crne-gore-podgorica.sql",
+		"server/sql/insert-clinic-institut-za-javno-zdravlje-crne-gore-podgorica-services.sql"
+	],
+	"status": {
+		"generated": "2026-10-09",
+		"appliedLocal": "2026-10-09",
+		"appliedProd": "2026-10-09",
+		"clinicId": 247,
+		"doctorIds": {},
+		"note": "Подволна 2e, агент M. Порядок применения обязателен: второй SQL резолвит клинику по google_place_id → slug. Одна карточка на два места Google (основное — ChIJZXrorSTrTRMRS0H_vRxwHdc; «Sanitarni pregledi» ChIJvz_mWQDrTRMRauRKqzpiPYk — без карточки). Slug на проде свободен (API 204). Врачей нет. Сухой прогон — см. отчёт агента. Применено юзером 2026-10-09 локально и на проде; сверено координатором SELECT'ами (локаль) и API (прод): число услуг/врачей/типы/языки совпали, кодировка чистая на 6 языках. clinicId и doctorIds — прод, clinicIdLocal — локаль (id расходятся).",
+		"clinicIdLocal": 274
+	},
+	"sources": [
+		{
+			"type": "website-api",
+			"ref": "https://api.ijzcg.me/v1 (locale: me) — сайт https://www.ijzcg.me/ (AngularJS SPA)",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"priceListDate": null,
+			"note": "/details (контакты, графики), /pages/sanitarni-pregledi (2024-08-04), mikrobiologija-uputstva + priprema-* (2024-03/04), savjeti-putovanja (2025-12), czb-imunoprofilaksa, dpst (2025-11), czb-hiv, vakcinacija, uzorkovanje; /departments (микробиология 2024-03, эпидемиология 2025-05, гигиена 2024-08); /posts/sanitarni-pregledi (2024-06-14), grip-vakcinacija-2025-2026. Цен нигде нет. /team-members пусто."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://api.ijzcg.me/media/files/1722784384-pravilnik-o-obaveznim-i-preporucenim-zdravstvenim-pregledima-odredenih-kategorija-stanovnistva-kliconosa-i-zaposlenih-u-objektima-pod-sanitarnim-nadzorom.pdf",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Pravilnik (13 стр., текстовый слой) — категории лиц и состав санитарных осмотров. Сумм нет."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://api.ijzcg.me/media/files/1722784385-uputstvo-za-sanitarne-f.pdf",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Плакат «Obavezni sanitarni pregledi»: документы, образец стула, счета для оплаты 510-9309-49 / 540-11914-02 (сумма НЕ указана), «radnim danima od 8.00 do 14.00 h»."
+		},
+		{
+			"type": "pdf",
+			"ref": "https://api.ijzcg.me/media/files/1765540917-20250923-savjeti-za-putovanja-brosura.pdf",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Брошюра для путешественников — общие советы, конкретных вакцин/цен нет."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/institut-za-javno-zdravlje.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Основное место: ChIJZXrorSTrTRMRS0H_vRxwHdc, 42.4377779 / 19.2472987, +382 20 412 888, «bb Džona Džeksona, Podgorica», рейтинг 2.6, 64 отзыва (в файле 5) — не импортировались."
+		},
+		{
+			"type": "google-places",
+			"ref": "data/google-places/podgorica/institut-za-javno-zdravlje-crne-gore-sanitarni-pregledi.json",
+			"collected": "2026-10-09",
+			"machineReadable": true,
+			"note": "Второе место того же адреса: ChIJvz_mWQDrTRMRauRKqzpiPYk «Institut za javno zdravlje Crne Gore - Sanitarni pregledi», 42.4379112 / 19.2476569, +382 67 044 841, 0 отзывов. Своей карточки нет (одна карточка — решение юзера); google_place_id в clinics один — основной."
+		}
+	],
+	"coverage": {
+		"address": "Džona Džeksona bb — сайт = Google",
+		"phone": "+38220243728;+38220412888;+38267044841 — сайт (общий), Google, санитарные осмотры",
+		"email": "ijzcg@ijzcg.me;sanitarni.pregledi@ijzcg.me",
+		"website": "https://www.ijzcg.me/",
+		"social": "facebook (ссылка подвала), @ijz.cg; Twitter/YouTube не заносятся (колонок нет)",
+		"logo": "https://www.ijzcg.me/assets/images/icons/ijzcg-me-logo.7a8fb537.png",
+		"workingHours": "НЕ заполнены — общего графика нет, только графики служб (в описании)",
+		"description": "из «O nama» (шаблон), /details, страниц служб и департаментов",
+		"languages": "только SR",
+		"doctors": "нет — /team-members пусто",
+		"doctorPhotos": "—",
+		"prices": "цен нет — 8 услуг и 26 анализов без цены",
+		"labTests": "26 — посевы/мазки и ПЦР урина по страницам подготовки пациентов",
+		"reviews": "pending — 64 отзыва Google (основное место)"
+	},
+	"catalogAdditions": [
+		{
+			"table": "medical_services",
+			"slug": "voluntary-hiv-hepatitis-and-sti-counseling-and-testing",
+			"nameEn": "Voluntary HIV, Hepatitis and STI Counseling and Testing",
+			"nameSr": "Dobrovoljno savjetovanje i testiranje na HIV, hepatitise i polno prenosive infekcije",
+			"categoryIds": [
+				9
+			],
+			"specialtyIds": [
+				45,
+				52
+			],
+			"reason": "ИЗЗ: «Dobrovoljno, povjerljivo savjetovanje i testiranje na HIV, virusne hepatitise i polno prenosive infekcije» (страница DPST, контакты). Это услуга-процесс (пре-тест консультирование → тест → пост-тест консультирование), а не отдельный анализ; конкретный тест не назван, поэтому hiv-ag-ab не ставим. В каталоге нет. Категория 9 GENERAL_MEDICINE → спец. 45 (авто) + 52 INFECTIOUS_DISEASES."
+		},
+		{
+			"table": "lab_tests",
+			"slug": "epstein-barr-virus-pcr-quantitative",
+			"nameEn": "Epstein-Barr Virus PCR Quantitative",
+			"nameSr": "Epstein-Barr virus PCR kvantitativni",
+			"categoryIds": [
+				10,
+				22
+			],
+			"reason": "ИЗЗ /priprema-pcr: «ODREĐIVANJE KONCENTRACIJE NUKLEINSKE KISELINE EPSTEIN BARR VIRUSA (EBV)» — количественный ПЦР. В каталоге есть только epstein-barr-virus-pcr (без количества), а для CMV количественный тест заведён отдельно (cytomegalovirus-pcr-quantitative) — по той же схеме. Категории 10 + 22, как у CMV quant."
+		},
+		{
+			"table": "lab_tests",
+			"slug": "bk-virus-pcr-quantitative",
+			"nameEn": "BK Virus PCR Quantitative",
+			"nameSr": "BK virus PCR kvantitativni",
+			"categoryIds": [
+				10,
+				22
+			],
+			"reason": "ИЗЗ /priprema-pcr: «ODREĐIVANJE KONCENTRACIJE NUKLEINSKE KISELINE BK VIRUSA (BKV)» (рядом отдельно «ISPITIVANJE PRISUSTVA BK VIRUSA» → bk-virus-pcr-urine). Количественного в каталоге нет — по схеме cytomegalovirus-pcr-quantitative. Категории 10 + 22."
+		}
+	],
+	"services": [
+		{
+			"slug": "sanitary-examination-for-food-industry-and-water-supply-workers",
+			"nameEn": "Sanitary Examination for Food Industry and Water Supply Workers",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/sanitarni-pregledi: «obavezni zdravstveni pregledi (sanitarni pregledi) za određene kategorije stanovništva» + Pravilnik čl. 5 t. 1, čl. 6: «zaposleni na poslovima javnog vodosnabdijevanja … i rukovanja hranom»"
+		},
+		{
+			"slug": "sanitary-examination-for-healthcare-and-educational-workers",
+			"nameEn": "Sanitary Examination for Healthcare and Educational Workers",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "Pravilnik čl. 5 t. 2–3, čl. 7–8: «zaposleni na poslovima njege i održavanja higijene u predškolskim ustanovama, obrazovnim ustanovama …», «zaposleni u zdravstvenim ustanovama …»"
+		},
+		{
+			"slug": "sanitary-examination-for-hairdressers-and-service-personnel",
+			"nameEn": "Sanitary Examination for Hairdressers and Service Personnel",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "Pravilnik čl. 5 t. 5: «zaposleni na poslovima pružanja usluge higijenske njege i uljepšavanja lica i tijela …»"
+		},
+		{
+			"slug": "travel-medicine-examination",
+			"nameEn": "Travel Medicine Examination",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/czb-imunoprofilaksa: «Priprema putnika u međunarodnom saobraćaju»; /savjeti-putovanja: «zakazivanja posjete, konsultacije ili savjetovanja prije putovanja» (запись «Specijalistički pregled lica u međunarodnom transportu»)"
+		},
+		{
+			"slug": "post-travel-medical-examination",
+			"nameEn": "Post-Travel Medical Examination",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/czb-imunoprofilaksa: «… i njihova kontrola prilikom povratka iz država u kojima postoje endemske infektivne bolesti» (запись «… prilikom povratka u zemlju»)"
+		},
+		{
+			"slug": "voluntary-hiv-hepatitis-and-sti-counseling-and-testing",
+			"nameEn": "Voluntary HIV, Hepatitis and STI Counseling and Testing",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/details: «Dobrovoljno, povjerljivo savjetovanje i testiranje na HIV, virusne hepatitise i polno prenosive infekcije: Tel: +382 67 103 378»; /dpst: «Radno vrijeme: radni dan od 08:00 do 15:00h»",
+			"newInCatalog": true
+		},
+		{
+			"slug": "first-nutritionist-examination",
+			"nameEn": "First Nutritionist Examination",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/departments/centar-za-zdravstvenu-ekologiju: «Specijalističke ambulante za poremećaj ishrane»; /details: «Ambulanta za ishranu Tel: +382 67 167 636» (запись «Prvi pregled - specijalista higijene - nutricionista» — врач-гигиенист, как в ИЗЗ)"
+		},
+		{
+			"slug": "personalized-nutrition-plan",
+			"nameEn": "Personalized Nutrition Plan",
+			"price": null,
+			"priceMin": null,
+			"priceMax": null,
+			"source": "/departments/centar-za-zdravstvenu-ekologiju: «… uz kreiranje individualnih i kolektivnih jelovnika i planova ishrane»"
+		}
+	],
+	"labTests": [
+		{
+			"slug": "urine-culture",
+			"nameEn": "Urine Culture",
+			"price": null,
+			"source": "/priprema-urinokultura: «Priprema pacijenta za davanje urina za bakteriološku analizu (urinokultura)»"
+		},
+		{
+			"slug": "cytomegalovirus-pcr",
+			"nameEn": "Cytomegalovirus PCR",
+			"price": null,
+			"source": "/priprema-pcr: «ISPITIVANJE PRISUSTVA CYTOMEGALOVIRUSA» (urin, PCR)"
+		},
+		{
+			"slug": "cytomegalovirus-pcr-quantitative",
+			"nameEn": "Cytomegalovirus PCR Quantitative",
+			"price": null,
+			"source": "/priprema-pcr: «ODREĐIVANJE KONCENTRACIJE NUKLEINSKE KISELINE CYTOMEGALOVIRUSA (CMV)»"
+		},
+		{
+			"slug": "epstein-barr-virus-pcr-quantitative",
+			"nameEn": "Epstein-Barr Virus PCR Quantitative",
+			"price": null,
+			"source": "/priprema-pcr: «ODREĐIVANJE KONCENTRACIJE NUKLEINSKE KISELINE EPSTEIN BARR VIRUSA (EBV)» (новая запись)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "bk-virus-pcr-urine",
+			"nameEn": "BK Virus PCR Urine",
+			"price": null,
+			"source": "/priprema-pcr: «ISPITIVANJE PRISUSTVA BK VIRUSA (BKV)» — из урина (запись «BK virus PCR urin»)"
+		},
+		{
+			"slug": "bk-virus-pcr-quantitative",
+			"nameEn": "BK Virus PCR Quantitative",
+			"price": null,
+			"source": "/priprema-pcr: «ODREĐIVANJE KONCENTRACIJE NUKLEINSKE KISELINE BK VIRUSA (BKV)» (новая запись)",
+			"newInCatalog": true
+		},
+		{
+			"slug": "legionella-pneumophila-pcr",
+			"nameEn": "Legionella pneumophila PCR",
+			"price": null,
+			"source": "/priprema-pcr: «ISPITIVANJE PRISUSTVA LEGIONELLA PNEUMOPHILA» — в списке ПЦР-анализов урина (PCR, а не антиген: страница — «Priprema pacijenta za davanje urina za PCR analize»)"
+		},
+		{
+			"slug": "mycoplasma-hominis-ureaplasma",
+			"nameEn": "Mycoplasma hominis and Ureaplasma Culture",
+			"price": null,
+			"source": "/departments/…mikrobiologiju: «osim za genitalne mikoplazme (uzorkovanje i prijem uzoraka se ne vrše petkom)»; /priprema-urinokultura: «… dokaz infekcije uretre mikoplazmama, ureaplazmama» — метод не назван; запись «Kultura na Mycoplasma hominis i Ureaplasma» — стандартная для генитальных микоплазм (19 клиник)"
+		},
+		{
+			"slug": "chlamydia-trachomatis-pcr-urine",
+			"nameEn": "Chlamydia trachomatis PCR in Urine",
+			"price": null,
+			"source": "/priprema-urinokultura: «Postupak uzimanja uzorka urina za dokaz infekcije uretre mikoplazmama, ureaplazmama i hlamidijama … potrebno je uzeti prvi mlaz prvog jutarnjeg urina» — метод на сайте НЕ назван; из мочи хламидии стандартно определяют ПЦР (решение координатора 2026-10-09)"
+		},
+		{
+			"slug": "urethral-swab-bacteria",
+			"nameEn": "Urethral Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-uretra: «Priprema pacijenta za uzorkovanje brisa uretre»"
+		},
+		{
+			"slug": "neisseria-gonorrhoeae-culture",
+			"nameEn": "Neisseria gonorrhoeae Culture",
+			"price": null,
+			"source": "/priprema-uretra, /priprema-cerviks: «Bris uretre / cerviksa za ispitivanje gonokoka treba da bude na temperaturi od 36 do 37ºC» — посев (общая запись, без привязки к месту взятия)"
+		},
+		{
+			"slug": "vaginal-swab-bacteria",
+			"nameEn": "Vaginal Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-cerviks: «Priprema pacijenta za uzorkovanje brisa vagine i cerviksa»"
+		},
+		{
+			"slug": "cervical-swab-bacteria",
+			"nameEn": "Cervical Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-cerviks: «… brisa vagine i cerviksa»"
+		},
+		{
+			"slug": "throat-swab-bacteria",
+			"nameEn": "Throat Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-grlo: «Priprema pacijenta za ispitivanje brisa grla, nepca i jezika»"
+		},
+		{
+			"slug": "tongue-swab-bacteria",
+			"nameEn": "Tongue Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-grlo: «… brisa grla, nepca i jezika»"
+		},
+		{
+			"slug": "oral-cavity-swab-bacteria",
+			"nameEn": "Oral Cavity Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-grlo: «… brisa grla, nepca i jezika» — нёбо: бактериологического мазка с нёба в каталоге нет, нёбо — часть полости рта (решение координатора 2026-10-09); формулировка — синонимом"
+		},
+		{
+			"slug": "sputum-bacteria",
+			"nameEn": "Sputum Culture for Bacteria",
+			"price": null,
+			"source": "/priprema-sputum: «Priprema pacijenta za ispitivanje ispljuvka/sputuma»"
+		},
+		{
+			"slug": "stool-culture",
+			"nameEn": "Stool Culture",
+			"price": null,
+			"source": "/priprema-feces: «Priprema pacijenta za ispitivanje stolice/fecesa»; Pravilnik: «laboratorijski pregled stolice na Salmonellae i Shigellae» (Koprokultura)"
+		},
+		{
+			"slug": "stool-parasites",
+			"nameEn": "Stool Parasites",
+			"price": null,
+			"source": "/priprema-feces; центр: «Odjeljenje za parazitologiju i mikologiju»; Pravilnik: «laboratorijski pregled stolice na crijevne protozoe i parazite»"
+		},
+		{
+			"slug": "nose-swab-bacteria",
+			"nameEn": "Nose Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-pacijenta-ostalo: «Za ispitivanje brisa nosa»"
+		},
+		{
+			"slug": "eye-swab-bacteria",
+			"nameEn": "Eye Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-pacijenta-ostalo: «Za ispitivanje brisa oka»"
+		},
+		{
+			"slug": "ear-swab-bacteria",
+			"nameEn": "Ear Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-pacijenta-ostalo: «Za ispitivanje brisa uva» (запись «Bris uha na bakterije» — серия briseva; bacteriological-examination-ear-swab — тарифная формулировка, менее распространена)"
+		},
+		{
+			"slug": "wound-swab-bacteria",
+			"nameEn": "Wound Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-pacijenta-ostalo: «Za ispitivanje brisa rane»"
+		},
+		{
+			"slug": "skin-swab-bacteria",
+			"nameEn": "Skin Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-pacijenta-ostalo: «Za ispitivanje brisa kože»"
+		},
+		{
+			"slug": "nipple-discharge-bacteria",
+			"nameEn": "Nipple Discharge Bacteria",
+			"price": null,
+			"source": "/priprema-pacijenta-ostalo: «Za ispitivanje brisa iscjedka dojke» (запись «Iscedak bradavice bakterije» — именно выделения; breast-swab-bacteria — мазок с кожи груди)"
+		},
+		{
+			"slug": "umbilicus-swab-bacteria",
+			"nameEn": "Umbilical Swab for Bacteria",
+			"price": null,
+			"source": "/priprema-pacijenta-ostalo: «Za ispitivanje brisa pupka»"
+		}
+	],
+	"doctors": [],
+	"disputed": [],
+	"excluded": [
+		{
+			"source": "/vakcinacija, /czb-imunoprofilaksa, /details: «Ambulanta za vakcinacije …»",
+			"reason": "Конкретные вакцины, которые делают в институте, не названы (сезонный грипп — «u svim domovima zdravlja», HPV/MMR — программы через ДЗ); записей «vaccination» без вакцины в каталоге нет — в описание."
+		},
+		{
+			"source": "Centar za medicinsku mikrobiologiju: «skrining raka debelog crijeva … dijagnostiku okultnog krvarenja», «skrining raka grlića materice … HPV tipizaciju»",
+			"reason": "Работа для национальных скрининг-программ (образцы собирают ДЗ), не услуга, оказываемая напрямую пациенту."
+		},
+		{
+			"source": "/uzorkovanje, /ispitivanje-vode, /ispitivanje-hrane, /fizicko-hemijska-ispitivanja; «DDD usluge»",
+			"reason": "Анализы воды, пищи, предметов, шума и дезинсекция/дератизация — не медицинские услуги людям."
+		},
+		{
+			"source": "Pravilnik: «rendgensko snimanje pluća, ako se … posumnja na tuberkulozu pluća», «bris ždrijela i nosa na Staphylococcus aureus», «pregled specijaliste epidemiologa»",
+			"reason": "Составные части санитарного осмотра по Pravilnik-у, а не отдельные услуги ИЗЗ (рентген ИЗЗ не делает); покрыты записями санитарных осмотров и мазками."
+		},
+		{
+			"source": "Плакат: «Izvršiti uplatu na broj žiro računa: 510-9309-49, 540-11914-02»",
+			"reason": "Сумма оплаты на плакате/сайте не указана — цену санитарного осмотра не ставим."
+		}
+	],
+	"openQuestions": [],
+	"resolved": [
+		{
+			"date": "2026-10-09",
+			"by": "координатор",
+			"source": "/priprema-urinokultura: «… dokaz infekcije uretre … hlamidijama … prvi mlaz prvog jutarnjeg urina»",
+			"decision": "chlamydia-trachomatis-pcr-urine",
+			"reason": "Из мочи хламидии стандартно определяют ПЦР; метод на сайте не назван (комментарий в SQL). Кандидаты были: chlamydia-trachomatis-pcr-urine, -direct-immunofluorescence, -culture, -iht."
+		},
+		{
+			"date": "2026-10-09",
+			"by": "координатор",
+			"source": "/priprema-grlo: «… brisa grla, nepca i jezika» — нёбо",
+			"decision": "oral-cavity-swab-bacteria",
+			"reason": "Нёбо — часть полости рта; формулировка «Bris nepca» — синонимом (sr)."
+		}
+	]
+}

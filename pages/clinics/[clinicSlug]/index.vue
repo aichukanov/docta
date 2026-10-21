@@ -1026,6 +1026,12 @@ watchEffect(() => {
 					/>
 					<DoctorReviews :reviews="displayedReviews" />
 				</div>
+				<div v-if="allReviewsLink && clinicData.rating" class="reviews-footer">
+					<ViewAllLink
+						:to="allReviewsLink"
+						:label="t('AllReviews', { count: clinicData.rating.totalReviews })"
+					/>
+				</div>
 				<ReviewForm
 					v-if="clinicData.id"
 					v-model="showReviewDialog"
@@ -1241,6 +1247,11 @@ watchEffect(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--kit-spacing-lg);
+}
+
+.reviews-footer {
+	display: flex;
+	justify-content: center;
 }
 
 .clinic-map {

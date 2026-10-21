@@ -327,6 +327,12 @@ watchEffect(() => {
 					/>
 					<DoctorReviews :reviews="displayedReviews" />
 				</div>
+				<div v-if="allReviewsLink && companyData.rating" class="reviews-footer">
+					<ViewAllLink
+						:to="allReviewsLink"
+						:label="t('AllReviews', { count: companyData.rating.totalReviews })"
+					/>
+				</div>
 				<ReviewForm
 					v-if="companyData.id"
 					v-model="showReviewDialog"
@@ -374,6 +380,11 @@ watchEffect(() => {
 	display: flex;
 	flex-direction: column;
 	gap: var(--kit-spacing-lg);
+}
+
+.reviews-footer {
+	display: flex;
+	justify-content: center;
 }
 
 .insurance-map {

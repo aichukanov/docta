@@ -97,6 +97,10 @@ const hasCategories = computed(() => topCategories.value.length > 0);
 				</li>
 			</ul>
 		</section>
+
+		<footer v-if="hasTopItems || hasCategories" class="summary-footer">
+			<ViewAllLink :to="viewAllLink" :label="viewAllLabel" />
+		</footer>
 	</div>
 </template>
 
@@ -105,6 +109,11 @@ const hasCategories = computed(() => topCategories.value.length > 0);
 	display: flex;
 	flex-direction: column;
 	gap: var(--kit-spacing-lg);
+}
+
+.summary-footer {
+	display: flex;
+	justify-content: center;
 }
 
 .summary-header {

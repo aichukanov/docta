@@ -65,7 +65,6 @@ const servicesList = ref<{
 	items: AdminNamedItem[];
 	totalCount: number;
 } | null>(null);
-const reviewsList = ref<{ id: number; label: string }[]>([]);
 const usersList = ref<{ id: number; email: string; name: string }[]>([]);
 const usersAdminList = ref<UserAdminListItem[]>([]);
 const recentRealReviews = ref<RecentRealUserReview[]>([]);
@@ -217,14 +216,14 @@ async function loadReviewsData() {
 
 	isLoadingReviews.value = true;
 	try {
-		const [data] = await Promise.all([
-			$fetch('/api/reviews/list'),
+		// Сам список отзывов грузит AdminReviewInfo: их тысячи, и поиск по ним
+		// удалённый. Здесь — только справочники для селекторов в редакторе.
+		await Promise.all([
 			loadDoctorsData(),
 			loadUsersData(),
 			// Селектор «Страховая компания» в редакторе отзыва
 			loadInsuranceCompaniesData(),
 		]);
-		reviewsList.value = data;
 		loadedTabs.value.reviews = true;
 	} catch (error) {
 		console.error('Failed to load reviews:', error);
@@ -437,7 +436,6 @@ async function recalculateRankScores() {
 				<el-tabs v-else-if="loadedTabs.reviews">
 					<el-tab-pane label="Найти">
 						<AdminReviewInfo
-							:reviews="reviewsList"
 							:clinics="clinicsList.clinics"
 							:doctors="doctorsList?.doctors || []"
 							:insuranceCompanies="insuranceCompaniesList"

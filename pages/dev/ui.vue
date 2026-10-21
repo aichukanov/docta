@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { AVATAR_COLORS, getAvatarColor } from '@ach/ui-kit/avatar-colors';
+import { NuxtLink } from '#components';
+import IconArrowRight from '~/components/icon/arrow-right.vue';
 /**
  * Витрина компонентов дизайн-системы (@ach/ui-kit).
  *
@@ -161,6 +163,47 @@ const demoPageHref = (page: number) =>
 			</div>
 			<div class="showcase__row showcase__row--narrow">
 				<KitButton variant="primary" block>block</KitButton>
+			</div>
+		</section>
+
+		<section>
+			<h2>KitButton — переход ссылкой</h2>
+			<p class="showcase__note">
+				С <code>href</code> или <code>as</code> корень становится настоящей
+				<code>&lt;a&gt;</code>: адрес виден краулеру и открывается в новой
+				вкладке. Проверять через devtools — в разметке должен быть
+				<code>&lt;a href&gt;</code>, а не <code>&lt;button&gt;</code>.
+			</p>
+			<div class="showcase__row">
+				<KitButton
+					appearance="text"
+					variant="primary"
+					href="/clinics"
+					:icon-right="IconArrowRight"
+				>
+					href → &lt;a&gt;
+				</KitButton>
+				<KitButton
+					appearance="link"
+					variant="primary"
+					:as="NuxtLink"
+					to="/clinics"
+					:icon-right="IconArrowRight"
+				>
+					as=NuxtLink → клиентский переход
+				</KitButton>
+				<KitButton
+					appearance="text"
+					variant="primary"
+					href="/clinics"
+					disabled
+					:icon-right="IconArrowRight"
+				>
+					disabled
+				</KitButton>
+			</div>
+			<div class="showcase__row">
+				<ViewAllLink :to="{ name: 'clinics' }" label="Все клиники (85)" />
 			</div>
 		</section>
 

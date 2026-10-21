@@ -1,7 +1,15 @@
 <script setup lang="ts">
+import { NuxtLink } from '#components';
 import IconArrowRight from '~/components/icon/arrow-right.vue';
 import type { RouteLocationRaw } from 'vue-router';
 
+/*
+ * Переход к полному списку («все отзывы», «все услуги»). Своего оформления
+ * не имеет: это `KitButton` в безрамочном весе, отрендеренный ссылкой, —
+ * `as` отдаёт корень `NuxtLink`, поэтому остаются и префетч, и настоящий
+ * `href` в серверной разметке. Обёртка живёт ради маршрута объектом:
+ * в пакете дизайн-системы знания о роутере нет.
+ */
 defineProps<{
 	to: RouteLocationRaw;
 	label: string;
@@ -9,40 +17,8 @@ defineProps<{
 </script>
 
 <template>
-	<NuxtLink :to="to" class="view-all-link">
-		<span>{{ label }}</span>
-		<IconArrowRight :size="16" class="view-all-icon" />
-	</NuxtLink>
+	<KitButton appearance="text" variant="primary" :as="NuxtLink" :to="to">
+		{{ label }}
+		<template #icon-right><IconArrowRight :size="16" /></template>
+	</KitButton>
 </template>
-
-<style lang="less" scoped>
-.view-all-link {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	color: var(--kit-color-primary);
-	font-weight: var(--kit-font-weight-semibold);
-	font-size: var(--kit-font-size-md);
-	text-decoration: none;
-	white-space: nowrap;
-	padding: var(--kit-spacing-xs) var(--kit-spacing-sm);
-	border-radius: var(--kit-border-radius-md);
-	transition:
-		color 0.15s ease,
-		background-color 0.15s ease;
-
-	&:hover {
-		color: var(--kit-color-primary-dark);
-		background: var(--kit-color-bg-tertiary);
-
-		.view-all-icon {
-			transform: translateX(2px);
-		}
-	}
-}
-
-.view-all-icon {
-	flex-shrink: 0;
-	transition: transform 0.15s ease;
-}
-</style>

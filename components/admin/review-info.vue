@@ -30,7 +30,6 @@ interface InsuranceCompanyListItem {
 
 const props = withDefaults(
 	defineProps<{
-		reviews: ReviewListItem[];
 		clinics: ClinicData[];
 		doctors: DoctorListItem[];
 		insuranceCompanies?: InsuranceCompanyListItem[];
@@ -49,9 +48,49 @@ const reviewModel = ref<ReviewAdminDetails | null>(null);
 const originalReview = ref<ReviewAdminDetails | null>(null);
 const isLoading = ref(false);
 
-const reviewOptions = computed(() =>
-	props.reviews.map((r) => ({ label: r.label, value: r.id })),
-);
+const { uiText } = useUiText();
+
+// Remote search: отзывов тысячи, в селектор они не помещаются — список
+// приходит с сервера, KitSelect при remote локально не фильтрует.
+const reviewOptions = ref<{ label: string; value: number }[]>([]);
+const isSearchingReviews = ref(false);
+
+const loadReviewOptions = async (query?: string) => {
+	isSearchingReviews.value = true;
+	try {
+		const items = await $fetch<ReviewListItem[]>('/api/reviews/list', {
+			method: 'POST',
+			body: { query: query || '' },
+		});
+		const options = items.map((r) => ({ label: r.label, value: r.id }));
+		// Выбранный отзыв держим в списке, иначе после нового поиска поле
+		// покажет пустоту вместо того, что открыто в форме ниже.
+		const selected = reviewOptions.value.find(
+			(o) => o.value === reviewId.value,
+		);
+		if (selected && !options.some((o) => o.value === selected.value)) {
+			options.unshift(selected);
+		}
+		reviewOptions.value = options;
+	} catch (e) {
+		console.error('Failed to search reviews:', e);
+	} finally {
+		isSearchingReviews.value = false;
+	}
+};
+
+// Запрос идёт по всей таблице отзывов — без задержки он улетал бы
+// на каждое нажатие клавиши.
+let searchTimer: ReturnType<typeof setTimeout> | null = null;
+const searchReviews = (query: string) => {
+	if (searchTimer) clearTimeout(searchTimer);
+	searchTimer = setTimeout(() => loadReviewOptions(query), 250);
+};
+
+onMounted(() => loadReviewOptions());
+onBeforeUnmount(() => {
+	if (searchTimer) clearTimeout(searchTimer);
+});
 
 const clinicOptions = computed(() =>
 	props.clinics.map((c) => ({ label: c.name, value: c.id })),
@@ -205,11 +244,20 @@ watch(reviewId, async (newId) => {
 
 <template>
 	<div>
-		<FilterableSelect
-			:items="reviewOptions"
-			v-model:value="reviewId"
+		<KitSelect
+			v-model="reviewId"
+			:options="reviewOptions"
+			:loading="isSearchingReviews"
+			:loading-text="uiText('Loading')"
+			:no-data-text="uiText('NothingFound')"
+			:clear-label="uiText('Clear')"
 			placeholder="Выберите отзыв"
-			placeholderSearch="Поиск по автору, клинике, ID..."
+			search-placeholder="Поиск по автору, клинике, ID..."
+			filterable
+			remote
+			clearable
+			size="large"
+			@search="searchReviews"
 		/>
 
 		<div v-if="isLoading" class="loading">Загрузка...</div>

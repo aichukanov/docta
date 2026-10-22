@@ -99,6 +99,8 @@ export function useClinicRanking() {
 					distanceKm: getDistanceKm(clinic),
 					hasPrice: prices ? hasPriceInfo(priceInfo) : undefined,
 					isPriceOutdated: priceInfo?.isOutdated,
+					// Подтверждённые жалобы режут весь композит (CAUTION_RANK_FACTOR)
+					hasCaution: (clinic.cautionTypes?.length ?? 0) > 0,
 				}),
 				// позиции нет в прайсе клиники — такая клиника всегда в конце
 				// (зеркало `is_obsolete ASC` в details-запросах)

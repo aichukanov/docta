@@ -46,6 +46,22 @@ export const OUTDATED_PRICE_FACTOR = 0.35;
 export const CLINIC_OUTDATED_PRICE_BONUS =
 	Math.round(CLINIC_PRICE_BONUS * OUTDATED_PRICE_FACTOR * 10000) / 10000;
 
+/**
+ * Множитель композитного скора клиники с активными ПОДТВЕРЖДЁННЫМИ жалобами
+ * (prd/clinic-reputation/): бейдж «Осторожно» сопровождается понижением в
+ * выдаче, иначе проблемная клиника продолжает собирать пациентов с первых
+ * позиций. Применяется к ПОЛНОМУ композиту (включая близость и бонус цены),
+ * чтобы близость не возвращала клинику наверх: сильный профиль (~0.8+0.5)
+ * опускается до ~0.3 — ниже середины списка, но клиника не прячется.
+ *
+ * Серверное зеркало — cautionRankFactorSql (server/common/clinic-reputation.ts)
+ * в ORDER BY каталога. В GROUP_CONCAT-подзапросах страниц услуг/анализов
+ * (getClinicRankOrderBySQL) множителя нет: видимый порядок там переранжирует
+ * клиент (use-clinic-ranking.ts), а SQL решает только, какие клиники попадут
+ * в обрезанный топ карточки листинга.
+ */
+export const CAUTION_RANK_FACTOR = 0.25;
+
 /** Вклад близости; null/undefined (локация или координаты неизвестны) → 0 */
 export function proximityBonus(distanceKm: number | null | undefined): number {
 	if (distanceKm == null) return 0;
@@ -59,12 +75,14 @@ export function compositeClinicScore(options: {
 	distanceKm?: number | null;
 	hasPrice?: boolean;
 	isPriceOutdated?: boolean;
+	/** Активные подтверждённые жалобы (ClinicData.cautionTypes не пуст) */
+	hasCaution?: boolean;
 }): number {
-	return (
+	const base =
 		(options.rankScore ?? 0) +
 		proximityBonus(options.distanceKm) +
-		clinicPriceBonus(options.hasPrice, options.isPriceOutdated)
-	);
+		clinicPriceBonus(options.hasPrice, options.isPriceOutdated);
+	return options.hasCaution ? base * CAUTION_RANK_FACTOR : base;
 }
 
 /** Бонус за цену: полный за актуальную, урезанный за устаревшую, 0 без цены */

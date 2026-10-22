@@ -34,7 +34,10 @@ const localizedName = computed(() =>
 				<div class="clinic-hero__title-row">
 					<h1 class="clinic-hero__name">{{ localizedName }}</h1>
 					<ClinicApprovedBadge :clinic="clinic" />
-					<ClinicCautionBadge :cautionTypes="clinic.cautionTypes" />
+					<ClinicCautionBadge
+						:cautionTypes="clinic.cautionTypes"
+						:clinicSlug="clinic.slug"
+					/>
 				</div>
 
 				<div v-if="clinic.localName" class="clinic-hero__original-name">

@@ -375,6 +375,10 @@ const tabs = computed(() => {
 	if (clinicDescription.value) {
 		result.push({ id: 'about', label: t('TabAbout') });
 	}
+	// Репутация — до контактов: предупреждение раньше телефона для записи
+	if (clinicData.value?.reputation?.length) {
+		result.push({ id: 'reputation', label: t('ReputationTitle') });
+	}
 	result.push({ id: 'contacts', label: t('TabContacts') });
 	if (hasHoursSection.value) {
 		result.push({ id: 'hours', label: t('WorkingHours') });
@@ -409,9 +413,6 @@ const tabs = computed(() => {
 					? `${t('TabReviews')} (${reviewCount})`
 					: t('TabReviews'),
 		});
-	}
-	if (clinicData.value?.reputation?.length) {
-		result.push({ id: 'reputation', label: t('ReputationTitle') });
 	}
 	result.push({ id: 'map', label: t('TabMap') });
 	return result;
@@ -830,6 +831,22 @@ watchEffect(() => {
 				</CollapsibleContent>
 			</EntityPageSection>
 
+			<!-- Reputation: стандартизированные жалобы, ведёт редакция
+			     (prd/clinic-reputation/). Без жалоб секции и таба нет вовсе.
+			     Стоит до контактов: предупреждение пациент должен увидеть
+			     раньше, чем телефон для записи -->
+			<EntityPageSection
+				v-if="clinicData?.reputation?.length"
+				sectionId="reputation"
+				:title="t('ReputationTitle')"
+			>
+				<template #icon><IconAlertTriangle :size="20" /></template>
+				<ClinicReputationSection
+					:complaints="clinicData.reputation"
+					:clinicId="clinicData.id"
+				/>
+			</EntityPageSection>
+
 			<!-- Contacts -->
 			<EntityPageSection
 				v-if="clinicData"
@@ -1047,20 +1064,6 @@ watchEffect(() => {
 						clinicDoctors.map((d) => ({ id: d.id, name: d.name }))
 					"
 					@submitted="onReviewSubmitted"
-				/>
-			</EntityPageSection>
-
-			<!-- Reputation: стандартизированные жалобы, ведёт редакция
-			     (prd/clinic-reputation/). Без жалоб секции и таба нет вовсе -->
-			<EntityPageSection
-				v-if="clinicData?.reputation?.length"
-				sectionId="reputation"
-				:title="t('ReputationTitle')"
-			>
-				<template #icon><IconAlertTriangle :size="20" /></template>
-				<ClinicReputationSection
-					:complaints="clinicData.reputation"
-					:clinicId="clinicData.id"
 				/>
 			</EntityPageSection>
 

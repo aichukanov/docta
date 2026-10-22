@@ -1,4 +1,5 @@
 import type { Connection } from 'mysql2/promise';
+import { CAUTION_RANK_FACTOR } from '~/common/ranking';
 import type {
 	ClinicComplaint,
 	ClinicComplaintStatus,
@@ -58,6 +59,21 @@ export function cautionTypesSql(alias: string): string {
 		FROM clinic_complaints cc
 		WHERE cc.clinic_id = ${alias}.id AND cc.is_active = 1 AND cc.status = 'confirmed'
 	)`;
+}
+
+/**
+ * SQL-множитель ранжирования: клиника с активными подтверждёнными жалобами
+ * получает CAUTION_RANK_FACTOR к композитному скору (зеркало hasCaution в
+ * common/ranking.ts). Вставляется в ORDER BY каталога (server/api/clinics/list.ts);
+ * в GROUP_CONCAT-подзапросы страниц позиций не вставлять — там порядок
+ * переранжирует клиент, а корректность подзапроса в ORDER BY GROUP_CONCAT
+ * не гарантирована.
+ */
+export function cautionRankFactorSql(alias: string): string {
+	return `IF(EXISTS(
+		SELECT 1 FROM clinic_complaints cc
+		WHERE cc.clinic_id = ${alias}.id AND cc.is_active = 1 AND cc.status = 'confirmed'
+	), ${CAUTION_RANK_FACTOR}, 1)`;
 }
 
 /** Разбор результата cautionTypesSql в массив кодов */

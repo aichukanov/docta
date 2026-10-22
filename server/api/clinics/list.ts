@@ -13,6 +13,7 @@ const DESCRIPTION_COLUMNS = `
 
 import { fetchClinicCoupons } from '~/server/common/clinic-coupons';
 import {
+	cautionRankFactorSql,
 	cautionTypesSql,
 	parseCautionTypes,
 } from '~/server/common/clinic-reputation';
@@ -363,9 +364,11 @@ export async function getClinicList(
 	// Композитный скор: rank_score + вклад близости (зеркало common/ranking.ts).
 	// Расстояние — компонент рейтинга, а не его замена: пустой профиль в 500 м
 	// не должен перекрывать заполненную клинику с отзывами чуть дальше.
+	// Подтверждённые жалобы режут ВЕСЬ композит (включая близость): бейджу
+	// «Осторожно» соответствует и понижение в выдаче (prd/clinic-reputation/).
 	const orderByClause = sortByDistance
-		? `ORDER BY (c.rank_score + CASE WHEN distance IS NULL THEN 0 ELSE ${PROXIMITY_WEIGHT} * POW(2, -distance / ${PROXIMITY_HALF_DISTANCE_KM}) END) DESC, c.name_sr ASC`
-		: 'ORDER BY c.rank_score DESC, c.name_sr ASC';
+		? `ORDER BY ((c.rank_score + CASE WHEN distance IS NULL THEN 0 ELSE ${PROXIMITY_WEIGHT} * POW(2, -distance / ${PROXIMITY_HALF_DISTANCE_KM}) END) * ${cautionRankFactorSql('c')}) DESC, c.name_sr ASC`
+		: `ORDER BY (c.rank_score * ${cautionRankFactorSql('c')}) DESC, c.name_sr ASC`;
 
 	const totalCountQuery = `
 			SELECT COUNT(DISTINCT c.id) as totalCount

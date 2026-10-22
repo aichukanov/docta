@@ -41,6 +41,7 @@ const cautionTypes = computed(() => data.value?.caution?.[slug.value]);
 		<ClinicCautionBadge
 			v-if="cautionTypes?.length"
 			:cautionTypes="cautionTypes"
+			:clinicSlug="slug"
 			iconOnly
 			small
 			class="route-link-caution"

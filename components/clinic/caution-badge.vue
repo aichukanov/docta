@@ -1,17 +1,21 @@
 <script setup lang="ts">
 import IconAlertTriangle from '~/components/icon/alert-triangle.vue';
+import { getRegionalQuery } from '~/common/url-utils';
 import clinicReputationI18n from '~/i18n/clinic-reputation';
 import type { ClinicComplaintType } from '~/enums/clinic-complaint-type';
 
 /**
  * Бейдж «Осторожно» рядом с названием клиники (prd/clinic-reputation/).
  * Показывается только при активных ПОДТВЕРЖДЁННЫХ жалобах (cautionTypes из
- * API); тултип перечисляет короткие ярлыки жалоб. Неинтерактивный — подробности
- * в разделе «Репутация» на странице клиники.
+ * API); тултип перечисляет короткие ярлыки жалоб. С clinicSlug бейдж —
+ * ссылка в раздел «Репутация» страницы клиники; без слага (например, внутри
+ * другой ссылки, где вложенный <a> невалиден) — просто метка с тултипом.
  */
 const props = withDefaults(
 	defineProps<{
 		cautionTypes?: ClinicComplaintType[];
+		/** Слаг клиники — делает бейдж ссылкой на /clinics/<slug>#reputation */
+		clinicSlug?: string;
 		small?: boolean;
 		/** Только иконка — для тесных мест: попап карты, поиск, ссылки в тексте */
 		iconOnly?: boolean;
@@ -22,7 +26,7 @@ const props = withDefaults(
 	},
 );
 
-const { t } = useI18n({
+const { t, locale } = useI18n({
 	useScope: 'local',
 	messages: clinicReputationI18n.messages,
 });
@@ -36,6 +40,17 @@ const tooltipText = computed(() =>
 			.join(', '),
 	}),
 );
+
+const reputationLink = computed(() =>
+	props.clinicSlug
+		? {
+				name: 'clinics-clinicSlug',
+				params: { clinicSlug: props.clinicSlug },
+				query: getRegionalQuery(locale.value),
+				hash: '#reputation',
+			}
+		: null,
+);
 </script>
 
 <template>
@@ -45,13 +60,37 @@ const tooltipText = computed(() =>
 		placement="top"
 		effect="light"
 	>
+		<!-- @click.stop: бейдж живёт внутри кликабельных карточек и строк
+		     поиска — переход на репутацию не должен дублироваться их обработчиком -->
+		<NuxtLink
+			v-if="reputationLink"
+			:to="reputationLink"
+			class="caution-badge-link"
+			@click.stop
+		>
+			<KitTag
+				v-if="!iconOnly"
+				variant="warning"
+				appearance="light"
+				size="small"
+				class="caution-badge"
+			>
+				<IconAlertTriangle :size="12" class="caution-badge__icon" />
+				{{ t('Caution') }}
+			</KitTag>
+			<IconAlertTriangle
+				v-else
+				class="caution-icon"
+				:class="{ 'caution-icon--small': small }"
+				size="1em"
+			/>
+		</NuxtLink>
 		<KitTag
-			v-if="!iconOnly"
+			v-else-if="!iconOnly"
 			variant="warning"
 			appearance="light"
 			size="small"
 			class="caution-badge"
-			:class="{ 'caution-badge--small': small }"
 		>
 			<IconAlertTriangle :size="12" class="caution-badge__icon" />
 			{{ t('Caution') }}
@@ -66,6 +105,23 @@ const tooltipText = computed(() =>
 </template>
 
 <style scoped lang="less">
+.caution-badge-link {
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+	flex-shrink: 0;
+
+	.caution-badge,
+	.caution-icon {
+		cursor: pointer;
+	}
+
+	&:hover .caution-badge {
+		text-decoration: underline;
+		text-decoration-color: var(--kit-color-warning-dark);
+	}
+}
+
 .caution-badge {
 	cursor: help;
 	flex-shrink: 0;

@@ -36,7 +36,7 @@ export default {
 			SeePinnedReview: 'Review about this case',
 			SeeArticle: 'Case review article',
 			ReputationFooter:
-				'This section is maintained by the docta.me team based on patient reports and submitted documents. The clinic can send an official response to contact@docta.me — we will publish it here.',
+				'This section is maintained by the docta.me team based on patient reports and submitted documents. The clinic can send an official response to {email} — we will publish it here.',
 			ReviewsCautionNotice: 'This clinic has confirmed patient complaints.',
 			ReviewsCautionLink: 'See the Reputation section',
 		},
@@ -67,7 +67,7 @@ export default {
 			SeePinnedReview: 'Отзыв по этому случаю',
 			SeeArticle: 'Разбор случая',
 			ReputationFooter:
-				'Раздел ведёт редакция docta.me на основании обращений пациентов и предоставленных документов. Клиника может направить официальный ответ на contact@docta.me — мы опубликуем его здесь.',
+				'Раздел ведёт редакция docta.me на основании обращений пациентов и предоставленных документов. Клиника может направить официальный ответ на {email} — мы опубликуем его здесь.',
 			ReviewsCautionNotice: 'У клиники есть подтверждённые жалобы пациентов.',
 			ReviewsCautionLink: 'Подробнее в разделе «Репутация»',
 		},
@@ -98,7 +98,7 @@ export default {
 			SeePinnedReview: 'Recenzija o ovom slučaju',
 			SeeArticle: 'Analiza slučaja',
 			ReputationFooter:
-				'Ovu rubriku vodi redakcija docta.me na osnovu prijava pacijenata i dostavljenih dokumenata. Klinika može poslati zvaničan odgovor na contact@docta.me — objavićemo ga ovdje.',
+				'Ovu rubriku vodi redakcija docta.me na osnovu prijava pacijenata i dostavljenih dokumenata. Klinika može poslati zvaničan odgovor na {email} — objavićemo ga ovdje.',
 			ReviewsCautionNotice: 'Ova klinika ima potvrđene žalbe pacijenata.',
 			ReviewsCautionLink: 'Više u rubrici Reputacija',
 		},
@@ -129,7 +129,7 @@ export default {
 			SeePinnedReview: 'Рецензија о овом случају',
 			SeeArticle: 'Анализа случаја',
 			ReputationFooter:
-				'Ову рубрику води редакција docta.me на основу пријава пацијената и достављених докумената. Клиника може послати званичан одговор на contact@docta.me — објавићемо га овдје.',
+				'Ову рубрику води редакција docta.me на основу пријава пацијената и достављених докумената. Клиника може послати званичан одговор на {email} — објавићемо га овдје.',
 			ReviewsCautionNotice: 'Ова клиника има потврђене жалбе пацијената.',
 			ReviewsCautionLink: 'Више у рубрици Репутација',
 		},
@@ -160,7 +160,7 @@ export default {
 			SeePinnedReview: 'Bewertung zu diesem Fall',
 			SeeArticle: 'Analyse des Falls',
 			ReputationFooter:
-				'Diese Rubrik pflegt die docta.me-Redaktion auf Grundlage von Patientenmeldungen und eingereichten Unterlagen. Die Klinik kann eine offizielle Stellungnahme an contact@docta.me senden — wir veröffentlichen sie hier.',
+				'Diese Rubrik pflegt die docta.me-Redaktion auf Grundlage von Patientenmeldungen und eingereichten Unterlagen. Die Klinik kann eine offizielle Stellungnahme an {email} senden — wir veröffentlichen sie hier.',
 			ReviewsCautionNotice:
 				'Für diese Klinik liegen bestätigte Patientenbeschwerden vor.',
 			ReviewsCautionLink: 'Mehr im Abschnitt Reputation',
@@ -192,7 +192,7 @@ export default {
 			SeePinnedReview: 'Bu vakayla ilgili yorum',
 			SeeArticle: 'Vaka incelemesi',
 			ReputationFooter:
-				'Bu bölüm, hasta bildirimleri ve sunulan belgelere dayanarak docta.me ekibi tarafından yönetilir. Klinik, contact@docta.me adresine resmî bir yanıt gönderebilir — yanıtı burada yayımlarız.',
+				'Bu bölüm, hasta bildirimleri ve sunulan belgelere dayanarak docta.me ekibi tarafından yönetilir. Klinik, {email} adresine resmî bir yanıt gönderebilir — yanıtı burada yayımlarız.',
 			ReviewsCautionNotice:
 				'Bu klinik hakkında doğrulanmış hasta şikâyetleri var.',
 			ReviewsCautionLink: 'Ayrıntılar İtibar bölümünde',

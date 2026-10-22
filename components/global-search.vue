@@ -873,6 +873,7 @@ onUnmounted(() => {
 							>
 								<ClinicCautionBadge
 									:cautionTypes="clinicById(clinic.id)?.cautionTypes"
+									:clinicSlug="clinic.slug"
 									iconOnly
 									small
 								/>

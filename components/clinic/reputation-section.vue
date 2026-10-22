@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { PROJECT_CONTACTS } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
 import clinicReputationI18n from '~/i18n/clinic-reputation';
 import type { ClinicComplaint } from '~/interfaces/clinic-reputation';
@@ -110,7 +111,11 @@ watch(hasBeenVisible, (visible) => {
 			</p>
 		</div>
 
-		<p class="reputation-footer">{{ t('ReputationFooter') }}</p>
+		<!-- Email — параметром из констант: `@` в строке vue-i18n ломает
+		     компиляцию (linked messages), а адрес и так живёт в PROJECT_CONTACTS -->
+		<p class="reputation-footer">
+			{{ t('ReputationFooter', { email: PROJECT_CONTACTS.email }) }}
+		</p>
 	</div>
 </template>
 

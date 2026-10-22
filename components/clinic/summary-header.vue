@@ -148,7 +148,11 @@ const reviewsLink = computed(() => {
 						</NuxtLink>
 						<span v-else class="clinic-name">{{ localizedName }}</span>
 						<ClinicApprovedBadge :clinic="clinic" :small="true" />
-						<ClinicCautionBadge :cautionTypes="clinic.cautionTypes" small />
+						<ClinicCautionBadge
+							:cautionTypes="clinic.cautionTypes"
+							:clinicSlug="clinic.slug"
+							small
+						/>
 					</div>
 					<div v-if="clinic.localName" class="clinic-original-name">
 						{{ clinic.localName }}

@@ -33,7 +33,7 @@ export default {
 			TmdTitle:
 				'Temel Dental in Podgorica: €2,000 quoted, €4,000 after payment',
 			TmdDescription:
-				'A documented case at the Temel Dental clinic in Podgorica: a family paid €1,000 for treatment quoted at “around €2,000”, and days later learned the plan costs €4,000 and consists of different procedures. The clinic refuses a refund. Correspondence, reviews, Montenegrin law and a patient checklist.',
+				'A documented case at the Temel Dental clinic in Podgorica: a family paid a €1,000 deposit for treatment quoted at “around €2,000”, and days later learned the plan costs €4,000 and consists of different procedures. The clinic refuses a refund. Correspondence, reviews, Montenegrin law and a patient checklist.',
 			TmdToc_case: 'Timeline: from a routine check-up to a “package price”',
 			TmdToc_science: 'Can the lower jaw “expand on its own”?',
 			TmdToc_flags: 'Five red flags',
@@ -48,13 +48,13 @@ export default {
 				'In October 2026, a mother brought her 11-year-old daughter to a routine check-up at the ',
 			TmdLead1Link: 'Temel Dental',
 			TmdLead1End:
-				' clinic in Podgorica. Just a few days later the family found itself in a situation people rarely write about but often share in private: a treatment of “around €2,000” was discussed verbally at the consultation, €1,000 was paid — and only after the payment did the family learn from written correspondence that the full plan costs €4,000 and consists of procedures different from what the doctor had discussed. The clinic refuses to return the money.',
+				' clinic in Podgorica. Just a few days later the family found itself in a situation people rarely write about but often share in private: a treatment of “around €2,000” was discussed verbally at the consultation, a €1,000 deposit was paid — and only after the payment did the family learn from written correspondence that the full plan costs €4,000 and consists of procedures different from what the doctor had discussed. The clinic refuses to return the money.',
 			TmdLead2:
 				'Full disclosure first: this is the family of the person behind docta.me — his wife took their daughter to the consultation. The site is run by one person, so “the editorial team” in this text is him. We disclose this conflict of interest openly rather than hide it. Being close to the story also works for accuracy: the correspondence, the payment documents and the events themselves are known to the author first-hand, not as a retelling. We break the case down step by step, compare it with public reviews of the clinic and with Montenegrin law — and end with a checklist for avoiding a similar situation. The clinic’s position is included below, based on its replies in the correspondence.',
 			TmdCase1:
 				'At a routine check-up, a Temel Dental dentist referred the child to the clinic’s own orthodontist — a reasonable step in itself. At the consultation the orthodontist laid out a plan verbally: an expansion plate for the upper jaw for about six months, then aligners. He estimated the total cost at “around €2,000”: €1,000 upfront, then €100–200 per month for aligners, starting in six months. The lower jaw, according to the doctor, did not need expanding: it “expands on its own”.',
 			TmdCase2:
-				'The family paid €1,000: €800 by card and €200 in cash. No receipt was issued for the cash part. No written contract was signed, and the family received no written treatment plan with stages and prices — every agreement remained verbal.',
+				'The family paid a €1,000 deposit: €800 by card and €200 in cash. No receipt was issued for the cash part. No written contract was signed, and the family received no written treatment plan with stages and prices — every agreement remained verbal.',
 			TmdCase3a:
 				'Within days of the payment, the parents compared prices and found that similar expansion plates cost around €200 at other clinics in Montenegro, while at Temel Dental this item had cost €800. The docta.me catalog confirms it: the service “',
 			TmdCase3Link: 'removable orthodontic plate appliance',
@@ -189,7 +189,7 @@ export default {
 			TmdTitle:
 				'Temel Dental в Подгорице: 2000 € на словах, 4000 € после оплаты',
 			TmdDescription:
-				'Разбор случая в стоматологии Temel Dental (Подгорица): семья заплатила 1000 € за лечение «примерно на 2000 €», а через несколько дней узнала, что план стоит 4000 € и состоит из других процедур. Вернуть деньги клиника отказывается. Переписка, отзывы, законы Черногории, памятка.',
+				'Разбор случая в стоматологии Temel Dental (Подгорица): семья внесла 1000 € предоплаты за лечение «примерно на 2000 €», а через несколько дней узнала, что план стоит 4000 € и состоит из других процедур. Вернуть деньги клиника отказывается. Переписка, отзывы, законы Черногории, памятка.',
 			TmdToc_case: 'Хронология: от планового осмотра до «пакетной стоимости»',
 			TmdToc_science: 'Может ли нижняя челюсть «расшириться самостоятельно»?',
 			TmdToc_flags: 'Пять красных флагов',
@@ -204,13 +204,13 @@ export default {
 				'В октябре 2026 года мать привела 11-летнюю дочь на плановый осмотр в клинику ',
 			TmdLead1Link: 'Temel Dental',
 			TmdLead1End:
-				' в Подгорице. Всего через несколько дней семья оказалась в ситуации, о которой нечасто пишут, но часто рассказывают в частных разговорах: на консультации устно обсудили лечение «примерно на 2000 €», заплатили 1000 € — а уже после оплаты узнали из переписки, что полный план стоит 4000 € и состоит из других процедур, чем обсуждалось у врача. Вернуть деньги клиника отказывается.',
+				' в Подгорице. Всего через несколько дней семья оказалась в ситуации, о которой нечасто пишут, но часто рассказывают в частных разговорах: на консультации устно обсудили лечение «примерно на 2000 €», внесли 1000 € предоплаты — а уже после оплаты узнали из переписки, что полный план стоит 4000 € и состоит из других процедур, чем обсуждалось у врача. Вернуть деньги клиника отказывается.',
 			TmdLead2:
 				'Сразу о главном: это случай семьи автора docta.me — на консультацию дочь водила его жена. Сайт делает один человек, поэтому «редакция» в этом тексте — он и есть. Мы раскрываем этот конфликт интересов прямо, а не прячем. У близости к истории есть и обратная сторона, которая работает на точность: переписка, платёжные документы и сами события известны автору из первых рук, а не в пересказе. Мы разобрали случай по шагам, сопоставили его с публичными отзывами о клинике и с законодательством Черногории — и составили памятку, как не оказаться в похожей ситуации. Позиция клиники в материале приведена — по её ответам из переписки.',
 			TmdCase1:
 				'Стоматолог Temel Dental на плановом осмотре направил ребёнка к ортодонту той же клиники — шаг сам по себе обоснованный. На консультации ортодонт устно озвучил план: расширительная пластинка на верхнюю челюсть примерно на шесть месяцев, затем элайнеры. Общую стоимость врач оценил «около 2000 €»: 1000 € сразу, затем по 100–200 € в месяц за элайнеры — начиная через полгода. Нижнюю челюсть, со слов врача, расширять не нужно: она «расширяется самостоятельно».',
 			TmdCase2:
-				'Семья заплатила 1000 €: 800 € картой и 200 € наличными. Чек на наличную часть не выдали. Письменный договор не заключался, план лечения с этапами и ценами на бумаге семья тоже не получила — все договорённости остались устными.',
+				'Семья внесла 1000 € предоплаты: 800 € картой и 200 € наличными. Чек на наличную часть не выдали. Письменный договор не заключался, план лечения с этапами и ценами на бумаге семья тоже не получила — все договорённости остались устными.',
 			TmdCase3a:
 				'Уже через несколько дней после оплаты родители сравнили цены и выяснили, что аналогичные расширительные пластинки в других клиниках Черногории стоят порядка 200 €, тогда как у Temel Dental эта позиция обошлась в 800 €. Это подтверждает каталог docta.me: услуга «',
 			TmdCase3Link: 'Ортодонтический съёмный пластинчатый аппарат',
@@ -345,7 +345,7 @@ export default {
 			TmdTitle:
 				'Temel Dental u Podgorici: 2.000 € usmeno, 4.000 € nakon uplate',
 			TmdDescription:
-				'Dokumentovan slučaj u stomatološkoj klinici Temel Dental (Podgorica): porodica je platila 1.000 € za liječenje „od oko 2.000 €“, a nekoliko dana kasnije saznala da plan košta 4.000 € i da se sastoji od drugih procedura. Klinika odbija povraćaj novca. Prepiska, recenzije, crnogorski zakoni i podsjetnik za pacijente.',
+				'Dokumentovan slučaj u stomatološkoj klinici Temel Dental (Podgorica): porodica je uplatila avans od 1.000 € za liječenje „od oko 2.000 €“, a nekoliko dana kasnije saznala da plan košta 4.000 € i da se sastoji od drugih procedura. Klinika odbija povraćaj novca. Prepiska, recenzije, crnogorski zakoni i podsjetnik za pacijente.',
 			TmdToc_case: 'Hronologija: od kontrolnog pregleda do „paketne cijene“',
 			TmdToc_science: 'Može li se donja vilica „proširiti sama“?',
 			TmdToc_flags: 'Pet crvenih zastavica',
@@ -360,13 +360,13 @@ export default {
 				'U oktobru 2026. majka je dovela jedanaestogodišnju kćerku na kontrolni pregled u kliniku ',
 			TmdLead1Link: 'Temel Dental',
 			TmdLead1End:
-				' u Podgorici. Već nekoliko dana kasnije porodica se našla u situaciji o kojoj se rijetko piše, ali se često priča privatno: na konsultaciji je usmeno dogovoreno liječenje „od oko 2.000 €“, plaćeno je 1.000 € — a tek nakon uplate porodica je iz prepiske saznala da cio plan košta 4.000 € i da se sastoji od drugih procedura, a ne onih o kojima je bilo riječi kod ljekara. Klinika odbija da vrati novac.',
+				' u Podgorici. Već nekoliko dana kasnije porodica se našla u situaciji o kojoj se rijetko piše, ali se često priča privatno: na konsultaciji je usmeno dogovoreno liječenje „od oko 2.000 €“, uplaćen je avans od 1.000 € — a tek nakon uplate porodica je iz prepiske saznala da cio plan košta 4.000 € i da se sastoji od drugih procedura, a ne onih o kojima je bilo riječi kod ljekara. Klinika odbija da vrati novac.',
 			TmdLead2:
 				'Prvo ono najvažnije: ovo je slučaj porodice autora sajta docta.me — kćerku je na konsultaciju vodila njegova supruga. Sajt vodi jedan čovjek, pa je „redakcija“ u ovom tekstu upravo on. Ovaj sukob interesa otvoreno objavljujemo, ne krijemo ga. Blizina priči ima i drugu stranu, koja radi za tačnost: prepiska, dokazi o plaćanju i sami događaji poznati su autoru iz prve ruke, a ne iz prepričavanja. Slučaj smo razložili korak po korak, uporedili ga sa javnim recenzijama o klinici i sa crnogorskim zakonima — i sastavili podsjetnik kako ne biste došli u sličnu situaciju. Stav klinike naveden je u tekstu — prema njenim odgovorima iz prepiske.',
 			TmdCase1:
 				'Stomatolog Temel Dentala je na kontrolnom pregledu uputio dijete ortodontu iste klinike — korak koji je sam po sebi opravdan. Na konsultaciji je ortodont usmeno iznio plan: pločica za širenje gornje vilice na oko šest mjeseci, zatim alajneri (providne folije). Ukupan trošak procijenio je na „oko 2.000 €“: 1.000 € odmah, zatim 100–200 € mjesečno za alajnere — počev kroz pola godine. Donju vilicu, po riječima ljekara, ne treba širiti: ona se „širi sama“.',
 			TmdCase2:
-				'Porodica je platila 1.000 €: 800 € karticom i 200 € u gotovini. Fiskalni račun za gotovinski dio nije izdat. Pisani ugovor nije zaključen, a porodica nije dobila ni plan liječenja sa fazama i cijenama na papiru — svi dogovori ostali su usmeni.',
+				'Porodica je uplatila avans od 1.000 €: 800 € karticom i 200 € u gotovini. Fiskalni račun za gotovinski dio nije izdat. Pisani ugovor nije zaključen, a porodica nije dobila ni plan liječenja sa fazama i cijenama na papiru — svi dogovori ostali su usmeni.',
 			TmdCase3a:
 				'Već nekoliko dana nakon uplate roditelji su uporedili cijene i utvrdili da slične pločice za širenje u drugim crnogorskim klinikama koštaju oko 200 €, dok je kod Temel Dentala ta stavka koštala 800 €. To potvrđuje i katalog docta.me: usluga „',
 			TmdCase3Link: 'ortodontski pokretni pločasti aparat',
@@ -502,7 +502,7 @@ export default {
 			TmdTitle:
 				'Temel Dental у Подгорици: 2.000 € усмено, 4.000 € након уплате',
 			TmdDescription:
-				'Документован случај у стоматолошкој клиници Temel Dental (Подгорица): породица је платила 1.000 € за лијечење „од око 2.000 €“, а неколико дана касније сазнала да план кошта 4.000 € и да се састоји од других процедура. Клиника одбија повраћај новца. Преписка, рецензије, црногорски закони и подсјетник за пацијенте.',
+				'Документован случај у стоматолошкој клиници Temel Dental (Подгорица): породица је уплатила аванс од 1.000 € за лијечење „од око 2.000 €“, а неколико дана касније сазнала да план кошта 4.000 € и да се састоји од других процедура. Клиника одбија повраћај новца. Преписка, рецензије, црногорски закони и подсјетник за пацијенте.',
 			TmdToc_case: 'Хронологија: од контролног прегледа до „пакетне цијене“',
 			TmdToc_science: 'Може ли се доња вилица „проширити сама“?',
 			TmdToc_flags: 'Пет црвених заставица',
@@ -517,13 +517,13 @@ export default {
 				'У октобру 2026. мајка је довела једанаестогодишњу кћерку на контролни преглед у клинику ',
 			TmdLead1Link: 'Temel Dental',
 			TmdLead1End:
-				' у Подгорици. Већ неколико дана касније породица се нашла у ситуацији о којој се ријетко пише, али се често прича приватно: на консултацији је усмено договорено лијечење „од око 2.000 €“, плаћено је 1.000 € — а тек након уплате породица је из преписке сазнала да цио план кошта 4.000 € и да се састоји од других процедура, а не оних о којима је било ријечи код љекара. Клиника одбија да врати новац.',
+				' у Подгорици. Већ неколико дана касније породица се нашла у ситуацији о којој се ријетко пише, али се често прича приватно: на консултацији је усмено договорено лијечење „од око 2.000 €“, уплаћен је аванс од 1.000 € — а тек након уплате породица је из преписке сазнала да цио план кошта 4.000 € и да се састоји од других процедура, а не оних о којима је било ријечи код љекара. Клиника одбија да врати новац.',
 			TmdLead2:
 				'Прво оно најважније: ово је случај породице аутора сајта docta.me — кћерку је на консултацију водила његова супруга. Сајт води један човјек, па је „редакција“ у овом тексту управо он. Овај сукоб интереса отворено објављујемо, не кријемо га. Близина причи има и другу страну, која ради за тачност: преписка, докази о плаћању и сами догађаји познати су аутору из прве руке, а не из препричавања. Случај смо разложили корак по корак, упоредили га са јавним рецензијама о клиници и са црногорским законима — и саставили подсјетник како не бисте дошли у сличну ситуацију. Став клинике наведен је у тексту — према њеним одговорима из преписке.',
 			TmdCase1:
 				'Стоматолог Temel Dental-а је на контролном прегледу упутио дијете ортодонту исте клинике — корак који је сам по себи оправдан. На консултацији је ортодонт усмено изнио план: плочица за ширење горње вилице на око шест мјесеци, затим алајнери (провидне фолије). Укупан трошак проценио је на „око 2.000 €“: 1.000 € одмах, затим 100–200 € мјесечно за алајнере — почев кроз пола године. Доњу вилицу, по ријечима љекара, не треба ширити: она се „шири сама“.',
 			TmdCase2:
-				'Породица је платила 1.000 €: 800 € картицом и 200 € у готовини. Фискални рачун за готовински дио није издат. Писани уговор није закључен, а породица није добила ни план лијечења са фазама и цијенама на папиру — сви договори остали су усмени.',
+				'Породица је уплатила аванс од 1.000 €: 800 € картицом и 200 € у готовини. Фискални рачун за готовински дио није издат. Писани уговор није закључен, а породица није добила ни план лијечења са фазама и цијенама на папиру — сви договори остали су усмени.',
 			TmdCase3a:
 				'Већ неколико дана након уплате родитељи су упоредили цијене и утврдили да сличне плочице за ширење у другим црногорским клиникама коштају око 200 €, док је код Temel Dental-а та ставка коштала 800 €. То потврђује и каталог docta.me: услуга „',
 			TmdCase3Link: 'ортодонтски покретни плочасти апарат',
@@ -658,7 +658,7 @@ export default {
 			TmdTitle:
 				'Temel Dental in Podgorica: 2.000 € mündlich, 4.000 € nach der Zahlung',
 			TmdDescription:
-				'Ein dokumentierter Fall in der Zahnklinik Temel Dental (Podgorica): Eine Familie zahlte 1.000 € an für eine Behandlung „um die 2.000 €“ — wenige Tage später hieß es, der Plan koste 4.000 € und bestehe aus anderen Leistungen. Die Rückerstattung lehnt die Klinik ab. Korrespondenz, Bewertungen, montenegrinische Gesetze und eine Checkliste.',
+				'Ein dokumentierter Fall in der Zahnklinik Temel Dental (Podgorica): Eine Familie zahlte eine Anzahlung von 1.000 € für eine Behandlung „um die 2.000 €“ — wenige Tage später hieß es, der Plan koste 4.000 € und bestehe aus anderen Leistungen. Die Rückerstattung lehnt die Klinik ab. Korrespondenz, Bewertungen, montenegrinische Gesetze und eine Checkliste.',
 			TmdToc_case: 'Chronologie: von der Routinekontrolle zum „Paketpreis“',
 			TmdToc_science: 'Kann sich der Unterkiefer „von selbst weiten“?',
 			TmdToc_flags: 'Fünf rote Flaggen',
@@ -673,13 +673,13 @@ export default {
 				'Im Oktober 2026 brachte eine Mutter ihre 11-jährige Tochter zur Routinekontrolle in die Klinik ',
 			TmdLead1Link: 'Temel Dental',
 			TmdLead1End:
-				' in Podgorica. Nur wenige Tage später fand sich die Familie in einer Situation wieder, über die selten geschrieben, aber oft privat erzählt wird: In der Beratung wurde mündlich eine Behandlung „um die 2.000 €“ besprochen, 1.000 € wurden gezahlt — und erst nach der Zahlung erfuhr die Familie aus der Korrespondenz, dass der vollständige Plan 4.000 € kostet und aus anderen Leistungen besteht als beim Arzt besprochen. Die Rückzahlung lehnt die Klinik ab.',
+				' in Podgorica. Nur wenige Tage später fand sich die Familie in einer Situation wieder, über die selten geschrieben, aber oft privat erzählt wird: In der Beratung wurde mündlich eine Behandlung „um die 2.000 €“ besprochen, eine Anzahlung von 1.000 € wurde geleistet — und erst nach der Zahlung erfuhr die Familie aus der Korrespondenz, dass der vollständige Plan 4.000 € kostet und aus anderen Leistungen besteht als beim Arzt besprochen. Die Rückzahlung lehnt die Klinik ab.',
 			TmdLead2:
 				'Zuerst das Wichtigste: Es ist der Fall der Familie des Autors von docta.me — seine Frau ging mit der Tochter zur Beratung. Die Seite wird von einer Person betrieben, die „Redaktion“ in diesem Text ist also er. Wir legen diesen Interessenkonflikt offen, statt ihn zu verstecken. Die Nähe zur Geschichte hat auch eine Kehrseite, die der Genauigkeit dient: Korrespondenz, Zahlungsbelege und die Ereignisse selbst sind dem Autor aus erster Hand bekannt, nicht aus Nacherzählungen. Wir haben den Fall Schritt für Schritt aufgearbeitet, ihn mit öffentlichen Bewertungen der Klinik und mit montenegrinischem Recht abgeglichen — und eine Checkliste erstellt, wie man nicht in eine ähnliche Lage gerät. Die Position der Klinik ist im Text wiedergegeben — nach ihren Antworten aus der Korrespondenz.',
 			TmdCase1:
 				'Der Zahnarzt von Temel Dental überwies das Kind bei der Routinekontrolle an den Kieferorthopäden derselben Klinik — für sich genommen ein nachvollziehbarer Schritt. In der Beratung legte der Kieferorthopäde den Plan mündlich dar: eine Dehnplatte für den Oberkiefer für etwa sechs Monate, danach Aligner. Die Gesamtkosten schätzte er auf „um die 2.000 €“: 1.000 € sofort, dann 100–200 € pro Monat für Aligner — beginnend in einem halben Jahr. Den Unterkiefer müsse man laut Arzt nicht weiten: Er „weitet sich von selbst“.',
 			TmdCase2:
-				'Die Familie zahlte 1.000 €: 800 € mit Karte und 200 € in bar. Für den Baranteil wurde kein Kassenbeleg ausgestellt. Ein schriftlicher Vertrag wurde nicht geschlossen, einen schriftlichen Behandlungsplan mit Etappen und Preisen erhielt die Familie ebenfalls nicht — alle Absprachen blieben mündlich.',
+				'Die Familie zahlte eine Anzahlung von 1.000 €: 800 € mit Karte und 200 € in bar. Für den Baranteil wurde kein Kassenbeleg ausgestellt. Ein schriftlicher Vertrag wurde nicht geschlossen, einen schriftlichen Behandlungsplan mit Etappen und Preisen erhielt die Familie ebenfalls nicht — alle Absprachen blieben mündlich.',
 			TmdCase3a:
 				'Schon wenige Tage nach der Zahlung verglichen die Eltern die Preise und stellten fest, dass vergleichbare Dehnplatten in anderen Kliniken Montenegros rund 200 € kosten, während diese Position bei Temel Dental 800 € gekostet hatte. Der Katalog von docta.me bestätigt das: Die Leistung „',
 			TmdCase3Link: 'herausnehmbare kieferorthopädische Dehnplatte',
@@ -816,7 +816,7 @@ export default {
 			TmdTitle:
 				"Podgorica'daki Temel Dental: sözlü 2.000 €, ödeme sonrası 4.000 €",
 			TmdDescription:
-				"Podgorica'daki Temel Dental diş kliniğinde belgelenmiş bir vaka: aile, “yaklaşık 2.000 €” denilen tedavi için 1.000 € ödedi; birkaç gün sonra planın 4.000 € olduğunu ve başka işlemlerden oluştuğunu öğrendi. Klinik para iadesini reddediyor. Yazışmalar, yorumlar, Karadağ yasaları ve hasta rehberi.",
+				"Podgorica'daki Temel Dental diş kliniğinde belgelenmiş bir vaka: aile, “yaklaşık 2.000 €” denilen tedavi için 1.000 € peşinat ödedi; birkaç gün sonra planın 4.000 € olduğunu ve başka işlemlerden oluştuğunu öğrendi. Klinik para iadesini reddediyor. Yazışmalar, yorumlar, Karadağ yasaları ve hasta rehberi.",
 			TmdToc_case: 'Kronoloji: rutin muayeneden “paket fiyata”',
 			TmdToc_science: 'Alt çene “kendi kendine genişler” mi?',
 			TmdToc_flags: 'Beş kırmızı bayrak',
@@ -830,13 +830,13 @@ export default {
 			TmdLead1a: "Ekim 2026'da bir anne, 11 yaşındaki kızını Podgorica'daki ",
 			TmdLead1Link: 'Temel Dental',
 			TmdLead1End:
-				' kliniğine rutin muayeneye götürdü. Sadece birkaç gün sonra aile, hakkında nadiren yazılan ama özel sohbetlerde sık anlatılan bir durumla karşılaştı: konsültasyonda sözlü olarak “yaklaşık 2.000 €” tutarında bir tedavi konuşuldu, 1.000 € ödendi — ve ancak ödemeden sonra aile, yazışmalardan planın tamamının 4.000 € olduğunu ve doktorla konuşulandan farklı işlemlerden oluştuğunu öğrendi. Klinik parayı iade etmeyi reddediyor.',
+				' kliniğine rutin muayeneye götürdü. Sadece birkaç gün sonra aile, hakkında nadiren yazılan ama özel sohbetlerde sık anlatılan bir durumla karşılaştı: konsültasyonda sözlü olarak “yaklaşık 2.000 €” tutarında bir tedavi konuşuldu, 1.000 € peşinat ödendi — ve ancak ödemeden sonra aile, yazışmalardan planın tamamının 4.000 € olduğunu ve doktorla konuşulandan farklı işlemlerden oluştuğunu öğrendi. Klinik parayı iade etmeyi reddediyor.',
 			TmdLead2:
 				"Önce en önemlisi: bu, docta.me'nin arkasındaki kişinin ailesinin başına geldi — kızını konsültasyona eşi götürdü. Siteyi tek kişi yürütüyor; bu metindeki “editör ekibi” de odur. Bu çıkar çatışmasını saklamadan açıkça bildiriyoruz. Hikâyeye yakınlığın doğruluğa çalışan bir yüzü de var: yazışmalar, ödeme belgeleri ve olayların kendisi yazar tarafından birinci elden biliniyor, aktarma değil. Vakayı adım adım inceledik, kliniğin herkese açık yorumlarıyla ve Karadağ yasalarıyla karşılaştırdık — benzer bir duruma düşmemeniz için bir rehber hazırladık. Kliniğin tutumu, yazışmalardaki yanıtlarına dayanarak metinde yer alıyor.",
 			TmdCase1:
 				"Temel Dental'deki diş hekimi rutin muayenede çocuğu aynı kliniğin ortodontistine yönlendirdi — kendi başına makul bir adım. Konsültasyonda ortodontist planı sözlü olarak anlattı: üst çene için yaklaşık altı ay genişletme apareyi, ardından şeffaf plaklar (aligner). Toplam maliyeti “yaklaşık 2.000 €” olarak verdi: 1.000 € peşin, altı ay sonra başlamak üzere aligner için ayda 100–200 €. Alt çenenin ise doktora göre genişletilmesine gerek yoktu: o “kendi kendine genişliyor”du.",
 			TmdCase2:
-				'Aile 1.000 € ödedi: 800 € kartla, 200 € nakit. Nakit kısım için fiş verilmedi. Yazılı sözleşme yapılmadı; aile, aşamaları ve fiyatları gösteren yazılı bir tedavi planı da almadı — tüm anlaşmalar sözlü kaldı.',
+				'Aile 1.000 € peşinat ödedi: 800 € kartla, 200 € nakit. Nakit kısım için fiş verilmedi. Yazılı sözleşme yapılmadı; aile, aşamaları ve fiyatları gösteren yazılı bir tedavi planı da almadı — tüm anlaşmalar sözlü kaldı.',
 			TmdCase3a:
 				"Ödemeden sadece birkaç gün sonra ebeveynler fiyatları karşılaştırdı ve benzer genişletme apareylerinin Karadağ'daki diğer kliniklerde yaklaşık 200 € olduğunu, Temel Dental'de ise bu kalemin 800 € tuttuğunu gördü. Bunu docta.me kataloğu da doğruluyor: “",
 			TmdCase3Link: 'hareketli ortodontik plak apareyi',

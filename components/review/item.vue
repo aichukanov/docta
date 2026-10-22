@@ -161,6 +161,7 @@ const clinic = computed(() => {
 				<ClinicCautionBadge
 					v-if="clinic"
 					:cautionTypes="clinic.cautionTypes"
+					:clinicSlug="clinic.slug"
 					iconOnly
 					small
 				/>

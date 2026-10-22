@@ -4,6 +4,8 @@ import type { BillingService } from '~/enums/billing-service';
 import type { ClinicCoupon } from '~/interfaces/clinic-coupon';
 import type { Rating, Review } from '~/interfaces/review';
 import type { WorkingHours } from '~/interfaces/clinic-working-hours';
+import type { ClinicComplaint } from '~/interfaces/clinic-reputation';
+import type { ClinicComplaintType } from '~/enums/clinic-complaint-type';
 
 export interface Coordinates {
 	latitude: number;
@@ -75,6 +77,11 @@ export interface ClinicData extends ContactList, Coordinates {
 	coupon?: ClinicCoupon;
 	rating?: Rating;
 	reviews?: Review[];
+	// Типы активных ПОДТВЕРЖДЁННЫХ жалоб — дают бейдж «Осторожно» рядом с
+	// названием (prd/clinic-reputation/). Пустой массив/undefined — бейджа нет.
+	cautionTypes?: ClinicComplaintType[];
+	// Полный раздел «Репутация» (включая неподтверждённые) — только details
+	reputation?: ClinicComplaint[];
 	workingHours?: Omit<WorkingHours, 'clinicId'>;
 	// График приёма врачей на сайте клиники — только details-эндпоинт.
 	// Сам график не храним, см. prd/doctor-schedules/.

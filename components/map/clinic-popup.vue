@@ -79,6 +79,7 @@ watch(pageNumber, () => {
 				{{ localizedName }}
 			</NuxtLink>
 			<span v-else class="clinic-name">{{ localizedName }}</span>
+			<ClinicCautionBadge :cautionTypes="clinic.cautionTypes" iconOnly small />
 		</div>
 
 		<ClinicRouteButton :clinic="clinic">

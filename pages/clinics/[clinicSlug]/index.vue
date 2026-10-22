@@ -42,6 +42,7 @@ import clinicTypeI18n from '~/i18n/clinic-type';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import languageI18n from '~/i18n/language';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
+import clinicReputationI18n from '~/i18n/clinic-reputation';
 import reviewsI18n from '~/i18n/reviews';
 import seoDescriptionI18n from '~/i18n/seo-description';
 import specialtyI18n from '~/i18n/specialty';
@@ -71,6 +72,7 @@ const { t, locale } = useI18n({
 		specialtyI18n,
 		labTestCategoryI18n,
 		reviewsI18n,
+		clinicReputationI18n,
 		workingHoursI18n,
 		seoDescriptionI18n,
 	]),
@@ -407,6 +409,9 @@ const tabs = computed(() => {
 					? `${t('TabReviews')} (${reviewCount})`
 					: t('TabReviews'),
 		});
+	}
+	if (clinicData.value?.reputation?.length) {
+		result.push({ id: 'reputation', label: t('ReputationTitle') });
 	}
 	result.push({ id: 'map', label: t('TabMap') });
 	return result;
@@ -1042,6 +1047,20 @@ watchEffect(() => {
 						clinicDoctors.map((d) => ({ id: d.id, name: d.name }))
 					"
 					@submitted="onReviewSubmitted"
+				/>
+			</EntityPageSection>
+
+			<!-- Reputation: стандартизированные жалобы, ведёт редакция
+			     (prd/clinic-reputation/). Без жалоб секции и таба нет вовсе -->
+			<EntityPageSection
+				v-if="clinicData?.reputation?.length"
+				sectionId="reputation"
+				:title="t('ReputationTitle')"
+			>
+				<template #icon><IconAlertTriangle :size="20" /></template>
+				<ClinicReputationSection
+					:complaints="clinicData.reputation"
+					:clinicId="clinicData.id"
 				/>
 			</EntityPageSection>
 

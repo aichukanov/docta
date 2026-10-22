@@ -245,9 +245,14 @@ watchEffect(() => {
 					class="clinic-card"
 					@click="trackClinicLinkClick(clinic)"
 				>
-					<span class="clinic-name">{{
-						getLocalizedName(clinic, locale)
-					}}</span>
+					<span class="clinic-name"
+						>{{ getLocalizedName(clinic, locale)
+						}}<ClinicCautionBadge
+							:cautionTypes="clinic.cautionTypes"
+							iconOnly
+							small
+							class="clinic-caution"
+					/></span>
 					<span class="clinic-city">{{ t(`city_${clinic.cityId}`) }}</span>
 				</NuxtLink>
 			</div>
@@ -260,6 +265,11 @@ watchEffect(() => {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
 	gap: var(--kit-spacing-md);
+}
+
+.clinic-caution {
+	margin-left: var(--kit-spacing-xs);
+	vertical-align: -2px;
 }
 
 .clinic-card {

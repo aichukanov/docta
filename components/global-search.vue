@@ -865,10 +865,21 @@ onUnmounted(() => {
 						>
 							<template #icon><IconClinic :size="20" /></template>
 							<template
-								v-if="ratingLabel(clinicById(clinic.id)?.rating)"
+								v-if="
+									ratingLabel(clinicById(clinic.id)?.rating) ||
+									clinicById(clinic.id)?.cautionTypes?.length
+								"
 								#aside
 							>
-								<span class="global-search__rating">
+								<ClinicCautionBadge
+									:cautionTypes="clinicById(clinic.id)?.cautionTypes"
+									iconOnly
+									small
+								/>
+								<span
+									v-if="ratingLabel(clinicById(clinic.id)?.rating)"
+									class="global-search__rating"
+								>
 									<IconStar :size="14" />
 									{{ ratingLabel(clinicById(clinic.id)?.rating) }}
 								</span>

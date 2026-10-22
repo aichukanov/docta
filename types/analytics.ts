@@ -117,6 +117,11 @@ export interface CouponSharedProperties extends AnalyticsEntityRef {
 	discount_percent: number;
 }
 
+/** Раздел «Репутация» на странице клиники попал во вьюпорт */
+export interface ReputationViewedProperties {
+	clinic_id: number;
+}
+
 /** Имя события → интерфейс его свойств. Источник истины для trackEvent. */
 export interface AnalyticsEvents {
 	entity_viewed: EntityViewedProperties;
@@ -130,6 +135,8 @@ export interface AnalyticsEvents {
 	map_marker_clicked: MapMarkerClickedProperties;
 	coupon_opened: CouponOpenedProperties;
 	coupon_shared: CouponSharedProperties;
+	// Раздел «Репутация» попал во вьюпорт (prd/clinic-reputation/)
+	reputation_viewed: ReputationViewedProperties;
 }
 
 export type AnalyticsEventName = keyof AnalyticsEvents;

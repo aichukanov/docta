@@ -48,6 +48,15 @@ export default defineEventHandler(async (event) => {
 		[newStatus, moderator.id, action === 'reject' ? reason : null, reviewId],
 	);
 
+	// Отклонённый отзыв не может оставаться закреплённым: публичная выдача
+	// его больше не показывает (prd/clinic-reputation/, FR-1.3)
+	if (action === 'reject') {
+		await executeQuery(
+			'UPDATE reviews SET is_pinned = 0, pinned_at = NULL WHERE id = ? AND is_pinned = 1',
+			[reviewId],
+		);
+	}
+
 	await executeQuery(
 		`INSERT INTO review_moderation_logs (review_id, action, moderator_id, comment)
 		VALUES (?, ?, ?, ?)`,

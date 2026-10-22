@@ -9,6 +9,10 @@ import {
 	fetchReviews,
 	isValidSort,
 } from '~/server/common/reviews';
+import {
+	cautionTypesSql,
+	parseCautionTypes,
+} from '~/server/common/clinic-reputation';
 import type { Rating } from '~/interfaces/review';
 
 export default defineEventHandler(async (event) => {
@@ -46,7 +50,8 @@ export default defineEventHandler(async (event) => {
 				c.logo_url as logoUrl,
 				c.status,
 				c.hidden,
-				COALESCE(GROUP_CONCAT(DISTINCT cct.clinic_type_id ORDER BY cct.clinic_type_id), '') as clinicTypeIds
+				COALESCE(GROUP_CONCAT(DISTINCT cct.clinic_type_id ORDER BY cct.clinic_type_id), '') as clinicTypeIds,
+				${cautionTypesSql('c')} as cautionTypes
 			FROM clinics c
 			LEFT JOIN clinic_clinic_types cct ON c.id = cct.clinic_id
 			WHERE c.slug = ?
@@ -106,6 +111,7 @@ export default defineEventHandler(async (event) => {
 				cityId: clinic.cityId as number,
 				logoUrl: clinic.logoUrl as string | undefined,
 				clinicTypeIds: clinic.clinicTypeIds as string,
+				cautionTypes: parseCautionTypes(clinic.cautionTypes),
 			},
 			rating,
 			reviews,

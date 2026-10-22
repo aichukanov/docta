@@ -136,6 +136,7 @@ const clinicTypeNames = computed(() => {
 		entityRouteName="clinics-clinicSlug"
 		entityRouteParam="clinicSlug"
 		:entityId="clinic?.id"
+		:cautionTypes="clinic?.cautionTypes"
 		:ownReview="data.ownReview"
 		:relatedEntities="clinicDoctors.map((d) => ({ id: d.id, name: d.name }))"
 	>

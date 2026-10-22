@@ -206,6 +206,65 @@ const saveChanges = async () => {
 	if (reviewId.value) await loadReviewDetails(reviewId.value);
 };
 
+// Закрепление и редакционная верификация (prd/clinic-reputation/):
+// отдельные эндпоинты с записью в журнал модерации, не /api/reviews/update
+const STATUS_LABELS: Record<string, string> = {
+	pending: 'на модерации',
+	approved: 'одобрен',
+	rejected: 'отклонён',
+};
+
+const togglePin = async () => {
+	if (!reviewModel.value) return;
+	const pinned = !reviewModel.value.isPinned;
+	if (
+		!confirm(
+			pinned
+				? 'Закрепить отзыв? Он всегда будет первым в списке при любой сортировке.'
+				: 'Открепить отзыв?',
+		)
+	) {
+		return;
+	}
+	try {
+		await $fetch('/api/admin/reviews/pin', {
+			method: 'POST',
+			body: { reviewId: reviewModel.value.id, pinned },
+		});
+		await loadReviewDetails(reviewModel.value.id);
+	} catch (e) {
+		console.error('Failed to toggle pin:', e);
+		alert(
+			'Не удалось изменить закрепление. Закреплять можно только одобренный отзыв.',
+		);
+	}
+};
+
+const toggleEditorialVerify = async () => {
+	if (!reviewModel.value) return;
+	const verified = !reviewModel.value.isVerified;
+	const comment = prompt(
+		verified
+			? 'Какие документы видела редакция? Комментарий обязателен, попадёт в журнал модерации.'
+			: 'Почему снимаем верификацию? Комментарий обязателен.',
+	);
+	if (!comment || !comment.trim()) return;
+	try {
+		await $fetch('/api/admin/reviews/editorial-verify', {
+			method: 'POST',
+			body: {
+				reviewId: reviewModel.value.id,
+				verified,
+				comment: comment.trim(),
+			},
+		});
+		await loadReviewDetails(reviewModel.value.id);
+	} catch (e) {
+		console.error('Failed to toggle editorial verification:', e);
+		alert('Не удалось изменить верификацию');
+	}
+};
+
 const deleteReview = async () => {
 	if (!reviewId.value) return;
 	if (
@@ -287,6 +346,30 @@ watch(reviewId, async (newId) => {
 					/>
 					{{ reviewModel.authorName }}
 				</span>
+			</div>
+
+			<!-- Закрепление и верификация (prd/clinic-reputation/) -->
+			<div class="association-section">
+				<label class="section-label">Статус и выдача</label>
+				<span class="status-chip">
+					{{ STATUS_LABELS[reviewModel.status] || reviewModel.status }}
+				</span>
+				<span v-if="reviewModel.isVerified" class="status-chip">
+					подтверждён документами
+				</span>
+				<span v-if="reviewModel.isPinned" class="status-chip">закреплён</span>
+				<template v-if="editable">
+					<el-button size="small" @click="togglePin">
+						{{ reviewModel.isPinned ? 'Открепить' : 'Закрепить' }}
+					</el-button>
+					<el-button size="small" @click="toggleEditorialVerify">
+						{{
+							reviewModel.isVerified
+								? 'Снять верификацию'
+								: 'Верифицировать (редакция)'
+						}}
+					</el-button>
+				</template>
 			</div>
 
 			<!-- Оценка -->
@@ -654,6 +737,16 @@ watch(reviewId, async (newId) => {
 	.wide-select {
 		flex: 1;
 	}
+}
+
+.status-chip {
+	padding: 2px var(--kit-spacing-sm);
+	background: var(--kit-color-surface-primary);
+	border: 1px solid var(--kit-color-border-primary);
+	border-radius: var(--kit-border-radius-sm);
+	font-size: 0.85em;
+	color: var(--kit-color-text-secondary);
+	white-space: nowrap;
 }
 
 .reply-meta {

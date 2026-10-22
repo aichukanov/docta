@@ -122,12 +122,20 @@ const doctorClinics = computed(() => {
 });
 
 const clinicInfoMap = computed(() => {
-	const map: Record<number, { name: string; slug: string }> = {};
+	const map: Record<
+		number,
+		{
+			name: string;
+			slug: string;
+			cautionTypes?: import('~/enums/clinic-complaint-type').ClinicComplaintType[];
+		}
+	> = {};
 	for (const clinic of doctorClinics.value) {
 		if (clinic) {
 			map[clinic.id] = {
 				name: clinic.localName || clinic.name,
 				slug: clinic.slug,
+				cautionTypes: clinic.cautionTypes,
 			};
 		}
 	}

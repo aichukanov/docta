@@ -821,6 +821,11 @@ onMounted(async () => {
 
 			<AdminClinicCouponsEditor v-if="clinicModel" :clinicId="clinicModel.id" />
 
+			<AdminClinicComplaintsEditor
+				v-if="clinicModel"
+				:clinicId="clinicModel.id"
+			/>
+
 			<div class="billing-section">
 				<div class="section-header">
 					<h4>Платные услуги (пакеты)</h4>

@@ -12,6 +12,10 @@ const DESCRIPTION_COLUMNS = `
 				c.description_tr,`;
 
 import { fetchClinicCoupons } from '~/server/common/clinic-coupons';
+import {
+	cautionTypesSql,
+	parseCautionTypes,
+} from '~/server/common/clinic-reputation';
 import { getCurrentUser } from '~/server/common/auth';
 import {
 	processLocalizedNameForClinicOrDoctor,
@@ -408,7 +412,8 @@ export async function getClinicList(
 					''
 				) as features,
 				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected') as averageRating,
-				(SELECT COUNT(*) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected') as totalReviews
+				(SELECT COUNT(*) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected') as totalReviews,
+				${cautionTypesSql('c')} as cautionTypes
 				${distanceSelect}
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id
@@ -485,6 +490,7 @@ export async function getClinicList(
 			address,
 			town,
 			logoUrl: clinic.logoUrl || '',
+			cautionTypes: parseCautionTypes(clinic.cautionTypes),
 			rankScore: clinic.rankScore != null ? Number(clinic.rankScore) : 0,
 			rating: clinic.averageRating
 				? {

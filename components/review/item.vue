@@ -7,7 +7,14 @@ import type { Review } from '~/interfaces/review';
 
 const props = defineProps<{
 	review: Review;
-	clinicInfo?: Record<number, { name: string; slug: string }>;
+	clinicInfo?: Record<
+		number,
+		{
+			name: string;
+			slug: string;
+			cautionTypes?: import('~/enums/clinic-complaint-type').ClinicComplaintType[];
+		}
+	>;
 }>();
 
 const emit = defineEmits<{
@@ -108,6 +115,13 @@ const clinic = computed(() => {
 					t('YourReviewLabel')
 				}}</span>
 				<ReviewVerifiedBadge v-if="review.isVerified" />
+				<KitTag
+					v-if="review.isPinned"
+					variant="primary"
+					appearance="light"
+					size="small"
+					>{{ t('PinnedReview') }}</KitTag
+				>
 			</div>
 			<div class="review-meta">
 				<RatingStars
@@ -144,6 +158,12 @@ const clinic = computed(() => {
 				>
 					{{ clinic.name }}
 				</NuxtLink>
+				<ClinicCautionBadge
+					v-if="clinic"
+					:cautionTypes="clinic.cautionTypes"
+					iconOnly
+					small
+				/>
 			</div>
 		</header>
 

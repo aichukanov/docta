@@ -32,7 +32,7 @@ export const ARTICLE_IMAGE_SIZES: Record<
 	'mental-health-in-montenegro': { width: 1376, height: 768 },
 	'pharmacies-and-medications': { width: 1264, height: 848 },
 	'russian-speaking-doctors': { width: 1536, height: 1024 },
-	'temel-dental-case': { width: 1024, height: 559 },
+	'temel-dental-case': { width: 548, height: 364 },
 	'tourist-healthcare-in-montenegro': { width: 1376, height: 684 },
 	'weekend-medical-help-in-montenegro': { width: 1376, height: 768 },
 };

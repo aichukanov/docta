@@ -38,6 +38,9 @@ export interface ReviewAdminDetails {
 	publishedAt: string | null;
 	likesCount: number;
 	// Display-only fields
+	status: 'pending' | 'approved' | 'rejected';
+	isVerified: boolean;
+	isPinned: boolean;
 	authorName: string;
 	authorPhotoUrl: string;
 	clinicName: string;
@@ -73,6 +76,7 @@ export default defineEventHandler(
 					r.original_language, r.original_text,
 					r.text_sr, r.text_sr_cyrl, r.text_en, r.text_ru, r.text_de, r.text_tr,
 					r.published_at, r.likes_count,
+					r.status, r.is_verified, r.is_pinned,
 					COALESCE(u.name, '') as author_name,
 					COALESCE(u.photo_url, '') as author_photo_url,
 					COALESCE(c.name_sr, '') as clinic_name,
@@ -143,6 +147,9 @@ export default defineEventHandler(
 					? new Date(r.published_at).toISOString()
 					: null,
 				likesCount: r.likes_count,
+				status: r.status,
+				isVerified: Boolean(r.is_verified),
+				isPinned: Boolean(r.is_pinned),
 				authorName: r.author_name,
 				authorPhotoUrl: r.author_photo_url,
 				clinicName: r.clinic_name,

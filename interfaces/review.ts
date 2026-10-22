@@ -30,8 +30,10 @@ export interface Review {
 	text: string;
 	publishedAt?: string;
 	likesCount: number;
-	/** Визит подтверждён документом, проверенным модератором */
+	/** Подтверждено документами: файл автора или редакционная проверка (prd/clinic-reputation/) */
 	isVerified?: boolean;
+	/** Закреплён редакцией — всегда первый в выдаче при любой сортировке */
+	isPinned?: boolean;
 	updatedAt: string;
 	replies?: ReviewReply[];
 	author?: {

@@ -59,9 +59,10 @@ export default {
 				'You can also leave a review for a specific specialist here',
 			ReviewClinicHint:
 				'You can also leave a review for a specific place where this specialist works',
-			VerifiedReview: 'Visit confirmed',
+			VerifiedReview: 'Confirmed by documents',
 			VerifiedReviewHint:
-				'The author confirmed the visit with a document checked by a moderator',
+				'Documents for this review have been checked by docta.me moderators',
+			PinnedReview: 'Pinned',
 			VerificationTitle: 'Confirm your visit',
 			VerificationHint:
 				'Upload a photo of a receipt, referral, or medical report from your visit. After a moderator checks it, your review will get a "Visit confirmed" badge. Only moderators can see the file.',
@@ -142,9 +143,10 @@ export default {
 				'Вы также можете оставить отзыв о конкретном специалисте',
 			ReviewClinicHint:
 				'Вы также можете оставить отзыв о месте, где принимает этот специалист',
-			VerifiedReview: 'Визит подтверждён',
+			VerifiedReview: 'Подтверждено документами',
 			VerifiedReviewHint:
-				'Автор подтвердил визит документом, проверенным модератором',
+				'Документы по этому отзыву проверены модерацией docta.me',
+			PinnedReview: 'Закреплено',
 			VerificationTitle: 'Подтвердите визит',
 			VerificationHint:
 				'Загрузите фото чека, направления или заключения с визита. После проверки модератором отзыв получит отметку «Визит подтверждён». Файл видят только модераторы.',
@@ -227,9 +229,10 @@ export default {
 				'Sie können auch eine Bewertung für einen bestimmten Spezialisten hinterlassen',
 			ReviewClinicHint:
 				'Sie können auch eine Bewertung für einen bestimmten Ort hinterlassen, an dem dieser Spezialist arbeitet',
-			VerifiedReview: 'Besuch bestätigt',
+			VerifiedReview: 'Durch Dokumente bestätigt',
 			VerifiedReviewHint:
-				'Der Autor hat den Besuch mit einem von einem Moderator geprüften Dokument bestätigt',
+				'Die Unterlagen zu dieser Bewertung wurden von der docta.me-Moderation geprüft',
+			PinnedReview: 'Angeheftet',
 			VerificationTitle: 'Bestätigen Sie Ihren Besuch',
 			VerificationHint:
 				'Laden Sie ein Foto einer Quittung, Überweisung oder eines Befundes vom Besuch hoch. Nach der Prüfung durch einen Moderator erhält Ihre Bewertung das Abzeichen „Besuch bestätigt". Nur Moderatoren können die Datei sehen.',
@@ -313,9 +316,10 @@ export default {
 			ReviewDoctorHint: 'Belirli bir uzman için de yorum bırakabilirsiniz',
 			ReviewClinicHint:
 				'Bu uzmanın çalıştığı belirli bir yer için de yorum bırakabilirsiniz',
-			VerifiedReview: 'Ziyaret onaylandı',
+			VerifiedReview: 'Belgelerle doğrulandı',
 			VerifiedReviewHint:
-				'Yazar, ziyareti moderatör tarafından kontrol edilen bir belgeyle onayladı',
+				'Bu yoruma ait belgeler docta.me moderasyonu tarafından kontrol edildi',
+			PinnedReview: 'Sabitlenmiş',
 			VerificationTitle: 'Ziyaretinizi onaylayın',
 			VerificationHint:
 				'Ziyaretten bir fiş, sevk veya rapor fotoğrafı yükleyin. Moderatör kontrolünden sonra yorumunuz "Ziyaret onaylandı" rozeti alır. Dosyayı yalnızca moderatörler görebilir.',
@@ -396,9 +400,10 @@ export default {
 			ReviewDoctorHint: 'Možete ostaviti recenziju i za određenog stručnjaka',
 			ReviewClinicHint:
 				'Možete ostaviti recenziju i za mjesto gdje ovaj stručnjak radi',
-			VerifiedReview: 'Posjeta potvrđena',
+			VerifiedReview: 'Potvrđeno dokumentima',
 			VerifiedReviewHint:
-				'Autor je potvrdio posjetu dokumentom koji je provjerio moderator',
+				'Dokumente uz ovu recenziju provjerila je moderacija docta.me',
+			PinnedReview: 'Istaknuto',
 			VerificationTitle: 'Potvrdite posjetu',
 			VerificationHint:
 				'Otpremite fotografiju računa, uputa ili nalaza sa posjete. Nakon provjere moderatora recenzija dobija oznaku „Posjeta potvrđena". Fajl vide samo moderatori.',
@@ -479,9 +484,10 @@ export default {
 			ReviewDoctorHint: 'Можете оставити рецензију и за одређеног стручњака',
 			ReviewClinicHint:
 				'Можете оставити рецензију и за мјесто гдје овај стручњак ради',
-			VerifiedReview: 'Посјета потврђена',
+			VerifiedReview: 'Потврђено документима',
 			VerifiedReviewHint:
-				'Аутор је потврдио посјету документом који је провјерио модератор',
+				'Документе уз ову рецензију провјерила је модерација docta.me',
+			PinnedReview: 'Истакнуто',
 			VerificationTitle: 'Потврдите посјету',
 			VerificationHint:
 				'Отпремите фотографију рачуна, упута или налаза са посјете. Након провјере модератора рецензија добија ознаку „Посјета потврђена". Фајл виде само модератори.',

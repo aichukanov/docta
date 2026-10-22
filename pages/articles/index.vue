@@ -209,6 +209,17 @@ const articles = computed(() =>
 			},
 		},
 		{
+			title: t('TmdTitle'),
+			description: t('TmdDescription'),
+			image: '/img/articles/temel-dental-case.webp',
+			date: '2026-10-20',
+			meta: '',
+			link: {
+				path: '/articles/temel-dental-case',
+				query: getRegionalQuery(locale.value),
+			},
+		},
+		{
 			title: t('WeekendMedicalHelpTitle'),
 			description: t('WeekendMedicalHelpDescription'),
 			image: '/img/articles/weekend-medical-help-in-montenegro.webp',

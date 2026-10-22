@@ -9,16 +9,24 @@
 // второго описания у статьи быть не должно. Расхождение и лишние ключи
 // ловит tests/unit/article-slugs.spec.ts.
 // Меняешь описание статьи — правь ОБА файла.
+//
+// Кроме описаний здесь лежат собственные строки листинга — заголовок
+// раздела и мета-строки карточек (ArticleMeta*): листинг больше не
+// импортирует i18n/articles.ts, а без них печатал бы ключ вместо цифр.
 export default {
 	messages: {
 		'en': {
 			Articles: 'Articles',
 			ArticlesDescription:
 				'Useful articles about healthcare in Montenegro: Russian-speaking doctors, clinics with multilingual support, and more.',
+			ArticleMetaDoctors: 'Doctors: {doctors} · Specialties: {specialties}',
+			ArticleMetaClinics: 'Languages: {languages} · Clinics: {clinics}',
 			AlgDescription:
 				'Cetirizine (Zyrtec, Zodak) is not registered in Montenegro. Which antihistamines are sold here with or without a prescription, and how to match yours by ingredient.',
 			BldDescription:
 				'Nine donation points of the national Blood Transfusion Institute — addresses, phone numbers, the days each one takes donors. Who is eligible, how often you may come back, how to prepare, and what to do if you have no residence permit. Current as of September 2026.',
+			TmdDescription:
+				'A documented case at the Temel Dental clinic in Podgorica: a family paid €1,000 for treatment quoted at “around €2,000”, and days later learned the plan costs €4,000 and consists of different procedures. The clinic refuses a refund. Correspondence, reviews, Montenegrin law and a patient checklist.',
 			BirthInMontenegroDescription:
 				'Where to give birth in Montenegro: maternity wards of state hospitals and the private option, prenatal care, cost of childbirth without insurance, epidural availability, newborn paperwork and patronage nurse visits. Current as of July 2026.',
 			ChildHealthcareDescription:
@@ -58,10 +66,14 @@ export default {
 			Articles: 'Статьи',
 			ArticlesDescription:
 				'Полезные статьи о здравоохранении в Черногории: русскоязычные врачи, клиники с языковой поддержкой и многое другое.',
+			ArticleMetaDoctors: 'Врачей: {doctors} · Специальностей: {specialties}',
+			ArticleMetaClinics: 'Языков: {languages} · Клиник: {clinics}',
 			AlgDescription:
 				'Цетиризина (Зиртек, Зодак) в реестре Черногории нет. Какие антигистаминные продают без рецепта и по рецепту и чем заменить привычный бренд по действующему веществу.',
 			BldDescription:
 				'Девять пунктов Завода трансфузии крови — адреса, телефоны, дни приёма. Кому можно быть донором, через сколько можно прийти снова, как подготовиться и что делать, если боравка нет. Актуально на сентябрь 2026 года.',
+			TmdDescription:
+				'Разбор случая в стоматологии Temel Dental (Подгорица): семья заплатила 1000 € за лечение «примерно на 2000 €», а через несколько дней узнала, что план стоит 4000 € и состоит из других процедур. Вернуть деньги клиника отказывается. Переписка, отзывы, законы Черногории, памятка.',
 			BirthInMontenegroDescription:
 				'Где рожать в Черногории: роддома государственных больниц и частный вариант, ведение беременности, цены родов без страховки, доступность эпидуральной анестезии, документы для новорождённого и патронаж. Актуально на июль 2026 года.',
 			ChildHealthcareDescription:
@@ -101,10 +113,14 @@ export default {
 			Articles: 'Članci',
 			ArticlesDescription:
 				'Korisni članci o zdravstvenoj zaštiti u Crnoj Gori: doktori koji govore ruski, klinike sa višejezičnom podrškom i još mnogo toga.',
+			ArticleMetaDoctors: 'Doktora: {doctors} · Specijalnosti: {specialties}',
+			ArticleMetaClinics: 'Jezika: {languages} · Klinika: {clinics}',
 			AlgDescription:
 				'Cetirizina (Zyrtec, Zodak) nema u registru Crne Gore. Koji antihistaminici se ovdje izdaju bez recepta i na recept i kako naći poznati brend po aktivnoj supstanci.',
 			BldDescription:
 				'Devet punktova Zavoda za transfuziju krvi — adrese, telefoni i dani kada primaju davaoce. Ko može da daje krv, koliko često, kako se pripremiti i šta ako nemate boravak. Ažurirano u septembru 2026.',
+			TmdDescription:
+				'Dokumentovan slučaj u stomatološkoj klinici Temel Dental (Podgorica): porodica je platila 1.000 € za liječenje „od oko 2.000 €“, a nekoliko dana kasnije saznala da plan košta 4.000 € i da se sastoji od drugih procedura. Klinika odbija povraćaj novca. Prepiska, recenzije, crnogorski zakoni i podsjetnik za pacijente.',
 			BirthInMontenegroDescription:
 				'Gdje se porađa u Crnoj Gori: porodilišta državnih bolnica i privatna opcija, vođenje trudnoće, cijena porođaja bez osiguranja, dostupnost epiduralne analgezije, dokumenti za novorođenče i patronaža. Važi za jul 2026.',
 			ChildHealthcareDescription:
@@ -144,10 +160,14 @@ export default {
 			Articles: 'Artikel',
 			ArticlesDescription:
 				'Nützliche Artikel über das Gesundheitswesen in Montenegro: russischsprachige Ärzte, Kliniken mit mehrsprachiger Unterstützung und mehr.',
+			ArticleMetaDoctors: 'Ärzte: {doctors} · Fachrichtungen: {specialties}',
+			ArticleMetaClinics: 'Sprachen: {languages} · Kliniken: {clinics}',
 			AlgDescription:
 				'Cetirizin (Zyrtec, Zodak) ist in Montenegro nicht zugelassen. Welche Antihistaminika es hier mit und ohne Rezept gibt und wie Sie Ersatz über den Wirkstoff finden.',
 			BldDescription:
 				'Neun Spendestellen des staatlichen Bluttransfusionsinstituts — Adressen, Telefonnummern und die Tage, an denen sie Spender annehmen. Wer spenden darf, wie oft, wie man sich vorbereitet und was gilt, wenn man keine Aufenthaltskarte hat. Stand: September 2026.',
+			TmdDescription:
+				'Ein dokumentierter Fall in der Zahnklinik Temel Dental (Podgorica): Eine Familie zahlte 1.000 € an für eine Behandlung „um die 2.000 €“ — wenige Tage später hieß es, der Plan koste 4.000 € und bestehe aus anderen Leistungen. Die Rückerstattung lehnt die Klinik ab. Korrespondenz, Bewertungen, montenegrinische Gesetze und eine Checkliste.',
 			BirthInMontenegroDescription:
 				'Wo man in Montenegro entbindet: Geburtsstationen der staatlichen Krankenhäuser und die private Option, Schwangerschaftsvorsorge, Kosten der Geburt ohne Versicherung, Verfügbarkeit der PDA, Papiere für das Neugeborene und Hebammen-Hausbesuche. Stand: Juli 2026.',
 			ChildHealthcareDescription:
@@ -187,10 +207,14 @@ export default {
 			Articles: 'Makaleler',
 			ArticlesDescription:
 				"Karadağ'daki sağlık hizmetleri hakkında yararlı makaleler: Rusça konuşan doktorlar, çok dilli destek sunan klinikler ve daha fazlası.",
+			ArticleMetaDoctors: 'Doktor: {doctors} · Uzmanlık: {specialties}',
+			ArticleMetaClinics: 'Dil: {languages} · Klinik: {clinics}',
 			AlgDescription:
 				'Setirizin (Zyrtec, Zodak) Karadağ’da ruhsatlı değil. Eczanelerde reçetesiz ve reçeteyle hangi antihistaminikler var, markanızı etkin maddesinden nasıl bulursunuz.',
 			BldDescription:
 				'Kan Transfüzyon Kurumu’nun dokuz bağış noktası — adresler, telefonlar ve bağışçı kabul günleri. Kimler bağış yapabilir, ne sıklıkla, nasıl hazırlanılır ve oturum kartınız yoksa ne olur. Eylül 2026 itibarıyla günceldir.',
+			TmdDescription:
+				"Podgorica'daki Temel Dental diş kliniğinde belgelenmiş bir vaka: aile, “yaklaşık 2.000 €” denilen tedavi için 1.000 € ödedi; birkaç gün sonra planın 4.000 € olduğunu ve başka işlemlerden oluştuğunu öğrendi. Klinik para iadesini reddediyor. Yazışmalar, yorumlar, Karadağ yasaları ve hasta rehberi.",
 			BirthInMontenegroDescription:
 				"Karadağ'da nerede doğum yapılır: devlet hastanelerinin doğumhaneleri ve özel seçenek, gebelik takibi, sigortasız doğumun maliyeti, epidural imkânı, yenidoğan evrakları ve ev ziyareti hemşiresi. Temmuz 2026 itibarıyla günceldir.",
 			ChildHealthcareDescription:
@@ -230,10 +254,14 @@ export default {
 			Articles: 'Чланци',
 			ArticlesDescription:
 				'Корисни чланци о здравственој заштити у Црној Гори: доктори који говоре руски, клинике са вишејезичном подршком и још много тога.',
+			ArticleMetaDoctors: 'Доктора: {doctors} · Специјалности: {specialties}',
+			ArticleMetaClinics: 'Језика: {languages} · Клиника: {clinics}',
 			AlgDescription:
 				'Цетиризина (Zyrtec, Zodak) нема у регистру Црне Горе. Који антихистаминици се овдје издају без рецепта и на рецепт и како наћи познати бренд по активној супстанци.',
 			BldDescription:
 				'Девет пунктова Завода за трансфузију крви — адресе, телефони и дани када примају даваоце. Ко може да даје крв, колико често, како се припремити и шта ако немате боравак. Ажурирано у септембру 2026.',
+			TmdDescription:
+				'Документован случај у стоматолошкој клиници Temel Dental (Подгорица): породица је платила 1.000 € за лијечење „од око 2.000 €“, а неколико дана касније сазнала да план кошта 4.000 € и да се састоји од других процедура. Клиника одбија повраћај новца. Преписка, рецензије, црногорски закони и подсјетник за пацијенте.',
 			BirthInMontenegroDescription:
 				'Гдје се порађа у Црној Гори: породилишта државних болница и приватна опција, вођење трудноће, цијена порођаја без осигурања, доступност епидуралне аналгезије, документи за новорођенче и патронажа. Важи за јул 2026.',
 			ChildHealthcareDescription:

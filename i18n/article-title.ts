@@ -22,6 +22,8 @@ export default {
 				'Allergy medicines in Montenegro: what to take instead of Zyrtec',
 			BldTitle:
 				'Donating blood in Montenegro: where to go, how often, and what documents you need',
+			TmdTitle:
+				'Temel Dental in Podgorica: €2,000 quoted, €4,000 after payment',
 			PharmaciesTitle:
 				'Pharmacies and medications in Montenegro: prescriptions, analogs, what to bring',
 			BirthInMontenegroTitle:
@@ -60,6 +62,8 @@ export default {
 			AlgTitle: 'Чем заменить Зиртек в Черногории: антигистаминные в аптеках',
 			BldTitle:
 				'Донорство крови в Черногории: где сдать, как часто и что нужно из документов',
+			TmdTitle:
+				'Temel Dental в Подгорице: 2000 € на словах, 4000 € после оплаты',
 			PharmaciesTitle:
 				'Аптеки и лекарства в Черногории: рецепты, аналоги, что взять с собой',
 			BirthInMontenegroTitle:
@@ -97,6 +101,8 @@ export default {
 				'Čime zamijeniti Zyrtec u Crnoj Gori: antihistaminici u apotekama',
 			BldTitle:
 				'Davanje krvi u Crnoj Gori: gdje, koliko često i koji dokument je potreban',
+			TmdTitle:
+				'Temel Dental u Podgorici: 2.000 € usmeno, 4.000 € nakon uplate',
 			PharmaciesTitle:
 				'Apoteke i ljekovi u Crnoj Gori: recepti, analozi, šta ponijeti sa sobom',
 			BirthInMontenegroTitle:
@@ -134,6 +140,8 @@ export default {
 				'Чиме замијенити Zyrtec у Црној Гори: антихистаминици у апотекама',
 			BldTitle:
 				'Давање крви у Црној Гори: гдје, колико често и који документ је потребан',
+			TmdTitle:
+				'Temel Dental у Подгорици: 2.000 € усмено, 4.000 € након уплате',
 			PharmaciesTitle:
 				'Апотеке и љекови у Црној Гори: рецепти, аналози, шта понијети са собом',
 			BirthInMontenegroTitle:
@@ -171,6 +179,8 @@ export default {
 				'Zyrtec in Montenegro ersetzen: Antihistaminika in den Apotheken',
 			BldTitle:
 				'Blut spenden in Montenegro: wo, wie oft und mit welchen Dokumenten',
+			TmdTitle:
+				'Temel Dental in Podgorica: 2.000 € mündlich, 4.000 € nach der Zahlung',
 			PharmaciesTitle:
 				'Apotheken und Medikamente in Montenegro: Rezepte, Generika, was man mitnehmen sollte',
 			BirthInMontenegroTitle:
@@ -209,6 +219,8 @@ export default {
 			AlgTitle:
 				'Karadağ’da Zyrtec yerine ne var: eczanelerde antihistaminikler',
 			BldTitle: 'Karadağ’da kan bağışı: nerede, ne sıklıkla ve hangi belgeyle',
+			TmdTitle:
+				"Podgorica'daki Temel Dental: sözlü 2.000 €, ödeme sonrası 4.000 €",
 			PharmaciesTitle:
 				"Karadağ'da eczaneler ve ilaçlar: reçeteler, muadiller, yanınızda ne getirmelisiniz",
 			BirthInMontenegroTitle:

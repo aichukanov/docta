@@ -34,7 +34,7 @@
 | --- | --- | --- | --- |
 | [silent-200-index-hygiene/](silent-200-index-hygiene/) | **P1** | ✅ 4/4 | Итерации 1–4 на проде (2026-07-30/31), 602 URL отправлены в IndexNow. Ждёт деплоя довесок: снят ложный `lastmod` в sitemap |
 | [seo-snippets/](seo-snippets/TASK-clinic-title-labtests.md) | P2 (SEO) | 📋 Backlog | Анализы в `<title>` страницы клиники (сейчас считаются только врачи и услуги — у лабораторий заголовок вырождается в «название \| город») и CTA «найдите врача» в сниппете клиник без врачей |
-| [element-plus-removal/](element-plus-removal/) | P2 (техдолг) | 📝 Planning, 0/5 | **Всё. Единственный полностью написанный PRD, к которому не приступали** |
+| [element-plus-removal/](element-plus-removal/) | P2 (техдолг) | 🟡 1/5, идёт итерация 2 | Итерация 1 закрыта (пакет `@ach/ui-kit`, 2026-08-31). В итерации 2 закрыты селекты, краулимая пагинация (FR-10) и переход ссылкой у `KitButton` (2026-10-21); осталось `KitInput`, `KitCheckbox`, `KitSegmented`, `components/filter/*` и шесть каталожных страниц |
 | [maps/](maps/) | P2 | 📋 Backlog | Кластеризация боковой карты и остальные пункты аудита карт |
 | [doctor-profile/](doctor-profile/) | P1 | 🟡 1/5 | Итерации 2–5 **не написаны** (файлов нет, только ссылки) — PRD к разработке не готов |
 | [analytics/](analytics/) | P1 | 🟢 Код готов | Конфигурация в Mixpanel UI ([mixpanel-setup.md](analytics/mixpanel-setup.md)) — не код |

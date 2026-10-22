@@ -89,5 +89,13 @@ SQL лежит в `server/sql/update-doctors-2026-10-<группа>.sql`, реш
   - Viller — Civkina, Vaganova;
   - Medical Vraneš — Antipina, Dejeva, Nesterova;
   - ОБ Котор — 22 врача, проверить нечем.
+- **Temel Dental (Подгорица, клиника 19) в карту не попадает — и не попадёт.**
+  Карта строится по сайтам, а сайта у клиники нет: `clinics.website` пуст,
+  temeldental.com — это Temel Dental в Аланье, с 2026-10-08 отдаёт 503
+  (`data/clinic-candidates/site-checks.json`), Instagram и Facebook не читаются.
+  Врачи заводятся поштучно: Aleksej Kozlov и Ibrahim Halil Temel (ортодонт,
+  главный врач, заведён 2026-10-21 —
+  `server/sql/insert-doctor-ibrahim-halil-temel.sql`). Сверять состав нечем,
+  нужны скриншоты из Instagram.
 - **Опечатка:** у `bozovic-bjanka` в `name_sr` «Božovic» без диакритики.
 - **Повторная сверка составов** — журнал готов 2026-10-07: `scripts/clinics/check-doctor-teams.mjs`, отчёт `journal.md` (см. README). Открыто: регулярный запуск раз в месяц вместе с журналом прайсов.

@@ -26020,7 +26020,7 @@
 				"approxCount": 0
 			},
 			"languages": null,
-			"notes": "Domain resolves to Cloudflare, but every request (www/apex, http/https, /en, robots.txt) returns HTTP 503 'Service unavailable.' — checked twice ~15 min apart. Content NOT readable. WebSearch: no own new site; third-party SafetyWing nomad-care-map lists 'Temel Dental' Podgorica (search snippet mentions a Russian/English-speaking dentist Dr. Alexey Kozlov — snippet only, page not verified with curl). Wayback API returned 429, not checked. Note: repo working tree has untracked server/sql/insert-doctor-ibrahim-temel.sql — possibly related, not inspected.",
+			"notes": "Domain resolves to Cloudflare, but every request (www/apex, http/https, /en, robots.txt) returns HTTP 503 'Service unavailable.' — checked twice ~15 min apart. Content NOT readable. WebSearch: no own new site; third-party SafetyWing nomad-care-map lists 'Temel Dental' Podgorica (search snippet mentions a Russian/English-speaking dentist Dr. Alexey Kozlov — snippet only, page not verified with curl). Wayback API returned 429, not checked. Note: the clinic's chief doctor (Ibrahim Halil Temel, orthodontist) was imported separately on 2026-10-21 — server/sql/insert-doctor-ibrahim-halil-temel.sql.",
 			"checkedAt": "2026-10-08"
 		},
 		"competitors": [],

@@ -8,6 +8,7 @@ import articlesI18n from '../../i18n/articles';
 import articleUnavailableI18n from '../../i18n/article-medications-unavailable';
 import articleAllergyI18n from '../../i18n/article-allergy-medicines';
 import articleBloodDonationI18n from '../../i18n/article-blood-donation';
+import articleTemelDentalI18n from '../../i18n/article-temel-dental';
 import articleCityHealthcareI18n from '../../i18n/article-city-healthcare';
 import articleWeekendI18n from '../../i18n/article-weekend-medical-help';
 import articleTitleI18n from '../../i18n/article-title';
@@ -80,6 +81,7 @@ test.describe('ARTICLE_SEARCH', () => {
 		articleUnavailableI18n,
 		articleAllergyI18n,
 		articleBloodDonationI18n,
+		articleTemelDentalI18n,
 		articleCityHealthcareI18n,
 		articleWeekendI18n,
 	];
@@ -140,6 +142,7 @@ test.describe('i18n/article-title', () => {
 		articleUnavailableI18n,
 		articleAllergyI18n,
 		articleBloodDonationI18n,
+		articleTemelDentalI18n,
 		articleCityHealthcareI18n,
 		articleWeekendI18n,
 	];
@@ -207,6 +210,7 @@ test.describe('i18n/article-description', () => {
 		articleUnavailableI18n,
 		articleAllergyI18n,
 		articleBloodDonationI18n,
+		articleTemelDentalI18n,
 	];
 
 	function canonical(locale: string, key: string): string | undefined {
@@ -242,13 +246,16 @@ test.describe('i18n/article-description', () => {
 		expect(problems).toEqual([]);
 	});
 
-	test('содержит только описания и две строки самого листинга', () => {
+	test('содержит только описания и собственные строки листинга', () => {
 		const extra: string[] = [];
 		for (const locale of Object.keys(descriptions)) {
 			for (const key of Object.keys(descriptions[locale])) {
 				const isDescription = key.endsWith('Description');
 				const isCityDescription = key.startsWith('CityHcDescription_');
-				const isPageOwn = key === 'Articles';
+				const isPageOwn =
+					key === 'Articles' ||
+					key === 'ArticleMetaDoctors' ||
+					key === 'ArticleMetaClinics';
 				if (!isDescription && !isCityDescription && !isPageOwn) {
 					extra.push(`${locale}/${key}`);
 				}

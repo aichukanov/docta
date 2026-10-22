@@ -33,6 +33,7 @@ export const ARTICLE_SLUGS = [
 	'mental-health-in-montenegro',
 	'pharmacies-and-medications',
 	'russian-speaking-doctors-in-montenegro',
+	'temel-dental-case',
 	'tourist-healthcare-in-montenegro',
 	'weekend-medical-help-in-montenegro',
 ];
@@ -469,6 +470,20 @@ export const ARTICLE_SEARCH: ArticleSearchEntry[] = [
 			'sprache',
 			'language',
 			'dil',
+		],
+	},
+	{
+		slug: 'temel-dental-case',
+		titleKey: 'TmdTitle',
+		keywords: [
+			'temel',
+			'temel dental',
+			'темел',
+			'темел дентал',
+			'ортодонт',
+			'ortodont',
+			'пластинка',
+			'брекеты',
 		],
 	},
 	{

@@ -154,6 +154,7 @@ const reviewSelectFields = (textExpr: string) => `
 	r.published_at as publishedAt,
 	r.likes_count as likesCount,
 	r.is_verified as isVerified,
+	r.is_pinned as isPinned,
 	r.updated_at as updatedAt,
 	COALESCE(
 		NULLIF(u.name, ''),
@@ -238,12 +239,16 @@ export async function fetchReviews(
 	);
 	const totalCount = (countRows as any[])[0].total;
 
-	// Main query with sorting and pagination
+	// Main query with sorting and pagination.
+	// Закреплённые редакцией отзывы — всегда первыми, при любой сортировке и
+	// раньше boost-префикса (prd/clinic-reputation/); между собой — по времени
+	// закрепления, свежее выше.
+	const pinnedPrefix = `r.is_pinned DESC, (CASE WHEN r.is_pinned = 1 THEN r.pinned_at END) DESC, `;
 	const boostPrefix =
 		boostMinRating != null
 			? `IF(r.rating >= ${Math.floor(Number(boostMinRating))}, 0, 1), `
 			: '';
-	const orderBy = boostPrefix + buildOrderByClause(sort, textExpr);
+	const orderBy = pinnedPrefix + boostPrefix + buildOrderByClause(sort, textExpr);
 	const limitClause =
 		limit != null
 			? `LIMIT ${Math.max(0, Math.floor(Number(limit)))} OFFSET ${Math.max(0, Math.floor(Number(offset)))}`

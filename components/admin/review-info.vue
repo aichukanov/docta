@@ -214,6 +214,82 @@ const STATUS_LABELS: Record<string, string> = {
 	rejected: 'отклонён',
 };
 
+const errorCode = (e: unknown) =>
+	(e as { data?: { data?: { code?: string } } })?.data?.data?.code || '';
+
+/*
+ * Смена статуса прямо в карточке. Раньше статус здесь только показывали, а
+ * менять его можно было во вкладке «Модерация» — но в карточку приходят за
+ * закреплением и верификацией, и отсутствие одобрения выясняется именно тут.
+ */
+const moderateReview = async (action: 'approve' | 'reject') => {
+	if (!reviewModel.value) return;
+	const id = reviewModel.value.id;
+	let reason = '';
+	if (action === 'reject') {
+		reason = (
+			prompt('Причина отклонения? Автор увидит её у своего отзыва.') || ''
+		).trim();
+		if (!reason) return;
+	} else if (!confirm('Одобрить отзыв?')) {
+		return;
+	}
+	try {
+		await $fetch('/api/admin/reviews/moderate', {
+			method: 'POST',
+			body: { reviewId: id, action, reason: reason || undefined },
+		});
+		emit('updated');
+		await loadReviewDetails(id);
+	} catch (e) {
+		console.error('Failed to moderate review:', e);
+		alert(
+			`Не удалось изменить статус: ${errorCode(e) || 'неизвестная ошибка'}`,
+		);
+	}
+};
+
+/*
+ * Отзыв виден на сайте в любом статусе, кроме rejected (server/common/reviews.ts),
+ * поэтому «на модерации» снаружи неотличим от одобренного: отзыв опубликован,
+ * ответы и верификация работают — и отказ закрепить выглядит враньём. Разницу
+ * показываем прямо здесь и предлагаем недостающий шаг, а не пересказываем
+ * правило. `allowApprove` — чтобы одобрение пробовалось ровно один раз.
+ */
+const pinReview = async (id: number, pinned: boolean, allowApprove = true) => {
+	try {
+		await $fetch('/api/admin/reviews/pin', {
+			method: 'POST',
+			body: { reviewId: id, pinned },
+		});
+		await loadReviewDetails(id);
+	} catch (e) {
+		console.error('Failed to toggle pin:', e);
+		const code = errorCode(e);
+		if (code === 'REVIEW_NOT_APPROVED' && allowApprove) {
+			const label =
+				STATUS_LABELS[reviewModel.value?.status || ''] ||
+				reviewModel.value?.status ||
+				'неизвестен';
+			if (
+				!confirm(
+					`Закреплять можно только одобренный отзыв, а этот — «${label}». Одобрить и закрепить?`,
+				)
+			) {
+				return;
+			}
+			await $fetch('/api/admin/reviews/moderate', {
+				method: 'POST',
+				body: { reviewId: id, action: 'approve' },
+			});
+			emit('updated');
+			await pinReview(id, pinned, false);
+			return;
+		}
+		alert(`Не удалось изменить закрепление: ${code || 'неизвестная ошибка'}`);
+	}
+};
+
 const togglePin = async () => {
 	if (!reviewModel.value) return;
 	const pinned = !reviewModel.value.isPinned;
@@ -226,18 +302,7 @@ const togglePin = async () => {
 	) {
 		return;
 	}
-	try {
-		await $fetch('/api/admin/reviews/pin', {
-			method: 'POST',
-			body: { reviewId: reviewModel.value.id, pinned },
-		});
-		await loadReviewDetails(reviewModel.value.id);
-	} catch (e) {
-		console.error('Failed to toggle pin:', e);
-		alert(
-			'Не удалось изменить закрепление. Закреплять можно только одобренный отзыв.',
-		);
-	}
+	await pinReview(reviewModel.value.id, pinned);
 };
 
 const toggleEditorialVerify = async () => {
@@ -261,7 +326,9 @@ const toggleEditorialVerify = async () => {
 		await loadReviewDetails(reviewModel.value.id);
 	} catch (e) {
 		console.error('Failed to toggle editorial verification:', e);
-		alert('Не удалось изменить верификацию');
+		alert(
+			`Не удалось изменить верификацию: ${errorCode(e) || 'неизвестная ошибка'}`,
+		);
 	}
 };
 
@@ -351,7 +418,12 @@ watch(reviewId, async (newId) => {
 			<!-- Закрепление и верификация (prd/clinic-reputation/) -->
 			<div class="association-section">
 				<label class="section-label">Статус и выдача</label>
-				<span class="status-chip">
+				<span
+					class="status-chip"
+					:class="{
+						'status-chip--attention': reviewModel.status !== 'approved',
+					}"
+				>
 					{{ STATUS_LABELS[reviewModel.status] || reviewModel.status }}
 				</span>
 				<span v-if="reviewModel.isVerified" class="status-chip">
@@ -359,6 +431,23 @@ watch(reviewId, async (newId) => {
 				</span>
 				<span v-if="reviewModel.isPinned" class="status-chip">закреплён</span>
 				<template v-if="editable">
+					<el-button
+						v-if="reviewModel.status !== 'approved'"
+						size="small"
+						type="success"
+						@click="moderateReview('approve')"
+					>
+						Одобрить
+					</el-button>
+					<el-button
+						v-if="reviewModel.status !== 'rejected'"
+						size="small"
+						type="danger"
+						plain
+						@click="moderateReview('reject')"
+					>
+						Отклонить
+					</el-button>
 					<el-button size="small" @click="togglePin">
 						{{ reviewModel.isPinned ? 'Открепить' : 'Закрепить' }}
 					</el-button>
@@ -747,6 +836,14 @@ watch(reviewId, async (newId) => {
 	font-size: 0.85em;
 	color: var(--kit-color-text-secondary);
 	white-space: nowrap;
+}
+
+/* Не одобрен — единственное место, где это видно: на сайте такой отзыв
+   выглядит как обычный опубликованный */
+.status-chip--attention {
+	background: var(--kit-color-warning-bg);
+	border-color: var(--kit-color-warning-border);
+	color: var(--kit-color-warning-dark);
 }
 
 .reply-meta {

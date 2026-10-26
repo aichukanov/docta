@@ -1,6 +1,7 @@
 import { requireAdmin } from '~/server/common/auth';
 import { executeQuery } from '~/server/common/db-mysql';
-import { isClinicComplaintType } from '~/enums/clinic-complaint-type';
+import { getComplaintTable } from '~/server/common/reputation';
+import { isComplaintType, type ReputationEntity } from '~/enums/complaint-type';
 import type { User } from '~/server/utils/session';
 import {
 	ERROR_CODES,
@@ -9,18 +10,31 @@ import {
 	createSuccessResponse,
 } from '~/server/utils/api-codes';
 
+/** Таблица сущности и код ошибки «не найдено» — по той же паре ключей */
+const ENTITY_TABLES: Record<
+	ReputationEntity,
+	{ table: string; notFound: ERROR_CODES }
+> = {
+	clinic: { table: 'clinics', notFound: ERROR_CODES.CLINIC_NOT_FOUND },
+	doctor: {
+		table: 'doctors',
+		notFound: ERROR_CODES.DOCTOR_PROFILE_NOT_FOUND,
+	},
+};
+
 /**
- * Upsert жалобы по (clinic_id, complaint_type) — одна строка на пару, повторные
- * обращения того же типа меняют статус/поля, а не плодят строки.
- * POST { clinicId, complaintType, status, isActive, reviewId?, articleSlug?,
- *        incidentDate?, sourceNote?, clinicResponse? }
+ * Upsert жалобы по (clinic_id|doctor_id, complaint_type) — одна строка на пару,
+ * повторные обращения того же типа меняют статус/поля, а не плодят строки.
+ * POST { entity, entityId, complaintType, status, isActive, reviewId?,
+ *        articleSlug?, incidentDate?, sourceNote?, response? }
  */
 export default defineEventHandler(async (event) => {
 	await requireAdmin(event);
 	const moderator = event.context.user as User;
 
 	const body = await readBody(event);
-	const clinicId = parseInt(String(body?.clinicId || ''), 10);
+	const entity = String(body?.entity || '') as ReputationEntity;
+	const entityId = parseInt(String(body?.entityId || ''), 10);
 	const complaintType = parseInt(String(body?.complaintType || ''), 10);
 	const status = body?.status;
 	const isActive = body?.isActive !== false;
@@ -38,26 +52,28 @@ export default defineEventHandler(async (event) => {
 		typeof body?.sourceNote === 'string' && body.sourceNote.trim()
 			? body.sourceNote.trim()
 			: null;
-	const clinicResponse =
-		typeof body?.clinicResponse === 'string' && body.clinicResponse.trim()
-			? body.clinicResponse.trim()
+	const response =
+		typeof body?.response === 'string' && body.response.trim()
+			? body.response.trim()
 			: null;
 
 	if (
-		!clinicId ||
-		clinicId <= 0 ||
-		!isClinicComplaintType(complaintType) ||
+		!['clinic', 'doctor'].includes(entity) ||
+		!entityId ||
+		entityId <= 0 ||
+		!isComplaintType(complaintType) ||
 		!['confirmed', 'unconfirmed'].includes(status)
 	) {
 		createErrorResponse(400, ERROR_CODES.COMPLAINT_INVALID_DATA);
 	}
 
-	const clinics = await executeQuery<{ id: number }>(
-		'SELECT id FROM clinics WHERE id = ?',
-		[clinicId],
+	const { table: entityTable, notFound } = ENTITY_TABLES[entity];
+	const entities = await executeQuery<{ id: number }>(
+		`SELECT id FROM ${entityTable} WHERE id = ?`,
+		[entityId],
 	);
-	if (clinics.length === 0) {
-		createErrorResponse(404, ERROR_CODES.CLINIC_NOT_FOUND);
+	if (entities.length === 0) {
+		createErrorResponse(404, notFound);
 	}
 	if (reviewId) {
 		const reviews = await executeQuery<{ id: number }>(
@@ -69,10 +85,12 @@ export default defineEventHandler(async (event) => {
 		}
 	}
 
+	const { table, idColumn, responseColumn } = getComplaintTable(entity);
+
 	await executeQuery(
-		`INSERT INTO clinic_complaints
-			(clinic_id, complaint_type, status, is_active, review_id, article_slug,
-			 incident_date, source_note, clinic_response, created_by)
+		`INSERT INTO ${table}
+			(${idColumn}, complaint_type, status, is_active, review_id, article_slug,
+			 incident_date, source_note, ${responseColumn}, created_by)
 		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 		ON DUPLICATE KEY UPDATE
 			status = VALUES(status),
@@ -81,9 +99,9 @@ export default defineEventHandler(async (event) => {
 			article_slug = VALUES(article_slug),
 			incident_date = VALUES(incident_date),
 			source_note = VALUES(source_note),
-			clinic_response = VALUES(clinic_response)`,
+			${responseColumn} = VALUES(${responseColumn})`,
 		[
-			clinicId,
+			entityId,
 			complaintType,
 			status,
 			isActive,
@@ -91,7 +109,7 @@ export default defineEventHandler(async (event) => {
 			articleSlug,
 			incidentDate,
 			sourceNote,
-			clinicResponse,
+			response,
 			moderator.id,
 		],
 	);

@@ -1,13 +1,17 @@
-// Раздел «Репутация» и бейдж «Осторожно» (prd/clinic-reputation/).
+// Раздел «Репутация» и бейдж «Осторожно» (prd/clinic-reputation/) —
+// общий словарь для клиник и для врачей.
 //
 // Формулировки жалоб — фиксированный словарь: коды в БД
-// (clinic_complaints.complaint_type = enums/clinic-complaint-type.ts),
+// (clinic_complaints/doctor_complaints.complaint_type = enums/complaint-type.ts),
 // тексты только здесь. Правила формулировок: факты без оценочных и
 // уголовно-правовых слов, настоящее время, описывают практику, а не намерение.
 // Complaint<N> — полная формулировка в разделе, Complaint<N>Short — короткий
 // ярлык для тултипа бейджа (перечисление через запятую).
 // Чип статуса несёт эпистемику: confirmed — редакция видела документы,
 // unconfirmed — только обращения пациентов.
+// Ключи с суффиксом Doctor — те же тексты для карточки врача: сами
+// формулировки жалоб нейтральны и годятся обеим сущностям, а вот «клиника»
+// в ответе, футере и алерте на странице отзывов должна стать «врачом».
 export default {
 	messages: {
 		'en': {
@@ -16,7 +20,8 @@ export default {
 			CautionTooltip: 'Caution: {labels}',
 			Complaint1: 'Pushing services the patient did not ask for',
 			Complaint1Short: 'imposed services',
-			Complaint2: 'Final cost significantly higher than quoted before treatment',
+			Complaint2:
+				'Final cost significantly higher than quoted before treatment',
 			Complaint2Short: 'final cost above the quote',
 			Complaint3: 'No contract or written treatment plan provided',
 			Complaint3Short: 'no contract or treatment plan',
@@ -33,11 +38,16 @@ export default {
 			UnconfirmedHint:
 				'Based on patient reports; the editorial team has no documentary evidence',
 			ClinicResponseTitle: 'Official response from the clinic',
+			DoctorResponseTitle: 'Official response from the doctor',
 			SeePinnedReview: 'Review about this case',
 			SeeArticle: 'Case review article',
 			ReputationFooter:
 				'This section is maintained by the docta.me team based on patient reports and submitted documents. The clinic can send an official response to {email} — we will publish it here.',
+			ReputationFooterDoctor:
+				'This section is maintained by the docta.me team based on patient reports and submitted documents. The doctor can send an official response to {email} — we will publish it here.',
 			ReviewsCautionNotice: 'This clinic has confirmed patient complaints.',
+			ReviewsCautionNoticeDoctor:
+				'This doctor has confirmed patient complaints.',
 			ReviewsCautionLink: 'See the Reputation section',
 		},
 		'ru': {
@@ -64,11 +74,16 @@ export default {
 			UnconfirmedHint:
 				'Основано на обращениях пациентов; документального подтверждения у редакции нет',
 			ClinicResponseTitle: 'Официальный ответ клиники',
+			DoctorResponseTitle: 'Официальный ответ врача',
 			SeePinnedReview: 'Отзыв по этому случаю',
 			SeeArticle: 'Разбор случая',
 			ReputationFooter:
 				'Раздел ведёт редакция docta.me на основании обращений пациентов и предоставленных документов. Клиника может направить официальный ответ на {email} — мы опубликуем его здесь.',
+			ReputationFooterDoctor:
+				'Раздел ведёт редакция docta.me на основании обращений пациентов и предоставленных документов. Врач может направить официальный ответ на {email} — мы опубликуем его здесь.',
 			ReviewsCautionNotice: 'У клиники есть подтверждённые жалобы пациентов.',
+			ReviewsCautionNoticeDoctor:
+				'У врача есть подтверждённые жалобы пациентов.',
 			ReviewsCautionLink: 'Подробнее в разделе «Репутация»',
 		},
 		'sr': {
@@ -95,11 +110,15 @@ export default {
 			UnconfirmedHint:
 				'Zasnovano na prijavama pacijenata; redakcija nema dokumentovanu potvrdu',
 			ClinicResponseTitle: 'Zvaničan odgovor klinike',
+			DoctorResponseTitle: 'Zvaničan odgovor ljekara',
 			SeePinnedReview: 'Recenzija o ovom slučaju',
 			SeeArticle: 'Analiza slučaja',
 			ReputationFooter:
 				'Ovu rubriku vodi redakcija docta.me na osnovu prijava pacijenata i dostavljenih dokumenata. Klinika može poslati zvaničan odgovor na {email} — objavićemo ga ovdje.',
+			ReputationFooterDoctor:
+				'Ovu rubriku vodi redakcija docta.me na osnovu prijava pacijenata i dostavljenih dokumenata. Ljekar može poslati zvaničan odgovor na {email} — objavićemo ga ovdje.',
 			ReviewsCautionNotice: 'Ova klinika ima potvrđene žalbe pacijenata.',
+			ReviewsCautionNoticeDoctor: 'Ovaj ljekar ima potvrđene žalbe pacijenata.',
 			ReviewsCautionLink: 'Više u rubrici Reputacija',
 		},
 		'sr-cyrl': {
@@ -126,18 +145,23 @@ export default {
 			UnconfirmedHint:
 				'Засновано на пријавама пацијената; редакција нема документовану потврду',
 			ClinicResponseTitle: 'Званичан одговор клинике',
+			DoctorResponseTitle: 'Званичан одговор љекара',
 			SeePinnedReview: 'Рецензија о овом случају',
 			SeeArticle: 'Анализа случаја',
 			ReputationFooter:
 				'Ову рубрику води редакција docta.me на основу пријава пацијената и достављених докумената. Клиника може послати званичан одговор на {email} — објавићемо га овдје.',
+			ReputationFooterDoctor:
+				'Ову рубрику води редакција docta.me на основу пријава пацијената и достављених докумената. Љекар може послати званичан одговор на {email} — објавићемо га овдје.',
 			ReviewsCautionNotice: 'Ова клиника има потврђене жалбе пацијената.',
+			ReviewsCautionNoticeDoctor: 'Овај љекар има потврђене жалбе пацијената.',
 			ReviewsCautionLink: 'Више у рубрици Репутација',
 		},
 		'de': {
 			ReputationTitle: 'Reputation',
 			Caution: 'Vorsicht',
 			CautionTooltip: 'Vorsicht: {labels}',
-			Complaint1: 'Aufdrängen von Leistungen, die der Patient nicht angefragt hat',
+			Complaint1:
+				'Aufdrängen von Leistungen, die der Patient nicht angefragt hat',
 			Complaint1Short: 'aufgedrängte Leistungen',
 			Complaint2: 'Endpreis deutlich höher als vor Behandlungsbeginn genannt',
 			Complaint2Short: 'Endpreis über dem genannten',
@@ -157,12 +181,17 @@ export default {
 			UnconfirmedHint:
 				'Beruht auf Patientenmeldungen; der Redaktion liegen keine Belege vor',
 			ClinicResponseTitle: 'Offizielle Stellungnahme der Klinik',
+			DoctorResponseTitle: 'Offizielle Stellungnahme des Arztes',
 			SeePinnedReview: 'Bewertung zu diesem Fall',
 			SeeArticle: 'Analyse des Falls',
 			ReputationFooter:
 				'Diese Rubrik pflegt die docta.me-Redaktion auf Grundlage von Patientenmeldungen und eingereichten Unterlagen. Die Klinik kann eine offizielle Stellungnahme an {email} senden — wir veröffentlichen sie hier.',
+			ReputationFooterDoctor:
+				'Diese Rubrik pflegt die docta.me-Redaktion auf Grundlage von Patientenmeldungen und eingereichten Unterlagen. Der Arzt kann eine offizielle Stellungnahme an {email} senden — wir veröffentlichen sie hier.',
 			ReviewsCautionNotice:
 				'Für diese Klinik liegen bestätigte Patientenbeschwerden vor.',
+			ReviewsCautionNoticeDoctor:
+				'Für diesen Arzt liegen bestätigte Patientenbeschwerden vor.',
 			ReviewsCautionLink: 'Mehr im Abschnitt Reputation',
 		},
 		'tr': {
@@ -189,12 +218,17 @@ export default {
 			UnconfirmedHint:
 				'Hasta bildirimlerine dayanır; ekibin elinde belge bulunmamaktadır',
 			ClinicResponseTitle: 'Kliniğin resmî yanıtı',
+			DoctorResponseTitle: 'Hekimin resmî yanıtı',
 			SeePinnedReview: 'Bu vakayla ilgili yorum',
 			SeeArticle: 'Vaka incelemesi',
 			ReputationFooter:
 				'Bu bölüm, hasta bildirimleri ve sunulan belgelere dayanarak docta.me ekibi tarafından yönetilir. Klinik, {email} adresine resmî bir yanıt gönderebilir — yanıtı burada yayımlarız.',
+			ReputationFooterDoctor:
+				'Bu bölüm, hasta bildirimleri ve sunulan belgelere dayanarak docta.me ekibi tarafından yönetilir. Hekim, {email} adresine resmî bir yanıt gönderebilir — yanıtı burada yayımlarız.',
 			ReviewsCautionNotice:
 				'Bu klinik hakkında doğrulanmış hasta şikâyetleri var.',
+			ReviewsCautionNoticeDoctor:
+				'Bu hekim hakkında doğrulanmış hasta şikâyetleri var.',
 			ReviewsCautionLink: 'Ayrıntılar İtibar bölümünde',
 		},
 	},

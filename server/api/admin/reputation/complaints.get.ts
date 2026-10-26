@@ -1,29 +1,31 @@
 import { requireAdmin } from '~/server/common/auth';
 import { executeQuery } from '~/server/common/db-mysql';
-import type { ClinicComplaintAdmin } from '~/interfaces/clinic-reputation';
-import {
-	ERROR_CODES,
-	createErrorResponse,
-} from '~/server/utils/api-codes';
+import { getComplaintTable } from '~/server/common/reputation';
+import type { ReputationEntity } from '~/enums/complaint-type';
+import type { ComplaintAdmin } from '~/interfaces/reputation';
+import { ERROR_CODES, createErrorResponse } from '~/server/utils/api-codes';
 
 /**
- * Полный список жалоб клиники для админки — включая неактивные и внутреннюю
- * заметку об источнике. GET ?clinicId=
+ * Полный список жалоб клиники или врача для админки — включая неактивные и
+ * внутреннюю заметку об источнике. GET ?entity=clinic|doctor&entityId=
  */
 export default defineEventHandler(
-	async (event): Promise<{ complaints: ClinicComplaintAdmin[] }> => {
+	async (event): Promise<{ complaints: ComplaintAdmin[] }> => {
 		await requireAdmin(event);
 
 		const query = getQuery(event);
-		const clinicId = parseInt(String(query.clinicId || ''), 10);
-		if (!clinicId || clinicId <= 0) {
+		const entity = String(query.entity || '') as ReputationEntity;
+		const entityId = parseInt(String(query.entityId || ''), 10);
+		if (!['clinic', 'doctor'].includes(entity) || !entityId || entityId <= 0) {
 			createErrorResponse(400, ERROR_CODES.COMPLAINT_INVALID_DATA);
 		}
+
+		const { table, idColumn, responseColumn } = getComplaintTable(entity);
 
 		const rows = await executeQuery<any>(
 			`SELECT
 				id,
-				clinic_id as clinicId,
+				${idColumn} as entityId,
 				complaint_type as type,
 				status,
 				is_active as isActive,
@@ -31,19 +33,19 @@ export default defineEventHandler(
 				article_slug as articleSlug,
 				incident_date as incidentDate,
 				source_note as sourceNote,
-				clinic_response as clinicResponse,
+				${responseColumn} as response,
 				created_at as createdAt,
 				updated_at as updatedAt
-			FROM clinic_complaints
-			WHERE clinic_id = ?
+			FROM ${table}
+			WHERE ${idColumn} = ?
 			ORDER BY complaint_type ASC`,
-			[clinicId],
+			[entityId],
 		);
 
 		return {
 			complaints: rows.map((row) => ({
 				id: row.id,
-				clinicId: row.clinicId,
+				entityId: row.entityId,
 				type: row.type,
 				status: row.status,
 				isActive: Boolean(row.isActive),
@@ -53,7 +55,7 @@ export default defineEventHandler(
 					? new Date(row.incidentDate).toISOString().slice(0, 10)
 					: undefined,
 				sourceNote: row.sourceNote ?? undefined,
-				clinicResponse: row.clinicResponse ?? undefined,
+				response: row.response ?? undefined,
 				createdAt: row.createdAt,
 				updatedAt: row.updatedAt,
 			})),

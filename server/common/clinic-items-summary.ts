@@ -4,6 +4,11 @@ import type {
 	ClinicItemTypeSummary,
 } from '~/interfaces/clinic';
 import { doctorIsPublicSql } from '~/server/common/doctor-visibility';
+import {
+	cautionRankFactorSql,
+	cautionTypesSql,
+	parseCautionTypes,
+} from '~/server/common/reputation';
 import { type Conn, withConnection } from '~/server/common/medicines/helpers';
 import { getLocalizedNameField } from '~/server/common/utils';
 import { priceRowIsActiveSql } from '~/server/common/price-row-visibility';
@@ -77,6 +82,7 @@ type TopRow = {
 	photoUrl?: string | null;
 	professionalTitle?: string | null;
 	specialtyIds?: string | null;
+	cautionTypes?: string | null;
 };
 
 function buildPricedTopSql(options: {
@@ -139,6 +145,7 @@ function buildDoctorsTopSql(localizedNameField: string) {
 			d.professional_title AS professionalTitle,
 			(SELECT GROUP_CONCAT(DISTINCT ds.specialty_id ORDER BY ds.specialty_id)
 				FROM doctor_specialties ds WHERE ds.doctor_id = d.id) AS specialtyIds,
+			${cautionTypesSql('doctor', 'd')} AS cautionTypes,
 			NULL AS price,
 			NULL AS priceMin,
 			NULL AS priceMax,
@@ -147,7 +154,7 @@ function buildDoctorsTopSql(localizedNameField: string) {
 		JOIN doctors d ON d.id = dc.doctor_id
 		WHERE dc.clinic_id = ?
 			AND ${doctorIsPublicSql('d')}
-		ORDER BY d.rank_score DESC, d.name_sr ASC
+		ORDER BY (d.rank_score * ${cautionRankFactorSql('doctor', 'd')}) DESC, d.name_sr ASC
 		LIMIT ${TOP_LIMIT}
 	`;
 }
@@ -165,6 +172,9 @@ function mapTopRow(row: TopRow): ClinicItemTopEntry {
 		photoUrl: row.photoUrl || undefined,
 		professionalTitle: row.professionalTitle || undefined,
 		specialtyIds: row.specialtyIds || undefined,
+		cautionTypes: row.cautionTypes
+			? parseCautionTypes(row.cautionTypes)
+			: undefined,
 	};
 }
 

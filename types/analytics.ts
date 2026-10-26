@@ -13,6 +13,8 @@
  * (см. composables/use-analytics.ts).
  */
 
+import type { ReputationEntity } from '~/enums/complaint-type';
+
 export type AnalyticsEntityType =
 	| 'clinic'
 	| 'doctor'
@@ -117,9 +119,10 @@ export interface CouponSharedProperties extends AnalyticsEntityRef {
 	discount_percent: number;
 }
 
-/** Раздел «Репутация» на странице клиники попал во вьюпорт */
+/** Раздел «Репутация» на странице клиники или врача попал во вьюпорт */
 export interface ReputationViewedProperties {
-	clinic_id: number;
+	entity_type: ReputationEntity;
+	entity_id: number;
 }
 
 /** Имя события → интерфейс его свойств. Источник истины для trackEvent. */

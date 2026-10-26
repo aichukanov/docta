@@ -15,6 +15,11 @@ import {
 	getServicesForDoctors,
 	type ClinicServicesMap,
 } from '~/server/common/services';
+import {
+	cautionRankFactorSql,
+	cautionTypesSql,
+	parseCautionTypes,
+} from '~/server/common/reputation';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import { foldedLikeAny } from '~/server/common/search-collation';
 
@@ -188,10 +193,14 @@ export async function getDoctorList(
 				'sr-cyrl': 'name_sr_cyrl',
 			} as Record<string, string>
 		)[locale] || 'name_en';
+	// Врач с активными подтверждёнными жалобами понижается в выдаче ровно так
+	// же, как клиника (prd/clinic-reputation/, FR-6): бейдж «Осторожно» без
+	// понижения оставлял бы его на первых позициях. Алфавитную сортировку
+	// множитель не трогает — она на то и алфавитная.
 	const orderByClause =
 		body.sort === 'name-asc'
 			? `COALESCE(NULLIF(d.${localizedDoctorNameField}, ''), d.name_sr, d.name_en) ASC`
-			: 'd.rank_score DESC, d.name_sr ASC';
+			: `(d.rank_score * ${cautionRankFactorSql('doctor', 'd')}) DESC, d.name_sr ASC`;
 
 	const doctorsQuery = `
 			SELECT
@@ -215,7 +224,8 @@ export async function getDoctorList(
 				(SELECT GROUP_CONCAT(DISTINCT dl.language_id ORDER BY dl.language_id) FROM doctor_languages dl WHERE dl.doctor_id = d.id) as languageIds,
 				(SELECT COALESCE(GROUP_CONCAT(DISTINCT dc.clinic_id ORDER BY dc.clinic_id), '') FROM doctor_clinics dc JOIN clinics c_pub ON c_pub.id = dc.clinic_id AND ${clinicIsPublicSql('c_pub')} WHERE dc.doctor_id = d.id${cityFilterInClinicIds}) as clinicIds,
 				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected') as averageRating,
-				(SELECT COUNT(*) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected') as totalReviews
+				(SELECT COUNT(*) FROM reviews r WHERE r.doctor_id = d.id AND r.rating IS NOT NULL AND r.status != 'rejected') as totalReviews,
+				${cautionTypesSql('doctor', 'd')} as cautionTypes
 			FROM doctors d
 			${whereFiltersString}
 			ORDER BY ${orderByClause}
@@ -277,6 +287,7 @@ export async function getDoctorList(
 				localName,
 				clinicIds: sortedClinicIds,
 				clinicServices,
+				cautionTypes: parseCautionTypes(doctor.cautionTypes),
 				rating: doctor.averageRating
 					? {
 							averageRating: parseFloat(doctor.averageRating),
@@ -293,6 +304,7 @@ export async function getDoctorList(
 			name_en,
 			averageRating,
 			totalReviews,
+			cautionTypes,
 			...rest
 		} = doctor;
 		return {
@@ -301,6 +313,7 @@ export async function getDoctorList(
 			localName,
 			clinicIds: sortedClinicIds,
 			clinicServices,
+			cautionTypes: parseCautionTypes(cautionTypes),
 			rating: averageRating
 				? {
 						averageRating: parseFloat(averageRating),

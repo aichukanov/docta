@@ -1,23 +1,25 @@
 <script setup lang="ts">
 import { PROJECT_CONTACTS } from '~/common/constants';
 import { getRegionalQuery } from '~/common/url-utils';
-import clinicReputationI18n from '~/i18n/clinic-reputation';
-import type { ClinicComplaint } from '~/interfaces/clinic-reputation';
+import reputationI18n from '~/i18n/reputation';
+import type { ReputationEntity } from '~/enums/complaint-type';
+import type { Complaint } from '~/interfaces/reputation';
 
 /**
- * Раздел «Репутация» на странице клиники (prd/clinic-reputation/).
+ * Раздел «Репутация» на странице клиники или врача (prd/clinic-reputation/).
  * Только стандартные формулировки из словаря + чип статуса; свободный текст —
- * лишь официальный ответ клиники. Пустой список — секция не рендерится вовсе
- * (решает родитель по complaints.length).
+ * лишь официальный ответ клиники или врача. Пустой список — секция не
+ * рендерится вовсе (решает родитель по complaints.length).
  */
 const props = defineProps<{
-	complaints: ClinicComplaint[];
-	clinicId: number;
+	complaints: Complaint[];
+	entity: ReputationEntity;
+	entityId: number;
 }>();
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: clinicReputationI18n.messages,
+	messages: reputationI18n.messages,
 });
 
 const articleLink = (slug: string) => ({
@@ -25,21 +27,31 @@ const articleLink = (slug: string) => ({
 	query: getRegionalQuery(locale.value),
 });
 
-// Ответ клиники может быть продублирован в несколько строк — показываем
-// каждый уникальный текст один раз, под списком
-const clinicResponses = computed(() => {
+// Ответ может быть продублирован в несколько строк — показываем каждый
+// уникальный текст один раз, под списком
+const responses = computed(() => {
 	const texts = props.complaints
-		.map((c) => c.clinicResponse)
+		.map((c) => c.response)
 		.filter((text): text is string => Boolean(text));
 	return [...new Set(texts)];
 });
+
+const responseTitleKey = computed(() =>
+	props.entity === 'doctor' ? 'DoctorResponseTitle' : 'ClinicResponseTitle',
+);
+const footerKey = computed(() =>
+	props.entity === 'doctor' ? 'ReputationFooterDoctor' : 'ReputationFooter',
+);
 
 // Раздел читают? — одно событие на просмотр (паттерн entity_viewed)
 const { trackEvent } = useAnalytics();
 const { target: sectionTarget, hasBeenVisible } = useInViewport();
 watch(hasBeenVisible, (visible) => {
 	if (visible) {
-		trackEvent('reputation_viewed', { clinic_id: props.clinicId });
+		trackEvent('reputation_viewed', {
+			entity_type: props.entity,
+			entity_id: props.entityId,
+		});
 	}
 });
 </script>
@@ -98,12 +110,12 @@ watch(hasBeenVisible, (visible) => {
 			</li>
 		</ul>
 
-		<div v-if="clinicResponses.length" class="reputation-response">
+		<div v-if="responses.length" class="reputation-response">
 			<div class="reputation-response__title">
-				{{ t('ClinicResponseTitle') }}
+				{{ t(responseTitleKey) }}
 			</div>
 			<p
-				v-for="(response, index) in clinicResponses"
+				v-for="(response, index) in responses"
 				:key="index"
 				class="reputation-response__text"
 			>
@@ -114,7 +126,7 @@ watch(hasBeenVisible, (visible) => {
 		<!-- Email — параметром из констант: `@` в строке vue-i18n ломает
 		     компиляцию (linked messages), а адрес и так живёт в PROJECT_CONTACTS -->
 		<p class="reputation-footer">
-			{{ t('ReputationFooter', { email: PROJECT_CONTACTS.email }) }}
+			{{ t(footerKey, { email: PROJECT_CONTACTS.email }) }}
 		</p>
 	</div>
 </template>

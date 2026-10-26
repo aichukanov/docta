@@ -8,6 +8,7 @@ import {
 import { getCurrentUser } from '~/server/common/auth';
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { getConnection } from '~/server/common/db-mysql';
+import { cautionTypesSql, parseCautionTypes } from '~/server/common/reputation';
 import { processLocalizedNameForClinicOrDoctor } from '~/server/common/utils';
 import {
 	fetchRating,
@@ -55,7 +56,8 @@ export default defineEventHandler(async (event) => {
 				d.is_draft,
 				GROUP_CONCAT(DISTINCT s.id ORDER BY s.id) as specialtyIds,
 				-- только публичные клиники (см. doctors/details.ts)
-				COALESCE(GROUP_CONCAT(DISTINCT c.id ORDER BY c.id), '') as clinicIds
+				COALESCE(GROUP_CONCAT(DISTINCT c.id ORDER BY c.id), '') as clinicIds,
+				${cautionTypesSql('doctor', 'd')} as cautionTypes
 			FROM doctors d
 			LEFT JOIN doctor_specialties ds ON d.id = ds.doctor_id
 			LEFT JOIN specialties s ON ds.specialty_id = s.id
@@ -113,6 +115,8 @@ export default defineEventHandler(async (event) => {
 				photoUrl: doctor.photoUrl as string | undefined,
 				specialtyIds: doctor.specialtyIds as string,
 				clinicIds: doctor.clinicIds as string,
+				// Алерт «есть подтверждённые жалобы» над списком отзывов
+				cautionTypes: parseCautionTypes(doctor.cautionTypes),
 			},
 			rating,
 			reviews,

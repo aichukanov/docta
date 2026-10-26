@@ -13,10 +13,10 @@ import {
 } from '~/common/url-utils';
 import type { ReviewFormEntity } from '~/components/review/form.vue';
 import breadcrumbI18n from '~/i18n/breadcrumb';
-import clinicReputationI18n from '~/i18n/clinic-reputation';
+import reputationI18n from '~/i18n/reputation';
 import reviewsI18n from '~/i18n/reviews';
 import { combineI18nMessages } from '~/i18n/utils';
-import type { ClinicComplaintType } from '~/enums/clinic-complaint-type';
+import type { ComplaintType } from '~/enums/complaint-type';
 import type { Rating, Review } from '~/interfaces/review';
 
 const props = defineProps<{
@@ -50,14 +50,14 @@ const props = defineProps<{
 	entityRouteParam: string;
 	clinicInfo?: Record<
 		number,
-		{ name: string; slug: string; cautionTypes?: ClinicComplaintType[] }
+		{ name: string; slug: string; cautionTypes?: ComplaintType[] }
 	>;
 	/**
 	 * Активные подтверждённые жалобы на сущность (prd/clinic-reputation/) —
 	 * над списком отзывов показывается предупреждение со ссылкой на раздел
 	 * «Репутация» страницы сущности.
 	 */
-	cautionTypes?: ClinicComplaintType[];
+	cautionTypes?: ComplaintType[];
 	/** Database ID of the entity, for review form */
 	entityId?: number;
 	/** User's own review, returned separately from paginated list */
@@ -89,12 +89,15 @@ const { uiText } = useUiText();
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: combineI18nMessages([
-		breadcrumbI18n,
-		reviewsI18n,
-		clinicReputationI18n,
-	]),
+	messages: combineI18nMessages([breadcrumbI18n, reviewsI18n, reputationI18n]),
 });
+
+// Текст алерта зависит от сущности: «у клиники» / «у врача»
+const cautionNoticeKey = computed(() =>
+	props.entityType === 'doctor'
+		? 'ReviewsCautionNoticeDoctor'
+		: 'ReviewsCautionNotice',
+);
 
 // Ссылка на раздел «Репутация» страницы сущности
 const reputationLink = computed(() => ({
@@ -337,11 +340,15 @@ const totalReviewsCount = computed(
 			variant="warning"
 			class="reviews-caution-alert"
 		>
-			{{ t('ReviewsCautionNotice') }}
+			{{ t(cautionNoticeKey) }}
 			<NuxtLink :to="reputationLink">{{ t('ReviewsCautionLink') }}</NuxtLink>
 		</KitAlert>
 
-		<ReviewAiSummary v-if="entityId" :entityType="entityType" :entityId="entityId" />
+		<ReviewAiSummary
+			v-if="entityId"
+			:entityType="entityType"
+			:entityId="entityId"
+		/>
 
 		<section v-if="currentOwnReview" class="own-review-section">
 			<ReviewItem

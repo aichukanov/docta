@@ -148,9 +148,9 @@ const reviewsLink = computed(() => {
 						</NuxtLink>
 						<span v-else class="clinic-name">{{ localizedName }}</span>
 						<ClinicApprovedBadge :clinic="clinic" :small="true" />
-						<ClinicCautionBadge
+						<ReputationCautionBadge
 							:cautionTypes="clinic.cautionTypes"
-							:clinicSlug="clinic.slug"
+							:slug="clinic.slug"
 							small
 						/>
 					</div>
@@ -185,7 +185,7 @@ const reviewsLink = computed(() => {
 				     это есть купон. Ведёт в таб купонов клиники -->
 				<ClinicCouponBadge
 					:coupon="clinic.coupon"
-					:clinicSlug="clinic.slug"
+					:slug="clinic.slug"
 					:clinicId="clinic.id"
 				/>
 			</div>

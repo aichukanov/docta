@@ -12,7 +12,7 @@ const props = defineProps<{
 		{
 			name: string;
 			slug: string;
-			cautionTypes?: import('~/enums/clinic-complaint-type').ClinicComplaintType[];
+			cautionTypes?: import('~/enums/complaint-type').ComplaintType[];
 		}
 	>;
 }>();
@@ -158,10 +158,10 @@ const clinic = computed(() => {
 				>
 					{{ clinic.name }}
 				</NuxtLink>
-				<ClinicCautionBadge
+				<ReputationCautionBadge
 					v-if="clinic"
 					:cautionTypes="clinic.cautionTypes"
-					:clinicSlug="clinic.slug"
+					:slug="clinic.slug"
 					iconOnly
 					small
 				/>

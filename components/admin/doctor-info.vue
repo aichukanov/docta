@@ -699,6 +699,12 @@ watch(doctorId, async (newDoctorId) => {
 				</div>
 			</div>
 
+			<AdminComplaintsEditor
+				v-if="editable"
+				entity="doctor"
+				:entityId="doctorModel.id"
+			/>
+
 			<div v-if="editable" class="button-group">
 				<el-button type="primary" @click="saveChanges" :disabled="!hasChanges">
 					Сохранить изменения

@@ -821,9 +821,10 @@ onMounted(async () => {
 
 			<AdminClinicCouponsEditor v-if="clinicModel" :clinicId="clinicModel.id" />
 
-			<AdminClinicComplaintsEditor
+			<AdminComplaintsEditor
 				v-if="clinicModel"
-				:clinicId="clinicModel.id"
+				entity="clinic"
+				:entityId="clinicModel.id"
 			/>
 
 			<div class="billing-section">

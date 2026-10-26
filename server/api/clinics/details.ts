@@ -6,10 +6,7 @@ import { isClinicAdmin } from '~/server/common/clinic-admins';
 import { fetchRating, fetchReviews } from '~/server/common/reviews';
 import { fetchClinicItemsSummary } from '~/server/common/clinic-items-summary';
 import { fetchClinicCoupons } from '~/server/common/clinic-coupons';
-import {
-	fetchClinicReputation,
-	getCautionTypes,
-} from '~/server/common/clinic-reputation';
+import { fetchReputation, getCautionTypes } from '~/server/common/reputation';
 import {
 	processLocalizedNameForClinicOrDoctor,
 	processLocalizedFieldForClinic,
@@ -137,7 +134,7 @@ export default defineEventHandler(
 			const allReviews = ownReview ? [ownReview, ...reviews] : reviews;
 
 			// Раздел «Репутация»: активные жалобы без внутренних полей
-			const reputation = await fetchClinicReputation(connection, clinic.id);
+			const reputation = await fetchReputation(connection, 'clinic', clinic.id);
 
 			await connection.end();
 

@@ -247,7 +247,7 @@ watchEffect(() => {
 				>
 					<span class="clinic-name"
 						>{{ getLocalizedName(clinic, locale)
-						}}<ClinicCautionBadge
+						}}<ReputationCautionBadge
 							:cautionTypes="clinic.cautionTypes"
 							iconOnly
 							small

@@ -79,9 +79,9 @@ watch(pageNumber, () => {
 				{{ localizedName }}
 			</NuxtLink>
 			<span v-else class="clinic-name">{{ localizedName }}</span>
-			<ClinicCautionBadge
+			<ReputationCautionBadge
 				:cautionTypes="clinic.cautionTypes"
-				:clinicSlug="clinic.slug"
+				:slug="clinic.slug"
 				iconOnly
 				small
 			/>

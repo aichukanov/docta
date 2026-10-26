@@ -1,31 +1,39 @@
 <script setup lang="ts">
 import {
-	CLINIC_COMPLAINT_TYPES,
-	ClinicComplaintType,
-} from '~/enums/clinic-complaint-type';
-import type { ClinicComplaintAdmin } from '~/interfaces/clinic-reputation';
+	COMPLAINT_TYPES,
+	ComplaintType,
+	type ReputationEntity,
+} from '~/enums/complaint-type';
+import type { ComplaintAdmin } from '~/interfaces/reputation';
 
 /**
- * Редактор жалоб раздела «Репутация» (prd/clinic-reputation/). Одна строка на
- * пару (клиника, тип): сохранение по существующему типу обновляет строку.
- * Подтверждённые активные жалобы дают клинике бейдж «Осторожно» во всей выдаче.
+ * Редактор жалоб раздела «Репутация» (prd/clinic-reputation/) — один на
+ * клинику и на врача. Одна строка на пару (сущность, тип): сохранение по
+ * существующему типу обновляет строку. Подтверждённые активные жалобы дают
+ * бейдж «Осторожно» во всей выдаче.
  */
-const props = defineProps<{ clinicId: number }>();
+const props = defineProps<{
+	entity: ReputationEntity;
+	entityId: number;
+}>();
+
+const entityWord = computed(() =>
+	props.entity === 'doctor' ? 'врача' : 'клиники',
+);
 
 const { uiText } = useUiText();
 
-// Служебные ярлыки для админа; публичные формулировки — i18n/clinic-reputation.ts
-const TYPE_LABELS: Record<ClinicComplaintType, string> = {
-	[ClinicComplaintType.IMPOSED_SERVICES]: 'Навязанные услуги',
-	[ClinicComplaintType.PRICE_DISCREPANCY]:
-		'Итоговая стоимость выше озвученной',
-	[ClinicComplaintType.NO_WRITTEN_TERMS]: 'Нет договора и плана лечения',
-	[ClinicComplaintType.NO_RECEIPT]: 'Чек не на всю сумму',
-	[ClinicComplaintType.REFUND_REFUSED]: 'Невозврат предоплаты',
-	[ClinicComplaintType.QUALITY_COMPLAINTS]: 'Качество лечения',
+// Служебные ярлыки для админа; публичные формулировки — i18n/reputation.ts
+const TYPE_LABELS: Record<ComplaintType, string> = {
+	[ComplaintType.IMPOSED_SERVICES]: 'Навязанные услуги',
+	[ComplaintType.PRICE_DISCREPANCY]: 'Итоговая стоимость выше озвученной',
+	[ComplaintType.NO_WRITTEN_TERMS]: 'Нет договора и плана лечения',
+	[ComplaintType.NO_RECEIPT]: 'Чек не на всю сумму',
+	[ComplaintType.REFUND_REFUSED]: 'Невозврат предоплаты',
+	[ComplaintType.QUALITY_COMPLAINTS]: 'Качество лечения',
 };
 
-const typeOptions = CLINIC_COMPLAINT_TYPES.map((type) => ({
+const typeOptions = COMPLAINT_TYPES.map((type) => ({
 	label: `${type}. ${TYPE_LABELS[type]}`,
 	value: type,
 }));
@@ -35,37 +43,37 @@ const statusOptions = [
 	{ label: 'Не подтверждено (только в разделе)', value: 'unconfirmed' },
 ];
 
-const complaints = ref<ClinicComplaintAdmin[]>([]);
+const complaints = ref<ComplaintAdmin[]>([]);
 const isLoading = ref(false);
 
 const emptyModel = () => ({
-	complaintType: null as ClinicComplaintType | null,
+	complaintType: null as ComplaintType | null,
 	status: 'unconfirmed' as 'confirmed' | 'unconfirmed',
 	isActive: true,
 	reviewId: '' as string | number,
 	articleSlug: '',
 	incidentDate: '',
 	sourceNote: '',
-	clinicResponse: '',
+	response: '',
 });
 const model = ref(emptyModel());
 
 const loadComplaints = async () => {
 	isLoading.value = true;
 	try {
-		const data = await $fetch<{ complaints: ClinicComplaintAdmin[] }>(
-			'/api/admin/clinics/complaints',
-			{ query: { clinicId: props.clinicId } },
+		const data = await $fetch<{ complaints: ComplaintAdmin[] }>(
+			'/api/admin/reputation/complaints',
+			{ query: { entity: props.entity, entityId: props.entityId } },
 		);
 		complaints.value = data?.complaints || [];
 	} catch (e) {
-		console.error('Failed to load clinic complaints:', e);
+		console.error('Failed to load complaints:', e);
 	} finally {
 		isLoading.value = false;
 	}
 };
 
-const editComplaint = (complaint: ClinicComplaintAdmin) => {
+const editComplaint = (complaint: ComplaintAdmin) => {
 	model.value = {
 		complaintType: complaint.type,
 		status: complaint.status,
@@ -74,7 +82,7 @@ const editComplaint = (complaint: ClinicComplaintAdmin) => {
 		articleSlug: complaint.articleSlug ?? '',
 		incidentDate: complaint.incidentDate ?? '',
 		sourceNote: complaint.sourceNote ?? '',
-		clinicResponse: complaint.clinicResponse ?? '',
+		response: complaint.response ?? '',
 	};
 };
 
@@ -94,10 +102,11 @@ const saveComplaint = async () => {
 		return;
 	}
 	try {
-		await $fetch('/api/admin/clinics/complaints', {
+		await $fetch('/api/admin/reputation/complaints', {
 			method: 'POST',
 			body: {
-				clinicId: props.clinicId,
+				entity: props.entity,
+				entityId: props.entityId,
 				complaintType: model.value.complaintType,
 				status: model.value.status,
 				isActive: model.value.isActive,
@@ -105,18 +114,18 @@ const saveComplaint = async () => {
 				articleSlug: model.value.articleSlug || null,
 				incidentDate: model.value.incidentDate || null,
 				sourceNote: model.value.sourceNote || null,
-				clinicResponse: model.value.clinicResponse || null,
+				response: model.value.response || null,
 			},
 		});
 		model.value = emptyModel();
 		await loadComplaints();
 	} catch (e) {
-		console.error('Failed to save clinic complaint:', e);
+		console.error('Failed to save complaint:', e);
 		alert('Не удалось сохранить жалобу');
 	}
 };
 
-const toggleActive = async (complaint: ClinicComplaintAdmin) => {
+const toggleActive = async (complaint: ComplaintAdmin) => {
 	const next = !complaint.isActive;
 	if (
 		!confirm(
@@ -128,10 +137,11 @@ const toggleActive = async (complaint: ClinicComplaintAdmin) => {
 		return;
 	}
 	try {
-		await $fetch('/api/admin/clinics/complaints', {
+		await $fetch('/api/admin/reputation/complaints', {
 			method: 'POST',
 			body: {
-				clinicId: props.clinicId,
+				entity: props.entity,
+				entityId: props.entityId,
 				complaintType: complaint.type,
 				status: complaint.status,
 				isActive: next,
@@ -139,17 +149,17 @@ const toggleActive = async (complaint: ClinicComplaintAdmin) => {
 				articleSlug: complaint.articleSlug ?? null,
 				incidentDate: complaint.incidentDate ?? null,
 				sourceNote: complaint.sourceNote ?? null,
-				clinicResponse: complaint.clinicResponse ?? null,
+				response: complaint.response ?? null,
 			},
 		});
 		await loadComplaints();
 	} catch (e) {
-		console.error('Failed to toggle clinic complaint:', e);
+		console.error('Failed to toggle complaint:', e);
 		alert('Не удалось изменить жалобу');
 	}
 };
 
-watch(() => props.clinicId, loadComplaints, { immediate: true });
+watch(() => props.entityId, loadComplaints, { immediate: true });
 </script>
 
 <template>
@@ -192,10 +202,10 @@ watch(() => props.clinicId, loadComplaints, { immediate: true });
 				class="complaints-wide"
 			/>
 			<el-input
-				v-model="model.clinicResponse"
+				v-model="model.response"
 				type="textarea"
 				:rows="2"
-				placeholder="Официальный ответ клиники (публичный)"
+				:placeholder="`Официальный ответ ${entityWord} (публичный)`"
 				class="complaints-wide"
 			/>
 			<div class="complaints-actions">
@@ -213,9 +223,7 @@ watch(() => props.clinicId, loadComplaints, { immediate: true });
 				:class="{ inactive: !complaint.isActive }"
 			>
 				<div class="complaint-item-title">
-					<span>
-						{{ complaint.type }}. {{ TYPE_LABELS[complaint.type] }}
-					</span>
+					<span> {{ complaint.type }}. {{ TYPE_LABELS[complaint.type] }} </span>
 					<span
 						class="complaint-item-status"
 						:class="{ confirmed: complaint.status === 'confirmed' }"
@@ -255,7 +263,7 @@ watch(() => props.clinicId, loadComplaints, { immediate: true });
 				</div>
 			</div>
 			<div v-if="!complaints.length" class="complaints-empty">
-				Жалоб нет — бейджа «Осторожно» у клиники нет
+				Жалоб нет — бейджа «Осторожно» у {{ entityWord }} нет
 			</div>
 		</div>
 	</div>

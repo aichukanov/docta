@@ -11,6 +11,8 @@
    (подтверждённые / неподтверждённые), ведёт редакция. Добавляются по мере необходимости.
 3. **Бейдж «Осторожно»** рядом с названием клиники с подтверждёнными жалобами — во всех местах выдачи
    (каталог, страницы услуг/анализов, страница врача, карта, поиск, статьи).
+4. **То же самое для врачей** (итерация 5, 2026-10-26): раздел «Репутация» и бейдж в карточке врача
+   по тем же правилам и с тем же словарём жалоб — навязывает услуги не юрлицо, а врач.
 
 Триггер: задокументированный случай в Temel Dental (Подгорица) — см. [iterations/iteration-04](iterations/iteration-04-temel-dental-content.md)
 и статью-расследование (черновик: `docs/drafts/article-temel-dental-case.ru.md`).
@@ -22,8 +24,8 @@
 | [01-overview.md](01-overview.md) | Цель, контекст, принципы |
 | [02-requirements.md](02-requirements.md) | FR/NFR, стандартные формулировки, scope |
 | [03-architecture.md](03-architecture.md) | API, компоненты, точки встраивания |
-| [04-database.md](04-database.md) | Миграция 059: `is_pinned`, `clinic_complaints` |
+| [04-database.md](04-database.md) | Миграции 059 (`is_pinned`, `clinic_complaints`) и 060 (`doctor_complaints`) |
 | [05-risks-and-metrics.md](05-risks-and-metrics.md) | Юридические риски, метрики, открытые вопросы |
-| [iterations/](iterations/README.md) | 4 итерации разработки |
+| [iterations/](iterations/README.md) | 5 итераций разработки |
 
 [📊 PROGRESS.md](PROGRESS.md)

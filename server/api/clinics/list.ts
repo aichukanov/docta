@@ -16,7 +16,7 @@ import {
 	cautionRankFactorSql,
 	cautionTypesSql,
 	parseCautionTypes,
-} from '~/server/common/clinic-reputation';
+} from '~/server/common/reputation';
 import { getCurrentUser } from '~/server/common/auth';
 import {
 	processLocalizedNameForClinicOrDoctor,
@@ -367,8 +367,8 @@ export async function getClinicList(
 	// Подтверждённые жалобы режут ВЕСЬ композит (включая близость): бейджу
 	// «Осторожно» соответствует и понижение в выдаче (prd/clinic-reputation/).
 	const orderByClause = sortByDistance
-		? `ORDER BY ((c.rank_score + CASE WHEN distance IS NULL THEN 0 ELSE ${PROXIMITY_WEIGHT} * POW(2, -distance / ${PROXIMITY_HALF_DISTANCE_KM}) END) * ${cautionRankFactorSql('c')}) DESC, c.name_sr ASC`
-		: `ORDER BY (c.rank_score * ${cautionRankFactorSql('c')}) DESC, c.name_sr ASC`;
+		? `ORDER BY ((c.rank_score + CASE WHEN distance IS NULL THEN 0 ELSE ${PROXIMITY_WEIGHT} * POW(2, -distance / ${PROXIMITY_HALF_DISTANCE_KM}) END) * ${cautionRankFactorSql('clinic', 'c')}) DESC, c.name_sr ASC`
+		: `ORDER BY (c.rank_score * ${cautionRankFactorSql('clinic', 'c')}) DESC, c.name_sr ASC`;
 
 	const totalCountQuery = `
 			SELECT COUNT(DISTINCT c.id) as totalCount
@@ -416,7 +416,7 @@ export async function getClinicList(
 				) as features,
 				(SELECT ROUND(AVG(r.rating), 1) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected') as averageRating,
 				(SELECT COUNT(*) FROM reviews r WHERE r.clinic_id = c.id AND r.rating IS NOT NULL AND r.status != 'rejected') as totalReviews,
-				${cautionTypesSql('c')} as cautionTypes
+				${cautionTypesSql('clinic', 'c')} as cautionTypes
 				${distanceSelect}
 			FROM clinics c
 			LEFT JOIN clinic_languages cl ON c.id = cl.clinic_id

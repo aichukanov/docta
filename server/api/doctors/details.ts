@@ -10,6 +10,7 @@ import {
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { getConnection } from '~/server/common/db-mysql';
 import { fetchRating, fetchReviews } from '~/server/common/reviews';
+import { fetchReputation, getCautionTypes } from '~/server/common/reputation';
 import {
 	getServicesByClinicAndSpecialty,
 	type ClinicServicesMap,
@@ -140,6 +141,9 @@ export default defineEventHandler(
 					currentUserId: currentUser?.id,
 				});
 
+			// Раздел «Репутация»: активные жалобы без внутренних полей
+			const reputation = await fetchReputation(connection, 'doctor', doctor.id);
+
 			await connection.end();
 
 			// Обрабатываем локализованные имена
@@ -200,6 +204,8 @@ export default defineEventHandler(
 				reviews: ownDoctorReview
 					? [ownDoctorReview, ...reviewsRows]
 					: reviewsRows,
+				reputation,
+				cautionTypes: getCautionTypes(reputation),
 			};
 		} catch (error) {
 			console.error('API Error - doctor data:', error);

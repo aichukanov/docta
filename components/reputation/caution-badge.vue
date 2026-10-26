@@ -1,26 +1,30 @@
 <script setup lang="ts">
 import IconAlertTriangle from '~/components/icon/alert-triangle.vue';
 import { getRegionalQuery } from '~/common/url-utils';
-import clinicReputationI18n from '~/i18n/clinic-reputation';
-import type { ClinicComplaintType } from '~/enums/clinic-complaint-type';
+import reputationI18n from '~/i18n/reputation';
+import type { ComplaintType, ReputationEntity } from '~/enums/complaint-type';
 
 /**
- * Бейдж «Осторожно» рядом с названием клиники (prd/clinic-reputation/).
- * Показывается только при активных ПОДТВЕРЖДЁННЫХ жалобах (cautionTypes из
- * API); тултип перечисляет короткие ярлыки жалоб. С clinicSlug бейдж —
- * ссылка в раздел «Репутация» страницы клиники; без слага (например, внутри
- * другой ссылки, где вложенный <a> невалиден) — просто метка с тултипом.
+ * Бейдж «Осторожно» рядом с названием клиники или врача
+ * (prd/clinic-reputation/). Показывается только при активных ПОДТВЕРЖДЁННЫХ
+ * жалобах (cautionTypes из API); тултип перечисляет короткие ярлыки жалоб.
+ * Со слагом бейдж — ссылка в раздел «Репутация» карточки; без слага
+ * (например, внутри другой ссылки, где вложенный <a> невалиден) — просто
+ * метка с тултипом.
  */
 const props = withDefaults(
 	defineProps<{
-		cautionTypes?: ClinicComplaintType[];
-		/** Слаг клиники — делает бейдж ссылкой на /clinics/<slug>#reputation */
-		clinicSlug?: string;
+		cautionTypes?: ComplaintType[];
+		/** Клиника или врач — от этого зависит маршрут ссылки */
+		entity?: ReputationEntity;
+		/** Слаг — делает бейдж ссылкой на страницу сущности с #reputation */
+		slug?: string;
 		small?: boolean;
 		/** Только иконка — для тесных мест: попап карты, поиск, ссылки в тексте */
 		iconOnly?: boolean;
 	}>(),
 	{
+		entity: 'clinic',
 		small: false,
 		iconOnly: false,
 	},
@@ -28,7 +32,7 @@ const props = withDefaults(
 
 const { t, locale } = useI18n({
 	useScope: 'local',
-	messages: clinicReputationI18n.messages,
+	messages: reputationI18n.messages,
 });
 
 const hasCaution = computed(() => (props.cautionTypes?.length ?? 0) > 0);
@@ -41,16 +45,24 @@ const tooltipText = computed(() =>
 	}),
 );
 
-const reputationLink = computed(() =>
-	props.clinicSlug
-		? {
-				name: 'clinics-clinicSlug',
-				params: { clinicSlug: props.clinicSlug },
-				query: getRegionalQuery(locale.value),
-				hash: '#reputation',
-			}
-		: null,
-);
+const ROUTE_BY_ENTITY: Record<
+	ReputationEntity,
+	{ name: string; param: string }
+> = {
+	clinic: { name: 'clinics-clinicSlug', param: 'clinicSlug' },
+	doctor: { name: 'doctors-doctorSlug', param: 'doctorSlug' },
+};
+
+const reputationLink = computed(() => {
+	if (!props.slug) return null;
+	const route = ROUTE_BY_ENTITY[props.entity];
+	return {
+		name: route.name,
+		params: { [route.param]: props.slug },
+		query: getRegionalQuery(locale.value),
+		hash: '#reputation',
+	};
+});
 </script>
 
 <template>

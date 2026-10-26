@@ -4,6 +4,8 @@ import type {
 	ClinicServicesByClinicId,
 } from '~/interfaces/clinic';
 import type { Review, Rating } from '~/interfaces/review';
+import type { Complaint } from '~/interfaces/reputation';
+import type { ComplaintType } from '~/enums/complaint-type';
 
 export interface DoctorData extends ClinicServiceItem, ContactList {
 	specialtyIds: string;
@@ -27,6 +29,10 @@ export interface DoctorData extends ClinicServiceItem, ContactList {
 	hiddenReason?: string;
 	rating?: Rating;
 	reviews?: Review[];
+	/** Раздел «Репутация»: активные жалобы (prd/clinic-reputation/) */
+	reputation?: Complaint[];
+	/** Типы активных ПОДТВЕРЖДЁННЫХ жалоб — дают бейдж «Осторожно» */
+	cautionTypes?: ComplaintType[];
 	// Профильные услуги врача по клиникам (details/list с includeServices)
 	clinicServices?: ClinicServicesByClinicId;
 }

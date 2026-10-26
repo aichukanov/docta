@@ -821,8 +821,21 @@ onUnmounted(() => {
 								/>
 								<IconDoctor v-else :size="20" />
 							</template>
-							<template v-if="ratingLabel(doctor.rating)" #aside>
-								<span class="global-search__rating">
+							<template
+								v-if="ratingLabel(doctor.rating) || doctor.cautionTypes?.length"
+								#aside
+							>
+								<ReputationCautionBadge
+									entity="doctor"
+									:cautionTypes="doctor.cautionTypes"
+									:slug="doctor.slug"
+									iconOnly
+									small
+								/>
+								<span
+									v-if="ratingLabel(doctor.rating)"
+									class="global-search__rating"
+								>
 									<IconStar :size="14" />
 									{{ ratingLabel(doctor.rating) }}
 								</span>
@@ -871,9 +884,9 @@ onUnmounted(() => {
 								"
 								#aside
 							>
-								<ClinicCautionBadge
+								<ReputationCautionBadge
 									:cautionTypes="clinicById(clinic.id)?.cautionTypes"
-									:clinicSlug="clinic.slug"
+									:slug="clinic.slug"
 									iconOnly
 									small
 								/>

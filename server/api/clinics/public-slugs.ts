@@ -1,7 +1,7 @@
 import { clinicIsPublicSql } from '~/server/common/clinic-visibility';
 import { getConnection } from '~/server/common/db-mysql';
-import { parseCautionTypes } from '~/server/common/clinic-reputation';
-import type { ClinicComplaintType } from '~/enums/clinic-complaint-type';
+import { cautionTypesSql, parseCautionTypes } from '~/server/common/reputation';
+import type { ComplaintType } from '~/enums/complaint-type';
 
 // Слаги публичных клиник — по ним статьи решают, оставлять ли ссылку.
 // В статьях ссылки на клиники захардкожены слагами (это часть текста, а не
@@ -13,21 +13,17 @@ import type { ClinicComplaintType } from '~/enums/clinic-complaint-type';
 export default defineEventHandler(
 	async (): Promise<{
 		slugs: string[];
-		caution: Record<string, ClinicComplaintType[]>;
+		caution: Record<string, ComplaintType[]>;
 	}> => {
 		const connection = await getConnection();
 		try {
 			const [rows] = await connection.execute<any[]>(
 				`SELECT
 					c.slug,
-					(
-						SELECT GROUP_CONCAT(cc.complaint_type ORDER BY cc.complaint_type)
-						FROM clinic_complaints cc
-						WHERE cc.clinic_id = c.id AND cc.is_active = 1 AND cc.status = 'confirmed'
-					) as cautionTypes
+					${cautionTypesSql('clinic', 'c')} as cautionTypes
 				FROM clinics c WHERE ${clinicIsPublicSql('c')} ORDER BY c.slug`,
 			);
-			const caution: Record<string, ClinicComplaintType[]> = {};
+			const caution: Record<string, ComplaintType[]> = {};
 			for (const row of rows) {
 				const types = parseCautionTypes(row.cautionTypes);
 				if (types.length > 0) {

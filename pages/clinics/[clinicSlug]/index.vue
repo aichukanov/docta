@@ -42,7 +42,7 @@ import clinicTypeI18n from '~/i18n/clinic-type';
 import labTestCategoryI18n from '~/i18n/labtest-category';
 import languageI18n from '~/i18n/language';
 import medicalServiceCategoryI18n from '~/i18n/medical-service-category';
-import clinicReputationI18n from '~/i18n/clinic-reputation';
+import reputationI18n from '~/i18n/reputation';
 import reviewsI18n from '~/i18n/reviews';
 import seoDescriptionI18n from '~/i18n/seo-description';
 import specialtyI18n from '~/i18n/specialty';
@@ -72,7 +72,7 @@ const { t, locale } = useI18n({
 		specialtyI18n,
 		labTestCategoryI18n,
 		reviewsI18n,
-		clinicReputationI18n,
+		reputationI18n,
 		workingHoursI18n,
 		seoDescriptionI18n,
 	]),
@@ -841,9 +841,10 @@ watchEffect(() => {
 				:title="t('ReputationTitle')"
 			>
 				<template #icon><IconAlertTriangle :size="20" /></template>
-				<ClinicReputationSection
+				<ReputationSection
 					:complaints="clinicData.reputation"
-					:clinicId="clinicData.id"
+					entity="clinic"
+					:entityId="clinicData.id"
 				/>
 			</EntityPageSection>
 
@@ -1019,7 +1020,6 @@ watchEffect(() => {
 					</template>
 				</ClinicItemsSummary>
 			</EntityPageSection>
-
 
 			<!-- Reviews -->
 			<EntityPageSection v-if="clinicData" sectionId="reviews">

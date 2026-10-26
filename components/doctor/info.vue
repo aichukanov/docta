@@ -82,15 +82,25 @@ const reviewsLink = computed(() => {
 		/>
 		<div class="doctor-info">
 			<component :is="headingTag" class="doctor-name">
-				<NuxtLink
-					v-if="doctorLink"
-					:to="doctorLink"
-					class="doctor-name-link"
-					@click="trackDoctorLinkClick"
-				>
-					{{ service.name }}
-				</NuxtLink>
-				<span v-else>{{ service.name }}</span>
+				<span class="doctor-name-row">
+					<NuxtLink
+						v-if="doctorLink"
+						:to="doctorLink"
+						class="doctor-name-link"
+						@click="trackDoctorLinkClick"
+					>
+						{{ service.name }}
+					</NuxtLink>
+					<span v-else>{{ service.name }}</span>
+					<!-- Бейдж «Осторожно» (prd/clinic-reputation/): ведёт в раздел
+					     «Репутация» карточки врача. Рядом с именем, как у клиник -->
+					<ReputationCautionBadge
+						entity="doctor"
+						:cautionTypes="service.cautionTypes"
+						:slug="service.slug"
+						:small="!isMainHeading"
+					/>
+				</span>
 				<div v-if="service.localName && !short" class="doctor-original-name">
 					{{ service.localName }}
 				</div>
@@ -159,6 +169,13 @@ const reviewsLink = computed(() => {
 		color: var(--kit-color-text-primary);
 		line-height: 1.2;
 		letter-spacing: -0.01em;
+	}
+
+	.doctor-name-row {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--kit-spacing-xs);
+		flex-wrap: wrap;
 	}
 
 	.doctor-name-link {

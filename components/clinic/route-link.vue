@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { RouteLocationNamedRaw } from 'vue-router';
-import type { ClinicComplaintType } from '~/enums/clinic-complaint-type';
+import type { ComplaintType } from '~/enums/complaint-type';
 
 /**
  * Ссылка на страницу клиники, которая исчезает вместе с клиникой.
@@ -21,7 +21,7 @@ const props = defineProps<{
 
 const { data } = await useFetch<{
 	slugs: string[];
-	caution?: Record<string, ClinicComplaintType[]>;
+	caution?: Record<string, ComplaintType[]>;
 }>('/api/clinics/public-slugs', { key: 'clinic-public-slugs' });
 
 const slug = computed(() => String(props.to?.params?.clinicSlug ?? ''));
@@ -38,10 +38,10 @@ const cautionTypes = computed(() => data.value?.caution?.[slug.value]);
 <template>
 	<template v-if="isAvailable">
 		<NuxtLink :to="to"><slot /></NuxtLink>
-		<ClinicCautionBadge
+		<ReputationCautionBadge
 			v-if="cautionTypes?.length"
 			:cautionTypes="cautionTypes"
-			:clinicSlug="slug"
+			:slug="slug"
 			iconOnly
 			small
 			class="route-link-caution"

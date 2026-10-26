@@ -22,6 +22,7 @@ import breadcrumbI18n from '~/i18n/breadcrumb';
 import cityI18n from '~/i18n/city';
 import doctorI18n from '~/i18n/doctor';
 import languageI18n from '~/i18n/language';
+import reputationI18n from '~/i18n/reputation';
 import reviewsI18n from '~/i18n/reviews';
 import seoDescriptionI18n from '~/i18n/seo-description';
 import specialtyI18n from '~/i18n/specialty';
@@ -36,6 +37,7 @@ const { t, n, locale } = useI18n({
 		specialtyI18n,
 		languageI18n,
 		cityI18n,
+		reputationI18n,
 		reviewsI18n,
 		seoDescriptionI18n,
 	]),
@@ -137,6 +139,11 @@ const tabs = computed(() => {
 	if (doctorDescription.value) {
 		result.push({ id: 'about', label: t('TabAbout') });
 	}
+	// Репутация стоит до клиник и отзывов: предупреждение пациент должен
+	// увидеть раньше, чем места и телефоны для записи (prd/clinic-reputation/)
+	if (doctorData.value?.reputation?.length) {
+		result.push({ id: 'reputation', label: t('ReputationTitle') });
+	}
 	if (doctorClinics.value.length > 0) {
 		result.push({ id: 'clinics', label: t('TabClinics') });
 	}
@@ -202,7 +209,7 @@ const clinicInfoMap = computed(() => {
 		{
 			name: string;
 			slug: string;
-			cautionTypes?: import('~/enums/clinic-complaint-type').ClinicComplaintType[];
+			cautionTypes?: import('~/enums/complaint-type').ComplaintType[];
 		}
 	> = {};
 	for (const clinic of doctorClinics.value) {
@@ -547,6 +554,23 @@ watchEffect(() => {
 				<CollapsibleContent>
 					<MarkedContent :content="doctorDescription" />
 				</CollapsibleContent>
+			</EntityPageSection>
+
+			<!-- Reputation: стандартизированные жалобы, ведёт редакция
+			     (prd/clinic-reputation/). Без жалоб секции и таба нет вовсе.
+			     Стоит до клиник: предупреждение пациент должен увидеть
+			     раньше, чем адрес и телефон для записи -->
+			<EntityPageSection
+				v-if="doctorData?.reputation?.length"
+				sectionId="reputation"
+				:title="t('ReputationTitle')"
+			>
+				<template #icon><IconAlertTriangle :size="20" /></template>
+				<ReputationSection
+					:complaints="doctorData.reputation"
+					entity="doctor"
+					:entityId="doctorData.id"
+				/>
 			</EntityPageSection>
 
 			<!-- Clinics -->

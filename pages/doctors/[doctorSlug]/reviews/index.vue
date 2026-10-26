@@ -127,7 +127,7 @@ const clinicInfoMap = computed(() => {
 		{
 			name: string;
 			slug: string;
-			cautionTypes?: import('~/enums/clinic-complaint-type').ClinicComplaintType[];
+			cautionTypes?: import('~/enums/complaint-type').ComplaintType[];
 		}
 	> = {};
 	for (const clinic of doctorClinics.value) {
@@ -158,6 +158,7 @@ const clinicInfoMap = computed(() => {
 		parentListRouteName="doctors"
 		entityRouteName="doctors-doctorSlug"
 		entityRouteParam="doctorSlug"
+		:cautionTypes="data.doctor.cautionTypes"
 		:clinicInfo="clinicInfoMap"
 		:entityId="doctor?.id"
 		:ownReview="data.ownReview"

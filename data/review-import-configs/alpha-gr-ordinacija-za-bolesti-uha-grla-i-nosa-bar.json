@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/bar/orl-ambulanta-alphagr-radjenovic.json",
+  "outputPath": "server/sql/reviews-google/alpha-gr-ordinacija-za-bolesti-uha-grla-i-nosa-bar.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "alpha-gr-ordinacija-za-bolesti-uha-grla-i-nosa-bar",
+  "clinicId": 16,
+  "clinicName": "Orl ambulanta \"AlphaGR\" Radjenovic",
+  "translationsDir": "data/review-translations/alpha-gr-ordinacija-za-bolesti-uha-grla-i-nosa-bar/",
+  "doctors": [
+    {
+      "id": 307,
+      "slug": "radjenovic-gordana",
+      "varName": "radjenovic_gordana",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])ra(?:đ|dj)enovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])ра(?:ђ|дж)[еэ]н[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])gor(?:d|đ)an(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])г[оё]рдан(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

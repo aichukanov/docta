@@ -1,0 +1,38 @@
+{
+  "jsonPath": "data/google-places/herceg-novi/stomatoloska-poliklinika-vukotic.json",
+  "outputPath": "server/sql/reviews-google/stomatoloska-poliklinika-vukotic-herceg-novi.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "stomatoloska-poliklinika-vukotic-herceg-novi",
+  "clinicId": 222,
+  "clinicName": "Stomatološka Poliklinika \"Vukotić\"",
+  "translationsDir": "data/review-translations/stomatoloska-poliklinika-vukotic-herceg-novi/",
+  "doctors": [
+    {
+      "id": 3303,
+      "slug": "ivan-vukotic",
+      "varName": "ivan_vukotic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])ivan(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])иван(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    },
+    {
+      "id": 3304,
+      "slug": "mladen-vukotic",
+      "varName": "mladen_vukotic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])mla(?:d|đ)en(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])млад[еэ]н(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    },
+    {
+      "id": 3305,
+      "slug": "tatjana-vukotic",
+      "varName": "tatjana_vukotic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])tat[jy]an(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])тат[јй]ан(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/budva/center-for-dental-implantology-and-cosmetic-dentistry-dental.json",
+  "outputPath": "server/sql/reviews-google/dental-montenegro-budva.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "dental-montenegro-budva",
+  "clinicId": 223,
+  "clinicName": "Center for Dental Implantology and Cosmetic Dentistry-Dental Montenegro",
+  "translationsDir": "data/review-translations/dental-montenegro-budva/",
+  "doctors": [
+    {
+      "id": 467,
+      "slug": "bojana-ivanovic",
+      "varName": "bojana_ivanovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])bo[jy]an(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])б[оё][јй]ан(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])ivanovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])иван[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

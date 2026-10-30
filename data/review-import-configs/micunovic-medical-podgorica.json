@@ -1,0 +1,42 @@
+{
+  "jsonPath": "data/google-places/podgorica/micunovic-medical.json",
+  "outputPath": "server/sql/reviews-google/micunovic-medical-podgorica.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "micunovic-medical-podgorica",
+  "clinicId": 208,
+  "clinicName": "Mićunović Medical",
+  "translationsDir": "data/review-translations/micunovic-medical-podgorica/",
+  "doctors": [
+    {
+      "id": 3246,
+      "slug": "miljan-micunovic",
+      "varName": "miljan_micunovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])mil[jy]an(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])ми(?:љ|ль)ан(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    },
+    {
+      "id": 3250,
+      "slug": "nenad-mracevic",
+      "varName": "nenad_mracevic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])nena(?:d|đ)(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])н[еэ]над(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])mra[cćč]evi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])мрач[еэ]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    },
+    {
+      "id": 3251,
+      "slug": "medina-tuzovic",
+      "varName": "medina_tuzovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])me(?:d|đ)in(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])м[еэ]дин(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])tu[zž]ovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])туз[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

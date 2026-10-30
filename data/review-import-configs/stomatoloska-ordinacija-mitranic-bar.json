@@ -1,0 +1,29 @@
+{
+  "jsonPath": "data/google-places/bar/opsta-stomatoloska-ordinacija-mitranic.json",
+  "outputPath": "server/sql/reviews-google/stomatoloska-ordinacija-mitranic-bar.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "stomatoloska-ordinacija-mitranic-bar",
+  "clinicId": 239,
+  "clinicName": "Opšta stomatološka ordinacija Mitranić",
+  "translationsDir": "data/review-translations/stomatoloska-ordinacija-mitranic-bar/",
+  "doctors": [
+    {
+      "id": 3341,
+      "slug": "janko-mitranic",
+      "varName": "janko_mitranic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[jy]ank(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[јй]анк(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    },
+    {
+      "id": 3342,
+      "slug": "tamara-mitranic",
+      "varName": "tamara_mitranic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])tamar(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])тамар(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/tivat/ginekolosko-akuserska-ordinacija-filia.json",
+  "outputPath": "server/sql/reviews-google/ginekolosko-akuserska-ordinacija-filia-tivat.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "ginekolosko-akuserska-ordinacija-filia-tivat",
+  "clinicId": 246,
+  "clinicName": "Ginekološko akušerska ordinacija \"Filia\"",
+  "translationsDir": "data/review-translations/ginekolosko-akuserska-ordinacija-filia-tivat/",
+  "doctors": [
+    {
+      "id": 1287,
+      "slug": "julija-samardzic",
+      "varName": "julija_samardzic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[jy]uli[jy](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[јй]ули[јй](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[sš]amar(?:d|đ)[zž]i[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])самар(?:џ|дж)и[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

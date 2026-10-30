@@ -113,15 +113,6 @@ export default defineConfig({
 			use: {},
 		},
 
-		// Утилитарные скрипты (парсеры и т.д.)
-		{
-			name: 'scripts',
-			testDir: './tests/scripts',
-			timeout: 5 * 60 * 1000,
-			retries: 0,
-			use: {},
-		},
-
 		// Опционально: другие браузеры
 		// {
 		//   name: 'firefox',

@@ -1,0 +1,20 @@
+{
+  "jsonPath": "data/google-places/podgorica/poliklinika-dr-fatic-medical.json",
+  "outputPath": "server/sql/reviews-google/poliklinika-dr-fatic-medical-podgorica.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "poliklinika-dr-fatic-medical-podgorica",
+  "clinicId": 212,
+  "clinicName": "Poliklinika - Dr Fatic Medical",
+  "translationsDir": "data/review-translations/poliklinika-dr-fatic-medical-podgorica/",
+  "doctors": [
+    {
+      "id": 737,
+      "slug": "nikola-fatic",
+      "varName": "nikola_fatic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])nikol(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])ник[оё]л(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

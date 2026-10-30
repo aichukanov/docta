@@ -1,0 +1,20 @@
+{
+  "jsonPath": "data/google-places/podgorica/dr-radunovic-chiropractic-physical-therapy.json",
+  "outputPath": "server/sql/reviews-google/dr-radunovic-kiropraktika-podgorica.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "dr-radunovic-kiropraktika-podgorica",
+  "clinicId": 242,
+  "clinicName": "Dr Radunovic - Chiropractic & Physical Therapy",
+  "translationsDir": "data/review-translations/dr-radunovic-kiropraktika-podgorica/",
+  "doctors": [
+    {
+      "id": 3347,
+      "slug": "savo-radunovic",
+      "varName": "savo_radunovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[sš]avo(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])сав[оё](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

@@ -40,16 +40,26 @@ const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || ''
 // ---------------------------------------------------------------------------
 
 const args = process.argv.slice(2)
-const configPath = args.find(a => !a.startsWith('--'))
 const extractMode = args.includes('--extract')
 const translationsArg = args.indexOf('--translations')
 const translationsPath = translationsArg >= 0 ? args[translationsArg + 1] : null
+const sinceArg = args.indexOf('--since')
+/** Брать только дозалитые позже этой даты — см. `_collectedAt` ниже. */
+const SINCE = sinceArg >= 0 ? args[sinceArg + 1] : null
+
+// Значения флагов тоже не начинаются с `--`, так что конфигом считаем первый
+// свободный аргумент, а не первый попавшийся.
+const flagValueIndexes = new Set(
+  [translationsArg, sinceArg].filter(i => i >= 0).map(i => i + 1)
+)
+const configPath = args.find((a, i) => !a.startsWith('--') && !flagValueIndexes.has(i))
 
 if (!configPath) {
   console.error(`Usage:
   node scripts/generate-reviews-sql.mjs <config.json>
   node scripts/generate-reviews-sql.mjs <config.json> --extract
-  node scripts/generate-reviews-sql.mjs <config.json> --translations <file.json>`)
+  node scripts/generate-reviews-sql.mjs <config.json> --translations <file.json>
+  node scripts/generate-reviews-sql.mjs <config.json> --since <YYYY-MM-DD>   только дозалитые`)
   process.exit(1)
 }
 
@@ -62,14 +72,36 @@ const CLINIC_NAME = config.clinicName || `Clinic ${CLINIC_ID}`
 // Для ещё не заведённых клиник: id заранее не известен, поэтому SQL резолвит
 // его по google_place_id вместо литерала. Включается флагом в конфиге.
 const RESOLVE_CLINIC_BY_PLACE_ID = config.resolveClinicByPlaceId === true
+// id клиник и врачей локально и на проде расходятся, slug — нет. С
+// `clinicSlug` (и `slug` у врачей) SQL ищет их по slug, и один файл годится
+// для обеих баз.
+const CLINIC_SLUG = config.clinicSlug || null
 const DOCTORS = config.doctors || []
 const CHILD_DENTIST_VAR = config.childDentistDoctorVar || null
 
 const data = JSON.parse(readFileSync(INPUT, 'utf-8'))
 const PLACE_ID = data.id
-const reviews = data.reviews
+let reviews = data.reviews
 
 if (!reviews || !reviews.length) { console.error('No reviews found in', INPUT); process.exit(1) }
+
+/**
+ * Повторный съём дописывает в файл клиники новые отзывы с отметкой
+ * `_collectedAt` (`merge-gmaps-dump.mjs`). `--since` оставляет только их —
+ * чтобы в миграцию и на перевод шло то, чего раньше не было.
+ *
+ * Отзыв без отметки считается старым: отметки нет только у тех, что лежали
+ * в файле до первого слияния.
+ */
+if (SINCE) {
+  const before = reviews.length
+  reviews = reviews.filter(r => (r._collectedAt ?? '') >= SINCE)
+  console.log(`✓ --since ${SINCE}: ${reviews.length} из ${before} отзывов`)
+  if (!reviews.length) {
+    console.log(`Новых отзывов с ${SINCE} нет — делать нечего.`)
+    process.exit(0)
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Relative date parsing ("3 недели назад", "пре 2 месеца", etc.)
@@ -224,6 +256,9 @@ function escapeSQL(str) {
 
 function extractReviewId(name) { return name.split('/').pop() }
 
+/** Хвост « …» — остаток кнопки «Ещё» в вёрстке карточки, а не текст автора. */
+function stripMoreTail(text) { return text ? text.replace(/\s+…$/, '') : text }
+
 function buildProviderReviewId(reviewId) { return `places/${PLACE_ID}/reviews/${reviewId}` }
 
 function normalizeProfileUrl(uri) {
@@ -305,8 +340,13 @@ for (const [reviewId, entry] of reviewMap) {
   const rating = primary.rating
   if (rating == null) continue
 
+  // Дату считаем от того съёма, в котором прочитана строка «год назад», —
+  // иначе у дозалитых отзывов она уедет на промежуток между съёмами.
+  // `DATA_COLLECTED_DATE` остаётся запасным: у отзывов, лежавших в файле до
+  // первого слияния, отметки нет.
+  const collectedAt = api?._collectedAt || html?._collectedAt || DATA_COLLECTED_DATE
   const publishTime = api?.publishTime || html?.publishTime
-    || parseRelativeDate(api?.relativePublishTimeDescription || html?.relativePublishTimeDescription, DATA_COLLECTED_DATE)
+    || parseRelativeDate(api?.relativePublishTimeDescription || html?.relativePublishTimeDescription, collectedAt)
     || null
   const authorApi = api?.authorAttribution, authorHtml = html?.authorAttribution
   const author = authorApi || authorHtml
@@ -316,6 +356,7 @@ for (const [reviewId, entry] of reviewMap) {
   else if (html?.originalText?.text) { originalText = html.originalText.text; originalLanguage = html.originalText.languageCode || '' }
   if (!originalText && html?.text?.text) { originalText = html.text.text; originalLanguage = html.text.languageCode || '' }
   if (!originalLanguage) originalLanguage = 'ru'
+  originalText = stripMoreTail(originalText)
 
   let textSrCyrl = null
   if (api?.text?.text && api.text.languageCode === 'sr' && api.text.text.trim()) textSrCyrl = api.text.text
@@ -333,11 +374,11 @@ for (const [reviewId, entry] of reviewMap) {
     // HTML-парсер кладёт счётчик лайков в `_likesCount` (так во всех файлах
     // data/google-places/), поле `likesCount` — только гипотетический формат API.
     likesCount: html?._likesCount ?? html?.likesCount ?? api?._likesCount ?? api?.likesCount ?? 0,
-    ownerReply: html?.ownerResponse?.text || api?._ownerReply || api?.ownerResponse?.text || null,
+    ownerReply: stripMoreTail(html?.ownerResponse?.text || api?._ownerReply || api?.ownerResponse?.text) || null,
     ownerReplyLanguage: html?.ownerResponse?.languageCode || api?.ownerResponse?.languageCode || 'sr',
     ownerReplyPublishTime: parseRelativeDate(
       html?.ownerResponse?.relativePublishTimeDescription || api?.ownerResponse?.relativePublishTimeDescription,
-      DATA_COLLECTED_DATE
+      html?.ownerResponse?._collectedAt || api?.ownerResponse?._collectedAt || collectedAt
     ) || null,
     doctorId: detectDoctor(originalText || ''),
     // Translations
@@ -544,12 +585,23 @@ lines.push('-- ═════════════════════�
 lines.push('-- PART 0: Clinic and doctor IDs')
 lines.push('-- ═══════════════════════════════════════════════════════════════')
 lines.push('')
-if (RESOLVE_CLINIC_BY_PLACE_ID) {
+if (CLINIC_SLUG) {
+  lines.push(`SET @clinic_id = (SELECT id FROM clinics WHERE slug = '${escapeSQL(CLINIC_SLUG)}');`)
+} else if (RESOLVE_CLINIC_BY_PLACE_ID) {
   lines.push(`SET @clinic_id = (SELECT id FROM clinics WHERE google_place_id = '${PLACE_ID}' LIMIT 1);`)
 } else {
   lines.push(`SET @clinic_id = ${CLINIC_ID};`)
 }
-for (const d of DOCTORS) lines.push(`SET @doctor_${d.varName} = ${d.id};`)
+if (CLINIC_SLUG || RESOLVE_CLINIC_BY_PLACE_ID) {
+  // reviews.clinic_id допускает NULL: не найдя клинику, файл молча залил бы
+  // отзывы ни к кому. Две строки в подзапросе роняют mysql с ошибкой 1242,
+  // и клиент останавливает файл до вставок.
+  lines.push(`SET @clinic_guard = (SELECT 1 UNION ALL SELECT 1 FROM dual WHERE @clinic_id IS NULL);`)
+}
+for (const d of DOCTORS) {
+  const value = d.slug ? `(SELECT id FROM doctors WHERE slug = '${escapeSQL(d.slug)}')` : d.id
+  lines.push(`SET @doctor_${d.varName} = ${value};`)
+}
 lines.push('')
 
 // PART 1: Users

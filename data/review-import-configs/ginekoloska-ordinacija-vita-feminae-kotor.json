@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/kotor/ambulanta.json",
+  "outputPath": "server/sql/reviews-google/ginekoloska-ordinacija-vita-feminae-kotor.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "ginekoloska-ordinacija-vita-feminae-kotor",
+  "clinicId": 245,
+  "clinicName": "Ambulanta",
+  "translationsDir": "data/review-translations/ginekoloska-ordinacija-vita-feminae-kotor/",
+  "doctors": [
+    {
+      "id": 3353,
+      "slug": "predrag-djurovic",
+      "varName": "predrag_djurovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])pre(?:d|đ)rag(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])пр[еэ]драг(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])(?:đ|dj)urovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])(?:ђ|дж)ур[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "jsonPath": "data/google-places/podgorica/stomatoloska-ordinacija-vivadent.json",
+  "outputPath": "server/sql/reviews-google/stomatoloska-ordinacija-vivadent-podgorica.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "stomatoloska-ordinacija-vivadent-podgorica",
+  "clinicId": 240,
+  "clinicName": "Stomatoloska ordinacija VIVADENT",
+  "translationsDir": "data/review-translations/stomatoloska-ordinacija-vivadent-podgorica/",
+  "doctors": [
+    {
+      "id": 3343,
+      "slug": "jovanka-lekic",
+      "varName": "jovanka_lekic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[jy]ovank(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[јй][оё]ванк(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    },
+    {
+      "id": 3344,
+      "slug": "stefan-lekic",
+      "varName": "stefan_lekic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[sš]tefan(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])ст[еэ]фан(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

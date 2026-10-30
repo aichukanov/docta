@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/kotor/todorovic-ophthalmology-aesthetics-medicine.json",
+  "outputPath": "server/sql/reviews-google/todorovic-ophthalmology-aesthetics-kotor.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "todorovic-ophthalmology-aesthetics-kotor",
+  "clinicId": 263,
+  "clinicName": "Todorovic Ophthalmology & Aesthetics Medicine",
+  "translationsDir": "data/review-translations/todorovic-ophthalmology-aesthetics-kotor/",
+  "doctors": [
+    {
+      "id": 609,
+      "slug": "nenad-todorovic",
+      "varName": "nenad_todorovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])nena(?:d|đ)(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])н[еэ]над(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])to(?:d|đ)orovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])т[оё]д[оё]р[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

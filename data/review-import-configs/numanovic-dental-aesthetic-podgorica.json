@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/podgorica/stomatoloska-ordinacija-dr-numanovic-podgorica.json",
+  "outputPath": "server/sql/reviews-google/numanovic-dental-aesthetic-podgorica.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "numanovic-dental-aesthetic-podgorica",
+  "clinicId": 253,
+  "clinicName": "Stomatološka ordinacija Dr Numanović - Podgorica",
+  "translationsDir": "data/review-translations/numanovic-dental-aesthetic-podgorica/",
+  "doctors": [
+    {
+      "id": 3358,
+      "slug": "eldin-numanovic",
+      "varName": "eldin_numanovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])el(?:d|đ)in(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[еэ]лдин(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])numanovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])нуман[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

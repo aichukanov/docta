@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/tivat/dr-viller-ambulanta-opste-medicine.json",
+  "outputPath": "server/sql/reviews-google/drviller-reheart-tivat.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "drviller-reheart-tivat",
+  "clinicId": 24,
+  "clinicName": "Dr Viller AMBULANTA OPŠTE MEDICINE",
+  "translationsDir": "data/review-translations/drviller-reheart-tivat/",
+  "doctors": [
+    {
+      "id": 316,
+      "slug": "civkina-ekaterina",
+      "varName": "civkina_ekaterina",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[cćč]ivkin(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])цивкин(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])ekaterin(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[еэ]кат[еэ]рин(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

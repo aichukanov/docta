@@ -108,7 +108,7 @@ export default defineEventHandler(async (event) => {
 			LEFT JOIN clinics c ON r.clinic_id = c.id
 			LEFT JOIN insurance_companies ic ON r.insurance_company_id = ic.id
 			WHERE r.provider = 'docta_me' AND r.status = ?
-			ORDER BY r.published_at ASC
+			ORDER BY r.published_at ASC, r.id ASC
 			LIMIT ${PAGE_SIZE} OFFSET ${offset}`,
 			[status],
 		);

@@ -11,25 +11,33 @@
 
 ## Этап 1: Сбор сырых данных
 
-Скрипт: `tests/scripts/parse-google-places.spec.ts`
+Скрипт: `scripts/collectors/google-places.mjs`
 
-Запускается из панели Testing в VS Code (проект **scripts**) или через CLI:
+**Перезаписывает каталог и тратит платные запросы.** Правила и цена ошибки —
+`docs/rules/GOOGLE_PLACES_DATA.md`. Без `--yes` скрипт печатает план и выходит.
 
 ```bash
-# Превью одного города (консоль, без сохранения)
-npx playwright test --project=scripts -g "Bar only"
+# что произойдёт: какие файлы и сколько запросов
+node scripts/collectors/google-places.mjs city bar
 
-# Все города → файл
-npx playwright test --project=scripts -g "all cities"
+# один город → data/google-places/all-bar.json
+node scripts/collectors/google-places.mjs city bar --yes
+
+# вся страна → data/google-places/all-montenegro.json
+node scripts/collectors/google-places.mjs montenegro --yes
+
+# разложить all-montenegro.json по папкам городов (без API)
+node scripts/collectors/google-places.mjs split --yes
 ```
 
-Результат: `data/google-places/{type}.json` — сырые данные Google Places API, без трансформации.
+Результат: `data/google-places/all-<город>.json` — сырые данные Google Places API, без трансформации.
 
 ### Как добавить новый тип учреждений
 
-В файле `parse-google-places.spec.ts` добавить новый `test(...)` блок по аналогии с dentist.
+В `scripts/collectors/google-places.mjs` дописать тип в `PLACE_TYPES`.
 
 Доступные типы Google Places:
+
 - `dentist` — стоматологии
 - `hospital` — больницы
 - `doctor` — врачебные кабинеты
@@ -39,22 +47,23 @@ npx playwright test --project=scripts -g "all cities"
 ## Этап 2: Перекладка в БД (будет позже)
 
 Сырые данные из `data/google-places/` будут трансформироваться в SQL-скрипт:
+
 - Клиники → таблица `clinics` (с `google_place_id` для дедупликации)
 - Отзывы → таблица `reviews` (полиморфная: clinic_id / doctor_id / medical_service_id)
 
 ### Формат контактов при перекладке
 
-| Поле      | Формат                                      | Пример                                        |
-|-----------|---------------------------------------------|-----------------------------------------------|
-| phone     | `+382XXXXXXXX` (без пробелов)               | `+38269026702`                                |
-| whatsapp  | `+382XXXXXXXX`                              | `+38269026702`                                |
-| viber     | `+382XXXXXXXX`                              | `+38269026702`                                |
-| instagram | `@username`                                 | `@pzu.milmedika`                              |
-| facebook  | `facebook.com/pagename`                     | `facebook.com/milmedika`                      |
-| website   | полный URL с https://                       | `https://www.mojlab.me/`                      |
-| email     | `user@domain.com`                           | `poliklinika.ul@mojlab.me`                    |
-| telegram  | `@username` или `+382XXXXXXXX`              | `@a3medicalme`                                |
-| несколько | через `;`                                   | `+38269026702;+38268026702`                   |
+| Поле      | Формат                         | Пример                      |
+| --------- | ------------------------------ | --------------------------- |
+| phone     | `+382XXXXXXXX` (без пробелов)  | `+38269026702`              |
+| whatsapp  | `+382XXXXXXXX`                 | `+38269026702`              |
+| viber     | `+382XXXXXXXX`                 | `+38269026702`              |
+| instagram | `@username`                    | `@pzu.milmedika`            |
+| facebook  | `facebook.com/pagename`        | `facebook.com/milmedika`    |
+| website   | полный URL с https://          | `https://www.mojlab.me/`    |
+| email     | `user@domain.com`              | `poliklinika.ul@mojlab.me`  |
+| telegram  | `@username` или `+382XXXXXXXX` | `@a3medicalme`              |
+| несколько | через `;`                      | `+38269026702;+38268026702` |
 
 ### Отзывы
 

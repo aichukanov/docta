@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/podgorica/ordinacija-obradovic-medical.json",
+  "outputPath": "server/sql/reviews-google/ordinacija-obradovic-medical-podgorica.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "ordinacija-obradovic-medical-podgorica",
+  "clinicId": 192,
+  "clinicName": "Ordinacija Obradović Medical",
+  "translationsDir": "data/review-translations/ordinacija-obradovic-medical-podgorica/",
+  "doctors": [
+    {
+      "id": 3089,
+      "slug": "mladjen-obradovic",
+      "varName": "mladjen_obradovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])mla(?:đ|dj)en(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])мла(?:ђ|дж)[еэ]н(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])obra(?:d|đ)ovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[оё]брад[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

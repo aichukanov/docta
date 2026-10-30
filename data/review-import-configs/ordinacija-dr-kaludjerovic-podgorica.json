@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/podgorica/ordinacija-dr-kaludjerovic.json",
+  "outputPath": "server/sql/reviews-google/ordinacija-dr-kaludjerovic-podgorica.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "ordinacija-dr-kaludjerovic-podgorica",
+  "clinicId": 268,
+  "clinicName": "ORDINACIJA DR KALUDJEROVIC",
+  "translationsDir": "data/review-translations/ordinacija-dr-kaludjerovic-podgorica/",
+  "doctors": [
+    {
+      "id": 3364,
+      "slug": "velimir-kaludjerovic",
+      "varName": "velimir_kaludjerovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])velimir(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])в[еэ]лимир(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])kalu(?:đ|dj)erovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])калу(?:ђ|дж)[еэ]р[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

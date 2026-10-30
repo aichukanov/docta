@@ -1,0 +1,20 @@
+{
+  "jsonPath": "data/google-places/niksic/zu-dom-zdravlja-niksic.json",
+  "outputPath": "server/sql/reviews-google/dom-zdravlja-niksic.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "dom-zdravlja-niksic",
+  "clinicId": 200,
+  "clinicName": "ZU Dom zdravlja Nikšić",
+  "translationsDir": "data/review-translations/dom-zdravlja-niksic/",
+  "doctors": [
+    {
+      "id": 3143,
+      "slug": "vuk-dubak",
+      "varName": "vuk_dubak",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])(?:d|đ)ubak(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])дубак(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

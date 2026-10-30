@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/kolasin/stomatoloska-ordinacija-djurovic.json",
+  "outputPath": "server/sql/reviews-google/stomatoloska-ordinacija-djurovic-kolasin.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "stomatoloska-ordinacija-djurovic-kolasin",
+  "clinicId": 257,
+  "clinicName": "Stomatološka Ordinacija ĐUROVIĆ",
+  "translationsDir": "data/review-translations/stomatoloska-ordinacija-djurovic-kolasin/",
+  "doctors": [
+    {
+      "id": 3359,
+      "slug": "danilo-djurovic",
+      "varName": "danilo_djurovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])(?:d|đ)anil(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])данил(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])(?:đ|dj)urovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])(?:ђ|дж)ур[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

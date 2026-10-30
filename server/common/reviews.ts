@@ -70,7 +70,15 @@ function localizedTextField(
 	return `COALESCE(${tableAlias}.${column}, ${tableAlias}.${fallbackField})`;
 }
 
+// У импортированных отзывов дата — из «год назад» на день съёма, так что
+// одинаковых published_at сотни. Без r.id в конце MySQL отдаёт равные строки
+// в произвольном порядке, и LIMIT/OFFSET показывает одни отзывы на двух
+// страницах, а другие не показывает вовсе.
 function buildOrderByClause(sort: ReviewSort, textExpr: string): string {
+	return `${buildSortKeys(sort, textExpr)}, r.id DESC`;
+}
+
+function buildSortKeys(sort: ReviewSort, textExpr: string): string {
 	switch (sort) {
 		case 'newest':
 			return 'r.published_at DESC';

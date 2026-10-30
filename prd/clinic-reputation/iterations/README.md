@@ -11,6 +11,6 @@
 | 2 | [Раздел «Репутация»](iteration-02-reputation-section.md) | миграция 059 | Not Started |
 | 3 | [Бейдж «Осторожно» во всей выдаче](iteration-03-caution-badge.md) | итерация 2 (данные) | Not Started |
 | 4 | [Контент: кейс Temel Dental + статья](iteration-04-temel-dental-content.md) | итерации 1–3 + вычитка статьи пользователем | Not Started |
-| 5 | [Репутация врачей](iteration-05-doctor-reputation.md) | миграция 060 | Код готов |
+| 5 | [Репутация врачей](iteration-05-doctor-reputation.md) | миграция 060 | ✅ В проде |
 
 Итерации 1 и 2 независимы друг от друга, можно вести параллельно (миграция общая, применяется один раз).

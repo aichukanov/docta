@@ -1,0 +1,22 @@
+{
+  "jsonPath": "data/google-places/podgorica/ocna-bolnica-oftalens-dr-koturovic.json",
+  "outputPath": "server/sql/reviews-google/ocna-bolnica-oftalens-dr-koturovic-podgorica.sql",
+  "dataCollectedDate": "2026-10-29",
+  "clinicSlug": "ocna-bolnica-oftalens-dr-koturovic-podgorica",
+  "clinicId": 248,
+  "clinicName": "Očna bolnica Oftalens Dr Koturović",
+  "translationsDir": "data/review-translations/ocna-bolnica-oftalens-dr-koturovic-podgorica/",
+  "doctors": [
+    {
+      "id": 3356,
+      "slug": "zoran-koturovic",
+      "varName": "zoran_koturovic",
+      "patterns": [
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])[zž]oran(?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])з[оё]ран(?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])koturovi[cćč](?:a|e|i|o|u|y|om|em|oj|ju|ja|je|ji|ovi|ove|ova)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)",
+        "(?:^|[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ])к[оё]тур[оё]ви[ћч](?:а|е|и|о|у|ы|ом|ем|ой|ым|ю|я|ей|ою|ју|ја|је)?(?:[^a-zA-Zа-яёА-ЯЁčćšžđČĆŠŽĐјљњћџђЈЉЊЋЏЂ]|$)"
+      ]
+    }
+  ]
+}

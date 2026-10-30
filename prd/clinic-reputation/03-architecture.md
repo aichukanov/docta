@@ -21,8 +21,11 @@
 | --- | --- | --- |
 | `server/api/admin/reviews/pin.post.ts` | `{ reviewId, pinned: boolean }` | `UPDATE reviews SET is_pinned, pinned_at = NOW()/NULL`; отказ, если `status = 'rejected'`; лог `pinned`/`unpinned` |
 | `server/api/admin/reviews/editorial-verify.post.ts` | `{ reviewId, verified: boolean, comment }` | `UPDATE reviews SET is_verified`; `comment` обязателен; лог `editorial_verified`/`editorial_unverified` |
-| `server/api/admin/clinics/complaints.get.ts` | `?clinicId=` | полный список жалоб клиники (вкл. `source_note`, неактивные) |
-| `server/api/admin/clinics/complaints.post.ts` | upsert `{ id?, clinicId, complaintType, status, isActive, reviewId?, articleSlug?, sourceNote?, incidentDate?, clinicResponse? }` | INSERT/UPDATE по `(clinic_id, complaint_type)` |
+| `server/api/admin/reputation/complaints.get.ts` | `?entity=clinic\|doctor&entityId=` | полный список жалоб сущности (вкл. `source_note`, неактивные) |
+| `server/api/admin/reputation/complaints.post.ts` | upsert `{ entity, entityId, complaintType, status, isActive, reviewId?, articleSlug?, sourceNote?, incidentDate?, response? }` | INSERT/UPDATE по `(clinic_id\|doctor_id, complaint_type)` |
+
+Пути и форма тела изменены в итерации 5 (было `admin/clinics/complaints` с `clinicId`
+и `clinicResponse`): один эндпоинт обслуживает и клиники, и врачей.
 
 В `moderate.post.ts` при `action = 'reject'` добавить сброс `is_pinned = 0, pinned_at = NULL` (FR-1.3).
 
@@ -99,7 +102,8 @@ KitAlert warning над списком (после `RatingSummary`), текст 
 ## Аналитика (Mixpanel, конвенции `prd/analytics/events-catalog.md`)
 
 - `caution_badge_shown` не шлём (шум); вместо этого:
-- клик/переход на `#reputation` — событие `reputation_viewed` `{ clinic_id, source: 'badge' | 'tab' | 'reviews_notice' }`;
+- клик/переход на `#reputation` — событие `reputation_viewed` `{ entity_type, entity_id }`
+  (с итерации 5; до неё было `{ clinic_id }`, `source` так и не завели);
 - по нему же решаем судьбу фичи (см. 05).
 
 ## Кэш
